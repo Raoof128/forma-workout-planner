@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button, Modal } from "./UI";
 import { exercises, sessionSets } from "../data";
 export default function HistoryEditor({ session, onSave, onClose }) {
@@ -7,7 +7,21 @@ export default function HistoryEditor({ session, onSave, onClose }) {
   const [error, setError] = useState("");
   const [saving, setSaving] = useState(false);
   const dirty = JSON.stringify(draft) !== JSON.stringify(session);
-  const close = () => (dirty ? setDiscard(true) : onClose());
+  useEffect(() => {
+    if (!dirty) return;
+    const warn = (event) => {
+      event.preventDefault();
+      event.returnValue = "";
+    };
+    window.addEventListener("beforeunload", warn);
+    return () => window.removeEventListener("beforeunload", warn);
+  }, [dirty]);
+  const close = () => {
+    if (!saving) {
+      if (dirty) setDiscard(true);
+      else onClose();
+    }
+  };
   function update(ei, si, key, value) {
     setDraft((current) => ({
       ...current,

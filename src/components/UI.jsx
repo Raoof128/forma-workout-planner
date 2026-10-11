@@ -120,22 +120,29 @@ export function RoutineCard({ routine, onClick }) {
     </button>
   );
 }
-export function Empty({ icon: Icon = Dumbbell, title, description, children }) {
+export function Empty({
+  icon: Icon = Dumbbell,
+  title,
+  description,
+  children,
+  heading: Heading = "h2",
+}) {
   return (
     <div className="empty">
       <span className="empty-icon">
         <Icon size={28} />
       </span>
-      <h2>{title}</h2>
+      <Heading>{title}</Heading>
       <p>{description}</p>
       {children}
     </div>
   );
 }
-export function PageHeading({ title, subtitle, children }) {
+export function PageHeading({ title, subtitle, children, eyebrow }) {
   return (
     <div className="page-heading">
       <div>
+        {eyebrow && <span className="page-kicker">{eyebrow}</span>}
         <h1>{title}</h1>
         <p>{subtitle}</p>
       </div>

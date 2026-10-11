@@ -4,20 +4,54 @@ import { downloadData, validateData } from "../storage";
 export default function Recovery({ raw, onRestore, onReset }) {
   const [error, setError] = useState("");
   const [confirm, setConfirm] = useState(false);
+  const [busy, setBusy] = useState(false);
   async function importFile(event) {
-    const file = event.target.files?.[0];
-    if (!file) return;
+    const input = event.target;
+    const file = input.files?.[0];
+    if (!file || busy) return;
+    setError("");
+    setBusy(true);
+    if (file.size > 20 * 1024 * 1024) {
+      setError(
+        "Choose a FORMA backup smaller than 20 MB. Your original data is still untouched.",
+      );
+      setBusy(false);
+      input.value = "";
+      return;
+    }
+    let data;
     try {
-      if (file.size > 20 * 1024 * 1024)
-        throw new Error("Choose a backup smaller than 20 MB.");
-      const data = validateData(JSON.parse(await file.text()));
-      await onRestore(data);
+      data = validateData(JSON.parse(await file.text()));
     } catch {
       setError(
         "This file is not a valid FORMA backup. Your original data is still untouched.",
       );
+      setBusy(false);
+      input.value = "";
+      return;
     }
-    event.target.value = "";
+    try {
+      await onRestore(data);
+    } catch (error) {
+      setError(error.message || "This backup could not be saved. Try again.");
+    } finally {
+      setBusy(false);
+      input.value = "";
+    }
+  }
+  async function reset() {
+    if (busy) return;
+    setError("");
+    setBusy(true);
+    try {
+      await onReset();
+    } catch (error) {
+      setError(
+        error.message || "Your workspace could not be reset. Try again.",
+      );
+    } finally {
+      setBusy(false);
+    }
   }
   return (
     <main className="recovery-page">
@@ -30,7 +64,15 @@ export default function Recovery({ raw, onRestore, onReset }) {
       <div className="recovery-actions">
         <Button
           variant="secondary"
-          onClick={() => downloadData(raw, "forma-original-data", true)}
+          onClick={() => {
+            try {
+              downloadData(raw, "forma-original-data", true);
+            } catch {
+              setError(
+                "The download could not start. Try again before replacing your data.",
+              );
+            }
+          }}
         >
           Download original data
         </Button>
@@ -40,6 +82,7 @@ export default function Recovery({ raw, onRestore, onReset }) {
             aria-label="Restore recovery backup"
             type="file"
             accept="application/json,.json"
+            disabled={busy}
             onChange={importFile}
           />
         </label>
@@ -55,18 +98,23 @@ export default function Recovery({ raw, onRestore, onReset }) {
             Start with the starter routines? We’ll preserve a copy of the
             unreadable data in this browser before replacing it.
           </p>
-          <Button variant="secondary" onClick={() => setConfirm(false)}>
+          <Button
+            variant="secondary"
+            disabled={busy}
+            onClick={() => setConfirm(false)}
+          >
             Keep original
           </Button>
-          <Button
-            variant="danger-solid"
-            onClick={() => onReset().catch((e) => setError(e.message))}
-          >
+          <Button variant="danger-solid" disabled={busy} onClick={reset}>
             Start fresh
           </Button>
         </div>
       ) : (
-        <Button variant="secondary" onClick={() => setConfirm(true)}>
+        <Button
+          variant="secondary"
+          disabled={busy}
+          onClick={() => setConfirm(true)}
+        >
           Start a fresh workspace
         </Button>
       )}

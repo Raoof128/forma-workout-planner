@@ -17,6 +17,7 @@ export function Routines({ routines, onOpen, onCreate }) {
   return (
     <>
       <PageHeading
+        eyebrow="Your plan, your pace"
         title="Make every session yours."
         subtitle="Your routines, built around the way you train."
       >
@@ -289,6 +290,15 @@ export function RoutineEditor({ routine, onClose, onSave }) {
             />
           </div>
           <div className="exercise-picker">
+            {!exercises.some((exercise) =>
+              `${exercise.name} ${exercise.muscle}`
+                .toLowerCase()
+                .includes(query.trim().toLowerCase()),
+            ) && (
+              <p className="picker-empty" role="status">
+                No matching exercises. Try a different name or muscle group.
+              </p>
+            )}
             {exercises
               .filter((exercise) =>
                 `${exercise.name} ${exercise.muscle}`
@@ -360,25 +370,31 @@ export function RoutineEditor({ routine, onClose, onSave }) {
                       )}
                     </div>
                     {["sets", "reps", "weight"].map((key) => (
-                      <input
-                        key={key}
-                        aria-label={`${exercise.name} ${key}`}
-                        type="number"
-                        min={key === "weight" ? 0 : 1}
-                        max={key === "sets" ? 12 : key === "reps" ? 100 : 1000}
-                        step={key === "weight" ? 0.5 : 1}
-                        required
-                        value={item[key]}
-                        onChange={(event) =>
-                          update(
-                            item.exerciseId,
-                            key,
-                            event.target.value === ""
-                              ? ""
-                              : Number(event.target.value),
-                          )
-                        }
-                      />
+                      <label className="prescription-field" key={key}>
+                        <span>
+                          {key === "weight" ? "WEIGHT (KG)" : key.toUpperCase()}
+                        </span>
+                        <input
+                          aria-label={`${exercise.name} ${key}`}
+                          type="number"
+                          min={key === "weight" ? 0 : 1}
+                          max={
+                            key === "sets" ? 12 : key === "reps" ? 100 : 1000
+                          }
+                          step={key === "weight" ? 0.5 : 1}
+                          required
+                          value={item[key]}
+                          onChange={(event) =>
+                            update(
+                              item.exerciseId,
+                              key,
+                              event.target.value === ""
+                                ? ""
+                                : Number(event.target.value),
+                            )
+                          }
+                        />
+                      </label>
                     ))}
                   </div>
                 );

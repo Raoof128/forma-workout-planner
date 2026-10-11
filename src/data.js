@@ -203,19 +203,24 @@ export const initialData = {
   schedule: [0, 1, 3, 5],
 };
 export const TIME_ZONE = "Australia/Sydney";
+const keyFormatter = new Intl.DateTimeFormat("en-CA", {
+  timeZone: TIME_ZONE,
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
+const displayFormatters = new Map();
 export function dateKey(value = new Date()) {
-  return new Intl.DateTimeFormat("en-CA", {
-    timeZone: TIME_ZONE,
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).format(new Date(value));
+  return keyFormatter.format(new Date(value));
 }
 export function displayDate(value, options = {}) {
-  return new Date(value).toLocaleDateString("en-AU", {
-    timeZone: TIME_ZONE,
-    ...options,
-  });
+  const key = JSON.stringify(options);
+  if (!displayFormatters.has(key))
+    displayFormatters.set(
+      key,
+      new Intl.DateTimeFormat("en-AU", { timeZone: TIME_ZONE, ...options }),
+    );
+  return displayFormatters.get(key).format(new Date(value));
 }
 export function weekDates(offset = 0) {
   const d = new Date(`${dateKey()}T12:00:00Z`);

@@ -24,6 +24,16 @@ export function useNavigation() {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
   useEffect(() => {
+    const labels = {
+      overview: "Overview",
+      routines: "My routines",
+      library: "Exercise library",
+      workout: "Active workout",
+      history: "Workout history",
+      progress: "Progress",
+      settings: "Settings",
+    };
+    document.title = `${labels[page]} · FORMA`;
     const heading = document.querySelector("main h1");
     if (heading) {
       heading.tabIndex = -1;

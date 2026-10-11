@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { downloadData, STORAGE_KEY } from "../storage";
 export default class ErrorBoundary extends Component {
-  state = { failed: false };
+  state = { failed: false, downloadError: "" };
   static getDerivedStateFromError() {
     return { failed: true };
   }
@@ -25,7 +25,10 @@ export default class ErrorBoundary extends Component {
                   true,
                 );
               } catch {
-                /* Storage can be blocked by the browser. */
+                this.setState({
+                  downloadError:
+                    "Your browser could not access the saved data. Allow site storage and try again.",
+                });
               }
             }}
           >
@@ -38,6 +41,11 @@ export default class ErrorBoundary extends Component {
             Reload workspace
           </button>
         </div>
+        {this.state.downloadError && (
+          <p className="error" role="alert">
+            {this.state.downloadError}
+          </p>
+        )}
       </main>
     );
   }

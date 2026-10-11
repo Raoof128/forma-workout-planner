@@ -1,3 +1,4 @@
+import { artifactPath, settlePage } from "./helpers.js";
 import { test, expect } from "@playwright/test";
 import { createRequire } from "node:module";
 import { initialData } from "../src/data.js";
@@ -35,6 +36,7 @@ for (const width of [1536, 390])
     const errors = [];
     page.on("pageerror", (error) => errors.push(error.message));
     async function audit(label) {
+      await settlePage(page);
       await page.addScriptTag({ path: axePath });
       const violations = await page.evaluate(async () => {
         const result = await window.axe.run(document, {
@@ -75,7 +77,7 @@ for (const width of [1536, 390])
       await expect(page.locator("main h1")).toBeVisible();
       await audit(route);
       await page.screenshot({
-        path: `/workspace/scratch/forma-fixed/${width}-${route}.png`,
+        path: artifactPath(`${width}-${route}.png`),
         fullPage: true,
       });
       if (route === "routines") {

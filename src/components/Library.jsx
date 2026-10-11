@@ -37,6 +37,7 @@ export default function Library() {
   return (
     <>
       <PageHeading
+        eyebrow="Know your movement"
         title="Good form. Better sessions."
         subtitle="Get to know your next movement. Explore your exercise library."
       />
@@ -86,7 +87,9 @@ export default function Library() {
         <h2>
           {muscle === "All muscles" ? "All exercises" : `${muscle} exercises`}
         </h2>
-        <span className="small muted">{filtered.length} movements</span>
+        <span className="small muted" role="status">
+          {filtered.length} {filtered.length === 1 ? "movement" : "movements"}
+        </span>
       </div>
       <div className="library-grid">
         {filtered.map((e) => {

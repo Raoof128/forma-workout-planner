@@ -1,3 +1,4 @@
+import { artifactPath } from "./helpers.js";
 import { test, expect } from "@playwright/test";
 test("personal training workflow persists routines, sessions and calculated progress", async ({
   page,
@@ -162,7 +163,7 @@ test("mobile navigation, modal and active workout fit a phone", async ({
     ),
   ).toBe(true);
   await page.screenshot({
-    path: "/workspace/scratch/forma-qa/mobile-workout.png",
+    path: artifactPath("mobile-workout.png"),
     fullPage: true,
   });
   await page

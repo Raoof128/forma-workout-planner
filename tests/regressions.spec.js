@@ -1,3 +1,4 @@
+import { artifactPath } from "./helpers.js";
 import { test, expect } from "@playwright/test";
 import { initialData, dateKey, weekDates } from "../src/data.js";
 import { readFileSync } from "node:fs";
@@ -499,7 +500,7 @@ test("mobile rest controls stay reachable and expose instructions during logging
   ).toBeVisible();
   await nav(page, "Got it");
   await page.screenshot({
-    path: "/workspace/scratch/forma-fixed/320-workout.png",
+    path: artifactPath("320-workout.png"),
     fullPage: true,
   });
 });
@@ -536,4 +537,75 @@ test("fast typing persists complete values and a valid backup restores from reco
   });
   await expect(page.locator(".hero")).toBeVisible();
   expect((await stored(page)).active.notes).toBe("Rapid notes 1234567890");
+});
+
+test("a storage read failure preserves the current session for export", async ({
+  page,
+}) => {
+  const data = snapshot();
+  data.profile.name = "Preserved person";
+  data.active = session();
+  data.active.notes = "Keep this workout";
+  await seed(page, data, "workout");
+  await expect(page.getByLabel("Session notes")).toHaveValue(
+    "Keep this workout",
+  );
+  await page.evaluate(() => {
+    Storage.prototype.getItem = function () {
+      throw new DOMException("Blocked", "SecurityError");
+    };
+    window.dispatchEvent(new StorageEvent("storage", { key: "forma-v1" }));
+  });
+  await expect(page.getByRole("alert")).toContainText("saving is unavailable");
+  await expect(page.getByLabel("Session notes")).toHaveValue(
+    "Keep this workout",
+  );
+  await nav(page, "Settings");
+  await expect(page.getByLabel("Your name")).toHaveValue("Preserved person");
+  await expect(
+    page.getByText(
+      "Browser saving is unavailable. Export your current routines and logs now to keep a copy after this visit.",
+      { exact: true },
+    ),
+  ).toBeVisible();
+  const download = page.waitForEvent("download");
+  await nav(page, "Export my data");
+  const file = await download;
+  expect(JSON.parse(readFileSync(await file.path(), "utf8")).active.notes).toBe(
+    "Keep this workout",
+  );
+});
+
+test("recovery distinguishes an invalid backup from a failed storage write", async ({
+  page,
+}) => {
+  await seed(page, "{broken");
+  await expect(
+    page.getByRole("heading", { name: "Your saved data needs attention." }),
+  ).toBeVisible();
+  await page.getByLabel("Restore recovery backup").setInputFiles({
+    name: "invalid.json",
+    mimeType: "application/json",
+    buffer: Buffer.from("{}"),
+  });
+  await expect(page.getByRole("alert")).toContainText(
+    "not a valid FORMA backup",
+  );
+  await page.evaluate(() => {
+    Storage.prototype.setItem = function () {
+      throw new DOMException("Full", "QuotaExceededError");
+    };
+  });
+  await page.getByLabel("Restore recovery backup").setInputFiles({
+    name: "valid.json",
+    mimeType: "application/json",
+    buffer: Buffer.from(JSON.stringify(snapshot())),
+  });
+  await expect(page.getByRole("alert")).toContainText(
+    "Recovery could not be saved",
+  );
+  await expect(page.getByLabel("Restore recovery backup")).toBeEnabled();
+  expect(await page.evaluate(() => localStorage.getItem("forma-v1"))).toBe(
+    "{broken",
+  );
 });

@@ -10,7 +10,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import { Button, RoutineCard, PageHeading } from "./UI";
+import { Button, RoutineCard, PageHeading, Empty } from "./UI";
 import { weekDates, sameDay, dateKey, displayDate } from "../data";
 export default function Overview({
   data,
@@ -32,8 +32,15 @@ export default function Overview({
   );
   const count = counts.reduce((sum, value) => sum + value, 0);
   const maxCount = Math.max(1, ...counts);
+  const latestSession = data.history.reduce(
+    (latest, session) =>
+      !latest || Date.parse(session.date) > Date.parse(latest.date)
+        ? session
+        : latest,
+    null,
+  );
   const lastIndex = data.routines.findIndex(
-    (routine) => routine.id === data.history[0]?.routineId,
+    (routine) => routine.id === latestSession?.routineId,
   );
   const next =
     data.routines.find((routine) => routine.id === preferred) ||
@@ -58,12 +65,17 @@ export default function Overview({
   return (
     <>
       <PageHeading
+        eyebrow="Plan. Perform. Progress."
         title="A little stronger, every day."
         subtitle="Your next rep starts here. Let’s make it count."
       >
         <Button onClick={() => onStart(routine)}>
           <Plus size={19} />
-          {data.active ? "Resume workout" : "Start workout"}
+          {data.active
+            ? "Resume workout"
+            : routine
+              ? "Start workout"
+              : "Create routine"}
         </Button>
       </PageHeading>
       <div className="calendar-heading">
@@ -86,6 +98,10 @@ export default function Overview({
             This week
           </button>
         )}
+        <span className="calendar-legend" aria-hidden="true">
+          <span>○ Planned</span>
+          <span>✓ Logged</span>
+        </span>
       </div>
       <div className="week-strip">
         <button
@@ -175,7 +191,11 @@ export default function Overview({
             </div>
             <Button variant="lime" onClick={() => onStart(routine)}>
               <Play size={18} />
-              {data.active ? "Resume workout" : "Start workout"}
+              {data.active
+                ? "Resume workout"
+                : routine
+                  ? "Start workout"
+                  : "Create routine"}
             </Button>
             <div className="hero-footer">
               {data.active
@@ -254,6 +274,18 @@ export default function Overview({
             View all <ArrowRight size={16} />
           </button>
         </div>
+        {!data.routines.length && (
+          <div className="routines-empty">
+            <Empty
+              title="Make space for your first routine."
+              description="Choose your movements, set your pace, and build a session that fits you."
+            >
+              <Button variant="lime" onClick={() => onStart()}>
+                Create routine
+              </Button>
+            </Empty>
+          </div>
+        )}
         <div className="routine-grid">
           {data.routines.slice(0, 3).map((item) => (
             <RoutineCard key={item.id} routine={item} onClick={onRoutine} />

@@ -27,8 +27,14 @@ export function useWorkoutStore() {
       if (
         (event.key === STORAGE_KEY || event.key === null) &&
         snapshotRef.current.issue !== "unavailable"
-      )
-        adopt(readStore());
+      ) {
+        const latest = readStore();
+        adopt(
+          latest.issue === "unavailable"
+            ? { ...snapshotRef.current, issue: "unavailable" }
+            : latest,
+        );
+      }
     };
     window.addEventListener("storage", sync);
     return () => window.removeEventListener("storage", sync);

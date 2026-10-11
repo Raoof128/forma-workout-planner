@@ -210,7 +210,7 @@ export default function App() {
         Skip to content
       </a>
       <Navigation page={visiblePage} navigate={navigate} data={data} />
-      <main id="main-content">
+      <main id="main-content" data-page={visiblePage}>
         <header className="topbar">
           {saving && <span className="save-indicator">Saving changes…</span>}
           <div>
@@ -278,6 +278,7 @@ export default function App() {
               />
             ) : (
               <Empty
+                heading="h1"
                 title="No workout is running."
                 description="Start a routine when you’re ready."
               >
@@ -322,6 +323,7 @@ export default function App() {
           {visiblePage === "settings" && (
             <Settings
               data={data}
+              saved={issue !== "unavailable"}
               onRestore={restore}
               onSave={async (profile, original) => {
                 const result = await change((current) => {

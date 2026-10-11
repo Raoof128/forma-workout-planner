@@ -28,6 +28,7 @@ export function WorkoutHistory({ history, onStart, onSave, onDelete }) {
   return (
     <>
       <PageHeading
+        eyebrow="The work you put in"
         title="Every session counts."
         subtitle="A record of your effort. A reminder of how far you’ve come."
       />
@@ -43,45 +44,47 @@ export function WorkoutHistory({ history, onStart, onSave, onDelete }) {
         </Empty>
       ) : (
         <div className="history-list">
-          {history.map((s) => (
-            <button
-              key={s.id}
-              className="history-row panel"
-              onClick={() => setDetail(s)}
-            >
-              <span className="history-date">
-                <strong>{displayDate(s.date, { day: "numeric" })}</strong>
-                <span>
-                  {displayDate(s.date, {
-                    month: "short",
-                  })}
+          {[...history]
+            .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
+            .map((s) => (
+              <button
+                key={s.id}
+                className="history-row panel"
+                onClick={() => setDetail(s)}
+              >
+                <span className="history-date">
+                  <strong>{displayDate(s.date, { day: "numeric" })}</strong>
+                  <span>
+                    {displayDate(s.date, {
+                      month: "short",
+                    })}
+                  </span>
                 </span>
-              </span>
-              <div>
-                <h3>{s.name}</h3>
-                <p>
-                  {displayDate(s.date, {
-                    weekday: "long",
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </p>
-              </div>
-              <span>
-                <Clock size={16} />
-                {formatTime(s.duration)}
-              </span>
-              <span>
-                <Dumbbell size={16} />
-                {sessionSets(s)} {sessionSets(s) === 1 ? "set" : "sets"}
-              </span>
-              <span className="volume">
-                {sessionVolume(s).toLocaleString()} kg
-              </span>
-              <ArrowUpRight size={19} />
-            </button>
-          ))}
+                <div>
+                  <h3>{s.name}</h3>
+                  <p>
+                    {displayDate(s.date, {
+                      weekday: "long",
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </p>
+                </div>
+                <span>
+                  <Clock size={16} />
+                  {formatTime(s.duration)}
+                </span>
+                <span>
+                  <Dumbbell size={16} />
+                  {sessionSets(s)} {sessionSets(s) === 1 ? "set" : "sets"}
+                </span>
+                <span className="volume">
+                  {sessionVolume(s).toLocaleString()} kg
+                </span>
+                <ArrowUpRight size={19} />
+              </button>
+            ))}
         </div>
       )}
       {detail && !editing && (
@@ -202,21 +205,26 @@ export function Progress({ history, onStart }) {
       );
       return {
         ...e,
-        maxWeight: Math.max(0, ...done.map((s) => Number(s.weight))),
-        oneRM: Math.max(
+        maxWeight: done.reduce((max, set) => Math.max(max, set.weight), 0),
+        oneRM: done.reduce(
+          (max, set) =>
+            set.reps <= 12
+              ? Math.max(max, estimatedOneRM(set.weight, set.reps))
+              : max,
           0,
-          ...done
-            .filter((s) => s.reps <= 12)
-            .map((s) => estimatedOneRM(s.weight, s.reps)),
         ),
         sets: done.length,
       };
     })
     .filter((e) => e.sets > 0);
-  const recent = [...history].reverse().slice(-8);
+  const recent = [...history]
+    .sort((a, b) => Date.parse(a.date) - Date.parse(b.date))
+    .slice(-8);
+  const maxVolume = Math.max(1, ...recent.map(sessionVolume));
   return (
     <>
       <PageHeading
+        eyebrow="Built one session at a time"
         title="See your strength take shape."
         subtitle="Small steps add up. Here’s the work you’ve put in."
       />
@@ -269,7 +277,7 @@ export function Progress({ history, onStart }) {
                   <div
                     className="volume-bar"
                     style={{
-                      height: `${Math.max(0, (150 * sessionVolume(s)) / Math.max(1, ...recent.map(sessionVolume)))}px`,
+                      height: `${Math.max(0, (150 * sessionVolume(s)) / maxVolume)}px`,
                     }}
                   />
                   <span>
@@ -291,20 +299,26 @@ export function Progress({ history, onStart }) {
               Single reps use the actual load. Other estimates use the Epley
               formula for 2–12 reps.
             </p>
-            <div className="record-row record-labels">
-              <span>EXERCISE</span>
-              <span>MAX WEIGHT</span>
-              <span>EST. 1RM</span>
-            </div>
-            {records.map((e) => (
-              <div className="record-row" key={e.id}>
-                <strong>{e.name}</strong>
-                <span>{e.maxWeight} kg</span>
-                <span>
-                  {e.oneRM ? `${Math.round(e.oneRM * 10) / 10} kg` : "—"}
-                </span>
-              </div>
-            ))}
+            <table aria-label="Personal bests by exercise">
+              <thead>
+                <tr className="record-row record-labels">
+                  <th scope="col">EXERCISE</th>
+                  <th scope="col">MAX WEIGHT</th>
+                  <th scope="col">EST. 1RM</th>
+                </tr>
+              </thead>
+              <tbody>
+                {records.map((e) => (
+                  <tr className="record-row" key={e.id}>
+                    <th scope="row">{e.name}</th>
+                    <td>{e.maxWeight} kg</td>
+                    <td>
+                      {e.oneRM ? `${Math.round(e.oneRM * 10) / 10} kg` : "—"}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </section>
         </>
       )}

@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { PageHeading, Button, Modal } from "./UI";
 import { downloadData, validateData } from "../storage";
-export function Settings({ data, onSave, onRestore, notify }) {
+export function Settings({ data, saved, onSave, onRestore, notify }) {
   const [name, setName] = useState(data.profile.name);
   const [goal, setGoal] = useState(data.profile.goal);
   const original = useRef(data.profile);
@@ -85,8 +85,9 @@ export function Settings({ data, onSave, onRestore, notify }) {
           <ShieldCheck size={22} />
         </div>
         <p>
-          Routines and logs are saved in this browser on this device. Export a
-          backup to keep a copy of your training data.
+          {saved
+            ? "Routines and logs are saved in this browser on this device. Export a backup to keep a copy of your training data."
+            : "Browser saving is unavailable. Export your current routines and logs now to keep a copy after this visit."}
         </p>
         <p className="muted small">
           Clearing browser data will remove your saved workouts. Private
@@ -96,8 +97,13 @@ export function Settings({ data, onSave, onRestore, notify }) {
           <Button
             variant="secondary"
             onClick={() => {
-              downloadData(data);
-              notify("Your workout backup has been downloaded.");
+              try {
+                downloadData(data);
+                setError("");
+                notify("Your workout backup download has started.");
+              } catch {
+                setError("The backup download could not start. Try again.");
+              }
             }}
           >
             <Download size={17} />

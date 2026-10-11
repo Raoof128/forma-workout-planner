@@ -33,13 +33,17 @@ This version has no accounts, remote sync, Apple Health integration, videos, or 
 ## Checks
 
 ```sh
-npx playwright install chromium
+npx playwright install chromium firefox
 npm run lint
 npm run format:check
 npm run build
 npm test
 ```
 
-The suite covers core workflows, concurrent tabs, invalid storage/recovery, backup round trips, rapid typing, focus/drawer behavior, timer persistence, routine edits, history calculations, navigation, responsive edge cases, and automated accessibility scans.
+The suite runs in Chromium and Firefox and covers core workflows, concurrent tabs, invalid storage/recovery, backup round trips, rapid typing, focus/drawer behavior, timer persistence, routine edits, history calculations, navigation, responsive edge cases, and automated accessibility scans.
 
-See [research](docs/research.md), [audit fixes](docs/audit-fixes.md), and [verification](docs/verification.md). The [original design concept](docs/design-concept.png) is historical reference material.
+Screenshots are written to the system temporary directory under `forma-qa`; set `FORMA_ARTIFACT_DIR` to choose another location. On Linux, browser installation may also require `npx playwright install-deps chromium firefox`.
+
+The interface pairs locally served Barlow Condensed and DM Sans fonts; their licenses are in `public/fonts/`.
+
+See [research](docs/research.md), [audit fixes](docs/audit-fixes.md), the [file-by-file frontend design audit](docs/frontend-design-audit.md), and [verification](docs/verification.md). The [original design concept](docs/design-concept.png) is historical reference material.

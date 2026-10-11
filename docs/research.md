@@ -16,7 +16,7 @@ Core flow: choose or build a routine → start session → edit weight/reps → 
 
 ## Design system
 
-Full dashboard concept, followed by matching functional screens. White sidebar, cool gray canvas, charcoal text and hero photography, lime primary emphasis. DM Sans typography, 1px neutral borders, 12–18px panel radii. Desktop sidebar and two-column dashboard become compact navigation and a single content column on phones. All controls use semantic HTML and keyboard focus styles. Empty progress is truthful; no seeded workout achievements.
+Full dashboard concept, followed by matching functional screens. White sidebar, warm neutral canvas, charcoal text and hero photography, lime primary emphasis. The frontend-design polish pairs locally served Barlow Condensed display headings with DM Sans body text, 1px neutral borders, and restrained panel radii. Desktop sidebar and two-column dashboard become compact navigation and a single content column on phones. All controls use semantic HTML and keyboard focus styles. Empty progress is truthful; no seeded workout achievements.
 
 ## Validation
 
