@@ -7,7 +7,7 @@ architecture: a React SPA and API gateway on a Cloudflare Worker, a private
 Fastify and Better Auth API on a DigitalOcean Droplet behind Cloudflare Access
 and Tunnel, and PostgreSQL.
 
-**Current verdict: NO-GO for real members.** The code-level controls were
+**Current verdict: NO-GO for real members.** Deployed 2026-10-13 as a public guest-mode site plus private, Access-protected account staging ([deployment record](deployment-record.md)). The code-level controls were
 red-teamed and hardened, but live infrastructure, recovery and monitoring have
 not been verified. See the [release verdict](release-security-verdict.md).
 
@@ -32,6 +32,7 @@ how, what was fixed, and what remains.
 | [Security coverage matrix](security-coverage-matrix.csv) | Control-by-control traceability                                       |
 | [ASVS mapping](asvs-l2-mapping.csv)                      | OWASP ASVS 5.0.0 Level 1 and 2 requirement mapping                    |
 | [Release verdict](release-security-verdict.md)           | Gates S01–S20 and the GO/NO-GO decision                               |
+| [Deployment record](deployment-record.md)                | What is live, where, credentials inventory and rollback               |
 
 ## Running the security tests
 

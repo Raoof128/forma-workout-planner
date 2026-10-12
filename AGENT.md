@@ -57,3 +57,13 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 - **Verification:** see `docs/security/release-security-verdict.md`.
 - **Follow-ups:** sign backups, breached-password blocklist, security alerting,
   live Access/Tunnel/Droplet checks, isolated restore drill, branch protection.
+
+### Raouf: 2026-10-13 — Deployment
+
+- **Scope:** public guest site and private account staging; see
+  `docs/security/deployment-record.md`.
+- **Constraints added:** the Worker forwards only `forma.*` cookies upstream;
+  production must stay guest-only (no API secrets) until the verdict is GO;
+  staging runs with `ops/compose.small-host.yaml` on a shared host, so never
+  publish ports or raise memory limits without checking the other services.
+- **Verification:** live gate probes S09, S10, S18 and a staging restore drill.

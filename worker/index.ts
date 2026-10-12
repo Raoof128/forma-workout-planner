@@ -171,6 +171,16 @@ function filteredRequestHeaders(request: Request, env: Env): Headers {
     const lower = name.toLowerCase();
     if (!FORWARDED_REQUEST_HEADERS.has(lower) || HOP_HEADERS.has(lower))
       continue;
+    if (lower === "cookie") {
+      // Forward only FORMA's own cookies. Cloudflare Access (CF_Authorization)
+      // and any other site cookies stay at the edge.
+      const appCookies = value
+        .split(";")
+        .map((part) => part.trim())
+        .filter((part) => APP_COOKIE.test(part.slice(0, part.indexOf("="))));
+      if (appCookies.length) headers.append("cookie", appCookies.join("; "));
+      continue;
+    }
     headers.append(name, value);
   }
   headers.set("cf-access-client-id", env.ACCESS_CLIENT_ID);

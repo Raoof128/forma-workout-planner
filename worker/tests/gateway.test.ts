@@ -26,7 +26,7 @@ test("proxies only the approved fixed-origin API routes and strips spoofable hea
     request("/api/workspace?include=history", {
       method: "GET",
       headers: {
-        cookie: "session=member-cookie",
+        cookie: "__Secure-forma.session_token=member-cookie",
         "cf-access-client-id": "attacker-id",
         "cf-access-client-secret": "attacker-secret",
         "cf-connecting-ip": "203.0.113.10",
@@ -51,7 +51,10 @@ test("proxies only the approved fixed-origin API routes and strips spoofable hea
     seenUrl?.href,
     "https://api.internal.example/api/workspace?include=history",
   );
-  assert.equal(seenHeaders?.get("cookie"), "session=member-cookie");
+  assert.equal(
+    seenHeaders?.get("cookie"),
+    "__Secure-forma.session_token=member-cookie",
+  );
   assert.equal(seenHeaders?.get("cf-access-client-id"), "test-access-id");
   assert.equal(
     seenHeaders?.get("cf-access-client-secret"),

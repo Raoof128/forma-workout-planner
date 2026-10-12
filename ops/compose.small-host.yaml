@@ -1,0 +1,21 @@
+# Overrides for a small shared host (2 vCPU, ~2 GB RAM, no swap), such as a
+# staging Droplet that also runs other services. Use with:
+#   docker compose -f ops/compose.yaml -f ops/compose.small-host.yaml ...
+# Idle usage is ~40 MB (db), ~100 MB (api), ~25 MB (cloudflared).
+services:
+  db:
+    mem_limit: 384m
+    cpus: 0.75
+    command:
+      ["postgres", "-c", "shared_buffers=64MB", "-c", "max_connections=40"]
+  api:
+    mem_limit: 320m
+    cpus: 0.75
+    environment:
+      DATABASE_POOL_SIZE: "8"
+  migrate:
+    mem_limit: 320m
+    cpus: 0.5
+  cloudflared:
+    mem_limit: 128m
+    cpus: 0.25

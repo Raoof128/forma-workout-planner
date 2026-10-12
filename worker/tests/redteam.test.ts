@@ -279,3 +279,35 @@ test("EDGE-08: gateway errors carry HSTS and assets forbid base URL rewriting (A
     /base-uri 'none'/,
   );
 });
+
+test("EDGE-09: only FORMA cookies are forwarded to the origin (deployment hardening)", async () => {
+  let seen: Headers | undefined;
+  await handleApiRequest(
+    edgeRequest("/api/workspace", {
+      headers: {
+        cookie:
+          "CF_Authorization=access-jwt; __Secure-forma.session_token=s1; other=x; forma.two_factor=t",
+      },
+    }),
+    env,
+    async (_input, init) => {
+      seen = new Headers(init?.headers);
+      return json();
+    },
+  );
+  assert.equal(
+    seen?.get("cookie"),
+    "__Secure-forma.session_token=s1; forma.two_factor=t",
+  );
+  await handleApiRequest(
+    edgeRequest("/api/workspace", {
+      headers: { cookie: "CF_Authorization=x" },
+    }),
+    env,
+    async (_input, init) => {
+      seen = new Headers(init?.headers);
+      return json();
+    },
+  );
+  assert.equal(seen?.has("cookie"), false);
+});

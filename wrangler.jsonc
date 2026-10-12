@@ -15,23 +15,35 @@
     "BACKEND_URL": "http://127.0.0.1:3000",
   },
   "env": {
+    // Private account staging: the hostname is protected by Cloudflare Access
+    // and the API is reached only through an Access-protected Tunnel.
     "staging": {
       "name": "forma-workout-planner-staging",
-      "workers_dev": true,
+      "workers_dev": false,
+      "preview_urls": false,
+      "routes": [
+        { "pattern": "forma-staging.raoufabedini.dev", "custom_domain": true },
+      ],
       "vars": {
         "ENVIRONMENT": "staging",
-        "APP_ORIGIN": "https://staging.forma.example.invalid",
-        "BACKEND_URL": "https://staging-api.forma.example.invalid",
+        "APP_ORIGIN": "https://forma-staging.raoufabedini.dev",
+        "BACKEND_URL": "https://forma-api-staging.raoufabedini.dev",
       },
     },
+    // Public guest-mode site. Account features are built out
+    // (VITE_ACCOUNT_MODE=guest) and no API credentials are configured, so
+    // every /api request fails closed with 503.
     "production": {
       "name": "forma-workout-planner-production",
       "workers_dev": false,
       "preview_urls": false,
+      "routes": [
+        { "pattern": "forma.raoufabedini.dev", "custom_domain": true },
+      ],
       "vars": {
         "ENVIRONMENT": "production",
-        "APP_ORIGIN": "https://forma.example.invalid",
-        "BACKEND_URL": "https://api.forma.example.invalid",
+        "APP_ORIGIN": "https://forma.raoufabedini.dev",
+        "BACKEND_URL": "https://forma-api.invalid",
       },
     },
   },
