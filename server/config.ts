@@ -7,7 +7,8 @@ export interface AppConfig {
   appOrigin: string;
   authSecret: string;
   workerSharedSecret: string;
-  resendApiKey?: string;
+  cloudflareEmailApiToken?: string;
+  cloudflareAccountId?: string;
   emailFrom: string;
   emailSinkEnabled: boolean;
   /** Raises only per-auth-path limits in isolated test harnesses. */
@@ -30,7 +31,11 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
     APP_ORIGIN: z.string().url().transform(parseOrigin),
     AUTH_SECRET: z.string().min(32),
     ORIGIN_SHARED_SECRET: z.string().min(32),
-    RESEND_API_KEY: z.string().min(1).optional(),
+    CLOUDFLARE_EMAIL_API_TOKEN: z.string().min(1).optional(),
+    CLOUDFLARE_ACCOUNT_ID: z
+      .string()
+      .regex(/^[a-f0-9]{32}$/i)
+      .optional(),
     EMAIL_FROM: z.string().min(3).default("FORMA <accounts@forma.test>"),
     EMAIL_SINK_ENABLED: z.enum(["true", "false"]).optional(),
   });
@@ -41,9 +46,14 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
     if (!parsed.APP_ORIGIN.startsWith("https://")) {
       throw new Error("Production APP_ORIGIN must use HTTPS");
     }
-    if (!parsed.RESEND_API_KEY) {
+    if (!parsed.CLOUDFLARE_EMAIL_API_TOKEN) {
       throw new Error(
-        "Production requires RESEND_API_KEY for account email delivery",
+        "Production requires CLOUDFLARE_EMAIL_API_TOKEN for account email delivery",
+      );
+    }
+    if (!parsed.CLOUDFLARE_ACCOUNT_ID) {
+      throw new Error(
+        "Production requires CLOUDFLARE_ACCOUNT_ID for account email delivery",
       );
     }
     if (emailSinkEnabled) {
@@ -68,7 +78,8 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
     appOrigin: parsed.APP_ORIGIN,
     authSecret: parsed.AUTH_SECRET,
     workerSharedSecret: parsed.ORIGIN_SHARED_SECRET,
-    resendApiKey: parsed.RESEND_API_KEY,
+    cloudflareEmailApiToken: parsed.CLOUDFLARE_EMAIL_API_TOKEN,
+    cloudflareAccountId: parsed.CLOUDFLARE_ACCOUNT_ID,
     emailFrom: parsed.EMAIL_FROM,
     emailSinkEnabled: environment !== "production" && emailSinkEnabled,
   };
