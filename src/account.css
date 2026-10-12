@@ -474,6 +474,8 @@
 }
 .account-section {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
   gap: 12px;
 }
 .account-section-heading {
@@ -492,6 +494,7 @@
 }
 .account-settings-form {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 13px;
 }
 .account-settings-title {
@@ -520,6 +523,7 @@
 .account-inline-form label,
 .account-delete-confirm label {
   display: grid;
+  min-width: 0;
   gap: 6px;
   color: #343b36;
   font-size: 11px;
@@ -544,6 +548,7 @@
 }
 .account-form-foot {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
@@ -553,6 +558,10 @@
 .account-form-intro {
   color: var(--ac-muted);
   font-size: 10px;
+}
+.account-form-foot > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .account-form-intro {
   margin-top: -8px;

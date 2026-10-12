@@ -358,8 +358,10 @@ test("local training migration requires review and leaves the browser copy intac
 
 test("profile goal save persists and cancel discards an unapplied edit", async ({
   page,
-}) => {
-  const email = `profile-${stamp()}@example.test`;
+}, testInfo) => {
+  const localPart = `profile-${stamp().replaceAll("-", "")}`.padEnd(43, "x");
+  const email = `${localPart}@example.test`;
+  expect(email).toHaveLength(56);
   const memberId = await createVerifiedAccount(page, "Profile Member", email);
   await clickMainNavigation(page, "Account");
   await page.getByRole("button", { name: "Profile", exact: true }).click();
@@ -432,10 +434,48 @@ test("profile goal save persists and cancel discards an unapplied edit", async (
           ),
         )
         .toBe(true);
+      if (process.env.FORMA_CAPTURE_ACCOUNT_LAYOUT === "1") {
+        const navigationToggle = page.getByRole("button", {
+          name: "Toggle navigation",
+        });
+        if (
+          (await navigationToggle.isVisible()) &&
+          (await navigationToggle.getAttribute("aria-expanded")) === "true"
+        ) {
+          await navigationToggle.click();
+        }
+        const dismissNotification = page.getByRole("button", {
+          name: "Dismiss notification",
+        });
+        if (await dismissNotification.isVisible()) {
+          await dismissNotification.click();
+        }
+        await page.screenshot({
+          path: testInfo.outputPath(`account-profile-${width}.png`),
+          fullPage: true,
+        });
+      }
     } catch (error) {
       const layout = await page.evaluate(() => ({
         documentWidth: document.documentElement.scrollWidth,
+        bodyWidth: document.body.scrollWidth,
         viewportWidth: innerWidth,
+        documentOverflowX: getComputedStyle(document.documentElement).overflowX,
+        bodyOverflowX: getComputedStyle(document.body).overflowX,
+        sidebar: (() => {
+          const element = document.querySelector(".sidebar");
+          if (!element) return null;
+          const rect = element.getBoundingClientRect();
+          const style = getComputedStyle(element);
+          return {
+            left: Math.round(rect.left),
+            right: Math.round(rect.right),
+            width: Math.round(rect.width),
+            position: style.position,
+            transform: style.transform,
+            overflowX: style.overflowX,
+          };
+        })(),
         offenders: [...document.querySelectorAll("body *")]
           .map((element) => {
             const rect = element.getBoundingClientRect();
@@ -447,9 +487,12 @@ test("profile goal save persists and cancel discards an unapplied edit", async (
               left: Math.round(rect.left),
               right: Math.round(rect.right),
               width: Math.round(rect.width),
+              display: getComputedStyle(element).display,
+              position: getComputedStyle(element).position,
             };
           })
-          .filter(({ left, right }) => left < 0 || right > innerWidth)
+          .filter(({ right }) => right > innerWidth + 1)
+          .sort((a, b) => b.right - a.right)
           .slice(0, 20),
       }));
       throw new Error(
@@ -460,6 +503,22 @@ test("profile goal save persists and cancel discards an unapplied edit", async (
     await expect(
       page.getByRole("heading", { name: "Your profile" }),
     ).toBeVisible();
+    const emailInput = page.getByLabel("New email address", { exact: true });
+    const emailSubmit = page.getByRole("button", {
+      name: "Send verification",
+      exact: true,
+    });
+    await expect(emailInput).toBeVisible();
+    await expect(emailSubmit).toBeVisible();
+    for (const control of [emailInput, emailSubmit]) {
+      expect(
+        await control.evaluate((element) => {
+          const rect = element.getBoundingClientRect();
+          return rect.left >= 0 && rect.right <= window.innerWidth;
+        }),
+        `Profile email control should fit at ${width}px`,
+      ).toBe(true);
+    }
     if (width === 320 || width === 1536) {
       await page.addScriptTag({ path: axePath });
       const violations = await page.evaluate(async () => {
