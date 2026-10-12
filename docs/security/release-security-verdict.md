@@ -1,0 +1,87 @@
+# Release security verdict
+
+[Back to security overview](README.md)
+
+| Field      | Value                                                                                              |
+| ---------- | -------------------------------------------------------------------------------------------------- |
+| Date       | 2026-10-12 (Australia/Sydney)                                                                      |
+| Baseline   | `ca328a16efd73401e6c98daab0d70f34398a0340`                                                         |
+| Fix commit | `6f26a09` and `2f8407c` on `security/red-team-hardening` (local; not merged or deployed)           |
+| Decision   | **NO-GO** for inviting real members. **GO** for continued work on an isolated staging environment. |
+
+## Gates
+
+| Gate | Requirement                                             | Result                                   | Evidence and reason                                                                                                                                                |
+| ---- | ------------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| S01  | No known exploitable Critical vulnerabilities           | **PASS**                                 | None found                                                                                                                                                         |
+| S02  | No known exploitable High vulnerabilities               | **PASS**                                 | FS-11 fixed and retested; MON-01 (no alerting) is a High-rated gap, not an exploitable vulnerability, and is carried by S16                                        |
+| S03  | Authentication bypass tests pass                        | **PASS**                                 | `auth.test.ts`, RT-04–RT-19                                                                                                                                        |
+| S04  | Member authorisation isolation tests pass               | **PASS**                                 | `security.test.ts`, `workspace.test.ts`, `accounts-security.spec.js`, independent re-attack                                                                        |
+| S05  | Session and MFA security tests pass                     | **PASS**                                 | RT-05, RT-10, RT-11, RT-16, TOTP replay and lockout; MFA is optional by design (AUTH-13 FAIL, owner decision)                                                      |
+| S06  | CSRF, XSS and injection protections pass                | **PASS**                                 | Origin and `Sec-Fetch-Site` checks, literal rendering, parameterised SQL, JSON-only auth bodies                                                                    |
+| S07  | API validation and business-logic abuse tests pass      | **PASS**                                 | FE-01, FE-03, RT-07, RT-09, concurrency tests                                                                                                                      |
+| S08  | Cloudflare Worker gateway security tests pass           | **PASS**                                 | 19 Worker tests including EDGE-01–EDGE-08 (local handler, controlled upstream)                                                                                     |
+| S09  | Cloudflare Access and Tunnel protection verified        | **BLOCKED**                              | No access to the Cloudflare account; checks listed in [Cloudflare](cloudflare.md)                                                                                  |
+| S10  | Private Droplet ingress restrictions verified           | **BLOCKED**                              | No access to the Droplet or DigitalOcean firewall                                                                                                                  |
+| S11  | PostgreSQL permissions and isolation verified           | **PASS**                                 | Real bootstrap, migrations and grants executed on PostgreSQL 18.4; runtime-role probes; app run as runtime role. The production database itself was not inspected. |
+| S12  | Secrets exposure and rotation controls reviewed         | **BLOCKED**                              | Repository and history clean (gitleaks); rotation of live secrets cannot be exercised; secrets still in container env (R-03)                                       |
+| S13  | CI/CD and dependency security checks pass               | **PASS**                                 | npm audit, OSV, gitleaks, Semgrep and SBOM pass locally from the CI's pinned images; the updated workflow has not yet run on GitHub                                |
+| S14  | Backup and isolated restore test passes                 | **BLOCKED**                              | No off-host archive or restore drill; archives unsigned (R-01)                                                                                                     |
+| S15  | Data migration and cross-device sync integrity verified | **PASS**                                 | Unit and browser sync suites, FE-03, FE-04, conflict and retry journeys (local test API)                                                                           |
+| S16  | Security monitoring and critical alerts verified        | **FAIL**                                 | No alerting pipeline exists; detection requirements documented in [incident response](incident-response.md)                                                        |
+| S17  | Full functional regression suite passes                 | **PASS** (with a pre-existing exception) | See below                                                                                                                                                          |
+| S18  | Staging production-artifact security smoke tests pass   | **BLOCKED**                              | No staging Worker, Tunnel or Droplet; the production build was tested only against the local isolated API                                                          |
+| S19  | Security documentation matches implementation           | **PASS**                                 | This folder, written against `2f8407c`; `npm run docs:check` passes                                                                                                |
+| S20  | Lead independent final review completed                 | **PASS**                                 | Lead review of every fix plus two independent retests of the fixes                                                                                                 |
+
+**Summary:** 13 PASS, 1 PASS with exception, 1 FAIL, 5 BLOCKED. A BLOCKED or
+FAILED mandatory gate prevents GO.
+
+## S17 detail
+
+Results on the final code (`2f8407c`). This host was heavily loaded by
+unrelated processes (load average about 13), so some full-suite runs hit
+30-second timeouts; every such test was re-run with one worker and passed.
+
+| Suite                             | Result                                                                                                                                                                                                          |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Server, real PostgreSQL           | 44/44                                                                                                                                                                                                           |
+| Worker                            | 19/19                                                                                                                                                                                                           |
+| Unit                              | 43/43                                                                                                                                                                                                           |
+| Account browser, production build | 45/45 (and in two earlier runs)                                                                                                                                                                                 |
+| Account browser, development      | 43/45 under load; the 2 Firefox timeouts pass with one worker                                                                                                                                                   |
+| Guest browser, production build   | 19/20 under load; the Firefox timeout passes with one worker (20/20 in an earlier run)                                                                                                                          |
+| Guest browser, development        | 226/237 under load. 6 timeouts and one timer assertion pass with one worker. The 5 WebKit keyboard-focus assertions **also fail on the untouched baseline** on this macOS host and are not caused by this work. |
+
+Before release, run the full CI on GitHub-hosted runners and confirm the five
+WebKit focus tests there.
+
+## Required before GO
+
+1. Run every BLOCKED check against an isolated staging environment: Access
+   strict service tokens and Service Auth policy, Tunnel ingress and DNS,
+   Droplet firewall and listeners, secret rotation, and production-artifact
+   smoke tests through the real Worker.
+2. Implement security alerting for the signals in
+   [incident response](incident-response.md) and trigger each once in staging.
+3. Sign backups and complete an isolated restore drill from an off-host archive.
+4. Decide on the open owner items: breached-password blocklist (R-10), MFA
+   policy and recovery-code hashing (R-20), email-link lifetimes (R-19), the
+   accepted lockout trade-off (R-08), and branch protection for `main`.
+5. Commission an independent human penetration test of staging.
+
+## Metrics
+
+| Measure                                             | Value                                                                                                                                                                                                                                                                                                                                                   |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Findings verified                                   | 27 fixed (1 High, 11 Medium, 14 Low, 1 Info); 18 residual items in the [report](penetration-test-report.md#residual-risk)                                                                                                                                                                                                                               |
+| Findings fixed and independently retested           | 27 of 27 by regression or execution evidence. Independently attacked after remediation: FS-01–FS-11, FS-13–FS-24 (two rounds). Not independently re-attacked: FS-12 (generic errors), FS-25–FS-27 (configuration and CI, verified by execution), and the final round of fixes from the second retest (verified by RT-14, RT-18, RT-19 and lead review). |
+| Behavioural regression tests failing before the fix | 29 of 29 (RT-01–RT-19 without RT-04b, EDGE-01–EDGE-07, FE-01, FE-03, FE-04); RT-18 and RT-19 checked against the first fix commit `6f26a09`; EDGE-08 added later                                                                                                                                                                                        |
+| API routes inventoried with an authorisation rule   | 8 of 8 application routes plus the auth allowlist (17 POST, 4 GET, 1 token GET pattern)                                                                                                                                                                                                                                                                 |
+| Member-isolation attack scenarios                   | 0 succeeded                                                                                                                                                                                                                                                                                                                                             |
+| Coverage matrix                                     | 61 controls: 52 PASS, 5 FAIL, 4 BLOCKED ([matrix](security-coverage-matrix.csv))                                                                                                                                                                                                                                                                        |
+| ASVS 5.0.0 L1+L2 requirements                       | 253 mapped; 178 applicable: 68 Verified, 53 Implemented-untested, 28 Partial, 20 Gap, 9 Blocked ([mapping](asvs-l2-mapping.csv))                                                                                                                                                                                                                        |
+| Production-artifact verification against staging    | Not performed (BLOCKED)                                                                                                                                                                                                                                                                                                                                 |
+
+Percentages are not reported, because counting only verified controls would
+overstate assurance. Every gap above is visible in the linked files.

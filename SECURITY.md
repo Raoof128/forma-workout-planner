@@ -12,6 +12,9 @@ reports, include the route and whether the request used a synthetic member,
 without including cookies, password-reset links, MFA recovery codes, or member
 payloads.
 
+The latest security assessment, threat model, residual risks and release
+verdict are in [docs/security](docs/security/README.md).
+
 The account architecture and known deployment boundaries are documented in
 [account security and database notes](docs/accounts/database.md),
 [infrastructure operations](docs/accounts-infrastructure.md), and

@@ -38,32 +38,35 @@ Both configurations set `retries: 0`, so failures are reported on the first run 
 
 ## Test organization
 
-| File                                | Coverage                                                                                                                                                         |
-| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `unit/persistence.test.js`          | Lock failures, revisions, preservation, stale restores, concurrency, and rollback behavior                                                                       |
-| `unit/persistence-release.test.js`  | Added persistence-boundary cases for temporary mode and commit application                                                                                       |
-| `unit/storage.test.js`              | Backup limits, schema compatibility, timestamps, IDs, dates, and calculations                                                                                    |
-| `unit/domain-release.test.js`       | Completed-set volume, bodyweight behavior, empty aggregates, and estimated 1RM precision                                                                         |
-| `unit/security-release.test.js`     | Prototype-shaped fields, malformed/schema-invalid backups, and pre-read size limits                                                                              |
-| `unit/docs-check.test.js`           | Inline-code heading anchors and exclusion of fenced examples                                                                                                     |
-| `tests/persistence.spec.js`         | Browser integration for rejected locks, temporary restore, UUID fallback, stale routine start, fractional weights, timer bounds, and repeated simultaneous edits |
-| `tests/persistence-release.spec.js` | Cross-tab restore conflicts and selection races where an older valid or invalid file finishes after a newer selection                                            |
-| `tests/workflows.spec.js`           | Routine creation, exercise search, logging, history, progress, preferences, and mobile flow                                                                      |
-| `tests/workout-release.spec.js`     | Set validation, finish/discard choices, timer persistence, real-time timer smoke, history conflicts, and large-history calculations                              |
-| `tests/regressions.spec.js`         | Cross-tab writes, stale editors, invalid storage, recovery, rapid input, timer persistence, keyboard behavior, and backup round trips                            |
-| `tests/ui-controls.spec.js`         | Reachable UI controls and navigation actions                                                                                                                     |
-| `tests/ui-coverage-gaps.spec.js`    | Shell shortcuts, empty-state actions, active resume, cancellation, invalid forms, and dialog dismissal                                                           |
-| `tests/security-release.spec.js`    | Malformed imports, literal untrusted text, external-request checks, and download failure feedback                                                                |
-| `tests/responsive.spec.js`          | Nine viewport widths from 320 to 1920 px, large content, short landscape navigation, local fonts, reduced motion, and history ordering                           |
-| `tests/accessibility.spec.js`       | axe scans of main pages and dialogs on desktop and mobile                                                                                                        |
-| `tests/production.spec.js`          | Production-build load and representative desktop/mobile workflows across Chromium, Firefox, and WebKit projects                                                  |
-| `server/tests/auth.test.ts`         | Better Auth verification, password recovery, TOTP/recovery codes, session revocation, and account deletion using PostgreSQL and test email sink                  |
-| `server/tests/security.test.ts`     | Worker-origin credential and Origin checks, forged sessions, and two-member workspace/export isolation using PostgreSQL                                          |
-| `server/tests/workspace.test.ts`    | PostgreSQL ownership, revision conflicts, concurrent writes, idempotency retention, validation, timestamps, and cascade                                          |
-| `worker/tests/gateway.test.ts`      | Fixed upstream allow-list, service-header filtering, redirects, body limits, and error handling                                                                  |
-| `tests/accounts-ui.spec.js`         | Account screens and workflows against isolated test services; consult release readiness for final outcomes                                                       |
-| `tests/accounts-security.spec.js`   | Browser-facing account security flows against the isolated test API                                                                                              |
-| `tests/helpers.js`                  | Screenshot paths and font/animation settling                                                                                                                     |
+| File                                | Coverage                                                                                                                                                                 |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `unit/persistence.test.js`          | Lock failures, revisions, preservation, stale restores, concurrency, and rollback behavior                                                                               |
+| `unit/persistence-release.test.js`  | Added persistence-boundary cases for temporary mode and commit application                                                                                               |
+| `unit/storage.test.js`              | Backup limits, schema compatibility, timestamps, IDs, dates, and calculations                                                                                            |
+| `unit/domain-release.test.js`       | Completed-set volume, bodyweight behavior, empty aggregates, and estimated 1RM precision                                                                                 |
+| `unit/security-release.test.js`     | Prototype-shaped fields, malformed/schema-invalid backups, and pre-read size limits                                                                                      |
+| `unit/docs-check.test.js`           | Inline-code heading anchors and exclusion of fenced examples                                                                                                             |
+| `tests/persistence.spec.js`         | Browser integration for rejected locks, temporary restore, UUID fallback, stale routine start, fractional weights, timer bounds, and repeated simultaneous edits         |
+| `tests/persistence-release.spec.js` | Cross-tab restore conflicts and selection races where an older valid or invalid file finishes after a newer selection                                                    |
+| `tests/workflows.spec.js`           | Routine creation, exercise search, logging, history, progress, preferences, and mobile flow                                                                              |
+| `tests/workout-release.spec.js`     | Set validation, finish/discard choices, timer persistence, real-time timer smoke, history conflicts, and large-history calculations                                      |
+| `tests/regressions.spec.js`         | Cross-tab writes, stale editors, invalid storage, recovery, rapid input, timer persistence, keyboard behavior, and backup round trips                                    |
+| `tests/ui-controls.spec.js`         | Reachable UI controls and navigation actions                                                                                                                             |
+| `tests/ui-coverage-gaps.spec.js`    | Shell shortcuts, empty-state actions, active resume, cancellation, invalid forms, and dialog dismissal                                                                   |
+| `tests/security-release.spec.js`    | Malformed imports, literal untrusted text, external-request checks, and download failure feedback                                                                        |
+| `tests/responsive.spec.js`          | Nine viewport widths from 320 to 1920 px, large content, short landscape navigation, local fonts, reduced motion, and history ordering                                   |
+| `tests/accessibility.spec.js`       | axe scans of main pages and dialogs on desktop and mobile                                                                                                                |
+| `tests/production.spec.js`          | Production-build load and representative desktop/mobile workflows across Chromium, Firefox, and WebKit projects                                                          |
+| `server/tests/auth.test.ts`         | Better Auth verification, password recovery, TOTP/recovery codes, session revocation, and account deletion using PostgreSQL and test email sink                          |
+| `server/tests/security.test.ts`     | Worker-origin credential and Origin checks, forged sessions, and two-member workspace/export isolation using PostgreSQL                                                  |
+| `server/tests/workspace.test.ts`    | PostgreSQL ownership, revision conflicts, concurrent writes, idempotency retention, validation, timestamps, and cascade                                                  |
+| `worker/tests/gateway.test.ts`      | Fixed upstream allow-list, service-header filtering, redirects, body limits, and error handling                                                                          |
+| `server/tests/redteam.test.ts`      | Red-team regressions RT-01–RT-19: gateway bypass, redirects, per-account and per-member password limits, mail budget, write budget, endpoint allowlist, session lifetime |
+| `worker/tests/redteam.test.ts`      | Red-team regressions EDGE-01–EDGE-08: body caps, header and cookie allowlists, API security headers, cross-site and client-IP checks                                     |
+| `unit/redteam-release.test.js`      | Red-team regressions FE-01, FE-03, FE-04: workspace size bounds, restore pinned to the reviewed revision, one-time guest import                                          |
+| `tests/accounts-ui.spec.js`         | Account screens and workflows against isolated test services; consult release readiness for final outcomes                                                               |
+| `tests/accounts-security.spec.js`   | Browser-facing account security flows against the isolated test API                                                                                                      |
+| `tests/helpers.js`                  | Screenshot paths and font/animation settling                                                                                                                             |
 
 Run a specific development browser or scenario:
 

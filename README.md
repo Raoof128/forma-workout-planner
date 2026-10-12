@@ -78,6 +78,11 @@ member. Workspace API responses are not cached. Review the
 [database ownership model](docs/accounts/database.md) and
 [security reporting policy](SECURITY.md).
 
+A red-team engagement on 2026-10-12 hardened the account stack and recorded
+its findings, tests and residual risks in [docs/security](docs/security/README.md).
+Its verdict is **NO-GO for real members** until live Cloudflare, Droplet,
+backup-restore and monitoring checks pass.
+
 Local guest mode stores data in browser `localStorage`; it is specific to the
 browser profile and origin and is not encrypted. Export a backup before clearing
 site data or changing browsers. The account interface supports validated import
@@ -100,6 +105,7 @@ restore drill are still deployment owner tasks.
 | [Infrastructure](docs/accounts-infrastructure.md)       | Worker, Tunnel/Access, private-host topology, and source checks |
 | [Member sync](docs/member-data-sync.md)                 | Save, retry, import/export, and conflict handling               |
 | [Account readiness](docs/accounts/release-readiness.md) | Release gates and evidence for this branch                      |
+| [Security](docs/security/README.md)                     | Threat model, red-team findings, coverage and release verdict   |
 | [Sources](docs/accounts/sources.md)                     | Official source retrieval status and limits                     |
 | [User guide](docs/user-guide.md)                        | Workout use and legacy browser backup guidance                  |
 | [Data model](docs/data-model.md)                        | Version 1 workspace shape and validation                        |
