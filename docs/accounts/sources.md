@@ -20,6 +20,26 @@ identified URL is not mistaken for a source that was successfully read.
 | Drizzle ORM                      | [Drizzle ORM PostgreSQL documentation](https://orm.drizzle.team/docs/get-started-postgresql)                                                                                                                                                                                                                                   | `drizzle-orm@0.45.4` is in the dependency set. An official README/source retrieval attempt returned HTTP 404. Current workspace and auth data access use parameterized PostgreSQL queries to retain explicit transaction/locking semantics; this repository does not claim an ORM-backed schema.                                                                          |
 | Security guidance                | [OWASP ASVS](https://owasp.org/projects/asvs/), [OWASP API Security Top 10](https://owasp.org/www-project-api-security/), [OWASP CSRF Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html), [NIST SP 800-63B-4](https://pages.nist.gov/800-63-4/sp800-63b.html) | References reviewed by the security test owner on 2026-10-12; supplied source URLs were not retrieved as raw documents. Guessed raw GitHub paths for ASVS and NIST returned 404. This repository does not claim ASVS verification, NIST conformance, or certification. Review operational controls against the deployment configuration actually used.                    |
 
+## Cloudflare Email Service update
+
+The owner selected Cloudflare Email Service for account mail. Official source
+files were retrieved with HTTP 200 on 12 October 2026 from
+`cloudflare/cloudflare-docs`, branch `production`, under
+`src/content/docs/email-service/`. The rendered documentation host returned 403
+from this runtime; the official raw repository was readable.
+
+- [Overview](https://developers.cloudflare.com/email-service/): transactional sending is Beta; REST works from a Node backend.
+- [REST contract](https://developers.cloudflare.com/email-service/api/send-emails/rest-api/): fixed account endpoint, HTML/text body, delivered/queued/permanent-bounce response groups and error semantics.
+- [Sending setup](https://developers.cloudflare.com/email-service/get-started/send-emails/) and [domains](https://developers.cloudflare.com/email-service/configuration/domains/): onboard the sending domain and use provider-generated DNS records.
+- [Pricing](https://developers.cloudflare.com/email-service/platform/pricing/): Workers Paid required for arbitrary recipients; 3,000 included messages, then $0.35 per 1,000 at retrieval time.
+- [Limits](https://developers.cloudflare.com/email-service/platform/limits/): verify account-specific quotas before release.
+
+Live inspection found an existing sending zone but no Email Sending permission
+in the supplied infrastructure token. A newly minted dedicated Read/Write mail
+token later reached recipient validation using an invalid recipient, without
+sending a message. Source review and local adapter tests do not establish
+domain onboarding or inbox delivery.
+
 Supporting snapshots and retrieval logs reside in the execution workspace at
 `/workspace/forma-accounts-evidence/`; they are not application dependencies.
 Check official docs again before a future deployment because services, limits,

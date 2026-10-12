@@ -1,18 +1,45 @@
 # Account service operations
 
 This runbook describes the current repository configuration. It does not claim
-that a production host, Cloudflare account, custom domain, email provider,
-backup remote, or staging deployment has been configured.
+that a production host, backup remote, or application staging deployment has
+been configured. The isolated mail setup and provider acceptance are recorded below.
 
-### Current external-access blocker
+### Current external-access blockers
 
-Authorized Cloudflare and Droplet credentials were bound in the runtime for
-read-only staging inventory. Cloudflare token verification succeeded, but the
-Cloudflare accounts API returned HTTP 403 / error 9109 because the token is
-location-restricted from this runtime; no account, zone, Worker, Tunnel, or
-Access-app inventory was returned. Droplet SSH returned connection refused.
-No external resources were created or changed. The sanitized probe result is
-recorded at `/workspace/forma-private/cloudflare-inventory.json`.
+The four original infrastructure bindings are present in the runtime and match
+the supplied `.env`. The owner subsequently supplied a burner SSH key and
+explicitly requested a local environment file. `/workspace/.env`, outside this
+repository, now contains those bindings plus `DROPLET_SSH_USER=eoiadmin`,
+`DROPLET_SSH_PORT=22`, and the multiline `DROPLET_SSH_PRIVATE_KEY`, with mode
+0600. OpenSSH parsed the key and its fingerprint matched the owner's reference.
+This local file is not evidence that the platform imported the key into its
+managed secret store. Do not copy it into Git, a Docker build context, or Vite.
+
+A read-only SSH attempt with the supplied key and normal process permissions
+still returned connection refused before authentication. The owner reports the
+same host is reachable from their Mac on port 22; no alternate port or bastion
+exists. This establishes an environment-specific connectivity blocker, without
+proving whether outbound policy or a DigitalOcean cloud firewall causes it.
+The supplied password is documented for the DigitalOcean web console only.
+Do not enable password SSH or change unrelated host services to work around it.
+
+Cloudflare Worker, Tunnel, Access-app and DNS inventory reads succeeded in the
+selected account. Existing `persiancommons.com` mail settings were preserved.
+
+Cloudflare enabled `mail-staging-forma.raoufabedini.dev` and created its six
+provider-required DNS records, all matching the provider configuration. No apex
+DNS, existing mail routing, unrelated backend, or paid plan was changed. All
+temporary provisioning tokens were revoked; the dedicated account-scoped Email
+Sending Read/Write token remains in the protected local `.env`.
+
+On 12 October 2026, the owner-authorized single template test received HTTP 200
+with `success=true`, the controlled recipient in `queued`, no permanent bounce,
+and no provider errors. The subject is `[FORMA STAGING DELIVERY TEST] Approved
+email template`; no account was created and its link cannot verify an account.
+This establishes provider acceptance, not inbox receipt. Gmail access is not
+available through this session's tools. See [domain evidence](email-domain-onboarding.json)
+and [mail acceptance evidence](mail-delivery-test.json). A hosted application
+lifecycle, public DNS verification and actual inbox receipt remain unverified.
 
 ## Local development and test services
 
@@ -74,7 +101,13 @@ docker compose -p "$COMPOSE_PROJECT_NAME" --env-file "$COMPOSE_ENV_FILE" \
   -f ops/compose.yaml build api
 docker compose -p "$COMPOSE_PROJECT_NAME" --env-file "$COMPOSE_ENV_FILE" \
   -f ops/compose.yaml --profile migrate run --rm migrate
+./ops/grant-runtime-access.sh
 ```
+
+Grant runtime access after migrations, before starting the API. The grant script
+allows application-table DML and excludes the migration ledger and schema DDL.
+The isolated [runtime-role evidence](runtime-role-evidence.json) verifies these
+boundaries against PostgreSQL; it does not establish live staging privileges.
 
 The migration runner serializes concurrent invocations with a PostgreSQL
 advisory lock and records a SHA-256 checksum for each applied migration. It
@@ -89,6 +122,23 @@ are described in the [database reference](database.md).
 committed `.invalid` origins are deliberate placeholders. Before deploying,
 replace them with owned HTTPS origins and create DNS, Worker custom domains,
 Cloudflare Tunnel and Access policy resources in the intended account.
+
+Read-only discovery on 2026-10-12 confirmed these candidate staging names are
+unused in the owner's `raoufabedini.dev` zone:
+
+- Application: `staging-forma.raoufabedini.dev`.
+- Protected origin: `api-staging-forma.raoufabedini.dev`.
+
+Use a new `forma-staging` Worker, a dedicated Tunnel, a separate Access
+application with a Service Auth policy and token, and DNS records limited to
+these two names. Recheck absence immediately before creating them. Do not
+reuse or change existing applications, hostnames, credentials, databases,
+firewalls, or tunnels. Resource read access succeeded for this account, but
+write permission has not been exercised. Workers subdomain lookup returned
+403; a `workers.dev` address is therefore not established. No resources were
+created while host connectivity and production email configuration remain
+unavailable. Provision the isolated backend and verify the protected origin
+before publishing the public application.
 
 The Worker accepts the explicit routes and methods in its allowlist, including `/api/health`, approved `/api/auth/*` endpoints, `/api/account/sessions` and its revocation routes, `/api/workspace`, and `/api/workspace/export`. Set `BACKEND_URL` to the fixed backend HTTPS origin
 that resolves through the Tunnel and requires an Access Service Auth policy.
@@ -125,6 +175,36 @@ are configured. This repository's current `.invalid` hostnames are not
 deployable. See the [infrastructure guide](../accounts-infrastructure.md) for
 the request boundary and confirmed local Worker checks.
 
+## Cloudflare transactional email
+
+Cloudflare Email Service Email Sending is in Beta as of the source review on
+12 October 2026. Sending to arbitrary new members requires Workers Paid and an
+onboarded sending domain; classic Email Routing's verified-destination sending
+is insufficient for account registration. The official price lists 3,000
+messages per account/month included, then $0.35 per 1,000; check the current
+account plan and daily reputation-based limits before activation.
+
+The isolated `mail-staging-forma.raoufabedini.dev` subdomain is now configured, with sender
+`FORMA <accounts@mail-staging-forma.raoufabedini.dev>`. Onboard that exact
+subdomain in Email Service when reproducing setup and obtain its generated DNS records. Inspect and
+add only its own bounce MX/SPF, DKIM and DMARC records; never replace apex mail
+records or the existing `persiancommons.com` sender setup. Verify records and
+sending status before enabling auth email. Do not invent DKIM keys or reuse
+another application's credentials. Cloudflare does not document per-domain
+token scoping here, so review the account-wide capability before binding a
+new sending token to a shared host.
+
+Set `CLOUDFLARE_ACCOUNT_ID`, a dedicated `CLOUDFLARE_EMAIL_API_TOKEN` with
+Email Sending Read/Write, and the onboarded `EMAIL_FROM` only on the API runtime.
+Do not reuse the broad infrastructure token as the application mail token.
+The backend calls the fixed Cloudflare REST endpoint over HTTPS and sends
+branded HTML plus a plaintext alternative. Treat a queued response as accepted
+for delivery, not proof of inbox delivery; verify actual receipt with a
+controlled staging member and test provider rejection/bounce handling.
+The four account email actions are verification, password reset, email-change
+approval, and deletion confirmation. Template previews use synthetic links;
+they do not prove rendering in every email client or real provider delivery.
+
 ## Environment variables
 
 `[.env.example](../../.env.example)` lists backend, email, database-role,
@@ -140,7 +220,7 @@ environment. Worker `ACCESS_CLIENT_ID`, `ACCESS_CLIENT_SECRET`, and
 | `ORIGIN_SHARED_SECRET`                     | API                  | Worker-to-origin shared service credential; matches `FORMA_WORKER_SECRET`.                           |
 | `DATABASE_URL`                             | API                  | Runtime PostgreSQL role.                                                                             |
 | `MIGRATION_DATABASE_URL`                   | Migration service    | Separate schema-owner role.                                                                          |
-| `EMAIL_FROM`, `RESEND_API_KEY`             | API                  | Verified transactional mail sender and provider key. Production config rejects the local email sink. |
+| `EMAIL_FROM`, `CLOUDFLARE_EMAIL_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` | API | Onboarded transactional sender, dedicated Email Sending: Edit token, and account ID. Production rejects the local email sink. |
 | `POSTGRES_ADMIN_PASSWORD_FILE`             | Compose DB bootstrap | Protected file consumed by the PostgreSQL container.                                                 |
 | `CLOUDFLARE_TUNNEL_TOKEN_FILE`             | cloudflared          | Protected connector token file.                                                                      |
 | `ACCESS_CLIENT_ID`, `ACCESS_CLIENT_SECRET` | Worker               | Access service token for the origin policy.                                                          |

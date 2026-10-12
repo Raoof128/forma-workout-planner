@@ -1,0 +1,17 @@
+{
+  "attempted_at": "2026-10-12T03:38:51.410Z",
+  "recipient": "owner-provided controlled inbox",
+  "subject": "[FORMA STAGING DELIVERY TEST] Approved email template",
+  "real_account_link": false,
+  "attempts": 1,
+  "prior_transport_failure": "Direct Node fetch DNS EAI_AGAIN before connection; corrected with NODE_USE_ENV_PROXY=1",
+  "status": "response_received",
+  "http_status": 200,
+  "success": true,
+  "delivered": false,
+  "queued": true,
+  "permanent_bounce": false,
+  "error_codes": [],
+  "error_messages": [],
+  "inbox_receipt": "unverified; Gmail connector unavailable"
+}

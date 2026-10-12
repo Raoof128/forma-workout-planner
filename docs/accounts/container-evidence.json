@@ -1,0 +1,14 @@
+{
+  "image": "forma-api:local-test",
+  "image_digest": "sha256:c029c9aa9c69b7d32d171906edc243d07e830e09e112ad7298615a6b8e136c30",
+  "docker_build": "passed",
+  "tls_verification": "strict; configured proxy CA mounted",
+  "runtime_user": "forma (UID/GID 10001)",
+  "read_only_rootfs": true,
+  "compose_project": "forma-role-proof (isolated disposable project)",
+  "database": "isolated postgres:18.4-alpine container",
+  "api_health_http_status": 200,
+  "compose_health": "healthy",
+  "runtime_role_proof": "/workspace/forma-accounts-evidence/runtime-role-proof.json",
+  "production_deploy": false
+}

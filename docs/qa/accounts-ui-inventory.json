@@ -5,7 +5,9 @@
   "statusLegend": {
     "NOT TESTED": "No interaction evidence has been recorded.",
     "PARTIAL": "A focused browser test covered only the evidence named here.",
-    "PASS": "The complete control path, including success and failure handling, was verified against its required backend state."
+    "PASS": "The complete control path, including success and failure handling, was verified against its required backend state.",
+    "IN PROGRESS": "The current frozen-source test run has started but has no final result yet.",
+    "INTERRUPTED": "A test run stopped before completion; it is neither a pass nor a failure result."
   },
   "controls": [
     {
@@ -16,7 +18,7 @@
       "prerequisite": "Any workspace state",
       "expected": "Opens the Account route on desktop and mobile navigation.",
       "status": "PARTIAL",
-      "evidence": "tests/accounts-ui.spec.js opens the route in Chromium."
+      "evidence": "The Account route is reachable through workspace navigation on desktop and mobile; the prior c5bd2a1 development matrix passed 45/45 across all five projects. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "auth.entry.create",
@@ -26,7 +28,7 @@
       "prerequisite": "Guest",
       "expected": "Shows registration fields and password guidance.",
       "status": "PARTIAL",
-      "evidence": "tests/accounts-ui.spec.js opens the registration form and validates the password length constraint."
+      "evidence": "The real signup journeys reach registration from the Account entry in tests/accounts-security.spec.js, tests/accounts-workouts.spec.js and tests/accounts-lifecycle.spec.js; the prior c5bd2a1 development matrix passed 45/45."
     },
     {
       "id": "auth.signup.name",
@@ -36,7 +38,7 @@
       "prerequisite": "Registration form",
       "expected": "Requires a non-empty member display name and limits it to 50 characters.",
       "status": "PARTIAL",
-      "evidence": "Filled by tests/accounts-ui.spec.js; whitespace validation and server response are NOT TESTED."
+      "evidence": "Real signup journeys fill a display name and submit successfully in the account security/workout/lifecycle specs. Whitespace and max-length failures are NOT TESTED."
     },
     {
       "id": "auth.signup.email",
@@ -46,7 +48,7 @@
       "prerequisite": "Registration form",
       "expected": "Uses native email validation and submits the address with registration.",
       "status": "PARTIAL",
-      "evidence": "Filled by tests/accounts-ui.spec.js; server response is NOT TESTED."
+      "evidence": "Real signup journeys fill and submit a unique email in account security/workout/lifecycle specs. Invalid-email failure handling is NOT TESTED."
     },
     {
       "id": "auth.signup.password",
@@ -56,7 +58,7 @@
       "prerequisite": "Registration form",
       "expected": "Requires at least 15 characters and allows long passphrases.",
       "status": "PARTIAL",
-      "evidence": "tests/accounts-ui.spec.js confirms a short value is invalid in Chromium."
+      "evidence": "The guest UI test checks short-password native invalidity; real flows also create accounts with a long passphrase. Upper-bound failure is NOT TESTED."
     },
     {
       "id": "auth.signup.submit",
@@ -65,8 +67,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Valid registration fields",
       "expected": "Calls signUp and gives non-enumerating verification guidance.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Real account suites submit signup, receive the verification message, fetch the verify-email sink URL and follow it. Failure/duplicate-email copy is NOT TESTED."
     },
     {
       "id": "auth.signin.entry",
@@ -76,7 +78,7 @@
       "prerequisite": "Registration form",
       "expected": "Returns to sign-in mode.",
       "status": "PARTIAL",
-      "evidence": "tests/accounts-ui.spec.js returns to the Welcome back form in Chromium."
+      "evidence": "The guest flow switches back to the sign-in form and confirms its heading. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "auth.signin.email",
@@ -85,8 +87,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Sign-in form",
       "expected": "Accepts the member email for authentication.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Real account suites submit the account email and sign in successfully; invalid email failure is NOT TESTED."
     },
     {
       "id": "auth.signin.password",
@@ -95,8 +97,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Sign-in form",
       "expected": "Accepts current password with password-manager support.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Real account suites sign in with valid passphrases; empty/incorrect password form behavior is NOT TESTED here."
     },
     {
       "id": "auth.signin.submit",
@@ -105,8 +107,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Valid credentials",
       "expected": "Restores authenticated session or opens required MFA challenge.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Real account suites complete sign-in; lifecycle also reaches the MFA challenge and completes it with a recovery code. Invalid sign-in state is not fully exercised by the UI inventory."
     },
     {
       "id": "auth.verify.resend",
@@ -115,8 +117,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Sign-in form with an email address entered",
       "expected": "Requests verification email with generic response copy to avoid account enumeration.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Added to tests/accounts-ui.spec.js: submits a resend request from sign-in and asserts the generic response; The prior c5bd2a1 development matrix passed 45/45; failure-specific behavior remains untested."
     },
     {
       "id": "auth.password.forgot",
@@ -126,7 +128,7 @@
       "prerequisite": "Sign-in form",
       "expected": "Opens reset request form.",
       "status": "PARTIAL",
-      "evidence": "tests/accounts-ui.spec.js opens the reset request form in Chromium."
+      "evidence": "The guest flow opens reset mode, and lifecycle sends a real reset request and follows the emailed URL. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "auth.password.reset.email",
@@ -136,7 +138,7 @@
       "prerequisite": "Reset request form",
       "expected": "Requests a reset link without disclosing whether the account exists.",
       "status": "PARTIAL",
-      "evidence": "Presence asserted by tests/accounts-ui.spec.js; submission NOT TESTED."
+      "evidence": "Lifecycle test submits a registered email and observes the generic reset result; unknown-address UI result is NOT TESTED."
     },
     {
       "id": "auth.password.reset.submit",
@@ -145,8 +147,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Reset request form",
       "expected": "Requests reset email through Better Auth.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Lifecycle test submits reset request, follows its email URL and completes the real Better Auth password reset. Nonexistent-address submission is NOT TESTED."
     },
     {
       "id": "auth.password.new",
@@ -155,8 +157,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Valid reset token",
       "expected": "Requires at least 15 characters before resetting password.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Lifecycle test enters a valid new passphrase through the delivered reset link; short-password UI validation at the reset form is NOT TESTED."
     },
     {
       "id": "auth.password.update",
@@ -165,8 +167,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Valid reset token and password",
       "expected": "Resets password and returns to sign-in.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Lifecycle test updates the password through the delivered reset token and signs in using the new password. Invalid/expired token UI is NOT TESTED."
     },
     {
       "id": "auth.mfa.code",
@@ -175,8 +177,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Sign-in MFA challenge",
       "expected": "Accepts second-factor code without showing authenticated content early.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Lifecycle test enters a recovery code at the real MFA challenge. Authenticator-code challenge UI is NOT TESTED."
     },
     {
       "id": "auth.mfa.type-toggle",
@@ -185,8 +187,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Sign-in MFA challenge",
       "expected": "Switches between authenticator and single-use recovery code entry.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Lifecycle test switches the sign-in challenge to recovery-code entry. Switching back to authenticator-code entry is NOT TESTED."
     },
     {
       "id": "auth.mfa.verify",
@@ -195,8 +197,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Sign-in MFA challenge with valid code",
       "expected": "Completes Better Auth's second-factor step and restores the session.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Lifecycle test completes the challenge with a real one-time recovery code; rejected or reused code UI is NOT TESTED."
     },
     {
       "id": "auth.guest.continue",
@@ -205,8 +207,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Guest",
       "expected": "Returns to the guest workout overview.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The guest flow continues from the Account note and verifies the workout Overview route in the prior c5bd2a1 development matrix (45/45). Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "account.section.overview",
@@ -215,8 +217,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Authenticated member and loaded workspace",
       "expected": "Shows metrics derived from the signed-in member's workspace.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The profile workflow visits Overview, checks saved-goal metrics and follows its shortcuts; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "account.section.profile",
@@ -225,8 +227,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Authenticated member",
       "expected": "Shows editable member details and training goal.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The profile workflow edits, saves and cancels profile details; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "account.profile.name",
@@ -235,8 +237,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Profile section",
       "expected": "Updates Better Auth profile name.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "A real save verifies consistency across workspace, export, and auth identity; failed save behavior remains untested."
     },
     {
       "id": "account.profile.goal",
@@ -245,8 +247,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Profile section",
       "expected": "Persists a 1–7 sessions per week goal to member workspace.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The profile workflow test changes the weekly goal and verifies cloud persistence; the prior c5bd2a1 development matrix passed 45/45 with name consistency assertions. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "account.profile.save",
@@ -255,8 +257,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Changed valid profile or goal",
       "expected": "Saves profile and goal with success/failure feedback.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "A real save verifies goal and name persistence; failed save feedback and retry behavior remain untested."
     },
     {
       "id": "account.profile.cancel",
@@ -265,8 +267,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Profile section with an unsaved name or goal change",
       "expected": "Restores the latest saved profile and training goal without a backend write.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The profile workflow changes name and goal, cancels, verifies saved values return, and confirms there was no workspace write; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "account.email.change.address",
@@ -275,28 +277,18 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Profile section",
       "expected": "Validates new address before requesting secure verification.",
-      "status": "NOT TESTED",
-      "evidence": null
-    },
-    {
-      "id": "account.email.change.password",
-      "label": "Confirm your password",
-      "role": "textbox",
-      "source": "src/components/Account.jsx",
-      "prerequisite": "Profile section",
-      "expected": "Requires current password for email change.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The lifecycle test follows current-inbox approval and new-inbox verification. The focused Firefox layout rerun passed at 320/390/1536 with a 56-character account email; the prior c5bd2a1 development matrix passed 45/45; the built-assets matrix is pending."
     },
     {
       "id": "account.email.change.submit",
       "label": "Send verification",
       "role": "button",
       "source": "src/components/Account.jsx",
-      "prerequisite": "Valid new email and password",
-      "expected": "Requests email change and waits for address verification.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "prerequisite": "Valid new email address",
+      "expected": "Sends approval to the current inbox, then requires verification from the new inbox before the address changes.",
+      "status": "PARTIAL",
+      "evidence": "The lifecycle test follows current-inbox approval and new-inbox verification. The focused Firefox layout rerun passed at 320/390/1536 with a 56-character account email; the prior c5bd2a1 development matrix passed 45/45; the built-assets matrix is pending. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "account.section.security",
@@ -305,8 +297,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Authenticated member",
       "expected": "Shows password, MFA and sanitized sessions settings.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Lifecycle and auth-controls workflows exercise Security settings and sessions; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "account.password.current",
@@ -315,8 +307,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Security section",
       "expected": "Provides step-up proof for password change.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "tests/accounts-auth-controls.spec.js reauthenticates with the current password before changing it; The prior c5bd2a1 development matrix passed 45/45; failure-specific behavior remains untested."
     },
     {
       "id": "account.password.new",
@@ -325,8 +317,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Security section",
       "expected": "Requires at least 15 characters.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "tests/accounts-auth-controls.spec.js submits the new password and checks it can authenticate; The prior c5bd2a1 development matrix passed 45/45; failure-specific behavior remains untested."
     },
     {
       "id": "account.password.confirm",
@@ -335,8 +327,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Security section",
       "expected": "Requires a match before submission.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "tests/accounts-auth-controls.spec.js supplies matching password confirmation; The prior c5bd2a1 development matrix passed 45/45; failure-specific behavior remains untested."
     },
     {
       "id": "account.password.submit",
@@ -345,8 +337,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Valid current and matching new password",
       "expected": "Updates password and revokes other sessions.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "tests/accounts-auth-controls.spec.js verifies password update and revocation of another session; The prior c5bd2a1 development matrix passed 45/45; failure-specific behavior remains untested."
     },
     {
       "id": "account.mfa.password",
@@ -355,8 +347,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "MFA disabled",
       "expected": "Requires recent authentication before TOTP enrollment.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Lifecycle test supplies a valid password to begin real TOTP enrollment. Incorrect-password handling is NOT TESTED."
     },
     {
       "id": "account.mfa.setup",
@@ -365,8 +357,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "MFA disabled and valid password",
       "expected": "Starts TOTP setup and displays the secret only for enrollment.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Lifecycle test begins real TOTP enrollment and reads its setup key. Enrollment failure handling is NOT TESTED."
     },
     {
       "id": "account.mfa.verify.code",
@@ -375,8 +367,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "MFA enrollment started",
       "expected": "Accepts six digit TOTP code.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Lifecycle test calculates and enters a valid six-digit TOTP code to enable MFA. Invalid code handling is NOT TESTED."
     },
     {
       "id": "account.mfa.verify",
@@ -385,18 +377,18 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "MFA enrollment and valid code",
       "expected": "Confirms enrollment and exposes backup codes once.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Lifecycle test verifies TOTP and enables MFA; invalid/replayed-code UI is NOT TESTED."
     },
     {
       "id": "account.mfa.recovery",
-      "label": "View recovery codes",
+      "label": "Generate new recovery codes",
       "role": "button",
       "source": "src/components/Account.jsx",
       "prerequisite": "MFA enabled and recent password confirmation",
-      "expected": "Generates and displays recovery codes once.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "expected": "Requires password, explicitly warns it replaces all existing codes, and generates a new one-time set.",
+      "status": "PARTIAL",
+      "evidence": "tests/accounts-auth-controls.spec.js tests password-gated rotation and confirms codes change; The prior c5bd2a1 development matrix passed 45/45; failure-specific behavior remains untested."
     },
     {
       "id": "account.mfa.download",
@@ -405,8 +397,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Recovery codes visible",
       "expected": "Downloads codes as a local text file.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The lifecycle workflow downloads the recovery-code file and verifies the file contains a valid issued code; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "account.mfa.disable",
@@ -414,9 +406,9 @@
       "role": "button",
       "source": "src/components/Account.jsx",
       "prerequisite": "MFA enabled and password confirmation",
-      "expected": "Disables TOTP only after successful step-up authentication.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "expected": "Opens masked password confirmation and disables TOTP only after successful reauthentication.",
+      "status": "PARTIAL",
+      "evidence": "tests/accounts-auth-controls.spec.js tests password-gated disable after the cancel path; The prior c5bd2a1 development matrix passed 45/45; failure-specific behavior remains untested."
     },
     {
       "id": "account.sessions.refresh",
@@ -425,8 +417,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Security section",
       "expected": "Reloads sanitized session list without exposing tokens or internal IDs.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Refresh lists both real active sessions; loading, error, and empty-state behavior remain untested."
     },
     {
       "id": "account.sessions.revoke",
@@ -435,8 +427,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "A non-current active session",
       "expected": "Revokes only the selected session.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Successful revocation removes the second browser session; recent-auth rejection and request-failure behavior remain untested."
     },
     {
       "id": "account.sessions.others",
@@ -445,8 +437,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "At least one other active session and confirmation",
       "expected": "Revokes every other session after service authorization.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Confirmed revoke-others invalidates the second session; recent-auth rejection and request-failure behavior remain untested."
     },
     {
       "id": "account.sessions.all",
@@ -455,8 +447,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Confirmed member intent",
       "expected": "Revokes all sessions and clears the local authenticated view.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Confirmed global sign-out ends both sessions and blocks private workspace access; recent-auth rejection and request-failure behavior remain untested."
     },
     {
       "id": "account.section.training",
@@ -465,8 +457,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Authenticated member and loaded workspace",
       "expected": "Shows account-scoped routines, workout history and sync state.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The migration workflow reviews local data, exports a cloud copy, imports and checks persisted state; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "account.training.export",
@@ -475,8 +467,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Authenticated member",
       "expected": "Downloads a JSON export from the account service.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The workflow downloads the existing cloud copy and checks its filename; export failure handling remains untested."
     },
     {
       "id": "account.training.import.file",
@@ -485,8 +477,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Authenticated member",
       "expected": "Validates backup and opens review without writing immediately.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "tests/accounts-workouts.spec.js uploads a valid JSON backup, confirms cancel leaves cloud unchanged, then imports after review, acknowledgement and cloud export; The prior c5bd2a1 development matrix passed 45/45; failure-specific behavior remains untested."
     },
     {
       "id": "account.training.local.review",
@@ -495,8 +487,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Legacy data available",
       "expected": "Shows counts and asks for explicit confirmation before cloud replacement.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The migration workflow reviews source counts and confirms the browser copy remains available; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "account.training.import.ack",
@@ -505,8 +497,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Import review",
       "expected": "Explicitly acknowledges the replacement after the current cloud export is downloaded.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The migration workflow confirms replacement remains disabled before required acknowledgement and cloud backup; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "account.training.import.confirm",
@@ -515,8 +507,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Import review and acknowledgement checked",
       "expected": "Imports only after explicit confirmation and current-cloud export; reports errors without data loss claims.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "A valid backup imports after review, acknowledgement, and cloud export while localStorage remains intact; import failure handling remains untested."
     },
     {
       "id": "account.training.export-before-replace",
@@ -525,8 +517,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Import review",
       "expected": "Downloads the existing cloud data and enables replacement only after export succeeds.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Import remains gated until a real cloud backup download completes; export failure behavior remains untested."
     },
     {
       "id": "account.training.import.cancel",
@@ -535,8 +527,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Import review",
       "expected": "Closes review without replacing cloud data.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The workflow cancels local and file-import reviews and confirms cloud state remains unchanged; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "account.training.conflict.reload",
@@ -545,8 +537,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Unresolved sync conflict",
       "expected": "Reloads only after explicit acknowledgement that the unsynced edits will be replaced by cloud state.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The real-backend test exports attempted edits, acknowledges data replacement, and reloads cloud state; reload failure/retry behavior remains untested."
     },
     {
       "id": "account.training.conflict.export",
@@ -555,8 +547,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Unresolved sync conflict with attempted payload available",
       "expected": "Downloads the attempted member data as JSON before reload.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The conflict test downloads attempted unsynced data before resolution; export failure behavior remains untested."
     },
     {
       "id": "account.training.conflict.ack",
@@ -565,8 +557,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Unresolved sync conflict",
       "expected": "Requires explicit acknowledgement before reload is enabled.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The conflict test verifies reload remains unavailable before the explicit acknowledgement; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "account.training.routines",
@@ -575,8 +567,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Training data section",
       "expected": "Navigates to the member's routines in the workout workspace.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The profile workflow follows Open routines to the workout workspace and verifies its My routines view; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "account.training.history",
@@ -585,8 +577,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Training data section",
       "expected": "Navigates to the member's workout history.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The profile workflow follows Open history to the workout workspace and verifies its history view; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "account.section.privacy",
@@ -595,8 +587,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Authenticated member",
       "expected": "Shows storage, export, logout and account deletion information.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Lifecycle and security workflows visit Privacy for sign-out and deletion actions; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "account.privacy.signout",
@@ -605,8 +597,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Authenticated member",
       "expected": "Ends current session and clears private workspace view.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The security test signs out one tab and verifies the shared account session no longer exposes the previous member data. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "account.privacy.delete.review",
@@ -615,8 +607,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Authenticated member",
       "expected": "Opens password and explicit DELETE confirmation fields.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Lifecycle test opens deletion review and completes the password/DELETE/email-confirmation flow."
     },
     {
       "id": "account.privacy.delete.password",
@@ -625,8 +617,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Delete review",
       "expected": "Requires password confirmation.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Lifecycle test submits the account password when requesting deletion; incorrect-password failure is NOT TESTED."
     },
     {
       "id": "account.privacy.delete.phrase",
@@ -635,8 +627,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Delete review",
       "expected": "Requires exact DELETE phrase.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Lifecycle test enters exact DELETE before the request; other phrase behavior is NOT TESTED."
     },
     {
       "id": "account.privacy.delete.cancel",
@@ -645,8 +637,8 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Delete review",
       "expected": "Closes deletion review without changing account state.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "The lifecycle workflow cancels deletion review, verifies the session remains active, then completes the separate email-confirmed deletion flow; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     },
     {
       "id": "account.privacy.delete.confirm",
@@ -655,8 +647,166 @@
       "source": "src/components/Account.jsx",
       "prerequisite": "Valid password and exact DELETE phrase",
       "expected": "Requests Better Auth deletion email; states that account remains active until the confirmation link is used.",
-      "status": "NOT TESTED",
-      "evidence": null
+      "status": "PARTIAL",
+      "evidence": "Lifecycle test confirms the request sends email while account remains active, then follows confirmation link and verifies session removal. Invalid/replayed link UI is NOT TESTED."
+    },
+    {
+      "id": "account.overview.goal-metric",
+      "label": "This week / Weekly rhythm",
+      "role": "status display",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Authenticated Account overview with loaded workspace data",
+      "expected": "Shows weekly session progress against the saved workspace goal; an unsaved Profile draft does not change the Overview metric.",
+      "status": "PARTIAL",
+      "evidence": "The profile workflow changes a goal draft, visits Overview before saving, and confirms the saved workspace goal remains displayed; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
+    },
+    {
+      "id": "account.overview.all-training",
+      "label": "All training",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Overview section",
+      "expected": "Navigates to training data.",
+      "status": "PARTIAL",
+      "evidence": "The profile workflow follows All training to the Training data section; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
+    },
+    {
+      "id": "account.overview.browse-routines",
+      "label": "Browse routines",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Overview with no recent workouts",
+      "expected": "Navigates to routines.",
+      "status": "PARTIAL",
+      "evidence": "The profile workflow follows Browse routines from an empty Overview to My routines; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
+    },
+    {
+      "id": "account.nav.back-training",
+      "label": "Back to training",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Authenticated Account route",
+      "expected": "Returns to the workout workspace.",
+      "status": "PARTIAL",
+      "evidence": "The profile workflow follows Back to training from Account to the workout Overview; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
+    },
+    {
+      "id": "account.mfa.recovery.password",
+      "label": "Confirm your password",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "MFA enabled and new recovery-code form open",
+      "expected": "Accepts password through a masked field before generating a replacement code set.",
+      "status": "PARTIAL",
+      "evidence": "tests/accounts-auth-controls.spec.js submits the current password before replacing recovery codes; The prior c5bd2a1 development matrix passed 45/45; failure-specific behavior remains untested."
+    },
+    {
+      "id": "account.mfa.recovery.generate",
+      "label": "Generate new codes",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Replacement-code warning and valid password",
+      "expected": "Generates replacement codes and invalidates prior codes.",
+      "status": "PARTIAL",
+      "evidence": "The test cancels once, then generates replacement codes and verifies the set changes; wrong-password rejection and old-code invalidation are not asserted."
+    },
+    {
+      "id": "account.mfa.recovery.cancel",
+      "label": "Cancel",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Replacement-code form open",
+      "expected": "Closes the form without rotating codes.",
+      "status": "PARTIAL",
+      "evidence": "Auth-controls cancels recovery-code rotation and verifies the existing codes remain unchanged; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
+    },
+    {
+      "id": "account.mfa.disable.password",
+      "label": "Confirm your password",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "MFA enabled and disable form open",
+      "expected": "Accepts password through a masked field before disabling MFA.",
+      "status": "PARTIAL",
+      "evidence": "tests/accounts-auth-controls.spec.js confirms the password through a masked field before disabling MFA; The prior c5bd2a1 development matrix passed 45/45; failure-specific behavior remains untested."
+    },
+    {
+      "id": "account.mfa.disable.confirm",
+      "label": "Turn off two-step verification",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "MFA enabled and valid password",
+      "expected": "Disables two-step verification after reauthentication.",
+      "status": "PARTIAL",
+      "evidence": "The test cancels once, then disables MFA; wrong-password rejection and persistence after a fresh session are not asserted."
+    },
+    {
+      "id": "account.mfa.disable.cancel",
+      "label": "Cancel",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "MFA disable form open",
+      "expected": "Closes form without changing MFA state.",
+      "status": "PARTIAL",
+      "evidence": "Auth-controls cancels MFA disable and verifies the enabled MFA action remains available; the prior c5bd2a1 development matrix passed 45/45. Keyboard focus and activation are not explicitly verified for this control, so §15 coverage remains partial."
     }
+  ],
+  "testRuns": [
+    {
+      "id": "accounts-development-matrix-45-c5bd2a1",
+      "environment": "Playwright isolated Fastify/Vite/PostgreSQL harness; Chromium desktop/mobile, Firefox, WebKit desktop/mobile",
+      "status": "PASS",
+      "cases": 45,
+      "scenarios": 9,
+      "evidence": "The frozen-source development matrix passed 45/45 at c5bd2a1: all five browser projects passed 9/9. It covered the long-email Profile layout assertion at 320/390/1536, real file import/CAS, recovery-code download content, and guest/session flows. This is a completed development-only run on the earlier account source."
+    },
+    {
+      "id": "accounts-built-assets-matrix-45-b426960",
+      "environment": "Playwright isolated Fastify/PostgreSQL harness against production-built frontend assets; Chromium desktop/mobile, Firefox, WebKit desktop/mobile",
+      "status": "PASS",
+      "cases": 45,
+      "scenarios": 9,
+      "evidence": "QA confirmed the full built-assets matrix passed 45/45 at b426960, with all five browser projects passing 9/9. This result is separate from the development project run."
+    },
+    {
+      "id": "accounts-development-matrix-b426960",
+      "environment": "Playwright isolated Fastify/Vite/PostgreSQL harness; Chromium desktop/mobile, Firefox, WebKit desktop/mobile",
+      "status": "INTERRUPTED",
+      "plannedCases": 45,
+      "scenarios": 9,
+      "evidence": "The development run at b426960 was interrupted before completion and has no final case result. It is not counted as a pass or failure."
+    },
+    {
+      "id": "accounts-final-matrix-90-ebbec2e",
+      "environment": "Playwright isolated Fastify/Vite/PostgreSQL harness; development and built assets, Chromium desktop/mobile, Firefox, WebKit desktop/mobile",
+      "status": "PASS",
+      "cases": 90,
+      "scenarios": 9,
+      "evidence": "Exact candidate ebbec2e passed 45/45 development and 45/45 production-built cases, nine per project in each run. The independent reviewer inspected both complete final logs."
+    },
+    {
+      "id": "accounts-chromium-pre-global-limit-fix",
+      "environment": "Playwright isolated account harness, Chromium desktop",
+      "status": "SUPERSEDED",
+      "evidence": "Historical partial run before the bounded test-only Better Auth rate-limit fix: some browser bootstrap requests returned 429. Later development runs passed; this historical result is superseded."
+    },
+    {
+      "id": "accounts-chromium-mobile-pre-helper-fix",
+      "environment": "Playwright isolated account harness, Chromium mobile",
+      "status": "SUPERSEDED",
+      "evidence": "Historical failure before the viewport-aware mobile navigation helper fix: six cases failed because off-canvas nav items were treated as visible. The helper was corrected; a later prior c5bd2a1 development matrix passed Chromium mobile and WebKit mobile 9/9 each. This historical result is superseded."
+    }
+  ],
+  "visualReview": {
+    "status": "PARTIAL",
+    "note": "The integrator inspected guest/Overview/Profile evidence plus final-source Chromium Security, Training data and Privacy captures at 390px and1536px. These six states fit without horizontal overflow; navigation, forms, migration card, session controls and destructive-action explanation remain readable. Earlier Firefox Profile captures at320/390/1536 also fit. Captures use synthetic local members. Expanded, loading, error and all keyboard states remain incomplete, so visual/control acceptance stays PARTIAL. Exact ebbec2e browser matrices passed45 development+45 built cases."
+  },
+  "remainingGaps": [
+    "Per-control keyboard focus and activation are not explicitly exercised. Desktop/mobile Playwright success paths do not establish the required keyboard interaction, so no control is labeled PASS until that evidence exists.",
+    "Authentication validation/error paths not covered end to end: duplicate or invalid registration, incorrect sign-in credentials, unknown reset address, expired reset token, invalid/replayed MFA code, and password-policy rejection during reset.",
+    "Security rejection paths remain untested: wrong current password for password/MFA/recovery-code changes, invalid MFA/recovery codes, stale-auth rejection for session revocation, and session-refresh loading/error states.",
+    "Data failure paths remain untested: malformed or over-limit backup file, failed cloud export before replacement, failed import, and conflict reload/export failure or retry.",
+    "Deletion rejection paths remain untested: wrong password, incorrect confirmation phrase, and invalid/replayed deletion link.",
+    "Default Security/Training data/Privacy desktop/mobile captures are reviewed; expanded/error/loading visual states and exhaustive per-control keyboard acceptance remain outstanding."
   ]
 }

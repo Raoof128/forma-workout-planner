@@ -11,6 +11,18 @@ not store a bearer token. The Worker and backend preserve Better Auth
 `Set-Cookie` headers. The API does not return Better Auth database IDs or
 session tokens in its JSON responses.
 
+Protected workspace, account-session, and authenticated account-mutation
+requests also require `X-Forma-Member`, set to the opaque `user.id` returned by
+`GET /api/auth/get-session`. This is an expected-member consistency guard,
+not authentication: the server derives identity from the verified cookie and
+compares the header with that member's reference. A missing or mismatched
+reference returns HTTP 409 with `error: "account_changed"` and no private data.
+Discard the old member's pending writes and refresh the session before loading
+the new workspace; never retry an old member's write with the new reference.
+Public sign-in/registration/session lookup and token-bound email callbacks are
+exempt. Use the account client adapter to attach the header to protected Better
+Auth operations as well as workspace requests.
+
 ## Authentication
 
 `/api/auth/*` is Better Auth 1.7.7's self-hosted HTTP handler. Its configured
@@ -37,7 +49,7 @@ browser `authClient` methods rather than hand-building a parallel auth API.
 | Method and path                            | Authentication                         | Result                                                                                                          |
 | ------------------------------------------ | -------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | `GET /api/account/sessions`                | Member session                         | Active sessions for that member, with an opaque signed reference, dates, user agent and current-session marker. |
-| `DELETE /api/account/sessions/:id/revoke`  | Recent session, at most 15 minutes old | Revokes the referenced session after matching it within the authenticated member's active sessions.             |
+| `DELETE /api/account/sessions/:id/revoke`  | Recent session, at most 5 minutes old | Revokes the referenced session after matching it within the authenticated member's active sessions.             |
 | `POST /api/account/sessions/revoke-others` | Recent session                         | Revokes every other session belonging to the authenticated member.                                              |
 | `POST /api/account/sessions/revoke-all`    | Recent session                         | Revokes all sessions belonging to the authenticated member, including the current session.                      |
 

@@ -17,8 +17,12 @@ verification, so an existing address does not produce an explicit
 The backend also normalizes Better Auth's unverified-email sign-in response to
 the same 401 code/message used for unknown email or wrong password. The UI
 offers a separate generic resend-verification action.
-The email adapter either sends via Resend over HTTPS or writes to a process-local
-test/development sink only when explicitly enabled outside production.
+The email adapter sends HTML and plaintext through Cloudflare Email Service's
+HTTPS REST API, or writes to a process-local test/development sink only when
+explicitly enabled outside production. Arbitrary member recipients require
+Workers Paid, an onboarded sender domain, and Email Sending: Edit permission.
+See the [operations runbook](../accounts/operations.md) for the isolated sender
+configuration and current external-access blockers.
 
 - [Email verification and password reset](https://raw.githubusercontent.com/better-auth/better-auth/main/docs/content/docs/concepts/email.mdx)
 - [User and account management](https://raw.githubusercontent.com/better-auth/better-auth/main/docs/content/docs/concepts/users-accounts.mdx)
@@ -49,9 +53,10 @@ The app runs Better Auth behind a Fastify bridge. It preserves request bodies
 and every `Set-Cookie` response header. Browser cookies are HttpOnly, SameSite
 Lax, host-only, and Secure on HTTPS origins. The API also independently checks
 the Worker service secret and checks the configured application origin on
-unsafe requests; only `CF-Connecting-IP` is trusted as the rate-limit client
-address, supplied by the Worker after it discards client-provided forwarding
-headers.
+unsafe requests; only `x-forma-client-ip` is trusted as the rate-limit client
+address. The Worker supplies it from the first edge's `CF-Connecting-IP` after
+discarding client-provided forwarding headers; this preserves the client
+address across the second edge used by the private origin.
 
 Normal and production per-route sign-in, sign-up, and password-reset limits are
 five attempts per trusted client IP per minute. The isolated account browser

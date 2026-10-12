@@ -14,6 +14,8 @@ separate from the member database.
 
 ## Documents
 
+- [Implementation handoff](handoff.md): architecture, changes, evidence and remaining release gates.
+
 - [API reference](api.md): authentication, account session, and workspace APIs.
 - [Database and ownership model](database.md): PostgreSQL tables, ownership,
   validation, revision and idempotency rules.
@@ -27,15 +29,16 @@ separate from the member database.
 - [Release readiness](release-readiness.md): current evidence, blockers, and
   GO/NO-GO status for this accounts branch.
 - [Source review](sources.md): official documentation retrieval status.
+- [Transactional email previews](email-previews/README.md): synthetic HTML templates and responsive review images for the four account email actions.
 
 ## Current deployment state
 
 The repository contains deployment configuration and isolated integration
-harnesses. It does not contain real public application/backend hostnames or a
-verified Cloudflare Access/Tunnel binding. The committed Wrangler hostnames use
-the reserved `.invalid` domain. Cloudflare and DigitalOcean staging deployment,
+harnesses. Application/backend deployment and Cloudflare Access/Tunnel bindings remain
+unverified. The committed Wrangler hostnames use the reserved `.invalid`
+domain; the operations guide identifies isolated staging candidates. Cloudflare and DigitalOcean staging deployment,
 transactional email delivery, and an off-host backup/restore drill therefore
-remain owner-run release gates. See [release readiness](release-readiness.md)
+remain release gates. See [release readiness](release-readiness.md)
 before using this as a production service.
 
 The previous [browser-only release report](../qa/release-readiness.md) is a

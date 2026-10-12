@@ -1,0 +1,63 @@
+{
+  "domain": "mail-staging-forma.raoufabedini.dev",
+  "zone": "raoufabedini.dev",
+  "status": "enabled",
+  "records": [
+    {
+      "type": "MX",
+      "name": "cf-bounce.mail-staging-forma.raoufabedini.dev",
+      "priority": 31,
+      "provider_match": true
+    },
+    {
+      "type": "MX",
+      "name": "cf-bounce.mail-staging-forma.raoufabedini.dev",
+      "priority": 34,
+      "provider_match": true
+    },
+    {
+      "type": "MX",
+      "name": "cf-bounce.mail-staging-forma.raoufabedini.dev",
+      "priority": 73,
+      "provider_match": true
+    },
+    {
+      "type": "TXT",
+      "name": "cf-bounce.mail-staging-forma.raoufabedini.dev",
+      "purpose": "SPF",
+      "provider_match": true
+    },
+    {
+      "type": "TXT",
+      "name": "cf-bounce._domainkey.mail-staging-forma.raoufabedini.dev",
+      "purpose": "DKIM",
+      "provider_match": true,
+      "split_into_quoted_chunks": true
+    },
+    {
+      "type": "TXT",
+      "name": "_dmarc.mail-staging-forma.raoufabedini.dev",
+      "purpose": "DMARC",
+      "provider_match": true
+    }
+  ],
+  "verification": {
+    "subdomain_api": 200,
+    "provider_dns_api": 200,
+    "zone_dns_reads": 200,
+    "all_required_records_present_and_match": true,
+    "public_dns_propagation": "not verified; DoH unavailable and dig not installed",
+    "controlled_inbox_delivery": "not tested"
+  },
+  "mutations": {
+    "cloudflare_email_sending_subdomain_created": true,
+    "dns_records_created_by_email_sending_api": 6,
+    "manual_dns_additions": 0,
+    "manual_dns_updates": 0,
+    "apex_dns_changed": false,
+    "existing_email_routing_modified": false,
+    "emails_sent": 0,
+    "paid_plan_changed": false
+  },
+  "provisioning_tokens": "all temporary tokens revoked; runtime mail token remains narrowly account-scoped"
+}
