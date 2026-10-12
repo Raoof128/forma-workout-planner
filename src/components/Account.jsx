@@ -490,6 +490,8 @@ export default function Account({
   }, [section, userId, listSessions]);
 
   const data = workspace?.data || {};
+  const storedGoal = Number(data.profile?.goal);
+  const workspaceGoal = storedGoal >= 1 && storedGoal <= 7 ? storedGoal : 3;
   const routines = getMetric(workspace, "routines");
   const history = getMetric(workspace, "history");
   const recent = history
@@ -1031,7 +1033,7 @@ export default function Account({
                 <SummaryCard
                   icon={CalendarDays}
                   label="This week"
-                  value={`${weeklySessions} / ${goal}`}
+                  value={`${weeklySessions} / ${workspaceGoal}`}
                   detail="Sessions toward your goal"
                 />
                 <SummaryCard
@@ -1124,7 +1126,7 @@ export default function Account({
                 <div>
                   <span className="account-kicker">WEEKLY RHYTHM</span>
                   <strong>
-                    {weeklySessions} of {goal} sessions
+                    {weeklySessions} of {workspaceGoal} sessions
                   </strong>
                 </div>
                 <div
@@ -1132,12 +1134,12 @@ export default function Account({
                   role="progressbar"
                   aria-label="Weekly workout goal progress"
                   aria-valuemin="0"
-                  aria-valuemax={goal}
-                  aria-valuenow={Math.min(weeklySessions, goal)}
+                  aria-valuemax={workspaceGoal}
+                  aria-valuenow={Math.min(weeklySessions, workspaceGoal)}
                 >
                   <span
                     style={{
-                      width: `${Math.min(100, (weeklySessions / Math.max(goal, 1)) * 100)}%`,
+                      width: `${Math.min(100, (weeklySessions / Math.max(workspaceGoal, 1)) * 100)}%`,
                     }}
                   />
                 </div>

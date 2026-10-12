@@ -6,11 +6,12 @@ async function clickMainNavigation(page, name) {
   await expect
     .poll(async () => (await item.isVisible()) || (await toggle.isVisible()))
     .toBe(true);
-  const isInsideViewport = await item.evaluate((element) => {
-    const rect = element.getBoundingClientRect();
-    return rect.left >= 0 && rect.right <= window.innerWidth;
-  });
-  if (!isInsideViewport) await toggle.click();
+  if (
+    (await toggle.isVisible()) &&
+    (await toggle.getAttribute("aria-expanded")) !== "true"
+  ) {
+    await toggle.click();
+  }
   await item.scrollIntoViewIfNeeded();
   await item.click();
 }
@@ -50,4 +51,12 @@ test("guest account entry offers accessible sign-in and registration flows", asy
     page.getByRole("heading", { name: /reset your password/i }),
   ).toBeVisible();
   await expect(page.getByLabel("Email address")).toBeVisible();
+  await page.getByRole("button", { name: /back to sign in/i }).click();
+  await page.getByLabel("Email address").fill("resend@example.test");
+  await page.getByRole("button", { name: "Resend verification" }).click();
+  await expect(page.getByRole("status")).toContainText(
+    "If this address needs verification, a link is on its way.",
+  );
+  await page.getByRole("button", { name: /continue as guest/i }).click();
+  await expect(page.getByRole("heading", { name: "Overview" })).toBeVisible();
 });

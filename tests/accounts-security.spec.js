@@ -9,11 +9,10 @@ async function clickMainNavigation(page, name) {
   await expect
     .poll(async () => (await item.isVisible()) || (await toggle.isVisible()))
     .toBe(true);
-  const isInsideViewport = await item.evaluate((element) => {
-    const rect = element.getBoundingClientRect();
-    return rect.left >= 0 && rect.right <= window.innerWidth;
-  });
-  if (!isInsideViewport) {
+  if (
+    (await toggle.isVisible()) &&
+    (await toggle.getAttribute("aria-expanded")) !== "true"
+  ) {
     await toggle.click();
   }
   await item.scrollIntoViewIfNeeded();
@@ -59,7 +58,7 @@ async function registerAndSignIn(page, name, email) {
   expect(url.origin).toBe(new URL(page.url()).origin);
   await page.goto(verification.url);
 
-  await page.getByRole("button", { name: "Account", exact: true }).click();
+  await clickMainNavigation(page, "Account");
   await page.getByLabel("Email address").fill(email);
   await page.getByLabel(/^Password/).fill(password);
   await page.getByRole("button", { name: "Sign in", exact: true }).click();

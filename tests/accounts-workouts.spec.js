@@ -15,11 +15,10 @@ async function clickMainNavigation(page, name) {
   await expect
     .poll(async () => (await item.isVisible()) || (await toggle.isVisible()))
     .toBe(true);
-  const isInsideViewport = await item.evaluate((element) => {
-    const rect = element.getBoundingClientRect();
-    return rect.left >= 0 && rect.right <= window.innerWidth;
-  });
-  if (!isInsideViewport) {
+  if (
+    (await toggle.isVisible()) &&
+    (await toggle.getAttribute("aria-expanded")) !== "true"
+  ) {
     await toggle.click();
   }
   await item.scrollIntoViewIfNeeded();
@@ -253,6 +252,14 @@ test("local training migration requires review and leaves the browser copy intac
   await expect(
     page.locator(".account-import-review .account-import-totals"),
   ).toContainText("1 routines");
+  await page.getByRole("button", { name: "Cancel", exact: true }).click();
+  await expect(
+    page.getByRole("heading", { name: "Confirm training data" }),
+  ).toBeHidden();
+  await expect(
+    page.getByRole("button", { name: "Review local data" }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Review local data" }).click();
   await expect(
     page.getByRole("button", { name: "Import to account", exact: true }),
   ).toBeDisabled();
@@ -289,6 +296,64 @@ test("local training migration requires review and leaves the browser copy intac
   expect(cloudAfter.body.data.routines.map((item) => item.name)).toContain(
     `Local legacy ${run}`,
   );
+
+  const beforeFileImport = await readWorkspace(page, memberId);
+  const fileBackup = structuredClone(initialData);
+  fileBackup.routines = fileBackup.routines.slice(0, 1).map((routine) => ({
+    ...routine,
+    name: `File backup ${run}`,
+  }));
+  fileBackup.history = [];
+  const uploadBackup = () =>
+    page.locator('input[type="file"]').setInputFiles({
+      name: "training-backup.json",
+      mimeType: "application/json",
+      buffer: Buffer.from(JSON.stringify(fileBackup)),
+    });
+  await uploadBackup();
+  await expect(
+    page.getByRole("heading", { name: "Confirm training data" }),
+  ).toBeVisible();
+  await expect(
+    page.locator(".account-import-review .account-import-totals"),
+  ).toContainText("1 routines");
+  expect((await readWorkspace(page, memberId)).body).toEqual(
+    beforeFileImport.body,
+  );
+  await page.getByRole("button", { name: "Cancel", exact: true }).click();
+  expect((await readWorkspace(page, memberId)).body).toEqual(
+    beforeFileImport.body,
+  );
+
+  await uploadBackup();
+  await expect(
+    page.getByRole("heading", { name: "Confirm training data" }),
+  ).toBeVisible();
+  await page
+    .getByRole("checkbox", {
+      name: /saved a copy of my current cloud training data/,
+    })
+    .check();
+  await expect(
+    page.getByRole("button", { name: "Import to account", exact: true }),
+  ).toBeDisabled();
+  const fileBackupDownload = page.waitForEvent("download");
+  await page
+    .getByRole("button", {
+      name: /Download current cloud copy before replacing/,
+    })
+    .click();
+  expect((await fileBackupDownload).suggestedFilename()).toContain(
+    "forma-account-export",
+  );
+  await page.getByRole("button", { name: "Import to account" }).click();
+  await expect(page.getByRole("status")).toContainText(
+    "imported into your account",
+  );
+  const afterFileImport = await readWorkspace(page, memberId);
+  expect(afterFileImport.body.data.routines.map((item) => item.name)).toContain(
+    `File backup ${run}`,
+  );
 });
 
 test("profile goal save persists and cancel discards an unapplied edit", async ({
@@ -302,6 +367,15 @@ test("profile goal save persists and cancel discards an unapplied edit", async (
   const workspaceBefore = await readWorkspace(page, memberId);
   await page.getByLabel("Display name", { exact: true }).fill("Discarded Name");
   await page.getByLabel("Weekly workout goal").selectOption("7");
+  await page
+    .getByRole("navigation", { name: "Account sections" })
+    .getByRole("button", { name: "Overview", exact: true })
+    .click();
+  const savedGoal = workspaceBefore.body.data.profile.goal;
+  await expect(
+    page.locator(".account-summary-card").filter({ hasText: "This week" }),
+  ).toContainText(`/ ${savedGoal}`);
+  await page.getByRole("button", { name: "Profile", exact: true }).click();
   await page.getByRole("button", { name: "Cancel changes" }).click();
   await expect(page.getByLabel("Display name", { exact: true })).toHaveValue(
     "Profile Member",
@@ -350,12 +424,39 @@ test("profile goal save persists and cancel discards an unapplied edit", async (
 
   for (const width of [320, 390, 1536]) {
     await page.setViewportSize({ width, height: 860 });
-    expect(
-      await page.evaluate(
-        () => document.documentElement.scrollWidth <= innerWidth,
-      ),
-      `Account profile should fit at ${width}px`,
-    ).toBe(true);
+    try {
+      await expect
+        .poll(() =>
+          page.evaluate(
+            () => document.documentElement.scrollWidth <= innerWidth,
+          ),
+        )
+        .toBe(true);
+    } catch (error) {
+      const layout = await page.evaluate(() => ({
+        documentWidth: document.documentElement.scrollWidth,
+        viewportWidth: innerWidth,
+        offenders: [...document.querySelectorAll("body *")]
+          .map((element) => {
+            const rect = element.getBoundingClientRect();
+            return {
+              tag: element.tagName.toLowerCase(),
+              className:
+                typeof element.className === "string" ? element.className : "",
+              text: element.textContent?.trim().slice(0, 80),
+              left: Math.round(rect.left),
+              right: Math.round(rect.right),
+              width: Math.round(rect.width),
+            };
+          })
+          .filter(({ left, right }) => left < 0 || right > innerWidth)
+          .slice(0, 20),
+      }));
+      throw new Error(
+        `Account profile should fit at ${width}px: ${JSON.stringify(layout)}`,
+        { cause: error },
+      );
+    }
     await expect(
       page.getByRole("heading", { name: "Your profile" }),
     ).toBeVisible();
@@ -373,4 +474,40 @@ test("profile goal save persists and cancel discards an unapplied edit", async (
       expect(violations, `Account profile at ${width}px`).toEqual([]);
     }
   }
+
+  const accountSections = page.getByRole("navigation", {
+    name: "Account sections",
+  });
+  await accountSections.getByRole("button", { name: "Overview" }).click();
+  await page.getByRole("button", { name: "All training" }).click();
+  await expect(
+    page.getByRole("heading", { name: "Training data" }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Open routines" }).click();
+  await expect(
+    page.getByRole("heading", { name: "My routines" }),
+  ).toBeVisible();
+
+  await clickMainNavigation(page, "Account");
+  await page.getByRole("button", { name: "Back to training" }).click();
+  await expect(
+    page.getByRole("heading", { name: "A little stronger, every day." }),
+  ).toBeVisible();
+  await clickMainNavigation(page, "Account");
+  await page
+    .getByRole("navigation", { name: "Account sections" })
+    .getByRole("button", { name: "Overview", exact: true })
+    .click();
+  await page.getByRole("button", { name: "Browse routines" }).click();
+  await expect(
+    page.getByRole("heading", { name: "My routines" }),
+  ).toBeVisible();
+  await clickMainNavigation(page, "Account");
+  await page
+    .getByRole("button", { name: "Training data", exact: true })
+    .click();
+  await page.getByRole("button", { name: "Open history" }).click();
+  await expect(
+    page.getByRole("heading", { name: "Every session counts." }),
+  ).toBeVisible();
 });

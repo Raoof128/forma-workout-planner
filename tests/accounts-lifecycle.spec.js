@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { readFile } from "node:fs/promises";
 import { base32 } from "@better-auth/utils/base32";
 import { createOTP } from "@better-auth/utils/otp";
 
@@ -13,11 +14,12 @@ async function clickMainNavigation(page, name) {
   await expect
     .poll(async () => (await item.isVisible()) || (await toggle.isVisible()))
     .toBe(true);
-  const isInsideViewport = await item.evaluate((element) => {
-    const rect = element.getBoundingClientRect();
-    return rect.left >= 0 && rect.right <= window.innerWidth;
-  });
-  if (!isInsideViewport) await toggle.click();
+  if (
+    (await toggle.isVisible()) &&
+    (await toggle.getAttribute("aria-expanded")) !== "true"
+  ) {
+    await toggle.click();
+  }
   await item.scrollIntoViewIfNeeded();
   await item.click();
 }
@@ -164,6 +166,18 @@ test("password recovery, sessions, authenticator recovery, and deletion use real
     await expect(firstPage.getByRole("status")).toContainText(
       "Two-step verification is now on",
     );
+    const recoveryDownloadPromise = firstPage.waitForEvent("download");
+    await firstPage.getByRole("button", { name: "Download codes" }).click();
+    const recoveryDownload = await recoveryDownloadPromise;
+    expect(recoveryDownload.suggestedFilename()).toBe(
+      "forma-recovery-codes.txt",
+    );
+    const downloadedCodes = (
+      await readFile(await recoveryDownload.path(), "utf8")
+    )
+      .trim()
+      .split(/\s+/);
+    expect(downloadedCodes).toContain(recoveryCode);
 
     await signIn(secondPage, email, replacementPassword);
     await expect(
@@ -210,6 +224,16 @@ test("password recovery, sessions, authenticator recovery, and deletion use real
     // Deletion is a two-stage operation: the request sends mail, and the
     // account remains active until the emailed confirmation URL is used.
     await openAccountSection(secondPage, "Privacy");
+    await secondPage
+      .getByRole("button", { name: "Review account deletion" })
+      .click();
+    await secondPage
+      .getByRole("button", { name: "Cancel", exact: true })
+      .click();
+    expect(await getSessionUser(secondPage)).toBeTruthy();
+    await expect(
+      secondPage.getByRole("button", { name: "Review account deletion" }),
+    ).toBeVisible();
     await secondPage
       .getByRole("button", { name: "Review account deletion" })
       .click();

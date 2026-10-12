@@ -13,11 +13,12 @@ async function clickMainNavigation(page, name) {
   await expect
     .poll(async () => (await item.isVisible()) || (await toggle.isVisible()))
     .toBe(true);
-  const insideViewport = await item.evaluate((element) => {
-    const rect = element.getBoundingClientRect();
-    return rect.left >= 0 && rect.right <= window.innerWidth;
-  });
-  if (!insideViewport) await toggle.click();
+  if (
+    (await toggle.isVisible()) &&
+    (await toggle.getAttribute("aria-expanded")) !== "true"
+  ) {
+    await toggle.click();
+  }
   await item.scrollIntoViewIfNeeded();
   await item.click();
 }
@@ -112,6 +113,10 @@ test("password updates, session revocation, recovery-code rotation, and sign-out
     ).toBeVisible();
 
     await openSecurity(primary);
+    await primary.getByRole("button", { name: "Refresh sessions" }).click();
+    await expect
+      .poll(() => primary.locator(".account-device-row").count())
+      .toBeGreaterThanOrEqual(2);
     await primary
       .getByLabel("Current password", { exact: true })
       .fill(currentPassword);
@@ -169,6 +174,13 @@ test("password updates, session revocation, recovery-code rotation, and sign-out
       primary.getByText("Two-step verification is now on.", { exact: true }),
     ).toBeVisible();
 
+    const recoveryCodeBlock = primary.locator(".account-codes pre");
+    await primary
+      .getByRole("button", { name: "Generate new recovery codes", exact: true })
+      .click();
+    await primary.getByRole("button", { name: "Cancel", exact: true }).click();
+    await expect(recoveryCodeBlock).toHaveText(initialCodes.join("\n"));
+
     await primary
       .getByRole("button", { name: "Generate new recovery codes", exact: true })
       .click();
@@ -178,7 +190,6 @@ test("password updates, session revocation, recovery-code rotation, and sign-out
     await primary
       .getByRole("button", { name: "Generate new codes", exact: true })
       .click();
-    const recoveryCodeBlock = primary.locator(".account-codes pre");
     await expect
       .poll(async () => (await recoveryCodeBlock.innerText()).trim())
       .not.toBe(initialCodes.join("\n"));
@@ -190,6 +201,13 @@ test("password updates, session revocation, recovery-code rotation, and sign-out
       primary.getByRole("button", { name: "Turn off", exact: true }),
     ).toBeVisible();
 
+    await primary
+      .getByRole("button", { name: "Turn off", exact: true })
+      .click();
+    await primary.getByRole("button", { name: "Cancel", exact: true }).click();
+    await expect(
+      primary.getByRole("button", { name: "Turn off", exact: true }),
+    ).toBeVisible();
     await primary
       .getByRole("button", { name: "Turn off", exact: true })
       .click();
