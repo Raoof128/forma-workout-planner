@@ -106,6 +106,7 @@ restore drill are still deployment owner tasks.
 | [Member sync](docs/member-data-sync.md)                 | Save, retry, import/export, and conflict handling               |
 | [Account readiness](docs/accounts/release-readiness.md) | Release gates and evidence for this branch                      |
 | [Security](docs/security/README.md)                     | Threat model, red-team findings, coverage and release verdict   |
+| [Legal](docs/legal/README.md)                           | Privacy Policy and Terms of Use: sources and commitments        |
 | [Sources](docs/accounts/sources.md)                     | Official source retrieval status and limits                     |
 | [User guide](docs/user-guide.md)                        | Workout use and legacy browser backup guidance                  |
 | [Data model](docs/data-model.md)                        | Version 1 workspace shape and validation                        |

@@ -50,7 +50,7 @@ service receiving personal data is Cloudflare (edge, Access, Email Service).
 
 ## Open items
 
-- Backup retention period and deletion statement (owner).
+- Backups: the published Privacy Policy commits to deleting backup copies within 35 days and storing them only in Australia or the United States; configure backups to match (see [legal](../legal/README.md)).
 - A browser's guest data is offered for import to any member who signs in on
   that browser (R-05, Low). Recommend recording who migrated it and offering
   it once.

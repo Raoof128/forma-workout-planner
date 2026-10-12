@@ -308,6 +308,46 @@ function AuthView({ account, notify, onNavigate }) {
               </button>
             </>
           )}
+          {mode === "signup" && (
+            <label className="account-consent">
+              <input type="checkbox" required />
+              <span>
+                I am 16 or older (or 13 to 15 with a parent or guardian’s
+                permission), I agree to the{" "}
+                <a href="/#terms" target="_blank" rel="noopener">
+                  Terms of Use
+                </a>
+                , and I have read the{" "}
+                <a href="/#privacy" target="_blank" rel="noopener">
+                  Privacy Policy
+                </a>
+                .
+              </span>
+            </label>
+          )}
+          {mode === "signup" && (
+            <label className="account-consent">
+              <input type="checkbox" required />
+              <span>
+                I consent to FORMA storing my workout records, which may include
+                health-related information, to provide my account.
+              </span>
+            </label>
+          )}
+          {mode === "signup" && (
+            <p className="account-collection-notice">
+              We collect your name, email address and workout data to run your
+              account and send essential account emails; without them we cannot
+              create an account. Our providers Cloudflare and DigitalOcean
+              process it, including outside Australia (mainly the United
+              States). The{" "}
+              <a href="/#privacy" target="_blank" rel="noopener">
+                Privacy Policy
+              </a>{" "}
+              explains how to access or correct your information and how to
+              complain.
+            </p>
+          )}
           <button
             className="account-primary"
             type="submit"

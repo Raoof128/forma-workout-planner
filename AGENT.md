@@ -67,3 +67,13 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   staging runs with `ops/compose.small-host.yaml` on a shared host, so never
   publish ports or raise memory limits without checking the other services.
 - **Verification:** live gate probes S09, S10, S18 and a staging restore drill.
+
+### Raouf: 2026-10-13 — Legal pages
+
+- **Constraints added:** legal text lives only in `src/legal/content.js`; bump
+  its version and effective date for material changes and give account holders
+  14 days' notice of material Terms changes. Never add a liability cap that
+  relies on ACL s 64A, an "as is" exclusion without the ACL savings clause, or
+  unilateral change/termination without notice. New data collection, a new
+  provider or country, analytics or ads require updating the Privacy Policy
+  first (see `docs/legal/README.md`).

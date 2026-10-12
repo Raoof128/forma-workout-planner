@@ -195,6 +195,28 @@ export default function Navigation({ page, navigate, data, account }) {
             </div>
             <ChevronRight size={16} />
           </button>
+          <nav className="legal-links" aria-label="Legal">
+            <a
+              href="#privacy"
+              aria-current={page === "privacy" ? "page" : undefined}
+              onClick={(event) => {
+                event.preventDefault();
+                go("privacy");
+              }}
+            >
+              Privacy
+            </a>
+            <a
+              href="#terms"
+              aria-current={page === "terms" ? "page" : undefined}
+              onClick={(event) => {
+                event.preventDefault();
+                go("terms");
+              }}
+            >
+              Terms
+            </a>
+          </nav>
         </div>
       </aside>
     </>

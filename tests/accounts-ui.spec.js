@@ -35,6 +35,12 @@ test("guest account entry offers accessible sign-in and registration flows", asy
   await page.getByLabel("Email address").fill("alex@example.test");
   await page.getByLabel(/^Password/).fill("short");
   await page
+    .getByRole("checkbox", { name: /agree to the Terms of Use/i })
+    .check();
+  await page
+    .getByRole("checkbox", { name: /consent to FORMA storing/i })
+    .check();
+  await page
     .getByRole("button", { name: "Create account", exact: true })
     .click();
   await expect(page.getByLabel(/^Password/)).toHaveJSProperty(

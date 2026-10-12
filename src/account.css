@@ -1354,3 +1354,34 @@
     transition: none;
   }
 }
+
+.account-form .account-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.account-form .account-consent input {
+  width: 18px;
+  min-width: 18px;
+  height: 18px;
+  min-height: 18px;
+  margin: 1px 0 0;
+  accent-color: #202522;
+}
+.account-form .account-consent a {
+  color: inherit;
+  font-weight: 700;
+}
+.account-collection-notice {
+  margin: 0;
+  color: var(--ac-muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+.account-collection-notice a {
+  color: inherit;
+  font-weight: 700;
+}

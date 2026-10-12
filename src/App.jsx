@@ -21,6 +21,7 @@ import Workout from "./components/Workout";
 import { WorkoutHistory, Progress } from "./components/Insights";
 import { Settings, Schedule } from "./components/Preferences";
 import Account from "./components/Account.jsx";
+import Legal, { isLegalPage, legalTitle } from "./components/Legal.jsx";
 import { useAccount } from "./account/AccountProvider.jsx";
 const equal = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 export default function App() {
@@ -300,7 +301,12 @@ function AccountWorkspace() {
         </Button>
       </main>
     );
-  if (account.status === "authenticated" && !data && page !== "account")
+  if (
+    account.status === "authenticated" &&
+    !data &&
+    page !== "account" &&
+    !isLegalPage(page)
+  )
     return (
       <main className="account-session-state" aria-live="polite">
         <p>
@@ -347,9 +353,11 @@ function AccountWorkspace() {
                   ? "Settings"
                   : visiblePage === "account"
                     ? "Account"
-                    : navigationItems.find(
-                        (item) => item[0] === visiblePage,
-                      )?.[1]}
+                    : isLegalPage(visiblePage)
+                      ? legalTitle(visiblePage)
+                      : navigationItems.find(
+                          (item) => item[0] === visiblePage,
+                        )?.[1]}
             </strong>
           </div>
           <span className="top-date">
@@ -363,6 +371,9 @@ function AccountWorkspace() {
           </span>
         </header>
         <div className="main-content">
+          {isLegalPage(visiblePage) && (
+            <Legal page={visiblePage} onNavigate={navigate} />
+          )}
           {visiblePage === "account" && (
             <Account
               account={account}
@@ -372,7 +383,7 @@ function AccountWorkspace() {
               notify={notify}
             />
           )}
-          {visiblePage !== "account" && data && (
+          {visiblePage !== "account" && !isLegalPage(visiblePage) && data && (
             <>
               {issue === "unavailable" && (
                 <div role="alert" className="storage-warning">

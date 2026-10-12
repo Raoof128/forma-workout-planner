@@ -63,6 +63,7 @@ Both configurations set `retries: 0`, so failures are reported on the first run 
 | `worker/tests/gateway.test.ts`      | Fixed upstream allow-list, service-header filtering, redirects, body limits, and error handling                                                                          |
 | `server/tests/redteam.test.ts`      | Red-team regressions RT-01–RT-19: gateway bypass, redirects, per-account and per-member password limits, mail budget, write budget, endpoint allowlist, session lifetime |
 | `worker/tests/redteam.test.ts`      | Red-team regressions EDGE-01–EDGE-08: body caps, header and cookie allowlists, API security headers, cross-site and client-IP checks                                     |
+| `tests/legal.spec.js`               | Privacy Policy and Terms of Use pages: reachability, required sections, axe WCAG 2.2 AA, phone width                                                                     |
 | `unit/redteam-release.test.js`      | Red-team regressions FE-01, FE-03, FE-04: workspace size bounds, restore pinned to the reviewed revision, one-time guest import                                          |
 | `tests/accounts-ui.spec.js`         | Account screens and workflows against isolated test services; consult release readiness for final outcomes                                                               |
 | `tests/accounts-security.spec.js`   | Browser-facing account security flows against the isolated test API                                                                                                      |

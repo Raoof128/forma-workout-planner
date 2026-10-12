@@ -50,6 +50,12 @@ async function registerAndVerify(page, name, email) {
   await page.getByLabel("Email address").fill(email);
   await page.getByLabel(/^Password/).fill(originalPassword);
   await page
+    .getByRole("checkbox", { name: /agree to the Terms of Use/i })
+    .check();
+  await page
+    .getByRole("checkbox", { name: /consent to FORMA storing/i })
+    .check();
+  await page
     .getByRole("button", { name: "Create account", exact: true })
     .click();
   await expect(page.getByRole("status")).toContainText("verification link");
