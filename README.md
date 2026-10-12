@@ -1,36 +1,51 @@
 # FORMA
 
-A personal gym workout planner and log, researched from Leap Health's Gym Workout Planner & Gym Log and built with an original responsive web design.
+**Plan your training. Log every set. See your progress.**
 
-## Run
+FORMA is a personal workout planner built with React and Vite. Create routines, track weights and repetitions, use a persistent rest timer, and review your training history in a responsive interface. Your workout data is stored in your browser on your device.
+
+[Getting started](docs/getting-started.md) · [User guide](docs/user-guide.md) · [Architecture](docs/architecture.md) · [Contributing](CONTRIBUTING.md)
+
+## Features
+
+| Plan                               | Train                                   | Review                                     |
+| ---------------------------------- | --------------------------------------- | ------------------------------------------ |
+| Three editable starter routines    | Set-by-set weight and rep logging       | Editable workout history                   |
+| Custom routines and exercise order | Persistent rest timer and session notes | Volume, completed sets, and personal bests |
+| Weekly training schedule           | Exercise instructions while logging     | Estimated one-repetition maximum           |
+| Searchable 16-exercise library     | Resume an unfinished session            | Validated JSON backup and restore          |
+
+The interface includes keyboard navigation, accessible dialogs, mobile workout controls, locally hosted fonts, and layouts tested from 320 to 1920 pixels.
+
+## Quick start
+
+Use **Node.js 22.12 or newer** and npm. Node.js 24 is recommended.
 
 ```sh
+git clone https://github.com/Raoof128/forma-workout-planner.git
+cd forma-workout-planner
 npm ci
 npm run dev
 ```
 
-Open http://localhost:5173. `npm run build` creates the production bundle; `npm run preview` serves it. Deploy using HTTPS for browser storage locking; localhost is also supported.
+Open **http://localhost:5173**. No API keys, environment variables, accounts, or database setup are required.
 
-## Included
+```sh
+npm run build
+npm run preview
+```
 
-- Dashboard, weekly schedule, and selectable next routine
-- Three editable starter routines, custom routines, exercise ordering, and preserved prescriptions
-- Search and muscle/equipment filters across 16 exercises, with instructions available while logging
-- Set logging, additional sets, notes, and rest timers that survive navigation and reload
-- Completed workout history with correction/deletion and recalculated progress
-- Training volume, completed sets, personal best weights, and estimated 1RM
-- Profile/weekly goal preferences, validated JSON export/import, and corrupt-data recovery
-- Keyboard-accessible dialogs, mobile drawer, browser Back, and bookmarked screens
+The production output is `dist/`. See the [deployment guide](docs/deployment.md) for HTTPS, hosting paths, and verification.
 
-Data stays in this browser under `forma-v1`. Cross-tab changes use serialized transactions. Invalid data is preserved for recovery; imports/resets save the previous content under a `forma-v1-recovery-*` key. Clearing browser data removes these copies, so download backups from Settings.
+## Data and privacy
 
-If saving is blocked or Web Locks are unavailable, the app clearly switches to temporary in-memory changes with export available. Wait for “Saving changes…” to clear before closing; the app warns when a write is pending. Browser shutdown or clearing storage is not a substitute for a backup.
+FORMA is a **browser-local application**. It has no application server, remote database, authentication, analytics, or cloud sync. `localStorage` stores your workspace; Web Locks coordinate writes between tabs on the same origin. Export a JSON backup from Settings before clearing site data, changing browsers, or moving to another domain.
 
-Weights use kilograms. Dates use Australia/Sydney. Starter weights are editable examples, not personalized prescriptions. One plank rep represents a 10-second hold. Single-rep maximums use actual weight; sets of 2–12 reps use Epley estimates.
+If persistence is unavailable, the app uses temporary memory and displays an explicit warning. Export your data before leaving that visit. Fonts and images are served with the application; a hosting provider may still record ordinary web access logs.
 
-This version has no accounts, remote sync, Apple Health integration, videos, or automated coaching.
+Weights use kilograms and calendar dates use Australia/Sydney. Starter weights are editable examples. One plank rep represents a 10-second hold. FORMA does not include Apple Health integration, videos, subscriptions, or automated coaching.
 
-## Checks
+## Development checks
 
 ```sh
 npx playwright install chromium firefox
@@ -40,10 +55,22 @@ npm run build
 npm test
 ```
 
-The suite runs in Chromium and Firefox and covers core workflows, concurrent tabs, invalid storage/recovery, backup round trips, rapid typing, focus/drawer behavior, timer persistence, routine edits, history calculations, navigation, responsive edge cases, and automated accessibility scans.
+On Linux, Playwright may require system dependencies: `npx playwright install-deps chromium firefox`. `npm test` runs data-layer unit tests followed by browser tests. Browser tests cover training workflows, concurrent tabs, recovery, calculations, accessibility, and responsive layouts. See [testing](docs/testing.md) and the [verification record](docs/verification.md) for evidence and browser limits.
 
-Screenshots are written to the system temporary directory under `forma-qa`; set `FORMA_ARTIFACT_DIR` to choose another location. On Linux, browser installation may also require `npx playwright install-deps chromium firefox`.
+## Documentation
 
-The interface pairs locally served Barlow Condensed and DM Sans fonts; their licenses are in `public/fonts/`.
+| Document                                        | Purpose                                                          |
+| ----------------------------------------------- | ---------------------------------------------------------------- |
+| [Getting started](docs/getting-started.md)      | Installation, commands, and troubleshooting                      |
+| [User guide](docs/user-guide.md)                | Routines, logging, progress, backups, and recovery               |
+| [Architecture](docs/architecture.md)            | Components, data flow, persistence, and trust boundaries         |
+| [Data model](docs/data-model.md)                | Workspace structure, units, validation, and backup compatibility |
+| [Deployment](docs/deployment.md)                | Static hosting and production checks                             |
+| [Testing](docs/testing.md)                      | Automated checks and test conventions                            |
+| [Contributing](CONTRIBUTING.md)                 | Development workflow and pull requests                           |
+| [Changelog](CHANGELOG.md)                       | Notable changes                                                  |
+| [Research](docs/research.md)                    | Reference research and product scope                             |
+| [Frontend audit](docs/frontend-design-audit.md) | Design findings and source-file coverage                         |
+| [Data-layer audit](docs/backend-audit.md)       | Persistence and business-logic findings, fixes, and coverage     |
 
-See [research](docs/research.md), [audit fixes](docs/audit-fixes.md), the [file-by-file frontend design audit](docs/frontend-design-audit.md), and [verification](docs/verification.md). The [original design concept](docs/design-concept.png) is historical reference material.
+FORMA uses an original design informed by research into Leap Health's Gym Workout Planner & Gym Log. It is not affiliated with that product. Historical concept screenshots in `docs/` are design references, not current release screenshots. The Barlow Condensed and DM Sans fonts include their OFL licenses in `public/fonts/`. This repository does not currently include a project-wide software license.

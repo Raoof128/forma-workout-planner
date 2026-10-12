@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "./UI";
-import { downloadData, validateData } from "../storage";
+import { downloadData, readBackupFile, MAX_BACKUP_BYTES } from "../storage";
 export default function Recovery({ raw, onRestore, onReset }) {
   const [error, setError] = useState("");
   const [confirm, setConfirm] = useState(false);
@@ -11,9 +11,9 @@ export default function Recovery({ raw, onRestore, onReset }) {
     if (!file || busy) return;
     setError("");
     setBusy(true);
-    if (file.size > 20 * 1024 * 1024) {
+    if (file.size > MAX_BACKUP_BYTES) {
       setError(
-        "Choose a FORMA backup smaller than 20 MB. Your original data is still untouched.",
+        "Choose a FORMA backup no larger than 20 MiB. Your original data is still untouched.",
       );
       setBusy(false);
       input.value = "";
@@ -21,7 +21,7 @@ export default function Recovery({ raw, onRestore, onReset }) {
     }
     let data;
     try {
-      data = validateData(JSON.parse(await file.text()));
+      data = await readBackupFile(file);
     } catch {
       setError(
         "This file is not a valid FORMA backup. Your original data is still untouched.",

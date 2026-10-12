@@ -234,7 +234,7 @@ export default function Workout({
                       aria-label={`${exercise.name} set ${index + 1} weight`}
                       min="0"
                       max="1000"
-                      step="0.5"
+                      step="any"
                       value={set.weight}
                       onChange={(event) =>
                         updateSet(
@@ -447,9 +447,12 @@ function RestControls({ session, remaining, onUpdate }) {
               current.restEnd
                 ? {
                     ...current,
-                    restPaused: Math.max(
-                      0,
-                      Math.ceil((current.restEnd - Date.now()) / 1000),
+                    restPaused: Math.min(
+                      600,
+                      Math.max(
+                        0,
+                        Math.ceil((current.restEnd - Date.now()) / 1000),
+                      ),
                     ),
                     restEnd: null,
                   }

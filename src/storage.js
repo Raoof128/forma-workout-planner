@@ -1,8 +1,10 @@
 import { z } from "zod";
-import { exercises, initialData, dateKey } from "./data";
+import { exercises, initialData, dateKey } from "./data.js";
 
 export const STORAGE_KEY = "forma-v1";
+export const MAX_BACKUP_BYTES = 20 * 1024 * 1024;
 const number = z.number().finite();
+const timestamp = number.min(0).max(8640000000000000);
 const id = z.string().min(1).max(200);
 const exerciseId = z.enum(exercises.map((exercise) => exercise.id));
 const editableNumber = z.union([number, z.literal("")]);
@@ -25,14 +27,15 @@ const sessionSchema = z.object({
   id,
   name: z.string().trim().min(1).max(60),
   routineId: id.optional(),
-  startedAt: number.nonnegative(),
+  startedAt: timestamp,
   notes: z.string().max(10000).default(""),
   restSeconds: number.int().min(10).max(600).default(90),
-  restEnd: number.nonnegative().nullable().default(null),
+  restEnd: timestamp.nullable().default(null),
   restPaused: number.min(0).max(600).nullable().default(null),
   exercises: z
     .array(z.object({ exerciseId, sets: z.array(setSchema).min(1).max(100) }))
     .min(1)
+    .max(exercises.length)
     .refine(unique("exerciseId"), "Duplicate exercise"),
 });
 const routineSchema = z.object({
@@ -52,6 +55,7 @@ const routineSchema = z.object({
       }),
     )
     .min(1)
+    .max(exercises.length)
     .refine(unique("exerciseId"), "Duplicate exercise"),
 });
 export const dataSchema = z.object({
@@ -60,10 +64,18 @@ export const dataSchema = z.object({
   routines: z.array(routineSchema).refine(unique("id"), "Duplicate routine"),
   history: z
     .array(
-      sessionSchema.extend({
-        date: z.string().datetime(),
-        duration: number.nonnegative(),
-      }),
+      sessionSchema
+        .extend({
+          date: z.string().datetime(),
+          duration: number.min(0).max(Number.MAX_SAFE_INTEGER),
+        })
+        .refine(
+          (session) =>
+            session.exercises.some((entry) =>
+              entry.sets.some((set) => set.done),
+            ),
+          "A completed workout must contain at least one completed set.",
+        ),
     )
     .refine(unique("id"), "Duplicate session"),
   active: sessionSchema.nullable(),
@@ -77,10 +89,26 @@ export const dataSchema = z.object({
     .refine((days) => new Set(days).size === days.length),
 });
 export function validateData(value) {
-  return dataSchema.parse(value);
+  const data = dataSchema.parse(value);
+  if (
+    data.active &&
+    data.history.some((session) => session.id === data.active.id)
+  )
+    throw new Error("The active workout is already present in history.");
+  return data;
 }
 export function freshData() {
   return validateData(structuredClone(initialData));
+}
+export function parseBackup(raw) {
+  if (raw.length > MAX_BACKUP_BYTES || new Blob([raw]).size > MAX_BACKUP_BYTES)
+    throw new Error("Choose a FORMA backup no larger than 20 MiB.");
+  return validateData(JSON.parse(raw));
+}
+export async function readBackupFile(file) {
+  if (file.size > MAX_BACKUP_BYTES)
+    throw new Error("Choose a FORMA backup no larger than 20 MiB.");
+  return parseBackup(await file.text());
 }
 export function readStore() {
   let raw;
@@ -91,7 +119,7 @@ export function readStore() {
   }
   if (raw === null) return { data: freshData(), issue: null, raw: null };
   try {
-    return { data: validateData(JSON.parse(raw)), issue: null, raw };
+    return { data: parseBackup(raw), issue: null, raw };
   } catch {
     return { data: null, issue: "invalid", raw };
   }

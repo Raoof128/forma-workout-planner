@@ -12,7 +12,7 @@ import {
   ArrowDown,
 } from "lucide-react";
 import { Button, Modal, RoutineCard, PageHeading } from "./UI";
-import { exercises } from "../data";
+import { createId, exercises } from "../data";
 export function Routines({ routines, onOpen, onCreate }) {
   return (
     <>
@@ -207,7 +207,7 @@ export function RoutineEditor({ routine, onClose, onSave }) {
     try {
       const saved = await onSave({
         ...routine,
-        id: routine?.id || crypto.randomUUID(),
+        id: routine?.id || createId(),
         name: name.trim(),
         description: routine?.description || "Your workout. Your way.",
         minutes,
@@ -381,7 +381,7 @@ export function RoutineEditor({ routine, onClose, onSave }) {
                           max={
                             key === "sets" ? 12 : key === "reps" ? 100 : 1000
                           }
-                          step={key === "weight" ? 0.5 : 1}
+                          step={key === "weight" ? "any" : 1}
                           required
                           value={item[key]}
                           onChange={(event) =>

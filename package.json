@@ -8,9 +8,11 @@
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
     "lint": "eslint .",
-    "test": "playwright test",
-    "format": "prettier --write src tests *.js *.json index.html",
-    "format:check": "prettier --check src tests *.js *.json index.html"
+    "test": "npm run test:unit && npm run test:browser",
+    "format": "prettier --write src tests unit *.js *.json index.html",
+    "format:check": "prettier --check src tests unit *.js *.json index.html",
+    "test:unit": "node --test unit/*.test.js",
+    "test:browser": "playwright test"
   },
   "dependencies": {
     "lucide-react": "1.55.0",
@@ -30,5 +32,8 @@
     "globals": "17.13.0",
     "prettier": "3.9.10",
     "vite": "8.3.4"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { CalendarDays, ChevronRight, Play } from "lucide-react";
-import { displayDate, sessionSets } from "./data";
+import { createId, displayDate, sessionSets } from "./data";
 import { freshData } from "./storage";
 import { useWorkoutStore } from "./hooks/useWorkoutStore";
 import { useNavigation } from "./hooks/useNavigation";
@@ -44,7 +44,7 @@ export default function App() {
   }
   async function begin(routine, replaceId = null) {
     const session = {
-      id: crypto.randomUUID(),
+      id: createId(),
       name: routine.name,
       routineId: routine.id,
       startedAt: Date.now(),
@@ -62,6 +62,15 @@ export default function App() {
       })),
     };
     const result = await change((current) => {
+      if (
+        !equal(
+          current.routines.find((item) => item.id === routine.id),
+          routine,
+        )
+      )
+        throw new Error(
+          "This routine changed in another tab. Reopen it before starting a workout.",
+        );
       if (current.active && current.active.id !== replaceId)
         throw new Error(
           "A workout is already active. Resume it from the overview.",
@@ -169,17 +178,12 @@ export default function App() {
     }, "Workout updated. Your progress has been recalculated.");
     return !!result;
   }
-  async function restore(backup, revision) {
-    const result = await commit(
-      (current) => {
-        if (revision !== undefined && current.revision !== revision)
-          throw new Error(
-            "Your saved data changed while reviewing this backup. Choose the file again before restoring.",
-          );
-        return backup;
-      },
-      { recover: true },
-    );
+  async function restore(backup, revision, recoveryRaw) {
+    const result = await commit(() => backup, {
+      recover: true,
+      expectedRevision: revision,
+      ...(recoveryRaw !== undefined ? { expectedRaw: recoveryRaw } : {}),
+    });
     setModal(null);
     navigate("overview");
     notify(
@@ -192,8 +196,8 @@ export default function App() {
     return (
       <Recovery
         raw={raw}
-        onRestore={(backup) => restore(backup)}
-        onReset={() => restore(freshData())}
+        onRestore={(backup) => restore(backup, undefined, raw)}
+        onReset={() => restore(freshData(), undefined, raw)}
       />
     );
   const visiblePage = page;

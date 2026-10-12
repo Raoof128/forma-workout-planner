@@ -7,7 +7,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { PageHeading, Button, Modal } from "./UI";
-import { downloadData, validateData } from "../storage";
+import { downloadData, readBackupFile } from "../storage";
 export function Settings({ data, saved, onSave, onRestore, notify }) {
   const [name, setName] = useState(data.profile.name);
   const [goal, setGoal] = useState(data.profile.goal);
@@ -29,13 +29,12 @@ export function Settings({ data, saved, onSave, onRestore, notify }) {
     const file = event.target.files?.[0];
     if (!file) return;
     try {
-      if (file.size > 20 * 1024 * 1024) throw new Error();
-      const imported = validateData(JSON.parse(await file.text()));
+      const imported = await readBackupFile(file);
       setBackup({ data: imported, name: file.name, revision: data.revision });
       setError("");
     } catch {
       setError(
-        "Choose a valid FORMA JSON backup smaller than 20 MB. Nothing has been changed.",
+        "Choose a valid FORMA JSON backup no larger than 20 MiB. Nothing has been changed.",
       );
     }
     event.target.value = "";

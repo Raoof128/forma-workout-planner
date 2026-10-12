@@ -1,0 +1,43 @@
+# User guide
+
+[Back to README](../README.md)
+
+## Plan a routine
+
+Open **My routines** to use a starter routine or create your own. Give it a name, choose exercises, set an estimated duration, and enter the number of sets, reps, and starting weight. Use the up/down controls to reorder exercises. Save the routine before starting.
+
+Changing or deleting a routine does not rewrite completed workout history. An active workout keeps its own exercise and prescription snapshot.
+
+On Overview, choose your next session and use **Schedule your week** to mark your usual training days. The calendar shows planned days and logged workouts. Training days are reminders, not assignments of specific routines to dates.
+
+## Log a workout
+
+1. Start a routine from Overview or its details.
+2. Enter the weight and reps for a set, then mark it complete.
+3. Use the rest timer between sets; choose 60, 90, or 120 seconds, pause it, or skip rest.
+4. Add sets and session notes as needed. Open the book icon for exercise instructions.
+5. Finish the workout and confirm **Save workout**.
+
+Only completed sets count toward volume and progress. Complete at least one set before saving a workout. Completed sets are locked for entry; undo completion before changing them. A different routine cannot silently replace an active workout: the app offers a choice to resume or discard and start again.
+
+Persistent sessions and timers survive navigation and reload. Wait for “Saving changes…” to disappear before closing. If the app reports temporary mode, export a backup before leaving.
+
+## Read and correct progress
+
+**Workout history** shows completed sessions newest first. Open a workout to inspect its sets and notes, correct its name or logged values, or delete it with confirmation. Corrections update the progress totals.
+
+**Progress** shows completed workouts, completed sets, and volume, calculated as the sum of `weight × reps` for completed sets. Bodyweight sets logged at 0 kg contribute completed sets but zero external-load volume. Dumbbell volume uses the weight entered; it does not automatically double for two hands or both sides.
+
+Personal bests show the highest completed weight and an estimated one-repetition maximum. One rep uses the actual load; 2–12 reps use the Epley formula. Sets above 12 reps do not contribute to the estimate. These are training records, not personalized exercise prescriptions.
+
+## Back up and restore
+
+In **Settings**, use **Export my data** to download the entire workspace as JSON. Keep backups somewhere outside browser storage. To move to another browser or device, transfer that file yourself, open FORMA there, and choose **Import backup**.
+
+Import validates the file before showing a confirmation. Restoring replaces the current workspace and attempts to preserve the previous data locally first. Files must be FORMA version 1 JSON backups within the documented size limit. A local recovery copy is not an external backup; clearing site data removes both.
+
+If data cannot be read, use **Download original data** before restoring or starting fresh. If storage is full or blocked, follow the displayed error; avoid clearing data before exporting. A conflict message means another tab changed the record you were editing. Reopen that record and reapply your changes to the latest version.
+
+## Preferences and limits
+
+Settings controls the profile name and weekly workout target. Dates use Sydney time, weights use kilograms, and one plank rep means a 10-second hold. This release has no accounts or automatic transfer between devices. Browser-local storage is not encrypted by FORMA; people and extensions with access to your browser profile may be able to read it.

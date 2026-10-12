@@ -114,7 +114,7 @@ export default function HistoryEditor({ session, onSave, onClose }) {
                           type="number"
                           min="0"
                           max="1000"
-                          step="0.5"
+                          step="any"
                           required={set.done}
                           value={set.weight}
                           onChange={(event) =>

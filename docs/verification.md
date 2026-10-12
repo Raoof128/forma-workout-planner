@@ -1,4 +1,19 @@
-# Verification after frontend audit fixes
+# Verification record
+
+## Data-layer audit — 12 October 2026
+
+- `npm run lint`, `npm run format:check`, and `npm run build`: passed.
+- `npm test`: **21 unit tests and 86 browser tests passed** (43 browser scenarios in Chromium and Firefox).
+- Additional cross-tab stress run: **16 tests passed**, repeating both the existing independent-edit regression and a new 12-round simultaneous profile/session scenario four times per browser.
+- Final production-build smoke tests in Chromium and Firefox: start → complete set → finish → reload passed, with persisted history and no page errors.
+- `npm audit --omit=dev`: zero known production dependency advisories reported.
+- Repository Markdown local-link check and `git diff --check`: passed.
+
+The final run includes the existing accessibility and responsive checks. New tests cover lock API rejection, temporary-state revisions, preservation of both saved and unsaved originals, stale recovery, same-millisecond recovery IDs, invalid history/timestamps, backup byte limits, secure-context ID fallback, fractional weights, bounded timer pause, stale routine starts, and repeated concurrent updates. The additional snapshot-adapter unit test checks storage task boundaries while the lock remains held.
+
+During verification, one fixture was corrected to wait for initial storage creation before simulating quota denial. A separate intermittent Firefox concurrent-write failure was reproduced before remediation; task boundaries within the lock were added and the repeated stress tests passed afterward. No automatic retries were used to hide these failures. See the [data-layer audit](backend-audit.md) for findings and scope.
+
+## Earlier frontend design pass
 
 Verified 12 October 2026 (Sydney) using Playwright Chromium and Firefox against the frontend-design polish.
 
