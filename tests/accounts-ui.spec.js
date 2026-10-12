@@ -58,5 +58,7 @@ test("guest account entry offers accessible sign-in and registration flows", asy
     "If this address needs verification, a link is on its way.",
   );
   await page.getByRole("button", { name: /continue as guest/i }).click();
-  await expect(page.getByRole("heading", { name: "Overview" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "A little stronger, every day." }),
+  ).toBeVisible();
 });
