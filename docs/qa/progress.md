@@ -54,3 +54,19 @@ The local documentation check temporarily reported missing matrix links while re
 Network draft revision 4 saves current install/start instructions and retains the four browser/API domains. Settings have not been published/applied, and fresh-task restoration is unverified. Missing browsers and API denial remain external blockers. No deployment, merge or release publication occurred. The final handoff records the immutable candidate and GitHub operation outcome.
 
 Final independent acceptance review tightened coverage definitions: 91 of 108 semantic rows are PASS; 17 retain passing primary-action evidence but are NOT TESTED for their full expected-result contract. The 56 function scopes contain 174 branch rows: 131 PASS, 43 NOT TESTED. All source controls remain accounted for, with no orphan semantic ID. Gate 1 remains BLOCKED. The reviewer resolved the concrete traceability objections through explicit partial accounting, not blanket completion claims.
+
+## GitHub handoff update
+
+Implementation/evidence commit d05ebd31a7101c1413952ea4fee08062393b6b3b was pushed successfully, and draft PR #1 was created. Existing authentication supports Git push and GitHub CLI PR/status operations, despite an earlier issue-API denial. Hosted CI installed the pinned browsers and started the full matrix. This supersedes the earlier blanket API-access blocker; local browser downloads remain blocked. The reusable cloud start instructions were updated again to reflect verified GitHub access.
+
+## Hosted CI diagnostic follow-up
+
+Both initial hosted runs on d05ebd31a7101c1413952ea4fee08062393b6b3b installed all pinned browsers but failed the development browser step. Production was skipped; artifacts uploaded. Accessible annotations reported only exit code 1. Log downloads at results-receiver.actions.githubusercontent.com and artifact downloads at productionresultssa12.blob.core.windows.net returned Forbidden. Those exact domains were added to the environment draft; no runtime application is claimed.
+
+Reporting-only commit 64dd74d1e061a7e472fe6825f28808ba89bbbec7 adds Playwright's built-in GitHub reporter and lets production diagnostics run after a failed dev suite when the build succeeded. Failures remain fatal; cancellation still skips production. Luna D independently reviewed failure propagation. Local CI-reporter smoke passed one meaningful import-preservation case, emitted a GitHub run summary, and lint/format/test discovery passed. No application or test assertion changed in this follow-up. New hosted runs are collecting accessible failure annotations.
+
+Open GitHub issue query succeeded and returned none; the only open PR is the audit draft #1. The earlier issue/API denial is not a current blanket access limitation.
+
+## Final hosted outcome
+
+Both follow-up runs on 64dd74d1e061a7e472fe6825f28808ba89bbbec7 succeeded: PR 38190803860 and push 38190799370. Each reports 237 development and 20 production passes. The required pinned-browser execution blocker is resolved on hosted runners. Earlier local limitations and initial hosted failures remain historical evidence; raw download access and their causes remain unresolved. Network draft now includes six exact domains. The final documentation-only commit records this evidence without changing tested application, test or configuration bytes. NO-GO remains for coverage, historical concurrency and unexplained initial CI failures.

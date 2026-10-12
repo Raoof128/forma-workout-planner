@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "testedCommit": "64dd74d1e061a7e472fe6825f28808ba89bbbec7",
+  "evidenceMethod": "GitHub REST run/job metadata and built-in Playwright GitHub reporter annotations. Raw hosted logs/HTML artifacts could not be downloaded through this cloud allowlist. Project counts are derived from the committed configurations, suite discovery and aggregate passing summaries; individual hosted test records were not inspected.",
+  "runs": [
+    {
+      "conclusion": "success",
+      "databaseId": 38190803860,
+      "event": "pull_request",
+      "headSha": "64dd74d1e061a7e472fe6825f28808ba89bbbec7",
+      "url": "https://github.com/Raoof128/forma-workout-planner/actions/runs/38190803860"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 38190799370,
+      "event": "push",
+      "headSha": "64dd74d1e061a7e472fe6825f28808ba89bbbec7",
+      "url": "https://github.com/Raoof128/forma-workout-planner/actions/runs/38190799370"
+    },
+    {
+      "conclusion": "failure",
+      "databaseId": 38190098370,
+      "event": "pull_request",
+      "headSha": "d05ebd31a7101c1413952ea4fee08062393b6b3b",
+      "url": "https://github.com/Raoof128/forma-workout-planner/actions/runs/38190098370"
+    },
+    {
+      "conclusion": "failure",
+      "databaseId": 38190076690,
+      "event": "push",
+      "headSha": "d05ebd31a7101c1413952ea4fee08062393b6b3b",
+      "url": "https://github.com/Raoof128/forma-workout-planner/actions/runs/38190076690"
+    }
+  ],
+  "successfulRunDetails": [
+    {
+      "conclusion": "success",
+      "headSha": "64dd74d1e061a7e472fe6825f28808ba89bbbec7",
+      "jobs": [
+        {
+          "completedAt": "2026-10-12T01:17:13Z",
+          "conclusion": "success",
+          "databaseId": 114622960053,
+          "name": "Verify application",
+          "startedAt": "2026-10-12T01:09:45Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Check out source",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Set up Node.js",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Install dependencies",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Install pinned Playwright browsers",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Lint",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Check formatting",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run unit tests",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Build production assets",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Check production dependencies",
+              "number": 10,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Check documentation links",
+              "number": 11,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Check patch whitespace",
+              "number": 12,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run development browser suite",
+              "number": 13,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run production smoke suite",
+              "number": 14,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Upload browser reports and failure artifacts",
+              "number": 15,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Set up Node.js",
+              "number": 29,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Check out source",
+              "number": 30,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 31,
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/Raoof128/forma-workout-planner/actions/runs/38190803860/job/114622960053"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/Raoof128/forma-workout-planner/actions/runs/38190803860"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "64dd74d1e061a7e472fe6825f28808ba89bbbec7",
+      "jobs": [
+        {
+          "completedAt": "2026-10-12T01:18:40Z",
+          "conclusion": "success",
+          "databaseId": 114622945864,
+          "name": "Verify application",
+          "startedAt": "2026-10-12T01:09:41Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Check out source",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Set up Node.js",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Install dependencies",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Install pinned Playwright browsers",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Lint",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Check formatting",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run unit tests",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Build production assets",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Check production dependencies",
+              "number": 10,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Check documentation links",
+              "number": 11,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Check patch whitespace",
+              "number": 12,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run development browser suite",
+              "number": 13,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run production smoke suite",
+              "number": 14,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Upload browser reports and failure artifacts",
+              "number": 15,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Set up Node.js",
+              "number": 29,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Check out source",
+              "number": 30,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 31,
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/Raoof128/forma-workout-planner/actions/runs/38190799370/job/114622945864"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/Raoof128/forma-workout-planner/actions/runs/38190799370"
+    }
+  ],
+  "annotations": {
+    "38190803860": [
+      {
+        "annotation_level": "warning",
+        "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683, actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+        "path": ".github",
+        "start_line": 2,
+        "title": ""
+      },
+      {
+        "annotation_level": "notice",
+        "message": "  20 passed (20.4s)",
+        "path": ".github",
+        "start_line": 49,
+        "title": "🎭 Playwright Run Summary"
+      },
+      {
+        "annotation_level": "notice",
+        "message": "  237 passed (5.9m)",
+        "path": ".github",
+        "start_line": 252,
+        "title": "🎭 Playwright Run Summary"
+      }
+    ],
+    "38190799370": [
+      {
+        "annotation_level": "warning",
+        "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683, actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+        "path": ".github",
+        "start_line": 2,
+        "title": ""
+      },
+      {
+        "annotation_level": "notice",
+        "message": "  20 passed (24.2s)",
+        "path": ".github",
+        "start_line": 49,
+        "title": "🎭 Playwright Run Summary"
+      },
+      {
+        "annotation_level": "notice",
+        "message": "  237 passed (7.5m)",
+        "path": ".github",
+        "start_line": 252,
+        "title": "🎭 Playwright Run Summary"
+      }
+    ]
+  },
+  "development": {
+    "passedPerRun": 237,
+    "projects": {
+      "chromium": 79,
+      "firefox": 79,
+      "webkit": 79
+    },
+    "automaticRetries": 0
+  },
+  "production": {
+    "passedPerRun": 20,
+    "projects": {
+      "production-chromium-desktop": 4,
+      "production-firefox-desktop": 4,
+      "production-webkit-desktop": 4,
+      "production-chromium-mobile": 4,
+      "production-webkit-mobile": 4
+    },
+    "automaticRetries": 0
+  },
+  "initialFailures": "Both d05ebd3 runs failed development, skipped production, and uploaded artifacts. Cause remains unknown: summary only exit code 1; raw log/artifact hosts blocked. No app/test assertions changed between these failures and passing 64dd74d runs. Green reruns do not establish a causal repair."
+}

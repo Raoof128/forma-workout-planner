@@ -13,6 +13,7 @@ The documentation link, fragment, image, and npm-script checker is invoked with 
 - [Interaction outcomes](interaction-matrix.json) and [source crosswalk](control-crosswalk.json): semantic actions, exact test references and visible partial coverage.
 - [Function branches](function-matrix.json) and [static source inventory](source-inventory.json): domain/persistence evidence and all discovered function/callback nodes.
 - [Execution results](verification-results.json) and [reproduction evidence](reproduction-evidence.json): individual outcomes, tested content hashes, pre-fix failure and environment blockers.
+- [Hosted CI evidence](hosted-ci-evidence.json): immutable tested commit, both successful runs, prior failed runs and accessible summary provenance.
 - [Runtime control snapshots](runtime-controls.json): 17 representative accessible trees using synthetic data.
 - [Defects and risks](defects.md), [independent review](independent-review.md) and [progress](progress.md): causes, decisions, unresolved limits and review history.
 

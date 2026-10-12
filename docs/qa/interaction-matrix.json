@@ -5,7 +5,7 @@
     "PASS": 91,
     "NOT TESTED": 17
   },
-  "browserLimit": "All required pinned-browser projects remain BLOCKED. Counts below use semantic interaction rows and system Chromium only.",
+  "browserLimit": "Required desktop projects passed the full configured suite in two hosted runs on 64dd74d. Row statuses retain assertion-scope gaps. Hosted results are aggregate annotations, not individually downloaded reports; see hosted-ci-evidence.json. Local system-Chromium individual evidence remains in verification-results.json.",
   "interactions": [
     {
       "id": "global-skip-content",
@@ -28,15 +28,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "navigation-desktop-brand",
@@ -59,15 +60,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "navigation-mobile-brand",
@@ -90,15 +92,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "navigation-main-items",
@@ -128,9 +131,9 @@
       ],
       "browserCoverage": {
         "systemChromium154": "NOT TESTED",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "NOT TESTED",
+        "firefox": "NOT TESTED",
+        "webkit": "NOT TESTED"
       },
       "result": "NOT TESTED",
       "evidence": "verification-results.json",
@@ -138,7 +141,8 @@
       "unverifiedBranches": [
         "Active aria-current state is not directly asserted."
       ],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "navigation-settings",
@@ -161,9 +165,9 @@
       ],
       "browserCoverage": {
         "systemChromium154": "NOT TESTED",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "NOT TESTED",
+        "firefox": "NOT TESTED",
+        "webkit": "NOT TESTED"
       },
       "result": "NOT TESTED",
       "evidence": "verification-results.json",
@@ -171,7 +175,8 @@
       "unverifiedBranches": [
         "Active aria-current state is not directly asserted."
       ],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "navigation-profile-shortcut",
@@ -194,15 +199,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "navigation-mobile-toggle",
@@ -225,15 +231,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "navigation-mobile-shade",
@@ -256,15 +263,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "navigation-active-session",
@@ -287,15 +295,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "overview-start-cta",
@@ -325,15 +334,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "overview-calendar-previous",
@@ -356,15 +366,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "overview-calendar-next",
@@ -387,15 +398,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "overview-calendar-day",
@@ -418,15 +430,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "overview-this-week",
@@ -449,15 +462,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "overview-edit-schedule-selected-day",
@@ -480,15 +494,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "overview-preferred-routine",
@@ -511,15 +526,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "overview-view-routines",
@@ -542,15 +558,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "overview-routine-card",
@@ -573,15 +590,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "overview-empty-create",
@@ -604,15 +622,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "overview-schedule-banner",
@@ -642,15 +661,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routines-create",
@@ -673,15 +693,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routines-card",
@@ -704,15 +725,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-detail-close",
@@ -735,15 +757,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-detail-start",
@@ -780,15 +803,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-detail-edit",
@@ -818,15 +842,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-detail-delete-open",
@@ -849,15 +874,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-editor-name",
@@ -887,9 +913,9 @@
       ],
       "browserCoverage": {
         "systemChromium154": "NOT TESTED",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "NOT TESTED",
+        "firefox": "NOT TESTED",
+        "webkit": "NOT TESTED"
       },
       "result": "NOT TESTED",
       "evidence": "verification-results.json",
@@ -897,7 +923,8 @@
       "unverifiedBranches": [
         "60-character input cap is not directly asserted."
       ],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-editor-duration",
@@ -920,9 +947,9 @@
       ],
       "browserCoverage": {
         "systemChromium154": "NOT TESTED",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "NOT TESTED",
+        "firefox": "NOT TESTED",
+        "webkit": "NOT TESTED"
       },
       "result": "NOT TESTED",
       "evidence": "verification-results.json",
@@ -930,7 +957,8 @@
       "unverifiedBranches": [
         "Direct valid duration edit is verified by supplemental/final controls test; invalid values and all numeric boundaries are not directly asserted."
       ],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-editor-search",
@@ -953,9 +981,9 @@
       ],
       "browserCoverage": {
         "systemChromium154": "NOT TESTED",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "NOT TESTED",
+        "firefox": "NOT TESTED",
+        "webkit": "NOT TESTED"
       },
       "result": "NOT TESTED",
       "evidence": "verification-results.json",
@@ -963,7 +991,8 @@
       "unverifiedBranches": [
         "Case-insensitive matching is not directly asserted; no-match result is covered."
       ],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-editor-exercise-toggle",
@@ -993,15 +1022,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-editor-move-up",
@@ -1024,15 +1054,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-editor-move-down",
@@ -1055,15 +1086,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-editor-prescriptions",
@@ -1093,9 +1125,9 @@
       ],
       "browserCoverage": {
         "systemChromium154": "NOT TESTED",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "NOT TESTED",
+        "firefox": "NOT TESTED",
+        "webkit": "NOT TESTED"
       },
       "result": "NOT TESTED",
       "evidence": "verification-results.json",
@@ -1103,7 +1135,8 @@
       "unverifiedBranches": [
         "All numeric range boundaries are not directly asserted; valid values and preservation are covered."
       ],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-editor-cancel-clean",
@@ -1126,15 +1159,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-editor-cancel-dirty",
@@ -1164,15 +1198,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-editor-discard-keep",
@@ -1202,15 +1237,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-editor-discard-confirm",
@@ -1240,15 +1276,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-editor-save-invalid",
@@ -1271,15 +1308,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-editor-save-valid",
@@ -1316,15 +1354,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-delete-keep",
@@ -1347,15 +1386,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "routine-delete-confirm",
@@ -1378,9 +1418,9 @@
       ],
       "browserCoverage": {
         "systemChromium154": "NOT TESTED",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "NOT TESTED",
+        "firefox": "NOT TESTED",
+        "webkit": "NOT TESTED"
       },
       "result": "NOT TESTED",
       "evidence": "verification-results.json",
@@ -1388,7 +1428,8 @@
       "unverifiedBranches": [
         "Preservation of populated completed history when deleting a routine is not asserted; fixture history is empty."
       ],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "library-search",
@@ -1418,15 +1459,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "library-equipment-filter",
@@ -1449,15 +1491,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "library-muscle-filter",
@@ -1480,15 +1523,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "library-card-guide",
@@ -1525,15 +1569,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "library-clear-filters",
@@ -1563,15 +1608,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "exercise-guide-close",
@@ -1608,15 +1654,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-empty-start",
@@ -1639,15 +1686,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-back",
@@ -1670,15 +1718,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-set-weight",
@@ -1708,15 +1757,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-set-reps",
@@ -1746,15 +1796,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-set-complete-invalid",
@@ -1777,15 +1828,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-set-complete",
@@ -1815,15 +1867,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-set-uncomplete",
@@ -1846,15 +1899,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-add-set",
@@ -1877,15 +1931,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-instructions",
@@ -1908,15 +1963,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-rest-open",
@@ -1939,15 +1995,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-rest-duration",
@@ -1984,15 +2041,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-rest-start-pause",
@@ -2029,15 +2087,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-rest-skip-mobile",
@@ -2060,15 +2119,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-rest-skip-panel",
@@ -2091,15 +2151,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-session-notes",
@@ -2129,9 +2190,9 @@
       ],
       "browserCoverage": {
         "systemChromium154": "NOT TESTED",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "NOT TESTED",
+        "firefox": "NOT TESTED",
+        "webkit": "NOT TESTED"
       },
       "result": "NOT TESTED",
       "evidence": "verification-results.json",
@@ -2139,7 +2200,8 @@
       "unverifiedBranches": [
         "10,000-character input cap is not directly asserted."
       ],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-finish-invalid",
@@ -2162,15 +2224,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-finish-confirm",
@@ -2200,15 +2263,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-finish-keep",
@@ -2238,15 +2302,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-finish-save",
@@ -2276,15 +2341,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-discard-open",
@@ -2307,15 +2373,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-discard-keep",
@@ -2338,15 +2405,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "workout-discard-confirm",
@@ -2369,15 +2437,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "history-empty-start",
@@ -2400,15 +2469,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "history-row-open",
@@ -2445,15 +2515,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "history-detail-close",
@@ -2490,15 +2561,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "history-delete-open",
@@ -2528,15 +2600,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "history-delete-keep",
@@ -2559,15 +2632,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "history-delete-confirm",
@@ -2590,15 +2664,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "history-edit-open",
@@ -2621,15 +2696,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "history-editor-name",
@@ -2652,15 +2728,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "history-editor-values",
@@ -2683,15 +2760,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "history-editor-keep-set",
@@ -2714,15 +2792,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "history-editor-notes",
@@ -2745,9 +2824,9 @@
       ],
       "browserCoverage": {
         "systemChromium154": "NOT TESTED",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "NOT TESTED",
+        "firefox": "NOT TESTED",
+        "webkit": "NOT TESTED"
       },
       "result": "NOT TESTED",
       "evidence": "verification-results.json",
@@ -2755,7 +2834,8 @@
       "unverifiedBranches": [
         "10,000-character input cap is not directly asserted."
       ],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "history-editor-cancel-dirty",
@@ -2778,15 +2858,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "history-editor-discard-choice",
@@ -2809,15 +2890,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "history-editor-save-invalid",
@@ -2840,15 +2922,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "history-editor-save",
@@ -2871,15 +2954,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "progress-empty-start",
@@ -2902,15 +2986,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "settings-name",
@@ -2940,9 +3025,9 @@
       ],
       "browserCoverage": {
         "systemChromium154": "NOT TESTED",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "NOT TESTED",
+        "firefox": "NOT TESTED",
+        "webkit": "NOT TESTED"
       },
       "result": "NOT TESTED",
       "evidence": "verification-results.json",
@@ -2950,7 +3035,8 @@
       "unverifiedBranches": [
         "Whitespace-only required/pattern rejection is not directly asserted."
       ],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "settings-weekly-goal",
@@ -2973,15 +3059,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "settings-save-profile",
@@ -3025,9 +3112,9 @@
       ],
       "browserCoverage": {
         "systemChromium154": "NOT TESTED",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "NOT TESTED",
+        "firefox": "NOT TESTED",
+        "webkit": "NOT TESTED"
       },
       "result": "NOT TESTED",
       "evidence": "verification-results.json",
@@ -3035,7 +3122,8 @@
       "unverifiedBranches": [
         "Stale profile-save conflict is not directly asserted."
       ],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "settings-export",
@@ -3065,15 +3153,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "settings-import-picker",
@@ -3103,15 +3192,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "settings-import-cancel",
@@ -3134,15 +3224,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "settings-import-restore",
@@ -3186,15 +3277,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "schedule-close-clean",
@@ -3217,15 +3309,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "schedule-day-toggle",
@@ -3248,15 +3341,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "schedule-save",
@@ -3279,9 +3373,9 @@
       ],
       "browserCoverage": {
         "systemChromium154": "NOT TESTED",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "NOT TESTED",
+        "firefox": "NOT TESTED",
+        "webkit": "NOT TESTED"
       },
       "result": "NOT TESTED",
       "evidence": "verification-results.json",
@@ -3289,7 +3383,8 @@
       "unverifiedBranches": [
         "Stale schedule conflict and temporary-save feedback are not directly asserted by the cited successful-save case."
       ],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "schedule-close-dirty",
@@ -3312,15 +3407,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "schedule-discard-choice",
@@ -3343,15 +3439,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "recovery-download-original",
@@ -3388,9 +3485,9 @@
       ],
       "browserCoverage": {
         "systemChromium154": "NOT TESTED",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "NOT TESTED",
+        "firefox": "NOT TESTED",
+        "webkit": "NOT TESTED"
       },
       "result": "NOT TESTED",
       "evidence": "verification-results.json",
@@ -3398,7 +3495,8 @@
       "unverifiedBranches": [
         "Original-data download failure is not directly asserted."
       ],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "recovery-import-picker",
@@ -3428,9 +3526,9 @@
       ],
       "browserCoverage": {
         "systemChromium154": "NOT TESTED",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "NOT TESTED",
+        "firefox": "NOT TESTED",
+        "webkit": "NOT TESTED"
       },
       "result": "NOT TESTED",
       "evidence": "verification-results.json",
@@ -3438,7 +3536,8 @@
       "unverifiedBranches": [
         "Oversized file rejection through this recovery UI is not directly asserted; parser unit limit and invalid-backup recovery are covered."
       ],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "recovery-fresh-open",
@@ -3461,15 +3560,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "recovery-fresh-keep",
@@ -3492,15 +3592,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "recovery-fresh-reset",
@@ -3523,9 +3624,9 @@
       ],
       "browserCoverage": {
         "systemChromium154": "NOT TESTED",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "NOT TESTED",
+        "firefox": "NOT TESTED",
+        "webkit": "NOT TESTED"
       },
       "result": "NOT TESTED",
       "evidence": "verification-results.json",
@@ -3533,7 +3634,8 @@
       "unverifiedBranches": [
         "Duplicate submission while pending and reset-specific write failure are not directly asserted."
       ],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "error-boundary-download",
@@ -3556,15 +3658,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "error-boundary-reload",
@@ -3587,15 +3690,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "toast-dismiss",
@@ -3618,15 +3722,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "modal-close-shared",
@@ -3649,9 +3754,9 @@
       ],
       "browserCoverage": {
         "systemChromium154": "NOT TESTED",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "NOT TESTED",
+        "firefox": "NOT TESTED",
+        "webkit": "NOT TESTED"
       },
       "result": "NOT TESTED",
       "evidence": "verification-results.json",
@@ -3659,7 +3764,8 @@
       "unverifiedBranches": [
         "Closing while a save is pending is not directly asserted."
       ],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "modal-escape-shared",
@@ -3689,9 +3795,9 @@
       ],
       "browserCoverage": {
         "systemChromium154": "NOT TESTED",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "NOT TESTED",
+        "firefox": "NOT TESTED",
+        "webkit": "NOT TESTED"
       },
       "result": "NOT TESTED",
       "evidence": "verification-results.json",
@@ -3699,7 +3805,8 @@
       "unverifiedBranches": [
         "Escape while a save is pending is not directly asserted."
       ],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     },
     {
       "id": "modal-backdrop-shared",
@@ -3722,15 +3829,16 @@
       ],
       "browserCoverage": {
         "systemChromium154": "PASS",
-        "pinnedChromium156": "BLOCKED",
-        "firefox": "BLOCKED",
-        "webkit": "BLOCKED"
+        "pinnedChromium156": "PASS",
+        "firefox": "PASS",
+        "webkit": "PASS"
       },
       "result": "PASS",
       "evidence": "verification-results.json",
       "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
       "unverifiedBranches": [],
-      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+      "notes": "PASS covers referenced asserted outcomes; aggregate hosted suite success extends execution evidence to all three configured desktop engines. Keyboard description is intended behavior, not every key/device combination tested.",
+      "hostedEvidence": "hosted-ci-evidence.json"
     }
   ]
 }

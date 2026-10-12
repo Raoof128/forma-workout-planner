@@ -83,23 +83,6 @@
       "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   ],
-  "requiredBrowsers": [
-    {
-      "name": "chromium",
-      "status": "BLOCKED",
-      "reason": "browserType.launch: Executable doesn't exist at /workspace/.playwright-browsers/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell"
-    },
-    {
-      "name": "firefox",
-      "status": "BLOCKED",
-      "reason": "browserType.launch: Executable doesn't exist at /workspace/.playwright-browsers/firefox-1555/firefox/firefox"
-    },
-    {
-      "name": "webkit",
-      "status": "BLOCKED",
-      "reason": "browserType.launch: Executable doesn't exist at /workspace/.playwright-browsers/webkit-2370/pw_run.sh"
-    }
-  ],
   "tests": [
     {
       "run": "development",
@@ -1382,8 +1365,57 @@
     "scripts/check-docs.mjs": "4d9213361cccd7eb799163990fca2037062e5e1e456546e22823d4f384efbda6",
     "package.json": "dac6e62f0676fbc597e39cdcb031342da6b68cc0385649451b90a2635c262126",
     "package-lock.json": "663faf69133cf7b821cb98065a8fa2f7fe9d193dae0d89ad6d387d2fff40e88d",
-    "playwright.config.js": "062d037da9b5efa4e36156947a860c24514276fd6f7d6520bd4cd6a89309784d",
-    "playwright.production.config.js": "2b3bdbb789b27ded89bc016a9ec513970b2964259ba3dd67f0cd3a6c30b59db4",
-    ".github/workflows/ci.yml": "90537b51bd32681ceb8afcc336b22f74ed14b1ab8e45b388fc9f650e9e6bbfe7"
+    "playwright.config.js": "255cd5013c157a50d0bf0420af5381f9e27f22fa51313e7fb425148c9c43982d",
+    "playwright.production.config.js": "d35b07bd993c0989d8b8b6a4ca84be3d42ba877321946afc5db986c2a8ddd705",
+    ".github/workflows/ci.yml": "6e8f1133dbc029bd81e3f5a24dc73c43f77b0024910a6385115b75ab57f7c318"
+  },
+  "localPinnedBrowsers": [
+    {
+      "name": "chromium",
+      "status": "BLOCKED",
+      "reason": "browserType.launch: Executable doesn't exist at /workspace/.playwright-browsers/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell"
+    },
+    {
+      "name": "firefox",
+      "status": "BLOCKED",
+      "reason": "browserType.launch: Executable doesn't exist at /workspace/.playwright-browsers/firefox-1555/firefox/firefox"
+    },
+    {
+      "name": "webkit",
+      "status": "BLOCKED",
+      "reason": "browserType.launch: Executable doesn't exist at /workspace/.playwright-browsers/webkit-2370/pw_run.sh"
+    }
+  ],
+  "requiredBrowsers": [
+    {
+      "name": "chromium",
+      "status": "PASS",
+      "scope": "Hosted complete configured development suite; local installation remains BLOCKED",
+      "evidence": "hosted-ci-evidence.json",
+      "commit": "64dd74d1e061a7e472fe6825f28808ba89bbbec7"
+    },
+    {
+      "name": "firefox",
+      "status": "PASS",
+      "scope": "Hosted complete configured development suite; local installation remains BLOCKED",
+      "evidence": "hosted-ci-evidence.json",
+      "commit": "64dd74d1e061a7e472fe6825f28808ba89bbbec7"
+    },
+    {
+      "name": "webkit",
+      "status": "PASS",
+      "scope": "Hosted complete configured development suite; local installation remains BLOCKED",
+      "evidence": "hosted-ci-evidence.json",
+      "commit": "64dd74d1e061a7e472fe6825f28808ba89bbbec7"
+    }
+  ],
+  "hostedCI": {
+    "evidence": "hosted-ci-evidence.json",
+    "testedCommit": "64dd74d1e061a7e472fe6825f28808ba89bbbec7",
+    "developmentPassedPerRun": 237,
+    "productionPassedPerRun": 20,
+    "successfulRuns": [38190803860, 38190799370],
+    "initialFailedRuns": [38190098370, 38190076690],
+    "failureCause": "Unresolved"
   }
 }

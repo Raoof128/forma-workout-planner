@@ -1,16 +1,16 @@
 # FORMA release readiness — 12 October 2026
 
-**NO-GO for release.** The scoped repairs and available-browser workflows pass, but the required pinned-browser matrix and hosted CI remain blocked. An earlier intermittent concurrent-write failure has not been explained. No deployment, merge or release publication occurred.
+**NO-GO for release.** The scoped repairs and full hosted pinned-browser matrix pass. Coverage gaps, an earlier intermittent concurrent-write failure and two initial hosted browser failures remain unresolved. No deployment, merge or release publication occurred.
 
 ## Candidate and environment
 
 Repository `Raoof128/forma-workout-planner`; branch `release/forma-readiness-audit`; clean baseline `a232ad2cee68f340c2102d6e5bf9a0c8ca9a9ba1`. The final candidate is the commit containing this report; its exact SHA is in the handoff. [Verification evidence](verification-results.json) records SHA-256 hashes of tested application, tests, scripts, manifests and configurations. A tracked report cannot contain its own commit SHA.
 
-Linux cloud container; Node 24.19.0, npm 11.9.0, React 19.3.0, Vite 8.3.4, Zod 4.6.6, Playwright 1.64.0 and axe-core 4.14.0. Actual browser: system Chromium 154.0.8037.57 via explicit `/usr/bin/chromium` override. Pinned Chromium 156, Firefox and WebKit are absent. Dependency versions and lockfile are unchanged.
+Linux cloud container; Node 24.19.0, npm 11.9.0, React 19.3.0, Vite 8.3.4, Zod 4.6.6, Playwright 1.64.0 and axe-core 4.14.0. Local browser: system Chromium 154.0.8037.57 via explicit `/usr/bin/chromium` override. Pinned Chromium 156, Firefox and WebKit are absent locally; all three installed and passed on GitHub-hosted Ubuntu 24.04 runners. Dependency versions and lockfile are unchanged.
 
 ## Coverage accounting
 
-[Interaction matrix](interaction-matrix.json): **108 semantic rows: 91 PASS and 17 NOT TESTED for incomplete expected-result coverage in system Chromium; zero FAIL and zero NOT APPLICABLE semantic rows.** All 108 rows cite passing primary-action evidence, but the 17 incomplete rows retain explicit unverified branches. Each cites exact executed test titles and files. Required pinned Chromium, Firefox and WebKit remain **BLOCKED for every row**, separate from local semantic-row results.
+[Interaction matrix](interaction-matrix.json): **108 semantic rows: 91 PASS and 17 NOT TESTED for incomplete expected-result coverage in system Chromium; zero FAIL and zero NOT APPLICABLE semantic rows.** All 108 rows cite passing primary-action evidence, but the 17 incomplete rows retain explicit unverified branches. Each cites exact executed test titles and files. Both hosted runs passed all 237 configured development cases across pinned Chromium, Firefox and WebKit. This establishes execution of the referenced tests in those engines, while the same 17 expected-contract gaps remain NOT TESTED. Hosted aggregate evidence is distinguished from individually inspected local results in [hosted CI evidence](hosted-ci-evidence.json).
 
 [Source inventory](source-inventory.json): 21 handwritten JS/JSX files, 390 function/callback nodes and 108 control templates. The [crosswalk](control-crosswalk.json) maps 104 templates to semantic rows; four structural templates are NOT APPLICABLE (three submit-form wrappers and the reusable Button implementation). The equal totals of 108 templates and 108 semantic rows are coincidental: mappings are many-to-many. Repeated data-driven instances with identical behavior share rows; conditional actions are distinguished. No literal DOM-instance or mathematical path-completeness claim is made.
 
@@ -34,8 +34,11 @@ Fresh installation, lint, formatting, build, unit, documentation, production dep
 | Responsive                                                  | 320, 375, 390, 540, 768, 1024, 1440, 1536, 1920px; short landscape and maximum-content fixtures |
 | `npm audit --omit=dev`                                      | Zero reported production vulnerabilities                                                        |
 | `npm run docs:check`, `git diff --check`                    | PASS                                                                                            |
-| Pinned Chromium/Firefox/WebKit; mobile WebKit               | BLOCKED before execution                                                                        |
-| Hosted Actions                                              | Configured; successful run NOT VERIFIED                                                         |
+| Hosted pinned Chromium/Firefox/WebKit                       | 237 development PASS per run, 79 per engine; two successful runs                                |
+| Hosted production matrix                                    | 20 PASS per run across three desktop and two mobile projects                                    |
+| Hosted Actions                                              | Two successful runs on `64dd74d`; two initial failed runs remain unexplained                    |
+
+Hosted runs [38190803860](https://github.com/Raoof128/forma-workout-planner/actions/runs/38190803860) and [38190799370](https://github.com/Raoof128/forma-workout-planner/actions/runs/38190799370) passed on `64dd74d1e061a7e472fe6825f28808ba89bbbec7`. REST metadata confirms every check step succeeded; Playwright annotations report 237 and 20 passes in each run. Raw hosted report downloads remain blocked, so per-project counts derive from the fixed configurations and complete aggregate summaries. No retries are configured. The earlier two runs failed development without accessible failure details; adding reporting did not change app code or assertions and is not claimed as a causal fix.
 
 The original baseline passed 21 unit tests. Its browser command attempted 86 cases, all failing at launch because executables were absent. These were environment launch failures, not 86 demonstrated app defects. Earlier [verification records](../verification.md) remain historical.
 
@@ -61,8 +64,8 @@ Storage is browser-local, unencrypted and origin/profile-specific. There is no b
 
 ## Limits and gates
 
-1. Browser downloads return `403 Domain forbidden`. Pinned Chromium, Firefox, WebKit and mobile WebKit remain unverified. Saved network additions cover `cdn.playwright.dev`, `playwright.download.prss.microsoft.com`, `storage.googleapis.com` and `api.github.com`; saving does not apply or publish them.
-2. GitHub API access is Forbidden despite an existing binding. Issue/PR review and hosted CI evidence are unavailable. Git HTTPS reads work; final handoff records push/PR outcomes.
+1. Browser downloads return `403 Domain forbidden`. Pinned browsers remain unavailable locally; hosted execution passed. Saved network additions cover `cdn.playwright.dev`, `playwright.download.prss.microsoft.com`, `storage.googleapis.com`, `api.github.com`, `results-receiver.actions.githubusercontent.com` and `productionresultssa12.blob.core.windows.net`; saving does not apply or publish them.
+2. Git HTTPS push and GitHub CLI PR/status operations succeeded: [draft PR #1](https://github.com/Raoof128/forma-workout-planner/pull/1) is open. An earlier issue API request was denied; that does not establish general API unavailability. Hosted CI passed twice on `64dd74d`. Two initial hosted failures remain unexplained because raw log/artifact downloads are blocked. Issue listing also succeeded and returned none.
 3. The earlier concurrent profile/session failure is unexplained. Passing isolated, stress and integrated runs do not establish a causal fix.
 4. Function gaps include some formatter/date boundaries, missing crypto APIs, pending-write/unload paths, irrelevant storage events, saving interlocks, stale action conflicts and background timer suspension. Partial evidence is not promoted to full branch PASS. Sydney dates are explicitly intended by the brief.
 5. A 2,000-session progress fixture passes; maximum-size valid import, large History DOM rendering and low-end performance remain unmeasured. The 20 MiB limit is preserved; no arbitrary collection-count cap was introduced.
@@ -75,10 +78,10 @@ Storage is browser-local, unencrypted and origin/profile-specific. There is no b
 | 1. Functional coverage     | BLOCKED                   | All discovered actions accounted for; 17 rows have incomplete expected-result coverage |
 | 2. Application correctness | PASS, scoped              | Critical tested workflows, calculations and validation pass                            |
 | 3. Data safety             | BLOCKED                   | Safety regressions pass; historical concurrent-write failure unexplained               |
-| 4. Browser compatibility   | BLOCKED                   | Required pinned browsers unavailable                                                   |
+| 4. Browser compatibility   | PASS, scoped              | Required hosted pinned engines pass; physical devices remain unverified                |
 | 5. Security/accessibility  | PASS, scoped              | No blocking finding in examined paths; manual/performance limits explicit              |
-| 6. Production smoke        | PASS, scoped              | Eight Chromium desktop/mobile checks; other browsers blocked                           |
-| 7. CI/reproducibility      | BLOCKED                   | Clean local install passes; hosted CI and required matrix unverified                   |
+| 6. Production smoke        | PASS, scoped              | 20 hosted smoke checks across five projects; eight supplemental local checks           |
+| 7. CI/reproducibility      | BLOCKED                   | Two full hosted passes; two earlier browser-suite failures have no established cause   |
 | 8. Documentation           | PASS                      | Source-backed guidance and local link/command checks                                   |
 | 9. Independent review      | PASS for review performed | Separate review supports NO-GO, not release approval                                   |
 
@@ -93,4 +96,4 @@ PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:browser -- --
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:browser:production -- --project=production-chromium-desktop --project=production-chromium-mobile
 ```
 
-Run pinned-browser suites and hosted CI once available; investigate the historical concurrency failure and remaining risk-path gaps before changing the verdict. Review the exact candidate and any subsequent fixes. No release approval is implied by this audit handoff.
+Investigate initial hosted failures, the historical concurrency failure and remaining risk-path gaps before changing the verdict. Apply saved network settings to enable local pinned-browser reproduction and retrieval of hosted failure artifacts. Review the exact candidate and any subsequent fixes. No release approval is implied by this audit handoff.
