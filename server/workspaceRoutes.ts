@@ -20,9 +20,14 @@ export type RequireMember = (
 
 export function registerWorkspaceRoutes(
   app: FastifyInstance,
-  options: { pool: Pool; requireMember: RequireMember },
+  options: {
+    pool: Pool;
+    requireMember: RequireMember;
+    /** Per-member write budget; resolves false when the member is over it. */
+    allowWrite?: (userId: string) => Promise<boolean>;
+  },
 ) {
-  const { pool, requireMember } = options;
+  const { pool, requireMember, allowWrite } = options;
   const noStore = { "cache-control": "private, no-store, max-age=0" };
   const bodyLimit = 20 * 1024 * 1024 + 16 * 1024;
 
@@ -63,38 +68,70 @@ export function registerWorkspaceRoutes(
     }
   });
 
-  app.put("/api/workspace", { bodyLimit }, async (request, reply) => {
-    const member = await requireMember(request, reply);
-    if (!member) return reply;
-    try {
-      const acknowledgement = await putWorkspace(
-        pool,
-        member.userId,
-        member.name,
-        request.body,
-      );
-      return reply.headers(noStore).send(acknowledgement);
-    } catch (error) {
-      if (error instanceof WorkspaceConflict) {
+  const writers = new WeakMap<FastifyRequest, MemberIdentity>();
+  app.put(
+    "/api/workspace",
+    {
+      bodyLimit,
+      // Authenticate and spend the write budget before Fastify buffers and
+      // parses up to 20 MiB, so anonymous or throttled callers cost little.
+      async onRequest(request, reply) {
+        const member = await requireMember(request, reply);
+        if (!member) return reply;
+        try {
+          if (allowWrite && !(await allowWrite(member.userId))) {
+            return reply
+              .code(429)
+              .headers({ ...noStore, "retry-after": "60" })
+              .send({
+                error: "rate_limited",
+                message:
+                  "Too many saves in a short time. Try again in a minute.",
+              });
+          }
+        } catch {
+          return reply
+            .code(503)
+            .headers(noStore)
+            .send({ error: "workspace_unavailable" });
+        }
+        writers.set(request, member);
+      },
+    },
+    async (request, reply) => {
+      const member = writers.get(request);
+      if (!member)
+        return reply.code(401).headers(noStore).send({ error: "unauthorized" });
+      try {
+        const acknowledgement = await putWorkspace(
+          pool,
+          member.userId,
+          member.name,
+          request.body,
+        );
+        return reply.headers(noStore).send(acknowledgement);
+      } catch (error) {
+        if (error instanceof WorkspaceConflict) {
+          return reply
+            .code(409)
+            .headers(noStore)
+            .send({
+              error: error.code,
+              message: error.message,
+              ...error.latest,
+            });
+        }
+        if (error instanceof InvalidWorkspace) {
+          return reply
+            .code(400)
+            .headers(noStore)
+            .send({ error: "invalid_workspace", message: error.message });
+        }
         return reply
-          .code(409)
+          .code(500)
           .headers(noStore)
-          .send({
-            error: error.code,
-            message: error.message,
-            ...error.latest,
-          });
+          .send({ error: "workspace_unavailable" });
       }
-      if (error instanceof InvalidWorkspace) {
-        return reply
-          .code(400)
-          .headers(noStore)
-          .send({ error: "invalid_workspace", message: error.message });
-      }
-      return reply
-        .code(500)
-        .headers(noStore)
-        .send({ error: "workspace_unavailable" });
-    }
-  });
+    },
+  );
 }

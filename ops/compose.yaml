@@ -8,7 +8,7 @@ x-bounded-logs: &bounded-logs
 
 services:
   db:
-    image: postgres:18.4-alpine
+    image: postgres:18.4-alpine@sha256:9a8afca54e7861fd90fab5fdf4c42477a6b1cb7d293595148e674e0a3181de15
     restart: unless-stopped
     logging: *bounded-logs
     environment:
@@ -109,7 +109,7 @@ services:
     pids_limit: 64
 
   cloudflared:
-    image: cloudflare/cloudflared:2026.9.3
+    image: cloudflare/cloudflared:2026.9.3@sha256:072c067d25ccbe61d46e18f0d0723255f2bb5304f7317caa95b27031520ff92c
     restart: unless-stopped
     logging: *bounded-logs
     command:

@@ -1,7 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { CalendarDays, ChevronRight, Play } from "lucide-react";
 import { createId, displayDate, sessionSets } from "./data";
-import { freshData, readStore } from "./storage";
+import {
+  freshData,
+  legacyFingerprint,
+  readLegacyMigration,
+  readStore,
+} from "./storage";
 import { useWorkoutStore } from "./hooks/useWorkoutStore";
 import { useNavigation } from "./hooks/useNavigation";
 import Navigation, { navigationItems } from "./components/Navigation";
@@ -36,6 +41,7 @@ function AccountWorkspace() {
   const [modal, setModal] = useState(null);
   const [toast, setToast] = useState("");
   const [legacySnapshot] = useState(() => readStore());
+  const [legacyMigration] = useState(() => readLegacyMigration());
   const toastTimer = useRef(null);
   const notify = useCallback((message) => {
     setToast(message);
@@ -67,16 +73,23 @@ function AccountWorkspace() {
     reloadConflict: () => repository?.reloadConflict(),
     retry: () => repository?.retry(),
     commit,
-    importLegacy: (backup) => repository?.importLegacy(backup),
+    importLegacy: (backup, options) =>
+      repository?.importLegacy(backup, options),
     exportData: () => repository?.exportData(),
   };
+  const fingerprint =
+    legacySnapshot.raw === null ? null : legacyFingerprint(legacySnapshot.raw);
   const legacy = {
     status:
       legacySnapshot.issue === "invalid"
         ? "invalid"
         : legacySnapshot.raw === null
           ? "empty"
-          : "available",
+          : legacyMigration?.fingerprint === fingerprint
+            ? "migrated"
+            : "available",
+    migratedBy: legacyMigration?.member ?? null,
+    fingerprint,
     data: legacySnapshot.data,
   };
   async function change(update, message) {
@@ -233,7 +246,10 @@ function AccountWorkspace() {
   async function restore(backup, revision, recoveryRaw) {
     const result =
       account.status === "authenticated"
-        ? await commit(() => backup, { operationId: createId() })
+        ? await commit(() => backup, {
+            operationId: createId(),
+            expectedRevision: revision,
+          })
         : await commit(() => backup, {
             recover: true,
             expectedRevision: revision,

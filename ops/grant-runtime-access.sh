@@ -7,6 +7,7 @@ set -euo pipefail
 [[ "$MIGRATION_DB_PASSWORD" =~ ^[a-f0-9]{64}$ ]] || { echo "Migration role password must be 64 lowercase hexadecimal characters." >&2; exit 2; }
 
 compose=(docker compose -p "$COMPOSE_PROJECT_NAME" --env-file "$COMPOSE_ENV_FILE" -f ops/compose.yaml)
-"${compose[@]}" exec -T -e "PGPASSWORD=$MIGRATION_DB_PASSWORD" db \
+# Pass the password through the environment, not argv, so host `ps` never shows it.
+PGPASSWORD="$MIGRATION_DB_PASSWORD" "${compose[@]}" exec -T -e PGPASSWORD db \
   psql -h 127.0.0.1 -U forma_migrator -d forma -v ON_ERROR_STOP=1 \
   < ops/grant-runtime-access.sql

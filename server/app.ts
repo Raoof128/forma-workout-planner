@@ -5,9 +5,27 @@ import Fastify, {
 } from "fastify";
 import { createHmac, timingSafeEqual } from "node:crypto";
 import type { Pool } from "pg";
-import { createAuth, type EmailSender } from "./auth.js";
+import {
+  createAuth,
+  signInThrottleKey,
+  testLimitOverride,
+  type EmailSender,
+} from "./auth.js";
 import type { AppConfig } from "./config.js";
 import { createEmailSender } from "./email.js";
+import {
+  clearSignInFailures,
+  consumeBudget,
+  DEFAULT_SIGN_IN_POLICY,
+  normaliseEmail,
+  PASSWORD_CHECK_SCOPE,
+  pruneThrottle,
+  refundAttempt,
+  reserveAttempt,
+  settleFailure,
+  SIGN_IN_SCOPE,
+  throttleKey,
+} from "./throttle.js";
 import { registerWorkspaceRoutes } from "./workspaceRoutes.js";
 
 declare module "fastify" {
@@ -34,7 +52,11 @@ export function memberReference(userId: string, secret: string): string {
   return `mem_${createHmac("sha256", secret).update(`member:${userId}`).digest("base64url")}`;
 }
 
-export function createRequireMember(auth: AuthInstance, secret: string) {
+export function createRequireMember(
+  auth: AuthInstance,
+  secret: string,
+  onExpired?: (sessionId: string) => Promise<void>,
+) {
   return async (
     request: FastifyRequest,
     reply: FastifyReply,
@@ -50,6 +72,11 @@ export function createRequireMember(auth: AuthInstance, secret: string) {
       }
       const session = await auth.api.getSession({ headers });
       if (!session?.user?.id) {
+        reply.code(401).send({ error: "unauthorized" });
+        return null;
+      }
+      if (sessionTooOld(session.session.createdAt)) {
+        await onExpired?.(session.session.id);
         reply.code(401).send({ error: "unauthorized" });
         return null;
       }
@@ -159,6 +186,147 @@ function referenceMatches(candidate: string, expected: string): boolean {
   return left.length === right.length && timingSafeEqual(left, right);
 }
 
+// Better Auth exposes many endpoints FORMA never calls (password oracles such as
+// verify-password, list-accounts, OTP and social routes). Only the flows the
+// app uses are reachable; anything else is a 404 at the proxy.
+const AUTH_ROUTES: Record<string, ReadonlySet<string>> = {
+  GET: new Set([
+    "get-session",
+    "verify-email",
+    "delete-user/callback",
+    "list-sessions",
+  ]),
+  POST: new Set([
+    "sign-up/email",
+    "sign-in/email",
+    "sign-out",
+    "send-verification-email",
+    "request-password-reset",
+    "reset-password",
+    "update-user",
+    "change-email",
+    "change-password",
+    "delete-user",
+    "revoke-sessions",
+    "revoke-other-sessions",
+    "two-factor/enable",
+    "two-factor/disable",
+    "two-factor/verify-totp",
+    "two-factor/verify-backup-code",
+    "two-factor/generate-backup-codes",
+  ]),
+};
+
+// Signed-in endpoints that verify the member's password.
+const PASSWORD_CHECKED_PATHS: ReadonlySet<string> = new Set([
+  "change-password",
+  "delete-user",
+  "two-factor/enable",
+  "two-factor/disable",
+  "two-factor/generate-backup-codes",
+]);
+const PASSWORD_FIELDS = ["password", "currentPassword"];
+
+// Endpoints acting on the signed-in member must carry the matching
+// X-Forma-Member reference, so a tab still showing member A cannot act as B.
+const memberBoundPathsAll: ReadonlySet<string> = new Set([
+  "update-user",
+  "change-email",
+  "change-password",
+  "delete-user",
+  "revoke-sessions",
+  "revoke-other-sessions",
+  "list-sessions",
+  "sign-out",
+  "two-factor/enable",
+  "two-factor/disable",
+  "two-factor/verify-totp",
+  "two-factor/verify-backup-code",
+  "two-factor/generate-backup-codes",
+]);
+
+export function authRouteAllowed(method: string, authPath: string): boolean {
+  if (
+    method === "GET" &&
+    /^reset-password\/[A-Za-z0-9_-]{1,256}$/.test(authPath)
+  )
+    return true;
+  return AUTH_ROUTES[method]?.has(authPath) ?? false;
+}
+
+/** NIST SP 800-63B-4 AAL1: reauthenticate at least every 30 days. */
+export const MAX_SESSION_AGE_MS = 30 * 24 * 60 * 60 * 1000;
+
+function sessionTooOld(createdAt: unknown): boolean {
+  const created = new Date(createdAt as string | Date).getTime();
+  return !Number.isFinite(created) || Date.now() - created > MAX_SESSION_AGE_MS;
+}
+
+/** Profile fields a member may set; Better Auth itself accepts any size. */
+function invalidProfileInput(body: unknown): boolean {
+  if (!body || typeof body !== "object" || Array.isArray(body)) return false;
+  const record = body as Record<string, unknown>;
+  if ("name" in record) {
+    if (typeof record.name !== "string") return true;
+    const name = record.name.trim();
+    // Count code points, and refuse control, format (zero-width, bidi) and
+    // line/paragraph separator characters that hide or spoof a name.
+    const length = [...name].length;
+    if (length < 1 || length > 60 || /[\p{Cc}\p{Cf}\u2028\u2029]/u.test(name))
+      return true;
+  }
+  // FORMA has no avatars; an arbitrary image URL is only a tracking vector.
+  return "image" in record && record.image !== null;
+}
+
+function sessionTokenFromCookie(cookie: string): string | null {
+  const pair = cookie.split(";", 1)[0];
+  const name = pair.slice(0, pair.indexOf("=")).trim().toLowerCase();
+  if (!name.endsWith("session_token")) return null;
+  const value = decodeURIComponent(pair.slice(pair.indexOf("=") + 1));
+  return value ? value.split(".", 1)[0] : null;
+}
+
+const REDIRECT_PARAMETERS = [
+  "callbackURL",
+  "redirectTo",
+  "errorCallbackURL",
+  "newUserCallbackURL",
+];
+
+/**
+ * Accept only same-origin absolute URLs or origin-relative paths. Better Auth
+ * does not validate callbackURL on unauthenticated token GETs, so the proxy
+ * enforces it for every auth request instead of trusting the library.
+ */
+export function isSafeRedirect(value: unknown, appOrigin: string): boolean {
+  if (typeof value !== "string" || value.length > 2048) return false;
+  // nosemgrep: ajinabraham.njsscan.dos.regex_dos.regex_dos -- single character class, input capped at 2048 chars
+  if (/[\u0000-\u001f\\]/.test(value)) return false;
+  if (value.startsWith("/") && !value.startsWith("//")) return true;
+  try {
+    return new URL(value).origin === appOrigin;
+  } catch {
+    return false;
+  }
+}
+
+function unsafeRedirectParameter(
+  url: URL,
+  body: unknown,
+  appOrigin: string,
+): boolean {
+  for (const name of REDIRECT_PARAMETERS) {
+    for (const value of url.searchParams.getAll(name))
+      if (!isSafeRedirect(value, appOrigin)) return true;
+    if (body && typeof body === "object" && !Array.isArray(body)) {
+      const value = (body as Record<string, unknown>)[name];
+      if (value !== undefined && !isSafeRedirect(value, appOrigin)) return true;
+    }
+  }
+  return false;
+}
+
 async function storeTotpUse(
   pool: Pool,
   secret: string,
@@ -217,8 +385,12 @@ export async function createApp({
       request.rawBody = rawBody;
       try {
         done(null, rawBody.length ? JSON.parse(rawBody) : {});
-      } catch (error) {
-        done(error as Error);
+      } catch {
+        const error = new Error("invalid_json") as Error & {
+          statusCode: number;
+        };
+        error.statusCode = 400;
+        done(error);
       }
     },
   );
@@ -231,13 +403,87 @@ export async function createApp({
     },
   );
 
-  const auth = createAuth(pool, config, email ?? createEmailSender(config));
-  const requireMember = createRequireMember(auth, config.authSecret);
+  // Never echo framework or parser messages; they can describe internals.
+  app.setErrorHandler((error, request, reply) => {
+    const status =
+      typeof (error as { statusCode?: unknown }).statusCode === "number" &&
+      (error as { statusCode: number }).statusCode >= 400 &&
+      (error as { statusCode: number }).statusCode < 600
+        ? (error as { statusCode: number }).statusCode
+        : 500;
+    if (status >= 500) request.log.error({ err: error }, "request failed");
+    const code =
+      status === 400 && (error as Error).message === "invalid_json"
+        ? "invalid_json"
+        : status === 413
+          ? "payload_too_large"
+          : status === 415
+            ? "unsupported_media_type"
+            : status >= 500
+              ? "internal_error"
+              : "bad_request";
+    reply
+      .code(status)
+      .header("cache-control", "no-store")
+      .send({ error: code });
+  });
+  app.setNotFoundHandler((_request, reply) => {
+    reply.code(404).send({ error: "not_found" });
+  });
+
+  const testLimit = testLimitOverride(config);
+  const deliverEmail = email ?? createEmailSender(config);
+  const emailPerRecipientLimit = testLimit ?? 5;
+  // Better Auth limits resends per IP only. Cap mail per recipient and kind so
+  // a distributed client cannot flood a victim's mailbox. Over-budget mail is
+  // dropped silently: the HTTP response must not reveal account state.
+  const throttledEmail: EmailSender = async (message) => {
+    const recipient = normaliseEmail(message.email);
+    if (!recipient) return;
+    const allowed = await consumeBudget(
+      pool,
+      `email:${message.kind}`,
+      throttleKey(config.authSecret, `email:${message.kind}`, recipient),
+      emailPerRecipientLimit,
+      60 * 60,
+    );
+    if (!allowed) {
+      app.log.warn({ kind: message.kind }, "auth email suppressed by budget");
+      return;
+    }
+    await deliverEmail(message);
+  };
+  const auth = createAuth(pool, config, throttledEmail);
+  const expireSession = async (sessionId: string) => {
+    await pool.query(`DELETE FROM "session" WHERE id = $1`, [sessionId]);
+  };
+  const requireMember = createRequireMember(
+    auth,
+    config.authSecret,
+    expireSession,
+  );
+  const signInPolicy = {
+    ...DEFAULT_SIGN_IN_POLICY,
+    windowLimit: testLimit ?? DEFAULT_SIGN_IN_POLICY.windowLimit,
+  };
+  const workspaceWriteLimit = testLimit ?? 120;
 
   app.addHook("onRequest", async (request, reply) => {
     reply.header("cache-control", "no-store");
-    if (request.url === "/healthz" && request.method === "GET") return;
-    if (!request.url.startsWith("/api/")) return;
+    const path = (request.raw.url ?? request.url).split("?", 1)[0];
+    // Deny by default. The router decodes percent-escapes, so a prefix test on
+    // the raw URL (e.g. "/api/") can be sidestepped with "/%61pi/...". Only the
+    // exact health probe is public; every other spelling needs the Worker.
+    if (
+      (request.method === "GET" || request.method === "HEAD") &&
+      path === "/healthz"
+    )
+      return;
+    if (path.includes("%")) {
+      // The Worker never forwards encoded paths; refuse ambiguous spellings.
+      reply.code(404).send({ error: "not_found" });
+      return;
+    }
 
     const suppliedSecret = headerValue(
       request.headers["x-forma-worker-secret"],
@@ -278,24 +524,55 @@ export async function createApp({
       }
 
       const authPath = url.pathname.replace(/^\/api\/auth\//, "");
-      const memberBoundPaths = new Set([
-        "update-user",
-        "change-email",
-        "change-password",
-        "delete-user",
-        "revoke-sessions",
-        "revoke-other-sessions",
-        "list-sessions",
-        "sign-out",
-        "two-factor/enable",
-        "two-factor/disable",
-        "two-factor/verify-totp",
-        "two-factor/verify-backup-code",
-        "two-factor/generate-backup-codes",
-        "two-factor/view-backup-codes",
-      ]);
+      if (!authRouteAllowed(request.method, authPath)) {
+        return reply.code(404).send({ error: "not_found" });
+      }
+      if (request.method !== "GET") {
+        // Every check below reads the parsed JSON body. Better Auth also
+        // accepts form-encoded bodies on some routes, which would arrive here
+        // as an unparsed buffer and silently skip those checks. The FORMA
+        // client only sends JSON, so nothing else is accepted.
+        const type = headerValue(request.headers["content-type"])
+          ?.split(";", 1)[0]
+          .trim()
+          .toLowerCase();
+        if (
+          type !== "application/json" ||
+          !request.body ||
+          typeof request.body !== "object" ||
+          Array.isArray(request.body)
+        ) {
+          return reply.code(415).send({ error: "unsupported_media_type" });
+        }
+      }
+      if (unsafeRedirectParameter(url, request.body, config.appOrigin)) {
+        return reply.code(400).send({ error: "invalid_redirect" });
+      }
+      if (
+        (authPath === "update-user" || authPath === "sign-up/email") &&
+        invalidProfileInput(request.body)
+      ) {
+        return reply.code(400).send({ error: "invalid_profile" });
+      }
+      // Resolve the caller's session once for checks that need it.
+      const needsSession =
+        authPath === "get-session" ||
+        authPath === "verify-email" ||
+        authPath === "delete-user/callback" ||
+        memberBoundPathsAll.has(authPath);
+      const existingSession = needsSession
+        ? await resolveSession(auth, request).catch(() => null)
+        : null;
+      if (existingSession && sessionTooOld(existingSession.session.createdAt)) {
+        // Past the absolute lifetime: end it so Better Auth sees no session.
+        await expireSession(existingSession.session.id);
+      }
+      const memberBoundPaths = memberBoundPathsAll;
       if (memberBoundPaths.has(authPath)) {
-        const session = await resolveSession(auth, request);
+        const session =
+          existingSession && !sessionTooOld(existingSession.session.createdAt)
+            ? existingSession
+            : null;
         if (session?.user?.id) {
           const suppliedMember = headerValue(request.headers["x-forma-member"]);
           const expectedMember = memberReference(
@@ -319,7 +596,62 @@ export async function createApp({
         }
       }
 
-      const rawBody = request.rawBody;
+      let rawBody = request.rawBody;
+      if (
+        authPath === "change-password" &&
+        request.body &&
+        typeof request.body === "object" &&
+        !Array.isArray(request.body)
+      ) {
+        // A password change must end every other session, whatever the client
+        // asked for; otherwise a stolen session survives the change.
+        rawBody = JSON.stringify({
+          ...(request.body as Record<string, unknown>),
+          revokeOtherSessions: true,
+        });
+      }
+
+      // Password attempts are reserved before they are checked so concurrent
+      // guesses cannot all slip past the limit (see server/throttle.ts).
+      let attempt: { key: string; scope: string } | null = null;
+      if (authPath === "sign-in/email") {
+        const submitted = normaliseEmail(
+          (request.body as { email?: unknown } | undefined)?.email,
+        );
+        if (submitted)
+          attempt = {
+            key: signInThrottleKey(config.authSecret, submitted),
+            scope: SIGN_IN_SCOPE,
+          };
+      } else if (
+        PASSWORD_CHECKED_PATHS.has(authPath) &&
+        existingSession &&
+        PASSWORD_FIELDS.some(
+          (field) =>
+            typeof (request.body as Record<string, unknown>)[field] ===
+            "string",
+        )
+      ) {
+        // A stolen session must not become an unthrottled password oracle.
+        attempt = {
+          key: throttleKey(
+            config.authSecret,
+            "password-check",
+            existingSession.user.id,
+          ),
+          scope: PASSWORD_CHECK_SCOPE,
+        };
+      }
+      if (
+        attempt &&
+        !(await reserveAttempt(pool, attempt.key, signInPolicy, attempt.scope))
+      ) {
+        return reply.code(429).send({
+          message:
+            "Too many password attempts for this account. Try again later or reset your password.",
+          code: "TOO_MANY_ATTEMPTS",
+        });
+      }
       let body: string | Uint8Array | undefined;
       if (!["GET", "HEAD"].includes(request.method)) {
         body =
@@ -329,6 +661,7 @@ export async function createApp({
               ? new Uint8Array(rawBody)
               : JSON.stringify(request.body ?? {});
       }
+      // nosemgrep: ajinabraham.njsscan.xss.xss_node.express_xss -- internal Request to Better Auth, not an HTML response
       const authRequest = new Request(url, {
         method: request.method,
         headers,
@@ -339,8 +672,52 @@ export async function createApp({
 
       try {
         const response = await auth.handler(authRequest);
+        if (attempt) {
+          let wrongPassword = false;
+          if (attempt.scope === SIGN_IN_SCOPE) {
+            wrongPassword = response.status === 401 || response.status === 403;
+          } else if (response.status === 400 || response.status === 401) {
+            const code = await response
+              .clone()
+              .json()
+              .then((value: { code?: unknown }) => value?.code)
+              .catch(() => undefined);
+            wrongPassword = code === "INVALID_PASSWORD";
+          }
+          if (response.status === 200) {
+            await clearSignInFailures(pool, attempt.key, attempt.scope);
+          } else if (wrongPassword) {
+            await settleFailure(pool, attempt.key, signInPolicy, attempt.scope);
+            // nosemgrep: ajinabraham.njsscan.crypto.crypto_node.node_insecure_random_generator -- sampling for housekeeping, not a secret
+            if (Math.random() < 0.01) void pruneThrottle(pool).catch(() => {});
+          } else {
+            await refundAttempt(pool, attempt.key, attempt.scope);
+          }
+        }
+        // FORMA never signs a member in from an email link
+        // (autoSignInAfterVerification is off), but Better Auth's change-email
+        // confirmation mints a session when clicked without a cookie. That
+        // session would pass the fresh-session step-up with no password or
+        // TOTP, so it is deleted and its cookies are withheld.
+        const withheldCookies: string[] = [];
+        if (authPath === "verify-email") {
+          for (const cookie of response.headers.getSetCookie()) {
+            const minted = sessionTokenFromCookie(cookie);
+            if (minted && minted !== existingSession?.session.token) {
+              await pool.query(`DELETE FROM "session" WHERE token = $1`, [
+                minted,
+              ]);
+              withheldCookies.push("session_token", "session_data");
+            }
+          }
+        }
+        const location = response.headers.get("location");
+        if (location !== null && !isSafeRedirect(location, config.appOrigin)) {
+          // Defence in depth for any redirect the library builds itself.
+          return reply.code(400).send({ error: "invalid_redirect" });
+        }
         if (response.body === null) {
-          copyResponseHeaders(response.headers, reply);
+          copyResponseHeaders(response.headers, reply, withheldCookies);
           return reply.code(response.status).send();
         }
         const contentType = response.headers.get("content-type") ?? "";
@@ -390,19 +767,22 @@ export async function createApp({
                 );
               }
               copyResponseHeaders(response.headers, reply, [
+                ...withheldCookies,
                 "session_token",
                 "trust_device",
               ]);
               return reply.code(401).send({ error: "invalid_code" });
             }
           }
-          copyResponseHeaders(response.headers, reply);
+          copyResponseHeaders(response.headers, reply, withheldCookies);
           reply.code(response.status);
           const body = removeSensitiveAuthFields(authBody, config.authSecret);
+          // nosemgrep: javascript.express.security.audit.xss.direct-response-write.direct-response-write -- JSON body; the Worker refuses HTML API responses
           return reply.send(body);
         }
-        copyResponseHeaders(response.headers, reply);
+        copyResponseHeaders(response.headers, reply, withheldCookies);
         reply.code(response.status);
+        // nosemgrep: javascript.express.security.audit.xss.direct-response-write.direct-response-write -- Better Auth body; the Worker allows only JSON/text
         return reply.send(Buffer.from(await response.arrayBuffer()));
       } catch {
         return reply.code(500).send({ error: "internal_error" });
@@ -500,6 +880,17 @@ export async function createApp({
     return reply.send({ status: true });
   });
 
-  await registerWorkspaceRoutes(app, { pool, requireMember });
+  await registerWorkspaceRoutes(app, {
+    pool,
+    requireMember,
+    allowWrite: (userId) =>
+      consumeBudget(
+        pool,
+        "workspace-write",
+        throttleKey(config.authSecret, "workspace-write", userId),
+        workspaceWriteLimit,
+        60,
+      ),
+  });
   return app;
 }

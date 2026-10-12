@@ -24,7 +24,7 @@ import {
   X,
 } from "lucide-react";
 import { exercises } from "../data";
-import { readBackupFile } from "../storage";
+import { markLegacyMigrated, readBackupFile } from "../storage";
 import "../account.css";
 
 const sections = [
@@ -52,10 +52,26 @@ const dateLabel = (value) =>
       }).format(new Date(value))
     : "Not available";
 const getMetric = (workspace, key) => workspace?.data?.[key] ?? [];
-const safeError = (error, fallback) => error?.message || fallback;
+// Show library messages only when short and human-readable; schema errors can
+// be megabytes of JSON and reveal nothing useful to the member.
+const safeError = (error, fallback) => {
+  const message = error?.message;
+  if (!message || error?.name === "ZodError" || message.length > 200)
+    return fallback;
+  return message;
+};
 
 function AuthView({ account, notify, onNavigate }) {
-  const token = new URLSearchParams(window.location.search).get("token");
+  const [token] = useState(() =>
+    new URLSearchParams(window.location.search).get("token"),
+  );
+  useEffect(() => {
+    // Keep the single-use reset token out of history, reloads and Referer.
+    if (!token) return;
+    const url = new URL(window.location.href);
+    url.searchParams.delete("token");
+    window.history.replaceState(window.history.state, "", url.href);
+  }, [token]);
   const [mode, setMode] = useState(token ? "reset" : "signin");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -440,6 +456,9 @@ export default function Account({
   const [importAck, setImportAck] = useState(false);
   const [importBusy, setImportBusy] = useState(false);
   const [cloudBackupReady, setCloudBackupReady] = useState(false);
+  // The cloud revision captured by the safety export; import is pinned to it.
+  const [exportedRevision, setExportedRevision] = useState(null);
+  const [legacyImported, setLegacyImported] = useState(false);
 
   const userId = account.user?.id;
   const userName = account.user?.name;
@@ -718,7 +737,10 @@ export default function Account({
     setDataMessage("");
     if (importDraft) setCloudBackupReady(false);
     try {
-      await workspace.exportData();
+      const exported = await workspace.exportData();
+      setExportedRevision(
+        Number.isInteger(exported?.revision) ? exported.revision : null,
+      );
       if (importDraft) setCloudBackupReady(true);
       setDataMessage("Your account data export is ready.");
     } catch (cause) {
@@ -779,7 +801,15 @@ export default function Account({
     setImportBusy(true);
     setDataError("");
     try {
-      await workspace.importLegacy(importDraft.backup);
+      await workspace.importLegacy(importDraft.backup, {
+        expectedRevision: exportedRevision ?? workspace.revision,
+      });
+      if (importDraft.legacyFingerprint && account.user?.id) {
+        markLegacyMigrated(account.user.id, importDraft.legacyFingerprint);
+        setLegacyImported(true);
+      }
+      // A later import needs a fresh safety export of the new cloud state.
+      setExportedRevision(null);
       setDataMessage("Workout backup imported into your account.");
       setImportDraft(null);
       setImportAck(false);
@@ -1750,7 +1780,14 @@ export default function Account({
                   {dataError}
                 </p>
               )}
-              {legacy?.status === "available" && (
+              {legacy?.status === "migrated" && !legacyImported && (
+                <p className="account-alert">
+                  {legacy.migratedBy === account.user?.id
+                    ? "This browser's local training has already been imported into this account."
+                    : "This browser's local training was already imported into another account, so it is not offered again."}
+                </p>
+              )}
+              {legacy?.status === "available" && !legacyImported && (
                 <section className="account-migration-card">
                   <div>
                     <span className="account-kicker">LOCAL TRAINING FOUND</span>
@@ -1772,6 +1809,7 @@ export default function Account({
                       setImportDraft({
                         backup: legacy.data,
                         source: "This browser",
+                        legacyFingerprint: legacy.fingerprint,
                         summary: {
                           routines: legacy.data?.routines?.length || 0,
                           workouts: legacy.data?.history?.length || 0,

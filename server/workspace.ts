@@ -28,10 +28,15 @@ type WorkspaceRow = {
   updated_at: string | Date;
 };
 
-function asAcknowledgement(row: WorkspaceRow): WorkspaceAcknowledgement {
+function asAcknowledgement(
+  row: WorkspaceRow,
+  validate = true,
+): WorkspaceAcknowledgement {
   const revision = Number(row.revision);
   return {
-    data: workspaceDataSchema.parse(row.data),
+    // Rows this transaction just wrote were validated before the write; only
+    // reads returned to clients re-check stored data.
+    data: validate ? workspaceDataSchema.parse(row.data) : row.data,
     revision,
     updatedAt:
       typeof row.updated_at === "string" && row.updated_at.includes("T")
@@ -90,6 +95,7 @@ async function selectWorkspace(
   client: PoolClient,
   userId: string,
   lock = false,
+  validate = true,
 ): Promise<WorkspaceAcknowledgement> {
   const result = await client.query<WorkspaceRow>(
     `SELECT data, revision,
@@ -99,7 +105,7 @@ async function selectWorkspace(
     [userId],
   );
   if (!result.rows[0]) throw new Error("Workspace row was not created.");
-  return asAcknowledgement(result.rows[0]);
+  return asAcknowledgement(result.rows[0], validate);
 }
 
 export async function getWorkspace(
@@ -133,7 +139,8 @@ export async function putWorkspace(
     throw new InvalidWorkspace("Workspace payload is invalid.");
 
   const { expectedRevision, operationId } = parsed.data;
-  const incoming = workspaceDataSchema.parse(parsed.data.data);
+  // workspacePutSchema already ran the full workspace validator.
+  const incoming = parsed.data.data;
   const maxBytes = 20 * 1024 * 1024;
   if (Buffer.byteLength(JSON.stringify(incoming), "utf8") > maxBytes)
     throw new InvalidWorkspace("Workspace data exceeds 20 MiB.");
@@ -143,7 +150,12 @@ export async function putWorkspace(
   try {
     await client.query("BEGIN");
     await ensureWorkspace(client, userId, memberName);
-    const latest = await selectWorkspace(client, userId, true);
+    // Validated only if it is returned to the client in a conflict below.
+    const locked = await selectWorkspace(client, userId, true, false);
+    const latest = () => ({
+      ...locked,
+      data: workspaceDataSchema.parse(locked.data),
+    });
 
     const prior = await client.query<{
       request_hash: string;
@@ -155,10 +167,11 @@ export async function putWorkspace(
       [userId, operationId],
     );
     if (prior.rows[0]) {
+      // nosemgrep: ajinabraham.njsscan.crypto.timing_attack_node.node_timing_attack -- idempotency hash of the member's own payload, not a secret
       if (prior.rows[0].request_hash !== hash) {
         throw new WorkspaceConflict(
           "operationId was already used for a different workspace update.",
-          latest,
+          latest(),
           "operation_id_reused",
         );
       }
@@ -166,28 +179,22 @@ export async function putWorkspace(
       await client.query("COMMIT");
       const retryAcknowledgement: WorkspaceAcknowledgement = {
         ...acknowledgement,
-        data: workspaceDataSchema.parse({
-          ...incoming,
-          revision: acknowledgement.revision,
-        }),
+        data: { ...incoming, revision: acknowledgement.revision },
       };
       return retryAcknowledgement;
     }
 
-    if (latest.revision !== expectedRevision) {
+    if (locked.revision !== expectedRevision) {
       throw new WorkspaceConflict(
         "Workspace changed since it was loaded.",
-        latest,
+        latest(),
       );
     }
 
-    const nextRevision = latest.revision + 1;
+    const nextRevision = locked.revision + 1;
     if (nextRevision > 2_147_483_647)
       throw new InvalidWorkspace("Workspace revision limit reached.");
-    const saved: WorkspaceData = workspaceDataSchema.parse({
-      ...incoming,
-      revision: nextRevision,
-    });
+    const saved: WorkspaceData = { ...incoming, revision: nextRevision };
     const updated = await client.query<WorkspaceRow>(
       `UPDATE member_workspace
           SET data = $2::jsonb,
@@ -198,7 +205,7 @@ export async function putWorkspace(
                   to_char(updated_at AT TIME ZONE 'UTC', 'YYYY-MM-DD"T"HH24:MI:SS.US"Z"') AS updated_at`,
       [userId, JSON.stringify(saved), nextRevision],
     );
-    const acknowledgement = asAcknowledgement(updated.rows[0]);
+    const acknowledgement = asAcknowledgement(updated.rows[0], false);
     await client.query(
       `INSERT INTO member_workspace_operations
          (owner_id, operation_id, request_hash, acknowledgement)

@@ -99,7 +99,13 @@ export function AccountProvider({ children }) {
       )
         return;
       // A failed session check must never be interpreted as a guest session.
-      setAccountState({ status: "error", user: null, error });
+      // While signed in, a transient failure (offline, 5xx) keeps the current
+      // member workspace so unsent edits survive; only a definite 401 ends it.
+      setAccountState((previous) =>
+        previous.status === "authenticated" && error?.status !== 401
+          ? { ...previous, error }
+          : { status: "error", user: null, error },
+      );
     }
   }, []);
 

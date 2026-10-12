@@ -70,6 +70,7 @@ function findClosing(text, start, open, close) {
 
 function readDestination(text, openParen) {
   let index = openParen + 1;
+  // nosemgrep: ajinabraham.njsscan.dos.regex_dos.regex_dos -- one-character test, dev-only docs checker
   while (/\s/.test(text[index] ?? "")) index += 1;
   if (text[index] === ")") return { destination: "", end: index + 1 };
 
@@ -119,6 +120,7 @@ function readDestination(text, openParen) {
     }
   }
 
+  // nosemgrep: ajinabraham.njsscan.dos.regex_dos.regex_dos -- one-character test, dev-only docs checker
   while (/\s/.test(text[index] ?? "")) index += 1;
   if (text[index] === '"' || text[index] === "'" || text[index] === "(") {
     const titleEnd = text[index] === "(" ? ")" : text[index];
@@ -130,6 +132,7 @@ function readDestination(text, openParen) {
       else if (character === "\\") escaped = true;
       else if (character === titleEnd) break;
     }
+    // nosemgrep: ajinabraham.njsscan.dos.regex_dos.regex_dos -- one-character test, dev-only docs checker
     while (/\s/.test(text[index] ?? "")) index += 1;
   }
 

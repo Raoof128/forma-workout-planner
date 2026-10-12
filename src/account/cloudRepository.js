@@ -293,11 +293,25 @@ export function createCloudRepository({
       requests.clear();
       listeners.clear();
     },
-    async commit(update, { operationId = makeId() } = {}) {
+    async commit(update, { operationId = makeId(), expectedRevision } = {}) {
       const requestGeneration = generation;
       return enqueue(async (activeGeneration) => {
         if (!snapshot.data || snapshot.status === "guest")
           throw new Error("Your private workspace is not ready to save.");
+        // Whole-workspace replacements (restore/import) are pinned to the
+        // revision the member reviewed, so newer cloud work from another
+        // device is never silently overwritten.
+        if (
+          Number.isInteger(expectedRevision) &&
+          expectedRevision !== snapshot.revision
+        ) {
+          const error = new Error(
+            "Your cloud workspace changed after you reviewed this backup. Review it again before replacing your data.",
+          );
+          error.conflict = true;
+          error.staleReview = true;
+          throw error;
+        }
         if (snapshot.status === "conflict")
           throw new Error(
             "Resolve the cloud conflict before saving more changes.",
@@ -473,9 +487,9 @@ export function createCloudRepository({
         downloadData(body, "forma-account-export", false, false);
       return body;
     },
-    async importLegacy(backup) {
+    async importLegacy(backup, { expectedRevision } = {}) {
       const safeBackup = validateData(backup);
-      return this.commit(() => safeBackup);
+      return this.commit(() => safeBackup, { expectedRevision });
     },
   };
 }

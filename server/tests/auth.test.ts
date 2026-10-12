@@ -48,7 +48,11 @@ before(async () => {
     );
   }
   await adminPool.query(`CREATE SCHEMA ${schema}`);
-  for (const migrationName of ["0001-auth.sql", "0002-workspace.sql"]) {
+  for (const migrationName of [
+    "0001-auth.sql",
+    "0002-workspace.sql",
+    "0003-security-throttle.sql",
+  ]) {
     const migration = await readFile(
       join(testDir, "..", "migrations", migrationName),
       "utf8",
@@ -826,6 +830,8 @@ test("rate-limit override is honored only by an explicit NODE_ENV=test app", asy
     testApp: Awaited<ReturnType<typeof createApp>>,
     sourceIp: string,
   ) => {
+    // Each app gets its own address: these assertions target the per-IP
+    // limiter, and the shared database also enforces a per-account cap.
     const responses = [];
     for (let index = 0; index < 6; index += 1) {
       responses.push(
@@ -839,7 +845,7 @@ test("rate-limit override is honored only by an explicit NODE_ENV=test app", asy
             "content-type": "application/json",
           },
           payload: {
-            email: `rate-limit-override-${suffix}@example.test`,
+            email: `rate-limit-override-${suffix}-${sourceIp}@example.test`,
             password: "a sufficiently long test password",
           },
         }),

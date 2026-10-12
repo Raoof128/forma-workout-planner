@@ -3,20 +3,38 @@ import { twoFactor } from "better-auth/plugins";
 import type { Pool } from "pg";
 import type { AppConfig } from "./config.js";
 import type { AuthEmail } from "./email.js";
+import {
+  clearSignInFailures,
+  normaliseEmail,
+  throttleKey,
+} from "./throttle.js";
 
 export type EmailSender = (message: AuthEmail) => Promise<void>;
+
+/**
+ * Returns the raised per-subject limit for an explicit NODE_ENV=test harness,
+ * or null in every other environment. Production limits are never configurable.
+ */
+export function testLimitOverride(config: AppConfig): number | null {
+  return config.environment === "test" &&
+    process.env.NODE_ENV === "test" &&
+    Number.isInteger(config.authRateLimitMax) &&
+    (config.authRateLimitMax ?? 0) >= 5 &&
+    (config.authRateLimitMax ?? 0) <= 1000
+    ? config.authRateLimitMax!
+    : null;
+}
+
+export function signInThrottleKey(secret: string, email: string): string {
+  return throttleKey(secret, "sign-in", email);
+}
 
 export function createAuth(
   pool: Pool,
   config: AppConfig,
   sendEmail: EmailSender,
 ) {
-  const testRateLimitOverride =
-    config.environment === "test" &&
-    process.env.NODE_ENV === "test" &&
-    Number.isInteger(config.authRateLimitMax) &&
-    (config.authRateLimitMax ?? 0) >= 5 &&
-    (config.authRateLimitMax ?? 0) <= 1000;
+  const testRateLimitOverride = testLimitOverride(config) !== null;
   // The local browser journey harness reuses a synthetic edge IP across many
   // independent specs. Never honor this override outside an explicit test app.
   const testAuthLimit = testRateLimitOverride ? config.authRateLimitMax! : 5;
@@ -46,6 +64,16 @@ export function createAuth(
       minPasswordLength: 15,
       maxPasswordLength: 1024,
       revokeSessionsOnPasswordReset: true,
+      // Proving mailbox control is the recovery path for an account locked by
+      // the per-account failed sign-in cap.
+      async onPasswordReset({ user }) {
+        const email = normaliseEmail(user.email);
+        if (email)
+          await clearSignInFailures(
+            pool,
+            signInThrottleKey(config.authSecret, email),
+          );
+      },
       async sendResetPassword({ user, url }) {
         await sendEmail({ kind: "reset-password", email: user.email, url });
       },

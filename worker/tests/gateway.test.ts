@@ -334,7 +334,10 @@ test("enforces content length and streaming request limits", async () => {
   const streaming = await handleApiRequest(
     new Request("https://forma.example/api/workspace", {
       method: "PUT",
-      headers: { origin: "https://forma.example" },
+      headers: {
+        origin: "https://forma.example",
+        "cf-connecting-ip": "198.51.100.42",
+      },
       body: stream,
       duplex: "half",
     } as RequestInit & { duplex: "half" }),

@@ -10,6 +10,43 @@ export interface Env {
 
 // Workspace data caps at 20 MiB; match the backend's additional JSON framing allowance.
 const MAX_BODY_BYTES = 20 * 1024 * 1024 + 16 * 1024;
+// Every other API body is small JSON. Large uploads are accepted only where a
+// workspace document is expected, so anonymous callers cannot make the origin
+// buffer and parse 20 MiB on auth routes.
+const MAX_SMALL_BODY_BYTES = 64 * 1024;
+// Forward an explicit allowlist rather than stripping known-bad names; any
+// header not listed here never reaches the origin.
+const FORWARDED_REQUEST_HEADERS = new Set([
+  "accept",
+  "accept-language",
+  "content-type",
+  "cookie",
+  "origin",
+  "user-agent",
+  "x-forma-member",
+  "x-request-id",
+  "sec-fetch-site",
+  "sec-fetch-mode",
+  "sec-fetch-dest",
+]);
+const FORWARDED_RESPONSE_HEADERS = new Set([
+  "content-type",
+  "content-language",
+  "content-disposition",
+  "etag",
+  "last-modified",
+  "retry-after",
+  "vary",
+]);
+const API_CONTENT_TYPES = ["application/json", "text/plain"];
+// Only FORMA's own Better Auth cookies may be set through the gateway. This
+// also keeps any Cloudflare Access cookie on the Worker-to-origin hop private.
+const APP_COOKIE = /^(?:__Secure-|__Host-)?forma\.[A-Za-z0-9_.-]+$/;
+// Token-bearing email links are the only legitimate cross-site API requests.
+const CROSS_SITE_NAVIGATIONS = new Set([
+  "/api/auth/verify-email",
+  "/api/auth/delete-user/callback",
+]);
 const REQUEST_TIMEOUT_MS = 30_000;
 const METHODS = new Set([
   "GET",
@@ -63,14 +100,12 @@ type Fetcher = (
 ) => Promise<Response>;
 
 function jsonError(status: number, error: string): Response {
-  return new Response(JSON.stringify({ error }), {
-    status,
-    headers: {
-      "content-type": "application/json; charset=utf-8",
-      "cache-control": "no-store",
-      "x-content-type-options": "nosniff",
-    },
+  const headers = new Headers({
+    "content-type": "application/json; charset=utf-8",
   });
+  // Browsers ignore HSTS on plain-HTTP development responses.
+  applyApiSecurityHeaders(headers, true);
+  return new Response(JSON.stringify({ error }), { status, headers });
 }
 
 function configuredOrigin(
@@ -134,11 +169,7 @@ function filteredRequestHeaders(request: Request, env: Env): Headers {
   const headers = new Headers();
   for (const [name, value] of request.headers) {
     const lower = name.toLowerCase();
-    if (
-      HOP_HEADERS.has(lower) ||
-      lower.startsWith("x-forwarded-") ||
-      lower.startsWith("cf-access-")
-    )
+    if (!FORWARDED_REQUEST_HEADERS.has(lower) || HOP_HEADERS.has(lower))
       continue;
     headers.append(name, value);
   }
@@ -153,6 +184,7 @@ function limitedStream(
   source: ReadableStream<Uint8Array>,
   onDone: () => void,
   onLimit: () => void = () => undefined,
+  limit = MAX_BODY_BYTES,
 ): ReadableStream<Uint8Array> {
   const reader = source.getReader();
   let total = 0;
@@ -166,7 +198,7 @@ function limitedStream(
           return;
         }
         total += value.byteLength;
-        if (total > MAX_BODY_BYTES) {
+        if (total > limit) {
           onLimit();
           await reader.cancel("body exceeded gateway limit");
           onDone();
@@ -207,6 +239,37 @@ function validateLocation(
   return null;
 }
 
+/**
+ * Keep only FORMA's cookies and drop any Domain attribute, so an origin
+ * mistake cannot widen a session cookie to sibling hosts.
+ */
+export function sanitiseSetCookie(cookie: string): string | null {
+  const [pair, ...attributes] = cookie.split(";");
+  const name = pair.slice(0, pair.indexOf("=")).trim();
+  if (pair.indexOf("=") < 1 || !APP_COOKIE.test(name)) return null;
+  const kept = attributes.filter(
+    (attribute) => !/^\s*domain\s*=/i.test(attribute),
+  );
+  return [pair, ...kept].join(";");
+}
+
+function applyApiSecurityHeaders(headers: Headers, secure: boolean): void {
+  headers.set("cache-control", "no-store");
+  headers.set("x-content-type-options", "nosniff");
+  headers.set(
+    "content-security-policy",
+    "default-src 'none'; frame-ancestors 'none'; sandbox",
+  );
+  headers.set("x-frame-options", "DENY");
+  headers.set("referrer-policy", "no-referrer");
+  headers.set("cross-origin-resource-policy", "same-origin");
+  if (secure)
+    headers.set(
+      "strict-transport-security",
+      "max-age=31536000; includeSubDomains",
+    );
+}
+
 function createHandler(fetcher: Fetcher) {
   return async function handle(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
@@ -242,6 +305,27 @@ function createHandler(fetcher: Fetcher) {
     if (!routeMethods.has(request.method))
       return jsonError(405, "Method not allowed");
 
+    if (
+      env.ENVIRONMENT !== "development" &&
+      !request.headers.get("cf-connecting-ip")
+    ) {
+      // Without the edge-supplied client IP every caller would share one
+      // auth rate-limit bucket at the origin.
+      return jsonError(503, "API gateway is not configured");
+    }
+
+    const fetchSite = request.headers.get("sec-fetch-site");
+    if (
+      fetchSite === "cross-site" &&
+      !(
+        request.method === "GET" &&
+        (CROSS_SITE_NAVIGATIONS.has(url.pathname) ||
+          url.pathname.startsWith("/api/auth/reset-password/"))
+      )
+    ) {
+      return jsonError(403, "Cross-site API requests are not allowed");
+    }
+
     const origin = request.headers.get("origin");
     if (origin && origin !== appOrigin.origin)
       return jsonError(403, "Origin is not allowed");
@@ -252,10 +336,14 @@ function createHandler(fetcher: Fetcher) {
       return jsonError(403, "A same-origin request is required");
     }
 
+    const bodyLimit =
+      request.method === "PUT" && url.pathname === "/api/workspace"
+        ? MAX_BODY_BYTES
+        : MAX_SMALL_BODY_BYTES;
     const declaredLength = request.headers.get("content-length");
     if (
       declaredLength !== null &&
-      (!/^\d+$/.test(declaredLength) || Number(declaredLength) > MAX_BODY_BYTES)
+      (!/^\d+$/.test(declaredLength) || Number(declaredLength) > bodyLimit)
     ) {
       return jsonError(413, "Request body is too large");
     }
@@ -288,6 +376,7 @@ function createHandler(fetcher: Fetcher) {
           () => {
             requestBodyExceeded = true;
           },
+          bodyLimit,
         );
       }
       const init: RequestInit & { duplex?: "half" } = {
@@ -304,10 +393,7 @@ function createHandler(fetcher: Fetcher) {
         if (!location) {
           await upstream.body?.cancel("redirect omitted Location");
           finish();
-          return jsonError(
-            upstream.status,
-            "The API returned an invalid redirect",
-          );
+          return jsonError(502, "The API returned an invalid redirect");
         }
         const safeLocation = validateLocation(location, backend, appOrigin);
         if (!safeLocation) {
@@ -315,12 +401,15 @@ function createHandler(fetcher: Fetcher) {
           finish();
           return jsonError(502, "The API returned an unsafe redirect");
         }
-        const redirectHeaders = new Headers({
-          "cache-control": "no-store",
-          location: safeLocation,
-        });
-        for (const cookie of upstream.headers.getSetCookie?.() ?? [])
-          redirectHeaders.append("set-cookie", cookie);
+        const redirectHeaders = new Headers({ location: safeLocation });
+        applyApiSecurityHeaders(
+          redirectHeaders,
+          appOrigin.protocol === "https:",
+        );
+        for (const cookie of upstream.headers.getSetCookie?.() ?? []) {
+          const safeCookie = sanitiseSetCookie(cookie);
+          if (safeCookie) redirectHeaders.append("set-cookie", safeCookie);
+        }
         await upstream.body?.cancel("redirect handled by application");
         finish();
         return new Response(null, {
@@ -329,34 +418,33 @@ function createHandler(fetcher: Fetcher) {
         });
       }
 
+      // Only JSON or plain text is an API response. HTML (an Access login
+      // page), SVG, XML and anything else is refused rather than rendered.
+      const upstreamType = upstream.headers
+        .get("content-type")
+        ?.toLowerCase()
+        .split(";", 1)[0]
+        .trim();
       if (
-        upstream.headers
-          .get("content-type")
-          ?.toLowerCase()
-          .startsWith("text/html")
+        (upstreamType && !API_CONTENT_TYPES.includes(upstreamType)) ||
+        upstream.status < 200 ||
+        upstream.status > 599
       ) {
-        await upstream.body?.cancel("HTML is not an API response");
+        await upstream.body?.cancel("unexpected API response type");
         finish();
         return jsonError(502, "The API returned an invalid response type");
       }
 
       const responseHeaders = new Headers();
       for (const [name, value] of upstream.headers) {
-        const lower = name.toLowerCase();
-        if (
-          HOP_HEADERS.has(lower) ||
-          lower.startsWith("x-forwarded-") ||
-          lower === "set-cookie" ||
-          lower === "cache-control" ||
-          lower === "content-length"
-        )
-          continue;
-        responseHeaders.append(name, value);
+        if (FORWARDED_RESPONSE_HEADERS.has(name.toLowerCase()))
+          responseHeaders.append(name, value);
       }
-      for (const cookie of upstream.headers.getSetCookie?.() ?? [])
-        responseHeaders.append("set-cookie", cookie);
-      responseHeaders.set("cache-control", "no-store");
-      responseHeaders.set("x-content-type-options", "nosniff");
+      for (const cookie of upstream.headers.getSetCookie?.() ?? []) {
+        const safeCookie = sanitiseSetCookie(cookie);
+        if (safeCookie) responseHeaders.append("set-cookie", safeCookie);
+      }
+      applyApiSecurityHeaders(responseHeaders, appOrigin.protocol === "https:");
       const responseLength = upstream.headers.get("content-length");
       if (responseLength !== null && Number(responseLength) > MAX_BODY_BYTES) {
         await upstream.body?.cancel("response exceeded gateway limit");
@@ -408,7 +496,7 @@ export default {
     headers.set("x-frame-options", "DENY");
     headers.set(
       "content-security-policy",
-      "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; upgrade-insecure-requests",
+      "default-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; upgrade-insecure-requests",
     );
     if (new URL(request.url).protocol === "https:")
       headers.set(

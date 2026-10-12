@@ -3,6 +3,11 @@ import { exercises, initialData, dateKey } from "./data.js";
 
 export const STORAGE_KEY = "forma-v1";
 export const MAX_BACKUP_BYTES = 20 * 1024 * 1024;
+// Aggregate bounds keep validation cost predictable for the browser and the
+// shared API validator. Ten years of daily training stays well inside them.
+export const MAX_ROUTINES = 200;
+export const MAX_HISTORY_SESSIONS = 10_000;
+export const MAX_TOTAL_SETS = 150_000;
 const number = z.number().finite();
 const timestamp = number.min(0).max(8640000000000000);
 const id = z.string().min(1).max(200);
@@ -61,7 +66,10 @@ const routineSchema = z.object({
 export const dataSchema = z.object({
   version: z.literal(1),
   revision: number.int().nonnegative().default(0),
-  routines: z.array(routineSchema).refine(unique("id"), "Duplicate routine"),
+  routines: z
+    .array(routineSchema)
+    .max(MAX_ROUTINES)
+    .refine(unique("id"), "Duplicate routine"),
   history: z
     .array(
       sessionSchema
@@ -88,7 +96,29 @@ export const dataSchema = z.object({
     .max(7)
     .refine((days) => new Set(days).size === days.length),
 });
+function assertBounded(value) {
+  // Count before zod parses each set: an aggregate refine would only run after
+  // the expensive per-set work it is meant to prevent.
+  if (!value || typeof value !== "object") return;
+  const { routines, history, active } = value;
+  if (Array.isArray(routines) && routines.length > MAX_ROUTINES)
+    throw new Error(`A workspace can hold at most ${MAX_ROUTINES} routines.`);
+  if (!Array.isArray(history)) return;
+  if (history.length > MAX_HISTORY_SESSIONS)
+    throw new Error(
+      `A workspace can hold at most ${MAX_HISTORY_SESSIONS} workouts.`,
+    );
+  let sets = 0;
+  for (const session of [...history, active]) {
+    if (!session || !Array.isArray(session.exercises)) continue;
+    for (const entry of session.exercises)
+      if (entry && Array.isArray(entry.sets)) sets += entry.sets.length;
+    if (sets > MAX_TOTAL_SETS)
+      throw new Error(`A workspace can hold at most ${MAX_TOTAL_SETS} sets.`);
+  }
+}
 export function validateData(value) {
+  assertBounded(value);
   const data = dataSchema.parse(value);
   if (
     data.active &&
@@ -96,6 +126,36 @@ export function validateData(value) {
   )
     throw new Error("The active workout is already present in history.");
   return data;
+}
+// Records which member imported this browser's guest data, so a shared
+// browser does not offer one person's local training to every account.
+export const LEGACY_MIGRATION_KEY = "forma-v1-migrated";
+export function legacyFingerprint(raw) {
+  let hash = 0;
+  for (let index = 0; index < raw.length; index += 1)
+    hash = (Math.imul(hash, 31) + raw.charCodeAt(index)) | 0;
+  return `${raw.length}:${hash >>> 0}`;
+}
+export function readLegacyMigration() {
+  try {
+    const value = JSON.parse(localStorage.getItem(LEGACY_MIGRATION_KEY));
+    return typeof value?.member === "string" &&
+      typeof value?.fingerprint === "string"
+      ? value
+      : null;
+  } catch {
+    return null;
+  }
+}
+export function markLegacyMigrated(member, fingerprint) {
+  try {
+    localStorage.setItem(
+      LEGACY_MIGRATION_KEY,
+      JSON.stringify({ member, fingerprint }),
+    );
+  } catch {
+    // Storage may be unavailable; the import itself already succeeded.
+  }
 }
 export function freshData() {
   return validateData(structuredClone(initialData));

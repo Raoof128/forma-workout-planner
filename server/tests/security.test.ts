@@ -44,9 +44,17 @@ const apiHeaders = {
 };
 
 before(async () => {
-  if (!databaseUrl || !adminPool || !pool) return;
+  // A missing database is a failed security run, never a silent skip.
+  if (!databaseUrl || !adminPool || !pool)
+    throw new Error(
+      "TEST_DATABASE_URL is required; HTTP security tests require real PostgreSQL.",
+    );
   await adminPool.query(`CREATE SCHEMA ${schema}`);
-  for (const name of ["0001-auth.sql", "0002-workspace.sql"]) {
+  for (const name of [
+    "0001-auth.sql",
+    "0002-workspace.sql",
+    "0003-security-throttle.sql",
+  ]) {
     const sql = await readFile(join(testDir, "..", "migrations", name), "utf8");
     await pool.query(sql);
   }
@@ -132,329 +140,307 @@ function withCookie(cookie: string, origin = appOrigin, memberRef?: string) {
   };
 }
 
-test(
-  "HTTP boundary rejects missing or forged gateway credentials and hostile mutation origins",
-  {
-    skip:
-      !databaseUrl &&
-      "Set TEST_DATABASE_URL to run isolated PostgreSQL security tests.",
-  },
-  async () => {
-    assert.ok(app);
-    const missingGateway = await app.inject({
-      method: "GET",
-      url: "/api/workspace",
-    });
-    assert.equal(missingGateway.statusCode, 401);
-    assert.deepEqual(missingGateway.json(), { error: "unauthorized" });
+test("HTTP boundary rejects missing or forged gateway credentials and hostile mutation origins", async () => {
+  assert.ok(app);
+  const missingGateway = await app.inject({
+    method: "GET",
+    url: "/api/workspace",
+  });
+  assert.equal(missingGateway.statusCode, 401);
+  assert.deepEqual(missingGateway.json(), { error: "unauthorized" });
 
-    const forgedGateway = await app.inject({
-      method: "GET",
-      url: "/api/workspace",
-      headers: { "x-forma-worker-secret": "attacker-controlled-value" },
-    });
-    assert.equal(forgedGateway.statusCode, 401);
+  const forgedGateway = await app.inject({
+    method: "GET",
+    url: "/api/workspace",
+    headers: { "x-forma-worker-secret": "attacker-controlled-value" },
+  });
+  assert.equal(forgedGateway.statusCode, 401);
 
-    const hostileOrigin = await app.inject({
-      method: "POST",
-      url: "/api/auth/sign-in/email",
-      headers: {
-        ...apiHeaders,
-        origin: "https://attacker.example",
-        "content-type": "application/json",
+  const hostileOrigin = await app.inject({
+    method: "POST",
+    url: "/api/auth/sign-in/email",
+    headers: {
+      ...apiHeaders,
+      origin: "https://attacker.example",
+      "content-type": "application/json",
+    },
+    payload: {
+      email: "nobody@example.test",
+      password: "not-a-real-password",
+    },
+  });
+  assert.equal(hostileOrigin.statusCode, 403);
+  assert.deepEqual(hostileOrigin.json(), { error: "forbidden" });
+});
+
+test("two real sessions cannot read, mutate, or export another member's workspace", async () => {
+  assert.ok(app);
+  clearEmailSink();
+  const a = await registerVerifiedMember(
+    "Security Alpha",
+    `alpha-${suffix}@example.test`,
+  );
+  const b = await registerVerifiedMember(
+    "Security Beta",
+    `beta-${suffix}@example.test`,
+  );
+
+  const unauthenticated = await app.inject({
+    method: "GET",
+    url: "/api/workspace",
+    headers: apiHeaders,
+  });
+  assert.equal(unauthenticated.statusCode, 401);
+  assert.equal(
+    unauthenticated.headers["cache-control"]?.includes("no-store"),
+    true,
+  );
+  assert.equal(
+    JSON.stringify(unauthenticated.json()).includes("Security Alpha"),
+    false,
+  );
+
+  const malformedCookie = await app.inject({
+    method: "GET",
+    url: "/api/workspace",
+    headers: withCookie(
+      "forma.session_token=forged.invalid",
+      appOrigin,
+      a.memberRef,
+    ),
+  });
+  assert.equal(malformedCookie.statusCode, 401);
+  assert.equal("data" in malformedCookie.json(), false);
+
+  const workspaceAResponse = await app.inject({
+    method: "GET",
+    url: "/api/workspace",
+    headers: withCookie(a.cookie, appOrigin, a.memberRef),
+  });
+  const workspaceBResponse = await app.inject({
+    method: "GET",
+    url: "/api/workspace",
+    headers: withCookie(b.cookie, appOrigin, b.memberRef),
+  });
+  assert.equal(workspaceAResponse.statusCode, 200, workspaceAResponse.body);
+  assert.equal(workspaceBResponse.statusCode, 200, workspaceBResponse.body);
+  assert.equal(
+    workspaceAResponse.headers["cache-control"]?.includes("no-store"),
+    true,
+  );
+  assert.equal(
+    workspaceBResponse.headers["cache-control"]?.includes("no-store"),
+    true,
+  );
+  const missingBinding = await app.inject({
+    method: "GET",
+    url: "/api/workspace",
+    headers: withCookie(a.cookie),
+  });
+  assert.equal(missingBinding.statusCode, 409);
+  assert.deepEqual(missingBinding.json(), { error: "account_changed" });
+
+  const workspaceA = workspaceAResponse.json() as {
+    data: WorkspaceData;
+    revision: number;
+  };
+  const workspaceB = workspaceBResponse.json() as {
+    data: WorkspaceData;
+    revision: number;
+  };
+  assert.equal(workspaceA.data.profile.name, "Security Alpha");
+  assert.equal(workspaceB.data.profile.name, "Security Beta");
+  assert.notEqual(workspaceA.data.profile.name, workspaceB.data.profile.name);
+
+  const staleTabRead = await app.inject({
+    method: "GET",
+    url: "/api/workspace",
+    headers: withCookie(b.cookie, appOrigin, a.memberRef),
+  });
+  const staleTabExport = await app.inject({
+    method: "GET",
+    url: "/api/workspace/export",
+    headers: withCookie(b.cookie, appOrigin, a.memberRef),
+  });
+  const staleTabWrite = await app.inject({
+    method: "PUT",
+    url: "/api/workspace",
+    headers: {
+      ...withCookie(b.cookie, appOrigin, a.memberRef),
+      "content-type": "application/json",
+    },
+    payload: {
+      data: {
+        ...workspaceA.data,
+        profile: { ...workspaceA.data.profile, goal: 1 },
       },
-      payload: {
-        email: "nobody@example.test",
-        password: "not-a-real-password",
+      expectedRevision: workspaceA.revision,
+      operationId: `stale-tab-${suffix}`,
+    },
+  });
+  const staleTabSessions = await app.inject({
+    method: "GET",
+    url: "/api/account/sessions",
+    headers: withCookie(b.cookie, appOrigin, a.memberRef),
+  });
+  const staleSensitiveAuth = await app.inject({
+    method: "POST",
+    url: "/api/auth/update-user",
+    headers: {
+      ...withCookie(b.cookie, appOrigin, a.memberRef),
+      "content-type": "application/json",
+    },
+    payload: { name: "Attacker edit" },
+  });
+  for (const response of [
+    staleTabRead,
+    staleTabExport,
+    staleTabWrite,
+    staleTabSessions,
+    staleSensitiveAuth,
+  ]) {
+    assert.equal(response.statusCode, 409);
+    assert.deepEqual(response.json(), { error: "account_changed" });
+    assert.equal("data" in response.json(), false);
+  }
+
+  const csrf = await app.inject({
+    method: "PUT",
+    url: "/api/workspace",
+    headers: {
+      ...withCookie(a.cookie, "https://attacker.example", a.memberRef),
+      "content-type": "application/json",
+    },
+    payload: {
+      data: {
+        ...workspaceA.data,
+        profile: { ...workspaceA.data.profile, goal: 1 },
       },
-    });
-    assert.equal(hostileOrigin.statusCode, 403);
-    assert.deepEqual(hostileOrigin.json(), { error: "forbidden" });
-  },
-);
+      expectedRevision: workspaceA.revision,
+      operationId: `csrf-${suffix}`,
+    },
+  });
+  assert.equal(csrf.statusCode, 403);
 
-test(
-  "two real sessions cannot read, mutate, or export another member's workspace",
-  {
-    skip:
-      !databaseUrl &&
-      "Set TEST_DATABASE_URL to run isolated PostgreSQL security tests.",
-  },
-  async () => {
-    assert.ok(app);
-    clearEmailSink();
-    const a = await registerVerifiedMember(
-      "Security Alpha",
-      `alpha-${suffix}@example.test`,
-    );
-    const b = await registerVerifiedMember(
-      "Security Beta",
-      `beta-${suffix}@example.test`,
-    );
-
-    const unauthenticated = await app.inject({
-      method: "GET",
-      url: "/api/workspace",
-      headers: apiHeaders,
-    });
-    assert.equal(unauthenticated.statusCode, 401);
-    assert.equal(
-      unauthenticated.headers["cache-control"]?.includes("no-store"),
-      true,
-    );
-    assert.equal(
-      JSON.stringify(unauthenticated.json()).includes("Security Alpha"),
-      false,
-    );
-
-    const malformedCookie = await app.inject({
-      method: "GET",
-      url: "/api/workspace",
-      headers: withCookie(
-        "forma.session_token=forged.invalid",
-        appOrigin,
-        a.memberRef,
-      ),
-    });
-    assert.equal(malformedCookie.statusCode, 401);
-    assert.equal("data" in malformedCookie.json(), false);
-
-    const workspaceAResponse = await app.inject({
-      method: "GET",
-      url: "/api/workspace",
-      headers: withCookie(a.cookie, appOrigin, a.memberRef),
-    });
-    const workspaceBResponse = await app.inject({
-      method: "GET",
-      url: "/api/workspace",
-      headers: withCookie(b.cookie, appOrigin, b.memberRef),
-    });
-    assert.equal(workspaceAResponse.statusCode, 200, workspaceAResponse.body);
-    assert.equal(workspaceBResponse.statusCode, 200, workspaceBResponse.body);
-    assert.equal(
-      workspaceAResponse.headers["cache-control"]?.includes("no-store"),
-      true,
-    );
-    assert.equal(
-      workspaceBResponse.headers["cache-control"]?.includes("no-store"),
-      true,
-    );
-    const missingBinding = await app.inject({
-      method: "GET",
-      url: "/api/workspace",
-      headers: withCookie(a.cookie),
-    });
-    assert.equal(missingBinding.statusCode, 409);
-    assert.deepEqual(missingBinding.json(), { error: "account_changed" });
-
-    const workspaceA = workspaceAResponse.json() as {
-      data: WorkspaceData;
-      revision: number;
-    };
-    const workspaceB = workspaceBResponse.json() as {
-      data: WorkspaceData;
-      revision: number;
-    };
-    assert.equal(workspaceA.data.profile.name, "Security Alpha");
-    assert.equal(workspaceB.data.profile.name, "Security Beta");
-    assert.notEqual(workspaceA.data.profile.name, workspaceB.data.profile.name);
-
-    const staleTabRead = await app.inject({
-      method: "GET",
-      url: "/api/workspace",
-      headers: withCookie(b.cookie, appOrigin, a.memberRef),
-    });
-    const staleTabExport = await app.inject({
-      method: "GET",
-      url: "/api/workspace/export",
-      headers: withCookie(b.cookie, appOrigin, a.memberRef),
-    });
-    const staleTabWrite = await app.inject({
-      method: "PUT",
-      url: "/api/workspace",
-      headers: {
-        ...withCookie(b.cookie, appOrigin, a.memberRef),
-        "content-type": "application/json",
+  const ownershipForgery = await app.inject({
+    method: "PUT",
+    url: "/api/workspace",
+    headers: {
+      ...withCookie(b.cookie, appOrigin, b.memberRef),
+      "content-type": "application/json",
+    },
+    payload: {
+      data: {
+        ...workspaceB.data,
+        profile: { ...workspaceB.data.profile, goal: 7 },
       },
-      payload: {
-        data: {
-          ...workspaceA.data,
-          profile: { ...workspaceA.data.profile, goal: 1 },
-        },
-        expectedRevision: workspaceA.revision,
-        operationId: `stale-tab-${suffix}`,
-      },
-    });
-    const staleTabSessions = await app.inject({
-      method: "GET",
-      url: "/api/account/sessions",
-      headers: withCookie(b.cookie, appOrigin, a.memberRef),
-    });
-    const staleSensitiveAuth = await app.inject({
-      method: "POST",
-      url: "/api/auth/update-user",
-      headers: {
-        ...withCookie(b.cookie, appOrigin, a.memberRef),
-        "content-type": "application/json",
-      },
-      payload: { name: "Attacker edit" },
-    });
-    for (const response of [
-      staleTabRead,
-      staleTabExport,
-      staleTabWrite,
-      staleTabSessions,
-      staleSensitiveAuth,
-    ]) {
-      assert.equal(response.statusCode, 409);
-      assert.deepEqual(response.json(), { error: "account_changed" });
-      assert.equal("data" in response.json(), false);
-    }
+      expectedRevision: workspaceB.revision,
+      operationId: `owner-forgery-${suffix}`,
+      ownerId: "member-a",
+      userId: "member-a",
+    },
+  });
+  assert.equal(ownershipForgery.statusCode, 400);
 
-    const csrf = await app.inject({
-      method: "PUT",
-      url: "/api/workspace",
-      headers: {
-        ...withCookie(a.cookie, "https://attacker.example", a.memberRef),
-        "content-type": "application/json",
-      },
-      payload: {
-        data: {
-          ...workspaceA.data,
-          profile: { ...workspaceA.data.profile, goal: 1 },
-        },
-        expectedRevision: workspaceA.revision,
-        operationId: `csrf-${suffix}`,
-      },
-    });
-    assert.equal(csrf.statusCode, 403);
+  const changedA = {
+    ...workspaceA.data,
+    profile: { ...workspaceA.data.profile, goal: 5 },
+    routines: workspaceA.data.routines.map((routine, index) =>
+      index === 0 ? { ...routine, name: "Alpha private routine" } : routine,
+    ),
+  };
+  const savedA = await app.inject({
+    method: "PUT",
+    url: "/api/workspace",
+    headers: {
+      ...withCookie(a.cookie, appOrigin, a.memberRef),
+      "content-type": "application/json",
+    },
+    payload: {
+      data: changedA,
+      expectedRevision: workspaceA.revision,
+      operationId: `alpha-save-${suffix}`,
+    },
+  });
+  assert.equal(savedA.statusCode, 200, savedA.body);
 
-    const ownershipForgery = await app.inject({
-      method: "PUT",
-      url: "/api/workspace",
-      headers: {
-        ...withCookie(b.cookie, appOrigin, b.memberRef),
-        "content-type": "application/json",
-      },
-      payload: {
-        data: {
-          ...workspaceB.data,
-          profile: { ...workspaceB.data.profile, goal: 7 },
-        },
-        expectedRevision: workspaceB.revision,
-        operationId: `owner-forgery-${suffix}`,
-        ownerId: "member-a",
-        userId: "member-a",
-      },
-    });
-    assert.equal(ownershipForgery.statusCode, 400);
+  const latestA = await app.inject({
+    method: "GET",
+    url: "/api/workspace",
+    headers: withCookie(a.cookie, appOrigin, a.memberRef),
+  });
+  const latestB = await app.inject({
+    method: "GET",
+    url: "/api/workspace",
+    headers: withCookie(b.cookie, appOrigin, b.memberRef),
+  });
+  assert.equal(latestA.json().data.profile.goal, 5);
+  assert.equal(latestA.json().data.routines[0].name, "Alpha private routine");
+  assert.equal(latestB.json().data.profile.name, "Security Beta");
+  assert.equal(
+    latestB.json().data.routines[0].name,
+    workspaceB.data.routines[0].name,
+  );
+  assert.equal(latestB.json().data.profile.goal, workspaceB.data.profile.goal);
 
-    const changedA = {
-      ...workspaceA.data,
-      profile: { ...workspaceA.data.profile, goal: 5 },
-      routines: workspaceA.data.routines.map((routine, index) =>
-        index === 0 ? { ...routine, name: "Alpha private routine" } : routine,
-      ),
-    };
-    const savedA = await app.inject({
-      method: "PUT",
-      url: "/api/workspace",
-      headers: {
-        ...withCookie(a.cookie, appOrigin, a.memberRef),
-        "content-type": "application/json",
-      },
-      payload: {
-        data: changedA,
-        expectedRevision: workspaceA.revision,
-        operationId: `alpha-save-${suffix}`,
-      },
-    });
-    assert.equal(savedA.statusCode, 200, savedA.body);
+  const exportA = await app.inject({
+    method: "GET",
+    url: "/api/workspace/export",
+    headers: withCookie(a.cookie, appOrigin, a.memberRef),
+  });
+  const exportB = await app.inject({
+    method: "GET",
+    url: "/api/workspace/export",
+    headers: withCookie(b.cookie, appOrigin, b.memberRef),
+  });
+  assert.equal(exportA.statusCode, 200);
+  assert.equal(exportB.statusCode, 200);
+  assert.equal(exportA.headers["cache-control"]?.includes("no-store"), true);
+  assert.equal(exportA.json().profile.name, "Security Alpha");
+  assert.equal(JSON.stringify(exportA.json()).includes("Security Beta"), false);
+  assert.equal(exportB.json().profile.name, "Security Beta");
 
-    const latestA = await app.inject({
-      method: "GET",
-      url: "/api/workspace",
-      headers: withCookie(a.cookie, appOrigin, a.memberRef),
-    });
-    const latestB = await app.inject({
-      method: "GET",
-      url: "/api/workspace",
-      headers: withCookie(b.cookie, appOrigin, b.memberRef),
-    });
-    assert.equal(latestA.json().data.profile.goal, 5);
-    assert.equal(latestA.json().data.routines[0].name, "Alpha private routine");
-    assert.equal(latestB.json().data.profile.name, "Security Beta");
-    assert.equal(
-      latestB.json().data.routines[0].name,
-      workspaceB.data.routines[0].name,
-    );
-    assert.equal(
-      latestB.json().data.profile.goal,
-      workspaceB.data.profile.goal,
-    );
+  const replay = await app.inject({
+    method: "PUT",
+    url: "/api/workspace",
+    headers: {
+      ...withCookie(a.cookie, appOrigin, a.memberRef),
+      "content-type": "application/json",
+    },
+    payload: {
+      data: changedA,
+      expectedRevision: workspaceA.revision,
+      operationId: `alpha-save-${suffix}`,
+    },
+  });
+  assert.equal(replay.statusCode, 200);
+  assert.deepEqual(replay.json(), savedA.json());
 
-    const exportA = await app.inject({
-      method: "GET",
-      url: "/api/workspace/export",
-      headers: withCookie(a.cookie, appOrigin, a.memberRef),
-    });
-    const exportB = await app.inject({
-      method: "GET",
-      url: "/api/workspace/export",
-      headers: withCookie(b.cookie, appOrigin, b.memberRef),
-    });
-    assert.equal(exportA.statusCode, 200);
-    assert.equal(exportB.statusCode, 200);
-    assert.equal(exportA.headers["cache-control"]?.includes("no-store"), true);
-    assert.equal(exportA.json().profile.name, "Security Alpha");
-    assert.equal(
-      JSON.stringify(exportA.json()).includes("Security Beta"),
-      false,
-    );
-    assert.equal(exportB.json().profile.name, "Security Beta");
+  const token = a.cookie.split("=", 2)[1];
+  const revoked = await app.inject({
+    method: "POST",
+    url: "/api/auth/sign-out",
+    headers: {
+      ...withCookie(a.cookie, appOrigin, a.memberRef),
+      "content-type": "application/json",
+    },
+    payload: {},
+  });
+  assert.equal(revoked.statusCode, 200, revoked.body);
+  assert.ok(token);
+  const afterLogout = await app.inject({
+    method: "GET",
+    url: "/api/workspace",
+    headers: withCookie(a.cookie, appOrigin, a.memberRef),
+  });
+  assert.equal(afterLogout.statusCode, 401);
 
-    const replay = await app.inject({
-      method: "PUT",
-      url: "/api/workspace",
-      headers: {
-        ...withCookie(a.cookie, appOrigin, a.memberRef),
-        "content-type": "application/json",
-      },
-      payload: {
-        data: changedA,
-        expectedRevision: workspaceA.revision,
-        operationId: `alpha-save-${suffix}`,
-      },
-    });
-    assert.equal(replay.statusCode, 200);
-    assert.deepEqual(replay.json(), savedA.json());
-
-    const token = a.cookie.split("=", 2)[1];
-    const revoked = await app.inject({
-      method: "POST",
-      url: "/api/auth/sign-out",
-      headers: {
-        ...withCookie(a.cookie, appOrigin, a.memberRef),
-        "content-type": "application/json",
-      },
-      payload: {},
-    });
-    assert.equal(revoked.statusCode, 200, revoked.body);
-    assert.ok(token);
-    const afterLogout = await app.inject({
-      method: "GET",
-      url: "/api/workspace",
-      headers: withCookie(a.cookie, appOrigin, a.memberRef),
-    });
-    assert.equal(afterLogout.statusCode, 401);
-
-    // The second synthetic member remains usable after revoking A's session.
-    const remainsIsolated = await app.inject({
-      method: "GET",
-      url: "/api/workspace",
-      headers: withCookie(b.cookie, appOrigin, b.memberRef),
-    });
-    assert.equal(remainsIsolated.statusCode, 200);
-    assert.equal(remainsIsolated.json().data.profile.name, "Security Beta");
-  },
-);
+  // The second synthetic member remains usable after revoking A's session.
+  const remainsIsolated = await app.inject({
+    method: "GET",
+    url: "/api/workspace",
+    headers: withCookie(b.cookie, appOrigin, b.memberRef),
+  });
+  assert.equal(remainsIsolated.statusCode, 200);
+  assert.equal(remainsIsolated.json().data.profile.name, "Security Beta");
+});
