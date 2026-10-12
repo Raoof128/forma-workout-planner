@@ -11,16 +11,15 @@ export function createAuth(
   config: AppConfig,
   sendEmail: EmailSender,
 ) {
-  // The local browser journey harness reuses a synthetic edge IP across many
-  // independent specs. Never honor this override outside an explicit test app.
-  const testAuthLimit =
+  const testRateLimitOverride =
     config.environment === "test" &&
     process.env.NODE_ENV === "test" &&
     Number.isInteger(config.authRateLimitMax) &&
     (config.authRateLimitMax ?? 0) >= 5 &&
-    (config.authRateLimitMax ?? 0) <= 1000
-      ? config.authRateLimitMax!
-      : 5;
+    (config.authRateLimitMax ?? 0) <= 1000;
+  // The local browser journey harness reuses a synthetic edge IP across many
+  // independent specs. Never honor this override outside an explicit test app.
+  const testAuthLimit = testRateLimitOverride ? config.authRateLimitMax! : 5;
   const globalRateLimitMax =
     config.environment === "test" && process.env.NODE_ENV === "test"
       ? Math.max(100, testAuthLimit)
@@ -85,6 +84,9 @@ export function createAuth(
         "/sign-up/email": { window: 60, max: testAuthLimit },
         "/request-password-reset": { window: 60, max: testAuthLimit },
         "/reset-password": { window: 60, max: testAuthLimit },
+        ...(testRateLimitOverride
+          ? { "/send-verification-email": { window: 60, max: testAuthLimit } }
+          : {}),
       },
     },
     advanced: {

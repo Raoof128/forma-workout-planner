@@ -866,6 +866,41 @@ test("rate-limit override is honored only by an explicit NODE_ENV=test app", asy
     }
     return responses;
   };
+  const resendVerification = async (
+    testApp: Awaited<ReturnType<typeof createApp>>,
+    sourceIp: string,
+    count: number,
+  ) => {
+    const responses = [];
+    for (let index = 0; index < count; index += 1) {
+      responses.push(
+        await testApp.inject({
+          method: "POST",
+          url: "/api/auth/send-verification-email",
+          headers: {
+            "x-forma-worker-secret": workerSecret,
+            "x-forma-client-ip": sourceIp,
+            origin: appOrigin,
+            "content-type": "application/json",
+          },
+          payload: {
+            email: `resend-rate-limit-${suffix}-${index}@example.test`,
+          },
+        }),
+      );
+    }
+    return responses;
+  };
+  const assertDefaultResendLimit = async (
+    testApp: Awaited<ReturnType<typeof createApp>>,
+    sourceIp: string,
+  ) => {
+    const responses = await resendVerification(testApp, sourceIp, 4);
+    assert.ok(
+      responses.slice(0, 3).every(({ statusCode }) => statusCode === 200),
+    );
+    assert.equal(responses[3]?.statusCode, 429);
+  };
 
   try {
     process.env.NODE_ENV = "test";
@@ -896,6 +931,17 @@ test("rate-limit override is honored only by an explicit NODE_ENV=test app", asy
         .every(({ statusCode }) => statusCode === 401),
     );
     assert.equal(developmentResponses[5]?.statusCode, 429);
+    const developmentResendResponses = await resendVerification(
+      developmentApp,
+      "203.0.113.194",
+      4,
+    );
+    assert.ok(
+      developmentResendResponses
+        .slice(0, 3)
+        .every(({ statusCode }) => statusCode === 200),
+    );
+    assert.equal(developmentResendResponses[3]?.statusCode, 429);
     const developmentGlobalResponses = await getSession101Times(
       developmentApp,
       "203.0.113.196",
@@ -908,6 +954,26 @@ test("rate-limit override is honored only by an explicit NODE_ENV=test app", asy
     assert.equal(developmentGlobalResponses[100]?.statusCode, 429);
     await developmentApp.close();
 
+    delete process.env.NODE_ENV;
+    const noNodeEnvApp = await createApp({
+      pool,
+      config: { ...config, authRateLimitMax: 1000 },
+    });
+    await noNodeEnvApp.ready();
+    await assertDefaultResendLimit(noNodeEnvApp, "203.0.113.192");
+    await noNodeEnvApp.close();
+
+    process.env.NODE_ENV = "production";
+    const productionNodeEnvApp = await createApp({
+      pool,
+      config: { ...config, authRateLimitMax: 1000 },
+    });
+    await productionNodeEnvApp.ready();
+    await assertDefaultResendLimit(productionNodeEnvApp, "203.0.113.191");
+    await productionNodeEnvApp.close();
+
+    process.env.NODE_ENV = "test";
+
     const raisedGlobalApp = await createApp({
       pool,
       config: { ...config, authRateLimitMax: 1000 },
@@ -919,6 +985,14 @@ test("rate-limit override is honored only by an explicit NODE_ENV=test app", asy
     );
     assert.ok(
       raisedGlobalResponses.every(({ statusCode }) => statusCode === 200),
+    );
+    const raisedResendResponses = await resendVerification(
+      raisedGlobalApp,
+      "203.0.113.193",
+      6,
+    );
+    assert.ok(
+      raisedResendResponses.every(({ statusCode }) => statusCode === 200),
     );
     await raisedGlobalApp.close();
   } finally {
