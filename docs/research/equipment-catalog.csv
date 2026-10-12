@@ -1,0 +1,77 @@
+equipment_id,name,family,priority,source_ids,candidate_count,current_exercise_ids,coverage
+bodyweight,Bodyweight / floor space,bodyweight,P1,S01,20,pushup;deadbug;plank,partial
+barbell,Straight barbell and plates,free-weight,P1,S02,20,bench;squat;rdl,partial
+dumbbell,Dumbbells,free-weight,P1,S02,29,row;shoulder;lateral;curl;lunge;calf,partial
+kettlebell,Kettlebells,free-weight,P1,S04,8,goblet,partial
+ez-bar,EZ curl bar,free-weight,P1,S04,3,,planned
+trap-bar,Trap / hex bar,free-weight,P2,S04,1,,planned
+specialty-bar,Safety squat / multi-grip / axle bars,free-weight,P3,S04,2,,planned
+bench,Flat / adjustable / decline bench,support,P1,S02,14,bench;row,partial
+rack,Power rack / squat stand / platform,support,P1,S02,4,squat,partial
+smith,Smith machine,guided-strength,P1,S03,5,,planned
+cable,Adjustable cable / crossover / functional trainer,cable,P1,S05,22,triceps,partial
+lat-pulldown,Lat pulldown station,machine,P1,S03,3,pulldown,partial
+seated-row,Seated row machine,machine,P1,S03,2,,planned
+chest-press,Chest press machine,machine,P1,S03,2,,planned
+shoulder-press,Shoulder press machine,machine,P1,S03,1,,planned
+pec-deck,Chest fly / rear delt machine,machine,P1,S03,2,,planned
+assisted-dip-pullup,Assisted dip / chin station,machine,P1,S03,3,,planned
+leg-press,Leg press machine,machine,P1,S03,2,legpress,partial
+leg-extension,Leg extension machine,machine,P1,S03,2,,planned
+leg-curl,Seated / lying / standing leg curl,machine,P1,S03,3,,planned
+hip-abductor,Hip abduction machine,machine,P1,S03,1,,planned
+hip-adductor,Hip adduction machine,machine,P1,S03,1,,planned
+calf-machine,Standing / seated calf machine,machine,P1,S03,2,,planned
+hack-squat,Hack squat machine,machine,P1,S02,1,,planned
+pendulum-squat,Pendulum squat machine,machine,P2,S02,1,,planned
+belt-squat,Belt squat machine,machine,P2,S02,1,,planned
+hip-thrust,Glute drive / hip thrust machine,machine,P1,S02,1,,planned
+biceps-machine,Preacher / biceps curl machine,machine,P1,S03,1,,planned
+triceps-machine,Triceps extension / seated dip machine,machine,P1,S03,2,,planned
+ab-machine,Abdominal crunch machine,machine,P1,S03,1,,planned
+back-extension,Back extension machine / Roman chair,machine,P1,S03,2,,planned
+rotary-torso,Rotary torso machine,machine,P2,S03,1,,planned
+landmine,Landmine attachment,specialty,P2,S04,4,,planned
+ghd,Glute ham developer,specialty,P2,S04,1,,planned
+reverse-hyper,Reverse hyperextension machine,specialty,P3,S04,1,,planned
+pullup-bar,Pull-up bar / rig,bodyweight,P1,S04,8,,planned
+dip-bars,Dip bars / parallel bars,bodyweight,P1,S04,3,,planned
+rings,Gymnastic rings,bodyweight,P2,S04,3,,planned
+suspension,Suspension trainer,bodyweight,P2,S06,3,,planned
+bands,Long bands / tubes / mini bands,elastic,P1,S01,5,,planned
+weighted-vest,Weighted vest / dip belt,accessory,P2,S04,2,,planned
+plyo-box,Plyometric box / step platform,functional,P2,S01,3,,planned
+medicine-ball,Medicine / wall ball,functional,P2,S01,3,,planned
+slam-ball,Slam ball,functional,P2,S04,1,,planned
+battle-ropes,Battle ropes,functional,P2,S01,2,,planned
+jump-rope,Skipping rope,functional,P2,S04,2,,planned
+sled,Push / pull sled,functional,P2,S22,3,,planned
+sandbag,Sandbag,functional,P2,S04,3,,planned
+carry-handles,Farmers carry handles,strongman,P3,S21,1,,planned
+yoke,Yoke,strongman,P3,S21,1,,planned
+log,Strongman log,strongman,P3,S21,1,,planned
+stone,Atlas stone / loadable stone,strongman,P3,S21,1,,planned
+climbing-rope,Climbing rope,functional,P3,S04,1,,planned
+grip,Gripper / pinch block / thick grip,accessory,P3,S04,2,,planned
+treadmill,Motorized / curved treadmill,cardio,P2,S02,4,,planned
+bike,Upright / recumbent / indoor cycle,cardio,P2,S02,3,,planned
+air-bike,Fan / air bike,cardio,P2,S04,1,,planned
+rower,Rowing ergometer,cardio,P2,S07,1,,planned
+ski-erg,Ski ergometer,cardio,P2,S07,1,,planned
+elliptical,Elliptical / cross trainer / arc trainer,cardio,P2,S02,1,,planned
+stairs,Stairmill / stepper,cardio,P2,S02,1,,planned
+upper-erg,Upper-body ergometer,adaptive-cardio,P2,S08,1,,planned
+recumbent-stepper,Recumbent stepper,adaptive-cardio,P2,S08,1,,planned
+stability-ball,Stability ball,accessory,P2,S01,2,,planned
+balance-dome,Balance dome / balance trainer,accessory,P3,S01,1,,planned
+mat,Exercise mat,support,P1,S01,5,,planned
+foam-roller,Foam roller / mobility ball,mobility,P2,S04,2,,planned
+agility,Agility ladder / cones / hurdles,functional,P3,S01,3,,planned
+reformer,Pilates reformer,pilates,P3,S09,2,,planned
+pilates-tower,Pilates tower / Cadillac / springboard,pilates,P3,S09,1,,planned
+pilates-chair,Pilates chair,pilates,P3,S09,1,,planned
+pneumatic,Pneumatic strength machine,special-resistance,P3,S10,1,,planned
+accessible-strength,Wheelchair-accessible strength station,adaptive-strength,P2,S11,2,,planned
+digital-strength,Electronic / isokinetic strength machine,special-resistance,P3,S12,1,,planned
+flywheel,Inertial flywheel trainer,special-resistance,P3,S13,2,,planned
+air-strength,Air-resistance strength ergometer,special-resistance,P3,S14,3,,planned

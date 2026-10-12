@@ -1,0 +1,237 @@
+candidate_id,name,equipment_ids,movement_family,metric_profile,status,current_id,priority,source_ids
+barbell-bench-press,Barbell bench press,barbell;bench,horizontal-push,load_reps,current,bench,P1,S02
+incline-barbell-bench-press,Incline barbell bench press,barbell;bench,horizontal-push,load_reps,proposed,,P1,S02
+close-grip-bench-press,Close-grip bench press,barbell;bench,horizontal-push,load_reps,proposed,,P1,S02
+barbell-overhead-press,Barbell overhead press,barbell,vertical-push,load_reps,proposed,,P1,S02
+push-press,Push press,barbell,vertical-push,load_reps,proposed,,P1,S02
+bent-over-barbell-row,Bent-over barbell row,barbell,horizontal-pull,load_reps,proposed,,P1,S02
+pendlay-row,Pendlay row,barbell,horizontal-pull,load_reps,proposed,,P1,S02
+barbell-back-squat,Barbell back squat,barbell;rack,squat,load_reps,current,squat,P1,S02
+front-squat,Front squat,barbell;rack,squat,load_reps,proposed,,P1,S02
+paused-back-squat,Paused back squat,barbell;rack,squat,load_reps,proposed,,P1,S02
+romanian-deadlift,Romanian deadlift,barbell,hinge,load_reps,current,rdl,P1,S02
+conventional-deadlift,Conventional deadlift,barbell,hinge,load_reps,proposed,,P1,S02
+sumo-deadlift,Sumo deadlift,barbell,hinge,load_reps,proposed,,P1,S02
+barbell-good-morning,Barbell good morning,barbell,hinge,load_reps,proposed,,P1,S02
+barbell-hip-thrust,Barbell hip thrust,barbell;bench,hip-extension,load_reps,proposed,,P1,S02
+barbell-glute-bridge,Barbell glute bridge,barbell;bench,hip-extension,load_reps,proposed,,P1,S02
+power-clean,Power clean,barbell,power,load_reps,proposed,,P1,S02
+hang-power-clean,Hang power clean,barbell,power,load_reps,proposed,,P1,S02
+power-snatch,Power snatch,barbell,power,load_reps,proposed,,P1,S02
+clean-and-jerk,Clean and jerk,barbell,power,load_reps,proposed,,P1,S02
+dumbbell-bench-press,Dumbbell bench press,dumbbell;bench,horizontal-push,load_reps,proposed,,P1,S02
+incline-dumbbell-press,Incline dumbbell press,dumbbell;bench,horizontal-push,load_reps,proposed,,P1,S02
+dumbbell-fly,Dumbbell fly,dumbbell;bench,horizontal-push,load_reps,proposed,,P1,S02
+dumbbell-floor-press,Dumbbell floor press,dumbbell,horizontal-push,load_reps,proposed,,P1,S02
+one-arm-dumbbell-row,One-arm dumbbell row,dumbbell;bench,horizontal-pull,load_reps,current,row,P1,S02
+chest-supported-dumbbell-row,Chest-supported dumbbell row,dumbbell;bench,horizontal-pull,load_reps,proposed,,P1,S02
+dumbbell-shoulder-press,Dumbbell shoulder press,dumbbell,vertical-push,load_reps,current,shoulder,P1,S02
+arnold-press,Arnold press,dumbbell,vertical-push,load_reps,proposed,,P1,S02
+dumbbell-lateral-raise,Dumbbell lateral raise,dumbbell,shoulder-isolation,load_reps,current,lateral,P1,S02
+dumbbell-rear-delt-fly,Dumbbell rear delt fly,dumbbell,shoulder-isolation,load_reps,proposed,,P1,S02
+dumbbell-front-raise,Dumbbell front raise,dumbbell,shoulder-isolation,load_reps,proposed,,P1,S02
+dumbbell-shrug,Dumbbell shrug,dumbbell,shoulder-isolation,load_reps,proposed,,P1,S02
+dumbbell-biceps-curl,Dumbbell biceps curl,dumbbell,elbow-flexion,load_reps,current,curl,P1,S02
+hammer-curl,Hammer curl,dumbbell,elbow-flexion,load_reps,proposed,,P1,S02
+concentration-curl,Concentration curl,dumbbell,elbow-flexion,load_reps,proposed,,P1,S02
+incline-dumbbell-curl,Incline dumbbell curl,dumbbell,elbow-flexion,load_reps,proposed,,P1,S02
+overhead-dumbbell-triceps-extension,Overhead dumbbell triceps extension,dumbbell,elbow-extension,load_reps,proposed,,P1,S02
+dumbbell-triceps-kickback,Dumbbell triceps kickback,dumbbell,elbow-extension,load_reps,proposed,,P1,S02
+dumbbell-reverse-lunge,Dumbbell reverse lunge,dumbbell,lunge,load_reps,current,lunge,P1,S02
+dumbbell-walking-lunge,Dumbbell walking lunge,dumbbell,lunge,load_reps,proposed,,P1,S02
+dumbbell-split-squat,Dumbbell split squat,dumbbell,lunge,load_reps,proposed,,P1,S02
+dumbbell-lateral-lunge,Dumbbell lateral lunge,dumbbell,lunge,load_reps,proposed,,P1,S02
+bulgarian-split-squat,Bulgarian split squat,dumbbell;bench,lunge,load_reps,proposed,,P1,S02
+dumbbell-romanian-deadlift,Dumbbell Romanian deadlift,dumbbell,hinge,load_reps,proposed,,P1,S02
+single-leg-dumbbell-romanian-deadlift,Single-leg dumbbell Romanian deadlift,dumbbell,hinge,load_reps,proposed,,P1,S02
+standing-calf-raise,Standing calf raise,dumbbell,ankle,load_reps,current,calf,P1,S02
+dumbbell-farmers-carry,Dumbbell farmers carry,dumbbell,carry,load_distance,proposed,,P1,S02
+suitcase-carry,Suitcase carry,dumbbell,carry,load_distance,proposed,,P1,S02
+kettlebell-goblet-squat,Kettlebell goblet squat,kettlebell,squat,load_reps,current,goblet,P1,S04
+double-kettlebell-front-squat,Double kettlebell front squat,kettlebell,squat,load_reps,proposed,,P1,S04
+kettlebell-swing,Kettlebell swing,kettlebell,hinge,load_reps,proposed,,P1,S04
+kettlebell-deadlift,Kettlebell deadlift,kettlebell,hinge,load_reps,proposed,,P1,S04
+kettlebell-clean,Kettlebell clean,kettlebell,power,load_reps,proposed,,P1,S04
+kettlebell-snatch,Kettlebell snatch,kettlebell,power,load_reps,proposed,,P1,S04
+kettlebell-press,Kettlebell press,kettlebell,vertical-push,load_reps,proposed,,P1,S04
+turkish-get-up,Turkish get-up,kettlebell,whole-body,load_reps,proposed,,P1,S04
+ez-bar-curl,EZ bar curl,ez-bar,elbow-flexion,load_reps,proposed,,P1,S04
+ez-bar-reverse-curl,EZ bar reverse curl,ez-bar,elbow-flexion,load_reps,proposed,,P1,S04
+ez-bar-skull-crusher,EZ bar skull crusher,ez-bar;bench,elbow-extension,load_reps,proposed,,P1,S04;S02
+trap-bar-deadlift,Trap bar deadlift,trap-bar,hinge,load_reps,proposed,,P2,S04
+safety-bar-squat,Safety bar squat,specialty-bar;rack,squat,load_reps,proposed,,P3,S04;S02
+axle-press,Axle press,specialty-bar,vertical-push,load_reps,proposed,,P3,S04
+smith-bench-press,Smith bench press,smith;bench,horizontal-push,load_reps,proposed,,P1,S03;S02
+smith-incline-press,Smith incline press,smith;bench,horizontal-push,load_reps,proposed,,P1,S03;S02
+smith-squat,Smith squat,smith,squat,load_reps,proposed,,P1,S03
+smith-split-squat,Smith split squat,smith,squat,load_reps,proposed,,P1,S03
+smith-romanian-deadlift,Smith Romanian deadlift,smith,hinge,load_reps,proposed,,P1,S03
+standing-cable-chest-press,Standing cable chest press,cable,horizontal-push,load_reps,proposed,,P1,S05
+cable-chest-fly,Cable chest fly,cable,horizontal-push,load_reps,proposed,,P1,S05
+low-to-high-cable-fly,Low-to-high cable fly,cable,horizontal-push,load_reps,proposed,,P1,S05
+seated-cable-row,Seated cable row,cable,horizontal-pull,load_reps,proposed,,P1,S05
+single-arm-cable-row,Single-arm cable row,cable,horizontal-pull,load_reps,proposed,,P1,S05
+cable-face-pull,Cable face pull,cable,horizontal-pull,load_reps,proposed,,P1,S05
+straight-arm-cable-pulldown,Straight-arm cable pulldown,cable,vertical-pull,load_reps,proposed,,P1,S05
+cable-lateral-raise,Cable lateral raise,cable,shoulder-isolation,load_reps,proposed,,P1,S05
+cable-rear-delt-fly,Cable rear delt fly,cable,shoulder-isolation,load_reps,proposed,,P1,S05
+cable-external-rotation,Cable external rotation,cable,shoulder-isolation,load_reps,proposed,,P1,S05
+cable-internal-rotation,Cable internal rotation,cable,shoulder-isolation,load_reps,proposed,,P1,S05
+cable-biceps-curl,Cable biceps curl,cable,elbow-flexion,load_reps,proposed,,P1,S05
+rope-hammer-curl,Rope hammer curl,cable,elbow-flexion,load_reps,proposed,,P1,S05
+cable-triceps-pushdown,Cable triceps pushdown,cable,elbow-extension,load_reps,current,triceps,P1,S05
+overhead-cable-triceps-extension,Overhead cable triceps extension,cable,elbow-extension,load_reps,proposed,,P1,S05
+cable-crunch,Cable crunch,cable,core,load_reps,proposed,,P1,S05
+cable-woodchop,Cable woodchop,cable,core,load_reps,proposed,,P1,S05
+pallof-press,Pallof press,cable,core,load_reps,proposed,,P1,S05
+cable-glute-kickback,Cable glute kickback,cable,hip-isolation,load_reps,proposed,,P1,S05
+cable-hip-abduction,Cable hip abduction,cable,hip-isolation,load_reps,proposed,,P1,S05
+cable-hip-adduction,Cable hip adduction,cable,hip-isolation,load_reps,proposed,,P1,S05
+cable-pull-through,Cable pull-through,cable,hip-isolation,load_reps,proposed,,P1,S05
+lat-pulldown,Lat pulldown,lat-pulldown,vertical-pull,load_reps,current,pulldown,P1,S03
+neutral-grip-lat-pulldown,Neutral-grip lat pulldown,lat-pulldown,vertical-pull,load_reps,proposed,,P1,S03
+single-arm-lat-pulldown,Single-arm lat pulldown,lat-pulldown,vertical-pull,load_reps,proposed,,P1,S03
+machine-seated-row,Machine seated row,seated-row,horizontal-pull,load_reps,proposed,,P1,S03
+plate-loaded-high-row,Plate-loaded high row,seated-row,horizontal-pull,load_reps,proposed,,P1,S03
+machine-chest-press,Machine chest press,chest-press,horizontal-push,load_reps,proposed,,P1,S03
+plate-loaded-incline-chest-press,Plate-loaded incline chest press,chest-press,horizontal-push,load_reps,proposed,,P1,S03
+machine-shoulder-press,Machine shoulder press,shoulder-press,vertical-push,load_reps,proposed,,P1,S03
+pec-deck-fly,Pec deck fly,pec-deck,shoulder-isolation,load_reps,proposed,,P1,S03
+reverse-pec-deck,Reverse pec deck,pec-deck,shoulder-isolation,load_reps,proposed,,P1,S03
+leg-press,Leg press,leg-press,squat,load_reps,current,legpress,P1,S03
+single-leg-press,Single-leg press,leg-press,squat,load_reps,proposed,,P1,S03
+leg-extension,Leg extension,leg-extension,knee-extension,load_reps,proposed,,P1,S03
+single-leg-extension,Single-leg extension,leg-extension,knee-extension,load_reps,proposed,,P1,S03
+seated-leg-curl,Seated leg curl,leg-curl,knee-flexion,load_reps,proposed,,P1,S03
+lying-leg-curl,Lying leg curl,leg-curl,knee-flexion,load_reps,proposed,,P1,S03
+standing-leg-curl,Standing leg curl,leg-curl,knee-flexion,load_reps,proposed,,P1,S03
+machine-hip-abduction,Machine hip abduction,hip-abductor,hip-isolation,load_reps,proposed,,P1,S03
+machine-hip-adduction,Machine hip adduction,hip-adductor,hip-isolation,load_reps,proposed,,P1,S03
+machine-standing-calf-raise,Machine standing calf raise,calf-machine,ankle,load_reps,proposed,,P1,S03
+seated-calf-raise,Seated calf raise,calf-machine,ankle,load_reps,proposed,,P1,S03
+hack-squat,Hack squat,hack-squat,squat,load_reps,proposed,,P1,S02
+pendulum-squat,Pendulum squat,pendulum-squat,squat,load_reps,proposed,,P2,S02
+belt-squat,Belt squat,belt-squat,squat,load_reps,proposed,,P2,S02
+machine-hip-thrust,Machine hip thrust,hip-thrust,hip-extension,load_reps,proposed,,P1,S02
+machine-preacher-curl,Machine preacher curl,biceps-machine,elbow-flexion,load_reps,proposed,,P1,S03
+machine-triceps-extension,Machine triceps extension,triceps-machine,elbow-extension,load_reps,proposed,,P1,S03
+seated-machine-dip,Seated machine dip,triceps-machine,elbow-extension,load_reps,proposed,,P1,S03
+machine-abdominal-crunch,Machine abdominal crunch,ab-machine,core,load_reps,proposed,,P1,S03
+machine-back-extension,Machine back extension,back-extension,hinge,load_reps,proposed,,P1,S03
+roman-chair-back-extension,Roman chair back extension,back-extension,hinge,load_reps,proposed,,P1,S03
+machine-torso-rotation,Machine torso rotation,rotary-torso,core,load_reps,proposed,,P2,S03
+half-kneeling-landmine-press,Half-kneeling landmine press,landmine,vertical-push,load_reps,proposed,,P2,S04
+landmine-t-bar-row,Landmine T-bar row,landmine,horizontal-pull,load_reps,proposed,,P2,S04
+meadows-row,Meadows row,landmine,horizontal-pull,load_reps,proposed,,P2,S04
+landmine-squat,Landmine squat,landmine,squat,load_reps,proposed,,P2,S04
+glute-ham-raise,Glute ham raise,ghd,knee-flexion,load_reps,proposed,,P2,S04
+reverse-hyperextension,Reverse hyperextension,reverse-hyper,hip-extension,load_reps,proposed,,P3,S04
+assisted-pull-up,Assisted pull-up,assisted-dip-pullup,vertical-pull,assistance_reps,proposed,,P1,S03
+assisted-chin-up,Assisted chin-up,assisted-dip-pullup,vertical-pull,assistance_reps,proposed,,P1,S03
+assisted-dip,Assisted dip,assisted-dip-pullup,vertical-push,assistance_reps,proposed,,P1,S03
+push-up,Push-up,bodyweight,horizontal-push,reps,current,pushup,P1,S01
+knee-push-up,Knee push-up,bodyweight,horizontal-push,reps,proposed,,P1,S01
+incline-push-up,Incline push-up,bodyweight,horizontal-push,reps,proposed,,P1,S01
+diamond-push-up,Diamond push-up,bodyweight,horizontal-push,reps,proposed,,P1,S01
+air-squat,Air squat,bodyweight,squat,reps,proposed,,P1,S01
+supported-single-leg-squat,Supported single-leg squat,bodyweight,squat,reps,proposed,,P1,S01
+bodyweight-reverse-lunge,Bodyweight reverse lunge,bodyweight,lunge,reps,proposed,,P1,S01
+bodyweight-split-squat,Bodyweight split squat,bodyweight,lunge,reps,proposed,,P1,S01
+bodyweight-glute-bridge,Bodyweight glute bridge,bodyweight,hip-extension,reps,proposed,,P1,S01
+single-leg-glute-bridge,Single-leg glute bridge,bodyweight,hip-extension,reps,proposed,,P1,S01
+dead-bug,Dead bug,bodyweight,core,reps,current,deadbug,P1,S01
+bird-dog,Bird dog,bodyweight,core,reps,proposed,,P1,S01
+reverse-crunch,Reverse crunch,bodyweight,core,reps,proposed,,P1,S01
+bicycle-crunch,Bicycle crunch,bodyweight,core,reps,proposed,,P1,S01
+mountain-climber,Mountain climber,bodyweight,core,reps,proposed,,P1,S01
+forearm-plank,Forearm plank,bodyweight,core,duration,current_legacy_hold,plank,P1,S01
+side-plank,Side plank,bodyweight,core,duration,proposed,,P1,S01
+hollow-hold,Hollow hold,bodyweight,core,duration,proposed,,P1,S01
+wall-sit,Wall sit,bodyweight,squat,duration,proposed,,P1,S01
+burpee,Burpee,bodyweight,whole-body,reps,proposed,,P1,S01
+pull-up,Pull-up,pullup-bar,vertical-pull,reps,proposed,,P1,S04
+chin-up,Chin-up,pullup-bar,vertical-pull,reps,proposed,,P1,S04
+neutral-grip-pull-up,Neutral-grip pull-up,pullup-bar,vertical-pull,reps,proposed,,P1,S04
+hanging-knee-raise,Hanging knee raise,pullup-bar,core,reps,proposed,,P1,S04
+hanging-leg-raise,Hanging leg raise,pullup-bar,core,reps,proposed,,P1,S04
+toes-to-bar,Toes-to-bar,pullup-bar,core,reps,proposed,,P1,S04
+dead-hang,Dead hang,pullup-bar,grip,duration,proposed,,P1,S04
+parallel-bar-dip,Parallel-bar dip,dip-bars,vertical-push,reps,proposed,,P1,S04
+l-sit-hold,L-sit hold,dip-bars,core,duration,proposed,,P1,S04
+ring-row,Ring row,rings,horizontal-pull,reps,proposed,,P2,S04
+ring-dip,Ring dip,rings,vertical-push,reps,proposed,,P2,S04
+ring-muscle-up,Ring muscle-up,rings,whole-body,reps,proposed,,P2,S04
+suspension-row,Suspension row,suspension,horizontal-pull,reps,proposed,,P2,S06
+suspension-chest-press,Suspension chest press,suspension,horizontal-push,reps,proposed,,P2,S06
+suspension-hamstring-curl,Suspension hamstring curl,suspension,knee-flexion,reps,proposed,,P2,S06
+band-row,Band row,bands,horizontal-pull,resistance_reps,proposed,,P1,S01
+band-pull-apart,Band pull-apart,bands,horizontal-pull,resistance_reps,proposed,,P1,S01
+banded-lateral-walk,Banded lateral walk,bands,hip-isolation,resistance_reps,proposed,,P1,S01
+banded-clamshell,Banded clamshell,bands,hip-isolation,resistance_reps,proposed,,P1,S01
+band-external-rotation,Band external rotation,bands,shoulder-isolation,resistance_reps,proposed,,P1,S01
+weighted-pull-up,Weighted pull-up,weighted-vest;pullup-bar,vertical-pull,added_load_reps,proposed,,P2,S04
+weighted-dip,Weighted dip,weighted-vest;dip-bars,vertical-push,added_load_reps,proposed,,P2,S04
+box-jump,Box jump,plyo-box,power,reps,proposed,,P2,S01
+lateral-box-jump,Lateral box jump,plyo-box,power,reps,proposed,,P2,S01
+dumbbell-step-up,Dumbbell step-up,plyo-box;dumbbell,lunge,load_reps,proposed,,P2,S01;S02
+wall-ball-shot,Wall ball shot,medicine-ball,power,load_reps,proposed,,P2,S01
+medicine-ball-rotational-throw,Medicine ball rotational throw,medicine-ball,power,load_reps,proposed,,P2,S01
+medicine-ball-chest-pass,Medicine ball chest pass,medicine-ball,power,load_reps,proposed,,P2,S01
+ball-slam,Ball slam,slam-ball,power,load_reps,proposed,,P2,S04
+alternating-rope-waves,Alternating rope waves,battle-ropes,conditioning,duration,proposed,,P2,S01
+double-rope-waves,Double rope waves,battle-ropes,conditioning,duration,proposed,,P2,S01
+single-under-skipping,Single-under skipping,jump-rope,conditioning,reps_duration,proposed,,P2,S04
+double-under-skipping,Double-under skipping,jump-rope,conditioning,reps_duration,proposed,,P2,S04
+sled-push,Sled push,sled,carry,load_distance,proposed,,P2,S22
+sled-pull,Sled pull,sled,carry,load_distance,proposed,,P2,S22
+backward-sled-drag,Backward sled drag,sled,carry,load_distance,proposed,,P2,S22
+sandbag-carry,Sandbag carry,sandbag,carry,load_distance,proposed,,P2,S04
+sandbag-walking-lunge,Sandbag walking lunge,sandbag,carry,load_distance,proposed,,P2,S04
+sandbag-to-shoulder,Sandbag to shoulder,sandbag,power,load_reps,proposed,,P2,S04
+farmers-handle-carry,Farmers handle carry,carry-handles,carry,load_distance,proposed,,P3,S21
+yoke-carry,Yoke carry,yoke,carry,load_distance,proposed,,P3,S21
+log-clean-and-press,Log clean and press,log,vertical-push,load_reps,proposed,,P3,S21
+stone-to-platform,Stone to platform,stone,power,load_reps,proposed,,P3,S21
+rope-climb,Rope climb,climbing-rope,climb,distance_duration,proposed,,P3,S04
+gripper-close,Gripper close,grip,grip,resistance_reps,proposed,,P3,S04
+pinch-block-hold,Pinch block hold,grip,grip,load_duration,proposed,,P3,S04
+treadmill-walk,Treadmill walk,treadmill,cardio,cardio,proposed,,P2,S02
+treadmill-run,Treadmill run,treadmill,cardio,cardio,proposed,,P2,S02
+incline-treadmill-walk,Incline treadmill walk,treadmill,cardio,cardio,proposed,,P2,S02
+curved-treadmill-run,Curved treadmill run,treadmill,cardio,cardio,proposed,,P2,S02
+upright-cycling,Upright cycling,bike,cardio,cardio,proposed,,P2,S02
+recumbent-cycling,Recumbent cycling,bike,cardio,cardio,proposed,,P2,S02
+indoor-cycling,Indoor cycling,bike,cardio,cardio,proposed,,P2,S02
+air-bike,Air bike,air-bike,cardio,cardio,proposed,,P2,S04
+indoor-rowing,Indoor rowing,rower,cardio,cardio,proposed,,P2,S07
+ski-ergometer,Ski ergometer,ski-erg,cardio,cardio,proposed,,P2,S07
+elliptical-training,Elliptical training,elliptical,cardio,cardio,proposed,,P2,S02
+stair-climbing,Stair climbing,stairs,cardio,cardio,proposed,,P2,S02
+arm-ergometry,Arm ergometry,upper-erg,cardio,cardio,proposed,,P2,S08
+recumbent-stepping,Recumbent stepping,recumbent-stepper,cardio,cardio,proposed,,P2,S08
+stability-ball-hamstring-curl,Stability ball hamstring curl,stability-ball,knee-flexion,reps,proposed,,P2,S01
+stability-ball-rollout,Stability ball rollout,stability-ball,core,reps,proposed,,P2,S01
+supported-balance-hold,Supported balance hold,balance-dome,balance,duration,proposed,,P3,S01
+half-kneeling-hip-flexor-stretch,Half-kneeling hip flexor stretch,mat,mobility,duration,proposed,,P1,S01
+seated-hamstring-stretch,Seated hamstring stretch,mat,mobility,duration,proposed,,P1,S01
+child-pose,Child pose,mat,mobility,duration,proposed,,P1,S01
+cat-cow,Cat-cow,mat,mobility,reps,proposed,,P1,S01
+thoracic-open-book,Thoracic open book,mat,mobility,reps,proposed,,P1,S01
+quadriceps-foam-rolling,Quadriceps foam rolling,foam-roller,mobility,duration,proposed,,P2,S04
+calf-foam-rolling,Calf foam rolling,foam-roller,mobility,duration,proposed,,P2,S04
+cone-shuttle,Cone shuttle,agility,agility,distance_duration,proposed,,P3,S01
+ladder-footwork,Ladder footwork,agility,agility,distance_duration,proposed,,P3,S01
+low-hurdle-drill,Low hurdle drill,agility,agility,distance_duration,proposed,,P3,S01
+reformer-footwork,Reformer footwork,reformer,pilates,resistance_reps,proposed,,P3,S09
+reformer-feet-in-straps,Reformer feet-in-straps,reformer,pilates,resistance_reps,proposed,,P3,S09
+tower-arm-springs,Tower arm springs,pilates-tower,pilates,resistance_reps,proposed,,P3,S09
+chair-footwork,Chair footwork,pilates-chair,pilates,resistance_reps,proposed,,P3,S09
+pneumatic-chest-press,Pneumatic chest press,pneumatic,horizontal-push,resistance_reps,proposed,,P3,S10
+accessible-machine-chest-press,Accessible machine chest press,accessible-strength,horizontal-push,resistance_reps,proposed,,P2,S11
+accessible-machine-seated-row,Accessible machine seated row,accessible-strength,horizontal-pull,resistance_reps,proposed,,P2,S11
+isokinetic-chest-press,Isokinetic chest press,digital-strength,horizontal-push,resistance_reps,proposed,,P3,S12
+flywheel-squat,Flywheel squat,flywheel,squat,resistance_reps,proposed,,P3,S13
+flywheel-row,Flywheel row,flywheel,horizontal-pull,resistance_reps,proposed,,P3,S13
+air-resistance-strength-chest-press,Air-resistance strength chest press,air-strength,horizontal-push,force_work,proposed,,P3,S14
+air-resistance-strength-row,Air-resistance strength row,air-strength,horizontal-pull,force_work,proposed,,P3,S14
+air-resistance-strength-leg-press,Air-resistance strength leg press,air-strength,squat,force_work,proposed,,P3,S14

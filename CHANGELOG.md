@@ -4,6 +4,8 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+- Added sourced gym-equipment and workout research: 76 equipment families, 236 exercise candidates, workout formats, content-rights review, and a migration-first implementation roadmap. These are planning documents; the runtime library remains 16 exercises.
+
 - Added setup, user, architecture, data-model, deployment, testing, and contribution documentation.
 - Extracted a directly testable persistence repository and added data-layer unit tests.
 - Added task boundaries within storage locks to address an intermittent Firefox cross-tab lost-update failure.

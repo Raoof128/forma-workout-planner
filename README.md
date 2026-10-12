@@ -59,18 +59,19 @@ On Linux, Playwright may require system dependencies: `npx playwright install-de
 
 ## Documentation
 
-| Document                                        | Purpose                                                          |
-| ----------------------------------------------- | ---------------------------------------------------------------- |
-| [Getting started](docs/getting-started.md)      | Installation, commands, and troubleshooting                      |
-| [User guide](docs/user-guide.md)                | Routines, logging, progress, backups, and recovery               |
-| [Architecture](docs/architecture.md)            | Components, data flow, persistence, and trust boundaries         |
-| [Data model](docs/data-model.md)                | Workspace structure, units, validation, and backup compatibility |
-| [Deployment](docs/deployment.md)                | Static hosting and production checks                             |
-| [Testing](docs/testing.md)                      | Automated checks and test conventions                            |
-| [Contributing](CONTRIBUTING.md)                 | Development workflow and pull requests                           |
-| [Changelog](CHANGELOG.md)                       | Notable changes                                                  |
-| [Research](docs/research.md)                    | Reference research and product scope                             |
-| [Frontend audit](docs/frontend-design-audit.md) | Design findings and source-file coverage                         |
-| [Data-layer audit](docs/backend-audit.md)       | Persistence and business-logic findings, fixes, and coverage     |
+| Document                                                  | Purpose                                                                             |
+| --------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| [Getting started](docs/getting-started.md)                | Installation, commands, and troubleshooting                                         |
+| [User guide](docs/user-guide.md)                          | Routines, logging, progress, backups, and recovery                                  |
+| [Architecture](docs/architecture.md)                      | Components, data flow, persistence, and trust boundaries                            |
+| [Data model](docs/data-model.md)                          | Workspace structure, units, validation, and backup compatibility                    |
+| [Deployment](docs/deployment.md)                          | Static hosting and production checks                                                |
+| [Testing](docs/testing.md)                                | Automated checks and test conventions                                               |
+| [Contributing](CONTRIBUTING.md)                           | Development workflow and pull requests                                              |
+| [Changelog](CHANGELOG.md)                                 | Notable changes                                                                     |
+| [Equipment and workout coverage](docs/research/README.md) | 76 equipment families, 236 exercise candidates, sources, and implementation roadmap |
+| [Research](docs/research.md)                              | Reference research and product scope                                                |
+| [Frontend audit](docs/frontend-design-audit.md)           | Design findings and source-file coverage                                            |
+| [Data-layer audit](docs/backend-audit.md)                 | Persistence and business-logic findings, fixes, and coverage                        |
 
 FORMA uses an original design informed by research into Leap Health's Gym Workout Planner & Gym Log. It is not affiliated with that product. Historical concept screenshots in `docs/` are design references, not current release screenshots. The Barlow Condensed and DM Sans fonts include their OFL licenses in `public/fonts/`. This repository does not currently include a project-wide software license.

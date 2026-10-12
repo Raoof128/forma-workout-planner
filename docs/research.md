@@ -21,3 +21,7 @@ Full dashboard concept, followed by matching functional screens. White sidebar, 
 ## Validation
 
 Build and real-browser tests: routine creation/editing, search/filter, exercise details, session logging, rest timer, finish/history, reload persistence, navigation, preferences and mobile overflow. Visual inspection compares the generated concept and browser screenshots.
+
+## Equipment and workout expansion
+
+The subsequent [equipment and workout coverage study](research/README.md) maps commercial-gym and specialty equipment, exercise candidates, logging requirements, sources, and implementation priorities. It distinguishes the current 16-exercise library from proposed additions.
