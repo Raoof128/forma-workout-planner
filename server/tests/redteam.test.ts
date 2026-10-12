@@ -590,6 +590,15 @@ test("RT-14: concurrent guesses cannot exceed the per-account limit (purple-team
     body: { email: kim.email, password },
   });
   assert.equal(locked.response.statusCode, 429);
+  // Refused requests are not counted, so one burst cannot reach the hard
+  // (until-reset) lock. (Late retest finding.)
+  const row = await pool.query(
+    `SELECT consecutive_failures, locked_until = 'infinity'::timestamptz AS indefinite
+       FROM security_throttle WHERE scope = 'sign-in-failure' AND key_digest = $1`,
+    [throttleKey(config.authSecret, "sign-in", kim.email)],
+  );
+  assert.ok(row.rows[0].consecutive_failures <= 10);
+  assert.equal(row.rows[0].indefinite, false);
 });
 
 test("RT-15: a stolen session cannot guess the password on signed-in endpoints (purple-team F3)", async () => {
@@ -668,4 +677,79 @@ test("RT-17: names cannot hide behind invisible or bidi characters (purple-team 
     body: { name: "\u{1f4aa}".repeat(31) },
   });
   assert.equal(emoji.response.statusCode, 200, "length counts code points");
+});
+
+test("RT-18: empty passwords cannot reset the member limit, and password reset lifts it (late retest)", async () => {
+  const ola = await verifiedMember("rt18");
+  const guess = (i: number) =>
+    call("POST", "/api/auth/change-password", {
+      cookie: ola.cookie,
+      member: ola.member,
+      body: {
+        currentPassword: `wrong guess ${i}`,
+        newPassword: "a replacement long FORMA passphrase",
+      },
+    });
+  for (let i = 0; i < 9; i += 1)
+    assert.equal((await guess(i)).response.statusCode, 400);
+  // Starting deletion without a password is a legitimate email flow; it must
+  // not clear the count of wrong guesses.
+  const reset = await call("POST", "/api/auth/delete-user", {
+    cookie: ola.cookie,
+    member: ola.member,
+    body: { password: "", callbackURL: `${appOrigin}/` },
+  });
+  assert.equal(reset.response.statusCode, 200);
+  assert.equal((await guess(9)).response.statusCode, 400);
+  assert.equal((await guess(10)).response.statusCode, 429);
+
+  clearEmailSink();
+  await call("POST", "/api/auth/request-password-reset", {
+    body: { email: ola.email, redirectTo: `${appOrigin}/#account` },
+  });
+  const mail = inspectEmailSink().find((m) => m.kind === "reset-password");
+  assert.ok(mail);
+  const token = new URL(mail.url).pathname.split("/").at(-1);
+  const newPassword = "a fresh and long FORMA passphrase";
+  assert.equal(
+    (
+      await call("POST", "/api/auth/reset-password", {
+        body: { token, newPassword },
+      })
+    ).response.statusCode,
+    200,
+  );
+  const fresh = await signIn(ola.email, newPassword);
+  const change = await call("POST", "/api/auth/change-password", {
+    cookie: fresh.cookie,
+    member: fresh.member,
+    body: {
+      currentPassword: newPassword,
+      newPassword: "yet another long FORMA passphrase",
+    },
+  });
+  assert.equal(change.response.statusCode, 200, "reset lifts the member lock");
+});
+
+test("RT-19: stored names are exactly what was validated (late retest)", async () => {
+  assert.ok(pool);
+  const pat = await verifiedMember("rt19");
+  const padded = await call("POST", "/api/auth/update-user", {
+    cookie: pat.cookie,
+    member: pat.member,
+    body: { name: `Pat${" ".repeat(5000)}` },
+  });
+  assert.equal(padded.response.statusCode, 200);
+  const row = await pool.query(`SELECT name FROM "user" WHERE email = $1`, [
+    pat.email,
+  ]);
+  assert.equal(row.rows[0].name, "Pat");
+  for (const name of ["\u3164", "\u2800\u2800", "a\u034fb", "\ue000x"]) {
+    const { response } = await call("POST", "/api/auth/update-user", {
+      cookie: pat.cookie,
+      member: pat.member,
+      body: { name },
+    });
+    assert.equal(response.statusCode, 400, JSON.stringify(name));
+  }
 });

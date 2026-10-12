@@ -93,32 +93,48 @@ export async function reserveAttempt(
   policy: SignInPolicy = DEFAULT_SIGN_IN_POLICY,
   scope = SIGN_IN_SCOPE,
 ): Promise<boolean> {
+  // Counters only move when this request is granted a slot, so a burst of
+  // refused requests can never push the subject towards the hard lock.
+  // RETURNING old.* (PostgreSQL 18) tells us whether a slot was granted.
   const result = await pool.query<{
+    granted: boolean;
     window_count: number;
     consecutive_failures: number;
   }>(
-    `INSERT INTO security_throttle
+    `INSERT INTO security_throttle AS t
        (scope, key_digest, window_started, window_count, consecutive_failures)
      VALUES ($1, $2, clock_timestamp(), 1, 1)
      ON CONFLICT (scope, key_digest) DO UPDATE SET
-       window_count = CASE
-         WHEN security_throttle.window_started <= clock_timestamp() - make_interval(secs => $3)
-           THEN 1 ELSE security_throttle.window_count + 1 END,
        window_started = CASE
-         WHEN security_throttle.window_started <= clock_timestamp() - make_interval(secs => $3)
-           THEN clock_timestamp() ELSE security_throttle.window_started END,
-       consecutive_failures = security_throttle.consecutive_failures + 1
-     WHERE security_throttle.locked_until IS NULL
-        OR security_throttle.locked_until <= clock_timestamp()
-     RETURNING window_count, consecutive_failures`,
-    [scope, keyDigest, policy.windowSeconds],
+         WHEN t.window_started <= clock_timestamp() - make_interval(secs => $3)
+           THEN clock_timestamp() ELSE t.window_started END,
+       window_count = CASE
+         WHEN t.consecutive_failures >= $5 THEN t.window_count
+         WHEN t.window_started <= clock_timestamp() - make_interval(secs => $3)
+           THEN 1
+         WHEN t.window_count < $4 THEN t.window_count + 1
+         ELSE t.window_count END,
+       consecutive_failures = CASE
+         WHEN t.consecutive_failures < $5
+          AND (t.window_started <= clock_timestamp() - make_interval(secs => $3)
+               OR t.window_count < $4)
+           THEN t.consecutive_failures + 1
+         ELSE t.consecutive_failures END
+     WHERE t.locked_until IS NULL OR t.locked_until <= clock_timestamp()
+     RETURNING (old.consecutive_failures IS NULL
+                OR new.consecutive_failures > old.consecutive_failures) AS granted,
+               new.window_count, new.consecutive_failures`,
+    [
+      scope,
+      keyDigest,
+      policy.windowSeconds,
+      policy.windowLimit,
+      policy.consecutiveLimit,
+    ],
   );
   const row = result.rows[0];
   if (!row) return false;
-  if (
-    row.window_count > policy.windowLimit ||
-    row.consecutive_failures > policy.consecutiveLimit
-  ) {
+  if (!row.granted) {
     await applyLock(pool, keyDigest, policy, scope);
     return false;
   }

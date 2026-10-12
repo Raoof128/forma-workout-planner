@@ -272,7 +272,13 @@ function invalidProfileInput(body: unknown): boolean {
     // Count code points, and refuse control, format (zero-width, bidi) and
     // line/paragraph separator characters that hide or spoof a name.
     const length = [...name].length;
-    if (length < 1 || length > 60 || /[\p{Cc}\p{Cf}\u2028\u2029]/u.test(name))
+    if (
+      length < 1 ||
+      length > 60 ||
+      /[\p{Cc}\p{Cf}\p{Cs}\p{Co}\p{Cn}\p{Default_Ignorable_Code_Point}\u2028\u2029\u2800\u3164]/u.test(
+        name,
+      )
+    )
       return true;
   }
   // FORMA has no avatars; an arbitrary image URL is only a tracking vector.
@@ -598,6 +604,16 @@ export async function createApp({
 
       let rawBody = request.rawBody;
       if (
+        (authPath === "update-user" || authPath === "sign-up/email") &&
+        typeof (request.body as { name?: unknown })?.name === "string"
+      ) {
+        // Validation checks the trimmed name; store exactly what was checked.
+        rawBody = JSON.stringify({
+          ...(request.body as Record<string, unknown>),
+          name: (request.body as { name: string }).name.trim(),
+        });
+      }
+      if (
         authPath === "change-password" &&
         request.body &&
         typeof request.body === "object" &&
@@ -626,11 +642,13 @@ export async function createApp({
       } else if (
         PASSWORD_CHECKED_PATHS.has(authPath) &&
         existingSession &&
-        PASSWORD_FIELDS.some(
-          (field) =>
-            typeof (request.body as Record<string, unknown>)[field] ===
-            "string",
-        )
+        // Only a non-empty password is checked; Better Auth treats an empty
+        // one as "no password" (e.g. delete-user then sends an email), and a
+        // 200 for that must not clear the counter.
+        PASSWORD_FIELDS.some((field) => {
+          const value = (request.body as Record<string, unknown>)[field];
+          return typeof value === "string" && value.length > 0;
+        })
       ) {
         // A stolen session must not become an unthrottled password oracle.
         attempt = {

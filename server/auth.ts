@@ -6,6 +6,7 @@ import type { AuthEmail } from "./email.js";
 import {
   clearSignInFailures,
   normaliseEmail,
+  PASSWORD_CHECK_SCOPE,
   throttleKey,
 } from "./throttle.js";
 
@@ -73,6 +74,12 @@ export function createAuth(
             pool,
             signInThrottleKey(config.authSecret, email),
           );
+        // Also lift any signed-in password-check lock for this member.
+        await clearSignInFailures(
+          pool,
+          throttleKey(config.authSecret, "password-check", user.id),
+          PASSWORD_CHECK_SCOPE,
+        );
       },
       async sendResetPassword({ user, url }) {
         await sendEmail({ kind: "reset-password", email: user.email, url });

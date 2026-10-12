@@ -4,6 +4,7 @@ import { createId, displayDate, sessionSets } from "./data";
 import {
   freshData,
   legacyFingerprint,
+  markLegacyMigrated,
   readLegacyMigration,
   readStore,
 } from "./storage";
@@ -41,7 +42,9 @@ function AccountWorkspace() {
   const [modal, setModal] = useState(null);
   const [toast, setToast] = useState("");
   const [legacySnapshot] = useState(() => readStore());
-  const [legacyMigration] = useState(() => readLegacyMigration());
+  const [legacyMigration, setLegacyMigration] = useState(() =>
+    readLegacyMigration(),
+  );
   const toastTimer = useRef(null);
   const notify = useCallback((message) => {
     setToast(message);
@@ -90,6 +93,12 @@ function AccountWorkspace() {
             : "available",
     migratedBy: legacyMigration?.member ?? null,
     fingerprint,
+    // Record the import so this browser stops offering the same guest data.
+    markMigrated: (member) => {
+      if (!fingerprint) return;
+      markLegacyMigrated(member, fingerprint);
+      setLegacyMigration({ member, fingerprint });
+    },
     data: legacySnapshot.data,
   };
   async function change(update, message) {

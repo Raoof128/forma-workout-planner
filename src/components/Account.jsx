@@ -24,7 +24,7 @@ import {
   X,
 } from "lucide-react";
 import { exercises } from "../data";
-import { markLegacyMigrated, readBackupFile } from "../storage";
+import { readBackupFile } from "../storage";
 import "../account.css";
 
 const sections = [
@@ -805,7 +805,7 @@ export default function Account({
         expectedRevision: exportedRevision ?? workspace.revision,
       });
       if (importDraft.legacyFingerprint && account.user?.id) {
-        markLegacyMigrated(account.user.id, importDraft.legacyFingerprint);
+        legacy?.markMigrated?.(account.user.id);
         setLegacyImported(true);
       }
       // A later import needs a fresh safety export of the new cloud state.
