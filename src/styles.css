@@ -2834,3 +2834,7 @@ input[type="checkbox"] {
 .legal-header .eyebrow {
   color: var(--muted);
 }
+.sidebar .legal-links {
+  flex-direction: row;
+  align-items: center;
+}
