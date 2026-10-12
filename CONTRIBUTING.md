@@ -8,8 +8,14 @@ Thank you for helping improve FORMA. Keep changes aligned with its current purpo
 2. Create a branch for a focused change.
 3. Use `npm ci` and keep dependency changes intentional and reproducible.
 4. Make the change and add regression coverage for meaningful behavior or data-integrity fixes.
-5. Run lint, formatting checks, build, and relevant browser tests.
+5. Run `npm run docs:check`, lint, formatting checks, build, and relevant unit/browser tests. Record which checks ran and their actual results; do not describe unrun checks as passing.
 6. Open a pull request describing the problem, the resulting behavior, validation, and any known limits.
+
+## Maintainer notes
+
+FORMA stores workout data in each user's browser profile. Before changing validation, restore behavior, or the version 1 backup shape, review the compatibility guidance in [data-model.md](docs/data-model.md) and update the user instructions. Do not request real workout backups in public issues. Use synthetic data when reproducing import or recovery problems.
+
+For releases, verify the static build and supported checks, review the diff and bundled assets, update the changelog and release evidence with observed results, and preserve a rollback copy of the previous static files. A static-file rollback does not roll back browser-local data. This repository does not document a release cadence or response-time commitment.
 
 ## Code conventions
 
@@ -23,6 +29,6 @@ Do not change the backup version or accepted fields without documenting compatib
 
 For bugs, include the browser/version, viewport if relevant, steps to reproduce, expected/actual behavior, and whether site storage was available. Use a minimal synthetic example for backup issues. Do not publish private workout logs, credentials, or unredacted browser data.
 
-For suspected vulnerabilities, avoid posting exploitable details or private data in a public issue. Use the repository's private vulnerability-reporting option if enabled, or ask the maintainer for a private reporting channel.
+For suspected vulnerabilities, do not include exploit details, credentials, or private workout data in a public issue. Follow [SECURITY.md](SECURITY.md) to check whether the repository offers a private reporting route. If no private route is available, open a non-sensitive issue asking the maintainer for a private contact method.
 
 The repository does not currently grant a project-wide software license. Bundled font licenses apply to those assets separately.

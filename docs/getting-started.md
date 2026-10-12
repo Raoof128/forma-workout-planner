@@ -6,7 +6,7 @@
 
 - Node.js 22.12 or newer; Node.js 24 recommended.
 - npm and Git.
-- A current browser. Chromium and Firefox are automated test targets.
+- A current browser. The development suite targets Chromium, Firefox, and WebKit; production smoke tests cover desktop Chromium, Firefox, and WebKit, plus mobile Chromium and WebKit emulation.
 
 ## Install and run
 
@@ -23,17 +23,21 @@ The development command listens on all network interfaces. To bind only to this 
 
 ## Commands
 
-| Command                | Purpose                                                    |
-| ---------------------- | ---------------------------------------------------------- |
-| `npm run dev`          | Start the Vite development server                          |
-| `npm run build`        | Generate production files in `dist/`                       |
-| `npm run preview`      | Serve the built files locally, usually on port 4173        |
-| `npm run lint`         | Check JavaScript, React Hooks, and JSX accessibility rules |
-| `npm run format`       | Format source, tests, configuration, and HTML              |
-| `npm run format:check` | Verify formatting without changing files                   |
-| `npm test`             | Run unit tests, then Chromium and Firefox browser tests    |
-| `npm run test:unit`    | Run isolated validation/persistence tests using Node.js    |
-| `npm run test:browser` | Run Playwright scenarios in Chromium and Firefox           |
+| Command                           | Purpose                                                                                |
+| --------------------------------- | -------------------------------------------------------------------------------------- |
+| `npm run dev`                     | Start the Vite development server                                                      |
+| `npm run build`                   | Generate production files in `dist/`                                                   |
+| `npm run preview`                 | Serve the built files locally, usually on port 4173                                    |
+| `npm run lint`                    | Check JavaScript, React Hooks, and JSX accessibility rules                             |
+| `npm run format`                  | Format source, tests, configuration, and HTML                                          |
+| `npm run format:check`            | Verify formatting without changing files                                               |
+| `npm run docs:check`              | Check local Markdown links, fragments, images, and documented npm scripts              |
+| `npm test`                        | Run unit tests, then Chromium, Firefox, and WebKit browser tests                       |
+| `npm run test:unit`               | Run isolated validation/persistence tests using Node.js                                |
+| `npm run test:browser`            | Run Playwright scenarios in Chromium, Firefox, and WebKit                              |
+| `npm run test:browser:production` | Build the app and run production smoke tests in Chromium, Firefox, and WebKit projects |
+
+Playwright owns a fresh development server on `127.0.0.1:5173` for browser tests. It requires that port to be free and starts Vite with strict-port behavior. The server is reused only when `PLAYWRIGHT_REUSE_SERVER=1` is explicitly set outside CI. Production browser tests build the app, then start a fresh preview server on `127.0.0.1:4173` and never reuse an existing server.
 
 Use `npm ci` for reproducible installs from the committed lockfile. Do not commit `node_modules`, `dist`, local environment files, or real workout backups.
 
@@ -43,8 +47,8 @@ Use `npm ci` for reproducible installs from the committed lockfile. Do not commi
 | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | Install reports an unsupported engine | Check `node --version`; use Node.js 24 and rerun `npm ci`.                                                                   |
 | Port 5173 is in use                   | Stop the other server or use `npm run dev -- --port 5174`. Tests expect 5173.                                                |
-| Browser executable is missing         | Run `npx playwright install chromium firefox`.                                                                               |
-| Linux browser libraries are missing   | Install Playwright system dependencies using an account with the necessary OS permissions.                                   |
+| Browser executable is missing         | Run `npx playwright install chromium firefox webkit`.                                                                        |
+| Linux browser libraries are missing   | Run `npx playwright install-deps chromium firefox webkit` with an account that can install system packages.                  |
 | Saving is unavailable                 | Use HTTPS or localhost, allow site storage, and use a browser supporting Web Locks. Export temporary data before refreshing. |
 | Old data is absent on another URL     | Storage is isolated by scheme, host, and port. Export from the old origin and import into the new one.                       |
 | Saved data needs attention            | Download the original from the recovery screen, then restore a valid FORMA backup. Do not clear storage first.               |

@@ -15,6 +15,7 @@ export function Settings({ data, saved, onSave, onRestore, notify }) {
   const [backup, setBackup] = useState(null);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
+  const importSequence = useRef(0);
   async function submit(event) {
     event.preventDefault();
     setBusy(true);
@@ -26,18 +27,24 @@ export function Settings({ data, saved, onSave, onRestore, notify }) {
     }
   }
   async function importBackup(event) {
-    const file = event.target.files?.[0];
+    const input = event.target;
+    const file = input.files?.[0];
     if (!file) return;
+    const sequence = ++importSequence.current;
+    setBackup(null);
+    setError("");
     try {
       const imported = await readBackupFile(file);
+      if (sequence !== importSequence.current) return;
       setBackup({ data: imported, name: file.name, revision: data.revision });
-      setError("");
     } catch {
+      if (sequence !== importSequence.current) return;
       setError(
         "Choose a valid FORMA JSON backup no larger than 20 MiB. Nothing has been changed.",
       );
+    } finally {
+      if (sequence === importSequence.current) input.value = "";
     }
-    event.target.value = "";
   }
   return (
     <>

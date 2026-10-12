@@ -22,13 +22,18 @@ The app uses hash URLs such as `/#history`, so page routes do not require server
 
 All application fonts and images are bundled. Review your host's logging and analytics configuration separately from the app's own browser-local data design.
 
-## Verify a deployment
+The repository contains OFL license texts for the Barlow Condensed and DM Sans fonts. It does not include a project-wide software license, and it does not document the provenance or redistribution terms for the bundled workout photographs. Confirm rights for every asset before redistributing or publishing a copy; do not infer that the font license covers other files.
 
-1. Open the hosted page in a fresh browser profile and check the console for loading errors.
-2. Create a routine, start a workout, complete a set, and save it.
-3. Reload and confirm the workout remains in history.
-4. Export a backup, then test import in a separate disposable profile.
-5. Open two tabs and verify independent edits persist.
-6. Check narrow phone and desktop layouts and the temporary-mode warning when storage is unavailable.
+## Smoke-check and rollback
 
-Before changing domains or ports, export the old workspace and restore it at the new origin. Rolling back static files does not roll back browser data. Preserve schema compatibility when shipping a new build.
+After publishing, check the deployment in a disposable browser profile so no real workout data is at risk:
+
+1. Open the hosted page and check that HTML, JavaScript, CSS, fonts, and images load without console errors.
+2. Create a synthetic routine, start a workout, complete a set, save it, reload, and confirm it appears in history.
+3. Export a backup and test import in a separate disposable profile.
+4. Open two tabs and check that independent edits persist.
+5. Check a narrow phone layout and desktop layout. If storage is unavailable, confirm the temporary-mode warning appears.
+
+If the static build needs rollback, republish the previously reviewed `dist/` contents and repeat the smoke check. A code rollback does not restore, migrate, or roll back browser-local workspace data. Keep the backup-format compatibility contract when rolling application files forward or back. Do not clear user storage as part of deployment rollback.
+
+Before changing domains or ports, export the old workspace and restore it at the new origin. Each scheme, host, and port has separate browser storage. Preserve schema compatibility when shipping a new build.

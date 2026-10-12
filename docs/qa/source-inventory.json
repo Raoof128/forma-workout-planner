@@ -1,0 +1,3516 @@
+{
+  "method": "Babel AST static discovery of all handwritten src JS/JSX. Locations include callback functions and repeated-render control templates; semantic interactions and executed assertions are in the interaction and function matrices.",
+  "files": [
+    "src/App.jsx",
+    "src/components/ErrorBoundary.jsx",
+    "src/components/ExerciseGuide.jsx",
+    "src/components/HistoryEditor.jsx",
+    "src/components/Insights.jsx",
+    "src/components/Library.jsx",
+    "src/components/Navigation.jsx",
+    "src/components/Notification.jsx",
+    "src/components/Overview.jsx",
+    "src/components/Preferences.jsx",
+    "src/components/Recovery.jsx",
+    "src/components/Routines.jsx",
+    "src/components/SavedField.jsx",
+    "src/components/UI.jsx",
+    "src/components/Workout.jsx",
+    "src/data.js",
+    "src/hooks/useNavigation.js",
+    "src/hooks/useWorkoutStore.js",
+    "src/main.jsx",
+    "src/persistence.js",
+    "src/storage.js"
+  ],
+  "functions": [
+    {
+      "file": "src/App.jsx",
+      "line": 17,
+      "name": "equal",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 18,
+      "name": "App",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 24,
+      "name": "notify",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 27,
+      "name": "notify",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 29,
+      "name": "App",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 29,
+      "name": "App",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 30,
+      "name": "change",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 45,
+      "name": "begin",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 55,
+      "name": "session",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 57,
+      "name": "session",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 64,
+      "name": "result",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 67,
+      "name": "result",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 85,
+      "name": "start",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 102,
+      "name": "saveRoutine",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 104,
+      "name": "result",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 105,
+      "name": "existing",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 113,
+      "name": "result",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 125,
+      "name": "updateSession",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 127,
+      "name": "updateSession",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 135,
+      "name": "finish",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 137,
+      "name": "result",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 161,
+      "name": "saveHistory",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 162,
+      "name": "result",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 165,
+      "name": "result",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 174,
+      "name": "result",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 181,
+      "name": "restore",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 182,
+      "name": "result",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 199,
+      "name": "onRestore",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 200,
+      "name": "onReset",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 209,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 229,
+      "name": "App",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 255,
+      "name": "onRoutine",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 257,
+      "name": "onSchedule",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 265,
+      "name": "onOpen",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 266,
+      "name": "onCreate",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 277,
+      "name": "onCancel",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 280,
+      "name": "onBack",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 289,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 297,
+      "name": "onStart",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 299,
+      "name": "onDelete",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 300,
+      "name": "result",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 303,
+      "name": "result",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 313,
+      "name": "result",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 324,
+      "name": "onStart",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 332,
+      "name": "onSave",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 333,
+      "name": "result",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 350,
+      "name": "onClose",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 352,
+      "name": "onEdit",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 353,
+      "name": "onDelete",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 359,
+      "name": "onClose",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 366,
+      "name": "onClose",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 367,
+      "name": "onSave",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 368,
+      "name": "result",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 382,
+      "name": "onClose",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 392,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 402,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 417,
+      "name": "onClose",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 426,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 431,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 433,
+      "name": "result",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 444,
+      "name": "result",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 455,
+      "name": "result",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 475,
+      "name": "onDismiss",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/ErrorBoundary.jsx",
+      "line": 5,
+      "name": "getDerivedStateFromError",
+      "kind": "ClassMethod",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/ErrorBoundary.jsx",
+      "line": 8,
+      "name": "render",
+      "kind": "ClassMethod",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/ErrorBoundary.jsx",
+      "line": 20,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/ErrorBoundary.jsx",
+      "line": 39,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/ExerciseGuide.jsx",
+      "line": 3,
+      "name": "ExerciseGuide",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 4,
+      "name": "HistoryEditor",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 5,
+      "name": "HistoryEditor",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 10,
+      "name": "HistoryEditor",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 12,
+      "name": "warn",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 17,
+      "name": "HistoryEditor",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 19,
+      "name": "close",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 25,
+      "name": "update",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 26,
+      "name": "update",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 28,
+      "name": "update",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 33,
+      "name": "update",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 40,
+      "name": "save",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 61,
+      "name": "onClose",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 68,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 84,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 85,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 92,
+      "name": "HistoryEditor",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 94,
+      "name": "exercise",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 96,
+      "name": "HistoryEditor",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 108,
+      "name": "HistoryEditor",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 120,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 138,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 153,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 168,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 169,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 24,
+      "name": "WorkoutHistory",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 48,
+      "name": "WorkoutHistory",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 49,
+      "name": "WorkoutHistory",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 53,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 93,
+      "name": "onClose",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 106,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 111,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 142,
+      "name": "WorkoutHistory",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 142,
+      "name": "WorkoutHistory",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 143,
+      "name": "WorkoutHistory",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 146,
+      "name": "WorkoutHistory",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 151,
+      "name": "WorkoutHistory",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 152,
+      "name": "WorkoutHistory",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 166,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 170,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 182,
+      "name": "onClose",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 183,
+      "name": "onSave",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 196,
+      "name": "Progress",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 197,
+      "name": "volume",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 198,
+      "name": "sets",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 200,
+      "name": "records",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 201,
+      "name": "done",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 203,
+      "name": "done",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 204,
+      "name": "done",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 204,
+      "name": "done",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 208,
+      "name": "records",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 210,
+      "name": "records",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 219,
+      "name": "records",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 221,
+      "name": "recent",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 240,
+      "name": "Progress",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 274,
+      "name": "Progress",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 311,
+      "name": "Progress",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Library.jsx",
+      "line": 24,
+      "name": "Library",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Library.jsx",
+      "line": 30,
+      "name": "filtered",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Library.jsx",
+      "line": 51,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Library.jsx",
+      "line": 57,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Library.jsx",
+      "line": 59,
+      "name": "Library",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Library.jsx",
+      "line": 60,
+      "name": "Library",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Library.jsx",
+      "line": 75,
+      "name": "Library",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Library.jsx",
+      "line": 78,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Library.jsx",
+      "line": 95,
+      "name": "Library",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Library.jsx",
+      "line": 101,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Library.jsx",
+      "line": 126,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Library.jsx",
+      "line": 137,
+      "name": "onClose",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 21,
+      "name": "Navigation",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 23,
+      "name": "Navigation",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 28,
+      "name": "Navigation",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 30,
+      "name": "update",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 35,
+      "name": "Navigation",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 37,
+      "name": "Navigation",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 44,
+      "name": "key",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 67,
+      "name": "Navigation",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 73,
+      "name": "go",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 93,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 106,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 106,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 116,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 132,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 140,
+      "name": "Navigation",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 144,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 154,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 165,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 171,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 175,
+      "name": "Navigation",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Notification.jsx",
+      "line": 4,
+      "name": "Notification",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Notification.jsx",
+      "line": 6,
+      "name": "Notification",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Notification.jsx",
+      "line": 7,
+      "name": "sync",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Notification.jsx",
+      "line": 17,
+      "name": "Notification",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 15,
+      "name": "Overview",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 30,
+      "name": "counts",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 31,
+      "name": "counts",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 33,
+      "name": "count",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 36,
+      "name": "latestSession",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 43,
+      "name": "lastIndex",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 46,
+      "name": "next",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 50,
+      "name": "routine",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 58,
+      "name": "selectedDate",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 60,
+      "name": "moveWeek",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 72,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 93,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 110,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 114,
+      "name": "Overview",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 115,
+      "name": "completed",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 123,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 141,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 157,
+      "name": "Overview",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 192,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 220,
+      "name": "Overview",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 257,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 259,
+      "name": "Overview",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 272,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 283,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 290,
+      "name": "Overview",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 11,
+      "name": "Settings",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 19,
+      "name": "submit",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 29,
+      "name": "importBackup",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 64,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 71,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 73,
+      "name": "Settings",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 105,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 138,
+      "name": "onClose",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 160,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 167,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 188,
+      "name": "Schedule",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 193,
+      "name": "close",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 200,
+      "name": "onClose",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 207,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 230,
+      "name": "Schedule",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 234,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 235,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 237,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 253,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Recovery.jsx",
+      "line": 4,
+      "name": "Recovery",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Recovery.jsx",
+      "line": 8,
+      "name": "importFile",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Recovery.jsx",
+      "line": 42,
+      "name": "reset",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Recovery.jsx",
+      "line": 67,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Recovery.jsx",
+      "line": 104,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Recovery.jsx",
+      "line": 116,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 16,
+      "name": "Routines",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 36,
+      "name": "Routines",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 50,
+      "name": "RoutineDetail",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 71,
+      "name": "RoutineDetail",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 72,
+      "name": "e",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 95,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 99,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 103,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 112,
+      "name": "RoutineEditor",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 125,
+      "name": "RoutineEditor",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 127,
+      "name": "warn",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 132,
+      "name": "RoutineEditor",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 134,
+      "name": "RoutineEditor",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 137,
+      "name": "close",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 142,
+      "name": "toggle",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 143,
+      "name": "old",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 146,
+      "name": "toggle",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 147,
+      "name": "toggle",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 150,
+      "name": "toggle",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 160,
+      "name": "update",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 161,
+      "name": "update",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 162,
+      "name": "update",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 167,
+      "name": "move",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 168,
+      "name": "move",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 177,
+      "name": "save",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 188,
+      "name": "save",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 233,
+      "name": "onClose",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 242,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 257,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 270,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 288,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 293,
+      "name": "RoutineEditor",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 303,
+      "name": "RoutineEditor",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 308,
+      "name": "RoutineEditor",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 310,
+      "name": "picked",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 318,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 340,
+      "name": "RoutineEditor",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 342,
+      "name": "exercise",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 354,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 363,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 372,
+      "name": "RoutineEditor",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 387,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/SavedField.jsx",
+      "line": 5,
+      "name": "SavedField",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/SavedField.jsx",
+      "line": 13,
+      "name": "SavedField",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/SavedField.jsx",
+      "line": 20,
+      "name": "onFocus",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/SavedField.jsx",
+      "line": 21,
+      "name": "onBlur",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/SavedField.jsx",
+      "line": 22,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/UI.jsx",
+      "line": 3,
+      "name": "Button",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/UI.jsx",
+      "line": 16,
+      "name": "Modal",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/UI.jsx",
+      "line": 20,
+      "name": "Modal",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/UI.jsx",
+      "line": 23,
+      "name": "Modal",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/UI.jsx",
+      "line": 33,
+      "name": "cancel",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/UI.jsx",
+      "line": 37,
+      "name": "backdrop",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/UI.jsx",
+      "line": 48,
+      "name": "trap",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/UI.jsx",
+      "line": 54,
+      "name": "controls",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/UI.jsx",
+      "line": 71,
+      "name": "Modal",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/UI.jsx",
+      "line": 101,
+      "name": "RoutineCard",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/UI.jsx",
+      "line": 103,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/UI.jsx",
+      "line": 123,
+      "name": "Empty",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/UI.jsx",
+      "line": 141,
+      "name": "PageHeading",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 19,
+      "name": "Workout",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 27,
+      "name": "Workout",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 32,
+      "name": "Workout",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 33,
+      "name": "timer",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 34,
+      "name": "Workout",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 39,
+      "name": "endRest",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 41,
+      "name": "endRest",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 48,
+      "name": "Workout",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 54,
+      "name": "total",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 57,
+      "name": "updateSet",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 58,
+      "name": "updateSet",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 60,
+      "name": "updateSet",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 65,
+      "name": "updateSet",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 72,
+      "name": "check",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 73,
+      "name": "set",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 90,
+      "name": "check",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 92,
+      "name": "latest",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 106,
+      "name": "check",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 111,
+      "name": "check",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 119,
+      "name": "finish",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 161,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 171,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 172,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 185,
+      "name": "Workout",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 187,
+      "name": "exercise",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 204,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 209,
+      "name": "Workout",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 225,
+      "name": "Workout",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 239,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 257,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 272,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 285,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 286,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 288,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 329,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 331,
+      "name": "onChange",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 342,
+      "name": "onClose",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 351,
+      "name": "onClose",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 356,
+      "name": "onClose",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 374,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 381,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 401,
+      "name": "RestControls",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 421,
+      "name": "RestControls",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 425,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 426,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 445,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 446,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 473,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 474,
+      "name": "onClick",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 147,
+      "name": "items",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 148,
+      "name": "items",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 152,
+      "name": "items",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 205,
+      "name": "createId",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 211,
+      "name": "hex",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 224,
+      "name": "dateKey",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 227,
+      "name": "displayDate",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 236,
+      "name": "weekDates",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 239,
+      "name": "weekDates",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 245,
+      "name": "sameDay",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 246,
+      "name": "estimatedOneRM",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 249,
+      "name": "sessionVolume",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 251,
+      "name": "sessionVolume",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 254,
+      "name": "sessionVolume",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 255,
+      "name": "sessionVolume",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 258,
+      "name": "sessionSets",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 259,
+      "name": "sessionSets",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 259,
+      "name": "sessionSets",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/data.js",
+      "line": 260,
+      "name": "formatTime",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/hooks/useNavigation.js",
+      "line": 11,
+      "name": "currentPage",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/hooks/useNavigation.js",
+      "line": 13,
+      "name": "useNavigation",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/hooks/useNavigation.js",
+      "line": 15,
+      "name": "useNavigation",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/hooks/useNavigation.js",
+      "line": 16,
+      "name": "update",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/hooks/useNavigation.js",
+      "line": 18,
+      "name": "useNavigation",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/hooks/useNavigation.js",
+      "line": 20,
+      "name": "navigate",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/hooks/useNavigation.js",
+      "line": 26,
+      "name": "useNavigation",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/hooks/useWorkoutStore.js",
+      "line": 11,
+      "name": "useWorkoutStore",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/hooks/useWorkoutStore.js",
+      "line": 19,
+      "name": "useWorkoutStore",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/hooks/useWorkoutStore.js",
+      "line": 20,
+      "name": "warn",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/hooks/useWorkoutStore.js",
+      "line": 26,
+      "name": "sync",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/hooks/useWorkoutStore.js",
+      "line": 32,
+      "name": "useWorkoutStore",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/hooks/useWorkoutStore.js",
+      "line": 38,
+      "name": "commit",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 11,
+      "name": "createWorkoutRepository",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 13,
+      "name": "createWorkoutRepository",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 14,
+      "name": "createWorkoutRepository",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 15,
+      "name": "createWorkoutRepository",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 17,
+      "name": "createWorkoutRepository",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 17,
+      "name": "createWorkoutRepository",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 21,
+      "name": "publish",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 23,
+      "name": "publish",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 25,
+      "name": "unavailable",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 30,
+      "name": "locked",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 40,
+      "name": "locked",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 58,
+      "name": "nextData",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 72,
+      "name": "temporary",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 80,
+      "name": "createWorkoutRepository",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 81,
+      "name": "subscribe",
+      "kind": "ObjectMethod",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 83,
+      "name": "subscribe",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 85,
+      "name": "sync",
+      "kind": "ObjectMethod",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 91,
+      "name": "initialize",
+      "kind": "ObjectMethod",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 92,
+      "name": "initialize",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 112,
+      "name": "commit",
+      "kind": "ObjectMethod",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 117,
+      "name": "commit",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/persistence.js",
+      "line": 183,
+      "name": "commit",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/storage.js",
+      "line": 9,
+      "name": "exerciseId",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/storage.js",
+      "line": 14,
+      "name": "setSchema",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/storage.js",
+      "line": 24,
+      "name": "unique",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/storage.js",
+      "line": 24,
+      "name": "unique",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/storage.js",
+      "line": 25,
+      "name": "unique",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/storage.js",
+      "line": 73,
+      "name": "dataSchema",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/storage.js",
+      "line": 74,
+      "name": "dataSchema",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/storage.js",
+      "line": 75,
+      "name": "dataSchema",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/storage.js",
+      "line": 89,
+      "name": "dataSchema",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/storage.js",
+      "line": 91,
+      "name": "validateData",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/storage.js",
+      "line": 95,
+      "name": "validateData",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/storage.js",
+      "line": 100,
+      "name": "freshData",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/storage.js",
+      "line": 103,
+      "name": "parseBackup",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/storage.js",
+      "line": 108,
+      "name": "readBackupFile",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/storage.js",
+      "line": 113,
+      "name": "readStore",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/storage.js",
+      "line": 127,
+      "name": "downloadData",
+      "kind": "FunctionDeclaration",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    },
+    {
+      "file": "src/storage.js",
+      "line": 136,
+      "name": "downloadData",
+      "kind": "ArrowFunctionExpression",
+      "coverage": "STATIC INVENTORY: runtime evidence in function-matrix.json; no branch-completeness claim"
+    }
+  ],
+  "controls": [
+    {
+      "file": "src/App.jsx",
+      "line": 206,
+      "tag": "a",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 289,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 390,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 400,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 426,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/App.jsx",
+      "line": 429,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/ErrorBoundary.jsx",
+      "line": 18,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/ErrorBoundary.jsx",
+      "line": 37,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/ExerciseGuide.jsx",
+      "line": 23,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 68,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 71,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 77,
+      "tag": "form",
+      "handlers": ["onSubmit"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 80,
+      "tag": "input",
+      "handlers": ["onChange"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 112,
+      "tag": "input",
+      "handlers": ["onChange"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 131,
+      "tag": "input",
+      "handlers": ["onChange"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 149,
+      "tag": "input",
+      "handlers": ["onChange"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 165,
+      "tag": "textarea",
+      "handlers": ["onChange"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 182,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/HistoryEditor.jsx",
+      "line": 185,
+      "tag": "Button",
+      "handlers": [],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 41,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 50,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 106,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 109,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 166,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 170,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Insights.jsx",
+      "line": 254,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Library.jsx",
+      "line": 47,
+      "tag": "input",
+      "handlers": ["onChange"],
+      "accessibleLabel": "Search exercise library"
+    },
+    {
+      "file": "src/components/Library.jsx",
+      "line": 54,
+      "tag": "select",
+      "handlers": ["onChange"],
+      "accessibleLabel": "Filter by equipment"
+    },
+    {
+      "file": "src/components/Library.jsx",
+      "line": 76,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Library.jsx",
+      "line": 98,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Library.jsx",
+      "line": 124,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 90,
+      "tag": "a",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 100,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": "Toggle navigation"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 112,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": "Close navigation"
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 129,
+      "tag": "a",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 141,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 154,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 163,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Navigation.jsx",
+      "line": 171,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Notification.jsx",
+      "line": 25,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": "Dismiss notification"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 72,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 91,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 107,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": "Previous week"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 120,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 138,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": "Next week"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 163,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 192,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 254,
+      "tag": "select",
+      "handlers": ["onChange"],
+      "accessibleLabel": "Choose next session"
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 270,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 283,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 291,
+      "tag": "RoutineCard",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Overview.jsx",
+      "line": 303,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 55,
+      "tag": "form",
+      "handlers": ["onSubmit"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 59,
+      "tag": "input",
+      "handlers": ["onChange"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 69,
+      "tag": "select",
+      "handlers": ["onChange"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 83,
+      "tag": "Button",
+      "handlers": [],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 103,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 121,
+      "tag": "input",
+      "handlers": ["onChange"],
+      "accessibleLabel": "Import backup"
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 157,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 164,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 207,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 210,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 231,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Preferences.jsx",
+      "line": 253,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Recovery.jsx",
+      "line": 65,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Recovery.jsx",
+      "line": 81,
+      "tag": "input",
+      "handlers": ["onChange"],
+      "accessibleLabel": "Restore recovery backup"
+    },
+    {
+      "file": "src/components/Recovery.jsx",
+      "line": 101,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Recovery.jsx",
+      "line": 108,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Recovery.jsx",
+      "line": 113,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 24,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 37,
+      "tag": "RoutineCard",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 39,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 92,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": "Delete routine"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 99,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 103,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 242,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 245,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 251,
+      "tag": "form",
+      "handlers": ["onSubmit"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 254,
+      "tag": "input",
+      "handlers": ["onChange"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 264,
+      "tag": "input",
+      "handlers": ["onChange"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 285,
+      "tag": "input",
+      "handlers": ["onChange"],
+      "accessibleLabel": "Search exercises for routine"
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 313,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 349,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 358,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 377,
+      "tag": "input",
+      "handlers": ["onChange"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 410,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Routines.jsx",
+      "line": 413,
+      "tag": "Button",
+      "handlers": [],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/SavedField.jsx",
+      "line": 17,
+      "tag": "Tag",
+      "handlers": ["onFocus", "onBlur", "onChange"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/UI.jsx",
+      "line": 11,
+      "tag": "button",
+      "handlers": [],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/UI.jsx",
+      "line": 88,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": "Close dialog"
+    },
+    {
+      "file": "src/components/UI.jsx",
+      "line": 103,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 125,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 133,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 159,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": "Open rest timer"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 169,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 201,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 231,
+      "tag": "SavedField",
+      "handlers": ["onChange"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 250,
+      "tag": "SavedField",
+      "handlers": ["onChange"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 268,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 282,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 308,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 323,
+      "tag": "SavedField",
+      "handlers": ["onChange"],
+      "accessibleLabel": "Session notes"
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 335,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 371,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 378,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 422,
+      "tag": "button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 442,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    },
+    {
+      "file": "src/components/Workout.jsx",
+      "line": 471,
+      "tag": "Button",
+      "handlers": ["onClick"],
+      "accessibleLabel": null
+    }
+  ]
+}

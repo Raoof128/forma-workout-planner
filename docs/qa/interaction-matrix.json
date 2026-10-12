@@ -1,0 +1,3736 @@
+{
+  "schemaVersion": 1,
+  "method": "Static source and test review plus Chromium runtime control snapshots. The audit read all JSX templates and styles. It accounts for 108 semantic interactions and 108 static JSX control templates; the counts happen to match but mappings are not one-to-one. Repeated data-driven instances with identical behavior are represented once, while distinct conditional contexts such as the empty Workout start CTA are separate rows. Runtime snapshots capture representative accessible role/name trees, and each testTitles entry is an exact Playwright title/file whose executed assertions cover that row. This semantic grouping is a traceability method, not a claim that every physical input mode/device has been exercised.",
+  "summary": {
+    "PASS": 91,
+    "NOT TESTED": 17
+  },
+  "browserLimit": "All required pinned-browser projects remain BLOCKED. Counts below use semantic interaction rows and system Chromium only.",
+  "interactions": [
+    {
+      "id": "global-skip-content",
+      "screen": "All normal app pages",
+      "state": "App shell rendered",
+      "control": "Skip to content link",
+      "sourceHandler": "src/App.jsx: skip-link onClick; targets main h1",
+      "action": "Activate link",
+      "expectedResult": "Focus moves to the current page h1 without navigating away",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Tab to focus; Enter activates; programmatic h1 focus",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "skip link, desktop brand, profile shortcut and active session navigation reach their targets",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "navigation-desktop-brand",
+      "screen": "All normal app pages",
+      "state": "Desktop sidebar",
+      "control": "FORMA brand link",
+      "sourceHandler": "src/components/Navigation.jsx: brand click -> go('overview')",
+      "action": "Activate brand",
+      "expectedResult": "Overview page is selected and URL hash becomes #overview",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native link Enter; focusable",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "skip link, desktop brand, profile shortcut and active session navigation reach their targets",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "navigation-mobile-brand",
+      "screen": "All normal app pages",
+      "state": "Mobile top bar",
+      "control": "FORMA brand link",
+      "sourceHandler": "src/components/Navigation.jsx: brand click -> go('overview')",
+      "action": "Activate brand",
+      "expectedResult": "Overview opens and any open drawer closes",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native link Enter",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "mobile navigation and shared guide dialog support focus return and keyboard trapping at 375px",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "navigation-main-items",
+      "screen": "All normal app pages",
+      "state": "Desktop sidebar or open mobile drawer",
+      "control": "Overview, My routines, Exercise library, Workout history, Progress buttons",
+      "sourceHandler": "src/components/Navigation.jsx: navigationItems and go; src/hooks/useNavigation.js:navigate",
+      "action": "Choose page",
+      "expectedResult": "Correct page renders, active page is exposed with aria-current, URL hash and document title update; mobile drawer closes",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space; mobile drawer traps Tab and closes on Escape",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "navigation handles unknown hashes, forward and Back with page focus and title updates",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "NOT TESTED",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "NOT TESTED",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [
+        "Active aria-current state is not directly asserted."
+      ],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "navigation-settings",
+      "screen": "All normal app pages",
+      "state": "Desktop sidebar or open mobile drawer",
+      "control": "Settings nav button",
+      "sourceHandler": "src/components/Navigation.jsx: go('settings')",
+      "action": "Open Settings",
+      "expectedResult": "Settings page renders and is marked current",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space; mobile drawer traps Tab and closes on Escape",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "navigation handles unknown hashes, forward and Back with page focus and title updates",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "NOT TESTED",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "NOT TESTED",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [
+        "Active aria-current state is not directly asserted."
+      ],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "navigation-profile-shortcut",
+      "screen": "All normal app pages",
+      "state": "Sidebar profile footer",
+      "control": "Profile button with current initials/name",
+      "sourceHandler": "src/components/Navigation.jsx: onClick -> go('settings')",
+      "action": "Open profile preferences",
+      "expectedResult": "Settings page renders",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "skip link, desktop brand, profile shortcut and active session navigation reach their targets",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "navigation-mobile-toggle",
+      "screen": "All normal app pages",
+      "state": "Viewport <=700px, drawer closed/open",
+      "control": "Toggle navigation button",
+      "sourceHandler": "src/components/Navigation.jsx: toggle button and mobile/open state effect",
+      "action": "Open or close drawer",
+      "expectedResult": "aria-expanded tracks state; open drawer inerts main content, locks body scroll, focuses first control; close restores toggle focus",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Enter/Space toggles; Escape closes; custom Tab loop includes toggle and drawer buttons/links",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "mobile navigation and shared guide dialog support focus return and keyboard trapping at 375px",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "navigation-mobile-shade",
+      "screen": "All normal app pages",
+      "state": "Viewport <=700px, drawer open",
+      "control": "Close navigation shade button",
+      "sourceHandler": "src/components/Navigation.jsx: .sidebar-shade onClick",
+      "action": "Activate shade",
+      "expectedResult": "Drawer closes and focus returns to toggle",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Shade is tabIndex -1; close via pointer only; Escape via drawer listener",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "mobile navigation and shared guide dialog support focus return and keyboard trapping at 375px",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "navigation-active-session",
+      "screen": "All normal app pages",
+      "state": "Active session exists",
+      "control": "Workout in progress sidebar button",
+      "sourceHandler": "src/components/Navigation.jsx: resume-sidebar -> go('workout')",
+      "action": "Resume session",
+      "expectedResult": "Active workout page opens",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space; mobile drawer closes",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "skip link, desktop brand, profile shortcut and active session navigation reach their targets",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "overview-start-cta",
+      "screen": "Overview",
+      "state": "Any; active / inactive and routine / no-routine variants",
+      "control": "Page-heading Start/Resume/Create routine button and hero Start/Resume/Create routine button",
+      "sourceHandler": "src/components/Overview.jsx:onStart; src/App.jsx:start/begin",
+      "action": "Start chosen/next routine; route to routines editor if no routines; resume if active",
+      "expectedResult": "New workout initializes planned sets and opens Workout; active workout resumes; no-routine branch opens routine creation",
+      "dataSideEffect": "New active session is persisted; resume/no-routine navigation has no data mutation",
+      "keyboardBehaviour": "Native button Enter/Space; modal switch flow has dialog keyboard handling",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "preferred next routine updates the overview start target and creates that active session",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "empty overview, workout, history and progress calls to action start the default routine",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "overview-calendar-previous",
+      "screen": "Overview",
+      "state": "Week strip",
+      "control": "Previous week button",
+      "sourceHandler": "src/components/Overview.jsx:moveWeek(-1)",
+      "action": "Show prior week",
+      "expectedResult": "Week date range and seven day buttons update; first day is selected",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "calendar navigation selects weeks and schedule saves only after confirmation",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "overview-calendar-next",
+      "screen": "Overview",
+      "state": "Week strip",
+      "control": "Next week button",
+      "sourceHandler": "src/components/Overview.jsx:moveWeek(1)",
+      "action": "Show next week",
+      "expectedResult": "Week date range and seven day buttons update; first day is selected",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "calendar navigation selects weeks and schedule saves only after confirmation",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "overview-calendar-day",
+      "screen": "Overview",
+      "state": "Any displayed week",
+      "control": "Seven day selection buttons",
+      "sourceHandler": "src/components/Overview.jsx: selected state",
+      "action": "Select date",
+      "expectedResult": "Selected day is exposed via aria-pressed; non-today date shows detail and Edit schedule action",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space; no arrow-key roving model",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "calendar navigation selects weeks and schedule saves only after confirmation",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "overview-this-week",
+      "screen": "Overview",
+      "state": "Selected week offset is nonzero",
+      "control": "This week button",
+      "sourceHandler": "src/components/Overview.jsx: reset offset and selected=today",
+      "action": "Return calendar to current week",
+      "expectedResult": "Current week displayed and today selected",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "calendar navigation selects weeks and schedule saves only after confirmation",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "overview-edit-schedule-selected-day",
+      "screen": "Overview",
+      "state": "A selected date other than today",
+      "control": "Edit schedule button in day detail",
+      "sourceHandler": "src/components/Overview.jsx:onSchedule; src/App.jsx schedule modal",
+      "action": "Open schedule editor",
+      "expectedResult": "Schedule dialog opens with persisted planned days selected",
+      "dataSideEffect": "None until Save schedule",
+      "keyboardBehaviour": "Native button Enter/Space; modal Escape/focus trap",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "calendar navigation selects weeks and schedule saves only after confirmation",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "overview-preferred-routine",
+      "screen": "Overview",
+      "state": "No active workout and at least two routines",
+      "control": "Choose next session select",
+      "sourceHandler": "src/components/Overview.jsx:preferred onChange",
+      "action": "Choose preferred next routine",
+      "expectedResult": "Hero routine name, details and start target update",
+      "dataSideEffect": "Local component preference only; not persisted",
+      "keyboardBehaviour": "Native select keyboard (arrows/typeahead/Enter)",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "preferred next routine updates the overview start target and creates that active session",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "overview-view-routines",
+      "screen": "Overview",
+      "state": "Routine section",
+      "control": "View all button",
+      "sourceHandler": "src/components/Overview.jsx:onNavigate('routines')",
+      "action": "Open routines page",
+      "expectedResult": "Routine list page opens",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "navigation handles unknown hashes, forward and Back with page focus and title updates",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "overview-routine-card",
+      "screen": "Overview",
+      "state": "One to three routines shown",
+      "control": "RoutineCard buttons",
+      "sourceHandler": "src/components/UI.jsx:RoutineCard -> onRoutine; src/App.jsx setModal(detail)",
+      "action": "Open routine details",
+      "expectedResult": "Routine overview dialog displays exercise prescription and actions",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space; dialog Escape/backdrop/Tab handling",
+      "tests": [
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "overview-empty-create",
+      "screen": "Overview",
+      "state": "No routines",
+      "control": "Create routine button(s) in empty state and hero",
+      "sourceHandler": "src/components/Overview.jsx:onStart; src/App.jsx:start",
+      "action": "Open routine creator",
+      "expectedResult": "Routine editor dialog appears",
+      "dataSideEffect": "None until save",
+      "keyboardBehaviour": "Native button Enter/Space; dialog handling",
+      "tests": [
+        {
+          "path": "tests/responsive.spec.js",
+          "title": "routine picker explains no matches and empty overview offers creation",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "overview-schedule-banner",
+      "screen": "Overview",
+      "state": "Habit banner visible",
+      "control": "Schedule your week button",
+      "sourceHandler": "src/components/Overview.jsx:onSchedule; src/App.jsx schedule modal",
+      "action": "Open schedule editor",
+      "expectedResult": "Schedule dialog appears",
+      "dataSideEffect": "None until save",
+      "keyboardBehaviour": "Native button Enter/Space; modal handling",
+      "tests": [
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "schedule opens from its overview banner and a clean close leaves the schedule unchanged",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routines-create",
+      "screen": "My routines",
+      "state": "Any list, including zero routines",
+      "control": "Create routine heading button and create card",
+      "sourceHandler": "src/components/Routines.jsx:onCreate; src/App.jsx setModal(editor)",
+      "action": "Open routine editor",
+      "expectedResult": "Create routine dialog appears",
+      "dataSideEffect": "None until save",
+      "keyboardBehaviour": "Native button Enter/Space; dialog handling",
+      "tests": [
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routines-card",
+      "screen": "My routines",
+      "state": "Routine exists",
+      "control": "RoutineCard button",
+      "sourceHandler": "src/components/UI.jsx:RoutineCard -> onOpen; src/App.jsx setModal(detail)",
+      "action": "Open routine overview",
+      "expectedResult": "Routine details and edit/delete/start actions render",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space; dialog handling",
+      "tests": [
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-detail-close",
+      "screen": "Routine detail dialog",
+      "state": "Dialog open",
+      "control": "Close dialog button / Escape / backdrop",
+      "sourceHandler": "src/components/UI.jsx:Modal onClose; src/components/Routines.jsx:onClose",
+      "action": "Dismiss dialog",
+      "expectedResult": "Dialog closes and focus returns to invoking element",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Close button Enter/Space; Escape; Tab trap; backdrop pointer",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "routine detail closes cleanly and workout Back returns to overview with the session active",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-detail-start",
+      "screen": "Routine detail dialog",
+      "state": "Routine overview open, active session absent or present",
+      "control": "Start workout button",
+      "sourceHandler": "src/components/Routines.jsx:onStart; src/App.jsx:start/begin/switch",
+      "action": "Start routine or enter active-session switch decision",
+      "expectedResult": "New session starts; same active routine resumes; different active routine prompts resume/discard choice",
+      "dataSideEffect": "Creates active session or none for resume",
+      "keyboardBehaviour": "Native button Enter/Space; switch dialog keyboard handling",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "hero names the active routine and starting another asks which session to keep",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/persistence.spec.js",
+          "title": "starting stale routine details cannot silently use old prescriptions",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "routine detail closes cleanly and workout Back returns to overview with the session active",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-detail-edit",
+      "screen": "Routine detail dialog",
+      "state": "Routine overview open",
+      "control": "Edit routine button",
+      "sourceHandler": "src/components/Routines.jsx:onEdit; src/App.jsx setModal(editor)",
+      "action": "Open editor seeded with routine",
+      "expectedResult": "Detail dialog is replaced by editor populated with original values",
+      "dataSideEffect": "None until save",
+      "keyboardBehaviour": "Native button Enter/Space; editor dialog handling",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "dirty routine changes are retained and duration and prescriptions are preserved",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "routine prescriptions reorder and delete confirmation preserves or removes the selected routine",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-detail-delete-open",
+      "screen": "Routine detail dialog",
+      "state": "Routine overview open",
+      "control": "Delete routine icon button",
+      "sourceHandler": "src/components/Routines.jsx:onDelete; src/App.jsx setModal(delete)",
+      "action": "Request routine deletion",
+      "expectedResult": "Confirmation dialog explains history remains",
+      "dataSideEffect": "None until confirm",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "routine prescriptions reorder and delete confirmation preserves or removes the selected routine",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-editor-name",
+      "screen": "Routine editor dialog",
+      "state": "Create or edit",
+      "control": "Routine name input",
+      "sourceHandler": "src/components/Routines.jsx:name onChange",
+      "action": "Enter/edit routine name",
+      "expectedResult": "Draft name updates, capped at 60 chars, included on save",
+      "dataSideEffect": "Draft only until save",
+      "keyboardBehaviour": "Native text input; typing and standard editing",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "dirty routine changes are retained and duration and prescriptions are preserved",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "dirty routine editor keeps drafts on cancel and discards only after confirmation",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "NOT TESTED",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "NOT TESTED",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [
+        "60-character input cap is not directly asserted."
+      ],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-editor-duration",
+      "screen": "Routine editor dialog",
+      "state": "Create or edit",
+      "control": "Estimated duration number input",
+      "sourceHandler": "src/components/Routines.jsx:minutes onChange; save validation",
+      "action": "Set estimated minutes",
+      "expectedResult": "Draft accepts integer 1..1000; invalid value is rejected on submit",
+      "dataSideEffect": "Draft only until save",
+      "keyboardBehaviour": "Native number input; validation on submit",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "routine prescriptions reorder and delete confirmation preserves or removes the selected routine",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "NOT TESTED",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "NOT TESTED",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [
+        "Direct valid duration edit is verified by supplemental/final controls test; invalid values and all numeric boundaries are not directly asserted."
+      ],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-editor-search",
+      "screen": "Routine editor dialog",
+      "state": "Exercise picker open",
+      "control": "Search exercises for routine field",
+      "sourceHandler": "src/components/Routines.jsx:query onChange/filter",
+      "action": "Search exercise name or muscle",
+      "expectedResult": "List filters case-insensitively and empty state explains no matches",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native text input",
+      "tests": [
+        {
+          "path": "tests/responsive.spec.js",
+          "title": "routine picker explains no matches and empty overview offers creation",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "NOT TESTED",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "NOT TESTED",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [
+        "Case-insensitive matching is not directly asserted; no-match result is covered."
+      ],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-editor-exercise-toggle",
+      "screen": "Routine editor dialog",
+      "state": "Exercise matches visible, selected/unselected variants",
+      "control": "Exercise picker buttons",
+      "sourceHandler": "src/components/Routines.jsx:toggle",
+      "action": "Add or remove exercise; re-adding restores removed prescription if recorded",
+      "expectedResult": "aria-pressed and selected count update; selected prescription fields appear/disappear",
+      "dataSideEffect": "Draft prescription list only",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "dirty routine changes are retained and duration and prescriptions are preserved",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-editor-move-up",
+      "screen": "Routine editor dialog",
+      "state": "At least two selected exercises; non-first item",
+      "control": "Move {exercise} up button",
+      "sourceHandler": "src/components/Routines.jsx:move(index,-1)",
+      "action": "Move exercise one place earlier",
+      "expectedResult": "Exercise order swaps and is saved as new routine order",
+      "dataSideEffect": "Draft order",
+      "keyboardBehaviour": "Native button Enter/Space; disabled for first item",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "routine prescriptions reorder and delete confirmation preserves or removes the selected routine",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-editor-move-down",
+      "screen": "Routine editor dialog",
+      "state": "At least two selected exercises; non-last item",
+      "control": "Move {exercise} down button",
+      "sourceHandler": "src/components/Routines.jsx:move(index,1)",
+      "action": "Move exercise one place later",
+      "expectedResult": "Exercise order swaps and is saved as new routine order",
+      "dataSideEffect": "Draft order",
+      "keyboardBehaviour": "Native button Enter/Space; disabled for last item",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "routine prescriptions reorder and delete confirmation preserves or removes the selected routine",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-editor-prescriptions",
+      "screen": "Routine editor dialog",
+      "state": "Exercise selected",
+      "control": "Sets, reps, weight number inputs per exercise",
+      "sourceHandler": "src/components/Routines.jsx:update; save validation",
+      "action": "Set prescription values",
+      "expectedResult": "Draft updates; save accepts sets 1..12, reps 1..100, weight 0..1000 finite number",
+      "dataSideEffect": "Draft only until save",
+      "keyboardBehaviour": "Native number input",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "dirty routine changes are retained and duration and prescriptions are preserved",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "NOT TESTED",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "NOT TESTED",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [
+        "All numeric range boundaries are not directly asserted; valid values and preservation are covered."
+      ],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-editor-cancel-clean",
+      "screen": "Routine editor dialog",
+      "state": "Draft clean",
+      "control": "Cancel button or close button/Escape/backdrop",
+      "sourceHandler": "src/components/Routines.jsx:close; src/components/UI.jsx:Modal",
+      "action": "Close editor",
+      "expectedResult": "Editor closes without confirmation",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button / Escape / backdrop",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "routine editor closes a clean draft directly and keeps invalid submissions open",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-editor-cancel-dirty",
+      "screen": "Routine editor dialog",
+      "state": "Draft dirty",
+      "control": "Cancel button or close button/Escape/backdrop",
+      "sourceHandler": "src/components/Routines.jsx:close -> discard state",
+      "action": "Request close with unsaved changes",
+      "expectedResult": "Discard confirmation replaces editor content",
+      "dataSideEffect": "Draft retained pending choice",
+      "keyboardBehaviour": "Modal Escape/backdrop reaches onClose and enters confirmation",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "dirty routine changes are retained and duration and prescriptions are preserved",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "dirty routine editor keeps drafts on cancel and discards only after confirmation",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-editor-discard-keep",
+      "screen": "Routine editor discard confirmation",
+      "state": "Dirty confirmation open",
+      "control": "Keep editing button",
+      "sourceHandler": "src/components/Routines.jsx:setDiscard(false)",
+      "action": "Return to editor",
+      "expectedResult": "All draft fields remain intact",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "dirty routine changes are retained and duration and prescriptions are preserved",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "dirty routine editor keeps drafts on cancel and discards only after confirmation",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-editor-discard-confirm",
+      "screen": "Routine editor discard confirmation",
+      "state": "Dirty confirmation open",
+      "control": "Discard changes button",
+      "sourceHandler": "src/components/Routines.jsx:onClose",
+      "action": "Discard draft",
+      "expectedResult": "Editor closes and routine remains unchanged",
+      "dataSideEffect": "No persisted mutation",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "dirty routine changes are retained and duration and prescriptions are preserved",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "dirty routine editor keeps drafts on cancel and discards only after confirmation",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-editor-save-invalid",
+      "screen": "Routine editor dialog",
+      "state": "Missing name/exercise or invalid prescription",
+      "control": "Save routine submit",
+      "sourceHandler": "src/components/Routines.jsx:save validation",
+      "action": "Submit invalid draft",
+      "expectedResult": "Inline error appears and draft stays open",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Enter from form control submits; native validation may intercept required fields",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "routine editor closes a clean draft directly and keeps invalid submissions open",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-editor-save-valid",
+      "screen": "Routine editor dialog",
+      "state": "Valid draft",
+      "control": "Save routine submit",
+      "sourceHandler": "src/components/Routines.jsx:save -> App.saveRoutine -> change/commit",
+      "action": "Persist new or edited routine",
+      "expectedResult": "Dialog closes, routines page is shown and success or temporary-save feedback appears",
+      "dataSideEffect": "Creates/replaces routine in local workout store",
+      "keyboardBehaviour": "Button Enter/Space; form Enter submits",
+      "tests": [
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "dirty routine changes are retained and duration and prescriptions are preserved",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "routine prescriptions reorder and delete confirmation preserves or removes the selected routine",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-delete-keep",
+      "screen": "Routine deletion confirmation",
+      "state": "Delete routine dialog open",
+      "control": "Keep it button and dialog close affordances",
+      "sourceHandler": "src/App.jsx modal onClose/setModal(null)",
+      "action": "Cancel deletion",
+      "expectedResult": "Routine remains and dialog closes",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button / Escape / backdrop",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "routine prescriptions reorder and delete confirmation preserves or removes the selected routine",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "routine-delete-confirm",
+      "screen": "Routine deletion confirmation",
+      "state": "Delete routine dialog open",
+      "control": "Delete routine button",
+      "sourceHandler": "src/App.jsx confirmation action/change",
+      "action": "Delete routine",
+      "expectedResult": "Routine removed; completed history retained; confirmation closes; success feedback",
+      "dataSideEffect": "Removes routine from persisted store",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "routine prescriptions reorder and delete confirmation preserves or removes the selected routine",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "NOT TESTED",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "NOT TESTED",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [
+        "Preservation of populated completed history when deleting a routine is not asserted; fixture history is empty."
+      ],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "library-search",
+      "screen": "Exercise library",
+      "state": "Any filter state",
+      "control": "Search exercise library input",
+      "sourceHandler": "src/components/Library.jsx:query onChange/filter",
+      "action": "Search exercise, muscle or equipment",
+      "expectedResult": "Cards and count filter case-insensitively",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native text input",
+      "tests": [
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "library search, muscle and equipment filters compose and guide closes with keyboard",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "library-equipment-filter",
+      "screen": "Exercise library",
+      "state": "Any",
+      "control": "Filter by equipment select",
+      "sourceHandler": "src/components/Library.jsx:equipment onChange",
+      "action": "Filter by equipment option",
+      "expectedResult": "Only matching exercises remain; count and heading state reflect filter",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native select",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "library search, muscle and equipment filters compose and guide closes with keyboard",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "library-muscle-filter",
+      "screen": "Exercise library",
+      "state": "All muscles or one of six muscle groups",
+      "control": "Muscle filter tab buttons",
+      "sourceHandler": "src/components/Library.jsx:muscle onClick",
+      "action": "Select a muscle group",
+      "expectedResult": "aria-pressed/active update and cards/count filter",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "library search, muscle and equipment filters compose and guide closes with keyboard",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "library-card-guide",
+      "screen": "Exercise library",
+      "state": "Filtered result exists",
+      "control": "Exercise library card button",
+      "sourceHandler": "src/components/Library.jsx:setSelected; ExerciseGuide",
+      "action": "Open instructions",
+      "expectedResult": "Guide dialog shows muscle, equipment, description and safety tip",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space; dialog handling",
+      "tests": [
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "library search, muscle and equipment filters compose and guide closes with keyboard",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "mobile navigation and shared guide dialog support focus return and keyboard trapping at 375px",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "library-clear-filters",
+      "screen": "Exercise library",
+      "state": "No matching movements",
+      "control": "Clear filters button",
+      "sourceHandler": "src/components/Library.jsx:clear query/muscle/equipment",
+      "action": "Clear all active filters",
+      "expectedResult": "Default filters return and library cards appear",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "library search, muscle and equipment filters compose and guide closes with keyboard",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "exercise-guide-close",
+      "screen": "Exercise guide dialog",
+      "state": "Guide opened from Library or Workout",
+      "control": "Close dialog button, Escape, backdrop and Got it button",
+      "sourceHandler": "src/components/ExerciseGuide.jsx:onClose; shared Modal",
+      "action": "Dismiss guide",
+      "expectedResult": "Guide closes and focus returns to source control",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Close/Got it Enter/Space; Escape; Tab trap; backdrop pointer",
+      "tests": [
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "library search, muscle and equipment filters compose and guide closes with keyboard",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "mobile navigation and shared guide dialog support focus return and keyboard trapping at 375px",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-empty-start",
+      "screen": "Workout",
+      "state": "No active session on Workout page",
+      "control": "Start workout button",
+      "sourceHandler": "src/App.jsx: visiblePage === \"workout\" and !data.active -> start(data.routines[0])",
+      "action": "Start the default configured routine from the empty Workout page",
+      "expectedResult": "Workout opens with a new active session; if there is no configured routine, routine creation opens",
+      "dataSideEffect": "Creates and persists a new active workout when a routine exists",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "empty overview, workout, history and progress calls to action start the default routine",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-back",
+      "screen": "Active workout",
+      "state": "Active session",
+      "control": "Back to overview · workout stays active link-button",
+      "sourceHandler": "src/components/Workout.jsx:onBack -> navigate overview",
+      "action": "Return to overview",
+      "expectedResult": "Overview shows active workout and session can be resumed",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "routine detail closes cleanly and workout Back returns to overview with the session active",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-set-weight",
+      "screen": "Active workout",
+      "state": "Set unfinished",
+      "control": "Weight number input per set",
+      "sourceHandler": "src/components/Workout.jsx:SavedField -> updateSet -> onUpdate",
+      "action": "Edit set load",
+      "expectedResult": "Value remains while focused, persists to active session, volume updates",
+      "dataSideEffect": "Updates active session in local store",
+      "keyboardBehaviour": "Native number field; typing/editing; disabled after set completion",
+      "tests": [
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/workout-release.spec.js",
+          "title": "set validation, completion undo, added sets, finish cancel and save preserve exact data",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-set-reps",
+      "screen": "Active workout",
+      "state": "Set unfinished",
+      "control": "Reps number input per set",
+      "sourceHandler": "src/components/Workout.jsx:SavedField -> updateSet -> onUpdate",
+      "action": "Edit reps",
+      "expectedResult": "Value remains while focused and persists to active session",
+      "dataSideEffect": "Updates active session in local store",
+      "keyboardBehaviour": "Native number field; disabled after set completion",
+      "tests": [
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/workout-release.spec.js",
+          "title": "set validation, completion undo, added sets, finish cancel and save preserve exact data",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-set-complete-invalid",
+      "screen": "Active workout",
+      "state": "Unfinished set with invalid values",
+      "control": "Complete set toggle",
+      "sourceHandler": "src/components/Workout.jsx:check validation",
+      "action": "Attempt completion",
+      "expectedResult": "No set change; notification explains valid reps/load bounds",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space; aria-pressed",
+      "tests": [
+        {
+          "path": "tests/workout-release.spec.js",
+          "title": "set validation, completion undo, added sets, finish cancel and save preserve exact data",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-set-complete",
+      "screen": "Active workout",
+      "state": "Unfinished set with valid values",
+      "control": "Complete set toggle",
+      "sourceHandler": "src/components/Workout.jsx:check -> onUpdate",
+      "action": "Complete set",
+      "expectedResult": "Set marked done, inputs disabled, counts/volume update, rest timer starts",
+      "dataSideEffect": "Active session set done=true, rest deadline set",
+      "keyboardBehaviour": "Native button Enter/Space; aria-pressed",
+      "tests": [
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/workout-release.spec.js",
+          "title": "set validation, completion undo, added sets, finish cancel and save preserve exact data",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-set-uncomplete",
+      "screen": "Active workout",
+      "state": "Completed set",
+      "control": "Uncomplete set toggle",
+      "sourceHandler": "src/components/Workout.jsx:check -> onUpdate",
+      "action": "Undo completion",
+      "expectedResult": "Set becomes editable and incomplete; total count/volume recalculated",
+      "dataSideEffect": "Active session set done=false; rest state unchanged by branch",
+      "keyboardBehaviour": "Native button Enter/Space; aria-pressed",
+      "tests": [
+        {
+          "path": "tests/workout-release.spec.js",
+          "title": "set validation, completion undo, added sets, finish cancel and save preserve exact data",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-add-set",
+      "screen": "Active workout",
+      "state": "Exercise has fewer than 100 sets",
+      "control": "Add set button per exercise",
+      "sourceHandler": "src/components/Workout.jsx:onUpdate append copied last set with done=false",
+      "action": "Add set",
+      "expectedResult": "New editable set copies prior weight/reps and is incomplete",
+      "dataSideEffect": "Active session exercise sets array grows",
+      "keyboardBehaviour": "Native button Enter/Space; disabled at 100",
+      "tests": [
+        {
+          "path": "tests/workout-release.spec.js",
+          "title": "set validation, completion undo, added sets, finish cancel and save preserve exact data",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-instructions",
+      "screen": "Active workout",
+      "state": "Exercise displayed",
+      "control": "Instructions for {exercise} icon button",
+      "sourceHandler": "src/components/Workout.jsx:setGuide; ExerciseGuide",
+      "action": "Open exercise guide",
+      "expectedResult": "Correct movement guide appears without losing workout state",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space; dialog handling",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "mobile rest controls stay reachable and expose instructions during logging",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-rest-open",
+      "screen": "Active workout",
+      "state": "Mobile viewport <=950px",
+      "control": "Open rest timer button",
+      "sourceHandler": "src/components/Workout.jsx:setRestOpen(true)",
+      "action": "Open rest controls dialog",
+      "expectedResult": "Timer controls accessible in dialog; timer value updates",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space; dialog handling",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "mobile rest controls stay reachable and expose instructions during logging",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-rest-duration",
+      "screen": "Active workout / Rest timer dialog",
+      "state": "Timer visible",
+      "control": "60s, 90s and 120s buttons",
+      "sourceHandler": "src/components/Workout.jsx:RestControls duration map",
+      "action": "Choose rest duration",
+      "expectedResult": "aria-pressed preference updates, active timer restarts at chosen duration",
+      "dataSideEffect": "Persists restSeconds and restEnd on active session",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "rest duration, running deadline and paused state survive routes and reload",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/persistence.spec.js",
+          "title": "fractional imported weights can be corrected and a future rest timer can pause",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/workout-release.spec.js",
+          "title": "60, 90, and 120 second timers persist their deadlines and expiry clears timer state",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-rest-start-pause",
+      "screen": "Active workout / Rest timer dialog",
+      "state": "Timer stopped/paused or running",
+      "control": "Start rest timer / Pause rest timer button",
+      "sourceHandler": "src/components/Workout.jsx:RestControls timer action",
+      "action": "Start or pause timer",
+      "expectedResult": "Button label/icon changes; remaining countdown continues or freezes and survives route/reload",
+      "dataSideEffect": "Persists restEnd/restPaused",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "rest duration, running deadline and paused state survive routes and reload",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/persistence.spec.js",
+          "title": "fractional imported weights can be corrected and a future rest timer can pause",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/workout-release.spec.js",
+          "title": "60, 90, and 120 second timers persist their deadlines and expiry clears timer state",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-rest-skip-mobile",
+      "screen": "Active workout",
+      "state": "Mobile rest bar visible",
+      "control": "Skip rest button",
+      "sourceHandler": "src/components/Workout.jsx mobile rest bar onUpdate",
+      "action": "Clear rest timer",
+      "expectedResult": "Timer resets to zero and rest state clears",
+      "dataSideEffect": "Sets restEnd/restPaused to null",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "mobile rest controls stay reachable and expose instructions during logging",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-rest-skip-panel",
+      "screen": "Active workout / Rest timer dialog",
+      "state": "Desktop panel or mobile timer dialog",
+      "control": "Skip button",
+      "sourceHandler": "src/components/Workout.jsx:RestControls onUpdate",
+      "action": "Clear rest timer",
+      "expectedResult": "Timer resets to zero and rest state clears",
+      "dataSideEffect": "Sets restEnd/restPaused to null",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-session-notes",
+      "screen": "Active workout",
+      "state": "Session active",
+      "control": "Session notes textarea",
+      "sourceHandler": "src/components/Workout.jsx:SavedField onChange -> onUpdate",
+      "action": "Enter/edit notes",
+      "expectedResult": "Text persists while focused and on blur; max length 10,000",
+      "dataSideEffect": "Active session notes update in local store",
+      "keyboardBehaviour": "Native textarea text editing",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "fast typing persists complete values and a valid backup restores from recovery",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "NOT TESTED",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "NOT TESTED",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [
+        "10,000-character input cap is not directly asserted."
+      ],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-finish-invalid",
+      "screen": "Active workout",
+      "state": "No completed sets",
+      "control": "Top or bottom Finish workout button",
+      "sourceHandler": "src/components/Workout.jsx:finish",
+      "action": "Attempt finish",
+      "expectedResult": "Notification says complete at least one set; no confirmation or mutation",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/workout-release.spec.js",
+          "title": "empty finish is blocked; discard can be canceled or confirmed; routine switch can resume, cancel, or replace",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-finish-confirm",
+      "screen": "Active workout",
+      "state": "At least one set complete",
+      "control": "Top or bottom Finish workout button",
+      "sourceHandler": "src/components/Workout.jsx:finish",
+      "action": "Request finish",
+      "expectedResult": "Finish confirmation shows completed sets, volume and treatment of unfinished sets",
+      "dataSideEffect": "None pending save",
+      "keyboardBehaviour": "Native button Enter/Space; dialog focus trap and Escape close unless saving",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "finish dialog traps keyboard focus and does not reset it on timer ticks",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/workout-release.spec.js",
+          "title": "empty finish is blocked; discard can be canceled or confirmed; routine switch can resume, cancel, or replace",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-finish-keep",
+      "screen": "Finish confirmation dialog",
+      "state": "Confirmation open",
+      "control": "Keep training button",
+      "sourceHandler": "src/components/Workout.jsx:setConfirm(false)",
+      "action": "Return to workout",
+      "expectedResult": "Dialog closes and active session remains",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space; disabled while saving",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "finish dialog traps keyboard focus and does not reset it on timer ticks",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/workout-release.spec.js",
+          "title": "set validation, completion undo, added sets, finish cancel and save preserve exact data",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-finish-save",
+      "screen": "Finish confirmation dialog",
+      "state": "Confirmation open",
+      "control": "Save workout button",
+      "sourceHandler": "src/components/Workout.jsx:onFinish -> App.finish -> change/commit",
+      "action": "Save completed workout",
+      "expectedResult": "Session moves from active to history with date/duration, navigates to history and announces save",
+      "dataSideEffect": "Active cleared; completed session prepended to persisted history",
+      "keyboardBehaviour": "Native button Enter/Space; disabled while saving",
+      "tests": [
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/workout-release.spec.js",
+          "title": "set validation, completion undo, added sets, finish cancel and save preserve exact data",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-discard-open",
+      "screen": "Active workout",
+      "state": "Active session",
+      "control": "Discard workout button",
+      "sourceHandler": "src/components/Workout.jsx:onCancel -> App.setModal(discard)",
+      "action": "Request session discard",
+      "expectedResult": "Confirmation explains unfinished sets will not be saved",
+      "dataSideEffect": "None pending confirmation",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/workout-release.spec.js",
+          "title": "empty finish is blocked; discard can be canceled or confirmed; routine switch can resume, cancel, or replace",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-discard-keep",
+      "screen": "Discard workout confirmation",
+      "state": "Confirmation open",
+      "control": "Keep it button or close affordances",
+      "sourceHandler": "src/App.jsx:setModal(null)",
+      "action": "Cancel discard",
+      "expectedResult": "Dialog closes and active session remains",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button / Escape / backdrop",
+      "tests": [
+        {
+          "path": "tests/workout-release.spec.js",
+          "title": "empty finish is blocked; discard can be canceled or confirmed; routine switch can resume, cancel, or replace",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "workout-discard-confirm",
+      "screen": "Discard workout confirmation",
+      "state": "Confirmation open",
+      "control": "Discard workout button",
+      "sourceHandler": "src/App.jsx confirmation change action",
+      "action": "Discard active session",
+      "expectedResult": "Active session cleared and overview opens",
+      "dataSideEffect": "Removes active session from persisted store",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/workout-release.spec.js",
+          "title": "empty finish is blocked; discard can be canceled or confirmed; routine switch can resume, cancel, or replace",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "history-empty-start",
+      "screen": "Workout history",
+      "state": "No completed workouts",
+      "control": "Start your first workout button",
+      "sourceHandler": "src/components/Insights.jsx:onStart; src/App.jsx:start",
+      "action": "Start first routine (or navigate to routine creation if none)",
+      "expectedResult": "Workout starts or routine flow begins",
+      "dataSideEffect": "Creates active session only when routine exists",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "empty overview, workout, history and progress calls to action start the default routine",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "history-row-open",
+      "screen": "Workout history",
+      "state": "History contains entries",
+      "control": "Workout history row buttons",
+      "sourceHandler": "src/components/Insights.jsx:setDetail(s)",
+      "action": "Open workout details",
+      "expectedResult": "Chronological session details, completed set values, notes and edit/delete controls appear",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space; dialog handling",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "history correction and deletion recalculate progress; one rep uses actual load",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/responsive.spec.js",
+          "title": "history stays chronological after an unordered backup",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "history detail closes by button and backdrop, restores row focus, and stays open for inside clicks",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "history-detail-close",
+      "screen": "Workout detail dialog",
+      "state": "Detail shown",
+      "control": "Close dialog button, Escape, backdrop",
+      "sourceHandler": "src/components/Insights.jsx:setDetail(null); shared Modal",
+      "action": "Close details",
+      "expectedResult": "Detail closes, focus returns to history row",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Close button Enter/Space; Escape; Tab trap; backdrop pointer",
+      "tests": [
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "history correction and deletion recalculate progress; one rep uses actual load",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "history detail closes by button and backdrop, restores row focus, and stays open for inside clicks",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "history-delete-open",
+      "screen": "Workout detail dialog",
+      "state": "Workout detail shown",
+      "control": "Delete workout button",
+      "sourceHandler": "src/components/Insights.jsx:setDeleting(true)",
+      "action": "Open deletion confirmation",
+      "expectedResult": "Delete confirmation replaces detail content",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "history correction and deletion recalculate progress; one rep uses actual load",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "keeping a history workout after opening deletion leaves its details and saved data intact",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "history-delete-keep",
+      "screen": "Workout deletion confirmation",
+      "state": "Confirmation open",
+      "control": "Keep workout button / close affordances",
+      "sourceHandler": "src/components/Insights.jsx:setDeleting(false) or setDetail(null)",
+      "action": "Cancel deletion",
+      "expectedResult": "Workout remains; detail can be restored or closed",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button / Escape / backdrop",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "keeping a history workout after opening deletion leaves its details and saved data intact",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "history-delete-confirm",
+      "screen": "Workout deletion confirmation",
+      "state": "Confirmation open",
+      "control": "Delete workout button",
+      "sourceHandler": "src/components/Insights.jsx:onDelete -> App change/commit",
+      "action": "Delete history item",
+      "expectedResult": "Workout removed, progress recalculated, details close and success feedback",
+      "dataSideEffect": "Removes session from persisted history",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "history correction and deletion recalculate progress; one rep uses actual load",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "history-edit-open",
+      "screen": "Workout detail dialog",
+      "state": "Workout details open",
+      "control": "Edit workout button",
+      "sourceHandler": "src/components/Insights.jsx:setEditing(true)",
+      "action": "Open correction form",
+      "expectedResult": "HistoryEditor opens with completed set values and notes",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space; dialog handling",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "history correction and deletion recalculate progress; one rep uses actual load",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "history-editor-name",
+      "screen": "History editor dialog",
+      "state": "Editing",
+      "control": "Workout name input",
+      "sourceHandler": "src/components/HistoryEditor.jsx:draft name onChange",
+      "action": "Correct name",
+      "expectedResult": "Draft updates and is saved with corrections",
+      "dataSideEffect": "Draft only until save",
+      "keyboardBehaviour": "Native text input; Enter submits form",
+      "tests": [
+        {
+          "path": "tests/workout-release.spec.js",
+          "title": "history editor discard keeps persisted data unchanged and stale edits are rejected",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "history-editor-values",
+      "screen": "History editor dialog",
+      "state": "Completed set rows shown",
+      "control": "Weight and reps fields",
+      "sourceHandler": "src/components/HistoryEditor.jsx:update",
+      "action": "Correct completed set values",
+      "expectedResult": "Draft updates; values validated by store schema and recalculated progress",
+      "dataSideEffect": "Draft only until save",
+      "keyboardBehaviour": "Native number fields",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "history correction and deletion recalculate progress; one rep uses actual load",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "history-editor-keep-set",
+      "screen": "History editor dialog",
+      "state": "Completed set row shown",
+      "control": "Keep set checkbox",
+      "sourceHandler": "src/components/HistoryEditor.jsx:update done",
+      "action": "Include/exclude set from corrected workout",
+      "expectedResult": "Checkbox state updates; at least one completed set required on submit",
+      "dataSideEffect": "Draft only until save",
+      "keyboardBehaviour": "Native checkbox Space toggles",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "history editor retains notes on keep, rejects removing every completed set, and discards without saving",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "history-editor-notes",
+      "screen": "History editor dialog",
+      "state": "Editing",
+      "control": "Workout notes textarea",
+      "sourceHandler": "src/components/HistoryEditor.jsx:draft notes onChange",
+      "action": "Correct notes",
+      "expectedResult": "Draft updates, capped at 10,000",
+      "dataSideEffect": "Draft only until save",
+      "keyboardBehaviour": "Native textarea",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "history editor retains notes on keep, rejects removing every completed set, and discards without saving",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "NOT TESTED",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "NOT TESTED",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [
+        "10,000-character input cap is not directly asserted."
+      ],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "history-editor-cancel-dirty",
+      "screen": "History editor dialog",
+      "state": "Draft dirty",
+      "control": "Cancel or close/Escape/backdrop",
+      "sourceHandler": "src/components/HistoryEditor.jsx:close -> discard state",
+      "action": "Request close with changes",
+      "expectedResult": "Discard confirmation appears, preserving draft",
+      "dataSideEffect": "None pending choice",
+      "keyboardBehaviour": "Native button / Escape / backdrop",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "history editor retains notes on keep, rejects removing every completed set, and discards without saving",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "history-editor-discard-choice",
+      "screen": "History editor discard confirmation",
+      "state": "Confirmation open",
+      "control": "Keep editing and Discard changes buttons",
+      "sourceHandler": "src/components/HistoryEditor.jsx:setDiscard(false) / onClose",
+      "action": "Resume editing or discard changes",
+      "expectedResult": "Keep editing restores draft; discard returns to history details",
+      "dataSideEffect": "Discard branch has no persisted mutation",
+      "keyboardBehaviour": "Native buttons Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "history editor retains notes on keep, rejects removing every completed set, and discards without saving",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "history-editor-save-invalid",
+      "screen": "History editor dialog",
+      "state": "No completed sets remain",
+      "control": "Save corrections submit",
+      "sourceHandler": "src/components/HistoryEditor.jsx:save sessionSets check",
+      "action": "Submit invalid corrected workout",
+      "expectedResult": "Inline error appears and editor stays open",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Button Enter/Space; form Enter submits",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "history editor retains notes on keep, rejects removing every completed set, and discards without saving",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "history-editor-save",
+      "screen": "History editor dialog",
+      "state": "At least one completed set remains",
+      "control": "Save corrections submit",
+      "sourceHandler": "src/components/HistoryEditor.jsx:onSave -> App.saveHistory -> change/commit",
+      "action": "Persist workout corrections",
+      "expectedResult": "Editor closes to updated detail; history and progress recompute; success feedback",
+      "dataSideEffect": "Replaces persisted history item",
+      "keyboardBehaviour": "Button Enter/Space; form Enter submits; disabled while saving",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "history correction and deletion recalculate progress; one rep uses actual load",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "progress-empty-start",
+      "screen": "Progress",
+      "state": "No completed workouts",
+      "control": "Let’s get started button",
+      "sourceHandler": "src/components/Insights.jsx:onStart; src/App.jsx:start",
+      "action": "Start first routine",
+      "expectedResult": "Active workout starts or routine creation flow opens",
+      "dataSideEffect": "Creates active session if routine exists",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "empty overview, workout, history and progress calls to action start the default routine",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "settings-name",
+      "screen": "Settings",
+      "state": "Preferences form",
+      "control": "Your name input",
+      "sourceHandler": "src/components/Preferences.jsx:name onChange",
+      "action": "Edit profile name",
+      "expectedResult": "Draft name reflects input and required/pattern constraints disallow blank whitespace",
+      "dataSideEffect": "Draft until Save preferences",
+      "keyboardBehaviour": "Native text input",
+      "tests": [
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "profile name and weekly goal enforce their UI bounds and persist selected targets",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "NOT TESTED",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "NOT TESTED",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [
+        "Whitespace-only required/pattern rejection is not directly asserted."
+      ],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "settings-weekly-goal",
+      "screen": "Settings",
+      "state": "Preferences form",
+      "control": "Weekly workout goal select",
+      "sourceHandler": "src/components/Preferences.jsx:goal onChange",
+      "action": "Choose goal from 1 to 7 workouts/week",
+      "expectedResult": "Selected goal reflected and included on save",
+      "dataSideEffect": "Draft until save",
+      "keyboardBehaviour": "Native select",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "profile name and weekly goal enforce their UI bounds and persist selected targets",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "settings-save-profile",
+      "screen": "Settings",
+      "state": "Preferences form valid",
+      "control": "Save preferences button/form submit",
+      "sourceHandler": "src/components/Preferences.jsx:submit -> App onSave -> change/commit",
+      "action": "Save profile",
+      "expectedResult": "Saved profile and success or temporary-save notification; stale profile conflict shown by App notification",
+      "dataSideEffect": "Updates persisted profile name and goal",
+      "keyboardBehaviour": "Button Enter/Space; Enter submits; disabled while busy",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "finishing in one tab and updating preferences in another preserves both saves",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/persistence.spec.js",
+          "title": "repeated concurrent profile and session writes preserve both fields",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/workflows.spec.js",
+          "title": "personal training workflow persists routines, sessions and calculated progress",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "profile name and weekly goal enforce their UI bounds and persist selected targets",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "NOT TESTED",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "NOT TESTED",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [
+        "Stale profile-save conflict is not directly asserted."
+      ],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "settings-export",
+      "screen": "Settings",
+      "state": "Any persistence mode",
+      "control": "Export my data button",
+      "sourceHandler": "src/components/Preferences.jsx:downloadData(data)",
+      "action": "Download JSON backup",
+      "expectedResult": "Browser download starts and success notification appears; failure shows inline error",
+      "dataSideEffect": "No application data mutation; writes downloaded file",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "backup validation and export/import round trip preserve data",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/security-release.spec.js",
+          "title": "export failure is surfaced to the user",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "settings-import-picker",
+      "screen": "Settings",
+      "state": "Any",
+      "control": "Import backup file picker",
+      "sourceHandler": "src/components/Preferences.jsx:importBackup -> readBackupFile",
+      "action": "Choose JSON backup",
+      "expectedResult": "Valid file opens restore confirmation with counts and captured revision; invalid file gives inline error, original untouched; picker resets",
+      "dataSideEffect": "None until restore",
+      "keyboardBehaviour": "Native file input via label; keyboard focus/activation",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "backup validation and export/import round trip preserve data",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "Settings backup restore can be cancelled or confirmed and changes persisted data",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "settings-import-cancel",
+      "screen": "Restore backup dialog",
+      "state": "Valid backup selected",
+      "control": "Cancel or close dialog",
+      "sourceHandler": "src/components/Preferences.jsx:setBackup(null)",
+      "action": "Cancel restore",
+      "expectedResult": "Dialog closes and current workspace remains",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button / Escape / backdrop",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "Settings backup restore can be cancelled or confirmed and changes persisted data",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "settings-import-restore",
+      "screen": "Restore backup dialog",
+      "state": "Valid backup selected and revision unchanged",
+      "control": "Restore backup button",
+      "sourceHandler": "src/components/Preferences.jsx:onRestore -> App.restore -> commit(recover)",
+      "action": "Replace workspace with imported data",
+      "expectedResult": "Backup restored; overview opens and preservation feedback shown; conflicts/errors stay visible",
+      "dataSideEffect": "Replaces current persisted workspace; current data preserved by repository recovery rules",
+      "keyboardBehaviour": "Native button Enter/Space; disabled while busy",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "backup validation and export/import round trip preserve data",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/persistence.spec.js",
+          "title": "restore after quota recovery preserves temporary edits and saved originals",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "Settings backup restore can be cancelled or confirmed and changes persisted data",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/persistence-release.spec.js",
+          "title": "a valid backup reviewed before another tab saves is rejected without replacing current data",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "schedule-close-clean",
+      "screen": "Schedule dialog",
+      "state": "No changes from saved days",
+      "control": "Close dialog button / Escape / backdrop",
+      "sourceHandler": "src/components/Preferences.jsx:close -> onClose; shared Modal",
+      "action": "Close schedule",
+      "expectedResult": "Dialog closes",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Escape / Tab trap / button / backdrop",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "schedule opens from its overview banner and a clean close leaves the schedule unchanged",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "schedule-day-toggle",
+      "screen": "Schedule dialog",
+      "state": "Editing days",
+      "control": "Monday through Sunday toggle buttons",
+      "sourceHandler": "src/components/Preferences.jsx:days state onClick",
+      "action": "Toggle training day",
+      "expectedResult": "aria-pressed and active styles update; training/recovery counts update",
+      "dataSideEffect": "Draft schedule only",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "calendar navigation selects weeks and schedule saves only after confirmation",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "schedule-save",
+      "screen": "Schedule dialog",
+      "state": "Any draft schedule",
+      "control": "Save schedule button",
+      "sourceHandler": "src/components/Preferences.jsx:onSave -> App schedule change/commit",
+      "action": "Persist selected training days",
+      "expectedResult": "Dialog closes on success and success/temporary feedback appears; stale data conflict leaves modal open with notification",
+      "dataSideEffect": "Updates persisted schedule array",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "calendar navigation selects weeks and schedule saves only after confirmation",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "NOT TESTED",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "NOT TESTED",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [
+        "Stale schedule conflict and temporary-save feedback are not directly asserted by the cited successful-save case."
+      ],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "schedule-close-dirty",
+      "screen": "Schedule dialog",
+      "state": "Draft differs from saved schedule",
+      "control": "Close button / Escape / backdrop",
+      "sourceHandler": "src/components/Preferences.jsx:close -> discard=true",
+      "action": "Request close with unsaved days",
+      "expectedResult": "Discard confirmation appears while preserving draft",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Escape and backdrop call onClose; focus loop remains active",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "calendar navigation selects weeks and schedule saves only after confirmation",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "schedule-discard-choice",
+      "screen": "Schedule discard confirmation",
+      "state": "Dirty confirmation open",
+      "control": "Keep editing and Discard changes buttons",
+      "sourceHandler": "src/components/Preferences.jsx:setDiscard(false) / onClose",
+      "action": "Return to editor or discard draft",
+      "expectedResult": "Keep retains days; discard closes dialog without mutation",
+      "dataSideEffect": "None persisted",
+      "keyboardBehaviour": "Native buttons Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "calendar navigation selects weeks and schedule saves only after confirmation",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "recovery-download-original",
+      "screen": "Recovery",
+      "state": "Stored data is invalid",
+      "control": "Download original data button",
+      "sourceHandler": "src/components/Recovery.jsx:downloadData(raw,...,true)",
+      "action": "Download unreadable original bytes",
+      "expectedResult": "Raw original download starts; failure message appears if browser download fails",
+      "dataSideEffect": "No storage mutation",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "invalid JSON is preserved and recoverable",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "invalid nested shape is preserved and recoverable",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "unknown exercise is preserved and recoverable",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "NOT TESTED",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "NOT TESTED",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [
+        "Original-data download failure is not directly asserted."
+      ],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "recovery-import-picker",
+      "screen": "Recovery",
+      "state": "Stored data is invalid",
+      "control": "Restore a backup picker",
+      "sourceHandler": "src/components/Recovery.jsx:importFile -> readBackupFile",
+      "action": "Choose recovery JSON",
+      "expectedResult": "Valid backup is restored; invalid/oversized input gives explanation; original bytes remain untouched on rejection",
+      "dataSideEffect": "Valid restore replaces corrupt workspace with preservation attempt",
+      "keyboardBehaviour": "Native file input via label",
+      "tests": [
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "fast typing persists complete values and a valid backup restores from recovery",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/regressions.spec.js",
+          "title": "recovery distinguishes an invalid backup from a failed storage write",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "NOT TESTED",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "NOT TESTED",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [
+        "Oversized file rejection through this recovery UI is not directly asserted; parser unit limit and invalid-backup recovery are covered."
+      ],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "recovery-fresh-open",
+      "screen": "Recovery",
+      "state": "Stored data is invalid",
+      "control": "Start a fresh workspace button",
+      "sourceHandler": "src/components/Recovery.jsx:setConfirm(true)",
+      "action": "Request reset",
+      "expectedResult": "Confirmation explains original data is preserved before replacement",
+      "dataSideEffect": "None pending confirmation",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "recovery reset confirmation preserves the corrupt original until a confirmed reset",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "recovery-fresh-keep",
+      "screen": "Recovery confirmation",
+      "state": "Fresh workspace confirmation open",
+      "control": "Keep original button",
+      "sourceHandler": "src/components/Recovery.jsx:setConfirm(false)",
+      "action": "Cancel reset",
+      "expectedResult": "Confirmation closes and unreadable original remains",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "recovery reset confirmation preserves the corrupt original until a confirmed reset",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "recovery-fresh-reset",
+      "screen": "Recovery confirmation",
+      "state": "Fresh workspace confirmation open",
+      "control": "Start fresh button",
+      "sourceHandler": "src/components/Recovery.jsx:reset -> onReset -> App.restore(freshData)",
+      "action": "Replace invalid workspace with starter data",
+      "expectedResult": "Fresh workspace loads; original preservation or write failure is reported; busy state prevents duplicate action",
+      "dataSideEffect": "Replaces invalid storage only after preserve/revision checks",
+      "keyboardBehaviour": "Native button Enter/Space; disabled while busy",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "recovery reset confirmation preserves the corrupt original until a confirmed reset",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "NOT TESTED",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "NOT TESTED",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [
+        "Duplicate submission while pending and reset-specific write failure are not directly asserted."
+      ],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "error-boundary-download",
+      "screen": "Application error fallback",
+      "state": "React render error caught",
+      "control": "Download saved data button",
+      "sourceHandler": "src/components/ErrorBoundary.jsx:downloadData(localStorage raw)",
+      "action": "Download original persisted data",
+      "expectedResult": "Raw local data download starts; storage access error rendered as alert",
+      "dataSideEffect": "No storage mutation",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "error fallback downloads saved data, reports denied storage and reloads the workspace",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "error-boundary-reload",
+      "screen": "Application error fallback",
+      "state": "React render error caught",
+      "control": "Reload workspace button",
+      "sourceHandler": "src/components/ErrorBoundary.jsx:window.location.reload",
+      "action": "Reload app",
+      "expectedResult": "Document reloads and app initialization retries",
+      "dataSideEffect": "No direct mutation",
+      "keyboardBehaviour": "Native button Enter/Space",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "error fallback downloads saved data, reports denied storage and reloads the workspace",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "toast-dismiss",
+      "screen": "Any page or dialog",
+      "state": "Notification toast visible",
+      "control": "Dismiss notification button",
+      "sourceHandler": "src/components/Notification.jsx:onDismiss; src/App.jsx:setToast('')",
+      "action": "Dismiss toast",
+      "expectedResult": "Toast disappears",
+      "dataSideEffect": "None",
+      "keyboardBehaviour": "Native button Enter/Space; toast role=status",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "calendar navigation selects weeks and schedule saves only after confirmation",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "modal-close-shared",
+      "screen": "Every dialog",
+      "state": "Any Modal open",
+      "control": "Close dialog icon button",
+      "sourceHandler": "src/components/UI.jsx:Modal close button",
+      "action": "Request dialog close",
+      "expectedResult": "Calls owning flow's close behavior; may present dirty confirmation or block close while busy",
+      "dataSideEffect": "Depends on owning flow; normally none",
+      "keyboardBehaviour": "Native button Enter/Space; focus restoration when dialog unmounts",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "mobile navigation and shared guide dialog support focus return and keyboard trapping at 375px",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "NOT TESTED",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "NOT TESTED",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [
+        "Closing while a save is pending is not directly asserted."
+      ],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "modal-escape-shared",
+      "screen": "Every dialog",
+      "state": "Any Modal open",
+      "control": "Escape key",
+      "sourceHandler": "src/components/UI.jsx:dialog cancel event -> closeRef.current()",
+      "action": "Request close",
+      "expectedResult": "Calls owning close behavior; dirty forms transition to discard confirm; finish dialog stays open during save",
+      "dataSideEffect": "Depends on owning flow",
+      "keyboardBehaviour": "Escape custom cancel handling; Tab focus loop",
+      "tests": [
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "library search, muscle and equipment filters compose and guide closes with keyboard",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        },
+        {
+          "path": "tests/ui-controls.spec.js",
+          "title": "mobile navigation and shared guide dialog support focus return and keyboard trapping at 375px",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "NOT TESTED",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "NOT TESTED",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [
+        "Escape while a save is pending is not directly asserted."
+      ],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    },
+    {
+      "id": "modal-backdrop-shared",
+      "screen": "Every dialog",
+      "state": "Any Modal open",
+      "control": "Click outside dialog bounds",
+      "sourceHandler": "src/components/UI.jsx:backdrop handler",
+      "action": "Request close",
+      "expectedResult": "Outside click calls owning close behavior; clicks inside dialog do not close",
+      "dataSideEffect": "Depends on owning flow",
+      "keyboardBehaviour": "Pointer interaction only; focus remains trapped by native modal",
+      "tests": [
+        {
+          "path": "tests/ui-coverage-gaps.spec.js",
+          "title": "history detail closes by button and backdrop, restores row focus, and stays open for inside clicks",
+          "result": "PASS",
+          "evidence": "verification-results.json",
+          "project": "chromium"
+        }
+      ],
+      "browserCoverage": {
+        "systemChromium154": "PASS",
+        "pinnedChromium156": "BLOCKED",
+        "firefox": "BLOCKED",
+        "webkit": "BLOCKED"
+      },
+      "result": "PASS",
+      "evidence": "verification-results.json",
+      "coveredAssertions": "Referenced passing tests establish only the exercised outcomes. A NOT TESTED row may retain passing primary-action evidence while broader expected-result branches remain unverified.",
+      "unverifiedBranches": [],
+      "notes": "PASS covers the referenced asserted outcomes on system Chromium; keyboard description is intended behavior, not every key/device combination tested."
+    }
+  ]
+}

@@ -12,7 +12,9 @@
     "format": "prettier --write src tests unit *.js *.json index.html",
     "format:check": "prettier --check src tests unit *.js *.json index.html",
     "test:unit": "node --test unit/*.test.js",
-    "test:browser": "playwright test"
+    "test:browser": "playwright test",
+    "test:browser:production": "npm run build && playwright test --config=playwright.production.config.js",
+    "docs:check": "node scripts/check-docs.mjs"
   },
   "dependencies": {
     "lucide-react": "1.55.0",

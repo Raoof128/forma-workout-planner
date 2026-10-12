@@ -76,7 +76,7 @@ async function fit(page, label) {
   });
   expect(overflow, label).toEqual([]);
 }
-for (const width of [320, 390, 540, 768, 1024, 1440, 1920])
+for (const width of [320, 375, 390, 540, 768, 1024, 1440, 1536, 1920])
   test(`all screens and editing dialogs contain maximum content at ${width}px`, async ({
     page,
   }) => {

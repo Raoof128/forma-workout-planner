@@ -1,0 +1,3059 @@
+{
+  "schemaVersion": 1,
+  "method": "Important domain and persistence scopes; overlaps are intentional. Every source function/callback node is separately enumerated in source-inventory.json. Scope-level PASS never proves every execution path.",
+  "summary": {
+    "scopes": 56,
+    "scopeResults": {
+      "NOT TESTED": 32,
+      "PASS": 24
+    },
+    "branchResults": {
+      "NOT TESTED": 43,
+      "PASS": 131
+    }
+  },
+  "functions": [
+    {
+      "symbol": "src/data.js:exercises",
+      "kind": "catalog",
+      "branches": [
+        {
+          "id": "Catalog entries are consumed by routine/workout flows",
+          "tests": [
+            {
+              "path": "tests/workflows.spec.js",
+              "title": "personal training workflow persists routines, sessions and calculated progress",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "NOT TESTED",
+          "assertionNotes": [
+            "Routine create/edit/start, two 50×8 sets yield 800, history, 63.3 kg UI, profile/schedule persistence and export."
+          ],
+          "coverageLimit": "Only partial branch assertions"
+        },
+        {
+          "id": "Bodyweight defaults are zero external load",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "bodyweight logging counts completed sets with zero external-load volume and survives reload",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "NOT TESTED",
+          "assertionNotes": [
+            "0 kg push-up counted as set, zero volume; reload/history/progress.",
+            "Fixture assigns zero explicitly; catalogue defaults are not asserted."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "All catalog references resolve consistently",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/data.js:starterRoutines",
+      "kind": "fixture/data",
+      "branches": [
+        {
+          "id": "Seed routines render and support edit/start",
+          "tests": [
+            {
+              "path": "tests/workflows.spec.js",
+              "title": "personal training workflow persists routines, sessions and calculated progress",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Routine create/edit/start, two 50×8 sets yield 800, history, 63.3 kg UI, profile/schedule persistence and export."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Every starter reference resolves in catalog",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/data.js:initialData",
+      "kind": "factory/data",
+      "branches": [
+        {
+          "id": "Valid defaults initialize workspace",
+          "tests": [
+            {
+              "path": "unit/storage.test.js",
+              "title": "training totals count completed sets and keep the actual single-rep load",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "NOT TESTED",
+          "assertionNotes": [
+            "One done/one unfinished set; 1RM single and Epley calculation."
+          ],
+          "coverageLimit": "Only partial branch assertions"
+        },
+        {
+          "id": "Exact initial profile/schedule and empty states",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/data.js:createId",
+      "kind": "utility",
+      "branches": [
+        {
+          "id": "getRandomValues fallback UUID v4",
+          "tests": [
+            {
+              "path": "unit/storage.test.js",
+              "title": "ID generation works when randomUUID is unavailable",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": ["getRandomValues UUID v4 fallback."],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "randomUUID normal path",
+          "tests": [
+            {
+              "path": "tests/workflows.spec.js",
+              "title": "personal training workflow persists routines, sessions and calculated progress",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "NOT TESTED",
+          "assertionNotes": [
+            "Routine create/edit/start, two 50×8 sets yield 800, history, 63.3 kg UI, profile/schedule persistence and export."
+          ],
+          "coverageLimit": "Only partial branch assertions"
+        },
+        {
+          "id": "Missing/throwing crypto APIs",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/data.js:dateKey",
+      "kind": "date/time",
+      "branches": [
+        {
+          "id": "Sydney DST day-key boundary",
+          "tests": [
+            {
+              "path": "unit/storage.test.js",
+              "title": "calendar calculations stay in Sydney across daylight-saving boundaries",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Sydney spring-DST day key and Monday-to-Sunday week. Sydney is an intended product rule."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Default/invalid date inputs",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/data.js:displayDate",
+      "kind": "date/time",
+      "branches": [
+        {
+          "id": "Sydney display for history timestamps",
+          "tests": [
+            {
+              "path": "tests/responsive.spec.js",
+              "title": "history stays chronological after an unordered backup",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "NOT TESTED",
+          "assertionNotes": ["History ordering and Sydney-formatted date."],
+          "coverageLimit": "Only partial branch assertions"
+        },
+        {
+          "id": "Formatter cache and arbitrary options",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/data.js:weekDates",
+      "kind": "calendar domain",
+      "branches": [
+        {
+          "id": "Monday-to-Sunday week and seven unique days",
+          "tests": [
+            {
+              "path": "unit/storage.test.js",
+              "title": "calendar calculations stay in Sydney across daylight-saving boundaries",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Sydney spring-DST day key and Monday-to-Sunday week. Sydney is an intended product rule."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "UI previous/next/current-week navigation",
+          "tests": [
+            {
+              "path": "tests/ui-controls.spec.js",
+              "title": "calendar navigation selects weeks and schedule saves only after confirmation",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Previous/next/this week, selected day, schedule dirty cancel/discard/save."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Extreme offsets/year boundary",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/data.js:sameDay",
+      "kind": "date/time",
+      "branches": [
+        {
+          "id": "Sydney day session counts in calendar/summary",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "weekly bars use actual counts and eight progress bars fit 320px",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Only the Sydney-local Monday chart bar is nonzero for the seeded sessions; other six day bars are zero."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Direct same/different day assertion",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/data.js:estimatedOneRM",
+      "kind": "metric",
+      "branches": [
+        {
+          "id": "One-rep exact load and Epley formula",
+          "tests": [
+            {
+              "path": "unit/storage.test.js",
+              "title": "training totals count completed sets and keep the actual single-rep load",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "One done/one unfinished set; 1RM single and Epley calculation."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "80×5 exact calculation and one-decimal display",
+          "tests": [
+            {
+              "path": "unit/domain-release.test.js",
+              "title": "estimated one-rep max keeps actual singles and computes 80 kg × 5 without early rounding",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Single returns actual load; 80×5 is 93.333… before display rounding."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Zero-load estimate",
+          "tests": [
+            {
+              "path": "unit/domain-release.test.js",
+              "title": "zero external load bodyweight work counts as a set without invented volume",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "0 kg done set counts once and has zero volume / external-load 1RM."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Progress 12 inclusive/13 excluded cutoff",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "progress verifies 80 kg × 5 rounding, includes 12 reps, and excludes 13",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": ["80×5 shows 93.3; 12 reps included, 13 excluded."],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/data.js:sessionVolume",
+      "kind": "metric",
+      "branches": [
+        {
+          "id": "Done-set load×reps and unfinished exclusion",
+          "tests": [
+            {
+              "path": "unit/domain-release.test.js",
+              "title": "completed-set volume uses exact load × reps and ignores unfinished drafts",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Two completed 50×8 sets yield 800; unfinished 1000×100 excluded."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "0kg contribution",
+          "tests": [
+            {
+              "path": "unit/domain-release.test.js",
+              "title": "zero external load bodyweight work counts as a set without invented volume",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "0 kg done set counts once and has zero volume / external-load 1RM."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Empty exercise aggregate",
+          "tests": [
+            {
+              "path": "unit/domain-release.test.js",
+              "title": "empty session aggregates are zero",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Empty exercise list yields zero volume and completed sets."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Two 50×8 sets yield 800 UI volume",
+          "tests": [
+            {
+              "path": "tests/workflows.spec.js",
+              "title": "personal training workflow persists routines, sessions and calculated progress",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Routine create/edit/start, two 50×8 sets yield 800, history, 63.3 kg UI, profile/schedule persistence and export."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "2,000-session aggregate",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "2,000 completed workouts render correct aggregate progress within a practical bound",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Exact 2,000 workout/set/volume totals; workspace <20 MiB, under 10s guard."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/data.js:sessionSets",
+      "kind": "metric",
+      "branches": [
+        {
+          "id": "Done-only count",
+          "tests": [
+            {
+              "path": "unit/domain-release.test.js",
+              "title": "completed-set volume uses exact load × reps and ignores unfinished drafts",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Two completed 50×8 sets yield 800; unfinished 1000×100 excluded."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Bodyweight set count",
+          "tests": [
+            {
+              "path": "unit/domain-release.test.js",
+              "title": "zero external load bodyweight work counts as a set without invented volume",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "0 kg done set counts once and has zero volume / external-load 1RM."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Empty exercise aggregate",
+          "tests": [
+            {
+              "path": "unit/domain-release.test.js",
+              "title": "empty session aggregates are zero",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Empty exercise list yields zero volume and completed sets."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "2,000-session aggregate",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "2,000 completed workouts render correct aggregate progress within a practical bound",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Exact 2,000 workout/set/volume totals; workspace <20 MiB, under 10s guard."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/data.js:formatTime",
+      "kind": "display utility",
+      "branches": [
+        {
+          "id": "Timer display advances in realtime",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "real-time rest timer smoke decrements and survives a reload",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "NOT TESTED",
+          "assertionNotes": [
+            "Realtime decrement and deadline persistence through reload."
+          ],
+          "coverageLimit": "Only partial branch assertions"
+        },
+        {
+          "id": "Zero/minute/large/invalid input boundaries",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/components/Overview.jsx:moveWeek",
+      "kind": "UI state handler",
+      "branches": [
+        {
+          "id": "Previous/next/return-current week",
+          "tests": [
+            {
+              "path": "tests/ui-controls.spec.js",
+              "title": "calendar navigation selects weeks and schedule saves only after confirmation",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Previous/next/this week, selected day, schedule dirty cancel/discard/save."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/components/Routines.jsx:RoutineEditor.close",
+      "kind": "workflow handler",
+      "branches": [
+        {
+          "id": "Dirty keep/discard",
+          "tests": [
+            {
+              "path": "tests/ui-controls.spec.js",
+              "title": "dirty routine editor keeps drafts on cancel and discards only after confirmation",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": ["Dirty close, keep, discard."],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Clean draft close exits directly",
+          "tests": [
+            {
+              "path": "tests/ui-coverage-gaps.spec.js",
+              "title": "routine editor closes a clean draft directly and keeps invalid submissions open",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Clean edit cancel closes without dirty confirmation. Valid name with zero exercises shows validation alert, editor stays open, persisted routine count unchanged."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Close is blocked while save is pending",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/components/Routines.jsx:RoutineEditor.toggle",
+      "kind": "workflow handler",
+      "branches": [
+        {
+          "id": "Remove/re-add custom prescription",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "dirty routine changes are retained and duration and prescriptions are preserved",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Name/prescription edit, remove/re-add retention, reorder up, save."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "New choice gets defaults",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/components/Routines.jsx:RoutineEditor.update",
+      "kind": "draft mutation",
+      "branches": [
+        {
+          "id": "Name and prescription updates",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "dirty routine changes are retained and duration and prescriptions are preserved",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Name/prescription edit, remove/re-add retention, reorder up, save."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Every validation boundary",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/components/Routines.jsx:RoutineEditor.move",
+      "kind": "ordering handler",
+      "branches": [
+        {
+          "id": "Up/down order persists",
+          "tests": [
+            {
+              "path": "tests/ui-controls.spec.js",
+              "title": "routine prescriptions reorder and delete confirmation preserves or removes the selected routine",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Up/down, disabled boundaries, order persistence, routine delete cancel/confirm."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Boundary buttons disabled",
+          "tests": [
+            {
+              "path": "tests/ui-controls.spec.js",
+              "title": "routine prescriptions reorder and delete confirmation preserves or removes the selected routine",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Up/down, disabled boundaries, order persistence, routine delete cancel/confirm."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/components/Routines.jsx:RoutineEditor.save",
+      "kind": "validation+mutation",
+      "branches": [
+        {
+          "id": "Valid create/edit",
+          "tests": [
+            {
+              "path": "tests/workflows.spec.js",
+              "title": "personal training workflow persists routines, sessions and calculated progress",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Routine create/edit/start, two 50×8 sets yield 800, history, 63.3 kg UI, profile/schedule persistence and export."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Name is valid but no exercise is selected; validation stays open",
+          "tests": [
+            {
+              "path": "tests/ui-coverage-gaps.spec.js",
+              "title": "routine editor closes a clean draft directly and keeps invalid submissions open",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Clean edit cancel closes without dirty confirmation. Valid name with zero exercises shows validation alert, editor stays open, persisted routine count unchanged."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Blank name validation",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Duration/prescription numeric validation boundaries",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Stale edit rejected",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "stale routine drafts cannot overwrite newer tab changes",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Second tab save wins; stale first-tab save leaves latest name unchanged."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/components/Workout.jsx:updateSet",
+      "kind": "session mutation",
+      "branches": [
+        {
+          "id": "Unfinished value updates persist",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "set validation, completion undo, added sets, finish cancel and save preserve exact data",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Blank/reps>100/weight>1000 rejected; complete/undo/add/reload; persisted done acknowledged; finish cancel/save."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Done set fields protected",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/components/Workout.jsx:check",
+      "kind": "session transition",
+      "branches": [
+        {
+          "id": "Blank/reps>100/weight>1000 rejected",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "set validation, completion undo, added sets, finish cancel and save preserve exact data",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Blank/reps>100/weight>1000 rejected; complete/undo/add/reload; persisted done acknowledged; finish cancel/save."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Complete and undo",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "set validation, completion undo, added sets, finish cancel and save preserve exact data",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Blank/reps>100/weight>1000 rejected; complete/undo/add/reload; persisted done acknowledged; finish cancel/save."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "0kg bodyweight completion",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "bodyweight logging counts completed sets with zero external-load volume and survives reload",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "0 kg push-up counted as set, zero volume; reload/history/progress."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Cross-tab done-state conflict",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/components/Workout.jsx:finish",
+      "kind": "session transition",
+      "branches": [
+        {
+          "id": "Zero-set warning blocks dialog",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "empty finish is blocked; discard can be canceled or confirmed; routine switch can resume, cancel, or replace",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Empty finish; discard keep/confirm; switch resume/cancel/replace."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Finish dialog cancel/save",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "set validation, completion undo, added sets, finish cancel and save preserve exact data",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Blank/reps>100/weight>1000 rejected; complete/undo/add/reload; persisted done acknowledged; finish cancel/save."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Cross-tab stale finish",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/components/Workout.jsx:RestControls",
+      "kind": "timer controls",
+      "branches": [
+        {
+          "id": "60/90/120 and selected state",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "60, 90, and 120 second timers persist their deadlines and expiry clears timer state",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Controlled clock; three durations, pause/resume, expiry clears state and notifies."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Pause/resume/controlled expiry",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "60, 90, and 120 second timers persist their deadlines and expiry clears timer state",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Controlled clock; three durations, pause/resume, expiry clears state and notifies."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Realtime/reload",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "real-time rest timer smoke decrements and survives a reload",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Realtime decrement and deadline persistence through reload."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Skip clears timer",
+          "tests": [
+            {
+              "path": "tests/workflows.spec.js",
+              "title": "personal training workflow persists routines, sessions and calculated progress",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Routine create/edit/start, two 50×8 sets yield 800, history, 63.3 kg UI, profile/schedule persistence and export. After completing set 1, rest Skip is clicked and `.timer-value` is asserted to equal 00:00."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Suspended/background behavior",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/components/HistoryEditor.jsx:close",
+      "kind": "editor handler",
+      "branches": [
+        {
+          "id": "Dirty keep/discard",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "history editor discard keeps persisted data unchanged and stale edits are rejected",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Draft keep/discard; second-tab correction; stale save rejected, latest data retained."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Dirty close offers keep/discard and preserves persisted record",
+          "tests": [
+            {
+              "path": "tests/ui-coverage-gaps.spec.js",
+              "title": "history editor retains notes on keep, rejects removing every completed set, and discards without saving",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Unchecks all completed sets, submits, verifies validation alert/editor remains open and persisted history unchanged; final discard also preserves exact record."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Clean close and pending-save close guard",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/components/HistoryEditor.jsx:update",
+      "kind": "draft mutation",
+      "branches": [
+        {
+          "id": "Weight/reps correction",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "history correction and deletion recalculate progress; one rep uses actual load",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "History edit 100×1 to 80×5 gives 400 volume and 93.3 kg; delete removes contribution."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Dirty notes retained after conflict",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "history editor discard keeps persisted data unchanged and stale edits are rejected",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Draft keep/discard; second-tab correction; stale save rejected, latest data retained."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Uncheck completed sets in draft",
+          "tests": [
+            {
+              "path": "tests/ui-coverage-gaps.spec.js",
+              "title": "history editor retains notes on keep, rejects removing every completed set, and discards without saving",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Unchecks all completed sets, submits, verifies validation alert/editor remains open and persisted history unchanged; final discard also preserves exact record."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Weight/reps and notes draft mutation",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "history correction and deletion recalculate progress; one rep uses actual load",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "History edit 100×1 to 80×5 gives 400 volume and 93.3 kg; delete removes contribution."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/components/HistoryEditor.jsx:save",
+      "kind": "validation+mutation",
+      "branches": [
+        {
+          "id": "Valid correction recalculates metrics",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "history correction and deletion recalculate progress; one rep uses actual load",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "History edit 100×1 to 80×5 gives 400 volume and 93.3 kg; delete removes contribution."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Stale edit rejected, latest record retained",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "history editor discard keeps persisted data unchanged and stale edits are rejected",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Draft keep/discard; second-tab correction; stale save rejected, latest data retained."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "No completed sets shows error and keeps editor open without mutating history",
+          "tests": [
+            {
+              "path": "tests/ui-coverage-gaps.spec.js",
+              "title": "history editor retains notes on keep, rejects removing every completed set, and discards without saving",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Unchecks all completed sets, submits, verifies validation alert/editor remains open and persisted history unchanged; final discard also preserves exact record."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/components/Insights.jsx:WorkoutHistory",
+      "kind": "history UI",
+      "branches": [
+        {
+          "id": "Open/review/edit history",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "history correction and deletion recalculate progress; one rep uses actual load",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "History edit 100×1 to 80×5 gives 400 volume and 93.3 kg; delete removes contribution."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Newest-first, mixed precision",
+          "tests": [
+            {
+              "path": "tests/responsive.spec.js",
+              "title": "imported timestamps with mixed precision sort by time",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [".500Z sorts after same-second timestamp."],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Delete confirmed and updates progress",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "history correction and deletion recalculate progress; one rep uses actual load",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "History edit 100×1 to 80×5 gives 400 volume and 93.3 kg; delete removes contribution."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Delete cancellation returns to details and preserves stored history",
+          "tests": [
+            {
+              "path": "tests/ui-coverage-gaps.spec.js",
+              "title": "keeping a history workout after opening deletion leaves its details and saved data intact",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Keep workout closes delete confirmation back to details and leaves stored history exactly unchanged."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Stale record delete conflict across tabs",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Large rendered history list",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "History details stay open for inside click; close button/backdrop close and restore row focus",
+          "tests": [
+            {
+              "path": "tests/ui-coverage-gaps.spec.js",
+              "title": "history detail closes by button and backdrop, restores row focus, and stays open for inside clicks",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Inside click leaves dialog open; close button and backdrop dismiss and restore focus to row."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/components/Insights.jsx:Progress",
+      "kind": "analytics",
+      "branches": [
+        {
+          "id": "Totals, chart, personal bests",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "2,000 completed workouts render correct aggregate progress within a practical bound",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Exact 2,000 workout/set/volume totals; workspace <20 MiB, under 10s guard."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "80×5/12/13 rules",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "progress verifies 80 kg × 5 rounding, includes 12 reps, and excludes 13",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": ["80×5 shows 93.3; 12 reps included, 13 excluded."],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Zero-load display",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "bodyweight logging counts completed sets with zero external-load volume and survives reload",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "0 kg push-up counted as set, zero volume; reload/history/progress."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Empty Progress call to action starts first routine",
+          "tests": [
+            {
+              "path": "tests/ui-coverage-gaps.spec.js",
+              "title": "empty overview, workout, history and progress calls to action start the default routine",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Loops Overview, empty Workout route, empty History and empty Progress; each CTA creates active default routine and navigates to Workout."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/App.jsx:begin",
+      "kind": "mutation/conflict",
+      "branches": [
+        {
+          "id": "Start routine and confirmed active replacement",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "empty finish is blocked; discard can be canceled or confirmed; routine switch can resume, cancel, or replace",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Empty finish; discard keep/confirm; switch resume/cancel/replace."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Stale routine details reject",
+          "tests": [
+            {
+              "path": "tests/persistence.spec.js",
+              "title": "starting stale routine details cannot silently use old prescriptions",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Stale routine start is rejected and no active workout is created."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/App.jsx:start",
+      "kind": "navigation/workflow",
+      "branches": [
+        {
+          "id": "Resume same active and switch routine prompt/choice",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "empty finish is blocked; discard can be canceled or confirmed; routine switch can resume, cancel, or replace",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Empty finish; discard keep/confirm; switch resume/cancel/replace."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Empty routine overview CTA opens routine editor",
+          "tests": [
+            {
+              "path": "tests/responsive.spec.js",
+              "title": "routine picker explains no matches and empty overview offers creation",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Empty routines show Create routine, which opens editor; no-match status is visible."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Empty Overview/Workout/History/Progress CTAs start default routine",
+          "tests": [
+            {
+              "path": "tests/ui-coverage-gaps.spec.js",
+              "title": "empty overview, workout, history and progress calls to action start the default routine",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Loops Overview, empty Workout route, empty History and empty Progress; each CTA creates active default routine and navigates to Workout."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Routine detail start, workout Back and resume retain the same active session",
+          "tests": [
+            {
+              "path": "tests/ui-coverage-gaps.spec.js",
+              "title": "routine detail closes cleanly and workout Back returns to overview with the session active",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Routine detail closes with focus restoration; starts workout, Back returns Overview with active session; resume preserves same session ID."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Preferred routine start target and active workout resume CTA",
+          "tests": [
+            {
+              "path": "tests/ui-coverage-gaps.spec.js",
+              "title": "preferred next routine updates the overview start target and creates that active session",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Selecting second routine updates hero and active session; active CTA resumes existing ID."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/App.jsx:saveRoutine",
+      "kind": "mutation/conflict",
+      "branches": [
+        {
+          "id": "Create/update",
+          "tests": [
+            {
+              "path": "tests/workflows.spec.js",
+              "title": "personal training workflow persists routines, sessions and calculated progress",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Routine create/edit/start, two 50×8 sets yield 800, history, 63.3 kg UI, profile/schedule persistence and export."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Stale update reject",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "stale routine drafts cannot overwrite newer tab changes",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Second tab save wins; stale first-tab save leaves latest name unchanged."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Reordered routine persists",
+          "tests": [
+            {
+              "path": "tests/ui-controls.spec.js",
+              "title": "routine prescriptions reorder and delete confirmation preserves or removes the selected routine",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Up/down, disabled boundaries, order persistence, routine delete cancel/confirm."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/App.jsx:updateSession",
+      "kind": "mutation/conflict",
+      "branches": [
+        {
+          "id": "Active set/notes update",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "set validation, completion undo, added sets, finish cancel and save preserve exact data",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Blank/reps>100/weight>1000 rejected; complete/undo/add/reload; persisted done acknowledged; finish cancel/save."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Concurrent independent fields merge",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "concurrent tabs preserve independent edits and merge session fields",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Independent set field updates from two tabs are preserved."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Missing/replaced active ID error",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/App.jsx:finish",
+      "kind": "mutation/validation",
+      "branches": [
+        {
+          "id": "Zero-set validation and finish moves active to history",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "empty finish is blocked; discard can be canceled or confirmed; routine switch can resume, cancel, or replace",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Empty finish; discard keep/confirm; switch resume/cancel/replace."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Cancel preserves active session",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "set validation, completion undo, added sets, finish cancel and save preserve exact data",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Blank/reps>100/weight>1000 rejected; complete/undo/add/reload; persisted done acknowledged; finish cancel/save."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Stale active ID collision",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/App.jsx:saveHistory",
+      "kind": "mutation/conflict",
+      "branches": [
+        {
+          "id": "Correction updates progress",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "history correction and deletion recalculate progress; one rep uses actual load",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "History edit 100×1 to 80×5 gives 400 volume and 93.3 kg; delete removes contribution."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Stale original rejects without overwrite",
+          "tests": [
+            {
+              "path": "tests/workout-release.spec.js",
+              "title": "history editor discard keeps persisted data unchanged and stale edits are rejected",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Draft keep/discard; second-tab correction; stale save rejected, latest data retained."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/App.jsx:history delete handler",
+      "kind": "mutation/conflict",
+      "branches": [
+        {
+          "id": "Delete matching history record",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "history correction and deletion recalculate progress; one rep uses actual load",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "History edit 100×1 to 80×5 gives 400 volume and 93.3 kg; delete removes contribution."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Delete cancellation keeps record and details intact",
+          "tests": [
+            {
+              "path": "tests/ui-coverage-gaps.spec.js",
+              "title": "keeping a history workout after opening deletion leaves its details and saved data intact",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Keep workout closes delete confirmation back to details and leaves stored history exactly unchanged."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Stale record delete conflict across tabs",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/App.jsx:routine delete handler",
+      "kind": "mutation/conflict",
+      "branches": [
+        {
+          "id": "Delete matching routine / cancel",
+          "tests": [
+            {
+              "path": "tests/ui-controls.spec.js",
+              "title": "routine prescriptions reorder and delete confirmation preserves or removes the selected routine",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Up/down, disabled boundaries, order persistence, routine delete cancel/confirm."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Stale routine delete conflict",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Confirm delete preserves associated active session/history data",
+          "tests": [],
+          "result": "NOT TESTED",
+          "assertionNotes": [],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/App.jsx:restore",
+      "kind": "recovery mutation",
+      "branches": [
+        {
+          "id": "Restore cancel/confirm and corrupt-data preservation",
+          "tests": [
+            {
+              "path": "tests/ui-controls.spec.js",
+              "title": "Settings backup restore can be cancelled or confirmed and changes persisted data",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Restore cancellation preserves workspace; confirmation replaces profile and schedule."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Stale concurrent restore",
+          "tests": [
+            {
+              "path": "tests/persistence-release.spec.js",
+              "title": "a valid backup reviewed before another tab saves is rejected without replacing current data",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Stale restore does not overwrite newer tab data."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Corrupt-data recovery stale revision guard",
+          "tests": [
+            {
+              "path": "tests/persistence-release.spec.js",
+              "title": "corrupt-data recovery refuses to replace a newer restore from another tab",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Corrupt-data recovery revision guard rejects stale replacement."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/components/Navigation.jsx:Navigation",
+      "kind": "navigation controls",
+      "branches": [
+        {
+          "id": "Skip link keyboard activation focuses main heading",
+          "tests": [
+            {
+              "path": "tests/ui-coverage-gaps.spec.js",
+              "title": "skip link, desktop brand, profile shortcut and active session navigation reach their targets",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Enter on skip link focuses current main h1 without leaving Overview; FORMA brand/shortcut target correct pages; active-session nav opens Workouts and retains stored session."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Desktop brand and profile shortcut navigate correctly",
+          "tests": [
+            {
+              "path": "tests/ui-coverage-gaps.spec.js",
+              "title": "skip link, desktop brand, profile shortcut and active session navigation reach their targets",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Enter on skip link focuses current main h1 without leaving Overview; FORMA brand/shortcut target correct pages; active-session nav opens Workouts and retains stored session."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Active-session navigation opens the existing workout",
+          "tests": [
+            {
+              "path": "tests/ui-coverage-gaps.spec.js",
+              "title": "skip link, desktop brand, profile shortcut and active session navigation reach their targets",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Enter on skip link focuses current main h1 without leaving Overview; FORMA brand/shortcut target correct pages; active-session nav opens Workouts and retains stored session."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/components/Overview.jsx:Overview",
+      "kind": "overview controls",
+      "branches": [
+        {
+          "id": "Preferred routine updates CTA target and starts selected routine",
+          "tests": [
+            {
+              "path": "tests/ui-coverage-gaps.spec.js",
+              "title": "preferred next routine updates the overview start target and creates that active session",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Selecting second routine updates hero and active session; active CTA resumes existing ID."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        },
+        {
+          "id": "Schedule banner opens schedule editor",
+          "tests": [
+            {
+              "path": "tests/ui-coverage-gaps.spec.js",
+              "title": "schedule opens from its overview banner and a clean close leaves the schedule unchanged",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Banner opens schedule dialog; close dismisses it and storage schedule is unchanged."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/components/Preferences.jsx:Schedule",
+      "kind": "schedule dialog",
+      "branches": [
+        {
+          "id": "Clean close dismisses without mutating schedule",
+          "tests": [
+            {
+              "path": "tests/ui-coverage-gaps.spec.js",
+              "title": "schedule opens from its overview banner and a clean close leaves the schedule unchanged",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "assertionNotes": [
+            "Banner opens schedule dialog; close dismisses it and storage schedule is unchanged."
+          ],
+          "coverageLimit": "Full branch/path completeness is not claimed"
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "NOT TESTED includes branches with partial evidence; see assertionNotes."
+    },
+    {
+      "symbol": "src/storage.js:validateData",
+      "kind": "persistence scope",
+      "purpose": "Zod validation plus active/history ID invariant",
+      "branches": [
+        {
+          "id": "valid-schema",
+          "tests": [
+            {
+              "path": "unit/storage.test.js",
+              "title": "legacy version 1 backups receive revision and timer defaults",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "invalid-domain-invariant",
+          "tests": [
+            {
+              "path": "unit/storage.test.js",
+              "title": "history with no completed sets cannot inflate workout counts",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            },
+            {
+              "path": "unit/storage.test.js",
+              "title": "a session cannot be active and completed under the same ID",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "Untested branches are explicit; PASS means referenced assertions executed, not mathematical path completeness."
+    },
+    {
+      "symbol": "src/storage.js:parseBackup",
+      "kind": "persistence scope",
+      "purpose": "Size bound, JSON parse, schema validation",
+      "branches": [
+        {
+          "id": "over-limit-string",
+          "tests": [
+            {
+              "path": "unit/storage.test.js",
+              "title": "backup size is bounded before reading files and before parsing strings",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "valid-backup",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "backup validation and export/import round trip preserve data",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "malformed-json-or-schema",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "recovery distinguishes an invalid backup from a failed storage write",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "Untested branches are explicit; PASS means referenced assertions executed, not mathematical path completeness."
+    },
+    {
+      "symbol": "src/storage.js:readBackupFile",
+      "kind": "persistence scope",
+      "purpose": "File-size check then async text parse",
+      "branches": [
+        {
+          "id": "file-over-limit",
+          "tests": [
+            {
+              "path": "unit/storage.test.js",
+              "title": "backup size is bounded before reading files and before parsing strings",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "valid-file",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "backup validation and export/import round trip preserve data",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "Untested branches are explicit; PASS means referenced assertions executed, not mathematical path completeness."
+    },
+    {
+      "symbol": "src/storage.js:readStore",
+      "kind": "persistence scope",
+      "purpose": "Read, initialize fresh state, retain invalid raw data, handle unavailable storage",
+      "branches": [
+        {
+          "id": "storage-get-throws",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "a storage read failure preserves the current session for export",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "empty-storage",
+          "tests": [
+            {
+              "path": "tests/workflows.spec.js",
+              "title": "personal training workflow persists routines, sessions and calculated progress",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "valid-storage",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "fast typing persists complete values and a valid backup restores from recovery",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "invalid-storage",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "recovery distinguishes an invalid backup from a failed storage write",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "Untested branches are explicit; PASS means referenced assertions executed, not mathematical path completeness."
+    },
+    {
+      "symbol": "src/storage.js:downloadData",
+      "kind": "persistence scope",
+      "purpose": "Generate JSON or raw-text download",
+      "branches": [
+        {
+          "id": "json-export",
+          "tests": [
+            {
+              "path": "tests/workflows.spec.js",
+              "title": "personal training workflow persists routines, sessions and calculated progress",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "raw-recovery-export",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "a storage read failure preserves the current session for export",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "Untested branches are explicit; PASS means referenced assertions executed, not mathematical path completeness."
+    },
+    {
+      "symbol": "src/persistence.js:createWorkoutRepository.publish/unavailable",
+      "kind": "persistence scope",
+      "purpose": "Publish snapshots and preserve invalid issue while marking storage unavailable",
+      "branches": [
+        {
+          "id": "normal-publish",
+          "tests": [
+            {
+              "path": "unit/persistence.test.js",
+              "title": "two repositories serialize independent mutations without losing fields",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "invalid-remains-invalid-on-access-loss",
+          "tests": [
+            {
+              "path": "unit/persistence.test.js",
+              "title": "loss of storage access on recovery keeps the invalid-data state",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "Untested branches are explicit; PASS means referenced assertions executed, not mathematical path completeness."
+    },
+    {
+      "symbol": "src/persistence.js:locked",
+      "kind": "persistence scope",
+      "purpose": "Use Web Locks; fall back if absent/rejected before entry; propagate action failures after entry; checkpoint lock boundaries",
+      "branches": [
+        {
+          "id": "locks-absent-or-getter-throws",
+          "tests": [
+            {
+              "path": "unit/persistence-release.test.js",
+              "title": "a commit remains single-application and temporary with a throwing locks getter",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            },
+            {
+              "path": "unit/persistence-release.test.js",
+              "title": "a commit remains single-application and temporary with an unavailable locks API",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            },
+            {
+              "path": "tests/persistence.spec.js",
+              "title": "missing secure-context UUID and locks still permit temporary routines and workouts",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "locks-request-rejects-before-entry",
+          "tests": [
+            {
+              "path": "unit/persistence.test.js",
+              "title": "initialization and mutations handle a rejecting Web Locks API",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            },
+            {
+              "path": "tests/persistence.spec.js",
+              "title": "rejected Web Locks keep the app usable without unhandled errors",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "action-error-after-entry-no-retry",
+          "tests": [
+            {
+              "path": "unit/persistence.test.js",
+              "title": "a mutation error is never retried or partially adopted",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "checkpoint-cache-refresh-flush",
+          "tests": [
+            {
+              "path": "unit/persistence.test.js",
+              "title": "task-local storage snapshots are refreshed and flushed while the lock is held",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "Untested branches are explicit; PASS means referenced assertions executed, not mathematical path completeness."
+    },
+    {
+      "symbol": "src/persistence.js:nextData",
+      "kind": "persistence scope",
+      "purpose": "Clone, update, increment revision, validate, translate schema errors",
+      "branches": [
+        {
+          "id": "valid-update-revision-increment",
+          "tests": [
+            {
+              "path": "unit/persistence.test.js",
+              "title": "two repositories serialize independent mutations without losing fields",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "zod-error-translated",
+          "tests": [],
+          "result": "NOT TESTED",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "non-zod-error-propagated",
+          "tests": [
+            {
+              "path": "unit/persistence.test.js",
+              "title": "a mutation error is never retried or partially adopted",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "Untested branches are explicit; PASS means referenced assertions executed, not mathematical path completeness."
+    },
+    {
+      "symbol": "src/persistence.js:temporary",
+      "kind": "persistence scope",
+      "purpose": "Advance in-memory state when saved data is unavailable",
+      "branches": [
+        {
+          "id": "has-valid-memory",
+          "tests": [
+            {
+              "path": "unit/persistence.test.js",
+              "title": "temporary mode advances revisions and rejects a stale restore confirmation",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            },
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "denied storage stays usable and accurately reports temporary data",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "no-data-recovery-required",
+          "tests": [],
+          "result": "NOT TESTED",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "Untested branches are explicit; PASS means referenced assertions executed, not mathematical path completeness."
+    },
+    {
+      "symbol": "src/persistence.js:sync",
+      "kind": "persistence scope",
+      "purpose": "Refresh snapshot from storage event; preserve unavailable memory; mark unavailable on read failure",
+      "branches": [
+        {
+          "id": "unavailable-skip",
+          "tests": [],
+          "result": "NOT TESTED",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "read-fails",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "a storage read failure preserves the current session for export",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "read-valid-or-invalid",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "concurrent tabs preserve independent edits and merge session fields",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            },
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "finishing in one tab and updating preferences in another preserves both saves",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "Untested branches are explicit; PASS means referenced assertions executed, not mathematical path completeness."
+    },
+    {
+      "symbol": "src/persistence.js:initialize",
+      "kind": "persistence scope",
+      "purpose": "Locked initial read and seed empty storage; keep temporary edits; handle read/write failure",
+      "branches": [
+        {
+          "id": "empty-store-seed",
+          "tests": [
+            {
+              "path": "tests/workflows.spec.js",
+              "title": "personal training workflow persists routines, sessions and calculated progress",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "unavailable-before-or-during-init",
+          "tests": [
+            {
+              "path": "unit/persistence.test.js",
+              "title": "initialization and mutations handle a rejecting Web Locks API",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "invalid-store",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "recovery distinguishes an invalid backup from a failed storage write",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "queued-init-does-not-replace-temp",
+          "tests": [],
+          "result": "NOT TESTED",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "Untested branches are explicit; PASS means referenced assertions executed, not mathematical path completeness."
+    },
+    {
+      "symbol": "src/persistence.js:commit ordinary",
+      "kind": "persistence scope",
+      "purpose": "Read latest state, reject corrupt data, fall back to memory, apply mutation and persist",
+      "branches": [
+        {
+          "id": "reject-corrupt-store",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "recovery distinguishes an invalid backup from a failed storage write",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "storage-unavailable-temporary-edit",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "denied storage stays usable and accurately reports temporary data",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            },
+            {
+              "path": "tests/persistence.spec.js",
+              "title": "rejected Web Locks keep the app usable without unhandled errors",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "successful-write",
+          "tests": [
+            {
+              "path": "unit/persistence.test.js",
+              "title": "two repositories serialize independent mutations without losing fields",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "write-failure-publishes-temporary",
+          "tests": [
+            {
+              "path": "tests/persistence.spec.js",
+              "title": "restore after quota recovery preserves temporary edits and saved originals",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "validation-error",
+          "tests": [],
+          "result": "NOT TESTED",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "Untested branches are explicit; PASS means referenced assertions executed, not mathematical path completeness."
+    },
+    {
+      "symbol": "src/persistence.js:commit recovery",
+      "kind": "persistence scope",
+      "purpose": "Check freshness, preserve original snapshots, replace primary data safely",
+      "branches": [
+        {
+          "id": "expected-raw-or-revision-conflict",
+          "tests": [
+            {
+              "path": "unit/persistence.test.js",
+              "title": "temporary mode advances revisions and rejects a stale restore confirmation",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            },
+            {
+              "path": "unit/persistence.test.js",
+              "title": "recovery will not overwrite another tab's replacement of corrupt data",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            },
+            {
+              "path": "tests/persistence-release.spec.js",
+              "title": "a valid backup reviewed before another tab saves is rejected without replacing current data",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            },
+            {
+              "path": "tests/persistence-release.spec.js",
+              "title": "corrupt-data recovery refuses to replace a newer restore from another tab",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "unavailable-storage",
+          "tests": [
+            {
+              "path": "unit/persistence.test.js",
+              "title": "unreadable storage blocks replacement and leaves in-memory data intact",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "preserve-disk-and-memory",
+          "tests": [
+            {
+              "path": "unit/persistence.test.js",
+              "title": "restoring from temporary mode preserves both original disk and memory",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            },
+            {
+              "path": "tests/persistence.spec.js",
+              "title": "restore after quota recovery preserves temporary edits and saved originals",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "preserve-write-fails",
+          "tests": [
+            {
+              "path": "unit/persistence.test.js",
+              "title": "failed preservation never replaces the current workspace",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "successful-repeated-recovery",
+          "tests": [
+            {
+              "path": "unit/persistence.test.js",
+              "title": "repeated recoveries in the same millisecond keep distinct originals",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        }
+      ],
+      "result": "PASS",
+      "residualGap": "Untested branches are explicit; PASS means referenced assertions executed, not mathematical path completeness."
+    },
+    {
+      "symbol": "src/hooks/useWorkoutStore.js:commit and effects",
+      "kind": "persistence scope",
+      "purpose": "Pending-write tracking, beforeunload warning, storage-event filtering, repository initialization",
+      "branches": [
+        {
+          "id": "pending-unload-warning",
+          "tests": [],
+          "result": "NOT TESTED",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "relevant-storage-event",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "concurrent tabs preserve independent edits and merge session fields",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            },
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "finishing in one tab and updating preferences in another preserves both saves",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "irrelevant-key-event",
+          "tests": [],
+          "result": "NOT TESTED",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "pending-counter-finally",
+          "tests": [],
+          "result": "NOT TESTED",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "Untested branches are explicit; PASS means referenced assertions executed, not mathematical path completeness."
+    },
+    {
+      "symbol": "src/components/SavedField.jsx:input lifecycle",
+      "kind": "persistence scope",
+      "purpose": "Synchronous draft update and blur synchronization",
+      "branches": [
+        {
+          "id": "focused-edit-does-not-clobber",
+          "tests": [
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "fast typing persists complete values and a valid backup restores from recovery",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            },
+            {
+              "path": "tests/persistence.spec.js",
+              "title": "repeated concurrent profile and session writes preserve both fields",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "unfocused-prop-update-syncs",
+          "tests": [],
+          "result": "NOT TESTED",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "Untested branches are explicit; PASS means referenced assertions executed, not mathematical path completeness."
+    },
+    {
+      "symbol": "src/App.jsx:save/restore handlers",
+      "kind": "persistence scope",
+      "purpose": "Mutation-level stale guards, status messages, navigation and recovery options",
+      "branches": [
+        {
+          "id": "normal-change-saved-and-temporary",
+          "tests": [
+            {
+              "path": "tests/workflows.spec.js",
+              "title": "personal training workflow persists routines, sessions and calculated progress",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            },
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "denied storage stays usable and accurately reports temporary data",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "stale-profile/routine/session/history",
+          "tests": [
+            {
+              "path": "tests/persistence.spec.js",
+              "title": "starting stale routine details cannot silently use old prescriptions",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            },
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "stale routine drafts cannot overwrite newer tab changes",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            },
+            {
+              "path": "tests/regressions.spec.js",
+              "title": "concurrent tabs preserve independent edits and merge session fields",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "NOT TESTED",
+          "coverageLimit": "Referenced tests do not establish every clause of this grouped branch."
+        },
+        {
+          "id": "restore-conflict",
+          "tests": [
+            {
+              "path": "unit/persistence.test.js",
+              "title": "temporary mode advances revisions and rejects a stale restore confirmation",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            },
+            {
+              "path": "unit/persistence.test.js",
+              "title": "recovery will not overwrite another tab's replacement of corrupt data",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            },
+            {
+              "path": "tests/persistence-release.spec.js",
+              "title": "a valid backup reviewed before another tab saves is rejected without replacing current data",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            },
+            {
+              "path": "tests/persistence-release.spec.js",
+              "title": "corrupt-data recovery refuses to replace a newer restore from another tab",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "repeated-concurrent-note-write-order",
+          "tests": [
+            {
+              "path": "tests/persistence.spec.js",
+              "title": "repeated concurrent profile and session writes preserve both fields",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "Untested branches are explicit; PASS means referenced assertions executed, not mathematical path completeness."
+    },
+    {
+      "symbol": "src/components/Preferences.jsx:Settings.importBackup",
+      "kind": "persistence scope",
+      "purpose": "Read selected backup file asynchronously, update preview/error, and clear the input for a later same-file selection",
+      "branches": [
+        {
+          "id": "latest-valid-selection-preview-and-restore",
+          "tests": [
+            {
+              "path": "tests/persistence-release.spec.js",
+              "title": "the latest selected backup keeps its preview when an earlier file read finishes later",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "superseded-valid-read-ignored",
+          "tests": [
+            {
+              "path": "tests/persistence-release.spec.js",
+              "title": "the latest selected backup keeps its preview when an earlier file read finishes later",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "superseded-invalid-read-error-ignored",
+          "tests": [
+            {
+              "path": "tests/persistence-release.spec.js",
+              "title": "a late invalid import cannot clear the latest valid backup or add its error",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "invalid-latest-selection-error",
+          "tests": [
+            {
+              "path": "tests/security-release.spec.js",
+              "title": "malformed import reports failure and leaves the current workspace untouched",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        },
+        {
+          "id": "latest-selection-clears-old-preview-and-error-before-await",
+          "tests": [
+            {
+              "path": "tests/persistence-release.spec.js",
+              "title": "a late invalid import cannot clear the latest valid backup or add its error",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "chromium"
+            }
+          ],
+          "result": "NOT TESTED",
+          "coverageLimit": "Referenced tests do not establish every clause of this grouped branch."
+        },
+        {
+          "id": "size-limit-failure-before-file-read",
+          "tests": [
+            {
+              "path": "unit/security-release.test.js",
+              "title": "oversized backup files are rejected before their contents are read",
+              "result": "PASS",
+              "evidence": "verification-results.json",
+              "project": "node"
+            }
+          ],
+          "result": "PASS",
+          "coverageLimit": "Referenced assertions only; no exhaustive path proof."
+        }
+      ],
+      "result": "NOT TESTED",
+      "residualGap": "Untested branches are explicit; PASS means referenced assertions executed, not mathematical path completeness."
+    }
+  ]
+}

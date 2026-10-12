@@ -1,0 +1,2305 @@
+{
+  "method": "Crosswalk from the QA Babel AST source inventory to the semantic UI interaction inventory. It is intentionally many-to-many: repeated template instances share one semantic ID where behavior matches, while one shared component can represent multiple state-specific IDs. Structural forms and the reusable Button implementation receive explicit NOT APPLICABLE reasons and are accounted through concrete submit/call-site controls.",
+  "sourceInventory": "source-inventory.json",
+  "semanticInventory": "interaction-matrix.json",
+  "summary": {
+    "sourceControlTemplates": 108,
+    "crosswalkRows": 108,
+    "mappedTemplates": 104,
+    "notApplicableTemplates": 4,
+    "uniqueSemanticIds": 108,
+    "semanticRows": 108
+  },
+  "controls": [
+    {
+      "source": {
+        "file": "src/App.jsx",
+        "line": 206,
+        "tag": "a",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["global-skip-content"],
+      "semanticCoverage": [
+        {
+          "id": "global-skip-content",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/App.jsx",
+        "line": 289,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["workout-empty-start"],
+      "semanticCoverage": [
+        {
+          "id": "workout-empty-start",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/App.jsx",
+        "line": 390,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["routine-detail-start"],
+      "semanticCoverage": [
+        {
+          "id": "routine-detail-start",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/App.jsx",
+        "line": 400,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["routine-detail-start"],
+      "semanticCoverage": [
+        {
+          "id": "routine-detail-start",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/App.jsx",
+        "line": 426,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["workout-discard-keep", "routine-delete-keep"],
+      "semanticCoverage": [
+        {
+          "id": "workout-discard-keep",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "routine-delete-keep",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "One static component/template serves several state-specific semantic interactions.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/App.jsx",
+        "line": 429,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["workout-discard-confirm", "routine-delete-confirm"],
+      "semanticCoverage": [
+        {
+          "id": "workout-discard-confirm",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "routine-delete-confirm",
+          "result": "NOT TESTED",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "One static component/template serves several state-specific semantic interactions.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/ErrorBoundary.jsx",
+        "line": 18,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["error-boundary-download"],
+      "semanticCoverage": [
+        {
+          "id": "error-boundary-download",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/ErrorBoundary.jsx",
+        "line": 37,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["error-boundary-reload"],
+      "semanticCoverage": [
+        {
+          "id": "error-boundary-reload",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/ExerciseGuide.jsx",
+        "line": 23,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["exercise-guide-close"],
+      "semanticCoverage": [
+        {
+          "id": "exercise-guide-close",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/HistoryEditor.jsx",
+        "line": 68,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["history-editor-discard-choice"],
+      "semanticCoverage": [
+        {
+          "id": "history-editor-discard-choice",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/HistoryEditor.jsx",
+        "line": 71,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["history-editor-discard-choice"],
+      "semanticCoverage": [
+        {
+          "id": "history-editor-discard-choice",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/HistoryEditor.jsx",
+        "line": 77,
+        "tag": "form",
+        "handlers": ["onSubmit"],
+        "accessibleLabel": null
+      },
+      "semanticIds": [],
+      "semanticCoverage": [],
+      "mappingStatus": "NOT APPLICABLE",
+      "mappingNote": null,
+      "notApplicableReason": "Form wrapper; its submit interaction is exposed by the Save corrections submit control at HistoryEditor.jsx:185."
+    },
+    {
+      "source": {
+        "file": "src/components/HistoryEditor.jsx",
+        "line": 80,
+        "tag": "input",
+        "handlers": ["onChange"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["history-editor-name"],
+      "semanticCoverage": [
+        {
+          "id": "history-editor-name",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/HistoryEditor.jsx",
+        "line": 112,
+        "tag": "input",
+        "handlers": ["onChange"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["history-editor-values"],
+      "semanticCoverage": [
+        {
+          "id": "history-editor-values",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/HistoryEditor.jsx",
+        "line": 131,
+        "tag": "input",
+        "handlers": ["onChange"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["history-editor-values"],
+      "semanticCoverage": [
+        {
+          "id": "history-editor-values",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/HistoryEditor.jsx",
+        "line": 149,
+        "tag": "input",
+        "handlers": ["onChange"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["history-editor-keep-set"],
+      "semanticCoverage": [
+        {
+          "id": "history-editor-keep-set",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/HistoryEditor.jsx",
+        "line": 165,
+        "tag": "textarea",
+        "handlers": ["onChange"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["history-editor-notes"],
+      "semanticCoverage": [
+        {
+          "id": "history-editor-notes",
+          "result": "NOT TESTED",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/HistoryEditor.jsx",
+        "line": 182,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["history-editor-cancel-dirty"],
+      "semanticCoverage": [
+        {
+          "id": "history-editor-cancel-dirty",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/HistoryEditor.jsx",
+        "line": 185,
+        "tag": "Button",
+        "handlers": [],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["history-editor-save-invalid", "history-editor-save"],
+      "semanticCoverage": [
+        {
+          "id": "history-editor-save-invalid",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "history-editor-save",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "One static component/template serves several state-specific semantic interactions.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Insights.jsx",
+        "line": 41,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["history-empty-start"],
+      "semanticCoverage": [
+        {
+          "id": "history-empty-start",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Insights.jsx",
+        "line": 50,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["history-row-open"],
+      "semanticCoverage": [
+        {
+          "id": "history-row-open",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Insights.jsx",
+        "line": 106,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["history-delete-keep"],
+      "semanticCoverage": [
+        {
+          "id": "history-delete-keep",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Insights.jsx",
+        "line": 109,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["history-delete-confirm"],
+      "semanticCoverage": [
+        {
+          "id": "history-delete-confirm",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Insights.jsx",
+        "line": 166,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["history-delete-open"],
+      "semanticCoverage": [
+        {
+          "id": "history-delete-open",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Insights.jsx",
+        "line": 170,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["history-edit-open"],
+      "semanticCoverage": [
+        {
+          "id": "history-edit-open",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Insights.jsx",
+        "line": 254,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["progress-empty-start"],
+      "semanticCoverage": [
+        {
+          "id": "progress-empty-start",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Library.jsx",
+        "line": 47,
+        "tag": "input",
+        "handlers": ["onChange"],
+        "accessibleLabel": "Search exercise library"
+      },
+      "semanticIds": ["library-search"],
+      "semanticCoverage": [
+        {
+          "id": "library-search",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Library.jsx",
+        "line": 54,
+        "tag": "select",
+        "handlers": ["onChange"],
+        "accessibleLabel": "Filter by equipment"
+      },
+      "semanticIds": ["library-equipment-filter"],
+      "semanticCoverage": [
+        {
+          "id": "library-equipment-filter",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Library.jsx",
+        "line": 76,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["library-muscle-filter"],
+      "semanticCoverage": [
+        {
+          "id": "library-muscle-filter",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Library.jsx",
+        "line": 98,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["library-card-guide"],
+      "semanticCoverage": [
+        {
+          "id": "library-card-guide",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Library.jsx",
+        "line": 124,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["library-clear-filters"],
+      "semanticCoverage": [
+        {
+          "id": "library-clear-filters",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Navigation.jsx",
+        "line": 90,
+        "tag": "a",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["navigation-mobile-brand"],
+      "semanticCoverage": [
+        {
+          "id": "navigation-mobile-brand",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Navigation.jsx",
+        "line": 100,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": "Toggle navigation"
+      },
+      "semanticIds": ["navigation-mobile-toggle"],
+      "semanticCoverage": [
+        {
+          "id": "navigation-mobile-toggle",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Navigation.jsx",
+        "line": 112,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": "Close navigation"
+      },
+      "semanticIds": ["navigation-mobile-shade"],
+      "semanticCoverage": [
+        {
+          "id": "navigation-mobile-shade",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Navigation.jsx",
+        "line": 129,
+        "tag": "a",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["navigation-desktop-brand"],
+      "semanticCoverage": [
+        {
+          "id": "navigation-desktop-brand",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Navigation.jsx",
+        "line": 141,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["navigation-main-items"],
+      "semanticCoverage": [
+        {
+          "id": "navigation-main-items",
+          "result": "NOT TESTED",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Navigation.jsx",
+        "line": 154,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["navigation-active-session"],
+      "semanticCoverage": [
+        {
+          "id": "navigation-active-session",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Navigation.jsx",
+        "line": 163,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["navigation-settings"],
+      "semanticCoverage": [
+        {
+          "id": "navigation-settings",
+          "result": "NOT TESTED",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Navigation.jsx",
+        "line": 171,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["navigation-profile-shortcut"],
+      "semanticCoverage": [
+        {
+          "id": "navigation-profile-shortcut",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Notification.jsx",
+        "line": 25,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": "Dismiss notification"
+      },
+      "semanticIds": ["toast-dismiss"],
+      "semanticCoverage": [
+        {
+          "id": "toast-dismiss",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Overview.jsx",
+        "line": 72,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["overview-start-cta"],
+      "semanticCoverage": [
+        {
+          "id": "overview-start-cta",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Overview.jsx",
+        "line": 91,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["overview-this-week"],
+      "semanticCoverage": [
+        {
+          "id": "overview-this-week",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Overview.jsx",
+        "line": 107,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": "Previous week"
+      },
+      "semanticIds": ["overview-calendar-previous"],
+      "semanticCoverage": [
+        {
+          "id": "overview-calendar-previous",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Overview.jsx",
+        "line": 120,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["overview-calendar-day"],
+      "semanticCoverage": [
+        {
+          "id": "overview-calendar-day",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Overview.jsx",
+        "line": 138,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": "Next week"
+      },
+      "semanticIds": ["overview-calendar-next"],
+      "semanticCoverage": [
+        {
+          "id": "overview-calendar-next",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Overview.jsx",
+        "line": 163,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["overview-edit-schedule-selected-day"],
+      "semanticCoverage": [
+        {
+          "id": "overview-edit-schedule-selected-day",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Overview.jsx",
+        "line": 192,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["overview-start-cta"],
+      "semanticCoverage": [
+        {
+          "id": "overview-start-cta",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Overview.jsx",
+        "line": 254,
+        "tag": "select",
+        "handlers": ["onChange"],
+        "accessibleLabel": "Choose next session"
+      },
+      "semanticIds": ["overview-preferred-routine"],
+      "semanticCoverage": [
+        {
+          "id": "overview-preferred-routine",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Overview.jsx",
+        "line": 270,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["overview-view-routines"],
+      "semanticCoverage": [
+        {
+          "id": "overview-view-routines",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Overview.jsx",
+        "line": 283,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["overview-empty-create"],
+      "semanticCoverage": [
+        {
+          "id": "overview-empty-create",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Overview.jsx",
+        "line": 291,
+        "tag": "RoutineCard",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["overview-routine-card"],
+      "semanticCoverage": [
+        {
+          "id": "overview-routine-card",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Overview.jsx",
+        "line": 303,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["overview-schedule-banner"],
+      "semanticCoverage": [
+        {
+          "id": "overview-schedule-banner",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Preferences.jsx",
+        "line": 55,
+        "tag": "form",
+        "handlers": ["onSubmit"],
+        "accessibleLabel": null
+      },
+      "semanticIds": [],
+      "semanticCoverage": [],
+      "mappingStatus": "NOT APPLICABLE",
+      "mappingNote": null,
+      "notApplicableReason": "Form wrapper; its submit interaction is exposed by the Save preferences submit button at Preferences.jsx:83."
+    },
+    {
+      "source": {
+        "file": "src/components/Preferences.jsx",
+        "line": 59,
+        "tag": "input",
+        "handlers": ["onChange"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["settings-name"],
+      "semanticCoverage": [
+        {
+          "id": "settings-name",
+          "result": "NOT TESTED",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Preferences.jsx",
+        "line": 69,
+        "tag": "select",
+        "handlers": ["onChange"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["settings-weekly-goal"],
+      "semanticCoverage": [
+        {
+          "id": "settings-weekly-goal",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Preferences.jsx",
+        "line": 83,
+        "tag": "Button",
+        "handlers": [],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["settings-save-profile"],
+      "semanticCoverage": [
+        {
+          "id": "settings-save-profile",
+          "result": "NOT TESTED",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Preferences.jsx",
+        "line": 103,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["settings-export"],
+      "semanticCoverage": [
+        {
+          "id": "settings-export",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Preferences.jsx",
+        "line": 121,
+        "tag": "input",
+        "handlers": ["onChange"],
+        "accessibleLabel": "Import backup"
+      },
+      "semanticIds": ["settings-import-picker"],
+      "semanticCoverage": [
+        {
+          "id": "settings-import-picker",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Preferences.jsx",
+        "line": 157,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["settings-import-cancel"],
+      "semanticCoverage": [
+        {
+          "id": "settings-import-cancel",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Preferences.jsx",
+        "line": 164,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["settings-import-restore"],
+      "semanticCoverage": [
+        {
+          "id": "settings-import-restore",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Preferences.jsx",
+        "line": 207,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["schedule-discard-choice"],
+      "semanticCoverage": [
+        {
+          "id": "schedule-discard-choice",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Preferences.jsx",
+        "line": 210,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["schedule-discard-choice"],
+      "semanticCoverage": [
+        {
+          "id": "schedule-discard-choice",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Preferences.jsx",
+        "line": 231,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["schedule-day-toggle"],
+      "semanticCoverage": [
+        {
+          "id": "schedule-day-toggle",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Preferences.jsx",
+        "line": 253,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["schedule-save"],
+      "semanticCoverage": [
+        {
+          "id": "schedule-save",
+          "result": "NOT TESTED",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Recovery.jsx",
+        "line": 65,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["recovery-download-original"],
+      "semanticCoverage": [
+        {
+          "id": "recovery-download-original",
+          "result": "NOT TESTED",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Recovery.jsx",
+        "line": 81,
+        "tag": "input",
+        "handlers": ["onChange"],
+        "accessibleLabel": "Restore recovery backup"
+      },
+      "semanticIds": ["recovery-import-picker"],
+      "semanticCoverage": [
+        {
+          "id": "recovery-import-picker",
+          "result": "NOT TESTED",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Recovery.jsx",
+        "line": 101,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["recovery-fresh-keep"],
+      "semanticCoverage": [
+        {
+          "id": "recovery-fresh-keep",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Recovery.jsx",
+        "line": 108,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["recovery-fresh-reset"],
+      "semanticCoverage": [
+        {
+          "id": "recovery-fresh-reset",
+          "result": "NOT TESTED",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Recovery.jsx",
+        "line": 113,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["recovery-fresh-open"],
+      "semanticCoverage": [
+        {
+          "id": "recovery-fresh-open",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Routines.jsx",
+        "line": 24,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["routines-create"],
+      "semanticCoverage": [
+        {
+          "id": "routines-create",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Routines.jsx",
+        "line": 37,
+        "tag": "RoutineCard",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["routines-card"],
+      "semanticCoverage": [
+        {
+          "id": "routines-card",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Routines.jsx",
+        "line": 39,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["routines-create"],
+      "semanticCoverage": [
+        {
+          "id": "routines-create",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Routines.jsx",
+        "line": 92,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": "Delete routine"
+      },
+      "semanticIds": ["routine-detail-delete-open"],
+      "semanticCoverage": [
+        {
+          "id": "routine-detail-delete-open",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Routines.jsx",
+        "line": 99,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["routine-detail-edit"],
+      "semanticCoverage": [
+        {
+          "id": "routine-detail-edit",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Routines.jsx",
+        "line": 103,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["routine-detail-start"],
+      "semanticCoverage": [
+        {
+          "id": "routine-detail-start",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Routines.jsx",
+        "line": 242,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["routine-editor-discard-keep"],
+      "semanticCoverage": [
+        {
+          "id": "routine-editor-discard-keep",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Routines.jsx",
+        "line": 245,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["routine-editor-discard-confirm"],
+      "semanticCoverage": [
+        {
+          "id": "routine-editor-discard-confirm",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Routines.jsx",
+        "line": 251,
+        "tag": "form",
+        "handlers": ["onSubmit"],
+        "accessibleLabel": null
+      },
+      "semanticIds": [],
+      "semanticCoverage": [],
+      "mappingStatus": "NOT APPLICABLE",
+      "mappingNote": null,
+      "notApplicableReason": "Form wrapper; its submit interaction is exposed by the Save routine submit button at Routines.jsx:413."
+    },
+    {
+      "source": {
+        "file": "src/components/Routines.jsx",
+        "line": 254,
+        "tag": "input",
+        "handlers": ["onChange"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["routine-editor-name"],
+      "semanticCoverage": [
+        {
+          "id": "routine-editor-name",
+          "result": "NOT TESTED",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Routines.jsx",
+        "line": 264,
+        "tag": "input",
+        "handlers": ["onChange"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["routine-editor-duration"],
+      "semanticCoverage": [
+        {
+          "id": "routine-editor-duration",
+          "result": "NOT TESTED",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Routines.jsx",
+        "line": 285,
+        "tag": "input",
+        "handlers": ["onChange"],
+        "accessibleLabel": "Search exercises for routine"
+      },
+      "semanticIds": ["routine-editor-search"],
+      "semanticCoverage": [
+        {
+          "id": "routine-editor-search",
+          "result": "NOT TESTED",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Routines.jsx",
+        "line": 313,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["routine-editor-exercise-toggle"],
+      "semanticCoverage": [
+        {
+          "id": "routine-editor-exercise-toggle",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Routines.jsx",
+        "line": 349,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["routine-editor-move-up"],
+      "semanticCoverage": [
+        {
+          "id": "routine-editor-move-up",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Routines.jsx",
+        "line": 358,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["routine-editor-move-down"],
+      "semanticCoverage": [
+        {
+          "id": "routine-editor-move-down",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Routines.jsx",
+        "line": 377,
+        "tag": "input",
+        "handlers": ["onChange"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["routine-editor-prescriptions"],
+      "semanticCoverage": [
+        {
+          "id": "routine-editor-prescriptions",
+          "result": "NOT TESTED",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Routines.jsx",
+        "line": 410,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": [
+        "routine-editor-cancel-clean",
+        "routine-editor-cancel-dirty"
+      ],
+      "semanticCoverage": [
+        {
+          "id": "routine-editor-cancel-clean",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "routine-editor-cancel-dirty",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "One static component/template serves several state-specific semantic interactions.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Routines.jsx",
+        "line": 413,
+        "tag": "Button",
+        "handlers": [],
+        "accessibleLabel": null
+      },
+      "semanticIds": [
+        "routine-editor-save-invalid",
+        "routine-editor-save-valid"
+      ],
+      "semanticCoverage": [
+        {
+          "id": "routine-editor-save-invalid",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "routine-editor-save-valid",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "One static component/template serves several state-specific semantic interactions.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/SavedField.jsx",
+        "line": 17,
+        "tag": "Tag",
+        "handlers": ["onFocus", "onBlur", "onChange"],
+        "accessibleLabel": null
+      },
+      "semanticIds": [
+        "workout-set-weight",
+        "workout-set-reps",
+        "workout-session-notes"
+      ],
+      "semanticCoverage": [
+        {
+          "id": "workout-set-weight",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "workout-set-reps",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "workout-session-notes",
+          "result": "NOT TESTED",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "One static component/template serves several state-specific semantic interactions.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/UI.jsx",
+        "line": 11,
+        "tag": "button",
+        "handlers": [],
+        "accessibleLabel": null
+      },
+      "semanticIds": [],
+      "semanticCoverage": [],
+      "mappingStatus": "NOT APPLICABLE",
+      "mappingNote": null,
+      "notApplicableReason": "Reusable Button implementation; no standalone action exists without a call-site. Concrete Button instances are mapped at their source call sites."
+    },
+    {
+      "source": {
+        "file": "src/components/UI.jsx",
+        "line": 88,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": "Close dialog"
+      },
+      "semanticIds": [
+        "modal-close-shared",
+        "modal-escape-shared",
+        "modal-backdrop-shared",
+        "routine-detail-close",
+        "routine-editor-cancel-clean",
+        "routine-editor-cancel-dirty",
+        "exercise-guide-close",
+        "workout-discard-keep",
+        "workout-finish-keep",
+        "history-detail-close",
+        "history-editor-cancel-dirty",
+        "settings-import-cancel",
+        "schedule-close-clean",
+        "schedule-close-dirty"
+      ],
+      "semanticCoverage": [
+        {
+          "id": "modal-close-shared",
+          "result": "NOT TESTED",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "modal-escape-shared",
+          "result": "NOT TESTED",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "modal-backdrop-shared",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "routine-detail-close",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "routine-editor-cancel-clean",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "routine-editor-cancel-dirty",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "exercise-guide-close",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "workout-discard-keep",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "workout-finish-keep",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "history-detail-close",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "history-editor-cancel-dirty",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "settings-import-cancel",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "schedule-close-clean",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "schedule-close-dirty",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "The shared Modal implementation owns close-button, Escape, and backdrop behavior; state-specific owners remain separate semantic rows.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/UI.jsx",
+        "line": 103,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["overview-routine-card", "routines-card"],
+      "semanticCoverage": [
+        {
+          "id": "overview-routine-card",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "routines-card",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "One static component/template serves several state-specific semantic interactions.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Workout.jsx",
+        "line": 125,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["workout-back"],
+      "semanticCoverage": [
+        {
+          "id": "workout-back",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Workout.jsx",
+        "line": 133,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["workout-finish-invalid", "workout-finish-confirm"],
+      "semanticCoverage": [
+        {
+          "id": "workout-finish-invalid",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "workout-finish-confirm",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "One static component/template serves several state-specific semantic interactions.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Workout.jsx",
+        "line": 159,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": "Open rest timer"
+      },
+      "semanticIds": ["workout-rest-open"],
+      "semanticCoverage": [
+        {
+          "id": "workout-rest-open",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Workout.jsx",
+        "line": 169,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["workout-rest-skip-mobile"],
+      "semanticCoverage": [
+        {
+          "id": "workout-rest-skip-mobile",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Workout.jsx",
+        "line": 201,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["workout-instructions"],
+      "semanticCoverage": [
+        {
+          "id": "workout-instructions",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Workout.jsx",
+        "line": 231,
+        "tag": "SavedField",
+        "handlers": ["onChange"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["workout-set-weight"],
+      "semanticCoverage": [
+        {
+          "id": "workout-set-weight",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Workout.jsx",
+        "line": 250,
+        "tag": "SavedField",
+        "handlers": ["onChange"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["workout-set-reps"],
+      "semanticCoverage": [
+        {
+          "id": "workout-set-reps",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Workout.jsx",
+        "line": 268,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": [
+        "workout-set-complete-invalid",
+        "workout-set-complete",
+        "workout-set-uncomplete"
+      ],
+      "semanticCoverage": [
+        {
+          "id": "workout-set-complete-invalid",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "workout-set-complete",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "workout-set-uncomplete",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "One static component/template serves several state-specific semantic interactions.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Workout.jsx",
+        "line": 282,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["workout-add-set"],
+      "semanticCoverage": [
+        {
+          "id": "workout-add-set",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Workout.jsx",
+        "line": 308,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["workout-finish-invalid", "workout-finish-confirm"],
+      "semanticCoverage": [
+        {
+          "id": "workout-finish-invalid",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        },
+        {
+          "id": "workout-finish-confirm",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "One static component/template serves several state-specific semantic interactions.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Workout.jsx",
+        "line": 323,
+        "tag": "SavedField",
+        "handlers": ["onChange"],
+        "accessibleLabel": "Session notes"
+      },
+      "semanticIds": ["workout-session-notes"],
+      "semanticCoverage": [
+        {
+          "id": "workout-session-notes",
+          "result": "NOT TESTED",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Workout.jsx",
+        "line": 335,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["workout-discard-open"],
+      "semanticCoverage": [
+        {
+          "id": "workout-discard-open",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Workout.jsx",
+        "line": 371,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["workout-finish-keep"],
+      "semanticCoverage": [
+        {
+          "id": "workout-finish-keep",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Workout.jsx",
+        "line": 378,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["workout-finish-save"],
+      "semanticCoverage": [
+        {
+          "id": "workout-finish-save",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Workout.jsx",
+        "line": 422,
+        "tag": "button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["workout-rest-duration"],
+      "semanticCoverage": [
+        {
+          "id": "workout-rest-duration",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Workout.jsx",
+        "line": 442,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["workout-rest-start-pause"],
+      "semanticCoverage": [
+        {
+          "id": "workout-rest-start-pause",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    },
+    {
+      "source": {
+        "file": "src/components/Workout.jsx",
+        "line": 471,
+        "tag": "Button",
+        "handlers": ["onClick"],
+        "accessibleLabel": null
+      },
+      "semanticIds": ["workout-rest-skip-panel"],
+      "semanticCoverage": [
+        {
+          "id": "workout-rest-skip-panel",
+          "result": "PASS",
+          "evidence": "interaction-matrix.json"
+        }
+      ],
+      "mappingStatus": "MAPPED",
+      "mappingNote": "Static template maps to a semantic interaction row; behavior variants remain in the inventory.",
+      "notApplicableReason": null
+    }
+  ]
+}

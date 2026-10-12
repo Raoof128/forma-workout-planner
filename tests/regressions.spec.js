@@ -499,6 +499,16 @@ test("mobile rest controls stay reachable and expose instructions during logging
     page.getByRole("heading", { name: "How to perform" }),
   ).toBeVisible();
   await nav(page, "Got it");
+  await nav(page, "Skip rest");
+  await expect(page.locator(".mobile-rest-bar")).toContainText("00:00");
+  await expect.poll(async () => (await stored(page)).active.restEnd).toBeNull();
+  await expect
+    .poll(async () => (await stored(page)).active.restPaused)
+    .toBeNull();
+  await page.reload();
+  await expect(page.locator(".mobile-rest-bar")).toContainText("00:00");
+  expect((await stored(page)).active.restEnd).toBeNull();
+  expect((await stored(page)).active.restPaused).toBeNull();
   await page.screenshot({
     path: artifactPath("320-workout.png"),
     fullPage: true,

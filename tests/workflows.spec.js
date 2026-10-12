@@ -75,8 +75,33 @@ test("personal training workflow persists routines, sessions and calculated prog
   await expect(page.locator(".timer-value")).not.toHaveText("00:00");
   await page.getByRole("button", { name: "Skip", exact: true }).click();
   await expect(page.locator(".timer-value")).toHaveText("00:00");
+  await expect
+    .poll(async () =>
+      page.evaluate(
+        () => JSON.parse(localStorage.getItem("forma-v1")).active.restEnd,
+      ),
+    )
+    .toBeNull();
+  await expect
+    .poll(async () =>
+      page.evaluate(
+        () => JSON.parse(localStorage.getItem("forma-v1")).active.restPaused,
+      ),
+    )
+    .toBeNull();
   await page.reload();
   await expect(page).toHaveURL(/#workout$/);
+  await expect(page.locator(".timer-value")).toHaveText("00:00");
+  expect(
+    await page.evaluate(
+      () => JSON.parse(localStorage.getItem("forma-v1")).active.restEnd,
+    ),
+  ).toBeNull();
+  expect(
+    await page.evaluate(
+      () => JSON.parse(localStorage.getItem("forma-v1")).active.restPaused,
+    ),
+  ).toBeNull();
   await expect(page.locator(".set-done")).toHaveCount(1);
   await page
     .getByRole("button", {

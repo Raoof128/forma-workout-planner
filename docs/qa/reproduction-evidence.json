@@ -1,0 +1,17 @@
+{
+  "importRaceBeforeFix": "\nRunning 1 test using 1 worker\n\n(node:22318) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n  ✘  1 [system-chromium] › tests/persistence-release.spec.js:126:1 › the latest selected backup keeps its preview when an earlier file read finishes later (5.8s)\n\n\n  1) [system-chromium] › tests/persistence-release.spec.js:126:1 › the latest selected backup keeps its preview when an earlier file read finishes later \n\n    Error: expect(locator).toContainText(expected) failed\n\n    Locator: getByRole('dialog')\n    Expected substring: \"fast-backup-b.json\"\n    Received string:    \"Restore this backup?slow-backup-a.json contains 3 routines and 0 completed workouts.This replaces the current workspace. A copy of your current data will be preserved in this browser. Export it first if you want a downloadable copy.CancelRestore backup\"\n    Timeout: 5000ms\n\n    Call log:\n      - Expect \"toContainText\" getByRole('dialog') with timeout 5000ms\n      - waiting for getByRole('dialog')\n        14 × locator resolved to <dialog open=\"\" class=\"modal \" aria-labelledby=\"_r_0_\">…</dialog>\n           - unexpected value \"Restore this backup?slow-backup-a.json contains 3 routines and 0 completed workouts.This replaces the current workspace. A copy of your current data will be preserved in this browser. Export it first if you want a downloadable copy.CancelRestore backup\"\n\n\n      161 |   await expect(page.getByRole(\"dialog\")).toContainText(\"fast-backup-b.json\");\n      162 |   await page.evaluate(() => window.__releaseSlowRead());\n    > 163 |   await expect(page.getByRole(\"dialog\")).toContainText(\"fast-backup-b.json\");\n          |                                          ^\n      164 |   await expect(page.getByRole(\"dialog\")).not.toContainText(\n      165 |     \"slow-backup-a.json\",\n      166 |   );\n        at /workspace/forma-workout-planner/tests/persistence-release.spec.js:163:42\n\n    Error Context: ../forma-release-evidence/persistence/test-results/persistence-release-the-la-7bd21-er-file-read-finishes-later-system-chromium/error-context.md\n\n  1 failed\n    [system-chromium] › tests/persistence-release.spec.js:126:1 › the latest selected backup keeps its preview when an earlier file read finishes later \n",
+  "pinnedBrowserBlocker": "Download failed: server returned code 403 body Domain forbidden for https://cdn.playwright.dev/builds/cft/156.0.8078.4/linux64/chrome-linux64.zip",
+  "browserInstallationLogSha256": "c0f1a6ce08b842ef463a07f5f63ae653c2b284e0a51edd1363b2054c39498d6c",
+  "concurrencyRepeats": {
+    "passed": 20,
+    "failed": 0,
+    "flaky": 0,
+    "reportSha256": "3066a70ac532c80777b29c973ac898341e1d0498edc91bd44202d9a1fcea4304",
+    "conclusion": "Historical failure not reproduced; no causal repair claimed."
+  },
+  "docsAnchorRegression": {
+    "preFix": "Independent VM reproduction and regression failed: run-npm-ci absent because inline-code contents were stripped.",
+    "postFix": "Permanent unit test heading fragments retain inline-code text and omit fenced examples passes.",
+    "limitation": "Pre-fix unit console output was observed by specialist but not retained as a raw log."
+  }
+}

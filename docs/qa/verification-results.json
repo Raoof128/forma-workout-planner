@@ -1,0 +1,1389 @@
+{
+  "schemaVersion": 1,
+  "baseline": "a232ad2cee68f340c2102d6e5bf9a0c8ca9a9ba1",
+  "branch": "release/forma-readiness-audit",
+  "identity": "Content hashes identify tested source/test/config bytes. Final immutable commit is recorded in the handoff; this tracked file cannot contain its own commit SHA.",
+  "environment": {
+    "node": "24.19.0",
+    "npm": "11.9.0",
+    "playwright": "1.64.0",
+    "systemChromium": "154.0.8037.57",
+    "browserOverride": "/usr/bin/chromium",
+    "os": "Linux cloud container"
+  },
+  "runs": {
+    "development": {
+      "startTime": "2026-10-12T00:54:41.317Z",
+      "duration": 158550.95500000002,
+      "expected": 79,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "production": {
+      "startTime": "2026-10-12T00:57:21.149Z",
+      "duration": 9949.323,
+      "expected": 8,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "unit": {
+      "passed": 31,
+      "failed": 0
+    }
+  },
+  "commandChecks": [
+    {
+      "command": "npm ci --cache /workspace/.npm-cache --no-audit --no-fund",
+      "result": "PASS",
+      "logArtifact": "final-install.log",
+      "logSha256": "2a3e928328a1b300859ae20ef5798f690210f96bc50c4f4929657c606de4a6ab"
+    },
+    {
+      "command": "npm run lint",
+      "result": "PASS",
+      "logArtifact": "final-lint.log",
+      "logSha256": "f4ae80fab1ff2e070b0a5f98dc3b40a9f0bf5634afbbe8b77e5e337c26028bd5"
+    },
+    {
+      "command": "npm run format:check",
+      "result": "PASS",
+      "logArtifact": "final-format.log",
+      "logSha256": "aa477ca4c4c9d61f9a4b65dd48dac5cb2040d396e1f382a9728c5046ba15f568"
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS",
+      "logArtifact": "final-build.log",
+      "logSha256": "9beaf2be8d7817c78fab8cafcbfff992ab3085759943a6a2f0449ff966683c3b"
+    },
+    {
+      "command": "npm run test:unit",
+      "result": "PASS",
+      "logArtifact": "final-unit.log",
+      "logSha256": "0a3cd7d84d6e4b03bd8a4dabd03352d092af473fbc759d6d423e1cac1f8a92cc"
+    },
+    {
+      "command": "npm audit --omit=dev",
+      "result": "PASS",
+      "logArtifact": "final-audit.log",
+      "logSha256": "6d8c5c8f3d7684adb070417bd608d01ae90aa3dc26a65af03ffda4955f38d9a3"
+    },
+    {
+      "command": "npm run docs:check",
+      "result": "PASS",
+      "logArtifact": "final-docs.log",
+      "logSha256": "73cf26f76b2ef7f1ccea2ba8de0d73b519319a734a6ca76e95c683ba94e4589a"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "logArtifact": "final-diff.log",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "requiredBrowsers": [
+    {
+      "name": "chromium",
+      "status": "BLOCKED",
+      "reason": "browserType.launch: Executable doesn't exist at /workspace/.playwright-browsers/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell"
+    },
+    {
+      "name": "firefox",
+      "status": "BLOCKED",
+      "reason": "browserType.launch: Executable doesn't exist at /workspace/.playwright-browsers/firefox-1555/firefox/firefox"
+    },
+    {
+      "name": "webkit",
+      "status": "BLOCKED",
+      "reason": "browserType.launch: Executable doesn't exist at /workspace/.playwright-browsers/webkit-2370/pw_run.sh"
+    }
+  ],
+  "tests": [
+    {
+      "run": "development",
+      "path": "tests/accessibility.spec.js",
+      "title": "accessible pages and dialogs at 1536px",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 12735,
+      "retry": 0,
+      "attempts": 1,
+      "line": 8
+    },
+    {
+      "run": "development",
+      "path": "tests/accessibility.spec.js",
+      "title": "accessible pages and dialogs at 390px",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 10333,
+      "retry": 0,
+      "attempts": 1,
+      "line": 8
+    },
+    {
+      "run": "development",
+      "path": "tests/persistence-release.spec.js",
+      "title": "a valid backup reviewed before another tab saves is rejected without replacing current data",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2951,
+      "retry": 0,
+      "attempts": 1,
+      "line": 21
+    },
+    {
+      "run": "development",
+      "path": "tests/persistence-release.spec.js",
+      "title": "corrupt-data recovery refuses to replace a newer restore from another tab",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 3310,
+      "retry": 0,
+      "attempts": 1,
+      "line": 62
+    },
+    {
+      "run": "development",
+      "path": "tests/persistence-release.spec.js",
+      "title": "the latest selected backup keeps its preview when an earlier file read finishes later",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2113,
+      "retry": 0,
+      "attempts": 1,
+      "line": 126
+    },
+    {
+      "run": "development",
+      "path": "tests/persistence-release.spec.js",
+      "title": "a late invalid import cannot clear the latest valid backup or add its error",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2174,
+      "retry": 0,
+      "attempts": 1,
+      "line": 177
+    },
+    {
+      "run": "development",
+      "path": "tests/persistence.spec.js",
+      "title": "rejected Web Locks keep the app usable without unhandled errors",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 3541,
+      "retry": 0,
+      "attempts": 1,
+      "line": 5
+    },
+    {
+      "run": "development",
+      "path": "tests/persistence.spec.js",
+      "title": "missing secure-context UUID and locks still permit temporary routines and workouts",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2062,
+      "retry": 0,
+      "attempts": 1,
+      "line": 30
+    },
+    {
+      "run": "development",
+      "path": "tests/persistence.spec.js",
+      "title": "restore after quota recovery preserves temporary edits and saved originals",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 1482,
+      "retry": 0,
+      "attempts": 1,
+      "line": 55
+    },
+    {
+      "run": "development",
+      "path": "tests/persistence.spec.js",
+      "title": "starting stale routine details cannot silently use old prescriptions",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2728,
+      "retry": 0,
+      "attempts": 1,
+      "line": 97
+    },
+    {
+      "run": "development",
+      "path": "tests/persistence.spec.js",
+      "title": "fractional imported weights can be corrected and a future rest timer can pause",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 3248,
+      "retry": 0,
+      "attempts": 1,
+      "line": 129
+    },
+    {
+      "run": "development",
+      "path": "tests/persistence.spec.js",
+      "title": "repeated concurrent profile and session writes preserve both fields",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 7348,
+      "retry": 0,
+      "attempts": 1,
+      "line": 188
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "concurrent tabs preserve independent edits and merge session fields",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 3836,
+      "retry": 0,
+      "attempts": 1,
+      "line": 52
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "stale routine drafts cannot overwrite newer tab changes",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 5383,
+      "retry": 0,
+      "attempts": 1,
+      "line": 89
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "invalid JSON is preserved and recoverable",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 1764,
+      "retry": 0,
+      "attempts": 1,
+      "line": 111
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "invalid nested shape is preserved and recoverable",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 1800,
+      "retry": 0,
+      "attempts": 1,
+      "line": 111
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "unknown exercise is preserved and recoverable",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 1765,
+      "retry": 0,
+      "attempts": 1,
+      "line": 111
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "denied storage stays usable and accurately reports temporary data",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 3534,
+      "retry": 0,
+      "attempts": 1,
+      "line": 144
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "rest duration, running deadline and paused state survive routes and reload",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 3707,
+      "retry": 0,
+      "attempts": 1,
+      "line": 171
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "finish dialog traps keyboard focus and does not reset it on timer ticks",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 3410,
+      "retry": 0,
+      "attempts": 1,
+      "line": 200
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "mobile drawer keeps hidden controls out of tab order and traps open navigation",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 1722,
+      "retry": 0,
+      "attempts": 1,
+      "line": 229
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "dirty routine changes are retained and duration and prescriptions are preserved",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2875,
+      "retry": 0,
+      "attempts": 1,
+      "line": 261
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "hero names the active routine and starting another asks which session to keep",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2161,
+      "retry": 0,
+      "attempts": 1,
+      "line": 297
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "maximum length title keeps its start button inside the hero",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 1789,
+      "retry": 0,
+      "attempts": 1,
+      "line": 314
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "weekly bars use actual counts and eight progress bars fit 320px",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 1632,
+      "retry": 0,
+      "attempts": 1,
+      "line": 334
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "backup validation and export/import round trip preserve data",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2430,
+      "retry": 0,
+      "attempts": 1,
+      "line": 368
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "history correction and deletion recalculate progress; one rep uses actual load",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2882,
+      "retry": 0,
+      "attempts": 1,
+      "line": 403
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "hash navigation supports bookmarks and browser Back",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 1521,
+      "retry": 0,
+      "attempts": 1,
+      "line": 434
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "finishing in one tab and updating preferences in another preserves both saves",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 3676,
+      "retry": 0,
+      "attempts": 1,
+      "line": 447
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "mobile rest controls stay reachable and expose instructions during logging",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 4440,
+      "retry": 0,
+      "attempts": 1,
+      "line": 473
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "fast typing persists complete values and a valid backup restores from recovery",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 4134,
+      "retry": 0,
+      "attempts": 1,
+      "line": 518
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "a storage read failure preserves the current session for export",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 1819,
+      "retry": 0,
+      "attempts": 1,
+      "line": 552
+    },
+    {
+      "run": "development",
+      "path": "tests/regressions.spec.js",
+      "title": "recovery distinguishes an invalid backup from a failed storage write",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 1393,
+      "retry": 0,
+      "attempts": 1,
+      "line": 589
+    },
+    {
+      "run": "development",
+      "path": "tests/responsive.spec.js",
+      "title": "all screens and editing dialogs contain maximum content at 320px",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 7489,
+      "retry": 0,
+      "attempts": 1,
+      "line": 80
+    },
+    {
+      "run": "development",
+      "path": "tests/responsive.spec.js",
+      "title": "all screens and editing dialogs contain maximum content at 375px",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 6965,
+      "retry": 0,
+      "attempts": 1,
+      "line": 80
+    },
+    {
+      "run": "development",
+      "path": "tests/responsive.spec.js",
+      "title": "all screens and editing dialogs contain maximum content at 390px",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 6721,
+      "retry": 0,
+      "attempts": 1,
+      "line": 80
+    },
+    {
+      "run": "development",
+      "path": "tests/responsive.spec.js",
+      "title": "all screens and editing dialogs contain maximum content at 540px",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 7291,
+      "retry": 0,
+      "attempts": 1,
+      "line": 80
+    },
+    {
+      "run": "development",
+      "path": "tests/responsive.spec.js",
+      "title": "all screens and editing dialogs contain maximum content at 768px",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 7642,
+      "retry": 0,
+      "attempts": 1,
+      "line": 80
+    },
+    {
+      "run": "development",
+      "path": "tests/responsive.spec.js",
+      "title": "all screens and editing dialogs contain maximum content at 1024px",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 7406,
+      "retry": 0,
+      "attempts": 1,
+      "line": 80
+    },
+    {
+      "run": "development",
+      "path": "tests/responsive.spec.js",
+      "title": "all screens and editing dialogs contain maximum content at 1440px",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 7464,
+      "retry": 0,
+      "attempts": 1,
+      "line": 80
+    },
+    {
+      "run": "development",
+      "path": "tests/responsive.spec.js",
+      "title": "all screens and editing dialogs contain maximum content at 1536px",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 7808,
+      "retry": 0,
+      "attempts": 1,
+      "line": 80
+    },
+    {
+      "run": "development",
+      "path": "tests/responsive.spec.js",
+      "title": "all screens and editing dialogs contain maximum content at 1920px",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 7108,
+      "retry": 0,
+      "attempts": 1,
+      "line": 80
+    },
+    {
+      "run": "development",
+      "path": "tests/responsive.spec.js",
+      "title": "short landscape drawer can reach settings and return focus",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 1175,
+      "retry": 0,
+      "attempts": 1,
+      "line": 130
+    },
+    {
+      "run": "development",
+      "path": "tests/responsive.spec.js",
+      "title": "routine picker explains no matches and empty overview offers creation",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2933,
+      "retry": 0,
+      "attempts": 1,
+      "line": 142
+    },
+    {
+      "run": "development",
+      "path": "tests/responsive.spec.js",
+      "title": "local fonts load without a third-party font service and motion preference is respected",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 1311,
+      "retry": 0,
+      "attempts": 1,
+      "line": 156
+    },
+    {
+      "run": "development",
+      "path": "tests/responsive.spec.js",
+      "title": "history stays chronological after an unordered backup",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2407,
+      "retry": 0,
+      "attempts": 1,
+      "line": 182
+    },
+    {
+      "run": "development",
+      "path": "tests/responsive.spec.js",
+      "title": "imported timestamps with mixed precision sort by time",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2667,
+      "retry": 0,
+      "attempts": 1,
+      "line": 201
+    },
+    {
+      "run": "development",
+      "path": "tests/security-release.spec.js",
+      "title": "malformed import reports failure and leaves the current workspace untouched",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 881,
+      "retry": 0,
+      "attempts": 1,
+      "line": 13
+    },
+    {
+      "run": "development",
+      "path": "tests/security-release.spec.js",
+      "title": "dangerous imported text stays literal and application assets make no external requests",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2824,
+      "retry": 0,
+      "attempts": 1,
+      "line": 35
+    },
+    {
+      "run": "development",
+      "path": "tests/security-release.spec.js",
+      "title": "export failure is surfaced to the user",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 1067,
+      "retry": 0,
+      "attempts": 1,
+      "line": 117
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-controls.spec.js",
+      "title": "calendar navigation selects weeks and schedule saves only after confirmation",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 3603,
+      "retry": 0,
+      "attempts": 1,
+      "line": 22
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-controls.spec.js",
+      "title": "routine prescriptions reorder and delete confirmation preserves or removes the selected routine",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 9691,
+      "retry": 0,
+      "attempts": 1,
+      "line": 87
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-controls.spec.js",
+      "title": "dirty routine editor keeps drafts on cancel and discards only after confirmation",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2662,
+      "retry": 0,
+      "attempts": 1,
+      "line": 168
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-controls.spec.js",
+      "title": "library search, muscle and equipment filters compose and guide closes with keyboard",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2406,
+      "retry": 0,
+      "attempts": 1,
+      "line": 200
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-controls.spec.js",
+      "title": "profile name and weekly goal enforce their UI bounds and persist selected targets",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2178,
+      "retry": 0,
+      "attempts": 1,
+      "line": 246
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-controls.spec.js",
+      "title": "Settings backup restore can be cancelled or confirmed and changes persisted data",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2664,
+      "retry": 0,
+      "attempts": 1,
+      "line": 274
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-controls.spec.js",
+      "title": "recovery reset confirmation preserves the corrupt original until a confirmed reset",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2772,
+      "retry": 0,
+      "attempts": 1,
+      "line": 313
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-controls.spec.js",
+      "title": "navigation handles unknown hashes, forward and Back with page focus and title updates",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 1770,
+      "retry": 0,
+      "attempts": 1,
+      "line": 357
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-controls.spec.js",
+      "title": "mobile navigation and shared guide dialog support focus return and keyboard trapping at 375px",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2449,
+      "retry": 0,
+      "attempts": 1,
+      "line": 385
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-controls.spec.js",
+      "title": "error fallback downloads saved data, reports denied storage and reloads the workspace",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 1753,
+      "retry": 0,
+      "attempts": 1,
+      "line": 437
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-coverage-gaps.spec.js",
+      "title": "skip link, desktop brand, profile shortcut and active session navigation reach their targets",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 4709,
+      "retry": 0,
+      "attempts": 1,
+      "line": 45
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-coverage-gaps.spec.js",
+      "title": "preferred next routine updates the overview start target and creates that active session",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 4722,
+      "retry": 0,
+      "attempts": 1,
+      "line": 98
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-coverage-gaps.spec.js",
+      "title": "schedule opens from its overview banner and a clean close leaves the schedule unchanged",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2642,
+      "retry": 0,
+      "attempts": 1,
+      "line": 150
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-coverage-gaps.spec.js",
+      "title": "routine editor closes a clean draft directly and keeps invalid submissions open",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2415,
+      "retry": 0,
+      "attempts": 1,
+      "line": 174
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-coverage-gaps.spec.js",
+      "title": "history editor retains notes on keep, rejects removing every completed set, and discards without saving",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 4707,
+      "retry": 0,
+      "attempts": 1,
+      "line": 209
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-coverage-gaps.spec.js",
+      "title": "empty overview, workout, history and progress calls to action start the default routine",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 6197,
+      "retry": 0,
+      "attempts": 1,
+      "line": 256
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-coverage-gaps.spec.js",
+      "title": "keeping a history workout after opening deletion leaves its details and saved data intact",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2648,
+      "retry": 0,
+      "attempts": 1,
+      "line": 298
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-coverage-gaps.spec.js",
+      "title": "routine detail closes cleanly and workout Back returns to overview with the session active",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 3306,
+      "retry": 0,
+      "attempts": 1,
+      "line": 328
+    },
+    {
+      "run": "development",
+      "path": "tests/ui-coverage-gaps.spec.js",
+      "title": "history detail closes by button and backdrop, restores row focus, and stays open for inside clicks",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2322,
+      "retry": 0,
+      "attempts": 1,
+      "line": 374
+    },
+    {
+      "run": "development",
+      "path": "tests/workflows.spec.js",
+      "title": "personal training workflow persists routines, sessions and calculated progress",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 8085,
+      "retry": 0,
+      "attempts": 1,
+      "line": 3
+    },
+    {
+      "run": "development",
+      "path": "tests/workflows.spec.js",
+      "title": "mobile navigation, modal and active workout fit a phone",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2601,
+      "retry": 0,
+      "attempts": 1,
+      "line": 157
+    },
+    {
+      "run": "development",
+      "path": "tests/workout-release.spec.js",
+      "title": "set validation, completion undo, added sets, finish cancel and save preserve exact data",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 4305,
+      "retry": 0,
+      "attempts": 1,
+      "line": 42
+    },
+    {
+      "run": "development",
+      "path": "tests/workout-release.spec.js",
+      "title": "empty finish is blocked; discard can be canceled or confirmed; routine switch can resume, cancel, or replace",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 7085,
+      "retry": 0,
+      "attempts": 1,
+      "line": 154
+    },
+    {
+      "run": "development",
+      "path": "tests/workout-release.spec.js",
+      "title": "60, 90, and 120 second timers persist their deadlines and expiry clears timer state",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2656,
+      "retry": 0,
+      "attempts": 1,
+      "line": 236
+    },
+    {
+      "run": "development",
+      "path": "tests/workout-release.spec.js",
+      "title": "real-time rest timer smoke decrements and survives a reload",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 4199,
+      "retry": 0,
+      "attempts": 1,
+      "line": 283
+    },
+    {
+      "run": "development",
+      "path": "tests/workout-release.spec.js",
+      "title": "bodyweight logging counts completed sets with zero external-load volume and survives reload",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 2875,
+      "retry": 0,
+      "attempts": 1,
+      "line": 302
+    },
+    {
+      "run": "development",
+      "path": "tests/workout-release.spec.js",
+      "title": "history editor discard keeps persisted data unchanged and stale edits are rejected",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 3513,
+      "retry": 0,
+      "attempts": 1,
+      "line": 371
+    },
+    {
+      "run": "development",
+      "path": "tests/workout-release.spec.js",
+      "title": "2,000 completed workouts render correct aggregate progress within a practical bound",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 1752,
+      "retry": 0,
+      "attempts": 1,
+      "line": 438
+    },
+    {
+      "run": "development",
+      "path": "tests/workout-release.spec.js",
+      "title": "progress verifies 80 kg × 5 rounding, includes 12 reps, and excludes 13",
+      "project": "chromium",
+      "result": "PASS",
+      "durationMs": 1224,
+      "retry": 0,
+      "attempts": 1,
+      "line": 488
+    },
+    {
+      "run": "production",
+      "path": "tests/production.spec.js",
+      "title": "production settings, backup restore, and saved data survive reload",
+      "project": "production-chromium-desktop",
+      "result": "PASS",
+      "durationMs": 2471,
+      "retry": 0,
+      "attempts": 1,
+      "line": 51
+    },
+    {
+      "run": "production",
+      "path": "tests/production.spec.js",
+      "title": "production navigation works and the layout fits desktop and mobile viewports",
+      "project": "production-chromium-desktop",
+      "result": "PASS",
+      "durationMs": 1041,
+      "retry": 0,
+      "attempts": 1,
+      "line": 109
+    },
+    {
+      "run": "production",
+      "path": "tests/production.spec.js",
+      "title": "production workout can be completed, saved, and restored after reload",
+      "project": "production-chromium-desktop",
+      "result": "PASS",
+      "durationMs": 1981,
+      "retry": 0,
+      "attempts": 1,
+      "line": 139
+    },
+    {
+      "run": "production",
+      "path": "tests/production.spec.js",
+      "title": "production writes from concurrent tabs preserve profile and active workout",
+      "project": "production-chromium-desktop",
+      "result": "PASS",
+      "durationMs": 1397,
+      "retry": 0,
+      "attempts": 1,
+      "line": 182
+    },
+    {
+      "run": "production",
+      "path": "tests/production.spec.js",
+      "title": "production settings, backup restore, and saved data survive reload",
+      "project": "production-chromium-mobile",
+      "result": "PASS",
+      "durationMs": 2434,
+      "retry": 0,
+      "attempts": 1,
+      "line": 51
+    },
+    {
+      "run": "production",
+      "path": "tests/production.spec.js",
+      "title": "production navigation works and the layout fits desktop and mobile viewports",
+      "project": "production-chromium-mobile",
+      "result": "PASS",
+      "durationMs": 1463,
+      "retry": 0,
+      "attempts": 1,
+      "line": 109
+    },
+    {
+      "run": "production",
+      "path": "tests/production.spec.js",
+      "title": "production workout can be completed, saved, and restored after reload",
+      "project": "production-chromium-mobile",
+      "result": "PASS",
+      "durationMs": 2753,
+      "retry": 0,
+      "attempts": 1,
+      "line": 139
+    },
+    {
+      "run": "production",
+      "path": "tests/production.spec.js",
+      "title": "production writes from concurrent tabs preserve profile and active workout",
+      "project": "production-chromium-mobile",
+      "result": "PASS",
+      "durationMs": 1553,
+      "retry": 0,
+      "attempts": 1,
+      "line": 182
+    },
+    {
+      "run": "unit",
+      "path": "unit/docs-check.test.js",
+      "title": "heading fragments retain inline-code text and omit fenced examples",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/domain-release.test.js",
+      "title": "completed-set volume uses exact load × reps and ignores unfinished drafts",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/domain-release.test.js",
+      "title": "zero external load bodyweight work counts as a set without invented volume",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/domain-release.test.js",
+      "title": "estimated one-rep max keeps actual singles and computes 80 kg × 5 without early rounding",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/domain-release.test.js",
+      "title": "empty session aggregates are zero",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/persistence-release.test.js",
+      "title": "a commit remains single-application and temporary with a throwing locks getter",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/persistence-release.test.js",
+      "title": "a commit remains single-application and temporary with an unavailable locks API",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/persistence.test.js",
+      "title": "initialization and mutations handle a rejecting Web Locks API",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/persistence.test.js",
+      "title": "a lock rejection after initialization retains the edit once in memory",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/persistence.test.js",
+      "title": "a mutation error is never retried or partially adopted",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/persistence.test.js",
+      "title": "temporary mode advances revisions and rejects a stale restore confirmation",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/persistence.test.js",
+      "title": "restoring from temporary mode preserves both original disk and memory",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/persistence.test.js",
+      "title": "recovery will not overwrite another tab's replacement of corrupt data",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/persistence.test.js",
+      "title": "unreadable storage blocks replacement and leaves in-memory data intact",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/persistence.test.js",
+      "title": "repeated recoveries in the same millisecond keep distinct originals",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/persistence.test.js",
+      "title": "two repositories serialize independent mutations without losing fields",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/persistence.test.js",
+      "title": "failed preservation never replaces the current workspace",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/persistence.test.js",
+      "title": "loss of storage access on recovery keeps the invalid-data state",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/persistence.test.js",
+      "title": "task-local storage snapshots are refreshed and flushed while the lock is held",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/security-release.test.js",
+      "title": "backup parsing strips prototype-shaped unknown keys without polluting Object.prototype",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/security-release.test.js",
+      "title": "malformed JSON and schema-invalid backups are rejected",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/security-release.test.js",
+      "title": "oversized backup files are rejected before their contents are read",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/storage.test.js",
+      "title": "legacy version 1 backups receive revision and timer defaults",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/storage.test.js",
+      "title": "history with no completed sets cannot inflate workout counts",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/storage.test.js",
+      "title": "a session cannot be active and completed under the same ID",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/storage.test.js",
+      "title": "out-of-range timestamps are rejected before rendering or timer arithmetic",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/storage.test.js",
+      "title": "backup size is bounded before reading files and before parsing strings",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/storage.test.js",
+      "title": "completed-set validation permits a blank unfinished draft but not completed blanks",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/storage.test.js",
+      "title": "calendar calculations stay in Sydney across daylight-saving boundaries",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/storage.test.js",
+      "title": "training totals count completed sets and keep the actual single-rep load",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    },
+    {
+      "run": "unit",
+      "path": "unit/storage.test.js",
+      "title": "ID generation works when randomUUID is unavailable",
+      "project": "node",
+      "result": "PASS",
+      "retry": 0,
+      "attempts": 1
+    }
+  ],
+  "sha256": {
+    "src/App.jsx": "9f0eb5da185b783a8368d31cd3e850511c0477dc1224c6da6bf202d0458f8f46",
+    "src/components/ErrorBoundary.jsx": "088c45d21dc077bc2219b8d8f107b000a174ab45fc9c4490f57a7d35fc8a9a45",
+    "src/components/ExerciseGuide.jsx": "5c39ba0e32070092cb59677a71a562d69a738b0c7b6ae765ae064ae875e56aa5",
+    "src/components/HistoryEditor.jsx": "ed3cdb5362e4bbb57436f35355c9924f35218f0c74e9634224af97c700606c84",
+    "src/components/Insights.jsx": "7e059f2e238b0c23a8159838afb9b77348843cc43bc16fb3dca729cb0207187b",
+    "src/components/Library.jsx": "e20995a55cbf71b2d1730b28b8a6566e8c9a94cbd4cf1ae3810c5984de27374a",
+    "src/components/Navigation.jsx": "714337cb487042a0b764206e8edf9cad4d8526e367f5ad3de054aa002ba435e7",
+    "src/components/Notification.jsx": "d9b114f3653f71fe5f23cc89a93845b36baeb986e71ac0c0c87e075f06e44c05",
+    "src/components/Overview.jsx": "8bb4acbe369c0ebdda1e2957922adf9475b3ff0e04e3c9312734cff47b84e9e0",
+    "src/components/Preferences.jsx": "848e19594d4333a62a25485a2004159eac7a0b5bd170add030a528313e570a04",
+    "src/components/Recovery.jsx": "f30e2dbe415460a00cfdc838452e2692dc606c88da3445ef41580e24765a894c",
+    "src/components/Routines.jsx": "a03bc080d3b2e6846a1653f63ca5a9b56b38a7838afa593193a4a0bc57c8584f",
+    "src/components/SavedField.jsx": "185e921f6284a867b9a0b91f28c20a8736f81ad0a2863cf3acb39a1e18da11c7",
+    "src/components/UI.jsx": "4ec6d31cff4ce90aace72081bfa4c997c1bc6d6b234af5a6c6290d421fe4c443",
+    "src/components/Workout.jsx": "bbfc5a06dbd63ab2244c85be0e00eaaf87fdb0354cafacc2a9d34613682dc46f",
+    "src/data.js": "a4a6895231168182f9cd3588ea16a0e884610890bec592c8ee6d3e99f13fc2e2",
+    "src/hooks/useNavigation.js": "08b51960886806a0818c73a08e3d447b2e9690be3d9901bbee9a44bd96639fbc",
+    "src/hooks/useWorkoutStore.js": "a1fb5156987e09424687ae6f85ab145b737b8809b199c685f1d05840df04adcf",
+    "src/main.jsx": "52dab0dcdad5c0fec54392ded9273506740d418eff395ec4f23d0809ffb70703",
+    "src/persistence.js": "bbdfbb962cc62597fc698fa96989e0887e98ce8be90d4eefbc973de27e9cfbc7",
+    "src/storage.js": "577375de801fc0dbb08360724fc60965a3c023c874d82e106feef3f9a39a6dae",
+    "src/styles.css": "993ba66d66ab6c1f34ab16e569efbfdbeb18c04bb35afb2ece58ef821f4951a7",
+    "tests/accessibility.spec.js": "8dd6234797f429052559b68f999dc83ef4da0a586b5c374a6b9ddb9156fc5612",
+    "tests/helpers.js": "cf92012aea9b9d9c62a1ed415323965154b041bc42e5050e6d947d57bc4c174e",
+    "tests/persistence-release.spec.js": "9ff2e095e2c8c5534773fcb62725ae690171ca975c90299148e6120f2999bf49",
+    "tests/persistence.spec.js": "3e778e1b23969d7bb03e02efb88944b02eabe76367c368324a78cb9bbd6fe722",
+    "tests/production.spec.js": "ce98d2993d4f3fba84dd682ea783902ec5478ca9eacd388b4a7a1fa1edfe904f",
+    "tests/regressions.spec.js": "4b3590ec6563c9e526cc77e980273e898cf26f6b4838763ccef0de4fa3f3fada",
+    "tests/responsive.spec.js": "ee2e81d40bfd8d408f10a6395b56caf57ce95774d3dbf598e0e227bb9ea32ace",
+    "tests/security-release.spec.js": "3aa843798773ab4cdd058f029146895a8a9ecebb37f9f746c5241d60d4baf95b",
+    "tests/ui-controls.spec.js": "94c9893106a82cd4cdcbd61d833d4bdd87c0c52eda3f38ad93b2c0ac47dd4d5f",
+    "tests/ui-coverage-gaps.spec.js": "7e9422ad05855c7d3e262ad9da3a3dd375f3019dc79ee3556d75552c67605b6b",
+    "tests/workflows.spec.js": "b1da30d358ebbd1c5b534eee50924e39e12646c615a3896e63f82a258d0c045f",
+    "tests/workout-release.spec.js": "b5b17d1ec3c7c79db3f5f1e95be9e18ae273a1e94b67918aa10a39cc6a16bffd",
+    "unit/docs-check.test.js": "b32bdf7dc28395893f2f3ae95f967d9ba34960d743d628de9bf1cd062d3f4329",
+    "unit/domain-release.test.js": "308263adc40a664d38e52642c641d68e4f5f630d28d814ca188c94c71b3bed07",
+    "unit/persistence-release.test.js": "2a9ff2755011ee3eef249e0ff77af1a2a6314050e7841e91d97a1a94a08649f5",
+    "unit/persistence.test.js": "66deb86a9727b192289503195d8ba8d3db61742a57a7c5373a8663ba7eb28016",
+    "unit/security-release.test.js": "1529ea213a587f9562c7883924c6a9b93dc6bce2d06ca4e4a1195f8b0f23c9c0",
+    "unit/storage.test.js": "9e599dbfc155a428d69ac2e376e486413a979d52cb33e61f9dd7c07cc7d782c3",
+    "scripts/check-docs.mjs": "4d9213361cccd7eb799163990fca2037062e5e1e456546e22823d4f384efbda6",
+    "package.json": "dac6e62f0676fbc597e39cdcb031342da6b68cc0385649451b90a2635c262126",
+    "package-lock.json": "663faf69133cf7b821cb98065a8fa2f7fe9d193dae0d89ad6d387d2fff40e88d",
+    "playwright.config.js": "062d037da9b5efa4e36156947a860c24514276fd6f7d6520bd4cd6a89309784d",
+    "playwright.production.config.js": "2b3bdbb789b27ded89bc016a9ec513970b2964259ba3dd67f0cd3a6c30b59db4",
+    ".github/workflows/ci.yml": "90537b51bd32681ceb8afcc336b22f74ed14b1ab8e45b388fc9f650e9e6bbfe7"
+  }
+}

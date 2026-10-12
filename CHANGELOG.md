@@ -4,6 +4,9 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+- Add development/production browser matrices, focused interaction/domain/security regressions, release traceability, and a pinned least-privilege CI workflow.
+- Validate local documentation links and npm commands, including inline-code heading anchors.
+
 - Added sourced gym-equipment and workout research: 76 equipment families, 236 exercise candidates, workout formats, content-rights review, and a migration-first implementation roadmap. These are planning documents; the runtime library remains 16 exercises.
 
 - Added setup, user, architecture, data-model, deployment, testing, and contribution documentation.
@@ -12,6 +15,7 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 - Fixed rejected Web Locks, temporary-state revisions, stale recovery, preservation of unsaved originals, and recovery-key collisions.
 - Validated backup size, timestamp bounds, completed-history invariants, and active/history ID conflicts.
 - Added an ID fallback for temporary use on HTTP origins, stale-routine start protection, fractional-weight editing, and bounded paused rest timers.
+- Ignore stale asynchronous backup reads when a newer file has been selected, preserving the latest preview and suppressing errors from an older invalid file.
 
 ## 2026-10-12 — Frontend audit and polish
 

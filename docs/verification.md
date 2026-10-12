@@ -1,5 +1,13 @@
 # Verification record
 
+## Current release-readiness audit — 12 October 2026
+
+**NO-GO.** See the [current release report](qa/release-readiness.md), [interaction matrix](qa/interaction-matrix.json), [function matrix](qa/function-matrix.json), and [execution summaries](qa/verification-results.json).
+
+The current cloud audit passed 31 unit tests, 79 development cases in system Chromium 154, and eight actual-production-build cases across desktop/mobile Chromium emulation, with zero retries. Clean dependency installation, lint, formatting, build, production dependency audit (zero reported advisories), local documentation checks and patch whitespace checks passed. Twenty repeated concurrent profile/session scenarios passed, but a historical intermittent failure remains unexplained.
+
+This runtime could not install or launch pinned Chromium, Firefox or WebKit because downloads are blocked. The configured CI matrix has not been verified on GitHub. These limitations prevent release acceptance. The older Chromium/Firefox results below belong to earlier work and are preserved as historical evidence, not results rerun during this audit.
+
 ## Data-layer audit — 12 October 2026
 
 - `npm run lint`, `npm run format:check`, and `npm run build`: passed.
