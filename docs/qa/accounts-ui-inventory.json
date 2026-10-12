@@ -1,0 +1,662 @@
+{
+  "version": 1,
+  "updated": "2026-10-12",
+  "scope": "Account entry, authentication, member profile, security, training data and privacy controls in Account.jsx",
+  "statusLegend": {
+    "NOT TESTED": "No interaction evidence has been recorded.",
+    "PARTIAL": "A focused browser test covered only the evidence named here.",
+    "PASS": "The complete control path, including success and failure handling, was verified against its required backend state."
+  },
+  "controls": [
+    {
+      "id": "navigation.account",
+      "label": "Account",
+      "role": "button",
+      "source": "src/components/Navigation.jsx",
+      "prerequisite": "Any workspace state",
+      "expected": "Opens the Account route on desktop and mobile navigation.",
+      "status": "PARTIAL",
+      "evidence": "tests/accounts-ui.spec.js opens the route in Chromium."
+    },
+    {
+      "id": "auth.entry.create",
+      "label": "New to FORMA? Create account",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Guest",
+      "expected": "Shows registration fields and password guidance.",
+      "status": "PARTIAL",
+      "evidence": "tests/accounts-ui.spec.js opens the registration form and validates the password length constraint."
+    },
+    {
+      "id": "auth.signup.name",
+      "label": "Display name",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Registration form",
+      "expected": "Requires a non-empty member display name and limits it to 50 characters.",
+      "status": "PARTIAL",
+      "evidence": "Filled by tests/accounts-ui.spec.js; whitespace validation and server response are NOT TESTED."
+    },
+    {
+      "id": "auth.signup.email",
+      "label": "Email address",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Registration form",
+      "expected": "Uses native email validation and submits the address with registration.",
+      "status": "PARTIAL",
+      "evidence": "Filled by tests/accounts-ui.spec.js; server response is NOT TESTED."
+    },
+    {
+      "id": "auth.signup.password",
+      "label": "Password",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Registration form",
+      "expected": "Requires at least 15 characters and allows long passphrases.",
+      "status": "PARTIAL",
+      "evidence": "tests/accounts-ui.spec.js confirms a short value is invalid in Chromium."
+    },
+    {
+      "id": "auth.signup.submit",
+      "label": "Create account",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Valid registration fields",
+      "expected": "Calls signUp and gives non-enumerating verification guidance.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "auth.signin.entry",
+      "label": "Already have an account? Sign in",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Registration form",
+      "expected": "Returns to sign-in mode.",
+      "status": "PARTIAL",
+      "evidence": "tests/accounts-ui.spec.js returns to the Welcome back form in Chromium."
+    },
+    {
+      "id": "auth.signin.email",
+      "label": "Email address",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Sign-in form",
+      "expected": "Accepts the member email for authentication.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "auth.signin.password",
+      "label": "Password",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Sign-in form",
+      "expected": "Accepts current password with password-manager support.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "auth.signin.submit",
+      "label": "Sign in",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Valid credentials",
+      "expected": "Restores authenticated session or opens required MFA challenge.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "auth.verify.resend",
+      "label": "Resend verification",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Sign-in form with an email address entered",
+      "expected": "Requests verification email with generic response copy to avoid account enumeration.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "auth.password.forgot",
+      "label": "Forgot password?",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Sign-in form",
+      "expected": "Opens reset request form.",
+      "status": "PARTIAL",
+      "evidence": "tests/accounts-ui.spec.js opens the reset request form in Chromium."
+    },
+    {
+      "id": "auth.password.reset.email",
+      "label": "Email address",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Reset request form",
+      "expected": "Requests a reset link without disclosing whether the account exists.",
+      "status": "PARTIAL",
+      "evidence": "Presence asserted by tests/accounts-ui.spec.js; submission NOT TESTED."
+    },
+    {
+      "id": "auth.password.reset.submit",
+      "label": "Send reset link",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Reset request form",
+      "expected": "Requests reset email through Better Auth.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "auth.password.new",
+      "label": "New password",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Valid reset token",
+      "expected": "Requires at least 15 characters before resetting password.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "auth.password.update",
+      "label": "Update password",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Valid reset token and password",
+      "expected": "Resets password and returns to sign-in.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "auth.mfa.code",
+      "label": "Authenticator code or Recovery code",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Sign-in MFA challenge",
+      "expected": "Accepts second-factor code without showing authenticated content early.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "auth.mfa.type-toggle",
+      "label": "Use authenticator code / Use recovery code",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Sign-in MFA challenge",
+      "expected": "Switches between authenticator and single-use recovery code entry.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "auth.mfa.verify",
+      "label": "Verify and sign in",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Sign-in MFA challenge with valid code",
+      "expected": "Completes Better Auth's second-factor step and restores the session.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "auth.guest.continue",
+      "label": "Continue as guest",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Guest",
+      "expected": "Returns to the guest workout overview.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.section.overview",
+      "label": "Overview",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Authenticated member and loaded workspace",
+      "expected": "Shows metrics derived from the signed-in member's workspace.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.section.profile",
+      "label": "Profile",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Authenticated member",
+      "expected": "Shows editable member details and training goal.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.profile.name",
+      "label": "Display name",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Profile section",
+      "expected": "Updates Better Auth profile name.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.profile.goal",
+      "label": "Weekly workout goal",
+      "role": "combobox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Profile section",
+      "expected": "Persists a 1–7 sessions per week goal to member workspace.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.profile.save",
+      "label": "Save changes",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Changed valid profile or goal",
+      "expected": "Saves profile and goal with success/failure feedback.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.profile.cancel",
+      "label": "Cancel changes",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Profile section with an unsaved name or goal change",
+      "expected": "Restores the latest saved profile and training goal without a backend write.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.email.change.address",
+      "label": "New email address",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Profile section",
+      "expected": "Validates new address before requesting secure verification.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.email.change.password",
+      "label": "Confirm your password",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Profile section",
+      "expected": "Requires current password for email change.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.email.change.submit",
+      "label": "Send verification",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Valid new email and password",
+      "expected": "Requests email change and waits for address verification.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.section.security",
+      "label": "Security",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Authenticated member",
+      "expected": "Shows password, MFA and sanitized sessions settings.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.password.current",
+      "label": "Current password",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Security section",
+      "expected": "Provides step-up proof for password change.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.password.new",
+      "label": "New password",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Security section",
+      "expected": "Requires at least 15 characters.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.password.confirm",
+      "label": "Confirm new password",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Security section",
+      "expected": "Requires a match before submission.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.password.submit",
+      "label": "Update password",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Valid current and matching new password",
+      "expected": "Updates password and revokes other sessions.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.mfa.password",
+      "label": "Confirm your password",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "MFA disabled",
+      "expected": "Requires recent authentication before TOTP enrollment.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.mfa.setup",
+      "label": "Set up authenticator",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "MFA disabled and valid password",
+      "expected": "Starts TOTP setup and displays the secret only for enrollment.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.mfa.verify.code",
+      "label": "Authenticator code",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "MFA enrollment started",
+      "expected": "Accepts six digit TOTP code.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.mfa.verify",
+      "label": "Verify and enable",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "MFA enrollment and valid code",
+      "expected": "Confirms enrollment and exposes backup codes once.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.mfa.recovery",
+      "label": "View recovery codes",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "MFA enabled and recent password confirmation",
+      "expected": "Generates and displays recovery codes once.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.mfa.download",
+      "label": "Download codes",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Recovery codes visible",
+      "expected": "Downloads codes as a local text file.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.mfa.disable",
+      "label": "Turn off",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "MFA enabled and password confirmation",
+      "expected": "Disables TOTP only after successful step-up authentication.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.sessions.refresh",
+      "label": "Refresh sessions",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Security section",
+      "expected": "Reloads sanitized session list without exposing tokens or internal IDs.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.sessions.revoke",
+      "label": "Revoke",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "A non-current active session",
+      "expected": "Revokes only the selected session.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.sessions.others",
+      "label": "Sign out other devices",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "At least one other active session and confirmation",
+      "expected": "Revokes every other session after service authorization.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.sessions.all",
+      "label": "Sign out everywhere",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Confirmed member intent",
+      "expected": "Revokes all sessions and clears the local authenticated view.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.section.training",
+      "label": "Training data",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Authenticated member and loaded workspace",
+      "expected": "Shows account-scoped routines, workout history and sync state.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.training.export",
+      "label": "Export my data",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Authenticated member",
+      "expected": "Downloads a JSON export from the account service.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.training.import.file",
+      "label": "Import workout backup",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Authenticated member",
+      "expected": "Validates backup and opens review without writing immediately.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.training.local.review",
+      "label": "Review local data",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Legacy data available",
+      "expected": "Shows counts and asks for explicit confirmation before cloud replacement.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.training.import.ack",
+      "label": "I reviewed the counts and saved a copy of my current cloud training data.",
+      "role": "checkbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Import review",
+      "expected": "Explicitly acknowledges the replacement after the current cloud export is downloaded.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.training.import.confirm",
+      "label": "Import to account",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Import review and acknowledgement checked",
+      "expected": "Imports only after explicit confirmation and current-cloud export; reports errors without data loss claims.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.training.export-before-replace",
+      "label": "Download current cloud copy before replacing / Cloud copy downloaded",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Import review",
+      "expected": "Downloads the existing cloud data and enables replacement only after export succeeds.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.training.import.cancel",
+      "label": "Cancel",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Import review",
+      "expected": "Closes review without replacing cloud data.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.training.conflict.reload",
+      "label": "Reload cloud data",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Unresolved sync conflict",
+      "expected": "Reloads only after explicit acknowledgement that the unsynced edits will be replaced by cloud state.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.training.conflict.export",
+      "label": "Export my unsynced changes",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Unresolved sync conflict with attempted payload available",
+      "expected": "Downloads the attempted member data as JSON before reload.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.training.conflict.ack",
+      "label": "I understand reloading replaces my unsynced edits.",
+      "role": "checkbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Unresolved sync conflict",
+      "expected": "Requires explicit acknowledgement before reload is enabled.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.training.routines",
+      "label": "Open routines",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Training data section",
+      "expected": "Navigates to the member's routines in the workout workspace.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.training.history",
+      "label": "Open history",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Training data section",
+      "expected": "Navigates to the member's workout history.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.section.privacy",
+      "label": "Privacy",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Authenticated member",
+      "expected": "Shows storage, export, logout and account deletion information.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.privacy.signout",
+      "label": "Sign out",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Authenticated member",
+      "expected": "Ends current session and clears private workspace view.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.privacy.delete.review",
+      "label": "Review account deletion",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Authenticated member",
+      "expected": "Opens password and explicit DELETE confirmation fields.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.privacy.delete.password",
+      "label": "Confirm your password",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Delete review",
+      "expected": "Requires password confirmation.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.privacy.delete.phrase",
+      "label": "Type DELETE to confirm",
+      "role": "textbox",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Delete review",
+      "expected": "Requires exact DELETE phrase.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.privacy.delete.cancel",
+      "label": "Cancel",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Delete review",
+      "expected": "Closes deletion review without changing account state.",
+      "status": "NOT TESTED",
+      "evidence": null
+    },
+    {
+      "id": "account.privacy.delete.confirm",
+      "label": "Send confirmation email",
+      "role": "button",
+      "source": "src/components/Account.jsx",
+      "prerequisite": "Valid password and exact DELETE phrase",
+      "expected": "Requests Better Auth deletion email; states that account remains active until the confirmation link is used.",
+      "status": "NOT TESTED",
+      "evidence": null
+    }
+  ]
+}

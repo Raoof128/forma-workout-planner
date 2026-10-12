@@ -2,54 +2,92 @@
 
 [Back to README](../README.md)
 
-## Application boundary
-
-FORMA is a static React application. Vite builds HTML, CSS, JavaScript, fonts, and images for a static host. There is no application backend, HTTP API, server database, authentication service, or server-side job. In this repository, the equivalent of backend behavior is the browser's data validation, persistence, and workout business logic.
+FORMA has two workspace modes. Guest mode stores a validated version 1
+workspace in the browser. Account mode authenticates with Better Auth and uses
+PostgreSQL as the authoritative store. The account implementation is designed
+for Cloudflare Workers static assets and same-origin API routing to a private
+Node.js API; configured public domains and a live cloud deployment are not
+included in this repository state.
 
 ```mermaid
 flowchart LR
-  UI[React screens and forms] --> Actions[App mutation handlers]
-  Actions --> Store[Workout store]
-  Store --> Lock[Origin-wide Web Lock]
-  Lock --> Schema[Validate latest snapshot and change]
-  Schema --> Local[(localStorage)]
-  Local --> Events[Cross-tab storage events]
-  Events --> Store
-  Store --> UI
-  Backup[JSON backup file] --> Schema
+  Browser[React application]
+  Browser --> Guest[Guest repository]
+  Guest --> Local[(localStorage)]
+  Browser --> SameOrigin[Same-origin /api]
+  SameOrigin --> Worker[Cloudflare Worker gateway]
+  Worker -->|Access token and Worker secret| Tunnel[Protected Tunnel hostname]
+  Tunnel --> API[Fastify API]
+  API --> Auth[Better Auth session check]
+  API -->|authenticated owner ID, revisioned query| DB[(PostgreSQL)]
+  DB --> Workspace[One validated JSONB workspace per member]
 ```
+
+The Access service token and Worker shared secret authenticate the Worker to
+the origin. They do not identify a member. The API resolves each member from a
+Better Auth session cookie, then scopes database access to that user. The
+browser never connects directly to PostgreSQL and never chooses the workspace
+owner.
 
 ## Responsibilities
 
-| Area                                              | Responsibility                                                                                                                      |
-| ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `src/main.jsx`                                    | Mount React and the render-error boundary                                                                                           |
-| `src/App.jsx`                                     | Screen composition and routine/session/profile/schedule mutations                                                                   |
-| `src/persistence.js`                              | Framework-independent repository: locking, validation before write, revisions, restore conflicts, preservation, and temporary state |
-| `src/hooks/useWorkoutStore.js`                    | React subscription, persistence status, pending writes, and cross-tab updates                                                       |
-| `src/storage.js`                                  | Workspace validation, initialization, browser storage reads, and downloads                                                          |
-| `src/data.js`                                     | Exercise catalog, starter routines, Sydney dates, and training calculations                                                         |
-| `src/components/Workout.jsx`                      | Session entry and rest-timer transitions                                                                                            |
-| `src/components/Preferences.jsx` / `Recovery.jsx` | Import/export and recovery flows                                                                                                    |
-| `src/hooks/useNavigation.js`                      | Hash navigation, document titles, and heading focus                                                                                 |
-| `tests/`                                          | Real-browser workflow, data-integrity, accessibility, and layout checks                                                             |
+| Area                                                            | Responsibility                                                                                |
+| --------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `src/App.jsx` and `src/components/`                             | Workout screens, account interface, and mutation handlers.                                    |
+| `src/storage.js`                                                | Version 1 validation, guest initialization, legacy backup parsing, and download helpers.      |
+| `src/persistence.js`                                            | Guest-mode persistence, Web Lock coordination, revision checks, recovery, and temporary mode. |
+| `src/account/AccountProvider.jsx`                               | Browser account/session state and Better Auth actions.                                        |
+| `src/account/cloudRepository.js`                                | Authenticated workspace reads, optimistic writes, retries, conflicts, and import/export.      |
+| `server/auth.ts` and `server/app.ts`                            | Self-hosted Better Auth and HTTP authentication/session boundaries.                           |
+| `server/workspace.ts` and `server/workspaceRoutes.ts`           | Validated member workspace transactions, revision conflicts, and export.                      |
+| `server/migrations/`                                            | Better Auth and workspace PostgreSQL schema.                                                  |
+| `worker/index.ts` and `wrangler.jsonc`                          | Fixed-origin Worker API gateway and static asset routing.                                     |
+| `ops/`                                                          | Private-host Compose services, database role setup, migrations, and backup/restore scripts.   |
+| `server/tests/`, `worker/tests/`, and `tests/accounts*.spec.js` | Real PostgreSQL integration, gateway behavior, and account UI browser checks.                 |
 
-## Write model
+## Member workspace writes
 
-Mutations operate on the latest saved workspace inside the shared `forma-store-write` Web Lock. The changed workspace is validated before persistence. Task boundaries inside the lock let browser-local storage snapshots refresh before reading and checkpoint writes before lock release. This prevents unrelated edits from two tabs from overwriting one another with stale snapshots. Routine, history, profile, and schedule edits also compare the original record so a stale editor can report a conflict.
+The workspace preserves FORMA's version 1 JSON shape while PostgreSQL owns the
+member key, integer revision, and monotonic `updatedAt`. The client sends
+`expectedRevision` and an operation ID. The API locks the member's row,
+validates the full payload, and either commits the next revision or returns a
+409 response with the latest member state. A retry with the same operation ID
+and normalized payload reconstructs the original acknowledgement. Operations
+are retained for at most 1,000 per member and 30 days; an aged-out retry cannot
+apply because its expected revision is stale. See the
+[database model](accounts/database.md) and [API reference](accounts/api.md).
 
-A browser storage event reloads changes from another tab. Active-session operations identify the intended session and apply field-level changes to the current state. Pending writes are counted and trigger an unload warning. Temporary mode preserves an in-memory workspace, advances revisions, and allows export when persistence cannot be used. Lock API absence or rejection selects this mode without retrying a failed business mutation. Repository updates work on a cloned draft; a rejected mutation cannot partially alter the acknowledged snapshot. React subscribes through `useSyncExternalStore`.
+The legacy browser store remains available as guest mode. Account import
+requires explicit confirmation and uses the same validation and revisioned PUT
+as other writes. Switching from guest mode to an account does not silently
+copy browser data.
 
-Recovery and restore preserve original data before replacement and reject stale confirmations. Settings restore checks the revision; corrupt-data recovery compares the exact raw original. Recovery keys combine a timestamp and random ID. If temporary edits exist, both the saved original and the in-memory original are preserved before replacement. Settings also sequences asynchronous backup-file reads: only the latest selected file may publish a preview or validation error, so a slower earlier read cannot replace a newer selection. See [data model](data-model.md) for the storage contract and the audit record for tested failure paths.
+## Guest mode and recovery
 
-## Trust boundaries and privacy
+Guest mode treats `localStorage` and imported JSON as untrusted. The nested Zod
+schema validates before use. Exercise IDs must refer to the built-in catalog;
+record IDs must be unique within their collections. User-entered text is
+rendered as text, not HTML. Browser storage is not authentication or an
+encryption boundary; scripts on the same origin may access it.
 
-Treat `localStorage` and imported JSON as untrusted input. They pass through the same nested Zod validation. Exercise IDs must refer to the built-in catalog; record IDs must be unique within their collections. React renders user-entered names and notes as text rather than HTML.
+Guest writes use the origin-wide `forma-store-write` Web Lock where available.
+Storage events refresh other same-origin tabs. Temporary mode keeps edits in
+memory and warns the member when browser persistence is unavailable. Account
+writes instead use server revisions and API conflict recovery.
 
-Origin-local storage is a convenience persistence mechanism, not authentication or an encryption boundary. All scripts running on the same origin share access. Host the app on an origin you control, serve it over HTTPS, and avoid injecting untrusted scripts. There are no service secrets to put in the browser bundle.
+## Deployment and operational boundaries
 
-## Deployment and future changes
+The deployment baseline is Worker static assets and same-origin API routes,
+then a fixed HTTPS API origin protected by Cloudflare Access and Tunnel,
+reaching a private Fastify host and private PostgreSQL. The Worker never accepts
+an arbitrary upstream URL. The origin still validates member sessions and
+ownership. A VPC-only host needs outbound connectivity for the Tunnel, updates,
+email, and approved backup/deployment traffic. Cloudflare Workers VPC is beta
+and is not a required production dependency.
 
-Hash routes allow static hosting without server-side route handlers. The current asset paths assume deployment at an origin's root; a subdirectory deployment requires coordinated asset/base-path changes. Changing origins requires manual export/import of data.
-
-Adding accounts or sync would require a separate product and architecture decision: user identity, authorization, a remote schema, synchronization/conflict rules, and a migration path for local workspaces. None of those services is implied by the current browser-local design.
+The repository does not establish a live origin, firewall, Tunnel, Access
+policy, database backup schedule, or restore RTO. Use the
+[operations guide](accounts/operations.md),
+[infrastructure reference](accounts-infrastructure.md), and
+[release-readiness report](accounts/release-readiness.md) for the actual
+configuration state and open owner tasks.

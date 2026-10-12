@@ -6,6 +6,7 @@ import {
   History,
   ChartNoAxesColumnIncreasing,
   Settings,
+  UserRound,
   ChevronRight,
   Menu,
   X,
@@ -18,7 +19,7 @@ export const navigationItems = [
   ["history", "Workout history", History],
   ["progress", "Progress", ChartNoAxesColumnIncreasing],
 ];
-export default function Navigation({ page, navigate, data }) {
+export default function Navigation({ page, navigate, data, account }) {
   const [mobile, setMobile] = useState(
     () => matchMedia("(max-width:700px)").matches,
   );
@@ -150,7 +151,7 @@ export default function Navigation({ page, navigate, data }) {
             </button>
           ))}
         </nav>
-        {data.active && (
+        {data?.active && (
           <button className="resume-sidebar" onClick={() => go("workout")}>
             <span className="pulse-dot" />
             <div>
@@ -161,6 +162,14 @@ export default function Navigation({ page, navigate, data }) {
         )}
         <div className="sidebar-bottom">
           <button
+            className={`nav-item ${page === "account" ? "active" : ""}`}
+            onClick={() => go("account")}
+            aria-current={page === "account" ? "page" : undefined}
+          >
+            <UserRound size={20} />
+            Account
+          </button>
+          <button
             className={`nav-item ${page === "settings" ? "active" : ""}`}
             onClick={() => go("settings")}
             aria-current={page === "settings" ? "page" : undefined}
@@ -168,17 +177,21 @@ export default function Navigation({ page, navigate, data }) {
             <Settings size={20} />
             Settings
           </button>
-          <button className="profile-button" onClick={() => go("settings")}>
+          <button className="profile-button" onClick={() => go("account")}>
             <span className="avatar">
-              {data.profile.name
+              {(account?.user?.name || data?.profile?.name || "Guest")
                 .split(/\s+/)
                 .map((part) => part[0])
                 .slice(0, 2)
                 .join("")}
             </span>
             <div>
-              <strong>{data.profile.name}</strong>
-              <small>Personal workspace</small>
+              <strong>
+                {account?.user?.name || data?.profile?.name || "Guest"}
+              </strong>
+              <small>
+                {account?.user ? account.user.email : "Guest workspace"}
+              </small>
             </div>
             <ChevronRight size={16} />
           </button>

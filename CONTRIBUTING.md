@@ -1,27 +1,29 @@
 # Contributing to FORMA
 
-Thank you for helping improve FORMA. Keep changes aligned with its current purpose: a personal, browser-local workout planner.
+Thank you for helping improve FORMA. Keep changes aligned with its purpose as
+an accessible workout planner with a browser-local guest mode and a
+self-hosted, member-owned account workspace.
 
 ## Development workflow
 
-1. Read the [setup guide](docs/getting-started.md) and [architecture](docs/architecture.md).
+1. Read the [setup guide](docs/getting-started.md), [architecture](docs/architecture.md), and [account overview](docs/accounts/README.md).
 2. Create a branch for a focused change.
 3. Use `npm ci` and keep dependency changes intentional and reproducible.
-4. Make the change and add regression coverage for meaningful behavior or data-integrity fixes.
-5. Run `npm run docs:check`, lint, formatting checks, build, and relevant unit/browser tests. Record which checks ran and their actual results; do not describe unrun checks as passing.
+4. Keep account data access scoped to the user ID from the server-validated session. Do not accept a workspace owner from a URL or request body. Make meaningful data-integrity changes with real PostgreSQL integration coverage.
+5. Run `npm run typecheck`, `npm run docs:check`, lint, build, and relevant tests. `npm run test:server` requires a disposable real PostgreSQL database through `TEST_DATABASE_URL`; account browser tests use an isolated schema and in-memory email sink. Record actual checks and results. Do not describe unrun staging, email, or backup work as passing.
 6. Open a pull request describing the problem, the resulting behavior, validation, and any known limits.
 
 ## Maintainer notes
 
-FORMA stores workout data in each user's browser profile. Before changing validation, restore behavior, or the version 1 backup shape, review the compatibility guidance in [data-model.md](docs/data-model.md) and update the user instructions. Do not request real workout backups in public issues. Use synthetic data when reproducing import or recovery problems.
+FORMA's guest mode stores workout data in browser storage. Account mode uses the version 1 workspace in PostgreSQL. Before changing validation, import/export, ownership, revision, or account deletion behavior, review the [data model](docs/data-model.md), [database model](docs/accounts/database.md), and [API contract](docs/accounts/api.md). Do not request real workout backups in public issues. Use synthetic data when reproducing import or recovery problems.
 
-For releases, verify the static build and supported checks, review the diff and bundled assets, update the changelog and release evidence with observed results, and preserve a rollback copy of the previous static files. A static-file rollback does not roll back browser-local data. This repository does not document a release cadence or response-time commitment.
+For releases, verify the frontend and server builds and supported checks, review the diff and bundled assets, update the changelog and [account release evidence](docs/accounts/release-readiness.md) with observed results, and keep the previous application image available. Account releases require database migration compatibility and tested recovery; static-file rollback alone does not roll back member data or PostgreSQL schema. This repository does not document a release cadence or response-time commitment.
 
 ## Code conventions
 
-Use the existing React components and shared controls. Format code with `npm run format`. Keep browser persistence inside the store boundary; do not add component effects that save stale snapshots directly. Validate imported/persisted data before use, and preserve original data when recovery is required.
+Use the existing React components and shared controls. Format code with `npm run format`. Keep guest persistence inside the guest store boundary and cloud writes inside the authenticated workspace repository. Do not add component effects that save stale snapshots directly. Validate imported and persisted data before use, and preserve original data when recovery is required.
 
-For responsive changes, retain keyboard focus, dialog semantics, readable labels, reduced-motion behavior, and usable input widths at 320px. Use local assets and avoid adding remote services without explaining their effect on the browser-local design.
+For responsive changes, retain keyboard focus, dialog semantics, readable labels, reduced-motion behavior, and usable input widths at 320px. Use local assets and avoid adding remote services without explaining their effect on member privacy and the self-hosted architecture.
 
 Do not change the backup version or accepted fields without documenting compatibility and recovery. Keep [data-model.md](docs/data-model.md) and user-facing guidance synchronized with behavior.
 

@@ -1,0 +1,37 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "forma-workout-planner",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-12",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": true,
+  },
+  "vars": {
+    "ENVIRONMENT": "development",
+    "APP_ORIGIN": "http://localhost:8787",
+    "BACKEND_URL": "http://127.0.0.1:3000",
+  },
+  "env": {
+    "staging": {
+      "name": "forma-workout-planner-staging",
+      "workers_dev": true,
+      "vars": {
+        "ENVIRONMENT": "staging",
+        "APP_ORIGIN": "https://staging.forma.example.invalid",
+        "BACKEND_URL": "https://staging-api.forma.example.invalid",
+      },
+    },
+    "production": {
+      "name": "forma-workout-planner-production",
+      "workers_dev": true,
+      "vars": {
+        "ENVIRONMENT": "production",
+        "APP_ORIGIN": "https://forma.example.invalid",
+        "BACKEND_URL": "https://api.forma.example.invalid",
+      },
+    },
+  },
+}

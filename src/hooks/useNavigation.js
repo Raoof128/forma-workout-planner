@@ -7,6 +7,7 @@ const pages = new Set([
   "history",
   "progress",
   "settings",
+  "account",
 ]);
 const currentPage = () =>
   pages.has(location.hash.slice(1)) ? location.hash.slice(1) : "overview";
@@ -32,6 +33,7 @@ export function useNavigation() {
       history: "Workout history",
       progress: "Progress",
       settings: "Settings",
+      account: "Account",
     };
     document.title = `${labels[page]} · FORMA`;
     const heading = document.querySelector("main h1");

@@ -8,7 +8,15 @@ import {
 } from "lucide-react";
 import { PageHeading, Button, Modal } from "./UI";
 import { downloadData, readBackupFile } from "../storage";
-export function Settings({ data, saved, onSave, onRestore, notify }) {
+export function Settings({
+  data,
+  saved,
+  onSave,
+  onRestore,
+  onExport,
+  memberMode = false,
+  notify,
+}) {
   const [name, setName] = useState(data.profile.name);
   const [goal, setGoal] = useState(data.profile.goal);
   const original = useRef(data.profile);
@@ -91,20 +99,24 @@ export function Settings({ data, saved, onSave, onRestore, notify }) {
           <ShieldCheck size={22} />
         </div>
         <p>
-          {saved
-            ? "Routines and logs are saved in this browser on this device. Export a backup to keep a copy of your training data."
-            : "Browser saving is unavailable. Export your current routines and logs now to keep a copy after this visit."}
+          {memberMode
+            ? "Your routines and logs are saved to your account and available across devices. Export a backup to keep a separate copy."
+            : saved
+              ? "Routines and logs are saved in this browser on this device. Export a backup to keep a copy of your training data."
+              : "Browser saving is unavailable. Export your current routines and logs now to keep a copy after this visit."}
         </p>
         <p className="muted small">
-          Clearing browser data will remove your saved workouts. Private
-          browsing may not keep data after the window closes.
+          {memberMode
+            ? "Clearing browser data does not remove account data. Signing out clears this account from the current view."
+            : "Clearing browser data will remove your saved workouts. Private browsing may not keep data after the window closes."}
         </p>
         <div className="backup-actions">
           <Button
             variant="secondary"
-            onClick={() => {
+            onClick={async () => {
               try {
-                downloadData(data);
+                if (memberMode && onExport) await onExport();
+                else downloadData(data);
                 setError("");
                 notify("Your workout backup download has started.");
               } catch {
@@ -144,9 +156,9 @@ export function Settings({ data, saved, onSave, onRestore, notify }) {
               {backup.data.history.length} completed workouts.
             </p>
             <p className="muted">
-              This replaces the current workspace. A copy of your current data
-              will be preserved in this browser. Export it first if you want a
-              downloadable copy.
+              {memberMode
+                ? "This replaces the current cloud workspace. The selected backup file remains unchanged. Export the current cloud data first if you want a separate copy."
+                : "This replaces the current workspace. A copy of your current data will be preserved in this browser. Export it first if you want a downloadable copy."}
             </p>
             {error && (
               <p role="alert" className="error">

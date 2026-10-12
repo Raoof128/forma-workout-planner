@@ -9,15 +9,32 @@
     "preview": "vite preview --host 0.0.0.0",
     "lint": "eslint .",
     "test": "npm run test:unit && npm run test:browser",
-    "format": "prettier --write src tests unit *.js *.json index.html",
-    "format:check": "prettier --check src tests unit *.js *.json index.html",
+    "format": "prettier --write src tests unit server worker scripts *.js *.json wrangler.jsonc index.html",
+    "format:check": "prettier --check src tests unit server worker scripts *.js *.json wrangler.jsonc index.html",
     "test:unit": "node --test unit/*.test.js",
     "test:browser": "playwright test",
-    "test:browser:production": "npm run build && playwright test --config=playwright.production.config.js",
-    "docs:check": "node scripts/check-docs.mjs"
+    "test:browser:production": "VITE_ACCOUNT_MODE=guest npm run build && playwright test --config=playwright.production.config.js",
+    "docs:check": "node scripts/check-docs.mjs",
+    "typecheck": "tsc --noEmit",
+    "server:dev": "tsx watch server/index.ts",
+    "server:start": "tsx server/index.ts",
+    "server:migrate": "tsx server/migrate.ts",
+    "test:server": "tsx --test --test-concurrency=1 server/tests/*.test.ts",
+    "test:worker": "tsx --test worker/tests/*.test.ts",
+    "test:accounts": "playwright test --config=playwright.accounts.config.js",
+    "test:accounts:production": "FORMA_ACCOUNT_BUILD=1 playwright test --config=playwright.accounts.config.js",
+    "accounts:test-server": "tsx scripts/accounts-test-server.ts",
+    "worker:dev": "wrangler dev",
+    "worker:deploy:staging": "npm run build && wrangler deploy --env staging",
+    "worker:deploy:production": "npm run build && wrangler deploy --env production",
+    "build:server": "tsc -p tsconfig.server.json && mkdir -p build/server/migrations && cp server/migrations/*.sql build/server/migrations/"
   },
   "dependencies": {
+    "better-auth": "1.7.7",
+    "drizzle-orm": "0.45.4",
+    "fastify": "5.12.5",
     "lucide-react": "1.55.0",
+    "pg": "8.23.1",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "zod": "4.6.6"
@@ -25,6 +42,8 @@
   "devDependencies": {
     "@eslint/js": "9.39.5",
     "@playwright/test": "1.64.0",
+    "@types/node": "26.6.5",
+    "@types/pg": "8.23.1",
     "@vitejs/plugin-react": "6.1.2",
     "axe-core": "4.14.0",
     "eslint": "9.39.5",
@@ -33,7 +52,10 @@
     "eslint-plugin-react-hooks": "7.1.1",
     "globals": "17.13.0",
     "prettier": "3.9.10",
-    "vite": "8.3.4"
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vite": "8.3.4",
+    "wrangler": "4.149.0"
   },
   "engines": {
     "node": ">=22.12.0"

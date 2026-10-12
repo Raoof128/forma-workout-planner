@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-- Node.js 22.12 or newer; Node.js 24 recommended.
+- Node.js 24 (the account API container and current server build target Node 24).
 - npm and Git.
 - A current browser. The development suite targets Chromium, Firefox, and WebKit; production smoke tests cover desktop Chromium, Firefox, and WebKit, plus mobile Chromium and WebKit emulation.
 
@@ -17,7 +17,18 @@ npm ci
 npm run dev
 ```
 
-Visit http://localhost:5173. The first visit initializes three starter routines and an empty workout history. Change the example profile name in Settings. No `.env` file or service credentials are needed.
+To use the browser-local guest mode, run:
+
+```sh
+VITE_ACCOUNT_MODE=guest npm run dev
+```
+
+Visit http://localhost:5173. Guest mode initializes three starter routines and
+an empty workout history in this browser profile. The default account mode
+needs the API and PostgreSQL configuration described in the
+[account operations guide](accounts/operations.md); without them, account
+session checks report an unavailable service. No credentials are needed to
+use guest mode.
 
 The development command listens on all network interfaces. To bind only to this machine, run `npm run dev -- --host 127.0.0.1`. A phone visiting an unencrypted LAN address may not have Web Locks available and may use temporary mode; use HTTPS to verify persistence on another device.
 
@@ -36,6 +47,9 @@ The development command listens on all network interfaces. To bind only to this 
 | `npm run test:unit`               | Run isolated validation/persistence tests using Node.js                                |
 | `npm run test:browser`            | Run Playwright scenarios in Chromium, Firefox, and WebKit                              |
 | `npm run test:browser:production` | Build the app and run production smoke tests in Chromium, Firefox, and WebKit projects |
+| `npm run test:server`             | Real PostgreSQL and HTTP integration tests; requires `TEST_DATABASE_URL`               |
+| `npm run test:worker`             | Worker gateway handler tests with controlled upstream fetches                          |
+| `npm run test:accounts`           | Account UI journeys against an isolated real-PostgreSQL test API and email sink        |
 
 Playwright owns a fresh development server on `127.0.0.1:5173` for browser tests. It requires that port to be free and starts Vite with strict-port behavior. The server is reused only when `PLAYWRIGHT_REUSE_SERVER=1` is explicitly set outside CI. Production browser tests build the app, then start a fresh preview server on `127.0.0.1:4173` and never reuse an existing server.
 
@@ -53,4 +67,4 @@ Use `npm ci` for reproducible installs from the committed lockfile. Do not commi
 | Old data is absent on another URL     | Storage is isolated by scheme, host, and port. Export from the old origin and import into the new one.                       |
 | Saved data needs attention            | Download the original from the recovery screen, then restore a valid FORMA backup. Do not clear storage first.               |
 
-See the [user guide](user-guide.md) for everyday workflows and the [deployment guide](deployment.md) for hosting.
+See the [user guide](user-guide.md) for everyday workflows, the [account operations guide](accounts/operations.md) for account/API setup, and the [deployment guide](deployment.md) for hosting.

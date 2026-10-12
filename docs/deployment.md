@@ -1,39 +1,75 @@
 # Deployment
 
-[Back to README](../README.md)
+[Back to README](../README.md) · [Account operations](accounts/operations.md) ·
+[Infrastructure reference](accounts-infrastructure.md)
 
-## Build for a static host
+The account architecture is browser → Cloudflare Worker static assets and
+same-origin API gateway → Access-protected Cloudflare Tunnel → private Fastify
+API → PostgreSQL. The API and PostgreSQL are not intended to have public
+inbound listeners. The browser never connects to the database.
+
+## Local build and preview
 
 ```sh
 npm ci
 npm run build
+npm run preview
 ```
 
-Publish the **contents of `dist/`** to an HTTPS static host at the root of an origin. The host must serve `index.html`, `/assets/`, `/fonts/`, `/images/`, and `/favicon.svg`. No application server, API endpoint, database, secret, or runtime environment variable is required. `npm run preview` is for local inspection of the build, not a production hosting service.
+`npm run preview` only serves the Vite assets locally. Account mode also needs a
+configured backend; use [account operations](accounts/operations.md) for the
+development proxy and real-PostgreSQL test requirements. Set
+`VITE_ACCOUNT_MODE=guest` to exercise browser-local guest mode without an API.
 
-The app uses hash URLs such as `/#history`, so page routes do not require server rewrite rules. Assets currently use root-relative paths. A GitHub Pages project path such as `/forma-workout-planner/` needs both Vite base-path configuration and corresponding asset-path changes; publishing the source repository alone does not deploy the app.
+## Cloudflare Worker
 
-## Hosting requirements
+`wrangler.jsonc` serves the Vite `dist/` output and runs Worker code before
+static-asset routing for `/api` and `/api/*`. The Worker allow-lists health,
+Better Auth, workspace, and account session routes; unknown API paths return
+JSON errors and do not fall through to the SPA shell. Authenticated and API
+responses are not cached. Static responses receive the configured security
+headers.
 
-- HTTPS, or localhost for local development, to support secure browser APIs such as Web Locks.
-- Correct JavaScript/CSS/font MIME types.
-- Revalidation of `index.html`; long caching of hashed `/assets/` files is appropriate.
-- A stable scheme, hostname, and port. Each origin has its own separate browser storage.
+The staging and production origins in the checked-in configuration are
+`.invalid` placeholders. Replace them with owned HTTPS hostnames, add Cloudflare
+Worker secret bindings, configure a Tunnel route and Access Service Auth
+policy, and verify cookies and API paths before any deployment. Follow the
+[infrastructure guide](accounts-infrastructure.md) for exact binding names and
+the [operations guide](accounts/operations.md) for deployment steps. A local
+Wrangler run does not test the real Access token, Tunnel, or remote API.
 
-All application fonts and images are bundled. Review your host's logging and analytics configuration separately from the app's own browser-local data design.
+## Private API and PostgreSQL
 
-The repository contains OFL license texts for the Barlow Condensed and DM Sans fonts. It does not include a project-wide software license, and it does not document the provenance or redistribution terms for the bundled workout photographs. Confirm rights for every asset before redistributing or publishing a copy; do not infer that the font license covers other files.
+The Compose file defines a private PostgreSQL service, restricted Fastify API,
+one-shot migration service, and outbound `cloudflared` connector. It publishes
+no host ports. The database is on an internal Compose network; the API also
+joins the Tunnel network. Use separate Compose project names, databases,
+secrets, volumes, and email configuration for staging and production.
 
-## Smoke-check and rollback
+Use the separate migration role for versioned migrations and the runtime role
+for API access. Do not copy production values into the Worker bundle or
+development environment. On a private-only DigitalOcean host, verify outbound
+DNS and routing (including NAT if needed) for Tunnel, security updates, email,
+and backups. Official DigitalOcean documentation retrieval was blocked in this
+execution environment; see [source status](accounts/sources.md).
 
-After publishing, check the deployment in a disposable browser profile so no real workout data is at risk:
+The local Compose definitions and scripts are configuration artifacts, not
+evidence of a provisioned Droplet or isolated cloud network. The current
+[release-readiness report](accounts/release-readiness.md) lists the deployment
+gates that still require owner credentials and staging.
 
-1. Open the hosted page and check that HTML, JavaScript, CSS, fonts, and images load without console errors.
-2. Create a synthetic routine, start a workout, complete a set, save it, reload, and confirm it appears in history.
-3. Export a backup and test import in a separate disposable profile.
-4. Open two tabs and check that independent edits persist.
-5. Check a narrow phone layout and desktop layout. If storage is unavailable, confirm the temporary-mode warning appears.
+## Deployment order, rollback, and recovery
 
-If the static build needs rollback, republish the previously reviewed `dist/` contents and repeat the smoke check. A code rollback does not restore, migrate, or roll back browser-local workspace data. Keep the backup-format compatibility contract when rolling application files forward or back. Do not clear user storage as part of deployment rollback.
+Before an API release, take a verified backup, build the server image, apply
+the one-shot SQL migrations, then start the API. Migrations are transactionally
+applied, advisory-locked, and checksum-verified. The deployment does not
+automatically roll back database schema. Keep the previous API image available
+and keep changes backward compatible for the rollback window; add forward
+migrations instead of editing applied SQL.
 
-Before changing domains or ports, export the old workspace and restore it at the new origin. Each scheme, host, and port has separate browser storage. Preserve schema compatibility when shipping a new build.
+An application rollback does not reverse member workspace data. Restore only
+to a pre-created isolated database whose name begins `forma_restore_`; verify
+the checksum and application-level integrity before considering recovery. The
+backup scripts are implemented, but no off-host upload or restore drill has
+been run. See [account operations](accounts/operations.md) and the
+[infrastructure backup runbook](accounts-infrastructure.md#encrypted-backup-and-isolated-restore).

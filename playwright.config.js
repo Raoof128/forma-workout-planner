@@ -4,7 +4,7 @@ const executablePath = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH;
 
 export default defineConfig({
   testDir: "./tests",
-  testIgnore: ["production.spec.js"],
+  testIgnore: ["production.spec.js", "accounts*.spec.js", "account-ui.spec.js"],
   workers: 2,
   retries: 0,
   forbidOnly: !!process.env.CI,
@@ -35,6 +35,7 @@ export default defineConfig({
     trace: "retain-on-failure",
   },
   webServer: {
+    env: { VITE_ACCOUNT_MODE: "guest" },
     command: "npm run dev -- --host 127.0.0.1 --port 5173 --strictPort",
     url: "http://127.0.0.1:5173",
     reuseExistingServer:

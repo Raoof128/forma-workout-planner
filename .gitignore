@@ -6,3 +6,9 @@ playwright-report/
 .env.*
 !.env.example
 *.log
+
+.wrangler/
+.dev.vars
+.dev.vars.*
+
+build/

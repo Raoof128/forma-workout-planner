@@ -124,10 +124,18 @@ export function readStore() {
     return { data: null, issue: "invalid", raw };
   }
 }
-export function downloadData(value, name = "forma-backup", raw = false) {
-  const blob = new Blob([raw ? value : JSON.stringify(value, null, 2)], {
-    type: raw ? "text/plain" : "application/json",
-  });
+export function downloadData(
+  value,
+  name = "forma-backup",
+  raw = false,
+  pretty = true,
+) {
+  const blob = new Blob(
+    [raw ? value : JSON.stringify(value, null, pretty ? 2 : 0)],
+    {
+      type: raw ? "text/plain" : "application/json",
+    },
+  );
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;

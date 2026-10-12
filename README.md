@@ -2,79 +2,116 @@
 
 **Plan your training. Log every set. See your progress.**
 
-FORMA is a personal workout planner built with React and Vite. Create routines, track weights and repetitions, use a persistent rest timer, and review your training history in a responsive interface. Your workout data is stored in your browser on your device.
+FORMA is a workout planner built with React and Vite. Members can use an
+account-backed workspace that stores routines and workout history in
+self-hosted PostgreSQL, or use the separate local guest mode in a browser.
+The intended hosted architecture serves the frontend and same-origin API
+gateway from Cloudflare Workers and keeps the Node.js API and database on a
+private DigitalOcean host. The repository includes deployment configuration;
+it does not claim that the configured placeholder domains or staging services
+have been deployed.
 
-[Getting started](docs/getting-started.md) · [User guide](docs/user-guide.md) · [Architecture](docs/architecture.md) · [Contributing](CONTRIBUTING.md)
+[Account docs](docs/accounts/README.md) · [Getting started](docs/getting-started.md) ·
+[User guide](docs/user-guide.md) · [Architecture](docs/architecture.md) ·
+[Contributing](CONTRIBUTING.md)
 
 ## Features
 
-| Plan                               | Train                                   | Review                                     |
-| ---------------------------------- | --------------------------------------- | ------------------------------------------ |
-| Three editable starter routines    | Set-by-set weight and rep logging       | Editable workout history                   |
-| Custom routines and exercise order | Persistent rest timer and session notes | Volume, completed sets, and personal bests |
-| Weekly training schedule           | Exercise instructions while logging     | Estimated one-repetition maximum           |
-| Searchable 16-exercise library     | Resume an unfinished session            | Validated JSON backup and restore          |
+| Plan                               | Train                                        | Review and manage                                     |
+| ---------------------------------- | -------------------------------------------- | ----------------------------------------------------- |
+| Three editable starter routines    | Set-by-set weight and rep logging            | Editable workout history                              |
+| Custom routines and exercise order | Persistent rest timer and session notes      | Volume, completed sets, and personal bests            |
+| Weekly training schedule           | Exercise instructions while logging          | Validated JSON backup and restore                     |
+| Searchable 16-exercise library     | Resume an unfinished session                 | Account profile, security, and training-data settings |
+| Local guest mode or member account | Authenticated workspace sync across sessions | Session revocation, MFA, import, and export           |
 
-The interface uses semantic controls, keyboard navigation, accessible dialogs, mobile workout controls, and locally hosted fonts. Browser accessibility scans and responsive checks are documented in the verification record. Physical assistive-technology testing has not been performed.
+The interface uses semantic controls, keyboard navigation, accessible dialogs,
+mobile workout controls, and locally hosted fonts. See the [verification
+record](docs/verification.md) for the original frontend baseline. Current
+account readiness is tracked separately in
+[docs/accounts/release-readiness.md](docs/accounts/release-readiness.md).
 
-## Quick start
+## Development
 
-Use **Node.js 22.12 or newer** and npm. Node.js 24 is recommended.
+Use Node.js 24 and npm. Install the lockfile and start the Vite interface:
 
 ```sh
-git clone https://github.com/Raoof128/forma-workout-planner.git
-cd forma-workout-planner
 npm ci
 npm run dev
 ```
 
-Open **http://localhost:5173**. No API keys, environment variables, accounts, or database setup are required.
+For offline local storage mode, run `VITE_ACCOUNT_MODE=guest npm run dev`.
+Account mode requires the API or the isolated account test harness; the Vite
+development proxy is configured with `FORMA_API_TARGET` and
+`FORMA_DEV_WORKER_SECRET`. Never put production credentials in Vite variables.
+See [account operations](docs/accounts/operations.md) for local service and
+database setup.
+
+## Build and tests
 
 ```sh
 npm run build
-npm run preview
-```
-
-The production output is `dist/`. See the [deployment guide](docs/deployment.md) for HTTPS, hosting paths, and verification.
-
-## Data and privacy
-
-FORMA is a **browser-local application**. It has no application server, remote database, authentication, analytics, or cloud sync. `localStorage` stores your workspace; Web Locks coordinate writes between tabs on the same origin. Storage is specific to the browser profile and origin. FORMA does not encrypt saved data. Other scripts running on the same origin, browser extensions, and anyone with access to the browser profile may be able to read it. Export a JSON backup from Settings and keep a copy outside the browser before clearing site data, changing browsers, or moving to another domain.
-
-If persistence is unavailable, the app uses temporary memory and displays an explicit warning. Export your data before leaving that visit. Fonts and images are served with the application; a hosting provider may still record ordinary web access logs. See the [privacy and recovery guidance](docs/user-guide.md#back-up-and-restore) before resetting or clearing site data.
-
-Weights use kilograms and calendar dates use Australia/Sydney. Starter weights are editable examples. One plank rep represents a 10-second hold. FORMA does not include Apple Health integration, videos, subscriptions, or automated coaching.
-
-## Development checks
-
-```sh
-npx playwright install chromium firefox webkit
+npm run typecheck
 npm run lint
-npm run format:check
 npm run docs:check
-npm run build
-npm test
+npm run test:unit
+npm run test:server
+npm run test:worker
+npm run test:accounts
 ```
 
-On Linux, Playwright may require system dependencies: `npx playwright install-deps chromium firefox webkit`. `npm test` runs unit tests followed by development-browser tests in Chromium, Firefox, and WebKit. `npm run test:browser:production` builds the app and exercises the production preview across desktop and mobile-emulation projects. See [testing](docs/testing.md) and the [verification record](docs/verification.md) for evidence and browser limits.
+The real PostgreSQL server tests require `TEST_DATABASE_URL` for a disposable
+database. Account browser tests use an isolated API schema and an in-memory test
+email sink; they do not prove real email delivery or a Cloudflare/DigitalOcean
+deployment. Browser engines must be installed with Playwright before the full
+browser suite. See [testing](docs/testing.md) and the current account
+[release-readiness report](docs/accounts/release-readiness.md) for the observed
+limits and status.
+
+## Privacy and security
+
+Account-backed workout data is stored in PostgreSQL on the configured private
+API host. The browser sends its Better Auth session cookie to the same-origin
+Worker gateway; it never connects directly to PostgreSQL. Member identity comes
+from the server-validated session, and every workspace query is scoped to that
+member. Workspace API responses are not cached. Review the
+[database ownership model](docs/accounts/database.md) and
+[security reporting policy](SECURITY.md).
+
+Local guest mode stores data in browser `localStorage`; it is specific to the
+browser profile and origin and is not encrypted. Export a backup before clearing
+site data or changing browsers. The account interface supports validated import
+after member confirmation, so an existing v1 backup can be transferred.
+
+The Cloudflare Access token authenticates the Worker to the protected API
+origin; it is separate from member authentication. The Worker and API share an
+additional service secret. Keep both out of client assets. A configured
+production origin, Access/Tunnel route, email delivery, off-host backup, and
+restore drill are still deployment owner tasks.
 
 ## Documentation
 
-| Document                                                  | Purpose                                                                             |
-| --------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| [Getting started](docs/getting-started.md)                | Installation, commands, and troubleshooting                                         |
-| [User guide](docs/user-guide.md)                          | Routines, logging, progress, backups, and recovery                                  |
-| [Architecture](docs/architecture.md)                      | Components, data flow, persistence, and trust boundaries                            |
-| [Data model](docs/data-model.md)                          | Workspace structure, units, validation, and backup compatibility                    |
-| [Deployment](docs/deployment.md)                          | Static hosting and production checks                                                |
-| [Testing](docs/testing.md)                                | Automated checks and test conventions                                               |
-| [Contributing](CONTRIBUTING.md)                           | Development workflow and pull requests                                              |
-| [Changelog](CHANGELOG.md)                                 | Notable changes                                                                     |
-| [Equipment and workout coverage](docs/research/README.md) | 76 equipment families, 236 exercise candidates, sources, and implementation roadmap |
-| [Research](docs/research.md)                              | Reference research and product scope                                                |
-| [Frontend audit](docs/frontend-design-audit.md)           | Design findings and source-file coverage                                            |
-| [Data-layer audit](docs/backend-audit.md)                 | Persistence and business-logic findings, fixes, and coverage                        |
-| [QA and release evidence](docs/qa/README.md)              | Index for current release-readiness evidence                                        |
-| [Security reporting](SECURITY.md)                         | Responsible reporting guidance                                                      |
+| Document                                                | Purpose                                                         |
+| ------------------------------------------------------- | --------------------------------------------------------------- |
+| [Account docs](docs/accounts/README.md)                 | Account overview and references                                 |
+| [Account API](docs/accounts/api.md)                     | Auth, sessions, workspace routes, and error contract            |
+| [Operations](docs/accounts/operations.md)               | Environment, deployment, migrations, backup, and recovery       |
+| [Database](docs/accounts/database.md)                   | Schema, ownership, revision, and migration integrity            |
+| [Infrastructure](docs/accounts-infrastructure.md)       | Worker, Tunnel/Access, private-host topology, and source checks |
+| [Member sync](docs/member-data-sync.md)                 | Save, retry, import/export, and conflict handling               |
+| [Account readiness](docs/accounts/release-readiness.md) | Release gates and evidence for this branch                      |
+| [Sources](docs/accounts/sources.md)                     | Official source retrieval status and limits                     |
+| [User guide](docs/user-guide.md)                        | Workout use and legacy browser backup guidance                  |
+| [Data model](docs/data-model.md)                        | Version 1 workspace shape and validation                        |
+| [Testing](docs/testing.md)                              | Existing frontend suite and test conventions                    |
+| [Changelog](CHANGELOG.md)                               | Notable changes                                                 |
+| [Security](SECURITY.md)                                 | Responsible reporting and security notes                        |
 
-FORMA uses an original design informed by research into Leap Health's Gym Workout Planner & Gym Log. It is not affiliated with that product. Historical concept screenshots in `docs/` are design references, not current release screenshots. The Barlow Condensed and DM Sans fonts include their OFL licenses in `public/fonts/`. The repository does not currently include a project-wide software license. The provenance and redistribution terms for the bundled workout photographs are not documented in this repository; do not treat the absent project license as granting rights to those assets.
+Weights use kilograms and dates use Australia/Sydney. Starter weights are
+editable examples. One plank rep represents a 10-second hold. FORMA does not
+include billing, social networking, Apple Health integration, or automated
+coaching.
+
+The repository does not currently include a project-wide software license. The
+Barlow Condensed and DM Sans font licenses are in `public/fonts/`; the
+redistribution terms for the workout photographs are not documented here.

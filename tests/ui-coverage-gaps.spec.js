@@ -65,8 +65,11 @@ test(
     await expect(page.locator("main")).toHaveAttribute("data-page", "overview");
     await expect(page).toHaveURL(/#overview$/);
 
-    await page.getByRole("button", { name: /Personal workspace/ }).click();
-    await expect(page.locator("main")).toHaveAttribute("data-page", "settings");
+    await page.getByRole("button", { name: /Guest workspace/ }).click();
+    await expect(page.locator("main")).toHaveAttribute("data-page", "account");
+    await expect(
+      page.getByRole("heading", { name: "Welcome back", exact: true }),
+    ).toBeVisible();
 
     const data = snapshot();
     data.active = {

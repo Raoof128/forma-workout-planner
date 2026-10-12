@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { CalendarDays, ChevronRight, Play } from "lucide-react";
 import { createId, displayDate, sessionSets } from "./data";
-import { freshData } from "./storage";
+import { freshData, readStore } from "./storage";
 import { useWorkoutStore } from "./hooks/useWorkoutStore";
 import { useNavigation } from "./hooks/useNavigation";
 import Navigation, { navigationItems } from "./components/Navigation";
@@ -14,12 +14,28 @@ import Library from "./components/Library";
 import Workout from "./components/Workout";
 import { WorkoutHistory, Progress } from "./components/Insights";
 import { Settings, Schedule } from "./components/Preferences";
+import Account from "./components/Account.jsx";
+import { useAccount } from "./account/AccountProvider.jsx";
 const equal = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 export default function App() {
-  const { data, issue, raw, commit, saving } = useWorkoutStore();
+  const account = useAccount();
+  return (
+    <AccountWorkspace
+      key={
+        account.status === "authenticated" ? account.user?.id : account.status
+      }
+    />
+  );
+}
+
+function AccountWorkspace() {
+  const account = useAccount();
+  const { data, issue, raw, commit, saving, repository, status } =
+    useWorkoutStore(account);
   const [page, navigate] = useNavigation();
   const [modal, setModal] = useState(null);
   const [toast, setToast] = useState("");
+  const [legacySnapshot] = useState(() => readStore());
   const toastTimer = useRef(null);
   const notify = useCallback((message) => {
     setToast(message);
@@ -27,6 +43,42 @@ export default function App() {
     toastTimer.current = setTimeout(() => setToast(""), 6000);
   }, []);
   useEffect(() => () => clearTimeout(toastTimer.current), []);
+  const workspace = {
+    status:
+      account.status !== "authenticated"
+        ? account.status === "guest"
+          ? "guest"
+          : account.status
+        : status,
+    data: account.status === "authenticated" ? data : null,
+    revision:
+      account.status === "authenticated"
+        ? repository?.getSnapshot().revision
+        : null,
+    updatedAt:
+      account.status === "authenticated"
+        ? repository?.getSnapshot().updatedAt
+        : null,
+    conflict:
+      account.status === "authenticated"
+        ? repository?.getSnapshot().conflict
+        : null,
+    refresh: () => repository?.refresh(),
+    reloadConflict: () => repository?.reloadConflict(),
+    retry: () => repository?.retry(),
+    commit,
+    importLegacy: (backup) => repository?.importLegacy(backup),
+    exportData: () => repository?.exportData(),
+  };
+  const legacy = {
+    status:
+      legacySnapshot.issue === "invalid"
+        ? "invalid"
+        : legacySnapshot.raw === null
+          ? "empty"
+          : "available",
+    data: legacySnapshot.data,
+  };
   async function change(update, message) {
     try {
       const result = await commit(update);
@@ -179,16 +231,21 @@ export default function App() {
     return !!result;
   }
   async function restore(backup, revision, recoveryRaw) {
-    const result = await commit(() => backup, {
-      recover: true,
-      expectedRevision: revision,
-      ...(recoveryRaw !== undefined ? { expectedRaw: recoveryRaw } : {}),
-    });
+    const result =
+      account.status === "authenticated"
+        ? await commit(() => backup, { operationId: createId() })
+        : await commit(() => backup, {
+            recover: true,
+            expectedRevision: revision,
+            ...(recoveryRaw !== undefined ? { expectedRaw: recoveryRaw } : {}),
+          });
     setModal(null);
     navigate("overview");
     notify(
       result.saved
-        ? "Backup restored. Your previous data was preserved in this browser."
+        ? account.status === "authenticated"
+          ? "Cloud backup restored. Your prior cloud data was replaced."
+          : "Backup restored. Your previous data was preserved in this browser."
         : "Restored for this visit only.",
     );
   }
@@ -199,6 +256,39 @@ export default function App() {
         onRestore={(backup) => restore(backup, undefined, raw)}
         onReset={() => restore(freshData(), undefined, raw)}
       />
+    );
+  if (account.status === "loading")
+    return (
+      <main className="account-session-state" aria-live="polite">
+        <p>Checking your account session…</p>
+      </main>
+    );
+  if (account.status === "error")
+    return (
+      <main className="account-session-state" role="alert">
+        <h1>Your account session could not be checked.</h1>
+        <p>
+          Your private workspace is hidden until the connection is restored.
+        </p>
+        <Button variant="lime" onClick={() => account.refresh()}>
+          Try again
+        </Button>
+      </main>
+    );
+  if (account.status === "authenticated" && !data && page !== "account")
+    return (
+      <main className="account-session-state" aria-live="polite">
+        <p>
+          {status === "error"
+            ? "Your private workspace could not be loaded."
+            : "Loading your private workspace…"}
+        </p>
+        {status === "error" && (
+          <Button variant="lime" onClick={() => repository?.refresh()}>
+            Try again
+          </Button>
+        )}
+      </main>
     );
   const visiblePage = page;
   return (
@@ -213,7 +303,12 @@ export default function App() {
       >
         Skip to content
       </a>
-      <Navigation page={visiblePage} navigate={navigate} data={data} />
+      <Navigation
+        page={visiblePage}
+        navigate={navigate}
+        data={data}
+        account={account}
+      />
       <main id="main-content" data-page={visiblePage}>
         <header className="topbar">
           {saving && <span className="save-indicator">Saving changes…</span>}
@@ -225,9 +320,11 @@ export default function App() {
                 ? "Active workout"
                 : visiblePage === "settings"
                   ? "Settings"
-                  : navigationItems.find(
-                      (item) => item[0] === visiblePage,
-                    )?.[1]}
+                  : visiblePage === "account"
+                    ? "Account"
+                    : navigationItems.find(
+                        (item) => item[0] === visiblePage,
+                      )?.[1]}
             </strong>
           </div>
           <span className="top-date">
@@ -241,106 +338,130 @@ export default function App() {
           </span>
         </header>
         <div className="main-content">
-          {issue === "unavailable" && (
-            <div role="alert" className="storage-warning">
-              Browser saving is unavailable. Changes last only for this visit.
-              Export your data in Settings.
-            </div>
-          )}
-          {visiblePage === "overview" && (
-            <Overview
-              data={data}
-              saved={issue !== "unavailable"}
-              onStart={start}
-              onRoutine={(routine) => setModal({ type: "detail", routine })}
+          {visiblePage === "account" && (
+            <Account
+              account={account}
+              workspace={workspace}
+              legacy={legacy}
               onNavigate={navigate}
-              onSchedule={() =>
-                setModal({ type: "schedule", schedule: data.schedule })
-              }
-            />
-          )}
-          {visiblePage === "routines" && (
-            <Routines
-              routines={data.routines}
-              onOpen={(routine) => setModal({ type: "detail", routine })}
-              onCreate={() => setModal({ type: "editor" })}
-            />
-          )}
-          {visiblePage === "library" && <Library />}
-          {visiblePage === "workout" &&
-            (data.active ? (
-              <Workout
-                key={data.active.id}
-                session={data.active}
-                onUpdate={updateSession}
-                onFinish={finish}
-                onCancel={() =>
-                  setModal({ type: "discard", activeId: data.active.id })
-                }
-                onBack={() => navigate("overview")}
-                notify={notify}
-              />
-            ) : (
-              <Empty
-                heading="h1"
-                title="No workout is running."
-                description="Start a routine when you’re ready."
-              >
-                <Button variant="lime" onClick={() => start(data.routines[0])}>
-                  Start workout
-                </Button>
-              </Empty>
-            ))}
-          {visiblePage === "history" && (
-            <WorkoutHistory
-              history={data.history}
-              onStart={() => start(data.routines[0])}
-              onSave={saveHistory}
-              onDelete={async (session) => {
-                const result = await change((current) => {
-                  if (
-                    !equal(
-                      current.history.find((item) => item.id === session.id),
-                      session,
-                    )
-                  )
-                    throw new Error(
-                      "This workout changed in another tab. Reopen it first.",
-                    );
-                  return {
-                    ...current,
-                    history: current.history.filter(
-                      (item) => item.id !== session.id,
-                    ),
-                  };
-                }, "Workout deleted. Progress has been updated.");
-                return !!result;
-              }}
-            />
-          )}
-          {visiblePage === "progress" && (
-            <Progress
-              history={data.history}
-              onStart={() => start(data.routines[0])}
-            />
-          )}
-          {visiblePage === "settings" && (
-            <Settings
-              data={data}
-              saved={issue !== "unavailable"}
-              onRestore={restore}
-              onSave={async (profile, original) => {
-                const result = await change((current) => {
-                  if (!equal(current.profile, original))
-                    throw new Error(
-                      "Your profile changed in another tab. Reload Settings before saving.",
-                    );
-                  return { ...current, profile };
-                }, "Your preferences are saved.");
-                return !!result;
-              }}
               notify={notify}
             />
+          )}
+          {visiblePage !== "account" && data && (
+            <>
+              {issue === "unavailable" && (
+                <div role="alert" className="storage-warning">
+                  Browser saving is unavailable. Changes last only for this
+                  visit. Export your data in Settings.
+                </div>
+              )}
+              {visiblePage === "overview" && (
+                <Overview
+                  data={data}
+                  saved={issue !== "unavailable"}
+                  onStart={start}
+                  onRoutine={(routine) => setModal({ type: "detail", routine })}
+                  onNavigate={navigate}
+                  onSchedule={() =>
+                    setModal({ type: "schedule", schedule: data.schedule })
+                  }
+                />
+              )}
+              {visiblePage === "routines" && (
+                <Routines
+                  routines={data.routines}
+                  onOpen={(routine) => setModal({ type: "detail", routine })}
+                  onCreate={() => setModal({ type: "editor" })}
+                />
+              )}
+              {visiblePage === "library" && <Library />}
+              {visiblePage === "workout" &&
+                (data.active ? (
+                  <Workout
+                    key={data.active.id}
+                    session={data.active}
+                    onUpdate={updateSession}
+                    onFinish={finish}
+                    onCancel={() =>
+                      setModal({ type: "discard", activeId: data.active.id })
+                    }
+                    onBack={() => navigate("overview")}
+                    notify={notify}
+                  />
+                ) : (
+                  <Empty
+                    heading="h1"
+                    title="No workout is running."
+                    description="Start a routine when you’re ready."
+                  >
+                    <Button
+                      variant="lime"
+                      onClick={() => start(data.routines[0])}
+                    >
+                      Start workout
+                    </Button>
+                  </Empty>
+                ))}
+              {visiblePage === "history" && (
+                <WorkoutHistory
+                  history={data.history}
+                  onStart={() => start(data.routines[0])}
+                  onSave={saveHistory}
+                  onDelete={async (session) => {
+                    const result = await change((current) => {
+                      if (
+                        !equal(
+                          current.history.find(
+                            (item) => item.id === session.id,
+                          ),
+                          session,
+                        )
+                      )
+                        throw new Error(
+                          "This workout changed in another tab. Reopen it first.",
+                        );
+                      return {
+                        ...current,
+                        history: current.history.filter(
+                          (item) => item.id !== session.id,
+                        ),
+                      };
+                    }, "Workout deleted. Progress has been updated.");
+                    return !!result;
+                  }}
+                />
+              )}
+              {visiblePage === "progress" && (
+                <Progress
+                  history={data.history}
+                  onStart={() => start(data.routines[0])}
+                />
+              )}
+              {visiblePage === "settings" && (
+                <Settings
+                  data={data}
+                  saved={issue !== "unavailable"}
+                  memberMode={account.status === "authenticated"}
+                  onExport={
+                    account.status === "authenticated"
+                      ? workspace.exportData
+                      : undefined
+                  }
+                  onRestore={restore}
+                  onSave={async (profile, original) => {
+                    const result = await change((current) => {
+                      if (!equal(current.profile, original))
+                        throw new Error(
+                          "Your profile changed in another tab. Reload Settings before saving.",
+                        );
+                      return { ...current, profile };
+                    }, "Your preferences are saved.");
+                    return !!result;
+                  }}
+                  notify={notify}
+                />
+              )}
+            </>
           )}
         </div>
       </main>

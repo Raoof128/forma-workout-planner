@@ -1,6 +1,6 @@
 # QA and release evidence
 
-This directory collects evidence for the current release-readiness review. Read the root-owned [release readiness report](release-readiness.md) for the decision, results, and known limitations.
+This directory preserves evidence from the historical browser-only release-readiness candidate. Read its [release readiness report](release-readiness.md) for that candidate's decision, results, and known limitations. It does not verify the account-backed `feature/self-hosted-accounts` branch; use [account release readiness](../accounts/release-readiness.md) for current account gates.
 
 The report links the machine-readable interaction inventory, function/branch coverage matrix, defect register, and progress record. Those artifacts record observed outcomes; an item marked untested, blocked, or not applicable must not be counted as passing coverage.
 

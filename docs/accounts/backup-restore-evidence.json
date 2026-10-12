@@ -1,0 +1,10 @@
+{
+  "postgresVersion": "18.4",
+  "migrationApplied": true,
+  "encryptedBytes": 18278,
+  "encryptedSha256": "084991fead9bfe5ad79b5cb76afff79f3c247e15c0243481fac887b6a11fa30e",
+  "restoredMembers": "1",
+  "workspaceMatches": true,
+  "corruptionRejected": true,
+  "scope": "Real local pg_dump -> age encrypt/decrypt -> isolated pg_restore. Off-host storage, remote deployment and operational scheduler not tested."
+}

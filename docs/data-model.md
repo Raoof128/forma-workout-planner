@@ -4,7 +4,7 @@
 
 ## Workspace envelope
 
-The active workspace is JSON under `localStorage['forma-v1']`. Exports contain the same versioned envelope. `src/storage.js` is the source of truth for validation; this document explains the contract.
+The version 1 workspace shape is shared by guest mode, JSON backups, and the authenticated server workspace. Guest mode stores it under `localStorage['forma-v1']`; account mode stores it as owner-scoped JSONB in PostgreSQL. Exports contain the same versioned envelope. `src/storage.js` is the source of truth for validation; this document explains the data contract. See [account database details](accounts/database.md) for the server revision and ownership boundary.
 
 | Field      | Meaning                                                                                   |
 | ---------- | ----------------------------------------------------------------------------------------- |
@@ -24,7 +24,7 @@ A session snapshots the routine name and prescribed sets at the start. Each set 
 
 `startedAt` and `restEnd` use nonnegative Unix milliseconds within JavaScript’s valid date range. A history record must include at least one completed set, and its ID cannot also identify the active session. `restSeconds` and `restPaused` use seconds; rest preferences range from 10 to 600 seconds at the data boundary. History uses a UTC ISO completion `date` and a `duration` in seconds. Display dates are calculated in Australia/Sydney, independently of the device's time zone. Import ordering is determined by parsed timestamps, not by array position.
 
-The profile name contains 1–50 trimmed characters and the weekly goal is 1–7 workouts. The starter profile is example data, not an account or identity record.
+The profile name contains 1–50 trimmed characters and the weekly goal is 1–7 workouts. The starter profile is example data in guest mode; an empty account workspace uses the member's display name without inventing workout history.
 
 ## Compatibility and recovery
 

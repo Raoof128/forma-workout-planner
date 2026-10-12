@@ -1,0 +1,149 @@
+name: forma-staging
+
+x-bounded-logs: &bounded-logs
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+services:
+  db:
+    image: postgres:18.4-alpine
+    restart: unless-stopped
+    logging: *bounded-logs
+    environment:
+      POSTGRES_DB: forma
+      POSTGRES_USER: forma_bootstrap
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_admin_password
+    secrets:
+      - postgres_admin_password
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    networks:
+      - database
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m
+      - /run/postgresql:rw,noexec,nosuid,size=16m
+    cap_drop: [ALL]
+    cap_add: [CHOWN, DAC_OVERRIDE, SETGID, SETUID]
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 2g
+    cpus: 2.0
+    pids_limit: 256
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U forma_bootstrap -d forma"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 30s
+
+  api:
+    build:
+      context: ..
+      dockerfile: ops/Dockerfile
+    image: forma-api:${IMAGE_TAG:-staging}
+    restart: unless-stopped
+    logging: *bounded-logs
+    environment:
+      NODE_ENV: ${NODE_ENV:-production}
+      PORT: "3000"
+      APP_ORIGIN: ${APP_ORIGIN:?set APP_ORIGIN}
+      AUTH_SECRET: ${AUTH_SECRET:?set AUTH_SECRET}
+      ORIGIN_SHARED_SECRET: ${ORIGIN_SHARED_SECRET:?set ORIGIN_SHARED_SECRET}
+      DATABASE_URL: ${DATABASE_URL:?set DATABASE_URL using the runtime database role}
+      EMAIL_FROM: ${EMAIL_FROM:?set EMAIL_FROM}
+      EMAIL_SINK_ENABLED: ${EMAIL_SINK_ENABLED:-false}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - database
+      - tunnel
+    expose:
+      - "3000"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 768m
+    cpus: 1.0
+    pids_limit: 128
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/healthz').then(r => { if (!r.ok) process.exit(1) }).catch(() => process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+  migrate:
+    image: forma-api:${IMAGE_TAG:-staging}
+    profiles: ["migrate"]
+    command: ["node", "build/server/migrate.js"]
+    restart: "no"
+    logging: *bounded-logs
+    environment:
+      NODE_ENV: ${NODE_ENV:-production}
+      DATABASE_URL: ${MIGRATION_DATABASE_URL:?set MIGRATION_DATABASE_URL using the migration database role}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - database
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 512m
+    cpus: 1.0
+    pids_limit: 64
+
+  cloudflared:
+    image: cloudflare/cloudflared:2026.9.3
+    restart: unless-stopped
+    logging: *bounded-logs
+    command:
+      [
+        "tunnel",
+        "--no-autoupdate",
+        "run",
+        "--token-file",
+        "/run/secrets/cloudflare_tunnel_token",
+      ]
+    secrets:
+      - cloudflare_tunnel_token
+    networks:
+      - tunnel
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=32m
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 256m
+    cpus: 0.5
+    pids_limit: 64
+
+networks:
+  database:
+    internal: true
+  tunnel:
+    driver: bridge
+
+volumes:
+  postgres_data:
+
+secrets:
+  postgres_admin_password:
+    file: ${POSTGRES_ADMIN_PASSWORD_FILE:?set POSTGRES_ADMIN_PASSWORD_FILE to a protected file path}
+  cloudflare_tunnel_token:
+    file: ${CLOUDFLARE_TUNNEL_TOKEN_FILE:?set CLOUDFLARE_TUNNEL_TOKEN_FILE to a protected file path}
