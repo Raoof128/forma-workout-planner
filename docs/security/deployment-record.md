@@ -52,6 +52,7 @@ $C logs --tail 50 api
 | API token `forma-staging-email-send`                     | Staging API sends account email               | 2027-01-10; rotate before then                                                                         |
 | Access service token `forma-staging-worker`              | Staging Worker → API (Worker secrets)         | 1 year                                                                                                 |
 | Access service token `forma-staging-smoke`               | Operator smoke tests of the staging UI        | 30 days                                                                                                |
+| API token `forma-redeploy-1h` (twice)                    | Redeployed both Workers for the legal pages   | 1 hour; revoked immediately after each use                                                             |
 | `AUTH_SECRET`, `ORIGIN_SHARED_SECRET`, DB role passwords | Staging API                                   | Generated for staging only; see the `AUTH_SECRET` warning in [incident response](incident-response.md) |
 
 ## Verified at deployment
@@ -66,6 +67,14 @@ $C logs --tail 50 api
 - Public site: app loads, strict CSP and HSTS, `/api` returns 503, the
   `workers.dev` alias is off.
 - Isolated restore drill of the staging database.
+
+## Later deployments
+
+- 2026-10-13, commits `2788a5f` and `9031373`: Privacy Policy and Terms of Use
+  pages (`#privacy`, `#terms`), sign-up consent checkboxes and collection
+  notice. Both Workers redeployed with a one-hour token, revoked after use.
+  Verified live: both pages render with their required sections and fit a
+  phone screen. See [legal](../legal/README.md).
 
 ## Rollback
 

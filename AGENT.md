@@ -77,3 +77,10 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   unilateral change/termination without notice. New data collection, a new
   provider or country, analytics or ads require updating the Privacy Policy
   first (see `docs/legal/README.md`).
+
+### Raouf: 2026-10-13 — Logs and memory
+
+- **Summary:** changelog, deployment record and Zurvan memory updated for the
+  deployment and legal pages. Redeploys use a freshly minted one-hour Cloudflare
+  token that is revoked straight after; never keep long-lived deploy tokens.
+- **Verification:** `npm run docs:check`; Zurvan index rebuilt.
