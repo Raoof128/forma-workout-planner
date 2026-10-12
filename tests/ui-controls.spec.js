@@ -48,7 +48,14 @@ test(
     await page.getByRole("button", { name: "This week" }).click();
     await expect(week).toHaveText(currentWeek);
 
-    const day = page.locator(".day").nth(1);
+    // Day details only appear for a day other than today, so never hard-code
+    // a weekday position: it fails on whichever weekday it lands on today.
+    const pressed = await page
+      .locator(".day")
+      .evaluateAll((days) =>
+        days.map((day) => day.getAttribute("aria-pressed") === "true"),
+      );
+    const day = page.locator(".day").nth(pressed.indexOf(false));
     await day.click();
     await expect(day).toHaveAttribute("aria-pressed", "true");
     await page.getByRole("button", { name: "Edit schedule" }).click();
