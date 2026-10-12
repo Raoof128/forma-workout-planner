@@ -14,6 +14,7 @@ export default defineConfig({
   reporter: process.env.CI
     ? [
         ["line"],
+        ["github"],
         [
           "html",
           { outputFolder: "playwright-report/production", open: "never" },
