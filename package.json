@@ -26,8 +26,8 @@
     "test:accounts:production": "FORMA_ACCOUNT_BUILD=1 playwright test --config=playwright.accounts.config.js",
     "accounts:test-server": "tsx scripts/accounts-test-server.ts",
     "worker:dev": "wrangler dev",
-    "worker:deploy:staging": "npm run build && wrangler deploy --env staging",
-    "worker:deploy:production": "npm run build && wrangler deploy --env production",
+    "worker:deploy:staging": "VITE_ACCOUNT_MODE=account npm run build && NODE_USE_ENV_PROXY=1 node scripts/deploy-public.mjs --staging",
+    "worker:deploy:production": "VITE_ACCOUNT_MODE=guest npm run build && NODE_USE_ENV_PROXY=1 node scripts/deploy-public.mjs",
     "build:server": "tsc -p tsconfig.server.json && mkdir -p build/server/migrations && cp server/migrations/*.sql build/server/migrations/"
   },
   "dependencies": {

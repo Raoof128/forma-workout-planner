@@ -7,6 +7,10 @@ import process from "node:process";
 // The existing infrastructure token creates a one-hour scoped deploy token.
 // Its value lives only in child-process memory; revoke it on every exit path.
 const base = "https://api.cloudflare.com/client/v4";
+if (
+  process.argv.slice(2).some((arg) => !["--staging", "--inspect"].includes(arg))
+)
+  throw new Error("Supported deployment flags: --staging, --inspect");
 const management = process.env.CLOUDFLARE_API_TOKEN;
 const environment = process.argv.includes("--staging")
   ? "staging"

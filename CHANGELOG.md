@@ -33,6 +33,8 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   Every unrelated running container retained its ID. Final production browser
   matrices passed 40 guest and 45 member cases; all deployment and maintenance
   credentials were short-lived and revoked after use.
+- Deployment npm commands now force the correct guest/account build and use
+  the scoped one-hour token helper; unsupported flags fail before any API call.
 
 ### Raouf: 2026-10-13 — Privacy Policy and Terms of Use
 
