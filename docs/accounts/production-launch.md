@@ -82,6 +82,11 @@ the word `staging` in that provider hostname does not change account isolation.
 
 ## Final hosted canary
 
+The 14 October catalog update supersedes the frontend/API versions recorded in
+this original launch canary. Current versions, compatibility checks and live
+browser evidence are in the [catalog release record](../research/catalog-quality.md).
+Account configuration and member data were preserved during that update.
+
 Public Worker version `858e5694-89f3-4ea6-9539-e60e2b85764c` serves the polished account
 build. API image config digest is
 `af3527faa9f3e61fd0ff8b70c13202150ea0bbbf7a3ace87dc5dcfb1e2134a35`;

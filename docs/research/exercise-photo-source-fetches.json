@@ -1,0 +1,251 @@
+{
+  "reviewedDate": "2026-10-14",
+  "fetches": [
+    {
+      "name": "wger-images",
+      "url": "https://wger.de/api/v2/exerciseimage/?limit=1000",
+      "finalUrl": "https://wger.de/api/v2/exerciseimage/?limit=1000",
+      "status": 200,
+      "bytes": 256803,
+      "sha256": "9e2d138a4a353ae268e18e459bca078ea57eca990a268b065374b2aa7576c4e2"
+    },
+    {
+      "name": "wger-info",
+      "url": "https://wger.de/api/v2/exerciseinfo/?limit=1000",
+      "finalUrl": "https://wger.de/api/v2/exerciseinfo/?limit=1000",
+      "status": 200,
+      "bytes": 6239686,
+      "sha256": "7fb1e9ae72e6bc658a606926e13e8e91294032eaa59ff8acd403e06885e28deb"
+    },
+    {
+      "name": "wger-api",
+      "url": "https://wger.de/en/software/api",
+      "finalUrl": "https://wger.de/en/software/api",
+      "status": 200,
+      "bytes": 7437,
+      "challengePage": true,
+      "usableDocumentation": false,
+      "sha256": "6f238da08d3a725e59048c30cd7d498af12677c172916442a224b94c3dccd94f"
+    },
+    {
+      "name": "wger-license",
+      "url": "https://wger.de/api/v2/license/",
+      "finalUrl": "https://wger.de/api/v2/license/",
+      "status": 200,
+      "bytes": 761,
+      "sha256": "5c0f35f4f321c53a6865f1e8052b001ac051c73d29266102192a51434ec16bdf"
+    },
+    {
+      "name": "free-image-issue",
+      "url": "https://api.github.com/repos/yuhonas/free-exercise-db/issues/2",
+      "finalUrl": "https://api.github.com/repos/yuhonas/free-exercise-db/issues/2",
+      "status": 200,
+      "bytes": 3343,
+      "sha256": "d210590a97179c9d8ed7508674a1fd974232f78337ba495d67b8dcc6476c3969"
+    },
+    {
+      "name": "exercise-db",
+      "url": "https://www.exercisedb.dev/",
+      "error": "HTTP Error 503: Service Unavailable"
+    },
+    {
+      "name": "free-image-comments",
+      "url": "https://api.github.com/repos/yuhonas/free-exercise-db/issues/2/comments",
+      "finalUrl": "https://api.github.com/repos/yuhonas/free-exercise-db/issues/2/comments",
+      "status": 200,
+      "bytes": 5539,
+      "sha256": "0c2e3f82779fa49da037df442eed847f807a2a98ed619af1658d6790555fbeb1"
+    },
+    {
+      "name": "wger-image-model",
+      "url": "https://raw.githubusercontent.com/wger-project/wger/master/wger/exercises/models/image.py",
+      "finalUrl": "https://raw.githubusercontent.com/wger-project/wger/master/wger/exercises/models/image.py",
+      "status": 200,
+      "bytes": 6293,
+      "sha256": "de5686c0b5e2e7362f0c11306566aa7d9b2a710f9bb0712d6458348f1b0bbf23"
+    },
+    {
+      "name": "wger-readme",
+      "url": "https://raw.githubusercontent.com/wger-project/wger/master/README.md",
+      "finalUrl": "https://raw.githubusercontent.com/wger-project/wger/master/README.md",
+      "status": 200,
+      "bytes": 5636,
+      "sha256": "11b4826a7357eabd8756a6a5d21099f5660122e87ef6c4ec688249b351b42f05"
+    },
+    {
+      "name": "wger-terms",
+      "url": "https://wger.de/en/software/license",
+      "finalUrl": "https://wger.de/en/software/license",
+      "status": 200,
+      "bytes": 7438,
+      "challengePage": true,
+      "usableDocumentation": false,
+      "sha256": "fe1cde0bec375860d5247f77b9b1097aac1cff115995a905f048458a7f748dde"
+    },
+    {
+      "name": "cc-by-sa-4",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "exercise-db-repo",
+      "url": "https://api.github.com/repos/ExerciseDB/exercisedb-api",
+      "finalUrl": "https://api.github.com/repos/ExerciseDB/exercisedb-api",
+      "status": 200,
+      "bytes": 7221,
+      "sha256": "63bffe3283c1da44a2e82e5a52549dd3b51292cbaac3c70234a389ab5ad9bc6e"
+    },
+    {
+      "name": "gymvisual",
+      "url": "https://gymvisual.com/content/6-terms-and-conditions-of-use",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "exercise-db-readme",
+      "url": "https://raw.githubusercontent.com/ExerciseDB/exercisedb-api/main/README.md",
+      "finalUrl": "https://raw.githubusercontent.com/ExerciseDB/exercisedb-api/main/README.md",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 8146,
+      "challengePage": false,
+      "sha256": "88603dee31be15bec3687ea9a3d7f8eef67e0f4e0c9d9e0f70591c3a4c9fdb02"
+    },
+    {
+      "name": "exercise-db-license",
+      "url": "https://raw.githubusercontent.com/ExerciseDB/exercisedb-api/main/LICENSE",
+      "finalUrl": "https://raw.githubusercontent.com/ExerciseDB/exercisedb-api/main/LICENSE",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 34489,
+      "challengePage": false,
+      "sha256": "978dd2380c595175630bb3eed0f6c9771af7a36eb6a044a99e7bca0c64cf2f05"
+    },
+    {
+      "name": "free-upstream-photo-rights",
+      "url": "https://api.github.com/repos/wrkout/exercises.json/issues/305",
+      "finalUrl": "https://api.github.com/repos/wrkout/exercises.json/issues/305",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 3071,
+      "challengePage": false,
+      "sha256": "a8f9424317a5d7bebf28f9d0450678c80c3442691e1eb19aa277d316f4563b32"
+    },
+    {
+      "name": "ace-library",
+      "url": "https://www.acefitness.org/resources/everyone/exercise-library/",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "cc-by-sa-legalcode",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.en",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "sample-db-alternate-hammer-curl",
+      "url": "https://wger.de/media/exercise-images/1567/0a8c155c-a48e-47e8-9df3-e39f025c6cad.png",
+      "finalUrl": "https://wger.de/media/exercise-images/1567/0a8c155c-a48e-47e8-9df3-e39f025c6cad.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 153442,
+      "challengePage": false,
+      "sha256": "23cb491e8c890142e476da3a93c7423e33d17267d6dd6b5e4d11622cd09b13a3"
+    },
+    {
+      "name": "sample-db-adductor",
+      "url": "https://wger.de/media/exercise-images/1860/f0410e66-28d5-455f-90f3-d078e0988460.avif",
+      "finalUrl": "https://wger.de/media/exercise-images/1860/f0410e66-28d5-455f-90f3-d078e0988460.avif",
+      "status": 200,
+      "contentType": "image/avif",
+      "bytes": 22600,
+      "challengePage": false,
+      "sha256": "36d1aca37cca07af8cf62226cc20101fdd1948775ee3f15197fb8153ec5153d7"
+    },
+    {
+      "name": "sample-wger-7dd7a735-c1fe-4ca0-a6e8-e825d897b065",
+      "url": "https://wger.de/media/exercise-images/1141/c7be1cd1-46c5-4a86-a114-5f0fe861c3e0.jpg",
+      "finalUrl": "https://wger.de/media/exercise-images/1141/c7be1cd1-46c5-4a86-a114-5f0fe861c3e0.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 28383,
+      "challengePage": false,
+      "sha256": "46993f52209a683c9782ea3b2f934ef9217238c53cf8bff844427fefa65e640c"
+    },
+    {
+      "name": "sample-bench",
+      "url": "https://wger.de/media/exercise-images/192/Bench-press-1.png",
+      "finalUrl": "https://wger.de/media/exercise-images/192/Bench-press-1.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 89870,
+      "challengePage": false,
+      "sha256": "917e88d61aefa05cf46a98e44e41630343c0b2c821624ca0ac41c07dfedbceed"
+    },
+    {
+      "name": "exercise-db-docs",
+      "url": "https://docs.exercisedb.dev",
+      "finalUrl": "https://docs.ascendapi.com/introduction",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 299933,
+      "challengePage": false,
+      "sha256": "263af05b85230bdbfd836d2517ac1083025b9a8a41bf4aef6f7639b060867206"
+    },
+    {
+      "name": "exercise-db-terms",
+      "url": "https://dub.sh/exercisedb-api-tos",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "sample-goblet",
+      "url": "https://wger.de/media/exercise-images/203/1c052351-2af0-4227-aeb0-244008e4b0a8.jpeg",
+      "finalUrl": "https://wger.de/media/exercise-images/203/1c052351-2af0-4227-aeb0-244008e4b0a8.jpeg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 51046,
+      "challengePage": false,
+      "sha256": "bb75e5fca543056db51764b9648a0344cdfbe824ca2ce9c9a752d21d094bdead"
+    },
+    {
+      "name": "sample-narrow-legpress",
+      "url": "https://wger.de/media/exercise-images/373/60e2aa21-1910-40d3-9fed-babfee06dd48.png",
+      "finalUrl": "https://wger.de/media/exercise-images/373/60e2aa21-1910-40d3-9fed-babfee06dd48.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 21242,
+      "challengePage": false,
+      "sha256": "37f8ef842272499b2df685cfd8c11b8a1714d54280ec088a0c8d1fa1351eb6ac"
+    },
+    {
+      "name": "exercise-db-docs-index",
+      "url": "https://docs.ascendapi.com/llms.txt",
+      "finalUrl": "https://docs.ascendapi.com/llms.txt",
+      "status": 200,
+      "bytes": 6020,
+      "sha256": "273ee46eeef85b189d7f4ebab30c051a505d5a06b4c35eb85ee93db924bf55a7"
+    },
+    {
+      "name": "exercise-db-v2-docs",
+      "url": "https://docs.ascendapi.com/products/edb-v2/overview.md",
+      "finalUrl": "https://docs.ascendapi.com/products/edb-v2/overview.md",
+      "status": 200,
+      "bytes": 8956,
+      "sha256": "d841858dd9564d8a6e99cf2835bb64879556cdc078452ebc488e28200d1cb1fa"
+    },
+    {
+      "name": "exercise-db-caching-docs",
+      "url": "https://docs.ascendapi.com/guides/caching.md",
+      "finalUrl": "https://docs.ascendapi.com/guides/caching.md",
+      "status": 200,
+      "bytes": 2975,
+      "sha256": "8ba2b9f7e6e4e07828b109405d1ea712a23c9075d761e164e6e154304fcf359a"
+    },
+    {
+      "name": "exercise-db-by-id-docs",
+      "url": "https://docs.ascendapi.com/api-reference/exercisedb-v2/exercises/getexercisebyid.md",
+      "finalUrl": "https://docs.ascendapi.com/api-reference/exercisedb-v2/exercises/getexercisebyid.md",
+      "status": 200,
+      "bytes": 26278,
+      "sha256": "ff89ecf7597f80bb746efb3b1fc39fcdd34bc078064846f9c46c5f6fff93b180"
+    }
+  ]
+}

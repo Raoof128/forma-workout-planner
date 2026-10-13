@@ -4,6 +4,18 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-14 — Exercise photo research and live catalog record
+
+- Recorded live API/frontend versions and public/private catalog checks. Removed
+  an internal ID from the fan-bike guide note without changing logging units.
+- Audited photo candidates for every selectable exercise; linked images cover
+  205 movements, with 106 attributed non-AI-flagged declared-photo candidates.
+  Visual checks caught mislabelled drawings and mismatched variations. No exercise
+  photos were deployed or automatically approved.
+- Documented asset-specific rights, Free Exercise DB's unresolved photo provenance
+  and current AscendAPI subscription/caching/weekly URL-rotation requirements.
+  See [photo research](docs/research/exercise-photos.md).
+
 ### Raouf: 2026-10-14 — Exercise duplicates and machine coverage
 
 - Consolidated 240 duplicate entries in 180 reviewed groups, with aliases in

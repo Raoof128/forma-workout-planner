@@ -57,6 +57,21 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-14 — Photo-source feasibility
+
+- **Research:** `docs/research/exercise-photos.md` and its per-movement inventory
+  cover all 1,414 selectable IDs. Identity-linked wger images cover 205 movements;
+  106 have attributed, non-AI-flagged declared-photo candidates. These are
+  metadata counts, not accepted photo coverage. No exercise images were deployed.
+- **Constraint:** visually checked Photo-labelled assets included drawings and a
+  weighted variation of a bodyweight guide. Match the actual movement and asset
+  rights individually. Never infer photo rights/author from instruction metadata.
+- **Provider:** current AscendAPI media URLs rotate weekly; caching/rehosting
+  rights depend on the selected plan. Do not bundle rotating URLs or API keys.
+- **Release:** current live versions and compatibility checks are recorded in
+  `docs/research/catalog-quality.md`. The fan-bike note no longer exposes an
+  internal ID; API identities and existing account data are unchanged.
+
 ### Raouf: 2026-10-14 — Catalog quality correction
 
 - **Contract:** `exercises` and `exerciseById` retain every historical ID and
