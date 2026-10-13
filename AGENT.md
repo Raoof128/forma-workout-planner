@@ -138,3 +138,21 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   container selection and independent KV alert state; actual disaster drills passed.
   Public registration, owner-confirmed email receipt, verified sign-in, timed
   private saves, export and two-session persistence passed. Canary data was removed.
+
+### Raouf: 2026-10-13 — Brand and journals
+
+- **Scope:** original logo/loading animation, workout history polish and an
+  owner-only read-only operations dashboard. Real pending states only; preserve
+  stable control labels, reduced motion, auth contracts and measurement units.
+- **Operations:** Access JWT validation accepts standard string/array audiences
+  while requiring exact scope and signature. Workers supports manual/follow
+  redirects; use manual and reject non-success responses. Dashboard records
+  sanitized monitor state only; never give it member/database credentials.
+- **Verification:** 258 development and 40 production guest cases passed; 40
+  account cases and all five affected migration rechecks passed. Eighteen history
+  cases passed across three engines. Live public/staging/dashboard checks passed;
+  mobile overflow/page errors/axe violations were absent. Current operations
+  checks are 6 Python and 8 Node tests.
+- **Next authorised maintenance:** owner requested all FORMA production accounts
+  and linked data removed after polish. Preserve staging and unrelated services.
+  Record counts and health without exporting identifiers or database contents.

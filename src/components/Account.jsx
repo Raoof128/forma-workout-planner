@@ -25,7 +25,18 @@ import {
 } from "lucide-react";
 import { exercises } from "../data";
 import { readBackupFile } from "../storage";
+import { BrandSymbol } from "./BrandMark";
+import Loading, { LoadingGlyph } from "./Loading";
 import "../account.css";
+
+function BusyButton({ loading = false, children, ...props }) {
+  return (
+    <button {...props} aria-busy={loading || undefined}>
+      {loading && <LoadingGlyph />}
+      {children}
+    </button>
+  );
+}
 
 const sections = [
   ["overview", "Overview", Activity],
@@ -80,14 +91,17 @@ function AuthView({ account, notify, onNavigate }) {
   const [mfaLoginCode, setMfaLoginCode] = useState("");
   const [useRecoveryCode, setUseRecoveryCode] = useState(false);
   const [busy, setBusy] = useState(false);
+  const [busyAction, setBusyAction] = useState(null);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
   async function submit(event) {
     event.preventDefault();
+    if (busy) return;
     setError("");
     setMessage("");
     setBusy(true);
+    setBusyAction("submit");
     try {
       if (mode === "signup") {
         await account.signUp({
@@ -131,6 +145,7 @@ function AuthView({ account, notify, onNavigate }) {
       );
     } finally {
       setBusy(false);
+      setBusyAction(null);
     }
   }
 
@@ -164,11 +179,8 @@ function AuthView({ account, notify, onNavigate }) {
           Your routines and training history stay with your account, ready
           wherever you train.
         </p>
-        <div className="account-aside-mark" aria-hidden="true">
-          <span>F</span>
-          <i />
-          <i />
-          <i />
+        <div className="account-auth-emblem" aria-hidden="true">
+          <BrandSymbol />
         </div>
       </aside>
       <section className="account-auth-card" aria-labelledby="auth-title">
@@ -194,13 +206,15 @@ function AuthView({ account, notify, onNavigate }) {
           (!account.user || account.user.emailVerified === false) && (
             <div className="account-verify-note">
               <span>Need a verification link?</span>
-              <button
+              <BusyButton
                 type="button"
                 className="account-text-button"
                 disabled={busy || !email.trim()}
+                loading={busy && busyAction === "verification"}
                 onClick={async () => {
                   if (!email.trim()) return;
                   setBusy(true);
+                  setBusyAction("verification");
                   setError("");
                   try {
                     await account.sendVerificationEmail({
@@ -218,11 +232,12 @@ function AuthView({ account, notify, onNavigate }) {
                     );
                   } finally {
                     setBusy(false);
+                    setBusyAction(null);
                   }
                 }}
               >
                 Resend verification
-              </button>
+              </BusyButton>
             </div>
           )}
         <form className="account-form" onSubmit={submit}>
@@ -348,24 +363,25 @@ function AuthView({ account, notify, onNavigate }) {
               complain.
             </p>
           )}
-          <button
+          <BusyButton
             className="account-primary"
             type="submit"
             disabled={busy || account.status === "loading"}
+            loading={
+              (busy && busyAction === "submit") || account.status === "loading"
+            }
           >
-            {busy
-              ? "Please wait…"
-              : mode === "signup"
-                ? "Create account"
-                : mode === "signin"
-                  ? "Sign in"
-                  : mode === "forgot"
-                    ? "Send reset link"
-                    : mode === "mfa"
-                      ? "Verify and sign in"
-                      : "Update password"}
+            {mode === "signup"
+              ? "Create account"
+              : mode === "signin"
+                ? "Sign in"
+                : mode === "forgot"
+                  ? "Send reset link"
+                  : mode === "mfa"
+                    ? "Verify and sign in"
+                    : "Update password"}
             <ArrowRight size={17} />
-          </button>
+          </BusyButton>
         </form>
         <div className="account-auth-links">
           {mode === "signin" && (
@@ -461,6 +477,7 @@ export default function Account({
   const [goal, setGoal] = useState(3);
   const [email, setEmail] = useState("");
   const [profileBusy, setProfileBusy] = useState(false);
+  const [profileAction, setProfileAction] = useState(null);
   const [profileMessage, setProfileMessage] = useState("");
   const [profileError, setProfileError] = useState("");
   const [passwordFields, setPasswordFields] = useState({
@@ -470,9 +487,12 @@ export default function Account({
   });
   const [passwordMessage, setPasswordMessage] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [passwordBusy, setPasswordBusy] = useState(false);
   const [sessions, setSessions] = useState([]);
   const [sessionsBusy, setSessionsBusy] = useState(false);
   const [sessionError, setSessionError] = useState("");
+  const [sessionAction, setSessionAction] = useState(null);
+  const [signOutBusy, setSignOutBusy] = useState(false);
   const [mfaPassword, setMfaPassword] = useState("");
   const [mfaCode, setMfaCode] = useState("");
   const [mfaEnrollment, setMfaEnrollment] = useState(null);
@@ -611,6 +631,7 @@ export default function Account({
   async function saveProfile(event) {
     event.preventDefault();
     setProfileBusy(true);
+    setProfileAction("profile");
     setProfileError("");
     setProfileMessage("");
     try {
@@ -648,6 +669,7 @@ export default function Account({
       setProfileError(safeError(cause, "Your profile could not be saved."));
     } finally {
       setProfileBusy(false);
+      setProfileAction(null);
     }
   }
 
@@ -662,6 +684,7 @@ export default function Account({
   async function changeEmail(event) {
     event.preventDefault();
     setProfileBusy(true);
+    setProfileAction("email");
     setProfileError("");
     setProfileMessage("");
     try {
@@ -675,11 +698,13 @@ export default function Account({
       setProfileError(safeError(cause, "We couldn’t start the email change."));
     } finally {
       setProfileBusy(false);
+      setProfileAction(null);
     }
   }
 
   async function changePassword(event) {
     event.preventDefault();
+    if (passwordBusy) return;
     setPasswordError("");
     setPasswordMessage("");
     if (passwordFields.next.length < 15) {
@@ -690,6 +715,7 @@ export default function Account({
       setPasswordError("The new passwords do not match.");
       return;
     }
+    setPasswordBusy(true);
     try {
       await account.changePassword({
         currentPassword: passwordFields.current,
@@ -699,6 +725,8 @@ export default function Account({
       setPasswordMessage("Password updated. Other sessions were signed out.");
     } catch (cause) {
       setPasswordError(safeError(cause, "Password could not be updated."));
+    } finally {
+      setPasswordBusy(false);
     }
   }
 
@@ -886,9 +914,8 @@ export default function Account({
 
   if (account.status === "loading")
     return (
-      <div className="account-loading" role="status">
-        <span className="account-spinner" />
-        Loading your account…
+      <div className="forma-account-loading">
+        <Loading label="Loading your account…" />
       </div>
     );
   if (import.meta.env.VITE_ACCOUNT_MODE === "guest")
@@ -927,6 +954,19 @@ export default function Account({
   if (account.status !== "authenticated" || !account.user)
     return (
       <AuthView account={account} notify={notify} onNavigate={onNavigate} />
+    );
+  if (
+    !workspace?.data &&
+    workspace?.status !== "error" &&
+    workspace?.status !== "offline"
+  )
+    return (
+      <div className="forma-account-loading">
+        <Loading
+          label="Loading your training data"
+          detail="Your routines and workout history are being loaded from your account."
+        />
+      </div>
     );
   if (!workspace?.data)
     return (
@@ -970,7 +1010,11 @@ export default function Account({
           <p>Keep your training and account details in good shape.</p>
         </div>
         <div className="account-sync" data-state={workspace?.status}>
-          <Cloud size={17} />
+          {workspace?.status === "saving" || workspace?.status === "loading" ? (
+            <LoadingGlyph />
+          ) : (
+            <Cloud size={17} />
+          )}
           <span>
             <strong>{syncLabel}</strong>
             <small>Workout data</small>
@@ -1309,14 +1353,15 @@ export default function Account({
                   >
                     Cancel changes
                   </button>
-                  <button
+                  <BusyButton
                     type="submit"
                     className="account-primary"
                     disabled={profileBusy}
+                    loading={profileBusy && profileAction === "profile"}
                   >
-                    {profileBusy ? "Saving…" : "Save changes"}
+                    Save changes
                     <Check size={16} />
-                  </button>
+                  </BusyButton>
                 </div>
               </form>
               {profileMessage && (
@@ -1351,13 +1396,14 @@ export default function Account({
                 </label>
                 <div className="account-form-foot">
                   <span>Current: {account.user.email}</span>
-                  <button
+                  <BusyButton
                     type="submit"
                     className="account-secondary"
                     disabled={profileBusy}
+                    loading={profileBusy && profileAction === "email"}
                   >
                     Send verification <ArrowRight size={16} />
-                  </button>
+                  </BusyButton>
                 </div>
               </form>
             </section>
@@ -1429,9 +1475,14 @@ export default function Account({
                 </label>
                 <div className="account-form-foot">
                   <span>Changing your password signs out other sessions.</span>
-                  <button type="submit" className="account-secondary">
+                  <BusyButton
+                    type="submit"
+                    className="account-secondary"
+                    loading={passwordBusy}
+                    disabled={passwordBusy}
+                  >
                     Update password <ArrowRight size={16} />
-                  </button>
+                  </BusyButton>
                 </div>
                 {passwordMessage && (
                   <p className="account-success" role="status">
@@ -1479,14 +1530,15 @@ export default function Account({
                         onChange={(event) => setMfaPassword(event.target.value)}
                       />
                     </label>
-                    <button
+                    <BusyButton
                       type="submit"
                       className="account-secondary"
                       disabled={mfaBusy}
+                      loading={mfaBusy}
                     >
-                      {mfaBusy ? "Preparing…" : "Set up authenticator"}
+                      Set up authenticator
                       <ArrowRight size={16} />
-                    </button>
+                    </BusyButton>
                   </form>
                 )}
                 {mfaEnrollment && (
@@ -1531,13 +1583,14 @@ export default function Account({
                           }
                         />
                       </label>
-                      <button
+                      <BusyButton
                         type="submit"
                         className="account-secondary"
                         disabled={mfaBusy}
+                        loading={mfaBusy}
                       >
                         Verify and enable <Check size={16} />
-                      </button>
+                      </BusyButton>
                     </form>
                     {recoveryCodes.length > 0 && (
                       <div className="account-codes">
@@ -1598,15 +1651,14 @@ export default function Account({
                       >
                         Cancel
                       </button>
-                      <button
+                      <BusyButton
                         type="submit"
                         className="account-danger-button"
                         disabled={mfaBusy}
+                        loading={mfaBusy}
                       >
-                        {mfaBusy
-                          ? "Turning off…"
-                          : "Turn off two-step verification"}
-                      </button>
+                        Turn off two-step verification
+                      </BusyButton>
                     </div>
                   </form>
                 )}
@@ -1642,13 +1694,14 @@ export default function Account({
                       >
                         Cancel
                       </button>
-                      <button
+                      <BusyButton
                         type="submit"
                         className="account-secondary"
                         disabled={mfaBusy}
+                        loading={mfaBusy}
                       >
-                        {mfaBusy ? "Generating…" : "Generate new codes"}
-                      </button>
+                        Generate new codes
+                      </BusyButton>
                     </div>
                   </form>
                 )}
@@ -1685,17 +1738,18 @@ export default function Account({
                       Signed-in browsers and devices for your account.
                     </small>
                   </div>
-                  <button
+                  <BusyButton
                     type="button"
                     className="account-icon-action"
                     aria-label="Refresh sessions"
                     disabled={sessionsBusy}
+                    loading={sessionsBusy}
                     onClick={() => {
                       void refreshSessions();
                     }}
                   >
                     <RefreshCw size={16} />
-                  </button>
+                  </BusyButton>
                 </div>
                 {sessionError && (
                   <p className="account-alert" role="alert">
@@ -1703,7 +1757,11 @@ export default function Account({
                   </p>
                 )}
                 {sessionsBusy ? (
-                  <p className="account-muted-row">Loading sessions…</p>
+                  <Loading
+                    inline
+                    className="account-muted-row"
+                    label="Loading sessions…"
+                  />
                 ) : sessions.length ? (
                   <div className="account-session-list">
                     {sessions.map((session, index) => (
@@ -1727,10 +1785,14 @@ export default function Account({
                         {session.current ? (
                           <span className="account-current-pill">Current</span>
                         ) : (
-                          <button
+                          <BusyButton
                             type="button"
                             className="account-text-button"
+                            disabled={!!sessionAction}
+                            loading={sessionAction === session.id}
                             onClick={async () => {
+                              if (sessionAction) return;
+                              setSessionAction(session.id);
                               try {
                                 await account.revokeSession({ id: session.id });
                                 setSessions((items) =>
@@ -1745,11 +1807,13 @@ export default function Account({
                                     "Session could not be revoked.",
                                   ),
                                 );
+                              } finally {
+                                setSessionAction(null);
                               }
                             }}
                           >
                             Revoke
-                          </button>
+                          </BusyButton>
                         )}
                       </div>
                     ))}
@@ -1759,11 +1823,15 @@ export default function Account({
                     No session details are available.
                   </p>
                 )}
-                <button
+                <BusyButton
                   type="button"
                   className="account-danger-link account-signout-others"
+                  disabled={!!sessionAction}
+                  loading={sessionAction === "others"}
                   onClick={async () => {
+                    if (sessionAction) return;
                     if (!window.confirm("Sign out all other devices?")) return;
+                    setSessionAction("others");
                     try {
                       await account.signOutOthers();
                       setSessions((items) =>
@@ -1776,17 +1844,23 @@ export default function Account({
                           "Other sessions could not be signed out.",
                         ),
                       );
+                    } finally {
+                      setSessionAction(null);
                     }
                   }}
                 >
                   Sign out other devices <ArrowRight size={15} />
-                </button>
-                <button
+                </BusyButton>
+                <BusyButton
                   type="button"
                   className="account-danger-link account-signout-others"
+                  disabled={!!sessionAction}
+                  loading={sessionAction === "everywhere"}
                   onClick={async () => {
+                    if (sessionAction) return;
                     if (!window.confirm("Sign out of FORMA on every device?"))
                       return;
+                    setSessionAction("everywhere");
                     try {
                       await account.signOutEverywhere();
                       notify?.("You’ve been signed out on all devices.");
@@ -1794,11 +1868,13 @@ export default function Account({
                       setSessionError(
                         safeError(cause, "Sessions could not be ended."),
                       );
+                    } finally {
+                      setSessionAction(null);
                     }
                   }}
                 >
                   Sign out everywhere <ArrowRight size={15} />
-                </button>
+                </BusyButton>
               </section>
               <div className="account-security-foot">
                 <ShieldCheck size={18} />
@@ -1822,7 +1898,12 @@ export default function Account({
               </div>
               <div className="account-data-toolbar">
                 <div className="account-data-status">
-                  <Cloud size={17} />
+                  {workspace?.status === "saving" ||
+                  workspace?.status === "loading" ? (
+                    <LoadingGlyph />
+                  ) : (
+                    <Cloud size={17} />
+                  )}
                   <span>
                     <strong>{syncLabel}</strong>
                     <small>
@@ -1957,15 +2038,16 @@ export default function Account({
                     >
                       Cancel
                     </button>
-                    <button
+                    <BusyButton
                       type="button"
                       className="account-primary"
                       disabled={!importAck || !cloudBackupReady || importBusy}
+                      loading={importBusy}
                       onClick={confirmImport}
                     >
-                      {importBusy ? "Importing…" : "Import to account"}
+                      Import to account
                       <ArrowRight size={16} />
-                    </button>
+                    </BusyButton>
                   </div>
                 </section>
               )}
@@ -2120,20 +2202,26 @@ export default function Account({
                     <small>End this session on this device.</small>
                   </div>
                 </div>
-                <button
+                <BusyButton
                   type="button"
                   className="account-secondary"
+                  disabled={signOutBusy}
+                  loading={signOutBusy}
                   onClick={async () => {
+                    if (signOutBusy) return;
+                    setSignOutBusy(true);
                     try {
                       await account.signOut();
                       notify?.("You’ve signed out.");
                     } catch (cause) {
                       setDataError(safeError(cause, "Could not sign out."));
+                    } finally {
+                      setSignOutBusy(false);
                     }
                   }}
                 >
                   Sign out <ArrowRight size={16} />
-                </button>
+                </BusyButton>
               </section>
               <section className="account-settings-form account-delete-card">
                 <div className="account-settings-title">
@@ -2202,13 +2290,14 @@ export default function Account({
                       >
                         Cancel
                       </button>
-                      <button
+                      <BusyButton
                         type="submit"
                         className="account-danger-button"
                         disabled={deleteBusy || deletePhrase !== "DELETE"}
+                        loading={deleteBusy}
                       >
-                        {deleteBusy ? "Sending…" : "Send confirmation email"}
-                      </button>
+                        Send confirmation email
+                      </BusyButton>
                     </div>
                   </form>
                 )}

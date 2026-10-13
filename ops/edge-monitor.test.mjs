@@ -29,7 +29,10 @@ test("a fresh remote backup and successful gateway return healthy", async () => 
     },
   };
   assert.deepEqual(
-    await inspectHealth(env, async () => new globalThis.Response("ok")),
+    await inspectHealth(env, async (_url, init) => {
+      assert.equal(init.redirect, "manual");
+      return new globalThis.Response("ok");
+    }),
     [],
   );
 });

@@ -2,6 +2,7 @@ import { Dumbbell, BookOpen } from "lucide-react";
 import { Button, Modal } from "./UI";
 import { useEffect, useState } from "react";
 import { metricFields } from "../exerciseMetrics.js";
+import Loading from "./Loading";
 let instructionRequest;
 function loadInstructions() {
   instructionRequest ??= import("../catalog/instructions.json")
@@ -46,9 +47,11 @@ export default function ExerciseGuide({ exercise, onClose }) {
             : exercise.description}
         </p>
         {exercise.source && detail?.id !== exercise.id && (
-          <p className="small muted" role="status">
-            Loading full instructions…
-          </p>
+          <Loading
+            inline
+            className="forma-guide-loading"
+            label="Loading full instructions…"
+          />
         )}
         {detail?.id === exercise.id && detail.error && (
           <p className="small" role="alert">

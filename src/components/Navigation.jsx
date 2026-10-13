@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import BrandMark from "./BrandMark";
 import {
   House,
   Dumbbell,
@@ -75,28 +76,19 @@ export default function Navigation({ page, navigate, data, account }) {
     setOpen(false);
     navigate(next);
   }
-  const brand = (
-    <>
-      <span className="brand-mark" aria-hidden="true">
-        <i />
-        <i />
-        <i />
-      </span>
-      FORMA<span className="brand-period">.</span>
-    </>
-  );
   return (
     <>
       <div className="mobile-top">
         <a
           className="brand"
+          aria-label="FORMA"
           href="#overview"
           onClick={(e) => {
             e.preventDefault();
             go("overview");
           }}
         >
-          {brand}
+          <BrandMark />
         </a>
         <button
           ref={toggle}
@@ -129,13 +121,14 @@ export default function Navigation({ page, navigate, data, account }) {
       >
         <a
           className="brand"
+          aria-label="FORMA"
           href="#overview"
           onClick={(e) => {
             e.preventDefault();
             go("overview");
           }}
         >
-          {brand}
+          <BrandMark />
         </a>
         <nav aria-label="Main navigation">
           {navigationItems.map(([key, label, Icon]) => (

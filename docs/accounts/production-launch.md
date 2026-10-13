@@ -69,7 +69,7 @@ restore-target refusal and monitor thresholds have Python checks; independent
 edge health checks have Node tests. Earlier production UI matrices passed 45
 member and 40 guest cases on the catalog release. Updated legal-page checks
 are recorded separately rather than claimed as a new full UI matrix.
-Current operation checks: 6 Python and 5 edge-monitor tests, including missing
+Current operation checks: 6 Python and 8 edge-monitor/dashboard tests, including missing
 containers, unavailable/malformed R2 objects and hourly alert suppression.
 
 Provider-wide Access attempts and unexpected Cloudflare/GitHub deployments
@@ -82,7 +82,7 @@ the word `staging` in that provider hostname does not change account isolation.
 
 ## Final hosted canary
 
-Public Worker version `c508102c-e0cc-4b46-9df5-94c384f60eb6` serves the account
+Public Worker version `858e5694-89f3-4ea6-9539-e60e2b85764c` serves the polished account
 build. API image config digest is
 `af3527faa9f3e61fd0ff8b70c13202150ea0bbbf7a3ace87dc5dcfb1e2134a35`;
 the Droplet's OCI manifest digest is
@@ -97,6 +97,40 @@ the Droplet's OCI manifest digest is
 - Mobile layout had no horizontal overflow and no page errors occurred.
 - Synthetic workout cleanup succeeded through the normal revision API.
 
-The owner inbox account is verified. Its canary password was random and retained
-only in protected test evidence; use the normal Forgot password flow to choose
-a personal password before continuing with that account.
+The canary account used a random password in protected test evidence. The owner
+subsequently requested removal of all production accounts after visual polish.
+That maintenance result is recorded separately below when complete.
+
+## Branding, loading and journals
+
+The original three-facet F mark now appears in navigation, account screens,
+favicon and real pending states. Motion uses transform/opacity, stable action
+labels and native reduced-motion handling. [Research and accessibility evidence](../research/brand-motion.md)
+records the references. Workout history shows real session/set/time totals,
+grouped entries and correction controls while preserving units.
+
+The owner-only dashboard at `https://forma-ops.raoufabedini.dev` is behind
+Cloudflare Access email authentication. It reads only bounded, sanitized monitor
+observations, with no member database access or backup downloads. JWT validation
+requires a valid signature, exact issuer and audience, and the owner identity.
+Both standard string/array audience formats are supported. Certificate and
+health fetches use Workers-supported manual redirects and reject non-success
+responses. Temporary diagnostic routes and QA service policies were removed.
+
+Polished staging version: `09874f65-df57-4df0-8dd3-5d94ecf32715`.
+Dashboard version: `3e2e2188-39bb-40a2-b212-6a9344d3636f`.
+Independent monitor version: `d67f5f12-b6b6-47b8-9aab-3e72fffe4f06`.
+
+Verification: 258 development guest browser cases and 40 production guest cases
+passed. The production account run passed 40 cases; its five migration cases
+exposed a duplicate status announcement, which was corrected, and all five
+passed on recheck. Eighteen history cases passed across Chromium, Firefox and
+WebKit. Loading/reduced-motion checks and live dashboard desktop, 390px and 320px
+checks had no overflow, page errors or axe violations. Live staging confirmed
+1,661 exercises, full guides and anonymous workspace denial. The polished public
+canary again passed verified sign-in, private saves, two-session persistence,
+export and forged member rejection before cleanup.
+
+Database backups do not contain runtime environment configuration. Preserve the
+protected deployment configuration, especially `AUTH_SECRET`, separately for
+MFA recovery; rotating it while enrolled accounts exist requires a recovery plan.

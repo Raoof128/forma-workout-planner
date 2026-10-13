@@ -21,6 +21,7 @@ import Workout from "./components/Workout";
 import { WorkoutHistory, Progress } from "./components/Insights";
 import { Settings, Schedule } from "./components/Preferences";
 import Account from "./components/Account.jsx";
+import Loading from "./components/Loading.jsx";
 import Legal, { isLegalPage, legalTitle } from "./components/Legal.jsx";
 import { useAccount } from "./account/AccountProvider.jsx";
 const equal = (a, b) => JSON.stringify(a) === JSON.stringify(b);
@@ -291,8 +292,8 @@ function AccountWorkspace() {
     );
   if (account.status === "loading")
     return (
-      <main className="account-session-state" aria-live="polite">
-        <p>Checking your account session…</p>
+      <main className="account-session-state">
+        <Loading label="Checking your account session…" />
       </main>
     );
   if (account.status === "error")
@@ -314,12 +315,12 @@ function AccountWorkspace() {
     !isLegalPage(page)
   )
     return (
-      <main className="account-session-state" aria-live="polite">
-        <p>
-          {status === "error"
-            ? "Your private workspace could not be loaded."
-            : "Loading your private workspace…"}
-        </p>
+      <main className="account-session-state">
+        {status === "error" ? (
+          <p role="alert">Your private workspace could not be loaded.</p>
+        ) : (
+          <Loading label="Loading your private workspace…" />
+        )}
         {status === "error" && (
           <Button variant="lime" onClick={() => repository?.refresh()}>
             Try again
@@ -348,7 +349,14 @@ function AccountWorkspace() {
       />
       <main id="main-content" data-page={visiblePage}>
         <header className="topbar">
-          {saving && <span className="save-indicator">Saving changes…</span>}
+          {saving && (
+            <Loading
+              inline
+              announce={false}
+              className="save-indicator"
+              label="Saving changes…"
+            />
+          )}
           <div>
             <span>Workspace</span>
             <ChevronRight size={13} />

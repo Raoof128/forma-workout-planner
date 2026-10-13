@@ -88,7 +88,7 @@ export function Settings({
         <p className="muted small">
           Weights are logged in kilograms (kg). Dates use Sydney time.
         </p>
-        <Button variant="lime" type="submit" disabled={busy}>
+        <Button variant="lime" type="submit" disabled={busy} loading={busy}>
           <Check size={17} />
           Save preferences
         </Button>
@@ -176,6 +176,7 @@ export function Settings({
               <Button
                 variant="lime"
                 disabled={busy}
+                loading={busy}
                 onClick={async () => {
                   setBusy(true);
                   try {

@@ -3,7 +3,7 @@ export async function inspectHealth(env, request = globalThis.fetch) {
   const signals = [];
   try {
     const response = await request(env.APP_ORIGIN + "/api/health", {
-      redirect: "error",
+      redirect: "manual",
       signal: globalThis.AbortSignal.timeout(15000),
     });
     if (!response.ok) signals.push("public_account_gateway_unhealthy");
@@ -52,6 +52,8 @@ export default {
     const state = {
       ...previous,
       failures: signals.length ? previous.failures + 1 : 0,
+      checkedAt: new Date().toISOString(),
+      signals,
     };
     if (state.failures >= 2 && Date.now() - state.alertedAt > 3600000) {
       const text =
@@ -86,6 +88,15 @@ export default {
         throw new Error("Operations alert delivery was not accepted");
       state.alertedAt = Date.now();
     }
+    state.journal = [
+      {
+        at: state.checkedAt,
+        event: signals.length ? "attention" : "healthy",
+        signals,
+        alertSent: state.alertedAt !== previous.alertedAt,
+      },
+      ...(Array.isArray(previous.journal) ? previous.journal : []),
+    ].slice(0, 40);
     await env.STATE.put("edge-state", JSON.stringify(state));
     globalThis.console.log(
       JSON.stringify({

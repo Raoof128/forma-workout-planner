@@ -1,0 +1,322 @@
+/* Original FORMA mark and motion. Local vectors; no animation runtime. */
+.forma-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.forma-brand-tile {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 46px;
+  border-radius: 11px 3px 11px 3px;
+  background: #252e27;
+  color: #dff780;
+}
+.forma-symbol {
+  position: relative;
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  color: inherit;
+}
+.forma-facet {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.forma-facet svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.forma-brand-type {
+  display: grid;
+  gap: 2px;
+}
+.forma-wordmark {
+  font-family: var(--display, "Barlow Condensed", sans-serif);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: 1.1px;
+}
+.forma-signature {
+  font-size: 7px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 1.8px;
+  color: #64705f;
+}
+.brand:has(.forma-lockup) {
+  gap: 0;
+}
+.account-auth-emblem {
+  position: absolute;
+  right: 32px;
+  bottom: 30px;
+  width: 86px;
+  height: 86px;
+  color: #dff780;
+  opacity: 0.9;
+}
+.account-auth-emblem .forma-symbol {
+  width: 100%;
+  height: 100%;
+}
+.account-session-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 100svh;
+  padding: 28px;
+  text-align: center;
+}
+.account-session-state > h1 {
+  max-width: 640px;
+}
+.forma-loading-panel {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  width: min(100%, 420px);
+  padding: 30px 28px 22px;
+  overflow: hidden;
+  border: 1px solid #3b463c;
+  border-radius: 24px 6px 24px 6px;
+  background:
+    radial-gradient(ellipse at 50% 45%, #35452e70, transparent 65%), #222b25;
+  color: #f0f3ed;
+  box-shadow: 0 18px 70px #25312516;
+}
+.forma-loading-brand .forma-brand-tile {
+  width: 30px;
+  height: 33px;
+  background: #dff780;
+  color: #222b25;
+  border-radius: 7px 2px 7px 2px;
+}
+.forma-loading-brand .forma-symbol {
+  width: 28px;
+  height: 28px;
+}
+.forma-loading-brand .forma-wordmark {
+  font-size: 27px;
+}
+.forma-loading-brand .forma-signature {
+  font-size: 6px;
+  color: #b6c3b0;
+}
+.forma-loading-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 196px;
+  height: 196px;
+  margin: 25px 0 22px;
+}
+.forma-loading-core {
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  border: 1px solid #dff7802a;
+  border-radius: 25px 6px 25px 6px;
+  background: #dff78007;
+  color: #dff780;
+  transform: rotate(-8deg);
+}
+.forma-loading-core .forma-symbol {
+  width: 80px;
+  height: 80px;
+  transform: rotate(8deg);
+}
+.forma-orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #dff7801a;
+}
+.orbit-outer {
+  inset: 2px;
+  border-top-color: #dff78089;
+  border-right-style: dashed;
+  animation: forma-orbit 8s linear infinite;
+}
+.orbit-outer::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  right: 25px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #dff780;
+  box-shadow: 0 0 12px #dff78065;
+}
+.orbit-inner {
+  inset: 18px;
+  border-left-color: #dff78055;
+  border-bottom-color: #dff78055;
+  animation: forma-orbit 6s linear infinite reverse;
+}
+.forma-stage-cross {
+  position: absolute;
+  left: 50%;
+  width: 9px;
+  height: 1px;
+  background: #b8c6aa;
+  transform: translateX(-50%);
+}
+.forma-stage-cross::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: -4px;
+  width: 1px;
+  height: 9px;
+  background: inherit;
+}
+.cross-top {
+  top: 1px;
+}
+.cross-bottom {
+  bottom: 1px;
+}
+.forma-loading-copy {
+  text-align: center;
+}
+.forma-loading-label {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #f0f3ed;
+}
+.forma-loading-detail {
+  max-width: 290px;
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #b8c3b4;
+}
+.forma-loading-baseline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 28px;
+  font-size: 7px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: #a6b59d;
+  white-space: nowrap;
+}
+.forma-loading-baseline span {
+  height: 1px;
+  flex: 1;
+  background: #dff78024;
+}
+.forma-loading-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  vertical-align: middle;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.forma-loading-glyph {
+  width: 23px;
+  height: 23px;
+  vertical-align: middle;
+}
+.is-moving .forma-facet {
+  animation: forma-build 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+.is-moving .facet-2 {
+  animation-delay: 0.12s;
+}
+.is-moving .facet-3 {
+  animation-delay: 0.24s;
+}
+button[aria-busy="true"] > svg {
+  display: none;
+}
+button[aria-busy="true"] > .forma-loading-glyph {
+  width: 21px;
+  height: 21px;
+}
+.account-icon-action[aria-busy="true"] > .forma-loading-glyph {
+  width: 20px;
+  height: 20px;
+}
+.forma-guide-loading {
+  margin: 8px 0;
+  color: #465c31;
+}
+.forma-account-loading {
+  display: flex;
+  justify-content: center;
+  padding: 25px 0;
+}
+@keyframes forma-build {
+  0%,
+  12%,
+  84%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  34% {
+    transform: translateY(5px);
+    opacity: 0.35;
+  }
+  54%,
+  66% {
+    transform: translateY(-2px);
+    opacity: 1;
+  }
+}
+@keyframes forma-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 700px) {
+  .mobile-top .forma-brand-tile {
+    width: 32px;
+    height: 35px;
+    border-radius: 8px 3px 8px 3px;
+  }
+  .mobile-top .forma-symbol {
+    width: 30px;
+    height: 30px;
+  }
+  .mobile-top .forma-wordmark {
+    font-size: 27px;
+  }
+  .mobile-top .forma-signature {
+    font-size: 6px;
+    letter-spacing: 1.4px;
+  }
+  .account-auth-emblem {
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+  }
+  .account-session-state {
+    padding: 20px;
+  }
+  .forma-loading-panel {
+    padding: 26px 20px 22px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-moving .forma-facet,
+  .forma-orbit {
+    animation: none;
+  }
+}

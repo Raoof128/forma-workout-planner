@@ -445,9 +445,14 @@ export function RoutineEditor({ routine, onClose, onSave }) {
             <Button variant="secondary" disabled={saving} onClick={close}>
               Cancel
             </Button>
-            <Button type="submit" variant="lime" disabled={saving}>
+            <Button
+              type="submit"
+              variant="lime"
+              disabled={saving}
+              loading={saving}
+            >
               <Check size={17} />
-              {saving ? "Saving…" : "Save routine"}
+              Save routine
             </Button>
           </div>
         </form>

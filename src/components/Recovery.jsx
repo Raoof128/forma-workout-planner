@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "./UI";
 import { downloadData, readBackupFile, MAX_BACKUP_BYTES } from "../storage";
+import Loading from "./Loading";
 export default function Recovery({ raw, onRestore, onReset }) {
   const [error, setError] = useState("");
   const [confirm, setConfirm] = useState(false);
@@ -87,6 +88,7 @@ export default function Recovery({ raw, onRestore, onReset }) {
           />
         </label>
       </div>
+      {busy && <Loading inline label="Updating your workspace…" />}
       {error && (
         <p className="error" role="alert">
           {error}
@@ -105,7 +107,12 @@ export default function Recovery({ raw, onRestore, onReset }) {
           >
             Keep original
           </Button>
-          <Button variant="danger-solid" disabled={busy} onClick={reset}>
+          <Button
+            variant="danger-solid"
+            disabled={busy}
+            loading={busy}
+            onClick={reset}
+          >
             Start fresh
           </Button>
         </div>

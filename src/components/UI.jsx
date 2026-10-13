@@ -1,14 +1,22 @@
 import { useEffect, useRef, useId } from "react";
 import { X, Dumbbell, Clock, ChevronRight } from "lucide-react";
+import { LoadingGlyph } from "./Loading";
 export function Button({
   children,
   variant = "",
   className = "",
   type = "button",
+  loading = false,
   ...props
 }) {
   return (
-    <button type={type} className={`button ${variant} ${className}`} {...props}>
+    <button
+      type={type}
+      className={`button ${variant} ${className}`}
+      {...props}
+      aria-busy={loading || undefined}
+    >
+      {loading && <LoadingGlyph />}
       {children}
     </button>
   );

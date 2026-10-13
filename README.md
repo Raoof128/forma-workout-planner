@@ -82,8 +82,10 @@ member. Workspace API responses are not cached. Review the
 
 A red-team engagement on 2026-10-12 hardened the account stack and recorded
 its findings, tests and residual risks in [docs/security](docs/security/README.md).
-Its verdict is **NO-GO for real members** until live Cloudflare, Droplet,
-backup-restore and monitoring checks pass.
+Those launch gates passed on 13 October 2026. Public accounts are live; see the
+[production launch record](docs/accounts/production-launch.md) for verification
+and operating limits. The owner-only [operations dashboard](https://forma-ops.raoufabedini.dev)
+shows recorded service and backup checks.
 
 Local guest mode stores data in browser `localStorage`; it is specific to the
 browser profile and origin and is not encrypted. Export a backup before clearing
@@ -93,9 +95,9 @@ after member confirmation, so an existing v1 backup can be transferred.
 The Cloudflare Access token authenticates the Worker to the protected API
 origin; it is separate from member authentication. The Worker and API share an
 additional service secret. Keep both out of client assets. A configured
-production account origin, off-host backups, and actionable alerting remain
-release gates. Staging Access/Tunnel, email delivery and an isolated restore
-were verified in the [deployment record](docs/security/deployment-record.md).
+production account origin, off-host backups and actionable alerting are now
+configured and verified. Earlier staging evidence remains in the
+[deployment record](docs/security/deployment-record.md).
 
 ## Documentation
 

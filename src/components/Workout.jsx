@@ -366,6 +366,7 @@ export default function Workout({
               <Button
                 variant="lime"
                 disabled={saving}
+                loading={saving}
                 onClick={async () => {
                   setSaving(true);
                   try {
@@ -376,7 +377,7 @@ export default function Workout({
                 }}
               >
                 <Check size={17} />
-                {saving ? "Saving…" : "Save workout"}
+                Save workout
               </Button>
             </div>
           </div>

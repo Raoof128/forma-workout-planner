@@ -14,79 +14,206 @@ import {
 } from "lucide-react";
 import { Button, PageHeading, Empty, Modal } from "./UI";
 import { measurementText, tracksLoadReps } from "../exerciseMetrics.js";
+import "../workout-history.css";
 import {
   exercises,
+  exerciseById,
   sessionSets,
   sessionVolume,
   formatTime,
   displayDate,
   estimatedOneRM,
 } from "../data";
+
+function sessionMeasurements(session) {
+  let seconds = 0;
+  let metres = 0;
+  let lifting = false;
+  for (const entry of session.exercises) {
+    const exercise = exerciseById.get(entry.exerciseId);
+    for (const set of entry.sets) {
+      if (!set.done) continue;
+      if (tracksLoadReps(exercise)) lifting = true;
+      else {
+        if (
+          exercise?.metric === "duration" ||
+          exercise?.metric === "duration_distance"
+        )
+          seconds += set.durationSeconds || 0;
+        if (
+          exercise?.metric === "duration_distance" ||
+          exercise?.metric === "load_distance"
+        )
+          metres += set.distanceMeters || 0;
+      }
+    }
+  }
+  return { lifting, seconds, metres };
+}
+
+function SessionMeasurement({ session }) {
+  const { lifting, seconds, metres } = sessionMeasurements(session);
+  const value = lifting
+    ? `${sessionVolume(session).toLocaleString()} kg`
+    : metres
+      ? `${metres.toLocaleString()} m`
+      : `${seconds.toLocaleString()} sec`;
+  return (
+    <span className="journal-measurement">
+      <strong>{value}</strong>
+      <small>
+        {lifting
+          ? "Lifting volume"
+          : metres
+            ? seconds
+              ? `${seconds.toLocaleString()} sec logged`
+              : "Distance logged"
+            : "Time logged"}
+      </small>
+    </span>
+  );
+}
+
 export function WorkoutHistory({ history, onStart, onSave, onDelete }) {
   const [detail, setDetail] = useState(null);
   const [editing, setEditing] = useState(false);
   const [deleting, setDeleting] = useState(false);
+  const sorted = [...history].sort(
+    (a, b) => Date.parse(b.date) - Date.parse(a.date),
+  );
+  const months = new Map();
+  for (const session of sorted) {
+    const month = displayDate(session.date, { month: "long", year: "numeric" });
+    if (!months.has(month)) months.set(month, []);
+    months.get(month).push(session);
+  }
+  const totalSets = history.reduce(
+    (total, session) => total + sessionSets(session),
+    0,
+  );
+  const totalMinutes = Math.round(
+    history.reduce((total, session) => total + session.duration, 0) / 60,
+  );
+  const detailMeasurements = detail ? sessionMeasurements(detail) : null;
+  const detailExercises = detail
+    ? detail.exercises.filter((entry) => entry.sets.some((set) => set.done))
+    : [];
   return (
-    <>
+    <div className="history-journal">
       <PageHeading
         eyebrow="The work you put in"
         title="Every session counts."
         subtitle="A record of your effort. A reminder of how far you’ve come."
       />
       {!history.length ? (
-        <Empty
-          icon={History}
-          title="Your story starts with a session."
-          description="Finish your first workout and it will appear here, with every set and rep."
-        >
-          <Button variant="lime" onClick={onStart}>
-            Start your first workout <ArrowUpRight size={17} />
-          </Button>
-        </Empty>
-      ) : (
-        <div className="history-list">
-          {[...history]
-            .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
-            .map((s) => (
-              <button
-                key={s.id}
-                className="history-row panel"
-                onClick={() => setDetail(s)}
-              >
-                <span className="history-date">
-                  <strong>{displayDate(s.date, { day: "numeric" })}</strong>
-                  <span>
-                    {displayDate(s.date, {
-                      month: "short",
-                    })}
-                  </span>
-                </span>
-                <div>
-                  <h3>{s.name}</h3>
-                  <p>
-                    {displayDate(s.date, {
-                      weekday: "long",
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </p>
-                </div>
-                <span>
-                  <Clock size={16} />
-                  {formatTime(s.duration)}
-                </span>
-                <span>
-                  <Dumbbell size={16} />
-                  {sessionSets(s)} {sessionSets(s) === 1 ? "set" : "sets"}
-                </span>
-                <span className="volume">
-                  {sessionVolume(s).toLocaleString()} kg
-                </span>
-                <ArrowUpRight size={19} />
-              </button>
-            ))}
+        <div className="journal-empty panel">
+          <span className="journal-kicker">Your training journal</span>
+          <Empty
+            icon={History}
+            title="Your story starts with a session."
+            description="Finish your first workout and it will appear here, with every completed set and measurement."
+          >
+            <Button variant="lime" onClick={onStart}>
+              Start your first workout <ArrowUpRight size={17} />
+            </Button>
+          </Empty>
+          <div className="journal-empty-footer">
+            <span>Every set.</span>
+            <span>Every session.</span>
+            <span>All your effort.</span>
+          </div>
         </div>
+      ) : (
+        <>
+          <section
+            className="journal-summary"
+            aria-label="Workout history summary"
+          >
+            <div className="journal-summary-intro">
+              <span className="journal-kicker">Your training journal</span>
+              <h2>The work adds up.</h2>
+              <p>Completed sessions, kept in one place.</p>
+            </div>
+            <dl>
+              <div>
+                <dt>Sessions logged</dt>
+                <dd>{history.length.toLocaleString()}</dd>
+              </div>
+              <div>
+                <dt>Sets completed</dt>
+                <dd>{totalSets.toLocaleString()}</dd>
+              </div>
+              <div>
+                <dt>Minutes trained</dt>
+                <dd>{totalMinutes.toLocaleString()}</dd>
+              </div>
+            </dl>
+          </section>
+          <div className="journal-archive-heading">
+            <h2>Session archive</h2>
+            <span>Latest first · Select a session to review</span>
+          </div>
+          {[...months].map(([month, sessions]) => (
+            <section className="journal-month" key={month} aria-label={month}>
+              <div className="journal-month-heading">
+                <h3>{month}</h3>
+                <span>
+                  {sessions.length}{" "}
+                  {sessions.length === 1 ? "session" : "sessions"}
+                </span>
+              </div>
+              <div className="history-list">
+                {sessions.map((s) => (
+                  <button
+                    key={s.id}
+                    className="history-row panel journal-row"
+                    onClick={() => setDetail(s)}
+                  >
+                    <span className="history-date">
+                      <strong>{displayDate(s.date, { day: "numeric" })}</strong>
+                      <span>
+                        {displayDate(s.date, {
+                          month: "short",
+                        })}
+                      </span>
+                    </span>
+                    <div className="journal-session-title">
+                      <h3>{s.name}</h3>
+                      <p>
+                        {displayDate(s.date, {
+                          weekday: "long",
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </p>
+                    </div>
+                    <div className="journal-session-metrics">
+                      <span>
+                        <Clock size={15} aria-hidden="true" />
+                        {formatTime(s.duration)}
+                        <small>Duration</small>
+                      </span>
+                      <span>
+                        <Dumbbell size={15} aria-hidden="true" />
+                        {sessionSets(s)} {sessionSets(s) === 1 ? "set" : "sets"}
+                        <small>Completed</small>
+                      </span>
+                      <SessionMeasurement session={s} />
+                    </div>
+                    <span className="journal-row-arrow" aria-hidden="true">
+                      <ArrowUpRight size={19} />
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </section>
+          ))}
+          <p className="journal-footnote">
+            Lifting volume counts completed weight × rep sets. Time and distance
+            stay in their own units.
+          </p>
+        </>
       )}
       {detail && !editing && (
         <Modal
@@ -121,11 +248,14 @@ export function WorkoutHistory({ history, onStart, onSave, onDelete }) {
               </div>
             </div>
           ) : (
-            <div className="modal-content">
-              <div className="success-mark">
-                <Check size={28} />
+            <div className="modal-content journal-detail">
+              <div className="journal-detail-heading">
+                <div className="success-mark">
+                  <Check size={25} />
+                </div>
+                <span className="journal-kicker">Session recorded</span>
               </div>
-              <h2>{detail.name}</h2>
+              <h2 className="journal-detail-title">{detail.name}</h2>
               <p className="muted">
                 {displayDate(detail.date, {
                   weekday: "long",
@@ -134,35 +264,49 @@ export function WorkoutHistory({ history, onStart, onSave, onDelete }) {
                   year: "numeric",
                 })}
               </p>
-              <div className="detail-meta">
-                <span>{formatTime(detail.duration)} duration</span>
-                <span>{sessionSets(detail)} sets</span>
-                <span>{sessionVolume(detail).toLocaleString()} kg volume</span>
+              <div className="detail-meta journal-detail-meta">
+                <span>
+                  <strong>{formatTime(detail.duration)}</strong>
+                  <small>Duration</small>
+                </span>
+                <span>
+                  <strong>{sessionSets(detail)} sets</strong>
+                  <small>Completed</small>
+                </span>
+                <SessionMeasurement session={detail} />
               </div>
-              {detail.exercises
-                .filter((e) => e.sets.some((s) => s.done))
-                .map((e) => (
-                  <div className="history-exercise" key={e.exerciseId}>
-                    <strong>
-                      {exercises.find((x) => x.id === e.exerciseId)?.name ||
-                        e.exerciseId}
-                    </strong>
-                    <p>
-                      {e.sets
-                        .filter((s) => s.done)
-                        .map((s, i) => (
-                          <span key={i}>
-                            {measurementText(
-                              exercises.find((x) => x.id === e.exerciseId),
-                              s,
-                            )}
-                          </span>
-                        ))}
-                    </p>
-                  </div>
-                ))}
+              {!detailMeasurements.lifting && (
+                <p className="journal-metric-note">
+                  Time and distance are recorded below and do not count as
+                  lifting volume.
+                </p>
+              )}
+              <div className="journal-detail-section-heading">
+                <h3>Completed exercises</h3>
+                <span>
+                  {detailExercises.length}{" "}
+                  {detailExercises.length === 1 ? "movement" : "movements"}
+                </span>
+              </div>
+              {detailExercises.map((e) => (
+                <div className="history-exercise" key={e.exerciseId}>
+                  <strong>
+                    {exerciseById.get(e.exerciseId)?.name || e.exerciseId}
+                  </strong>
+                  <p>
+                    {e.sets
+                      .filter((s) => s.done)
+                      .map((s, i) => (
+                        <span key={i}>
+                          {measurementText(exerciseById.get(e.exerciseId), s)}
+                        </span>
+                      ))}
+                  </p>
+                </div>
+              ))}
               {detail.notes && (
-                <div className="tip">
+                <div className="tip journal-notes">
+                  <span className="journal-kicker">Session notes</span>
                   <p>{detail.notes}</p>
                 </div>
               )}
@@ -194,7 +338,7 @@ export function WorkoutHistory({ history, onStart, onSave, onDelete }) {
           }}
         />
       )}
-    </>
+    </div>
   );
 }
 export function Progress({ history, onStart }) {

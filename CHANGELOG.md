@@ -4,6 +4,21 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-13 — Brand, loading motion and journals
+
+- Added an original FORMA mark and coordinated accessible loading animation to
+  real pending states, with stable action labels and reduced-motion support.
+- Refined workout history with actual totals, grouped entries and unit preserving
+  details. Added an owner-only dashboard for sanitized health/backup observations.
+- Fixed standard JWT audience-string handling and unsupported Workers redirect
+  mode; signatures and exact scope remain required. Removed diagnostics and QA
+  access after live verification.
+- Validation: 258 development and 40 production guest browser cases; 40 account
+  cases plus all five affected migration rechecks; 18 history cases across three
+  engines. Live public/staging/dashboard checks passed, with zero dashboard axe
+  violations or mobile overflow. Operations checks passed 6 Python and 8 Node
+  tests. See [the launch record](docs/accounts/production-launch.md).
+
 ### Raouf: 2026-10-13 — Public account launch controls
 
 - Provisioned a separate production account backend with bounded containers,

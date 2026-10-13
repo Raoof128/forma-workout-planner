@@ -1,10 +1,12 @@
 # Account service operations
 
-This runbook describes the current repository configuration. It does not claim
-that a production host, backup remote, or application staging deployment has
-been configured. The isolated mail setup and provider acceptance are recorded below.
+Public accounts, separate private staging/production backends, encrypted remote
+backups and monitoring are deployed. See the [current launch record](production-launch.md)
+for verified versions, recovery evidence and operating limits. Earlier setup
+constraints below are historical; Cloudflare Access SSH now provides maintenance
+access without changing unrelated backends.
 
-### Current external-access blockers
+### Historical external-access blockers
 
 The four original infrastructure bindings are present in the runtime and match
 the supplied `.env`. The owner subsequently supplied a burner SSH key and

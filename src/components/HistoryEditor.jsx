@@ -169,7 +169,12 @@ export default function HistoryEditor({ session, onSave, onClose }) {
             <Button variant="secondary" disabled={saving} onClick={close}>
               Cancel
             </Button>
-            <Button type="submit" variant="lime" disabled={saving}>
+            <Button
+              type="submit"
+              variant="lime"
+              disabled={saving}
+              loading={saving}
+            >
               Save corrections
             </Button>
           </div>
