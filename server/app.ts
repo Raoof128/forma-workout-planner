@@ -27,6 +27,7 @@ import {
   throttleKey,
 } from "./throttle.js";
 import { registerWorkspaceRoutes } from "./workspaceRoutes.js";
+import { securityEvent } from "./securityEvents.js";
 
 declare module "fastify" {
   interface FastifyRequest {
@@ -383,6 +384,29 @@ export async function createApp({
   });
 
   app.decorateRequest("rawBody", null);
+  app.addHook("onSend", async (request, reply, payload) => {
+    let errorCode: string | undefined;
+    if (reply.statusCode === 409 && typeof payload === "string") {
+      try {
+        errorCode = (JSON.parse(payload) as { error?: string }).error;
+      } catch {
+        // Non-JSON responses are not interpreted as member conflict events.
+      }
+    }
+    const event = securityEvent(
+      request.url,
+      reply.statusCode,
+      headerValue(request.headers["x-forma-client-ip"]) || request.ip,
+      config.authSecret,
+      errorCode,
+    );
+    if (event)
+      request.log.warn(
+        { ...event, requestId: request.id, status: reply.statusCode },
+        "security event",
+      );
+    return payload;
+  });
   app.addContentTypeParser(
     "application/json",
     { parseAs: "string" },

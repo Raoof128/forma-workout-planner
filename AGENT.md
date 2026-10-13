@@ -113,3 +113,28 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   cases; live public and private probes passed. Unrelated container IDs were
   unchanged. Docker 29 reports the OCI manifest digest, not the sandbox's config
   digest: verify both from the transferred archive before activation.
+
+### Raouf: 2026-10-13 — Public account activation
+
+- **Scope:** owner-authorised launch of public accounts after the guest release.
+  The release verdict is GO for controlled activation; see
+  `docs/accounts/production-launch.md` for current evidence and limits.
+- **Constraints:** production uses a separate project/database/roles/Tunnel/
+  Access token/auth secret. Preserve unrelated host services. Production limits
+  are 256 MiB API, 256 MiB database and 96 MiB connector; review capacity before
+  changing them. Production deployment builds account assets intentionally.
+- **Operations:** each environment has a private bucket with a bucket-only
+  credential, encrypted and signed daily backups and a 34-day lifecycle rule.
+  Restore archives only on authorised hosts into `forma_restore_` databases.
+  Never export member rows to the sandbox. Recovery identities are wrapped to
+  the owner's SSH key and kept off-host; rewrap before replacing that key.
+- **Monitoring:** one-minute host timers plus an independent five-minute edge
+  monitor. Logs contain fixed event names, correlation IDs and HMAC client keys,
+  never request bodies, raw identities or auth links. Provider-wide audits remain
+  operator dashboard checks. Operations email to the owner was explicitly approved.
+- **Verification:** 46 server, 49 unit, 20 Worker, 4 Python operations and
+  5 edge-monitor tests passed; 9 updated legal browser tests passed. A second
+  recovery review required backup-time snapshot fingerprints, consistent recovery
+  container selection and independent KV alert state; actual disaster drills passed.
+  Public registration, owner-confirmed email receipt, verified sign-in, timed
+  private saves, export and two-session persistence passed. Canary data was removed.

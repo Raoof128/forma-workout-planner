@@ -4,6 +4,30 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-13 — Public account launch controls
+
+- Provisioned a separate production account backend with bounded containers,
+  private database roles, independent credentials and an Access-protected Tunnel.
+  No backend ports were published; unrelated containers retained their IDs.
+- Added separate private R2 buckets, bucket-scoped credentials, daily signed and
+  encrypted backups, verified off-host restores and 34-day lifecycle deletion.
+  Recovery keys stay off-host in envelopes encrypted to the operator's SSH key.
+- Added host monitoring, bounded security-event logs and an independent edge
+  health/backup monitor. The approved owner inbox received provider-accepted
+  delivery tests; synthetic staging records verified the threshold pipeline.
+  Rotated staging Access credentials and revoked the old token.
+- Updated Privacy Policy 1.2 to disclose encrypted Cloudflare backups. Production
+  deployment now builds account assets and uses its real protected origin.
+  See [launch evidence and remaining limits](docs/accounts/production-launch.md).
+- Validation: 46 server, 49 unit, 20 Worker, 4 Python operations, 2 edge-monitor
+  tests and 9 legal browser checks passed. Final operations checks increased to
+  6 Python and 5 edge cases after independent review; both environments restored
+  successfully without a live database, using signed backup-time snapshots.
+- Public accounts are deployed and the real owner-confirmed canary passed
+  verified sign-in, private timed workout saves, reload/two-session persistence,
+  export and owner-binding denial. Corrected non-root Tunnel token ownership
+  discovered during activation. The test's synthetic workout was removed.
+
 ### Raouf: 2026-10-13 — Expanded catalog and public planner
 
 - Added 1,645 sourced exercises to the 16 existing movements, with individual

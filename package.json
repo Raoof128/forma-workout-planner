@@ -22,12 +22,13 @@
     "server:migrate": "tsx server/migrate.ts",
     "test:server": "tsx --test --test-concurrency=1 server/tests/*.test.ts",
     "test:worker": "tsx --test worker/tests/*.test.ts",
+    "test:operations": "python3 -m unittest ops/test_operations.py && node --test ops/edge-monitor.test.mjs",
     "test:accounts": "playwright test --config=playwright.accounts.config.js",
     "test:accounts:production": "FORMA_ACCOUNT_BUILD=1 playwright test --config=playwright.accounts.config.js",
     "accounts:test-server": "tsx scripts/accounts-test-server.ts",
     "worker:dev": "wrangler dev",
     "worker:deploy:staging": "VITE_ACCOUNT_MODE=account npm run build && NODE_USE_ENV_PROXY=1 node scripts/deploy-public.mjs --staging",
-    "worker:deploy:production": "VITE_ACCOUNT_MODE=guest npm run build && NODE_USE_ENV_PROXY=1 node scripts/deploy-public.mjs",
+    "worker:deploy:production": "VITE_ACCOUNT_MODE=account npm run build && NODE_USE_ENV_PROXY=1 node scripts/deploy-public.mjs",
     "build:server": "tsc -p tsconfig.server.json && mkdir -p build/server/migrations && cp server/migrations/*.sql build/server/migrations/"
   },
   "dependencies": {

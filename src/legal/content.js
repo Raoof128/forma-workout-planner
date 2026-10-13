@@ -10,7 +10,7 @@ const EFFECTIVE = "13 October 2026";
 
 const privacy = {
   title: "Privacy Policy",
-  version: "1.1",
+  version: "1.2",
   effective: EFFECTIVE,
   summary:
     "FORMA is a workout planner. In guest mode your training data stays in your browser and is never sent to us. If you create an account, we store only what is needed to run it: your name, email, sign-in records and your workout data. We do not sell your information, show ads, or use analytics or tracking.",
@@ -77,7 +77,7 @@ const privacy = {
     },
     {
       ul: [
-        "Cloudflare, Inc.: content delivery, security, access control, and sending our service emails.",
+        "Cloudflare, Inc.: content delivery, security, access control, sending our service emails, and storing encrypted operational backups.",
         "DigitalOcean, LLC: our server and database, located in Sydney, Australia.",
       ],
     },
@@ -115,7 +115,7 @@ const privacy = {
         "Sessions: up to 7 days of inactivity and never more than 30 days.",
         "Security counters: normally up to 2 days.",
         "Verification and reset links: they expire within 24 hours.",
-        "Backups: if we keep encrypted backups, copies are deleted within 35 days.",
+        "Backups: we keep encrypted operational backups. Copies are scheduled for deletion after 34 days and are deleted within 35 days.",
       ],
     },
     {

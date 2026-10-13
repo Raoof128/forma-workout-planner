@@ -30,9 +30,7 @@
         "BACKEND_URL": "https://forma-api-staging.raoufabedini.dev",
       },
     },
-    // Public guest-mode site. Account features are built out
-    // (VITE_ACCOUNT_MODE=guest) and no API credentials are configured, so
-    // every /api request fails closed with 503.
+    // Public account site with a separate production database and protected origin.
     "production": {
       "name": "forma-workout-planner-production",
       "workers_dev": false,
@@ -43,6 +41,7 @@
       "vars": {
         "ENVIRONMENT": "production",
         "APP_ORIGIN": "https://forma.raoufabedini.dev",
+        "BACKEND_URL": "https://forma-api.raoufabedini.dev",
       },
     },
   },

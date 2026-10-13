@@ -1,5 +1,15 @@
 # Account release readiness
 
+**Current status, 13 October 2026:** GO for the owner-authorised controlled
+production activation. Hosted staging lifecycle, isolated production services,
+credential rotation, signed off-host restores, scheduled backups and alerts have
+now been verified. See [the current launch record](production-launch.md) and
+[security verdict](../security/release-security-verdict.md).
+
+The report below is historical evidence from the original implementation
+candidate. Its unavailable SSH, undeployed resources and NO-GO statements are
+superseded by those current records, not descriptions of today's environment.
+
 **NO-GO for external release.** The implementation and local deployment checks
 are complete enough for review; required hosted staging and operational gates
 remain unverified. This report does not claim a Cloudflare or DigitalOcean

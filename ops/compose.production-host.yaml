@@ -1,0 +1,18 @@
+# Production limits verified on the shared ~2 GB host. Keep database/API ports
+# private and review current host capacity before raising any limit.
+services:
+  db:
+    mem_limit: 256m
+    cpus: 0.75
+    command: ["postgres", "-c", "shared_buffers=48MB", "-c", "max_connections=30"]
+  api:
+    mem_limit: 256m
+    cpus: 0.75
+    environment:
+      DATABASE_POOL_SIZE: "6"
+  migrate:
+    mem_limit: 256m
+    cpus: 0.5
+  cloudflared:
+    mem_limit: 96m
+    cpus: 0.25
