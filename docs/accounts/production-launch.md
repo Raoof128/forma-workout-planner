@@ -98,8 +98,8 @@ the Droplet's OCI manifest digest is
 - Synthetic workout cleanup succeeded through the normal revision API.
 
 The canary account used a random password in protected test evidence. The owner
-subsequently requested removal of all production accounts after visual polish.
-That maintenance result is recorded separately below when complete.
+subsequently requested removal of all production accounts after visual polish;
+the completed reset is recorded below. The temporary password file was removed.
 
 ## Branding, loading and journals
 
@@ -134,3 +134,26 @@ export and forged member rejection before cleanup.
 Database backups do not contain runtime environment configuration. Preserve the
 protected deployment configuration, especially `AUTH_SECRET`, separately for
 MFA recovery; rotating it while enrolled accounts exist requires a recovery plan.
+
+## Owner-requested production reset
+
+After deployment and the final polished member canary, the owner authorised
+clearing every FORMA production account so they could register afresh. On
+13 October 2026, production went from two users to zero. All nine auth/workspace
+tables were checked: users, credentials, sessions, verification records, MFA,
+MFA replay records, workspaces, operation acknowledgements and abuse budgets
+were empty. Only the production API was briefly stopped to prevent write races.
+
+Production `AUTH_SECRET` was regenerated after confirming no enrolled MFA rows
+remained, invalidating old action links. The API returned healthy; no ports were
+published. Staging configuration/data and every other running container retained
+their previous state/IDs. Encrypted signed backups were verified before and
+after reset on the owner's private remote. Historical encrypted backups remain
+subject to the existing 34-day lifecycle; the reset does not claim to erase them.
+
+The post-reset public browser check passed: page and gateway health 200,
+anonymous session null, private workspace 401, usable Create account form,
+no overflow at 390px/320px and no page errors. The operations dashboard denied
+anonymous access. No new test account was created after the reset. Temporary SSH
+resources, scoped tokens, canary credentials and plaintext recovery-key scratch
+files were removed. The owner can now register their personal account normally.

@@ -153,6 +153,8 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   cases passed across three engines. Live public/staging/dashboard checks passed;
   mobile overflow/page errors/axe violations were absent. Current operations
   checks are 6 Python and 8 Node tests.
-- **Next authorised maintenance:** owner requested all FORMA production accounts
-  and linked data removed after polish. Preserve staging and unrelated services.
-  Record counts and health without exporting identifiers or database contents.
+- **Completed owner-authorised reset:** all FORMA production accounts and linked
+  data removed after polish; nine tables verified empty. Production signing
+  secret rotated with no MFA rows remaining. Staging and unrelated services
+  unchanged. Public health/registration and private workspace denial passed;
+  no new canary account was created. Backups retain the 34-day lifecycle.

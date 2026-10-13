@@ -6,6 +6,12 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ### Raouf: 2026-10-13 — Brand, loading motion and journals
 
+- After final hosted checks, cleared all production accounts and linked data at
+  the owner's explicit request; verified all nine tables empty and rotated the
+  signing secret. Staging and unrelated services stayed unchanged. Registration
+  is ready; no replacement test account was created. Existing encrypted backups
+  retain their 34-day expiry.
+
 - Added an original FORMA mark and coordinated accessible loading animation to
   real pending states, with stable action labels and reduced-motion support.
 - Refined workout history with actual totals, grouped entries and unit preserving
