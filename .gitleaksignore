@@ -1,0 +1,3 @@
+# Public Cloudflare Access application audience (JWT aud), not a credential.
+# Exact historical finding only: signature, issuer and owner checks remain required.
+95d6f91f3599d3be6fdbebedf6316e902c308fb4:ops/wrangler.dashboard.jsonc:generic-api-key:28

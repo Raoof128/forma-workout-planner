@@ -4,6 +4,29 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-13 — Consolidate release branches
+
+- Integrated the production release and all five Dependabot branches into main.
+  Updated pinned checkout/setup-node/upload-artifact actions and the pinned
+  Node 26 API container base.
+- Retained ESLint and `@eslint/js` 9.39.5: the proposed ESLint 10 update fails
+  clean installation because the latest React/accessibility plugins exclude it
+  from their peer ranges. Do not bypass dependency checks to install that update.
+  The Dependabot commit remains in history with this compatibility correction.
+- Classified the scanner's exact historical dashboard audience finding as a
+  public JWT application identifier. Added its single fingerprint exception;
+  credentials and all other history continue to be scanned.
+- Replaced offline exercise-measurement regex classification with string
+  matching; regression checks preserve all 1,645 published imported labels and
+  timed/carry/plank precedence. The generated catalog and live data are unchanged.
+- Validation: 51 unit and 46 API tests under Node 26, 20 gateway tests and 14
+  operations checks passed. Browser matrix: 256 passed; the two cases interrupted
+  by sandbox network changes passed three repetitions each after container setup.
+  The Node 26 image built and passed a read-only, non-root health check.
+- Pinned CI scanners passed: gitleaks history scan, OSV lockfile scan and
+  Semgrep (226 rules, 81 files, zero findings). Formatting, type checks and
+  documentation checks passed before publishing the combined main branch.
+
 ### Raouf: 2026-10-13 — Brand, loading motion and journals
 
 - After final hosted checks, cleared all production accounts and linked data at

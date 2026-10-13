@@ -1,5 +1,23 @@
 # Agent notes
 
+Branch consolidation on 13 October 2026 uses main as the repository's confirmed
+default branch. The Node 26 Docker base and action releases are pinned. ESLint
+stays at 9.39.5 until the React/accessibility plugins declare ESLint 10 support;
+the attempted upgrade fails normal `npm ci`. Preserve peer checks.
+
+`.gitleaksignore` contains one exact historical fingerprint for the public
+Cloudflare Access audience in dashboard configuration. It grants no access;
+signature, issuer and owner validation are still mandatory. Do not replace this
+with a general path/rule allowlist or add exceptions for credential material.
+
+Catalog import measurement classification lives in
+`scripts/exercise-measurement.mjs`; use ordered string matching and retain
+measurement precedence. The regression suite checks all published supplemental
+labels. Final merge checks passed 51 unit, 46 Node 26 API, 20 gateway and 14
+operations cases. Two network-interrupted Chromium journeys passed all six
+repetitions; the other 256 browser cases passed the full run. Keep Docker network
+setup separate from browser startup to avoid Chromium ERR_NETWORK_CHANGED.
+
 Rules and context for coding agents working in this repository. Read this and
 [CHANGELOG.md](CHANGELOG.md) before changing code, and append to both after.
 

@@ -4,6 +4,7 @@ import { fileURLToPath, URL } from "node:url";
 import { Buffer } from "node:buffer";
 import { log } from "node:console";
 import { format } from "prettier";
+import { inferMeasurement } from "./exercise-measurement.mjs";
 
 // Deliberately import text only. The source repository's image provenance is
 // unresolved; no image paths, images or third-party runtime requests are used.
@@ -110,26 +111,6 @@ const cleanText = (text) =>
     )
     .replace(/\s+/g, " ")
     .trim();
-function measurement(name, category) {
-  if (/carry|walk.*farm|farmer.*walk|sled|yoke/.test(name))
-    return "load_distance";
-  if (/plank.*(?:tap|touch|reach|row|extension)|push.*plank/.test(name))
-    return "load_reps";
-  if (/jump.*rope/.test(name)) return "duration";
-  if (
-    category === "cardio" ||
-    /treadmill|elliptical|stationary.*bike|cycling|running|swimming|rowing.*erg/.test(
-      name,
-    )
-  )
-    return "duration_distance";
-  if (
-    category === "stretching" ||
-    /stretch|plank|isometric|wall sit|dead hang/.test(name)
-  )
-    return "duration";
-  return "load_reps";
-}
 function add(row) {
   const key = normalize(row.name);
   if (names.has(key) || knownAliases.has(key) || row.description.length < 60)
@@ -138,7 +119,7 @@ function add(row) {
   catalog.push({
     ...row,
     weight: 0,
-    metric: measurement(row.name.toLowerCase(), row.category),
+    metric: inferMeasurement(row.name.toLowerCase(), row.category),
   });
   return true;
 }
