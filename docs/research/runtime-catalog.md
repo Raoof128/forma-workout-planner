@@ -2,7 +2,12 @@
 
 [Research index](README.md) · [User guide](../user-guide.md)
 
-The catalog contains **1,661 exercises**: 16 original movements with their IDs
+The current library offers **1,414 reviewed selectable movements**; see the
+[catalog quality correction](catalog-quality.md) for duplicate review, guide
+quality and machine coverage. All 1,661 previously published IDs remain compatible,
+and 20 new records cover missing machines and corrected timed measurements.
+
+The original imported catalog contained **1,661 exercises**: 16 original movements with their IDs
 and names unchanged, 858 additional Free Exercise DB entries, 654 additional
 pinned wger entries, and 133 additional entries from the current wger API.
 Normalized names and known legacy synonyms are deduplicated. This is measured
@@ -39,6 +44,7 @@ copied. Sources are not endorsements or personalised exercise prescriptions.
 NODE_USE_ENV_PROXY=1 npm run catalog:sync
 NODE_USE_ENV_PROXY=1 node scripts/snapshot-current-exercises.mjs
 NODE_USE_ENV_PROXY=1 npm run catalog:sync
+npm run catalog:curate
 npm run test:unit
 ```
 

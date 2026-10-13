@@ -16,6 +16,7 @@
     "test:browser:production": "VITE_ACCOUNT_MODE=guest npm run build && playwright test --config=playwright.production.config.js",
     "docs:check": "node scripts/check-docs.mjs",
     "catalog:sync": "node scripts/import-exercises.mjs",
+    "catalog:curate": "node scripts/build-catalog-curation.mjs",
     "typecheck": "tsc --noEmit",
     "server:dev": "tsx watch server/index.ts",
     "server:start": "tsx server/index.ts",

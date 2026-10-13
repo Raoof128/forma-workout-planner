@@ -46,9 +46,12 @@ test("catalog preserves legacy IDs and gives every imported entry licensed text 
     "deadbug",
   ])
     assert.ok(exerciseById.has(id), id);
-  for (const exercise of exercises.slice(16)) {
+  for (const exercise of exercises.slice(16).filter((row) => row.source)) {
     assert.ok(exercise.description.length > 0, exercise.id);
-    assert.ok(instructions[exercise.id].length >= 60, exercise.id);
+    assert.ok(
+      instructions[exercise.instructionId ?? exercise.id].length >= 60,
+      exercise.id,
+    );
     assert.ok(exercise.source.author && exercise.source.license);
     assert.equal(new URL(exercise.source.url).protocol, "https:");
     assert.equal("images" in exercise, false);

@@ -5,6 +5,7 @@ import { Buffer } from "node:buffer";
 import { log } from "node:console";
 import { format } from "prettier";
 import { inferMeasurement } from "./exercise-measurement.mjs";
+import { usableGuide } from "../src/catalog/curation.js";
 
 // Deliberately import text only. The source repository's image provenance is
 // unresolved; no image paths, images or third-party runtime requests are used.
@@ -79,6 +80,19 @@ const knownAliases = new Set([
   "sidelateralraise",
 ]);
 const catalog = [];
+const previous = JSON.parse(
+  await readFile(
+    new URL("../src/catalog/exercises.json", import.meta.url),
+    "utf8",
+  ),
+);
+const previousGuides = JSON.parse(
+  await readFile(
+    new URL("../src/catalog/instructions.json", import.meta.url),
+    "utf8",
+  ),
+);
+let excludedUnusableGuides = 0;
 const group = (name) =>
   /chest|pector/.test(name)
     ? "Chest"
@@ -113,8 +127,11 @@ const cleanText = (text) =>
     .trim();
 function add(row) {
   const key = normalize(row.name);
-  if (names.has(key) || knownAliases.has(key) || row.description.length < 60)
+  if (!usableGuide(row.description)) {
+    excludedUnusableGuides++;
     return false;
+  }
+  if (names.has(key) || knownAliases.has(key)) return false;
   names.add(key);
   catalog.push({
     ...row,
@@ -212,6 +229,18 @@ try {
 } catch (error) {
   if (error.code !== "ENOENT") throw error;
 }
+// Archived records keep published IDs valid even if a source removes a row or
+// its guide fails the current quality check. Curation excludes them from browsing.
+const incomingIds = new Set(catalog.map((row) => row.id));
+let retainedCompatibilityEntries = 0;
+for (const row of previous) {
+  if (incomingIds.has(row.id)) continue;
+  catalog.push({
+    ...row,
+    description: previousGuides[row.id] ?? row.description,
+  });
+  retainedCompatibilityEntries++;
+}
 catalog.sort((a, b) => a.name.localeCompare(b.name, "en"));
 if (
   catalog.length < 800 ||
@@ -249,6 +278,8 @@ await writeFile(
       wgerAdded,
       wgerExcluded,
       liveAdded,
+      excludedUnusableGuides,
+      retainedCompatibilityEntries,
       contentOnly: true,
       excludedImages: true,
       sources: sources.sort((a, b) => a.url.localeCompare(b.url)),

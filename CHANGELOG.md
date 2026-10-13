@@ -4,6 +4,23 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-14 — Exercise duplicates and machine coverage
+
+- Consolidated 240 duplicate entries in 180 reviewed groups, with aliases in
+  browsing and routine selection. The library offers 1,414 usable movements;
+  all 1,661 existing IDs and historical measurements remain compatible.
+- Added 15 distinct machine movements, six original guide repairs and five new
+  timed identities. Fixed machine/cable metadata, ambiguous Air Bike naming and
+  boilerplate guide admission. Archived entries stay outside browsing.
+- Reviewed all 76 earlier equipment families plus five additional machine
+  families. Preserved meaningful variants and documented unsupported specialty
+  measurements. See [catalog evidence](docs/research/catalog-quality.md).
+- Preserved all alias prescriptions when toggling an existing routine group;
+  corrected overbroad machine inference for barbell, band and floor movements.
+- Validation: 60 unit, 46 API, 20 gateway tests and 57 affected browser cases
+  across three engines passed; compiled non-root Node 26 image passed new-ID
+  validation. Existing member data remains on its private host.
+
 ### Raouf: 2026-10-13 — Consolidate release branches
 
 - Integrated the production release and all five Dependabot branches into main.

@@ -8,6 +8,7 @@ RUN --mount=type=secret,id=proxy_ca,required=false \
 COPY server ./server
 COPY src/data.js src/storage.js src/exerciseMetrics.js ./src/
 COPY src/catalog/exercises.json ./src/catalog/exercises.json
+COPY src/catalog/curation.js src/catalog/curation.json src/catalog/machine-exercises.json ./src/catalog/
 COPY tsconfig.json tsconfig.server.json ./
 RUN npm run build:server \
     && npm prune --omit=dev --offline --strict-ssl=true --no-audit --no-fund \

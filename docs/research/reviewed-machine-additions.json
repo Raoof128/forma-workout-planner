@@ -1,0 +1,423 @@
+[
+  {
+    "id": "forma-smith-romanian-deadlift",
+    "name": "Smith machine Romanian deadlift",
+    "equipmentFamilyId": "smith",
+    "equipment": "Machine",
+    "muscle": "Legs",
+    "primaryMuscles": ["Hamstrings", "Glutes"],
+    "secondaryMuscles": ["Lower back"],
+    "category": "strength",
+    "level": "Unspecified",
+    "metric": "load_reps",
+    "weight": 0,
+    "aliases": ["Smith RDL"],
+    "description": "Set the stops below your intended range and start with the guided bar at upper-thigh height. Stand so the bar stays close to your legs through the machine path. Unrack with an overhand grip, soften your knees and brace. Push your hips back while keeping that knee bend nearly constant; lower only while your back stays stable. Drive your hips forward to stand, without leaning back. Re-rack securely before stepping away.",
+    "instructions": "Set the stops below your intended range and start with the guided bar at upper-thigh height. Stand so the bar stays close to your legs through the machine path. Unrack with an overhand grip, soften your knees and brace. Push your hips back while keeping that knee bend nearly constant; lower only while your back stays stable. Drive your hips forward to stand, without leaning back. Re-rack securely before stepping away.",
+    "references": [
+      {
+        "title": "Life Fitness Smith Machine",
+        "url": "https://www.lifefitness.com/en-us/catalog/strength-training/benches/life-fitness-smith-machine"
+      }
+    ],
+    "referenceUse": "Manufacturer source supports equipment identity/configuration; coaching wording is original synthesis, not copied vendor text.",
+    "measurementNotes": "Record machine identity and bar-resistance convention. Kept distinct from existing Smith stiff-legged deadlift; no automatic alias or load conversion.",
+    "equipmentFamilyName": "Smith machine",
+    "equipmentTags": ["Machine", "Smith machine"],
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "forma-cable-standing-hip-abduction",
+    "name": "Standing cable hip abduction",
+    "equipmentFamilyId": "cable",
+    "equipment": "Cable",
+    "muscle": "Legs",
+    "primaryMuscles": ["Glutes"],
+    "secondaryMuscles": ["Hip abductors"],
+    "category": "strength",
+    "level": "Unspecified",
+    "metric": "load_reps",
+    "weight": 0,
+    "aliases": ["Cable hip abduction", "Cable lateral leg raise"],
+    "description": "Attach an ankle cuff to a low pulley and fasten it securely around the ankle farther from the stack. Stand side-on, hold a stable support and set a light resistance. Brace with a soft bend in the supporting knee. Move the cuffed leg outward without turning your pelvis or leaning sideways, then return slowly without letting the stack slam. Complete the set and repeat on the other side.",
+    "instructions": "Attach an ankle cuff to a low pulley and fasten it securely around the ankle farther from the stack. Stand side-on, hold a stable support and set a light resistance. Brace with a soft bend in the supporting knee. Move the cuffed leg outward without turning your pelvis or leaning sideways, then return slowly without letting the stack slam. Complete the set and repeat on the other side.",
+    "references": [
+      {
+        "title": "Life Fitness strength equipment categories",
+        "url": "https://www.lifefitness.com/en-us/catalog/strength-training"
+      }
+    ],
+    "referenceUse": "Manufacturer source supports equipment identity/configuration; coaching wording is original synthesis, not copied vendor text.",
+    "measurementNotes": "Count repetitions for each side consistently; keep pulley, cuff and load convention comparable.",
+    "equipmentFamilyName": "Adjustable cable / functional trainer",
+    "equipmentTags": ["Cable", "Adjustable cable / functional trainer"],
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "forma-machine-seated-back-extension",
+    "name": "Seated back extension machine",
+    "equipmentFamilyId": "back-extension",
+    "equipment": "Machine",
+    "muscle": "Back",
+    "primaryMuscles": ["Lower back"],
+    "secondaryMuscles": ["Glutes"],
+    "category": "strength",
+    "level": "Unspecified",
+    "metric": "load_reps",
+    "weight": 0,
+    "aliases": ["Selectorized back extension", "Machine lumbar extension"],
+    "description": "Select a light resistance and adjust the seat, feet and back pad according to the machine placard. Set the starting angle within a comfortable range and hold the handles. Brace your abdomen, keep your pelvis supported and extend your torso against the pad in a smooth motion. Stop at a comfortable upright position instead of arching back. Return slowly to the start without bouncing or letting the stack fall.",
+    "instructions": "Select a light resistance and adjust the seat, feet and back pad according to the machine placard. Set the starting angle within a comfortable range and hold the handles. Brace your abdomen, keep your pelvis supported and extend your torso against the pad in a smooth motion. Stop at a comfortable upright position instead of arching back. Return slowly to the start without bouncing or letting the stack fall.",
+    "references": [
+      {
+        "title": "Life Fitness Insignia Back Extension",
+        "url": "https://www.lifefitness.com/en-us/catalog/strength-training/selectorized/insignia-series-back-extension"
+      }
+    ],
+    "referenceUse": "Manufacturer source supports equipment identity/configuration; coaching wording is original synthesis, not copied vendor text.",
+    "measurementNotes": "This is a resisted seated torso-extension machine, distinct from a Roman-chair hip hinge.",
+    "equipmentFamilyName": "Back extension machine",
+    "equipmentTags": ["Machine", "Back extension machine"],
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "forma-machine-torso-rotation",
+    "name": "Rotary torso machine",
+    "equipmentFamilyId": "rotary-torso",
+    "equipment": "Machine",
+    "muscle": "Core",
+    "primaryMuscles": ["Obliques"],
+    "secondaryMuscles": ["Abdominals"],
+    "category": "strength",
+    "level": "Unspecified",
+    "metric": "load_reps",
+    "weight": 0,
+    "aliases": ["Machine torso rotation", "Seated rotary torso"],
+    "description": "Use a light stack setting. Adjust the seat or kneeling support and pads as shown on the machine placard, then choose a comfortable starting angle. Keep your supported body segment stable and hold the handles without pulling with your arms. Rotate the moving torso or lower-body assembly slowly through the intended range; avoid forcing the end position. Return under control, reset the starting angle for the other direction and repeat.",
+    "instructions": "Use a light stack setting. Adjust the seat or kneeling support and pads as shown on the machine placard, then choose a comfortable starting angle. Keep your supported body segment stable and hold the handles without pulling with your arms. Rotate the moving torso or lower-body assembly slowly through the intended range; avoid forcing the end position. Return under control, reset the starting angle for the other direction and repeat.",
+    "references": [
+      {
+        "title": "Life Fitness Insignia Torso Rotation",
+        "url": "https://www.lifefitness.com/en-us/catalog/strength-training/selectorized/insignia-series-torso-rotation"
+      }
+    ],
+    "referenceUse": "Manufacturer source supports equipment identity/configuration; coaching wording is original synthesis, not copied vendor text.",
+    "measurementNotes": "Count reps per direction. Torso and lower-body assemblies vary by model; use the exact machine instructions.",
+    "equipmentFamilyName": "Rotary torso machine",
+    "equipmentTags": ["Machine", "Rotary torso machine"],
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "forma-machine-assisted-chin-up",
+    "name": "Assisted machine chin-up",
+    "equipmentFamilyId": "assisted-dip-pullup",
+    "equipment": "Machine",
+    "muscle": "Back",
+    "primaryMuscles": ["Lats"],
+    "secondaryMuscles": ["Biceps"],
+    "category": "strength",
+    "level": "Unspecified",
+    "metric": "load_reps",
+    "weight": 0,
+    "aliases": ["Counterweight chin-up", "Underhand assisted chin-up"],
+    "description": "Choose enough assistance to keep the movement controlled. Hold the underhand chin-up handles, step onto the platform and position your knees or feet as the machine requires. Brace and pull your elbows down until your chin reaches handle height without swinging. Lower smoothly to a comfortable extended-arm position. Keep control of the moving platform as you step off.",
+    "instructions": "Choose enough assistance to keep the movement controlled. Hold the underhand chin-up handles, step onto the platform and position your knees or feet as the machine requires. Brace and pull your elbows down until your chin reaches handle height without swinging. Lower smoothly to a comfortable extended-arm position. Keep control of the moving platform as you step off.",
+    "references": [
+      {
+        "title": "Hammer Strength Select Assist Dip Chin",
+        "url": "https://www.lifefitness.com/en-us/catalog/strength-training/selectorized/hammer-strength-select-assist-dip-chin"
+      }
+    ],
+    "referenceUse": "Manufacturer source supports equipment identity/configuration; coaching wording is original synthesis, not copied vendor text.",
+    "measurementNotes": "Log repetitions with external load set to 0. Counterweight is assistance: do not enter it as lifted kilograms or compare it with added-load volume. Record assistance as setup context.",
+    "equipmentFamilyName": "Assisted dip / chin station",
+    "equipmentTags": ["Machine", "Assisted dip / chin station"],
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "forma-fan-bike",
+    "name": "Fan bike cardio",
+    "equipmentFamilyId": "air-bike",
+    "equipment": "Machine",
+    "muscle": "Full body",
+    "primaryMuscles": ["Quads", "Glutes"],
+    "secondaryMuscles": ["Hamstrings", "Shoulders", "Arms"],
+    "category": "cardio",
+    "level": "Unspecified",
+    "metric": "duration_distance",
+    "weight": 0,
+    "aliases": [
+      "Air bike ergometer",
+      "Assault bike",
+      "Echo bike",
+      "Airdyne",
+      "Fan bike"
+    ],
+    "description": "Adjust the seat so your knees remain slightly bent at the farthest pedal position and you can reach the moving handles without rounding your back. Start pedalling gently, then add a smooth push-pull of the arms. Keep your feet secure and coordinate both sides without jerking the handles. Maintain the effort you can control, then ease down gradually before the pedals stop and you dismount.",
+    "instructions": "Adjust the seat so your knees remain slightly bent at the farthest pedal position and you can reach the moving handles without rounding your back. Start pedalling gently, then add a smooth push-pull of the arms. Keep your feet secure and coordinate both sides without jerking the handles. Maintain the effort you can control, then ease down gradually before the pedals stop and you dismount.",
+    "references": [
+      {
+        "title": "Hammer Strength HD Air Bike",
+        "url": "https://www.lifefitness.com/en-us/catalog/cardio/bikes-indoor-cycles/hd-air-bike"
+      }
+    ],
+    "referenceUse": "Manufacturer source supports equipment identity/configuration; coaching wording is original synthesis, not copied vendor text.",
+    "measurementNotes": "Log elapsed seconds and console distance in metres if available. Fan resistance, calories and watts are not external kilograms. db-air-bike is a floor bicycle crunch and is not replaced.",
+    "equipmentFamilyName": "Fan / air bike",
+    "equipmentTags": ["Machine", "Fan / air bike", "Cardio"],
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "forma-upper-body-ergometer",
+    "name": "Upper-body ergometer",
+    "equipmentFamilyId": "upper-erg",
+    "equipment": "Machine",
+    "muscle": "Full body",
+    "primaryMuscles": ["Shoulders", "Arms"],
+    "secondaryMuscles": ["Back", "Chest"],
+    "category": "cardio",
+    "level": "Unspecified",
+    "metric": "duration",
+    "weight": 0,
+    "aliases": [
+      "Arm ergometry",
+      "Arm-crank ergometer",
+      "Hand cycle ergometer",
+      "SCIFIT upper-body"
+    ],
+    "description": "Adjust the seat or approved wheelchair platform, crank height and reach for your setup. Lock the seat and any required stabilizers; choose a comfortable handle radius. Start with light resistance and turn the cranks smoothly while keeping your shoulders relaxed and trunk supported. Avoid reaching so far that the elbows lock or your torso rocks. Slow down before stopping and use the machine supports when leaving.",
+    "instructions": "Adjust the seat or approved wheelchair platform, crank height and reach for your setup. Lock the seat and any required stabilizers; choose a comfortable handle radius. Start with light resistance and turn the cranks smoothly while keeping your shoulders relaxed and trunk supported. Avoid reaching so far that the elbows lock or your torso rocks. Slow down before stopping and use the machine supports when leaving.",
+    "references": [
+      {
+        "title": "SCIFIT PRO1 Upper Body",
+        "url": "https://www.lifefitness.com/en-us/catalog/cardio/bikes-indoor-cycles/pro1-upper-body"
+      }
+    ],
+    "referenceUse": "Manufacturer source supports equipment identity/configuration; coaching wording is original synthesis, not copied vendor text.",
+    "measurementNotes": "Log elapsed seconds. Crank revolutions, watts and resistance levels are not horizontal metres or kilograms. Wheelchair use requires the specific approved platform and stabilization setup.",
+    "equipmentFamilyName": "Upper-body ergometer",
+    "equipmentTags": ["Machine", "Upper-body ergometer", "Cardio"],
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "forma-recumbent-stepper",
+    "name": "Recumbent stepper",
+    "equipmentFamilyId": "recumbent-stepper",
+    "equipment": "Machine",
+    "muscle": "Full body",
+    "primaryMuscles": ["Quads", "Glutes"],
+    "secondaryMuscles": ["Hamstrings", "Shoulders", "Arms"],
+    "category": "cardio",
+    "level": "Unspecified",
+    "metric": "duration",
+    "weight": 0,
+    "aliases": [
+      "Recumbent stepping",
+      "Seated stepper",
+      "SCIFIT StepOne",
+      "NuStep"
+    ],
+    "description": "Adjust and lock the seat so your back is supported and your knees stay slightly bent at the farthest pedal position. Set handle reach and any prescribed foot supports for your setup. Begin at light resistance with a short, comfortable alternating stride. Push through the pedals and coordinate the handles without forcing your knees or rocking your trunk. Reduce your pace gradually and stop the pedals before getting off.",
+    "instructions": "Adjust and lock the seat so your back is supported and your knees stay slightly bent at the farthest pedal position. Set handle reach and any prescribed foot supports for your setup. Begin at light resistance with a short, comfortable alternating stride. Push through the pedals and coordinate the handles without forcing your knees or rocking your trunk. Reduce your pace gradually and stop the pedals before getting off.",
+    "references": [
+      {
+        "title": "SCIFIT StepOne Recumbent Stepper",
+        "url": "https://www.lifefitness.com/en-us/catalog/cardio/stair-climbers-stepper-machines/stepone-recumbent-stepper"
+      }
+    ],
+    "referenceUse": "Manufacturer source supports equipment identity/configuration; coaching wording is original synthesis, not copied vendor text.",
+    "measurementNotes": "Log elapsed seconds. Step count, ascent and resistance settings are model-specific; do not treat them as horizontal metres or kilograms. Accessible use depends on exact seating and stabilization.",
+    "equipmentFamilyName": "Recumbent stepper",
+    "equipmentTags": ["Machine", "Recumbent stepper", "Cardio"],
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "forma-machine-pullover",
+    "name": "Machine pullover",
+    "equipmentFamilyId": "pullover-machine",
+    "equipment": "Machine",
+    "muscle": "Back",
+    "primaryMuscles": ["Lats"],
+    "secondaryMuscles": ["Chest", "Triceps"],
+    "category": "strength",
+    "level": "Unspecified",
+    "metric": "load_reps",
+    "weight": 0,
+    "aliases": ["Plate-loaded pullover", "Selectorized pullover"],
+    "description": "Adjust the seat and starting position so your upper arms or elbows meet the work pads comfortably. Secure the provided restraint and position yourself using the machine entry lever if fitted. Brace against the support and drive your upper arms down through a comfortable arc, keeping your elbow angle nearly fixed. Return slowly without letting the load pull your shoulders into a forced stretch. Release the resistance using the entry mechanism before leaving.",
+    "instructions": "Adjust the seat and starting position so your upper arms or elbows meet the work pads comfortably. Secure the provided restraint and position yourself using the machine entry lever if fitted. Brace against the support and drive your upper arms down through a comfortable arc, keeping your elbow angle nearly fixed. Return slowly without letting the load pull your shoulders into a forced stretch. Release the resistance using the entry mechanism before leaving.",
+    "references": [
+      {
+        "title": "Hammer Strength Plate Loaded Pullover",
+        "url": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/plate-loaded-pullover"
+      }
+    ],
+    "referenceUse": "Manufacturer source supports equipment identity/configuration; coaching wording is original synthesis, not copied vendor text.",
+    "measurementNotes": "Record stack or plate loading and machine identity consistently. Starting resistance and leverage differ between models.",
+    "equipmentFamilyName": "Pullover machine",
+    "equipmentTags": ["Machine", "Pullover machine"],
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "forma-machine-v-squat",
+    "name": "V-squat machine",
+    "equipmentFamilyId": "v-squat",
+    "equipment": "Machine",
+    "muscle": "Legs",
+    "primaryMuscles": ["Quads", "Glutes"],
+    "secondaryMuscles": ["Hamstrings"],
+    "category": "strength",
+    "level": "Unspecified",
+    "metric": "load_reps",
+    "weight": 0,
+    "aliases": ["Traditional V-squat", "Forward V-squat"],
+    "description": "Set the platform and safety stop for the traditional orientation supported by your machine. Place your back against the back pad, position your shoulders under the pads and put both feet securely on the platform. Brace, extend your legs enough to release the latch, then lower by bending your knees and hips through a stable range. Push evenly to stand without snapping your knees straight. Re-engage the safety latch before leaving.",
+    "instructions": "Set the platform and safety stop for the traditional orientation supported by your machine. Place your back against the back pad, position your shoulders under the pads and put both feet securely on the platform. Brace, extend your legs enough to release the latch, then lower by bending your knees and hips through a stable range. Push evenly to stand without snapping your knees straight. Re-engage the safety latch before leaving.",
+    "references": [
+      {
+        "title": "Hammer Strength Reverse V-Squat: traditional and reverse orientations",
+        "url": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/reverse-v-squat"
+      }
+    ],
+    "referenceUse": "Manufacturer source supports equipment identity/configuration; coaching wording is original synthesis, not copied vendor text.",
+    "measurementNotes": "Traditional orientation is distinct from existing Reverse V-Squat. Follow the exact model placard; not every V-squat permits both orientations.",
+    "equipmentFamilyName": "V-squat machine",
+    "equipmentTags": ["Machine", "V-squat machine"],
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "forma-machine-tibialis-raise",
+    "name": "Tibialis raise machine",
+    "equipmentFamilyId": "tibialis-machine",
+    "equipment": "Machine",
+    "muscle": "Legs",
+    "primaryMuscles": ["Tibialis anterior"],
+    "secondaryMuscles": [],
+    "category": "strength",
+    "level": "Unspecified",
+    "metric": "load_reps",
+    "weight": 0,
+    "aliases": ["Machine dorsiflexion", "Tibia dorsi-flexion machine"],
+    "description": "Sit with your working heel supported and the forefoot beneath the upper foot pad as shown on the machine. Start with light resistance and keep your knee and leg stable. Lift the forefoot toward your shin while your heel stays supported; pause briefly and lower slowly to the starting position. Use a comfortable ankle range without swinging the leg. Complete the set before changing sides or stepping clear.",
+    "instructions": "Sit with your working heel supported and the forefoot beneath the upper foot pad as shown on the machine. Start with light resistance and keep your knee and leg stable. Lift the forefoot toward your shin while your heel stays supported; pause briefly and lower slowly to the starting position. Use a comfortable ankle range without swinging the leg. Complete the set before changing sides or stepping clear.",
+    "references": [
+      {
+        "title": "Hammer Strength Tibia Dorsi-Flexion",
+        "url": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/plate-loaded-tibia-dorsi-flexion"
+      }
+    ],
+    "referenceUse": "Manufacturer source supports equipment identity/configuration; coaching wording is original synthesis, not copied vendor text.",
+    "measurementNotes": "This is ankle dorsiflexion, not a calf plantarflexion raise. Record repetitions per side and machine loading convention.",
+    "equipmentFamilyName": "Tibialis machine",
+    "equipmentTags": ["Machine", "Tibialis machine"],
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "forma-machine-grip-close",
+    "name": "Grip squeeze machine",
+    "equipmentFamilyId": "grip-machine",
+    "equipment": "Machine",
+    "muscle": "Arms",
+    "primaryMuscles": ["Forearms", "Finger flexors"],
+    "secondaryMuscles": [],
+    "category": "strength",
+    "level": "Unspecified",
+    "metric": "load_reps",
+    "weight": 0,
+    "aliases": ["Plate-loaded gripper", "Machine gripper close"],
+    "description": "Sit or position yourself at the gripper with a secure hold on its fixed and moving handles. Choose light resistance and keep your wrists in a comfortable neutral position. Close the moving handle with your fingers, keeping your forearms steady. Pause briefly, then let the handle open slowly without releasing your grip abruptly. Finish with the load safely resting before removing your hands.",
+    "instructions": "Sit or position yourself at the gripper with a secure hold on its fixed and moving handles. Choose light resistance and keep your wrists in a comfortable neutral position. Close the moving handle with your fingers, keeping your forearms steady. Pause briefly, then let the handle open slowly without releasing your grip abruptly. Finish with the load safely resting before removing your hands.",
+    "references": [
+      {
+        "title": "Hammer Strength Plate Loaded Gripper",
+        "url": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/plate-loaded-gripper"
+      }
+    ],
+    "referenceUse": "Manufacturer source supports equipment identity/configuration; coaching wording is original synthesis, not copied vendor text.",
+    "measurementNotes": "Record the grip position, machine and whether the displayed load applies to one handle or the whole assembly.",
+    "equipmentFamilyName": "Grip machine",
+    "equipmentTags": ["Machine", "Grip machine"],
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "forma-machine-neck-flexion",
+    "name": "Neck flexion machine",
+    "equipmentFamilyId": "neck-machine",
+    "equipment": "Machine",
+    "muscle": "Shoulders",
+    "primaryMuscles": ["Neck flexors"],
+    "secondaryMuscles": [],
+    "category": "strength",
+    "level": "Unspecified",
+    "metric": "load_reps",
+    "weight": 0,
+    "aliases": ["4-way neck flexion"],
+    "description": "Use the lowest suitable resistance and get the machine setup checked before beginning. Adjust the seat and rotating head pad so the pad contacts the forehead; hold the handles and keep your trunk supported. Slowly nod forward slightly against the pad through a small comfortable range. Return under control without twisting, jerking or forcing the end position. Keep your shoulders still. Stop if the movement causes pain, dizziness or radiating symptoms.",
+    "instructions": "Use the lowest suitable resistance and get the machine setup checked before beginning. Adjust the seat and rotating head pad so the pad contacts the forehead; hold the handles and keep your trunk supported. Slowly nod forward slightly against the pad through a small comfortable range. Return under control without twisting, jerking or forcing the end position. Keep your shoulders still. Stop if the movement causes pain, dizziness or radiating symptoms.",
+    "references": [
+      {
+        "title": "Hammer Strength 4-Way Neck",
+        "url": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/4-way-neck"
+      }
+    ],
+    "referenceUse": "Manufacturer source supports equipment identity/configuration; coaching wording is original synthesis, not copied vendor text.",
+    "measurementNotes": "Specialty exercise; exact pad alignment and a supervised introduction are appropriate. Count side-specific repetitions for lateral flexion; do not combine directions into a single rep.",
+    "equipmentFamilyName": "4-way neck machine",
+    "equipmentTags": ["Machine", "4-way neck machine"],
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "forma-machine-neck-extension",
+    "name": "Neck extension machine",
+    "equipmentFamilyId": "neck-machine",
+    "equipment": "Machine",
+    "muscle": "Shoulders",
+    "primaryMuscles": ["Neck extensors"],
+    "secondaryMuscles": [],
+    "category": "strength",
+    "level": "Unspecified",
+    "metric": "load_reps",
+    "weight": 0,
+    "aliases": ["4-way neck extension"],
+    "description": "Use the lowest suitable resistance and get the machine setup checked before beginning. Adjust the seat and rotating head pad so the pad contacts the back of your head; hold the handles and keep your trunk supported. Slowly move your head back toward a neutral upright position against the pad through a small comfortable range. Return under control without twisting, jerking or forcing the end position. Keep your shoulders still. Stop if the movement causes pain, dizziness or radiating symptoms.",
+    "instructions": "Use the lowest suitable resistance and get the machine setup checked before beginning. Adjust the seat and rotating head pad so the pad contacts the back of your head; hold the handles and keep your trunk supported. Slowly move your head back toward a neutral upright position against the pad through a small comfortable range. Return under control without twisting, jerking or forcing the end position. Keep your shoulders still. Stop if the movement causes pain, dizziness or radiating symptoms.",
+    "references": [
+      {
+        "title": "Hammer Strength 4-Way Neck",
+        "url": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/4-way-neck"
+      }
+    ],
+    "referenceUse": "Manufacturer source supports equipment identity/configuration; coaching wording is original synthesis, not copied vendor text.",
+    "measurementNotes": "Specialty exercise; exact pad alignment and a supervised introduction are appropriate. Count side-specific repetitions for lateral flexion; do not combine directions into a single rep.",
+    "equipmentFamilyName": "4-way neck machine",
+    "equipmentTags": ["Machine", "4-way neck machine"],
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "forma-machine-neck-lateral-flexion",
+    "name": "Neck lateral flexion machine",
+    "equipmentFamilyId": "neck-machine",
+    "equipment": "Machine",
+    "muscle": "Shoulders",
+    "primaryMuscles": ["Lateral neck flexors"],
+    "secondaryMuscles": [],
+    "category": "strength",
+    "level": "Unspecified",
+    "metric": "load_reps",
+    "weight": 0,
+    "aliases": ["4-way neck lateral flexion"],
+    "description": "Use the lowest suitable resistance and get the machine setup checked before beginning. Adjust the seat and rotating head pad so the pad contacts the side of your head above the ear; hold the handles and keep your trunk supported. Slowly tilt your head slightly toward that shoulder against the pad through a small comfortable range. Return under control without twisting, jerking or forcing the end position. Keep your shoulders still. Stop if the movement causes pain, dizziness or radiating symptoms. Repeat on the other side with the pad reset.",
+    "instructions": "Use the lowest suitable resistance and get the machine setup checked before beginning. Adjust the seat and rotating head pad so the pad contacts the side of your head above the ear; hold the handles and keep your trunk supported. Slowly tilt your head slightly toward that shoulder against the pad through a small comfortable range. Return under control without twisting, jerking or forcing the end position. Keep your shoulders still. Stop if the movement causes pain, dizziness or radiating symptoms. Repeat on the other side with the pad reset.",
+    "references": [
+      {
+        "title": "Hammer Strength 4-Way Neck",
+        "url": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/4-way-neck"
+      }
+    ],
+    "referenceUse": "Manufacturer source supports equipment identity/configuration; coaching wording is original synthesis, not copied vendor text.",
+    "measurementNotes": "Specialty exercise; exact pad alignment and a supervised introduction are appropriate. Count side-specific repetitions for lateral flexion; do not combine directions into a single rep.",
+    "equipmentFamilyName": "4-way neck machine",
+    "equipmentTags": ["Machine", "4-way neck machine"],
+    "reviewedAt": "2026-10-14"
+  }
+]

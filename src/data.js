@@ -1,4 +1,7 @@
 import catalog from "./catalog/exercises.json" with { type: "json" };
+import machineExercises from "./catalog/machine-exercises.json" with { type: "json" };
+import curation from "./catalog/curation.json" with { type: "json" };
+import { canonicalId, createCatalogView } from "./catalog/curation.js";
 import { tracksLoadReps } from "./exerciseMetrics.js";
 
 const originalExercises = [
@@ -147,10 +150,23 @@ const originalExercises = [
     weight: 0,
   },
 ];
-export const exercises = [...originalExercises, ...catalog];
+// Compatibility records keep every published ID and its original logging units.
+export const publishedExercises = [...originalExercises, ...catalog];
+export const exercises = [...publishedExercises, ...machineExercises];
 export const exerciseById = new Map(
   exercises.map((exercise) => [exercise.id, exercise]),
 );
+export const selectableExercises = createCatalogView(exercises, curation);
+const reviewedGuides = new Map(selectableExercises.map((row) => [row.id, row]));
+export function guideExercise(id) {
+  return (
+    reviewedGuides.get(canonicalId(id, curation)) ?? {
+      ...exerciseById.get(id),
+      source: undefined,
+      guideUnavailable: true,
+    }
+  );
+}
 const items = (ids) =>
   ids.map((id) => ({
     exerciseId: id,

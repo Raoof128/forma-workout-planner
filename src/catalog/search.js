@@ -10,6 +10,7 @@ export function matchesExercise(exercise, query) {
       exercise.muscle,
       exercise.equipment,
       exercise.category,
+      ...(exercise.equipmentTags ?? []),
       ...(exercise.aliases ?? []),
       ...(exercise.primaryMuscles ?? []),
       ...(exercise.secondaryMuscles ?? []),

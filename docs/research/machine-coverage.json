@@ -1,0 +1,3760 @@
+{
+  "reviewedAt": "2026-10-14",
+  "timezone": "Australia/Sydney",
+  "baselineCount": 1661,
+  "scope": "All 76 research equipment families enumerated; machine candidates manually resolved; non-machine families marked not applicable. Additional common machine families cross-checked. No worldwide completeness percentage.",
+  "supportedMetrics": [
+    "load_reps",
+    "duration",
+    "duration_distance",
+    "load_distance"
+  ],
+  "families": [
+    {
+      "equipmentId": "bodyweight",
+      "name": "Bodyweight / floor space",
+      "family": "bodyweight",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "push-up",
+          "exerciseId": "pushup",
+          "name": "Push-up",
+          "equipment": "Bodyweight / floor space"
+        },
+        {
+          "candidateId": "knee-push-up",
+          "exerciseId": "wger-2b61df61-f71e-4b8f-9f95-6a565238a8ae",
+          "name": "knee push-ups",
+          "equipment": "none (bodyweight exercise)"
+        },
+        {
+          "candidateId": "incline-push-up",
+          "exerciseId": "db-incline-push-up",
+          "name": "Incline Push-Up",
+          "equipment": "Bodyweight"
+        },
+        {
+          "candidateId": "diamond-push-up",
+          "exerciseId": "wger-de22963a-5d42-4999-860e-377f64359432",
+          "name": "Diamond push ups",
+          "equipment": "none (bodyweight exercise)"
+        },
+        {
+          "candidateId": "single-leg-glute-bridge",
+          "exerciseId": "db-single-leg-glute-bridge",
+          "name": "Single Leg Glute Bridge",
+          "equipment": "Bodyweight"
+        },
+        {
+          "candidateId": "dead-bug",
+          "exerciseId": "deadbug",
+          "name": "Dead bug",
+          "equipment": "Bodyweight / floor space"
+        },
+        {
+          "candidateId": "bird-dog",
+          "exerciseId": "wger-6349365e-e901-4280-a1b7-65734986f47d",
+          "name": "Bird Dog",
+          "equipment": "none (bodyweight exercise)"
+        },
+        {
+          "candidateId": "reverse-crunch",
+          "exerciseId": "db-reverse-crunch",
+          "name": "Reverse Crunch",
+          "equipment": "Bodyweight"
+        },
+        {
+          "candidateId": "mountain-climber",
+          "exerciseId": "db-mountain-climbers",
+          "name": "Mountain Climbers",
+          "equipment": "Bodyweight"
+        },
+        {
+          "candidateId": "forearm-plank",
+          "exerciseId": "plank",
+          "name": "Forearm plank",
+          "equipment": "Bodyweight / floor space"
+        },
+        {
+          "candidateId": "side-plank",
+          "exerciseId": "wger-e1b99153-0102-47fc-b0cd-c21509827b0b",
+          "name": "Side Plank",
+          "equipment": "none (bodyweight exercise)"
+        },
+        {
+          "candidateId": "hollow-hold",
+          "exerciseId": "wger-d059c63d-0a81-48a3-912a-44070c0def2e",
+          "name": "Hollow Hold",
+          "equipment": "Gym mat + none (bodyweight exercise)"
+        },
+        {
+          "candidateId": "wall-sit",
+          "exerciseId": "wger-3f8ad988-1aee-48ca-ad37-44e39ae1715d",
+          "name": "Wall-sit",
+          "equipment": "Bodyweight"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/equipment/",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "barbell",
+      "name": "Straight barbell and plates",
+      "family": "free-weight",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "barbell-bench-press",
+          "exerciseId": "bench",
+          "name": "Barbell bench press",
+          "equipment": "Straight barbell and plates"
+        },
+        {
+          "candidateId": "close-grip-bench-press",
+          "exerciseId": "wger-145a9e7d-d25f-4687-9eb6-5b35878e87b4",
+          "name": "Close-Grip Bench Press",
+          "equipment": "Barbell"
+        },
+        {
+          "candidateId": "push-press",
+          "exerciseId": "wger-4284336c-6cfa-4c4d-a440-26b30db035d1",
+          "name": "Push Press",
+          "equipment": "Bodyweight"
+        },
+        {
+          "candidateId": "bent-over-barbell-row",
+          "exerciseId": "db-bent-over-barbell-row",
+          "name": "Bent Over Barbell Row",
+          "equipment": "Barbell"
+        },
+        {
+          "candidateId": "barbell-back-squat",
+          "exerciseId": "squat",
+          "name": "Barbell back squat",
+          "equipment": "Straight barbell and plates"
+        },
+        {
+          "candidateId": "front-squat",
+          "exerciseId": "wger-d677de4c-5bd9-412a-91f1-857116a666a2",
+          "name": "Front Squats",
+          "equipment": "Barbell"
+        },
+        {
+          "candidateId": "romanian-deadlift",
+          "exerciseId": "rdl",
+          "name": "Romanian deadlift",
+          "equipment": "Straight barbell and plates"
+        },
+        {
+          "candidateId": "sumo-deadlift",
+          "exerciseId": "db-sumo-deadlift",
+          "name": "Sumo Deadlift",
+          "equipment": "Barbell"
+        },
+        {
+          "candidateId": "barbell-hip-thrust",
+          "exerciseId": "db-barbell-hip-thrust",
+          "name": "Barbell Hip Thrust",
+          "equipment": "Barbell"
+        },
+        {
+          "candidateId": "barbell-glute-bridge",
+          "exerciseId": "db-barbell-glute-bridge",
+          "name": "Barbell Glute Bridge",
+          "equipment": "Barbell"
+        },
+        {
+          "candidateId": "power-clean",
+          "exerciseId": "db-power-clean",
+          "name": "Power Clean",
+          "equipment": "Barbell"
+        },
+        {
+          "candidateId": "power-snatch",
+          "exerciseId": "db-power-snatch",
+          "name": "Power Snatch",
+          "equipment": "Barbell"
+        },
+        {
+          "candidateId": "clean-and-jerk",
+          "exerciseId": "db-clean-and-jerk",
+          "name": "Clean and Jerk",
+          "equipment": "Barbell"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training"
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "dumbbell",
+      "name": "Dumbbells",
+      "family": "free-weight",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "dumbbell-bench-press",
+          "exerciseId": "db-dumbbell-bench-press",
+          "name": "Dumbbell Bench Press",
+          "equipment": "Dumbbell"
+        },
+        {
+          "candidateId": "incline-dumbbell-press",
+          "exerciseId": "db-incline-dumbbell-press",
+          "name": "Incline Dumbbell Press",
+          "equipment": "Dumbbell"
+        },
+        {
+          "candidateId": "dumbbell-floor-press",
+          "exerciseId": "db-dumbbell-floor-press",
+          "name": "Dumbbell Floor Press",
+          "equipment": "Dumbbell"
+        },
+        {
+          "candidateId": "one-arm-dumbbell-row",
+          "exerciseId": "row",
+          "name": "One-arm dumbbell row",
+          "equipment": "Dumbbells"
+        },
+        {
+          "candidateId": "dumbbell-shoulder-press",
+          "exerciseId": "shoulder",
+          "name": "Dumbbell shoulder press",
+          "equipment": "Dumbbells"
+        },
+        {
+          "candidateId": "dumbbell-lateral-raise",
+          "exerciseId": "lateral",
+          "name": "Dumbbell lateral raise",
+          "equipment": "Dumbbells"
+        },
+        {
+          "candidateId": "dumbbell-shrug",
+          "exerciseId": "db-dumbbell-shrug",
+          "name": "Dumbbell Shrug",
+          "equipment": "Dumbbell"
+        },
+        {
+          "candidateId": "dumbbell-biceps-curl",
+          "exerciseId": "curl",
+          "name": "Dumbbell biceps curl",
+          "equipment": "Dumbbells"
+        },
+        {
+          "candidateId": "hammer-curl",
+          "exerciseId": "wger-422a48aa-a41e-46e7-b84f-0bd99ccb0737",
+          "name": "Hammer Curl",
+          "equipment": "Dumbbell"
+        },
+        {
+          "candidateId": "concentration-curl",
+          "exerciseId": "wger-7adca809-0fbb-4785-bcd3-d512e2c49888",
+          "name": "Concentration Curl",
+          "equipment": "Dumbbell"
+        },
+        {
+          "candidateId": "incline-dumbbell-curl",
+          "exerciseId": "db-incline-dumbbell-curl",
+          "name": "Incline Dumbbell Curl",
+          "equipment": "Dumbbell"
+        },
+        {
+          "candidateId": "dumbbell-reverse-lunge",
+          "exerciseId": "lunge",
+          "name": "Dumbbell reverse lunge",
+          "equipment": "Dumbbells"
+        },
+        {
+          "candidateId": "dumbbell-romanian-deadlift",
+          "exerciseId": "wger-65d12ecf-54b8-466d-a412-e55c396cad69",
+          "name": "Dumbbell Romanian Deadlift",
+          "equipment": "Dumbbell"
+        },
+        {
+          "candidateId": "standing-calf-raise",
+          "exerciseId": "calf",
+          "name": "Standing calf raise",
+          "equipment": "Dumbbells"
+        },
+        {
+          "candidateId": "suitcase-carry",
+          "exerciseId": "wger-b6c19c36-34be-4d9f-8c07-8bdf9ab3ba1a",
+          "name": "Suitcase Carry",
+          "equipment": "Dumbbell"
+        },
+        {
+          "candidateId": "dumbbell-step-up",
+          "exerciseId": "db-dumbbell-step-ups",
+          "name": "Dumbbell Step Ups",
+          "equipment": "Dumbbell"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training"
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "kettlebell",
+      "name": "Kettlebells",
+      "family": "free-weight",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "kettlebell-goblet-squat",
+          "exerciseId": "goblet",
+          "name": "Kettlebell goblet squat",
+          "equipment": "Kettlebells"
+        },
+        {
+          "candidateId": "double-kettlebell-front-squat",
+          "exerciseId": "wger-a030a4e9-970c-4442-b0b3-e49b42143de0",
+          "name": "Double Kettlebell Front Squat",
+          "equipment": "Kettlebell"
+        },
+        {
+          "candidateId": "kettlebell-swing",
+          "exerciseId": "wger-d813ef7c-b10a-4c5c-ba55-6b9518e7ff4c",
+          "name": "Kettlebell Swing",
+          "equipment": "Kettlebell"
+        },
+        {
+          "candidateId": "kettlebell-deadlift",
+          "exerciseId": "wger-9b5f8c6e-2436-4ded-aea9-8c698b0c8768",
+          "name": "Kettlebell deadlifts",
+          "equipment": "Kettlebell"
+        },
+        {
+          "candidateId": "turkish-get-up",
+          "exerciseId": "wger-309bfd2b-1af4-49db-b64b-d7d7c7dd39bb",
+          "name": "Turkish Get-Up",
+          "equipment": "Dumbbell"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strength-equipment",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "ez-bar",
+      "name": "EZ curl bar",
+      "family": "free-weight",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "ez-bar-curl",
+          "exerciseId": "db-ez-bar-curl",
+          "name": "EZ-Bar Curl",
+          "equipment": "EZ bar"
+        },
+        {
+          "candidateId": "ez-bar-skull-crusher",
+          "exerciseId": "db-ez-bar-skullcrusher",
+          "name": "EZ-Bar Skullcrusher",
+          "equipment": "EZ bar"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strength-equipment",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "trap-bar",
+      "name": "Trap / hex bar",
+      "family": "free-weight",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "trap-bar-deadlift",
+          "exerciseId": "db-trap-bar-deadlift",
+          "name": "Trap Bar Deadlift",
+          "equipment": "Specialty equipment"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strength-equipment",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "specialty-bar",
+      "name": "Safety squat / multi-grip / axle bars",
+      "family": "free-weight",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strength-equipment",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "bench",
+      "name": "Flat / adjustable / decline bench",
+      "family": "support",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "barbell-bench-press",
+          "exerciseId": "bench",
+          "name": "Barbell bench press",
+          "equipment": "Flat / adjustable / decline bench"
+        },
+        {
+          "candidateId": "close-grip-bench-press",
+          "exerciseId": "wger-145a9e7d-d25f-4687-9eb6-5b35878e87b4",
+          "name": "Close-Grip Bench Press",
+          "equipment": "Barbell"
+        },
+        {
+          "candidateId": "barbell-hip-thrust",
+          "exerciseId": "db-barbell-hip-thrust",
+          "name": "Barbell Hip Thrust",
+          "equipment": "Barbell"
+        },
+        {
+          "candidateId": "barbell-glute-bridge",
+          "exerciseId": "db-barbell-glute-bridge",
+          "name": "Barbell Glute Bridge",
+          "equipment": "Barbell"
+        },
+        {
+          "candidateId": "dumbbell-bench-press",
+          "exerciseId": "db-dumbbell-bench-press",
+          "name": "Dumbbell Bench Press",
+          "equipment": "Dumbbell"
+        },
+        {
+          "candidateId": "incline-dumbbell-press",
+          "exerciseId": "db-incline-dumbbell-press",
+          "name": "Incline Dumbbell Press",
+          "equipment": "Dumbbell"
+        },
+        {
+          "candidateId": "one-arm-dumbbell-row",
+          "exerciseId": "row",
+          "name": "One-arm dumbbell row",
+          "equipment": "Flat / adjustable / decline bench"
+        },
+        {
+          "candidateId": "ez-bar-skull-crusher",
+          "exerciseId": "db-ez-bar-skullcrusher",
+          "name": "EZ-Bar Skullcrusher",
+          "equipment": "EZ bar"
+        },
+        {
+          "candidateId": "smith-bench-press",
+          "exerciseId": "db-smith-machine-bench-press",
+          "name": "Smith Machine Bench Press",
+          "equipment": "Machine"
+        },
+        {
+          "candidateId": "smith-incline-press",
+          "exerciseId": "db-smith-machine-incline-bench-press",
+          "name": "Smith Machine Incline Bench Press",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training"
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "rack",
+      "name": "Power rack / squat stand / platform",
+      "family": "support",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "barbell-back-squat",
+          "exerciseId": "squat",
+          "name": "Barbell back squat",
+          "equipment": "Power rack / squat stand / platform"
+        },
+        {
+          "candidateId": "front-squat",
+          "exerciseId": "wger-d677de4c-5bd9-412a-91f1-857116a666a2",
+          "name": "Front Squats",
+          "equipment": "Barbell"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training"
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "smith",
+      "name": "Smith machine",
+      "family": "guided-strength",
+      "scope": "machine_review",
+      "status": "gaps_identified",
+      "represented": [
+        {
+          "candidateId": "smith-bench-press",
+          "exerciseId": "db-smith-machine-bench-press",
+          "name": "Smith Machine Bench Press",
+          "equipment": "Machine"
+        },
+        {
+          "candidateId": "smith-incline-press",
+          "exerciseId": "db-smith-machine-incline-bench-press",
+          "name": "Smith Machine Incline Bench Press",
+          "equipment": "Machine"
+        },
+        {
+          "candidateId": "smith-squat",
+          "exerciseId": "db-smith-machine-squat",
+          "name": "Smith Machine Squat",
+          "equipment": "Machine"
+        },
+        {
+          "candidateId": "smith-split-squat",
+          "exerciseId": "wger-b382dcb2-60a8-412d-b0ee-6afe9c9f36d7",
+          "name": "Smith Machine Split Squat",
+          "equipment": "Barbell"
+        }
+      ],
+      "missingMovements": [
+        {
+          "candidateId": "smith-romanian-deadlift",
+          "name": "Smith Romanian deadlift",
+          "reason": "Romanian and stiff-legged deadlifts kept separate: start position, knee bend and range can differ. Existing Smith stiff-legged entry is family coverage, not an automatic RDL synonym."
+        }
+      ],
+      "deferred": [],
+      "rationale": "Romanian and stiff-legged deadlifts kept separate: start position, knee bend and range can differ. Existing Smith stiff-legged entry is family coverage, not an automatic RDL synonym.",
+      "sources": [
+        {
+          "url": "https://www.precor.com/en-US/strength",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/selectorized",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.precor.com/en-US/strength/selectorized"
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/plate-loaded",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training/benches/life-fitness-smith-machine",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training/benches/life-fitness-smith-machine"
+        }
+      ],
+      "reviewedAdditionIds": ["forma-smith-romanian-deadlift"]
+    },
+    {
+      "equipmentId": "cable",
+      "name": "Adjustable cable / crossover / functional trainer",
+      "family": "cable",
+      "scope": "machine_review",
+      "status": "gaps_identified",
+      "represented": [
+        {
+          "candidateId": "standing-cable-chest-press",
+          "exerciseId": "db-standing-cable-chest-press",
+          "name": "Standing Cable Chest Press",
+          "equipment": "Cable"
+        },
+        {
+          "candidateId": "cable-chest-fly",
+          "exerciseId": "db-cable-crossover",
+          "name": "Cable Crossover",
+          "equipment": "Cable"
+        },
+        {
+          "candidateId": "low-to-high-cable-fly",
+          "exerciseId": "db-low-cable-crossover",
+          "name": "Low Cable Crossover",
+          "equipment": "Cable"
+        },
+        {
+          "candidateId": "seated-cable-row",
+          "exerciseId": "wger-0ecfec6f-5d0f-4e8a-8d37-f6203a8923b8",
+          "name": "Seated Cable Row",
+          "equipment": "Bodyweight"
+        },
+        {
+          "candidateId": "single-arm-cable-row",
+          "exerciseId": "db-seated-one-arm-cable-pulley-rows",
+          "name": "Seated One-arm Cable Pulley Rows",
+          "equipment": "Cable"
+        },
+        {
+          "candidateId": "cable-face-pull",
+          "exerciseId": "db-face-pull",
+          "name": "Face Pull",
+          "equipment": "Cable"
+        },
+        {
+          "candidateId": "straight-arm-cable-pulldown",
+          "exerciseId": "db-straight-arm-pulldown",
+          "name": "Straight-Arm Pulldown",
+          "equipment": "Cable"
+        },
+        {
+          "candidateId": "cable-lateral-raise",
+          "exerciseId": "wger-81942f3d-d92c-431c-b9d0-0da12918d1e4",
+          "name": "Cable Lateral Raises (Single Arm)",
+          "equipment": "Bodyweight"
+        },
+        {
+          "candidateId": "cable-rear-delt-fly",
+          "exerciseId": "db-cable-rear-delt-fly",
+          "name": "Cable Rear Delt Fly",
+          "equipment": "Cable"
+        },
+        {
+          "candidateId": "cable-external-rotation",
+          "exerciseId": "wger-dc3a2072-abc3-4ef9-b8e6-f5ae6b11bc7f",
+          "name": "Cable External Rotation",
+          "equipment": "Bodyweight"
+        },
+        {
+          "candidateId": "cable-internal-rotation",
+          "exerciseId": "db-cable-internal-rotation",
+          "name": "Cable Internal Rotation",
+          "equipment": "Cable"
+        },
+        {
+          "candidateId": "cable-biceps-curl",
+          "exerciseId": "db-standing-biceps-cable-curl",
+          "name": "Standing Biceps Cable Curl",
+          "equipment": "Cable"
+        },
+        {
+          "candidateId": "rope-hammer-curl",
+          "exerciseId": "db-cable-hammer-curls-rope-attachment",
+          "name": "Cable Hammer Curls - Rope Attachment",
+          "equipment": "Cable"
+        },
+        {
+          "candidateId": "cable-triceps-pushdown",
+          "exerciseId": "triceps",
+          "name": "Cable triceps pushdown",
+          "equipment": "Adjustable cable / crossover / functional trainer"
+        },
+        {
+          "candidateId": "overhead-cable-triceps-extension",
+          "exerciseId": "db-cable-rope-overhead-triceps-extension",
+          "name": "Cable Rope Overhead Triceps Extension",
+          "equipment": "Cable"
+        },
+        {
+          "candidateId": "cable-crunch",
+          "exerciseId": "db-cable-crunch",
+          "name": "Cable Crunch",
+          "equipment": "Cable"
+        },
+        {
+          "candidateId": "cable-woodchop",
+          "exerciseId": "db-standing-cable-wood-chop",
+          "name": "Standing Cable Wood Chop",
+          "equipment": "Cable"
+        },
+        {
+          "candidateId": "pallof-press",
+          "exerciseId": "db-pallof-press",
+          "name": "Pallof Press",
+          "equipment": "Cable"
+        },
+        {
+          "candidateId": "cable-glute-kickback",
+          "exerciseId": "db-one-legged-cable-kickback",
+          "name": "One-Legged Cable Kickback",
+          "equipment": "Cable"
+        },
+        {
+          "candidateId": "cable-hip-adduction",
+          "exerciseId": "db-cable-hip-adduction",
+          "name": "Cable Hip Adduction",
+          "equipment": "Cable"
+        },
+        {
+          "candidateId": "cable-pull-through",
+          "exerciseId": "db-pull-through",
+          "name": "Pull Through",
+          "equipment": "Cable"
+        }
+      ],
+      "missingMovements": [
+        {
+          "candidateId": "cable-hip-abduction",
+          "name": "Cable hip abduction",
+          "reason": "No equivalent machine movement found after name and guide review."
+        }
+      ],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://ca.matrixfitness.com/eng/strength/multi-station/go-ft-functional-trainer",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://ca.matrixfitness.com/eng/strength/multi-station/go-ft-functional-trainer"
+        },
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training"
+        }
+      ],
+      "reviewedAdditionIds": ["forma-cable-standing-hip-abduction"]
+    },
+    {
+      "equipmentId": "lat-pulldown",
+      "name": "Lat pulldown station",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "lat-pulldown",
+          "exerciseId": "pulldown",
+          "name": "Lat pulldown",
+          "equipment": "Lat pulldown station"
+        },
+        {
+          "candidateId": "neutral-grip-lat-pulldown",
+          "exerciseId": "db-v-bar-pulldown",
+          "name": "V-Bar Pulldown",
+          "equipment": "Cable"
+        },
+        {
+          "candidateId": "single-arm-lat-pulldown",
+          "exerciseId": "db-one-arm-lat-pulldown",
+          "name": "One Arm Lat Pulldown",
+          "equipment": "Cable"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.precor.com/en-US/strength",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/selectorized",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.precor.com/en-US/strength/selectorized"
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/plate-loaded",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "seated-row",
+      "name": "Seated row machine",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "machine-seated-row",
+          "exerciseId": "wger-af11a7c1-876c-455b-b59a-d8456a99d6e5",
+          "name": "Seated machine row",
+          "equipment": "Bodyweight"
+        },
+        {
+          "candidateId": "plate-loaded-high-row",
+          "exerciseId": "db-leverage-high-row",
+          "name": "Leverage High Row",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.precor.com/en-US/strength",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/selectorized",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.precor.com/en-US/strength/selectorized"
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/plate-loaded",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "chest-press",
+      "name": "Chest press machine",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "machine-chest-press",
+          "exerciseId": "db-machine-bench-press",
+          "name": "Machine Bench Press",
+          "equipment": "Machine"
+        },
+        {
+          "candidateId": "plate-loaded-incline-chest-press",
+          "exerciseId": "db-leverage-incline-chest-press",
+          "name": "Leverage Incline Chest Press",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.precor.com/en-US/strength",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/selectorized",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.precor.com/en-US/strength/selectorized"
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/plate-loaded",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "shoulder-press",
+      "name": "Shoulder press machine",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "machine-shoulder-press",
+          "exerciseId": "db-machine-shoulder-military-press",
+          "name": "Machine Shoulder (Military) Press",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.precor.com/en-US/strength",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/selectorized",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.precor.com/en-US/strength/selectorized"
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/plate-loaded",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "pec-deck",
+      "name": "Chest fly / rear delt machine",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "pec-deck-fly",
+          "exerciseId": "db-butterfly",
+          "name": "Butterfly",
+          "equipment": "Machine"
+        },
+        {
+          "candidateId": "reverse-pec-deck",
+          "exerciseId": "db-reverse-machine-flyes",
+          "name": "Reverse Machine Flyes",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Butterfly is the seated pec-deck fly; Reverse Machine Flyes is reverse pec-deck. Neither needs another branded-name duplicate.",
+      "sources": [
+        {
+          "url": "https://www.precor.com/en-US/strength",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/selectorized",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.precor.com/en-US/strength/selectorized"
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/plate-loaded",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "assisted-dip-pullup",
+      "name": "Assisted dip / chin station",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "gaps_identified",
+      "represented": [
+        {
+          "candidateId": "assisted-pull-up",
+          "exerciseId": "wger-8bc4c616-e76b-4291-9074-186ecbbb3cfd",
+          "name": "Assisted Pull-Up",
+          "equipment": "Resistance band"
+        },
+        {
+          "candidateId": "assisted-dip",
+          "exerciseId": "wger-3dd0db1c-450a-46d1-ad46-d7854bdc26ed",
+          "name": "Triceps Dips (Assisted)",
+          "equipment": "Bodyweight"
+        }
+      ],
+      "missingMovements": [
+        {
+          "candidateId": "assisted-chin-up",
+          "name": "Assisted chin-up",
+          "reason": "Counterweight kilograms are assistance, not lifted external load. Use reps with load zero under current schema, record assistance only as contextual text, and exclude it from kg volume. Existing assisted pull-up/dip IDs should be curated. Missing underhand chin-up is distinct."
+        }
+      ],
+      "deferred": [],
+      "rationale": "Counterweight kilograms are assistance, not lifted external load. Use reps with load zero under current schema, record assistance only as contextual text, and exclude it from kg volume. Existing assisted pull-up/dip IDs should be curated. Missing underhand chin-up is distinct.",
+      "sources": [
+        {
+          "url": "https://www.precor.com/en-US/strength",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/selectorized",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.precor.com/en-US/strength/selectorized"
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/plate-loaded",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training/selectorized/hammer-strength-select-assist-dip-chin",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training/selectorized/hammer-strength-select-assist-dip-chin"
+        }
+      ],
+      "reviewedAdditionIds": ["forma-machine-assisted-chin-up"]
+    },
+    {
+      "equipmentId": "leg-press",
+      "name": "Leg press machine",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "leg-press",
+          "exerciseId": "legpress",
+          "name": "Leg press",
+          "equipment": "Leg press machine"
+        },
+        {
+          "candidateId": "single-leg-press",
+          "exerciseId": "wger-09c9a566-c1b3-4bf6-8a48-f9dd2bbec1f2",
+          "name": "Single leg press",
+          "equipment": "Bodyweight"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.precor.com/en-US/strength",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/selectorized",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.precor.com/en-US/strength/selectorized"
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/plate-loaded",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "leg-extension",
+      "name": "Leg extension machine",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "leg-extension",
+          "exerciseId": "db-leg-extensions",
+          "name": "Leg Extensions",
+          "equipment": "Machine"
+        },
+        {
+          "candidateId": "single-leg-extension",
+          "exerciseId": "db-single-leg-leg-extension",
+          "name": "Single-Leg Leg Extension",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.precor.com/en-US/strength",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/selectorized",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.precor.com/en-US/strength/selectorized"
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/plate-loaded",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "leg-curl",
+      "name": "Seated / lying / standing leg curl",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "seated-leg-curl",
+          "exerciseId": "db-seated-leg-curl",
+          "name": "Seated Leg Curl",
+          "equipment": "Machine"
+        },
+        {
+          "candidateId": "lying-leg-curl",
+          "exerciseId": "db-lying-leg-curls",
+          "name": "Lying Leg Curls",
+          "equipment": "Machine"
+        },
+        {
+          "candidateId": "standing-leg-curl",
+          "exerciseId": "db-standing-leg-curl",
+          "name": "Standing Leg Curl",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.precor.com/en-US/strength",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/selectorized",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.precor.com/en-US/strength/selectorized"
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/plate-loaded",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "hip-abductor",
+      "name": "Hip abduction machine",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "machine-hip-abduction",
+          "exerciseId": "db-thigh-abductor",
+          "name": "Thigh Abductor",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.precor.com/en-US/strength",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/selectorized",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.precor.com/en-US/strength/selectorized"
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/plate-loaded",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "hip-adductor",
+      "name": "Hip adduction machine",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "machine-hip-adduction",
+          "exerciseId": "db-thigh-adductor",
+          "name": "Thigh Adductor",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.precor.com/en-US/strength",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/selectorized",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.precor.com/en-US/strength/selectorized"
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/plate-loaded",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "calf-machine",
+      "name": "Standing / seated calf machine",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "machine-standing-calf-raise",
+          "exerciseId": "db-standing-calf-raises",
+          "name": "Standing Calf Raises",
+          "equipment": "Machine"
+        },
+        {
+          "candidateId": "seated-calf-raise",
+          "exerciseId": "db-seated-calf-raise",
+          "name": "Seated Calf Raise",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.precor.com/en-US/strength",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/selectorized",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.precor.com/en-US/strength/selectorized"
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/plate-loaded",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "hack-squat",
+      "name": "Hack squat machine",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "hack-squat",
+          "exerciseId": "db-hack-squat",
+          "name": "Hack Squat",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training"
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "pendulum-squat",
+      "name": "Pendulum squat machine",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "pendulum-squat",
+          "exerciseId": "wger-ffdb4806-d64e-474b-8ce5-8df9a57fb9c7",
+          "name": "Pendulum Squat",
+          "equipment": "none (bodyweight exercise)"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Pendulum Squat already exists; wrong Bodyweight taxonomy and incomplete guide require curation, not duplicate import.",
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training"
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "belt-squat",
+      "name": "Belt squat machine",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "belt-squat",
+          "exerciseId": "wger-e9f3446f-ca98-4bf2-817c-0dacd123cecd",
+          "name": "Belt Squat",
+          "equipment": "Bodyweight"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Belt Squat already describes the belt loading machine; wrong Bodyweight taxonomy requires correction.",
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training"
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "hip-thrust",
+      "name": "Glute drive / hip thrust machine",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "machine-hip-thrust",
+          "exerciseId": "wger-ce21d3a2-cdc5-410c-9970-c25029ca3769",
+          "name": "Glute Drive",
+          "equipment": "Bodyweight"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Glute Drive already identifies the padded waistband and back support of the machine, although guide is incomplete and equipment is wrong.",
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training"
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "biceps-machine",
+      "name": "Preacher / biceps curl machine",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "machine-preacher-curl",
+          "exerciseId": "db-machine-preacher-curls",
+          "name": "Machine Preacher Curls",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.precor.com/en-US/strength",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/selectorized",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.precor.com/en-US/strength/selectorized"
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/plate-loaded",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "triceps-machine",
+      "name": "Triceps extension / seated dip machine",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "machine-triceps-extension",
+          "exerciseId": "db-machine-triceps-extension",
+          "name": "Machine Triceps Extension",
+          "equipment": "Machine"
+        },
+        {
+          "candidateId": "seated-machine-dip",
+          "exerciseId": "db-dip-machine",
+          "name": "Dip Machine",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.precor.com/en-US/strength",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/selectorized",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.precor.com/en-US/strength/selectorized"
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/plate-loaded",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "ab-machine",
+      "name": "Abdominal crunch machine",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "machine-abdominal-crunch",
+          "exerciseId": "db-ab-crunch-machine",
+          "name": "Ab Crunch Machine",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.precor.com/en-US/strength",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/selectorized",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.precor.com/en-US/strength/selectorized"
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/plate-loaded",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "back-extension",
+      "name": "Back extension machine / Roman chair",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "gaps_identified",
+      "represented": [
+        {
+          "candidateId": "roman-chair-back-extension",
+          "exerciseId": "db-hyperextensions-back-extensions",
+          "name": "Hyperextensions (Back Extensions)",
+          "equipment": "Specialty equipment"
+        }
+      ],
+      "missingMovements": [
+        {
+          "candidateId": "machine-back-extension",
+          "name": "Machine back extension",
+          "reason": "No equivalent machine movement found after name and guide review."
+        }
+      ],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.precor.com/en-US/strength",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/selectorized",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.precor.com/en-US/strength/selectorized"
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/plate-loaded",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training/selectorized/insignia-series-back-extension",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training/selectorized/insignia-series-back-extension"
+        }
+      ],
+      "reviewedAdditionIds": ["forma-machine-seated-back-extension"]
+    },
+    {
+      "equipmentId": "rotary-torso",
+      "name": "Rotary torso machine",
+      "family": "machine",
+      "scope": "machine_review",
+      "status": "gaps_identified",
+      "represented": [],
+      "missingMovements": [
+        {
+          "candidateId": "machine-torso-rotation",
+          "name": "Machine torso rotation",
+          "reason": "No equivalent machine movement found after name and guide review."
+        }
+      ],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.precor.com/en-US/strength",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/selectorized",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.precor.com/en-US/strength/selectorized"
+        },
+        {
+          "url": "https://www.precor.com/en-US/strength/plate-loaded",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training/selectorized/insignia-series-torso-rotation",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training/selectorized/insignia-series-torso-rotation"
+        }
+      ],
+      "reviewedAdditionIds": ["forma-machine-torso-rotation"]
+    },
+    {
+      "equipmentId": "landmine",
+      "name": "Landmine attachment",
+      "family": "specialty",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "meadows-row",
+          "exerciseId": "wger-28b65190-cae2-4d15-8f4e-dde0d9cc4d4b",
+          "name": "Meadows Row",
+          "equipment": "Barbell"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strength-equipment",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "ghd",
+      "name": "Glute ham developer",
+      "family": "specialty",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "glute-ham-raise",
+          "exerciseId": "db-glute-ham-raise",
+          "name": "Glute Ham Raise",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strength-equipment",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "reverse-hyper",
+      "name": "Reverse hyperextension machine",
+      "family": "specialty",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "reverse-hyperextension",
+          "exerciseId": "db-reverse-hyperextension",
+          "name": "Reverse Hyperextension",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strength-equipment",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "pullup-bar",
+      "name": "Pull-up bar / rig",
+      "family": "bodyweight",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "pull-up",
+          "exerciseId": "db-pullups",
+          "name": "Pullups",
+          "equipment": "Bodyweight"
+        },
+        {
+          "candidateId": "chin-up",
+          "exerciseId": "db-chin-up",
+          "name": "Chin-Up",
+          "equipment": "Bodyweight"
+        },
+        {
+          "candidateId": "hanging-leg-raise",
+          "exerciseId": "db-hanging-leg-raise",
+          "name": "Hanging Leg Raise",
+          "equipment": "Bodyweight"
+        },
+        {
+          "candidateId": "toes-to-bar",
+          "exerciseId": "wger-42d09639-a5a6-4aa6-b115-e4c96b1d3735",
+          "name": "Toes to bar",
+          "equipment": "Pull-up bar"
+        },
+        {
+          "candidateId": "dead-hang",
+          "exerciseId": "wger-74d4697d-8a97-4ea2-9d05-fa4d2bd7221e",
+          "name": "Deadhang",
+          "equipment": "Bodyweight"
+        },
+        {
+          "candidateId": "weighted-pull-up",
+          "exerciseId": "db-weighted-pull-ups",
+          "name": "Weighted Pull Ups",
+          "equipment": "Specialty equipment"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strength-equipment",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "dip-bars",
+      "name": "Dip bars / parallel bars",
+      "family": "bodyweight",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "parallel-bar-dip",
+          "exerciseId": "db-parallel-bar-dip",
+          "name": "Parallel Bar Dip",
+          "equipment": "Specialty equipment"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strength-equipment",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "rings",
+      "name": "Gymnastic rings",
+      "family": "bodyweight",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "ring-dip",
+          "exerciseId": "db-ring-dips",
+          "name": "Ring Dips",
+          "equipment": "Specialty equipment"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strength-equipment",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "suspension",
+      "name": "Suspension trainer",
+      "family": "bodyweight",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "suspension-row",
+          "exerciseId": "db-suspended-row",
+          "name": "Suspended Row",
+          "equipment": "Specialty equipment"
+        },
+        {
+          "candidateId": "suspension-chest-press",
+          "exerciseId": "db-suspended-push-up",
+          "name": "Suspended Push-Up",
+          "equipment": "Specialty equipment"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.trxtraining.com/pages/quickstart-suspension-trainer",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.trxtraining.com/blogs/news/7-basic-movements",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "bands",
+      "name": "Long bands / tubes / mini bands",
+      "family": "elastic",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "band-pull-apart",
+          "exerciseId": "db-band-pull-apart",
+          "name": "Band Pull Apart",
+          "equipment": "Resistance band"
+        },
+        {
+          "candidateId": "banded-clamshell",
+          "exerciseId": "wger-8cc84753-e638-4c43-91c6-51c097813ca4",
+          "name": "Banded Clamshell",
+          "equipment": "Resistance band"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/equipment/",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "weighted-vest",
+      "name": "Weighted vest / dip belt",
+      "family": "accessory",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "weighted-pull-up",
+          "exerciseId": "db-weighted-pull-ups",
+          "name": "Weighted Pull Ups",
+          "equipment": "Specialty equipment"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strength-equipment",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "plyo-box",
+      "name": "Plyometric box / step platform",
+      "family": "functional",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "box-jump",
+          "exerciseId": "wger-002c6a4f-28ac-4b07-8e94-053e5b05d52b",
+          "name": "box jumps",
+          "equipment": "none (bodyweight exercise)"
+        },
+        {
+          "candidateId": "lateral-box-jump",
+          "exerciseId": "db-lateral-box-jump",
+          "name": "Lateral Box Jump",
+          "equipment": "Specialty equipment"
+        },
+        {
+          "candidateId": "dumbbell-step-up",
+          "exerciseId": "db-dumbbell-step-ups",
+          "name": "Dumbbell Step Ups",
+          "equipment": "Dumbbell"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/equipment/",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "medicine-ball",
+      "name": "Medicine / wall ball",
+      "family": "functional",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "wall-ball-shot",
+          "exerciseId": "wger-f20ab712-f953-4705-8710-9681392ddd07",
+          "name": "Wall balls",
+          "equipment": "Swiss Ball"
+        },
+        {
+          "candidateId": "medicine-ball-chest-pass",
+          "exerciseId": "db-medicine-ball-chest-pass",
+          "name": "Medicine Ball Chest Pass",
+          "equipment": "Medicine ball"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/equipment/",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "slam-ball",
+      "name": "Slam ball",
+      "family": "functional",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "ball-slam",
+          "exerciseId": "wger-a1e8759d-72b9-422f-87a8-9d316fa18498",
+          "name": "Ball Slams",
+          "equipment": "Bodyweight"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strength-equipment",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "battle-ropes",
+      "name": "Battle ropes",
+      "family": "functional",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/equipment/",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "jump-rope",
+      "name": "Skipping rope",
+      "family": "functional",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strength-equipment",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "sled",
+      "name": "Push / pull sled",
+      "family": "functional",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "sled-push",
+          "exerciseId": "db-sled-push",
+          "name": "Sled Push",
+          "equipment": "Specialty equipment"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/sleds",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "sandbag",
+      "name": "Sandbag",
+      "family": "functional",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strength-equipment",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "carry-handles",
+      "name": "Farmers carry handles",
+      "family": "strongman",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "farmers-handle-carry",
+          "exerciseId": "db-farmers-walk",
+          "name": "Farmer's Walk",
+          "equipment": "Specialty equipment"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strongman",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "yoke",
+      "name": "Yoke",
+      "family": "strongman",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "yoke-carry",
+          "exerciseId": "db-yoke-walk",
+          "name": "Yoke Walk",
+          "equipment": "Specialty equipment"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strongman",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "log",
+      "name": "Strongman log",
+      "family": "strongman",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "log-clean-and-press",
+          "exerciseId": "db-log-lift",
+          "name": "Log Lift",
+          "equipment": "Specialty equipment"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strongman",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "stone",
+      "name": "Atlas stone / loadable stone",
+      "family": "strongman",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "stone-to-platform",
+          "exerciseId": "db-atlas-stones",
+          "name": "Atlas Stones",
+          "equipment": "Specialty equipment"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strongman",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "climbing-rope",
+      "name": "Climbing rope",
+      "family": "functional",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "rope-climb",
+          "exerciseId": "db-rope-climb",
+          "name": "Rope Climb",
+          "equipment": "Specialty equipment"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strength-equipment",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "grip",
+      "name": "Gripper / pinch block / thick grip",
+      "family": "accessory",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strength-equipment",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "treadmill",
+      "name": "Motorized / curved treadmill",
+      "family": "cardio",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "treadmill-walk",
+          "exerciseId": "db-walking-treadmill",
+          "name": "Walking, Treadmill",
+          "equipment": "Machine"
+        },
+        {
+          "candidateId": "treadmill-run",
+          "exerciseId": "db-running-treadmill",
+          "name": "Running, Treadmill",
+          "equipment": "Machine"
+        },
+        {
+          "candidateId": "incline-treadmill-walk",
+          "exerciseId": "db-walking-treadmill",
+          "name": "Walking, Treadmill",
+          "equipment": "Machine"
+        },
+        {
+          "candidateId": "curved-treadmill-run",
+          "exerciseId": "db-running-treadmill",
+          "name": "Running, Treadmill",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Walking/running IDs cover generic walking/running. Incline and curved belt are setup variants; record machine/incline context instead of padding names.",
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training"
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "bike",
+      "name": "Upright / recumbent / indoor cycle",
+      "family": "cardio",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "upright-cycling",
+          "exerciseId": "db-bicycling-stationary",
+          "name": "Bicycling, Stationary",
+          "equipment": "Machine"
+        },
+        {
+          "candidateId": "recumbent-cycling",
+          "exerciseId": "db-recumbent-bike",
+          "name": "Recumbent Bike",
+          "equipment": "Machine"
+        },
+        {
+          "candidateId": "indoor-cycling",
+          "exerciseId": "db-bicycling-stationary",
+          "name": "Bicycling, Stationary",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Stationary upright and recumbent cycling are represented. Indoor studio cycle is setup context for stationary cycling.",
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training"
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "air-bike",
+      "name": "Fan / air bike",
+      "family": "cardio",
+      "scope": "machine_review",
+      "status": "gaps_identified",
+      "represented": [],
+      "missingMovements": [
+        {
+          "candidateId": "air-bike",
+          "name": "Air bike",
+          "reason": "db-air-bike is a bicycle crunch performed lying on the floor. It is not a fan bike ergometer; a new distinctly named cardio entry is warranted."
+        }
+      ],
+      "deferred": [],
+      "rationale": "db-air-bike is a bicycle crunch performed lying on the floor. It is not a fan bike ergometer; a new distinctly named cardio entry is warranted.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strength-equipment",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/cardio/bikes-indoor-cycles/hd-air-bike",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/cardio/bikes-indoor-cycles/hd-air-bike"
+        }
+      ],
+      "reviewedAdditionIds": ["forma-fan-bike"]
+    },
+    {
+      "equipmentId": "rower",
+      "name": "Rowing ergometer",
+      "family": "cardio",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "indoor-rowing",
+          "exerciseId": "db-rowing-stationary",
+          "name": "Rowing, Stationary",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.concept2.com/blog/customize-your-data-display-with-ergdata",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "ski-erg",
+      "name": "Ski ergometer",
+      "family": "cardio",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "ski-ergometer",
+          "exerciseId": "wger-e29d9914-6b02-490b-8f3a-f9fe8f21993c",
+          "name": "Ski Machine",
+          "equipment": "Bodyweight"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Ski Machine guide describes overhead handles, double-pole drive and erg distance; this is already SkiErg coverage despite Bodyweight taxonomy.",
+      "sources": [
+        {
+          "url": "https://www.concept2.com/blog/customize-your-data-display-with-ergdata",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "elliptical",
+      "name": "Elliptical / cross trainer / arc trainer",
+      "family": "cardio",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "elliptical-training",
+          "exerciseId": "db-elliptical-trainer",
+          "name": "Elliptical Trainer",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training"
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "stairs",
+      "name": "Stairmill / stepper",
+      "family": "cardio",
+      "scope": "machine_review",
+      "status": "represented",
+      "represented": [
+        {
+          "candidateId": "stair-climbing",
+          "exerciseId": "db-step-mill",
+          "name": "Step Mill",
+          "equipment": "Machine"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Representative movement coverage checked against names and guides; family presence is not every variation or commercial model.",
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training"
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "upper-erg",
+      "name": "Upper-body ergometer",
+      "family": "adaptive-cardio",
+      "scope": "machine_review",
+      "status": "gaps_identified",
+      "represented": [],
+      "missingMovements": [
+        {
+          "candidateId": "arm-ergometry",
+          "name": "Arm ergometry",
+          "reason": "Arm-crank ergometry differs from stationary bike pedalling. SCIFIT PRO1 source confirms seated/standing and model-specific wheelchair access."
+        }
+      ],
+      "deferred": [],
+      "rationale": "Arm-crank ergometry differs from stationary bike pedalling. SCIFIT PRO1 source confirms seated/standing and model-specific wheelchair access.",
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/brands/scifit",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/brands/scifit"
+        },
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/cardio/bikes-indoor-cycles/pro1-upper-body",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/cardio/bikes-indoor-cycles/pro1-upper-body"
+        }
+      ],
+      "reviewedAdditionIds": ["forma-upper-body-ergometer"]
+    },
+    {
+      "equipmentId": "recumbent-stepper",
+      "name": "Recumbent stepper",
+      "family": "adaptive-cardio",
+      "scope": "machine_review",
+      "status": "gaps_identified",
+      "represented": [],
+      "missingMovements": [
+        {
+          "candidateId": "recumbent-stepping",
+          "name": "Recumbent stepping",
+          "reason": "Recumbent stepping differs from circular cycling. Duration is suitable; do not convert ascent, cadence or arbitrary strides to horizontal metres."
+        }
+      ],
+      "deferred": [],
+      "rationale": "Recumbent stepping differs from circular cycling. Duration is suitable; do not convert ascent, cadence or arbitrary strides to horizontal metres.",
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/brands/scifit",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/brands/scifit"
+        },
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/cardio/stair-climbers-stepper-machines/stepone-recumbent-stepper",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/cardio/stair-climbers-stepper-machines/stepone-recumbent-stepper"
+        }
+      ],
+      "reviewedAdditionIds": ["forma-recumbent-stepper"]
+    },
+    {
+      "equipmentId": "stability-ball",
+      "name": "Stability ball",
+      "family": "accessory",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "stability-ball-hamstring-curl",
+          "exerciseId": "db-ball-leg-curl",
+          "name": "Ball Leg Curl",
+          "equipment": "Exercise ball"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/equipment/",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "balance-dome",
+      "name": "Balance dome / balance trainer",
+      "family": "accessory",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "supported-balance-hold",
+          "exerciseId": "wger-53b8727f-ad5c-402a-83e6-7b8e9c0bd99a",
+          "name": "Single-leg BOSU balance",
+          "equipment": "none (bodyweight exercise)"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/equipment/",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "mat",
+      "name": "Exercise mat",
+      "family": "support",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "cat-cow",
+          "exerciseId": "wger-5c4065d5-5e0a-4155-92e5-34a080587a64",
+          "name": "Cat-Cow",
+          "equipment": "Bodyweight"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/equipment/",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "foam-roller",
+      "name": "Foam roller / mobility ball",
+      "family": "mobility",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [
+        {
+          "candidateId": "quadriceps-foam-rolling",
+          "exerciseId": "db-quadriceps-smr",
+          "name": "Quadriceps-SMR",
+          "equipment": "Foam roller"
+        }
+      ],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.roguefitness.com/strength-equipment",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "agility",
+      "name": "Agility ladder / cones / hurdles",
+      "family": "functional",
+      "scope": "not_applicable_to_machine_audit",
+      "status": "not_applicable",
+      "represented": [],
+      "missingMovements": [],
+      "deferred": [],
+      "rationale": "Non-machine equipment retained in the 76-family manifest; exact-name candidate links are informational, not a complete non-machine technique audit.",
+      "sources": [
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/equipment/",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "reformer",
+      "name": "Pilates reformer",
+      "family": "pilates",
+      "scope": "machine_review",
+      "status": "unsupported_measurement",
+      "represented": [],
+      "missingMovements": [],
+      "deferred": [
+        {
+          "candidateId": "reformer-footwork",
+          "name": "Reformer footwork",
+          "requestedMetric": "resistance_reps",
+          "reason": "No apparatus-specific guides found. Spring configuration is not kilograms; defer resistance_reps and specialist apparatus review."
+        },
+        {
+          "candidateId": "reformer-feet-in-straps",
+          "name": "Reformer feet-in-straps",
+          "requestedMetric": "resistance_reps",
+          "reason": "No apparatus-specific guides found. Spring configuration is not kilograms; defer resistance_reps and specialist apparatus review."
+        }
+      ],
+      "rationale": "No apparatus-specific guides found. Spring configuration is not kilograms; defer resistance_reps and specialist apparatus review.",
+      "sources": [
+        {
+          "url": "https://www.pilates.com/collections/pilates-apparatus",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.pilates.com/collections/pilates-apparatus"
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "pilates-tower",
+      "name": "Pilates tower / Cadillac / springboard",
+      "family": "pilates",
+      "scope": "machine_review",
+      "status": "unsupported_measurement",
+      "represented": [],
+      "missingMovements": [],
+      "deferred": [
+        {
+          "candidateId": "tower-arm-springs",
+          "name": "Tower arm springs",
+          "requestedMetric": "resistance_reps",
+          "reason": "No apparatus-specific guides found. Spring settings and attachment setup need specialist review and resistance labels."
+        }
+      ],
+      "rationale": "No apparatus-specific guides found. Spring settings and attachment setup need specialist review and resistance labels.",
+      "sources": [
+        {
+          "url": "https://www.pilates.com/collections/pilates-apparatus",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.pilates.com/collections/pilates-apparatus"
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "pilates-chair",
+      "name": "Pilates chair",
+      "family": "pilates",
+      "scope": "machine_review",
+      "status": "unsupported_measurement",
+      "represented": [],
+      "missingMovements": [],
+      "deferred": [
+        {
+          "candidateId": "chair-footwork",
+          "name": "Chair footwork",
+          "requestedMetric": "resistance_reps",
+          "reason": "Chair footwork is not Chair Squat. Spring-based resistance requires explicit settings and specialist review."
+        }
+      ],
+      "rationale": "Chair footwork is not Chair Squat. Spring-based resistance requires explicit settings and specialist review.",
+      "sources": [
+        {
+          "url": "https://www.pilates.com/collections/pilates-apparatus",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.pilates.com/collections/pilates-apparatus"
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "pneumatic",
+      "name": "Pneumatic strength machine",
+      "family": "special-resistance",
+      "scope": "machine_review",
+      "status": "unsupported_measurement",
+      "represented": [],
+      "missingMovements": [],
+      "deferred": [
+        {
+          "candidateId": "pneumatic-chest-press",
+          "name": "Pneumatic chest press",
+          "requestedMetric": "resistance_reps",
+          "reason": "Pneumatic force/calibration cannot be inferred from plate mass. Distinct resistance setting model remains unsupported."
+        }
+      ],
+      "rationale": "Pneumatic force/calibration cannot be inferred from plate mass. Distinct resistance setting model remains unsupported.",
+      "sources": [
+        {
+          "url": "https://www.keiser.com/fitness-equipment/strength-training/resistance-machines",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.keiser.com/fitness-equipment/strength-training/resistance-machines"
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "accessible-strength",
+      "name": "Wheelchair-accessible strength station",
+      "family": "adaptive-strength",
+      "scope": "machine_review",
+      "status": "unsupported_measurement",
+      "represented": [],
+      "missingMovements": [],
+      "deferred": [
+        {
+          "candidateId": "accessible-machine-chest-press",
+          "name": "Accessible machine chest press",
+          "requestedMetric": "resistance_reps",
+          "reason": "Accessibility depends on exact station, seating/rollaway setup and user requirements. HUR pneumatic equipment is not interchangeable with weighted accessible cable stations. HUR source fetch was forbidden; do not assert verified access or universal accessibility."
+        },
+        {
+          "candidateId": "accessible-machine-seated-row",
+          "name": "Accessible machine seated row",
+          "requestedMetric": "resistance_reps",
+          "reason": "Accessibility depends on exact station, seating/rollaway setup and user requirements. HUR pneumatic equipment is not interchangeable with weighted accessible cable stations. HUR source fetch was forbidden; do not assert verified access or universal accessibility."
+        }
+      ],
+      "rationale": "Accessibility depends on exact station, seating/rollaway setup and user requirements. HUR pneumatic equipment is not interchangeable with weighted accessible cable stations. HUR source fetch was forbidden; do not assert verified access or universal accessibility.",
+      "sources": [
+        {
+          "url": "https://hurusa.com/hur-accessible-series/",
+          "fetchStatus": "failed",
+          "httpStatus": null,
+          "error": "HTTP Error 403: Forbidden",
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "digital-strength",
+      "name": "Electronic / isokinetic strength machine",
+      "family": "special-resistance",
+      "scope": "machine_review",
+      "status": "unsupported_measurement",
+      "represented": [],
+      "missingMovements": [],
+      "deferred": [
+        {
+          "candidateId": "isokinetic-chest-press",
+          "name": "Isokinetic chest press",
+          "requestedMetric": "resistance_reps",
+          "reason": "Isokinetic mode regulates speed and adapts resistance; current kilograms/reps cannot represent mode/calibration faithfully."
+        }
+      ],
+      "rationale": "Isokinetic mode regulates speed and adapts resistance; current kilograms/reps cannot represent mode/calibration faithfully.",
+      "sources": [
+        {
+          "url": "https://knowledge.egym.com/en/smart-strength/workout-settings/training-methods/isokinetic-training",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://knowledge.egym.com/en/smart-strength/workout-settings/training-methods/isokinetic-training"
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "flywheel",
+      "name": "Inertial flywheel trainer",
+      "family": "special-resistance",
+      "scope": "machine_review",
+      "status": "unsupported_measurement",
+      "represented": [],
+      "missingMovements": [],
+      "deferred": [
+        {
+          "candidateId": "flywheel-squat",
+          "name": "Flywheel squat",
+          "requestedMetric": "resistance_reps",
+          "reason": "Inertia in kg m² is not kilograms. Source fetch forbidden; do not treat flywheel as a plate-loaded squat/row."
+        },
+        {
+          "candidateId": "flywheel-row",
+          "name": "Flywheel row",
+          "requestedMetric": "resistance_reps",
+          "reason": "Inertia in kg m² is not kilograms. Source fetch forbidden; do not treat flywheel as a plate-loaded squat/row."
+        }
+      ],
+      "rationale": "Inertia in kg m² is not kilograms. Source fetch forbidden; do not treat flywheel as a plate-loaded squat/row.",
+      "sources": [
+        {
+          "url": "https://exxentric.com/how-it-works/advantages/variable-resistance/inertia/",
+          "fetchStatus": "failed",
+          "httpStatus": null,
+          "error": "HTTP Error 403: Forbidden",
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    },
+    {
+      "equipmentId": "air-strength",
+      "name": "Air-resistance strength ergometer",
+      "family": "special-resistance",
+      "scope": "machine_review",
+      "status": "unsupported_measurement",
+      "represented": [],
+      "missingMovements": [],
+      "deferred": [
+        {
+          "candidateId": "air-resistance-strength-chest-press",
+          "name": "Air-resistance strength chest press",
+          "requestedMetric": "force_work",
+          "reason": "StrengthErg force/work is distinct from rowing cardio and external kilograms. force_work is unimplemented; source fetch forbidden."
+        },
+        {
+          "candidateId": "air-resistance-strength-row",
+          "name": "Air-resistance strength row",
+          "requestedMetric": "force_work",
+          "reason": "StrengthErg force/work is distinct from rowing cardio and external kilograms. force_work is unimplemented; source fetch forbidden."
+        },
+        {
+          "candidateId": "air-resistance-strength-leg-press",
+          "name": "Air-resistance strength leg press",
+          "requestedMetric": "force_work",
+          "reason": "StrengthErg force/work is distinct from rowing cardio and external kilograms. force_work is unimplemented; source fetch forbidden."
+        }
+      ],
+      "rationale": "StrengthErg force/work is distinct from rowing cardio and external kilograms. force_work is unimplemented; source fetch forbidden.",
+      "sources": [
+        {
+          "url": "https://www.concept2.com/ergs/strengtherg",
+          "fetchStatus": "failed",
+          "httpStatus": null,
+          "error": "HTTP Error 403: Forbidden",
+          "finalUrl": null
+        },
+        {
+          "url": "https://www.concept2.com/blog/work-and-force-with-the-concept2-strengtherg",
+          "fetchStatus": "not_fetched",
+          "httpStatus": null,
+          "error": null,
+          "finalUrl": null
+        }
+      ],
+      "reviewedAdditionIds": []
+    }
+  ],
+  "additionalMachineFamilies": {
+    "pullover-machine": {
+      "representedIds": [],
+      "missing": ["Machine pullover"],
+      "reviewedAdditionIds": ["forma-machine-pullover"],
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/plate-loaded-pullover",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/plate-loaded-pullover"
+        }
+      ],
+      "rationale": "Dedicated machine setup differs from free-weight equivalents; no identical baseline machine movement found."
+    },
+    "lateral-raise-machine": {
+      "representedIds": [
+        "wger-dc87b735-016c-410b-915c-e3521fea4be7",
+        "wger-3d2adf99-8fe9-45cb-b669-c5b18242e282"
+      ],
+      "missing": []
+    },
+    "glute-kickback-machine": {
+      "representedIds": ["wger-66ed6788-a1d8-49a2-af4d-397107fbf5fb"],
+      "missing": []
+    },
+    "v-squat": {
+      "representedIds": ["wger-04063ba5-05d1-48b9-9571-eae2b8edab29"],
+      "missing": ["V-squat machine"],
+      "reviewedAdditionIds": ["forma-machine-v-squat"],
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/reverse-v-squat",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/reverse-v-squat"
+        }
+      ],
+      "rationale": "Dedicated machine setup differs from free-weight equivalents; no identical baseline machine movement found."
+    },
+    "tibialis-machine": {
+      "representedIds": [],
+      "missing": ["Tibialis raise machine"],
+      "reviewedAdditionIds": ["forma-machine-tibialis-raise"],
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/plate-loaded-tibia-dorsi-flexion",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/plate-loaded-tibia-dorsi-flexion"
+        }
+      ],
+      "rationale": "Dedicated machine setup differs from free-weight equivalents; no identical baseline machine movement found."
+    },
+    "grip-machine": {
+      "representedIds": [],
+      "missing": ["Grip squeeze machine"],
+      "reviewedAdditionIds": ["forma-machine-grip-close"],
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/plate-loaded-gripper",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/plate-loaded-gripper"
+        }
+      ],
+      "rationale": "Dedicated machine setup differs from free-weight equivalents; no identical baseline machine movement found."
+    },
+    "neck-machine": {
+      "representedIds": [],
+      "missing": [
+        "Neck flexion machine",
+        "Neck extension machine",
+        "Neck lateral flexion machine"
+      ],
+      "reviewedAdditionIds": [
+        "forma-machine-neck-flexion",
+        "forma-machine-neck-extension",
+        "forma-machine-neck-lateral-flexion"
+      ],
+      "sources": [
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/4-way-neck",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/4-way-neck"
+        },
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/4-way-neck",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/4-way-neck"
+        },
+        {
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/4-way-neck",
+          "fetchStatus": "verified_200",
+          "httpStatus": 200,
+          "error": null,
+          "finalUrl": "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/4-way-neck"
+        }
+      ],
+      "rationale": "Dedicated machine setup differs from free-weight equivalents; no identical baseline machine movement found."
+    }
+  },
+  "equipmentMetadataCorrections": [
+    {
+      "exerciseId": "wger-45251627-5f89-4858-bf0c-8884a21cbb1f",
+      "name": "Alternating High Cable Row",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-57018827-f344-4627-88e5-03e4f2f49859",
+      "name": "Behind the Back Cable Lateral Raise",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-e9f3446f-ca98-4bf2-817c-0dacd123cecd",
+      "name": "Belt Squat",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-e68f6d51-fe02-4175-b277-dec0c1521f36",
+      "name": "Biceps Curl Machine",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-bcb7020c-8678-496d-8f4d-aad0e233a5bd",
+      "name": "Biceps Curl With Cable",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-b2865908-b93e-4507-ada4-a5bb9317566c",
+      "name": "Cable Chest Press - Decline",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-e22c4320-7753-49c6-b7f7-4be21b025fb6",
+      "name": "Cable Chest Press - Incline",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-b1bf02cf-17b2-4bfc-a5b0-4ff7a2768dbb",
+      "name": "Cable Concentration Curl",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-dc3a2072-abc3-4ef9-b8e6-f5ae6b11bc7f",
+      "name": "Cable External Rotation",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-ae695660-7cee-4601-8241-edd3e2a6d896",
+      "name": "Cable Fly Lower Chest",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-5b4fb3ec-53a1-4525-a58a-c070798ea86e",
+      "name": "Cable Fly Middle Chest",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-b16a28c4-40bf-42d4-94b3-bf3f56fab743",
+      "name": "Cable Fly Upper Chest",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-6e03ecb3-6bfe-4b34-be9d-e5c33e820cc6",
+      "name": "Cable Front Raise with a small bar",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-81942f3d-d92c-431c-b9d0-0da12918d1e4",
+      "name": "Cable Lateral Raises (Single Arm)",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-70479b75-0df4-4ac2-a324-4a44b148304c",
+      "name": "Cable Press Around",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-821e289e-bd39-4410-b436-6f2a43bc3649",
+      "name": "Cable pull through",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-0285f198-36d5-4a77-bb76-5f72e1a4d6c9",
+      "name": "Cable Rear-Delt Fly (single arm)",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-05853a58-4426-450c-9b06-bfa461a767bf",
+      "name": "Cable Shrug-In",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-4c8cf398-b400-46dc-89b4-94bb478f4ea9",
+      "name": "Cable Tri Extension - External Rotation",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-07ded945-de5d-4e77-b13c-17d51a2f0007",
+      "name": "Cable Tri Extension - Internal Rotation",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-1ea73578-08a5-4f3e-9255-3c58b29b170d",
+      "name": "Cable Tricep Kickback",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-5aee8ae1-2752-4868-af62-e3c79954d811",
+      "name": "Cable Triceps Press",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-c867836d-2929-4977-b23c-014bc21ec08d",
+      "name": "Cable Woodchoppers",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-0d79f259-3b28-4258-8a08-cffec062a710",
+      "name": "Calf Press Using Leg Press Machine",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-efeccb1b-73c0-4303-8542-bb4f45ef831a",
+      "name": "Calf Raise using Hack Squat Machine",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-ac939153-217e-4dbd-a5e1-ffabff7a607e",
+      "name": "Calf Raise with machine (seated)",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-95a9cc46-270e-45f2-8a17-5665a23ff70b",
+      "name": "Calf Raises on Hackenschmitt Machine",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-37314b67-1aad-4405-aa88-70846d5f035d",
+      "name": "Cross-Body Cable Y-Raise",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-401989e0-64c3-459d-bc47-2c171ab4f41d",
+      "name": "Crunches on Machine",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-29175281-afaf-4ffd-85e8-cfc38493e304",
+      "name": "Crunches With Cable",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-be9dfe16-9fc3-463d-a9cd-7aade27ef571",
+      "name": "Front Raise (Cable)",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-ce21d3a2-cdc5-410c-9970-c25029ca3769",
+      "name": "Glute Drive",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-66ed6788-a1d8-49a2-af4d-397107fbf5fb",
+      "name": "Glute Kickback (Machine)",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-04365177-e078-489b-983a-8ac61b7346f1",
+      "name": "Hammercurls on Cable",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-4ef75e13-c058-4410-91c0-2f2d2df98130",
+      "name": "High-Cable Cross Tricep Extention - NB",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-47b244f0-ebc6-4498-9d9f-7e7bff47322e",
+      "name": "High-Cable Lateral Raise",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-ecba2395-f364-4e5f-a34c-04f178c8b822",
+      "name": "High-Incline Smith Machine Press",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-57263316-6f34-4539-952b-b07e09bac3ba",
+      "name": "Lateral Rows on Cable, One Armed",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-82aec7f9-ee03-4b24-8994-f6bde07c6a41",
+      "name": "Leverage Machine Chest Press",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-fd595232-b9ad-4216-bba1-92298f993ea9",
+      "name": "Leverage Machine Iso Row",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-b8ccad95-897b-4fe3-a004-6f49e1c69b7a",
+      "name": "Low Pulley Cable fFly",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-d5116fbd-bf14-492a-86b3-140035cb48b2",
+      "name": "Low Pulley Cable Fly",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-ac6e6a09-5175-4fea-9e56-e2ff3c00b0f2",
+      "name": "Low-Cable Cross-Over - NB",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-b1eed626-112f-401c-a61d-bfe168fdedc7",
+      "name": "Machine Dip or Triceps Extension",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-b5726562-82ed-451a-89d8-8c8b13c5019a",
+      "name": "Machine Hip Abduction",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-fe0c2a17-fad9-4235-8786-84bb1de93530",
+      "name": "Machine Incline Chest Press",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-e6bf0364-ccce-4053-afe1-eef206a50291",
+      "name": "Machine Lat Pulldown",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-8aae635b-cb15-4129-bc09-6951fa376274",
+      "name": "Machine Seated Calf Raise",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-2a9b16ba-04ae-43ac-8d48-6e0aadb1d5a5",
+      "name": "Machine Seated Leg Curl",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-dc87b735-016c-410b-915c-e3521fea4be7",
+      "name": "Machine Side Lateral Raises",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-c7058ff8-ca3b-4822-abdb-6341ce37c4d1",
+      "name": "Overhand Cable Curl",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-f2e17c8d-7285-4fd5-bfe8-26f407802850",
+      "name": "Overhead Cable Tricep Extension",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-ffdb4806-d64e-474b-8ce5-8df9a57fb9c7",
+      "name": "Pendulum Squat",
+      "currentEquipment": "none (bodyweight exercise)",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-5d5122e0-65f3-4afc-ac36-21955e2c7dde",
+      "name": "Plate-Loaded Lat Pulldown",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-7eb52939-0e33-4319-829d-d8e142fc74d9",
+      "name": "Preacher Curl Machine",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-39c13706-6a8c-4ab5-b605-b9b716665a20",
+      "name": "Reverse Cable Flye",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-139772c6-e401-4281-8aa6-c7ff7fb49f6a",
+      "name": "Seated Cable chest fly",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-0ecfec6f-5d0f-4e8a-8d37-f6203a8923b8",
+      "name": "Seated Cable Row",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-af11a7c1-876c-455b-b59a-d8456a99d6e5",
+      "name": "Seated machine row",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-9bcc7b4f-4172-4db7-be95-d7b659c486f5",
+      "name": "Seated Row (Machine)",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-b283cd47-9a1c-4004-9bf5-220560ef0a16",
+      "name": "Shoulder External Rotation (Cable)",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-dadecc94-6322-4c66-93b5-9cb44ec79e46",
+      "name": "Shoulder Internal Rotation (Cable)",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-7e039ac7-37ab-49f9-9ae8-c7efeef070cd",
+      "name": "Shoulder Y-pull cable",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-065ff3ca-a9e8-4339-997e-d65556d9ebf3",
+      "name": "Side lateral raise - Back (Cable)",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-7f9c13ab-1718-4f8a-8636-232f05f5f640",
+      "name": "Side lateral raise - Front (Cable)",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-dba57084-d148-4b22-bb90-2fdd3a845ca4",
+      "name": "Side Lateral Raise (Cable)",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-0dd4dde7-9712-4c06-8ebe-16bc7a0b1917",
+      "name": "Side Straight-Arm Pulldown (Cable)",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-e29d9914-6b02-490b-8f3a-f9fe8f21993c",
+      "name": "Ski Machine",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-ef2df6a2-41df-4a25-b2e0-4808dc2c3305",
+      "name": "Smith Machine Slight Incline Press",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-93b9b84c-7b72-4712-a7c2-0e14a5fab32a",
+      "name": "Standing Adduction (Cable)",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-36274d27-3812-4b8c-80e2-ab59acf82c4d",
+      "name": "Straight Bar Cable Curls",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-a45123c6-34c2-43cf-b6bf-914a8f40995a",
+      "name": "Straight-Arm Pulldown (Cable)",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-ea63d85c-8579-4dda-b99f-c4c8930f9af6",
+      "name": "Tricep Pushdown on Cable",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-3188868c-84e2-4a3b-b7dc-f79d8650988d",
+      "name": "Triceps Extensions on Cable",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-f00630d6-578f-487f-8bf5-39c96366ccb8",
+      "name": "Triceps Extensions on Cable With Bar",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-6c671e43-497f-4863-8d78-b592f3b5e7c6",
+      "name": "Triceps on Machine",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Machine",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-d788811b-be46-485a-b8a0-0d9ba7f4cf85",
+      "name": "unilateral cross body cable pull down",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    },
+    {
+      "exerciseId": "wger-f6471f4a-0290-4a71-9580-bf3d046fdb9d",
+      "name": "Wrist curl, cable",
+      "currentEquipment": "Bodyweight",
+      "suggestedEquipment": "Cable",
+      "reason": "Name or full guide explicitly identifies external machine/cable equipment; current bodyweight equipment prevents correct equipment filtering."
+    }
+  ],
+  "acceptanceChecks": {
+    "familyCount": 76,
+    "uniqueFamilyIds": 76,
+    "allRepresentedIdsExist": true,
+    "allMachineCandidatesResolved": true
+  }
+}

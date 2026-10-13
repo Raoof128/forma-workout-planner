@@ -12,7 +12,7 @@ import {
   ArrowDown,
 } from "lucide-react";
 import { Button, Modal, RoutineCard, PageHeading } from "./UI";
-import { createId, exercises } from "../data";
+import { createId, exercises, selectableExercises } from "../data";
 import {
   defaultPrescription,
   metricFields,
@@ -21,6 +21,8 @@ import {
 } from "../exerciseMetrics.js";
 import { workoutTemplates } from "../workoutTemplates.js";
 import { matchesExercise } from "../catalog/search.js";
+import { canonicalId } from "../catalog/curation.js";
+import curation from "../catalog/curation.json" with { type: "json" };
 export function Routines({ routines, onOpen, onCreate, onUseTemplate }) {
   return (
     <>
@@ -151,7 +153,7 @@ export function RoutineEditor({ routine, onClose, onSave }) {
   const [minutes, setMinutes] = useState(routine?.minutes || 45);
   const [query, setQuery] = useState("");
   const [pickerLimit, setPickerLimit] = useState(40);
-  const matchingExercises = exercises.filter((exercise) =>
+  const matchingExercises = selectableExercises.filter((exercise) =>
     matchesExercise(exercise, query),
   );
   const [error, setError] = useState("");
@@ -180,20 +182,36 @@ export function RoutineEditor({ routine, onClose, onSave }) {
     else onClose();
   }
   function toggle(exercise) {
-    const old = items.find((item) => item.exerciseId === exercise.id);
-    if (old) {
-      removed.current.set(exercise.id, old);
-      setItems((current) =>
-        current.filter((item) => item.exerciseId !== exercise.id),
+    const group = items
+      .map((item, index) => ({ item, index }))
+      .filter(
+        ({ item }) => canonicalId(item.exerciseId, curation) === exercise.id,
       );
-    } else
-      setItems((current) => [
-        ...current,
-        removed.current.get(exercise.id) || {
-          exerciseId: exercise.id,
-          ...defaultPrescription(exercise),
-        },
-      ]);
+    if (group.length) {
+      removed.current.set(exercise.id, group);
+      setItems((current) =>
+        current.filter(
+          (item) => canonicalId(item.exerciseId, curation) !== exercise.id,
+        ),
+      );
+    } else {
+      const restored = removed.current.get(exercise.id);
+      setItems((current) => {
+        if (restored) {
+          const next = [...current];
+          for (const { item, index } of restored)
+            next.splice(Math.min(index, next.length), 0, item);
+          return next;
+        }
+        return [
+          ...current,
+          {
+            exerciseId: exercise.id,
+            ...defaultPrescription(exercise),
+          },
+        ];
+      });
+    }
   }
   function update(id, key, value) {
     setItems((current) =>
@@ -335,7 +353,8 @@ export function RoutineEditor({ routine, onClose, onSave }) {
             )}
             {matchingExercises.slice(0, pickerLimit).map((exercise) => {
               const picked = items.some(
-                (item) => item.exerciseId === exercise.id,
+                (item) =>
+                  canonicalId(item.exerciseId, curation) === exercise.id,
               );
               return (
                 <button

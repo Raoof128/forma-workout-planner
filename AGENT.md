@@ -57,6 +57,25 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-14 — Catalog quality correction
+
+- **Contract:** `exercises` and `exerciseById` retain every historical ID and
+  metric; `selectableExercises` is the reviewed browsing/picker view. Never
+  mutate saved IDs or reinterpret their units when consolidating synonyms.
+- **Guides:** use `guideExercise` and its attributed `instructionId`. Original
+  manufacturer-referenced guides have separate references; do not attribute
+  authored text to a copied source. Archive unusable guides outside browsing.
+- **Review:** 180 groups/240 duplicates; 15 new machine movements, six repaired
+  guides and five corrected timed identities. There are 1,414 selectable and
+  1,681 compatible records. Run `npm run catalog:curate` after source review.
+- **Constraints:** machine inference requires reviewed machine equipment;
+  barbell hack squats and butterfly/band movements remain distinct. Restore
+  every cached alias prescription and its position on picker group toggles.
+- **Verification:** 60 unit, 46 API, 20 Worker and 57 affected browser cases
+  passed. All new IDs validate in the compiled Node 26 API. Deployment uses
+  existing private projects/credentials, backups and bounded API containers;
+  never reset accounts or change unrelated services for a catalog update.
+
 ### Raouf: 2026-10-12 — Red-team security hardening
 
 - **Scope:** authorised red-team assessment and hardening of the account stack

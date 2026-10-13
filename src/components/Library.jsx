@@ -11,9 +11,10 @@ import {
   MoveUp,
 } from "lucide-react";
 import { PageHeading, Empty, Button } from "./UI";
-import { exercises } from "../data";
+import { selectableExercises as exercises } from "../data";
 import ExerciseGuide from "./ExerciseGuide";
 import { matchesExercise } from "../catalog/search";
+import { matchesEquipment } from "../catalog/curation.js";
 const muscleIcons = {
   Chest: StretchHorizontal,
   Back: StretchVertical,
@@ -36,7 +37,7 @@ export default function Library() {
         (e) =>
           matchesExercise(e, deferredQuery) &&
           (muscle === "All muscles" || e.muscle === muscle) &&
-          (equipment === "All equipment" || e.equipment === equipment) &&
+          (equipment === "All equipment" || matchesEquipment(e, equipment)) &&
           (category === "All activities" ||
             (e.category ?? "strength") === category),
       ),
@@ -70,11 +71,14 @@ export default function Library() {
             setVisible(24);
           }}
         >
-          {["All equipment", ...new Set(exercises.map((e) => e.equipment))].map(
-            (s) => (
-              <option key={s}>{s}</option>
+          {[
+            "All equipment",
+            ...new Set(
+              exercises.flatMap((e) => e.equipmentTags ?? [e.equipment]),
             ),
-          )}
+          ].map((s) => (
+            <option key={s}>{s}</option>
+          ))}
         </select>
         <select
           aria-label="Filter by activity"

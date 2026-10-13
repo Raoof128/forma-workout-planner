@@ -22,3 +22,6 @@ src/**
 !src/exerciseMetrics.js
 !src/catalog/
 !src/catalog/exercises.json
+!src/catalog/curation.js
+!src/catalog/curation.json
+!src/catalog/machine-exercises.json

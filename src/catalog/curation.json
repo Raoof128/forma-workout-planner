@@ -1,0 +1,1557 @@
+{
+  "version": 1,
+  "aliases": {
+    "wger-dced5f1b-3c6e-4cd8-a7f5-4246e56f12c9": "bench",
+    "wger-3717d144-7815-4a97-9a56-956fb889c996": "bench",
+    "wger-d46287e9-00a9-44c7-88a4-d1eb00fbe561": "row",
+    "wger-d8ec22e5-8575-483f-bd66-5203fd4bfe84": "row",
+    "db-seated-dumbbell-press": "shoulder",
+    "wger-87affa4b-395b-437c-9581-2bd20ea5aa7c": "shoulder",
+    "wger-62350da8-b589-4022-a94a-3341f79295a4": "db-wide-grip-lat-pulldown",
+    "wger-c9de4551-f1bc-4490-98f4-c9f87c2a2cac": "db-wide-grip-lat-pulldown",
+    "wger-c6daf781-02ba-4b73-8e88-530165afd32d": "db-wide-grip-lat-pulldown",
+    "wger-55b9d286-c4cc-4a29-97ad-58cb13c2bb7e": "db-wide-grip-lat-pulldown",
+    "wger-1ae6a28d-10e7-4ecf-af4f-905f8193e2c6": "curl",
+    "wger-99846da5-5dc8-4de1-ba55-ae2b4c03c30d": "curl",
+    "wger-eb61c7a1-e1c9-4c44-a8ce-2bbe98a39857": "curl",
+    "wger-f00630d6-578f-487f-8bf5-39c96366ccb8": "triceps",
+    "wger-a2f5b6ef-b780-49c0-8d96-fdaff23e27ce": "squat",
+    "wger-72129e4f-df97-4869-9561-33a1ba3c9186": "rdl",
+    "db-dumbbell-rear-lunge": "lunge",
+    "wger-456f0781-30c6-4f58-a5b4-3da8f4878065": "calf",
+    "wger-dd9dcfd2-879f-422a-ad06-d2c187c58d1f": "db-plank",
+    "db-goblet-squat": "goblet",
+    "wger-63375f5b-2d81-471c-bea4-fc3d207e96cb": "lateral",
+    "wger-2ac901e6-f0c2-416f-998f-e01e00fe0aa1": "db-crunches",
+    "wger-2e6298ce-c8ef-406b-989a-0d42801e211f": "db-crunches",
+    "wger-fcf5039b-7784-4f82-830a-b213b597a646": "db-air-bike",
+    "wger-5831bcbb-28a7-4bd5-930d-a740acccf747": "wger-616f9026-1a1d-4ed8-b068-cfbb81b6a000",
+    "wger-eb9476ac-2c00-4f49-a40f-f81682161a75": "db-alternate-hammer-curl",
+    "wger-cfe3f20e-d078-4e6c-91fc-37da62f5ac0a": "db-alternate-heel-touchers",
+    "wger-a136959c-b0c8-49d3-99b9-0a5f41abf00e": "db-dumbbell-alternate-bicep-curl",
+    "wger-94238bef-15ee-42b6-8035-79854b3c6e65": "db-dumbbell-alternate-bicep-curl",
+    "wger-6e2cf9bb-838d-4ad3-bc1e-db152293d16e": "db-dumbbell-alternate-bicep-curl",
+    "wger-c146fa3c-35a4-4e6e-9000-e12a9ee19cbd": "db-alternating-deltoid-raise",
+    "wger-f24cb758-9c0d-42d4-ad9e-6025c527dd13": "db-arnold-dumbbell-press",
+    "wger-8d56eb18-b000-41ff-8b31-c74df3a4b34b": "db-inverted-row",
+    "wger-a1e8759d-72b9-422f-87a8-9d316fa18498": "db-overhead-slam",
+    "wger-f18eb684-9a9b-4566-9771-e22a87d536b1": "db-band-pull-apart",
+    "wger-e9e7372c-b5c1-45d9-ae5c-b1aa0fc2e2ce": "db-clean-and-press",
+    "wger-7b99a081-6b1a-4aa5-b86a-5a935d083a35": "db-barbell-curl",
+    "wger-19a289c0-33af-4055-bb34-3570c2975d3d": "db-barbell-hip-thrust",
+    "wger-04e7d7e4-f8d2-406d-97df-3df3bceec22c": "db-barbell-lunge",
+    "wger-67c26c9b-32f3-4b8b-b13a-4d8be4803975": "db-seated-palms-down-barbell-wrist-curl",
+    "wger-6ce25688-ae91-4dc7-9b17-0b66a47151fa": "db-bent-over-barbell-row",
+    "wger-4af6dbd9-8991-484b-9810-68f117c21edf": "db-bent-over-barbell-row",
+    "wger-3c2b5e2d-bd9d-43e8-8b5f-e6363331faa1": "db-reverse-grip-bent-over-rows",
+    "wger-2f0ddf9a-f520-4c55-8883-f0d4a789f481": "db-reverse-grip-bent-over-rows",
+    "wger-270e108d-3cd2-45a9-807b-c357317eb15c": "db-barbell-shrug",
+    "wger-13234b53-ea0c-41f1-9069-776865ea8eff": "db-standing-overhead-barbell-triceps-extension",
+    "wger-cfb6a754-57be-431b-b8d0-d9963120bd5a": "db-seated-palm-up-barbell-wrist-curl",
+    "db-battling-ropes": "forma-wger-a5d1f45b-ff07-45d7-a699-a654f9328934",
+    "wger-065ff3ca-a9e8-4339-997e-d65556d9ebf3": "wger-57018827-f344-4627-88e5-03e4f2f49859",
+    "wger-aa22b0b7-795d-47a6-8c0b-fdd0f6b9c8fc": "db-bench-dips",
+    "wger-145a9e7d-d25f-4687-9eb6-5b35878e87b4": "db-close-grip-barbell-bench-press",
+    "wger-28321cf3-70e6-48a4-ade1-d11382180cb3": "db-dumbbell-bench-press",
+    "wger-544c0559-f547-4016-8cd0-b38f18685df7": "db-dumbbell-bench-press",
+    "db-bent-over-two-dumbbell-row-with-palms-in": "db-bent-over-two-dumbbell-row",
+    "wger-927b0e58-c57c-4234-8079-2548f8e35687": "db-bent-over-two-dumbbell-row",
+    "wger-94a5c406-7bcd-47f3-9687-bdf92a763932": "db-bent-over-two-dumbbell-row",
+    "db-bent-over-one-arm-long-bar-row": "db-one-arm-long-bar-row",
+    "wger-c395ad8d-164c-4031-9136-b4116d354451": "wger-6e00afb6-272d-44a2-8ae3-e7fa41b50f06",
+    "wger-9ccd53e0-8392-4e61-91aa-e4e5f4ea339c": "wger-6e00afb6-272d-44a2-8ae3-e7fa41b50f06",
+    "db-tricep-dumbbell-kickback": "db-standing-bent-over-two-arm-dumbbell-triceps-extension",
+    "wger-6f79b381-98a4-40d5-8a45-3bb0558be6fe": "db-seated-bent-over-rear-delt-raise",
+    "wger-dc400220-b483-4b60-8f52-c36c70a782b5": "db-seated-bent-over-rear-delt-raise",
+    "wger-3f93459a-d06e-465c-85db-2137da759440": "db-seated-bent-over-rear-delt-raise",
+    "wger-c302fd80-ce74-4202-9eee-30834872cffb": "db-seated-bent-over-rear-delt-raise",
+    "wger-63fbb8e5-6ebc-4def-8844-3e65e097213b": "db-close-grip-front-lat-pulldown",
+    "wger-f1bbbc07-d7ed-44c4-a4e3-9af126fc7c33": "db-close-grip-front-lat-pulldown",
+    "wger-8bb42000-834f-48ab-af5c-0c31d94e0181": "wger-76965848-9776-4be5-b879-e3c97033b80f",
+    "wger-4eb41bfb-cbeb-4683-b9c6-902ee7e028e0": "wger-76965848-9776-4be5-b879-e3c97033b80f",
+    "wger-e68f6d51-fe02-4175-b277-dec0c1521f36": "db-machine-bicep-curl",
+    "wger-bcb7020c-8678-496d-8f4d-aad0e233a5bd": "db-standing-biceps-cable-curl",
+    "wger-36274d27-3812-4b8c-80e2-ab59acf82c4d": "db-standing-biceps-cable-curl",
+    "wger-42227131-9b1e-4220-b082-c523f0651057": "db-ez-bar-curl",
+    "wger-80c167b9-3749-48a1-8686-fc2163a1e7fb": "wger-6349365e-e901-4280-a1b7-65734986f47d",
+    "wger-d551f24d-44fe-4761-9448-edf14d627827": "db-body-up",
+    "wger-f9a0a918-3c0c-464e-bbba-1bd309d4a519": "wger-3284fd27-5402-4821-9c32-29066d4e2667",
+    "wger-edc3f6b7-96b0-4967-90d7-bba9d7d442cb": "db-bodyweight-squat",
+    "wger-44afe80f-1ab2-4149-adbf-d8e0ece990ce": "wger-7ce489d2-1948-46de-aa80-277b2ca737aa",
+    "wger-ceb0c2d0-06ac-4a49-89e7-8d7b1c1e5672": "db-butt-lift-bridge",
+    "wger-71b9da1a-ac07-49c8-8b2d-7179032181fd": "db-butterfly",
+    "wger-29175281-afaf-4ffd-85e8-cfc38493e304": "db-cable-crunch",
+    "db-rope-crunch": "db-cable-crunch",
+    "wger-b283cd47-9a1c-4004-9bf5-220560ef0a16": "db-external-rotation-with-cable",
+    "wger-b16a28c4-40bf-42d4-94b3-bf3f56fab743": "db-low-cable-crossover",
+    "wger-b8ccad95-897b-4fe3-a004-6f49e1c69b7a": "db-low-cable-crossover",
+    "wger-d5116fbd-bf14-492a-86b3-140035cb48b2": "db-low-cable-crossover",
+    "wger-ac6e6a09-5175-4fea-9e56-e2ff3c00b0f2": "db-low-cable-crossover",
+    "wger-be9dfe16-9fc3-463d-a9cd-7aade27ef571": "db-front-cable-raise",
+    "wger-04365177-e078-489b-983a-8ac61b7346f1": "db-cable-hammer-curls-rope-attachment",
+    "wger-93b9b84c-7b72-4712-a7c2-0e14a5fab32a": "db-cable-hip-adduction",
+    "wger-dadecc94-6322-4c66-93b5-9cb44ec79e46": "db-cable-internal-rotation",
+    "wger-81942f3d-d92c-431c-b9d0-0da12918d1e4": "db-standing-low-pulley-deltoid-raise",
+    "wger-7f9c13ab-1718-4f8a-8636-232f05f5f640": "db-standing-low-pulley-deltoid-raise",
+    "wger-dba57084-d148-4b22-bb90-2fdd3a845ca4": "db-standing-low-pulley-deltoid-raise",
+    "wger-821e289e-bd39-4410-b436-6f2a43bc3649": "db-pull-through",
+    "wger-39c13706-6a8c-4ab5-b605-b9b716665a20": "db-cable-rear-delt-fly",
+    "db-triceps-overhead-extension-with-rope": "db-cable-rope-overhead-triceps-extension",
+    "wger-0d79f259-3b28-4258-8a08-cffec062a710": "db-calf-press-on-the-leg-press-machine",
+    "wger-0cc9c8ed-57f1-42c3-a4c4-6e57e6a1b878": "db-calf-press-on-the-leg-press-machine",
+    "wger-efeccb1b-73c0-4303-8542-bb4f45ef831a": "wger-95a9cc46-270e-45f2-8a17-5665a23ff70b",
+    "wger-ac939153-217e-4dbd-a5e1-ffabff7a607e": "db-seated-calf-raise",
+    "wger-8aae635b-cb15-4129-bc09-6951fa376274": "db-seated-calf-raise",
+    "wger-6e46833d-fd83-4c1a-90af-eb3f3a917199": "db-seated-calf-raise",
+    "wger-5da3d393-0c4e-4ac8-96b4-aab51f6ab3d1": "db-bicycling-stationary",
+    "wger-517265a2-e4f7-4b33-979f-9be1efd86343": "db-bicycling-stationary",
+    "wger-8ca01d32-2e86-49a1-a130-b99219432e42": "wger-5c4065d5-5e0a-4155-92e5-34a080587a64",
+    "wger-5c414175-fe72-455a-ba8f-a0575cf792bd": "db-machine-bench-press",
+    "wger-03f7fc27-e64f-4417-ab0c-a52adac60fda": "db-machine-bench-press",
+    "wger-9e7b6a15-1893-4e85-a500-66251dfc6326": "db-machine-bench-press",
+    "wger-c4aca20e-9591-425f-85a8-0ab04cd1515d": "db-machine-bench-press",
+    "wger-117df66c-bc8d-43cc-9903-0be2a0864486": "db-machine-bench-press",
+    "wger-2e96e572-ddb4-4251-a812-ccf03ea677a6": "db-leverage-chest-press",
+    "wger-82aec7f9-ee03-4b24-8994-f6bde07c6a41": "db-leverage-chest-press",
+    "wger-424da49e-d155-4247-bbb2-161a5c797789": "db-chin-up",
+    "wger-2acb5ba1-caa3-4204-9903-ff0095b032ba": "db-chin-up",
+    "wger-253813a0-b33f-48b3-991e-ca66116e053f": "db-plyo-push-up",
+    "wger-8c509754-c86f-4c1b-bfa9-29c906ffc409": "db-clean-and-jerk",
+    "wger-7adca809-0fbb-4785-bcd3-d512e2c49888": "db-concentration-curls",
+    "wger-46e0f60c-fdc0-489a-82e4-a5b7476a5c21": "db-concentration-curls",
+    "wger-bcd801f0-9a38-4615-a91c-900153c8c234": "db-decline-barbell-bench-press",
+    "wger-dda69c96-62d4-4690-aa07-a4a0f6ceb63a": "db-decline-dumbbell-bench-press",
+    "wger-55d0a5ec-b147-40c3-aa77-314e61c93689": "db-decline-dumbbell-flyes",
+    "wger-b99c91be-8805-4e15-9cb6-486b55b81ae1": "db-decline-push-up",
+    "wger-50037aaf-34f1-4018-b504-206623b77c46": "db-decline-push-up",
+    "db-push-ups-with-feet-elevated": "db-decline-push-up",
+    "db-depth-jump-leap": "db-linear-depth-jump",
+    "wger-a030a4e9-970c-4442-b0b3-e49b42143de0": "db-front-squats-with-two-kettlebells",
+    "wger-47ee9fc4-d226-44c8-926b-f52c675b79e2": "db-dumbbell-floor-press",
+    "wger-95d226ad-3bf7-4cd6-aa64-2f26b526d8b6": "db-dumbbell-flyes",
+    "wger-43e85cb8-51d0-4892-b1bf-80a3cb111ff6": "db-incline-dumbbell-curl",
+    "wger-965eb23f-761c-45cd-bb7b-07d4d77040f1": "wger-55ff32e6-24ab-4303-9b50-176d60d48796",
+    "wger-51a2d520-b510-4b6e-bd65-9fc40365e8de": "db-dumbbell-incline-row",
+    "wger-27eb3d4a-8677-4c1f-bf34-251e2b4741cb": "db-dumbbell-incline-row",
+    "wger-9dfce8f0-39fc-4204-9f84-500ec42074e9": "db-dumbbell-one-arm-shoulder-press",
+    "wger-72a945ec-3a7f-424b-9a05-1616ef7dce91": "db-dumbbell-shrug",
+    "wger-d36fdd3c-9a35-4643-a3fd-57db78c866d6": "db-dumbbell-side-bend",
+    "wger-cf1f0fed-6310-4210-8f7d-22e375e6c60c": "db-dumbbell-side-bend",
+    "wger-e9ada9fc-94d0-4131-b5c0-7df1b0fd2ce8": "db-standing-dumbbell-upright-row",
+    "wger-01976085-6701-45ea-b152-5c46ba60550d": "db-standing-dumbbell-upright-row",
+    "wger-2affa71f-7308-4448-af57-dc44b424090e": "db-tate-press",
+    "wger-95a300de-2ad8-492e-9364-13766d9e7618": "db-elliptical-trainer",
+    "wger-19a9f67b-60f5-4367-9134-b805f3e73956": "db-one-legged-cable-kickback",
+    "wger-2eead109-098e-4c59-bdef-f580a6a82748": "db-external-rotation",
+    "wger-d9f6c15a-b224-4ef6-93e9-fd6509b66add": "db-external-rotation",
+    "wger-95a7e546-e8f8-4521-a76b-983d94161b25": "db-ez-bar-skullcrusher",
+    "db-lying-triceps-press": "db-ez-bar-skullcrusher",
+    "db-floor-glute-ham-raise": "wger-9b0f7101-b78a-4c47-b680-fbef15469a8a",
+    "db-natural-glute-ham-raise": "wger-9b0f7101-b78a-4c47-b680-fbef15469a8a",
+    "wger-46adc238-9ea9-4be4-a061-74ae50f5b7c7": "db-iliotibial-tract-smr",
+    "wger-4d96e62c-e4ac-45be-9428-b97f18ca26d9": "db-iliotibial-tract-smr",
+    "wger-165a79bc-f4bc-4439-a0ed-6a77cd71f5e6": "db-adductor",
+    "wger-b8ffa641-55e7-4761-ad5d-8336bb3ab3d4": "db-quadriceps-smr",
+    "wger-2cc92db8-b245-44b8-b1d6-bf91c78c2ab9": "db-seated-dumbbell-palms-up-wrist-curl",
+    "wger-68e0dbba-2d1e-4a56-8378-8824c1de3342": "db-front-plate-raise",
+    "db-rear-leg-raises": "wger-6ddea666-5a57-4ac0-926f-01f8cfdaa4fd",
+    "wger-f462df26-3264-48c2-b5aa-2374d0670c24": "db-hack-squat",
+    "wger-422a48aa-a41e-46e7-b84f-0bd99ccb0737": "db-hammer-curls",
+    "db-hammer-grip-incline-db-bench-press": "db-incline-dumbbell-bench-with-palms-facing-in",
+    "wger-920692b2-0842-428a-b925-ba0daf6b41db": "db-leverage-decline-chest-press",
+    "wger-b2025776-2397-4de7-a49e-296321169481": "db-hanging-leg-raise",
+    "db-overhead-cable-curl": "db-high-cable-curls",
+    "wger-37f6bd56-815a-4975-99af-05e749fae4b2": "db-hyperextensions-back-extensions",
+    "wger-57e17672-52b9-43cf-8d0d-4b3f06a0c0d0": "db-incline-dumbbell-press",
+    "wger-504230cb-4ac7-4b6c-b655-0800603081c1": "db-incline-dumbbell-press",
+    "db-suspended-row": "db-inverted-row-with-straps",
+    "wger-e2724724-b3d4-44d6-b832-95b80e314537": "db-smith-machine-incline-bench-press",
+    "wger-46ee5805-512a-43a2-944c-97f7744b0078": "forma-wger-3f8ad988-1aee-48ca-ad37-44e39ae1715d",
+    "wger-85c28424-ab47-40d4-9a27-e1b9bfb01e7c": "db-split-jerk",
+    "db-rope-jumping": "wger-cd51aa2a-52b3-43df-8011-0c8ef4b7ed11",
+    "wger-e60125f0-3a88-4707-815f-fe0e2b4be3c4": "wger-cd51aa2a-52b3-43df-8011-0c8ef4b7ed11",
+    "wger-89443e49-e5be-4b67-a5f6-e3f5ff80f6ea": "wger-4d255f25-f199-401a-bc81-7ffab1d0ed24",
+    "wger-8b311259-4f67-4dbf-9574-8c38faa92160": "wger-d813ef7c-b10a-4c5c-ba55-6b9518e7ff4c",
+    "wger-492e90a5-1ecb-4a06-8e9d-26a00042560e": "db-one-knee-to-chest",
+    "wger-73c1e130-fba9-473b-a093-a5712e2ae34d": "db-landmine-180s",
+    "db-front-cone-hops-or-hurdle-hops": "db-hurdle-hops",
+    "wger-3bc8b411-a28d-4e1c-a6d1-769e18fe9881": "db-lying-leg-curls",
+    "wger-62170477-90ec-463c-907e-9e523abc0a15": "db-leg-extensions",
+    "db-flat-bench-leg-pull-in": "db-leg-pull-in",
+    "wger-fd595232-b9ad-4216-bba1-92298f993ea9": "db-leverage-iso-row",
+    "wger-b2ca4a13-6fe2-4c4f-85b2-dcb5af28d2be": "db-seated-cable-rows",
+    "db-lying-supine-dumbbell-curl": "wger-861f7396-f34e-486c-a903-3c326086f920",
+    "wger-7eb52939-0e33-4319-829d-d8e142fc74d9": "db-machine-preacher-curls",
+    "wger-b5726562-82ed-451a-89d8-8c8b13c5019a": "db-thigh-abductor",
+    "wger-b144ac00-ec0c-4c43-898f-b2ac65048d98": "db-thigh-abductor",
+    "wger-3d2adf99-8fe9-45cb-b669-c5b18242e282": "wger-dc87b735-016c-410b-915c-e3521fea4be7",
+    "wger-2a9b16ba-04ae-43ac-8d48-6e0aadb1d5a5": "db-seated-leg-curl",
+    "db-neck-press": "db-barbell-guillotine-bench-press",
+    "wger-18d277a0-7222-46e7-b2bf-47c8ed169c30": "wger-30ac081b-fb79-4253-9457-8efc07568790",
+    "wger-c85e6137-2577-4e28-82c2-427407d534eb": "db-one-arm-dumbbell-preacher-curl",
+    "wger-2500c212-6f14-4a8d-a997-04e9e7c04116": "db-standing-military-press",
+    "wger-8b0a0371-c0a9-42a7-aab7-68d520542fb2": "db-barbell-shoulder-press",
+    "wger-aa72741d-17ae-410e-b49a-1df7aaf0afe1": "db-triceps-stretch",
+    "wger-1b9968f4-a00b-4157-8847-1c3c7dbb0d5a": "db-triceps-stretch",
+    "wger-7a1e0cd7-0076-4d4d-b05f-1d114235f199": "forma-wger-934856f3-6eb3-4b37-9536-0ff67a6aa036",
+    "wger-e797ca42-f9fc-480a-8f48-7f6905978c72": "db-reverse-machine-flyes",
+    "wger-493fb1ac-c45a-4b18-bcbb-58b809881e6f": "forma-db-plate-pinch",
+    "wger-dd52fb99-9426-4a78-b446-20a8e3e4ec47": "db-preacher-curl",
+    "wger-e87b76b8-2960-4225-9146-47f78bf8c630": "db-straight-arm-pulldown",
+    "wger-0f5fc602-afb6-4500-87da-f115f3ef3f47": "db-straight-arm-pulldown",
+    "wger-a45123c6-34c2-43cf-b6bf-914a8f40995a": "db-straight-arm-pulldown",
+    "wger-be4eb0b6-2c39-4ff5-b57d-419f1687c90f": "wger-0e707ae0-1985-4b74-b0bc-24fc5021eab8",
+    "wger-b2340417-dcd5-485a-9707-04dd9168b801": "wger-0e707ae0-1985-4b74-b0bc-24fc5021eab8",
+    "wger-a9633731-1d86-4b4a-996f-33a1dee0b0e1": "db-push-up-to-side-plank",
+    "wger-1842e1be-ac67-4f34-a527-4ca2b72d8e11": "db-push-up-wide",
+    "wger-728b00ba-f9cb-4f04-915a-ccd5cd0b86bf": "forma-wger-4632c471-5c5e-4570-9dec-509c5d4d58bb",
+    "wger-dd6e8753-a574-476e-900a-b794eb592e7b": "db-reverse-barbell-curl",
+    "wger-2f7149c3-77ce-4313-a59c-aef82b5a730a": "db-rope-straight-arm-pulldown",
+    "wger-2a983b8f-b77e-4f8f-8335-0e5caecd715f": "db-scapular-pull-up",
+    "wger-19fba43a-8363-4da3-82c6-d8a14628b5e7": "db-seated-dumbbell-curl",
+    "wger-73144238-414e-438f-8b0c-832a6591aa2f": "wger-ad5653e4-098e-4a84-af5b-a9349b108555",
+    "db-seated-leg-tucks": "db-seated-flat-bench-leg-pull-in",
+    "wger-53906cd1-61f1-4d56-ac60-e4fcc5824861": "db-thigh-adductor",
+    "wger-9bcc7b4f-4172-4db7-be95-d7b659c486f5": "wger-af11a7c1-876c-455b-b59a-d8456a99d6e5",
+    "db-seated-two-arm-palms-up-low-pulley-wrist-curl": "db-cable-wrist-curl",
+    "wger-139e3d1a-ccd5-46cd-b953-8db6cea7b005": "db-single-leg-glute-bridge",
+    "db-decline-smith-press": "db-smith-machine-decline-press",
+    "wger-738137c0-5387-4215-b457-ea7af113b3ba": "db-smith-machine-upright-row",
+    "wger-8161de8b-7802-46c0-9bd4-db60f39b7677": "db-snatch",
+    "wger-127033e0-46c5-44a6-825b-fbecfe60ed9a": "db-snatch",
+    "wger-56631e7a-471a-469c-958a-c3ff78b1e73c": "db-standing-soleus-and-achilles-stretch",
+    "wger-2536b8cd-a287-48ee-b8da-58d8bd595f43": "db-step-mill",
+    "wger-f36dfa40-7586-4721-a434-1fd878232c62": "db-calf-stretch-hands-against-wall",
+    "wger-7ce123b1-b1fd-438d-8840-c7c9a0639e54": "db-calf-stretch-hands-against-wall",
+    "wger-a51de8df-4101-45cb-8da5-de230d9bac1d": "db-standing-toe-touches",
+    "wger-069711c7-565a-4abb-90a7-614f66dd9dc3": "db-suspended-fallout",
+    "wger-fc608f0e-d754-4911-ae59-8856952e7064": "db-triceps-pushdown-rope-attachment",
+    "wger-ea63d85c-8579-4dda-b99f-c4c8930f9af6": "db-triceps-pushdown-rope-attachment",
+    "wger-3188868c-84e2-4a3b-b7dc-f79d8650988d": "db-triceps-pushdown-rope-attachment",
+    "db-two-arm-kettlebell-jerk": "db-double-kettlebell-jerk",
+    "wger-f1946fd4-793d-47a5-b66f-599b7f53695d": "wger-2eb61587-85d1-494f-b2fb-a92dd108b3d3",
+    "wger-8d333b94-148c-48f8-9154-8b13279500d1": "wger-b48e4d9d-f7fc-4619-85fb-6dabe5d7c999",
+    "wger-04ba9a37-4725-43f0-a0b6-767cdab9a79e": "wger-db4eaf0f-f4d4-4e63-b9fb-258985bc2858",
+    "wger-fa9838ed-84e8-476c-8157-1774a9c90aff": "wger-9801e20b-69c3-43d0-9066-450a68230c42",
+    "wger-1d8599d8-59a5-4faf-a9cf-b81639cbf68b": "wger-80d83f98-efe5-4d87-a403-c0feadc8650f",
+    "wger-203a6fee-7436-4313-858f-c1e364136793": "db-ab-roller",
+    "db-double-kettlebell-alternating-hang-clean": "db-alternating-hang-clean",
+    "wger-ec9dca8d-1456-430a-abed-70b8bab4779a": "wger-fe04cf35-1af5-4b51-89d4-c38d7eaa0db1",
+    "wger-da588c5e-ab8b-42a7-a52c-1e680a484334": "wger-25854f7a-485a-4280-a0fa-f024655733b0",
+    "wger-8374a856-9293-4b90-900e-00c3bfe21cc4": "wger-7f8997d2-e21f-492f-a470-b9f0c5e54f1d",
+    "wger-7ea504e7-3310-4638-a111-054fabfd4b80": "wger-2ecf2e55-c1f3-40ac-b20e-0954f41a2021",
+    "wger-dc3a2072-abc3-4ef9-b8e6-f5ae6b11bc7f": "db-external-rotation-with-band",
+    "plank": "db-plank",
+    "wger-e6bf0364-ccce-4053-afe1-eef206a50291": "pulldown",
+    "wger-a5d1f45b-ff07-45d7-a699-a654f9328934": "forma-wger-a5d1f45b-ff07-45d7-a699-a654f9328934",
+    "wger-3f8ad988-1aee-48ca-ad37-44e39ae1715d": "forma-wger-3f8ad988-1aee-48ca-ad37-44e39ae1715d",
+    "wger-934856f3-6eb3-4b37-9536-0ff67a6aa036": "forma-wger-934856f3-6eb3-4b37-9536-0ff67a6aa036",
+    "db-plate-pinch": "forma-db-plate-pinch",
+    "wger-4632c471-5c5e-4570-9dec-509c5d4d58bb": "forma-wger-4632c471-5c5e-4570-9dec-509c5d4d58bb"
+  },
+  "hidden": [
+    "wger-972e92bd-d432-4914-a577-0156d16afe48",
+    "wger-563203ce-1867-4376-aa7f-a0356808c0ae",
+    "wger-18a02b91-fb98-462b-aff1-05c982f151d4",
+    "wger-0f648dbf-9ddc-44d9-a10c-1aa97537ea91",
+    "wger-f4fbc177-afa9-402c-a7e0-dc40b5de9829",
+    "wger-abbf941e-e145-4492-aa96-fbbcd955e970",
+    "wger-9e3c665d-ac4e-456b-b1cd-0c209ce8090a",
+    "wger-54bf28e0-3709-49fd-b1b4-c99144e6a880",
+    "wger-8c23116c-b640-4f80-a309-235cc12d83d8",
+    "wger-d2cca57c-48e1-4a61-b756-c5baedf7a184",
+    "wger-903bd749-3b91-4812-acd0-be7e8a012d2c",
+    "wger-b1eed626-112f-401c-a61d-bfe168fdedc7",
+    "wger-be5c2a68-ac68-4833-8144-fb8c2bc7d5fb",
+    "wger-6c8cd086-1cd0-4979-8d01-7df72b1e839b",
+    "wger-8c5a72c7-97e3-4993-9d5f-dd920bde597e",
+    "wger-ed4c132b-1955-49f8-9be3-29e6ffb8eba1",
+    "wger-14cea0e7-2e7c-4d35-bfec-2f2f90209e02",
+    "wger-4b220e25-1a42-4457-9652-274183c6d839",
+    "wger-1195230d-9d0e-4d90-b32a-5951fcc6ba09",
+    "wger-42e40343-955c-43a2-902e-e70bd603a713"
+  ],
+  "overrides": {
+    "bench": { "name": "Barbell bench press", "equipment": "Barbell" },
+    "row": {
+      "name": "One-arm dumbbell row",
+      "equipment": "Dumbbell",
+      "instructionId": "wger-d46287e9-00a9-44c7-88a4-d1eb00fbe561",
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2683/view/",
+        "author": "JuustoKakku",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "description": "- Place a dumbbell next to a flat bench\n- Place your left knee on on the bench, and plant your left hand on the bench so it is under your shoulder.\n- Place your right foot on the floor in line with your left knee\n- Grab the dumbbell with your right hand, neutral grip.\n- Starting position, shoulders should be in line and back paraller to the floor\n- Slowly pu"
+    },
+    "shoulder": {
+      "name": "Dumbbell shoulder press",
+      "equipment": "Dumbbell",
+      "instructionId": "db-seated-dumbbell-press",
+      "source": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Dumbbell_Press.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "description": "Grab a couple of dumbbells and sit on a military press bench or a utility bench that has a back support on it as you place the dumbbells upright on top of your thighs.\n\nClean the dumbbells up one at a time by using your thighs to bring the dumbbells up to shoulder height at each side.\n\nRotate the wrists so that the palms of your hands are facing forward. Thi"
+    },
+    "db-wide-grip-lat-pulldown": {
+      "name": "Wide-Grip Lat Pulldown",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "curl": { "name": "Dumbbell biceps curl", "equipment": "Dumbbell" },
+    "triceps": {
+      "name": "Cable triceps pushdown",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "squat": { "name": "Barbell back squat", "equipment": "Barbell" },
+    "rdl": { "name": "Romanian deadlift", "equipment": "Barbell" },
+    "lunge": { "name": "Dumbbell reverse lunge", "equipment": "Dumbbell" },
+    "calf": { "name": "Standing calf raise", "equipment": "Dumbbell" },
+    "db-plank": { "name": "Plank", "equipment": "Bodyweight" },
+    "goblet": { "name": "Kettlebell goblet squat", "equipment": "Kettlebell" },
+    "lateral": { "name": "Dumbbell lateral raise", "equipment": "Dumbbell" },
+    "db-crunches": { "name": "Crunches", "equipment": "Bodyweight" },
+    "db-air-bike": {
+      "name": "Bicycle crunch",
+      "equipment": "Bodyweight",
+      "category": "strength"
+    },
+    "wger-616f9026-1a1d-4ed8-b068-cfbb81b6a000": {
+      "name": "Reverse lunges",
+      "equipment": "Bodyweight"
+    },
+    "db-alternate-hammer-curl": {
+      "name": "Alternate Hammer Curl",
+      "equipment": "Dumbbell"
+    },
+    "db-alternate-heel-touchers": {
+      "name": "Alternate Heel Touchers",
+      "equipment": "Bodyweight"
+    },
+    "db-dumbbell-alternate-bicep-curl": {
+      "name": "Dumbbell Alternate Bicep Curl",
+      "equipment": "Dumbbell"
+    },
+    "db-alternating-deltoid-raise": {
+      "name": "Alternating Deltoid Raise",
+      "equipment": "Dumbbell"
+    },
+    "db-arnold-dumbbell-press": {
+      "name": "Arnold Dumbbell Press",
+      "equipment": "Dumbbell"
+    },
+    "db-inverted-row": { "name": "Inverted Row", "equipment": "Bodyweight" },
+    "db-overhead-slam": {
+      "name": "Overhead Slam",
+      "equipment": "Medicine ball"
+    },
+    "db-band-pull-apart": {
+      "name": "Band Pull Apart",
+      "equipment": "Resistance band"
+    },
+    "db-clean-and-press": { "name": "Clean and Press", "equipment": "Barbell" },
+    "db-barbell-curl": { "name": "Barbell Curl", "equipment": "Barbell" },
+    "db-barbell-hip-thrust": {
+      "name": "Barbell Hip Thrust",
+      "equipment": "Barbell"
+    },
+    "db-barbell-lunge": { "name": "Barbell Lunge", "equipment": "Barbell" },
+    "db-seated-palms-down-barbell-wrist-curl": {
+      "name": "Seated Palms-Down Barbell Wrist Curl",
+      "equipment": "Barbell"
+    },
+    "db-bent-over-barbell-row": {
+      "name": "Bent Over Barbell Row",
+      "equipment": "Barbell"
+    },
+    "db-reverse-grip-bent-over-rows": {
+      "name": "Reverse Grip Bent-Over Rows",
+      "equipment": "Barbell"
+    },
+    "db-barbell-shrug": { "name": "Barbell Shrug", "equipment": "Barbell" },
+    "db-standing-overhead-barbell-triceps-extension": {
+      "name": "Standing Overhead Barbell Triceps Extension",
+      "equipment": "Barbell"
+    },
+    "db-seated-palm-up-barbell-wrist-curl": {
+      "name": "Seated Palm-Up Barbell Wrist Curl",
+      "equipment": "Barbell"
+    },
+    "wger-a5d1f45b-ff07-45d7-a699-a654f9328934": {
+      "name": "Battle ropes",
+      "equipment": "Specialty equipment",
+      "instructionId": "db-battling-ropes",
+      "source": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Battling_Ropes.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "description": "For this exercise you will need a heavy rope anchored at its center 15-20 feet away. Standing in front of the rope, take an end in each hand with your arms extended at your side. This will be your starting position.\n\nInitiate the movement by rapidly raising one arm to shoulder level as quickly as you can.\n\nAs you let that arm drop to the starting position, r"
+    },
+    "wger-57018827-f344-4627-88e5-03e4f2f49859": {
+      "name": "Behind the Back Cable Lateral Raise",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-bench-dips": { "name": "Bench Dips", "equipment": "Bodyweight" },
+    "db-close-grip-barbell-bench-press": {
+      "name": "Close-Grip Barbell Bench Press",
+      "equipment": "Barbell"
+    },
+    "db-dumbbell-bench-press": {
+      "name": "Dumbbell Bench Press",
+      "equipment": "Dumbbell"
+    },
+    "db-bent-over-two-dumbbell-row": {
+      "name": "Bent Over Two-Dumbbell Row",
+      "equipment": "Dumbbell"
+    },
+    "db-one-arm-long-bar-row": {
+      "name": "One-Arm Long Bar Row",
+      "equipment": "Barbell"
+    },
+    "wger-6e00afb6-272d-44a2-8ae3-e7fa41b50f06": {
+      "name": "Cross-Bench Dumbbell Pullovers",
+      "equipment": "Dumbbell"
+    },
+    "db-standing-bent-over-two-arm-dumbbell-triceps-extension": {
+      "name": "Standing Bent-Over Two-Arm Dumbbell Triceps Extension",
+      "equipment": "Dumbbell"
+    },
+    "db-seated-bent-over-rear-delt-raise": {
+      "name": "Seated Bent-Over Rear Delt Raise",
+      "equipment": "Dumbbell"
+    },
+    "db-close-grip-front-lat-pulldown": {
+      "name": "Close-Grip Front Lat Pulldown",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-76965848-9776-4be5-b879-e3c97033b80f": {
+      "name": "Underhand Lat Pull Down",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-machine-bicep-curl": {
+      "name": "Machine Bicep Curl",
+      "equipment": "Biceps curl machine",
+      "equipmentTags": ["Biceps curl machine"]
+    },
+    "db-standing-biceps-cable-curl": {
+      "name": "Standing Biceps Cable Curl",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-ez-bar-curl": { "name": "EZ-Bar Curl", "equipment": "EZ bar" },
+    "wger-6349365e-e901-4280-a1b7-65734986f47d": {
+      "name": "Bird Dog",
+      "equipment": "Bodyweight"
+    },
+    "db-body-up": { "name": "Body-Up", "equipment": "Bodyweight" },
+    "wger-3284fd27-5402-4821-9c32-29066d4e2667": {
+      "name": "Lunges",
+      "equipment": "Bodyweight"
+    },
+    "db-bodyweight-squat": {
+      "name": "Bodyweight Squat",
+      "equipment": "Bodyweight"
+    },
+    "wger-7ce489d2-1948-46de-aa80-277b2ca737aa": {
+      "name": "Bodyweight Bulgarian split squat",
+      "equipment": "Bodyweight"
+    },
+    "db-butt-lift-bridge": {
+      "name": "Glute bridge",
+      "equipment": "Bodyweight"
+    },
+    "db-butterfly": {
+      "name": "Pec deck",
+      "equipment": "Pec deck machine",
+      "equipmentTags": ["Pec deck machine"]
+    },
+    "db-cable-crunch": {
+      "name": "Cable Crunch",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-external-rotation-with-cable": {
+      "name": "External Rotation with Cable",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-low-cable-crossover": {
+      "name": "Low Cable Crossover",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-front-cable-raise": {
+      "name": "Front Cable Raise",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-hammer-curls-rope-attachment": {
+      "name": "Cable Hammer Curls - Rope Attachment",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-hip-adduction": {
+      "name": "Cable Hip Adduction",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-internal-rotation": {
+      "name": "Cable Internal Rotation",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-standing-low-pulley-deltoid-raise": {
+      "name": "Standing Low-Pulley Deltoid Raise",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-pull-through": {
+      "name": "Pull Through",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-rear-delt-fly": {
+      "name": "Cable Rear Delt Fly",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-rope-overhead-triceps-extension": {
+      "name": "Cable Rope Overhead Triceps Extension",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-calf-press-on-the-leg-press-machine": {
+      "name": "Calf Press On The Leg Press Machine",
+      "equipment": "Leg press machine",
+      "equipmentTags": ["Leg press machine"]
+    },
+    "wger-95a9cc46-270e-45f2-8a17-5665a23ff70b": {
+      "name": "Calf Raises on Hackenschmitt Machine",
+      "equipment": "Hack squat machine",
+      "equipmentTags": ["Hack squat machine"]
+    },
+    "db-seated-calf-raise": {
+      "name": "Seated Calf Raise",
+      "equipment": "Machine"
+    },
+    "db-bicycling-stationary": {
+      "name": "Bicycling, Stationary",
+      "equipment": "Machine"
+    },
+    "wger-5c4065d5-5e0a-4155-92e5-34a080587a64": {
+      "name": "Cat-Cow",
+      "equipment": "Bodyweight"
+    },
+    "db-machine-bench-press": {
+      "name": "Machine Bench Press",
+      "equipment": "Chest press machine",
+      "equipmentTags": ["Chest press machine"]
+    },
+    "db-leverage-chest-press": {
+      "name": "Leverage Chest Press",
+      "equipment": "Machine"
+    },
+    "db-chin-up": { "name": "Chin-Up", "equipment": "Bodyweight" },
+    "db-plyo-push-up": { "name": "Plyo Push-up", "equipment": "Bodyweight" },
+    "db-clean-and-jerk": { "name": "Clean and Jerk", "equipment": "Barbell" },
+    "db-concentration-curls": {
+      "name": "Concentration Curls",
+      "equipment": "Dumbbell"
+    },
+    "db-decline-barbell-bench-press": {
+      "name": "Decline Barbell Bench Press",
+      "equipment": "Barbell"
+    },
+    "db-decline-dumbbell-bench-press": {
+      "name": "Decline Dumbbell Bench Press",
+      "equipment": "Dumbbell"
+    },
+    "db-decline-dumbbell-flyes": {
+      "name": "Decline Dumbbell Flyes",
+      "equipment": "Dumbbell"
+    },
+    "db-decline-push-up": {
+      "name": "Decline Push-Up",
+      "equipment": "Bodyweight"
+    },
+    "db-linear-depth-jump": {
+      "name": "Linear Depth Jump",
+      "equipment": "Specialty equipment"
+    },
+    "db-front-squats-with-two-kettlebells": {
+      "name": "Front Squats With Two Kettlebells",
+      "equipment": "Kettlebell"
+    },
+    "db-dumbbell-floor-press": {
+      "name": "Dumbbell Floor Press",
+      "equipment": "Dumbbell"
+    },
+    "db-dumbbell-flyes": { "name": "Dumbbell Flyes", "equipment": "Dumbbell" },
+    "db-incline-dumbbell-curl": {
+      "name": "Incline Dumbbell Curl",
+      "equipment": "Dumbbell"
+    },
+    "wger-55ff32e6-24ab-4303-9b50-176d60d48796": {
+      "name": "Incline Dumbbell Fly",
+      "equipment": "Dumbbell"
+    },
+    "db-dumbbell-incline-row": {
+      "name": "Dumbbell Incline Row",
+      "equipment": "Dumbbell"
+    },
+    "db-dumbbell-one-arm-shoulder-press": {
+      "name": "Dumbbell One-Arm Shoulder Press",
+      "equipment": "Dumbbell"
+    },
+    "db-dumbbell-shrug": { "name": "Dumbbell Shrug", "equipment": "Dumbbell" },
+    "db-dumbbell-side-bend": {
+      "name": "Dumbbell Side Bend",
+      "equipment": "Dumbbell"
+    },
+    "db-standing-dumbbell-upright-row": {
+      "name": "Standing Dumbbell Upright Row",
+      "equipment": "Dumbbell"
+    },
+    "db-tate-press": { "name": "Tate Press", "equipment": "Dumbbell" },
+    "db-elliptical-trainer": {
+      "name": "Elliptical Trainer",
+      "equipment": "Machine"
+    },
+    "db-one-legged-cable-kickback": {
+      "name": "One-Legged Cable Kickback",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-external-rotation": {
+      "name": "External Rotation",
+      "equipment": "Dumbbell"
+    },
+    "db-ez-bar-skullcrusher": {
+      "name": "EZ-Bar Skullcrusher",
+      "equipment": "EZ bar"
+    },
+    "wger-9b0f7101-b78a-4c47-b680-fbef15469a8a": {
+      "name": "Nordic Curl",
+      "equipment": "Bodyweight",
+      "instructionId": "db-floor-glute-ham-raise",
+      "source": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Floor_Glute-Ham_Raise.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "description": "You can use a partner for this exercise or brace your feet under something stable.\n\nBegin on your knees with your upper legs and torso upright. If using a partner, they will firmly hold your feet to keep you in position. This will be your starting position.\n\nLower yourself by extending at the knee, taking care to NOT flex the hips as you go forward.\n\nPlace y"
+    },
+    "db-iliotibial-tract-smr": {
+      "name": "Iliotibial Tract-SMR",
+      "equipment": "Foam roller"
+    },
+    "db-adductor": { "name": "Adductor", "equipment": "Foam roller" },
+    "db-quadriceps-smr": {
+      "name": "Quadriceps-SMR",
+      "equipment": "Foam roller"
+    },
+    "db-seated-dumbbell-palms-up-wrist-curl": {
+      "name": "Seated Dumbbell Palms-Up Wrist Curl",
+      "equipment": "Dumbbell"
+    },
+    "db-front-plate-raise": {
+      "name": "Front Plate Raise",
+      "equipment": "Specialty equipment"
+    },
+    "wger-6ddea666-5a57-4ac0-926f-01f8cfdaa4fd": {
+      "name": "Kneeling straight-leg kickback",
+      "equipment": "Bodyweight"
+    },
+    "db-hack-squat": {
+      "name": "Hack Squat",
+      "equipment": "Hack squat machine",
+      "equipmentTags": ["Hack squat machine"]
+    },
+    "db-hammer-curls": { "name": "Hammer Curls", "equipment": "Dumbbell" },
+    "db-incline-dumbbell-bench-with-palms-facing-in": {
+      "name": "Incline Dumbbell Bench With Palms Facing In",
+      "equipment": "Dumbbell"
+    },
+    "db-leverage-decline-chest-press": {
+      "name": "Leverage Decline Chest Press",
+      "equipment": "Machine"
+    },
+    "db-hanging-leg-raise": {
+      "name": "Hanging Leg Raise",
+      "equipment": "Bodyweight"
+    },
+    "db-high-cable-curls": {
+      "name": "High Cable Curls",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-hyperextensions-back-extensions": {
+      "name": "Hyperextensions (Back Extensions)",
+      "equipment": "Specialty equipment"
+    },
+    "db-incline-dumbbell-press": {
+      "name": "Incline Dumbbell Press",
+      "equipment": "Dumbbell"
+    },
+    "db-inverted-row-with-straps": {
+      "name": "Inverted Row with Straps",
+      "equipment": "Specialty equipment"
+    },
+    "db-smith-machine-incline-bench-press": {
+      "name": "Smith Machine Incline Bench Press",
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "wger-3f8ad988-1aee-48ca-ad37-44e39ae1715d": {
+      "name": "Wall-sit",
+      "equipment": "Bodyweight"
+    },
+    "db-split-jerk": { "name": "Split Jerk", "equipment": "Barbell" },
+    "wger-cd51aa2a-52b3-43df-8011-0c8ef4b7ed11": {
+      "name": "Rope jumping",
+      "equipment": "Specialty equipment",
+      "instructionId": "db-rope-jumping",
+      "source": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Rope_Jumping.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "description": "Hold an end of the rope in each hand. Position the rope behind you on the ground. Raise your arms up and turn the rope over your head bringing it down in front of you. When it reaches the ground, jump over it. Find a good turning pace that can be maintained. Different speeds and techniques can be used to introduce variation.\n\nRope jumping is exciting, challe"
+    },
+    "wger-4d255f25-f199-401a-bc81-7ffab1d0ed24": {
+      "name": "Jumping Jacks",
+      "equipment": "Bodyweight"
+    },
+    "wger-d813ef7c-b10a-4c5c-ba55-6b9518e7ff4c": {
+      "name": "Kettlebell Swing",
+      "equipment": "Kettlebell",
+      "instructionId": "wger-8b311259-4f67-4dbf-9574-8c38faa92160",
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/331/view/",
+        "author": "J120290,cerin",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "description": "Hold the kettlebell securely in both hands. Keep your back flat throughout the move, avoiding any rounding of the spine.Keeping your knees \"soft\", hinge your hips backwards, letting the kettlebell swing between your knees. You want to bend from the hips as far as you can *without letting your back round forwards*. Then, snap your hips forwards quickly and st"
+    },
+    "db-one-knee-to-chest": {
+      "name": "One Knee To Chest",
+      "equipment": "Bodyweight"
+    },
+    "db-landmine-180s": { "name": "Landmine 180's", "equipment": "Barbell" },
+    "db-hurdle-hops": {
+      "name": "Hurdle Hops",
+      "equipment": "Specialty equipment"
+    },
+    "db-lying-leg-curls": {
+      "name": "Lying Leg Curls",
+      "equipment": "Leg curl machine",
+      "equipmentTags": ["Leg curl machine"]
+    },
+    "db-leg-extensions": {
+      "name": "Leg Extensions",
+      "equipment": "Leg extension machine",
+      "equipmentTags": ["Leg extension machine"]
+    },
+    "db-leg-pull-in": { "name": "Leg Pull-In", "equipment": "Bodyweight" },
+    "db-leverage-iso-row": {
+      "name": "Leverage Iso Row",
+      "equipment": "Machine"
+    },
+    "db-seated-cable-rows": {
+      "name": "Seated Cable Rows",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-861f7396-f34e-486c-a903-3c326086f920": {
+      "name": "Lying Dumbbell Curls",
+      "equipment": "Dumbbell"
+    },
+    "db-machine-preacher-curls": {
+      "name": "Machine Preacher Curls",
+      "equipment": "Preacher curl machine",
+      "equipmentTags": ["Preacher curl machine"]
+    },
+    "db-thigh-abductor": {
+      "name": "Thigh Abductor",
+      "equipment": "Hip abduction machine",
+      "equipmentTags": ["Hip abduction machine"]
+    },
+    "wger-dc87b735-016c-410b-915c-e3521fea4be7": {
+      "name": "Machine lateral raise",
+      "equipment": "Lateral raise machine",
+      "equipmentTags": ["Lateral raise machine"]
+    },
+    "db-seated-leg-curl": {
+      "name": "Seated Leg Curl",
+      "equipment": "Leg curl machine",
+      "equipmentTags": ["Leg curl machine"]
+    },
+    "db-barbell-guillotine-bench-press": {
+      "name": "Barbell Guillotine Bench Press",
+      "equipment": "Barbell"
+    },
+    "wger-30ac081b-fb79-4253-9457-8efc07568790": {
+      "name": "Squat Thrust",
+      "equipment": "Bodyweight"
+    },
+    "db-one-arm-dumbbell-preacher-curl": {
+      "name": "One Arm Dumbbell Preacher Curl",
+      "equipment": "Dumbbell"
+    },
+    "db-standing-military-press": {
+      "name": "Standing Military Press",
+      "equipment": "Barbell"
+    },
+    "db-barbell-shoulder-press": {
+      "name": "Barbell Shoulder Press",
+      "equipment": "Barbell"
+    },
+    "db-triceps-stretch": {
+      "name": "Triceps Stretch",
+      "equipment": "Bodyweight"
+    },
+    "wger-934856f3-6eb3-4b37-9536-0ff67a6aa036": {
+      "name": "Parallel Bar Hold",
+      "equipment": "Bodyweight"
+    },
+    "db-reverse-machine-flyes": {
+      "name": "Reverse Machine Flyes",
+      "equipment": "Rear delt machine",
+      "equipmentTags": ["Rear delt machine"]
+    },
+    "db-plate-pinch": {
+      "name": "Plate Pinch",
+      "equipment": "Specialty equipment"
+    },
+    "db-preacher-curl": { "name": "Preacher Curl", "equipment": "EZ bar" },
+    "db-straight-arm-pulldown": {
+      "name": "Straight-Arm Pulldown",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-0e707ae0-1985-4b74-b0bc-24fc5021eab8": {
+      "name": "Wide Grip Pull Up",
+      "equipment": "Bodyweight"
+    },
+    "db-push-up-to-side-plank": {
+      "name": "Push Up to Side Plank",
+      "equipment": "Bodyweight"
+    },
+    "db-push-up-wide": { "name": "Push-Up Wide", "equipment": "Bodyweight" },
+    "wger-4632c471-5c5e-4570-9dec-509c5d4d58bb": {
+      "name": "Diaphragmatic Breathing",
+      "equipment": "Bodyweight"
+    },
+    "db-reverse-barbell-curl": {
+      "name": "Reverse Barbell Curl",
+      "equipment": "Barbell"
+    },
+    "db-rope-straight-arm-pulldown": {
+      "name": "Rope Straight-Arm Pulldown",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-scapular-pull-up": {
+      "name": "Scapular Pull-Up",
+      "equipment": "Bodyweight"
+    },
+    "db-seated-dumbbell-curl": {
+      "name": "Seated Dumbbell Curl",
+      "equipment": "Dumbbell"
+    },
+    "wger-ad5653e4-098e-4a84-af5b-a9349b108555": {
+      "name": "Seated Piriformis Stretch",
+      "equipment": "Bodyweight",
+      "instructionId": "wger-73144238-414e-438f-8b0c-832a6591aa2f",
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1680/view/",
+        "author": "ricardodavidrd",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "description": "Seat on a bench. Feet flat on the ground. Place your left ankle over your right knee. Your right knee stays flat. Keep your back straight. Gently push your left knee down."
+    },
+    "db-seated-flat-bench-leg-pull-in": {
+      "name": "Seated Flat Bench Leg Pull-In",
+      "equipment": "Bodyweight"
+    },
+    "db-thigh-adductor": {
+      "name": "Thigh Adductor",
+      "equipment": "Hip adduction machine",
+      "equipmentTags": ["Hip adduction machine"]
+    },
+    "wger-af11a7c1-876c-455b-b59a-d8456a99d6e5": {
+      "name": "Seated machine row",
+      "equipment": "Machine"
+    },
+    "db-cable-wrist-curl": {
+      "name": "Cable Wrist Curl",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-single-leg-glute-bridge": {
+      "name": "Single Leg Glute Bridge",
+      "equipment": "Bodyweight"
+    },
+    "db-smith-machine-decline-press": {
+      "name": "Smith Machine Decline Press",
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "db-smith-machine-upright-row": {
+      "name": "Smith Machine Upright Row",
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "db-snatch": { "name": "Snatch", "equipment": "Barbell" },
+    "db-standing-soleus-and-achilles-stretch": {
+      "name": "Standing Soleus And Achilles Stretch",
+      "equipment": "Bodyweight"
+    },
+    "db-step-mill": { "name": "Step Mill", "equipment": "Machine" },
+    "db-calf-stretch-hands-against-wall": {
+      "name": "Calf Stretch Hands Against Wall",
+      "equipment": "Bodyweight"
+    },
+    "db-standing-toe-touches": {
+      "name": "Standing Toe Touches",
+      "equipment": "Bodyweight"
+    },
+    "db-suspended-fallout": {
+      "name": "Suspended Fallout",
+      "equipment": "Specialty equipment"
+    },
+    "db-triceps-pushdown-rope-attachment": {
+      "name": "Triceps Pushdown - Rope Attachment",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-double-kettlebell-jerk": {
+      "name": "Double Kettlebell Jerk",
+      "equipment": "Kettlebell"
+    },
+    "wger-2eb61587-85d1-494f-b2fb-a92dd108b3d3": {
+      "name": "Wall Angels",
+      "equipment": "Bodyweight"
+    },
+    "wger-b48e4d9d-f7fc-4619-85fb-6dabe5d7c999": {
+      "name": "Dumbbell Crunches",
+      "equipment": "Dumbbell"
+    },
+    "wger-db4eaf0f-f4d4-4e63-b9fb-258985bc2858": {
+      "name": "Single-leg bodyweight calf raise",
+      "equipment": "Bodyweight"
+    },
+    "wger-9801e20b-69c3-43d0-9066-450a68230c42": {
+      "name": "Bodyweight lateral split squat",
+      "equipment": "Bodyweight"
+    },
+    "wger-80d83f98-efe5-4d87-a403-c0feadc8650f": {
+      "name": "Bodyweight split squat",
+      "equipment": "Bodyweight"
+    },
+    "db-ab-roller": { "name": "Ab Roller", "equipment": "Specialty equipment" },
+    "db-alternating-hang-clean": {
+      "name": "Alternating Hang Clean",
+      "equipment": "Kettlebell"
+    },
+    "wger-fe04cf35-1af5-4b51-89d4-c38d7eaa0db1": {
+      "name": "Pistol Squat",
+      "equipment": "Bodyweight"
+    },
+    "wger-25854f7a-485a-4280-a0fa-f024655733b0": {
+      "name": "Quadruped thoracic rotation",
+      "equipment": "Bodyweight"
+    },
+    "wger-7f8997d2-e21f-492f-a470-b9f0c5e54f1d": {
+      "name": "Levator scapulae stretch",
+      "equipment": "Bodyweight"
+    },
+    "wger-2ecf2e55-c1f3-40ac-b20e-0954f41a2021": {
+      "name": "Isometric lateral neck stretch",
+      "equipment": "Bodyweight"
+    },
+    "db-external-rotation-with-band": {
+      "name": "Band external rotation",
+      "equipment": "Resistance band"
+    },
+    "wger-45251627-5f89-4858-bf0c-8884a21cbb1f": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-e9f3446f-ca98-4bf2-817c-0dacd123cecd": {
+      "equipment": "Belt squat machine",
+      "equipmentTags": ["Machine", "Belt squat machine"],
+      "description": "Fit the loading belt around your hips and connect it securely to the machine's attachment. Stand on the platform with feet comfortably apart and use the support handles as needed. Release the start catch, brace and bend your knees and hips into a controlled squat. Keep the belt centered and your feet planted as you stand. Secure the load on its catch before disconnecting the belt.",
+      "source": null,
+      "references": [
+        {
+          "title": "Life Fitness strength equipment",
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training"
+        }
+      ]
+    },
+    "wger-b2865908-b93e-4507-ada4-a5bb9317566c": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-e22c4320-7753-49c6-b7f7-4be21b025fb6": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-b1bf02cf-17b2-4bfc-a5b0-4ff7a2768dbb": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-ae695660-7cee-4601-8241-edd3e2a6d896": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-5b4fb3ec-53a1-4525-a58a-c070798ea86e": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-6e03ecb3-6bfe-4b34-be9d-e5c33e820cc6": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-70479b75-0df4-4ac2-a324-4a44b148304c": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-0285f198-36d5-4a77-bb76-5f72e1a4d6c9": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-05853a58-4426-450c-9b06-bfa461a767bf": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-4c8cf398-b400-46dc-89b4-94bb478f4ea9": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-07ded945-de5d-4e77-b13c-17d51a2f0007": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-1ea73578-08a5-4f3e-9255-3c58b29b170d": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-5aee8ae1-2752-4868-af62-e3c79954d811": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-c867836d-2929-4977-b23c-014bc21ec08d": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-37314b67-1aad-4405-aa88-70846d5f035d": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-401989e0-64c3-459d-bc47-2c171ab4f41d": { "equipment": "Machine" },
+    "wger-ce21d3a2-cdc5-410c-9970-c25029ca3769": {
+      "equipment": "Glute drive machine",
+      "equipmentTags": ["Machine", "Glute drive machine"],
+      "description": "Set your upper back against the machine's pad and secure its hip belt or padded restraint as instructed on the station. Plant your feet so your shins approach vertical at the top. Brace, drive through your feet and extend your hips until your trunk and thighs align without arching your lower back. Lower the lever slowly and repeat. Secure the start catch before releasing the restraint.",
+      "source": null,
+      "references": [
+        {
+          "title": "Life Fitness strength equipment",
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training"
+        }
+      ]
+    },
+    "wger-66ed6788-a1d8-49a2-af4d-397107fbf5fb": { "equipment": "Machine" },
+    "wger-4ef75e13-c058-4410-91c0-2f2d2df98130": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-47b244f0-ebc6-4498-9d9f-7e7bff47322e": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-ecba2395-f364-4e5f-a34c-04f178c8b822": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "wger-57263316-6f34-4539-952b-b07e09bac3ba": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-b1eed626-112f-401c-a61d-bfe168fdedc7": { "equipment": "Machine" },
+    "wger-fe0c2a17-fad9-4235-8786-84bb1de93530": {
+      "equipment": "Incline chest press machine",
+      "equipmentTags": ["Machine", "Incline chest press machine"],
+      "description": "Use an incline chest-press station and adjust the seat so the handles align with your upper chest. Keep your back against the pad and feet braced. Press the handles forward and upward along the guided path without shrugging or bouncing. Return slowly to a comfortable stretch and keep the stack or lever controlled between repetitions.",
+      "source": null,
+      "references": [
+        {
+          "title": "Life Fitness strength equipment",
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training"
+        }
+      ]
+    },
+    "pulldown": { "equipment": "Machine" },
+    "wger-c7058ff8-ca3b-4822-abdb-6341ce37c4d1": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-f2e17c8d-7285-4fd5-bfe8-26f407802850": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-ffdb4806-d64e-474b-8ce5-8df9a57fb9c7": {
+      "equipment": "Pendulum squat machine",
+      "equipmentTags": ["Machine", "Pendulum squat machine"],
+      "description": "Set the safety stops for your intended depth, place your shoulders beneath the pads and brace against the back support. Plant your feet securely on the platform and release the start catch. Bend your knees and hips along the machine's arc while keeping your feet in contact with the platform. Push evenly through your feet to stand without snapping your knees straight. Re-engage the catch before leaving the machine.",
+      "source": null,
+      "references": [
+        {
+          "title": "Life Fitness strength equipment",
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training"
+        }
+      ]
+    },
+    "wger-5d5122e0-65f3-4afc-ac36-21955e2c7dde": { "equipment": "Machine" },
+    "wger-139772c6-e401-4281-8aa6-c7ff7fb49f6a": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-0ecfec6f-5d0f-4e8a-8d37-f6203a8923b8": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-7e039ac7-37ab-49f9-9ae8-c7efeef070cd": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-0dd4dde7-9712-4c06-8ebe-16bc7a0b1917": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-e29d9914-6b02-490b-8f3a-f9fe8f21993c": { "equipment": "Machine" },
+    "wger-ef2df6a2-41df-4a25-b2e0-4808dc2c3305": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "wger-6c671e43-497f-4863-8d78-b592f3b5e7c6": { "equipment": "Machine" },
+    "wger-d788811b-be46-485a-b8a0-0d9ba7f4cf85": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-f6471f4a-0290-4a71-9580-bf3d046fdb9d": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-8bc4c616-e76b-4291-9074-186ecbbb3cfd": {
+      "name": "Assisted machine pull-up",
+      "equipment": "Assisted dip / chin station",
+      "equipmentTags": ["Machine", "Assisted dip / chin station"],
+      "description": "Select enough counterweight to keep each repetition controlled. Hold the overhand pull-up handles and place your knees or feet on the assistance platform as the station requires. Brace and pull your elbows down, bringing your chin toward handle height without swinging. Lower smoothly to a comfortable extended-arm position. Keep the platform controlled as you step off.",
+      "measurementNotes": "Log repetitions with zero added load. Assistance and counterweight are not lifted kilograms; record their machine setting in your session notes.",
+      "source": null,
+      "references": [
+        {
+          "title": "Hammer Strength assist dip/chin station",
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training/selectorized/hammer-strength-select-assist-dip-chin"
+        }
+      ]
+    },
+    "wger-3dd0db1c-450a-46d1-ad46-d7854bdc26ed": {
+      "name": "Assisted machine triceps dip",
+      "equipment": "Assisted dip / chin station",
+      "equipmentTags": ["Machine", "Assisted dip / chin station"],
+      "description": "Choose sufficient assistance and hold the dip handles securely. Place your knees or feet on the platform according to the machine's setup. With shoulders controlled, bend your elbows to lower through a comfortable range, keeping them near your sides. Press the handles down to extend your arms without jerking or shrugging. Control the platform throughout and step off carefully.",
+      "measurementNotes": "Log repetitions with zero added load. Assistance and counterweight are not lifted kilograms; record their machine setting in your session notes.",
+      "source": null,
+      "references": [
+        {
+          "title": "Hammer Strength assist dip/chin station",
+          "url": "https://www.lifefitness.com/en-us/catalog/strength-training/selectorized/hammer-strength-select-assist-dip-chin"
+        }
+      ]
+    },
+    "legpress": {
+      "equipment": "Leg press machine",
+      "equipmentTags": ["Leg press machine"]
+    },
+    "db-alternating-cable-shoulder-press": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-bent-over-low-pulley-side-lateral": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-bosu-ball-cable-crunch-with-side-bends": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-chest-press": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-crossover": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-deadlifts": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-incline-pushdown": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-incline-triceps-extension": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-iron-cross": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-judo-flip": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-lying-triceps-extension": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-one-arm-tricep-extension": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-preacher-curl": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-reverse-crunch": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-rope-rear-delt-rows": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-russian-twists": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-seated-crunch": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-seated-lateral-raise": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-shoulder-press": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-cable-shrugs": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-calf-machine-shoulder-shrug": {
+      "equipment": "Shoulder press machine",
+      "equipmentTags": ["Shoulder press machine"]
+    },
+    "db-elevated-cable-rows": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-face-pull": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-flat-bench-cable-flyes": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-full-range-of-motion-lat-pulldown": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-incline-cable-chest-press": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-incline-cable-flye": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-kneeling-cable-crunch-with-alternating-oblique-twists": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-kneeling-cable-triceps-extension": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-kneeling-high-pulley-row": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-kneeling-single-arm-high-pulley-row": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-b6054509-576f-429c-960f-73c84f481b7c": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-28d18142-8777-4dba-a3a1-6151cec94500": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-low-cable-triceps-extension": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-low-pulley-row-to-neck": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-lying-cable-curl": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-lying-close-grip-bar-curl-on-high-pulley": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-machine-shoulder-military-press": {
+      "equipment": "Shoulder press machine",
+      "equipmentTags": ["Shoulder press machine"]
+    },
+    "db-narrow-stance-hack-squats": {
+      "equipment": "Hack squat machine",
+      "equipmentTags": ["Hack squat machine"]
+    },
+    "db-narrow-stance-leg-press": {
+      "equipment": "Leg press machine",
+      "equipmentTags": ["Leg press machine"]
+    },
+    "wger-ac00021c-12f9-4827-8003-ea07de980b76": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-one-arm-lat-pulldown": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-one-arm-high-pulley-cable-side-bends": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-pallof-press": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-pallof-press-with-rotation": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-reverse-cable-curl": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-reverse-grip-triceps-pushdown": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-seated-cable-shoulder-press": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-seated-one-arm-cable-pulley-rows": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-shotgun-row": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-single-arm-cable-crossover": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-83af8d94-319b-456b-92d8-75cec821a195": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-0cb0c5aa-f3dc-4883-b181-0b5efda1bc4f": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-b86fd8df-e726-4998-a7ee-000de0f70bf0": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-single-leg-leg-extension": {
+      "equipment": "Leg extension machine",
+      "equipmentTags": ["Leg extension machine"]
+    },
+    "db-smith-machine-behind-the-back-shrug": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "db-smith-machine-bench-press": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "db-smith-machine-bent-over-row": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "db-smith-machine-calf-raise": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "db-smith-machine-close-grip-bench-press": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "db-smith-machine-hang-power-clean": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "db-smith-machine-hip-raise": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "db-smith-machine-leg-press": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "db-smith-machine-one-arm-upright-row": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "db-smith-machine-overhead-shoulder-press": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "db-smith-machine-pistol-squat": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "db-smith-machine-reverse-calf-raises": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "wger-b382dcb2-60a8-412d-b0ee-6afe9c9f36d7": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Machine", "Smith machine"]
+    },
+    "db-smith-machine-squat": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "db-smith-machine-stiff-legged-deadlift": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "db-smith-single-leg-split-squat": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Smith machine"]
+    },
+    "db-standing-cable-chest-press": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-standing-cable-lift": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-standing-cable-wood-chop": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-standing-leg-curl": {
+      "equipment": "Leg curl machine",
+      "equipmentTags": ["Leg curl machine"]
+    },
+    "db-standing-low-pulley-one-arm-triceps-extension": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-standing-one-arm-cable-curl": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-standing-rope-crunch": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-triceps-pushdown-v-bar-attachment": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-788b66aa-7e59-493f-ad9a-0522736c7ef0": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-underhand-cable-pulldowns": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-c1a9297d-6786-45dc-9047-5539fb61db9c": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-upright-cable-row": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-v-bar-pulldown": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "db-wide-grip-pulldown-behind-the-neck": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "forma-smith-romanian-deadlift": {
+      "equipment": "Smith machine",
+      "equipmentTags": ["Machine", "Smith machine"]
+    },
+    "forma-cable-standing-hip-abduction": {
+      "equipment": "Cable",
+      "equipmentTags": ["Cable", "Machine"]
+    },
+    "forma-machine-v-squat": {
+      "equipment": "V-squat machine",
+      "equipmentTags": ["Machine", "V-squat machine"]
+    }
+  }
+}
