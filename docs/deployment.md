@@ -52,6 +52,14 @@ temporary token. Do not put tokens in Vite variables or commit an `.env` file.
 Keep the previous Worker version for rollback. After deployment, check the real
 HTTPS site, library guides, local saving and backup download in a browser.
 
+After the matching private API is healthy, deploy the account frontend with
+`VITE_ACCOUNT_MODE=account npm run build`, then
+`NODE_USE_ENV_PROXY=1 node scripts/deploy-public.mjs --staging`. The helper uses
+the same short-lived token policy and revocation for either target. In this
+managed environment set `XDG_CONFIG_HOME=/workspace/forma-cloudflare-config`
+for Wrangler's writable configuration and logs. See the
+[current release record](live-catalog-release.md) for verified versions.
+
 ## Private API and PostgreSQL
 
 The Compose file defines a private PostgreSQL service, restricted Fastify API,

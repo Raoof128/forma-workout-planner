@@ -27,6 +27,12 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   now permit secured maintenance. An encrypted on-host staging backup and isolated
   restore were verified before updating the API; no member data was exported.
 - Validation and live deployment evidence: [release record](docs/live-catalog-release.md).
+- Released source `d821632` to the public guest Worker and matching private
+  staging API/frontend. Live checks verified the 1,661-entry catalog, guides,
+  time/distance history, backup download, mobile layout and account gateway.
+  Every unrelated running container retained its ID. Final production browser
+  matrices passed 40 guest and 45 member cases; all deployment and maintenance
+  credentials were short-lived and revoked after use.
 
 ### Raouf: 2026-10-13 — Privacy Policy and Terms of Use
 

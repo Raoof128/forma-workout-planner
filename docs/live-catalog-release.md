@@ -51,7 +51,30 @@ is unchanged.
 
 Target: [forma.raoufabedini.dev](https://forma.raoufabedini.dev), public guest mode.
 Deployment uses a fresh one-hour scoped token which is revoked immediately.
-The live Worker version and post-deployment checks are recorded after deployment.
+Deployed from source commit `d821632`:
+
+| Surface                | Version                                                                   |
+| ---------------------- | ------------------------------------------------------------------------- |
+| Public Worker          | `6c14cf0d-b606-4f85-b20f-de2bb2c3c407`                                    |
+| Private staging Worker | `4235557f-2247-4da1-b6e2-b8cba05b40e7`                                    |
+| Private API image      | `forma-api:d821632`                                                       |
+| API OCI manifest       | `sha256:a7a1f88135fab4f0cd01bccd7b0c1031b40737217b1e421dfd1526d0b49af19b` |
+
+The Docker 29 host reports the OCI manifest digest; the sandbox reports the
+config digest recorded above. Both hashes were verified from the uploaded
+archive, and all four shared compiled-source hashes matched before activation.
+Only the API container was recreated. Every other running container kept its
+ID. The API retains UID 10001, a read-only root, 320 MiB limit and no published
+ports. The protected `.env` retains mode 0600; only its image tag changed.
+
+Live public Firefox checks returned 200 and verified 1,661 movements, 12 new
+templates, lazy licensed guides, saved time/distance history, backup download,
+legal pages, the tested main asset, and mobile layouts without overflow or page
+errors. Public `/api/health` remains 503 as required for guest mode.
+Private staging checks verified the same catalog and guides, API health 200,
+anonymous member workspace 401, working account forms and no page errors.
+No member data was changed by the browser smoke test. Its temporary Access
+policy and credential were removed, and all one-hour deployment tokens revoked.
 
 Environment version 5 reports unrestricted Internet access as enforced. Direct
 SSH is still refused before authentication, but the official Cloudflare
@@ -60,8 +83,7 @@ root login. Anonymous access was denied. Temporary Access credentials, DNS and
 SSH ingress were removed; the existing FORMA API ingress was preserved. See
 [SSH access](cloud-ssh-access.md) for the current developer documentation.
 
-Do not deploy this account frontend to private staging until its API uses the
-matching catalog/schema. Staging's existing frontend and API remain together.
+The staging API was updated before its matching account frontend.
 Public accounts remain gated by off-host backups and actionable alerting as
 required by `AGENT.md` and the existing security verdict. This is a public guest
 planner release, not a claim that account production is ready or that the catalog

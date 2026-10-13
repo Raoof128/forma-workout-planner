@@ -108,3 +108,8 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   staging member data into the sandbox; take the release backup and perform the
   isolated restore check on the Droplet. Reusable startup instructions were saved.
 - **Verification:** release evidence is recorded in `docs/live-catalog-release.md`.
+  Source `d821632` is deployed to the public guest Worker and matching private
+  staging API/frontend. Final browser matrices passed 40 guest and 45 member
+  cases; live public and private probes passed. Unrelated container IDs were
+  unchanged. Docker 29 reports the OCI manifest digest, not the sandbox's config
+  digest: verify both from the transferred archive before activation.
