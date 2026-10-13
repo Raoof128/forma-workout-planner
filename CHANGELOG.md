@@ -4,6 +4,30 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-13 — Expanded catalog and public planner
+
+- Added 1,645 sourced exercises to the 16 existing movements, with individual
+  licence attribution, full text guides, alias search and paginated browsing.
+  Current wger API coverage and excluded incomplete descriptions are recorded
+  in [catalog research](docs/research/runtime-catalog.md).
+- Added 12 editable workout templates and validated time/distance/carry logging,
+  history corrections and backups without counting these units as lifting volume.
+  Preserved legacy exercise IDs, plank units and aggregate workspace bounds.
+- Replaced the fake guest name and unavailable public account forms with working
+  local workspace controls; removed the fake production backend hostname.
+- Fixed rest timer deadlines beginning late in an asynchronous save queue.
+  Fixed URL hash changes missed between initial render and listener setup,
+  verified with a deterministic browser regression in three engines.
+  Updated Privacy Policy to version 1.1 for time and distance fields.
+- Included the shared catalog and measurement helper in the API image build.
+  Added a short-lived Cloudflare deployment-token helper and reusable environment
+  startup/networking instructions. Private staging remains unchanged while
+  sandbox SSH is unavailable; public accounts retain their release gates.
+  Published network version 5 and the official 2026 Cloudflare Access SSH method
+  now permit secured maintenance. An encrypted on-host staging backup and isolated
+  restore were verified before updating the API; no member data was exported.
+- Validation and live deployment evidence: [release record](docs/live-catalog-release.md).
+
 ### Raouf: 2026-10-13 — Privacy Policy and Terms of Use
 
 - **Scope:** professional legal pages for FORMA, drafted from official sources (OAIC APP guidelines, Privacy Act, Australian Consumer Law, GDPR/EDPB, Cloudflare and DigitalOcean DPAs). Not legal advice; recommend lawyer review before accounts open to the public.

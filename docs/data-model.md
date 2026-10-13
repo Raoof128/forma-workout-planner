@@ -20,11 +20,11 @@ The version 1 workspace shape is shared by guest mode, JSON backups, and the aut
 
 Routine names contain 1–60 trimmed characters. Routine exercises reference built-in exercise IDs and specify 1–12 sets, 1–100 reps, and 0–1,000 kg. Estimated duration is 1–1,000 minutes. Duplicate exercises within a routine are rejected; use multiple sets for the same exercise.
 
-A session snapshots the routine name and prescribed sets at the start. Each set has `weight`, `reps`, and `done`. Unfinished fields can be blank while being edited. Completed sets require valid numeric weight and integer reps. Fractional weights are supported consistently by validation and editing controls. Session notes can contain up to 10,000 characters. Each exercise can contain up to 100 logged sets.
+A session snapshots the routine name and prescribed sets at the start. Each set has `weight`, `reps`, and `done`. Depending on the exercise, routine prescriptions and sets also carry `durationSeconds` (1–86,400) and/or `distanceMeters` (1–1,000,000). Completed sets require all fields appropriate to that exercise's measurement profile. Unfinished fields can be blank while being edited. Fractional weights are supported consistently by validation and editing controls. Session notes can contain up to 10,000 characters. Each exercise can contain up to 100 logged sets, and each routine or session at most 100 exercises.
 
 `startedAt` and `restEnd` use nonnegative Unix milliseconds within JavaScript’s valid date range. A history record must include at least one completed set, and its ID cannot also identify the active session. `restSeconds` and `restPaused` use seconds; rest preferences range from 10 to 600 seconds at the data boundary. History uses a UTC ISO completion `date` and a `duration` in seconds. Display dates are calculated in Australia/Sydney, independently of the device's time zone. Import ordering is determined by parsed timestamps, not by array position.
 
-The profile name contains 1–50 trimmed characters and the weekly goal is 1–7 workouts. The starter profile is example data in guest mode; an empty account workspace uses the member's display name without inventing workout history.
+The profile name contains 1–50 trimmed characters and the weekly goal is 1–7 workouts. A new guest workspace starts with the name `Guest`; an empty account workspace uses the member's display name without inventing workout history.
 
 ## Compatibility and recovery
 
@@ -37,8 +37,8 @@ Recovery copies remain in browser storage and have no automatic retention policy
 ## Calculations
 
 - Completed sets: number of sets whose `done` flag is true.
-- Volume: sum of `weight × reps` across completed sets.
-- Best weight: maximum weight across completed sets for that exercise.
+- Volume: sum of `weight × reps` across completed load/reps sets; time and distance are excluded.
+- Best weight: maximum weight across completed load/reps sets for that exercise.
 - Estimated 1RM: actual weight for 1 rep; `weight × (1 + reps / 30)` for 2–12 reps; no estimate from higher-rep sets.
 - Recent volume chart: the most recent eight completed sessions, ordered by time.
 

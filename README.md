@@ -5,11 +5,11 @@
 FORMA is a workout planner built with React and Vite. Members can use an
 account-backed workspace that stores routines and workout history in
 self-hosted PostgreSQL, or use the separate local guest mode in a browser.
-The intended hosted architecture serves the frontend and same-origin API
-gateway from Cloudflare Workers and keeps the Node.js API and database on a
-private DigitalOcean host. The repository includes deployment configuration;
-it does not claim that the configured placeholder domains or staging services
-have been deployed.
+The public site at [forma.raoufabedini.dev](https://forma.raoufabedini.dev)
+uses browser-local guest storage. Cloudflare Workers serve the frontend; the
+account API and PostgreSQL run in isolated private staging on DigitalOcean.
+Accounts remain private pending the outstanding release gates in the
+[deployment record](docs/security/deployment-record.md).
 
 [Account docs](docs/accounts/README.md) · [Getting started](docs/getting-started.md) ·
 [User guide](docs/user-guide.md) · [Architecture](docs/architecture.md) ·
@@ -17,19 +17,21 @@ have been deployed.
 
 ## Features
 
-| Plan                               | Train                                        | Review and manage                                     |
-| ---------------------------------- | -------------------------------------------- | ----------------------------------------------------- |
-| Three editable starter routines    | Set-by-set weight and rep logging            | Editable workout history                              |
-| Custom routines and exercise order | Persistent rest timer and session notes      | Volume, completed sets, and personal bests            |
-| Weekly training schedule           | Exercise instructions while logging          | Validated JSON backup and restore                     |
-| Searchable 16-exercise library     | Resume an unfinished session                 | Account profile, security, and training-data settings |
-| Local guest mode or member account | Authenticated workspace sync across sessions | Session revocation, MFA, import, and export           |
+| Plan                                                   | Train                                        | Review and manage                           |
+| ------------------------------------------------------ | -------------------------------------------- | ------------------------------------------- |
+| Three starters and 12 additional templates             | Weight/reps, time, and distance logging      | Editable workout history                    |
+| Custom routines and exercise order                     | Persistent rest timer and session notes      | Volume, completed sets, and personal bests  |
+| Weekly training schedule                               | Exercise instructions while logging          | Validated JSON backup and restore           |
+| Searchable 1,661-exercise library with source licences | Resume an unfinished session                 | Profile, backup, and training-data settings |
+| Local guest mode or member account                     | Authenticated workspace sync across sessions | Session revocation, MFA, import, and export |
 
 The interface uses semantic controls, keyboard navigation, accessible dialogs,
 mobile workout controls, and locally hosted fonts. See the [verification
 record](docs/verification.md) for the original frontend baseline. Current
 account readiness is tracked separately in
 [docs/accounts/release-readiness.md](docs/accounts/release-readiness.md).
+See [catalog coverage and sourcing](docs/research/runtime-catalog.md) for the
+imported content, reproducible updates, and limits.
 
 ## Development
 
@@ -91,8 +93,9 @@ after member confirmation, so an existing v1 backup can be transferred.
 The Cloudflare Access token authenticates the Worker to the protected API
 origin; it is separate from member authentication. The Worker and API share an
 additional service secret. Keep both out of client assets. A configured
-production origin, Access/Tunnel route, email delivery, off-host backup, and
-restore drill are still deployment owner tasks.
+production account origin, off-host backups, and actionable alerting remain
+release gates. Staging Access/Tunnel, email delivery and an isolated restore
+were verified in the [deployment record](docs/security/deployment-record.md).
 
 ## Documentation
 

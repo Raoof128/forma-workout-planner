@@ -220,12 +220,11 @@ test(
     await page.getByRole("button", { name: "Chest", exact: true }).click();
     await page.getByLabel("Filter by equipment").selectOption("Barbell");
     await page.getByLabel("Search exercise library").fill("bench");
-    await expect(page.locator(".library-card")).toHaveCount(1);
-    await expect(page.locator(".library-card")).toContainText(
+    await expect(page.locator(".library-card").first()).toContainText(
       "Barbell bench press",
     );
 
-    const card = page.locator(".library-card");
+    const card = page.locator(".library-card").first();
     await card.focus();
     await page.keyboard.press("Enter");
     const dialog = page.getByRole("dialog");
@@ -246,7 +245,10 @@ test(
     await expect(
       page.getByRole("button", { name: "All muscles", exact: true }),
     ).toHaveAttribute("aria-pressed", "true");
-    await expect(page.locator(".library-card")).toHaveCount(16);
+    await expect(page.locator(".library-card")).toHaveCount(24);
+    await expect(
+      page.getByRole("button", { name: "Show more exercises", exact: true }),
+    ).toBeVisible();
   },
 );
 

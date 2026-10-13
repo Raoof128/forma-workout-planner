@@ -30,13 +30,27 @@ JSON errors and do not fall through to the SPA shell. Authenticated and API
 responses are not cached. Static responses receive the configured security
 headers.
 
-The staging and production origins in the checked-in configuration are
-`.invalid` placeholders. Replace them with owned HTTPS hostnames, add Cloudflare
-Worker secret bindings, configure a Tunnel route and Access Service Auth
-policy, and verify cookies and API paths before any deployment. Follow the
+Production serves `forma.raoufabedini.dev` in guest mode. Its API is deliberately
+unconfigured and returns 503; the public account screen provides working local
+profile, backup, and history controls. Private staging uses
+`forma-staging.raoufabedini.dev` and the Access-protected
+`forma-api-staging.raoufabedini.dev`. Follow the
 [infrastructure guide](accounts-infrastructure.md) for exact binding names and
 the [operations guide](accounts/operations.md) for deployment steps. A local
 Wrangler run does not test the real Access token, Tunnel, or remote API.
+
+For a public guest update, verify the guest build and use the one-hour scoped
+token helper; its token is held in memory and revoked in `finally`:
+
+```sh
+VITE_ACCOUNT_MODE=guest npm run build
+NODE_USE_ENV_PROXY=1 node scripts/deploy-public.mjs
+```
+
+The helper uses the existing infrastructure token to mint and revoke the
+temporary token. Do not put tokens in Vite variables or commit an `.env` file.
+Keep the previous Worker version for rollback. After deployment, check the real
+HTTPS site, library guides, local saving and backup download in a browser.
 
 ## Private API and PostgreSQL
 
@@ -53,10 +67,16 @@ DNS and routing (including NAT if needed) for Tunnel, security updates, email,
 and backups. Official DigitalOcean documentation retrieval was blocked in this
 execution environment; see [source status](accounts/sources.md).
 
-The local Compose definitions and scripts are configuration artifacts, not
-evidence of a provisioned Droplet or isolated cloud network. The current
-[release-readiness report](accounts/release-readiness.md) lists the deployment
-gates that still require owner credentials and staging.
+The [deployment record](security/deployment-record.md) records the existing
+private staging stack at `/opt/forma-staging`, its resource limits, and the
+completed live probes. Update only that Compose project on the shared host.
+The expanded catalog and timed workspace fields require the matching API build
+before deploying the new account frontend; the previous API rejects new IDs.
+
+Direct cloud sandbox SSH remains blocked before authentication. The verified
+[Cloudflare Access SSH method](cloud-ssh-access.md) provides a protected
+alternative using the existing Tunnel. Do not change host firewalls or unrelated
+services to solve sandbox egress.
 
 ## Deployment order, rollback, and recovery
 
@@ -70,6 +90,7 @@ migrations instead of editing applied SQL.
 An application rollback does not reverse member workspace data. Restore only
 to a pre-created isolated database whose name begins `forma_restore_`; verify
 the checksum and application-level integrity before considering recovery. The
-backup scripts are implemented, but no off-host upload or restore drill has
-been run. See [account operations](accounts/operations.md) and the
+backup scripts are implemented and a staging isolated restore was verified in
+the deployment record; off-host uploads and actionable alerting remain open
+before accounts can become public. See [account operations](accounts/operations.md) and the
 [infrastructure backup runbook](accounts-infrastructure.md#encrypted-backup-and-isolated-restore).

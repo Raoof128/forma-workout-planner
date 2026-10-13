@@ -1,6 +1,13 @@
 # Gym equipment and workout coverage research
 
-**12 October 2026 · Research and implementation proposal · Runtime library remains 16 exercises**
+**12 October 2026 · Original research and implementation proposal**
+
+The runtime was expanded on 13 October to **1,661 exercises**, with licensed
+text guides, search, 12 additional templates, and time/distance measurements.
+See [runtime catalog coverage](runtime-catalog.md) for the implemented subset,
+source accounting, refresh procedure and remaining limits. The tables below
+describe the original 16-exercise baseline and research proposals, not the
+current application's complete inventory.
 
 FORMA can cover a much broader gym through an extensible exercise catalog and several kinds of workout measurements. This research maps **76 equipment families**, **236 exercise candidates** (16 existing and 220 proposed), and **12 measurement profiles**. It is a broad coverage baseline, not a claim to enumerate every machine model, exercise variation, or training system worldwide.
 

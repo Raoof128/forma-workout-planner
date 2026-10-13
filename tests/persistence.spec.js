@@ -91,7 +91,7 @@ test("restore after quota recovery preserves temporary edits and saved originals
       .map((key) => JSON.parse(localStorage.getItem(key)).profile.name),
   );
   expect(originals).toContain("Temporary profile");
-  expect(originals).toContain("Alex Morgan");
+  expect(originals).toContain("Guest");
 });
 
 test("starting stale routine details cannot silently use old prescriptions", async ({

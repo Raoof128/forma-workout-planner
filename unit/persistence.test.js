@@ -65,7 +65,7 @@ test("initialization and mutations handle a rejecting Web Locks API", async () =
   assert.equal(result.data.revision, 1);
   assert.equal(
     parseBackup(state.entries.get(STORAGE_KEY)).profile.name,
-    "Alex Morgan",
+    "Guest",
   );
 });
 
@@ -103,7 +103,7 @@ test("a mutation error is never retried or partially adopted", async () => {
     /Conflict/,
   );
   assert.equal(calls, 1);
-  assert.equal(repository.getSnapshot().data.profile.name, "Alex Morgan");
+  assert.equal(repository.getSnapshot().data.profile.name, "Guest");
 });
 
 test("temporary mode advances revisions and rejects a stale restore confirmation", async () => {
@@ -139,10 +139,7 @@ test("restoring from temporary mode preserves both original disk and memory", as
   const originals = [...state.entries]
     .filter(([key]) => key !== STORAGE_KEY)
     .map(([, raw]) => parseBackup(raw).profile.name);
-  assert.deepEqual(
-    new Set(originals),
-    new Set(["Alex Morgan", "Unsaved work"]),
-  );
+  assert.deepEqual(new Set(originals), new Set(["Guest", "Unsaved work"]));
   assert.equal(state.repository.getSnapshot().data.revision, revision + 1);
 });
 
@@ -174,7 +171,7 @@ test("unreadable storage blocks replacement and leaves in-memory data intact", a
     /Recovery could not be saved/,
   );
   assert.equal(state.entries.size, 1);
-  assert.equal(state.repository.getSnapshot().data.profile.name, "Alex Morgan");
+  assert.equal(state.repository.getSnapshot().data.profile.name, "Guest");
 });
 
 test("repeated recoveries in the same millisecond keep distinct originals", async () => {
@@ -187,7 +184,7 @@ test("repeated recoveries in the same millisecond keep distinct originals", asyn
   const names = [...state.entries]
     .filter(([key]) => key !== STORAGE_KEY)
     .map(([, raw]) => parseBackup(raw).profile.name);
-  assert.deepEqual(names, ["Alex Morgan", "Restored"]);
+  assert.deepEqual(names, ["Guest", "Restored"]);
 });
 
 test("two repositories serialize independent mutations without losing fields", async () => {

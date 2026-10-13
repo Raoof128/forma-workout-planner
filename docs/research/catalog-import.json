@@ -1,0 +1,43 @@
+{
+  "freeRevision": "f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5",
+  "wgerRevision": "d09dd5e50e7dbeafe492b1a9b7c5cb1f1e89c73e",
+  "sourceRecords": 876,
+  "importedAdditional": 1645,
+  "legacyPreserved": 16,
+  "total": 1661,
+  "wgerAdded": 654,
+  "wgerExcluded": 0,
+  "liveAdded": 133,
+  "contentOnly": true,
+  "excludedImages": true,
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/wger-project/wger/d09dd5e50e7dbeafe492b1a9b7c5cb1f1e89c73e/wger/core/fixtures/licenses.json",
+      "sha256": "edf3db0c27a00e4650bf6200753f0e02dd851439c95cc846c1aa78c0d07e2c54"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/wger-project/wger/d09dd5e50e7dbeafe492b1a9b7c5cb1f1e89c73e/wger/exercises/fixtures/categories.json",
+      "sha256": "938f79dd44b931c7898d8b0e31bc8986ff179a09b74bf29760354f10aae7aa0f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/wger-project/wger/d09dd5e50e7dbeafe492b1a9b7c5cb1f1e89c73e/wger/exercises/fixtures/equipment.json",
+      "sha256": "1a4ec8c9c13bb35ea2c5a04c762d2872ececdfb34f1eec1ddee7ae9418cf29e0"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/wger-project/wger/d09dd5e50e7dbeafe492b1a9b7c5cb1f1e89c73e/wger/exercises/fixtures/exercise-base-data.json",
+      "sha256": "3b003dd64259ef6e06fac5e6cd6fbc7a1170aafebf1ee82b69039454cfc30254"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/wger-project/wger/d09dd5e50e7dbeafe492b1a9b7c5cb1f1e89c73e/wger/exercises/fixtures/muscles.json",
+      "sha256": "33a532aad6632a9e5c1edb80c959489d7980bb5d0a10a8fbe4aef70b7bed79ad"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/wger-project/wger/d09dd5e50e7dbeafe492b1a9b7c5cb1f1e89c73e/wger/exercises/fixtures/translations.json",
+      "sha256": "e76dc38796fa4e002855832209772535aac819043c348a88a98fe3949596c207"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/dist/exercises.json",
+      "sha256": "5bb747e3fc658f095a60dcbf6d53c96627acdcc6ffb6fffde86f7e26995d40bf"
+    }
+  ]
+}

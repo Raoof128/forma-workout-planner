@@ -1,5 +1,6 @@
 import { z } from "zod";
-import { exercises, initialData, dateKey } from "./data.js";
+import { exercises, exerciseById, initialData, dateKey } from "./data.js";
+import { validMeasurement } from "./exerciseMetrics.js";
 
 export const STORAGE_KEY = "forma-v1";
 export const MAX_BACKUP_BYTES = 20 * 1024 * 1024;
@@ -14,7 +15,17 @@ const id = z.string().min(1).max(200);
 const exerciseId = z.enum(exercises.map((exercise) => exercise.id));
 const editableNumber = z.union([number, z.literal("")]);
 const setSchema = z
-  .object({ weight: editableNumber, reps: editableNumber, done: z.boolean() })
+  .object({
+    weight: editableNumber,
+    reps: editableNumber,
+    done: z.boolean(),
+    durationSeconds: z
+      .union([number.min(0).max(86400), z.literal("")])
+      .optional(),
+    distanceMeters: z
+      .union([number.min(0).max(1000000), z.literal("")])
+      .optional(),
+  })
   .refine(
     (set) =>
       !set.done ||
@@ -38,9 +49,23 @@ const sessionSchema = z.object({
   restEnd: timestamp.nullable().default(null),
   restPaused: number.min(0).max(600).nullable().default(null),
   exercises: z
-    .array(z.object({ exerciseId, sets: z.array(setSchema).min(1).max(100) }))
+    .array(
+      z
+        .object({ exerciseId, sets: z.array(setSchema).min(1).max(100) })
+        .superRefine((entry, context) => {
+          const exercise = exerciseById.get(entry.exerciseId);
+          entry.sets.forEach((set, index) => {
+            if (set.done && !validMeasurement(exercise, set))
+              context.addIssue({
+                code: "custom",
+                message: "Completed sets require valid exercise measurements.",
+                path: ["sets", index],
+              });
+          });
+        }),
+    )
     .min(1)
-    .max(exercises.length)
+    .max(100)
     .refine(unique("exerciseId"), "Duplicate exercise"),
 });
 const routineSchema = z.object({
@@ -52,15 +77,22 @@ const routineSchema = z.object({
   image: number.int().min(0).max(2),
   exercises: z
     .array(
-      z.object({
-        exerciseId,
-        sets: number.int().min(1).max(12),
-        reps: number.int().min(1).max(100),
-        weight: number.min(0).max(1000),
-      }),
+      z
+        .object({
+          exerciseId,
+          sets: number.int().min(1).max(12),
+          reps: number.int().min(1).max(100),
+          weight: number.min(0).max(1000),
+          durationSeconds: number.positive().max(86400).optional(),
+          distanceMeters: number.positive().max(1000000).optional(),
+        })
+        .refine(
+          (item) => validMeasurement(exerciseById.get(item.exerciseId), item),
+          "Routine targets require valid exercise measurements.",
+        ),
     )
     .min(1)
-    .max(exercises.length)
+    .max(100)
     .refine(unique("exerciseId"), "Duplicate exercise"),
 });
 export const dataSchema = z.object({

@@ -43,7 +43,6 @@
       "vars": {
         "ENVIRONMENT": "production",
         "APP_ORIGIN": "https://forma.raoufabedini.dev",
-        "BACKEND_URL": "https://forma-api.invalid",
       },
     },
   },

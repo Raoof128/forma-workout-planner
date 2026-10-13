@@ -132,6 +132,12 @@ function AccountWorkspace() {
         sets: Array.from({ length: item.sets }, () => ({
           weight: item.weight,
           reps: item.reps,
+          ...(item.durationSeconds === undefined
+            ? {}
+            : { durationSeconds: item.durationSeconds }),
+          ...(item.distanceMeters === undefined
+            ? {}
+            : { distanceMeters: item.distanceMeters }),
           done: false,
         })),
       })),
@@ -408,6 +414,20 @@ function AccountWorkspace() {
                   routines={data.routines}
                   onOpen={(routine) => setModal({ type: "detail", routine })}
                   onCreate={() => setModal({ type: "editor" })}
+                  onUseTemplate={async (template) => {
+                    const copy = {
+                      ...structuredClone(template),
+                      id: createId(),
+                    };
+                    const result = await change(
+                      (current) => ({
+                        ...current,
+                        routines: [...current.routines, copy],
+                      }),
+                      "Workout template added to your routines.",
+                    );
+                    if (result) setModal({ type: "detail", routine: copy });
+                  }}
                 />
               )}
               {visiblePage === "library" && <Library />}

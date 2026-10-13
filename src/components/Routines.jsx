@@ -13,7 +13,15 @@ import {
 } from "lucide-react";
 import { Button, Modal, RoutineCard, PageHeading } from "./UI";
 import { createId, exercises } from "../data";
-export function Routines({ routines, onOpen, onCreate }) {
+import {
+  defaultPrescription,
+  metricFields,
+  validMeasurement,
+  measurementText,
+} from "../exerciseMetrics.js";
+import { workoutTemplates } from "../workoutTemplates.js";
+import { matchesExercise } from "../catalog/search.js";
+export function Routines({ routines, onOpen, onCreate, onUseTemplate }) {
   return (
     <>
       <PageHeading
@@ -43,6 +51,31 @@ export function Routines({ routines, onOpen, onCreate }) {
           <h3>A routine of your own</h3>
           <p>Build your next favorite workout.</p>
         </button>
+      </div>
+      <div className="section-title">
+        <h2>Workout templates</h2>
+        <span className="small muted">
+          {workoutTemplates.length} starting points
+        </span>
+      </div>
+      <p className="muted">
+        Add a template to your routines, then adjust its sets, measurements and
+        load to suit you.
+      </p>
+      <div className="routine-grid full-grid">
+        {workoutTemplates.map((template) => (
+          <button
+            key={template.id}
+            className="panel workout-template"
+            onClick={() => onUseTemplate(template)}
+          >
+            <h3>{template.name}</h3>
+            <p>{template.description}</p>
+            <span className="small muted">
+              {template.exercises.length} exercises · {template.minutes} min
+            </span>
+          </button>
+        ))}
       </div>
     </>
   );
@@ -82,7 +115,10 @@ export function RoutineDetail({ routine, onClose, onStart, onEdit, onDelete }) {
                   </span>
                 </div>
                 <span className="sets-label">
-                  {item.sets} × {item.reps} reps
+                  {item.sets} ×{" "}
+                  {e.metric && e.metric !== "load_reps"
+                    ? measurementText(e, item)
+                    : `${item.reps} reps`}
                 </span>
               </div>
             );
@@ -114,6 +150,10 @@ export function RoutineEditor({ routine, onClose, onSave }) {
   const [items, setItems] = useState(routine?.exercises || []);
   const [minutes, setMinutes] = useState(routine?.minutes || 45);
   const [query, setQuery] = useState("");
+  const [pickerLimit, setPickerLimit] = useState(40);
+  const matchingExercises = exercises.filter((exercise) =>
+    matchesExercise(exercise, query),
+  );
   const [error, setError] = useState("");
   const [discard, setDiscard] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -151,9 +191,7 @@ export function RoutineEditor({ routine, onClose, onSave }) {
         ...current,
         removed.current.get(exercise.id) || {
           exerciseId: exercise.id,
-          sets: 3,
-          reps: 10,
-          weight: exercise.weight,
+          ...defaultPrescription(exercise),
         },
       ]);
   }
@@ -189,17 +227,14 @@ export function RoutineEditor({ routine, onClose, onSave }) {
           !Number.isInteger(item.sets) ||
           item.sets < 1 ||
           item.sets > 12 ||
-          !Number.isInteger(item.reps) ||
-          item.reps < 1 ||
-          item.reps > 100 ||
-          typeof item.weight !== "number" ||
-          !Number.isFinite(item.weight) ||
-          item.weight < 0 ||
-          item.weight > 1000,
+          !validMeasurement(
+            exercises.find((exercise) => exercise.id === item.exerciseId),
+            item,
+          ),
       )
     ) {
       setError(
-        "Use 1–12 sets, 1–100 reps, a weight from 0–1,000 kg, and a valid duration.",
+        "Use 1–12 sets and valid measurements in the units shown for each exercise.",
       );
       return;
     }
@@ -285,57 +320,58 @@ export function RoutineEditor({ routine, onClose, onSave }) {
             <input
               aria-label="Search exercises for routine"
               value={query}
-              onChange={(event) => setQuery(event.target.value)}
+              onChange={(event) => {
+                setQuery(event.target.value);
+                setPickerLimit(40);
+              }}
               placeholder="Search exercises…"
             />
           </div>
           <div className="exercise-picker">
-            {!exercises.some((exercise) =>
-              `${exercise.name} ${exercise.muscle}`
-                .toLowerCase()
-                .includes(query.trim().toLowerCase()),
-            ) && (
+            {!matchingExercises.length && (
               <p className="picker-empty" role="status">
                 No matching exercises. Try a different name or muscle group.
               </p>
             )}
-            {exercises
-              .filter((exercise) =>
-                `${exercise.name} ${exercise.muscle}`
-                  .toLowerCase()
-                  .includes(query.trim().toLowerCase()),
-              )
-              .map((exercise) => {
-                const picked = items.some(
-                  (item) => item.exerciseId === exercise.id,
-                );
-                return (
-                  <button
-                    type="button"
-                    key={exercise.id}
-                    aria-pressed={picked}
-                    className={picked ? "picked" : ""}
-                    onClick={() => toggle(exercise)}
-                  >
-                    <Dumbbell size={17} />
-                    <span>
-                      {exercise.name}
-                      <small>
-                        {exercise.muscle} · {exercise.equipment}
-                      </small>
-                    </span>
-                    {picked ? <Check size={18} /> : <Plus size={18} />}
-                  </button>
-                );
-              })}
+            {matchingExercises.slice(0, pickerLimit).map((exercise) => {
+              const picked = items.some(
+                (item) => item.exerciseId === exercise.id,
+              );
+              return (
+                <button
+                  type="button"
+                  key={exercise.id}
+                  aria-pressed={picked}
+                  className={picked ? "picked" : ""}
+                  onClick={() => toggle(exercise)}
+                >
+                  <Dumbbell size={17} />
+                  <span>
+                    {exercise.name}
+                    <small>
+                      {exercise.muscle} · {exercise.equipment}
+                    </small>
+                  </span>
+                  {picked ? <Check size={18} /> : <Plus size={18} />}
+                </button>
+              );
+            })}
           </div>
+          {matchingExercises.length > pickerLimit && (
+            <Button
+              variant="secondary"
+              onClick={() => setPickerLimit((limit) => limit + 40)}
+            >
+              Show more matching exercises
+            </Button>
+          )}
           {items.length > 0 && (
             <div className="prescriptions">
               <div className="prescription labels">
                 <span>EXERCISE / ORDER</span>
                 <span>SETS</span>
-                <span>REPS</span>
-                <span>KG</span>
+                <span>TARGET</span>
+                <span>MEASUREMENT</span>
               </div>
               {items.map((item, index) => {
                 const exercise = exercises.find(
@@ -369,21 +405,20 @@ export function RoutineEditor({ routine, onClose, onSave }) {
                         <small>1 rep = 10-second hold</small>
                       )}
                     </div>
-                    {["sets", "reps", "weight"].map((key) => (
+                    {[
+                      { key: "sets", label: "SETS", min: 1, max: 12, step: 1 },
+                      ...metricFields(exercise),
+                    ].map(({ key, label, min, max, step }) => (
                       <label className="prescription-field" key={key}>
-                        <span>
-                          {key === "weight" ? "WEIGHT (KG)" : key.toUpperCase()}
-                        </span>
+                        <span>{label}</span>
                         <input
                           aria-label={`${exercise.name} ${key}`}
                           type="number"
-                          min={key === "weight" ? 0 : 1}
-                          max={
-                            key === "sets" ? 12 : key === "reps" ? 100 : 1000
-                          }
-                          step={key === "weight" ? "any" : 1}
+                          min={min}
+                          max={max}
+                          step={step}
                           required
-                          value={item[key]}
+                          value={item[key] ?? ""}
                           onChange={(event) =>
                             update(
                               item.exerciseId,

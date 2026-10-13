@@ -1271,6 +1271,7 @@ input[type="checkbox"] {
 /* Exercise library */
 .library-toolbar {
   display: flex;
+  flex-wrap: wrap;
   gap: 14px;
   margin: 25px 0 18px;
 }
@@ -1392,7 +1393,39 @@ input[type="checkbox"] {
 }
 .instruction {
   line-height: 1.85;
+  white-space: pre-line;
   color: #505b52;
+}
+.catalog-more {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  margin: 24px 0;
+}
+.catalog-sources,
+.exercise-attribution {
+  overflow-wrap: anywhere;
+  line-height: 1.8;
+}
+.catalog-sources {
+  margin: 24px 0;
+}
+.workout-template {
+  padding: 24px;
+  text-align: left;
+  cursor: pointer;
+  color: var(--ink);
+}
+.workout-template p {
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 12px 0;
+}
+.workout-template:hover {
+  border-color: #71834a;
+}
+.library-toolbar .search-field {
+  min-width: min(260px, 100%);
 }
 .tip {
   display: flex;

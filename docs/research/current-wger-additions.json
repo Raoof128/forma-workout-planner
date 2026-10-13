@@ -1,0 +1,2755 @@
+{
+  "retrievedAt": "2026-10-13T00:09:37.878Z",
+  "sourceRecords": 925,
+  "retainedSupplementalEntries": 133,
+  "dispositions": {
+    "alreadyIncluded": 809,
+    "noEnglishTranslation": 0,
+    "licenseExcluded": 0,
+    "incompleteDescription": 116,
+    "added": 0
+  },
+  "pages": [
+    {
+      "url": "https://wger.de/api/v2/exerciseinfo/?language=2&limit=100",
+      "sha256": "0b3e491635686df34eaeb593e4485d253217de7005d5f832b99beaaaa59015bd"
+    },
+    {
+      "url": "https://wger.de/api/v2/exerciseinfo/?language=2&limit=100&offset=100",
+      "sha256": "e88a3eff13afbe6dc3fd00dea9049735f4dc05598c9c4876b4c95b01cb43176b"
+    },
+    {
+      "url": "https://wger.de/api/v2/exerciseinfo/?language=2&limit=100&offset=200",
+      "sha256": "81db6070b1146b3e384b185efffa0628926a1cad8b7877d9e06f3ef256394b08"
+    },
+    {
+      "url": "https://wger.de/api/v2/exerciseinfo/?language=2&limit=100&offset=300",
+      "sha256": "c14b1ab3d9bba0595231934045e54e1a6bfbbf8018e40fb9a31572ff9cb83933"
+    },
+    {
+      "url": "https://wger.de/api/v2/exerciseinfo/?language=2&limit=100&offset=400",
+      "sha256": "e69e71170f0ad63aea920f62eaf741570c0418491d7c06727fdd8dc0a42b5f6d"
+    },
+    {
+      "url": "https://wger.de/api/v2/exerciseinfo/?language=2&limit=100&offset=500",
+      "sha256": "e6ece08575b2c1a334c679259108500eeb9add7563c5b8b9470b2507d9120cdd"
+    },
+    {
+      "url": "https://wger.de/api/v2/exerciseinfo/?language=2&limit=100&offset=600",
+      "sha256": "9078f21d4ccbb43614c22f74a0ec905b84201ade7a7c245bbcae1b09696b0bcd"
+    },
+    {
+      "url": "https://wger.de/api/v2/exerciseinfo/?language=2&limit=100&offset=700",
+      "sha256": "f7b6d6df2073f692cd3a301b731a3279ae3cccba414e43a3a7a7920e408d1937"
+    },
+    {
+      "url": "https://wger.de/api/v2/exerciseinfo/?language=2&limit=100&offset=800",
+      "sha256": "98fa8b69174db4fbf85b9dc822f89352c57dfd71a83c48023af4e32bf0727617"
+    },
+    {
+      "url": "https://wger.de/api/v2/exerciseinfo/?language=2&limit=100&offset=900",
+      "sha256": "9e67a34b623beb10ad146b1f853268243ee8bf1d44bda3adfd5306b5e5e3391a"
+    }
+  ],
+  "additions": [
+    {
+      "id": "wger-5c414175-fe72-455a-ba8f-a0575cf792bd",
+      "name": "Chest Press",
+      "muscle": "Chest",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Chest"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "1. Adjust the seat height so that the grips are parallel to your chest.\n2. Use your legs to push the foot forward pedal.\n3. Bring the handles to the start position.\n4. Keep your back in contact with the back pad, press outwards.\n5. Press the handles away from your chest and exhale.\n6. Allow the handles to come in gently until they reach your chest.\n7. Allow the handles to return to your chest as you inhale.",
+      "aliases": ["Machine Chest Press"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/129/view/",
+        "author": "wger.de",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-68e0dbba-2d1e-4a56-8378-8824c1de3342",
+      "name": "Front Raises with Plates",
+      "muscle": "Back",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Shoulders", "Trapezius"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "The plate front raise is a variation of the dumbbell front raise where the lifter holds a weight plate between two hands, rather than using a dumbbell, barbell, or other weight. It can provide variety in a shoulder-focused muscle-building workout, or as part of an upper body or full-body circuit.\n\n1. While standing straight, hold a barbell plate in both hands at the 3 and 9 o'clock positions. Your palms should be facing each other and your arms should be extended and locked with a slight bend at the elbows and the plate should be down near your waist in front of you as far as you can go. **Tip**: The arms will remain in this position throughout the exercise. This will be your starting position.\n2. Slowly raise the plate as you exhale until it is a little above shoulder level. Hold the contraction for a second. As you inhale, slowly lower the plate back down to the starting position.\n3. Repeat for the recommended amount of repetitions.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/254/view/",
+        "author": "Marius",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-fff05d7a-f374-4c8a-9885-39f49076918f",
+      "name": "Lat Pull Down (Straight Back)",
+      "muscle": "Back",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Lats"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "The lat pull down is an exercise used to build the muscles of the back. While the exercise will primarily target the lats, you will also notice a fair amount of bicep and middle back activation.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/355/view/",
+        "author": "drthurlow",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-de22963a-5d42-4999-860e-377f64359432",
+      "name": "Diamond push ups",
+      "muscle": "Chest",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Chest"],
+      "secondaryMuscles": ["Triceps"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Start: Get into a plank. Place hands close together under your chest so thumbs and index fingers form a diamond shape.\n\nLower: Bend your elbows to lower your chest toward your hands. Keep your body straight.\n\nPush: Push back up until arms are fully extended.\n\nNew note Keep elbows close to your body and core tight.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/386/view/",
+        "author": "notdefine",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-af2f774c-296c-4d14-8e4a-fad77175ae37",
+      "name": "Roman Chair Crunch",
+      "muscle": "Core",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Abs"],
+      "secondaryMuscles": ["Obliquus externus abdominis"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Crunches on roman chair. Keep your torso straight, abs tight, and don't come up all the way vertical or lie flat to keep constant tension on your abs.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/505/view/",
+        "author": "MaddieBeasley",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-01976085-6701-45ea-b152-5c46ba60550d",
+      "name": "Upright Row w/ Dumbbells",
+      "muscle": "Back",
+      "equipment": "Dumbbell",
+      "primaryMuscles": ["Shoulders", "Trapezius"],
+      "secondaryMuscles": ["Biceps"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Hold a dumbbell in each hand in front of your body. Keep your palms towards your body. Lift you hands straight up until your hands are under your chin, then lower them. Repeat the exercise.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/694/view/",
+        "author": "koreyhinton",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-55b9d286-c4cc-4a29-97ad-58cb13c2bb7e",
+      "name": "Wide-grip Pulldown",
+      "muscle": "Back",
+      "equipment": "Cable machine",
+      "primaryMuscles": ["Lats"],
+      "secondaryMuscles": [
+        "Shoulders",
+        "Brachialis",
+        "Serratus anterior",
+        "Trapezius"
+      ],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "1. **Starting position:**\n\n * Arms extended overhead, feeling a stretch in your lats.\n * Keep your shoulders depressed (don’t shrug upward).\n\n2. **Pulling phase (concentric):**\n * Pull the bar down to your upper chest or collarbone area by driving your elbows down and back.\n * Keep your chest lifted and squeeze your shoulder blades together at the bottom.",
+      "aliases": ["Lat Pulldown (Wide Grip)", "Lat Pulldown (Wide Grip)"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/723/view/",
+        "author": "tuckerm",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-ef2df6a2-41df-4a25-b2e0-4808dc2c3305",
+      "name": "Smith Machine Slight Incline Press",
+      "muscle": "Chest",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Chest"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "### * **Execution** * **Start position:**\n\n* Unrack the bar and hold it above your upper chest with arms fully extended.\n* Keep your shoulder blades **retracted and pressed into the bench**.\n* **Lowering phase (eccentric):**\n* Slowly bring the bar down to just below your collarbone or upper chest.\n* Maintain control — don’t bounce the bar.\n* **Pressing phase (concentric):**\n* Push the bar upward in a straight line until your arms are fully extended.\n* Focus on **squeezing your upper chest** at the top.\n* **Lock and repeat:**\n* Complete your reps, then safely rack the bar back into the hooks.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/925/view/",
+        "author": "novadani",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-5c4065d5-5e0a-4155-92e5-34a080587a64",
+      "name": "Cat-Cow",
+      "muscle": "Back",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "On all fours. Arch spine up (cat) then drop it down (cow). Breathe with movement.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1938/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-0d50ce1e-1731-40e8-82e0-c8f512d0a8c9",
+      "name": "Neck CARs",
+      "muscle": "Shoulders",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Controlled Articular Rotations. Slow full circles 3 each way. Cervical mobility.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1939/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-4632c471-5c5e-4570-9dec-509c5d4d58bb",
+      "name": "Diaphragmatic Breathing",
+      "muscle": "Full body",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "cardio",
+      "level": "Unspecified",
+      "description": "Belly breathing. Hand on chest stays still, hand on belly rises. 8-10 slow breaths.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1940/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-51fe0871-1390-4755-bd04-01a93e32f533",
+      "name": "dumbbell snatch",
+      "muscle": "Legs",
+      "equipment": "Dumbbell",
+      "primaryMuscles": ["Hamstrings", "Glutes", "Quads"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Key Steps to Execute Correctly:\n\nSetup: Place the dumbbell between your feet, with your shoulders above your hips, chest up, and back flat.\n\nThe Pull: Explosively extend your hips, knees, and ankles (triple extension) to drive the dumbbell upward, keeping your elbow high and the dumbbell close to your body.\n\nThe Catch: Quickly flex your hips and knees to drop under the dumbbell and receive it overhead with your arm locked in position, landing in a half-squat stance.\n\nCommon Mistakes: Using your arms too much to lift the weight instead of your legs, having a low elbow during the pull phase, and misaligning your shoulder, elbow, and wrist in the final position. For beginners, it’s recommended to start with light loads, focus on technique, and perform 3 to 5 sets of 3 to 5 reps per arm.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1947/view/",
+        "author": "Aleid",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-c463f618-2777-4836-9c57-92a46d87cf1b",
+      "name": "1 Leg Box Squat",
+      "muscle": "Legs",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Hamstrings", "Quads"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "This exercise requires a sturdy box or a chair. Simple stand ~6 inches in front of it and balance yourself on one leg. From here, begin squatting down in a smooth controlled motion while keeping your other leg straight out in front of you for balance. Slowly sit down on the box, pause for a 1 count and push back up with the working leg, while never letting your other leg touch the ground.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1948/view/",
+        "author": "jesusd",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-2cd0135b-8ef1-4bca-8a75-5fe2f507bee6",
+      "name": "Limber 11",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Limber 11\nSource: Joe DeFranco\n\n1. Foam Roll IT Band [soft_tissue] - 10-15 passes\n2. Foam Roll Adductors [soft_tissue] - 10-15 passes\n3. SMR Glutes (lax ball) [soft_tissue] - 30 sec-2 min\n4. Bent-knee Iron Cross [dynamic] - 5-10 reps each side\n5. Roll-overs into V-sits [dynamic] - 10 reps\n6. Rocking Frog Stretch [dynamic] - 10 reps\n7. Fire Hydrant Circles [dynamic] - 10 forward / 10 backward\n8. Mountain Climbers [dynamic] - 10 reps each leg\n9. Cossack Squats [dynamic] - 5-10 reps each side\n10. Seated Piriformis Stretch [isometric] - 20-30 sec each side\n11. Rear-foot-elevated Hip Flexor Stretch [dynamic + 3s hold] - 5-10 reps each side",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1949/view/",
+        "author": "Pete-E automation",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-46adc238-9ea9-4be4-a061-74ae50f5b7c7",
+      "name": "Foam Roll IT Band",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Foam Roll IT Band\nPart of: Limber 11\nSource: Joe DeFranco\nPrescription: 10-15 passes\nType: soft_tissue",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1950/view/",
+        "author": "Pete-E automation",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-99a7651b-afc1-4007-ab80-aac590bbfbfe",
+      "name": "SMR Glutes (lax ball)",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "SMR Glutes (lax ball)\nPart of: Limber 11\nSource: Joe DeFranco\nPrescription: 30 sec-2 min\nType: soft_tissue",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1952/view/",
+        "author": "Pete-E automation",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-4ce9740f-313d-4419-8a23-6c884d3a1a17",
+      "name": "Bent-knee Iron Cross",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Bent-knee Iron Cross\nPart of: Limber 11\nSource: Joe DeFranco\nPrescription: 5-10 reps each side\nType: dynamic",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1953/view/",
+        "author": "Pete-E automation",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-752c0380-a0f9-4332-8265-cf503bac4703",
+      "name": "Roll-overs into V-sits",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Roll-overs into V-sits\nPart of: Limber 11\nSource: Joe DeFranco\nPrescription: 10 reps\nType: dynamic",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1954/view/",
+        "author": "Pete-E automation",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-5d40cca8-ec48-4711-b97c-f744c5afabbf",
+      "name": "Fire Hydrant Circles",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Fire Hydrant Circles\nPart of: Limber 11\nSource: Joe DeFranco\nPrescription: 10 forward / 10 backward\nType: dynamic",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1956/view/",
+        "author": "Pete-E automation",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-ad5653e4-098e-4a84-af5b-a9349b108555",
+      "name": "Seated Piriformis Stretch",
+      "muscle": "Legs",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Seated Piriformis Stretch\nPart of: Limber 11\nSource: Joe DeFranco\nPrescription: 20-30 sec each side\nType: static\nIncludes isometric hold.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1959/view/",
+        "author": "Pete-E automation",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-2f2192c3-6e95-41b5-9438-2f1497f56767",
+      "name": "Rear-foot-elevated Hip Flexor Stretch",
+      "muscle": "Legs",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Rear-foot-elevated Hip Flexor Stretch\nPart of: Limber 11\nSource: Joe DeFranco\nPrescription: 5-10 reps each side\nType: dynamic\nIncludes dynamic movement plus 3s hold.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1960/view/",
+        "author": "Pete-E automation",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-2f10d91f-6c12-471b-bb9e-80840a56ce01",
+      "name": "Step Jack",
+      "muscle": "Legs",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Quads"],
+      "secondaryMuscles": [
+        "Shoulders",
+        "Glutes",
+        "Obliquus externus abdominis",
+        "Abs"
+      ],
+      "category": "cardio",
+      "level": "Unspecified",
+      "description": "The Step Jack is a low-impact plyometric-style move that provides cardiovascular benefits without the joint stress of jumping. It works the entire body, specifically targeting the legs, core, and shoulders. This move is ideal for beginners, individuals with joint sensitivities, or as a dynamic warm-up to gradually elevate the heart rate.\nNotes (Instructions):\n1. ​Stand upright with your feet together and arms at your sides.\n2. ​Step your right foot out to the side while simultaneously swinging both arms up above your head.\n3. Bring your right foot back to the center and lower your arms.\n4. ​Immediately repeat the movement, stepping out with your left foot.\n5. ​Continue alternating sides at a steady, rhythmic pace.",
+      "aliases": ["Side Step Jack", "Low Impact Jumping Jack"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1962/view/",
+        "author": "Anon#2",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-2398e14f-02a6-4fdc-9f69-029e52dfe033",
+      "name": "Slow Squat",
+      "muscle": "Legs",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Quads"],
+      "secondaryMuscles": ["Hamstrings", "Glutes", "Abs"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "​A tempo-based squat that uses controlled movement to increase muscle tension and improve lower-body stability.\n1. ​Lower: Descend slowly for 3 seconds.\n2. ​Pause: Hold at the bottom for 1 second.\n3. ​Stand: Return to the starting position at a normal pace.\n4. Form: Keep your chest up and weight in your heels.",
+      "aliases": ["Tempo Squat", "​3-1-1 Squat"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1963/view/",
+        "author": "Anon#2",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-1842e1be-ac67-4f34-a527-4ca2b72d8e11",
+      "name": "Wide Push-Up",
+      "muscle": "Chest",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Chest"],
+      "secondaryMuscles": ["Abs", "Triceps"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "​A push-up variation with a wider hand placement to increase the emphasis on the outer chest muscles and shoulders.\n1. ​Setup: Place hands wider than shoulder-width apart on the floor.\n1. Lower: Descend until your chest nearly touches the floor, keeping your core tight.\n1. ​Push: Drive through your palms to return to the start position.\n1. ​Form: Don't let your lower back sag; keep a straight line from head to heels.",
+      "aliases": ["Wide Grip Push-Up"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1964/view/",
+        "author": "Anon#2",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-fad49a13-b2a0-4b1f-b262-29b32248257d",
+      "name": "Marching High Knees",
+      "muscle": "Legs",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Quads"],
+      "secondaryMuscles": ["Calves", "Glutes", "Abs"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "A low-impact cardio and mobility exercise that strengthens the hip flexors and improves balance.\n1. ​Movement: Stand tall and lift one knee toward your chest as high as comfortable.\n1. ​Arms: Swing the opposite arm forward as you lift your knee, similar to a walking motion.\n1. ​Core: Keep your abs engaged to maintain an upright posture.\n1. ​Pace: Perform the movement with control, alternating legs rhythmically.",
+      "aliases": ["High Knee March", "​Standing Knee Drives"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1965/view/",
+        "author": "Anon#2",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-d561c00c-436d-47d9-b647-222e7b637abd",
+      "name": "1/2 Kneeling Thoracic Rotation",
+      "muscle": "Core",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "- Begin in a half kneeling position with the\nleg away from the wall stabilized against the wall\nwith a ball.\n- With both hands directly in front of\nyou, rotate one arm open attempting to reach\nthe wall behind you.\n- Exhale as you rotate, inhale\nas you return to neutral and repeat.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1966/view/",
+        "author": "amwang4",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-9dfce8f0-39fc-4204-9f84-500ec42074e9",
+      "name": "Single-arm dumbbell shoulder press",
+      "muscle": "Shoulders",
+      "equipment": "Dumbbell",
+      "primaryMuscles": ["Shoulders"],
+      "secondaryMuscles": ["Abs", "Serratus anterior", "Trapezius", "Triceps"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Press the dumbbell vertically overhead in a controlled motion until your arm is fully extended, without locking the elbow. Slowly lower the dumbbell back to the starting position at shoulder height.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1968/view/",
+        "author": "evtimovgeorg",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-83af8d94-319b-456b-92d8-75cec821a195",
+      "name": "Single-arm cable pushdown",
+      "muscle": "Arms",
+      "equipment": "Cable machine",
+      "primaryMuscles": ["Triceps"],
+      "secondaryMuscles": ["Abs"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Single-arm cable pushdown is a unilateral isolation exercise that targets the triceps brachii. By working one arm at a time, it helps correct strength imbalances between sides while also engaging the core for stability.\nStarting position:\nStand facing the cable machine with your feet shoulder-width apart. Attach a single handle to the high pulley. Grab the handle with one hand using an overhand grip (pronated), with your elbow bent at approximately 90° and tucked close to your body. Keep your core braced and your back straight.\nExecution:\nPush the handle downward in a controlled motion by extending your elbow until your arm is fully extended. Hold the contraction for 1 second at the bottom, then slowly return to the starting position.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1969/view/",
+        "author": "evtimovgeorg",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-c4185277-1d30-4684-9bc0-024ab7f2336a",
+      "name": "Mentzer Pulldown",
+      "muscle": "Arms",
+      "equipment": "Cable machine + Incline bench",
+      "primaryMuscles": ["Biceps"],
+      "secondaryMuscles": ["Lats"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Close grip front facing Pull down, while focusing on Biceps, Increases activation of biceps over the whole range, Avoid activating Lats.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1971/view/",
+        "author": "Mike Mentzer",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-b86fd8df-e726-4998-a7ee-000de0f70bf0",
+      "name": "Single-Arm Lat Pulldown",
+      "muscle": "Back",
+      "equipment": "Cable machine",
+      "primaryMuscles": ["Lats", "Trapezius"],
+      "secondaryMuscles": ["Biceps", "Brachialis"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Sit at the lat pulldown machine and grab the single handle with a neutral grip. Keep your torso stable, your chest lifted, and your shoulder blades slightly retracted. Start with your arm fully extended overhead, then pull the handle down toward your upper chest following a controlled, slightly diagonal path. Focus on engaging the latissimus dorsi while keeping the shoulder depressed and avoiding any torso rotation. Slowly return to the starting position, maintaining full control throughout the movement.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1972/view/",
+        "author": "evtimovgeorg",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-553fb643-32f0-447f-aecb-cdf75398d742",
+      "name": "Hip Airplane",
+      "muscle": "Legs",
+      "equipment": "Kettlebell",
+      "primaryMuscles": ["Glutes"],
+      "secondaryMuscles": ["Hamstrings", "Calves", "Soleus"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Stand on one leg and lean your upper body slightly forward while keeping your back straight. Extend the free leg behind you so that your torso and leg form roughly one line. Slowly open your hip to the side by rotating your pelvis and upper body in a controlled way. Then close the hip again and return to the starting position.\n\nThe movement should mainly come from the hip. Keep your standing foot stable and avoid letting your knee collapse inward.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2447/view/",
+        "author": "TobiasFalk",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-cf6bf132-fe21-4b70-8f73-006545246f05",
+      "name": "Reverse Clamshell",
+      "muscle": "Legs",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Glutes"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Lie on your side with your hips and knees bent, keeping your knees stacked on top of each other. Keep your feet together at first, then keep your knees touching while lifting your top foot upward. Slowly lower the foot back down with control.\n\nMove only through the hip and avoid rolling your pelvis backward. The movement should be small, controlled, and focused on hip rotation.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2448/view/",
+        "author": "TobiasFalk",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-f77b7cc6-e163-4f92-afa8-5ec431f32588",
+      "name": "Clamshell to Reverse Clamshell",
+      "muscle": "Legs",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Glutes"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Lie on your side with your hips and knees bent, keeping your legs stacked. Lift your top knee into a clamshell position and keep the leg elevated throughout the movement. From there, alternate between opening the knee upward and lifting the foot upward, moving through hip external and internal rotation.\n\nKeep the movement slow and controlled. Do not let the top leg rest on the bottom leg between repetitions.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2449/view/",
+        "author": "TobiasFalk",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-4b67ccf1-6bbc-406a-b88b-e2f72b10085e",
+      "name": "Curl De Muñeca Con Barra",
+      "muscle": "Arms",
+      "equipment": "Barbell + Bench",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "This is a variation of the flat bench press designed to emphasize the clavicular head of the pectoralis major (the upper portion). By tilting the torso, the angle of the push changes, shifting more tension to the upper chest and shoulders, which helps achieve a more aesthetic, balanced, and three-dimensional development of the torso.\n\n1. Starting Position: Grip a bar with an overhand grip (palms facing up) at a width similar to your shoulders.\n\n2. Position on the Bench: Kneel in front of a flat bench and rest the backs of your forearms on it. Your wrists and hands should extend slightly beyond the edge of the bench to allow for a full range of motion.\n\n3. Eccentric Phase (Lowering): Lower the bar in a controlled manner by extending your wrists toward the floor. At the bottom of the movement, slightly spread your fingers to let the bar roll down a bit, maximizing the stretch.\n\n4. Concentric Phase (Lift): First, close your fingers to secure the bar, then flex your wrists upward explosively but in a controlled manner, bringing the bar as high as possible. Strongly contract your forearms at the top position for one second.\n\n5. Form: Keep your forearms firmly pressed against the bench throughout the exercise; only your wrists and fingers should move.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2452/view/",
+        "author": "xWan",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-142fcef5-63a7-4d30-81e4-bc9d7073fe99",
+      "name": "YTW Raises",
+      "muscle": "Shoulders",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Shoulders"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "The YTW exercise for scapular retraction is designed to strengthen the inter-scapular muscles between your shoulder blades, to help retract or pull your shoulders back, helping to maintain proper upright posture.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2454/view/",
+        "author": "probablyforging",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-ddf4111d-907d-4d6c-b583-58323b96ca03",
+      "name": "Easy Continuous Swim (Freestyle)",
+      "muscle": "Chest",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Shoulders", "Lats", "Chest"],
+      "secondaryMuscles": [
+        "Hamstrings",
+        "Calves",
+        "Glutes",
+        "Quads",
+        "Abs",
+        "Triceps"
+      ],
+      "category": "cardio",
+      "level": "Unspecified",
+      "description": "Swim freestyle at a relaxed, steady pace without stopping — think conversation pace, not racing. Focus on smooth, even strokes rather than speed or breathing technique; this is just to get your body moving and your heart rate up.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2480/view/",
+        "author": "Imported from swim plan",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-57d1a6fc-fc28-43a7-9beb-0e851a47a976",
+      "name": "Kick with Board",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Glutes", "Quads"],
+      "secondaryMuscles": ["Hamstrings", "Calves", "Abs"],
+      "category": "cardio",
+      "level": "Unspecified",
+      "description": "Hold a kickboard with both hands, arms extended in front of you, face in the water (lift head forward to breathe when needed). Kick from your hips, not your knees, keeping your legs mostly straight with a slight bend and a steady, compact flutter kick. This builds leg endurance and keeps your body horizontal without needing to worry about your arms.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2481/view/",
+        "author": "Imported from swim plan",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-c4b2ed05-38d5-47fc-9ad1-c23f09fddd61",
+      "name": "Bobbing Exhale Drill",
+      "muscle": "Core",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Abs"],
+      "secondaryMuscles": [],
+      "category": "cardio",
+      "level": "Unspecified",
+      "description": "Stand in chest-deep water. Take a breath, submerge your face fully, and exhale slowly and completely through your nose and/or mouth the whole time you're underwater — a gentle humming sound can help keep the exhale steady and controlled. Once you're empty of air, lift your head, take a fresh breath, and go back under. Repeat continuously. The goal is training your body that all your exhaling happens underwater, so all you need to do at the surface is inhale.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2482/view/",
+        "author": "Imported from swim plan",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-9a5d36b8-7fa5-4705-8e9b-fafa211a13d6",
+      "name": "Wall-Hold Rotation",
+      "muscle": "Core",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Obliquus externus abdominis"],
+      "secondaryMuscles": ["Abs"],
+      "category": "cardio",
+      "level": "Unspecified",
+      "description": "Hold the pool wall or edge with one hand, body horizontal at the surface, legs kicking gently behind you. Keep your face in the water, exhaling continuously, then rotate your head to the side — not lifting it up — so one goggle stays in the water while the other clears the surface. Take a quick breath, then rotate your face back down to neutral. This isolates the head-rotation motion without any arm strokes to think about.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2483/view/",
+        "author": "Imported from swim plan",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-6ec2d684-8091-4da9-8814-8a3052d0a302",
+      "name": "Side-Kick Breathing (Kickboard)",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Glutes"],
+      "secondaryMuscles": [
+        "Shoulders",
+        "Hamstrings",
+        "Obliquus externus abdominis",
+        "Quads"
+      ],
+      "category": "cardio",
+      "level": "Unspecified",
+      "description": "Push off the wall on your side (not flat on your stomach), one arm extended forward holding the board or just extended, kicking continuously. Keep your head in a neutral position looking at the bottom of the pool, and when you need air, rotate your head sideways (one ear stays in the water, other faces up) to breathe, then rotate back to neutral. Swim a length like this, then repeat on the other side. This teaches the exact head position and rotation you'll use once full stroke breathing comes in.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2484/view/",
+        "author": "Imported from swim plan",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-1c17c370-dd74-46c4-b4f2-039c510af058",
+      "name": "Stroke-and-Roll Drill",
+      "muscle": "Shoulders",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Shoulders", "Obliquus externus abdominis"],
+      "secondaryMuscles": ["Lats", "Abs"],
+      "category": "cardio",
+      "level": "Unspecified",
+      "description": "Push off, swim a few strokes, and every breath roll fully onto your back for 2-3 breaths, then roll back into freestyle. This teaches you to rotate your body as a unit rather than just turning your head, and helps remove the fear of not having your face in the water.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2485/view/",
+        "author": "Imported from swim plan",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-6705ec92-c6c6-4b2c-b919-bddb8177bf98",
+      "name": "Recovery Bobbing",
+      "muscle": "Core",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Abs"],
+      "secondaryMuscles": [],
+      "category": "cardio",
+      "level": "Unspecified",
+      "description": "Same motion as the Bobbing Exhale Drill, but done in slightly deeper water (so you're not touching the bottom) and at a slower, more relaxed pace — think of it as a recovery/reset exercise rather than a hard drill. Use it between harder drills to reset your breathing rhythm and calm down if you're feeling rushed or out of sync.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2486/view/",
+        "author": "Imported from swim plan",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-1544c78d-fe6d-423d-876e-0ba1998063c6",
+      "name": "Cool-Down Swim",
+      "muscle": "Chest",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Shoulders", "Lats", "Chest"],
+      "secondaryMuscles": ["Glutes", "Abs", "Triceps"],
+      "category": "cardio",
+      "level": "Unspecified",
+      "description": "Swim at an easy, unhurried pace — freestyle, backstroke, or just floating/gliding — with zero focus on technique or drills. The only goal here is to let your heart rate come down gradually and your muscles relax before you get out of the pool.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2487/view/",
+        "author": "Imported from swim plan",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-0e8fd83f-4e97-4749-b5fd-da9d0e85e97a",
+      "name": "Posterior Pelvic Tilt",
+      "muscle": "Core",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Abs"],
+      "secondaryMuscles": ["Glutes", "Obliquus externus abdominis"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Lie on your back with knees bent, feet flat on the floor. Flatten your lower back against the floor by tilting your pelvis posteriorly, engaging your abs and glutes. Hold 5 seconds, release. This retrains pelvic positioning to counter anterior pelvic tilt.",
+      "aliases": ["Pelvic Tilt Drill / Supine Pelvic Tilt"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2488/view/",
+        "author": "Raj",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-3096b34e-1781-4f99-8187-d9acac8e712b",
+      "name": "Band Terminal Knee extension",
+      "muscle": "Legs",
+      "equipment": "Resistance band",
+      "primaryMuscles": ["Quads"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "This is an end range strengthening exercise for the knee extensors. Start by looping a band around the back of one knee and anchoring the other end to a stable surface in front of you. Stand in a split stance with the banded knee bent and placed as the front leg. Straighten the knee to pull against the bands resistance and maintain a contraction in your quadriceps for up to 5 seconds before releasing.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2494/view/",
+        "author": "Rehab Hero",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-7936d8ad-6a39-4459-aa60-3e1e325f5e2b",
+      "name": "Serratus Wall Slide Stretch",
+      "muscle": "Shoulders",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "1. Stand facing a wall. Place your forearms vertically against the wall so your elbows and wrists are both touching it.\n2. Point your arms slightly outwards from \"straight up\".\n3. Protract your shoulders had, then slide your forearms up the wall until your elbows are about level with your chin.\n4. Slide your forearms back down the wall. Repeat as necessary.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2523/view/",
+        "author": "Croak6728",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-26168c76-5e2a-4321-8755-5ca42bd341ad",
+      "name": "Couch Stretch",
+      "muscle": "Legs",
+      "equipment": "Bench",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "1. Stand facing away from a bench, couch or similar-height object.\n2. Extend one leg backwards, resting your foot \"laces-down\" on the edge of the bench.\n3. Lower yourself until your rear knee is on the floor and you are in a lunge position, with your torso hanging forwards slightly.\n4. Brace your core, tense your rear glute, and straighten up your torso to vertical, under control. Relax and repeat.\n\nRepeat for the other leg, too.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2525/view/",
+        "author": "Croak6728",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-692d294d-925d-4a4e-8059-02a1a0ffdae4",
+      "name": "Long Lunge Pulse Stretch",
+      "muscle": "Legs",
+      "equipment": "Resistance band",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "1. Hold the resistance band (or any other rope-like object, the elasticity is not necessary) above your head, between your hands, with your arms straight. Pull it taught to engage your lats.\n2. Step forwards into a lunge, dropping until your knee is almost touching the floor.\n3. Slowly and controlledly pulse your body up and down by about an inch. Repeat for required reps.\n4. Repeat for other leg.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2526/view/",
+        "author": "Croak6728",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-d5e5c5a1-69af-42b0-9106-dc8284e7262a",
+      "name": "Front Split Stretch",
+      "muscle": "Legs",
+      "equipment": "Gym mat",
+      "primaryMuscles": ["Hamstrings", "Quads"],
+      "secondaryMuscles": ["Calves"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "1. Start kneeling.\n2. Extend one leg out forwards, fully straightened. Follow with your hips so your back leg begins to unfold.\n3. Carefully lower yourself into the stretch. Do not go beyond your limit.\n4. Hold for the required time.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2527/view/",
+        "author": "Croak6728",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-e6890815-de67-4882-9cd5-82b7630208ad",
+      "name": "Squat Sky Reach Stretch",
+      "muscle": "Chest",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Lats", "Chest"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "1. Drop into a squat.\n2. Hold one ankle with the opposite hand.\n3. Fold your other arm to your chest.\n4. Staying in the squat and keeping hold of your ankle, twist to turn your chest-hand back/outwards until your elbow is pointing at the sky.\n5. Return to the neutral squatting position with your hand on your chest. Repeat movement as required.\n\nRepeat on both sides.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2528/view/",
+        "author": "Croak6728",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-253813a0-b33f-48b3-991e-ca66116e053f",
+      "name": "explosive push ups",
+      "muscle": "Chest",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Chest"],
+      "secondaryMuscles": ["Shoulders", "Triceps"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Explosive Push-Ups\n\nStart in a standard push-up position, lower your chest, then explosively push off the ground so your hands leave the floor. Land softly and immediately repeat.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2529/view/",
+        "author": "ege",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-58ba2ce1-c140-4a9f-9bbc-d99776909690",
+      "name": "Russian Push Ups",
+      "muscle": "Chest",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Chest"],
+      "secondaryMuscles": ["Shoulders", "Abs", "Triceps"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Russian Push-Ups\n\nStart in a standard push-up position with your hands slightly wider than shoulder-width apart. Lower your chest toward the floor, then shift your body forward while keeping your chest close to the ground. Extend your arms to return to the starting position, then reverse the movement smoothly. Keep your core tight and maintain controlled movement throughout the exercise.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2530/view/",
+        "author": "ege",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-1d1a53dd-e00f-477e-83f7-09c8ef9a71cd",
+      "name": "elbow lever",
+      "muscle": "Core",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Abs"],
+      "secondaryMuscles": ["Shoulders", "Triceps"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "​A calisthenics static balance skill where the entire body is held straight and parallel to the ground, supported by tucking the elbows firmly into the abdomen or pelvic bones.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2531/view/",
+        "author": "ege",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-a82944ae-24f4-4f7a-8aac-af251f6907e5",
+      "name": "Planche Lean Hold",
+      "muscle": "Shoulders",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Shoulders", "Serratus anterior"],
+      "secondaryMuscles": ["Biceps", "Chest", "Abs"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "A straight-arm calisthenics static hold where you assume a plank position and lean the shoulders as far forward as possible past the wrists with protracted scapulae and a hollow body.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2532/view/",
+        "author": "ege",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-f4291da4-09c2-4605-a90c-c926c6a92515",
+      "name": "Arch Hang",
+      "muscle": "Shoulders",
+      "equipment": "Pull-up bar",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "https://www.youtube.com/watch?v=C995b3KLXS4&t=7s\n\n- Elbows should stay straight\n- Hold it for time/reps\n- Start at an active hang: https://www.youtube.com/watch?v=HoE-C85ZlCE\n- Progress towards a 90 degree in your shoulder",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2533/view/",
+        "author": "wintercyan",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-88c4d3e5-3837-4c71-bb06-c45e147496cc",
+      "name": "Leg Extension Isometric",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Quads"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "An isometric leg extension is a strengthening exercise where you contract your quadriceps muscles against an immovable resistance without changing the length of the muscle or moving your knee joint.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2535/view/",
+        "author": "HexoctusEngineering",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-20d8df5a-c9d6-4c69-bdf2-d97af68ac83f",
+      "name": "Bench Press Isometric",
+      "muscle": "Chest",
+      "equipment": "Barbell + Bench",
+      "primaryMuscles": ["Shoulders", "Chest", "Triceps"],
+      "secondaryMuscles": [
+        "Obliquus externus abdominis",
+        "Abs",
+        "Serratus anterior"
+      ],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "A bench press isometric hold is a static strength exercise where you pause and hold a barbell or dumbbells either at your chest, mid-press, or at lockout without moving for a set time",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2536/view/",
+        "author": "HexoctusEngineering",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-993c7f0c-729b-4834-a0f5-67d126d92fbf",
+      "name": "Overhead Press Isometric",
+      "muscle": "Shoulders",
+      "equipment": "Barbell",
+      "primaryMuscles": ["Shoulders", "Triceps"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "An isometric overhead press involves holding a weight statically overhead or pushing against an immovable object at a specific point in the press without moving the joint.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2537/view/",
+        "author": "HexoctusEngineering",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-2d580008-4918-430a-b0bd-4fcfe8783195",
+      "name": "Lateral Raise Isometric",
+      "muscle": "Shoulders",
+      "equipment": "Dumbbell",
+      "primaryMuscles": ["Shoulders"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "An isometric lateral raise is a shoulder exercise where you hold your arms out to the sides at waist height for a set amount of time instead of moving up and down",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2538/view/",
+        "author": "HexoctusEngineering",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-d5fb6606-4832-4216-bc0a-36955b5f741f",
+      "name": "Preacher Curl Isometric",
+      "muscle": "Arms",
+      "equipment": "Dumbbell + SZ-Bar",
+      "primaryMuscles": ["Biceps"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "An isometric preacher curl is a static strength exercise where you hold a fixed position on a preacher pad or and inclined bench under tension without moving the joint.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2539/view/",
+        "author": "HexoctusEngineering",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-b6054509-576f-429c-960f-73c84f481b7c",
+      "name": "Lat Pulldown Isometric",
+      "muscle": "Back",
+      "equipment": "Cable machine",
+      "primaryMuscles": ["Lats"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "An isometric Lat pulldown is a strength-building exercise where you pull the bar down to your chest and hold the contracted position at the bottom without moving your limbs for a set number of seconds",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2540/view/",
+        "author": "HexoctusEngineering",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-788b66aa-7e59-493f-ad9a-0522736c7ef0",
+      "name": "Triceps Pushdown Isometric",
+      "muscle": "Arms",
+      "equipment": "Cable machine",
+      "primaryMuscles": ["Triceps"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "A single-arm isometric or isolated triceps pushdown is an isolation cable exercise where you pin your upper arm against your torso, hinge at the hips, and extend the elbow to achieve a peak contraction in the triceps muscle.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2541/view/",
+        "author": "HexoctusEngineering",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-0829749c-de42-49a5-a24b-451b0eac8627",
+      "name": "Boxing",
+      "muscle": "Shoulders",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Shoulders", "Triceps"],
+      "secondaryMuscles": ["Biceps", "Lats"],
+      "category": "cardio",
+      "level": "Unspecified",
+      "description": "Bag workout for boxing skill development and cardio improvement",
+      "aliases": ["Nah workout"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2542/view/",
+        "author": "SAH",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-7e74b1f1-636b-4821-b4be-3711328b89b4",
+      "name": "Retro Treadmill Walking",
+      "muscle": "Full body",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "cardio",
+      "level": "Unspecified",
+      "description": "Controlled treadmill walking performed backward. Begin around 30 minutes at a controlled speed and approximately 2 to 3 percent incline if tolerated. Progress duration gradually as knee, hip, and back tolerance improves.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2549/view/",
+        "author": "Personal routine",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-5597bafc-0478-4124-9745-85f9df22be3e",
+      "name": "Kegel Exercise",
+      "muscle": "Core",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Lie on your back with your knees bent, or sit upright in a chair. Locate the pelvic floor muscles: they are the muscles you would use to stop the flow of urine or to hold back gas. Keep your abdomen, glutes and thighs relaxed and breathe normally throughout.\n\nTighten the pelvic floor muscles and lift them gently upwards and inwards. Hold the contraction for a few seconds, then release completely and rest for at least as long as you held. Repeat for the desired number of repetitions.\n\nThe exercise can be varied by holding longer with a light contraction (endurance) or by performing quick, short contractions with a full relaxation in between.",
+      "aliases": [
+        "Pelvic Floor Exercise",
+        "Kegels",
+        "Pelvic Floor Contraction"
+      ],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2555/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-15cfef4a-471f-4a00-a3c3-973b15bd7cda",
+      "name": "Supported Split Squat",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Quads"],
+      "secondaryMuscles": ["Glutes"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Supported split squat performed with stable balance support and controlled depth.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2557/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-7bd11f85-69a1-42ea-9924-7df7ba6d4f10",
+      "name": "90/90 Breathing",
+      "muscle": "Core",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Controlled breathing drill performed in a 90/90 position to encourage rib, abdominal, and pelvic coordination.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2564/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-a825d0f7-de61-4ca3-a2b2-0f8b00303464",
+      "name": "90/90 Hip Switches",
+      "muscle": "Legs",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Glutes"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Sit on the floor with one leg bent at 90 degrees in front of you and the other leg bent at 90 degrees out to the side, so that the rear shin is parallel to the front shin. Keep your torso upright and, if possible, your hands off the floor.\n\nRotate both knees over to the other side so that the legs swap positions and you arrive in the same 90/90 position facing the opposite way. Move slowly and under control, keeping the feet in contact with the floor, and alternate sides for the desired number of repetitions.\n\nMobility drill for internal and external rotation of the hips.",
+      "aliases": ["90/90 Hip Rotations"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2613/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-4e396da7-b25e-42de-a507-fe1aeb4f3f77",
+      "name": "Adductor Rock Backs",
+      "muscle": "Legs",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": [],
+      "secondaryMuscles": ["Hamstrings", "Glutes"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Start on all fours with your hands under your shoulders and your knees under your hips. Extend one leg straight out to the side with the foot flat on the floor and the toes pointing forward.\n\nKeep your back flat and slowly push your hips back towards the heel of the kneeling leg until you feel a stretch along the inside of the extended leg. Pause briefly, then return to the starting position. Complete all repetitions on one side before switching legs.\n\nMobility exercise for the adductors and the hips.",
+      "aliases": ["Adductor Rockbacks"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2614/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-e205aa88-c7b8-43a7-a527-c881b2d5f259",
+      "name": "Elevated Hamstring Stretch",
+      "muscle": "Legs",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Hamstrings"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Stand facing a bar, box or bench at roughly hip height and place the heel of one leg on it. Keep that leg straight with the toes pointing up, and keep the standing leg straight with both hips square to the support.\n\nHinge forward at the hips with a flat back until you feel a stretch in the back of the elevated thigh. Hold the position while breathing calmly, then switch legs.\n\nStretch for the hamstrings. The height of the support controls the intensity: the higher the leg, the stronger the stretch.",
+      "aliases": ["Barre Hamstring Stretch", "90/90 Hamstring Stretch"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2615/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-53b8727f-ad5c-402a-83e6-7b8e9c0bd99a",
+      "name": "Single-leg BOSU balance",
+      "muscle": "Legs",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "# Single-Leg BOSU Balance Exercise\n\nThe exercise for balancing on a BOSU ball while standing on one leg is known as the single-leg BOSU balance exercise. This exercise is effective for enhancing balance, coordination, and core stability.\n\n## Benefits of the Single-Leg BOSU Balance Exercise\n* **Improves Balance:** Standing on one leg challenges your stability.\n* **Enhances Coordination:** Engaging different muscle groups helps improve overall coordination.\n* **Strengthens Core:** The exercise activates core muscles, promoting better posture and stability.\n\n## How to Perform the Single-Leg BOSU Balance Exercise\n1. **Positioning:** Stand on the dome side of the BOSU ball with one leg.\n2. **Balance:** Keep your opposite leg lifted and your core engaged.\n3. **Duration:** Aim to hold the position for 10-20 seconds, gradually increasing the time as you improve.\n\n## Progression Tips\n* **Add Movement:** Try reaching for objects around you while maintaining balance.\n* **Close Your Eyes:** This increases the challenge by removing visual stability cues.\n* **Use a Ball:** Catch or toss a ball while balancing to further engage your core and coordination.\n\nThis exercise is a great way to build foundational balance skills before progressing to more complex movements.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2616/view/",
+        "author": "aboksz",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-2867cd51-f911-47db-9ea5-ca09aa44ca8f",
+      "name": "Quad Sets",
+      "muscle": "Legs",
+      "equipment": "Gym mat",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "# What Are Quad Sets?\n\nQuad sets are a fundamental exercise used in knee rehabilitation. They focus on strengthening the quadriceps muscles located at the front of the thigh. This exercise is particularly beneficial for individuals recovering from knee injuries or surgeries.\n\n## How to Perform Quad Sets\n\n### Steps to Execute Quad Sets\n\n1. **Positioning:** Sit or lie down with your legs straight.\n2. **Tightening:** Tighten the quadriceps muscles while keeping the leg straight. You should see the kneecap move upward.\n3. **Holding:** Maintain the contraction for about 5 seconds.\n4. **Releasing:** Relax the muscle after the hold.\n5. **Repetitions:** Aim for 10 to 15 repetitions, gradually increasing as strength improves.\n\n### Tips for Effective Quad Sets\n\n- Ensure no other muscles are contracting to assist the quadriceps.\n- Perform the exercise on a flat surface, like a bed or couch, with a towel or pillow under your heel for comfort.\n- It is recommended to do these exercises multiple times a day, especially during the early stages of recovery.\n\n## Benefits of Quad Sets\n\n- **Restores Muscle Function:** Helps rebuild strength in the quadriceps.\n- **Improves Stability:** Enhances stability in the knee joint.\n- **Increases Range of Motion:** Aids in regaining mobility after injury or surgery.\n\nIncorporating quad sets into your rehabilitation routine can significantly aid in recovery and improve overall knee function.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2617/view/",
+        "author": "aboksz",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-a4f78033-90d7-45a2-96fa-509b41281ea3",
+      "name": "Hip-Out and Hip-In Lateral Steps",
+      "muscle": "Legs",
+      "equipment": "Resistance band",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "# Overview of Hip-Out and Hip-In Lateral Steps\n\nHip-out and hip-in lateral steps are effective exercises designed to strengthen the hip abductors and enhance lateral stability. These movements are beneficial for improving coordination and overall hip function.\n\n## Exercise Descriptions\n\n### Hip-Out Steps\n\n- **Movement:** Step out to the side with one leg, keeping the other leg stable.\n- **Target Muscles:** Primarily engages the hip abductors, including the gluteus medius and minimus.\n- **Benefits:** Increases lateral stability and strength in the hip area.\n\n### Hip-In Steps\n\n- **Movement:** Bring the leg back in toward the center after stepping out.\n- **Target Muscles:** Continues to engage the hip abductors while also activating the adductors.\n- **Benefits:** Enhances coordination and control of the hip joint.\n\n## Key Benefits of Lateral Steps\n\n| Benefit | Description |\n|---|---|\n| **Strengthening Hip Abductors** | Improves muscle strength around the hip joint. |\n| **Enhancing Stability** | Increases lateral stability, reducing the risk of falls. |\n| **Improving Coordination** | Develops better control and movement patterns in the hips. |\n\nIncorporating hip-out and hip-in lateral steps into a regular exercise routine can lead to improved hip strength and stability, which is essential for various physical activities and daily movements.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2618/view/",
+        "author": "aboksz",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-eb8d3fa8-8cfc-4961-8e3d-5bf0a5081797",
+      "name": "Single-Leg Soft-Landing Holds",
+      "muscle": "Legs",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "# Single-Leg Soft-Landing Holds\n\nSingle-leg soft-landing holds are exercises that focus on balance and stability by landing softly on one leg and holding the position. This exercise helps improve proprioception and can be beneficial for rehabilitation and athletic training.\n\n## Overview\n\nSingle-leg soft-landing holds are exercises designed to enhance balance, stability, and proprioception. They involve landing softly on one leg and maintaining that position for a brief period. This exercise is particularly useful in rehabilitation settings and for athletes looking to improve their performance.\n\n## Benefits\n\n- **Improves balance:** Enhances stability by training the body to control weight distribution on one leg.\n- **Enhances proprioception:** Increases awareness of body position, which is crucial for injury prevention.\n- **Supports rehabilitation:** Helps individuals recover from lower-limb injuries by strengthening muscles and improving joint stability.\n\n## How to Perform Single-Leg Soft-Landing Holds\n\n### Steps\n\n1. **Preparation:** Stand on a stable surface or a box.\n2. **Takeoff:** Step off the box or surface with one leg, ensuring that you do not jump.\n3. **Landing:** Land softly on the target leg, allowing the knee and hip to bend slightly.\n4. **Hold position:** Maintain balance in the landed position for up to 2 seconds.\n5. **Reset:** Return to the starting position and repeat.\n\n### Key Points to Remember\n\n- Keep your chest up and engage your core for better stability.\n- Ensure your knee aligns with the midline of your foot during landing.\n- Focus on a controlled descent to minimize impact.\n\n## Conclusion\n\nIncorporating single-leg soft-landing holds into your training routine can significantly enhance your balance and stability, making it a valuable exercise for both rehabilitation and athletic performance.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2619/view/",
+        "author": "aboksz",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-04063ba5-05d1-48b9-9571-eae2b8edab29",
+      "name": "Reverse V-Squat",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Glutes", "Quads"],
+      "secondaryMuscles": ["Hamstrings"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Step into the V-squat machine facing the pad, the opposite way from the regular V-squat, so that your chest rests against the pad and your shoulders sit under the shoulder pads. Place your feet on the platform about shoulder width apart and release the safety.\n\nBrace your core and lower yourself by bending your knees and pushing the hips back until your thighs are roughly parallel to the platform. Drive back up through the heels without locking out the knees.\n\nCompared to the regular V-squat, the reversed position shifts the emphasis towards the glutes and hamstrings.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2620/view/",
+        "author": "aboksz",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-6f919d6d-e8b2-4aac-bc43-fd6184978b70",
+      "name": "Box Handstand Push-up",
+      "muscle": "Chest",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Shoulders", "Chest", "Triceps"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Pike push-up with legs on an elevated surface. Progression to handstand push-up.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2621/view/",
+        "author": "Jarda",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-8270bfb7-0264-4f79-aa3d-1ceed134b5d0",
+      "name": "Banded Front Raise",
+      "muscle": "Shoulders",
+      "equipment": "Resistance band",
+      "primaryMuscles": ["Shoulders"],
+      "secondaryMuscles": ["Serratus anterior", "Trapezius"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Stand on the middle of a resistance band with feet about hip-width apart, holding one end in each hand in front of your thighs. Keeping your arms straight with a slight bend in the elbows, raise your hands forward to shoulder height, then lower slowly under control. Can be done with both arms together or alternating. Use a heavier band or shorten the band to increase resistance.",
+      "aliases": ["Resistance Band Front Raise"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2622/view/",
+        "author": "trs1800",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-5d5122e0-65f3-4afc-ac36-21955e2c7dde",
+      "name": "Plate-Loaded Lat Pulldown",
+      "muscle": "Back",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Lats"],
+      "secondaryMuscles": ["Biceps", "Brachialis", "Trapezius"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Sit at a plate-loaded (lever) lat pulldown machine with your thighs secured under the pads. Grip the handles overhead with arms fully extended. Pull the handles down toward your upper chest by driving your elbows down and back, squeezing your lats at the bottom. Return slowly to full extension. Resistance comes from weight plates loaded on the machine's lever arms rather than a cable stack.",
+      "aliases": ["Plate Loaded Lat Pulldown", "Lever Lat Pulldown"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2623/view/",
+        "author": "trs1800",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-28d18142-8777-4dba-a3a1-6151cec94500",
+      "name": "Lean-Away Cable Lateral Raise",
+      "muscle": "Shoulders",
+      "equipment": "Cable machine",
+      "primaryMuscles": ["Shoulders"],
+      "secondaryMuscles": ["Trapezius"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Set a cable pulley at the lowest position and attach a single handle. Stand side-on to the machine, hold the frame with your near hand and lean your body away so you hang at an angle. With the far hand, grasp the handle in front of your hips and raise your arm out to the side to shoulder height with a slight bend in the elbow. Lower slowly. The lean increases tension on the side delts at the bottom of the movement. Complete all reps, then switch sides.",
+      "aliases": ["Lean-To Cable Lateral Raise", "Leaning Cable Lateral Raise"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2624/view/",
+        "author": "trs1800",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-42e40343-955c-43a2-902e-e70bd603a713",
+      "name": "Wall Baby Breathing",
+      "muscle": "Core",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2625/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-2a9b16ba-04ae-43ac-8d48-6e0aadb1d5a5",
+      "name": "Machine Seated Leg Curl",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Hamstrings"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2626/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-8aae635b-cb15-4129-bc09-6951fa376274",
+      "name": "Machine Seated Calf Raise",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Calves", "Soleus"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2628/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-18a02b91-fb98-462b-aff1-05c982f151d4",
+      "name": "Controlled Kegels",
+      "muscle": "Core",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2629/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-be5c2a68-ac68-4833-8144-fb8c2bc7d5fb",
+      "name": "Pelvic Endurance Hold",
+      "muscle": "Core",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2630/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-e6bf0364-ccce-4053-afe1-eef206a50291",
+      "name": "Machine Lat Pulldown",
+      "muscle": "Back",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Biceps", "Lats"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2631/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-fe0c2a17-fad9-4235-8786-84bb1de93530",
+      "name": "Machine Incline Chest Press",
+      "muscle": "Chest",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Shoulders", "Chest"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2632/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-7eb52939-0e33-4319-829d-d8e142fc74d9",
+      "name": "Preacher Curl Machine",
+      "muscle": "Arms",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Biceps"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2633/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-b1eed626-112f-401c-a61d-bfe168fdedc7",
+      "name": "Machine Dip or Triceps Extension",
+      "muscle": "Arms",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Triceps"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2634/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-6b6bd3ce-c40d-486c-9c47-21a3c639626d",
+      "name": "Seated Band Row",
+      "muscle": "Back",
+      "equipment": "Resistance band",
+      "primaryMuscles": ["Lats"],
+      "secondaryMuscles": ["Biceps", "Brachialis", "Trapezius"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Sit on the floor with your legs straight out in front of you and your back tall. Loop a resistance band around the soles of both feet and hold one end in each hand, arms extended and a slight bend in the knees. Pull the band toward your lower ribs by driving your elbows straight back and squeezing your shoulder blades together. Keep your chest up and your torso still rather than rocking backward to move the band. Extend the arms slowly to return. Because the torso stays upright and supported, this is a useful row when a bent-over position is uncomfortable, and it needs no anchor point.",
+      "aliases": ["Seated Resistance Band Row", "Floor Band Row"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2635/view/",
+        "author": "trs1800",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-365e9101-f972-4040-9f37-26f72109fac5",
+      "name": "FlexBar Wrist Extension",
+      "muscle": "Arms",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": [],
+      "secondaryMuscles": ["Brachialis"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Performed with a flexible resistance bar such as a Theraband FlexBar. Rest your forearm on your thigh or a table with the palm facing down and the wrist just past the edge. Hold the bar in that hand, let the wrist drop, then extend the wrist to raise the bar, keeping the forearm still. Lower slowly, taking about three seconds. The resistance comes from twisting or bending the flexible bar, so a thicker or stiffer bar increases the load. Commonly used for wrist and forearm strengthening and for elbow tendon rehabilitation.",
+      "aliases": [
+        "Theraband FlexBar Wrist Extension",
+        "Resistance Bar Wrist Extension"
+      ],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2636/view/",
+        "author": "trs1800",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-2b4dd42b-1b52-46ba-8953-82c34b309ac5",
+      "name": "FlexBar Wrist Flexion",
+      "muscle": "Arms",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": [],
+      "secondaryMuscles": ["Brachialis"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Performed with a flexible resistance bar such as a Theraband FlexBar. Rest your forearm on your thigh or a table with the palm facing up and the wrist just past the edge. Hold the bar in that hand, let the wrist extend back, then curl the wrist up to raise the bar while the forearm stays still. Lower slowly, taking about three seconds. Works the wrist flexors, and is the companion movement to FlexBar wrist extension for balanced forearm strengthening.",
+      "aliases": [
+        "Theraband FlexBar Wrist Flexion",
+        "Resistance Bar Wrist Flexion"
+      ],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2637/view/",
+        "author": "trs1800",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-32aae5db-c992-4c18-96a1-35ed03aab9a3",
+      "name": "FlexBar Tyler Twist",
+      "muscle": "Arms",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": [],
+      "secondaryMuscles": ["Brachialis"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "An eccentric exercise for the wrist extensors, done with a flexible resistance bar such as a Theraband FlexBar, and widely used in rehabilitation for lateral epicondylitis (tennis elbow). Hold the bar vertically in the affected hand with the wrist extended. Grasp the top of the bar with the other hand, palm facing away, and twist the top hand to wind up the bar. Bring both arms out in front of you with the bar horizontal, then slowly let the affected wrist untwist the bar over about four seconds while the other hand holds steady. Reset and repeat. The reverse version, twisting in the opposite direction for the wrist flexors, is used for medial epicondylitis (golfer's elbow). Move slowly and stop if the exercise causes sharp pain rather than the expected mild discomfort.",
+      "aliases": ["Tyler Twist", "Theraband FlexBar Tyler Twist"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2638/view/",
+        "author": "trs1800",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-12a80404-8684-4ff0-a473-d80b4ad8cd5e",
+      "name": "roman chair RDLS",
+      "muscle": "Legs",
+      "equipment": "Dumbbell",
+      "primaryMuscles": ["Hamstrings", "Glutes"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "this is a really cool descriptions for an exercise I've created several tomes now but this thing won't save it",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2639/view/",
+        "author": "kbk",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-ed4c132b-1955-49f8-9be3-29e6ffb8eba1",
+      "name": "Quick Kegels",
+      "muscle": "Core",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2640/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-8c5a72c7-97e3-4993-9d5f-dd920bde597e",
+      "name": "Pelvic Wave",
+      "muscle": "Core",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2641/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-0f648dbf-9ddc-44d9-a10c-1aa97537ea91",
+      "name": "Dumbbell Bent-Over Reverse Fly",
+      "muscle": "Back",
+      "equipment": "Dumbbell",
+      "primaryMuscles": ["Trapezius"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2643/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-f4fbc177-afa9-402c-a7e0-dc40b5de9829",
+      "name": "Dumbbell or Machine Calf Raise",
+      "muscle": "Legs",
+      "equipment": "Dumbbell",
+      "primaryMuscles": ["Calves"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2644/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-4b220e25-1a42-4457-9652-274183c6d839",
+      "name": "Squat -> Stand Coordination",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Glutes", "Quads"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2645/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-1195230d-9d0e-4d90-b32a-5951fcc6ba09",
+      "name": "Supported Deep Squat Breathing",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Glutes", "Quads"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2646/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-6c8cd086-1cd0-4979-8d01-7df72b1e839b",
+      "name": "Pelvic Tilts",
+      "muscle": "Core",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2647/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-972e92bd-d432-4914-a577-0156d16afe48",
+      "name": "90/90 Hamstring / Barre-Style Stretch",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Hamstrings"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2648/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-d2cca57c-48e1-4a61-b756-c5baedf7a184",
+      "name": "Glute Stretch",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Glutes"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2649/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-14cea0e7-2e7c-4d35-bfec-2f2f90209e02",
+      "name": "Soleus / Achilles Stretch",
+      "muscle": "Full body",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Soleus"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2650/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-7ce123b1-b1fd-438d-8840-c7c9a0639e54",
+      "name": "Wall Calf Stretch",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Calves"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2651/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-abbf941e-e145-4492-aa96-fbbcd955e970",
+      "name": "Extended Arm Child's Pose",
+      "muscle": "Back",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2652/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-54bf28e0-3709-49fd-b1b4-c99144e6a880",
+      "name": "Gentle Thoracic Rotation",
+      "muscle": "Back",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2653/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-8c23116c-b640-4f80-a309-235cc12d83d8",
+      "name": "Gentle Upward-Facing Dog / Cobra",
+      "muscle": "Back",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2654/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-9e3c665d-ac4e-456b-b1cd-0c209ce8090a",
+      "name": "Gentle Reverse Kegels",
+      "muscle": "Core",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2655/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-903bd749-3b91-4812-acd0-be7e8a012d2c",
+      "name": "Happy Baby",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2656/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-728b00ba-f9cb-4f04-915a-ccd5cd0b86bf",
+      "name": "Relaxed Diaphragmatic Breathing",
+      "muscle": "Core",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2657/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-6e2cf9bb-838d-4ad3-bc1e-db152293d16e",
+      "name": "Alternating Dumbbell Curl",
+      "muscle": "Arms",
+      "equipment": "Dumbbell",
+      "primaryMuscles": ["Biceps"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2659/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-563203ce-1867-4376-aa7f-a0356808c0ae",
+      "name": "Bent-Over Dumbbell Triceps Extension",
+      "muscle": "Arms",
+      "equipment": "Dumbbell",
+      "primaryMuscles": ["Triceps"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2660/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-456f0781-30c6-4f58-a5b4-3da8f4878065",
+      "name": "Dumbbell Calf Raise",
+      "muscle": "Legs",
+      "equipment": "Dumbbell",
+      "primaryMuscles": ["Calves"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Custom description created by the Integrated Conditioning routine importer for wger.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2661/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-a4c97a23-f044-4095-a041-94d92ffe44bd",
+      "name": "Paused Squats",
+      "muscle": "Legs",
+      "equipment": "Barbell",
+      "primaryMuscles": ["Quads"],
+      "secondaryMuscles": ["Hamstrings", "Glutes"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Use the same technic as your normal squat. Except that you make a pause at the bottom of the squat for about 1-2 seconds, in other words a bit longer than your normal squat.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2662/view/",
+        "author": "bbk",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-0cb0c5aa-f3dc-4883-b181-0b5efda1bc4f",
+      "name": "Single-Arm Cable Row /w Rotation (floor)",
+      "muscle": "Back",
+      "equipment": "Cable machine",
+      "primaryMuscles": ["Lats"],
+      "secondaryMuscles": ["Trapezius"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Go into a one-legged kneeling position and grab the cable from the lowest position.\n\nRotate the upper torso to get into the starting position and bend the upper torso a little bit sidewise.\n\nPlace the unused hand on the knee.\n\nPull the cable while rotating the upper torso.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2663/view/",
+        "author": "bbk",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-a3afaf43-b087-4f65-9e62-d038ab09ce90",
+      "name": "Seated Knee Extension with Overpressure",
+      "muscle": "Legs",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Hamstrings"],
+      "secondaryMuscles": ["Quads"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "A gentle stretch to restore full knee extension. Sit with one leg stretched out in front of you and the heel propped on the floor or a low surface, so the knee is unsupported. Place both hands on the thigh just above the kneecap. Keeping the leg relaxed, gently press down through the hands toward the floor until you feel a stretch behind the knee, and hold for about three seconds before releasing. The pressure should produce a stretch, never sharp pain. Repeat for the prescribed number of repetitions, then switch legs.",
+      "aliases": ["Seated Knee Extension Stretch", "Heel Prop Knee Extension"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2664/view/",
+        "author": "trs1800",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-f47c4ad6-fe45-4409-93dd-e889d6a1aa89",
+      "name": "Banded Monster Walk",
+      "muscle": "Legs",
+      "equipment": "Resistance band",
+      "primaryMuscles": ["Glutes"],
+      "secondaryMuscles": ["Quads"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "A banded walking drill for the glutes and hip stabilisers. Place a mini band around both thighs just above the knees, or around the ankles for a harder version. Stand with feet hip-width apart so the band is under tension, then sink into a quarter-squat with the chest up. Walk forward with small diagonal steps, pushing each leg out against the band and keeping the knees tracking over the toes rather than letting them fall inward. Walk forward for the prescribed number of steps, then walk backward to return, keeping the band under tension throughout.",
+      "aliases": ["Monster Walk", "Thigh Resisted Monster Walk"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2665/view/",
+        "author": "trs1800",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-09235a96-9834-4fad-ba9a-88ace035e80a",
+      "name": "Step Calf Stretch",
+      "muscle": "Legs",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Calves"],
+      "secondaryMuscles": ["Soleus"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Stand on a step or a sturdy raised surface with the balls of both feet on the edge and the heels hanging off, holding a rail or wall for balance. Let one or both heels drop below the level of the step until you feel a stretch through the calf, and hold. Keep the knee straight to stretch the gastrocnemius, or bend the knee slightly to bias the soleus lower down. Hold for the prescribed time, typically 30 seconds, without bouncing, then switch sides if stretching one leg at a time.",
+      "aliases": ["Heel Drop Calf Stretch", "Calf Stretch off a Step"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2666/view/",
+        "author": "trs1800",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-f9880802-e5bd-4143-97f6-d0ee82ba9dd2",
+      "name": "Single-Leg Balance with Eyes Closed",
+      "muscle": "Legs",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": [],
+      "secondaryMuscles": ["Calves", "Glutes"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "A balance and proprioception drill. Stand on one leg with the knee slightly bent and the other foot lifted clear of the floor, then close your eyes and hold the position. Without visual feedback the ankle and hip stabilisers have to do the work, so expect noticeable wobble. Stand within reach of a wall, counter or chair so you can steady yourself if needed. Hold for the prescribed time, then switch legs. Commonly prescribed in rehabilitation after ankle or knee injury.",
+      "aliases": ["Eyes Closed Single Leg Stand", "Blind Single-Leg Balance"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2667/view/",
+        "author": "trs1800",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-d229de41-3533-489f-8460-08a6e3daa25a",
+      "name": "Single-Leg Balance with Kettlebell Circles",
+      "muscle": "Legs",
+      "equipment": "Kettlebell",
+      "primaryMuscles": ["Glutes"],
+      "secondaryMuscles": ["Shoulders", "Abs"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "A balance drill that adds a moving load. Stand on one leg with the knee slightly bent, holding a kettlebell in one hand. Pass the kettlebell around your body in a circle, handing it from one hand to the other in front and behind you, while keeping your balance on the standing leg. Keep the hips level and the torso upright; the shifting weight of the bell constantly changes your centre of mass, which is what trains the hip and ankle stabilisers. Complete the prescribed number of circles, reverse direction, then switch legs. Use a light bell to start.",
+      "aliases": [
+        "Single Leg Balance Kettlebell Circle",
+        "Kettlebell Body Circle on One Leg"
+      ],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2668/view/",
+        "author": "trs1800",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-3642933c-d078-4fb6-a544-d1772fa0cc9d",
+      "name": "Bent Over Dumbbell Rows (Two Arms)",
+      "muscle": "Back",
+      "equipment": "Dumbbell",
+      "primaryMuscles": ["Lats", "Trapezius"],
+      "secondaryMuscles": ["Biceps", "Brachialis"],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "**How to Perform It**\n- Hold a dumbbell in each hand with a neutral or overhand grip.\n- Hinge at the hips, pushing your glutes back, until your torso is roughly 45–75 degrees to the floor. Keep a slight bend in your knees.\n- Let the dumbbells hang directly below your shoulders with arms fully extended.\n- Keep your back flat, chest up, and core braced — avoid rounding your spine.\n- Pull the dumbbells up toward your ribcage/hips, driving your elbows back and squeezing your shoulder blades together at the top.\n- Pause briefly at the top of the movement.\n- Lower the dumbbells back down under control to the starting position.\n- Repeat for the desired number of repetitions.\n\n**Key Coaching Cues**\n- Hinge from the hips, not the lower back\n- Keep the spine neutral throughout — no rounding\n- Lead with the elbows, not the hands\n- Avoid using momentum or jerking the weight up\n- Control the eccentric (lowering) phase rather than letting the weights drop",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2669/view/",
+        "author": "karthikrrk",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-6c34000f-5d0b-43a9-b16e-00fd00c6db78",
+      "name": "Alternate Walking",
+      "muscle": "Legs",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Calves", "Quads"],
+      "secondaryMuscles": [],
+      "category": "cardio",
+      "level": "Unspecified",
+      "description": "1m30s of walking (~4.5 km/h) to 30 s of jog (7 km/h) and repeat",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2670/view/",
+        "author": "Mamo2604",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-046b1e8f-4a11-4579-84d1-ac2833b8ed83",
+      "name": "Radio Taiso",
+      "muscle": "Back",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Shoulders", "Lats", "Quads", "Abs"],
+      "secondaryMuscles": ["Glutes", "Obliquus externus abdominis", "Chest"],
+      "category": "cardio",
+      "level": "Unspecified",
+      "description": "Video can be found here : https://www.youtube.com/watch?v=SGPBSqxKGAc\n\nFull-body mobility and dynamic warm-up routine (3–5 minutes) to prepare joints, muscles, and the cardiovascular system for workout.\n\nMovement Flow:\n\nDeep Breathing & Arm Raises: Inhale while raising arms laterally overhead, exhale as you lower them.\n\nKnee Bends: Soft, rhythmic knee flexions synchronized with arm swings.\n\nArm Circles: Large full-range arm rotations forward, then backward to open up the chest and shoulder girdle.\n\nChest Expansion: Cross arms in front of the chest and open wide to the sides.\n\nSide Bends: Reach overhead to stretch the lateral torso left and right with a smooth side flexion.\n\nForward & Back Bends: Gently hinge at the hips to reach forward, then return upright with a mild spinal extension.\n\nTorso Twists: Swing arms side-to-side to rotate the spine and loosen the core.\n\nAnkle Mobility / Light Bounces: Soft heel lifts or light bouncing on toes to warm up lower leg joints and tendons.",
+      "aliases": ["Japanese Warmup"],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2671/view/",
+        "author": "Mamo2604",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-11914fdd-02d9-4aa6-88be-0c10cd54c609",
+      "name": "kelso shrugs",
+      "muscle": "Back",
+      "equipment": "Barbell + Bench",
+      "primaryMuscles": ["Trapezius"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Kelso shrugs are a variation of scapular shrugs designed primarily to train **scapular retraction**, with particular emphasis on the **middle trapezius, rhomboids, and, secondarily, the lower trapezius**. Unlike conventional shrugs, the goal is not to elevate the shoulders toward the ears, but rather to **pull the shoulder blades backward**.\n\nThey are typically performed with the chest supported on an incline bench, using either dumbbells or a barbell:\n\n1. Lie face down on an incline bench, with your arms extended toward the floor.\n2. Keep your **elbows almost completely locked** throughout the movement.\n3. Starting with the shoulder blades slightly protracted, **retract them**, trying to bring them closer together.\n4. Keep your chest firmly supported on the bench; avoid turning the movement into a row by extending your torso.\n5. Briefly hold the fully retracted position, then return in a controlled manner, allowing the shoulder blades to separate.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2672/view/",
+        "author": "Friend7857",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-0d245efd-7d9a-4518-be17-cce14adae88a",
+      "name": "Weighted neck flexion",
+      "muscle": "Back",
+      "equipment": "Bench",
+      "primaryMuscles": ["Trapezius"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Weighted neck flexion is an *isolation exercise* designed to strengthen the *anterior (front) neck flexor muscles* by bringing your chin toward your chest against external resistance (most commonly a light weight plate, resistance band, or neck harness).",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2676/view/",
+        "author": "qoxivi",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-09c9a566-c1b3-4bf6-8a48-f9dd2bbec1f2",
+      "name": "Single leg press",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": ["Hamstrings", "Calves", "Glutes", "Quads"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Strength training exercise where you push a weight away from your body using one leg at a time on a leg press machine. It helps to improve leg strength, balance, and muscular symmetry by isolating each leg individually. This exercise is particularly useful for identifying and correcting muscle imbalances between your legs.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2677/view/",
+        "author": "qoxivi",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-e1a4c2a6-d4ed-4550-b37e-dc0078d96c64",
+      "name": "Incline Row - Rings",
+      "muscle": "Back",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Shoulders", "Biceps", "Lats", "Trapezius"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Perform a row using gymnastic rings, but with the body position somewhere between vertical and horizontal. Go closer to horizontal to make it harder.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2678/view/",
+        "author": "wintercyan",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-bc4bd5a0-46b5-4934-9a0a-dba2a9e5b2fa",
+      "name": "Tyson push-ups",
+      "muscle": "Arms",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Starting Position\n\n• Feet: Place the soles of your feet flat against a vertical wall, with your toes or balls of your feet on the floor.\n• Hands: Position your hands on the floor shoulder-width apart, directly under your lower chest or solar plexus.\n• Body: Keep your core tight, glutes squeezed, and head in a neutral position. Your knees should hover a few inches above the floor without touching it.\n\nMovement Pattern\n\n1. Lower Down: Flex your elbows (tucked around 45 degrees) to lower your chest toward the floor, stopping just a few centimeters short of touching the ground.\n2. Rock Back: As you press upward through your arms, push your hips backward and bend your knees, rocking your weight toward your heels while keeping your shins nearly parallel to the floor.\n3. Drive Forward: Explode forward from your lower-body/crouched position, shifting your weight back into the starting push-up plank stance to complete the repetition.\n\nKey Tips for Proper Form\n\n• Keep Knees Low: Do not let your knees or hips pike high up in the air; keep the motion low and horizontal.\n• Maintain Wall Contact: Keep the soles of your feet pressed against the wall so you don't lose your leverage.\n• Engage the Core: Avoid arching your lower back by tilting your pelvis backward and bracing your abs.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2679/view/",
+        "author": "yahoo.ivory",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-17eb3e8d-26b7-4bb8-8080-cb6550867ce4",
+      "name": "Wrist rocks",
+      "muscle": "Arms",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Start on all fours with your palms flat on the floor. Slowly rock forward and backward, keeping your hands planted. Move only within a comfortable, pain-free wrist range to gently improve mobility and flexibility.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2680/view/",
+        "author": "nalhilal",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-e044cd7d-ef86-4154-a3a8-bd01fc5535ab",
+      "name": "Scapular Pushups",
+      "muscle": "Back",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Start in a straight-arm plank with your hands under your shoulders. Keep your elbows locked and move only your shoulder blades: let your chest sink slightly, then push the floor away to spread the shoulder blades. Move in a comfortable, controlled range.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2681/view/",
+        "author": "nalhilal",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-e547df0d-d9aa-4c39-af40-59667aaa2cc9",
+      "name": "Dumbbell cyclist squat",
+      "muscle": "Legs",
+      "equipment": "Dumbbell",
+      "primaryMuscles": ["Hamstrings", "Calves", "Quads"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Dumbbell squats with elevated heel position. Stand on either squat wedges or weight plates to raise heels higher than toes, while holding the dumbbells on your sides.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2682/view/",
+        "author": "JuustoKakku",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-d46287e9-00a9-44c7-88a4-d1eb00fbe561",
+      "name": "Dumbbell single arm row",
+      "muscle": "Back",
+      "equipment": "Bench + Dumbbell",
+      "primaryMuscles": ["Biceps", "Lats", "Trapezius"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "- Place a dumbbell next to a flat bench\n- Place your left knee on on the bench, and plant your left hand on the bench so it is under your shoulder.\n- Place your right foot on the floor in line with your left knee\n- Grab the dumbbell with your right hand, neutral grip.\n- Starting position, shoulders should be in line and back paraller to the floor\n- Slowly pull the dumbbell up, by pushing your elbow upwards, keeping it close to your body.\n- Do repeats on one side, then on the other.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2683/view/",
+        "author": "JuustoKakku",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-f252e9cf-3749-413d-a18e-704c6bf1b87d",
+      "name": "Triceps push up",
+      "muscle": "Arms",
+      "equipment": "none (bodyweight exercise)",
+      "primaryMuscles": ["Triceps"],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Push ups for targeting triceps.\n- Start with a plank position with your hands directly below your shoulders, feet together.\n- When descending, keep your elbows pinned to your sides. Upper arms straight back.\n- Lower until your chest touches the floor, then return.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2684/view/",
+        "author": "JuustoKakku",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    }
+  ]
+}

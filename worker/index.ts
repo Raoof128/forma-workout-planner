@@ -1,5 +1,5 @@
 export interface Env {
-  BACKEND_URL: string;
+  BACKEND_URL?: string;
   APP_ORIGIN: string;
   ACCESS_CLIENT_ID: string;
   ACCESS_CLIENT_SECRET: string;
@@ -291,7 +291,7 @@ function createHandler(fetcher: Fetcher) {
     let appOrigin: URL;
     try {
       backend = configuredOrigin(
-        env.BACKEND_URL,
+        env.BACKEND_URL ?? "",
         "BACKEND_URL",
         env.ENVIRONMENT === "development",
       );

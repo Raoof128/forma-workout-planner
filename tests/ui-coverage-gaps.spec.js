@@ -68,7 +68,7 @@ test(
     await page.getByRole("button", { name: /Guest workspace/ }).click();
     await expect(page.locator("main")).toHaveAttribute("data-page", "account");
     await expect(
-      page.getByRole("heading", { name: "Welcome back", exact: true }),
+      page.getByRole("heading", { name: "Your local workspace", exact: true }),
     ).toBeVisible();
 
     const data = snapshot();

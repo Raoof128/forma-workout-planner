@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useSyncExternalStore } from "react";
 const pages = new Set([
   "overview",
   "routines",
@@ -13,17 +13,16 @@ const pages = new Set([
 ]);
 const currentPage = () =>
   pages.has(location.hash.slice(1)) ? location.hash.slice(1) : "overview";
+const subscribe = (update) => {
+  window.addEventListener("hashchange", update);
+  return () => window.removeEventListener("hashchange", update);
+};
 export function useNavigation() {
-  const [page, setPage] = useState(currentPage);
-  useEffect(() => {
-    const update = () => setPage(currentPage());
-    window.addEventListener("hashchange", update);
-    return () => window.removeEventListener("hashchange", update);
-  }, []);
+  // React rechecks the URL after subscribing, closing the render/setup gap.
+  const page = useSyncExternalStore(subscribe, currentPage);
   const navigate = useCallback((next) => {
     if (!pages.has(next)) return;
     location.hash = next;
-    setPage(next);
     window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
   useEffect(() => {

@@ -37,6 +37,6 @@ for (const [label, getLocks] of [
     assert.equal(result.data.profile.name, "Temporary once");
     assert.equal(result.data.revision, 1);
     assert.equal(repository.getSnapshot().issue, "unavailable");
-    assert.equal(parseBackup(raw).profile.name, "Alex Morgan");
+    assert.equal(parseBackup(raw).profile.name, "Guest");
   });
 }

@@ -8,12 +8,18 @@ Open **My routines** to use a starter routine or create your own. Give it a name
 
 Changing or deleting a routine does not rewrite completed workout history. An active workout keeps its own exercise and prescription snapshot.
 
+The template section adds strength, bodyweight, core, cardio, carries and mobility
+starting points. Selecting one creates an editable copy in your routines. Choose
+appropriate loads yourself. The library searches 1,661 exercises across all
+pages; use equipment/activity filters and **Show more exercises** to browse.
+Imported guides show their source, author and licence.
+
 On Overview, choose your next session and use **Schedule your week** to mark your usual training days. The calendar shows planned days and logged workouts. Training days are reminders, not assignments of specific routines to dates.
 
 ## Log a workout
 
 1. Start a routine from Overview or its details.
-2. Enter the weight and reps for a set, then mark it complete.
+2. Enter the displayed measurements for a set, then mark it complete: weight/reps, seconds, metres, or loaded carry distance.
 3. Use the rest timer between sets; choose 60, 90, or 120 seconds, pause it, or skip rest.
 4. Add sets and session notes as needed. Open the book icon for exercise instructions.
 5. Finish the workout and confirm **Save workout**.
@@ -28,7 +34,12 @@ Persistent sessions and timers survive navigation and reload. Wait for “Saving
 
 **Progress** shows completed workouts, completed sets, and volume, calculated as the sum of `weight × reps` for completed sets. Bodyweight sets logged at 0 kg contribute completed sets but zero external-load volume. Dumbbell volume uses the weight entered; it does not automatically double for two hands or both sides.
 
-Personal bests show the highest completed weight and an estimated one-repetition maximum. One rep uses the actual load; 2–12 reps use the Epley formula. Sets above 12 reps do not contribute to the estimate. These are training records, not personalized exercise prescriptions.
+Time and distance stay visible in workout history and corrections but do not
+become kilogram volume or lifting personal bests. Personal bests for load/reps
+movements show the highest completed weight and an estimated one-repetition
+maximum. One rep uses the actual load; 2–12 reps use the Epley formula. Sets above
+12 reps do not contribute to the estimate. These are training records, not
+personalized exercise prescriptions.
 
 ## Back up and restore
 

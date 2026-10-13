@@ -7,7 +7,11 @@ const chromiumLaunchOptions = executablePath
 
 export default defineConfig({
   testDir: "./tests",
-  testMatch: "production.spec.js",
+  testMatch: [
+    "production.spec.js",
+    "catalog.spec.js",
+    "navigation-release.spec.js",
+  ],
   workers: 2,
   retries: 0,
   forbidOnly: !!process.env.CI,

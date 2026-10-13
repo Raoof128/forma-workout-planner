@@ -574,7 +574,12 @@ export default function Account({
     history.forEach((session) =>
       (session.exercises || []).forEach((exercise) =>
         (exercise.sets || []).forEach((set) => {
-          if (!set.done) return;
+          if (
+            !set.done ||
+            set.durationSeconds !== undefined ||
+            set.distanceMeters !== undefined
+          )
+            return;
           const weight = Number(set.weight) || 0;
           const key = exercise.exerciseId || exercise.name || "Exercise";
           if (weight > (best.get(key)?.weight || 0))
@@ -884,6 +889,39 @@ export default function Account({
       <div className="account-loading" role="status">
         <span className="account-spinner" />
         Loading your account…
+      </div>
+    );
+  if (import.meta.env.VITE_ACCOUNT_MODE === "guest")
+    return (
+      <div className="account-workspace-state">
+        <ShieldCheck size={36} />
+        <span className="account-eyebrow">YOUR DATA, ON THIS DEVICE</span>
+        <h1>Your local workspace</h1>
+        <p>
+          Plan routines, log workouts and review progress without signing in.
+          Your training records are saved in this browser.
+        </p>
+        <p>
+          Export a backup before clearing browser data or moving to another
+          device. You can restore that backup in Settings.
+        </p>
+        <div className="account-auth-actions">
+          <button
+            type="button"
+            className="account-primary"
+            onClick={() => onNavigate("settings")}
+          >
+            <Download size={18} />
+            Profile and backups
+          </button>
+          <button
+            type="button"
+            className="account-secondary"
+            onClick={() => onNavigate("history")}
+          >
+            View workout history
+          </button>
+        </div>
       </div>
     );
   if (account.status !== "authenticated" || !account.user)

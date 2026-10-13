@@ -13,8 +13,10 @@ test("personal training workflow persists routines, sessions and calculated prog
     .getByRole("button", { name: "Exercise library", exact: true })
     .click();
   await page.getByLabel("Search exercise library").fill("bench");
-  await expect(page.locator(".library-card")).toHaveCount(1);
-  await page.locator(".library-card").click();
+  await expect(page.locator(".library-card").first()).toContainText(
+    "Barbell bench press",
+  );
+  await page.locator(".library-card").first().click();
   await expect(
     page.getByRole("heading", { name: "How to perform" }),
   ).toBeVisible();
@@ -25,7 +27,9 @@ test("personal training workflow persists routines, sessions and calculated prog
   ).toBeVisible();
   await page.getByRole("button", { name: "Clear filters" }).click();
   await page.getByLabel("Filter by equipment").selectOption("Barbell");
-  await expect(page.locator(".library-card")).toHaveCount(3);
+  await expect(page.locator(".library-card").first()).toBeVisible();
+  for (const card of await page.locator(".library-card").all())
+    await expect(card.locator("p")).toHaveText("Barbell");
   await page.getByRole("button", { name: "My routines", exact: true }).click();
   await page
     .getByRole("button", { name: "Create routine", exact: true })

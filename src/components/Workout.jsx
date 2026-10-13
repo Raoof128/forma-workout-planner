@@ -16,6 +16,7 @@ import { Button, PageHeading, Modal } from "./UI";
 import ExerciseGuide from "./ExerciseGuide";
 import SavedField from "./SavedField";
 import { exercises, formatTime, sessionSets, sessionVolume } from "../data";
+import { metricFields, validMeasurement } from "../exerciseMetrics.js";
 export default function Workout({
   session,
   onUpdate,
@@ -74,16 +75,17 @@ export default function Workout({
       .sets[index];
     if (
       !set.done &&
-      (set.reps === "" ||
-        !Number.isInteger(Number(set.reps)) ||
-        set.reps < 1 ||
-        set.reps > 100 ||
-        set.weight === "" ||
-        !Number.isFinite(Number(set.weight)) ||
-        set.weight < 0 ||
-        set.weight > 1000)
+      !validMeasurement(
+        exercises.find((item) => item.id === exerciseId),
+        set,
+      )
     ) {
-      notify("Enter 1–100 reps and a weight from 0–1,000 kg.");
+      const exercise = exercises.find((item) => item.id === exerciseId);
+      notify(
+        !exercise?.metric || exercise.metric === "load_reps"
+          ? "Enter 1–100 reps and a weight from 0–1,000 kg."
+          : "Enter valid measurements in the units shown before completing the set.",
+      );
       return;
     }
     const expected = set.done;
@@ -218,8 +220,9 @@ export default function Workout({
                 )}
                 <div className="set-row set-labels">
                   <span>SET</span>
-                  <span>WEIGHT (KG)</span>
-                  <span>REPS</span>
+                  {metricFields(exercise).map((field) => (
+                    <span key={field.key}>{field.label}</span>
+                  ))}
                   <span>DONE</span>
                 </div>
                 {entry.sets.map((set, index) => (
@@ -228,43 +231,28 @@ export default function Workout({
                     key={index}
                   >
                     <span>{index + 1}</span>
-                    <SavedField
-                      type="number"
-                      disabled={set.done}
-                      aria-label={`${exercise.name} set ${index + 1} weight`}
-                      min="0"
-                      max="1000"
-                      step="any"
-                      value={set.weight}
-                      onChange={(event) =>
-                        updateSet(
-                          exercise.id,
-                          index,
-                          "weight",
-                          event.target.value === ""
-                            ? ""
-                            : Number(event.target.value),
-                        )
-                      }
-                    />
-                    <SavedField
-                      type="number"
-                      disabled={set.done}
-                      aria-label={`${exercise.name} set ${index + 1} reps`}
-                      min="1"
-                      max="100"
-                      value={set.reps}
-                      onChange={(event) =>
-                        updateSet(
-                          exercise.id,
-                          index,
-                          "reps",
-                          event.target.value === ""
-                            ? ""
-                            : Number(event.target.value),
-                        )
-                      }
-                    />
+                    {metricFields(exercise).map((field) => (
+                      <SavedField
+                        key={field.key}
+                        type="number"
+                        disabled={set.done}
+                        aria-label={`${exercise.name} set ${index + 1} ${field.key}`}
+                        min={field.min}
+                        max={field.max}
+                        step={field.step}
+                        value={set[field.key] ?? ""}
+                        onChange={(event) =>
+                          updateSet(
+                            exercise.id,
+                            index,
+                            field.key,
+                            event.target.value === ""
+                              ? ""
+                              : Number(event.target.value),
+                          )
+                        }
+                      />
+                    ))}
                     <button
                       aria-label={`${set.done ? "Uncomplete" : "Complete"} ${exercise.name} set ${index + 1}`}
                       aria-pressed={set.done}
@@ -399,6 +387,16 @@ export default function Workout({
 }
 
 function RestControls({ session, remaining, onUpdate }) {
+  function startRest(seconds) {
+    // Start at the action, not when an asynchronous save queue processes it.
+    const deadline = Date.now() + seconds * 1000;
+    void onUpdate((current) => ({
+      ...current,
+      restSeconds: seconds,
+      restEnd: deadline,
+      restPaused: null,
+    }));
+  }
   return (
     <section className="rest-panel">
       <div className="section-title">
@@ -422,14 +420,7 @@ function RestControls({ session, remaining, onUpdate }) {
           <button
             key={seconds}
             aria-pressed={(session.restSeconds || 90) === seconds}
-            onClick={() =>
-              void onUpdate((current) => ({
-                ...current,
-                restSeconds: seconds,
-                restEnd: Date.now() + seconds * 1000,
-                restPaused: null,
-              }))
-            }
+            onClick={() => startRest(seconds)}
           >
             {seconds}s
           </button>

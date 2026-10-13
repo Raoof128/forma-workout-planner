@@ -13,6 +13,7 @@ import {
   Trash2,
 } from "lucide-react";
 import { Button, PageHeading, Empty, Modal } from "./UI";
+import { measurementText, tracksLoadReps } from "../exerciseMetrics.js";
 import {
   exercises,
   sessionSets,
@@ -151,7 +152,10 @@ export function WorkoutHistory({ history, onStart, onSave, onDelete }) {
                         .filter((s) => s.done)
                         .map((s, i) => (
                           <span key={i}>
-                            {s.weight} kg × {s.reps}
+                            {measurementText(
+                              exercises.find((x) => x.id === e.exerciseId),
+                              s,
+                            )}
                           </span>
                         ))}
                     </p>
@@ -197,6 +201,7 @@ export function Progress({ history, onStart }) {
   const volume = history.reduce((n, s) => n + sessionVolume(s), 0);
   const sets = history.reduce((n, s) => n + sessionSets(s), 0);
   const records = exercises
+    .filter(tracksLoadReps)
     .map((e) => {
       const done = history.flatMap((s) =>
         s.exercises

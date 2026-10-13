@@ -1,4 +1,7 @@
-export const exercises = [
+import catalog from "./catalog/exercises.json" with { type: "json" };
+import { tracksLoadReps } from "./exerciseMetrics.js";
+
+const originalExercises = [
   {
     id: "bench",
     name: "Barbell bench press",
@@ -144,6 +147,10 @@ export const exercises = [
     weight: 0,
   },
 ];
+export const exercises = [...originalExercises, ...catalog];
+export const exerciseById = new Map(
+  exercises.map((exercise) => [exercise.id, exercise]),
+);
 const items = (ids) =>
   ids.map((id) => ({
     exerciseId: id,
@@ -199,7 +206,7 @@ export const initialData = {
   routines: starterRoutines,
   history: [],
   active: null,
-  profile: { name: "Alex Morgan", goal: 4 },
+  profile: { name: "Guest", goal: 4 },
   schedule: [0, 1, 3, 5],
 };
 export function createId(cryptoApi = globalThis.crypto) {
@@ -250,7 +257,7 @@ export const sessionVolume = (s) =>
   s.exercises.reduce(
     (n, e) =>
       n +
-      e.sets
+      (tracksLoadReps(exerciseById.get(e.exerciseId)) ? e.sets : [])
         .filter((x) => x.done)
         .reduce((v, x) => v + Number(x.weight) * Number(x.reps), 0),
     0,

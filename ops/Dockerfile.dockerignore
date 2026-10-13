@@ -19,3 +19,6 @@ ops
 src/**
 !src/data.js
 !src/storage.js
+!src/exerciseMetrics.js
+!src/catalog/
+!src/catalog/exercises.json

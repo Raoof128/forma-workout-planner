@@ -84,3 +84,27 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   deployment and legal pages. Redeploys use a freshly minted one-hour Cloudflare
   token that is revoked straight after; never keep long-lived deploy tokens.
 - **Verification:** `npm run docs:check`; Zurvan index rebuilt.
+
+### Raouf: 2026-10-13 — Catalog and public guest release
+
+- **Scope:** latest upstream `5c826d7`, expanded exercise library and functional
+  public guest controls. See `docs/research/runtime-catalog.md`.
+- **Summary:** 1,661 sourced exercises, 12 additional templates, paginated
+  alias search, on-demand licensed guides, and validated seconds/metres/carry
+  logging. New guest profiles use `Guest`; the public account page opens real
+  local profile, backup and history controls. Rest deadlines begin at the click.
+  URL navigation uses a subscribed snapshot so startup hash changes are not missed.
+- **Constraints:** preserve all 16 legacy IDs and the original plank units.
+  Keep the 100-exercise session/routine and aggregate workspace bounds. Never
+  count time/distance as kilogram volume or estimated 1RM. Imported content
+  retains per-entry licence/author; do not import unreviewed image assets.
+  Refreshes retain published supplemental IDs. The API Docker build must include
+  the shared catalog and measurement helper. Update the staging API before its
+  account frontend; the older API rejects new exercise IDs.
+- **Infrastructure:** the published environment's unrestricted HTTP policy is
+  enforced. Direct SSH is refused; the current Cloudflare client-side SSH method
+  was verified through a temporary Service Auth gate with the stored key.
+  Temporary credentials and routes are removed after maintenance. Do not export
+  staging member data into the sandbox; take the release backup and perform the
+  isolated restore check on the Droplet. Reusable startup instructions were saved.
+- **Verification:** release evidence is recorded in `docs/live-catalog-release.md`.

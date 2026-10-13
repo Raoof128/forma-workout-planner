@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button, Modal } from "./UI";
 import { exercises, sessionSets } from "../data";
+import { metricFields } from "../exerciseMetrics.js";
 export default function HistoryEditor({ session, onSave, onClose }) {
   const [draft, setDraft] = useState(() => structuredClone(session));
   const [discard, setDiscard] = useState(false);
@@ -100,8 +101,9 @@ export default function HistoryEditor({ session, onSave, onClose }) {
                 <h3>{exercise.name}</h3>
                 <div className="set-row set-labels">
                   <span>SET</span>
-                  <span>KG</span>
-                  <span>REPS</span>
+                  {metricFields(exercise).map((field) => (
+                    <span key={field.key}>{field.label}</span>
+                  ))}
                   <span>KEEP</span>
                 </div>
                 {entry.sets.map(
@@ -109,43 +111,28 @@ export default function HistoryEditor({ session, onSave, onClose }) {
                     session.exercises[ei].sets[si].done && (
                       <div className="set-row" key={si}>
                         <span>{si + 1}</span>
-                        <input
-                          aria-label={`Correct ${exercise.name} set ${si + 1} weight`}
-                          type="number"
-                          min="0"
-                          max="1000"
-                          step="any"
-                          required={set.done}
-                          value={set.weight}
-                          onChange={(event) =>
-                            update(
-                              ei,
-                              si,
-                              "weight",
-                              event.target.value === ""
-                                ? ""
-                                : Number(event.target.value),
-                            )
-                          }
-                        />
-                        <input
-                          aria-label={`Correct ${exercise.name} set ${si + 1} reps`}
-                          type="number"
-                          min="1"
-                          max="100"
-                          required={set.done}
-                          value={set.reps}
-                          onChange={(event) =>
-                            update(
-                              ei,
-                              si,
-                              "reps",
-                              event.target.value === ""
-                                ? ""
-                                : Number(event.target.value),
-                            )
-                          }
-                        />
+                        {metricFields(exercise).map((field) => (
+                          <input
+                            key={field.key}
+                            aria-label={`Correct ${exercise.name} set ${si + 1} ${field.key}`}
+                            type="number"
+                            min={field.min}
+                            max={field.max}
+                            step={field.step}
+                            required={set.done}
+                            value={set[field.key] ?? ""}
+                            onChange={(event) =>
+                              update(
+                                ei,
+                                si,
+                                field.key,
+                                event.target.value === ""
+                                  ? ""
+                                  : Number(event.target.value),
+                              )
+                            }
+                          />
+                        ))}
                         <input
                           aria-label={`Keep ${exercise.name} set ${si + 1}`}
                           type="checkbox"
