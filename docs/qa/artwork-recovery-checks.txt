@@ -82,12 +82,6 @@ lint
 > eslint .
 
 
-/workspace/forma-workout-planner/work/recovery-c-review.cjs
-  1:60  error  'process' is not defined  no-undef
-
-✖ 1 problem (1 error, 0 warnings)
-
-
 
 format
 
