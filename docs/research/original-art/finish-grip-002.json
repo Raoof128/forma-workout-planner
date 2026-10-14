@@ -1,0 +1,40 @@
+{
+  "name": "finish-grip-002",
+  "columns": 1,
+  "rows": 1,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-grip-002.png",
+  "prompt": "Create ORIGINAL FORMA fitness-manual illustration, ONE standalone portrait1024x1536 full adult athlete and entire compact pull-up rack on pure white with subtle shadows. Fully clothed charcoal-gray fitness clothing tiny lime accents, charcoal apparatus. No lettering logos arrows duplicates overlays. Correct two arms two legs, all hands feet and equipment inside image with margins. Exercise COMMANDO PULL-UP mixedgrip lengthwise. Athlete torso faces ALONG THE LENGTH of a single straight horizontal overhead bar (not facing across it as ordinary wide pull-up). Bar runs diagonally from front-left toward rear-right in camera threequarter perspective. Athlete is viewed SIDE-THREEQUARTER so one hand is IN FRONT of the other along bar, TWO close-grip HANDS CLEARLY SEPARATE by15cm with visible empty bar shaft BETWEEN the hands. Front hand grasps UNDERHAND, supinated palm surface toward athletes face. Rear hand grasps OVERHAND, pronated knuckles visible and palm away from face. Both wrists and contrasting orientations unmistakably visible, four fingers and thumb of each anatomically plausible. Athlete near top representative phase, both elbows bent, CHIN BESIDE bar on its near side, body stays lengthwise without twisting toward front. Knees slightly bent, both FEET AIRBORNE with clear white gap above floor. Show full body and two-post rack supporting straight overhead bar, including stable feet of rack, sensible bar joints, no extra floating bars. Grip detail has priority: avoid hands overlapping or stacked touching, both forearms connect to their own correct hand. Source guide: variation of the pull-up exercise, it is performed with a grip of one hand supine and one hand prone, do not twist the torso to get back to the front, the head passes once to one side, once to the other.",
+  "sourceAssetPath": "assets/exercise-artwork/finish-grip-002.png",
+  "cells": [
+    {
+      "id": "wger-e872658a-3bac-4d9e-bcf2-15919ebea43a",
+      "title": "commando pull-ups",
+      "equipment": "Pull-up bar",
+      "guideText": "variation of the pull-up exercise, it is performed with a grip of one hand supine and one hand prone, do not twist the torso to get back to the front, the head passes once to one side, once to the other.",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/980/view/",
+        "author": "clafal",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "references": null,
+      "metric": "load_reps",
+      "row": 0,
+      "column": 0,
+      "reviewStatus": "held",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 1536
+      },
+      "reviewNote": "Hold: mixed grips are visible but hands remain approximately shoulder-width and torso faces across bar rather than lengthwise close-grip commando orientation.",
+      "cropReviewNote": "Inspected complete1024x1536 source: full rack, hands and airborne feet retained in full-image bounds."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-1fd6f9ab-3ef6-4db9-aeac-41f5533f6a0d.png",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

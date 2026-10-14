@@ -1,0 +1,991 @@
+{
+  "createdAt": "2026-10-14T05:17:54.750922+00:00",
+  "status": "reviewed and applied under explicit owner authorization",
+  "authorization": "Owner explicitly authorized replacing ambiguous entries with clearly defined independently authored guides and matching original artwork.",
+  "scope": "Exactly sixteen specified pending entries. Preserve every ID, metric, weight and selectable catalog count; no catalog/registry/git mutation in this proposal.",
+  "entries": [
+    {
+      "id": "wger-d561c00c-436d-47d9-b647-222e7b637abd",
+      "preserve": {
+        "id": "wger-d561c00c-436d-47d9-b647-222e7b637abd",
+        "metric": "load_reps",
+        "weight": 0
+      },
+      "oldName": "1/2 Kneeling Thoracic Rotation",
+      "oldGuide": "- Begin in a half kneeling position with the\nleg away from the wall stabilized against the wall\nwith a ball.\n- With both hands directly in front of\nyou, rotate one arm open attempting to reach\nthe wall behind you.\n- Exhale as you rotate, inhale\nas you return to neutral and repeat.",
+      "oldEquipment": "Bodyweight",
+      "whyReplacement": "Original wall and ball stabilization instructions do not define a consistent leg/wall relationship. Replace with an unassisted half-kneeling rotation.",
+      "replacement": {
+        "name": "Half-kneeling thoracic rotation",
+        "equipment": "Bodyweight",
+        "equipmentTags": [
+          "Bodyweight"
+        ],
+        "muscle": "Core",
+        "primaryMuscles": [
+          "Upper back"
+        ],
+        "secondaryMuscles": [],
+        "description": "Kneel on a mat with your right knee down and your left foot flat in front of you, both knees bent about ninety degrees. Keep your pelvis facing forward and your ribs stacked over your hips. Extend both arms forward at shoulder height with your palms together. Keep the left arm pointing forward and slowly open the right arm to the side as you rotate through your upper back. Follow the moving hand with your eyes without leaning backward or shifting your hips. Return the palms together with control, then switch the kneeling position and rotate to the other side.",
+        "guideText": "Kneel on a mat with your right knee down and your left foot flat in front of you, both knees bent about ninety degrees. Keep your pelvis facing forward and your ribs stacked over your hips. Extend both arms forward at shoulder height with your palms together. Keep the left arm pointing forward and slowly open the right arm to the side as you rotate through your upper back. Follow the moving hand with your eyes without leaning backward or shifting your hips. Return the palms together with control, then switch the kneeling position and rotate to the other side.",
+        "source": null
+      },
+      "references": [
+        {
+          "url": "https://wger.de/en/exercise/1966/view/",
+          "role": "archived_original_catalog_record",
+          "label": "wger",
+          "attribution": {
+            "title": "wger",
+            "url": "https://wger.de/en/exercise/1966/view/",
+            "author": "amwang4",
+            "license": "CC-BY-SA 4",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "modified": "HTML removed; taxonomy and measurement labels normalized"
+          },
+          "note": "Historical catalog attribution only. This record is not claimed to validate the replacement identity or technique."
+        },
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/",
+          "role": "general_exercise_context",
+          "label": "ACE Exercise Library",
+          "note": "General reference for conventional exercise setup and controlled movement. No replacement guide is quoted from or claimed as an exercise-specific ACE entry.",
+          "retrievalNote": "Public URL retrieval attempted in this environment and returned HTTP 403; included as a known general exercise-library context URL, not as a newly verified movement-specific source."
+        }
+      ],
+      "authorship": {
+        "author": "FORMA independently authored exercise guide",
+        "basis": "Owner-authorized replacement with a clearly defined conventional movement; original source record archived separately.",
+        "isTranslationOfOriginal": false
+      },
+      "artworkBrief": {
+        "style": "Original FORMA illustration; one fully clothed adult, charcoal sportswear, small lime accent, white background.",
+        "requirements": "Kneel on a mat with your right knee down and your left foot flat in front of you, both knees bent about ninety degrees. Keep your pelvis facing forward and your ribs stacked over your hips. Extend both arms forward at shoulder height with your palms together. Keep the left arm pointing forward and slowly open the right arm to the side as you rotate through your upper back. Follow the moving hand with your eyes without leaning backward or shifting your hips. Return the palms together with control, then switch the kneeling position and rotate to the other side.",
+        "doNotDepictOriginalAmbiguity": true
+      }
+    },
+    {
+      "id": "wger-7870ad8d-a0c1-4e3a-a4fe-a237908eba9b",
+      "preserve": {
+        "id": "wger-7870ad8d-a0c1-4e3a-a4fe-a237908eba9b",
+        "metric": "load_reps",
+        "weight": 0
+      },
+      "oldName": "3008 Abdominal Crunch",
+      "oldGuide": "This is especially for the gym80 device 3008 Abdominal Crunch.",
+      "oldEquipment": "Bodyweight",
+      "whyReplacement": "Original record identifies a brand/model but gives no setup. Replace with a generic seated abdominal-crunch station; do not claim a specific gym80 mechanism.",
+      "replacement": {
+        "name": "Seated machine abdominal crunch",
+        "equipment": "Seated ab crunch machine",
+        "equipmentTags": [
+          "Seated ab crunch machine"
+        ],
+        "muscle": "Core",
+        "primaryMuscles": [
+          "Abs"
+        ],
+        "secondaryMuscles": [],
+        "description": "Choose a seated abdominal-crunch machine and adjust its seat and pads according to the station instructions. Sit with your hips fully supported, place both feet on the foot supports or floor as the machine requires, and grasp the provided handles. Set a light resistance before beginning. Keeping your pelvis on the seat, exhale and bring your ribs toward your pelvis by gently rounding your trunk against the resistance. Keep your neck relaxed and avoid pulling with your arms or driving with your legs. Return slowly to the upright starting position without letting the resistance snap back. Repeat within a comfortable range.",
+        "guideText": "Choose a seated abdominal-crunch machine and adjust its seat and pads according to the station instructions. Sit with your hips fully supported, place both feet on the foot supports or floor as the machine requires, and grasp the provided handles. Set a light resistance before beginning. Keeping your pelvis on the seat, exhale and bring your ribs toward your pelvis by gently rounding your trunk against the resistance. Keep your neck relaxed and avoid pulling with your arms or driving with your legs. Return slowly to the upright starting position without letting the resistance snap back. Repeat within a comfortable range.",
+        "source": null
+      },
+      "references": [
+        {
+          "url": "https://wger.de/en/exercise/1924/view/",
+          "role": "archived_original_catalog_record",
+          "label": "wger",
+          "attribution": {
+            "title": "wger",
+            "url": "https://wger.de/en/exercise/1924/view/",
+            "author": "wger contributors",
+            "license": "CC-BY-SA 4",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+            "modified": "HTML removed; taxonomy and measurement labels normalized"
+          },
+          "note": "Historical catalog attribution only. This record is not claimed to validate the replacement identity or technique."
+        },
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/",
+          "role": "general_exercise_context",
+          "label": "ACE Exercise Library",
+          "note": "General reference for conventional exercise setup and controlled movement. No replacement guide is quoted from or claimed as an exercise-specific ACE entry.",
+          "retrievalNote": "Public URL retrieval attempted in this environment and returned HTTP 403; included as a known general exercise-library context URL, not as a newly verified movement-specific source."
+        }
+      ],
+      "authorship": {
+        "author": "FORMA independently authored exercise guide",
+        "basis": "Owner-authorized replacement with a clearly defined conventional movement; original source record archived separately.",
+        "isTranslationOfOriginal": false
+      },
+      "artworkBrief": {
+        "style": "Original FORMA illustration; one fully clothed adult, charcoal sportswear, small lime accent, white background.",
+        "requirements": "Choose a seated abdominal-crunch machine and adjust its seat and pads according to the station instructions. Sit with your hips fully supported, place both feet on the foot supports or floor as the machine requires, and grasp the provided handles. Set a light resistance before beginning. Keeping your pelvis on the seat, exhale and bring your ribs toward your pelvis by gently rounding your trunk against the resistance. Keep your neck relaxed and avoid pulling with your arms or driving with your legs. Return slowly to the upright starting position without letting the resistance snap back. Repeat within a comfortable range.",
+        "doNotDepictOriginalAmbiguity": true
+      }
+    },
+    {
+      "id": "wger-caccd791-ff30-452a-816e-790edadb78cd",
+      "preserve": {
+        "id": "wger-caccd791-ff30-452a-816e-790edadb78cd",
+        "metric": "load_reps",
+        "weight": 0
+      },
+      "oldName": "Arco femorale una gamba",
+      "oldGuide": "Nello specifico i muscoli coinvolti sono: bicipite femorale. muscolo semimembranoso. muscolo semitendinoso.",
+      "oldEquipment": "Bodyweight",
+      "whyReplacement": "Original Italian text only lists hamstring muscles. Replace unspecified one-leg femoral arch with a clearly defined single-leg bridge.",
+      "replacement": {
+        "name": "Single-leg glute bridge",
+        "equipment": "Bodyweight",
+        "equipmentTags": [
+          "Bodyweight"
+        ],
+        "muscle": "Legs",
+        "primaryMuscles": [
+          "Glutes",
+          "Hamstrings"
+        ],
+        "secondaryMuscles": [],
+        "description": "Lie on your back on a mat with your arms by your sides and your right foot flat on the floor, close enough that its knee is bent. Lift the left foot and keep that knee bent toward your chest. Brace your abdomen and press through the right foot to lift your hips until your shoulders, hips and right knee form a straight line. Keep both sides of your pelvis level and avoid arching your lower back. Pause briefly, then lower your hips to the mat with control. Complete the repetitions and switch legs.",
+        "guideText": "Lie on your back on a mat with your arms by your sides and your right foot flat on the floor, close enough that its knee is bent. Lift the left foot and keep that knee bent toward your chest. Brace your abdomen and press through the right foot to lift your hips until your shoulders, hips and right knee form a straight line. Keep both sides of your pelvis level and avoid arching your lower back. Pause briefly, then lower your hips to the mat with control. Complete the repetitions and switch legs.",
+        "source": null
+      },
+      "references": [
+        {
+          "url": "https://wger.de/en/exercise/1294/view/",
+          "role": "archived_original_catalog_record",
+          "label": "wger",
+          "attribution": {
+            "title": "wger",
+            "url": "https://wger.de/en/exercise/1294/view/",
+            "author": "clafal",
+            "license": "CC-BY-SA 4",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+            "modified": "HTML removed; taxonomy and measurement labels normalized"
+          },
+          "note": "Historical catalog attribution only. This record is not claimed to validate the replacement identity or technique."
+        },
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/",
+          "role": "general_exercise_context",
+          "label": "ACE Exercise Library",
+          "note": "General reference for conventional exercise setup and controlled movement. No replacement guide is quoted from or claimed as an exercise-specific ACE entry.",
+          "retrievalNote": "Public URL retrieval attempted in this environment and returned HTTP 403; included as a known general exercise-library context URL, not as a newly verified movement-specific source."
+        }
+      ],
+      "authorship": {
+        "author": "FORMA independently authored exercise guide",
+        "basis": "Owner-authorized replacement with a clearly defined conventional movement; original source record archived separately.",
+        "isTranslationOfOriginal": false
+      },
+      "artworkBrief": {
+        "style": "Original FORMA illustration; one fully clothed adult, charcoal sportswear, small lime accent, white background.",
+        "requirements": "Lie on your back on a mat with your arms by your sides and your right foot flat on the floor, close enough that its knee is bent. Lift the left foot and keep that knee bent toward your chest. Brace your abdomen and press through the right foot to lift your hips until your shoulders, hips and right knee form a straight line. Keep both sides of your pelvis level and avoid arching your lower back. Pause briefly, then lower your hips to the mat with control. Complete the repetitions and switch legs.",
+        "doNotDepictOriginalAmbiguity": true
+      }
+    },
+    {
+      "id": "wger-4c317795-c301-4081-9f96-6036682f80c1",
+      "preserve": {
+        "id": "wger-4c317795-c301-4081-9f96-6036682f80c1",
+        "metric": "load_reps",
+        "weight": 0
+      },
+      "oldName": "Banded Shoulder Drills",
+      "oldGuide": "1. Attach a resistance band to something solid behind you. Stand away from it, holding it in your hand so it is taut. 2. See the attached youtube video: https://www.youtube.com/watch?v=zdwEWchSjrI .",
+      "oldEquipment": "Resistance band",
+      "whyReplacement": "Original custom shoulder drill depends on an inaccessible video. Replace with a conventional unanchored band pull-apart, explicitly changing setup and name.",
+      "replacement": {
+        "name": "Band pull-apart drill",
+        "equipment": "Resistance band",
+        "equipmentTags": [
+          "Resistance band"
+        ],
+        "muscle": "Shoulders",
+        "primaryMuscles": [
+          "Rear delts",
+          "Upper back"
+        ],
+        "secondaryMuscles": [],
+        "description": "Stand upright with your feet about hip width apart and hold a light resistance band in both hands at shoulder height. Place your hands far enough apart that the band has mild tension, with your palms facing downward and elbows slightly bent. Keep your ribs down and shoulders away from your ears. Move your hands outward until the band approaches your upper chest, drawing your shoulder blades gently together. Keep the elbows at the same small bend rather than turning the movement into a row. Return slowly to the starting width and repeat without snapping the band.",
+        "guideText": "Stand upright with your feet about hip width apart and hold a light resistance band in both hands at shoulder height. Place your hands far enough apart that the band has mild tension, with your palms facing downward and elbows slightly bent. Keep your ribs down and shoulders away from your ears. Move your hands outward until the band approaches your upper chest, drawing your shoulder blades gently together. Keep the elbows at the same small bend rather than turning the movement into a row. Return slowly to the starting width and repeat without snapping the band.",
+        "source": null
+      },
+      "references": [
+        {
+          "url": "https://wger.de/en/exercise/1838/view/",
+          "role": "archived_original_catalog_record",
+          "label": "wger",
+          "attribution": {
+            "title": "wger",
+            "url": "https://wger.de/en/exercise/1838/view/",
+            "author": "Croak6728",
+            "license": "CC-BY-SA 4",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+            "modified": "HTML removed; taxonomy and measurement labels normalized"
+          },
+          "note": "Historical catalog attribution only. This record is not claimed to validate the replacement identity or technique."
+        },
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/",
+          "role": "general_exercise_context",
+          "label": "ACE Exercise Library",
+          "note": "General reference for conventional exercise setup and controlled movement. No replacement guide is quoted from or claimed as an exercise-specific ACE entry.",
+          "retrievalNote": "Public URL retrieval attempted in this environment and returned HTTP 403; included as a known general exercise-library context URL, not as a newly verified movement-specific source."
+        }
+      ],
+      "authorship": {
+        "author": "FORMA independently authored exercise guide",
+        "basis": "Owner-authorized replacement with a clearly defined conventional movement; original source record archived separately.",
+        "isTranslationOfOriginal": false
+      },
+      "artworkBrief": {
+        "style": "Original FORMA illustration; one fully clothed adult, charcoal sportswear, small lime accent, white background.",
+        "requirements": "Stand upright with your feet about hip width apart and hold a light resistance band in both hands at shoulder height. Place your hands far enough apart that the band has mild tension, with your palms facing downward and elbows slightly bent. Keep your ribs down and shoulders away from your ears. Move your hands outward until the band approaches your upper chest, drawing your shoulder blades gently together. Keep the elbows at the same small bend rather than turning the movement into a row. Return slowly to the starting width and repeat without snapping the band.",
+        "doNotDepictOriginalAmbiguity": true
+      }
+    },
+    {
+      "id": "db-bent-over-two-arm-long-bar-row",
+      "preserve": {
+        "id": "db-bent-over-two-arm-long-bar-row",
+        "metric": "load_reps",
+        "weight": 0
+      },
+      "oldName": "Bent Over Two-Arm Long Bar Row",
+      "oldGuide": "Put weight on one of the ends of an Olympic barbell. Make sure that you either place the other end of the barbell in the corner of two walls; or put a heavy object on the ground so the barbell cannot slide backward.\n\nBend forward until your torso is as close to parallel with the floor as you can and keep your knees slightly bent.\n\nNow grab the bar with both arms just behind the plates on the side where the weight was placed and put your other hand on your knee. This will be your starting position.\n\nPull the bar straight up with your elbows in (to maximize back stimulation) until the plates touch your lower chest. Squeeze the back muscles as you lift the weight up and hold for a second at the top of the movement. Breathe out as you lift the weight. Tip: Use a stirrup or double handle cable attachment by hooking it under the end of the bar.\n\nSlowly lower the bar to the starting position getting a nice stretch on the lats. Tip: Do not let the plates touch the floor. To ensure the best range of motion, I recommend using small plates (25-lb ones) as opposed to larger plates (like 35-45lb ones).\n\nRepeat for the recommended amount of repetitions.",
+      "oldEquipment": "Barbell",
+      "whyReplacement": "Original guide asks for both arms on the bar and an additional hand on the knee. Replace with a consistent two-hand landmine row using a double-D handle.",
+      "replacement": {
+        "name": "Two-hand landmine row",
+        "equipment": "Barbell + Landmine",
+        "equipmentTags": [
+          "Barbell",
+          "Landmine"
+        ],
+        "muscle": "Back",
+        "primaryMuscles": [
+          "Upper back",
+          "Lats"
+        ],
+        "secondaryMuscles": [
+          "Biceps"
+        ],
+        "description": "Secure one end of a barbell in a landmine attachment and load the free end with suitable plates. Straddle the bar facing its loaded end and place a double-D row handle around the shaft immediately behind the plates. Grip both sides of the handle, bend your knees slightly and hinge your hips back while keeping your spine neutral. Begin with both arms extended and the weight clear of the floor. Pull the handle toward your upper abdomen, keeping your elbows close to your body and your torso still. Pause, then lower with control until both arms are extended again. Keep both hands on the handle throughout.",
+        "guideText": "Secure one end of a barbell in a landmine attachment and load the free end with suitable plates. Straddle the bar facing its loaded end and place a double-D row handle around the shaft immediately behind the plates. Grip both sides of the handle, bend your knees slightly and hinge your hips back while keeping your spine neutral. Begin with both arms extended and the weight clear of the floor. Pull the handle toward your upper abdomen, keeping your elbows close to your body and your torso still. Pause, then lower with control until both arms are extended again. Keep both hands on the handle throughout.",
+        "source": null
+      },
+      "references": [
+        {
+          "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Bent_Over_Two-Arm_Long_Bar_Row.json",
+          "role": "archived_original_catalog_record",
+          "label": "Free Exercise DB",
+          "attribution": {
+            "title": "Free Exercise DB",
+            "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Bent_Over_Two-Arm_Long_Bar_Row.json",
+            "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+            "license": "Unlicense",
+            "licenseUrl": "https://unlicense.org/"
+          },
+          "note": "Historical catalog attribution only. This record is not claimed to validate the replacement identity or technique."
+        },
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/",
+          "role": "general_exercise_context",
+          "label": "ACE Exercise Library",
+          "note": "General reference for conventional exercise setup and controlled movement. No replacement guide is quoted from or claimed as an exercise-specific ACE entry.",
+          "retrievalNote": "Public URL retrieval attempted in this environment and returned HTTP 403; included as a known general exercise-library context URL, not as a newly verified movement-specific source."
+        }
+      ],
+      "authorship": {
+        "author": "FORMA independently authored exercise guide",
+        "basis": "Owner-authorized replacement with a clearly defined conventional movement; original source record archived separately.",
+        "isTranslationOfOriginal": false
+      },
+      "artworkBrief": {
+        "style": "Original FORMA illustration; one fully clothed adult, charcoal sportswear, small lime accent, white background.",
+        "requirements": "Secure one end of a barbell in a landmine attachment and load the free end with suitable plates. Straddle the bar facing its loaded end and place a double-D row handle around the shaft immediately behind the plates. Grip both sides of the handle, bend your knees slightly and hinge your hips back while keeping your spine neutral. Begin with both arms extended and the weight clear of the floor. Pull the handle toward your upper abdomen, keeping your elbows close to your body and your torso still. Pause, then lower with control until both arms are extended again. Keep both hands on the handle throughout.",
+        "doNotDepictOriginalAmbiguity": true
+      }
+    },
+    {
+      "id": "wger-abdd2b41-0c30-4ec1-8d14-f6dc5deb3561",
+      "preserve": {
+        "id": "wger-abdd2b41-0c30-4ec1-8d14-f6dc5deb3561",
+        "metric": "duration",
+        "weight": 0
+      },
+      "oldName": "Bent-Leg Hamstring Stretch",
+      "oldGuide": "See this instructional video from Stretch Therapy: https://www.youtube.com/watch?v=CrF2iMnn09w .",
+      "oldEquipment": "Bodyweight",
+      "whyReplacement": "Original bent-leg stretch is video-only. Replace with a seated, gently bent-knee hamstring stretch with fully specified support.",
+      "replacement": {
+        "name": "Seated bent-knee hamstring stretch",
+        "equipment": "Bodyweight",
+        "equipmentTags": [
+          "Bodyweight"
+        ],
+        "muscle": "Legs",
+        "primaryMuscles": [
+          "Hamstrings"
+        ],
+        "secondaryMuscles": [],
+        "description": "Sit near the front of a sturdy chair with your left foot flat on the floor. Extend your right leg forward, resting its heel on the floor, and keep a small bend in the right knee. Point the toes upward without forcing the ankle. Lengthen your spine and hinge forward from your hips, placing your hands lightly on your thighs for support. Stop when you feel a gentle stretch behind the right thigh; do not push the knee straight or round your back to reach farther. Breathe normally during the hold, return upright and repeat on the opposite side.",
+        "guideText": "Sit near the front of a sturdy chair with your left foot flat on the floor. Extend your right leg forward, resting its heel on the floor, and keep a small bend in the right knee. Point the toes upward without forcing the ankle. Lengthen your spine and hinge forward from your hips, placing your hands lightly on your thighs for support. Stop when you feel a gentle stretch behind the right thigh; do not push the knee straight or round your back to reach farther. Breathe normally during the hold, return upright and repeat on the opposite side.",
+        "source": null
+      },
+      "references": [
+        {
+          "url": "https://wger.de/en/exercise/1840/view/",
+          "role": "archived_original_catalog_record",
+          "label": "wger",
+          "attribution": {
+            "title": "wger",
+            "url": "https://wger.de/en/exercise/1840/view/",
+            "author": "Croak6728",
+            "license": "CC-BY-SA 4",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+            "modified": "HTML removed; taxonomy and measurement labels normalized"
+          },
+          "note": "Historical catalog attribution only. This record is not claimed to validate the replacement identity or technique."
+        },
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/",
+          "role": "general_exercise_context",
+          "label": "ACE Exercise Library",
+          "note": "General reference for conventional exercise setup and controlled movement. No replacement guide is quoted from or claimed as an exercise-specific ACE entry.",
+          "retrievalNote": "Public URL retrieval attempted in this environment and returned HTTP 403; included as a known general exercise-library context URL, not as a newly verified movement-specific source."
+        }
+      ],
+      "authorship": {
+        "author": "FORMA independently authored exercise guide",
+        "basis": "Owner-authorized replacement with a clearly defined conventional movement; original source record archived separately.",
+        "isTranslationOfOriginal": false
+      },
+      "artworkBrief": {
+        "style": "Original FORMA illustration; one fully clothed adult, charcoal sportswear, small lime accent, white background.",
+        "requirements": "Sit near the front of a sturdy chair with your left foot flat on the floor. Extend your right leg forward, resting its heel on the floor, and keep a small bend in the right knee. Point the toes upward without forcing the ankle. Lengthen your spine and hinge forward from your hips, placing your hands lightly on your thighs for support. Stop when you feel a gentle stretch behind the right thigh; do not push the knee straight or round your back to reach farther. Breathe normally during the hold, return upright and repeat on the opposite side.",
+        "doNotDepictOriginalAmbiguity": true
+      }
+    },
+    {
+      "id": "wger-4b23738a-67a8-41af-996d-abc53a7c3f97",
+      "preserve": {
+        "id": "wger-4b23738a-67a8-41af-996d-abc53a7c3f97",
+        "metric": "load_reps",
+        "weight": 0
+      },
+      "oldName": "DB Upper Chest Variation",
+      "oldGuide": "Dumbbell in hand in a curl fashion, lean body into the arm to help the dumbbell up above the chest, next to the head, to activate chest and delt combo",
+      "oldEquipment": "Dumbbell",
+      "whyReplacement": "Original custom chest/delt movement describes leaning into a curl without a stable setup. User authorizes replacing it with a plain incline dumbbell press.",
+      "replacement": {
+        "name": "Incline dumbbell press",
+        "equipment": "Dumbbell + Incline bench",
+        "equipmentTags": [
+          "Dumbbell",
+          "Incline bench"
+        ],
+        "muscle": "Chest",
+        "primaryMuscles": [
+          "Chest"
+        ],
+        "secondaryMuscles": [
+          "Shoulders",
+          "Triceps"
+        ],
+        "description": "Set a sturdy adjustable bench to a low incline of about thirty degrees. Sit with a dumbbell in each hand, then lie back with your head and upper back supported and both feet flat on the floor. Bring the dumbbells beside your upper chest with wrists stacked over elbows and elbows angled moderately away from your torso. Press both weights upward over your upper chest without lifting your hips or shrugging your shoulders. Pause with your arms extended but comfortable, then lower slowly to the starting position. Keep your wrists straight and choose a load you can control throughout.",
+        "guideText": "Set a sturdy adjustable bench to a low incline of about thirty degrees. Sit with a dumbbell in each hand, then lie back with your head and upper back supported and both feet flat on the floor. Bring the dumbbells beside your upper chest with wrists stacked over elbows and elbows angled moderately away from your torso. Press both weights upward over your upper chest without lifting your hips or shrugging your shoulders. Pause with your arms extended but comfortable, then lower slowly to the starting position. Keep your wrists straight and choose a load you can control throughout.",
+        "source": null
+      },
+      "references": [
+        {
+          "url": "https://wger.de/en/exercise/1496/view/",
+          "role": "archived_original_catalog_record",
+          "label": "wger",
+          "attribution": {
+            "title": "wger",
+            "url": "https://wger.de/en/exercise/1496/view/",
+            "author": "JohnPreston",
+            "license": "CC-BY-SA 4",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+            "modified": "HTML removed; taxonomy and measurement labels normalized"
+          },
+          "note": "Historical catalog attribution only. This record is not claimed to validate the replacement identity or technique."
+        },
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/",
+          "role": "general_exercise_context",
+          "label": "ACE Exercise Library",
+          "note": "General reference for conventional exercise setup and controlled movement. No replacement guide is quoted from or claimed as an exercise-specific ACE entry.",
+          "retrievalNote": "Public URL retrieval attempted in this environment and returned HTTP 403; included as a known general exercise-library context URL, not as a newly verified movement-specific source."
+        }
+      ],
+      "authorship": {
+        "author": "FORMA independently authored exercise guide",
+        "basis": "Owner-authorized replacement with a clearly defined conventional movement; original source record archived separately.",
+        "isTranslationOfOriginal": false
+      },
+      "artworkBrief": {
+        "style": "Original FORMA illustration; one fully clothed adult, charcoal sportswear, small lime accent, white background.",
+        "requirements": "Set a sturdy adjustable bench to a low incline of about thirty degrees. Sit with a dumbbell in each hand, then lie back with your head and upper back supported and both feet flat on the floor. Bring the dumbbells beside your upper chest with wrists stacked over elbows and elbows angled moderately away from your torso. Press both weights upward over your upper chest without lifting your hips or shrugging your shoulders. Pause with your arms extended but comfortable, then lower slowly to the starting position. Keep your wrists straight and choose a load you can control throughout.",
+        "doNotDepictOriginalAmbiguity": true
+      }
+    },
+    {
+      "id": "wger-4925b6c0-bbe6-4864-a649-23ec18d49985",
+      "preserve": {
+        "id": "wger-4925b6c0-bbe6-4864-a649-23ec18d49985",
+        "metric": "duration",
+        "weight": 0
+      },
+      "oldName": "Extreme Shoulder Stretch",
+      "oldGuide": "Deep loaded stretch for deltoids, performed after pressing movements.",
+      "oldEquipment": "Bodyweight",
+      "whyReplacement": "Original extreme loaded shoulder stretch lacks technique and load instructions. Replace with a gentle unloaded cross-body shoulder stretch.",
+      "replacement": {
+        "name": "Cross-body shoulder stretch",
+        "equipment": "Bodyweight",
+        "equipmentTags": [
+          "Bodyweight"
+        ],
+        "muscle": "Shoulders",
+        "primaryMuscles": [
+          "Shoulders"
+        ],
+        "secondaryMuscles": [],
+        "description": "Stand or sit upright with your spine comfortable and your shoulders relaxed. Raise your right arm in front of you and bring it across your chest at about shoulder height. Use your left hand or forearm to support the right upper arm just above the elbow, rather than pressing directly on the joint. Gently draw the arm closer to your chest until you feel a mild stretch at the back of the right shoulder. Keep the shoulder down and avoid twisting your torso to increase the range. Breathe steadily during the hold, release slowly and repeat with the other arm.",
+        "guideText": "Stand or sit upright with your spine comfortable and your shoulders relaxed. Raise your right arm in front of you and bring it across your chest at about shoulder height. Use your left hand or forearm to support the right upper arm just above the elbow, rather than pressing directly on the joint. Gently draw the arm closer to your chest until you feel a mild stretch at the back of the right shoulder. Keep the shoulder down and avoid twisting your torso to increase the range. Breathe steadily during the hold, release slowly and repeat with the other arm.",
+        "source": null
+      },
+      "references": [
+        {
+          "url": "https://wger.de/en/exercise/1920/view/",
+          "role": "archived_original_catalog_record",
+          "label": "wger",
+          "attribution": {
+            "title": "wger",
+            "url": "https://wger.de/en/exercise/1920/view/",
+            "author": "wger contributors",
+            "license": "CC-BY-SA 4",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+            "modified": "HTML removed; taxonomy and measurement labels normalized"
+          },
+          "note": "Historical catalog attribution only. This record is not claimed to validate the replacement identity or technique."
+        },
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/",
+          "role": "general_exercise_context",
+          "label": "ACE Exercise Library",
+          "note": "General reference for conventional exercise setup and controlled movement. No replacement guide is quoted from or claimed as an exercise-specific ACE entry.",
+          "retrievalNote": "Public URL retrieval attempted in this environment and returned HTTP 403; included as a known general exercise-library context URL, not as a newly verified movement-specific source."
+        }
+      ],
+      "authorship": {
+        "author": "FORMA independently authored exercise guide",
+        "basis": "Owner-authorized replacement with a clearly defined conventional movement; original source record archived separately.",
+        "isTranslationOfOriginal": false
+      },
+      "artworkBrief": {
+        "style": "Original FORMA illustration; one fully clothed adult, charcoal sportswear, small lime accent, white background.",
+        "requirements": "Stand or sit upright with your spine comfortable and your shoulders relaxed. Raise your right arm in front of you and bring it across your chest at about shoulder height. Use your left hand or forearm to support the right upper arm just above the elbow, rather than pressing directly on the joint. Gently draw the arm closer to your chest until you feel a mild stretch at the back of the right shoulder. Keep the shoulder down and avoid twisting your torso to increase the range. Breathe steadily during the hold, release slowly and repeat with the other arm.",
+        "doNotDepictOriginalAmbiguity": true
+      }
+    },
+    {
+      "id": "wger-00eae665-ff78-4373-9c43-f44a4a1b43e0",
+      "preserve": {
+        "id": "wger-00eae665-ff78-4373-9c43-f44a4a1b43e0",
+        "metric": "load_reps",
+        "weight": 0
+      },
+      "oldName": "Frog stand",
+      "oldGuide": "Starting position: Stand with your feet shoulder-width apart and your toes pointing forward, facing a wall or bench for support if needed. Bend your knees into a squat position. Place your hands on the ground in front of you, shoulder-width apart, with your fingers spread wide. Make sure your elbows are under your shoulders and your body forms a straight line from your head to your heels. Upward phase: Push with your feet and hands to lift your body off the ground. Straighten your legs and arms, keeping your body aligned. Engage your core and glutes to maintain the position. If needed, rest your knees on the wall or bench for assistance.",
+      "oldEquipment": "Bodyweight",
+      "whyReplacement": "Original guide combines frog-stand naming with straight-body and straight-leg instructions. Replace with a conventional bent-arm knee-supported frog balance.",
+      "replacement": {
+        "name": "Frog stand balance",
+        "equipment": "Bodyweight",
+        "equipmentTags": [
+          "Bodyweight"
+        ],
+        "muscle": "Shoulders",
+        "primaryMuscles": [
+          "Shoulders"
+        ],
+        "secondaryMuscles": [
+          "Abs"
+        ],
+        "description": "Squat on a mat and place both palms on the floor about shoulder width apart, fingers spread. Bend your elbows and rest the inside of each knee against the corresponding upper arm near the elbow. Keep your knees bent and look slightly ahead of your hands. Shift your weight forward gradually until one foot becomes light, then lift it a small distance. If stable, lift the other foot so both feet hover while your palms support you and your knees remain on your arms. Hold briefly with control, then place both feet back on the mat. Keep the lift low and stop before losing balance.",
+        "guideText": "Squat on a mat and place both palms on the floor about shoulder width apart, fingers spread. Bend your elbows and rest the inside of each knee against the corresponding upper arm near the elbow. Keep your knees bent and look slightly ahead of your hands. Shift your weight forward gradually until one foot becomes light, then lift it a small distance. If stable, lift the other foot so both feet hover while your palms support you and your knees remain on your arms. Hold briefly with control, then place both feet back on the mat. Keep the lift low and stop before losing balance.",
+        "source": null
+      },
+      "references": [
+        {
+          "url": "https://wger.de/en/exercise/1238/view/",
+          "role": "archived_original_catalog_record",
+          "label": "wger",
+          "attribution": {
+            "title": "wger",
+            "url": "https://wger.de/en/exercise/1238/view/",
+            "author": "clafal",
+            "license": "CC-BY-SA 4",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+            "modified": "HTML removed; taxonomy and measurement labels normalized"
+          },
+          "note": "Historical catalog attribution only. This record is not claimed to validate the replacement identity or technique."
+        },
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/",
+          "role": "general_exercise_context",
+          "label": "ACE Exercise Library",
+          "note": "General reference for conventional exercise setup and controlled movement. No replacement guide is quoted from or claimed as an exercise-specific ACE entry.",
+          "retrievalNote": "Public URL retrieval attempted in this environment and returned HTTP 403; included as a known general exercise-library context URL, not as a newly verified movement-specific source."
+        }
+      ],
+      "authorship": {
+        "author": "FORMA independently authored exercise guide",
+        "basis": "Owner-authorized replacement with a clearly defined conventional movement; original source record archived separately.",
+        "isTranslationOfOriginal": false
+      },
+      "artworkBrief": {
+        "style": "Original FORMA illustration; one fully clothed adult, charcoal sportswear, small lime accent, white background.",
+        "requirements": "Squat on a mat and place both palms on the floor about shoulder width apart, fingers spread. Bend your elbows and rest the inside of each knee against the corresponding upper arm near the elbow. Keep your knees bent and look slightly ahead of your hands. Shift your weight forward gradually until one foot becomes light, then lift it a small distance. If stable, lift the other foot so both feet hover while your palms support you and your knees remain on your arms. Hold briefly with control, then place both feet back on the mat. Keep the lift low and stop before losing balance.",
+        "doNotDepictOriginalAmbiguity": true
+      }
+    },
+    {
+      "id": "wger-5edf07a8-cca2-4199-96a5-9988369be985",
+      "preserve": {
+        "id": "wger-5edf07a8-cca2-4199-96a5-9988369be985",
+        "metric": "load_reps",
+        "weight": 0
+      },
+      "oldName": "Kopfüber Gewichtaufheben",
+      "oldGuide": "Diese Maschine neben Beinheben. Kopf nach vorne, mit dem gesicht zum boden und das Gewicht aufheben",
+      "oldEquipment": "Kettlebell",
+      "whyReplacement": "Original German description refers to an unidentified face-down machine beside leg raises. User authorizes a stable low-incline chest-supported kettlebell row instead.",
+      "replacement": {
+        "name": "Chest-supported kettlebell row",
+        "equipment": "Kettlebell + Incline bench",
+        "equipmentTags": [
+          "Kettlebell",
+          "Incline bench"
+        ],
+        "muscle": "Back",
+        "primaryMuscles": [
+          "Upper back",
+          "Lats"
+        ],
+        "secondaryMuscles": [
+          "Biceps"
+        ],
+        "description": "Set a sturdy adjustable bench to a low incline of about thirty degrees. Lie face down with your chest supported on the pad, your head beyond its upper edge and both feet firmly on the floor. Hold one kettlebell in each hand below your shoulders, with enough clearance that the weights do not hit the floor or bench frame. Keep your neck aligned with your spine and your chest against the pad. Bend both elbows and draw the kettlebells toward your lower ribs without shrugging or lifting your torso. Pause briefly, then lower slowly until your arms are extended. Choose weights that allow steady movement.",
+        "guideText": "Set a sturdy adjustable bench to a low incline of about thirty degrees. Lie face down with your chest supported on the pad, your head beyond its upper edge and both feet firmly on the floor. Hold one kettlebell in each hand below your shoulders, with enough clearance that the weights do not hit the floor or bench frame. Keep your neck aligned with your spine and your chest against the pad. Bend both elbows and draw the kettlebells toward your lower ribs without shrugging or lifting your torso. Pause briefly, then lower slowly until your arms are extended. Choose weights that allow steady movement.",
+        "source": null
+      },
+      "references": [
+        {
+          "url": "https://wger.de/en/exercise/1322/view/",
+          "role": "archived_original_catalog_record",
+          "label": "wger",
+          "attribution": {
+            "title": "wger",
+            "url": "https://wger.de/en/exercise/1322/view/",
+            "author": "Pete",
+            "license": "CC-BY-SA 4",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+            "modified": "HTML removed; taxonomy and measurement labels normalized"
+          },
+          "note": "Historical catalog attribution only. This record is not claimed to validate the replacement identity or technique."
+        },
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/",
+          "role": "general_exercise_context",
+          "label": "ACE Exercise Library",
+          "note": "General reference for conventional exercise setup and controlled movement. No replacement guide is quoted from or claimed as an exercise-specific ACE entry.",
+          "retrievalNote": "Public URL retrieval attempted in this environment and returned HTTP 403; included as a known general exercise-library context URL, not as a newly verified movement-specific source."
+        }
+      ],
+      "authorship": {
+        "author": "FORMA independently authored exercise guide",
+        "basis": "Owner-authorized replacement with a clearly defined conventional movement; original source record archived separately.",
+        "isTranslationOfOriginal": false
+      },
+      "artworkBrief": {
+        "style": "Original FORMA illustration; one fully clothed adult, charcoal sportswear, small lime accent, white background.",
+        "requirements": "Set a sturdy adjustable bench to a low incline of about thirty degrees. Lie face down with your chest supported on the pad, your head beyond its upper edge and both feet firmly on the floor. Hold one kettlebell in each hand below your shoulders, with enough clearance that the weights do not hit the floor or bench frame. Keep your neck aligned with your spine and your chest against the pad. Bend both elbows and draw the kettlebells toward your lower ribs without shrugging or lifting your torso. Pause briefly, then lower slowly until your arms are extended. Choose weights that allow steady movement.",
+        "doNotDepictOriginalAmbiguity": true
+      }
+    },
+    {
+      "id": "wger-ca514fad-c6ce-47b0-93a0-dc73a3507099",
+      "preserve": {
+        "id": "wger-ca514fad-c6ce-47b0-93a0-dc73a3507099",
+        "metric": "load_reps",
+        "weight": 0
+      },
+      "oldName": "Leg curl with elastic",
+      "oldGuide": "Standing position: Place the band under your feet in the middle of your foot and grasp it with a hammer grip.",
+      "oldEquipment": "Resistance band",
+      "whyReplacement": "Original leg-curl guide describes band-under-feet hammer-grip hand setup. Replace with an explicit ankle-attached knee-flexion movement.",
+      "replacement": {
+        "name": "Standing band hamstring curl",
+        "equipment": "Resistance band",
+        "equipmentTags": [
+          "Resistance band"
+        ],
+        "muscle": "Legs",
+        "primaryMuscles": [
+          "Hamstrings"
+        ],
+        "secondaryMuscles": [],
+        "description": "Anchor a resistance band low to a secure fixed point and fasten the other end to your right ankle using an appropriate ankle cuff. Stand facing the anchor with light band tension and hold a stable support for balance. Keep your knees close together, hips facing forward and torso upright. Bend the right knee to bring your heel toward your buttock while keeping the right thigh nearly vertical. Stop before your hips move or your lower back arches. Slowly straighten the knee until the foot returns near the floor. Repeat with controlled tension, then switch the cuff to the other ankle.",
+        "guideText": "Anchor a resistance band low to a secure fixed point and fasten the other end to your right ankle using an appropriate ankle cuff. Stand facing the anchor with light band tension and hold a stable support for balance. Keep your knees close together, hips facing forward and torso upright. Bend the right knee to bring your heel toward your buttock while keeping the right thigh nearly vertical. Stop before your hips move or your lower back arches. Slowly straighten the knee until the foot returns near the floor. Repeat with controlled tension, then switch the cuff to the other ankle.",
+        "source": null
+      },
+      "references": [
+        {
+          "url": "https://wger.de/en/exercise/1603/view/",
+          "role": "archived_original_catalog_record",
+          "label": "wger",
+          "attribution": {
+            "title": "wger",
+            "url": "https://wger.de/en/exercise/1603/view/",
+            "author": "clafal",
+            "license": "CC-BY-SA 4",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+            "modified": "HTML removed; taxonomy and measurement labels normalized"
+          },
+          "note": "Historical catalog attribution only. This record is not claimed to validate the replacement identity or technique."
+        },
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/",
+          "role": "general_exercise_context",
+          "label": "ACE Exercise Library",
+          "note": "General reference for conventional exercise setup and controlled movement. No replacement guide is quoted from or claimed as an exercise-specific ACE entry.",
+          "retrievalNote": "Public URL retrieval attempted in this environment and returned HTTP 403; included as a known general exercise-library context URL, not as a newly verified movement-specific source."
+        }
+      ],
+      "authorship": {
+        "author": "FORMA independently authored exercise guide",
+        "basis": "Owner-authorized replacement with a clearly defined conventional movement; original source record archived separately.",
+        "isTranslationOfOriginal": false
+      },
+      "artworkBrief": {
+        "style": "Original FORMA illustration; one fully clothed adult, charcoal sportswear, small lime accent, white background.",
+        "requirements": "Anchor a resistance band low to a secure fixed point and fasten the other end to your right ankle using an appropriate ankle cuff. Stand facing the anchor with light band tension and hold a stable support for balance. Keep your knees close together, hips facing forward and torso upright. Bend the right knee to bring your heel toward your buttock while keeping the right thigh nearly vertical. Stop before your hips move or your lower back arches. Slowly straighten the knee until the foot returns near the floor. Repeat with controlled tension, then switch the cuff to the other ankle.",
+        "doNotDepictOriginalAmbiguity": true
+      }
+    },
+    {
+      "id": "wger-77c98954-b50d-46f0-9912-3981f856d5a6",
+      "preserve": {
+        "id": "wger-77c98954-b50d-46f0-9912-3981f856d5a6",
+        "metric": "load_reps",
+        "weight": 0
+      },
+      "oldName": "Long-Pulley, Narrow",
+      "oldGuide": "The exercise is the same as the regular long pulley, but with a narrow grip: Sit down, put your feet on the supporting points and grab the bar with a wide grip. Pull the weight with a rapid movement towards your belly button, not upper. Keep your arms and elbows during the movement close to your body. Your shoulders are pulled together. Let the weight slowly down till your arms are completely stretched.",
+      "oldEquipment": "Bodyweight",
+      "whyReplacement": "Original narrow-grip title conflicts with wide-grip text and Bodyweight equipment. Replace with a consistent close neutral-grip low-cable row.",
+      "replacement": {
+        "name": "Seated close-grip cable row",
+        "equipment": "Cable machine",
+        "equipmentTags": [
+          "Cable machine"
+        ],
+        "muscle": "Back",
+        "primaryMuscles": [
+          "Lats",
+          "Upper back"
+        ],
+        "secondaryMuscles": [
+          "Biceps"
+        ],
+        "description": "Sit at a low-cable rowing station with both feet on its footplates and a close neutral-grip handle attached. Keep your knees slightly bent and hold the handle with both hands. Sit tall with a neutral spine and begin with your arms extended in front of you. Draw the handle toward your upper abdomen, keeping your elbows near your sides and your shoulders away from your ears. Pause briefly as your shoulder blades move together, without leaning backward or jerking your torso. Extend your arms slowly to return the handle, keeping your feet and hips in place. Repeat with a manageable load.",
+        "guideText": "Sit at a low-cable rowing station with both feet on its footplates and a close neutral-grip handle attached. Keep your knees slightly bent and hold the handle with both hands. Sit tall with a neutral spine and begin with your arms extended in front of you. Draw the handle toward your upper abdomen, keeping your elbows near your sides and your shoulders away from your ears. Pause briefly as your shoulder blades move together, without leaning backward or jerking your torso. Extend your arms slowly to return the handle, keeping your feet and hips in place. Repeat with a manageable load.",
+        "source": null
+      },
+      "references": [
+        {
+          "url": "https://wger.de/en/exercise/395/view/",
+          "role": "archived_original_catalog_record",
+          "label": "wger",
+          "attribution": {
+            "title": "wger",
+            "url": "https://wger.de/en/exercise/395/view/",
+            "author": "wger.de",
+            "license": "CC-BY-SA 3",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+            "modified": "HTML removed; taxonomy and measurement labels normalized"
+          },
+          "note": "Historical catalog attribution only. This record is not claimed to validate the replacement identity or technique."
+        },
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/",
+          "role": "general_exercise_context",
+          "label": "ACE Exercise Library",
+          "note": "General reference for conventional exercise setup and controlled movement. No replacement guide is quoted from or claimed as an exercise-specific ACE entry.",
+          "retrievalNote": "Public URL retrieval attempted in this environment and returned HTTP 403; included as a known general exercise-library context URL, not as a newly verified movement-specific source."
+        }
+      ],
+      "authorship": {
+        "author": "FORMA independently authored exercise guide",
+        "basis": "Owner-authorized replacement with a clearly defined conventional movement; original source record archived separately.",
+        "isTranslationOfOriginal": false
+      },
+      "artworkBrief": {
+        "style": "Original FORMA illustration; one fully clothed adult, charcoal sportswear, small lime accent, white background.",
+        "requirements": "Sit at a low-cable rowing station with both feet on its footplates and a close neutral-grip handle attached. Keep your knees slightly bent and hold the handle with both hands. Sit tall with a neutral spine and begin with your arms extended in front of you. Draw the handle toward your upper abdomen, keeping your elbows near your sides and your shoulders away from your ears. Pause briefly as your shoulder blades move together, without leaning backward or jerking your torso. Extend your arms slowly to return the handle, keeping your feet and hips in place. Repeat with a manageable load.",
+        "doNotDepictOriginalAmbiguity": true
+      }
+    },
+    {
+      "id": "wger-d27a93fa-7066-477c-a475-c6b6170831db",
+      "preserve": {
+        "id": "wger-d27a93fa-7066-477c-a475-c6b6170831db",
+        "metric": "load_reps",
+        "weight": 0
+      },
+      "oldName": "Neck extension",
+      "oldGuide": "Unilateral triceps exercise with your back to the pulley, with the pulley at the top",
+      "oldEquipment": "EZ bar",
+      "whyReplacement": "Original Neck extension title and EZ-bar/Biceps metadata conflict with a unilateral triceps high-pulley description. Replace explicitly with a one-arm high-cable triceps exercise, not a neck exercise.",
+      "replacement": {
+        "name": "Single-arm high-cable triceps extension",
+        "equipment": "Cable machine",
+        "equipmentTags": [
+          "Cable machine"
+        ],
+        "muscle": "Arms",
+        "primaryMuscles": [
+          "Triceps"
+        ],
+        "secondaryMuscles": [],
+        "description": "Attach a single-grip handle to a high cable pulley and select a light resistance. Stand facing away from the machine with one foot forward for balance. Hold the handle in your right hand and bring the right upper arm beside your head, with your elbow bent and the handle behind your head. Keep your ribs down, back neutral and upper arm steady. Straighten the right elbow to move your hand forward and upward, resisting the cable without moving your shoulder or torso. Bend the elbow slowly to return the handle behind your head. Complete the repetitions, then switch arms.",
+        "guideText": "Attach a single-grip handle to a high cable pulley and select a light resistance. Stand facing away from the machine with one foot forward for balance. Hold the handle in your right hand and bring the right upper arm beside your head, with your elbow bent and the handle behind your head. Keep your ribs down, back neutral and upper arm steady. Straighten the right elbow to move your hand forward and upward, resisting the cable without moving your shoulder or torso. Bend the elbow slowly to return the handle behind your head. Complete the repetitions, then switch arms.",
+        "source": null
+      },
+      "references": [
+        {
+          "url": "https://wger.de/en/exercise/1717/view/",
+          "role": "archived_original_catalog_record",
+          "label": "wger",
+          "attribution": {
+            "title": "wger",
+            "url": "https://wger.de/en/exercise/1717/view/",
+            "author": "polloperro",
+            "license": "CC-BY-SA 4",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+            "modified": "HTML removed; taxonomy and measurement labels normalized"
+          },
+          "note": "Historical catalog attribution only. This record is not claimed to validate the replacement identity or technique."
+        },
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/",
+          "role": "general_exercise_context",
+          "label": "ACE Exercise Library",
+          "note": "General reference for conventional exercise setup and controlled movement. No replacement guide is quoted from or claimed as an exercise-specific ACE entry.",
+          "retrievalNote": "Public URL retrieval attempted in this environment and returned HTTP 403; included as a known general exercise-library context URL, not as a newly verified movement-specific source."
+        }
+      ],
+      "authorship": {
+        "author": "FORMA independently authored exercise guide",
+        "basis": "Owner-authorized replacement with a clearly defined conventional movement; original source record archived separately.",
+        "isTranslationOfOriginal": false
+      },
+      "artworkBrief": {
+        "style": "Original FORMA illustration; one fully clothed adult, charcoal sportswear, small lime accent, white background.",
+        "requirements": "Attach a single-grip handle to a high cable pulley and select a light resistance. Stand facing away from the machine with one foot forward for balance. Hold the handle in your right hand and bring the right upper arm beside your head, with your elbow bent and the handle behind your head. Keep your ribs down, back neutral and upper arm steady. Straighten the right elbow to move your hand forward and upward, resisting the cable without moving your shoulder or torso. Bend the elbow slowly to return the handle behind your head. Complete the repetitions, then switch arms.",
+        "doNotDepictOriginalAmbiguity": true
+      }
+    },
+    {
+      "id": "wger-33a55e1a-ff83-4c34-b056-887a121b0978",
+      "preserve": {
+        "id": "wger-33a55e1a-ff83-4c34-b056-887a121b0978",
+        "metric": "duration",
+        "weight": 0
+      },
+      "oldName": "Solo Hip Flexor Stretch",
+      "oldGuide": "See this instructive video: https://www.youtube.com/watch?v=qHwyBHS6MQs .",
+      "oldEquipment": "Bodyweight",
+      "whyReplacement": "Original solo stretch contains only a video link. Replace with a conventional unsupported half-kneeling hip-flexor stretch.",
+      "replacement": {
+        "name": "Half-kneeling hip flexor stretch",
+        "equipment": "Bodyweight",
+        "equipmentTags": [
+          "Bodyweight"
+        ],
+        "muscle": "Legs",
+        "primaryMuscles": [
+          "Hip flexors"
+        ],
+        "secondaryMuscles": [],
+        "description": "Kneel on a mat with your right knee on the floor and your left foot planted in front of you. Keep the left knee above the ankle and place your hands on your hips. Gently tuck your pelvis by bringing your belt line upward and squeeze the right buttock. Keeping your torso upright, shift your hips a small distance forward until you feel a comfortable stretch at the front of the right hip. Avoid arching your lower back or lunging deeply. Breathe normally during the hold, move back to release the stretch and switch the kneeling legs.",
+        "guideText": "Kneel on a mat with your right knee on the floor and your left foot planted in front of you. Keep the left knee above the ankle and place your hands on your hips. Gently tuck your pelvis by bringing your belt line upward and squeeze the right buttock. Keeping your torso upright, shift your hips a small distance forward until you feel a comfortable stretch at the front of the right hip. Avoid arching your lower back or lunging deeply. Breathe normally during the hold, move back to release the stretch and switch the kneeling legs.",
+        "source": null
+      },
+      "references": [
+        {
+          "url": "https://wger.de/en/exercise/1839/view/",
+          "role": "archived_original_catalog_record",
+          "label": "wger",
+          "attribution": {
+            "title": "wger",
+            "url": "https://wger.de/en/exercise/1839/view/",
+            "author": "Croak6728",
+            "license": "CC-BY-SA 4",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+            "modified": "HTML removed; taxonomy and measurement labels normalized"
+          },
+          "note": "Historical catalog attribution only. This record is not claimed to validate the replacement identity or technique."
+        },
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/",
+          "role": "general_exercise_context",
+          "label": "ACE Exercise Library",
+          "note": "General reference for conventional exercise setup and controlled movement. No replacement guide is quoted from or claimed as an exercise-specific ACE entry.",
+          "retrievalNote": "Public URL retrieval attempted in this environment and returned HTTP 403; included as a known general exercise-library context URL, not as a newly verified movement-specific source."
+        }
+      ],
+      "authorship": {
+        "author": "FORMA independently authored exercise guide",
+        "basis": "Owner-authorized replacement with a clearly defined conventional movement; original source record archived separately.",
+        "isTranslationOfOriginal": false
+      },
+      "artworkBrief": {
+        "style": "Original FORMA illustration; one fully clothed adult, charcoal sportswear, small lime accent, white background.",
+        "requirements": "Kneel on a mat with your right knee on the floor and your left foot planted in front of you. Keep the left knee above the ankle and place your hands on your hips. Gently tuck your pelvis by bringing your belt line upward and squeeze the right buttock. Keeping your torso upright, shift your hips a small distance forward until you feel a comfortable stretch at the front of the right hip. Avoid arching your lower back or lunging deeply. Breathe normally during the hold, move back to release the stretch and switch the kneeling legs.",
+        "doNotDepictOriginalAmbiguity": true
+      }
+    },
+    {
+      "id": "wger-df18b577-0610-4804-a993-161024da67db",
+      "preserve": {
+        "id": "wger-df18b577-0610-4804-a993-161024da67db",
+        "metric": "load_reps",
+        "weight": 0
+      },
+      "oldName": "Upper Back",
+      "oldGuide": "Upper Back is suitable for building up the core muscles with a special focus on the deltoid and rhomboid muscles and the upper back muscles",
+      "oldEquipment": "Bodyweight",
+      "whyReplacement": "Original Upper Back entry names a body region and muscles without a movement. Replace with a clearly defined unloaded prone W raise.",
+      "replacement": {
+        "name": "Prone W raise",
+        "equipment": "Bodyweight",
+        "equipmentTags": [
+          "Bodyweight"
+        ],
+        "muscle": "Back",
+        "primaryMuscles": [
+          "Upper back",
+          "Rear delts"
+        ],
+        "secondaryMuscles": [],
+        "description": "Lie face down on a mat with your legs extended and your forehead resting lightly on a folded towel. Bend both elbows about ninety degrees and position your arms in a W shape, with your upper arms angled away from your torso and your hands beside your head. Keep your abdomen gently braced and your chest close to the mat. Draw your shoulder blades together and lift your hands and elbows a small distance from the floor, keeping the W shape. Pause briefly without lifting your chin or arching your lower back, then lower both arms with control. Repeat slowly.",
+        "guideText": "Lie face down on a mat with your legs extended and your forehead resting lightly on a folded towel. Bend both elbows about ninety degrees and position your arms in a W shape, with your upper arms angled away from your torso and your hands beside your head. Keep your abdomen gently braced and your chest close to the mat. Draw your shoulder blades together and lift your hands and elbows a small distance from the floor, keeping the W shape. Pause briefly without lifting your chin or arching your lower back, then lower both arms with control. Repeat slowly.",
+        "source": null
+      },
+      "references": [
+        {
+          "url": "https://wger.de/en/exercise/1381/view/",
+          "role": "archived_original_catalog_record",
+          "label": "wger",
+          "attribution": {
+            "title": "wger",
+            "url": "https://wger.de/en/exercise/1381/view/",
+            "author": "phpi",
+            "license": "CC-BY-SA 4",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+            "modified": "HTML removed; taxonomy and measurement labels normalized"
+          },
+          "note": "Historical catalog attribution only. This record is not claimed to validate the replacement identity or technique."
+        },
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/",
+          "role": "general_exercise_context",
+          "label": "ACE Exercise Library",
+          "note": "General reference for conventional exercise setup and controlled movement. No replacement guide is quoted from or claimed as an exercise-specific ACE entry.",
+          "retrievalNote": "Public URL retrieval attempted in this environment and returned HTTP 403; included as a known general exercise-library context URL, not as a newly verified movement-specific source."
+        }
+      ],
+      "authorship": {
+        "author": "FORMA independently authored exercise guide",
+        "basis": "Owner-authorized replacement with a clearly defined conventional movement; original source record archived separately.",
+        "isTranslationOfOriginal": false
+      },
+      "artworkBrief": {
+        "style": "Original FORMA illustration; one fully clothed adult, charcoal sportswear, small lime accent, white background.",
+        "requirements": "Lie face down on a mat with your legs extended and your forehead resting lightly on a folded towel. Bend both elbows about ninety degrees and position your arms in a W shape, with your upper arms angled away from your torso and your hands beside your head. Keep your abdomen gently braced and your chest close to the mat. Draw your shoulder blades together and lift your hands and elbows a small distance from the floor, keeping the W shape. Pause briefly without lifting your chin or arching your lower back, then lower both arms with control. Repeat slowly.",
+        "doNotDepictOriginalAmbiguity": true
+      }
+    },
+    {
+      "id": "wger-36a309ba-7dd1-43c9-9efc-788c7cd9fbd6",
+      "preserve": {
+        "id": "wger-36a309ba-7dd1-43c9-9efc-788c7cd9fbd6",
+        "metric": "load_reps",
+        "weight": 0
+      },
+      "oldName": "Wall Drills",
+      "oldGuide": "Exercises for strengthening knee and leg musculature. * Lateral Wall Drills March - https://youtu.be/9RiTlJ6Mmek * Lateral Wall Drills OPEN - https://youtu.be/ADRlN8-Wfdg * Lateral Wall Drills CROSS - https://youtu.be/hGH2sj0Tzu4",
+      "oldEquipment": "Bodyweight",
+      "whyReplacement": "Original Wall Drills is a video-only collection of lateral March/OPEN/CROSS variants. User authorizes replacing the collection with a distinct, explicitly named conventional standing march.",
+      "replacement": {
+        "name": "Wall-supported standing march",
+        "equipment": "Bodyweight",
+        "equipmentTags": [
+          "Bodyweight"
+        ],
+        "muscle": "Legs",
+        "primaryMuscles": [
+          "Hip flexors",
+          "Quads"
+        ],
+        "secondaryMuscles": [
+          "Calves"
+        ],
+        "description": "Stand facing a wall about an arm length away and place both palms against it at shoulder height. Keep your torso upright, feet hip width apart and shoulders relaxed. Shift your weight onto your left foot and raise your right knee forward toward hip height, keeping the right ankle beneath the knee and the pelvis level. Use the wall lightly for balance rather than hanging your weight through your arms. Pause briefly, then lower the right foot to the floor with control. Raise the left knee in the same way and continue alternating. Avoid bouncing, leaning backward or twisting your hips.",
+        "guideText": "Stand facing a wall about an arm length away and place both palms against it at shoulder height. Keep your torso upright, feet hip width apart and shoulders relaxed. Shift your weight onto your left foot and raise your right knee forward toward hip height, keeping the right ankle beneath the knee and the pelvis level. Use the wall lightly for balance rather than hanging your weight through your arms. Pause briefly, then lower the right foot to the floor with control. Raise the left knee in the same way and continue alternating. Avoid bouncing, leaning backward or twisting your hips.",
+        "source": null
+      },
+      "references": [
+        {
+          "url": "https://wger.de/en/exercise/1196/view/",
+          "role": "archived_original_catalog_record",
+          "label": "wger",
+          "attribution": {
+            "title": "wger",
+            "url": "https://wger.de/en/exercise/1196/view/",
+            "author": "Insight",
+            "license": "CC-BY-SA 4",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+            "modified": "HTML removed; taxonomy and measurement labels normalized"
+          },
+          "note": "Historical catalog attribution only. This record is not claimed to validate the replacement identity or technique."
+        },
+        {
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/",
+          "role": "general_exercise_context",
+          "label": "ACE Exercise Library",
+          "note": "General reference for conventional exercise setup and controlled movement. No replacement guide is quoted from or claimed as an exercise-specific ACE entry.",
+          "retrievalNote": "Public URL retrieval attempted in this environment and returned HTTP 403; included as a known general exercise-library context URL, not as a newly verified movement-specific source."
+        }
+      ],
+      "authorship": {
+        "author": "FORMA independently authored exercise guide",
+        "basis": "Owner-authorized replacement with a clearly defined conventional movement; original source record archived separately.",
+        "isTranslationOfOriginal": false
+      },
+      "artworkBrief": {
+        "style": "Original FORMA illustration; one fully clothed adult, charcoal sportswear, small lime accent, white background.",
+        "requirements": "Stand facing a wall about an arm length away and place both palms against it at shoulder height. Keep your torso upright, feet hip width apart and shoulders relaxed. Shift your weight onto your left foot and raise your right knee forward toward hip height, keeping the right ankle beneath the knee and the pelvis level. Use the wall lightly for balance rather than hanging your weight through your arms. Pause briefly, then lower the right foot to the floor with control. Raise the left knee in the same way and continue alternating. Avoid bouncing, leaning backward or twisting your hips.",
+        "doNotDepictOriginalAmbiguity": true
+      }
+    }
+  ],
+  "implementationNote": "Original published records, IDs, metrics and weights remain unchanged. Only selectable guide/name/equipment overlays are replaced; old guides and attribution remain archived here."
+}

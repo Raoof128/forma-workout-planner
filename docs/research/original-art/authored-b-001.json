@@ -1,0 +1,202 @@
+{
+  "name": "authored-b-001",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/authored-b-001.png",
+  "prompt": "Original FORMA fitness manual artwork landscape1536x1024 EXACT TWOcolumns TWOrows equal768x512whitepanels. Graycharcoal sportswear/equipment subtle lime accents, no labels text arrows. Anatomically correcttwoarms twolegs perperson. Every hand foot head full apparatus inside respective cell generous margins. ONE representative pose each matching independently authored exact requirements.\nRow1 column1 Two-hand landmine row. POSE:Two-hand landmine row START pose threequarter SIDE view. Rear bar end visibly anchored in floor landmine BEHIND athlete; bar runs BETWEEN athlete's straddled feet toward loaded front end. Double-D handle wraps shaft immediately behind front plate stack, BOTH hands grip its two sides, arms extended, plates slightly clear floor, hips hinged flat spine slight knee bend. FULLREQUIREMENTS:Secure one end of a barbell in a landmine attachment and load the free end with suitable plates. Straddle the bar facing its loaded end and place a double-D row handle around the shaft immediately behind the plates. Grip both sides of the handle, bend your knees slightly and hinge your hips back while keeping your spine neutral. Begin with both arms extended and the weight clear of the floor. Pull the handle toward your upper abdomen, keeping your elbows close to your body and your torso still. Pause, then lower with control until both arms are extended again. Keep both hands on the handle throughout.\nRow1 column2 Seated bent-knee hamstring stretch. POSE:Seated chair hamstring stretch: sit front edge sturdy chair, left foot flat under knee, right heel on floor extended forward with small knee bend and toes upward. Flat elongated spine hinges forward, BOTH hands rest lightly thighs. Full chair feet and athlete contained. FULLREQUIREMENTS:Sit near the front of a sturdy chair with your left foot flat on the floor. Extend your right leg forward, resting its heel on the floor, and keep a small bend in the right knee. Point the toes upward without forcing the ankle. Lengthen your spine and hinge forward from your hips, placing your hands lightly on your thighs for support. Stop when you feel a gentle stretch behind the right thigh; do not push the knee straight or round your back to reach farther. Breathe normally during the hold, return upright and repeat on the opposite side.\nRow2 column1 Incline dumbbell press. POSE:Low approximately30degree incline bench dumbbell press START phase: head upperback fully supported, hips remain bench, BOTH feet flat floor. Two independent dumbbells beside upper chest, wrists stacked vertically over bent elbows moderately angled from body, wrists straight. FULLREQUIREMENTS:Set a sturdy adjustable bench to a low incline of about thirty degrees. Sit with a dumbbell in each hand, then lie back with your head and upper back supported and both feet flat on the floor. Bring the dumbbells beside your upper chest with wrists stacked over elbows and elbows angled moderately away from your torso. Press both weights upward over your upper chest without lifting your hips or shrugging your shoulders. Pause with your arms extended but comfortable, then lower slowly to the starting position. Keep your wrists straight and choose a load you can control throughout.\nRow2 column2 Cross-body shoulder stretch. POSE:Standing cross-body shoulder stretch: right arm extended horizontally across chest shoulderheight, left forearm supports right UPPER ARM just ABOVE elbow, not elbow joint. Shoulders relaxed down, upright untwisted torso. Full person both hands feet inside cell. FULLREQUIREMENTS:Stand or sit upright with your spine comfortable and your shoulders relaxed. Raise your right arm in front of you and bring it across your chest at about shoulder height. Use your left hand or forearm to support the right upper arm just above the elbow, rather than pressing directly on the joint. Gently draw the arm closer to your chest until you feel a mild stretch at the back of the right shoulder. Keep the shoulder down and avoid twisting your torso to increase the range. Breathe steadily during the hold, release slowly and repeat with the other arm.",
+  "sourceGeneratedPath": "/workspace/generated_images/exec-1959ac9c-71db-4231-b905-22d8c3510107.png",
+  "sourceAssetPath": "assets/exercise-artwork/authored-b-001.png",
+  "cells": [
+    {
+      "id": "db-bent-over-two-arm-long-bar-row",
+      "name": "Two-hand landmine row",
+      "muscle": "Back",
+      "equipment": "Barbell + Landmine",
+      "primaryMuscles": [
+        "Upper back",
+        "Lats"
+      ],
+      "secondaryMuscles": [
+        "Biceps"
+      ],
+      "category": "strength",
+      "level": "intermediate",
+      "description": "Secure one end of a barbell in a landmine attachment and load the free end with suitable plates. Straddle the bar facing its loaded end and place a double-D row handle around the shaft immediately behind the plates. Grip both sides of the handle, bend your knees slightly and hinge your hips back while keeping your spine neutral. Begin with both arms extended and the weight clear of the floor. Pull the handle toward your upper abdomen, keeping your elbows close to your body and your torso still. Pause, then lower with control until both arms are extended again. Keep both hands on the handle throughout.",
+      "source": null,
+      "weight": 0,
+      "metric": "load_reps",
+      "equipmentTags": [
+        "Barbell",
+        "Landmine"
+      ],
+      "references": [
+        {
+          "title": "ACE Exercise Library — general exercise context",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        }
+      ],
+      "aliases": [
+        "Bent Over Two-Arm Long Bar Row"
+      ],
+      "guideText": "Secure one end of a barbell in a landmine attachment and load the free end with suitable plates. Straddle the bar facing its loaded end and place a double-D row handle around the shaft immediately behind the plates. Grip both sides of the handle, bend your knees slightly and hinge your hips back while keeping your spine neutral. Begin with both arms extended and the weight clear of the floor. Pull the handle toward your upper abdomen, keeping your elbows close to your body and your torso still. Pause, then lower with control until both arms are extended again. Keep both hands on the handle throughout.",
+      "title": "Two-hand landmine row",
+      "guideSource": null,
+      "artworkRequirements": "Secure one end of a barbell in a landmine attachment and load the free end with suitable plates. Straddle the bar facing its loaded end and place a double-D row handle around the shaft immediately behind the plates. Grip both sides of the handle, bend your knees slightly and hinge your hips back while keeping your spine neutral. Begin with both arms extended and the weight clear of the floor. Pull the handle toward your upper abdomen, keeping your elbows close to your body and your torso still. Pause, then lower with control until both arms are extended again. Keep both hands on the handle throughout.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Rear bar end anchored in landmine, athlete straddles shaft facing loaded end; both hands grip double-D handle behind plates with arms extended and neutral hinge.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 480
+      },
+      "cropReviewNote": "Inspected full1536x1024 PNG; actual panel boundaries x768 y480 retain complete figures, hands and equipment.",
+      "ids": [
+        "db-bent-over-two-arm-long-bar-row"
+      ]
+    },
+    {
+      "id": "wger-abdd2b41-0c30-4ec1-8d14-f6dc5deb3561",
+      "name": "Seated bent-knee hamstring stretch",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [
+        "Hamstrings"
+      ],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Sit near the front of a sturdy chair with your left foot flat on the floor. Extend your right leg forward, resting its heel on the floor, and keep a small bend in the right knee. Point the toes upward without forcing the ankle. Lengthen your spine and hinge forward from your hips, placing your hands lightly on your thighs for support. Stop when you feel a gentle stretch behind the right thigh; do not push the knee straight or round your back to reach farther. Breathe normally during the hold, return upright and repeat on the opposite side.",
+      "source": null,
+      "weight": 0,
+      "metric": "duration",
+      "equipmentTags": [
+        "Bodyweight"
+      ],
+      "references": [
+        {
+          "title": "ACE Exercise Library — general exercise context",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        }
+      ],
+      "aliases": [
+        "Bent-Leg Hamstring Stretch"
+      ],
+      "guideText": "Sit near the front of a sturdy chair with your left foot flat on the floor. Extend your right leg forward, resting its heel on the floor, and keep a small bend in the right knee. Point the toes upward without forcing the ankle. Lengthen your spine and hinge forward from your hips, placing your hands lightly on your thighs for support. Stop when you feel a gentle stretch behind the right thigh; do not push the knee straight or round your back to reach farther. Breathe normally during the hold, return upright and repeat on the opposite side.",
+      "title": "Seated bent-knee hamstring stretch",
+      "guideSource": null,
+      "artworkRequirements": "Sit near the front of a sturdy chair with your left foot flat on the floor. Extend your right leg forward, resting its heel on the floor, and keep a small bend in the right knee. Point the toes upward without forcing the ankle. Lengthen your spine and hinge forward from your hips, placing your hands lightly on your thighs for support. Stop when you feel a gentle stretch behind the right thigh; do not push the knee straight or round your back to reach farther. Breathe normally during the hold, return upright and repeat on the opposite side.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Chair-supported stretch has forward heel contact, small knee bend, toes up, opposite foot flat and hands supported lightly on thighs.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 480
+      },
+      "cropReviewNote": "Inspected full1536x1024 PNG; actual panel boundaries x768 y480 retain complete figures, hands and equipment.",
+      "ids": [
+        "wger-abdd2b41-0c30-4ec1-8d14-f6dc5deb3561"
+      ]
+    },
+    {
+      "id": "wger-4b23738a-67a8-41af-996d-abc53a7c3f97",
+      "name": "Incline dumbbell press",
+      "muscle": "Chest",
+      "equipment": "Dumbbell + Incline bench",
+      "primaryMuscles": [
+        "Chest"
+      ],
+      "secondaryMuscles": [
+        "Shoulders",
+        "Triceps"
+      ],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Set a sturdy adjustable bench to a low incline of about thirty degrees. Sit with a dumbbell in each hand, then lie back with your head and upper back supported and both feet flat on the floor. Bring the dumbbells beside your upper chest with wrists stacked over elbows and elbows angled moderately away from your torso. Press both weights upward over your upper chest without lifting your hips or shrugging your shoulders. Pause with your arms extended but comfortable, then lower slowly to the starting position. Keep your wrists straight and choose a load you can control throughout.",
+      "source": null,
+      "weight": 0,
+      "metric": "load_reps",
+      "equipmentTags": [
+        "Dumbbell",
+        "Incline bench"
+      ],
+      "references": [
+        {
+          "title": "ACE Exercise Library — general exercise context",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        }
+      ],
+      "aliases": [
+        "DB Upper Chest Variation"
+      ],
+      "guideText": "Set a sturdy adjustable bench to a low incline of about thirty degrees. Sit with a dumbbell in each hand, then lie back with your head and upper back supported and both feet flat on the floor. Bring the dumbbells beside your upper chest with wrists stacked over elbows and elbows angled moderately away from your torso. Press both weights upward over your upper chest without lifting your hips or shrugging your shoulders. Pause with your arms extended but comfortable, then lower slowly to the starting position. Keep your wrists straight and choose a load you can control throughout.",
+      "title": "Incline dumbbell press",
+      "guideSource": null,
+      "artworkRequirements": "Set a sturdy adjustable bench to a low incline of about thirty degrees. Sit with a dumbbell in each hand, then lie back with your head and upper back supported and both feet flat on the floor. Bring the dumbbells beside your upper chest with wrists stacked over elbows and elbows angled moderately away from your torso. Press both weights upward over your upper chest without lifting your hips or shrugging your shoulders. Pause with your arms extended but comfortable, then lower slowly to the starting position. Keep your wrists straight and choose a load you can control throughout.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "held",
+      "reviewNote": "Dumbbell press setup and feet support correct, but backrest appears approximately45degrees rather than authored low30degree incline.",
+      "bounds": {
+        "x": 0,
+        "y": 480,
+        "width": 768,
+        "height": 544
+      },
+      "cropReviewNote": "Inspected full1536x1024 PNG; actual panel boundaries x768 y480 retain complete figures, hands and equipment."
+    },
+    {
+      "id": "wger-4925b6c0-bbe6-4864-a649-23ec18d49985",
+      "name": "Cross-body shoulder stretch",
+      "muscle": "Shoulders",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [
+        "Shoulders"
+      ],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Stand or sit upright with your spine comfortable and your shoulders relaxed. Raise your right arm in front of you and bring it across your chest at about shoulder height. Use your left hand or forearm to support the right upper arm just above the elbow, rather than pressing directly on the joint. Gently draw the arm closer to your chest until you feel a mild stretch at the back of the right shoulder. Keep the shoulder down and avoid twisting your torso to increase the range. Breathe steadily during the hold, release slowly and repeat with the other arm.",
+      "source": null,
+      "weight": 0,
+      "metric": "duration",
+      "equipmentTags": [
+        "Bodyweight"
+      ],
+      "references": [
+        {
+          "title": "ACE Exercise Library — general exercise context",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        }
+      ],
+      "aliases": [
+        "Extreme Shoulder Stretch"
+      ],
+      "guideText": "Stand or sit upright with your spine comfortable and your shoulders relaxed. Raise your right arm in front of you and bring it across your chest at about shoulder height. Use your left hand or forearm to support the right upper arm just above the elbow, rather than pressing directly on the joint. Gently draw the arm closer to your chest until you feel a mild stretch at the back of the right shoulder. Keep the shoulder down and avoid twisting your torso to increase the range. Breathe steadily during the hold, release slowly and repeat with the other arm.",
+      "title": "Cross-body shoulder stretch",
+      "guideSource": null,
+      "artworkRequirements": "Stand or sit upright with your spine comfortable and your shoulders relaxed. Raise your right arm in front of you and bring it across your chest at about shoulder height. Use your left hand or forearm to support the right upper arm just above the elbow, rather than pressing directly on the joint. Gently draw the arm closer to your chest until you feel a mild stretch at the back of the right shoulder. Keep the shoulder down and avoid twisting your torso to increase the range. Breathe steadily during the hold, release slowly and repeat with the other arm.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Upright untwisted cross-body stretch supports extended upper arm just above elbow, relaxed shoulders and complete hands/feet visible.",
+      "bounds": {
+        "x": 768,
+        "y": 480,
+        "width": 768,
+        "height": 544
+      },
+      "cropReviewNote": "Inspected full1536x1024 PNG; actual panel boundaries x768 y480 retain complete figures, hands and equipment.",
+      "ids": [
+        "wger-4925b6c0-bbe6-4864-a649-23ec18d49985"
+      ]
+    }
+  ],
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

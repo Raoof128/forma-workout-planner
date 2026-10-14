@@ -1,0 +1,42 @@
+{
+  "name": "finish-grip-001",
+  "columns": 1,
+  "rows": 1,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-grip-001.png",
+  "prompt": "Create ORIGINAL FORMA exercise manual illustration ONE SINGLE full portrait image1024x1536 no grid. PureWHITE background charcoalgray functional latpulldown station andsportswear subtlelime accents. Full athlete and entirefunctional stationinsideframe amplewhite margins. No words labels arrows logos. Exactlytwoarms twolegs.\nThis is specifically WIDE UNDERHAND SUPINATED latpulldown, not overhand. Show representative TOP STARTING phase arms mostlyextended upward holding LONG STRAIGHT BAR abovefrontofhead with hands MUCH WIDER THANSHOULDERS. IMPORTANT BOTH forearms SUPINATED: fleshy INSIDEWRISTS and PALMS face towardathlete/upward ceiling, palms BELOWbar, fingertips curl UPfromUNDERbar wrappingbar. Backsof hands faceawayfromathlete. Boththumbs point OUTWARD awayfromcenter; visible pinkies are onINNERedges nearestmidline. Draw LARGE DETAILED clearlyopenpalm anatomy wrappingbar frombelow, no knuckles-facing-athlete overhand grip. Camera FRONT elevatedslightly allows both insidewrists/palms legible; adultlooksforward chestup torsovertical.\nAdult SEATED bench, BOTH thighs securely UNDERthighpads, BOTH feetflatfloor knees90degrees. Long bar connects center to cable risingtoHIGHfunctional overheadpulley then down behindathlete toWEIGHTSTACK insidecompletestation. Singleconnectedhighcable sensiblevertical resistance. Athlete dominatesframe 70percentheight, equipmentfullcontained, palms sufficientlylarge to seeexactgrip. Darkgray two-columnstation supportsfunctionalpulley. Correct anatomy and mechanicalsetup prioritised.",
+  "cells": [
+    {
+      "id": "wger-d33f3b19-436f-48a2-aff6-946582c94bdb",
+      "title": "Jalón abierto supino",
+      "equipment": "Bodyweight",
+      "guideText": "Movimiento descendente • Tire de la barra hacia abajo para que pase cerca de su barbilla y toque la parte superior de su pecho. • Mantenga el resto de su cuerpo inmóvil.",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1125/view/",
+        "author": "Franpol",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected standalone full portrait: very wide bilateral underhand grip with palm pads and inner wrist creases visible below bar, arms mostly extended in representative starting position. Seated upright athlete has both thighs secured under pads and both feet grounded. Central high cable connects bar through complete overhead pulley station to guided weight stack; whole athlete, bar and station contained.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 1536
+      },
+      "cropReviewNote": "Actual1024x1536 source inspected full-frame; top caps, bar tips, base and both shoes remain inside image. No neighboring cells.",
+      "illustrationCaption": "Wide underhand pulldown — starting position.",
+      "ids": [
+        "wger-d33f3b19-436f-48a2-aff6-946582c94bdb"
+      ]
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-25efbcd2-7033-4148-b79d-6b2e0bd98872.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-grip-001.png",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

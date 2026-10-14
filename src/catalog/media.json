@@ -403,6 +403,34 @@
         }
       }
     },
+    "forma-original-authored-a-001-1-0": {
+      "src": "/exercise-media/original/authored-a-001.png?v=c17fb4374c25",
+      "sha256": "c17fb4374c259d65d6bf37dbbe89776089cff6c8e0acacb8a6c4906a2bdcb61e",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Seated machine abdominal crunch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/authored-a-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 490
+        }
+      }
+    },
     "forma-original-movements-001-1-1": {
       "src": "/exercise-media/original/movements-001.png?v=6dc763249541",
       "sha256": "6dc763249541220d936f252f553923000f28c8e048e367c0b1a3ffa31e583bcc",
@@ -1163,6 +1191,34 @@
         "row": 2
       }
     },
+    "forma-original-authored-a-001-0-1": {
+      "src": "/exercise-media/original/authored-a-001.png?v=c17fb4374c25",
+      "sha256": "c17fb4374c259d65d6bf37dbbe89776089cff6c8e0acacb8a6c4906a2bdcb61e",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Single-leg glute bridge",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/authored-a-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 490,
+          "width": 768,
+          "height": 534
+        }
+      }
+    },
     "forma-original-movements-003-2-2": {
       "src": "/exercise-media/original/movements-003.png?v=8a6a21210755",
       "sha256": "8a6a21210755faa90f9d0ee7a216ea5c53f5d65d25ead311ad0a9478746328f3",
@@ -1911,6 +1967,34 @@
         "rows": 3,
         "column": 2,
         "row": 1
+      }
+    },
+    "forma-original-authored-a-001-1-1": {
+      "src": "/exercise-media/original/authored-a-001.png?v=c17fb4374c25",
+      "sha256": "c17fb4374c259d65d6bf37dbbe89776089cff6c8e0acacb8a6c4906a2bdcb61e",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Band pull-apart drill",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/authored-a-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 490,
+          "width": 768,
+          "height": 534
+        }
       }
     },
     "forma-original-movements-006-0-2": {
@@ -2933,6 +3017,34 @@
         "row": 0
       }
     },
+    "forma-original-authored-b-001-0-0": {
+      "src": "/exercise-media/original/authored-b-001.png?v=527bd9d6b02c",
+      "sha256": "527bd9d6b02cb61072e7ff48055c4efe296352dcc8c8fb9ffc95903a3a119e58",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Two-hand landmine row",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/authored-b-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 480
+        }
+      }
+    },
     "forma-original-corrections-002-2-1": {
       "src": "/exercise-media/original/corrections-002.png?v=d4736cdd328e",
       "sha256": "d4736cdd328edbf4308cc8b2f74262fcc0dd9c6a4a9077732262b6df4170c243",
@@ -3080,6 +3192,34 @@
           "y": 0,
           "width": 512,
           "height": 512
+        }
+      }
+    },
+    "forma-original-authored-b-001-1-0": {
+      "src": "/exercise-media/original/authored-b-001.png?v=527bd9d6b02c",
+      "sha256": "527bd9d6b02cb61072e7ff48055c4efe296352dcc8c8fb9ffc95903a3a119e58",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Seated bent-knee hamstring stretch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/authored-b-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 480
         }
       }
     },
@@ -5551,6 +5691,34 @@
         "rows": 3,
         "column": 1,
         "row": 2
+      }
+    },
+    "forma-original-finish-grip-002-retry-0-0": {
+      "src": "/exercise-media/original/finish-grip-002-retry.png?v=a59ac1a210af",
+      "sha256": "a59ac1a210affe45112bcfc66a0e3b01f0df3a4cfbe78999b516221bab95241c",
+      "width": 1024,
+      "height": 1536,
+      "sourceLabel": "FORMA original artwork",
+      "title": "commando pull-ups",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-grip-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 1,
+        "rows": 1,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 1536
+        }
       }
     },
     "forma-original-corrections-007-0-0": {
@@ -9198,6 +9366,34 @@
           "y": 642,
           "width": 384,
           "height": 382
+        }
+      }
+    },
+    "forma-original-authored-b-001-1-1": {
+      "src": "/exercise-media/original/authored-b-001.png?v=527bd9d6b02c",
+      "sha256": "527bd9d6b02cb61072e7ff48055c4efe296352dcc8c8fb9ffc95903a3a119e58",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Cross-body shoulder stretch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/authored-b-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 480,
+          "width": 768,
+          "height": 544
         }
       }
     },
@@ -13458,6 +13654,34 @@
           "y": 350,
           "width": 384,
           "height": 300
+        }
+      }
+    },
+    "forma-original-finish-grip-001-0-0": {
+      "src": "/exercise-media/original/finish-grip-001.png?v=199190a67b9f",
+      "sha256": "199190a67b9fab682911c82bed5f24a22f65a133873e59cc6615896fdcc0c7fa",
+      "width": 1024,
+      "height": 1536,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Jalón abierto supino",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-grip-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 1,
+        "rows": 1,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 1536
         }
       }
     },
@@ -32605,6 +32829,10 @@
       "assetId": "forma-original-corrections-001-0-0",
       "caption": "3/4 Sit-Up · Representative exercise position; follow the guide for the complete movement."
     },
+    "wger-7870ad8d-a0c1-4e3a-a4fe-a237908eba9b": {
+      "assetId": "forma-original-authored-a-001-1-0",
+      "caption": "Seated machine abdominal crunch · Representative exercise position; follow the guide for the complete movement."
+    },
     "wger-7c2a70bc-ed97-440c-afd6-ed27daf63f25": {
       "assetId": "forma-original-movements-001-1-1",
       "caption": "3D lunge warmup · Representative exercise position; follow the guide for the complete movement."
@@ -32749,6 +32977,10 @@
       "assetId": "forma-original-movements-003-0-2",
       "caption": "Archer Pull Up · Representative exercise position; follow the guide for the complete movement."
     },
+    "wger-caccd791-ff30-452a-816e-790edadb78cd": {
+      "assetId": "forma-original-authored-a-001-0-1",
+      "caption": "Single-leg glute bridge · Representative exercise position; follow the guide for the complete movement."
+    },
     "db-arm-circles": {
       "assetId": "forma-original-movements-003-2-2",
       "caption": "Arm Circles · Representative exercise position; follow the guide for the complete movement."
@@ -32880,6 +33112,10 @@
     "wger-add364ed-4444-4752-9a22-d85d58199fe5": {
       "assetId": "forma-original-movements-006-2-1",
       "caption": "Banded Scapular Retraction · Representative exercise position; follow the guide for the complete movement."
+    },
+    "wger-4c317795-c301-4081-9f96-6036682f80c1": {
+      "assetId": "forma-original-authored-a-001-1-1",
+      "caption": "Band pull-apart drill · Representative exercise position; follow the guide for the complete movement."
     },
     "db-barbell-ab-rollout": {
       "assetId": "forma-original-movements-006-0-2",
@@ -33069,6 +33305,10 @@
       "assetId": "forma-original-movements-010-3-0",
       "caption": "Bent over row to external rotation · Representative exercise position; follow the guide for the complete movement."
     },
+    "db-bent-over-two-arm-long-bar-row": {
+      "assetId": "forma-original-authored-b-001-0-0",
+      "caption": "Two-hand landmine row · Representative exercise position; follow the guide for the complete movement."
+    },
     "db-bent-over-two-dumbbell-row": {
       "assetId": "forma-original-corrections-002-2-1",
       "caption": "Bent Over Two-Dumbbell Row · Representative exercise position; follow the guide for the complete movement."
@@ -33092,6 +33332,10 @@
     "wger-4ce9740f-313d-4419-8a23-6c884d3a1a17": {
       "assetId": "forma-original-corrections-006-2-0",
       "caption": "Bent-knee Iron Cross · Representative exercise position; follow the guide for the complete movement."
+    },
+    "wger-abdd2b41-0c30-4ec1-8d14-f6dc5deb3561": {
+      "assetId": "forma-original-authored-b-001-1-0",
+      "caption": "Seated bent-knee hamstring stretch · Representative exercise position; follow the guide for the complete movement."
     },
     "wger-596b9d2d-0f01-41a0-97e1-1839ffdb824d": {
       "assetId": "forma-original-movements-011-0-0",
@@ -33656,6 +33900,10 @@
     "db-cocoons": {
       "assetId": "forma-original-movements-018-1-2",
       "caption": "Cocoons · Representative exercise position; follow the guide for the complete movement."
+    },
+    "wger-e872658a-3bac-4d9e-bcf2-15919ebea43a": {
+      "assetId": "forma-original-finish-grip-002-retry-0-0",
+      "caption": "commando pull-ups · Representative exercise position; follow the guide for the complete movement."
     },
     "db-conans-wheel": {
       "assetId": "forma-original-corrections-007-0-0",
@@ -34296,6 +34544,10 @@
     "wger-3c33c9fd-20cc-4dff-ac88-c992bb9b2e33": {
       "assetId": "forma-original-movements-031-1-2",
       "caption": "Extreme Pec Stretch · Representative exercise position; follow the guide for the complete movement."
+    },
+    "wger-4925b6c0-bbe6-4864-a649-23ec18d49985": {
+      "assetId": "forma-original-authored-b-001-1-1",
+      "caption": "Cross-body shoulder stretch · Representative exercise position; follow the guide for the complete movement."
     },
     "db-ez-bar-curl": {
       "assetId": "forma-original-movements-031-3-2",
@@ -34948,6 +35200,10 @@
     "db-jackknife-sit-up": {
       "assetId": "forma-original-movements-044-2-1",
       "caption": "Jackknife Sit-Up · Representative exercise position; follow the guide for the complete movement."
+    },
+    "wger-d33f3b19-436f-48a2-aff6-946582c94bdb": {
+      "assetId": "forma-original-finish-grip-001-0-0",
+      "caption": "Jalón abierto supino · Representative exercise position; follow the guide for the complete movement."
     },
     "wger-4e941b0d-4b2f-4393-89cf-6a5e9b69252e": {
       "assetId": "forma-original-corrections-015-0-1",

@@ -123,3 +123,20 @@ dist/assets/instructions-D5gYSpG2.js    888.78 kB │ gzip: 241.10 kB
 dist/assets/index-_TXVnD-5.js         2,980.65 kB │ gzip: 453.11 kB
 
 ✓ built in 2.89s
+
+
+Browser validation follow-up
+Browser plugin unavailable. Restored managed Chromium cache was missing; used existing /usr/bin/chromium with the repository executable override.
+[WebServer] (node:4257) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:4281) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/exercise-media.spec.js:16:1 › machine equipment references do not replace free-weight exercise poses (24.3s)
+  ✓  2 [chromium] › tests/exercise-media.spec.js:37:1 › original equipment illustration loads locally and the guide remains keyboard accessible (5.7s)
+  ✓  3 [chromium] › tests/exercise-media.spec.js:61:1 › failed image delivery does not leave a permanent loader or hide exercise instructions (4.6s)
+  ✓  4 [chromium] › tests/exercise-media.spec.js:74:1 › uneven atlas rows keep the complete EZ-bar curl pose inside the guide (5.4s)
+
+  4 passed (47.3s)
