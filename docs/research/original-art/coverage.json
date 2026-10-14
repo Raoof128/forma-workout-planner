@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1375,
+  "accepted": 1379,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -7806,7 +7806,9 @@
       "name": "Pendelay Rows",
       "equipment": "Barbell",
       "guideSha256": "2d1dd3c9331d1e6b3177513a8a0465ea14d6773e345cec2c2cae90482740d34a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-e-001-1-1",
+      "reviewNote": "Horizontal flat torso and straight arms establish floor-start Pendlay setup; complete barbell rests under chest."
     },
     {
       "exerciseId": "wger-ffdb4806-d64e-474b-8ce5-8df9a57fb9c7",
@@ -8378,7 +8380,9 @@
       "name": "Quadruped Hip Abduction",
       "equipment": "Resistance band + none (bodyweight exercise)",
       "guideSha256": "4562df1a82f2e6c871090c37bc1bf52d0f436308fd7483cb4805364a897d6693",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-e-001-0-0",
+      "reviewNote": "Quadruped stable torso, grounded palms and opposite knee, bent-knee thigh opened laterally with loop resistance."
     },
     {
       "exerciseId": "wger-25854f7a-485a-4280-a0fa-f024655733b0",
@@ -8475,7 +8479,9 @@
       "name": "Recruitment Pulls",
       "equipment": "Bodyweight",
       "guideSha256": "53fb4c19a3cc8c27901c4d3213457606aa413cad626d5ab80e4e3ff26f43c74b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-f-001-1-0",
+      "reviewNote": "One hand grips hangboard edge with working elbow visibly obtuse about130degrees, free arm at side and feet grounded; board contained."
     },
     {
       "exerciseId": "db-recumbent-bike",
@@ -12181,7 +12187,9 @@
       "name": "Weighted neck flexion",
       "equipment": "Bench",
       "guideSha256": "be212222967adca3e5933159b1bd9ab85a5a019d68bd77cb2e91bca314a6491e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-d-002-retry-0-0",
+      "reviewNote": "Root independently inspected a matching representative supine plate-loaded starting setup for the named anterior neck-flexion movement: forehead resistance held securely, head clear of the bench edge, feet grounded and supported torso. Caption explicitly directs chin-to-chest flexion; this does not depict or claim the contraction endpoint."
     },
     {
       "exerciseId": "db-weighted-pull-ups",

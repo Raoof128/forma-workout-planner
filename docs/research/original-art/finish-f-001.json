@@ -1,0 +1,128 @@
+{
+  "name": "finish-f-001",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-f-001.png",
+  "prompt": "Original FORMA illustrated fitness manual landscape1536x1024 EXACT2columns2rows 768x512cells purewhite generous margins all fullfigures/equipment contained. Charcoalgray clothes lime accents, exactly2arms2legs no labels text borders arrows oneadult percell.\nTOP LEFT Kreis dumbbellpress: full seated adult back supported on bench backrest EXACT45degree abovefloor. Side threequarter makes slopevisible. BOTH arms fullyextend forward in frontofbody atshoulderheight, BOTH PALMS FACEUP, two dumbbells meet together sidebyside in front, wrists supinated. Not ordinary overheadpress phase.\nTOP RIGHT recruitmentpull on CLIMBING HANGBOARD: adult standingfeetgrounded directlybeneath overhead wallmounted hangboard withsmallfingeredges; ONE right hand grips shallowedge overhead, right ELBOW ANGLE135DEGREES visibly bent notstraight not90. Leftarm rests atside and never touchesboard. Full hangboard/athlete contained.\nBOTTOM LEFT REVERSEclamshell atSMALL topfootlift: adult SIDE LYING hipskneesbent90degrees hips onfloor, head onlowerarm. BOTH KNEES remain firmlyTOUCHING STACKED at samepoint. Only TOPFOOT lifted vertically8inches awayfrom lowerfoot, lowerfoot floor. Topshin anglesup from same touchingkneejoint. Do NOT open topknee, knees stayclosed. Clear sideviewlegs.\nBOTTOM RIGHT wideSUPINATED latpulldown apparatusreference with adult seated stable underthighpads, straightlonglatbar pulled inFRONT touchingupperchest, gripwide BOTH UNDERHAND palmsfacingathlete wristsup thumbs outward. Frontcamera clearlyshow inner wrists/palm fleshy surfaces. Complete pulley tower top cable weights baseandfeet fitcell by smallscale.",
+  "cells": [
+    {
+      "id": "wger-b4e78b5a-6141-4fc9-a6f7-cba13ce6559b",
+      "title": "Kreis Press DB",
+      "equipment": "Dumbbell",
+      "guideText": "* Sit on a bench with 45° incline * Hold dumbbells overhead * Move dumbbells down as if doing overhead press * Rotate dumbbells palms facing up and extend your arms in front of your body * Move hands together until dumbbells meet, keep arms extended * Reverse the motion until dumbbells are overhead again * This is one repetition",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1442/view/",
+        "author": "M9",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Forward arms and meeting dumbbells shown, but backrest remains about60degrees and palms-up grip unclear; required45degree support absent.",
+      "priorBatch": "docs/research/original-art/recovery-c-003.json",
+      "priorReviewNote": "Hold: Kreis press front extended phase must have palms up; illustration uses palms down.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 500
+      },
+      "cropReviewNote": "Inspected actual row gap y500; complete athlete and apparatus isolated.",
+      "references": null
+    },
+    {
+      "id": "wger-cf434716-f846-46d8-b267-8b33d311d8b5",
+      "title": "Recruitment Pulls",
+      "equipment": "Bodyweight",
+      "guideText": "Find a few specific edge sizes on a hangboard, get fixed underneath them with the board overhead, and pull with max effort, 1 arm at a time, for 3-5 seconds. When positioning for this get set up with a large elbow angle (120-150 degrees) and not in full extension.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1216/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: recruitment pulls require one arm at a time; image uses both hands on hangboard.",
+      "reviewNote": "One hand grips hangboard edge with working elbow visibly obtuse about130degrees, free arm at side and feet grounded; board contained.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 500
+      },
+      "cropReviewNote": "Inspected actual row gap y500; complete athlete and apparatus isolated.",
+      "priorBatch": "docs/research/original-art/corrections-026.json",
+      "references": null,
+      "ids": [
+        "wger-cf434716-f846-46d8-b267-8b33d311d8b5"
+      ]
+    },
+    {
+      "id": "wger-cf6bf132-fe21-4b70-8f73-006545246f05",
+      "title": "Reverse Clamshell",
+      "equipment": "Bodyweight",
+      "guideText": "Lie on your side with your hips and knees bent, keeping your knees stacked on top of each other. Keep your feet together at first, then keep your knees touching while lifting your top foot upward. Slowly lower the foot back down with control.\n\nMove only through the hip and avoid rolling your pelvis backward. The movement should be small, controlled, and focused on hip rotation.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2448/view/",
+        "author": "TobiasFalk",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: reverse clamshell separates upper knee; knees must stay together while upper foot lifts.",
+      "reviewNote": "Top knee lifts away from lower knee; reverse clamshell requires touching stacked knees while only top foot lifts.",
+      "bounds": {
+        "x": 0,
+        "y": 500,
+        "width": 768,
+        "height": 524
+      },
+      "cropReviewNote": "Inspected actual row gap y500; complete athlete and apparatus isolated.",
+      "priorBatch": "docs/research/original-art/corrections-027.json",
+      "references": null
+    },
+    {
+      "id": "wger-d33f3b19-436f-48a2-aff6-946582c94bdb",
+      "title": "Jalón abierto supino",
+      "equipment": "Bodyweight",
+      "guideText": "Movimiento descendente • Tire de la barra hacia abajo para que pase cerca de su barbilla y toque la parte superior de su pecho. • Mantenga el resto de su cuerpo inmóvil.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1125/view/",
+        "author": "Franpol",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Bar correctly at front upper chest with wide grip and complete machine, but both hands show overhand knuckles rather than clearly supinated grip.",
+      "priorBatch": "docs/research/original-art/recovery-c-001.json",
+      "priorReviewNote": "Hold: wide supinated chest pulldown depicted as behind-neck pulldown.",
+      "bounds": {
+        "x": 768,
+        "y": 500,
+        "width": 768,
+        "height": 524
+      },
+      "cropReviewNote": "Inspected actual row gap y500; complete athlete and apparatus isolated.",
+      "references": null
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-6b05f0d6-4218-4844-8625-0d6c8df0412a.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-f-001.png",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

@@ -1,0 +1,133 @@
+{
+  "name": "finish-e-001",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-e-001.png",
+  "prompt": "Original FORMA workout manual artwork landscape1536x1024 EXACTLY2columns2rows white equal768x512cells. No labels text arrows. Graycharcoal sportswear apparatus lime accent, correct2arms2legs each athlete. Complete apparatus person with margins. One exact pose each, respect limb support and equipment.\nRow1column1 Quadruped Hip Abduction: Quadruped fire hydrant FRONT threequarter view: both palms grounded under shoulders, left knee grounded under hip; RIGHT thigh raised SIDEWAYS to right perpendicular to torso, knee bent90degrees, right foot points BACK behind raised knee. Torso stays level square to floor. No backward kick, no pelvis twist; optional lime loop band around thighs.\nRow1column2 Extreme Shoulder Stretch: Bodyweight loaded anterior deltoid stretch example: hands gripping low bench BEHIND hips, elbows straight, feet planted front, pelvis lowered in front of bench. Show cautious static loaded stretch with chest open. Sparse source exact identity remains unverified, artwork must be held pending clarification.\nRow2column1 Black Widow Knee Slides: Black widow knee slide endpoint, high plank both palms firmly below shoulders, RIGHT knee crossed underneath torso touching LEFT forearm near left elbow, knee and forearm clearly in contact; left leg straight back toes grounded, posterior pelvis tucked. View from frontthreequarter so crossbody contact obvious.\nRow2column2 Pendelay Rows: Pendlay row START position side view: flat torso exactly HORIZONTAL parallel floor, hips back, slight knee bend, both arms straight downward holding shoulderwidth overhand barbell resting on floor vertically UNDER CHEST. Complete plates visible, flat lumbar spine. No upright torso.",
+  "sourceGeneratedPath": "/workspace/generated_images/exec-e8b9c358-93bd-4cc2-9f9b-0aea817722fc.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-e-001.png",
+  "cells": [
+    {
+      "id": "wger-2a1f7c0c-c63d-43f1-9934-a209ed405ff8",
+      "title": "Quadruped Hip Abduction",
+      "equipment": "Resistance band + none (bodyweight exercise)",
+      "guideText": "Distribute your body weight evenly on all knees and arms. Keep the torso stable, with the abdomen engaged and the lumbar spine straight without twisting the back (imagine: a glass on your lower back won't fall off). Raise one leg outwards without twisting it. Pay attention to the right angle at the hips and knees. Always train both sides of the body. To increase resistance, a resistance band can be used.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1915/view/",
+        "author": "treder",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: quadruped band hip abduction drawn as backward donkey kick, not lateral bent-knee opening.",
+      "reviewNote": "Quadruped stable torso, grounded palms and opposite knee, bent-knee thigh opened laterally with loop resistance.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 510
+      },
+      "cropReviewNote": "Inspected full1536x1024 source; actual panel division x768 y510 retains complete figure and apparatus.",
+      "priorBatch": "docs/research/original-art/corrections-026.json",
+      "references": null,
+      "priorReviewNote": "Raised leg still reads as a backward kick rather than lateral right-angle hip abduction.",
+      "ids": [
+        "wger-2a1f7c0c-c63d-43f1-9934-a209ed405ff8"
+      ]
+    },
+    {
+      "id": "wger-4925b6c0-bbe6-4864-a649-23ec18d49985",
+      "title": "Extreme Shoulder Stretch",
+      "equipment": "Bodyweight",
+      "guideText": "Deep loaded stretch for deltoids, performed after pressing movements.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1920/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Bodyweight loaded shoulder example rendered, but sparse guide does not establish exact support/loading setup or variation identity.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 510
+      },
+      "cropReviewNote": "Inspected full1536x1024 source; actual panel division x768 y510 retains complete figure and apparatus.",
+      "priorBatch": "docs/research/original-art/recovery-b-002.json",
+      "priorReviewNote": "Loaded shoulder setup shown, but sparse guide does not establish this specific behind-hip seated variation.",
+      "references": null
+    },
+    {
+      "id": "wger-64ebb7a5-15ec-48dd-8f82-47cdb022f215",
+      "title": "Black Widow Knee Slides",
+      "equipment": "Bodyweight",
+      "guideText": "In this bottom-up rotation exercise movement, you’ll cross your knee over and drive it into that opposite elbow. Start in high plank position (or tabletop position) with hands directly beneath your shoulders. Lift the left knee toward the right arm and slide it up the forearm to get more of that posterior pelvic tilt and engagement of the abdominal muscles. Then do the opposite side, bringing your right knee toward your left hand.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1475/view/",
+        "author": "Moffi",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Cross-body knee remains under torso with visible separation from opposite forearm; defining slide/contact not established.",
+      "priorBatch": "docs/research/original-art/recovery-a-002.json",
+      "cropReviewNote": "Inspected full1536x1024 source; actual panel division x768 y510 retains complete figure and apparatus.",
+      "bounds": {
+        "x": 0,
+        "y": 510,
+        "width": 768,
+        "height": 514
+      },
+      "references": null,
+      "priorReviewNote": "Cross-body knee is tucked under torso but does not visibly reach opposite forearm; defining knee slide remains unclear."
+    },
+    {
+      "id": "wger-748e9635-7958-4a41-b1ed-93de74c7ef72",
+      "title": "Pendelay Rows",
+      "equipment": "Barbell",
+      "guideText": "Back excercise with a barbell with a starting position which is in a bent over position with the back paralell to the ground. The barbell is on the ground at chest level.For the movement grab the barbell at shoulder width grip and pull towards your chest without losing the bent over position and without moving anything but your arms",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/448/view/",
+        "author": "Nallitnas",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Full SIDE view. Torso completely HORIZONTAL parallel floor, legs nearly straight with slight knee bend. Both hands pronated straight barbell under chest, elbows pulled back. Flat back and loaded bar two plates.",
+      "reviewNote": "Horizontal flat torso and straight arms establish floor-start Pendlay setup; complete barbell rests under chest.",
+      "bounds": {
+        "x": 768,
+        "y": 510,
+        "width": 768,
+        "height": 514
+      },
+      "cropReviewNote": "Inspected full1536x1024 source; actual panel division x768 y510 retains complete figure and apparatus.",
+      "priorBatch": "docs/research/original-art/corrections-038.json",
+      "references": null,
+      "priorReviewNote": "Pendlay torso is not horizontal as required for its fixed setup.",
+      "ids": [
+        "wger-748e9635-7958-4a41-b1ed-93de74c7ef72"
+      ]
+    }
+  ],
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

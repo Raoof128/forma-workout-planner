@@ -19385,6 +19385,34 @@
         }
       }
     },
+    "forma-original-finish-e-001-1-1": {
+      "src": "/exercise-media/original/finish-e-001.png?v=3919f40c9c9b",
+      "sha256": "3919f40c9c9b366fa841c8710d14dacc461c3da55b53415f5f2166713ffa4e5e",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Pendelay Rows",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-e-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 510,
+          "width": 768,
+          "height": 514
+        }
+      }
+    },
     "forma-original-machines-01-1-0": {
       "src": "/exercise-media/original/specialist-machines-01.png?v=d896ba455122",
       "sha256": "d896ba455122bc5d09fe8c066080713b414dc66bc42ca24ad0189413a91daa88",
@@ -21081,6 +21109,34 @@
         }
       }
     },
+    "forma-original-finish-e-001-0-0": {
+      "src": "/exercise-media/original/finish-e-001.png?v=3919f40c9c9b",
+      "sha256": "3919f40c9c9b366fa841c8710d14dacc461c3da55b53415f5f2166713ffa4e5e",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Quadruped Hip Abduction",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-e-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 510
+        }
+      }
+    },
     "forma-original-movements-067-1-1": {
       "src": "/exercise-media/original/movements-067.png?v=1a6b655b2494",
       "sha256": "1a6b655b24949f90a131d082d768909caa405ecb6e820df526b070d5b723785f",
@@ -21358,6 +21414,34 @@
           "y": 0,
           "width": 384,
           "height": 324
+        }
+      }
+    },
+    "forma-original-finish-f-001-1-0": {
+      "src": "/exercise-media/original/finish-f-001.png?v=fe1806d2b112",
+      "sha256": "fe1806d2b11237797ec261d8a366ff16c14e1b39761f8e662c65df5b9f2fe943",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Recruitment Pulls",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-f-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 500
         }
       }
     },
@@ -30899,6 +30983,34 @@
         }
       }
     },
+    "forma-original-finish-d-002-retry-0-0": {
+      "src": "/exercise-media/original/finish-d-002-retry.png?v=fa0f92f50851",
+      "sha256": "fa0f92f508512e523c6cd74151ce0dc9e92ea6d2c84166ff4ce2388ca959e589",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Weighted neck flexion",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-d-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 492
+        }
+      }
+    },
     "forma-original-movements-096-2-2": {
       "src": "/exercise-media/original/movements-096.png?v=fbf86c33851f",
       "sha256": "fbf86c33851f516c1fa4e1b51b320e8d0a0af699e22037336c8ee711db20f219",
@@ -35473,6 +35585,10 @@
       "assetId": "forma-original-movements-062-2-0",
       "caption": "Pelvic Tilt Into Bridge · Representative exercise position; follow the guide for the complete movement."
     },
+    "wger-748e9635-7958-4a41-b1ed-93de74c7ef72": {
+      "assetId": "forma-original-finish-e-001-1-1",
+      "caption": "Pendelay Rows · Representative exercise position; follow the guide for the complete movement."
+    },
     "wger-ffdb4806-d64e-474b-8ce5-8df9a57fb9c7": {
       "assetId": "forma-original-machines-01-1-0",
       "caption": "Original equipment illustration; use the individual guide and machine settings."
@@ -35721,6 +35837,10 @@
       "assetId": "forma-original-movements-067-3-0",
       "caption": "Quadriceps-SMR · Representative exercise position; follow the guide for the complete movement."
     },
+    "wger-2a1f7c0c-c63d-43f1-9934-a209ed405ff8": {
+      "assetId": "forma-original-finish-e-001-0-0",
+      "caption": "Quadruped Hip Abduction · Representative exercise position; follow the guide for the complete movement."
+    },
     "wger-25854f7a-485a-4280-a0fa-f024655733b0": {
       "assetId": "forma-original-movements-067-1-1",
       "caption": "Quadruped thoracic rotation · Representative exercise position; follow the guide for the complete movement."
@@ -35760,6 +35880,10 @@
     "wger-6705ec92-c6c6-4b2c-b919-bddb8177bf98": {
       "assetId": "forma-original-movements-068-2-0",
       "caption": "Recovery Bobbing · Representative exercise position; follow the guide for the complete movement."
+    },
+    "wger-cf434716-f846-46d8-b267-8b33d311d8b5": {
+      "assetId": "forma-original-finish-f-001-1-0",
+      "caption": "Recruitment Pulls · Representative exercise position; follow the guide for the complete movement."
     },
     "db-recumbent-bike": {
       "assetId": "forma-original-cardio-01-0-1",
@@ -37376,6 +37500,10 @@
     "db-weighted-jump-squat": {
       "assetId": "forma-original-movements-096-0-2",
       "caption": "Weighted Jump Squat · Representative exercise position; follow the guide for the complete movement."
+    },
+    "wger-0d245efd-7d9a-4518-be17-cce14adae88a": {
+      "assetId": "forma-original-finish-d-002-retry-0-0",
+      "caption": "Weighted neck flexion · Starting setup with forehead resistance; follow the guide to curl the chin toward the chest and return under control."
     },
     "db-weighted-pull-ups": {
       "assetId": "forma-original-movements-096-2-2",

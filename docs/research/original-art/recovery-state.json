@@ -3,8 +3,8 @@
   "updatedAt": "2026-10-14",
   "recoveredRemoteCommit": "8d0c5a765fe8a7276884e5198827d0f5f193c69c",
   "total": 1414,
-  "accepted": 1375,
-  "remaining": 39,
+  "accepted": 1379,
+  "remaining": 35,
   "ownerRequest": "Push assets and logs frequently so a crashed cloud session can be recovered.",
   "resumeInstructions": [
     "git fetch origin main and compare remote coverage before generating",
@@ -294,6 +294,26 @@
         "held": 2,
         "pending": 0
       }
+    },
+    {
+      "batch": "finish-f-001",
+      "sourceAssetPath": "assets/exercise-artwork/finish-f-001.png",
+      "recordPath": "docs/research/original-art/finish-f-001.json",
+      "reviewCounts": {
+        "accepted": 1,
+        "held": 3,
+        "pending": 0
+      }
+    },
+    {
+      "batch": "finish-e-001",
+      "sourceAssetPath": "assets/exercise-artwork/finish-e-001.png",
+      "recordPath": "docs/research/original-art/finish-e-001.json",
+      "reviewCounts": {
+        "accepted": 2,
+        "held": 2,
+        "pending": 0
+      }
     }
   ],
   "remainingAssignments": [
@@ -473,31 +493,10 @@
       "status": "pending"
     },
     {
-      "exerciseId": "wger-748e9635-7958-4a41-b1ed-93de74c7ef72",
-      "name": "Pendelay Rows",
-      "equipment": "Barbell",
-      "guideSha256": "2d1dd3c9331d1e6b3177513a8a0465ea14d6773e345cec2c2cae90482740d34a",
-      "status": "pending"
-    },
-    {
       "exerciseId": "db-pin-presses",
       "name": "Pin Presses",
       "equipment": "Barbell",
       "guideSha256": "dd8f1eb1a61eb173e759826c5f9be7488abc560f2b0f19303e8b337b4b5384ac",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "wger-2a1f7c0c-c63d-43f1-9934-a209ed405ff8",
-      "name": "Quadruped Hip Abduction",
-      "equipment": "Resistance band + none (bodyweight exercise)",
-      "guideSha256": "4562df1a82f2e6c871090c37bc1bf52d0f436308fd7483cb4805364a897d6693",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "wger-cf434716-f846-46d8-b267-8b33d311d8b5",
-      "name": "Recruitment Pulls",
-      "equipment": "Bodyweight",
-      "guideSha256": "53fb4c19a3cc8c27901c4d3213457606aa413cad626d5ab80e4e3ff26f43c74b",
       "status": "pending"
     },
     {
@@ -562,13 +561,6 @@
       "equipment": "Bodyweight",
       "guideSha256": "79902fd6817ce852d7aa6b5392f47bea419643a549b0df0a2b4f1eb3613fbc43",
       "status": "pending"
-    },
-    {
-      "exerciseId": "wger-0d245efd-7d9a-4518-be17-cce14adae88a",
-      "name": "Weighted neck flexion",
-      "equipment": "Bench",
-      "guideSha256": "be212222967adca3e5933159b1bd9ab85a5a019d68bd77cb2e91bca314a6491e",
-      "status": "pending"
     }
   ],
   "events": [
@@ -619,6 +611,18 @@
       ],
       "accepted": 1375,
       "remaining": 39,
+      "mediaValidation": "passed",
+      "action": "commit and push original assets, full prompts, reviews and coverage"
+    },
+    {
+      "date": "2026-10-14",
+      "batches": [
+        "finish-d-002-retry",
+        "finish-f-001",
+        "finish-e-001"
+      ],
+      "accepted": 1379,
+      "remaining": 35,
       "mediaValidation": "passed",
       "action": "commit and push original assets, full prompts, reviews and coverage"
     }

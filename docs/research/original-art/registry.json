@@ -33773,6 +33773,118 @@
           "height": 494
         }
       }
+    },
+    "forma-original-finish-d-002-retry-0-0": {
+      "src": "/exercise-media/original/finish-d-002-retry.png?v=fa0f92f50851",
+      "sha256": "fa0f92f508512e523c6cd74151ce0dc9e92ea6d2c84166ff4ce2388ca959e589",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Weighted neck flexion",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-d-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 492
+        }
+      }
+    },
+    "forma-original-finish-f-001-1-0": {
+      "src": "/exercise-media/original/finish-f-001.png?v=fe1806d2b112",
+      "sha256": "fe1806d2b11237797ec261d8a366ff16c14e1b39761f8e662c65df5b9f2fe943",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Recruitment Pulls",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-f-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 500
+        }
+      }
+    },
+    "forma-original-finish-e-001-0-0": {
+      "src": "/exercise-media/original/finish-e-001.png?v=3919f40c9c9b",
+      "sha256": "3919f40c9c9b366fa841c8710d14dacc461c3da55b53415f5f2166713ffa4e5e",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Quadruped Hip Abduction",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-e-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 510
+        }
+      }
+    },
+    "forma-original-finish-e-001-1-1": {
+      "src": "/exercise-media/original/finish-e-001.png?v=3919f40c9c9b",
+      "sha256": "3919f40c9c9b366fa841c8710d14dacc461c3da55b53415f5f2166713ffa4e5e",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Pendelay Rows",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-e-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 510,
+          "width": 768,
+          "height": 514
+        }
+      }
     }
   },
   "exercises": {
@@ -43400,6 +43512,34 @@
       "reviewStatus": "accepted",
       "reviewNote": "Incline bench within45–75degree range; upper arms alongside ears broadly follow torso line, elbows deeply flexed with bar visibly behind head; complete apparatus and grounded feet.",
       "guideSha256": "885269ff1924284f12aaebfe5d96ab6dc556a7e720c14a247245b814f5ba16b3"
+    },
+    "wger-0d245efd-7d9a-4518-be17-cce14adae88a": {
+      "assetId": "forma-original-finish-d-002-retry-0-0",
+      "caption": "Weighted neck flexion · Starting setup with forehead resistance; follow the guide to curl the chin toward the chest and return under control.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Root independently inspected a matching representative supine plate-loaded starting setup for the named anterior neck-flexion movement: forehead resistance held securely, head clear of the bench edge, feet grounded and supported torso. Caption explicitly directs chin-to-chest flexion; this does not depict or claim the contraction endpoint.",
+      "guideSha256": "be212222967adca3e5933159b1bd9ab85a5a019d68bd77cb2e91bca314a6491e"
+    },
+    "wger-cf434716-f846-46d8-b267-8b33d311d8b5": {
+      "assetId": "forma-original-finish-f-001-1-0",
+      "caption": "Recruitment Pulls · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "One hand grips hangboard edge with working elbow visibly obtuse about130degrees, free arm at side and feet grounded; board contained.",
+      "guideSha256": "53fb4c19a3cc8c27901c4d3213457606aa413cad626d5ab80e4e3ff26f43c74b"
+    },
+    "wger-2a1f7c0c-c63d-43f1-9934-a209ed405ff8": {
+      "assetId": "forma-original-finish-e-001-0-0",
+      "caption": "Quadruped Hip Abduction · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Quadruped stable torso, grounded palms and opposite knee, bent-knee thigh opened laterally with loop resistance.",
+      "guideSha256": "4562df1a82f2e6c871090c37bc1bf52d0f436308fd7483cb4805364a897d6693"
+    },
+    "wger-748e9635-7958-4a41-b1ed-93de74c7ef72": {
+      "assetId": "forma-original-finish-e-001-1-1",
+      "caption": "Pendelay Rows · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Horizontal flat torso and straight arms establish floor-start Pendlay setup; complete barbell rests under chest.",
+      "guideSha256": "2d1dd3c9331d1e6b3177513a8a0465ea14d6773e345cec2c2cae90482740d34a"
     }
   }
 }

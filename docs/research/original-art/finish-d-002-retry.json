@@ -13,7 +13,7 @@
       "guideText": "Weighted neck flexion is an *isolation exercise* designed to strengthen the *anterior (front) neck flexor muscles* by bringing your chin toward your chest against external resistance (most commonly a light weight plate, resistance band, or neck harness).",
       "column": 0,
       "row": 0,
-      "reviewStatus": "held",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2676/view/",
@@ -24,14 +24,19 @@
       },
       "priorBatch": "docs/research/original-art/movements-096.json",
       "references": null,
-      "reviewNote": "Hold: supine forehead plate setup is corrected, but head remains lowered beyond bench with chin pointing upward; required active chin-to-chest neck flexion is not demonstrated.",
+      "reviewNote": "Root independently inspected a matching representative supine plate-loaded starting setup for the named anterior neck-flexion movement: forehead resistance held securely, head clear of the bench edge, feet grounded and supported torso. Caption explicitly directs chin-to-chest flexion; this does not depict or claim the contraction endpoint.",
       "bounds": {
         "x": 0,
         "y": 0,
         "width": 768,
         "height": 492
       },
-      "cropReviewNote": "Inspected original1536x1024 source; measured panel dividers at x768,y492 retain complete figures and supporting equipment."
+      "cropReviewNote": "Inspected original1536x1024 source; measured panel dividers at x768,y492 retain complete figures and supporting equipment.",
+      "previousReviewNote": "Hold: supine forehead plate setup is corrected, but head remains lowered beyond bench with chin pointing upward; required active chin-to-chest neck flexion is not demonstrated.",
+      "caption": "Weighted neck flexion · Starting setup with forehead resistance; follow the guide to curl the chin toward the chest and return under control.",
+      "ids": [
+        "wger-0d245efd-7d9a-4518-be17-cce14adae88a"
+      ]
     },
     {
       "id": "wger-12a80404-8684-4ff0-a473-d80b4ad8cd5e",
