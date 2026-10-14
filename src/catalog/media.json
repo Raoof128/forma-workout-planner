@@ -375,6 +375,34 @@
         "row": 0
       }
     },
+    "forma-original-authored-a-001-retry-0-0": {
+      "src": "/exercise-media/original/authored-a-001-retry.png?v=224d75942c8b",
+      "sha256": "224d75942c8b54b35460dea8d218318e4921eb00f1cd038f7c64b05e1b7fa4c2",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Half-kneeling thoracic rotation",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/authored-a-001-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 480
+        }
+      }
+    },
     "forma-original-corrections-001-0-0": {
       "src": "/exercise-media/original/corrections-001.png?v=c5a24cace0cb",
       "sha256": "c5a24cace0cb9b253baf0e19f2d4a5b0f7b28a1418d9e09b5447ac86bc705a95",
@@ -6417,6 +6445,34 @@
         "row": 1
       }
     },
+    "forma-original-authored-b-001-retry-0-1": {
+      "src": "/exercise-media/original/authored-b-001-retry.png?v=be03d865dd24",
+      "sha256": "be03d865dd248ab7ba30840c8fa7369a22d418d5ea2a037e6006adc218e33df8",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Incline dumbbell press",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/authored-b-001-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 4,
+          "y": 489,
+          "width": 762,
+          "height": 531
+        }
+      }
+    },
     "forma-original-corrections-007-0-1": {
       "src": "/exercise-media/original/corrections-007.png?v=07ebf178c582",
       "sha256": "07ebf178c582f6420d04ed7cabea81a6d4a2229e946fd4b9c124cc7bd74bdd7e",
@@ -10234,6 +10290,34 @@
           "y": 341,
           "width": 384,
           "height": 311
+        }
+      }
+    },
+    "forma-original-authored-c-001-retry-0-0": {
+      "src": "/exercise-media/original/authored-c-001-retry.png?v=6b72137b33d9",
+      "sha256": "6b72137b33d935d1f46fd51cdbd365e24b88a6287cc357fa08080eae74b8dc57",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Frog stand balance",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/authored-c-001-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 495
         }
       }
     },
@@ -15135,6 +15219,34 @@
         }
       }
     },
+    "forma-original-authored-c-001-retry-1-0": {
+      "src": "/exercise-media/original/authored-c-001-retry.png?v=6b72137b33d9",
+      "sha256": "6b72137b33d935d1f46fd51cdbd365e24b88a6287cc357fa08080eae74b8dc57",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Chest-supported kettlebell row",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/authored-c-001-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 495
+        }
+      }
+    },
     "forma-original-movements-049-1-0": {
       "src": "/exercise-media/original/movements-049.png?v=dae1c794cf8e",
       "sha256": "dae1c794cf8e020ae8862cc3c357fee4877a2979d84532c23467c1c87be2ac57",
@@ -15720,6 +15832,34 @@
           "y": 683,
           "width": 384,
           "height": 341
+        }
+      }
+    },
+    "forma-original-authored-c-001-retry-0-1": {
+      "src": "/exercise-media/original/authored-c-001-retry.png?v=6b72137b33d9",
+      "sha256": "6b72137b33d935d1f46fd51cdbd365e24b88a6287cc357fa08080eae74b8dc57",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Standing band hamstring curl",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/authored-c-001-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 495,
+          "width": 768,
+          "height": 529
         }
       }
     },
@@ -16484,6 +16624,34 @@
           "y": 0,
           "width": 512,
           "height": 512
+        }
+      }
+    },
+    "forma-original-authored-c-001-retry-1-1": {
+      "src": "/exercise-media/original/authored-c-001-retry.png?v=6b72137b33d9",
+      "sha256": "6b72137b33d935d1f46fd51cdbd365e24b88a6287cc357fa08080eae74b8dc57",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Seated close-grip cable row",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/authored-c-001-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 495,
+          "width": 768,
+          "height": 529
         }
       }
     },
@@ -17982,6 +18150,34 @@
           "y": 670,
           "width": 384,
           "height": 354
+        }
+      }
+    },
+    "forma-original-authored-d-001-0-0": {
+      "src": "/exercise-media/original/authored-d-001.png?v=c15f3da06bdd",
+      "sha256": "c15f3da06bdd1e7dcd165f9817fe5ee6b116e72fb16cecf7fbc34012ac13a49d",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Single-arm high-cable triceps extension",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/authored-d-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 512
         }
       }
     },
@@ -27031,6 +27227,34 @@
         }
       }
     },
+    "forma-original-authored-d-001-1-0": {
+      "src": "/exercise-media/original/authored-d-001.png?v=c15f3da06bdd",
+      "sha256": "c15f3da06bdd1e7dcd165f9817fe5ee6b116e72fb16cecf7fbc34012ac13a49d",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Half-kneeling hip flexor stretch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/authored-d-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
     "forma-original-movements-083-1-1": {
       "src": "/exercise-media/original/movements-083.png?v=db4109baafff",
       "sha256": "db4109baafff958e9bf7aa1cd8b32495b269966f8a43a671bcbd533ebd0a3cf6",
@@ -30983,6 +31207,34 @@
         }
       }
     },
+    "forma-original-authored-d-001-0-1": {
+      "src": "/exercise-media/original/authored-d-001.png?v=c15f3da06bdd",
+      "sha256": "c15f3da06bdd1e7dcd165f9817fe5ee6b116e72fb16cecf7fbc34012ac13a49d",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Prone W raise",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/authored-d-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 512,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
     "forma-original-movements-095-0-0": {
       "src": "/exercise-media/original/movements-095.png?v=a1675d86f738",
       "sha256": "a1675d86f73862f9912641c6e22f09109c1c29d14c9921b38cfde11eaae35d41",
@@ -31372,6 +31624,34 @@
           "y": 0,
           "width": 384,
           "height": 330
+        }
+      }
+    },
+    "forma-original-authored-d-001-1-1": {
+      "src": "/exercise-media/original/authored-d-001.png?v=c15f3da06bdd",
+      "sha256": "c15f3da06bdd1e7dcd165f9817fe5ee6b116e72fb16cecf7fbc34012ac13a49d",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Wall-supported standing march",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/authored-d-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 512,
+          "width": 768,
+          "height": 512
         }
       }
     },
@@ -32825,6 +33105,10 @@
       "assetId": "forma-original-movements-001-1-0",
       "caption": "1-Arm Half-Kneeling Lat Pulldown · Representative exercise position; follow the guide for the complete movement."
     },
+    "wger-d561c00c-436d-47d9-b647-222e7b637abd": {
+      "assetId": "forma-original-authored-a-001-retry-0-0",
+      "caption": "Half-kneeling thoracic rotation · Representative exercise position; follow the guide for the complete movement."
+    },
     "db-3-4-sit-up": {
       "assetId": "forma-original-corrections-001-0-0",
       "caption": "3/4 Sit-Up · Representative exercise position; follow the guide for the complete movement."
@@ -34033,6 +34317,10 @@
       "assetId": "forma-original-movements-021-0-1",
       "caption": "DB Underhand bench press · Representative exercise position; follow the guide for the complete movement."
     },
+    "wger-4b23738a-67a8-41af-996d-abc53a7c3f97": {
+      "assetId": "forma-original-authored-b-001-retry-0-1",
+      "caption": "Incline dumbbell press · Representative exercise position; follow the guide for the complete movement."
+    },
     "wger-73646b21-62e3-493b-8d75-4179326cd404": {
       "assetId": "forma-original-corrections-007-0-1",
       "caption": "DB Wrist Extension · Representative exercise position; follow the guide for the complete movement."
@@ -34676,6 +34964,10 @@
     "db-frog-sit-ups": {
       "assetId": "forma-original-movements-034-1-1",
       "caption": "Frog Sit-Ups · Representative exercise position; follow the guide for the complete movement."
+    },
+    "wger-00eae665-ff78-4373-9c43-f44a4a1b43e0": {
+      "assetId": "forma-original-authored-c-001-retry-0-0",
+      "caption": "Frog stand balance · Representative exercise position; follow the guide for the complete movement."
     },
     "wger-a37001e9-b4b3-45db-8ee3-046f40350efa": {
       "assetId": "forma-original-movements-034-3-1",
@@ -35429,6 +35721,10 @@
       "assetId": "forma-original-corrections-017-0-0",
       "caption": "Kong Curl · Representative exercise position; follow the guide for the complete movement."
     },
+    "wger-5edf07a8-cca2-4199-96a5-9988369be985": {
+      "assetId": "forma-original-authored-c-001-retry-1-0",
+      "caption": "Chest-supported kettlebell row · Representative exercise position; follow the guide for the complete movement."
+    },
     "wger-16202754-f567-4d23-a866-2c9cc8eba71d": {
       "assetId": "forma-original-movements-049-1-0",
       "caption": "L-sit · Representative exercise position; follow the guide for the complete movement."
@@ -35524,6 +35820,10 @@
     "wger-48836f44-efcd-4471-a456-5f024936025a": {
       "assetId": "forma-original-movements-050-1-2",
       "caption": "Leg Curl · Representative exercise position; follow the guide for the complete movement."
+    },
+    "wger-ca514fad-c6ce-47b0-93a0-dc73a3507099": {
+      "assetId": "forma-original-authored-c-001-retry-0-1",
+      "caption": "Standing band hamstring curl · Representative exercise position; follow the guide for the complete movement."
     },
     "wger-88c4d3e5-3837-4c71-bb06-c45e147496cc": {
       "assetId": "forma-original-corrections-017-2-1",
@@ -35644,6 +35944,10 @@
     "wger-a7e6c20a-6ddc-4401-9935-ace2d02e3995": {
       "assetId": "forma-original-corrections-018-1-0",
       "caption": "Long-Pulley (low Row) · Representative exercise position; follow the guide for the complete movement."
+    },
+    "wger-77c98954-b50d-46f0-9912-3981f856d5a6": {
+      "assetId": "forma-original-authored-c-001-retry-1-1",
+      "caption": "Seated close-grip cable row · Representative exercise position; follow the guide for the complete movement."
     },
     "db-looking-at-ceiling": {
       "assetId": "forma-original-movements-052-1-2",
@@ -35912,6 +36216,10 @@
     "wger-0d50ce1e-1731-40e8-82e0-c8f512d0a8c9": {
       "assetId": "forma-original-movements-056-0-2",
       "caption": "Neck CARs · Illustrated movement sequence; follow the guide and keep the motion slow and controlled."
+    },
+    "wger-d27a93fa-7066-477c-a475-c6b6170831db": {
+      "assetId": "forma-original-authored-d-001-0-0",
+      "caption": "Single-arm high-cable triceps extension · Representative exercise position; follow the guide for the complete movement."
     },
     "wger-8bffd3b2-663a-4617-9d95-dce24e795470": {
       "assetId": "forma-original-movements-056-2-2",
@@ -37405,6 +37713,10 @@
       "assetId": "forma-original-movements-083-3-0",
       "caption": "Snatch Shrug · Representative exercise position; follow the guide for the complete movement."
     },
+    "wger-33a55e1a-ff83-4c34-b056-887a121b0978": {
+      "assetId": "forma-original-authored-d-001-1-0",
+      "caption": "Half-kneeling hip flexor stretch · Representative exercise position; follow the guide for the complete movement."
+    },
     "db-speed-band-overhead-triceps": {
       "assetId": "forma-original-movements-083-1-1",
       "caption": "Speed Band Overhead Triceps · Representative exercise position; follow the guide for the complete movement."
@@ -38049,6 +38361,10 @@
       "assetId": "forma-original-cardio-01-1-2",
       "caption": "Adjustable cable station · Equipment reference; follow the guide for pulley settings, grip and movement."
     },
+    "wger-df18b577-0610-4804-a993-161024da67db": {
+      "assetId": "forma-original-authored-d-001-0-1",
+      "caption": "Prone W raise · Representative exercise position; follow the guide for the complete movement."
+    },
     "db-upper-back-stretch": {
       "assetId": "forma-original-movements-095-0-0",
       "caption": "Upper Back Stretch · Representative exercise position; follow the guide for the complete movement."
@@ -38116,6 +38432,10 @@
     "wger-f20ab712-f953-4705-8710-9681392ddd07": {
       "assetId": "forma-original-movements-096-1-0",
       "caption": "Wall balls · Representative exercise position; follow the guide for the complete movement."
+    },
+    "wger-36a309ba-7dd1-43c9-9efc-788c7cd9fbd6": {
+      "assetId": "forma-original-authored-d-001-1-1",
+      "caption": "Wall-supported standing march · Representative exercise position; follow the guide for the complete movement."
     },
     "wger-9a5d36b8-7fa5-4705-8e9b-fafa211a13d6": {
       "assetId": "forma-original-movements-096-3-0",

@@ -1,0 +1,120 @@
+{
+  "name": "authored-a-001-retry",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/authored-a-001-retry.png",
+  "prompt": "ORIGINAL FORMA illustrated exercise manual atlas1536x1024 landscape EXACT2columns2rows equal768x512whitecells, largewhite margins all adultfigures apparatus contained within owncell. Charcoalgray clothing equipment lime accents subtle shadows. Oneadult eachcell exactly2arms2legs no textlabelslogosarrowsborders. Precise four movements:\nTOP LEFT halfkneeling thoracicrotation OPENphase: RIGHTkneegrounded onmat LEFTfootflatforward bothknees90degrees pelvisfacesforward. LEFTarm straightpointsforward shoulderheight; RIGHTarm straightopensoutsideback shoulderheight, upperbackrotates to right andheadeyesfollowrightmovinghand. Upright ribsstackedoverhips noleanback nohipshift, twoextendedarms distinct.\nTOP RIGHT realisticfunctional seated ABCRUNCHmachine reference no branding: complete station includes paddedseat supportinghips, shoulderleverpads linked via visiblepivotleverto selectorizedweightstack with workingcable. Adultseated hipsremainseat bothfeetgrounded, bothhandsgrasp provided overheadshoulderhandles, torso slightlyrounded ribs towardpelvis neckrelaxed. Not alatpulldown orlegextension. Apparatus mechanicalfunction evident with seat/uppertrunkresistance linkage. Fullbaseandstackcontained.\nBOTTOM LEFT singlelegglutebridge TOPphase onmat: adultsupine armsbysides palmsfloor, RIGHTfootflatfloor knee bent, LEFTfoot lifted with LEFTKNEEBENTtowardCHEST. Hipshigh shouldershipsrightknee straightline, pelvislevel, neckshouldersgrounded. No straightliftedleg, no second groundedfoot. Sideview makes supportingfoot/raisedbentleg obvious.\nBOTTOM RIGHT standingbandpullapart OPENphase: adultupright feethipwidth, TWOarms spreadSIDEWAYS almoststraight withsmallelbowbend shoulderheight, BOTH palmsDOWN overhand grasp endsoflime resistanceband. Bandstretches horizontally acrossUPPERCHEST, shoulderbladesretracted ribslow shouldersdown. No row elbows90. Entirehands bandandfeetinsidecell.\nTOP LEFT OVERRIDE choose valid STARTINGposition BEFORErotation: adultSIDEVIEW kneels RIGHTkneeonmat LEFTfootflatforward bothknees90degrees upright pelvisforward. BOTH ARMS straight FORWARD shoulderheight, hands meet PALMSTOPALM together directly infront, head eyesfaceforward. NOT Tpose noopenarms. This is captioned startingposition; exact supportandpalms-together setup mostimportant. Preserve otherthreecorrectposes.",
+  "cells": [
+    {
+      "id": "wger-d561c00c-436d-47d9-b647-222e7b637abd",
+      "title": "Half-kneeling thoracic rotation",
+      "equipment": "Bodyweight",
+      "guideText": "Kneel on a mat with your right knee down and your left foot flat in front of you, both knees bent about ninety degrees. Keep your pelvis facing forward and your ribs stacked over your hips. Extend both arms forward at shoulder height with your palms together. Keep the left arm pointing forward and slowly open the right arm to the side as you rotate through your upper back. Follow the moving hand with your eyes without leaning backward or shifting your hips. Return the palms together with control, then switch the kneeling position and rotate to the other side.",
+      "guideSource": null,
+      "source": null,
+      "references": [
+        {
+          "title": "ACE Exercise Library — general exercise context",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        }
+      ],
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Literal halfkneeling starting position: rear right knee on mat, left foot flat forward, knees about90degrees, upright pelvis/ribs and both straight arms forward with palms together.",
+      "illustrationCaption": "Half-kneeling thoracic rotation — starting position.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 480
+      },
+      "cropReviewNote": "Actual row gap y480 inspected; complete figures, mat and apparatus contained.",
+      "ids": [
+        "wger-d561c00c-436d-47d9-b647-222e7b637abd"
+      ]
+    },
+    {
+      "id": "wger-7870ad8d-a0c1-4e3a-a4fe-a237908eba9b",
+      "title": "Seated machine abdominal crunch",
+      "equipment": "Seated ab crunch machine",
+      "guideText": "Choose a seated abdominal-crunch machine and adjust its seat and pads according to the station instructions. Sit with your hips fully supported, place both feet on the foot supports or floor as the machine requires, and grasp the provided handles. Set a light resistance before beginning. Keeping your pelvis on the seat, exhale and bring your ribs toward your pelvis by gently rounding your trunk against the resistance. Keep your neck relaxed and avoid pulling with your arms or driving with your legs. Return slowly to the upright starting position without letting the resistance snap back. Repeat within a comfortable range.",
+      "guideSource": null,
+      "source": null,
+      "references": [
+        {
+          "title": "ACE Exercise Library — general exercise context",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        }
+      ],
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Complete functional seated crunch station with shoulder pads/handles, pivot-lever cable and guided stack; supported pelvis, grounded feet and rounded trunk phase.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 480
+      },
+      "cropReviewNote": "Actual row gap y480 inspected; complete figures, mat and apparatus contained.",
+      "ids": []
+    },
+    {
+      "id": "wger-caccd791-ff30-452a-816e-790edadb78cd",
+      "title": "Single-leg glute bridge",
+      "equipment": "Bodyweight",
+      "guideText": "Lie on your back on a mat with your arms by your sides and your right foot flat on the floor, close enough that its knee is bent. Lift the left foot and keep that knee bent toward your chest. Brace your abdomen and press through the right foot to lift your hips until your shoulders, hips and right knee form a straight line. Keep both sides of your pelvis level and avoid arching your lower back. Pause briefly, then lower your hips to the mat with control. Complete the repetitions and switch legs.",
+      "guideSource": null,
+      "source": null,
+      "references": [
+        {
+          "title": "ACE Exercise Library — general exercise context",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        }
+      ],
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Single supporting foot grounded and opposite bent knee/foot lifted, hips raised while shoulders grounded; intact level bridge line.",
+      "bounds": {
+        "x": 0,
+        "y": 480,
+        "width": 768,
+        "height": 544
+      },
+      "cropReviewNote": "Actual row gap y480 inspected; complete figures, mat and apparatus contained.",
+      "ids": []
+    },
+    {
+      "id": "wger-4c317795-c301-4081-9f96-6036682f80c1",
+      "title": "Band pull-apart drill",
+      "equipment": "Resistance band",
+      "guideText": "Stand upright with your feet about hip width apart and hold a light resistance band in both hands at shoulder height. Place your hands far enough apart that the band has mild tension, with your palms facing downward and elbows slightly bent. Keep your ribs down and shoulders away from your ears. Move your hands outward until the band approaches your upper chest, drawing your shoulder blades gently together. Keep the elbows at the same small bend rather than turning the movement into a row. Return slowly to the starting width and repeat without snapping the band.",
+      "guideSource": null,
+      "source": null,
+      "references": [
+        {
+          "title": "ACE Exercise Library — general exercise context",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        }
+      ],
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Taut resistance band across upper chest, both pronated hands shoulder height with arms spread and slight elbow bend, upright stance.",
+      "bounds": {
+        "x": 768,
+        "y": 480,
+        "width": 768,
+        "height": 544
+      },
+      "cropReviewNote": "Actual row gap y480 inspected; complete figures, mat and apparatus contained.",
+      "ids": []
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-e37ecddf-d783-442d-8390-30a82fd06f6f.png",
+  "sourceAssetPath": "assets/exercise-artwork/authored-a-001-retry.png",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

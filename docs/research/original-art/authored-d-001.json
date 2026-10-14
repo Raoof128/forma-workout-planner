@@ -1,0 +1,202 @@
+{
+  "name": "authored-d-001",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/authored-d-001.png",
+  "sourceAssetPath": "assets/exercise-artwork/authored-d-001.png",
+  "prompt": "Create ORIGINAL FORMA exercise-manual art, landscape1536x1024, EXACTLY2columns2rows FOUR separate equal768x512panels. Pure white backgrounds generous gutters subtle shadows, no words labels letters logos arrows ghost poses. One fully clothed adult per panel charcoal gray clothing tiny lime accent, charcoal equipment. Correct TWO arms TWO legs, clear hand support and joint geometry. Entire athlete and apparatus inside own panel including all hands feet knees rack machine. Physical correctness prioritized. Each distinct guide below mandatory:\n\nRow1 column1: Single-arm high-cable triceps extension. Exact representative phase: Standing facing AWAY from compact HIGH cable machine, RIGHT upper arm beside head, right elbow bent and single grip handle BEHIND head, cable taut from high pulley. Free left arm beside body, one foot forward, neutral back. Full cable machine visible with high pulley above head. FULL GUIDE: Attach a single-grip handle to a high cable pulley and select a light resistance. Stand facing away from the machine with one foot forward for balance. Hold the handle in your right hand and bring the right upper arm beside your head, with your elbow bent and the handle behind your head. Keep your ribs down, back neutral and upper arm steady. Straighten the right elbow to move your hand forward and upward, resisting the cable without moving your shoulder or torso. Bend the elbow slowly to return the handle behind your head. Complete the repetitions, then switch arms.\n\nRow1 column2: Half-kneeling hip flexor stretch. Exact representative phase: Half kneeling on mat: anatomical RIGHT knee grounded behind, LEFT foot forward planted, left knee directly above left ankle. Both hands on hips, torso vertical pelvis gently tucked, shallow hip forward shift, no deep lunge. Threequarter view shows front torso and right-grounded knee. FULL GUIDE: Kneel on a mat with your right knee on the floor and your left foot planted in front of you. Keep the left knee above the ankle and place your hands on your hips. Gently tuck your pelvis by bringing your belt line upward and squeeze the right buttock. Keeping your torso upright, shift your hips a small distance forward until you feel a comfortable stretch at the front of the right hip. Avoid arching your lower back or lunging deeply. Breathe normally during the hold, move back to release the stretch and switch the kneeling legs.\n\nRow2 column1: Prone W raise. Exact representative phase: Prone W raise on mat, overhead-threequarter view: forehead ON folded towel, chest belly CLOSE to floor, legs straight resting. Upper arms angle45degrees away from torso, BOTH elbows bent90degrees, forearms angle forward toward head to form W. BOTH hands and elbows raised only2cm with clear gaps under them. Head remains low neutral chin down, not cobra. FULL GUIDE: Lie face down on a mat with your legs extended and your forehead resting lightly on a folded towel. Bend both elbows about ninety degrees and position your arms in a W shape, with your upper arms angled away from your torso and your hands beside your head. Keep your abdomen gently braced and your chest close to the mat. Draw your shoulder blades together and lift your hands and elbows a small distance from the floor, keeping the W shape. Pause briefly without lifting your chin or arching your lower back, then lower both arms with control. Repeat slowly.\n\nRow2 column2: Wall-supported standing march. Exact representative phase: Wall supported march SIDE-threequarter view: athlete upright facing real vertical wall, BOTH palms flat against wall at shoulder height. Both arms extended lightly for balance. LEFT foot planted supporting, RIGHT thigh raised horizontally forward to hip height, RIGHT knee bent90degrees with ankle DIRECTLY BELOW knee. Torso vertical not sprint lean, hips level. Full wall floor junction and both feet inside panel. FULL GUIDE: Stand facing a wall about an arm length away and place both palms against it at shoulder height. Keep your torso upright, feet hip width apart and shoulders relaxed. Shift your weight onto your left foot and raise your right knee forward toward hip height, keeping the right ankle beneath the knee and the pelvis level. Use the wall lightly for balance rather than hanging your weight through your arms. Pause briefly, then lower the right foot to the floor with control. Raise the left knee in the same way and continue alternating. Avoid bouncing, leaning backward or twisting your hips.",
+  "cells": [
+    {
+      "id": "wger-d27a93fa-7066-477c-a475-c6b6170831db",
+      "name": "Single-arm high-cable triceps extension",
+      "muscle": "Arms",
+      "equipment": "Cable",
+      "primaryMuscles": [
+        "Triceps"
+      ],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Attach a single-grip handle to a high cable pulley and select a light resistance. Stand facing away from the machine with one foot forward for balance. Hold the handle in your right hand and bring the right upper arm beside your head, with your elbow bent and the handle behind your head. Keep your ribs down, back neutral and upper arm steady. Straighten the right elbow to move your hand forward and upward, resisting the cable without moving your shoulder or torso. Bend the elbow slowly to return the handle behind your head. Complete the repetitions, then switch arms.",
+      "source": null,
+      "weight": 0,
+      "metric": "load_reps",
+      "equipmentTags": [
+        "Machine",
+        "Cable"
+      ],
+      "references": [
+        {
+          "title": "ACE Exercise Library — general exercise context",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        }
+      ],
+      "aliases": [
+        "Neck extension"
+      ],
+      "guideText": "Attach a single-grip handle to a high cable pulley and select a light resistance. Stand facing away from the machine with one foot forward for balance. Hold the handle in your right hand and bring the right upper arm beside your head, with your elbow bent and the handle behind your head. Keep your ribs down, back neutral and upper arm steady. Straighten the right elbow to move your hand forward and upward, resisting the cable without moving your shoulder or torso. Bend the elbow slowly to return the handle behind your head. Complete the repetitions, then switch arms.",
+      "title": "Single-arm high-cable triceps extension",
+      "guideSource": null,
+      "artworkRequirements": "Attach a single-grip handle to a high cable pulley and select a light resistance. Stand facing away from the machine with one foot forward for balance. Hold the handle in your right hand and bring the right upper arm beside your head, with your elbow bent and the handle behind your head. Keep your ribs down, back neutral and upper arm steady. Straighten the right elbow to move your hand forward and upward, resisting the cable without moving your shoulder or torso. Bend the elbow slowly to return the handle behind your head. Complete the repetitions, then switch arms.",
+      "row": 0,
+      "column": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Facing-away high-pulley single-handle overhead triceps-extension setup with upper arm beside head, bent elbow, staggered stance and neutral torso; opposite arm demonstration is explicitly permitted by switch-arms instruction.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full1536x1024 source; white panel gutters at x768,y512 retain every complete figure, hand/foot contact and apparatus.",
+      "ids": [
+        "wger-d27a93fa-7066-477c-a475-c6b6170831db"
+      ]
+    },
+    {
+      "id": "wger-33a55e1a-ff83-4c34-b056-887a121b0978",
+      "name": "Half-kneeling hip flexor stretch",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [
+        "Hip flexors"
+      ],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Kneel on a mat with your right knee on the floor and your left foot planted in front of you. Keep the left knee above the ankle and place your hands on your hips. Gently tuck your pelvis by bringing your belt line upward and squeeze the right buttock. Keeping your torso upright, shift your hips a small distance forward until you feel a comfortable stretch at the front of the right hip. Avoid arching your lower back or lunging deeply. Breathe normally during the hold, move back to release the stretch and switch the kneeling legs.",
+      "source": null,
+      "weight": 0,
+      "metric": "duration",
+      "equipmentTags": [
+        "Bodyweight"
+      ],
+      "references": [
+        {
+          "title": "ACE Exercise Library — general exercise context",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        }
+      ],
+      "aliases": [
+        "Solo Hip Flexor Stretch"
+      ],
+      "guideText": "Kneel on a mat with your right knee on the floor and your left foot planted in front of you. Keep the left knee above the ankle and place your hands on your hips. Gently tuck your pelvis by bringing your belt line upward and squeeze the right buttock. Keeping your torso upright, shift your hips a small distance forward until you feel a comfortable stretch at the front of the right hip. Avoid arching your lower back or lunging deeply. Breathe normally during the hold, move back to release the stretch and switch the kneeling legs.",
+      "title": "Half-kneeling hip flexor stretch",
+      "guideSource": null,
+      "artworkRequirements": "Kneel on a mat with your right knee on the floor and your left foot planted in front of you. Keep the left knee above the ankle and place your hands on your hips. Gently tuck your pelvis by bringing your belt line upward and squeeze the right buttock. Keeping your torso upright, shift your hips a small distance forward until you feel a comfortable stretch at the front of the right hip. Avoid arching your lower back or lunging deeply. Breathe normally during the hold, move back to release the stretch and switch the kneeling legs.",
+      "row": 0,
+      "column": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Half-kneeling hip-flexor stretch with right knee grounded, left foot forward, knee over ankle, hands on hips and upright torso.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full1536x1024 source; white panel gutters at x768,y512 retain every complete figure, hand/foot contact and apparatus.",
+      "ids": [
+        "wger-33a55e1a-ff83-4c34-b056-887a121b0978"
+      ]
+    },
+    {
+      "id": "wger-df18b577-0610-4804-a993-161024da67db",
+      "name": "Prone W raise",
+      "muscle": "Back",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [
+        "Upper back",
+        "Rear delts"
+      ],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Lie face down on a mat with your legs extended and your forehead resting lightly on a folded towel. Bend both elbows about ninety degrees and position your arms in a W shape, with your upper arms angled away from your torso and your hands beside your head. Keep your abdomen gently braced and your chest close to the mat. Draw your shoulder blades together and lift your hands and elbows a small distance from the floor, keeping the W shape. Pause briefly without lifting your chin or arching your lower back, then lower both arms with control. Repeat slowly.",
+      "source": null,
+      "weight": 0,
+      "metric": "load_reps",
+      "equipmentTags": [
+        "Bodyweight"
+      ],
+      "references": [
+        {
+          "title": "ACE Exercise Library — general exercise context",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        }
+      ],
+      "aliases": [
+        "Upper Back"
+      ],
+      "guideText": "Lie face down on a mat with your legs extended and your forehead resting lightly on a folded towel. Bend both elbows about ninety degrees and position your arms in a W shape, with your upper arms angled away from your torso and your hands beside your head. Keep your abdomen gently braced and your chest close to the mat. Draw your shoulder blades together and lift your hands and elbows a small distance from the floor, keeping the W shape. Pause briefly without lifting your chin or arching your lower back, then lower both arms with control. Repeat slowly.",
+      "title": "Prone W raise",
+      "guideSource": null,
+      "artworkRequirements": "Lie face down on a mat with your legs extended and your forehead resting lightly on a folded towel. Bend both elbows about ninety degrees and position your arms in a W shape, with your upper arms angled away from your torso and your hands beside your head. Keep your abdomen gently braced and your chest close to the mat. Draw your shoulder blades together and lift your hands and elbows a small distance from the floor, keeping the W shape. Pause briefly without lifting your chin or arching your lower back, then lower both arms with control. Repeat slowly.",
+      "row": 1,
+      "column": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Prone W-raise representative low setup/raise phase with bent elbows angled away from torso, hands beside head, forehead on folded towel and chest close to mat.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full1536x1024 source; white panel gutters at x768,y512 retain every complete figure, hand/foot contact and apparatus.",
+      "ids": [
+        "wger-df18b577-0610-4804-a993-161024da67db"
+      ]
+    },
+    {
+      "id": "wger-36a309ba-7dd1-43c9-9efc-788c7cd9fbd6",
+      "name": "Wall-supported standing march",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [
+        "Hip flexors",
+        "Quads"
+      ],
+      "secondaryMuscles": [
+        "Calves"
+      ],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Stand facing a wall about an arm length away and place both palms against it at shoulder height. Keep your torso upright, feet hip width apart and shoulders relaxed. Shift your weight onto your left foot and raise your right knee forward toward hip height, keeping the right ankle beneath the knee and the pelvis level. Use the wall lightly for balance rather than hanging your weight through your arms. Pause briefly, then lower the right foot to the floor with control. Raise the left knee in the same way and continue alternating. Avoid bouncing, leaning backward or twisting your hips.",
+      "source": null,
+      "weight": 0,
+      "metric": "load_reps",
+      "equipmentTags": [
+        "Bodyweight"
+      ],
+      "references": [
+        {
+          "title": "ACE Exercise Library — general exercise context",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        }
+      ],
+      "aliases": [
+        "Wall Drills"
+      ],
+      "guideText": "Stand facing a wall about an arm length away and place both palms against it at shoulder height. Keep your torso upright, feet hip width apart and shoulders relaxed. Shift your weight onto your left foot and raise your right knee forward toward hip height, keeping the right ankle beneath the knee and the pelvis level. Use the wall lightly for balance rather than hanging your weight through your arms. Pause briefly, then lower the right foot to the floor with control. Raise the left knee in the same way and continue alternating. Avoid bouncing, leaning backward or twisting your hips.",
+      "title": "Wall-supported standing march",
+      "guideSource": null,
+      "artworkRequirements": "Stand facing a wall about an arm length away and place both palms against it at shoulder height. Keep your torso upright, feet hip width apart and shoulders relaxed. Shift your weight onto your left foot and raise your right knee forward toward hip height, keeping the right ankle beneath the knee and the pelvis level. Use the wall lightly for balance rather than hanging your weight through your arms. Pause briefly, then lower the right foot to the floor with control. Raise the left knee in the same way and continue alternating. Avoid bouncing, leaning backward or twisting your hips.",
+      "row": 1,
+      "column": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Wall-supported upright march with both palms contacting wall, right knee raised near hip height, bent ankle beneath knee, left supporting foot planted and level pelvis.",
+      "bounds": {
+        "x": 768,
+        "y": 512,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full1536x1024 source; white panel gutters at x768,y512 retain every complete figure, hand/foot contact and apparatus.",
+      "ids": [
+        "wger-36a309ba-7dd1-43c9-9efc-788c7cd9fbd6"
+      ]
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-39dfbae3-b416-4fb5-b4c2-d8c74131ea87.png",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

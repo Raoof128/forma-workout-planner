@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1399,
+  "accepted": 1409,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -161,7 +161,9 @@
       "name": "Half-kneeling thoracic rotation",
       "equipment": "Bodyweight",
       "guideSha256": "285a9e5ee2b8513313221f107c9344ac0308dd33c025c5451aed4ebd31db62d9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-authored-a-001-retry-0-0",
+      "reviewNote": "Literal halfkneeling starting position: rear right knee on mat, left foot flat forward, knees about90degrees, upright pelvis/ribs and both straight arms forward with palms together."
     },
     {
       "exerciseId": "db-3-4-sit-up",
@@ -2886,7 +2888,9 @@
       "name": "Incline dumbbell press",
       "equipment": "Dumbbell + Incline bench",
       "guideSha256": "0dd09e9a87bd2304c4d17e9549cdaa98e9091265a7a8ee0fd4a1d665e01c1bca",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-authored-b-001-retry-0-1",
+      "reviewNote": "Shallow approximately30degree bench now supports head upperback and hips; both feet planted, independent dumbbells beside upper chest with straight wrists above elbows."
     },
     {
       "exerciseId": "wger-73646b21-62e3-493b-8d75-4179326cd404",
@@ -4349,7 +4353,9 @@
       "name": "Frog stand balance",
       "equipment": "Bodyweight",
       "guideSha256": "74c671570bd13f0c93a89dae587947ceefb33210ad93c52a6362bae229d19fe3",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-authored-c-001-retry-0-0",
+      "reviewNote": "Both elbows now visibly flexed beneath forward shoulders, inside knees rest on corresponding upper arms near elbows, palms planted fingers spread and both feet hover low; matches bent-arm frog balance."
     },
     {
       "exerciseId": "wger-a37001e9-b4b3-45db-8ee3-046f40350efa",
@@ -6055,7 +6061,9 @@
       "name": "Chest-supported kettlebell row",
       "equipment": "Kettlebell + Incline bench",
       "guideSha256": "0073e9bb7178acf080f8aec6b73888e166a86e1525fccdb03d041caf1238b7b9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-authored-c-001-retry-1-0",
+      "reviewNote": "Chest remains prone supported on low approximately30-degree incline, head beyond upper edge, both feet grounded and one kettlebell in each hanging hand clear of floor; guide-defined starting phase preserved."
     },
     {
       "exerciseId": "wger-b4e78b5a-6141-4fc9-a6f7-cba13ce6559b",
@@ -6285,7 +6293,9 @@
       "name": "Standing band hamstring curl",
       "equipment": "Resistance band",
       "guideSha256": "9f72f1cd81903864db206242817873d63fd62fe4a796b13a14d7d5d56ab4a6dd",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-authored-c-001-retry-0-1",
+      "reviewNote": "Athlete faces finite complete fixed support and low band anchor, cuff on bent right ankle, knees close with right thigh near vertical and heel toward buttock; grounded left sole and hand support retained."
     },
     {
       "exerciseId": "wger-88c4d3e5-3837-4c71-bb06-c45e147496cc",
@@ -6562,7 +6572,9 @@
       "name": "Seated close-grip cable row",
       "equipment": "Cable",
       "guideSha256": "79b7240eeebf946bdc7f02dd1ad6210f64357a88bfaf1198b762ff446b93f52c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-authored-c-001-retry-1-1",
+      "reviewNote": "Complete cable station including upright tops now contained. Upright seated torso, softly bent knees, both soles on footplates, close parallel neutral-grip handle at upper abdomen and elbows near sides match guide."
     },
     {
       "exerciseId": "db-looking-at-ceiling",
@@ -7172,7 +7184,9 @@
       "name": "Single-arm high-cable triceps extension",
       "equipment": "Cable",
       "guideSha256": "825af58d8e80e1d11e9df67d46abad87b7dc94da925ee22209c86c5469812ae4",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-authored-d-001-0-0",
+      "reviewNote": "Facing-away high-pulley single-handle overhead triceps-extension setup with upper arm beside head, bent elbow, staggered stance and neutral torso; opposite arm demonstration is explicitly permitted by switch-arms instruction."
     },
     {
       "exerciseId": "wger-8bffd3b2-663a-4617-9d95-dce24e795470",
@@ -10550,7 +10564,9 @@
       "name": "Half-kneeling hip flexor stretch",
       "equipment": "Bodyweight",
       "guideSha256": "cf8b79cbdd53ebfc3086b27fc511a44753098772f361ed1261b2d6ccb390fa95",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-authored-d-001-1-0",
+      "reviewNote": "Half-kneeling hip-flexor stretch with right knee grounded, left foot forward, knee over ankle, hands on hips and upright torso."
     },
     {
       "exerciseId": "db-speed-band-overhead-triceps",
@@ -12006,7 +12022,9 @@
       "name": "Prone W raise",
       "equipment": "Bodyweight",
       "guideSha256": "cb94093d9eb5a7df3b4905010c76665cfb16951c3721f5044d96b0170b05e671",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-authored-d-001-0-1",
+      "reviewNote": "Prone W-raise representative low setup/raise phase with bent elbows angled away from torso, hands beside head, forehead on folded towel and chest close to mat."
     },
     {
       "exerciseId": "db-upper-back-stretch",
@@ -12166,7 +12184,9 @@
       "name": "Wall-supported standing march",
       "equipment": "Bodyweight",
       "guideSha256": "8618943c21b26be78b72b56cd3ee71bcac24da68f99a925b2a6a62f2d6d91cc6",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-authored-d-001-1-1",
+      "reviewNote": "Wall-supported upright march with both palms contacting wall, right knee raised near hip height, bent ankle beneath knee, left supporting foot planted and level pelvis."
     },
     {
       "exerciseId": "wger-9a5d36b8-7fa5-4705-8e9b-fafa211a13d6",
