@@ -1,0 +1,103 @@
+{
+  "result": [
+    {
+      "mode": "desktop",
+      "screen": "login",
+      "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-desktop-login.png",
+      "overflow": false,
+      "url": "http://127.0.0.1:5175/#account",
+      "title": "Account · FORMA"
+    },
+    {
+      "mode": "desktop",
+      "screen": "reset",
+      "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-desktop-reset.png",
+      "overflow": false,
+      "url": "http://127.0.0.1:5175/#account",
+      "title": "Account · FORMA"
+    },
+    {
+      "mode": "desktop",
+      "screen": "register",
+      "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-desktop-register.png",
+      "overflow": false,
+      "url": "http://127.0.0.1:5175/#account",
+      "title": "Account · FORMA"
+    },
+    {
+      "mode": "desktop",
+      "screen": "profile",
+      "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-desktop-profile.png",
+      "overflow": false,
+      "url": "http://127.0.0.1:5175/#account",
+      "title": "Account · FORMA"
+    },
+    {
+      "mode": "desktop",
+      "screen": "security",
+      "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-desktop-security.png",
+      "overflow": false,
+      "url": "http://127.0.0.1:5175/#account",
+      "title": "Account · FORMA"
+    },
+    {
+      "mode": "desktop",
+      "screen": "workspace",
+      "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-desktop-workspace.png",
+      "overflow": false,
+      "url": "http://127.0.0.1:5175/#overview",
+      "title": "Overview · FORMA"
+    },
+    {
+      "mode": "mobile",
+      "screen": "login",
+      "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-mobile-login.png",
+      "overflow": false,
+      "url": "http://127.0.0.1:5175/#account",
+      "title": "Account · FORMA"
+    },
+    {
+      "mode": "mobile",
+      "screen": "reset",
+      "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-mobile-reset.png",
+      "overflow": false,
+      "url": "http://127.0.0.1:5175/#account",
+      "title": "Account · FORMA"
+    },
+    {
+      "mode": "mobile",
+      "screen": "register",
+      "path": null,
+      "overflow": false,
+      "url": "http://127.0.0.1:5175/#account",
+      "title": "Account · FORMA",
+      "captureReview": "Rejected: full-page capture retained focus/scroll and painted sticky header mid-page; form transition focus is being checked separately."
+    },
+    {
+      "mode": "mobile",
+      "screen": "profile",
+      "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-mobile-profile.png",
+      "overflow": false,
+      "url": "http://127.0.0.1:5175/#account",
+      "title": "Account · FORMA"
+    },
+    {
+      "mode": "mobile",
+      "screen": "security",
+      "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-mobile-security.png",
+      "overflow": false,
+      "url": "http://127.0.0.1:5175/#account",
+      "title": "Account · FORMA"
+    },
+    {
+      "mode": "mobile",
+      "screen": "workspace",
+      "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-mobile-workspace.png",
+      "overflow": false,
+      "url": "http://127.0.0.1:5175/#overview",
+      "title": "Overview · FORMA"
+    }
+  ],
+  "errors": [],
+  "browser": "Regular Playwright; Browser plugin unavailable"
+}

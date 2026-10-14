@@ -74,6 +74,13 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 - Test service credentials are synthetic and stay in ignored local scratch.
   Account checks use disposable database schemas and an in-memory email sink;
   never redirect them to live member data. No deployment is authorized here.
+- Ignore generated `work`, `test-results` and `playwright-report` folders in
+  Vite's watcher. Trace HTML caused unwanted full reloads during integration
+  tests. Concurrent test runners must use different output folders. Lint/docs
+  checks exclude local scratch; ordinary application sources remain checked.
+- Desktop/mobile photograph review fixed the phone detail-banner sprite sizing
+  as well as the hero and routine crop positions. Recheck rendered crops if the
+  background assets or responsive sizing change.
 
 ### Raouf: 2026-10-14 — Cloud crash recovery and pushed checkpoints
 

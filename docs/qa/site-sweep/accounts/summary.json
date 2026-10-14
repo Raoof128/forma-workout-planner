@@ -1,0 +1,143 @@
+{
+  "result": "pass",
+  "desktopCases": 9,
+  "mobileCases": 9,
+  "failedCases": 0,
+  "timeoutOverrideMs": 120000,
+  "command": "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npx playwright test --config=work/site-sweep-accounts.config.mjs --project=accounts-chromium --project=accounts-chromium-mobile --timeout=120000 --output=work/site-sweep-accounts-isolated-results",
+  "stats": {
+    "startTime": "2026-10-14T06:23:11.462Z",
+    "duration": 748639.183,
+    "expected": 18,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "environment": {
+    "mode": "development",
+    "url": "http://127.0.0.1:5175",
+    "database": "Disposable local PostgreSQL18.4-alpine;127.0.0.1:55439;random per-run schema; synthetic data only",
+    "email": "Local emailSink harness; no external email",
+    "browser": "Chromium /usr/bin/chromium; desktop1280x900 and iPhone13 emulation; Browser plugin unavailable",
+    "cleanup": "Own forma-site-sweep-db stopped; API/Vite/browser closed; dummy credential file removed"
+  },
+  "captures": {
+    "result": [
+      {
+        "mode": "desktop",
+        "screen": "login",
+        "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-desktop-login.png",
+        "overflow": false,
+        "url": "http://127.0.0.1:5175/#account",
+        "title": "Account · FORMA"
+      },
+      {
+        "mode": "desktop",
+        "screen": "reset",
+        "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-desktop-reset.png",
+        "overflow": false,
+        "url": "http://127.0.0.1:5175/#account",
+        "title": "Account · FORMA"
+      },
+      {
+        "mode": "desktop",
+        "screen": "register",
+        "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-desktop-register.png",
+        "overflow": false,
+        "url": "http://127.0.0.1:5175/#account",
+        "title": "Account · FORMA"
+      },
+      {
+        "mode": "desktop",
+        "screen": "profile",
+        "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-desktop-profile.png",
+        "overflow": false,
+        "url": "http://127.0.0.1:5175/#account",
+        "title": "Account · FORMA"
+      },
+      {
+        "mode": "desktop",
+        "screen": "security",
+        "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-desktop-security.png",
+        "overflow": false,
+        "url": "http://127.0.0.1:5175/#account",
+        "title": "Account · FORMA"
+      },
+      {
+        "mode": "desktop",
+        "screen": "workspace",
+        "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-desktop-workspace.png",
+        "overflow": false,
+        "url": "http://127.0.0.1:5175/#overview",
+        "title": "Overview · FORMA"
+      },
+      {
+        "mode": "mobile",
+        "screen": "login",
+        "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-mobile-login.png",
+        "overflow": false,
+        "url": "http://127.0.0.1:5175/#account",
+        "title": "Account · FORMA"
+      },
+      {
+        "mode": "mobile",
+        "screen": "reset",
+        "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-mobile-reset.png",
+        "overflow": false,
+        "url": "http://127.0.0.1:5175/#account",
+        "title": "Account · FORMA"
+      },
+      {
+        "mode": "mobile",
+        "screen": "register",
+        "path": null,
+        "overflow": false,
+        "url": "http://127.0.0.1:5175/#account",
+        "title": "Account · FORMA",
+        "captureReview": "Rejected: full-page capture retained focus/scroll and painted sticky header mid-page; form transition focus is being checked separately."
+      },
+      {
+        "mode": "mobile",
+        "screen": "profile",
+        "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-mobile-profile.png",
+        "overflow": false,
+        "url": "http://127.0.0.1:5175/#account",
+        "title": "Account · FORMA"
+      },
+      {
+        "mode": "mobile",
+        "screen": "security",
+        "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-mobile-security.png",
+        "overflow": false,
+        "url": "http://127.0.0.1:5175/#account",
+        "title": "Account · FORMA"
+      },
+      {
+        "mode": "mobile",
+        "screen": "workspace",
+        "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-mobile-workspace.png",
+        "overflow": false,
+        "url": "http://127.0.0.1:5175/#overview",
+        "title": "Overview · FORMA"
+      }
+    ],
+    "errors": [],
+    "browser": "Regular Playwright; Browser plugin unavailable"
+  },
+  "visualNotes": [
+    "Inspected desktoplogin/security and mobilesecurity/register/workspace screenshots. No horizontal overflow or console/page errors.",
+    "Mobile full-page register capture retains browser focus and nonzero scroll from form switching: visible Skip to content focus link and sticky header drawn partway through full-page screenshot. Treat this capture-position artifact separately from layout regression."
+  ],
+  "earlierDiagnostics": [
+    "Reload-artifact run stopped after3timeouts/1interrupted/14notrun; root ignored generatedwork HTML in Vite watcher.",
+    "Contended default30s run stopped:1passed6timeouts1interrupted10notrun. Serialized120s CLI run passed all18. No source test timeout modifications.",
+    "Capture-only scratch locator errors fixed (#main-sidebar scope); final capturecheckpassed with12screens."
+  ],
+  "reports": [
+    "work/site-sweep-accounts-isolated-report.json",
+    "work/site-sweep-accounts-isolated-run.log",
+    "work/site-sweep-accounts-capture-report.json",
+    "work/site-sweep-accounts-capture-run.log"
+  ],
+  "reproduction": "Use playwright.accounts.config.js with an isolated TEST_DATABASE_URL, the two Chromium projects, --workers=1 --timeout=120000 and a unique output folder. The recorded scratch config only selected report/output paths."
+}

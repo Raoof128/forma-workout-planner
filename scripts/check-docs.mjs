@@ -14,6 +14,7 @@ const ignoredDirectories = new Set([
   "node_modules",
   "test-results",
   "playwright-report",
+  "work",
 ]);
 const failures = [];
 

@@ -1,0 +1,883 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/forma-workout-planner/node_modules/.bin/playwright",
+      "test",
+      "--config=work/site-sweep-accounts.config.mjs",
+      "--project=accounts-chromium",
+      "--project=accounts-chromium-mobile",
+      "--timeout=120000",
+      "--output=work/site-sweep-accounts-isolated-results"
+    ],
+    "configFile": "/workspace/forma-workout-planner/work/site-sweep-accounts.config.mjs",
+    "rootDir": "/workspace/forma-workout-planner/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/forma-workout-planner/work/site-sweep-accounts-isolated-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "accounts-chromium",
+        "name": "accounts-chromium",
+        "testDir": "/workspace/forma-workout-planner/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "accounts*.spec.js"
+        ],
+        "timeout": 120000
+      },
+      {
+        "outputDir": "/workspace/forma-workout-planner/work/site-sweep-accounts-isolated-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "accounts-chromium-mobile",
+        "name": "accounts-chromium-mobile",
+        "testDir": "/workspace/forma-workout-planner/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "accounts*.spec.js"
+        ],
+        "timeout": 120000
+      },
+      {
+        "outputDir": "/workspace/forma-workout-planner/work/site-sweep-accounts-isolated-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "accounts-firefox",
+        "name": "accounts-firefox",
+        "testDir": "/workspace/forma-workout-planner/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "accounts*.spec.js"
+        ],
+        "timeout": 120000
+      },
+      {
+        "outputDir": "/workspace/forma-workout-planner/work/site-sweep-accounts-isolated-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "accounts-webkit",
+        "name": "accounts-webkit",
+        "testDir": "/workspace/forma-workout-planner/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "accounts*.spec.js"
+        ],
+        "timeout": 120000
+      },
+      {
+        "outputDir": "/workspace/forma-workout-planner/work/site-sweep-accounts-isolated-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "accounts-webkit-mobile",
+        "name": "accounts-webkit-mobile",
+        "testDir": "/workspace/forma-workout-planner/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "accounts*.spec.js"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/forma-workout-planner/work/site-sweep-accounts-isolated-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "accounts-chromium",
+        "testDir": "/workspace/forma-workout-planner/tests",
+        "snapshotDir": "/workspace/forma-workout-planner/tests",
+        "testIgnore": [],
+        "testMatch": "accounts*.spec.js",
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5175",
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "headless": true,
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure",
+          "browserName": "chromium",
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium"
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "accounts-chromium"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/forma-workout-planner/work/site-sweep-accounts-isolated-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "accounts-chromium-mobile",
+        "testDir": "/workspace/forma-workout-planner/tests",
+        "snapshotDir": "/workspace/forma-workout-planner/tests",
+        "testIgnore": [],
+        "testMatch": "accounts*.spec.js",
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5175",
+          "viewport": {
+            "width": 390,
+            "height": 664
+          },
+          "headless": true,
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+          "screen": {
+            "width": 390,
+            "height": 844
+          },
+          "deviceScaleFactor": 3,
+          "isMobile": true,
+          "hasTouch": true,
+          "defaultBrowserType": "webkit",
+          "browserName": "chromium",
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium"
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "accounts-chromium-mobile"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "work/site-sweep-accounts-report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "accounts-auth-controls.spec.js",
+      "file": "accounts-auth-controls.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "password updates, session revocation, recovery-code rotation, and sign-out actions are real",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "accounts-chromium",
+              "projectName": "accounts-chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 86698,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T06:23:21.981Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "27513d4fe346695e6b71-9ddf0fa3d1f37484a629",
+          "file": "accounts-auth-controls.spec.js",
+          "line": 105,
+          "column": 1
+        },
+        {
+          "title": "password updates, session revocation, recovery-code rotation, and sign-out actions are real",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "accounts-chromium-mobile",
+              "projectName": "accounts-chromium-mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 53385,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T06:29:11.312Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "27513d4fe346695e6b71-93868bc2031d96f771b3",
+          "file": "accounts-auth-controls.spec.js",
+          "line": 105,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "accounts-conflicts.spec.js",
+      "file": "accounts-conflicts.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "cloud conflict can be exported and explicitly reloaded without replacing the latest copy",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "accounts-chromium",
+              "projectName": "accounts-chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 24899,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T06:24:49.751Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "27def59fdfd88738f702-68623c34efe17d543911",
+          "file": "accounts-conflicts.spec.js",
+          "line": 156,
+          "column": 1
+        },
+        {
+          "title": "lost save acknowledgement retries one operation and a stale refresh cannot roll it back",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "accounts-chromium",
+              "projectName": "accounts-chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 18722,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T06:25:14.700Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "27def59fdfd88738f702-ba868483087c93f6d0ee",
+          "file": "accounts-conflicts.spec.js",
+          "line": 255,
+          "column": 1
+        },
+        {
+          "title": "cloud conflict can be exported and explicitly reloaded without replacing the latest copy",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "accounts-chromium-mobile",
+              "projectName": "accounts-chromium-mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 23230,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T06:30:06.275Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "27def59fdfd88738f702-3b59cbda60172ebfb59b",
+          "file": "accounts-conflicts.spec.js",
+          "line": 156,
+          "column": 1
+        },
+        {
+          "title": "lost save acknowledgement retries one operation and a stale refresh cannot roll it back",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "accounts-chromium-mobile",
+              "projectName": "accounts-chromium-mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16999,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T06:30:29.562Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "27def59fdfd88738f702-3be3b41d5011d63eecba",
+          "file": "accounts-conflicts.spec.js",
+          "line": 255,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "accounts-lifecycle.spec.js",
+      "file": "accounts-lifecycle.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "password recovery, sessions, authenticator recovery, and deletion use real flows",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "accounts-chromium",
+              "projectName": "accounts-chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 57526,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T06:25:33.550Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6dffc08a9183be4514d3-78f66f166868f810122b",
+          "file": "accounts-lifecycle.spec.js",
+          "line": 98,
+          "column": 1
+        },
+        {
+          "title": "password recovery, sessions, authenticator recovery, and deletion use real flows",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "accounts-chromium-mobile",
+              "projectName": "accounts-chromium-mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 55025,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T06:30:46.629Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6dffc08a9183be4514d3-335a98bfa0e89ee5911a",
+          "file": "accounts-lifecycle.spec.js",
+          "line": 98,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "accounts-security.spec.js",
+      "file": "accounts-security.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "authenticated workspace reads and writes are isolated between real members",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "accounts-chromium",
+              "projectName": "accounts-chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 49748,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T06:26:31.161Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd2d959b17bee84e66aa-5a8c7d41da7009eebcb6",
+          "file": "accounts-security.spec.js",
+          "line": 120,
+          "column": 1
+        },
+        {
+          "title": "authenticated workspace reads and writes are isolated between real members",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "accounts-chromium-mobile",
+              "projectName": "accounts-chromium-mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 84453,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T06:31:41.730Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd2d959b17bee84e66aa-dc93ce8a4c3702d3fa18",
+          "file": "accounts-security.spec.js",
+          "line": 120,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "accounts-ui.spec.js",
+      "file": "accounts-ui.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "guest account entry offers accessible sign-in and registration flows",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "accounts-chromium",
+              "projectName": "accounts-chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 20330,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T06:27:21.057Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8fccc857596ac073422f-eb914adc7381321a1b24",
+          "file": "accounts-ui.spec.js",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "guest account entry offers accessible sign-in and registration flows",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "accounts-chromium-mobile",
+              "projectName": "accounts-chromium-mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10826,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T06:33:06.310Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8fccc857596ac073422f-420c70e09023af244587",
+          "file": "accounts-ui.spec.js",
+          "line": 19,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "accounts-workouts.spec.js",
+      "file": "accounts-workouts.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "a completed workout persists through reload and a second browser context",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "accounts-chromium",
+              "projectName": "accounts-chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 44028,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T06:27:41.781Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0e255d71bb9a03d0be3e-bcd32e68a79f6e533a49",
+          "file": "accounts-workouts.spec.js",
+          "line": 142,
+          "column": 1
+        },
+        {
+          "title": "local training migration requires review and leaves the browser copy intact",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "accounts-chromium",
+              "projectName": "accounts-chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 20292,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T06:28:25.868Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0e255d71bb9a03d0be3e-838ffa09dddcdbff8fbb",
+          "file": "accounts-workouts.spec.js",
+          "line": 232,
+          "column": 1
+        },
+        {
+          "title": "profile goal save persists and cancel discards an unapplied edit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "accounts-chromium",
+              "projectName": "accounts-chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 23664,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T06:28:46.230Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0e255d71bb9a03d0be3e-bbf04837a5f67c3e87fc",
+          "file": "accounts-workouts.spec.js",
+          "line": 365,
+          "column": 1
+        },
+        {
+          "title": "a completed workout persists through reload and a second browser context",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "accounts-chromium-mobile",
+              "projectName": "accounts-chromium-mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 82915,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T06:33:17.313Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0e255d71bb9a03d0be3e-e2ddd52ae4a509a70dfd",
+          "file": "accounts-workouts.spec.js",
+          "line": 142,
+          "column": 1
+        },
+        {
+          "title": "local training migration requires review and leaves the browser copy intact",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "accounts-chromium-mobile",
+              "projectName": "accounts-chromium-mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 31628,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T06:34:40.281Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0e255d71bb9a03d0be3e-089ac834c875aed8a0d8",
+          "file": "accounts-workouts.spec.js",
+          "line": 232,
+          "column": 1
+        },
+        {
+          "title": "profile goal save persists and cancel discards an unapplied edit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "accounts-chromium-mobile",
+              "projectName": "accounts-chromium-mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 26922,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T06:35:11.948Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0e255d71bb9a03d0be3e-62028060194b64992d4a",
+          "file": "accounts-workouts.spec.js",
+          "line": 365,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-14T06:23:11.462Z",
+    "duration": 748639.183,
+    "expected": 18,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

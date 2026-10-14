@@ -64,3 +64,14 @@ The hero keeps the face within the phone crop; routine cards show the bar or
 kettlebell grip. The phone routine-detail banner had been scaling the entire
 three-column sprite into one cover; its scoped background sizing now displays
 only the selected column. Reviewed screenshots are under `visuals/`.
+
+The isolated account suite passed all 18 desktop/mobile Chromium cases with a
+120-second CLI budget; no skips or flaky cases. The initial default 30-second
+run was stopped after long multi-step account journeys timed out. Functional
+verification covers password/reset/MFA/session/deletion controls, two-member
+data isolation, lost-save retries, migration review and workout persistence.
+These use synthetic members and an in-memory email sink. The disposable database
+and test services are stopped. This establishes local behavior, not external
+email delivery or live infrastructure readiness. Twelve account screens were
+captured; a focus/scroll artifact in the mobile registration capture is being
+checked before accepting that image as final visual evidence.

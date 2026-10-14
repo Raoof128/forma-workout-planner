@@ -1,0 +1,35 @@
+[WebServer] (node:27784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:27795) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:27822) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 18 tests using 1 worker
+
+(node:27846) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 2026-10-14T06:24:15.980Z WARN [Better Auth]: Invalid password
+  ✓   1 [accounts-chromium] › tests/accounts-auth-controls.spec.js:105:1 › password updates, session revocation, recovery-code rotation, and sign-out actions are real (1.4m)
+  ✓   2 [accounts-chromium] › tests/accounts-conflicts.spec.js:156:1 › cloud conflict can be exported and explicitly reloaded without replacing the latest copy (24.9s)
+  ✓   3 [accounts-chromium] › tests/accounts-conflicts.spec.js:255:1 › lost save acknowledgement retries one operation and a stale refresh cannot roll it back (18.7s)
+  ✓   4 [accounts-chromium] › tests/accounts-lifecycle.spec.js:98:1 › password recovery, sessions, authenticator recovery, and deletion use real flows (57.5s)
+  ✓   5 [accounts-chromium] › tests/accounts-security.spec.js:120:1 › authenticated workspace reads and writes are isolated between real members (49.7s)
+  ✓   6 [accounts-chromium] › tests/accounts-ui.spec.js:19:1 › guest account entry offers accessible sign-in and registration flows (20.3s)
+  ✓   7 [accounts-chromium] › tests/accounts-workouts.spec.js:142:1 › a completed workout persists through reload and a second browser context (44.0s)
+  ✓   8 [accounts-chromium] › tests/accounts-workouts.spec.js:232:1 › local training migration requires review and leaves the browser copy intact (20.3s)
+  ✓   9 [accounts-chromium] › tests/accounts-workouts.spec.js:365:1 › profile goal save persists and cancel discards an unapplied edit (23.7s)
+(node:29391) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 2026-10-14T06:29:43.467Z WARN [Better Auth]: Invalid password
+  ✓  10 [accounts-chromium-mobile] › tests/accounts-auth-controls.spec.js:105:1 › password updates, session revocation, recovery-code rotation, and sign-out actions are real (53.4s)
+  ✓  11 [accounts-chromium-mobile] › tests/accounts-conflicts.spec.js:156:1 › cloud conflict can be exported and explicitly reloaded without replacing the latest copy (23.2s)
+  ✓  12 [accounts-chromium-mobile] › tests/accounts-conflicts.spec.js:255:1 › lost save acknowledgement retries one operation and a stale refresh cannot roll it back (17.0s)
+  ✓  13 [accounts-chromium-mobile] › tests/accounts-lifecycle.spec.js:98:1 › password recovery, sessions, authenticator recovery, and deletion use real flows (55.0s)
+  ✓  14 [accounts-chromium-mobile] › tests/accounts-security.spec.js:120:1 › authenticated workspace reads and writes are isolated between real members (1.4m)
+  ✓  15 [accounts-chromium-mobile] › tests/accounts-ui.spec.js:19:1 › guest account entry offers accessible sign-in and registration flows (10.8s)
+  ✓  16 [accounts-chromium-mobile] › tests/accounts-workouts.spec.js:142:1 › a completed workout persists through reload and a second browser context (1.4m)
+  ✓  17 [accounts-chromium-mobile] › tests/accounts-workouts.spec.js:232:1 › local training migration requires review and leaves the browser copy intact (31.6s)
+  ✓  18 [accounts-chromium-mobile] › tests/accounts-workouts.spec.js:365:1 › profile goal save persists and cancel discards an unapplied edit (26.9s)
+
+  18 passed (12.5m)

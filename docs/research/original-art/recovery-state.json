@@ -751,7 +751,7 @@
   "ownerGuidePreference": "Replace ambiguous source entries with clearly defined independently authored guides and matching artwork, preserving historical IDs and units.",
   "nextTask": "Whole-site desktop/mobile audit and fixes; all 1414 original exercise illustrations complete. Current site work is not deployed.",
   "siteSweep": {
-    "status": "Fixes implemented; focused verification passed; full guest/account and final crops pending",
+    "status": "Fixes and final photograph crops pushed; account18/18 passed; guest112 and production40 validation pending",
     "baselineCommit": "0f8bc3c4eaa126bad139afa49662cbb546b9ecd5",
     "evidence": "docs/qa/site-sweep",
     "actualColdLibraryBytes": {
@@ -774,6 +774,13 @@
       "accessibilityBrowser": 7,
       "strictArtwork": "1414/1414; zero remaining"
     },
-    "watcherFix": "Generated trace HTML excluded from Vite watch; browser probe recorded no full reloads"
+    "watcherFix": "Generated trace HTML excluded from Vite watch; browser probe recorded no full reloads",
+    "accountChecks": {
+      "passed": 18,
+      "viewports": "desktop and mobile Chromium",
+      "timeoutOverrideSeconds": 120,
+      "isolatedServices": true
+    },
+    "nextStep": "Wait for final account captures, then run guest112 uncontended and production40 browser checks. Finish report, verify strict artwork gate, commit and push logs."
   }
 }
