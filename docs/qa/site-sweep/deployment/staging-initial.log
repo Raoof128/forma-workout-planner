@@ -1,0 +1,137 @@
+{"account":"25c840ad25d38d8f35099180d2c1feab","existingFormaWorkers":["forma-operations-dashboard","forma-operations-monitor","forma-workout-planner-production","forma-workout-planner-staging"],"tokenExpires":"2026-10-14T09:07:32Z"}
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+
+ ⛅️ wrangler 4.149.0 (update available 4.151.0)
+───────────────────────────────────────────────
+🌀 Building list of assets...
+✨ Read 408 files from the assets directory /workspace/forma-workout-planner/dist
+🌀 Starting asset upload...
+🌀 Found 396 new or modified static assets to upload. Proceeding with upload...
++ /index.html
++ /exercise-media/previews/corrections-041-69a4e9ab598668ae.webp
++ /exercise-media/previews/finish-grip-002-retry-70eebfd33b4e4e2f.webp
++ /exercise-media/previews/finish-solo-004-retry-65bed2132fc603cb.webp
++ /exercise-media/previews/authored-a-001-retry-11584f1d40205695.webp
++ /exercise-media/previews/finish-f-001-b62c16aaca33c976.webp
++ /exercise-media/previews/corrections-038-0a569d98978a8025.webp
++ /exercise-media/previews/finish-a-002-f92a4aa16350a09f.webp
++ /exercise-media/previews/authored-b-001-retry-e13250547580ec63.webp
++ /exercise-media/previews/finish-d-001-82441ca88f779557.webp
++ /exercise-media/previews/finish-source-001-54bce32c842c58c8.webp
++ /exercise-media/previews/corrections-033-590153bc3c2a0432.webp
++ /exercise-media/previews/finish-a-002-retry-025b79e15148a078.webp
++ /exercise-media/previews/movements-059-8d04d12e6a9cea61.webp
++ /exercise-media/previews/corrections-006-f3dd3a20d88dcf24.webp
++ /exercise-media/previews/corrections-014-5d737d12b92b4bb2.webp
++ /exercise-media/previews/finish-b-002-retry-11dab6c5c3efb04c.webp
++ /exercise-media/previews/corrections-022-84335791c17f819d.webp
++ /exercise-media/previews/movements-095-43b64f400ceed82c.webp
++ /exercise-media/previews/corrections-021-1f0d0f531f19ecd3.webp
++ /exercise-media/previews/corrections-040-3824add5d40e939a.webp
++ /exercise-media/previews/finish-c-001-d8d98569b777155b.webp
++ /exercise-media/previews/corrections-030-0fe1c58de0eef1c2.webp
++ /exercise-media/previews/movements-050-d6c877c7775d8aaa.webp
++ /exercise-media/previews/movements-099-2345c30711f30f87.webp
++ /exercise-media/previews/movements-002-7dde04a79fbf6152.webp
++ /exercise-media/previews/movements-015-0321956c8ab8db67.webp
++ /exercise-media/previews/finish-b-002-27461702eab4637e.webp
++ /exercise-media/previews/movements-045-930880fa79a4710a.webp
++ /exercise-media/previews/corrections-017-7a3d916c2e59e5b7.webp
++ /exercise-media/previews/corrections-020-577d0b0145faee3b.webp
++ /exercise-media/previews/movements-030-935c2a205a603da1.webp
++ /exercise-media/previews/corrections-028-902a8be142d385da.webp
++ /exercise-media/previews/movements-020-08a990bc753ff8b9.webp
++ /exercise-media/previews/movements-005-4ad37f7c3e6d67b9.webp
++ /exercise-media/previews/movements-060-0821ed1a155ff108.webp
++ /exercise-media/previews/movements-029-956a55c0fa79d2ff.webp
++ /exercise-media/previews/corrections-027-0b5f26a283e504be.webp
++ /exercise-media/previews/movements-027-82d5a68257a25023.webp
++ /exercise-media/previews/movements-098-fdb4e47ff86c59d6.webp
++ /exercise-media/previews/movements-063-0fa7b2b2a53f309d.webp
++ /exercise-media/previews/movements-085-65ede4b15083d337.webp
++ /exercise-media/previews/movements-039-d4eb386b6d444bbe.webp
++ /exercise-media/previews/corrections-018-4bd41cba6cb08048.webp
++ /exercise-media/previews/movements-031-dec300744899614b.webp
++ /exercise-media/previews/movements-012-fcf00a71824d5abc.webp
++ /exercise-media/previews/movements-019-91778cf30dc2e14c.webp
++ /exercise-media/previews/movements-018-95290cdcf0660d8c.webp
++ /exercise-media/previews/corrections-015-5151f2c91724acd2.webp
++ /exercise-media/previews/movements-010-6fc26a4d2d06dc43.webp
++ /exercise-media/previews/movements-051-fd3b2b6613453ac2.webp
++ /exercise-media/previews/cardio-01-5c38f1ac06c14b8d.webp
++ /exercise-media/previews/machines-03-988892f417205330.webp
++ /exercise-media/previews/movements-073-7c6b64ef0fe1ce29.webp
++ /exercise-media/previews/movements-065-bb5f341f4696a26e.webp
++ /exercise-media/previews/movements-054-7d24a0f68053a73d.webp
++ /exercise-media/previews/movements-043-49a1cabff9876876.webp
++ /exercise-media/previews/movements-041-c7bc72a22484afb3.webp
++ /exercise-media/previews/movements-068-f2e675161f7a323a.webp
++ /exercise-media/previews/movements-074-20029a3e18f5d109.webp
++ /exercise-media/previews/movements-009-013b7c93a1b375af.webp
++ /exercise-media/previews/machines-05-947e43ec890a46cb.webp
++ /exercise-media/previews/movements-007-4f269d0919bf990a.webp
++ /images/training-hero.webp
++ /exercise-media/original/finish-grip-002.png
++ /exercise-media/original/finish-solo-005.png
++ /exercise-media/original/authored-d-001.png
++ /exercise-media/original/corrections-033.png
++ /exercise-media/original/corrections-037.png
++ /exercise-media/original/corrections-009.png
++ /exercise-media/original/finish-a-002.png
++ /exercise-media/original/movements-095.png
++ /exercise-media/original/corrections-038.png
++ /exercise-media/original/finish-a-002-retry.png
++ /exercise-media/original/movements-028.png
++ /exercise-media/original/finish-f-002.png
++ /exercise-media/original/recovery-c-002.png
++ /exercise-media/original/finish-b-001.png
++ /exercise-media/original/corrections-025.png
++ /exercise-media/original/corrections-022.png
++ /exercise-media/original/movements-015.png
++ /exercise-media/original/corrections-021.png
++ /exercise-media/original/movements-023.png
++ /exercise-media/original/corrections-012.png
++ /exercise-media/original/movements-099.png
++ /exercise-media/original/corrections-005.png
++ /exercise-media/original/movements-089.png
++ /exercise-media/original/movements-017.png
++ /exercise-media/original/corrections-031.png
++ /exercise-media/original/movements-047.png
++ /exercise-media/previews/finish-laterality-001-0e19348848fc51d9.webp
++ /exercise-media/previews/finish-solo-005-retry-62a36931a5fa624b.webp
++ /exercise-media/previews/corrections-036-d1a247e2c52180b0.webp
++ /exercise-media/previews/corrections-037-443dc0404e8e1688.webp
++ /exercise-media/previews/corrections-032-3f72d4124d464e14.webp
++ /exercise-media/previews/finish-grip-001-528e1330cfd428cb.webp
++ /exercise-media/previews/authored-b-001-9489e35d1c4b5f36.webp
++ /exercise-media/previews/finish-solo-003-1e2b19b7b48a957e.webp
++ /exercise-media/previews/corrections-009-8edb6abaa484ea4f.webp
++ /exercise-media/previews/corrections-001-d8f73f2ae7c3ccac.webp
+   (truncating changed assets log, set `WRANGLER_LOG=debug` environment variable to see full diff)
+Uploaded 89 of 396 assets
+Uploaded 179 of 396 assets
+Uploaded 268 of 396 assets
+Uploaded 295 of 396 assets
+Uploaded 321 of 396 assets
+Uploaded 346 of 396 assets
+Uploaded 349 of 396 assets
+Uploaded 373 of 396 assets
+Uploaded 396 of 396 assets
+✨ Success! Uploaded 396 files (6 already uploaded) (40.96 sec)
+
+Total Upload: 14.63 KiB / gzip: 4.24 KiB
+Worker Startup Time: 1 ms
+Your Worker has access to the following bindings:
+Binding                                                           Resource                  
+env.ASSETS                                                        Assets                    
+env.ENVIRONMENT ("staging")                                       Environment Variable      
+env.APP_ORIGIN ("https://forma-staging.raoufabedini.dev")         Environment Variable      
+env.BACKEND_URL ("https://forma-api-staging.raoufabedin...")      Environment Variable      
+
+Uploaded forma-workout-planner-staging (53.65 sec)
+Deployed forma-workout-planner-staging triggers (1.35 sec)
+  forma-staging.raoufabedini.dev (custom domain)
+Current Version ID: 8e203414-13f7-48d9-aa5a-352579ebe579
+One-hour deployment token revoked.

@@ -25,9 +25,19 @@
     "sources": "assets/site-visuals",
     "provenance": "docs/research/site-visuals"
   },
-  "deployment": "Not deployed; repository commits and pushed checkpoints only",
+  "deployment": {
+    "date": "2026-10-14",
+    "sourceCommit": "be2ddfa",
+    "publicVersion": "20b4bb4a-e50a-4762-93aa-3a9746f0baa2",
+    "stagingVersion": "e815bd37-68d7-483b-91b4-6bd292d5fa02",
+    "mode": "account",
+    "publicLiveSmoke": "desktop and mobile passed",
+    "stagingAnonymous": "302 Access login",
+    "temporaryDeployTokensRevoked": 4,
+    "evidence": "docs/qa/site-sweep/deployment"
+  },
   "limitations": [
-    "Local browser/service verification, not live infrastructure or external email delivery",
+    "Full account journeys use isolated local services; hosted smoke uses anonymous requests and forms only, without external email or member writes",
     "Guest112cases verified across fullrun and failed replay, not one-shot green",
     "Account18service journeys used120sCLI budget; guest30s and10sperformance bound unchanged",
     "WebKit downloaded wrapper locally preserved LD_LIBRARY_PATH for extracted dependencies; actual browser launches and tests passed"

@@ -749,9 +749,9 @@
     ]
   },
   "ownerGuidePreference": "Replace ambiguous source entries with clearly defined independently authored guides and matching artwork, preserving historical IDs and units.",
-  "nextTask": "Whole-site desktop/mobile audit and fixes; all 1414 original exercise illustrations complete. Current site work is not deployed.",
+  "nextTask": "Artwork, site sweep and owner-authorised frontend redeployment complete. Fetch origin main and read deployment evidence before any new work.",
   "siteSweep": {
-    "status": "Complete and verified. All reviewed source assets, prompts, fixes and verification reports are preserved in pushed checkpoints; deployment unchanged.",
+    "status": "Complete, pushed and deployed; runtime source be2ddfa, asset source d292664. Live public desktop/mobile checks passed; private staging Access retained.",
     "baselineCommit": "0f8bc3c4eaa126bad139afa49662cbb546b9ecd5",
     "evidence": "docs/qa/site-sweep",
     "actualColdLibraryBytes": {
@@ -781,7 +781,7 @@
       "timeoutOverrideSeconds": 120,
       "isolatedServices": true
     },
-    "nextStep": "Fetch origin main and read docs/qa/site-sweep/README.md. Artwork and site review are complete; do not regenerate source images. No deployment performed.",
+    "nextStep": "Fetch origin main; read docs/qa/site-sweep/deployment/README.md. Do not regenerate images or redeploy unchanged assets.",
     "authFocusRepair": {
       "expectedRedCases": 4,
       "greenRealAppCases": 4,
@@ -796,6 +796,17 @@
       "accountFormFocusMocks": 4,
       "production": 40,
       "finalLegalAndImportFocus": 7
+    },
+    "deployment": {
+      "date": "2026-10-14",
+      "sourceCommit": "be2ddfa",
+      "publicVersion": "20b4bb4a-e50a-4762-93aa-3a9746f0baa2",
+      "stagingVersion": "e815bd37-68d7-483b-91b4-6bd292d5fa02",
+      "mode": "account",
+      "publicLiveSmoke": "desktop and mobile passed",
+      "stagingAnonymous": "302 Access login",
+      "temporaryDeployTokensRevoked": 4,
+      "evidence": "docs/qa/site-sweep/deployment"
     }
   }
 }

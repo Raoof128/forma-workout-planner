@@ -30,35 +30,36 @@ JSON errors and do not fall through to the SPA shell. Authenticated and API
 responses are not cached. Static responses receive the configured security
 headers.
 
-Production serves `forma.raoufabedini.dev` in guest mode. Its API is deliberately
-unconfigured and returns 503; the public account screen provides working local
-profile, backup, and history controls. Private staging uses
+Production serves `forma.raoufabedini.dev` in account mode. Public accounts were
+activated after the hosted operational gates passed; see the
+[production launch record](accounts/production-launch.md). Private staging uses
 `forma-staging.raoufabedini.dev` and the Access-protected
-`forma-api-staging.raoufabedini.dev`. Follow the
-[infrastructure guide](accounts-infrastructure.md) for exact binding names and
-the [operations guide](accounts/operations.md) for deployment steps. A local
-Wrangler run does not test the real Access token, Tunnel, or remote API.
+`forma-api-staging.raoufabedini.dev`. Both use separate private backends and
+credentials. A local Wrangler run does not test the real Access token, Tunnel,
+or remote API. Older guest-only release records describe historical deployments.
 
-For a public guest update, verify the guest build and use the one-hour scoped
-token helper; its token is held in memory and revoked in `finally`:
+For frontend updates, verify the account build and use the one-hour scoped token
+helper; its token is held in memory and revoked in `finally`:
 
 ```sh
-VITE_ACCOUNT_MODE=guest npm run build
-NODE_USE_ENV_PROXY=1 node scripts/deploy-public.mjs
+npm run worker:deploy:production
+npm run worker:deploy:staging
 ```
 
 The helper uses the existing infrastructure token to mint and revoke the
 temporary token. Do not put tokens in Vite variables or commit an `.env` file.
 Keep the previous Worker version for rollback. After deployment, check the real
-HTTPS site, library guides, local saving and backup download in a browser.
+HTTPS site, library guides, photos, forms and anonymous gateway boundaries.
+HTML adds `no-transform` to cache control to prevent automatic analytics injection.
+API responses remain uncached and protected by the same ownership rules.
 
-After the matching private API is healthy, deploy the account frontend with
-`VITE_ACCOUNT_MODE=account npm run build`, then
-`NODE_USE_ENV_PROXY=1 node scripts/deploy-public.mjs --staging`. The helper uses
-the same short-lived token policy and revocation for either target. In this
-managed environment set `XDG_CONFIG_HOME=/workspace/forma-cloudflare-config`
-for Wrangler's writable configuration and logs. See the
-[current release record](live-catalog-release.md) for verified versions.
+For catalog identity/schema changes, update and validate each matching private
+API before its account frontend. Artwork, client guide wording and presentation
+changes do not require restarting an unchanged API. Preserve member data, secrets,
+resource limits and unrelated services. In this managed environment set
+`XDG_CONFIG_HOME=/workspace/forma-cloudflare-config` for Wrangler's writable
+configuration and logs. See the [latest frontend deployment](qa/site-sweep/deployment/README.md)
+and [catalog/API release record](research/catalog-quality.md).
 
 ## Private API and PostgreSQL
 
@@ -75,9 +76,11 @@ DNS and routing (including NAT if needed) for Tunnel, security updates, email,
 and backups. Official DigitalOcean documentation retrieval was blocked in this
 execution environment; see [source status](accounts/sources.md).
 
-The [deployment record](security/deployment-record.md) records the existing
+The [deployment record](security/deployment-record.md) records the original
 private staging stack at `/opt/forma-staging`, its resource limits, and the
-completed live probes. Update only that Compose project on the shared host.
+completed live probes. Current production operations are recorded in the
+[production launch record](accounts/production-launch.md). Update only the intended
+FORMA Compose project on the shared host.
 The expanded catalog and timed workspace fields require the matching API build
 before deploying the new account frontend; the previous API rejects new IDs.
 

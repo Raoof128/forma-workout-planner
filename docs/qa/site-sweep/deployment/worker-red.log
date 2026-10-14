@@ -1,0 +1,54 @@
+
+> forma-workout-planner@1.0.0 test:worker
+> tsx --test worker/tests/*.test.ts
+
+✔ proxies only the approved fixed-origin API routes and strips spoofable headers (142.796141ms)
+✔ blocks unknown, ambiguous, and non-API paths without calling the origin (6.32634ms)
+✔ allows only the account session routes and their intended methods (10.815783ms)
+✔ Worker routes `/api` and unknown API paths before static assets while securing SPA responses (5.507853ms)
+✖ HTML prevents injected analytics while retaining asset cache directives (5.094034ms)
+✔ requires the exact app Origin for writes and rejects untrusted Origins (3.84184ms)
+✔ does not follow redirects and rewrites only same-origin backend redirects (4.882039ms)
+✔ preserves multiple Set-Cookie headers and never caches private API responses (3.7965ms)
+✔ does not pass through an Access login page or other HTML as an API response (1.829655ms)
+✔ rejects untrusted target configuration and missing gateway credentials (3.838458ms)
+✔ enforces content length and streaming request limits (5.886256ms)
+✔ passes backend failures as bounded no-store JSON errors (2.931995ms)
+✔ EDGE-01: non-workspace routes accept only small bodies (121.492908ms)
+✔ EDGE-02: only allowlisted request headers reach the origin (3.480182ms)
+✔ EDGE-03: upstream headers and cookies are allowlisted and scoped to the app host (8.151591ms)
+✔ EDGE-04: API responses carry restrictive security headers and only JSON or text bodies (10.480047ms)
+✔ EDGE-05: malformed upstream redirects and informational statuses fail closed (1.621622ms)
+✔ EDGE-06: cross-site API requests are refused except token email links (4.861007ms)
+✔ EDGE-07: production refuses API traffic that lacks the edge client IP (0.877241ms)
+✔ EDGE-08: gateway errors carry HSTS and assets forbid base URL rewriting (ASVS V3.4.1, V3.4.3) (2.590881ms)
+✔ EDGE-09: only FORMA cookies are forwarded to the origin (deployment hardening) (3.333222ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 20
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 32837.188504
+
+✖ failing tests:
+
+test at worker/tests/gateway.test.ts:186:1
+✖ HTML prevents injected analytics while retaining asset cache directives (5.094034ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'public, max-age=0, must-revalidate'
+  - 'public, max-age=0, must-revalidate, no-transform'
+  
+      at TestContext.<anonymous> (/workspace/forma-workout-planner/worker/tests/gateway.test.ts:199:12)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'public, max-age=0, must-revalidate',
+    expected: 'public, max-age=0, must-revalidate, no-transform',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

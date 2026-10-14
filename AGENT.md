@@ -66,9 +66,12 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   automatically injecting a beacon blocked by the existing CSP. HTML responses
   now append `no-transform` while preserving cache directives; scripts and API
   policies remain unchanged. Cloudflare documents this as preventing injection.
-- Verify the Worker regression, both redeployments, actual browser HTML, health
-  200 and anonymous workspace 401. Never create a live member for this smoke test.
-  Keep deployment logs under `docs/qa/site-sweep/deployment`.
+- All 21 Worker tests and live desktop/mobile checks pass. Final production is
+  `20b4bb4a-e50a-4762-93aa-3a9746f0baa2`; staging is
+  `e815bd37-68d7-483b-91b4-6bd292d5fa02`. Health 200, anonymous workspace 401,
+  session null and staging Access 302 passed. Browser HTML has no beacon.
+  No live member was created; four temporary deployment tokens were revoked.
+  Logs and screenshots are in `docs/qa/site-sweep/deployment`.
 
 ### Raouf: 2026-10-14 — Full artwork coverage and whole-site sweep
 

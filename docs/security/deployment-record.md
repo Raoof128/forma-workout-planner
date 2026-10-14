@@ -2,10 +2,14 @@
 
 [Back to security overview](README.md)
 
-Deployed 2026-10-13 (Australia/Sydney) from `main`. This page lists what runs
-where and how to operate it. It contains no secret values.
+This page preserves the initial 2026-10-13 (Australia/Sydney) deployment and its
+historical guest-only state. Public accounts were subsequently activated; the
+[production launch record](../accounts/production-launch.md) supersedes the initial
+NO-GO notes and owner follow-ups below. Current artwork/frontend versions and
+verification are in the [14 October redeployment record](../qa/site-sweep/deployment/README.md).
+This page contains no secret values.
 
-## What is live
+## Initial deployment state
 
 | Surface             | Hostname                                     | Mode                                                                                        | Who can reach it                                                                      |
 | ------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |

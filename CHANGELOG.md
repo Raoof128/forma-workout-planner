@@ -12,6 +12,9 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   blocked by CSP. HTML now sets `Cache-Control: no-transform`, preventing edge
   injection while retaining cache directives and the existing security policy.
   A regression checks HTML defaults, existing directives and unchanged JS caching.
+- All 21 Worker tests and live desktop/mobile checks pass. Both targets are
+  redeployed, temporary tokens revoked, and deployment receipts/screenshots pushed.
+  Anonymous gateway boundaries and private staging Access remain verified.
 
 ### Raouf: 2026-10-14 — Complete artwork and whole-site review
 
@@ -33,7 +36,8 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   failed-case replay, 18 isolated account journeys plus four form-focus checks,
   and 40 production cases across Chromium, Firefox and WebKit. Strict artwork
   coverage, lint, formatting, types, docs and build pass. See
-  [the completed site review](docs/qa/site-sweep/README.md). Not deployed.
+  [the completed site review](docs/qa/site-sweep/README.md). Subsequent owner-authorised
+  deployment is recorded above.
 
 ### Raouf: 2026-10-14 — Roman-chair guide correction
 

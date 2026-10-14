@@ -2,7 +2,9 @@
 
 All 1,414 selectable exercises have reviewed, guide-matched original artwork.
 The subsequent desktop/mobile site review is complete. Fixes and generated
-sources are pushed to main; the live deployment has not been updated.
+sources are pushed to main and deployed to production and private staging.
+The [deployment record](deployment/README.md) contains versions, logs and live
+desktop/mobile verification, including the edge-injection correction.
 
 ## What changed
 

@@ -1,0 +1,63 @@
+{
+  "time": "2026-10-14T08:15:02.435Z",
+  "sourceCommit": "be2ddfa",
+  "base": "https://forma.raoufabedini.dev",
+  "results": [
+    {
+      "viewport": {
+        "width": 1536,
+        "height": 1024
+      },
+      "previewSrc": "/exercise-media/previews/movements-031-dec300744899614b.webp?v=6ace1f958186",
+      "originalSrc": "/exercise-media/original/movements-031.png?v=a946a262a253",
+      "signupGeometry": {
+        "top": 160,
+        "bottom": 259.8125,
+        "height": 1024,
+        "header": 0
+      },
+      "legalGeometry": {
+        "top": 23.890625,
+        "header": 0
+      },
+      "photos": [
+        "https://forma.raoufabedini.dev/images/training-hero.webp",
+        "https://forma.raoufabedini.dev/images/routine-photos.webp"
+      ],
+      "overflow": false,
+      "pageErrors": [],
+      "externalRequests": [],
+      "healthStatus": 200,
+      "anonymousWorkspaceStatus": 401,
+      "anonymousSession": null
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "previewSrc": "/exercise-media/previews/movements-031-dec300744899614b.webp?v=6ace1f958186",
+      "originalSrc": "/exercise-media/original/movements-031.png?v=a946a262a253",
+      "signupGeometry": {
+        "top": 376.21875,
+        "bottom": 413.65625,
+        "height": 844,
+        "header": 66
+      },
+      "legalGeometry": {
+        "top": 90.109375,
+        "header": 66
+      },
+      "photos": [
+        "https://forma.raoufabedini.dev/images/training-hero.webp",
+        "https://forma.raoufabedini.dev/images/routine-photos.webp"
+      ],
+      "overflow": false,
+      "pageErrors": [],
+      "externalRequests": [],
+      "healthStatus": 200,
+      "anonymousWorkspaceStatus": 401,
+      "anonymousSession": null
+    }
+  ]
+}

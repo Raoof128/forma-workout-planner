@@ -1,0 +1,33 @@
+
+> forma-workout-planner@1.0.0 test:worker
+> tsx --test worker/tests/*.test.ts
+
+✔ proxies only the approved fixed-origin API routes and strips spoofable headers (137.036968ms)
+✔ blocks unknown, ambiguous, and non-API paths without calling the origin (13.923189ms)
+✔ allows only the account session routes and their intended methods (9.204704ms)
+✔ Worker routes `/api` and unknown API paths before static assets while securing SPA responses (3.853667ms)
+✔ HTML prevents injected analytics while retaining asset cache directives (3.908471ms)
+✔ requires the exact app Origin for writes and rejects untrusted Origins (3.440341ms)
+✔ does not follow redirects and rewrites only same-origin backend redirects (2.909033ms)
+✔ preserves multiple Set-Cookie headers and never caches private API responses (1.954238ms)
+✔ does not pass through an Access login page or other HTML as an API response (2.169102ms)
+✔ rejects untrusted target configuration and missing gateway credentials (3.25921ms)
+✔ enforces content length and streaming request limits (11.324201ms)
+✔ passes backend failures as bounded no-store JSON errors (13.591742ms)
+✔ EDGE-01: non-workspace routes accept only small bodies (239.284899ms)
+✔ EDGE-02: only allowlisted request headers reach the origin (6.080271ms)
+✔ EDGE-03: upstream headers and cookies are allowlisted and scoped to the app host (4.266879ms)
+✔ EDGE-04: API responses carry restrictive security headers and only JSON or text bodies (10.765287ms)
+✔ EDGE-05: malformed upstream redirects and informational statuses fail closed (1.078531ms)
+✔ EDGE-06: cross-site API requests are refused except token email links (6.249217ms)
+✔ EDGE-07: production refuses API traffic that lacks the edge client IP (2.083173ms)
+✔ EDGE-08: gateway errors carry HSTS and assets forbid base URL rewriting (ASVS V3.4.1, V3.4.3) (3.873862ms)
+✔ EDGE-09: only FORMA cookies are forwarded to the origin (deployment hardening) (13.590759ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 33540.6881
