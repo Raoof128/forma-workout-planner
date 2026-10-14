@@ -1,0 +1,164 @@
+{
+  "name": "corrections-032",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-032.png",
+  "prompt": "Create ORIGINAL FORMA fitness-manual illustrations: THREE columns TWO rows SIX separate equal panels, landscape1536x1024. Fully clothed varied adults, charcoal-gray with lime accents, white background, no text/logos/watermarks. Anatomically correct and physically plausible. Complete whole figures/apparatus inside each panel with generous margins. ONE precise working pose per panel. Follow full actual guide, explicitly correct prior rejected image errors.\n\nRow 1 column 1: Standing Dumbbell Reverse Curl. PRIOR ERROR, DO NOT REPEAT: Curl grip reads supinated rather than clearly pronated reverse curl.. Actual full guide: To begin, stand straight with a dumbbell in each hand using a pronated grip (palms facing down). Your arms should be fully extended while your feet are shoulder width apart from each other. This is the starting position.\n\nWhile holding the upper arms stationary, curl the weights while contracting the biceps as you breathe out. Only the forearms should move. Continue the movement until your biceps are fully contracted and the dumbbells are at shoulder level. Hold the contracted position for a second as you squeeze the muscle.\n\nSlowly begin to bring the dumbbells back to starting position as your breathe in.\n\nRepeat for the recommended amount of repetitions.\n\nRow 1 column 2: Standing Inner-Biceps Curl. PRIOR ERROR, DO NOT REPEAT: Forearms curl directly forward rather than outward aligned with outer deltoids.. Actual full guide: Stand up with a dumbbell in each hand being held at arms length. The elbows should be close to the torso. Your legs should be at about shoulder's width apart from each other.\n\nRotate the palms of the hands so that they are facing inward in a neutral position. This will be your starting position.\n\nWhile holding the upper arms stationary, curl the weights out while contracting the biceps as you breathe out. Your wrist should turn so that when the weights are fully elevated you have supinated grip (palms facing up).\n\nOnly the forearms should move. Continue the movement until your biceps are fully contracted and the dumbbells are at shoulder level. Tip: Keep the forearms aligned with your outer deltoids.\n\nHold the contracted position for a second as you squeeze the biceps.\n\nSlowly begin to bring the dumbbells back to the starting position as your breathe in. Remember to rotate the wrists as you lower the weight in order to switch back to a neutral grip.\n\nRepeat for the recommended amount of repetitions.\n\nRow 1 column 3: Standing Palms-In Dumbbell Press. PRIOR ERROR, DO NOT REPEAT: Dumbbells show a palms-forward grip rather than the required paired neutral grip.. Actual full guide: Start by having a dumbbell in each hand with your arm fully extended to the side using a neutral grip. Your feet should be shoulder width apart from each other. Now slowly lift the dumbbells up until you create a 90 degree angle with your arms. Note: Your forearms should be perpendicular to the floor. This the starting position.\n\nContinue to maintain a neutral grip throughout the entire exercise. Slowly lift the dumbbells up until your arms are fully extended.\n\nWhile inhaling lower the weights down until your arm is at a 90 degree angle again.\n\nRepeat for the recommended amount of repetitions.\n\nRow 2 column 1: Standing Palms-Up Barbell Behind The Back Wrist Curl. PRIOR ERROR, DO NOT REPEAT: Barbell is in front of the thighs rather than behind the glutes.. Actual full guide: Start by standing straight and holding a barbell behind your glutes at arm's length while using a pronated grip (palms will be facing back away from the glutes) and having your hands shoulder width apart from each other.\n\nYou should be looking straight forward while your feet are shoulder width apart from each other. This is the starting position.\n\nWhile exhaling, slowly elevate the barbell up by curling your wrist in a semi-circular motion towards the ceiling. Note: Your wrist should be the only body part moving for this exercise.\n\nHold the contraction for a second and lower the barbell back down to the starting position while inhaling.\n\nRepeat for the recommended amount of repetitions.\n\nWhen finished, lower the barbell down to the squat rack or the floor by bending the knees. Tip: It is easiest to either pick it up from a squat rack or have a partner hand it to you.\n\nRow 2 column 2: Step Calf Stretch. PRIOR ERROR, DO NOT REPEAT: Heels are raised above the step instead of lowered below the edge for the calf stretch.. Actual full guide: Stand on a step or a sturdy raised surface with the balls of both feet on the edge and the heels hanging off, holding a rail or wall for balance. Let one or both heels drop below the level of the step until you feel a stretch through the calf, and hold. Keep the knee straight to stretch the gastrocnemius, or bend the knee slightly to bias the soleus lower down. Hold for the prescribed time, typically 30 seconds, without bouncing, then switch sides if stretching one leg at a time.\n\nRow 2 column 3: Step-ups. PRIOR ERROR, DO NOT REPEAT: Source specifies chair step-ups; picture shows bench, requiring an explicit equipment reference or guide clarification.. Actual full guide: Starting position: Stand facing a chair. Steps: 1. Step up onto the chair. 2. Step off the chair. 3. Repeat.",
+  "cells": [
+    {
+      "id": "db-standing-dumbbell-reverse-curl",
+      "title": "Standing Dumbbell Reverse Curl",
+      "equipment": "Dumbbell",
+      "guideText": "To begin, stand straight with a dumbbell in each hand using a pronated grip (palms facing down). Your arms should be fully extended while your feet are shoulder width apart from each other. This is the starting position.\n\nWhile holding the upper arms stationary, curl the weights while contracting the biceps as you breathe out. Only the forearms should move. Continue the movement until your biceps are fully contracted and the dumbbells are at shoulder level. Hold the contracted position for a second as you squeeze the muscle.\n\nSlowly begin to bring the dumbbells back to starting position as your breathe in.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Standing_Dumbbell_Reverse_Curl.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Curl grip reads supinated rather than clearly pronated reverse curl.",
+      "reviewNote": "Reverse dumbbell curl still has a palms-up grip.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full figures within equal 512-pixel panels."
+    },
+    {
+      "id": "db-standing-inner-biceps-curl",
+      "title": "Standing Inner-Biceps Curl",
+      "equipment": "Dumbbell",
+      "guideText": "Stand up with a dumbbell in each hand being held at arms length. The elbows should be close to the torso. Your legs should be at about shoulder's width apart from each other.\n\nRotate the palms of the hands so that they are facing inward in a neutral position. This will be your starting position.\n\nWhile holding the upper arms stationary, curl the weights out while contracting the biceps as you breathe out. Your wrist should turn so that when the weights are fully elevated you have supinated grip (palms facing up).\n\nOnly the forearms should move. Continue the movement until your biceps are fully contracted and the dumbbells are at shoulder level. Tip: Keep the forearms aligned with your outer deltoids.\n\nHold the contracted position for a second as you squeeze the biceps.\n\nSlowly begin to bring the dumbbells back to the starting position as your breathe in. Remember to rotate the wrists as you lower the weight in order to switch back to a neutral grip.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Standing_Inner-Biceps_Curl.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Forearms curl directly forward rather than outward aligned with outer deltoids.",
+      "reviewNote": "Reviewed outward forearm inner-biceps curl, vertical neutral-grip paired shoulder press, rear-glute bar wrist curl and bodyweight chair step-up.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full figures within equal 512-pixel panels."
+    },
+    {
+      "id": "db-standing-palms-in-dumbbell-press",
+      "title": "Standing Palms-In Dumbbell Press",
+      "equipment": "Dumbbell",
+      "guideText": "Start by having a dumbbell in each hand with your arm fully extended to the side using a neutral grip. Your feet should be shoulder width apart from each other. Now slowly lift the dumbbells up until you create a 90 degree angle with your arms. Note: Your forearms should be perpendicular to the floor. This the starting position.\n\nContinue to maintain a neutral grip throughout the entire exercise. Slowly lift the dumbbells up until your arms are fully extended.\n\nWhile inhaling lower the weights down until your arm is at a 90 degree angle again.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Standing_Palms-In_Dumbbell_Press.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Dumbbells show a palms-forward grip rather than the required paired neutral grip.",
+      "reviewNote": "Reviewed outward forearm inner-biceps curl, vertical neutral-grip paired shoulder press, rear-glute bar wrist curl and bodyweight chair step-up.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full figures within equal 512-pixel panels."
+    },
+    {
+      "id": "db-standing-palms-up-barbell-behind-the-back-wrist-curl",
+      "title": "Standing Palms-Up Barbell Behind The Back Wrist Curl",
+      "equipment": "Barbell",
+      "guideText": "Start by standing straight and holding a barbell behind your glutes at arm's length while using a pronated grip (palms will be facing back away from the glutes) and having your hands shoulder width apart from each other.\n\nYou should be looking straight forward while your feet are shoulder width apart from each other. This is the starting position.\n\nWhile exhaling, slowly elevate the barbell up by curling your wrist in a semi-circular motion towards the ceiling. Note: Your wrist should be the only body part moving for this exercise.\n\nHold the contraction for a second and lower the barbell back down to the starting position while inhaling.\n\nRepeat for the recommended amount of repetitions.\n\nWhen finished, lower the barbell down to the squat rack or the floor by bending the knees. Tip: It is easiest to either pick it up from a squat rack or have a partner hand it to you.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Standing_Palms-Up_Barbell_Behind_The_Back_Wrist_Curl.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Barbell is in front of the thighs rather than behind the glutes.",
+      "reviewNote": "Reviewed outward forearm inner-biceps curl, vertical neutral-grip paired shoulder press, rear-glute bar wrist curl and bodyweight chair step-up.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full figures within equal 512-pixel panels."
+    },
+    {
+      "id": "wger-09235a96-9834-4fad-ba9a-88ace035e80a",
+      "title": "Step Calf Stretch",
+      "equipment": "Bodyweight",
+      "guideText": "Stand on a step or a sturdy raised surface with the balls of both feet on the edge and the heels hanging off, holding a rail or wall for balance. Let one or both heels drop below the level of the step until you feel a stretch through the calf, and hold. Keep the knee straight to stretch the gastrocnemius, or bend the knee slightly to bias the soleus lower down. Hold for the prescribed time, typically 30 seconds, without bouncing, then switch sides if stretching one leg at a time.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2666/view/",
+        "author": "trs1800",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Heels are raised above the step instead of lowered below the edge for the calf stretch.",
+      "reviewNote": "Feet do not visibly rest with forefeet on the step and heels below its edge.",
+      "bounds": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full figures within equal 512-pixel panels."
+    },
+    {
+      "id": "wger-9e6dae29-5d03-440a-bdf1-2cb25a5179c2",
+      "title": "Step-ups",
+      "equipment": "Bench",
+      "guideText": "Starting position: Stand facing a chair. Steps: 1. Step up onto the chair. 2. Step off the chair. 3. Repeat.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/981/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Source specifies chair step-ups; picture shows bench, requiring an explicit equipment reference or guide clarification.",
+      "reviewNote": "Reviewed outward forearm inner-biceps curl, vertical neutral-grip paired shoulder press, rear-glute bar wrist curl and bodyweight chair step-up.",
+      "bounds": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full figures within equal 512-pixel panels."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-bd7dcf4b-b31d-49ab-adfa-dc8a9957faca.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-032.png"
+}

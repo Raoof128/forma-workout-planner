@@ -1,0 +1,165 @@
+{
+  "name": "corrections-027",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-027.png",
+  "prompt": "Create ORIGINAL FORMA fitness-manual illustrations: THREE columns TWO rows SIX separate equal panels landscape1536x1024. Fully clothed varied adults, charcoal-gray lime accents, white background, no text/logos/watermarks. Anatomically correct, physically plausible, complete figures/apparatus inside each panel with generous margins. ONE accurate working pose per panel. Follow full actual guide, correct the prior rejected image errors.\n\nRow 1 column 1: Reverse Clamshell. PRIOR ERROR, DO NOT REPEAT: Hold: reverse clamshell separates upper knee; knees must stay together while upper foot lifts.. Actual full guide: Lie on your side with your hips and knees bent, keeping your knees stacked on top of each other. Keep your feet together at first, then keep your knees touching while lifting your top foot upward. Slowly lower the foot back down with control.\n\nMove only through the hip and avoid rolling your pelvis backward. The movement should be small, controlled, and focused on hip rotation.\n\nRow 1 column 2: Reverse Curl. PRIOR ERROR, DO NOT REPEAT: Hold: reverse curl has bar in one hand and dumbbell in other, not a coherent barbell or paired-dumbbell variation.. Actual full guide: The reverse-grip barbell curl is a variation on the biceps curl where the palms face downward. The switch from an underhand to an overhand grip brings the forearm and brachialis muscles more into the exercise.\n\nRow 1 column 3: Reverse Fly Standing. PRIOR ERROR, DO NOT REPEAT: Hold: dual-cable standing reverse fly replaced with single-anchor elastic band.. Actual full guide: 1. Stand with a good posture holding a cable in each hand opposite the machine 2. Starting with the hands in front of your chest pull the arms out to your side into the shape of a T with the elbows nearly straight 3. Slowly release the arms forward to the start 4. Repeat with the arms moving into the shape of a Y 5. Repeat with the arms in the shape of a W 6. Repeat with the arms in the shape of an L by your side\n\nRow 2 column 1: Reverse Flyes With External Rotation. PRIOR ERROR, DO NOT REPEAT: Hold: externally rotated reverse fly requires low 30-degree support; illustrated bench is substantially steeper.. Actual full guide: To begin, lie down on an incline bench set at a 30-degree angle with the chest and stomach pressing against the incline.\n\nHave the dumbbells in each hand with the palms facing down to the floor. Your arms should be in front of you so that they are perpendicular to the angle of the bench. Tip: Your elbows should have a slight bend. The legs should be stationary while applying pressure with the ball of your toes (your heels should not be touching the floor). This is the starting position.\n\nMaintaining the slight bend of the elbows, move the weights out and away from each other in an arc motion while exhaling.\n\nAs you lift the weight, your wrist should externally rotate by 90-degrees so that you go from a palms down (pronated) grip to a palms facing each other (neutral) grip. Tip: Try to squeeze your shoulder blades together to get the best results from this exercise.\n\nThe arms should be elevated until they are level with the head.\n\nFeel the contraction and slowly lower the weights back down to the starting position while inhaling.\n\nRepeat for the recommended amount of repetitions.\n\nRow 2 column 2: Reverse Grip Bent-Over Rows. PRIOR ERROR, DO NOT REPEAT: Hold: reverse-grip row torso is too upright for almost-parallel guide.. Actual full guide: Stand erect while holding a barbell with a supinated grip (palms facing up).\n\nBend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Tip: Make sure that you keep the head up. The barbell should hang directly in front of you as your arms hang perpendicular to the floor and your torso. This is your starting position.\n\nWhile keeping the torso stationary, lift the barbell as you breathe out, keeping the elbows close to the body and not doing any force with the forearm other than holding the weights. On the top contracted position, squeeze the back muscles and hold for a second.\n\nSlowly lower the weight again to the starting position as you inhale.\n\nRepeat for the recommended amount of repetitions.\n\nRow 2 column 3: Reverse Triceps Bench Press. PRIOR ERROR, DO NOT REPEAT: Hold: supinated triceps bench grip is not clearly established; regenerate clear palms toward face.. Actual full guide: Lie back on a flat bench. Using a close, supinated grip (around shoulder width), lift the bar from the rack and hold it straight over you with your arms locked extended in front of you and perpendicular to the floor. This will be your starting position.\n\nAs you breathe in, come down slowly until you feel the bar on your middle chest. Tip: Make sure that as opposed to a regular bench press, you keep the elbows close to the torso at all times in order to maximize triceps involvement.\n\nAfter a second pause, bring the bar back to the starting position as you breathe out and push the bar using your triceps muscles. Lock your arms in the contracted position, hold for a second and then start coming down slowly again. Tip: It should take at least twice as long to go down than to come up.\n\nRepeat the movement for the prescribed amount of repetitions.\n\nWhen you are done, place the bar back in the rack.",
+  "cells": [
+    {
+      "id": "wger-cf6bf132-fe21-4b70-8f73-006545246f05",
+      "title": "Reverse Clamshell",
+      "equipment": "Bodyweight",
+      "guideText": "Lie on your side with your hips and knees bent, keeping your knees stacked on top of each other. Keep your feet together at first, then keep your knees touching while lifting your top foot upward. Slowly lower the foot back down with control.\n\nMove only through the hip and avoid rolling your pelvis backward. The movement should be small, controlled, and focused on hip rotation.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2448/view/",
+        "author": "TobiasFalk",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: reverse clamshell separates upper knee; knees must stay together while upper foot lifts.",
+      "reviewNote": "Knees separate instead of remaining stacked together during reverse clamshell.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected row boundaries and complete accepted figures."
+    },
+    {
+      "id": "wger-2cd5e3c6-a8c0-456a-ab47-5e7b3a435407",
+      "title": "Reverse Curl",
+      "equipment": "Barbell + Dumbbell",
+      "guideText": "The reverse-grip barbell curl is a variation on the biceps curl where the palms face downward. The switch from an underhand to an overhand grip brings the forearm and brachialis muscles more into the exercise.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/495/view/",
+        "author": "BFad07",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: reverse curl has bar in one hand and dumbbell in other, not a coherent barbell or paired-dumbbell variation.",
+      "reviewNote": "Reverse bar curl still has palms-up grip.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected row boundaries and complete accepted figures."
+    },
+    {
+      "id": "wger-440cf10c-effb-4b63-a6e0-182fe47376f6",
+      "title": "Reverse Fly Standing",
+      "equipment": "Resistance band",
+      "guideText": "1. Stand with a good posture holding a cable in each hand opposite the machine 2. Starting with the hands in front of your chest pull the arms out to your side into the shape of a T with the elbows nearly straight 3. Slowly release the arms forward to the start 4. Repeat with the arms moving into the shape of a Y 5. Repeat with the arms in the shape of a W 6. Repeat with the arms in the shape of an L by your side",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1709/view/",
+        "author": "Croak6728",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: dual-cable standing reverse fly replaced with single-anchor elastic band.",
+      "reviewNote": "Reviewed dual-cable standing reverse fly and supinated close-grip bench triceps press.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected row boundaries and complete accepted figures."
+    },
+    {
+      "id": "db-reverse-flyes-with-external-rotation",
+      "title": "Reverse Flyes With External Rotation",
+      "equipment": "Dumbbell",
+      "guideText": "To begin, lie down on an incline bench set at a 30-degree angle with the chest and stomach pressing against the incline.\n\nHave the dumbbells in each hand with the palms facing down to the floor. Your arms should be in front of you so that they are perpendicular to the angle of the bench. Tip: Your elbows should have a slight bend. The legs should be stationary while applying pressure with the ball of your toes (your heels should not be touching the floor). This is the starting position.\n\nMaintaining the slight bend of the elbows, move the weights out and away from each other in an arc motion while exhaling.\n\nAs you lift the weight, your wrist should externally rotate by 90-degrees so that you go from a palms down (pronated) grip to a palms facing each other (neutral) grip. Tip: Try to squeeze your shoulder blades together to get the best results from this exercise.\n\nThe arms should be elevated until they are level with the head.\n\nFeel the contraction and slowly lower the weights back down to the starting position while inhaling.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Reverse_Flyes_With_External_Rotation.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: externally rotated reverse fly requires low 30-degree support; illustrated bench is substantially steeper.",
+      "reviewNote": "Bench incline remains steeper than the specified 30 degrees.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected row boundaries and complete accepted figures."
+    },
+    {
+      "id": "db-reverse-grip-bent-over-rows",
+      "title": "Reverse Grip Bent-Over Rows",
+      "equipment": "Barbell",
+      "guideText": "Stand erect while holding a barbell with a supinated grip (palms facing up).\n\nBend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Tip: Make sure that you keep the head up. The barbell should hang directly in front of you as your arms hang perpendicular to the floor and your torso. This is your starting position.\n\nWhile keeping the torso stationary, lift the barbell as you breathe out, keeping the elbows close to the body and not doing any force with the forearm other than holding the weights. On the top contracted position, squeeze the back muscles and hold for a second.\n\nSlowly lower the weight again to the starting position as you inhale.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Reverse_Grip_Bent-Over_Rows.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: reverse-grip row torso is too upright for almost-parallel guide.",
+      "reviewNote": "Underhand row torso remains too upright for the almost-parallel guide.",
+      "bounds": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected row boundaries and complete accepted figures."
+    },
+    {
+      "id": "db-reverse-triceps-bench-press",
+      "title": "Reverse Triceps Bench Press",
+      "equipment": "Barbell",
+      "guideText": "Lie back on a flat bench. Using a close, supinated grip (around shoulder width), lift the bar from the rack and hold it straight over you with your arms locked extended in front of you and perpendicular to the floor. This will be your starting position.\n\nAs you breathe in, come down slowly until you feel the bar on your middle chest. Tip: Make sure that as opposed to a regular bench press, you keep the elbows close to the torso at all times in order to maximize triceps involvement.\n\nAfter a second pause, bring the bar back to the starting position as you breathe out and push the bar using your triceps muscles. Lock your arms in the contracted position, hold for a second and then start coming down slowly again. Tip: It should take at least twice as long to go down than to come up.\n\nRepeat the movement for the prescribed amount of repetitions.\n\nWhen you are done, place the bar back in the rack.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Reverse_Triceps_Bench_Press.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: supinated triceps bench grip is not clearly established; regenerate clear palms toward face.",
+      "reviewNote": "Reviewed dual-cable standing reverse fly and supinated close-grip bench triceps press.",
+      "bounds": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected row boundaries and complete accepted figures."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-0588f9b8-dab4-478f-b1ee-f13ef1fd4498.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-027.png"
+}

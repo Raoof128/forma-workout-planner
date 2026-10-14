@@ -1,0 +1,163 @@
+{
+  "name": "corrections-029",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-029.png",
+  "prompt": "Create ORIGINAL FORMA fitness-manual illustrations: THREE columns TWO rows SIX separate equal panels landscape1536x1024. Fully clothed varied adults, charcoal-gray lime accents, white background, no text/logos/watermarks. Anatomically correct, physically plausible, complete figures/apparatus inside each panel with generous margins. ONE accurate working pose per panel. Follow full actual guide, correct the prior rejected image errors.\n\nRow 1 column 1: Seated Biceps. PRIOR ERROR, DO NOT REPEAT: Hold: partner seated biceps stretch grips upper arms instead of required wrists.. Actual full guide: Sit on the floor with your knees bent and your partner standing behind you. Extend your arms straight behind you with your palms facing each other. Your partner will hold your wrists for you. This will be the starting position.\n\nAttempt to flex your elbows, while your partner prevents any actual movement.\n\nAfter 10-20 seconds, relax your arms while your partner gently pulls your wrists up to stretch your biceps. Be sure to let your partner know when the stretch is appropriate to prevent injury or overstretching.\n\nRow 1 column 2: Seated Head Harness Neck Resistance. PRIOR ERROR, DO NOT REPEAT: Hold: harness neck load rests on floor, so the working position does not provide suspended neck resistance.. Actual full guide: Place a neck strap on the floor at the end of a flat bench. Once you have selected the weights, sit at the end of the flat bench with your feet wider than shoulder width apart from each other. Your toes should be pointed out.\n\nSlowly move your torso forward until it is almost parallel with the floor. Using both hands, securely position the neck strap around your head. Tip: Make sure the weights are still lying on the floor to prevent any strain on the neck. Now grab the weight with both hands while elevating your torso back until it is almost perpendicular to the floor. Note: Your head and torso needs to be slightly tilted forward to perform this exercise.\n\nNow place both hands on top of your knees. This is the starting position.\n\nSlowly lower your neck down until your chin touches the upper part of your chest while breathing in.\n\nWhile exhaling, bring your neck back to the starting position.\n\nRepeat for the recommended amount of repetitions.\n\nRow 1 column 3: Seated One-Arm Dumbbell Palms-Up Wrist Curl. PRIOR ERROR, DO NOT REPEAT: Hold: single-arm palms-up wrist grip is not clearly distinguished from pronated frame.. Actual full guide: Sit on a flat bench with a dumbbell in your right hand.\n\nPlace your feet flat on the floor, at a distance that is slightly wider than shoulder width apart.\n\nLean forward and place your right forearm on top of your upper right thigh with your palm up. Tip: Make sure that the front of the wrist lies on top of your knees. This will be your starting position.\n\nLower the dumbbell as far as possible as you keep a tight grip on the dumbbell. Inhale as you perform this movement.\n\nNow curl the dumbbell as high as possible as you contract the forearms and as you exhale. Keep the contraction for a second before you lower again. Tip: The only movement should happen at the wrist.\n\nPerform for the recommended amount of repetitions, switch arms and repeat the movement.\n\nRow 2 column 1: Seated Overhead Stretch. PRIOR ERROR, DO NOT REPEAT: Hold: seated overhead side stretch uses crossed legs rather than soles together.. Actual full guide: Sit up straight on an exercise mat.\n\nTouch the soles of your feet together with your feet six to eight inches in front of your hips.\n\nPlace one hand on the floor beside you and your other hand behind your head.\n\nLift your elbow to the ceiling as you incline your torso to the other side. Hold for 10 to 20 seconds, then switch sides.\n\nRow 2 column 2: Seated Palm-Up Barbell Wrist Curl. PRIOR ERROR, DO NOT REPEAT: Hold: supinated seated bar wrist curl grip is not clearly established.. Actual full guide: Hold a barbell with both hands and your palms facing up; hands spaced about shoulder width.\n\nPlace your feet flat on the floor, at a distance that is slightly wider than shoulder width apart.\n\nLean forward and place your forearms on top of your upper thighs with your palms up. Tip: Make sure that the front of the wrists lay on top of your knees. This will be your starting position.\n\nLower the bar as far as possible while inhaling and keeping a tight grip.\n\nNow curl bar up as high as possible while flexing the forearms and exhaling. Hold the contraction at the top for a second and Tip: Only the wrist should move.\n\nRow 2 column 3: Seated Shoulder Extension Stretch. PRIOR ERROR, DO NOT REPEAT: Hold: shoulder-extension stretch depicted as high-hip reverse plank rather than hips scooted forward near floor.. Actual full guide: 1. Sit with your hands behind you, shoulder width apart. 2. Lock your elbows. 3. Scoot your feet and hips out forwards, lowering your shoulders down towards ground. 4. Go as far as possible to obtain a good stretch. See the video: https://www.youtube.com/watch?v=ihUAbG0e8zw",
+  "cells": [
+    {
+      "id": "db-seated-biceps",
+      "title": "Seated Biceps",
+      "equipment": "Bodyweight",
+      "guideText": "Sit on the floor with your knees bent and your partner standing behind you. Extend your arms straight behind you with your palms facing each other. Your partner will hold your wrists for you. This will be the starting position.\n\nAttempt to flex your elbows, while your partner prevents any actual movement.\n\nAfter 10-20 seconds, relax your arms while your partner gently pulls your wrists up to stretch your biceps. Be sure to let your partner know when the stretch is appropriate to prevent injury or overstretching.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Biceps.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: partner seated biceps stretch grips upper arms instead of required wrists.",
+      "reviewNote": "Reviewed partner wrist-supported seated biceps stretch, suspended harness neck load, supinated supported one-arm/bar wrist curls, soles-facing butterfly overhead side stretch and grounded-hip shoulder-extension stretch.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full figures and equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "db-seated-head-harness-neck-resistance",
+      "title": "Seated Head Harness Neck Resistance",
+      "equipment": "Specialty equipment",
+      "guideText": "Place a neck strap on the floor at the end of a flat bench. Once you have selected the weights, sit at the end of the flat bench with your feet wider than shoulder width apart from each other. Your toes should be pointed out.\n\nSlowly move your torso forward until it is almost parallel with the floor. Using both hands, securely position the neck strap around your head. Tip: Make sure the weights are still lying on the floor to prevent any strain on the neck. Now grab the weight with both hands while elevating your torso back until it is almost perpendicular to the floor. Note: Your head and torso needs to be slightly tilted forward to perform this exercise.\n\nNow place both hands on top of your knees. This is the starting position.\n\nSlowly lower your neck down until your chin touches the upper part of your chest while breathing in.\n\nWhile exhaling, bring your neck back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Head_Harness_Neck_Resistance.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: harness neck load rests on floor, so the working position does not provide suspended neck resistance.",
+      "reviewNote": "Reviewed partner wrist-supported seated biceps stretch, suspended harness neck load, supinated supported one-arm/bar wrist curls, soles-facing butterfly overhead side stretch and grounded-hip shoulder-extension stretch.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full figures and equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "db-seated-one-arm-dumbbell-palms-up-wrist-curl",
+      "title": "Seated One-Arm Dumbbell Palms-Up Wrist Curl",
+      "equipment": "Dumbbell",
+      "guideText": "Sit on a flat bench with a dumbbell in your right hand.\n\nPlace your feet flat on the floor, at a distance that is slightly wider than shoulder width apart.\n\nLean forward and place your right forearm on top of your upper right thigh with your palm up. Tip: Make sure that the front of the wrist lies on top of your knees. This will be your starting position.\n\nLower the dumbbell as far as possible as you keep a tight grip on the dumbbell. Inhale as you perform this movement.\n\nNow curl the dumbbell as high as possible as you contract the forearms and as you exhale. Keep the contraction for a second before you lower again. Tip: The only movement should happen at the wrist.\n\nPerform for the recommended amount of repetitions, switch arms and repeat the movement.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_One-Arm_Dumbbell_Palms-Up_Wrist_Curl.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: single-arm palms-up wrist grip is not clearly distinguished from pronated frame.",
+      "reviewNote": "Reviewed partner wrist-supported seated biceps stretch, suspended harness neck load, supinated supported one-arm/bar wrist curls, soles-facing butterfly overhead side stretch and grounded-hip shoulder-extension stretch.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full figures and equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "db-seated-overhead-stretch",
+      "title": "Seated Overhead Stretch",
+      "equipment": "Bodyweight",
+      "guideText": "Sit up straight on an exercise mat.\n\nTouch the soles of your feet together with your feet six to eight inches in front of your hips.\n\nPlace one hand on the floor beside you and your other hand behind your head.\n\nLift your elbow to the ceiling as you incline your torso to the other side. Hold for 10 to 20 seconds, then switch sides.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Overhead_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: seated overhead side stretch uses crossed legs rather than soles together.",
+      "reviewNote": "Reviewed partner wrist-supported seated biceps stretch, suspended harness neck load, supinated supported one-arm/bar wrist curls, soles-facing butterfly overhead side stretch and grounded-hip shoulder-extension stretch.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full figures and equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "db-seated-palm-up-barbell-wrist-curl",
+      "title": "Seated Palm-Up Barbell Wrist Curl",
+      "equipment": "Barbell",
+      "guideText": "Hold a barbell with both hands and your palms facing up; hands spaced about shoulder width.\n\nPlace your feet flat on the floor, at a distance that is slightly wider than shoulder width apart.\n\nLean forward and place your forearms on top of your upper thighs with your palms up. Tip: Make sure that the front of the wrists lay on top of your knees. This will be your starting position.\n\nLower the bar as far as possible while inhaling and keeping a tight grip.\n\nNow curl bar up as high as possible while flexing the forearms and exhaling. Hold the contraction at the top for a second and Tip: Only the wrist should move.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Palm-Up_Barbell_Wrist_Curl.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: supinated seated bar wrist curl grip is not clearly established.",
+      "reviewNote": "Reviewed partner wrist-supported seated biceps stretch, suspended harness neck load, supinated supported one-arm/bar wrist curls, soles-facing butterfly overhead side stretch and grounded-hip shoulder-extension stretch.",
+      "bounds": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full figures and equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "wger-a00b852c-0d2b-4b4a-bbc2-ef538f211b6c",
+      "title": "Seated Shoulder Extension Stretch",
+      "equipment": "Bodyweight",
+      "guideText": "1. Sit with your hands behind you, shoulder width apart. 2. Lock your elbows. 3. Scoot your feet and hips out forwards, lowering your shoulders down towards ground. 4. Go as far as possible to obtain a good stretch. See the video: https://www.youtube.com/watch?v=ihUAbG0e8zw",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1841/view/",
+        "author": "Croak6728",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: shoulder-extension stretch depicted as high-hip reverse plank rather than hips scooted forward near floor.",
+      "reviewNote": "Reviewed partner wrist-supported seated biceps stretch, suspended harness neck load, supinated supported one-arm/bar wrist curls, soles-facing butterfly overhead side stretch and grounded-hip shoulder-extension stretch.",
+      "bounds": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full figures and equal 512-pixel panel boundaries."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-19a1460a-b8b7-41ee-b8cb-434240b9610f.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-029.png"
+}

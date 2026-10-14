@@ -1,0 +1,164 @@
+{
+  "name": "corrections-025",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-025.png",
+  "prompt": "Create ORIGINAL FORMA fitness-manual illustrations: THREE columns TWO rows SIX separate equal panels landscape1536x1024. Fully clothed varied adults, charcoal-gray lime accents, white background, no text/logos/watermarks. Anatomically correct, physically plausible, complete figures/apparatus inside each panel with generous margins. ONE accurate working pose per panel. Follow full actual guide, correct the prior rejected image errors.\n\nRow 1 column 1: Power Jerk. PRIOR ERROR, DO NOT REPEAT: Hold: power jerk drawn as split-lunge receiving stance rather than wider parallel-foot partial squat.. Actual full guide: Standing with the weight racked on the front of the shoulders, begin with the dip. With your feet directly under your hips, flex the knees without moving the hips backward. Go down only slightly, and reverse direction as powerfully as possible.\n\nDrive through the heels create as much speed and force as possible, and be sure to move your head out of the way as the bar leaves the shoulders.\n\nAt this moment as the feet leave the floor, the feet must be placed into the receiving position as quickly as possible. In the brief moment the feet are not actively driving against the platform, the athletes effort to push the bar up will drive them down. The feet should be moved to a slightly wider stance, with the knees partially bent.\n\nReceive the bar with the arms locked out overhead.\n\nReturn to a standing position.\n\nRow 1 column 2: Power Snatch. PRIOR ERROR, DO NOT REPEAT: Hold: power snatch needs partial receiving squat; illustration is deep full squat.. Actual full guide: Begin with a loaded barbell on the floor. The bar should be close to or touching the shins, and a wide grip should be taken on the bar. The feet should be directly below the hips, with the feet turned out as needed. Lower the hips, with the chest up and the head looking forward. The shoulders should be just in front of the bar. This will be the starting position.\n\nBegin the first pull by driving through the front of the heels, raising the bar from the ground. The back angle should stay the same until the bar passes the knees.\n\nTransition into the second pull by extending through the hips knees and ankles, driving the bar up as quickly as possible. The bar should be close to the body. At peak extension, shrug the shoulders and allow the elbows to flex to the side.\n\nAs you move your feet into the receiving position, a slightly wider position, pull yourself below the bar as you elevate the bar overhead. The bar should be received in a partial squat. Continue raising the bar to the overhead position, receiving the bar locked out overhead.\n\nReturn to a standing position with the weight over head.\n\nRow 1 column 3: Power Snatch from Blocks. PRIOR ERROR, DO NOT REPEAT: Hold: power snatch from blocks drawn deep under bar resting on upright stands; requires partial catch clear of starting blocks.. Actual full guide: Begin with a loaded barbell on boxes or stands of the desired height. A wide grip should be taken on the bar. The feet should be directly below the hips, with the feet turned out as needed. Lower the hips, with the chest up and the head looking forward. The shoulders should be just in front of the bar, with the elbows pointed out. This will be the starting position.\n\nBegin the first pull by driving through the front of the heels, raising the bar from the boxes.\n\nTransition into the second pull by extending through the hips knees and ankles, driving the bar up as quickly as possible. The bar should be close to the body. At peak extension, shrug the shoulders and allow the elbows to flex to the side.\n\nAs you move your feet into the receiving position, forcefully pull yourself below the bar as you elevate the bar overhead. The feet should move to just outside the hips, turned out as necessary. Receive the bar above a full squat and with the arms fully extended overhead.\n\nKeeping the bar aligned over the front of the heels, your head and chest up, drive through heels of the feet to move to a standing position. Carefully return the weight to the boxes.\n\nRow 2 column 1: Pull-Ups (Neutral Grip). PRIOR ERROR, DO NOT REPEAT: Hold: neutral-grip pull-up uses single curved overhand bar instead of parallel neutral handles.. Actual full guide: ### **Execution** 1. **Pulling phase (concentric):** * Drive your **elbows down and back**, pulling your **chest toward your hands**. * Keep your shoulders **depressed and retracted** (avoid shrugging). * Focus on squeezing your **lats and upper back** at the top. 2. **Top position:** * Chin should clear or reach the level of your hands. * Pause briefly and **contract your lats** hard.\n\nRow 2 column 2: Push Press. PRIOR ERROR, DO NOT REPEAT: Hold: dumbbell push press has bent receiving knees with arms overhead; depict upright extended-knee finish.. Actual full guide: Clean your dumbbells onto your shoulders, palms facing in. Take a breath and brace your core. (picture 1)Dip at the knees and use your legs to help (picture 2) press your dumbbells overhead. Lower under control with a slow tempo to your shoulders and repeat.\n\nRow 2 column 3: Quad Stretch. PRIOR ERROR, DO NOT REPEAT: Hold: side quadriceps strap stretch does not show belt held overhead/over shoulder as specified.. Actual full guide: Lay on your side. Loop a belt, rope, or band around your top foot. Flex the knee and extend your hip, attempting to touch your glutes with your foot, and holding the belt with your hands. This will be your starting position.\n\nWith the belt being held over the shoulder or overhead, gently pull to increase the stretch in the quadriceps. Hold for 10-20 seconds, and then switch sides.",
+  "cells": [
+    {
+      "id": "db-power-jerk",
+      "title": "Power Jerk",
+      "equipment": "Barbell",
+      "guideText": "Standing with the weight racked on the front of the shoulders, begin with the dip. With your feet directly under your hips, flex the knees without moving the hips backward. Go down only slightly, and reverse direction as powerfully as possible.\n\nDrive through the heels create as much speed and force as possible, and be sure to move your head out of the way as the bar leaves the shoulders.\n\nAt this moment as the feet leave the floor, the feet must be placed into the receiving position as quickly as possible. In the brief moment the feet are not actively driving against the platform, the athletes effort to push the bar up will drive them down. The feet should be moved to a slightly wider stance, with the knees partially bent.\n\nReceive the bar with the arms locked out overhead.\n\nReturn to a standing position.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Power_Jerk.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: power jerk drawn as split-lunge receiving stance rather than wider parallel-foot partial squat.",
+      "reviewNote": "Reviewed parallel-foot shallow power-jerk receiving pose, shallow snatch catches clear of floor/blocks, parallel neutral pull-up handles, upright dumbbell push-press finish and overhead-strap side quad stretch.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 477
+      },
+      "cropReviewNote": "Inspected actual row separator and complete accepted figures."
+    },
+    {
+      "id": "db-power-snatch",
+      "title": "Power Snatch",
+      "equipment": "Barbell",
+      "guideText": "Begin with a loaded barbell on the floor. The bar should be close to or touching the shins, and a wide grip should be taken on the bar. The feet should be directly below the hips, with the feet turned out as needed. Lower the hips, with the chest up and the head looking forward. The shoulders should be just in front of the bar. This will be the starting position.\n\nBegin the first pull by driving through the front of the heels, raising the bar from the ground. The back angle should stay the same until the bar passes the knees.\n\nTransition into the second pull by extending through the hips knees and ankles, driving the bar up as quickly as possible. The bar should be close to the body. At peak extension, shrug the shoulders and allow the elbows to flex to the side.\n\nAs you move your feet into the receiving position, a slightly wider position, pull yourself below the bar as you elevate the bar overhead. The bar should be received in a partial squat. Continue raising the bar to the overhead position, receiving the bar locked out overhead.\n\nReturn to a standing position with the weight over head.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Power_Snatch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: power snatch needs partial receiving squat; illustration is deep full squat.",
+      "reviewNote": "Reviewed parallel-foot shallow power-jerk receiving pose, shallow snatch catches clear of floor/blocks, parallel neutral pull-up handles, upright dumbbell push-press finish and overhead-strap side quad stretch.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 477
+      },
+      "cropReviewNote": "Inspected actual row separator and complete accepted figures."
+    },
+    {
+      "id": "db-power-snatch-from-blocks",
+      "title": "Power Snatch from Blocks",
+      "equipment": "Barbell",
+      "guideText": "Begin with a loaded barbell on boxes or stands of the desired height. A wide grip should be taken on the bar. The feet should be directly below the hips, with the feet turned out as needed. Lower the hips, with the chest up and the head looking forward. The shoulders should be just in front of the bar, with the elbows pointed out. This will be the starting position.\n\nBegin the first pull by driving through the front of the heels, raising the bar from the boxes.\n\nTransition into the second pull by extending through the hips knees and ankles, driving the bar up as quickly as possible. The bar should be close to the body. At peak extension, shrug the shoulders and allow the elbows to flex to the side.\n\nAs you move your feet into the receiving position, forcefully pull yourself below the bar as you elevate the bar overhead. The feet should move to just outside the hips, turned out as necessary. Receive the bar above a full squat and with the arms fully extended overhead.\n\nKeeping the bar aligned over the front of the heels, your head and chest up, drive through heels of the feet to move to a standing position. Carefully return the weight to the boxes.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Power_Snatch_from_Blocks.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: power snatch from blocks drawn deep under bar resting on upright stands; requires partial catch clear of starting blocks.",
+      "reviewNote": "Reviewed parallel-foot shallow power-jerk receiving pose, shallow snatch catches clear of floor/blocks, parallel neutral pull-up handles, upright dumbbell push-press finish and overhead-strap side quad stretch.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 477
+      },
+      "cropReviewNote": "Inspected actual row separator and complete accepted figures."
+    },
+    {
+      "id": "wger-1f490456-b426-4b89-b70c-e155c3571422",
+      "title": "Pull-Ups (Neutral Grip)",
+      "equipment": "Bodyweight",
+      "guideText": "### **Execution** 1. **Pulling phase (concentric):** * Drive your **elbows down and back**, pulling your **chest toward your hands**. * Keep your shoulders **depressed and retracted** (avoid shrugging). * Focus on squeezing your **lats and upper back** at the top. 2. **Top position:** * Chin should clear or reach the level of your hands. * Pause briefly and **contract your lats** hard.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1696/view/",
+        "author": "daiben",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: neutral-grip pull-up uses single curved overhand bar instead of parallel neutral handles.",
+      "reviewNote": "Reviewed parallel-foot shallow power-jerk receiving pose, shallow snatch catches clear of floor/blocks, parallel neutral pull-up handles, upright dumbbell push-press finish and overhead-strap side quad stretch.",
+      "bounds": {
+        "x": 0,
+        "y": 477,
+        "width": 512,
+        "height": 547
+      },
+      "cropReviewNote": "Inspected actual row separator and complete accepted figures."
+    },
+    {
+      "id": "wger-4284336c-6cfa-4c4d-a440-26b30db035d1",
+      "title": "Push Press",
+      "equipment": "Bodyweight",
+      "guideText": "Clean your dumbbells onto your shoulders, palms facing in. Take a breath and brace your core. (picture 1)Dip at the knees and use your legs to help (picture 2) press your dumbbells overhead. Lower under control with a slow tempo to your shoulders and repeat.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/478/view/",
+        "author": "sistab2",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: dumbbell push press has bent receiving knees with arms overhead; depict upright extended-knee finish.",
+      "reviewNote": "Reviewed parallel-foot shallow power-jerk receiving pose, shallow snatch catches clear of floor/blocks, parallel neutral pull-up handles, upright dumbbell push-press finish and overhead-strap side quad stretch.",
+      "bounds": {
+        "x": 512,
+        "y": 477,
+        "width": 512,
+        "height": 547
+      },
+      "cropReviewNote": "Inspected actual row separator and complete accepted figures."
+    },
+    {
+      "id": "db-quad-stretch",
+      "title": "Quad Stretch",
+      "equipment": "Specialty equipment",
+      "guideText": "Lay on your side. Loop a belt, rope, or band around your top foot. Flex the knee and extend your hip, attempting to touch your glutes with your foot, and holding the belt with your hands. This will be your starting position.\n\nWith the belt being held over the shoulder or overhead, gently pull to increase the stretch in the quadriceps. Hold for 10-20 seconds, and then switch sides.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Quad_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: side quadriceps strap stretch does not show belt held overhead/over shoulder as specified.",
+      "reviewNote": "Reviewed parallel-foot shallow power-jerk receiving pose, shallow snatch catches clear of floor/blocks, parallel neutral pull-up handles, upright dumbbell push-press finish and overhead-strap side quad stretch.",
+      "bounds": {
+        "x": 1024,
+        "y": 477,
+        "width": 512,
+        "height": 547
+      },
+      "cropReviewNote": "Inspected actual row separator and complete accepted figures."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-6aba5d91-ad64-42ad-9d16-d0bdbedba8ae.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-025.png"
+}

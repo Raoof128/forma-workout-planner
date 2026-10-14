@@ -1,0 +1,166 @@
+{
+  "name": "corrections-030",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-030.png",
+  "prompt": "Create ORIGINAL FORMA fitness-manual illustrations: THREE columns TWO rows SIX separate equal panels, landscape1536x1024. Fully clothed varied adults, charcoal-gray with lime accents, white background, no text/logos/watermarks. Anatomically correct and physically plausible. Complete whole figures/apparatus inside each panel with generous margins. ONE precise working pose per panel. Follow full actual guide, explicitly correct prior rejected image errors.\n\nRow 1 column 1: Seated Triceps Press. PRIOR ERROR, DO NOT REPEAT: Hold: seated two-hand triceps press does not clearly show both palms supporting the same dumbbell.. Actual full guide: Sit down on a bench with back support and grasp a dumbbell with both hands and hold it overhead at arm's length. Tip: a better way is to have somebody hand it to you especially if it is very heavy. The resistance should be resting in the palms of your hands with your thumbs around it. The palm of the hand should be facing inward. This will be your starting position.\n\nKeeping your upper arms close to your head (elbows in) and perpendicular to the floor, lower the resistance in a semi-circular motion behind your head until your forearms touch your biceps. Tip: The upper arms should remain stationary and only the forearms should move. Breathe in as you perform this step.\n\nGo back to the starting position by using the triceps to raise the dumbbell. Breathe out as you perform this step.\n\nRepeat for the recommended amount of repetitions.\n\nRow 1 column 2: Side plank right. PRIOR ERROR, DO NOT REPEAT: Hold: right-side plank depicts apparent left-side support; regenerate unequivocal right forearm/right foot support.. Actual full guide: Starting position: Lie down on your side, with your bottom elbow at a right angle, arm sticking out. Lift your pelvis off the floor by lifting your bottom shoulder up, keeping the forearm on the floor; your head, pelvis, and feet should be in a straight line. Steps: 1. Hold this position.\n\nRow 1 column 3: Side-laying interior rotation. PRIOR ERROR, DO NOT REPEAT: Hold: side-lying internal shoulder rotation needs lower working arm with elbow bent 90 degrees; image hangs upper arm straight.. Actual full guide: Laying on your side and using the arm closest to the bench, maintain a 90 degree bend at the elbow and allow the weight to fall towards the ground past the bench as low as comfortable. Bring the weight up using only rotation of the shoulder to the opposing shoulder.\n\nRow 2 column 1: Side-Lying Floor Stretch. PRIOR ERROR, DO NOT REPEAT: Hold: side-lying floor stretch top leg remains bent; guide requires straight upper leg extended behind lower bent knee.. Actual full guide: First lie on your left side, bending your left knee in front of you to stabilize your torso (use your abdominal muscles as well to hold you upright).\n\nStraighten your right leg and rest the right foot on the floor behind your left. Straighten your right arm over your head and gently pull on your right wrist to stretch the entire right side of the body. Switch sides.\n\nRow 2 column 2: Single-leg side glute press. PRIOR ERROR, DO NOT REPEAT: Hold: side glute leg press depicts standard forward-facing single-leg press, without rotating onto one hip.. Actual full guide: The Single-Leg Side Glute Press is a leg press machine variation where you angle your body sideways on the pad, placing one foot high and slightly angled to press the weight, powerfully targeting the outer glute (gluteus medius/minimus) and hamstrings for balanced leg development and stability, requiring focus on pushing through the heel and maintaining control without locking out. How to Perform: Setup: Sit in the leg press machine, rotate your body to one hip, placing one foot high on the platform at about a 45-degree angle with toes pointed slightly out/forward. Positioning: Keep your hip, knee, and ankle aligned, and ensure your lower back stays on the pad. Descent: Slowly lower the weight, allowing your knee to bend deeply (near 90 degrees), feeling a stretch in your glute and hamstring. Press: Drive through your heel (not your toes) to press the weight back up, squeezing your glutes and hamstrings, stopping just before your leg fully extends. Control: Avoid bouncing and don't let your lower back lift off the pad; maintain tension throughout the movement.\n\nRow 2 column 3: Sit Up Elbow Thrust. PRIOR ERROR, DO NOT REPEAT: Hold: sit-up elbow thrust drawn as hands-behind-head twisting crunch rather than seated elbow drive across torso.. Actual full guide: This is a top down rotation movement, and it’s a bit more explosive, too. Lying with knees bent and feet on the floor, sit up and then drive your left elbow across your entire body toward the right, then come back to center and then finally lower yourself down. Then hit the other side.",
+  "cells": [
+    {
+      "id": "db-seated-triceps-press",
+      "title": "Seated Triceps Press",
+      "equipment": "Dumbbell",
+      "guideText": "Sit down on a bench with back support and grasp a dumbbell with both hands and hold it overhead at arm's length. Tip: a better way is to have somebody hand it to you especially if it is very heavy. The resistance should be resting in the palms of your hands with your thumbs around it. The palm of the hand should be facing inward. This will be your starting position.\n\nKeeping your upper arms close to your head (elbows in) and perpendicular to the floor, lower the resistance in a semi-circular motion behind your head until your forearms touch your biceps. Tip: The upper arms should remain stationary and only the forearms should move. Breathe in as you perform this step.\n\nGo back to the starting position by using the triceps to raise the dumbbell. Breathe out as you perform this step.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Triceps_Press.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: seated two-hand triceps press does not clearly show both palms supporting the same dumbbell.",
+      "reviewNote": "Reviewed two-palms single-dumbbell seated extension, right-forearm side-plank support, lower bent-elbow side-lying internal rotation, straight-upper-leg side floor stretch, one-hip rotated leg press and seated across-body elbow thrust.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full figures and equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "wger-5e2761cf-839e-435e-bedb-35e132dcb5ce",
+      "title": "Side plank right",
+      "equipment": "Bodyweight",
+      "guideText": "Starting position: Lie down on your side, with your bottom elbow at a right angle, arm sticking out. Lift your pelvis off the floor by lifting your bottom shoulder up, keeping the forearm on the floor; your head, pelvis, and feet should be in a straight line. Steps: 1. Hold this position.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1019/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: right-side plank depicts apparent left-side support; regenerate unequivocal right forearm/right foot support.",
+      "reviewNote": "Reviewed two-palms single-dumbbell seated extension, right-forearm side-plank support, lower bent-elbow side-lying internal rotation, straight-upper-leg side floor stretch, one-hip rotated leg press and seated across-body elbow thrust.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full figures and equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "wger-d9c1f78c-7bf6-4e6a-92e4-7bf4ed4a0a67",
+      "title": "Side-laying interior rotation",
+      "equipment": "Barbell + Bench + Dumbbell",
+      "guideText": "Laying on your side and using the arm closest to the bench, maintain a 90 degree bend at the elbow and allow the weight to fall towards the ground past the bench as low as comfortable. Bring the weight up using only rotation of the shoulder to the opposing shoulder.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1582/view/",
+        "author": "CptnFatbeard",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: side-lying internal shoulder rotation needs lower working arm with elbow bent 90 degrees; image hangs upper arm straight.",
+      "reviewNote": "Reviewed two-palms single-dumbbell seated extension, right-forearm side-plank support, lower bent-elbow side-lying internal rotation, straight-upper-leg side floor stretch, one-hip rotated leg press and seated across-body elbow thrust.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full figures and equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "db-side-lying-floor-stretch",
+      "title": "Side-Lying Floor Stretch",
+      "equipment": "Bodyweight",
+      "guideText": "First lie on your left side, bending your left knee in front of you to stabilize your torso (use your abdominal muscles as well to hold you upright).\n\nStraighten your right leg and rest the right foot on the floor behind your left. Straighten your right arm over your head and gently pull on your right wrist to stretch the entire right side of the body. Switch sides.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Side-Lying_Floor_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: side-lying floor stretch top leg remains bent; guide requires straight upper leg extended behind lower bent knee.",
+      "reviewNote": "Reviewed two-palms single-dumbbell seated extension, right-forearm side-plank support, lower bent-elbow side-lying internal rotation, straight-upper-leg side floor stretch, one-hip rotated leg press and seated across-body elbow thrust.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full figures and equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "wger-d28cf04f-4077-484b-82ed-abaea8d4053d",
+      "title": "Single-leg side glute press",
+      "equipment": "Incline bench",
+      "guideText": "The Single-Leg Side Glute Press is a leg press machine variation where you angle your body sideways on the pad, placing one foot high and slightly angled to press the weight, powerfully targeting the outer glute (gluteus medius/minimus) and hamstrings for balanced leg development and stability, requiring focus on pushing through the heel and maintaining control without locking out. How to Perform: Setup: Sit in the leg press machine, rotate your body to one hip, placing one foot high on the platform at about a 45-degree angle with toes pointed slightly out/forward. Positioning: Keep your hip, knee, and ankle aligned, and ensure your lower back stays on the pad. Descent: Slowly lower the weight, allowing your knee to bend deeply (near 90 degrees), feeling a stretch in your glute and hamstring. Press: Drive through your heel (not your toes) to press the weight back up, squeezing your glutes and hamstrings, stopping just before your leg fully extends. Control: Avoid bouncing and don't let your lower back lift off the pad; maintain tension throughout the movement.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1735/view/",
+        "author": "Tierrasverdes",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: side glute leg press depicts standard forward-facing single-leg press, without rotating onto one hip.",
+      "reviewNote": "Reviewed two-palms single-dumbbell seated extension, right-forearm side-plank support, lower bent-elbow side-lying internal rotation, straight-upper-leg side floor stretch, one-hip rotated leg press and seated across-body elbow thrust.",
+      "bounds": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full figures and equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "wger-5af00591-2d77-4ea6-a347-825ad18beff1",
+      "title": "Sit Up Elbow Thrust",
+      "equipment": "Bodyweight",
+      "guideText": "This is a top down rotation movement, and it’s a bit more explosive, too. Lying with knees bent and feet on the floor, sit up and then drive your left elbow across your entire body toward the right, then come back to center and then finally lower yourself down. Then hit the other side.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1479/view/",
+        "author": "Moffi",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: sit-up elbow thrust drawn as hands-behind-head twisting crunch rather than seated elbow drive across torso.",
+      "reviewNote": "Reviewed two-palms single-dumbbell seated extension, right-forearm side-plank support, lower bent-elbow side-lying internal rotation, straight-upper-leg side floor stretch, one-hip rotated leg press and seated across-body elbow thrust.",
+      "bounds": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full figures and equal 512-pixel panel boundaries."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-5ba646b6-cbe8-45df-8a7c-6bf813c3161c.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-030.png"
+}

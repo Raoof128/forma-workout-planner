@@ -13,7 +13,7 @@
       "guideText": "Hack Squats but with a 1-2s pause at the bottom of the movement. This makes sure that there is no more elastic energy stored in the muscles.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1464/view/",
@@ -22,7 +22,15 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "correctionRequirement": "Hold: paused hack squat shown as ordinary unweighted squat, with neither hack apparatus nor barbell hack setup."
+      "correctionRequirement": "Hold: paused hack squat shown as ordinary unweighted squat, with neither hack apparatus nor barbell hack setup.",
+      "reviewNote": "Reviewed padded sled hack-squat bottom, strap-assisted foot inversion, perpendicular one-arm landmine sleeve row and bar rests on visible bench/overhead safety supports.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 484
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures."
     },
     {
       "id": "wger-748e9635-7958-4a41-b1ed-93de74c7ef72",
@@ -31,7 +39,7 @@
       "guideText": "Back excercise with a barbell with a starting position which is in a bent over position with the back paralell to the ground. The barbell is on the ground at chest level.For the movement grab the barbell at shoulder width grip and pull towards your chest without losing the bent over position and without moving anything but your arms",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/448/view/",
@@ -40,7 +48,15 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "correctionRequirement": "Hold: Pendlay row requires horizontal back; illustration torso is too upright."
+      "correctionRequirement": "Hold: Pendlay row requires horizontal back; illustration torso is too upright.",
+      "reviewNote": "Pendlay row torso remains above horizontal, contrary to guide.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 484
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures."
     },
     {
       "id": "db-peroneals-stretch",
@@ -49,7 +65,7 @@
       "guideText": "In a seated position, loop a belt, rope, or band around one foot. This will be your starting position.\n\nWith the leg extended and the heel off of the ground, pull on the belt so that the foot is inverted, with the inside of the foot being pulled towards you. Hold for 10-20 seconds, and then switch sides.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Peroneals_Stretch.json",
@@ -57,7 +73,15 @@
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
       },
-      "correctionRequirement": "Hold: peroneal strap stretch does not clearly establish foot inversion instead of ordinary dorsiflexion."
+      "correctionRequirement": "Hold: peroneal strap stretch does not clearly establish foot inversion instead of ordinary dorsiflexion.",
+      "reviewNote": "Reviewed padded sled hack-squat bottom, strap-assisted foot inversion, perpendicular one-arm landmine sleeve row and bar rests on visible bench/overhead safety supports.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 484
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures."
     },
     {
       "id": "wger-7ae1aca7-cdd4-4a81-b22c-f31778462b6b",
@@ -66,7 +90,7 @@
       "guideText": "Using a landmine attachment with the barbell running at 90 degrees to either side, hinge slightly at the hips and grip the barbell by the plate sleeve. Raise the barbell to chest height, with your upper arm parallel to the floor at the top of the movement.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1580/view/",
@@ -75,7 +99,15 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "correctionRequirement": "Hold: perpendicular unilateral landmine row shows two hands on bar and an along-bar stance."
+      "correctionRequirement": "Hold: perpendicular unilateral landmine row shows two hands on bar and an along-bar stance.",
+      "reviewNote": "Reviewed padded sled hack-squat bottom, strap-assisted foot inversion, perpendicular one-arm landmine sleeve row and bar rests on visible bench/overhead safety supports.",
+      "bounds": {
+        "x": 0,
+        "y": 484,
+        "width": 512,
+        "height": 540
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures."
     },
     {
       "id": "wger-abd2854b-114a-4584-8746-30bd40127863",
@@ -84,7 +116,7 @@
       "guideText": "* Set security pins to about the height of your sticking point * Lower the bar, rest on the pins for 1s while holding tension * Move bar up with maximum force",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1436/view/",
@@ -93,7 +125,15 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "correctionRequirement": "Hold: pin bench illustration does not clearly establish horizontal safety-pin support."
+      "correctionRequirement": "Hold: pin bench illustration does not clearly establish horizontal safety-pin support.",
+      "reviewNote": "Reviewed padded sled hack-squat bottom, strap-assisted foot inversion, perpendicular one-arm landmine sleeve row and bar rests on visible bench/overhead safety supports.",
+      "bounds": {
+        "x": 512,
+        "y": 484,
+        "width": 512,
+        "height": 540
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures."
     },
     {
       "id": "wger-a33ba0c7-1680-4e42-a84e-aecc18c5d75b",
@@ -102,7 +142,7 @@
       "guideText": "* Set security pins to the height of your lower chin * Rest bar on pins keeping tension * Raise bar over head",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1439/view/",
@@ -111,7 +151,15 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "correctionRequirement": "Hold: pin overhead press depicts unsupported bar/J-hook setup instead of chin-height safety pins."
+      "correctionRequirement": "Hold: pin overhead press depicts unsupported bar/J-hook setup instead of chin-height safety pins.",
+      "reviewNote": "Reviewed padded sled hack-squat bottom, strap-assisted foot inversion, perpendicular one-arm landmine sleeve row and bar rests on visible bench/overhead safety supports.",
+      "bounds": {
+        "x": 1024,
+        "y": 484,
+        "width": 512,
+        "height": 540
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-870f50d4-6f26-48ff-850e-9a70aff86df0.png",

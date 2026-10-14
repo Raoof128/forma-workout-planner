@@ -1,0 +1,163 @@
+{
+  "name": "corrections-035",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-035.png",
+  "prompt": "Create ORIGINAL FORMA fitness-manual illustrations: THREE columns TWO rows SIX separate equal panels, landscape1536x1024. Fully clothed varied adults, charcoal-gray with lime accents, white background, no text/logos/watermarks. Anatomically correct and physically plausible. Complete whole figures/apparatus inside each panel with generous margins. ONE precise working pose per panel. Follow full actual guide, explicitly correct prior rejected image errors.\n\nRow 1 column 1: V-Bar Pullup. PRIOR ERROR, DO NOT REPEAT: Uses rack neutral handles rather than a separate V-bar placed over the middle of the pull-up bar.. Actual full guide: Start by placing the middle of the V-bar in the middle of the pull-up bar (assuming that the pull-up station you are using does not have neutral grip handles). The V-Bar handles will be facing down so that you can hang from the pull-up bar through the use of the handles.\n\nOnce you securely place the V-bar, take a hold of the bar from each side and hang from it. Stick your chest out and lean yourself back slightly in order to better engage the lats. This will be your starting position.\n\nUsing your lats, pull your torso up while leaning your head back slightly so that you do not hit yourself with the chin-up bar. Continue until your chest nearly touches the V-bar. Exhale as you execute this motion.\n\nAfter a second hold on the contracted position, slowly lower your body back to the starting position as you breathe in.\n\nRepeat for the prescribed number of repetitions.\n\nRow 1 column 2: Walking Lunges. PRIOR ERROR, DO NOT REPEAT: Adds loaded bands that are absent from the bodyweight/dumbbell walking-lunge guide.. Actual full guide: - **Starting Position:** Stand with feet hip-width apart and hands either on your hips or holding dumbbells at your sides. - **The Stride:** Take a wide step forward with your right leg. - **The Descent:** Lower your hips until both knees are bent at approximately **90-degree angles**. - **The Transition:** Drive through your front heel to stand up, bringing your back foot forward to step directly into the next lunge.\n\nRow 1 column 3: Weighted Ball Side Bend. PRIOR ERROR, DO NOT REPEAT: Feet are not crossed as required for weighted ball side bend.. Actual full guide: To begin, lie down on an exercise ball with your left side of the torso (waist, hips and shoulder) pressed against the ball.\n\nYour feet should be on the floor while your legs are crossed and hanging from the ball. Hold a weighted plate with your right hand directly to the right side of your head. Tip: Make sure the smooth side of the plate is resting against your head.\n\nPlace your left arm across your torso so that your palm is on your obliques. There should be a right angle between your left forearm and upper arm. This is the starting position.\n\nRaise the side of your torso up by laterally flexing at the waist while exhaling.\n\nHold the contraction for a second and slowly lower yourself back down to the starting position while inhaling.\n\nRepeat for the recommended amount of repetitions.\n\nSwitch sides and repeat the exercise.\n\nRow 2 column 1: Weighted Sit-Ups - With Bands. PRIOR ERROR, DO NOT REPEAT: Band sit-up bench slopes upward under the head instead of downward for the prescribed decline variation.. Actual full guide: Start out by strapping the bands around the base of the decline bench. Place the handles towards the inside of the decline bench so that when lying down, you can reach for both of them.\n\nPosition your legs through the decline machine until they are secured. Now reach for the exercise bands with both hands. Use a pronated (palms forward) grip to grasp the handles. Position them near your collar bone and rotate your wrist to a neutral grip (palms facing the torso). Note: Your arms should remain stationary throughout the exercise. This is the starting position.\n\nMove your torso upward until your upper body is perpendicular to the floor while exhaling. Hold the contraction for a second and lower your upper body back down to the starting position while inhaling.\n\nRepeat for the recommended amount of repetitions.\n\nRow 2 column 2: Wide-Grip Decline Barbell Bench Press. PRIOR ERROR, DO NOT REPEAT: Bench raises the head above the feet; guide requires a decline bench.. Actual full guide: Lie back on a decline bench with the feet securely locked at the front of the bench. Using a wide, pronated (palms forward) grip that is around 3 inches away from shoulder width (for each hand), lift the bar from the rack and hold it straight over you with your arms locked. The bar will be perpendicular to the torso and the floor. This will be your starting position.\n\nAs you breathe in, come down slowly until you feel the bar on your lower chest.\n\nAfter a second pause, bring the bar back to the starting position as you breathe out and push the bar using your chest muscles. Lock your arms and squeeze your chest in the contracted position, hold for a second and then start coming down slowly again. Tip: It should take at least twice as long to go down than to come up.\n\nRepeat the movement for the prescribed amount of repetitions.\n\nRow 2 column 3: Plate Pinch. PRIOR ERROR, DO NOT REPEAT: Shows one plate rather than pinching two plates together with smooth faces outward.. Actual full guide: Grab two wide-rimmed plates and put them together with the smooth sides facing outward\n\nUse your fingers to grip the outside part of the plate and your thumb for the other side thus holding both plates together. This is the starting position.\n\nSqueeze the plate with your fingers and thumb. Hold this position for as long as you can.\n\nRepeat for the recommended amount of sets prescribed in your program.\n\nSwitch arms and repeat the movements.",
+  "cells": [
+    {
+      "id": "db-v-bar-pullup",
+      "title": "V-Bar Pullup",
+      "equipment": "Bodyweight",
+      "guideText": "Start by placing the middle of the V-bar in the middle of the pull-up bar (assuming that the pull-up station you are using does not have neutral grip handles). The V-Bar handles will be facing down so that you can hang from the pull-up bar through the use of the handles.\n\nOnce you securely place the V-bar, take a hold of the bar from each side and hang from it. Stick your chest out and lean yourself back slightly in order to better engage the lats. This will be your starting position.\n\nUsing your lats, pull your torso up while leaning your head back slightly so that you do not hit yourself with the chin-up bar. Continue until your chest nearly touches the V-bar. Exhale as you execute this motion.\n\nAfter a second hold on the contracted position, slowly lower your body back to the starting position as you breathe in.\n\nRepeat for the prescribed number of repetitions.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/V-Bar_Pullup.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Uses rack neutral handles rather than a separate V-bar placed over the middle of the pull-up bar.",
+      "reviewNote": "Reviewed central V-bar hanging pull-up apparatus, side-held dumbbell walking lunge and plate-to-head lateral ball bend with crossed ankles.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 480
+      },
+      "cropReviewNote": "Inspected actual row boundary and complete accepted figures."
+    },
+    {
+      "id": "wger-cb7b9c95-bef9-4a84-9b26-13dab0f29da1",
+      "title": "Walking Lunges",
+      "equipment": "Resistance band",
+      "guideText": "- **Starting Position:** Stand with feet hip-width apart and hands either on your hips or holding dumbbells at your sides. - **The Stride:** Take a wide step forward with your right leg. - **The Descent:** Lower your hips until both knees are bent at approximately **90-degree angles**. - **The Transition:** Drive through your front heel to stand up, bringing your back foot forward to step directly into the next lunge.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1903/view/",
+        "author": "nishant0712",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Adds loaded bands that are absent from the bodyweight/dumbbell walking-lunge guide.",
+      "reviewNote": "Reviewed central V-bar hanging pull-up apparatus, side-held dumbbell walking lunge and plate-to-head lateral ball bend with crossed ankles.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 480
+      },
+      "cropReviewNote": "Inspected actual row boundary and complete accepted figures."
+    },
+    {
+      "id": "db-weighted-ball-side-bend",
+      "title": "Weighted Ball Side Bend",
+      "equipment": "Exercise ball",
+      "guideText": "To begin, lie down on an exercise ball with your left side of the torso (waist, hips and shoulder) pressed against the ball.\n\nYour feet should be on the floor while your legs are crossed and hanging from the ball. Hold a weighted plate with your right hand directly to the right side of your head. Tip: Make sure the smooth side of the plate is resting against your head.\n\nPlace your left arm across your torso so that your palm is on your obliques. There should be a right angle between your left forearm and upper arm. This is the starting position.\n\nRaise the side of your torso up by laterally flexing at the waist while exhaling.\n\nHold the contraction for a second and slowly lower yourself back down to the starting position while inhaling.\n\nRepeat for the recommended amount of repetitions.\n\nSwitch sides and repeat the exercise.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Weighted_Ball_Side_Bend.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Feet are not crossed as required for weighted ball side bend.",
+      "reviewNote": "Reviewed central V-bar hanging pull-up apparatus, side-held dumbbell walking lunge and plate-to-head lateral ball bend with crossed ankles.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 480
+      },
+      "cropReviewNote": "Inspected actual row boundary and complete accepted figures."
+    },
+    {
+      "id": "db-weighted-sit-ups-with-bands",
+      "title": "Weighted Sit-Ups - With Bands",
+      "equipment": "Specialty equipment",
+      "guideText": "Start out by strapping the bands around the base of the decline bench. Place the handles towards the inside of the decline bench so that when lying down, you can reach for both of them.\n\nPosition your legs through the decline machine until they are secured. Now reach for the exercise bands with both hands. Use a pronated (palms forward) grip to grasp the handles. Position them near your collar bone and rotate your wrist to a neutral grip (palms facing the torso). Note: Your arms should remain stationary throughout the exercise. This is the starting position.\n\nMove your torso upward until your upper body is perpendicular to the floor while exhaling. Hold the contraction for a second and lower your upper body back down to the starting position while inhaling.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Weighted_Sit-Ups_-_With_Bands.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Band sit-up bench slopes upward under the head instead of downward for the prescribed decline variation.",
+      "reviewNote": "Band sit-up bench is still incline rather than decline.",
+      "bounds": {
+        "x": 0,
+        "y": 480,
+        "width": 512,
+        "height": 544
+      },
+      "cropReviewNote": "Inspected actual row boundary and complete accepted figures."
+    },
+    {
+      "id": "db-wide-grip-decline-barbell-bench-press",
+      "title": "Wide-Grip Decline Barbell Bench Press",
+      "equipment": "Barbell",
+      "guideText": "Lie back on a decline bench with the feet securely locked at the front of the bench. Using a wide, pronated (palms forward) grip that is around 3 inches away from shoulder width (for each hand), lift the bar from the rack and hold it straight over you with your arms locked. The bar will be perpendicular to the torso and the floor. This will be your starting position.\n\nAs you breathe in, come down slowly until you feel the bar on your lower chest.\n\nAfter a second pause, bring the bar back to the starting position as you breathe out and push the bar using your chest muscles. Lock your arms and squeeze your chest in the contracted position, hold for a second and then start coming down slowly again. Tip: It should take at least twice as long to go down than to come up.\n\nRepeat the movement for the prescribed amount of repetitions.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Wide-Grip_Decline_Barbell_Bench_Press.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Bench raises the head above the feet; guide requires a decline bench.",
+      "reviewNote": "Wide press bench still raises head above secured feet rather than lowering it.",
+      "bounds": {
+        "x": 512,
+        "y": 480,
+        "width": 512,
+        "height": 544
+      },
+      "cropReviewNote": "Inspected actual row boundary and complete accepted figures."
+    },
+    {
+      "id": "forma-db-plate-pinch",
+      "title": "Plate Pinch",
+      "equipment": "Specialty equipment",
+      "guideText": "Grab two wide-rimmed plates and put them together with the smooth sides facing outward\n\nUse your fingers to grip the outside part of the plate and your thumb for the other side thus holding both plates together. This is the starting position.\n\nSqueeze the plate with your fingers and thumb. Hold this position for as long as you can.\n\nRepeat for the recommended amount of sets prescribed in your program.\n\nSwitch arms and repeat the movements.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Plate_Pinch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Shows one plate rather than pinching two plates together with smooth faces outward.",
+      "reviewNote": "Plate pinch still depicts one plate rather than two plates pressed together.",
+      "bounds": {
+        "x": 1024,
+        "y": 480,
+        "width": 512,
+        "height": 544
+      },
+      "cropReviewNote": "Inspected actual row boundary and complete accepted figures."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-6672ea73-539e-4d87-b917-7645918fe30f.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-035.png"
+}

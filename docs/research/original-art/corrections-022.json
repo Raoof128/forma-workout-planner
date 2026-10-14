@@ -13,7 +13,7 @@
       "guideText": "Lie down sideways on an incline bench press with a dumbbell in the hand. Make sure the shoulder is pressing against the incline bench and the arm is lying across your body with the palm around your navel.\n\nHold a dumbbell in your uppermost arm while keeping it extended in front of you parallel to the floor. This is your starting position.\n\nWhile keeping the dumbbell parallel to the floor at all times, perform a lateral raise. Your arm should travel straight up until it is pointing at the ceiling. Tip: Exhale as you perform this movement. Hold the dumbbell in the position and feel the contraction in the shoulders for a second.\n\nWhile inhaling lower the weight across your body back into the starting position.\n\nRepeat the movement for the prescribed amount of repetitions.\n\nSwitch arms and repeat the movement.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/One-Arm_Incline_Lateral_Raise.json",
@@ -21,7 +21,15 @@
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
       },
-      "correctionRequirement": "Hold: one-arm incline lateral raise requires SIDE-lying shoulder contact; picture depicts supine reclined press/raise."
+      "correctionRequirement": "Hold: one-arm incline lateral raise requires SIDE-lying shoulder contact; picture depicts supine reclined press/raise.",
+      "reviewNote": "Adds a second dumbbell in the resting hand; guide specifies a single working bell.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures."
     },
     {
       "id": "db-one-arm-kettlebell-push-press",
@@ -30,7 +38,7 @@
       "guideText": "Hold a kettlebell by the handle. Clean the kettlebell to your shoulder by extending through the legs and hips as you pull the kettlebell towards your shoulder. Rotate your wrist as you do so, so that the palm faces forward. This will be your starting position.\n\nDip your body by bending the knees, keeping your torso upright.\n\nImmediately reverse direction, driving through the heels, in essence jumping to create momentum. As you do so, press the kettlebell overhead to lockout by extending the arms, using your body's momentum to move the weight. Lower the weight to perform the next repetition.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/One-Arm_Kettlebell_Push_Press.json",
@@ -38,7 +46,15 @@
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
       },
-      "correctionRequirement": "Hold: kettlebell push press pictured with receiving knee bend; depict upright extended-knee finish to distinguish it from jerk."
+      "correctionRequirement": "Hold: kettlebell push press pictured with receiving knee bend; depict upright extended-knee finish to distinguish it from jerk.",
+      "reviewNote": "Reviewed upright one-bell push-press finish, open-palm kettlebell body catch and supinated supported bar/dumbbell wrist curls.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures."
     },
     {
       "id": "db-one-arm-side-deadlift",
@@ -47,7 +63,7 @@
       "guideText": "Stand to the side of a barbell next to its center. Bend your knees and lower your body until you are able to reach the barbell.\n\nGrasp the bar as if you were grabbing a briefcase (palms facing you since the bar is sideways). You may need a wrist wrap if you are using a significant amount of weight. This is your starting position.\n\nUse your legs to help lift the barbell up while exhaling. Your arms should extend fully as bring the barbell up until you are in a standing position.\n\nSlowly bring the barbell back down while inhaling. Tip: Make sure to bend your knees while lowering the weight to avoid any injury from occurring.\n\nRepeat for the recommended amount of repetitions.\n\nSwitch arms and repeat the movement.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/One-Arm_Side_Deadlift.json",
@@ -55,7 +71,15 @@
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
       },
-      "correctionRequirement": "Hold: side barbell deadlift implement is across front of thighs rather than clearly beside the body in briefcase orientation."
+      "correctionRequirement": "Hold: side barbell deadlift implement is across front of thighs rather than clearly beside the body in briefcase orientation.",
+      "reviewNote": "The bar is shown with only one visible sleeve/plate and does not establish a complete balanced side barbell.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures."
     },
     {
       "id": "db-open-palm-kettlebell-clean",
@@ -64,7 +88,7 @@
       "guideText": "Place one kettlebell between your feet. Clean the kettlebell by extending through the legs and hips as you raise the kettlebell towards your shoulders.\n\nRelease the kettlebell as it comes up, and let it flip so that the ball of the kettlebell lands in the palms of your hands.\n\nRelease the kettlebell out in front of you and catch the handle with both hands. Lower the kettlebell to the starting position and repeat.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Open_Palm_Kettlebell_Clean.json",
@@ -72,7 +96,15 @@
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
       },
-      "correctionRequirement": "Hold: two-hand open-palm clean depicts gripping the handle low instead of catching bell body on open palms."
+      "correctionRequirement": "Hold: two-hand open-palm clean depicts gripping the handle low instead of catching bell body on open palms.",
+      "reviewNote": "Reviewed upright one-bell push-press finish, open-palm kettlebell body catch and supinated supported bar/dumbbell wrist curls.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures."
     },
     {
       "id": "db-palms-up-barbell-wrist-curl-over-a-bench",
@@ -81,7 +113,7 @@
       "guideText": "Start out by placing a barbell on one side of a flat bench.\n\nKneel down on both of your knees so that your body is facing the flat bench.\n\nUse your arms to grab the barbell with a supinated grip (palms up) and bring them up so that your forearms are resting against the flat bench. Your wrists should be hanging over the edge.\n\nStart out by curling your wrist upwards and exhaling.\n\nSlowly lower your wrists back down to the starting position while inhaling.\n\nYour forearms should be stationary as your wrist is the only movement needed to perform this exercise.\n\nRepeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Palms-Up_Barbell_Wrist_Curl_Over_A_Bench.json",
@@ -89,7 +121,15 @@
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
       },
-      "correctionRequirement": "Hold: palms-up bar wrist curl pictured with pronated knuckles over bar."
+      "correctionRequirement": "Hold: palms-up bar wrist curl pictured with pronated knuckles over bar.",
+      "reviewNote": "Reviewed upright one-bell push-press finish, open-palm kettlebell body catch and supinated supported bar/dumbbell wrist curls.",
+      "bounds": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures."
     },
     {
       "id": "db-palms-up-dumbbell-wrist-curl-over-a-bench",
@@ -98,7 +138,7 @@
       "guideText": "Start out by placing two dumbbells on one side of a flat bench.\n\nKneel down on both of your knees so that your body is facing the flat bench.\n\nUse your arms to grab both of the dumbbells with a supinated grip (palms up) and bring them up so that your forearms are resting against the flat bench. Your wrists should be hanging over the edge.\n\nStart out by curling your wrist upwards and exhaling.\n\nSlowly lower your wrists back down to the starting position while inhaling. Make sure to inhale during this part of the exercise.\n\nYour forearms should be stationary as your wrist is the only movement needed to perform this exercise.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Palms-Up_Dumbbell_Wrist_Curl_Over_A_Bench.json",
@@ -106,7 +146,15 @@
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
       },
-      "correctionRequirement": "Hold: palms-up dumbbell wrist curl pictured with pronated palms-down grip."
+      "correctionRequirement": "Hold: palms-up dumbbell wrist curl pictured with pronated palms-down grip.",
+      "reviewNote": "Reviewed upright one-bell push-press finish, open-palm kettlebell body catch and supinated supported bar/dumbbell wrist curls.",
+      "bounds": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-bcd3e8a2-f5f2-49ad-b5c9-b0718e11b665.png",

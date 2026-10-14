@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1268,
+  "accepted": 1326,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -7410,7 +7410,9 @@
       "name": "One-Arm Kettlebell Push Press",
       "equipment": "Kettlebell",
       "guideSha256": "117eb7b8edc109a71ae3ce3684a21c9d78c9f13551be95a226f88c76235b7fdb",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-022-1-0",
+      "reviewNote": "Reviewed upright one-bell push-press finish, open-palm kettlebell body catch and supinated supported bar/dumbbell wrist curls."
     },
     {
       "exerciseId": "db-one-arm-kettlebell-row",
@@ -7532,7 +7534,9 @@
       "name": "Open Palm Kettlebell Clean",
       "equipment": "Kettlebell",
       "guideSha256": "de05a8c14339d0bc8efd2ebf2d7a3273c16239d6d9cdffecf33a7825ca5f949d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-022-0-1",
+      "reviewNote": "Reviewed upright one-bell push-press finish, open-palm kettlebell body catch and supinated supported bar/dumbbell wrist curls."
     },
     {
       "exerciseId": "db-otis-up",
@@ -7665,14 +7669,18 @@
       "name": "Palms-Up Barbell Wrist Curl Over A Bench",
       "equipment": "Barbell",
       "guideSha256": "7745124d5cc695d9624d62cead4bfa1bc43723206a291cf06815a9ad6b562c67",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-022-1-1",
+      "reviewNote": "Reviewed upright one-bell push-press finish, open-palm kettlebell body catch and supinated supported bar/dumbbell wrist curls."
     },
     {
       "exerciseId": "db-palms-up-dumbbell-wrist-curl-over-a-bench",
       "name": "Palms-Up Dumbbell Wrist Curl Over A Bench",
       "equipment": "Dumbbell",
       "guideSha256": "e17697b5cae4b33ee6722ec4f7fb98fcd5dca7d41840bb011dfe296ac3966ab4",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-022-2-1",
+      "reviewNote": "Reviewed upright one-bell push-press finish, open-palm kettlebell body catch and supinated supported bar/dumbbell wrist curls."
     },
     {
       "exerciseId": "db-parallel-bar-dip",
@@ -7715,7 +7723,9 @@
       "name": "Pause Hack Squats",
       "equipment": "Bodyweight",
       "guideSha256": "86e91cbdb67aef3235d1a2ff10c6e48f375a140aa9a1777af4d11fa4c7351490",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-023-0-0",
+      "reviewNote": "Reviewed padded sled hack-squat bottom, strap-assisted foot inversion, perpendicular one-arm landmine sleeve row and bar rests on visible bench/overhead safety supports."
     },
     {
       "exerciseId": "wger-a4c97a23-f044-4095-a041-94d92ffe44bd",
@@ -7756,7 +7766,9 @@
       "name": "Peroneals Stretch",
       "equipment": "Specialty equipment",
       "guideSha256": "df5240b0c62ea1497e2ad4ae5884f807ad2526db21436846f7908768883191d8",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-023-2-0",
+      "reviewNote": "Reviewed padded sled hack-squat bottom, strap-assisted foot inversion, perpendicular one-arm landmine sleeve row and bar rests on visible bench/overhead safety supports."
     },
     {
       "exerciseId": "db-peroneals-smr",
@@ -7772,7 +7784,9 @@
       "name": "Perpendicular Unilateral Landmine Row",
       "equipment": "Barbell",
       "guideSha256": "9fd0d9d0ba5404e0e9dbde3c3fc97fd171f753ce34e1abe4165d14769f99914c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-023-0-1",
+      "reviewNote": "Reviewed padded sled hack-squat bottom, strap-assisted foot inversion, perpendicular one-arm landmine sleeve row and bar rests on visible bench/overhead safety supports."
     },
     {
       "exerciseId": "db-physioball-hip-bridge",
@@ -7797,14 +7811,18 @@
       "name": "Pin Bench Press BB",
       "equipment": "Barbell",
       "guideSha256": "47d2ab2d5e5f673db7dd298d4b6a003ac4eb4154b92d30f639beff0ab002c9c0",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-023-1-1",
+      "reviewNote": "Reviewed padded sled hack-squat bottom, strap-assisted foot inversion, perpendicular one-arm landmine sleeve row and bar rests on visible bench/overhead safety supports."
     },
     {
       "exerciseId": "wger-a33ba0c7-1680-4e42-a84e-aecc18c5d75b",
       "name": "Pin OHP",
       "equipment": "Barbell",
       "guideSha256": "b0ad0398fa62d4f6427254c2f3392b620c49594b85f22ba6f111b5528653d547",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-023-2-1",
+      "reviewNote": "Reviewed padded sled hack-squat bottom, strap-assisted foot inversion, perpendicular one-arm landmine sleeve row and bar rests on visible bench/overhead safety supports."
     },
     {
       "exerciseId": "db-pin-presses",
@@ -7854,7 +7872,9 @@
       "name": "Planche Lean Hold",
       "equipment": "Bodyweight",
       "guideSha256": "6e5323400c2c91a2291841a83f545ba1b5e005d6bd046e95def3af4e77957e6d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-024-1-0",
+      "reviewNote": "Reviewed forward-shoulder straight-arm planche lean, toes-pointed plantarflexion position, outward-everted strap foot stretch and shallow front-rack power clean catch clear of blocks."
     },
     {
       "exerciseId": "db-plank",
@@ -7897,7 +7917,9 @@
       "name": "Plantarflexion Stretch with Band",
       "equipment": "Bodyweight",
       "guideSha256": "c2d459ab6d2be86f3a4bd975703f4433845bff300d7750a03586ccfd2346f065",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-024-2-0",
+      "reviewNote": "Reviewed forward-shoulder straight-arm planche lean, toes-pointed plantarflexion position, outward-everted strap foot stretch and shallow front-rack power clean catch clear of blocks."
     },
     {
       "exerciseId": "db-plate-twist",
@@ -7965,7 +7987,9 @@
       "name": "Posterior Tibialis Stretch",
       "equipment": "Specialty equipment",
       "guideSha256": "cba00b0b4642357eef34ba17f7be7a072c8456ece40316edba47b535a64f6ecf",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-024-1-1",
+      "reviewNote": "Reviewed forward-shoulder straight-arm planche lean, toes-pointed plantarflexion position, outward-everted strap foot stretch and shallow front-rack power clean catch clear of blocks."
     },
     {
       "exerciseId": "db-power-clean",
@@ -7981,14 +8005,18 @@
       "name": "Power Clean from Blocks",
       "equipment": "Barbell",
       "guideSha256": "231f866e37e1b24d6ea865b291b237d235c6e37c9a32a994559c85cf09bf9fea",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-024-2-1",
+      "reviewNote": "Reviewed forward-shoulder straight-arm planche lean, toes-pointed plantarflexion position, outward-everted strap foot stretch and shallow front-rack power clean catch clear of blocks."
     },
     {
       "exerciseId": "db-power-jerk",
       "name": "Power Jerk",
       "equipment": "Barbell",
       "guideSha256": "2c06894f1bbc9f367d1309b14fe3b4de59e6de232425063158b96b7c5dd5ce94",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-025-0-0",
+      "reviewNote": "Reviewed parallel-foot shallow power-jerk receiving pose, shallow snatch catches clear of floor/blocks, parallel neutral pull-up handles, upright dumbbell push-press finish and overhead-strap side quad stretch."
     },
     {
       "exerciseId": "db-power-partials",
@@ -8004,14 +8032,18 @@
       "name": "Power Snatch",
       "equipment": "Barbell",
       "guideSha256": "9efcf939192f10df942f6f1b967aa66ceb67e20ce32962e0c450cc5d78993da3",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-025-1-0",
+      "reviewNote": "Reviewed parallel-foot shallow power-jerk receiving pose, shallow snatch catches clear of floor/blocks, parallel neutral pull-up handles, upright dumbbell push-press finish and overhead-strap side quad stretch."
     },
     {
       "exerciseId": "db-power-snatch-from-blocks",
       "name": "Power Snatch from Blocks",
       "equipment": "Barbell",
       "guideSha256": "9be88a9f2d68451c1a652420ac8959f094de7255d6ef70fea9f53c6cb98c339b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-025-2-0",
+      "reviewNote": "Reviewed parallel-foot shallow power-jerk receiving pose, shallow snatch catches clear of floor/blocks, parallel neutral pull-up handles, upright dumbbell push-press finish and overhead-strap side quad stretch."
     },
     {
       "exerciseId": "db-power-stairs",
@@ -8135,7 +8167,9 @@
       "name": "Pull-Ups (Neutral Grip)",
       "equipment": "Bodyweight",
       "guideSha256": "dcc3053158db0b6c7d89a53aae1ba5f4a527c03173fbe5078641dc989c96ee62",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-025-0-1",
+      "reviewNote": "Reviewed parallel-foot shallow power-jerk receiving pose, shallow snatch catches clear of floor/blocks, parallel neutral pull-up handles, upright dumbbell push-press finish and overhead-strap side quad stretch."
     },
     {
       "exerciseId": "wger-289bd40b-e3dd-4217-8670-e475771a0ea7",
@@ -8169,7 +8203,9 @@
       "name": "Push Press",
       "equipment": "Bodyweight",
       "guideSha256": "bd88d34a64274bc15b67b6892099d4402add59d303c1f359fd371b5cb7a95cf9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-025-1-1",
+      "reviewNote": "Reviewed parallel-foot shallow power-jerk receiving pose, shallow snatch catches clear of floor/blocks, parallel neutral pull-up handles, upright dumbbell push-press finish and overhead-strap side quad stretch."
     },
     {
       "exerciseId": "db-push-press-behind-the-neck",
@@ -8266,7 +8302,9 @@
       "name": "Quad Stretch",
       "equipment": "Specialty equipment",
       "guideSha256": "372f175f64fb22dd62dd9d83fe10d7fc52c32c236909b072efc69304142e8681",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-025-2-1",
+      "reviewNote": "Reviewed parallel-foot shallow power-jerk receiving pose, shallow snatch catches clear of floor/blocks, parallel neutral pull-up handles, upright dumbbell push-press finish and overhead-strap side quad stretch."
     },
     {
       "exerciseId": "db-quadriceps-smr",
@@ -8492,7 +8530,9 @@
       "name": "Reverse Bar Curl",
       "equipment": "EZ bar",
       "guideSha256": "3609cdfbc73db2e685c52d4b783d3fd5576c29939aff525542d9636b63c1cd1d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-026-0-1",
+      "reviewNote": "Reviewed overhand EZ-bar reverse curl with downward-facing palms."
     },
     {
       "exerciseId": "db-reverse-barbell-curl",
@@ -8545,7 +8585,9 @@
       "name": "Reverse Fly Standing",
       "equipment": "Resistance band",
       "guideSha256": "bff00767e1c5adc15c9c0c7dbe7e4a874eaab574ca1a41c6396965cb95497024",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-027-2-0",
+      "reviewNote": "Reviewed dual-cable standing reverse fly and supinated close-grip bench triceps press."
     },
     {
       "exerciseId": "db-reverse-flyes",
@@ -8636,7 +8678,9 @@
       "name": "Reverse Triceps Bench Press",
       "equipment": "Barbell",
       "guideSha256": "53b6d82541c5f4ff0ba73d9291249f0a6814b36d32147626b078f8ba9fbce14a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-027-2-1",
+      "reviewNote": "Reviewed dual-cable standing reverse fly and supinated close-grip bench triceps press."
     },
     {
       "exerciseId": "wger-04063ba5-05d1-48b9-9571-eae2b8edab29",
@@ -8844,7 +8888,9 @@
       "name": "Rowing, T-bar",
       "equipment": "Bodyweight",
       "guideSha256": "72c12de82e6ccc23a88d8230ef7847a5740beab109f06dfdf55955ca91a15ff7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-028-1-0",
+      "reviewNote": "Reviewed wide-handle T-bar row, fixed-foot rotational Russian twist and straight-arm scapular hang."
     },
     {
       "exerciseId": "wger-4221c8af-b3ca-4a53-9176-bd66e46d10f2",
@@ -8896,7 +8942,9 @@
       "name": "Russian Twist",
       "equipment": "Bodyweight",
       "guideSha256": "e8e79be9ac385cfef4c347cc09ddf34cf0e637cfc4b719d5c9636b7aaacb3f59",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-028-2-0",
+      "reviewNote": "Reviewed wide-handle T-bar row, fixed-foot rotational Russian twist and straight-arm scapular hang."
     },
     {
       "exerciseId": "db-sandbag-load",
@@ -8912,7 +8960,9 @@
       "name": "Scapular Pull-Up",
       "equipment": "Bodyweight",
       "guideSha256": "e1c6e19eba3219b6d630d84017b2e76a38b5874043ba3f3589be613d6c667e7c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-028-0-1",
+      "reviewNote": "Reviewed wide-handle T-bar row, fixed-foot rotational Russian twist and straight-arm scapular hang."
     },
     {
       "exerciseId": "wger-e044cd7d-ef86-4154-a3a8-bd01fc5535ab",
@@ -9032,7 +9082,9 @@
       "name": "Seated Biceps",
       "equipment": "Bodyweight",
       "guideSha256": "2b6ef85c089839361ac6ecb2f28020888063940a442376a015affb27c02ddac7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-029-0-0",
+      "reviewNote": "Reviewed partner wrist-supported seated biceps stretch, suspended harness neck load, supinated supported one-arm/bar wrist curls, soles-facing butterfly overhead side stretch and grounded-hip shoulder-extension stretch."
     },
     {
       "exerciseId": "wger-139772c6-e401-4281-8aa6-c7ff7fb49f6a",
@@ -9219,7 +9271,9 @@
       "name": "Seated Head Harness Neck Resistance",
       "equipment": "Specialty equipment",
       "guideSha256": "e305d90f2e331bfe73e3684167004356ac3c6ac2c60d6586c6bb2211891cf7fc",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-029-1-0",
+      "reviewNote": "Reviewed partner wrist-supported seated biceps stretch, suspended harness neck load, supinated supported one-arm/bar wrist curls, soles-facing butterfly overhead side stretch and grounded-hip shoulder-extension stretch."
     },
     {
       "exerciseId": "wger-a3afaf43-b087-4f65-9e62-d038ab09ce90",
@@ -9280,21 +9334,27 @@
       "name": "Seated One-Arm Dumbbell Palms-Up Wrist Curl",
       "equipment": "Dumbbell",
       "guideSha256": "3fe47080e550bee883d4eb8aad5f47c7dfe9d6ec15835bd82a136d5c6ffc4553",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-029-2-0",
+      "reviewNote": "Reviewed partner wrist-supported seated biceps stretch, suspended harness neck load, supinated supported one-arm/bar wrist curls, soles-facing butterfly overhead side stretch and grounded-hip shoulder-extension stretch."
     },
     {
       "exerciseId": "db-seated-overhead-stretch",
       "name": "Seated Overhead Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "6589bec69f6fff4b255a2a03a03529f0018e93419d8a3b7effb531e5c79aa786",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-029-0-1",
+      "reviewNote": "Reviewed partner wrist-supported seated biceps stretch, suspended harness neck load, supinated supported one-arm/bar wrist curls, soles-facing butterfly overhead side stretch and grounded-hip shoulder-extension stretch."
     },
     {
       "exerciseId": "db-seated-palm-up-barbell-wrist-curl",
       "name": "Seated Palm-Up Barbell Wrist Curl",
       "equipment": "Barbell",
       "guideSha256": "08bbcf66404fda9539f6c790d24641b25a81950c0041b4b76db88c36238f6478",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-029-1-1",
+      "reviewNote": "Reviewed partner wrist-supported seated biceps stretch, suspended harness neck load, supinated supported one-arm/bar wrist curls, soles-facing butterfly overhead side stretch and grounded-hip shoulder-extension stretch."
     },
     {
       "exerciseId": "db-seated-palms-down-barbell-wrist-curl",
@@ -9328,7 +9388,9 @@
       "name": "Seated Shoulder Extension Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "1204f0396aef23d163bc2e6911f817eb62d6da8c71d192d963db6ec0bf8c41ab",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-029-2-1",
+      "reviewNote": "Reviewed partner wrist-supported seated biceps stretch, suspended harness neck load, supinated supported one-arm/bar wrist curls, soles-facing butterfly overhead side stretch and grounded-hip shoulder-extension stretch."
     },
     {
       "exerciseId": "db-seated-side-lateral-raise",
@@ -9344,7 +9406,9 @@
       "name": "Seated Triceps Press",
       "equipment": "Dumbbell",
       "guideSha256": "2c6a3d2f9a06877529392b5fe870775b529400e701a2eda0bfaee55c113a143f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-030-0-0",
+      "reviewNote": "Reviewed two-palms single-dumbbell seated extension, right-forearm side-plank support, lower bent-elbow side-lying internal rotation, straight-upper-leg side floor stretch, one-hip rotated leg press and seated across-body elbow thrust."
     },
     {
       "exerciseId": "wger-ecc46519-94b8-4ecc-b5b8-973e753e98a6",
@@ -9558,7 +9622,9 @@
       "name": "Side plank right",
       "equipment": "Bodyweight",
       "guideSha256": "e7e83ff1295cbdf5973afd1f955ba1602de1e259e91384b938861a9f15c0edbe",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-030-1-0",
+      "reviewNote": "Reviewed two-palms single-dumbbell seated extension, right-forearm side-plank support, lower bent-elbow side-lying internal rotation, straight-upper-leg side floor stretch, one-hip rotated leg press and seated across-body elbow thrust."
     },
     {
       "exerciseId": "wger-cd7bbafc-4092-4194-aa20-e380f1fe45f0",
@@ -9646,14 +9712,18 @@
       "name": "Side-laying interior rotation",
       "equipment": "Barbell + Bench + Dumbbell",
       "guideSha256": "623c18e727e2a82c44d675a0a4e7d57eef1df2e163ca2a5223c6425c6a24c655",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-030-2-0",
+      "reviewNote": "Reviewed two-palms single-dumbbell seated extension, right-forearm side-plank support, lower bent-elbow side-lying internal rotation, straight-upper-leg side floor stretch, one-hip rotated leg press and seated across-body elbow thrust."
     },
     {
       "exerciseId": "db-side-lying-floor-stretch",
       "name": "Side-Lying Floor Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "1ab3eca179dfdcb92123bc08db929dbf6bec40d1d2f7fee844376966a882c21f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-030-0-1",
+      "reviewNote": "Reviewed two-palms single-dumbbell seated extension, right-forearm side-plank support, lower bent-elbow side-lying internal rotation, straight-upper-leg side floor stretch, one-hip rotated leg press and seated across-body elbow thrust."
     },
     {
       "exerciseId": "wger-768e0703-a04d-4d97-89ce-a49cd6be2b06",
@@ -9883,7 +9953,9 @@
       "name": "Single-leg side glute press",
       "equipment": "Incline bench",
       "guideSha256": "404798083bb3224565a1ce0c0cef6a30f288a37abf04536b25340635cb578f1f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-030-1-1",
+      "reviewNote": "Reviewed two-palms single-dumbbell seated extension, right-forearm side-plank support, lower bent-elbow side-lying internal rotation, straight-upper-leg side floor stretch, one-hip rotated leg press and seated across-body elbow thrust."
     },
     {
       "exerciseId": "wger-eb8d3fa8-8cfc-4961-8e3d-5bf0a5081797",
@@ -9926,7 +9998,9 @@
       "name": "Sit Up Elbow Thrust",
       "equipment": "Bodyweight",
       "guideSha256": "d773f27825255a60fa9341949cc7ad8e10cad9faeb76675650be30c9f1534599",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-030-2-1",
+      "reviewNote": "Reviewed two-palms single-dumbbell seated extension, right-forearm side-plank support, lower bent-elbow side-lying internal rotation, straight-upper-leg side floor stretch, one-hip rotated leg press and seated across-body elbow thrust."
     },
     {
       "exerciseId": "db-sit-up",
@@ -9940,7 +10014,9 @@
       "name": "Sit-ups",
       "equipment": "Bodyweight",
       "guideSha256": "6195a5e50a42e21db216fb506740c55b402c52b506ae4a72d702c8abf003b418",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-031-0-0",
+      "reviewNote": "Reviewed calf-supported right-angle sit-up, prone reverse-side preacher spider curl, feet-together split-jump flight, bent-arm chest-hand squat twist and unloaded dowel shoulder press."
     },
     {
       "exerciseId": "wger-9f9bfa54-4702-4eb1-a72a-0fc12c846c72",
@@ -10409,7 +10485,9 @@
       "name": "Spider Curl",
       "equipment": "EZ bar",
       "guideSha256": "53d04f43e81d2de49d0725ff32ca230c33f87e103c9f44d6d094eac40ffc4164",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-031-2-0",
+      "reviewNote": "Reviewed calf-supported right-angle sit-up, prone reverse-side preacher spider curl, feet-together split-jump flight, bent-arm chest-hand squat twist and unloaded dowel shoulder press."
     },
     {
       "exerciseId": "db-spinal-stretch",
@@ -10452,7 +10530,9 @@
       "name": "Split Jump",
       "equipment": "Bodyweight",
       "guideSha256": "8cad3c5fa574448d127ead287384976f913b1e1847137c40736236fedac1a55d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-031-0-1",
+      "reviewNote": "Reviewed calf-supported right-angle sit-up, prone reverse-side preacher spider curl, feet-together split-jump flight, bent-arm chest-hand squat twist and unloaded dowel shoulder press."
     },
     {
       "exerciseId": "db-split-snatch",
@@ -10504,7 +10584,9 @@
       "name": "Squat Sky Reach Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "1fee7369f5d125d18779c1f0389ee9a464cb091038d2dc7c5d61ed5d7c65013a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-031-1-1",
+      "reviewNote": "Reviewed calf-supported right-angle sit-up, prone reverse-side preacher spider curl, feet-together split-jump flight, bent-arm chest-hand squat twist and unloaded dowel shoulder press."
     },
     {
       "exerciseId": "wger-30ac081b-fb79-4253-9457-8efc07568790",
@@ -10698,7 +10780,9 @@
       "name": "Standing Dowel Shoulder press",
       "equipment": "Barbell",
       "guideSha256": "051497213a34a94540807b2ea0735c3c088bf1efa069eb145c6153edff0985be",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-031-2-1",
+      "reviewNote": "Reviewed calf-supported right-angle sit-up, prone reverse-side preacher spider curl, feet-together split-jump flight, bent-arm chest-hand squat twist and unloaded dowel shoulder press."
     },
     {
       "exerciseId": "db-standing-dumbbell-press",
@@ -10802,7 +10886,9 @@
       "name": "Standing Inner-Biceps Curl",
       "equipment": "Dumbbell",
       "guideSha256": "91a6f01ea59151a951770ddb3c1af7dcce274a9f0cdc9cffff71629a36083b29",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-032-1-0",
+      "reviewNote": "Reviewed outward forearm inner-biceps curl, vertical neutral-grip paired shoulder press, rear-glute bar wrist curl and bodyweight chair step-up."
     },
     {
       "exerciseId": "db-standing-lateral-stretch",
@@ -10917,14 +11003,18 @@
       "name": "Standing Palms-In Dumbbell Press",
       "equipment": "Dumbbell",
       "guideSha256": "7a64e46de9a0108d9c4cdd8f0b02075633aef23d30a286ad9a0a8fa597317023",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-032-2-0",
+      "reviewNote": "Reviewed outward forearm inner-biceps curl, vertical neutral-grip paired shoulder press, rear-glute bar wrist curl and bodyweight chair step-up."
     },
     {
       "exerciseId": "db-standing-palms-up-barbell-behind-the-back-wrist-curl",
       "name": "Standing Palms-Up Barbell Behind The Back Wrist Curl",
       "equipment": "Barbell",
       "guideSha256": "b5de9251f4d76297bbbb1e386e8c9aa25cfd6ef74388dc4c751fc1207edb6a02",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-032-0-1",
+      "reviewNote": "Reviewed outward forearm inner-biceps curl, vertical neutral-grip paired shoulder press, rear-glute bar wrist curl and bodyweight chair step-up."
     },
     {
       "exerciseId": "wger-af59f161-147a-49ba-85c8-6c9f4e5ffe63",
@@ -11064,7 +11154,9 @@
       "name": "Step-ups",
       "equipment": "Bench",
       "guideSha256": "23d4d00ea1cecb1ac44b8ecf69ee6f42fa05be9f0a7f32320d1da339cd155c69",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-032-2-1",
+      "reviewNote": "Reviewed outward forearm inner-biceps curl, vertical neutral-grip paired shoulder press, rear-glute bar wrist curl and bodyweight chair step-up."
     },
     {
       "exerciseId": "db-stiff-leg-barbell-good-morning",
@@ -11132,7 +11224,9 @@
       "name": "Straight-Arm Dumbbell Pullover",
       "equipment": "Dumbbell",
       "guideSha256": "dd595f58832e9818601927da2275d18361abdf961d6317f82fe4bcedea29d892",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-033-1-0",
+      "reviewNote": "Reviewed shoulder-only cross-bench straight-arm pullover with lowered hips, unweighted lateral supine abduction, face-to-face plate Svend press, upright overhead bar thruster finish and heel-supported toe raise."
     },
     {
       "exerciseId": "db-straight-arm-pulldown",
@@ -11229,7 +11323,9 @@
       "name": "Supine Hip Abduction",
       "equipment": "Dumbbell",
       "guideSha256": "da18aa7e251b0cf5a0709db77b4c93e0510b60a5ae141441ed495a3dcd8f6d4d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-033-2-0",
+      "reviewNote": "Reviewed shoulder-only cross-bench straight-arm pullover with lowered hips, unweighted lateral supine abduction, face-to-face plate Svend press, upright overhead bar thruster finish and heel-supported toe raise."
     },
     {
       "exerciseId": "db-supine-one-arm-overhead-throw",
@@ -11317,7 +11413,9 @@
       "name": "Svend Press",
       "equipment": "Specialty equipment",
       "guideSha256": "7b836b5391de88ad4fb9de991f70a5d4d95f2b39e6a409d9f095f1fafa218427",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-033-0-1",
+      "reviewNote": "Reviewed shoulder-only cross-bench straight-arm pullover with lowered hips, unweighted lateral supine abduction, face-to-face plate Svend press, upright overhead bar thruster finish and heel-supported toe raise."
     },
     {
       "exerciseId": "db-t-bar-row-with-handle",
@@ -11378,14 +11476,18 @@
       "name": "Thruster",
       "equipment": "Barbell",
       "guideSha256": "fa1bc9b86c6af15ba6bdd3e1496824a325608c6501f7efb26f3b0241328b5e3d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-033-1-1",
+      "reviewNote": "Reviewed shoulder-only cross-bench straight-arm pullover with lowered hips, unweighted lateral supine abduction, face-to-face plate Svend press, upright overhead bar thruster finish and heel-supported toe raise."
     },
     {
       "exerciseId": "wger-f5252fbe-1e00-4b8d-8781-2e56d6a5250f",
       "name": "Tibialis raises",
       "equipment": "Bodyweight",
       "guideSha256": "7002c55205366636f50effc5a09a941473e0c3d3adf590606ed4bc17c827949f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-033-2-1",
+      "reviewNote": "Reviewed shoulder-only cross-bench straight-arm pullover with lowered hips, unweighted lateral supine abduction, face-to-face plate Svend press, upright overhead bar thruster finish and heel-supported toe raise."
     },
     {
       "exerciseId": "db-tire-flip",
@@ -11545,7 +11647,9 @@
       "name": "Triceps Overhead (Dumbbell)",
       "equipment": "Dumbbell",
       "guideSha256": "4f4811f584ba72cf6cced945f717b9e99004d24a607e6fa26ffb3a489e51d0c9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-034-0-0",
+      "reviewNote": "Reviewed full standing one-bell overhead extension, feet-front-grounded suspension dip, wide extended-arm suspension curl starting posture and lateral-shift overhand typewriter pull-up with both hands on bar."
     },
     {
       "exerciseId": "wger-f252e9cf-3749-413d-a18e-704c6bf1b87d",
@@ -11597,14 +11701,18 @@
       "name": "TRX dips",
       "equipment": "Bodyweight",
       "guideSha256": "d0fe5715c6c48634a66091b5d2e03371cf3cde7c1d736c197bbf91edcfef0be9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-034-1-0",
+      "reviewNote": "Reviewed full standing one-bell overhead extension, feet-front-grounded suspension dip, wide extended-arm suspension curl starting posture and lateral-shift overhand typewriter pull-up with both hands on bar."
     },
     {
       "exerciseId": "wger-f9329ed4-8185-49a6-a0bb-e0f21c6cc3d8",
       "name": "TRX gorilla biceps curl",
       "equipment": "Bodyweight",
       "guideSha256": "970fd5440c462e3578dd811bd7a2e8090e36a2f7ecfce4c2d241dff185667021",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-034-2-0",
+      "reviewNote": "Reviewed full standing one-bell overhead extension, feet-front-grounded suspension dip, wide extended-arm suspension curl starting posture and lateral-shift overhand typewriter pull-up with both hands on bar."
     },
     {
       "exerciseId": "wger-f36a9fd0-7bd2-42a4-85fa-902b7cf3be45",
@@ -11708,7 +11816,9 @@
       "name": "Typewriter Pull-ups",
       "equipment": "Bodyweight",
       "guideSha256": "740848b477a7e972846c358d19c719ce285b9e7bbf2f9c84cdc4c11deafc873e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-034-1-1",
+      "reviewNote": "Reviewed full standing one-bell overhead extension, feet-front-grounded suspension dip, wide extended-arm suspension curl starting posture and lateral-shift overhand typewriter pull-up with both hands on bar."
     },
     {
       "exerciseId": "wger-bc4bd5a0-46b5-4934-9a0a-dba2a9e5b2fa",
@@ -11837,7 +11947,9 @@
       "name": "V-Bar Pullup",
       "equipment": "Bodyweight",
       "guideSha256": "89e96c39f720d9e120b21553706c6fdeb4497459c3524197c5921c46ba60d3ff",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-035-0-0",
+      "reviewNote": "Reviewed central V-bar hanging pull-up apparatus, side-held dumbbell walking lunge and plate-to-head lateral ball bend with crossed ankles."
     },
     {
       "exerciseId": "db-vertical-swing",
@@ -11880,7 +11992,9 @@
       "name": "Walking Lunges",
       "equipment": "Resistance band",
       "guideSha256": "06e5f70db640224b92353cae1c8559b0daf69d2127e7b08b2be38adbac25baf4",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-035-1-0",
+      "reviewNote": "Reviewed central V-bar hanging pull-up apparatus, side-held dumbbell walking lunge and plate-to-head lateral ball bend with crossed ankles."
     },
     {
       "exerciseId": "db-walking-treadmill",
@@ -11939,7 +12053,9 @@
       "name": "Weighted Ball Side Bend",
       "equipment": "Exercise ball",
       "guideSha256": "cd6a97cbe4981439c110fea3fe795a0e8fa44f7075435425f0127a0a0ca0f797",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-035-2-0",
+      "reviewNote": "Reviewed central V-bar hanging pull-up apparatus, side-held dumbbell walking lunge and plate-to-head lateral ball bend with crossed ankles."
     },
     {
       "exerciseId": "db-weighted-bench-dip",
