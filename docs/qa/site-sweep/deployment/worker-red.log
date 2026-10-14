@@ -38,10 +38,10 @@ test at worker/tests/gateway.test.ts:186:1
 ✖ HTML prevents injected analytics while retaining asset cache directives (5.094034ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
   + actual - expected
-  
+
   + 'public, max-age=0, must-revalidate'
   - 'public, max-age=0, must-revalidate, no-transform'
-  
+
       at TestContext.<anonymous> (/workspace/forma-workout-planner/worker/tests/gateway.test.ts:199:12)
       at async Test.run (node:internal/test_runner/test:1389:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {

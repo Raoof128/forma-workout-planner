@@ -12,11 +12,11 @@ No updated asset files to upload. Proceeding with deployment...
 Total Upload: 14.91 KiB / gzip: 4.33 KiB
 Worker Startup Time: 2 ms
 Your Worker has access to the following bindings:
-Binding                                                           Resource                  
-env.ASSETS                                                        Assets                    
-env.ENVIRONMENT ("staging")                                       Environment Variable      
-env.APP_ORIGIN ("https://forma-staging.raoufabedini.dev")         Environment Variable      
-env.BACKEND_URL ("https://forma-api-staging.raoufabedin...")      Environment Variable      
+Binding                                                           Resource
+env.ASSETS                                                        Assets
+env.ENVIRONMENT ("staging")                                       Environment Variable
+env.APP_ORIGIN ("https://forma-staging.raoufabedini.dev")         Environment Variable
+env.BACKEND_URL ("https://forma-api-staging.raoufabedin...")      Environment Variable
 
 Uploaded forma-workout-planner-staging (12.13 sec)
 Deployed forma-workout-planner-staging triggers (1.50 sec)

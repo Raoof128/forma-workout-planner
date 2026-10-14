@@ -16,14 +16,14 @@ dist/assets/index-D2lb55oK.css           73.37 kB │ gzip:  15.36 kB
 dist/assets/instructions-D5gYSpG2.js    888.78 kB │ gzip: 241.10 kB
 dist/assets/index-BEE98wzJ.js         2,691.46 kB │ gzip: 472.72 kB
 
-[plugin builtin:vite-reporter] 
+[plugin builtin:vite-reporter]
 (!) Some chunks are larger than 500 kB after minification. Consider:
 - Using dynamic import() to code-split the application
 - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
 ✓ built in 3.81s
 {"account":"25c840ad25d38d8f35099180d2c1feab","existingFormaWorkers":["forma-operations-dashboard","forma-operations-monitor","forma-workout-planner-production","forma-workout-planner-staging"],"tokenExpires":"2026-10-14T09:05:41Z"}
-[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+▲ [WARNING] Proxy environment variables detected. We'll use your proxy for fetch requests.
 
 
 
@@ -148,11 +148,11 @@ Uploaded 396 of 396 assets
 Total Upload: 14.63 KiB / gzip: 4.24 KiB
 Worker Startup Time: 1 ms
 Your Worker has access to the following bindings:
-Binding                                                     Resource                  
-env.ASSETS                                                  Assets                    
-env.ENVIRONMENT ("production")                              Environment Variable      
-env.APP_ORIGIN ("https://forma.raoufabedini.dev")           Environment Variable      
-env.BACKEND_URL ("https://forma-api.raoufabedini.dev")      Environment Variable      
+Binding                                                     Resource
+env.ASSETS                                                  Assets
+env.ENVIRONMENT ("production")                              Environment Variable
+env.APP_ORIGIN ("https://forma.raoufabedini.dev")           Environment Variable
+env.BACKEND_URL ("https://forma-api.raoufabedini.dev")      Environment Variable
 
 Uploaded forma-workout-planner-production (60.07 sec)
 Deployed forma-workout-planner-production triggers (1.51 sec)
