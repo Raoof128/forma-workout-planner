@@ -1,0 +1,137 @@
+{
+  "name": "finish-e-002",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-e-002.png",
+  "prompt": "Original FORMA workout manual artwork landscape1536x1024 EXACTLY2columns2rows white equal768x512cells. No labels text arrows. Graycharcoal sportswear apparatus lime accent, correct2arms2legs each athlete. Complete apparatus person generous margins. One precise pose each respecting support.\nRow1column1 Retro Treadmill Walking: Backward treadmill walk side view: treadmill console and front upright on LEFT, athlete face/nose points RIGHT toward REAR of treadmill and AWAY FROM console, athlete stepping backward along belt. Full apparatus visible, gentle incline.\nRow1column2 External Rotation Stretch: Seated butterfly-like external rotation setup: both soles pressed visibly together, RIGHT knee raised outward to support RIGHT elbow directly on knee. Right elbow90degrees, forearm vertical holding one dumbbell. Shoulder depressed. Other hand rests relaxed. BOTH FEET in contact together essential.\nRow2column1 Supine crossed-leg rotation stretch: Supine crossed-leg rotation stretch overheadthreequarter view: left leg straight, RIGHT knee bent crosses to LEFT side toward floor. LEFT arm extended laterally at shoulderheight palmup, LEFT shoulder firmly grounded. RIGHT hand guides right bent knee across body. No quadriceps foot hold.\nRow2column2 Roman Chair Crunch: Roman chair abdominal crunch: horizontal Roman chair with seat hip pad and ankle support. Athlete sits FACING UPWARD, buttocks on seat pad, both ankles secured forward under ankle rollers; torso reclined45degrees behind seat neither upright nor flat, hands crossed chest, abdominal flexion. Never prone/backextension.",
+  "sourceGeneratedPath": "/workspace/generated_images/exec-44651bc1-412b-4084-a022-0fb46dcf5f2b.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-e-002.png",
+  "cells": [
+    {
+      "id": "wger-7e74b1f1-636b-4821-b4be-3711328b89b4",
+      "title": "Retro Treadmill Walking",
+      "equipment": "Bodyweight",
+      "guideText": "Controlled treadmill walking performed backward. Begin around 30 minutes at a controlled speed and approximately 2 to 3 percent incline if tolerated. Progress duration gradually as knee, hip, and back tolerance improves.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2549/view/",
+        "author": "Personal routine",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: backward treadmill walking depicted facing the console, not reversed facing position for a conventional belt.",
+      "reviewNote": "Athlete faces rear away from conventional console with full treadmill apparatus visible; representative backward-walking position.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full1536x1024 source; actual equal panel bounds x768 y512 retain complete athlete and apparatus.",
+      "priorBatch": "docs/research/original-art/corrections-026.json",
+      "references": null,
+      "priorReviewNote": "Athlete still faces the console instead of facing backward along the conventional treadmill belt.",
+      "ids": [
+        "wger-7e74b1f1-636b-4821-b4be-3711328b89b4"
+      ]
+    },
+    {
+      "id": "wger-a4413bcc-dcd1-4332-a09a-fee94a265e22",
+      "title": "External Rotation Stretch",
+      "equipment": "Barbell",
+      "guideText": "1. Sit with your feet pressed against each other, and one knee raised all the way out to the side of your body. 2. Place your elbow on your raised knee, bend it at 90 degrees, and point your hand directly forward, holding your barbell/dumbbell. 3. Keep your shoulder depressed and retracted, raise your hand until your forearm is vertical, as if you were about to wave at someone like a robot. 4. Lower your hand to the original position and repeat.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1835/view/",
+        "author": "Croak6728",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Feet pressed together, raised outward knee supports working elbow and vertical forearm holds dumbbell.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full1536x1024 source; actual equal panel bounds x768 y512 retain complete athlete and apparatus.",
+      "priorBatch": "docs/research/original-art/recovery-b-002.json",
+      "priorReviewNote": "Elbow contacts raised knee, but feet are separated rather than pressed together.",
+      "references": null,
+      "ids": [
+        "wger-a4413bcc-dcd1-4332-a09a-fee94a265e22"
+      ]
+    },
+    {
+      "id": "wger-a94c635d-096c-45a8-a68c-64941d0b6ba4",
+      "title": "Supine crossed-leg rotation stretch",
+      "equipment": "Bodyweight",
+      "guideText": "Lie on your back. Bend your right knee and bring that leg across the left leg. Extend your left arm out at shoulder height. Use your right hand to guide the bent knee gently toward the floor on your left while keeping your left shoulder down. Breathe comfortably, hold the stretch, and repeat on the other side.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": null,
+      "reviewNote": "Supine bent knee crosses opposite straight leg, opposite arm extends laterally with shoulder grounded; guiding hand on knee matches clarified rotation stretch.",
+      "priorBatch": "docs/research/original-art/movements-013.json",
+      "references": [
+        {
+          "title": "Reviewed upstream exercise identity and movement requirements",
+          "url": "https://wger.de/en/exercise/1577/view/"
+        }
+      ],
+      "priorReviewNote": "Imported description resembles a supine rotational stretch rather than a conventional Bretzel; resolve guide/identity before publication.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full1536x1024 source; actual equal panel bounds x768 y512 retain complete athlete and apparatus.",
+      "ids": [
+        "wger-a94c635d-096c-45a8-a68c-64941d0b6ba4"
+      ]
+    },
+    {
+      "id": "wger-af2f774c-296c-4d14-8e4a-fad77175ae37",
+      "title": "Roman Chair Crunch",
+      "equipment": "Bodyweight",
+      "guideText": "Crunches on roman chair. Keep your torso straight, abs tight, and don't come up all the way vertical or lie flat to keep constant tension on your abs.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/505/view/",
+        "author": "MaddieBeasley",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: Roman chair abdominal crunch illustrated as prone back extension.",
+      "reviewNote": "Face-up seated Roman-chair support secures ankles; reclined intermediate torso and crossed arms establish abdominal crunch variation.",
+      "bounds": {
+        "x": 768,
+        "y": 512,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full1536x1024 source; actual equal panel bounds x768 y512 retain complete athlete and apparatus.",
+      "priorBatch": "docs/research/original-art/corrections-028.json",
+      "references": null,
+      "priorReviewNote": "Roman chair crunch is still shown prone as a back extension rather than supine abdominal flexion.",
+      "ids": [
+        "wger-af2f774c-296c-4d14-8e4a-fad77175ae37"
+      ]
+    }
+  ],
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

@@ -1,0 +1,128 @@
+{
+  "name": "finish-source-001",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-source-001.png",
+  "prompt": "Create ORIGINAL FORMA exercise atlas, landscape1536x1024, TWO COLUMNS TWO ROWS FOUR independent LARGE768x512cells. Clean white backgrounds, subtle shadows, detailed charcoalgray sportswear/equipment and tiny lime accents. One fully clothed adult per cell, anatomically exactly TWO arms TWO legs. NO WORDS, labels, symbols, logos, watermarks, borders or arrows. Entire adult and COMPLETE apparatus fully fit own cell with generous30px blank margins INCLUDING full cable machine tops and bases. Reduce machinery scale to fit complete scene rather than cutting off pulley. Match precisely the described grip, support and cable attachment. Single representative phase.\n\nROW1 COLUMN1: Single-arm high-cable pulldown. FLOOR-SEATED SINGLE-ARM HIGH-CABLE PULLDOWN stretched starting phase. Adult sits directly ON FLOOR mat facing a high cable machine, both legs on floor in front, knees softly bent. RIGHT arm reaches diagonally UP toward high overhead pulley holding ONE small D grip in right hand; right elbow nearly straight, long cable runs diagonally UP from right grip to HIGH pulley at TOP of machine. LEFT hand empty braced on floor beside hip. Not seated on machine bench, not low cable row. Show full slim machine height inside cell at slightly reduced scale; pulley definitely above head.\n\nROW1 COLUMN2: Medicine-ball V-up. MEDICINE-BALL V-UP contracted phase. Side view adult balanced on pelvis on mat, torso raised diagonally45degrees, BOTH LEGS lifted diagonally45degrees STRAIGHT with knees extended together, body forms clear V. BOTH arms reach forward holding ONE medicine ball toward feet/shins. Heels elevated well off floor; palms grasp ball together. Full body, no bent-knee seated crunch, no chair or bench.\n\nROW2 COLUMN1: Chest-supported low-cable rope row. CHEST-SUPPORTED LOW-CABLE ROPE ROW representative starting/mid phase. Adult STANDS with BOTH FEET firmly on FLOOR behind an adjustable45degree incline bench, knees softly flexed, chest leans into UPPER BENCH PAD facing machine in front. Torso supported angled45degrees, not supine, not sitting. Both hands hold TWO ENDS of ONE rope attachment with palms facing EACH OTHER; elbows mildly bent alongside torso pulling rope toward LOWER CHEST. Two rope ends join center carabiner, cable runs diagonally DOWN and forward to LOW pulley near FLOOR at base of machine. Show complete incline bench, adult feet and low-cable machine within panel. Arms in front below chest, chest support clear.\n\nROW2 COLUMN2: One Arm Overhead Cable Tricep Extension. ONE-ARM OVERHEAD CABLE TRICEPS EXTENSION bent-elbow stretched phase. Adult STANDS upright facing away from cable machine behind at LEFT, full body. RIGHT upper arm remains VERTICAL next to ear pointing UP, RIGHT elbow ABOVE head; right FOREARM folds behind head DOWNWARD, right hand positioned behind upper neck gripping BARE CABLE END directly, NO handle, NO rope, NO dumbbell. Taut thin cable from right fist runs DOWN behind shoulder/back to BOTTOM pulley near FLOOR of machine. Cable end includes only small plain metal connector/stop and bare cable held in fist, no added attachments. LEFT arm empty at side. Side three-quarter view clearly shows right elbow high and low-pulley cable path behind body. Entire slim machine top and base visible.",
+  "cells": [
+    {
+      "id": "wger-81dd44b3-67b3-4198-9e57-c2a80b3c4102",
+      "title": "Single-arm high-cable pulldown",
+      "equipment": "Cable",
+      "guideText": "Sit on the floor at a high cable pulley and hold its single grip in one hand. Begin with the working arm reaching toward the pulley so the lat is stretched. Pull the grip downward by bending the elbow, then return with control to the stretched position. Repeat on the other side.",
+      "guideSource": null,
+      "references": [
+        {
+          "title": "wger exercise 1637",
+          "url": "https://wger.de/en/exercise/1637/view/"
+        }
+      ],
+      "metric": "load_reps",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Athlete sits directly on floor, one hand reaches to single grip on high overhead cable and other hand braces beside hip; representative stretched starting phase with full apparatus visible.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 480
+      },
+      "cropReviewNote": "Inspected original 1536x1024 PNG; actual cell boundaries x=768, y=480. Complete athlete and intended apparatus retained inside this panel without adjacent-cell intrusion.",
+      "ids": [
+        "wger-81dd44b3-67b3-4198-9e57-c2a80b3c4102"
+      ]
+    },
+    {
+      "id": "wger-346634cf-3896-4c10-bd66-28fb69d02573",
+      "title": "Medicine-ball V-up",
+      "equipment": "Medicine ball",
+      "guideText": "Lie on your back with your legs straight and hold a medicine ball in both hands above and behind your head. Lift your legs and upper body together, bringing the ball toward your feet to form a V. Lower your legs and torso with control and repeat.",
+      "guideSource": null,
+      "references": [
+        {
+          "title": "wger exercise 976",
+          "url": "https://wger.de/en/exercise/976/view/"
+        }
+      ],
+      "metric": "load_reps",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Pelvis supported on mat, torso and both straight legs raised into V with medicine ball held in both reaching hands toward feet; distinguishes straight-leg V-up from bent-knee sit-up.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 480
+      },
+      "cropReviewNote": "Inspected original 1536x1024 PNG; actual cell boundaries x=768, y=480. Complete athlete and intended apparatus retained inside this panel without adjacent-cell intrusion.",
+      "ids": [
+        "wger-346634cf-3896-4c10-bd66-28fb69d02573"
+      ]
+    },
+    {
+      "id": "wger-148f2ffc-05e2-486b-874f-2a401337a1c6",
+      "title": "Chest-supported low-cable rope row",
+      "equipment": "Cable",
+      "guideText": "Position an incline bench facing a low cable pulley fitted with a rope. Stand with your feet stable and lean your chest into the upper bench pad. Hold the rope ends with your palms facing each other and reach toward the pulley. Draw your elbows back toward your sides to bring the rope toward your lower chest. Return slowly while keeping your chest supported and your trunk steady.",
+      "guideSource": null,
+      "references": [
+        {
+          "title": "wger rope pullover/row setup and source illustration",
+          "url": "https://wger.de/en/exercise/1634/view/"
+        }
+      ],
+      "metric": "load_reps",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Both feet stay on floor with chest supported on incline bench upper pad; two neutral-grip rope ends draw toward lower chest and join cable leading to floor-level pulley. Complete bench and cable machine fit panel.",
+      "bounds": {
+        "x": 0,
+        "y": 480,
+        "width": 768,
+        "height": 544
+      },
+      "cropReviewNote": "Inspected original 1536x1024 PNG; actual cell boundaries x=768, y=480. Complete athlete and intended apparatus retained inside this panel without adjacent-cell intrusion.",
+      "ids": [
+        "wger-148f2ffc-05e2-486b-874f-2a401337a1c6"
+      ]
+    },
+    {
+      "id": "wger-5ed12527-c8be-4e86-8f2a-cf9dd4781f5b",
+      "title": "One Arm Overhead Cable Tricep Extension",
+      "equipment": "Cable",
+      "guideText": "Set the pulley at the bottom of the cable machine and grab onto it without using any attachments. Extend the cable directly overhead. While keeping your back straight and upper arm stationary, lower the cable behind your head until you feel a good stretch in your triceps, and then extend it back upward until your elbow is locked out.",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1668/view/",
+        "author": "AlucardEvil40",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "references": null,
+      "metric": "load_reps",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Standing athlete holds bare cable terminal in one hand behind head with working elbow raised overhead; cable runs to bottom pulley behind athlete, free arm empty, and full apparatus retained. Representative bent-elbow overhead-extension phase.",
+      "bounds": {
+        "x": 768,
+        "y": 480,
+        "width": 768,
+        "height": 544
+      },
+      "cropReviewNote": "Inspected original 1536x1024 PNG; actual cell boundaries x=768, y=480. Complete athlete and intended apparatus retained inside this panel without adjacent-cell intrusion.",
+      "ids": [
+        "wger-5ed12527-c8be-4e86-8f2a-cf9dd4781f5b"
+      ]
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-b4fe1c04-9b89-4a31-b4ae-d9350b8c7af9.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-source-001.png",
+  "reviewedAt": "2026-10-14T05:12:26.440Z",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

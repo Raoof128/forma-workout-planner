@@ -33885,6 +33885,230 @@
           "height": 514
         }
       }
+    },
+    "forma-original-finish-e-002-0-0": {
+      "src": "/exercise-media/original/finish-e-002.png?v=2324cd814c14",
+      "sha256": "2324cd814c147c37afb30c7768d56763dcd0afa13fea3ec93ce158f16405f51c",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Retro Treadmill Walking",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-e-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-finish-e-002-1-0": {
+      "src": "/exercise-media/original/finish-e-002.png?v=2324cd814c14",
+      "sha256": "2324cd814c147c37afb30c7768d56763dcd0afa13fea3ec93ce158f16405f51c",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "External Rotation Stretch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-e-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-finish-e-002-0-1": {
+      "src": "/exercise-media/original/finish-e-002.png?v=2324cd814c14",
+      "sha256": "2324cd814c147c37afb30c7768d56763dcd0afa13fea3ec93ce158f16405f51c",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Supine crossed-leg rotation stretch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-e-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 512,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-finish-e-002-1-1": {
+      "src": "/exercise-media/original/finish-e-002.png?v=2324cd814c14",
+      "sha256": "2324cd814c147c37afb30c7768d56763dcd0afa13fea3ec93ce158f16405f51c",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Roman Chair Crunch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-e-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 512,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-finish-source-001-0-0": {
+      "src": "/exercise-media/original/finish-source-001.png?v=8888d1e2dd57",
+      "sha256": "8888d1e2dd57893cb6047c304befc5d5fb1fcc6c65c245f34ec3e682954f7fc9",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Single-arm high-cable pulldown",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-source-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 480
+        }
+      }
+    },
+    "forma-original-finish-source-001-1-0": {
+      "src": "/exercise-media/original/finish-source-001.png?v=8888d1e2dd57",
+      "sha256": "8888d1e2dd57893cb6047c304befc5d5fb1fcc6c65c245f34ec3e682954f7fc9",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Medicine-ball V-up",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-source-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 480
+        }
+      }
+    },
+    "forma-original-finish-source-001-0-1": {
+      "src": "/exercise-media/original/finish-source-001.png?v=8888d1e2dd57",
+      "sha256": "8888d1e2dd57893cb6047c304befc5d5fb1fcc6c65c245f34ec3e682954f7fc9",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Chest-supported low-cable rope row",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-source-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 480,
+          "width": 768,
+          "height": 544
+        }
+      }
+    },
+    "forma-original-finish-source-001-1-1": {
+      "src": "/exercise-media/original/finish-source-001.png?v=8888d1e2dd57",
+      "sha256": "8888d1e2dd57893cb6047c304befc5d5fb1fcc6c65c245f34ec3e682954f7fc9",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "One Arm Overhead Cable Tricep Extension",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-source-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 480,
+          "width": 768,
+          "height": 544
+        }
+      }
     }
   },
   "exercises": {
@@ -43540,6 +43764,62 @@
       "reviewStatus": "accepted",
       "reviewNote": "Horizontal flat torso and straight arms establish floor-start Pendlay setup; complete barbell rests under chest.",
       "guideSha256": "2d1dd3c9331d1e6b3177513a8a0465ea14d6773e345cec2c2cae90482740d34a"
+    },
+    "wger-7e74b1f1-636b-4821-b4be-3711328b89b4": {
+      "assetId": "forma-original-finish-e-002-0-0",
+      "caption": "Retro Treadmill Walking · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Athlete faces rear away from conventional console with full treadmill apparatus visible; representative backward-walking position.",
+      "guideSha256": "16dc7dda31142d6add1d4db37749c3caf268a4560a58743649c570766fc780ac"
+    },
+    "wger-a4413bcc-dcd1-4332-a09a-fee94a265e22": {
+      "assetId": "forma-original-finish-e-002-1-0",
+      "caption": "External Rotation Stretch · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Feet pressed together, raised outward knee supports working elbow and vertical forearm holds dumbbell.",
+      "guideSha256": "d95f398be4a5e617e729210b9ce4be2166471fd2ee9a060740915e48348e466a"
+    },
+    "wger-a94c635d-096c-45a8-a68c-64941d0b6ba4": {
+      "assetId": "forma-original-finish-e-002-0-1",
+      "caption": "Supine crossed-leg rotation stretch · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Supine bent knee crosses opposite straight leg, opposite arm extends laterally with shoulder grounded; guiding hand on knee matches clarified rotation stretch.",
+      "guideSha256": "166d978d1f6b1bd86391da2a50f3374e51eaf9c0e753dca17e3346137f65da61"
+    },
+    "wger-af2f774c-296c-4d14-8e4a-fad77175ae37": {
+      "assetId": "forma-original-finish-e-002-1-1",
+      "caption": "Roman Chair Crunch · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Face-up seated Roman-chair support secures ankles; reclined intermediate torso and crossed arms establish abdominal crunch variation.",
+      "guideSha256": "db7de10bba4c3a90dd8ba7764bf86c5638b5805df1508d6183916d54ca558dbc"
+    },
+    "wger-81dd44b3-67b3-4198-9e57-c2a80b3c4102": {
+      "assetId": "forma-original-finish-source-001-0-0",
+      "caption": "Single-arm high-cable pulldown · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Athlete sits directly on floor, one hand reaches to single grip on high overhead cable and other hand braces beside hip; representative stretched starting phase with full apparatus visible.",
+      "guideSha256": "11cba0e25841ffef051a726684b744f5a88edfb28f48ee6ea06bc5c50f429537"
+    },
+    "wger-346634cf-3896-4c10-bd66-28fb69d02573": {
+      "assetId": "forma-original-finish-source-001-1-0",
+      "caption": "Medicine-ball V-up · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Pelvis supported on mat, torso and both straight legs raised into V with medicine ball held in both reaching hands toward feet; distinguishes straight-leg V-up from bent-knee sit-up.",
+      "guideSha256": "c643c56a393bba2f7da3ce7b27b0ba45a718f53dcccd260af2a63ba9a1469e61"
+    },
+    "wger-148f2ffc-05e2-486b-874f-2a401337a1c6": {
+      "assetId": "forma-original-finish-source-001-0-1",
+      "caption": "Chest-supported low-cable rope row · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Both feet stay on floor with chest supported on incline bench upper pad; two neutral-grip rope ends draw toward lower chest and join cable leading to floor-level pulley. Complete bench and cable machine fit panel.",
+      "guideSha256": "35850454300235ace1c1b4f5a2d54a304b5b1d2e7aad198d934ca0596ace2fbf"
+    },
+    "wger-5ed12527-c8be-4e86-8f2a-cf9dd4781f5b": {
+      "assetId": "forma-original-finish-source-001-1-1",
+      "caption": "One Arm Overhead Cable Tricep Extension · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Standing athlete holds bare cable terminal in one hand behind head with working elbow raised overhead; cable runs to bottom pulley behind athlete, free arm empty, and full apparatus retained. Representative bent-elbow overhead-extension phase.",
+      "guideSha256": "fa0ef5d52f3e4531e590479c3848a51b49b973c14a83b753ea20c08501f7678f"
     }
   }
 }

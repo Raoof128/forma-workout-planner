@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1379,
+  "accepted": 1387,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -1587,7 +1587,9 @@
       "name": "Supine crossed-leg rotation stretch",
       "equipment": "Bodyweight",
       "guideSha256": "166d978d1f6b1bd86391da2a50f3374e51eaf9c0e753dca17e3346137f65da61",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-e-002-0-1",
+      "reviewNote": "Supine bent knee crosses opposite straight leg, opposite arm extends laterally with shoulder grounded; guiding hand on knee matches clarified rotation stretch."
     },
     {
       "exerciseId": "wger-a6d880e5-bdbe-408f-b762-3b41c7fff834",
@@ -3982,7 +3984,9 @@
       "name": "External Rotation Stretch",
       "equipment": "Barbell",
       "guideSha256": "d95f398be4a5e617e729210b9ce4be2166471fd2ee9a060740915e48348e466a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-e-002-1-0",
+      "reviewNote": "Feet pressed together, raised outward knee supports working elbow and vertical forearm holds dumbbell."
     },
     {
       "exerciseId": "db-external-rotation-with-band",
@@ -6957,7 +6961,9 @@
       "name": "Medicine-ball V-up",
       "equipment": "Medicine ball",
       "guideSha256": "c643c56a393bba2f7da3ce7b27b0ba45a718f53dcccd260af2a63ba9a1469e61",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-source-001-1-0",
+      "reviewNote": "Pelvis supported on mat, torso and both straight legs raised into V with medicine ball held in both reaching hands toward feet; distinguishes straight-leg V-up from bent-knee sit-up."
     },
     {
       "exerciseId": "db-medicine-ball-chest-pass",
@@ -7322,7 +7328,9 @@
       "name": "One Arm Overhead Cable Tricep Extension",
       "equipment": "Cable",
       "guideSha256": "fa0ef5d52f3e4531e590479c3848a51b49b973c14a83b753ea20c08501f7678f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-source-001-1-1",
+      "reviewNote": "Standing athlete holds bare cable terminal in one hand behind head with working elbow raised overhead; cable runs to bottom pulley behind athlete, free arm empty, and full apparatus retained. Representative bent-elbow overhead-extension phase."
     },
     {
       "exerciseId": "db-one-arm-pronated-dumbbell-triceps-extension",
@@ -8533,7 +8541,9 @@
       "name": "Retro Treadmill Walking",
       "equipment": "Bodyweight",
       "guideSha256": "16dc7dda31142d6add1d4db37749c3caf268a4560a58743649c570766fc780ac",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-e-002-0-0",
+      "reviewNote": "Athlete faces rear away from conventional console with full treadmill apparatus visible; representative backward-walking position."
     },
     {
       "exerciseId": "db-return-push-from-stance",
@@ -8880,7 +8890,9 @@
       "name": "Roman Chair Crunch",
       "equipment": "Bodyweight",
       "guideSha256": "db7de10bba4c3a90dd8ba7764bf86c5638b5805df1508d6183916d54ca558dbc",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-e-002-1-1",
+      "reviewNote": "Face-up seated Roman-chair support secures ankles; reclined intermediate torso and crossed arms establish abdominal crunch variation."
     },
     {
       "exerciseId": "wger-12a80404-8684-4ff0-a473-d80b4ad8cd5e",
@@ -8914,7 +8926,9 @@
       "name": "Chest-supported low-cable rope row",
       "equipment": "Cable",
       "guideSha256": "35850454300235ace1c1b4f5a2d54a304b5b1d2e7aad198d934ca0596ace2fbf",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-source-001-0-1",
+      "reviewNote": "Both feet stay on floor with chest supported on incline bench upper pad; two neutral-grip rope ends draw toward lower chest and join cable leading to floor-level pulley. Complete bench and cable machine fit panel."
     },
     {
       "exerciseId": "db-rope-straight-arm-pulldown",
@@ -9821,7 +9835,9 @@
       "name": "Single-arm high-cable pulldown",
       "equipment": "Cable",
       "guideSha256": "11cba0e25841ffef051a726684b744f5a88edfb28f48ee6ea06bc5c50f429537",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-source-001-0-0",
+      "reviewNote": "Athlete sits directly on floor, one hand reaches to single grip on high overhead cable and other hand braces beside hip; representative stretched starting phase with full apparatus visible."
     },
     {
       "exerciseId": "db-single-dumbbell-raise",

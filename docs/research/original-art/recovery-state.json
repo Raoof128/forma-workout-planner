@@ -3,8 +3,8 @@
   "updatedAt": "2026-10-14",
   "recoveredRemoteCommit": "8d0c5a765fe8a7276884e5198827d0f5f193c69c",
   "total": 1414,
-  "accepted": 1379,
-  "remaining": 35,
+  "accepted": 1387,
+  "remaining": 27,
   "ownerRequest": "Push assets and logs frequently so a crashed cloud session can be recovered.",
   "resumeInstructions": [
     "git fetch origin main and compare remote coverage before generating",
@@ -314,6 +314,36 @@
         "held": 2,
         "pending": 0
       }
+    },
+    {
+      "batch": "finish-e-002",
+      "sourceAssetPath": "assets/exercise-artwork/finish-e-002.png",
+      "recordPath": "docs/research/original-art/finish-e-002.json",
+      "reviewCounts": {
+        "accepted": 4,
+        "held": 0,
+        "pending": 0
+      }
+    },
+    {
+      "batch": "finish-source-001",
+      "sourceAssetPath": "assets/exercise-artwork/finish-source-001.png",
+      "recordPath": "docs/research/original-art/finish-source-001.json",
+      "reviewCounts": {
+        "accepted": 4,
+        "held": 0,
+        "pending": 0
+      }
+    },
+    {
+      "batch": "finish-f-001-retry",
+      "sourceAssetPath": "assets/exercise-artwork/finish-f-001-retry.png",
+      "recordPath": "docs/research/original-art/finish-f-001-retry.json",
+      "reviewCounts": {
+        "accepted": 0,
+        "held": 4,
+        "pending": 0
+      }
     }
   ],
   "remainingAssignments": [
@@ -367,13 +397,6 @@
       "status": "pending"
     },
     {
-      "exerciseId": "wger-a94c635d-096c-45a8-a68c-64941d0b6ba4",
-      "name": "Supine crossed-leg rotation stretch",
-      "equipment": "Bodyweight",
-      "guideSha256": "166d978d1f6b1bd86391da2a50f3374e51eaf9c0e753dca17e3346137f65da61",
-      "status": "pending"
-    },
-    {
       "exerciseId": "wger-e872658a-3bac-4d9e-bcf2-15919ebea43a",
       "name": "commando pull-ups",
       "equipment": "Pull-up bar",
@@ -392,13 +415,6 @@
       "name": "Deadlifts",
       "equipment": "Barbell",
       "guideSha256": "97c429773c23a72007ea1d8002a8d846dacfb5d9d6806155027a88101f12e884",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "wger-a4413bcc-dcd1-4332-a09a-fee94a265e22",
-      "name": "External Rotation Stretch",
-      "equipment": "Barbell",
-      "guideSha256": "d95f398be4a5e617e729210b9ce4be2166471fd2ee9a060740915e48348e466a",
       "status": "pending"
     },
     {
@@ -472,24 +488,10 @@
       "status": "pending"
     },
     {
-      "exerciseId": "wger-346634cf-3896-4c10-bd66-28fb69d02573",
-      "name": "Medicine-ball V-up",
-      "equipment": "Medicine ball",
-      "guideSha256": "c643c56a393bba2f7da3ce7b27b0ba45a718f53dcccd260af2a63ba9a1469e61",
-      "status": "pending"
-    },
-    {
       "exerciseId": "wger-d27a93fa-7066-477c-a475-c6b6170831db",
       "name": "Neck extension",
       "equipment": "EZ bar",
       "guideSha256": "b527c22adfb88058e7722de55b248267b81e41a66940278d5cd667da82f9f1f7",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "wger-5ed12527-c8be-4e86-8f2a-cf9dd4781f5b",
-      "name": "One Arm Overhead Cable Tricep Extension",
-      "equipment": "Cable",
-      "guideSha256": "fa0ef5d52f3e4531e590479c3848a51b49b973c14a83b753ea20c08501f7678f",
       "status": "pending"
     },
     {
@@ -500,38 +502,10 @@
       "status": "pending"
     },
     {
-      "exerciseId": "wger-7e74b1f1-636b-4821-b4be-3711328b89b4",
-      "name": "Retro Treadmill Walking",
-      "equipment": "Bodyweight",
-      "guideSha256": "16dc7dda31142d6add1d4db37749c3caf268a4560a58743649c570766fc780ac",
-      "status": "pending"
-    },
-    {
       "exerciseId": "wger-cf6bf132-fe21-4b70-8f73-006545246f05",
       "name": "Reverse Clamshell",
       "equipment": "Bodyweight",
       "guideSha256": "036ffb9cfcfce9a8a6907963453a51221586c7b4b1b964efc25c05b106114759",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "wger-af2f774c-296c-4d14-8e4a-fad77175ae37",
-      "name": "Roman Chair Crunch",
-      "equipment": "Bodyweight",
-      "guideSha256": "db7de10bba4c3a90dd8ba7764bf86c5638b5805df1508d6183916d54ca558dbc",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "wger-148f2ffc-05e2-486b-874f-2a401337a1c6",
-      "name": "Chest-supported low-cable rope row",
-      "equipment": "Cable",
-      "guideSha256": "35850454300235ace1c1b4f5a2d54a304b5b1d2e7aad198d934ca0596ace2fbf",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "wger-81dd44b3-67b3-4198-9e57-c2a80b3c4102",
-      "name": "Single-arm high-cable pulldown",
-      "equipment": "Cable",
-      "guideSha256": "11cba0e25841ffef051a726684b744f5a88edfb28f48ee6ea06bc5c50f429537",
       "status": "pending"
     },
     {
@@ -623,6 +597,18 @@
       ],
       "accepted": 1379,
       "remaining": 35,
+      "mediaValidation": "passed",
+      "action": "commit and push original assets, full prompts, reviews and coverage"
+    },
+    {
+      "date": "2026-10-14",
+      "batches": [
+        "finish-e-002",
+        "finish-source-001",
+        "finish-f-001-retry"
+      ],
+      "accepted": 1387,
+      "remaining": 27,
       "mediaValidation": "passed",
       "action": "commit and push original assets, full prompts, reviews and coverage"
     }

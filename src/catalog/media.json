@@ -3767,6 +3767,34 @@
         "row": 1
       }
     },
+    "forma-original-finish-e-002-0-1": {
+      "src": "/exercise-media/original/finish-e-002.png?v=2324cd814c14",
+      "sha256": "2324cd814c147c37afb30c7768d56763dcd0afa13fea3ec93ce158f16405f51c",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Supine crossed-leg rotation stretch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-e-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 512,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
     "forma-original-movements-013-2-1": {
       "src": "/exercise-media/original/movements-013.png?v=08aaba80f7aa",
       "sha256": "08aaba80f7aa581cc926c28d815441e430d01dc01101c753c91f56cd63e3a34e",
@@ -9002,6 +9030,34 @@
           "y": 302,
           "width": 384,
           "height": 340
+        }
+      }
+    },
+    "forma-original-finish-e-002-1-0": {
+      "src": "/exercise-media/original/finish-e-002.png?v=2324cd814c14",
+      "sha256": "2324cd814c147c37afb30c7768d56763dcd0afa13fea3ec93ce158f16405f51c",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "External Rotation Stretch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-e-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 512
         }
       }
     },
@@ -17117,6 +17173,34 @@
         }
       }
     },
+    "forma-original-finish-source-001-1-0": {
+      "src": "/exercise-media/original/finish-source-001.png?v=8888d1e2dd57",
+      "sha256": "8888d1e2dd57893cb6047c304befc5d5fb1fcc6c65c245f34ec3e682954f7fc9",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Medicine-ball V-up",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-source-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 480
+        }
+      }
+    },
     "forma-original-movements-055-0-1": {
       "src": "/exercise-media/original/movements-055.png?v=c86b0d1b1cf7",
       "sha256": "c86b0d1b1cf78b9fea09c22c388901a6d3bd3554a2e4cfd7fc80103e6cf8a9ed",
@@ -18066,6 +18150,34 @@
           "y": 512,
           "width": 768,
           "height": 512
+        }
+      }
+    },
+    "forma-original-finish-source-001-1-1": {
+      "src": "/exercise-media/original/finish-source-001.png?v=8888d1e2dd57",
+      "sha256": "8888d1e2dd57893cb6047c304befc5d5fb1fcc6c65c245f34ec3e682954f7fc9",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "One Arm Overhead Cable Tricep Extension",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-source-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 480,
+          "width": 768,
+          "height": 544
         }
       }
     },
@@ -21579,6 +21691,34 @@
         }
       }
     },
+    "forma-original-finish-e-002-0-0": {
+      "src": "/exercise-media/original/finish-e-002.png?v=2324cd814c14",
+      "sha256": "2324cd814c147c37afb30c7768d56763dcd0afa13fea3ec93ce158f16405f51c",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Retro Treadmill Walking",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-e-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
     "forma-original-movements-068-1-2": {
       "src": "/exercise-media/original/movements-068.png?v=30ad6b76cd96",
       "sha256": "30ad6b76cd966778fa1a1d879c5c7de3f07f0864e71904401b68bbf73f70a752",
@@ -22469,6 +22609,34 @@
         }
       }
     },
+    "forma-original-finish-e-002-1-1": {
+      "src": "/exercise-media/original/finish-e-002.png?v=2324cd814c14",
+      "sha256": "2324cd814c147c37afb30c7768d56763dcd0afa13fea3ec93ce158f16405f51c",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Roman Chair Crunch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-e-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 512,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
     "forma-original-finish-d-002-1-0": {
       "src": "/exercise-media/original/finish-d-002.png?v=16fd5e86175d",
       "sha256": "16fd5e86175d902db2833b97fde791c8bb59c426a4a9cb08cbcc284b74f6a4d3",
@@ -22550,6 +22718,34 @@
           "y": 642,
           "width": 384,
           "height": 382
+        }
+      }
+    },
+    "forma-original-finish-source-001-0-1": {
+      "src": "/exercise-media/original/finish-source-001.png?v=8888d1e2dd57",
+      "sha256": "8888d1e2dd57893cb6047c304befc5d5fb1fcc6c65c245f34ec3e682954f7fc9",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Chest-supported low-cable rope row",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-source-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 480,
+          "width": 768,
+          "height": 544
         }
       }
     },
@@ -25046,6 +25242,34 @@
           "y": 0,
           "width": 384,
           "height": 338
+        }
+      }
+    },
+    "forma-original-finish-source-001-0-0": {
+      "src": "/exercise-media/original/finish-source-001.png?v=8888d1e2dd57",
+      "sha256": "8888d1e2dd57893cb6047c304befc5d5fb1fcc6c65c245f34ec3e682954f7fc9",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Single-arm high-cable pulldown",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-source-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 480
         }
       }
     },
@@ -32877,6 +33101,10 @@
       "assetId": "forma-original-movements-013-0-1",
       "caption": "Bradford/Rocky Presses · Representative exercise position; follow the guide for the complete movement."
     },
+    "wger-a94c635d-096c-45a8-a68c-64941d0b6ba4": {
+      "assetId": "forma-original-finish-e-002-0-1",
+      "caption": "Supine crossed-leg rotation stretch · Representative exercise position; follow the guide for the complete movement."
+    },
     "wger-a6d880e5-bdbe-408f-b762-3b41c7fff834": {
       "assetId": "forma-original-movements-013-2-1",
       "caption": "Bronco · Representative exercise position; follow the guide for the complete movement."
@@ -33928,6 +34156,10 @@
     "db-external-rotation": {
       "assetId": "forma-original-movements-031-1-1",
       "caption": "External Rotation · Representative exercise position; follow the guide for the complete movement."
+    },
+    "wger-a4413bcc-dcd1-4332-a09a-fee94a265e22": {
+      "assetId": "forma-original-finish-e-002-1-0",
+      "caption": "External Rotation Stretch · Representative exercise position; follow the guide for the complete movement."
     },
     "db-external-rotation-with-band": {
       "assetId": "forma-original-corrections-037-1-1",
@@ -35217,6 +35449,10 @@
       "assetId": "forma-original-corrections-041-1-1",
       "caption": "Meadows Row · Representative exercise position; follow the guide for the complete movement."
     },
+    "wger-346634cf-3896-4c10-bd66-28fb69d02573": {
+      "assetId": "forma-original-finish-source-001-1-0",
+      "caption": "Medicine-ball V-up · Representative exercise position; follow the guide for the complete movement."
+    },
     "db-medicine-ball-chest-pass": {
       "assetId": "forma-original-movements-055-0-1",
       "caption": "Medicine Ball Chest Pass · Representative exercise position; follow the guide for the complete movement."
@@ -35372,6 +35608,10 @@
     "db-one-arm-lat-pulldown": {
       "assetId": "forma-original-machines-04-2-2",
       "caption": "Cable lat-pulldown station · Equipment reference; choose the attachment, grip and movement from this guide."
+    },
+    "wger-5ed12527-c8be-4e86-8f2a-cf9dd4781f5b": {
+      "assetId": "forma-original-finish-source-001-1-1",
+      "caption": "One Arm Overhead Cable Tricep Extension · Representative exercise position; follow the guide for the complete movement."
     },
     "db-one-arm-pronated-dumbbell-triceps-extension": {
       "assetId": "forma-original-movements-058-0-1",
@@ -35905,6 +36145,10 @@
       "assetId": "forma-original-movements-068-3-1",
       "caption": "Rest (for timed workouts) · Representative exercise position; follow the guide for the complete movement."
     },
+    "wger-7e74b1f1-636b-4821-b4be-3711328b89b4": {
+      "assetId": "forma-original-finish-e-002-0-0",
+      "caption": "Retro Treadmill Walking · Representative exercise position; follow the guide for the complete movement."
+    },
     "db-return-push-from-stance": {
       "assetId": "forma-original-movements-068-1-2",
       "caption": "Return Push from Stance · Representative exercise position; follow the guide for the complete movement."
@@ -36053,6 +36297,10 @@
       "assetId": "forma-original-movements-071-1-1",
       "caption": "Roll-overs into V-sits · Representative exercise position; follow the guide for the complete movement."
     },
+    "wger-af2f774c-296c-4d14-8e4a-fad77175ae37": {
+      "assetId": "forma-original-finish-e-002-1-1",
+      "caption": "Roman Chair Crunch · Representative exercise position; follow the guide for the complete movement."
+    },
     "wger-12a80404-8684-4ff0-a473-d80b4ad8cd5e": {
       "assetId": "forma-original-finish-d-002-1-0",
       "caption": "Roman-chair dumbbell hip hinge · Representative exercise position; follow the guide for the complete movement."
@@ -36064,6 +36312,10 @@
     "db-rope-climb": {
       "assetId": "forma-original-movements-071-1-2",
       "caption": "Rope Climb · Representative exercise position; follow the guide for the complete movement."
+    },
+    "wger-148f2ffc-05e2-486b-874f-2a401337a1c6": {
+      "assetId": "forma-original-finish-source-001-0-1",
+      "caption": "Chest-supported low-cable rope row · Representative exercise position; follow the guide for the complete movement."
     },
     "db-rope-straight-arm-pulldown": {
       "assetId": "forma-original-machines-04-2-2",
@@ -36464,6 +36716,10 @@
     "wger-768e0703-a04d-4d97-89ce-a49cd6be2b06": {
       "assetId": "forma-original-movements-079-0-0",
       "caption": "Single Arm Plank to Row · Representative exercise position; follow the guide for the complete movement."
+    },
+    "wger-81dd44b3-67b3-4198-9e57-c2a80b3c4102": {
+      "assetId": "forma-original-finish-source-001-0-0",
+      "caption": "Single-arm high-cable pulldown · Representative exercise position; follow the guide for the complete movement."
     },
     "db-single-dumbbell-raise": {
       "assetId": "forma-original-movements-079-2-0",
