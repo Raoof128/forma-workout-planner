@@ -31209,6 +31209,1534 @@
           "height": 512
         }
       }
+    },
+    "forma-original-movements-001-0-2": {
+      "src": "/exercise-media/original/movements-001.png?v=6dc763249541",
+      "sha256": "6dc763249541220d936f252f553923000f28c8e048e367c0b1a3ffa31e583bcc",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Standing bent-knee hip raise",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/movements-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 0,
+        "row": 2
+      }
+    },
+    "forma-original-movements-005-2-2": {
+      "src": "/exercise-media/original/movements-005.png?v=386cc82df12d",
+      "sha256": "386cc82df12d641d9f7938da97a857bd8c9a497ea8d6a46699f1e189c535cc28",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Standing band hip abduction (guide variant)",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/movements-005.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 2,
+        "row": 2
+      }
+    },
+    "forma-original-movements-044-1-2": {
+      "src": "/exercise-media/original/movements-044.png?v=1c6e866cced3",
+      "sha256": "1c6e866cced3dec2cb78c25d06fea638602a14b9e721c45afcd8c53d98c55437",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Neutral-grip chest pulldown",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/movements-044.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 1,
+        "row": 2,
+        "bounds": {
+          "x": 384,
+          "y": 650,
+          "width": 384,
+          "height": 374
+        }
+      }
+    },
+    "forma-original-recovery-a-001-0-0": {
+      "src": "/exercise-media/original/recovery-a-001.png?v=e30e573637fb",
+      "sha256": "e30e573637fb36f483fe2c3b1cf1402d23edd861bef512da62ebc9e07d3baa9c",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Band Assisted Pull-Up",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-a-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-a-001-1-0": {
+      "src": "/exercise-media/original/recovery-a-001.png?v=e30e573637fb",
+      "sha256": "e30e573637fb36f483fe2c3b1cf1402d23edd861bef512da62ebc9e07d3baa9c",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Band Terminal Knee extension",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-a-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 512,
+          "y": 0,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-a-001-0-1": {
+      "src": "/exercise-media/original/recovery-a-001.png?v=e30e573637fb",
+      "sha256": "e30e573637fb36f483fe2c3b1cf1402d23edd861bef512da62ebc9e07d3baa9c",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Bent-Arm Dumbbell Pullover",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-a-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 512,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-a-001-2-1": {
+      "src": "/exercise-media/original/recovery-a-001.png?v=e30e573637fb",
+      "sha256": "e30e573637fb36f483fe2c3b1cf1402d23edd861bef512da62ebc9e07d3baa9c",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Bicycling",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-a-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 1,
+        "bounds": {
+          "x": 1024,
+          "y": 512,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-a-002-0-1": {
+      "src": "/exercise-media/original/recovery-a-002.png?v=62d04ca45622",
+      "sha256": "62d04ca456229cb8ae42727c13dea247bf06f32a597df17bc6c09ed3afabc480",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "box jumps",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-a-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 502,
+          "width": 501,
+          "height": 522
+        }
+      }
+    },
+    "forma-original-recovery-a-002-1-1": {
+      "src": "/exercise-media/original/recovery-a-002.png?v=62d04ca45622",
+      "sha256": "62d04ca456229cb8ae42727c13dea247bf06f32a597df17bc6c09ed3afabc480",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Chain Handle Extension",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-a-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 516,
+          "y": 502,
+          "width": 504,
+          "height": 522
+        }
+      }
+    },
+    "forma-original-recovery-a-002-2-1": {
+      "src": "/exercise-media/original/recovery-a-002.png?v=62d04ca45622",
+      "sha256": "62d04ca456229cb8ae42727c13dea247bf06f32a597df17bc6c09ed3afabc480",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Chair Upper Body Stretch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-a-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 1,
+        "bounds": {
+          "x": 1035,
+          "y": 502,
+          "width": 501,
+          "height": 522
+        }
+      }
+    },
+    "forma-original-recovery-a-003-0-0": {
+      "src": "/exercise-media/original/recovery-a-003.png?v=9ff21be3595f",
+      "sha256": "9ff21be3595f9918b8a415b459f91afee78731e97749fe168557415dfd3f3159",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Clamshell",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-a-003.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 512,
+          "height": 440
+        }
+      }
+    },
+    "forma-original-recovery-a-003-2-0": {
+      "src": "/exercise-media/original/recovery-a-003.png?v=9ff21be3595f",
+      "sha256": "9ff21be3595f9918b8a415b459f91afee78731e97749fe168557415dfd3f3159",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Clean from Blocks",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-a-003.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 0,
+        "bounds": {
+          "x": 1024,
+          "y": 0,
+          "width": 512,
+          "height": 440
+        }
+      }
+    },
+    "forma-original-recovery-a-003-0-1": {
+      "src": "/exercise-media/original/recovery-a-003.png?v=9ff21be3595f",
+      "sha256": "9ff21be3595f9918b8a415b459f91afee78731e97749fe168557415dfd3f3159",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Clock Push-Up",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-a-003.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 440,
+          "width": 512,
+          "height": 584
+        }
+      }
+    },
+    "forma-original-recovery-a-003-2-1": {
+      "src": "/exercise-media/original/recovery-a-003.png?v=9ff21be3595f",
+      "sha256": "9ff21be3595f9918b8a415b459f91afee78731e97749fe168557415dfd3f3159",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Conan's Wheel",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-a-003.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 1,
+        "bounds": {
+          "x": 1024,
+          "y": 440,
+          "width": 512,
+          "height": 584
+        }
+      }
+    },
+    "forma-original-recovery-a-004-1-0": {
+      "src": "/exercise-media/original/recovery-a-004.png?v=c4a5c528cec1",
+      "sha256": "c4a5c528cec1daf54776bffdccf51544665a71d65d0992378b85c40a20320bb4",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Cross-Bench Dumbbell Pullovers",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-a-004.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 513,
+          "y": 1,
+          "width": 510,
+          "height": 454
+        }
+      }
+    },
+    "forma-original-recovery-a-004-2-0": {
+      "src": "/exercise-media/original/recovery-a-004.png?v=c4a5c528cec1",
+      "sha256": "c4a5c528cec1daf54776bffdccf51544665a71d65d0992378b85c40a20320bb4",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Crunch - Hands Overhead",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-a-004.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 0,
+        "bounds": {
+          "x": 1025,
+          "y": 1,
+          "width": 510,
+          "height": 454
+        }
+      }
+    },
+    "forma-original-recovery-a-004-0-1": {
+      "src": "/exercise-media/original/recovery-a-004.png?v=c4a5c528cec1",
+      "sha256": "c4a5c528cec1daf54776bffdccf51544665a71d65d0992378b85c40a20320bb4",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Curl  - With Shoulder Elevated",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-a-004.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 1,
+          "y": 457,
+          "width": 510,
+          "height": 566
+        }
+      }
+    },
+    "forma-original-recovery-a-004-2-1": {
+      "src": "/exercise-media/original/recovery-a-004.png?v=c4a5c528cec1",
+      "sha256": "c4a5c528cec1daf54776bffdccf51544665a71d65d0992378b85c40a20320bb4",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "DB Wrist Extension",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-a-004.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 1,
+        "bounds": {
+          "x": 1025,
+          "y": 457,
+          "width": 510,
+          "height": 566
+        }
+      }
+    },
+    "forma-original-recovery-b-001-0-0": {
+      "src": "/exercise-media/original/recovery-b-001.png?v=9378d2a3b1c0",
+      "sha256": "9378d2a3b1c00fd78dd1b91e095ab1dbbbcf8398be9467a72827ec0189dbb48c",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Dumbbell Raise",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-b-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-b-001-1-0": {
+      "src": "/exercise-media/original/recovery-b-001.png?v=9378d2a3b1c0",
+      "sha256": "9378d2a3b1c00fd78dd1b91e095ab1dbbbcf8398be9467a72827ec0189dbb48c",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Dumbbell Single-leg Hip Thrust",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-b-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 512,
+          "y": 0,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-b-001-2-0": {
+      "src": "/exercise-media/original/recovery-b-001.png?v=9378d2a3b1c0",
+      "sha256": "9378d2a3b1c00fd78dd1b91e095ab1dbbbcf8398be9467a72827ec0189dbb48c",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Dumbbell Thruster",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-b-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 0,
+        "bounds": {
+          "x": 1024,
+          "y": 0,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-b-001-1-1": {
+      "src": "/exercise-media/original/recovery-b-001.png?v=9378d2a3b1c0",
+      "sha256": "9378d2a3b1c00fd78dd1b91e095ab1dbbbcf8398be9467a72827ec0189dbb48c",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "elbow lever",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-b-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 512,
+          "y": 512,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-b-001-2-1": {
+      "src": "/exercise-media/original/recovery-b-001.png?v=9378d2a3b1c0",
+      "sha256": "9378d2a3b1c00fd78dd1b91e095ab1dbbbcf8398be9467a72827ec0189dbb48c",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Elbow to Knee",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-b-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 1,
+        "bounds": {
+          "x": 1024,
+          "y": 512,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-b-002-0-0": {
+      "src": "/exercise-media/original/recovery-b-002.png?v=1cdbe5680037",
+      "sha256": "1cdbe56800374e4db464a1df7986e46210f1d8502efe83179b4487bfd2e47d86",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Elevated Back Lunge",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-b-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 2,
+          "y": 2,
+          "width": 505,
+          "height": 474
+        }
+      }
+    },
+    "forma-original-recovery-b-002-1-0": {
+      "src": "/exercise-media/original/recovery-b-002.png?v=1cdbe5680037",
+      "sha256": "1cdbe56800374e4db464a1df7986e46210f1d8502efe83179b4487bfd2e47d86",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Exercise Band Dorsiflexion",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-b-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 511,
+          "y": 2,
+          "width": 510,
+          "height": 474
+        }
+      }
+    },
+    "forma-original-recovery-b-002-2-0": {
+      "src": "/exercise-media/original/recovery-b-002.png?v=1cdbe5680037",
+      "sha256": "1cdbe56800374e4db464a1df7986e46210f1d8502efe83179b4487bfd2e47d86",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Extended Range One-Arm Kettlebell Floor Press",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-b-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 0,
+        "bounds": {
+          "x": 1025,
+          "y": 2,
+          "width": 509,
+          "height": 474
+        }
+      }
+    },
+    "forma-original-recovery-b-003-1-0": {
+      "src": "/exercise-media/original/recovery-b-003.png?v=ef0a354b4919",
+      "sha256": "ef0a354b49197b4793d7eff0f28a560fac88d2af527d6b592f82e56c652b992a",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Foam Roller Anterior tibialis",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-b-003.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 512,
+          "y": 0,
+          "width": 512,
+          "height": 480
+        }
+      }
+    },
+    "forma-original-recovery-b-003-2-0": {
+      "src": "/exercise-media/original/recovery-b-003.png?v=ef0a354b4919",
+      "sha256": "ef0a354b49197b4793d7eff0f28a560fac88d2af527d6b592f82e56c652b992a",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Forearm Curls (underhand grip)",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-b-003.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 0,
+        "bounds": {
+          "x": 1024,
+          "y": 0,
+          "width": 512,
+          "height": 480
+        }
+      }
+    },
+    "forma-original-recovery-b-003-0-1": {
+      "src": "/exercise-media/original/recovery-b-003.png?v=ef0a354b4919",
+      "sha256": "ef0a354b49197b4793d7eff0f28a560fac88d2af527d6b592f82e56c652b992a",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Front Raises",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-b-003.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 480,
+          "width": 512,
+          "height": 544
+        }
+      }
+    },
+    "forma-original-recovery-b-004-0-1": {
+      "src": "/exercise-media/original/recovery-b-004.png?v=d46620da7b26",
+      "sha256": "d46620da7b263f8920f9f759310e2aecbb3cc95e0fb1824a3d0e804f060a312e",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Hip Airplane",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-b-004.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 512,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-b-004-1-1": {
+      "src": "/exercise-media/original/recovery-b-004.png?v=d46620da7b26",
+      "sha256": "d46620da7b263f8920f9f759310e2aecbb3cc95e0fb1824a3d0e804f060a312e",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Hip hinge",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-b-004.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 512,
+          "y": 512,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-b-004-2-1": {
+      "src": "/exercise-media/original/recovery-b-004.png?v=d46620da7b26",
+      "sha256": "d46620da7b263f8920f9f759310e2aecbb3cc95e0fb1824a3d0e804f060a312e",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Hip-out and hip-in lateral steps",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-b-004.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 1,
+        "bounds": {
+          "x": 1024,
+          "y": 512,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-c-001-0-0": {
+      "src": "/exercise-media/original/recovery-c-001.png?v=c5b20b1e7e61",
+      "sha256": "c5b20b1e7e61d5cec5c8db912f9c20f3f66b36f39a9cc215e2035f56033d84cf",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Isometric Neck Exercise - Front And Back",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-c-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 512,
+          "height": 492
+        }
+      }
+    },
+    "forma-original-recovery-c-001-2-1": {
+      "src": "/exercise-media/original/recovery-c-001.png?v=c5b20b1e7e61",
+      "sha256": "c5b20b1e7e61d5cec5c8db912f9c20f3f66b36f39a9cc215e2035f56033d84cf",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Jerk Dip Squat",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-c-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 1,
+        "bounds": {
+          "x": 1024,
+          "y": 492,
+          "width": 512,
+          "height": 532
+        }
+      }
+    },
+    "forma-original-recovery-c-002-0-0": {
+      "src": "/exercise-media/original/recovery-c-002.png?v=f543173a382b",
+      "sha256": "f543173a382b70362592e8bf010414932e2a3745c4beb7c2970106957c5c786f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Keg Load",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-c-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 512,
+          "height": 500
+        }
+      }
+    },
+    "forma-original-recovery-c-002-1-0": {
+      "src": "/exercise-media/original/recovery-c-002.png?v=f543173a382b",
+      "sha256": "f543173a382b70362592e8bf010414932e2a3745c4beb7c2970106957c5c786f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Kegel Exercise",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-c-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 512,
+          "y": 0,
+          "width": 512,
+          "height": 500
+        }
+      }
+    },
+    "forma-original-recovery-c-002-2-0": {
+      "src": "/exercise-media/original/recovery-c-002.png?v=f543173a382b",
+      "sha256": "f543173a382b70362592e8bf010414932e2a3745c4beb7c2970106957c5c786f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Kettlebell Arnold Press",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-c-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 0,
+        "bounds": {
+          "x": 1024,
+          "y": 0,
+          "width": 512,
+          "height": 500
+        }
+      }
+    },
+    "forma-original-recovery-c-002-0-1": {
+      "src": "/exercise-media/original/recovery-c-002.png?v=f543173a382b",
+      "sha256": "f543173a382b70362592e8bf010414932e2a3745c4beb7c2970106957c5c786f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Kettlebell Seated Press",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-c-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 500,
+          "width": 512,
+          "height": 524
+        }
+      }
+    },
+    "forma-original-recovery-c-002-1-1": {
+      "src": "/exercise-media/original/recovery-c-002.png?v=f543173a382b",
+      "sha256": "f543173a382b70362592e8bf010414932e2a3745c4beb7c2970106957c5c786f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Kettlebell Thruster",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-c-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 512,
+          "y": 500,
+          "width": 512,
+          "height": 524
+        }
+      }
+    },
+    "forma-original-recovery-c-002-2-1": {
+      "src": "/exercise-media/original/recovery-c-002.png?v=f543173a382b",
+      "sha256": "f543173a382b70362592e8bf010414932e2a3745c4beb7c2970106957c5c786f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Kickstand RDL",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-c-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 1,
+        "bounds": {
+          "x": 1024,
+          "y": 500,
+          "width": 512,
+          "height": 524
+        }
+      }
+    },
+    "forma-original-recovery-c-003-2-0": {
+      "src": "/exercise-media/original/recovery-c-003.png?v=eb32567b961a",
+      "sha256": "eb32567b961ad79f32ce85fd1ff7149ed381a015518327121497dab9212127df",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Landmine Squat to Press",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-c-003.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 0,
+        "bounds": {
+          "x": 1024,
+          "y": 0,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-c-003-0-1": {
+      "src": "/exercise-media/original/recovery-c-003.png?v=eb32567b961a",
+      "sha256": "eb32567b961ad79f32ce85fd1ff7149ed381a015518327121497dab9212127df",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Lat Pull DB",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-c-003.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 512,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-d-001-1-0": {
+      "src": "/exercise-media/original/recovery-d-001.png?v=e85b9a48c271",
+      "sha256": "e85b9a48c2716c51d56e3932828783f9a5df35d7e2b2f96a8813cba21817a56f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "One Arm Supinated Dumbbell Triceps Extension",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-d-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 512,
+          "y": 0,
+          "width": 488,
+          "height": 500
+        }
+      }
+    },
+    "forma-original-recovery-d-001-2-0": {
+      "src": "/exercise-media/original/recovery-d-001.png?v=e85b9a48c271",
+      "sha256": "e85b9a48c2716c51d56e3932828783f9a5df35d7e2b2f96a8813cba21817a56f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "One Half Locust",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-d-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 0,
+        "bounds": {
+          "x": 1000,
+          "y": 0,
+          "width": 536,
+          "height": 500
+        }
+      }
+    },
+    "forma-original-recovery-d-001-0-1": {
+      "src": "/exercise-media/original/recovery-d-001.png?v=e85b9a48c271",
+      "sha256": "e85b9a48c2716c51d56e3932828783f9a5df35d7e2b2f96a8813cba21817a56f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "One Knee To Chest",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-d-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 500,
+          "width": 580,
+          "height": 524
+        }
+      }
+    },
+    "forma-original-recovery-d-001-1-1": {
+      "src": "/exercise-media/original/recovery-d-001.png?v=e85b9a48c271",
+      "sha256": "e85b9a48c2716c51d56e3932828783f9a5df35d7e2b2f96a8813cba21817a56f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "One Leg Barbell Squat",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-d-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 580,
+          "y": 500,
+          "width": 430,
+          "height": 524
+        }
+      }
+    },
+    "forma-original-recovery-d-001-2-1": {
+      "src": "/exercise-media/original/recovery-d-001.png?v=e85b9a48c271",
+      "sha256": "e85b9a48c2716c51d56e3932828783f9a5df35d7e2b2f96a8813cba21817a56f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "One-Arm Incline Lateral Raise",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-d-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 1,
+        "bounds": {
+          "x": 1010,
+          "y": 500,
+          "width": 526,
+          "height": 524
+        }
+      }
+    },
+    "forma-original-recovery-d-002-0-0": {
+      "src": "/exercise-media/original/recovery-d-002.png?v=04b3f9486f6d",
+      "sha256": "04b3f9486f6d27494a37b98e49afc8095cc0799ebc7e7e9b312a516f63f6bbf9",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "One-Arm Kettlebell Push Press",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-d-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-d-002-2-0": {
+      "src": "/exercise-media/original/recovery-d-002.png?v=04b3f9486f6d",
+      "sha256": "04b3f9486f6d27494a37b98e49afc8095cc0799ebc7e7e9b312a516f63f6bbf9",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Open Palm Kettlebell Clean",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-d-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 0,
+        "bounds": {
+          "x": 1024,
+          "y": 0,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-d-002-0-1": {
+      "src": "/exercise-media/original/recovery-d-002.png?v=04b3f9486f6d",
+      "sha256": "04b3f9486f6d27494a37b98e49afc8095cc0799ebc7e7e9b312a516f63f6bbf9",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Palms-Up Barbell Wrist Curl Over A Bench",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-d-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 512,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-d-002-1-1": {
+      "src": "/exercise-media/original/recovery-d-002.png?v=04b3f9486f6d",
+      "sha256": "04b3f9486f6d27494a37b98e49afc8095cc0799ebc7e7e9b312a516f63f6bbf9",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Palms-Up Dumbbell Wrist Curl Over A Bench",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-d-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 512,
+          "y": 512,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-d-002-2-1": {
+      "src": "/exercise-media/original/recovery-d-002.png?v=04b3f9486f6d",
+      "sha256": "04b3f9486f6d27494a37b98e49afc8095cc0799ebc7e7e9b312a516f63f6bbf9",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Pause Hack Squats",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-d-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 1,
+        "bounds": {
+          "x": 1024,
+          "y": 512,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-decline-040-0-0": {
+      "src": "/exercise-media/original/recovery-decline-040.png?v=cf5823759ae9",
+      "sha256": "cf5823759ae96a629be94f1536ed80d258bf663dfa09e0f2089cc283c25743d7",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Weighted Sit-Ups - With Bands",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-decline-040.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-decline-040-0-1": {
+      "src": "/exercise-media/original/recovery-decline-040.png?v=cf5823759ae9",
+      "sha256": "cf5823759ae96a629be94f1536ed80d258bf663dfa09e0f2089cc283c25743d7",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Negative Crunches",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-decline-040.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 512,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-recovery-decline-040-1-1": {
+      "src": "/exercise-media/original/recovery-decline-040.png?v=cf5823759ae9",
+      "sha256": "cf5823759ae96a629be94f1536ed80d258bf663dfa09e0f2089cc283c25743d7",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "On-Your-Back Quad Stretch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-decline-040.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 512,
+          "width": 768,
+          "height": 512
+        }
+      }
     }
   },
   "exercises": {
@@ -40598,6 +42126,55 @@
       "reviewStatus": "accepted",
       "reviewNote": "Reviewed secured high-foot low-head decline band sit-up and negative crunch, plus supine bench-supported quad stretch with bent leg hanging below side.",
       "guideSha256": "529505fb62a14fb2399e53667a211e61f76aa91bd0596958dc68d661838af310"
+    },
+    "wger-d015a276-02ad-4c28-9d36-aedfbb431f53": {
+      "assetId": "forma-original-movements-001-0-2",
+      "caption": "Standing bent-knee hip raise · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Re-inspected original full sheet and matching representative pose against independently clarified guide and researched source metadata; ID and logging units preserved.",
+      "guideSha256": "cba558096e57640648ad66505fec6da85db0a07da6bd84bfd5c922d186d670c8"
+    },
+    "db-band-hip-adductions": {
+      "assetId": "forma-original-movements-005-2-2",
+      "caption": "Standing band hip abduction (guide variant) · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Re-inspected original full sheet and matching representative pose against independently clarified guide and researched source metadata; ID and logging units preserved.",
+      "guideSha256": "9c9c14d6f1fc3e0cbc8e5907c41d0617b2f8a95aa47e77786774e24c45ddd56b"
+    },
+    "wger-eaa7927e-6ea0-4fd5-bbcd-525fe90a184b": {
+      "assetId": "forma-original-movements-044-1-2",
+      "caption": "Neutral-grip chest pulldown · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Re-inspected original full sheet and matching representative pose against independently clarified guide and researched source metadata; ID and logging units preserved.",
+      "guideSha256": "9a1c81ea69969933993d7d8598b2993300de0ae781109d0ee26096a8e1a5326d"
+    },
+    "wger-a4f78033-90d7-45a2-96fa-509b41281ea3": {
+      "assetId": "forma-original-recovery-b-004-2-1",
+      "caption": "Hip-out and hip-in lateral steps · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Unloaded wide lateral step shown without added band or weights. Root validated bodyweight side-step setup against clarified independently authored guide.",
+      "guideSha256": "b9b22a341c7fc576f219e154889034807199c32f1f7afdb9830ac8ad615a48ea"
+    },
+    "db-kettlebell-seated-press": {
+      "assetId": "forma-original-recovery-c-002-0-1",
+      "caption": "Kettlebell Seated Press · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Sitting directly on floor with legs extended in V; only one kettlebell pressed overhead and opposite hand empty.",
+      "guideSha256": "57bd592a8c8b41578975db57640679b7aca7cab74dbd2bc299b5490e495d6df3"
+    },
+    "db-one-leg-barbell-squat": {
+      "assetId": "forma-original-recovery-d-001-1-1",
+      "caption": "One Leg Barbell Squat · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Barbell rear-toe-supported split squat with rear knee and shin clear of bench.",
+      "guideSha256": "63dbfe3a40db789fea6930354d5e37f8f40c841791f15b7fb519aeb437764658"
+    },
+    "db-one-arm-incline-lateral-raise": {
+      "assetId": "forma-original-recovery-d-001-2-1",
+      "caption": "One-Arm Incline Lateral Raise · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Side-lying incline dumbbell lateral raise with lower shoulder/side on pad and upper arm directed upward.",
+      "guideSha256": "23cdc4f20cf1387bc628a7a3c3abf9ce11c7d09302776f827050e01ba58445fb"
     }
   }
 }

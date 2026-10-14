@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1341,
+  "accepted": 1348,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -244,10 +244,12 @@
     },
     {
       "exerciseId": "wger-d015a276-02ad-4c28-9d36-aedfbb431f53",
-      "name": "Abduction while standing",
+      "name": "Standing bent-knee hip raise",
       "equipment": "Bodyweight",
-      "guideSha256": "77f4053c5946478cd364ee5a0b76c96afcefa227adbc0217e915688f105af2f1",
-      "status": "pending"
+      "guideSha256": "cba558096e57640648ad66505fec6da85db0a07da6bd84bfd5c922d186d670c8",
+      "status": "accepted",
+      "assetId": "forma-original-movements-001-0-2",
+      "reviewNote": "Re-inspected original full sheet and matching representative pose against independently clarified guide and researched source metadata; ID and logging units preserved."
     },
     {
       "exerciseId": "db-adductor",
@@ -726,10 +728,12 @@
     },
     {
       "exerciseId": "db-band-hip-adductions",
-      "name": "Band Hip Adductions",
+      "name": "Standing band hip abduction (guide variant)",
       "equipment": "Resistance band",
-      "guideSha256": "e33584ed84ef3e4a8e27b2317652bf32f37ae1566ec96319b749eefe365f4312",
-      "status": "pending"
+      "guideSha256": "9c9c14d6f1fc3e0cbc8e5907c41d0617b2f8a95aa47e77786774e24c45ddd56b",
+      "status": "accepted",
+      "assetId": "forma-original-movements-005-2-2",
+      "reviewNote": "Re-inspected original full sheet and matching representative pose against independently clarified guide and researched source metadata; ID and logging units preserved."
     },
     {
       "exerciseId": "db-band-pull-apart",
@@ -1580,9 +1584,9 @@
     },
     {
       "exerciseId": "wger-a94c635d-096c-45a8-a68c-64941d0b6ba4",
-      "name": "Bretzel stretch",
+      "name": "Supine crossed-leg rotation stretch",
       "equipment": "Bodyweight",
-      "guideSha256": "bb6bcd51bffd43f9a69f4d9ef34758ad2a811e91aaa442be43a2bec848493b06",
+      "guideSha256": "166d978d1f6b1bd86391da2a50f3374e51eaf9c0e753dca17e3346137f65da61",
       "status": "pending"
     },
     {
@@ -5003,10 +5007,12 @@
     },
     {
       "exerciseId": "wger-a4f78033-90d7-45a2-96fa-509b41281ea3",
-      "name": "Hip-Out and Hip-In Lateral Steps",
-      "equipment": "Resistance band",
-      "guideSha256": "f727fb100f9cfd4c93d21a6cddc6e7af841de88ffddbd032be6b940c95c9fa3c",
-      "status": "pending"
+      "name": "Hip-out and hip-in lateral steps",
+      "equipment": "Bodyweight",
+      "guideSha256": "b9b22a341c7fc576f219e154889034807199c32f1f7afdb9830ac8ad615a48ea",
+      "status": "accepted",
+      "assetId": "forma-original-recovery-b-004-2-1",
+      "reviewNote": "Unloaded wide lateral step shown without added band or weights. Root validated bodyweight side-step setup against clarified independently authored guide."
     },
     {
       "exerciseId": "wger-d059c63d-0a81-48a3-912a-44070c0def2e",
@@ -5511,10 +5517,12 @@
     },
     {
       "exerciseId": "wger-eaa7927e-6ea0-4fd5-bbcd-525fe90a184b",
-      "name": "JALONES PECHO NEUTRO",
-      "equipment": "Bodyweight",
-      "guideSha256": "cb3e11d65f9b507dcc55b5c3a0d4a6333fb1b7a939feac0ed771feefa11397d4",
-      "status": "pending"
+      "name": "Neutral-grip chest pulldown",
+      "equipment": "Cable",
+      "guideSha256": "9a1c81ea69969933993d7d8598b2993300de0ae781109d0ee26096a8e1a5326d",
+      "status": "accepted",
+      "assetId": "forma-original-movements-044-1-2",
+      "reviewNote": "Re-inspected original full sheet and matching representative pose against independently clarified guide and researched source metadata; ID and logging units preserved."
     },
     {
       "exerciseId": "db-janda-sit-up",
@@ -5735,7 +5743,9 @@
       "name": "Kettlebell Seated Press",
       "equipment": "Kettlebell",
       "guideSha256": "57bd592a8c8b41578975db57640679b7aca7cab74dbd2bc299b5490e495d6df3",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-recovery-c-002-0-1",
+      "reviewNote": "Sitting directly on floor with legs extended in V; only one kettlebell pressed overhead and opposite hand empty."
     },
     {
       "exerciseId": "db-kettlebell-seesaw-press",
@@ -7342,7 +7352,9 @@
       "name": "One Leg Barbell Squat",
       "equipment": "Barbell",
       "guideSha256": "63dbfe3a40db789fea6930354d5e37f8f40c841791f15b7fb519aeb437764658",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-recovery-d-001-1-1",
+      "reviewNote": "Barbell rear-toe-supported split squat with rear knee and shin clear of bench."
     },
     {
       "exerciseId": "db-one-arm-flat-bench-dumbbell-flye",
@@ -7367,7 +7379,9 @@
       "name": "One-Arm Incline Lateral Raise",
       "equipment": "Dumbbell",
       "guideSha256": "23cdc4f20cf1387bc628a7a3c3abf9ce11c7d09302776f827050e01ba58445fb",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-recovery-d-001-2-1",
+      "reviewNote": "Side-lying incline dumbbell lateral raise with lower shoulder/side on pad and upper arm directed upward."
     },
     {
       "exerciseId": "db-one-arm-kettlebell-clean",

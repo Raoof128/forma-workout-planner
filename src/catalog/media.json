@@ -557,6 +557,28 @@
       "width": 1536,
       "height": 1024
     },
+    "forma-original-movements-001-0-2": {
+      "src": "/exercise-media/original/movements-001.png?v=6dc763249541",
+      "sha256": "6dc763249541220d936f252f553923000f28c8e048e367c0b1a3ffa31e583bcc",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Standing bent-knee hip raise",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/movements-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 0,
+        "row": 2
+      }
+    },
     "forma-original-movements-001-1-2": {
       "src": "/exercise-media/original/movements-001.png?v=6dc763249541",
       "sha256": "6dc763249541220d936f252f553923000f28c8e048e367c0b1a3ffa31e583bcc",
@@ -1678,6 +1700,28 @@
         "columns": 4,
         "rows": 3,
         "column": 1,
+        "row": 2
+      }
+    },
+    "forma-original-movements-005-2-2": {
+      "src": "/exercise-media/original/movements-005.png?v=386cc82df12d",
+      "sha256": "386cc82df12d641d9f7938da97a857bd8c9a497ea8d6a46699f1e189c535cc28",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Standing band hip abduction (guide variant)",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/movements-005.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 2,
         "row": 2
       }
     },
@@ -11709,6 +11753,34 @@
         }
       }
     },
+    "forma-original-recovery-b-004-2-1": {
+      "src": "/exercise-media/original/recovery-b-004.png?v=d46620da7b26",
+      "sha256": "d46620da7b263f8920f9f759310e2aecbb3cc95e0fb1824a3d0e804f060a312e",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Hip-out and hip-in lateral steps",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-b-004.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 1,
+        "bounds": {
+          "x": 1024,
+          "y": 512,
+          "width": 512,
+          "height": 512
+        }
+      }
+    },
     "forma-original-movements-040-2-0": {
       "src": "/exercise-media/original/movements-040.png?v=5b243d916bfa",
       "sha256": "5b243d916bfa254c5da3c3f6a202a6f7ec289262b7ca672bc7508591b0a1deab",
@@ -13081,6 +13153,34 @@
         }
       }
     },
+    "forma-original-movements-044-1-2": {
+      "src": "/exercise-media/original/movements-044.png?v=1c6e866cced3",
+      "sha256": "1c6e866cced3dec2cb78c25d06fea638602a14b9e721c45afcd8c53d98c55437",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Neutral-grip chest pulldown",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/movements-044.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 1,
+        "row": 2,
+        "bounds": {
+          "x": 384,
+          "y": 650,
+          "width": 384,
+          "height": 374
+        }
+      }
+    },
     "forma-original-movements-044-2-2": {
       "src": "/exercise-media/original/movements-044.png?v=1c6e866cced3",
       "sha256": "1c6e866cced3dec2cb78c25d06fea638602a14b9e721c45afcd8c53d98c55437",
@@ -13716,6 +13816,34 @@
           "y": 664,
           "width": 385,
           "height": 360
+        }
+      }
+    },
+    "forma-original-recovery-c-002-0-1": {
+      "src": "/exercise-media/original/recovery-c-002.png?v=f543173a382b",
+      "sha256": "f543173a382b70362592e8bf010414932e2a3745c4beb7c2970106957c5c786f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Kettlebell Seated Press",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-c-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 500,
+          "width": 512,
+          "height": 524
         }
       }
     },
@@ -17773,6 +17901,34 @@
         }
       }
     },
+    "forma-original-recovery-d-001-1-1": {
+      "src": "/exercise-media/original/recovery-d-001.png?v=e85b9a48c271",
+      "sha256": "e85b9a48c2716c51d56e3932828783f9a5df35d7e2b2f96a8813cba21817a56f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "One Leg Barbell Squat",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-d-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 580,
+          "y": 500,
+          "width": 430,
+          "height": 524
+        }
+      }
+    },
     "forma-original-movements-058-2-2": {
       "src": "/exercise-media/original/movements-058.png?v=519757770796",
       "sha256": "519757770796f0a1c87f809e7d0bcf6015ecf6c604e4da4b972d65569bb38169",
@@ -17798,6 +17954,34 @@
           "y": 660,
           "width": 384,
           "height": 364
+        }
+      }
+    },
+    "forma-original-recovery-d-001-2-1": {
+      "src": "/exercise-media/original/recovery-d-001.png?v=e85b9a48c271",
+      "sha256": "e85b9a48c2716c51d56e3932828783f9a5df35d7e2b2f96a8813cba21817a56f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "One-Arm Incline Lateral Raise",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/recovery-d-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 1,
+        "bounds": {
+          "x": 1010,
+          "y": 500,
+          "width": 526,
+          "height": 524
         }
       }
     },
@@ -31245,6 +31429,10 @@
       "assetId": "forma-original-mobility-01-0-1",
       "caption": "Original exercise-position illustration; follow the full guide for the movement."
     },
+    "wger-d015a276-02ad-4c28-9d36-aedfbb431f53": {
+      "assetId": "forma-original-movements-001-0-2",
+      "caption": "Standing bent-knee hip raise · Representative exercise position; follow the guide for the complete movement."
+    },
     "db-adductor": {
       "assetId": "forma-original-movements-001-1-2",
       "caption": "Adductor · Representative exercise position; follow the guide for the complete movement."
@@ -31452,6 +31640,10 @@
     "db-band-good-morning-pull-through": {
       "assetId": "forma-original-movements-005-1-2",
       "caption": "Band Good Morning (Pull Through) · Representative exercise position; follow the guide for the complete movement."
+    },
+    "db-band-hip-adductions": {
+      "assetId": "forma-original-movements-005-2-2",
+      "caption": "Standing band hip abduction (guide variant) · Representative exercise position; follow the guide for the complete movement."
     },
     "db-band-pull-apart": {
       "assetId": "forma-original-movements-005-3-2",
@@ -33301,6 +33493,10 @@
       "assetId": "forma-original-movements-040-0-0",
       "caption": "Hip Raise, Lying · Representative exercise position; follow the guide for the complete movement."
     },
+    "wger-a4f78033-90d7-45a2-96fa-509b41281ea3": {
+      "assetId": "forma-original-recovery-b-004-2-1",
+      "caption": "Hip-out and hip-in lateral steps · Representative exercise position; follow the guide for the complete movement."
+    },
     "wger-d059c63d-0a81-48a3-912a-44070c0def2e": {
       "assetId": "forma-original-movements-040-2-0",
       "caption": "Hollow Hold · Representative exercise position; follow the guide for the complete movement."
@@ -33505,6 +33701,10 @@
       "assetId": "forma-original-corrections-015-0-1",
       "caption": "JALON EN BANCO INCLINADO · Representative exercise position; follow the guide for the complete movement."
     },
+    "wger-eaa7927e-6ea0-4fd5-bbcd-525fe90a184b": {
+      "assetId": "forma-original-movements-044-1-2",
+      "caption": "Neutral-grip chest pulldown · Representative exercise position; follow the guide for the complete movement."
+    },
     "db-janda-sit-up": {
       "assetId": "forma-original-movements-044-2-2",
       "caption": "Janda Sit-Up · Representative exercise position; follow the guide for the complete movement."
@@ -33596,6 +33796,10 @@
     "db-kettlebell-pistol-squat": {
       "assetId": "forma-original-movements-046-0-2",
       "caption": "Kettlebell Pistol Squat · Representative exercise position; follow the guide for the complete movement."
+    },
+    "db-kettlebell-seated-press": {
+      "assetId": "forma-original-recovery-c-002-0-1",
+      "caption": "Kettlebell Seated Press · Representative exercise position; follow the guide for the complete movement."
     },
     "db-kettlebell-seesaw-press": {
       "assetId": "forma-original-movements-046-2-2",
@@ -34277,6 +34481,10 @@
       "assetId": "forma-original-corrections-021-1-1",
       "caption": "One Knee To Chest · Representative exercise position; follow the guide for the complete movement."
     },
+    "db-one-leg-barbell-squat": {
+      "assetId": "forma-original-recovery-d-001-1-1",
+      "caption": "One Leg Barbell Squat · Representative exercise position; follow the guide for the complete movement."
+    },
     "db-one-arm-flat-bench-dumbbell-flye": {
       "assetId": "forma-original-movements-058-2-2",
       "caption": "One-Arm Flat Bench Dumbbell Flye · Representative exercise position; follow the guide for the complete movement."
@@ -34284,6 +34492,10 @@
     "db-one-arm-high-pulley-cable-side-bends": {
       "assetId": "forma-original-cardio-01-1-2",
       "caption": "Adjustable cable station · Equipment reference; pulley height, attachments and posture follow each exercise guide."
+    },
+    "db-one-arm-incline-lateral-raise": {
+      "assetId": "forma-original-recovery-d-001-2-1",
+      "caption": "One-Arm Incline Lateral Raise · Representative exercise position; follow the guide for the complete movement."
     },
     "db-one-arm-kettlebell-clean": {
       "assetId": "forma-original-movements-059-0-0",

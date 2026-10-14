@@ -1,7 +1,10 @@
 {
   "wger-fe0c2a17-fad9-4235-8786-84bb1de93530": {
     "equipment": "Incline chest press machine",
-    "equipmentTags": ["Machine", "Incline chest press machine"],
+    "equipmentTags": [
+      "Machine",
+      "Incline chest press machine"
+    ],
     "description": "Use an incline chest-press station and adjust the seat so the handles align with your upper chest. Keep your back against the pad and feet braced. Press the handles forward and upward along the guided path without shrugging or bouncing. Return slowly to a comfortable stretch and keep the stack or lever controlled between repetitions.",
     "source": null,
     "references": [
@@ -13,7 +16,10 @@
   },
   "wger-ffdb4806-d64e-474b-8ce5-8df9a57fb9c7": {
     "equipment": "Pendulum squat machine",
-    "equipmentTags": ["Machine", "Pendulum squat machine"],
+    "equipmentTags": [
+      "Machine",
+      "Pendulum squat machine"
+    ],
     "description": "Set the safety stops for your intended depth, place your shoulders beneath the pads and brace against the back support. Plant your feet securely on the platform and release the start catch. Bend your knees and hips along the machine's arc while keeping your feet in contact with the platform. Push evenly through your feet to stand without snapping your knees straight. Re-engage the catch before leaving the machine.",
     "source": null,
     "references": [
@@ -25,7 +31,10 @@
   },
   "wger-e9f3446f-ca98-4bf2-817c-0dacd123cecd": {
     "equipment": "Belt squat machine",
-    "equipmentTags": ["Machine", "Belt squat machine"],
+    "equipmentTags": [
+      "Machine",
+      "Belt squat machine"
+    ],
     "description": "Fit the loading belt around your hips and connect it securely to the machine's attachment. Stand on the platform with feet comfortably apart and use the support handles as needed. Release the start catch, brace and bend your knees and hips into a controlled squat. Keep the belt centered and your feet planted as you stand. Secure the load on its catch before disconnecting the belt.",
     "source": null,
     "references": [
@@ -37,7 +46,10 @@
   },
   "wger-ce21d3a2-cdc5-410c-9970-c25029ca3769": {
     "equipment": "Glute drive machine",
-    "equipmentTags": ["Machine", "Glute drive machine"],
+    "equipmentTags": [
+      "Machine",
+      "Glute drive machine"
+    ],
     "description": "Set your upper back against the machine's pad and secure its hip belt or padded restraint as instructed on the station. Plant your feet so your shins approach vertical at the top. Brace, drive through your feet and extend your hips until your trunk and thighs align without arching your lower back. Lower the lever slowly and repeat. Secure the start catch before releasing the restraint.",
     "source": null,
     "references": [
@@ -50,7 +62,10 @@
   "wger-8bc4c616-e76b-4291-9074-186ecbbb3cfd": {
     "name": "Assisted machine pull-up",
     "equipment": "Assisted dip / chin station",
-    "equipmentTags": ["Machine", "Assisted dip / chin station"],
+    "equipmentTags": [
+      "Machine",
+      "Assisted dip / chin station"
+    ],
     "description": "Select enough counterweight to keep each repetition controlled. Hold the overhand pull-up handles and place your knees or feet on the assistance platform as the station requires. Brace and pull your elbows down, bringing your chin toward handle height without swinging. Lower smoothly to a comfortable extended-arm position. Keep the platform controlled as you step off.",
     "measurementNotes": "Log repetitions with zero added load. Assistance and counterweight are not lifted kilograms; record their machine setting in your session notes.",
     "source": null,
@@ -64,7 +79,10 @@
   "wger-3dd0db1c-450a-46d1-ad46-d7854bdc26ed": {
     "name": "Assisted machine triceps dip",
     "equipment": "Assisted dip / chin station",
-    "equipmentTags": ["Machine", "Assisted dip / chin station"],
+    "equipmentTags": [
+      "Machine",
+      "Assisted dip / chin station"
+    ],
     "description": "Choose sufficient assistance and hold the dip handles securely. Place your knees or feet on the platform according to the machine's setup. With shoulders controlled, bend your elbows to lower through a comfortable range, keeping them near your sides. Press the handles down to extend your arms without jerking or shrugging. Control the platform throughout and step off carefully.",
     "measurementNotes": "Log repetitions with zero added load. Assistance and counterweight are not lifted kilograms; record their machine setting in your session notes.",
     "source": null,
@@ -78,13 +96,91 @@
   "wger-12a80404-8684-4ff0-a473-d80b4ad8cd5e": {
     "name": "Roman-chair dumbbell hip hinge",
     "equipment": "Roman chair + Dumbbell",
-    "equipmentTags": ["Roman chair", "Dumbbell"],
+    "equipmentTags": [
+      "Roman chair",
+      "Dumbbell"
+    ],
     "description": "Use a stable roman-chair or back-extension station with your feet planted on its footplate and your ankles secured beneath the supports. Position the thigh pad below the hip crease so your hips can hinge freely. Start without added weight to check the setup; when controlled, hold a light dumbbell close to your chest. Keep your spine neutral and bend at the hips through a comfortable range. Squeeze your glutes to return until your trunk lines up with your legs, stopping before you arch your lower back. Keep your feet secured throughout and lower the weight before stepping out.",
     "source": null,
     "references": [
       {
         "title": "Free Exercise DB: secured-foot back-extension setup",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hyperextensions_Back_Extensions.json"
+      }
+    ]
+  },
+  "wger-d015a276-02ad-4c28-9d36-aedfbb431f53": {
+    "name": "Standing bent-knee hip raise",
+    "equipment": "Bodyweight",
+    "equipmentTags": [
+      "Bodyweight"
+    ],
+    "description": "Stand upright and balance on one leg. Keep your trunk steady while lifting the other leg and bending that hip and knee. Lower the foot under control, repeat, then change sides.",
+    "source": null,
+    "references": [
+      {
+        "title": "Reviewed upstream exercise identity and movement requirements",
+        "url": "https://wger.de/en/exercise/1096/view/"
+      }
+    ]
+  },
+  "db-band-hip-adductions": {
+    "name": "Standing band hip abduction (guide variant)",
+    "equipment": "Resistance band",
+    "equipmentTags": [
+      "Resistance band"
+    ],
+    "description": "Anchor a resistance band to a sturdy low post. Stand side-on and place the loop around the ankle farther from the anchor. Use the hand nearer the post for balance and keep your torso steady. With the working knee comfortably straight, move that leg outward away from the anchor against the band. Return the foot slowly toward the standing leg without losing balance, then repeat on the other side. This is the outward hip-abduction movement described by the imported instructions.",
+    "source": null,
+    "references": [
+      {
+        "title": "Imported guide describes outward movement; provider photos instead depict adduction",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Band_Hip_Adductions.json"
+      }
+    ]
+  },
+  "wger-a94c635d-096c-45a8-a68c-64941d0b6ba4": {
+    "name": "Supine crossed-leg rotation stretch",
+    "equipment": "Bodyweight",
+    "equipmentTags": [
+      "Bodyweight"
+    ],
+    "description": "Lie on your back. Bend your right knee and bring that leg across the left leg. Extend your left arm out at shoulder height. Use your right hand to guide the bent knee gently toward the floor on your left while keeping your left shoulder down. Breathe comfortably, hold the stretch, and repeat on the other side.",
+    "source": null,
+    "references": [
+      {
+        "title": "Reviewed upstream exercise identity and movement requirements",
+        "url": "https://wger.de/en/exercise/1577/view/"
+      }
+    ]
+  },
+  "wger-eaa7927e-6ea0-4fd5-bbcd-525fe90a184b": {
+    "name": "Neutral-grip chest pulldown",
+    "equipment": "Cable",
+    "equipmentTags": [
+      "Cable"
+    ],
+    "description": "Position yourself at the cable pulldown with your feet supported on the floor. Take the handle with your palms facing each other, about shoulder width apart. Keep your torso steady and pull the handle toward your upper chest. Pause briefly, then allow the handle to rise under control as your arms straighten.",
+    "source": null,
+    "references": [
+      {
+        "title": "Reviewed upstream exercise identity and movement requirements",
+        "url": "https://wger.de/en/exercise/1136/view/"
+      }
+    ]
+  },
+  "wger-a4f78033-90d7-45a2-96fa-509b41281ea3": {
+    "name": "Hip-out and hip-in lateral steps",
+    "equipment": "Bodyweight",
+    "equipmentTags": [
+      "Bodyweight"
+    ],
+    "description": "Stand with your feet comfortably apart and your knees soft. Keep your trunk steady as you step one foot out to the side while the other leg supports your balance. Bring the stepping foot back toward the centre under control. Repeat on both sides without crossing your feet or raising the knee into a marching motion.",
+    "source": null,
+    "references": [
+      {
+        "title": "Original lateral-step movement requirements; guide specifies stepping rather than band loading",
+        "url": "https://wger.de/en/exercise/2618/view/"
       }
     ]
   }

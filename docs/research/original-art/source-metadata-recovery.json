@@ -1,0 +1,707 @@
+{
+  "reviewedAt": "2026-10-14",
+  "scopeCount": 17,
+  "networkPolicy": "unrestricted, enforced; checked runtime and executor policy before network requests",
+  "limitations": [
+    "wger HTML pages return bot challenge despite HTTP 200; use downloaded public API records for evidence.",
+    "No images or videos were downloaded, viewed or generated. Image URLs retained as metadata for later authorized source review.",
+    "No catalog, curation, registry, manifest or units mutated."
+  ],
+  "findings": [
+    {
+      "id": "wger-d561c00c-436d-47d9-b647-222e7b637abd",
+      "importedTitle": "1/2 Kneeling Thoracic Rotation",
+      "preserveMetric": "load_reps",
+      "priorBatch": "docs/research/original-art/movements-001.json",
+      "sourceURLs": [
+        "https://wger.de/en/exercise/1966/view/",
+        "https://wger.de/api/v2/exerciseinfo/?uuid=d561c00c-436d-47d9-b647-222e7b637abd"
+      ],
+      "localEvidenceFiles": [
+        "src/catalog/exercises.json",
+        "docs/research/original-art/movements-001.json",
+        "docs/research/original-art/source-metadata/wger-d561c00c-436d-47d9-b647-222e7b637abd.api.json"
+      ],
+      "findingStatus": "unresolved",
+      "evidence": "All current translations retain the contradictory far-from-wall leg stabilized against wall; no images in API. Need original author/video demonstrating leg/ball placement.",
+      "recommendedAction": "Keep artwork held pending exact source variation evidence.",
+      "currentSourceEquipment": [
+        {
+          "id": 7,
+          "name": "none (bodyweight exercise)"
+        }
+      ],
+      "currentSourceTranslations": [
+        {
+          "language": 2,
+          "name": "1/2 Kneeling Thoracic Rotation",
+          "description": "\nBegin in a half kneeling position with the\nleg away from the wall stabilized against the wall\nwith a ball.\nWith both hands directly in front of\nyou, rotate one arm open attempting to reach\nthe wall behind you.\nExhale as you rotate, inhale\nas you return to neutral and repeat.\n\n"
+        },
+        {
+          "language": 1,
+          "name": "Brustwirbelsäulen-Rotation im halben Kniestand",
+          "description": "\nBeginne im halben Kniestand, wobei das von der Wand abgewandte\nBein mit einem Ball an der Wand stabilisiert\nwird.\nHalte beide Hände direkt vor\ndir und drehe einen Arm geöffnet auf, um\ndie Wand hinter dir zu erreichen.\nAtme beim Drehen aus, atme ein,\nwenn du in die neutrale Position zurückkehrst, und wiederhole.\n\n"
+        },
+        {
+          "language": 4,
+          "name": "Rotación torácica en media rodilla",
+          "description": "\nComienza en posición de media rodilla, con la\npierna alejada de la pared estabilizada contra ella\ncon una pelota.\nCon ambas manos directamente delante\nde ti, gira un brazo abriéndolo e intenta alcanzar\nla pared que tienes detrás.\nExhala al girar e inhala\nal volver a la posición neutra, y repite.\n\n"
+        },
+        {
+          "language": 12,
+          "name": "Rotation thoracique à demi-genou",
+          "description": "\nCommencez en position de demi-genou, la jambe éloignée du mur étant stabilisée contre le mur à l'aide d'un ballon.\nLes deux mains tendues directement devant vous, ouvrez un bras en rotation en cherchant à atteindre le mur derrière vous.\nExpirez pendant la rotation, inspirez en revenant à la position neutre, puis répétez.\n\n"
+        }
+      ],
+      "sourceReferenceImageURLs": []
+    },
+    {
+      "id": "wger-7870ad8d-a0c1-4e3a-a4fe-a237908eba9b",
+      "importedTitle": "3008 Abdominal Crunch",
+      "preserveMetric": "load_reps",
+      "priorBatch": "docs/research/original-art/movements-001.json",
+      "sourceURLs": [
+        "https://wger.de/en/exercise/1924/view/",
+        "https://wger.de/api/v2/exerciseinfo/?uuid=7870ad8d-a0c1-4e3a-a4fe-a237908eba9b"
+      ],
+      "localEvidenceFiles": [
+        "src/catalog/exercises.json",
+        "docs/research/original-art/movements-001.json",
+        "docs/research/original-art/source-metadata/wger-7870ad8d-a0c1-4e3a-a4fe-a237908eba9b.api.json"
+      ],
+      "findingStatus": "unresolved",
+      "evidence": "API explicitly identifies gym80 model 3008 but supplies no setup, images or model specification. Bodyweight metadata remains incorrect. Obtain manufacturer model instructions before equipment-reference approval.",
+      "recommendedAction": "Keep artwork held pending exact source variation evidence.",
+      "currentSourceEquipment": [
+        {
+          "id": 7,
+          "name": "none (bodyweight exercise)"
+        }
+      ],
+      "currentSourceTranslations": [
+        {
+          "language": 2,
+          "name": "3008 Abdominal Crunch",
+          "description": "This is especially for the gym80 device 3008 Abdominal Crunch.\n"
+        }
+      ],
+      "sourceReferenceImageURLs": []
+    },
+    {
+      "id": "wger-d015a276-02ad-4c28-9d36-aedfbb431f53",
+      "importedTitle": "Abduction while standing",
+      "preserveMetric": "load_reps",
+      "priorBatch": "docs/research/original-art/movements-001.json",
+      "sourceURLs": [
+        "https://wger.de/en/exercise/1096/view/",
+        "https://wger.de/api/v2/exerciseinfo/?uuid=d015a276-02ad-4c28-9d36-aedfbb431f53"
+      ],
+      "localEvidenceFiles": [
+        "src/catalog/exercises.json",
+        "docs/research/original-art/movements-001.json",
+        "docs/research/original-art/source-metadata/wger-d015a276-02ad-4c28-9d36-aedfbb431f53.api.json"
+      ],
+      "findingStatus": "validated_guide_identity",
+      "evidence": "English and original German both explicitly prescribe lifting unloaded leg while flexing hip and knee. No lateral direction is specified. Rename to describe the documented bent-knee raise rather than replace instructions with generic abduction.",
+      "recommendedAction": "Apply reviewed name/equipment/guide repair preserving ID and metric; rebuild guide fingerprint and re-review original artwork against repaired guide before accepting.",
+      "currentSourceEquipment": [
+        {
+          "id": 7,
+          "name": "none (bodyweight exercise)"
+        }
+      ],
+      "currentSourceTranslations": [
+        {
+          "language": 4,
+          "name": "Abducción de pie",
+          "description": "Entrenar una postura estable, predominantemente sobre una pierna, es fundamental para ambos lados. Por un lado, previene molestias y, por otro, establece una base estable. El practicante adopta la posición habitual de pie y, con el tronco estable, intenta levantar repetidamente la pierna sin carga, flexionarla por la cadera y la rodilla, y luego bajarla de nuevo. El movimiento se repite también en el otro lado. El ejercicio entrena la estabilidad de la musculatura que rodea la cadera.\n"
+        },
+        {
+          "language": 12,
+          "name": "Abduction debout",
+          "description": "Travailler une posture stable, principalement sur une seule jambe, est essentiel pour les deux côtés. D'une part, cela prévient les inconforts et, d'autre part, cela établit une base solide. Le pratiquant adopte la position debout habituelle et, le haut du corps stable, tente de lever à plusieurs reprises la jambe non chargée, de la fléchir au niveau de la hanche et du genou, puis de la rabaisser. Le mouvement est également répété de l'autre côté. L'exercice travaille la stabilité des muscles entourant la hanche.\n"
+        },
+        {
+          "language": 2,
+          "name": "Abduction while standing",
+          "description": "Training a stable stance, predominantly on one leg, is crucial for both sides. On the one hand, it prevents discomfort and, on the other, it establishes a stable foundation. The practitioner assumes the usual standing position and, with a stable upper body, attempts to repeatedly lift the unloaded leg, bend it at the hip and knee, and then lower it again. The movement is also repeated on the other side. The exercise trains the stability of the hip-surrounding muscles.\n"
+        },
+        {
+          "language": 1,
+          "name": "Abduktion im Stand",
+          "description": "Das Training des stabilen Standes dominat auf einem Bein ist beiseitig entscheidend. Einerseits um Beschwerden vorzubeugen und andererseits um eine stabile Basis zu legen.Die übende Person stellt sich in die gewohnte Standposition und versucht bei stabilem Oberkörper das unbelastete Bein wiederholt zu heben und und in Hüfte und Knie zu beugen und wieder zu senken. Die Bewegung wird jedenfalls auch mit der anderen Seite wiederholt. Die Übung trainiert die Stabilität der hüftumgebenden Muskulatur\n"
+        }
+      ],
+      "sourceReferenceImageURLs": [],
+      "proposal": {
+        "name": "Standing bent-knee hip raise",
+        "guideText": "Stand upright and balance on one leg. Keep your trunk steady while lifting the other leg and bending that hip and knee. Lower the foot under control, repeat, then change sides.",
+        "equipment": "Bodyweight",
+        "authorship": "Independent factual wording based on cited record; preserve source attribution separately."
+      }
+    },
+    {
+      "id": "wger-caccd791-ff30-452a-816e-790edadb78cd",
+      "importedTitle": "Arco femorale una gamba",
+      "preserveMetric": "load_reps",
+      "priorBatch": "docs/research/original-art/movements-003.json",
+      "sourceURLs": [
+        "https://wger.de/en/exercise/1294/view/",
+        "https://wger.de/api/v2/exerciseinfo/?uuid=caccd791-ff30-452a-816e-790edadb78cd"
+      ],
+      "localEvidenceFiles": [
+        "src/catalog/exercises.json",
+        "docs/research/original-art/movements-003.json",
+        "docs/research/original-art/source-metadata/wger-caccd791-ff30-452a-816e-790edadb78cd.api.json"
+      ],
+      "findingStatus": "unresolved",
+      "evidence": "Current API English name is Single-leg hamstring curl, but description still only lists hamstring muscles. No image, anchor, apparatus or body position validates a particular curl variant.",
+      "recommendedAction": "Keep artwork held pending exact source variation evidence.",
+      "currentSourceEquipment": [
+        {
+          "id": 7,
+          "name": "none (bodyweight exercise)"
+        }
+      ],
+      "currentSourceTranslations": [
+        {
+          "language": 2,
+          "name": "Single-leg hamstring curl",
+          "description": "Specifically, the muscles involved are: biceps femoris, semimembranosus and semitendinosus.\n"
+        }
+      ],
+      "sourceReferenceImageURLs": []
+    },
+    {
+      "id": "db-band-hip-adductions",
+      "importedTitle": "Band Hip Adductions",
+      "preserveMetric": "load_reps",
+      "priorBatch": "docs/research/original-art/movements-005.json",
+      "sourceURLs": [
+        "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Band_Hip_Adductions.json",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Band_Hip_Adductions.json"
+      ],
+      "localEvidenceFiles": [
+        "src/catalog/exercises.json",
+        "docs/research/original-art/movements-005.json"
+      ],
+      "findingStatus": "unresolved",
+      "evidence": "Pinned Free Exercise DB record names adduction and primary muscles adductors, yet instructions put far ankle in band and raise outward, describing abduction. Public source reproduces conflict. No evidence establishes intended identity without source correction.",
+      "recommendedAction": "Keep artwork held pending exact source variation evidence."
+    },
+    {
+      "id": "wger-4c317795-c301-4081-9f96-6036682f80c1",
+      "importedTitle": "Banded Shoulder Drills",
+      "preserveMetric": "load_reps",
+      "priorBatch": "docs/research/original-art/movements-006.json",
+      "sourceURLs": [
+        "https://wger.de/en/exercise/1838/view/",
+        "https://wger.de/api/v2/exerciseinfo/?uuid=4c317795-c301-4081-9f96-6036682f80c1"
+      ],
+      "localEvidenceFiles": [
+        "src/catalog/exercises.json",
+        "docs/research/original-art/movements-006.json",
+        "docs/research/original-art/source-metadata/wger-4c317795-c301-4081-9f96-6036682f80c1.api.json"
+      ],
+      "findingStatus": "unresolved",
+      "evidence": "Current API only documents band anchor behind athlete and links video zdwEWchSjrI; no source images. No particular pressing/rotation drill can be inferred.",
+      "recommendedAction": "Keep artwork held pending exact source variation evidence.",
+      "currentSourceEquipment": [
+        {
+          "id": 11,
+          "name": "Resistance band"
+        }
+      ],
+      "currentSourceTranslations": [
+        {
+          "language": 2,
+          "name": "Banded Shoulder Drills",
+          "description": "\nAttach a resistance band to something solid behind you. Stand away from it, holding it in your hand so it is taut.\nSee the attached youtube video: https://www.youtube.com/watch?v=zdwEWchSjrI .\n\n"
+        },
+        {
+          "language": 4,
+          "name": "Ejercicios de hombro con banda",
+          "description": "\nFija una banda de resistencia a algo sólido detrás de ti. Aléjate de ella y sujétala con la mano de modo que quede tensa.\nConsulta el vídeo de YouTube adjunto: https://www.youtube.com/watch?v=zdwEWchSjrI .\n\n"
+        },
+        {
+          "language": 12,
+          "name": "Exercices d'épaules à l'élastique",
+          "description": "\nFixez un élastique à un support solide derrière vous. Tenez-vous à distance en le maintenant dans la main de façon à ce qu'il soit tendu.\nConsultez la vidéo YouTube jointe : https://www.youtube.com/watch?v=zdwEWchSjrI .\n\n"
+        },
+        {
+          "language": 1,
+          "name": "Schulterübungen mit Band",
+          "description": "\nBefestige ein Widerstandsband hinter dir an etwas Stabilem. Stelle dich davon weg und halte es in der Hand, sodass es straff gespannt ist.\nSiehe das beigefügte YouTube-Video: https://www.youtube.com/watch?v=zdwEWchSjrI .\n\n"
+        }
+      ],
+      "sourceReferenceImageURLs": []
+    },
+    {
+      "id": "wger-abdd2b41-0c30-4ec1-8d14-f6dc5deb3561",
+      "importedTitle": "Bent-Leg Hamstring Stretch",
+      "preserveMetric": "duration",
+      "priorBatch": "docs/research/original-art/movements-010.json",
+      "sourceURLs": [
+        "https://wger.de/en/exercise/1840/view/",
+        "https://wger.de/api/v2/exerciseinfo/?uuid=abdd2b41-0c30-4ec1-8d14-f6dc5deb3561"
+      ],
+      "localEvidenceFiles": [
+        "src/catalog/exercises.json",
+        "docs/research/original-art/movements-010.json",
+        "docs/research/original-art/source-metadata/wger-abdd2b41-0c30-4ec1-8d14-f6dc5deb3561.api.json"
+      ],
+      "findingStatus": "unresolved",
+      "evidence": "Current API only links Stretch Therapy video CrF2iMnn09w; no textual setup or images. A generic bent-knee stretch would not establish exact variation.",
+      "recommendedAction": "Keep artwork held pending exact source variation evidence.",
+      "currentSourceEquipment": [
+        {
+          "id": 7,
+          "name": "none (bodyweight exercise)"
+        }
+      ],
+      "currentSourceTranslations": [
+        {
+          "language": 2,
+          "name": "Bent-Leg Hamstring Stretch",
+          "description": "See this instructional video from Stretch Therapy: https://www.youtube.com/watch?v=CrF2iMnn09w .\n"
+        }
+      ],
+      "sourceReferenceImageURLs": []
+    },
+    {
+      "id": "wger-a94c635d-096c-45a8-a68c-64941d0b6ba4",
+      "importedTitle": "Bretzel stretch",
+      "preserveMetric": "duration",
+      "priorBatch": "docs/research/original-art/movements-013.json",
+      "sourceURLs": [
+        "https://wger.de/en/exercise/1577/view/",
+        "https://wger.de/api/v2/exerciseinfo/?uuid=a94c635d-096c-45a8-a68c-64941d0b6ba4"
+      ],
+      "localEvidenceFiles": [
+        "src/catalog/exercises.json",
+        "docs/research/original-art/movements-013.json",
+        "docs/research/original-art/source-metadata/wger-a94c635d-096c-45a8-a68c-64941d0b6ba4.api.json"
+      ],
+      "findingStatus": "validated_guide_identity",
+      "evidence": "All translations describe supine crossed-leg rotation with one shoulder down, not side-lying Bretzel quad-grip variation. Documented supine variation is factual enough to rename and clarify while preserving ID.",
+      "recommendedAction": "Apply reviewed name/equipment/guide repair preserving ID and metric; rebuild guide fingerprint and re-review original artwork against repaired guide before accepting.",
+      "currentSourceEquipment": [
+        {
+          "id": 7,
+          "name": "none (bodyweight exercise)"
+        }
+      ],
+      "currentSourceTranslations": [
+        {
+          "language": 2,
+          "name": "Bretzel stretch",
+          "description": "How to Perform the Bretzel Stretch    Starting Position:        Lie on your back on a flat surface, such as a mat.        Bend your knees and place your feet flat on the ground.    Leg Positioning:        Lift your right leg and cross it over your left leg, placing your right foot on the outside of your left knee.        Your left leg should remain flat on the ground.    Arm Positioning:        Extend your left arm out to the side at shoulder height, keeping it straight.        Use your right hand to gently pull your right knee towards the floor on the left side of your body.    Stretching:        As you pull your knee down, try to keep your left shoulder flat on the ground.        You should feel a stretch in your hip, lower back, and possibly your chest.    Hold the Position:        Maintain this position for 20-30 seconds, breathing deeply and relaxing into the stretch.        Switch sides and repeat the process.\n"
+        },
+        {
+          "language": 1,
+          "name": "Bretzel-Dehnung",
+          "description": "So führst du die Bretzel-Dehnung aus    Ausgangsposition:        Lege dich auf den Rücken auf eine flache Unterlage, zum Beispiel eine Matte.        Beuge die Knie und stelle die Füße flach auf den Boden.    Beinposition:        Hebe dein rechtes Bein an und kreuze es über dein linkes Bein, wobei du deinen rechten Fuß an der Außenseite deines linken Knies platzierst.        Dein linkes Bein bleibt flach auf dem Boden.    Armposition:        Strecke deinen linken Arm auf Schulterhöhe gerade zur Seite aus.        Ziehe mit deiner rechten Hand dein rechtes Knie sanft auf die linke Seite deines Körpers in Richtung Boden.    Dehnung:        Während du das Knie nach unten ziehst, versuche, deine linke Schulter flach auf dem Boden zu halten.        Du solltest eine Dehnung in der Hüfte, im unteren Rücken und möglicherweise im Brustkorb spüren.    Halte die Position:        Halte diese Position 20-30 Sekunden, atme tief durch und entspanne dich in die Dehnung hinein.        Wechsle die Seite und wiederhole den Ablauf.\n"
+        },
+        {
+          "language": 4,
+          "name": "Estiramiento Bretzel",
+          "description": "Cómo realizar el estiramiento Bretzel    Posición inicial:        Túmbate boca arriba sobre una superficie plana, como una colchoneta.        Flexiona las rodillas y apoya los pies planos en el suelo.    Posición de las piernas:        Levanta la pierna derecha y crúzala sobre la izquierda, colocando el pie derecho por fuera de la rodilla izquierda.        La pierna izquierda debe permanecer apoyada en el suelo.    Posición de los brazos:        Extiende el brazo izquierdo hacia el lado a la altura del hombro, manteniéndolo recto.        Con la mano derecha, tira suavemente de la rodilla derecha hacia el suelo, hacia el lado izquierdo del cuerpo.    Estiramiento:        Mientras bajas la rodilla, intenta mantener el hombro izquierdo apoyado en el suelo.        Deberías notar un estiramiento en la cadera, la zona lumbar y posiblemente el pecho.    Mantén la posición:        Aguanta esta posición de 20 a 30 segundos, respirando profundamente y relajándote en el estiramiento.        Cambia de lado y repite el proceso.\n"
+        },
+        {
+          "language": 12,
+          "name": "Étirement Bretzel",
+          "description": "Comment réaliser l'étirement Bretzel    Position de départ :        Allongez-vous sur le dos sur une surface plane, comme un tapis.        Fléchissez les genoux et posez les pieds à plat sur le sol.    Placement des jambes :        Levez la jambe droite et croisez-la par-dessus la jambe gauche, en posant le pied droit à l'extérieur du genou gauche.        La jambe gauche doit rester à plat sur le sol.    Placement des bras :        Tendez le bras gauche sur le côté à hauteur d'épaule, en le gardant droit.        Avec la main droite, tirez doucement le genou droit vers le sol, du côté gauche de votre corps.    Étirement :        En tirant le genou vers le bas, essayez de garder l'épaule gauche à plat sur le sol.        Vous devez ressentir un étirement dans la hanche, le bas du dos et éventuellement les pectoraux.    Maintenez la position :        Tenez cette position pendant 20 à 30 secondes, en respirant profondément et en vous relâchant dans l'étirement.        Changez de côté et répétez le mouvement.\n"
+        }
+      ],
+      "sourceReferenceImageURLs": [],
+      "proposal": {
+        "name": "Supine crossed-leg rotation stretch",
+        "guideText": "Lie on your back. Bend your right knee and bring that leg across the left leg. Extend your left arm out at shoulder height. Use your right hand to guide the bent knee gently toward the floor on your left while keeping your left shoulder down. Breathe comfortably, hold the stretch, and repeat on the other side.",
+        "equipment": "Bodyweight",
+        "authorship": "Independent factual wording based on cited record; preserve source attribution separately."
+      }
+    },
+    {
+      "id": "wger-4b23738a-67a8-41af-996d-abc53a7c3f97",
+      "importedTitle": "DB Upper Chest Variation",
+      "preserveMetric": "load_reps",
+      "priorBatch": "docs/research/original-art/movements-021.json",
+      "sourceURLs": [
+        "https://wger.de/en/exercise/1496/view/",
+        "https://wger.de/api/v2/exerciseinfo/?uuid=4b23738a-67a8-41af-996d-abc53a7c3f97"
+      ],
+      "localEvidenceFiles": [
+        "src/catalog/exercises.json",
+        "docs/research/original-art/movements-021.json",
+        "docs/research/original-art/source-metadata/wger-4b23738a-67a8-41af-996d-abc53a7c3f97.api.json"
+      ],
+      "findingStatus": "unresolved",
+      "evidence": "All translations retain custom curl-like body-assisted dumbbell raise near head. No stance, grip path or images distinguish it sufficiently for reliable art/guide.",
+      "recommendedAction": "Keep artwork held pending exact source variation evidence.",
+      "currentSourceEquipment": [
+        {
+          "id": 3,
+          "name": "Dumbbell"
+        }
+      ],
+      "currentSourceTranslations": [
+        {
+          "language": 2,
+          "name": "DB Upper Chest Variation",
+          "description": "Dumbbell in hand in a curl fashion, lean body into the arm to help the dumbbell up above the chest, next to the head, to activate chest and delt combo\n"
+        },
+        {
+          "language": 1,
+          "name": "Kurzhantel-Variation für die obere Brust",
+          "description": "Halte die Kurzhantel wie bei einem Curl in der Hand und lehne deinen Körper in den Arm, um die Kurzhantel über die Brust nach oben zu führen, neben den Kopf, um die Brustmuskulatur und den Deltamuskel gemeinsam zu aktivieren.\n"
+        },
+        {
+          "language": 4,
+          "name": "Variación con mancuerna para el pecho superior",
+          "description": "Sujeta la mancuerna en la mano como en un curl e inclina el cuerpo hacia el brazo para ayudar a subir la mancuerna por encima del pecho, junto a la cabeza, para activar la combinación de pecho y deltoides.\n"
+        },
+        {
+          "language": 12,
+          "name": "Variante haut des pectoraux aux haltères",
+          "description": "L'haltère en main à la manière d'un curl, inclinez le corps vers le bras pour aider à monter l'haltère au-dessus de la poitrine, à côté de la tête, afin d'activer la combinaison pectoraux et deltoïdes.\n"
+        }
+      ],
+      "sourceReferenceImageURLs": []
+    },
+    {
+      "id": "wger-00eae665-ff78-4373-9c43-f44a4a1b43e0",
+      "importedTitle": "Frog stand",
+      "preserveMetric": "load_reps",
+      "priorBatch": "docs/research/original-art/movements-034.json",
+      "sourceURLs": [
+        "https://wger.de/en/exercise/1238/view/",
+        "https://wger.de/api/v2/exerciseinfo/?uuid=00eae665-ff78-4373-9c43-f44a4a1b43e0"
+      ],
+      "localEvidenceFiles": [
+        "src/catalog/exercises.json",
+        "docs/research/original-art/movements-034.json",
+        "docs/research/original-art/source-metadata/wger-00eae665-ff78-4373-9c43-f44a4a1b43e0.api.json"
+      ],
+      "findingStatus": "unresolved",
+      "evidence": "All current translations reproduce physically conflicting crouch, straight head-to-heel line and straightening limbs. No source images establish bent-arm knee-supported balance. Do not insert conventional frog stand based on title alone.",
+      "recommendedAction": "Keep artwork held pending exact source variation evidence.",
+      "currentSourceEquipment": [
+        {
+          "id": 7,
+          "name": "none (bodyweight exercise)"
+        }
+      ],
+      "currentSourceTranslations": [
+        {
+          "language": 2,
+          "name": "Frog stand",
+          "description": "Starting position:\nStand with your feet shoulder-width apart and your toes pointing forward, facing a wall or bench for support if needed.\nBend your knees into a squat position.\nPlace your hands on the ground in front of you, shoulder-width apart, with your fingers spread wide.\nMake sure your elbows are under your shoulders and your body forms a straight line from your head to your heels.\nUpward phase:\nPush with your feet and hands to lift your body off the ground.\nStraighten your legs and arms, keeping your body aligned.\nEngage your core and glutes to maintain the position.\nIf needed, rest your knees on the wall or bench for assistance.\n"
+        },
+        {
+          "language": 1,
+          "name": "Froschstand",
+          "description": "Ausgangsposition:\nStelle dich mit schulterbreit aufgestellten Füßen hin, die Zehen zeigen nach vorne, und richte dich bei Bedarf zur Unterstützung zu einer Wand oder Bank aus.\nBeuge deine Knie in eine Hockposition.\nSetze deine Hände schulterbreit vor dir auf den Boden, mit weit gespreizten Fingern.\nAchte darauf, dass deine Ellbogen unter deinen Schultern sind und dein Körper eine gerade Linie vom Kopf bis zu den Fersen bildet.\nAufwärtsphase:\nDrücke dich mit Füßen und Händen ab, um deinen Körper vom Boden zu heben.\nStrecke deine Beine und Arme und halte deinen Körper dabei in einer Linie.\nSpanne deine Rumpf- und Gesäßmuskulatur an, um die Position zu halten.\nLege bei Bedarf deine Knie zur Unterstützung an die Wand oder Bank.\n"
+        },
+        {
+          "language": 4,
+          "name": "Postura de la rana",
+          "description": "Posición inicial:\nPonte de pie con los pies separados al ancho de los hombros y las puntas de los pies apuntando hacia delante, de cara a una pared o un banco como apoyo si lo necesitas.\nFlexiona las rodillas hasta una posición de sentadilla.\nApoya las manos en el suelo frente a ti, separadas al ancho de los hombros, con los dedos bien abiertos.\nAsegúrate de que los codos estén debajo de los hombros y de que tu cuerpo forme una línea recta desde la cabeza hasta los talones.\nFase ascendente:\nEmpuja con los pies y las manos para levantar el cuerpo del suelo.\nEstira las piernas y los brazos, manteniendo el cuerpo alineado.\nActiva el core y los glúteos para mantener la posición.\nSi lo necesitas, apoya las rodillas en la pared o el banco como ayuda.\n"
+        },
+        {
+          "language": 12,
+          "name": "Équilibre de la grenouille",
+          "description": "Position de départ :\nTenez-vous debout, les pieds écartés de la largeur des épaules et les orteils pointés vers l'avant, face à un mur ou à un banc pour vous soutenir si nécessaire.\nPliez les genoux en position de squat.\nPlacez vos mains au sol devant vous, écartées de la largeur des épaules, les doigts bien écartés.\nAssurez-vous que vos coudes sont sous vos épaules et que votre corps forme une ligne droite de la tête aux talons.\nPhase ascendante :\nPoussez avec vos pieds et vos mains pour soulever votre corps du sol.\nTendez vos jambes et vos bras en gardant votre corps aligné.\nContractez votre sangle abdominale et vos fessiers pour maintenir la position.\nSi nécessaire, posez vos genoux sur le mur ou le banc pour vous aider.\n"
+        }
+      ],
+      "sourceReferenceImageURLs": []
+    },
+    {
+      "id": "wger-eaa7927e-6ea0-4fd5-bbcd-525fe90a184b",
+      "importedTitle": "JALONES PECHO NEUTRO",
+      "preserveMetric": "load_reps",
+      "priorBatch": "docs/research/original-art/movements-044.json",
+      "sourceURLs": [
+        "https://wger.de/en/exercise/1136/view/",
+        "https://wger.de/api/v2/exerciseinfo/?uuid=eaa7927e-6ea0-4fd5-bbcd-525fe90a184b"
+      ],
+      "localEvidenceFiles": [
+        "src/catalog/exercises.json",
+        "docs/research/original-art/movements-044.json",
+        "docs/research/original-art/source-metadata/wger-eaa7927e-6ea0-4fd5-bbcd-525fe90a184b.api.json"
+      ],
+      "findingStatus": "validated_current_source",
+      "evidence": "Current API Spanish, English, German and French now explicitly state palms facing each other; equipment Cable machine. This resolves imported palms-down error with actual updated source metadata, not title inference.",
+      "recommendedAction": "Apply reviewed name/equipment/guide repair preserving ID and metric; rebuild guide fingerprint and re-review original artwork against repaired guide before accepting.",
+      "currentSourceEquipment": [
+        {
+          "id": 12,
+          "name": "Cable machine"
+        }
+      ],
+      "currentSourceTranslations": [
+        {
+          "language": 4,
+          "name": "Jalón al pecho con agarre neutro",
+          "description": "El jalón al pecho es un ejercicio importante para fortalecer la espalda y mejorar la postura, lo que puede contribuir a una vida más saludable. Para realizar este ejercicio correctamente y evitar lesiones, es importante seguir algunos pasos clave:\n\n\nColócate frente a la máquina de poleas con las rodillas ligeramente dobladas y los pies en el suelo.\n\n\nAgarra el mango de la polea con las palmas enfrentadas y las manos separadas a la anchura de los hombros.\n\n\nTira hacia abajo del mango hasta que toque o se acerque al pecho, manteniendo la posición durante uno o dos segundos.\n\n\nVuelve a subir el mango lentamente a la posición inicial, asegurándote de mantener los brazos y las manos rectos y la espalda recta durante todo el movimiento.\n\n\n"
+        },
+        {
+          "language": 1,
+          "name": "Latzug zur Brust mit neutralem Griff",
+          "description": "Der Latzug zur Brust ist eine wichtige Übung, um den Rücken zu kräftigen und die Haltung zu verbessern, was zu einem gesünderen Leben beitragen kann. Um diese Übung korrekt auszuführen und Verletzungen zu vermeiden, ist es wichtig, einige zentrale Schritte zu befolgen:\n\n\nStelle dich vor die Kabelzugmaschine, die Knie leicht gebeugt und die Füße auf dem Boden.\n\n\nGreife den Griff des Kabelzugs mit den Handflächen zueinander und den Händen schulterbreit auseinander.\n\n\nZiehe den Griff nach unten, bis er die Brust berührt oder sich ihr nähert, und halte die Position ein bis zwei Sekunden.\n\n\nFühre den Griff langsam wieder in die Ausgangsposition nach oben und achte darauf, Arme und Hände gerade und den Rücken während der gesamten Bewegung gerade zu halten.\n\n\n"
+        },
+        {
+          "language": 2,
+          "name": "Neutral-grip chest pulldown",
+          "description": "The lat pulldown is an important exercise for strengthening the back and improving posture, which can contribute to a healthier life. To perform this exercise correctly and avoid injury, it is important to follow a few key steps:\n\n\nPosition yourself in front of the cable machine with your knees slightly bent and your feet on the floor.\n\n\nGrip the cable handle with your palms facing each other and your hands shoulder-width apart.\n\n\nPull the handle down until it touches or comes close to your chest, holding the position for one or two seconds.\n\n\nSlowly raise the handle back to the starting position, making sure to keep your arms and hands straight and your back straight throughout the movement.\n\n\n"
+        },
+        {
+          "language": 12,
+          "name": "Tirage poitrine en prise neutre",
+          "description": "Le tirage vertical est un exercice important pour renforcer le dos et améliorer la posture, ce qui peut contribuer à une vie plus saine. Pour réaliser correctement cet exercice et éviter les blessures, il est important de suivre quelques étapes clés :\n\n\nPlacez-vous devant la machine à poulie, les genoux légèrement fléchis et les pieds au sol.\n\n\nSaisissez la poignée du câble, paumes se faisant face et mains écartées à la largeur des épaules.\n\n\nTirez la poignée vers le bas jusqu'à ce qu'elle touche votre poitrine ou s'en approche, en maintenant la position pendant une ou deux secondes.\n\n\nRemontez lentement la poignée jusqu'à la position de départ, en veillant à garder vos bras et vos mains droits et votre dos droit pendant tout le mouvement.\n\n\n"
+        },
+        {
+          "language": 15,
+          "name": "Вертикальна тяга нейтральним хватом",
+          "description": "Тяга паралельним хватом до грудей — це багатосуглобова вправа, яка є важливою для зміцнення спини та покращення постави, що сприяє здоровішому життю. Вона націлена на розвиток найширших м'язів спини, ромбоподібних та великого круглого м'яза, а також активно задіює біцепси.\nТехніка виконання (за референсом):\nЩоб виконувати цю вправу правильно та уникнути травм, важливо дотримуватися кількох ключових кроків:\n\nПочаткове положення: Розташуйтеся перед тросовим тренажером (сядьте на сидіння), злегка зігнувши ноги в колінах і зафіксувавши стопи на підлозі (під валиками).\nХват: Візьміться за рукоятку тренажера так, щоб ваші долоні були спрямовані одна до одної (паралельний хват), а руки знаходилися приблизно на ширині плечей.\nТяга (концентрична фаза): Потягніть рукоятку вниз, поки вона не торкнеться або не наблизиться впритул до вашої грудної клітки. Зафіксуйте це положення на одну або дві секунди.\nПовернення (ексцентрична фаза): Повільно підніміть рукоятку назад у вихідне положення, стежачи за тим, щоб ваші руки випрямлялися, а спина залишалася рівною протягом усього руху.\n\n"
+        }
+      ],
+      "sourceReferenceImageURLs": [
+        "https://wger.de/media/exercise-images/1136/5778a8e9-c606-4843-89c8-9d9469eeb6e4.PNG"
+      ],
+      "proposal": {
+        "name": "Neutral-grip chest pulldown",
+        "guideText": "Position yourself at the cable pulldown with your feet supported on the floor. Take the handle with your palms facing each other, about shoulder width apart. Keep your torso steady and pull the handle toward your upper chest. Pause briefly, then allow the handle to rise under control as your arms straighten.",
+        "equipment": "Cable machine",
+        "authorship": "Independent factual wording based on cited record; preserve source attribution separately."
+      }
+    },
+    {
+      "id": "wger-5edf07a8-cca2-4199-96a5-9988369be985",
+      "importedTitle": "Kopfüber Gewichtaufheben",
+      "preserveMetric": "load_reps",
+      "priorBatch": "docs/research/original-art/movements-048.json",
+      "sourceURLs": [
+        "https://wger.de/en/exercise/1322/view/",
+        "https://wger.de/api/v2/exerciseinfo/?uuid=5edf07a8-cca2-4199-96a5-9988369be985"
+      ],
+      "localEvidenceFiles": [
+        "src/catalog/exercises.json",
+        "docs/research/original-art/movements-048.json",
+        "docs/research/original-art/source-metadata/wger-5edf07a8-cca2-4199-96a5-9988369be985.api.json"
+      ],
+      "findingStatus": "unresolved",
+      "evidence": "UUID API returns count zero. Archived local record says unspecified head-down machine beside leg raise and Kettlebell metadata; precise machine/trajectory unavailable.",
+      "recommendedAction": "Keep artwork held pending exact source variation evidence."
+    },
+    {
+      "id": "wger-ca514fad-c6ce-47b0-93a0-dc73a3507099",
+      "importedTitle": "Leg curl with elastic",
+      "preserveMetric": "load_reps",
+      "priorBatch": "docs/research/original-art/movements-050.json",
+      "sourceURLs": [
+        "https://wger.de/en/exercise/1603/view/",
+        "https://wger.de/api/v2/exerciseinfo/?uuid=ca514fad-c6ce-47b0-93a0-dc73a3507099"
+      ],
+      "localEvidenceFiles": [
+        "src/catalog/exercises.json",
+        "docs/research/original-art/movements-050.json",
+        "docs/research/original-art/source-metadata/wger-ca514fad-c6ce-47b0-93a0-dc73a3507099.api.json"
+      ],
+      "findingStatus": "unresolved",
+      "evidence": "Current Italian and English still describe standing on band with hammer grip, no leg flexion or anchoring. No image. Hamstring-curl title cannot establish intended procedure.",
+      "recommendedAction": "Keep artwork held pending exact source variation evidence.",
+      "currentSourceEquipment": [
+        {
+          "id": 11,
+          "name": "Resistance band"
+        }
+      ],
+      "currentSourceTranslations": [
+        {
+          "language": 13,
+          "name": "Leg curl con elastico",
+          "description": "In posizione eretta: posiziona l'elastico sotto i piedi a centro piede e afferralo con presa a martello.\n"
+        },
+        {
+          "language": 2,
+          "name": "Leg curl with elastic",
+          "description": "Standing position: Place the band under your feet in the middle of your foot and grasp it with a hammer grip.\n"
+        }
+      ],
+      "sourceReferenceImageURLs": []
+    },
+    {
+      "id": "wger-77c98954-b50d-46f0-9912-3981f856d5a6",
+      "importedTitle": "Long-Pulley, Narrow",
+      "preserveMetric": "load_reps",
+      "priorBatch": "docs/research/original-art/movements-052.json",
+      "sourceURLs": [
+        "https://wger.de/en/exercise/395/view/",
+        "https://wger.de/api/v2/exerciseinfo/?uuid=77c98954-b50d-46f0-9912-3981f856d5a6"
+      ],
+      "localEvidenceFiles": [
+        "src/catalog/exercises.json",
+        "docs/research/original-art/movements-052.json",
+        "docs/research/original-art/source-metadata/wger-77c98954-b50d-46f0-9912-3981f856d5a6.api.json"
+      ],
+      "findingStatus": "unresolved",
+      "evidence": "Current API confirms Cable machine but English, Spanish and French each retain narrow introduction and wide-grip instruction. German mentions wide-row movement and unspecified grip. No source image independently resolves grip.",
+      "recommendedAction": "Keep artwork held pending exact source variation evidence.",
+      "currentSourceEquipment": [
+        {
+          "id": 12,
+          "name": "Cable machine"
+        }
+      ],
+      "currentSourceTranslations": [
+        {
+          "language": 1,
+          "name": "Long-Pulley (eng)",
+          "description": "Der Bewegungsablauf ist wie der vom Long-Pulley mit breitem Griff.\nSetze dich hin, stelle die Füße auf die Stützstellen ab und greife die Stange. Ziehe nun die Hände auf den Nabel, nicht höher. Dabei sollten die Arme nahe am Körper bleiben und die Schultern so weit wie möglich zusammengezogen werden. Lasse langsam und kontrolliert das Gewicht wieder nach vorne bis die Arme vollständig ausgestreckt sind.\n"
+        },
+        {
+          "language": 2,
+          "name": "Long-Pulley, Narrow",
+          "description": "The exercise is the same as the regular long pulley, but with a narrow grip:\nSit down, put your feet on the supporting points and grab the bar with a wide grip. Pull the weight with a rapid movement towards your belly button, not upper. Keep your arms and elbows during the movement close to your body. Your shoulders are pulled together. Let the weight slowly down till your arms are completely stretched.\n"
+        },
+        {
+          "language": 4,
+          "name": "Remo en polea baja, agarre estrecho",
+          "description": "El ejercicio es el mismo que el remo en polea baja normal, pero con un agarre estrecho:\nSiéntate, apoya los pies en los puntos de apoyo y agarra la barra con un agarre amplio. Tira del peso con un movimiento rápido hacia el ombligo, no más arriba. Mantén los brazos y los codos cerca del cuerpo durante el movimiento. Junta las escápulas. Deja bajar el peso lentamente hasta que tus brazos queden completamente estirados.\n"
+        },
+        {
+          "language": 12,
+          "name": "Tirage à la poulie basse, prise serrée",
+          "description": "L'exercice est identique au tirage classique à la poulie basse, mais avec une prise serrée :\nAsseyez-vous, posez les pieds sur les cales d'appui et saisissez la barre avec une prise large. Tirez la charge d'un mouvement rapide vers votre nombril, et non plus haut. Pendant le mouvement, gardez les bras et les coudes près du corps. Vos épaules sont resserrées. Laissez redescendre la charge lentement jusqu'à ce que vos bras soient complètement tendus.\n"
+        }
+      ],
+      "sourceReferenceImageURLs": []
+    },
+    {
+      "id": "wger-d27a93fa-7066-477c-a475-c6b6170831db",
+      "importedTitle": "Neck extension",
+      "preserveMetric": "load_reps",
+      "priorBatch": "docs/research/original-art/movements-056.json",
+      "sourceURLs": [
+        "https://wger.de/en/exercise/1717/view/",
+        "https://wger.de/api/v2/exerciseinfo/?uuid=d27a93fa-7066-477c-a475-c6b6170831db"
+      ],
+      "localEvidenceFiles": [
+        "src/catalog/exercises.json",
+        "docs/research/original-art/movements-056.json",
+        "docs/research/original-art/source-metadata/wger-d27a93fa-7066-477c-a475-c6b6170831db.api.json"
+      ],
+      "findingStatus": "partially_validated",
+      "evidence": "Spanish original is Codo unilateral polea alta, describing unilateral elbow exercise with back to high pulley. English confirms triceps, ruling out neck movement. Equipment includes cable machine and SZ bar. Exact overhead versus other extension path remains unspecified; rename candidate Single-arm high-cable triceps extension, but do not publish detailed guide or art until path verified.",
+      "recommendedAction": "Keep artwork held pending exact source variation evidence.",
+      "currentSourceEquipment": [
+        {
+          "id": 12,
+          "name": "Cable machine"
+        },
+        {
+          "id": 2,
+          "name": "SZ-Bar"
+        }
+      ],
+      "currentSourceTranslations": [
+        {
+          "language": 4,
+          "name": "Codo unilateral polea alta",
+          "description": "Ejerecicio realizado en polea alta, de espaldas a la polea. Unilateral\n"
+        },
+        {
+          "language": 2,
+          "name": "Neck extension",
+          "description": "Unilateral triceps exercise with your back to the pulley, with the pulley at the top\n"
+        }
+      ],
+      "sourceReferenceImageURLs": []
+    },
+    {
+      "id": "wger-12a80404-8684-4ff0-a473-d80b4ad8cd5e",
+      "importedTitle": "roman chair RDLS",
+      "preserveMetric": "load_reps",
+      "priorBatch": "docs/research/original-art/movements-071.json",
+      "sourceURLs": [
+        "https://wger.de/en/exercise/2639/view/",
+        "https://wger.de/api/v2/exerciseinfo/?uuid=12a80404-8684-4ff0-a473-d80b4ad8cd5e"
+      ],
+      "localEvidenceFiles": [
+        "src/catalog/exercises.json",
+        "docs/research/original-art/movements-071.json",
+        "docs/research/original-art/source-metadata/wger-12a80404-8684-4ff0-a473-d80b4ad8cd5e.api.json"
+      ],
+      "findingStatus": "handled_by_root",
+      "evidence": "Root independently repaired name/guide to Roman chair dumbbell hip hinge using reviewed-guide-repairs.json; existing artwork held for unsecured legs. Current public API still placeholder, so root repair is separate independent guidance.",
+      "recommendedAction": "Use root existing independent repair; regenerate artwork with securely supported feet after updated guide is integrated.",
+      "currentSourceEquipment": [
+        {
+          "id": 3,
+          "name": "Dumbbell"
+        }
+      ],
+      "currentSourceTranslations": [
+        {
+          "language": 2,
+          "name": "roman chair RDLS",
+          "description": "this is a really cool descriptions for an exercise I've created several tomes now but this thing won't save it\n"
+        }
+      ],
+      "sourceReferenceImageURLs": []
+    },
+    {
+      "id": "wger-148f2ffc-05e2-486b-874f-2a401337a1c6",
+      "importedTitle": "Rope Pullover/row",
+      "preserveMetric": "load_reps",
+      "priorBatch": "docs/research/original-art/movements-071.json",
+      "sourceURLs": [
+        "https://wger.de/en/exercise/1634/view/",
+        "https://wger.de/api/v2/exerciseinfo/?uuid=148f2ffc-05e2-486b-874f-2a401337a1c6"
+      ],
+      "localEvidenceFiles": [
+        "src/catalog/exercises.json",
+        "docs/research/original-art/movements-071.json",
+        "docs/research/original-art/source-metadata/wger-148f2ffc-05e2-486b-874f-2a401337a1c6.api.json"
+      ],
+      "findingStatus": "partially_validated",
+      "evidence": "API confirms Cable machine plus Incline bench and supplies original reference image URL. All translations still ask to see image. Pulley height and shoulder/elbow path require reference-image review; no image inspected in this no-images research task.",
+      "recommendedAction": "Keep artwork held pending exact source variation evidence.",
+      "currentSourceEquipment": [
+        {
+          "id": 12,
+          "name": "Cable machine"
+        },
+        {
+          "id": 9,
+          "name": "Incline bench"
+        }
+      ],
+      "currentSourceTranslations": [
+        {
+          "language": 4,
+          "name": "Pullover/remo con cuerda",
+          "description": "Coloca un banco delante de la máquina de remo con polea. Inclínate sobre el banco para hacer un remo/pullover con la cuerda que trabaja los dorsales. Mira la imagen.\n"
+        },
+        {
+          "language": 12,
+          "name": "Pullover/rowing à la corde",
+          "description": "Installez un banc devant la machine de tirage à la poulie basse. Penchez-vous au-dessus du banc pour effectuer un rowing/pullover à la corde qui cible le grand dorsal. Voir l'image.\n"
+        },
+        {
+          "language": 2,
+          "name": "Rope Pullover/row",
+          "description": "Set up bench in front of cable row machine. Lean over bench to do a row/pullover with rope that targets lats. See picture.\n"
+        },
+        {
+          "language": 1,
+          "name": "Seilzug-Pullover/Rudern",
+          "description": "Stelle eine Bank vor die Kabelzug-Rudermaschine. Beuge dich über die Bank, um mit dem Seil ein Rudern/einen Pullover auszuführen, das den Latissimus beansprucht. Siehe Bild.\n"
+        }
+      ],
+      "sourceReferenceImageURLs": [
+        "https://wger.de/media/exercise-images/1634/9a4704d3-1b25-43e3-b244-3885f4d3db87.png"
+      ]
+    }
+  ]
+}

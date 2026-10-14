@@ -1,0 +1,131 @@
+{
+  "name": "recovery-a-001",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/recovery-a-001.png",
+  "prompt": "Original FORMA fitness illustration atlas, landscape 1536x1024, EXACT 3 columns 2 rows equal 512x512 cells, white background generous gutters no text borders arrows logos. Six distinct fully clothed adults charcoal gray equipment and clothing lime accents, exactly two arms two legs, all apparatus contained inside each cell. Show precisely:\nTop left: band-assisted pullup front view medium wide overhand grip, green loop choked around middle overhead bar descending visibly under ONE bent knee; chin near bar, other leg hangs.\nTop middle: terminal knee extension side view athlete facing LEFT toward stable low band anchor IN FRONT; green band anchored left loops behind front knee, split stance front knee straightening.\nTop right: two-arm long-bar landmine row, bar anchored rear end in corner, weight only front end; torso horizontal bent knees, BOTH hands on small close-grip stirrup behind small plates pulling toward lower chest.\nBottom left: bent-arm dumbbell pullover CROSSWISE over flat bench, ONLY shoulders supported, head beyond bench and hips lowered, feet on floor. Bench extends sideways across shoulders. Both hands cup underside of one dumbbell end behind head, elbows visibly bent fixed.\nBottom middle: bent-knee iron cross supine floor rotation, arms extended in T palms down, shoulders remain flat, BOTH bent knees together rotated to athlete's right across body; knees at right angle, feet off ground.\nBottom right: conventional outdoor bicycle riding seated adult, two ordinary thin bicycle wheels pedals chain handlebars, no stationary trainer apparatus, isolated white background.",
+  "cells": [
+    {
+      "id": "db-band-assisted-pull-up",
+      "title": "Band Assisted Pull-Up",
+      "equipment": "Specialty equipment",
+      "guideText": "Choke the band around the center of the pullup bar. You can use different bands to provide varying levels of assistance.\n\nPull the end of the band down, and place one bent knee into the loop, ensuring it won't slip out. Take a medium to wide grip on the bar. This will be your starting position.\n\nPull yourself upward by contracting the lats as you flex the elbow. The elbow should be driven to your side. Pull to the front, attempting to get your chin over the bar. Avoid swinging or jerking movements.\n\nAfter a brief pause, return to the starting position.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Band visibly supports one bent knee and is choked to overhead bar; medium-wide grip and chin at bar match guide.",
+      "priorBatch": "docs/research/original-art/movements-005.json",
+      "cropReviewNote": "Reviewed actual 1536x1024 equal-cell atlas; athlete and equipment contained in 512x512 cell.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "ids": []
+    },
+    {
+      "id": "wger-3096b34e-1781-4f99-8187-d9acac8e712b",
+      "title": "Band Terminal Knee extension",
+      "equipment": "Resistance band",
+      "guideText": "This is an end range strengthening exercise for the knee extensors. Start by looping a band around the back of one knee and anchoring the other end to a stable surface in front of you. Stand in a split stance with the banded knee bent and placed as the front leg. Straighten the knee to pull against the bands resistance and maintain a contraction in your quadriceps for up to 5 seconds before releasing.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Band anchor visibly in front of split stance and loop behind front knee; knee-extension setup matches.",
+      "priorBatch": "docs/research/original-art/movements-006.json",
+      "cropReviewNote": "Reviewed actual 1536x1024 equal-cell atlas; athlete and equipment contained in 512x512 cell.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "ids": []
+    },
+    {
+      "id": "db-bent-over-two-arm-long-bar-row",
+      "title": "Bent Over Two-Arm Long Bar Row",
+      "equipment": "Barbell",
+      "guideText": "Put weight on one of the ends of an Olympic barbell. Make sure that you either place the other end of the barbell in the corner of two walls; or put a heavy object on the ground so the barbell cannot slide backward.\n\nBend forward until your torso is as close to parallel with the floor as you can and keep your knees slightly bent.\n\nNow grab the bar with both arms just behind the plates on the side where the weight was placed and put your other hand on your knee. This will be your starting position.\n\nPull the bar straight up with your elbows in (to maximize back stimulation) until the plates touch your lower chest. Squeeze the back muscles as you lift the weight up and hold for a second at the top of the movement. Breathe out as you lift the weight. Tip: Use a stirrup or double handle cable attachment by hooking it under the end of the bar.\n\nSlowly lower the bar to the starting position getting a nice stretch on the lats. Tip: Do not let the plates touch the floor. To ensure the best range of motion, I recommend using small plates (25-lb ones) as opposed to larger plates (like 35-45lb ones).\n\nRepeat for the recommended amount of repetitions.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "held",
+      "reviewNote": "Guide internally contradicts two-arm grasp with another hand on knee; generated two-hand landmine row cannot resolve source conflict.",
+      "priorBatch": "docs/research/original-art/movements-010.json",
+      "cropReviewNote": "Reviewed actual 1536x1024 equal-cell atlas; athlete and equipment contained in 512x512 cell.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "db-bent-arm-dumbbell-pullover",
+      "title": "Bent-Arm Dumbbell Pullover",
+      "equipment": "Dumbbell",
+      "guideText": "Place a dumbbell standing up on a flat bench.\n\nEnsuring that the dumbbell stays securely placed at the top of the bench, lie perpendicular to the bench (torso across it as in forming a cross) with only your shoulders lying on the surface. Hips should be below the bench and legs bent with feet firmly on the floor. The head will be off the bench as well.\n\nGrasp the dumbbell with both hands and hold it straight over your chest with a bend in your arms. Both palms should be pressing against the underside one of the sides of the dumbbell. This will be your starting position. Caution: Always ensure that the dumbbell used for this exercise is secure. Using a dumbbell with loose plates can result in the dumbbell falling apart and falling on your face.\n\nWhile keeping your arms locked in the bent arm position, lower the weight slowly in an arc behind your head while breathing in until you feel a stretch on the chest.\n\nAt that point, bring the dumbbell back to the starting position using the arc through which the weight was lowered and exhale as you perform this movement.\n\nHold the weight on the initial position for a second and repeat the motion for the prescribed number of repetitions.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Bench crosses shoulder support with head off end, hips lowered, planted feet and bent elbows holding one dumbbell.",
+      "priorBatch": "docs/research/original-art/movements-010.json",
+      "cropReviewNote": "Reviewed actual 1536x1024 equal-cell atlas; athlete and equipment contained in 512x512 cell.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "ids": []
+    },
+    {
+      "id": "wger-4ce9740f-313d-4419-8a23-6c884d3a1a17",
+      "title": "Bent-knee Iron Cross",
+      "equipment": "Bodyweight",
+      "guideText": "Bent-knee Iron Cross\nPart of: Limber 11\nSource: Joe DeFranco\nPrescription: 5-10 reps each side\nType: dynamic",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "held",
+      "reviewNote": "Both knees remain centered over hips; no clear side rotation for bent-knee Iron Cross.",
+      "priorBatch": "docs/research/original-art/movements-010.json",
+      "cropReviewNote": "Reviewed actual 1536x1024 equal-cell atlas; athlete and equipment contained in 512x512 cell.",
+      "bounds": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "db-bicycling",
+      "title": "Bicycling",
+      "equipment": "Specialty equipment",
+      "guideText": "To begin, seat yourself on the bike and adjust the seat to your height.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Bicycling.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Conventional two-wheel bicycle with seated rider, pedals and handlebars; outdoor cycling apparatus matches.",
+      "priorBatch": "docs/research/original-art/movements-011.json",
+      "cropReviewNote": "Reviewed actual 1536x1024 equal-cell atlas; athlete and equipment contained in 512x512 cell.",
+      "bounds": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "ids": []
+    }
+  ],
+  "sourceAssetPath": "assets/exercise-artwork/recovery-a-001.png",
+  "registrationPolicy": "Preserve recovered accepted mappings; register only newly covered IDs explicitly listed in cell.ids."
+}

@@ -57,6 +57,19 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-14 — Cloud crash recovery and pushed checkpoints
+
+- On resume, fetch origin and compare coverage before generating: the restored
+  checkout can be behind already pushed assets and reviews. Recovered remote
+  commit `8d0c5a7` contained 1,341 accepted matches.
+- Owner explicitly requests frequent pushed checkpoints for original PNGs, full
+  prompts, review decisions, coverage and recovery logs. Archive and push each
+  completed generation/review batch; do not wait for full-library completion.
+- Recovery retained new sources, integrated only previously pending reviewed IDs,
+  and clarified source-backed guides without changing historical IDs or units.
+- Progress and remaining work: `docs/research/original-art/recovery-state.json`.
+  No artwork release is deployed during generation.
+
 ### Raouf: 2026-10-14 — Guide repair during artwork review
 
 - Replaced the selectable roman-chair RDL's save-error placeholder with an

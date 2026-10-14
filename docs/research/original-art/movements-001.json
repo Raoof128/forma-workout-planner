@@ -149,21 +149,30 @@
     },
     {
       "id": "wger-d015a276-02ad-4c28-9d36-aedfbb431f53",
-      "title": "Abduction while standing",
+      "title": "Standing bent-knee hip raise",
       "equipment": "Bodyweight",
-      "guideText": "Training a stable stance, predominantly on one leg, is crucial for both sides. On the one hand, it prevents discomfort and, on the other, it establishes a stable foundation. The practitioner assumes the usual standing position and, with a stable upper body, attempts to repeatedly lift the unloaded leg, bend it at the hip and knee, and then lower it again. The movement is also repeated on the other side. The exercise trains the stability of the hip-surrounding muscles.",
+      "guideText": "Stand upright and balance on one leg. Keep your trunk steady while lifting the other leg and bending that hip and knee. Lower the foot under control, repeat, then change sides.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "held",
-      "reviewNote": "Name says abduction but guide describes bent-knee hip flexion; illustration follows guide. Resolve name/guide identity before publication.",
-      "guideSource": {
+      "reviewStatus": "accepted",
+      "reviewNote": "Re-inspected original full sheet and matching representative pose against independently clarified guide and researched source metadata; ID and logging units preserved.",
+      "guideSource": null,
+      "previousTitle": "Abduction while standing",
+      "previousGuideText": "Training a stable stance, predominantly on one leg, is crucial for both sides. On the one hand, it prevents discomfort and, on the other, it establishes a stable foundation. The practitioner assumes the usual standing position and, with a stable upper body, attempts to repeatedly lift the unloaded leg, bend it at the hip and knee, and then lower it again. The movement is also repeated on the other side. The exercise trains the stability of the hip-surrounding muscles.",
+      "previousGuideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1096/view/",
         "author": "tregga",
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "references": [
+        {
+          "title": "Reviewed upstream exercise identity and movement requirements",
+          "url": "https://wger.de/en/exercise/1096/view/"
+        }
+      ]
     },
     {
       "id": "db-adductor",

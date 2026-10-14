@@ -1,0 +1,168 @@
+{
+  "name": "recovery-a-002",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/recovery-a-002.png",
+  "prompt": "Original FORMA fitness atlas landscape1536x1024 EXACT3columns2rows equal512pixelcells white generous gutters no labels text arrows. Charcoalgray clothes apparatus lime trim, one adult eachcell, two arms two legs, apparatus fullycontained. Positions:\nTop left Black Widow knee slide: high plank on both hands, LEFT knee crosses under torso to touch RIGHT forearm near elbow, right leg straight toe supported. Camera frontal threequarter makes crossing explicit.\nTop middle Board press: flat bench supine barbell lowered onto stack of wood boards at chest, boards securely tucked under tight shirt with visible wood ends; feet floor elbows tucked.\nTop right Bottoms-up kettlebell clean from hang: standing one arm elbow flexed forearm vertical hand at shoulder; kettlebell held INVERTED with spherical bell ABOVE the gripped handle, bell base points upward.\nBottom left Box jump landing: crouched adult BOTH feet sidebyside on TOP of one plyometric box, knees bent hips back arms forward balance. No foot touching floor.\nBottom middle Chain handle extension: supine flat bench, upperarms vertical elbows straight lockout two pronated hands holding two separate cable handle attachments; actual steel CHAINS hang freely from EACH handle toward floor, no cable pulley or overhead anchor.\nBottom right Chair upperbody stretch: seated on front edge of ONE chair, feet on floor, straight torso leaning slightly forward, BOTH arms straight extending backwards with hands gripping the top of SAME chair back behind them. No second chair.",
+  "cells": [
+    {
+      "id": "wger-64ebb7a5-15ec-48dd-8f82-47cdb022f215",
+      "title": "Black Widow Knee Slides",
+      "equipment": "Bodyweight",
+      "guideText": "In this bottom-up rotation exercise movement, you’ll cross your knee over and drive it into that opposite elbow. Start in high plank position (or tabletop position) with hands directly beneath your shoulders. Lift the left knee toward the right arm and slide it up the forearm to get more of that posterior pelvic tilt and engagement of the abdominal muscles. Then do the opposite side, bringing your right knee toward your left hand.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1475/view/",
+        "author": "Moffi",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Cross-body knee is tucked under torso but does not visibly reach opposite forearm; defining knee slide remains unclear.",
+      "priorBatch": "docs/research/original-art/movements-011.json",
+      "cropReviewNote": "Inspected actual unequal gutters and row split; bounds isolate cell without neighbor.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 501,
+        "height": 489
+      }
+    },
+    {
+      "id": "db-board-press",
+      "title": "Board Press",
+      "equipment": "Barbell",
+      "guideText": "Begin by lying on the bench, getting your head beyond the bar if possible. One to five boards, made out of 2x6's, can be screwed together and held in place by a training partner, bands, or just tucked under your shirt.\n\nTuck your feet underneath you and arch your back. Using the bar to help support your weight, lift your shoulder off the bench and retract them, squeezing the shoulder blades together. Use your feet to drive your traps into the bench. Maintain this tight body position throughout the movement.\n\nYou can take a standard bench grip, or shoulder width to focus on the triceps. Pull the bar out of the rack without protracting your shoulders. The bar, wrist, and elbow should stay in line at all times. Focus on squeezing the bar and trying to pull it apart.\n\nLower the bar to the boards, and then drive the bar up with as much force as possible. The elbows should be tucked in until lockout.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Board_Press.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Boards sit loose atop shirt rather than visibly secured; bar and plates also meet panel edge.",
+      "priorBatch": "docs/research/original-art/movements-011.json",
+      "cropReviewNote": "Inspected actual unequal gutters and row split; bounds isolate cell without neighbor.",
+      "bounds": {
+        "x": 516,
+        "y": 0,
+        "width": 504,
+        "height": 489
+      }
+    },
+    {
+      "id": "db-bottoms-up-clean-from-the-hang-position",
+      "title": "Bottoms-Up Clean From The Hang Position",
+      "equipment": "Kettlebell",
+      "guideText": "Initiate the exercise by standing upright with a kettlebell in one hand.\n\nSwing the kettlebell back forcefully and then reverse the motion forcefully. Crush the kettlebell handle as hard as possible and raise the kettlebell to your shoulder.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Bottoms-Up_Clean_From_The_Hang_Position.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Correct inverted kettlebell above handle, but athlete lower legs and feet cropped by panel boundary.",
+      "priorBatch": "docs/research/original-art/movements-012.json",
+      "cropReviewNote": "Lower legs absent at source cell boundary; held for containment.",
+      "bounds": {
+        "x": 1035,
+        "y": 0,
+        "width": 501,
+        "height": 489
+      }
+    },
+    {
+      "id": "wger-002c6a4f-28ac-4b07-8e94-053e5b05d52b",
+      "title": "box jumps",
+      "equipment": "Bodyweight",
+      "guideText": "Jump from a standing position onto the box, stretch your body, then step down again (do not jump)",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1373/view/",
+        "author": "tekknokrat@gmx.de",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Both feet land together atop box in crouch; no foot on ground, intact anatomy.",
+      "priorBatch": "docs/research/original-art/movements-012.json",
+      "cropReviewNote": "Inspected actual unequal gutters and row split; bounds isolate cell without neighbor.",
+      "bounds": {
+        "x": 0,
+        "y": 502,
+        "width": 501,
+        "height": 522
+      },
+      "ids": []
+    },
+    {
+      "id": "db-chain-handle-extension",
+      "title": "Chain Handle Extension",
+      "equipment": "Specialty equipment",
+      "guideText": "You will need two cable handle attachments and a flat bench, as well as chains, for this exercise. Clip the middle of the chains to the handles, and position yourself on the flat bench. Your elbows should be pointing straight up.\n\nBegin by extending through the elbow, keeping your upper arm still, with your wrists pronated.\n\nPause at the lockout, and reverse the motion to return to the starting position.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Chain_Handle_Extension.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Two pronated handle grips with freely hanging chains and vertical upper arms on flat bench; no overhead cables.",
+      "priorBatch": "docs/research/original-art/movements-015.json",
+      "cropReviewNote": "Inspected actual unequal gutters and row split; bounds isolate cell without neighbor.",
+      "bounds": {
+        "x": 516,
+        "y": 502,
+        "width": 504,
+        "height": 522
+      },
+      "ids": []
+    },
+    {
+      "id": "db-chair-upper-body-stretch",
+      "title": "Chair Upper Body Stretch",
+      "equipment": "Specialty equipment",
+      "guideText": "Sit on the edge of a chair, gripping the back of it.\n\nStraighten your arms, keeping your back straight, and pull your upper body forward so you feel a stretch. Hold for 20-30 seconds.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Chair_Upper_Body_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "One chair only; seated forward edge, both straight arms grip same chair back behind torso, feet grounded.",
+      "priorBatch": "docs/research/original-art/movements-015.json",
+      "cropReviewNote": "Inspected actual unequal gutters and row split; bounds isolate cell without neighbor.",
+      "bounds": {
+        "x": 1035,
+        "y": 502,
+        "width": 501,
+        "height": 522
+      },
+      "ids": []
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-c4100c82-0ece-450f-9297-3e7ccd9f3d66.png",
+  "sourceAssetPath": "assets/exercise-artwork/recovery-a-002.png",
+  "registrationPolicy": "Preserve recovered accepted mappings; register only newly covered IDs explicitly listed in cell.ids."
+}

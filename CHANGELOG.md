@@ -218,3 +218,11 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 - Added routine planning, exercise library, workout logging, rest timers, history, progress, and preferences.
 - Added browser-local persistence, cross-tab coordination, validated backup restore, and corrupt-data recovery.
 - Published the personal-use application and reference research.
+
+
+## 2026-10-14 — Workout artwork cloud recovery
+
+- Fetched and restored the pushed 1,341-match checkpoint after the cloud restored an older 958-match checkout.
+- Preserved new original sheets, full prompts and cell reviews; only newly covered IDs replace pending mappings.
+- Clarified standing hip raise, band-guide hip abduction, supine rotation, neutral-grip pulldown and bodyweight lateral-step identities without changing saved IDs or units.
+- Keep pushing complete assets and recovery logs after each reviewed batch; consult `docs/research/original-art/recovery-state.json` before resuming.

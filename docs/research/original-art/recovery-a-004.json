@@ -1,0 +1,172 @@
+{
+  "name": "recovery-a-004",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/recovery-a-004.png",
+  "prompt": "Original FORMA clean fitness manual DRAWING not photograph. Landscape1536x1024 EXACT3columns2rows equalcells on purewhite, ample margins all anatomy equipment inside owncell. Gray clothes lime trim charcoal apparatus two arms twolegs no labels text arrows. Six precise poses:\nTOP LEFT couchstretch sideview: rear knee RESTS ON FLOOR just in front of couch, rear shin goes vertically UP and rear foot laces-down rests on couch edge behind, front foot grounded forward knee90degrees, torso upright. One knee visibly touches floor.\nTOP MIDDLE crossbench dumbbell pullover: athlete lies CROSSWISE over bench, flatbench longaxis sideways across shoulders; ONLY upperback shoulders rest on paddedbench, head hangs off left beyond bench, hips lowered and feet planted right. Two hands cup underside of one dumbbell held above chest, elbows slight15degree bend.\nTOP RIGHT overhead crunch: supine floor knees bent60degrees feet flat, LOWERBACK stays floor, shoulders and shoulderblades lift slightly; TWO arms fully STRAIGHT overhead in line with head neck shoulders palms crossed, reaching backward beyond head not forward toward knees.\nBOTTOM LEFT shoulder elevated dumbbell curl: standing adult upper arm horizontal forward at SHOULDER HEIGHT, elbow at shoulder level, forearm bends up dumbbell near shoulder. Other arm atside. No low elbow.\nBOTTOM MIDDLE reverse barbell bicepscurl: standing athlete holds straight barbell shoulderwidth with BOTH palms facing DOWN overhand pronated grip; show back of hands knuckles UP, wrists above bar, elbows at sides flexed bar near upperabdomen. Show clear overhand grip.\nBOTTOM RIGHT seated two-dumbbell wrist EXTENSION: forearms supported across thighs knees, palms DOWN backs of hands UP, wrists hanging past knees and extending upward holding dumbbells, no underhand palms up.",
+  "cells": [
+    {
+      "id": "wger-26168c76-5e2a-4321-8755-5ca42bd341ad",
+      "title": "Couch Stretch",
+      "equipment": "Bench",
+      "guideText": "1. Stand facing away from a bench, couch or similar-height object.\n2. Extend one leg backwards, resting your foot \"laces-down\" on the edge of the bench.\n3. Lower yourself until your rear knee is on the floor and you are in a lunge position, with your torso hanging forwards slightly.\n4. Brace your core, tense your rear glute, and straighten up your torso to vertical, under control. Relax and repeat.\n\nRepeat for the other leg, too.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2525/view/",
+        "author": "Croak6728",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Rear knee correctly rests on floor and laces-down rear foot on couch, but couch extends beyond left source edge; apparatus containment fails.",
+      "priorBatch": "docs/research/original-art/movements-019.json",
+      "cropReviewNote": "Couch truncated at source left edge; held even though athlete contained.",
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "width": 510,
+        "height": 454
+      }
+    },
+    {
+      "id": "wger-6e00afb6-272d-44a2-8ae3-e7fa41b50f06",
+      "title": "Cross-Bench Dumbbell Pullovers",
+      "equipment": "Dumbbell",
+      "guideText": "Grasp a moderately weighted dumbbell so your palms are flat against the underside of the top plates and your thumbs are around the bar. Lie on your back across a flat bench so only your upper back and shoulders are in contact with the bench. Your feet should be set about shoulder-width apart and your head should hang slightly downward. With the dumbbell supported at arm's length directly about your chest, bend your arms about 15 degrees and keep them bent throughout the movement. Slowly lower the dumbbell backward and downward in a semicircle arc to as low a position as is comfortably possible. Raise it slowly back along the same arc to the starting point, and repeat for the required number of repetitions.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/161/view/",
+        "author": "powerade69",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Crosswise bench supports only upper back and shoulders; head off bench, feet planted and both hands under dumbbell end above chest.",
+      "priorBatch": "docs/research/original-art/movements-019.json",
+      "cropReviewNote": "Reviewed visible panel lines and actual row boundary y=456; full subject contained.",
+      "bounds": {
+        "x": 513,
+        "y": 1,
+        "width": 510,
+        "height": 454
+      },
+      "ids": []
+    },
+    {
+      "id": "db-crunch-hands-overhead",
+      "title": "Crunch - Hands Overhead",
+      "equipment": "Bodyweight",
+      "guideText": "Lie on the floor with your back flat and knees bent with around a 60-degree angle between the hamstrings and the calves.\n\nKeep your feet flat on the floor and stretch your arms overhead with your palms crossed. This will be your starting position.\n\nCurl your upper body forward and bring your shoulder blades just off the floor. At all times, keep your arms aligned with your head, neck and shoulder. Don't move them forward from that position. Exhale as you perform this portion of the movement and hold the contraction for a second.\n\nSlowly lower down to the starting position as you inhale.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Crunch_-_Hands_Overhead.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Shoulder blades raised with lower back grounded, feet flat and arms straight overhead aligned with head; matches overhead crunch.",
+      "priorBatch": "docs/research/original-art/movements-020.json",
+      "cropReviewNote": "Reviewed visible panel lines and actual row boundary y=456; full subject contained.",
+      "bounds": {
+        "x": 1025,
+        "y": 1,
+        "width": 510,
+        "height": 454
+      },
+      "ids": []
+    },
+    {
+      "id": "wger-9828f705-350b-4afd-86c4-fcc0e8a0fb4b",
+      "title": "Curl  - With Shoulder Elevated",
+      "equipment": "Dumbbell",
+      "guideText": "Place elbow so that it is about level with the shoulder. Curl the wieght to your shoulder. Focus on the stretch in the eccentric part of the curl",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1666/view/",
+        "author": "Shiladree",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Working elbow is elevated at shoulder height with upper arm near horizontal and dumbbell curled toward shoulder.",
+      "priorBatch": "docs/research/original-art/movements-020.json",
+      "cropReviewNote": "Reviewed visible panel lines and actual row boundary y=456; full subject contained.",
+      "bounds": {
+        "x": 1,
+        "y": 457,
+        "width": 510,
+        "height": 566
+      },
+      "ids": []
+    },
+    {
+      "id": "wger-9ce236dc-7704-4f3e-a3d0-4fea382a950b",
+      "title": "Curl de biceps con agarre prono",
+      "equipment": "Dumbbell",
+      "guideText": "POSICIÓN INICIAL: Seleccione el peso adecuado en una barra. Colóquese de pie con la barra usando un agarre prono y las manos a la anchura de los hombros. Contraiga el suelo pelvico y el core mientras mantiene su pecho levantado. EJECUCIÓN: Contrayendo los bíceps, doble los codos totalmente mientras exhala. Vuelva a la posición inicial con un suave movimiento mientras inhala.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1190/view/",
+        "author": "Franpol",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Both palms visibly face upward in underhand grip; required pronated overhand barbell curl still incorrect.",
+      "priorBatch": "docs/research/original-art/movements-020.json",
+      "cropReviewNote": "Reviewed visible panel lines and actual row boundary y=456; full subject contained.",
+      "bounds": {
+        "x": 513,
+        "y": 457,
+        "width": 510,
+        "height": 566
+      }
+    },
+    {
+      "id": "wger-73646b21-62e3-493b-8d75-4179326cd404",
+      "title": "DB Wrist Extension",
+      "equipment": "Dumbbell",
+      "guideText": ": Grab two dumbbells with an overhand grip and lay your forearms across your knees. : Let your wrists flex fully, then extend your wrists.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1881/view/",
+        "author": "Deflation",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Both overhand dumbbells held with backs of hands upward and forearms supported across knees; seated wrist-extension support and grip match.",
+      "priorBatch": "docs/research/original-art/movements-021.json",
+      "cropReviewNote": "Reviewed visible panel lines and actual row boundary y=456; full subject contained.",
+      "bounds": {
+        "x": 1025,
+        "y": 457,
+        "width": 510,
+        "height": 566
+      },
+      "ids": []
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-e35a29b3-0681-4d00-ac8b-8be15edddd1f.png",
+  "sourceAssetPath": "assets/exercise-artwork/recovery-a-004.png",
+  "registrationPolicy": "Preserve recovered accepted mappings; register only newly covered IDs explicitly listed in cell.ids."
+}

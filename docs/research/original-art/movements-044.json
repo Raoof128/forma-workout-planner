@@ -227,13 +227,24 @@
     },
     {
       "id": "wger-eaa7927e-6ea0-4fd5-bbcd-525fe90a184b",
-      "title": "JALONES PECHO NEUTRO",
-      "equipment": "Bodyweight",
-      "guideText": "El Jalón al pecho es un ejercicio importante para fortalecer la espalda y mejorar la postura, lo que puede contribuir a una vida más saludable. Para realizar este ejercicio correctamente y evitar lesiones, es importante seguir algunos pasos clave: 1. Colóquese frente a la máquina de poleas con las rodillas ligeramente dobladas y los pies en el suelo. 2. Agarre el mango de la polea con las palmas hacia abajo y las manos separadas a la anchura de los hombros. 3. Tire hacia abajo del mango hasta que toque o se acerque al pecho, manteniendo la posición durante uno o dos segundos. 4. Vuelva a subir el mango lentamente a la posición inicial, asegurándose de mantener los brazos y las manos rectos y la espalda recta durante todo el movimiento.",
+      "title": "Neutral-grip chest pulldown",
+      "equipment": "Cable",
+      "guideText": "Position yourself at the cable pulldown with your feet supported on the floor. Take the handle with your palms facing each other, about shoulder width apart. Keep your torso steady and pull the handle toward your upper chest. Pause briefly, then allow the handle to rise under control as your arms straighten.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "held",
-      "guideSource": {
+      "reviewStatus": "accepted",
+      "guideSource": null,
+      "reviewNote": "Re-inspected original full sheet and matching representative pose against independently clarified guide and researched source metadata; ID and logging units preserved.",
+      "bounds": {
+        "x": 384,
+        "y": 650,
+        "width": 384,
+        "height": 374
+      },
+      "cropReviewNote": "Inspected white gutters in borderless sheet: separate panel rows at 350 and 650 pixels.",
+      "previousTitle": "JALONES PECHO NEUTRO",
+      "previousGuideText": "El Jalón al pecho es un ejercicio importante para fortalecer la espalda y mejorar la postura, lo que puede contribuir a una vida más saludable. Para realizar este ejercicio correctamente y evitar lesiones, es importante seguir algunos pasos clave: 1. Colóquese frente a la máquina de poleas con las rodillas ligeramente dobladas y los pies en el suelo. 2. Agarre el mango de la polea con las palmas hacia abajo y las manos separadas a la anchura de los hombros. 3. Tire hacia abajo del mango hasta que toque o se acerque al pecho, manteniendo la posición durante uno o dos segundos. 4. Vuelva a subir el mango lentamente a la posición inicial, asegurándose de mantener los brazos y las manos rectos y la espalda recta durante todo el movimiento.",
+      "previousGuideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1136/view/",
         "author": "Franpol",
@@ -241,14 +252,12 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "reviewNote": "Hold: neutral title contradicts source palms-down guide; resolve grip before approving image.",
-      "bounds": {
-        "x": 384,
-        "y": 650,
-        "width": 384,
-        "height": 374
-      },
-      "cropReviewNote": "Inspected white gutters in borderless sheet: separate panel rows at 350 and 650 pixels."
+      "references": [
+        {
+          "title": "Reviewed upstream exercise identity and movement requirements",
+          "url": "https://wger.de/en/exercise/1136/view/"
+        }
+      ]
     },
     {
       "id": "db-janda-sit-up",

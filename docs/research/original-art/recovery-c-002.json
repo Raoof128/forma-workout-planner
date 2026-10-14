@@ -1,0 +1,180 @@
+{
+  "name": "recovery-c-002",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/recovery-c-002.png",
+  "prompt": "Create an ORIGINAL FORMA exercise illustration atlas, landscape exactly 1536x1024 pixels, THREE COLUMNS and TWO ROWS, SIX equally sized separate cells. White background, subtle shadows, accurate charcoal/gray gym clothing and apparatus with tiny lime green accent. Clean modern detailed fitness manual drawing. NO WORDS, labels, numbers, logos, borders, watermarks. One fully clothed adult athlete per cell, anatomically exactly TWO arms and TWO legs, realistic plausible grip and support. Entire person, bar ends and equipment contained in own 512x512 cell with at least 30px blank margin. Do not merge or overlap cells. Emphasize the explicit pose below; correct equipment, support, grip and variation is essential. Every cell uses single representative phase, no duplicated bodies.\n\nROW 1 COLUMN 1: Keg Load. Keg load final phase: standing athlete with BOTH FEET ON FLOOR immediately beside waist/chest-high loading platform. Extending legs and hips upright while lifting large metal keg to place on platform; both hands grasp keg opposite edges, keg held in front of chest not shoulder. Platform is separate and no foot is on it.\n\nROW 1 COLUMN 2: Kegel Exercise. Kegel neutral starting posture: adult lies supine relaxed on mat, hips and lower back RESTING ON MAT, knees bent, soles flat, arms relaxed by sides. Abdomen relaxed, no bridge, no hip lift, no visible force. Exact quiet supported supine posture; illustration represents starting posture because pelvic-floor contraction is internal.\n\nROW 1 COLUMN 3: Kettlebell Arnold Press. SINGLE kettlebell Arnold press top phase: standing upright, one arm extended overhead holding ONE kettlebell, palm faces forward at lockout; bell rests behind forearm. Other arm hangs empty by side. ONE bell total; straight knees, front three-quarter view.\n\nROW 2 COLUMN 1: Kettlebell Seated Press. SINGLE kettlebell seated floor press: sitting directly on FLOOR mat upright with legs extended widely in V, knees relaxed; ONE arm fully locked overhead with ONE kettlebell; other hand empty at side. No bench or chair. Bell behind forearm.\n\nROW 2 COLUMN 2: Kettlebell Thruster. DOUBLE kettlebell thruster FINISH: standing fully UPRIGHT with STRAIGHT knees and hips, two arms fully locked overhead holding TWO kettlebells, one each hand. Torso vertical, feet grounded shoulder width. This is end of squat-to-press movement; no squat in this phase.\n\nROW 2 COLUMN 3: Kickstand RDL. Kickstand BARBELL RDL: side view, hip hinge torso forward and back flat, two straight arms holding bar just below knees. Front working foot flat, rear nonworking foot half a foot length behind with TOES firmly ON FLOOR and HEEL raised. Both legs remain in grounded staggered stance, rear foot is not airborne.",
+  "cells": [
+    {
+      "id": "db-keg-load",
+      "title": "Keg Load",
+      "equipment": "Specialty equipment",
+      "guideText": "To load kegs, place the desired number a distance from the loading platform, typically 30-50 feet.\n\nBegin by grabbing the close handle of the first keg, tilting it onto its side to grab the opposite edge of the bottom of the keg. Lift the keg up to your chest.\n\nThe higher you can place the keg, the faster you should be able to move to the platform. Shouldering is usually not allowed. Be sure to keep a firm hold on the keg. Move as quickly as possible to the platform, and load it, extending through your hips, knees, and ankles to get it as high as possible.\n\nReturn to the starting position to retrieve the next keg, and repeat until the event is completed.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Keg_Load.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Athlete remains standing with both feet on floor, keg raised at chest onto separate loading platform; no loaded step-up.",
+      "priorBatch": "docs/research/original-art/movements-045.json",
+      "priorReviewNote": "Hold: keg load depicts a loaded step-up, rather than carry/extension onto loading platform.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 500
+      },
+      "cropReviewNote": "Visually inspected complete 1536x1024 PNG; actual cell boundaries x=512,1024, y=500. This panel includes the complete athlete; pose and intended support retained with no athlete clipping.",
+      "ids": []
+    },
+    {
+      "id": "wger-5597bafc-0478-4124-9745-85f9df22be3e",
+      "title": "Kegel Exercise",
+      "equipment": "Bodyweight",
+      "guideText": "Lie on your back with your knees bent, or sit upright in a chair. Locate the pelvic floor muscles: they are the muscles you would use to stop the flow of urine or to hold back gas. Keep your abdomen, glutes and thighs relaxed and breathe normally throughout.\n\nTighten the pelvic floor muscles and lift them gently upwards and inwards. Hold the contraction for a few seconds, then release completely and rest for at least as long as you held. Repeat for the desired number of repetitions.\n\nThe exercise can be varied by holding longer with a light contraction (endurance) or by performing quick, short contractions with a full relaxation in between.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2555/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Relaxed supine posture with bent knees, flat soles, hips/back resting on mat and arms by sides; caption must identify starting posture because pelvic-floor contraction is internal.",
+      "priorBatch": "docs/research/original-art/movements-045.json",
+      "priorReviewNote": "Hold: Kegel exercise incorrectly depicts active glute bridge; guide requires relaxed abdomen/glutes and neutral supine or seated posture.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 500
+      },
+      "cropReviewNote": "Visually inspected complete 1536x1024 PNG; actual cell boundaries x=512,1024, y=500. This panel includes the complete athlete; pose and intended support retained with no athlete clipping.",
+      "ids": []
+    },
+    {
+      "id": "db-kettlebell-arnold-press",
+      "title": "Kettlebell Arnold Press",
+      "equipment": "Kettlebell",
+      "guideText": "Clean a kettlebell to your shoulder. Clean the kettlebell to your shoulder by extending through the legs and hips as you raise the kettlebell towards your shoulder. The palm should be facing inward.\n\nLooking straight ahead, press the kettlebell out and overhead, rotating your wrist so that your palm faces forward at the top of the motion.\n\nReturn the kettlebell to the starting position, with the palm facing in.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Arnold_Press.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Single kettlebell locked overhead with forward-facing palm and opposite empty arm; matches Arnold-press final phase.",
+      "priorBatch": "docs/research/original-art/movements-045.json",
+      "priorReviewNote": "Hold: single kettlebell Arnold press depicted with two kettlebells.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 500
+      },
+      "cropReviewNote": "Visually inspected complete 1536x1024 PNG; actual cell boundaries x=512,1024, y=500. This panel includes the complete athlete; pose and intended support retained with no athlete clipping.",
+      "ids": []
+    },
+    {
+      "id": "db-kettlebell-seated-press",
+      "title": "Kettlebell Seated Press",
+      "equipment": "Kettlebell",
+      "guideText": "Sit on the floor and spread your legs out comfortably.\n\nClean one kettlebell to your shoulder.\n\nPress the kettlebell up and out until it is locked out overhead. Return to the starting position.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Seated_Press.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Sitting directly on floor with legs extended in V; only one kettlebell pressed overhead and opposite hand empty.",
+      "priorBatch": "docs/research/original-art/movements-046.json",
+      "priorReviewNote": "Hold: seated kettlebell press requires one bell; picture shows two.",
+      "bounds": {
+        "x": 0,
+        "y": 500,
+        "width": 512,
+        "height": 524
+      },
+      "cropReviewNote": "Visually inspected complete 1536x1024 PNG; actual cell boundaries x=512,1024, y=500. This panel includes the complete athlete; pose and intended support retained with no athlete clipping.",
+      "ids": [
+        "db-kettlebell-seated-press"
+      ]
+    },
+    {
+      "id": "db-kettlebell-thruster",
+      "title": "Kettlebell Thruster",
+      "equipment": "Kettlebell",
+      "guideText": "Clean two kettlebells to your shoulders. Clean the kettlebells to your shoulders by extending through the legs and hips as you pull the kettlebells towards your shoulders. Rotate your wrists as you do so. This will be your starting position.\n\nBegin to squat by flexing your hips and knees, lowering your hips between your legs. Maintain an upright, straight back as you descend as low as you can.\n\nAt the bottom, reverse direction and squat by extending your knees and hips, driving through your heels. As you do so, press both kettlebells overhead by extending your arms straight up, using the momentum from the squat to help drive the weights upward.\n\nAs you begin the next repetition, return the weights to the shoulders.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Thruster.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Two kettlebells overhead at full arm lockout with upright torso and extended knees/hips; valid thruster finish rather than overhead squat.",
+      "priorBatch": "docs/research/original-art/movements-047.json",
+      "priorReviewNote": "Hold: thruster shows deep squat with bells already overhead; pressing phase must finish upright rather than depict overhead squat.",
+      "bounds": {
+        "x": 512,
+        "y": 500,
+        "width": 512,
+        "height": 524
+      },
+      "cropReviewNote": "Visually inspected complete 1536x1024 PNG; actual cell boundaries x=512,1024, y=500. This panel includes the complete athlete; pose and intended support retained with no athlete clipping.",
+      "ids": []
+    },
+    {
+      "id": "wger-107ea68a-d976-49ed-be75-3b0cf253c36a",
+      "title": "Kickstand RDL",
+      "equipment": "Barbell",
+      "guideText": "use non-working leg's toes to help with balance and perform an RDL.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1688/view/",
+        "author": "eriktrinkle",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Barbell hip hinge in staggered stance; rear toe is visibly grounded with raised heel while front sole stays flat, matching kickstand balance support.",
+      "priorBatch": "docs/research/original-art/movements-047.json",
+      "priorReviewNote": "Hold: kickstand RDL rear toes are lifted; rear toes must support balance on floor.",
+      "bounds": {
+        "x": 1024,
+        "y": 500,
+        "width": 512,
+        "height": 524
+      },
+      "cropReviewNote": "Visually inspected complete 1536x1024 PNG; actual cell boundaries x=512,1024, y=500. This panel includes the complete athlete; pose and intended support retained with no athlete clipping.",
+      "ids": []
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-7611148a-7165-42c9-8432-b68b91bad5fc.png",
+  "sourceAssetPath": "assets/exercise-artwork/recovery-c-002.png",
+  "reviewedAt": "2026-10-14T04:53:06.172Z",
+  "registrationPolicy": "Preserve recovered accepted mappings; register only newly covered IDs explicitly listed in cell.ids."
+}

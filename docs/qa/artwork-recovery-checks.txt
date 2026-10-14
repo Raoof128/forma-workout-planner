@@ -1,0 +1,131 @@
+2026-10-14 — 1348/1414 recovered artwork checkpoint. Strict completeness remains pending.
+
+unit-tests
+
+> forma-workout-planner@1.0.0 test:unit
+> node --test unit/*.test.js
+
+✔ duplicate names become searchable aliases without mutating compatibility records (3.94955ms)
+✔ specific machine metadata remains discoverable through machine and attachment filters (0.58732ms)
+✔ boilerplate is not a usable guide and hidden records remain available for saved data (0.300533ms)
+✔ roman-chair placeholder is repaired without removing its saved identity (5.186897ms)
+✔ dangling aliases and cycles fail rather than silently discarding movements (1.299476ms)
+✔ every selectable exercise has an actual guide and correct source attribution (21.168609ms)
+✔ all historical IDs retain the same objects and backup measurements after deduplication (54.811064ms)
+✔ every newly reviewed machine and timed identity validates through the shared API schema (17.970946ms)
+✔ machine taxonomy never relabels barbell, elastic-band or butterfly floor variants (1.289733ms)
+✔ barbell, band and butterfly floor movements are never classified as machines by their names (1.215036ms)
+✔ catalog search matches aliases, punctuation and words across fields (2.414265ms)
+✔ catalog preserves legacy IDs and gives every imported entry licensed text provenance (13.453886ms)
+✔ timed cardio, holds and carries retain their units through backup round trips (21.624448ms)
+✔ missing or invalid timed measurements are rejected by the shared API validator (10.069857ms)
+✔ workout templates validate and never prescribe arbitrary starting weights (2.438497ms)
+✔ expanded catalog retains finite per-workout bounds and rejects unknown exercise IDs (4.575304ms)
+✔ near-limit cloud export downloads compact JSON that passes backup import size validation (1926.028425ms)
+✔ cloud repository loads authoritative data and commits with CAS metadata (185.497841ms)
+✔ workspace requests stay bound to the member that created the repository (5.547854ms)
+✔ account_changed clears member data and does not retry a stale write under a new cookie (4.886644ms)
+✔ a conflict preserves the attempted update and exposes latest cloud data (5.017085ms)
+✔ ambiguous transport failures retry the exact serialized operation (3.679285ms)
+✔ dispose cancels an in-flight save and prevents queued writes from starting (16.248399ms)
+✔ an unknown save outcome blocks new commits until the exact operation is retried (2.516949ms)
+✔ an older overlapping refresh cannot replace a newer revision (3.36353ms)
+✔ heading fragments retain inline-code text and omit fenced examples (12.355311ms)
+✔ completed-set volume uses exact load × reps and ignores unfinished drafts (2.381744ms)
+✔ zero external load bodyweight work counts as a set without invented volume (0.707446ms)
+✔ estimated one-rep max keeps actual singles and computes 80 kg × 5 without early rounding (0.385868ms)
+✔ empty session aggregates are zero (0.331567ms)
+✔ catalog refresh preserves all published supplemental measurement units (12.143488ms)
+✔ measurement precedence distinguishes moving planks, carries and timed cardio (0.319449ms)
+✔ a commit remains single-application and temporary with a throwing locks getter (151.704095ms)
+✔ a commit remains single-application and temporary with an unavailable locks API (1.495048ms)
+✔ initialization and mutations handle a rejecting Web Locks API (17.512548ms)
+✔ a lock rejection after initialization retains the edit once in memory (11.413575ms)
+✔ a mutation error is never retried or partially adopted (5.750836ms)
+✔ temporary mode advances revisions and rejects a stale restore confirmation (14.830173ms)
+✔ restoring from temporary mode preserves both original disk and memory (12.987806ms)
+✔ recovery will not overwrite another tab's replacement of corrupt data (9.017654ms)
+✔ unreadable storage blocks replacement and leaves in-memory data intact (5.571787ms)
+✔ repeated recoveries in the same millisecond keep distinct originals (8.311588ms)
+✔ two repositories serialize independent mutations without losing fields (8.055838ms)
+✔ failed preservation never replaces the current workspace (5.069786ms)
+✔ loss of storage access on recovery keeps the invalid-data state (2.423421ms)
+✔ task-local storage snapshots are refreshed and flushed while the lock is held (3.638007ms)
+✔ FE-01: oversized workspaces are rejected before per-set validation runs (1087.819967ms)
+✔ FE-03: restore/import is pinned to the reviewed cloud revision (63.872234ms)
+✔ FE-04: browser guest data is offered for import once, to the member who imported it (1.71215ms)
+✔ backup parsing strips prototype-shaped unknown keys without polluting Object.prototype (21.772806ms)
+✔ malformed JSON and schema-invalid backups are rejected (9.6282ms)
+✔ oversized backup files are rejected before their contents are read (0.995569ms)
+✔ legacy version 1 backups receive revision and timer defaults (19.72495ms)
+✔ history with no completed sets cannot inflate workout counts (5.425141ms)
+✔ a session cannot be active and completed under the same ID (1.666516ms)
+✔ out-of-range timestamps are rejected before rendering or timer arithmetic (2.42299ms)
+✔ backup size is bounded before reading files and before parsing strings (70.452287ms)
+✔ completed-set validation permits a blank unfinished draft but not completed blanks (40.908442ms)
+✔ calendar calculations stay in Sydney across daylight-saving boundaries (1.149698ms)
+✔ training totals count completed sets and keep the actual single-rep load (0.705186ms)
+✔ ID generation works when randomUUID is unavailable (1.413888ms)
+ℹ tests 61
+ℹ suites 0
+ℹ pass 61
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4704.344708
+
+
+lint
+
+> forma-workout-planner@1.0.0 lint
+> eslint .
+
+
+/workspace/forma-workout-planner/work/recovery-c-review.cjs
+  1:60  error  'process' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+
+format
+
+> forma-workout-planner@1.0.0 format:check
+> prettier --check src tests unit server worker scripts *.js *.json wrangler.jsonc index.html
+
+Checking formatting...
+All matched files use Prettier code style!
+
+
+types
+
+> forma-workout-planner@1.0.0 typecheck
+> tsc --noEmit
+
+
+
+docs
+
+> forma-workout-planner@1.0.0 docs:check
+> node scripts/check-docs.mjs
+
+Documentation check passed: 66 Markdown files, local links/images/fragments, and npm script names.
+
+
+build
+
+> forma-workout-planner@1.0.0 build
+> vite build
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 2125 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                           1.01 kB │ gzip:   0.50 kB
+dist/assets/index-CEgvojHk.css           73.12 kB │ gzip:  15.32 kB
+dist/assets/instructions-D5gYSpG2.js    888.78 kB │ gzip: 241.10 kB
+dist/assets/index-_TXVnD-5.js         2,980.65 kB │ gzip: 453.11 kB
+
+✓ built in 2.89s

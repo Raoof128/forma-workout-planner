@@ -1,0 +1,114 @@
+{
+  "name": "recovery-decline-040",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/recovery-decline-040.png",
+  "cells": [
+    {
+      "id": "db-weighted-sit-ups-with-bands",
+      "title": "Weighted Sit-Ups - With Bands",
+      "equipment": "Specialty equipment",
+      "guideText": "Start out by strapping the bands around the base of the decline bench. Place the handles towards the inside of the decline bench so that when lying down, you can reach for both of them.\n\nPosition your legs through the decline machine until they are secured. Now reach for the exercise bands with both hands. Use a pronated (palms forward) grip to grasp the handles. Position them near your collar bone and rotate your wrist to a neutral grip (palms facing the torso). Note: Your arms should remain stationary throughout the exercise. This is the starting position.\n\nMove your torso upward until your upper body is perpendicular to the floor while exhaling. Hold the contraction for a second and lower your upper body back down to the starting position while inhaling.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Weighted_Sit-Ups_-_With_Bands.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Reviewed feet secured above head, head-low decline support, fixed collarbone band handles and low head-end anchors; representative partially curled position.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full generated sheet; panel dividers at x768 and y512 with all accepted figures contained.",
+      "ids": []
+    },
+    {
+      "id": "db-wide-grip-decline-barbell-bench-press",
+      "title": "Wide-Grip Decline Barbell Bench Press",
+      "equipment": "Barbell",
+      "guideText": "Lie back on a decline bench with the feet securely locked at the front of the bench. Using a wide, pronated (palms forward) grip that is around 3 inches away from shoulder width (for each hand), lift the bar from the rack and hold it straight over you with your arms locked. The bar will be perpendicular to the torso and the floor. This will be your starting position.\n\nAs you breathe in, come down slowly until you feel the bar on your lower chest.\n\nAfter a second pause, bring the bar back to the starting position as you breathe out and push the bar using your chest muscles. Lock your arms and squeeze your chest in the contracted position, hold for a second and then start coming down slowly again. Tip: It should take at least twice as long to go down than to come up.\n\nRepeat the movement for the prescribed amount of repetitions.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Wide-Grip_Decline_Barbell_Bench_Press.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Held: head-low decline support is correct but hands remain approximately shoulder-width rather than distinctly wide.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full generated sheet; panel dividers at x768 and y512 with all accepted figures contained."
+    },
+    {
+      "id": "wger-cbc5fbc9-9bca-4766-941d-4b6903d4a521",
+      "title": "Negative Crunches",
+      "equipment": "Bodyweight",
+      "guideText": "Sit yourself on the decline bench and fix your legs. Cross your arms over the chest and bring with a rolling movement your upper body up, go now without a pause and with a slow movement down again. Don't let your head move during the exercise.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/427/view/",
+        "author": "wger.de",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Reviewed head-low decline bench with feet secured high, arms crossed and upper torso curling clear of pad.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full generated sheet; panel dividers at x768 and y512 with all accepted figures contained.",
+      "ids": []
+    },
+    {
+      "id": "db-on-your-back-quad-stretch",
+      "title": "On-Your-Back Quad Stretch",
+      "equipment": "Specialty equipment",
+      "guideText": "Lie on a flat bench or step, and hang one leg and arm over the side.\n\nBend the knee and hold the top of the foot. As you do this, be careful not to arch your lower back.\n\nPull the belly button to the spine to stay in neutral. Press your foot down and into your hand. To add the hip stretch, lift the hip of the leg you're holding up toward the ceiling.\n\nSwitch sides.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/On-Your-Back_Quad_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Reviewed supine flat-bench position, opposite leg extended along pad and bent hanging leg held at the foot below bench edge.",
+      "bounds": {
+        "x": 768,
+        "y": 512,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected full generated sheet; panel dividers at x768 and y512 with all accepted figures contained.",
+      "ids": []
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-23527f06-ab21-467d-8c11-8d17521ab800.png",
+  "sourceAssetPath": "assets/exercise-artwork/recovery-decline-040.png",
+  "recoveryNote": "Regenerated from owner-pasted lost-session prompt; original lost-session image was absent.",
+  "prompt": "Original FORMA exercise manual: exactly TWO COLUMNS TWO ROWS, FOUR separate large panels, landscape1536x1024. Clean white backgrounds, fully clothed varied adults, charcoal-gray clothing/equipment with lime accent, anatomically correct, physically plausible supports. No lettering/logos/watermarks. Whole figure and apparatus entirely inside own panel, generous margins. Render each POSITIVE VISUAL DESCRIPTION precisely. Avoid default generic fitness poses; geometry and hand directions are essential.\n\nRow 1 column 1: SIDE view decline bench: secured FEET HIGH on RIGHT, HEAD/shoulders LOW on LEFT, pad slopes downward from right feet to left head. Band anchors low under HEAD END, handles held collarbone. Adult in lowered sit-up position, knees secured at HIGH end.\n\nRow 1 column 2: SIDE view decline bench: secured FEET HIGH on RIGHT, HEAD LOW on LEFT. Pad slopes down toward head. Two hands WIDE on loaded bar pressed vertically above chest, foot rollers at HIGH RIGHT end, back supported.\n\nRow 2 column 1: SIDE view DECLINE bench: secured FEET HIGH on RIGHT, HEAD LOW on LEFT. Pad slopes downward toward left head. Adult arms CROSSED chest, torso partly curled up from low end, feet secured by high rollers. No barbell.\n\nRow 2 column 2: Adult lies FACE UP on FLAT bench, head supported, one leg flat on bench. Other thigh HANGS DOWN BESIDE bench, knee bent, hand on same side grasps top of same foot BELOW bench edge. Front abdomen and face point UP, never prone.",
+  "registrationPolicy": "Preserve recovered accepted mappings; register only newly covered IDs explicitly listed in cell.ids."
+}

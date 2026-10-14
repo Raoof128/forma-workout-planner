@@ -1,0 +1,174 @@
+{
+  "name": "recovery-c-001",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/recovery-c-001.png",
+  "prompt": "Create an ORIGINAL FORMA exercise illustration atlas, landscape exactly 1536x1024 pixels, THREE COLUMNS and TWO ROWS, SIX equally sized separate cells. White background, subtle shadows, accurate charcoal/gray gym clothing and apparatus with tiny lime green accent. Clean modern detailed fitness manual drawing. NO WORDS, labels, numbers, logos, borders, watermarks. One fully clothed adult athlete per cell, anatomically exactly TWO arms and TWO legs, realistic plausible grip and support. Entire person, bar ends and equipment contained in own 512x512 cell with at least 30px blank margin. Do not merge or overlap cells. Emphasize the explicit pose below; correct equipment, support, grip and variation is essential. Every cell uses single representative phase, no duplicated bodies.\n\nROW 1 COLUMN 1: Isometric Neck Exercise - Front And Back. Full body adult standing upright, neutral erect neck, BOTH palms stacked against FRONT FOREHEAD above eyebrows, resisting forward neck force. Side three-quarter view makes forehead contact unequivocal. Both hands in front of face, neither touches temple.\n\nROW 1 COLUMN 2: IT Band and Glute Stretch. Adult supine on mat, left leg extended straight on floor; straight RIGHT leg crosses over midline to LEFT side at hip level, suspended just above floor. Strap loops right forefoot; both hands pull strap toward torso. Show wide overhead oblique view to establish diagonal CROSS-BODY straight leg and lifted toes.\n\nROW 1 COLUMN 3: Jalón abierto supino. Seated upright at high-cable lat pulldown machine, thighs under pad, wide SUPINATED underhand grip with palms toward athlete. Pull long bar IN FRONT of face to upper chest below chin. Show front three-quarter view with palms visible, bar below chin and clear behind-head space.\n\nROW 2 COLUMN 1: JALON EN BANCO INCLINADO. Prone chest on 45 degree incline bench, facing HIGH overhead cable pulley above and in front of bench. Two hands pull high-cable long bar down toward upper chest; elbows flex beside ribcage. Torso faces floor, chest rests on incline, both feet grounded. Cable visibly rises from bar to TOP overhead pulley, not low row anchor.\n\nROW 2 COLUMN 2: Jefferson Squats. Jefferson squat: adult straddles long barbell running FRONT TO BACK BETWEEN legs. View oblique from side such that near plate is in front of right foot and far plate behind left foot. Squat thighs parallel, torso vertical. RIGHT straight arm grasps shaft IN FRONT of pelvis, LEFT straight arm grasps shaft BEHIND pelvis. Two hands fore and aft at equal distances; neutral palms face opposite sides. Bar hangs below pelvis between legs.\n\nROW 2 COLUMN 3: Jerk Dip Squat. Jerk dip: barbell front-racked on shoulders near throat, elbows slightly forward, feet hip width, torso perfectly VERTICAL. Only a SHALLOW 15-20 degree knee bend, thighs still nearly vertical, hips high directly over heels. Side view shows knees slightly forward and hips not pushed backward.",
+  "cells": [
+    {
+      "id": "db-isometric-neck-exercise-front-and-back",
+      "title": "Isometric Neck Exercise - Front And Back",
+      "equipment": "Bodyweight",
+      "guideText": "With your head and neck in a neutral position (normal position with head erect facing forward), place both of your hands on the front side of your head.\n\nNow gently push forward as you contract the neck muscles but resisting any movement of your head. Start with slow tension and increase slowly. Keep breathing normally as you execute this contraction.\n\nHold for the recommended number of seconds.\n\nNow release the tension slowly.\n\nRest for the recommended amount of time and repeat with your hands placed on the back side of your head.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Isometric_Neck_Exercise_-_Front_And_Back.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Both palms visibly press forehead in front of face, neutral erect neck and full body; matches front neck-isometric representative phase.",
+      "priorBatch": "docs/research/original-art/movements-044.json",
+      "priorReviewNote": "Hold: front/back neck isometric requires hands on forehead or occiput; picture presses both temples/sides.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 492
+      },
+      "cropReviewNote": "Visually inspected complete 1536x1024 PNG; actual cell boundaries x=512,1024, y=492. This panel includes the complete athlete; pose and intended support retained with no athlete clipping.",
+      "ids": []
+    },
+    {
+      "id": "db-it-band-and-glute-stretch",
+      "title": "IT Band and Glute Stretch",
+      "equipment": "Specialty equipment",
+      "guideText": "Loop a belt, rope, or band around one of your feet, and swing that leg across your body to the opposite side, keeping the leg extended as you lay on the ground. This will be your starting position.\n\nKeeping your foot off of the floor, pull on the belt, using the tension to pull the toes up. Hold for 10-20 seconds, and repeat on the other side.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/IT_Band_and_Glute_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Raised strapped leg remains ahead of torso as vertical/diagonal hamstring stretch; no clear straight-leg cross-body lateral displacement.",
+      "priorBatch": "docs/research/original-art/movements-044.json",
+      "priorReviewNote": "Hold: IT-band/glute strap stretch needs straight leg crossing body, not vertical hamstring strap stretch.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 492
+      },
+      "cropReviewNote": "Visually inspected complete 1536x1024 PNG; actual cell boundaries x=512,1024, y=492. This panel includes the complete athlete; held movement remains unavailable for runtime use."
+    },
+    {
+      "id": "wger-d33f3b19-436f-48a2-aff6-946582c94bdb",
+      "title": "Jalón abierto supino",
+      "equipment": "Bodyweight",
+      "guideText": "Movimiento descendente • Tire de la barra hacia abajo para que pase cerca de su barbilla y toque la parte superior de su pecho. • Mantenga el resto de su cuerpo inmóvil.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1125/view/",
+        "author": "Franpol",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Bar is in front at upper chest with wide grip, but supination cannot be confirmed from wrist/palm drawing; machine top also clipped at image edge.",
+      "priorBatch": "docs/research/original-art/movements-044.json",
+      "priorReviewNote": "Hold: wide supinated chest pulldown depicted as behind-neck pulldown.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 492
+      },
+      "cropReviewNote": "Visually inspected complete 1536x1024 PNG; actual cell boundaries x=512,1024, y=492. This panel includes the complete athlete; held movement remains unavailable for runtime use."
+    },
+    {
+      "id": "wger-4e941b0d-4b2f-4393-89cf-6a5e9b69252e",
+      "title": "JALON EN BANCO INCLINADO",
+      "equipment": "Bodyweight",
+      "guideText": "Sobre el banco inclinado frete a la maquina de polea, con el cuerpo boca bajo sobre el banco, se realiza el jalón.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1138/view/",
+        "author": "Franpol",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Chest rests prone on incline and high cable is visible, but bar passes behind head/upper neck instead of front chest pulldown.",
+      "priorBatch": "docs/research/original-art/movements-044.json",
+      "priorReviewNote": "Hold: prone incline pulldown depicted as low-anchor cable row.",
+      "bounds": {
+        "x": 0,
+        "y": 492,
+        "width": 512,
+        "height": 532
+      },
+      "cropReviewNote": "Visually inspected complete 1536x1024 PNG; actual cell boundaries x=512,1024, y=492. This panel includes the complete athlete; held movement remains unavailable for runtime use."
+    },
+    {
+      "id": "db-jefferson-squats",
+      "title": "Jefferson Squats",
+      "equipment": "Barbell",
+      "guideText": "Place a barbell on the floor.\n\nStand in the middle of the bar length wise.\n\nBend down by bending at the knees and keeping your back straight and grasp the front of the bar with your right hand. Your palm should be in (neutral grip) facing the left side.\n\nGrasp the rear of the bar with your left hand. The palm of your hand should be in neutral grip alignment (palms facing the right side). Tip: Ensure that your grip is even on the bar. Your torso should be positioned right in the middle of the bar and the distance between your torso and your right hand (which should be at the front) should be the same as the distance between your torso and your left hand (which should be to your back).\n\nNow stand straight up with the weight. Tip: Your feet should be shoulder width apart and your toes slightly pointed out.\n\nSquat down by bending at the knees and keeping your back straight until your upper thighs are parallel with the floor. Tip: Keep your back as vertical as possible with the floor and your head up. Also remember to not let your knees go past your toes. Inhale during this portion of the movement.\n\nNow drive yourself back up to the starting position by pushing with the feet . Tip: Keep the bar hanging at arm's length and your elbows locked with a slight bend. The arms only serve as hooks. Avoid doing any lifting with them. Do the lifting with your thighs; not your arms.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Jefferson_Squats.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Both hands remain in front on transverse bar, not one in front and one behind on lengthwise straddled Jefferson bar.",
+      "priorBatch": "docs/research/original-art/movements-044.json",
+      "priorReviewNote": "Hold: Jefferson squat requires straddling lengthwise bar with one hand forward and one behind; image is ordinary front-bar sumo deadlift.",
+      "bounds": {
+        "x": 512,
+        "y": 492,
+        "width": 512,
+        "height": 532
+      },
+      "cropReviewNote": "Visually inspected complete 1536x1024 PNG; actual cell boundaries x=512,1024, y=492. This panel includes the complete athlete; held movement remains unavailable for runtime use."
+    },
+    {
+      "id": "db-jerk-dip-squat",
+      "title": "Jerk Dip Squat",
+      "equipment": "Barbell",
+      "guideText": "This movement strengthens the dip portion of the jerk. Begin with the bar racked in the jerk position, with the shoulders forward to create a shelf and the bar lightly contacting the throat. The feet should be directly under the hips, with the feet turned out as is comfortable.\n\nKeeping the torso vertical, dip by flexing the knees, allowing them to travel forward and without moving the hips to the rear. The dip should not be excessive. Return the weight to the starting position by driving forcefully though the feet.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Jerk_Dip_Squat.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Bar rests front-racked at shoulders, hips remain high and torso upright with short shallow knee dip rather than full squat.",
+      "priorBatch": "docs/research/original-art/movements-045.json",
+      "priorReviewNote": "Hold: jerk dip image is too deep, approaching squat instead of short vertical knee dip.",
+      "bounds": {
+        "x": 1024,
+        "y": 492,
+        "width": 512,
+        "height": 532
+      },
+      "cropReviewNote": "Visually inspected complete 1536x1024 PNG; actual cell boundaries x=512,1024, y=492. This panel includes the complete athlete; pose and intended support retained with no athlete clipping.",
+      "ids": []
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-d26dfb0d-5642-4929-9383-5a902a2d9e56.png",
+  "sourceAssetPath": "assets/exercise-artwork/recovery-c-001.png",
+  "reviewedAt": "2026-10-14T04:51:55.111Z",
+  "registrationPolicy": "Preserve recovered accepted mappings; register only newly covered IDs explicitly listed in cell.ids."
+}

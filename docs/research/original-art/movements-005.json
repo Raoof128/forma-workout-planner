@@ -108,13 +108,23 @@
     },
     {
       "id": "db-band-hip-adductions",
-      "title": "Band Hip Adductions",
+      "title": "Standing band hip abduction (guide variant)",
       "equipment": "Resistance band",
-      "guideText": "Anchor a band around a solid post or other object.\n\nStand with your left side to the post, and put your right foot through the band, getting it around the ankle.\n\nStand up straight and hold onto the post if needed. This will be your starting position.\n\nKeeping the knee straight, raise your right legs out to the side as far as you can.\n\nReturn to the starting position and repeat for the desired rep count.\n\nSwitch sides.",
+      "guideText": "Anchor a resistance band to a sturdy low post. Stand side-on and place the loop around the ankle farther from the anchor. Use the hand nearer the post for balance and keep your torso steady. With the working knee comfortably straight, move that leg outward away from the anchor against the band. Return the foot slowly toward the standing leg without losing balance, then repeat on the other side. This is the outward hip-abduction movement described by the imported instructions.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "held",
-      "reviewNote": "Source name says adduction while guide and pose describe abduction; reconcile identity."
+      "reviewStatus": "accepted",
+      "reviewNote": "Re-inspected original full sheet and matching representative pose against independently clarified guide and researched source metadata; ID and logging units preserved.",
+      "previousTitle": "Band Hip Adductions",
+      "previousGuideText": "Anchor a band around a solid post or other object.\n\nStand with your left side to the post, and put your right foot through the band, getting it around the ankle.\n\nStand up straight and hold onto the post if needed. This will be your starting position.\n\nKeeping the knee straight, raise your right legs out to the side as far as you can.\n\nReturn to the starting position and repeat for the desired rep count.\n\nSwitch sides.",
+      "previousGuideSource": null,
+      "guideSource": null,
+      "references": [
+        {
+          "title": "Imported guide describes outward movement; provider photos instead depict adduction",
+          "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Band_Hip_Adductions.json"
+        }
+      ]
     },
     {
       "id": "db-band-pull-apart",

@@ -1,0 +1,186 @@
+{
+  "name": "recovery-b-004",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/recovery-b-004.png",
+  "prompt": "Original FORMA fitness manual illustration landscape1536x1024 EXACT3columns2rows equal white panels. No text labels arrows borders. Charcoalgray equipment clothing lime accents. Correct2arms2legs per adult. Entire person and apparatus contained generous margins. Respect precise support grip.\nRow1 column1: Good Morning off Pins. Power rack side view, safety PINS at stomach height support barbell; lifter torso horizontal underneath bar which lies across rear shoulders, hands grasp at shoulder level.\nRow1 column2: Gorilla Chin/Crunch. Suspended chin crunch endpoint, nose at bar height, clearly underhand palms toward face, knees tucked to chest, both feet airborne.\nRow1 column3: Helms Row. Helms row: chest nipple line resting ONLY on end of flat bench, torso near horizontal beyond bench; feet on floor, dumbbells pulled back alongside ribs.\nRow2 column1: Hip Airplane. Bodyweight hip airplane: standing on one leg, free leg behind in line with tilted torso, pelvis and chest visibly rotated open sideways; no weights.\nRow2 column2: Hip hinge. Unloaded hip hinge side view, hips pushed back, torso almost horizontal, flat spine, slight knee bend, empty hands.\nRow2 column3: Hip-Out and Hip-In Lateral Steps. Bodyweight lateral step: upright athlete one foot planted, opposite leg stepping sideways wide, no resistance band or weights.",
+  "cells": [
+    {
+      "id": "db-good-morning-off-pins",
+      "title": "Good Morning off Pins",
+      "equipment": "Barbell",
+      "guideText": "Begin with a bar on a rack at about the same height as your stomach. Bend over underneath the bar and rack the bar across the rear of your shoulders as you would a power squat, not on top of your shoulders. At the proper height, you should be near parallel to the floor when bent over. Keep your back tight, shoulder blades pinched together, and your knees slightly bent. Keep your back arched and your cervical spine in proper alignment.\n\nBegin the motion by extending through the hips with your glutes and hamstrings, and you are standing with the weight. Slowly lower the weight back to the pins returning to the starting position.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Good_Morning_off_Pins.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Bar crosses rear shoulders, but visibly sits above safety pins rather than resting on pins; rack top also clipped.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Visually inspected full-resolution generated sheet; explicit panel bounds retain the complete illustration except any clipping specifically identified in reviewNote.",
+      "priorBatch": "docs/research/original-art/movements-036.json",
+      "priorReviewNote": "Hold: pin good morning holds bar in hands behind hips instead of across rear shoulders on pins."
+    },
+    {
+      "id": "db-gorilla-chin-crunch",
+      "title": "Gorilla Chin/Crunch",
+      "equipment": "Bodyweight",
+      "guideText": "Hang from a chin-up bar using an underhand grip (palms facing you) that is slightly wider than shoulder width.\n\nNow bend your knees at a 90 degree angle so that the calves are parallel to the floor while the thighs remain perpendicular to it. This will be your starting position.\n\nAs you exhale, pull yourself up while crunching your knees up at the same time until your knees are at chest level. You will stop going up as soon as your nose is at the same level as the bar. Tip: When you get to this point you should also be finishing the crunch at the same time.\n\nSlowly start to inhale as you return to the starting position.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Gorilla_Chin_Crunch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Knees tuck and athlete suspended, but grip is visibly overhand rather than required underhand.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Visually inspected full-resolution generated sheet; explicit panel bounds retain the complete illustration except any clipping specifically identified in reviewNote.",
+      "priorBatch": "docs/research/original-art/movements-036.json",
+      "priorReviewNote": "Hold: Gorilla chin/crunch needs clearly underhand palms-toward grip; image grip is ambiguous/overhand."
+    },
+    {
+      "id": "wger-e781dae5-90b8-4105-8aa6-82d278ac5ff5",
+      "title": "Helms Row",
+      "equipment": "Dumbbell",
+      "guideText": "Setup: Place your chest on the end of a bench, using a towel or anything soft to keep your chest protected. You want your chest to be in contact with the bench around the nipple line. Your back should be almost parallel to the floor Execution: When you’re starting the exercise, focus on pulling your elbows back until you feel maximum tightness in the lats. If you want to get some trap activation with the exercise, relax your shoulder blades when the weights are hanging down and then retract them as you start the rep.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1303/view/",
+        "author": "carlos3c",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Chest rests on bench end, but torso is steeply inclined instead of almost parallel.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Visually inspected full-resolution generated sheet; explicit panel bounds retain the complete illustration except any clipping specifically identified in reviewNote.",
+      "priorBatch": "docs/research/original-art/movements-038.json",
+      "priorReviewNote": "Hold: Helms row requires chest contact at bench end with torso almost parallel; rendering is a conventional incline-bench row."
+    },
+    {
+      "id": "wger-553fb643-32f0-447f-aecb-cdf75398d742",
+      "title": "Hip Airplane",
+      "equipment": "Kettlebell",
+      "guideText": "Stand on one leg and lean your upper body slightly forward while keeping your back straight. Extend the free leg behind you so that your torso and leg form roughly one line. Slowly open your hip to the side by rotating your pelvis and upper body in a controlled way. Then close the hip again and return to the starting position.\n\nThe movement should mainly come from the hip. Keep your standing foot stable and avoid letting your knee collapse inward.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2447/view/",
+        "author": "TobiasFalk",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Unloaded single-leg balance with extended free leg and pelvis/chest rotated open.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Visually inspected full-resolution generated sheet; explicit panel bounds retain the complete illustration except any clipping specifically identified in reviewNote.",
+      "priorBatch": "docs/research/original-art/movements-039.json",
+      "priorReviewNote": "Hold: bodyweight hip airplane rendered as loaded kettlebell single-leg hinge, without a clear pelvic rotation phase.",
+      "ids": []
+    },
+    {
+      "id": "wger-e4c9bfde-cf06-4c24-9c56-c0bbc13c49b5",
+      "title": "Hip hinge",
+      "equipment": "Barbell",
+      "guideText": "Hip Hinge Exercise DescriptionThe hip hinge is a fundamental movement pattern that involves bending at the hips while keeping the spine neutral. It is commonly used in exercises like deadlifts, kettlebell swings, and good mornings. To perform a hip hinge: Starting Position: Stand with your feet hip-width apart and a slight bend in your knees. Hinge at the Hips: Push your hips back while maintaining a straight back. Your torso should lean forward, and your chest should stay up. Lowering Phase: Continue to hinge until your torso is nearly parallel to the ground, or until you feel a stretch in your hamstrings. Return to Standing: Drive through your heels and thrust your hips forward to return to the starting position.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1578/view/",
+        "author": "mountain.potato",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Empty hands, neutral spine and hips pushed back establish unloaded hip hinge.",
+      "bounds": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Visually inspected full-resolution generated sheet; explicit panel bounds retain the complete illustration except any clipping specifically identified in reviewNote.",
+      "priorBatch": "docs/research/original-art/movements-039.json",
+      "priorReviewNote": "Hold: unloaded hip hinge rendered as a loaded barbell deadlift, changing specified equipment.",
+      "ids": []
+    },
+    {
+      "id": "wger-a4f78033-90d7-45a2-96fa-509b41281ea3",
+      "title": "Hip-out and hip-in lateral steps",
+      "equipment": "Bodyweight",
+      "guideText": "Stand with your feet comfortably apart and your knees soft. Keep your trunk steady as you step one foot out to the side while the other leg supports your balance. Bring the stepping foot back toward the centre under control. Repeat on both sides without crossing your feet or raising the knee into a marching motion.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": null,
+      "reviewNote": "Unloaded wide lateral step shown without added band or weights. Root validated bodyweight side-step setup against clarified independently authored guide.",
+      "bounds": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Visually inspected full-resolution generated sheet; explicit panel bounds retain the complete illustration except any clipping specifically identified in reviewNote.",
+      "priorBatch": "docs/research/original-art/movements-040.json",
+      "priorReviewNote": "Hold: bodyweight lateral hip steps rendered with added resistance band.",
+      "ids": [
+        "wger-a4f78033-90d7-45a2-96fa-509b41281ea3"
+      ],
+      "previousGuideText": "# Overview of Hip-Out and Hip-In Lateral Steps\n\nHip-out and hip-in lateral steps are effective exercises designed to strengthen the hip abductors and enhance lateral stability. These movements are beneficial for improving coordination and overall hip function.\n\n## Exercise Descriptions\n\n### Hip-Out Steps\n\n- **Movement:** Step out to the side with one leg, keeping the other leg stable.\n- **Target Muscles:** Primarily engages the hip abductors, including the gluteus medius and minimus.\n- **Benefits:** Increases lateral stability and strength in the hip area.\n\n### Hip-In Steps\n\n- **Movement:** Bring the leg back in toward the center after stepping out.\n- **Target Muscles:** Continues to engage the hip abductors while also activating the adductors.\n- **Benefits:** Enhances coordination and control of the hip joint.\n\n## Key Benefits of Lateral Steps\n\n| Benefit | Description |\n|---|---|\n| **Strengthening Hip Abductors** | Improves muscle strength around the hip joint. |\n| **Enhancing Stability** | Increases lateral stability, reducing the risk of falls. |\n| **Improving Coordination** | Develops better control and movement patterns in the hips. |\n\nIncorporating hip-out and hip-in lateral steps into a regular exercise routine can lead to improved hip strength and stability, which is essential for various physical activities and daily movements.",
+      "previousGuideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2618/view/",
+        "author": "aboksz",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "references": [
+        {
+          "title": "Original lateral-step movement requirements; guide specifies stepping rather than band loading",
+          "url": "https://wger.de/en/exercise/2618/view/"
+        }
+      ]
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-f67ef9bb-d184-46c7-9d0e-4a6ad20396ab.png",
+  "sourceAssetPath": "assets/exercise-artwork/recovery-b-004.png",
+  "registrationPolicy": "Preserve recovered accepted mappings; register only newly covered IDs explicitly listed in cell.ids."
+}

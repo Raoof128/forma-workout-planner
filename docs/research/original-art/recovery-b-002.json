@@ -1,0 +1,175 @@
+{
+  "name": "recovery-b-002",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/recovery-b-002.png",
+  "prompt": "Original FORMA fitness manual illustration landscape1536x1024 EXACT3columns2rows equal panels white background no labels text arrows. Charcoalgray clothing/equipment lime accents, correct2arms2legs per athlete, everything inside cell generous margins. Respect exact pose support and grip.\nRow1 column1: Elevated Back Lunge. Barbell across rear shoulders; front foot on a short raised platform, rear foot stepped back onto floor, rear knee near floor.\nRow1 column2: Exercise Band Dorsiflexion. Seated with leg extended, heel grounded, resistance band around forefoot anchored to post FORWARD beyond toes; toes pulled upward toward shin against forward band resistance.\nRow1 column3: Extended Range One-Arm Kettlebell Floor Press. Supine kettlebell right-arm press, kettlebell held by handle above body; right knee bent and crossed clearly over midline toward left side; left leg extended.\nRow2 column1: External Rotation Stretch. Seated feet together, one knee raised outward; working elbow resting visibly atop that raised knee, elbow90 degrees, dumbbell hand and forearm vertical external rotation endpoint.\nRow2 column2: Band external rotation. Standing left side toward post, band anchored left at elbow height, RIGHT elbow pinned to right side with small pad; right elbow90 degrees and forearm rotated outward right away from left anchor.\nRow2 column3: Extreme Shoulder Stretch. Deep loaded shoulder stretch: seated bench, dumbbells hanging behind hips with straight arms stretching anterior deltoids; show no invented complex apparatus. Guide is sparse, reference only.",
+  "cells": [
+    {
+      "id": "db-elevated-back-lunge",
+      "title": "Elevated Back Lunge",
+      "equipment": "Barbell",
+      "guideText": "Position a bar onto a rack at shoulder height loaded to an appropriate weight. Place a short, raised platform behind you.\n\nRack the bar onto your upper back, keeping your back arched and tight. Step onto your raised platform with both feet. This will be your starting position.\n\nBegin by stepping backwards with one leg. Descend by flexing your hips and knees until your knee touches the floor.\n\nPause, and extend through the hips and knees to rise up, returning all the way to the starting position before alternating.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Elevated_Back_Lunge.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Front foot elevated, rear knee descends to floor and bar rests across rear shoulders.",
+      "priorBatch": "docs/research/original-art/movements-030.json",
+      "priorReviewNote": "Raised support is under the rear knee rather than the front standing foot; elevated reverse-lunge setup is reversed.",
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "width": 505,
+        "height": 474
+      },
+      "cropReviewNote": "Visually inspected full-resolution generated sheet; explicit panel bounds retain the complete illustration except any clipping specifically identified in reviewNote.",
+      "ids": []
+    },
+    {
+      "id": "wger-29a361d5-1300-4fb4-90d6-d6350bec9cb9",
+      "title": "Exercise Band Dorsiflexion",
+      "equipment": "Bodyweight",
+      "guideText": "This exercise uses an exercise band. It targets the Soleus and Tibialis anterior.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1241/view/",
+        "author": "erikocobra",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Forward anchor resists toes lifting toward shin with heel grounded.",
+      "bounds": {
+        "x": 511,
+        "y": 2,
+        "width": 510,
+        "height": 474
+      },
+      "cropReviewNote": "Visually inspected full-resolution generated sheet; explicit panel bounds retain the complete illustration except any clipping specifically identified in reviewNote.",
+      "priorBatch": "docs/research/original-art/movements-031.json",
+      "priorReviewNote": "Band ends pull backward from hands, assisting dorsiflexion rather than providing opposing forward resistance; this setup is for plantarflexion.",
+      "ids": []
+    },
+    {
+      "id": "db-extended-range-one-arm-kettlebell-floor-press",
+      "title": "Extended Range One-Arm Kettlebell Floor Press",
+      "equipment": "Kettlebell",
+      "guideText": "Lie on the floor and position a kettlebell for one arm to press. The kettlebell should be held by the handle. The leg on the same side that you are pressing should be bent, with the knee crossing over the midline of the body.\n\nPress the kettlebell by extending the elbow and adducting the arm, pressing it above your body. Return to the starting position.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Extended_Range_One-Arm_Kettlebell_Floor_Press.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Kettlebell handle press and pressing-side bent knee clearly cross midline.",
+      "bounds": {
+        "x": 1025,
+        "y": 2,
+        "width": 509,
+        "height": 474
+      },
+      "cropReviewNote": "Visually inspected full-resolution generated sheet; explicit panel bounds retain the complete illustration except any clipping specifically identified in reviewNote.",
+      "priorBatch": "docs/research/original-art/movements-031.json",
+      "priorReviewNote": "Pressing-side knee does not visibly cross the body's midline, the defining extended-range floor-press variation.",
+      "ids": []
+    },
+    {
+      "id": "wger-a4413bcc-dcd1-4332-a09a-fee94a265e22",
+      "title": "External Rotation Stretch",
+      "equipment": "Barbell",
+      "guideText": "1. Sit with your feet pressed against each other, and one knee raised all the way out to the side of your body. 2. Place your elbow on your raised knee, bend it at 90 degrees, and point your hand directly forward, holding your barbell/dumbbell. 3. Keep your shoulder depressed and retracted, raise your hand until your forearm is vertical, as if you were about to wave at someone like a robot. 4. Lower your hand to the original position and repeat.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1835/view/",
+        "author": "Croak6728",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Elbow contacts raised knee, but feet are separated rather than pressed together.",
+      "bounds": {
+        "x": 2,
+        "y": 480,
+        "width": 505,
+        "height": 542
+      },
+      "cropReviewNote": "Visually inspected full-resolution generated sheet; explicit panel bounds retain the complete illustration except any clipping specifically identified in reviewNote.",
+      "priorBatch": "docs/research/original-art/movements-031.json",
+      "priorReviewNote": "Working elbow is not clearly supported on the raised knee, as the external-rotation stretch requires."
+    },
+    {
+      "id": "db-external-rotation-with-band",
+      "title": "Band external rotation",
+      "equipment": "Resistance band",
+      "guideText": "Choke the band around a post. The band should be at the same height as your elbow. Stand with your left side to the band a couple of feet away.\n\nGrasp the end of the band with your right hand, and keep your elbow pressed firmly to your side. We recommend you hold a pad or foam roll in place with your elbow to keep it firmly in position.\n\nWith your upper arm in position, your elbow should be flexed to 90 degrees with your hand reaching across the front of your torso. This will be your starting position.\n\nExecute the movement by rotating your arm in a backhand motion, keeping your elbow in place.\n\nContinue as far as you are able, pause, and then return to the starting position.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/External_Rotation_with_Band.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Band works across torso but working upper arm is abducted and pad is under the opposite elbow; athlete feet clipped.",
+      "bounds": {
+        "x": 511,
+        "y": 480,
+        "width": 510,
+        "height": 542
+      },
+      "cropReviewNote": "Visually inspected full-resolution generated sheet; explicit panel bounds retain the complete illustration except any clipping specifically identified in reviewNote.",
+      "priorBatch": "docs/research/original-art/movements-031.json",
+      "priorReviewNote": "Band anchor is on the working-arm side, creating internal-rotation resistance rather than the required far-arm external rotation."
+    },
+    {
+      "id": "wger-4925b6c0-bbe6-4864-a649-23ec18d49985",
+      "title": "Extreme Shoulder Stretch",
+      "equipment": "Bodyweight",
+      "guideText": "Deep loaded stretch for deltoids, performed after pressing movements.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1920/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Loaded shoulder setup shown, but sparse guide does not establish this specific behind-hip seated variation.",
+      "bounds": {
+        "x": 1025,
+        "y": 480,
+        "width": 509,
+        "height": 542
+      },
+      "cropReviewNote": "Visually inspected full-resolution generated sheet; explicit panel bounds retain the complete illustration except any clipping specifically identified in reviewNote.",
+      "priorBatch": "docs/research/original-art/movements-031.json",
+      "priorReviewNote": "Generic passive cross-body stretch does not establish the described deep loaded shoulder stretch; verify the intended loading setup."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-d56f1ce6-b352-4e89-b0c2-178bde38f83d.png",
+  "sourceAssetPath": "assets/exercise-artwork/recovery-b-002.png",
+  "registrationPolicy": "Preserve recovered accepted mappings; register only newly covered IDs explicitly listed in cell.ids."
+}

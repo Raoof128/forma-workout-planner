@@ -1210,6 +1210,71 @@
         }
       ]
     },
+    "wger-d015a276-02ad-4c28-9d36-aedfbb431f53": {
+      "name": "Standing bent-knee hip raise",
+      "equipment": "Bodyweight",
+      "equipmentTags": ["Bodyweight"],
+      "description": "Stand upright and balance on one leg. Keep your trunk steady while lifting the other leg and bending that hip and knee. Lower the foot under control, repeat, then change sides.",
+      "source": null,
+      "references": [
+        {
+          "title": "Reviewed upstream exercise identity and movement requirements",
+          "url": "https://wger.de/en/exercise/1096/view/"
+        }
+      ]
+    },
+    "db-band-hip-adductions": {
+      "name": "Standing band hip abduction (guide variant)",
+      "equipment": "Resistance band",
+      "equipmentTags": ["Resistance band"],
+      "description": "Anchor a resistance band to a sturdy low post. Stand side-on and place the loop around the ankle farther from the anchor. Use the hand nearer the post for balance and keep your torso steady. With the working knee comfortably straight, move that leg outward away from the anchor against the band. Return the foot slowly toward the standing leg without losing balance, then repeat on the other side. This is the outward hip-abduction movement described by the imported instructions.",
+      "source": null,
+      "references": [
+        {
+          "title": "Imported guide describes outward movement; provider photos instead depict adduction",
+          "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Band_Hip_Adductions.json"
+        }
+      ]
+    },
+    "wger-a94c635d-096c-45a8-a68c-64941d0b6ba4": {
+      "name": "Supine crossed-leg rotation stretch",
+      "equipment": "Bodyweight",
+      "equipmentTags": ["Bodyweight"],
+      "description": "Lie on your back. Bend your right knee and bring that leg across the left leg. Extend your left arm out at shoulder height. Use your right hand to guide the bent knee gently toward the floor on your left while keeping your left shoulder down. Breathe comfortably, hold the stretch, and repeat on the other side.",
+      "source": null,
+      "references": [
+        {
+          "title": "Reviewed upstream exercise identity and movement requirements",
+          "url": "https://wger.de/en/exercise/1577/view/"
+        }
+      ]
+    },
+    "wger-eaa7927e-6ea0-4fd5-bbcd-525fe90a184b": {
+      "name": "Neutral-grip chest pulldown",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"],
+      "description": "Position yourself at the cable pulldown with your feet supported on the floor. Take the handle with your palms facing each other, about shoulder width apart. Keep your torso steady and pull the handle toward your upper chest. Pause briefly, then allow the handle to rise under control as your arms straighten.",
+      "source": null,
+      "references": [
+        {
+          "title": "Reviewed upstream exercise identity and movement requirements",
+          "url": "https://wger.de/en/exercise/1136/view/"
+        }
+      ]
+    },
+    "wger-a4f78033-90d7-45a2-96fa-509b41281ea3": {
+      "name": "Hip-out and hip-in lateral steps",
+      "equipment": "Bodyweight",
+      "equipmentTags": ["Bodyweight"],
+      "description": "Stand with your feet comfortably apart and your knees soft. Keep your trunk steady as you step one foot out to the side while the other leg supports your balance. Bring the stepping foot back toward the centre under control. Repeat on both sides without crossing your feet or raising the knee into a marching motion.",
+      "source": null,
+      "references": [
+        {
+          "title": "Original lateral-step movement requirements; guide specifies stepping rather than band loading",
+          "url": "https://wger.de/en/exercise/2618/view/"
+        }
+      ]
+    },
     "legpress": {
       "equipment": "Leg press machine",
       "equipmentTags": ["Leg press machine"]
