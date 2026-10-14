@@ -9,6 +9,14 @@ export function hasExerciseMedia(id) {
 function MediaImage({ asset, name, compact }) {
   const [status, setStatus] = useState("loading");
   const region = asset.region;
+  const bounds =
+    region &&
+    (region.bounds ?? {
+      x: (region.column * asset.width) / region.columns,
+      y: (region.row * asset.height) / region.rows,
+      width: asset.width / region.columns,
+      height: asset.height / region.rows,
+    });
   const kind = asset.kind.includes("equipment")
     ? "Equipment illustration"
     : "Exercise illustration";
@@ -18,7 +26,7 @@ function MediaImage({ asset, name, compact }) {
       style={
         region
           ? {
-              aspectRatio: `${asset.width / region.columns} / ${asset.height / region.rows}`,
+              aspectRatio: `${bounds.width} / ${bounds.height}`,
             }
           : undefined
       }
@@ -30,10 +38,10 @@ function MediaImage({ asset, name, compact }) {
         style={
           region
             ? {
-                width: `${region.columns * 100}%`,
-                height: `${region.rows * 100}%`,
-                left: `${-region.column * 100}%`,
-                top: `${-region.row * 100}%`,
+                width: `${(asset.width / bounds.width) * 100}%`,
+                height: `${(asset.height / bounds.height) * 100}%`,
+                left: `${(-bounds.x / bounds.width) * 100}%`,
+                top: `${(-bounds.y / bounds.height) * 100}%`,
                 opacity: status === "ready" ? 1 : 0,
               }
             : { opacity: status === "ready" ? 1 : 0 }

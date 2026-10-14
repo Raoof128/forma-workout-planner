@@ -72,7 +72,10 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   `coverage.json`. Original source images remain preserved.
 - **Verification so far:** six focused Chromium catalog/media cases passed;
   60 unit cases, lint, formatting, type checking, docs and build passed.
-  The checkpoint has 532 accepted matches; crop review remains pending.
+  Actual source panel bounds now prevent uneven-row head clipping. Fifteen
+  focused browser checks across three engines passed, including the crop
+  regression. Generated sheets are archived in `assets/exercise-artwork` for
+  recovery after session loss; pending artwork is excluded from runtime mappings.
   Generation and review are ongoing; no image release was deployed,
   and no account, database, API contract or logging units changed.
 

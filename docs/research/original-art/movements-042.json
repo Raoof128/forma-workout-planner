@@ -13,14 +13,22 @@
       "guideText": "Hold a dumbbell on each hand and lie on an incline bench that is set to an incline angle of no more than 30 degrees.\n\nExtend your arms above you with a slight bend at the elbows.\n\nNow rotate the wrists so that the palms of your hands are facing you. Tip: The pinky fingers should be next to each other. This will be your starting position.\n\nAs you breathe in, start to slowly lower the arms to the side while keeping the arms extended and while rotating the wrists until the palms of the hand are facing each other. Tip: At the end of the movement the arms will be by your side with the palms facing the ceiling.\n\nAs you exhale start to bring the dumbbells back up to the starting position by reversing the motion and rotating the hands so that the pinky fingers are next to each other again. Tip: Keep in mind that the movement will only happen at the shoulder joint and at the wrist. There is no motion that happens at the elbow joint.\n\nRepeat for the recommended amount of repetitions.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Dumbbell_Flyes.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: bilateral fly rendered with one arm overhead and the other wide; both sides should be at the same representative phase.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-incline-dumbbell-flyes-with-a-twist",
@@ -29,14 +37,22 @@
       "guideText": "Hold a dumbbell in each hand and lie on an incline bench that is set to an incline angle of no more than 30 degrees.\n\nExtend your arms above you with a slight bend at the elbows.\n\nNow rotate the wrists so that the palms of your hands are facing you. Tip: The pinky fingers should be next to each other. This will be your starting position.\n\nAs you breathe in, start to slowly lower the arms to the side while keeping the arms extended and while rotating the wrists until the palms of the hand are facing each other. Tip: At the end of the movement the arms will be by your side with the palms facing the ceiling.\n\nAs you exhale start to bring the dumbbells back up to the starting position by reversing the motion and rotating the hands so that the pinky fingers are next to each other again. Tip: Keep in mind that the movement will only happen at the shoulder joint and at the wrist. There is no motion that happens at the elbow joint.\n\nRepeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Dumbbell_Flyes_-_With_A_Twist.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: twisting fly requires incline no more than 30 degrees; rendered support is steep conventional incline.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 385,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-incline-dumbbell-press",
@@ -45,14 +61,22 @@
       "guideText": "Lie back on an incline bench with a dumbbell in each hand atop your thighs. The palms of your hands will be facing each other.\n\nThen, using your thighs to help push the dumbbells up, lift the dumbbells one at a time so that you can hold them at shoulder width.\n\nOnce you have the dumbbells raised to shoulder width, rotate your wrists forward so that the palms of your hands are facing away from you. This will be your starting position.\n\nBe sure to keep full control of the dumbbells at all times. Then breathe out and push the dumbbells up with your chest.\n\nLock your arms at the top, hold for a second, and then start slowly lowering the weight. Tip Ideally, lowering the weights should take about twice as long as raising them.\n\nRepeat the movement for the prescribed amount of repetitions.\n\nWhen you are done, place the dumbbells back on your thighs and then on the floor. This is the safest manner to release the dumbbells.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Dumbbell_Press.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed pronated incline press, neutral hammer curl, outward supinated inner-biceps curl, one foot from stability ball touching floor in plank, palms-supported incline push-up, close and medium Smith-bar push-ups, elevated feet with lateral hand platforms for depth-jump landing.",
+      "bounds": {
+        "x": 769,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-incline-hammer-curls",
@@ -61,14 +85,22 @@
       "guideText": "Seat yourself on an incline bench with a dumbbell in each hand. You should pressed firmly against he back with your feet together. Allow the dumbbells to hang straight down at your side, holding them with a neutral grip. This will be your starting position.\n\nInitiate the movement by flexing at the elbow, attempting to keep the upper arm stationary.\n\nContinue to the top of the movement and pause, then slowly return to the start position.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Hammer_Curls.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed pronated incline press, neutral hammer curl, outward supinated inner-biceps curl, one foot from stability ball touching floor in plank, palms-supported incline push-up, close and medium Smith-bar push-ups, elevated feet with lateral hand platforms for depth-jump landing.",
+      "bounds": {
+        "x": 1153,
+        "y": 0,
+        "width": 383,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-incline-inner-biceps-curl",
@@ -77,14 +109,22 @@
       "guideText": "Hold a dumbbell in each hand and lie back on an incline bench.\n\nThe dumbbells should be at arm's length hanging at your sides and your palms should be facing out. This will be your starting position.\n\nNow as you exhale curl the weight outward and up while keeping your forearms in line with your side deltoids. Continue the curl until the dumbbells are at shoulder height and to the sides of your deltoids. Tip: The end of the movement should look similar to a double biceps pose.\n\nAfter a second contraction at the top of the movement, start to inhale and slowly lower the weights back to the starting position using the same path used to bring them up.\n\nRepeat for the recommended amount of repetitions.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Inner_Biceps_Curl.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed pronated incline press, neutral hammer curl, outward supinated inner-biceps curl, one foot from stability ball touching floor in plank, palms-supported incline push-up, close and medium Smith-bar push-ups, elevated feet with lateral hand platforms for depth-jump landing.",
+      "bounds": {
+        "x": 0,
+        "y": 342,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "wger-f89b3662-f911-4aab-9402-cfa6d47cea2b",
@@ -93,7 +133,7 @@
       "guideText": "* Sit on a bench with 45° incline * Ellbows 45° out * Move dumbbells down until upper arms are parallel to shoulders * Move dumbbells up, meeting overhead",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1441/view/",
@@ -101,7 +141,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: incline overhead dumbbell press requires 45-degree bench; rendered backrest is nearly upright.",
+      "bounds": {
+        "x": 384,
+        "y": 342,
+        "width": 385,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "wger-aae91ecf-ffa4-4730-812c-cb00e423f91c",
@@ -110,7 +158,7 @@
       "guideText": "Perform the plank with legs elevated, feet on a gymball. Once stabilised, slowly move one foot sideways off the ball, then make it touch the floor, then come back to starting position. Alternate with the other foot. This is a core exercise.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/312/view/",
@@ -118,7 +166,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed pronated incline press, neutral hammer curl, outward supinated inner-biceps curl, one foot from stability ball touching floor in plank, palms-supported incline push-up, close and medium Smith-bar push-ups, elevated feet with lateral hand platforms for depth-jump landing.",
+      "bounds": {
+        "x": 769,
+        "y": 342,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-incline-push-up",
@@ -127,14 +183,22 @@
       "guideText": "Stand facing bench or sturdy elevated platform. Place hands on edge of bench or platform, slightly wider than shoulder width.\n\nPosition forefoot back from bench or platform with arms and body straight. Arms should be perpendicular to body. Keeping body straight, lower chest to edge of box or platform by bending arms.\n\nPush body up until arms are extended. Repeat.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Push-Up.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed pronated incline press, neutral hammer curl, outward supinated inner-biceps curl, one foot from stability ball touching floor in plank, palms-supported incline push-up, close and medium Smith-bar push-ups, elevated feet with lateral hand platforms for depth-jump landing.",
+      "bounds": {
+        "x": 1153,
+        "y": 342,
+        "width": 383,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-incline-push-up-close-grip",
@@ -143,14 +207,22 @@
       "guideText": "Stand facing a Smith machine bar or sturdy elevated platform at an appropriate height.\n\nPlace your hands next to one another on the bar.\n\nPosition your feet back from the bar with arms and body straight. This will be your starting position.\n\nKeeping your body straight, lower your chest to the bar by bending the arms.\n\nReturn to the starting position by extending the elbows, pressing yourself back up.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Push-Up_Close-Grip.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed pronated incline press, neutral hammer curl, outward supinated inner-biceps curl, one foot from stability ball touching floor in plank, palms-supported incline push-up, close and medium Smith-bar push-ups, elevated feet with lateral hand platforms for depth-jump landing.",
+      "bounds": {
+        "x": 0,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-incline-push-up-depth-jump",
@@ -159,14 +231,22 @@
       "guideText": "For this drill you will need a box about 12 inches high, and two thick mats or aerobics steps.\n\nPlace the steps just outside of your shoulders, and place your feet on top of the box so that you are in an incline pushup position, your hands just inside the steps. This will be your starting position.\n\nBegin by bending at the elbows to lower your body, quickly reversing position to push your body off of the ground. As you leave the ground, move your hands onto the steps, bending your elbows to absorb the impact.\n\nRepeat the motion to return to the starting position.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Push-Up_Depth_Jump.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed pronated incline press, neutral hammer curl, outward supinated inner-biceps curl, one foot from stability ball touching floor in plank, palms-supported incline push-up, close and medium Smith-bar push-ups, elevated feet with lateral hand platforms for depth-jump landing.",
+      "bounds": {
+        "x": 384,
+        "y": 683,
+        "width": 385,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-incline-push-up-medium",
@@ -175,14 +255,22 @@
       "guideText": "Stand facing a Smith machine bar or sturdy elevated platform at an appropriate height.\n\nPlace your hands on the bar, with your hands about shoulder width apart.\n\nPosition your feet back from the bar with arms and body straight. This will be your starting position.\n\nKeeping your body straight, lower your chest to the bar by bending the arms.\n\nReturn to the starting position by extending the elbows, pressing yourself back up.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Push-Up_Medium.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed pronated incline press, neutral hammer curl, outward supinated inner-biceps curl, one foot from stability ball touching floor in plank, palms-supported incline push-up, close and medium Smith-bar push-ups, elevated feet with lateral hand platforms for depth-jump landing.",
+      "bounds": {
+        "x": 769,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-incline-push-up-reverse-grip",
@@ -191,15 +279,24 @@
       "guideText": "Stand facing a Smith machine bar or sturdy elevated platform at an appropriate height.\n\nPlace your hands on the bar palms up, with your hands about shoulder width apart.\n\nPosition your feet back from the bar with arms and body straight. This will be your starting position.\n\nKeeping your body straight, lower your chest to the bar by bending the arms.\n\nReturn to the starting position by extending the elbows, pressing yourself back up.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Push-Up_Reverse_Grip.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: reverse-grip incline push-up shows palms-down/overhand bar grip.",
+      "bounds": {
+        "x": 1153,
+        "y": 683,
+        "width": 383,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-917f9fa0-c777-4e8f-af5e-0c2b7130df92.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-917f9fa0-c777-4e8f-af5e-0c2b7130df92.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-042.png"
 }

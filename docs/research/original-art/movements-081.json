@@ -1,0 +1,209 @@
+{
+  "name": "movements-081",
+  "columns": 4,
+  "rows": 3,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/movements-081.png",
+  "prompt": "Create beautiful ORIGINAL FORMA exercise art in a clean modern illustrated fitness manual style. Exactly FOUR columns and THREE rows, 12 equal cells, landscape 1536x1024. Each cell white with generous margins; no labels, letters, logos, borders or watermarks. Varied fully clothed adult athletes, charcoal/gray sportswear with a small lime-green accent. Correct anatomy (two arms, two legs), plausible support and weight-bearing, detailed accurate equipment, subtle shadows. Every cell is an EXACT distinct movement/variation matching its description. Show ONE clear representative working position per cell; do not show duplicate athletes, extra limbs, arrows or overlapping phases. Keep the entire athlete and apparatus inside own cell. Never swap freeweights, benches, grips or variations. Read each guide to choose a physically correct pose. Cell positions are mandatory:\nRow 1 column 1: Sit Squats. Equipment: Bodyweight. Exercise guide: Stand with your feet shoulder width apart. This will be your starting position. Begin the movement by flexing your knees and hips, sitting back with your hips. Continue until you have squatted a portion of the way down, but are above parallel, and quickly reverse the motion until you return to the starting position. Repeat for 5-10 repetitions.\n\nRow 1 column 2: Sit Up Elbow Thrust. Equipment: Bodyweight. Exercise guide: This is a top down rotation movement, and it’s a bit more explosive, too. Lying with knees bent and feet on the floor, sit up and then drive your left elbow across your entire body toward the right, then come back to center and then finally lower yourself down. Then hit the other side.\n\nRow 1 column 3: Sit-Up. Equipment: Bodyweight. Exercise guide: Lie down on the floor placing your feet either under something that will not move or by having a partner hold them. Your legs should be bent at the knees. Place your hands behind your head and lock them together by clasping your fingers. This is the starting position. Elevate your upper body so that it creates an imaginary V-shape with your thighs. Breathe out when performing this part of the exercise. Once you feel the contraction for a second, lower your upper body back down to the starting position while inhaling. Repeat for the recommended amount of repetitions.\n\nRow 1 column 4: Sit-ups. Equipment: Bodyweight. Exercise guide: Sit on a mat, your calves are resting on a bench, the knees make a right angle. Hold your hands behind your neck. Go now up with a rolling movement of your back, you should feel how the individual vertebrae lose contact with the mat. At the highest point, contract your abs as much as you can and hold there for 2 sec. Go now down, unrolling your back.\n\nRow 2 column 1: Sitting Calf Stretch (Dorsiflexion). Equipment: Bodyweight. Exercise guide: This is a light stretch for the calf that is great for rehab.\n\nRow 2 column 2: Skating. Equipment: Specialty equipment. Exercise guide: Roller skating is a fun activity which can be effective in improving cardiorespiratory fitness and muscular endurance. It requires relatively good balance and coordination. It is necessary to learn the basics of skating including turning and stopping and to wear protective gear to avoid possible injury. You can skate at a comfortable pace for 30 minutes straight. If you want a cardio challenge, do interval skating — speed skate two minutes of every five minutes, using the remaining three minutes to recover. A 150 lb person will typically burn about 175 calories in 30 minutes skating at a comfortable pace, similar to brisk walking.\n\nRow 2 column 3: Skullcrusher Dumbbells. Equipment: Bench + Dumbbell. Exercise guide: Hold the dumbbells and lay down on a flat bench in such a way that around 1/4 of your head is over the edge. Stretch arms straight up and then lean dumbbells away from your toes to a 10-20 degree angle. Keep upper arm at this angle throughout exercise. Dumbbell shall not be amed at your head, but away over your head. This will maximise gain from exercise with load on triceps all the time. Pay attention to your elbows and arms: only the triceps are doing the work, the rest of the arms should not move.\n\nRow 2 column 4: Skydiver with arms in T-position. Equipment: Bodyweight. Exercise guide: Lie on your stomach with your legs more than shoulder-width apart and your feet up. Your arms are stretched out to the side and form a T with your upper body, your palms are on the floor. Now raise your upper body, arms and legs as high as you can while keeping your body under tension. Turn your thumbs towards the ceiling and pull your shoulder blades together. While keeping your upper body and all limbs in the air, bring your legs together and then spread them again, keeping them constantly in the air. For the remaining repetitions, only move your legs open and closed.\n\nRow 3 column 1: Sled Drag - Harness. Equipment: Specialty equipment. Exercise guide: To begin, load the sled with the desired weight and attach the pulling strap. You can pull with handles, use a harness, or attach the pulling strap to a weight belt. Whether pulling forwards or backwards, lean in the direction of travel and progress by extending through the hips and knees.\n\nRow 3 column 2: Sled Overhead Backward Walk. Equipment: Specialty equipment. Exercise guide: Attach dual handles to a sled connected by a rope or chain. Load the sled to a light weight. Face the sled, backing up until there is some tension in the line. Hold your hands directly above your head with your elbows extended. This will be your starting position. Walk backwards, keeping your arms raised above your head. Avoid jerky movements.\n\nRow 3 column 3: Sled Overhead Triceps Extension. Equipment: Specialty equipment. Exercise guide: Attach dual handles to a sled using a chain or rope. Load the sled to an appropriate load. Facing away from the sled, step away until there is tension in the line. Raise your hands above your head, keeping them together, palms facing each other. Your elbows should be pointed upward with the elbows flexed. This will be your starting position. Extend through the elbow to straighten the arm. Ensure that your upper arm stays in position to isolate the triceps. Upon full extension, step forward to take the slack out of the line. You may keep your feet staggered for more stability.\n\nRow 3 column 4: Sled Push. Equipment: Specialty equipment. Exercise guide: Load your pushing sled with the desired weight. Take an athletic posture, leaning into the sled with your arms fully extended, grasping the handles. Push the sled as fast as possible, focusing on extending your hips and knees to strengthen your posterior chain.",
+  "cells": [
+    {
+      "id": "db-sit-squats",
+      "title": "Sit Squats",
+      "equipment": "Bodyweight",
+      "guideText": "Stand with your feet shoulder width apart. This will be your starting position.\n\nBegin the movement by flexing your knees and hips, sitting back with your hips.\n\nContinue until you have squatted a portion of the way down, but are above parallel, and quickly reverse the motion until you return to the starting position. Repeat for 5-10 repetitions.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sit_Squats.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "wger-5af00591-2d77-4ea6-a347-825ad18beff1",
+      "title": "Sit Up Elbow Thrust",
+      "equipment": "Bodyweight",
+      "guideText": "This is a top down rotation movement, and it’s a bit more explosive, too. Lying with knees bent and feet on the floor, sit up and then drive your left elbow across your entire body toward the right, then come back to center and then finally lower yourself down. Then hit the other side.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1479/view/",
+        "author": "Moffi",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-sit-up",
+      "title": "Sit-Up",
+      "equipment": "Bodyweight",
+      "guideText": "Lie down on the floor placing your feet either under something that will not move or by having a partner hold them. Your legs should be bent at the knees.\n\nPlace your hands behind your head and lock them together by clasping your fingers. This is the starting position.\n\nElevate your upper body so that it creates an imaginary V-shape with your thighs. Breathe out when performing this part of the exercise.\n\nOnce you feel the contraction for a second, lower your upper body back down to the starting position while inhaling.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sit-Up.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "wger-f38e9c23-031d-44d0-ac27-7f1026212c73",
+      "title": "Sit-ups",
+      "equipment": "Bodyweight",
+      "guideText": "Sit on a mat, your calves are resting on a bench, the knees make a right angle. Hold your hands behind your neck. Go now up with a rolling movement of your back, you should feel how the individual vertebrae lose contact with the mat. At the highest point, contract your abs as much as you can and hold there for 2 sec. Go now down, unrolling your back.",
+      "column": 3,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/591/view/",
+        "author": "wger.de",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-9f9bfa54-4702-4eb1-a72a-0fc12c846c72",
+      "title": "Sitting Calf Stretch (Dorsiflexion)",
+      "equipment": "Bodyweight",
+      "guideText": "This is a light stretch for the calf that is great for rehab.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1274/view/",
+        "author": "erikocobra",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-skating",
+      "title": "Skating",
+      "equipment": "Specialty equipment",
+      "guideText": "Roller skating is a fun activity which can be effective in improving cardiorespiratory fitness and muscular endurance. It requires relatively good balance and coordination. It is necessary to learn the basics of skating including turning and stopping and to wear protective gear to avoid possible injury.\n\nYou can skate at a comfortable pace for 30 minutes straight. If you want a cardio challenge, do interval skating — speed skate two minutes of every five minutes, using the remaining three minutes to recover. A 150 lb person will typically burn about 175 calories in 30 minutes skating at a comfortable pace, similar to brisk walking.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Skating.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "wger-893c07ea-2e24-49b6-92e4-d0033eedec62",
+      "title": "Skullcrusher Dumbbells",
+      "equipment": "Bench + Dumbbell",
+      "guideText": "Hold the dumbbells and lay down on a flat bench in such a way that around 1/4 of your head is over the edge. Stretch arms straight up and then lean dumbbells away from your toes to a 10-20 degree angle. Keep upper arm at this angle throughout exercise. Dumbbell shall not be amed at your head, but away over your head. This will maximise gain from exercise with load on triceps all the time. Pay attention to your elbows and arms: only the triceps are doing the work, the rest of the arms should not move.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/245/view/",
+        "author": "wger.de",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-965b0d80-544b-4f22-a64b-32dc033f071a",
+      "title": "Skydiver with arms in T-position",
+      "equipment": "Bodyweight",
+      "guideText": "Lie on your stomach with your legs more than shoulder-width apart and your feet up. Your arms are stretched out to the side and form a T with your upper body, your palms are on the floor. Now raise your upper body, arms and legs as high as you can while keeping your body under tension. Turn your thumbs towards the ceiling and pull your shoulder blades together. While keeping your upper body and all limbs in the air, bring your legs together and then spread them again, keeping them constantly in the air. For the remaining repetitions, only move your legs open and closed.",
+      "column": 3,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1210/view/",
+        "author": "lxmx",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-sled-drag-harness",
+      "title": "Sled Drag - Harness",
+      "equipment": "Specialty equipment",
+      "guideText": "To begin, load the sled with the desired weight and attach the pulling strap. You can pull with handles, use a harness, or attach the pulling strap to a weight belt.\n\nWhether pulling forwards or backwards, lean in the direction of travel and progress by extending through the hips and knees.",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sled_Drag_-_Harness.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "db-sled-overhead-backward-walk",
+      "title": "Sled Overhead Backward Walk",
+      "equipment": "Specialty equipment",
+      "guideText": "Attach dual handles to a sled connected by a rope or chain. Load the sled to a light weight.\n\nFace the sled, backing up until there is some tension in the line. Hold your hands directly above your head with your elbows extended. This will be your starting position.\n\nWalk backwards, keeping your arms raised above your head. Avoid jerky movements.",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sled_Overhead_Backward_Walk.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "db-sled-overhead-triceps-extension",
+      "title": "Sled Overhead Triceps Extension",
+      "equipment": "Specialty equipment",
+      "guideText": "Attach dual handles to a sled using a chain or rope. Load the sled to an appropriate load.\n\nFacing away from the sled, step away until there is tension in the line. Raise your hands above your head, keeping them together, palms facing each other. Your elbows should be pointed upward with the elbows flexed. This will be your starting position.\n\nExtend through the elbow to straighten the arm. Ensure that your upper arm stays in position to isolate the triceps.\n\nUpon full extension, step forward to take the slack out of the line. You may keep your feet staggered for more stability.",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sled_Overhead_Triceps_Extension.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "db-sled-push",
+      "title": "Sled Push",
+      "equipment": "Specialty equipment",
+      "guideText": "Load your pushing sled with the desired weight.\n\nTake an athletic posture, leaning into the sled with your arms fully extended, grasping the handles. Push the sled as fast as possible, focusing on extending your hips and knees to strengthen your posterior chain.",
+      "column": 3,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sled_Push.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-43da7b0e-fa05-42e9-b72a-f7e98148bc88.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-081.png"
+}

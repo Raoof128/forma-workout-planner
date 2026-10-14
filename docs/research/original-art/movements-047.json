@@ -13,14 +13,22 @@
       "guideText": "Place a kettlebell on the ground between your feet. Position your feet in a wide stance, and grasp the kettlebell with two hands. Set your hips back as far as possible, with your knees bent. Keep your chest and head up. This will be your starting position.\n\nBegin by extending the hips and knees, simultaneously pulling the kettlebell to your shoulders, raising your elbows as you do so. Reverse the motion to return to the starting position.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Sumo_High_Pull.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed wide kettlebell high pull, standing bilateral swing endpoint, overhead lunge and squat phases of get-up, side hinge with overhead bell, water kickboard flutter kick, ring muscle-up top support, opposite-hand knee crossover stretch, standing knee-circle setup and knee-supported push-up.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 385,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "wger-d813ef7c-b10a-4c5c-ba55-6b9518e7ff4c",
@@ -29,7 +37,7 @@
       "guideText": "Hold the kettlebell securely in both hands. Keep your back flat throughout the move, avoiding any rounding of the spine.Keeping your knees \"soft\", hinge your hips backwards, letting the kettlebell swing between your knees. You want to bend from the hips as far as you can *without letting your back round forwards*. Then, snap your hips forwards quickly and standing up straight, locking your body in an upright posture. The speed you do this will cause your arms and the kettlebell to swing up in front of you. Don't try to *lift* the kettlebell with your arms. The snapping forwards of your hips will cause the kettlebell to swing forwards through momentum. Depending on the weight of the kettlebell and the speed of your hip movement, your arms will swing up to about shoulder height. At the top of this swing, let your hips hinge backwards again as the kettlebell swings back down to between your legs and the start of the next repetition.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/331/view/",
@@ -37,7 +45,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed wide kettlebell high pull, standing bilateral swing endpoint, overhead lunge and squat phases of get-up, side hinge with overhead bell, water kickboard flutter kick, ring muscle-up top support, opposite-hand knee crossover stretch, standing knee-circle setup and knee-supported push-up.",
+      "bounds": {
+        "x": 385,
+        "y": 0,
+        "width": 383,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "db-kettlebell-thruster",
@@ -46,14 +62,22 @@
       "guideText": "Clean two kettlebells to your shoulders. Clean the kettlebells to your shoulders by extending through the legs and hips as you pull the kettlebells towards your shoulders. Rotate your wrists as you do so. This will be your starting position.\n\nBegin to squat by flexing your hips and knees, lowering your hips between your legs. Maintain an upright, straight back as you descend as low as you can.\n\nAt the bottom, reverse direction and squat by extending your knees and hips, driving through your heels. As you do so, press both kettlebells overhead by extending your arms straight up, using the momentum from the squat to help drive the weights upward.\n\nAs you begin the next repetition, return the weights to the shoulders.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Thruster.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: thruster shows deep squat with bells already overhead; pressing phase must finish upright rather than depict overhead squat.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 385,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "db-kettlebell-turkish-get-up-lunge-style",
@@ -62,14 +86,22 @@
       "guideText": "Lie on your back on the floor and press a kettlebell to the top position by extending the elbow. Bend the knee on the same side as the kettlebell.\n\nKeeping the kettlebell locked out at all times, pivot to the opposite side and use your non- working arm to assist you in driving forward to the lunge position. Using your free hand, push yourself to a seated position, then progressing to one knee.\n\nWhile looking up at the kettlebell, slowly stand up. Reverse the motion back to the starting position and repeat.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Turkish_Get-Up_Lunge_style.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed wide kettlebell high pull, standing bilateral swing endpoint, overhead lunge and squat phases of get-up, side hinge with overhead bell, water kickboard flutter kick, ring muscle-up top support, opposite-hand knee crossover stretch, standing knee-circle setup and knee-supported push-up.",
+      "bounds": {
+        "x": 1153,
+        "y": 0,
+        "width": 383,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "db-kettlebell-turkish-get-up-squat-style",
@@ -78,14 +110,22 @@
       "guideText": "Lie on your back on the floor and press a kettlebell to the top position by extending the elbow. Bend the knee on the same side as the kettlebell.\n\nKeeping the kettlebell locked out at all times, pivot to the opposite side and use your non- working arm to assist you in driving forward to the lunge position.\n\nUsing your free hand, push yourself to a seated position, then progressing to your feet. While looking up at the kettlebell, slowly stand up. Reverse the motion back to the starting position and repeat.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Turkish_Get-Up_Squat_style.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed wide kettlebell high pull, standing bilateral swing endpoint, overhead lunge and squat phases of get-up, side hinge with overhead bell, water kickboard flutter kick, ring muscle-up top support, opposite-hand knee crossover stretch, standing knee-circle setup and knee-supported push-up.",
+      "bounds": {
+        "x": 0,
+        "y": 342,
+        "width": 385,
+        "height": 324
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "db-kettlebell-windmill",
@@ -94,14 +134,22 @@
       "guideText": "Place a kettlebell in front of your lead foot and clean and press it overhead with your opposite arm. Clean the kettlebell to your shoulder by extending through the legs and hips as you pull the kettlebell towards your shoulders. Rotate your wrist as you do so, so that the palm faces forward. Press it overhead by extending the elbow.\n\nKeeping the kettlebell locked out at all times, push your butt out in the direction of the locked out kettlebell. Turn your feet out at a forty-five degree angle from the arm with the locked out kettlebell. Bending at the hip to one side, sticking your butt out, slowly lean until you can touch the floor with your free hand. Keep your eyes on the kettlebell that you hold over your head at all times.\n\nPause for a second after reaching the ground and reverse the motion back to the starting position.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Windmill.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed wide kettlebell high pull, standing bilateral swing endpoint, overhead lunge and squat phases of get-up, side hinge with overhead bell, water kickboard flutter kick, ring muscle-up top support, opposite-hand knee crossover stretch, standing knee-circle setup and knee-supported push-up.",
+      "bounds": {
+        "x": 385,
+        "y": 342,
+        "width": 383,
+        "height": 324
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "wger-57d1a6fc-fc28-43a7-9beb-0e851a47a976",
@@ -110,7 +158,7 @@
       "guideText": "Hold a kickboard with both hands, arms extended in front of you, face in the water (lift head forward to breathe when needed). Kick from your hips, not your knees, keeping your legs mostly straight with a slight bend and a steady, compact flutter kick. This builds leg endurance and keeps your body horizontal without needing to worry about your arms.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2481/view/",
@@ -118,7 +166,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed wide kettlebell high pull, standing bilateral swing endpoint, overhead lunge and squat phases of get-up, side hinge with overhead bell, water kickboard flutter kick, ring muscle-up top support, opposite-hand knee crossover stretch, standing knee-circle setup and knee-supported push-up.",
+      "bounds": {
+        "x": 768,
+        "y": 342,
+        "width": 385,
+        "height": 324
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "wger-107ea68a-d976-49ed-be75-3b0cf253c36a",
@@ -127,7 +183,7 @@
       "guideText": "use non-working leg's toes to help with balance and perform an RDL.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1688/view/",
@@ -135,7 +191,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: kickstand RDL rear toes are lifted; rear toes must support balance on floor.",
+      "bounds": {
+        "x": 1153,
+        "y": 342,
+        "width": 383,
+        "height": 324
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "db-kipping-muscle-up",
@@ -144,14 +208,22 @@
       "guideText": "Grip the rings using a false grip, with the base of your palms on top of the rings.\n\nBegin with a movement swinging your legs backward slightly.\n\nCounter that movement by swinging your legs forward and up, jerking your chin and chest back, pulling yourself up with both arms as you do so. As you reach the top position of the pull-up, pull the rings to your armpits as you roll your shoulders forward, allowing your elbows to move straight back behind you. This puts you into the proper position to continue into the dip portion of the movement.\n\nMaintaining control and stability, extend through the elbow to complete the motion.\n\nUse care when lowering yourself to the ground.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kipping_Muscle_Up.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed wide kettlebell high pull, standing bilateral swing endpoint, overhead lunge and squat phases of get-up, side hinge with overhead bell, water kickboard flutter kick, ring muscle-up top support, opposite-hand knee crossover stretch, standing knee-circle setup and knee-supported push-up.",
+      "bounds": {
+        "x": 0,
+        "y": 666,
+        "width": 385,
+        "height": 358
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "db-knee-across-the-body",
@@ -160,14 +232,22 @@
       "guideText": "Lie down on the floor with your right leg straight. Bend your left leg and lower it across your body, holding the knee down toward the floor with your right hand. (The knee doesn't need to touch the floor if you're tight.)\n\nPlace your left arm comfortably beside you and turn your head to the left. Imagine you have a weight tied to your tailbone. let your tailbone fall back toward the floor as your chest reaches in the opposite direction to stretch your lower back. Switch sides.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Knee_Across_The_Body.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed wide kettlebell high pull, standing bilateral swing endpoint, overhead lunge and squat phases of get-up, side hinge with overhead bell, water kickboard flutter kick, ring muscle-up top support, opposite-hand knee crossover stretch, standing knee-circle setup and knee-supported push-up.",
+      "bounds": {
+        "x": 385,
+        "y": 666,
+        "width": 383,
+        "height": 358
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "db-knee-circles",
@@ -176,14 +256,22 @@
       "guideText": "Stand with your legs together and hands by your waist.\n\nNow move your knees in a circular motion as you breathe normally.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Knee_Circles.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed wide kettlebell high pull, standing bilateral swing endpoint, overhead lunge and squat phases of get-up, side hinge with overhead bell, water kickboard flutter kick, ring muscle-up top support, opposite-hand knee crossover stretch, standing knee-circle setup and knee-supported push-up.",
+      "bounds": {
+        "x": 768,
+        "y": 666,
+        "width": 385,
+        "height": 358
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "wger-2b61df61-f71e-4b8f-9f95-6a565238a8ae",
@@ -192,7 +280,7 @@
       "guideText": "1. Start by kneeling on the floor, keeping your knees together. Place your hands on the floor in front of you, slightly wider than shoulder-width apart. 2. Make sure your body forms a straight line from head to knees. Hands should be positioned below shoulders. 3. Lower your torso towards the ground, bending your elbows while keeping your trunk stable. Keep your knees in contact with the floor. 4. Push through your hands to return to the starting position. Be sure to maintain contraction of chest, shoulder and arm muscles at the top of the movement. 5. Perform the desired number of repetitions, controlling the movement and maintaining good form.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1218/view/",
@@ -200,8 +288,17 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed wide kettlebell high pull, standing bilateral swing endpoint, overhead lunge and squat phases of get-up, side hinge with overhead bell, water kickboard flutter kick, ring muscle-up top support, opposite-hand knee crossover stretch, standing knee-circle setup and knee-supported push-up.",
+      "bounds": {
+        "x": 1153,
+        "y": 666,
+        "width": 383,
+        "height": 358
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-adf21e08-d20b-4337-b10a-dbb64897e0a9.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-adf21e08-d20b-4337-b10a-dbb64897e0a9.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-047.png"
 }

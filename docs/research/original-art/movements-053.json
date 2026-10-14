@@ -13,7 +13,7 @@
       "guideText": "* Muskulatur anspannen * Hintern ein wenig anheben * Kontrollierte Bewegung * Langsame Bewegung * Kein Schwung holen * Oberkörper gerade halten",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1348/view/",
@@ -21,7 +21,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed prone unloaded lower-back extension, crossed-arm lateral lumbar foam-roll setup, under-front-leg kettlebell lunge pass, bodyweight lunge, partner-held bent-knee groin stretch, supine low-arm dumbbell curl setup, close-grip chin triceps press, partner shoulder/knee-controlled crossover, supine dumbbell curl and neutral two-dumbbell ear-level triceps extension.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 335
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-lower-back-smr",
@@ -30,14 +38,22 @@
       "guideText": "In a seated position, place a foam roll under your lower back. Cross your arms in front of you and protract your shoulders. This will be your starting position.\n\nRaise your hips off of the floor and lean back, keeping your weight on your lower back. Now shift your weight slightly to one side, keeping your weight off of the spine and on the muscles to the side of it. Roll over your lower back, holding points of tension for 10-30 seconds. Repeat on the other side.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lower_Back-SMR.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed prone unloaded lower-back extension, crossed-arm lateral lumbar foam-roll setup, under-front-leg kettlebell lunge pass, bodyweight lunge, partner-held bent-knee groin stretch, supine low-arm dumbbell curl setup, close-grip chin triceps press, partner shoulder/knee-controlled crossover, supine dumbbell curl and neutral two-dumbbell ear-level triceps extension.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 335
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-lunge-pass-through",
@@ -46,14 +62,22 @@
       "guideText": "Stand with your torso upright holding a kettlebell in your right hand. This will be your starting position.\n\nStep forward with your left foot and lower your upper body down by flexing the hip and the knee, keeping the torso upright. Lower your back knee until it nearly touches the ground.\n\nAs you lunge, pass the kettlebell under your front leg to your opposite hand.\n\nPressing through the heel of your foot, return to the starting position.\n\nRepeat the movement for the recommended amount of repetitions, alternating legs.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lunge_Pass_Through.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed prone unloaded lower-back extension, crossed-arm lateral lumbar foam-roll setup, under-front-leg kettlebell lunge pass, bodyweight lunge, partner-held bent-knee groin stretch, supine low-arm dumbbell curl setup, close-grip chin triceps press, partner shoulder/knee-controlled crossover, supine dumbbell curl and neutral two-dumbbell ear-level triceps extension.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 335
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-3284fd27-5402-4821-9c32-29066d4e2667",
@@ -62,7 +86,7 @@
       "guideText": "Starting position: Stand with back straight. Steps: 1. Take a large step forward with your left leg. 2. Bring your pelvis down until you almost touch the floor with your right knee. 3. Bring your pelvis back up. 4. Return to the starting position by stepping back. 5. Repeat, switching legs each time.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/984/view/",
@@ -70,7 +94,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed prone unloaded lower-back extension, crossed-arm lateral lumbar foam-roll setup, under-front-leg kettlebell lunge pass, bodyweight lunge, partner-held bent-knee groin stretch, supine low-arm dumbbell curl setup, close-grip chin triceps press, partner shoulder/knee-controlled crossover, supine dumbbell curl and neutral two-dumbbell ear-level triceps extension.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 335
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-lying-bent-leg-groin",
@@ -79,14 +111,22 @@
       "guideText": "Lie on your back with your knees bent and the soles of the feet pressed together. Have your partner hold your knees. This will be your starting position.\n\nAttempt to squeeze your knees together, while your partner prevents any movement from occurring.\n\nAfter 10-20 seconds, relax your muscles as your partner gently pushes your knees towards the floor. Be sure to inform your helper when the stretch is adequate to prevent injury or overstretching.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lying_Bent_Leg_Groin.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed prone unloaded lower-back extension, crossed-arm lateral lumbar foam-roll setup, under-front-leg kettlebell lunge pass, bodyweight lunge, partner-held bent-knee groin stretch, supine low-arm dumbbell curl setup, close-grip chin triceps press, partner shoulder/knee-controlled crossover, supine dumbbell curl and neutral two-dumbbell ear-level triceps extension.",
+      "bounds": {
+        "x": 0,
+        "y": 335,
+        "width": 384,
+        "height": 332
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-9b68c3c4-fbe5-4c69-af0d-319e8fb5390d",
@@ -95,7 +135,7 @@
       "guideText": "RP fitness bicept curle variant to get a good streach on bicept",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1535/view/",
@@ -103,7 +143,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed prone unloaded lower-back extension, crossed-arm lateral lumbar foam-roll setup, under-front-leg kettlebell lunge pass, bodyweight lunge, partner-held bent-knee groin stretch, supine low-arm dumbbell curl setup, close-grip chin triceps press, partner shoulder/knee-controlled crossover, supine dumbbell curl and neutral two-dumbbell ear-level triceps extension.",
+      "bounds": {
+        "x": 384,
+        "y": 335,
+        "width": 384,
+        "height": 332
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-lying-cambered-barbell-row",
@@ -112,14 +160,22 @@
       "guideText": "Place a cambered bar underneath an exercise bench.\n\nLie face down on the exercise bench and grab the bar using a palms down (pronated grip) that is wider than shoulder width. This will be your starting position.\n\nAs you exhale row the bar up as you keep the elbows close to your body to either your chest, in order to target the upper mid back, or to your stomach if targeting the lats is your goal.\n\nAfter a second hold at the top, lower back down to the starting position slowly as you inhale.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lying_Cambered_Barbell_Row.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: lying cambered row uses shallow EZ curl bar rather than deep cambered row bar.",
+      "bounds": {
+        "x": 768,
+        "y": 335,
+        "width": 384,
+        "height": 332
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-lying-close-grip-barbell-triceps-extension-behind-the-head",
@@ -128,14 +184,22 @@
       "guideText": "While holding a barbell or EZ Curl bar with a pronated grip (palms facing forward), lie on your back on a flat bench with your head close to the end of the bench. Tip: If you are holding a barbell grab it using a shoulder-width grip and if you are using an E-Z Bar grab it on the inner handles.\n\nExtend your arms in front of you and slowly bring the bar back in a semi circular motion (while keeping the arms extended) to a position over your head. At the end of this step your arms should be overhead and parallel to the floor. This will be your starting position. Tip: Keep your elbows in at all times.\n\nAs you inhale, lower the bar by bending at the elbows and while keeping the upper arm stationary. Keep lowering the bar until your forearms are perpendicular to the floor.\n\nAs you exhale bring the bar back up to the starting position by pushing the bar up in a semi-circular motion until the lower arms are also parallel to the floor. Contract the triceps hard at the top of the movement for a second. Tip: Again, only the forearms should move. The upper arms should remain stationary at all times.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: behind-head triceps extension needs upper arms parallel to floor; pictured upper arms are vertical.",
+      "bounds": {
+        "x": 1152,
+        "y": 335,
+        "width": 384,
+        "height": 332
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-lying-close-grip-barbell-triceps-press-to-chin",
@@ -144,14 +208,22 @@
       "guideText": "While holding a barbell or EZ Curl bar with a pronated grip (palms facing forward), lie on your back on a flat bench with your head off the end of the bench. Tip: If you are holding a barbell grab it using a shoulder-width grip and if you are using an E-Z Bar grab it on the inner handles.\n\nExtend your arms in front of you as you hold the barbell over your chest. The arms should be perpendicular to your torso (90-degree angle). This will be your starting position.\n\nAs you inhale, lower the bar in a semi-circular motion by bending at the elbows and while keeping the upper arm stationary and elbows in. Keep lowering the bar until it lightly touches your chin.\n\nAs you exhale bring the bar back up to the starting position by pushing the bar up in a semi-circular motion. Contract the triceps hard at the top of the movement for a second. Tip: Again, only the forearms should move. The upper arms should remain stationary at all times.\n\nRepeat for the recommended amount of repetitions.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lying_Close-Grip_Barbell_Triceps_Press_To_Chin.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed prone unloaded lower-back extension, crossed-arm lateral lumbar foam-roll setup, under-front-leg kettlebell lunge pass, bodyweight lunge, partner-held bent-knee groin stretch, supine low-arm dumbbell curl setup, close-grip chin triceps press, partner shoulder/knee-controlled crossover, supine dumbbell curl and neutral two-dumbbell ear-level triceps extension.",
+      "bounds": {
+        "x": 0,
+        "y": 667,
+        "width": 384,
+        "height": 357
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-lying-crossover",
@@ -160,14 +232,22 @@
       "guideText": "Lie on your back with your legs extended.\n\nCross one leg over your body with the knee bent, attempting to touch the knee to the ground. Your partner should kneel beside you, holding your shoulder down with one hand and controlling the crossed leg with the other. this will be your starting position.\n\nAttempt to raise the bent knee off of the ground as your partner prevents any actual movement.\n\nAfter 10-20 seconds, relax the leg as your partner gently presses the knee towards the floor. Repeat with the other side.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lying_Crossover.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed prone unloaded lower-back extension, crossed-arm lateral lumbar foam-roll setup, under-front-leg kettlebell lunge pass, bodyweight lunge, partner-held bent-knee groin stretch, supine low-arm dumbbell curl setup, close-grip chin triceps press, partner shoulder/knee-controlled crossover, supine dumbbell curl and neutral two-dumbbell ear-level triceps extension.",
+      "bounds": {
+        "x": 384,
+        "y": 667,
+        "width": 384,
+        "height": 357
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-861f7396-f34e-486c-a903-3c326086f920",
@@ -176,7 +256,7 @@
       "guideText": "Take a dumbbell in each hand and lie backwards on a bench, similar to a classic chest press. Let your arms hang down at your sides, with the dumbbells possibly touching the floor. Now start to lift the dumbbells upwards until your forearms are perpendicular to the ceiling. Slowly lower the dumbbells until they almost touch the floor again. Keep your ellbows in place to minimize cheating.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1530/view/",
@@ -184,7 +264,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed prone unloaded lower-back extension, crossed-arm lateral lumbar foam-roll setup, under-front-leg kettlebell lunge pass, bodyweight lunge, partner-held bent-knee groin stretch, supine low-arm dumbbell curl setup, close-grip chin triceps press, partner shoulder/knee-controlled crossover, supine dumbbell curl and neutral two-dumbbell ear-level triceps extension.",
+      "bounds": {
+        "x": 768,
+        "y": 667,
+        "width": 384,
+        "height": 357
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-lying-dumbbell-tricep-extension",
@@ -193,15 +281,24 @@
       "guideText": "Lie on a flat bench while holding two dumbbells directly in front of you. Your arms should be fully extended at a 90-degree angle from your torso and the floor. The palms should be facing in and the elbows should be tucked in. This is the starting position.\n\nAs you breathe in and you keep the upper arms stationary with the elbows in, slowly lower the weight until the dumbbells are near your ears.\n\nAt that point, while keeping the elbows in and the upper arms stationary, use the triceps to bring the weight back up to the starting position as you breathe out.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lying_Dumbbell_Tricep_Extension.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed prone unloaded lower-back extension, crossed-arm lateral lumbar foam-roll setup, under-front-leg kettlebell lunge pass, bodyweight lunge, partner-held bent-knee groin stretch, supine low-arm dumbbell curl setup, close-grip chin triceps press, partner shoulder/knee-controlled crossover, supine dumbbell curl and neutral two-dumbbell ear-level triceps extension.",
+      "bounds": {
+        "x": 1152,
+        "y": 667,
+        "width": 384,
+        "height": 357
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-29a9fd5f-c353-41f2-bbf1-682f2b6892af.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-29a9fd5f-c353-41f2-bbf1-682f2b6892af.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-053.png"
 }

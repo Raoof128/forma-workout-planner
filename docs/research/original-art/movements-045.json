@@ -13,14 +13,22 @@
       "guideText": "This drill helps you learn to drive yourself low enough during the jerk and corrects those who move backward during the movement. Begin with the bar racked in the jerk position, with the shoulders forward, torso upright, and the feet split slightly apart.\n\nInitiate the movement as you would a normal jerk, dipping at the knees while keeping your torso vertical, and driving back up forcefully, using momentum and not your arms to elevate the weight.\n\nKeep the rear foot in place, using it to drive your body forward into a full split as you jerk the weight. Recover by standing up with the weight overhead.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Jerk_Balance.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed split overhead jerk balance, flat close-grip JM press starting lockout, jogging stride, rope jump and star jump, chest-supported straight-elbow Kelso shrug, one-bell clean receiving phase and two-hand kettlebell deadlift hinge.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 331
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "db-jerk-dip-squat",
@@ -29,14 +37,22 @@
       "guideText": "This movement strengthens the dip portion of the jerk. Begin with the bar racked in the jerk position, with the shoulders forward to create a shelf and the bar lightly contacting the throat. The feet should be directly under the hips, with the feet turned out as is comfortable.\n\nKeeping the torso vertical, dip by flexing the knees, allowing them to travel forward and without moving the hips to the rear. The dip should not be excessive. Return the weight to the starting position by driving forcefully though the feet.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Jerk_Dip_Squat.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: jerk dip image is too deep, approaching squat instead of short vertical knee dip.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 331
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "db-jm-press",
@@ -45,14 +61,22 @@
       "guideText": "Start the exercise the same way you would a close grip bench press. You will lie on a flat bench while holding a barbell at arms length (fully extended) with the elbows in. However, instead of having the arms perpendicular to the torso, make sure the bar is set in a direct line above the upper chest. This will be your starting position.\n\nNow beginning from a fully extended position lower the bar down as if performing a lying triceps extension. Inhale as you perform this movement. When you reach the half way point, let the bar roll back about one inch by moving the upper arms towards your legs until they are perpendicular to the torso. Tip: Keep the bend at the elbows constant as you bring the upper arms forward.\n\nAs you exhale, press the bar back up by using the triceps to perform a close grip bench press.\n\nNow go back to the starting position and start over.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/JM_Press.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed split overhead jerk balance, flat close-grip JM press starting lockout, jogging stride, rope jump and star jump, chest-supported straight-elbow Kelso shrug, one-bell clean receiving phase and two-hand kettlebell deadlift hinge.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 331
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "wger-eeeb42ae-6a41-4127-b2ec-72376119531b",
@@ -61,7 +85,7 @@
       "guideText": "Get your shoes on, go outside and start running at a moderate pace.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/319/view/",
@@ -69,7 +93,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed split overhead jerk balance, flat close-grip JM press starting lockout, jogging stride, rope jump and star jump, chest-supported straight-elbow Kelso shrug, one-bell clean receiving phase and two-hand kettlebell deadlift hinge.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 331
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "wger-cd51aa2a-52b3-43df-8011-0c8ef4b7ed11",
@@ -78,14 +110,22 @@
       "guideText": "Hold an end of the rope in each hand. Position the rope behind you on the ground. Raise your arms up and turn the rope over your head bringing it down in front of you. When it reaches the ground, jump over it. Find a good turning pace that can be maintained. Different speeds and techniques can be used to introduce variation.\n\nRope jumping is exciting, challenges your coordination, and requires a lot of energy. A 150 lb person will burn about 350 calories jumping rope for 30 minutes, compared to over 450 calories running.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Rope_Jumping.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed split overhead jerk balance, flat close-grip JM press starting lockout, jogging stride, rope jump and star jump, chest-supported straight-elbow Kelso shrug, one-bell clean receiving phase and two-hand kettlebell deadlift hinge.",
+      "bounds": {
+        "x": 0,
+        "y": 331,
+        "width": 384,
+        "height": 327
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "wger-4d255f25-f199-401a-bc81-7ffab1d0ed24",
@@ -94,7 +134,7 @@
       "guideText": "A jumping jack or star jump, also called side-straddle hop in the US military, is a physical jumping exercise performed by jumping to a position with the legs spread wide and the hands going overhead, sometimes in a clap, and then returning to a position with the feet together and the arms at the sides",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/320/view/",
@@ -102,7 +142,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed split overhead jerk balance, flat close-grip JM press starting lockout, jogging stride, rope jump and star jump, chest-supported straight-elbow Kelso shrug, one-bell clean receiving phase and two-hand kettlebell deadlift hinge.",
+      "bounds": {
+        "x": 384,
+        "y": 331,
+        "width": 384,
+        "height": 327
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "db-keg-load",
@@ -111,14 +159,22 @@
       "guideText": "To load kegs, place the desired number a distance from the loading platform, typically 30-50 feet.\n\nBegin by grabbing the close handle of the first keg, tilting it onto its side to grab the opposite edge of the bottom of the keg. Lift the keg up to your chest.\n\nThe higher you can place the keg, the faster you should be able to move to the platform. Shouldering is usually not allowed. Be sure to keep a firm hold on the keg. Move as quickly as possible to the platform, and load it, extending through your hips, knees, and ankles to get it as high as possible.\n\nReturn to the starting position to retrieve the next keg, and repeat until the event is completed.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Keg_Load.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: keg load depicts a loaded step-up, rather than carry/extension onto loading platform.",
+      "bounds": {
+        "x": 768,
+        "y": 331,
+        "width": 384,
+        "height": 327
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "wger-5597bafc-0478-4124-9745-85f9df22be3e",
@@ -127,7 +183,7 @@
       "guideText": "Lie on your back with your knees bent, or sit upright in a chair. Locate the pelvic floor muscles: they are the muscles you would use to stop the flow of urine or to hold back gas. Keep your abdomen, glutes and thighs relaxed and breathe normally throughout.\n\nTighten the pelvic floor muscles and lift them gently upwards and inwards. Hold the contraction for a few seconds, then release completely and rest for at least as long as you held. Repeat for the desired number of repetitions.\n\nThe exercise can be varied by holding longer with a light contraction (endurance) or by performing quick, short contractions with a full relaxation in between.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2555/view/",
@@ -135,7 +191,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: Kegel exercise incorrectly depicts active glute bridge; guide requires relaxed abdomen/glutes and neutral supine or seated posture.",
+      "bounds": {
+        "x": 1152,
+        "y": 331,
+        "width": 384,
+        "height": 327
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "wger-11914fdd-02d9-4aa6-88be-0c10cd54c609",
@@ -144,7 +208,7 @@
       "guideText": "Kelso shrugs are a variation of scapular shrugs designed primarily to train **scapular retraction**, with particular emphasis on the **middle trapezius, rhomboids, and, secondarily, the lower trapezius**. Unlike conventional shrugs, the goal is not to elevate the shoulders toward the ears, but rather to **pull the shoulder blades backward**.\n\nThey are typically performed with the chest supported on an incline bench, using either dumbbells or a barbell:\n\n1. Lie face down on an incline bench, with your arms extended toward the floor.\n2. Keep your **elbows almost completely locked** throughout the movement.\n3. Starting with the shoulder blades slightly protracted, **retract them**, trying to bring them closer together.\n4. Keep your chest firmly supported on the bench; avoid turning the movement into a row by extending your torso.\n5. Briefly hold the fully retracted position, then return in a controlled manner, allowing the shoulder blades to separate.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2672/view/",
@@ -152,7 +216,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed split overhead jerk balance, flat close-grip JM press starting lockout, jogging stride, rope jump and star jump, chest-supported straight-elbow Kelso shrug, one-bell clean receiving phase and two-hand kettlebell deadlift hinge.",
+      "bounds": {
+        "x": 0,
+        "y": 658,
+        "width": 384,
+        "height": 366
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "db-kettlebell-arnold-press",
@@ -161,14 +233,22 @@
       "guideText": "Clean a kettlebell to your shoulder. Clean the kettlebell to your shoulder by extending through the legs and hips as you raise the kettlebell towards your shoulder. The palm should be facing inward.\n\nLooking straight ahead, press the kettlebell out and overhead, rotating your wrist so that your palm faces forward at the top of the motion.\n\nReturn the kettlebell to the starting position, with the palm facing in.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Arnold_Press.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: single kettlebell Arnold press depicted with two kettlebells.",
+      "bounds": {
+        "x": 384,
+        "y": 658,
+        "width": 384,
+        "height": 366
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "db-kettlebell-dead-clean",
@@ -177,14 +257,22 @@
       "guideText": "Place kettlebell between your feet. To get in the starting position, push your butt back and look straight ahead.\n\nClean the kettlebell to your shoulder. Clean the kettlebell to your shoulders by extending through the legs and hips as you raise the kettlebell towards your shoulder. The wrist should rotate as you do so.\n\nLower the kettlebell, keeping the hamstrings loaded by keeping your back straight and your butt out.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Dead_Clean.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed split overhead jerk balance, flat close-grip JM press starting lockout, jogging stride, rope jump and star jump, chest-supported straight-elbow Kelso shrug, one-bell clean receiving phase and two-hand kettlebell deadlift hinge.",
+      "bounds": {
+        "x": 768,
+        "y": 658,
+        "width": 384,
+        "height": 366
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "wger-9b5f8c6e-2436-4ded-aea9-8c698b0c8768",
@@ -193,7 +281,7 @@
       "guideText": "Starting position: Stand hip-width apart, with your kettlebell centered between your ankles. Your back should be straight, your head facing forward. Steps: 1. Hinge at the hips and slightly bend at the knees to put your hands on the kettlebell handles. Your back should be straight as you perform the movement. 2. Grab the kettlebell handles, with your hands pushing in opposite directions as if to pull the handle apart. 3. While contacting your abs and glutes, stand straight up. 4. Hinge at the hips again to bring the kettlebell back down, similarly to step 1. 5. Repeat from step 3. Tips: * Be sure you're performing the movements correctly, as doing otherwise can lead to injury. For example, do not squat instead of hinging at the hips, do not round your back while reaching for the kettlebell, and do not lean back while standing up.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1003/view/",
@@ -201,8 +289,17 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed split overhead jerk balance, flat close-grip JM press starting lockout, jogging stride, rope jump and star jump, chest-supported straight-elbow Kelso shrug, one-bell clean receiving phase and two-hand kettlebell deadlift hinge.",
+      "bounds": {
+        "x": 1152,
+        "y": 658,
+        "width": 384,
+        "height": 366
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-ac1b81a5-944f-4cb4-82a8-311d85c67abe.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-ac1b81a5-944f-4cb4-82a8-311d85c67abe.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-045.png"
 }

@@ -13,14 +13,22 @@
       "guideText": "Attach a dual handled chain or rope attachment to the sled. You should be facing away from the sled, holding a handle in each hand.\n\nBegin the movement by moving forward for one step. Leaning forward, extend through the legs and hips to move, pausing with each step to extend through the elbows, pressing your hands forward. Step forward until you return to the start position prepared to press.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Forward_Drag_with_Press.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed sled dual-handle press, hands-on-shoulder rotation setup, free-arm barbell front rack squat, crossed-arm jump squat, hands-behind-head frog-hop setup, soles-together partial frog crunch, wide-knee forearm frog stretch, crossed front-rack squats with/without bench, box landing and alternating pronated front raise.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "wger-4b278f57-4505-419a-8b34-172b53eb4adc",
@@ -29,7 +37,7 @@
       "guideText": "Starting position: Sit or stand with your back straight. Steps: 1. Place your hands on your shoulders. 2. Repeatedly rotate both shoulder joints in a circular motion at a moderate pace.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1004/view/",
@@ -37,7 +45,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed sled dual-handle press, hands-on-shoulder rotation setup, free-arm barbell front rack squat, crossed-arm jump squat, hands-behind-head frog-hop setup, soles-together partial frog crunch, wide-knee forearm frog stretch, crossed front-rack squats with/without bench, box landing and alternating pronated front raise.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "db-frankenstein-squat",
@@ -46,14 +62,22 @@
       "guideText": "This drill teaches you the proper positioning of both the bar and your body during the clean and front squat.\n\nPlace the barbell on the front of the shoulders, releasing your grip and extending your arms out in front of you. The shoulders should be pushed forward to create a shelf, and the bar should be in contact with the throat. Ensure that you only move your shoulder blades forward; don't round the thoracic spine.\n\nSquat by flexing the knees and hips, sitting in between your legs. Keep the torso upright, the arms up, and the shoulders forward, and the bar should stay in place. Go to the bottom of the squat, until your hamstrings contact your calves.\n\nReturn to the upright position by driving through the front of the heel and extending the knees and hips.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Frankenstein_Squat.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed sled dual-handle press, hands-on-shoulder rotation setup, free-arm barbell front rack squat, crossed-arm jump squat, hands-behind-head frog-hop setup, soles-together partial frog crunch, wide-knee forearm frog stretch, crossed front-rack squats with/without bench, box landing and alternating pronated front raise.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "db-freehand-jump-squat",
@@ -62,14 +86,22 @@
       "guideText": "Cross your arms over your chest.\n\nWith your head up and your back straight, position your feet at shoulder width.\n\nKeeping your back straight and chest up, squat down as you inhale until your upper thighs are parallel, or lower, to the floor.\n\nNow pressing mainly with the ball of your feet, jump straight up in the air as high as possible, using the thighs like springs. Exhale during this portion of the movement.\n\nWhen you touch the floor again, immediately squat down and jump again.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Freehand_Jump_Squat.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed sled dual-handle press, hands-on-shoulder rotation setup, free-arm barbell front rack squat, crossed-arm jump squat, hands-behind-head frog-hop setup, soles-together partial frog crunch, wide-knee forearm frog stretch, crossed front-rack squats with/without bench, box landing and alternating pronated front raise.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "db-frog-hops",
@@ -78,14 +110,22 @@
       "guideText": "Stand with your hands behind your head, and squat down keeping your torso upright and your head up. This will be your starting position.\n\nJump forward several feet, avoiding jumping unnecessarily high. As your feet contact the ground, absorb the impact through your legs, and jump again. Repeat this action 5-10 times.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Frog_Hops.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed sled dual-handle press, hands-on-shoulder rotation setup, free-arm barbell front rack squat, crossed-arm jump squat, hands-behind-head frog-hop setup, soles-together partial frog crunch, wide-knee forearm frog stretch, crossed front-rack squats with/without bench, box landing and alternating pronated front raise.",
+      "bounds": {
+        "x": 0,
+        "y": 341,
+        "width": 384,
+        "height": 311
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "db-frog-sit-ups",
@@ -94,14 +134,22 @@
       "guideText": "Lie with your back flat on the floor (or exercise mat) and your legs extended in front of you.\n\nNow bend at the knees and place your outer thighs by the floor (or mat) as you make the soles of your feet touch each other.\n\nNow try pushing both soles and bringing them up as near you as possible while you keep the outer thighs on the floor (or at least almost touching it). Tip: In this position your legs should create a diamond shape.\n\nNow, cross your arms in front of you by touching the opposite shoulders. This will be your starting position.\n\nAs you exhale flatten your lower back to the floor while curling the torso upwards. Tip: This will be like performing the first 1/4 movement of a sit up. Hold at the top position for a second.\n\nAs you inhale, slowly lower back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Frog_Sit-Ups.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed sled dual-handle press, hands-on-shoulder rotation setup, free-arm barbell front rack squat, crossed-arm jump squat, hands-behind-head frog-hop setup, soles-together partial frog crunch, wide-knee forearm frog stretch, crossed front-rack squats with/without bench, box landing and alternating pronated front raise.",
+      "bounds": {
+        "x": 384,
+        "y": 341,
+        "width": 384,
+        "height": 311
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "wger-00eae665-ff78-4373-9c43-f44a4a1b43e0",
@@ -110,7 +158,7 @@
       "guideText": "Starting position: Stand with your feet shoulder-width apart and your toes pointing forward, facing a wall or bench for support if needed. Bend your knees into a squat position. Place your hands on the ground in front of you, shoulder-width apart, with your fingers spread wide. Make sure your elbows are under your shoulders and your body forms a straight line from your head to your heels. Upward phase: Push with your feet and hands to lift your body off the ground. Straighten your legs and arms, keeping your body aligned. Engage your core and glutes to maintain the position. If needed, rest your knees on the wall or bench for assistance.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1238/view/",
@@ -118,7 +166,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: source frog-stand description conflicts with a knee-supported arm balance; image shows feet-grounded crouch. Resolve actual movement and regenerate.",
+      "bounds": {
+        "x": 768,
+        "y": 341,
+        "width": 384,
+        "height": 311
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "wger-a37001e9-b4b3-45db-8ee3-046f40350efa",
@@ -127,7 +183,7 @@
       "guideText": "1. Get on your hands and knees. 2. Widen your knees outwards, and drop to your elbows. 3. Without moving your elbows or knees, start to rock forwards and backwards, trying to get your bum closer to your feet.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1844/view/",
@@ -135,7 +191,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed sled dual-handle press, hands-on-shoulder rotation setup, free-arm barbell front rack squat, crossed-arm jump squat, hands-behind-head frog-hop setup, soles-together partial frog crunch, wide-knee forearm frog stretch, crossed front-rack squats with/without bench, box landing and alternating pronated front raise.",
+      "bounds": {
+        "x": 1152,
+        "y": 341,
+        "width": 384,
+        "height": 311
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "db-front-barbell-squat",
@@ -144,14 +208,22 @@
       "guideText": "This exercise is best performed inside a squat rack for safety purposes. To begin, first set the bar on a rack that best matches your height. Once the correct height is chosen and the bar is loaded, bring your arms up under the bar while keeping the elbows high and the upper arm slightly above parallel to the floor. Rest the bar on top of the deltoids and cross your arms while grasping the bar for total control.\n\nLift the bar off the rack by first pushing with your legs and at the same time straightening your torso.\n\nStep away from the rack and position your legs using a shoulder width medium stance with the toes slightly pointed out. Keep your head up at all times as looking down will get you off balance and also maintain a straight back. This will be your starting position. (Note: For the purposes of this discussion we will use the medium stance described above which targets overall development; however you can choose any of the three stances described in the foot positioning section).\n\nBegin to slowly lower the bar by bending the knees as you maintain a straight posture with the head up. Continue down until the angle between the upper leg and the calves becomes slightly less than 90-degrees (which is the point in which the upper legs are below parallel to the floor). Inhale as you perform this portion of the movement. Tip: If you performed the exercise correctly, the front of the knees should make an imaginary straight line with the toes that is perpendicular to the front. If your knees are past that imaginary line (if they are past your toes) then you are placing undue stress on the knee and the exercise has been performed incorrectly.\n\nBegin to raise the bar as you exhale by pushing the floor mainly with the middle of your foot as you straighten the legs again and go back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Front_Barbell_Squat.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed sled dual-handle press, hands-on-shoulder rotation setup, free-arm barbell front rack squat, crossed-arm jump squat, hands-behind-head frog-hop setup, soles-together partial frog crunch, wide-knee forearm frog stretch, crossed front-rack squats with/without bench, box landing and alternating pronated front raise.",
+      "bounds": {
+        "x": 0,
+        "y": 652,
+        "width": 384,
+        "height": 372
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "db-front-barbell-squat-to-a-bench",
@@ -160,14 +232,22 @@
       "guideText": "This exercise is best performed inside a squat rack for safety purposes. To begin, first set a flat bench behind you and set the bar on a rack that best matches your height. Once the correct height is chosen and the bar is loaded, bring your arms up under the bar while keeping the elbows high and the upper arm slightly above parallel to the floor. Rest the bar on top of the deltoids and cross your arms while grasping the bar for total control.\n\nLift the bar off the rack by first pushing with your legs and at the same time straightening your torso.\n\nStep away from the rack and position your legs using a shoulder width medium stance with the toes slightly pointed out. Keep your head up at all times as looking down will get you off balance and also maintain a straight back. This will be your starting position. (Note: For the purposes of this discussion we will use the medium stance described above which targets overall development; however you can choose any of the three stances described in the foot positioning section).\n\nBegin to slowly lower the bar by bending the knees as you maintain a straight posture with the head up. Continue down until you touch the bench with your glutes. Inhale as you perform this portion of the movement. Tip: If you performed the exercise correctly, the front of the knees should make an imaginary straight line with the toes that is perpendicular to the front. If your knees are past that imaginary line (if they are past your toes) then you are placing undue stress on the knee and the exercise has been performed incorrectly.\n\nBegin to raise the bar as you exhale by pushing the floor mainly with the heel of your foot as you straighten the legs again and go back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Front_Barbell_Squat_To_A_Bench.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed sled dual-handle press, hands-on-shoulder rotation setup, free-arm barbell front rack squat, crossed-arm jump squat, hands-behind-head frog-hop setup, soles-together partial frog crunch, wide-knee forearm frog stretch, crossed front-rack squats with/without bench, box landing and alternating pronated front raise.",
+      "bounds": {
+        "x": 384,
+        "y": 652,
+        "width": 384,
+        "height": 372
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "db-front-box-jump",
@@ -176,14 +256,22 @@
       "guideText": "Begin with a box of an appropriate height 1-2 feet in front of you. Stand with your feet should width apart. This will be your starting position.\n\nPerform a short squat in preparation for jumping, swinging your arms behind you.\n\nRebound out of this position, extending through the hips, knees, and ankles to jump as high as possible. Swing your arms forward and up.\n\nLand on the box with the knees bent, absorbing the impact through the legs. You can jump from the box back to the ground, or preferably step down one leg at a time.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Front_Box_Jump.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed sled dual-handle press, hands-on-shoulder rotation setup, free-arm barbell front rack squat, crossed-arm jump squat, hands-behind-head frog-hop setup, soles-together partial frog crunch, wide-knee forearm frog stretch, crossed front-rack squats with/without bench, box landing and alternating pronated front raise.",
+      "bounds": {
+        "x": 768,
+        "y": 652,
+        "width": 384,
+        "height": 372
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "db-front-dumbbell-raise",
@@ -192,15 +280,24 @@
       "guideText": "Pick a couple of dumbbells and stand with a straight torso and the dumbbells on front of your thighs at arms length with the palms of the hand facing your thighs. This will be your starting position.\n\nWhile maintaining the torso stationary (no swinging), lift the left dumbbell to the front with a slight bend on the elbow and the palms of the hands always facing down. Continue to go up until you arm is slightly above parallel to the floor. Exhale as you execute this portion of the movement and pause for a second at the top. Inhale after the second pause.\n\nNow lower the dumbbell back down slowly to the starting position as you simultaneously lift the right dumbbell.\n\nContinue alternating in this fashion until all of the recommended amount of repetitions have been performed for each arm.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Front_Dumbbell_Raise.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed sled dual-handle press, hands-on-shoulder rotation setup, free-arm barbell front rack squat, crossed-arm jump squat, hands-behind-head frog-hop setup, soles-together partial frog crunch, wide-knee forearm frog stretch, crossed front-rack squats with/without bench, box landing and alternating pronated front raise.",
+      "bounds": {
+        "x": 1152,
+        "y": 652,
+        "width": 384,
+        "height": 372
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-8e5191cd-db0c-4852-8755-ce22d464d5c2.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-8e5191cd-db0c-4852-8755-ce22d464d5c2.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-034.png"
 }

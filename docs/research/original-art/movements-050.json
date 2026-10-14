@@ -13,14 +13,22 @@
       "guideText": "Position a number of cones in a row several feet apart.\n\nStand next to the end of the cones, facing 90 degrees to the direction of travel. This will be your starting position.\n\nBegin the jump by dipping with the knees to initiate a stretch reflex, and immediately reverse direction to push off the ground, jumping up and sideways over the cone.\n\nUse your legs to absorb impact upon landing, and rebound into the next jump, continuing down the row of cones.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lateral_Cone_Hops.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed lateral cone leap and single-leg bound, under-foot band lateral raise, low-height lateral isometric, optional-band lateral squat walk, lateral-to-front raise wide phase, axillary lat roller, downward-turned levator stretch with free hand behind back, opposing hand/head lateral isometric and prone bent-knee hamstring curl.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-45e44940-d4a0-4c66-8cbb-7afe785d5610",
@@ -29,7 +37,7 @@
       "guideText": "Push off the ground and land on one leg and regain balance before jumping to the other leg",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1325/view/",
@@ -37,7 +45,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed lateral cone leap and single-leg bound, under-foot band lateral raise, low-height lateral isometric, optional-band lateral squat walk, lateral-to-front raise wide phase, axillary lat roller, downward-turned levator stretch with free hand behind back, opposing hand/head lateral isometric and prone bent-knee hamstring curl.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-lateral-raise-with-bands",
@@ -46,14 +62,22 @@
       "guideText": "To begin, stand on an exercise band so that tension begins at arm's length. Grasp the handles using a pronated (palms facing your thighs) grip that is slightly less than shoulder width. The handles should be resting on the sides of your thighs. Your arms should be extended with a slight bend at the elbows and your back should be straight. This will be your starting position.\n\nUse your side shoulders to lift the handles to the sides as you exhale. Continue to lift the handles until they are slightly above parallel. Tip: As you lift the handles, slightly tilt the hand as if you were pouring water and keep your arms extended. Also, keep your torso stationary and pause for a second at the top of the movement.\n\nLower the handles back down slowly to the starting position. Inhale as you perform this portion of the movement.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lateral_Raise_-_With_Bands.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed lateral cone leap and single-leg bound, under-foot band lateral raise, low-height lateral isometric, optional-band lateral squat walk, lateral-to-front raise wide phase, axillary lat roller, downward-turned levator stretch with free hand behind back, opposing hand/head lateral isometric and prone bent-knee hamstring curl.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-2d580008-4918-430a-b0bd-4fcfe8783195",
@@ -62,7 +86,7 @@
       "guideText": "An isometric lateral raise is a shoulder exercise where you hold your arms out to the sides at waist height for a set amount of time instead of moving up and down",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2538/view/",
@@ -70,7 +94,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed lateral cone leap and single-leg bound, under-foot band lateral raise, low-height lateral isometric, optional-band lateral squat walk, lateral-to-front raise wide phase, axillary lat roller, downward-turned levator stretch with free hand behind back, opposing hand/head lateral isometric and prone bent-knee hamstring curl.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-c5015ed9-042b-42d3-9dac-13759ea9571e",
@@ -79,7 +111,7 @@
       "guideText": "Lateral walks, also known as side steps or squat walks, are a type of exercise where you move sideways in a squatting position. They can be performed with or without resistance bands. These exercises strengthen the hip abductors, glutes, and other stabilizing muscles.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1514/view/",
@@ -87,7 +119,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed lateral cone leap and single-leg bound, under-foot band lateral raise, low-height lateral isometric, optional-band lateral squat walk, lateral-to-front raise wide phase, axillary lat roller, downward-turned levator stretch with free hand behind back, opposing hand/head lateral isometric and prone bent-knee hamstring curl.",
+      "bounds": {
+        "x": 0,
+        "y": 342,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-dac3c714-f0c6-4d97-8283-17be7dd77b65",
@@ -96,7 +136,7 @@
       "guideText": "-(1) Perform a lateral raise, pausing at the top of the lift (2). -Instead of lowering the weight, bring it to the front of your body so that you appear to be at the top position of a front raise. You will do this by using a Pec Fly motion, maintaining straight arms. (3) -Now lower the weight to your quadriceps, or, in other words, lower the dumbbells as though you are completing a Front Raise repetition. (4) -Reverse the motion: Perform a front raise (5), at the apex of the lift use a Reverse Fly motion to position the weights at the top of a Lateral Raise (6), and finally, lower the weights until your palms are essentially touching the sides of your thighs (7). THIS IS ONE REP. (1) l *front view*(2) -l- *FV* (3) l- *side view* (4) l *SV/FV* (5) l- *SV* (6) -l- *FV* (7) l *FV/SV*",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/351/view/",
@@ -104,7 +144,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed lateral cone leap and single-leg bound, under-foot band lateral raise, low-height lateral isometric, optional-band lateral squat walk, lateral-to-front raise wide phase, axillary lat roller, downward-turned levator stretch with free hand behind back, opposing hand/head lateral isometric and prone bent-knee hamstring curl.",
+      "bounds": {
+        "x": 384,
+        "y": 342,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-latissimus-dorsi-smr",
@@ -113,14 +161,22 @@
       "guideText": "While lying on the floor, place a foam roll under your back and to one side, just behind your arm pit. This will be your starting position.\n\nKeep the arm of the side being stretched behind and to the side of you as you shift your weight onto your lats, keeping your upper body off of the ground. Hold for 10-30 seconds, and switch sides.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Latissimus_Dorsi-SMR.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed lateral cone leap and single-leg bound, under-foot band lateral raise, low-height lateral isometric, optional-band lateral squat walk, lateral-to-front raise wide phase, axillary lat roller, downward-turned levator stretch with free hand behind back, opposing hand/head lateral isometric and prone bent-knee hamstring curl.",
+      "bounds": {
+        "x": 768,
+        "y": 342,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-7f8997d2-e21f-492f-a470-b9f0c5e54f1d",
@@ -129,7 +185,7 @@
       "guideText": "Starting position: Start standing up or sitting down. Turn your head to the left, around 45 degrees or just above your nipple. Place your right hand behind your back or sit on it. Take your left hand and use it to hold the back of your head. Lean your head down slightly. Steps: 1. After assuming the starting position, press your head against your left hand with slight force. Your hand should press back with equal force, so that your head doesn't move. Hold this position.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1013/view/",
@@ -137,7 +193,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed lateral cone leap and single-leg bound, under-foot band lateral raise, low-height lateral isometric, optional-band lateral squat walk, lateral-to-front raise wide phase, axillary lat roller, downward-turned levator stretch with free hand behind back, opposing hand/head lateral isometric and prone bent-knee hamstring curl.",
+      "bounds": {
+        "x": 1152,
+        "y": 342,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-2ecf2e55-c1f3-40ac-b20e-0954f41a2021",
@@ -146,7 +210,7 @@
       "guideText": "Starting position: Sit or stand with your back straight. Steps: 1. Tilt your head to the side. 2. Take the hand closer to your head and use it to grab your head from the other side. 3. Push with your hand against your head and with your head against your hand so that the forces balance out and your head stays still. 4. Maintain this tension until the end of the exercise.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1008/view/",
@@ -154,7 +218,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed lateral cone leap and single-leg bound, under-foot band lateral raise, low-height lateral isometric, optional-band lateral squat walk, lateral-to-front raise wide phase, axillary lat roller, downward-turned levator stretch with free hand behind back, opposing hand/head lateral isometric and prone bent-knee hamstring curl.",
+      "bounds": {
+        "x": 0,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-48836f44-efcd-4471-a456-5f024936025a",
@@ -163,7 +235,7 @@
       "guideText": "The leg curl, also known as the hamstring curl, is an isolation exercise that targets the hamstring muscles. The exercise involves flexing the lower leg against resistance towards the buttocks. Other exercises that can be used to strengthen the hamstrings are the glute-ham raise and the deadlift.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/364/view/",
@@ -171,7 +243,15 @@
         "license": "CC0",
         "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed lateral cone leap and single-leg bound, under-foot band lateral raise, low-height lateral isometric, optional-band lateral squat walk, lateral-to-front raise wide phase, axillary lat roller, downward-turned levator stretch with free hand behind back, opposing hand/head lateral isometric and prone bent-knee hamstring curl.",
+      "bounds": {
+        "x": 384,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-ca514fad-c6ce-47b0-93a0-dc73a3507099",
@@ -180,7 +260,7 @@
       "guideText": "Standing position: Place the band under your feet in the middle of your foot and grasp it with a hammer grip.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1603/view/",
@@ -188,7 +268,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: named elastic leg curl source only describes standing hammer-grip band setup, not an actual hamstring curl; resolve guide conflict.",
+      "bounds": {
+        "x": 768,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-88c4d3e5-3837-4c71-bb06-c45e147496cc",
@@ -197,7 +285,7 @@
       "guideText": "An isometric leg extension is a strengthening exercise where you contract your quadriceps muscles against an immovable resistance without changing the length of the muscle or moving your knee joint.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2535/view/",
@@ -205,8 +293,17 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: isometric leg extension requires immovable resistance; pictured unloaded straight-leg hold has none.",
+      "bounds": {
+        "x": 1152,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-f8a5555d-1bc6-423c-93b6-85c405f0a024.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-f8a5555d-1bc6-423c-93b6-85c405f0a024.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-050.png"
 }

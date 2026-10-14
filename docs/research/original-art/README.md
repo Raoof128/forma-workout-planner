@@ -17,6 +17,11 @@ positions and visual-review decisions. Held cells explain equipment, anatomy,
 variation or source-guide problems that still need correction. Source text keeps
 its existing catalog attribution; the artwork uses factual movement requirements.
 
+Generated source sheets are also archived unchanged in `assets/exercise-artwork`.
+`sourceAssetPath` lets registration work after a cloud-session replacement;
+`sourceGeneratedPath` records the original generator output location. Pending
+sheets in the archive are research assets, not runtime-approved illustrations.
+
 Equipment illustrations can be shared across compatible machine/cardio variants,
 as explicitly approved by the owner. Their captions identify them as equipment
 references and direct the member to the guide for exact settings and movement.
@@ -26,9 +31,9 @@ Multi-step drills/classes may use a clearly captioned example or starting phase.
 The app loads local artwork lazily in library cards and immediately in a guide.
 Atlas cells are displayed with CSS, preserving the generated source files and
 image proportions. Image failures leave instructions visible and end the loader.
-The current checkpoint still needs crop review: generated row boundaries can
-vary from the requested equal grid. Explicit pixel bounds and rendered-cell
-checks are required before releasing the complete library.
+Generated row boundaries can vary from the requested equal grid. Reviewed batches
+now support explicit pixel bounds; remaining equal-grid views still need crop
+review before releasing the complete library.
 Saved exercise aliases still resolve through the existing canonical-guide logic.
 Exercise IDs, logging units, account data and backend services are unchanged.
 

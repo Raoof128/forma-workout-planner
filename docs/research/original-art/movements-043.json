@@ -13,14 +13,22 @@
       "guideText": "Stand facing a Smith machine bar or sturdy elevated platform at an appropriate height.\n\nPlace your hands on the bar, with your hands wider than shoulder width.\n\nPosition your feet back from the bar with arms and body straight. Your arms should be perpendicular to the body. This will be your starting position.\n\nKeeping your body straight, lower your chest to the bar by bending the arms.\n\nReturn to the starting position by extending the elbows, pressing yourself back up.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Push-Up_Wide.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed wide-grip elevated push-up, neutral ring row, straight-elbow scapular incline push-up, reclined dumbbell skullcrusher, mid-press incline dumbbell hold, working-side anchored band internal rotation, narrow supinated lat pulldown, heel-supported bar and suspension inverted rows and prone bent-leg crossover stretch.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 385,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "wger-e1a4c2a6-d4ed-4550-b37e-dc0078d96c64",
@@ -29,7 +37,7 @@
       "guideText": "Perform a row using gymnastic rings, but with the body position somewhere between vertical and horizontal. Go closer to horizontal to make it harder.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2678/view/",
@@ -37,7 +45,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed wide-grip elevated push-up, neutral ring row, straight-elbow scapular incline push-up, reclined dumbbell skullcrusher, mid-press incline dumbbell hold, working-side anchored band internal rotation, narrow supinated lat pulldown, heel-supported bar and suspension inverted rows and prone bent-leg crossover stretch.",
+      "bounds": {
+        "x": 385,
+        "y": 0,
+        "width": 383,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "wger-743690d3-dbfb-417a-a049-8b77fd5df31b",
@@ -46,7 +62,7 @@
       "guideText": "1. Place your hands on the bench in a press up position 2. Push your chest away from the bench to separate your shoulder blades 3. **Keeping your elbows straight**, lower your chest towards the bench so your shoulder blades move closer together 4. Push your chest away from the bench again",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1716/view/",
@@ -54,7 +70,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed wide-grip elevated push-up, neutral ring row, straight-elbow scapular incline push-up, reclined dumbbell skullcrusher, mid-press incline dumbbell hold, working-side anchored band internal rotation, narrow supinated lat pulldown, heel-supported bar and suspension inverted rows and prone bent-leg crossover stretch.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 386,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "wger-76a2f8a6-374b-42c8-b8ac-e8d64612f046",
@@ -63,7 +87,7 @@
       "guideText": "Siting in a 45 Degree Angle, using DB to do Incline Skull Crush",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/911/view/",
@@ -71,7 +95,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed wide-grip elevated push-up, neutral ring row, straight-elbow scapular incline push-up, reclined dumbbell skullcrusher, mid-press incline dumbbell hold, working-side anchored band internal rotation, narrow supinated lat pulldown, heel-supported bar and suspension inverted rows and prone bent-leg crossover stretch.",
+      "bounds": {
+        "x": 1154,
+        "y": 0,
+        "width": 382,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "wger-88afb956-8d4a-45b3-8c7c-c23719316bfe",
@@ -80,7 +112,7 @@
       "guideText": "### **Execution** 1. **Hold Position:** * Lower the dumbbells **a few inches above your chest** — about the **midpoint** of a normal incline press. * This is where your upper chest is under maximum tension. 2. **Static Hold:** * Hold the position for **20–45 seconds** while keeping the chest tight. * Breathe slowly but stay tense — **do not relax your chest or shoulders**. 3. **End the set:** * After the hold, carefully bring the dumbbells down and rest.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1693/view/",
@@ -88,7 +120,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed wide-grip elevated push-up, neutral ring row, straight-elbow scapular incline push-up, reclined dumbbell skullcrusher, mid-press incline dumbbell hold, working-side anchored band internal rotation, narrow supinated lat pulldown, heel-supported bar and suspension inverted rows and prone bent-leg crossover stretch.",
+      "bounds": {
+        "x": 0,
+        "y": 341,
+        "width": 385,
+        "height": 318
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-intermediate-groin-stretch",
@@ -97,14 +137,22 @@
       "guideText": "Lie on your back with your legs extended. Loop a belt, rope, or band around one of your feet, and swing that leg as far to the side as you can. This will be your starting position.\n\nPull gently on the belt to create tension in your groin and hamstring muscles. Hold for 10-20 seconds, and repeat on the other side.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Intermediate_Groin_Stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: intermediate groin stretch leg is vertically raised for a hamstring stretch instead of abducted to the side.",
+      "bounds": {
+        "x": 385,
+        "y": 341,
+        "width": 383,
+        "height": 318
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-intermediate-hip-flexor-and-quad-stretch",
@@ -113,14 +161,22 @@
       "guideText": "Lie face down on the floor, with a rope, belt, or band looped around one foot.\n\nFlex the knee and extend the hip of the leg to be stretched, using both hands to pull on the belt. Your knee and your hip should come off of the floor, creating tension in the hip flexors and quadriceps. Hold the stretch for 10-20 seconds, and repeat on the other leg.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Intermediate_Hip_Flexor_and_Quad_Stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: prone strap quad stretch does not show the knee/hip raised off the floor as specified.",
+      "bounds": {
+        "x": 768,
+        "y": 341,
+        "width": 386,
+        "height": 318
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-internal-rotation-with-band",
@@ -129,14 +185,22 @@
       "guideText": "Choke the band around a post. The band should be at the same height as your elbow. Stand with your right side to the band a couple of feet away.\n\nGrasp the end of the band with your right hand, and keep your elbow pressed firmly to your side. We recommend you hold a pad or foam roll in place with your elbow to keep it firmly in position.\n\nWith your upper arm in position, your elbow should be flexed to 90 degrees with your hand reaching away from your torso. This will be your starting position.\n\nExecute the movement by rotating your arm in a forehand motion, keeping your elbow in place.\n\nContinue as far as you are able, pause, and then return to the starting position.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Internal_Rotation_with_Band.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed wide-grip elevated push-up, neutral ring row, straight-elbow scapular incline push-up, reclined dumbbell skullcrusher, mid-press incline dumbbell hold, working-side anchored band internal rotation, narrow supinated lat pulldown, heel-supported bar and suspension inverted rows and prone bent-leg crossover stretch.",
+      "bounds": {
+        "x": 1154,
+        "y": 341,
+        "width": 382,
+        "height": 318
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "wger-1639425c-7dc6-4776-b039-47ef14a328ee",
@@ -145,7 +209,7 @@
       "guideText": "The **Inverted Lat Pull Down** (most commonly known as the **Reverse Grip Lat Pull Down**) is a variation of the standard exercise that uses an underhand (supinated) grip with hands at shoulder-width. This position shifts more emphasis to the **lower lats** and increases **biceps** involvement, often allowing for a greater range of motion and a deeper squeeze at the bottom of the movement.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1927/view/",
@@ -153,7 +217,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed wide-grip elevated push-up, neutral ring row, straight-elbow scapular incline push-up, reclined dumbbell skullcrusher, mid-press incline dumbbell hold, working-side anchored band internal rotation, narrow supinated lat pulldown, heel-supported bar and suspension inverted rows and prone bent-leg crossover stretch.",
+      "bounds": {
+        "x": 0,
+        "y": 659,
+        "width": 385,
+        "height": 365
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-inverted-row",
@@ -162,14 +234,22 @@
       "guideText": "Position a bar in a rack to about waist height. You can also use a smith machine.\n\nTake a wider than shoulder width grip on the bar and position yourself hanging underneath the bar. Your body should be straight with your heels on the ground with your arms fully extended. This will be your starting position.\n\nBegin by flexing the elbow, pulling your chest towards the bar. Retract your shoulder blades as you perform the movement.\n\nPause at the top of the motion, and return yourself to the start position.\n\nRepeat for the desired number of repetitions.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Inverted_Row.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed wide-grip elevated push-up, neutral ring row, straight-elbow scapular incline push-up, reclined dumbbell skullcrusher, mid-press incline dumbbell hold, working-side anchored band internal rotation, narrow supinated lat pulldown, heel-supported bar and suspension inverted rows and prone bent-leg crossover stretch.",
+      "bounds": {
+        "x": 385,
+        "y": 659,
+        "width": 383,
+        "height": 365
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-inverted-row-with-straps",
@@ -178,14 +258,22 @@
       "guideText": "Hang a rope or suspension straps from a rack or other stable object. Grasp the ends and position yourself in a supine position hanging from the ropes. Your body should be straight with your heels on the ground with your arms fully extended. This will be your starting position.\n\nBegin by flexing the elbow, pulling your chest to your hands. Retract your shoulder blades as you perform the movement.\n\nPause at the top of the motion, and return yourself to the start position.\n\nRepeat for the desired number of repetitions.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Inverted_Row_with_Straps.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed wide-grip elevated push-up, neutral ring row, straight-elbow scapular incline push-up, reclined dumbbell skullcrusher, mid-press incline dumbbell hold, working-side anchored band internal rotation, narrow supinated lat pulldown, heel-supported bar and suspension inverted rows and prone bent-leg crossover stretch.",
+      "bounds": {
+        "x": 768,
+        "y": 659,
+        "width": 386,
+        "height": 365
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-iron-crosses-stretch",
@@ -194,15 +282,24 @@
       "guideText": "Lie face down on the floor, with your arms extended out to your side, palms pressed to the floor. This will be your starting position.\n\nTo begin, flex one knee and bring that leg across the back of your body, attempting to touch it to the ground near the opposite hand.\n\nPromptly return the leg to the starting postion, and quickly repeat with the other leg. Continue alternating for 10-20 repetitions.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Iron_Crosses_stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed wide-grip elevated push-up, neutral ring row, straight-elbow scapular incline push-up, reclined dumbbell skullcrusher, mid-press incline dumbbell hold, working-side anchored band internal rotation, narrow supinated lat pulldown, heel-supported bar and suspension inverted rows and prone bent-leg crossover stretch.",
+      "bounds": {
+        "x": 1154,
+        "y": 659,
+        "width": 382,
+        "height": 365
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-1aecfced-4085-4a97-a30e-cb348db8491d.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-1aecfced-4085-4a97-a30e-cb348db8491d.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-043.png"
 }

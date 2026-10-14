@@ -1,0 +1,209 @@
+{
+  "name": "movements-079",
+  "columns": 4,
+  "rows": 3,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/movements-079.png",
+  "prompt": "Create beautiful ORIGINAL FORMA exercise art in a clean modern illustrated fitness manual style. Exactly FOUR columns and THREE rows, 12 equal cells, landscape 1536x1024. Each cell white with generous margins; no labels, letters, logos, borders or watermarks. Varied fully clothed adult athletes, charcoal/gray sportswear with a small lime-green accent. Correct anatomy (two arms, two legs), plausible support and weight-bearing, detailed accurate equipment, subtle shadows. Every cell is an EXACT distinct movement/variation matching its description. Show ONE clear representative working position per cell; do not show duplicate athletes, extra limbs, arrows or overlapping phases. Keep the entire athlete and apparatus inside own cell. Never swap freeweights, benches, grips or variations. Read each guide to choose a physically correct pose. Cell positions are mandatory:\nRow 1 column 1: Single Arm Plank to Row. Equipment: Kettlebell. Exercise guide: Start position as row, extend to plank and back. Finish with row and repeat\n\nRow 1 column 2: Single arm row. Equipment: Incline bench. Exercise guide: Sitting on the ground, use a high cable in a single grip, to do lat pulldowns with a focus on a long stretch in the lats.\n\nRow 1 column 3: Single Dumbbell Raise. Equipment: Dumbbell. Exercise guide: With a wide stance, hold a dumbell with both hands, grasping the head of the dumbbell instead of the handle. Your arms should be extended and hanging at the waist. This will be your starting position. Raise the weight until it is above shoulder level, keeping your arms extended. Your torso and hips should remain stationary throughout the movement. Return to the starting position and repeat for the recommended amount of repetitions.\n\nRow 1 column 4: Single Leg Butt Kick. Equipment: Bodyweight. Exercise guide: Begin by standing on one leg, with the bent knee raised. This will be your start position. Using a countermovement jump, take off upward by extending the hip, knee, and ankle of the grounded leg. Immediately flex the knee and attempt to touch your butt with the heel of your jumping leg. Return the leg to a partially bent position underneath the hips and land. Your opposite leg should stay in relatively the same position throughout the drill.\n\nRow 2 column 1: Single Leg Glute Bridge. Equipment: Bodyweight. Exercise guide: Lay on the floor with your feet flat and knees bent. Raise one leg off of the ground, pulling the knee to your chest. This will be your starting position. Execute the movement by driving through the heel, extending your hip upward and raising your glutes off of the ground. Extend as far as possible, pause and then return to the starting position.\n\nRow 2 column 2: Single Leg Hamstring Stretch. Equipment: Bodyweight. Exercise guide: Sit on the ground with one leg straight out in front of you and the other leg bent in toward you. Reach forward with both hands, trying to touch the toes of your straight leg.\n\nRow 2 column 3: Single leg press. Equipment: Bodyweight. Exercise guide: Strength training exercise where you push a weight away from your body using one leg at a time on a leg press machine. It helps to improve leg strength, balance, and muscular symmetry by isolating each leg individually. This exercise is particularly useful for identifying and correcting muscle imbalances between your legs.\n\nRow 2 column 4: Single Leg Push-off. Equipment: Specialty equipment. Exercise guide: Stand on the ground with one foot resting on the box, heel close to the edge. Push off with your foot on top of the box, trying to gain as much height as possible by extending through the hip and knee. Land with the same foot on top of the box, returning your other foot back to the start position.\n\nRow 3 column 1: Single Leg RDL. Equipment: Bodyweight. Exercise guide: 1. Stand upright and hold weights in both hands if using loads. 2. Brace your core and lift one leg off the ground. 3. Keep your back straight, hinge at the hips while lowering your torso forward, ensuring you don’t rotate your hips. 4. Lower until you feel a stretch in your standing leg's hamstring, then return to standing position. Repeat on both sides.\n\nRow 3 column 2: Single-Arm Linear Jammer. Equipment: Barbell. Exercise guide: Position a bar into a landmine or securely anchor it in a corner. Load the bar to an appropriate weight. Raise the bar from the floor, taking it to your shoulders with one or both hands. Adopt a wide stance. This will be your starting position. Perform the movement by extending the elbow, pressing the weight up. Move explosively, extending the hips and knees fully to produce maximal force. Return to the starting position.\n\nRow 3 column 3: Single-Arm Push-Up. Equipment: Bodyweight. Exercise guide: Begin laying prone on the ground. Move yourself into a position supporting your weight on your toes and one arm. Your working arm should be placed directly under the shoulder, fully extended. Your legs should be extended, and for this movement you may need a wider base, placing your feet further apart than in a normal push-up. Maintain good posture, and place your free hand behind your back. This will be your starting position. Lower yourself by allowing the elbow to flex until you touch the ground. Descend slowly, and reverse direction be extending the arm to return to the starting position.\n\nRow 3 column 4: Single-Cone Sprint Drill. Equipment: Specialty equipment. Exercise guide: This drill teaches quick foot action. You need a single cone. Begin standing next to the cone with one arm back and one arm forward. Chop the feet as quickly as possible, blocking with the arms. Circle the cone, keep your knees up, with violent foot action. Rest after three trips around the cone.",
+  "cells": [
+    {
+      "id": "wger-768e0703-a04d-4d97-89ce-a49cd6be2b06",
+      "title": "Single Arm Plank to Row",
+      "equipment": "Kettlebell",
+      "guideText": "Start position as row, extend to plank and back. Finish with row and repeat",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1022/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-81dd44b3-67b3-4198-9e57-c2a80b3c4102",
+      "title": "Single arm row",
+      "equipment": "Incline bench",
+      "guideText": "Sitting on the ground, use a high cable in a single grip, to do lat pulldowns with a focus on a long stretch in the lats.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1637/view/",
+        "author": "Rottekongen",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-single-dumbbell-raise",
+      "title": "Single Dumbbell Raise",
+      "equipment": "Dumbbell",
+      "guideText": "With a wide stance, hold a dumbell with both hands, grasping the head of the dumbbell instead of the handle. Your arms should be extended and hanging at the waist. This will be your starting position.\n\nRaise the weight until it is above shoulder level, keeping your arms extended. Your torso and hips should remain stationary throughout the movement.\n\nReturn to the starting position and repeat for the recommended amount of repetitions.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Single_Dumbbell_Raise.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "db-single-leg-butt-kick",
+      "title": "Single Leg Butt Kick",
+      "equipment": "Bodyweight",
+      "guideText": "Begin by standing on one leg, with the bent knee raised. This will be your start position.\n\nUsing a countermovement jump, take off upward by extending the hip, knee, and ankle of the grounded leg.\n\nImmediately flex the knee and attempt to touch your butt with the heel of your jumping leg.\n\nReturn the leg to a partially bent position underneath the hips and land. Your opposite leg should stay in relatively the same position throughout the drill.",
+      "column": 3,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Single_Leg_Butt_Kick.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "db-single-leg-glute-bridge",
+      "title": "Single Leg Glute Bridge",
+      "equipment": "Bodyweight",
+      "guideText": "Lay on the floor with your feet flat and knees bent.\n\nRaise one leg off of the ground, pulling the knee to your chest. This will be your starting position.\n\nExecute the movement by driving through the heel, extending your hip upward and raising your glutes off of the ground.\n\nExtend as far as possible, pause and then return to the starting position.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Single_Leg_Glute_Bridge.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "wger-45cd73d7-98ac-4451-849a-a645fcfe9bee",
+      "title": "Single Leg Hamstring Stretch",
+      "equipment": "Bodyweight",
+      "guideText": "Sit on the ground with one leg straight out in front of you and the other leg bent in toward you. Reach forward with both hands, trying to touch the toes of your straight leg.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1393/view/",
+        "author": "captive0592",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-09c9a566-c1b3-4bf6-8a48-f9dd2bbec1f2",
+      "title": "Single leg press",
+      "equipment": "Bodyweight",
+      "guideText": "Strength training exercise where you push a weight away from your body using one leg at a time on a leg press machine. It helps to improve leg strength, balance, and muscular symmetry by isolating each leg individually. This exercise is particularly useful for identifying and correcting muscle imbalances between your legs.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2677/view/",
+        "author": "qoxivi",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-single-leg-push-off",
+      "title": "Single Leg Push-off",
+      "equipment": "Specialty equipment",
+      "guideText": "Stand on the ground with one foot resting on the box, heel close to the edge.\n\nPush off with your foot on top of the box, trying to gain as much height as possible by extending through the hip and knee.\n\nLand with the same foot on top of the box, returning your other foot back to the start position.",
+      "column": 3,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Single_Leg_Push-off.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "wger-957ca37c-b6d7-4c30-8ba9-9512b0fa2659",
+      "title": "Single Leg RDL",
+      "equipment": "Bodyweight",
+      "guideText": "1. Stand upright and hold weights in both hands if using loads. 2. Brace your core and lift one leg off the ground. 3. Keep your back straight, hinge at the hips while lowering your torso forward, ensuring you don’t rotate your hips. 4. Lower until you feel a stretch in your standing leg's hamstring, then return to standing position. Repeat on both sides.",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1388/view/",
+        "author": "captive0592",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-single-arm-linear-jammer",
+      "title": "Single-Arm Linear Jammer",
+      "equipment": "Barbell",
+      "guideText": "Position a bar into a landmine or securely anchor it in a corner. Load the bar to an appropriate weight.\n\nRaise the bar from the floor, taking it to your shoulders with one or both hands. Adopt a wide stance. This will be your starting position.\n\nPerform the movement by extending the elbow, pressing the weight up. Move explosively, extending the hips and knees fully to produce maximal force.\n\nReturn to the starting position.",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Single-Arm_Linear_Jammer.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "db-single-arm-push-up",
+      "title": "Single-Arm Push-Up",
+      "equipment": "Bodyweight",
+      "guideText": "Begin laying prone on the ground. Move yourself into a position supporting your weight on your toes and one arm. Your working arm should be placed directly under the shoulder, fully extended. Your legs should be extended, and for this movement you may need a wider base, placing your feet further apart than in a normal push-up.\n\nMaintain good posture, and place your free hand behind your back. This will be your starting position.\n\nLower yourself by allowing the elbow to flex until you touch the ground.\n\nDescend slowly, and reverse direction be extending the arm to return to the starting position.",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Single-Arm_Push-Up.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "db-single-cone-sprint-drill",
+      "title": "Single-Cone Sprint Drill",
+      "equipment": "Specialty equipment",
+      "guideText": "This drill teaches quick foot action. You need a single cone. Begin standing next to the cone with one arm back and one arm forward.\n\nChop the feet as quickly as possible, blocking with the arms. Circle the cone, keep your knees up, with violent foot action.\n\nRest after three trips around the cone.",
+      "column": 3,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Single-Cone_Sprint_Drill.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-c923f912-d5b7-45c5-83ad-e9a8aeee9387.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-079.png"
+}

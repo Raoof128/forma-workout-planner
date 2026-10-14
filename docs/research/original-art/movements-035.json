@@ -13,14 +13,22 @@
       "guideText": "Sit down on an incline bench with the incline set anywhere between 30 to 60 degrees while holding a dumbbell on each hand. Tip: You can change the angle to hit the muscle a little differently each time.\n\nExtend your arms straight in front of you and have your palms facing down with the dumbbells raised about 1 inch above your thighs. This will be your starting position.\n\nSlowly raise the dumbbells straight up until they are slightly above your shoulders, while keeping your elbows locked. Squeeze at the top for a second and make sure you breathe out during this portion of the movement. Tip: Keep your head resting down against the bench and your legs on the floor at all times.\n\nLower the arms back to the starting position as you inhale.\n\nRepeat for the recommended amount of repetitions.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Front_Incline_Dumbbell_Raise.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed reclined pronated front raise, supported straight-leg swing, horizontal straight-arm front lever and bent-arm pull-up, tuck lever, open-mouth neck extension, 3-and-9 plate grip, full-bench bar pullover, front split, clean-grip versus crossed-grip front squats.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "db-front-leg-raises",
@@ -29,14 +37,22 @@
       "guideText": "Stand next to a chair or other support, holding on with one hand.\n\nSwing your leg forward, keeping the leg straight. Continue with a downward swing, bringing the leg as far back as your flexibility allows. Repeat 5-10 times, and then switch legs.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Front_Leg_Raises.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed reclined pronated front raise, supported straight-leg swing, horizontal straight-arm front lever and bent-arm pull-up, tuck lever, open-mouth neck extension, 3-and-9 plate grip, full-bench bar pullover, front split, clean-grip versus crossed-grip front squats.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "wger-f41ac754-45a0-443b-afe5-e624e215229f",
@@ -45,7 +61,7 @@
       "guideText": "The front lever is a figure where the body is kept in a horizontal position parallel to the floor.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1245/view/",
@@ -53,7 +69,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed reclined pronated front raise, supported straight-leg swing, horizontal straight-arm front lever and bent-arm pull-up, tuck lever, open-mouth neck extension, 3-and-9 plate grip, full-bench bar pullover, front split, clean-grip versus crossed-grip front squats.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "wger-b61dff58-6e47-4671-853b-208e7cd0ced4",
@@ -62,7 +86,7 @@
       "guideText": "in the front lever position, with legs extended or easier if collected, pull by bringing the chest closer to the bar.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1252/view/",
@@ -70,7 +94,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed reclined pronated front raise, supported straight-leg swing, horizontal straight-arm front lever and bent-arm pull-up, tuck lever, open-mouth neck extension, 3-and-9 plate grip, full-bench bar pullover, front split, clean-grip versus crossed-grip front squats.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "wger-e79616cb-f5fb-4b10-b99d-09d43774e142",
@@ -79,7 +111,7 @@
       "guideText": "The muscles involved in the Front Lever, most subjected to stress, are mainly the extensors such as: the latissimus dorsi, the teres major, the posterior deltoid and the long head of the biceps.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1214/view/",
@@ -87,7 +119,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed reclined pronated front raise, supported straight-leg swing, horizontal straight-arm front lever and bent-arm pull-up, tuck lever, open-mouth neck extension, 3-and-9 plate grip, full-bench bar pullover, front split, clean-grip versus crossed-grip front squats.",
+      "bounds": {
+        "x": 0,
+        "y": 342,
+        "width": 384,
+        "height": 330
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "wger-dcbfa3f0-ba88-4633-a30d-c188dccc5d3f",
@@ -96,7 +136,7 @@
       "guideText": "Starting position: Sit or stand with your back straight. Steps: 1. Open mouth wide. 2. Slowly tilt head back with mouth opened. If you feel the need for support, clasp your hands behind your head. 3. Very slowly close and open your mouth. 4. At the end, slowly return to starting position and close mouth.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1011/view/",
@@ -104,7 +144,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed reclined pronated front raise, supported straight-leg swing, horizontal straight-arm front lever and bent-arm pull-up, tuck lever, open-mouth neck extension, 3-and-9 plate grip, full-bench bar pullover, front split, clean-grip versus crossed-grip front squats.",
+      "bounds": {
+        "x": 384,
+        "y": 342,
+        "width": 384,
+        "height": 330
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "db-front-plate-raise",
@@ -113,14 +161,22 @@
       "guideText": "While standing straight, hold a barbell plate in both hands at the 3 and 9 o'clock positions. Your palms should be facing each other and your arms should be extended and locked with a slight bend at the elbows and the plate should be down near your waist in front of you as far as you can go. Tip: The arms will remain in this position throughout the exercise. This will be your starting position.\n\nSlowly raise the plate as you exhale until it is a little above shoulder level. Hold the contraction for a second. Tip: make sure that you do not swing the weight or bend at the elbows. Your torso should remain stationary throughout the movement as well.\n\nAs you inhale, slowly lower the plate back down to the starting position.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Front_Plate_Raise.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed reclined pronated front raise, supported straight-leg swing, horizontal straight-arm front lever and bent-arm pull-up, tuck lever, open-mouth neck extension, 3-and-9 plate grip, full-bench bar pullover, front split, clean-grip versus crossed-grip front squats.",
+      "bounds": {
+        "x": 768,
+        "y": 342,
+        "width": 384,
+        "height": 330
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "db-front-raise-and-pullover",
@@ -129,14 +185,22 @@
       "guideText": "Lie on a flat bench while holding a barbell using a palms down grip that is about 15 inches apart.\n\nPlace the bar on your upper thighs, extend your arms and lock them while keeping a slight bend on the elbows. This will be your starting position.\n\nNow raise the weight using a semicircular motion and keeping your arms straight as you inhale. Continue the same movement until the bar is on the other side above your head . (Tip: the bar will travel approximately 180-degrees). At this point your arms should be parallel to the floor with the palms of your hands facing the ceiling.\n\nNow return the barbell to the starting position by reversing the motion as you exhale.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Front_Raise_And_Pullover.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed reclined pronated front raise, supported straight-leg swing, horizontal straight-arm front lever and bent-arm pull-up, tuck lever, open-mouth neck extension, 3-and-9 plate grip, full-bench bar pullover, front split, clean-grip versus crossed-grip front squats.",
+      "bounds": {
+        "x": 1152,
+        "y": 342,
+        "width": 384,
+        "height": 330
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "wger-9c35594c-bbcc-4656-bdcb-376814c90e96",
@@ -145,7 +209,7 @@
       "guideText": "To execute the exercise, the lifter stands with their feet shoulder width apart and weights or resistance handles held by their side with a pronated (overhand) grip. The movement is to bring the arms up in front of the body to eye level and with only a slight bend in the elbow. This isolates the anterior deltoid muscle (front of the shoulder) and uses the anterior deltoid to lift the weight. When lifting it is important to keep the body still so the anterior deltoid is fully utilised; if the weight cannot be lifted by standing still then it is too heavy and a lower weight is needed. It is important to keep a slight bend in the elbow when lifting as keeping the elbow locked will add stress to the elbow joint and could cause injury. A neutral grip, similar to that used in the hammer curl, can also be used. With this variation the weight is again raised to eye level, but out to a 45 degree angle from the front of the body. This may be beneficial for those with shoulder injuries, particularly those related to the rotator cuff.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/256/view/",
@@ -153,7 +217,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: front raise illustration has a malformed mixture of barbell and dumbbells instead of two clear independent dumbbells.",
+      "bounds": {
+        "x": 0,
+        "y": 672,
+        "width": 384,
+        "height": 352
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "wger-d5e5c5a1-69af-42b0-9106-dc8284e7262a",
@@ -162,7 +234,7 @@
       "guideText": "1. Start kneeling.\n2. Extend one leg out forwards, fully straightened. Follow with your hips so your back leg begins to unfold.\n3. Carefully lower yourself into the stretch. Do not go beyond your limit.\n4. Hold for the required time.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2527/view/",
@@ -170,7 +242,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed reclined pronated front raise, supported straight-leg swing, horizontal straight-arm front lever and bent-arm pull-up, tuck lever, open-mouth neck extension, 3-and-9 plate grip, full-bench bar pullover, front split, clean-grip versus crossed-grip front squats.",
+      "bounds": {
+        "x": 384,
+        "y": 672,
+        "width": 384,
+        "height": 352
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "db-front-squat-clean-grip",
@@ -179,14 +259,22 @@
       "guideText": "To begin, first set the bar in a rack slightly below shoulder level. Rest the bar on top of the deltoids, pushing into the clavicles, and lightly touching the throat. Your hands should be in a clean grip, touching the bar only with your fingers to help keep it in position.\n\nLift the bar off the rack by first pushing with your legs and at the same time straightening your torso. Step away from the rack and position your legs using a shoulder width medium stance with the toes slightly pointed out. Keep your head and elbows up at all times. This will be your starting position.\n\nBend at the knees, sitting down between your legs. Continue down until your hamstrings are on your calves. Keep your knees aligned with your feet by consciously using your abductors to push your knees out as you squat.\n\nBegin to raise the bar as you exhale by pushing the floor mainly with the heel or middle of your foot as you straighten the legs again and return to the starting position.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Front_Squat_Clean_Grip.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed reclined pronated front raise, supported straight-leg swing, horizontal straight-arm front lever and bent-arm pull-up, tuck lever, open-mouth neck extension, 3-and-9 plate grip, full-bench bar pullover, front split, clean-grip versus crossed-grip front squats.",
+      "bounds": {
+        "x": 768,
+        "y": 672,
+        "width": 384,
+        "height": 352
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "wger-d677de4c-5bd9-412a-91f1-857116a666a2",
@@ -195,7 +283,7 @@
       "guideText": "This variation of the squat trains the hamstrings and gluteus maximus. It also works the back extensors and abductors.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/257/view/",
@@ -203,8 +291,17 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed reclined pronated front raise, supported straight-leg swing, horizontal straight-arm front lever and bent-arm pull-up, tuck lever, open-mouth neck extension, 3-and-9 plate grip, full-bench bar pullover, front split, clean-grip versus crossed-grip front squats.",
+      "bounds": {
+        "x": 1152,
+        "y": 672,
+        "width": 384,
+        "height": 352
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-e2e58869-45de-4221-9f57-6317a9678c89.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-e2e58869-45de-4221-9f57-6317a9678c89.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-035.png"
 }

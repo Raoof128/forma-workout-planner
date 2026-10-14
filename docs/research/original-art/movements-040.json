@@ -13,7 +13,7 @@
       "guideText": "Lying down on your back, with your feet flat on the floor. Raise your hips up evenly as high as you can and hold for as long as you can.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/292/view/",
@@ -21,7 +21,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine hip raise, straight-limb hollow hold, shoulder-height doorway turn-away stretch, wide deep horse stance, airborne bilateral hurdle hop, plate-loaded ball-supported Y raise, secured ankle hyperextension bench and horizontal suspended front-lever phase of ice-cream-maker drill.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and near-full-width separator lines; actual panel bounds retain the intended pose."
     },
     {
       "id": "wger-a4f78033-90d7-45a2-96fa-509b41281ea3",
@@ -30,7 +38,7 @@
       "guideText": "# Overview of Hip-Out and Hip-In Lateral Steps\n\nHip-out and hip-in lateral steps are effective exercises designed to strengthen the hip abductors and enhance lateral stability. These movements are beneficial for improving coordination and overall hip function.\n\n## Exercise Descriptions\n\n### Hip-Out Steps\n\n- **Movement:** Step out to the side with one leg, keeping the other leg stable.\n- **Target Muscles:** Primarily engages the hip abductors, including the gluteus medius and minimus.\n- **Benefits:** Increases lateral stability and strength in the hip area.\n\n### Hip-In Steps\n\n- **Movement:** Bring the leg back in toward the center after stepping out.\n- **Target Muscles:** Continues to engage the hip abductors while also activating the adductors.\n- **Benefits:** Enhances coordination and control of the hip joint.\n\n## Key Benefits of Lateral Steps\n\n| Benefit | Description |\n|---|---|\n| **Strengthening Hip Abductors** | Improves muscle strength around the hip joint. |\n| **Enhancing Stability** | Increases lateral stability, reducing the risk of falls. |\n| **Improving Coordination** | Develops better control and movement patterns in the hips. |\n\nIncorporating hip-out and hip-in lateral steps into a regular exercise routine can lead to improved hip strength and stability, which is essential for various physical activities and daily movements.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2618/view/",
@@ -38,7 +46,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: bodyweight lateral hip steps rendered with added resistance band.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and near-full-width separator lines; actual panel bounds retain the intended pose."
     },
     {
       "id": "wger-d059c63d-0a81-48a3-912a-44070c0def2e",
@@ -47,7 +63,7 @@
       "guideText": "Get on a mat and lie on your back. Contract your abs, stretch your raise and legs and raise them (your head and shoulders are also be raised). Make sure your lower back remains in contact with the mat.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/297/view/",
@@ -55,7 +71,15 @@
         "license": "CC0",
         "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine hip raise, straight-limb hollow hold, shoulder-height doorway turn-away stretch, wide deep horse stance, airborne bilateral hurdle hop, plate-loaded ball-supported Y raise, secured ankle hyperextension bench and horizontal suspended front-lever phase of ice-cream-maker drill.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and near-full-width separator lines; actual panel bounds retain the intended pose."
     },
     {
       "id": "wger-ca4c8872-e53c-47ca-bc33-448b9ba9360f",
@@ -64,7 +88,7 @@
       "guideText": "1. Raise your arm out to the side, placing your hand on a wall or doorway beside you at shoulder height 2. Turn your body away from your arm to stretch the chest, as far as is comfortable",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1712/view/",
@@ -72,7 +96,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine hip raise, straight-limb hollow hold, shoulder-height doorway turn-away stretch, wide deep horse stance, airborne bilateral hurdle hop, plate-loaded ball-supported Y raise, secured ankle hyperextension bench and horizontal suspended front-lever phase of ice-cream-maker drill.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and near-full-width separator lines; actual panel bounds retain the intended pose."
     },
     {
       "id": "wger-36411665-4a87-4ab5-b5d3-e4eaa2802a62",
@@ -81,7 +113,7 @@
       "guideText": "1. Stand as for a squat, with your feet wide and your toes pointed slightly outwards. 2. Gently squat into a deep, wide squat - your hips should be below your knees. 3. Hold for 3 to 5 seconds. 4. Come up under control, and repeat as needed.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1846/view/",
@@ -89,7 +121,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine hip raise, straight-limb hollow hold, shoulder-height doorway turn-away stretch, wide deep horse stance, airborne bilateral hurdle hop, plate-loaded ball-supported Y raise, secured ankle hyperextension bench and horizontal suspended front-lever phase of ice-cream-maker drill.",
+      "bounds": {
+        "x": 0,
+        "y": 342,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and near-full-width separator lines; actual panel bounds retain the intended pose."
     },
     {
       "id": "db-hug-a-ball",
@@ -98,14 +138,22 @@
       "guideText": "Seat yourself on the floor.\n\nStraddle an exercise ball between both legs and lower your hips down toward the floor.\n\nHug your arms around the ball to support your body. Adjust your legs so that your feet are flat on the floor and your knees line up over your ankles. Keep a good grip on the ball so it doesn't roll away from you and send you back onto your buttocks.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hug_A_Ball.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: Hug A Ball should straddle/hug the ball while lowering hips toward the floor; illustration sits on the ball.",
+      "bounds": {
+        "x": 384,
+        "y": 342,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and near-full-width separator lines; actual panel bounds retain the intended pose."
     },
     {
       "id": "db-hug-knees-to-chest",
@@ -114,14 +162,22 @@
       "guideText": "Lie down on your back and pull both knees up to your chest.\n\nHold your arms under the knees, not over (that would put to much pressure on your knee joints).\n\nSlowly pull the knees toward your shoulders. This also stretches your buttocks muscles.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hug_Knees_To_Chest.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: knees-to-chest stretch hands are over the knees, contrary to under-knee support in guide.",
+      "bounds": {
+        "x": 768,
+        "y": 342,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and near-full-width separator lines; actual panel bounds retain the intended pose."
     },
     {
       "id": "db-hurdle-hops",
@@ -130,14 +186,22 @@
       "guideText": "Set up a row of hurdles or other small barriers, placing them a few feet apart.\n\nStand in front of the first hurdle with your feet shoulder width apart. This will be your starting position.\n\nBegin by jumping with both feet over the first hurdle, swinging both arms as you jump.\n\nAbsorb the impact of landing by bending the knees, rebounding out of the first leap by jumping over the next hurdle. Continue until you have jumped over all of the hurdles.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hurdle_Hops.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supine hip raise, straight-limb hollow hold, shoulder-height doorway turn-away stretch, wide deep horse stance, airborne bilateral hurdle hop, plate-loaded ball-supported Y raise, secured ankle hyperextension bench and horizontal suspended front-lever phase of ice-cream-maker drill.",
+      "bounds": {
+        "x": 1152,
+        "y": 342,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and near-full-width separator lines; actual panel bounds retain the intended pose."
     },
     {
       "id": "wger-ebe7d74b-78a8-4757-9310-6fb22b23aa58",
@@ -146,7 +210,7 @@
       "guideText": "1. Use a glute-ham raise or a stability ball for this exercise and a light weight plate in each hand. 2. Raise your torso to form a straight line with your legs and raise the arms outward slightly beyond a 90-degree angle into a W position to hit the rotator cuff muscles, and then lower back to the starting position. 3. Then raise up again with arms in a Y position to activate the lower traps.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1487/view/",
@@ -154,7 +218,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine hip raise, straight-limb hollow hold, shoulder-height doorway turn-away stretch, wide deep horse stance, airborne bilateral hurdle hop, plate-loaded ball-supported Y raise, secured ankle hyperextension bench and horizontal suspended front-lever phase of ice-cream-maker drill.",
+      "bounds": {
+        "x": 0,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and near-full-width separator lines; actual panel bounds retain the intended pose."
     },
     {
       "id": "db-hyperextensions-back-extensions",
@@ -163,14 +235,22 @@
       "guideText": "Lie face down on a hyperextension bench, tucking your ankles securely under the footpads.\n\nAdjust the upper pad if possible so your upper thighs lie flat across the wide pad, leaving enough room for you to bend at the waist without any restriction.\n\nWith your body straight, cross your arms in front of you (my preference) or behind your head. This will be your starting position. Tip: You can also hold a weight plate for extra resistance in front of you under your crossed arms.\n\nStart bending forward slowly at the waist as far as you can while keeping your back flat. Inhale as you perform this movement. Keep moving forward until you feel a nice stretch on the hamstrings and you can no longer keep going without a rounding of the back. Tip: Never round the back as you perform this exercise. Also, some people can go farther than others. The key thing is that you go as far as your body allows you to without rounding the back.\n\nSlowly raise your torso back to the initial position as you inhale. Tip: Avoid the temptation to arch your back past a straight line. Also, do not swing the torso at any time in order to protect the back from injury.\n\nRepeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hyperextensions_Back_Extensions.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supine hip raise, straight-limb hollow hold, shoulder-height doorway turn-away stretch, wide deep horse stance, airborne bilateral hurdle hop, plate-loaded ball-supported Y raise, secured ankle hyperextension bench and horizontal suspended front-lever phase of ice-cream-maker drill.",
+      "bounds": {
+        "x": 384,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and near-full-width separator lines; actual panel bounds retain the intended pose."
     },
     {
       "id": "db-hyperextensions-with-no-hyperextension-bench",
@@ -179,14 +259,22 @@
       "guideText": "With someone holding down your legs, slide yourself down to the edge a flat bench until your hips hang off the end of the bench. Tip: Your entire upper body should be hanging down towards the floor. Also, you will be in the same position as if you were on a hyperextension bench but the range of motion will be shorter due to the height of the flat bench vs. that of the hyperextension bench.\n\nWith your body straight, cross your arms in front of you (my preference) or behind your head. This will be your starting position. Tip: You can also hold a weight plate for extra resistance in front of you under your crossed arms.\n\nStart bending forward slowly at the waist as far as you can while keeping your back flat. Inhale as you perform this movement. Keep moving forward until you almost touch the floor or you feel a nice stretch on the hamstrings (whichever comes first). Tip: Never round the back as you perform this exercise.\n\nSlowly raise your torso back to the initial position as you exhale. Tip: Avoid the temptation to arch your back past a straight line. Also, do not swing the torso at any time in order to protect the back from injury.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hyperextensions_With_No_Hyperextension_Bench.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: flat-bench hyperextension omits the partner securing legs required by the guide.",
+      "bounds": {
+        "x": 768,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and near-full-width separator lines; actual panel bounds retain the intended pose."
     },
     {
       "id": "wger-662b9911-fa55-4564-b830-fdb6a046b162",
@@ -195,7 +283,7 @@
       "guideText": "From the final phase of a pull-up, we push ourselves back with our shoulders until we reach the front lever position. From there, we pull ourselves back up to the starting position.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1248/view/",
@@ -203,8 +291,17 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine hip raise, straight-limb hollow hold, shoulder-height doorway turn-away stretch, wide deep horse stance, airborne bilateral hurdle hop, plate-loaded ball-supported Y raise, secured ankle hyperextension bench and horizontal suspended front-lever phase of ice-cream-maker drill.",
+      "bounds": {
+        "x": 1152,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and near-full-width separator lines; actual panel bounds retain the intended pose."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-eb543629-bc33-4f40-b9a8-23f5b49c64ce.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-eb543629-bc33-4f40-b9a8-23f5b49c64ce.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-040.png"
 }

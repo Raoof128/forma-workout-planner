@@ -13,14 +13,22 @@
       "guideText": "Lie face down with your whole body straight on a flat bench while holding a weight plate behind your head. Tip: You will need to position yourself so that your shoulders are slightly above the end of a flat bench in order for the upper chest, neck and face to be off the bench. This will be your starting position.\n\nWhile keeping the plate secure on the back of your head slowly lower your head (as in saying \"yes\") as you breathe in.\n\nRaise your head back up to the starting position in a semi-circular motion as you breathe out. Hold the contraction for a second.\n\nRepeat for the recommended amount of repetitions.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lying_Face_Down_Plate_Neck_Resistance.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed manually secured rear/forehead plate neck resistance, partner-supported supine figure-four glute stretch and straight-leg hamstring stretch, supine leg raise, partner knee-and-ankle prone quadriceps stretch, side-lying elbow-at-waist dumbbell rotation toward abdomen and behind-head bench triceps extension.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 338
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-lying-face-up-plate-neck-resistance",
@@ -29,14 +37,22 @@
       "guideText": "Lie face up with your whole body straight on a flat bench while holding a weight plate on top of your forehead. Tip: You will need to position yourself so that your shoulders are slightly above the end of a flat bench in order for the traps, neck and head to be off the bench. This will be your starting position.\n\nWhile keeping the plate secure on your forehead slowly lower your head back in a semi-circular motion as you breathe in.\n\nRaise your head back up to the starting position in a semi-circular motion as you breathe out. Hold the contraction for a second.\n\nRepeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lying_Face_Up_Plate_Neck_Resistance.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed manually secured rear/forehead plate neck resistance, partner-supported supine figure-four glute stretch and straight-leg hamstring stretch, supine leg raise, partner knee-and-ankle prone quadriceps stretch, side-lying elbow-at-waist dumbbell rotation toward abdomen and behind-head bench triceps extension.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 338
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-lying-glute",
@@ -45,14 +61,22 @@
       "guideText": "Lie on your back with your partner kneeling beside you.\n\nFlex the hip of one leg, raising it off of the floor. Rotate the leg so the foot is over the opposite hip, the lower leg perpendicular to your body. Your partner should hold the knee and ankle in place. This will be your starting position.\n\nAttempt to push your leg towards your partner, who should be preventing any actual movement of the leg.\n\nAfter 10-20 seconds, completely relax as your partner gently pushes the ankle and knee towards your chest. Be sure to inform your helper when the stretch is adequate to prevent injury or overstretching.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lying_Glute.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed manually secured rear/forehead plate neck resistance, partner-supported supine figure-four glute stretch and straight-leg hamstring stretch, supine leg raise, partner knee-and-ankle prone quadriceps stretch, side-lying elbow-at-waist dumbbell rotation toward abdomen and behind-head bench triceps extension.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 338
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-lying-hamstring",
@@ -61,14 +85,22 @@
       "guideText": "Lie on your back with your legs extended. Your partner should be kneeling beside you. Raise one leg up towards the ceiling and have your partner hold the ankle. Your partner can use their shoulder to brace your leg if necessary. This will be your starting position.\n\nWith your partner holding your leg in place, attempt to flex the knee, contracting the hamstrings for 10-20 seconds.\n\nThen relax your leg, allowing your partner to gently push the leg towards your head. Be sure to inform your helper when the stretch is adequate to prevent injury or overstretching. Switch sides once complete.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lying_Hamstring.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed manually secured rear/forehead plate neck resistance, partner-supported supine figure-four glute stretch and straight-leg hamstring stretch, supine leg raise, partner knee-and-ankle prone quadriceps stretch, side-lying elbow-at-waist dumbbell rotation toward abdomen and behind-head bench triceps extension.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 338
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-lying-high-bench-barbell-curl",
@@ -77,14 +109,22 @@
       "guideText": "Lie face forward on a tall flat bench while holding a barbell with a supinated grip (palms facing up). Tip: If you are holding a barbell grab it using a shoulder-width grip and if you are using an E-Z Bar grab it on the inner handles. Your upper body should be positioned in a way that the upper chest is over the end of the bench and the barbell is hanging in front of you with the arms extended and perpendicular to the floor. This will be your starting position.\n\nWhile keeping the elbows in and the upper arms stationary, curl the weight up in a semi-circular motion as you contract the biceps and exhale. Hold at the top of the movement for a second.\n\nAs you inhale, slowly go back to the starting position. Tip: Maintain full control of the weight at all times and avoid any swinging. Remember, only the forearms should move throughout the movement.\n\nRepeat for the recommended amount of repetitions.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lying_High_Bench_Barbell_Curl.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: prone high-bench barbell curl requires tall FLAT bench, not incline support.",
+      "bounds": {
+        "x": 0,
+        "y": 338,
+        "width": 384,
+        "height": 316
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-d0ebbc8f-530f-4886-b0ee-f46d09b5780e",
@@ -93,7 +133,7 @@
       "guideText": "Leg raise is one of the most effective exercises for the lower abdominal muscles. Although this exercise targets the rectus abdominus and oblique muscles, it is particularly useful for burning and tightening the lower fat.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1313/view/",
@@ -101,7 +141,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed manually secured rear/forehead plate neck resistance, partner-supported supine figure-four glute stretch and straight-leg hamstring stretch, supine leg raise, partner knee-and-ankle prone quadriceps stretch, side-lying elbow-at-waist dumbbell rotation toward abdomen and behind-head bench triceps extension.",
+      "bounds": {
+        "x": 384,
+        "y": 338,
+        "width": 384,
+        "height": 316
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-lying-one-arm-lateral-raise",
@@ -110,14 +158,22 @@
       "guideText": "While holding a dumbbell in one hand, lay with your chest down on a flat bench. The other hand can be used to hold to the leg of the bench for stability.\n\nPosition the palm of the hand that is holding the dumbbell in a neutral manner (palms facing your torso) as you keep the arm extended with the elbow slightly bent. This will be your starting position.\n\nNow raise the arm with the dumbbell to the side until your elbow is at shoulder height and your arm is roughly parallel to the floor as you exhale. Tip: Maintain your arm perpendicular to the torso while keeping your arm extended throughout the movement. Also, keep the contraction at the top for a second.\n\nSlowly lower the dumbbell to the starting position as you inhale.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lying_One-Arm_Lateral_Raise.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: prone single-arm lateral raise requires FLAT bench, not incline support.",
+      "bounds": {
+        "x": 768,
+        "y": 338,
+        "width": 384,
+        "height": 316
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-lying-prone-quadriceps",
@@ -126,14 +182,22 @@
       "guideText": "Lay face down on the floor with your partner kneeling beside you. Flex one knee and raise that leg off the ground, attempting to touch your glutes with your foot. Your partner should hold the knee and ankle. This will be your starting position.\n\nAttempt to extend your knee while your partner prevents any actual movement.\n\nAfter 10-20 seconds, relax your muscles as your partner gently pushes the foot towards your glutes, further stretching the quadriceps and hip flexors.\n\nAfter 10-20 seconds, switch sides.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lying_Prone_Quadriceps.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed manually secured rear/forehead plate neck resistance, partner-supported supine figure-four glute stretch and straight-leg hamstring stretch, supine leg raise, partner knee-and-ankle prone quadriceps stretch, side-lying elbow-at-waist dumbbell rotation toward abdomen and behind-head bench triceps extension.",
+      "bounds": {
+        "x": 1152,
+        "y": 338,
+        "width": 384,
+        "height": 316
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-lying-rear-delt-raise",
@@ -142,14 +206,22 @@
       "guideText": "While holding a dumbbell in each hand, lay with your chest down on a flat bench.\n\nPosition the palms of the hands in a neutral manner (palms facing your torso) as you keep the arms extended with the elbows slightly bent. This will be your starting position.\n\nNow raise the arms to the side until your elbows are at shoulder height and your arms are roughly parallel to the floor as you exhale. Tip: Maintain your arms perpendicular to the torso while keeping them extended throughout the movement. Also, keep the contraction at the top for a second.\n\nSlowly lower the dumbbells to the starting position as you inhale.\n\nRepeat for the recommended amount of repetitions and then switch to the other arm.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lying_Rear_Delt_Raise.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: prone rear-delt raise requires FLAT bench, not incline support.",
+      "bounds": {
+        "x": 0,
+        "y": 654,
+        "width": 384,
+        "height": 370
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-aa3b4ebe-6dee-45ad-a345-cf2acebf4159",
@@ -158,7 +230,7 @@
       "guideText": "This is an excercise for problems with the levator muscles. Primary Infraspinatus, secondary Teres Minor. Lying on side. Keep elbow on waist and in 90 dgr angle. Rotate towards stomach. Add weight as fit.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/406/view/",
@@ -166,7 +238,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed manually secured rear/forehead plate neck resistance, partner-supported supine figure-four glute stretch and straight-leg hamstring stretch, supine leg raise, partner knee-and-ankle prone quadriceps stretch, side-lying elbow-at-waist dumbbell rotation toward abdomen and behind-head bench triceps extension.",
+      "bounds": {
+        "x": 384,
+        "y": 654,
+        "width": 384,
+        "height": 370
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-8a356e9a-0058-4f60-b8d7-89147c3c371f",
@@ -175,7 +255,7 @@
       "guideText": "1. Starting position for this practical triceps exercise is lying on a standard bench holding a barbell or two dumbbells in both hands with an overhand grip, hands at shoulder width apart. 2. Begin with arms over your upper chest and elbows bent back at about a 45-degree angle. 3. First bend at the elbows and then allow the upper arm to drop back, bringing the barbell/dumbbells behind your head and down toward the floor. In terms of upper arm position, the barbell/dumbbells should never be fully above your head, but instead behind it, to ensure that you’re targeting the triceps. 4. Keep the shoulder blades tucked under, the elbows tight in toward your head and your core active during this entire movement.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1480/view/",
@@ -183,7 +263,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed manually secured rear/forehead plate neck resistance, partner-supported supine figure-four glute stretch and straight-leg hamstring stretch, supine leg raise, partner knee-and-ankle prone quadriceps stretch, side-lying elbow-at-waist dumbbell rotation toward abdomen and behind-head bench triceps extension.",
+      "bounds": {
+        "x": 768,
+        "y": 654,
+        "width": 384,
+        "height": 370
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-9c979645-78d1-44be-92a0-7940430a6a98",
@@ -192,7 +280,7 @@
       "guideText": "Set the bench to an 60deg angle. Stand still and rest your upper body on the inclined bench, ensuring a nearly straight line of your entire body. Squeeze your shoulder blades together, so that your elbows are located behind your torso with your upper arms nearly parallel to the floor. Lift the dumbbells until your arms form a straight line. Slowly lower the dumbbells back to the initial position. Initial position corresponds to an rectangular position of upper and lower arms.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1490/view/",
@@ -200,8 +288,17 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: chest-supported kickback requires approximately 60-degree support; pictured support/torso is low incline.",
+      "bounds": {
+        "x": 1152,
+        "y": 654,
+        "width": 384,
+        "height": 370
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-d18637e8-27a3-4641-ab0c-a6aa1fe8e4fa.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-d18637e8-27a3-4641-ab0c-a6aa1fe8e4fa.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-054.png"
 }

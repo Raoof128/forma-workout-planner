@@ -13,7 +13,7 @@
       "guideText": "* Sit on a bench with 45° incline * Hold dumbbells overhead * Move dumbbells down as if doing overhead press * Rotate dumbbells palms facing up and extend your arms in front of your body * Move hands together until dumbbells meet, keep arms extended * Reverse the motion until dumbbells are overhead again * This is one repetition",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1442/view/",
@@ -21,7 +21,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: Kreis press front extended phase must have palms up; illustration uses palms down.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 385,
+        "height": 321
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "wger-16202754-f567-4d23-a866-2c9cc8eba71d",
@@ -30,7 +38,7 @@
       "guideText": "Sit on the ground with your legs together and your arms by your sides. Push your body off the ground using your hands, maintaining the same sitting position so that your legs are straight and your feet do not touch the floor. Hold for as long as required.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1852/view/",
@@ -38,7 +46,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed suspended floor L-sit and heel-supported regression, two-hand landmine rotation with anchored pivot, handle-attached jammer squat setup, two-bench legs-supported Larsen press, diagonal single-arm cross-body cable pulldown, lateral bounding preparation and airborne lateral box landing phase.",
+      "bounds": {
+        "x": 385,
+        "y": 0,
+        "width": 384,
+        "height": 321
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "wger-a092afaf-aa5a-4384-b407-a6b52cf1c008",
@@ -47,7 +63,7 @@
       "guideText": "As with an L-sit, but allow your feet to touch the floor to support the some of the weight of your legs.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1853/view/",
@@ -55,7 +71,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed suspended floor L-sit and heel-supported regression, two-hand landmine rotation with anchored pivot, handle-attached jammer squat setup, two-bench legs-supported Larsen press, diagonal single-arm cross-body cable pulldown, lateral bounding preparation and airborne lateral box landing phase.",
+      "bounds": {
+        "x": 769,
+        "y": 0,
+        "width": 384,
+        "height": 321
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "db-landmine-180s",
@@ -64,14 +88,22 @@
       "guideText": "Position a bar into a landmine or securely anchor it in a corner. Load the bar to an appropriate weight.\n\nRaise the bar from the floor, taking it to shoulder height with both hands with your arms extended in front of you. Adopt a wide stance. This will be your starting position.\n\nPerform the movement by rotating the trunk and hips as you swing the weight all the way down to one side. Keep your arms extended throughout the exercise.\n\nReverse the motion to swing the weight all the way to the opposite side.\n\nContinue alternating the movement until the set is complete.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Landmine_180s.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed suspended floor L-sit and heel-supported regression, two-hand landmine rotation with anchored pivot, handle-attached jammer squat setup, two-bench legs-supported Larsen press, diagonal single-arm cross-body cable pulldown, lateral bounding preparation and airborne lateral box landing phase.",
+      "bounds": {
+        "x": 1153,
+        "y": 0,
+        "width": 383,
+        "height": 321
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "db-landmine-linear-jammer",
@@ -80,14 +112,22 @@
       "guideText": "Position a bar into landmine or, lacking one, securely anchor it in a corner. Load the bar to an appropriate weight and position the handle attachment on the bar.\n\nRaise the bar from the floor, taking the handles to your shoulders. This will be your starting position.\n\nIn an athletic stance, squat by flexing your hips and setting your hips back, keeping your arms flexed.\n\nReverse the motion by powerfully extending through the hips, knees, and ankles, while also extending the elbows to straighten the arms. This movement should be done explosively, coming out of the squat to full extension as powerfully as possible.\n\nReturn to the starting position.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Landmine_Linear_Jammer.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed suspended floor L-sit and heel-supported regression, two-hand landmine rotation with anchored pivot, handle-attached jammer squat setup, two-bench legs-supported Larsen press, diagonal single-arm cross-body cable pulldown, lateral bounding preparation and airborne lateral box landing phase.",
+      "bounds": {
+        "x": 0,
+        "y": 321,
+        "width": 385,
+        "height": 318
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "wger-67bca611-d9f1-4855-9e02-ecc8d7d688e9",
@@ -96,7 +136,7 @@
       "guideText": "Bar Position: Anchor one end of a barbell in a landmine attachment or a secure corner. Stance: Stand facing the barbell with feet slightly wider than shoulder-width. Turn your toes out 10–35 degrees to allow for better pelvic movement and depth. Grip: Cup the free end of the barbell with both hands (fingers interlaced or overlapping) and hold it at mid-chest level, just below the collarbone. Descent: Brace your core and sit back into a squat, keeping your chest up and weight on your heels. Depth: Lower until your thighs are at least parallel to the floor. A good reference is when your elbows touch the tops of your thighs or just inside your knees. Posture: Ensure your back remains flat and your spine neutral throughout the movement. Drive: Powerfully drive through your heels to stand up. Use the momentum from your legs to \"thrust\" the weight upward. Extension: In one fluid motion, press the bar overhead until your arms are fully extended. At the top, your biceps should be near your ears. The \"Lean\": As you reach the top of the press, lean slightly forward into the bar to encourage proper upward rotation of the shoulder blades and avoid lower back arching. Slowly lower the barbell back to chest height in a controlled manner before immediately beginning the next repetition.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1829/view/",
@@ -104,7 +144,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: landmine squat-to-press shows deep squat with arms overhead rather than upright pressing phase.",
+      "bounds": {
+        "x": 385,
+        "y": 321,
+        "width": 384,
+        "height": 318
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "wger-87f30f6d-dc8a-4b26-8c4f-640b66ecacf0",
@@ -113,7 +161,7 @@
       "guideText": "Put your legs up on a separate Bench and press with no leg drive",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1546/view/",
@@ -121,7 +169,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed suspended floor L-sit and heel-supported regression, two-hand landmine rotation with anchored pivot, handle-attached jammer squat setup, two-bench legs-supported Larsen press, diagonal single-arm cross-body cable pulldown, lateral bounding preparation and airborne lateral box landing phase.",
+      "bounds": {
+        "x": 769,
+        "y": 321,
+        "width": 384,
+        "height": 318
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "wger-90dea8b9-4cf8-430e-8633-e08df1dd900b",
@@ -130,7 +186,7 @@
       "guideText": "* Bend upper body forward * Move dumbbells near your body with slightly bent arms towards your back",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1434/view/",
@@ -138,7 +194,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: Lat Pull DB guide keeps arms only slightly bent during backward sweep; image is flexed-elbow conventional row.",
+      "bounds": {
+        "x": 1153,
+        "y": 321,
+        "width": 383,
+        "height": 318
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "wger-fff05d7a-f374-4c8a-9885-39f49076918f",
@@ -147,7 +211,7 @@
       "guideText": "The lat pull down is an exercise used to build the muscles of the back. While the exercise will primarily target the lats, you will also notice a fair amount of bicep and middle back activation.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/355/view/",
@@ -155,7 +219,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: straight-back lat pulldown depicted behind neck, rather than standard chest pulldown.",
+      "bounds": {
+        "x": 0,
+        "y": 639,
+        "width": 385,
+        "height": 385
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "wger-5a096571-4eae-472e-8849-fe5647035e2c",
@@ -164,7 +236,7 @@
       "guideText": "Sit at lat pulldown machine with body at a diagonal angle so that only one leg is under the pad. Pull the cable down with the opposite arm. this will force the cable to across your body while pulling down. Emphasises the stretch of the lat.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1659/view/",
@@ -172,7 +244,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed suspended floor L-sit and heel-supported regression, two-hand landmine rotation with anchored pivot, handle-attached jammer squat setup, two-bench legs-supported Larsen press, diagonal single-arm cross-body cable pulldown, lateral bounding preparation and airborne lateral box landing phase.",
+      "bounds": {
+        "x": 385,
+        "y": 639,
+        "width": 384,
+        "height": 385
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "db-lateral-bound",
@@ -181,14 +261,22 @@
       "guideText": "Assume a half squat position facing 90 degrees from your direction of travel. This will be your starting position.\n\nAllow your lead leg to do a countermovement inward as you shift your weight to the outside leg.\n\nImmediately push off and extend, attempting to bound to the side as far as possible.\n\nUpon landing, immediately push off in the opposite direction, returning to your original start position.\n\nContinue back and forth for several repetitions.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lateral_Bound.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed suspended floor L-sit and heel-supported regression, two-hand landmine rotation with anchored pivot, handle-attached jammer squat setup, two-bench legs-supported Larsen press, diagonal single-arm cross-body cable pulldown, lateral bounding preparation and airborne lateral box landing phase.",
+      "bounds": {
+        "x": 769,
+        "y": 639,
+        "width": 384,
+        "height": 385
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "db-lateral-box-jump",
@@ -197,15 +285,24 @@
       "guideText": "Assume a comfortable standing position, with a short box positioned next to you. This will be your starting position.\n\nQuickly dip into a quarter squat to initiate the stretch reflex, and immediately reverse direction to jump up and to the side.\n\nBring your knees high enough to ensure your feet have good clearance over the box.\n\nLand on the center of the box, using your legs to absorb the impact.\n\nCarefully jump down to the other side of the box, and continue going back and forth for several repetitions.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lateral_Box_Jump.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed suspended floor L-sit and heel-supported regression, two-hand landmine rotation with anchored pivot, handle-attached jammer squat setup, two-bench legs-supported Larsen press, diagonal single-arm cross-body cable pulldown, lateral bounding preparation and airborne lateral box landing phase.",
+      "bounds": {
+        "x": 1153,
+        "y": 639,
+        "width": 383,
+        "height": 385
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-808b6fab-31f1-4c2b-8603-5d57d8de314c.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-808b6fab-31f1-4c2b-8603-5d57d8de314c.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-049.png"
 }

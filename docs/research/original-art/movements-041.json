@@ -13,14 +13,22 @@
       "guideText": "Lay on your side, with the bottom leg placed onto a foam roller between the hip and the knee. The other leg can be crossed in front of you.\n\nPlace as much of your weight as is tolerable onto your bottom leg; there is no need to keep your bottom leg in contact with the ground. Be sure to relax the muscles of the leg you are stretching.\n\nRoll your leg over the foam from you hip to your knee, pausing for 10-30 seconds at points of tension. Repeat with the opposite leg.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Iliotibial_Tract-SMR.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed lateral-thigh foam contact, long-arm inchworm plank phase, prone incline reverse fly, supported incline dumbbell chest press, close-grip incline barbell press, secured-foot incline abdominal curl, prone neutral-grip Y raise, palms-in incline press, supinated incline curl and bent-elbow wide fly.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 392,
+        "height": 336
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-inchworm",
@@ -29,14 +37,22 @@
       "guideText": "Stand with your feet close together. Keeping your legs straight, stretch down and put your hands on the floor directly in front of you. This will be your starting position.\n\nBegin by walking your hands forward slowly, alternating your left and your right. As you do so, bend only at the hip, keeping your legs straight.\n\nKeep going until your body is parallel to the ground in a pushup position.\n\nNow, keep your hands in place and slowly take short steps with your feet, moving only a few inches at a time.\n\nContinue walking until your feet are by hour hands, keeping your legs straight as you do so.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Inchworm.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed lateral-thigh foam contact, long-arm inchworm plank phase, prone incline reverse fly, supported incline dumbbell chest press, close-grip incline barbell press, secured-foot incline abdominal curl, prone neutral-grip Y raise, palms-in incline press, supinated incline curl and bent-elbow wide fly.",
+      "bounds": {
+        "x": 392,
+        "y": 0,
+        "width": 377,
+        "height": 336
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-incline-barbell-triceps-extension",
@@ -45,14 +61,22 @@
       "guideText": "Hold a barbell with an overhand grip (palms down) that is a little closer together than shoulder width.\n\nLie back on an incline bench set at any angle between 45-75-degrees.\n\nBring the bar overhead with your arms extended and elbows in. The arms should be in line with the torso above the head. This will be your starting position.\n\nNow lower the bar in a semicircular motion behind your head until your forearms touch your biceps. Inhale as you perform this movement. Tip: Keep your upper arms stationary and close to your head at all times. Only the forearms should move.\n\nReturn to the starting position as you breathe out and you contract the triceps. Hold the contraction for a second.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Barbell_Triceps_Extension.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: incline barbell triceps extension upper arms are not aligned with torso and bar is over forehead rather than the prescribed behind-head phase.",
+      "bounds": {
+        "x": 769,
+        "y": 0,
+        "width": 382,
+        "height": 336
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-incline-bench-pull",
@@ -61,14 +85,22 @@
       "guideText": "Grab a dumbbell in each hand and lie face down on an incline bench that is set to an incline that is approximately 30 degrees.\n\nLet the arms hang to your sides fully extended as they point to the floor.\n\nTurn the wrists until your hands have a pronated (palms down) grip.\n\nNow flare the elbows out. This will be your starting position.\n\nAs you breathe out, start to pull the dumbbells up as if you are doing a reverse bench press. You will do this by bending at the elbows and bringing the upper arms up as you let the forearms hang. Continue this motion until the upper arms are at the same level as your back. Tip: The elbows will come out to the side and your upper arms and torso should make the letter \"T\" at the top of the movement. Hold the contraction at the top for a second.\n\nSlowly go back down to the starting position as you breathe in.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Bench_Pull.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: incline bench pull does not clearly show both flared upper arms forming the required T at the row endpoint.",
+      "bounds": {
+        "x": 1151,
+        "y": 0,
+        "width": 385,
+        "height": 336
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "wger-70c99a4e-3340-4993-a7f1-2d2709dada1a",
@@ -77,7 +109,7 @@
       "guideText": "The incline dumbbell reverse fly is an upper-body exercise targeting the posterior or rear deltoids, as well as the postural muscles of the upper back. Because it targets such small muscles, this exercise is usually performed with light weight for high reps, such as 10-15 reps per set or more.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/828/view/",
@@ -85,7 +117,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed lateral-thigh foam contact, long-arm inchworm plank phase, prone incline reverse fly, supported incline dumbbell chest press, close-grip incline barbell press, secured-foot incline abdominal curl, prone neutral-grip Y raise, palms-in incline press, supinated incline curl and bent-elbow wide fly.",
+      "bounds": {
+        "x": 0,
+        "y": 336,
+        "width": 392,
+        "height": 337
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "wger-e5e17c42-3c34-410b-84ab-81fde378778f",
@@ -94,7 +134,7 @@
       "guideText": "* Bench 45° incline * Hold dumbbells parallel on your chest * Press up until arms extended",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1444/view/",
@@ -102,7 +142,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed lateral-thigh foam contact, long-arm inchworm plank phase, prone incline reverse fly, supported incline dumbbell chest press, close-grip incline barbell press, secured-foot incline abdominal curl, prone neutral-grip Y raise, palms-in incline press, supinated incline curl and bent-elbow wide fly.",
+      "bounds": {
+        "x": 392,
+        "y": 336,
+        "width": 377,
+        "height": 337
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "wger-fca05168-7212-42ec-8927-efb1e8dd0971",
@@ -111,7 +159,7 @@
       "guideText": "Narrower grip than regular bench press, just outside shoulder width.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1467/view/",
@@ -119,7 +167,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed lateral-thigh foam contact, long-arm inchworm plank phase, prone incline reverse fly, supported incline dumbbell chest press, close-grip incline barbell press, secured-foot incline abdominal curl, prone neutral-grip Y raise, palms-in incline press, supinated incline curl and bent-elbow wide fly.",
+      "bounds": {
+        "x": 769,
+        "y": 336,
+        "width": 382,
+        "height": 337
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "wger-7de7b8a8-313d-465f-bb22-8527ae45110a",
@@ -128,7 +184,7 @@
       "guideText": "Lay down on your back on a inclined bench, feet are on one end of the bench. Ask a partner or use some other help (barbell, etc.) to keep them fixed, your hands are behind your head. From this position move your upper body up till your head or elbows touch your knees. Do this movement by rolling up your back.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/171/view/",
@@ -136,7 +192,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed lateral-thigh foam contact, long-arm inchworm plank phase, prone incline reverse fly, supported incline dumbbell chest press, close-grip incline barbell press, secured-foot incline abdominal curl, prone neutral-grip Y raise, palms-in incline press, supinated incline curl and bent-elbow wide fly.",
+      "bounds": {
+        "x": 1151,
+        "y": 336,
+        "width": 385,
+        "height": 337
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "wger-16bd91ca-a9fe-47fc-b3a8-a9d70549e929",
@@ -145,7 +209,7 @@
       "guideText": "1. Set an incline bench to a 45-degree angle and sit facing the bench, chest against the pad, with a dumbbell in each hand, palms facing each other. 2. Position your feet firmly on the ground for stability and let your arms hang down naturally with a slight bend in your elbows. 3. Engage your core and keep your back straight throughout the movement. 4. Raise your arms forward and out to form a Y shape, keeping the movement controlled and your elbows slightly bent. 5. Lift until your arms are roughly parallel to the floor and in line with your ears. 6. Pause briefly at the top of the movement to engage your shoulder muscles fully, then slowly lower your arms back down to the starting position. 7. Ensure the movement is slow and controlled during both the ascent and descent to maximize engagement of the deltoids and supporting muscles. 8. Repeat for the desired number of repetitions, maintaining proper form throughout.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1879/view/",
@@ -153,7 +217,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed lateral-thigh foam contact, long-arm inchworm plank phase, prone incline reverse fly, supported incline dumbbell chest press, close-grip incline barbell press, secured-foot incline abdominal curl, prone neutral-grip Y raise, palms-in incline press, supinated incline curl and bent-elbow wide fly.",
+      "bounds": {
+        "x": 0,
+        "y": 673,
+        "width": 392,
+        "height": 351
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-incline-dumbbell-bench-with-palms-facing-in",
@@ -162,14 +234,22 @@
       "guideText": "Lie back on an incline bench with a dumbbell on each hand on top of your thighs. The palms of your hand will be facing each other.\n\nBy using your thighs to help you get the dumbbells up, clean the dumbbells one arm at a time so that you can hold them at shoulder width.\n\nOnce at shoulder width, keep the palms of your hands with a neutral grip (palms facing each other). Keep your elbows flared out with the upper arms in line with the shoulders (perpendicular to the torso) and the elbows bent creating a 90-degree angle between the upper arm and the forearm. This will be your starting position.\n\nNow bring down the weights slowly to your side as you breathe in. Keep full control of the dumbbells at all times.\n\nAs you breathe out, push the dumbbells up using your pectoral muscles. Lock your arms in the contracted position, hold for a second and then start coming down slowly. Tip: It should take at least twice as long to go down than to come up.\n\nRepeat the movement for the prescribed amount of repetitions.\n\nWhen you are done, place the dumbbells back in your thighs and then on the floor. This is the safest manner to dispose of the dumbbells.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Dumbbell_Bench_With_Palms_Facing_In.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed lateral-thigh foam contact, long-arm inchworm plank phase, prone incline reverse fly, supported incline dumbbell chest press, close-grip incline barbell press, secured-foot incline abdominal curl, prone neutral-grip Y raise, palms-in incline press, supinated incline curl and bent-elbow wide fly.",
+      "bounds": {
+        "x": 392,
+        "y": 673,
+        "width": 377,
+        "height": 351
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "db-incline-dumbbell-curl",
@@ -178,14 +258,22 @@
       "guideText": "Sit back on an incline bench with a dumbbell in each hand held at arms length. Keep your elbows close to your torso and rotate the palms of your hands until they are facing forward. This will be your starting position.\n\nWhile holding the upper arm stationary, curl the weights forward while contracting the biceps as you breathe out. Only the forearms should move. Continue the movement until your biceps are fully contracted and the dumbbells are at shoulder level. Hold the contracted position for a second.\n\nSlowly begin to bring the dumbbells back to starting position as your breathe in.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Dumbbell_Curl.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed lateral-thigh foam contact, long-arm inchworm plank phase, prone incline reverse fly, supported incline dumbbell chest press, close-grip incline barbell press, secured-foot incline abdominal curl, prone neutral-grip Y raise, palms-in incline press, supinated incline curl and bent-elbow wide fly.",
+      "bounds": {
+        "x": 769,
+        "y": 673,
+        "width": 382,
+        "height": 351
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     },
     {
       "id": "wger-55ff32e6-24ab-4303-9b50-176d60d48796",
@@ -194,7 +282,7 @@
       "guideText": "Use inclined bench. Hold dumbbells straight out to your sides, elbows slightly bent. Bring arms together above you, keeping angle of elbows fixed.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/308/view/",
@@ -202,8 +290,17 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed lateral-thigh foam contact, long-arm inchworm plank phase, prone incline reverse fly, supported incline dumbbell chest press, close-grip incline barbell press, secured-foot incline abdominal curl, prone neutral-grip Y raise, palms-in incline press, supinated incline curl and bent-elbow wide fly.",
+      "bounds": {
+        "x": 1151,
+        "y": 673,
+        "width": 385,
+        "height": 351
+      },
+      "cropReviewNote": "Inspected sheet and detected panel separator pixels; actual bounds retain intended illustration."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-c824678e-f7a6-4175-b286-16ca1f5db7d5.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-c824678e-f7a6-4175-b286-16ca1f5db7d5.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-041.png"
 }

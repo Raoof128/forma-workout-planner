@@ -1,0 +1,210 @@
+{
+  "name": "movements-077",
+  "columns": 4,
+  "rows": 3,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/movements-077.png",
+  "prompt": "Create beautiful ORIGINAL FORMA exercise art in a clean modern illustrated fitness manual style. Exactly FOUR columns and THREE rows, 12 equal cells, landscape 1536x1024. Each cell white with generous margins; no labels, letters, logos, borders or watermarks. Varied fully clothed adult athletes, charcoal/gray sportswear with a small lime-green accent. Correct anatomy (two arms, two legs), plausible support and weight-bearing, detailed accurate equipment, subtle shadows. Every cell is an EXACT distinct movement/variation matching its description. Show ONE clear representative working position per cell; do not show duplicate athletes, extra limbs, arrows or overlapping phases. Keep the entire athlete and apparatus inside own cell. Never swap freeweights, benches, grips or variations. Read each guide to choose a physically correct pose. Cell positions are mandatory:\nRow 1 column 1: Shoulder Press (Dumbbell). Equipment: Dumbbell. Exercise guide: * Muskulatur anspannen * Kein Schwung holen * Kontrollierte Bewegung * Langsame Bewegung * Immer angewinkelt lassen * Nicht überdehnen\n\nRow 1 column 2: Shoulder Press, on Multi Press. Equipment: Bodyweight. Exercise guide: The exercise is basically the same as with a free barbell: Sit on a bench, the back rest should be almost vertical. Take a bar with a shoulder wide grip and bring it down to chest height. Press the weight up, but don't stretch the arms completely. Go slowly down and repeat.\n\nRow 1 column 3: Shoulder Raise. Equipment: Bodyweight. Exercise guide: Relax your arms to your sides and raise your shoulders up toward your ears, then back down.\n\nRow 1 column 4: Shoulder Shrug. Equipment: Bodyweight. Exercise guide: The shoulder shrug (usually called simply the shrug) is an exercise in weight training used to develop the upper trapezius muscle. The lifter stands erect, hands about shoulder width apart, and raises the shoulders as high as possible, and then lowers them, while not bending the elbows, or moving the body at all. The lifter may not have as large a range of motion as in a normal shrug done for active flexibility. It is usually considered good form if the slope of the shoulders is horizontal in the elevated position.\n\nRow 2 column 1: Shoulder width three-point push-up. Equipment: Bodyweight. Exercise guide: Get into a push-up position with your shoulders directly above your hands and your feet hip-width apart. Draw your belly button in towards your spine and tighten your abdominal muscles. Lift your left foot about five centimetres off the floor. Point your toes straight down. Do not move your hips. Your body forms a straight line from your head to your heels throughout the exercise. Now bend your elbows, lower your chest to the floor and push yourself back up. Repeat the exercise on the other side.\n\nRow 2 column 2: Side Crunch. Equipment: Bodyweight. Exercise guide: Hold weight in one hand. Bend side ways to the knee. Pull upo to upright position using your obliquus.\n\nRow 2 column 3: Side Hop-Sprint. Equipment: Specialty equipment. Exercise guide: Stand to the side of a cone or hurdle. Begin this drill by hopping sideways over the obstacle, rebounding out of your landing to hop back to where you started. Hop for a prescribed number or repetitions as quickly as possible, and finish this drill by sprinting a short distance upon landing the last hop.\n\nRow 2 column 4: Side Laterals to Front Raise. Equipment: Dumbbell. Exercise guide: In a standing position, hold a pair of dumbbells at your side. This will be your starting position. Keeping your elbows slightly bent, raise the weights directly in front of you to shoulder height, avoiding any swinging or cheating. At the top of the exercise move the weights out in front of you, keeping your arms extended. Lower the weights with a controlled motion. On the next repetition, raise the weights in front of you to shoulder height before moving the weights laterally to your sides. Lower the weights to the starting position.\n\nRow 3 column 1: Side Leg Raises. Equipment: Bodyweight. Exercise guide: Stand next to a chair, which you may hold onto as a support. Stand on one leg. This will be your starting position. Keeping your leg straight, raise it as far out to the side as possible, and swing it back down, allowing it to cross the opposite leg. Repeat this swinging motion 5-10 times, increasing the range of motion as you do so.\n\nRow 3 column 2: Side Lying Groin Stretch. Equipment: Bodyweight. Exercise guide: Start off by lying on your right side and bend your right knee in front of you to stabilize the torso. Rest your head on your right hand or shoulder. Lift your left leg upward and hold it by the back of the knee (easier) or the foot (harder). Pull your left knee in toward your left shoulder and simultaneously press your foot or knee down to the floor. To intensify this stretch, straighten your left leg. Switch sides.\n\nRow 3 column 3: Side Lying Hip Abduction. Equipment: Bodyweight. Exercise guide: * Begin by lying down on your side with your top leg straight and your bottom leg bent for support. * Lift your top leg off the ground * *(optional) -* Hold position at the top Resources: * 40 seconds YouTube video: https://www.youtube.com/watch?v=g9FtnmsIYgI\n\nRow 3 column 4: Side Neck Stretch. Equipment: Bodyweight. Exercise guide: Start with your shoulders relaxed, gently tilt your head towards your shoulder. Assist stretch with a gentle pull on the side of the head.",
+  "cells": [
+    {
+      "id": "wger-bff4776a-5972-4799-9534-c9d25e4885ea",
+      "title": "Shoulder Press (Dumbbell)",
+      "equipment": "Dumbbell",
+      "guideText": "* Muskulatur anspannen * Kein Schwung holen * Kontrollierte Bewegung * Langsame Bewegung * Immer angewinkelt lassen * Nicht überdehnen",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1337/view/",
+        "author": "Anastasious",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-141bc870-56be-4749-a3b9-e56d5d5618b4",
+      "title": "Shoulder Press, on Multi Press",
+      "equipment": "Bodyweight",
+      "guideText": "The exercise is basically the same as with a free barbell: Sit on a bench, the back rest should be almost vertical. Take a bar with a shoulder wide grip and bring it down to chest height. Press the weight up, but don't stretch the arms completely. Go slowly down and repeat.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/569/view/",
+        "author": "wger.de",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-shoulder-raise",
+      "title": "Shoulder Raise",
+      "equipment": "Bodyweight",
+      "guideText": "Relax your arms to your sides and raise your shoulders up toward your ears, then back down.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Shoulder_Raise.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "wger-f956977e-cc05-4db2-a387-ba6140b1ef34",
+      "title": "Shoulder Shrug",
+      "equipment": "Bodyweight",
+      "guideText": "The shoulder shrug (usually called simply the shrug) is an exercise in weight training used to develop the upper trapezius muscle. The lifter stands erect, hands about shoulder width apart, and raises the shoulders as high as possible, and then lowers them, while not bending the elbows, or moving the body at all. The lifter may not have as large a range of motion as in a normal shrug done for active flexibility. It is usually considered good form if the slope of the shoulders is horizontal in the elevated position.",
+      "column": 3,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/570/view/",
+        "author": "BFad07",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-716286dd-05b1-4f87-8b3b-a0c559bcafc4",
+      "title": "Shoulder width three-point push-up",
+      "equipment": "Bodyweight",
+      "guideText": "Get into a push-up position with your shoulders directly above your hands and your feet hip-width apart. Draw your belly button in towards your spine and tighten your abdominal muscles. Lift your left foot about five centimetres off the floor. Point your toes straight down. Do not move your hips. Your body forms a straight line from your head to your heels throughout the exercise. Now bend your elbows, lower your chest to the floor and push yourself back up. Repeat the exercise on the other side.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1209/view/",
+        "author": "lxmx",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-2f8ee51b-f493-47f7-8b2a-1da16c128f73",
+      "title": "Side Crunch",
+      "equipment": "Bodyweight",
+      "guideText": "Hold weight in one hand. Bend side ways to the knee. Pull upo to upright position using your obliquus.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/576/view/",
+        "author": "kwrindy",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-side-hop-sprint",
+      "title": "Side Hop-Sprint",
+      "equipment": "Specialty equipment",
+      "guideText": "Stand to the side of a cone or hurdle.\n\nBegin this drill by hopping sideways over the obstacle, rebounding out of your landing to hop back to where you started.\n\nHop for a prescribed number or repetitions as quickly as possible, and finish this drill by sprinting a short distance upon landing the last hop.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Side_Hop-Sprint.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "db-side-laterals-to-front-raise",
+      "title": "Side Laterals to Front Raise",
+      "equipment": "Dumbbell",
+      "guideText": "In a standing position, hold a pair of dumbbells at your side. This will be your starting position.\n\nKeeping your elbows slightly bent, raise the weights directly in front of you to shoulder height, avoiding any swinging or cheating.\n\nAt the top of the exercise move the weights out in front of you, keeping your arms extended.\n\nLower the weights with a controlled motion.\n\nOn the next repetition, raise the weights in front of you to shoulder height before moving the weights laterally to your sides.\n\nLower the weights to the starting position.",
+      "column": 3,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Side_Laterals_to_Front_Raise.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "db-side-leg-raises",
+      "title": "Side Leg Raises",
+      "equipment": "Bodyweight",
+      "guideText": "Stand next to a chair, which you may hold onto as a support. Stand on one leg. This will be your starting position.\n\nKeeping your leg straight, raise it as far out to the side as possible, and swing it back down, allowing it to cross the opposite leg.\n\nRepeat this swinging motion 5-10 times, increasing the range of motion as you do so.",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Side_Leg_Raises.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "db-side-lying-groin-stretch",
+      "title": "Side Lying Groin Stretch",
+      "equipment": "Bodyweight",
+      "guideText": "Start off by lying on your right side and bend your right knee in front of you to stabilize the torso.\n\nRest your head on your right hand or shoulder. Lift your left leg upward and hold it by the back of the knee (easier) or the foot (harder).\n\nPull your left knee in toward your left shoulder and simultaneously press your foot or knee down to the floor. To intensify this stretch, straighten your left leg. Switch sides.",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Side_Lying_Groin_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "wger-7212cc74-656e-47ce-8292-d211676f2ee1",
+      "title": "Side Lying Hip Abduction",
+      "equipment": "Bodyweight",
+      "guideText": "* Begin by lying down on your side with your top leg straight and your bottom leg bent for support. * Lift your top leg off the ground * *(optional) -* Hold position at the top Resources: * 40 seconds YouTube video: https://www.youtube.com/watch?v=g9FtnmsIYgI",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1202/view/",
+        "author": "wakanda90",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-side-neck-stretch",
+      "title": "Side Neck Stretch",
+      "equipment": "Bodyweight",
+      "guideText": "Start with your shoulders relaxed, gently tilt your head towards your shoulder.\n\nAssist stretch with a gentle pull on the side of the head.",
+      "column": 3,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Side_Neck_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-67f5d629-1c0c-4c94-b214-a3aa2db7278d.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-077.png"
+}

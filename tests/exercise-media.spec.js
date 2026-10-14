@@ -70,3 +70,22 @@ test("failed image delivery does not leave a permanent loader or hide exercise i
   await page.getByRole("button", { name: "Got it", exact: true }).click();
   await expect(dialog).not.toBeVisible();
 });
+
+test("uneven atlas rows keep the complete EZ-bar curl pose inside the guide", async ({
+  page,
+}) => {
+  await page.goto("/#library");
+  const dialog = await openGuide(page, "EZ-Bar Curl", "EZ-Bar Curl");
+  const image = dialog.getByRole("img", { name: /Exercise illustration/ });
+  await expect(image).toHaveJSProperty("naturalWidth", 1536);
+  const sourceTop = await image.evaluate((img) => {
+    const picture = img.getBoundingClientRect();
+    const frame = img.parentElement.getBoundingClientRect();
+    return (
+      ((frame.top + img.parentElement.clientTop - picture.top) *
+        img.naturalHeight) /
+      picture.height
+    );
+  });
+  expect(sourceTop).toBeCloseTo(642, 0);
+});

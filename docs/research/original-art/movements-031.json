@@ -21,7 +21,14 @@
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
       },
-      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
+      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 302
+      },
+      "cropReviewNote": "Inspected source sheet: separator rows 301–302 and 640–641; preserve complete row-three heads and equipment using actual panel bounds."
     },
     {
       "id": "wger-29a361d5-1300-4fb4-90d6-d6350bec9cb9",
@@ -39,7 +46,14 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "reviewNote": "Band ends pull backward from hands, assisting dorsiflexion rather than providing opposing forward resistance; this setup is for plantarflexion."
+      "reviewNote": "Band ends pull backward from hands, assisting dorsiflexion rather than providing opposing forward resistance; this setup is for plantarflexion.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 302
+      },
+      "cropReviewNote": "Inspected source sheet: separator rows 301–302 and 640–641; preserve complete row-three heads and equipment using actual panel bounds."
     },
     {
       "id": "wger-70c97a79-5e88-4549-a74c-0e5190a5c048",
@@ -57,7 +71,14 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
+      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 302
+      },
+      "cropReviewNote": "Inspected source sheet: separator rows 301–302 and 640–641; preserve complete row-three heads and equipment using actual panel bounds."
     },
     {
       "id": "db-extended-range-one-arm-kettlebell-floor-press",
@@ -74,7 +95,14 @@
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
       },
-      "reviewNote": "Pressing-side knee does not visibly cross the body's midline, the defining extended-range floor-press variation."
+      "reviewNote": "Pressing-side knee does not visibly cross the body's midline, the defining extended-range floor-press variation.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 302
+      },
+      "cropReviewNote": "Inspected source sheet: separator rows 301–302 and 640–641; preserve complete row-three heads and equipment using actual panel bounds."
     },
     {
       "id": "wger-ab872d04-ca20-4341-b3c9-76763b25ef42",
@@ -92,7 +120,14 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
+      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example.",
+      "bounds": {
+        "x": 0,
+        "y": 302,
+        "width": 384,
+        "height": 340
+      },
+      "cropReviewNote": "Inspected source sheet: separator rows 301–302 and 640–641; preserve complete row-three heads and equipment using actual panel bounds."
     },
     {
       "id": "db-external-rotation",
@@ -109,7 +144,14 @@
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
       },
-      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
+      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example.",
+      "bounds": {
+        "x": 384,
+        "y": 302,
+        "width": 384,
+        "height": 340
+      },
+      "cropReviewNote": "Inspected source sheet: separator rows 301–302 and 640–641; preserve complete row-three heads and equipment using actual panel bounds."
     },
     {
       "id": "wger-a4413bcc-dcd1-4332-a09a-fee94a265e22",
@@ -127,7 +169,14 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "reviewNote": "Working elbow is not clearly supported on the raised knee, as the external-rotation stretch requires."
+      "reviewNote": "Working elbow is not clearly supported on the raised knee, as the external-rotation stretch requires.",
+      "bounds": {
+        "x": 768,
+        "y": 302,
+        "width": 384,
+        "height": 340
+      },
+      "cropReviewNote": "Inspected source sheet: separator rows 301–302 and 640–641; preserve complete row-three heads and equipment using actual panel bounds."
     },
     {
       "id": "db-external-rotation-with-band",
@@ -144,7 +193,14 @@
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
       },
-      "reviewNote": "Band anchor is on the working-arm side, creating internal-rotation resistance rather than the required far-arm external rotation."
+      "reviewNote": "Band anchor is on the working-arm side, creating internal-rotation resistance rather than the required far-arm external rotation.",
+      "bounds": {
+        "x": 1152,
+        "y": 302,
+        "width": 384,
+        "height": 340
+      },
+      "cropReviewNote": "Inspected source sheet: separator rows 301–302 and 640–641; preserve complete row-three heads and equipment using actual panel bounds."
     },
     {
       "id": "wger-ab808c2c-2e84-42bb-a65d-287a06ca7aa2",
@@ -162,7 +218,14 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
+      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example.",
+      "bounds": {
+        "x": 0,
+        "y": 642,
+        "width": 384,
+        "height": 382
+      },
+      "cropReviewNote": "Inspected source sheet: separator rows 301–302 and 640–641; preserve complete row-three heads and equipment using actual panel bounds."
     },
     {
       "id": "wger-3c33c9fd-20cc-4dff-ac88-c992bb9b2e33",
@@ -180,7 +243,14 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
+      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example.",
+      "bounds": {
+        "x": 384,
+        "y": 642,
+        "width": 384,
+        "height": 382
+      },
+      "cropReviewNote": "Inspected source sheet: separator rows 301–302 and 640–641; preserve complete row-three heads and equipment using actual panel bounds."
     },
     {
       "id": "wger-4925b6c0-bbe6-4864-a649-23ec18d49985",
@@ -198,7 +268,14 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "reviewNote": "Generic passive cross-body stretch does not establish the described deep loaded shoulder stretch; verify the intended loading setup."
+      "reviewNote": "Generic passive cross-body stretch does not establish the described deep loaded shoulder stretch; verify the intended loading setup.",
+      "bounds": {
+        "x": 768,
+        "y": 642,
+        "width": 384,
+        "height": 382
+      },
+      "cropReviewNote": "Inspected source sheet: separator rows 301–302 and 640–641; preserve complete row-three heads and equipment using actual panel bounds."
     },
     {
       "id": "db-ez-bar-curl",
@@ -215,8 +292,16 @@
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
       },
-      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
+      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example.",
+      "bounds": {
+        "x": 1152,
+        "y": 642,
+        "width": 384,
+        "height": 382
+      },
+      "cropReviewNote": "Inspected source sheet: separator rows 301–302 and 640–641; preserve complete row-three heads and equipment using actual panel bounds."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-e7b4e9b3-3bf4-4972-b9e3-7528a5c1ab71.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-e7b4e9b3-3bf4-4972-b9e3-7528a5c1ab71.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-031.png"
 }

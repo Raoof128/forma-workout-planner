@@ -85,6 +85,15 @@ for (const [id, asset] of Object.entries(media.assets)) {
     assert.equal(asset.width, bytes.readUInt32BE(16));
     assert.equal(asset.height, bytes.readUInt32BE(20));
     assert(columns > 0 && rows > 0, `Invalid atlas grid: ${id}`);
+    if (asset.region.bounds) {
+      const { x, y, width, height } = asset.region.bounds;
+      assert([x, y, width, height].every(Number.isInteger));
+      assert(x >= 0 && y >= 0 && width > 0 && height > 0);
+      assert(
+        x + width <= asset.width && y + height <= asset.height,
+        `Crop outside image: ${id}`,
+      );
+    }
   }
 }
 const missing = [...ids].filter((id) => !media.exercises[id]);

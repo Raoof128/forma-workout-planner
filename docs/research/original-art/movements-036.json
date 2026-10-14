@@ -13,14 +13,22 @@
       "guideText": "Clean two kettlebells to your shoulders. Clean the kettlebells to your shoulders by extending through the legs and hips as you pull the kettlebells towards your shoulders. Rotate your wrists as you do so.\n\nLooking straight ahead at all times, squat as low as you can and pause at the bottom. As you squat down, push your knees out. You should squat between your legs, keeping an upright torso, with your head and chest up.\n\nRise back up by driving through your heels and repeat.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Front_Squats_With_Two_Kettlebells.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed twin kettlebell front squat, bilateral pronated dumbbell front raise, rotated hand-supported sit-out, single-arm bridge press, quadruped bent-knee glute kickback, butterfly groin/back stretch, both-feet-forward groiner landing and neutral-grip hammer curl.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "db-front-two-dumbbell-raise",
@@ -29,14 +37,22 @@
       "guideText": "Pick a couple of dumbbells and stand with a straight torso and the dumbbells on front of your thighs at arms length with the palms of the hand facing your thighs. This will be your starting position.\n\nWhile maintaining the torso stationary (no swinging), lift the dumbbells to the front with a slight bend on the elbow and the palms of the hands always facing down. Continue to go up until you arms are slightly above parallel to the floor. Exhale as you execute this portion of the movement and pause for a second at the top.\n\nAs you inhale, lower the dumbbells back down slowly to the starting position.\n\nRepeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Front_Two-Dumbbell_Raise.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed twin kettlebell front squat, bilateral pronated dumbbell front raise, rotated hand-supported sit-out, single-arm bridge press, quadruped bent-knee glute kickback, butterfly groin/back stretch, both-feet-forward groiner landing and neutral-grip hammer curl.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "wger-e5a62151-5350-4c86-8a19-3e9ca7bf0f38",
@@ -45,7 +61,7 @@
       "guideText": "(A) Get in high plank position on your hands and toes.(B) Shift your weight to your left hand as you turn your body to the right; bend your right leg behind you and extend your right arm up. Return to the center and repeat on the opposite side. Continue, alternating sides.**Make it easier:** Don’t raise your arm after you bend your leg behind you.**Make it harder:** Balance with your arm and leg extended for two counts.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/260/view/",
@@ -53,7 +69,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed twin kettlebell front squat, bilateral pronated dumbbell front raise, rotated hand-supported sit-out, single-arm bridge press, quadruped bent-knee glute kickback, butterfly groin/back stretch, both-feet-forward groiner landing and neutral-grip hammer curl.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "db-gironda-sternum-chins",
@@ -62,14 +86,22 @@
       "guideText": "Grasp the pull-up bar with a shoulder width underhand grip.\n\nNow hang with your arms fully extended and stick your chest out and lean back. Tip: You will be leaning back throughout the entire movement. This will be your starting position.\n\nStart pulling yourself towards the bar with your spine arched throughout the movement and your head leaning back as far away from the bar as possible. Exhale as you perform this portion of the movement. Tip: At the upper end of the movement, your hips and legs will be at about a 45-degree angle to the floor.\n\nKeep pulling until your collarbone passes the bar and your lower chest or sternum area touches it. Hold that contraction for a second. Tip: By the time you've completed this portion of the movement; your head will be parallel to the floor.\n\nSlowly start going back to the starting position as you inhale.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Gironda_Sternum_Chins.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: sternum chin illustration has both feet grounded; needs suspended underhand chin with backward lean and sternum near bar.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "wger-8c4a9c16-294b-40e5-ba6d-50ae523704ba",
@@ -78,7 +110,7 @@
       "guideText": "With one dumbbell in hand, perform a glute bridge. Now hold the dumbbell above your chest, this is the rep starting position. Lower the dumbbell so that your elbow touches the floor or is roughly 45 degrees below your shoulder if using a bench. Push the dumbbell back into the starting position.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1686/view/",
@@ -86,7 +118,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed twin kettlebell front squat, bilateral pronated dumbbell front raise, rotated hand-supported sit-out, single-arm bridge press, quadruped bent-knee glute kickback, butterfly groin/back stretch, both-feet-forward groiner landing and neutral-grip hammer curl.",
+      "bounds": {
+        "x": 0,
+        "y": 342,
+        "width": 384,
+        "height": 320
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "db-glute-kickback",
@@ -95,14 +135,22 @@
       "guideText": "Kneel on the floor or an exercise mat and bend at the waist with your arms extended in front of you (perpendicular to the torso) in order to get into a kneeling push-up position but with the arms spaced at shoulder width. Your head should be looking forward and the bend of the knees should create a 90-degree angle between the hamstrings and the calves. This will be your starting position.\n\nAs you exhale, lift up your right leg until the hamstrings are in line with the back while maintaining the 90-degree angle bend. Contract the glutes throughout this movement and hold the contraction at the top for a second. Tip: At the end of the movement the upper leg should be parallel to the floor while the calf should be perpendicular to it.\n\nGo back to the initial position as you inhale and now repeat with the left leg.\n\nContinue to alternate legs until all of the recommended repetitions have been performed.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Glute_Kickback.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed twin kettlebell front squat, bilateral pronated dumbbell front raise, rotated hand-supported sit-out, single-arm bridge press, quadruped bent-knee glute kickback, butterfly groin/back stretch, both-feet-forward groiner landing and neutral-grip hammer curl.",
+      "bounds": {
+        "x": 384,
+        "y": 342,
+        "width": 384,
+        "height": 320
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "db-good-morning",
@@ -111,14 +159,22 @@
       "guideText": "Begin with a bar on a rack at shoulder height. Rack the bar across the rear of your shoulders as you would a power squat, not on top of your shoulders. Keep your back tight, shoulder blades pinched together, and your knees slightly bent. Step back from the rack.\n\nBegin by bending at the hips, moving them back as you bend over to near parallel. Keep your back arched and your cervical spine in proper alignment.\n\nReverse the motion by extending through the hips with your glutes and hamstrings. Continue until you have returned to the starting position.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Good_Morning.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: good morning working pose is too upright to depict the guide near-parallel torso hinge.",
+      "bounds": {
+        "x": 768,
+        "y": 342,
+        "width": 384,
+        "height": 320
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "db-good-morning-off-pins",
@@ -127,14 +183,22 @@
       "guideText": "Begin with a bar on a rack at about the same height as your stomach. Bend over underneath the bar and rack the bar across the rear of your shoulders as you would a power squat, not on top of your shoulders. At the proper height, you should be near parallel to the floor when bent over. Keep your back tight, shoulder blades pinched together, and your knees slightly bent. Keep your back arched and your cervical spine in proper alignment.\n\nBegin the motion by extending through the hips with your glutes and hamstrings, and you are standing with the weight. Slowly lower the weight back to the pins returning to the starting position.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Good_Morning_off_Pins.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: pin good morning holds bar in hands behind hips instead of across rear shoulders on pins.",
+      "bounds": {
+        "x": 1152,
+        "y": 342,
+        "width": 384,
+        "height": 320
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "db-gorilla-chin-crunch",
@@ -143,14 +207,22 @@
       "guideText": "Hang from a chin-up bar using an underhand grip (palms facing you) that is slightly wider than shoulder width.\n\nNow bend your knees at a 90 degree angle so that the calves are parallel to the floor while the thighs remain perpendicular to it. This will be your starting position.\n\nAs you exhale, pull yourself up while crunching your knees up at the same time until your knees are at chest level. You will stop going up as soon as your nose is at the same level as the bar. Tip: When you get to this point you should also be finishing the crunch at the same time.\n\nSlowly start to inhale as you return to the starting position.\n\nRepeat for the recommended amount of repetitions.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Gorilla_Chin_Crunch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: Gorilla chin/crunch needs clearly underhand palms-toward grip; image grip is ambiguous/overhand.",
+      "bounds": {
+        "x": 0,
+        "y": 662,
+        "width": 384,
+        "height": 362
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "db-groin-and-back-stretch",
@@ -159,14 +231,22 @@
       "guideText": "Sit on the floor with your knees bent and feet together.\n\nInterlock your fingers behind your head. This will be your starting position.\n\nCurl downwards, bringing your elbows to the inside of your thighs. After a brief pause, return to the starting position with your head up and your back straight. Repeat for 10-20 repetitions.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Groin_and_Back_Stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed twin kettlebell front squat, bilateral pronated dumbbell front raise, rotated hand-supported sit-out, single-arm bridge press, quadruped bent-knee glute kickback, butterfly groin/back stretch, both-feet-forward groiner landing and neutral-grip hammer curl.",
+      "bounds": {
+        "x": 384,
+        "y": 662,
+        "width": 384,
+        "height": 362
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "db-groiners",
@@ -175,14 +255,22 @@
       "guideText": "Begin in a pushup position on the floor. This will be your starting position.\n\nUsing both legs, jump forward landing with your feet next to your hands. Keep your head up as you do so.\n\nReturn to the starting position and immediately repeat the movement, continuing for 10-20 repetitions.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Groiners.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed twin kettlebell front squat, bilateral pronated dumbbell front raise, rotated hand-supported sit-out, single-arm bridge press, quadruped bent-knee glute kickback, butterfly groin/back stretch, both-feet-forward groiner landing and neutral-grip hammer curl.",
+      "bounds": {
+        "x": 768,
+        "y": 662,
+        "width": 384,
+        "height": 362
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "db-hammer-curls",
@@ -191,15 +279,24 @@
       "guideText": "Stand up with your torso upright and a dumbbell on each hand being held at arms length. The elbows should be close to the torso.\n\nThe palms of the hands should be facing your torso. This will be your starting position.\n\nNow, while holding your upper arm stationary, exhale and curl the weight forward while contracting the biceps. Continue to raise the weight until the biceps are fully contracted and the dumbbell is at shoulder level. Hold the contracted position for a brief moment as you squeeze the biceps. Tip: Focus on keeping the elbow stationary and only moving your forearm.\n\nAfter the brief pause, inhale and slowly begin the lower the dumbbells back down to the starting position.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hammer_Curls.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed twin kettlebell front squat, bilateral pronated dumbbell front raise, rotated hand-supported sit-out, single-arm bridge press, quadruped bent-knee glute kickback, butterfly groin/back stretch, both-feet-forward groiner landing and neutral-grip hammer curl.",
+      "bounds": {
+        "x": 1152,
+        "y": 662,
+        "width": 384,
+        "height": 362
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-1f5471d3-1375-4808-bf5f-3e6068c8f214.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-1f5471d3-1375-4808-bf5f-3e6068c8f214.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-036.png"
 }

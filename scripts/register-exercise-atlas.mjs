@@ -15,7 +15,15 @@ const batch = JSON.parse(
 );
 assert(/^[a-z0-9-]+$/.test(batch.name));
 assert.equal(batch.publicPath, `/exercise-media/original/${batch.name}.png`);
-const bytes = fs.readFileSync(batch.sourceGeneratedPath);
+const source = batch.sourceAssetPath
+  ? path.join(root, batch.sourceAssetPath)
+  : batch.sourceGeneratedPath;
+if (batch.sourceAssetPath)
+  assert.equal(
+    batch.sourceAssetPath,
+    `assets/exercise-artwork/${batch.name}.png`,
+  );
+const bytes = fs.readFileSync(source);
 assert.equal(bytes.subarray(0, 8).toString("hex"), "89504e470d0a1a0a");
 const sha256 = crypto.createHash("sha256").update(bytes).digest("hex");
 const width = bytes.readUInt32BE(16);
@@ -35,6 +43,13 @@ for (const cell of batch.cells) {
   assert(cell.reviewNote?.trim(), "A visual-review note is required.");
   assert(cell.column >= 0 && cell.column < batch.columns);
   assert(cell.row >= 0 && cell.row < batch.rows);
+  if (cell.bounds) {
+    const { x, y, width: cellWidth, height: cellHeight } = cell.bounds;
+    assert([x, y, cellWidth, cellHeight].every(Number.isInteger));
+    assert(x >= 0 && y >= 0 && cellWidth > 0 && cellHeight > 0);
+    assert(x + cellWidth <= width && y + cellHeight <= height);
+    assert(cell.cropReviewNote?.trim(), "Pixel bounds require a crop review.");
+  }
   const assetId = `forma-original-${batch.name}-${cell.column}-${cell.row}`;
   registry.assets[assetId] = {
     src: `${batch.publicPath}?v=${sha256.slice(0, 12)}`,
@@ -56,6 +71,7 @@ for (const cell of batch.cells) {
       rows: batch.rows,
       column: cell.column,
       row: cell.row,
+      ...(cell.bounds ? { bounds: cell.bounds } : {}),
     },
   };
   for (const id of cell.ids ?? [cell.id]) {
@@ -80,10 +96,7 @@ for (const cell of batch.cells) {
 fs.mkdirSync(path.join(root, "public/exercise-media/original"), {
   recursive: true,
 });
-fs.copyFileSync(
-  batch.sourceGeneratedPath,
-  path.join(root, "public", batch.publicPath),
-);
+fs.copyFileSync(source, path.join(root, "public", batch.publicPath));
 fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2) + "\n");
 log(
   `Registered reviewed cells from ${batch.name}; generated source preserved.`,

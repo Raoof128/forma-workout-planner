@@ -13,14 +13,22 @@
       "guideText": "Using a spacing that is just about 1 inch wider than shoulder width, grab a pull-up bar with the palms of one hand facing forward and the palms of the other hand facing towards you. This will be your starting position.\n\nNow start to pull yourself up as you exhale. Tip: With the arm that has the palms facing up concentrate on using the back muscles in order to perform the movement. The elbow of that arm should remain close to the torso. With the other arm that has the palms facing forward, the elbows will be away but in line with the torso. You will concentrate on using the lats to pull your body up.\n\nAfter a second contraction at the top, start to slowly come down as you inhale.\n\nRepeat for the recommended amount of repetitions.\n\nOn the following set, switch grips; so if you had the right hand with the palms facing you and the left one with the palms facing forward, on the next set you will have the palms facing forward for the right hand and facing you for the left.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Mixed_Grip_Chin.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: mixed-grip chin does not clearly show one palm toward and one palm away.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 335
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "wger-5851e2b1-3a80-42ff-91da-530e6b143a34",
@@ -29,7 +37,7 @@
       "guideText": "With an inclined bench in front of the pulldown machine, use a close-grip to do latfocused pulldowns.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1635/view/",
@@ -37,7 +45,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed close-grip modified pulldown bench setup, two-loop knee/ankle monster walk, hand-supported mountain climber, running claw heel-recovery phase, ring muscle-up support, narrow-stance rear-rack squat and unloaded neck full/half-circle sequences.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 335
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-monster-walk",
@@ -46,14 +62,22 @@
       "guideText": "Place a band around both ankles and another around both knees. There should be enough tension that they are tight when your feet are shoulder width apart.\n\nTo begin, take short steps forward alternating your left and right foot.\n\nAfter several steps, do just the opposite and walk backward to where you started.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Monster_Walk.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed close-grip modified pulldown bench setup, two-loop knee/ankle monster walk, hand-supported mountain climber, running claw heel-recovery phase, ring muscle-up support, narrow-stance rear-rack squat and unloaded neck full/half-circle sequences.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 335
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-mountain-climbers",
@@ -62,14 +86,22 @@
       "guideText": "Begin in a pushup position, with your weight supported by your hands and toes. Flexing the knee and hip, bring one leg until the knee is approximately under the hip. This will be your starting position.\n\nExplosively reverse the positions of your legs, extending the bent leg until the leg is straight and supported by the toe, and bringing the other foot up with the hip and knee flexed. Repeat in an alternating fashion for 20-30 seconds.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Mountain_Climbers.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed close-grip modified pulldown bench setup, two-loop knee/ankle monster walk, hand-supported mountain climber, running claw heel-recovery phase, ring muscle-up support, narrow-stance rear-rack squat and unloaded neck full/half-circle sequences.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 335
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-moving-claw-series",
@@ -78,14 +110,22 @@
       "guideText": "This move helps prepare your running form to help you excel at sprinting. As you run, be sure to flex the knee, aiming to kick your glutes as the hip extends.\n\nReload the quad as the leg moves back forward, attacking the ground on the next step.\n\nEnsure that as you run, you block with the arms, punching through in a rapid 1-2 motion.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Moving_Claw_Series.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed close-grip modified pulldown bench setup, two-loop knee/ankle monster walk, hand-supported mountain climber, running claw heel-recovery phase, ring muscle-up support, narrow-stance rear-rack squat and unloaded neck full/half-circle sequences.",
+      "bounds": {
+        "x": 0,
+        "y": 335,
+        "width": 384,
+        "height": 335
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-muscle-snatch",
@@ -94,14 +134,22 @@
       "guideText": "Begin with a loaded barbell held at the mid thigh position with a wide grip. The feet should be directly below the hips, with the feet turned out as needed. Lower the hips, with the chest up and the head looking forward. The shoulders should be just in front of the bar. This will be the starting position.\n\nBegin the pull by driving through the front of the heels, raising the bar. Transition into the second pull by extending through the hips knees and ankles, driving the bar up as quickly as possible. The bar should be close to the body.\n\nContinue raising the bar to the overhead position, without rebending the knees.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Muscle_Snatch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: muscle snatch depicts deep overhead squat; lift must finish upright without knee rebend.",
+      "bounds": {
+        "x": 384,
+        "y": 335,
+        "width": 384,
+        "height": 335
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-muscle-up",
@@ -110,14 +158,22 @@
       "guideText": "Grip the rings using a false grip, with the base of your palms on top of the rings. Initiate a pull up by pulling the elbows down to your side, flexing the elbows.\n\nAs you reach the top position of the pull-up, pull the rings to your armpits as you roll your shoulders forward, allowing your elbows to move straight back behind you. This puts you into the proper position to continue into the dip portion of the movement.\n\nMaintaining control and stability, extend through the elbow to complete the motion.\n\nUse care when lowering yourself to the ground.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Muscle_Up.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed close-grip modified pulldown bench setup, two-loop knee/ankle monster walk, hand-supported mountain climber, running claw heel-recovery phase, ring muscle-up support, narrow-stance rear-rack squat and unloaded neck full/half-circle sequences.",
+      "bounds": {
+        "x": 768,
+        "y": 335,
+        "width": 384,
+        "height": 335
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-narrow-stance-squats",
@@ -126,14 +182,22 @@
       "guideText": "This exercise is best performed inside a squat rack for safety purposes. To begin, first set the bar on a rack that best matches your height. Once the correct height is chosen and the bar is loaded, step under the bar and place the back of your shoulders (slightly below the neck) across it.\n\nHold on to the bar using both arms at each side and lift it off the rack by first pushing with your legs and at the same time straightening your torso.\n\nStep away from the rack and position your legs using a less-than-shoulder-width narrow stance with the toes slightly pointed out. Feet should be around 3-6 inches apart. Keep your head up at all times (looking down will get you off balance) and maintain a straight back. This will be your starting position. (Note: For the purposes of this discussion we will use the medium stance described above which targets overall development; however you can choose any of the three stances discussed in the foot stances section).\n\nBegin to slowly lower the bar by bending the knees as you maintain a straight posture with the head up. Continue down until the angle between the upper leg and the calves becomes slightly less than 90-degrees (which is the point in which the upper legs are below parallel to the floor). Inhale as you perform this portion of the movement. Tip: If you performed the exercise correctly, the front of the knees should make an imaginary straight line with the toes that is perpendicular to the front. If your knees are past that imaginary line (if they are past your toes) then you are placing undue stress on the knee and the exercise has been performed incorrectly.\n\nBegin to raise the bar as you exhale by pushing the floor with the heel of your foot mainly as you straighten the legs again and go back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Narrow_Stance_Squats.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed close-grip modified pulldown bench setup, two-loop knee/ankle monster walk, hand-supported mountain climber, running claw heel-recovery phase, ring muscle-up support, narrow-stance rear-rack squat and unloaded neck full/half-circle sequences.",
+      "bounds": {
+        "x": 1152,
+        "y": 335,
+        "width": 384,
+        "height": 335
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "wger-0d50ce1e-1731-40e8-82e0-c8f512d0a8c9",
@@ -142,7 +206,7 @@
       "guideText": "Controlled Articular Rotations. Slow full circles 3 each way. Cervical mobility.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1939/view/",
@@ -150,7 +214,16 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed close-grip modified pulldown bench setup, two-loop knee/ankle monster walk, hand-supported mountain climber, running claw heel-recovery phase, ring muscle-up support, narrow-stance rear-rack squat and unloaded neck full/half-circle sequences.",
+      "bounds": {
+        "x": 0,
+        "y": 670,
+        "width": 384,
+        "height": 354
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels.",
+      "caption": "Neck CARs · Illustrated movement sequence; follow the guide and keep the motion slow and controlled."
     },
     {
       "id": "wger-d27a93fa-7066-477c-a475-c6b6170831db",
@@ -159,7 +232,7 @@
       "guideText": "Unilateral triceps exercise with your back to the pulley, with the pulley at the top",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1717/view/",
@@ -167,7 +240,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: neck-extension name conflicts with triceps cable-extension guide and apparatus.",
+      "bounds": {
+        "x": 384,
+        "y": 670,
+        "width": 384,
+        "height": 354
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "wger-8bffd3b2-663a-4617-9d95-dce24e795470",
@@ -176,7 +257,7 @@
       "guideText": "Starting position: Start sitting or standing. Lean your head against one of your shoulders, but don't push. Steps: In one slower fluid motion and with your head relaxed and not pushing in any direction: 1. bring your head down toward your chest. 2. then lean back aganst your other shoulder. 3. then back toward the chest again.4.and finally toward the starting position. Keep repeating this.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1017/view/",
@@ -184,7 +265,16 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed close-grip modified pulldown bench setup, two-loop knee/ankle monster walk, hand-supported mountain climber, running claw heel-recovery phase, ring muscle-up support, narrow-stance rear-rack squat and unloaded neck full/half-circle sequences.",
+      "bounds": {
+        "x": 768,
+        "y": 670,
+        "width": 384,
+        "height": 354
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels.",
+      "caption": "Neck half circles · Illustrated movement sequence; follow the guide and keep the motion slow and controlled."
     },
     {
       "id": "db-neck-smr",
@@ -193,15 +283,24 @@
       "guideText": "Using a muscle roller or a rolling pin, place the roller behind your head and against your neck. Make sure that you do not place the roller directly against the spine, but turned slightly so that the roller is pressed against the muscles to either side of the spine. This will be your starting position.\n\nStarting at the top of your neck, slowly roll down the muscles of your neck, pausing at points of tension for 10-30 seconds.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Neck-SMR.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: neck roller is laid across central spine instead of offset to lateral neck muscles.",
+      "bounds": {
+        "x": 1152,
+        "y": 670,
+        "width": 384,
+        "height": 354
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-af7680e6-f6ff-41bc-97fe-c0b23516a4e7.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-af7680e6-f6ff-41bc-97fe-c0b23516a4e7.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-056.png"
 }

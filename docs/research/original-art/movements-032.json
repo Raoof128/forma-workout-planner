@@ -13,14 +13,22 @@
       "guideText": "Using a close grip, lift the EZ bar and hold it with your elbows in as you lie on the bench. Your arms should be perpendicular to the floor. This will be your starting position.\n\nKeeping the upper arms stationary, lower the bar by allowing the elbows to flex. Inhale as you perform this portion of the movement. Pause once the bar is directly above the forehead.\n\nLift the bar back to the starting position by extending the elbow and exhaling.\n\nRepeat.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/EZ-Bar_Skullcrusher.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed all cells: flat-bench overhead EZ extensions (forehead vs behind-head variants), face-height band pull, farmer implements, skip stance, bar finger-curl grip, fingertip push-up, bent-leg quadruped hydrant, vertical bench leg raise and correctly oriented flexible-bar wrist poses.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "wger-31df980c-a493-418f-ab49-a986c3c23bc4",
@@ -29,7 +37,7 @@
       "guideText": "The EZ-bar skullcrusher is a popular exercise targeting the triceps muscles. The EZ-bar is used more often than a straight bar. As for the name, that’s worst-case scenario. The bar should actually come down behind the head. It is usually performed for moderate to high reps as part of an upper body or arms-focused workout. No need to chase a 1RM on this move!",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1297/view/",
@@ -37,7 +45,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed all cells: flat-bench overhead EZ extensions (forehead vs behind-head variants), face-height band pull, farmer implements, skip stance, bar finger-curl grip, fingertip push-up, bent-leg quadruped hydrant, vertical bench leg raise and correctly oriented flexible-bar wrist poses.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "wger-7bf4e131-d4a3-44c0-8fca-9e10002492e7",
@@ -46,7 +62,7 @@
       "guideText": "Face pulls with band – standing horizontal pull. Grab the band at face height, pull elbows high and wide towards your face while squeezing shoulder blades together. Trains upper back, rear shoulders and improves posture.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1732/view/",
@@ -54,7 +70,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed all cells: flat-bench overhead EZ extensions (forehead vs behind-head variants), face-height band pull, farmer implements, skip stance, bar finger-curl grip, fingertip push-up, bent-leg quadruped hydrant, vertical bench leg raise and correctly oriented flexible-bar wrist poses.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "db-farmers-walk",
@@ -63,14 +87,22 @@
       "guideText": "There are various implements that can be used for the farmers walk. These can also be performed with heavy dumbbells or short bars if these implements aren't available. Begin by standing between the implements.\n\nAfter gripping the handles, lift them up by driving through your heels, keeping your back straight and your head up.\n\nWalk taking short, quick steps, and don't forget to breathe. Move for a given distance, typically 50-100 feet, as fast as possible.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Farmers_Walk.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed all cells: flat-bench overhead EZ extensions (forehead vs behind-head variants), face-height band pull, farmer implements, skip stance, bar finger-curl grip, fingertip push-up, bent-leg quadruped hydrant, vertical bench leg raise and correctly oriented flexible-bar wrist poses.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "db-fast-skipping",
@@ -79,14 +111,22 @@
       "guideText": "Start in a relaxed position with one leg slightly forward. This will be your starting position.\n\nSkip by executing a step-hop pattern of right-right-step to left-left-step, and so on, alternating back and forth.\n\nPerform fast skips by maintaining close contact with the ground and reduce air time, moving as quickly as possible.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Fast_Skipping.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed all cells: flat-bench overhead EZ extensions (forehead vs behind-head variants), face-height band pull, farmer implements, skip stance, bar finger-curl grip, fingertip push-up, bent-leg quadruped hydrant, vertical bench leg raise and correctly oriented flexible-bar wrist poses.",
+      "bounds": {
+        "x": 0,
+        "y": 342,
+        "width": 384,
+        "height": 322
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "db-finger-curls",
@@ -95,14 +135,22 @@
       "guideText": "Hold a barbell with both hands and your palms facing up; hands spaced about shoulder width.\n\nPlace your feet flat on the floor, at a distance that is slightly wider than shoulder width apart. This will be your starting position.\n\nLower the bar as far as possible by extending the fingers. Allowing the bar to roll down the hands, catch the bar with the final joint in the fingers.\n\nNow curl bar up as high as possible by closing your hands while exhaling. Hold the contraction at the top.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Finger_Curls.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed all cells: flat-bench overhead EZ extensions (forehead vs behind-head variants), face-height band pull, farmer implements, skip stance, bar finger-curl grip, fingertip push-up, bent-leg quadruped hydrant, vertical bench leg raise and correctly oriented flexible-bar wrist poses.",
+      "bounds": {
+        "x": 384,
+        "y": 342,
+        "width": 384,
+        "height": 322
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "wger-676e8149-863e-4174-a09a-a327b247c00d",
@@ -111,7 +159,7 @@
       "guideText": "1. Hand Positioning: - Start in a plank position with your hands directly beneath your shoulders. - Spread your fingers wide apart, placing them firmly on the ground. 2. Finger Placement: - Gradually lift your palms off the ground, shifting the weight onto your fingers. - Focus on distributing the load evenly across your fingertips and thumbs. 3. Body Alignment: - Maintain a straight line from head to heels to engage your core. - Keep your body in a controlled and stable position throughout the exercise. 4. Lowering Phase: - Slowly bend your elbows, lowering your chest towards the ground. - Ensure controlled movement, maintaining stability on your fingertips. 5. Pushing Up: - Press through your fingertips to straighten your arms, returning to the starting position. - Emphasize the engagement of your fingers and thumbs throughout the push-up.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1217/view/",
@@ -119,7 +167,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed all cells: flat-bench overhead EZ extensions (forehead vs behind-head variants), face-height band pull, farmer implements, skip stance, bar finger-curl grip, fingertip push-up, bent-leg quadruped hydrant, vertical bench leg raise and correctly oriented flexible-bar wrist poses.",
+      "bounds": {
+        "x": 768,
+        "y": 342,
+        "width": 384,
+        "height": 322
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "wger-5d40cca8-ec48-4711-b97c-f744c5afabbf",
@@ -128,7 +184,7 @@
       "guideText": "Fire Hydrant Circles\nPart of: Limber 11\nSource: Joe DeFranco\nPrescription: 10 forward / 10 backward\nType: dynamic",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1956/view/",
@@ -136,7 +192,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed all cells: flat-bench overhead EZ extensions (forehead vs behind-head variants), face-height band pull, farmer implements, skip stance, bar finger-curl grip, fingertip push-up, bent-leg quadruped hydrant, vertical bench leg raise and correctly oriented flexible-bar wrist poses.",
+      "bounds": {
+        "x": 1152,
+        "y": 342,
+        "width": 384,
+        "height": 322
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "db-flat-bench-lying-leg-raise",
@@ -145,14 +209,22 @@
       "guideText": "Lie with your back flat on a bench and your legs extended in front of you off the end.\n\nPlace your hands either under your glutes with your palms down or by the sides holding on to the bench. This will be your starting position.\n\nAs you keep your legs extended, straight as possible with your knees slightly bent but locked raise your legs until they make a 90-degree angle with the floor. Exhale as you perform this portion of the movement and hold the contraction at the top for a second.\n\nNow, as you inhale, slowly lower your legs back down to the starting position.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Flat_Bench_Lying_Leg_Raise.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed all cells: flat-bench overhead EZ extensions (forehead vs behind-head variants), face-height band pull, farmer implements, skip stance, bar finger-curl grip, fingertip push-up, bent-leg quadruped hydrant, vertical bench leg raise and correctly oriented flexible-bar wrist poses.",
+      "bounds": {
+        "x": 0,
+        "y": 664,
+        "width": 384,
+        "height": 360
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "wger-32aae5db-c992-4c18-96a1-35ed03aab9a3",
@@ -161,7 +233,7 @@
       "guideText": "An eccentric exercise for the wrist extensors, done with a flexible resistance bar such as a Theraband FlexBar, and widely used in rehabilitation for lateral epicondylitis (tennis elbow). Hold the bar vertically in the affected hand with the wrist extended. Grasp the top of the bar with the other hand, palm facing away, and twist the top hand to wind up the bar. Bring both arms out in front of you with the bar horizontal, then slowly let the affected wrist untwist the bar over about four seconds while the other hand holds steady. Reset and repeat. The reverse version, twisting in the opposite direction for the wrist flexors, is used for medial epicondylitis (golfer's elbow). Move slowly and stop if the exercise causes sharp pain rather than the expected mild discomfort.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2638/view/",
@@ -169,7 +241,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed all cells: flat-bench overhead EZ extensions (forehead vs behind-head variants), face-height band pull, farmer implements, skip stance, bar finger-curl grip, fingertip push-up, bent-leg quadruped hydrant, vertical bench leg raise and correctly oriented flexible-bar wrist poses.",
+      "bounds": {
+        "x": 384,
+        "y": 664,
+        "width": 384,
+        "height": 360
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "wger-365e9101-f972-4040-9f37-26f72109fac5",
@@ -178,7 +258,7 @@
       "guideText": "Performed with a flexible resistance bar such as a Theraband FlexBar. Rest your forearm on your thigh or a table with the palm facing down and the wrist just past the edge. Hold the bar in that hand, let the wrist drop, then extend the wrist to raise the bar, keeping the forearm still. Lower slowly, taking about three seconds. The resistance comes from twisting or bending the flexible bar, so a thicker or stiffer bar increases the load. Commonly used for wrist and forearm strengthening and for elbow tendon rehabilitation.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2636/view/",
@@ -186,7 +266,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed all cells: flat-bench overhead EZ extensions (forehead vs behind-head variants), face-height band pull, farmer implements, skip stance, bar finger-curl grip, fingertip push-up, bent-leg quadruped hydrant, vertical bench leg raise and correctly oriented flexible-bar wrist poses.",
+      "bounds": {
+        "x": 768,
+        "y": 664,
+        "width": 384,
+        "height": 360
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "wger-2b4dd42b-1b52-46ba-8953-82c34b309ac5",
@@ -195,7 +283,7 @@
       "guideText": "Performed with a flexible resistance bar such as a Theraband FlexBar. Rest your forearm on your thigh or a table with the palm facing up and the wrist just past the edge. Hold the bar in that hand, let the wrist extend back, then curl the wrist up to raise the bar while the forearm stays still. Lower slowly, taking about three seconds. Works the wrist flexors, and is the companion movement to FlexBar wrist extension for balanced forearm strengthening.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2637/view/",
@@ -203,8 +291,17 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed all cells: flat-bench overhead EZ extensions (forehead vs behind-head variants), face-height band pull, farmer implements, skip stance, bar finger-curl grip, fingertip push-up, bent-leg quadruped hydrant, vertical bench leg raise and correctly oriented flexible-bar wrist poses.",
+      "bounds": {
+        "x": 1152,
+        "y": 664,
+        "width": 384,
+        "height": 360
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-121d131c-620c-4479-871b-5f655028a050.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-121d131c-620c-4479-871b-5f655028a050.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-032.png"
 }

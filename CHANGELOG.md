@@ -14,6 +14,10 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   proportions, readable attribution and an image-error fallback. Six focused
   Chromium cases passed. Full generation/review and release remain pending;
   existing live accounts and backend data are unchanged.
+- Corrected clipping on uneven atlas rows using reviewed pixel bounds. Fifteen
+  focused browser cases passed across Chromium, Firefox and WebKit. Archived
+  generated source sheets in the repository for recovery after session loss;
+  unreviewed sheets remain outside runtime mappings.
 
 ### Raouf: 2026-10-14 — More exercise photo sources
 

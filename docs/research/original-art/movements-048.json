@@ -13,7 +13,7 @@
       "guideText": "The 90° leg raise on the bar is a very intense exercise that involves all the abdominal muscles.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/978/view/",
@@ -21,7 +21,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed hanging bent-knee raise, airborne tuck jump, padded-forearm parallel-bar straight-leg raise, half-kneeling running arm drill, palms-floor kneeling wrist stretch, kneeling hip-flexor lunge, barbell kneeling-jump starting setup, straight-leg quadruped kickback, tall-kneeling bar squat setup and contralateral arm/leg Superman hold.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 385,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "db-knee-tuck-jump",
@@ -30,14 +38,22 @@
       "guideText": "Begin in a comfortable standing position with your knees slightly bent. Hold your hands in front of you, palms down with your fingertips together at chest height. This will be your starting position.\n\nRapidly dip down into a quarter squat and immediately explode upward. Drive the knees towards the chest, attempting to touch them to the palms of the hands.\n\nJump as high as you can, raising your knees up, and then ensure a good land be re-extending your legs, absorbing impact through be allowing the knees to rebend.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Knee_Tuck_Jump.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed hanging bent-knee raise, airborne tuck jump, padded-forearm parallel-bar straight-leg raise, half-kneeling running arm drill, palms-floor kneeling wrist stretch, kneeling hip-flexor lunge, barbell kneeling-jump starting setup, straight-leg quadruped kickback, tall-kneeling bar squat setup and contralateral arm/leg Superman hold.",
+      "bounds": {
+        "x": 385,
+        "y": 0,
+        "width": 383,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "db-knee-hip-raise-on-parallel-bars",
@@ -46,14 +62,22 @@
       "guideText": "Position your body on the vertical leg raise bench so that your forearms are resting on the pads next to the torso and holding on to the handles. Your arms will be bent at a 90 degree angle.\n\nThe torso should be straight with the lower back pressed against the pad of the machine and the legs extended pointing towards the floor. This will be your starting position.\n\nNow as you breathe out, lift your legs up as you keep them extended. Continue this movement until your legs are roughly parallel to the floor and then hold the contraction for a second. Tip: Do not use any momentum or swinging as you perform this exercise.\n\nSlowly go back to the starting position as you breathe in.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Knee_Hip_Raise_On_Parallel_Bars.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed hanging bent-knee raise, airborne tuck jump, padded-forearm parallel-bar straight-leg raise, half-kneeling running arm drill, palms-floor kneeling wrist stretch, kneeling hip-flexor lunge, barbell kneeling-jump starting setup, straight-leg quadruped kickback, tall-kneeling bar squat setup and contralateral arm/leg Superman hold.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 383,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "db-kneeling-arm-drill",
@@ -62,14 +86,22 @@
       "guideText": "This drill helps increase arm efficiency during the run. Begin kneeling, left foot in front, right knee down. Apply pressure through the front heel to keep your glutes and hamstrings activated.\n\nBegin by blocking the arms in long, pendulum like swings. Close the arm angle, blocking with the arms as you would when jogging, progressing to a run and finally a sprint.\n\nAs soon as your hands pass the hip, accelerate them forward during the sprinting motion to move them as quickly as possible.\n\nSwitch knees and repeat.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kneeling_Arm_Drill.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed hanging bent-knee raise, airborne tuck jump, padded-forearm parallel-bar straight-leg raise, half-kneeling running arm drill, palms-floor kneeling wrist stretch, kneeling hip-flexor lunge, barbell kneeling-jump starting setup, straight-leg quadruped kickback, tall-kneeling bar squat setup and contralateral arm/leg Superman hold.",
+      "bounds": {
+        "x": 1151,
+        "y": 0,
+        "width": 385,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "db-kneeling-forearm-stretch",
@@ -78,14 +110,22 @@
       "guideText": "Start by kneeling on a mat with your palms flat and your fingers pointing back toward your knees.\n\nSlowly lean back keeping your palms flat on the floor until you feel a stretch in your wrists and forearms. Hold for 20-30 seconds.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kneeling_Forearm_Stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed hanging bent-knee raise, airborne tuck jump, padded-forearm parallel-bar straight-leg raise, half-kneeling running arm drill, palms-floor kneeling wrist stretch, kneeling hip-flexor lunge, barbell kneeling-jump starting setup, straight-leg quadruped kickback, tall-kneeling bar squat setup and contralateral arm/leg Superman hold.",
+      "bounds": {
+        "x": 0,
+        "y": 342,
+        "width": 385,
+        "height": 310
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "db-kneeling-hip-flexor",
@@ -94,14 +134,22 @@
       "guideText": "Kneel on a mat and bring your right knee up so the bottom of your foot is on the floor and extend your left leg out behind you so the top of your foot is on the floor.\n\nShift your weight forward until you feel a stretch in your hip. Hold for 15 seconds, then repeat for your other side.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kneeling_Hip_Flexor.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed hanging bent-knee raise, airborne tuck jump, padded-forearm parallel-bar straight-leg raise, half-kneeling running arm drill, palms-floor kneeling wrist stretch, kneeling hip-flexor lunge, barbell kneeling-jump starting setup, straight-leg quadruped kickback, tall-kneeling bar squat setup and contralateral arm/leg Superman hold.",
+      "bounds": {
+        "x": 385,
+        "y": 342,
+        "width": 383,
+        "height": 310
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "db-kneeling-jump-squat",
@@ -110,14 +158,22 @@
       "guideText": "Begin kneeling on the floor with a barbell racked across the back of your shoulders, or you can use your body weight for this exercise. This can be done inside of a power rack to make unracking easier.\n\nSit back with your hips until your glutes touch your feet, keeping your head and chest up.\n\nExplode up with your hips, generating enough power to land with your feet flat on the floor.\n\nContinue with the squat by driving through your heels and extending the knees to come to a standing position.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kneeling_Jump_Squat.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed hanging bent-knee raise, airborne tuck jump, padded-forearm parallel-bar straight-leg raise, half-kneeling running arm drill, palms-floor kneeling wrist stretch, kneeling hip-flexor lunge, barbell kneeling-jump starting setup, straight-leg quadruped kickback, tall-kneeling bar squat setup and contralateral arm/leg Superman hold.",
+      "bounds": {
+        "x": 768,
+        "y": 342,
+        "width": 383,
+        "height": 310
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "wger-6ddea666-5a57-4ac0-926f-01f8cfdaa4fd",
@@ -126,7 +182,7 @@
       "guideText": "Starting position: Get down on all fours. Steps: 1. Push one foot back until fully extended, concentrating on the gluteus muscles. 2. Stay for one second, then return to the initial position. 3. Repeat, alternating feet.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/990/view/",
@@ -134,7 +190,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed hanging bent-knee raise, airborne tuck jump, padded-forearm parallel-bar straight-leg raise, half-kneeling running arm drill, palms-floor kneeling wrist stretch, kneeling hip-flexor lunge, barbell kneeling-jump starting setup, straight-leg quadruped kickback, tall-kneeling bar squat setup and contralateral arm/leg Superman hold.",
+      "bounds": {
+        "x": 1151,
+        "y": 342,
+        "width": 385,
+        "height": 310
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "db-kneeling-squat",
@@ -143,14 +207,22 @@
       "guideText": "Set the bar to the proper height in a power rack. Kneel behind the bar; it may be beneficial to put a mat down to pad your knees. Slide under the bar, racking it across the back of your shoulders. Your shoulder blades should be retracted and the bar tight across your back. Unrack the weight.\n\nWith your head looking forward, sit back with your butt until you touch your calves.\n\nReverse the motion, returning the torso to an upright position.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kneeling_Squat.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed hanging bent-knee raise, airborne tuck jump, padded-forearm parallel-bar straight-leg raise, half-kneeling running arm drill, palms-floor kneeling wrist stretch, kneeling hip-flexor lunge, barbell kneeling-jump starting setup, straight-leg quadruped kickback, tall-kneeling bar squat setup and contralateral arm/leg Superman hold.",
+      "bounds": {
+        "x": 0,
+        "y": 652,
+        "width": 385,
+        "height": 372
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "wger-00f4a2b1-b1ac-49e6-a657-1d27e46522fd",
@@ -159,7 +231,7 @@
       "guideText": "- Push one foot back until leg fully extended, concentrating on the having the foot high and pushed back as if pulled. - Extend arm forward with focus having the shoulder high up. Unilateral and static hold.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1910/view/",
@@ -167,7 +239,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed hanging bent-knee raise, airborne tuck jump, padded-forearm parallel-bar straight-leg raise, half-kneeling running arm drill, palms-floor kneeling wrist stretch, kneeling hip-flexor lunge, barbell kneeling-jump starting setup, straight-leg quadruped kickback, tall-kneeling bar squat setup and contralateral arm/leg Superman hold.",
+      "bounds": {
+        "x": 385,
+        "y": 652,
+        "width": 383,
+        "height": 372
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "wger-329d2adc-4b2c-4bb2-95d7-f5f6fedb9b96",
@@ -176,7 +256,7 @@
       "guideText": "This exercise is somewhat similar to a cable curl and a cable crossover. But instead of a chest/biceps exercise, this exercise targets the brachialis muscle, responsible for that broad arm when viewed from a front view. During the exercise, maintain a pronated forearm position with starting position of approx. 45 degree pronated. Start with slightly bend elbows and alternately curl until your hands (your thumb first) meet your upper middle chest (similar to how Kong hits his chest, thus the name of this exercise).",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1511/view/",
@@ -184,7 +264,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: Kong curl needs alternating oblique pronated curl to upper mid-chest; image shows bilateral dumbbell high pull.",
+      "bounds": {
+        "x": 768,
+        "y": 652,
+        "width": 383,
+        "height": 372
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     },
     {
       "id": "wger-5edf07a8-cca2-4199-96a5-9988369be985",
@@ -193,7 +281,7 @@
       "guideText": "Diese Maschine neben Beinheben. Kopf nach vorne, mit dem gesicht zum boden und das Gewicht aufheben",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1322/view/",
@@ -201,8 +289,17 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: German source identifies an unspecified head-down machine; the invented prone-bench kettlebell setup cannot be validated.",
+      "bounds": {
+        "x": 1151,
+        "y": 652,
+        "width": 385,
+        "height": 372
+      },
+      "cropReviewNote": "Inspected generated sheet and detected actual panel separator pixels."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-ca9fe13c-e9d6-43da-85b7-fab6af2ceebf.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-ca9fe13c-e9d6-43da-85b7-fab6af2ceebf.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-048.png"
 }

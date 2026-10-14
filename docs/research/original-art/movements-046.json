@@ -13,14 +13,22 @@
       "guideText": "Place one kettlebell between your legs and take a wider than shoulder width stance. Bend over by pushing your butt out and keeping your back flat.\n\nPick up a kettlebell and pass it to your other hand between your legs. The receiving hand should reach from behind the legs. Go back and forth for several repetitions.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Figure_8.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed under-leg figure-eight pass, inverted-horns halo setup and overhead extension, single-bell hang-clean front rack, same-side loaded single-leg hinge, horns overhead triceps extension, between-leg pass, rotated extended-arm pirate swing, pistol squat, alternating two-bell seesaw press and wide-stance sumo bell lift.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 385,
+        "height": 333
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "db-kettlebell-halo",
@@ -29,14 +37,22 @@
       "guideText": "Stand tall with your feet hip-width apart. Hold a kettlebell upside down by the horns, with the bell above your hands and close to your chest. Brace your abdominals and squeeze your glutes so your ribcage stays down. This is your starting position.\n\nKeeping your elbows close to your head, move the kettlebell up past one ear and around behind your head.\n\nContinue the circle past the opposite ear and back down to the starting position in front of your chest, letting the bell pass close to your body throughout.\n\nComplete the prescribed number of circles in one direction, then repeat the same number in the opposite direction.\n\nMove slowly and keep your head, hips and lower back still. If your lower back arches or the bell drifts far from your head, use a lighter weight.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Halo.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed under-leg figure-eight pass, inverted-horns halo setup and overhead extension, single-bell hang-clean front rack, same-side loaded single-leg hinge, horns overhead triceps extension, between-leg pass, rotated extended-arm pirate swing, pistol squat, alternating two-bell seesaw press and wide-stance sumo bell lift.",
+      "bounds": {
+        "x": 385,
+        "y": 0,
+        "width": 385,
+        "height": 333
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "db-kettlebell-halo-with-overhead-extension",
@@ -45,14 +61,22 @@
       "guideText": "Stand tall with your feet hip-width apart. Hold a kettlebell upside down by the horns, with the bell above your hands and close to your chest. Brace your abdominals and squeeze your glutes so your ribcage stays down. This is your starting position.\n\nKeeping your elbows close to your head, move the kettlebell up past one ear and around until it sits behind your head. Pause here.\n\nFrom this position, extend your elbows to press the kettlebell up and overhead until your arms are straight, keeping your upper arms alongside your head.\n\nBend your elbows to lower the kettlebell back to the pause position behind your head, under control.\n\nContinue the circle past the opposite ear and back down to the starting position in front of your chest to complete one repetition.\n\nAlternate the direction of the circle on each repetition. Keep your head, hips and lower back still throughout; if your lower back arches or you cannot reach the overhead position without leaning back, use a lighter weight or perform the halo and the extension as separate exercises.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Halo_With_Overhead_Extension.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed under-leg figure-eight pass, inverted-horns halo setup and overhead extension, single-bell hang-clean front rack, same-side loaded single-leg hinge, horns overhead triceps extension, between-leg pass, rotated extended-arm pirate swing, pistol squat, alternating two-bell seesaw press and wide-stance sumo bell lift.",
+      "bounds": {
+        "x": 770,
+        "y": 0,
+        "width": 384,
+        "height": 333
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "db-kettlebell-hang-clean",
@@ -61,14 +85,22 @@
       "guideText": "Place kettlebell between your feet. To get in the starting position, push your butt back and look straight ahead.\n\nClean kettlebell to your shoulder. Clean the kettlebell to your shoulders by extending through the legs and hips as you raise the kettlebell towards your shoulder. The wrist should rotate as you do so.\n\nLower kettlebell to a hanging position between your legs while keeping the hamstrings loaded. Keep your head up at all times.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Hang_Clean.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed under-leg figure-eight pass, inverted-horns halo setup and overhead extension, single-bell hang-clean front rack, same-side loaded single-leg hinge, horns overhead triceps extension, between-leg pass, rotated extended-arm pirate swing, pistol squat, alternating two-bell seesaw press and wide-stance sumo bell lift.",
+      "bounds": {
+        "x": 1154,
+        "y": 0,
+        "width": 382,
+        "height": 333
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "db-kettlebell-one-legged-deadlift",
@@ -77,14 +109,22 @@
       "guideText": "Hold a kettlebell by the handle in one hand. Stand on one leg, on the same side that you hold the kettlebell.\n\nKeeping that knee slightly bent, perform a stiff legged deadlift by bending at the hip, extending your free leg behind you for balance.\n\nContinue lowering the kettlebell until you are parallel to the ground, and then return to the upright position.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_One-Legged_Deadlift.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed under-leg figure-eight pass, inverted-horns halo setup and overhead extension, single-bell hang-clean front rack, same-side loaded single-leg hinge, horns overhead triceps extension, between-leg pass, rotated extended-arm pirate swing, pistol squat, alternating two-bell seesaw press and wide-stance sumo bell lift.",
+      "bounds": {
+        "x": 0,
+        "y": 333,
+        "width": 385,
+        "height": 331
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "db-kettlebell-overhead-triceps-extension",
@@ -93,14 +133,22 @@
       "guideText": "Stand with your feet hip-width apart, holding a kettlebell by the horns with both hands. Press it overhead until your arms are extended, with the bell hanging behind your hands.\n\nBrace your abdominals and keep your upper arms vertical and close to your head. This is your starting position.\n\nBend at the elbows to lower the kettlebell behind your head, going as far as your shoulder mobility allows without your elbows flaring outward.\n\nExtend your elbows to press the kettlebell back to the starting position, keeping your upper arms still throughout.\n\nKeep your ribcage down and avoid arching your lower back as you extend.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Overhead_Triceps_Extension.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed under-leg figure-eight pass, inverted-horns halo setup and overhead extension, single-bell hang-clean front rack, same-side loaded single-leg hinge, horns overhead triceps extension, between-leg pass, rotated extended-arm pirate swing, pistol squat, alternating two-bell seesaw press and wide-stance sumo bell lift.",
+      "bounds": {
+        "x": 385,
+        "y": 333,
+        "width": 385,
+        "height": 331
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "db-kettlebell-pass-between-the-legs",
@@ -109,14 +157,22 @@
       "guideText": "Place one kettlebell between your legs and take a comfortable stance. Bend over by pushing your butt out and keeping your back flat.\n\nPick up a kettlebell and pass it to your other hand between your legs, in the fashion of a \"W\". Go back and forth for several repetitions.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Pass_Between_The_Legs.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed under-leg figure-eight pass, inverted-horns halo setup and overhead extension, single-bell hang-clean front rack, same-side loaded single-leg hinge, horns overhead triceps extension, between-leg pass, rotated extended-arm pirate swing, pistol squat, alternating two-bell seesaw press and wide-stance sumo bell lift.",
+      "bounds": {
+        "x": 770,
+        "y": 333,
+        "width": 384,
+        "height": 331
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "db-kettlebell-pirate-ships",
@@ -125,14 +181,22 @@
       "guideText": "With a wide stance, hold a kettlebell with both hands. Allow it to hang at waist level with your arms extended. This will be your starting position.\n\nInitiate the movement by turning to one side, swinging the kettlebell to head height. Briefly pause at the top of the motion.\n\nAllow the bell to drop as you rotate to the opposite side, again raising the kettlebell to head height.\n\nRepeat for the desired amount of repetitions.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Pirate_Ships.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed under-leg figure-eight pass, inverted-horns halo setup and overhead extension, single-bell hang-clean front rack, same-side loaded single-leg hinge, horns overhead triceps extension, between-leg pass, rotated extended-arm pirate swing, pistol squat, alternating two-bell seesaw press and wide-stance sumo bell lift.",
+      "bounds": {
+        "x": 1154,
+        "y": 333,
+        "width": 382,
+        "height": 331
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "db-kettlebell-pistol-squat",
@@ -141,14 +205,22 @@
       "guideText": "Pick up a kettlebell with two hands and hold it by the horns. Hold one leg off of the floor and squat down on the other.\n\nSquat down by flexing the knee and sitting back with the hips, holding the kettlebell up in front of you.\n\nHold the bottom position for a second and then reverse the motion, driving through the heel and keeping your head and chest up.\n\nLower yourself again and repeat.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Pistol_Squat.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed under-leg figure-eight pass, inverted-horns halo setup and overhead extension, single-bell hang-clean front rack, same-side loaded single-leg hinge, horns overhead triceps extension, between-leg pass, rotated extended-arm pirate swing, pistol squat, alternating two-bell seesaw press and wide-stance sumo bell lift.",
+      "bounds": {
+        "x": 0,
+        "y": 664,
+        "width": 385,
+        "height": 360
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "db-kettlebell-seated-press",
@@ -157,14 +229,22 @@
       "guideText": "Sit on the floor and spread your legs out comfortably.\n\nClean one kettlebell to your shoulder.\n\nPress the kettlebell up and out until it is locked out overhead. Return to the starting position.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Seated_Press.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: seated kettlebell press requires one bell; picture shows two.",
+      "bounds": {
+        "x": 385,
+        "y": 664,
+        "width": 385,
+        "height": 360
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "db-kettlebell-seesaw-press",
@@ -173,14 +253,22 @@
       "guideText": "Clean two kettlebells two your shoulders.\n\nPress one kettlebell.\n\nLower the kettlebell and immediately press the other kettlebell. Make sure to do the same amount of reps on both sides.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Seesaw_Press.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed under-leg figure-eight pass, inverted-horns halo setup and overhead extension, single-bell hang-clean front rack, same-side loaded single-leg hinge, horns overhead triceps extension, between-leg pass, rotated extended-arm pirate swing, pistol squat, alternating two-bell seesaw press and wide-stance sumo bell lift.",
+      "bounds": {
+        "x": 770,
+        "y": 664,
+        "width": 384,
+        "height": 360
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     },
     {
       "id": "wger-5cbaa028-114d-4a15-9a95-70d9b3146f30",
@@ -189,7 +277,7 @@
       "guideText": "Place your feet wider than shoulder-width apart, pointing your toes outward. Keep your back straight, shoulders back, and chest up. The knees must follow the same direction as the toes and not move forward. When going up, it is advisable to contract your glutes to maximize the effectiveness of the exercise.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1612/view/",
@@ -197,8 +285,17 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed under-leg figure-eight pass, inverted-horns halo setup and overhead extension, single-bell hang-clean front rack, same-side loaded single-leg hinge, horns overhead triceps extension, between-leg pass, rotated extended-arm pirate swing, pistol squat, alternating two-bell seesaw press and wide-stance sumo bell lift.",
+      "bounds": {
+        "x": 1154,
+        "y": 664,
+        "width": 382,
+        "height": 360
+      },
+      "cropReviewNote": "Inspected sheet and actual separator pixels; bounds retain the intended panel."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-70bbb032-86bd-4f0b-8944-ed60e7cad854.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-70bbb032-86bd-4f0b-8944-ed60e7cad854.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-046.png"
 }

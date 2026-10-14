@@ -13,14 +13,22 @@
       "guideText": "Hold the dumbbell towards the side farther from you so that you have more weight on the side closest to you. (This can be done for a good effect on all bicep dumbbell exercises). Now do a normal incline dumbbell curl, but keep your wrists as far back as possible so as to neutralize any stress that is placed on them.\n\nSit on an incline bench that is angled at 45-degrees while holding a dumbbell on each hand.\n\nLet your arms hang down on your sides, with the elbows in, and turn the palms of your hands forward with the thumbs pointing away from the body. Tip: You will keep this hand position throughout the movement as there should not be any twisting of the hands as they come up. This will be your starting position.\n\nCurl up the two dumbbells at the same time until your biceps are fully contracted and exhale. Tip: Do not swing the arms or use momentum. Keep a controlled motion at all times. Hold the contracted position for a second at the top.\n\nAs you inhale, slowly go back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Flexor_Incline_Dumbbell_Curls.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: flexor incline curl requires approximately 45-degree support, off-centre dumbbell grips and extended wrists; illustration does not establish those distinctions.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 385,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "wger-cf79d9fb-ffce-4648-a64f-27e4274e4c20",
@@ -29,7 +37,7 @@
       "guideText": "Starting position: Sit with your arms behind you, supporting your back.Your fingers should point forward.Your knees should be bent, feet together. Steps: 1. Raise your hips off the ground, straightening your arms. 2. Bend your elbows, bringing your hips down. 3. Straighten your arms, returning to the previous position. 4. Repeat steps 2 and 3. Notes: The exercise's difficulty depends on how high you bring your hips.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1000/view/",
@@ -37,7 +45,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed apparatus and supports: floor dips, sliding-heel bridge, barbell floor press with/without free-hanging chains, floor EZ extension, prone-bench alternating leg flutter, glute roller, unshod arch roller and straight-arm circle starting pose match guides.",
+      "bounds": {
+        "x": 385,
+        "y": 0,
+        "width": 383,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "wger-d6b2ac1d-4363-45e9-8fdb-9fba0a47b27d",
@@ -46,7 +62,7 @@
       "guideText": "Lie on back with heels on floor gliders or towels. Lift hips into a bridge, then slide heels toward glutes while keeping hips elevated. Slowly return to the starting position while maintaining the hip bridge.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1833/view/",
@@ -54,7 +70,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed apparatus and supports: floor dips, sliding-heel bridge, barbell floor press with/without free-hanging chains, floor EZ extension, prone-bench alternating leg flutter, glute roller, unshod arch roller and straight-arm circle starting pose match guides.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 383,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "db-floor-press",
@@ -63,14 +87,22 @@
       "guideText": "Adjust the j-hooks so they are at the appropriate height to rack the bar. Begin lying on the floor with your head near the end of a power rack. Keeping your shoulder blades pulled together; pull the bar off of the hooks.\n\nLower the bar towards the bottom of your chest or upper stomach, squeezing the bar and attempting to pull it apart as you do so. Ensure that you tuck your elbows throughout the movement. Lower the bar until your upper arm contacts the ground and pause, preventing any slamming or bouncing of the weight.\n\nPress the bar back up as fast as you can, keeping the bar, your wrists, and elbows in line as you do so.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Floor_Press.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed apparatus and supports: floor dips, sliding-heel bridge, barbell floor press with/without free-hanging chains, floor EZ extension, prone-bench alternating leg flutter, glute roller, unshod arch roller and straight-arm circle starting pose match guides.",
+      "bounds": {
+        "x": 1151,
+        "y": 0,
+        "width": 385,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "db-floor-press-with-chains",
@@ -79,14 +111,22 @@
       "guideText": "Adjust the j-hooks so they are at the appropriate height to rack the bar. For this exercise, drape the chains directly over the end of the bar, trying to keep the ends away from the plates.\n\nBegin lying on the floor with your head near the end of a power rack. Keeping your shoulder blades pulled together, pull the bar off of the hooks.\n\nLower the bar towards the bottom of your chest or upper stomach, squeezing the bar and attempting to pull it apart as you do so. Ensure that you tuck your elbows throughout the movement. Lower the bar until your upper arm contacts the ground and pause, preventing any slamming or bouncing of the weight.\n\nPress the bar back up as fast as you can, keeping the bar, your wrists, and elbows in line as you do so.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Floor_Press_with_Chains.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed apparatus and supports: floor dips, sliding-heel bridge, barbell floor press with/without free-hanging chains, floor EZ extension, prone-bench alternating leg flutter, glute roller, unshod arch roller and straight-arm circle starting pose match guides.",
+      "bounds": {
+        "x": 0,
+        "y": 341,
+        "width": 385,
+        "height": 327
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "wger-6b68043c-a900-41f4-89fb-ea5c8193f216",
@@ -95,7 +135,7 @@
       "guideText": "Allowing you to safely load more weight than a regular skull crusher, lie on the floor and rest the weight on the floor in between each repetition.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1468/view/",
@@ -103,7 +143,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed apparatus and supports: floor dips, sliding-heel bridge, barbell floor press with/without free-hanging chains, floor EZ extension, prone-bench alternating leg flutter, glute roller, unshod arch roller and straight-arm circle starting pose match guides.",
+      "bounds": {
+        "x": 385,
+        "y": 341,
+        "width": 383,
+        "height": 327
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "db-flutter-kicks",
@@ -112,14 +160,22 @@
       "guideText": "On a flat bench lie facedown with the hips on the edge of the bench, the legs straight with toes high off the floor and with the arms on top of the bench holding on to the front edge.\n\nSqueeze your glutes and hamstrings and straighten the legs until they are level with the hips. This will be your starting position.\n\nStart the movement by lifting the left leg higher than the right leg.\n\nThen lower the left leg as you lift the right leg.\n\nContinue alternating in this manner (as though you are doing a flutter kick in water) until you have done the recommended amount of repetitions for each leg. Make sure that you keep a controlled movement at all times. Tip: You will breathe normally as you perform this movement.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Flutter_Kicks.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed apparatus and supports: floor dips, sliding-heel bridge, barbell floor press with/without free-hanging chains, floor EZ extension, prone-bench alternating leg flutter, glute roller, unshod arch roller and straight-arm circle starting pose match guides.",
+      "bounds": {
+        "x": 768,
+        "y": 341,
+        "width": 383,
+        "height": 327
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "wger-8a9fff1e-0908-4706-8baa-7f400e2dac19",
@@ -128,7 +184,7 @@
       "guideText": "Use the foam roller slowly in the tibial anterioris. This is english, please",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1856/view/",
@@ -136,7 +192,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: anterior tibialis roller image shows seated posterior calf rolling instead of anterior shin contact.",
+      "bounds": {
+        "x": 1151,
+        "y": 341,
+        "width": 385,
+        "height": 327
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "wger-164a31e9-ce70-4339-aee5-4ea7a3bdd246",
@@ -145,7 +209,7 @@
       "guideText": "Slide on the Foam Roller over your gluteus. Is english please",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1859/view/",
@@ -153,7 +217,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed apparatus and supports: floor dips, sliding-heel bridge, barbell floor press with/without free-hanging chains, floor EZ extension, prone-bench alternating leg flutter, glute roller, unshod arch roller and straight-arm circle starting pose match guides.",
+      "bounds": {
+        "x": 0,
+        "y": 668,
+        "width": 385,
+        "height": 356
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "db-foot-smr",
@@ -162,14 +234,22 @@
       "guideText": "This exercise stretches the fascia of the muscles in the feet. Start off seated with your shoes removed. Using a foot roller or a similar object, such as a small section of pvc pipe, place your foot against the roller across the arch of your foot. This will be your starting position.\n\nPress down firmly, rolling across the arch of your foot. Hold for 10-30 seconds, and then switch feet.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Foot-SMR.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed apparatus and supports: floor dips, sliding-heel bridge, barbell floor press with/without free-hanging chains, floor EZ extension, prone-bench alternating leg flutter, glute roller, unshod arch roller and straight-arm circle starting pose match guides.",
+      "bounds": {
+        "x": 385,
+        "y": 668,
+        "width": 383,
+        "height": 356
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "wger-17947bd2-db2d-4ba6-998c-1bbf31cf228a",
@@ -178,7 +258,7 @@
       "guideText": "* Muskulatur anspannen * Kein Schwung holen * Kontrollierte Bewegung * Langsame Bewegung",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1333/view/",
@@ -186,7 +266,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: underhand forearm curl shows pronated palms-down dumbbell grip.",
+      "bounds": {
+        "x": 768,
+        "y": 668,
+        "width": 383,
+        "height": 356
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     },
     {
       "id": "wger-9d9c4c9f-045f-4af5-adf2-8bb07c3516dc",
@@ -195,7 +283,7 @@
       "guideText": "Starting position: Stand tall with your back straight. Steps: 1. Keeping your arms straight, bring them in front of you, move them down, behind your back, then over your head, and back to the initial position. 2. Keep circling your arms as described in step 1.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/994/view/",
@@ -203,8 +291,17 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed apparatus and supports: floor dips, sliding-heel bridge, barbell floor press with/without free-hanging chains, floor EZ extension, prone-bench alternating leg flutter, glute roller, unshod arch roller and straight-arm circle starting pose match guides.",
+      "bounds": {
+        "x": 1151,
+        "y": 668,
+        "width": 385,
+        "height": 356
+      },
+      "cropReviewNote": "Inspected full generated sheet and visible separator lines; these pixel bounds preserve each actual panel."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-a00141de-9eb0-4c43-aeac-ca1f704d04b2.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-a00141de-9eb0-4c43-aeac-ca1f704d04b2.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-033.png"
 }

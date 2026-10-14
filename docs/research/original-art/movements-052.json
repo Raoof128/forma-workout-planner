@@ -13,7 +13,7 @@
       "guideText": "Limber 11\nSource: Joe DeFranco\n\n1. Foam Roll IT Band [soft_tissue] - 10-15 passes\n2. Foam Roll Adductors [soft_tissue] - 10-15 passes\n3. SMR Glutes (lax ball) [soft_tissue] - 30 sec-2 min\n4. Bent-knee Iron Cross [dynamic] - 5-10 reps each side\n5. Roll-overs into V-sits [dynamic] - 10 reps\n6. Rocking Frog Stretch [dynamic] - 10 reps\n7. Fire Hydrant Circles [dynamic] - 10 forward / 10 backward\n8. Mountain Climbers [dynamic] - 10 reps each leg\n9. Cossack Squats [dynamic] - 5-10 reps each side\n10. Seated Piriformis Stretch [isometric] - 20-30 sec each side\n11. Rear-foot-elevated Hip Flexor Stretch [dynamic + 3s hold] - 5-10 reps each side",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1949/view/",
@@ -21,7 +21,16 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed representative IT-band foam-roll step of Limber 11, one-hand sprint start, wall-supported knee drive, two-box depth-jump airborne transition, neutral-handle strongman log lockout, rope hand-over-hand lean with feet on fixed bar, taut-band overhead long-lunge pulse setup, heel-grasping kneeling ceiling stretch and unsupported-arm prone lower-back extension.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels.",
+      "caption": "Limber 11 · Example: IT-band foam rolling; follow the guide for all eleven movements."
     },
     {
       "id": "db-linear-3-part-start-technique",
@@ -30,14 +39,22 @@
       "guideText": "This drill helps you accelerate as quickly as possible into a sprint from a dead stop. It helps to use a line to start from. Begin with two feet on the line. Place your left foot with the toe next to your right ankle. Place your right foot 4-6 inches behind the left.\n\nPlace your right hand onto the line, and thing bring your nose close to your left knee.\n\nSquat down as you lean foward, your head being lower than your hips and your weight loaded onto the left leg. This will be your starting position.\n\nTake your left hand up so that it is parallel to the ground, pointing behind you, and explode out when ready.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Linear_3-Part_Start_Technique.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed representative IT-band foam-roll step of Limber 11, one-hand sprint start, wall-supported knee drive, two-box depth-jump airborne transition, neutral-handle strongman log lockout, rope hand-over-hand lean with feet on fixed bar, taut-band overhead long-lunge pulse setup, heel-grasping kneeling ceiling stretch and unsupported-arm prone lower-back extension.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-linear-acceleration-wall-drill",
@@ -46,14 +63,22 @@
       "guideText": "Lean at around 45 degrees against a wall. Your feet should be together, glutes contracted.\n\nBegin by lifting your right knee quickly, pausing, and then driving it straight down into the ground.\n\nSwitch legs, raising the opposite knee, and then attacking the ground straight down.\n\nRepeat once more with your right leg, and as soon as the right foot strikes the ground hammer them out rapidly, alternating left and right as fast as you can.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Linear_Acceleration_Wall_Drill.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed representative IT-band foam-roll step of Limber 11, one-hand sprint start, wall-supported knee drive, two-box depth-jump airborne transition, neutral-handle strongman log lockout, rope hand-over-hand lean with feet on fixed bar, taut-band overhead long-lunge pulse setup, heel-grasping kneeling ceiling stretch and unsupported-arm prone lower-back extension.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 385,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-linear-depth-jump",
@@ -62,14 +87,22 @@
       "guideText": "You will need two boxes or benches spaced a few feet away from each other. Begin by standing on one box facing towards the other platform.\n\nTo initiate the movement, gently drop down to the ground between your platforms, allowing the knees and hips to flex.\n\nReverse the motion by exploding, extending through the hips, knees, and ankles to jump onto the other platform.\n\nLand softly, asborbing the impact through the legs.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Linear_Depth_Jump.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed representative IT-band foam-roll step of Limber 11, one-hand sprint start, wall-supported knee drive, two-box depth-jump airborne transition, neutral-handle strongman log lockout, rope hand-over-hand lean with feet on fixed bar, taut-band overhead long-lunge pulse setup, heel-grasping kneeling ceiling stretch and unsupported-arm prone lower-back extension.",
+      "bounds": {
+        "x": 1153,
+        "y": 0,
+        "width": 383,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-log-lift",
@@ -78,14 +111,22 @@
       "guideText": "Begin standing with the log in front of you. Grasp the handles, and begin to clean the log. As you are bent over to start the clean, attempt to get the log as high as possible, pulling it into your chest. Extend through the hips and knees to bring it up to complete the clean.\n\nPush your head back and look up, creating a shelf on your chest to rest the log. Begin the press by dipping, flexing slightly through the knees and reversing the motion. This push press will generate momentum to start the log moving vertically. Continue by extending through the elbows to press the log above your head. There are no strict rules on form, so use whatever techniques you are most efficient with. As the log is pressed, ensure that you push your head through on each repetition, looking forward.\n\nRepeat as many times as possible. Attempt to control the descent of the log as it is returned to the ground.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Log_Lift.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed representative IT-band foam-roll step of Limber 11, one-hand sprint start, wall-supported knee drive, two-box depth-jump airborne transition, neutral-handle strongman log lockout, rope hand-over-hand lean with feet on fixed bar, taut-band overhead long-lunge pulse setup, heel-grasping kneeling ceiling stretch and unsupported-arm prone lower-back extension.",
+      "bounds": {
+        "x": 0,
+        "y": 341,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-london-bridges",
@@ -94,14 +135,22 @@
       "guideText": "Attach a climbing rope to a high beam or cross member. Below it, ensure that the smith machine bar is locked in place with the safeties and cannot move. Alternatively, a secure box could also be utilized.\n\nStand on the bar, using the rope to balance yourself. This will be your starting position.\n\nKeeping your body straight, lean back and lower your body by slowly going hand over hand with the rope. Continue until you are perpendicular to the ground.\n\nKeeping your body straight, reverse the motion, going hand over hand back to the starting position.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/London_Bridges.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed representative IT-band foam-roll step of Limber 11, one-hand sprint start, wall-supported knee drive, two-box depth-jump airborne transition, neutral-handle strongman log lockout, rope hand-over-hand lean with feet on fixed bar, taut-band overhead long-lunge pulse setup, heel-grasping kneeling ceiling stretch and unsupported-arm prone lower-back extension.",
+      "bounds": {
+        "x": 384,
+        "y": 341,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-692d294d-925d-4a4e-8059-02a1a0ffdae4",
@@ -110,7 +159,7 @@
       "guideText": "1. Hold the resistance band (or any other rope-like object, the elasticity is not necessary) above your head, between your hands, with your arms straight. Pull it taught to engage your lats.\n2. Step forwards into a lunge, dropping until your knee is almost touching the floor.\n3. Slowly and controlledly pulse your body up and down by about an inch. Repeat for required reps.\n4. Repeat for other leg.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2526/view/",
@@ -118,7 +167,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed representative IT-band foam-roll step of Limber 11, one-hand sprint start, wall-supported knee drive, two-box depth-jump airborne transition, neutral-handle strongman log lockout, rope hand-over-hand lean with feet on fixed bar, taut-band overhead long-lunge pulse setup, heel-grasping kneeling ceiling stretch and unsupported-arm prone lower-back extension.",
+      "bounds": {
+        "x": 768,
+        "y": 341,
+        "width": 385,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-a7e6c20a-6ddc-4401-9935-ace2d02e3995",
@@ -127,7 +184,7 @@
       "guideText": "Sit down, put your feet on the supporting points and grab the bar with a wide grip. Pull the weight with a rapid movement towards your belly button, not upper. Keep your arms and elbows during the movement close to your body. Your shoulders are pulled together. Let the weight slowly down till your arms are completely stretched.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/394/view/",
@@ -135,7 +192,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: wide-grip low row drawn with narrow neutral handle.",
+      "bounds": {
+        "x": 1153,
+        "y": 341,
+        "width": 383,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-77c98954-b50d-46f0-9912-3981f856d5a6",
@@ -144,7 +209,7 @@
       "guideText": "The exercise is the same as the regular long pulley, but with a narrow grip: Sit down, put your feet on the supporting points and grab the bar with a wide grip. Pull the weight with a rapid movement towards your belly button, not upper. Keep your arms and elbows during the movement close to your body. Your shoulders are pulled together. Let the weight slowly down till your arms are completely stretched.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/395/view/",
@@ -152,7 +217,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: narrow-row guide first says narrow then asks wide grip; resolve contradictory instruction before approval.",
+      "bounds": {
+        "x": 0,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-looking-at-ceiling",
@@ -161,14 +234,22 @@
       "guideText": "Kneel on the floor, holding your heels with both hands.\n\nLift your buttocks up and forward while bringing your head back to look up at the ceiling, to give an arch in your back.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Looking_At_Ceiling.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed representative IT-band foam-roll step of Limber 11, one-hand sprint start, wall-supported knee drive, two-box depth-jump airborne transition, neutral-handle strongman log lockout, rope hand-over-hand lean with feet on fixed bar, taut-band overhead long-lunge pulse setup, heel-grasping kneeling ceiling stretch and unsupported-arm prone lower-back extension.",
+      "bounds": {
+        "x": 384,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-183e7279-f052-4c70-8381-bbbda3bb9afe",
@@ -177,7 +258,7 @@
       "guideText": "Unrack the bar and set your stance wide, beyond your hips. Push your hips back and sit down to a box that takes you below parallel. Sit completely down, do not touch and go. Then explosively stand up. Stay tight in your upper back and torso throughout the movement.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/397/view/",
@@ -185,7 +266,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: low-box squat below parallel drawn on high box with hips above knees.",
+      "bounds": {
+        "x": 768,
+        "y": 683,
+        "width": 385,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-lower-back-curl",
@@ -194,15 +283,24 @@
       "guideText": "Lie on your stomach with your arms out to your sides. This will be your starting position.\n\nUsing your lower back muscles, extend your spine lifting your chest off of the ground. Do not use your arms to push yourself up. Keep your head up during the movement. Repeat for 10-20 repetitions.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lower_Back_Curl.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed representative IT-band foam-roll step of Limber 11, one-hand sprint start, wall-supported knee drive, two-box depth-jump airborne transition, neutral-handle strongman log lockout, rope hand-over-hand lean with feet on fixed bar, taut-band overhead long-lunge pulse setup, heel-grasping kneeling ceiling stretch and unsupported-arm prone lower-back extension.",
+      "bounds": {
+        "x": 1153,
+        "y": 683,
+        "width": 383,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-ea26a13f-c6b4-424b-bb40-1fedb574c0e2.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-ea26a13f-c6b4-424b-bb40-1fedb574c0e2.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-052.png"
 }

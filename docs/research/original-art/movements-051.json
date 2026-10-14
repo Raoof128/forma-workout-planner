@@ -13,14 +13,22 @@
       "guideText": "While standing up straight with both feet next to each other at around shoulder width, grab a sturdy surface such as the sides of a squat rack or the top of a chair to brace yourself and keep balance.\n\nWith or without an ankle weight, lift one leg behind you as if performing a leg curl but standing up while keeping the other leg straight. Breathe out as you perform this movement.\n\nSlowly bring the raised leg back to the floor as you breathe in.\n\nRepeat for the recommended amount of repetitions.\n\nRepeat the movement with the opposite leg.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Leg_Lift.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supported standing leg curl, narrow and wide sled foot placement, supine bent-knee pull-in, hanging straight-leg raise example, 45-degree flat-bench leg raise, forearm-supported captain-chair knee raise, supported leg swing, supine paired-leg circle starting position, working-side leg-crossed kettlebell floor press and shoulder-blade-only levitation crunch.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 383,
+        "height": 343
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-5f0b757c-0d6a-430b-9d5e-3bfba202878e",
@@ -29,7 +37,7 @@
       "guideText": "The exercise is very similar to the wide leg press: Sit on the machine and put your feet on the platform so far apart that you could just put another foot in between them. The feet are parallel and point up. Lower the weight so much, that the knees form a right angle. Push immediately the platform up again, without any pause. When in the lower position, the knees point a bit outwards and the movement should be always fluid.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/373/view/",
@@ -37,7 +45,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supported standing leg curl, narrow and wide sled foot placement, supine bent-knee pull-in, hanging straight-leg raise example, 45-degree flat-bench leg raise, forearm-supported captain-chair knee raise, supported leg swing, supine paired-leg circle starting position, working-side leg-crossed kettlebell floor press and shoulder-blade-only levitation crunch.",
+      "bounds": {
+        "x": 383,
+        "y": 0,
+        "width": 385,
+        "height": 343
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-661287d4-d1dc-485c-896b-73f90b000536",
@@ -46,7 +62,7 @@
       "guideText": "Sit on the machine and put your feet on the platform, a bit more than shoulder wide. The feet are turned outwards by a few degrees. Lower the weight so much, that the knees form a right angle. Push immediately the platform up again, without any pause. When in the lower position, the knees point a bit outwards and the movement should be always fluid.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/374/view/",
@@ -54,7 +70,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supported standing leg curl, narrow and wide sled foot placement, supine bent-knee pull-in, hanging straight-leg raise example, 45-degree flat-bench leg raise, forearm-supported captain-chair knee raise, supported leg swing, supine paired-leg circle starting position, working-side leg-crossed kettlebell floor press and shoulder-blade-only levitation crunch.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 386,
+        "height": 343
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-leg-pull-in",
@@ -63,14 +87,22 @@
       "guideText": "Lie on an exercise mat with your legs extended and your hands either palms facing down next to you or under your glutes. Tip: My preference is with the hands next to me. This will be your starting position.\n\nBend your knees and pull your upper thighs into your midsection as you breathe out. Continue the motion until your knees are around chest level. Contract your abs as you execute this movement and hold for a second at the top. Tip: As you perform the motion, the lower legs (calves) should always remain parallel to the floor.\n\nReturn to the starting position as you inhale.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Leg_Pull-In.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supported standing leg curl, narrow and wide sled foot placement, supine bent-knee pull-in, hanging straight-leg raise example, 45-degree flat-bench leg raise, forearm-supported captain-chair knee raise, supported leg swing, supine paired-leg circle starting position, working-side leg-crossed kettlebell floor press and shoulder-blade-only levitation crunch.",
+      "bounds": {
+        "x": 1154,
+        "y": 0,
+        "width": 382,
+        "height": 343
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-c2078aac-e4e2-4103-a845-6252a3eb795e",
@@ -79,7 +111,7 @@
       "guideText": "The leg raise is a strength training exercise which targets the iliopsoas (the anterior hip flexors). Because the abdominal muscles are used isometrically to stabilize the body during the motion, leg raises are also often used to strengthen the rectus abdominis muscle and the internal and external oblique muscles.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/376/view/",
@@ -87,7 +119,15 @@
         "license": "CC0",
         "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supported standing leg curl, narrow and wide sled foot placement, supine bent-knee pull-in, hanging straight-leg raise example, 45-degree flat-bench leg raise, forearm-supported captain-chair knee raise, supported leg swing, supine paired-leg circle starting position, working-side leg-crossed kettlebell floor press and shoulder-blade-only levitation crunch.",
+      "bounds": {
+        "x": 0,
+        "y": 343,
+        "width": 383,
+        "height": 327
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-9e34bc01-9cec-4ee2-a9bb-9c937a471c24",
@@ -96,7 +136,7 @@
       "guideText": "Lay down on a bench and hold onto the recliner with your hands to keep you stable. Hold your legs straight and lift them till they make an angle of about 45°. Make a short pause of 1 sec. and go slowly down to the initial position. To increase the intensity you can make a longer pause of 7 sec. every 5th time.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/377/view/",
@@ -104,7 +144,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supported standing leg curl, narrow and wide sled foot placement, supine bent-knee pull-in, hanging straight-leg raise example, 45-degree flat-bench leg raise, forearm-supported captain-chair knee raise, supported leg swing, supine paired-leg circle starting position, working-side leg-crossed kettlebell floor press and shoulder-blade-only levitation crunch.",
+      "bounds": {
+        "x": 383,
+        "y": 343,
+        "width": 385,
+        "height": 327
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-5f514f9e-6bd9-408e-85b2-c25eb04af33b",
@@ -113,7 +161,7 @@
       "guideText": "Put your forearms on the pads on the leg raise machine, the body is hanging freely. Lift now your legs with a fast movement as high as you can, make a short pause of 1sec at the top, and bring them down again. Make sure that during the exercise your body does not swing, only the legs should move.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/378/view/",
@@ -121,7 +169,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supported standing leg curl, narrow and wide sled foot placement, supine bent-knee pull-in, hanging straight-leg raise example, 45-degree flat-bench leg raise, forearm-supported captain-chair knee raise, supported leg swing, supine paired-leg circle starting position, working-side leg-crossed kettlebell floor press and shoulder-blade-only levitation crunch.",
+      "bounds": {
+        "x": 768,
+        "y": 343,
+        "width": 386,
+        "height": 327
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-1fae7d45-0731-4640-8809-94c76b836571",
@@ -130,7 +186,7 @@
       "guideText": "Stand tall next to a wall or stable support. Swing one leg forward and backward in a controlled motion, keeping the torso upright and the core engaged. Alternate legs after completing the repetitions.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1670/view/",
@@ -138,7 +194,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supported standing leg curl, narrow and wide sled foot placement, supine bent-knee pull-in, hanging straight-leg raise example, 45-degree flat-bench leg raise, forearm-supported captain-chair knee raise, supported leg swing, supine paired-leg circle starting position, working-side leg-crossed kettlebell floor press and shoulder-blade-only levitation crunch.",
+      "bounds": {
+        "x": 1154,
+        "y": 343,
+        "width": 382,
+        "height": 327
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-19d10f51-3e53-4d8f-b283-1d8d9a7d3543",
@@ -147,7 +211,7 @@
       "guideText": "Lay on the back and lift legs in perpendicular fashion, keeping the knees together. Start making small circles in one direction with both of your knees with very small range of motion, focusing on abs and keeping your back in contact with the floor.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1909/view/",
@@ -155,7 +219,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supported standing leg curl, narrow and wide sled foot placement, supine bent-knee pull-in, hanging straight-leg raise example, 45-degree flat-bench leg raise, forearm-supported captain-chair knee raise, supported leg swing, supine paired-leg circle starting position, working-side leg-crossed kettlebell floor press and shoulder-blade-only levitation crunch.",
+      "bounds": {
+        "x": 0,
+        "y": 670,
+        "width": 383,
+        "height": 354
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-leg-over-floor-press",
@@ -164,14 +236,22 @@
       "guideText": "Lie on the floor with one kettlebell in place on your chest, holding it by the handle. Extend leg on working side over leg on non-working side.Your free arm can be extended out to your side for support.\n\nPress the kettlebll into a locked out position.\n\nLower the weight until the elbow touches the ground, keeping the kettlebell above the elbow. Repeat for the desired number of repetitions.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Leg-Over_Floor_Press.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supported standing leg curl, narrow and wide sled foot placement, supine bent-knee pull-in, hanging straight-leg raise example, 45-degree flat-bench leg raise, forearm-supported captain-chair knee raise, supported leg swing, supine paired-leg circle starting position, working-side leg-crossed kettlebell floor press and shoulder-blade-only levitation crunch.",
+      "bounds": {
+        "x": 383,
+        "y": 670,
+        "width": 385,
+        "height": 354
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "db-leg-up-hamstring-stretch",
@@ -180,14 +260,22 @@
       "guideText": "Lie flat on your back, bend one knee, and put that foot flat on the floor to stabilize your spine.\n\nExtend the other leg in the air. If you're tight, you wont be able to straighten it. That's okay. Extend the knee so that the sole of the lifted foot faces the ceiling (or as close as you can get it).\n\nSlowly straighten the legs as much as possible and then pull the leg toward your nose. Switch sides.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Leg-Up_Hamstring_Stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: unassisted supine leg-up hamstring stretch shown with added foot strap.",
+      "bounds": {
+        "x": 768,
+        "y": 670,
+        "width": 386,
+        "height": 354
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     },
     {
       "id": "wger-9816dc3a-9739-4c70-bce0-4131f889e4f2",
@@ -196,7 +284,7 @@
       "guideText": "For this top down movement, we’re trying to move the upper torso without moving the lower torso. Start lying on the ground with feet flat on the floor and crossed arms above your head with hands behind head. Lift upper body up and clear your shoulder blades off the ground and then hold and pause at the top for a one or two count. Try to make the upper abs work and hold that contraction for 10 good quality reps.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1478/view/",
@@ -204,8 +292,17 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supported standing leg curl, narrow and wide sled foot placement, supine bent-knee pull-in, hanging straight-leg raise example, 45-degree flat-bench leg raise, forearm-supported captain-chair knee raise, supported leg swing, supine paired-leg circle starting position, working-side leg-crossed kettlebell floor press and shoulder-blade-only levitation crunch.",
+      "bounds": {
+        "x": 1154,
+        "y": 670,
+        "width": 382,
+        "height": 354
+      },
+      "cropReviewNote": "Inspected generated sheet and full panel separator pixels."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-e84d8902-888e-4ad3-8d93-ccda05989caa.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-e84d8902-888e-4ad3-8d93-ccda05989caa.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-051.png"
 }

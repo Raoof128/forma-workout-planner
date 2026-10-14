@@ -13,7 +13,7 @@
       "guideText": "Sit on the ground and bend one leg, bringing your knee toward you. Place your hand behind your hamstring and gently pull your leg toward your chest, feeling a stretch in the back of your thigh. Straighten your leg, extending up toward the ceiling.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1398/view/",
@@ -21,7 +21,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed seated straight-leg hamstring choke, standing hamstring kick, supine single-leg strap stretch, posterior-thigh roller, freestanding handstand, wall-supported bent-arm handstand press and freestanding press, front-rack hang-clean receiving positions, wide-grip overhead snatch receiving squats and chain-suspended rear-shoulder good morning. Olympic-lift captions describe receiving phase; guide supplies distinct starting height.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 320
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "wger-66aef559-02e8-4f35-91f6-600f103e9cbf",
@@ -30,7 +38,7 @@
       "guideText": "Stand with your feet hip-width apart and extend one arm in front of you. Swing that leg up in front of you and back down while keeping your leg as straight as possible and your toes pointed up.Repeat with the other leg.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1387/view/",
@@ -38,7 +46,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed seated straight-leg hamstring choke, standing hamstring kick, supine single-leg strap stretch, posterior-thigh roller, freestanding handstand, wall-supported bent-arm handstand press and freestanding press, front-rack hang-clean receiving positions, wide-grip overhead snatch receiving squats and chain-suspended rear-shoulder good morning. Olympic-lift captions describe receiving phase; guide supplies distinct starting height.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 320
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "db-hamstring-stretch",
@@ -47,14 +63,22 @@
       "guideText": "Lie on your back with one leg extended above you, with the hip at ninety degrees. Keep the other leg flat on the floor.\n\nLoop a belt, band, or rope over the ball of your foot. This will be your starting position.\n\nPull on the belt to create tension in the calves and hamstrings. Hold this stretch for 10-30 seconds, and repeat with the other leg.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hamstring_Stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed seated straight-leg hamstring choke, standing hamstring kick, supine single-leg strap stretch, posterior-thigh roller, freestanding handstand, wall-supported bent-arm handstand press and freestanding press, front-rack hang-clean receiving positions, wide-grip overhead snatch receiving squats and chain-suspended rear-shoulder good morning. Olympic-lift captions describe receiving phase; guide supplies distinct starting height.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 320
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "db-hamstring-smr",
@@ -63,14 +87,22 @@
       "guideText": "In a seated position, extend your legs over a foam roll so that it is position on the back of the upper legs. Place your hands to the side or behind you to help support your weight. This will be your starting position.\n\nUsing your hands, lift your hips off of the floor and shift your weight on the foam roll to one leg. Relax the hamstrings of the leg you are stretching.\n\nRoll over the foam from below the hip to above the back of the knee, pausing at points of tension for 10-30 seconds. Repeat for the other leg.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hamstring-SMR.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed seated straight-leg hamstring choke, standing hamstring kick, supine single-leg strap stretch, posterior-thigh roller, freestanding handstand, wall-supported bent-arm handstand press and freestanding press, front-rack hang-clean receiving positions, wide-grip overhead snatch receiving squats and chain-suspended rear-shoulder good morning. Olympic-lift captions describe receiving phase; guide supplies distinct starting height.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 320
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "wger-35008ce6-74ca-40db-b965-44a1eccfa061",
@@ -79,7 +111,7 @@
       "guideText": "Handstand free standing by pressing arms into the ground and contracting core and glutes",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1516/view/",
@@ -87,7 +119,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed seated straight-leg hamstring choke, standing hamstring kick, supine single-leg strap stretch, posterior-thigh roller, freestanding handstand, wall-supported bent-arm handstand press and freestanding press, front-rack hang-clean receiving positions, wide-grip overhead snatch receiving squats and chain-suspended rear-shoulder good morning. Olympic-lift captions describe receiving phase; guide supplies distinct starting height.",
+      "bounds": {
+        "x": 0,
+        "y": 320,
+        "width": 384,
+        "height": 349
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "db-handstand-push-ups",
@@ -96,14 +136,22 @@
       "guideText": "With your back to the wall bend at the waist and place both hands on the floor at shoulder width.\n\nKick yourself up against the wall with your arms straight. Your body should be upside down with the arms and legs fully extended. Keep your whole body as straight as possible. Tip: If doing this for the first time, have a spotter help you. Also, make sure that you keep facing the wall with your head, rather than looking down.\n\nSlowly lower yourself to the ground as you inhale until your head almost touches the floor. Tip: It is of utmost importance that you come down slow in order to avoid head injury.\n\nPush yourself back up slowly as you exhale until your elbows are nearly locked.\n\nRepeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Handstand_Push-Ups.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed seated straight-leg hamstring choke, standing hamstring kick, supine single-leg strap stretch, posterior-thigh roller, freestanding handstand, wall-supported bent-arm handstand press and freestanding press, front-rack hang-clean receiving positions, wide-grip overhead snatch receiving squats and chain-suspended rear-shoulder good morning. Olympic-lift captions describe receiving phase; guide supplies distinct starting height.",
+      "bounds": {
+        "x": 384,
+        "y": 320,
+        "width": 384,
+        "height": 349
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "wger-7704e810-c05d-47cc-a384-265e0231a497",
@@ -112,7 +160,7 @@
       "guideText": "The handstand push-up (press-up) - also called the vertical push-up (press-up) or the inverted push-up (press-up) also called commandos- is a type of push-up exercise where the body is positioned in a handstand. For a true handstand, the exercise is performed free-standing, held in the air. To prepare the strength until one has built adequate balance, the feet are often placed against a wall, held by a partner, or secured in some other way from falling. Handstand pushups require significant strength, as well as balance and control if performed free-standing.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/282/view/",
@@ -120,7 +168,15 @@
         "license": "CC0",
         "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed seated straight-leg hamstring choke, standing hamstring kick, supine single-leg strap stretch, posterior-thigh roller, freestanding handstand, wall-supported bent-arm handstand press and freestanding press, front-rack hang-clean receiving positions, wide-grip overhead snatch receiving squats and chain-suspended rear-shoulder good morning. Olympic-lift captions describe receiving phase; guide supplies distinct starting height.",
+      "bounds": {
+        "x": 768,
+        "y": 320,
+        "width": 384,
+        "height": 349
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     },
     {
       "id": "db-hang-clean",
@@ -129,14 +185,23 @@
       "guideText": "Begin with a shoulder width, double overhand or hook grip, with the bar hanging at the mid thigh position. Your back should be straight and inclined slightly forward.\n\nBegin by aggressively extending through the hips, knees and ankles, driving the weight upward. As you do so, shrug your shoulders towards your ears.\n\nImmediately recover by driving through the heels, keeping the torso upright and elbows up. Continue until you have risen to a standing position.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hang_Clean.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed seated straight-leg hamstring choke, standing hamstring kick, supine single-leg strap stretch, posterior-thigh roller, freestanding handstand, wall-supported bent-arm handstand press and freestanding press, front-rack hang-clean receiving positions, wide-grip overhead snatch receiving squats and chain-suspended rear-shoulder good morning. Olympic-lift captions describe receiving phase; guide supplies distinct starting height.",
+      "bounds": {
+        "x": 1152,
+        "y": 320,
+        "width": 384,
+        "height": 349
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose.",
+      "caption": "Hang Clean · Receiving phase; follow the guide for the specific starting height and complete lift."
     },
     {
       "id": "db-hang-clean-below-the-knees",
@@ -145,14 +210,23 @@
       "guideText": "Begin with a shoulder width, double overhand or hook grip, with the bar hanging just below the knees. Your back should be straight and inclined slightly forward.\n\nBegin by aggressively extending through the hips, knees and ankles, driving the weight upward. As you do so, shrug your shoulders towards your ears. As full extension is achieved, transition into the third pull by aggressively shrugging and flexing the arms with the elbows up and out.\n\nAt peak extension, aggressively pull yourself down, rotating your elbows under the bar as you do so. Receive the bar in a front squat position, the depth of which is dependent upon the height of the bar at the end of the third pull. The bar should be racked onto the protracted shoulders, lightly touching the throat with the hands relaxed. Continue to descend to the bottom squat position, which will help in the recovery.\n\nImmediately recover by driving through the heels, keeping the torso upright and elbows up. Continue until you have risen to a standing position.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hang_Clean_-_Below_the_Knees.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed seated straight-leg hamstring choke, standing hamstring kick, supine single-leg strap stretch, posterior-thigh roller, freestanding handstand, wall-supported bent-arm handstand press and freestanding press, front-rack hang-clean receiving positions, wide-grip overhead snatch receiving squats and chain-suspended rear-shoulder good morning. Olympic-lift captions describe receiving phase; guide supplies distinct starting height.",
+      "bounds": {
+        "x": 0,
+        "y": 669,
+        "width": 384,
+        "height": 355
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose.",
+      "caption": "Hang Clean - Below the Knees · Receiving phase; follow the guide for the specific starting height and complete lift."
     },
     {
       "id": "db-hang-snatch",
@@ -161,14 +235,23 @@
       "guideText": "Begin with a wide grip on the bar, with an overhand or hook grip. The feet should be directly below the hips with the feet turned out. Your knees should be slightly bent, and the torso inclined forward. The spine should be fully extended and the head facing forward. The bar should be at the hips. This will be your starting position.\n\nAggressively extend through the legs and hips. At peak extension, shrug the shoulders and allow the elbows to flex to the side.\n\nAs you move your feet into the receiving position, forcefully pull yourself below the bar as you elevate the bar overhead. Receive the bar with your body as low as possible and the arms fully extended overhead.\n\nReturn to a standing position with the weight overhead. Follow by returning the weight to the ground under control.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hang_Snatch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed seated straight-leg hamstring choke, standing hamstring kick, supine single-leg strap stretch, posterior-thigh roller, freestanding handstand, wall-supported bent-arm handstand press and freestanding press, front-rack hang-clean receiving positions, wide-grip overhead snatch receiving squats and chain-suspended rear-shoulder good morning. Olympic-lift captions describe receiving phase; guide supplies distinct starting height.",
+      "bounds": {
+        "x": 384,
+        "y": 669,
+        "width": 384,
+        "height": 355
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose.",
+      "caption": "Hang Snatch · Receiving phase; follow the guide for the specific starting height and complete lift."
     },
     {
       "id": "db-hang-snatch-below-knees",
@@ -177,14 +260,23 @@
       "guideText": "Begin with a wide grip on the bar, with an overhand or hook grip. The feet should be directly below the hips with the feet turned out. Your knees should be slightly bent, and the torso inclined forward. The spine should be fully extended and the head facing forward. The bar should be just below the knees. This will be your starting position.\n\nAggressively extend through the legs and hips. At peak extension, shrug the shoulders and allow the elbows to flex to the side.\n\nAs you move your feet into the receiving position, forcefully pull yourself below the bar as you elevate the bar overhead. Receive the bar with your body as low as possible and the arms fully extended overhead.\n\nReturn to a standing position with the weight overhead, and then return the weight to the floor under control.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hang_Snatch_-_Below_Knees.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed seated straight-leg hamstring choke, standing hamstring kick, supine single-leg strap stretch, posterior-thigh roller, freestanding handstand, wall-supported bent-arm handstand press and freestanding press, front-rack hang-clean receiving positions, wide-grip overhead snatch receiving squats and chain-suspended rear-shoulder good morning. Olympic-lift captions describe receiving phase; guide supplies distinct starting height.",
+      "bounds": {
+        "x": 768,
+        "y": 669,
+        "width": 384,
+        "height": 355
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose.",
+      "caption": "Hang Snatch - Below Knees · Receiving phase; follow the guide for the specific starting height and complete lift."
     },
     {
       "id": "db-hanging-bar-good-morning",
@@ -193,15 +285,24 @@
       "guideText": "Begin with a bar on a rack at about the same height as your stomach. Suspend the bar using chains or suspension straps.\n\nBend over underneath the bar and rack the bar across the rear of your shoulders as you would a power squat, not on top of your traps. At the proper height, you should be near parallel to the floor when bent over. Keep your back tight, shoulder blades pinched together, and your knees slightly bent. Keep your back arched and your cervical spine in proper alignment.\n\nBegin the motion by extending through the hips with your glutes and hamstrings, and you are standing with the weight.\n\nSlowly lower the weight back to the starting position, where it is supported by the chains.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hanging_Bar_Good_Morning.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed seated straight-leg hamstring choke, standing hamstring kick, supine single-leg strap stretch, posterior-thigh roller, freestanding handstand, wall-supported bent-arm handstand press and freestanding press, front-rack hang-clean receiving positions, wide-grip overhead snatch receiving squats and chain-suspended rear-shoulder good morning. Olympic-lift captions describe receiving phase; guide supplies distinct starting height.",
+      "bounds": {
+        "x": 1152,
+        "y": 669,
+        "width": 384,
+        "height": 355
+      },
+      "cropReviewNote": "Inspected generated sheet and separator lines; actual panel bounds retain intended pose."
     }
   ],
-  "sourceGeneratedPath": "/workspace/generated_images/exec-1d874908-e38c-456f-a81e-a1a918ee84b0.png"
+  "sourceGeneratedPath": "/workspace/generated_images/exec-1d874908-e38c-456f-a81e-a1a918ee84b0.png",
+  "sourceAssetPath": "assets/exercise-artwork/movements-037.png"
 }
