@@ -119,22 +119,22 @@
     "source": null,
     "references": [
       {
-        "title": "Reviewed upstream exercise identity and movement requirements",
+        "title": "wger standing balance exercise",
         "url": "https://wger.de/en/exercise/1096/view/"
       }
     ]
   },
   "db-band-hip-adductions": {
-    "name": "Standing band hip abduction (guide variant)",
+    "name": "Standing band hip abduction",
     "equipment": "Resistance band",
     "equipmentTags": [
       "Resistance band"
     ],
-    "description": "Anchor a resistance band to a sturdy low post. Stand side-on and place the loop around the ankle farther from the anchor. Use the hand nearer the post for balance and keep your torso steady. With the working knee comfortably straight, move that leg outward away from the anchor against the band. Return the foot slowly toward the standing leg without losing balance, then repeat on the other side. This is the outward hip-abduction movement described by the imported instructions.",
+    "description": "Anchor a resistance band to a sturdy low post. Stand side-on and place the loop around the ankle farther from the anchor. Use the hand nearer the post for balance and keep your torso steady. With the working knee comfortably straight, move that leg outward away from the anchor against the band. Return the foot slowly toward the standing leg without losing balance, then repeat on the other side.",
     "source": null,
     "references": [
       {
-        "title": "Imported guide describes outward movement; provider photos instead depict adduction",
+        "title": "Free Exercise DB band hip movement reference",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Band_Hip_Adductions.json"
       }
     ]
@@ -149,7 +149,7 @@
     "source": null,
     "references": [
       {
-        "title": "Reviewed upstream exercise identity and movement requirements",
+        "title": "wger supine rotation stretch",
         "url": "https://wger.de/en/exercise/1577/view/"
       }
     ]
@@ -164,7 +164,7 @@
     "source": null,
     "references": [
       {
-        "title": "Reviewed upstream exercise identity and movement requirements",
+        "title": "wger neutral-grip pulldown",
         "url": "https://wger.de/en/exercise/1136/view/"
       }
     ]
@@ -179,7 +179,7 @@
     "source": null,
     "references": [
       {
-        "title": "Original lateral-step movement requirements; guide specifies stepping rather than band loading",
+        "title": "wger lateral hip steps",
         "url": "https://wger.de/en/exercise/2618/view/"
       }
     ]

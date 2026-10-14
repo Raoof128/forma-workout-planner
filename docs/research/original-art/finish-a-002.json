@@ -1,0 +1,134 @@
+{
+  "name": "finish-a-002",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-a-002.png",
+  "prompt": "Original FORMA illustrated fitness manual. Landscape1536x1024 EXACT2columns2rows four768x512cells PURE WHITE huge margins complete athlete and apparatus contained in owncell. Charcoalgray sportswear lime trim equipment subtle shadows. Exactly2arms2legs no text labels arrows borders, one pose percell.\nTOP LEFT incline BARBELL triceps extension: full adult supine on inclinebench backrest60degrees abovefloor, feet grounded, head supported. Upperarms alongside head point diagonally backward aligned torso abovehead, BOTH elbows bent deeply so forearms approach biceps and loaded STRAIGHT BARBELL lowers BEHIND head. Close overhandgrip elbowsin. Entirebar plates bench feet contained; scale athlete small.\nTOP RIGHT lowincline dumbbell fly bottomphase: bench backrest EXACT20DEGREES abovefloor, feet grounded back supported. Both arms spread symmetrically OUT SIDEWAYS at shoulderlevel with ONLY15degree soft bend elbows, each hand holds one dumbbell PALMS FACE CEILING. Camera from footend elevatedthreequarter shows both equalspread arms and shallowbench. Exactly2arms2dumbbells.\nBOTTOM LEFT lowincline dumbbell fly with wristtwist top startingphase: bench backrest EXACT20degrees abovefloor, full supported adult feet floor. BOTH arms extend symmetrically upward abovechest with slightelbowbend. BOTH palms FACE ATHLETE towardhead (supinated), LITTLEFINGER edges meet in middle, dumbbells sidebyside abovechest. Guide calls palms towardathlete/pinkies adjacent at top, not neutralpalms. Complete20degree bench visible.\nBOTTOM RIGHT prone belt hipflexorquadstretch: athlete FACE DOWN onfloor, left leg straight floor, RIGHT knee deeply flexed and RIGHT THIGH HIP AND KNEE VISIBLY LIFTED8inches CLEAR OFFfloor leaving obvious whitegap under rightthigh and rightknee. Belt loops around rightfoot, BOTH hands pull two beltends over shoulders beside head drawing rightfoot towardhead. Abdomen left hip floor, rightthigh lifted in hip extension. No hand directly grabsfoot.",
+  "cells": [
+    {
+      "id": "db-incline-barbell-triceps-extension",
+      "title": "Incline Barbell Triceps Extension",
+      "equipment": "Barbell",
+      "guideText": "Hold a barbell with an overhand grip (palms down) that is a little closer together than shoulder width.\n\nLie back on an incline bench set at any angle between 45-75-degrees.\n\nBring the bar overhead with your arms extended and elbows in. The arms should be in line with the torso above the head. This will be your starting position.\n\nNow lower the bar in a semicircular motion behind your head until your forearms touch your biceps. Inhale as you perform this movement. Tip: Keep your upper arms stationary and close to your head at all times. Only the forearms should move.\n\nReturn to the starting position as you breathe out and you contract the triceps. Hold the contraction for a second.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Barbell_Triceps_Extension.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "INCLINE bench barbell triceps extension: upper arms aligned torso, bar lowered BEHIND head, elbows flexed. Follow actual guide for slope.",
+      "reviewNote": "Incline support and bent elbows shown, but upper arms point vertically over face rather than in torso line above head; bar is over forehead rather than clearly behind head.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 475
+      },
+      "cropReviewNote": "Reviewed actual gap between rows at y475; complete equipment and figures fit isolated bounds.",
+      "priorBatch": "docs/research/original-art/corrections-013.json",
+      "references": null
+    },
+    {
+      "id": "db-incline-dumbbell-flyes",
+      "title": "Incline Dumbbell Flyes",
+      "equipment": "Dumbbell",
+      "guideText": "Hold a dumbbell on each hand and lie on an incline bench that is set to an incline angle of no more than 30 degrees.\n\nExtend your arms above you with a slight bend at the elbows.\n\nNow rotate the wrists so that the palms of your hands are facing you. Tip: The pinky fingers should be next to each other. This will be your starting position.\n\nAs you breathe in, start to slowly lower the arms to the side while keeping the arms extended and while rotating the wrists until the palms of the hand are facing each other. Tip: At the end of the movement the arms will be by your side with the palms facing the ceiling.\n\nAs you exhale start to bring the dumbbells back up to the starting position by reversing the motion and rotating the hands so that the pinky fingers are next to each other again. Tip: Keep in mind that the movement will only happen at the shoulder joint and at the wrist. There is no motion that happens at the elbow joint.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Dumbbell_Flyes.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "SIDE three-quarter view bilateral dumbbell fly. Bench backrest angle ONLY20DEGREES above floor, low incline. Both arms spread laterally with soft elbows, palms toward ceiling. Two dumbbells. Feet floor and back supported.",
+      "ids": [
+        "db-incline-dumbbell-flyes"
+      ],
+      "additionalGuideReviews": [
+        {
+          "id": "db-incline-dumbbell-flyes-with-a-twist",
+          "title": "Incline Dumbbell Flyes - With A Twist",
+          "guideText": "Hold a dumbbell in each hand and lie on an incline bench that is set to an incline angle of no more than 30 degrees.\n\nExtend your arms above you with a slight bend at the elbows.\n\nNow rotate the wrists so that the palms of your hands are facing you. Tip: The pinky fingers should be next to each other. This will be your starting position.\n\nAs you breathe in, start to slowly lower the arms to the side while keeping the arms extended and while rotating the wrists until the palms of the hand are facing each other. Tip: At the end of the movement the arms will be by your side with the palms facing the ceiling.\n\nAs you exhale start to bring the dumbbells back up to the starting position by reversing the motion and rotating the hands so that the pinky fingers are next to each other again. Tip: Keep in mind that the movement will only happen at the shoulder joint and at the wrist. There is no motion that happens at the elbow joint.\n\nRepeat for the recommended amount of repetitions."
+        }
+      ],
+      "reviewNote": "Both arms spread symmetrically with soft elbows and two dumbbells, palms upward; shallow supported backrest and planted feet match bottom fly phase.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 475
+      },
+      "cropReviewNote": "Reviewed actual gap between rows at y475; complete equipment and figures fit isolated bounds.",
+      "priorBatch": "docs/research/original-art/corrections-039.json",
+      "references": null
+    },
+    {
+      "id": "db-incline-dumbbell-flyes-with-a-twist",
+      "title": "Incline Dumbbell Flyes - With A Twist",
+      "equipment": "Dumbbell",
+      "guideText": "Hold a dumbbell in each hand and lie on an incline bench that is set to an incline angle of no more than 30 degrees.\n\nExtend your arms above you with a slight bend at the elbows.\n\nNow rotate the wrists so that the palms of your hands are facing you. Tip: The pinky fingers should be next to each other. This will be your starting position.\n\nAs you breathe in, start to slowly lower the arms to the side while keeping the arms extended and while rotating the wrists until the palms of the hand are facing each other. Tip: At the end of the movement the arms will be by your side with the palms facing the ceiling.\n\nAs you exhale start to bring the dumbbells back up to the starting position by reversing the motion and rotating the hands so that the pinky fingers are next to each other again. Tip: Keep in mind that the movement will only happen at the shoulder joint and at the wrist. There is no motion that happens at the elbow joint.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Dumbbell_Flyes_-_With_A_Twist.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Incline dumbbell fly with twist, bench ONLY 20-30DEGREES, both arms symmetric, rotate to neutral at top as actual guide.",
+      "reviewNote": "Top phase is symmetric on shallow bench, but palms-toward-athlete/pinkies-adjacent grip cannot be confidently established from frontal view.",
+      "bounds": {
+        "x": 0,
+        "y": 475,
+        "width": 768,
+        "height": 549
+      },
+      "cropReviewNote": "Reviewed actual gap between rows at y475; complete equipment and figures fit isolated bounds.",
+      "priorBatch": "docs/research/original-art/corrections-014.json",
+      "references": null
+    },
+    {
+      "id": "db-intermediate-hip-flexor-and-quad-stretch",
+      "title": "Intermediate Hip Flexor and Quad Stretch",
+      "equipment": "Specialty equipment",
+      "guideText": "Lie face down on the floor, with a rope, belt, or band looped around one foot.\n\nFlex the knee and extend the hip of the leg to be stretched, using both hands to pull on the belt. Your knee and your hip should come off of the floor, creating tension in the hip flexors and quadriceps. Hold the stretch for 10-20 seconds, and repeat on the other leg.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Intermediate_Hip_Flexor_and_Quad_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Prone STRAP quad/hip-flexor stretch: flexed knee and thigh visibly lifted OFF FLOOR, strap over shoulder draws foot toward head.",
+      "reviewNote": "Prone belt stretch with both hands pulling strap and stretched thigh, hip and knee clearly lifted above floor; opposite leg grounded.",
+      "bounds": {
+        "x": 768,
+        "y": 475,
+        "width": 768,
+        "height": 549
+      },
+      "cropReviewNote": "Reviewed actual gap between rows at y475; complete equipment and figures fit isolated bounds.",
+      "priorBatch": "docs/research/original-art/corrections-014.json",
+      "references": null,
+      "ids": [
+        "db-intermediate-hip-flexor-and-quad-stretch"
+      ]
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-c80f9bf7-1560-4e0a-ac69-00be25f05f85.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-a-002.png",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

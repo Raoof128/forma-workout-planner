@@ -1,0 +1,130 @@
+{
+  "name": "finish-d-002",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-d-002.png",
+  "prompt": "Create ORIGINAL FORMA fitness-manual illustration,1536x1024 landscape, EXACTLY TWO columns by TWO rows, FOUR panels768x512. Pure white background and generous margins. Each panel contains ONE complete fully clothed adult athlete in charcoal gray sportswear with subtle lime accent, charcoal equipment, subtle shadows. Accurate two arms/two legs, no duplicates, no arrows, no letters labels logos. Full figures and equipment completely inside own panel with white gutter. Draw physically precise movement details, grip, hip/knee depth and support. Four mandatory panels:\n\nRow1 column1: Weighted neck flexion. EXACT REPRESENTATIVE POSE: Weighted neck flexion representative with LIGHT PLATE: athlete supine on bench, torso flat supported, head slightly beyond bench end. Small thin light plate padded against FOREHEAD, both hands stabilize edges. Head gently lifted with CHIN TOWARD CHEST against gravity+plate, neck flexion visible; head not tipped backward, plate not on back of skull. Use only light plate and plausible setup. Complete factual guide: Weighted neck flexion is an *isolation exercise* designed to strengthen the *anterior (front) neck flexor muscles* by bringing your chin toward your chest against external resistance (most commonly a light weight plate, resistance band, or neck harness).\n\nRow1 column2: Roman-chair dumbbell hip hinge. EXACT REPRESENTATIVE POSE: Roman-chair dumbbell hip hinge on45degree back-extension station: thighs supported on pad BELOW HIP CREASE; legs straight toward station FOOTPLATE, both feet planted on footplate and BOTH ANKLES visibly secured UNDER horizontal padded ROLLERS. Hips hinge freely over top edge, neutral spine trunk aligned with legs at top, one light dumbbell held CLOSE TO CHEST in two hands. Complete apparatus, feet, ankle rollers clearly visible side threequarter view. No floating unsupported feet. Complete factual guide: Use a stable roman-chair or back-extension station with your feet planted on its footplate and your ankles secured beneath the supports. Position the thigh pad below the hip crease so your hips can hinge freely. Start without added weight to check the setup; when controlled, hold a light dumbbell close to your chest. Keep your spine neutral and bend at the hips through a comfortable range. Squeeze your glutes to return until your trunk lines up with your legs, stopping before you arch your lower back. Keep your feet secured throughout and lower the weight before stepping out.\n\nRow2 column1: Low Box Squat - Wide Stance. EXACT REPRESENTATIVE POSE: Barbell wide-stance LOW BOX SQUAT seated bottom: bar across upper back, feet much wider than hips, toes outward. Athlete sits fully on VERY LOW box about ankle-to-midshin height. HIP CREASE CLEARLY BELOW TOPS OF KNEES, thighs slope UPWARD from low hips to higher knees. Both feet floor, chest proud, full controlled below-parallel position. Box directly under buttocks, NOT tall bench. Complete factual guide: Unrack the bar and set your stance wide, beyond your hips. Push your hips back and sit down to a box that takes you below parallel. Sit completely down, do not touch and go. Then explosively stand up. Stay tight in your upper back and torso throughout the movement.\n\nRow2 column2: Dumbbell Underhand Dead Row. EXACT REPRESENTATIVE POSE: Dumbbell UNDERHAND dead row: torso almost EXACTLY HORIZONTAL parallel floor, back flat, soft bent knees, hips back. Two dumbbells held SUPINATED PALMS UP toward ceiling, both thumbs rotated outward and palm surfaces visible supporting dumbbells from underneath. Elbows pulled back beyond torso, dumbbells near lower ribcage. Show front-side threequarter perspective to expose BOTH palm surfaces. No neutral hammer grip, no knuckles-up pronation. Complete factual guide: The Dumbbell Underhand Dead Row will involve the back, which means you can try a bit heavier weight. The catch is that you need to be able to control the weight for all the reps. 1. Start by holding a pair of dumbbells with your feet shoulder-wide apart and your knees slightly bent. 2. Hinge at your hips to lower your torse forward until it's almost parallel to the floor, keeping your back flat and maintaining a slight bend in your knees. 3. Exhale as you row the dumbbells to your sides up to chest height, leading with your elbows until your upper arms are just past parallel to the floor and the dumbbells are at ribcage level. 4. Slowly lower to the starting position and repeat. Keep your back flat all the time.",
+  "cells": [
+    {
+      "id": "wger-0d245efd-7d9a-4518-be17-cce14adae88a",
+      "title": "Weighted neck flexion",
+      "equipment": "Bench",
+      "guideText": "Weighted neck flexion is an *isolation exercise* designed to strengthen the *anterior (front) neck flexor muscles* by bringing your chin toward your chest against external resistance (most commonly a light weight plate, resistance band, or neck harness).",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2676/view/",
+        "author": "qoxivi",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "priorBatch": "docs/research/original-art/movements-096.json",
+      "references": null,
+      "reviewNote": "Hold: athlete lies prone with plate on back of head, depicting neck extension rather than anterior chin-to-chest flexion with forehead resistance.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 490
+      },
+      "cropReviewNote": "Inspected original1536x1024 source; panel dividers at x768 and y490 preserve complete figures and equipment."
+    },
+    {
+      "id": "wger-12a80404-8684-4ff0-a473-d80b4ad8cd5e",
+      "title": "Roman-chair dumbbell hip hinge",
+      "equipment": "Roman chair + Dumbbell",
+      "guideText": "Use a stable roman-chair or back-extension station with your feet planted on its footplate and your ankles secured beneath the supports. Position the thigh pad below the hip crease so your hips can hinge freely. Start without added weight to check the setup; when controlled, hold a light dumbbell close to your chest. Keep your spine neutral and bend at the hips through a comfortable range. Squeeze your glutes to return until your trunk lines up with your legs, stopping before you arch your lower back. Keep your feet secured throughout and lower the weight before stepping out.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": null,
+      "priorBatch": "docs/research/original-art/movements-071.json",
+      "references": [
+        {
+          "title": "Free Exercise DB: secured-foot back-extension setup",
+          "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hyperextensions_Back_Extensions.json"
+        }
+      ],
+      "reviewNote": "Roman-chair dumbbell hip-hinge top with feet on footplate, ankles under padded rollers, thigh support below hip and dumbbell close to chest.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 490
+      },
+      "cropReviewNote": "Inspected original1536x1024 source; panel dividers at x768 and y490 preserve complete figures and equipment.",
+      "ids": [
+        "wger-12a80404-8684-4ff0-a473-d80b4ad8cd5e"
+      ]
+    },
+    {
+      "id": "wger-183e7279-f052-4c70-8381-bbbda3bb9afe",
+      "title": "Low Box Squat - Wide Stance",
+      "equipment": "Barbell",
+      "guideText": "Unrack the bar and set your stance wide, beyond your hips. Push your hips back and sit down to a box that takes you below parallel. Sit completely down, do not touch and go. Then explosively stand up. Stay tight in your upper back and torso throughout the movement.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/397/view/",
+        "author": "taylorbarbell",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: low-box squat below parallel drawn on high box with hips above knees.",
+      "priorBatch": "docs/research/original-art/corrections-018.json",
+      "references": null,
+      "reviewNote": "Wide-stance barbell low-box squat with complete seated support and hip crease below knee level.",
+      "bounds": {
+        "x": 0,
+        "y": 490,
+        "width": 768,
+        "height": 534
+      },
+      "cropReviewNote": "Inspected original1536x1024 source; panel dividers at x768 and y490 preserve complete figures and equipment.",
+      "ids": [
+        "wger-183e7279-f052-4c70-8381-bbbda3bb9afe"
+      ]
+    },
+    {
+      "id": "wger-1dca10f9-a976-4a09-ab85-b95fafaa1a28",
+      "title": "Dumbbell Underhand Dead Row",
+      "equipment": "Dumbbell",
+      "guideText": "The Dumbbell Underhand Dead Row will involve the back, which means you can try a bit heavier weight. The catch is that you need to be able to control the weight for all the reps. 1. Start by holding a pair of dumbbells with your feet shoulder-wide apart and your knees slightly bent. 2. Hinge at your hips to lower your torse forward until it's almost parallel to the floor, keeping your back flat and maintaining a slight bend in your knees. 3. Exhale as you row the dumbbells to your sides up to chest height, leading with your elbows until your upper arms are just past parallel to the floor and the dumbbells are at ribcage level. 4. Slowly lower to the starting position and repeat. Keep your back flat all the time.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1463/view/",
+        "author": "Moffi",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "priorBatch": "docs/research/original-art/recovery-b-001.json",
+      "priorReviewNote": "Underhand dead-row trunk is too upright for the required almost-horizontal position.",
+      "references": null,
+      "reviewNote": "Underhand paired-dumbbell row with near-horizontal flat torso, elbows retracted and supinated grips.",
+      "bounds": {
+        "x": 768,
+        "y": 490,
+        "width": 768,
+        "height": 534
+      },
+      "cropReviewNote": "Inspected original1536x1024 source; panel dividers at x768 and y490 preserve complete figures and equipment.",
+      "ids": [
+        "wger-1dca10f9-a976-4a09-ab85-b95fafaa1a28"
+      ]
+    }
+  ],
+  "sourceAssetPath": "assets/exercise-artwork/finish-d-002.png",
+  "sourceGeneratedPath": "/workspace/generated_images/exec-8a17efb0-69b6-479e-b408-eb802e81b601.png",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

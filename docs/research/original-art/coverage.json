@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1362,
+  "accepted": 1371,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -728,12 +728,12 @@
     },
     {
       "exerciseId": "db-band-hip-adductions",
-      "name": "Standing band hip abduction (guide variant)",
+      "name": "Standing band hip abduction",
       "equipment": "Resistance band",
-      "guideSha256": "9c9c14d6f1fc3e0cbc8e5907c41d0617b2f8a95aa47e77786774e24c45ddd56b",
+      "guideSha256": "049e7ba811d6488f4b700f86464515ce4a3ec261b6856e854742b45b4049b12b",
       "status": "accepted",
       "assetId": "forma-original-movements-005-2-2",
-      "reviewNote": "Re-inspected original full sheet and matching representative pose against independently clarified guide and researched source metadata; ID and logging units preserved."
+      "reviewNote": "Re-inspected original full sheet and matching representative pose against independently clarified guide and researched source metadata; ID and logging units preserved. Removed internal import commentary from user-facing guide; factual setup and representative pose unchanged."
     },
     {
       "exerciseId": "db-band-pull-apart",
@@ -3739,7 +3739,9 @@
       "name": "Dumbbell Underhand Dead Row",
       "equipment": "Dumbbell",
       "guideSha256": "eaf93176d6860144a9632b13fa8d95c909e0b2eb0f742980dd7d8e79aae17800",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-d-002-1-1",
+      "reviewNote": "Underhand paired-dumbbell row with near-horizontal flat torso, elbows retracted and supinated grips."
     },
     {
       "exerciseId": "wger-fd38d854-a244-4646-842b-ef1e0fbfede8",
@@ -5237,7 +5239,9 @@
       "name": "Incline Dumbbell Flyes",
       "equipment": "Dumbbell",
       "guideSha256": "c526aeceb912f777ade3e17f0692991bdc5a28de5d1ae6698eccf812d5c62c4b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-a-002-1-0",
+      "reviewNote": "Both arms spread symmetrically with soft elbows and two dumbbells, palms upward; shallow supported backrest and planted feet match bottom fly phase."
     },
     {
       "exerciseId": "db-incline-dumbbell-flyes-with-a-twist",
@@ -5395,7 +5399,9 @@
       "name": "Intermediate Hip Flexor and Quad Stretch",
       "equipment": "Specialty equipment",
       "guideSha256": "aba9b887476d19b56dd7f6cf060d10a2d30f7f64bf8dd7a7ce8f35d2ee6b6a1b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-a-002-1-1",
+      "reviewNote": "Prone belt stretch with both hands pulling strap and stretched thigh, hip and knee clearly lifted above floor; opposite leg grounded."
     },
     {
       "exerciseId": "db-internal-rotation-with-band",
@@ -6544,7 +6550,9 @@
       "name": "Low Box Squat - Wide Stance",
       "equipment": "Barbell",
       "guideSha256": "c1f5a00aa831baf64355d6c799feefe8d6ec66ce75d1bd12c81f536e130948f2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-d-002-0-1",
+      "reviewNote": "Wide-stance barbell low-box squat with complete seated support and hip crease below knee level."
     },
     {
       "exerciseId": "db-low-cable-crossover",
@@ -7294,7 +7302,9 @@
       "name": "One Arm Floor Press",
       "equipment": "Barbell",
       "guideSha256": "d2360db615aa2d9e24110470c0de1a051f64ec202fea345fe7d45863a178e75e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-b-001-retry-1-1",
+      "reviewNote": "Full balanced barbell now runs longitudinally parallel to torso; single midpoint grip palm inward, opposite arm rests beside body and knees bent."
     },
     {
       "exerciseId": "db-one-arm-lat-pulldown",
@@ -8865,7 +8875,9 @@
       "name": "Roman-chair dumbbell hip hinge",
       "equipment": "Roman chair + Dumbbell",
       "guideSha256": "1c2780ab98710aaf1aefc3c1045c3f22a17f711dfb7668e927c31d63f6ae6266",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-d-002-1-0",
+      "reviewNote": "Roman-chair dumbbell hip-hinge top with feet on footplate, ankles under padded rollers, thigh support below hip and dumbbell close to chest."
     },
     {
       "exerciseId": "db-romanian-deadlift-from-deficit",
@@ -10065,7 +10077,9 @@
       "name": "Sit-Up",
       "equipment": "Bodyweight",
       "guideSha256": "c8881bf7bd0259e7c97e7295fd9b7063fb1f4000344c558e35b9b30df646f2ac",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-c-002-0-0",
+      "reviewNote": "Bent-knee floor sit-up with both feet secured under visibly bolted fixed anchor, fingers clasped behind head and torso raised toward thighs; complete athlete/support visible."
     },
     {
       "exerciseId": "wger-f38e9c23-031d-44d0-ac27-7f1026212c73",
@@ -10135,7 +10149,9 @@
       "name": "Sled Overhead Backward Walk",
       "equipment": "Specialty equipment",
       "guideSha256": "bf4f60c105537d8e478fcc22fa3cb5dddaed776fb20e0a3509782c049a36fc46",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-c-002-1-0",
+      "reviewNote": "Athlete faces directly toward sled in front, arms straight overhead holding two taut ropes and staggered feet representing backward step; body and sled entirely contained."
     },
     {
       "exerciseId": "db-sled-overhead-triceps-extension",
@@ -10856,7 +10872,9 @@
       "name": "Standing Dumbbell Reverse Curl",
       "equipment": "Dumbbell",
       "guideSha256": "9e65cb37bb1868e0157faccdc17205b25db809b910a604bd34c7aed109f0c027",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-c-002-1-1",
+      "reviewNote": "Two separate dumbbells held at mid-curl with horizontal forearms, clearly visible knuckles/backs of both hands upward and palms downward; matches pronated reverse grip."
     },
     {
       "exerciseId": "db-standing-dumbbell-straight-arm-front-delt-raise-above-head",

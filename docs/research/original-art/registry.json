@@ -31238,7 +31238,7 @@
       "width": 1536,
       "height": 1024,
       "sourceLabel": "FORMA original artwork",
-      "title": "Standing band hip abduction (guide variant)",
+      "title": "Standing band hip abduction",
       "kind": "movement_illustration",
       "original": true,
       "sourceUrl": "/exercise-media/original/movements-005.png",
@@ -33127,6 +33127,314 @@
           "y": 0,
           "width": 768,
           "height": 420
+        }
+      }
+    },
+    "forma-original-finish-c-002-0-0": {
+      "src": "/exercise-media/original/finish-c-002.png?v=fc04bdbd1b3b",
+      "sha256": "fc04bdbd1b3bf754f18026607b2f7694c469f0a1030f8fa53f4b281fab5e7fef",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Sit-Up",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-c-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 481
+        }
+      }
+    },
+    "forma-original-finish-c-002-1-0": {
+      "src": "/exercise-media/original/finish-c-002.png?v=fc04bdbd1b3b",
+      "sha256": "fc04bdbd1b3bf754f18026607b2f7694c469f0a1030f8fa53f4b281fab5e7fef",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Sled Overhead Backward Walk",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-c-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 481
+        }
+      }
+    },
+    "forma-original-finish-c-002-1-1": {
+      "src": "/exercise-media/original/finish-c-002.png?v=fc04bdbd1b3b",
+      "sha256": "fc04bdbd1b3bf754f18026607b2f7694c469f0a1030f8fa53f4b281fab5e7fef",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Standing Dumbbell Reverse Curl",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-c-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 481,
+          "width": 768,
+          "height": 543
+        }
+      }
+    },
+    "forma-original-finish-d-002-1-0": {
+      "src": "/exercise-media/original/finish-d-002.png?v=16fd5e86175d",
+      "sha256": "16fd5e86175d902db2833b97fde791c8bb59c426a4a9cb08cbcc284b74f6a4d3",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Roman-chair dumbbell hip hinge",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-d-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 490
+        }
+      }
+    },
+    "forma-original-finish-d-002-0-1": {
+      "src": "/exercise-media/original/finish-d-002.png?v=16fd5e86175d",
+      "sha256": "16fd5e86175d902db2833b97fde791c8bb59c426a4a9cb08cbcc284b74f6a4d3",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Low Box Squat - Wide Stance",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-d-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 490,
+          "width": 768,
+          "height": 534
+        }
+      }
+    },
+    "forma-original-finish-d-002-1-1": {
+      "src": "/exercise-media/original/finish-d-002.png?v=16fd5e86175d",
+      "sha256": "16fd5e86175d902db2833b97fde791c8bb59c426a4a9cb08cbcc284b74f6a4d3",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Dumbbell Underhand Dead Row",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-d-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 490,
+          "width": 768,
+          "height": 534
+        }
+      }
+    },
+    "forma-original-finish-a-002-1-0": {
+      "src": "/exercise-media/original/finish-a-002.png?v=e117e261ef27",
+      "sha256": "e117e261ef276a87f7fa223cd71f9a77b4a1d5d149f891a26b3308b198a03135",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Incline Dumbbell Flyes",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-a-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 475
+        }
+      }
+    },
+    "forma-original-finish-a-002-1-1": {
+      "src": "/exercise-media/original/finish-a-002.png?v=e117e261ef27",
+      "sha256": "e117e261ef276a87f7fa223cd71f9a77b4a1d5d149f891a26b3308b198a03135",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Intermediate Hip Flexor and Quad Stretch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-a-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 475,
+          "width": 768,
+          "height": 549
+        }
+      }
+    },
+    "forma-original-finish-b-001-retry-0-0": {
+      "src": "/exercise-media/original/finish-b-001-retry.png?v=ae71a7d10d20",
+      "sha256": "ae71a7d10d201f1fa3a35df9f5ab49002bbec053529ac832da922622be191475",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "IT Band and Glute Stretch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-b-001-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-finish-b-001-retry-1-0": {
+      "src": "/exercise-media/original/finish-b-001-retry.png?v=ae71a7d10d20",
+      "sha256": "ae71a7d10d201f1fa3a35df9f5ab49002bbec053529ac832da922622be191475",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Jefferson Squats",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-b-001-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-finish-b-001-retry-1-1": {
+      "src": "/exercise-media/original/finish-b-001-retry.png?v=ae71a7d10d20",
+      "sha256": "ae71a7d10d201f1fa3a35df9f5ab49002bbec053529ac832da922622be191475",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "One Arm Floor Press",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-b-001-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 512,
+          "width": 768,
+          "height": 512
         }
       }
     }
@@ -42528,10 +42836,10 @@
     },
     "db-band-hip-adductions": {
       "assetId": "forma-original-movements-005-2-2",
-      "caption": "Standing band hip abduction (guide variant) · Representative exercise position; follow the guide for the complete movement.",
+      "caption": "Standing band hip abduction · Representative exercise position; follow the guide for the complete movement.",
       "reviewStatus": "accepted",
-      "reviewNote": "Re-inspected original full sheet and matching representative pose against independently clarified guide and researched source metadata; ID and logging units preserved.",
-      "guideSha256": "9c9c14d6f1fc3e0cbc8e5907c41d0617b2f8a95aa47e77786774e24c45ddd56b"
+      "reviewNote": "Re-inspected original full sheet and matching representative pose against independently clarified guide and researched source metadata; ID and logging units preserved. Removed internal import commentary from user-facing guide; factual setup and representative pose unchanged.",
+      "guideSha256": "049e7ba811d6488f4b700f86464515ce4a3ec261b6856e854742b45b4049b12b"
     },
     "wger-eaa7927e-6ea0-4fd5-bbcd-525fe90a184b": {
       "assetId": "forma-original-movements-044-1-2",
@@ -42665,6 +42973,69 @@
       "reviewStatus": "accepted",
       "reviewNote": "Prone flat-bench support with nonworking hand under forehead; working upper arm lateral at shoulder height, elbow clearly90degrees and forearm vertical holding one dumbbell matches explicit starting position.",
       "guideSha256": "93c257e3d115dde891a504c8599d3e1cc9ee6f87d00df562d31fa0eb783ff63e"
+    },
+    "db-sit-up": {
+      "assetId": "forma-original-finish-c-002-0-0",
+      "caption": "Sit-Up · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Bent-knee floor sit-up with both feet secured under visibly bolted fixed anchor, fingers clasped behind head and torso raised toward thighs; complete athlete/support visible.",
+      "guideSha256": "c8881bf7bd0259e7c97e7295fd9b7063fb1f4000344c558e35b9b30df646f2ac"
+    },
+    "db-sled-overhead-backward-walk": {
+      "assetId": "forma-original-finish-c-002-1-0",
+      "caption": "Sled Overhead Backward Walk · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Athlete faces directly toward sled in front, arms straight overhead holding two taut ropes and staggered feet representing backward step; body and sled entirely contained.",
+      "guideSha256": "bf4f60c105537d8e478fcc22fa3cb5dddaed776fb20e0a3509782c049a36fc46"
+    },
+    "db-standing-dumbbell-reverse-curl": {
+      "assetId": "forma-original-finish-c-002-1-1",
+      "caption": "Standing Dumbbell Reverse Curl · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Two separate dumbbells held at mid-curl with horizontal forearms, clearly visible knuckles/backs of both hands upward and palms downward; matches pronated reverse grip.",
+      "guideSha256": "9e65cb37bb1868e0157faccdc17205b25db809b910a604bd34c7aed109f0c027"
+    },
+    "wger-12a80404-8684-4ff0-a473-d80b4ad8cd5e": {
+      "assetId": "forma-original-finish-d-002-1-0",
+      "caption": "Roman-chair dumbbell hip hinge · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Roman-chair dumbbell hip-hinge top with feet on footplate, ankles under padded rollers, thigh support below hip and dumbbell close to chest.",
+      "guideSha256": "1c2780ab98710aaf1aefc3c1045c3f22a17f711dfb7668e927c31d63f6ae6266"
+    },
+    "wger-183e7279-f052-4c70-8381-bbbda3bb9afe": {
+      "assetId": "forma-original-finish-d-002-0-1",
+      "caption": "Low Box Squat - Wide Stance · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Wide-stance barbell low-box squat with complete seated support and hip crease below knee level.",
+      "guideSha256": "c1f5a00aa831baf64355d6c799feefe8d6ec66ce75d1bd12c81f536e130948f2"
+    },
+    "wger-1dca10f9-a976-4a09-ab85-b95fafaa1a28": {
+      "assetId": "forma-original-finish-d-002-1-1",
+      "caption": "Dumbbell Underhand Dead Row · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Underhand paired-dumbbell row with near-horizontal flat torso, elbows retracted and supinated grips.",
+      "guideSha256": "eaf93176d6860144a9632b13fa8d95c909e0b2eb0f742980dd7d8e79aae17800"
+    },
+    "db-incline-dumbbell-flyes": {
+      "assetId": "forma-original-finish-a-002-1-0",
+      "caption": "Incline Dumbbell Flyes · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Both arms spread symmetrically with soft elbows and two dumbbells, palms upward; shallow supported backrest and planted feet match bottom fly phase.",
+      "guideSha256": "c526aeceb912f777ade3e17f0692991bdc5a28de5d1ae6698eccf812d5c62c4b"
+    },
+    "db-intermediate-hip-flexor-and-quad-stretch": {
+      "assetId": "forma-original-finish-a-002-1-1",
+      "caption": "Intermediate Hip Flexor and Quad Stretch · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Prone belt stretch with both hands pulling strap and stretched thigh, hip and knee clearly lifted above floor; opposite leg grounded.",
+      "guideSha256": "aba9b887476d19b56dd7f6cf060d10a2d30f7f64bf8dd7a7ce8f35d2ee6b6a1b"
+    },
+    "db-one-arm-floor-press": {
+      "assetId": "forma-original-finish-b-001-retry-1-1",
+      "caption": "One Arm Floor Press · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Full balanced barbell now runs longitudinally parallel to torso; single midpoint grip palm inward, opposite arm rests beside body and knees bent.",
+      "guideSha256": "d2360db615aa2d9e24110470c0de1a051f64ec202fea345fe7d45863a178e75e"
     }
   }
 }

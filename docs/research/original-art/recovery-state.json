@@ -3,8 +3,8 @@
   "updatedAt": "2026-10-14",
   "recoveredRemoteCommit": "8d0c5a765fe8a7276884e5198827d0f5f193c69c",
   "total": 1414,
-  "accepted": 1362,
-  "remaining": 52,
+  "accepted": 1371,
+  "remaining": 43,
   "ownerRequest": "Push assets and logs frequently so a crashed cloud session can be recovered.",
   "resumeInstructions": [
     "git fetch origin main and compare remote coverage before generating",
@@ -214,6 +214,46 @@
         "held": 3,
         "pending": 0
       }
+    },
+    {
+      "batch": "finish-c-002",
+      "sourceAssetPath": "assets/exercise-artwork/finish-c-002.png",
+      "recordPath": "docs/research/original-art/finish-c-002.json",
+      "reviewCounts": {
+        "accepted": 3,
+        "held": 1,
+        "pending": 0
+      }
+    },
+    {
+      "batch": "finish-d-002",
+      "sourceAssetPath": "assets/exercise-artwork/finish-d-002.png",
+      "recordPath": "docs/research/original-art/finish-d-002.json",
+      "reviewCounts": {
+        "accepted": 3,
+        "held": 1,
+        "pending": 0
+      }
+    },
+    {
+      "batch": "finish-a-002",
+      "sourceAssetPath": "assets/exercise-artwork/finish-a-002.png",
+      "recordPath": "docs/research/original-art/finish-a-002.json",
+      "reviewCounts": {
+        "accepted": 2,
+        "held": 2,
+        "pending": 0
+      }
+    },
+    {
+      "batch": "finish-b-001-retry",
+      "sourceAssetPath": "assets/exercise-artwork/finish-b-001-retry.png",
+      "recordPath": "docs/research/original-art/finish-b-001-retry.json",
+      "reviewCounts": {
+        "accepted": 3,
+        "held": 1,
+        "pending": 0
+      }
     }
   ],
   "remainingAssignments": [
@@ -295,13 +335,6 @@
       "status": "pending"
     },
     {
-      "exerciseId": "wger-1dca10f9-a976-4a09-ab85-b95fafaa1a28",
-      "name": "Dumbbell Underhand Dead Row",
-      "equipment": "Dumbbell",
-      "guideSha256": "eaf93176d6860144a9632b13fa8d95c909e0b2eb0f742980dd7d8e79aae17800",
-      "status": "pending"
-    },
-    {
       "exerciseId": "wger-a4413bcc-dcd1-4332-a09a-fee94a265e22",
       "name": "External Rotation Stretch",
       "equipment": "Barbell",
@@ -344,24 +377,10 @@
       "status": "pending"
     },
     {
-      "exerciseId": "db-incline-dumbbell-flyes",
-      "name": "Incline Dumbbell Flyes",
-      "equipment": "Dumbbell",
-      "guideSha256": "c526aeceb912f777ade3e17f0692991bdc5a28de5d1ae6698eccf812d5c62c4b",
-      "status": "pending"
-    },
-    {
       "exerciseId": "db-incline-dumbbell-flyes-with-a-twist",
       "name": "Incline Dumbbell Flyes - With A Twist",
       "equipment": "Dumbbell",
       "guideSha256": "43c0ac189fd0ad843fef7e3deea321cffdcf6fe5158e7c25194fd3d8feecbe9d",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "db-intermediate-hip-flexor-and-quad-stretch",
-      "name": "Intermediate Hip Flexor and Quad Stretch",
-      "equipment": "Specialty equipment",
-      "guideSha256": "aba9b887476d19b56dd7f6cf060d10a2d30f7f64bf8dd7a7ce8f35d2ee6b6a1b",
       "status": "pending"
     },
     {
@@ -400,13 +419,6 @@
       "status": "pending"
     },
     {
-      "exerciseId": "wger-183e7279-f052-4c70-8381-bbbda3bb9afe",
-      "name": "Low Box Squat - Wide Stance",
-      "equipment": "Barbell",
-      "guideSha256": "c1f5a00aa831baf64355d6c799feefe8d6ec66ce75d1bd12c81f536e130948f2",
-      "status": "pending"
-    },
-    {
       "exerciseId": "wger-346634cf-3896-4c10-bd66-28fb69d02573",
       "name": "Medicine ball booklet crunch",
       "equipment": "Bodyweight",
@@ -418,13 +430,6 @@
       "name": "Neck extension",
       "equipment": "EZ bar",
       "guideSha256": "b527c22adfb88058e7722de55b248267b81e41a66940278d5cd667da82f9f1f7",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "db-one-arm-floor-press",
-      "name": "One Arm Floor Press",
-      "equipment": "Barbell",
-      "guideSha256": "d2360db615aa2d9e24110470c0de1a051f64ec202fea345fe7d45863a178e75e",
       "status": "pending"
     },
     {
@@ -498,13 +503,6 @@
       "status": "pending"
     },
     {
-      "exerciseId": "wger-12a80404-8684-4ff0-a473-d80b4ad8cd5e",
-      "name": "Roman-chair dumbbell hip hinge",
-      "equipment": "Roman chair + Dumbbell",
-      "guideSha256": "1c2780ab98710aaf1aefc3c1045c3f22a17f711dfb7668e927c31d63f6ae6266",
-      "status": "pending"
-    },
-    {
       "exerciseId": "wger-148f2ffc-05e2-486b-874f-2a401337a1c6",
       "name": "Rope Pullover/row",
       "equipment": "Incline bench",
@@ -516,20 +514,6 @@
       "name": "Single arm row",
       "equipment": "Incline bench",
       "guideSha256": "1bdabc057ab96024df7f308e35877cc7e99f912624276634d0b6d91ab117d808",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "db-sit-up",
-      "name": "Sit-Up",
-      "equipment": "Bodyweight",
-      "guideSha256": "c8881bf7bd0259e7c97e7295fd9b7063fb1f4000344c558e35b9b30df646f2ac",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "db-sled-overhead-backward-walk",
-      "name": "Sled Overhead Backward Walk",
-      "equipment": "Specialty equipment",
-      "guideSha256": "bf4f60c105537d8e478fcc22fa3cb5dddaed776fb20e0a3509782c049a36fc46",
       "status": "pending"
     },
     {
@@ -551,13 +535,6 @@
       "name": "Standing biceps stretch right",
       "equipment": "Bodyweight",
       "guideSha256": "c23744a383052c2e0f061a6248356d0e1f8b9bc0e3715b912862a606853548e7",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "db-standing-dumbbell-reverse-curl",
-      "name": "Standing Dumbbell Reverse Curl",
-      "equipment": "Dumbbell",
-      "guideSha256": "9e65cb37bb1868e0157faccdc17205b25db809b910a604bd34c7aed109f0c027",
       "status": "pending"
     },
     {
@@ -604,6 +581,19 @@
       ],
       "accepted": 1362,
       "remaining": 52,
+      "mediaValidation": "passed",
+      "action": "commit and push original assets, full prompts, reviews and coverage"
+    },
+    {
+      "date": "2026-10-14",
+      "batches": [
+        "finish-c-002",
+        "finish-d-002",
+        "finish-a-002",
+        "finish-b-001-retry"
+      ],
+      "accepted": 1371,
+      "remaining": 43,
       "mediaValidation": "passed",
       "action": "commit and push original assets, full prompts, reviews and coverage"
     }
