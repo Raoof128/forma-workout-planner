@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1348,
+  "accepted": 1352,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -4600,7 +4600,9 @@
       "name": "Gorilla Chin/Crunch",
       "equipment": "Bodyweight",
       "guideSha256": "4977d93cd168155f65335509b950997a71867db9e9be07ccb9ebaced8147fb75",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-a-001-1-1",
+      "reviewNote": "Both hands visibly supinated underhand with thumbs outward, nose at bar and both knees crunched to chest; intact suspended athlete."
     },
     {
       "exerciseId": "db-groin-and-back-stretch",
@@ -5488,7 +5490,9 @@
       "name": "IT Band and Glute Stretch",
       "equipment": "Specialty equipment",
       "guideSha256": "eed4cf024774b335f2f2688d1c905fe686b0b23afe01e898773f9ba1b196e636",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-b-001-0-0",
+      "reviewNote": "Straight strapped leg crosses midline to opposite side, foot hovering low above floor; grounded opposite leg and strap toe tension visible."
     },
     {
       "exerciseId": "db-jackknife-sit-up",
@@ -5538,7 +5542,9 @@
       "name": "Jefferson Squats",
       "equipment": "Barbell",
       "guideSha256": "92ff64712e42c11c56b57505d65062f7867ceb2238d272b372f391a1f4a6b5aa",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-b-001-1-0",
+      "reviewNote": "Lengthwise straddled bar runs from forward plate to rear plate; one hand ahead and other behind pelvis with upright squat torso."
     },
     {
       "exerciseId": "db-jerk-balance",
@@ -7142,7 +7148,9 @@
       "name": "Neck-SMR",
       "equipment": "Specialty equipment",
       "guideSha256": "b2d7464413ead67ed03673357e40496db36b50b3a08a010d9f6953dbfb29a2c8",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-b-001-0-1",
+      "reviewNote": "Near-vertical roller contacts right lateral neck soft tissue beside midline rather than spanning central spine; upper-body detail reference."
     },
     {
       "exerciseId": "wger-cbc5fbc9-9bca-4766-941d-4b6903d4a521",

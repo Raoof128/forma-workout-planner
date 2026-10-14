@@ -10639,6 +10639,34 @@
         }
       }
     },
+    "forma-original-finish-a-001-1-1": {
+      "src": "/exercise-media/original/finish-a-001.png?v=bb8b49f6192b",
+      "sha256": "bb8b49f6192bbee97878e5ad18e20a7b5e0ac9ae22b8d083c855535ed59b178a",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Gorilla Chin/Crunch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-a-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 456,
+          "width": 768,
+          "height": 568
+        }
+      }
+    },
     "forma-original-movements-036-1-2": {
       "src": "/exercise-media/original/movements-036.png?v=24d954330e57",
       "sha256": "24d954330e57700f762e0df5ec0bb6288ea565c4a78539ef103822ff5d828e1f",
@@ -13097,6 +13125,34 @@
         }
       }
     },
+    "forma-original-finish-b-001-0-0": {
+      "src": "/exercise-media/original/finish-b-001.png?v=539690ce759d",
+      "sha256": "539690ce759dae115d5af0a942b8aa1c4282fb74da03b93bd8382a6e13943fec",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "IT Band and Glute Stretch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-b-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
     "forma-original-movements-044-2-1": {
       "src": "/exercise-media/original/movements-044.png?v=1c6e866cced3",
       "sha256": "1c6e866cced3dec2cb78c25d06fea638602a14b9e721c45afcd8c53d98c55437",
@@ -13206,6 +13262,34 @@
           "y": 650,
           "width": 384,
           "height": 374
+        }
+      }
+    },
+    "forma-original-finish-b-001-1-0": {
+      "src": "/exercise-media/original/finish-b-001.png?v=539690ce759d",
+      "sha256": "539690ce759dae115d5af0a942b8aa1c4282fb74da03b93bd8382a6e13943fec",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Jefferson Squats",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-b-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 512
         }
       }
     },
@@ -17366,6 +17450,34 @@
           "y": 670,
           "width": 384,
           "height": 354
+        }
+      }
+    },
+    "forma-original-finish-b-001-0-1": {
+      "src": "/exercise-media/original/finish-b-001.png?v=539690ce759d",
+      "sha256": "539690ce759dae115d5af0a942b8aa1c4282fb74da03b93bd8382a6e13943fec",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Neck-SMR",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-b-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 512,
+          "width": 768,
+          "height": 512
         }
       }
     },
@@ -33317,6 +33429,10 @@
       "assetId": "forma-original-corrections-012-0-0",
       "caption": "Good Morning off Pins · Representative exercise position; follow the guide for the complete movement."
     },
+    "db-gorilla-chin-crunch": {
+      "assetId": "forma-original-finish-a-001-1-1",
+      "caption": "Gorilla Chin/Crunch · Representative exercise position; follow the guide for the complete movement."
+    },
     "db-groin-and-back-stretch": {
       "assetId": "forma-original-movements-036-1-2",
       "caption": "Groin and Back Stretch · Representative exercise position; follow the guide for the complete movement."
@@ -33693,6 +33809,10 @@
       "assetId": "forma-original-movements-044-0-1",
       "caption": "Isometric Wipers · Representative exercise position; follow the guide for the complete movement."
     },
+    "db-it-band-and-glute-stretch": {
+      "assetId": "forma-original-finish-b-001-0-0",
+      "caption": "IT Band and Glute Stretch · Representative exercise position; follow the guide for the complete movement."
+    },
     "db-jackknife-sit-up": {
       "assetId": "forma-original-movements-044-2-1",
       "caption": "Jackknife Sit-Up · Representative exercise position; follow the guide for the complete movement."
@@ -33708,6 +33828,10 @@
     "db-janda-sit-up": {
       "assetId": "forma-original-movements-044-2-2",
       "caption": "Janda Sit-Up · Representative exercise position; follow the guide for the complete movement."
+    },
+    "db-jefferson-squats": {
+      "assetId": "forma-original-finish-b-001-1-0",
+      "caption": "Jefferson Squats · Representative exercise position; follow the guide for the complete movement."
     },
     "db-jerk-balance": {
       "assetId": "forma-original-movements-045-0-0",
@@ -34396,6 +34520,10 @@
     "wger-8bffd3b2-663a-4617-9d95-dce24e795470": {
       "assetId": "forma-original-movements-056-2-2",
       "caption": "Neck half circles · Illustrated movement sequence; follow the guide and keep the motion slow and controlled."
+    },
+    "db-neck-smr": {
+      "assetId": "forma-original-finish-b-001-0-1",
+      "caption": "Neck-SMR · Representative exercise position; follow the guide for the complete movement."
     },
     "wger-cbc5fbc9-9bca-4766-941d-4b6903d4a521": {
       "assetId": "forma-original-corrections-040-0-1",

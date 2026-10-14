@@ -1,0 +1,132 @@
+{
+  "name": "finish-b-001",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-b-001.png",
+  "prompt": "Original FORMA exercise illustration landscape1536x1024 exactly TWO columns TWO rows, each equal768x512 white cell. No text labels arrows. Charcoalgray clothing equipment lime accents, correct anatomy2arms2legs. Full person and equipment contained generous margin. Precise variations, one representative pose percell. \nRow1column1 IT Band and Glute Stretch: Supine athlete seen from elevated FOOT-END threequarter angle. LEFT leg remains straight along ground; RIGHT leg perfectly straight swung ACROSS torso to LEFT side, right foot hovering20cm above ground far OUTSIDE left hip. A strap around right forefoot pulled by LEFT hand to dorsiflex toes. This is a low sideways cross-body IT-band stretch, leg not raised vertically.\nRow1column2 Jefferson Squats: Jefferson squat THREEQUARTER SIDE angle showing full bar FRONT-TO-BACK running lengthwise BETWEEN athlete's feet, NOT across front. Right hand hangs in FRONT of crotch gripping forward shaft; left arm hangs BEHIND buttocks gripping rear shaft. One bar end projects forward, other behind, both plates visible. Wide straddle squat thighs parallel upright spine arms straight.\nRow2column1 Neck-SMR: Neck self massage, standing back threequarter view. Small hand-held muscle roller angled near VERTICAL pressed only on RIGHT lateral neck muscle beside spine, roller never spans neck midline. Both hands hold ends, side-neck contact visibly offset.\nRow2column2 One Arm Floor Press: Supine on floor knees bent feet planted, nonworking arm flat by side. RIGHT hand holding CENTER of complete barbell one-handed, arm vertical. Barbell runs LONGITUDINALLY parallel to torso from head end toward foot end, visible equal plates at both ends. Right palm faces torso, neutral grip. One-arm longitudinal barbell floor press endpoint.",
+  "sourceGeneratedPath": "/workspace/generated_images/exec-88ea4772-9103-4f68-aa2e-9df685815c8b.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-b-001.png",
+  "cells": [
+    {
+      "id": "db-it-band-and-glute-stretch",
+      "title": "IT Band and Glute Stretch",
+      "equipment": "Specialty equipment",
+      "guideText": "Loop a belt, rope, or band around one of your feet, and swing that leg across your body to the opposite side, keeping the leg extended as you lay on the ground. This will be your starting position.\n\nKeeping your foot off of the floor, pull on the belt, using the tension to pull the toes up. Hold for 10-20 seconds, and repeat on the other side.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/IT_Band_and_Glute_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Straight strapped leg crosses midline to opposite side, foot hovering low above floor; grounded opposite leg and strap toe tension visible.",
+      "priorBatch": "docs/research/original-art/recovery-c-001.json",
+      "priorReviewNote": "Raised strapped leg remains ahead of torso as vertical/diagonal hamstring stretch; no clear straight-leg cross-body lateral displacement.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected 1536x1024 source with equal panel boundaries x768 y512; complete intended pose/equipment retained, neck panel intentionally shows upper-body detail.",
+      "references": null,
+      "ids": [
+        "db-it-band-and-glute-stretch"
+      ]
+    },
+    {
+      "id": "db-jefferson-squats",
+      "title": "Jefferson Squats",
+      "equipment": "Barbell",
+      "guideText": "Place a barbell on the floor.\n\nStand in the middle of the bar length wise.\n\nBend down by bending at the knees and keeping your back straight and grasp the front of the bar with your right hand. Your palm should be in (neutral grip) facing the left side.\n\nGrasp the rear of the bar with your left hand. The palm of your hand should be in neutral grip alignment (palms facing the right side). Tip: Ensure that your grip is even on the bar. Your torso should be positioned right in the middle of the bar and the distance between your torso and your right hand (which should be at the front) should be the same as the distance between your torso and your left hand (which should be to your back).\n\nNow stand straight up with the weight. Tip: Your feet should be shoulder width apart and your toes slightly pointed out.\n\nSquat down by bending at the knees and keeping your back straight until your upper thighs are parallel with the floor. Tip: Keep your back as vertical as possible with the floor and your head up. Also remember to not let your knees go past your toes. Inhale during this portion of the movement.\n\nNow drive yourself back up to the starting position by pushing with the feet . Tip: Keep the bar hanging at arm's length and your elbows locked with a slight bend. The arms only serve as hooks. Avoid doing any lifting with them. Do the lifting with your thighs; not your arms.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Jefferson_Squats.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Lengthwise straddled bar runs from forward plate to rear plate; one hand ahead and other behind pelvis with upright squat torso.",
+      "priorBatch": "docs/research/original-art/recovery-c-001.json",
+      "priorReviewNote": "Both hands remain in front on transverse bar, not one in front and one behind on lengthwise straddled Jefferson bar.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected 1536x1024 source with equal panel boundaries x768 y512; complete intended pose/equipment retained, neck panel intentionally shows upper-body detail.",
+      "references": null,
+      "ids": [
+        "db-jefferson-squats"
+      ]
+    },
+    {
+      "id": "db-neck-smr",
+      "title": "Neck-SMR",
+      "equipment": "Specialty equipment",
+      "guideText": "Using a muscle roller or a rolling pin, place the roller behind your head and against your neck. Make sure that you do not place the roller directly against the spine, but turned slightly so that the roller is pressed against the muscles to either side of the spine. This will be your starting position.\n\nStarting at the top of your neck, slowly roll down the muscles of your neck, pausing at points of tension for 10-30 seconds.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Neck-SMR.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: neck roller is laid across central spine instead of offset to lateral neck muscles.",
+      "reviewNote": "Near-vertical roller contacts right lateral neck soft tissue beside midline rather than spanning central spine; upper-body detail reference.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected 1536x1024 source with equal panel boundaries x768 y512; complete intended pose/equipment retained, neck panel intentionally shows upper-body detail.",
+      "priorBatch": "docs/research/original-art/corrections-020.json",
+      "references": null,
+      "priorReviewNote": "Roller position still spans the central neck rather than clearly offset lateral soft tissue.",
+      "ids": [
+        "db-neck-smr"
+      ]
+    },
+    {
+      "id": "db-one-arm-floor-press",
+      "title": "One Arm Floor Press",
+      "equipment": "Barbell",
+      "guideText": "Lie down on a flat surface with your back pressing against the floor or an exercise mat. Make sure your knees are bent.\n\nHave a partner hand you the bar on one hand. When starting, your arm should be just about fully extended, similar to the starting position of a barbell bench press. However, this time your grip will be neutral (palms facing your torso).\n\nMake sure the hand you are not using to lift the weight is placed by your side.\n\nBegin the exercise by lowering the barbell until your elbow touches the ground. Make sure to breathe in as this is the eccentric (lowering part of the exercise).\n\nThen start lifting the barbell back up to the original starting position. Remember to breathe out during the concentric (lifting part of the exercise).\n\nRepeat until you have performed your recommended repetitions.\n\nSwitch arms and repeat the movement.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/One_Arm_Floor_Press.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: one-arm barbell floor press has cropped asymmetric bar and does not establish neutral longitudinal bar grip.",
+      "reviewNote": "Bar remains transverse across athlete rather than longitudinal; working grip does not establish palm facing torso.",
+      "bounds": {
+        "x": 768,
+        "y": 512,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected 1536x1024 source with equal panel boundaries x768 y512; complete intended pose/equipment retained, neck panel intentionally shows upper-body detail.",
+      "priorBatch": "docs/research/original-art/corrections-021.json",
+      "references": null,
+      "priorReviewNote": "Bar orientation/hand grip does not establish longitudinal neutral one-arm barbell floor press."
+    }
+  ],
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

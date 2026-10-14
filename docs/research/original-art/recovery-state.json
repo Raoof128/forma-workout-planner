@@ -3,8 +3,8 @@
   "updatedAt": "2026-10-14",
   "recoveredRemoteCommit": "8d0c5a765fe8a7276884e5198827d0f5f193c69c",
   "total": 1414,
-  "accepted": 1348,
-  "remaining": 66,
+  "accepted": 1352,
+  "remaining": 62,
   "ownerRequest": "Push assets and logs frequently so a crashed cloud session can be recovered.",
   "resumeInstructions": [
     "git fetch origin main and compare remote coverage before generating",
@@ -154,6 +154,26 @@
         "held": 1,
         "pending": 0
       }
+    },
+    {
+      "batch": "finish-a-001",
+      "sourceAssetPath": "assets/exercise-artwork/finish-a-001.png",
+      "recordPath": "docs/research/original-art/finish-a-001.json",
+      "reviewCounts": {
+        "accepted": 1,
+        "held": 3,
+        "pending": 0
+      }
+    },
+    {
+      "batch": "finish-b-001",
+      "sourceAssetPath": "assets/exercise-artwork/finish-b-001.png",
+      "recordPath": "docs/research/original-art/finish-b-001.json",
+      "reviewCounts": {
+        "accepted": 3,
+        "held": 1,
+        "pending": 0
+      }
     }
   ],
   "remainingAssignments": [
@@ -277,13 +297,6 @@
       "status": "pending"
     },
     {
-      "exerciseId": "db-gorilla-chin-crunch",
-      "name": "Gorilla Chin/Crunch",
-      "equipment": "Bodyweight",
-      "guideSha256": "4977d93cd168155f65335509b950997a71867db9e9be07ccb9ebaced8147fb75",
-      "status": "pending"
-    },
-    {
       "exerciseId": "wger-e781dae5-90b8-4105-8aa6-82d278ac5ff5",
       "name": "Helms Row",
       "equipment": "Dumbbell",
@@ -319,24 +332,10 @@
       "status": "pending"
     },
     {
-      "exerciseId": "db-it-band-and-glute-stretch",
-      "name": "IT Band and Glute Stretch",
-      "equipment": "Specialty equipment",
-      "guideSha256": "eed4cf024774b335f2f2688d1c905fe686b0b23afe01e898773f9ba1b196e636",
-      "status": "pending"
-    },
-    {
       "exerciseId": "wger-d33f3b19-436f-48a2-aff6-946582c94bdb",
       "name": "Jalón abierto supino",
       "equipment": "Bodyweight",
       "guideSha256": "5e0c123b5989167aa5c1ac58730fdae835fafaf2eba43183dd97b87e5bac883c",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "db-jefferson-squats",
-      "name": "Jefferson Squats",
-      "equipment": "Barbell",
-      "guideSha256": "92ff64712e42c11c56b57505d65062f7867ceb2238d272b372f391a1f4a6b5aa",
       "status": "pending"
     },
     {
@@ -386,13 +385,6 @@
       "name": "Neck extension",
       "equipment": "EZ bar",
       "guideSha256": "b527c22adfb88058e7722de55b248267b81e41a66940278d5cd667da82f9f1f7",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "db-neck-smr",
-      "name": "Neck-SMR",
-      "equipment": "Specialty equipment",
-      "guideSha256": "b2d7464413ead67ed03673357e40496db36b50b3a08a010d9f6953dbfb29a2c8",
       "status": "pending"
     },
     {
@@ -618,6 +610,19 @@
       "equipment": "Specialty equipment",
       "guideSha256": "f9a42342ed7099de5e076c8cfdc2913db258c9d88cf8d2e47555c67e82144e1c",
       "status": "pending"
+    }
+  ],
+  "events": [
+    {
+      "date": "2026-10-14",
+      "batches": [
+        "finish-a-001",
+        "finish-b-001"
+      ],
+      "accepted": 1352,
+      "remaining": 62,
+      "mediaValidation": "passed",
+      "action": "commit and push original assets, full prompts, reviews and coverage"
     }
   ]
 }

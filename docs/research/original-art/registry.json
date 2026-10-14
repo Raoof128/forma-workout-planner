@@ -32737,6 +32737,118 @@
           "height": 512
         }
       }
+    },
+    "forma-original-finish-a-001-1-1": {
+      "src": "/exercise-media/original/finish-a-001.png?v=bb8b49f6192b",
+      "sha256": "bb8b49f6192bbee97878e5ad18e20a7b5e0ac9ae22b8d083c855535ed59b178a",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Gorilla Chin/Crunch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-a-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 456,
+          "width": 768,
+          "height": 568
+        }
+      }
+    },
+    "forma-original-finish-b-001-0-0": {
+      "src": "/exercise-media/original/finish-b-001.png?v=539690ce759d",
+      "sha256": "539690ce759dae115d5af0a942b8aa1c4282fb74da03b93bd8382a6e13943fec",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "IT Band and Glute Stretch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-b-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-finish-b-001-1-0": {
+      "src": "/exercise-media/original/finish-b-001.png?v=539690ce759d",
+      "sha256": "539690ce759dae115d5af0a942b8aa1c4282fb74da03b93bd8382a6e13943fec",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Jefferson Squats",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-b-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-finish-b-001-0-1": {
+      "src": "/exercise-media/original/finish-b-001.png?v=539690ce759d",
+      "sha256": "539690ce759dae115d5af0a942b8aa1c4282fb74da03b93bd8382a6e13943fec",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Neck-SMR",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-b-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 512,
+          "width": 768,
+          "height": 512
+        }
+      }
     }
   },
   "exercises": {
@@ -42175,6 +42287,34 @@
       "reviewStatus": "accepted",
       "reviewNote": "Side-lying incline dumbbell lateral raise with lower shoulder/side on pad and upper arm directed upward.",
       "guideSha256": "23cdc4f20cf1387bc628a7a3c3abf9ce11c7d09302776f827050e01ba58445fb"
+    },
+    "db-gorilla-chin-crunch": {
+      "assetId": "forma-original-finish-a-001-1-1",
+      "caption": "Gorilla Chin/Crunch · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Both hands visibly supinated underhand with thumbs outward, nose at bar and both knees crunched to chest; intact suspended athlete.",
+      "guideSha256": "4977d93cd168155f65335509b950997a71867db9e9be07ccb9ebaced8147fb75"
+    },
+    "db-it-band-and-glute-stretch": {
+      "assetId": "forma-original-finish-b-001-0-0",
+      "caption": "IT Band and Glute Stretch · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Straight strapped leg crosses midline to opposite side, foot hovering low above floor; grounded opposite leg and strap toe tension visible.",
+      "guideSha256": "eed4cf024774b335f2f2688d1c905fe686b0b23afe01e898773f9ba1b196e636"
+    },
+    "db-jefferson-squats": {
+      "assetId": "forma-original-finish-b-001-1-0",
+      "caption": "Jefferson Squats · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Lengthwise straddled bar runs from forward plate to rear plate; one hand ahead and other behind pelvis with upright squat torso.",
+      "guideSha256": "92ff64712e42c11c56b57505d65062f7867ceb2238d272b372f391a1f4a6b5aa"
+    },
+    "db-neck-smr": {
+      "assetId": "forma-original-finish-b-001-0-1",
+      "caption": "Neck-SMR · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Near-vertical roller contacts right lateral neck soft tissue beside midline rather than spanning central spine; upper-body detail reference.",
+      "guideSha256": "b2d7464413ead67ed03673357e40496db36b50b3a08a010d9f6953dbfb29a2c8"
     }
   }
 }
