@@ -35089,6 +35089,34 @@
           "height": 1024
         }
       }
+    },
+    "forma-original-finish-solo-005-retry-0-0": {
+      "src": "/exercise-media/original/finish-solo-005-retry.png?v=5843757540e3",
+      "sha256": "5843757540e386b48c953740436c069eab89a0246595527330c270b130cd43d3",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Incline Dumbbell Flyes - With A Twist",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-solo-005-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 1,
+        "rows": 1,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1536,
+          "height": 1024
+        }
+      }
     }
   },
   "exercises": {
@@ -44975,6 +45003,13 @@
       "reviewStatus": "accepted",
       "reviewNote": "Side-lying bent-knee setup with knees visibly stacked in contact, bottom shin supported and upper foot raised away from lower foot; hand controls knee contact and pelvis stays stacked.",
       "guideSha256": "036ffb9cfcfce9a8a6907963453a51221586c7b4b1b964efc25c05b106114759"
+    },
+    "db-incline-dumbbell-flyes-with-a-twist": {
+      "assetId": "forma-original-finish-solo-005-retry-0-0",
+      "caption": "Incline Dumbbell Flyes - With A Twist · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Edited backrest visibly shallow at approximately25degrees within guide maximum30; head/back supported and both feet grounded. Both arms share open fly phase with small fixed elbow bends, two dumbbells, and visibly supinated palms facing ceiling matching guide's wrist-rotation endpoint.",
+      "guideSha256": "43c0ac189fd0ad843fef7e3deea321cffdcf6fe5158e7c25194fd3d8feecbe9d"
     }
   }
 }

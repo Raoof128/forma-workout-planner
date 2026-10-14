@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1412,
+  "accepted": 1413,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -5280,7 +5280,9 @@
       "name": "Incline Dumbbell Flyes - With A Twist",
       "equipment": "Dumbbell",
       "guideSha256": "43c0ac189fd0ad843fef7e3deea321cffdcf6fe5158e7c25194fd3d8feecbe9d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-solo-005-retry-0-0",
+      "reviewNote": "Edited backrest visibly shallow at approximately25degrees within guide maximum30; head/back supported and both feet grounded. Both arms share open fly phase with small fixed elbow bends, two dumbbells, and visibly supinated palms facing ceiling matching guide's wrist-rotation endpoint."
     },
     {
       "exerciseId": "db-incline-dumbbell-press",

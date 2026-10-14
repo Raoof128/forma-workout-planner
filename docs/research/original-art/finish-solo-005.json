@@ -1,0 +1,39 @@
+{
+  "name": "finish-solo-005",
+  "columns": 1,
+  "rows": 1,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-solo-005.png",
+  "prompt": "Original FORMA single standalone landscape1536x1024 cleanWHITE illustrated fitnessmanual no labels letters arrows borders. Fulladult and wholebenchcontained large margins charcoalgray clothing lime accents. Exactly2arms2legs2dumbbells. INCLINE DUMBBELL FLY WITH WRIST TWIST — BOTTOM OPEN PHASE with both PALMS FACING CEILING as guideexplicitlyrequires.\nBench lowbackrest EXACT20DEGREES abovehorizontal, VERYSHALLOW: riseoneunit per horizontalthreeunits. Orthographic threequarter with lateralprofile sufficientlyclear to seeLOWslope, not40degree not45degree. Headandback supported, hipsseated BOTHfeetflatfloor kneesbent.\nBOTH arms spread symmetrically laterally outtoSIDES at shoulderline, arms almoststraight fixed slight15degreebend elbows, eachhandholdsONEdumbbell. BOTH wrists SUPINATED so PALMSFACEUPCEILING, innerforearmsandpalm pads visible, handles restingonpalms fingerscurluparoundhandles, notpalmsinwardneutral. This is endof loweringarc afterwristsrotate topalmsup. Both arms samebottomphase no asymmetrypress. Elevatedfrontsidecamera simultaneouslyshowsbothpalmupgrips and benchlow20degree longdiagonal. Fullhands weights feetbenchbasenocropping. Correctanatomy proportions shouldersplausiblysupported.",
+  "cells": [
+    {
+      "id": "db-incline-dumbbell-flyes-with-a-twist",
+      "title": "Incline Dumbbell Flyes - With A Twist",
+      "equipment": "Dumbbell",
+      "guideText": "Hold a dumbbell in each hand and lie on an incline bench that is set to an incline angle of no more than 30 degrees.\n\nExtend your arms above you with a slight bend at the elbows.\n\nNow rotate the wrists so that the palms of your hands are facing you. Tip: The pinky fingers should be next to each other. This will be your starting position.\n\nAs you breathe in, start to slowly lower the arms to the side while keeping the arms extended and while rotating the wrists until the palms of the hand are facing each other. Tip: At the end of the movement the arms will be by your side with the palms facing the ceiling.\n\nAs you exhale start to bring the dumbbells back up to the starting position by reversing the motion and rotating the hands so that the pinky fingers are next to each other again. Tip: Keep in mind that the movement will only happen at the shoulder joint and at the wrist. There is no motion that happens at the elbow joint.\n\nRepeat for the recommended amount of repetitions.",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Dumbbell_Flyes_-_With_A_Twist.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "references": null,
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "held",
+      "reviewNote": "Symmetric open fly with palms-up rotated wrists and two weights shown, but apparent bench slope near35degrees is not confidently within no-more-than30degree limit.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "cropReviewNote": "Full1536x1024 source retains entire athlete, two weights and bench.",
+      "illustrationCaption": "Incline fly with a twist — open phase, palms facing ceiling."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-a2123b4f-b7d9-44ab-a51a-37e30c38c5dd.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-solo-005.png",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

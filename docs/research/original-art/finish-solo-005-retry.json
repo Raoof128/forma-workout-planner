@@ -1,0 +1,45 @@
+{
+  "name": "finish-solo-005-retry",
+  "columns": 1,
+  "rows": 1,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-solo-005-retry.png",
+  "prompt": "Edit this ORIGINAL FORMA fitness illustration preserve entirefigurefeetbench2arms2dumbbells and BOTH PALMS FACEUPCEILING in symmetricopenflyphase. LOWER BENCH BACKREST from steep currentangle to VERY SHALLOW ONLY15–20DEGREES abovefloor: topofbackrest/head only150pixels HIGHER thanhipseat while approximately550pixels LEFT ofhip. Backrest ALMOSTHORIZONTAL gentlyraised athead, nowhere45degree. Adult headback fullysupportonthisnewlowpad, torso nearlysupine. Bench seatflat feetstillgrounded kneesbent. Preserve openalmoststraightarms15degreeelbowbend two supinatedwrists palmsup andcompleteweights. Whitegraylime no text. The low shallow slope clearlylessthan30degrees is mandatory.",
+  "referencedImagePaths": [
+    "/workspace/generated_images/exec-a2123b4f-b7d9-44ab-a51a-37e30c38c5dd.png"
+  ],
+  "cells": [
+    {
+      "id": "db-incline-dumbbell-flyes-with-a-twist",
+      "title": "Incline Dumbbell Flyes - With A Twist",
+      "equipment": "Dumbbell",
+      "guideText": "Hold a dumbbell in each hand and lie on an incline bench that is set to an incline angle of no more than 30 degrees.\n\nExtend your arms above you with a slight bend at the elbows.\n\nNow rotate the wrists so that the palms of your hands are facing you. Tip: The pinky fingers should be next to each other. This will be your starting position.\n\nAs you breathe in, start to slowly lower the arms to the side while keeping the arms extended and while rotating the wrists until the palms of the hand are facing each other. Tip: At the end of the movement the arms will be by your side with the palms facing the ceiling.\n\nAs you exhale start to bring the dumbbells back up to the starting position by reversing the motion and rotating the hands so that the pinky fingers are next to each other again. Tip: Keep in mind that the movement will only happen at the shoulder joint and at the wrist. There is no motion that happens at the elbow joint.\n\nRepeat for the recommended amount of repetitions.",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Dumbbell_Flyes_-_With_A_Twist.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "references": null,
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Edited backrest visibly shallow at approximately25degrees within guide maximum30; head/back supported and both feet grounded. Both arms share open fly phase with small fixed elbow bends, two dumbbells, and visibly supinated palms facing ceiling matching guide's wrist-rotation endpoint.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "cropReviewNote": "Full1536x1024 source visually inspected; both hands/weights, head, feet and complete bench contained.",
+      "illustrationCaption": "Incline fly with a twist — open phase, palms facing ceiling.",
+      "ids": [
+        "db-incline-dumbbell-flyes-with-a-twist"
+      ]
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-87455a55-8af9-481f-8542-86e9ae1d7d01.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-solo-005-retry.png",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

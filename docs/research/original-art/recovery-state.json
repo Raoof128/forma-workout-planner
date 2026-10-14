@@ -3,8 +3,8 @@
   "updatedAt": "2026-10-14",
   "recoveredRemoteCommit": "8d0c5a765fe8a7276884e5198827d0f5f193c69c",
   "total": 1414,
-  "accepted": 1412,
-  "remaining": 2,
+  "accepted": 1413,
+  "remaining": 1,
   "ownerRequest": "Push assets and logs frequently so a crashed cloud session can be recovered.",
   "resumeInstructions": [
     "git fetch origin main and compare remote coverage before generating",
@@ -534,6 +534,26 @@
         "held": 0,
         "pending": 0
       }
+    },
+    {
+      "batch": "finish-solo-005",
+      "sourceAssetPath": "assets/exercise-artwork/finish-solo-005.png",
+      "recordPath": "docs/research/original-art/finish-solo-005.json",
+      "reviewCounts": {
+        "accepted": 0,
+        "held": 1,
+        "pending": 0
+      }
+    },
+    {
+      "batch": "finish-solo-005-retry",
+      "sourceAssetPath": "assets/exercise-artwork/finish-solo-005-retry.png",
+      "recordPath": "docs/research/original-art/finish-solo-005-retry.json",
+      "reviewCounts": {
+        "accepted": 1,
+        "held": 0,
+        "pending": 0
+      }
     }
   ],
   "remainingAssignments": [
@@ -542,13 +562,6 @@
       "name": "Flexor Incline Dumbbell Curls",
       "equipment": "Dumbbell",
       "guideSha256": "25ff1ab3dfa37f3bb51f7e7b9a4e8149bd5b590b529685d7dd3347c748d64833",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "db-incline-dumbbell-flyes-with-a-twist",
-      "name": "Incline Dumbbell Flyes - With A Twist",
-      "equipment": "Dumbbell",
-      "guideSha256": "43c0ac189fd0ad843fef7e3deea321cffdcf6fe5158e7c25194fd3d8feecbe9d",
       "status": "pending"
     }
   ],
@@ -688,6 +701,17 @@
       ],
       "accepted": 1412,
       "remaining": 2,
+      "mediaValidation": "passed",
+      "action": "commit and push original assets, full prompts, reviews and coverage"
+    },
+    {
+      "date": "2026-10-14",
+      "batches": [
+        "finish-solo-005",
+        "finish-solo-005-retry"
+      ],
+      "accepted": 1413,
+      "remaining": 1,
       "mediaValidation": "passed",
       "action": "commit and push original assets, full prompts, reviews and coverage"
     }

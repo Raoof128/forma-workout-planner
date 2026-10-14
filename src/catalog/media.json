@@ -12929,6 +12929,34 @@
         }
       }
     },
+    "forma-original-finish-solo-005-retry-0-0": {
+      "src": "/exercise-media/original/finish-solo-005-retry.png?v=5843757540e3",
+      "sha256": "5843757540e386b48c953740436c069eab89a0246595527330c270b130cd43d3",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Incline Dumbbell Flyes - With A Twist",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-solo-005-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 1,
+        "rows": 1,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
     "forma-original-movements-042-2-0": {
       "src": "/exercise-media/original/movements-042.png?v=08046f2bc897",
       "sha256": "08046f2bc89724b2a6fa9514389f141ba46564b036cf1f08e6e24ab49a31767d",
@@ -35460,6 +35488,10 @@
     "db-incline-dumbbell-flyes": {
       "assetId": "forma-original-finish-a-002-1-0",
       "caption": "Incline Dumbbell Flyes · Representative exercise position; follow the guide for the complete movement."
+    },
+    "db-incline-dumbbell-flyes-with-a-twist": {
+      "assetId": "forma-original-finish-solo-005-retry-0-0",
+      "caption": "Incline Dumbbell Flyes - With A Twist · Representative exercise position; follow the guide for the complete movement."
     },
     "db-incline-dumbbell-press": {
       "assetId": "forma-original-movements-042-2-0",
