@@ -4,6 +4,15 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-14 — Artwork deployment and edge privacy
+
+- Owner authorised deploying the completed 1,414-exercise artwork and site fixes.
+  Public and private staging frontends retain account mode and the existing API.
+- Live browser verification caught an automatically injected Cloudflare beacon
+  blocked by CSP. HTML now sets `Cache-Control: no-transform`, preventing edge
+  injection while retaining cache directives and the existing security policy.
+  A regression checks HTML defaults, existing directives and unchanged JS caching.
+
 ### Raouf: 2026-10-14 — Complete artwork and whole-site review
 
 - Completed and pushed reviewed original illustrations for all 1,414 selectable

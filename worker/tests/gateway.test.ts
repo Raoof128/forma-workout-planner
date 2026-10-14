@@ -183,6 +183,32 @@ test("Worker routes `/api` and unknown API paths before static assets while secu
   assert.equal(assets, 1);
 });
 
+test("HTML prevents injected analytics while retaining asset cache directives", async () => {
+  for (const [contentType, cacheControl, expected] of [
+    [
+      "text/html; charset=utf-8",
+      "public, max-age=0, must-revalidate",
+      "public, max-age=0, must-revalidate, no-transform",
+    ],
+    ["text/html", null, "public, no-transform"],
+    ["text/html", "public, no-transform", "public, no-transform"],
+    [
+      "application/javascript",
+      "public, max-age=31536000, immutable",
+      "public, max-age=31536000, immutable",
+    ],
+  ] as const) {
+    const headers = new Headers({ "content-type": contentType });
+    if (cacheControl) headers.set("cache-control", cacheControl);
+    const response = await worker.fetch(request("/"), {
+      ...env,
+      ASSETS: { fetch: async () => new Response("asset", { headers }) },
+    });
+    assert.equal(response.headers.get("cache-control"), expected);
+    assert.equal(await response.text(), "asset");
+  }
+});
+
 test("requires the exact app Origin for writes and rejects untrusted Origins", async () => {
   let calls = 0;
   const fetcher = async () => {

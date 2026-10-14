@@ -57,6 +57,19 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-14 — Owner-authorised artwork redeployment
+
+- Owner requested commit, push and redeploy after the completed artwork/site sweep.
+  This supersedes the generation-phase no-deployment note below. Public accounts
+  were already active: preserve account mode and existing gateway credentials.
+- Both Workers received source `d292664`; final live verification found Cloudflare
+  automatically injecting a beacon blocked by the existing CSP. HTML responses
+  now append `no-transform` while preserving cache directives; scripts and API
+  policies remain unchanged. Cloudflare documents this as preventing injection.
+- Verify the Worker regression, both redeployments, actual browser HTML, health
+  200 and anonymous workspace 401. Never create a live member for this smoke test.
+  Keep deployment logs under `docs/qa/site-sweep/deployment`.
+
 ### Raouf: 2026-10-14 — Full artwork coverage and whole-site sweep
 
 - All 1,414 selectable exercises have reviewed original artwork. Strict coverage

@@ -1,0 +1,38 @@
+[
+  {
+    "path": "index.html",
+    "bytes": 1013,
+    "sha256": "9990c9a7071f2516dec2c89b63358a2b33c68a5f76421fbb9d042535c78f73e4",
+    "matchesBuild": true
+  },
+  {
+    "path": "assets/index-BEE98wzJ.js",
+    "bytes": 2691469,
+    "sha256": "a3c677d4ae1cd27fe59016a58456c269d6a6f1c3ede799402bbc2fd05ce1c4ec",
+    "matchesBuild": true
+  },
+  {
+    "path": "assets/index-D2lb55oK.css",
+    "bytes": 73375,
+    "sha256": "b1987a5b9afe1ed5873a9fe796060a28611c94e41b830c13b84a1e226214408b",
+    "matchesBuild": true
+  },
+  {
+    "path": "images/training-hero.webp",
+    "bytes": 127994,
+    "sha256": "b65965485c5e15ae8da35cf190a3124ca964e4b2bafa5e8cbcc2bddd62126ce8",
+    "matchesBuild": true
+  },
+  {
+    "path": "images/routine-photos.webp",
+    "bytes": 119526,
+    "sha256": "ffef857402907eee61cbc9e65f894b5348609b44a3b92320127a6efa4e4319ee",
+    "matchesBuild": true
+  },
+  {
+    "path": "exercise-media/original/finish-solo-002-retry.png",
+    "bytes": 1783447,
+    "sha256": "7093cb9a08b7113c3d31022834ef37b43d7c1c20210a3b1ae77b2051ef9633ee",
+    "matchesBuild": true
+  }
+]

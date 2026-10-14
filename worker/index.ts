@@ -497,6 +497,13 @@ export default {
     if (pathname.startsWith("/api")) return handleApiRequest(request, env);
     const response = await env.ASSETS.fetch(request);
     const headers = new Headers(response.headers);
+    // Cloudflare respects no-transform when deciding whether to inject its
+    // analytics beacon. Preserve the site's no-analytics policy at the edge.
+    if (headers.get("content-type")?.toLowerCase().startsWith("text/html")) {
+      const cacheControl = headers.get("cache-control") || "public";
+      if (!/(?:^|,)\s*no-transform\s*(?:,|$)/i.test(cacheControl))
+        headers.set("cache-control", `${cacheControl}, no-transform`);
+    }
     headers.set("x-content-type-options", "nosniff");
     headers.set("referrer-policy", "strict-origin-when-cross-origin");
     headers.set(
