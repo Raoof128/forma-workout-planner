@@ -13,7 +13,7 @@
       "guideText": "Step 1: Stand comfortably and grasp the handles of the suspension system. Step 2: Lean back resting your weight on one arm, keepng the spine neutral. Step 3: Slowly curl to pull your body weight to the up position. Supinate the arm and squeeze as you approach the end position. Step 4: Lower yourself back down and repeat.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1262/view/",
@@ -21,7 +21,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 340
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-de8a3db6-2b05-4c4e-977b-b61342718356",
@@ -30,7 +38,7 @@
       "guideText": "Attach the TRX or other suspension system overhead, having the handles hanging at chest level or slightly lower. Experiment to see what height allows you to set up in the best way. Stand in front of the handles and grab them with your palms facing down. Engage your abs, squeeze your glutes, take a breath and lean forward, lifting your heels off the floor. Keep your elbows straight. Take another breath and lower yourself slowly by bending your elbows. Go down until your elbows are at a 90-degree angle (to the point where your wrists are above your elbows). Hold the position for a moment. Extend your arms by engaging your triceps and bring yourself to the starting position as you exhale.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1266/view/",
@@ -38,7 +46,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 340
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-tuck-crunch",
@@ -47,14 +63,22 @@
       "guideText": "To begin, lie down on the floor or an exercise mat with your back pressed against the floor. Your arms should be lying across your sides with the palms facing down.\n\nYour legs should be crossed by wrapping one ankle around the other. Slowly elevate your legs up in the air until your thighs are perpendicular to the floor with a slight bend at the knees. Note: Your knees and toes should be parallel to the floor as opposed to the thighs.\n\nMove your arms from the floor and cross them so they are resting on your chest. This is the starting position.\n\nWhile keeping your lower back pressed against the floor, slowly lift your torso. Remember to exhale while perform this part of the exercise.\n\nSlowly begin to lower your torso back down to the starting position while inhaling.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Tuck_Crunch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 340
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-9396a728-3da4-4390-ae4d-882395805008",
@@ -63,7 +87,7 @@
       "guideText": "The tuck L-sit is a bodyweight hold where you support yourself on parallel bars, parallettes, or the floor with straight arms while pulling your knees toward your chest. Your hips stay lifted, your spine stays tall, and your feet hover off the ground. The goal is to keep your core tight, shoulders depressed, and arms locked out while maintaining the tucked position. It’s a core-intensive, shoulder-stabilizing static hold often used as a progression toward the full L-sit.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1704/view/",
@@ -71,7 +95,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Feet rest on the bench rather than hovering in the tuck L-sit hold.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 340
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-309bfd2b-1af4-49db-b64b-d7d7c7dd39bb",
@@ -80,7 +112,7 @@
       "guideText": "Starting on back, move to the standing position with dumbbell in one hand. Switch hands between reps.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/675/view/",
@@ -88,7 +120,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up.",
+      "bounds": {
+        "x": 0,
+        "y": 340,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-two-arm-dumbbell-preacher-curl",
@@ -97,14 +137,22 @@
       "guideText": "Grab a dumbbell with each arm and place the upper arms on top of the preacher bench or the incline bench. The dumbbell should be held at shoulder length. This will be your starting position.\n\nAs you breathe in, slowly lower the dumbbells until your upper arm is extended and the biceps is fully stretched.\n\nAs you exhale, use the biceps to curl the weights up until your biceps is fully contracted and the dumbbells are at shoulder height.\n\nSqueeze the biceps hard for a second at the contracted position and repeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Two-Arm_Dumbbell_Preacher_Curl.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up.",
+      "bounds": {
+        "x": 384,
+        "y": 340,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-two-arm-kettlebell-clean",
@@ -113,14 +161,22 @@
       "guideText": "Place two kettlebells between your feet. To get in the starting position, push your butt back and look straight ahead.\n\nClean the kettlebells to your shoulders by extending through the legs and hips as you raise the kettlebells towards your shoulders. Rotate your wrists as you do so.\n\nLower the kettlebells back to the starting position and repeat.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Two-Arm_Kettlebell_Clean.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up.",
+      "bounds": {
+        "x": 768,
+        "y": 340,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-two-arm-kettlebell-military-press",
@@ -129,14 +185,22 @@
       "guideText": "Clean two kettlebells to your shoulders. Clean the kettlebells to your shoulders by extending through the legs and hips as you swing the kettlebells towards your shoulders. Rotate your wrists as you do so, so that the palms face forward.\n\nPress the kettlebells up and out. As the kettlebells pass your head, lean into the weights so that the kettlebells are racked behind your head. Make sure to contract your lats, butt, and stomach for added stability.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Two-Arm_Kettlebell_Military_Press.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up.",
+      "bounds": {
+        "x": 1152,
+        "y": 340,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-two-arm-kettlebell-row",
@@ -145,14 +209,22 @@
       "guideText": "Place two kettlebells in front of your feet. Bend your knees slightly and then push your butt out as much as possible as you bend over to get in the starting position.\n\nGrab both kettlebells and pull them to your stomach, retracting your shoulder blades and flexing the elbows. Keep your back straight. Lower and repeat.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Two-Arm_Kettlebell_Row.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up.",
+      "bounds": {
+        "x": 0,
+        "y": 682,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-075bff87-f676-4d9d-92b4-39d557453fc7",
@@ -161,7 +233,7 @@
       "guideText": "Hang from a pull-up bar with an overhand grip, slightly wider than shoulder-width. Pull yourself up until your chin is above the bar. At the top position, instead of going straight down, shift your body to one side by extending one arm while keeping the other arm bent. Move smoothly from one side to the other, like a typewriter motion, before lowering yourself back down. This exercise increases time under tension and strengthens the lats, biceps, and shoulders while building unilateral pulling strength.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1607/view/",
@@ -169,7 +241,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Extended arm grasps the rack upright instead of maintaining the pull-up-bar grip.",
+      "bounds": {
+        "x": 384,
+        "y": 682,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-bc4bd5a0-46b5-4934-9a0a-dba2a9e5b2fa",
@@ -178,7 +258,7 @@
       "guideText": "Starting Position\n\n• Feet: Place the soles of your feet flat against a vertical wall, with your toes or balls of your feet on the floor.\n• Hands: Position your hands on the floor shoulder-width apart, directly under your lower chest or solar plexus.\n• Body: Keep your core tight, glutes squeezed, and head in a neutral position. Your knees should hover a few inches above the floor without touching it.\n\nMovement Pattern\n\n1. Lower Down: Flex your elbows (tucked around 45 degrees) to lower your chest toward the floor, stopping just a few centimeters short of touching the ground.\n2. Rock Back: As you press upward through your arms, push your hips backward and bend your knees, rocking your weight toward your heels while keeping your shins nearly parallel to the floor.\n3. Drive Forward: Explode forward from your lower-body/crouched position, shifting your weight back into the starting push-up plank stance to complete the repetition.\n\nKey Tips for Proper Form\n\n• Keep Knees Low: Do not let your knees or hips pike high up in the air; keep the motion low and horizontal.\n• Maintain Wall Contact: Keep the soles of your feet pressed against the wall so you don't lose your leverage.\n• Engage the Core: Avoid arching your lower back by tilting your pelvis backward and bracing your abs.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2679/view/",
@@ -186,7 +266,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up.",
+      "bounds": {
+        "x": 768,
+        "y": 682,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-df18b577-0610-4804-a993-161024da67db",
@@ -195,7 +283,7 @@
       "guideText": "Upper Back is suitable for building up the core muscles with a special focus on the deltoid and rhomboid muscles and the upper back muscles",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1381/view/",
@@ -203,7 +291,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Generic upper-back guide does not identify the specific depicted prone fly variation.",
+      "bounds": {
+        "x": 1152,
+        "y": 682,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-4783c8e0-9812-40de-bcfc-6c691183350b.png",

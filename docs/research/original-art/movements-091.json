@@ -13,7 +13,7 @@
       "guideText": "Colocar a barra em linha reta ao peito e descer ate atingir 90 graus",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1757/view/",
@@ -21,7 +21,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-15cfef4a-471f-4a00-a3c3-973b15bd7cda",
@@ -30,7 +38,7 @@
       "guideText": "Supported split squat performed with stable balance support and controlled depth.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2557/view/",
@@ -38,7 +46,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-suspended-fallout",
@@ -47,14 +63,22 @@
       "guideText": "Adjust the straps so the handles are at an appropriate height, below waist level.\n\nBegin standing and grasping the handles. Lean into the straps, moving to an incline push-up position. This will be your starting position.\n\nKeeping your arms straight, lean further into the suspension straps, bringing your body closer to the ground, allowing your shoulders to extend, raising your arms up and over your head.\n\nMaintain a neutral spine and keep the rest of your body straight, your shoulders being the only joints allowed to move.\n\nPause during the peak contraction, and then return to the starting position.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Suspended_Fallout.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-suspended-push-up",
@@ -63,14 +87,22 @@
       "guideText": "Anchor your suspension straps securely to the top of a rack or other object.\n\nLeaning into the straps, take a handle in each hand and move into a push-up plank position. You should be as close to parallel to the ground as you can manage with your arms fully extended, maintaining good posture.\n\nMaintaining a straight, rigid torso, descend slowly by allowing the elbows to flex.\n\nContinue until your elbows break 90 degrees, pausing before you extend to return to the starting position.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Suspended_Push-Up.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-suspended-reverse-crunch",
@@ -79,14 +111,22 @@
       "guideText": "Secure a set of suspension straps with the handles hanging about a foot off of the ground. Move yourself into a pushup plank position facing away from the rack.\n\nPlace your feet into the handles. You should maintain a straight posture, not allowing the hips to sag. This will be your starting position.\n\nBegin the movement by flexing the knees and hips, drawing the knees to your torso. As you do so, anteriorly tilt your pelvis, allowing your spine to flex.\n\nAt the top of the controlled motion, return to the starting position.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Suspended_Reverse_Crunch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch.",
+      "bounds": {
+        "x": 0,
+        "y": 342,
+        "width": 384,
+        "height": 328
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-suspended-split-squat",
@@ -95,14 +135,22 @@
       "guideText": "Suspend your straps so the handles are 18-30 inches from the floor.\n\nFacing away from the setup, place your rear foot into the handle behind you. Keep your head looking forward and your chest up, with your knee slightly bent. This will be your starting position.\n\nDescend by flexing the knee and hips, lowering yourself to the ground. Keep your weight on the heel of your foot and maintain your posture throughout the exercise.\n\nAt the bottom of the movement, reverse the motion, extending through the hip and knee to return to the starting position.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Suspended_Split_Squat.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch.",
+      "bounds": {
+        "x": 384,
+        "y": 342,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-svend-press",
@@ -111,14 +159,22 @@
       "guideText": "Begin in a standing position.\n\nPress two lightweight plates together with your hands. Hold the plates together close to your chest to create an isometric contraction in your chest muscles. Your fingers should be pointed forward. This is your starting position.\n\nSqueeze the plates between your palms and extend your arms directly out in front of you in a controlled motion.\n\nPause at the top of the motion, and then slowly return to the starting position.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Svend_Press.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hands appear to grasp the plate rims rather than pressing the flat plate faces together.",
+      "bounds": {
+        "x": 768,
+        "y": 342,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-t-bar-row-with-handle",
@@ -127,14 +183,22 @@
       "guideText": "Position a bar into a landmine or in a corner to keep it from moving. Load an appropriate weight onto your end.\n\nStand over the bar, and position a Double D row handle around the bar next to the collar. Using your hips and legs, rise to a standing position.\n\nAssume a wide stance with your hips back and your chest up. Your arms should be extended. This will be your starting position.\n\nPull the weight to your upper abdomen by retracting the shoulder blades and flexing the elbows. Do not jerk the weight or cheat during the movement.\n\nAfter a brief pause, return to the starting position.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/T-Bar_Row_with_Handle.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch.",
+      "bounds": {
+        "x": 1152,
+        "y": 342,
+        "width": 384,
+        "height": 329
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-42657bd4-bf4e-4429-8e6a-2f5f585aa22a",
@@ -143,7 +207,7 @@
       "guideText": "Touch your heels to your buttocks, while remaining static or moving",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1285/view/",
@@ -151,7 +215,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch.",
+      "bounds": {
+        "x": 0,
+        "y": 670,
+        "width": 384,
+        "height": 354
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-tate-press",
@@ -160,14 +232,22 @@
       "guideText": "Lie down on a flat bench with a dumbbell in each hand on top of your thighs. The palms of your hand will be facing each other.\n\nBy using your thighs to help you get the dumbbells up, clean the dumbbells one arm at a time so that you can hold them in front of you at shoulder width. Note: when holding the dumbbells in front of you, make sure your arms are wider than shoulder width apart from each other using a pronated (palms forward) grip. Allow your elbows to point out. This is your starting position.\n\nKeeping the upper arms stationary, slowly move the dumbbells in and down in a semi circular motion until they touch the upper chest while inhaling. Keep full control of the dumbbells at all times and do not move the upper arms nor rest the dumbbells on the chest.\n\nAs you breathe out, move the dumbbells up using your triceps and the same semi-circular motion but in reverse. Attempt to keep the dumbbells together as they move up. Lock your arms in the contracted position, hold for a second and then start coming down again slowly again. Tip: It should take at least twice as long to go down than to come up.\n\nRepeat the movement for the prescribed amount of repetitions of your training program.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Tate_Press.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch.",
+      "bounds": {
+        "x": 384,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-the-straddle",
@@ -176,14 +256,22 @@
       "guideText": "Begin in a seated, upright position. Start by extending your legs in front of you in a V.\n\nWith your hands on the floor, lean forward as far as possible. Hold for 10 to 20 seconds.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/The_Straddle.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch.",
+      "bounds": {
+        "x": 768,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-51420ded-5c17-4ce0-b005-89f1b67b7c65",
@@ -192,7 +280,7 @@
       "guideText": "1. Start by doing a front squat 2. At the top position, push the bar above your head (similar to a press) 3. Lower the bar to the shoulders",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/650/view/",
@@ -200,7 +288,15 @@
         "license": "CC0",
         "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Overhead bar is received in a deep squat rather than pressed at the standing top of the thruster.",
+      "bounds": {
+        "x": 1152,
+        "y": 671,
+        "width": 384,
+        "height": 353
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-0e0cbed2-95e6-44d5-89a4-e78c26355b88.png",

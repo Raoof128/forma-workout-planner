@@ -13,7 +13,7 @@
       "guideText": "1. Stand up straight 2. Lift the balls of your feet, resting on your heels.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1200/view/",
@@ -21,7 +21,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Figure rises onto forefeet; tibialis guide requires toes lifted with heels grounded.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 337
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-tire-flip",
@@ -30,14 +38,22 @@
       "guideText": "Begin by gripping the bottom of the tire on the tread, and position your feet back a bit. Your chest should be driving into the tire.\n\nTo lift the tire, extend through the hips, knees, and ankles, driving into the tire and up.\n\nAs the tire reaches a 45 degree angle, step forward and drive a knee into the tire. As you do so adjust your grip to the upper portion of the tire and push it forward as hard as possible to complete the turn. Repeat as necessary.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Tire_Flip.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-33728393-2b84-4d39-8b68-462222e004e3",
@@ -46,7 +62,7 @@
       "guideText": "Toe taps are a core-focused exercise performed lying on your back. Lie flat with your arms by your sides and your legs raised to a tabletop position (knees bent at 90 degrees). Slowly lower one foot to gently tap the floor, keeping your core engaged and your lower back pressed into the ground. Return to the starting position and alternate legs. This exercise strengthens the core while minimizing strain on the lower back.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1425/view/",
@@ -54,7 +70,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 340
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-toe-touchers",
@@ -63,14 +87,22 @@
       "guideText": "To begin, lie down on the floor or an exercise mat with your back pressed against the floor. Your arms should be lying across your sides with the palms facing down.\n\nYour legs should be touching each other. Slowly elevate your legs up in the air until they are almost perpendicular to the floor with a slight bend at the knees. Your feet should be parallel to the floor.\n\nMove your arms so that they are fully extended at a 45 degree angle from the floor. This is the starting position.\n\nWhile keeping your lower back pressed against the floor, slowly lift your torso and use your hands to try and touch your toes. Remember to exhale while perform this part of the exercise.\n\nSlowly begin to lower your torso and arms back down to the starting position while inhaling. Remember to keep your arms straight out pointing towards your toes.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Toe_Touchers.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 340
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-42d09639-a5a6-4aa6-b115-e4c96b1d3735",
@@ -79,7 +111,7 @@
       "guideText": "The name \"Toes to Bar\" says it all: This exercise, in which you hang from a pull-up bar, involves bringing your toes toward the bar, pointing toward your face. This really works your abdominal muscles. \"Toes to Bar\" is popular in functional fitness programs like Freeletics and CrossFit, and is an effective exercise for six-pack training.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1529/view/",
@@ -87,7 +119,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups.",
+      "bounds": {
+        "x": 0,
+        "y": 337,
+        "width": 384,
+        "height": 346
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-torso-rotation",
@@ -96,14 +136,22 @@
       "guideText": "Stand upright holding an exercise ball with both hands. Extend your arms so the ball is straight out in front of you. This will be your starting position.\n\nRotate your torso to one side, keeping your eyes on the ball as you move. Now, rotate back to the opposite direction. Repeat for 10-20 repetitions.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Torso_Rotation.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups.",
+      "bounds": {
+        "x": 384,
+        "y": 341,
+        "width": 384,
+        "height": 331
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-1e9b886f-0dbe-4434-829e-7159bcc40692",
@@ -112,7 +160,7 @@
       "guideText": "The torso rotation stretch helps improve spinal mobility and relieves tension in the lower back and obliques. It can be performed standing or seated. 1. **Standing Variation**: Stand upright with your feet shoulder-width apart. Place your hands on your hips or extend your arms in front of you. Slowly rotate your torso to one side, keeping your hips stable. Hold for a few seconds, then rotate to the opposite side. 2. **Seated Variation**: Sit on a chair with your feet flat on the floor. Place one hand on the outside of your opposite thigh and gently twist your torso toward that side. Hold the stretch before switching sides.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1451/view/",
@@ -120,7 +168,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups.",
+      "bounds": {
+        "x": 768,
+        "y": 340,
+        "width": 384,
+        "height": 315
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-56a03260-2901-4b28-bd41-a030185f985a",
@@ -129,7 +185,7 @@
       "guideText": "Standing Torso Twist WorkoutTarget your core and improve flexibility with this dynamic standing exercise! The Standing Torso Twist Workout involves twisting your torso while keeping your feet and hips stable, engaging your obliques, and stretching your entire upper body. This movement helps to:Strengthen core musclesIncrease flexibility in the spine and torsoImprove posture and balanceEnhance overall athletic performancePerform 3 sets of 10-15 reps, twisting to each side, to feel the benefits of this effective and efficient workout!",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1377/view/",
@@ -137,7 +193,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups.",
+      "bounds": {
+        "x": 1152,
+        "y": 340,
+        "width": 384,
+        "height": 343
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-f44cf553-067e-4f3a-b35b-e16549c1d055",
@@ -146,7 +210,7 @@
       "guideText": "In this exercise, you lie flat on your stomach, hold a towel with your arms extended in front of you, and pull it apart to create tension. Then, you move it forward and back under your stomach. This exercise targets the back and shoulder muscles as well as core stability.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1455/view/",
@@ -154,7 +218,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups.",
+      "bounds": {
+        "x": 0,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-trail-running-walking",
@@ -163,14 +235,22 @@
       "guideText": "Running or hiking on trails will get the blood pumping and heart beating almost immediately. Make sure you have good shoes. While you use the muscles in your calves and buttocks to pull yourself up a hill, the knees, joints and ankles absorb the bulk of the pounding coming back down. Take smaller steps as you walk downhill, keep your knees bent to reduce the impact and slow down to avoid falling.\n\nA 150 lb person can burn over 200 calories for 30 minutes walking uphill, compared to 175 on a flat surface. If running the trail, a 150 lb person can burn well over 500 calories in 30 minutes.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Trail_Running_Walking.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups.",
+      "bounds": {
+        "x": 384,
+        "y": 672,
+        "width": 384,
+        "height": 352
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-trap-bar-deadlift",
@@ -179,14 +259,22 @@
       "guideText": "For this exercise load a trap bar, also known as a hex bar, to an appropriate weight resting on the ground. Stand in the center of the apparatus and grasp both handles.\n\nLower your hips, look forward with your head and keep your chest up.\n\nBegin the movement by driving through the heels and extend your hips and knees. Avoid rounding your back at all times.\n\nAt the completion of the movement, lower the weight back to the ground under control.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Trap_Bar_Deadlift.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups.",
+      "bounds": {
+        "x": 768,
+        "y": 655,
+        "width": 384,
+        "height": 369
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-d18407c2-75d0-43d8-8bbc-dfbb256b6b2f",
@@ -195,7 +283,7 @@
       "guideText": "A combination of squat and deadlift principles with the use of a hex/trap bar, easing stress on the lower back by better centering the weight.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1803/view/",
@@ -203,7 +291,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups.",
+      "bounds": {
+        "x": 1152,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-0cc4df08-8987-47df-b25e-90ad84e21685.png",

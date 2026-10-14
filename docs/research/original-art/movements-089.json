@@ -13,7 +13,7 @@
       "guideText": "The Step Jack is a low-impact plyometric-style move that provides cardiovascular benefits without the joint stress of jumping. It works the entire body, specifically targeting the legs, core, and shoulders. This move is ideal for beginners, individuals with joint sensitivities, or as a dynamic warm-up to gradually elevate the heart rate.\nNotes (Instructions):\n1. ​Stand upright with your feet together and arms at your sides.\n2. ​Step your right foot out to the side while simultaneously swinging both arms up above your head.\n3. Bring your right foot back to the center and lower your arms.\n4. ​Immediately repeat the movement, stepping out with your left foot.\n5. ​Continue alternating sides at a steady, rhythmic pace.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1962/view/",
@@ -21,7 +21,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 338
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-step-up-with-knee-raise",
@@ -30,14 +38,22 @@
       "guideText": "Stand facing a box or bench of an appropriate height with your feet together. This will be your starting position.\n\nBegin the movement by stepping up, putting your left foot on the top of the bench. Extend through the hip and knee of your front leg to stand up on the box. As you stand on the box with your left leg, flex your right knee and hip, bringing your knee as high as you can.\n\nReverse this motion to step down off the box, and then repeat the sequence on the opposite leg.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Step-up_with_Knee_Raise.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 338
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-9e6dae29-5d03-440a-bdf1-2cb25a5179c2",
@@ -46,7 +62,7 @@
       "guideText": "Starting position: Stand facing a chair. Steps: 1. Step up onto the chair. 2. Step off the chair. 3. Repeat.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/981/view/",
@@ -54,7 +70,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Source specifies chair step-ups; picture shows bench, requiring an explicit equipment reference or guide clarification.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 338
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-stiff-leg-barbell-good-morning",
@@ -63,14 +87,22 @@
       "guideText": "This exercise is best performed inside a squat rack for safety purposes. To begin, first set the bar on a rack that best matches your height. Once the correct height is chosen and the bar is loaded, step under the bar and place the back of your shoulders (slightly below the neck) across it.\n\nHold on to the bar using both arms at each side and lift it off the rack by first pushing with your legs and at the same time straightening your torso.\n\nStep away from the rack and position your legs using a shoulder width medium stance. Keep your head up at all times as looking down will get you off balance and also maintain a straight back. This will be your starting position.\n\nKeeping your legs stationary, move your torso forward by bending at the hips while inhaling. Lower your torso until it is parallel with the floor.\n\nBegin to raise the bar as you exhale by elevating your torso back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Stiff_Leg_Barbell_Good_Morning.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Good morning stops well above the parallel-torso position described.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 338
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-stiff-legged-barbell-deadlift",
@@ -79,14 +111,22 @@
       "guideText": "Grasp a bar using an overhand grip (palms facing down). You may need some wrist wraps if using a significant amount of weight.\n\nStand with your torso straight and your legs spaced using a shoulder width or narrower stance. The knees should be slightly bent. This is your starting position.\n\nKeeping the knees stationary, lower the barbell to over the top of your feet by bending at the hips while keeping your back straight. Keep moving forward as if you were going to pick something from the floor until you feel a stretch on the hamstrings. Inhale as you perform this movement.\n\nStart bringing your torso up straight again by extending your hips until you are back at the starting position. Exhale as you perform this movement.\n\nRepeat for the recommended amount of repetitions.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Stiff-Legged_Barbell_Deadlift.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump.",
+      "bounds": {
+        "x": 0,
+        "y": 338,
+        "width": 384,
+        "height": 329
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-stiff-legged-dumbbell-deadlift",
@@ -95,14 +135,22 @@
       "guideText": "Grasp a couple of dumbbells holding them by your side at arm's length.\n\nStand with your torso straight and your legs spaced using a shoulder width or narrower stance. The knees should be slightly bent. This is your starting position.\n\nKeeping the knees stationary, lower the dumbbells to over the top of your feet by bending at the waist while keeping your back straight. Keep moving forward as if you were going to pick something from the floor until you feel a stretch on the hamstrings. Exhale as you perform this movement\n\nStart bringing your torso up straight again by extending your hips and waist until you are back at the starting position. Inhale as you perform this movement.\n\nRepeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Stiff-Legged_Dumbbell_Deadlift.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump.",
+      "bounds": {
+        "x": 384,
+        "y": 338,
+        "width": 384,
+        "height": 329
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-stomach-vacuum",
@@ -111,14 +159,22 @@
       "guideText": "To begin, stand straight with your feet shoulder width apart from each other. Place your hands on your hips. This is the starting position.\n\nNow slowly inhale as much air as possible and then start to exhale as much as possible while bringing your stomach in as much as possible and hold this position. Try to visualize your navel touching your backbone.\n\nOne isometric contraction is around 20 seconds. During the 20 second hold, try to breathe normally. Then inhale and bring your stomach back to the starting position.\n\nOnce you have practiced this exercise, try to perform this exercise for longer than 20 seconds. Tip: You can work your way up to 40-60 seconds.\n\nRepeat for the recommended amount of sets.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Stomach_Vacuum.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump.",
+      "bounds": {
+        "x": 768,
+        "y": 338,
+        "width": 384,
+        "height": 329
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-d2cf769a-9271-41ae-90fc-aef813e41740",
@@ -127,7 +183,7 @@
       "guideText": "With your legs in a sitting saddle position, push your body upwards off the ground. Your legs should be horizontal and point straight outwards. Your arms should be between your legs. Hold isometrically as long as required.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1847/view/",
@@ -135,7 +191,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump.",
+      "bounds": {
+        "x": 1152,
+        "y": 338,
+        "width": 384,
+        "height": 329
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-straight-bar-bench-mid-rows",
@@ -144,14 +208,22 @@
       "guideText": "Place a loaded barbell on the end of a bench. Standing on the bench behind the bar, take a medium, pronated grip. Stand with your hips back and chest up, maintaining a neutral spine. This will be your starting position.\n\nRow the bar to your torso by retracting the shoulder blades and flexing the elbows. Use a controlled movement with no jerking.\n\nAfter a brief pause, slowly return the bar to the starting position, ensuring to go all the way down.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Straight_Bar_Bench_Mid_Rows.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump.",
+      "bounds": {
+        "x": 0,
+        "y": 667,
+        "width": 384,
+        "height": 357
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-straight-raises-on-incline-bench",
@@ -160,14 +232,22 @@
       "guideText": "Place a bar on the ground behind the head of an incline bench.\n\nLay on the bench face down. With a pronated grip, pick the barbell up from the floor, keeping your arms straight. Allow the bar to hang straight down. This will be your starting position.\n\nTo begin, raise the barbell out in front of your head while keeping your arms extended.\n\nReturn to the starting position.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Straight_Raises_on_Incline_Bench.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump.",
+      "bounds": {
+        "x": 384,
+        "y": 667,
+        "width": 384,
+        "height": 357
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-straight-arm-dumbbell-pullover",
@@ -176,14 +256,22 @@
       "guideText": "Place a dumbbell standing up on a flat bench.\n\nEnsuring that the dumbbell stays securely placed at the top of the bench, lie perpendicular to the bench (torso across it as in forming a cross) with only your shoulders lying on the surface. Hips should be below the bench and legs bent with feet firmly on the floor. The head will be off the bench as well.\n\nGrasp the dumbbell with both hands and hold it straight over your chest at arms length. Both palms should be pressing against the underside one of the sides of the dumbbell. This will be your starting position. Caution: Always ensure that the dumbbell used for this exercise is secure. Using a dumbbell with loose plates can result in the dumbbell falling apart and falling on your face.\n\nWhile keeping your arms straight, lower the weight slowly in an arc behind your head while breathing in until you feel a stretch on the chest.\n\nAt that point, bring the dumbbell back to the starting position using the arc through which the weight was lowered and exhale as you perform this movement.\n\nHold the weight on the initial position for a second and repeat the motion for the prescribed number of repetitions.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Straight-Arm_Dumbbell_Pullover.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Cross-bench pullover hips remain level with the bench rather than below it.",
+      "bounds": {
+        "x": 768,
+        "y": 667,
+        "width": 384,
+        "height": 357
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-stride-jump-crossover",
@@ -192,14 +280,22 @@
       "guideText": "Stand to the side of a box with your inside foot on top of it, close to the edge.\n\nBegin by swinging the arms upward as you push through the top leg, jumping upward as high as possible. Attempt to drive the opposite knee upward.\n\nLand in the opposite position that you started, on the opposite side of the box. The foot that was initially on the box will now be on the ground, with the opposite foot now on the box.\n\nRepeat the movement, crossing back over to the other side.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Stride_Jump_Crossover.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump.",
+      "bounds": {
+        "x": 1152,
+        "y": 667,
+        "width": 384,
+        "height": 357
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-a8e669b0-2eae-46e7-9234-f16b794dff36.png",

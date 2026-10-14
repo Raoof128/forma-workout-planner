@@ -13,7 +13,7 @@
       "guideText": "Push off, swim a few strokes, and every breath roll fully onto your back for 2-3 breaths, then roll back into freestyle. This teaches you to rotate your body as a unit rather than just turning your head, and helps remove the fear of not having your face in the water.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2485/view/",
@@ -21,7 +21,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-b6c19c36-34be-4d9f-8c07-8bdf9ab3ba1a",
@@ -30,7 +38,7 @@
       "guideText": "Walk forward and backward with holding dumbbell on one side without leaning to counter the weight.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1776/view/",
@@ -38,7 +46,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-sumo-deadlift",
@@ -47,14 +63,22 @@
       "guideText": "Begin with a bar loaded on the ground. Approach the bar so that the bar intersects the middle of the feet. The feet should be set very wide, near the collars. Bend at the hips to grip the bar. The arms should be directly below the shoulders, inside the legs, and you can use a pronated grip, a mixed grip, or hook grip. Relax the shoulders, which in effect lengthens your arms.\n\nTake a breath, and then lower your hips, looking forward with your head with your chest up. Drive through the floor, spreading your feet apart, with your weight on the back half of your feet. Extend through the hips and knees.\n\nAs the bar passes through the knees, lean back and drive the hips into the bar, pulling your shoulder blades together.\n\nReturn the weight to the ground by bending at the hips and controlling the weight on the way down.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sumo_Deadlift.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-sumo-deadlift-with-bands",
@@ -63,14 +87,22 @@
       "guideText": "To deadlift with short bands, simply loop them over the bar before you start, and step into them to set up. Ensure that they under the back half of your foot, directly where you are driving into the floor.\n\nBegin with a bar loaded on the ground. Approach the bar so that the bar intersects the middle of the feet. The feet should be set very wide, near the collars. Bend at the hips to grip the bar. The arms should be directly below the shoulders, inside the legs, and you can use a pronated grip, a mixed grip, or hook grip.\n\nTake a breath, and then lower your hips, looking forward with your head with your chest up. Drive through the floor, spreading your feet apart, with your weight on the back half of your feet. Extend through the hips and knees.\n\nAs the bar passes through the knees, lean back and drive the hips into the bar, pulling your shoulder blades together.\n\nReturn the weight to the ground by bending at the hips and controlling the weight on the way down.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sumo_Deadlift_with_Bands.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-sumo-deadlift-with-chains",
@@ -79,14 +111,22 @@
       "guideText": "You can attach the chains to the sleeves of the bar, or just drape the middle over the bar so there is a greater weight increase as you lift. Attempt to keep the ends of the chains away from the plates so you don't hit them when you lower the weight.\n\nBegin with a bar loaded on the ground. Approach the bar so that the bar intersects the middle of the feet. The feet should be set very wide, near the collars. Bend at the hips to grip the bar. The arms should be directly below the shoulders, inside the legs, and you can use a pronated grip, a mixed grip, or hook grip. Relax the shoulders, which in effect lengthens your arms.\n\nTake a breath, and then lower your hips, looking forward with your head with your chest up. Drive through the floor, spreading your feet apart, with your weight on the back half of your feet. Extend through the hips and knees.\n\nAs the bar passes through the knees, lean back and drive the hips into the bar, pulling your shoulder blades together.\n\nReturn the weight to the ground by bending at the hips and controlling the weight on the way down.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sumo_Deadlift_with_Chains.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press.",
+      "bounds": {
+        "x": 0,
+        "y": 341,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-0a5a7661-1e24-4c15-bb2b-503672141307",
@@ -95,7 +135,7 @@
       "guideText": "Stand with your feet wider than your shoulders, with your toes pointed out at a 45 degree angle and barbell on your shoulder. While keeping your back straight, descend slowly by bending at the knees and hips as if you are sitting down (squatting). Lower yourself until your quadriceps and hamstrings are parallel to the floor. Return to the starting position by pressing upwards and extending your legs while maintaining an equal distribution of weight on your forefoot and heel.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/632/view/",
@@ -103,7 +143,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press.",
+      "bounds": {
+        "x": 384,
+        "y": 341,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-superman",
@@ -112,14 +160,22 @@
       "guideText": "To begin, lie straight and face down on the floor or exercise mat. Your arms should be fully extended in front of you. This is the starting position.\n\nSimultaneously raise your arms, legs, and chest off of the floor and hold this contraction for 2 seconds. Tip: Squeeze your lower back to get the best results from this exercise. Remember to exhale during this movement. Note: When holding the contracted position, you should look like superman when he is flying.\n\nSlowly begin to lower your arms, legs and chest back down to the starting position while inhaling.\n\nRepeat for the recommended amount of repetitions prescribed in your program.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Superman.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press.",
+      "bounds": {
+        "x": 768,
+        "y": 341,
+        "width": 384,
+        "height": 336
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-supine-chest-throw",
@@ -128,14 +184,22 @@
       "guideText": "This drill is great for chest passes when you lack a partner or a wall of sufficient strength. Lay on the ground on your back with your knees bent.\n\nBegin with the ball on your chest, held with both hands on the bottom.\n\nExplode up, extending through the elbow to throw the ball directly above you as high as possible.\n\nCatch the ball with both hands as it comes down.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Supine_Chest_Throw.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press.",
+      "bounds": {
+        "x": 1152,
+        "y": 341,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-2fe15ae4-085b-4116-8d73-2a120cc2a231",
@@ -144,7 +208,7 @@
       "guideText": "* **Starting Position:** Lie on your back (supine) on a mat, with your legs extended and relaxed. Arms can be placed alongside your body or out to the sides for stability. * **The Movement:** Slightly lift one leg off the floor (keeping it straight or with a slight bend). Move it laterally outward, away from the other leg, as if stepping over a small obstacle. * **Range of Motion:** Move the leg as far as comfortable without lifting your pelvis or rotating your torso, feeling a stretch in the inner thigh and hip. * **Return:** Slowly bring the leg back to the starting position with controlled movement. * **Goal:** Improves lateral hip mobility (abduction) and strengthens the pelvic stabilizer muscles.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1886/view/",
@@ -152,7 +216,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Supine abduction adds an ankle weight absent from the unweighted guide.",
+      "bounds": {
+        "x": 0,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-supine-one-arm-overhead-throw",
@@ -161,14 +233,22 @@
       "guideText": "Lay on the ground on your back with your knees bent. Hold the ball with one hand, extending the arm fully behind your head. This will be your starting position.\n\nInitiate the movement at the shoulder, throwing the ball directly forward of you as you sit up, attempting to go for maximum distance.\n\nThe ball can be thrown to a partner or bounced off of a wall.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Supine_One-Arm_Overhead_Throw.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press.",
+      "bounds": {
+        "x": 384,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-2c31daac-17b1-4cc9-b1c1-f34266ee2038",
@@ -177,7 +257,7 @@
       "guideText": "Take a close grip and push perpendicular to the bench. Keep back flat.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1583/view/",
@@ -185,7 +265,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press.",
+      "bounds": {
+        "x": 768,
+        "y": 677,
+        "width": 384,
+        "height": 347
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-supine-two-arm-overhead-throw",
@@ -194,14 +282,22 @@
       "guideText": "Lay on the ground on your back with your knees bent.\n\nHold the ball with both hands, extending the arms fully behind your head. This will be your starting position.\n\nInitiate the movement at the shoulder, throwing the ball directly forward of you as you sit up, attempting to go for maximum distance.\n\nThe ball can be thrown to a partner or bounced off of a wall.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Supine_Two-Arm_Overhead_Throw.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press.",
+      "bounds": {
+        "x": 1152,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-ac400680-9f70-4b0a-9608-1b1ff4ea9065.png",

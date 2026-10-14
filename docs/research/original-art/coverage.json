@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1096,
+  "accepted": 1155,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -10907,7 +10907,9 @@
       "name": "Step Jack",
       "equipment": "Bodyweight",
       "guideSha256": "cd2b565ddb38533bf426a413a0598e0afcda433f10fe885eac65a1394cc262c7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-089-0-0",
+      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump."
     },
     {
       "exerciseId": "db-step-mill",
@@ -10923,7 +10925,9 @@
       "name": "Step-up with Knee Raise",
       "equipment": "Bodyweight",
       "guideSha256": "ab51fb1263157c454b4717fde6453d2d064a2ca917b2965355fa4dabccdb33b8",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-089-1-0",
+      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump."
     },
     {
       "exerciseId": "wger-9e6dae29-5d03-440a-bdf1-2cb25a5179c2",
@@ -10944,42 +10948,54 @@
       "name": "Stiff-Legged Barbell Deadlift",
       "equipment": "Barbell",
       "guideSha256": "3aad2a325575c5b66e7252acabb78683c352c26d594ce4e33b98b7c9e1ca96d4",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-089-0-1",
+      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump."
     },
     {
       "exerciseId": "db-stiff-legged-dumbbell-deadlift",
       "name": "Stiff-Legged Dumbbell Deadlift",
       "equipment": "Dumbbell",
       "guideSha256": "da3abc456ec3568c0630d86b2f119068f39d5157812c762243be173e44bd3290",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-089-1-1",
+      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump."
     },
     {
       "exerciseId": "db-stomach-vacuum",
       "name": "Stomach Vacuum",
       "equipment": "Bodyweight",
       "guideSha256": "f546d6d86aa5f1d8d5d44b6b1f8fcf4d4275017eeb7ee1ba4051928e4f0baf02",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-089-2-1",
+      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump."
     },
     {
       "exerciseId": "wger-d2cf769a-9271-41ae-90fc-aef813e41740",
       "name": "Straddle L-Sit",
       "equipment": "Bodyweight",
       "guideSha256": "3264c3fd196142cb6859d3381fa014863fd75e59b13d934147bcdb0fcae50173",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-089-3-1",
+      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump."
     },
     {
       "exerciseId": "db-straight-bar-bench-mid-rows",
       "name": "Straight Bar Bench Mid Rows",
       "equipment": "Barbell",
       "guideSha256": "c07a2149a4502e4be5be899811bfab3ce84d267282346774691227eff422481f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-089-0-2",
+      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump."
     },
     {
       "exerciseId": "db-straight-raises-on-incline-bench",
       "name": "Straight Raises on Incline Bench",
       "equipment": "Barbell",
       "guideSha256": "7ff2bbdf37d5c0f5b7fefb264549957b8851e656f665af76eb850ec06ae9f83a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-089-1-2",
+      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump."
     },
     {
       "exerciseId": "db-straight-arm-dumbbell-pullover",
@@ -11002,63 +11018,81 @@
       "name": "Stride Jump Crossover",
       "equipment": "Specialty equipment",
       "guideSha256": "ce3ea9052ae5bbb339517d8f0ad6e3e7b9519f500f16fda62713f93a99dda623",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-089-3-2",
+      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump."
     },
     {
       "exerciseId": "wger-1c17c370-dd74-46c4-b4f2-039c510af058",
       "name": "Stroke-and-Roll Drill",
       "equipment": "Bodyweight",
       "guideSha256": "758eff0b5414dc96124707b7d5ec038696ac47f2e129fc42ca9f1fac54827523",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-090-0-0",
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press."
     },
     {
       "exerciseId": "wger-b6c19c36-34be-4d9f-8c07-8bdf9ab3ba1a",
       "name": "Suitcase Carry",
       "equipment": "Dumbbell",
       "guideSha256": "a36622dc84dc216843682725d50a3faca986b24ff7491f6a02f60ad66c98a825",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-090-1-0",
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press."
     },
     {
       "exerciseId": "db-sumo-deadlift",
       "name": "Sumo Deadlift",
       "equipment": "Barbell",
       "guideSha256": "6fed55c789b45e5dfaf619a07ce9b1adc2dec319ef4dd5127d77e6a127d43bee",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-090-2-0",
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press."
     },
     {
       "exerciseId": "db-sumo-deadlift-with-bands",
       "name": "Sumo Deadlift with Bands",
       "equipment": "Barbell",
       "guideSha256": "41a9f926428d8bf9c984ed97a8cb192ebd487bac1615b69b66a12a0e411ba137",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-090-3-0",
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press."
     },
     {
       "exerciseId": "db-sumo-deadlift-with-chains",
       "name": "Sumo Deadlift with Chains",
       "equipment": "Barbell",
       "guideSha256": "9cac0a5462d75c9b09b0900ca75d3409cf29b39b075853b95d3b34faab76471a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-090-0-1",
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press."
     },
     {
       "exerciseId": "wger-0a5a7661-1e24-4c15-bb2b-503672141307",
       "name": "Sumo Squats",
       "equipment": "Bodyweight",
       "guideSha256": "b306163a89b6052b303f29e329224b45d04f44789fbff0cb909be4463d2b8f06",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-090-1-1",
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press."
     },
     {
       "exerciseId": "db-superman",
       "name": "Superman",
       "equipment": "Bodyweight",
       "guideSha256": "1c2346f7fb03aee18287a1fac27d36b733d425fe610fef498e97df87f22cb544",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-090-2-1",
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press."
     },
     {
       "exerciseId": "db-supine-chest-throw",
       "name": "Supine Chest Throw",
       "equipment": "Medicine ball",
       "guideSha256": "7c38d77f5a2a4214bf4907878ce12fb62d2b20fd32ae5a99f4d16f2a74e39a64",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-090-3-1",
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press."
     },
     {
       "exerciseId": "wger-2fe15ae4-085b-4116-8d73-2a120cc2a231",
@@ -11072,63 +11106,81 @@
       "name": "Supine One-Arm Overhead Throw",
       "equipment": "Medicine ball",
       "guideSha256": "b924b7c489d2d7695b903f8860c7e77e35cf516aa47a4aa1855cd58a4c8ffbf6",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-090-1-2",
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press."
     },
     {
       "exerciseId": "wger-2c31daac-17b1-4cc9-b1c1-f34266ee2038",
       "name": "Supine press",
       "equipment": "Barbell + Bench",
       "guideSha256": "77156fb100ecde11ecaaf97f0f7c290eecb525efdeb2ec7c1d0794be5c295818",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-090-2-2",
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press."
     },
     {
       "exerciseId": "db-supine-two-arm-overhead-throw",
       "name": "Supine Two-Arm Overhead Throw",
       "equipment": "Medicine ball",
       "guideSha256": "fbd2921154d0d4e2c0bfefc6d1d0b671fb13ac574cf2a25da2b87b12deb67956",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-090-3-2",
+      "reviewNote": "Reviewed freestyle-to-back-roll swim phases, upright one-sided dumbbell carry, wide-stance sumo pull, underfoot band sumo pull, free-chain sumo pull, wide back-bar squat, prone extended superman, supine chest toss, one/two-arm sit-up throw positions and close-grip supine bar press."
     },
     {
       "exerciseId": "wger-2491eceb-d19e-4da4-a8c5-4d80fea56562",
       "name": "supino",
       "equipment": "Bodyweight",
       "guideSha256": "5f8ff430a84a635c51ab6f6325649049aee5ce45f7daad28220849000fe17893",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-091-0-0",
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch."
     },
     {
       "exerciseId": "wger-15cfef4a-471f-4a00-a3c3-973b15bd7cda",
       "name": "Supported Split Squat",
       "equipment": "Bodyweight",
       "guideSha256": "87983e2d463bba8b3d378d4c3fd3a8de51e64cd1058c04df9ea9d843817f971a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-091-1-0",
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch."
     },
     {
       "exerciseId": "db-suspended-fallout",
       "name": "Suspended Fallout",
       "equipment": "Specialty equipment",
       "guideSha256": "df1f6bb1d9d845029e4fda11fdc8d002a501860375cbc54b9cc2bea102cf32b8",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-091-2-0",
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch."
     },
     {
       "exerciseId": "db-suspended-push-up",
       "name": "Suspended Push-Up",
       "equipment": "Specialty equipment",
       "guideSha256": "ef7a045d8eeff2094966d6d7a572160c12591f40b2efaa45815ca57f712c44ed",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-091-3-0",
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch."
     },
     {
       "exerciseId": "db-suspended-reverse-crunch",
       "name": "Suspended Reverse Crunch",
       "equipment": "Specialty equipment",
       "guideSha256": "53160994169f2e6a31f64a6c07c37c6f3223c436b0901029cd91f3ebbfdefb09",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-091-0-1",
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch."
     },
     {
       "exerciseId": "db-suspended-split-squat",
       "name": "Suspended Split Squat",
       "equipment": "Specialty equipment",
       "guideSha256": "d1c9c1bae7b396838b0c97ed3dbddb5003a65ec9d8649b3172866f1e8b37ffd4",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-091-1-1",
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch."
     },
     {
       "exerciseId": "db-svend-press",
@@ -11142,28 +11194,36 @@
       "name": "T-Bar Row with Handle",
       "equipment": "Barbell",
       "guideSha256": "879db9f4c072b3d6bfa73e242c8470ca4dc9ef98c225ceefeffcc6b6dd365461",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-091-3-1",
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch."
     },
     {
       "exerciseId": "wger-42657bd4-bf4e-4429-8e6a-2f5f585aa22a",
       "name": "Talons fesses",
       "equipment": "Bodyweight",
       "guideSha256": "e011a8cdebefc6d8edd58352366d20b5d790c58557d490c8f1f8b88be80df04b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-091-0-2",
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch."
     },
     {
       "exerciseId": "db-tate-press",
       "name": "Tate Press",
       "equipment": "Dumbbell",
       "guideSha256": "0e63c760b9b45139ecdf70ab95481e1b0df6a094ffd0955d44bed2cff9020fab",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-091-1-2",
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch."
     },
     {
       "exerciseId": "db-the-straddle",
       "name": "The Straddle",
       "equipment": "Bodyweight",
       "guideSha256": "e20b976fa6ea2490baf3336cd2e366fcff8f9df28b0f7ab9dc67069fb9b143a5",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-091-2-2",
+      "reviewNote": "Reviewed flat bar chest press, stably supported split squat, straight-arm suspension fallout, bent-elbow suspension push-up, feet-suspended knee tuck and split squat, landmine double-D handle row, standing heel-to-butt kick, elbow-out Tate press and seated straddle stretch."
     },
     {
       "exerciseId": "db-thigh-abductor",
@@ -11202,112 +11262,144 @@
       "name": "Tire Flip",
       "equipment": "Specialty equipment",
       "guideSha256": "381b110e1ce611fd70a3d269eed73770ac4344671acee89fd57dd0884b451c7e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-092-1-0",
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups."
     },
     {
       "exerciseId": "wger-33728393-2b84-4d39-8b68-462222e004e3",
       "name": "Toe Taps",
       "equipment": "Bodyweight",
       "guideSha256": "63f27751b6f44df29f3082c0c4b850a4576b1772ab2649373c24991ecc7ca315",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-092-2-0",
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups."
     },
     {
       "exerciseId": "db-toe-touchers",
       "name": "Toe Touchers",
       "equipment": "Bodyweight",
       "guideSha256": "9730ea35ce1b6efb785e3f7d31f1e350bf403650f823a6b6bb8325ec65e5fbd8",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-092-3-0",
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups."
     },
     {
       "exerciseId": "wger-42d09639-a5a6-4aa6-b115-e4c96b1d3735",
       "name": "Toes to bar",
       "equipment": "Pull-up bar",
       "guideSha256": "85b033094f7e127810dfac011c21f9f9438e21d9f0e789efaf2e0577cfdb1a79",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-092-0-1",
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups."
     },
     {
       "exerciseId": "db-torso-rotation",
       "name": "Torso Rotation",
       "equipment": "Exercise ball",
       "guideSha256": "82ff3478be0263e742fefb7007c26fe9c974abdf0211c685fcba3aea89c912bc",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-092-1-1",
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups."
     },
     {
       "exerciseId": "wger-1e9b886f-0dbe-4434-829e-7159bcc40692",
       "name": "Torso rotation stretch",
       "equipment": "Bodyweight",
       "guideSha256": "3dc6698293498120945a530481451e642c50b55a8982bcb4f8d1f9f9005780b2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-092-2-1",
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups."
     },
     {
       "exerciseId": "wger-56a03260-2901-4b28-bd41-a030185f985a",
       "name": "TORSO TWIST",
       "equipment": "Bodyweight",
       "guideSha256": "5f49aabdd89df272a3fff4b426d53eb7e06b8b37c7156896f672da6a69693118",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-092-3-1",
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups."
     },
     {
       "exerciseId": "wger-f44cf553-067e-4f3a-b35b-e16549c1d055",
       "name": "Towel Superman",
       "equipment": "Bodyweight",
       "guideSha256": "c5a83c04a65bf299387e62d0673dfcd4475643e0508ec95c6de9b04821f1b5a9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-092-0-2",
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups."
     },
     {
       "exerciseId": "db-trail-running-walking",
       "name": "Trail Running/Walking",
       "equipment": "Bodyweight",
       "guideSha256": "1392529dd82c81863be3cae86e8afc3498d6cc92b5c81dadc6baa9b562abef34",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-092-1-2",
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups."
     },
     {
       "exerciseId": "db-trap-bar-deadlift",
       "name": "Trap Bar Deadlift",
       "equipment": "Specialty equipment",
       "guideSha256": "8f9c58cf6d179eef9cbbbbb56156207c62cb53de37fa1065fab7c916ffda8fbe",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-092-2-2",
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups."
     },
     {
       "exerciseId": "wger-d18407c2-75d0-43d8-8bbc-dfbb256b6b2f",
       "name": "Trap Bar Squat",
       "equipment": "Bodyweight",
       "guideSha256": "2805bb897bdb9999c8825e75a7a979bdff533e0d145cda1fc88fc0550b83d717",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-092-3-2",
+      "reviewNote": "Reviewed tire push-over phase, alternating supine tabletop toe tap, legs-up toe reach, toes-to-bar hang, arms-extended ball torso rotation, stable unweighted torso twists, prone tensioned towel reach, trail running and centered hex-bar deadlift/squat setups."
     },
     {
       "exerciseId": "wger-41b9f5a5-73de-414d-b08a-54025eccedc6",
       "name": "Trap press",
       "equipment": "Barbell + Bench + Dumbbell",
       "guideSha256": "de0fec8f7d01330f2ed6872abbcaa295f2dfb6aa86603d0ff97eac5cfe72c8c9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-093-0-0",
+      "reviewNote": "Reviewed supine straight-arm shoulder press, supported hinged trap-3 raise, treadmill running, across-body triceps stretch, kneeling assistance-platform machine dip, tucked-elbow triceps push-up, overhead elbow stretch, neutral suspension hammer curl and suspended oblique knee draw."
     },
     {
       "exerciseId": "wger-62f90b5c-7451-4fd0-91ae-4dd93c51aa41",
       "name": "Trap-3 Raise",
       "equipment": "Bodyweight",
       "guideSha256": "6a1693639b304a31f60c19805034d89696a9140aafbdadc7570184607bf2feb9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-093-1-0",
+      "reviewNote": "Reviewed supine straight-arm shoulder press, supported hinged trap-3 raise, treadmill running, across-body triceps stretch, kneeling assistance-platform machine dip, tucked-elbow triceps push-up, overhead elbow stretch, neutral suspension hammer curl and suspended oblique knee draw."
     },
     {
       "exerciseId": "wger-3f8e5871-4895-48c9-928d-dc1bc134f57b",
       "name": "Treadmill Cardio",
       "equipment": "Bodyweight",
       "guideSha256": "b208d45555b42bc31bdf68158292eb8b808bbba5a647244ec4d518f981346035",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-093-2-0",
+      "reviewNote": "Reviewed supine straight-arm shoulder press, supported hinged trap-3 raise, treadmill running, across-body triceps stretch, kneeling assistance-platform machine dip, tucked-elbow triceps push-up, overhead elbow stretch, neutral suspension hammer curl and suspended oblique knee draw."
     },
     {
       "exerciseId": "db-tricep-side-stretch",
       "name": "Tricep Side Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "042b42995882528c5764b66743aa91302b20212b9f7dbd0ab41fcab9c0673da4",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-093-3-0",
+      "reviewNote": "Reviewed supine straight-arm shoulder press, supported hinged trap-3 raise, treadmill running, across-body triceps stretch, kneeling assistance-platform machine dip, tucked-elbow triceps push-up, overhead elbow stretch, neutral suspension hammer curl and suspended oblique knee draw."
     },
     {
       "exerciseId": "wger-3dd0db1c-450a-46d1-ad46-d7854bdc26ed",
       "name": "Assisted machine triceps dip",
       "equipment": "Assisted dip / chin station",
       "guideSha256": "f45d11a1a48f271523414614fd475179ec0e1eafc3b74a9a329843af1784d80b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-093-0-1",
+      "reviewNote": "Reviewed supine straight-arm shoulder press, supported hinged trap-3 raise, treadmill running, across-body triceps stretch, kneeling assistance-platform machine dip, tucked-elbow triceps push-up, overhead elbow stretch, neutral suspension hammer curl and suspended oblique knee draw."
     },
     {
       "exerciseId": "wger-6c671e43-497f-4863-8d78-b592f3b5e7c6",
@@ -11330,7 +11422,9 @@
       "name": "Triceps push up",
       "equipment": "Bodyweight",
       "guideSha256": "50f4bf42098ecf4ad548e3921278d063bdba66556e1227fee1e894147e4ff534",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-093-2-1",
+      "reviewNote": "Reviewed supine straight-arm shoulder press, supported hinged trap-3 raise, treadmill running, across-body triceps stretch, kneeling assistance-platform machine dip, tucked-elbow triceps push-up, overhead elbow stretch, neutral suspension hammer curl and suspended oblique knee draw."
     },
     {
       "exerciseId": "db-triceps-pushdown-rope-attachment",
@@ -11364,7 +11458,9 @@
       "name": "Triceps Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "8610ebfb39c754f42b470dd04be3514d2726565840e720785cc9b5f5123253af",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-093-3-1",
+      "reviewNote": "Reviewed supine straight-arm shoulder press, supported hinged trap-3 raise, treadmill running, across-body triceps stretch, kneeling assistance-platform machine dip, tucked-elbow triceps push-up, overhead elbow stretch, neutral suspension hammer curl and suspended oblique knee draw."
     },
     {
       "exerciseId": "wger-8019be2c-47a3-475f-8e16-a2fca761a8fe",
@@ -11385,35 +11481,45 @@
       "name": "TRX hammer curl",
       "equipment": "Bodyweight",
       "guideSha256": "190ce25f746c398ab743f2c7c8ee82725551c84e0d8597146ef8e2453ac1a351",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-093-2-2",
+      "reviewNote": "Reviewed supine straight-arm shoulder press, supported hinged trap-3 raise, treadmill running, across-body triceps stretch, kneeling assistance-platform machine dip, tucked-elbow triceps push-up, overhead elbow stretch, neutral suspension hammer curl and suspended oblique knee draw."
     },
     {
       "exerciseId": "wger-6679b2ad-91b7-4a75-9230-3ae1101bdd50",
       "name": "TRX Obliques",
       "equipment": "Bodyweight",
       "guideSha256": "e1db090ca844140847cd7616d8b2eb2250333439c4a140f0ac859ddc43304949",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-093-3-2",
+      "reviewNote": "Reviewed supine straight-arm shoulder press, supported hinged trap-3 raise, treadmill running, across-body triceps stretch, kneeling assistance-platform machine dip, tucked-elbow triceps push-up, overhead elbow stretch, neutral suspension hammer curl and suspended oblique knee draw."
     },
     {
       "exerciseId": "wger-7f2628bf-6381-4228-9840-b75cbcc843a1",
       "name": "Trx Single Arm Bicep Curl",
       "equipment": "Bodyweight",
       "guideSha256": "bc3f38536510c554075b80980f83dab4cc20a0c6932c49f9557d254b050fd0c1",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-094-0-0",
+      "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up."
     },
     {
       "exerciseId": "wger-de8a3db6-2b05-4c4e-977b-b61342718356",
       "name": "TRX Tricep Extension",
       "equipment": "Bodyweight",
       "guideSha256": "d500b5735faf1828b5e91f01e4d11e421f7b57648b2bad92b488c577f747826f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-094-1-0",
+      "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up."
     },
     {
       "exerciseId": "db-tuck-crunch",
       "name": "Tuck Crunch",
       "equipment": "Bodyweight",
       "guideSha256": "3034d087ccec376f8816ac43e3a411da52314be1b36797c47784454e66604933",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-094-2-0",
+      "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up."
     },
     {
       "exerciseId": "wger-9396a728-3da4-4390-ae4d-882395805008",
@@ -11427,35 +11533,45 @@
       "name": "Turkish Get-Up",
       "equipment": "Dumbbell",
       "guideSha256": "a261c6642aa454c53d539f164e0c112c0caaa63d130c846e0073d9bbaf5c52c6",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-094-0-1",
+      "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up."
     },
     {
       "exerciseId": "db-two-arm-dumbbell-preacher-curl",
       "name": "Two-Arm Dumbbell Preacher Curl",
       "equipment": "Dumbbell",
       "guideSha256": "40fe92db5f429d9631d562d74fb00faa99103f36df00d5a3a880ec82ee0efd11",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-094-1-1",
+      "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up."
     },
     {
       "exerciseId": "db-two-arm-kettlebell-clean",
       "name": "Two-Arm Kettlebell Clean",
       "equipment": "Kettlebell",
       "guideSha256": "980328e94fa2628da6be039e34511f1bfba44fe5339642107f3faf8360ac2132",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-094-2-1",
+      "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up."
     },
     {
       "exerciseId": "db-two-arm-kettlebell-military-press",
       "name": "Two-Arm Kettlebell Military Press",
       "equipment": "Kettlebell",
       "guideSha256": "0cde3f670d02b02b1be8c896950947c29e24789e76dd3441f3fbd86599ec2cf2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-094-3-1",
+      "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up."
     },
     {
       "exerciseId": "db-two-arm-kettlebell-row",
       "name": "Two-Arm Kettlebell Row",
       "equipment": "Kettlebell",
       "guideSha256": "eff07dee5a0f760e421b0199efa7852b34ca009f165e7220fcbf98a51e45ece9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-094-0-2",
+      "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up."
     },
     {
       "exerciseId": "wger-075bff87-f676-4d9d-92b4-39d557453fc7",
@@ -11469,7 +11585,9 @@
       "name": "Tyson push-ups",
       "equipment": "Bodyweight",
       "guideSha256": "c37ed2b0a57ab6c67bb29e49e38bf4650601808fec5660d2c9c079cfe5f3e985",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-094-2-2",
+      "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up."
     },
     {
       "exerciseId": "db-underhand-cable-pulldowns",
