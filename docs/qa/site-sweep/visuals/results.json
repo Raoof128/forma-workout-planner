@@ -1,0 +1,231 @@
+{
+  "browser": "system Chromium via Playwright",
+  "reason": "Browser plugin not available",
+  "flow": "Overview loads original hero and routine photos → My routines → three photo cards render",
+  "results": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1536,
+        "height": 1024
+      },
+      "overview": {
+        "title": "Overview · FORMA",
+        "url": "http://127.0.0.1:5176/",
+        "heroBackground": "url(\"http://127.0.0.1:5176/images/training-hero.webp\")",
+        "scrollWidth": 1536,
+        "viewportWidth": 1536,
+        "heroRect": {
+          "x": 284,
+          "y": 363.578125,
+          "width": 783.015625,
+          "height": 431.390625,
+          "top": 363.578125,
+          "right": 1067.015625,
+          "bottom": 794.96875,
+          "left": 284
+        },
+        "cardCount": 3
+      },
+      "images": [
+        {
+          "path": "/images/training-hero.webp",
+          "status": 200,
+          "bytes": 127994,
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "path": "/images/routine-photos.webp",
+          "status": 200,
+          "bytes": 119526,
+          "width": 1536,
+          "height": 1024
+        }
+      ],
+      "routines": {
+        "title": "Make every session yours.",
+        "cardCount": 3,
+        "photos": [
+          {
+            "background": "url(\"http://127.0.0.1:5176/images/routine-photos.webp\")",
+            "position": "0% 30%",
+            "size": "300% auto",
+            "rect": {
+              "x": 285,
+              "y": 284.578125,
+              "width": 391.046875,
+              "height": 170,
+              "top": 284.578125,
+              "right": 676.046875,
+              "bottom": 454.578125,
+              "left": 285
+            }
+          },
+          {
+            "background": "url(\"http://127.0.0.1:5176/images/routine-photos.webp\")",
+            "position": "50% 57%",
+            "size": "300% auto",
+            "rect": {
+              "x": 696.046875,
+              "y": 284.578125,
+              "width": 391.046875,
+              "height": 170,
+              "top": 284.578125,
+              "right": 1087.09375,
+              "bottom": 454.578125,
+              "left": 696.046875
+            }
+          },
+          {
+            "background": "url(\"http://127.0.0.1:5176/images/routine-photos.webp\")",
+            "position": "100% 35%",
+            "size": "300% auto",
+            "rect": {
+              "x": 1107.09375,
+              "y": 284.578125,
+              "width": 391.046875,
+              "height": 170,
+              "top": 284.578125,
+              "right": 1498.140625,
+              "bottom": 454.578125,
+              "left": 1107.09375
+            }
+          }
+        ],
+        "scrollWidth": 1536,
+        "viewportWidth": 1536,
+        "overlay": false
+      },
+      "details": [
+        {
+          "heading": "Make every session yours.",
+          "url": "http://127.0.0.1:5176/#routines",
+          "coverPosition": "0% 30%",
+          "coverSize": "300% auto",
+          "overflow": false
+        },
+        {
+          "heading": "Make every session yours.",
+          "url": "http://127.0.0.1:5176/#routines",
+          "coverPosition": "100% 35%",
+          "coverSize": "300% auto",
+          "overflow": false
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overview": {
+        "title": "Overview · FORMA",
+        "url": "http://127.0.0.1:5176/",
+        "heroBackground": "url(\"http://127.0.0.1:5176/images/training-hero.webp\")",
+        "scrollWidth": 390,
+        "viewportWidth": 390,
+        "heroRect": {
+          "x": 20,
+          "y": 492.03125,
+          "width": 350,
+          "height": 396.59375,
+          "top": 492.03125,
+          "right": 370,
+          "bottom": 888.625,
+          "left": 20
+        },
+        "cardCount": 3
+      },
+      "images": [
+        {
+          "path": "/images/training-hero.webp",
+          "status": 200,
+          "bytes": 127994,
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "path": "/images/routine-photos.webp",
+          "status": 200,
+          "bytes": 119526,
+          "width": 1536,
+          "height": 1024
+        }
+      ],
+      "routines": {
+        "title": "Make every session yours.",
+        "cardCount": 3,
+        "photos": [
+          {
+            "background": "url(\"http://127.0.0.1:5176/images/routine-photos.webp\")",
+            "position": "0% 30%",
+            "size": "auto 130%",
+            "rect": {
+              "x": 21,
+              "y": 423.03125,
+              "width": 104.390625,
+              "height": 125,
+              "top": 423.03125,
+              "right": 125.390625,
+              "bottom": 548.03125,
+              "left": 21
+            }
+          },
+          {
+            "background": "url(\"http://127.0.0.1:5176/images/routine-photos.webp\")",
+            "position": "50% 57%",
+            "size": "auto 130%",
+            "rect": {
+              "x": 21,
+              "y": 562.03125,
+              "width": 104.390625,
+              "height": 125,
+              "top": 562.03125,
+              "right": 125.390625,
+              "bottom": 687.03125,
+              "left": 21
+            }
+          },
+          {
+            "background": "url(\"http://127.0.0.1:5176/images/routine-photos.webp\")",
+            "position": "100% 35%",
+            "size": "auto 130%",
+            "rect": {
+              "x": 21,
+              "y": 701.03125,
+              "width": 104.390625,
+              "height": 125,
+              "top": 701.03125,
+              "right": 125.390625,
+              "bottom": 826.03125,
+              "left": 21
+            }
+          }
+        ],
+        "scrollWidth": 390,
+        "viewportWidth": 390,
+        "overlay": false
+      },
+      "details": [
+        {
+          "heading": "Make every session yours.",
+          "url": "http://127.0.0.1:5176/#routines",
+          "coverPosition": "0% 30%",
+          "coverSize": "300% auto",
+          "overflow": false
+        },
+        {
+          "heading": "Make every session yours.",
+          "url": "http://127.0.0.1:5176/#routines",
+          "coverPosition": "100% 35%",
+          "coverSize": "300% auto",
+          "overflow": false
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

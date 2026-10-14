@@ -891,13 +891,13 @@ input[type="checkbox"] {
   background-size: 300% auto;
 }
 .photo-0 {
-  background-position: 0% 44%;
+  background-position: 0% 30%;
 }
 .photo-1 {
   background-position: 50% 57%;
 }
 .photo-2 {
-  background-position: 100% 62%;
+  background-position: 100% 35%;
 }
 .routine-card-body {
   display: flex;
@@ -2615,6 +2615,9 @@ input[type="checkbox"] {
   }
 }
 @media (max-width: 540px) {
+  .hero {
+    background-position: 80% center;
+  }
   .routine-grid,
   .routine-grid.full-grid {
     grid-template-columns: minmax(0, 1fr);
@@ -2633,6 +2636,10 @@ input[type="checkbox"] {
     height: 100%;
     min-height: 125px;
     background-size: auto 130%;
+  }
+  .detail-cover {
+    height: 125px;
+    background-size: 300% auto;
   }
   .routine-card h3 {
     font-size: 14px;

@@ -58,3 +58,9 @@ no full reload.
 
 Final complete guest/account browser runs and final photo crops are pending.
 No deployment or live member-data operation occurred.
+
+Photo crops have now been checked in the rendered desktop and mobile app.
+The hero keeps the face within the phone crop; routine cards show the bar or
+kettlebell grip. The phone routine-detail banner had been scaling the entire
+three-column sprite into one cover; its scoped background sizing now displays
+only the selected column. Reviewed screenshots are under `visuals/`.

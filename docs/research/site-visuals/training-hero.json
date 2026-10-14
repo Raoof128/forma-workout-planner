@@ -29,5 +29,62 @@
     "sha256": "b65965485c5e15ae8da35cf190a3124ca964e4b2bafa5e8cbcc2bddd62126ce8",
     "bytes": 127994,
     "command": "convert assets/site-visuals/training-hero-original.png -strip -quality 84 -define webp:method=6 assets/site-visuals/training-hero.webp"
+  },
+  "renderReview": {
+    "browser": "system Chromium via Playwright",
+    "browserPlugin": "unavailable",
+    "url": "http://127.0.0.1:5176",
+    "viewports": [
+      {
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "flow": "Overview → My routines → upper-body and full-body routine detail dialogs → close",
+    "imageLoad": "HTTP200,1536x1024 decoded; correct source/export byte counts",
+    "checks": "Nonblank screens, correct headings, no framework overlay, no console/page errors, no horizontal overflow on pages/detail dialogs,3routine cards and successful navigation/dialog interactions.",
+    "evidence": [
+      "work/site-visual-review/desktop-overview-refined.png",
+      "work/site-visual-review/desktop-routines-refined.png",
+      "work/site-visual-review/mobile-overview-refined.png",
+      "work/site-visual-review/mobile-routines-refined.png",
+      "work/site-visual-review/desktop-detail-0-refined.png",
+      "work/site-visual-review/desktop-detail-2-refined.png",
+      "work/site-visual-review/mobile-detail-0-refined.png",
+      "work/site-visual-review/mobile-detail-2-refined.png"
+    ],
+    "results": "work/site-visual-review/results-refined.json",
+    "css": "photo-0 position0%30%, photo-1 remains50%57%, photo-2 position100%35%; max540hero80%center; max540detail-cover125px and300%auto to isolate correct sprite column.",
+    "cropObservation": "390px mobile hero retains face and row action with readable headline, metadata and buttons; desktop hero unchanged."
+  },
+  "priorRenderReview": {
+    "browser": "system Chromium via Playwright",
+    "browserPlugin": "unavailable",
+    "url": "http://127.0.0.1:5176",
+    "viewports": [
+      {
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "flow": "Overview → My routines (mobile navigation opened first)",
+    "imageLoad": "HTTP200,1536x1024 decoded; rendered CSS background URLs match replaced filenames",
+    "checks": "Nonblank screens, correct headings, no Vite overlay, no console/page errors, no horizontal overflow,3routine cards, successful route interaction.",
+    "evidence": [
+      "work/site-visual-review/desktop-overview.png",
+      "work/site-visual-review/desktop-routines.png",
+      "work/site-visual-review/mobile-overview.png",
+      "work/site-visual-review/mobile-routines.png"
+    ],
+    "css": "Existing background sizes, positions and layout preserved.",
+    "cropObservation": "Desktop shows complete right subject; existing center/cover mobile crop trims face at right edge while headline and controls remain readable."
   }
 }

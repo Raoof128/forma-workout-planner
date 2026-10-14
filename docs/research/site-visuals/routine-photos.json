@@ -59,5 +59,62 @@
     "sha256": "ffef857402907eee61cbc9e65f894b5348609b44a3b92320127a6efa4e4319ee",
     "bytes": 119526,
     "command": "convert assets/site-visuals/routine-photos-unmarked.png -strip -quality 84 -define webp:method=6 assets/site-visuals/routine-photos.webp"
+  },
+  "renderReview": {
+    "browser": "system Chromium via Playwright",
+    "browserPlugin": "unavailable",
+    "url": "http://127.0.0.1:5176",
+    "viewports": [
+      {
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "flow": "Overview → My routines → upper-body and full-body routine detail dialogs → close",
+    "imageLoad": "HTTP200,1536x1024 decoded; correct source/export byte counts",
+    "checks": "Nonblank screens, correct headings, no framework overlay, no console/page errors, no horizontal overflow on pages/detail dialogs,3routine cards and successful navigation/dialog interactions.",
+    "evidence": [
+      "work/site-visual-review/desktop-overview-refined.png",
+      "work/site-visual-review/desktop-routines-refined.png",
+      "work/site-visual-review/mobile-overview-refined.png",
+      "work/site-visual-review/mobile-routines-refined.png",
+      "work/site-visual-review/desktop-detail-0-refined.png",
+      "work/site-visual-review/desktop-detail-2-refined.png",
+      "work/site-visual-review/mobile-detail-0-refined.png",
+      "work/site-visual-review/mobile-detail-2-refined.png"
+    ],
+    "results": "work/site-visual-review/results-refined.json",
+    "css": "photo-0 position0%30%, photo-1 remains50%57%, photo-2 position100%35%; max540hero80%center; max540detail-cover125px and300%auto to isolate correct sprite column.",
+    "cropObservation": "Desktop routine cards and detail banners clearly show pulldown grip/bar and goblet bell/grip. Mobile detail banners now isolate correct single scene, replacing prior entire-sprite rendering; mobile routine thumbnails remain clear."
+  },
+  "priorRenderReview": {
+    "browser": "system Chromium via Playwright",
+    "browserPlugin": "unavailable",
+    "url": "http://127.0.0.1:5176",
+    "viewports": [
+      {
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "flow": "Overview → My routines (mobile navigation opened first)",
+    "imageLoad": "HTTP200,1536x1024 decoded; rendered CSS background URLs match replaced filenames",
+    "checks": "Nonblank screens, correct headings, no Vite overlay, no console/page errors, no horizontal overflow,3routine cards, successful route interaction.",
+    "evidence": [
+      "work/site-visual-review/desktop-overview.png",
+      "work/site-visual-review/desktop-routines.png",
+      "work/site-visual-review/mobile-overview.png",
+      "work/site-visual-review/mobile-routines.png"
+    ],
+    "css": "Existing background sizes, positions and layout preserved.",
+    "cropObservation": "All3mobile thumbnails show full subjects. Existing narrow desktop banner crops show left upper-body action, middle barbell action and right squat torso/thigh region; right kettlebell is above current62% crop."
   }
 }
