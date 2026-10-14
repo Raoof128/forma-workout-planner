@@ -13,14 +13,22 @@
       "guideText": "Stand with your feet shoulder width apart. This will be your starting position.\n\nBegin the movement by flexing your knees and hips, sitting back with your hips.\n\nContinue until you have squatted a portion of the way down, but are above parallel, and quickly reverse the motion until you return to the starting position. Repeat for 5-10 repetitions.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sit_Squats.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed partial above-parallel sit squat, seated dorsiflexion calf reach, protective-kit roller skating, angled-upper-arm flat-bench dumbbell skullcrusher, airborne-limb prone T skydiver, waist-harness sled drag, away-facing bent-elbow overhead sled triceps extension and upright-handle sled push.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "wger-5af00591-2d77-4ea6-a347-825ad18beff1",
@@ -29,7 +37,7 @@
       "guideText": "This is a top down rotation movement, and it’s a bit more explosive, too. Lying with knees bent and feet on the floor, sit up and then drive your left elbow across your entire body toward the right, then come back to center and then finally lower yourself down. Then hit the other side.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1479/view/",
@@ -37,7 +45,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: sit-up elbow thrust drawn as hands-behind-head twisting crunch rather than seated elbow drive across torso.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 338
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "db-sit-up",
@@ -46,14 +62,22 @@
       "guideText": "Lie down on the floor placing your feet either under something that will not move or by having a partner hold them. Your legs should be bent at the knees.\n\nPlace your hands behind your head and lock them together by clasping your fingers. This is the starting position.\n\nElevate your upper body so that it creates an imaginary V-shape with your thighs. Breathe out when performing this part of the exercise.\n\nOnce you feel the contraction for a second, lower your upper body back down to the starting position while inhaling.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sit-Up.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: sit-up lacks the fixed foot anchor/partner required by guide.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "wger-f38e9c23-031d-44d0-ac27-7f1026212c73",
@@ -62,7 +86,7 @@
       "guideText": "Sit on a mat, your calves are resting on a bench, the knees make a right angle. Hold your hands behind your neck. Go now up with a rolling movement of your back, you should feel how the individual vertebrae lose contact with the mat. At the highest point, contract your abs as much as you can and hold there for 2 sec. Go now down, unrolling your back.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/591/view/",
@@ -70,7 +94,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: bench-supported sit-up supports only feet instead of calves at right-angle knees.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "wger-9f9bfa54-4702-4eb1-a72a-0fc12c846c72",
@@ -79,7 +111,7 @@
       "guideText": "This is a light stretch for the calf that is great for rehab.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1274/view/",
@@ -87,7 +119,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed partial above-parallel sit squat, seated dorsiflexion calf reach, protective-kit roller skating, angled-upper-arm flat-bench dumbbell skullcrusher, airborne-limb prone T skydiver, waist-harness sled drag, away-facing bent-elbow overhead sled triceps extension and upright-handle sled push.",
+      "bounds": {
+        "x": 0,
+        "y": 341,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "db-skating",
@@ -96,14 +136,22 @@
       "guideText": "Roller skating is a fun activity which can be effective in improving cardiorespiratory fitness and muscular endurance. It requires relatively good balance and coordination. It is necessary to learn the basics of skating including turning and stopping and to wear protective gear to avoid possible injury.\n\nYou can skate at a comfortable pace for 30 minutes straight. If you want a cardio challenge, do interval skating — speed skate two minutes of every five minutes, using the remaining three minutes to recover. A 150 lb person will typically burn about 175 calories in 30 minutes skating at a comfortable pace, similar to brisk walking.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Skating.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed partial above-parallel sit squat, seated dorsiflexion calf reach, protective-kit roller skating, angled-upper-arm flat-bench dumbbell skullcrusher, airborne-limb prone T skydiver, waist-harness sled drag, away-facing bent-elbow overhead sled triceps extension and upright-handle sled push.",
+      "bounds": {
+        "x": 384,
+        "y": 338,
+        "width": 384,
+        "height": 324
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "wger-893c07ea-2e24-49b6-92e4-d0033eedec62",
@@ -112,7 +160,7 @@
       "guideText": "Hold the dumbbells and lay down on a flat bench in such a way that around 1/4 of your head is over the edge. Stretch arms straight up and then lean dumbbells away from your toes to a 10-20 degree angle. Keep upper arm at this angle throughout exercise. Dumbbell shall not be amed at your head, but away over your head. This will maximise gain from exercise with load on triceps all the time. Pay attention to your elbows and arms: only the triceps are doing the work, the rest of the arms should not move.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/245/view/",
@@ -120,7 +168,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed partial above-parallel sit squat, seated dorsiflexion calf reach, protective-kit roller skating, angled-upper-arm flat-bench dumbbell skullcrusher, airborne-limb prone T skydiver, waist-harness sled drag, away-facing bent-elbow overhead sled triceps extension and upright-handle sled push.",
+      "bounds": {
+        "x": 768,
+        "y": 341,
+        "width": 384,
+        "height": 326
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "wger-965b0d80-544b-4f22-a64b-32dc033f071a",
@@ -129,7 +185,7 @@
       "guideText": "Lie on your stomach with your legs more than shoulder-width apart and your feet up. Your arms are stretched out to the side and form a T with your upper body, your palms are on the floor. Now raise your upper body, arms and legs as high as you can while keeping your body under tension. Turn your thumbs towards the ceiling and pull your shoulder blades together. While keeping your upper body and all limbs in the air, bring your legs together and then spread them again, keeping them constantly in the air. For the remaining repetitions, only move your legs open and closed.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1210/view/",
@@ -137,7 +193,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed partial above-parallel sit squat, seated dorsiflexion calf reach, protective-kit roller skating, angled-upper-arm flat-bench dumbbell skullcrusher, airborne-limb prone T skydiver, waist-harness sled drag, away-facing bent-elbow overhead sled triceps extension and upright-handle sled push.",
+      "bounds": {
+        "x": 1152,
+        "y": 341,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "db-sled-drag-harness",
@@ -146,14 +210,22 @@
       "guideText": "To begin, load the sled with the desired weight and attach the pulling strap. You can pull with handles, use a harness, or attach the pulling strap to a weight belt.\n\nWhether pulling forwards or backwards, lean in the direction of travel and progress by extending through the hips and knees.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sled_Drag_-_Harness.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed partial above-parallel sit squat, seated dorsiflexion calf reach, protective-kit roller skating, angled-upper-arm flat-bench dumbbell skullcrusher, airborne-limb prone T skydiver, waist-harness sled drag, away-facing bent-elbow overhead sled triceps extension and upright-handle sled push.",
+      "bounds": {
+        "x": 0,
+        "y": 682,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "db-sled-overhead-backward-walk",
@@ -162,14 +234,22 @@
       "guideText": "Attach dual handles to a sled connected by a rope or chain. Load the sled to a light weight.\n\nFace the sled, backing up until there is some tension in the line. Hold your hands directly above your head with your elbows extended. This will be your starting position.\n\nWalk backwards, keeping your arms raised above your head. Avoid jerky movements.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sled_Overhead_Backward_Walk.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: backward overhead sled walk faces away from sled; guide requires facing sled while stepping backward.",
+      "bounds": {
+        "x": 384,
+        "y": 662,
+        "width": 384,
+        "height": 362
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "db-sled-overhead-triceps-extension",
@@ -178,14 +258,22 @@
       "guideText": "Attach dual handles to a sled using a chain or rope. Load the sled to an appropriate load.\n\nFacing away from the sled, step away until there is tension in the line. Raise your hands above your head, keeping them together, palms facing each other. Your elbows should be pointed upward with the elbows flexed. This will be your starting position.\n\nExtend through the elbow to straighten the arm. Ensure that your upper arm stays in position to isolate the triceps.\n\nUpon full extension, step forward to take the slack out of the line. You may keep your feet staggered for more stability.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sled_Overhead_Triceps_Extension.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed partial above-parallel sit squat, seated dorsiflexion calf reach, protective-kit roller skating, angled-upper-arm flat-bench dumbbell skullcrusher, airborne-limb prone T skydiver, waist-harness sled drag, away-facing bent-elbow overhead sled triceps extension and upright-handle sled push.",
+      "bounds": {
+        "x": 768,
+        "y": 667,
+        "width": 384,
+        "height": 357
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "db-sled-push",
@@ -194,14 +282,22 @@
       "guideText": "Load your pushing sled with the desired weight.\n\nTake an athletic posture, leaning into the sled with your arms fully extended, grasping the handles. Push the sled as fast as possible, focusing on extending your hips and knees to strengthen your posterior chain.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sled_Push.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed partial above-parallel sit squat, seated dorsiflexion calf reach, protective-kit roller skating, angled-upper-arm flat-bench dumbbell skullcrusher, airborne-limb prone T skydiver, waist-harness sled drag, away-facing bent-elbow overhead sled triceps extension and upright-handle sled push.",
+      "bounds": {
+        "x": 1152,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-43da7b0e-fa05-42e9-b72a-f7e98148bc88.png",

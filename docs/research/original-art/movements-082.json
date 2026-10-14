@@ -13,14 +13,22 @@
       "guideText": "Attach dual handles to a sled connected by a rope or chain. Load the sled to a light weight.\n\nFace the sled, backing up until there is some tension in the line. Take both handles at arms length at about waist level. Bend the knees slightly and keep your chest and head up. This will be your starting position.\n\nWithout flexing the elbow, pull the handles upward and apart, performing a reverse fly with some external rotation. Your palms should be facing forward as you do this.\n\nReturn to the starting position, taking a couple steps back to take the slack out of the line.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sled_Reverse_Flye.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "db-sled-row",
@@ -29,14 +37,22 @@
       "guideText": "Attach dual handles to a sled connected by a rope or chain. Load the sled to an appropriate weight. Face the sled, backing up until there is some tension in the line.\n\nWith a handle in each hand, bend the knees slightly, keep your head and chest up, and begin with your arms extended.\n\nTo initiate the movement, flex the elbow as you retract your shoulder blades, pulling the sled towards you.\n\nTake a step or two back to get tension in the line and repeat.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sled_Row.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "db-sledgehammer-swings",
@@ -45,14 +61,22 @@
       "guideText": "You will need a tire and a sledgehammer for this exercise. Stand in front of the tire about two feet away from it with a staggered stance. Grip the sledgehammer.\n\nIf you are right handed, your left hand should be at the bottom of the handle, and your right hand should be choking up closer to the head.\n\nAs you bring the sledge up, your right hand slides toward the head; as you swing down, your right hand will slide down to join your left hand. Slam it down as hard as you can against the tire. Control the bounce of the hammer off of the tire.\n\nRepeat on the other side.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sledgehammer_Swings.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "wger-90f12b1b-b33e-4d83-9f9e-e26d3a4b8e0b",
@@ -61,7 +85,7 @@
       "guideText": "1. Lie on your side so that you are resting a little weight on your shoulder blade to keep it still 2. Extend your arm to 90 degrees in front of you, resting on the floor/mat 3. Lift your hand with your elbow so that your fingers point to the ceiling and your palm points towards your feet 4. Keeping your elbow still, gently lower your palm toward the floor",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1711/view/",
@@ -69,7 +93,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "wger-55bb8725-a7c9-48a0-b192-ec6c9db6f9bc",
@@ -78,7 +110,7 @@
       "guideText": "Stand upright with your feet hip-width apart, holding a kettlebell close to your chest in goblet position. Place one foot on a slider, gliding disc, or towel. Keep your chest tall and core engaged. Slowly slide the foot outward to the side while bending the opposite knee, lowering your hips into a lateral lunge. Keep the working leg’s knee aligned with the toes and avoid letting it collapse inward. The non-working leg remains straight and slides smoothly along the floor. Push through the heel of the bent leg to return to the starting position while maintaining control of the kettlebell.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1604/view/",
@@ -86,7 +118,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions.",
+      "bounds": {
+        "x": 0,
+        "y": 342,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "wger-9f9edad8-7da0-448c-bfcb-ec61f2d28162",
@@ -95,7 +135,7 @@
       "guideText": "Hanging on sloper holds of a fingerboard for a amount of seconds",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/804/view/",
@@ -103,7 +143,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions.",
+      "bounds": {
+        "x": 384,
+        "y": 342,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "wger-2398e14f-02a6-4fdc-9f69-029e52dfe033",
@@ -112,7 +160,7 @@
       "guideText": "​A tempo-based squat that uses controlled movement to increase muscle tension and improve lower-body stability.\n1. ​Lower: Descend slowly for 3 seconds.\n2. ​Pause: Hold at the bottom for 1 second.\n3. ​Stand: Return to the starting position at a normal pace.\n4. Form: Keep your chest up and weight in your heels.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1963/view/",
@@ -120,7 +168,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions.",
+      "bounds": {
+        "x": 768,
+        "y": 342,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "db-smith-incline-shoulder-raise",
@@ -129,14 +185,22 @@
       "guideText": "Place an incline bench underneath the smith machine. Place the barbell at a height that you can reach when lying down and your arms are almost fully extended. Once the weight you need is selected, lie down on the incline bench and make sure your shoulders are aligned right under the barbell.\n\nUsing a shoulder width pronated (palms forward) grip, lift the bar from the rack and hold it straight over you with a slight bend at the elbows. This will be your starting position.\n\nAs you breathe out, lift the bar up until your arms are fully extended. Note: The contraction should be felt around the shoulders.\n\nAfter a second pause, bring the bar back down to the starting position as you breathe in.\n\nRepeat the movement for the prescribed amount of repetitions.\n\nWhen you are done, place the bar back in the rack.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Smith_Incline_Shoulder_Raise.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions.",
+      "bounds": {
+        "x": 1152,
+        "y": 342,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "wger-99a7651b-afc1-4007-ab80-aac590bbfbfe",
@@ -145,7 +209,7 @@
       "guideText": "SMR Glutes (lax ball)\nPart of: Limber 11\nSource: Joe DeFranco\nPrescription: 30 sec-2 min\nType: soft_tissue",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1952/view/",
@@ -153,7 +217,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions.",
+      "bounds": {
+        "x": 0,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "wger-c8f951dd-94e0-4548-bbed-3b7bc883f7ba",
@@ -162,7 +234,7 @@
       "guideText": "Begin in a standing position with your arms up over your head and your toes pushing into the ground raising your heels up becoming as tall as you can. From this position, perform a small hop with both feet slightly coming off of the ground. As you land, bend your knees and begin to hinge forward at your hips absorbing the landing. Return to the starting position and repeat. You should feel the muscles in your lower body working. Start with your arms and knees fully straightened out. Keep a stable balance as you land and briefly hold that end position, don’t go too fast and become off balanced. Keep your chest up. For a detailed video on landing mechanics, click here: https://youtu.be/RThUCYRDyZw",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1576/view/",
@@ -170,7 +242,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions.",
+      "bounds": {
+        "x": 384,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "db-snatch",
@@ -179,14 +259,22 @@
       "guideText": "Place your feet at a shoulder width stance with the barbell resting right above the connection between the toes and the rest of the foot.\n\nWith a palms facing down grip, bend at the knees and keeping the back flat grab the bar using a wider than shoulder width grip. Bring the hips down and make sure that your body drops as if you were going to sit on a chair. This will be your starting position.\n\nStart pushing the floor as if it were a moving platform with your feet and simultaneously start lifting the barbell keeping it close to your legs.\n\nAs the bar reaches the middle of your thighs, push the floor with your legs and lift your body to a complete extension in an explosive motion.\n\nLift your shoulders back in a shrugging movement as you bring the bar up while lifting your elbows out to the side and keeping them above the bar for as long as possible.\n\nNow in a very quick but powerful motion, you have to get your body under the barbell when it has reached a high enough point where it can be controlled and drop while locking your arms and holding the barbell overhead as you assume a squat position.\n\nFinalize the movement by rising up out of the squat position to finish the lift. At the end of the lift both feet should be on line and the arms fully extended holding the barbell overhead.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Snatch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions.",
+      "bounds": {
+        "x": 768,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     },
     {
       "id": "db-snatch-balance",
@@ -195,14 +283,22 @@
       "guideText": "Begin with the feet in the pulling position, the bar racked across the back of the shoulders, and the hands placed in a wide snatch grip.\n\nPop the bar with an abrupt dip and drive of the knees, and aggressively drive under the bar, transitioning the feet into the receiving position.\n\nReceive the bar locked out overhead near the bottom of the squat. The torso should remain vertical, lowering the hips between the legs.\n\nContinue to descend to full depth, and return to a standing position. Carefully lower the weight.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Snatch_Balance.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions.",
+      "bounds": {
+        "x": 1152,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected source panels and measured separator/empty foreground gaps for each column to avoid clipping main figures."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-0df5d31d-c7d7-4270-902b-872f8bb2ddf7.png",

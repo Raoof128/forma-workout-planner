@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1004,
+  "accepted": 1096,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -9672,49 +9672,63 @@
       "name": "Single-Leg Balance with Eyes Closed",
       "equipment": "Bodyweight",
       "guideSha256": "769d78f72118945f5e9d2cf3b7813b1c06bca58f2a8b52bf657fab223b2fda24",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-080-0-0",
+      "reviewNote": "Reviewed eyes-closed single-leg balance, bell circle handoff on one leg, dome-up BOSU balance, one-dumbbell single-leg hinge, overhead-band-assisted high-box step, cone-line single-leg hop and lateral cone hop, goblet kettlebell lunge, bent-knee one-leg soft landing, box-assisted stride-jump flight phase and two-leg seated reach."
     },
     {
       "exerciseId": "wger-d229de41-3533-489f-8460-08a6e3daa25a",
       "name": "Single-Leg Balance with Kettlebell Circles",
       "equipment": "Kettlebell",
       "guideSha256": "2898a7147171187b09f5442d702c48dabdb2de3757482531806fcb25c4bccbf0",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-080-1-0",
+      "reviewNote": "Reviewed eyes-closed single-leg balance, bell circle handoff on one leg, dome-up BOSU balance, one-dumbbell single-leg hinge, overhead-band-assisted high-box step, cone-line single-leg hop and lateral cone hop, goblet kettlebell lunge, bent-knee one-leg soft landing, box-assisted stride-jump flight phase and two-leg seated reach."
     },
     {
       "exerciseId": "wger-53b8727f-ad5c-402a-83e6-7b8e9c0bd99a",
       "name": "Single-leg BOSU balance",
       "equipment": "Bodyweight",
       "guideSha256": "d536c29387cf463eb2b363dae1c5d3fcb17e837f61c29ad87de88952cb615419",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-080-2-0",
+      "reviewNote": "Reviewed eyes-closed single-leg balance, bell circle handoff on one leg, dome-up BOSU balance, one-dumbbell single-leg hinge, overhead-band-assisted high-box step, cone-line single-leg hop and lateral cone hop, goblet kettlebell lunge, bent-knee one-leg soft landing, box-assisted stride-jump flight phase and two-leg seated reach."
     },
     {
       "exerciseId": "wger-a630de17-9170-434c-b486-96a6b8705506",
       "name": "Single-Leg Deadlift with Dumbbell",
       "equipment": "Dumbbell",
       "guideSha256": "c989c7b2824e558184fc61c0ce2c593208a080bcc242d70dd871a8e72036a3a1",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-080-3-0",
+      "reviewNote": "Reviewed eyes-closed single-leg balance, bell circle handoff on one leg, dome-up BOSU balance, one-dumbbell single-leg hinge, overhead-band-assisted high-box step, cone-line single-leg hop and lateral cone hop, goblet kettlebell lunge, bent-knee one-leg soft landing, box-assisted stride-jump flight phase and two-leg seated reach."
     },
     {
       "exerciseId": "db-single-leg-high-box-squat",
       "name": "Single-Leg High Box Squat",
       "equipment": "Specialty equipment",
       "guideSha256": "f9296c2e3c2593f0c18d972c83bbcdf945a2bab4cc9e25de4adf9adcb9320a53",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-080-0-1",
+      "reviewNote": "Reviewed eyes-closed single-leg balance, bell circle handoff on one leg, dome-up BOSU balance, one-dumbbell single-leg hinge, overhead-band-assisted high-box step, cone-line single-leg hop and lateral cone hop, goblet kettlebell lunge, bent-knee one-leg soft landing, box-assisted stride-jump flight phase and two-leg seated reach."
     },
     {
       "exerciseId": "db-single-leg-hop-progression",
       "name": "Single-Leg Hop Progression",
       "equipment": "Specialty equipment",
       "guideSha256": "bf4429503efa5c4550fad68896d8b7c23ae735ef3759e0f675a32c1f08a68efa",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-080-1-1",
+      "reviewNote": "Reviewed eyes-closed single-leg balance, bell circle handoff on one leg, dome-up BOSU balance, one-dumbbell single-leg hinge, overhead-band-assisted high-box step, cone-line single-leg hop and lateral cone hop, goblet kettlebell lunge, bent-knee one-leg soft landing, box-assisted stride-jump flight phase and two-leg seated reach."
     },
     {
       "exerciseId": "db-single-leg-lateral-hop",
       "name": "Single-Leg Lateral Hop",
       "equipment": "Specialty equipment",
       "guideSha256": "702f01154333cae48de8e6126088dc699cf8e41d94d7c9c827b229fc9102d432",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-080-2-1",
+      "reviewNote": "Reviewed eyes-closed single-leg balance, bell circle handoff on one leg, dome-up BOSU balance, one-dumbbell single-leg hinge, overhead-band-assisted high-box step, cone-line single-leg hop and lateral cone hop, goblet kettlebell lunge, bent-knee one-leg soft landing, box-assisted stride-jump flight phase and two-leg seated reach."
     },
     {
       "exerciseId": "db-single-leg-leg-extension",
@@ -9730,7 +9744,9 @@
       "name": "Single-Leg Lunge with Kettlebell:",
       "equipment": "Kettlebell",
       "guideSha256": "652006ba09db271a2def1b0beb4919567c8d92b41ab7c7b02de99ef7d4cd0ebf",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-080-3-1",
+      "reviewNote": "Reviewed eyes-closed single-leg balance, bell circle handoff on one leg, dome-up BOSU balance, one-dumbbell single-leg hinge, overhead-band-assisted high-box step, cone-line single-leg hop and lateral cone hop, goblet kettlebell lunge, bent-knee one-leg soft landing, box-assisted stride-jump flight phase and two-leg seated reach."
     },
     {
       "exerciseId": "wger-d28cf04f-4077-484b-82ed-abaea8d4053d",
@@ -9744,28 +9760,36 @@
       "name": "Single-Leg Soft-Landing Holds",
       "equipment": "Bodyweight",
       "guideSha256": "278017cc50923baf0bbcda4262c8890b2a8f82ad830458730de99cecf5186f6d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-080-1-2",
+      "reviewNote": "Reviewed eyes-closed single-leg balance, bell circle handoff on one leg, dome-up BOSU balance, one-dumbbell single-leg hinge, overhead-band-assisted high-box step, cone-line single-leg hop and lateral cone hop, goblet kettlebell lunge, bent-knee one-leg soft landing, box-assisted stride-jump flight phase and two-leg seated reach."
     },
     {
       "exerciseId": "db-single-leg-stride-jump",
       "name": "Single-Leg Stride Jump",
       "equipment": "Specialty equipment",
       "guideSha256": "87cd9665e26b9592568171174ededb223e055d449b932290247809a596def9d8",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-080-2-2",
+      "reviewNote": "Reviewed eyes-closed single-leg balance, bell circle handoff on one leg, dome-up BOSU balance, one-dumbbell single-leg hinge, overhead-band-assisted high-box step, cone-line single-leg hop and lateral cone hop, goblet kettlebell lunge, bent-knee one-leg soft landing, box-assisted stride-jump flight phase and two-leg seated reach."
     },
     {
       "exerciseId": "wger-5a5e8883-b185-40ff-b292-9e433d13b5e7",
       "name": "Sit & Reach",
       "equipment": "Bodyweight",
       "guideSha256": "6f1d6027f508da8ee5dc82f28b9aa42171058c49009ab2ae3a344e91471bbbfb",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-080-3-2",
+      "reviewNote": "Reviewed eyes-closed single-leg balance, bell circle handoff on one leg, dome-up BOSU balance, one-dumbbell single-leg hinge, overhead-band-assisted high-box step, cone-line single-leg hop and lateral cone hop, goblet kettlebell lunge, bent-knee one-leg soft landing, box-assisted stride-jump flight phase and two-leg seated reach."
     },
     {
       "exerciseId": "db-sit-squats",
       "name": "Sit Squats",
       "equipment": "Bodyweight",
       "guideSha256": "d75be43a18b1ade9a30d4937108acfe0fb14905982d8ed7c56c2f128e1eea4b6",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-081-0-0",
+      "reviewNote": "Reviewed partial above-parallel sit squat, seated dorsiflexion calf reach, protective-kit roller skating, angled-upper-arm flat-bench dumbbell skullcrusher, airborne-limb prone T skydiver, waist-harness sled drag, away-facing bent-elbow overhead sled triceps extension and upright-handle sled push."
     },
     {
       "exerciseId": "wger-5af00591-2d77-4ea6-a347-825ad18beff1",
@@ -9793,14 +9817,18 @@
       "name": "Sitting Calf Stretch (Dorsiflexion)",
       "equipment": "Bodyweight",
       "guideSha256": "100eef23a615ac79de547ec78f07e3fcb7a73ebfe36583ba98593c6752b48e08",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-081-0-1",
+      "reviewNote": "Reviewed partial above-parallel sit squat, seated dorsiflexion calf reach, protective-kit roller skating, angled-upper-arm flat-bench dumbbell skullcrusher, airborne-limb prone T skydiver, waist-harness sled drag, away-facing bent-elbow overhead sled triceps extension and upright-handle sled push."
     },
     {
       "exerciseId": "db-skating",
       "name": "Skating",
       "equipment": "Specialty equipment",
       "guideSha256": "c6b4af39428fb907d85d838909d30cc1e2d25deab5345ce65b80d43ddd1fbe7e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-081-1-1",
+      "reviewNote": "Reviewed partial above-parallel sit squat, seated dorsiflexion calf reach, protective-kit roller skating, angled-upper-arm flat-bench dumbbell skullcrusher, airborne-limb prone T skydiver, waist-harness sled drag, away-facing bent-elbow overhead sled triceps extension and upright-handle sled push."
     },
     {
       "exerciseId": "wger-e29d9914-6b02-490b-8f3a-f9fe8f21993c",
@@ -9816,21 +9844,27 @@
       "name": "Skullcrusher Dumbbells",
       "equipment": "Bench + Dumbbell",
       "guideSha256": "8885343c031337a4de74a0c30e3c32605a978721c8cfaf606047d40949a86c97",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-081-2-1",
+      "reviewNote": "Reviewed partial above-parallel sit squat, seated dorsiflexion calf reach, protective-kit roller skating, angled-upper-arm flat-bench dumbbell skullcrusher, airborne-limb prone T skydiver, waist-harness sled drag, away-facing bent-elbow overhead sled triceps extension and upright-handle sled push."
     },
     {
       "exerciseId": "wger-965b0d80-544b-4f22-a64b-32dc033f071a",
       "name": "Skydiver with arms in T-position",
       "equipment": "Bodyweight",
       "guideSha256": "b8439c196162df0474f0ba644597d4a9f1aa4c4da31bf8f8819f70d79541cfeb",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-081-3-1",
+      "reviewNote": "Reviewed partial above-parallel sit squat, seated dorsiflexion calf reach, protective-kit roller skating, angled-upper-arm flat-bench dumbbell skullcrusher, airborne-limb prone T skydiver, waist-harness sled drag, away-facing bent-elbow overhead sled triceps extension and upright-handle sled push."
     },
     {
       "exerciseId": "db-sled-drag-harness",
       "name": "Sled Drag - Harness",
       "equipment": "Specialty equipment",
       "guideSha256": "c0bdad997dad6925745f70208afec844099a307fffb05d4a4dcfb368eb55b07d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-081-0-2",
+      "reviewNote": "Reviewed partial above-parallel sit squat, seated dorsiflexion calf reach, protective-kit roller skating, angled-upper-arm flat-bench dumbbell skullcrusher, airborne-limb prone T skydiver, waist-harness sled drag, away-facing bent-elbow overhead sled triceps extension and upright-handle sled push."
     },
     {
       "exerciseId": "db-sled-overhead-backward-walk",
@@ -9844,70 +9878,90 @@
       "name": "Sled Overhead Triceps Extension",
       "equipment": "Specialty equipment",
       "guideSha256": "6844fad4eac65ad108417b91338ff24eb957b212c453b18bdb82beff9b43da85",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-081-2-2",
+      "reviewNote": "Reviewed partial above-parallel sit squat, seated dorsiflexion calf reach, protective-kit roller skating, angled-upper-arm flat-bench dumbbell skullcrusher, airborne-limb prone T skydiver, waist-harness sled drag, away-facing bent-elbow overhead sled triceps extension and upright-handle sled push."
     },
     {
       "exerciseId": "db-sled-push",
       "name": "Sled Push",
       "equipment": "Specialty equipment",
       "guideSha256": "30db60db12bce8fad3a3ea366066adab9ad9df73485c9b896728228115ee0209",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-081-3-2",
+      "reviewNote": "Reviewed partial above-parallel sit squat, seated dorsiflexion calf reach, protective-kit roller skating, angled-upper-arm flat-bench dumbbell skullcrusher, airborne-limb prone T skydiver, waist-harness sled drag, away-facing bent-elbow overhead sled triceps extension and upright-handle sled push."
     },
     {
       "exerciseId": "db-sled-reverse-flye",
       "name": "Sled Reverse Flye",
       "equipment": "Specialty equipment",
       "guideSha256": "3601ff4e8dbb0f238668309bdd53dff74ed1b484531ce95224c6da6914e672f3",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-082-0-0",
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions."
     },
     {
       "exerciseId": "db-sled-row",
       "name": "Sled Row",
       "equipment": "Specialty equipment",
       "guideSha256": "d75384aa69c42e00fe2e209d95572f571393beac4682f1b17cb5bb865451d053",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-082-1-0",
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions."
     },
     {
       "exerciseId": "db-sledgehammer-swings",
       "name": "Sledgehammer Swings",
       "equipment": "Specialty equipment",
       "guideSha256": "57068555e06b44147ddcc0f01ab8e76c2dee3c4462fe9972391b1e3b40a945b4",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-082-2-0",
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions."
     },
     {
       "exerciseId": "wger-90f12b1b-b33e-4d83-9f9e-e26d3a4b8e0b",
       "name": "Sleeper Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "2aa61bf0b819971b258d8e74f2623bd765f6ab5f9b5e30aedc654ed328efab96",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-082-3-0",
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions."
     },
     {
       "exerciseId": "wger-55bb8725-a7c9-48a0-b192-ec6c9db6f9bc",
       "name": "Sliding Lateral Lunge",
       "equipment": "Barbell",
       "guideSha256": "db7ed387b18e97ae63890747bdaeb99c9172cd60e7eeb8ba42d32ef32f6f17ad",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-082-0-1",
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions."
     },
     {
       "exerciseId": "wger-9f9edad8-7da0-448c-bfcb-ec61f2d28162",
       "name": "Sloper hanging",
       "equipment": "Bodyweight",
       "guideSha256": "728ddf286dec43487abf22c319ba7d1736c5acf41c9e7a2d44e183ef753adca1",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-082-1-1",
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions."
     },
     {
       "exerciseId": "wger-2398e14f-02a6-4fdc-9f69-029e52dfe033",
       "name": "Slow Squat",
       "equipment": "Bodyweight",
       "guideSha256": "63abed927102313e27bce1d4e0b456bd319a4dcbe6c8d8a29fb9a3a8b9736135",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-082-2-1",
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions."
     },
     {
       "exerciseId": "db-smith-incline-shoulder-raise",
       "name": "Smith Incline Shoulder Raise",
       "equipment": "Barbell",
       "guideSha256": "5b9bdd654665b208dad9f02b37d02396dbba3ff43620424007c0cc1638e27b94",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-082-3-1",
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions."
     },
     {
       "exerciseId": "db-smith-machine-behind-the-back-shrug",
@@ -10092,56 +10146,72 @@
       "name": "SMR Glutes (lax ball)",
       "equipment": "Bodyweight",
       "guideSha256": "d14267ba3ea1ed84b9ecec696c3cdafef3c291812c7693dcd94d1c86ebd1198f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-082-0-2",
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions."
     },
     {
       "exerciseId": "wger-c8f951dd-94e0-4548-bbed-3b7bc883f7ba",
       "name": "Snap Down",
       "equipment": "Bodyweight",
       "guideSha256": "9737d94a6ec044156333deff37cd405c38ad93bed2e421f0d027449d6b0a2043",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-082-1-2",
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions."
     },
     {
       "exerciseId": "db-snatch",
       "name": "Snatch",
       "equipment": "Barbell",
       "guideSha256": "996183b91fdc99bd4a14290cd2be424e4bf4988de0ae8cd45725e763d7cf7bf6",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-082-2-2",
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions."
     },
     {
       "exerciseId": "db-snatch-balance",
       "name": "Snatch Balance",
       "equipment": "Barbell",
       "guideSha256": "44a393ccab65f37d2443b9be06ea34177056b611bfef1546c8dc5e37195b2897",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-082-3-2",
+      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions."
     },
     {
       "exerciseId": "db-snatch-deadlift",
       "name": "Snatch Deadlift",
       "equipment": "Barbell",
       "guideSha256": "d594ae3ed4f79db318aedd3fe70b72cc339334d3b086fabe9d2d1139c24f6a3c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-083-0-0",
+      "reviewNote": "Reviewed wide-grip snatch first pull, overhead block-snatch catch, extended snatch pull/shrug, ground-anchored overhead band extension, banded box squat, deep back squat, straight-arm paired-dumbbell rotation, floor-supported sphinx and low spider crawl."
     },
     {
       "exerciseId": "db-snatch-from-blocks",
       "name": "Snatch from Blocks",
       "equipment": "Barbell",
       "guideSha256": "e5a75f3cb176e18945f8350bc25cf2f82e2578425665194f8e1f3dcc2674a0d3",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-083-1-0",
+      "reviewNote": "Reviewed wide-grip snatch first pull, overhead block-snatch catch, extended snatch pull/shrug, ground-anchored overhead band extension, banded box squat, deep back squat, straight-arm paired-dumbbell rotation, floor-supported sphinx and low spider crawl."
     },
     {
       "exerciseId": "db-snatch-pull",
       "name": "Snatch Pull",
       "equipment": "Barbell",
       "guideSha256": "4a2b18e9692013df32be9328fe43a6194a9797af17216f1ce1d1ac53bb5cdeb9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-083-2-0",
+      "reviewNote": "Reviewed wide-grip snatch first pull, overhead block-snatch catch, extended snatch pull/shrug, ground-anchored overhead band extension, banded box squat, deep back squat, straight-arm paired-dumbbell rotation, floor-supported sphinx and low spider crawl."
     },
     {
       "exerciseId": "db-snatch-shrug",
       "name": "Snatch Shrug",
       "equipment": "Barbell",
       "guideSha256": "ecd0c4efa82f3cc6916fd8ef07ad832d8098b10351b2414d8ee2c19f4d228b6d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-083-3-0",
+      "reviewNote": "Reviewed wide-grip snatch first pull, overhead block-snatch catch, extended snatch pull/shrug, ground-anchored overhead band extension, banded box squat, deep back squat, straight-arm paired-dumbbell rotation, floor-supported sphinx and low spider crawl."
     },
     {
       "exerciseId": "wger-33a55e1a-ff83-4c34-b056-887a121b0978",
@@ -10155,42 +10225,54 @@
       "name": "Speed Band Overhead Triceps",
       "equipment": "Resistance band",
       "guideSha256": "edd699c2feaae35549ed4b3e1f7eba3784a25be11aa02f9c49f5fd06caa9713b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-083-1-1",
+      "reviewNote": "Reviewed wide-grip snatch first pull, overhead block-snatch catch, extended snatch pull/shrug, ground-anchored overhead band extension, banded box squat, deep back squat, straight-arm paired-dumbbell rotation, floor-supported sphinx and low spider crawl."
     },
     {
       "exerciseId": "db-speed-box-squat",
       "name": "Speed Box Squat",
       "equipment": "Barbell",
       "guideSha256": "77dde3ab71ea5a4cbae93e62cba2b1838c461eceecb1ba421616b6a96566a24d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-083-2-1",
+      "reviewNote": "Reviewed wide-grip snatch first pull, overhead block-snatch catch, extended snatch pull/shrug, ground-anchored overhead band extension, banded box squat, deep back squat, straight-arm paired-dumbbell rotation, floor-supported sphinx and low spider crawl."
     },
     {
       "exerciseId": "db-speed-squats",
       "name": "Speed Squats",
       "equipment": "Barbell",
       "guideSha256": "36351d78d8918b09aabeb42ccd2180f098bb6e1b4756e758f87fa966b3c341ed",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-083-3-1",
+      "reviewNote": "Reviewed wide-grip snatch first pull, overhead block-snatch catch, extended snatch pull/shrug, ground-anchored overhead band extension, banded box squat, deep back squat, straight-arm paired-dumbbell rotation, floor-supported sphinx and low spider crawl."
     },
     {
       "exerciseId": "db-spell-caster",
       "name": "Spell Caster",
       "equipment": "Dumbbell",
       "guideSha256": "b62310fcf840eca4f0db05f6f6bc4579abb7bbe577dd6b15cf9d4d15b3de8000",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-083-0-2",
+      "reviewNote": "Reviewed wide-grip snatch first pull, overhead block-snatch catch, extended snatch pull/shrug, ground-anchored overhead band extension, banded box squat, deep back squat, straight-arm paired-dumbbell rotation, floor-supported sphinx and low spider crawl."
     },
     {
       "exerciseId": "wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6",
       "name": "Sphinx",
       "equipment": "Bodyweight",
       "guideSha256": "d117f840c78fd86c471657e8fe55a632ecb2f6e6ae9608f3f81d56ebc978473f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-083-1-2",
+      "reviewNote": "Reviewed wide-grip snatch first pull, overhead block-snatch catch, extended snatch pull/shrug, ground-anchored overhead band extension, banded box squat, deep back squat, straight-arm paired-dumbbell rotation, floor-supported sphinx and low spider crawl."
     },
     {
       "exerciseId": "db-spider-crawl",
       "name": "Spider Crawl",
       "equipment": "Bodyweight",
       "guideSha256": "8296da4d231fa57d41be4eb7f9b859be88fe3bb30650cc3ab1683dcc0c218d87",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-083-2-2",
+      "reviewNote": "Reviewed wide-grip snatch first pull, overhead block-snatch catch, extended snatch pull/shrug, ground-anchored overhead band extension, banded box squat, deep back squat, straight-arm paired-dumbbell rotation, floor-supported sphinx and low spider crawl."
     },
     {
       "exerciseId": "db-spider-curl",
@@ -10204,28 +10286,36 @@
       "name": "Spinal Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "fea0ceeabc5b5623fead693d796d43b1125d69efabfc1b8238f660c49d729d26",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-084-0-0",
+      "reviewNote": "Reviewed seated spinal rotation, twisting knee-to-opposite-elbow sit-up, front-rack split clean, overhead split jerk/snatch, rear-foot-elevated dumbbell split squat, alternating bodyweight split jump, static split squat, full squat jerk and ground-supported squat-thrust plank."
     },
     {
       "exerciseId": "wger-eaf6f39e-d46d-4460-b5a9-71e814b18f89",
       "name": "Splinter Sit-ups",
       "equipment": "Bodyweight",
       "guideSha256": "4fa9e89dd1810bf3e4223ee0d05fcfe23ce4c7a66ef4ef0819340796340b42d8",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-084-1-0",
+      "reviewNote": "Reviewed seated spinal rotation, twisting knee-to-opposite-elbow sit-up, front-rack split clean, overhead split jerk/snatch, rear-foot-elevated dumbbell split squat, alternating bodyweight split jump, static split squat, full squat jerk and ground-supported squat-thrust plank."
     },
     {
       "exerciseId": "db-split-clean",
       "name": "Split Clean",
       "equipment": "Barbell",
       "guideSha256": "c9f8e47c13e941e6f4c7dac57a8c53af83dd788ef169a9c9b06055397f6fe0a7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-084-2-0",
+      "reviewNote": "Reviewed seated spinal rotation, twisting knee-to-opposite-elbow sit-up, front-rack split clean, overhead split jerk/snatch, rear-foot-elevated dumbbell split squat, alternating bodyweight split jump, static split squat, full squat jerk and ground-supported squat-thrust plank."
     },
     {
       "exerciseId": "db-split-jerk",
       "name": "Split Jerk",
       "equipment": "Barbell",
       "guideSha256": "d60f7d0d3d1d32087b3ae1725070b10814fddf8f06d331193621d07f0203dfc2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-084-3-0",
+      "reviewNote": "Reviewed seated spinal rotation, twisting knee-to-opposite-elbow sit-up, front-rack split clean, overhead split jerk/snatch, rear-foot-elevated dumbbell split squat, alternating bodyweight split jump, static split squat, full squat jerk and ground-supported squat-thrust plank."
     },
     {
       "exerciseId": "db-split-jump",
@@ -10239,35 +10329,45 @@
       "name": "Split Snatch",
       "equipment": "Barbell",
       "guideSha256": "b6e55ec1ff9b8667d392399ba8904e81ef6642360ffb0c20a178af5c9fdd15e2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-084-1-1",
+      "reviewNote": "Reviewed seated spinal rotation, twisting knee-to-opposite-elbow sit-up, front-rack split clean, overhead split jerk/snatch, rear-foot-elevated dumbbell split squat, alternating bodyweight split jump, static split squat, full squat jerk and ground-supported squat-thrust plank."
     },
     {
       "exerciseId": "db-split-squat-with-dumbbells",
       "name": "Split Squat with Dumbbells",
       "equipment": "Dumbbell",
       "guideSha256": "33d5ccb0a891044b0a6ae2c36168c5091c6955bea4bc020de8e85927cb53d361",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-084-2-1",
+      "reviewNote": "Reviewed seated spinal rotation, twisting knee-to-opposite-elbow sit-up, front-rack split clean, overhead split jerk/snatch, rear-foot-elevated dumbbell split squat, alternating bodyweight split jump, static split squat, full squat jerk and ground-supported squat-thrust plank."
     },
     {
       "exerciseId": "db-split-squats",
       "name": "Split Squats",
       "equipment": "Bodyweight",
       "guideSha256": "28e865b1f84f324bada81d99fcdd71184a4572c56613e66dc148fb5d53162f9a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-084-3-1",
+      "reviewNote": "Reviewed seated spinal rotation, twisting knee-to-opposite-elbow sit-up, front-rack split clean, overhead split jerk/snatch, rear-foot-elevated dumbbell split squat, alternating bodyweight split jump, static split squat, full squat jerk and ground-supported squat-thrust plank."
     },
     {
       "exerciseId": "wger-80d83f98-efe5-4d87-a403-c0feadc8650f",
       "name": "Bodyweight split squat",
       "equipment": "Bodyweight",
       "guideSha256": "00e0a1cad2fee7b6c6336763b11c7f6ab6b6c8549301c568bd31e2498ea163ba",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-084-0-2",
+      "reviewNote": "Reviewed seated spinal rotation, twisting knee-to-opposite-elbow sit-up, front-rack split clean, overhead split jerk/snatch, rear-foot-elevated dumbbell split squat, alternating bodyweight split jump, static split squat, full squat jerk and ground-supported squat-thrust plank."
     },
     {
       "exerciseId": "db-squat-jerk",
       "name": "Squat Jerk",
       "equipment": "Barbell",
       "guideSha256": "881a6d9219e21735d3454340294ba801311f7bbd29ca59409700afb886745b3a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-084-1-2",
+      "reviewNote": "Reviewed seated spinal rotation, twisting knee-to-opposite-elbow sit-up, front-rack split clean, overhead split jerk/snatch, rear-foot-elevated dumbbell split squat, alternating bodyweight split jump, static split squat, full squat jerk and ground-supported squat-thrust plank."
     },
     {
       "exerciseId": "wger-e6890815-de67-4882-9cd5-82b7630208ad",
@@ -10281,35 +10381,45 @@
       "name": "Squat Thrust",
       "equipment": "Bodyweight",
       "guideSha256": "99c41c652eec4a48298491dbfb16078ad2a26f6507df13510dfd36da4faa0da8",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-084-3-2",
+      "reviewNote": "Reviewed seated spinal rotation, twisting knee-to-opposite-elbow sit-up, front-rack split clean, overhead split jerk/snatch, rear-foot-elevated dumbbell split squat, alternating bodyweight split jump, static split squat, full squat jerk and ground-supported squat-thrust plank."
     },
     {
       "exerciseId": "db-squat-with-bands",
       "name": "Squat with Bands",
       "equipment": "Barbell",
       "guideSha256": "65dd0b69de2f06162002cca76773c399be826ebdcb50163c94d921c5f42106ea",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-085-0-0",
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch."
     },
     {
       "exerciseId": "db-squat-with-chains",
       "name": "Squat with Chains",
       "equipment": "Barbell",
       "guideSha256": "07b53982b609fc99784931ebae0840566a68d42410ea049b353379d31a505976",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-085-1-0",
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch."
     },
     {
       "exerciseId": "db-squat-with-plate-movers",
       "name": "Squat with Plate Movers",
       "equipment": "Barbell",
       "guideSha256": "63dd425a959cf17754dad5530946919ede3378951852a0b1f723a07e54858c30",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-085-2-0",
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch."
     },
     {
       "exerciseId": "db-squats-with-bands",
       "name": "Squats - With Bands",
       "equipment": "Resistance band",
       "guideSha256": "5a89216d45b1f32054b231a560c31717e9f0f8d3907799e0b42ebd1b3bf99c9c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-085-3-0",
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch."
     },
     {
       "exerciseId": "db-stairmaster",
@@ -10325,35 +10435,45 @@
       "name": "Standing Alternating Dumbbell Press",
       "equipment": "Dumbbell",
       "guideSha256": "4cbceef74c16dcc85f6c155c84a1c68ed8e2293dbae640a21ee03ef22ee49d93",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-085-0-1",
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch."
     },
     {
       "exerciseId": "db-standing-barbell-calf-raise",
       "name": "Standing Barbell Calf Raise",
       "equipment": "Barbell",
       "guideSha256": "4dd0b8d60de5011d2df28e5c5298b45c0bf1e95667538fbd1284f0da5f874dd0",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-085-1-1",
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch."
     },
     {
       "exerciseId": "db-standing-barbell-press-behind-neck",
       "name": "Standing Barbell Press Behind Neck",
       "equipment": "Barbell",
       "guideSha256": "d81bb8e2d59b818992b660300a36c6075744f2bfc6102c03a5c9d0ce649c9df8",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-085-2-1",
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch."
     },
     {
       "exerciseId": "db-standing-bent-over-one-arm-dumbbell-triceps-extension",
       "name": "Standing Bent-Over One-Arm Dumbbell Triceps Extension",
       "equipment": "Dumbbell",
       "guideSha256": "26efbc2a6c0cd0f97e57183f4e505f4da33f10b8aae69431b635f59895a3cfea",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-085-3-1",
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch."
     },
     {
       "exerciseId": "db-standing-bent-over-two-arm-dumbbell-triceps-extension",
       "name": "Standing Bent-Over Two-Arm Dumbbell Triceps Extension",
       "equipment": "Dumbbell",
       "guideSha256": "23363e360fca96602802ea6924272b1ffa795d4b049d84c53961b70c295c1f1b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-085-0-2",
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch."
     },
     {
       "exerciseId": "db-standing-biceps-cable-curl",
@@ -10369,14 +10489,18 @@
       "name": "Standing Biceps Stretch",
       "equipment": "Specialty equipment",
       "guideSha256": "fae8a295406c4f00db5735c4cbc6d3b591c45092a710843936993d77cc32b527",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-085-1-2",
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch."
     },
     {
       "exerciseId": "wger-a569e8c3-218f-40db-9d71-e155c68cb26e",
       "name": "Standing biceps stretch left",
       "equipment": "Bodyweight",
       "guideSha256": "fb2323ca181b1e4b1ee340296ba84bfc370cfd33eca793d1b2930bf81fcafb68",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-085-2-2",
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch."
     },
     {
       "exerciseId": "wger-671568f9-6653-4e11-ac71-3f34c74329a0",
@@ -10390,7 +10514,9 @@
       "name": "Standing Bradford Press",
       "equipment": "Barbell",
       "guideSha256": "f335b18d54251a7c40bfc85cd9318c1ae77a158411591e0d35eb0b45d923f977",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-086-0-0",
+      "reviewNote": "Reviewed rear-head Bradford press phase, hinged unsupported concentration curl, paired standing overhead dumbbell press, straight-arm overhead raise, two-hand single-bell triceps extension, elbow-led upright row, rear-foot elevated quad stretch, overhead bar front raise, heel-elevated straight-knee calf stretch and belt-assisted straight-front-leg stretch."
     },
     {
       "exerciseId": "db-standing-cable-chest-press",
@@ -10433,7 +10559,9 @@
       "name": "Standing Concentration Curl",
       "equipment": "Dumbbell",
       "guideSha256": "9f9ddddc414773dbc715290f5914ca1edaca6d5961df9a9a6902afec7be04c4b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-086-1-0",
+      "reviewNote": "Reviewed rear-head Bradford press phase, hinged unsupported concentration curl, paired standing overhead dumbbell press, straight-arm overhead raise, two-hand single-bell triceps extension, elbow-led upright row, rear-foot elevated quad stretch, overhead bar front raise, heel-elevated straight-knee calf stretch and belt-assisted straight-front-leg stretch."
     },
     {
       "exerciseId": "wger-083bc8a6-0eb4-4049-b2ef-88415aa15459",
@@ -10447,7 +10575,9 @@
       "name": "Standing Dumbbell Press",
       "equipment": "Dumbbell",
       "guideSha256": "c5125ef13a9bcbafa34b39d0d6fdf7468b11dcceadabad9a8b2cb887e1ba097b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-086-3-0",
+      "reviewNote": "Reviewed rear-head Bradford press phase, hinged unsupported concentration curl, paired standing overhead dumbbell press, straight-arm overhead raise, two-hand single-bell triceps extension, elbow-led upright row, rear-foot elevated quad stretch, overhead bar front raise, heel-elevated straight-knee calf stretch and belt-assisted straight-front-leg stretch."
     },
     {
       "exerciseId": "db-standing-dumbbell-reverse-curl",
@@ -10461,63 +10591,81 @@
       "name": "Standing Dumbbell Straight-Arm Front Delt Raise Above Head",
       "equipment": "Dumbbell",
       "guideSha256": "5171888c72884db03cd9a28694f2a868b4362d504a14a493df1279b4dcc533dd",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-086-1-1",
+      "reviewNote": "Reviewed rear-head Bradford press phase, hinged unsupported concentration curl, paired standing overhead dumbbell press, straight-arm overhead raise, two-hand single-bell triceps extension, elbow-led upright row, rear-foot elevated quad stretch, overhead bar front raise, heel-elevated straight-knee calf stretch and belt-assisted straight-front-leg stretch."
     },
     {
       "exerciseId": "db-standing-dumbbell-triceps-extension",
       "name": "Standing Dumbbell Triceps Extension",
       "equipment": "Dumbbell",
       "guideSha256": "94db0657037a15983cc26b20aaf12ef7ef11cf45c2fc13ad3642a0c6c366d69e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-086-2-1",
+      "reviewNote": "Reviewed rear-head Bradford press phase, hinged unsupported concentration curl, paired standing overhead dumbbell press, straight-arm overhead raise, two-hand single-bell triceps extension, elbow-led upright row, rear-foot elevated quad stretch, overhead bar front raise, heel-elevated straight-knee calf stretch and belt-assisted straight-front-leg stretch."
     },
     {
       "exerciseId": "db-standing-dumbbell-upright-row",
       "name": "Standing Dumbbell Upright Row",
       "equipment": "Dumbbell",
       "guideSha256": "bfffdd877198d700ab9e0612e4ee25ee6deed5573e829c6370bbddb3071c6710",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-086-3-1",
+      "reviewNote": "Reviewed rear-head Bradford press phase, hinged unsupported concentration curl, paired standing overhead dumbbell press, straight-arm overhead raise, two-hand single-bell triceps extension, elbow-led upright row, rear-foot elevated quad stretch, overhead bar front raise, heel-elevated straight-knee calf stretch and belt-assisted straight-front-leg stretch."
     },
     {
       "exerciseId": "db-standing-elevated-quad-stretch",
       "name": "Standing Elevated Quad Stretch",
       "equipment": "Specialty equipment",
       "guideSha256": "e8887924b208e08fc5390bbb7b63624fcd719e3c8b6e090e0b8bc9a96e746af5",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-086-0-2",
+      "reviewNote": "Reviewed rear-head Bradford press phase, hinged unsupported concentration curl, paired standing overhead dumbbell press, straight-arm overhead raise, two-hand single-bell triceps extension, elbow-led upright row, rear-foot elevated quad stretch, overhead bar front raise, heel-elevated straight-knee calf stretch and belt-assisted straight-front-leg stretch."
     },
     {
       "exerciseId": "db-standing-front-barbell-raise-over-head",
       "name": "Standing Front Barbell Raise Over Head",
       "equipment": "Barbell",
       "guideSha256": "abc85e2d975d683c301705d81b77363bab2ed5406088d1b5eb8f0a10e58d8c53",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-086-1-2",
+      "reviewNote": "Reviewed rear-head Bradford press phase, hinged unsupported concentration curl, paired standing overhead dumbbell press, straight-arm overhead raise, two-hand single-bell triceps extension, elbow-led upright row, rear-foot elevated quad stretch, overhead bar front raise, heel-elevated straight-knee calf stretch and belt-assisted straight-front-leg stretch."
     },
     {
       "exerciseId": "db-standing-gastrocnemius-calf-stretch",
       "name": "Standing Gastrocnemius Calf Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "e6bda86b4dc72e2364c7a7775c225cb33c6cca4749840de4ed3e19b193b24360",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-086-2-2",
+      "reviewNote": "Reviewed rear-head Bradford press phase, hinged unsupported concentration curl, paired standing overhead dumbbell press, straight-arm overhead raise, two-hand single-bell triceps extension, elbow-led upright row, rear-foot elevated quad stretch, overhead bar front raise, heel-elevated straight-knee calf stretch and belt-assisted straight-front-leg stretch."
     },
     {
       "exerciseId": "db-standing-hamstring-and-calf-stretch",
       "name": "Standing Hamstring and Calf Stretch",
       "equipment": "Specialty equipment",
       "guideSha256": "84f383be962d26d5cad32020c90adf7450d0ddc6d3bf5bffdcc181f7726f288c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-086-3-2",
+      "reviewNote": "Reviewed rear-head Bradford press phase, hinged unsupported concentration curl, paired standing overhead dumbbell press, straight-arm overhead raise, two-hand single-bell triceps extension, elbow-led upright row, rear-foot elevated quad stretch, overhead bar front raise, heel-elevated straight-knee calf stretch and belt-assisted straight-front-leg stretch."
     },
     {
       "exerciseId": "db-standing-hip-circles",
       "name": "Standing Hip Circles",
       "equipment": "Bodyweight",
       "guideSha256": "ba17a7adb307a09df78a121bd407f21e1727ffd891a99b7a9a4026429cba1143",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-087-0-0",
+      "reviewNote": "Reviewed supported knee-raised hip circle, standing hip-flexor stance, bent-arm lateral stretch, long-jump flight, standing bar press, arm-length plate ridge grip, single-arm incline-pad curl, one-arm overhead extension, close-grip overhead bar extension and neutral single-bell press supported on incline bench."
     },
     {
       "exerciseId": "db-standing-hip-flexors",
       "name": "Standing Hip Flexors",
       "equipment": "Bodyweight",
       "guideSha256": "987f40b6c97ae860ced977e11b67435d0a85e4b83c27f6f1a528ddc6e9984e86",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-087-1-0",
+      "reviewNote": "Reviewed supported knee-raised hip circle, standing hip-flexor stance, bent-arm lateral stretch, long-jump flight, standing bar press, arm-length plate ridge grip, single-arm incline-pad curl, one-arm overhead extension, close-grip overhead bar extension and neutral single-bell press supported on incline bench."
     },
     {
       "exerciseId": "db-standing-inner-biceps-curl",
@@ -10531,7 +10679,9 @@
       "name": "Standing Lateral Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "8241c7984a47574eace58fe1a528d565c045e9bce8fc6fddeca4634e8e55a15b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-087-3-0",
+      "reviewNote": "Reviewed supported knee-raised hip circle, standing hip-flexor stance, bent-arm lateral stretch, long-jump flight, standing bar press, arm-length plate ridge grip, single-arm incline-pad curl, one-arm overhead extension, close-grip overhead bar extension and neutral single-bell press supported on incline bench."
     },
     {
       "exerciseId": "db-standing-leg-curl",
@@ -10547,7 +10697,9 @@
       "name": "Standing Long Jump",
       "equipment": "Bodyweight",
       "guideSha256": "64610df7f80886df21ffcd0eeadcec30c133cc916f6eb724388e01a8ca318afc",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-087-0-1",
+      "reviewNote": "Reviewed supported knee-raised hip circle, standing hip-flexor stance, bent-arm lateral stretch, long-jump flight, standing bar press, arm-length plate ridge grip, single-arm incline-pad curl, one-arm overhead extension, close-grip overhead bar extension and neutral single-bell press supported on incline bench."
     },
     {
       "exerciseId": "db-standing-low-pulley-deltoid-raise",
@@ -10572,14 +10724,18 @@
       "name": "Standing Military Press",
       "equipment": "Barbell",
       "guideSha256": "19e47f71527ac811744a6223481c90441d4dfeca66e20d9a25da0fa33994ffc6",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-087-1-1",
+      "reviewNote": "Reviewed supported knee-raised hip circle, standing hip-flexor stance, bent-arm lateral stretch, long-jump flight, standing bar press, arm-length plate ridge grip, single-arm incline-pad curl, one-arm overhead extension, close-grip overhead bar extension and neutral single-bell press supported on incline bench."
     },
     {
       "exerciseId": "db-standing-olympic-plate-hand-squeeze",
       "name": "Standing Olympic Plate Hand Squeeze",
       "equipment": "Specialty equipment",
       "guideSha256": "7af11d54888d2477b1ece0b879f92e4b81355161f5cb09450a416913636e68dc",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-087-2-1",
+      "reviewNote": "Reviewed supported knee-raised hip circle, standing hip-flexor stance, bent-arm lateral stretch, long-jump flight, standing bar press, arm-length plate ridge grip, single-arm incline-pad curl, one-arm overhead extension, close-grip overhead bar extension and neutral single-bell press supported on incline bench."
     },
     {
       "exerciseId": "db-standing-one-arm-cable-curl",
@@ -10595,28 +10751,36 @@
       "name": "Standing One-Arm Dumbbell Curl Over Incline Bench",
       "equipment": "Dumbbell",
       "guideSha256": "97f31b51e46c6eb1ef9af0d7c67cb740ff3fed67f7c0883c5c9f99b759641a4d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-087-3-1",
+      "reviewNote": "Reviewed supported knee-raised hip circle, standing hip-flexor stance, bent-arm lateral stretch, long-jump flight, standing bar press, arm-length plate ridge grip, single-arm incline-pad curl, one-arm overhead extension, close-grip overhead bar extension and neutral single-bell press supported on incline bench."
     },
     {
       "exerciseId": "db-standing-one-arm-dumbbell-triceps-extension",
       "name": "Standing One-Arm Dumbbell Triceps Extension",
       "equipment": "Dumbbell",
       "guideSha256": "cf73f7ae0d62625c710f358b74ef6c389b4fa0fe817f4d6437a3ee9db288e533",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-087-0-2",
+      "reviewNote": "Reviewed supported knee-raised hip circle, standing hip-flexor stance, bent-arm lateral stretch, long-jump flight, standing bar press, arm-length plate ridge grip, single-arm incline-pad curl, one-arm overhead extension, close-grip overhead bar extension and neutral single-bell press supported on incline bench."
     },
     {
       "exerciseId": "db-standing-overhead-barbell-triceps-extension",
       "name": "Standing Overhead Barbell Triceps Extension",
       "equipment": "Barbell",
       "guideSha256": "cd1a5eb8bd1d8182201f186a48866096ddbbafc3e2cac7bc06f501fd9aa9607d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-087-1-2",
+      "reviewNote": "Reviewed supported knee-raised hip circle, standing hip-flexor stance, bent-arm lateral stretch, long-jump flight, standing bar press, arm-length plate ridge grip, single-arm incline-pad curl, one-arm overhead extension, close-grip overhead bar extension and neutral single-bell press supported on incline bench."
     },
     {
       "exerciseId": "db-standing-palm-in-one-arm-dumbbell-press",
       "name": "Standing Palm-In One-Arm Dumbbell Press",
       "equipment": "Dumbbell",
       "guideSha256": "90f1f2bf3ba2d88533ab613091e47e94b4a7aabb3e47c5967e9352934ec69577",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-087-2-2",
+      "reviewNote": "Reviewed supported knee-raised hip circle, standing hip-flexor stance, bent-arm lateral stretch, long-jump flight, standing bar press, arm-length plate ridge grip, single-arm incline-pad curl, one-arm overhead extension, close-grip overhead bar extension and neutral single-bell press supported on incline bench."
     },
     {
       "exerciseId": "db-standing-palms-in-dumbbell-press",
@@ -10637,21 +10801,27 @@
       "name": "Standing Pancake",
       "equipment": "Bodyweight",
       "guideSha256": "8b8e1fedbf026ec8cc128cfb59862c1b3f26432f290bba629c4b4f53768f857f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-088-1-0",
+      "reviewNote": "Reviewed wide-straddle pancake hinge, hands-behind-head pancake good morning, soft-knee pelvic tilt, extended-arm rope wrist roller, standing lateral crunch, grounded-rear-heel bent-knee soleus stretch, straight-leg hanging toe touch, partner-resisted overhead towel extension, medicine-ball throw windup and airborne star jump."
     },
     {
       "exerciseId": "wger-aa3c2791-74f7-4fed-a812-297ff454e2f9",
       "name": "Standing Pancake Good Morning",
       "equipment": "Bodyweight",
       "guideSha256": "4b75a5902c1b14ba5aacec857e93fee7cfc2cbd2553abfec46763f0a0e71e7e9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-088-2-0",
+      "reviewNote": "Reviewed wide-straddle pancake hinge, hands-behind-head pancake good morning, soft-knee pelvic tilt, extended-arm rope wrist roller, standing lateral crunch, grounded-rear-heel bent-knee soleus stretch, straight-leg hanging toe touch, partner-resisted overhead towel extension, medicine-ball throw windup and airborne star jump."
     },
     {
       "exerciseId": "db-standing-pelvic-tilt",
       "name": "Standing Pelvic Tilt",
       "equipment": "Bodyweight",
       "guideSha256": "1a828eb50f350def9064300c56c8462589ba48c8c79f3fabe2e201be09900a53",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-088-3-0",
+      "reviewNote": "Reviewed wide-straddle pancake hinge, hands-behind-head pancake good morning, soft-knee pelvic tilt, extended-arm rope wrist roller, standing lateral crunch, grounded-rear-heel bent-knee soleus stretch, straight-leg hanging toe touch, partner-resisted overhead towel extension, medicine-ball throw windup and airborne star jump."
     },
     {
       "exerciseId": "db-standing-rope-crunch",
@@ -10667,49 +10837,63 @@
       "name": "Standing Rope Forearm",
       "equipment": "Bodyweight",
       "guideSha256": "d6f78a930086a24636e8eca546498ee9e2dd06da03bce2dc2d12ade56796f6bd",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-088-0-1",
+      "reviewNote": "Reviewed wide-straddle pancake hinge, hands-behind-head pancake good morning, soft-knee pelvic tilt, extended-arm rope wrist roller, standing lateral crunch, grounded-rear-heel bent-knee soleus stretch, straight-leg hanging toe touch, partner-resisted overhead towel extension, medicine-ball throw windup and airborne star jump."
     },
     {
       "exerciseId": "wger-864b0a80-5d29-4d87-9144-f6ee6f5087b9",
       "name": "Standing Side Crunches",
       "equipment": "Bodyweight",
       "guideSha256": "2d326502a4d3fffa6d429c378d8b28b0d2c91c2a34c03e8ec3b97b327a7a40f7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-088-1-1",
+      "reviewNote": "Reviewed wide-straddle pancake hinge, hands-behind-head pancake good morning, soft-knee pelvic tilt, extended-arm rope wrist roller, standing lateral crunch, grounded-rear-heel bent-knee soleus stretch, straight-leg hanging toe touch, partner-resisted overhead towel extension, medicine-ball throw windup and airborne star jump."
     },
     {
       "exerciseId": "db-standing-soleus-and-achilles-stretch",
       "name": "Standing Soleus And Achilles Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "7a03f13498a30658e7af3049ba1d34f9bd55a541b9b5563890e583c3e1256947",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-088-2-1",
+      "reviewNote": "Reviewed wide-straddle pancake hinge, hands-behind-head pancake good morning, soft-knee pelvic tilt, extended-arm rope wrist roller, standing lateral crunch, grounded-rear-heel bent-knee soleus stretch, straight-leg hanging toe touch, partner-resisted overhead towel extension, medicine-ball throw windup and airborne star jump."
     },
     {
       "exerciseId": "db-standing-toe-touches",
       "name": "Standing Toe Touches",
       "equipment": "Bodyweight",
       "guideSha256": "78786b810a38c02e55e6a8dbfafb9bc171ddd40e09fffa663785bf4edf0e8551",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-088-3-1",
+      "reviewNote": "Reviewed wide-straddle pancake hinge, hands-behind-head pancake good morning, soft-knee pelvic tilt, extended-arm rope wrist roller, standing lateral crunch, grounded-rear-heel bent-knee soleus stretch, straight-leg hanging toe touch, partner-resisted overhead towel extension, medicine-ball throw windup and airborne star jump."
     },
     {
       "exerciseId": "db-standing-towel-triceps-extension",
       "name": "Standing Towel Triceps Extension",
       "equipment": "Bodyweight",
       "guideSha256": "1a50d01c5530da0fb7d59f4032b4dc28533177f18e61f6407f154eeed92aad71",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-088-0-2",
+      "reviewNote": "Reviewed wide-straddle pancake hinge, hands-behind-head pancake good morning, soft-knee pelvic tilt, extended-arm rope wrist roller, standing lateral crunch, grounded-rear-heel bent-knee soleus stretch, straight-leg hanging toe touch, partner-resisted overhead towel extension, medicine-ball throw windup and airborne star jump."
     },
     {
       "exerciseId": "db-standing-two-arm-overhead-throw",
       "name": "Standing Two-Arm Overhead Throw",
       "equipment": "Medicine ball",
       "guideSha256": "6092b48131e225253fdf55a0ad1a570f537c56a5ac30e339368d3a832b80b832",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-088-1-2",
+      "reviewNote": "Reviewed wide-straddle pancake hinge, hands-behind-head pancake good morning, soft-knee pelvic tilt, extended-arm rope wrist roller, standing lateral crunch, grounded-rear-heel bent-knee soleus stretch, straight-leg hanging toe touch, partner-resisted overhead towel extension, medicine-ball throw windup and airborne star jump."
     },
     {
       "exerciseId": "db-star-jump",
       "name": "Star Jump",
       "equipment": "Bodyweight",
       "guideSha256": "a14f998e28d26165acba77837fa4204f62ed445896fb192c440f4b46d465363d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-088-2-2",
+      "reviewNote": "Reviewed wide-straddle pancake hinge, hands-behind-head pancake good morning, soft-knee pelvic tilt, extended-arm rope wrist roller, standing lateral crunch, grounded-rear-heel bent-knee soleus stretch, straight-leg hanging toe touch, partner-resisted overhead towel extension, medicine-ball throw windup and airborne star jump."
     },
     {
       "exerciseId": "wger-09235a96-9834-4fad-ba9a-88ace035e80a",

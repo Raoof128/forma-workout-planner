@@ -13,14 +13,22 @@
       "guideText": "Set up the bands on the sleeves, secured to either band pegs, the rack, or dumbbells so that there is appropriate tension.\n\nBegin by stepping under the bar and placing it across the back of the shoulders. Squeeze your shoulder blades together and rotate your elbows forward, attempting to bend the bar across your shoulders. Remove the bar from the rack, creating a tight arch in your lower back, and step back into position. Place your feet wide for more emphasis on the back, glutes, adductors, and hamstrings. Keep your head facing forward.\n\nWith your back, shoulders, and core tight, push your knees and butt out and you begin your descent. Sit back with your hips as much as possible. Ideally, your shins should be perpendicular to the ground. Lower bar position necessitates a greater torso lean to keep the bar over the heels. Continue until you break parallel, which is defined as the crease of the hip being in line with the top of the knee.\n\nKeeping the weight on your heels and pushing your feet and knees out, drive upward as you lead the movement with your head. Continue upward, maintaining tightness head to toe, until you have returned to the starting position.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Squat_with_Bands.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 304
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-squat-with-chains",
@@ -29,14 +37,22 @@
       "guideText": "To set up the chains, begin by looping the leader chain over the sleeves of the bar. The heavy chain should be attached using a snap hook. Adjust the length of the lead chain so that a few links are still on the floor at the top of the movement.\n\nBegin by stepping under the bar and placing it across the back of the shoulders. Squeeze your shoulder blades together and rotate your elbows forward, attempting to bend the bar across your shoulders. Remove the bar from the rack, creating a tight arch in your lower back, and step back into position. Place your feet wide for more emphasis on the back, glutes, adductors, and hamstrings. Keep your head facing forward.\n\nWith your back, shoulders, and core tight, push your knees and butt out and you begin your descent. Sit back with your hips as much as possible. Ideally, your shins should be perpendicular to the ground. Lower bar position necessitates a greater torso lean to keep the bar over the heels. Continue until you break parallel, which is defined as the crease of the hip being in line with the top of the knee.\n\nKeeping the weight on your heels and pushing your feet and knees out, drive upward as you lead the movement with your head. Continue upward, maintaining tightness head to toe, until you have returned to the starting position.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Squat_with_Chains.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 320
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-squat-with-plate-movers",
@@ -45,14 +61,22 @@
       "guideText": "To begin, first set the bar on a rack to just below shoulder level. Position a weight plate on the ground a couple feet back from the rack. Once the bar is loaded, step under it and place the back of your shoulders across it.\n\nHold on to the bar with both hands and lift it off the rack by first pushing with your legs and at the same time straighten your torso.\n\nStep away from the rack and adopt a wide stance with the toes slightly pointed out, with one foot on the weight plate. Keep your head up at all times. This will be your starting position.\n\nBegin to slowly lower the bar by bending the knees and hips. Continue down until the angle between the upper leg and the calves becomes slightly less than 90-degrees.\n\nRaise the bar as you exhale by pushing the floor with the heels of your feet as you extend the hips and knees.\n\nAt the top of the movement, side step, bringing your feet together on the opposite side of the plate.\n\nUsing your inside foot, push the weight plate, sliding it across the floor to where you were just standing.\n\nPlace your inside foot on the weight plate, adopting a wide stance for the next repetition.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Squat_with_Plate_Movers.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 306
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-squats-with-bands",
@@ -61,14 +85,22 @@
       "guideText": "To start out, make sure that the exercise band is at an even split between both the left and right side of the body. To do this, use your hands to grab both sides of the band and place both feet in the middle of the band. Your feet should be shoulder width apart from each other.\n\nWhen holding the bands, they should be the same height on each side. You should be using a pronated grip (palms facing forward) and have the handles of the bands next to your face for this exercise. This is the starting position.\n\nSlowly start to bend the knees and lower the legs so that your thighs are parallel to the floor while exhaling.\n\nUse the heel of your feet to push your body up to the starting position as you exhale.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Squats_-_With_Bands.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-standing-alternating-dumbbell-press",
@@ -77,14 +109,22 @@
       "guideText": "Stand with a dumbbell in each hand. Raise the dumbbells to your shoulders with your palms facing forward and your elbows pointed out. This will be your starting position.\n\nExtend one arm to press the dumbbell straight up, keeping your off hand in place. Do not lean or jerk the weight during the movement.\n\nAfter a brief pause, return the weight to the starting position.\n\nRepeat for the opposite side, continuing to alternate between arms.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Standing_Alternating_Dumbbell_Press.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch.",
+      "bounds": {
+        "x": 0,
+        "y": 304,
+        "width": 384,
+        "height": 367
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-standing-barbell-calf-raise",
@@ -93,14 +133,22 @@
       "guideText": "This exercise is best performed inside a squat rack for safety purposes. To begin, first set the bar on a rack that best matches your height. Once the correct height is chosen and the bar is loaded, step under the bar and place the bar on the back of your shoulders (slightly below the neck).\n\nHold on to the bar using both arms at each side and lift it off the rack by first pushing with your legs and at the same time straightening your torso.\n\nStep away from the rack and position your legs using a shoulder width medium stance with the toes slightly pointed out. Keep your head up at all times as looking down will get you off balance and also maintain a straight back. The knees should be kept with a slight bend; never locked. This will be your starting position. Tip: For better range of motion you may also place the ball of your feet on a wooden block but be careful as this option requires more balance and a sturdy block.\n\nRaise your heels as you breathe out by extending your ankles as high as possible and flexing your calf. Ensure that the knee is kept stationary at all times. There should be no bending at any time. Hold the contracted position by a second before you start to go back down.\n\nGo back slowly to the starting position as you breathe in by lowering your heels as you bend the ankles until calves are stretched.\n\nRepeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Standing_Barbell_Calf_Raise.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch.",
+      "bounds": {
+        "x": 384,
+        "y": 320,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-standing-barbell-press-behind-neck",
@@ -109,14 +157,22 @@
       "guideText": "This exercise is best performed inside a squat rack for easier pick up of the bar. To begin, first set the bar on a rack that best matches your height. Once the correct height is chosen and the bar is loaded, step under the bar and place the back of your shoulders (slightly below the neck) across it.\n\nHold on to the bar using both arms at each side and lift it off the rack by first pushing with your legs and at the same time straightening your torso.\n\nStep away from the rack and position your legs using a shoulder width medium stance with the toes slightly pointed out. Your back should be kept straight while performing this exercise. This will be your starting position.\n\nElevate the barbell overhead by fully extending your arms while breathing out.\n\nHold the contraction for a second and lower the barbell back down to the starting position by inhaling.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Standing_Barbell_Press_Behind_Neck.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch.",
+      "bounds": {
+        "x": 768,
+        "y": 306,
+        "width": 384,
+        "height": 366
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-standing-bent-over-one-arm-dumbbell-triceps-extension",
@@ -125,14 +181,22 @@
       "guideText": "With a dumbbell in one hand and the palm facing your torso, bend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Make sure that you keep the head up.\n\nThe upper arm should be close to the torso and parallel to the floor while the forearm is pointing towards the floor as the hand holds the weight. Tip: There should be a 90-degree angle between the forearm and the upper arm. This is your starting position.\n\nKeeping the upper arms stationary, use the triceps to lift the weights as you exhale until the forearms are parallel to the floor and the whole arm is extended. Like many other arm exercises, only the forearm moves.\n\nAfter a second contraction at the top, slowly lower the dumbbell back to the starting position as you inhale.\n\nRepeat the movement for the prescribed amount of repetitions.\n\nSwitch arms and repeat the exercise.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Standing_Bent-Over_One-Arm_Dumbbell_Triceps_Extension.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch.",
+      "bounds": {
+        "x": 1152,
+        "y": 341,
+        "width": 384,
+        "height": 330
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-standing-bent-over-two-arm-dumbbell-triceps-extension",
@@ -141,14 +205,22 @@
       "guideText": "With a dumbbell in each hand and the palms facing your torso, bend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Make sure that you keep the head up. The upper arms should be close to the torso and parallel to the floor while the forearms are pointing towards the floor as the hands hold the weights. Tip: There should be a 90-degree angle between the forearms and the upper arm. This is your starting position.\n\nKeeping the upper arms stationary, use the triceps to lift the weights as you exhale until the forearms are parallel to the floor and the whole arms are extended. Like many other arm exercises, only the forearm moves.\n\nAfter a second contraction at the top, slowly lower the dumbbells back to their starting position as you inhale.\n\nRepeat the movement for the prescribed amount of repetitions.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Standing_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch.",
+      "bounds": {
+        "x": 0,
+        "y": 671,
+        "width": 384,
+        "height": 353
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-standing-biceps-stretch",
@@ -157,14 +229,22 @@
       "guideText": "Clasp your hands behind your back with your palms together, straighten arms and then rotate them so your palms face downward.\n\nRaise your arms up and hold until you feel a stretch in your biceps.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Standing_Biceps_Stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch.",
+      "bounds": {
+        "x": 384,
+        "y": 662,
+        "width": 384,
+        "height": 362
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-a569e8c3-218f-40db-9d71-e155c68cb26e",
@@ -173,7 +253,7 @@
       "guideText": "Stand with your left arm close to a wall. Extend your left arm and put your left hand on the wall, then gently turn your body to the right.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1232/view/",
@@ -181,7 +261,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed ground-anchored band squat, floor-reaching free chains, one-foot plate squat stance, underfoot handled band squat, alternating static dumbbell press, elevated-heel back-bar calf raise, overhead behind-neck bar press, hinged one/two-arm kickback, behind-back clasped biceps stretch and left-arm wall biceps stretch.",
+      "bounds": {
+        "x": 768,
+        "y": 672,
+        "width": 384,
+        "height": 352
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-671568f9-6653-4e11-ac71-3f34c74329a0",
@@ -190,7 +278,7 @@
       "guideText": "Stand with your right arm close to a wall. Extend your right arm and put your left hand on the wall, then gently turn your body to the right.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1233/view/",
@@ -198,7 +286,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Right-side title conflicts with left-hand/right-turn instruction; resolve guide identity before matching.",
+      "bounds": {
+        "x": 1152,
+        "y": 671,
+        "width": 384,
+        "height": 353
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-ada3188e-b9b2-4cee-8c5c-847d40c73238.png",
