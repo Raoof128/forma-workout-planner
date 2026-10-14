@@ -13,7 +13,7 @@
       "guideText": "Zone two Cardio for endurance, you should be able to speak while running",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/908/view/",
@@ -21,7 +21,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-zottman-curl",
@@ -30,14 +38,22 @@
       "guideText": "Stand up with your torso upright and a dumbbell in each hand being held at arms length. The elbows should be close to the torso.\n\nMake sure the palms of the hands are facing each other. This will be your starting position.\n\nWhile holding the upper arm stationary, curl the weights while contracting the biceps as you breathe out. Only the forearms should move. Your wrist should rotate so that you have a supinated (palms up) grip. Continue the movement until your biceps are fully contracted and the dumbbells are at shoulder level.\n\nHold the contracted position for a second as you squeeze the biceps.\n\nNow during the contracted position, rotate your wrist until you now have a pronated (palms facing down) grip with the thumb at a higher position than the pinky.\n\nSlowly begin to bring the dumbbells back down using the pronated grip.\n\nAs the dumbbells close your thighs, start rotating the wrist so that you go back to a neutral (palms facing your body) grip.\n\nRepeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Zottman_Curl.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-zottman-preacher-curl",
@@ -46,14 +62,22 @@
       "guideText": "Grab a dumbbell in each hand and place your upper arms on top of the preacher bench or the incline bench. The dumbbells should be held at shoulder height and the elbows should be flexed. Hold the dumbbells with the palms of your hands facing down. This will be your starting position.\n\nAs you breathe in, slowly lower the dumbbells keeping the palms down until your upper arm is extended and your biceps are fully stretched.\n\nNow rotate your wrists once you are at the bottom of the movement so that the palms of the hands are facing up.\n\nAs you exhale, use your biceps to curl the weights up until they are fully contracted and the dumbbells are at shoulder height. Again, remember that to ensure full contraction you need to bring that small finger higher than the thumb.\n\nSqueeze the biceps hard for a second at the contracted position and rotate your wrists so that the palms are facing down again.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Zottman_Preacher_Curl.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "forma-machine-assisted-chin-up",
@@ -62,11 +86,19 @@
       "guideText": "Choose enough assistance to keep the movement controlled. Hold the underhand chin-up handles, step onto the platform and position your knees or feet as the machine requires. Brace and pull your elbows down until your chin reaches handle height without swinging. Lower smoothly to a comfortable extended-arm position. Keep control of the moving platform as you step off.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "FORMA",
         "credit": "Original FORMA exercise guide"
-      }
+      },
+      "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "forma-fan-bike",
@@ -75,11 +107,19 @@
       "guideText": "Adjust the seat so your knees remain slightly bent at the farthest pedal position and you can reach the moving handles without rounding your back. Start pedalling gently, then add a smooth push-pull of the arms. Keep your feet secure and coordinate both sides without jerking the handles. Maintain the effort you can control, then ease down gradually before the pedals stop and you dismount.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "FORMA",
         "credit": "Original FORMA exercise guide"
-      }
+      },
+      "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup.",
+      "bounds": {
+        "x": 0,
+        "y": 341,
+        "width": 384,
+        "height": 340
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "forma-wger-a5d1f45b-ff07-45d7-a699-a654f9328934",
@@ -88,14 +128,22 @@
       "guideText": "For this exercise you will need a heavy rope anchored at its center 15-20 feet away. Standing in front of the rope, take an end in each hand with your arms extended at your side. This will be your starting position.\n\nInitiate the movement by rapidly raising one arm to shoulder level as quickly as you can.\n\nAs you let that arm drop to the starting position, raise the opposite side.\n\nContinue alternating your left and right arms, whipping the ropes up and down as fast as you can.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Battling_Ropes.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup.",
+      "bounds": {
+        "x": 384,
+        "y": 341,
+        "width": 384,
+        "height": 340
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "forma-wger-3f8ad988-1aee-48ca-ad37-44e39ae1715d",
@@ -104,7 +152,7 @@
       "guideText": "The Wall Sit (or wall chair) is an isometric exercise that mainly involves the leg muscles, improving muscular endurance and stability. Here are the main and secondary muscles activated during the exercise.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1408/view/",
@@ -112,7 +160,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup.",
+      "bounds": {
+        "x": 768,
+        "y": 341,
+        "width": 384,
+        "height": 340
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "forma-wger-934856f3-6eb3-4b37-9536-0ff67a6aa036",
@@ -121,7 +177,7 @@
       "guideText": "1. Stand between a set of parallel bars. 2. Place your hands, knuckles outwards, on the bars. 3. Push down on your hands to lift yourself off the floor. 4. Hold yourself in this position with your arms straight for the required time.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1808/view/",
@@ -129,7 +185,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup.",
+      "bounds": {
+        "x": 1152,
+        "y": 341,
+        "width": 384,
+        "height": 340
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "forma-db-plate-pinch",
@@ -138,14 +202,22 @@
       "guideText": "Grab two wide-rimmed plates and put them together with the smooth sides facing outward\n\nUse your fingers to grip the outside part of the plate and your thumb for the other side thus holding both plates together. This is the starting position.\n\nSqueeze the plate with your fingers and thumb. Hold this position for as long as you can.\n\nRepeat for the recommended amount of sets prescribed in your program.\n\nSwitch arms and repeat the movements.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Plate_Pinch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Shows one plate rather than pinching two plates together with smooth faces outward.",
+      "bounds": {
+        "x": 0,
+        "y": 681,
+        "width": 384,
+        "height": 343
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "forma-wger-4632c471-5c5e-4570-9dec-509c5d4d58bb",
@@ -154,7 +226,7 @@
       "guideText": "Belly breathing. Hand on chest stays still, hand on belly rises. 8-10 slow breaths.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1940/view/",
@@ -162,7 +234,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup.",
+      "bounds": {
+        "x": 384,
+        "y": 681,
+        "width": 384,
+        "height": 343
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-e640955b-91bf-4323-bce7-391e0e629628.png",

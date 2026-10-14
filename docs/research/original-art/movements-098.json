@@ -13,14 +13,22 @@
       "guideText": "Lie on your back with your arms extended out to the sides and your legs straight. This will be your starting position.\n\nLift one leg and quickly cross it over your body, attempting to touch the ground near the opposite hand.\n\nReturn to the starting position, and repeat with the opposite leg. Continue to alternate for 10-20 repetitions.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Windmills.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-026d2939-9156-408b-bf11-21cfa8278851",
@@ -29,7 +37,7 @@
       "guideText": "Hang from a pull-up bar, raise your legs to the ceiling. Move lower body from left to right with straight legs like a windshield wiper",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1743/view/",
@@ -37,7 +45,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 338
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-worlds-greatest-stretch",
@@ -46,14 +62,22 @@
       "guideText": "This is a three-part stretch. Begin by lunging forward, with your front foot flat on the ground and on the toes of your back foot. With your knees bent, squat down until your knee is almost touching the ground. Keep your torso erect, and hold this position for 10-20 seconds.\n\nNow, place the arm on the same side as your front leg on the ground, with the elbow next to the foot. Your other hand should be placed on the ground, parallel to your lead leg, to help support you during this portion of the stretch.\n\nAfter 10-20 seconds, place your hands on either side of your front foot. Raise the toes of the front foot off of the ground, and straighten your leg. You may need to reposition your rear leg to do so. Hold for 10-20 seconds, and then repeat the entire sequence for the other side.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Worlds_Greatest_Stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-wrist-circles",
@@ -62,14 +86,22 @@
       "guideText": "Start by standing straight with your feet being shoulder width apart from each other. Elevate your arms to the side of you until they are fully extended and parallel to the floor at a height that is evenly aligned with your shoulders. Tip: Your torso and arms should form the letter \"T: Your palms should be facing down. This is the starting position.\n\nKeeping your entire body stationary except for the wrists, begin to rotate both wrists forward in a circular motion. Tip: Pretend that you are trying to draw circles by using your hands as the brush. Breathe normally as you perform this exercise.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Wrist_Circles.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-17eb3e8d-26b7-4bb8-8080-cb6550867ce4",
@@ -78,7 +110,7 @@
       "guideText": "Start on all fours with your palms flat on the floor. Slowly rock forward and backward, keeping your hands planted. Move only within a comfortable, pain-free wrist range to gently improve mobility and flexibility.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2680/view/",
@@ -86,7 +118,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat.",
+      "bounds": {
+        "x": 0,
+        "y": 341,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-wrist-roller",
@@ -95,14 +135,22 @@
       "guideText": "To begin, stand straight up grabbing a wrist roller using a pronated grip (palms facing down). Your feet should be shoulder width apart.\n\nSlowly lift both arms until they are fully extended and parallel to the floor in front of you. Note: Make sure the rope is not wrapped around the roller. Your entire body should be stationary except for the forearms. This is the starting position.\n\nRotate one wrist at a time in an upward motion to bring the weight up to the bar by rolling the rope around the roller.\n\nOnce the weight has reached the bar, slowly begin to lower the weight back down by rotating the wrist in a downward motion until the weight reaches the starting position.\n\nRepeat for the prescribed amount of repetitions in your program.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Wrist_Roller.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat.",
+      "bounds": {
+        "x": 384,
+        "y": 338,
+        "width": 384,
+        "height": 345
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-wrist-rotations-with-straight-bar",
@@ -111,14 +159,22 @@
       "guideText": "Hold a barbell with both hands and your palms facing down; hands spaced about shoulder width. This will be your starting position.\n\nAlternating between each of your hands, perform the movement by extending the wrist as though you were rolling up a newspaper. Continue alternating back and forth until failure.\n\nReverse the motion by flexing the wrist, rolling the opposite direction. Continue the alternating motion until failure.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Wrist_Rotations_with_Straight_Bar.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat.",
+      "bounds": {
+        "x": 768,
+        "y": 341,
+        "width": 384,
+        "height": 369
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-yoke-walk",
@@ -127,14 +183,22 @@
       "guideText": "The yoke is usually done with a yoke apparatus, but is sometimes seen with refrigerators or other heavy objects.\n\nBegin by racking the apparatus across the back of the shoulders. With your head looking forward and back arched, lift the yoke by driving through the heels.\n\nBegin walking as quickly as possible using short, quick steps. You may hold the side posts of the yoke to help steady it and hold it in position. Continue for the given distance as fast as possible, usually 75-100 feet.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Yoke_Walk.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat.",
+      "bounds": {
+        "x": 1152,
+        "y": 341,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-142fcef5-63a7-4d30-81e4-bc9d7073fe99",
@@ -143,7 +207,7 @@
       "guideText": "The YTW exercise for scapular retraction is designed to strengthen the inter-scapular muscles between your shoulder blades, to help retract or pull your shoulders back, helping to maintain proper upright posture.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2454/view/",
@@ -151,7 +215,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat.",
+      "bounds": {
+        "x": 0,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-5986cd29-11ff-43f4-af65-fc48dec62156",
@@ -160,7 +232,7 @@
       "guideText": "* **Purpose:** Improves shoulder stability, posture, and scapular (shoulder blade) control. Often used in physical therapy and warm-ups. * **Starting Position:** Stand with feet shoulder-width apart. Hinge forward at the hips (like a deadlift) keeping your back flat, or lie face down on an incline bench. Keep your thumbs pointing up throughout. * **Y (Arms up):** Extend both arms straight forward and upward at a 135-degree angle from your body, forming a \"Y\". Squeeze your shoulder blades together at the top. * **T (Arms out):** Open your arms straight out to the sides, perpendicular to your body, forming a \"T\". Focus on pinching your shoulder blades. * **W (Arms bent):** Pull your elbows back, bending them to 90 degrees, and squeeze your shoulder blades to form a \"W\". Keep your wrists firm. * **L (Arms rotated):** Start with elbows bent at 90 degrees and close to your body. Rotate your forearms outward (external rotation) like a goalpost, forming an \"L\" or a gate. * **Key Focus:** Movements should be slow and controlled. Always lead with the thumbs and think about moving the shoulder blades, not just the arms.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1885/view/",
@@ -168,7 +240,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat.",
+      "bounds": {
+        "x": 384,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-981b07b6-e76e-438c-bad4-388441b7ff33",
@@ -177,7 +257,7 @@
       "guideText": "**Starting position:** Lie down, preferably on a mat. Stretch your arms above your head in a \"Y\" position (arms pointing up diagonally at around 45 degrees). Your thumbs should be pointing up. **Steps:** 1. With arms in the Y position, lift your chest slightly from the ground, creating a pull tension in your arms upward. 2. Hold this position for several seconds (15–30 is ideal). 3. Keeping your chest up, bend at your elbows to move from a Y position to a \"W\" position, with arms bent at the elbows and maintaining the upward tension. 4. Hold for around as long as with the Y position. 5. Still with your chest up, move to a \"T\" position, straightening your arms out to the side to be perpendicular to your body. 6. Hold for around as long as you held the W position. 7. Move from the T position to the W position, then from the W position to the Y position. 8. Repeat.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1083/view/",
@@ -185,7 +265,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat.",
+      "bounds": {
+        "x": 768,
+        "y": 710,
+        "width": 384,
+        "height": 314
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-zercher-squats",
@@ -194,14 +282,22 @@
       "guideText": "This exercise is best performed inside a squat rack for safety purposes. To begin, first set the bar on a rack that best matches your height. The correct height should be anywhere above the waist but below the chest. Once the correct height is chosen and the bar is loaded, lock your hands together and place the bar on top of your arms in between the forearm and upper arm.\n\nLift the bar up so that it is resting on top of your forearms. If you are holding the bar properly, it should look as if you have your arms crossed but with a bar running across them.\n\nStep away from the rack and position your legs using a shoulder width medium stance with the toes slightly pointed out. Keep your head up at all times as looking down will get you off balance and also maintain a straight back. This will be your starting position. (Note: For the purposes of this discussion we will use the medium stance described above which targets overall development; however you can choose any of the three stances discussed in the foot stances section).\n\nBegin to lower the bar by bending the knees as you maintain a straight posture with the head up. Continue down until the angle between the upper leg and the calves becomes slightly less than 90-degrees (which is the point in which the upper legs are below parallel to the floor). Inhale as you perform this portion of the movement. Tip: If you performed the exercise correctly, the front of the knees should make an imaginary straight line with the toes that is perpendicular to the front. If your knees are past that imaginary line (if they are past your toes) then you are placing undue stress on the knee and the exercise has been performed incorrectly.\n\nBegin to raise the bar as you exhale by pushing the floor with the ball of your foot mainly as you straighten the legs again and go back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Zercher_Squats.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat.",
+      "bounds": {
+        "x": 1152,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-afa1075b-542a-424b-97fa-4203ea2c40a0.png",

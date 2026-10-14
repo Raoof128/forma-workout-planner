@@ -13,14 +13,22 @@
       "guideText": "Clasp fingers together with your thumbs pointing down, round your shoulders as you reach your hands forward.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Upper_Back_Stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed clasped forward upper-back stretch, elbow-led straight-bar/band/EZ-bar upright rows, palms-together upward stretch, two-hand overhead dumbbell swing, straight-leg reverse-crunch W phase, walking stride and controlled hand walkout.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-upper-back-leg-grab",
@@ -29,14 +37,22 @@
       "guideText": "While seated, bend forward to hug your thighs from underneath with both arms.\n\nKeep your knees together and your legs extended out as you bring your chest down to your knees. You can also stretch your middle back by pulling your back away from your knees as your hugging them.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Upper_Back-Leg_Grab.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hands hold the shins/ankles rather than hugging extended thighs from underneath.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 338
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-upright-barbell-row",
@@ -45,14 +61,22 @@
       "guideText": "Grasp a barbell with an overhand grip that is slightly less than shoulder width. The bar should be resting on the top of your thighs with your arms extended and a slight bend in your elbows. Your back should also be straight. This will be your starting position.\n\nNow exhale and use the sides of your shoulders to lift the bar, raising your elbows up and to the side. Keep the bar close to your body as you raise it. Continue to lift the bar until it nearly touches your chin. Tip: Your elbows should drive the motion, and should always be higher than your forearms. Remember to keep your torso stationary and pause for a second at the top of the movement.\n\nLower the bar back down slowly to the starting position. Inhale as you perform this portion of the movement.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Upright_Barbell_Row.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed clasped forward upper-back stretch, elbow-led straight-bar/band/EZ-bar upright rows, palms-together upward stretch, two-hand overhead dumbbell swing, straight-leg reverse-crunch W phase, walking stride and controlled hand walkout.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 340
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-upright-row-with-bands",
@@ -61,14 +85,22 @@
       "guideText": "To begin, stand on an exercise band so that tension begins at arm's length. Grasp the handles using a pronated (palms facing your thighs) grip that is slightly less than shoulder width. The handles should be resting on top of your thighs. Your arms should be extended with a slight bend at the elbows and your back should be straight. This will be your starting position.\n\nUse your side shoulders to lift the handles as you exhale. The handles should be close to the body as you move them up. Continue to lift the handles until they nearly touches your chin. Tip: Your elbows should drive the motion. As you lift the handles, your elbows should always be higher than your forearms. Also, keep your torso stationary and pause for a second at the top of the movement.\n\nLower the handles back down slowly to the starting position. Inhale as you perform this portion of the movement.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Upright_Row_-_With_Bands.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed clasped forward upper-back stretch, elbow-led straight-bar/band/EZ-bar upright rows, palms-together upward stretch, two-hand overhead dumbbell swing, straight-leg reverse-crunch W phase, walking stride and controlled hand walkout.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-5d40c67d-be59-4092-9c9c-301ca5310e2b",
@@ -77,7 +109,7 @@
       "guideText": "Stand straight, your feet are shoulder-width apart. Hold the SZ-bar with an overhand grip on your thighs, the arms are stretched. Lift the bar close to the body till your chin. The elbows point out so that at the highest point they form a V. Make here a short pause before going slowly down and repeating the movement.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/693/view/",
@@ -85,7 +117,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed clasped forward upper-back stretch, elbow-led straight-bar/band/EZ-bar upright rows, palms-together upward stretch, two-hand overhead dumbbell swing, straight-leg reverse-crunch W phase, walking stride and controlled hand walkout.",
+      "bounds": {
+        "x": 0,
+        "y": 341,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-upward-stretch",
@@ -94,14 +134,22 @@
       "guideText": "Extend both hands straight above your head, palms touching.\n\nSlowly push your hands up and back, keeping your back straight.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Upward_Stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed clasped forward upper-back stretch, elbow-led straight-bar/band/EZ-bar upright rows, palms-together upward stretch, two-hand overhead dumbbell swing, straight-leg reverse-crunch W phase, walking stride and controlled hand walkout.",
+      "bounds": {
+        "x": 384,
+        "y": 338,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-v-bar-pullup",
@@ -110,14 +158,22 @@
       "guideText": "Start by placing the middle of the V-bar in the middle of the pull-up bar (assuming that the pull-up station you are using does not have neutral grip handles). The V-Bar handles will be facing down so that you can hang from the pull-up bar through the use of the handles.\n\nOnce you securely place the V-bar, take a hold of the bar from each side and hang from it. Stick your chest out and lean yourself back slightly in order to better engage the lats. This will be your starting position.\n\nUsing your lats, pull your torso up while leaning your head back slightly so that you do not hit yourself with the chin-up bar. Continue until your chest nearly touches the V-bar. Exhale as you execute this motion.\n\nAfter a second hold on the contracted position, slowly lower your body back to the starting position as you breathe in.\n\nRepeat for the prescribed number of repetitions.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/V-Bar_Pullup.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Uses rack neutral handles rather than a separate V-bar placed over the middle of the pull-up bar.",
+      "bounds": {
+        "x": 768,
+        "y": 340,
+        "width": 384,
+        "height": 343
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "db-vertical-swing",
@@ -126,14 +182,22 @@
       "guideText": "Allow the dumbbell to hang at arms length between your legs, holding it with both hands. Keep your back straight and your head up.\n\nSwing the dumbbell between your legs, flexing at the hips and bending the knees slightly.\n\nPowerfully reverse the motion by extending at the hips, knees, and ankles to propel yourself upward, swinging the dumbell over your head.\n\nAs you land, absorb the impact through your legs and draw the dumbbell to your torso before the next repetition.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Vertical_Swing.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed clasped forward upper-back stretch, elbow-led straight-bar/band/EZ-bar upright rows, palms-together upward stretch, two-hand overhead dumbbell swing, straight-leg reverse-crunch W phase, walking stride and controlled hand walkout.",
+      "bounds": {
+        "x": 1152,
+        "y": 341,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-8b494562-012e-4944-be65-9b168f0c8c41",
@@ -142,7 +206,7 @@
       "guideText": "This challenging exercise is a variation of reverse crunches that is made up of three parts in which we’re basically drawing an upside down ‘W’ with our legs. Start position is lying face up flat on the floor with legs extended at the low point of the outer leg of the ‘W’. Keeping a strong core and legs straight, go up, rise your hips and then slowly lower your legs down halfway. Then, lifting your legs back up to the top, rise your hips again, maintaining that straight line, use your core strength to finally come back all the way down to the other outer leg of the W. Then you reverse the ‘W’ to return to the start.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1474/view/",
@@ -150,7 +214,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed clasped forward upper-back stretch, elbow-led straight-bar/band/EZ-bar upright rows, palms-together upward stretch, two-hand overhead dumbbell swing, straight-leg reverse-crunch W phase, walking stride and controlled hand walkout.",
+      "bounds": {
+        "x": 0,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-2e00d8e5-19a2-42ad-a954-f06a56f56561",
@@ -159,7 +231,7 @@
       "guideText": "Walking outdoor or indoor, try keeping a pace of at list 100 steps per minute.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1104/view/",
@@ -167,7 +239,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed clasped forward upper-back stretch, elbow-led straight-bar/band/EZ-bar upright rows, palms-together upward stretch, two-hand overhead dumbbell swing, straight-leg reverse-crunch W phase, walking stride and controlled hand walkout.",
+      "bounds": {
+        "x": 384,
+        "y": 680,
+        "width": 384,
+        "height": 344
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-f636ae1c-f678-48fe-96b3-1a9ae81f43ce",
@@ -176,7 +256,7 @@
       "guideText": "from a standing position with knees slightly bent and hands resting on the floor. From here, proceed forward with your hands keeping your buttocks contracted and without losing control of your lower back.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1103/view/",
@@ -184,7 +264,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed clasped forward upper-back stretch, elbow-led straight-bar/band/EZ-bar upright rows, palms-together upward stretch, two-hand overhead dumbbell swing, straight-leg reverse-crunch W phase, walking stride and controlled hand walkout.",
+      "bounds": {
+        "x": 768,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     },
     {
       "id": "wger-cb7b9c95-bef9-4a84-9b26-13dab0f29da1",
@@ -193,7 +281,7 @@
       "guideText": "- **Starting Position:** Stand with feet hip-width apart and hands either on your hips or holding dumbbells at your sides. - **The Stride:** Take a wide step forward with your right leg. - **The Descent:** Lower your hips until both knees are bent at approximately **90-degree angles**. - **The Transition:** Drive through your front heel to stand up, bringing your back foot forward to step directly into the next lunge.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1903/view/",
@@ -201,7 +289,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Adds loaded bands that are absent from the bodyweight/dumbbell walking-lunge guide.",
+      "bounds": {
+        "x": 1152,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected full source sheet and measured separator or foreground-free gaps to keep each complete figure in its panel."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-1066af9a-46ae-440e-861d-34c486f8de66.png",

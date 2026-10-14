@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1155,
+  "accepted": 1203,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -11637,7 +11637,9 @@
       "name": "Upper Back Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "eefed16c133e83ea1ef2fa6ed8c88fbe4fc1b51222284bd490a693f38da4e64d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-095-0-0",
+      "reviewNote": "Reviewed clasped forward upper-back stretch, elbow-led straight-bar/band/EZ-bar upright rows, palms-together upward stretch, two-hand overhead dumbbell swing, straight-leg reverse-crunch W phase, walking stride and controlled hand walkout."
     },
     {
       "exerciseId": "db-upper-back-leg-grab",
@@ -11651,7 +11653,9 @@
       "name": "Upright Barbell Row",
       "equipment": "Barbell",
       "guideSha256": "62c825c4e9dcee4f326cadb63f2e4ef18f0291efc529b87f65670dad173254f7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-095-2-0",
+      "reviewNote": "Reviewed clasped forward upper-back stretch, elbow-led straight-bar/band/EZ-bar upright rows, palms-together upward stretch, two-hand overhead dumbbell swing, straight-leg reverse-crunch W phase, walking stride and controlled hand walkout."
     },
     {
       "exerciseId": "db-upright-cable-row",
@@ -11667,21 +11671,27 @@
       "name": "Upright Row - With Bands",
       "equipment": "Resistance band",
       "guideSha256": "e88c6ab07e56e5b357ed1942e121a675af0131f02d40ada245b89e5f92e9d646",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-095-3-0",
+      "reviewNote": "Reviewed clasped forward upper-back stretch, elbow-led straight-bar/band/EZ-bar upright rows, palms-together upward stretch, two-hand overhead dumbbell swing, straight-leg reverse-crunch W phase, walking stride and controlled hand walkout."
     },
     {
       "exerciseId": "wger-5d40c67d-be59-4092-9c9c-301ca5310e2b",
       "name": "Upright Row, SZ-bar",
       "equipment": "EZ bar",
       "guideSha256": "53a8f31831e760dea9d77f8362446871191d182a58f393efe207784fc1d258c6",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-095-0-1",
+      "reviewNote": "Reviewed clasped forward upper-back stretch, elbow-led straight-bar/band/EZ-bar upright rows, palms-together upward stretch, two-hand overhead dumbbell swing, straight-leg reverse-crunch W phase, walking stride and controlled hand walkout."
     },
     {
       "exerciseId": "db-upward-stretch",
       "name": "Upward Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "5a6f477aa493c6f0758c35305a918051ac20efa09b2c43f2a42b71504288299d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-095-1-1",
+      "reviewNote": "Reviewed clasped forward upper-back stretch, elbow-led straight-bar/band/EZ-bar upright rows, palms-together upward stretch, two-hand overhead dumbbell swing, straight-leg reverse-crunch W phase, walking stride and controlled hand walkout."
     },
     {
       "exerciseId": "db-v-bar-pulldown",
@@ -11704,28 +11714,36 @@
       "name": "Vertical Swing",
       "equipment": "Dumbbell",
       "guideSha256": "47534bb721fd34377384b83545845106a3ae935a20b2c853aad71ecffdb4e642",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-095-3-1",
+      "reviewNote": "Reviewed clasped forward upper-back stretch, elbow-led straight-bar/band/EZ-bar upright rows, palms-together upward stretch, two-hand overhead dumbbell swing, straight-leg reverse-crunch W phase, walking stride and controlled hand walkout."
     },
     {
       "exerciseId": "wger-8b494562-012e-4944-be65-9b168f0c8c41",
       "name": "W-Raise",
       "equipment": "Bodyweight",
       "guideSha256": "9e220809b82edfc358ceba25ec8b54c6e47bb895c2a1f3cb01f248321a3262d7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-095-0-2",
+      "reviewNote": "Reviewed clasped forward upper-back stretch, elbow-led straight-bar/band/EZ-bar upright rows, palms-together upward stretch, two-hand overhead dumbbell swing, straight-leg reverse-crunch W phase, walking stride and controlled hand walkout."
     },
     {
       "exerciseId": "wger-2e00d8e5-19a2-42ad-a954-f06a56f56561",
       "name": "Walking",
       "equipment": "Bodyweight",
       "guideSha256": "7634897ad06fe85330be3f78156791c15431f3ef9a15627a39c7413e762ba11b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-095-1-2",
+      "reviewNote": "Reviewed clasped forward upper-back stretch, elbow-led straight-bar/band/EZ-bar upright rows, palms-together upward stretch, two-hand overhead dumbbell swing, straight-leg reverse-crunch W phase, walking stride and controlled hand walkout."
     },
     {
       "exerciseId": "wger-f636ae1c-f678-48fe-96b3-1a9ae81f43ce",
       "name": "walking bridge",
       "equipment": "Bodyweight",
       "guideSha256": "f66fda6a5d8785d461b6f2741fc9f783cf8997cd0a232335ceea6557e0be170e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-095-2-2",
+      "reviewNote": "Reviewed clasped forward upper-back stretch, elbow-led straight-bar/band/EZ-bar upright rows, palms-together upward stretch, two-hand overhead dumbbell swing, straight-leg reverse-crunch W phase, walking stride and controlled hand walkout."
     },
     {
       "exerciseId": "wger-cb7b9c95-bef9-4a84-9b26-13dab0f29da1",
@@ -11748,14 +11766,18 @@
       "name": "Wall Angels",
       "equipment": "Bodyweight",
       "guideSha256": "95a1e7ad2f4aef7d4b74046c5882f237ed9026c9b3982e2866b5da0d0ebecdb5",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-096-0-0",
+      "reviewNote": "Reviewed wall-contact angel posture, medicine-ball wall throw, face-side pool-wall rotation, plate-loaded prone ball hyperextension, two-bench dumbbell-loaded dip, weighted floor crunch, airborne back-bar squat jump, belt-loaded pull-up and stable upper-back plate push-up."
     },
     {
       "exerciseId": "wger-f20ab712-f953-4705-8710-9681392ddd07",
       "name": "Wall balls",
       "equipment": "Exercise ball",
       "guideSha256": "c022f4b4d06382b2b013f1bd1c7e7537d2d168f6b891126948ac2e73b588a2cc",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-096-1-0",
+      "reviewNote": "Reviewed wall-contact angel posture, medicine-ball wall throw, face-side pool-wall rotation, plate-loaded prone ball hyperextension, two-bench dumbbell-loaded dip, weighted floor crunch, airborne back-bar squat jump, belt-loaded pull-up and stable upper-back plate push-up."
     },
     {
       "exerciseId": "wger-36a309ba-7dd1-43c9-9efc-788c7cd9fbd6",
@@ -11769,14 +11791,18 @@
       "name": "Wall-Hold Rotation",
       "equipment": "Bodyweight",
       "guideSha256": "18ce8585b836c3f7f05be542e59f8b58bec8345586db225e3044d71a360e3982",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-096-3-0",
+      "reviewNote": "Reviewed wall-contact angel posture, medicine-ball wall throw, face-side pool-wall rotation, plate-loaded prone ball hyperextension, two-bench dumbbell-loaded dip, weighted floor crunch, airborne back-bar squat jump, belt-loaded pull-up and stable upper-back plate push-up."
     },
     {
       "exerciseId": "db-weighted-ball-hyperextension",
       "name": "Weighted Ball Hyperextension",
       "equipment": "Exercise ball",
       "guideSha256": "b34c5cf3d5edc20c92bc3dc537b28a47ec2318e42f442213e3e4933d9bd4fa51",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-096-0-1",
+      "reviewNote": "Reviewed wall-contact angel posture, medicine-ball wall throw, face-side pool-wall rotation, plate-loaded prone ball hyperextension, two-bench dumbbell-loaded dip, weighted floor crunch, airborne back-bar squat jump, belt-loaded pull-up and stable upper-back plate push-up."
     },
     {
       "exerciseId": "db-weighted-ball-side-bend",
@@ -11790,21 +11816,27 @@
       "name": "Weighted Bench Dip",
       "equipment": "Specialty equipment",
       "guideSha256": "ca62572f567104546857d442d0c68649f6a5fba25f6f6dfe4e2f326ac0584e36",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-096-2-1",
+      "reviewNote": "Reviewed wall-contact angel posture, medicine-ball wall throw, face-side pool-wall rotation, plate-loaded prone ball hyperextension, two-bench dumbbell-loaded dip, weighted floor crunch, airborne back-bar squat jump, belt-loaded pull-up and stable upper-back plate push-up."
     },
     {
       "exerciseId": "db-weighted-crunches",
       "name": "Weighted Crunches",
       "equipment": "Medicine ball",
       "guideSha256": "aaea3ff0caa21368c89e384faf21d3d6ee5ed9f31acdd6397f0389b48f449c0b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-096-3-1",
+      "reviewNote": "Reviewed wall-contact angel posture, medicine-ball wall throw, face-side pool-wall rotation, plate-loaded prone ball hyperextension, two-bench dumbbell-loaded dip, weighted floor crunch, airborne back-bar squat jump, belt-loaded pull-up and stable upper-back plate push-up."
     },
     {
       "exerciseId": "db-weighted-jump-squat",
       "name": "Weighted Jump Squat",
       "equipment": "Barbell",
       "guideSha256": "fcf95f3d8d9d4b8109d1a80b04021c76714bf797398c338eae2824be05803868",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-096-0-2",
+      "reviewNote": "Reviewed wall-contact angel posture, medicine-ball wall throw, face-side pool-wall rotation, plate-loaded prone ball hyperextension, two-bench dumbbell-loaded dip, weighted floor crunch, airborne back-bar squat jump, belt-loaded pull-up and stable upper-back plate push-up."
     },
     {
       "exerciseId": "wger-0d245efd-7d9a-4518-be17-cce14adae88a",
@@ -11818,21 +11850,27 @@
       "name": "Weighted Pull Ups",
       "equipment": "Specialty equipment",
       "guideSha256": "ecf4b36675755561203f33b98b29e6c1ed739e2fdcfecdbaec2a6242cae5a600",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-096-2-2",
+      "reviewNote": "Reviewed wall-contact angel posture, medicine-ball wall throw, face-side pool-wall rotation, plate-loaded prone ball hyperextension, two-bench dumbbell-loaded dip, weighted floor crunch, airborne back-bar squat jump, belt-loaded pull-up and stable upper-back plate push-up."
     },
     {
       "exerciseId": "wger-37abbe32-2fab-4818-8355-fffcff2dc3e3",
       "name": "Weighted push-ups",
       "equipment": "Bodyweight",
       "guideSha256": "2d6a1d96eaa7f2cdd6664e9762c2f552d2afee4b3dea86041547d92dee451f3f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-096-3-2",
+      "reviewNote": "Reviewed wall-contact angel posture, medicine-ball wall throw, face-side pool-wall rotation, plate-loaded prone ball hyperextension, two-bench dumbbell-loaded dip, weighted floor crunch, airborne back-bar squat jump, belt-loaded pull-up and stable upper-back plate push-up."
     },
     {
       "exerciseId": "db-weighted-sissy-squat",
       "name": "Weighted Sissy Squat",
       "equipment": "Barbell",
       "guideSha256": "abce76ccf44a05e92b0a4454ed4df12606e08aa6a3d99baab06e5ff98ea20ca9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-097-0-0",
+      "reviewNote": "Reviewed supported chest-plate sissy squat, belt-loaded two-bench squat, wide pull-up and back squat, wide stiff-leg hinge, wide flat bench press, securely declined straight-arm pullover, rear-neck pull-up, wide supinated curl and alternating hanging knee sprint."
     },
     {
       "exerciseId": "db-weighted-sit-ups-with-bands",
@@ -11846,35 +11884,45 @@
       "name": "Weighted Squat",
       "equipment": "Specialty equipment",
       "guideSha256": "42ffb65dd167b0903f73d3fb84a45aae485fd63ee95f166b6817c39e914ea6db",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-097-2-0",
+      "reviewNote": "Reviewed supported chest-plate sissy squat, belt-loaded two-bench squat, wide pull-up and back squat, wide stiff-leg hinge, wide flat bench press, securely declined straight-arm pullover, rear-neck pull-up, wide supinated curl and alternating hanging knee sprint."
     },
     {
       "exerciseId": "wger-0e707ae0-1985-4b74-b0bc-24fc5021eab8",
       "name": "Wide Grip Pull Up",
       "equipment": "Bodyweight",
       "guideSha256": "7ee58f2fe36966f9af6f4c18645c84c0d843dc6fa5ef80af04d446319a03caef",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-097-3-0",
+      "reviewNote": "Reviewed supported chest-plate sissy squat, belt-loaded two-bench squat, wide pull-up and back squat, wide stiff-leg hinge, wide flat bench press, securely declined straight-arm pullover, rear-neck pull-up, wide supinated curl and alternating hanging knee sprint."
     },
     {
       "exerciseId": "db-wide-stance-barbell-squat",
       "name": "Wide Stance Barbell Squat",
       "equipment": "Barbell",
       "guideSha256": "a3687caec10de46e8ae694272b38f77383e7bf1ca91c46eb131b9f0ad6a3eaa1",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-097-0-1",
+      "reviewNote": "Reviewed supported chest-plate sissy squat, belt-loaded two-bench squat, wide pull-up and back squat, wide stiff-leg hinge, wide flat bench press, securely declined straight-arm pullover, rear-neck pull-up, wide supinated curl and alternating hanging knee sprint."
     },
     {
       "exerciseId": "db-wide-stance-stiff-legs",
       "name": "Wide Stance Stiff Legs",
       "equipment": "Barbell",
       "guideSha256": "c431a7b4c665a51a03f955e088295643a2888377523c2ad607135c6e5208b25a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-097-1-1",
+      "reviewNote": "Reviewed supported chest-plate sissy squat, belt-loaded two-bench squat, wide pull-up and back squat, wide stiff-leg hinge, wide flat bench press, securely declined straight-arm pullover, rear-neck pull-up, wide supinated curl and alternating hanging knee sprint."
     },
     {
       "exerciseId": "db-wide-grip-barbell-bench-press",
       "name": "Wide-Grip Barbell Bench Press",
       "equipment": "Barbell",
       "guideSha256": "047c9ee25fc217336a57e6a2f9555365cf9170f85b288b7dad5c016a6962298a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-097-2-1",
+      "reviewNote": "Reviewed supported chest-plate sissy squat, belt-loaded two-bench squat, wide pull-up and back squat, wide stiff-leg hinge, wide flat bench press, securely declined straight-arm pullover, rear-neck pull-up, wide supinated curl and alternating hanging knee sprint."
     },
     {
       "exerciseId": "db-wide-grip-decline-barbell-bench-press",
@@ -11888,7 +11936,9 @@
       "name": "Wide-Grip Decline Barbell Pullover",
       "equipment": "Barbell",
       "guideSha256": "4dd6e6f3cb20e0705f1d0899bbf5b33a964e802efde70aa98dcb066230300a81",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-097-0-2",
+      "reviewNote": "Reviewed supported chest-plate sissy squat, belt-loaded two-bench squat, wide pull-up and back squat, wide stiff-leg hinge, wide flat bench press, securely declined straight-arm pullover, rear-neck pull-up, wide supinated curl and alternating hanging knee sprint."
     },
     {
       "exerciseId": "db-wide-grip-lat-pulldown",
@@ -11913,49 +11963,63 @@
       "name": "Wide-Grip Rear Pull-Up",
       "equipment": "Bodyweight",
       "guideSha256": "33aae1e6f78be3b5a470df30694de5867e12f1844f32118d3214e382d4570ad1",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-097-1-2",
+      "reviewNote": "Reviewed supported chest-plate sissy squat, belt-loaded two-bench squat, wide pull-up and back squat, wide stiff-leg hinge, wide flat bench press, securely declined straight-arm pullover, rear-neck pull-up, wide supinated curl and alternating hanging knee sprint."
     },
     {
       "exerciseId": "db-wide-grip-standing-barbell-curl",
       "name": "Wide-Grip Standing Barbell Curl",
       "equipment": "Barbell",
       "guideSha256": "240798d3586dd36c4fc755e1b37edf706bcf44f2d2eccf57219d693a216ad39b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-097-2-2",
+      "reviewNote": "Reviewed supported chest-plate sissy squat, belt-loaded two-bench squat, wide pull-up and back squat, wide stiff-leg hinge, wide flat bench press, securely declined straight-arm pullover, rear-neck pull-up, wide supinated curl and alternating hanging knee sprint."
     },
     {
       "exerciseId": "db-wind-sprints",
       "name": "Wind Sprints",
       "equipment": "Bodyweight",
       "guideSha256": "b7012db2378c4b928d819d4d1c50fc058b5db3006aea86e7351ef40b98398d60",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-097-3-2",
+      "reviewNote": "Reviewed supported chest-plate sissy squat, belt-loaded two-bench squat, wide pull-up and back squat, wide stiff-leg hinge, wide flat bench press, securely declined straight-arm pullover, rear-neck pull-up, wide supinated curl and alternating hanging knee sprint."
     },
     {
       "exerciseId": "db-windmills",
       "name": "Windmills",
       "equipment": "Bodyweight",
       "guideSha256": "095dd06febce2538dd7b90ffc68282faa9b7f87ca0a54ee2755050c5928070f5",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-098-0-0",
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat."
     },
     {
       "exerciseId": "wger-026d2939-9156-408b-bf11-21cfa8278851",
       "name": "Windshield Wipers",
       "equipment": "Pull-up bar + none (bodyweight exercise)",
       "guideSha256": "b055b6ecdac2bd148fc26ee495651e7b596f65142a8d9458f2675a8ae2fd8af2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-098-1-0",
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat."
     },
     {
       "exerciseId": "db-worlds-greatest-stretch",
       "name": "World's Greatest Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "8d0978383af60411df91cfbfd736f14dd512fd13221c4a09a592e5680d5cd308",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-098-2-0",
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat."
     },
     {
       "exerciseId": "db-wrist-circles",
       "name": "Wrist Circles",
       "equipment": "Bodyweight",
       "guideSha256": "d1e282c9097b9ba1cd7b063aa9a9c6b9e0414426ff0101242836d9185048ed08",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-098-3-0",
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat."
     },
     {
       "exerciseId": "wger-f6471f4a-0290-4a71-9580-bf3d046fdb9d",
@@ -11971,77 +12035,99 @@
       "name": "Wrist rocks",
       "equipment": "Bodyweight",
       "guideSha256": "13f6ba08a7f87c77f0c351f01fdaaac8b4a180a5bcce19e7a564c1ce88763b9c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-098-0-1",
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat."
     },
     {
       "exerciseId": "db-wrist-roller",
       "name": "Wrist Roller",
       "equipment": "Specialty equipment",
       "guideSha256": "0d7878c28dd6081b18e4d0ad25acbf6d7bd5bf8f7553abed3050e9260298e0fc",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-098-1-1",
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat."
     },
     {
       "exerciseId": "db-wrist-rotations-with-straight-bar",
       "name": "Wrist Rotations with Straight Bar",
       "equipment": "Barbell",
       "guideSha256": "b056037962e26dd29feb145ea754f3dd0ee119861b47b251a89aa5e23db6d7cb",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-098-2-1",
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat."
     },
     {
       "exerciseId": "db-yoke-walk",
       "name": "Yoke Walk",
       "equipment": "Specialty equipment",
       "guideSha256": "b78763848f0e84bfc13d008ee2bbe8e3cb52f0da1080eb93323a23eb10041fef",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-098-3-1",
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat."
     },
     {
       "exerciseId": "wger-142fcef5-63a7-4d30-81e4-bc9d7073fe99",
       "name": "YTW Raises",
       "equipment": "Bodyweight",
       "guideSha256": "1a64152df7bac0d6718986ebc9581945a041ba1e502906a2a0d4ddba9bad422c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-098-0-2",
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat."
     },
     {
       "exerciseId": "wger-5986cd29-11ff-43f4-af65-fc48dec62156",
       "name": "YTWL Exercise",
       "equipment": "Dumbbell + Incline bench",
       "guideSha256": "2a07a8b275d1ba758b69e54977b26f5b57cb0969068d18099de71987c5241923",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-098-1-2",
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat."
     },
     {
       "exerciseId": "wger-981b07b6-e76e-438c-bad4-388441b7ff33",
       "name": "YWTs",
       "equipment": "Bodyweight",
       "guideSha256": "1c89b9421eb035a796d3f4e1d054d73625bfe54156d282be4f4160d6a04ccc32",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-098-2-2",
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat."
     },
     {
       "exerciseId": "db-zercher-squats",
       "name": "Zercher Squats",
       "equipment": "Barbell",
       "guideSha256": "8e60a8ae66eadda913cd035d138f0ed32b38fd84b6814180fb04878b3eef9add",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-098-3-2",
+      "reviewNote": "Reviewed supine cross-body straight-leg windmill, hanging straight-leg side wiper, low lunge stage of multi-part stretch, shoulder-height T-arm wrist circles, grounded quadruped wrist rocks, extended-arm rope roller, pronated bar wrist rotation, yoke walk, representative prone Y/T/W shoulder positions and elbow-cradled Zercher squat."
     },
     {
       "exerciseId": "wger-89c3d614-e841-4c04-bee8-6761567e4b7c",
       "name": "Zone 2 Running",
       "equipment": "Bodyweight",
       "guideSha256": "24e8fab6311d306023b4364c0b84b13df62941a22503bdc3706afedd284ead33",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-099-0-0",
+      "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup."
     },
     {
       "exerciseId": "db-zottman-curl",
       "name": "Zottman Curl",
       "equipment": "Dumbbell",
       "guideSha256": "187595a87962f3c48b845316e0ce8961d47745396263910ffbfa8f9acd2a634e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-099-1-0",
+      "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup."
     },
     {
       "exerciseId": "db-zottman-preacher-curl",
       "name": "Zottman Preacher Curl",
       "equipment": "Dumbbell",
       "guideSha256": "50ca90aa75f9f51effdbdcc592bf342072cff64e6937c62e0406e5138989e8af",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-099-2-0",
+      "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup."
     },
     {
       "exerciseId": "forma-smith-romanian-deadlift",
@@ -12084,7 +12170,9 @@
       "name": "Assisted machine chin-up",
       "equipment": "Assisted dip / chin station",
       "guideSha256": "1ca9cc77daa8bb8d853019559f31f96e910782218f1485df5ca75e45a0d1b752",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-099-3-0",
+      "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup."
     },
     {
       "exerciseId": "forma-fan-bike",
@@ -12092,8 +12180,8 @@
       "equipment": "Fan / air bike",
       "guideSha256": "f1b9d987d25c64565e7f73f7a9606283876f240c781af78e453e212b84fd1296",
       "status": "accepted",
-      "assetId": "forma-original-cardio-01-1-1",
-      "reviewNote": "Visually inspected: correct distinct cardio motion mechanism / adjustable cable or guided Smith apparatus. Each selected guide uses this compatible apparatus; equipment reference explicitly labelled, not a demonstration or exact attachment setup."
+      "assetId": "forma-original-movements-099-0-1",
+      "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup."
     },
     {
       "exerciseId": "forma-upper-body-ergometer",
@@ -12181,21 +12269,27 @@
       "name": "Battle ropes",
       "equipment": "Specialty equipment",
       "guideSha256": "06fc6e6e21e950110fbb6523bc57123e69b76fd421921f47083b43144973f3b3",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-099-1-1",
+      "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup."
     },
     {
       "exerciseId": "forma-wger-3f8ad988-1aee-48ca-ad37-44e39ae1715d",
       "name": "Wall-sit",
       "equipment": "Bodyweight",
       "guideSha256": "b19107185b32a3d75db6a3afd82d9c809785ab3804659ee567e907c4f369e61b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-099-2-1",
+      "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup."
     },
     {
       "exerciseId": "forma-wger-934856f3-6eb3-4b37-9536-0ff67a6aa036",
       "name": "Parallel Bar Hold",
       "equipment": "Bodyweight",
       "guideSha256": "23d131a7d4c5fab9f401ffd7d6c1a377e364adda1ae8fb46714efe0639bed00a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-099-3-1",
+      "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup."
     },
     {
       "exerciseId": "forma-db-plate-pinch",
@@ -12209,7 +12303,9 @@
       "name": "Diaphragmatic Breathing",
       "equipment": "Bodyweight",
       "guideSha256": "811c67806009a972d3e65d4465a813377e0196cddfb1331759a7fd0dc7b6c766",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-099-1-2",
+      "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup."
     }
   ]
 }
