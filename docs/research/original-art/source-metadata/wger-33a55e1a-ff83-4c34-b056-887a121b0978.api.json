@@ -1,0 +1,69 @@
+{
+  "retrievedAt": "2026-10-14",
+  "sourceUrl": "https://wger.de/api/v2/exerciseinfo/?uuid=33a55e1a-ff83-4c34-b056-887a121b0978",
+  "response": {
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+      {
+        "id": 1839,
+        "uuid": "33a55e1a-ff83-4c34-b056-887a121b0978",
+        "created": "2026-02-12T12:56:19.129523+01:00",
+        "last_update": "2026-02-12T12:56:19.129541+01:00",
+        "last_update_global": "2026-04-15T22:23:55.814520+02:00",
+        "category": {
+          "id": 9,
+          "name": "Legs"
+        },
+        "muscles": [],
+        "muscles_secondary": [],
+        "equipment": [
+          {
+            "id": 7,
+            "name": "none (bodyweight exercise)"
+          }
+        ],
+        "license": {
+          "id": 2,
+          "full_name": "Creative Commons Attribution Share Alike 4",
+          "short_name": "CC-BY-SA 4",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+        },
+        "license_author": "Croak6728",
+        "images": [],
+        "translations": [
+          {
+            "id": 2974,
+            "uuid": "ce79a43e-c03f-469f-9fec-05740ad2b4e5",
+            "name": "Solo Hip Flexor Stretch",
+            "exercise": 1839,
+            "description": "<p>See this instructive video: https://www.youtube.com/watch?v=qHwyBHS6MQs .</p>\n",
+            "description_source": "See this instructive video: https://www.youtube.com/watch?v=qHwyBHS6MQs .",
+            "created": "2026-02-12T12:56:19.175796+01:00",
+            "language": 2,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "Croak6728",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "Croak6728"
+            ]
+          }
+        ],
+        "variation_group": null,
+        "videos": [],
+        "author_history": [
+          "Croak6728"
+        ],
+        "total_authors_history": [
+          "Croak6728"
+        ]
+      }
+    ]
+  }
+}

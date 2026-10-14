@@ -1,0 +1,151 @@
+{
+  "retrievedAt": "2026-10-14",
+  "sourceUrl": "https://wger.de/api/v2/exerciseinfo/?uuid=36a309ba-7dd1-43c9-9efc-788c7cd9fbd6",
+  "response": {
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+      {
+        "id": 1196,
+        "uuid": "36a309ba-7dd1-43c9-9efc-788c7cd9fbd6",
+        "created": "2023-10-06T19:13:57.329081+02:00",
+        "last_update": "2024-01-17T11:39:54.072313+01:00",
+        "last_update_global": "2026-06-19T18:50:14.591377+02:00",
+        "category": {
+          "id": 9,
+          "name": "Legs"
+        },
+        "muscles": [
+          {
+            "id": 10,
+            "name": "Quadriceps femoris",
+            "name_en": "Quads",
+            "is_front": true,
+            "image_url_main": "https://wger.de/static/images/muscles/main/muscle-10.b1445ea1acf6.svg",
+            "image_url_secondary": "https://wger.de/static/images/muscles/secondary/muscle-10.55e36d852778.svg"
+          }
+        ],
+        "muscles_secondary": [
+          {
+            "id": 7,
+            "name": "Gastrocnemius",
+            "name_en": "Calves",
+            "is_front": false,
+            "image_url_main": "https://wger.de/static/images/muscles/main/muscle-7.edbd8c381b0c.svg",
+            "image_url_secondary": "https://wger.de/static/images/muscles/secondary/muscle-7.2f836b0cd383.svg"
+          }
+        ],
+        "equipment": [
+          {
+            "id": 7,
+            "name": "none (bodyweight exercise)"
+          }
+        ],
+        "license": {
+          "id": 2,
+          "full_name": "Creative Commons Attribution Share Alike 4",
+          "short_name": "CC-BY-SA 4",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+        },
+        "license_author": "Insight",
+        "images": [],
+        "translations": [
+          {
+            "id": 3732,
+            "uuid": "6b0b9f10-43d5-4bbc-93d6-5509607f05da",
+            "name": "Ejercicios contra la pared",
+            "exercise": 1196,
+            "description": "<p>Ejercicios para fortalecer la musculatura de la rodilla y la pierna.</p>\n<ul>\n<li>Lateral Wall Drills March - https://youtu.be/9RiTlJ6Mmek</li>\n<li>Lateral Wall Drills OPEN - https://youtu.be/ADRlN8-Wfdg</li>\n<li>Lateral Wall Drills CROSS - https://youtu.be/hGH2sj0Tzu4</li>\n</ul>\n",
+            "description_source": "Ejercicios para fortalecer la musculatura de la rodilla y la pierna.\n\n* Lateral Wall Drills March - https://youtu.be/9RiTlJ6Mmek\n* Lateral Wall Drills OPEN - https://youtu.be/ADRlN8-Wfdg\n* Lateral Wall Drills CROSS - https://youtu.be/hGH2sj0Tzu4",
+            "created": "2026-06-19T17:53:27.729515+02:00",
+            "language": 4,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "wger.de",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "wger.de"
+            ]
+          },
+          {
+            "id": 4507,
+            "uuid": "cf133c0d-9727-431b-86f7-354b634f9de3",
+            "name": "Exercices au mur",
+            "exercise": 1196,
+            "description": "<p>Exercices pour renforcer la musculature du genou et de la jambe.</p>\n<ul>\n<li>Exercices lat\u00e9raux au mur, marche - https://youtu.be/9RiTlJ6Mmek</li>\n<li>Exercices lat\u00e9raux au mur, ouverture - https://youtu.be/ADRlN8-Wfdg</li>\n<li>Exercices lat\u00e9raux au mur, croisement - https://youtu.be/hGH2sj0Tzu4</li>\n</ul>\n",
+            "description_source": "Exercices pour renforcer la musculature du genou et de la jambe.\n\n* Exercices lat\u00e9raux au mur, marche - https://youtu.be/9RiTlJ6Mmek\n* Exercices lat\u00e9raux au mur, ouverture - https://youtu.be/ADRlN8-Wfdg\n* Exercices lat\u00e9raux au mur, croisement - https://youtu.be/hGH2sj0Tzu4",
+            "created": "2026-06-19T18:43:37.782433+02:00",
+            "language": 12,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "wger.de",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "wger.de"
+            ]
+          },
+          {
+            "id": 2153,
+            "uuid": "948f064e-0127-4935-9661-9c2a0aed9604",
+            "name": "Wall Drills",
+            "exercise": 1196,
+            "description": "<p>Exercises for strengthening knee and leg musculature.</p>\n<ul>\n<li>Lateral Wall Drills March - https://youtu.be/9RiTlJ6Mmek</li>\n<li>Lateral Wall Drills OPEN - https://youtu.be/ADRlN8-Wfdg</li>\n<li>Lateral Wall Drills CROSS - https://youtu.be/hGH2sj0Tzu4</li>\n</ul>\n",
+            "description_source": "Exercises for strengthening knee and leg musculature.\n\n* Lateral Wall Drills March - https://youtu.be/9RiTlJ6Mmek\n* Lateral Wall Drills OPEN - https://youtu.be/ADRlN8-Wfdg\n* Lateral Wall Drills CROSS - https://youtu.be/hGH2sj0Tzu4",
+            "created": "2023-10-06T19:13:57.420211+02:00",
+            "language": 2,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "Insight",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "Insight"
+            ]
+          },
+          {
+            "id": 3731,
+            "uuid": "a04c9974-468b-49f5-a729-5f2899a08cf4",
+            "name": "Wand-Drills",
+            "exercise": 1196,
+            "description": "<p>\u00dcbungen zur St\u00e4rkung der Knie- und Beinmuskulatur.</p>\n<ul>\n<li>Lateral Wall Drills March - https://youtu.be/9RiTlJ6Mmek</li>\n<li>Lateral Wall Drills OPEN - https://youtu.be/ADRlN8-Wfdg</li>\n<li>Lateral Wall Drills CROSS - https://youtu.be/hGH2sj0Tzu4</li>\n</ul>\n",
+            "description_source": "\u00dcbungen zur St\u00e4rkung der Knie- und Beinmuskulatur.\n\n* Lateral Wall Drills March - https://youtu.be/9RiTlJ6Mmek\n* Lateral Wall Drills OPEN - https://youtu.be/ADRlN8-Wfdg\n* Lateral Wall Drills CROSS - https://youtu.be/hGH2sj0Tzu4",
+            "created": "2026-06-19T17:53:27.214880+02:00",
+            "language": 1,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "wger.de",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "wger.de"
+            ]
+          }
+        ],
+        "variation_group": null,
+        "videos": [],
+        "author_history": [
+          "Insight"
+        ],
+        "total_authors_history": [
+          "wger.de",
+          "Insight"
+        ]
+      }
+    ]
+  }
+}

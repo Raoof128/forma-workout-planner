@@ -1,0 +1,208 @@
+{
+  "reviewedAt": "2026-10-14T05:04:30.000502+00:00",
+  "scope": "Six pending UUIDs requested by root; public wger API source metadata only. No catalog, registry, image assets or logging metrics changed.",
+  "summary": {
+    "resolvable": 4,
+    "unresolved": 2
+  },
+  "entries": [
+    {
+      "id": "wger-81dd44b3-67b3-4198-9e57-c2a80b3c4102",
+      "metric": "load_reps",
+      "currentName": "Single arm row",
+      "currentEquipment": "Incline bench",
+      "sourceUrl": "https://wger.de/api/v2/exerciseinfo/?uuid=81dd44b3-67b3-4198-9e57-c2a80b3c4102",
+      "sourceRecordId": 1637,
+      "sourceUuidMatches": true,
+      "evidenceFile": "docs/research/original-art/source-metadata/wger-81dd44b3-67b3-4198-9e57-c2a80b3c4102.api.json",
+      "sourceEquipment": [
+        "Cable machine",
+        "Incline bench"
+      ],
+      "englishSourceDescription": "Sitting on the ground, use a high cable in a single grip, to do lat pulldowns with a focus on a long stretch in the lats.",
+      "sourceAttribution": {
+        "title": "wger",
+        "author": "Rottekongen",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+      },
+      "status": "resolvable_with_explicit_name_correction",
+      "evidence": [
+        "English and other translations explicitly describe floor-seated single-grip high-cable lat pulldowns, not a conventional horizontal row.",
+        "Source image 577 was inspected: one arm reaches toward a high pulley in a lat-stretch position. Lower body is cropped, so the image alone does not verify the floor setup.",
+        "API lists Cable machine and Incline bench; current catalog retained only Incline bench. The textual exercise does not use a bench."
+      ],
+      "recommendation": {
+        "name": "Single-arm high-cable pulldown",
+        "retainAlias": "Single arm row",
+        "equipment": "Cable machine",
+        "equipmentTags": [
+          "Cable machine"
+        ],
+        "guideText": "Sit on the floor at a high cable pulley and hold its single grip in one hand. Begin with the working arm reaching toward the pulley so the lat is stretched. Pull the grip downward by bending the elbow, then return with control to the stretched position. Repeat on the other side.",
+        "guideAuthorship": "Independently authored factual description based on current wger movement text and inspected source image; retain original catalog source attribution."
+      },
+      "condition": "Do not release under an unqualified row title. Preserve the UUID and load_reps metric."
+    },
+    {
+      "id": "wger-5ed12527-c8be-4e86-8f2a-cf9dd4781f5b",
+      "metric": "load_reps",
+      "currentName": "One Arm Overhead Cable Tricep Extension",
+      "currentEquipment": "Resistance band",
+      "sourceUrl": "https://wger.de/api/v2/exerciseinfo/?uuid=5ed12527-c8be-4e86-8f2a-cf9dd4781f5b",
+      "sourceRecordId": 1668,
+      "sourceUuidMatches": true,
+      "evidenceFile": "docs/research/original-art/source-metadata/wger-5ed12527-c8be-4e86-8f2a-cf9dd4781f5b.api.json",
+      "sourceEquipment": [
+        "Cable machine"
+      ],
+      "englishSourceDescription": "Set the pulley at the bottom of the cable machine and grab onto it without using any attachments. Extend the cable directly overhead.\n\nWhile keeping your back straight and upper arm stationary, lower the cable behind your head until you feel a good stretch in your triceps, and then extend it back upward until your elbow is locked out.",
+      "sourceAttribution": {
+        "title": "wger",
+        "author": "AlucardEvil40",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+      },
+      "status": "resolvable_equipment_override",
+      "evidence": [
+        "Current API equipment is Cable machine only. English title and description agree on a one-arm overhead low-pulley cable triceps extension.",
+        "No source images or videos; no new attachment or stance requirements are inferred."
+      ],
+      "recommendation": {
+        "equipment": "Cable machine",
+        "equipmentTags": [
+          "Cable machine"
+        ],
+        "retainGuideText": true
+      },
+      "condition": "Keep the existing one-arm, low-pulley, no-attachment guide; preserve UUID and metric."
+    },
+    {
+      "id": "wger-671568f9-6653-4e11-ac71-3f34c74329a0",
+      "metric": "duration",
+      "currentName": "Standing biceps stretch right",
+      "currentEquipment": "Bodyweight",
+      "sourceUrl": "https://wger.de/api/v2/exerciseinfo/?uuid=671568f9-6653-4e11-ac71-3f34c74329a0",
+      "sourceRecordId": 1233,
+      "sourceUuidMatches": true,
+      "evidenceFile": "docs/research/original-art/source-metadata/wger-671568f9-6653-4e11-ac71-3f34c74329a0.api.json",
+      "sourceEquipment": [
+        "none (bodyweight exercise)"
+      ],
+      "englishSourceDescription": "Stand with your right arm close to a wall. Extend your right arm and put your right hand on the wall, then gently turn your body to the left.",
+      "sourceAttribution": {
+        "title": "wger",
+        "author": "Lynn_McIntyre",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+      },
+      "status": "resolvable_source_guide_refresh",
+      "evidence": [
+        "Current English translation 2198 explicitly says extend the right arm, put the right hand on the wall, then turn left.",
+        "German, Spanish and French translations agree; local guide has stale left-hand/right-turn errors."
+      ],
+      "recommendation": {
+        "guideText": "Stand with your right arm close to a wall. Extend your right arm and put your right hand on the wall, then gently turn your body to the left.",
+        "equipment": "Bodyweight",
+        "equipmentTags": [
+          "Bodyweight"
+        ],
+        "guideAuthorship": "Current source English description, with existing CC-BY-SA 4 attribution retained."
+      },
+      "condition": "Preserve right-side name, UUID and duration metric. Re-review original right-side artwork against corrected text."
+    },
+    {
+      "id": "wger-33a55e1a-ff83-4c34-b056-887a121b0978",
+      "metric": "duration",
+      "currentName": "Solo Hip Flexor Stretch",
+      "currentEquipment": "Bodyweight",
+      "sourceUrl": "https://wger.de/api/v2/exerciseinfo/?uuid=33a55e1a-ff83-4c34-b056-887a121b0978",
+      "sourceRecordId": 1839,
+      "sourceUuidMatches": true,
+      "evidenceFile": "docs/research/original-art/source-metadata/wger-33a55e1a-ff83-4c34-b056-887a121b0978.api.json",
+      "sourceEquipment": [
+        "none (bodyweight exercise)"
+      ],
+      "englishSourceDescription": "See this instructive video: https://www.youtube.com/watch?v=qHwyBHS6MQs .",
+      "sourceAttribution": {
+        "title": "wger",
+        "author": "Croak6728",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+      },
+      "status": "unresolved",
+      "evidence": [
+        "Only English text links to qHwyBHS6MQs; no setup, pose, source images, alternate-language descriptions or API videos are provided.",
+        "Attempted public YouTube oEmbed access failed with Tunnel connection failed: 403 Forbidden. The exercise-specific video was not inspected."
+      ],
+      "recommendation": {
+        "retainPending": true
+      },
+      "condition": "No independently authored setup is justified by this record. Obtain accessible video evidence or author clarification."
+    },
+    {
+      "id": "wger-36a309ba-7dd1-43c9-9efc-788c7cd9fbd6",
+      "metric": "load_reps",
+      "currentName": "Wall Drills",
+      "currentEquipment": "Bodyweight",
+      "sourceUrl": "https://wger.de/api/v2/exerciseinfo/?uuid=36a309ba-7dd1-43c9-9efc-788c7cd9fbd6",
+      "sourceRecordId": 1196,
+      "sourceUuidMatches": true,
+      "evidenceFile": "docs/research/original-art/source-metadata/wger-36a309ba-7dd1-43c9-9efc-788c7cd9fbd6.api.json",
+      "sourceEquipment": [
+        "none (bodyweight exercise)"
+      ],
+      "englishSourceDescription": "Exercises for strengthening knee and leg musculature.\n\n* Lateral Wall Drills March - https://youtu.be/9RiTlJ6Mmek\n* Lateral Wall Drills OPEN - https://youtu.be/ADRlN8-Wfdg\n* Lateral Wall Drills CROSS - https://youtu.be/hGH2sj0Tzu4",
+      "sourceAttribution": {
+        "title": "wger",
+        "author": "Insight",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+      },
+      "status": "unresolved",
+      "evidence": [
+        "English and translated source descriptions identify three lateral wall drill videos: March, OPEN, CROSS. They do not describe hand placement, body orientation or leg actions.",
+        "No API images or videos. Direct YouTube oEmbed retrieval for all three linked video IDs failed with Tunnel connection failed: 403 Forbidden."
+      ],
+      "recommendation": {
+        "retainPending": true
+      },
+      "condition": "Do not substitute a generic forward sprint wall drill for this lateral drill collection. Inspect one linked lateral example before authoring its setup."
+    },
+    {
+      "id": "wger-346634cf-3896-4c10-bd66-28fb69d02573",
+      "metric": "load_reps",
+      "currentName": "Medicine ball booklet crunch",
+      "currentEquipment": "Bodyweight",
+      "sourceUrl": "https://wger.de/api/v2/exerciseinfo/?uuid=346634cf-3896-4c10-bd66-28fb69d02573",
+      "sourceRecordId": 976,
+      "sourceUuidMatches": true,
+      "evidenceFile": "docs/research/original-art/source-metadata/wger-346634cf-3896-4c10-bd66-28fb69d02573.api.json",
+      "sourceEquipment": [
+        "none (bodyweight exercise)"
+      ],
+      "englishSourceDescription": "Using a medicine ball as an overload will make the exercise heavier.",
+      "sourceAttribution": {
+        "title": "wger",
+        "author": "clafal",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+      },
+      "status": "resolvable_guide_and_equipment_correction",
+      "evidence": [
+        "English text only states that a medicine ball adds overload. API Bodyweight equipment is inconsistent with the exercise title and overload description.",
+        "Spanish translation 2560 explicitly identifies a medicine-ball V-up: supine straight legs, ball in both hands overhead, simultaneous legs/torso lift toward a V, controlled return.",
+        "Source image 671 inspected and agrees with that V-up motion. API flags this source image is_ai_generated=true; the illustration is corroboration, not sole movement evidence."
+      ],
+      "recommendation": {
+        "equipment": "Medicine ball",
+        "equipmentTags": [
+          "Medicine ball"
+        ],
+        "guideText": "Lie on your back with your legs straight and hold a medicine ball in both hands above and behind your head. Lift your legs and upper body together, bringing the ball toward your feet to form a V. Lower your legs and torso with control and repeat.",
+        "guideAuthorship": "Independently authored factual description based on current Spanish source translation and corroborating source image. Retain wger source and CC-BY-SA 4 attribution; add contributing translator wgerjhn where attribution fields support it."
+      },
+      "condition": "Preserve UUID, load_reps metric and movement identity. The current English title may remain, with Medicine-ball V-up as an explanatory alias."
+    }
+  ]
+}

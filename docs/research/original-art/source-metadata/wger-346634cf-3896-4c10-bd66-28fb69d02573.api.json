@@ -1,0 +1,143 @@
+{
+  "retrievedAt": "2026-10-14",
+  "sourceUrl": "https://wger.de/api/v2/exerciseinfo/?uuid=346634cf-3896-4c10-bd66-28fb69d02573",
+  "response": {
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+      {
+        "id": 976,
+        "uuid": "346634cf-3896-4c10-bd66-28fb69d02573",
+        "created": "2023-08-06T10:17:17.422900+02:00",
+        "last_update": "2024-01-17T11:21:18.619698+01:00",
+        "last_update_global": "2026-05-10T23:47:07.694376+02:00",
+        "category": {
+          "id": 10,
+          "name": "Abs"
+        },
+        "muscles": [
+          {
+            "id": 6,
+            "name": "Rectus abdominis",
+            "name_en": "Abs",
+            "is_front": true,
+            "image_url_main": "https://wger.de/static/images/muscles/main/muscle-6.592f938fa8c7.svg",
+            "image_url_secondary": "https://wger.de/static/images/muscles/secondary/muscle-6.370f77c2860e.svg"
+          }
+        ],
+        "muscles_secondary": [],
+        "equipment": [
+          {
+            "id": 7,
+            "name": "none (bodyweight exercise)"
+          }
+        ],
+        "license": {
+          "id": 2,
+          "full_name": "Creative Commons Attribution Share Alike 4",
+          "short_name": "CC-BY-SA 4",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+        },
+        "license_author": "clafal",
+        "images": [
+          {
+            "id": 671,
+            "uuid": "94649ea6-bf58-4fd9-90c1-b2ec96ee20cd",
+            "exercise": 976,
+            "exercise_uuid": "346634cf-3896-4c10-bd66-28fb69d02573",
+            "image": "https://wger.de/media/exercise-images/976/94649ea6-bf58-4fd9-90c1-b2ec96ee20cd.png",
+            "thumbnails": {
+              "small": "https://wger.de/media/exercise-images/976/94649ea6-bf58-4fd9-90c1-b2ec96ee20cd.png.200x200_q85.png",
+              "medium": "https://wger.de/media/exercise-images/976/94649ea6-bf58-4fd9-90c1-b2ec96ee20cd.png.400x400_q85.png"
+            },
+            "is_main": true,
+            "style": "4",
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [],
+            "is_ai_generated": true
+          }
+        ],
+        "translations": [
+          {
+            "id": 2560,
+            "uuid": "7a78f87a-a47d-449d-8d45-cd50f79aab96",
+            "name": "Abdominales en V con Bal\u00f3n Medicinal",
+            "exercise": 976,
+            "description": "<p>Este es un ejercicio abdominal avanzado. Al usar un bal\u00f3n medicinal como sobrecarga, se aumenta significativamente la intensidad y la dificultad del movimiento en comparaci\u00f3n con la versi\u00f3n sin peso.</p>\n<p>Para realizarlo, acu\u00e9state boca arriba con las piernas rectas y los brazos extendidos por encima de tu cabeza, sosteniendo el bal\u00f3n con ambas manos. Contrayendo el abdomen, levanta simult\u00e1neamente las piernas y el torso del suelo, buscando tocar el bal\u00f3n con los pies en el punto m\u00e1s alto y formando una \"V\" con tu cuerpo. Baja de forma lenta y controlada a la posici\u00f3n inicial.</p>\n",
+            "description_source": "Este es un ejercicio abdominal avanzado. Al usar un bal\u00f3n medicinal como sobrecarga, se aumenta significativamente la intensidad y la dificultad del movimiento en comparaci\u00f3n con la versi\u00f3n sin peso.\n\nPara realizarlo, acu\u00e9state boca arriba con las piernas rectas y los brazos extendidos por encima de tu cabeza, sosteniendo el bal\u00f3n con ambas manos. Contrayendo el abdomen, levanta simult\u00e1neamente las piernas y el torso del suelo, buscando tocar el bal\u00f3n con los pies en el punto m\u00e1s alto y formando una \"V\" con tu cuerpo. Baja de forma lenta y controlada a la posici\u00f3n inicial.",
+            "created": "2025-08-18T07:25:45.939976+02:00",
+            "language": 4,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "wgerjhn",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "wgerjhn"
+            ]
+          },
+          {
+            "id": 1287,
+            "uuid": "975905fb-383f-41e3-9a80-f7f3fefe6664",
+            "name": "Crunch a libretto con palla medica",
+            "exercise": 976,
+            "description": "<p>L'uso di una palla medica come sovraccarico render\u00e0 l'esercizio pi\u00f9 pesante.</p>\n",
+            "description_source": "L'uso di una palla medica come sovraccarico render\u00e0 l'esercizio pi\u00f9 pesante.",
+            "created": "2023-08-06T10:17:17.349574+02:00",
+            "language": 13,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "clafal",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "clafal"
+            ]
+          },
+          {
+            "id": 1286,
+            "uuid": "a1d94c5e-b82d-4698-9013-a10719402286",
+            "name": "Medicine ball booklet crunch",
+            "exercise": 976,
+            "description": "<p>Using a medicine ball as an overload will make the exercise heavier.</p>\n",
+            "description_source": "Using a medicine ball as an overload will make the exercise heavier.",
+            "created": "2023-08-06T10:17:17.349574+02:00",
+            "language": 2,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "clafal",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "clafal"
+            ]
+          }
+        ],
+        "variation_group": null,
+        "videos": [],
+        "author_history": [
+          "clafal"
+        ],
+        "total_authors_history": [
+          "clafal",
+          "wgerjhn"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "retrievedAt": "2026-10-14",
+  "sourceUrl": "https://wger.de/api/v2/exerciseinfo/?uuid=5ed12527-c8be-4e86-8f2a-cf9dd4781f5b",
+  "response": {
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+      {
+        "id": 1668,
+        "uuid": "5ed12527-c8be-4e86-8f2a-cf9dd4781f5b",
+        "created": "2025-10-02T12:27:12.081697+02:00",
+        "last_update": "2026-07-23T12:36:41.047712+02:00",
+        "last_update_global": "2026-07-23T12:36:41.047712+02:00",
+        "category": {
+          "id": 8,
+          "name": "Arms"
+        },
+        "muscles": [
+          {
+            "id": 5,
+            "name": "Triceps brachii",
+            "name_en": "Triceps",
+            "is_front": false,
+            "image_url_main": "https://wger.de/static/images/muscles/main/muscle-5.8a2b934b5486.svg",
+            "image_url_secondary": "https://wger.de/static/images/muscles/secondary/muscle-5.68eb84d675a5.svg"
+          }
+        ],
+        "muscles_secondary": [],
+        "equipment": [
+          {
+            "id": 12,
+            "name": "Cable machine"
+          }
+        ],
+        "license": {
+          "id": 2,
+          "full_name": "Creative Commons Attribution Share Alike 4",
+          "short_name": "CC-BY-SA 4",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+        },
+        "license_author": "AlucardEvil40",
+        "images": [],
+        "translations": [
+          {
+            "id": 3865,
+            "uuid": "b2d925b6-29a6-4a0f-9c4b-9597a4a625db",
+            "name": "Einarmiges Trizepsstrecken \u00fcber Kopf am Kabelzug",
+            "exercise": 1668,
+            "description": "<p>Stelle die Rolle am unteren Ende der Kabelmaschine ein und greife sie ohne ein Zusatzger\u00e4t. Strecke das Kabel direkt \u00fcber den Kopf.</p>\n<p>Halte deinen R\u00fccken gerade und den Oberarm unbewegt, senke das Kabel hinter deinen Kopf, bis du eine gute Dehnung im Trizeps sp\u00fcrst, und strecke es dann wieder nach oben, bis dein Ellbogen vollst\u00e4ndig durchgestreckt ist.</p>\n",
+            "description_source": "Stelle die Rolle am unteren Ende der Kabelmaschine ein und greife sie ohne ein Zusatzger\u00e4t. Strecke das Kabel direkt \u00fcber den Kopf.\n\nHalte deinen R\u00fccken gerade und den Oberarm unbewegt, senke das Kabel hinter deinen Kopf, bis du eine gute Dehnung im Trizeps sp\u00fcrst, und strecke es dann wieder nach oben, bis dein Ellbogen vollst\u00e4ndig durchgestreckt ist.",
+            "created": "2026-06-19T17:54:39.237661+02:00",
+            "language": 1,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "wger.de",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "wger.de"
+            ]
+          },
+          {
+            "id": 2788,
+            "uuid": "42e6841d-3051-45e7-ac95-d9ed0f512f46",
+            "name": "Extension Triceps Poulie Basse \u00e0 Un Bras",
+            "exercise": 1668,
+            "description": "<p>R\u00e9glez la poulie au bas de la machine \u00e0 c\u00e2ble et saisissez-la **sans utiliser d'accessoire**. **\u00c9tendez le c\u00e2ble directement au-dessus de votre t\u00eate.</p>\n<p>Tout en gardant votre dos droit et votre bras sup\u00e9rieur immobile, abaissez le c\u00e2ble derri\u00e8re votre t\u00eate jusqu'\u00e0 ce que vous sentiez un bon \u00e9tirement dans vos triceps, puis \u00e9tendez-le \u00e0 nouveau vers le haut jusqu'\u00e0 ce que votre **coude soit verrouill\u00e9 (ou compl\u00e8tement tendu).</p>\n",
+            "description_source": "R\u00e9glez la poulie au bas de la machine \u00e0 c\u00e2ble et saisissez-la \\*\\*sans utiliser d'accessoire\\*\\*. \\*\\*\u00c9tendez le c\u00e2ble directement au-dessus de votre t\u00eate.\n\nTout en gardant votre dos droit et votre bras sup\u00e9rieur immobile, abaissez le c\u00e2ble derri\u00e8re votre t\u00eate jusqu'\u00e0 ce que vous sentiez un bon \u00e9tirement dans vos triceps, puis \u00e9tendez-le \u00e0 nouveau vers le haut jusqu'\u00e0 ce que votre \\*\\*coude soit verrouill\u00e9 (ou compl\u00e8tement tendu).",
+            "created": "2025-10-02T12:27:12.162528+02:00",
+            "language": 12,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "AlucardEvil40",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "AlucardEvil40"
+            ]
+          },
+          {
+            "id": 3866,
+            "uuid": "0bba21ca-124c-4d21-9f21-d13c3772ba91",
+            "name": "Extensi\u00f3n de tr\u00edceps sobre la cabeza a una mano en polea",
+            "exercise": 1668,
+            "description": "<p>Coloca la polea en la parte inferior de la m\u00e1quina de cables y ag\u00e1rrala sin usar ning\u00fan accesorio. Extiende el cable directamente por encima de la cabeza.</p>\n<p>Manteniendo la espalda recta y el brazo superior inm\u00f3vil, baja el cable por detr\u00e1s de la cabeza hasta que sientas un buen estiramiento en el tr\u00edceps, y despu\u00e9s exti\u00e9ndelo de nuevo hacia arriba hasta que el codo quede completamente bloqueado.</p>\n",
+            "description_source": "Coloca la polea en la parte inferior de la m\u00e1quina de cables y ag\u00e1rrala sin usar ning\u00fan accesorio. Extiende el cable directamente por encima de la cabeza.\n\nManteniendo la espalda recta y el brazo superior inm\u00f3vil, baja el cable por detr\u00e1s de la cabeza hasta que sientas un buen estiramiento en el tr\u00edceps, y despu\u00e9s exti\u00e9ndelo de nuevo hacia arriba hasta que el codo quede completamente bloqueado.",
+            "created": "2026-06-19T17:54:39.761484+02:00",
+            "language": 4,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "wger.de",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "wger.de"
+            ]
+          },
+          {
+            "id": 2787,
+            "uuid": "936c19c6-ca46-4006-9ddc-b4f343eddc23",
+            "name": "One Arm Overhead Cable Tricep Extension",
+            "exercise": 1668,
+            "description": "<p>Set the pulley at the bottom of the cable machine and grab onto it without using any attachments. Extend the cable directly overhead.</p>\n<p>While keeping your back straight and upper arm stationary, lower the cable behind your head until you feel a good stretch in your triceps, and then extend it back upward until your elbow is locked out.</p>\n",
+            "description_source": "Set the pulley at the bottom of the cable machine and grab onto it without using any attachments. Extend the cable directly overhead.\n\nWhile keeping your back straight and upper arm stationary, lower the cable behind your head until you feel a good stretch in your triceps, and then extend it back upward until your elbow is locked out.",
+            "created": "2025-10-02T12:27:12.128009+02:00",
+            "language": 2,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "AlucardEvil40",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "AlucardEvil40"
+            ]
+          }
+        ],
+        "variation_group": null,
+        "videos": [],
+        "author_history": [
+          "AlucardEvil40"
+        ],
+        "total_authors_history": [
+          "wger.de",
+          "AlucardEvil40"
+        ]
+      }
+    ]
+  }
+}

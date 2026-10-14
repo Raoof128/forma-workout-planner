@@ -1,0 +1,170 @@
+{
+  "retrievedAt": "2026-10-14",
+  "sourceUrl": "https://wger.de/api/v2/exerciseinfo/?uuid=81dd44b3-67b3-4198-9e57-c2a80b3c4102",
+  "response": {
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+      {
+        "id": 1637,
+        "uuid": "81dd44b3-67b3-4198-9e57-c2a80b3c4102",
+        "created": "2025-09-23T15:10:33.585651+02:00",
+        "last_update": "2026-07-23T12:36:38.637106+02:00",
+        "last_update_global": "2026-07-23T12:36:38.637106+02:00",
+        "category": {
+          "id": 12,
+          "name": "Back"
+        },
+        "muscles": [
+          {
+            "id": 12,
+            "name": "Latissimus dorsi",
+            "name_en": "Lats",
+            "is_front": false,
+            "image_url_main": "https://wger.de/static/images/muscles/main/muscle-12.6a5de7a0e373.svg",
+            "image_url_secondary": "https://wger.de/static/images/muscles/secondary/muscle-12.974a8c6def63.svg"
+          }
+        ],
+        "muscles_secondary": [],
+        "equipment": [
+          {
+            "id": 12,
+            "name": "Cable machine"
+          },
+          {
+            "id": 9,
+            "name": "Incline bench"
+          }
+        ],
+        "license": {
+          "id": 2,
+          "full_name": "Creative Commons Attribution Share Alike 4",
+          "short_name": "CC-BY-SA 4",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+        },
+        "license_author": "Rottekongen",
+        "images": [
+          {
+            "id": 577,
+            "uuid": "a1fbe83a-a3e5-49f6-a2c2-5d5b533c2be8",
+            "exercise": 1637,
+            "exercise_uuid": "81dd44b3-67b3-4198-9e57-c2a80b3c4102",
+            "image": "https://wger.de/media/exercise-images/1637/a1fbe83a-a3e5-49f6-a2c2-5d5b533c2be8.png",
+            "thumbnails": {
+              "small": "https://wger.de/media/exercise-images/1637/a1fbe83a-a3e5-49f6-a2c2-5d5b533c2be8.png.200x200_q85.png",
+              "medium": "https://wger.de/media/exercise-images/1637/a1fbe83a-a3e5-49f6-a2c2-5d5b533c2be8.png.400x400_q85.png"
+            },
+            "is_main": true,
+            "style": "4",
+            "license": 2,
+            "license_title": "single arm row",
+            "license_object_url": "",
+            "license_author": "Rottekongen",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "Rottekongen"
+            ],
+            "is_ai_generated": false
+          }
+        ],
+        "translations": [
+          {
+            "id": 3608,
+            "uuid": "e2ea2c14-dbf2-47e4-9599-f9c61877c9c9",
+            "name": "Einarmiges Rudern",
+            "exercise": 1637,
+            "description": "<p>Setze dich auf den Boden und benutze einen hohen Kabelzug mit Einzelgriff, um Latz\u00fcge auszuf\u00fchren, wobei du auf eine lange Dehnung im Latissimus achtest.</p>\n",
+            "description_source": "Setze dich auf den Boden und benutze einen hohen Kabelzug mit Einzelgriff, um Latz\u00fcge auszuf\u00fchren, wobei du auf eine lange Dehnung im Latissimus achtest.",
+            "created": "2026-06-19T17:52:18.190321+02:00",
+            "language": 1,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "wger.de",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "wger.de"
+            ]
+          },
+          {
+            "id": 3609,
+            "uuid": "f0e5de81-d6f5-4449-bea9-3fcaefe5c094",
+            "name": "Remo a un brazo",
+            "exercise": 1637,
+            "description": "<p>Sentado en el suelo, usa una polea alta con un agarre individual para hacer jalones al pecho, centr\u00e1ndote en un estiramiento largo de los dorsales.</p>\n",
+            "description_source": "Sentado en el suelo, usa una polea alta con un agarre individual para hacer jalones al pecho, centr\u00e1ndote en un estiramiento largo de los dorsales.",
+            "created": "2026-06-19T17:52:18.734010+02:00",
+            "language": 4,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "wger.de",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "wger.de"
+            ]
+          },
+          {
+            "id": 2743,
+            "uuid": "75f7115b-a70a-455d-ac52-ba40ae6cdba0",
+            "name": "Single arm row",
+            "exercise": 1637,
+            "description": "<p>Sitting on the ground, use a high cable in a single grip, to do lat pulldowns with a focus on a long stretch in the lats.</p>\n",
+            "description_source": "Sitting on the ground, use a high cable in a single grip, to do lat pulldowns with a focus on a long stretch in the lats.",
+            "created": "2025-09-23T15:10:33.688301+02:00",
+            "language": 2,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "Rottekongen",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "Rottekongen"
+            ]
+          },
+          {
+            "id": 4446,
+            "uuid": "7b616a82-2587-4ae5-96f4-43e1316c7ab3",
+            "name": "Tirage \u00e0 un bras",
+            "exercise": 1637,
+            "description": "<p>Assis au sol, utilisez une poulie haute avec une poign\u00e9e simple pour effectuer des tirages verticaux en mettant l'accent sur un grand \u00e9tirement du grand dorsal.</p>\n",
+            "description_source": "Assis au sol, utilisez une poulie haute avec une poign\u00e9e simple pour effectuer des tirages verticaux en mettant l'accent sur un grand \u00e9tirement du grand dorsal.",
+            "created": "2026-06-19T18:43:06.541137+02:00",
+            "language": 12,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "wger.de",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "wger.de"
+            ]
+          }
+        ],
+        "variation_group": null,
+        "videos": [],
+        "author_history": [
+          "Rottekongen"
+        ],
+        "total_authors_history": [
+          "wger.de",
+          "Rottekongen"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "retrievedAt": "2026-10-14",
+  "sourceUrl": "https://wger.de/api/v2/exerciseinfo/?uuid=671568f9-6653-4e11-ac71-3f34c74329a0",
+  "response": {
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+      {
+        "id": 1233,
+        "uuid": "671568f9-6653-4e11-ac71-3f34c74329a0",
+        "created": "2024-02-18T20:03:37.531590+01:00",
+        "last_update": "2026-07-23T12:25:25.636770+02:00",
+        "last_update_global": "2026-07-23T12:25:25.636770+02:00",
+        "category": {
+          "id": 8,
+          "name": "Arms"
+        },
+        "muscles": [
+          {
+            "id": 2,
+            "name": "Anterior deltoid",
+            "name_en": "Shoulders",
+            "is_front": true,
+            "image_url_main": "https://wger.de/static/images/muscles/main/muscle-2.e1e1205a3202.svg",
+            "image_url_secondary": "https://wger.de/static/images/muscles/secondary/muscle-2.74ea636ad97b.svg"
+          },
+          {
+            "id": 1,
+            "name": "Biceps brachii",
+            "name_en": "Biceps",
+            "is_front": true,
+            "image_url_main": "https://wger.de/static/images/muscles/main/muscle-1.8790f8a0b3b9.svg",
+            "image_url_secondary": "https://wger.de/static/images/muscles/secondary/muscle-1.e08c58a194b9.svg"
+          },
+          {
+            "id": 4,
+            "name": "Pectoralis major",
+            "name_en": "Chest",
+            "is_front": true,
+            "image_url_main": "https://wger.de/static/images/muscles/main/muscle-4.c9fa9a228bc8.svg",
+            "image_url_secondary": "https://wger.de/static/images/muscles/secondary/muscle-4.955e74ea6083.svg"
+          }
+        ],
+        "muscles_secondary": [],
+        "equipment": [
+          {
+            "id": 7,
+            "name": "none (bodyweight exercise)"
+          }
+        ],
+        "license": {
+          "id": 2,
+          "full_name": "Creative Commons Attribution Share Alike 4",
+          "short_name": "CC-BY-SA 4",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+        },
+        "license_author": "Lynn_McIntyre",
+        "images": [
+          {
+            "id": 451,
+            "uuid": "d7d6f9e1-7834-4cca-bd3b-f9def33ff44d",
+            "exercise": 1233,
+            "exercise_uuid": "671568f9-6653-4e11-ac71-3f34c74329a0",
+            "image": "https://wger.de/media/exercise-images/1233/d7d6f9e1-7834-4cca-bd3b-f9def33ff44d.png",
+            "thumbnails": {
+              "small": "https://wger.de/media/exercise-images/1233/d7d6f9e1-7834-4cca-bd3b-f9def33ff44d.png.200x200_q85.jpg",
+              "medium": "https://wger.de/media/exercise-images/1233/d7d6f9e1-7834-4cca-bd3b-f9def33ff44d.png.400x400_q85.jpg"
+            },
+            "is_main": true,
+            "style": "4",
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "anonymous",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "anonymous"
+            ],
+            "is_ai_generated": false
+          }
+        ],
+        "translations": [
+          {
+            "id": 3782,
+            "uuid": "da1e7dac-c355-436d-9aeb-ab903da5a0cf",
+            "name": "Estiramiento de b\u00edceps de pie derecho",
+            "exercise": 1233,
+            "description": "<p>Ponte de pie con el brazo derecho cerca de una pared. Extiende el brazo derecho y apoya la mano derecha en la pared, luego gira suavemente el cuerpo hacia la izquierda.</p>\n",
+            "description_source": "Ponte de pie con el brazo derecho cerca de una pared. Extiende el brazo derecho y apoya la mano derecha en la pared, luego gira suavemente el cuerpo hacia la izquierda.",
+            "created": "2026-06-19T17:53:53.849088+02:00",
+            "language": 4,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "wger.de",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "wger.de"
+            ]
+          },
+          {
+            "id": 2198,
+            "uuid": "d9b8eeee-4d13-47a0-9d95-b0ae9ff73c48",
+            "name": "Standing biceps stretch right",
+            "exercise": 1233,
+            "description": "<p>Stand with your right arm close to a wall. Extend your right arm and put your right hand on the wall, then gently turn your body to the left.</p>\n",
+            "description_source": "Stand with your right arm close to a wall. Extend your right arm and put your right hand on the wall, then gently turn your body to the left.",
+            "created": "2024-02-18T20:03:44.740376+01:00",
+            "language": 2,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "Lynn_McIntyre",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "Lynn_McIntyre"
+            ]
+          },
+          {
+            "id": 3781,
+            "uuid": "699ae618-5b4a-460d-857c-3cc9b70d8b17",
+            "name": "Stehende Bizepsdehnung rechts",
+            "exercise": 1233,
+            "description": "<p>Stelle dich mit deinem rechten Arm dicht an eine Wand. Strecke deinen rechten Arm aus und lege deine rechte Hand an die Wand, dann drehe deinen K\u00f6rper sanft nach links.</p>\n",
+            "description_source": "Stelle dich mit deinem rechten Arm dicht an eine Wand. Strecke deinen rechten Arm aus und lege deine rechte Hand an die Wand, dann drehe deinen K\u00f6rper sanft nach links.",
+            "created": "2026-06-19T17:53:53.339741+02:00",
+            "language": 1,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "wger.de",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "wger.de"
+            ]
+          },
+          {
+            "id": 4533,
+            "uuid": "cd169592-1e63-42e0-9ef6-fd1112b419a5",
+            "name": "\u00c9tirement des biceps debout \u00e0 droite",
+            "exercise": 1233,
+            "description": "<p>Tenez-vous debout avec votre bras droit pr\u00e8s d'un mur. Tendez votre bras droit et placez votre main droite sur le mur, puis tournez doucement votre corps vers la gauche.</p>\n",
+            "description_source": "Tenez-vous debout avec votre bras droit pr\u00e8s d'un mur. Tendez votre bras droit et placez votre main droite sur le mur, puis tournez doucement votre corps vers la gauche.",
+            "created": "2026-06-19T18:43:51.008152+02:00",
+            "language": 12,
+            "aliases": [],
+            "notes": [],
+            "license": 2,
+            "license_title": "",
+            "license_object_url": "",
+            "license_author": "wger.de",
+            "license_author_url": "",
+            "license_derivative_source_url": "",
+            "author_history": [
+              "wger.de"
+            ]
+          }
+        ],
+        "variation_group": null,
+        "videos": [],
+        "author_history": [
+          "Lynn_McIntyre"
+        ],
+        "total_authors_history": [
+          "Lynn_McIntyre",
+          "wger.de",
+          "anonymous"
+        ]
+      }
+    ]
+  }
+}
