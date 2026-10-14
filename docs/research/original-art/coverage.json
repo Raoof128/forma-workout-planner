@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1352,
+  "accepted": 1362,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -3496,7 +3496,9 @@
       "name": "Dumbbell Lying Pronation",
       "equipment": "Dumbbell",
       "guideSha256": "93c257e3d115dde891a504c8599d3e1cc9ee6f87d00df562d31fa0eb783ff63e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-a-001-retry-1-0",
+      "reviewNote": "Prone flat-bench support with nonworking hand under forehead; working upper arm lateral at shoulder height, elbow clearly90degrees and forearm vertical holding one dumbbell matches explicit starting position."
     },
     {
       "exerciseId": "db-dumbbell-lying-rear-lateral-raise",
@@ -8011,7 +8013,9 @@
       "name": "Plyo Push-up",
       "equipment": "Bodyweight",
       "guideSha256": "caae693a3b19a8138711f10d351887bdd12cf30c8e79d9efb4cf1a4d879e10a0",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-b-002-0-1",
+      "reviewNote": "Both hands clearly airborne while both toe tips remain supported on floor and body stays straight."
     },
     {
       "exerciseId": "wger-0e8fd83f-4e97-4749-b5fd-da9d0e85e97a",
@@ -8656,7 +8660,9 @@
       "name": "Reverse Grip Bent-Over Rows",
       "equipment": "Barbell",
       "guideSha256": "868b722c5f355e023d84c1a35c6e6cc7ad8d217528cbc7c6fbf15d09873321ba",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-c-001-0-0",
+      "reviewNote": "Back stays flat and almost parallel to floor; bar is held under lower ribs in clear underhand supinated grip, elbows drawn back close to torso and knees slightly flexed."
     },
     {
       "exerciseId": "db-reverse-grip-triceps-pushdown",
@@ -8672,7 +8678,9 @@
       "name": "Reverse Hyperextension",
       "equipment": "Machine",
       "guideSha256": "bb1a6c74f51e3de19948b19fb525aeb5720723dc79afce17a98f9e1f55420505",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-c-001-1-0",
+      "reviewNote": "Torso lies prone on high horizontal machine pad, hips beyond rear edge, hands on front handles and both feet between carriage rollers on visible plate-loaded pendulum; representative partial hip-extension phase remains short of full range."
     },
     {
       "exerciseId": "wger-616f9026-1a1d-4ed8-b068-cfbb81b6a000",
@@ -9105,7 +9113,9 @@
       "name": "Seated Bent-Over One-Arm Dumbbell Triceps Extension",
       "equipment": "Dumbbell",
       "guideSha256": "03dea7d948d9f1a08439a96e23953a1f81da1f09adab4762dbf29ac860eea6f1",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-c-001-0-1",
+      "reviewNote": "Athlete visibly sits at flat-bench end with both soles grounded, torso almost horizontal and one neutral-grip dumbbell in fully extended horizontal working arm; free hand rests on knee."
     },
     {
       "exerciseId": "db-seated-bent-over-rear-delt-raise",
@@ -9121,7 +9131,9 @@
       "name": "Seated Bent-Over Two-Arm Dumbbell Triceps Extension",
       "equipment": "Dumbbell",
       "guideSha256": "10948a72bc5a1ce4ccd9086baaa318a706f263dcab2f662f59e31385f4393770",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-c-001-1-1",
+      "reviewNote": "Athlete visibly sits at flat-bench end with grounded feet and torso almost horizontal; two neutral-grip dumbbells extend backward in straight arms close to torso, matching bilateral kickback contraction."
     },
     {
       "exerciseId": "db-seated-biceps",
@@ -11211,7 +11223,9 @@
       "name": "Stiff Leg Barbell Good Morning",
       "equipment": "Barbell",
       "guideSha256": "9e227002abd558f547b81798347c4e7e1cc9da8e7b9ba7c86aa4ad90e8cb9e03",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-d-001-0-0",
+      "reviewNote": "Stiff-leg barbell good morning at horizontal torso endpoint with bar resting across upper back and soft stationary knees."
     },
     {
       "exerciseId": "db-stiff-legged-barbell-deadlift",
@@ -11936,7 +11950,9 @@
       "name": "Upper Back-Leg Grab",
       "equipment": "Bodyweight",
       "guideSha256": "0bf8754555aac1686fb6fe1cff4cd0b271a0ee6b8e4cdf9026a2251641b9c4a7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-d-001-1-0",
+      "reviewNote": "Seated straight-leg forward fold with knees together and forearms wrapping underneath upper thighs, hands clasped beneath thigh/knee region."
     },
     {
       "exerciseId": "db-upright-barbell-row",
@@ -12227,7 +12243,9 @@
       "name": "Wide-Grip Decline Barbell Bench Press",
       "equipment": "Barbell",
       "guideSha256": "5cad4257995c3f71ea2bf94671858ac2a9c86081888a100ccba4183642532624",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-d-001-0-1",
+      "reviewNote": "Head-low decline barbell press with secured ankles, pronated grip distinctly wider than shoulders and bar above lower chest."
     },
     {
       "exerciseId": "db-wide-grip-decline-barbell-pullover",
@@ -12594,7 +12612,9 @@
       "name": "Plate Pinch",
       "equipment": "Specialty equipment",
       "guideSha256": "f9a42342ed7099de5e076c8cfdc2913db258c9d88cf8d2e47555c67e82144e1c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-d-001-1-1",
+      "reviewNote": "Two distinct weight plates held together by pinch across outside faces at upper rim, with center holes clear of grip."
     },
     {
       "exerciseId": "forma-wger-4632c471-5c5e-4570-9dec-509c5d4d58bb",

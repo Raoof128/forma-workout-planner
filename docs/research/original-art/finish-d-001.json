@@ -1,0 +1,132 @@
+{
+  "name": "finish-d-001",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-d-001.png",
+  "prompt": "Create ORIGINAL FORMA fitness-manual illustration,1536x1024 landscape, EXACTLY TWO columns by TWO rows, FOUR panels768x512. Pure white background and generous margins. Each panel contains ONE complete fully clothed adult athlete in charcoal gray sportswear with subtle lime accent, charcoal equipment, subtle shadows. Accurate two arms/two legs, no duplicates, no arrows, no letters labels logos. Full figures and equipment completely inside own panel with white gutter. Draw physically precise movement details, grip, hip/knee depth and support. Four mandatory panels:\n\nRow1 column1: Stiff Leg Barbell Good Morning. EXACT REPRESENTATIVE POSE: SIDE VIEW barbell stiff-leg good morning at bottom: both feet planted, legs almost straight with only soft knees, hips pushed back, spine neutral, torso EXACTLY HORIZONTAL PARALLEL TO FLOOR. Loaded bar rests upper BACK across shoulders behind neck, hands hold it. Show profile neck/head aligned with spine, flat back extending horizontal from hips to shoulders. Complete factual guide: This exercise is best performed inside a squat rack for safety purposes. To begin, first set the bar on a rack that best matches your height. Once the correct height is chosen and the bar is loaded, step under the bar and place the back of your shoulders (slightly below the neck) across it.\n\nHold on to the bar using both arms at each side and lift it off the rack by first pushing with your legs and at the same time straightening your torso.\n\nStep away from the rack and position your legs using a shoulder width medium stance. Keep your head up at all times as looking down will get you off balance and also maintain a straight back. This will be your starting position.\n\nKeeping your legs stationary, move your torso forward by bending at the hips while inhaling. Lower your torso until it is parallel with the floor.\n\nBegin to raise the bar as you exhale by elevating your torso back to the starting position.\n\nRepeat for the recommended amount of repetitions.\n\nRow1 column2: Upper Back-Leg Grab. EXACT REPRESENTATIVE POSE: SIDE VIEW seated upper-back leg grab on FLOOR: both knees touching, both legs straight forward together, heels floor, chest folded down onto thighs near knees. BOTH ARMS encircle UPPER THIGHS FROM UNDERNEATH, hands clasp behind/under MID-THIGH halfway between hips and knees, NOT calves/ankles. Forearms loop directly beneath thighs. Bare forearms visible for clarity. Complete factual guide: While seated, bend forward to hug your thighs from underneath with both arms.\n\nKeep your knees together and your legs extended out as you bring your chest down to your knees. You can also stretch your middle back by pulling your back away from your knees as your hugging them.\n\nRow2 column1: Wide-Grip Decline Barbell Bench Press. EXACT REPRESENTATIVE POSE: Wide-grip DECLINE barbell bench press: athlete supine on bench with HEAD LOW left and FEET HIGH right secured under ankle rollers. Bench slopes downward toward head15degrees. Loaded bar held just above LOWER chest. Hands pronated VERY WIDE, each hand3inches OUTSIDE shoulder edge; elbow bent outward90degrees. Front three-quarter view shows full bar and hands separated obviously wider than shoulders. Complete factual guide: Lie back on a decline bench with the feet securely locked at the front of the bench. Using a wide, pronated (palms forward) grip that is around 3 inches away from shoulder width (for each hand), lift the bar from the rack and hold it straight over you with your arms locked. The bar will be perpendicular to the torso and the floor. This will be your starting position.\n\nAs you breathe in, come down slowly until you feel the bar on your lower chest.\n\nAfter a second pause, bring the bar back to the starting position as you breathe out and push the bar using your chest muscles. Lock your arms and squeeze your chest in the contracted position, hold for a second and then start coming down slowly again. Tip: It should take at least twice as long to go down than to come up.\n\nRepeat the movement for the prescribed amount of repetitions.\n\nRow2 column2: Plate Pinch. EXACT REPRESENTATIVE POSE: Plate pinch: standing athlete holding TWO flat ROUND SOLID WEIGHT PLATES flush together, hanging vertically beside hip. Show two separate paired plate rims in three-quarter view. Working hand PINCHES TOP OUTER EDGE: thumb pressed flat against outside smooth front FACE, four finger pads pressed flat against outside smooth BACK FACE, bridge of hand over outer rim. Plates have tiny center holes far below grip. No handles, no grip through hole. Other hand at side. Complete factual guide: Grab two wide-rimmed plates and put them together with the smooth sides facing outward\n\nUse your fingers to grip the outside part of the plate and your thumb for the other side thus holding both plates together. This is the starting position.\n\nSqueeze the plate with your fingers and thumb. Hold this position for as long as you can.\n\nRepeat for the recommended amount of sets prescribed in your program.\n\nSwitch arms and repeat the movements.",
+  "cells": [
+    {
+      "id": "db-stiff-leg-barbell-good-morning",
+      "title": "Stiff Leg Barbell Good Morning",
+      "equipment": "Barbell",
+      "guideText": "This exercise is best performed inside a squat rack for safety purposes. To begin, first set the bar on a rack that best matches your height. Once the correct height is chosen and the bar is loaded, step under the bar and place the back of your shoulders (slightly below the neck) across it.\n\nHold on to the bar using both arms at each side and lift it off the rack by first pushing with your legs and at the same time straightening your torso.\n\nStep away from the rack and position your legs using a shoulder width medium stance. Keep your head up at all times as looking down will get you off balance and also maintain a straight back. This will be your starting position.\n\nKeeping your legs stationary, move your torso forward by bending at the hips while inhaling. Lower your torso until it is parallel with the floor.\n\nBegin to raise the bar as you exhale by elevating your torso back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Stiff_Leg_Barbell_Good_Morning.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Good morning stops well above the parallel-torso position described.",
+      "priorBatch": "docs/research/original-art/corrections-033.json",
+      "references": null,
+      "reviewNote": "Stiff-leg barbell good morning at horizontal torso endpoint with bar resting across upper back and soft stationary knees.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 478
+      },
+      "cropReviewNote": "Inspected original1536x1024 sheet; visible panel separator at y478 and x768. Bounds retain complete athlete and apparatus.",
+      "ids": [
+        "db-stiff-leg-barbell-good-morning"
+      ]
+    },
+    {
+      "id": "db-upper-back-leg-grab",
+      "title": "Upper Back-Leg Grab",
+      "equipment": "Bodyweight",
+      "guideText": "While seated, bend forward to hug your thighs from underneath with both arms.\n\nKeep your knees together and your legs extended out as you bring your chest down to your knees. You can also stretch your middle back by pulling your back away from your knees as your hugging them.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Upper_Back-Leg_Grab.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hands hold the shins/ankles rather than hugging extended thighs from underneath.",
+      "priorBatch": "docs/research/original-art/corrections-034.json",
+      "references": null,
+      "reviewNote": "Seated straight-leg forward fold with knees together and forearms wrapping underneath upper thighs, hands clasped beneath thigh/knee region.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 478
+      },
+      "cropReviewNote": "Inspected original1536x1024 sheet; visible panel separator at y478 and x768. Bounds retain complete athlete and apparatus.",
+      "ids": [
+        "db-upper-back-leg-grab"
+      ]
+    },
+    {
+      "id": "db-wide-grip-decline-barbell-bench-press",
+      "title": "Wide-Grip Decline Barbell Bench Press",
+      "equipment": "Barbell",
+      "guideText": "Lie back on a decline bench with the feet securely locked at the front of the bench. Using a wide, pronated (palms forward) grip that is around 3 inches away from shoulder width (for each hand), lift the bar from the rack and hold it straight over you with your arms locked. The bar will be perpendicular to the torso and the floor. This will be your starting position.\n\nAs you breathe in, come down slowly until you feel the bar on your lower chest.\n\nAfter a second pause, bring the bar back to the starting position as you breathe out and push the bar using your chest muscles. Lock your arms and squeeze your chest in the contracted position, hold for a second and then start coming down slowly again. Tip: It should take at least twice as long to go down than to come up.\n\nRepeat the movement for the prescribed amount of repetitions.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Wide-Grip_Decline_Barbell_Bench_Press.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "priorBatch": "docs/research/original-art/recovery-decline-040.json",
+      "references": null,
+      "reviewNote": "Head-low decline barbell press with secured ankles, pronated grip distinctly wider than shoulders and bar above lower chest.",
+      "bounds": {
+        "x": 0,
+        "y": 478,
+        "width": 768,
+        "height": 546
+      },
+      "cropReviewNote": "Inspected original1536x1024 sheet; visible panel separator at y478 and x768. Bounds retain complete athlete and apparatus.",
+      "ids": [
+        "db-wide-grip-decline-barbell-bench-press"
+      ]
+    },
+    {
+      "id": "forma-db-plate-pinch",
+      "title": "Plate Pinch",
+      "equipment": "Specialty equipment",
+      "guideText": "Grab two wide-rimmed plates and put them together with the smooth sides facing outward\n\nUse your fingers to grip the outside part of the plate and your thumb for the other side thus holding both plates together. This is the starting position.\n\nSqueeze the plate with your fingers and thumb. Hold this position for as long as you can.\n\nRepeat for the recommended amount of sets prescribed in your program.\n\nSwitch arms and repeat the movements.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Plate_Pinch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Standing adult holds TWO distinct circular weight plates STACKED TOGETHER side by side, smooth sides outward. Working hand pinches the OUTSIDE FACES of pair using fingers on one smooth face and thumb on other. No grip through holes. Clearly visible two separate plate rims.",
+      "priorBatch": "docs/research/original-art/corrections-041.json",
+      "references": null,
+      "reviewNote": "Two distinct weight plates held together by pinch across outside faces at upper rim, with center holes clear of grip.",
+      "bounds": {
+        "x": 768,
+        "y": 478,
+        "width": 768,
+        "height": 546
+      },
+      "cropReviewNote": "Inspected original1536x1024 sheet; visible panel separator at y478 and x768. Bounds retain complete athlete and apparatus.",
+      "ids": [
+        "forma-db-plate-pinch"
+      ]
+    }
+  ],
+  "sourceAssetPath": "assets/exercise-artwork/finish-d-001.png",
+  "sourceGeneratedPath": "/workspace/generated_images/exec-a5cdce57-1cba-4e6d-8b75-39854291d233.png",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

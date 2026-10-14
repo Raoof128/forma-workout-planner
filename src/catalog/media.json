@@ -7749,6 +7749,34 @@
         }
       }
     },
+    "forma-original-finish-a-001-retry-1-0": {
+      "src": "/exercise-media/original/finish-a-001-retry.png?v=9cbb26451c44",
+      "sha256": "9cbb26451c4465ae90599b4c9c069f68661e419a776723e8776c7275cb93c701",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Dumbbell Lying Pronation",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-a-001-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 420
+        }
+      }
+    },
     "forma-original-corrections-009-2-0": {
       "src": "/exercise-media/original/corrections-009.png?v=cd229e7a97df",
       "sha256": "cd229e7a97dfee548b1918e772895c3f4d6e98d18d4294d8cc04d2335e5ab86e",
@@ -19793,6 +19821,34 @@
         }
       }
     },
+    "forma-original-finish-b-002-0-1": {
+      "src": "/exercise-media/original/finish-b-002.png?v=79f8fd46ada4",
+      "sha256": "79f8fd46ada4cfd1b902a1cef8766bf061167f54614564e83585e5cca70be816",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Plyo Push-up",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-b-002.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 512,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
     "forma-original-movements-064-3-0": {
       "src": "/exercise-media/original/movements-064.png?v=eafdbc449bbe",
       "sha256": "eafdbc449bbe4f8d5f178fe2161524ae61344d24fce2317fc290534d0fbc11a3",
@@ -21551,6 +21607,62 @@
         }
       }
     },
+    "forma-original-finish-c-001-0-0": {
+      "src": "/exercise-media/original/finish-c-001.png?v=400ffbe5a0b8",
+      "sha256": "400ffbe5a0b8542f54b1fcfa4f307b18b52deb7dd4abbfbfb6a2722f0e0f9d21",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Reverse Grip Bent-Over Rows",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-c-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-finish-c-001-1-0": {
+      "src": "/exercise-media/original/finish-c-001.png?v=400ffbe5a0b8",
+      "sha256": "400ffbe5a0b8542f54b1fcfa4f307b18b52deb7dd4abbfbfb6a2722f0e0f9d21",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Reverse Hyperextension",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-c-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
     "forma-original-movements-070-1-0": {
       "src": "/exercise-media/original/movements-070.png?v=39112ee1c743",
       "sha256": "39112ee1c74319181b5ace506118485a0cf4a37a3297089aa3f9099a48106c25",
@@ -22715,6 +22827,34 @@
         }
       }
     },
+    "forma-original-finish-c-001-0-1": {
+      "src": "/exercise-media/original/finish-c-001.png?v=400ffbe5a0b8",
+      "sha256": "400ffbe5a0b8542f54b1fcfa4f307b18b52deb7dd4abbfbfb6a2722f0e0f9d21",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Seated Bent-Over One-Arm Dumbbell Triceps Extension",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-c-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 512,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
     "forma-original-movements-073-1-2": {
       "src": "/exercise-media/original/movements-073.png?v=566e6421cad0",
       "sha256": "566e6421cad019ecb92dbc2628111a527a5dd4a1afe303c8d51aac979b34b722",
@@ -22740,6 +22880,34 @@
           "y": 649,
           "width": 384,
           "height": 375
+        }
+      }
+    },
+    "forma-original-finish-c-001-1-1": {
+      "src": "/exercise-media/original/finish-c-001.png?v=400ffbe5a0b8",
+      "sha256": "400ffbe5a0b8542f54b1fcfa4f307b18b52deb7dd4abbfbfb6a2722f0e0f9d21",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Seated Bent-Over Two-Arm Dumbbell Triceps Extension",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-c-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 512,
+          "width": 768,
+          "height": 512
         }
       }
     },
@@ -27881,6 +28049,34 @@
         }
       }
     },
+    "forma-original-finish-d-001-0-0": {
+      "src": "/exercise-media/original/finish-d-001.png?v=1678bf7e4fec",
+      "sha256": "1678bf7e4fec6c0c9cb83db357a66604d0d4ce1a556060e58607962e625cdde8",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Stiff Leg Barbell Good Morning",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-d-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 478
+        }
+      }
+    },
     "forma-original-movements-089-0-1": {
       "src": "/exercise-media/original/movements-089.png?v=ae4f59e37603",
       "sha256": "ae4f59e376038961342dcfdfcb58ea62b6356717dfe7096ac41a428f6a7b653c",
@@ -29807,6 +30003,34 @@
         }
       }
     },
+    "forma-original-finish-d-001-1-0": {
+      "src": "/exercise-media/original/finish-d-001.png?v=1678bf7e4fec",
+      "sha256": "1678bf7e4fec6c0c9cb83db357a66604d0d4ce1a556060e58607962e625cdde8",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Upper Back-Leg Grab",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-d-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 478
+        }
+      }
+    },
     "forma-original-movements-095-2-0": {
       "src": "/exercise-media/original/movements-095.png?v=a1675d86f738",
       "sha256": "a1675d86f73862f9912641c6e22f09109c1c29d14c9921b38cfde11eaae35d41",
@@ -30560,6 +30784,34 @@
           "y": 341,
           "width": 384,
           "height": 315
+        }
+      }
+    },
+    "forma-original-finish-d-001-0-1": {
+      "src": "/exercise-media/original/finish-d-001.png?v=1678bf7e4fec",
+      "sha256": "1678bf7e4fec6c0c9cb83db357a66604d0d4ce1a556060e58607962e625cdde8",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Wide-Grip Decline Barbell Bench Press",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-d-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 478,
+          "width": 768,
+          "height": 546
         }
       }
     },
@@ -31408,6 +31660,34 @@
           "y": 341,
           "width": 384,
           "height": 340
+        }
+      }
+    },
+    "forma-original-finish-d-001-1-1": {
+      "src": "/exercise-media/original/finish-d-001.png?v=1678bf7e4fec",
+      "sha256": "1678bf7e4fec6c0c9cb83db357a66604d0d4ce1a556060e58607962e625cdde8",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Plate Pinch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-d-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 478,
+          "width": 768,
+          "height": 546
         }
       }
     },
@@ -32956,6 +33236,10 @@
     "db-dumbbell-lying-one-arm-rear-lateral-raise": {
       "assetId": "forma-original-corrections-009-0-0",
       "caption": "Dumbbell Lying One-Arm Rear Lateral Raise · Representative exercise position; follow the guide for the complete movement."
+    },
+    "db-dumbbell-lying-pronation": {
+      "assetId": "forma-original-finish-a-001-retry-1-0",
+      "caption": "Dumbbell Lying Pronation · Representative exercise position; follow the guide for the complete movement."
     },
     "db-dumbbell-lying-rear-lateral-raise": {
       "assetId": "forma-original-corrections-009-2-0",
@@ -34889,6 +35173,10 @@
       "assetId": "forma-original-movements-064-1-0",
       "caption": "Plyo Kettlebell Pushups · Representative exercise position; follow the guide for the complete movement."
     },
+    "db-plyo-push-up": {
+      "assetId": "forma-original-finish-b-002-0-1",
+      "caption": "Plyo Push-up · Representative exercise position; follow the guide for the complete movement."
+    },
     "wger-0e8fd83f-4e97-4749-b5fd-da9d0e85e97a": {
       "assetId": "forma-original-movements-064-3-0",
       "caption": "Posterior Pelvic Tilt · Representative exercise position; follow the guide for the complete movement."
@@ -35157,9 +35445,17 @@
       "assetId": "forma-original-movements-069-2-2",
       "caption": "Reverse Flyes · Representative exercise position; follow the guide for the complete movement."
     },
+    "db-reverse-grip-bent-over-rows": {
+      "assetId": "forma-original-finish-c-001-0-0",
+      "caption": "Reverse Grip Bent-Over Rows · Representative exercise position; follow the guide for the complete movement."
+    },
     "db-reverse-grip-triceps-pushdown": {
       "assetId": "forma-original-cardio-01-1-2",
       "caption": "Adjustable cable station · Equipment reference; pulley height, attachments and posture follow each exercise guide."
+    },
+    "db-reverse-hyperextension": {
+      "assetId": "forma-original-finish-c-001-1-0",
+      "caption": "Reverse Hyperextension · Representative exercise position; follow the guide for the complete movement."
     },
     "wger-616f9026-1a1d-4ed8-b068-cfbb81b6a000": {
       "assetId": "forma-original-movements-070-1-0",
@@ -35341,9 +35637,17 @@
       "assetId": "forma-original-movements-073-3-1",
       "caption": "Seated Barbell Twist · Representative exercise position; follow the guide for the complete movement."
     },
+    "db-seated-bent-over-one-arm-dumbbell-triceps-extension": {
+      "assetId": "forma-original-finish-c-001-0-1",
+      "caption": "Seated Bent-Over One-Arm Dumbbell Triceps Extension · Representative exercise position; follow the guide for the complete movement."
+    },
     "db-seated-bent-over-rear-delt-raise": {
       "assetId": "forma-original-movements-073-1-2",
       "caption": "Seated Bent-Over Rear Delt Raise · Representative exercise position; follow the guide for the complete movement."
+    },
+    "db-seated-bent-over-two-arm-dumbbell-triceps-extension": {
+      "assetId": "forma-original-finish-c-001-1-1",
+      "caption": "Seated Bent-Over Two-Arm Dumbbell Triceps Extension · Representative exercise position; follow the guide for the complete movement."
     },
     "db-seated-biceps": {
       "assetId": "forma-original-corrections-029-0-0",
@@ -36249,6 +36553,10 @@
       "assetId": "forma-original-corrections-032-2-1",
       "caption": "Step-ups · Representative exercise position; follow the guide for the complete movement."
     },
+    "db-stiff-leg-barbell-good-morning": {
+      "assetId": "forma-original-finish-d-001-0-0",
+      "caption": "Stiff Leg Barbell Good Morning · Representative exercise position; follow the guide for the complete movement."
+    },
     "db-stiff-legged-barbell-deadlift": {
       "assetId": "forma-original-movements-089-0-1",
       "caption": "Stiff-Legged Barbell Deadlift · Representative exercise position; follow the guide for the complete movement."
@@ -36565,6 +36873,10 @@
       "assetId": "forma-original-movements-095-0-0",
       "caption": "Upper Back Stretch · Representative exercise position; follow the guide for the complete movement."
     },
+    "db-upper-back-leg-grab": {
+      "assetId": "forma-original-finish-d-001-1-0",
+      "caption": "Upper Back-Leg Grab · Representative exercise position; follow the guide for the complete movement."
+    },
     "db-upright-barbell-row": {
       "assetId": "forma-original-movements-095-2-0",
       "caption": "Upright Barbell Row · Representative exercise position; follow the guide for the complete movement."
@@ -36684,6 +36996,10 @@
     "db-wide-grip-barbell-bench-press": {
       "assetId": "forma-original-movements-097-2-1",
       "caption": "Wide-Grip Barbell Bench Press · Representative exercise position; follow the guide for the complete movement."
+    },
+    "db-wide-grip-decline-barbell-bench-press": {
+      "assetId": "forma-original-finish-d-001-0-1",
+      "caption": "Wide-Grip Decline Barbell Bench Press · Representative exercise position; follow the guide for the complete movement."
     },
     "db-wide-grip-decline-barbell-pullover": {
       "assetId": "forma-original-movements-097-0-2",
@@ -36844,6 +37160,10 @@
     "forma-wger-934856f3-6eb3-4b37-9536-0ff67a6aa036": {
       "assetId": "forma-original-movements-099-3-1",
       "caption": "Parallel Bar Hold · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-db-plate-pinch": {
+      "assetId": "forma-original-finish-d-001-1-1",
+      "caption": "Plate Pinch · Representative exercise position; follow the guide for the complete movement."
     },
     "forma-wger-4632c471-5c5e-4570-9dec-509c5d4d58bb": {
       "assetId": "forma-original-movements-099-1-2",

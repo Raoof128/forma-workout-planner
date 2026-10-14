@@ -3,8 +3,8 @@
   "updatedAt": "2026-10-14",
   "recoveredRemoteCommit": "8d0c5a765fe8a7276884e5198827d0f5f193c69c",
   "total": 1414,
-  "accepted": 1352,
-  "remaining": 62,
+  "accepted": 1362,
+  "remaining": 52,
   "ownerRequest": "Push assets and logs frequently so a crashed cloud session can be recovered.",
   "resumeInstructions": [
     "git fetch origin main and compare remote coverage before generating",
@@ -174,6 +174,46 @@
         "held": 1,
         "pending": 0
       }
+    },
+    {
+      "batch": "finish-d-001",
+      "sourceAssetPath": "assets/exercise-artwork/finish-d-001.png",
+      "recordPath": "docs/research/original-art/finish-d-001.json",
+      "reviewCounts": {
+        "accepted": 4,
+        "held": 0,
+        "pending": 0
+      }
+    },
+    {
+      "batch": "finish-b-002",
+      "sourceAssetPath": "assets/exercise-artwork/finish-b-002.png",
+      "recordPath": "docs/research/original-art/finish-b-002.json",
+      "reviewCounts": {
+        "accepted": 1,
+        "held": 3,
+        "pending": 0
+      }
+    },
+    {
+      "batch": "finish-c-001",
+      "sourceAssetPath": "assets/exercise-artwork/finish-c-001.png",
+      "recordPath": "docs/research/original-art/finish-c-001.json",
+      "reviewCounts": {
+        "accepted": 4,
+        "held": 0,
+        "pending": 0
+      }
+    },
+    {
+      "batch": "finish-a-001-retry",
+      "sourceAssetPath": "assets/exercise-artwork/finish-a-001-retry.png",
+      "recordPath": "docs/research/original-art/finish-a-001-retry.json",
+      "reviewCounts": {
+        "accepted": 1,
+        "held": 3,
+        "pending": 0
+      }
     }
   ],
   "remainingAssignments": [
@@ -252,13 +292,6 @@
       "name": "Deadlifts",
       "equipment": "Barbell",
       "guideSha256": "97c429773c23a72007ea1d8002a8d846dacfb5d9d6806155027a88101f12e884",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "db-dumbbell-lying-pronation",
-      "name": "Dumbbell Lying Pronation",
-      "equipment": "Dumbbell",
-      "guideSha256": "93c257e3d115dde891a504c8599d3e1cc9ee6f87d00df562d31fa0eb783ff63e",
       "status": "pending"
     },
     {
@@ -423,13 +456,6 @@
       "status": "pending"
     },
     {
-      "exerciseId": "db-plyo-push-up",
-      "name": "Plyo Push-up",
-      "equipment": "Bodyweight",
-      "guideSha256": "caae693a3b19a8138711f10d351887bdd12cf30c8e79d9efb4cf1a4d879e10a0",
-      "status": "pending"
-    },
-    {
       "exerciseId": "wger-2a1f7c0c-c63d-43f1-9934-a209ed405ff8",
       "name": "Quadruped Hip Abduction",
       "equipment": "Resistance band + none (bodyweight exercise)",
@@ -465,20 +491,6 @@
       "status": "pending"
     },
     {
-      "exerciseId": "db-reverse-grip-bent-over-rows",
-      "name": "Reverse Grip Bent-Over Rows",
-      "equipment": "Barbell",
-      "guideSha256": "868b722c5f355e023d84c1a35c6e6cc7ad8d217528cbc7c6fbf15d09873321ba",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "db-reverse-hyperextension",
-      "name": "Reverse Hyperextension",
-      "equipment": "Machine",
-      "guideSha256": "bb1a6c74f51e3de19948b19fb525aeb5720723dc79afce17a98f9e1f55420505",
-      "status": "pending"
-    },
-    {
       "exerciseId": "wger-af2f774c-296c-4d14-8e4a-fad77175ae37",
       "name": "Roman Chair Crunch",
       "equipment": "Bodyweight",
@@ -497,20 +509,6 @@
       "name": "Rope Pullover/row",
       "equipment": "Incline bench",
       "guideSha256": "0def5b0230737406974c6ccbf5059636346e92734eb28687ad27fb0bf79af784",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "db-seated-bent-over-one-arm-dumbbell-triceps-extension",
-      "name": "Seated Bent-Over One-Arm Dumbbell Triceps Extension",
-      "equipment": "Dumbbell",
-      "guideSha256": "03dea7d948d9f1a08439a96e23953a1f81da1f09adab4762dbf29ac860eea6f1",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "db-seated-bent-over-two-arm-dumbbell-triceps-extension",
-      "name": "Seated Bent-Over Two-Arm Dumbbell Triceps Extension",
-      "equipment": "Dumbbell",
-      "guideSha256": "10948a72bc5a1ce4ccd9086baaa318a706f263dcab2f662f59e31385f4393770",
       "status": "pending"
     },
     {
@@ -563,24 +561,10 @@
       "status": "pending"
     },
     {
-      "exerciseId": "db-stiff-leg-barbell-good-morning",
-      "name": "Stiff Leg Barbell Good Morning",
-      "equipment": "Barbell",
-      "guideSha256": "9e227002abd558f547b81798347c4e7e1cc9da8e7b9ba7c86aa4ad90e8cb9e03",
-      "status": "pending"
-    },
-    {
       "exerciseId": "wger-df18b577-0610-4804-a993-161024da67db",
       "name": "Upper Back",
       "equipment": "Bodyweight",
       "guideSha256": "aa34bc9a2b5f354493c7ffb5e706e77a3c047280e0853ec5a8787d69e89557bb",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "db-upper-back-leg-grab",
-      "name": "Upper Back-Leg Grab",
-      "equipment": "Bodyweight",
-      "guideSha256": "0bf8754555aac1686fb6fe1cff4cd0b271a0ee6b8e4cdf9026a2251641b9c4a7",
       "status": "pending"
     },
     {
@@ -596,20 +580,6 @@
       "equipment": "Bench",
       "guideSha256": "be212222967adca3e5933159b1bd9ab85a5a019d68bd77cb2e91bca314a6491e",
       "status": "pending"
-    },
-    {
-      "exerciseId": "db-wide-grip-decline-barbell-bench-press",
-      "name": "Wide-Grip Decline Barbell Bench Press",
-      "equipment": "Barbell",
-      "guideSha256": "5cad4257995c3f71ea2bf94671858ac2a9c86081888a100ccba4183642532624",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "forma-db-plate-pinch",
-      "name": "Plate Pinch",
-      "equipment": "Specialty equipment",
-      "guideSha256": "f9a42342ed7099de5e076c8cfdc2913db258c9d88cf8d2e47555c67e82144e1c",
-      "status": "pending"
     }
   ],
   "events": [
@@ -621,6 +591,19 @@
       ],
       "accepted": 1352,
       "remaining": 62,
+      "mediaValidation": "passed",
+      "action": "commit and push original assets, full prompts, reviews and coverage"
+    },
+    {
+      "date": "2026-10-14",
+      "batches": [
+        "finish-d-001",
+        "finish-b-002",
+        "finish-c-001",
+        "finish-a-001-retry"
+      ],
+      "accepted": 1362,
+      "remaining": 52,
       "mediaValidation": "passed",
       "action": "commit and push original assets, full prompts, reviews and coverage"
     }

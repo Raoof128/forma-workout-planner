@@ -1,0 +1,136 @@
+{
+  "name": "finish-c-001",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-c-001.png",
+  "prompt": "Create original FORMA fitness instruction illustration atlas, EXACTLY TWO COLUMNS and TWO ROWS with FOUR large independent 768x512 cells, landscape canvas1536x1024. Clean white backgrounds with subtle shadows, precise detailed charcoalgray sportswear and equipment, small lime accents. NO letters, words, numbers, labels, logos, borders or watermarks. One fully clothed anatomically correct adult athlete per cell, exactly TWO arms TWO legs. All bodies, equipment, bar ends and machine rail tops stay WITHIN own cell with30px blank margins. Respect exact defining equipment, support, grip and phase. Single representative pose per cell. Make torso angles and palm orientations very clear.\n\nROW1 COLUMN1: Reverse Grip Bent-Over Rows. Strict SIDE VIEW with torso completely HORIZONTAL, parallel floor like a tabletop, from hips to shoulders. Adult stands on floor, knees slightly bent, hip hinge about90degrees, flat back, head aligned. Two hands hold straight plated barbell near lower ribs using clearly SUPINATED UNDERHAND grip: palms face UP, visible palm-side forearms. Elbows pulled behind torso and close to sides. Legs support body without bench. The full horizontal torso and entire barbell visible.\n\nROW1 COLUMN2: Reverse Hyperextension. Reverse hyperextension specialized MACHINE in strict SIDE view. Adult lies PRONE horizontally on high rectangular machine top pad, chest and abdomen supported, HIPS hang just beyond pad REAR EDGE. Both hands grasp front support handles. BOTH LEGS hang down and angle slightly forward below hips in flexed-hip phase, knees almost straight. Both FEET visibly BETWEEN thick padded rollers attached to loaded swinging carriage/pendulum below rear of machine; visible metal carriage arm pivots under machine and plate-loaded lever. Machine feet on floor. This is reverse hyper: torso stays supported horizontally and legs swing. No foot brace for standing back extension, no human torso angled upward.\n\nROW2 COLUMN1: Seated Bent-Over One-Arm Dumbbell Triceps Extension. SINGLE-arm seated triceps kickback strict SIDE VIEW. Adult firmly SITS ON END OF LOW FLAT BENCH, both feet flat on floor in front, knees bent. Hips flex90degrees, torso laid forward COMPLETELY HORIZONTAL almost touching thighs, BACK PARALLEL TO FLOOR from pelvis to shoulders. Only RIGHT hand holds ONE dumbbell in neutral grip. RIGHT whole arm fully extended STRAIGHT BACK behind torso, upper and lower arm HORIZONTAL parallel floor at shoulder/torso height. LEFT hand empty rests on left knee. Head aligned looking ahead; seated hips remain visibly in contact with bench. Horizontal torso is essential, not an upright seated press.\n\nROW2 COLUMN2: Seated Bent-Over Two-Arm Dumbbell Triceps Extension. TWO-arm seated triceps kickback side three-quarter view. Adult firmly SITS ON END OF LOW FLAT BENCH, both feet flat floor in front, knees bent. Hips flex90degrees so torso hinges forward COMPLETELY HORIZONTAL almost touching thighs; BACK PARALLEL FLOOR from pelvis to shoulders. BOTH whole arms fully extended STRAIGHT BACK along sides of torso, upper arms and forearms HORIZONTAL parallel floor at shoulder/torso height. TWO dumbbells total, one per hand, palms neutral inward. Both arms independently visible, no third arm. Head aligned; hips visibly contact seat. Entire athlete and bench inside cell.",
+  "cells": [
+    {
+      "id": "db-reverse-grip-bent-over-rows",
+      "title": "Reverse Grip Bent-Over Rows",
+      "equipment": "Barbell",
+      "guideText": "Stand erect while holding a barbell with a supinated grip (palms facing up).\n\nBend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Tip: Make sure that you keep the head up. The barbell should hang directly in front of you as your arms hang perpendicular to the floor and your torso. This is your starting position.\n\nWhile keeping the torso stationary, lift the barbell as you breathe out, keeping the elbows close to the body and not doing any force with the forearm other than holding the weights. On the top contracted position, squeeze the back muscles and hold for a second.\n\nSlowly lower the weight again to the starting position as you inhale.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Reverse_Grip_Bent-Over_Rows.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Full SIDE view. Torso completely HORIZONTAL. Both hands SUPINATED holding straight barbell under lower ribs, elbows pulled behind torso. Flat back, slight knees. Visible upward-facing palms.",
+      "reviewNote": "Back stays flat and almost parallel to floor; bar is held under lower ribs in clear underhand supinated grip, elbows drawn back close to torso and knees slightly flexed.",
+      "priorBatch": "docs/research/original-art/corrections-038.json",
+      "references": null,
+      "priorReviewNote": "Reverse-grip row torso is not almost parallel as required for its fixed setup.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected original 1536x1024 PNG; actual cell boundaries x=768, y=512. Complete athlete and intended apparatus retained inside this panel without adjacent-cell intrusion.",
+      "ids": [
+        "db-reverse-grip-bent-over-rows"
+      ]
+    },
+    {
+      "id": "db-reverse-hyperextension",
+      "title": "Reverse Hyperextension",
+      "equipment": "Machine",
+      "guideText": "Place your feet between the pads after loading an appropriate weight. Lay on the top pad, allowing your hips to hang off the back, while grasping the handles to hold your position.\n\nTo begin the movement, flex the hips, pulling the legs forward.\n\nReverse the motion by extending the hips, kicking the leg back. It is very important not to over-extend the hip on this movement, stopping short of your full range of motion.\n\nReturn by again flexing the hip, pulling the carriage forward as far as you can.\n\nRepeat for the desired number of repetitions.",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Reverse_Hyperextension.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "references": null,
+      "column": 1,
+      "row": 0,
+      "priorReviewNote": null,
+      "reviewStatus": "accepted",
+      "reviewNote": "Torso lies prone on high horizontal machine pad, hips beyond rear edge, hands on front handles and both feet between carriage rollers on visible plate-loaded pendulum; representative partial hip-extension phase remains short of full range.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected original 1536x1024 PNG; actual cell boundaries x=768, y=512. Complete athlete and intended apparatus retained inside this panel without adjacent-cell intrusion.",
+      "ids": [
+        "db-reverse-hyperextension"
+      ]
+    },
+    {
+      "id": "db-seated-bent-over-one-arm-dumbbell-triceps-extension",
+      "title": "Seated Bent-Over One-Arm Dumbbell Triceps Extension",
+      "equipment": "Dumbbell",
+      "guideText": "Sit down at the end of a flat bench with a dumbbell in one arm using a neutral grip (palms of the hand facing you).\n\nBend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Make sure that you keep the head up.\n\nThe upper arm with the dumbbell should be close to the torso and aligned with it (lifted up until it is parallel to the floor while the forearms are pointing towards the floor as the hands hold the weights). Tip: There should be a 90-degree angle between the forearms and the upper arm. This is your starting position.\n\nKeeping the upper arm stationary, use the triceps to lift the weight as you exhale until the forearm is parallel to the floor and the whole arm is extended. Like many other arm exercises, only the forearm moves.\n\nAfter a second contraction at the top, slowly lower the dumbbell back to the starting position as you inhale.\n\nRepeat the movement for the prescribed amount of repetitions.\n\nSwitch arms and repeat the exercise.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Bent-Over_One-Arm_Dumbbell_Triceps_Extension.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: single-arm seated triceps kickback torso is too upright for almost-horizontal guide.",
+      "reviewNote": "Athlete visibly sits at flat-bench end with both soles grounded, torso almost horizontal and one neutral-grip dumbbell in fully extended horizontal working arm; free hand rests on knee.",
+      "priorBatch": "docs/research/original-art/corrections-028.json",
+      "references": null,
+      "priorReviewNote": "Single-arm seated kickback torso remains well above the specified almost-horizontal position.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected original 1536x1024 PNG; actual cell boundaries x=768, y=512. Complete athlete and intended apparatus retained inside this panel without adjacent-cell intrusion.",
+      "ids": [
+        "db-seated-bent-over-one-arm-dumbbell-triceps-extension"
+      ]
+    },
+    {
+      "id": "db-seated-bent-over-two-arm-dumbbell-triceps-extension",
+      "title": "Seated Bent-Over Two-Arm Dumbbell Triceps Extension",
+      "equipment": "Dumbbell",
+      "guideText": "Sit down at the end of a flat bench with a dumbbell in both arms using a neutral grip (palms of the hand facing you).\n\nBend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Make sure that you keep the head up.\n\nThe upper arms with the dumbbells should be close to the torso and aligned with it (lifted up until they are parallel to the floor while the forearms are pointing towards the floor as the hands hold the weights). Tip: There should be a 90-degree angle between the forearms and the upper arm. This is your starting position.\n\nKeeping the upper arms stationary, use the triceps to lift the weight as you exhale until the forearms are parallel to the floor and the whole arm is extended. Like many other arm exercises, only the forearm moves.\n\nAfter a second contraction at the top, slowly lower the dumbbells back to the starting position as you inhale.\n\nRepeat the movement for the prescribed amount of repetitions.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: bilateral seated triceps kickback torso is too upright for almost-horizontal guide.",
+      "reviewNote": "Athlete visibly sits at flat-bench end with grounded feet and torso almost horizontal; two neutral-grip dumbbells extend backward in straight arms close to torso, matching bilateral kickback contraction.",
+      "priorBatch": "docs/research/original-art/corrections-028.json",
+      "references": null,
+      "priorReviewNote": "Bilateral seated kickback torso remains well above the specified almost-horizontal position.",
+      "bounds": {
+        "x": 768,
+        "y": 512,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected original 1536x1024 PNG; actual cell boundaries x=768, y=512. Complete athlete and intended apparatus retained inside this panel without adjacent-cell intrusion.",
+      "ids": [
+        "db-seated-bent-over-two-arm-dumbbell-triceps-extension"
+      ]
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-56940da6-5db7-46be-a468-3d384a6ef6fd.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-c-001.png",
+  "reviewedAt": "2026-10-14T05:03:18.803Z",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

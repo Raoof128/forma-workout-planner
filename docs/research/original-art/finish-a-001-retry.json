@@ -1,0 +1,123 @@
+{
+  "name": "finish-a-001-retry",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-a-001-retry.png",
+  "prompt": "Original FORMA illustrated exercise manual atlas1536x1024 landscape EXACT TWO columns TWO rows, 4cells768x512, pure white background, ample30pixel margins ENTIRE apparatus athlete included. Charcoalgray clothes lime trim, exactly twoarms twolegs one athlete/cell, no labels text borders arrows. Precise poses:\nTOP LEFT two-arm landmine longbar row: small plates on ONE front end Olympic bar, rear end anchored to wallcorner, torso almost parallel floor knees bent, BOTH hands use closegrip stirrup immediately behind plates pulling to lowerchest elbows in. No third hand.\nTOP RIGHT prone dumbbell shoulder rotation ENDPOINT: faceDOWN on FLAT bench, forehead on nonworking left hand folded under head. Right UPPER ARM extends laterally SIDEWAYS at shoulderheight parallelfloor perpendicular torso, right elbow BENT EXACT90DEGREES and right FOREARM runs FORWARD toward head parallel floor, holding one dumbbell; clear horizontal L-shape shoulder-elbow-wrist in overhead threequarter view. Elbow atshoulderheight, no danglingupperarm no straightelbow.\nBOTTOM LEFT flexor incline dumbbell curl: seated with back supported by backrest EXACT45DEGREES abovefloor, elbows beside torso upperarms hang vertically; two supinated hands curl simultaneously midrange. Each hand grips handle very near OUTER dumbbell head farther from torso, leaving more handle and inner plate on body side. Both wrists visibly EXTENDED BACKWARDS about35degrees, knuckles bent back relativeforearms. Offset grip and extendedwrists MUST be obvious, not normal centered neutral wrist curl.\nBOTTOM RIGHT Gorilla chin crunch: FRONT VIEW adult hanging from single straight chinbar UNDERHAND grip BOTH PALMS FACE ATHLETE, thumbs point OUTWARDS, viewer sees palms and inner wrists facing forward/up relativebar, fingers curl from BELOW around bar. Grip slightlywider shoulders, elbows bent nose at barheight, BOTH KNEES CRUNCHED TO CHEST, bent90degrees. All rack feet and athlete visible.\nCRITICAL CORRECTIONS override prior ambiguous geometry: TOP RIGHT choose STARTING position not endpoint: upperarm extends sideways shoulder to elbow horizontally and forearm drops VERTICALLY DOWN from elbow to dumbbell. This makes EXACT RIGHT ANGLE at elbow visible; camera front of bench threequarter. Right upperarm stays shoulderheight. Nonworking hand supports forehead. BOTTOM LEFT backrest is shallow EXACT45degree diagonal, wrist EXTENSION means hand visibly droops backward DOWN below upward forearm, palm remains up. Each hand visibly touching OUTER dumbbellhead instead of center, with empty handle extending toward INNER head. Make distinctive offcenter grip and wrist extension legible. Bottomright preserve valid supinated chincrunch.",
+  "cells": [
+    {
+      "id": "db-bent-over-two-arm-long-bar-row",
+      "title": "Bent Over Two-Arm Long Bar Row",
+      "equipment": "Barbell",
+      "guideText": "Put weight on one of the ends of an Olympic barbell. Make sure that you either place the other end of the barbell in the corner of two walls; or put a heavy object on the ground so the barbell cannot slide backward.\n\nBend forward until your torso is as close to parallel with the floor as you can and keep your knees slightly bent.\n\nNow grab the bar with both arms just behind the plates on the side where the weight was placed and put your other hand on your knee. This will be your starting position.\n\nPull the bar straight up with your elbows in (to maximize back stimulation) until the plates touch your lower chest. Squeeze the back muscles as you lift the weight up and hold for a second at the top of the movement. Breathe out as you lift the weight. Tip: Use a stirrup or double handle cable attachment by hooking it under the end of the bar.\n\nSlowly lower the bar to the starting position getting a nice stretch on the lats. Tip: Do not let the plates touch the floor. To ensure the best range of motion, I recommend using small plates (25-lb ones) as opposed to larger plates (like 35-45lb ones).\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "held",
+      "reviewNote": "Unresolved source contradiction between two-arm grasp and another hand on knee; held despite plausible two-handed row.",
+      "priorBatch": "docs/research/original-art/recovery-a-001.json",
+      "cropReviewNote": "Actual source row separation y420 inspected; full subject and bench kept within panel.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 420
+      },
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Bent_Over_Two-Arm_Long_Bar_Row.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "references": null
+    },
+    {
+      "id": "db-dumbbell-lying-pronation",
+      "title": "Dumbbell Lying Pronation",
+      "equipment": "Dumbbell",
+      "guideText": "Lie on a flat bench face down with one arm holding a dumbbell and the other hand on top of the bench folded so that you can rest your head on it.\n\nBend the elbows of the arm holding the dumbbell so that it creates a 90-degree angle between the upper arm and the forearm.\n\nNow raise the upper arm so that the forearm is perpendicular to the floor and the upper arm is perpendicular to your torso. Tip: The upper arm should be parallel to the floor and also creating a 90-degree angle with your torso. This will be your starting position.\n\nAs you breathe out, externally rotate your forearm so that the dumbbell is lifted forward as you maintain the 90 degree angle bend between the upper arms and the forearm. You will continue this external rotation until the forearm is parallel to the floor. At this point you will hold the contraction for a second.\n\nAs you breathe in, slowly go back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Dumbbell_Lying_Pronation.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Adult lies FACE DOWN on flat bench. Non-working hand under forehead. Working upper arm extends SIDEWAYS horizontally at SHOULDER HEIGHT; elbow bent90 and forearm points forward parallel floor holding ONE dumbbell. Working elbow stays level with shoulder. Prone shoulder external rotation.",
+      "reviewNote": "Prone flat-bench support with nonworking hand under forehead; working upper arm lateral at shoulder height, elbow clearly90degrees and forearm vertical holding one dumbbell matches explicit starting position.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 420
+      },
+      "cropReviewNote": "Actual source row separation y420 inspected; full subject and bench kept within panel.",
+      "priorBatch": "docs/research/original-art/corrections-037.json",
+      "references": null,
+      "ids": [
+        "db-dumbbell-lying-pronation"
+      ]
+    },
+    {
+      "id": "db-flexor-incline-dumbbell-curls",
+      "title": "Flexor Incline Dumbbell Curls",
+      "equipment": "Dumbbell",
+      "guideText": "Hold the dumbbell towards the side farther from you so that you have more weight on the side closest to you. (This can be done for a good effect on all bicep dumbbell exercises). Now do a normal incline dumbbell curl, but keep your wrists as far back as possible so as to neutralize any stress that is placed on them.\n\nSit on an incline bench that is angled at 45-degrees while holding a dumbbell on each hand.\n\nLet your arms hang down on your sides, with the elbows in, and turn the palms of your hands forward with the thumbs pointing away from the body. Tip: You will keep this hand position throughout the movement as there should not be any twisting of the hands as they come up. This will be your starting position.\n\nCurl up the two dumbbells at the same time until your biceps are fully contracted and exhale. Tip: Do not swing the arms or use momentum. Keep a controlled motion at all times. Hold the contracted position for a second at the top.\n\nAs you inhale, slowly go back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Flexor_Incline_Dumbbell_Curls.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Offcentre handles improved, but support remains about60degrees and extended-wrist requirement is not established clearly enough.",
+      "bounds": {
+        "x": 0,
+        "y": 420,
+        "width": 768,
+        "height": 604
+      },
+      "cropReviewNote": "Actual source row separation y420 inspected; full subject and bench kept within panel.",
+      "priorBatch": "docs/research/original-art/recovery-b-003.json",
+      "priorReviewNote": "Hold: flexor incline curl requires approximately 45-degree support, off-centre dumbbell grips and extended wrists; illustration does not establish those distinctions.",
+      "references": null
+    },
+    {
+      "id": "db-gorilla-chin-crunch",
+      "title": "Gorilla Chin/Crunch",
+      "equipment": "Bodyweight",
+      "guideText": "Hang from a chin-up bar using an underhand grip (palms facing you) that is slightly wider than shoulder width.\n\nNow bend your knees at a 90 degree angle so that the calves are parallel to the floor while the thighs remain perpendicular to it. This will be your starting position.\n\nAs you exhale, pull yourself up while crunching your knees up at the same time until your knees are at chest level. You will stop going up as soon as your nose is at the same level as the bar. Tip: When you get to this point you should also be finishing the crunch at the same time.\n\nSlowly start to inhale as you return to the starting position.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Gorilla_Chin_Crunch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Grip changed to visibly overhand; held. Accepted underhand success remains preserved in finish-a-001.",
+      "bounds": {
+        "x": 768,
+        "y": 420,
+        "width": 768,
+        "height": 604
+      },
+      "cropReviewNote": "Actual source row separation y420 inspected; full subject and bench kept within panel.",
+      "priorBatch": "docs/research/original-art/recovery-b-004.json",
+      "priorReviewNote": "Hold: Gorilla chin/crunch needs clearly underhand palms-toward grip; image grip is ambiguous/overhand.",
+      "references": null
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-673e5b0f-7b31-4e78-b414-86e58809fc35.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-a-001-retry.png",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}
