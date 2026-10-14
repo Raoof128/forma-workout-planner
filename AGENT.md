@@ -81,6 +81,13 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 - Desktop/mobile photograph review fixed the phone detail-banner sprite sizing
   as well as the hero and routine crop positions. Recheck rendered crops if the
   background assets or responsive sizing change.
+- Account form mode changes stay on the same route, so route focus alone is
+  insufficient: focus the new registration/recovery/MFA heading and keep it
+  visible. Preserve initial route focus and all account API methods. The focused
+  regressions mock local responses; real-service journeys are separate checks.
+- Prefer Playwright's matching browser builds. Record browser version, worker
+  count and any budget overrides with results. Keep failed-run evidence; do not
+  weaken saved-data assertions or performance bounds to hide cloud timeouts.
 
 ### Raouf: 2026-10-14 — Cloud crash recovery and pushed checkpoints
 

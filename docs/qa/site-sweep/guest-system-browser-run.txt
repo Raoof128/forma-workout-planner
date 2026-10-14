@@ -1,0 +1,956 @@
+
+Running 112 tests using 2 workers
+
+(node:33043) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:33042) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    1 [chromium] › tests/catalog-alias-editor.spec.js:3:1 › removing and restoring a canonical group preserves all historical alias prescriptions (23.2s)
+  ✓    2 [chromium] › tests/accessibility.spec.js:18:5 › accessible overview page and dialogs at 1536px (29.1s)
+  ✓    3 [chromium] › tests/catalog-quality.spec.js:4:1 › library synonyms share one representative and machine filters expose corrected stations (16.3s)
+  ✓    4 [chromium] › tests/accessibility.spec.js:18:5 › accessible routines page and dialogs at 1536px (24.2s)
+  ✓    5 [chromium] › tests/catalog-quality.spec.js:25:1 › new fan-bike guide and routine selection use real cardio units (15.7s)
+  ✓    7 [chromium] › tests/catalog-quality.spec.js:62:1 › a saved duplicate ID keeps its name, measurements and guide after canonicalization (26.2s)
+  ✘    6 [chromium] › tests/accessibility.spec.js:18:5 › accessible library page and dialogs at 1536px (33.7s)
+  ✓    8 [chromium] › tests/catalog.spec.js:3:1 › public guest workspace offers working backups rather than unavailable account forms (8.0s)
+(node:33580) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    9 [chromium] › tests/catalog.spec.js:20:1 › expanded exercise library searches all pages and loads source-attributed full guides (13.7s)
+  ✓   10 [chromium] › tests/accessibility.spec.js:18:5 › accessible workout page and dialogs at 1536px (23.3s)
+  ✓   11 [chromium] › tests/catalog.spec.js:40:1 › cardio templates log time and distance, persist history and allow measurement correction (26.8s)
+  ✓   12 [chromium] › tests/accessibility.spec.js:18:5 › accessible history page and dialogs at 1536px (20.7s)
+  ✓   13 [chromium] › tests/exercise-media.spec.js:16:1 › machine equipment references do not replace free-weight exercise poses (13.8s)
+  ✓   15 [chromium] › tests/exercise-media.spec.js:37:1 › original equipment illustration loads locally and the guide remains keyboard accessible (9.2s)
+  ✓   14 [chromium] › tests/accessibility.spec.js:18:5 › accessible progress page and dialogs at 1536px (19.2s)
+  ✓   16 [chromium] › tests/exercise-media.spec.js:61:1 › failed image delivery does not leave a permanent loader or hide exercise instructions (11.0s)
+  ✓   18 [chromium] › tests/exercise-media.spec.js:74:1 › uneven atlas rows keep the complete EZ-bar curl pose inside the guide (10.5s)
+  ✓   17 [chromium] › tests/accessibility.spec.js:18:5 › accessible settings page and dialogs at 1536px (19.0s)
+  ✓   19 [chromium] › tests/exercise-media.spec.js:93:1 › compact previews keep reviewed crops while guides retain the full original (23.0s)
+  ✓   20 [chromium] › tests/accessibility.spec.js:18:5 › accessible overview page and dialogs at 390px (27.0s)
+  ✓   21 [chromium] › tests/keyboard-focus.spec.js:5:1 › account import wrapper shows keyboard focus around its transparent file input (11.1s)
+  ✓   23 [chromium] › tests/legal.spec.js:35:3 › Privacy Policy is reachable, complete, and accessible (8.9s)
+  ✓   24 [chromium] › tests/legal.spec.js:35:3 › Terms of Use is reachable, complete, and accessible (9.6s)
+  ✓   22 [chromium] › tests/accessibility.spec.js:18:5 › accessible routines page and dialogs at 390px (23.7s)
+  ✓   25 [chromium] › tests/legal.spec.js:70:1 › legal pages open directly by URL and fit a phone screen (9.2s)
+  ✓   27 [chromium] › tests/legal.spec.js:89:3 › Privacy Policy contents moves keyboard focus to the selected section (10.7s)
+  ✓   26 [chromium] › tests/accessibility.spec.js:18:5 › accessible library page and dialogs at 390px (24.2s)
+  ✓   28 [chromium] › tests/legal.spec.js:89:3 › Terms of Use contents moves keyboard focus to the selected section (7.6s)
+  ✓   30 [chromium] › tests/legal.spec.js:106:1 › legal contents avoids animated scrolling when reduced motion is requested (6.2s)
+  ✓   29 [chromium] › tests/accessibility.spec.js:18:5 › accessible workout page and dialogs at 390px (15.4s)
+  ✓   31 [chromium] › tests/navigation-release.spec.js:3:1 › a hash change between first render and listener setup selects the current URL (7.0s)
+  ✓   33 [chromium] › tests/persistence-release.spec.js:21:1 › a valid backup reviewed before another tab saves is rejected without replacing current data (19.0s)
+  ✓   32 [chromium] › tests/accessibility.spec.js:18:5 › accessible history page and dialogs at 390px (35.4s)
+  ✘   34 [chromium] › tests/persistence-release.spec.js:62:1 › corrupt-data recovery refuses to replace a newer restore from another tab (32.3s)
+(node:34860) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   35 [chromium] › tests/accessibility.spec.js:18:5 › accessible progress page and dialogs at 390px (19.3s)
+  ✓   37 [chromium] › tests/accessibility.spec.js:18:5 › accessible settings page and dialogs at 390px (14.9s)
+  ✓   36 [chromium] › tests/persistence-release.spec.js:126:1 › the latest selected backup keeps its preview when an earlier file read finishes later (18.9s)
+  ✓   38 [chromium] › tests/persistence.spec.js:5:1 › rejected Web Locks keep the app usable without unhandled errors (12.7s)
+  ✓   39 [chromium] › tests/persistence-release.spec.js:177:1 › a late invalid import cannot clear the latest valid backup or add its error (14.5s)
+  ✓   40 [chromium] › tests/persistence.spec.js:30:1 › missing secure-context UUID and locks still permit temporary routines and workouts (14.6s)
+  ✓   42 [chromium] › tests/persistence.spec.js:55:1 › restore after quota recovery preserves temporary edits and saved originals (11.3s)
+  ✓   41 [chromium] › tests/regressions.spec.js:52:1 › concurrent tabs preserve independent edits and merge session fields (24.1s)
+  ✓   43 [chromium] › tests/persistence.spec.js:97:1 › starting stale routine details cannot silently use old prescriptions (17.4s)
+  ✓   44 [chromium] › tests/regressions.spec.js:89:1 › stale routine drafts cannot overwrite newer tab changes (30.5s)
+  ✓   45 [chromium] › tests/persistence.spec.js:129:1 › fractional imported weights can be corrected and a future rest timer can pause (19.1s)
+  ✓   46 [chromium] › tests/regressions.spec.js:111:3 › invalid JSON is preserved and recoverable (20.1s)
+  ✓   48 [chromium] › tests/regressions.spec.js:111:3 › invalid nested shape is preserved and recoverable (17.2s)
+  ✓   49 [chromium] › tests/regressions.spec.js:111:3 › unknown exercise is preserved and recoverable (12.9s)
+  ✓   47 [chromium] › tests/persistence.spec.js:188:1 › repeated concurrent profile and session writes preserve both fields (49.2s)
+  ✓   50 [chromium] › tests/regressions.spec.js:144:1 › denied storage stays usable and accurately reports temporary data (13.7s)
+  ✘   51 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 320px (32.4s)
+(node:35749) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   52 [chromium] › tests/regressions.spec.js:171:1 › rest duration, running deadline and paused state survive routes and reload (36.3s)
+(node:35893) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   53 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 375px (29.8s)
+  ✓   54 [chromium] › tests/regressions.spec.js:200:1 › finish dialog traps keyboard focus and does not reset it on timer ticks (20.8s)
+  ✓   56 [chromium] › tests/regressions.spec.js:229:1 › mobile drawer keeps hidden controls out of tab order and traps open navigation (10.3s)
+  ✓   55 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 390px (22.9s)
+  ✓   57 [chromium] › tests/regressions.spec.js:261:1 › dirty routine changes are retained and duration and prescriptions are preserved (19.1s)
+  ✓   58 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 540px (18.7s)
+  ✓   59 [chromium] › tests/regressions.spec.js:305:1 › hero names the active routine and starting another asks which session to keep (21.4s)
+  ✘   60 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 768px (39.9s)
+(node:36339) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   61 [chromium] › tests/regressions.spec.js:322:1 › maximum length title keeps its start button inside the hero (44.0s)
+(node:36492) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   62 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 1024px (31.5s)
+(node:36633) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   63 [chromium] › tests/regressions.spec.js:342:1 › weekly bars use actual counts and eight progress bars fit 320px (16.8s)
+  ✓   65 [chromium] › tests/regressions.spec.js:376:1 › backup validation and export/import round trip preserve data (14.0s)
+  ✓   64 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 1440px (27.8s)
+  ✓   66 [chromium] › tests/regressions.spec.js:411:1 › history correction and deletion recalculate progress; one rep uses actual load (14.9s)
+  ✓   68 [chromium] › tests/regressions.spec.js:442:1 › hash navigation supports bookmarks and browser Back (8.8s)
+  ✓   67 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 1536px (20.7s)
+  ✓   69 [chromium] › tests/regressions.spec.js:455:1 › finishing in one tab and updating preferences in another preserves both saves (20.8s)
+  ✘   70 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 1920px (34.4s)
+(node:37247) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   72 [chromium] › tests/responsive.spec.js:130:1 › short landscape drawer can reach settings and return focus (7.2s)
+  ✘   71 [chromium] › tests/regressions.spec.js:481:1 › mobile rest controls stay reachable and expose instructions during logging (34.3s)
+(node:37455) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   73 [chromium] › tests/responsive.spec.js:142:1 › routine picker explains no matches and empty overview offers creation (14.9s)
+  ✓   75 [chromium] › tests/responsive.spec.js:156:1 › local fonts load without a third-party font service and motion preference is respected (6.8s)
+  ✓   76 [chromium] › tests/responsive.spec.js:182:1 › history stays chronological after an unordered backup (11.6s)
+  ✓   77 [chromium] › tests/responsive.spec.js:201:1 › imported timestamps with mixed precision sort by time (10.8s)
+  ✘   74 [chromium] › tests/regressions.spec.js:526:1 › fast typing persists complete values and a valid backup restores from recovery (34.3s)
+(node:37780) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   78 [chromium] › tests/security-release.spec.js:13:1 › malformed import reports failure and leaves the current workspace untouched (24.0s)
+  ✓   80 [chromium] › tests/security-release.spec.js:35:1 › dangerous imported text stays literal and application assets make no external requests (22.9s)
+  ✓   79 [chromium] › tests/regressions.spec.js:560:1 › a storage read failure preserves the current session for export (27.0s)
+  ✘   81 [chromium] › tests/security-release.spec.js:117:1 › export failure is surfaced to the user (36.1s)
+(node:38098) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   82 [chromium] › tests/regressions.spec.js:597:1 › recovery distinguishes an invalid backup from a failed storage write (36.9s)
+(node:38270) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   83 [chromium] › tests/ui-controls.spec.js:22:1 › calendar navigation selects weeks and schedule saves only after confirmation (30.3s)
+  ✘   84 [chromium] › tests/ui-coverage-gaps.spec.js:45:1 › skip link, desktop brand, profile shortcut and active session navigation reach their targets (31.4s)
+(node:38474) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   85 [chromium] › tests/ui-controls.spec.js:94:1 › routine prescriptions reorder and delete confirmation preserves or removes the selected routine (27.4s)
+  ✓   86 [chromium] › tests/ui-coverage-gaps.spec.js:101:1 › preferred next routine updates the overview start target and creates that active session (22.3s)
+  ✓   87 [chromium] › tests/ui-controls.spec.js:175:1 › dirty routine editor keeps drafts on cancel and discards only after confirmation (22.2s)
+  ✓   88 [chromium] › tests/ui-coverage-gaps.spec.js:153:1 › schedule opens from its overview banner and a clean close leaves the schedule unchanged (16.2s)
+  ✓   89 [chromium] › tests/ui-controls.spec.js:207:1 › library search, muscle and equipment filters compose and guide closes with keyboard (20.6s)
+  ✓   90 [chromium] › tests/ui-coverage-gaps.spec.js:177:1 › routine editor closes a clean draft directly and keeps invalid submissions open (22.5s)
+  ✓   91 [chromium] › tests/ui-controls.spec.js:255:1 › profile name and weekly goal enforce their UI bounds and persist selected targets (15.2s)
+  ✘   92 [chromium] › tests/ui-coverage-gaps.spec.js:212:1 › history editor retains notes on keep, rejects removing every completed set, and discards without saving (37.8s)
+(node:39003) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   93 [chromium] › tests/ui-controls.spec.js:283:1 › Settings backup restore can be cancelled or confirmed and changes persisted data (33.5s)
+(node:39077) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   95 [chromium] › tests/ui-controls.spec.js:322:1 › recovery reset confirmation preserves the corrupt original until a confirmed reset (23.0s)
+  ✘   94 [chromium] › tests/ui-coverage-gaps.spec.js:259:1 › empty overview, workout, history and progress calls to action start the default routine (34.5s)
+(node:39329) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   96 [chromium] › tests/ui-controls.spec.js:366:1 › navigation handles unknown hashes, forward and Back with page focus and title updates (11.4s)
+  ✓   97 [chromium] › tests/ui-coverage-gaps.spec.js:301:1 › keeping a history workout after opening deletion leaves its details and saved data intact (22.4s)
+  ✘   98 [chromium] › tests/ui-controls.spec.js:394:1 › mobile navigation and shared guide dialog support focus return and keyboard trapping at 375px (35.7s)
+(node:39632) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   99 [chromium] › tests/ui-coverage-gaps.spec.js:331:1 › routine detail closes cleanly and workout Back returns to overview with the session active (35.9s)
+(node:39768) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  100 [chromium] › tests/ui-controls.spec.js:446:1 › error fallback downloads saved data, reports denied storage and reloads the workspace (29.1s)
+(node:39912) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  101 [chromium] › tests/ui-coverage-gaps.spec.js:377:1 › history detail closes by button and backdrop, restores row focus, and stays open for inside clicks (15.1s)
+  ✓  103 [chromium] › tests/workout-release.spec.js:42:1 › set validation, completion undo, added sets, finish cancel and save preserve exact data (26.4s)
+  ✘  102 [chromium] › tests/workflows.spec.js:3:1 › personal training workflow persists routines, sessions and calculated progress (34.7s)
+  ✓  104 [chromium] › tests/workout-release.spec.js:154:1 › empty finish is blocked and discard can be canceled or confirmed (16.7s)
+(node:40167) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  105 [chromium] › tests/workout-release.spec.js:188:1 › routine switch can resume, cancel, or replace an active session (41.9s)
+(node:40402) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  106 [chromium] › tests/workflows.spec.js:161:1 › mobile navigation, modal and active workout fit a phone (32.6s)
+  ✘  107 [chromium] › tests/workout-release.spec.js:240:1 › 60, 90, and 120 second timers persist their deadlines and expiry clears timer state (17.6s)
+(node:40554) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  108 [chromium] › tests/workout-release.spec.js:287:1 › real-time rest timer smoke decrements and survives a reload (1.4m)
+(node:40778) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  109 [chromium] › tests/workout-release.spec.js:306:1 › bodyweight logging counts completed sets with zero external-load volume and survives reload (19.0s)
+  ✓  110 [chromium] › tests/workout-release.spec.js:375:1 › history editor discard keeps persisted data unchanged and stale edits are rejected (21.3s)
+  ✘  111 [chromium] › tests/workout-release.spec.js:442:1 › 2,000 completed workouts render correct aggregate progress within a practical bound (11.5s)
+(node:41084) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  112 [chromium] › tests/workout-release.spec.js:492:1 › progress verifies 80 kg × 5 rounding, includes 12 reps, and excludes 13 (1.1m)
+
+
+  1) [chromium] › tests/accessibility.spec.js:18:5 › accessible library page and dialogs at 1536px ─
+
+    Test timeout of 30000ms exceeded.
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/accessibility-accessible-library-page-and-dialogs-at-1536px-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/accessibility-accessible-library-page-and-dialogs-at-1536px-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/accessibility-accessible-library-page-and-dialogs-at-1536px-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/accessibility-accessible-library-page-and-dialogs-at-1536px-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/persistence-release.spec.js:62:1 › corrupt-data recovery refuses to replace a newer restore from another tab 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.goto: net::ERR_ABORTED; maybe frame was detached?
+    Call log:
+      - navigating to "http://127.0.0.1:5173/", waiting until "load"
+
+
+      103 |
+      104 |   const other = await context.newPage();
+    > 105 |   await other.goto("/");
+          |               ^
+      106 |   await expect(
+      107 |     other.getByRole("heading", { name: "Your saved data needs attention." }),
+      108 |   ).toBeVisible();
+        at /workspace/forma-workout-planner/tests/persistence-release.spec.js:105:15
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/persistence-release-corrup-7ef10-er-restore-from-another-tab-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/persistence-release-corrup-7ef10-er-restore-from-another-tab-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/persistence-release-corrup-7ef10-er-restore-from-another-tab-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/persistence-release-corrup-7ef10-er-restore-from-another-tab-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/regressions.spec.js:171:1 › rest duration, running deadline and paused state survive routes and reload 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.evaluate: Test timeout of 30000ms exceeded.
+
+      39 | }
+      40 | async function stored(page) {
+    > 41 |   return page.evaluate(() => JSON.parse(localStorage.getItem("forma-v1")));
+         |               ^
+      42 | }
+      43 | async function nav(page, name) {
+      44 |   await page.getByRole("button", { name, exact: true }).click();
+        at stored (/workspace/forma-workout-planner/tests/regressions.spec.js:41:15)
+        at /workspace/forma-workout-planner/tests/regressions.spec.js:192:17
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/regressions-rest-duration--dbf41-e-survive-routes-and-reload-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/regressions-rest-duration--dbf41-e-survive-routes-and-reload-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/regressions-rest-duration--dbf41-e-survive-routes-and-reload-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/regressions-rest-duration--dbf41-e-survive-routes-and-reload-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/regressions.spec.js:322:1 › maximum length title keeps its start button inside the hero 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.reload: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for navigation until "load"
+        - navigated to "http://localhost:5173/#overview"
+
+
+      36 |   );
+      37 |   await page.goto(`${origin}/#${hash}`);
+    > 38 |   await page.reload();
+         |              ^
+      39 | }
+      40 | async function stored(page) {
+      41 |   return page.evaluate(() => JSON.parse(localStorage.getItem("forma-v1")));
+        at seed (/workspace/forma-workout-planner/tests/regressions.spec.js:38:14)
+        at /workspace/forma-workout-planner/tests/regressions.spec.js:327:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/regressions-maximum-length-091df-tart-button-inside-the-hero-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/regressions-maximum-length-091df-tart-button-inside-the-hero-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/regressions-maximum-length-091df-tart-button-inside-the-hero-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/regressions-maximum-length-091df-tart-button-inside-the-hero-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › tests/regressions.spec.js:481:1 › mobile rest controls stay reachable and expose instructions during logging 
+
+    Test timeout of 30000ms exceeded.
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/regressions-mobile-rest-co-6a245-instructions-during-logging-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/regressions-mobile-rest-co-6a245-instructions-during-logging-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/regressions-mobile-rest-co-6a245-instructions-during-logging-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/regressions-mobile-rest-co-6a245-instructions-during-logging-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [chromium] › tests/regressions.spec.js:526:1 › fast typing persists complete values and a valid backup restores from recovery 
+
+    Test timeout of 30000ms exceeded.
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/regressions-fast-typing-pe-c03f0-ckup-restores-from-recovery-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/regressions-fast-typing-pe-c03f0-ckup-restores-from-recovery-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/regressions-fast-typing-pe-c03f0-ckup-restores-from-recovery-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/regressions-fast-typing-pe-c03f0-ckup-restores-from-recovery-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [chromium] › tests/regressions.spec.js:597:1 › recovery distinguishes an invalid backup from a failed storage write 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.setInputFiles: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('Restore recovery backup')
+
+
+      602 |     page.getByRole("heading", { name: "Your saved data needs attention." }),
+      603 |   ).toBeVisible();
+    > 604 |   await page.getByLabel("Restore recovery backup").setInputFiles({
+          |   ^
+      605 |     name: "invalid.json",
+      606 |     mimeType: "application/json",
+      607 |     buffer: Buffer.from("{}"),
+        at /workspace/forma-workout-planner/tests/regressions.spec.js:604:3
+
+    Error Context: work/site-sweep-final-guest-results/regressions-recovery-disti-1723b-from-a-failed-storage-write-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/regressions-recovery-disti-1723b-from-a-failed-storage-write-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/regressions-recovery-disti-1723b-from-a-failed-storage-write-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 320px 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.evaluate: Test timeout of 30000ms exceeded.
+
+       at helpers.js:11
+
+       9 |   );
+      10 | export async function settlePage(page) {
+    > 11 |   await page.evaluate(async () => {
+         |              ^
+      12 |     await document.fonts.ready;
+      13 |     await Promise.all(
+      14 |       document
+        at settlePage (/workspace/forma-workout-planner/tests/helpers.js:11:14)
+        at route (/workspace/forma-workout-planner/tests/responsive.spec.js:56:9)
+        at /workspace/forma-workout-planner/tests/responsive.spec.js:122:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/responsive-all-screens-and-99ecb-in-maximum-content-at-320px-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/responsive-all-screens-and-99ecb-in-maximum-content-at-320px-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/responsive-all-screens-and-99ecb-in-maximum-content-at-320px-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/responsive-all-screens-and-99ecb-in-maximum-content-at-320px-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 768px 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.goto: Test timeout of 30000ms exceeded.
+    Call log:
+      - navigating to "http://localhost:5173/#progress", waiting until "load"
+
+
+      52 | }
+      53 | async function route(page, name) {
+    > 54 |   await page.goto(`${origin}/#${name}`);
+         |              ^
+      55 |   await expect(page.locator("main")).toHaveAttribute("data-page", name);
+      56 |   await settlePage(page);
+      57 | }
+        at route (/workspace/forma-workout-planner/tests/responsive.spec.js:54:14)
+        at /workspace/forma-workout-planner/tests/responsive.spec.js:94:13
+
+    Error Context: work/site-sweep-final-guest-results/responsive-all-screens-and-14567-in-maximum-content-at-768px-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/responsive-all-screens-and-14567-in-maximum-content-at-768px-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/responsive-all-screens-and-14567-in-maximum-content-at-768px-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 1024px 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.evaluate: Test timeout of 30000ms exceeded.
+
+       at helpers.js:11
+
+       9 |   );
+      10 | export async function settlePage(page) {
+    > 11 |   await page.evaluate(async () => {
+         |              ^
+      12 |     await document.fonts.ready;
+      13 |     await Promise.all(
+      14 |       document
+        at settlePage (/workspace/forma-workout-planner/tests/helpers.js:11:14)
+        at route (/workspace/forma-workout-planner/tests/responsive.spec.js:56:9)
+        at /workspace/forma-workout-planner/tests/responsive.spec.js:94:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/responsive-all-screens-and-87abc-n-maximum-content-at-1024px-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/responsive-all-screens-and-87abc-n-maximum-content-at-1024px-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/responsive-all-screens-and-87abc-n-maximum-content-at-1024px-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/responsive-all-screens-and-87abc-n-maximum-content-at-1024px-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  11) [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 1920px 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.evaluate: Target page, context or browser has been closed
+
+      57 | }
+      58 | async function fit(page, label) {
+    > 59 |   const overflow = await page.evaluate(() => {
+         |                               ^
+      60 |     const nodes = [
+      61 |       document.documentElement,
+      62 |       ...document.querySelectorAll(
+        at fit (/workspace/forma-workout-planner/tests/responsive.spec.js:59:31)
+        at /workspace/forma-workout-planner/tests/responsive.spec.js:119:11
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/responsive-all-screens-and-10e2c-n-maximum-content-at-1920px-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/responsive-all-screens-and-10e2c-n-maximum-content-at-1920px-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/responsive-all-screens-and-10e2c-n-maximum-content-at-1920px-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/responsive-all-screens-and-10e2c-n-maximum-content-at-1920px-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  12) [chromium] › tests/security-release.spec.js:117:1 › export failure is surfaced to the user ───
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Export my data', exact: true })
+        - locator resolved to <button type="button" class="button secondary ">…</button>
+      - attempting click action
+        - waiting for element to be visible, enabled and stable
+
+
+      127 |   await page
+      128 |     .getByRole("button", { name: "Export my data", exact: true })
+    > 129 |     .click();
+          |      ^
+      130 |   await expect(page.getByRole("alert")).toHaveText(
+      131 |     "The backup download could not start. Try again.",
+      132 |   );
+        at /workspace/forma-workout-planner/tests/security-release.spec.js:129:6
+
+    Error Context: work/site-sweep-final-guest-results/security-release-export-failure-is-surfaced-to-the-user-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/security-release-export-failure-is-surfaced-to-the-user-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/security-release-export-failure-is-surfaced-to-the-user-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  13) [chromium] › tests/ui-controls.spec.js:283:1 › Settings backup restore can be cancelled or confirmed and changes persisted data 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Cancel' })
+        - locator resolved to <button type="button" class="button secondary ">Cancel</button>
+      - attempting click action
+        - waiting for element to be visible, enabled and stable
+
+
+      308 |       "Restore this backup?",
+      309 |     );
+    > 310 |     await page.getByRole("button", { name: "Cancel" }).click();
+          |                                                        ^
+      311 |     expect((await stored(page)).profile.name).toBe(original.profile.name);
+      312 |
+      313 |     await page.getByLabel("Import backup").setInputFiles(file);
+        at /workspace/forma-workout-planner/tests/ui-controls.spec.js:310:56
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/ui-controls-Settings-backu-974af--and-changes-persisted-data-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/ui-controls-Settings-backu-974af--and-changes-persisted-data-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/ui-controls-Settings-backu-974af--and-changes-persisted-data-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/ui-controls-Settings-backu-974af--and-changes-persisted-data-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  14) [chromium] › tests/ui-controls.spec.js:394:1 › mobile navigation and shared guide dialog support focus return and keyboard trapping at 375px 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator: getByRole('button', { name: 'Toggle navigation' })
+    Expected: "false"
+    Error: Test timeout of 30000ms exceeded.
+
+    Call log:
+      - Expect "toHaveAttribute" getByRole('button', { name: 'Toggle navigation' }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'Toggle navigation' })
+      - Test timeout of 30000ms exceeded.
+
+
+      440 |     await page.keyboard.press("Enter");
+      441 |     await expect(page.locator("main")).toHaveAttribute("data-page", "overview");
+    > 442 |     await expect(toggle).toHaveAttribute("aria-expanded", "false");
+          |                          ^
+      443 |   },
+      444 | );
+      445 |
+        at /workspace/forma-workout-planner/tests/ui-controls.spec.js:442:26
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/ui-controls-mobile-navigat-d4cf3--keyboard-trapping-at-375px-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/ui-controls-mobile-navigat-d4cf3--keyboard-trapping-at-375px-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/ui-controls-mobile-navigat-d4cf3--keyboard-trapping-at-375px-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/ui-controls-mobile-navigat-d4cf3--keyboard-trapping-at-375px-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  15) [chromium] › tests/ui-controls.spec.js:446:1 › error fallback downloads saved data, reports denied storage and reloads the workspace 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Let’s get your workspace back.' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'Let’s get your workspace back.' }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Let’s get your workspace back.' })
+
+
+      486 |     await expect(
+      487 |       page.getByRole("heading", { name: "Let’s get your workspace back." }),
+    > 488 |     ).toBeVisible();
+          |       ^
+      489 |
+      490 |     await page.evaluate(() => {
+      491 |       Storage.prototype.getItem = function () {
+        at /workspace/forma-workout-planner/tests/ui-controls.spec.js:488:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/ui-controls-error-fallback-7498a-e-and-reloads-the-workspace-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/ui-controls-error-fallback-7498a-e-and-reloads-the-workspace-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/ui-controls-error-fallback-7498a-e-and-reloads-the-workspace-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/ui-controls-error-fallback-7498a-e-and-reloads-the-workspace-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  16) [chromium] › tests/ui-coverage-gaps.spec.js:45:1 › skip link, desktop brand, profile shortcut and active session navigation reach their targets 
+
+    Test timeout of 30000ms exceeded.
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/ui-coverage-gaps-skip-link-e17a9-igation-reach-their-targets-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/ui-coverage-gaps-skip-link-e17a9-igation-reach-their-targets-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/ui-coverage-gaps-skip-link-e17a9-igation-reach-their-targets-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/ui-coverage-gaps-skip-link-e17a9-igation-reach-their-targets-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  17) [chromium] › tests/ui-coverage-gaps.spec.js:212:1 › history editor retains notes on keep, rejects removing every completed set, and discards without saving 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.uncheck: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('checkbox').nth(7)
+        - locator resolved to <input checked type="checkbox" aria-label="Keep Dumbbell shoulder press set 2"/>
+      - attempting click action
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+
+
+      239 |
+      240 |     for (const checkbox of await page.getByRole("checkbox").all()) {
+    > 241 |       await checkbox.uncheck();
+          |                      ^
+      242 |     }
+      243 |     await page.getByRole("button", { name: "Save corrections" }).click();
+      244 |     await expect(page.getByRole("alert")).toContainText(
+        at /workspace/forma-workout-planner/tests/ui-coverage-gaps.spec.js:241:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/ui-coverage-gaps-history-e-d1f93-and-discards-without-saving-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/ui-coverage-gaps-history-e-d1f93-and-discards-without-saving-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/ui-coverage-gaps-history-e-d1f93-and-discards-without-saving-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/ui-coverage-gaps-history-e-d1f93-and-discards-without-saving-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  18) [chromium] › tests/ui-coverage-gaps.spec.js:259:1 › empty overview, workout, history and progress calls to action start the default routine 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.goto: Test timeout of 30000ms exceeded.
+    Call log:
+      - navigating to "http://localhost:5173/", waiting until "load"
+
+
+       6 |
+       7 | async function seed(page, data, route = "overview") {
+    >  8 |   await page.goto(origin);
+         |              ^
+       9 |   await page.evaluate(
+      10 |     (value) => localStorage.setItem("forma-v1", JSON.stringify(value)),
+      11 |     data,
+        at seed (/workspace/forma-workout-planner/tests/ui-coverage-gaps.spec.js:8:14)
+        at /workspace/forma-workout-planner/tests/ui-coverage-gaps.spec.js:273:13
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/ui-coverage-gaps-empty-ove-7f8fb-n-start-the-default-routine-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/ui-coverage-gaps-empty-ove-7f8fb-n-start-the-default-routine-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/ui-coverage-gaps-empty-ove-7f8fb-n-start-the-default-routine-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/ui-coverage-gaps-empty-ove-7f8fb-n-start-the-default-routine-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  19) [chromium] › tests/ui-coverage-gaps.spec.js:331:1 › routine detail closes cleanly and workout Back returns to overview with the session active 
+
+    Test timeout of 30000ms exceeded.
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/ui-coverage-gaps-routine-d-15aa5-iew-with-the-session-active-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/ui-coverage-gaps-routine-d-15aa5-iew-with-the-session-active-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/ui-coverage-gaps-routine-d-15aa5-iew-with-the-session-active-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/ui-coverage-gaps-routine-d-15aa5-iew-with-the-session-active-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  20) [chromium] › tests/workflows.spec.js:3:1 › personal training workflow persists routines, sessions and calculated progress 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('.timer-value')
+    Expected: "00:00"
+    Error: Test timeout of 30000ms exceeded.
+
+    Call log:
+      - Expect "toHaveText" locator('.timer-value') with timeout 5000ms
+      - waiting for locator('.timer-value')
+      - Test timeout of 30000ms exceeded.
+
+
+       96 |   await page.reload();
+       97 |   await expect(page).toHaveURL(/#workout$/);
+    >  98 |   await expect(page.locator(".timer-value")).toHaveText("00:00");
+          |                                              ^
+       99 |   expect(
+      100 |     await page.evaluate(
+      101 |       () => JSON.parse(localStorage.getItem("forma-v1")).active.restEnd,
+        at /workspace/forma-workout-planner/tests/workflows.spec.js:98:46
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/workflows-personal-trainin-41e7d-ons-and-calculated-progress-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/workflows-personal-trainin-41e7d-ons-and-calculated-progress-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/workflows-personal-trainin-41e7d-ons-and-calculated-progress-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/workflows-personal-trainin-41e7d-ons-and-calculated-progress-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  21) [chromium] › tests/workflows.spec.js:161:1 › mobile navigation, modal and active workout fit a phone 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Complete Barbell bench press set 1', exact: true })
+
+
+      186 |       exact: true,
+      187 |     })
+    > 188 |     .click();
+          |      ^
+      189 |   expect(
+      190 |     await page.evaluate(
+      191 |       () => document.documentElement.scrollWidth <= innerWidth,
+        at /workspace/forma-workout-planner/tests/workflows.spec.js:188:6
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/workflows-mobile-navigatio-e18e9--active-workout-fit-a-phone-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/workflows-mobile-navigatio-e18e9--active-workout-fit-a-phone-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/workflows-mobile-navigatio-e18e9--active-workout-fit-a-phone-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/workflows-mobile-navigatio-e18e9--active-workout-fit-a-phone-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  22) [chromium] › tests/workout-release.spec.js:188:1 › routine switch can resume, cancel, or replace an active session 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.reload: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for navigation until "load"
+        - navigated to "http://127.0.0.1:5173/#overview"
+
+
+      31 |   );
+      32 |   await page.goto(`${origin}/#${hash}`);
+    > 33 |   await page.reload();
+         |              ^
+      34 | }
+      35 | async function stored(page) {
+      36 |   return page.evaluate(() => JSON.parse(localStorage.getItem("forma-v1")));
+        at seed (/workspace/forma-workout-planner/tests/workout-release.spec.js:33:14)
+        at /workspace/forma-workout-planner/tests/workout-release.spec.js:205:3
+
+    Error Context: work/site-sweep-final-guest-results/workout-release-routine-sw-2920e-r-replace-an-active-session-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/workout-release-routine-sw-2920e-r-replace-an-active-session-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/workout-release-routine-sw-2920e-r-replace-an-active-session-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  23) [chromium] › tests/workout-release.spec.js:240:1 › 60, 90, and 120 second timers persist their deadlines and expiry clears timer state 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 1791763274330
+    Received:    1791763274354
+
+      256 |     const active = (await stored(page)).active;
+      257 |     expect(active.restEnd).toBeGreaterThanOrEqual(before + seconds * 1000);
+    > 258 |     expect(active.restEnd).toBeLessThanOrEqual(before + seconds * 1000 + 1000);
+          |                            ^
+      259 |     expect(active.restPaused).toBeNull();
+      260 |     await expect(
+      261 |       page.getByRole("button", { name: `${seconds}s`, exact: true }),
+        at /workspace/forma-workout-planner/tests/workout-release.spec.js:258:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/workout-release-60-90-and--1fc96-d-expiry-clears-timer-state-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/workout-release-60-90-and--1fc96-d-expiry-clears-timer-state-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/workout-release-60-90-and--1fc96-d-expiry-clears-timer-state-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/workout-release-60-90-and--1fc96-d-expiry-clears-timer-state-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  24) [chromium] › tests/workout-release.spec.js:287:1 › real-time rest timer smoke decrements and survives a reload 
+
+    Test timeout of 30000ms exceeded while setting up "page".
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/workout-release-real-time--f719e-ments-and-survives-a-reload-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/workout-release-real-time--f719e-ments-and-survives-a-reload-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/workout-release-real-time--f719e-ments-and-survives-a-reload-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/workout-release-real-time--f719e-ments-and-survives-a-reload-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  25) [chromium] › tests/workout-release.spec.js:442:1 › 2,000 completed workouts render correct aggregate progress within a practical bound 
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 10000
+    Received:   10712
+
+      483 |   ).toHaveText("2000");
+      484 |   await expect(page.locator(".records")).toContainText("Barbell bench press");
+    > 485 |   expect(Date.now() - started).toBeLessThan(10_000);
+          |                                ^
+      486 |   const backupBytes = await page.evaluate(
+      487 |     () => new Blob([localStorage.getItem("forma-v1")]).size,
+      488 |   );
+        at /workspace/forma-workout-planner/tests/workout-release.spec.js:485:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/workout-release-2-000-comp-d09c6-ss-within-a-practical-bound-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-final-guest-results/workout-release-2-000-comp-d09c6-ss-within-a-practical-bound-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/workout-release-2-000-comp-d09c6-ss-within-a-practical-bound-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/workout-release-2-000-comp-d09c6-ss-within-a-practical-bound-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  26) [chromium] › tests/workout-release.spec.js:492:1 › progress verifies 80 kg × 5 rounding, includes 12 reps, and excludes 13 
+
+    Test timeout of 30000ms exceeded.
+
+    Tearing down "context" exceeded the test timeout of 30000ms.
+
+    Error: page.evaluate: Target page, context or browser has been closed
+
+      26 | async function seed(page, data, hash = "overview") {
+      27 |   await page.goto(origin);
+    > 28 |   await page.evaluate(
+         |              ^
+      29 |     (value) => localStorage.setItem("forma-v1", JSON.stringify(value)),
+      30 |     data,
+      31 |   );
+        at seed (/workspace/forma-workout-planner/tests/workout-release.spec.js:28:14)
+        at /workspace/forma-workout-planner/tests/workout-release.spec.js:514:3
+
+    Error Context: work/site-sweep-final-guest-results/workout-release-progress-v-5ad49-des-12-reps-and-excludes-13-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-final-guest-results/workout-release-progress-v-5ad49-des-12-reps-and-excludes-13-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-final-guest-results/workout-release-progress-v-5ad49-des-12-reps-and-excludes-13-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  26 failed
+    [chromium] › tests/accessibility.spec.js:18:5 › accessible library page and dialogs at 1536px ──
+    [chromium] › tests/persistence-release.spec.js:62:1 › corrupt-data recovery refuses to replace a newer restore from another tab 
+    [chromium] › tests/regressions.spec.js:171:1 › rest duration, running deadline and paused state survive routes and reload 
+    [chromium] › tests/regressions.spec.js:322:1 › maximum length title keeps its start button inside the hero 
+    [chromium] › tests/regressions.spec.js:481:1 › mobile rest controls stay reachable and expose instructions during logging 
+    [chromium] › tests/regressions.spec.js:526:1 › fast typing persists complete values and a valid backup restores from recovery 
+    [chromium] › tests/regressions.spec.js:597:1 › recovery distinguishes an invalid backup from a failed storage write 
+    [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 320px 
+    [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 768px 
+    [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 1024px 
+    [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 1920px 
+    [chromium] › tests/security-release.spec.js:117:1 › export failure is surfaced to the user ─────
+    [chromium] › tests/ui-controls.spec.js:283:1 › Settings backup restore can be cancelled or confirmed and changes persisted data 
+    [chromium] › tests/ui-controls.spec.js:394:1 › mobile navigation and shared guide dialog support focus return and keyboard trapping at 375px 
+    [chromium] › tests/ui-controls.spec.js:446:1 › error fallback downloads saved data, reports denied storage and reloads the workspace 
+    [chromium] › tests/ui-coverage-gaps.spec.js:45:1 › skip link, desktop brand, profile shortcut and active session navigation reach their targets 
+    [chromium] › tests/ui-coverage-gaps.spec.js:212:1 › history editor retains notes on keep, rejects removing every completed set, and discards without saving 
+    [chromium] › tests/ui-coverage-gaps.spec.js:259:1 › empty overview, workout, history and progress calls to action start the default routine 
+    [chromium] › tests/ui-coverage-gaps.spec.js:331:1 › routine detail closes cleanly and workout Back returns to overview with the session active 
+    [chromium] › tests/workflows.spec.js:3:1 › personal training workflow persists routines, sessions and calculated progress 
+    [chromium] › tests/workflows.spec.js:161:1 › mobile navigation, modal and active workout fit a phone 
+    [chromium] › tests/workout-release.spec.js:188:1 › routine switch can resume, cancel, or replace an active session 
+    [chromium] › tests/workout-release.spec.js:240:1 › 60, 90, and 120 second timers persist their deadlines and expiry clears timer state 
+    [chromium] › tests/workout-release.spec.js:287:1 › real-time rest timer smoke decrements and survives a reload 
+    [chromium] › tests/workout-release.spec.js:442:1 › 2,000 completed workouts render correct aggregate progress within a practical bound 
+    [chromium] › tests/workout-release.spec.js:492:1 › progress verifies 80 kg × 5 rounding, includes 12 reps, and excludes 13 
+  86 passed (26.1m)

@@ -75,3 +75,20 @@ and test services are stopped. This establishes local behavior, not external
 email delivery or live infrastructure readiness. Twelve account screens were
 captured; a focus/scroll artifact in the mobile registration capture is being
 checked before accepting that image as final visual evidence.
+
+The account form transition check confirmed a keyboard defect, not only a
+screenshot artifact: registration and MFA headings stayed inactive after mode
+changes. Four real-component regressions failed before the repair. The form
+now moves focus to its visible heading on mode changes, including password
+recovery; initial route focus and authentication methods are unchanged. Four
+real-app desktop/mobile checks passed with mocked local API responses. New
+regressions are in `tests/accounts-auth-focus.spec.js`; the existing 18 real
+account-service journeys remain separately recorded.
+
+The system-browser two-worker guest run recorded 86 passed / 26 failed. Most
+were aggregate time limits; the three other failures were a late fallback
+heading, a 24ms clock bracket overshoot and a 10.712s large-history measurement
+against a 10s bound. Those cases are being replayed with the matching bundled
+Chromium and one worker. Accessibility setup now seeds before a single direct
+navigation; timer assertions bracket actual browser timestamps around the click.
+Assertions, ordinary 30s budgets and the 10s performance bound remain intact.

@@ -67,11 +67,11 @@
     {
       "mode": "mobile",
       "screen": "register",
-      "path": null,
+      "path": "docs/qa/site-sweep/accounts/site-sweep-accounts-mobile-register.png",
       "overflow": false,
       "url": "http://127.0.0.1:5175/#account",
       "title": "Account · FORMA",
-      "captureReview": "Rejected: full-page capture retained focus/scroll and painted sticky header mid-page; form transition focus is being checked separately."
+      "captureReview": "New viewport capture after form-focus repair, with registration heading focused and visible; initial full-page focus/scroll artifact rejected."
     },
     {
       "mode": "mobile",

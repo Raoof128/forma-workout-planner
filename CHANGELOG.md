@@ -14,6 +14,9 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   React, Vite, MDN and WCAG documentation. Fixes add compact artwork previews,
   keyboard focus and reduced-motion support for legal navigation, and visible
   account backup-import focus. Exercise counts now use the singular when needed.
+- Registration, recovery and MFA mode changes now focus their visible form
+  heading. Four regressions failed before the correction; desktop/mobile
+  real-app checks pass. Authentication methods and data ownership are unchanged.
 - Original generated hero and routine photography replace images whose
   redistribution terms were undocumented. Sources and prompts are preserved.
   Validation is being completed in [the site review](docs/qa/site-sweep/README.md);

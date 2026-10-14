@@ -250,12 +250,15 @@ test("60, 90, and 120 second timers persist their deadlines and expiry clears ti
     await page
       .getByRole("button", { name: `${seconds}s`, exact: true })
       .click();
+    const after = await page.evaluate(() => Date.now());
     await expect
       .poll(async () => (await stored(page)).active.restSeconds)
       .toBe(seconds);
     const active = (await stored(page)).active;
     expect(active.restEnd).toBeGreaterThanOrEqual(before + seconds * 1000);
-    expect(active.restEnd).toBeLessThanOrEqual(before + seconds * 1000 + 1000);
+    // Bracket the click's actual browser time, rather than assuming the
+    // automation click completes within one second on every machine.
+    expect(active.restEnd).toBeLessThanOrEqual(after + seconds * 1000);
     expect(active.restPaused).toBeNull();
     await expect(
       page.getByRole("button", { name: `${seconds}s`, exact: true }),

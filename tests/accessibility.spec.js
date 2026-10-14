@@ -19,7 +19,6 @@ for (const width of [1536, 390])
       page,
     }) => {
       await page.setViewportSize({ width, height: 1024 });
-      await page.goto("http://localhost:5173");
       const data = structuredClone(initialData);
       data.active = {
         id: "a11y-session",
@@ -40,11 +39,10 @@ for (const width of [1536, 390])
           duration: 60,
         },
       ];
-      await page.evaluate(
+      await page.addInitScript(
         (data) => localStorage.setItem("forma-v1", JSON.stringify(data)),
         data,
       );
-      await page.reload();
       const errors = [];
       page.on("pageerror", (error) => errors.push(error.message));
       async function audit(label) {

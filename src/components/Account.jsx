@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Activity,
   ArrowDownToLine,
@@ -84,6 +84,15 @@ function AuthView({ account, notify, onNavigate }) {
     window.history.replaceState(window.history.state, "", url.href);
   }, [token]);
   const [mode, setMode] = useState(token ? "reset" : "signin");
+  const authTitle = useRef(null);
+  const previousMode = useRef(mode);
+  useEffect(() => {
+    if (previousMode.current === mode) return;
+    previousMode.current = mode;
+    // The route stays the same when its form changes; move focus into that form.
+    authTitle.current?.focus({ preventScroll: true });
+    authTitle.current?.scrollIntoView({ behavior: "instant", block: "center" });
+  }, [mode]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -185,7 +194,9 @@ function AuthView({ account, notify, onNavigate }) {
       </aside>
       <section className="account-auth-card" aria-labelledby="auth-title">
         <div className="account-kicker">FORMA MEMBER ACCESS</div>
-        <h1 id="auth-title">{titles[mode]}</h1>
+        <h1 id="auth-title" ref={authTitle} tabIndex={-1}>
+          {titles[mode]}
+        </h1>
         <p className="account-lede">{subtitles[mode]}</p>
         {account.status === "error" && (
           <p className="account-alert" role="alert">

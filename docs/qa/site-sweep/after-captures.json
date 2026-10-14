@@ -42,7 +42,7 @@
       "width": 1536,
       "height": 1024
     },
-    "screenshot": null,
+    "screenshot": "docs/qa/site-sweep/after/library-desktop.png",
     "title": "Exercise library · FORMA",
     "heading": "GOOD FORM. BETTER SESSIONS.",
     "text": "Workspace\nExercise library\nWednesday 14 October 2026\nKNOW YOUR MOVEMENT\nGOOD FORM. BETTER SESSIONS.\n\nGet to know your next movement. Explore your exercise library.\n\nAll equipment\nBarbell\nDumbbell\nMachine\nCable\nLeg press machine\nKettlebell\nBodyweight\nSeated ab crunch machine\nSpecialty equipment\nFoam roller\nPull-up bar\nAssisted dip / chin station\nResistance band\nMedicine ball\nExercise ball\nBelt squat machine\nBench\nLandmine\nEZ bar\nPec deck machine\nHack squat machine\nShoulder press machine\nIncline bench\nGlute drive machine\nSmith machine\nLeg extension machine\nLeg curl machine\nChest press machine\nBiceps curl machine\nIncline chest press machine\nPreacher curl machine\nLateral raise machine\nPendulum squat machine\nRear delt machine\nRoman chair\nHip abduction machine\nHip adduction machine\nBack extension machine\nRotary torso machine\nFan / air bike\nCardio\nUpper-body ergometer\nRecumbent stepper\nPullover machine\nV-squat machine\nTibialis machine\nGrip machine\n4-way neck machine\nAll activities\nstrength\ncardio\nstretching\nplyometrics\nstrongman\npowerlifting\nolympic weightlifting\nAll muscles\nChest\nBack\nShoulders\nArms\nLegs\nCore\nFull body\nAll exercises\n1414 movements\nBarbell bench press\n\nBarbell\n\nOne-arm dumbbell row\n\nDumbbell\n\nDumbbell shoulder press\n\nDumbbell\n\nLat pulldown\n\nMachine\n\nDumbbell biceps curl\n\nDumbbell\n\nCable triceps pushdown\n\nCable\n\nBarbell back squat\n\nBarbell\n\nRomanian deadlift\n\nBarbell\n\nLeg press\n\nLeg press machine\n\nDumbbell reverse lunge\n\nDumbbell\n\nStanding calf raise\n\nDumbbell\n\nKettlebell goblet squat\n\nKettlebell\n\nPush-up\n\nBodyweight\n\nDumbbell lateral raise\n\nDumbbell\n\nDead bug\n\nBodyweight\n\n1 Leg Box Squat\n\nBodyweight\n\n1-Arm Half-Kneeling Lat Pulldown\n\nBodyweight\n\nHalf-kneeling thoracic rotation\n\nBodyweight\n\n3/4 Sit-Up\n\nBodyweight\n\nSeated machine abdominal crunch\n\nSeated ab crun",
@@ -51,7 +51,7 @@
       "width": 1536
     },
     "errors": [],
-    "captureReview": "Recapture pending explicit visible-image decode; early desktop frame showed paint-incomplete thumbnails."
+    "captureReview": "Accepted after all visible images decoded, loading state cleared and rendering settled; inspected rendered thumbnails."
   },
   {
     "route": "workout",
@@ -239,7 +239,7 @@
       "width": 390,
       "height": 844
     },
-    "screenshot": null,
+    "screenshot": "docs/qa/site-sweep/after/library-mobile.png",
     "title": "Exercise library · FORMA",
     "heading": "GOOD FORM. BETTER SESSIONS.",
     "text": "Workspace\nExercise library\nWednesday 14 October 2026\nKNOW YOUR MOVEMENT\nGOOD FORM. BETTER SESSIONS.\n\nGet to know your next movement. Explore your exercise library.\n\nAll equipment\nBarbell\nDumbbell\nMachine\nCable\nLeg press machine\nKettlebell\nBodyweight\nSeated ab crunch machine\nSpecialty equipment\nFoam roller\nPull-up bar\nAssisted dip / chin station\nResistance band\nMedicine ball\nExercise ball\nBelt squat machine\nBench\nLandmine\nEZ bar\nPec deck machine\nHack squat machine\nShoulder press machine\nIncline bench\nGlute drive machine\nSmith machine\nLeg extension machine\nLeg curl machine\nChest press machine\nBiceps curl machine\nIncline chest press machine\nPreacher curl machine\nLateral raise machine\nPendulum squat machine\nRear delt machine\nRoman chair\nHip abduction machine\nHip adduction machine\nBack extension machine\nRotary torso machine\nFan / air bike\nCardio\nUpper-body ergometer\nRecumbent stepper\nPullover machine\nV-squat machine\nTibialis machine\nGrip machine\n4-way neck machine\nAll activities\nstrength\ncardio\nstretching\nplyometrics\nstrongman\npowerlifting\nolympic weightlifting\nAll muscles\nChest\nBack\nShoulders\nArms\nLegs\nCore\nFull body\nAll exercises\n1414 movements\nBarbell bench press\n\nBarbell\n\nOne-arm dumbbell row\n\nDumbbell\n\nDumbbell shoulder press\n\nDumbbell\n\nLat pulldown\n\nMachine\n\nDumbbell biceps curl\n\nDumbbell\n\nCable triceps pushdown\n\nCable\n\nBarbell back squat\n\nBarbell\n\nRomanian deadlift\n\nBarbell\n\nLeg press\n\nLeg press machine\n\nDumbbell reverse lunge\n\nDumbbell\n\nStanding calf raise\n\nDumbbell\n\nKettlebell goblet squat\n\nKettlebell\n\nPush-up\n\nBodyweight\n\nDumbbell lateral raise\n\nDumbbell\n\nDead bug\n\nBodyweight\n\n1 Leg Box Squat\n\nBodyweight\n\n1-Arm Half-Kneeling Lat Pulldown\n\nBodyweight\n\nHalf-kneeling thoracic rotation\n\nBodyweight\n\n3/4 Sit-Up\n\nBodyweight\n\nSeated machine abdominal crunch\n\nSeated ab crun",
@@ -248,7 +248,7 @@
       "width": 390
     },
     "errors": [],
-    "captureReview": "Recapture pending explicit visible-image decode; early desktop frame showed paint-incomplete thumbnails."
+    "captureReview": "Accepted after all visible images decoded, loading state cleared and rendering settled; inspected rendered thumbnails."
   },
   {
     "route": "workout",

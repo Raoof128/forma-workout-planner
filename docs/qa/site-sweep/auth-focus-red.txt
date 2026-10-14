@@ -1,0 +1,146 @@
+
+Running 4 tests using 1 worker
+
+(node:41813) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 work/auth-mode-focus.spec.js:3:2 › auth mode keyboard focus stays at new form heading at 1280px (10.6s)
+(node:41900) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 work/auth-mode-focus.spec.js:23:2 › MFA transition focuses its new form heading at 1280px (9.3s)
+(node:42055) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 work/auth-mode-focus.spec.js:3:2 › auth mode keyboard focus stays at new form heading at 390px (7.6s)
+(node:42183) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 work/auth-mode-focus.spec.js:23:2 › MFA transition focuses its new form heading at 390px (7.6s)
+
+
+  1) work/auth-mode-focus.spec.js:3:2 › auth mode keyboard focus stays at new form heading at 1280px 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('heading', { name: 'Create your account', exact: true })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('heading', { name: 'Create your account', exact: true }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Create your account', exact: true })
+        9 × locator resolved to <h1 tabindex="-1" id="auth-title">Create your account</h1>
+          - unexpected value "inactive"
+
+
+       8 |   const heading=page.getByRole('heading',{name:'Create your account',exact:true});
+       9 |   await test.info().attach('signup-mode-focus', {body:JSON.stringify(await heading.evaluate(el=>({focused:document.activeElement===el,activeTag:document.activeElement.tagName,activeId:document.activeElement.id,headingTop:el.getBoundingClientRect().top,headingBottom:el.getBoundingClientRect().bottom,viewportHeight:innerHeight}))),contentType:'application/json'});
+    > 10 |   await expect(heading).toBeFocused();
+         |                         ^
+      11 |   const position=await heading.evaluate(el=>({top:el.getBoundingClientRect().top,bottom:el.getBoundingClientRect().bottom,stickyBottom:document.querySelector('.mobile-top').getClientRects().length?document.querySelector('.mobile-top').getBoundingClientRect().bottom:0,height:innerHeight}));
+      12 |   expect(position.top).toBeGreaterThanOrEqual(position.stickyBottom);
+      13 |   expect(position.bottom).toBeLessThanOrEqual(position.height);
+        at /workspace/forma-workout-planner/work/auth-mode-focus.spec.js:10:25
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-auth-focus-red-results/auth-mode-focus-auth-mode--47a97--new-form-heading-at-1280px/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-auth-focus-red-results/auth-mode-focus-auth-mode--47a97--new-form-heading-at-1280px/error-context.md
+
+  2) work/auth-mode-focus.spec.js:23:2 › MFA transition focuses its new form heading at 1280px ─────
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('heading', { name: 'One more step', exact: true })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('heading', { name: 'One more step', exact: true }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'One more step', exact: true })
+        14 × locator resolved to <h1 tabindex="-1" id="auth-title">One more step</h1>
+           - unexpected value "inactive"
+
+
+      30 |   const mfaHeading=page.getByRole('heading',{name:'One more step',exact:true});
+      31 |   await test.info().attach('mfa-mode-focus', {body:JSON.stringify(await mfaHeading.evaluate(el=>({focused:document.activeElement===el,activeTag:document.activeElement.tagName,activeId:document.activeElement.id,headingTop:el.getBoundingClientRect().top,headingBottom:el.getBoundingClientRect().bottom,viewportHeight:innerHeight}))),contentType:'application/json'});
+    > 32 |   await expect(mfaHeading).toBeFocused();
+         |                            ^
+      33 |   await page.keyboard.press('Tab');await expect(page.getByLabel('Authenticator code',{exact:true})).toBeFocused();
+      34 |  });
+      35 | }
+        at /workspace/forma-workout-planner/work/auth-mode-focus.spec.js:32:28
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-auth-focus-red-results/auth-mode-focus-MFA-transi-21630--new-form-heading-at-1280px/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-auth-focus-red-results/auth-mode-focus-MFA-transi-21630--new-form-heading-at-1280px/error-context.md
+
+  3) work/auth-mode-focus.spec.js:3:2 › auth mode keyboard focus stays at new form heading at 390px 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('heading', { name: 'Create your account', exact: true })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('heading', { name: 'Create your account', exact: true }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Create your account', exact: true })
+        13 × locator resolved to <h1 tabindex="-1" id="auth-title">Create your account</h1>
+           - unexpected value "inactive"
+
+
+       8 |   const heading=page.getByRole('heading',{name:'Create your account',exact:true});
+       9 |   await test.info().attach('signup-mode-focus', {body:JSON.stringify(await heading.evaluate(el=>({focused:document.activeElement===el,activeTag:document.activeElement.tagName,activeId:document.activeElement.id,headingTop:el.getBoundingClientRect().top,headingBottom:el.getBoundingClientRect().bottom,viewportHeight:innerHeight}))),contentType:'application/json'});
+    > 10 |   await expect(heading).toBeFocused();
+         |                         ^
+      11 |   const position=await heading.evaluate(el=>({top:el.getBoundingClientRect().top,bottom:el.getBoundingClientRect().bottom,stickyBottom:document.querySelector('.mobile-top').getClientRects().length?document.querySelector('.mobile-top').getBoundingClientRect().bottom:0,height:innerHeight}));
+      12 |   expect(position.top).toBeGreaterThanOrEqual(position.stickyBottom);
+      13 |   expect(position.bottom).toBeLessThanOrEqual(position.height);
+        at /workspace/forma-workout-planner/work/auth-mode-focus.spec.js:10:25
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-auth-focus-red-results/auth-mode-focus-auth-mode--55d3f-t-new-form-heading-at-390px/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-auth-focus-red-results/auth-mode-focus-auth-mode--55d3f-t-new-form-heading-at-390px/error-context.md
+
+  4) work/auth-mode-focus.spec.js:23:2 › MFA transition focuses its new form heading at 390px ──────
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('heading', { name: 'One more step', exact: true })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('heading', { name: 'One more step', exact: true }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'One more step', exact: true })
+        13 × locator resolved to <h1 tabindex="-1" id="auth-title">One more step</h1>
+           - unexpected value "inactive"
+
+
+      30 |   const mfaHeading=page.getByRole('heading',{name:'One more step',exact:true});
+      31 |   await test.info().attach('mfa-mode-focus', {body:JSON.stringify(await mfaHeading.evaluate(el=>({focused:document.activeElement===el,activeTag:document.activeElement.tagName,activeId:document.activeElement.id,headingTop:el.getBoundingClientRect().top,headingBottom:el.getBoundingClientRect().bottom,viewportHeight:innerHeight}))),contentType:'application/json'});
+    > 32 |   await expect(mfaHeading).toBeFocused();
+         |                            ^
+      33 |   await page.keyboard.press('Tab');await expect(page.getByLabel('Authenticator code',{exact:true})).toBeFocused();
+      34 |  });
+      35 | }
+        at /workspace/forma-workout-planner/work/auth-mode-focus.spec.js:32:28
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-auth-focus-red-results/auth-mode-focus-MFA-transi-a40de-s-new-form-heading-at-390px/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-auth-focus-red-results/auth-mode-focus-MFA-transi-a40de-s-new-form-heading-at-390px/error-context.md
+
+  4 failed
+    work/auth-mode-focus.spec.js:3:2 › auth mode keyboard focus stays at new form heading at 1280px 
+    work/auth-mode-focus.spec.js:23:2 › MFA transition focuses its new form heading at 1280px ──────
+    work/auth-mode-focus.spec.js:3:2 › auth mode keyboard focus stays at new form heading at 390px ─
+    work/auth-mode-focus.spec.js:23:2 › MFA transition focuses its new form heading at 390px ───────

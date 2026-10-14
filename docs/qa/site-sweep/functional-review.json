@@ -1,0 +1,201 @@
+{
+  "status": "system_chromium_full_run_complete_aligned_failed_replay_pending",
+  "browser": "Chromium /usr/bin/chromium",
+  "browserPlugin": "not available; existing Playwright suite used",
+  "baseURL": "http://127.0.0.1:5173",
+  "partialRun": {
+    "log": "work/site-sweep-browser-account-mode-partial.txt",
+    "passed": 24,
+    "failed": 2,
+    "interrupted": 1,
+    "notRun": 67,
+    "classification": "Environment invalid: existing manual server inherited account mode instead of explicit guest mode. Stopped by coordinator instruction.",
+    "failures": [
+      {
+        "test": "accessible pages and dialogs at 1536px",
+        "file": "tests/accessibility.spec.js:8",
+        "reason": "Aggregate 30000ms timeout during page.evaluate overflow check after multiple route/axe audits; meaningful workout DOM retained.",
+        "evidence": "work/site-sweep-partial-artifacts/accessibility-accessible-pages-and-dialogs-at-1536px-chromium/error-context.md"
+      },
+      {
+        "test": "public guest workspace offers working backups rather than unavailable account forms",
+        "file": "tests/catalog.spec.js:3",
+        "reason": "Expected Your local workspace heading absent; Welcome back sign-in rendered due to confirmed server account mode.",
+        "evidence": "work/site-sweep-partial-artifacts/catalog-public-guest-works-5a3b0-n-unavailable-account-forms-chromium/error-context.md"
+      }
+    ]
+  },
+  "productionChanges": false,
+  "accountActions": false,
+  "baseline": {
+    "log": "work/site-sweep-browser-baseline.txt",
+    "passed": 90,
+    "failed": 4,
+    "duration": "13.2m",
+    "failures": [
+      {
+        "test": "accessible pages and dialogs at 1536px",
+        "classification": "aggregate30s budget exceeded; split independent route/viewport audits preserving coverage"
+      },
+      {
+        "test": "dirty routine changes are retained and duration and prescriptions are preserved",
+        "classification": "stale test attempts disabled Move up after position-preserving reselect; corrected down reorder and position assertion"
+      },
+      {
+        "test": "personal training workflow persists routines, sessions and calculated progress",
+        "classification": "aggregate30s timeout; watcher-triggered reload interference identified by coordinator; default budget retained pending retest"
+      },
+      {
+        "test": "empty finish is blocked; discard can be canceled or confirmed; routine switch can resume, cancel, or replace",
+        "classification": "aggregate30s timeout; split independent seeded scenarios retaining all assertions"
+      }
+    ],
+    "evidenceDirectory": "work/site-sweep-baseline-artifacts"
+  },
+  "diagnostic": {
+    "log": "work/site-sweep-targeted-diagnosis.txt",
+    "passed": 0,
+    "failed": 3,
+    "evidenceDirectory": "work/site-sweep-diagnosis-artifacts",
+    "classification": "Concurrent generated trace HTML caused Vite repeated reloads; coordinator fixing watcher ignore before final verification"
+  },
+  "testChanges": [
+    "tests/accessibility.spec.js:14 independent route/viewport audits preserving dialogs,axe,overflow,screenshots",
+    "tests/regressions.spec.js:assert restored first position; valid down reorder and persistedindex1",
+    "tests/workout-release.spec.js:split independent discard and switch setups"
+  ],
+  "targetedRepairs": {
+    "log": "work/site-sweep-targeted-repairs.txt",
+    "passed": 5,
+    "failed": 6,
+    "interrupted": 1,
+    "notRun": 6,
+    "evidenceDirectory": "work/site-sweep-targeted-results",
+    "classification": "Stopped by coordinator under simultaneous browser/preview-export load; all failures30s timeout, no assertion/axe failures. Final isolated suite pending."
+  },
+  "budgetsIncreased": false,
+  "finalSystemChromium": {
+    "log": "work/site-sweep-final-guest.txt",
+    "artifacts": "work/site-sweep-final-guest-results",
+    "exitCode": 1,
+    "passed": 86,
+    "failed": 26,
+    "duration": "26.1m",
+    "classification": {
+      "aggregateTestTimeouts": 23,
+      "timerClickLatencyBound": 1,
+      "renderPerformance10000msBound": 1,
+      "fallbackHeading5000msVisibility": 1
+    },
+    "errors": [
+      {
+        "evidence": "work/site-sweep-final-guest-results/workout-release-2-000-comp-d09c6-ss-within-a-practical-bound-chromium/error-context.md",
+        "error": "Error: expect(received).toBeLessThan(expected)\n\nExpected: < 10000\nReceived:   10712"
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/responsive-all-screens-and-14567-in-maximum-content-at-768px-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/ui-coverage-gaps-history-e-d1f93-and-discards-without-saving-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/regressions-rest-duration--dbf41-e-survive-routes-and-reload-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/persistence-release-corrup-7ef10-er-restore-from-another-tab-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/ui-controls-mobile-navigat-d4cf3--keyboard-trapping-at-375px-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/workout-release-60-90-and--1fc96-d-expiry-clears-timer-state-chromium/error-context.md",
+        "error": "Error: expect(received).toBeLessThanOrEqual(expected)\n\nExpected: <= 1791763274330\nReceived:    1791763274354"
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/workflows-mobile-navigatio-e18e9--active-workout-fit-a-phone-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/regressions-fast-typing-pe-c03f0-ckup-restores-from-recovery-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/responsive-all-screens-and-10e2c-n-maximum-content-at-1920px-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/responsive-all-screens-and-87abc-n-maximum-content-at-1024px-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/ui-coverage-gaps-empty-ove-7f8fb-n-start-the-default-routine-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/regressions-mobile-rest-co-6a245-instructions-during-logging-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/accessibility-accessible-library-page-and-dialogs-at-1536px-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/responsive-all-screens-and-99ecb-in-maximum-content-at-320px-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/ui-coverage-gaps-skip-link-e17a9-igation-reach-their-targets-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/ui-controls-Settings-backu-974af--and-changes-persisted-data-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/workout-release-progress-v-5ad49-des-12-reps-and-excludes-13-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/regressions-maximum-length-091df-tart-button-inside-the-hero-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/workflows-personal-trainin-41e7d-ons-and-calculated-progress-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/workout-release-routine-sw-2920e-r-replace-an-active-session-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/ui-coverage-gaps-routine-d-15aa5-iew-with-the-session-active-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/ui-controls-error-fallback-7498a-e-and-reloads-the-workspace-chromium/error-context.md",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('heading', { name: 'Let\u2019s get your workspace back.' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('heading', { name: 'Let\u2019s get your workspace back.' }) with timeout 5000ms\n  - waiting for getByRole('heading', { name: 'Let\u2019s get your workspace back.' })\n"
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/security-release-export-failure-is-surfaced-to-the-user-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/regressions-recovery-disti-1723b-from-a-failed-storage-write-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "evidence": "work/site-sweep-final-guest-results/workout-release-real-time--f719e-ments-and-survives-a-reload-chromium/error-context.md",
+        "error": "Test timeout of 30000ms exceeded while setting up \"page\"."
+      }
+    ]
+  },
+  "additionalTestRepairs": [
+    "accessibility: addInitScript seed before single direct route navigation",
+    "timer: bracket click deadline with actual browser timestamps rather than assumed \u22641s automation action"
+  ]
+}

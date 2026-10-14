@@ -751,7 +751,7 @@
   "ownerGuidePreference": "Replace ambiguous source entries with clearly defined independently authored guides and matching artwork, preserving historical IDs and units.",
   "nextTask": "Whole-site desktop/mobile audit and fixes; all 1414 original exercise illustrations complete. Current site work is not deployed.",
   "siteSweep": {
-    "status": "Fixes and final photograph crops pushed; account18/18 passed; guest112 and production40 validation pending",
+    "status": "All fixes and focus regressions implemented/verified; guest failed-case replay and production40 checks still running/pending",
     "baselineCommit": "0f8bc3c4eaa126bad139afa49662cbb546b9ecd5",
     "evidence": "docs/qa/site-sweep",
     "actualColdLibraryBytes": {
@@ -781,6 +781,12 @@
       "timeoutOverrideSeconds": 120,
       "isolatedServices": true
     },
-    "nextStep": "Wait for final account captures, then run guest112 uncontended and production40 browser checks. Finish report, verify strict artwork gate, commit and push logs."
+    "nextStep": "Finish bundled Chromium single-worker replay of26 cases from system-browser112 run; then production40 checks, final report, strict artwork check and push.",
+    "authFocusRepair": {
+      "expectedRedCases": 4,
+      "greenRealAppCases": 4,
+      "unitsPassed": 62,
+      "description": "Changing registration/reset/MFA form moves focus to its visible heading without altering authentication APIs"
+    }
   }
 }
