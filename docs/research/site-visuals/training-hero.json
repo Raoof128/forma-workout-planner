@@ -10,8 +10,24 @@
   "width": 1536,
   "height": 1024,
   "provenance": "Original AI-assisted fictional-person gym composition. Existing runtime image inspected only for monochrome style, negative-space layout and dimensions; not used as image-generation reference. No third-party source image included in generated asset.",
-  "reviewStatus": "pending_root_review",
+  "reviewStatus": "accepted",
   "reviewNote": "Full clothed supported dumbbell row on right; dark left headline space, complete subject/bench, anatomically plausible limbs and grip. No logos or text.",
   "runtimePath": "public/images/training-hero.webp",
-  "runtimeReplacementStatus": "awaiting_baseline_completion"
+  "runtimeReplacementStatus": "applied_after_completed_baseline",
+  "rootReviewNote": "Root visually inspected original1536x1024 and approved plausible bench support, single-weight grip, modest clothing, monochrome right placement and dark left space; no text.",
+  "previousRuntimeSha256": "312e171aab1d478771b549158860ff4cb13be5806af9856908bafea1280f16bf",
+  "previousRuntimeBytes": 141706,
+  "export": {
+    "path": "assets/site-visuals/training-hero.webp",
+    "format": "WebP",
+    "width": 1536,
+    "height": 1024,
+    "quality": 84,
+    "method": 6,
+    "metadata": "stripped",
+    "resize": "none",
+    "sha256": "b65965485c5e15ae8da35cf190a3124ca964e4b2bafa5e8cbcc2bddd62126ce8",
+    "bytes": 127994,
+    "command": "convert assets/site-visuals/training-hero-original.png -strip -quality 84 -define webp:method=6 assets/site-visuals/training-hero.webp"
+  }
 }

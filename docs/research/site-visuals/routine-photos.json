@@ -1,0 +1,63 @@
+{
+  "name": "routine-photos",
+  "kind": "original_ai_assisted_photo_sprite",
+  "createdAt": "2026-10-14T06:07:54.879Z",
+  "generator": "native image_gen.imagegen",
+  "prompt": "Create an ORIGINAL editorial fitness PHOTO SPRITE for a workout website, landscape1536x1024pixels, exactly THREE EQUAL VERTICAL COLUMNS at x512 and x1024, each separate portrait512x1024 gym photograph. Every column has the same cinematic monochrome BLACKWHITECHARCOAL treatment, dark gym background, realistic natural directional side window light, subtle filmgrain and premium photographic detail. NO graphic borders, gaps, words, logos, labels, arrows, watermark or overlays. One different fully clothed adult per column, anatomically exactly2arms2legs, realistic safe weights/equipment. Each whole adult inside own column with small margins. Keep the important exercise action and hands in CENTRAL vertical zone y300-750 for website card cropping. All attire opaque black/darkgray athletic shirts and full-length training pants/leggings plus gym shoes. Original invented non-identifiable people, no reproductions of known persons or source photographs.\nLEFT COLUMN: adult MAN with short curly hair, seen rear three-quarter at cable lat-pulldown machine, seated upright on proper padded seat with thighs under roller pads, both feet on floor. Two hands hold wide bar IN FRONT of face at upper chest, shoulders down elbows alongside torso, cable rises to high pulley. Fully clothed black short-sleeved tee, long training pants. Capture complete seated figure and compact machine in narrowcolumn, highlight shoulders/hands center, dark background.\nMIDDLE COLUMN: adult WOMAN with tied-back hair, side three-quarter doing controlled BARBELL ROMANIAN DEADLIFT mid hip-hinge: both feet flat hipwidth, knees soft, neutral back, hips pushed rearward, two straight arms hold modest loaded barbell near shins, plates realistic equal sides. Whole figure and bar inside owncolumn, head aligned, dark fitted opaque long-sleeved top and training leggings. Center hinge and grip in middle, dramatic soft side light, gym floor visible.\nRIGHT COLUMN: adult MAN with cropped hair, three-quarter view doing KETTLEBELL GOBLET SQUAT: one kettlebell held by horns close to upper chest with BOTH hands, feet shoulderwidth grounded, torso upright, knees aligned with feet in moderate squat, hips around kneeheight. Dark short-sleeved athletic tee, full-length joggers, shoes. Whole adult inside owncolumn, bell/hands/torso central, no extra bells or floating anatomy. Dark softly blurred gym windows/rack behind.\nThe three photographic scenes are distinct but match each other in lighting, contrast, clothing and premium gym style. Keep each subject contained in own column so CSS can select each512pixel section independently.\n",
+  "sourceGeneratedPath": "/workspace/generated_images/exec-3eec6f1e-226c-4e06-b531-82632a1c66ea.png",
+  "sourceAssetPath": "assets/site-visuals/routine-photos-unmarked.png",
+  "sourceSha256": "14bc1230dc2ca90dfaa87fd04bc67db8fe218d262217f2926bc74fb13f672a56",
+  "width": 1536,
+  "height": 1024,
+  "columns": 3,
+  "rows": 1,
+  "bounds": [
+    {
+      "x": 0,
+      "y": 0,
+      "width": 512,
+      "height": 1024
+    },
+    {
+      "x": 512,
+      "y": 0,
+      "width": 512,
+      "height": 1024
+    },
+    {
+      "x": 1024,
+      "y": 0,
+      "width": 512,
+      "height": 1024
+    }
+  ],
+  "provenance": "Original AI-assisted fictional-person gym photo sprite. Existing runtime image inspected only for monochrome style, CSS three-column layout and dimensions; not used as image-generation reference. No third-party source image included in generated asset.",
+  "reviewStatus": "accepted",
+  "reviewNote": "Original poses and three-column monochrome composition retained; targeted native edit removed middle barbell embossed weight markings. Both source PNGs preserved. Pending root review.",
+  "runtimePath": "public/images/routine-photos.webp",
+  "runtimeReplacementStatus": "applied_after_completed_baseline",
+  "originalGeneration": {
+    "prompt": "Create an ORIGINAL editorial fitness PHOTO SPRITE for a workout website, landscape1536x1024pixels, exactly THREE EQUAL VERTICAL COLUMNS at x512 and x1024, each separate portrait512x1024 gym photograph. Every column has the same cinematic monochrome BLACKWHITECHARCOAL treatment, dark gym background, realistic natural directional side window light, subtle filmgrain and premium photographic detail. NO graphic borders, gaps, words, logos, labels, arrows, watermark or overlays. One different fully clothed adult per column, anatomically exactly2arms2legs, realistic safe weights/equipment. Each whole adult inside own column with small margins. Keep the important exercise action and hands in CENTRAL vertical zone y300-750 for website card cropping. All attire opaque black/darkgray athletic shirts and full-length training pants/leggings plus gym shoes. Original invented non-identifiable people, no reproductions of known persons or source photographs.\nLEFT COLUMN: adult MAN with short curly hair, seen rear three-quarter at cable lat-pulldown machine, seated upright on proper padded seat with thighs under roller pads, both feet on floor. Two hands hold wide bar IN FRONT of face at upper chest, shoulders down elbows alongside torso, cable rises to high pulley. Fully clothed black short-sleeved tee, long training pants. Capture complete seated figure and compact machine in narrowcolumn, highlight shoulders/hands center, dark background.\nMIDDLE COLUMN: adult WOMAN with tied-back hair, side three-quarter doing controlled BARBELL ROMANIAN DEADLIFT mid hip-hinge: both feet flat hipwidth, knees soft, neutral back, hips pushed rearward, two straight arms hold modest loaded barbell near shins, plates realistic equal sides. Whole figure and bar inside owncolumn, head aligned, dark fitted opaque long-sleeved top and training leggings. Center hinge and grip in middle, dramatic soft side light, gym floor visible.\nRIGHT COLUMN: adult MAN with cropped hair, three-quarter view doing KETTLEBELL GOBLET SQUAT: one kettlebell held by horns close to upper chest with BOTH hands, feet shoulderwidth grounded, torso upright, knees aligned with feet in moderate squat, hips around kneeheight. Dark short-sleeved athletic tee, full-length joggers, shoes. Whole adult inside owncolumn, bell/hands/torso central, no extra bells or floating anatomy. Dark softly blurred gym windows/rack behind.\nThe three photographic scenes are distinct but match each other in lighting, contrast, clothing and premium gym style. Keep each subject contained in own column so CSS can select each512pixel section independently.\n",
+    "sourceGeneratedPath": "/workspace/generated_images/exec-cc661b90-c0ab-40fb-bc94-13a4dfb728c6.png",
+    "sourceAssetPath": "assets/site-visuals/routine-photos-original.png",
+    "sourceSha256": "5ff7f9efe07861a79f1b57aeda447d2857c17b8b20196f7167076f29fb315b8e"
+  },
+  "editPrompt": "Edit this original three-column monochrome fitness photo sprite. Preserve all three gym photos, people, clothing, body poses, apparatus, lighting, dimensions and exact equal-column boundaries. Remove ALL numbers, letters, logos and brand markings from BOTH barbell plates in MIDDLE COLUMN so plate faces are plain unmarked dark metal with original texture and round geometry. In particular remove embossed '10' and 'KG' on nearest middle-column plate. No other changes. Keep1536x1024 blackwhite photographic sprite, no added text anywhere.",
+  "editReferencePath": "/workspace/generated_images/exec-cc661b90-c0ab-40fb-bc94-13a4dfb728c6.png",
+  "rootReviewNote": "Root inspected unmarked sprite and approved three plausible clothed figures, cable-pulldown support, neutral-spine barbell hinge, grounded goblet squat and no problematic branding/text.",
+  "previousRuntimeSha256": "3030ce84714bf685b7fa79c27406e047aa55289733697f38231311e677ffafde",
+  "previousRuntimeBytes": 201008,
+  "export": {
+    "path": "assets/site-visuals/routine-photos.webp",
+    "format": "WebP",
+    "width": 1536,
+    "height": 1024,
+    "quality": 84,
+    "method": 6,
+    "metadata": "stripped",
+    "resize": "none",
+    "sha256": "ffef857402907eee61cbc9e65f894b5348609b44a3b92320127a6efa4e4319ee",
+    "bytes": 119526,
+    "command": "convert assets/site-visuals/routine-photos-unmarked.png -strip -quality 84 -define webp:method=6 assets/site-visuals/routine-photos.webp"
+  }
+}
