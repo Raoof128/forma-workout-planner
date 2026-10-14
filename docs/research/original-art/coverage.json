@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1409,
+  "accepted": 1410,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -7931,7 +7931,9 @@
       "name": "Pin Presses",
       "equipment": "Barbell",
       "guideSha256": "dd8f1eb1a61eb173e759826c5f9be7488abc560f2b0f19303e8b337b4b5384ac",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-solo-003-0-0",
+      "reviewNote": "Rested pin-press starting phase: supine athlete on flat bench with feet planted and bent elbows gripping one loaded bar. Bar shaft contacts both horizontal safety rails at their rear portions; full four-post cage/top beams/base supports and complete athlete remain visible. Guide allows pins at selected range of motion."
     },
     {
       "exerciseId": "wger-96f9d74a-7bf4-4ec1-9cd6-c62c13cf7b67",

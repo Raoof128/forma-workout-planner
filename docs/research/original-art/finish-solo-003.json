@@ -1,0 +1,42 @@
+{
+  "name": "finish-solo-003",
+  "columns": 1,
+  "rows": 1,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-solo-003.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-solo-003.png",
+  "prompt": "Create ORIGINAL FORMA exercise-manual illustration, ONE standalone portrait1024x1536 with full adult athlete and COMPLETE FOUR-POST POWER CAGE all top beams and all floor bases visible with generous blank white margins. Charcoalgray equipment/clothes tiny limeaccent whitebackground subtle shadows no words letters logos arrows duplicates. Twoarms twolegs ONE straight loaded BARBELL only. Show PIN BENCH PRESS DEADSTOP RESTED START position. Athlete lies SUPINE FACE UP on FLAT BENCH inside cage; feet firmly planted FLOOR, knees bent, traps/shoulders bench, slight normal back arch. Both hands grip bar shoulderwidth with elbows BENT about90degrees, wrists aligned over elbows. CRITICAL ENGINEERING: TWO LONG STRAIGHT HORIZONTAL SAFETY RAILS left+right run from front upright to rear upright along bench sides at LOWER CHEST HEIGHT about2cm above chest. ONE loaded BARBELL lies ACROSS these two rails at90degrees, shaft visibly RESTING DIRECTLY ON TOP SURFACE OF BOTH RAILS. The rail/bar CONTACT on EACH side is clearly visible with ZERO WHITE GAP. Both plates sit OUTSIDE rails; shaft between plate and hand lies ON rail. Use front-side elevated threequarter perspective to see both contactpoints and both parallel rails. SAFETY RAILS support bar weight; hands maintain grip but DO NOT LIFT BAR. No Jhooks touchingbar, no unsupported floatingbar, no rails positioned far belowbar. Show actual steel rails running continuously between posts, round straight bar touching each rail at crosspoints. Keep bar only one, correct human anatomy and plausible stance. Complete cage top frame above athlete, fullbench legs, both planted feet, both loaded plates and allrackbase fit ENTIRELY in portrait; at least8percentmargin above cage top and beneathbases. Full factual guide: Pin presses remove the eccentric phase of the bench press, developing starting strength. They also allow you to train a desired range of motion.\n\nThe bench should be set up in a power rack. Set the pins to the desired point in your range of motion, whether it just be lockout or an inch off of your chest. The bar should be moved to the pins and prepared for lifting.\n\nBegin by lying on the bench, with the bar directly above the contact point during your regular bench. Tuck your feet underneath you and arch your back. Using the bar to help support your weight, lift your shoulder off the bench and retract them, squeezing the shoulder blades together. Use your feet to drive your traps into the bench. Maintain this tight body position throughout the movement.\n\nYou can take a standard bench grip, or shoulder width to focus on the triceps. The bar, wrist, and elbow should stay in line at all times. Focus on squeezing the bar and trying to pull it apart.\n\nDrive the bar up with as much force as possible. The elbows should be tucked in until lockout.\n\nReturn the bar to the pins, pausing before beginning the next repetition.",
+  "cells": [
+    {
+      "id": "db-pin-presses",
+      "title": "Pin Presses",
+      "equipment": "Barbell",
+      "guideText": "Pin presses remove the eccentric phase of the bench press, developing starting strength. They also allow you to train a desired range of motion.\n\nThe bench should be set up in a power rack. Set the pins to the desired point in your range of motion, whether it just be lockout or an inch off of your chest. The bar should be moved to the pins and prepared for lifting.\n\nBegin by lying on the bench, with the bar directly above the contact point during your regular bench. Tuck your feet underneath you and arch your back. Using the bar to help support your weight, lift your shoulder off the bench and retract them, squeezing the shoulder blades together. Use your feet to drive your traps into the bench. Maintain this tight body position throughout the movement.\n\nYou can take a standard bench grip, or shoulder width to focus on the triceps. The bar, wrist, and elbow should stay in line at all times. Focus on squeezing the bar and trying to pull it apart.\n\nDrive the bar up with as much force as possible. The elbows should be tucked in until lockout.\n\nReturn the bar to the pins, pausing before beginning the next repetition.",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Pin_Presses.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "references": null,
+      "metric": "load_reps",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 1536
+      },
+      "reviewNote": "Rested pin-press starting phase: supine athlete on flat bench with feet planted and bent elbows gripping one loaded bar. Bar shaft contacts both horizontal safety rails at their rear portions; full four-post cage/top beams/base supports and complete athlete remain visible. Guide allows pins at selected range of motion.",
+      "cropReviewNote": "Inspected untouched1024x1536 portrait at full image. Full-image bounds preserve both bar ends, rail contacts, all four rack posts/top beams/bases and both complete planted feet.",
+      "ids": [
+        "db-pin-presses"
+      ]
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-a4b47d1b-0e17-483a-88cf-e4ab25914bbf.png",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

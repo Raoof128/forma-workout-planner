@@ -35005,6 +35005,34 @@
           "height": 512
         }
       }
+    },
+    "forma-original-finish-solo-003-0-0": {
+      "src": "/exercise-media/original/finish-solo-003.png?v=a9d4d8bc3be6",
+      "sha256": "a9d4d8bc3be6d9c69b8798a3d45164f0f638f77c6a90f0c253faa4430d8602e9",
+      "width": 1024,
+      "height": 1536,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Pin Presses",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-solo-003.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 1,
+        "rows": 1,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 1536
+        }
+      }
     }
   },
   "exercises": {
@@ -44870,6 +44898,13 @@
       "reviewStatus": "accepted",
       "reviewNote": "Wall-supported upright march with both palms contacting wall, right knee raised near hip height, bent ankle beneath knee, left supporting foot planted and level pelvis.",
       "guideSha256": "8618943c21b26be78b72b56cd3ee71bcac24da68f99a925b2a6a62f2d6d91cc6"
+    },
+    "db-pin-presses": {
+      "assetId": "forma-original-finish-solo-003-0-0",
+      "caption": "Pin Presses · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Rested pin-press starting phase: supine athlete on flat bench with feet planted and bent elbows gripping one loaded bar. Bar shaft contacts both horizontal safety rails at their rear portions; full four-post cage/top beams/base supports and complete athlete remain visible. Guide allows pins at selected range of motion.",
+      "guideSha256": "dd8f1eb1a61eb173e759826c5f9be7488abc560f2b0f19303e8b337b4b5384ac"
     }
   }
 }

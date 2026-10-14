@@ -20247,6 +20247,34 @@
         }
       }
     },
+    "forma-original-finish-solo-003-0-0": {
+      "src": "/exercise-media/original/finish-solo-003.png?v=a9d4d8bc3be6",
+      "sha256": "a9d4d8bc3be6d9c69b8798a3d45164f0f638f77c6a90f0c253faa4430d8602e9",
+      "width": 1024,
+      "height": 1536,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Pin Presses",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-solo-003.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 1,
+        "rows": 1,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    },
     "forma-original-movements-063-0-0": {
       "src": "/exercise-media/original/movements-063.png?v=1ceb5046dd0c",
       "sha256": "1ceb5046dd0cc6ac24214d51381eb5209a24151013930356a38ac645afeb7db0",
@@ -36548,6 +36576,10 @@
     "wger-a33ba0c7-1680-4e42-a84e-aecc18c5d75b": {
       "assetId": "forma-original-corrections-023-2-1",
       "caption": "Pin OHP · Representative exercise position; follow the guide for the complete movement."
+    },
+    "db-pin-presses": {
+      "assetId": "forma-original-finish-solo-003-0-0",
+      "caption": "Pin Presses · Representative exercise position; follow the guide for the complete movement."
     },
     "wger-96f9d74a-7bf4-4ec1-9cd6-c62c13cf7b67": {
       "assetId": "forma-original-movements-063-0-0",
