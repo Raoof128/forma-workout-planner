@@ -1,0 +1,119 @@
+{
+  "name": "corrections-023",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-023.png",
+  "prompt": "Create ORIGINAL FORMA fitness-manual illustrations: THREE columns TWO rows SIX separate equal panels landscape1536x1024. Fully clothed adult athletes in charcoal-gray with lime accents, white background, no text/logos/watermarks, exact anatomy and physically correct supports. Complete whole athlete and equipment within own panel, generous margins. Show ONE clear working position matching ACTUAL GUIDE. Each panel corrects a rejected image, so explicitly fix the error and avoid reproducing it.\n\nRow 1 column 1: Pause Hack Squats. ERROR TO CORRECT, DO NOT REPEAT: Hold: paused hack squat shown as ordinary unweighted squat, with neither hack apparatus nor barbell hack setup.. Actual guide (follow all support/equipment/grip details): Hack Squats but with a 1-2s pause at the bottom of the movement. This makes sure that there is no more elastic energy stored in the muscles.\n\nRow 1 column 2: Pendelay Rows. ERROR TO CORRECT, DO NOT REPEAT: Hold: Pendlay row requires horizontal back; illustration torso is too upright.. Actual guide (follow all support/equipment/grip details): Back excercise with a barbell with a starting position which is in a bent over position with the back paralell to the ground. The barbell is on the ground at chest level.For the movement grab the barbell at shoulder width grip and pull towards your chest without losing the bent over position and without moving anything but your arms\n\nRow 1 column 3: Peroneals Stretch. ERROR TO CORRECT, DO NOT REPEAT: Hold: peroneal strap stretch does not clearly establish foot inversion instead of ordinary dorsiflexion.. Actual guide (follow all support/equipment/grip details): In a seated position, loop a belt, rope, or band around one foot. This will be your starting position.\n\nWith the leg extended and the heel off of the ground, pull on the belt so that the foot is inverted, with the inside of the foot being pulled towards you. Hold for 10-20 seconds, and then switch sides.\n\nRow 2 column 1: Perpendicular Unilateral Landmine Row. ERROR TO CORRECT, DO NOT REPEAT: Hold: perpendicular unilateral landmine row shows two hands on bar and an along-bar stance.. Actual guide (follow all support/equipment/grip details): Using a landmine attachment with the barbell running at 90 degrees to either side, hinge slightly at the hips and grip the barbell by the plate sleeve. Raise the barbell to chest height, with your upper arm parallel to the floor at the top of the movement.\n\nRow 2 column 2: Pin Bench Press BB. ERROR TO CORRECT, DO NOT REPEAT: Hold: pin bench illustration does not clearly establish horizontal safety-pin support.. Actual guide (follow all support/equipment/grip details): * Set security pins to about the height of your sticking point * Lower the bar, rest on the pins for 1s while holding tension * Move bar up with maximum force\n\nRow 2 column 3: Pin OHP. ERROR TO CORRECT, DO NOT REPEAT: Hold: pin overhead press depicts unsupported bar/J-hook setup instead of chin-height safety pins.. Actual guide (follow all support/equipment/grip details): * Set security pins to the height of your lower chin * Rest bar on pins keeping tension * Raise bar over head",
+  "cells": [
+    {
+      "id": "wger-1b329beb-fcda-4471-ba70-eea62da410dd",
+      "title": "Pause Hack Squats",
+      "equipment": "Bodyweight",
+      "guideText": "Hack Squats but with a 1-2s pause at the bottom of the movement. This makes sure that there is no more elastic energy stored in the muscles.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1464/view/",
+        "author": "Expenses7000",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: paused hack squat shown as ordinary unweighted squat, with neither hack apparatus nor barbell hack setup."
+    },
+    {
+      "id": "wger-748e9635-7958-4a41-b1ed-93de74c7ef72",
+      "title": "Pendelay Rows",
+      "equipment": "Barbell",
+      "guideText": "Back excercise with a barbell with a starting position which is in a bent over position with the back paralell to the ground. The barbell is on the ground at chest level.For the movement grab the barbell at shoulder width grip and pull towards your chest without losing the bent over position and without moving anything but your arms",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/448/view/",
+        "author": "Nallitnas",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: Pendlay row requires horizontal back; illustration torso is too upright."
+    },
+    {
+      "id": "db-peroneals-stretch",
+      "title": "Peroneals Stretch",
+      "equipment": "Specialty equipment",
+      "guideText": "In a seated position, loop a belt, rope, or band around one foot. This will be your starting position.\n\nWith the leg extended and the heel off of the ground, pull on the belt so that the foot is inverted, with the inside of the foot being pulled towards you. Hold for 10-20 seconds, and then switch sides.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Peroneals_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: peroneal strap stretch does not clearly establish foot inversion instead of ordinary dorsiflexion."
+    },
+    {
+      "id": "wger-7ae1aca7-cdd4-4a81-b22c-f31778462b6b",
+      "title": "Perpendicular Unilateral Landmine Row",
+      "equipment": "Barbell",
+      "guideText": "Using a landmine attachment with the barbell running at 90 degrees to either side, hinge slightly at the hips and grip the barbell by the plate sleeve. Raise the barbell to chest height, with your upper arm parallel to the floor at the top of the movement.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1580/view/",
+        "author": "CptnFatbeard",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: perpendicular unilateral landmine row shows two hands on bar and an along-bar stance."
+    },
+    {
+      "id": "wger-abd2854b-114a-4584-8746-30bd40127863",
+      "title": "Pin Bench Press BB",
+      "equipment": "Barbell",
+      "guideText": "* Set security pins to about the height of your sticking point * Lower the bar, rest on the pins for 1s while holding tension * Move bar up with maximum force",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1436/view/",
+        "author": "M9",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: pin bench illustration does not clearly establish horizontal safety-pin support."
+    },
+    {
+      "id": "wger-a33ba0c7-1680-4e42-a84e-aecc18c5d75b",
+      "title": "Pin OHP",
+      "equipment": "Barbell",
+      "guideText": "* Set security pins to the height of your lower chin * Rest bar on pins keeping tension * Raise bar over head",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1439/view/",
+        "author": "M9",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: pin overhead press depicts unsupported bar/J-hook setup instead of chin-height safety pins."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-870f50d4-6f26-48ff-850e-9a70aff86df0.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-023.png"
+}

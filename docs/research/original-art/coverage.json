@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1236,
+  "accepted": 1268,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -5032,14 +5032,18 @@
       "name": "Hug A Ball",
       "equipment": "Exercise ball",
       "guideSha256": "cd6f5ebe92dbbbd2648919dfe9dfdaf91e88f5782f296db7b2f7aa11d1b8aaa9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-013-0-0",
+      "reviewNote": "Reviewed floor-straddled ball hug, under-knee bilateral chest stretch and partner-secured flat-bench hyperextension."
     },
     {
       "exerciseId": "db-hug-knees-to-chest",
       "name": "Hug Knees To Chest",
       "equipment": "Bodyweight",
       "guideSha256": "7cc8a1008480d52b2f0f653e322e3cab3d5ff2e2fd275ed40024bd281de6ac40",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-013-1-0",
+      "reviewNote": "Reviewed floor-straddled ball hug, under-knee bilateral chest stretch and partner-secured flat-bench hyperextension."
     },
     {
       "exerciseId": "db-hurdle-hops",
@@ -5073,7 +5077,9 @@
       "name": "Hyperextensions With No Hyperextension Bench",
       "equipment": "Bodyweight",
       "guideSha256": "57c5d461250fd4efdd269dc36f0be9aa29e4e59c54f1a135729cb5ede8601ffa",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-013-2-0",
+      "reviewNote": "Reviewed floor-straddled ball hug, under-knee bilateral chest stretch and partner-secured flat-bench hyperextension."
     },
     {
       "exerciseId": "wger-662b9911-fa55-4564-b830-fdb6a046b162",
@@ -5428,7 +5434,9 @@
       "name": "Isometric Neck Exercise - Front And Back",
       "equipment": "Bodyweight",
       "guideSha256": "bc043d1286c61d0d22bc21be54c325aeb027cf8252442ac46ed732c69e3603cb",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-015-0-0",
+      "reviewNote": "Reviewed forehead/occiput neck isometric contacts, high-anchor prone incline pulldown and short upright front-rack jerk dip."
     },
     {
       "exerciseId": "db-isometric-neck-exercise-sides",
@@ -5485,7 +5493,9 @@
       "name": "JALON EN BANCO INCLINADO",
       "equipment": "Bodyweight",
       "guideSha256": "ed88efffe5a7741b785b03d78681287534dee38f11fa51c9209beca55493f3b5",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-015-0-1",
+      "reviewNote": "Reviewed forehead/occiput neck isometric contacts, high-anchor prone incline pulldown and short upright front-rack jerk dip."
     },
     {
       "exerciseId": "wger-eaa7927e-6ea0-4fd5-bbcd-525fe90a184b",
@@ -5524,7 +5534,9 @@
       "name": "Jerk Dip Squat",
       "equipment": "Barbell",
       "guideSha256": "8bcf80d55e8e16c47e8d7fa1c8841d7b49cb5acfe67ff90efb79342b5b48ba1c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-015-2-1",
+      "reviewNote": "Reviewed forehead/occiput neck isometric contacts, high-anchor prone incline pulldown and short upright front-rack jerk dip."
     },
     {
       "exerciseId": "db-jm-press",
@@ -5576,14 +5588,18 @@
       "name": "Keg Load",
       "equipment": "Specialty equipment",
       "guideSha256": "775e5397016f3c980fa4bd0ec914da72b85731554e0d0a89f1e6d9daf30a968c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-016-0-0",
+      "reviewNote": "Reviewed platform keg load, relaxed supine Kegel posture, one-bell rotated standing press, upright two-bell thruster finish and rear-toes-grounded kickstand hinge."
     },
     {
       "exerciseId": "wger-5597bafc-0478-4124-9745-85f9df22be3e",
       "name": "Kegel Exercise",
       "equipment": "Bodyweight",
       "guideSha256": "3094dac9b7cf7a9a896fd38a1771316e369c6438fbf205035354cd66eaf64090",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-016-1-0",
+      "reviewNote": "Reviewed platform keg load, relaxed supine Kegel posture, one-bell rotated standing press, upright two-bell thruster finish and rear-toes-grounded kickstand hinge."
     },
     {
       "exerciseId": "wger-11914fdd-02d9-4aa6-88be-0c10cd54c609",
@@ -5599,7 +5615,9 @@
       "name": "Kettlebell Arnold Press",
       "equipment": "Kettlebell",
       "guideSha256": "0c3c9183a58ce54ac1f51268814d13186fc4ba8c9c3968ce4fada5f07295747b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-016-2-0",
+      "reviewNote": "Reviewed platform keg load, relaxed supine Kegel posture, one-bell rotated standing press, upright two-bell thruster finish and rear-toes-grounded kickstand hinge."
     },
     {
       "exerciseId": "db-kettlebell-dead-clean",
@@ -5748,7 +5766,9 @@
       "name": "Kettlebell Thruster",
       "equipment": "Kettlebell",
       "guideSha256": "8917cf7398fd207b9b1bf233bf9770f4cee0b10b7c72179124df184bb7982d2f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-016-1-1",
+      "reviewNote": "Reviewed platform keg load, relaxed supine Kegel posture, one-bell rotated standing press, upright two-bell thruster finish and rear-toes-grounded kickstand hinge."
     },
     {
       "exerciseId": "db-kettlebell-turkish-get-up-lunge-style",
@@ -5791,7 +5811,9 @@
       "name": "Kickstand RDL",
       "equipment": "Barbell",
       "guideSha256": "76e11a151416adaab1df9d6a765fe03ef132d82626ba11dbe79cfd82ac1e6e36",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-016-2-1",
+      "reviewNote": "Reviewed platform keg load, relaxed supine Kegel posture, one-bell rotated standing press, upright two-bell thruster finish and rear-toes-grounded kickstand hinge."
     },
     {
       "exerciseId": "db-kipping-muscle-up",
@@ -5960,7 +5982,9 @@
       "name": "Kong Curl",
       "equipment": "Dumbbell",
       "guideSha256": "bf4d4b5ac22767c6b05453b7ae71a4cf1fdd468eb4232b138b58d4a820a4f15c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-017-0-0",
+      "reviewNote": "Reviewed alternating pronated oblique Kong curl, upright landmine press finish, slightly bent-arm rear dumbbell sweep, front-chest pulldown and resistance-supported isometric leg-extension position."
     },
     {
       "exerciseId": "wger-5edf07a8-cca2-4199-96a5-9988369be985",
@@ -6017,7 +6041,9 @@
       "name": "Landmine Squat to Press",
       "equipment": "Barbell",
       "guideSha256": "104d872cc9d6bedb0ff83116d7c3f81bd5321f36c2c777bf3c52a5d87fb0e3b8",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-017-2-0",
+      "reviewNote": "Reviewed alternating pronated oblique Kong curl, upright landmine press finish, slightly bent-arm rear dumbbell sweep, front-chest pulldown and resistance-supported isometric leg-extension position."
     },
     {
       "exerciseId": "wger-87f30f6d-dc8a-4b26-8c4f-640b66ecacf0",
@@ -6033,14 +6059,18 @@
       "name": "Lat Pull DB",
       "equipment": "Dumbbell",
       "guideSha256": "8e29cc00d3ec79b7466085daa52359fea44fc092f91d90cfc2a7e3a28fab7a27",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-017-0-1",
+      "reviewNote": "Reviewed alternating pronated oblique Kong curl, upright landmine press finish, slightly bent-arm rear dumbbell sweep, front-chest pulldown and resistance-supported isometric leg-extension position."
     },
     {
       "exerciseId": "wger-fff05d7a-f374-4c8a-9885-39f49076918f",
       "name": "Lat Pull Down (Straight Back)",
       "equipment": "Bodyweight",
       "guideSha256": "ec457c72517f5e964d96bbbeeaed079b2e90dcbb937a0c38521a45814d15ac8b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-017-1-1",
+      "reviewNote": "Reviewed alternating pronated oblique Kong curl, upright landmine press finish, slightly bent-arm rear dumbbell sweep, front-chest pulldown and resistance-supported isometric leg-extension position."
     },
     {
       "exerciseId": "wger-5a096571-4eae-472e-8849-fe5647035e2c",
@@ -6198,7 +6228,9 @@
       "name": "Leg Extension Isometric",
       "equipment": "Bodyweight",
       "guideSha256": "9dcd4b26675f609f1689b08e68e8f428507322e0cee059fcf0766a0625251fb5",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-017-2-1",
+      "reviewNote": "Reviewed alternating pronated oblique Kong curl, upright landmine press finish, slightly bent-arm rear dumbbell sweep, front-chest pulldown and resistance-supported isometric leg-extension position."
     },
     {
       "exerciseId": "db-leg-extensions",
@@ -6304,7 +6336,9 @@
       "name": "Leg-Up Hamstring Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "e128dfe36a69e431a7c6382f906f954d1e63d3c2f8e8d591c54044e51790bacf",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-018-0-0",
+      "reviewNote": "Reviewed unstrapped supine leg-up stretch, wide-bar low cable row, deep cambered prone row, behind-head triceps extension with horizontal upper arms and supinated tall-flat-bench curl."
     },
     {
       "exerciseId": "db-leverage-chest-press",
@@ -6455,7 +6489,9 @@
       "name": "Long-Pulley (low Row)",
       "equipment": "Bodyweight",
       "guideSha256": "1b91e995e00218b0898c9a1d00c988809ef6880869d1474f9495322f7128d306",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-018-1-0",
+      "reviewNote": "Reviewed unstrapped supine leg-up stretch, wide-bar low cable row, deep cambered prone row, behind-head triceps extension with horizontal upper arms and supinated tall-flat-bench curl."
     },
     {
       "exerciseId": "wger-77c98954-b50d-46f0-9912-3981f856d5a6",
@@ -6593,7 +6629,9 @@
       "name": "Lying Cambered Barbell Row",
       "equipment": "Barbell",
       "guideSha256": "ead38257fcb21bd4e7add26134b9a12ebdba1e226a8d8663267b71f906dadcf6",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-018-0-1",
+      "reviewNote": "Reviewed unstrapped supine leg-up stretch, wide-bar low cable row, deep cambered prone row, behind-head triceps extension with horizontal upper arms and supinated tall-flat-bench curl."
     },
     {
       "exerciseId": "db-lying-close-grip-bar-curl-on-high-pulley",
@@ -6609,7 +6647,9 @@
       "name": "Lying Close-Grip Barbell Triceps Extension Behind The Head",
       "equipment": "Barbell",
       "guideSha256": "56cbd72e3a7593777538b4d94913e8683f3a020749da2f7872823aa7a62e9f49",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-018-1-1",
+      "reviewNote": "Reviewed unstrapped supine leg-up stretch, wide-bar low cable row, deep cambered prone row, behind-head triceps extension with horizontal upper arms and supinated tall-flat-bench curl."
     },
     {
       "exerciseId": "db-lying-close-grip-barbell-triceps-press-to-chin",
@@ -6688,7 +6728,9 @@
       "name": "Lying High Bench Barbell Curl",
       "equipment": "Barbell",
       "guideSha256": "454f830e52a1614b4fb9dd3ec6d2503a8696a58e319d6eda6476a6bb2791dca1",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-018-2-1",
+      "reviewNote": "Reviewed unstrapped supine leg-up stretch, wide-bar low cable row, deep cambered prone row, behind-head triceps extension with horizontal upper arms and supinated tall-flat-bench curl."
     },
     {
       "exerciseId": "db-lying-leg-curls",
@@ -6722,7 +6764,9 @@
       "name": "Lying One-Arm Lateral Raise",
       "equipment": "Dumbbell",
       "guideSha256": "3956efb2b2fc7304cb32b1e68c7d6b37cecbfa4bb242ca109af17903821706aa",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-019-0-0",
+      "reviewNote": "Reviewed flat-bench one/two-arm rear raises, approximately 60-degree supported kickback, backward medicine-ball scoop-release sequence and opposite-palm mixed-grip chin."
     },
     {
       "exerciseId": "db-lying-prone-quadriceps",
@@ -6738,7 +6782,9 @@
       "name": "Lying Rear Delt Raise",
       "equipment": "Dumbbell",
       "guideSha256": "53926e5b8d3817d80cb10e3ba0771d0cfacf2166a992de7a03b3c4ca49f24e7e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-019-1-0",
+      "reviewNote": "Reviewed flat-bench one/two-arm rear raises, approximately 60-degree supported kickback, backward medicine-ball scoop-release sequence and opposite-palm mixed-grip chin."
     },
     {
       "exerciseId": "wger-aa3b4ebe-6dee-45ad-a345-cf2acebf4159",
@@ -6772,7 +6818,9 @@
       "name": "Lying Triceps Kickback",
       "equipment": "Dumbbell + Incline bench",
       "guideSha256": "0a949e942a6b81b777ee4228e1e9b28690549c1786de5029d0b2581f88b33ec5",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-019-2-0",
+      "reviewNote": "Reviewed flat-bench one/two-arm rear raises, approximately 60-degree supported kickback, backward medicine-ball scoop-release sequence and opposite-palm mixed-grip chin."
     },
     {
       "exerciseId": "db-machine-bench-press",
@@ -6892,7 +6940,9 @@
       "name": "Medicine Ball Scoop Throw",
       "equipment": "Medicine ball",
       "guideSha256": "c9f94191b57884d996701bb131dda4b77444431f684278666797e693d0de583e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-019-1-1",
+      "reviewNote": "Reviewed flat-bench one/two-arm rear raises, approximately 60-degree supported kickback, backward medicine-ball scoop-release sequence and opposite-palm mixed-grip chin."
     },
     {
       "exerciseId": "wger-66c7eb38-77b5-4d2f-810f-cddd8d97d5a3",
@@ -6953,7 +7003,9 @@
       "name": "Mixed Grip Chin",
       "equipment": "Specialty equipment",
       "guideSha256": "0c1d45432e6d64379d6aaa0f54fd2cf49bafc53fd97e327d305cf0878386cfae",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-019-2-1",
+      "reviewNote": "Reviewed flat-bench one/two-arm rear raises, approximately 60-degree supported kickback, backward medicine-ball scoop-release sequence and opposite-palm mixed-grip chin."
     },
     {
       "exerciseId": "wger-5851e2b1-3a80-42ff-91da-530e6b143a34",
@@ -6996,7 +7048,9 @@
       "name": "Muscle Snatch",
       "equipment": "Barbell",
       "guideSha256": "3ff86a80b9de4a3e7bdda439c9fbb63ff9a35ecd1135d0b6a38ac536e458e4c3",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-020-0-0",
+      "reviewNote": "Reviewed upright wide-grip muscle-snatch finish, one-hand-at-head opposite-hand-floor oblique crunch and high-bar deep Olympic squat."
     },
     {
       "exerciseId": "db-muscle-up",
@@ -7114,7 +7168,9 @@
       "name": "Oblique Crunches",
       "equipment": "Bodyweight",
       "guideSha256": "847e6b107f7a1b06d8e0a8a07e602368ef2a9f44b99ab3efb7c519ebd3899837",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-020-0-1",
+      "reviewNote": "Reviewed upright wide-grip muscle-snatch finish, one-hand-at-head opposite-hand-floor oblique crunch and high-bar deep Olympic squat."
     },
     {
       "exerciseId": "db-oblique-crunches-on-the-floor",
@@ -7130,7 +7186,9 @@
       "name": "Olympic Squat",
       "equipment": "Barbell",
       "guideSha256": "87b427209a7b4f79441adaa43b77d7a6b8c1649e0f367469ff7279c15bf48ee2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-020-1-1",
+      "reviewNote": "Reviewed upright wide-grip muscle-snatch finish, one-hand-at-head opposite-hand-floor oblique crunch and high-bar deep Olympic squat."
     },
     {
       "exerciseId": "wger-ac00021c-12f9-4827-8003-ea07de980b76",
@@ -7230,14 +7288,18 @@
       "name": "One Arm Supinated Dumbbell Triceps Extension",
       "equipment": "Dumbbell",
       "guideSha256": "d41cf9345e340ea3a44fea7b13490c9a50949695976c61b5c01ab29f2fb9866b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-021-2-0",
+      "reviewNote": "Reviewed supported horizontal dumbbell grip in supinated triceps extension, hand-under-hip half-locust stretch and under-knee single-knee chest stretch."
     },
     {
       "exerciseId": "db-one-half-locust",
       "name": "One Half Locust",
       "equipment": "Bodyweight",
       "guideSha256": "971038f7822483ecd9849b167aaa99b82155aaa8cd86fa6a057b0d30aafac925",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-021-0-1",
+      "reviewNote": "Reviewed supported horizontal dumbbell grip in supinated triceps extension, hand-under-hip half-locust stretch and under-knee single-knee chest stretch."
     },
     {
       "exerciseId": "db-one-handed-hang",
@@ -7253,7 +7315,9 @@
       "name": "One Knee To Chest",
       "equipment": "Bodyweight",
       "guideSha256": "42d7034c0a87aab0e942e4d244a8761353e493318fade745ae2b973782be2a26",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-021-1-1",
+      "reviewNote": "Reviewed supported horizontal dumbbell grip in supinated triceps extension, hand-under-hip half-locust stretch and under-knee single-knee chest stretch."
     },
     {
       "exerciseId": "db-one-leg-barbell-squat",

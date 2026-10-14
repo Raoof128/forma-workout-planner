@@ -1,0 +1,168 @@
+{
+  "name": "corrections-017",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-017.png",
+  "prompt": "Create ORIGINAL FORMA fitness manual art. Exactly THREE columns TWO rows SIX panels landscape1536x1024. Whitebackground, generous margins, fullyclothedvariedadults, charcoalgrayclothing/equipment limeaccent, correcttwoarms/twolegs andphysicallyplausible support. No lettering logoswatermarks. Complete figures and apparatus insideownpanel. ONE representative workingphase. Mandatorycorrections and fullactualguides below. \n\nRow 1 column 1: Kong Curl. MANDATORY Kongcurl: only ONE dumbbell curls obliquely to UPPER MIDDLECHEST, PRONATED palmDOWN; oppositeDB remains low. Not bilateral highpull.. Actual guide: This exercise is somewhat similar to a cable curl and a cable crossover. But instead of a chest/biceps exercise, this exercise targets the brachialis muscle, responsible for that broad arm when viewed from a front view. During the exercise, maintain a pronated forearm position with starting position of approx. 45 degree pronated. Start with slightly bend elbows and alternately curl until your hands (your thumb first) meet your upper middle chest (similar to how Kong hits his chest, thus the name of this exercise).\n\nRow 1 column 2: Kreis Press DB. MANDATORY Kreis dumbbellpress: botharms extended FRONT with PALMS UP, horizontallyorientedDBs, readactualguide.. Actual guide: * Sit on a bench with 45° incline * Hold dumbbells overhead * Move dumbbells down as if doing overhead press * Rotate dumbbells palms facing up and extend your arms in front of your body * Move hands together until dumbbells meet, keep arms extended * Reverse the motion until dumbbells are overhead again * This is one repetition\n\nRow 1 column 3: Landmine Squat to Press. MANDATORY Landmine squat-to-press: STANDING UPRIGHT extendedknees in finished pressingphase, twohandsbarend highforward. NotdeepOHsquat.. Actual guide: Bar Position: Anchor one end of a barbell in a landmine attachment or a secure corner. Stance: Stand facing the barbell with feet slightly wider than shoulder-width. Turn your toes out 10–35 degrees to allow for better pelvic movement and depth. Grip: Cup the free end of the barbell with both hands (fingers interlaced or overlapping) and hold it at mid-chest level, just below the collarbone. Descent: Brace your core and sit back into a squat, keeping your chest up and weight on your heels. Depth: Lower until your thighs are at least parallel to the floor. A good reference is when your elbows touch the tops of your thighs or just inside your knees. Posture: Ensure your back remains flat and your spine neutral throughout the movement. Drive: Powerfully drive through your heels to stand up. Use the momentum from your legs to \"thrust\" the weight upward. Extension: In one fluid motion, press the bar overhead until your arms are fully extended. At the top, your biceps should be near your ears. The \"Lean\": As you reach the top of the press, lean slightly forward into the bar to encourage proper upward rotation of the shoulder blades and avoid lower back arching. Slowly lower the barbell back to chest height in a controlled manner before immediately beginning the next repetition.\n\nRow 2 column 1: Lat Pull DB. MANDATORY Latpull dumbbells: torsohinged asguide, arms almostSTRAIGHT with onlyslightelbowbend sweepingBACKWARD. Not bentelbowrow.. Actual guide: * Bend upper body forward * Move dumbbells near your body with slightly bent arms towards your back\n\nRow 2 column 2: Lat Pull Down (Straight Back). MANDATORY Straightback latpulldown: seatedverticaltorso, barinFRONT upperCHEST, neverbehindneck.. Actual guide: The lat pull down is an exercise used to build the muscles of the back. While the exercise will primarily target the lats, you will also notice a fair amount of bicep and middle back activation.\n\nRow 2 column 3: Leg Extension Isometric. MANDATORY Isometric legextension: seatedkneestraight against clearlyvisible IMMOVABLE padded roller fixed machine resistancesupport. Notfreelegunsupportedhold.. Actual guide: An isometric leg extension is a strengthening exercise where you contract your quadriceps muscles against an immovable resistance without changing the length of the muscle or moving your knee joint.",
+  "cells": [
+    {
+      "id": "wger-329d2adc-4b2c-4bb2-95d7-f5f6fedb9b96",
+      "title": "Kong Curl",
+      "equipment": "Dumbbell",
+      "guideText": "This exercise is somewhat similar to a cable curl and a cable crossover. But instead of a chest/biceps exercise, this exercise targets the brachialis muscle, responsible for that broad arm when viewed from a front view. During the exercise, maintain a pronated forearm position with starting position of approx. 45 degree pronated. Start with slightly bend elbows and alternately curl until your hands (your thumb first) meet your upper middle chest (similar to how Kong hits his chest, thus the name of this exercise).",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1511/view/",
+        "author": "Moffi",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Kongcurl: only ONE dumbbell curls obliquely to UPPER MIDDLECHEST, PRONATED palmDOWN; oppositeDB remains low. Not bilateral highpull.",
+      "reviewNote": "Reviewed alternating pronated oblique Kong curl, upright landmine press finish, slightly bent-arm rear dumbbell sweep, front-chest pulldown and resistance-supported isometric leg-extension position.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 493
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures in the source."
+    },
+    {
+      "id": "wger-b4e78b5a-6141-4fc9-a6f7-cba13ce6559b",
+      "title": "Kreis Press DB",
+      "equipment": "Dumbbell",
+      "guideText": "* Sit on a bench with 45° incline * Hold dumbbells overhead * Move dumbbells down as if doing overhead press * Rotate dumbbells palms facing up and extend your arms in front of your body * Move hands together until dumbbells meet, keep arms extended * Reverse the motion until dumbbells are overhead again * This is one repetition",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1442/view/",
+        "author": "M9",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Kreis dumbbellpress: botharms extended FRONT with PALMS UP, horizontallyorientedDBs, readactualguide.",
+      "reviewNote": "Backrest remains near upright instead of the specified 45-degree Kreis press.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 493
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures in the source."
+    },
+    {
+      "id": "wger-67bca611-d9f1-4855-9e02-ecc8d7d688e9",
+      "title": "Landmine Squat to Press",
+      "equipment": "Barbell",
+      "guideText": "Bar Position: Anchor one end of a barbell in a landmine attachment or a secure corner. Stance: Stand facing the barbell with feet slightly wider than shoulder-width. Turn your toes out 10–35 degrees to allow for better pelvic movement and depth. Grip: Cup the free end of the barbell with both hands (fingers interlaced or overlapping) and hold it at mid-chest level, just below the collarbone. Descent: Brace your core and sit back into a squat, keeping your chest up and weight on your heels. Depth: Lower until your thighs are at least parallel to the floor. A good reference is when your elbows touch the tops of your thighs or just inside your knees. Posture: Ensure your back remains flat and your spine neutral throughout the movement. Drive: Powerfully drive through your heels to stand up. Use the momentum from your legs to \"thrust\" the weight upward. Extension: In one fluid motion, press the bar overhead until your arms are fully extended. At the top, your biceps should be near your ears. The \"Lean\": As you reach the top of the press, lean slightly forward into the bar to encourage proper upward rotation of the shoulder blades and avoid lower back arching. Slowly lower the barbell back to chest height in a controlled manner before immediately beginning the next repetition.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1829/view/",
+        "author": "beagle",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Landmine squat-to-press: STANDING UPRIGHT extendedknees in finished pressingphase, twohandsbarend highforward. NotdeepOHsquat.",
+      "reviewNote": "Reviewed alternating pronated oblique Kong curl, upright landmine press finish, slightly bent-arm rear dumbbell sweep, front-chest pulldown and resistance-supported isometric leg-extension position.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 493
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures in the source."
+    },
+    {
+      "id": "wger-90dea8b9-4cf8-430e-8633-e08df1dd900b",
+      "title": "Lat Pull DB",
+      "equipment": "Dumbbell",
+      "guideText": "* Bend upper body forward * Move dumbbells near your body with slightly bent arms towards your back",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1434/view/",
+        "author": "M9",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Latpull dumbbells: torsohinged asguide, arms almostSTRAIGHT with onlyslightelbowbend sweepingBACKWARD. Not bentelbowrow.",
+      "reviewNote": "Reviewed alternating pronated oblique Kong curl, upright landmine press finish, slightly bent-arm rear dumbbell sweep, front-chest pulldown and resistance-supported isometric leg-extension position.",
+      "bounds": {
+        "x": 0,
+        "y": 493,
+        "width": 512,
+        "height": 531
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures in the source."
+    },
+    {
+      "id": "wger-fff05d7a-f374-4c8a-9885-39f49076918f",
+      "title": "Lat Pull Down (Straight Back)",
+      "equipment": "Bodyweight",
+      "guideText": "The lat pull down is an exercise used to build the muscles of the back. While the exercise will primarily target the lats, you will also notice a fair amount of bicep and middle back activation.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/355/view/",
+        "author": "drthurlow",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Straightback latpulldown: seatedverticaltorso, barinFRONT upperCHEST, neverbehindneck.",
+      "reviewNote": "Reviewed alternating pronated oblique Kong curl, upright landmine press finish, slightly bent-arm rear dumbbell sweep, front-chest pulldown and resistance-supported isometric leg-extension position.",
+      "bounds": {
+        "x": 512,
+        "y": 493,
+        "width": 512,
+        "height": 531
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures in the source."
+    },
+    {
+      "id": "wger-88c4d3e5-3837-4c71-bb06-c45e147496cc",
+      "title": "Leg Extension Isometric",
+      "equipment": "Bodyweight",
+      "guideText": "An isometric leg extension is a strengthening exercise where you contract your quadriceps muscles against an immovable resistance without changing the length of the muscle or moving your knee joint.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2535/view/",
+        "author": "HexoctusEngineering",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Isometric legextension: seatedkneestraight against clearlyvisible IMMOVABLE padded roller fixed machine resistancesupport. Notfreelegunsupportedhold.",
+      "reviewNote": "Reviewed alternating pronated oblique Kong curl, upright landmine press finish, slightly bent-arm rear dumbbell sweep, front-chest pulldown and resistance-supported isometric leg-extension position.",
+      "bounds": {
+        "x": 1024,
+        "y": 493,
+        "width": 512,
+        "height": 531
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures in the source."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-ff9f86e1-0892-4b36-a3f5-4b95765a4353.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-017.png"
+}

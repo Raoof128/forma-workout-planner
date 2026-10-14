@@ -1,0 +1,163 @@
+{
+  "name": "corrections-020",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-020.png",
+  "prompt": "Create ORIGINAL FORMA fitness-manual illustrations: THREE columns TWO rows SIX separate equal panels landscape1536x1024. Fully clothed adult athletes in charcoal-gray with lime accents, white background, no text/logos/watermarks, exact anatomy and physically correct supports. Complete whole athlete and equipment within own panel, generous margins. Show ONE clear working position matching ACTUAL GUIDE. Each panel corrects a rejected image, so explicitly fix the error and avoid reproducing it.\n\nRow 1 column 1: Muscle Snatch. ERROR TO CORRECT, DO NOT REPEAT: Hold: muscle snatch depicts deep overhead squat; lift must finish upright without knee rebend.. Actual guide (follow all support/equipment/grip details): Begin with a loaded barbell held at the mid thigh position with a wide grip. The feet should be directly below the hips, with the feet turned out as needed. Lower the hips, with the chest up and the head looking forward. The shoulders should be just in front of the bar. This will be the starting position.\n\nBegin the pull by driving through the front of the heels, raising the bar. Transition into the second pull by extending through the hips knees and ankles, driving the bar up as quickly as possible. The bar should be close to the body.\n\nContinue raising the bar to the overhead position, without rebending the knees.\n\nRow 1 column 2: Neck-SMR. ERROR TO CORRECT, DO NOT REPEAT: Hold: neck roller is laid across central spine instead of offset to lateral neck muscles.. Actual guide (follow all support/equipment/grip details): Using a muscle roller or a rolling pin, place the roller behind your head and against your neck. Make sure that you do not place the roller directly against the spine, but turned slightly so that the roller is pressed against the muscles to either side of the spine. This will be your starting position.\n\nStarting at the top of your neck, slowly roll down the muscles of your neck, pausing at points of tension for 10-30 seconds.\n\nRow 1 column 3: Negative Crunches. ERROR TO CORRECT, DO NOT REPEAT: Hold: decline negative crunch depicts incline support with head higher than feet.. Actual guide (follow all support/equipment/grip details): Sit yourself on the decline bench and fix your legs. Cross your arms over the chest and bring with a rolling movement your upper body up, go now without a pause and with a slow movement down again. Don't let your head move during the exercise.\n\nRow 2 column 1: Oblique Crunches. ERROR TO CORRECT, DO NOT REPEAT: Hold: elevated-feet oblique crunch requires one hand at head and other beside body on floor; picture uses both hands behind head.. Actual guide (follow all support/equipment/grip details): Lie flat on the floor with your lower back pressed to the ground. For this exercise, you will need to put one hand beside your head and the other to the side against the floor.\n\nMake sure your feet are elevated and resting on a flat surface.\n\nNow lift the shoulder in which your hand is touching your head.\n\nSimply elevate your shoulder and body upward until you touch your knee. For example, if you have your right hand besides your head, then you want to elevate your body upwards until your right elbow touches your left knee. The same variation can be applied doing the inverse and using your left elbow to touch your right knee.\n\nAfter your knee touches your elbow, lower your body until you have reached the starting position.\n\nRemember to breathe in during the eccentric (lowering) part of the exercise and to breathe out during the concentric (upward) part of the exercise.\n\nContinue alternating in this manner until all of the recommended repetitions for each side have been completed.\n\nRow 2 column 2: Olympic Squat. ERROR TO CORRECT, DO NOT REPEAT: Hold: Olympic back squat illustrated as front-rack squat.. Actual guide (follow all support/equipment/grip details): Begin with a barbell supported on top of the traps. The chest should be up, and the head facing forward. Adopt a hip width stance with the feet turned out as needed.\n\nDescend by flexing the knees, refraining from moving the hips back as much as possible. This requires that the knees travel forward; ensure that they stay aligned with the feet. The goal is to keep the torso as upright as possible. Continue all the way down, keeping the weight on the front of the heel.\n\nAt the moment the upper legs contact the lower, reverse the motion, driving the weight upward.\n\nRow 2 column 3: On-Your-Back Quad Stretch. ERROR TO CORRECT, DO NOT REPEAT: Hold: supine quad stretch should hang bent leg beside bench; illustration pulls foot above torso.. Actual guide (follow all support/equipment/grip details): Lie on a flat bench or step, and hang one leg and arm over the side.\n\nBend the knee and hold the top of the foot. As you do this, be careful not to arch your lower back.\n\nPull the belly button to the spine to stay in neutral. Press your foot down and into your hand. To add the hip stretch, lift the hip of the leg you're holding up toward the ceiling.\n\nSwitch sides.",
+  "cells": [
+    {
+      "id": "db-muscle-snatch",
+      "title": "Muscle Snatch",
+      "equipment": "Barbell",
+      "guideText": "Begin with a loaded barbell held at the mid thigh position with a wide grip. The feet should be directly below the hips, with the feet turned out as needed. Lower the hips, with the chest up and the head looking forward. The shoulders should be just in front of the bar. This will be the starting position.\n\nBegin the pull by driving through the front of the heels, raising the bar. Transition into the second pull by extending through the hips knees and ankles, driving the bar up as quickly as possible. The bar should be close to the body.\n\nContinue raising the bar to the overhead position, without rebending the knees.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Muscle_Snatch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: muscle snatch depicts deep overhead squat; lift must finish upright without knee rebend.",
+      "reviewNote": "Reviewed upright wide-grip muscle-snatch finish, one-hand-at-head opposite-hand-floor oblique crunch and high-bar deep Olympic squat.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete accepted figures in 512-pixel source panels."
+    },
+    {
+      "id": "db-neck-smr",
+      "title": "Neck-SMR",
+      "equipment": "Specialty equipment",
+      "guideText": "Using a muscle roller or a rolling pin, place the roller behind your head and against your neck. Make sure that you do not place the roller directly against the spine, but turned slightly so that the roller is pressed against the muscles to either side of the spine. This will be your starting position.\n\nStarting at the top of your neck, slowly roll down the muscles of your neck, pausing at points of tension for 10-30 seconds.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Neck-SMR.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: neck roller is laid across central spine instead of offset to lateral neck muscles.",
+      "reviewNote": "Roller position still spans the central neck rather than clearly offset lateral soft tissue.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete accepted figures in 512-pixel source panels."
+    },
+    {
+      "id": "wger-cbc5fbc9-9bca-4766-941d-4b6903d4a521",
+      "title": "Negative Crunches",
+      "equipment": "Bodyweight",
+      "guideText": "Sit yourself on the decline bench and fix your legs. Cross your arms over the chest and bring with a rolling movement your upper body up, go now without a pause and with a slow movement down again. Don't let your head move during the exercise.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/427/view/",
+        "author": "wger.de",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: decline negative crunch depicts incline support with head higher than feet.",
+      "reviewNote": "Bench is incline with head higher than feet rather than decline.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete accepted figures in 512-pixel source panels."
+    },
+    {
+      "id": "db-oblique-crunches",
+      "title": "Oblique Crunches",
+      "equipment": "Bodyweight",
+      "guideText": "Lie flat on the floor with your lower back pressed to the ground. For this exercise, you will need to put one hand beside your head and the other to the side against the floor.\n\nMake sure your feet are elevated and resting on a flat surface.\n\nNow lift the shoulder in which your hand is touching your head.\n\nSimply elevate your shoulder and body upward until you touch your knee. For example, if you have your right hand besides your head, then you want to elevate your body upwards until your right elbow touches your left knee. The same variation can be applied doing the inverse and using your left elbow to touch your right knee.\n\nAfter your knee touches your elbow, lower your body until you have reached the starting position.\n\nRemember to breathe in during the eccentric (lowering) part of the exercise and to breathe out during the concentric (upward) part of the exercise.\n\nContinue alternating in this manner until all of the recommended repetitions for each side have been completed.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Oblique_Crunches.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: elevated-feet oblique crunch requires one hand at head and other beside body on floor; picture uses both hands behind head.",
+      "reviewNote": "Reviewed upright wide-grip muscle-snatch finish, one-hand-at-head opposite-hand-floor oblique crunch and high-bar deep Olympic squat.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete accepted figures in 512-pixel source panels."
+    },
+    {
+      "id": "db-olympic-squat",
+      "title": "Olympic Squat",
+      "equipment": "Barbell",
+      "guideText": "Begin with a barbell supported on top of the traps. The chest should be up, and the head facing forward. Adopt a hip width stance with the feet turned out as needed.\n\nDescend by flexing the knees, refraining from moving the hips back as much as possible. This requires that the knees travel forward; ensure that they stay aligned with the feet. The goal is to keep the torso as upright as possible. Continue all the way down, keeping the weight on the front of the heel.\n\nAt the moment the upper legs contact the lower, reverse the motion, driving the weight upward.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Olympic_Squat.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: Olympic back squat illustrated as front-rack squat.",
+      "reviewNote": "Reviewed upright wide-grip muscle-snatch finish, one-hand-at-head opposite-hand-floor oblique crunch and high-bar deep Olympic squat.",
+      "bounds": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete accepted figures in 512-pixel source panels."
+    },
+    {
+      "id": "db-on-your-back-quad-stretch",
+      "title": "On-Your-Back Quad Stretch",
+      "equipment": "Specialty equipment",
+      "guideText": "Lie on a flat bench or step, and hang one leg and arm over the side.\n\nBend the knee and hold the top of the foot. As you do this, be careful not to arch your lower back.\n\nPull the belly button to the spine to stay in neutral. Press your foot down and into your hand. To add the hip stretch, lift the hip of the leg you're holding up toward the ceiling.\n\nSwitch sides.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/On-Your-Back_Quad_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: supine quad stretch should hang bent leg beside bench; illustration pulls foot above torso.",
+      "reviewNote": "Athlete lies prone instead of supine with bent leg hanging beside bench.",
+      "bounds": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete accepted figures in 512-pixel source panels."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-639f1acb-6ac9-48b6-bdaf-2cab01bc16ba.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-020.png"
+}

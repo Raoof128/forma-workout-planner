@@ -1,0 +1,116 @@
+{
+  "name": "corrections-024",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-024.png",
+  "prompt": "Create ORIGINAL FORMA fitness-manual illustrations: THREE columns TWO rows SIX separate equal panels landscape1536x1024. Fully clothed varied adults, charcoal-gray lime accents, white background, no text/logos/watermarks. Anatomically correct, physically plausible, complete figures/apparatus inside each panel with generous margins. ONE accurate working pose per panel. Follow full actual guide, correct the prior rejected image errors.\n\nRow 1 column 1: Pin Presses. PRIOR ERROR, DO NOT REPEAT: Hold: pin press illustration does not clearly distinguish pins from standard unrack hooks.. Actual full guide: Pin presses remove the eccentric phase of the bench press, developing starting strength. They also allow you to train a desired range of motion.\n\nThe bench should be set up in a power rack. Set the pins to the desired point in your range of motion, whether it just be lockout or an inch off of your chest. The bar should be moved to the pins and prepared for lifting.\n\nBegin by lying on the bench, with the bar directly above the contact point during your regular bench. Tuck your feet underneath you and arch your back. Using the bar to help support your weight, lift your shoulder off the bench and retract them, squeezing the shoulder blades together. Use your feet to drive your traps into the bench. Maintain this tight body position throughout the movement.\n\nYou can take a standard bench grip, or shoulder width to focus on the triceps. The bar, wrist, and elbow should stay in line at all times. Focus on squeezing the bar and trying to pull it apart.\n\nDrive the bar up with as much force as possible. The elbows should be tucked in until lockout.\n\nReturn the bar to the pins, pausing before beginning the next repetition.\n\nRow 1 column 2: Planche Lean Hold. PRIOR ERROR, DO NOT REPEAT: Hold: planche lean shoulders are not clearly forward past wrists; regenerate pronounced forward lean.. Actual full guide: A straight-arm calisthenics static hold where you assume a plank position and lean the shoulders as far forward as possible past the wrists with protracted scapulae and a hollow body.\n\nRow 1 column 3: Plantarflexion Stretch with Band. PRIOR ERROR, DO NOT REPEAT: Hold: plantarflexion ankle stretch shown as toes-pulled-up dorsiflexion.. Actual full guide: This stretch is for the ankles, as well as Tibialis anterior.\n\nRow 2 column 1: Plyo Push-up. PRIOR ERROR, DO NOT REPEAT: Hold: standard plyometric push-up illustration has both feet airborne; regenerate hands airborne with toes supported.. Actual full guide: Move into a prone position on the floor, supporting your weight on your hands and toes.\n\nYour arms should be fully extended with the hands around shoulder width. Keep your body straight throughout the movement. This will be your starting position.\n\nDescend by flexing at the elbow, lowering your chest towards the ground.\n\nAt the bottom, reverse the motion by pushing yourself up through elbow extension as quickly as possible. Attempt to push your upper body up until your hands leave the ground.\n\nReturn to the starting position and repeat the exercise.\n\nFor added difficulty, add claps into the movement while you are air borne.\n\nRow 2 column 2: Posterior Tibialis Stretch. PRIOR ERROR, DO NOT REPEAT: Hold: posterior tibialis strap stretch does not clearly show prescribed eversion.. Actual full guide: In a seated position, loop a belt, rope, or band around one foot. This will be your starting position.\n\nWith the leg extended and the heel off of the ground, pull on the belt so that the foot is everted, with the outside of the foot being pulled towards you. Hold for 10-20 seconds, and then switch sides.\n\nRow 2 column 3: Power Clean from Blocks. PRIOR ERROR, DO NOT REPEAT: Hold: power clean receiving position is deep squat with plates still resting on blocks, instead of partial catch clear of blocks.. Actual full guide: With a barbell on boxes of the desired height, take a grip just outside the legs. Lower your hips with the weight focused on the heels, back straight, head facing forward, chest up, with your shoulders just in front of the bar. This will be your starting position.\n\nBegin the first pull by driving through the heels, extending your knees. Your back angle should stay the same, and your arms should remain straight. As the bar approaches the mid-thigh position, begin extending through the hips.\n\nIn a jumping motion, accelerate by extending the hips, knees, and ankles, using speed to move the bar upward. There should be no need to actively pull through the arms to accelerate the weight. At the end of the second pull, the body should be fully extended, leaning slightly back, with the arms still extended.\n\nAs full extension is achieved, transition into the third pull by aggressively shrugging and flexing the arms with the elbows up and out. At peak extension, pull yourself under the bar far enough that it can be racked onto the shoulders, rotating your elbows under the bar as you do so. The bar should be racked onto the protracted shoulders, lightly touching the throat with the hands relaxed.\n\nImmediately recover by driving through the heels, keeping the torso upright and elbows up. Continue until you have risen to a standing position, and complete the repetition by returning the weight to the boxes.",
+  "cells": [
+    {
+      "id": "db-pin-presses",
+      "title": "Pin Presses",
+      "equipment": "Barbell",
+      "guideText": "Pin presses remove the eccentric phase of the bench press, developing starting strength. They also allow you to train a desired range of motion.\n\nThe bench should be set up in a power rack. Set the pins to the desired point in your range of motion, whether it just be lockout or an inch off of your chest. The bar should be moved to the pins and prepared for lifting.\n\nBegin by lying on the bench, with the bar directly above the contact point during your regular bench. Tuck your feet underneath you and arch your back. Using the bar to help support your weight, lift your shoulder off the bench and retract them, squeezing the shoulder blades together. Use your feet to drive your traps into the bench. Maintain this tight body position throughout the movement.\n\nYou can take a standard bench grip, or shoulder width to focus on the triceps. The bar, wrist, and elbow should stay in line at all times. Focus on squeezing the bar and trying to pull it apart.\n\nDrive the bar up with as much force as possible. The elbows should be tucked in until lockout.\n\nReturn the bar to the pins, pausing before beginning the next repetition.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Pin_Presses.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: pin press illustration does not clearly distinguish pins from standard unrack hooks."
+    },
+    {
+      "id": "wger-a82944ae-24f4-4f7a-8aac-af251f6907e5",
+      "title": "Planche Lean Hold",
+      "equipment": "Bodyweight",
+      "guideText": "A straight-arm calisthenics static hold where you assume a plank position and lean the shoulders as far forward as possible past the wrists with protracted scapulae and a hollow body.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2532/view/",
+        "author": "ege",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: planche lean shoulders are not clearly forward past wrists; regenerate pronounced forward lean."
+    },
+    {
+      "id": "wger-f397656d-6f26-47c6-9e4c-221687f3f2fa",
+      "title": "Plantarflexion Stretch with Band",
+      "equipment": "Bodyweight",
+      "guideText": "This stretch is for the ankles, as well as Tibialis anterior.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1275/view/",
+        "author": "erikocobra",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: plantarflexion ankle stretch shown as toes-pulled-up dorsiflexion."
+    },
+    {
+      "id": "db-plyo-push-up",
+      "title": "Plyo Push-up",
+      "equipment": "Bodyweight",
+      "guideText": "Move into a prone position on the floor, supporting your weight on your hands and toes.\n\nYour arms should be fully extended with the hands around shoulder width. Keep your body straight throughout the movement. This will be your starting position.\n\nDescend by flexing at the elbow, lowering your chest towards the ground.\n\nAt the bottom, reverse the motion by pushing yourself up through elbow extension as quickly as possible. Attempt to push your upper body up until your hands leave the ground.\n\nReturn to the starting position and repeat the exercise.\n\nFor added difficulty, add claps into the movement while you are air borne.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Plyo_Push-up.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: standard plyometric push-up illustration has both feet airborne; regenerate hands airborne with toes supported."
+    },
+    {
+      "id": "db-posterior-tibialis-stretch",
+      "title": "Posterior Tibialis Stretch",
+      "equipment": "Specialty equipment",
+      "guideText": "In a seated position, loop a belt, rope, or band around one foot. This will be your starting position.\n\nWith the leg extended and the heel off of the ground, pull on the belt so that the foot is everted, with the outside of the foot being pulled towards you. Hold for 10-20 seconds, and then switch sides.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Posterior_Tibialis_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: posterior tibialis strap stretch does not clearly show prescribed eversion."
+    },
+    {
+      "id": "db-power-clean-from-blocks",
+      "title": "Power Clean from Blocks",
+      "equipment": "Barbell",
+      "guideText": "With a barbell on boxes of the desired height, take a grip just outside the legs. Lower your hips with the weight focused on the heels, back straight, head facing forward, chest up, with your shoulders just in front of the bar. This will be your starting position.\n\nBegin the first pull by driving through the heels, extending your knees. Your back angle should stay the same, and your arms should remain straight. As the bar approaches the mid-thigh position, begin extending through the hips.\n\nIn a jumping motion, accelerate by extending the hips, knees, and ankles, using speed to move the bar upward. There should be no need to actively pull through the arms to accelerate the weight. At the end of the second pull, the body should be fully extended, leaning slightly back, with the arms still extended.\n\nAs full extension is achieved, transition into the third pull by aggressively shrugging and flexing the arms with the elbows up and out. At peak extension, pull yourself under the bar far enough that it can be racked onto the shoulders, rotating your elbows under the bar as you do so. The bar should be racked onto the protracted shoulders, lightly touching the throat with the hands relaxed.\n\nImmediately recover by driving through the heels, keeping the torso upright and elbows up. Continue until you have risen to a standing position, and complete the repetition by returning the weight to the boxes.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Power_Clean_from_Blocks.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: power clean receiving position is deep squat with plates still resting on blocks, instead of partial catch clear of blocks."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-d8d9ea49-d1bf-4fd8-931a-12e3749626cc.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-024.png"
+}

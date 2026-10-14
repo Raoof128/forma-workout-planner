@@ -1,0 +1,164 @@
+{
+  "name": "corrections-019",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-019.png",
+  "prompt": "Create ORIGINAL FORMA fitness-manual illustrations: THREE columns TWO rows SIX separate equal panels landscape1536x1024. Fully clothed adult athletes in charcoal-gray with lime accents, white background, no text/logos/watermarks, exact anatomy and physically correct supports. Complete whole athlete and equipment within own panel, generous margins. Show ONE clear working position matching ACTUAL GUIDE. Each panel corrects a rejected image, so explicitly fix the error and avoid reproducing it.\n\nRow 1 column 1: Lying One-Arm Lateral Raise. ERROR TO CORRECT, DO NOT REPEAT: Hold: prone single-arm lateral raise requires FLAT bench, not incline support.. Actual guide (follow all support/equipment/grip details): While holding a dumbbell in one hand, lay with your chest down on a flat bench. The other hand can be used to hold to the leg of the bench for stability.\n\nPosition the palm of the hand that is holding the dumbbell in a neutral manner (palms facing your torso) as you keep the arm extended with the elbow slightly bent. This will be your starting position.\n\nNow raise the arm with the dumbbell to the side until your elbow is at shoulder height and your arm is roughly parallel to the floor as you exhale. Tip: Maintain your arm perpendicular to the torso while keeping your arm extended throughout the movement. Also, keep the contraction at the top for a second.\n\nSlowly lower the dumbbell to the starting position as you inhale.\n\nRepeat for the recommended amount of repetitions.\n\nRow 1 column 2: Lying Rear Delt Raise. ERROR TO CORRECT, DO NOT REPEAT: Hold: prone rear-delt raise requires FLAT bench, not incline support.. Actual guide (follow all support/equipment/grip details): While holding a dumbbell in each hand, lay with your chest down on a flat bench.\n\nPosition the palms of the hands in a neutral manner (palms facing your torso) as you keep the arms extended with the elbows slightly bent. This will be your starting position.\n\nNow raise the arms to the side until your elbows are at shoulder height and your arms are roughly parallel to the floor as you exhale. Tip: Maintain your arms perpendicular to the torso while keeping them extended throughout the movement. Also, keep the contraction at the top for a second.\n\nSlowly lower the dumbbells to the starting position as you inhale.\n\nRepeat for the recommended amount of repetitions and then switch to the other arm.\n\nRow 1 column 3: Lying Triceps Kickback. ERROR TO CORRECT, DO NOT REPEAT: Hold: chest-supported kickback requires approximately 60-degree support; pictured support/torso is low incline.. Actual guide (follow all support/equipment/grip details): Set the bench to an 60deg angle. Stand still and rest your upper body on the inclined bench, ensuring a nearly straight line of your entire body. Squeeze your shoulder blades together, so that your elbows are located behind your torso with your upper arms nearly parallel to the floor. Lift the dumbbells until your arms form a straight line. Slowly lower the dumbbells back to the initial position. Initial position corresponds to an rectangular position of upper and lower arms.\n\nRow 2 column 1: Meadows Row. ERROR TO CORRECT, DO NOT REPEAT: Hold: Meadows row illustration uses two hands on bar; free forearm should rest on forward leg.. Actual guide (follow all support/equipment/grip details): The Meadows row is a unilateral row performed with a landmine setup, overhand grip, and staggered stance. Lean your torso forward and grip the barbell. Rest the other forearm on the forward leg. Start this movement by driving the elbow behind you while retracting the shoulder-blade. Keep the working shoulder down. Pull toward your back hip until the elbow is level with your torso.\n\nRow 2 column 2: Medicine Ball Scoop Throw. ERROR TO CORRECT, DO NOT REPEAT: Hold: medicine-ball scoop throw must release backward behind athlete; rendering throws forward.. Actual guide (follow all support/equipment/grip details): Assume a semisquat stance with a medicine ball in your hands. Your arms should hang so the ball is near your feet.\n\nBegin by thrusting the hips forward as you extend through the legs, jumping up.\n\nAs you do, swing your arms up and over your head, keeping them extended, releasing the ball at the peak of your movement. The goal is to throw the ball the greatest distance behind you.\n\nRow 2 column 3: Mixed Grip Chin. ERROR TO CORRECT, DO NOT REPEAT: Hold: mixed-grip chin does not clearly show one palm toward and one palm away.. Actual guide (follow all support/equipment/grip details): Using a spacing that is just about 1 inch wider than shoulder width, grab a pull-up bar with the palms of one hand facing forward and the palms of the other hand facing towards you. This will be your starting position.\n\nNow start to pull yourself up as you exhale. Tip: With the arm that has the palms facing up concentrate on using the back muscles in order to perform the movement. The elbow of that arm should remain close to the torso. With the other arm that has the palms facing forward, the elbows will be away but in line with the torso. You will concentrate on using the lats to pull your body up.\n\nAfter a second contraction at the top, start to slowly come down as you inhale.\n\nRepeat for the recommended amount of repetitions.\n\nOn the following set, switch grips; so if you had the right hand with the palms facing you and the left one with the palms facing forward, on the next set you will have the palms facing forward for the right hand and facing you for the left.",
+  "cells": [
+    {
+      "id": "db-lying-one-arm-lateral-raise",
+      "title": "Lying One-Arm Lateral Raise",
+      "equipment": "Dumbbell",
+      "guideText": "While holding a dumbbell in one hand, lay with your chest down on a flat bench. The other hand can be used to hold to the leg of the bench for stability.\n\nPosition the palm of the hand that is holding the dumbbell in a neutral manner (palms facing your torso) as you keep the arm extended with the elbow slightly bent. This will be your starting position.\n\nNow raise the arm with the dumbbell to the side until your elbow is at shoulder height and your arm is roughly parallel to the floor as you exhale. Tip: Maintain your arm perpendicular to the torso while keeping your arm extended throughout the movement. Also, keep the contraction at the top for a second.\n\nSlowly lower the dumbbell to the starting position as you inhale.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lying_One-Arm_Lateral_Raise.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: prone single-arm lateral raise requires FLAT bench, not incline support.",
+      "reviewNote": "Reviewed flat-bench one/two-arm rear raises, approximately 60-degree supported kickback, backward medicine-ball scoop-release sequence and opposite-palm mixed-grip chin.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within equal 512-pixel panels."
+    },
+    {
+      "id": "db-lying-rear-delt-raise",
+      "title": "Lying Rear Delt Raise",
+      "equipment": "Dumbbell",
+      "guideText": "While holding a dumbbell in each hand, lay with your chest down on a flat bench.\n\nPosition the palms of the hands in a neutral manner (palms facing your torso) as you keep the arms extended with the elbows slightly bent. This will be your starting position.\n\nNow raise the arms to the side until your elbows are at shoulder height and your arms are roughly parallel to the floor as you exhale. Tip: Maintain your arms perpendicular to the torso while keeping them extended throughout the movement. Also, keep the contraction at the top for a second.\n\nSlowly lower the dumbbells to the starting position as you inhale.\n\nRepeat for the recommended amount of repetitions and then switch to the other arm.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lying_Rear_Delt_Raise.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: prone rear-delt raise requires FLAT bench, not incline support.",
+      "reviewNote": "Reviewed flat-bench one/two-arm rear raises, approximately 60-degree supported kickback, backward medicine-ball scoop-release sequence and opposite-palm mixed-grip chin.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within equal 512-pixel panels."
+    },
+    {
+      "id": "wger-9c979645-78d1-44be-92a0-7940430a6a98",
+      "title": "Lying Triceps Kickback",
+      "equipment": "Dumbbell + Incline bench",
+      "guideText": "Set the bench to an 60deg angle. Stand still and rest your upper body on the inclined bench, ensuring a nearly straight line of your entire body. Squeeze your shoulder blades together, so that your elbows are located behind your torso with your upper arms nearly parallel to the floor. Lift the dumbbells until your arms form a straight line. Slowly lower the dumbbells back to the initial position. Initial position corresponds to an rectangular position of upper and lower arms.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1490/view/",
+        "author": "Moffi",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: chest-supported kickback requires approximately 60-degree support; pictured support/torso is low incline.",
+      "reviewNote": "Reviewed flat-bench one/two-arm rear raises, approximately 60-degree supported kickback, backward medicine-ball scoop-release sequence and opposite-palm mixed-grip chin.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within equal 512-pixel panels."
+    },
+    {
+      "id": "wger-28b65190-cae2-4d15-8f4e-dde0d9cc4d4b",
+      "title": "Meadows Row",
+      "equipment": "Barbell",
+      "guideText": "The Meadows row is a unilateral row performed with a landmine setup, overhand grip, and staggered stance. Lean your torso forward and grip the barbell. Rest the other forearm on the forward leg. Start this movement by driving the elbow behind you while retracting the shoulder-blade. Keep the working shoulder down. Pull toward your back hip until the elbow is level with your torso.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1304/view/",
+        "author": "carlos3c",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Hold: Meadows row illustration uses two hands on bar; free forearm should rest on forward leg.",
+      "reviewNote": "Meadows row still uses both hands on the bar; needs free forearm supported on forward leg.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within equal 512-pixel panels."
+    },
+    {
+      "id": "db-medicine-ball-scoop-throw",
+      "title": "Medicine Ball Scoop Throw",
+      "equipment": "Medicine ball",
+      "guideText": "Assume a semisquat stance with a medicine ball in your hands. Your arms should hang so the ball is near your feet.\n\nBegin by thrusting the hips forward as you extend through the legs, jumping up.\n\nAs you do, swing your arms up and over your head, keeping them extended, releasing the ball at the peak of your movement. The goal is to throw the ball the greatest distance behind you.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Medicine_Ball_Scoop_Throw.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: medicine-ball scoop throw must release backward behind athlete; rendering throws forward.",
+      "reviewNote": "Reviewed flat-bench one/two-arm rear raises, approximately 60-degree supported kickback, backward medicine-ball scoop-release sequence and opposite-palm mixed-grip chin.",
+      "bounds": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within equal 512-pixel panels."
+    },
+    {
+      "id": "db-mixed-grip-chin",
+      "title": "Mixed Grip Chin",
+      "equipment": "Specialty equipment",
+      "guideText": "Using a spacing that is just about 1 inch wider than shoulder width, grab a pull-up bar with the palms of one hand facing forward and the palms of the other hand facing towards you. This will be your starting position.\n\nNow start to pull yourself up as you exhale. Tip: With the arm that has the palms facing up concentrate on using the back muscles in order to perform the movement. The elbow of that arm should remain close to the torso. With the other arm that has the palms facing forward, the elbows will be away but in line with the torso. You will concentrate on using the lats to pull your body up.\n\nAfter a second contraction at the top, start to slowly come down as you inhale.\n\nRepeat for the recommended amount of repetitions.\n\nOn the following set, switch grips; so if you had the right hand with the palms facing you and the left one with the palms facing forward, on the next set you will have the palms facing forward for the right hand and facing you for the left.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Mixed_Grip_Chin.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: mixed-grip chin does not clearly show one palm toward and one palm away.",
+      "reviewNote": "Reviewed flat-bench one/two-arm rear raises, approximately 60-degree supported kickback, backward medicine-ball scoop-release sequence and opposite-palm mixed-grip chin.",
+      "bounds": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within equal 512-pixel panels."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-2393a8ce-c227-48cc-9bd4-37d4daac9dd3.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-019.png"
+}

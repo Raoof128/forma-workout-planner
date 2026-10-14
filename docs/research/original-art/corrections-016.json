@@ -1,0 +1,164 @@
+{
+  "name": "corrections-016",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-016.png",
+  "prompt": "Create ORIGINAL FORMA fitness manual art. Exactly THREE columns TWO rows SIX panels landscape1536x1024. Whitebackground, generous margins, fullyclothedvariedadults, charcoalgrayclothing/equipment limeaccent, correcttwoarms/twolegs andphysicallyplausible support. No lettering logoswatermarks. Complete figures and apparatus insideownpanel. ONE representative workingphase. Mandatorycorrections and fullactualguides below. \n\nRow 1 column 1: Keg Load. MANDATORY KEG LOAD: athlete lifts keg with botharms toward a waist/chest-high raised PLATFORM in front; both feet floor. Not carrying keg during step-up.. Actual guide: To load kegs, place the desired number a distance from the loading platform, typically 30-50 feet.\n\nBegin by grabbing the close handle of the first keg, tilting it onto its side to grab the opposite edge of the bottom of the keg. Lift the keg up to your chest.\n\nThe higher you can place the keg, the faster you should be able to move to the platform. Shouldering is usually not allowed. Be sure to keep a firm hold on the keg. Move as quickly as possible to the platform, and load it, extending through your hips, knees, and ankles to get it as high as possible.\n\nReturn to the starting position to retrieve the next keg, and repeat until the event is completed.\n\nRow 1 column 2: Kegel Exercise. MANDATORY Kegel: RELAXED supine body neutral hips resting FLOOR knees bent feetfloor, NO active glute bridge. Showrelaxed postureonly.. Actual guide: Lie on your back with your knees bent, or sit upright in a chair. Locate the pelvic floor muscles: they are the muscles you would use to stop the flow of urine or to hold back gas. Keep your abdomen, glutes and thighs relaxed and breathe normally throughout.\n\nTighten the pelvic floor muscles and lift them gently upwards and inwards. Hold the contraction for a few seconds, then release completely and rest for at least as long as you held. Repeat for the desired number of repetitions.\n\nThe exercise can be varied by holding longer with a light contraction (endurance) or by performing quick, short contractions with a full relaxation in between.\n\nRow 1 column 3: Kettlebell Arnold Press. MANDATORY ONE kettlebell Arnoldpress, standing, onebellrotatedpalmforwardatpressfinish. Not twobells.. Actual guide: Clean a kettlebell to your shoulder. Clean the kettlebell to your shoulder by extending through the legs and hips as you raise the kettlebell towards your shoulder. The palm should be facing inward.\n\nLooking straight ahead, press the kettlebell out and overhead, rotating your wrist so that your palm faces forward at the top of the motion.\n\nReturn the kettlebell to the starting position, with the palm facing in.\n\nRow 2 column 1: Kettlebell Seated Press. MANDATORY Seated kettlebellpress: ONE kettlebell in ONEhand, onflatbench asactualguide. Otherhand empty.. Actual guide: Sit on the floor and spread your legs out comfortably.\n\nClean one kettlebell to your shoulder.\n\nPress the kettlebell up and out until it is locked out overhead. Return to the starting position.\n\nRow 2 column 2: Kettlebell Thruster. MANDATORY Two-kettlebell THRUSTER: final phase STANDING UPRIGHT kneesfullyextended bothbellsoverhead. Not deepOHsquat.. Actual guide: Clean two kettlebells to your shoulders. Clean the kettlebells to your shoulders by extending through the legs and hips as you pull the kettlebells towards your shoulders. Rotate your wrists as you do so. This will be your starting position.\n\nBegin to squat by flexing your hips and knees, lowering your hips between your legs. Maintain an upright, straight back as you descend as low as you can.\n\nAt the bottom, reverse direction and squat by extending your knees and hips, driving through your heels. As you do so, press both kettlebells overhead by extending your arms straight up, using the momentum from the squat to help drive the weights upward.\n\nAs you begin the next repetition, return the weights to the shoulders.\n\nRow 2 column 3: Kickstand RDL. MANDATORY Kickstand RDL: rear TOES CLEARLY GROUNDED, frontfootflat, hingedtorso one/twoDB asactualguide. No liftedrearfoot.. Actual guide: use non-working leg's toes to help with balance and perform an RDL.",
+  "cells": [
+    {
+      "id": "db-keg-load",
+      "title": "Keg Load",
+      "equipment": "Specialty equipment",
+      "guideText": "To load kegs, place the desired number a distance from the loading platform, typically 30-50 feet.\n\nBegin by grabbing the close handle of the first keg, tilting it onto its side to grab the opposite edge of the bottom of the keg. Lift the keg up to your chest.\n\nThe higher you can place the keg, the faster you should be able to move to the platform. Shouldering is usually not allowed. Be sure to keep a firm hold on the keg. Move as quickly as possible to the platform, and load it, extending through your hips, knees, and ankles to get it as high as possible.\n\nReturn to the starting position to retrieve the next keg, and repeat until the event is completed.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Keg_Load.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "KEG LOAD: athlete lifts keg with botharms toward a waist/chest-high raised PLATFORM in front; both feet floor. Not carrying keg during step-up.",
+      "reviewNote": "Reviewed platform keg load, relaxed supine Kegel posture, one-bell rotated standing press, upright two-bell thruster finish and rear-toes-grounded kickstand hinge.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 506
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures in the source."
+    },
+    {
+      "id": "wger-5597bafc-0478-4124-9745-85f9df22be3e",
+      "title": "Kegel Exercise",
+      "equipment": "Bodyweight",
+      "guideText": "Lie on your back with your knees bent, or sit upright in a chair. Locate the pelvic floor muscles: they are the muscles you would use to stop the flow of urine or to hold back gas. Keep your abdomen, glutes and thighs relaxed and breathe normally throughout.\n\nTighten the pelvic floor muscles and lift them gently upwards and inwards. Hold the contraction for a few seconds, then release completely and rest for at least as long as you held. Repeat for the desired number of repetitions.\n\nThe exercise can be varied by holding longer with a light contraction (endurance) or by performing quick, short contractions with a full relaxation in between.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2555/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Kegel: RELAXED supine body neutral hips resting FLOOR knees bent feetfloor, NO active glute bridge. Showrelaxed postureonly.",
+      "reviewNote": "Reviewed platform keg load, relaxed supine Kegel posture, one-bell rotated standing press, upright two-bell thruster finish and rear-toes-grounded kickstand hinge.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 506
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures in the source."
+    },
+    {
+      "id": "db-kettlebell-arnold-press",
+      "title": "Kettlebell Arnold Press",
+      "equipment": "Kettlebell",
+      "guideText": "Clean a kettlebell to your shoulder. Clean the kettlebell to your shoulder by extending through the legs and hips as you raise the kettlebell towards your shoulder. The palm should be facing inward.\n\nLooking straight ahead, press the kettlebell out and overhead, rotating your wrist so that your palm faces forward at the top of the motion.\n\nReturn the kettlebell to the starting position, with the palm facing in.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Arnold_Press.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "ONE kettlebell Arnoldpress, standing, onebellrotatedpalmforwardatpressfinish. Not twobells.",
+      "reviewNote": "Reviewed platform keg load, relaxed supine Kegel posture, one-bell rotated standing press, upright two-bell thruster finish and rear-toes-grounded kickstand hinge.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 506
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures in the source."
+    },
+    {
+      "id": "db-kettlebell-seated-press",
+      "title": "Kettlebell Seated Press",
+      "equipment": "Kettlebell",
+      "guideText": "Sit on the floor and spread your legs out comfortably.\n\nClean one kettlebell to your shoulder.\n\nPress the kettlebell up and out until it is locked out overhead. Return to the starting position.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Seated_Press.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Seated kettlebellpress: ONE kettlebell in ONEhand, onflatbench asactualguide. Otherhand empty.",
+      "reviewNote": "Actual guide specifies sitting on the floor with legs spread, but drawing places athlete on a bench.",
+      "bounds": {
+        "x": 0,
+        "y": 506,
+        "width": 512,
+        "height": 518
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures in the source."
+    },
+    {
+      "id": "db-kettlebell-thruster",
+      "title": "Kettlebell Thruster",
+      "equipment": "Kettlebell",
+      "guideText": "Clean two kettlebells to your shoulders. Clean the kettlebells to your shoulders by extending through the legs and hips as you pull the kettlebells towards your shoulders. Rotate your wrists as you do so. This will be your starting position.\n\nBegin to squat by flexing your hips and knees, lowering your hips between your legs. Maintain an upright, straight back as you descend as low as you can.\n\nAt the bottom, reverse direction and squat by extending your knees and hips, driving through your heels. As you do so, press both kettlebells overhead by extending your arms straight up, using the momentum from the squat to help drive the weights upward.\n\nAs you begin the next repetition, return the weights to the shoulders.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Kettlebell_Thruster.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Two-kettlebell THRUSTER: final phase STANDING UPRIGHT kneesfullyextended bothbellsoverhead. Not deepOHsquat.",
+      "reviewNote": "Reviewed platform keg load, relaxed supine Kegel posture, one-bell rotated standing press, upright two-bell thruster finish and rear-toes-grounded kickstand hinge.",
+      "bounds": {
+        "x": 512,
+        "y": 506,
+        "width": 512,
+        "height": 518
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures in the source."
+    },
+    {
+      "id": "wger-107ea68a-d976-49ed-be75-3b0cf253c36a",
+      "title": "Kickstand RDL",
+      "equipment": "Barbell",
+      "guideText": "use non-working leg's toes to help with balance and perform an RDL.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1688/view/",
+        "author": "eriktrinkle",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Kickstand RDL: rear TOES CLEARLY GROUNDED, frontfootflat, hingedtorso one/twoDB asactualguide. No liftedrearfoot.",
+      "reviewNote": "Reviewed platform keg load, relaxed supine Kegel posture, one-bell rotated standing press, upright two-bell thruster finish and rear-toes-grounded kickstand hinge.",
+      "bounds": {
+        "x": 1024,
+        "y": 506,
+        "width": 512,
+        "height": 518
+      },
+      "cropReviewNote": "Inspected panel row boundaries and complete accepted figures in the source."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-4e04599d-b55e-4c22-8a00-18980e4e270b.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-016.png"
+}
