@@ -1,0 +1,62 @@
+{
+  "retrievedAt": "2026-10-14T05:46:18.291100+00:00",
+  "asOf": "2026-10-14",
+  "sources": [
+    {
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "status": 200,
+      "finalUrl": "https://www.w3.org/TR/WCAG22/",
+      "bytes": 511724,
+      "containsExpectedContent": true
+    },
+    {
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html",
+      "status": 200,
+      "finalUrl": "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html",
+      "bytes": 38722,
+      "containsExpectedContent": true
+    },
+    {
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html",
+      "status": 200,
+      "finalUrl": "https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html",
+      "bytes": 50836,
+      "containsExpectedContent": true
+    },
+    {
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html",
+      "status": 200,
+      "finalUrl": "https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html",
+      "bytes": 36813,
+      "containsExpectedContent": true
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView",
+      "bytes": 195602,
+      "containsExpectedContent": true
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog",
+      "bytes": 239412,
+      "containsExpectedContent": true
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion",
+      "bytes": 329645,
+      "containsExpectedContent": true
+    },
+    {
+      "url": "https://react.dev/reference/react/useSyncExternalStore",
+      "status": 200,
+      "finalUrl": "https://react.dev/reference/react/useSyncExternalStore",
+      "bytes": 280665,
+      "containsExpectedContent": true
+    }
+  ]
+}

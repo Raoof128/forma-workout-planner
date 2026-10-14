@@ -1,0 +1,160 @@
+{
+  "reviewedAt": "2026-10-14T05:47:57.627869+00:00",
+  "asOf": "2026-10-14",
+  "method": "Read-only source audit of React components, global/account/motion CSS, navigation hook and relevant accessibility/navigation/legal/account test sources. No browser execution, member session access or code/git changes. Rendered evidence is owned by root.",
+  "instructions": "No AGENTS.md found in repository or workspace parent paths. Read frontend-testing-debugging and react-best-practices; followed assigned source-only scope.",
+  "routesReviewed": [
+    "overview",
+    "routines",
+    "library",
+    "workout",
+    "history",
+    "progress",
+    "settings",
+    "account",
+    "privacy",
+    "terms"
+  ],
+  "sourcesFile": "work/site-sweep-a11y-sources.json",
+  "findings": [
+    {
+      "id": "a11y-account-import-focus",
+      "severity": "medium",
+      "status": "confirmed_in_source; rendered reproduction not performed",
+      "title": "Account backup import has no visible keyboard focus indicator",
+      "evidence": [
+        {
+          "path": "src/components/Account.jsx",
+          "line": 1923,
+          "fact": "Import label contains the native focusable file input but has account-import-label class, not import-label."
+        },
+        {
+          "path": "src/account.css",
+          "line": 747,
+          "fact": "File input covers the label and has opacity:0, so its own focus outline is invisible."
+        },
+        {
+          "path": "src/styles.css",
+          "line": 69,
+          "fact": "Visible wrapper focus styling only matches .import-label:focus-within; account-import-label has no focus-within or focus-visible styling anywhere in account.css."
+        }
+      ],
+      "impact": "A keyboard user reaching account Import workout backup gets an invisible focused file input. The control remains keyboard operable; the problem is focus indication, not missing keyboard activation.",
+      "recommendation": "Add .account-import-label:focus-within to the visible focus outline rule or give this label the shared import-label class. Verify focus outline is not clipped by wrapper overflow.",
+      "validation": "In an authorized account fixture, tab from Export my data onto Import workout backup and verify a clearly visible wrapper indicator. No live member data is needed.",
+      "references": [
+        "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html"
+      ],
+      "criterion": "WCAG 2.2 SC 2.4.7 (AA)"
+    },
+    {
+      "id": "a11y-legal-toc-focus",
+      "severity": "low",
+      "status": "confirmed_scroll_only_behavior_in_source; conformance impact needs rendered keyboard verification",
+      "title": "Legal contents navigation scrolls without moving keyboard focus to its section",
+      "evidence": [
+        {
+          "path": "src/components/Legal.jsx",
+          "line": 55,
+          "fact": "Every contents link points to the current route hash, prevents default, then only calls scrollIntoView on a section heading."
+        }
+      ],
+      "impact": "Pressing Enter on a contents item visually navigates to a section, but focus remains in the contents list. The next Tab continues through the contents controls rather than from the section just chosen. The link also does not expose a section-specific destination.",
+      "recommendation": "Keep route hash semantics intact, but give the target heading tabIndex=-1 and focus it after scrolling; choose a route-compatible section navigation scheme if deep links are desired.",
+      "validation": "On privacy and terms, activate a contents link with Enter, confirm target section focus and subsequent sequential keyboard navigation.",
+      "references": [
+        "https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html",
+        "https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView"
+      ],
+      "criterion": "Focus-order/navigation usability risk; not claimed as a proven WCAG failure without rendered verification."
+    },
+    {
+      "id": "a11y-legal-reduced-motion",
+      "severity": "low",
+      "status": "confirmed_in_source",
+      "title": "Legal contents explicitly requests smooth scrolling under reduced-motion preference",
+      "evidence": [
+        {
+          "path": "src/components/Legal.jsx",
+          "line": 60,
+          "fact": "scrollIntoView passes behavior:smooth unconditionally."
+        },
+        {
+          "path": "src/styles.css",
+          "line": 2831,
+          "fact": "Reduced-motion CSS sets scroll-behavior:auto, but an explicit JavaScript smooth request does not rely on the CSS computed scroll behavior."
+        }
+      ],
+      "impact": "Users requesting reduced motion still receive animated section scrolling when they use legal contents links. This is a motion-preference inconsistency, not a claim of AA failure.",
+      "recommendation": "Use matchMedia(prefers-reduced-motion: reduce) to select instant/auto versus smooth, or use behavior:auto and let reduced-motion-aware CSS choose scrolling behavior.",
+      "validation": "With reducedMotion:reduce, activate legal contents links and verify no smooth scrolling; keep ordinary preference navigation functional.",
+      "references": [
+        "https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView",
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion",
+        "https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html"
+      ],
+      "criterion": "WCAG SC 2.3.3 is AAA; treat as preference/usability repair, not AA conformance blocker."
+    }
+  ],
+  "existingSafeguards": [
+    {
+      "path": "src/components/UI.jsx",
+      "fact": "Native dialog.showModal, title labeling, initial focus, Escape cancel handling, visible close control, Tab wrap and connected opener focus restoration exist."
+    },
+    {
+      "path": "src/components/Navigation.jsx",
+      "fact": "Closed mobile sidebar is inert; open navigation makes main inert, traps Tab and supports Escape/toggle focus restoration."
+    },
+    {
+      "path": "src/hooks/useNavigation.js",
+      "fact": "All ten routes are recognized; useSyncExternalStore tracks hash, updates document title and focuses main h1 with tabIndex=-1."
+    },
+    {
+      "path": "src/App.jsx",
+      "fact": "Skip-to-content link focuses the page heading; saving status is not repeatedly live-announced."
+    },
+    {
+      "path": "src/components/Routines.jsx",
+      "fact": "Reordering uses named native buttons with boundary disabled states; editor fields are labeled; unsaved-discard confirmation receives focus."
+    },
+    {
+      "path": "src/components/Workout.jsx",
+      "fact": "Set controls have exercise/set/measurement names and completion pressed states; rest timer uses role=timer rather than an every-second live status."
+    },
+    {
+      "path": "src/components/ExerciseMedia.jsx",
+      "fact": "Compact images are decorative within aria-hidden previews; full guide image has alt text and caption; onLoad/onError end loading and expose fallback text; atlas has stable explicit aspect ratio."
+    },
+    {
+      "path": "src/components/ExerciseGuide.jsx",
+      "fact": "Guide text remains visible when artwork/instruction import fails; full-instruction errors use role=alert; external source links use noopener noreferrer."
+    },
+    {
+      "path": "src/components/Account.jsx",
+      "fact": "Auth fields are wrapped in labels, email/name autocomplete exists, errors are alerts, success messages statuses, progressbar has a label and min/max/current values. Member flows were source reviewed only."
+    },
+    {
+      "path": "src/styles.css",
+      "fact": "Shared focus outlines, transparent-overlay accessible Settings/Recovery file controls, 48px schedule buttons and global reduced-motion overrides exist."
+    },
+    {
+      "path": "src/components/Insights.jsx",
+      "fact": "Training chart numbers/dates are actual text; personal-best table has column and row headers. No source-only claim of inaccessible chart data is justified."
+    }
+  ],
+  "testCoverageNotes": [
+    {
+      "path": "tests/accessibility.spec.js",
+      "fact": "Existing axe WCAG A/AA scans cover seven routes at 1536px/390px and routine, exercise-guide, finish-workout, history-detail/editor dialogs. Account/privacy/terms are not in this scan list. Do not describe all ten routes as axe-audited from this file."
+    },
+    {
+      "path": "tests/navigation-release.spec.js",
+      "fact": "Navigation regression covers a hashchange listener setup race, not legal contents focus or account import focus."
+    }
+  ],
+  "limitations": [
+    "No screenshots, rendered appearance, actual target spacing, contrast, focus clipping, keyboard run or screen-reader run verified by this audit.",
+    "No automatic accessibility test was executed by this worker; root and parallel test worker own current browser/test evidence.",
+    "No other supported keyboard, semantic, ARIA, touch or image-loading defect found in inspected source. This is not an assertion of complete accessibility conformance."
+  ]
+}

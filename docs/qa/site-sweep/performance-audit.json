@@ -1,0 +1,222 @@
+{
+  "auditDate": "2026-10-14",
+  "scope": "Read-only source/bundle audit; no browser/visual performance claims, no code/git changes.",
+  "skill": "build-web-apps:react-best-practices",
+  "versions": {
+    "react": "19.3.0",
+    "reactDom": "19.3.0",
+    "vite": "8.3.4",
+    "viteReactPlugin": "6.1.2",
+    "betterAuth": "1.7.7",
+    "lucideReact": "1.55.0",
+    "zod": "4.6.6",
+    "note": "Exact package.json pins inspected; no claim these are latest releases."
+  },
+  "baseline": {
+    "source": "Existing dist/assets captured duringaudit; build may predate concurrent final artwork additions.",
+    "main": "dist/assets/index-_TXVnD-5.js",
+    "instructions": "dist/assets/instructions-D5gYSpG2.js",
+    "cssBytes": 73123,
+    "cssGzipBytes": 15083,
+    "gzipMethod": "Python gzip.compress(...,mtime=0); bytes are local artifacts, not production transfer measurements.",
+    "mediaMinimalProjection": {
+      "bytes": 637392,
+      "gzipBytes": 66958,
+      "detail": "Read-only estimate retaining src,width,height,title,kind,region and exercise captions; no source changed. Further dedup by shared sheet could reduce metadata."
+    }
+  },
+  "officialDocumentation": {
+    "fetchedAt": "2026-10-14",
+    "receipts": "work/performance-docs/fetch.json",
+    "savedDirectory": "work/performance-docs",
+    "status": "All six official pages returnedHTTP200, originalHTML and extracted text saved. Current page content supports API behavior, not release-date claims."
+  },
+  "findings": [
+    {
+      "id": "P1",
+      "priority": "high",
+      "title": "Initial JavaScript contains the whole catalog/media manifest and every screen",
+      "evidence": [
+        {
+          "path": "src/App.jsx",
+          "line": 17,
+          "detail": "Overview, Routines, Library, Workout, Insights, Preferences, Account and Legal imported eagerly."
+        },
+        {
+          "path": "src/data.js",
+          "line": 1,
+          "detail": "Catalog, machine catalog and curation imported synchronously; data.js is used by startup storage."
+        },
+        {
+          "path": "src/components/ExerciseMedia.jsx",
+          "line": 2,
+          "detail": "Complete media manifest imported eagerly."
+        }
+      ],
+      "measurement": {
+        "initialMainJsBytes": 2980658,
+        "initialMainJsGzipBytes": 448699,
+        "catalogJsonBytes": 1470857,
+        "catalogJsonGzipBytes": 200914,
+        "mediaJsonBytes": 1499278,
+        "mediaJsonGzipBytes": 87324
+      },
+      "recommendation": "First trim/deduplicate runtime media asset metadata while retaining research registry provenance; then lazy-load noninitial screens with React.lazy/Suspense and preserve chunk-error recovery. For further gains split lightweight saved-ID/metric data from rich browsing metadata; routing alone will not remove catalog imports required by startup storage.",
+      "risk": "Medium: preserve all historical IDs/units, account boundaries, legal access and existing navigation/modal state. Do not drop catalog data needed for schema validation.",
+      "sources": [
+        "https://react.dev/reference/react/lazy",
+        "https://vite.dev/guide/features"
+      ]
+    },
+    {
+      "id": "P2",
+      "priority": "high",
+      "title": "Small card thumbnails load full-resolution PNG atlases",
+      "evidence": [
+        {
+          "path": "src/components/ExerciseMedia.jsx",
+          "line": 37,
+          "detail": "84px compact cards use original asset.src and CSS atlas positioning; lazy loading affects timing but not image payload size."
+        },
+        {
+          "path": "src/styles.css",
+          "line": 1413,
+          "detail": "Preview fixed84x84px."
+        }
+      ],
+      "measurement": {
+        "publicOriginalPngCount": 205,
+        "totalOriginalPngBytes": 336800209,
+        "medianOriginalPngBytes": 1626484,
+        "maxOriginalPngBytes": 2198874,
+        "uniqueManifestSourceUrls": 186,
+        "first24CatalogUniqueImageSources": 9,
+        "first24CombinedOriginalBytes": 15047445
+      },
+      "recommendation": "Generate additional small atlas derivatives or per-cell thumbnails and medium guide derivatives in an approved asset-processing workflow, preserve every original unchanged and propagate reviewed bounds/hashes. Native lazy loading and async decoding should remain. Measure actual loaded image bytes under root's browser capture before choosing quality/format thresholds.",
+      "risk": "Medium: crop geometry and attribution/cache version must stay correct; compression must preserve detailed grips/support.15MB is a potential first24 total, not actual viewport transfer; browser lazy-load thresholds and caching vary.",
+      "sources": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img"
+      ]
+    },
+    {
+      "id": "P3",
+      "priority": "medium",
+      "title": "Opening one sourced guide downloads all full instructions",
+      "evidence": [
+        {
+          "path": "src/components/ExerciseGuide.jsx",
+          "line": 9,
+          "detail": "One cached dynamic import of entire instructions.json; deduplicates requests and clears cached promise on rejection."
+        }
+      ],
+      "measurement": {
+        "lazyInstructionsJsBytes": 888783,
+        "lazyInstructionsJsGzipBytes": 238338,
+        "instructionsJsonBytes": 901387
+      },
+      "recommendation": "Keep the existing fallback text, retry semantics and deduplication; partition instructions into a modest number of stable chunks keyed by canonical instruction ID if first-guide latency proves material. Preload on deliberate guide hover/focus only after considering data costs.",
+      "risk": "Medium: canonical aliases and instructionId must remain exact; avoid generating1414 tiny requests/chunks or changing source attribution.",
+      "sources": [
+        "https://vite.dev/guide/features",
+        "https://react.dev/reference/react/lazy"
+      ]
+    },
+    {
+      "id": "P4",
+      "priority": "medium",
+      "title": "Workout timer rerenders the entire set logger four times per second",
+      "evidence": [
+        {
+          "path": "src/components/Workout.jsx",
+          "line": 34,
+          "detail": "250ms setNow drives whole Workout component; elapsed/remaining displayed as whole seconds."
+        },
+        {
+          "path": "src/components/Workout.jsx",
+          "line": 187,
+          "detail": "Every timer render maps exercise rows and linearly searches catalog using exercises.find."
+        },
+        {
+          "path": "src/data.js",
+          "line": 156,
+          "detail": "exerciseById Map already available."
+        }
+      ],
+      "recommendation": "Use exerciseById.get for repeated lookups. Isolate timer display into a narrow component/subscription, or update state only when displayed seconds change while preserving absolute timestamps and rest completion. Profile long workouts before broader memoization.",
+      "risk": "Low-to-medium: rest expiry, pause/resume, hidden-tab drift, notification exactly-once behavior and existing saved deadlines must remain intact.",
+      "sources": [
+        "https://react.dev/reference/react/useDeferredValue"
+      ]
+    },
+    {
+      "id": "P5",
+      "priority": "low",
+      "title": "Every search renormalizes1414 static searchable records",
+      "evidence": [
+        {
+          "path": "src/catalog/search.js",
+          "line": 8,
+          "detail": "Joins all searchable fields and applies NFKD/lowercase/regex for every record on each filter call."
+        },
+        {
+          "path": "src/components/Library.jsx",
+          "line": 34,
+          "detail": "Already uses useDeferredValue and memoized filtering with24-card paging; these are useful existing controls."
+        }
+      ],
+      "measurement": {
+        "nodeSourceBenchmark": {
+          "rows": 1414,
+          "warmupRuns": 10,
+          "samples": 100,
+          "emptyQueryMedianMs": 2.952,
+          "emptyQueryP95Ms": 4.574,
+          "benchPressMedianMs": 3.889,
+          "benchPressP95Ms": 6.256,
+          "dumbbellMedianMs": 4.074,
+          "dumbbellP95Ms": 6.896
+        }
+      },
+      "recommendation": "Precompute folded search strings once and return true immediately for empty query; hoist stable equipment/activity option sets. Preserve deferred query and paginated rendering. Treat this as lower priority than payload reduction.",
+      "risk": "Low: retain matching of aliases, diacritics, all query tokens and equipment tags. Node numbers do not establish browser INP.",
+      "sources": [
+        "https://react.dev/reference/react/useDeferredValue"
+      ]
+    },
+    {
+      "id": "P6",
+      "priority": "medium",
+      "title": "Large guest histories are fully cloned/validated/serialized for each edit",
+      "evidence": [
+        {
+          "path": "src/persistence.js",
+          "line": 64,
+          "detail": "Each mutation structuredClones base, validates entire workspace and serializes it to synchronous localStorage."
+        },
+        {
+          "path": "src/storage.js",
+          "line": 7,
+          "detail": "Admits20MiB backups,10000 sessions,150000 totalsets."
+        }
+      ],
+      "recommendation": "Profile near-limit synthetic workspaces first. If blocking is demonstrated, move durable guest storage to IndexedDB with a tested schema migration and preserve lock/recovery/conflict semantics; retain server validation independently. Avoid casually bypassing validation or debouncing away durable changes.",
+      "risk": "High implementation risk: user data migration, cross-tab locking and recovery correctness dominate; this is a measured follow-up proposal, not an immediate rewrite.",
+      "sources": [
+        "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API"
+      ]
+    }
+  ],
+  "existingStrengths": [
+    "Full instructions already dynamically imported with cached-promise retry.",
+    "Compact images use native lazy loading, async decoding and reserved CSS aspect ratio; guide imagery eager with readable finite error state.",
+    "Library limits initial rendering to24 and uses deferred search.",
+    "Saved exerciseById Map and account boundary/error handling already present."
+  ],
+  "nextValidation": [
+    "Root to capture cold/warm initial requests and transferred/decoded image bytes at mobile/desktop viewports.",
+    "Compare account and guest build routes before/after any split; ensure browser chunk-error recovery.",
+    "Profile longWorkout timer commits and near-limit synthetic guest data.",
+    "Production image/cache headers must be observed; worker static handler preserves ASSETS headers so no cache defect inferred solely from source."
+  ]
+}

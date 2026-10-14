@@ -1,0 +1,44 @@
+[
+  {
+    "name": "react-lazy",
+    "url": "https://react.dev/reference/react/lazy",
+    "status": 200,
+    "bytes": 198808,
+    "saved": "work/performance-docs/react-lazy.html"
+  },
+  {
+    "name": "react-deferred",
+    "url": "https://react.dev/reference/react/useDeferredValue",
+    "status": 200,
+    "bytes": 300250,
+    "saved": "work/performance-docs/react-deferred.html"
+  },
+  {
+    "name": "vite-features",
+    "url": "https://vite.dev/guide/features",
+    "status": 200,
+    "bytes": 271731,
+    "saved": "work/performance-docs/vite-features.html"
+  },
+  {
+    "name": "vite-build",
+    "url": "https://vite.dev/guide/build",
+    "status": 200,
+    "bytes": 161798,
+    "saved": "work/performance-docs/vite-build.html"
+  },
+  {
+    "name": "mdn-img",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img",
+    "status": 200,
+    "bytes": 236015,
+    "saved": "work/performance-docs/mdn-img.html"
+  },
+  {
+    "name": "mdn-webstorage",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API",
+    "status": 200,
+    "bytes": 159592,
+    "saved": "work/performance-docs/mdn-webstorage.html"
+  }
+]
