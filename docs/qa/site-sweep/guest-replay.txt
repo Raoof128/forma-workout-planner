@@ -1,0 +1,33 @@
+
+Running 26 tests using 1 worker
+
+(node:43378) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/accessibility.spec.js:18:5 › accessible library page and dialogs at 1536px (10.4s)
+  ✓   2 [chromium] › tests/persistence-release.spec.js:62:1 › corrupt-data recovery refuses to replace a newer restore from another tab (12.3s)
+  ✓   3 [chromium] › tests/regressions.spec.js:171:1 › rest duration, running deadline and paused state survive routes and reload (25.5s)
+  ✓   4 [chromium] › tests/regressions.spec.js:322:1 › maximum length title keeps its start button inside the hero (7.8s)
+  ✓   5 [chromium] › tests/regressions.spec.js:481:1 › mobile rest controls stay reachable and expose instructions during logging (15.1s)
+  ✓   6 [chromium] › tests/regressions.spec.js:526:1 › fast typing persists complete values and a valid backup restores from recovery (16.1s)
+  ✓   7 [chromium] › tests/regressions.spec.js:597:1 › recovery distinguishes an invalid backup from a failed storage write (7.6s)
+  ✓   8 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 320px (27.3s)
+  ✓   9 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 768px (16.2s)
+  ✓  10 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 1024px (14.5s)
+  ✓  11 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 1920px (16.8s)
+  ✓  12 [chromium] › tests/security-release.spec.js:117:1 › export failure is surfaced to the user (3.9s)
+  ✓  13 [chromium] › tests/ui-controls.spec.js:283:1 › Settings backup restore can be cancelled or confirmed and changes persisted data (9.5s)
+  ✓  14 [chromium] › tests/ui-controls.spec.js:394:1 › mobile navigation and shared guide dialog support focus return and keyboard trapping at 375px (9.6s)
+  ✓  15 [chromium] › tests/ui-controls.spec.js:446:1 › error fallback downloads saved data, reports denied storage and reloads the workspace (8.7s)
+  ✓  16 [chromium] › tests/ui-coverage-gaps.spec.js:45:1 › skip link, desktop brand, profile shortcut and active session navigation reach their targets (9.3s)
+  ✓  17 [chromium] › tests/ui-coverage-gaps.spec.js:212:1 › history editor retains notes on keep, rejects removing every completed set, and discards without saving (13.3s)
+  ✓  18 [chromium] › tests/ui-coverage-gaps.spec.js:259:1 › empty overview, workout, history and progress calls to action start the default routine (25.8s)
+  ✓  19 [chromium] › tests/ui-coverage-gaps.spec.js:331:1 › routine detail closes cleanly and workout Back returns to overview with the session active (11.0s)
+  ✓  20 [chromium] › tests/workflows.spec.js:3:1 › personal training workflow persists routines, sessions and calculated progress (29.7s)
+  ✓  21 [chromium] › tests/workflows.spec.js:161:1 › mobile navigation, modal and active workout fit a phone (9.8s)
+  ✓  22 [chromium] › tests/workout-release.spec.js:188:1 › routine switch can resume, cancel, or replace an active session (11.6s)
+  ✓  23 [chromium] › tests/workout-release.spec.js:240:1 › 60, 90, and 120 second timers persist their deadlines and expiry clears timer state (15.8s)
+  ✓  24 [chromium] › tests/workout-release.spec.js:290:1 › real-time rest timer smoke decrements and survives a reload (11.3s)
+  ✓  25 [chromium] › tests/workout-release.spec.js:445:1 › 2,000 completed workouts render correct aggregate progress within a practical bound (10.4s)
+  ✓  26 [chromium] › tests/workout-release.spec.js:495:1 › progress verifies 80 kg × 5 rounding, includes 12 reps, and excludes 13 (6.7s)
+
+  26 passed (6.1m)

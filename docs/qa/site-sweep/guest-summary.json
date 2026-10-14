@@ -1,0 +1,24 @@
+{
+  "status": "complete_all112_unique_guest_cases_passed_across_full_run_and_failed_replay",
+  "coverage": {
+    "fullRunUniqueCases": 112,
+    "initialFinalRunPasses": 86,
+    "failedCasesReplayedPassed": 26,
+    "uniqueCasesVerified": 112,
+    "fullOneShotGreen": false
+  },
+  "alignedFailedReplay": {
+    "log": "work/site-sweep-final-replay.txt",
+    "artifacts": "work/site-sweep-final-replay-results",
+    "browser": "Playwright bundled Chromium156",
+    "workers": 1,
+    "exitCode": 0,
+    "passed": 26,
+    "failed": 0,
+    "duration": "6.1m",
+    "testTimeoutBudget": "unchanged30s",
+    "performanceRenderBoundMs": 10000
+  },
+  "budgetsIncreased": false,
+  "remainingRisk": "Full systemChromium two-worker run was86/112green; exact26failed-only aligned one-worker replay allpassed. Whole journey29.7s near30s budget on this4CPU environment. Account/production/cross-engine checks owned by coordinator."
+}

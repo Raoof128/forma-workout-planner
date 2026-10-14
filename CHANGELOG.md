@@ -19,8 +19,12 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   real-app checks pass. Authentication methods and data ownership are unchanged.
 - Original generated hero and routine photography replace images whose
   redistribution terms were undocumented. Sources and prompts are preserved.
-  Validation is being completed in [the site review](docs/qa/site-sweep/README.md);
-  these changes have not been deployed.
+  Phone legal headings also remain visible below the sticky navigation header.
+- Verified 62 unit cases, all 112 unique guest cases across the full run and
+  failed-case replay, 18 isolated account journeys plus four form-focus checks,
+  and 40 production cases across Chromium, Firefox and WebKit. Strict artwork
+  coverage, lint, formatting, types, docs and build pass. See
+  [the completed site review](docs/qa/site-sweep/README.md). Not deployed.
 
 ### Raouf: 2026-10-14 — Roman-chair guide correction
 

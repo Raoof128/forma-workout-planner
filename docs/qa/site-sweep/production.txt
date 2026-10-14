@@ -1,0 +1,77 @@
+[WebServer] (node:44724) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 40 tests using 2 workers
+
+(node:44748) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+(node:44749) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   1 [production-chromium-desktop] › tests/catalog.spec.js:3:1 › public guest workspace offers working backups rather than unavailable account forms (3.2s)
+  ✓   2 [production-chromium-desktop] › tests/navigation-release.spec.js:3:1 › a hash change between first render and listener setup selects the current URL (2.9s)
+  ✓   3 [production-chromium-desktop] › tests/catalog.spec.js:20:1 › expanded exercise library searches all pages and loads source-attributed full guides (4.6s)
+  ✓   4 [production-chromium-desktop] › tests/production.spec.js:51:1 › production settings, backup restore, and saved data survive reload (6.3s)
+  ✓   6 [production-chromium-desktop] › tests/production.spec.js:109:1 › production navigation works and the layout fits desktop and mobile viewports (3.7s)
+  ✓   5 [production-chromium-desktop] › tests/catalog.spec.js:40:1 › cardio templates log time and distance, persist history and allow measurement correction (9.3s)
+(node:45011) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [production-chromium-desktop] › tests/production.spec.js:139:1 › production workout can be completed, saved, and restored after reload (5.8s)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   8 [production-chromium-desktop] › tests/production.spec.js:182:1 › production writes from concurrent tabs preserve profile and active workout (5.1s)
+(node:45246) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   9 [production-firefox-desktop] › tests/catalog.spec.js:3:1 › public guest workspace offers working backups rather than unavailable account forms (8.3s)
+  ✓  10 [production-firefox-desktop] › tests/navigation-release.spec.js:3:1 › a hash change between first render and listener setup selects the current URL (6.9s)
+  ✓  11 [production-firefox-desktop] › tests/catalog.spec.js:20:1 › expanded exercise library searches all pages and loads source-attributed full guides (8.0s)
+  ✓  12 [production-firefox-desktop] › tests/production.spec.js:51:1 › production settings, backup restore, and saved data survive reload (12.9s)
+  ✓  13 [production-firefox-desktop] › tests/catalog.spec.js:40:1 › cardio templates log time and distance, persist history and allow measurement correction (13.7s)
+  ✓  14 [production-firefox-desktop] › tests/production.spec.js:109:1 › production navigation works and the layout fits desktop and mobile viewports (5.5s)
+(node:45653) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  15 [production-firefox-desktop] › tests/production.spec.js:139:1 › production workout can be completed, saved, and restored after reload (9.4s)
+  ✓  16 [production-webkit-desktop] › tests/catalog.spec.js:3:1 › public guest workspace offers working backups rather than unavailable account forms (7.6s)
+  ✓  18 [production-webkit-desktop] › tests/catalog.spec.js:20:1 › expanded exercise library searches all pages and loads source-attributed full guides (7.0s)
+  ✓  17 [production-firefox-desktop] › tests/production.spec.js:182:1 › production writes from concurrent tabs preserve profile and active workout (12.1s)
+(node:45952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  20 [production-webkit-desktop] › tests/navigation-release.spec.js:3:1 › a hash change between first render and listener setup selects the current URL (4.1s)
+  ✓  19 [production-webkit-desktop] › tests/catalog.spec.js:40:1 › cardio templates log time and distance, persist history and allow measurement correction (20.2s)
+(node:46131) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  21 [production-webkit-desktop] › tests/production.spec.js:51:1 › production settings, backup restore, and saved data survive reload (10.4s)
+  ✓  22 [production-chromium-mobile] › tests/catalog.spec.js:3:1 › public guest workspace offers working backups rather than unavailable account forms (3.2s)
+  ✓  23 [production-webkit-desktop] › tests/production.spec.js:109:1 › production navigation works and the layout fits desktop and mobile viewports (4.9s)
+  ✓  24 [production-chromium-mobile] › tests/catalog.spec.js:20:1 › expanded exercise library searches all pages and loads source-attributed full guides (6.0s)
+  ✓  25 [production-webkit-desktop] › tests/production.spec.js:139:1 › production workout can be completed, saved, and restored after reload (9.7s)
+  ✓  26 [production-chromium-mobile] › tests/catalog.spec.js:40:1 › cardio templates log time and distance, persist history and allow measurement correction (21.7s)
+  ✓  27 [production-webkit-desktop] › tests/production.spec.js:182:1 › production writes from concurrent tabs preserve profile and active workout (17.9s)
+  ✓  28 [production-chromium-mobile] › tests/navigation-release.spec.js:3:1 › a hash change between first render and listener setup selects the current URL (2.7s)
+(node:46521) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+(node:46514) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  29 [production-webkit-mobile] › tests/catalog.spec.js:3:1 › public guest workspace offers working backups rather than unavailable account forms (3.5s)
+  ✓  30 [production-chromium-mobile] › tests/production.spec.js:51:1 › production settings, backup restore, and saved data survive reload (6.8s)
+  ✓  31 [production-webkit-mobile] › tests/catalog.spec.js:20:1 › expanded exercise library searches all pages and loads source-attributed full guides (5.9s)
+  ✓  32 [production-chromium-mobile] › tests/production.spec.js:109:1 › production navigation works and the layout fits desktop and mobile viewports (3.3s)
+  ✓  34 [production-chromium-mobile] › tests/production.spec.js:139:1 › production workout can be completed, saved, and restored after reload (5.2s)
+  ✓  35 [production-chromium-mobile] › tests/production.spec.js:182:1 › production writes from concurrent tabs preserve profile and active workout (4.9s)
+(node:46843) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  36 [production-webkit-mobile] › tests/navigation-release.spec.js:3:1 › a hash change between first render and listener setup selects the current URL (2.0s)
+  ✓  33 [production-webkit-mobile] › tests/catalog.spec.js:40:1 › cardio templates log time and distance, persist history and allow measurement correction (23.7s)
+  ✓  37 [production-webkit-mobile] › tests/production.spec.js:51:1 › production settings, backup restore, and saved data survive reload (13.2s)
+  ✓  38 [production-webkit-mobile] › tests/production.spec.js:109:1 › production navigation works and the layout fits desktop and mobile viewports (5.0s)
+  ✓  39 [production-webkit-mobile] › tests/production.spec.js:139:1 › production workout can be completed, saved, and restored after reload (11.7s)
+  ✓  40 [production-webkit-mobile] › tests/production.spec.js:182:1 › production writes from concurrent tabs preserve profile and active workout (8.6s)
+
+  40 passed (3.4m)

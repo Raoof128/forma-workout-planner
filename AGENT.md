@@ -88,6 +88,12 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 - Prefer Playwright's matching browser builds. Record browser version, worker
   count and any budget overrides with results. Keep failed-run evidence; do not
   weaken saved-data assertions or performance bounds to hide cloud timeouts.
+- Final verification: 62 unit cases; all 112 unique guest cases across the full
+  run and exact failed-case replay; 18 isolated real-account journeys plus four
+  mocked form-focus regressions; 40 production checks across Chromium, Firefox
+  and WebKit. The final legal/import checks also pass, including phone headings
+  below the sticky header. Lint, format, types, docs, build and strict 1,414
+  artwork coverage pass. Evidence: `docs/qa/site-sweep/README.md`. No deployment.
 
 ### Raouf: 2026-10-14 — Cloud crash recovery and pushed checkpoints
 

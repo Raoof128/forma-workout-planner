@@ -137,4 +137,4 @@ Running 4 tests using 1 worker
     work/a11y-regressions.spec.js:89:3 › Privacy Policy contents moves keyboard focus to the selected section 
     work/a11y-regressions.spec.js:89:3 › Terms of Use contents moves keyboard focus to the selected section 
     work/a11y-regressions.spec.js:106:1 › legal contents avoids animated scrolling when reduced motion is requested 
-    work/a11y-regressions.spec.js:135:1 › account import wrapper shows keyboard focus around its transparent file input 
+    work/a11y-regressions.spec.js:135:1 › account import wrapper shows keyboard focus around its transparent file input

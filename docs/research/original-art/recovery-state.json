@@ -751,7 +751,7 @@
   "ownerGuidePreference": "Replace ambiguous source entries with clearly defined independently authored guides and matching artwork, preserving historical IDs and units.",
   "nextTask": "Whole-site desktop/mobile audit and fixes; all 1414 original exercise illustrations complete. Current site work is not deployed.",
   "siteSweep": {
-    "status": "All fixes and focus regressions implemented/verified; guest failed-case replay and production40 checks still running/pending",
+    "status": "Complete and verified. All reviewed source assets, prompts, fixes and verification reports are preserved in pushed checkpoints; deployment unchanged.",
     "baselineCommit": "0f8bc3c4eaa126bad139afa49662cbb546b9ecd5",
     "evidence": "docs/qa/site-sweep",
     "actualColdLibraryBytes": {
@@ -781,12 +781,21 @@
       "timeoutOverrideSeconds": 120,
       "isolatedServices": true
     },
-    "nextStep": "Finish bundled Chromium single-worker replay of26 cases from system-browser112 run; then production40 checks, final report, strict artwork check and push.",
+    "nextStep": "Fetch origin main and read docs/qa/site-sweep/README.md. Artwork and site review are complete; do not regenerate source images. No deployment performed.",
     "authFocusRepair": {
       "expectedRedCases": 4,
       "greenRealAppCases": 4,
       "unitsPassed": 62,
       "description": "Changing registration/reset/MFA form moves focus to its visible heading without altering authentication APIs"
+    },
+    "checks": {
+      "unit": 62,
+      "guestUnique": 112,
+      "guestMethod": "86 initial passes plus exact26 failed-case replay passes; matching Chromium and1worker for replay",
+      "accountRealServices": 18,
+      "accountFormFocusMocks": 4,
+      "production": 40,
+      "finalLegalAndImportFocus": 7
     }
   }
 }

@@ -71,6 +71,7 @@ test("legal pages open directly by URL and fit a phone screen", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 360, height: 780 });
+  await page.emulateMedia({ reducedMotion: "reduce" });
   for (const document of documents) {
     await page.goto(`/#${document.hash}`);
     await expect(
@@ -82,6 +83,27 @@ test("legal pages open directly by URL and fit a phone screen", async ({
         window.document.documentElement.clientWidth,
     );
     expect(overflow).toBe(false);
+    const link = page
+      .getByRole("navigation", { name: `${document.title} contents` })
+      .getByRole("link")
+      .first();
+    const sectionTitle = await link.innerText();
+    await link.focus();
+    await page.keyboard.press("Enter");
+    const section = page.getByRole("heading", {
+      level: 2,
+      name: sectionTitle,
+      exact: true,
+    });
+    await expect(section).toBeFocused();
+    expect(
+      await section.evaluate(
+        (heading) =>
+          heading.getBoundingClientRect().top >=
+          window.document.querySelector(".mobile-top").getBoundingClientRect()
+            .bottom,
+      ),
+    ).toBe(true);
   }
 });
 

@@ -1,0 +1,40 @@
+
+Running 1 test using 1 worker
+
+(node:44317) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/legal.spec.js:70:1 › legal pages open directly by URL and fit a phone screen (5.0s)
+
+
+  1) [chromium] › tests/legal.spec.js:70:1 › legal pages open directly by URL and fit a phone screen 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      103 |             .bottom,
+      104 |       ),
+    > 105 |     ).toBe(true);
+          |       ^
+      106 |   }
+      107 | });
+      108 |
+        at /workspace/forma-workout-planner/tests/legal.spec.js:105:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/site-sweep-legal-visibility-red-results/legal-legal-pages-open-dir-e74e3--URL-and-fit-a-phone-screen-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/site-sweep-legal-visibility-red-results/legal-legal-pages-open-dir-e74e3--URL-and-fit-a-phone-screen-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/site-sweep-legal-visibility-red-results/legal-legal-pages-open-dir-e74e3--URL-and-fit-a-phone-screen-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace work/site-sweep-legal-visibility-red-results/legal-legal-pages-open-dir-e74e3--URL-and-fit-a-phone-screen-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/legal.spec.js:70:1 › legal pages open directly by URL and fit a phone screen

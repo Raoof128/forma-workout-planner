@@ -1,0 +1,35 @@
+{
+  "completedAt": "2026-10-14",
+  "artwork": {
+    "accepted": 1414,
+    "scope": 1414,
+    "remaining": 0
+  },
+  "checks": {
+    "unit": 62,
+    "guestUnique": 112,
+    "guestMethod": "86 initial passes plus exact26 failed-case replay passes; matching Chromium and1worker for replay",
+    "accountRealServices": 18,
+    "accountFormFocusMocks": 4,
+    "production": 40,
+    "finalLegalAndImportFocus": 7
+  },
+  "productionBrowsers": [
+    "Chromium156 desktop/mobile emulation",
+    "Firefox157 desktop",
+    "WebKit27.2 desktop/mobile emulation"
+  ],
+  "visuals": {
+    "hero": "Original generated monochrome gym photo",
+    "routines": "Original generated3-column photo sprite",
+    "sources": "assets/site-visuals",
+    "provenance": "docs/research/site-visuals"
+  },
+  "deployment": "Not deployed; repository commits and pushed checkpoints only",
+  "limitations": [
+    "Local browser/service verification, not live infrastructure or external email delivery",
+    "Guest112cases verified across fullrun and failed replay, not one-shot green",
+    "Account18service journeys used120sCLI budget; guest30s and10sperformance bound unchanged",
+    "WebKit downloaded wrapper locally preserved LD_LIBRARY_PATH for extracted dependencies; actual browser launches and tests passed"
+  ]
+}
