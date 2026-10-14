@@ -1,0 +1,41 @@
+{
+  "name": "finish-laterality-001",
+  "columns": 1,
+  "rows": 1,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-laterality-001.png",
+  "prompt": "Create one ORIGINAL FORMA fitness-manual illustration, portrait1024x1536 or square1024x1024, ONE full adult athlete from head through BOTH FEET with generous white margins. Fully clothed charcoal gray sportswear, tiny lime accents, clean white background subtle shadows. No labels words lettering logos arrows weights duplicate poses. Correct two arms two legs. Depict STANDING RIGHT BICEPS WALL STRETCH with exact anatomical laterality. Camera from FRONT of athlete with slight threequarter angle; visible front chest and belly. A real vertical wall stands on VIEWER LEFT, which is ANATOMICAL RIGHT of front-facing athlete. Athletes RIGHT shoulder and RIGHT arm appear VIEWER LEFT. His RIGHT arm extends straight slightly backward at shoulder height toward this wall; RIGHT palm firmly flat against wall, straight elbow, fingers contact wall; shoulder relaxed. His LEFT arm is free relaxed at his side on VIEWER RIGHT. Torso and head gently rotate toward ANATOMICAL LEFT, toward VIEWER RIGHT, AWAY from wall, while right palm stays fixed. Both feet planted on floor, visible shoes entirely inside canvas; balanced comfortable stance. Full arm, wall contact and wall-floor junction shown. Upper right arm stretch physically plausible, no hyperextension. Keep athlete centrally framed and entire figure feet visible with minimum10percent blank margin. Exact guide: Stand beside a wall with your right arm extended. Place your right hand against the wall, keep the shoulder relaxed and gently turn your torso to the left until you feel a comfortable stretch along the right upper arm. Avoid forcing the shoulder or wrist. Hold while breathing steadily, then release slowly.",
+  "sourceAssetPath": "assets/exercise-artwork/finish-laterality-001.png",
+  "cells": [
+    {
+      "id": "wger-671568f9-6653-4e11-ac71-3f34c74329a0",
+      "title": "Standing biceps stretch right",
+      "equipment": "Bodyweight",
+      "guideText": "Stand beside a wall with your right arm extended. Place your right hand against the wall, keep the shoulder relaxed and gently turn your torso to the left until you feel a comfortable stretch along the right upper arm. Avoid forcing the shoulder or wrist. Hold while breathing steadily, then release slowly.",
+      "guideSource": null,
+      "references": [
+        {
+          "title": "wger exercise 1233",
+          "url": "https://wger.de/en/exercise/1233/view/"
+        }
+      ],
+      "metric": "duration",
+      "row": 0,
+      "column": 0,
+      "reviewStatus": "accepted",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 1536
+      },
+      "reviewNote": "Full standing right-biceps wall stretch: anatomical right arm appears viewer-left, elbow straight with palm firmly flat on real wall, left arm free, torso/head gently turned anatomical left/viewer-right. Both complete feet visible and planted; anatomy and support plausible.",
+      "cropReviewNote": "Inspected untouched1024x1536 portrait. Full-image pixel bounds preserve wall contact, head, both hands and both feet with clear margins and no clipping.",
+      "ids": [
+        "wger-671568f9-6653-4e11-ac71-3f34c74329a0"
+      ]
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-fafa1b4c-c113-4c1e-b0e7-3c45402d14ee.png",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

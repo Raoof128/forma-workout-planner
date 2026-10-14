@@ -3,8 +3,8 @@
   "updatedAt": "2026-10-14",
   "recoveredRemoteCommit": "8d0c5a765fe8a7276884e5198827d0f5f193c69c",
   "total": 1414,
-  "accepted": 1387,
-  "remaining": 27,
+  "accepted": 1391,
+  "remaining": 23,
   "ownerRequest": "Push assets and logs frequently so a crashed cloud session can be recovered.",
   "resumeInstructions": [
     "git fetch origin main and compare remote coverage before generating",
@@ -344,6 +344,46 @@
         "held": 4,
         "pending": 0
       }
+    },
+    {
+      "batch": "finish-e-001-retry",
+      "sourceAssetPath": "assets/exercise-artwork/finish-e-001-retry.png",
+      "recordPath": "docs/research/original-art/finish-e-001-retry.json",
+      "reviewCounts": {
+        "accepted": 3,
+        "held": 1,
+        "pending": 0
+      }
+    },
+    {
+      "batch": "finish-f-002",
+      "sourceAssetPath": "assets/exercise-artwork/finish-f-002.png",
+      "recordPath": "docs/research/original-art/finish-f-002.json",
+      "reviewCounts": {
+        "accepted": 1,
+        "held": 3,
+        "pending": 0
+      }
+    },
+    {
+      "batch": "finish-f-002-retry",
+      "sourceAssetPath": "assets/exercise-artwork/finish-f-002-retry.png",
+      "recordPath": "docs/research/original-art/finish-f-002-retry.json",
+      "reviewCounts": {
+        "accepted": 2,
+        "held": 2,
+        "pending": 0
+      }
+    },
+    {
+      "batch": "finish-laterality-001",
+      "sourceAssetPath": "assets/exercise-artwork/finish-laterality-001.png",
+      "recordPath": "docs/research/original-art/finish-laterality-001.json",
+      "reviewCounts": {
+        "accepted": 1,
+        "held": 0,
+        "pending": 0
+      }
     }
   ],
   "remainingAssignments": [
@@ -390,13 +430,6 @@
       "status": "pending"
     },
     {
-      "exerciseId": "wger-64ebb7a5-15ec-48dd-8f82-47cdb022f215",
-      "name": "Black Widow Knee Slides",
-      "equipment": "Bodyweight",
-      "guideSha256": "40a781dabbcde6ae8e316f3ddac0e123c4627ebfd40bc35e366d6714f153fe67",
-      "status": "pending"
-    },
-    {
       "exerciseId": "wger-e872658a-3bac-4d9e-bcf2-15919ebea43a",
       "name": "commando pull-ups",
       "equipment": "Pull-up bar",
@@ -408,13 +441,6 @@
       "name": "DB Upper Chest Variation",
       "equipment": "Dumbbell",
       "guideSha256": "55dd51aa23bd273a8d7581d8df983f2f0a174c7b6e2de70862d5964cf0d44a6d",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "wger-ee8e8db4-2d82-49e1-ab7f-891e9a354934",
-      "name": "Deadlifts",
-      "equipment": "Barbell",
-      "guideSha256": "97c429773c23a72007ea1d8002a8d846dacfb5d9d6806155027a88101f12e884",
       "status": "pending"
     },
     {
@@ -436,13 +462,6 @@
       "name": "Frog stand",
       "equipment": "Bodyweight",
       "guideSha256": "79fb5990e1ff4848627ea44f719a8cb1d404301850f9b984ddf0cb74e37cb045",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "wger-e781dae5-90b8-4105-8aa6-82d278ac5ff5",
-      "name": "Helms Row",
-      "equipment": "Dumbbell",
-      "guideSha256": "009569c0b3ff84cbfd60ae4f60e2a8ff469af1fd370cd735e858e08edc331951",
       "status": "pending"
     },
     {
@@ -513,13 +532,6 @@
       "name": "Solo Hip Flexor Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "a97d761b1f6d8515df4852c0263c58df7595122fef1396447c99c6bec9f79257",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "wger-671568f9-6653-4e11-ac71-3f34c74329a0",
-      "name": "Standing biceps stretch right",
-      "equipment": "Bodyweight",
-      "guideSha256": "432a0e9cdd1b896011d36b9e7f6e56568f70b0346d363382660a56f2f3800006",
       "status": "pending"
     },
     {
@@ -609,6 +621,19 @@
       ],
       "accepted": 1387,
       "remaining": 27,
+      "mediaValidation": "passed",
+      "action": "commit and push original assets, full prompts, reviews and coverage"
+    },
+    {
+      "date": "2026-10-14",
+      "batches": [
+        "finish-e-001-retry",
+        "finish-f-002",
+        "finish-f-002-retry",
+        "finish-laterality-001"
+      ],
+      "accepted": 1391,
+      "remaining": 23,
       "mediaValidation": "passed",
       "action": "commit and push original assets, full prompts, reviews and coverage"
     }

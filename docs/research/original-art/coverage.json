@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1387,
+  "accepted": 1391,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -1355,7 +1355,9 @@
       "name": "Black Widow Knee Slides",
       "equipment": "Bodyweight",
       "guideSha256": "40a781dabbcde6ae8e316f3ddac0e123c4627ebfd40bc35e366d6714f153fe67",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-e-001-retry-0-1",
+      "reviewNote": "Raised knee crosses abdomen and visibly contacts opposite forearm near elbow; both palms and opposite toes support body."
     },
     {
       "exerciseId": "wger-1fe103e2-1def-41de-8eab-e2e11296446d",
@@ -2915,7 +2917,9 @@
       "name": "Deadlifts",
       "equipment": "Barbell",
       "guideSha256": "97c429773c23a72007ea1d8002a8d846dacfb5d9d6806155027a88101f12e884",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-f-002-retry-1-1",
+      "reviewNote": "Frontview lockout shows one palm/inside wrist and opposite back-of-hand/knuckles, straight arms with bar at thighs and stable slightly wide stance; required mixed grip visible."
     },
     {
       "exerciseId": "db-decline-barbell-bench-press",
@@ -4824,7 +4828,9 @@
       "name": "Helms Row",
       "equipment": "Dumbbell",
       "guideSha256": "009569c0b3ff84cbfd60ae4f60e2a8ff469af1fd370cd735e858e08edc331951",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-f-002-retry-1-0",
+      "reviewNote": "Chest alone meets towel at bench end, torso almost parallel with abdomen/hips free and dumbbells hanging; valid representative starting support."
     },
     {
       "exerciseId": "wger-8381f40c-3168-4d98-af60-6a89800dd308",
@@ -10823,7 +10829,9 @@
       "name": "Standing biceps stretch right",
       "equipment": "Bodyweight",
       "guideSha256": "432a0e9cdd1b896011d36b9e7f6e56568f70b0346d363382660a56f2f3800006",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-laterality-001-0-0",
+      "reviewNote": "Full standing right-biceps wall stretch: anatomical right arm appears viewer-left, elbow straight with palm firmly flat on real wall, left arm free, torso/head gently turned anatomical left/viewer-right. Both complete feet visible and planted; anatomy and support plausible."
     },
     {
       "exerciseId": "db-standing-bradford-press",

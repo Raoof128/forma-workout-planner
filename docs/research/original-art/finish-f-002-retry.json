@@ -1,0 +1,129 @@
+{
+  "name": "finish-f-002-retry",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-f-002-retry.png",
+  "prompt": "Original FORMA illustrated fitness manual1536x1024 landscape EXACT2columns2rows four768x512whitecells ample margins complete athlete equipment charcoalgray sportswear lime trim exactly2arms2legs no labels text borders arrows oneadult percell.\nTOP LEFT bodyweight upperback exercise EXAMPLE: prone onfloor adult chest slightlyraised arms out inT shoulderbladesretracted elbowssoft, no weights, neckneutral legsstraight. Example upperback engagement not specificnamedvariation.\nTOP RIGHT Helms dumbbellrow: sideview adult bends forward torso COMPLETELY HORIZONTAL parallelfloor, hips and legs behind endof a FLATbench. Only nippleline CHEST presses onto veryENDofbench with foldedtowel cushioningcontact. Bench extends forward from chest towardhead, athlete abdomen hips NOT supported. Twoarms hangvertical in valid startingposition holding2dumbbells palms inward. Feetfloor knees soft, fullapparatus contained.\nBOTTOM LEFT commando pullup on SINGLE STRAIGHTbar pointing fronttoback parallel athlete torso. Sideon alongbar, onehandoverhand onehandunderhand veryclosetogether (front handshowsPALM rearhandshowsKNUCKLES), elbowsbent chinpasses besidebar withouttorsotwist. Bar straight notVbent multigrip. Full rackandadultfit.\nBOTTOM RIGHT conventional deadlift mixedgrip LOCKOUT frontview fullstanding adult barbell heldacrossthighs armsstraight feet slightlywidershoulders. LEFT hand SUPINATED UNDERHAND palm fleshyinsidewrist visible FRONT, thumb points LEFT/outward. RIGHT hand PRONATED OVERHAND backhandknuckles visibleFRONT, thumb pointsLEFT/inward. Bothhands shoulderwidth, oppositeorientations unmistakable. Exactly1bar2hands2plates wholebody.\nCRITICAL CORRECTION bottomleft: scale entirepullup apparatus down50percent, FULL TWOuprights TOPCAPS horizontalSINGLEbar andfeet allinsidecell with40pixelwhite margin abovebelow. Bar runs frontback alongside torso not conventionalwidefrontbar. Keep front hand PALMvisible rearhand KNUCKLESvisible. Bottomright Deadlift LEFT hand UNDERHAND PALM visible, RIGHT hand must OVERHAND palmfacesBACKtowardthighs and viewer clearlysees BACKOFHAND LONGKNUCKLES, fingers descend INFRONT ofbar then curlUNDER. Both thumbs mustpoint SAME direction towardviewerleft. DO NOT make bothhandsunderhand. Veryclear opposite forearmrotations asymmetry. Topright preserve correctHelms chestonly benchendhorizontalstart.",
+  "cells": [
+    {
+      "id": "wger-df18b577-0610-4804-a993-161024da67db",
+      "title": "Upper Back",
+      "equipment": "Bodyweight",
+      "guideText": "Upper Back is suitable for building up the core muscles with a special focus on the deltoid and rhomboid muscles and the upper back muscles",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1381/view/",
+        "author": "phpi",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Guide remains nonspecific about movement; prone T raise is an unverified example and stays held source ambiguity.",
+      "bounds": {
+        "x": 5,
+        "y": 5,
+        "width": 758,
+        "height": 417
+      },
+      "cropReviewNote": "Reviewed actual cell border positions x765/770 and y424/430; inset bounds exclude border and retain full subjects.",
+      "priorBatch": "docs/research/original-art/movements-094.json",
+      "references": null
+    },
+    {
+      "id": "wger-e781dae5-90b8-4105-8aa6-82d278ac5ff5",
+      "title": "Helms Row",
+      "equipment": "Dumbbell",
+      "guideText": "Setup: Place your chest on the end of a bench, using a towel or anything soft to keep your chest protected. You want your chest to be in contact with the bench around the nipple line. Your back should be almost parallel to the floor Execution: When you’re starting the exercise, focus on pulling your elbows back until you feel maximum tightness in the lats. If you want to get some trap activation with the exercise, relax your shoulder blades when the weights are hanging down and then retract them as you start the rep.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1303/view/",
+        "author": "carlos3c",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Chest alone meets towel at bench end, torso almost parallel with abdomen/hips free and dumbbells hanging; valid representative starting support.",
+      "bounds": {
+        "x": 772,
+        "y": 5,
+        "width": 758,
+        "height": 417
+      },
+      "cropReviewNote": "Reviewed actual cell border positions x765/770 and y424/430; inset bounds exclude border and retain full subjects.",
+      "priorBatch": "docs/research/original-art/recovery-b-004.json",
+      "priorReviewNote": "Hold: Helms row requires chest contact at bench end with torso almost parallel; rendering is a conventional incline-bench row.",
+      "references": null,
+      "ids": [
+        "wger-e781dae5-90b8-4105-8aa6-82d278ac5ff5"
+      ]
+    },
+    {
+      "id": "wger-e872658a-3bac-4d9e-bcf2-15919ebea43a",
+      "title": "commando pull-ups",
+      "equipment": "Pull-up bar",
+      "guideText": "variation of the pull-up exercise, it is performed with a grip of one hand supine and one hand prone, do not twist the torso to get back to the front, the head passes once to one side, once to the other.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/980/view/",
+        "author": "clafal",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Rack is complete and head beside depthwise bar, but overlapped hands obscure mixed pronated/supinated grip; defining grip not verifiable.",
+      "priorBatch": "docs/research/original-art/recovery-a-003.json",
+      "cropReviewNote": "Reviewed actual cell border positions x765/770 and y424/430; inset bounds exclude border and retain full subjects.",
+      "bounds": {
+        "x": 5,
+        "y": 432,
+        "width": 758,
+        "height": 586
+      },
+      "references": null
+    },
+    {
+      "id": "wger-ee8e8db4-2d82-49e1-ab7f-891e9a354934",
+      "title": "Deadlifts",
+      "equipment": "Barbell",
+      "guideText": "Stand firmly, with your feet slightly more than shoulder wide apart. Stand directly behind the bar where it should barely touch your shin, your feet pointing a bit out. Bend down with a straight back, the knees also pointing somewhat out. Grab the bar with a shoulder wide grip, one underhand, one reverse grip. Pull the weight up. At the highest point make a slight hollow back and pull the bar back. Hold 1 or 2 seconds that position. Go down, making sure the back is not bent. Once down you can either go back again as soon as the weights touch the floor, or make a pause, depending on the weight.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/184/view/",
+        "author": "wger.de",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Athlete stands holding loaded bar across thighs: LEFT hand underhand shows PALM, RIGHT hand overhand shows KNUCKLES. Hands visibly opposite orientations, elbow straight, feet slightly wider than shoulders.",
+      "reviewNote": "Frontview lockout shows one palm/inside wrist and opposite back-of-hand/knuckles, straight arms with bar at thighs and stable slightly wide stance; required mixed grip visible.",
+      "bounds": {
+        "x": 772,
+        "y": 432,
+        "width": 758,
+        "height": 586
+      },
+      "cropReviewNote": "Reviewed actual cell border positions x765/770 and y424/430; inset bounds exclude border and retain full subjects.",
+      "priorBatch": "docs/research/original-art/corrections-036.json",
+      "references": null,
+      "ids": [
+        "wger-ee8e8db4-2d82-49e1-ab7f-891e9a354934"
+      ]
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-5f05fea5-19bf-4cc5-80d2-ccc2a7815abe.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-f-002-retry.png",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

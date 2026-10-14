@@ -3199,6 +3199,34 @@
         "row": 0
       }
     },
+    "forma-original-finish-e-001-retry-0-1": {
+      "src": "/exercise-media/original/finish-e-001-retry.png?v=e9a79881f795",
+      "sha256": "e9a79881f79535eda7da852cfc500ce75874205ca53fe63275df3aac2921245c",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Black Widow Knee Slides",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-e-001-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 502,
+          "width": 768,
+          "height": 522
+        }
+      }
+    },
     "forma-original-movements-011-1-1": {
       "src": "/exercise-media/original/movements-011.png?v=e05951b6f60f",
       "sha256": "e05951b6f60fb543c87222b5e697523ed545d1122cbed70bc18e94506eeb6256",
@@ -6313,6 +6341,34 @@
         "rows": 3,
         "column": 1,
         "row": 2
+      }
+    },
+    "forma-original-finish-f-002-retry-1-1": {
+      "src": "/exercise-media/original/finish-f-002-retry.png?v=b416de8dcd44",
+      "sha256": "b416de8dcd44a3fa5aa625a20393ff77550ef31ebdcb37bc84b8b944117d4415",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Deadlifts",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-f-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 772,
+          "y": 432,
+          "width": 758,
+          "height": 586
+        }
       }
     },
     "forma-original-corrections-007-2-1": {
@@ -11392,6 +11448,34 @@
           "y": 339,
           "width": 384,
           "height": 327
+        }
+      }
+    },
+    "forma-original-finish-f-002-retry-1-0": {
+      "src": "/exercise-media/original/finish-f-002-retry.png?v=b416de8dcd44",
+      "sha256": "b416de8dcd44a3fa5aa625a20393ff77550ef31ebdcb37bc84b8b944117d4415",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Helms Row",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-f-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 772,
+          "y": 5,
+          "width": 758,
+          "height": 417
         }
       }
     },
@@ -27585,6 +27669,34 @@
         }
       }
     },
+    "forma-original-finish-laterality-001-0-0": {
+      "src": "/exercise-media/original/finish-laterality-001.png?v=8a1fdca513af",
+      "sha256": "8a1fdca513af84d9db37a66995bcb84a54cc98f8fc33c73a7ff965ead3ffed85",
+      "width": 1024,
+      "height": 1536,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Standing biceps stretch right",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-laterality-001.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 1,
+        "rows": 1,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    },
     "forma-original-movements-086-0-0": {
       "src": "/exercise-media/original/movements-086.png?v=5dbe2c3cd868",
       "sha256": "5dbe2c3cd868ae24f6c7014362df9db5f58cf1285139aa00784bbf58aa315a22",
@@ -33001,6 +33113,10 @@
       "assetId": "forma-original-movements-011-3-0",
       "caption": "Bizeps Curls Trifecta · Representative exercise position; follow the guide for the complete movement."
     },
+    "wger-64ebb7a5-15ec-48dd-8f82-47cdb022f215": {
+      "assetId": "forma-original-finish-e-001-retry-0-1",
+      "caption": "Black Widow Knee Slides · Representative exercise position; follow the guide for the complete movement."
+    },
     "wger-1fe103e2-1def-41de-8eab-e2e11296446d": {
       "assetId": "forma-original-movements-011-1-1",
       "caption": "Blackroll · Example foam-rolling position; use slow, controlled movement as described in the guide."
@@ -33684,6 +33800,10 @@
     "db-deadlift-with-chains": {
       "assetId": "forma-original-movements-021-1-2",
       "caption": "Deadlift with Chains · Representative exercise position; follow the guide for the complete movement."
+    },
+    "wger-ee8e8db4-2d82-49e1-ab7f-891e9a354934": {
+      "assetId": "forma-original-finish-f-002-retry-1-1",
+      "caption": "Deadlifts · Representative exercise position; follow the guide for the complete movement."
     },
     "db-decline-barbell-bench-press": {
       "assetId": "forma-original-corrections-007-2-1",
@@ -34520,6 +34640,10 @@
     "db-heavy-bag-thrust": {
       "assetId": "forma-original-movements-038-2-1",
       "caption": "Heavy Bag Thrust · Representative exercise position; follow the guide for the complete movement."
+    },
+    "wger-e781dae5-90b8-4105-8aa6-82d278ac5ff5": {
+      "assetId": "forma-original-finish-f-002-retry-1-0",
+      "caption": "Helms Row · Representative exercise position; follow the guide for the complete movement."
     },
     "wger-8381f40c-3168-4d98-af60-6a89800dd308": {
       "assetId": "forma-original-movements-038-0-2",
@@ -37152,6 +37276,10 @@
     "wger-a569e8c3-218f-40db-9d71-e155c68cb26e": {
       "assetId": "forma-original-movements-085-2-2",
       "caption": "Standing biceps stretch left · Representative exercise position; follow the guide for the complete movement."
+    },
+    "wger-671568f9-6653-4e11-ac71-3f34c74329a0": {
+      "assetId": "forma-original-finish-laterality-001-0-0",
+      "caption": "Standing biceps stretch right · Representative exercise position; follow the guide for the complete movement."
     },
     "db-standing-bradford-press": {
       "assetId": "forma-original-movements-086-0-0",
