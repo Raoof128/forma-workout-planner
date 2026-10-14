@@ -985,6 +985,42 @@
         "requirements": "Stand facing a wall about an arm length away and place both palms against it at shoulder height. Keep your torso upright, feet hip width apart and shoulders relaxed. Shift your weight onto your left foot and raise your right knee forward toward hip height, keeping the right ankle beneath the knee and the pelvis level. Use the wall lightly for balance rather than hanging your weight through your arms. Pause briefly, then lower the right foot to the floor with control. Raise the left knee in the same way and continue alternating. Avoid bouncing, leaning backward or twisting your hips.",
         "doNotDepictOriginalAmbiguity": true
       }
+    },
+    {
+      "id": "db-flexor-incline-dumbbell-curls",
+      "preserve": {
+        "id": "db-flexor-incline-dumbbell-curls",
+        "metric": "load_reps",
+        "weight": 0
+      },
+      "oldName": "Flexor Incline Dumbbell Curls",
+      "oldGuide": "Hold the dumbbell towards the side farther from you so that you have more weight on the side closest to you. (This can be done for a good effect on all bicep dumbbell exercises). Now do a normal incline dumbbell curl, but keep your wrists as far back as possible so as to neutralize any stress that is placed on them.\n\nSit on an incline bench that is angled at 45-degrees while holding a dumbbell on each hand.\n\nLet your arms hang down on your sides, with the elbows in, and turn the palms of your hands forward with the thumbs pointing away from the body. Tip: You will keep this hand position throughout the movement as there should not be any twisting of the hands as they come up. This will be your starting position.\n\nCurl up the two dumbbells at the same time until your biceps are fully contracted and exhale. Tip: Do not swing the arms or use momentum. Keep a controlled motion at all times. Hold the contracted position for a second at the top.\n\nAs you inhale, slowly go back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
+      "oldEquipment": "Dumbbell",
+      "archivedSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Flexor_Incline_Dumbbell_Curls.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "whyReplacement": "Owner authorized independently authored replacements. The imported instruction requires unspecified maximum wrist extension and makes an unsupported stress-neutralization claim. Replacement defines the offset-grip curl with controlled movement and a comfortable wrist position; original source text remains archived.",
+      "replacement": {
+        "name": "Offset-grip incline dumbbell curl",
+        "equipment": "Dumbbell + Incline bench",
+        "equipmentTags": [
+          "Dumbbell",
+          "Incline bench"
+        ],
+        "description": "Set an adjustable bench to about a forty-five-degree incline. Sit with your head and back supported and both feet flat on the floor. Hold one light dumbbell in each hand with an offset grip toward its outer end, leaving more of the weight toward your body. Let your arms hang beside you with your palms facing forward. Curl both weights by bending your elbows while keeping your upper arms steady. Maintain a firm, comfortable wrist position rather than deliberately bending the wrists as far back as possible. Pause briefly, then lower both weights under control without swinging or twisting your torso.",
+        "source": null,
+        "references": [
+          {
+            "title": "ACE Exercise Library — general exercise context",
+            "url": "https://www.acefitness.org/resources/everyone/exercise-library/"
+          }
+        ]
+      },
+      "authorship": "Independently authored FORMA factual movement guide; not quoted from the general context reference."
     }
   ],
   "implementationNote": "Original published records, IDs, metrics and weights remain unchanged. Only selectable guide/name/equipment overlays are replaced; old guides and attribution remain archived here."

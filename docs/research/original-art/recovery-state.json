@@ -3,8 +3,8 @@
   "updatedAt": "2026-10-14",
   "recoveredRemoteCommit": "8d0c5a765fe8a7276884e5198827d0f5f193c69c",
   "total": 1414,
-  "accepted": 1413,
-  "remaining": 1,
+  "accepted": 1414,
+  "remaining": 0,
   "ownerRequest": "Push assets and logs frequently so a crashed cloud session can be recovered.",
   "resumeInstructions": [
     "git fetch origin main and compare remote coverage before generating",
@@ -554,17 +554,29 @@
         "held": 0,
         "pending": 0
       }
-    }
-  ],
-  "remainingAssignments": [
+    },
     {
-      "exerciseId": "db-flexor-incline-dumbbell-curls",
-      "name": "Flexor Incline Dumbbell Curls",
-      "equipment": "Dumbbell",
-      "guideSha256": "25ff1ab3dfa37f3bb51f7e7b9a4e8149bd5b590b529685d7dd3347c748d64833",
-      "status": "pending"
+      "batch": "finish-solo-002",
+      "sourceAssetPath": "assets/exercise-artwork/finish-solo-002.png",
+      "recordPath": "docs/research/original-art/finish-solo-002.json",
+      "reviewCounts": {
+        "accepted": 0,
+        "held": 1,
+        "pending": 0
+      }
+    },
+    {
+      "batch": "finish-solo-002-retry",
+      "sourceAssetPath": "assets/exercise-artwork/finish-solo-002-retry.png",
+      "recordPath": "docs/research/original-art/finish-solo-002-retry.json",
+      "reviewCounts": {
+        "accepted": 1,
+        "held": 0,
+        "pending": 0
+      }
     }
   ],
+  "remainingAssignments": [],
   "events": [
     {
       "date": "2026-10-14",
@@ -714,6 +726,27 @@
       "remaining": 1,
       "mediaValidation": "passed",
       "action": "commit and push original assets, full prompts, reviews and coverage"
+    },
+    {
+      "date": "2026-10-14",
+      "batches": [
+        "finish-solo-002",
+        "finish-solo-002-retry"
+      ],
+      "accepted": 1414,
+      "remaining": 0,
+      "mediaValidation": "passed",
+      "action": "commit and push original assets, full prompts, reviews and coverage"
     }
-  ]
+  ],
+  "nextAuthorizedTask": {
+    "instruction": "After all workout artwork is complete, sweep the whole site using current official developer documentation and generate useful missing visuals.",
+    "phases": [
+      "desktop and mobile screenshots and functional audit",
+      "accessibility, performance and documentation checks",
+      "supported fixes and needed visual generation",
+      "verification and frequent pushed checkpoints"
+    ]
+  },
+  "ownerGuidePreference": "Replace ambiguous source entries with clearly defined independently authored guides and matching artwork, preserving historical IDs and units."
 }

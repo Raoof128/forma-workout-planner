@@ -35117,6 +35117,34 @@
           "height": 1024
         }
       }
+    },
+    "forma-original-finish-solo-002-retry-0-0": {
+      "src": "/exercise-media/original/finish-solo-002-retry.png?v=7093cb9a08b7",
+      "sha256": "7093cb9a08b7113c3d31022834ef37b43d7c1c20210a3b1ae77b2051ef9633ee",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Offset-grip incline dumbbell curl",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-solo-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 1,
+        "rows": 1,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1536,
+          "height": 1024
+        }
+      }
     }
   },
   "exercises": {
@@ -45010,6 +45038,13 @@
       "reviewStatus": "accepted",
       "reviewNote": "Edited backrest visibly shallow at approximately25degrees within guide maximum30; head/back supported and both feet grounded. Both arms share open fly phase with small fixed elbow bends, two dumbbells, and visibly supinated palms facing ceiling matching guide's wrist-rotation endpoint.",
       "guideSha256": "43c0ac189fd0ad843fef7e3deea321cffdcf6fe5158e7c25194fd3d8feecbe9d"
+    },
+    "db-flexor-incline-dumbbell-curls": {
+      "assetId": "forma-original-finish-solo-002-retry-0-0",
+      "caption": "Offset-grip incline dumbbell curl · Controlled curl phase; keep the wrists comfortable and follow the guide for the full movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Root visually re-reviewed actual standalone image against the independently clarified guide: approximately45degree head/back support, complete grounded feet, two distinct supinated dumbbell grips offset toward the outer ends, stable upper arms and a controlled curl with comfortable wrists. No maximum wrist-extension claim is made; original rejected guide and review remain archived.",
+      "guideSha256": "c08e5398256d9dc8bffbe4d9edee5219c82a96fbd4f7702ef3a4c6d8b38b0128"
     }
   }
 }

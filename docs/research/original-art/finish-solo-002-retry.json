@@ -1,0 +1,78 @@
+{
+  "name": "finish-solo-002-retry",
+  "columns": 1,
+  "rows": 1,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-solo-002-retry.png",
+  "prompt": "Edit this original flexor incline curl illustration. TWO essential corrections: bench backrest MUST LOWER from its currentlysteep60degrees to EXACT45degrees above horizontal. Use near orthographic SIDE camera, so head-to-pelvis pad rises EXACT same pixel distance as it runs horizontally; diagonal1:1 like slash. Move head/back leftward as needed so entire torso/head rests on lower45degreepad. Athlete reclines more, head far behind pelvis and head height lower relative pelvis. Bench supported stably and feet remain flatfloor. SECOND: BOTH wrists visibly EXTENDED BENT BACK. Keep both forearms roughlyhorizontal curled in front; each PALM tilts markedly BACK/DOWN with hand dropping below forearm line about35-45degrees at wrist. Put clear visible angular dorsal extension crease between each forearm and hand. No neutral straight wrists. Both palms still supinated face upward, no pronation. Each hand keeps off-centre grip near OUTER end farther from athlete, more shaft remains on INNER side. Retain two independent dumbbells, anatomically2arms2legs, fullwhitecharcoalgraylime original wholebodygear framing. Show palms and wrists large enough to judge. Do not label angles or draw text/arrows. Underlying fullguide:\nCreate an ORIGINAL FORMA fitness manual illustration, ONE scene only landscape1536x1024. Whitebackground, subtle shadow, crisp precise charcoalgray sportswear/equipment and tiny limegreen accents. Anatomically correct fully clothed adult with exactly2arms2legs, entire head/body/hands/feet plus entire bench and both dumbbells within canvas with60pxmargin. No labels, words, logos, arrows, borders or watermarks.\nSUBJECT: Flexor Incline Dumbbell Curls, bilateral MID-CURL working phase. Athlete seated against incline bench with FULL BACK AND HEAD SUPPORTED on backrest. Bench BACKREST is EXACTLY45degrees above horizontal floor: its vertical rise equals its horizontal run in near-orthographic SIDE view. Long pad slopes diagonally up-left from pelvis to head, not steep60degrees and not low30degrees. Seat separate and horizontal, knees bent feet planted flatfloor in front. Camera is near SIDE orthographic from front-right just enough to see BOTH independent arms and hands; avoid foreshortening bench slope.\nBoth upper arms hang downward close to body, elbows beside ribs fixed. Both forearms curl forward up until roughlyHORIZONTAL in midphase, ONE separate dumbbell in EACH hand. BOTH PALMS visibly SUPINATED UPWARD, thumbs pointing outward away from body and no wrist twisting.\nDEFINING WRISTS: BOTH wrists visibly EXTENDED/BENT BACK, not straight aligned with forearm. Show clear dorsal extension at each wrist; hand/palm tilts back/down relative to upward forearm so wrist angle unmistakable. Each dumbbell is held on a LONG exposed horizontal grip shaft OFFSET TOWARD OUTER end FARTHER FROM ATHLETE. Each fist sits close to OUTER weight head: the longer remaining shaft and more of weight assembly lie toward athlete/INNER side. Do NOT center hands on grip. Both off-centre grips clearly visible with fingers contacting shaft right beside outer head and obvious longer bare shaft between fist and inner head. Standard compact round dumbbell weight heads with long handles for clear eccentric grip; no kettlebells or barbell.\nMake BOTH extended wrists, supinated palms, OUTBOARD offset grips, independent dumbbells,45degree head-supported incline and grounded feet completely clear while preserving entire adult/apparatus.\nFULL GUIDE (factual source governs): Hold the dumbbell towards the side farther from you so that you have more weight on the side closest to you. (This can be done for a good effect on all bicep dumbbell exercises). Now do a normal incline dumbbell curl, but keep your wrists as far back as possible so as to neutralize any stress that is placed on them.\n\nSit on an incline bench that is angled at 45-degrees while holding a dumbbell on each hand.\n\nLet your arms hang down on your sides, with the elbows in, and turn the palms of your hands forward with the thumbs pointing away from the body. Tip: You will keep this hand position throughout the movement as there should not be any twisting of the hands as they come up. This will be your starting position.\n\nCurl up the two dumbbells at the same time until your biceps are fully contracted and exhale. Tip: Do not swing the arms or use momentum. Keep a controlled motion at all times. Hold the contracted position for a second at the top.\n\nAs you inhale, slowly go back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
+  "cells": [
+    {
+      "id": "db-flexor-incline-dumbbell-curls",
+      "name": "Flexor Incline Dumbbell Curls",
+      "muscle": "Arms",
+      "equipment": "Dumbbell + Incline bench",
+      "primaryMuscles": [
+        "biceps"
+      ],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "beginner",
+      "description": "Hold the dumbbell towards the side farther from you so that you have more weight on the side closest to you. (This can be done for a good effect on all bicep dumbbell exercises). Now do a normal incline dumbbell curl, but keep your wrists as far back as possible so as to neutralize any stress that is placed on them.",
+      "source": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Flexor_Incline_Dumbbell_Curls.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "weight": 0,
+      "metric": "load_reps",
+      "equipmentTags": [
+        "Dumbbell"
+      ],
+      "aliases": [],
+      "guideText": "Set an adjustable bench to about a forty-five-degree incline. Sit with your head and back supported and both feet flat on the floor. Hold one light dumbbell in each hand with an offset grip toward its outer end, leaving more of the weight toward your body. Let your arms hang beside you with your palms facing forward. Curl both weights by bending your elbows while keeping your upper arms steady. Maintain a firm, comfortable wrist position rather than deliberately bending the wrists as far back as possible. Pause briefly, then lower both weights under control without swinging or twisting your torso.",
+      "title": "Offset-grip incline dumbbell curl",
+      "guideSource": null,
+      "references": [
+        {
+          "title": "ACE Exercise Library — general exercise context",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        }
+      ],
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Root visually re-reviewed actual standalone image against the independently clarified guide: approximately45degree head/back support, complete grounded feet, two distinct supinated dumbbell grips offset toward the outer ends, stable upper arms and a controlled curl with comfortable wrists. No maximum wrist-extension claim is made; original rejected guide and review remain archived.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "cropReviewNote": "Inspected full1536x1024 source; complete athlete, both hands/dumbbells and all bench components contained without clipping. Pose held for ambiguous defining wrist extension.",
+      "previousGuideText": "Hold the dumbbell towards the side farther from you so that you have more weight on the side closest to you. (This can be done for a good effect on all bicep dumbbell exercises). Now do a normal incline dumbbell curl, but keep your wrists as far back as possible so as to neutralize any stress that is placed on them.\n\nSit on an incline bench that is angled at 45-degrees while holding a dumbbell on each hand.\n\nLet your arms hang down on your sides, with the elbows in, and turn the palms of your hands forward with the thumbs pointing away from the body. Tip: You will keep this hand position throughout the movement as there should not be any twisting of the hands as they come up. This will be your starting position.\n\nCurl up the two dumbbells at the same time until your biceps are fully contracted and exhale. Tip: Do not swing the arms or use momentum. Keep a controlled motion at all times. Hold the contracted position for a second at the top.\n\nAs you inhale, slowly go back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
+      "previousGuideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Flexor_Incline_Dumbbell_Curls.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "previousReviewNote": "Backrest now has approximately equal visible rise/run and matches45-degree incline with supported head/back and grounded feet. Supinated off-centre grips and two dumbbells retained. Both wrists still appear nearly aligned with forearms or only subtly extended; clear defining backward wrist bend is not established in both hands.",
+      "caption": "Offset-grip incline dumbbell curl · Controlled curl phase; keep the wrists comfortable and follow the guide for the full movement.",
+      "ids": [
+        "db-flexor-incline-dumbbell-curls"
+      ]
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-c42b7376-31f9-45cd-b3e9-d5ea150f2f95.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-solo-002-retry.png",
+  "reviewedAt": "2026-10-14T05:34:42.013Z",
+  "retryOf": "finish-solo-002",
+  "referencedImagePaths": [
+    "/workspace/generated_images/exec-833eabc6-78d1-4df3-85a2-c304e35d4dbc.png"
+  ],
+  "guideReplacementReview": "Re-review of preserved original generated image against owner-authorized independent guide; original generation prompt remains unchanged for provenance.",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

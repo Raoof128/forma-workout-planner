@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1413,
+  "accepted": 1414,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -4190,10 +4190,12 @@
     },
     {
       "exerciseId": "db-flexor-incline-dumbbell-curls",
-      "name": "Flexor Incline Dumbbell Curls",
-      "equipment": "Dumbbell",
-      "guideSha256": "25ff1ab3dfa37f3bb51f7e7b9a4e8149bd5b590b529685d7dd3347c748d64833",
-      "status": "pending"
+      "name": "Offset-grip incline dumbbell curl",
+      "equipment": "Dumbbell + Incline bench",
+      "guideSha256": "c08e5398256d9dc8bffbe4d9edee5219c82a96fbd4f7702ef3a4c6d8b38b0128",
+      "status": "accepted",
+      "assetId": "forma-original-finish-solo-002-retry-0-0",
+      "reviewNote": "Root visually re-reviewed actual standalone image against the independently clarified guide: approximately45degree head/back support, complete grounded feet, two distinct supinated dumbbell grips offset toward the outer ends, stable upper arms and a controlled curl with comfortable wrists. No maximum wrist-extension claim is made; original rejected guide and review remain archived."
     },
     {
       "exerciseId": "wger-cf79d9fb-ffce-4648-a64f-27e4274e4c20",

@@ -594,5 +594,21 @@
         "url": "https://www.acefitness.org/resources/everyone/exercise-library/"
       }
     ]
+  },
+  "db-flexor-incline-dumbbell-curls": {
+    "name": "Offset-grip incline dumbbell curl",
+    "equipment": "Dumbbell + Incline bench",
+    "equipmentTags": [
+      "Dumbbell",
+      "Incline bench"
+    ],
+    "description": "Set an adjustable bench to about a forty-five-degree incline. Sit with your head and back supported and both feet flat on the floor. Hold one light dumbbell in each hand with an offset grip toward its outer end, leaving more of the weight toward your body. Let your arms hang beside you with your palms facing forward. Curl both weights by bending your elbows while keeping your upper arms steady. Maintain a firm, comfortable wrist position rather than deliberately bending the wrists as far back as possible. Pause briefly, then lower both weights under control without swinging or twisting your torso.",
+    "source": null,
+    "references": [
+      {
+        "title": "ACE Exercise Library — general exercise context",
+        "url": "https://www.acefitness.org/resources/everyone/exercise-library/"
+      }
+    ]
   }
 }

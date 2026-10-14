@@ -9817,6 +9817,34 @@
         }
       }
     },
+    "forma-original-finish-solo-002-retry-0-0": {
+      "src": "/exercise-media/original/finish-solo-002-retry.png?v=7093cb9a08b7",
+      "sha256": "7093cb9a08b7113c3d31022834ef37b43d7c1c20210a3b1ae77b2051ef9633ee",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Offset-grip incline dumbbell curl",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-solo-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 1,
+        "rows": 1,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
     "forma-original-movements-033-1-0": {
       "src": "/exercise-media/original/movements-033.png?v=683055889ca2",
       "sha256": "683055889ca2923ff28b603f70b625c07a491fd05b01fada0f129a8345d5dfc1",
@@ -35008,6 +35036,10 @@
     "wger-2b4dd42b-1b52-46ba-8953-82c34b309ac5": {
       "assetId": "forma-original-movements-032-3-2",
       "caption": "FlexBar Wrist Flexion · Representative exercise position; follow the guide for the complete movement."
+    },
+    "db-flexor-incline-dumbbell-curls": {
+      "assetId": "forma-original-finish-solo-002-retry-0-0",
+      "caption": "Offset-grip incline dumbbell curl · Controlled curl phase; keep the wrists comfortable and follow the guide for the full movement."
     },
     "wger-cf79d9fb-ffce-4648-a64f-27e4274e4c20": {
       "assetId": "forma-original-movements-033-1-0",
