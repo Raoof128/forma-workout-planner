@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 833,
+  "accepted": 901,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -168,7 +168,9 @@
       "name": "3/4 Sit-Up",
       "equipment": "Bodyweight",
       "guideSha256": "9e1847a7c166859cbaa8d638baf1f3000a1f85efa47f8aa572e66cda7c9d74a8",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-001-0-0",
+      "reviewNote": "Correction reviewed: anchored sit-up feet, windmill free hand behind back, bilateral front deltoid raise, backward-overhead ball flight, and lifted-hip band clamshell match their individual guides."
     },
     {
       "exerciseId": "wger-7870ad8d-a0c1-4e3a-a4fe-a237908eba9b",
@@ -279,7 +281,9 @@
       "name": "Advanced Kettlebell Windmill",
       "equipment": "Kettlebell",
       "guideSha256": "927d6519434836fd85577fe6a93a860f7e1d907515836133f9c8d1f33d8c1004",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-001-1-0",
+      "reviewNote": "Correction reviewed: anchored sit-up feet, windmill free hand behind back, bilateral front deltoid raise, backward-overhead ball flight, and lifted-hip band clamshell match their individual guides."
     },
     {
       "exerciseId": "db-air-bike",
@@ -358,7 +362,9 @@
       "name": "Alternating Deltoid Raise",
       "equipment": "Dumbbell",
       "guideSha256": "654bad2173c3832159ec4ce7f595b014b495c3aa3a972a07545127267ab4e18e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-001-2-0",
+      "reviewNote": "Correction reviewed: anchored sit-up feet, windmill free hand behind back, bilateral front deltoid raise, backward-overhead ball flight, and lifted-hip band clamshell match their individual guides."
     },
     {
       "exerciseId": "db-alternating-floor-press",
@@ -651,7 +657,9 @@
       "name": "Backward Medicine Ball Throw",
       "equipment": "Medicine ball",
       "guideSha256": "dd5ee6f6eab218e14d591d31f86319d3fcf8d24593e79b59e4ffc65d82d358e9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-001-0-1",
+      "reviewNote": "Correction reviewed: anchored sit-up feet, windmill free hand behind back, bilateral front deltoid raise, backward-overhead ball flight, and lifted-hip band clamshell match their individual guides."
     },
     {
       "exerciseId": "wger-1a40cc23-4609-4951-9b76-237715ae85ed",
@@ -760,7 +768,9 @@
       "name": "Banded Clamshell",
       "equipment": "Resistance band",
       "guideSha256": "58ebd8348db08e94beb65cfea5cbff9027631aca7937391124f0e8cab6c9c9a6",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-001-2-1",
+      "reviewNote": "Correction reviewed: anchored sit-up feet, windmill free hand behind back, bilateral front deltoid raise, backward-overhead ball flight, and lifted-hip band clamshell match their individual guides."
     },
     {
       "exerciseId": "wger-8270bfb7-0264-4f79-aa3d-1ceed134b5d0",
@@ -828,7 +838,9 @@
       "name": "Barbell Curls Lying Against An Incline",
       "equipment": "Barbell",
       "guideSha256": "4b8cc10ea8c60fb347e829e86816089afcc80501bd7570abe552a7440e3e55c5",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-002-0-0",
+      "reviewNote": "Correction reviewed: prone supported supinated bar curl, hamstrings-to-calves deep squat, horizontal wide-elbow rear-delt row, bent-knee bear hover and neutral-spine near-horizontal pronated barbell/neutral dumbbell rows."
     },
     {
       "exerciseId": "db-barbell-deadlift",
@@ -844,7 +856,9 @@
       "name": "Barbell Full Squat",
       "equipment": "Barbell",
       "guideSha256": "1f08a0a71a251e346efb824ca6f0c8ae350c4624303447ce2565b7fe0a9f5ded",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-002-1-0",
+      "reviewNote": "Correction reviewed: prone supported supinated bar curl, hamstrings-to-calves deep squat, horizontal wide-elbow rear-delt row, bent-knee bear hover and neutral-spine near-horizontal pronated barbell/neutral dumbbell rows."
     },
     {
       "exerciseId": "db-barbell-glute-bridge",
@@ -914,7 +928,9 @@
       "name": "Barbell Rear Delt Row",
       "equipment": "Barbell",
       "guideSha256": "4e23cc7e1c81f1d6fbaa1d686b4fcf3f4b6f2335c6985a929b16ab1f681810ce",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-002-2-0",
+      "reviewNote": "Correction reviewed: prone supported supinated bar curl, hamstrings-to-calves deep squat, horizontal wide-elbow rear-delt row, bent-knee bear hover and neutral-spine near-horizontal pronated barbell/neutral dumbbell rows."
     },
     {
       "exerciseId": "db-barbell-rollout-from-bench",
@@ -1029,7 +1045,9 @@
       "name": "Bear crawl pull through",
       "equipment": "Dumbbell",
       "guideSha256": "0431817d4224b3416e02fd79e095d1261ddec7a5ffd4d0c720d96e8ab1c88ffe",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-002-0-1",
+      "reviewNote": "Correction reviewed: prone supported supinated bar curl, hamstrings-to-calves deep squat, horizontal wide-elbow rear-delt row, bent-knee bear hover and neutral-spine near-horizontal pronated barbell/neutral dumbbell rows."
     },
     {
       "exerciseId": "db-bear-crawl-sled-drags",
@@ -1171,7 +1189,9 @@
       "name": "Bent Over Barbell Row",
       "equipment": "Barbell",
       "guideSha256": "472119f2ec8157991fc6d4618f15d0cc42bdbbbb8e7857aa20b0a83c7649db0b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-002-1-1",
+      "reviewNote": "Correction reviewed: prone supported supinated bar curl, hamstrings-to-calves deep squat, horizontal wide-elbow rear-delt row, bent-knee bear hover and neutral-spine near-horizontal pronated barbell/neutral dumbbell rows."
     },
     {
       "exerciseId": "db-bent-over-dumbbell-rear-delt-raise-with-head-on-bench",
@@ -1221,7 +1241,9 @@
       "name": "Bent Over Two-Dumbbell Row",
       "equipment": "Dumbbell",
       "guideSha256": "aad2eb02f9e061a6f7bf53e0b4650e16ae11019d88fa80ede8769aaeae1b1e1f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-002-2-1",
+      "reviewNote": "Correction reviewed: prone supported supinated bar curl, hamstrings-to-calves deep squat, horizontal wide-elbow rear-delt row, bent-knee bear hover and neutral-spine near-horizontal pronated barbell/neutral dumbbell rows."
     },
     {
       "exerciseId": "db-bent-press",
@@ -7847,77 +7869,99 @@
       "name": "Preacher Curl",
       "equipment": "EZ bar",
       "guideSha256": "4f48cd2da263829a49247df0c7086fad6ac0c1a846d4d9505fbdaf3d6fada6c6",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-065-0-0",
+      "reviewNote": "Reviewed supinated inner-grip EZ preacher curl, torso-away versus torso-toward unilateral preacher curls, EZ preacher static position, neutral double-dumbbell preacher curl, secured-foot bar press sit-up, hands-behind-head squat hop, partner-resisted prone heel curl, towel-supported prone T scapular lift, upright-handle sled sprint and forward-shoulder pseudo-planche push-up."
     },
     {
       "exerciseId": "wger-7cd76565-8a8f-4658-98f1-253af9d8bb39",
       "name": "Preacher Curl - Externally Rotated",
       "equipment": "Dumbbell",
       "guideSha256": "d7a379899a00a6b742e102a361c395a089cad7ebeb274332b0330e4fe1e80d69",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-065-1-0",
+      "reviewNote": "Reviewed supinated inner-grip EZ preacher curl, torso-away versus torso-toward unilateral preacher curls, EZ preacher static position, neutral double-dumbbell preacher curl, secured-foot bar press sit-up, hands-behind-head squat hop, partner-resisted prone heel curl, towel-supported prone T scapular lift, upright-handle sled sprint and forward-shoulder pseudo-planche push-up."
     },
     {
       "exerciseId": "wger-4baa4962-64bd-434f-b2ed-0c3c88099841",
       "name": "Preacher Curl - Internally Rotated",
       "equipment": "Dumbbell",
       "guideSha256": "095953e21c99959200fedc3bf62ef50fcda97fd1666b5b5a03b02fdc8454376c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-065-2-0",
+      "reviewNote": "Reviewed supinated inner-grip EZ preacher curl, torso-away versus torso-toward unilateral preacher curls, EZ preacher static position, neutral double-dumbbell preacher curl, secured-foot bar press sit-up, hands-behind-head squat hop, partner-resisted prone heel curl, towel-supported prone T scapular lift, upright-handle sled sprint and forward-shoulder pseudo-planche push-up."
     },
     {
       "exerciseId": "wger-d5fb6606-4832-4216-bc0a-36955b5f741f",
       "name": "Preacher Curl Isometric",
       "equipment": "Dumbbell + SZ-Bar",
       "guideSha256": "3fed914182eeb9b8614ffe68a358ff175355ebb3ff561b311658cc10c32279b2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-065-3-0",
+      "reviewNote": "Reviewed supinated inner-grip EZ preacher curl, torso-away versus torso-toward unilateral preacher curls, EZ preacher static position, neutral double-dumbbell preacher curl, secured-foot bar press sit-up, hands-behind-head squat hop, partner-resisted prone heel curl, towel-supported prone T scapular lift, upright-handle sled sprint and forward-shoulder pseudo-planche push-up."
     },
     {
       "exerciseId": "db-preacher-hammer-dumbbell-curl",
       "name": "Preacher Hammer Dumbbell Curl",
       "equipment": "Dumbbell",
       "guideSha256": "39883ec26c5172424ff501b64e932bc6606edd47b143098f425a5bf2c95eda6b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-065-0-1",
+      "reviewNote": "Reviewed supinated inner-grip EZ preacher curl, torso-away versus torso-toward unilateral preacher curls, EZ preacher static position, neutral double-dumbbell preacher curl, secured-foot bar press sit-up, hands-behind-head squat hop, partner-resisted prone heel curl, towel-supported prone T scapular lift, upright-handle sled sprint and forward-shoulder pseudo-planche push-up."
     },
     {
       "exerciseId": "db-press-sit-up",
       "name": "Press Sit-Up",
       "equipment": "Barbell",
       "guideSha256": "cf073d41e748e7bc939ca61cea43677193f63d6381fc3cc6df351a47b4c9ec48",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-065-1-1",
+      "reviewNote": "Reviewed supinated inner-grip EZ preacher curl, torso-away versus torso-toward unilateral preacher curls, EZ preacher static position, neutral double-dumbbell preacher curl, secured-foot bar press sit-up, hands-behind-head squat hop, partner-resisted prone heel curl, towel-supported prone T scapular lift, upright-handle sled sprint and forward-shoulder pseudo-planche push-up."
     },
     {
       "exerciseId": "wger-f9866335-e489-404b-84b5-248fb8512702",
       "name": "Prisoner Squat",
       "equipment": "Bodyweight",
       "guideSha256": "ed8922135563de37743a261592ba26111a0f2595340b41ca3757e67272a906de",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-065-2-1",
+      "reviewNote": "Reviewed supinated inner-grip EZ preacher curl, torso-away versus torso-toward unilateral preacher curls, EZ preacher static position, neutral double-dumbbell preacher curl, secured-foot bar press sit-up, hands-behind-head squat hop, partner-resisted prone heel curl, towel-supported prone T scapular lift, upright-handle sled sprint and forward-shoulder pseudo-planche push-up."
     },
     {
       "exerciseId": "db-prone-manual-hamstring",
       "name": "Prone Manual Hamstring",
       "equipment": "Bodyweight",
       "guideSha256": "dd7776ba6d13fa9da74192f85cd438af5f68e7f06ecab49d53163959a6866190",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-065-3-1",
+      "reviewNote": "Reviewed supinated inner-grip EZ preacher curl, torso-away versus torso-toward unilateral preacher curls, EZ preacher static position, neutral double-dumbbell preacher curl, secured-foot bar press sit-up, hands-behind-head squat hop, partner-resisted prone heel curl, towel-supported prone T scapular lift, upright-handle sled sprint and forward-shoulder pseudo-planche push-up."
     },
     {
       "exerciseId": "wger-9cb69afc-7a44-4a22-b9a9-7bde8aca5b11",
       "name": "Prone Scapular Retraction - Arms at Side",
       "equipment": "Bodyweight",
       "guideSha256": "327d4a9f2923a78677d534d448ba96642465feac40d1cfb407ee9a399cc4a8d7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-065-0-2",
+      "reviewNote": "Reviewed supinated inner-grip EZ preacher curl, torso-away versus torso-toward unilateral preacher curls, EZ preacher static position, neutral double-dumbbell preacher curl, secured-foot bar press sit-up, hands-behind-head squat hop, partner-resisted prone heel curl, towel-supported prone T scapular lift, upright-handle sled sprint and forward-shoulder pseudo-planche push-up."
     },
     {
       "exerciseId": "db-prowler-sprint",
       "name": "Prowler Sprint",
       "equipment": "Specialty equipment",
       "guideSha256": "6523749123727263e96f9aed51b44823b9b5a7f5681f918d01eed6eee6474cda",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-065-1-2",
+      "reviewNote": "Reviewed supinated inner-grip EZ preacher curl, torso-away versus torso-toward unilateral preacher curls, EZ preacher static position, neutral double-dumbbell preacher curl, secured-foot bar press sit-up, hands-behind-head squat hop, partner-resisted prone heel curl, towel-supported prone T scapular lift, upright-handle sled sprint and forward-shoulder pseudo-planche push-up."
     },
     {
       "exerciseId": "wger-c38b0f69-7f01-4f0f-82cc-e33cdc658f9e",
       "name": "Pseudo Planche Push-up",
       "equipment": "Bodyweight",
       "guideSha256": "7e9f3b51708bbdd7d68408697850354f8ac5e3aa3c210910e446fd2eb5415fcd",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-065-2-2",
+      "reviewNote": "Reviewed supinated inner-grip EZ preacher curl, torso-away versus torso-toward unilateral preacher curls, EZ preacher static position, neutral double-dumbbell preacher curl, secured-foot bar press sit-up, hands-behind-head squat hop, partner-resisted prone heel curl, towel-supported prone T scapular lift, upright-handle sled sprint and forward-shoulder pseudo-planche push-up."
     },
     {
       "exerciseId": "db-pull-through",
@@ -7940,21 +7984,27 @@
       "name": "Pullback",
       "equipment": "Bodyweight",
       "guideSha256": "ec138763aa023cd7abc03d584eefa3b92975e3144467b54b739f4b870b0f3b4b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-066-0-0",
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison."
     },
     {
       "exerciseId": "db-pullups",
       "name": "Pullups",
       "equipment": "Bodyweight",
       "guideSha256": "bec37a0f4480a8b634aa01488ceebc465c1580a51a3d9dfa13a888ab7529cb3b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-066-1-0",
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison."
     },
     {
       "exerciseId": "wger-a535b8f1-2024-4c5c-b323-f711cbf9773c",
       "name": "Push OHP",
       "equipment": "Barbell",
       "guideSha256": "b8d0aad87057c546f32227e2c473998d8a5519bac6e4719c6496b2dfdce45347",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-066-2-0",
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison."
     },
     {
       "exerciseId": "wger-4284336c-6cfa-4c4d-a440-26b30db035d1",
@@ -7968,70 +8018,90 @@
       "name": "Push Press - Behind the Neck",
       "equipment": "Barbell",
       "guideSha256": "2df12c232a15ec4a3d7700bbd872bcd3a41d5a2e847c57cb315636ec55b6c2af",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-066-0-1",
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison."
     },
     {
       "exerciseId": "db-push-up-to-side-plank",
       "name": "Push Up to Side Plank",
       "equipment": "Bodyweight",
       "guideSha256": "4bfe991217daf26b74cfe34b2ae2d453eac8b224cc67b66460a0771e196514c1",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-066-1-1",
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison."
     },
     {
       "exerciseId": "db-push-up-wide",
       "name": "Push-Up Wide",
       "equipment": "Bodyweight",
       "guideSha256": "a99a903372281e337bd1cad389bfbd6ddf178e250db9eb29724d7c6cf85f6509",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-066-2-1",
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison."
     },
     {
       "exerciseId": "db-push-ups-close-triceps-position",
       "name": "Push-Ups - Close Triceps Position",
       "equipment": "Bodyweight",
       "guideSha256": "2ba357e93aa88fa49cad645676f1034254f83ad8c92f3689d8b86c8a064d1dc7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-066-3-1",
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison."
     },
     {
       "exerciseId": "wger-4aa7e2a7-86ad-4322-978f-ff8b391f556c",
       "name": "Push-Ups | Incline",
       "equipment": "Bench + Incline bench",
       "guideSha256": "9206d940b0cd37e95577088605ecb92af927866249743a884f7c527e6092ac1f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-066-0-2",
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison."
     },
     {
       "exerciseId": "wger-bd141adb-b9ad-4038-b11f-1db8665f72bc",
       "name": "Push-Ups | Parallettes",
       "equipment": "Bodyweight",
       "guideSha256": "11e1791639aee7d08af65dcb4614da74d7f7d6ece74a8457c879483744ae58cb",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-066-1-2",
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison."
     },
     {
       "exerciseId": "db-push-ups-with-feet-on-an-exercise-ball",
       "name": "Push-Ups With Feet On An Exercise Ball",
       "equipment": "Exercise ball",
       "guideSha256": "8d2ff5706503915d9ae79911f11859c42ecbca4af294154a422ce1e7359341a9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-066-2-2",
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison."
     },
     {
       "exerciseId": "db-pushups-close-and-wide-hand-positions",
       "name": "Pushups (Close and Wide Hand Positions)",
       "equipment": "Bodyweight",
       "guideSha256": "20d2b77a27d8e631e161f6cf813f8540ed38a8858d9a09fc86c6ed18f663ffac",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-066-3-2",
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison."
     },
     {
       "exerciseId": "db-pyramid",
       "name": "Pyramid",
       "equipment": "Exercise ball",
       "guideSha256": "735085a53355ec5e6af714723cbd58e23562b9fe8e03af2799e178442d458cf5",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-067-0-0",
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example."
     },
     {
       "exerciseId": "wger-2867cd51-f911-47db-9ea5-ca09aa44ca8f",
       "name": "Quad Sets",
       "equipment": "Bodyweight",
       "guideSha256": "7a18315e8650215c84a70bfcb8f73a896beb2a75fd93b96ff8abcb4a4ffb264a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-067-1-0",
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example."
     },
     {
       "exerciseId": "db-quad-stretch",
@@ -8045,7 +8115,9 @@
       "name": "Quadriceps-SMR",
       "equipment": "Foam roller",
       "guideSha256": "8263469445454cf0943bcf5521717185a269073cf5ee9502d352e8da4ac25551",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-067-3-0",
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example."
     },
     {
       "exerciseId": "wger-2a1f7c0c-c63d-43f1-9934-a209ed405ff8",
@@ -8059,70 +8131,90 @@
       "name": "Quadruped thoracic rotation",
       "equipment": "Bodyweight",
       "guideSha256": "bdf8edd0ef8876208a893a09af8d17db41284c2f0f7741e7b889c1b64d47cbd2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-067-1-1",
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example."
     },
     {
       "exerciseId": "db-quick-leap",
       "name": "Quick Leap",
       "equipment": "Specialty equipment",
       "guideSha256": "7de8e98174af80fa0d0d09d78970e1f46d85eadc46b7c166a39db22564801de3",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-067-2-1",
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example."
     },
     {
       "exerciseId": "wger-a6c2a970-a621-4e03-be1d-4a29118b1687",
       "name": "Rack Deadlift",
       "equipment": "Bodyweight",
       "guideSha256": "b1aa31662583b421e023561145fd6937c03d85ffbaf832e9262a570cd851cf03",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-067-3-1",
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example."
     },
     {
       "exerciseId": "db-rack-delivery",
       "name": "Rack Delivery",
       "equipment": "Barbell",
       "guideSha256": "6fff09c6b109c48ddbdd97c2244157831c53374afa21c9208117f5a9708bdee6",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-067-0-2",
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example."
     },
     {
       "exerciseId": "db-rack-pull-with-bands",
       "name": "Rack Pull with Bands",
       "equipment": "Barbell",
       "guideSha256": "1c936d80ef6a4d2df20e957febde603ec99c826fe97dc1424e2c0d4cbac73868",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-067-1-2",
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example."
     },
     {
       "exerciseId": "db-rack-pulls",
       "name": "Rack Pulls",
       "equipment": "Barbell",
       "guideSha256": "38f544f9722abbc19232f64730fa0dab3391ed5158fd16026f6a45c7f7d89ab1",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-067-2-2",
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example."
     },
     {
       "exerciseId": "wger-046b1e8f-4a11-4579-84d1-ac2833b8ed83",
       "name": "Radio Taiso",
       "equipment": "Bodyweight",
       "guideSha256": "9e0e516a4ab5516b60da929b23470d785af8d34804054e196b580b32205eec2d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-067-3-2",
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example."
     },
     {
       "exerciseId": "wger-6c21c09b-90c8-4e43-a43c-ed566f812784",
       "name": "Reach ups",
       "equipment": "Bodyweight",
       "guideSha256": "be7698ea935477761ff171a0f9d6db87e7fed69dd7d1483d9d486ee2b614aa19",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-068-0-0",
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat."
     },
     {
       "exerciseId": "wger-2f2192c3-6e95-41b5-9438-2f1497f56767",
       "name": "Rear-foot-elevated Hip Flexor Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "e867f38cc00488a2cd65f85e001ea8f823d1211a58b7f03ecb7a9bb11f7ac724",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-068-1-0",
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat."
     },
     {
       "exerciseId": "wger-6705ec92-c6c6-4b2c-b919-bddb8177bf98",
       "name": "Recovery Bobbing",
       "equipment": "Bodyweight",
       "guideSha256": "f3e55132e6cfafde756524c5e30334b3472fcbd5047d58c640c26692fa41cdff",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-068-2-0",
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat."
     },
     {
       "exerciseId": "wger-cf434716-f846-46d8-b267-8b33d311d8b5",
@@ -8145,28 +8237,36 @@
       "name": "Remada unilateral no cabo",
       "equipment": "Pull-up bar",
       "guideSha256": "50c3e9f34b893c47494e32815cf7a9cbf9cfb36307d9b4545e4d1f357375d3ac",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-068-0-1",
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat."
     },
     {
       "exerciseId": "wger-2b6c09f7-dbf1-45ea-baf6-9a12e0b12396",
       "name": "Renegade Row",
       "equipment": "Dumbbell",
       "guideSha256": "fa2c8f24a5262f6967039a057ace56eda3fe8526a9c708e5bb7e6a8a2e4f0c54",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-068-1-1",
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat."
     },
     {
       "exerciseId": "wger-fae44c34-2e85-4d22-8fb8-7b14faf14719",
       "name": "Respiración profunda (de pie o sentado)",
       "equipment": "Bodyweight",
       "guideSha256": "4b6309396ce68c83978b17a236b324d0ae53640f9cdbec24af7537afa9746016",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-068-2-1",
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat."
     },
     {
       "exerciseId": "wger-af5a3520-25eb-4dd7-b802-a7382b8ce3ef",
       "name": "Rest (for timed workouts)",
       "equipment": "Bodyweight",
       "guideSha256": "4e2278748818c5b3b9ef0e230decf8ae118b2eddc9e7cb6867fb8bc21504ea08",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-068-3-1",
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat."
     },
     {
       "exerciseId": "wger-7e74b1f1-636b-4821-b4be-3711328b89b4",
@@ -8180,42 +8280,54 @@
       "name": "Return Push from Stance",
       "equipment": "Medicine ball",
       "guideSha256": "dbb2df855e7f108aef9f310eeb20162c87895a67d724ca40030d85bc12e2035f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-068-1-2",
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat."
     },
     {
       "exerciseId": "db-reverse-band-bench-press",
       "name": "Reverse Band Bench Press",
       "equipment": "Barbell",
       "guideSha256": "b08eeec75cec7cf4505452c71712f607addc0d7000f043d5f4d090d36a1cdf92",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-068-2-2",
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat."
     },
     {
       "exerciseId": "db-reverse-band-box-squat",
       "name": "Reverse Band Box Squat",
       "equipment": "Barbell",
       "guideSha256": "4b2fc4b687023b4eac88930ab01fa9da4df7c28123c6eb8944f90a50b36cc60c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-068-3-2",
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat."
     },
     {
       "exerciseId": "db-reverse-band-deadlift",
       "name": "Reverse Band Deadlift",
       "equipment": "Barbell",
       "guideSha256": "93361ed3a2b24fa33a2f4fc7c1d04ee4fcc0defb5503fcc6580c2863ec0c0666",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-069-0-0",
+      "reviewNote": "Reviewed top-anchored reverse-band standard and sumo deadlifts, wide rear-rack power squat, pelvis-lift reverse crunch and prone incline neutral dumbbell reverse fly."
     },
     {
       "exerciseId": "db-reverse-band-power-squat",
       "name": "Reverse Band Power Squat",
       "equipment": "Barbell",
       "guideSha256": "390f186e2cd1fc19fe930e066cd7701ce6889b7d0e65c2f15f825bd53be912e7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-069-1-0",
+      "reviewNote": "Reviewed top-anchored reverse-band standard and sumo deadlifts, wide rear-rack power squat, pelvis-lift reverse crunch and prone incline neutral dumbbell reverse fly."
     },
     {
       "exerciseId": "db-reverse-band-sumo-deadlift",
       "name": "Reverse Band Sumo Deadlift",
       "equipment": "Barbell",
       "guideSha256": "d236524d9f7a82284df42f3cae518cf6405b9d81e025f38d69187809e438771f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-069-2-0",
+      "reviewNote": "Reviewed top-anchored reverse-band standard and sumo deadlifts, wide rear-rack power squat, pelvis-lift reverse crunch and prone incline neutral dumbbell reverse fly."
     },
     {
       "exerciseId": "wger-834c639f-4c82-404d-909f-4c75275465a0",
@@ -8259,7 +8371,9 @@
       "name": "Reverse Crunch",
       "equipment": "Bodyweight",
       "guideSha256": "6ae7723400a4e2af6c938080e959b1b5dcd1074105a719aafc0eef55af4cb57c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-069-3-1",
+      "reviewNote": "Reviewed top-anchored reverse-band standard and sumo deadlifts, wide rear-rack power squat, pelvis-lift reverse crunch and prone incline neutral dumbbell reverse fly."
     },
     {
       "exerciseId": "wger-2cd5e3c6-a8c0-456a-ab47-5e7b3a435407",
@@ -8280,7 +8394,9 @@
       "name": "Reverse Flyes",
       "equipment": "Dumbbell",
       "guideSha256": "0a18ab45912930cc51ee67c92dacf37a1fbbf5ade3af81c0b2b445bcc7753285",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-069-2-2",
+      "reviewNote": "Reviewed top-anchored reverse-band standard and sumo deadlifts, wide rear-rack power squat, pelvis-lift reverse crunch and prone incline neutral dumbbell reverse fly."
     },
     {
       "exerciseId": "db-reverse-flyes-with-external-rotation",
@@ -8317,7 +8433,9 @@
       "name": "Reverse lunges",
       "equipment": "Bodyweight",
       "guideSha256": "c36ac48da18a187d20ad9fc5020620f0d51d054c43225ed058968c34622b3af0",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-070-1-0",
+      "reviewNote": "Reviewed backward-step lunge, extended-hip kneeling reverse Nordic lean, pronated upper-rim plate curl, prone straight-arm snow-angel phase, low-anchor upward band woodchop, crossed-arm upper-back foam roll, walking rickshaw frame carry and hip-hinged frame deadlift, bent-elbow ring dip and straight-arm turned-out support hold."
     },
     {
       "exerciseId": "db-reverse-machine-flyes",
@@ -8333,21 +8451,27 @@
       "name": "Reverse Nordic Curl",
       "equipment": "Bodyweight",
       "guideSha256": "db562c74f4018094b1e30b0ec4295846673d8d298d3cf6ba29ec9bcb67dbdf07",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-070-2-0",
+      "reviewNote": "Reviewed backward-step lunge, extended-hip kneeling reverse Nordic lean, pronated upper-rim plate curl, prone straight-arm snow-angel phase, low-anchor upward band woodchop, crossed-arm upper-back foam roll, walking rickshaw frame carry and hip-hinged frame deadlift, bent-elbow ring dip and straight-arm turned-out support hold."
     },
     {
       "exerciseId": "db-reverse-plate-curls",
       "name": "Reverse Plate Curls",
       "equipment": "Specialty equipment",
       "guideSha256": "12383ebcd6f596f29ed2384fee961ca5ed16c80a61aec556db94fd2d6769a503",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-070-3-0",
+      "reviewNote": "Reviewed backward-step lunge, extended-hip kneeling reverse Nordic lean, pronated upper-rim plate curl, prone straight-arm snow-angel phase, low-anchor upward band woodchop, crossed-arm upper-back foam roll, walking rickshaw frame carry and hip-hinged frame deadlift, bent-elbow ring dip and straight-arm turned-out support hold."
     },
     {
       "exerciseId": "wger-603895ca-20a0-4272-a62b-293d14220390",
       "name": "Reverse Snow Angel",
       "equipment": "Bodyweight",
       "guideSha256": "d4b144569452863153db587852553d02dd22b6fc94e3d8cc409262e532f3c897",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-070-0-1",
+      "reviewNote": "Reviewed backward-step lunge, extended-hip kneeling reverse Nordic lean, pronated upper-rim plate curl, prone straight-arm snow-angel phase, low-anchor upward band woodchop, crossed-arm upper-back foam roll, walking rickshaw frame carry and hip-hinged frame deadlift, bent-elbow ring dip and straight-arm turned-out support hold."
     },
     {
       "exerciseId": "db-reverse-triceps-bench-press",
@@ -8370,42 +8494,54 @@
       "name": "Reverse Wood Chops",
       "equipment": "Bodyweight",
       "guideSha256": "5afa3bb02ef142b24c9489cdba3974310f36e3911cb3b7bd3e6a7e9ddab969a7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-070-2-1",
+      "reviewNote": "Reviewed backward-step lunge, extended-hip kneeling reverse Nordic lean, pronated upper-rim plate curl, prone straight-arm snow-angel phase, low-anchor upward band woodchop, crossed-arm upper-back foam roll, walking rickshaw frame carry and hip-hinged frame deadlift, bent-elbow ring dip and straight-arm turned-out support hold."
     },
     {
       "exerciseId": "db-rhomboids-smr",
       "name": "Rhomboids-SMR",
       "equipment": "Foam roller",
       "guideSha256": "bd7d90ba53f6ca66ff2098190b1d91f6ef926dbd837eda3c8679e3c89f764bb2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-070-3-1",
+      "reviewNote": "Reviewed backward-step lunge, extended-hip kneeling reverse Nordic lean, pronated upper-rim plate curl, prone straight-arm snow-angel phase, low-anchor upward band woodchop, crossed-arm upper-back foam roll, walking rickshaw frame carry and hip-hinged frame deadlift, bent-elbow ring dip and straight-arm turned-out support hold."
     },
     {
       "exerciseId": "db-rickshaw-carry",
       "name": "Rickshaw Carry",
       "equipment": "Specialty equipment",
       "guideSha256": "8bfc9b4310f3f725d38e7d669c6182ca838216b2ecef29f3c924270f1e73c1d7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-070-0-2",
+      "reviewNote": "Reviewed backward-step lunge, extended-hip kneeling reverse Nordic lean, pronated upper-rim plate curl, prone straight-arm snow-angel phase, low-anchor upward band woodchop, crossed-arm upper-back foam roll, walking rickshaw frame carry and hip-hinged frame deadlift, bent-elbow ring dip and straight-arm turned-out support hold."
     },
     {
       "exerciseId": "db-rickshaw-deadlift",
       "name": "Rickshaw Deadlift",
       "equipment": "Specialty equipment",
       "guideSha256": "f6a22f48a90bd27d07e3c66190c08967f905a17fbce9c12f9825be2dda1ea316",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-070-1-2",
+      "reviewNote": "Reviewed backward-step lunge, extended-hip kneeling reverse Nordic lean, pronated upper-rim plate curl, prone straight-arm snow-angel phase, low-anchor upward band woodchop, crossed-arm upper-back foam roll, walking rickshaw frame carry and hip-hinged frame deadlift, bent-elbow ring dip and straight-arm turned-out support hold."
     },
     {
       "exerciseId": "db-ring-dips",
       "name": "Ring Dips",
       "equipment": "Specialty equipment",
       "guideSha256": "791d4c13a2108a27e4188c7e7e3bb94444c719e0c95fc91761ae1d3e84f4278e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-070-2-2",
+      "reviewNote": "Reviewed backward-step lunge, extended-hip kneeling reverse Nordic lean, pronated upper-rim plate curl, prone straight-arm snow-angel phase, low-anchor upward band woodchop, crossed-arm upper-back foam roll, walking rickshaw frame carry and hip-hinged frame deadlift, bent-elbow ring dip and straight-arm turned-out support hold."
     },
     {
       "exerciseId": "wger-6c9c9d14-e6bf-43ed-9859-a689e2131fe0",
       "name": "Ring Support Hold",
       "equipment": "Bodyweight",
       "guideSha256": "dba982fb939f5fd7e8e3198edd0b79abe7e4239cd37d10f5e2dd6da1069bc8d1",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-070-3-2",
+      "reviewNote": "Reviewed backward-step lunge, extended-hip kneeling reverse Nordic lean, pronated upper-rim plate curl, prone straight-arm snow-angel phase, low-anchor upward band woodchop, crossed-arm upper-back foam roll, walking rickshaw frame carry and hip-hinged frame deadlift, bent-elbow ring dip and straight-arm turned-out support hold."
     },
     {
       "exerciseId": "db-rocket-jump",

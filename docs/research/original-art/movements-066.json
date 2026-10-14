@@ -13,7 +13,7 @@
       "guideText": "Set weight and grip for the cables in the cage. Take a few steps away, bend over, pull and extend the back at the same time.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1905/view/",
@@ -21,7 +21,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 346
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-pullups",
@@ -30,14 +38,22 @@
       "guideText": "Grab the pull-up bar with the palms facing forward using the prescribed grip. Note on grips: For a wide grip, your hands need to be spaced out at a distance wider than your shoulder width. For a medium grip, your hands need to be spaced out at a distance equal to your shoulder width and for a close grip at a distance smaller than your shoulder width.\n\nAs you have both arms extended in front of you holding the bar at the chosen grip width, bring your torso back around 30 degrees or so while creating a curvature on your lower back and sticking your chest out. This is your starting position.\n\nPull your torso up until the bar touches your upper chest by drawing the shoulders and the upper arms down and back. Exhale as you perform this portion of the movement. Tip: Concentrate on squeezing the back muscles once you reach the full contracted position. The upper torso should remain stationary as it moves through space and only the arms should move. The forearms should do no other work other than hold the bar.\n\nAfter a second on the contracted position, start to inhale and slowly lower your torso back to the starting position when your arms are fully extended and the lats are fully stretched.\n\nRepeat this motion for the prescribed amount of repetitions.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Pullups.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 346
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "wger-a535b8f1-2024-4c5c-b323-f711cbf9773c",
@@ -46,7 +62,7 @@
       "guideText": "* Rest bar in front on your shoulders * Bend knees while keeping upper body straight * Extend legs pushing the bar overhead with force",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1440/view/",
@@ -54,7 +70,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 385,
+        "height": 346
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "wger-4284336c-6cfa-4c4d-a440-26b30db035d1",
@@ -63,7 +87,7 @@
       "guideText": "Clean your dumbbells onto your shoulders, palms facing in. Take a breath and brace your core. (picture 1)Dip at the knees and use your legs to help (picture 2) press your dumbbells overhead. Lower under control with a slow tempo to your shoulders and repeat.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/478/view/",
@@ -71,7 +95,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: dumbbell push press has bent receiving knees with arms overhead; depict upright extended-knee finish.",
+      "bounds": {
+        "x": 1153,
+        "y": 0,
+        "width": 383,
+        "height": 346
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-push-press-behind-the-neck",
@@ -80,14 +112,22 @@
       "guideText": "Standing with the weight racked on the back of the shoulders, begin with the dip. With your feet directly under your hips, flex the knees without moving the hips backward. Go down only slightly, and reverse direction as powerfully as possible. Drive through the heels create as much speed and force as possible, moving the bar in a vertical path.\n\nUsing the momentum generated, finish pressing the weight overhead be extending through the arms.\n\nReturn to the starting position, using your legs to absorb the impact.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Push_Press_-_Behind_the_Neck.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison.",
+      "bounds": {
+        "x": 0,
+        "y": 346,
+        "width": 384,
+        "height": 337
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-push-up-to-side-plank",
@@ -96,14 +136,22 @@
       "guideText": "Get into pushup position on the toes with your hands just outside of shoulder width.\n\nPerform a pushup by allowing the elbows to flex. As you descend, keep your body straight.\n\nDo one pushup and as you come up, shift your weight on the left side of the body, twist to the side while bringing the right arm up towards the ceiling in a side plank.\n\nLower the arm back to the floor for another pushup and then twist to the other side.\n\nRepeat the series, alternating each side, for 10 or more reps.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Push_Up_to_Side_Plank.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison.",
+      "bounds": {
+        "x": 384,
+        "y": 346,
+        "width": 384,
+        "height": 337
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-push-up-wide",
@@ -112,14 +160,22 @@
       "guideText": "With your hands wide apart, support your body on your toes and hands in a plank position. Your elbows should be extended and your body straight. Do not allow your hips to sag. This will be your starting position.\n\nTo begin, allow the elbows to flex, lowering your chest to the floor as you inhale.\n\nUsing your pectoral muscles, press your upper body back up to the starting position by extending the elbows. Exhale as you perform this step.\n\nAfter pausing at the contracted position, repeat the movement for the prescribed amount of repetitions.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Push-Up_Wide.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison.",
+      "bounds": {
+        "x": 768,
+        "y": 346,
+        "width": 385,
+        "height": 337
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-push-ups-close-triceps-position",
@@ -128,14 +184,22 @@
       "guideText": "Lie on the floor face down and place your hands closer than shoulder width for a close hand position. Make sure that you are holding your torso up at arms' length.\n\nLower yourself until your chest almost touches the floor as you inhale.\n\nUsing your triceps and some of your pectoral muscles, press your upper body back up to the starting position and squeeze your chest. Breathe out as you perform this step.\n\nAfter a second pause at the contracted position, repeat the movement for the prescribed amount of repetitions.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Push-Ups_-_Close_Triceps_Position.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison.",
+      "bounds": {
+        "x": 1153,
+        "y": 346,
+        "width": 383,
+        "height": 337
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "wger-4aa7e2a7-86ad-4322-978f-ff8b391f556c",
@@ -144,7 +208,7 @@
       "guideText": "Inclined push-ups primarily target the chest muscles (pectoralis major and minor), but also work the triceps, shoulders, and core to a lesser extent. Because the upper body is elevated, the incline push-up places less emphasis on the triceps compared to regular push-ups, which may be beneficial for individuals looking to specifically target their chest muscles.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1111/view/",
@@ -152,7 +216,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison.",
+      "bounds": {
+        "x": 0,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "wger-bd141adb-b9ad-4038-b11f-1db8665f72bc",
@@ -161,7 +233,7 @@
       "guideText": "Parallettes push-ups are a variation of the traditional push-up that are performed with the hands on parallel bars, known as parallettes. To perform a parallettes push-up, assume a push-up position with your hands on the parallettes and your feet on the ground. Lower your body towards the ground while keeping your elbows close to your sides, and then push back up to the starting position. Parallettes push-ups place more emphasis on the chest and shoulders compared to traditional push-ups, as they allow for a greater range of motion in the shoulder joint. This increased range of motion can also help to improve shoulder stability and mobility. Additionally, parallettes push-ups engage the core muscles more than traditional push-ups, as the instability of the parallettes requires greater activation of the core muscles to maintain proper form. The added challenge of balancing on the parallettes also requires greater upper body strength and control, making parallettes push-ups a more advanced variation of the traditional push-up. They can be a great way to challenge yourself and add variety to your upper body workout routine. As always, be sure to use proper form and start with a level that is appropriate for your strength and fitness level.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1113/view/",
@@ -169,7 +241,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison.",
+      "bounds": {
+        "x": 384,
+        "y": 683,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-push-ups-with-feet-on-an-exercise-ball",
@@ -178,14 +258,22 @@
       "guideText": "Lie on the floor face down and place your hands about 36 inches apart from each other holding your torso up at arms length.\n\nPlace your toes on top of an exercise ball. This will allow your body to be elevated.\n\nLower yourself until your chest almost touches the floor as you inhale.\n\nUsing your pectoral muscles, press your upper body back up to the starting position and squeeze your chest. Breathe out as you perform this step.\n\nAfter a second pause at the contracted position, repeat the movement for the prescribed amount of repetitions.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Push-Ups_With_Feet_On_An_Exercise_Ball.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison.",
+      "bounds": {
+        "x": 768,
+        "y": 683,
+        "width": 385,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-pushups-close-and-wide-hand-positions",
@@ -194,14 +282,23 @@
       "guideText": "Lie on the floor face down and body straight with your toes on the floor and the hands wider than shoulder width for a wide hand position and closer than shoulder width for a close hand position. Make sure you are holding your torso up at arms length.\n\nLower yourself until your chest almost touches the floor as you inhale.\n\nUsing your pectoral muscles, press your upper body back up to the starting position and squeeze your chest. Breathe out as you perform this step.\n\nAfter a second pause at the contracted position, repeat the movement for the prescribed amount of repetitions.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Pushups_Close_and_Wide_Hand_Positions.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed cage-cable pullback hinge phase, pronated pull-up, standing front and behind-neck barbell push-press lockouts, palm-supported side-plank transition, wide versus close triceps push-ups, elevated palms incline push-up, neutral parallette push-up, toe-supported exercise-ball push-up and close/wide push-up comparison.",
+      "bounds": {
+        "x": 1153,
+        "y": 683,
+        "width": 383,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels.",
+      "caption": "Pushups (Close and Wide Hand Positions) · Both hand positions shown; follow the guide for repetitions."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-7140665a-1ff8-43f9-9eb8-de128f8a84d6.png",

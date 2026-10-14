@@ -13,14 +13,22 @@
       "guideText": "Start off by rolling your torso forward onto the ball so your hips rest on top of the ball and become the highest point of your body.\n\nRest your hands and feet on the floor. Your arms and legs can be slightly bent or straight, depending on the size of the ball, your flexibility, and the length of your limbs. This also helps develop stabilizing strength in your torso and shoulders.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Pyramid.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 318
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "wger-2867cd51-f911-47db-9ea5-ca09aa44ca8f",
@@ -29,7 +37,7 @@
       "guideText": "# What Are Quad Sets?\n\nQuad sets are a fundamental exercise used in knee rehabilitation. They focus on strengthening the quadriceps muscles located at the front of the thigh. This exercise is particularly beneficial for individuals recovering from knee injuries or surgeries.\n\n## How to Perform Quad Sets\n\n### Steps to Execute Quad Sets\n\n1. **Positioning:** Sit or lie down with your legs straight.\n2. **Tightening:** Tighten the quadriceps muscles while keeping the leg straight. You should see the kneecap move upward.\n3. **Holding:** Maintain the contraction for about 5 seconds.\n4. **Releasing:** Relax the muscle after the hold.\n5. **Repetitions:** Aim for 10 to 15 repetitions, gradually increasing as strength improves.\n\n### Tips for Effective Quad Sets\n\n- Ensure no other muscles are contracting to assist the quadriceps.\n- Perform the exercise on a flat surface, like a bed or couch, with a towel or pillow under your heel for comfort.\n- It is recommended to do these exercises multiple times a day, especially during the early stages of recovery.\n\n## Benefits of Quad Sets\n\n- **Restores Muscle Function:** Helps rebuild strength in the quadriceps.\n- **Improves Stability:** Enhances stability in the knee joint.\n- **Increases Range of Motion:** Aids in regaining mobility after injury or surgery.\n\nIncorporating quad sets into your rehabilitation routine can significantly aid in recovery and improve overall knee function.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2617/view/",
@@ -37,7 +45,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 385,
+        "height": 318
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-quad-stretch",
@@ -46,14 +62,22 @@
       "guideText": "Lay on your side. Loop a belt, rope, or band around your top foot. Flex the knee and extend your hip, attempting to touch your glutes with your foot, and holding the belt with your hands. This will be your starting position.\n\nWith the belt being held over the shoulder or overhead, gently pull to increase the stretch in the quadriceps. Hold for 10-20 seconds, and then switch sides.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Quad_Stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: side quadriceps strap stretch does not show belt held overhead/over shoulder as specified.",
+      "bounds": {
+        "x": 769,
+        "y": 0,
+        "width": 384,
+        "height": 318
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-quadriceps-smr",
@@ -62,14 +86,22 @@
       "guideText": "Lay facedown on the floor with your weight supported by your hands or forearms. Place a foam roll underneath one leg on the quadriceps, and keep the foot off of the ground. Make sure to relax the leg as much as possible. This will be your starting position.\n\nShifting as much weight onto the leg to be stretched as is tolerable, roll over the foam from above the knee to below the hip, holding points of tension for 10-30 seconds. Switch sides.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Quadriceps-SMR.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example.",
+      "bounds": {
+        "x": 1153,
+        "y": 0,
+        "width": 383,
+        "height": 318
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "wger-2a1f7c0c-c63d-43f1-9934-a209ed405ff8",
@@ -78,7 +110,7 @@
       "guideText": "Distribute your body weight evenly on all knees and arms. Keep the torso stable, with the abdomen engaged and the lumbar spine straight without twisting the back (imagine: a glass on your lower back won't fall off). Raise one leg outwards without twisting it. Pay attention to the right angle at the hips and knees. Always train both sides of the body. To increase resistance, a resistance band can be used.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1915/view/",
@@ -86,7 +118,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: quadruped band hip abduction drawn as backward donkey kick, not lateral bent-knee opening.",
+      "bounds": {
+        "x": 0,
+        "y": 318,
+        "width": 384,
+        "height": 317
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "wger-25854f7a-485a-4280-a0fa-f024655733b0",
@@ -95,7 +135,7 @@
       "guideText": "**Starting position:** Start kneeling on all fours, knees shoulder-width apart. Place your left hand behind your head while keeping your right hand outstretched and touching the floor. **Steps:** 1. On inhale, move your left elbow toward your right hand, keeping your left hand behind your head. 2. On exhale, move your left elbow to point up toward the ceiling. 3. Repeat.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1028/view/",
@@ -103,7 +143,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example.",
+      "bounds": {
+        "x": 384,
+        "y": 318,
+        "width": 385,
+        "height": 317
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-quick-leap",
@@ -112,14 +160,22 @@
       "guideText": "You will need a box for this exerise.\n\nBegin facing the box standing 1-2 feet from its edge.\n\nBy utilizing your hips, hop onto the box, landing on both legs. Ensure that you land with your legs bent and your feet flat.\n\nImmediately upon landing, fully extend through the entire body and swing your arms overhead to explode off of the box. Use your legs to absorb the impact of landing.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Quick_Leap.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example.",
+      "bounds": {
+        "x": 769,
+        "y": 318,
+        "width": 384,
+        "height": 317
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "wger-a6c2a970-a621-4e03-be1d-4a29118b1687",
@@ -128,7 +184,7 @@
       "guideText": "Deadlift to be done using a Smith machine or a free rack. Bar or barbell hould be just right under the knee cap level. Lift using the glutes and through the heels, then come back to starting postion with a control movement of 2 seconds. This exercise targets mainly the lower back and glutes.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/484/view/",
@@ -136,7 +192,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example.",
+      "bounds": {
+        "x": 1153,
+        "y": 318,
+        "width": 383,
+        "height": 317
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-rack-delivery",
@@ -145,14 +209,22 @@
       "guideText": "This drill teaches the delivery of the barbell to the rack position on the shoulders. Begin holding a bar in the scarecrow position, with the upper arms parallel to the floor, and the forearms hanging down. Use a hook grip, with your fingers wrapped over your thumbs.\n\nBegin by rotating the elbows around the bar, delivering the bar to the shoulders. As your elbows come forward, relax your grip. The shoulders should be protracted, providing a shelf for the bar, which should lightly contact the throat.\n\nIt is important that the bar stay close to the body at all times, as with a heavier load any distance will result in an unwanted collision. As the movement becomes smoother, speed and load can be increased before progressing further.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Rack_Delivery.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example.",
+      "bounds": {
+        "x": 0,
+        "y": 635,
+        "width": 384,
+        "height": 389
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-rack-pull-with-bands",
@@ -161,14 +233,22 @@
       "guideText": "Set up in a power rack with the bar on the pins. The pins should be set to the desired point; just below the knees, just above, or in the mid thigh position. Attach bands to the base of the rack, or secure them with dumbbells. Attach the other end to the bar. You may need to choke the bands to provide tension.\n\nPosition yourself against the bar in proper deadlifting position. Your feet should be under your hips, your grip shoulder width, back arched, and hips back to engage the hamstrings. Since the weight is typically heavy, you may use a mixed grip, a hook grip, or use straps to aid in holding the weight.\n\nWith your head looking forward, extend through the hips and knees, pulling the weight up and back until lockout. Be sure to pull your shoulders back as you complete the movement. Return the weight to the pins and repeat.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Rack_Pull_with_Bands.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example.",
+      "bounds": {
+        "x": 384,
+        "y": 635,
+        "width": 385,
+        "height": 389
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-rack-pulls",
@@ -177,14 +257,22 @@
       "guideText": "Set up in a power rack with the bar on the pins. The pins should be set to the desired point; just below the knees, just above, or in the mid thigh position. Position yourself against the bar in proper deadlifting position. Your feet should be under your hips, your grip shoulder width, back arched, and hips back to engage the hamstrings. Since the weight is typically heavy, you may use a mixed grip, a hook grip, or use straps to aid in holding the weight.\n\nWith your head looking forward, extend through the hips and knees, pulling the weight up and back until lockout. Be sure to pull your shoulders back as you complete the movement.\n\nReturn the weight to the pins and repeat.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Rack_Pulls.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example.",
+      "bounds": {
+        "x": 769,
+        "y": 635,
+        "width": 384,
+        "height": 389
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "wger-046b1e8f-4a11-4579-84d1-ac2833b8ed83",
@@ -193,7 +281,7 @@
       "guideText": "Video can be found here : https://www.youtube.com/watch?v=SGPBSqxKGAc\n\nFull-body mobility and dynamic warm-up routine (3–5 minutes) to prepare joints, muscles, and the cardiovascular system for workout.\n\nMovement Flow:\n\nDeep Breathing & Arm Raises: Inhale while raising arms laterally overhead, exhale as you lower them.\n\nKnee Bends: Soft, rhythmic knee flexions synchronized with arm swings.\n\nArm Circles: Large full-range arm rotations forward, then backward to open up the chest and shoulder girdle.\n\nChest Expansion: Cross arms in front of the chest and open wide to the sides.\n\nSide Bends: Reach overhead to stretch the lateral torso left and right with a smooth side flexion.\n\nForward & Back Bends: Gently hinge at the hips to reach forward, then return upright with a mild spinal extension.\n\nTorso Twists: Swing arms side-to-side to rotate the spine and loosen the core.\n\nAnkle Mobility / Light Bounces: Soft heel lifts or light bouncing on toes to warm up lower leg joints and tendons.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2671/view/",
@@ -201,7 +289,16 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed hip-high physioball pyramid with palms/toes grounded, straight-leg quad-set starting posture, prone anterior-thigh roller with working foot lifted, hand-behind-head quadruped thoracic rotation, box-top quick-leap takeoff, below-knee rack pull, front-rack delivery finish, base-anchored band rack pull, rack-pull upright lockout and Radio Taiso overhead breathing example.",
+      "bounds": {
+        "x": 1153,
+        "y": 635,
+        "width": 383,
+        "height": 389
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels.",
+      "caption": "Radio Taiso · Example: overhead arm raise and breathing; follow the guide for the complete warm-up."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-0dfe2451-7384-4ac6-858b-e3a9c2c2bdab.png",

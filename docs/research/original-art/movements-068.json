@@ -13,7 +13,7 @@
       "guideText": "Pour effectuer cet exercice, allongez-vous sur le dos, bras étendus au-dessus de la tête. Ensuite, contractez vos abdominaux et soulevez votre torse du sol en tendant les bras vers le plafond pour \"atteindre\" le plus haut possible. Revenez lentement à la position de départ en contrôlant le mouvement. Les reach ups renforcent les muscles abdominaux et améliorent la flexibilité de la colonne vertébrale. Ils peuvent être intégrés à une variété de routines d'entraînement pour travailler la force et la stabilité du tronc.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1287/view/",
@@ -21,7 +21,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 324
+      },
+      "cropReviewNote": "Inspected source panel separator pixels and complete representative poses."
     },
     {
       "id": "wger-2f2192c3-6e95-41b5-9438-2f1497f56767",
@@ -30,7 +38,7 @@
       "guideText": "Rear-foot-elevated Hip Flexor Stretch\nPart of: Limber 11\nSource: Joe DeFranco\nPrescription: 5-10 reps each side\nType: dynamic\nIncludes dynamic movement plus 3s hold.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1960/view/",
@@ -38,7 +46,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 324
+      },
+      "cropReviewNote": "Inspected source panel separator pixels and complete representative poses."
     },
     {
       "id": "wger-6705ec92-c6c6-4b2c-b919-bddb8177bf98",
@@ -47,7 +63,7 @@
       "guideText": "Same motion as the Bobbing Exhale Drill, but done in slightly deeper water (so you're not touching the bottom) and at a slower, more relaxed pace — think of it as a recovery/reset exercise rather than a hard drill. Use it between harder drills to reset your breathing rhythm and calm down if you're feeling rushed or out of sync.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2486/view/",
@@ -55,7 +71,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 324
+      },
+      "cropReviewNote": "Inspected source panel separator pixels and complete representative poses."
     },
     {
       "id": "wger-cf434716-f846-46d8-b267-8b33d311d8b5",
@@ -64,7 +88,7 @@
       "guideText": "Find a few specific edge sizes on a hangboard, get fixed underneath them with the board overhead, and pull with max effort, 1 arm at a time, for 3-5 seconds. When positioning for this get set up with a large elbow angle (120-150 degrees) and not in full extension.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1216/view/",
@@ -72,7 +96,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: recruitment pulls require one arm at a time; image uses both hands on hangboard.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 324
+      },
+      "cropReviewNote": "Inspected source panel separator pixels and complete representative poses."
     },
     {
       "id": "wger-dd0d5504-6204-4775-86f2-84b7c69fff5f",
@@ -81,7 +113,7 @@
       "guideText": "pegada neutra A remada unilateral, também conhecida como remada serrote, é um exercício que fortalece as costas e os bíceps, além de melhorar a postura.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1491/view/",
@@ -89,7 +121,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat.",
+      "bounds": {
+        "x": 0,
+        "y": 324,
+        "width": 384,
+        "height": 334
+      },
+      "cropReviewNote": "Inspected source panel separator pixels and complete representative poses."
     },
     {
       "id": "wger-2b6c09f7-dbf1-45ea-baf6-9a12e0b12396",
@@ -98,7 +138,7 @@
       "guideText": "Get into pushup position gripping some dumbbells. Perform one pushup, then drive your left elbo up, bringing the dumbell up to your body. Return the dumbell to starting position. Perform another pushup and then row with the other arm to complete one rep.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/490/view/",
@@ -106,7 +146,15 @@
         "license": "CC0",
         "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat.",
+      "bounds": {
+        "x": 384,
+        "y": 324,
+        "width": 384,
+        "height": 334
+      },
+      "cropReviewNote": "Inspected source panel separator pixels and complete representative poses."
     },
     {
       "id": "wger-fae44c34-2e85-4d22-8fb8-7b14faf14719",
@@ -115,7 +163,7 @@
       "guideText": "Técnica de respiración consciente para mejorar oxigenación, reducir el estrés y conectar con el momento presente.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1591/view/",
@@ -123,7 +171,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat.",
+      "bounds": {
+        "x": 768,
+        "y": 324,
+        "width": 384,
+        "height": 334
+      },
+      "cropReviewNote": "Inspected source panel separator pixels and complete representative poses."
     },
     {
       "id": "wger-af5a3520-25eb-4dd7-b802-a7382b8ce3ef",
@@ -132,7 +188,7 @@
       "guideText": "When creating a workout based on time, add this to add rest time in the program",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1114/view/",
@@ -140,7 +196,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat.",
+      "bounds": {
+        "x": 1152,
+        "y": 324,
+        "width": 384,
+        "height": 334
+      },
+      "cropReviewNote": "Inspected source panel separator pixels and complete representative poses."
     },
     {
       "id": "wger-7e74b1f1-636b-4821-b4be-3711328b89b4",
@@ -149,7 +213,7 @@
       "guideText": "Controlled treadmill walking performed backward. Begin around 30 minutes at a controlled speed and approximately 2 to 3 percent incline if tolerated. Progress duration gradually as knee, hip, and back tolerance improves.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2549/view/",
@@ -157,7 +221,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: backward treadmill walking depicted facing the console, not reversed facing position for a conventional belt.",
+      "bounds": {
+        "x": 0,
+        "y": 658,
+        "width": 384,
+        "height": 366
+      },
+      "cropReviewNote": "Inspected source panel separator pixels and complete representative poses."
     },
     {
       "id": "db-return-push-from-stance",
@@ -166,14 +238,22 @@
       "guideText": "You will need a partner for this drill.\n\nBegin in an athletic 2 or 3 point stance.\n\nAt the signal, move into a position to receive the pass from your partner.\n\nCatch the medicine ball with both hands and immediately throw it back to your partner.\n\nYou can modify this drill by running different routes.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Return_Push_from_Stance.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat.",
+      "bounds": {
+        "x": 384,
+        "y": 658,
+        "width": 384,
+        "height": 366
+      },
+      "cropReviewNote": "Inspected source panel separator pixels and complete representative poses."
     },
     {
       "id": "db-reverse-band-bench-press",
@@ -182,14 +262,22 @@
       "guideText": "Position a bench inside a power rack, with the bar set to the correct height. Begin by anchoring bands either to band pegs or to the top of the rack. Ensure that you will be position properly under the bands. Attach the other end to the barbell.\n\nLie on the bench, tuck your feet underneath you and arch your back. Using the bar to help support your weight, lift your shoulder off the bench and retract them, squeezing the shoulder blades together. Use your feet to drive your traps into the bench. Maintain this tight body position throughout the movement. However wide your grip, it should cover the ring on the bar.\n\nPull the bar out of the rack without protracting your shoulders. Focus on squeezing the bar and trying to pull it apart. Lower the bar to your lower chest or upper stomach. The bar, wrist, and elbow should stay in line at all times.\n\nPause when the barbell touches your torso, and then drive the bar up with as much force as possible. The elbows should be tucked in until lockout.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Reverse_Band_Bench_Press.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat.",
+      "bounds": {
+        "x": 768,
+        "y": 658,
+        "width": 384,
+        "height": 366
+      },
+      "cropReviewNote": "Inspected source panel separator pixels and complete representative poses."
     },
     {
       "id": "db-reverse-band-box-squat",
@@ -198,14 +286,22 @@
       "guideText": "Begin in a power rack with a box at the appropriate height behind you. Set up the bands either on band pegs or attached to the top of the rack, ensuring they will be directly above the bar during the squat. Attach the other end to the bar.\n\nBegin by stepping under the bar and placing it across the back of the shoulders. Squeeze your shoulder blades together and rotate your elbows forward, attempting to bend the bar across your shoulders. Remove the bar from the rack, creating a tight arch in your lower back, and step back into position. Place your feet wider for more emphasis on the back, glutes, adductors, and hamstrings, or closer together for more quad development. Keep your head facing forward.\n\nWith your back, shoulders, and core tight, push your knees and butt out and you begin your descent. Sit back with your hips until you are seated on the box. Ideally, your shins should be perpendicular to the ground. Pause when you reach the box, and relax the hip flexors. Never bounce off of a box.\n\nKeeping the weight on your heels and pushing your feet and knees out, drive upward off of the box as you lead the movement with your head. Continue upward, maintaining tightness head to toe. Use care to return the barbell to the rack.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Reverse_Band_Box_Squat.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat.",
+      "bounds": {
+        "x": 1152,
+        "y": 658,
+        "width": 384,
+        "height": 366
+      },
+      "cropReviewNote": "Inspected source panel separator pixels and complete representative poses."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-7c70c5c0-961b-4134-8a41-5b9860bd0977.png",

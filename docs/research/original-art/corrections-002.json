@@ -13,8 +13,16 @@
       "guideText": "Lie against an incline bench, with your arms holding a barbell and hanging down in a horizontal line. This will be your starting position.\n\nWhile keeping the upper arms stationary, curl the weight up as high as you can while squeezing the biceps. Breathe out as you perform this portion of the movement. Tip: Only the forearms should move. Do not swing the arms.\n\nAfter a second contraction, slowly go back to the starting position as you inhale. Tip: Make sure that you go all of the way down.\n\nRepeat for the recommended amount of repetitions.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
-      "correctionRequirement": "PRONE chest against inclined bench, face toward ground; supinated bar curl with upper arms dangling vertically."
+      "reviewStatus": "accepted",
+      "correctionRequirement": "PRONE chest against inclined bench, face toward ground; supinated bar curl with upper arms dangling vertically.",
+      "reviewNote": "Correction reviewed: prone supported supinated bar curl, hamstrings-to-calves deep squat, horizontal wide-elbow rear-delt row, bent-knee bear hover and neutral-spine near-horizontal pronated barbell/neutral dumbbell rows.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected entire correction sheet with three columns, two actual panel rows and complete poses."
     },
     {
       "id": "db-barbell-full-squat",
@@ -23,8 +31,16 @@
       "guideText": "This exercise is best performed inside a squat rack for safety purposes. To begin, first set the bar on a rack just above shoulder level. Once the correct height is chosen and the bar is loaded, step under the bar and place the back of your shoulders (slightly below the neck) across it.\n\nHold on to the bar using both arms at each side and lift it off the rack by first pushing with your legs and at the same time straightening your torso.\n\nStep away from the rack and position your legs using a shoulder-width medium stance with the toes slightly pointed out. Keep your head up at all times and maintain a straight back. This will be your starting position.\n\nBegin to slowly lower the bar by bending the knees and sitting back with your hips as you maintain a straight posture with the head up. Continue down until your hamstrings are on your calves. Inhale as you perform this portion of the movement.\n\nBegin to raise the bar as you exhale by pushing the floor with the heel or middle of your foot as you straighten the legs and extend the hips to go back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
-      "correctionRequirement": "Deep back squat with hamstrings contacting calves, hips clearly BELOW knee height, heels grounded."
+      "reviewStatus": "accepted",
+      "correctionRequirement": "Deep back squat with hamstrings contacting calves, hips clearly BELOW knee height, heels grounded.",
+      "reviewNote": "Correction reviewed: prone supported supinated bar curl, hamstrings-to-calves deep squat, horizontal wide-elbow rear-delt row, bent-knee bear hover and neutral-spine near-horizontal pronated barbell/neutral dumbbell rows.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected entire correction sheet with three columns, two actual panel rows and complete poses."
     },
     {
       "id": "db-barbell-rear-delt-row",
@@ -33,8 +49,16 @@
       "guideText": "Stand up straight while holding a barbell using a wide (higher than shoulder width) and overhand (palms facing your body) grip.\n\nBend knees slightly and bend over as you keep the natural arch of your back. Let the arms hang in front of you as they hold the bar. Once your torso is parallel to the floor, flare the elbows out and away from your body. Tip: Your torso and your arms should resemble the letter \"T\". Now you are ready to begin the exercise.\n\nWhile keeping the upper arms perpendicular to the torso, pull the barbell up towards your upper chest as you squeeze the rear delts and you breathe out. Tip: When performed correctly, this exercise should resemble a bench press in reverse. Also, refrain from using your biceps to do the work. Focus on targeting the rear delts; the arms should only act as hooks.\n\nSlowly go back to the initial position as you breathe in.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
-      "correctionRequirement": "Torso horizontal 0–10 degrees to floor, upper arms spread sideways in T at shoulder line; bar held pronated under chest."
+      "reviewStatus": "accepted",
+      "correctionRequirement": "Torso horizontal 0–10 degrees to floor, upper arms spread sideways in T at shoulder line; bar held pronated under chest.",
+      "reviewNote": "Correction reviewed: prone supported supinated bar curl, hamstrings-to-calves deep squat, horizontal wide-elbow rear-delt row, bent-knee bear hover and neutral-spine near-horizontal pronated barbell/neutral dumbbell rows.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected entire correction sheet with three columns, two actual panel rows and complete poses."
     },
     {
       "id": "wger-b4dc15da-4d4d-4a93-a30a-74aaf99192ff",
@@ -43,8 +67,16 @@
       "guideText": "Place a dumbbell at around hip level and assume a bear crawl position. Push the knees off the floor and hold. With the opposite hand reach for the dumbbell and pull it to the other side. Place your hand back on the floor and repeat with your other hand.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
-      "correctionRequirement": "Bear hover: both knees BENT 90 degrees underneath pelvis just above mat; one hand supported and other pulls dumbbell underneath torso."
+      "reviewStatus": "accepted",
+      "correctionRequirement": "Bear hover: both knees BENT 90 degrees underneath pelvis just above mat; one hand supported and other pulls dumbbell underneath torso.",
+      "reviewNote": "Correction reviewed: prone supported supinated bar curl, hamstrings-to-calves deep squat, horizontal wide-elbow rear-delt row, bent-knee bear hover and neutral-spine near-horizontal pronated barbell/neutral dumbbell rows.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected entire correction sheet with three columns, two actual panel rows and complete poses."
     },
     {
       "id": "db-bent-over-barbell-row",
@@ -53,8 +85,16 @@
       "guideText": "Holding a barbell with a pronated grip (palms facing down), bend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Tip: Make sure that you keep the head up. The barbell should hang directly in front of you as your arms hang perpendicular to the floor and your torso. This is your starting position.\n\nNow, while keeping the torso stationary, breathe out and lift the barbell to you. Keep the elbows close to the body and only use the forearms to hold the weight. At the top contracted position, squeeze the back muscles and hold for a brief pause.\n\nThen inhale and slowly lower the barbell back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
-      "correctionRequirement": "Torso almost perfectly horizontal 0–10 degrees; flat spine, knees lightly bent, pronated bar pulled toward abdomen."
+      "reviewStatus": "accepted",
+      "correctionRequirement": "Torso almost perfectly horizontal 0–10 degrees; flat spine, knees lightly bent, pronated bar pulled toward abdomen.",
+      "reviewNote": "Correction reviewed: prone supported supinated bar curl, hamstrings-to-calves deep squat, horizontal wide-elbow rear-delt row, bent-knee bear hover and neutral-spine near-horizontal pronated barbell/neutral dumbbell rows.",
+      "bounds": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected entire correction sheet with three columns, two actual panel rows and complete poses."
     },
     {
       "id": "db-bent-over-two-dumbbell-row",
@@ -63,8 +103,16 @@
       "guideText": "With a dumbbell in each hand (palms facing your torso), bend your knees slightly and bring your torso forward by bending at the waist; as you bend make sure to keep your back straight until it is almost parallel to the floor. Tip: Make sure that you keep the head up. The weights should hang directly in front of you as your arms hang perpendicular to the floor and your torso. This is your starting position.\n\nWhile keeping the torso stationary, lift the dumbbells to your side (as you breathe out), keeping the elbows close to the body (do not exert any force with the forearm other than holding the weights). On the top contracted position, squeeze the back muscles and hold for a second.\n\nSlowly lower the weight again to the starting position as you inhale.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
-      "correctionRequirement": "Torso almost perfectly horizontal 0–10 degrees; flat spine, two dumbbells at pulled-back bent-elbow position."
+      "reviewStatus": "accepted",
+      "correctionRequirement": "Torso almost perfectly horizontal 0–10 degrees; flat spine, two dumbbells at pulled-back bent-elbow position.",
+      "reviewNote": "Correction reviewed: prone supported supinated bar curl, hamstrings-to-calves deep squat, horizontal wide-elbow rear-delt row, bent-knee bear hover and neutral-spine near-horizontal pronated barbell/neutral dumbbell rows.",
+      "bounds": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected entire correction sheet with three columns, two actual panel rows and complete poses."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-b3090fb8-6323-495d-9f0a-c23546ebeab3.png",
