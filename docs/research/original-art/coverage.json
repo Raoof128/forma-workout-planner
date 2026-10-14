@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 901,
+  "accepted": 958,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -8548,42 +8548,54 @@
       "name": "Rocket Jump",
       "equipment": "Bodyweight",
       "guideSha256": "21360c8bbddd0cac8348aa4fcd703199841e012ad6da051e5721204904768b86",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-071-0-0",
+      "reviewNote": "Reviewed fully extended rocket jump, rear-rack heel-raised calf rocking phase, staggered cable rope triceps pushdown, wide front-chest Rocky pull-up phase, standing spinal roll-down, V-sit phase after rollover, raised-platform barbell RDL, foot-pinched rope climb and wide-grip stick overhead shoulder-mobility phase."
     },
     {
       "exerciseId": "db-rocking-standing-calf-raise",
       "name": "Rocking Standing Calf Raise",
       "equipment": "Barbell",
       "guideSha256": "51c626e8309ef1b9fc742ce5f33e88744cf5649640a9f4ce36543791e5f9da66",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-071-1-0",
+      "reviewNote": "Reviewed fully extended rocket jump, rear-rack heel-raised calf rocking phase, staggered cable rope triceps pushdown, wide front-chest Rocky pull-up phase, standing spinal roll-down, V-sit phase after rollover, raised-platform barbell RDL, foot-pinched rope climb and wide-grip stick overhead shoulder-mobility phase."
     },
     {
       "exerciseId": "wger-0dfe655e-ee2e-4c49-a279-c672d5591613",
       "name": "Rocking Triceps Pushdown",
       "equipment": "EZ bar",
       "guideSha256": "55a759b07bf0ce4e7fb606f08ce5d399853e6882cb7831e4bfd31b2027e6208e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-071-2-0",
+      "reviewNote": "Reviewed fully extended rocket jump, rear-rack heel-raised calf rocking phase, staggered cable rope triceps pushdown, wide front-chest Rocky pull-up phase, standing spinal roll-down, V-sit phase after rollover, raised-platform barbell RDL, foot-pinched rope climb and wide-grip stick overhead shoulder-mobility phase."
     },
     {
       "exerciseId": "db-rocky-pull-ups-pulldowns",
       "name": "Rocky Pull-Ups/Pulldowns",
       "equipment": "Specialty equipment",
       "guideSha256": "21165cd965fefc78b6a28906c3a42b957790f83b0d8e86591f4198d1f4c53ef7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-071-3-0",
+      "reviewNote": "Reviewed fully extended rocket jump, rear-rack heel-raised calf rocking phase, staggered cable rope triceps pushdown, wide front-chest Rocky pull-up phase, standing spinal roll-down, V-sit phase after rollover, raised-platform barbell RDL, foot-pinched rope climb and wide-grip stick overhead shoulder-mobility phase."
     },
     {
       "exerciseId": "wger-d5ee3b1f-2879-406f-97a9-51a8b0817cd4",
       "name": "Roll Down",
       "equipment": "Bodyweight",
       "guideSha256": "a9a7a2c531a7471dd8c8188c9a3e0a5fbaedce7b3bcd98d92555d6dbdc2d044f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-071-0-1",
+      "reviewNote": "Reviewed fully extended rocket jump, rear-rack heel-raised calf rocking phase, staggered cable rope triceps pushdown, wide front-chest Rocky pull-up phase, standing spinal roll-down, V-sit phase after rollover, raised-platform barbell RDL, foot-pinched rope climb and wide-grip stick overhead shoulder-mobility phase."
     },
     {
       "exerciseId": "wger-752c0380-a0f9-4332-8265-cf503bac4703",
       "name": "Roll-overs into V-sits",
       "equipment": "Bodyweight",
       "guideSha256": "29e645336185cd081de1b57a219e2d88abbea84212f8a37a3b720f871ad952c9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-071-1-1",
+      "reviewNote": "Reviewed fully extended rocket jump, rear-rack heel-raised calf rocking phase, staggered cable rope triceps pushdown, wide front-chest Rocky pull-up phase, standing spinal roll-down, V-sit phase after rollover, raised-platform barbell RDL, foot-pinched rope climb and wide-grip stick overhead shoulder-mobility phase."
     },
     {
       "exerciseId": "wger-af2f774c-296c-4d14-8e4a-fad77175ae37",
@@ -8604,14 +8616,18 @@
       "name": "Romanian Deadlift from Deficit",
       "equipment": "Barbell",
       "guideSha256": "2a1ccb178d1cd7fb79beebb8df9294c6b6472ca90e98b30d4b89d58c02c8c7e2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-071-0-2",
+      "reviewNote": "Reviewed fully extended rocket jump, rear-rack heel-raised calf rocking phase, staggered cable rope triceps pushdown, wide front-chest Rocky pull-up phase, standing spinal roll-down, V-sit phase after rollover, raised-platform barbell RDL, foot-pinched rope climb and wide-grip stick overhead shoulder-mobility phase."
     },
     {
       "exerciseId": "db-rope-climb",
       "name": "Rope Climb",
       "equipment": "Specialty equipment",
       "guideSha256": "c8e8d08ba04daea5d07bb22fc35257dc3ae6898111ed252b0e265365c6ce1b6d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-071-1-2",
+      "reviewNote": "Reviewed fully extended rocket jump, rear-rack heel-raised calf rocking phase, staggered cable rope triceps pushdown, wide front-chest Rocky pull-up phase, standing spinal roll-down, V-sit phase after rollover, raised-platform barbell RDL, foot-pinched rope climb and wide-grip stick overhead shoulder-mobility phase."
     },
     {
       "exerciseId": "wger-148f2ffc-05e2-486b-874f-2a401337a1c6",
@@ -8634,21 +8650,27 @@
       "name": "Round The World Shoulder Stretch",
       "equipment": "Specialty equipment",
       "guideSha256": "e1b5fa2e6c3147672b406e98c2b5abc346451530582fd1bfef1bfa39e075a90d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-071-3-2",
+      "reviewNote": "Reviewed fully extended rocket jump, rear-rack heel-raised calf rocking phase, staggered cable rope triceps pushdown, wide front-chest Rocky pull-up phase, standing spinal roll-down, V-sit phase after rollover, raised-platform barbell RDL, foot-pinched rope climb and wide-grip stick overhead shoulder-mobility phase."
     },
     {
       "exerciseId": "wger-4b7cb037-0789-4014-ab6f-a451716b7538",
       "name": "Row",
       "equipment": "Barbell + Dumbbell + Pull-up bar",
       "guideSha256": "db5814e56d461d6ff2a790a035ca441eb50fea8df2dd332b4d9e01c7832a1a9f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-072-0-0",
+      "reviewNote": "Reviewed generic barbell row example, upright narrow seated cable row, foot-anchored quadruped band kickback, uphill running interval example, palms-beside-front-foot runner stretch, low Russian push-up forward phase, two-hand sandbag platform loading, straight-arm scapular push-up and slightly bent-arm dumbbell shoulder raise."
     },
     {
       "exerciseId": "wger-00fcf603-b0d0-48d2-9b5e-c7f0d510d46c",
       "name": "Rowing seated, narrow grip",
       "equipment": "Bodyweight",
       "guideSha256": "2b21a2cb2de31fcf77e5211895661aa23371f621c671ccc3d825baa8ef39faaa",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-072-1-0",
+      "reviewNote": "Reviewed generic barbell row example, upright narrow seated cable row, foot-anchored quadruped band kickback, uphill running interval example, palms-beside-front-foot runner stretch, low Russian push-up forward phase, two-hand sandbag platform loading, straight-arm scapular push-up and slightly bent-arm dumbbell shoulder raise."
     },
     {
       "exerciseId": "db-rowing-stationary",
@@ -8671,21 +8693,27 @@
       "name": "rubber band glute kickback",
       "equipment": "Resistance band",
       "guideSha256": "56257bdb91caa967c2d5c0e331cc49f7cbb6bb2a2d2ca43e230f3de0facb18a0",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-072-3-0",
+      "reviewNote": "Reviewed generic barbell row example, upright narrow seated cable row, foot-anchored quadruped band kickback, uphill running interval example, palms-beside-front-foot runner stretch, low Russian push-up forward phase, two-hand sandbag platform loading, straight-arm scapular push-up and slightly bent-arm dumbbell shoulder raise."
     },
     {
       "exerciseId": "wger-6cf55ecc-86ee-492d-a7f6-977bf61758b3",
       "name": "Run - Interval Training",
       "equipment": "Bodyweight",
       "guideSha256": "9ce90a299d4fa526ffd717ba5d0cd3c1f67b28f3dd0fbc13d4ac54c48ac6509c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-072-0-1",
+      "reviewNote": "Reviewed generic barbell row example, upright narrow seated cable row, foot-anchored quadruped band kickback, uphill running interval example, palms-beside-front-foot runner stretch, low Russian push-up forward phase, two-hand sandbag platform loading, straight-arm scapular push-up and slightly bent-arm dumbbell shoulder raise."
     },
     {
       "exerciseId": "db-runners-stretch",
       "name": "Runner's Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "5f8789bce54be1f1d2ee735f6775171519c9acc3e764b42cd69e44f90ca57591",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-072-1-1",
+      "reviewNote": "Reviewed generic barbell row example, upright narrow seated cable row, foot-anchored quadruped band kickback, uphill running interval example, palms-beside-front-foot runner stretch, low Russian push-up forward phase, two-hand sandbag platform loading, straight-arm scapular push-up and slightly bent-arm dumbbell shoulder raise."
     },
     {
       "exerciseId": "db-running-treadmill",
@@ -8701,7 +8729,9 @@
       "name": "Russian Push Ups",
       "equipment": "Bodyweight",
       "guideSha256": "9640783ba3d44fee1e5f34fcae939d69be6065c8949218c73e2c1375e1dd9801",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-072-2-1",
+      "reviewNote": "Reviewed generic barbell row example, upright narrow seated cable row, foot-anchored quadruped band kickback, uphill running interval example, palms-beside-front-foot runner stretch, low Russian push-up forward phase, two-hand sandbag platform loading, straight-arm scapular push-up and slightly bent-arm dumbbell shoulder raise."
     },
     {
       "exerciseId": "db-russian-twist",
@@ -8715,7 +8745,9 @@
       "name": "Sandbag Load",
       "equipment": "Specialty equipment",
       "guideSha256": "568248d03b62f91743c52bda554b7bf634ebb24983611b220788b4bdedeb82a2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-072-0-2",
+      "reviewNote": "Reviewed generic barbell row example, upright narrow seated cable row, foot-anchored quadruped band kickback, uphill running interval example, palms-beside-front-foot runner stretch, low Russian push-up forward phase, two-hand sandbag platform loading, straight-arm scapular push-up and slightly bent-arm dumbbell shoulder raise."
     },
     {
       "exerciseId": "db-scapular-pull-up",
@@ -8729,70 +8761,90 @@
       "name": "Scapular Pushups",
       "equipment": "Bodyweight",
       "guideSha256": "a952304e48b301b4e5faa283c8534d25d8318d40ff0e213fd57755a26068274f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-072-2-2",
+      "reviewNote": "Reviewed generic barbell row example, upright narrow seated cable row, foot-anchored quadruped band kickback, uphill running interval example, palms-beside-front-foot runner stretch, low Russian push-up forward phase, two-hand sandbag platform loading, straight-arm scapular push-up and slightly bent-arm dumbbell shoulder raise."
     },
     {
       "exerciseId": "wger-9a644b0e-8691-4216-b2cc-f058f58ec96d",
       "name": "Schoulder Raise (Dumbbell)",
       "equipment": "Dumbbell",
       "guideSha256": "a006df8b55df03ec3ddb4fb94ad78bfe1186aace50ce5e3e741c528f499abd88",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-072-3-2",
+      "reviewNote": "Reviewed generic barbell row example, upright narrow seated cable row, foot-anchored quadruped band kickback, uphill running interval example, palms-beside-front-foot runner stretch, low Russian push-up forward phase, two-hand sandbag platform loading, straight-arm scapular push-up and slightly bent-arm dumbbell shoulder raise."
     },
     {
       "exerciseId": "db-scissor-kick",
       "name": "Scissor Kick",
       "equipment": "Bodyweight",
       "guideSha256": "33415a5536e817609172ac0c4daebacb4b8094ca5b3405cbbe1c3f203ab0a141",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-073-0-0",
+      "reviewNote": "Reviewed supine alternating scissor-kick phases, airborne split-leg scissors jump, bent-leg high-plank crossover scorpion, front-low-anchor seated band knee curl, soles-looped upright seated band row, supported seated military press lockout, rear-shoulder bar seated waist twist and forward-hinged seated rear-delt raise."
     },
     {
       "exerciseId": "wger-e28b0685-7a8f-4343-9c0b-63b38386d30b",
       "name": "Scissors",
       "equipment": "Bodyweight",
       "guideSha256": "0af60eebb2f1749bf0036a62c0844b300bc41289373e44480a3a7e9a8ff481b6",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-073-1-0",
+      "reviewNote": "Reviewed supine alternating scissor-kick phases, airborne split-leg scissors jump, bent-leg high-plank crossover scorpion, front-low-anchor seated band knee curl, soles-looped upright seated band row, supported seated military press lockout, rear-shoulder bar seated waist twist and forward-hinged seated rear-delt raise."
     },
     {
       "exerciseId": "db-scissors-jump",
       "name": "Scissors Jump",
       "equipment": "Bodyweight",
       "guideSha256": "44ce6fb8f7341d90fbdccc9d90eb292cde3e7b92b1009c0a4cae0129137ee291",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-073-2-0",
+      "reviewNote": "Reviewed supine alternating scissor-kick phases, airborne split-leg scissors jump, bent-leg high-plank crossover scorpion, front-low-anchor seated band knee curl, soles-looped upright seated band row, supported seated military press lockout, rear-shoulder bar seated waist twist and forward-hinged seated rear-delt raise."
     },
     {
       "exerciseId": "wger-89651d40-9abf-49b5-9ee5-7b0ecb25fd03",
       "name": "Scorpion Kick",
       "equipment": "Bodyweight",
       "guideSha256": "d13bc3ab29a6cf9420d403e99f5bd271e94f1f642c0622b5fa1fd5f8d23fdcf4",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-073-3-0",
+      "reviewNote": "Reviewed supine alternating scissor-kick phases, airborne split-leg scissors jump, bent-leg high-plank crossover scorpion, front-low-anchor seated band knee curl, soles-looped upright seated band row, supported seated military press lockout, rear-shoulder bar seated waist twist and forward-hinged seated rear-delt raise."
     },
     {
       "exerciseId": "db-seated-band-hamstring-curl",
       "name": "Seated Band Hamstring Curl",
       "equipment": "Specialty equipment",
       "guideSha256": "76484cd47d9b84ee713ac97ae011bcf9764ba10ae8c7b7129990f7f4d12c5762",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-073-0-1",
+      "reviewNote": "Reviewed supine alternating scissor-kick phases, airborne split-leg scissors jump, bent-leg high-plank crossover scorpion, front-low-anchor seated band knee curl, soles-looped upright seated band row, supported seated military press lockout, rear-shoulder bar seated waist twist and forward-hinged seated rear-delt raise."
     },
     {
       "exerciseId": "wger-6b6bd3ce-c40d-486c-9c47-21a3c639626d",
       "name": "Seated Band Row",
       "equipment": "Resistance band",
       "guideSha256": "435abe7b30a4b230b58b2ac9eb88b81915b9030c393dcbabec0f0c13a7d2063e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-073-1-1",
+      "reviewNote": "Reviewed supine alternating scissor-kick phases, airborne split-leg scissors jump, bent-leg high-plank crossover scorpion, front-low-anchor seated band knee curl, soles-looped upright seated band row, supported seated military press lockout, rear-shoulder bar seated waist twist and forward-hinged seated rear-delt raise."
     },
     {
       "exerciseId": "db-seated-barbell-military-press",
       "name": "Seated Barbell Military Press",
       "equipment": "Barbell",
       "guideSha256": "b2ee26402b1942a4e5611df07a76c75ed3294ca0b4f5b2d54670c3cfbd197c4a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-073-2-1",
+      "reviewNote": "Reviewed supine alternating scissor-kick phases, airborne split-leg scissors jump, bent-leg high-plank crossover scorpion, front-low-anchor seated band knee curl, soles-looped upright seated band row, supported seated military press lockout, rear-shoulder bar seated waist twist and forward-hinged seated rear-delt raise."
     },
     {
       "exerciseId": "db-seated-barbell-twist",
       "name": "Seated Barbell Twist",
       "equipment": "Barbell",
       "guideSha256": "b15c6266aebc2772984eb173e07abe102a68b2c957abe20da28024000438b791",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-073-3-1",
+      "reviewNote": "Reviewed supine alternating scissor-kick phases, airborne split-leg scissors jump, bent-leg high-plank crossover scorpion, front-low-anchor seated band knee curl, soles-looped upright seated band row, supported seated military press lockout, rear-shoulder bar seated waist twist and forward-hinged seated rear-delt raise."
     },
     {
       "exerciseId": "db-seated-bent-over-one-arm-dumbbell-triceps-extension",
@@ -8806,7 +8858,9 @@
       "name": "Seated Bent-Over Rear Delt Raise",
       "equipment": "Dumbbell",
       "guideSha256": "eb6ce645e1def4a7c6b57c00079349b3317bb8853e2ab07e16c173b6edbfb9e0",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-073-1-2",
+      "reviewNote": "Reviewed supine alternating scissor-kick phases, airborne split-leg scissors jump, bent-leg high-plank crossover scorpion, front-low-anchor seated band knee curl, soles-looped upright seated band row, supported seated military press lockout, rear-shoulder bar seated waist twist and forward-hinged seated rear-delt raise."
     },
     {
       "exerciseId": "db-seated-bent-over-two-arm-dumbbell-triceps-extension",
@@ -8872,105 +8926,135 @@
       "name": "Seated Calf Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "d057a59de259b1ab0a7c7e2421c8651d5cf4f287098bf021f57444aff6497716",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-074-0-0",
+      "reviewNote": "Reviewed single-leg bent-opposite-knee towel calf stretch, thigh-supported close supinated bar curl, hand-supported seated corkscrew knee rotation, thigh-loaded dumbbell heel raise, twisting seated curls and outward inner-biceps curl, thigh-supported pronated/supinated dumbbell wrist curls, bench hand-supported knee pull-in, single-leg seated hamstring reach, partner wrist-supported horizontal deltoid stretch and partner shoulder-supported seated figure-four glute stretch."
     },
     {
       "exerciseId": "db-seated-close-grip-concentration-barbell-curl",
       "name": "Seated Close-Grip Concentration Barbell Curl",
       "equipment": "Barbell",
       "guideSha256": "e43d8c1f9805de17feaf7d3cca46493676d9a2ded60f372bc1df44236e37549f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-074-1-0",
+      "reviewNote": "Reviewed single-leg bent-opposite-knee towel calf stretch, thigh-supported close supinated bar curl, hand-supported seated corkscrew knee rotation, thigh-loaded dumbbell heel raise, twisting seated curls and outward inner-biceps curl, thigh-supported pronated/supinated dumbbell wrist curls, bench hand-supported knee pull-in, single-leg seated hamstring reach, partner wrist-supported horizontal deltoid stretch and partner shoulder-supported seated figure-four glute stretch."
     },
     {
       "exerciseId": "wger-e9891a94-b1d4-47f4-a82b-c1aa82121abb",
       "name": "Seated Corkscrew",
       "equipment": "Bodyweight",
       "guideSha256": "a21ab8ee3523b819e25a9d952babdfe41bfebd609a7b369d85d25f94efa660b2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-074-2-0",
+      "reviewNote": "Reviewed single-leg bent-opposite-knee towel calf stretch, thigh-supported close supinated bar curl, hand-supported seated corkscrew knee rotation, thigh-loaded dumbbell heel raise, twisting seated curls and outward inner-biceps curl, thigh-supported pronated/supinated dumbbell wrist curls, bench hand-supported knee pull-in, single-leg seated hamstring reach, partner wrist-supported horizontal deltoid stretch and partner shoulder-supported seated figure-four glute stretch."
     },
     {
       "exerciseId": "wger-6995c30a-037f-4de3-ac4a-45384a1f38f9",
       "name": "Seated Dumbbell Calf Raise",
       "equipment": "Dumbbell",
       "guideSha256": "93e5f9502c1ef7292cdb76cd09e046bb3b98bf5cb786436abc51f77f9ad2b11c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-074-3-0",
+      "reviewNote": "Reviewed single-leg bent-opposite-knee towel calf stretch, thigh-supported close supinated bar curl, hand-supported seated corkscrew knee rotation, thigh-loaded dumbbell heel raise, twisting seated curls and outward inner-biceps curl, thigh-supported pronated/supinated dumbbell wrist curls, bench hand-supported knee pull-in, single-leg seated hamstring reach, partner wrist-supported horizontal deltoid stretch and partner shoulder-supported seated figure-four glute stretch."
     },
     {
       "exerciseId": "db-seated-dumbbell-curl",
       "name": "Seated Dumbbell Curl",
       "equipment": "Dumbbell",
       "guideSha256": "773d7550a528efe4787a3bcdf7abbae1c658a5e84396acec4e9d3cb7303687ce",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-074-0-1",
+      "reviewNote": "Reviewed single-leg bent-opposite-knee towel calf stretch, thigh-supported close supinated bar curl, hand-supported seated corkscrew knee rotation, thigh-loaded dumbbell heel raise, twisting seated curls and outward inner-biceps curl, thigh-supported pronated/supinated dumbbell wrist curls, bench hand-supported knee pull-in, single-leg seated hamstring reach, partner wrist-supported horizontal deltoid stretch and partner shoulder-supported seated figure-four glute stretch."
     },
     {
       "exerciseId": "db-seated-dumbbell-inner-biceps-curl",
       "name": "Seated Dumbbell Inner Biceps Curl",
       "equipment": "Dumbbell",
       "guideSha256": "c4c8bee66c99dc7b1c6d3e9fbdc87eeaa30200989bac1b2dcb8470b2049cdfa3",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-074-1-1",
+      "reviewNote": "Reviewed single-leg bent-opposite-knee towel calf stretch, thigh-supported close supinated bar curl, hand-supported seated corkscrew knee rotation, thigh-loaded dumbbell heel raise, twisting seated curls and outward inner-biceps curl, thigh-supported pronated/supinated dumbbell wrist curls, bench hand-supported knee pull-in, single-leg seated hamstring reach, partner wrist-supported horizontal deltoid stretch and partner shoulder-supported seated figure-four glute stretch."
     },
     {
       "exerciseId": "db-seated-dumbbell-palms-down-wrist-curl",
       "name": "Seated Dumbbell Palms-Down Wrist Curl",
       "equipment": "Dumbbell",
       "guideSha256": "dc3d491135be92fe9c5dc2ba3e134550a215f2aaf240f5bb1aa3ff3b2ca44eab",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-074-2-1",
+      "reviewNote": "Reviewed single-leg bent-opposite-knee towel calf stretch, thigh-supported close supinated bar curl, hand-supported seated corkscrew knee rotation, thigh-loaded dumbbell heel raise, twisting seated curls and outward inner-biceps curl, thigh-supported pronated/supinated dumbbell wrist curls, bench hand-supported knee pull-in, single-leg seated hamstring reach, partner wrist-supported horizontal deltoid stretch and partner shoulder-supported seated figure-four glute stretch."
     },
     {
       "exerciseId": "db-seated-dumbbell-palms-up-wrist-curl",
       "name": "Seated Dumbbell Palms-Up Wrist Curl",
       "equipment": "Dumbbell",
       "guideSha256": "860a8db9e29a4309ed0d01628570073b9da6e3b9a811966af2ff753663786a11",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-074-3-1",
+      "reviewNote": "Reviewed single-leg bent-opposite-knee towel calf stretch, thigh-supported close supinated bar curl, hand-supported seated corkscrew knee rotation, thigh-loaded dumbbell heel raise, twisting seated curls and outward inner-biceps curl, thigh-supported pronated/supinated dumbbell wrist curls, bench hand-supported knee pull-in, single-leg seated hamstring reach, partner wrist-supported horizontal deltoid stretch and partner shoulder-supported seated figure-four glute stretch."
     },
     {
       "exerciseId": "db-seated-flat-bench-leg-pull-in",
       "name": "Seated Flat Bench Leg Pull-In",
       "equipment": "Bodyweight",
       "guideSha256": "ff3674bcf77c1e8ad3b4b8bc0f7f97a8ee6b8b5f7c9d2d2870ebde4b21872c69",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-074-0-2",
+      "reviewNote": "Reviewed single-leg bent-opposite-knee towel calf stretch, thigh-supported close supinated bar curl, hand-supported seated corkscrew knee rotation, thigh-loaded dumbbell heel raise, twisting seated curls and outward inner-biceps curl, thigh-supported pronated/supinated dumbbell wrist curls, bench hand-supported knee pull-in, single-leg seated hamstring reach, partner wrist-supported horizontal deltoid stretch and partner shoulder-supported seated figure-four glute stretch."
     },
     {
       "exerciseId": "db-seated-floor-hamstring-stretch",
       "name": "Seated Floor Hamstring Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "6a1414182697f0f4804843fe5675606d25ad38b707468372996941528ba2c2e2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-074-1-2",
+      "reviewNote": "Reviewed single-leg bent-opposite-knee towel calf stretch, thigh-supported close supinated bar curl, hand-supported seated corkscrew knee rotation, thigh-loaded dumbbell heel raise, twisting seated curls and outward inner-biceps curl, thigh-supported pronated/supinated dumbbell wrist curls, bench hand-supported knee pull-in, single-leg seated hamstring reach, partner wrist-supported horizontal deltoid stretch and partner shoulder-supported seated figure-four glute stretch."
     },
     {
       "exerciseId": "db-seated-front-deltoid",
       "name": "Seated Front Deltoid",
       "equipment": "Bodyweight",
       "guideSha256": "30e06d31db9ead2405a1ac2d495c6cb5895df6cda257dd5a9045427ce46297a0",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-074-2-2",
+      "reviewNote": "Reviewed single-leg bent-opposite-knee towel calf stretch, thigh-supported close supinated bar curl, hand-supported seated corkscrew knee rotation, thigh-loaded dumbbell heel raise, twisting seated curls and outward inner-biceps curl, thigh-supported pronated/supinated dumbbell wrist curls, bench hand-supported knee pull-in, single-leg seated hamstring reach, partner wrist-supported horizontal deltoid stretch and partner shoulder-supported seated figure-four glute stretch."
     },
     {
       "exerciseId": "db-seated-glute",
       "name": "Seated Glute",
       "equipment": "Bodyweight",
       "guideSha256": "8a88ec008e325dd2fb77ebeb238f4ba67154082b1851dd09f29bf2df52be3fb5",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-074-3-2",
+      "reviewNote": "Reviewed single-leg bent-opposite-knee towel calf stretch, thigh-supported close supinated bar curl, hand-supported seated corkscrew knee rotation, thigh-loaded dumbbell heel raise, twisting seated curls and outward inner-biceps curl, thigh-supported pronated/supinated dumbbell wrist curls, bench hand-supported knee pull-in, single-leg seated hamstring reach, partner wrist-supported horizontal deltoid stretch and partner shoulder-supported seated figure-four glute stretch."
     },
     {
       "exerciseId": "db-seated-good-mornings",
       "name": "Seated Good Mornings",
       "equipment": "Barbell",
       "guideSha256": "26cdc9a26ba7422708fd4e661b4ab4f5840e2858902dd596fa1d412173a54b11",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-075-0-0",
+      "reviewNote": "Reviewed seated box rear-rack hip hinge with pins, partner shoulder-supported straight-leg seated hamstring stretch, both-legs-extended foot-band hamstring/calf stretch, hands-above-kneecap seated knee overpressure, floor hand-supported knee tuck, pronated one-arm thigh wrist curl, pronated seated bar wrist curl and hands-on-neck wide-straddle pancake hinge."
     },
     {
       "exerciseId": "db-seated-hamstring",
       "name": "Seated Hamstring",
       "equipment": "Bodyweight",
       "guideSha256": "710b94146fae1771b555244973dda059a5066b5d0186540441bb617a2462ced5",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-075-1-0",
+      "reviewNote": "Reviewed seated box rear-rack hip hinge with pins, partner shoulder-supported straight-leg seated hamstring stretch, both-legs-extended foot-band hamstring/calf stretch, hands-above-kneecap seated knee overpressure, floor hand-supported knee tuck, pronated one-arm thigh wrist curl, pronated seated bar wrist curl and hands-on-neck wide-straddle pancake hinge."
     },
     {
       "exerciseId": "db-seated-hamstring-and-calf-stretch",
       "name": "Seated Hamstring and Calf Stretch",
       "equipment": "Specialty equipment",
       "guideSha256": "d3c3d6a6db636833606a72ad43239fb10e4a1fea106bd18391101eecc0138410",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-075-2-0",
+      "reviewNote": "Reviewed seated box rear-rack hip hinge with pins, partner shoulder-supported straight-leg seated hamstring stretch, both-legs-extended foot-band hamstring/calf stretch, hands-above-kneecap seated knee overpressure, floor hand-supported knee tuck, pronated one-arm thigh wrist curl, pronated seated bar wrist curl and hands-on-neck wide-straddle pancake hinge."
     },
     {
       "exerciseId": "db-seated-head-harness-neck-resistance",
@@ -8984,14 +9068,18 @@
       "name": "Seated Knee Extension with Overpressure",
       "equipment": "Bodyweight",
       "guideSha256": "f67c0fa50af9f28693d559068b23b93f548cf2cba120dfeb0c07d39a28fbe9ee",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-075-0-1",
+      "reviewNote": "Reviewed seated box rear-rack hip hinge with pins, partner shoulder-supported straight-leg seated hamstring stretch, both-legs-extended foot-band hamstring/calf stretch, hands-above-kneecap seated knee overpressure, floor hand-supported knee tuck, pronated one-arm thigh wrist curl, pronated seated bar wrist curl and hands-on-neck wide-straddle pancake hinge."
     },
     {
       "exerciseId": "wger-371cfda2-1de6-419a-b40c-fc98fd3f7e41",
       "name": "Seated Knee Tuck",
       "equipment": "Bodyweight",
       "guideSha256": "a43466b7893640907437b8399be9d41c2d1814768614f61dafe665911bcc1d0a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-075-1-1",
+      "reviewNote": "Reviewed seated box rear-rack hip hinge with pins, partner shoulder-supported straight-leg seated hamstring stretch, both-legs-extended foot-band hamstring/calf stretch, hands-above-kneecap seated knee overpressure, floor hand-supported knee tuck, pronated one-arm thigh wrist curl, pronated seated bar wrist curl and hands-on-neck wide-straddle pancake hinge."
     },
     {
       "exerciseId": "db-seated-leg-curl",
@@ -9025,7 +9113,9 @@
       "name": "Seated One-Arm Dumbbell Palms-Down Wrist Curl",
       "equipment": "Dumbbell",
       "guideSha256": "93e1eb1bf6c351749be68e4a4d8c4a26ae11ae2393916269fc8257e814b69b04",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-075-2-1",
+      "reviewNote": "Reviewed seated box rear-rack hip hinge with pins, partner shoulder-supported straight-leg seated hamstring stretch, both-legs-extended foot-band hamstring/calf stretch, hands-above-kneecap seated knee overpressure, floor hand-supported knee tuck, pronated one-arm thigh wrist curl, pronated seated bar wrist curl and hands-on-neck wide-straddle pancake hinge."
     },
     {
       "exerciseId": "db-seated-one-arm-dumbbell-palms-up-wrist-curl",
@@ -9053,21 +9143,27 @@
       "name": "Seated Palms-Down Barbell Wrist Curl",
       "equipment": "Barbell",
       "guideSha256": "1531d2ab130a5e6a5aad2fa886bcbbebfea396d9abfa978f0a17494cc749e5ee",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-075-2-2",
+      "reviewNote": "Reviewed seated box rear-rack hip hinge with pins, partner shoulder-supported straight-leg seated hamstring stretch, both-legs-extended foot-band hamstring/calf stretch, hands-above-kneecap seated knee overpressure, floor hand-supported knee tuck, pronated one-arm thigh wrist curl, pronated seated bar wrist curl and hands-on-neck wide-straddle pancake hinge."
     },
     {
       "exerciseId": "wger-96583e33-e643-486d-95e9-67d0d5935b05",
       "name": "Seated Pancake Good Morning",
       "equipment": "Bodyweight",
       "guideSha256": "e030121590d162b7593a5ac001df91b6a4c9db15f2d75b1a4abcf0647d143283",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-075-3-2",
+      "reviewNote": "Reviewed seated box rear-rack hip hinge with pins, partner shoulder-supported straight-leg seated hamstring stretch, both-legs-extended foot-band hamstring/calf stretch, hands-above-kneecap seated knee overpressure, floor hand-supported knee tuck, pronated one-arm thigh wrist curl, pronated seated bar wrist curl and hands-on-neck wide-straddle pancake hinge."
     },
     {
       "exerciseId": "wger-ad5653e4-098e-4a84-af5b-a9349b108555",
       "name": "Seated Piriformis Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "3c2d055aeee60382625c7a4fe7709d2a6f63fb0f846382b77842a6e076d3f258",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-076-0-0",
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press."
     },
     {
       "exerciseId": "wger-a00b852c-0d2b-4b4a-bbc2-ef538f211b6c",
@@ -9081,7 +9177,9 @@
       "name": "Seated Side Lateral Raise",
       "equipment": "Dumbbell",
       "guideSha256": "80533f9a433f89a51b0dd7e124354d590f505a220afc874415d10ba48ca6b314",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-076-2-0",
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press."
     },
     {
       "exerciseId": "db-seated-triceps-press",
@@ -9095,28 +9193,36 @@
       "name": "Seated W Curl",
       "equipment": "Bench + Dumbbell",
       "guideSha256": "900785b8b6589f95d72d4e2bffcd3ee0d8c4a1f9c759aa8ab348e73b277639ee",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-076-0-1",
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press."
     },
     {
       "exerciseId": "db-see-saw-press-alternating-side-press",
       "name": "See-Saw Press (Alternating Side Press)",
       "equipment": "Dumbbell",
       "guideSha256": "cae0605c06802e68e1dc537e6a8bb25a75d196e3f01a6b71b53644799dcc7353",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-076-1-1",
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press."
     },
     {
       "exerciseId": "wger-7936d8ad-6a39-4459-aa60-3e1e325f5e2b",
       "name": "Serratus Wall Slide Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "7cb2a2047396fd8aee121c669497b06046890c5deb279600f1b64c8ed3f23dfd",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-076-2-1",
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press."
     },
     {
       "exerciseId": "wger-ceb58be5-2927-48c5-bb2d-4cc42b0a60e2",
       "name": "Shinbox IR Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "cc156dc7615716c779ee69d76076ea2abbfe84219c7b4174a446e9aa19182929",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-076-3-1",
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press."
     },
     {
       "exerciseId": "db-shotgun-row",
@@ -9132,28 +9238,36 @@
       "name": "Shoulder Circles",
       "equipment": "Bodyweight",
       "guideSha256": "97770c4ca20cf5fb0ff65f0b1290ac1789035dd717dfd13abb2a94f2fb0e978f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-076-0-2",
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press."
     },
     {
       "exerciseId": "wger-664ddd40-a595-420d-801f-148e4bf0594c",
       "name": "Shoulder dislocates",
       "equipment": "Bodyweight",
       "guideSha256": "d548da8debe75b1cf255a28e2c02ef8c9c33064dc9dae2c4d0cba384cb07bc4a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-076-1-2",
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press."
     },
     {
       "exerciseId": "wger-e237611c-2730-4d0c-891b-bb29d3d15297",
       "name": "Shoulder Dumbbell Pendular Exercise",
       "equipment": "Dumbbell",
       "guideSha256": "cadad4b7a719e479e2f6eb427d5f166c8458fec1da95d89c49a57e0bf38e0428",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-076-2-2",
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press."
     },
     {
       "exerciseId": "db-shoulder-press-with-bands",
       "name": "Shoulder Press - With Bands",
       "equipment": "Resistance band",
       "guideSha256": "ecfeb1ed91d796848441cf726bb6019f770569acd572ef14f58d415c9f7462e9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-076-3-2",
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press."
     },
     {
       "exerciseId": "wger-bff4776a-5972-4799-9534-c9d25e4885ea",

@@ -13,14 +13,22 @@
       "guideText": "To begin, lie down with your back pressed against the floor or on an exercise mat (optional). Your arms should be fully extended to the sides with your palms facing down. Note: The arms should be stationary the entire time.\n\nWith a slight bend at the knees, lift your legs up so that your heels are about 6 inches off the ground. This is the starting position.\n\nNow lift your left leg up to about a 45 degree angle while your right leg is lowered until the heel is about 2-3 inches from the ground.\n\nSwitch movements by raising your right leg up and lowering your left leg. Remember to breathe while performing this exercise.\n\nRepeat for the recommended amount of repetitions.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Scissor_Kick.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supine alternating scissor-kick phases, airborne split-leg scissors jump, bent-leg high-plank crossover scorpion, front-low-anchor seated band knee curl, soles-looped upright seated band row, supported seated military press lockout, rear-shoulder bar seated waist twist and forward-hinged seated rear-delt raise.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 321
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "wger-e28b0685-7a8f-4343-9c0b-63b38386d30b",
@@ -29,7 +37,7 @@
       "guideText": "Scissors is an abdominal exercise that strengthens the transverse abdominals, helping flatten your belly and strengthen your entire core. Scissors is not only a core strength move, but it is also a great stretch for your hamstrings and your lower back. Everyone is looking for new ways to work the core, to flatten the belly and to improve flexibility. If you learn how to do Scissors you will get everything rolled together in one move.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/545/view/",
@@ -37,7 +45,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine alternating scissor-kick phases, airborne split-leg scissors jump, bent-leg high-plank crossover scorpion, front-low-anchor seated band knee curl, soles-looped upright seated band row, supported seated military press lockout, rear-shoulder bar seated waist twist and forward-hinged seated rear-delt raise.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 321
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "db-scissors-jump",
@@ -46,14 +62,22 @@
       "guideText": "Assume a lunge stance position with one foot forward with the knee bent, and the rear knee nearly touching the ground.\n\nEnsure that the front knee is over the midline of the foot. Extending through both legs, jump as high as possible, swinging your arms to gain lift.\n\nAs you jump as high as you can, switch the position of your legs, moving your front leg to the back and the rear leg to the front.\n\nAs you land, absorb the impact through the legs by adopting the lunge position, and repeat.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Scissors_Jump.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supine alternating scissor-kick phases, airborne split-leg scissors jump, bent-leg high-plank crossover scorpion, front-low-anchor seated band knee curl, soles-looped upright seated band row, supported seated military press lockout, rear-shoulder bar seated waist twist and forward-hinged seated rear-delt raise.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 321
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "wger-89651d40-9abf-49b5-9ee5-7b0ecb25fd03",
@@ -62,7 +86,7 @@
       "guideText": "**Get into the push-up position with your shoulders directly above your hands and your feet hip-width apart.** **Make sure that your body forms a straight line from your head to your heels.** **Now pull your right knee towards your chest. While keeping your knee bent, lift your right leg as high as possible with your lower right leg pointing straight up.** **Now rotate your hips so that your right foot swings over your left leg.** **Continue to rotate and move your right foot towards the floor until you are forced to roll onto the outside of your left standing foot. Make sure that you do not rotate your upper body.** **Now return to the starting position and repeat the exercise with your right leg.**",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1207/view/",
@@ -70,7 +94,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine alternating scissor-kick phases, airborne split-leg scissors jump, bent-leg high-plank crossover scorpion, front-low-anchor seated band knee curl, soles-looped upright seated band row, supported seated military press lockout, rear-shoulder bar seated waist twist and forward-hinged seated rear-delt raise.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 321
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "db-seated-band-hamstring-curl",
@@ -79,14 +111,22 @@
       "guideText": "Secure a band close to the ground and place a bench a couple feet away from it.\n\nSeat yourself on the bench and secure the band behind your ankles, beginning with your legs straight. This will be your starting position.\n\nFlex the knees, bringing your feet towards the bench. You may need to lean back slightly to keep your feet from striking the floor.\n\nPause at the completion of the movement, and then slowly return to the starting position.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Band_Hamstring_Curl.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supine alternating scissor-kick phases, airborne split-leg scissors jump, bent-leg high-plank crossover scorpion, front-low-anchor seated band knee curl, soles-looped upright seated band row, supported seated military press lockout, rear-shoulder bar seated waist twist and forward-hinged seated rear-delt raise.",
+      "bounds": {
+        "x": 0,
+        "y": 321,
+        "width": 384,
+        "height": 328
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "wger-6b6bd3ce-c40d-486c-9c47-21a3c639626d",
@@ -95,7 +135,7 @@
       "guideText": "Sit on the floor with your legs straight out in front of you and your back tall. Loop a resistance band around the soles of both feet and hold one end in each hand, arms extended and a slight bend in the knees. Pull the band toward your lower ribs by driving your elbows straight back and squeezing your shoulder blades together. Keep your chest up and your torso still rather than rocking backward to move the band. Extend the arms slowly to return. Because the torso stays upright and supported, this is a useful row when a bent-over position is uncomfortable, and it needs no anchor point.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2635/view/",
@@ -103,7 +143,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed supine alternating scissor-kick phases, airborne split-leg scissors jump, bent-leg high-plank crossover scorpion, front-low-anchor seated band knee curl, soles-looped upright seated band row, supported seated military press lockout, rear-shoulder bar seated waist twist and forward-hinged seated rear-delt raise.",
+      "bounds": {
+        "x": 384,
+        "y": 321,
+        "width": 384,
+        "height": 328
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "db-seated-barbell-military-press",
@@ -112,14 +160,22 @@
       "guideText": "Sit on a Military Press Bench with a bar behind your head and either have a spotter give you the bar (better on the rotator cuff this way) or pick it up yourself carefully with a pronated grip (palms facing forward). Tip: Your grip should be wider than shoulder width and it should create a 90-degree angle between the forearm and the upper arm as the barbell goes down.\n\nOnce you pick up the barbell with the correct grip length, lift the bar up over your head by locking your arms. Hold at about shoulder level and slightly in front of your head. This is your starting position.\n\nLower the bar down to the collarbone slowly as you inhale.\n\nLift the bar back up to the starting position as you exhale.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Barbell_Military_Press.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supine alternating scissor-kick phases, airborne split-leg scissors jump, bent-leg high-plank crossover scorpion, front-low-anchor seated band knee curl, soles-looped upright seated band row, supported seated military press lockout, rear-shoulder bar seated waist twist and forward-hinged seated rear-delt raise.",
+      "bounds": {
+        "x": 768,
+        "y": 321,
+        "width": 384,
+        "height": 328
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "db-seated-barbell-twist",
@@ -128,14 +184,22 @@
       "guideText": "Start out by sitting at the end of a flat bench with a barbell placed on top of your thighs. Your feet should be shoulder width apart from each other.\n\nGrip the bar with your palms facing down and make sure your hands are wider than shoulder width apart from each other. Begin to lift the barbell up over your head until your arms are fully extended.\n\nNow lower the barbell behind your head until it is resting along the base of your neck. This is the starting position.\n\nWhile keeping your feet and head stationary, move your waist from side to side so that your oblique muscles feel the contraction. Only move from side to side as far as your waist will allow you to go. Stretching or moving too far can cause an injury to occur. Tip: Use a slow and controlled motion.\n\nRemember to breathe out while twisting your body to the side and in when moving back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Barbell_Twist.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supine alternating scissor-kick phases, airborne split-leg scissors jump, bent-leg high-plank crossover scorpion, front-low-anchor seated band knee curl, soles-looped upright seated band row, supported seated military press lockout, rear-shoulder bar seated waist twist and forward-hinged seated rear-delt raise.",
+      "bounds": {
+        "x": 1152,
+        "y": 321,
+        "width": 384,
+        "height": 328
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "db-seated-bent-over-one-arm-dumbbell-triceps-extension",
@@ -144,14 +208,22 @@
       "guideText": "Sit down at the end of a flat bench with a dumbbell in one arm using a neutral grip (palms of the hand facing you).\n\nBend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Make sure that you keep the head up.\n\nThe upper arm with the dumbbell should be close to the torso and aligned with it (lifted up until it is parallel to the floor while the forearms are pointing towards the floor as the hands hold the weights). Tip: There should be a 90-degree angle between the forearms and the upper arm. This is your starting position.\n\nKeeping the upper arm stationary, use the triceps to lift the weight as you exhale until the forearm is parallel to the floor and the whole arm is extended. Like many other arm exercises, only the forearm moves.\n\nAfter a second contraction at the top, slowly lower the dumbbell back to the starting position as you inhale.\n\nRepeat the movement for the prescribed amount of repetitions.\n\nSwitch arms and repeat the exercise.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Bent-Over_One-Arm_Dumbbell_Triceps_Extension.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: single-arm seated triceps kickback torso is too upright for almost-horizontal guide.",
+      "bounds": {
+        "x": 0,
+        "y": 649,
+        "width": 384,
+        "height": 375
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "db-seated-bent-over-rear-delt-raise",
@@ -160,14 +232,22 @@
       "guideText": "Place a couple of dumbbells looking forward in front of a flat bench.\n\nSit on the end of the bench with your legs together and the dumbbells behind your calves.\n\nBend at the waist while keeping the back straight in order to pick up the dumbbells. The palms of your hands should be facing each other as you pick them. This will be your starting position.\n\nKeeping your torso forward and stationary, and the arms slightly bent at the elbows, lift the dumbbells straight to the side until both arms are parallel to the floor. Exhale as you lift the weights. (Note: avoid swinging the torso or bringing the arms back as opposed to the side.)\n\nAfter a one second contraction at the top, slowly lower the dumbbells back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Bent-Over_Rear_Delt_Raise.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed supine alternating scissor-kick phases, airborne split-leg scissors jump, bent-leg high-plank crossover scorpion, front-low-anchor seated band knee curl, soles-looped upright seated band row, supported seated military press lockout, rear-shoulder bar seated waist twist and forward-hinged seated rear-delt raise.",
+      "bounds": {
+        "x": 384,
+        "y": 649,
+        "width": 384,
+        "height": 375
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "db-seated-bent-over-two-arm-dumbbell-triceps-extension",
@@ -176,14 +256,22 @@
       "guideText": "Sit down at the end of a flat bench with a dumbbell in both arms using a neutral grip (palms of the hand facing you).\n\nBend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Make sure that you keep the head up.\n\nThe upper arms with the dumbbells should be close to the torso and aligned with it (lifted up until they are parallel to the floor while the forearms are pointing towards the floor as the hands hold the weights). Tip: There should be a 90-degree angle between the forearms and the upper arm. This is your starting position.\n\nKeeping the upper arms stationary, use the triceps to lift the weight as you exhale until the forearms are parallel to the floor and the whole arm is extended. Like many other arm exercises, only the forearm moves.\n\nAfter a second contraction at the top, slowly lower the dumbbells back to the starting position as you inhale.\n\nRepeat the movement for the prescribed amount of repetitions.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: bilateral seated triceps kickback torso is too upright for almost-horizontal guide.",
+      "bounds": {
+        "x": 768,
+        "y": 649,
+        "width": 384,
+        "height": 375
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "db-seated-biceps",
@@ -192,14 +280,22 @@
       "guideText": "Sit on the floor with your knees bent and your partner standing behind you. Extend your arms straight behind you with your palms facing each other. Your partner will hold your wrists for you. This will be the starting position.\n\nAttempt to flex your elbows, while your partner prevents any actual movement.\n\nAfter 10-20 seconds, relax your arms while your partner gently pulls your wrists up to stretch your biceps. Be sure to let your partner know when the stretch is appropriate to prevent injury or overstretching.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Biceps.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: partner seated biceps stretch grips upper arms instead of required wrists.",
+      "bounds": {
+        "x": 1152,
+        "y": 649,
+        "width": 384,
+        "height": 375
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-71c6f449-753b-4bea-881e-f4679c3e2721.png",

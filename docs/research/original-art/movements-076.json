@@ -13,7 +13,7 @@
       "guideText": "Seat on a bench. Feet flat on the ground. Place your left ankle over your right knee. Your right knee stays flat. Keep your back straight. Gently push your left knee down.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1680/view/",
@@ -21,7 +21,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 333
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "wger-a00b852c-0d2b-4b4a-bbc2-ef538f211b6c",
@@ -30,7 +38,7 @@
       "guideText": "1. Sit with your hands behind you, shoulder width apart. 2. Lock your elbows. 3. Scoot your feet and hips out forwards, lowering your shoulders down towards ground. 4. Go as far as possible to obtain a good stretch. See the video: https://www.youtube.com/watch?v=ihUAbG0e8zw",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1841/view/",
@@ -38,7 +46,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: shoulder-extension stretch depicted as high-hip reverse plank rather than hips scooted forward near floor.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 333
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "db-seated-side-lateral-raise",
@@ -47,14 +63,22 @@
       "guideText": "Pick a couple of dumbbells and sit at the end of a flat bench with your feet firmly on the floor. Hold the dumbbells with your palms facing in and your arms straight down at your sides at arms' length. This will be your starting position.\n\nWhile maintaining the torso stationary (no swinging), lift the dumbbells to your side with a slight bend on the elbow and the hands slightly tilted forward as if pouring water in a glass. Continue to go up until you arms are parallel to the floor. Exhale as you execute this movement and pause for a second at the top.\n\nLower the dumbbells back down slowly to the starting position as you inhale.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Side_Lateral_Raise.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 333
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "db-seated-triceps-press",
@@ -63,14 +87,22 @@
       "guideText": "Sit down on a bench with back support and grasp a dumbbell with both hands and hold it overhead at arm's length. Tip: a better way is to have somebody hand it to you especially if it is very heavy. The resistance should be resting in the palms of your hands with your thumbs around it. The palm of the hand should be facing inward. This will be your starting position.\n\nKeeping your upper arms close to your head (elbows in) and perpendicular to the floor, lower the resistance in a semi-circular motion behind your head until your forearms touch your biceps. Tip: The upper arms should remain stationary and only the forearms should move. Breathe in as you perform this step.\n\nGo back to the starting position by using the triceps to raise the dumbbell. Breathe out as you perform this step.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Triceps_Press.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: seated two-hand triceps press does not clearly show both palms supporting the same dumbbell.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 333
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "wger-ecc46519-94b8-4ecc-b5b8-973e753e98a6",
@@ -79,7 +111,7 @@
       "guideText": "* Sit on bench with 60° incline * Hold dumbbells beside body near the ground, palms facing outwards, arms fully extended * Move dumbbells up using only biceps and without momentum",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1448/view/",
@@ -87,7 +119,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press.",
+      "bounds": {
+        "x": 0,
+        "y": 333,
+        "width": 384,
+        "height": 333
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "db-see-saw-press-alternating-side-press",
@@ -96,14 +136,22 @@
       "guideText": "Grab a dumbbell with each hand and stand up erect.\n\nClean (lift) the dumbbells to the chest/shoulder level and then rotate your wrists so that your palms are facing towards you as if you were getting ready to perform an Arnold Press. This will be your starting position.\n\nNow start extending your left arm overhead as you rotate the wrist so that the palm of your hand faces forward as you go up. Your elbows should come out also as you lift the weight. Simultaneously, you will also be bending from your hip to your opposite side. Tip: If you perform the exercise correctly, is should look as if you are trying to reach for something overhead on the right hand side of your body, but with your left arm. Breathe out as you perform this movement.\n\nOnce you reach the top position breathe in. Then, with the weight fully extended overhead and you bent over to your right hand side, begin the movement to the left side.\n\nRepeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/See-Saw_Press_Alternating_Side_Press.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press.",
+      "bounds": {
+        "x": 384,
+        "y": 333,
+        "width": 384,
+        "height": 333
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "wger-7936d8ad-6a39-4459-aa60-3e1e325f5e2b",
@@ -112,7 +160,7 @@
       "guideText": "1. Stand facing a wall. Place your forearms vertically against the wall so your elbows and wrists are both touching it.\n2. Point your arms slightly outwards from \"straight up\".\n3. Protract your shoulders had, then slide your forearms up the wall until your elbows are about level with your chin.\n4. Slide your forearms back down the wall. Repeat as necessary.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2523/view/",
@@ -120,7 +168,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press.",
+      "bounds": {
+        "x": 768,
+        "y": 333,
+        "width": 384,
+        "height": 333
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "wger-ceb58be5-2927-48c5-bb2d-4cc42b0a60e2",
@@ -129,7 +185,7 @@
       "guideText": "* **Starting Position:** Sit on the floor with both hips and knees bent at 90-degree angles. * **Leg Placement:** Place one leg in front of you (external rotation) and the other leg out to the side/behind you (internal rotation). The shins and knees should remain flat on the ground. * **The Movement:** Keeping your hips square, hinge your torso forward or tilt it laterally (side-to-side) toward the front leg to deepen the stretch. * **Target Areas:** Stretches the glutes and piriformis (front leg) and the hip flexors and quads (back leg). Engages the core and obliques during lateral flexion. * **Goal:** Improves hip mobility, specifically internal and external rotation, and relieves lower back tension.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1884/view/",
@@ -137,7 +193,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press.",
+      "bounds": {
+        "x": 1152,
+        "y": 333,
+        "width": 384,
+        "height": 333
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "db-shoulder-circles",
@@ -146,14 +210,22 @@
       "guideText": "With shoulders relaxed and arms resting loosely at your sides (or in your lap if you're seated), gently roll your shoulders forward, up, back, and down.\n\nReverse direction. You can do this exercise alternating shoulders or both at the same time.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Shoulder_Circles.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press.",
+      "bounds": {
+        "x": 0,
+        "y": 666,
+        "width": 384,
+        "height": 358
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "wger-664ddd40-a595-420d-801f-148e4bf0594c",
@@ -162,7 +234,7 @@
       "guideText": "**Starting position:** Stand up with your back straight and a resistance band, towel, or broomstick handle in hand. With your hands straight in front of your body and the band between your hands, push your hands apart to both be at around 45 degrees from your body, thumbs facing down. If using a towel or broomstick handle instead, grab it with an overhand grip. **Steps:** 1. Keeping your arms outstretched, rotate at the shoulders to bring your arms overhead and then down toward your glutes. 2. Rotate at the shoulders in the opposite direction — overhead and then toward your groin. 3. Repeat.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1081/view/",
@@ -170,7 +242,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press.",
+      "bounds": {
+        "x": 384,
+        "y": 666,
+        "width": 384,
+        "height": 358
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "wger-e237611c-2730-4d0c-891b-bb29d3d15297",
@@ -179,7 +259,7 @@
       "guideText": "1. Lean forward to rest your hand on a chair or other object, holding a dumbbell in the other hand 2. Gently swing the dumbbell in a circular motion",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1714/view/",
@@ -187,7 +267,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press.",
+      "bounds": {
+        "x": 768,
+        "y": 666,
+        "width": 384,
+        "height": 358
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "db-shoulder-press-with-bands",
@@ -196,14 +284,22 @@
       "guideText": "To begin, stand on an exercise band so that tension begins at arm's length. Grasp the handles and lift them so that the hands are at shoulder height at each side.\n\nRotate the wrists so that the palms of your hands are facing forward. Your elbows should be bent, with the upper arms and forearms in line to the torso. This is your starting position.\n\nAs you exhale, lift the handles up until your arms are fully extended overhead.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Shoulder_Press_-_With_Bands.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed ankle-over-opposite-knee seated piriformis stretch, seated bilateral lateral dumbbell raise, outward palms incline W curl, alternating side-bent dumbbell seesaw press, forearms-wall serratus slide, 90/90 shinbox stretch, loose-arm shoulder circles, wide-band overhead dislocate phase, supported pendular dumbbell circles and under-foot band shoulder press.",
+      "bounds": {
+        "x": 1152,
+        "y": 666,
+        "width": 384,
+        "height": 358
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-c6b0116d-a3d5-4c22-93c3-f48de7b7d23a.png",

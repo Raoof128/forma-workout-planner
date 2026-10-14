@@ -1,0 +1,117 @@
+{
+  "name": "corrections-004",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-004.png",
+  "prompt": "Create ORIGINAL FORMA fitness manual illustrations, THREE columns TWO rows, six equal separate panels, landscape 1536x1024. White backgrounds, charcoal gray sportswear/equipment, small lime accents, fully clothed varied adults, subtle shadows, correct two-arm two-leg anatomy. No lettering branding watermarks. Complete athlete/apparatus inside own panel with generous margins. Exact representative phase.\nRow 1 column 1: Chain Handle Extension. MANDATORY: Supine bench triceps extension with two handles loaded by FREE HANGING CHAINS DOWNWARD, no overhead cables.. Guide: You will need two cable handle attachments and a flat bench, as well as chains, for this exercise. Clip the middle of the chains to the handles, and position yourself on the flat bench. Your elbows should be pointing straight up.\n\nBegin by extending through the elbow, keeping your upper arm still, with your wrists pronated.\n\nPause at the lockout, and reverse the motion to return to the starting position.\n\nRow 1 column 2: Clamshell. MANDATORY: Forearm/lower bent knee side plank, hips visibly LIFTED, upper knee open and feet together.. Guide: **Position** Side plank with the elbow and the forearm on the ground and the legs slightly bent. **Execution** Lift your upper knee while keeping your feet close together, like a “shell opening,” then slowly return to the starting position. Keep your core stable and your hips aligned.\n\nRow 1 column 3: Clap Push-UP. MANDATORY: Toes supported floor, BOTH hands airborne clapping in front of chest, straight body.. Guide: The clap push-up is an explosive upper body movement that builds power and fast-twitch muscle strength. It adds a plyometric challenge to the traditional push-up by requiring the hands to leave the ground mid-rep. 1. Start in a strong push-up position with your hands slightly wider than shoulder-width and core engaged 2. Lower your body explosively and push off the ground with enough force to lift your hands. 3. Quickly clap your hands together at chest level before returning them to the floor. 4. Land with soft elbows to absorb the impact and immediately move into the next rep\n\nRow 2 column 1: Clean from Blocks. MANDATORY: Starting pull: plates ON two sturdy LOW boxes, overhand grip outside legs, arms straight, neutral spine, never a catch still resting on blocks.. Guide: With a barbell on boxes or stands of the desired height, take an overhand or hook grip just outside the legs. Lower your hips with the weight focused on the heels, back straight, head facing forward, chest up, with your shoulders just in front of the bar. This will be your starting position.\n\nBegin the first pull by driving through the heels, extending your knees. Your back angle should stay the same, and your arms should remain straight with the elbows pointed out.\n\nAs full extension is achieved, transition into the receiving position by aggressively shrugging and flexing the arms with the elbows up and out. Aggressively pull yourself down, rotating your elbows under the bar as you do so. Receive the bar in a front squat position, the depth of which is dependent upon the height of the bar at the end of the third pull. The bar should be racked onto the protracted shoulders, lightly touching the throat with the hands relaxed. Continue to descend to the bottom squat position, which will help in the recovery.\n\nImmediately recover by driving through the heels, keeping the torso upright and elbows up. Continue until you have risen to a standing position. Return the weight to the boxes for the next rep.\n\nRow 2 column 2: Clock Push-Up. MANDATORY: Airborne rotational pushup, BOTH hands off floor during quarter-turn, feet serve pivot, torso straight.. Guide: Move into a prone position on the floor, supporting your weight on your hands and toes.\n\nYour arms should be fully extended with the hands around shoulder width. Keep your body straight throughout the movement. This will be your starting position.\n\nDescend by flexing at the elbow, lowering your chest toward the ground.\n\nAt the bottom, reverse the motion by pushing yourself up through elbow extension as quickly as possible until you are air borne. Aim to \"jump\" 12-18 inches to one side.\n\nAs you accelerate up, move your outside foot away from your direction of travel. Leaving the ground, shift your body about 30 degrees for the next repetition.\n\nReturn to the starting position and repeat the exercise, working all the way around until you are back where you started.\n\nRow 2 column 3: Couch Stretch. MANDATORY: Rear KNEE on padded FLOOR beside couch, rear shin vertical and foot on couch seat, other front foot flat ground, upright torso.. Guide: 1. Stand facing away from a bench, couch or similar-height object.\n2. Extend one leg backwards, resting your foot \"laces-down\" on the edge of the bench.\n3. Lower yourself until your rear knee is on the floor and you are in a lunge position, with your torso hanging forwards slightly.\n4. Brace your core, tense your rear glute, and straighten up your torso to vertical, under control. Relax and repeat.\n\nRepeat for the other leg, too.",
+  "cells": [
+    {
+      "id": "db-chain-handle-extension",
+      "title": "Chain Handle Extension",
+      "equipment": "Specialty equipment",
+      "guideText": "You will need two cable handle attachments and a flat bench, as well as chains, for this exercise. Clip the middle of the chains to the handles, and position yourself on the flat bench. Your elbows should be pointing straight up.\n\nBegin by extending through the elbow, keeping your upper arm still, with your wrists pronated.\n\nPause at the lockout, and reverse the motion to return to the starting position.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Chain_Handle_Extension.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Supine bench triceps extension with two handles loaded by FREE HANGING CHAINS DOWNWARD, no overhead cables."
+    },
+    {
+      "id": "wger-ca3ca5d0-5231-4420-ad06-fa3d32693a1b",
+      "title": "Clamshell",
+      "equipment": "Bodyweight",
+      "guideText": "**Position** Side plank with the elbow and the forearm on the ground and the legs slightly bent. **Execution** Lift your upper knee while keeping your feet close together, like a “shell opening,” then slowly return to the starting position. Keep your core stable and your hips aligned.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1823/view/",
+        "author": "teus_ergaster",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Forearm/lower bent knee side plank, hips visibly LIFTED, upper knee open and feet together."
+    },
+    {
+      "id": "wger-fdeb0973-121f-494d-8b94-54f1d7ba003f",
+      "title": "Clap Push-UP",
+      "equipment": "Bodyweight",
+      "guideText": "The clap push-up is an explosive upper body movement that builds power and fast-twitch muscle strength. It adds a plyometric challenge to the traditional push-up by requiring the hands to leave the ground mid-rep. 1. Start in a strong push-up position with your hands slightly wider than shoulder-width and core engaged 2. Lower your body explosively and push off the ground with enough force to lift your hands. 3. Quickly clap your hands together at chest level before returning them to the floor. 4. Land with soft elbows to absorb the impact and immediately move into the next rep",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1554/view/",
+        "author": "Settebello",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Toes supported floor, BOTH hands airborne clapping in front of chest, straight body."
+    },
+    {
+      "id": "db-clean-from-blocks",
+      "title": "Clean from Blocks",
+      "equipment": "Barbell",
+      "guideText": "With a barbell on boxes or stands of the desired height, take an overhand or hook grip just outside the legs. Lower your hips with the weight focused on the heels, back straight, head facing forward, chest up, with your shoulders just in front of the bar. This will be your starting position.\n\nBegin the first pull by driving through the heels, extending your knees. Your back angle should stay the same, and your arms should remain straight with the elbows pointed out.\n\nAs full extension is achieved, transition into the receiving position by aggressively shrugging and flexing the arms with the elbows up and out. Aggressively pull yourself down, rotating your elbows under the bar as you do so. Receive the bar in a front squat position, the depth of which is dependent upon the height of the bar at the end of the third pull. The bar should be racked onto the protracted shoulders, lightly touching the throat with the hands relaxed. Continue to descend to the bottom squat position, which will help in the recovery.\n\nImmediately recover by driving through the heels, keeping the torso upright and elbows up. Continue until you have risen to a standing position. Return the weight to the boxes for the next rep.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Clean_from_Blocks.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Starting pull: plates ON two sturdy LOW boxes, overhand grip outside legs, arms straight, neutral spine, never a catch still resting on blocks."
+    },
+    {
+      "id": "db-clock-push-up",
+      "title": "Clock Push-Up",
+      "equipment": "Bodyweight",
+      "guideText": "Move into a prone position on the floor, supporting your weight on your hands and toes.\n\nYour arms should be fully extended with the hands around shoulder width. Keep your body straight throughout the movement. This will be your starting position.\n\nDescend by flexing at the elbow, lowering your chest toward the ground.\n\nAt the bottom, reverse the motion by pushing yourself up through elbow extension as quickly as possible until you are air borne. Aim to \"jump\" 12-18 inches to one side.\n\nAs you accelerate up, move your outside foot away from your direction of travel. Leaving the ground, shift your body about 30 degrees for the next repetition.\n\nReturn to the starting position and repeat the exercise, working all the way around until you are back where you started.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Clock_Push-Up.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Airborne rotational pushup, BOTH hands off floor during quarter-turn, feet serve pivot, torso straight."
+    },
+    {
+      "id": "wger-26168c76-5e2a-4321-8755-5ca42bd341ad",
+      "title": "Couch Stretch",
+      "equipment": "Bench",
+      "guideText": "1. Stand facing away from a bench, couch or similar-height object.\n2. Extend one leg backwards, resting your foot \"laces-down\" on the edge of the bench.\n3. Lower yourself until your rear knee is on the floor and you are in a lunge position, with your torso hanging forwards slightly.\n4. Brace your core, tense your rear glute, and straighten up your torso to vertical, under control. Relax and repeat.\n\nRepeat for the other leg, too.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2525/view/",
+        "author": "Croak6728",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Rear KNEE on padded FLOOR beside couch, rear shin vertical and foot on couch seat, other front foot flat ground, upright torso."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-9e1de864-a85b-4c3a-945a-cdc4c1e2f9e2.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-004.png"
+}

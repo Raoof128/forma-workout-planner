@@ -13,14 +13,22 @@
       "guideText": "Begin in a relaxed stance with your feet shoulder width apart and hold your arms close to the body.\n\nTo initiate the move, squat down halfway and explode back up as high as possible.\n\nFully extend your entire body, reaching overhead as far as possible. As you land, absorb your impact through the legs.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Rocket_Jump.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed fully extended rocket jump, rear-rack heel-raised calf rocking phase, staggered cable rope triceps pushdown, wide front-chest Rocky pull-up phase, standing spinal roll-down, V-sit phase after rollover, raised-platform barbell RDL, foot-pinched rope climb and wide-grip stick overhead shoulder-mobility phase.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 346
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "db-rocking-standing-calf-raise",
@@ -29,14 +37,22 @@
       "guideText": "This exercise is best performed inside a squat rack for safety purposes. To begin, first set the bar on a rack that best matches your height. Once the correct height is chosen and the bar is loaded, step under the bar and place it on the back of your shoulders (slightly below the neck).\n\nHold on to the bar using both arms at each side and lift it off the rack by first pushing with your legs and at the same time straightening your torso.\n\nStep away from the rack and position your legs using a shoulder width medium stance with the toes slightly pointed out. Keep your head up at all times as looking down will get you off balance. Also maintain a straight back and keep the knees with a slight bend; never locked. This will be your starting position.\n\nRaise your heels as you breathe out by extending your ankles as high as possible and flexing your calf. Ensure that the knee is kept stationary at all times. There should be no bending (other than the slight initial bend we created during positioning) at any time. Hold the contracted position by a second before you start to go back down.\n\nGo back slowly to the starting position as you breathe in by lowering your heels as you bend the ankles until calves are stretched.\n\nNow lift your toes by contracting the tibia muscles in the front of the calves as you breathe out.\n\nHold for a second and bring them back down as you breathe in.\n\nRepeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Rocking_Standing_Calf_Raise.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed fully extended rocket jump, rear-rack heel-raised calf rocking phase, staggered cable rope triceps pushdown, wide front-chest Rocky pull-up phase, standing spinal roll-down, V-sit phase after rollover, raised-platform barbell RDL, foot-pinched rope climb and wide-grip stick overhead shoulder-mobility phase.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 346
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "wger-0dfe655e-ee2e-4c49-a279-c672d5591613",
@@ -45,7 +61,7 @@
       "guideText": "Set your feet below the rope and lean your upper body towards the rope. Set one foot back. Push down the rope and lean your entire body back onto the rear foot as you push down to get your hands behind your body. Don't forget to bring your chest to the front during the pushdown. As you release the rope slowly, lean your body back onto the front foot.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1485/view/",
@@ -53,7 +69,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed fully extended rocket jump, rear-rack heel-raised calf rocking phase, staggered cable rope triceps pushdown, wide front-chest Rocky pull-up phase, standing spinal roll-down, V-sit phase after rollover, raised-platform barbell RDL, foot-pinched rope climb and wide-grip stick overhead shoulder-mobility phase.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 346
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "db-rocky-pull-ups-pulldowns",
@@ -62,14 +86,22 @@
       "guideText": "Grab the pull-up bar with the palms facing forward using a wide grip.\n\nAs you have both arms extended in front of you holding the bar at the chosen grip width, bring your torso back around 30 degrees or so while creating a curvature on your lower back and sticking your chest out. This is your starting position.\n\nPull your torso up until the bar touches your upper chest by drawing the shoulders and the upper arms down and back. Exhale as you perform this portion of the movement. Tip: Concentrate on squeezing the back muscles once you reach the full contracted position. The upper torso should remain stationary as it moves through space and only the arms should move. The forearms should do no other work other than hold the bar.\n\nAfter a second on the contracted position, start to inhale and slowly lower your torso back to the starting position when your arms are fully extended and the lats are fully stretched.\n\nNow repeat the same movements as described above except this time your torso will remain straight as you go up and the bar will touch the back of the neck instead of the upper chest. Tip: Use the head to lean forward slightly as it will help you properly execute this portion of the exercise.\n\nOnce you have lowered yourself back down to the starting position, repeat the exercise for the prescribed amount of repetitions in your program.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Rocky_Pull-Ups_Pulldowns.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed fully extended rocket jump, rear-rack heel-raised calf rocking phase, staggered cable rope triceps pushdown, wide front-chest Rocky pull-up phase, standing spinal roll-down, V-sit phase after rollover, raised-platform barbell RDL, foot-pinched rope climb and wide-grip stick overhead shoulder-mobility phase.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 346
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "wger-d5ee3b1f-2879-406f-97a9-51a8b0817cd4",
@@ -78,7 +110,7 @@
       "guideText": "Stand with your feet hip-width apart and slowly roll your upper body forward, one vertebra at a time, until your hands touch the ground or as far as you can comfortably go. Roll back up to the starting position in the same controlled manner.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1399/view/",
@@ -86,7 +118,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed fully extended rocket jump, rear-rack heel-raised calf rocking phase, staggered cable rope triceps pushdown, wide front-chest Rocky pull-up phase, standing spinal roll-down, V-sit phase after rollover, raised-platform barbell RDL, foot-pinched rope climb and wide-grip stick overhead shoulder-mobility phase.",
+      "bounds": {
+        "x": 0,
+        "y": 346,
+        "width": 384,
+        "height": 296
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "wger-752c0380-a0f9-4332-8265-cf503bac4703",
@@ -95,7 +135,7 @@
       "guideText": "Roll-overs into V-sits\nPart of: Limber 11\nSource: Joe DeFranco\nPrescription: 10 reps\nType: dynamic",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1954/view/",
@@ -103,7 +143,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed fully extended rocket jump, rear-rack heel-raised calf rocking phase, staggered cable rope triceps pushdown, wide front-chest Rocky pull-up phase, standing spinal roll-down, V-sit phase after rollover, raised-platform barbell RDL, foot-pinched rope climb and wide-grip stick overhead shoulder-mobility phase.",
+      "bounds": {
+        "x": 384,
+        "y": 346,
+        "width": 384,
+        "height": 296
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "wger-af2f774c-296c-4d14-8e4a-fad77175ae37",
@@ -112,7 +160,7 @@
       "guideText": "Crunches on roman chair. Keep your torso straight, abs tight, and don't come up all the way vertical or lie flat to keep constant tension on your abs.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/505/view/",
@@ -120,7 +168,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: Roman chair abdominal crunch illustrated as prone back extension.",
+      "bounds": {
+        "x": 768,
+        "y": 346,
+        "width": 384,
+        "height": 296
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "wger-12a80404-8684-4ff0-a473-d80b4ad8cd5e",
@@ -129,7 +185,7 @@
       "guideText": "this is a really cool descriptions for an exercise I've created several tomes now but this thing won't save it",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2639/view/",
@@ -137,7 +193,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: roman-chair RDL source is placeholder text, not an actual guide; depicted free legs also fail secure-foot setup.",
+      "bounds": {
+        "x": 1152,
+        "y": 346,
+        "width": 384,
+        "height": 296
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "db-romanian-deadlift-from-deficit",
@@ -146,14 +210,22 @@
       "guideText": "Begin standing while holding a bar at arm's length in front of you. You can stand on a raised platform to increase the range of motion.\n\nBegin by flexing the knees slightly, and then flex at the hip, moving your butt back as far as possible, lowering the torso as far as flexibility allows. The back should remain in absolute extension at all times, and the bar should remain in contact with the legs. If done properly, there should be heavy tension felt in the hamstrings.\n\nReverse the motion to return to the starting position.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Romanian_Deadlift_from_Deficit.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed fully extended rocket jump, rear-rack heel-raised calf rocking phase, staggered cable rope triceps pushdown, wide front-chest Rocky pull-up phase, standing spinal roll-down, V-sit phase after rollover, raised-platform barbell RDL, foot-pinched rope climb and wide-grip stick overhead shoulder-mobility phase.",
+      "bounds": {
+        "x": 0,
+        "y": 642,
+        "width": 384,
+        "height": 382
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "db-rope-climb",
@@ -162,14 +234,22 @@
       "guideText": "Grab the rope with both hands above your head. Pull down on the rope as you take a small jump.\n\nWrap the rope around one leg, using your feet to pinch the rope. Reach up as high as possible with your arms, gripping the rope tightly.\n\nRelease the rope from your feet as you pull yourself up with your arms, bringing your knees towards your chest.\n\nResecure your feet on the rope, and then stand up to take another high hold on the rope. Continue until you reach the top of the rope.\n\nTo lower yourself, loosen the grip of your feet on the rope as you slide down using a hand over hand motion.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Rope_Climb.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed fully extended rocket jump, rear-rack heel-raised calf rocking phase, staggered cable rope triceps pushdown, wide front-chest Rocky pull-up phase, standing spinal roll-down, V-sit phase after rollover, raised-platform barbell RDL, foot-pinched rope climb and wide-grip stick overhead shoulder-mobility phase.",
+      "bounds": {
+        "x": 384,
+        "y": 642,
+        "width": 384,
+        "height": 382
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "wger-148f2ffc-05e2-486b-874f-2a401337a1c6",
@@ -178,7 +258,7 @@
       "guideText": "Set up bench in front of cable row machine. Lean over bench to do a row/pullover with rope that targets lats. See picture.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1634/view/",
@@ -186,7 +266,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: rope row/pullover source asks to see a missing picture; rendered high-pulley setup is unverified against stated row-machine configuration.",
+      "bounds": {
+        "x": 768,
+        "y": 642,
+        "width": 384,
+        "height": 382
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "db-round-the-world-shoulder-stretch",
@@ -195,14 +283,22 @@
       "guideText": "Stand up straight with your legs together, holding a bodybar or broomstick.\n\nHold the pole behind your hips with a wider than shoulder width grip. Your palms should be down and your thumbs facing out.\n\nSlowly lift your arms up behind your head. Don't force it if it gets hard to lift further.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Round_The_World_Shoulder_Stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed fully extended rocket jump, rear-rack heel-raised calf rocking phase, staggered cable rope triceps pushdown, wide front-chest Rocky pull-up phase, standing spinal roll-down, V-sit phase after rollover, raised-platform barbell RDL, foot-pinched rope climb and wide-grip stick overhead shoulder-mobility phase.",
+      "bounds": {
+        "x": 1152,
+        "y": 642,
+        "width": 384,
+        "height": 382
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-2077c8f1-d413-4cef-acff-bb9c7d91adf8.png",

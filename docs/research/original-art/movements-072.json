@@ -13,7 +13,7 @@
       "guideText": "In strength training, rowing (or a row, usually preceded by a qualifying adjective — for instance a seated row) is an exercise where the purpose is to strengthen the muscles that draw the rower's arms toward the body (latissimus dorsi) as well as those that retract the scapulae (trapezius and rhomboids) and those that support the spine (erector spinae). When done on a rowing machine, rowing also exercises muscles that extend and support the legs (quadriceps and thigh muscles). In all cases, the abdominal and lower back muscles must be used in order to support the body and prevent back injury.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/508/view/",
@@ -21,7 +21,16 @@
         "license": "CC0",
         "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed generic barbell row example, upright narrow seated cable row, foot-anchored quadruped band kickback, uphill running interval example, palms-beside-front-foot runner stretch, low Russian push-up forward phase, two-hand sandbag platform loading, straight-arm scapular push-up and slightly bent-arm dumbbell shoulder raise.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses.",
+      "caption": "Row · Barbell row example; follow the guide for the selected rowing variation."
     },
     {
       "id": "wger-00fcf603-b0d0-48d2-9b5e-c7f0d510d46c",
@@ -30,7 +39,7 @@
       "guideText": "* Tighten muscles * Controlled movement * Slow movement * Keep upper body upright * Do not lean back * Pull toward chest",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/512/view/",
@@ -38,7 +47,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed generic barbell row example, upright narrow seated cable row, foot-anchored quadruped band kickback, uphill running interval example, palms-beside-front-foot runner stretch, low Russian push-up forward phase, two-hand sandbag platform loading, straight-arm scapular push-up and slightly bent-arm dumbbell shoulder raise.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 385,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "wger-32c129f7-cc28-4ebc-8465-e4fa62e220b1",
@@ -47,7 +64,7 @@
       "guideText": "The execution of this exercise is very similar to the regular bent over rowing, only that the bar is fixed here. Grab the barbell with a wide grip (slightly more than shoulder wide) and lean forward. Your upper body is not quite parallel to the floor, but forms a slight angle. The chest's out during the whole exercise. Pull now the barbell with a fast movement towards your belly button, not further up. Go slowly down to the initial position. Don't swing with your body and keep your arms next to your body.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/513/view/",
@@ -55,7 +72,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: T-bar row requires wider-than-shoulder hand spacing; image uses close neutral V-handle.",
+      "bounds": {
+        "x": 769,
+        "y": 0,
+        "width": 383,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "wger-4221c8af-b3ca-4a53-9176-bd66e46d10f2",
@@ -64,7 +89,7 @@
       "guideText": "A rubber band glute kickback is an exercise performed on hands and knees, where you anchor a resistance band to your foot and kick your heel back and up, squeezing your glute at the top of the movement, while maintaining a stable core and flat back to target and strengthen the gluteal muscles.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1613/view/",
@@ -72,7 +97,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed generic barbell row example, upright narrow seated cable row, foot-anchored quadruped band kickback, uphill running interval example, palms-beside-front-foot runner stretch, low Russian push-up forward phase, two-hand sandbag platform loading, straight-arm scapular push-up and slightly bent-arm dumbbell shoulder raise.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 341
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "wger-6cf55ecc-86ee-492d-a7f6-977bf61758b3",
@@ -81,7 +114,7 @@
       "guideText": "Run and do some interval trainings such as hill repat, fartlek,..",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/529/view/",
@@ -89,7 +122,16 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed generic barbell row example, upright narrow seated cable row, foot-anchored quadruped band kickback, uphill running interval example, palms-beside-front-foot runner stretch, low Russian push-up forward phase, two-hand sandbag platform loading, straight-arm scapular push-up and slightly bent-arm dumbbell shoulder raise.",
+      "bounds": {
+        "x": 0,
+        "y": 341,
+        "width": 384,
+        "height": 309
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses.",
+      "caption": "Run - Interval Training · Uphill running example; follow the guide for interval choices."
     },
     {
       "id": "db-runners-stretch",
@@ -98,14 +140,22 @@
       "guideText": "It's easiest to get into this stretch if you start standing up, put one leg behind you, and slowly lower your torso down to the floor.\n\nKeep the front heel on the floor (if it lifts up, scoot your other leg further back).\n\nPlace your hands on either side of your front leg. To get more out of this stretch, push your butt up toward the ceiling, and then gradually lower it back toward the floor. You'll Stretch the hip flexor of the back leg and the hamstring and buttocks of the front.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Runners_Stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed generic barbell row example, upright narrow seated cable row, foot-anchored quadruped band kickback, uphill running interval example, palms-beside-front-foot runner stretch, low Russian push-up forward phase, two-hand sandbag platform loading, straight-arm scapular push-up and slightly bent-arm dumbbell shoulder raise.",
+      "bounds": {
+        "x": 384,
+        "y": 341,
+        "width": 385,
+        "height": 309
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "wger-58ba2ce1-c140-4a9f-9bbc-d99776909690",
@@ -114,7 +164,7 @@
       "guideText": "Russian Push-Ups\n\nStart in a standard push-up position with your hands slightly wider than shoulder-width apart. Lower your chest toward the floor, then shift your body forward while keeping your chest close to the ground. Extend your arms to return to the starting position, then reverse the movement smoothly. Keep your core tight and maintain controlled movement throughout the exercise.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2530/view/",
@@ -122,7 +172,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed generic barbell row example, upright narrow seated cable row, foot-anchored quadruped band kickback, uphill running interval example, palms-beside-front-foot runner stretch, low Russian push-up forward phase, two-hand sandbag platform loading, straight-arm scapular push-up and slightly bent-arm dumbbell shoulder raise.",
+      "bounds": {
+        "x": 769,
+        "y": 341,
+        "width": 383,
+        "height": 309
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "db-russian-twist",
@@ -131,14 +189,22 @@
       "guideText": "Lie down on the floor placing your feet either under something that will not move or by having a partner hold them. Your legs should be bent at the knees.\n\nElevate your upper body so that it creates an imaginary V-shape with your thighs. Your arms should be fully extended in front of you perpendicular to your torso and with the hands clasped. This is the starting position.\n\nTwist your torso to the right side until your arms are parallel with the floor while breathing out.\n\nHold the contraction for a second and move back to the starting position while breathing out. Now move to the opposite side performing the same techniques you applied to the right side.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Russian_Twist.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: Russian twist guide requires secured feet; image has no anchor/partner.",
+      "bounds": {
+        "x": 1152,
+        "y": 341,
+        "width": 384,
+        "height": 309
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "db-sandbag-load",
@@ -147,14 +213,22 @@
       "guideText": "To load sandbags or other objects, begin with the implements placed a distance from the loading platform, typically 50 feet.\n\nBegin by lifting the sandbag. Sandbags are extremely awkward, and the manner of lifting them can vary depending on the particular sandbag used. Reach as far around it as possible, extending through the hips and knees to pull it up high. Shouldering is usually not allowed.\n\nMove as quickly as possible to the platform, and load it, extending through your hips, knees, and ankles to get it as high as possible. Place it onto the platform, ensuring it doesn't fall off.\n\nReturn to the starting position to retrieve the next sandbag, and repeat until the event is completed.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sandbag_Load.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed generic barbell row example, upright narrow seated cable row, foot-anchored quadruped band kickback, uphill running interval example, palms-beside-front-foot runner stretch, low Russian push-up forward phase, two-hand sandbag platform loading, straight-arm scapular push-up and slightly bent-arm dumbbell shoulder raise.",
+      "bounds": {
+        "x": 0,
+        "y": 650,
+        "width": 384,
+        "height": 374
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "db-scapular-pull-up",
@@ -163,14 +237,22 @@
       "guideText": "Take a pronated grip on a pull-up bar.\n\nFrom a hanging position, raise yourself a few inches without using your arms. Do this by depressing your shoulder girdle in a reverse shrugging motion.\n\nPause at the completion of the movement, and then slowly return to the starting position before performing more repetitions.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Scapular_Pull-Up.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: scapular pull-up requires straight arms; image elbows are substantially bent.",
+      "bounds": {
+        "x": 384,
+        "y": 650,
+        "width": 385,
+        "height": 374
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "wger-e044cd7d-ef86-4154-a3a8-bd01fc5535ab",
@@ -179,7 +261,7 @@
       "guideText": "Start in a straight-arm plank with your hands under your shoulders. Keep your elbows locked and move only your shoulder blades: let your chest sink slightly, then push the floor away to spread the shoulder blades. Move in a comfortable, controlled range.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2681/view/",
@@ -187,7 +269,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed generic barbell row example, upright narrow seated cable row, foot-anchored quadruped band kickback, uphill running interval example, palms-beside-front-foot runner stretch, low Russian push-up forward phase, two-hand sandbag platform loading, straight-arm scapular push-up and slightly bent-arm dumbbell shoulder raise.",
+      "bounds": {
+        "x": 769,
+        "y": 650,
+        "width": 383,
+        "height": 374
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     },
     {
       "id": "wger-9a644b0e-8691-4216-b2cc-f058f58ec96d",
@@ -196,7 +286,7 @@
       "guideText": "* Muskulatur anspannen * Kein Schwung holen * Kontrollierte Bewegung * Langsame Bewegung * Immer angewinkelt lassen * Nicht überdehnen",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1338/view/",
@@ -204,7 +294,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed generic barbell row example, upright narrow seated cable row, foot-anchored quadruped band kickback, uphill running interval example, palms-beside-front-foot runner stretch, low Russian push-up forward phase, two-hand sandbag platform loading, straight-arm scapular push-up and slightly bent-arm dumbbell shoulder raise.",
+      "bounds": {
+        "x": 1152,
+        "y": 650,
+        "width": 384,
+        "height": 374
+      },
+      "cropReviewNote": "Inspected actual source panel separator pixels and representative poses."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-7b965457-bfc5-4bbe-9f78-8d171ded60a1.png",

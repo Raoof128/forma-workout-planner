@@ -13,14 +13,22 @@
       "guideText": "Set up a box in a power rack. The pins should be set at an appropriate height. Begin by stepping under the bar and placing it across the back of the shoulders, not on top of your traps. Squeeze your shoulder blades together and rotate your elbows forward, attempting to bend the bar across your shoulders.\n\nRemove the bar from the rack, creating a tight arch in your lower back. Keep your head facing forward. With your back, shoulders, and core tight, push your knees and butt out and you begin your descent. Sit back with your hips until you are seated on the box. This will be your starting position.\n\nKeeping the bar tight, bend forward at the hips as much as possible. If you set the pins to what would be parallel, you not only have a safety if you fail, but know when to stop.\n\nPause just above the pins and reverse the motion until your torso it upright.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Good_Mornings.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed seated box rear-rack hip hinge with pins, partner shoulder-supported straight-leg seated hamstring stretch, both-legs-extended foot-band hamstring/calf stretch, hands-above-kneecap seated knee overpressure, floor hand-supported knee tuck, pronated one-arm thigh wrist curl, pronated seated bar wrist curl and hands-on-neck wide-straddle pancake hinge.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 334
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "db-seated-hamstring",
@@ -29,14 +37,22 @@
       "guideText": "In a seated position with your legs extended, have your partner stand behind you. Now, lean forward as your partner braces your shoulders with their hands. This will be your starting position.\n\nAttempt to push your torso back for 10-20 seconds, as your partner prevents any actual movement of your torso.\n\nNow relax your muscles as your partner increases the stretch by gently pushing your torso forward for 10-20 seconds.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Hamstring.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed seated box rear-rack hip hinge with pins, partner shoulder-supported straight-leg seated hamstring stretch, both-legs-extended foot-band hamstring/calf stretch, hands-above-kneecap seated knee overpressure, floor hand-supported knee tuck, pronated one-arm thigh wrist curl, pronated seated bar wrist curl and hands-on-neck wide-straddle pancake hinge.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 334
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "db-seated-hamstring-and-calf-stretch",
@@ -45,14 +61,22 @@
       "guideText": "Loop a belt, rope, or band around one foot. Sit down with both legs extended . This will be your starting position.\n\nLeaning forward slightly, pull on the belt to draw the toes of your foot back. Hold this position for 10-20 seconds and then repeat with the other leg.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Hamstring_and_Calf_Stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed seated box rear-rack hip hinge with pins, partner shoulder-supported straight-leg seated hamstring stretch, both-legs-extended foot-band hamstring/calf stretch, hands-above-kneecap seated knee overpressure, floor hand-supported knee tuck, pronated one-arm thigh wrist curl, pronated seated bar wrist curl and hands-on-neck wide-straddle pancake hinge.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 334
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "db-seated-head-harness-neck-resistance",
@@ -61,14 +85,22 @@
       "guideText": "Place a neck strap on the floor at the end of a flat bench. Once you have selected the weights, sit at the end of the flat bench with your feet wider than shoulder width apart from each other. Your toes should be pointed out.\n\nSlowly move your torso forward until it is almost parallel with the floor. Using both hands, securely position the neck strap around your head. Tip: Make sure the weights are still lying on the floor to prevent any strain on the neck. Now grab the weight with both hands while elevating your torso back until it is almost perpendicular to the floor. Note: Your head and torso needs to be slightly tilted forward to perform this exercise.\n\nNow place both hands on top of your knees. This is the starting position.\n\nSlowly lower your neck down until your chin touches the upper part of your chest while breathing in.\n\nWhile exhaling, bring your neck back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Head_Harness_Neck_Resistance.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: harness neck load rests on floor, so the working position does not provide suspended neck resistance.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 334
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "wger-a3afaf43-b087-4f65-9e62-d038ab09ce90",
@@ -77,7 +109,7 @@
       "guideText": "A gentle stretch to restore full knee extension. Sit with one leg stretched out in front of you and the heel propped on the floor or a low surface, so the knee is unsupported. Place both hands on the thigh just above the kneecap. Keeping the leg relaxed, gently press down through the hands toward the floor until you feel a stretch behind the knee, and hold for about three seconds before releasing. The pressure should produce a stretch, never sharp pain. Repeat for the prescribed number of repetitions, then switch legs.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2664/view/",
@@ -85,7 +117,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed seated box rear-rack hip hinge with pins, partner shoulder-supported straight-leg seated hamstring stretch, both-legs-extended foot-band hamstring/calf stretch, hands-above-kneecap seated knee overpressure, floor hand-supported knee tuck, pronated one-arm thigh wrist curl, pronated seated bar wrist curl and hands-on-neck wide-straddle pancake hinge.",
+      "bounds": {
+        "x": 0,
+        "y": 334,
+        "width": 384,
+        "height": 333
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "wger-371cfda2-1de6-419a-b40c-fc98fd3f7e41",
@@ -94,7 +134,7 @@
       "guideText": "Sit on floor or mat. Place arms slightly behind you. Raise legs. Now extend your legs and pull them back.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1105/view/",
@@ -102,7 +142,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed seated box rear-rack hip hinge with pins, partner shoulder-supported straight-leg seated hamstring stretch, both-legs-extended foot-band hamstring/calf stretch, hands-above-kneecap seated knee overpressure, floor hand-supported knee tuck, pronated one-arm thigh wrist curl, pronated seated bar wrist curl and hands-on-neck wide-straddle pancake hinge.",
+      "bounds": {
+        "x": 384,
+        "y": 334,
+        "width": 384,
+        "height": 333
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "db-seated-one-arm-dumbbell-palms-down-wrist-curl",
@@ -111,14 +159,22 @@
       "guideText": "Sit on a flat bench with a dumbbell in your right hand.\n\nPlace your feet flat on the floor, at a distance that is slightly wider than shoulder width apart.\n\nLean forward and place your right forearm on top of your upper right thigh with your palm down. Tip: Make sure that the back of the wrist lies on top of your knees. This will be your starting position.\n\nLower the dumbbell as far as possible as you keep a tight grip on the dumbbell. Inhale as you perform this movement.\n\nNow curl the dumbbell as high as possible as you contract the forearms and as you exhale. Keep the contraction for a second before you lower again. Tip: The only movement should happen at the wrist.\n\nPerform for the recommended amount of repetitions, switch arms and repeat the movement.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_One-Arm_Dumbbell_Palms-Down_Wrist_Curl.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed seated box rear-rack hip hinge with pins, partner shoulder-supported straight-leg seated hamstring stretch, both-legs-extended foot-band hamstring/calf stretch, hands-above-kneecap seated knee overpressure, floor hand-supported knee tuck, pronated one-arm thigh wrist curl, pronated seated bar wrist curl and hands-on-neck wide-straddle pancake hinge.",
+      "bounds": {
+        "x": 768,
+        "y": 334,
+        "width": 384,
+        "height": 333
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "db-seated-one-arm-dumbbell-palms-up-wrist-curl",
@@ -127,14 +183,22 @@
       "guideText": "Sit on a flat bench with a dumbbell in your right hand.\n\nPlace your feet flat on the floor, at a distance that is slightly wider than shoulder width apart.\n\nLean forward and place your right forearm on top of your upper right thigh with your palm up. Tip: Make sure that the front of the wrist lies on top of your knees. This will be your starting position.\n\nLower the dumbbell as far as possible as you keep a tight grip on the dumbbell. Inhale as you perform this movement.\n\nNow curl the dumbbell as high as possible as you contract the forearms and as you exhale. Keep the contraction for a second before you lower again. Tip: The only movement should happen at the wrist.\n\nPerform for the recommended amount of repetitions, switch arms and repeat the movement.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_One-Arm_Dumbbell_Palms-Up_Wrist_Curl.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: single-arm palms-up wrist grip is not clearly distinguished from pronated frame.",
+      "bounds": {
+        "x": 1152,
+        "y": 334,
+        "width": 384,
+        "height": 333
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "db-seated-overhead-stretch",
@@ -143,14 +207,22 @@
       "guideText": "Sit up straight on an exercise mat.\n\nTouch the soles of your feet together with your feet six to eight inches in front of your hips.\n\nPlace one hand on the floor beside you and your other hand behind your head.\n\nLift your elbow to the ceiling as you incline your torso to the other side. Hold for 10 to 20 seconds, then switch sides.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Overhead_Stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: seated overhead side stretch uses crossed legs rather than soles together.",
+      "bounds": {
+        "x": 0,
+        "y": 667,
+        "width": 384,
+        "height": 357
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "db-seated-palm-up-barbell-wrist-curl",
@@ -159,14 +231,22 @@
       "guideText": "Hold a barbell with both hands and your palms facing up; hands spaced about shoulder width.\n\nPlace your feet flat on the floor, at a distance that is slightly wider than shoulder width apart.\n\nLean forward and place your forearms on top of your upper thighs with your palms up. Tip: Make sure that the front of the wrists lay on top of your knees. This will be your starting position.\n\nLower the bar as far as possible while inhaling and keeping a tight grip.\n\nNow curl bar up as high as possible while flexing the forearms and exhaling. Hold the contraction at the top for a second and Tip: Only the wrist should move.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Palm-Up_Barbell_Wrist_Curl.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: supinated seated bar wrist curl grip is not clearly established.",
+      "bounds": {
+        "x": 384,
+        "y": 667,
+        "width": 384,
+        "height": 357
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "db-seated-palms-down-barbell-wrist-curl",
@@ -175,14 +255,22 @@
       "guideText": "Hold a barbell with both hands and your palms facing down; hands spaced about shoulder width.\n\nPlace your feet flat on the floor, at a distance that is slightly wider than shoulder width apart.\n\nLean forward and place your forearms on top of your upper thighs with your palms down. Tip: Make sure that the back of the wrists lay on top of your knees. This will be your starting position.\n\nLower the bar as far as possible while inhaling and keeping a tight grip.\n\nNow curl bar up as high as possible while flexing the forearms and exhaling. Hold the contraction at the top for a second and Tip: Only the wrist should move.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Seated_Palms-Down_Barbell_Wrist_Curl.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed seated box rear-rack hip hinge with pins, partner shoulder-supported straight-leg seated hamstring stretch, both-legs-extended foot-band hamstring/calf stretch, hands-above-kneecap seated knee overpressure, floor hand-supported knee tuck, pronated one-arm thigh wrist curl, pronated seated bar wrist curl and hands-on-neck wide-straddle pancake hinge.",
+      "bounds": {
+        "x": 768,
+        "y": 667,
+        "width": 384,
+        "height": 357
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     },
     {
       "id": "wger-96583e33-e643-486d-95e9-67d0d5935b05",
@@ -191,7 +279,7 @@
       "guideText": "1. Sit with your legs completely straight (knees locked), spread wide in a straddle position. 2. Place your hands on the back of your neck. 3. Hinge your torso and head towards the floor.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1845/view/",
@@ -199,7 +287,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed seated box rear-rack hip hinge with pins, partner shoulder-supported straight-leg seated hamstring stretch, both-legs-extended foot-band hamstring/calf stretch, hands-above-kneecap seated knee overpressure, floor hand-supported knee tuck, pronated one-arm thigh wrist curl, pronated seated bar wrist curl and hands-on-neck wide-straddle pancake hinge.",
+      "bounds": {
+        "x": 1152,
+        "y": 667,
+        "width": 384,
+        "height": 357
+      },
+      "cropReviewNote": "Inspected panel separators or white gutters; preserve complete main exercise pose. Some partner support illustrations intentionally show hands/torso without full partner body."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-4879957c-fb35-4116-8cb0-271f2bb828c8.png",
