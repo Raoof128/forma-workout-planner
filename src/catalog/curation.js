@@ -17,6 +17,8 @@ export function usableGuide(text) {
     "no description",
     "description pending",
     "this is a test",
+    "this thing won't save",
+    "cool descriptions for an exercise",
   ].some((phrase) => lower.includes(phrase));
 }
 export function canonicalId(id, curation) {

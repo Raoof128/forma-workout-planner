@@ -1,0 +1,125 @@
+{
+  "name": "corrections-039",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-039.png",
+  "prompt": "Original FORMA exercise manual: exactly TWO COLUMNS TWO ROWS, FOUR separate large panels, landscape1536x1024. Clean white backgrounds, fully clothed varied adults, charcoal-gray clothing/equipment with lime accent, anatomically correct, physically plausible supports. No lettering/logos/watermarks. Whole figure and apparatus entirely inside own panel, generous margins. Render each POSITIVE VISUAL DESCRIPTION precisely. Avoid default generic fitness poses; geometry and hand directions are essential. \n\nRow 1 column 1: SIDE view chest-supported prone dumbbell wide-elbow row. Bench backrest angle ONLY30DEGREES above floor, low incline. Two upper arms FLARED horizontally to sides in T, elbows90, two dumbbells hanging under elbows.\n\nRow 1 column 2: SIDE three-quarter view bilateral dumbbell fly. Bench backrest angle ONLY20DEGREES above floor, low incline. Both arms spread laterally with soft elbows, palms toward ceiling. Two dumbbells. Feet floor and back supported.\n\nRow 2 column 1: SIDE view backrest EXACTLY45DEGREES above floor, athlete reclined back against it. Two dumbbells overhead elbows extended, feet floor. Clearly moderate 45-degree support, hip and knee flexed.\n\nRow 2 column 2: SIDE three-quarter view. Backrest EXACTLY45DEGREES above floor. Two dumbbells in straight arms reaching FORWARD horizontally, palms facing UP toward ceiling, hands meet near center. Feet floor.",
+  "cells": [
+    {
+      "id": "db-incline-bench-pull",
+      "title": "Incline Bench Pull",
+      "equipment": "Barbell",
+      "guideText": "Grab a dumbbell in each hand and lie face down on an incline bench that is set to an incline that is approximately 30 degrees.\n\nLet the arms hang to your sides fully extended as they point to the floor.\n\nTurn the wrists until your hands have a pronated (palms down) grip.\n\nNow flare the elbows out. This will be your starting position.\n\nAs you breathe out, start to pull the dumbbells up as if you are doing a reverse bench press. You will do this by bending at the elbows and bringing the upper arms up as you let the forearms hang. Continue this motion until the upper arms are at the same level as your back. Tip: The elbows will come out to the side and your upper arms and torso should make the letter \"T\" at the top of the movement. Hold the contraction at the top for a second.\n\nSlowly go back down to the starting position as you breathe in.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Bench_Pull.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "SIDE view chest-supported prone dumbbell wide-elbow row. Bench backrest angle ONLY30DEGREES above floor, low incline. Two upper arms FLARED horizontally to sides in T, elbows90, two dumbbells hanging under elbows.",
+      "reviewNote": "Reviewed low approximately 30-degree prone wide-elbow dumbbell pull and moderately reclined paired dumbbell overhead press.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 480
+      },
+      "cropReviewNote": "Inspected actual panel boundary and complete accepted figures."
+    },
+    {
+      "id": "db-incline-dumbbell-flyes",
+      "title": "Incline Dumbbell Flyes",
+      "equipment": "Dumbbell",
+      "guideText": "Hold a dumbbell on each hand and lie on an incline bench that is set to an incline angle of no more than 30 degrees.\n\nExtend your arms above you with a slight bend at the elbows.\n\nNow rotate the wrists so that the palms of your hands are facing you. Tip: The pinky fingers should be next to each other. This will be your starting position.\n\nAs you breathe in, start to slowly lower the arms to the side while keeping the arms extended and while rotating the wrists until the palms of the hand are facing each other. Tip: At the end of the movement the arms will be by your side with the palms facing the ceiling.\n\nAs you exhale start to bring the dumbbells back up to the starting position by reversing the motion and rotating the hands so that the pinky fingers are next to each other again. Tip: Keep in mind that the movement will only happen at the shoulder joint and at the wrist. There is no motion that happens at the elbow joint.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Dumbbell_Flyes.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "SIDE three-quarter view bilateral dumbbell fly. Bench backrest angle ONLY20DEGREES above floor, low incline. Both arms spread laterally with soft elbows, palms toward ceiling. Two dumbbells. Feet floor and back supported.",
+      "ids": [
+        "db-incline-dumbbell-flyes",
+        "db-incline-dumbbell-flyes-with-a-twist"
+      ],
+      "additionalGuideReviews": [
+        {
+          "id": "db-incline-dumbbell-flyes-with-a-twist",
+          "title": "Incline Dumbbell Flyes - With A Twist",
+          "guideText": "Hold a dumbbell in each hand and lie on an incline bench that is set to an incline angle of no more than 30 degrees.\n\nExtend your arms above you with a slight bend at the elbows.\n\nNow rotate the wrists so that the palms of your hands are facing you. Tip: The pinky fingers should be next to each other. This will be your starting position.\n\nAs you breathe in, start to slowly lower the arms to the side while keeping the arms extended and while rotating the wrists until the palms of the hand are facing each other. Tip: At the end of the movement the arms will be by your side with the palms facing the ceiling.\n\nAs you exhale start to bring the dumbbells back up to the starting position by reversing the motion and rotating the hands so that the pinky fingers are next to each other again. Tip: Keep in mind that the movement will only happen at the shoulder joint and at the wrist. There is no motion that happens at the elbow joint.\n\nRepeat for the recommended amount of repetitions."
+        }
+      ],
+      "reviewNote": "Fly remains asymmetric with one forearm flexed and the other arm spread; both sides should share the same representative phase.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 480
+      },
+      "cropReviewNote": "Inspected actual panel boundary and complete accepted figures."
+    },
+    {
+      "id": "wger-f89b3662-f911-4aab-9402-cfa6d47cea2b",
+      "title": "Incline OHP DB",
+      "equipment": "Dumbbell",
+      "guideText": "* Sit on a bench with 45° incline * Ellbows 45° out * Move dumbbells down until upper arms are parallel to shoulders * Move dumbbells up, meeting overhead",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1441/view/",
+        "author": "M9",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "SIDE view backrest EXACTLY45DEGREES above floor, athlete reclined back against it. Two dumbbells overhead elbows extended, feet floor. Clearly moderate 45-degree support, hip and knee flexed.",
+      "reviewNote": "Reviewed low approximately 30-degree prone wide-elbow dumbbell pull and moderately reclined paired dumbbell overhead press.",
+      "bounds": {
+        "x": 0,
+        "y": 480,
+        "width": 768,
+        "height": 544
+      },
+      "cropReviewNote": "Inspected actual panel boundary and complete accepted figures."
+    },
+    {
+      "id": "wger-b4e78b5a-6141-4fc9-a6f7-cba13ce6559b",
+      "title": "Kreis Press DB",
+      "equipment": "Dumbbell",
+      "guideText": "* Sit on a bench with 45° incline * Hold dumbbells overhead * Move dumbbells down as if doing overhead press * Rotate dumbbells palms facing up and extend your arms in front of your body * Move hands together until dumbbells meet, keep arms extended * Reverse the motion until dumbbells are overhead again * This is one repetition",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1442/view/",
+        "author": "M9",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "SIDE three-quarter view. Backrest EXACTLY45DEGREES above floor. Two dumbbells in straight arms reaching FORWARD horizontally, palms facing UP toward ceiling, hands meet near center. Feet floor.",
+      "reviewNote": "Kreis press support is still substantially steeper than its 45-degree bench setup.",
+      "bounds": {
+        "x": 768,
+        "y": 480,
+        "width": 768,
+        "height": 544
+      },
+      "cropReviewNote": "Inspected actual panel boundary and complete accepted figures."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-d2ed9267-1a17-4fef-8cef-4383de5314b5.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-039.png"
+}

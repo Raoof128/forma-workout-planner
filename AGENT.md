@@ -57,6 +57,17 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-14 — Guide repair during artwork review
+
+- Replaced the selectable roman-chair RDL's save-error placeholder with an
+  authored secured-foot dumbbell hip-hinge guide and retained its ID and
+  historical load/repetition units. Its earlier name remains searchable.
+- Catalog admission now rejects that imported save-error boilerplate. The
+  regression failed before the fix; all 61 unit cases passed afterward.
+  The browsing scope remains 1,414 and compatibility scope remains 1,681.
+- Original artwork generation/review and the subsequent whole-site review
+  are still in progress. Do not deploy an incomplete media release.
+
 ### Raouf: 2026-10-14 — Original exercise artwork in progress
 
 - **Scope:** owner now requests original AI-assisted FORMA illustrations for

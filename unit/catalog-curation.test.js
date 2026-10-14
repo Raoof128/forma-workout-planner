@@ -81,6 +81,12 @@ test("boilerplate is not a usable guide and hidden records remain available for 
   assert.equal(usableGuide("Coming soon. ".repeat(10)), false);
   assert.equal(
     usableGuide(
+      "this is a really cool descriptions for an exercise I've created several tomes now but this thing won't save it",
+    ),
+    false,
+  );
+  assert.equal(
+    usableGuide(
       "Sit with your back supported and adjust the seat so the handles are at chest height. Push forward with control, then return without letting the weights slam.",
     ),
     true,
@@ -101,6 +107,17 @@ test("boilerplate is not a usable guide and hidden records remain available for 
     [],
   );
   assert.equal(records[0].id, "archived");
+});
+
+test("roman-chair placeholder is repaired without removing its saved identity", () => {
+  const id = "wger-12a80404-8684-4ff0-a473-d80b4ad8cd5e";
+  const guide = guideExercise(id);
+  assert.ok(selectableExercises.some((row) => row.id === id));
+  assert.equal(exerciseById.get(id).metric, "load_reps");
+  assert.equal(guide.source, null);
+  assert.match(guide.description, /secured/);
+  assert.match(guide.description, /hinge/i);
+  assert.ok(guide.references.length > 0);
 });
 
 test("dangling aliases and cycles fail rather than silently discarding movements", () => {

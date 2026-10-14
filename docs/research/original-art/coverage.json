@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1326,
+  "accepted": 1341,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -2794,7 +2794,9 @@
       "name": "Curl de biceps con agarre prono",
       "equipment": "Dumbbell",
       "guideSha256": "b5cd8d205b0e8dac9d83d780ce608c96f2e290b06b5b34ce3e991ce38901a7ca",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-036-0-0",
+      "reviewNote": "Reviewed downward-facing/knuckle-visible straight-bar reverse curl against the Spanish, straight-bar and generic reverse-curl guides, plus supported overhand EZ-bar reverse preacher curl."
     },
     {
       "exerciseId": "wger-4b67ccf1-6bbc-406a-b88b-e2f72b10085e",
@@ -3391,7 +3393,9 @@
       "name": "Dumbbell Frog Press",
       "equipment": "Dumbbell",
       "guideSha256": "7a0c694935507cbd22e8157f5c53a11a21ba87f72146e9f2020758ad88ee3125",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-037-0-0",
+      "reviewNote": "Reviewed soles-together knees-open pelvis-loaded frog bridge and bent-elbow external rotation resisting a contralateral band anchor."
     },
     {
       "exerciseId": "wger-4621b41f-0d32-4033-acff-dc079c792606",
@@ -3977,7 +3981,9 @@
       "name": "Band external rotation",
       "equipment": "Resistance band",
       "guideSha256": "83c9fa392d3deb6e2905c3942e002126212818520de2d4114623e0063948e87e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-037-1-1",
+      "reviewNote": "Reviewed soles-together knees-open pelvis-loaded frog bridge and bent-elbow external rotation resisting a contralateral band anchor."
     },
     {
       "exerciseId": "db-external-rotation-with-cable",
@@ -4572,7 +4578,9 @@
       "name": "Good Morning",
       "equipment": "Barbell",
       "guideSha256": "c5b513ed0ec8678f8a8ae09dab1460c42a3d0b52a257fd7c74008a0f56fad7d9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-038-0-0",
+      "reviewNote": "Reviewed grounded-foot rear-bar good-morning lowering phase with neutral spine and soft knees. Depicts the mid-hinge phase, not its full-depth endpoint."
     },
     {
       "exerciseId": "db-good-morning-off-pins",
@@ -5120,7 +5128,9 @@
       "name": "Incline Bench Pull",
       "equipment": "Barbell",
       "guideSha256": "055029fc6881e85d68a8d189062c878f80a43fcadb27750e640f6083ff855252",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-039-0-0",
+      "reviewNote": "Reviewed low approximately 30-degree prone wide-elbow dumbbell pull and moderately reclined paired dumbbell overhead press."
     },
     {
       "exerciseId": "wger-70c99a4e-3340-4993-a7f1-2d2709dada1a",
@@ -5258,7 +5268,9 @@
       "name": "Incline OHP DB",
       "equipment": "Dumbbell",
       "guideSha256": "27a10591ae1c10504431c0c9bf83f2b75b53dae4012588c132c165f70bf31448",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-039-0-1",
+      "reviewNote": "Reviewed low approximately 30-degree prone wide-elbow dumbbell pull and moderately reclined paired dumbbell overhead press."
     },
     {
       "exerciseId": "wger-aae91ecf-ffa4-4730-812c-cb00e423f91c",
@@ -6908,7 +6920,9 @@
       "name": "Meadows Row",
       "equipment": "Barbell",
       "guideSha256": "0950db170a509782a912f25c4087058305e262bc68eae26172e53ea0a632dc22",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-041-1-1",
+      "reviewNote": "Reviewed forefoot-only step support with heels below edge, grounded-palm airborne tucked L-sit and unilateral landmine sleeve row with opposite arm braced on forward thigh."
     },
     {
       "exerciseId": "wger-346634cf-3896-4c10-bd66-28fb69d02573",
@@ -7125,7 +7139,9 @@
       "name": "Negative Crunches",
       "equipment": "Bodyweight",
       "guideSha256": "47dbc5eda68d1a77750ea5b722a6d38db495d4552d4bb820cc4b58316ee30df4",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-040-0-1",
+      "reviewNote": "Reviewed secured high-foot low-head decline band sit-up and negative crunch, plus supine bench-supported quad stretch with bent leg hanging below side."
     },
     {
       "exerciseId": "wger-15fda45b-108b-4b28-bfe5-d0e55a0914bf",
@@ -7213,7 +7229,9 @@
       "name": "On-Your-Back Quad Stretch",
       "equipment": "Specialty equipment",
       "guideSha256": "529505fb62a14fb2399e53667a211e61f76aa91bd0596958dc68d661838af310",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-040-1-1",
+      "reviewNote": "Reviewed secured high-foot low-head decline band sit-up and negative crunch, plus supine bench-supported quad stretch with bent leg hanging below side."
     },
     {
       "exerciseId": "db-one-arm-against-wall",
@@ -8539,14 +8557,18 @@
       "name": "Reverse Barbell Curl",
       "equipment": "Barbell",
       "guideSha256": "0add30d2c75d7b7c43c400ee71e10d285a5ee344d67d6bf6062930f5ea18194d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-036-0-0",
+      "reviewNote": "Reviewed downward-facing/knuckle-visible straight-bar reverse curl against the Spanish, straight-bar and generic reverse-curl guides, plus supported overhand EZ-bar reverse preacher curl."
     },
     {
       "exerciseId": "db-reverse-barbell-preacher-curls",
       "name": "Reverse Barbell Preacher Curls",
       "equipment": "EZ bar",
       "guideSha256": "9be2631afe4eeedb1a024e849c91baf2f9defdb771b70ea81a416bb2556331f6",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-036-0-1",
+      "reviewNote": "Reviewed downward-facing/knuckle-visible straight-bar reverse curl against the Spanish, straight-bar and generic reverse-curl guides, plus supported overhand EZ-bar reverse preacher curl."
     },
     {
       "exerciseId": "db-reverse-cable-curl",
@@ -8578,7 +8600,9 @@
       "name": "Reverse Curl",
       "equipment": "Barbell + Dumbbell",
       "guideSha256": "d23a6ac36eb3571c27d60352fedf6d7860644a0e41b0e03238a2acb4bff57df6",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-036-0-0",
+      "reviewNote": "Reviewed downward-facing/knuckle-visible straight-bar reverse curl against the Spanish, straight-bar and generic reverse-curl guides, plus supported overhand EZ-bar reverse preacher curl."
     },
     {
       "exerciseId": "wger-440cf10c-effb-4b63-a6e0-182fe47376f6",
@@ -8808,9 +8832,9 @@
     },
     {
       "exerciseId": "wger-12a80404-8684-4ff0-a473-d80b4ad8cd5e",
-      "name": "roman chair RDLS",
-      "equipment": "Dumbbell",
-      "guideSha256": "e16a2179b8ab6db47953f1c57cd9e63c9b5b733be85a45d516e11b9de249eb9d",
+      "name": "Roman-chair dumbbell hip hinge",
+      "equipment": "Roman chair + Dumbbell",
+      "guideSha256": "1c2780ab98710aaf1aefc3c1045c3f22a17f711dfb7668e927c31d63f6ae6266",
       "status": "pending"
     },
     {
@@ -11120,7 +11144,9 @@
       "name": "Step Calf Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "29f8c65a8f83a77cf7952024969af217e46522741574b7f65d6441559213bc09",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-041-0-0",
+      "reviewNote": "Reviewed forefoot-only step support with heels below edge, grounded-palm airborne tucked L-sit and unilateral landmine sleeve row with opposite arm braced on forward thigh."
     },
     {
       "exerciseId": "wger-2f10d91f-6c12-471b-bb9e-80840a56ce01",
@@ -11764,7 +11790,9 @@
       "name": "Tuck L-sit",
       "equipment": "Bench",
       "guideSha256": "b7b725a573ecd6483e9572ca4afd8d68ded928040f310bcb39f8d81fcb1be55f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-041-1-0",
+      "reviewNote": "Reviewed forefoot-only step support with heels below edge, grounded-palm airborne tucked L-sit and unilateral landmine sleeve row with opposite arm braced on forward thigh."
     },
     {
       "exerciseId": "wger-309bfd2b-1af4-49db-b64b-d7d7c7dd39bb",
@@ -12123,7 +12151,9 @@
       "name": "Weighted Sit-Ups - With Bands",
       "equipment": "Specialty equipment",
       "guideSha256": "3ed3ed8a28a798164a065bac0fadb51470a1b16a4296a606897b57eb317d446f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-040-0-0",
+      "reviewNote": "Reviewed secured high-foot low-head decline band sit-up and negative crunch, plus supine bench-supported quad stretch with bent leg hanging below side."
     },
     {
       "exerciseId": "db-weighted-squat",

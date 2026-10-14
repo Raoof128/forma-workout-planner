@@ -74,5 +74,18 @@
         "url": "https://www.lifefitness.com/en-us/catalog/strength-training/selectorized/hammer-strength-select-assist-dip-chin"
       }
     ]
+  },
+  "wger-12a80404-8684-4ff0-a473-d80b4ad8cd5e": {
+    "name": "Roman-chair dumbbell hip hinge",
+    "equipment": "Roman chair + Dumbbell",
+    "equipmentTags": ["Roman chair", "Dumbbell"],
+    "description": "Use a stable roman-chair or back-extension station with your feet planted on its footplate and your ankles secured beneath the supports. Position the thigh pad below the hip crease so your hips can hinge freely. Start without added weight to check the setup; when controlled, hold a light dumbbell close to your chest. Keep your spine neutral and bend at the hips through a comfortable range. Squeeze your glutes to return until your trunk lines up with your legs, stopping before you arch your lower back. Keep your feet secured throughout and lower the weight before stepping out.",
+    "source": null,
+    "references": [
+      {
+        "title": "Free Exercise DB: secured-foot back-extension setup",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hyperextensions_Back_Extensions.json"
+      }
+    ]
   }
 }

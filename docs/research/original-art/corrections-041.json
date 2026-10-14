@@ -1,0 +1,115 @@
+{
+  "name": "corrections-041",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-041.png",
+  "prompt": "Original FORMA exercise manual: exactly TWO COLUMNS TWO ROWS, FOUR separate large panels, landscape1536x1024. Clean white backgrounds, fully clothed varied adults, charcoal-gray clothing/equipment with lime accent, anatomically correct, physically plausible supports. No lettering/logos/watermarks. Whole figure and apparatus entirely inside own panel, generous margins. Render each POSITIVE VISUAL DESCRIPTION precisely. Avoid default generic fitness poses; geometry and hand directions are essential. \n\nRow 1 column 1: SIDE view adult standing with BALLS OF BOTH FEET on FRONT EDGE of raised step. Step visibly under TOES/FOREFOOT ONLY; HEELS hang down below step-top into open air outside edge. Both knees straight. Hands touch wall in front for balance.\n\nRow 1 column 2: Adult on FLOOR-supported palms (no bench or bars), straight arms alongside hips bear weight. Buttocks/hips LIFTED several inches off floor, knees tucked chest, BOTH FEET hover above floor between hands. Entire folded legs airborne. Upright torso.\n\nRow 2 column 1: Standing adult holds TWO distinct circular weight plates STACKED TOGETHER side by side, smooth sides outward. Working hand pinches the OUTSIDE FACES of pair using fingers on one smooth face and thumb on other. No grip through holes. Clearly visible two separate plate rims.\n\nRow 2 column 2: Side-three-quarter view staggered stance adult. RIGHT hand alone grips loaded landmine plate sleeve, RIGHT elbow bent pulled behind torso. LEFT forearm rests on LEFT FRONT THIGH, left hand empty. Bar extends sideways perpendicular to torso to anchored far end.",
+  "cells": [
+    {
+      "id": "wger-09235a96-9834-4fad-ba9a-88ace035e80a",
+      "title": "Step Calf Stretch",
+      "equipment": "Bodyweight",
+      "guideText": "Stand on a step or a sturdy raised surface with the balls of both feet on the edge and the heels hanging off, holding a rail or wall for balance. Let one or both heels drop below the level of the step until you feel a stretch through the calf, and hold. Keep the knee straight to stretch the gastrocnemius, or bend the knee slightly to bias the soleus lower down. Hold for the prescribed time, typically 30 seconds, without bouncing, then switch sides if stretching one leg at a time.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2666/view/",
+        "author": "trs1800",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "SIDE view adult standing with BALLS OF BOTH FEET on FRONT EDGE of raised step. Step visibly under TOES/FOREFOOT ONLY; HEELS hang down below step-top into open air outside edge. Both knees straight. Hands touch wall in front for balance.",
+      "reviewNote": "Reviewed forefoot-only step support with heels below edge, grounded-palm airborne tucked L-sit and unilateral landmine sleeve row with opposite arm braced on forward thigh.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected gutter and full accepted figures within source panels."
+    },
+    {
+      "id": "wger-9396a728-3da4-4390-ae4d-882395805008",
+      "title": "Tuck L-sit",
+      "equipment": "Bench",
+      "guideText": "The tuck L-sit is a bodyweight hold where you support yourself on parallel bars, parallettes, or the floor with straight arms while pulling your knees toward your chest. Your hips stay lifted, your spine stays tall, and your feet hover off the ground. The goal is to keep your core tight, shoulders depressed, and arms locked out while maintaining the tucked position. It’s a core-intensive, shoulder-stabilizing static hold often used as a progression toward the full L-sit.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1704/view/",
+        "author": "clafal",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Adult on FLOOR-supported palms (no bench or bars), straight arms alongside hips bear weight. Buttocks/hips LIFTED several inches off floor, knees tucked chest, BOTH FEET hover above floor between hands. Entire folded legs airborne. Upright torso.",
+      "reviewNote": "Reviewed forefoot-only step support with heels below edge, grounded-palm airborne tucked L-sit and unilateral landmine sleeve row with opposite arm braced on forward thigh.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected gutter and full accepted figures within source panels."
+    },
+    {
+      "id": "forma-db-plate-pinch",
+      "title": "Plate Pinch",
+      "equipment": "Specialty equipment",
+      "guideText": "Grab two wide-rimmed plates and put them together with the smooth sides facing outward\n\nUse your fingers to grip the outside part of the plate and your thumb for the other side thus holding both plates together. This is the starting position.\n\nSqueeze the plate with your fingers and thumb. Hold this position for as long as you can.\n\nRepeat for the recommended amount of sets prescribed in your program.\n\nSwitch arms and repeat the movements.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Plate_Pinch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Standing adult holds TWO distinct circular weight plates STACKED TOGETHER side by side, smooth sides outward. Working hand pinches the OUTSIDE FACES of pair using fingers on one smooth face and thumb on other. No grip through holes. Clearly visible two separate plate rims.",
+      "reviewNote": "Two plates are present, but hand appears to use the handle hole rather than pinching the outside faces.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected gutter and full accepted figures within source panels."
+    },
+    {
+      "id": "wger-28b65190-cae2-4d15-8f4e-dde0d9cc4d4b",
+      "title": "Meadows Row",
+      "equipment": "Barbell",
+      "guideText": "The Meadows row is a unilateral row performed with a landmine setup, overhand grip, and staggered stance. Lean your torso forward and grip the barbell. Rest the other forearm on the forward leg. Start this movement by driving the elbow behind you while retracting the shoulder-blade. Keep the working shoulder down. Pull toward your back hip until the elbow is level with your torso.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1304/view/",
+        "author": "carlos3c",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Side-three-quarter view staggered stance adult. RIGHT hand alone grips loaded landmine plate sleeve, RIGHT elbow bent pulled behind torso. LEFT forearm rests on LEFT FRONT THIGH, left hand empty. Bar extends sideways perpendicular to torso to anchored far end.",
+      "reviewNote": "Reviewed forefoot-only step support with heels below edge, grounded-palm airborne tucked L-sit and unilateral landmine sleeve row with opposite arm braced on forward thigh.",
+      "bounds": {
+        "x": 768,
+        "y": 512,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected gutter and full accepted figures within source panels."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-205be727-3980-46ed-bb47-1b29a0e30009.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-041.png"
+}

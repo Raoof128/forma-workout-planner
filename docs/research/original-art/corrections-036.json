@@ -1,0 +1,131 @@
+{
+  "name": "corrections-036",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-036.png",
+  "prompt": "Original FORMA exercise manual: exactly TWO COLUMNS TWO ROWS, FOUR separate large panels, landscape1536x1024. Clean white backgrounds, fully clothed varied adults, charcoal-gray clothing/equipment with lime accent, anatomically correct, physically plausible supports. No lettering/logos/watermarks. Whole figure and apparatus entirely inside own panel, generous margins. Render each POSITIVE VISUAL DESCRIPTION precisely. Avoid default generic fitness poses; geometry and hand directions are essential. \n\nRow 1 column 1: Frontal athlete with elbows at waist, forearms horizontal. Both hands grasp a straight loaded bar from ABOVE, backs of hands and knuckles face the camera/upward, fingers curl DOWN around bar, palms face FLOOR. Fully pronated forearms.\n\nRow 1 column 2: Frontal athlete holding two separate dumbbells with horizontal forearms, elbows at waist. Both forearms PRONATED, knuckles and fingernails face UP toward camera, palms toward FLOOR. Back-of-hand surface visible.\n\nRow 2 column 1: Seated athlete with upper arms on preacher pad, holds an EZ bar from ABOVE with BOTH palms toward FLOOR. Backs of hands visible from above. Pronated forearms, elbows supported.\n\nRow 2 column 2: Athlete stands holding loaded bar across thighs: LEFT hand underhand shows PALM, RIGHT hand overhand shows KNUCKLES. Hands visibly opposite orientations, elbow straight, feet slightly wider than shoulders.",
+  "cells": [
+    {
+      "id": "wger-9ce236dc-7704-4f3e-a3d0-4fea382a950b",
+      "title": "Curl de biceps con agarre prono",
+      "equipment": "Dumbbell",
+      "guideText": "POSICIÓN INICIAL: Seleccione el peso adecuado en una barra. Colóquese de pie con la barra usando un agarre prono y las manos a la anchura de los hombros. Contraiga el suelo pelvico y el core mientras mantiene su pecho levantado. EJECUCIÓN: Contrayendo los bíceps, doble los codos totalmente mientras exhala. Vuelva a la posición inicial con un suave movimiento mientras inhala.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1190/view/",
+        "author": "Franpol",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Frontal athlete with elbows at waist, forearms horizontal. Both hands grasp a straight loaded bar from ABOVE, backs of hands and knuckles face the camera/upward, fingers curl DOWN around bar, palms face FLOOR. Fully pronated forearms.",
+      "ids": [
+        "wger-9ce236dc-7704-4f3e-a3d0-4fea382a950b",
+        "db-reverse-barbell-curl",
+        "wger-2cd5e3c6-a8c0-456a-ab47-5e7b3a435407"
+      ],
+      "additionalGuideReviews": [
+        {
+          "id": "db-reverse-barbell-curl",
+          "title": "Reverse Barbell Curl",
+          "guideText": "Stand up with your torso upright while holding a barbell at shoulder width with the elbows close to the torso. The palm of your hands should be facing down (pronated grip). This will be your starting position.\n\nWhile holding the upper arms stationary, curl the weights while contracting the biceps as you breathe out. Only the forearms should move. Continue the movement until your biceps are fully contracted and the bar is at shoulder level. Hold the contracted position for a second as you squeeze the muscle.\n\nSlowly begin to bring the bar back to starting position as your breathe in.\n\nRepeat for the recommended amount of repetitions."
+        },
+        {
+          "id": "wger-2cd5e3c6-a8c0-456a-ab47-5e7b3a435407",
+          "title": "Reverse Curl",
+          "guideText": "The reverse-grip barbell curl is a variation on the biceps curl where the palms face downward. The switch from an underhand to an overhand grip brings the forearm and brachialis muscles more into the exercise."
+        }
+      ],
+      "reviewNote": "Reviewed downward-facing/knuckle-visible straight-bar reverse curl against the Spanish, straight-bar and generic reverse-curl guides, plus supported overhand EZ-bar reverse preacher curl.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 488
+      },
+      "cropReviewNote": "Inspected actual panel boundary and complete accepted figures."
+    },
+    {
+      "id": "db-standing-dumbbell-reverse-curl",
+      "title": "Standing Dumbbell Reverse Curl",
+      "equipment": "Dumbbell",
+      "guideText": "To begin, stand straight with a dumbbell in each hand using a pronated grip (palms facing down). Your arms should be fully extended while your feet are shoulder width apart from each other. This is the starting position.\n\nWhile holding the upper arms stationary, curl the weights while contracting the biceps as you breathe out. Only the forearms should move. Continue the movement until your biceps are fully contracted and the dumbbells are at shoulder level. Hold the contracted position for a second as you squeeze the muscle.\n\nSlowly begin to bring the dumbbells back to starting position as your breathe in.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Standing_Dumbbell_Reverse_Curl.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Frontal athlete holding two separate dumbbells with horizontal forearms, elbows at waist. Both forearms PRONATED, knuckles and fingernails face UP toward camera, palms toward FLOOR. Back-of-hand surface visible.",
+      "reviewNote": "Dumbbell forearms still appear supinated rather than pronated.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 488
+      },
+      "cropReviewNote": "Inspected actual panel boundary and complete accepted figures."
+    },
+    {
+      "id": "db-reverse-barbell-preacher-curls",
+      "title": "Reverse Barbell Preacher Curls",
+      "equipment": "EZ bar",
+      "guideText": "Grab an EZ-bar using a shoulder width and palms down (pronated) grip.\n\nNow place the upper part of both arms on top of the preacher bench and have your arms extended. This will be your starting position.\n\nAs you exhale, use the biceps to curl the weight up until your biceps are fully contracted and the barbell is at shoulder height. Squeeze the biceps hard for a second at the contracted position.\n\nAs you breathe in, slowly lower the barbell until your upper arms are extended and the biceps is fully stretched.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Reverse_Barbell_Preacher_Curls.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Seated athlete with upper arms on preacher pad, holds an EZ bar from ABOVE with BOTH palms toward FLOOR. Backs of hands visible from above. Pronated forearms, elbows supported.",
+      "reviewNote": "Reviewed downward-facing/knuckle-visible straight-bar reverse curl against the Spanish, straight-bar and generic reverse-curl guides, plus supported overhand EZ-bar reverse preacher curl.",
+      "bounds": {
+        "x": 0,
+        "y": 488,
+        "width": 768,
+        "height": 536
+      },
+      "cropReviewNote": "Inspected actual panel boundary and complete accepted figures."
+    },
+    {
+      "id": "wger-ee8e8db4-2d82-49e1-ab7f-891e9a354934",
+      "title": "Deadlifts",
+      "equipment": "Barbell",
+      "guideText": "Stand firmly, with your feet slightly more than shoulder wide apart. Stand directly behind the bar where it should barely touch your shin, your feet pointing a bit out. Bend down with a straight back, the knees also pointing somewhat out. Grab the bar with a shoulder wide grip, one underhand, one reverse grip. Pull the weight up. At the highest point make a slight hollow back and pull the bar back. Hold 1 or 2 seconds that position. Go down, making sure the back is not bent. Once down you can either go back again as soon as the weights touch the floor, or make a pause, depending on the weight.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/184/view/",
+        "author": "wger.de",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Athlete stands holding loaded bar across thighs: LEFT hand underhand shows PALM, RIGHT hand overhand shows KNUCKLES. Hands visibly opposite orientations, elbow straight, feet slightly wider than shoulders.",
+      "reviewNote": "Deadlift hands still both face the same direction.",
+      "bounds": {
+        "x": 768,
+        "y": 488,
+        "width": 768,
+        "height": 536
+      },
+      "cropReviewNote": "Inspected actual panel boundary and complete accepted figures."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-7e123322-e8c7-4237-8fa6-15ebf8f36326.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-036.png"
+}

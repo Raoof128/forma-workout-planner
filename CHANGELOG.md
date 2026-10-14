@@ -4,6 +4,15 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-14 — Roman-chair guide correction
+
+- Replaced a selectable save-error placeholder with a clear secured-foot
+  dumbbell hip-hinge guide. Preserved its saved identity, measurement units
+  and searchable earlier name; all 1,414 movements remain selectable.
+- Added a regression for imported save-error text. Both targeted checks
+  failed before the correction, and all 61 unit tests passed afterward.
+  Artwork review and the whole-site sweep remain in progress.
+
 ### Raouf: 2026-10-14 — Original exercise illustrations in progress
 
 - Building original AI-assisted FORMA artwork for all 1,414 selectable movements,
