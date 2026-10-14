@@ -1,0 +1,221 @@
+{
+  "name": "movements-024",
+  "columns": 4,
+  "rows": 3,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/movements-024.png",
+  "prompt": "Create beautiful ORIGINAL FORMA exercise art in a clean modern illustrated fitness manual style. Exactly FOUR columns and THREE rows, 12 equal cells, landscape 1536x1024. Each cell white with generous margins; no labels, letters, logos, borders or watermarks. Varied fully clothed adult athletes, charcoal/gray sportswear with a small lime-green accent. Correct anatomy (two arms, two legs), plausible support and weight-bearing, detailed accurate equipment, subtle shadows. Every cell is an EXACT distinct movement/variation matching its description. Show ONE clear representative working position per cell; do not show duplicate athletes, extra limbs, arrows or overlapping phases. Keep the entire athlete and apparatus inside own cell. Never swap freeweights, benches, grips or variations. Read each guide to choose a physically correct pose. Cell positions are mandatory:\nRow 1 column 1: Double Kettlebell Snatch. Equipment: Kettlebell. Exercise guide: Place two kettlebells behind your feet. Bend your knees and sit back to pick up the kettlebells. Swing the kettlebells between your legs forcefully and reverse the direction. Drive through with your hips and lock the ketttlebells overhead in one uninterrupted motion.\n\nRow 1 column 2: Double Kettlebell Windmill. Equipment: Kettlebell. Exercise guide: Place a kettlebell in front of your front foot and clean and press a kettlebell overhead with your opposite arm. Clean the kettlebell to your shoulder by extending through the legs and hips as you pull the kettlebell towards your shoulders. Rotate your wrist as you do so, so that the palm faces forward. Keeping the kettlebell locked out at all times, push your butt out in the direction of the locked out kettlebell. Turn your feet out at a forty-five degree angle from the arm with the locked out kettlebell. Bending at the hip to one side, sticking your butt out, slowly lean until you can retrieve the kettlebell from the floor. Keep your eyes on the kettlebell that you hold over your head at all times. Pause for a second after retrieving the kettlebell from the ground and reverse the motion back to the starting position.\n\nRow 1 column 3: Double Leg Butt Kick. Equipment: Bodyweight. Exercise guide: Begin standing with your knees slightly bent. Quickly squat a short distance, flexing the hips and knees, and immediately extend to jump for maximum vertical height. As you go up, tuck your heels by flexing the knees, attempting to touch the buttocks. Finish the motion by landing with the knees only partially bent, using your legs to absorb the impact.\n\nRow 1 column 4: Double Leg Calf Raise. Equipment: Bodyweight. Exercise guide: The double leg heel raise is important to strengthen and create control and stability around the ankle and knee, and provide balance and control for the hip and pelvis.\n\nRow 2 column 1: Double-Leg Abdominal Press. Equipment: Gym mat + none (bodyweight exercise). Exercise guide: Lie on your back with knees and hips bent at 90 degrees (tabletop). Place your hands on your thighs just above your knees. Push your hands against your knees as hard as possible while using your abs to pull your knees toward your hands. Hold for 10 seconds of maximum effort. Your abs should be shaking.\n\nRow 2 column 2: Downward Facing Balance. Equipment: Exercise ball. Exercise guide: Lie facedown on top of an exercise ball. While resting on your stomach on the ball, walk your hands forward along the floor and lift your legs, extending your elbows and knees.\n\nRow 2 column 3: Drag Curl. Equipment: Barbell. Exercise guide: Grab a barbell with a supinated grip (palms facing forward) and get your elbows close to your torso and back. This will be your starting position. As you exhale, curl the bar up while keeping the elbows to the back as you \"Drag\" the bar up by keeping it in contact with your torso. Tip: As you can see, you will not be keeping the elbows pinned to your sides, but instead you will be bringing them back. Also, do not lift your shoulders. Slowly go back to the starting position as you keep the bar in contact with the torso at all times. Repeat for the recommended amount of repetitions.\n\nRow 2 column 4: Drag Pushdown. Equipment: EZ bar. Exercise guide: 1. Starting position for this rope pushdown is standing facing a cable machine with the handles of a rope attachment in both hands and feet shoulder width apart. 2. Hinge forward slightly at the hips maintaining an upright chest and bring the shoulders and elbows behind the body so that when you push down on the cable attachments, you can get a fully contracted triceps long head. 3. Drag the cable machine rope attachment as close to the body as possible and straighten your elbows until lockout.\n\nRow 3 column 1: Dragon squat. Equipment: Bodyweight. Exercise guide: Start standing with your feet hip-width apart. Cross your right foot behind you to the left corner and back of the room while bending both knees. Return and repeat, alternating sides. Keep your hips and shoulders forward as you cross your feet and bend your knees.\n\nRow 3 column 2: Dragon-flag. Equipment: Bodyweight. Exercise guide: Keep your body completely rigid throughout the movement, avoiding sagging in your lower back. Use a firm grip to stabilize your upper body. Start with simpler versions (such as with bent knees) to build strength and control.\n\nRow 3 column 3: Drop Curl. Equipment: Dumbbell. Exercise guide: Drop curls in a modified position at a slow pace effectively engage the brachialis for arm width. Starting position is with both arms in a slight angle towards each other at chest height with a dumbbell in each hand. Lower one dumbbell close to full extended arm position slowly and in a controlled manner during the first half of the curl, then curl it back up to starting position, while the other dumbbell stays at its starting position. Now lower the other dumbbell down. This keeps tension on the brachialis. As we pass the 90deg mark on our way down, the biceps will take over the work.\n\nRow 3 column 4: Drop Push. Equipment: Specialty equipment. Exercise guide: Position low boxes or other platforms 2-3 feet apart. Move to a pushup position between them, supporting yourself by placing your hands on the boxes. With good posture, drop from the platforms by pressing up and moving your hands to shoulder width, cushioning your landing by absorbing the impact through the arm.",
+  "cells": [
+    {
+      "id": "db-double-kettlebell-snatch",
+      "title": "Double Kettlebell Snatch",
+      "equipment": "Kettlebell",
+      "guideText": "Place two kettlebells behind your feet. Bend your knees and sit back to pick up the kettlebells.\n\nSwing the kettlebells between your legs forcefully and reverse the direction.\n\nDrive through with your hips and lock the ketttlebells overhead in one uninterrupted motion.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Double_Kettlebell_Snatch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually reviewed against complete guide: correct support, apparatus, named grip and representative phase; intact anatomy. Compound multi-step exercises depict a valid working phase."
+    },
+    {
+      "id": "db-double-kettlebell-windmill",
+      "title": "Double Kettlebell Windmill",
+      "equipment": "Kettlebell",
+      "guideText": "Place a kettlebell in front of your front foot and clean and press a kettlebell overhead with your opposite arm. Clean the kettlebell to your shoulder by extending through the legs and hips as you pull the kettlebell towards your shoulders. Rotate your wrist as you do so, so that the palm faces forward.\n\nKeeping the kettlebell locked out at all times, push your butt out in the direction of the locked out kettlebell. Turn your feet out at a forty-five degree angle from the arm with the locked out kettlebell.\n\nBending at the hip to one side, sticking your butt out, slowly lean until you can retrieve the kettlebell from the floor. Keep your eyes on the kettlebell that you hold over your head at all times.\n\nPause for a second after retrieving the kettlebell from the ground and reverse the motion back to the starting position.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Double_Kettlebell_Windmill.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually reviewed against complete guide: correct support, apparatus, named grip and representative phase; intact anatomy. Compound multi-step exercises depict a valid working phase."
+    },
+    {
+      "id": "db-double-leg-butt-kick",
+      "title": "Double Leg Butt Kick",
+      "equipment": "Bodyweight",
+      "guideText": "Begin standing with your knees slightly bent.\n\nQuickly squat a short distance, flexing the hips and knees, and immediately extend to jump for maximum vertical height.\n\nAs you go up, tuck your heels by flexing the knees, attempting to touch the buttocks.\n\nFinish the motion by landing with the knees only partially bent, using your legs to absorb the impact.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Double_Leg_Butt_Kick.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually reviewed against complete guide: correct support, apparatus, named grip and representative phase; intact anatomy. Compound multi-step exercises depict a valid working phase."
+    },
+    {
+      "id": "wger-58ca3e51-ea64-4771-a74a-a74d29f5c40c",
+      "title": "Double Leg Calf Raise",
+      "equipment": "Bodyweight",
+      "guideText": "The double leg heel raise is important to strengthen and create control and stability around the ankle and knee, and provide balance and control for the hip and pelvis.",
+      "column": 3,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1243/view/",
+        "author": "erikocobra",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually reviewed against complete guide: correct support, apparatus, named grip and representative phase; intact anatomy. Compound multi-step exercises depict a valid working phase."
+    },
+    {
+      "id": "wger-f0823bb5-3f18-48d4-98de-cbe38f9fd8ff",
+      "title": "Double-Leg Abdominal Press",
+      "equipment": "Gym mat + none (bodyweight exercise)",
+      "guideText": "Lie on your back with knees and hips bent at 90 degrees (tabletop). Place your hands on your thighs just above your knees. Push your hands against your knees as hard as possible while using your abs to pull your knees toward your hands. Hold for 10 seconds of maximum effort. Your abs should be shaking.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1827/view/",
+        "author": "beagle",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually reviewed against complete guide: correct support, apparatus, named grip and representative phase; intact anatomy. Compound multi-step exercises depict a valid working phase."
+    },
+    {
+      "id": "db-downward-facing-balance",
+      "title": "Downward Facing Balance",
+      "equipment": "Exercise ball",
+      "guideText": "Lie facedown on top of an exercise ball.\n\nWhile resting on your stomach on the ball, walk your hands forward along the floor and lift your legs, extending your elbows and knees.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Downward_Facing_Balance.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually reviewed against complete guide: correct support, apparatus, named grip and representative phase; intact anatomy. Compound multi-step exercises depict a valid working phase."
+    },
+    {
+      "id": "db-drag-curl",
+      "title": "Drag Curl",
+      "equipment": "Barbell",
+      "guideText": "Grab a barbell with a supinated grip (palms facing forward) and get your elbows close to your torso and back. This will be your starting position.\n\nAs you exhale, curl the bar up while keeping the elbows to the back as you \"Drag\" the bar up by keeping it in contact with your torso. Tip: As you can see, you will not be keeping the elbows pinned to your sides, but instead you will be bringing them back. Also, do not lift your shoulders.\n\nSlowly go back to the starting position as you keep the bar in contact with the torso at all times.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Drag_Curl.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually reviewed against complete guide: correct support, apparatus, named grip and representative phase; intact anatomy. Compound multi-step exercises depict a valid working phase."
+    },
+    {
+      "id": "wger-02b96dc1-d1d9-4fc7-b54c-82dda1691485",
+      "title": "Drag Pushdown",
+      "equipment": "EZ bar",
+      "guideText": "1. Starting position for this rope pushdown is standing facing a cable machine with the handles of a rope attachment in both hands and feet shoulder width apart. 2. Hinge forward slightly at the hips maintaining an upright chest and bring the shoulders and elbows behind the body so that when you push down on the cable attachments, you can get a fully contracted triceps long head. 3. Drag the cable machine rope attachment as close to the body as possible and straighten your elbows until lockout.",
+      "column": 3,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1481/view/",
+        "author": "Moffi",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually reviewed against complete guide: correct support, apparatus, named grip and representative phase; intact anatomy. Compound multi-step exercises depict a valid working phase."
+    },
+    {
+      "id": "wger-8c132ea0-7885-474f-8514-0909ae22bdf6",
+      "title": "Dragon squat",
+      "equipment": "Bodyweight",
+      "guideText": "Start standing with your feet hip-width apart. Cross your right foot behind you to the left corner and back of the room while bending both knees. Return and repeat, alternating sides. Keep your hips and shoulders forward as you cross your feet and bend your knees.",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1201/view/",
+        "author": "cynomops",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually reviewed against complete guide: correct support, apparatus, named grip and representative phase; intact anatomy. Compound multi-step exercises depict a valid working phase."
+    },
+    {
+      "id": "wger-f5ad82a8-adf8-4795-9874-1f6d183c56ed",
+      "title": "Dragon-flag",
+      "equipment": "Bodyweight",
+      "guideText": "Keep your body completely rigid throughout the movement, avoiding sagging in your lower back. Use a firm grip to stabilize your upper body. Start with simpler versions (such as with bent knees) to build strength and control.",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1409/view/",
+        "author": "clafal",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Hips flex at the bench while much of torso remains supported; dragon flag needs rigid shoulder-to-ankle line with hips lifted, not a leg raise."
+    },
+    {
+      "id": "wger-15ee508d-fbd7-4acf-ab44-e35525582693",
+      "title": "Drop Curl",
+      "equipment": "Dumbbell",
+      "guideText": "Drop curls in a modified position at a slow pace effectively engage the brachialis for arm width. Starting position is with both arms in a slight angle towards each other at chest height with a dumbbell in each hand. Lower one dumbbell close to full extended arm position slowly and in a controlled manner during the first half of the curl, then curl it back up to starting position, while the other dumbbell stays at its starting position. Now lower the other dumbbell down. This keeps tension on the brachialis. As we pass the 90deg mark on our way down, the biceps will take over the work.",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1512/view/",
+        "author": "Moffi",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually reviewed against complete guide: correct support, apparatus, named grip and representative phase; intact anatomy. Compound multi-step exercises depict a valid working phase."
+    },
+    {
+      "id": "db-drop-push",
+      "title": "Drop Push",
+      "equipment": "Specialty equipment",
+      "guideText": "Position low boxes or other platforms 2-3 feet apart.\n\nMove to a pushup position between them, supporting yourself by placing your hands on the boxes.\n\nWith good posture, drop from the platforms by pressing up and moving your hands to shoulder width, cushioning your landing by absorbing the impact through the arm.",
+      "column": 3,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Drop_Push.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually reviewed against complete guide: correct support, apparatus, named grip and representative phase; intact anatomy. Compound multi-step exercises depict a valid working phase."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-b741810d-8318-4b21-a59c-a25ba9a92fae.png"
+}

@@ -1,0 +1,212 @@
+{
+  "name": "movements-050",
+  "columns": 4,
+  "rows": 3,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/movements-050.png",
+  "prompt": "Create beautiful ORIGINAL FORMA exercise art in a clean modern illustrated fitness manual style. Exactly FOUR columns and THREE rows, 12 equal cells, landscape 1536x1024. Each cell white with generous margins; no labels, letters, logos, borders or watermarks. Varied fully clothed adult athletes, charcoal/gray sportswear with a small lime-green accent. Correct anatomy (two arms, two legs), plausible support and weight-bearing, detailed accurate equipment, subtle shadows. Every cell is an EXACT distinct movement/variation matching its description. Show ONE clear representative working position per cell; do not show duplicate athletes, extra limbs, arrows or overlapping phases. Keep the entire athlete and apparatus inside own cell. Never swap freeweights, benches, grips or variations. Read each guide to choose a physically correct pose. Cell positions are mandatory:\nRow 1 column 1: Lateral Cone Hops. Equipment: Specialty equipment. Exercise guide: Position a number of cones in a row several feet apart. Stand next to the end of the cones, facing 90 degrees to the direction of travel. This will be your starting position. Begin the jump by dipping with the knees to initiate a stretch reflex, and immediately reverse direction to push off the ground, jumping up and sideways over the cone. Use your legs to absorb impact upon landing, and rebound into the next jump, continuing down the row of cones.\n\nRow 1 column 2: Lateral Push Off. Equipment: Bodyweight. Exercise guide: Push off the ground and land on one leg and regain balance before jumping to the other leg\n\nRow 1 column 3: Lateral Raise - With Bands. Equipment: Resistance band. Exercise guide: To begin, stand on an exercise band so that tension begins at arm's length. Grasp the handles using a pronated (palms facing your thighs) grip that is slightly less than shoulder width. The handles should be resting on the sides of your thighs. Your arms should be extended with a slight bend at the elbows and your back should be straight. This will be your starting position. Use your side shoulders to lift the handles to the sides as you exhale. Continue to lift the handles until they are slightly above parallel. Tip: As you lift the handles, slightly tilt the hand as if you were pouring water and keep your arms extended. Also, keep your torso stationary and pause for a second at the top of the movement. Lower the handles back down slowly to the starting position. Inhale as you perform this portion of the movement. Repeat for the recommended amount of repetitions.\n\nRow 1 column 4: Lateral Raise Isometric. Equipment: Dumbbell. Exercise guide: An isometric lateral raise is a shoulder exercise where you hold your arms out to the sides at waist height for a set amount of time instead of moving up and down\n\nRow 2 column 1: Lateral Walk. Equipment: Bodyweight. Exercise guide: Lateral walks, also known as side steps or squat walks, are a type of exercise where you move sideways in a squatting position. They can be performed with or without resistance bands. These exercises strengthen the hip abductors, glutes, and other stabilizing muscles.\n\nRow 2 column 2: Lateral-to-Front Raises. Equipment: Dumbbell. Exercise guide: -(1) Perform a lateral raise, pausing at the top of the lift (2). -Instead of lowering the weight, bring it to the front of your body so that you appear to be at the top position of a front raise. You will do this by using a Pec Fly motion, maintaining straight arms. (3) -Now lower the weight to your quadriceps, or, in other words, lower the dumbbells as though you are completing a Front Raise repetition. (4) -Reverse the motion: Perform a front raise (5), at the apex of the lift use a Reverse Fly motion to position the weights at the top of a Lateral Raise (6), and finally, lower the weights until your palms are essentially touching the sides of your thighs (7). THIS IS ONE REP. (1) l *front view*(2) -l- *FV* (3) l- *side view* (4) l *SV/FV* (5) l- *SV* (6) -l- *FV* (7) l *FV/SV*\n\nRow 2 column 3: Latissimus Dorsi-SMR. Equipment: Foam roller. Exercise guide: While lying on the floor, place a foam roll under your back and to one side, just behind your arm pit. This will be your starting position. Keep the arm of the side being stretched behind and to the side of you as you shift your weight onto your lats, keeping your upper body off of the ground. Hold for 10-30 seconds, and switch sides.\n\nRow 2 column 4: Levator scapulae stretch. Equipment: Bodyweight. Exercise guide: Starting position: Start standing up or sitting down. Turn your head to the left, around 45 degrees or just above your nipple. Place your right hand behind your back or sit on it. Take your left hand and use it to hold the back of your head. Lean your head down slightly. Steps: 1. After assuming the starting position, press your head against your left hand with slight force. Your hand should press back with equal force, so that your head doesn't move. Hold this position.\n\nRow 3 column 1: Isometric lateral neck stretch. Equipment: Bodyweight. Exercise guide: Starting position: Sit or stand with your back straight. Steps: 1. Tilt your head to the side. 2. Take the hand closer to your head and use it to grab your head from the other side. 3. Push with your hand against your head and with your head against your hand so that the forces balance out and your head stays still. 4. Maintain this tension until the end of the exercise.\n\nRow 3 column 2: Leg Curl. Equipment: Bodyweight. Exercise guide: The leg curl, also known as the hamstring curl, is an isolation exercise that targets the hamstring muscles. The exercise involves flexing the lower leg against resistance towards the buttocks. Other exercises that can be used to strengthen the hamstrings are the glute-ham raise and the deadlift.\n\nRow 3 column 3: Leg curl with elastic. Equipment: Resistance band. Exercise guide: Standing position: Place the band under your feet in the middle of your foot and grasp it with a hammer grip.\n\nRow 3 column 4: Leg Extension Isometric. Equipment: Bodyweight. Exercise guide: An isometric leg extension is a strengthening exercise where you contract your quadriceps muscles against an immovable resistance without changing the length of the muscle or moving your knee joint.",
+  "cells": [
+    {
+      "id": "db-lateral-cone-hops",
+      "title": "Lateral Cone Hops",
+      "equipment": "Specialty equipment",
+      "guideText": "Position a number of cones in a row several feet apart.\n\nStand next to the end of the cones, facing 90 degrees to the direction of travel. This will be your starting position.\n\nBegin the jump by dipping with the knees to initiate a stretch reflex, and immediately reverse direction to push off the ground, jumping up and sideways over the cone.\n\nUse your legs to absorb impact upon landing, and rebound into the next jump, continuing down the row of cones.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lateral_Cone_Hops.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "wger-45e44940-d4a0-4c66-8cbb-7afe785d5610",
+      "title": "Lateral Push Off",
+      "equipment": "Bodyweight",
+      "guideText": "Push off the ground and land on one leg and regain balance before jumping to the other leg",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1325/view/",
+        "author": "cleen",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-lateral-raise-with-bands",
+      "title": "Lateral Raise - With Bands",
+      "equipment": "Resistance band",
+      "guideText": "To begin, stand on an exercise band so that tension begins at arm's length. Grasp the handles using a pronated (palms facing your thighs) grip that is slightly less than shoulder width. The handles should be resting on the sides of your thighs. Your arms should be extended with a slight bend at the elbows and your back should be straight. This will be your starting position.\n\nUse your side shoulders to lift the handles to the sides as you exhale. Continue to lift the handles until they are slightly above parallel. Tip: As you lift the handles, slightly tilt the hand as if you were pouring water and keep your arms extended. Also, keep your torso stationary and pause for a second at the top of the movement.\n\nLower the handles back down slowly to the starting position. Inhale as you perform this portion of the movement.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Lateral_Raise_-_With_Bands.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "wger-2d580008-4918-430a-b0bd-4fcfe8783195",
+      "title": "Lateral Raise Isometric",
+      "equipment": "Dumbbell",
+      "guideText": "An isometric lateral raise is a shoulder exercise where you hold your arms out to the sides at waist height for a set amount of time instead of moving up and down",
+      "column": 3,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2538/view/",
+        "author": "HexoctusEngineering",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-c5015ed9-042b-42d3-9dac-13759ea9571e",
+      "title": "Lateral Walk",
+      "equipment": "Bodyweight",
+      "guideText": "Lateral walks, also known as side steps or squat walks, are a type of exercise where you move sideways in a squatting position. They can be performed with or without resistance bands. These exercises strengthen the hip abductors, glutes, and other stabilizing muscles.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1514/view/",
+        "author": "cozyGalvinism",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-dac3c714-f0c6-4d97-8283-17be7dd77b65",
+      "title": "Lateral-to-Front Raises",
+      "equipment": "Dumbbell",
+      "guideText": "-(1) Perform a lateral raise, pausing at the top of the lift (2). -Instead of lowering the weight, bring it to the front of your body so that you appear to be at the top position of a front raise. You will do this by using a Pec Fly motion, maintaining straight arms. (3) -Now lower the weight to your quadriceps, or, in other words, lower the dumbbells as though you are completing a Front Raise repetition. (4) -Reverse the motion: Perform a front raise (5), at the apex of the lift use a Reverse Fly motion to position the weights at the top of a Lateral Raise (6), and finally, lower the weights until your palms are essentially touching the sides of your thighs (7). THIS IS ONE REP. (1) l *front view*(2) -l- *FV* (3) l- *side view* (4) l *SV/FV* (5) l- *SV* (6) -l- *FV* (7) l *FV/SV*",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/351/view/",
+        "author": "nate303303",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-latissimus-dorsi-smr",
+      "title": "Latissimus Dorsi-SMR",
+      "equipment": "Foam roller",
+      "guideText": "While lying on the floor, place a foam roll under your back and to one side, just behind your arm pit. This will be your starting position.\n\nKeep the arm of the side being stretched behind and to the side of you as you shift your weight onto your lats, keeping your upper body off of the ground. Hold for 10-30 seconds, and switch sides.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Latissimus_Dorsi-SMR.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "wger-7f8997d2-e21f-492f-a470-b9f0c5e54f1d",
+      "title": "Levator scapulae stretch",
+      "equipment": "Bodyweight",
+      "guideText": "Starting position: Start standing up or sitting down. Turn your head to the left, around 45 degrees or just above your nipple. Place your right hand behind your back or sit on it. Take your left hand and use it to hold the back of your head. Lean your head down slightly. Steps: 1. After assuming the starting position, press your head against your left hand with slight force. Your hand should press back with equal force, so that your head doesn't move. Hold this position.",
+      "column": 3,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1013/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-2ecf2e55-c1f3-40ac-b20e-0954f41a2021",
+      "title": "Isometric lateral neck stretch",
+      "equipment": "Bodyweight",
+      "guideText": "Starting position: Sit or stand with your back straight. Steps: 1. Tilt your head to the side. 2. Take the hand closer to your head and use it to grab your head from the other side. 3. Push with your hand against your head and with your head against your hand so that the forces balance out and your head stays still. 4. Maintain this tension until the end of the exercise.",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1008/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-48836f44-efcd-4471-a456-5f024936025a",
+      "title": "Leg Curl",
+      "equipment": "Bodyweight",
+      "guideText": "The leg curl, also known as the hamstring curl, is an isolation exercise that targets the hamstring muscles. The exercise involves flexing the lower leg against resistance towards the buttocks. Other exercises that can be used to strengthen the hamstrings are the glute-ham raise and the deadlift.",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/364/view/",
+        "author": "BFad07",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-ca514fad-c6ce-47b0-93a0-dc73a3507099",
+      "title": "Leg curl with elastic",
+      "equipment": "Resistance band",
+      "guideText": "Standing position: Place the band under your feet in the middle of your foot and grasp it with a hammer grip.",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1603/view/",
+        "author": "clafal",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-88c4d3e5-3837-4c71-bb06-c45e147496cc",
+      "title": "Leg Extension Isometric",
+      "equipment": "Bodyweight",
+      "guideText": "An isometric leg extension is a strengthening exercise where you contract your quadriceps muscles against an immovable resistance without changing the length of the muscle or moving your knee joint.",
+      "column": 3,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2535/view/",
+        "author": "HexoctusEngineering",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-f8a5555d-1bc6-423c-93b6-85c405f0a024.png"
+}

@@ -1,0 +1,211 @@
+{
+  "name": "movements-038",
+  "columns": 4,
+  "rows": 3,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/movements-038.png",
+  "prompt": "Create beautiful ORIGINAL FORMA exercise art in a clean modern illustrated fitness manual style. Exactly FOUR columns and THREE rows, 12 equal cells, landscape 1536x1024. Each cell white with generous margins; no labels, letters, logos, borders or watermarks. Varied fully clothed adult athletes, charcoal/gray sportswear with a small lime-green accent. Correct anatomy (two arms, two legs), plausible support and weight-bearing, detailed accurate equipment, subtle shadows. Every cell is an EXACT distinct movement/variation matching its description. Show ONE clear representative working position per cell; do not show duplicate athletes, extra limbs, arrows or overlapping phases. Keep the entire athlete and apparatus inside own cell. Never swap freeweights, benches, grips or variations. Read each guide to choose a physically correct pose. Cell positions are mandatory:\nRow 1 column 1: Hanging Leg Raise. Equipment: Bodyweight. Exercise guide: Hang from a chin-up bar with both arms extended at arms length in top of you using either a wide grip or a medium grip. The legs should be straight down with the pelvis rolled slightly backwards. This will be your starting position. Raise your legs until the torso makes a 90-degree angle with the legs. Exhale as you perform this movement and hold the contraction for a second or so. Go back slowly to the starting position as you breathe in. Repeat for the recommended amount of repetitions.\n\nRow 1 column 2: Hanging Leg Raises. Equipment: Pull-up bar. Exercise guide: Hanging from bar or straps, bring legs up with knees extended or flexed\n\nRow 1 column 3: Hanging Pike. Equipment: Bodyweight. Exercise guide: Hang from a chin-up bar with your legs and feet together using an overhand grip (palms facing away from you) that is slightly wider than shoulder width. Tip: You may use wrist wraps in order to facilitate holding on to the bar. Now bend your knees at a 90 degree angle and bring the upper legs forward so that the calves are perpendicular to the floor while the thighs remain parallel to it. This will be your starting position. Pull your legs up as you exhale until you almost touch your shins with the bar above you. Tip: Try to straighten your legs as much as possible while at the top. Lower your legs as slowly as possible until you reach the starting position. Tip: Avoid swinging and using momentum at all times. Repeat for the recommended amount of repetitions.\n\nRow 1 column 4: Head tilts. Equipment: Bodyweight. Exercise guide: Starting position: Sit or stand with your back straight. Steps: 1. Tilt your head to one side and hold for a bit.2.Return your head to neutral position and hold for a bit. 2. Tilt your head to the other side and hold for a bit. 3. Return your head to neutral position yet again and hold for a bit. 4. Repeat.\n\nRow 2 column 1: Head turns. Equipment: Bodyweight. Exercise guide: Starting position: Sit or stand with your back straight and shoulders down. Steps: 1. Sit or stand up straight, shoulders dropped. 2. Turn your head to the side as far as possible. Stop when you hit a barrier and hold for 5 seconds. 3. Return to center position and repeat, changing sides.\n\nRow 2 column 2: Heaving Snatch Balance. Equipment: Barbell. Exercise guide: This drill helps you learn the snatch. Begin by holding a light weight across the back of the shoulders. Your feet should be slightly wider than hip width apart with the feet turned out, the same position that you would perform a squat with. Begin by dipping with the knees slightly, and popping back up to briefly unload the bar. Drive yourself underneath the bar, elevating it overhead as you descend into a full squat. Return to a standing position.\n\nRow 2 column 3: Heavy Bag Thrust. Equipment: Specialty equipment. Exercise guide: Utilize a heavy bag for this exercise. Assume an upright stance next to the bag, with your feet staggered, fairly wide apart. Place your hand on the bag at about chest height. This will be your starting position. Begin by twisting at the waist, pushing the bag forward as hard as possible. Perform this move quickly, pushing the bag away from your body. Receive the bag as it swings back by reversing these steps.\n\nRow 2 column 4: Helms Row. Equipment: Dumbbell. Exercise guide: Setup: Place your chest on the end of a bench, using a towel or anything soft to keep your chest protected. You want your chest to be in contact with the bench around the nipple line. Your back should be almost parallel to the floor Execution: When you’re starting the exercise, focus on pulling your elbows back until you feel maximum tightness in the lats. If you want to get some trap activation with the exercise, relax your shoulder blades when the weights are hanging down and then retract them as you start the rep.\n\nRow 3 column 1: Hercules Pillars. Equipment: Bodyweight. Exercise guide: Grab two cables stand in the middle so both have tension and hold\n\nRow 3 column 2: High Knee Jumps. Equipment: Bodyweight. Exercise guide: -Start with legs slightly wider than shoulder width -Drop into a bodyweight squat -As you hit the bottom of the squat, explode upwards into a jump while simultaneously tucking your knees into your chest midflight. Remain tucked until the apex of your jump. -Land on both feet, making sure your knees are not locked so as to avoid excessive strain upon your joints. Collect yourself into the next rep as quickly but under control as possible.\n\nRow 3 column 3: High Knee Skips HD. Equipment: Bodyweight. Exercise guide: You can use this exercise both as a dynamic warm-up before training and add it to your cardio training routine to burn fat. High knee skips are a plyometric exercise. Plyometrics are explosive aerobic moves that increase speed, quickness, and power and they work your whole body. High knee skips target the oblique, leg muscles, hip muscles and hip flexors and also work on the thighs, knee tendons, quadriceps and shoulders. Jumps are beneficial to your health because they combine cardiovascular conditioning with strength work. Since jumps elevate your heart rate, they can also improve your cardiovascular fitness.\n\nRow 3 column 4: High knees. Equipment: Bodyweight. Exercise guide: Starting positionStand straight. Steps: 1. Run in place, putting knees as high up as is comfortable and switching legs at a quick pace.",
+  "cells": [
+    {
+      "id": "db-hanging-leg-raise",
+      "title": "Hanging Leg Raise",
+      "equipment": "Bodyweight",
+      "guideText": "Hang from a chin-up bar with both arms extended at arms length in top of you using either a wide grip or a medium grip. The legs should be straight down with the pelvis rolled slightly backwards. This will be your starting position.\n\nRaise your legs until the torso makes a 90-degree angle with the legs. Exhale as you perform this movement and hold the contraction for a second or so.\n\nGo back slowly to the starting position as you breathe in.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hanging_Leg_Raise.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "wger-9b993e99-8701-43f0-84d6-689123183880",
+      "title": "Hanging Leg Raises",
+      "equipment": "Pull-up bar",
+      "guideText": "Hanging from bar or straps, bring legs up with knees extended or flexed",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/283/view/",
+        "author": "robhoyt",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-hanging-pike",
+      "title": "Hanging Pike",
+      "equipment": "Bodyweight",
+      "guideText": "Hang from a chin-up bar with your legs and feet together using an overhand grip (palms facing away from you) that is slightly wider than shoulder width. Tip: You may use wrist wraps in order to facilitate holding on to the bar.\n\nNow bend your knees at a 90 degree angle and bring the upper legs forward so that the calves are perpendicular to the floor while the thighs remain parallel to it. This will be your starting position.\n\nPull your legs up as you exhale until you almost touch your shins with the bar above you. Tip: Try to straighten your legs as much as possible while at the top.\n\nLower your legs as slowly as possible until you reach the starting position. Tip: Avoid swinging and using momentum at all times.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hanging_Pike.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "wger-36eaf240-db34-4d83-bba9-94d0e989c9e2",
+      "title": "Head tilts",
+      "equipment": "Bodyweight",
+      "guideText": "Starting position: Sit or stand with your back straight. Steps: 1. Tilt your head to one side and hold for a bit.2.Return your head to neutral position and hold for a bit. 2. Tilt your head to the other side and hold for a bit. 3. Return your head to neutral position yet again and hold for a bit. 4. Repeat.",
+      "column": 3,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1018/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-336e224a-a7a1-4808-9871-1ad8cfc3fee7",
+      "title": "Head turns",
+      "equipment": "Bodyweight",
+      "guideText": "Starting position: Sit or stand with your back straight and shoulders down. Steps: 1. Sit or stand up straight, shoulders dropped. 2. Turn your head to the side as far as possible. Stop when you hit a barrier and hold for 5 seconds. 3. Return to center position and repeat, changing sides.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1007/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-heaving-snatch-balance",
+      "title": "Heaving Snatch Balance",
+      "equipment": "Barbell",
+      "guideText": "This drill helps you learn the snatch. Begin by holding a light weight across the back of the shoulders. Your feet should be slightly wider than hip width apart with the feet turned out, the same position that you would perform a squat with.\n\nBegin by dipping with the knees slightly, and popping back up to briefly unload the bar. Drive yourself underneath the bar, elevating it overhead as you descend into a full squat.\n\nReturn to a standing position.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Heaving_Snatch_Balance.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "db-heavy-bag-thrust",
+      "title": "Heavy Bag Thrust",
+      "equipment": "Specialty equipment",
+      "guideText": "Utilize a heavy bag for this exercise. Assume an upright stance next to the bag, with your feet staggered, fairly wide apart. Place your hand on the bag at about chest height. This will be your starting position.\n\nBegin by twisting at the waist, pushing the bag forward as hard as possible. Perform this move quickly, pushing the bag away from your body.\n\nReceive the bag as it swings back by reversing these steps.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Heavy_Bag_Thrust.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "wger-e781dae5-90b8-4105-8aa6-82d278ac5ff5",
+      "title": "Helms Row",
+      "equipment": "Dumbbell",
+      "guideText": "Setup: Place your chest on the end of a bench, using a towel or anything soft to keep your chest protected. You want your chest to be in contact with the bench around the nipple line. Your back should be almost parallel to the floor Execution: When you’re starting the exercise, focus on pulling your elbows back until you feel maximum tightness in the lats. If you want to get some trap activation with the exercise, relax your shoulder blades when the weights are hanging down and then retract them as you start the rep.",
+      "column": 3,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1303/view/",
+        "author": "carlos3c",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-8381f40c-3168-4d98-af60-6a89800dd308",
+      "title": "Hercules Pillars",
+      "equipment": "Bodyweight",
+      "guideText": "Grab two cables stand in the middle so both have tension and hold",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/284/view/",
+        "author": "GrosseHund",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-3edbb63e-f326-4bd0-8af3-2d5deabb864f",
+      "title": "High Knee Jumps",
+      "equipment": "Bodyweight",
+      "guideText": "-Start with legs slightly wider than shoulder width -Drop into a bodyweight squat -As you hit the bottom of the squat, explode upwards into a jump while simultaneously tucking your knees into your chest midflight. Remain tucked until the apex of your jump. -Land on both feet, making sure your knees are not locked so as to avoid excessive strain upon your joints. Collect yourself into the next rep as quickly but under control as possible.",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/285/view/",
+        "author": "nate303303",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-32942c8c-0572-4d8b-9aec-48cb026fda1f",
+      "title": "High Knee Skips HD",
+      "equipment": "Bodyweight",
+      "guideText": "You can use this exercise both as a dynamic warm-up before training and add it to your cardio training routine to burn fat. High knee skips are a plyometric exercise. Plyometrics are explosive aerobic moves that increase speed, quickness, and power and they work your whole body. High knee skips target the oblique, leg muscles, hip muscles and hip flexors and also work on the thighs, knee tendons, quadriceps and shoulders. Jumps are beneficial to your health because they combine cardiovascular conditioning with strength work. Since jumps elevate your heart rate, they can also improve your cardiovascular fitness.",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1318/view/",
+        "author": "hektkaso",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-db5bd076-2f1d-4b72-9be9-610e5c3f5724",
+      "title": "High knees",
+      "equipment": "Bodyweight",
+      "guideText": "Starting positionStand straight. Steps: 1. Run in place, putting knees as high up as is comfortable and switching legs at a quick pace.",
+      "column": 3,
+      "row": 2,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/983/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-c66c54cd-e4e2-4d87-a651-049c6c0bd49c.png"
+}

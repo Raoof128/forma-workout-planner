@@ -1,0 +1,223 @@
+{
+  "name": "movements-003",
+  "columns": 4,
+  "rows": 3,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/movements-003.png",
+  "prompt": "Create beautiful ORIGINAL FORMA exercise art in a clean modern illustrated fitness manual style. Exactly FOUR columns and THREE rows, 12 equal cells, landscape 1536x1024. Each cell white with generous margins; no labels, letters, logos, borders or watermarks. Varied fully clothed adult athletes, charcoal/gray sportswear with a small lime-green accent. Correct anatomy (two arms, two legs), plausible support and weight-bearing, detailed accurate equipment, subtle shadows. Every cell is an EXACT distinct movement/variation matching its description. Show ONE clear representative working position per cell; do not show duplicate athletes, extra limbs, arrows or overlapping phases. Keep the entire athlete and apparatus inside own cell. Never swap freeweights, benches, grips or variations. Read each guide to choose a physically correct pose. Cell positions are mandatory:\nRow 1 column 1: Alternative DB Gorilla rows. Equipment: Dumbbell. Exercise guide: Slightly bent down and knees to mimic a gorilla position and pull/row up the DBs to the chest. DB stay straight (thumbs pointing up)\n\nRow 1 column 2: Ankle Circles. Equipment: Bodyweight. Exercise guide: Use a sturdy object like a squat rack to hold yourself. Lift the right leg in the air (just around 2 inches from the floor) and perform a circular motion with the big toe. Pretend that you are drawing a big circle with it. Tip: One circle equals 1 repetition. Breathe normally as you perform the movement. When you are done with the right foot, then repeat with the left leg.\n\nRow 1 column 3: ankle dorsiflexion rocks. Equipment: Bodyweight. Exercise guide: Move your knee forward, keeping your heel on the ground. Hold the position for a couple of seconds and return to the starting position.\n\nRow 1 column 4: Ankle On The Knee. Equipment: Bodyweight. Exercise guide: From a lying position, bend your knees and keep your feet on the floor. Place your ankle of one foot on your opposite knee. Grasp the thigh or knee of the bottom leg and pull both of your legs into the chest. Relax your neck and shoulders. Hold for 10-20 seconds and then switch sides.\n\nRow 2 column 1: Anterior Tibialis-SMR. Equipment: Specialty equipment. Exercise guide: Begin seated on the ground with your legs bent and your feet on the floor. Using a Muscle Roller or a rolling pin, apply pressure to the muscles on the outside of your shins. Work from just below the knee to above the ankle, pausing at points of tension for 10-30 seconds. Repeat on the other leg.\n\nRow 2 column 2: Anti-Gravity Press. Equipment: Barbell. Exercise guide: Place a bar on the ground behind the head of an incline bench. Lay on the bench face down. With a pronated grip, pick the barbell up from the floor. Flex the elbows, performing a reverse curl to bring the bar near your chest. This will be your starting position. To begin, press the barbell out in front of your head by extending your elbows. Keep your arms parallel to the ground throughout the movement. Return to the starting position and repeat to complete the set.\n\nRow 2 column 3: Arabesque. Equipment: Bodyweight. Exercise guide: Take all your weight onto one leg and you're going to maintain that position, keeping your hips and pelvis level the whole time. With your back in a neutral position you want to tilt yourself forward kicking your leg back up and then slowly with your glutes bring yourself back up to neutral.\n\nRow 2 column 4: Arch Hang. Equipment: Pull-up bar. Exercise guide: https://www.youtube.com/watch?v=C995b3KLXS4&t=7s - Elbows should stay straight - Hold it for time/reps - Start at an active hang: https://www.youtube.com/watch?v=HoE-C85ZlCE - Progress towards a 90 degree in your shoulder\n\nRow 3 column 1: Archer Pull Up. Equipment: Bodyweight. Exercise guide: An archer pull-up is an advanced bodyweight exercise that strengthens your back and biceps, serving as a progression towards a one-arm pull-up. It gets its name from the \"bow-drawing\" position your body takes at the top.Here's how to do it:1. Grip: Grasp a pull-up bar with a wider-than-shoulder-width overhand grip.2. Starting Position: Hang with arms fully extended, engaging your core and keeping your shoulder blades pulled down.3. The Pull: Pull your body up towards one hand, similar to a regular pull-up. At the same time, extend the other arm out to the side, keeping it as straight as possible. Your chin should come towards the hand that is pulling.4. Hold & Lower: Briefly hold the top position where one arm is bent and pulling, and the other is extended. Slowly lower yourself back to the starting position with control.5. Alternate: Repeat the movement, pulling up towards the opposite hand.The key to this exercise is to keep the assisting arm as straight as possible to maximise the load on the working arm. This makes it a challenging but effective exercise for unilateral pulling strength.\n\nRow 3 column 2: Arco femorale una gamba. Equipment: Bodyweight. Exercise guide: Nello specifico i muscoli coinvolti sono: bicipite femorale. muscolo semimembranoso. muscolo semitendinoso.\n\nRow 3 column 3: Arm Circles. Equipment: Bodyweight. Exercise guide: Stand up and extend your arms straight out by the sides. The arms should be parallel to the floor and perpendicular (90-degree angle) to your torso. This will be your starting position. Slowly start to make circles of about 1 foot in diameter with each outstretched arm. Breathe normally as you perform the movement. Continue the circular motion of the outstretched arms for about ten seconds. Then reverse the movement, going the opposite direction.\n\nRow 3 column 4: Arm Raises (T/Y/I). Equipment: Bodyweight. Exercise guide: Stand upright with feet hip-width apart, core engaged, and arms relaxed at your sides. From this position, perform three different arm raises to target the shoulders and upper back: * **T Raise:** Lift your arms straight out to the sides until they are parallel to the floor, forming a “T” shape. * **Y Raise:** Lift your arms upward at about a 45° angle from your body to form a “Y” shape. * **I Raise:** Raise your arms straight overhead, close together, forming an “I” shape. Maintain a neutral spine, avoid arching your lower back, and move slowly with control. Focus on squeezing your shoulder blades together and keeping your shoulders down away from your ears.",
+  "cells": [
+    {
+      "id": "wger-81015468-545f-4170-9b46-701afe77848e",
+      "title": "Alternative DB Gorilla rows",
+      "equipment": "Dumbbell",
+      "guideText": "Slightly bent down and knees to mimic a gorilla position and pull/row up the DBs to the chest. DB stay straight (thumbs pointing up)",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against full guide: correct apparatus, support/hand positions and representative phase; intact anatomy.",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1501/view/",
+        "author": "JohnPreston",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-ankle-circles",
+      "title": "Ankle Circles",
+      "equipment": "Bodyweight",
+      "guideText": "Use a sturdy object like a squat rack to hold yourself.\n\nLift the right leg in the air (just around 2 inches from the floor) and perform a circular motion with the big toe. Pretend that you are drawing a big circle with it. Tip: One circle equals 1 repetition. Breathe normally as you perform the movement.\n\nWhen you are done with the right foot, then repeat with the left leg.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against full guide: correct apparatus, support/hand positions and representative phase; intact anatomy.",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Ankle_Circles.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "wger-fa5252d3-973c-4b35-9324-a02460545283",
+      "title": "ankle dorsiflexion rocks",
+      "equipment": "Bodyweight",
+      "guideText": "Move your knee forward, keeping your heel on the ground. Hold the position for a couple of seconds and return to the starting position.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against full guide: correct apparatus, support/hand positions and representative phase; intact anatomy.",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1804/view/",
+        "author": "Davidgj32",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-ankle-on-the-knee",
+      "title": "Ankle On The Knee",
+      "equipment": "Bodyweight",
+      "guideText": "From a lying position, bend your knees and keep your feet on the floor.\n\nPlace your ankle of one foot on your opposite knee.\n\nGrasp the thigh or knee of the bottom leg and pull both of your legs into the chest. Relax your neck and shoulders. Hold for 10-20 seconds and then switch sides.",
+      "column": 3,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against full guide: correct apparatus, support/hand positions and representative phase; intact anatomy.",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Ankle_On_The_Knee.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "db-anterior-tibialis-smr",
+      "title": "Anterior Tibialis-SMR",
+      "equipment": "Specialty equipment",
+      "guideText": "Begin seated on the ground with your legs bent and your feet on the floor.\n\nUsing a Muscle Roller or a rolling pin, apply pressure to the muscles on the outside of your shins. Work from just below the knee to above the ankle, pausing at points of tension for 10-30 seconds. Repeat on the other leg.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against full guide: correct apparatus, support/hand positions and representative phase; intact anatomy.",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Anterior_Tibialis-SMR.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "db-anti-gravity-press",
+      "title": "Anti-Gravity Press",
+      "equipment": "Barbell",
+      "guideText": "Place a bar on the ground behind the head of an incline bench.\n\nLay on the bench face down. With a pronated grip, pick the barbell up from the floor. Flex the elbows, performing a reverse curl to bring the bar near your chest. This will be your starting position.\n\nTo begin, press the barbell out in front of your head by extending your elbows. Keep your arms parallel to the ground throughout the movement.\n\nReturn to the starting position and repeat to complete the set.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against full guide: correct apparatus, support/hand positions and representative phase; intact anatomy.",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Anti-Gravity_Press.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "wger-7dd7a735-c1fe-4ca0-a6e8-e825d897b065",
+      "title": "Arabesque",
+      "equipment": "Bodyweight",
+      "guideText": "Take all your weight onto one leg and you're going to maintain that position, keeping your hips and pelvis level the whole time. With your back in a neutral position you want to tilt yourself forward kicking your leg back up and then slowly with your glutes bring yourself back up to neutral.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against full guide: correct apparatus, support/hand positions and representative phase; intact anatomy.",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1141/view/",
+        "author": "cleen",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-f4291da4-09c2-4605-a90c-c926c6a92515",
+      "title": "Arch Hang",
+      "equipment": "Pull-up bar",
+      "guideText": "https://www.youtube.com/watch?v=C995b3KLXS4&t=7s\n\n- Elbows should stay straight\n- Hold it for time/reps\n- Start at an active hang: https://www.youtube.com/watch?v=HoE-C85ZlCE\n- Progress towards a 90 degree in your shoulder",
+      "column": 3,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against full guide: correct apparatus, support/hand positions and representative phase; intact anatomy.",
+      "caption": "Arch hang · Starting active-hang position; progress through the shoulder range described in the guide.",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2533/view/",
+        "author": "wintercyan",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-56808c52-050e-4c24-9f27-2657f0462499",
+      "title": "Archer Pull Up",
+      "equipment": "Bodyweight",
+      "guideText": "An archer pull-up is an advanced bodyweight exercise that strengthens your back and biceps, serving as a progression towards a one-arm pull-up. It gets its name from the \"bow-drawing\" position your body takes at the top.Here's how to do it:1. Grip: Grasp a pull-up bar with a wider-than-shoulder-width overhand grip.2. Starting Position: Hang with arms fully extended, engaging your core and keeping your shoulder blades pulled down.3. The Pull: Pull your body up towards one hand, similar to a regular pull-up. At the same time, extend the other arm out to the side, keeping it as straight as possible. Your chin should come towards the hand that is pulling.4. Hold & Lower: Briefly hold the top position where one arm is bent and pulling, and the other is extended. Slowly lower yourself back to the starting position with control.5. Alternate: Repeat the movement, pulling up towards the opposite hand.The key to this exercise is to keep the assisting arm as straight as possible to maximise the load on the working arm. This makes it a challenging but effective exercise for unilateral pulling strength.",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against full guide: correct apparatus, support/hand positions and representative phase; intact anatomy.",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1545/view/",
+        "author": "Antsy6277",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-caccd791-ff30-452a-816e-790edadb78cd",
+      "title": "Arco femorale una gamba",
+      "equipment": "Bodyweight",
+      "guideText": "Nello specifico i muscoli coinvolti sono: bicipite femorale. muscolo semimembranoso. muscolo semitendinoso.",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "held",
+      "reviewNote": "Source only names hamstring muscles; lacks movement/setup. Generated prone knee flexion does not establish the named variation. Research and regenerate.",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1294/view/",
+        "author": "clafal",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-arm-circles",
+      "title": "Arm Circles",
+      "equipment": "Bodyweight",
+      "guideText": "Stand up and extend your arms straight out by the sides. The arms should be parallel to the floor and perpendicular (90-degree angle) to your torso. This will be your starting position.\n\nSlowly start to make circles of about 1 foot in diameter with each outstretched arm. Breathe normally as you perform the movement.\n\nContinue the circular motion of the outstretched arms for about ten seconds. Then reverse the movement, going the opposite direction.",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against full guide: correct apparatus, support/hand positions and representative phase; intact anatomy.",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Arm_Circles.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "wger-e62d52fa-32f9-4747-9005-f88f05dc8334",
+      "title": "Arm Raises (T/Y/I)",
+      "equipment": "Bodyweight",
+      "guideText": "Stand upright with feet hip-width apart, core engaged, and arms relaxed at your sides. From this position, perform three different arm raises to target the shoulders and upper back: * **T Raise:** Lift your arms straight out to the sides until they are parallel to the floor, forming a “T” shape. * **Y Raise:** Lift your arms upward at about a 45° angle from your body to form a “Y” shape. * **I Raise:** Raise your arms straight overhead, close together, forming an “I” shape. Maintain a neutral spine, avoid arching your lower back, and move slowly with control. Focus on squeezing your shoulder blades together and keeping your shoulders down away from your ears.",
+      "column": 3,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against full guide: correct apparatus, support/hand positions and representative phase; intact anatomy.",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1606/view/",
+        "author": "WiNNiE",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-e16fdb46-1b0a-4dee-a951-b99cf28b4ce7.png"
+}

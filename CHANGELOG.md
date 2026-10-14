@@ -4,6 +4,26 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-14 — Original exercise illustrations in progress
+
+- Building original AI-assisted FORMA artwork for all 1,414 selectable movements,
+  with individual pose/equipment reviews and a strict complete-coverage gate.
+  Progress and held corrections are recorded in
+  [the original-art registry](docs/research/original-art/README.md).
+- Added local library thumbnails and guide imagery with lazy loading, preserved
+  proportions, readable attribution and an image-error fallback. Six focused
+  Chromium cases passed. Full generation/review and release remain pending;
+  existing live accounts and backend data are unchanged.
+
+### Raouf: 2026-10-14 — More exercise photo sources
+
+- Found 25 freely offered exercise demonstrations with photo thumbnail URLs and
+  inspected 12 Commons files. Twenty thumbnails were visually reviewed, yielding
+  preferred candidates for 10 distinct exercise IDs without publication approval.
+- Recorded per-file credits, licence conflicts and equipment/variation mismatches;
+  documented further commercial sources. No media was deployed or subscription
+  purchased. See [expanded photo research](docs/research/exercise-photos-more.md).
+
 ### Raouf: 2026-10-14 — Exercise photo research and live catalog record
 
 - Recorded live API/frontend versions and public/private catalog checks. Removed

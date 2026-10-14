@@ -9,6 +9,10 @@ exact, licensed photo coverage for every FORMA movement. A same-name result, API
 exercise relationship or muscle match cannot supply that guarantee. Equipment,
 grip, angle, stance, assistance and unilateral variations need individual review.
 
+The subsequent [expanded web search](exercise-photos-more.md) found 25 freely
+offered demonstrations with photo thumbnails and inspected 12 Commons candidates.
+Its counts and rights findings are separate from the wger snapshot below.
+
 ## Audited coverage
 
 The public wger API returned all **932 exercise records**, **383 image records**

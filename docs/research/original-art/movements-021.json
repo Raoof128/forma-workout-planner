@@ -1,0 +1,223 @@
+{
+  "name": "movements-021",
+  "columns": 4,
+  "rows": 3,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/movements-021.png",
+  "prompt": "Create beautiful ORIGINAL FORMA exercise art in a clean modern illustrated fitness manual style. Exactly FOUR columns and THREE rows, 12 equal cells, landscape 1536x1024. Each cell white with generous margins; no labels, letters, logos, borders or watermarks. Varied fully clothed adult athletes, charcoal/gray sportswear with a small lime-green accent. Correct anatomy (two arms, two legs), plausible support and weight-bearing, detailed accurate equipment, subtle shadows. Every cell is an EXACT distinct movement/variation matching its description. Show ONE clear representative working position per cell; do not show duplicate athletes, extra limbs, arrows or overlapping phases. Keep the entire athlete and apparatus inside own cell. Never swap freeweights, benches, grips or variations. Read each guide to choose a physically correct pose. Cell positions are mandatory:\nRow 1 column 1: Cycling. Equipment: Bodyweight. Exercise guide: Cycling, also called bicycling or biking, is the use of bicycles for transport, recreation, exercise or sport. People engaged in cycling are referred to as cyclists, bicyclists, or bikers. Apart from two-wheeled bicycles, cycling also includes the riding of unicycles, tricycles, quadracycles, recumbent and similar human-powered vehicles.\n\nRow 1 column 2: Dancer's Stretch. Equipment: Bodyweight. Exercise guide: Sit up on the floor. Cross your right leg over your left, keeping the knee bent. Your left leg is straight and down on the floor. Place your left arm on your right leg and your right hand on the floor. Rotate your upper body to the right, and hold for 10-20 seconds. Switch sides.\n\nRow 1 column 3: DB Skull Crushers. Equipment: Dumbbell. Exercise guide: Alike tricpes extensions, DBs fall down near the head and pushed back up. Unlike for the triceps extension tring to extend the arms as far back\n\nRow 1 column 4: DB UCV. Equipment: Dumbbell. Exercise guide: Dumbbell upper chest variance. Curl like movement up above at head level, activating chest and front delts\n\nRow 2 column 1: DB Underhand bench press. Equipment: Bench + Dumbbell. Exercise guide: Underhand grip DB, perform a normal bench press movement, keeping the elbows close to the chest\n\nRow 2 column 2: DB Upper Chest Variation. Equipment: Dumbbell. Exercise guide: Dumbbell in hand in a curl fashion, lean body into the arm to help the dumbbell up above the chest, next to the head, to activate chest and delt combo\n\nRow 2 column 3: DB Wrist Extension. Equipment: Dumbbell. Exercise guide: : Grab two dumbbells with an overhand grip and lay your forearms across your knees. : Let your wrists flex fully, then extend your wrists.\n\nRow 2 column 4: Deadhang. Equipment: Bodyweight. Exercise guide: Deadhang performed on an edge either with or without added weight (adujst edge or weight to adjust difficulty)\n\nRow 3 column 1: Deadlift with Bands. Equipment: Barbell. Exercise guide: To deadlift with short bands, simply loop them over the bar before you start, and step into them to set up. For long bands, they will need to be anchored to a secure base, such as heavy dumbbells or a rack. With your feet, and your grip set, take a big breath and then lower your hips and bend the knees until your shins contact the bar. Look forward with your head, keep your chest up and your back arched, and begin driving through the heels to move the weight upward. After the bar passes the knees, aggressively pull the bar back, pulling your shoulder blades together as you drive your hips forward into the bar. Lower the bar by bending at the hips and guiding it to the floor.\n\nRow 3 column 2: Deadlift with Chains. Equipment: Barbell. Exercise guide: You can attach the chains to the sleeves of the bar, or just drape the middle over the bar so there is a greater weight increase as you lift. Approach the bar so that it is centered over your feet. You feet should be about hip width apart. Bend at the hip to grip the bar at shoulder width, allowing your shoulder blades to protract. Typically, you would use an overhand grip or an over/under grip on heavier sets. With your feet, and your grip set, take a big breath and then lower your hips and bend the knees until your shins contact the bar. Look forward with your head, keep your chest up and your back arched, and begin driving through the heels to move the weight upward. After the bar passes the knees, aggressively pull the bar back, pulling your shoulder blades together as you drive your hips forward into the bar. Lower the bar by bending at the hips and guiding it to the floor.\n\nRow 3 column 3: Deadlifts. Equipment: Barbell. Exercise guide: Stand firmly, with your feet slightly more than shoulder wide apart. Stand directly behind the bar where it should barely touch your shin, your feet pointing a bit out. Bend down with a straight back, the knees also pointing somewhat out. Grab the bar with a shoulder wide grip, one underhand, one reverse grip. Pull the weight up. At the highest point make a slight hollow back and pull the bar back. Hold 1 or 2 seconds that position. Go down, making sure the back is not bent. Once down you can either go back again as soon as the weights touch the floor, or make a pause, depending on the weight.\n\nRow 3 column 4: Decline Barbell Bench Press. Equipment: Barbell. Exercise guide: Secure your legs at the end of the decline bench and slowly lay down on the bench. Using a medium width grip (a grip that creates a 90-degree angle in the middle of the movement between the forearms and the upper arms), lift the bar from the rack and hold it straight over you with your arms locked. The arms should be perpendicular to the floor. This will be your starting position. Tip: In order to protect your rotator cuff, it is best if you have a spotter help you lift the barbell off the rack. As you breathe in, come down slowly until you feel the bar on your lower chest. After a second pause, bring the bar back to the starting position as you breathe out and push the bar using your chest muscles. Lock your arms and squeeze your chest in the contracted position, hold for a second and then start coming down slowly again. Tip: It should take at least twice as long to go down than to come up). Repeat the movement for the prescribed amount of repetitions. When you are done, place the bar back in the rack.",
+  "cells": [
+    {
+      "id": "wger-8dedde58-a5dc-4a23-ad20-fd7cf524f8b5",
+      "title": "Cycling",
+      "equipment": "Bodyweight",
+      "guideText": "Cycling, also called bicycling or biking, is the use of bicycles for transport, recreation, exercise or sport. People engaged in cycling are referred to as cyclists, bicyclists, or bikers. Apart from two-wheeled bicycles, cycling also includes the riding of unicycles, tricycles, quadracycles, recumbent and similar human-powered vehicles.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/177/view/",
+        "author": "BFad07",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually checked against complete guide: specified apparatus, body support, grip and representative exercise phase; intact anatomy."
+    },
+    {
+      "id": "db-dancers-stretch",
+      "title": "Dancer's Stretch",
+      "equipment": "Bodyweight",
+      "guideText": "Sit up on the floor.\n\nCross your right leg over your left, keeping the knee bent. Your left leg is straight and down on the floor.\n\nPlace your left arm on your right leg and your right hand on the floor.\n\nRotate your upper body to the right, and hold for 10-20 seconds. Switch sides.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Dancers_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: specified apparatus, body support, grip and representative exercise phase; intact anatomy."
+    },
+    {
+      "id": "wger-0cbe304f-0b5f-4153-aed1-024e654dee90",
+      "title": "DB Skull Crushers",
+      "equipment": "Dumbbell",
+      "guideText": "Alike tricpes extensions, DBs fall down near the head and pushed back up. Unlike for the triceps extension tring to extend the arms as far back",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1499/view/",
+        "author": "JohnPreston",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually checked against complete guide: specified apparatus, body support, grip and representative exercise phase; intact anatomy."
+    },
+    {
+      "id": "wger-5efffab3-53dd-4c2a-9558-31e3b5cebbcc",
+      "title": "DB UCV",
+      "equipment": "Dumbbell",
+      "guideText": "Dumbbell upper chest variance. Curl like movement up above at head level, activating chest and front delts",
+      "column": 3,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1500/view/",
+        "author": "JohnPreston",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually checked against complete guide: specified apparatus, body support, grip and representative exercise phase; intact anatomy."
+    },
+    {
+      "id": "wger-7b40813b-80a3-42cc-8938-0c5199ef7620",
+      "title": "DB Underhand bench press",
+      "equipment": "Bench + Dumbbell",
+      "guideText": "Underhand grip DB, perform a normal bench press movement, keeping the elbows close to the chest",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1497/view/",
+        "author": "JohnPreston",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually checked against complete guide: specified apparatus, body support, grip and representative exercise phase; intact anatomy."
+    },
+    {
+      "id": "wger-4b23738a-67a8-41af-996d-abc53a7c3f97",
+      "title": "DB Upper Chest Variation",
+      "equipment": "Dumbbell",
+      "guideText": "Dumbbell in hand in a curl fashion, lean body into the arm to help the dumbbell up above the chest, next to the head, to activate chest and delt combo",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1496/view/",
+        "author": "JohnPreston",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Custom upper-chest curl-like guide does not describe seated incline overhead extension; generated weight/arm position is unverified."
+    },
+    {
+      "id": "wger-73646b21-62e3-493b-8d75-4179326cd404",
+      "title": "DB Wrist Extension",
+      "equipment": "Dumbbell",
+      "guideText": ": Grab two dumbbells with an overhand grip and lay your forearms across your knees. : Let your wrists flex fully, then extend your wrists.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1881/view/",
+        "author": "Deflation",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Illustration shows underhand wrist curl rather than the guide's overhand wrist extension."
+    },
+    {
+      "id": "wger-74d4697d-8a97-4ea2-9d05-fa4d2bd7221e",
+      "title": "Deadhang",
+      "equipment": "Bodyweight",
+      "guideText": "Deadhang performed on an edge either with or without added weight (adujst edge or weight to adjust difficulty)",
+      "column": 3,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/182/view/",
+        "author": "2dPREtEZP221u68Akf0JImv5L48",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually checked against complete guide: specified apparatus, body support, grip and representative exercise phase; intact anatomy."
+    },
+    {
+      "id": "db-deadlift-with-bands",
+      "title": "Deadlift with Bands",
+      "equipment": "Barbell",
+      "guideText": "To deadlift with short bands, simply loop them over the bar before you start, and step into them to set up. For long bands, they will need to be anchored to a secure base, such as heavy dumbbells or a rack.\n\nWith your feet, and your grip set, take a big breath and then lower your hips and bend the knees until your shins contact the bar. Look forward with your head, keep your chest up and your back arched, and begin driving through the heels to move the weight upward. After the bar passes the knees, aggressively pull the bar back, pulling your shoulder blades together as you drive your hips forward into the bar.\n\nLower the bar by bending at the hips and guiding it to the floor.",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Deadlift_with_Bands.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: specified apparatus, body support, grip and representative exercise phase; intact anatomy."
+    },
+    {
+      "id": "db-deadlift-with-chains",
+      "title": "Deadlift with Chains",
+      "equipment": "Barbell",
+      "guideText": "You can attach the chains to the sleeves of the bar, or just drape the middle over the bar so there is a greater weight increase as you lift.\n\nApproach the bar so that it is centered over your feet. You feet should be about hip width apart. Bend at the hip to grip the bar at shoulder width, allowing your shoulder blades to protract. Typically, you would use an overhand grip or an over/under grip on heavier sets. With your feet, and your grip set, take a big breath and then lower your hips and bend the knees until your shins contact the bar.\n\nLook forward with your head, keep your chest up and your back arched, and begin driving through the heels to move the weight upward. After the bar passes the knees, aggressively pull the bar back, pulling your shoulder blades together as you drive your hips forward into the bar.\n\nLower the bar by bending at the hips and guiding it to the floor.",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Deadlift_with_Chains.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: specified apparatus, body support, grip and representative exercise phase; intact anatomy."
+    },
+    {
+      "id": "wger-ee8e8db4-2d82-49e1-ab7f-891e9a354934",
+      "title": "Deadlifts",
+      "equipment": "Barbell",
+      "guideText": "Stand firmly, with your feet slightly more than shoulder wide apart. Stand directly behind the bar where it should barely touch your shin, your feet pointing a bit out. Bend down with a straight back, the knees also pointing somewhat out. Grab the bar with a shoulder wide grip, one underhand, one reverse grip. Pull the weight up. At the highest point make a slight hollow back and pull the bar back. Hold 1 or 2 seconds that position. Go down, making sure the back is not bent. Once down you can either go back again as soon as the weights touch the floor, or make a pause, depending on the weight.",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/184/view/",
+        "author": "wger.de",
+        "license": "CC-BY-SA 3",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Guide explicitly requires mixed grip; generated hand orientations do not clearly show it."
+    },
+    {
+      "id": "db-decline-barbell-bench-press",
+      "title": "Decline Barbell Bench Press",
+      "equipment": "Barbell",
+      "guideText": "Secure your legs at the end of the decline bench and slowly lay down on the bench.\n\nUsing a medium width grip (a grip that creates a 90-degree angle in the middle of the movement between the forearms and the upper arms), lift the bar from the rack and hold it straight over you with your arms locked. The arms should be perpendicular to the floor. This will be your starting position. Tip: In order to protect your rotator cuff, it is best if you have a spotter help you lift the barbell off the rack.\n\nAs you breathe in, come down slowly until you feel the bar on your lower chest.\n\nAfter a second pause, bring the bar back to the starting position as you breathe out and push the bar using your chest muscles. Lock your arms and squeeze your chest in the contracted position, hold for a second and then start coming down slowly again. Tip: It should take at least twice as long to go down than to come up).\n\nRepeat the movement for the prescribed amount of repetitions.\n\nWhen you are done, place the bar back in the rack.",
+      "column": 3,
+      "row": 2,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Decline_Barbell_Bench_Press.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Generated bench is incline with elevated head; decline bench press requires secured feet above head."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-bcbf4308-b64c-4f5c-b37b-12834b6b6633.png"
+}

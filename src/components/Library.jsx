@@ -13,6 +13,7 @@ import {
 import { PageHeading, Empty, Button } from "./UI";
 import { selectableExercises as exercises } from "../data";
 import ExerciseGuide from "./ExerciseGuide";
+import ExerciseMedia, { hasExerciseMedia } from "./ExerciseMedia";
 import { matchesExercise } from "../catalog/search";
 import { matchesEquipment } from "../catalog/curation.js";
 const muscleIcons = {
@@ -137,12 +138,16 @@ export default function Library() {
               className="library-card"
               onClick={() => setSelected(e)}
             >
-              <span
-                className={`muscle-illustration muscle-${e.muscle.toLowerCase()}`}
-              >
-                <Icon size={30} strokeWidth={1.4} />
-                <span>{e.muscle}</span>
-              </span>
+              {hasExerciseMedia(e.id) ? (
+                <ExerciseMedia id={e.id} name={e.name} compact />
+              ) : (
+                <span
+                  className={`muscle-illustration muscle-${e.muscle.toLowerCase()}`}
+                >
+                  <Icon size={30} strokeWidth={1.4} />
+                  <span>{e.muscle}</span>
+                </span>
+              )}
               <div>
                 <h3>{e.name}</h3>
                 <p>{e.equipment}</p>

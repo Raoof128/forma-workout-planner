@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "groups": [
+    {
+      "assetId": "forma-original-machines-04-2-2",
+      "ids": [
+        "db-close-grip-front-lat-pulldown",
+        "wger-b6054509-576f-429c-960f-73c84f481b7c",
+        "db-one-arm-lat-pulldown",
+        "wger-b86fd8df-e726-4998-a7ee-000de0f70bf0",
+        "db-underhand-cable-pulldowns",
+        "wger-76965848-9776-4be5-b879-e3c97033b80f",
+        "db-v-bar-pulldown",
+        "db-wide-grip-lat-pulldown",
+        "db-wide-grip-pulldown-behind-the-neck",
+        "db-straight-arm-pulldown",
+        "db-rope-straight-arm-pulldown"
+      ],
+      "caption": "Cable lat-pulldown station · Equipment reference; choose the attachment, grip and movement from this guide.",
+      "note": "Reviewed apparatus compatibility: each guide uses an overhead cable pulldown tower. Figure is equipment only; it does not depict or imply a front/behind-neck grip or bar/rope/D-handle attachment for every variation."
+    },
+    {
+      "assetId": "forma-original-cardio-01-1-2",
+      "ids": [
+        "db-full-range-of-motion-lat-pulldown",
+        "wger-0dd4dde7-9712-4c06-8ebe-16bc7a0b1917",
+        "wger-d788811b-be46-485a-b8a0-0d9ba7f4cf85"
+      ],
+      "caption": "Adjustable cable station · Equipment reference; follow the guide for pulley settings, grip and movement.",
+      "note": "Reviewed complete guide: standing/high/side cable variation is compatible with this dual adjustable pulley tower. No body-pose claim."
+    },
+    {
+      "assetId": "forma-original-cardio-01-3-2",
+      "ids": [
+        "db-chair-squat",
+        "db-lunge-sprint",
+        "db-smith-machine-leg-press"
+      ],
+      "caption": "Guided-bar Smith machine · Equipment reference; set safety stops and body position using this guide.",
+      "note": "Guide explicitly uses a Smith guided bar despite broad or incomplete catalog equipment labels. Reviewed bar/rail/catch identity; this is apparatus only."
+    },
+    {
+      "assetId": "forma-original-machines-03-2-1",
+      "ids": [
+        "db-calf-machine-shoulder-shrug"
+      ],
+      "caption": "Standing calf machine · Equipment reference for the padded shoulder lever described in this guide.",
+      "note": "Source guide explicitly requires calf-machine shoulder pads; catalog shoulder-press equipment label does not define the apparatus. Original illustration matches the actual guide apparatus."
+    },
+    {
+      "assetId": "forma-original-machines-04-3-2",
+      "ids": [
+        "db-lying-machine-squat"
+      ],
+      "caption": "Supported hack-squat sled · Equipment reference; follow the guide for shoulder, back and foot placement.",
+      "note": "Guide requires face-up supported back/shoulder pads and a foot platform. Reviewed hack-squat sled supports this machine squat family; no branded exact-model assertion."
+    }
+  ]
+}

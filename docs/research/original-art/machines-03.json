@@ -1,0 +1,149 @@
+{
+  "name": "machines-03",
+  "columns": 4,
+  "rows": 3,
+  "kind": "equipment_illustration",
+  "sourceGeneratedPath": "/workspace/generated_images/exec-47d51b0b-924f-4fcd-879e-472f46748aeb.png",
+  "publicPath": "/exercise-media/original/machines-03.png",
+  "prompt": "Create original FORMA gym illustrations, a precisely aligned atlas with exactly FOUR columns and THREE rows, 12 equally sized cells, landscape 1536x1024 composition. Every cell pure white, no visible borders, no labels or lettering or logos or watermarks. Same polished technical drawing style throughout: matte charcoal steel, gray padding, subtle soft gray shadow, sparse bright lime green adjustment controls. Three-quarter views, entire subject within its cell with generous margins. Each cell is a distinct physically plausible gym apparatus, no people. Mechanical pivots, supports, load paths and usable pads/handles must make functional sense. This is original art, not reproductions of existing photos. Strict row-major positions:\nRow 1, column 1: Pec deck / rear delt combination machine. seated upright back/chest pad, two overhead pivoted arms with adjustable horizontal hand grips at shoulder height, weight stack.\nRow 1, column 2: 45-degree sled leg press. reclined seat/backrest at bottom, large footplate carriage sliding on two diagonal rails upward away from seat, plate horns and catches.\nRow 1, column 3: Seated leg extension. upright padded seat/backrest, knee pivot aligned at seat edge, lever with shin roller near ankle below/forward, weight stack.\nRow 1, column 4: Prone leg curl. prone angled bench, hands grips at head end, hip pad peak, knee pivot beyond bench edge and rear ankle roller on curling lever, weight stack.\nRow 2, column 1: Seated leg curl. upright backrest/seat, upper thigh restraint just above knees, forward ankle roller supported from rear calf side on lever around knee pivot, weight stack.\nRow 2, column 2: Standing single-leg curl. slightly forward inclined chest support and hand grips, thigh support, low rear calf roller on knee-height pivoted lever for one leg, stable standing foot platform.\nRow 2, column 3: Standing calf raise machine. two high padded shoulder rests attached to vertical guided weight carriage, standing raised toe block, side hand grips, weight stack; NOT seated.\nRow 2, column 4: Seated calf raise machine. low seat, two downward knee/thigh pads on front pivoted load lever, raised toe block ahead with heel clearance, plate horn and safety catch.\nRow 3, column 1: Seated chest press machine. upright padded seat/backrest, two independent forward pressing lever arms with grips at chest height, weight stack, assist foot pedal.\nRow 3, column 2: Seated shoulder press machine. upright tall backrest/seat, two overhead pressing arms rising from grips at shoulder level toward overhead, weight stack.\nRow 3, column 3: Preacher curl machine. seat behind wide downward-sloped upper-arm support pad, two close underhand grips on front lower hinged curl lever, weight stack.\nRow 3, column 4: Hip abduction/adduction machine. upright padded seat/backrest, two splayed leg lever arms with swiveling reversible vertical knee/thigh pads and feet supports, central weight stack, credible seated hip lateral opening/closing mechanism.",
+  "cells": [
+    {
+      "title": "Pec deck / rear delt combination machine",
+      "ids": [
+        "db-butterfly",
+        "db-reverse-machine-flyes"
+      ],
+      "desc": "seated upright back/chest pad, two overhead pivoted arms with adjustable horizontal hand grips at shoulder height, weight stack",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "45-degree sled leg press",
+      "ids": [
+        "legpress",
+        "db-narrow-stance-leg-press",
+        "db-calf-press-on-the-leg-press-machine"
+      ],
+      "desc": "reclined seat/backrest at bottom, large footplate carriage sliding on two diagonal rails upward away from seat, plate horns and catches",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Seated leg extension",
+      "ids": [
+        "db-leg-extensions",
+        "db-single-leg-leg-extension"
+      ],
+      "desc": "upright padded seat/backrest, knee pivot aligned at seat edge, lever with shin roller near ankle below/forward, weight stack",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Prone leg curl",
+      "ids": [
+        "db-lying-leg-curls"
+      ],
+      "desc": "prone angled bench, hands grips at head end, hip pad peak, knee pivot beyond bench edge and rear ankle roller on curling lever, weight stack",
+      "column": 3,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Seated leg curl",
+      "ids": [
+        "db-seated-leg-curl"
+      ],
+      "desc": "upright backrest/seat, upper thigh restraint just above knees, forward ankle roller supported from rear calf side on lever around knee pivot, weight stack",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Standing single-leg curl",
+      "ids": [
+        "db-standing-leg-curl"
+      ],
+      "desc": "slightly forward inclined chest support and hand grips, thigh support, low rear calf roller on knee-height pivoted lever for one leg, stable standing foot platform",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Standing calf raise machine",
+      "ids": [
+        "db-standing-calf-raises"
+      ],
+      "desc": "two high padded shoulder rests attached to vertical guided weight carriage, standing raised toe block, side hand grips, weight stack; NOT seated",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Seated calf raise machine",
+      "ids": [
+        "db-seated-calf-raise"
+      ],
+      "desc": "low seat, two downward knee/thigh pads on front pivoted load lever, raised toe block ahead with heel clearance, plate horn and safety catch",
+      "column": 3,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Seated chest press machine",
+      "ids": [
+        "db-machine-bench-press"
+      ],
+      "desc": "upright padded seat/backrest, two independent forward pressing lever arms with grips at chest height, weight stack, assist foot pedal",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Seated shoulder press machine",
+      "ids": [
+        "db-machine-shoulder-military-press"
+      ],
+      "desc": "upright tall backrest/seat, two overhead pressing arms rising from grips at shoulder level toward overhead, weight stack",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Preacher curl machine",
+      "ids": [
+        "db-machine-preacher-curls",
+        "db-machine-bicep-curl"
+      ],
+      "desc": "seat behind wide downward-sloped upper-arm support pad, two close underhand grips on front lower hinged curl lever, weight stack",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Hip abduction/adduction machine",
+      "ids": [
+        "db-thigh-abductor",
+        "db-thigh-adductor"
+      ],
+      "desc": "upright padded seat/backrest, two splayed leg lever arms with swiveling reversible vertical knee/thigh pads and feet supports, central weight stack, credible seated hip lateral opening/closing mechanism",
+      "column": 3,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    }
+  ]
+}

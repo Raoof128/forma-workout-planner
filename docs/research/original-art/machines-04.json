@@ -1,0 +1,148 @@
+{
+  "name": "machines-04",
+  "columns": 4,
+  "rows": 3,
+  "kind": "equipment_illustration",
+  "sourceGeneratedPath": "/workspace/generated_images/exec-72c8971d-9e08-4575-a32b-f60e67f857e5.png",
+  "publicPath": "/exercise-media/original/machines-04.png",
+  "prompt": "Create original FORMA gym illustrations, a precisely aligned atlas with exactly FOUR columns and THREE rows, 12 equally sized cells, landscape 1536x1024 composition. Every cell pure white, no visible borders, no labels or lettering or logos or watermarks. Same polished technical drawing style throughout: matte charcoal steel, gray padding, subtle soft gray shadow, sparse bright lime green adjustment controls. Three-quarter views, entire subject within its cell with generous margins. Each cell is a distinct physically plausible gym apparatus, no people. Mechanical pivots, supports, load paths and usable pads/handles must make functional sense. This is original art, not reproductions of existing photos. Strict row-major positions:\nRow 1, column 1: Glute ham developer. horizontal raised front rounded paired hip/knee pad, adjustable rear footplate with four ankle rollers, robust frame and steps.\nRow 1, column 2: Reverse hyperextension machine. high horizontal torso pad with front hand grips, hips project off back edge; pendulum load lever hanging under rear edge with ankle strap attachment and plate horns.\nRow 1, column 3: Seated pullover machine. upright seat/backrest with lap restraint, high overhead pivot arc lever, two upper-arm/elbow pads and entry foot lever, weight stack.\nRow 1, column 4: Seated abdominal crunch machine. upright seat, overhead paired grip/elbow supports on pivoting forward crunch arm and lower foot/ankle restraints on linked lower curling lever, weight stack.\nRow 2, column 1: Plate-loaded high row. seated chest support, thigh restraint, independent lever handles start high overhead ahead of seated user then pull down/back to chest, plate horns on lever.\nRow 2, column 2: Chest-supported seated row machine. upright adjustable seat, chest support facing toward two forward neutral pull handles at chest level, weight stack and forward footplates.\nRow 2, column 3: Plate-loaded iso row. seated chest support, two independent low/front pivoted lever arms, pull handles at chest level, weight horns, foot supports.\nRow 2, column 4: Plate-loaded shrug/deadlift lever machine. low wide frame, standing gap BETWEEN two lever handles at thigh height, rear/base pivots, loaded plate horns ahead of each lever, broad standing platform, no seat.\nRow 3, column 1: Seated dip/triceps press machine. upright seat/backrest, two side pivoted lever grips beside lower ribs press down toward seat, lap restraint, weight stack.\nRow 3, column 2: Seated lateral raise machine. upright seat/backrest, two padded elbow/upper arm rollers on outward-upward shoulder-height pivoted lever arms, short hand grips beside rollers, weight stack.\nRow 3, column 3: Cable lat pulldown station. upright seat with adjustable thigh pads, overhead long lat bar hanging freely from central cable pulley well above seated user, tall weight stack.\nRow 3, column 4: 45-degree hack squat sled. large angled fixed foot platform at base, padded backrest and two shoulder pads on diagonally sliding rail carriage, plate horns and lockout catches; no sitting seat.",
+  "cells": [
+    {
+      "title": "Glute ham developer",
+      "ids": [
+        "db-glute-ham-raise"
+      ],
+      "desc": "horizontal raised front rounded paired hip/knee pad, adjustable rear footplate with four ankle rollers, robust frame and steps",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Reverse hyperextension machine",
+      "ids": [
+        "db-reverse-hyperextension"
+      ],
+      "desc": "high horizontal torso pad with front hand grips, hips project off back edge; pendulum load lever hanging under rear edge with ankle strap attachment and plate horns",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "held",
+      "reviewNote": "Pendulum mechanism present but ankle attachment absent/unclear; regenerate before use."
+    },
+    {
+      "title": "Seated pullover machine",
+      "ids": [
+        "forma-machine-pullover"
+      ],
+      "desc": "upright seat/backrest with lap restraint, high overhead pivot arc lever, two upper-arm/elbow pads and entry foot lever, weight stack",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Seated abdominal crunch machine",
+      "ids": [
+        "db-ab-crunch-machine",
+        "wger-401989e0-64c3-459d-bc47-2c171ab4f41d"
+      ],
+      "desc": "upright seat, overhead paired grip/elbow supports on pivoting forward crunch arm and lower foot/ankle restraints on linked lower curling lever, weight stack",
+      "column": 3,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Plate-loaded high row",
+      "ids": [
+        "db-leverage-high-row"
+      ],
+      "desc": "seated chest support, thigh restraint, independent lever handles start high overhead ahead of seated user then pull down/back to chest, plate horns on lever",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Chest-supported seated row machine",
+      "ids": [
+        "wger-af11a7c1-876c-455b-b59a-d8456a99d6e5"
+      ],
+      "desc": "upright adjustable seat, chest support facing toward two forward neutral pull handles at chest level, weight stack and forward footplates",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Plate-loaded iso row",
+      "ids": [
+        "db-leverage-iso-row"
+      ],
+      "desc": "seated chest support, two independent low/front pivoted lever arms, pull handles at chest level, weight horns, foot supports",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Plate-loaded shrug/deadlift lever machine",
+      "ids": [
+        "db-leverage-shrug",
+        "db-leverage-deadlift"
+      ],
+      "desc": "low wide frame, standing gap BETWEEN two lever handles at thigh height, rear/base pivots, loaded plate horns ahead of each lever, broad standing platform, no seat",
+      "column": 3,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Seated dip/triceps press machine",
+      "ids": [
+        "db-dip-machine",
+        "wger-6c671e43-497f-4863-8d78-b592f3b5e7c6"
+      ],
+      "desc": "upright seat/backrest, two side pivoted lever grips beside lower ribs press down toward seat, lap restraint, weight stack",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Seated lateral raise machine",
+      "ids": [
+        "wger-dc87b735-016c-410b-915c-e3521fea4be7"
+      ],
+      "desc": "upright seat/backrest, two padded elbow/upper arm rollers on outward-upward shoulder-height pivoted lever arms, short hand grips beside rollers, weight stack",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "Cable lat pulldown station",
+      "ids": [
+        "pulldown"
+      ],
+      "desc": "upright seat with adjustable thigh pads, overhead long lat bar hanging freely from central cable pulley well above seated user, tall weight stack",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    },
+    {
+      "title": "45-degree hack squat sled",
+      "ids": [
+        "db-hack-squat",
+        "db-narrow-stance-hack-squats",
+        "wger-95a9cc46-270e-45f2-8a17-5665a23ff70b"
+      ],
+      "desc": "large angled fixed foot platform at base, padded backrest and two shoulder pads on diagonally sliding rail carriage, plate horns and lockout catches; no sitting seat",
+      "column": 3,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: described seat/support, functional load lever, handles/pads and equipment identity match current guide; equipment reference, not a demonstration."
+    }
+  ]
+}

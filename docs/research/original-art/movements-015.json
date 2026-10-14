@@ -1,0 +1,217 @@
+{
+  "name": "movements-015",
+  "columns": 4,
+  "rows": 3,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/movements-015.png",
+  "prompt": "Create beautiful ORIGINAL FORMA exercise art in a clean modern illustrated fitness manual style. Exactly FOUR columns and THREE rows, 12 equal cells, landscape 1536x1024. Each cell white with generous margins; no labels, letters, logos, borders or watermarks. Varied fully clothed adult athletes, charcoal/gray sportswear with a small lime-green accent. Correct anatomy (two arms, two legs), plausible support and weight-bearing, detailed accurate equipment, subtle shadows. Every cell is an EXACT distinct movement/variation matching its description. Show ONE clear representative working position per cell; do not show duplicate athletes, extra limbs, arrows or overlapping phases. Keep the entire athlete and apparatus inside own cell. Never swap freeweights, benches, grips or variations. Read each guide to choose a physically correct pose. Cell positions are mandatory:\nRow 1 column 1: Car Drivers. Equipment: Barbell. Exercise guide: While standing upright, hold a barbell plate in both hands at the 3 and 9 o'clock positions. Your palms should be facing each other and your arms should be extended straight out in front of you. This will be your starting position. Initiate the movement by rotating the plate as far to one side as possible. Use the same type of movement you would use to turn a steering wheel to one side. Reverse the motion, turning it all the way to the opposite side. Repeat for the recommended amount of repetitions.\n\nRow 1 column 2: Carioca Quick Step. Equipment: Bodyweight. Exercise guide: Begin with your feet a few inches apart and your left arm up in a relaxed, athletic position. With your right foot, quick step behind and pull the knee up. Fire your arms back up when you pull the right knee, being sure that your knee goes straight up and down. Avoid turning your feet as you move and continue to look forward as you move to the side.\n\nRow 1 column 3: Cat Plank. Equipment: Bodyweight. Exercise guide: On your fours and raise the knees of the floor ever so slightly. Curl your back out and push back from your shoulders as to resemble a cat making itself look large.\n\nRow 1 column 4: Cat Stretch. Equipment: Bodyweight. Exercise guide: Position yourself on the floor on your hands and knees. Pull your belly in and round your spine, lower back, shoulders, and neck, letting your head drop. Hold for 15 seconds.\n\nRow 2 column 1: Cat-Cow. Equipment: Bodyweight. Exercise guide: On all fours. Arch spine up (cat) then drop it down (cow). Breathe with movement.\n\nRow 2 column 2: Catch and Overhead Throw. Equipment: Medicine ball. Exercise guide: Begin standing while facing a wall or a partner. Using both hands, position the ball behind your head, stretching as much as possible, and forcefully throw the ball forward. Ensure that you follow your throw through, being prepared to receive your rebound from your throw. If you are throwing against the wall, make sure that you stand close enough to the wall to receive the rebound, and aim a little higher than you would with a partner.\n\nRow 2 column 3: Chain Handle Extension. Equipment: Specialty equipment. Exercise guide: You will need two cable handle attachments and a flat bench, as well as chains, for this exercise. Clip the middle of the chains to the handles, and position yourself on the flat bench. Your elbows should be pointing straight up. Begin by extending through the elbow, keeping your upper arm still, with your wrists pronated. Pause at the lockout, and reverse the motion to return to the starting position.\n\nRow 2 column 4: Chain Press. Equipment: Specialty equipment. Exercise guide: Begin by connecting the chains to the cable handle attachments. Position yourself on the flat bench in the same position as for a dumbbell press. Your wrists should be pronated and arms perpendicular to the floor. This will be your starting position. Lower the chains by flexing the elbows, unloading some of the chain onto the floor. Continue until your elbow forms a 90 degree angle, and then reverse the motion by extending through the elbow to lockout.\n\nRow 3 column 1: Chair Leg Extended Stretch. Equipment: Specialty equipment. Exercise guide: Sit upright in a chair and grip the seat on the sides. Raise one leg, extending the knee, flexing the ankle as you do so. Slowly move that leg outward as far as you can, and then back to the center and down. Repeat for your other leg.\n\nRow 3 column 2: Chair Lower Back Stretch. Equipment: Bodyweight. Exercise guide: Sit upright on a chair. Bend to one side with your arm over your head. You can hold onto the chair with your free hand. Hold for 10 seconds, and repeat for your other side.\n\nRow 3 column 3: Chair Upper Body Stretch. Equipment: Specialty equipment. Exercise guide: Sit on the edge of a chair, gripping the back of it. Straighten your arms, keeping your back straight, and pull your upper body forward so you feel a stretch. Hold for 20-30 seconds.\n\nRow 3 column 4: Chest And Front Of Shoulder Stretch. Equipment: Specialty equipment. Exercise guide: Start off by standing with your legs together, holding a bodybar or a broomstick. Take a slightly wider than shoulder width grip on the pole and hold it in front of you with your palms facing down. Carefully lift the pole up and behind your head.",
+  "cells": [
+    {
+      "id": "db-car-drivers",
+      "title": "Car Drivers",
+      "equipment": "Barbell",
+      "guideText": "While standing upright, hold a barbell plate in both hands at the 3 and 9 o'clock positions. Your palms should be facing each other and your arms should be extended straight out in front of you. This will be your starting position.\n\nInitiate the movement by rotating the plate as far to one side as possible. Use the same type of movement you would use to turn a steering wheel to one side.\n\nReverse the motion, turning it all the way to the opposite side.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Car_Drivers.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "db-carioca-quick-step",
+      "title": "Carioca Quick Step",
+      "equipment": "Bodyweight",
+      "guideText": "Begin with your feet a few inches apart and your left arm up in a relaxed, athletic position.\n\nWith your right foot, quick step behind and pull the knee up.\n\nFire your arms back up when you pull the right knee, being sure that your knee goes straight up and down. Avoid turning your feet as you move and continue to look forward as you move to the side.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Carioca_Quick_Step.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "wger-b02825ca-bbe4-4a07-a162-2b7a6c0a662b",
+      "title": "Cat Plank",
+      "equipment": "Bodyweight",
+      "guideText": "On your fours and raise the knees of the floor ever so slightly. Curl your back out and push back from your shoulders as to resemble a cat making itself look large.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1911/view/",
+        "author": "cybro",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "db-cat-stretch",
+      "title": "Cat Stretch",
+      "equipment": "Bodyweight",
+      "guideText": "Position yourself on the floor on your hands and knees.\n\nPull your belly in and round your spine, lower back, shoulders, and neck, letting your head drop.\n\nHold for 15 seconds.",
+      "column": 3,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Cat_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "wger-5c4065d5-5e0a-4155-92e5-34a080587a64",
+      "title": "Cat-Cow",
+      "equipment": "Bodyweight",
+      "guideText": "On all fours. Arch spine up (cat) then drop it down (cow). Breathe with movement.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1938/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "db-catch-and-overhead-throw",
+      "title": "Catch and Overhead Throw",
+      "equipment": "Medicine ball",
+      "guideText": "Begin standing while facing a wall or a partner.\n\nUsing both hands, position the ball behind your head, stretching as much as possible, and forcefully throw the ball forward.\n\nEnsure that you follow your throw through, being prepared to receive your rebound from your throw. If you are throwing against the wall, make sure that you stand close enough to the wall to receive the rebound, and aim a little higher than you would with a partner.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Catch_and_Overhead_Throw.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "db-chain-handle-extension",
+      "title": "Chain Handle Extension",
+      "equipment": "Specialty equipment",
+      "guideText": "You will need two cable handle attachments and a flat bench, as well as chains, for this exercise. Clip the middle of the chains to the handles, and position yourself on the flat bench. Your elbows should be pointing straight up.\n\nBegin by extending through the elbow, keeping your upper arm still, with your wrists pronated.\n\nPause at the lockout, and reverse the motion to return to the starting position.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Chain_Handle_Extension.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Chains incorrectly appear connected to overhead cables; chain-handle extension needs free-hanging chain load from the handles."
+    },
+    {
+      "id": "db-chain-press",
+      "title": "Chain Press",
+      "equipment": "Specialty equipment",
+      "guideText": "Begin by connecting the chains to the cable handle attachments. Position yourself on the flat bench in the same position as for a dumbbell press. Your wrists should be pronated and arms perpendicular to the floor. This will be your starting position.\n\nLower the chains by flexing the elbows, unloading some of the chain onto the floor.\n\nContinue until your elbow forms a 90 degree angle, and then reverse the motion by extending through the elbow to lockout.",
+      "column": 3,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Chain_Press.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "db-chair-leg-extended-stretch",
+      "title": "Chair Leg Extended Stretch",
+      "equipment": "Specialty equipment",
+      "guideText": "Sit upright in a chair and grip the seat on the sides.\n\nRaise one leg, extending the knee, flexing the ankle as you do so.\n\nSlowly move that leg outward as far as you can, and then back to the center and down.\n\nRepeat for your other leg.",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Chair_Leg_Extended_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "db-chair-lower-back-stretch",
+      "title": "Chair Lower Back Stretch",
+      "equipment": "Bodyweight",
+      "guideText": "Sit upright on a chair.\n\nBend to one side with your arm over your head. You can hold onto the chair with your free hand.\n\nHold for 10 seconds, and repeat for your other side.",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Chair_Lower_Back_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "db-chair-upper-body-stretch",
+      "title": "Chair Upper Body Stretch",
+      "equipment": "Specialty equipment",
+      "guideText": "Sit on the edge of a chair, gripping the back of it.\n\nStraighten your arms, keeping your back straight, and pull your upper body forward so you feel a stretch. Hold for 20-30 seconds.",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Chair_Upper_Body_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Guide references stretching using the chair back; generated pose adds a second chair and does not establish that described setup."
+    },
+    {
+      "id": "db-chest-and-front-of-shoulder-stretch",
+      "title": "Chest And Front Of Shoulder Stretch",
+      "equipment": "Specialty equipment",
+      "guideText": "Start off by standing with your legs together, holding a bodybar or a broomstick.\n\nTake a slightly wider than shoulder width grip on the pole and hold it in front of you with your palms facing down.\n\nCarefully lift the pole up and behind your head.",
+      "column": 3,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Chest_And_Front_Of_Shoulder_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-6669a1e1-833f-4ee2-907f-65f3526ab396.png"
+}

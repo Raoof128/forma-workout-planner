@@ -1,0 +1,131 @@
+{
+  "name": "cable-config-01",
+  "columns": 3,
+  "rows": 3,
+  "kind": "equipment_illustration",
+  "sourceGeneratedPath": "/workspace/generated_images/exec-12f843d1-a391-48ac-8c75-648d2c3e3f5c.png",
+  "publicPath": "/exercise-media/original/cable-config-01.png",
+  "prompt": "Create original FORMA gym apparatus technical illustrations, precisely aligned atlas with exactly THREE columns and THREE rows, nine equal SQUARE cells, square composition 1024x1024 or1536x1536. Pure white, no borders, text, labels, logos, watermarks or people. Premium charcoal/gray machinery, subtle lime-green adjustment controls and soft ground shadows, three-quarter views. Entire apparatus contained within each cell with margins. Functional real mechanisms; each configuration has all specified equipment in correct relative places. Row-major cells:\nRow 1, column 1: Seated low cable row station. long flat low seated bench facing front weight stack, pair angled FOOTPLATES ahead of seat, LOW forward cable pulley and neutral V handle, spare rope attachment and small step platform on side.\nRow 1, column 2: Cable station with flat bench. two independent full-height adjustable cable towers, long horizontal FLAT padded bench centered between them, pulleys adjustable full range, spare straight curl bar and rope neatly on floor.\nRow 1, column 3: Cable station with incline bench. two independent adjustable cable towers each with high/low pulley carriage, central adjustable bench backrest set45degrees, seat below and feet stable frame, spare narrow straight cable bar.\nRow 2, column 1: Cable station with upright seated support. dual adjustable cable towers, central seated bench with upright80degree tall backrest and low seat, pulley carriages at shoulder height, independent single-hand grips, cable height can adjust.\nRow 2, column 2: Preacher bench facing low cable. single tall weight stack cable tower, low pulley connected by taut cable to short straight curl bar on front of a separate preacher bench, inclined upper-arm rest and seat behind it.\nRow 2, column 3: Bosu half-ball with dual low cables. two adjustable cable towers with pulleys at floor level and hand grips, centered flat-base half-sphere balance dome on floor, no bench.\nRow 3, column 1: Stability ball with adjustable cable. single tall adjustable weight-stack cable tower with mid-height pulley and Dhandle, large inflated gray exercise ball on floor beside tower.\nRow 3, column 2: High-low cable tower and floor mat. one full-height adjustable cable weight stack tower with movable pulley carriage, floor mat in front, short cable bar and padded two-ankle strap attachment on floor; spare D handle.\nRow 3, column 3: Flat forearm support bench at low cable. single fullheight weightstack tower with very low cable pulley, horizontal low padded bench in front, straight small cable bar on end of taut cable level with bench top for wrist curls.",
+  "cells": [
+    {
+      "title": "Seated low cable row station",
+      "ids": [
+        "db-cable-rope-rear-delt-rows",
+        "db-elevated-cable-rows",
+        "db-low-cable-triceps-extension",
+        "db-low-pulley-row-to-neck",
+        "wger-0ecfec6f-5d0f-4e8a-8d37-f6203a8923b8",
+        "db-seated-cable-rows",
+        "db-seated-one-arm-cable-pulley-rows"
+      ],
+      "desc": "long flat low seated bench facing front weight stack, pair angled FOOTPLATES ahead of seat, LOW forward cable pulley and neutral V handle, spare rope attachment and small step platform on side",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: depicted cable tower, pulley mechanism, bench/foot support/ball configuration matches required equipment family. Selected movement guides determine precise attachment, pulley setting and bench placement; this is labelled an equipment reference."
+    },
+    {
+      "title": "Cable station with flat bench",
+      "ids": [
+        "wger-b1bf02cf-17b2-4bfc-a5b0-4ff7a2768dbb",
+        "db-cable-lying-triceps-extension",
+        "db-cable-seated-crunch",
+        "db-cable-seated-lateral-raise",
+        "db-flat-bench-cable-flyes",
+        "db-kneeling-cable-triceps-extension",
+        "db-lying-close-grip-bar-curl-on-high-pulley"
+      ],
+      "desc": "two independent full-height adjustable cable towers, long horizontal FLAT padded bench centered between them, pulleys adjustable full range, spare straight curl bar and rope neatly on floor",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: depicted cable tower, pulley mechanism, bench/foot support/ball configuration matches required equipment family. Selected movement guides determine precise attachment, pulley setting and bench placement; this is labelled an equipment reference."
+    },
+    {
+      "title": "Cable station with incline bench",
+      "ids": [
+        "db-cable-incline-pushdown",
+        "db-cable-incline-triceps-extension",
+        "db-incline-cable-chest-press",
+        "db-incline-cable-flye",
+        "wger-c4185277-1d30-4684-9bc0-024ab7f2336a"
+      ],
+      "desc": "two independent adjustable cable towers each with high/low pulley carriage, central adjustable bench backrest set45degrees, seat below and feet stable frame, spare narrow straight cable bar",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: depicted cable tower, pulley mechanism, bench/foot support/ball configuration matches required equipment family. Selected movement guides determine precise attachment, pulley setting and bench placement; this is labelled an equipment reference."
+    },
+    {
+      "title": "Cable station with upright seated support",
+      "ids": [
+        "db-cable-chest-press",
+        "wger-139772c6-e401-4281-8aa6-c7ff7fb49f6a",
+        "db-seated-cable-shoulder-press",
+        "wger-c1a9297d-6786-45dc-9047-5539fb61db9c"
+      ],
+      "desc": "dual adjustable cable towers, central seated bench with upright80degree tall backrest and low seat, pulley carriages at shoulder height, independent single-hand grips, cable height can adjust",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: depicted cable tower, pulley mechanism, bench/foot support/ball configuration matches required equipment family. Selected movement guides determine precise attachment, pulley setting and bench placement; this is labelled an equipment reference."
+    },
+    {
+      "title": "Preacher bench facing low cable",
+      "ids": [
+        "db-cable-preacher-curl"
+      ],
+      "desc": "single tall weight stack cable tower, low pulley connected by taut cable to short straight curl bar on front of a separate preacher bench, inclined upper-arm rest and seat behind it",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: depicted cable tower, pulley mechanism, bench/foot support/ball configuration matches required equipment family. Selected movement guides determine precise attachment, pulley setting and bench placement; this is labelled an equipment reference."
+    },
+    {
+      "title": "Bosu half-ball with dual low cables",
+      "ids": [
+        "db-bosu-ball-cable-crunch-with-side-bends"
+      ],
+      "desc": "two adjustable cable towers with pulleys at floor level and hand grips, centered flat-base half-sphere balance dome on floor, no bench",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: depicted cable tower, pulley mechanism, bench/foot support/ball configuration matches required equipment family. Selected movement guides determine precise attachment, pulley setting and bench placement; this is labelled an equipment reference."
+    },
+    {
+      "title": "Stability ball with adjustable cable",
+      "ids": [
+        "db-cable-russian-twists"
+      ],
+      "desc": "single tall adjustable weight-stack cable tower with mid-height pulley and Dhandle, large inflated gray exercise ball on floor beside tower",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: depicted cable tower, pulley mechanism, bench/foot support/ball configuration matches required equipment family. Selected movement guides determine precise attachment, pulley setting and bench placement; this is labelled an equipment reference."
+    },
+    {
+      "title": "High-low cable tower and floor mat",
+      "ids": [
+        "db-cable-internal-rotation",
+        "db-cable-reverse-crunch",
+        "db-lying-cable-curl"
+      ],
+      "desc": "one full-height adjustable cable weight stack tower with movable pulley carriage, floor mat in front, short cable bar and padded two-ankle strap attachment on floor; spare D handle",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: depicted cable tower, pulley mechanism, bench/foot support/ball configuration matches required equipment family. Selected movement guides determine precise attachment, pulley setting and bench placement; this is labelled an equipment reference."
+    },
+    {
+      "title": "Flat forearm support bench at low cable",
+      "ids": [
+        "db-cable-wrist-curl"
+      ],
+      "desc": "single fullheight weightstack tower with very low cable pulley, horizontal low padded bench in front, straight small cable bar on end of taut cable level with bench top for wrist curls",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: depicted cable tower, pulley mechanism, bench/foot support/ball configuration matches required equipment family. Selected movement guides determine precise attachment, pulley setting and bench placement; this is labelled an equipment reference."
+    }
+  ]
+}

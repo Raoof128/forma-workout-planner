@@ -1,0 +1,694 @@
+{
+  "reviewedDate": "2026-10-14",
+  "fetches": [
+    {
+      "name": "search-0",
+      "url": "https://www.bing.com/search?q=exercise%20photography%20library%20licensing%20fitness%20app",
+      "finalUrl": "https://www.bing.com/search?q=exercise%20photography%20library%20licensing%20fitness%20app",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 332717,
+      "sha256": "3643b1b66da3f4a2ef1312f2aeb3c4c5a0dc15267e336f79da5d2bf34bbf5fc2"
+    },
+    {
+      "name": "search-1",
+      "url": "https://www.bing.com/search?q=exercise%20photos%20API%20commercial%20license",
+      "finalUrl": "https://www.bing.com/search?q=exercise%20photos%20API%20commercial%20license",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 273257,
+      "sha256": "b67cec019e199c3ab7ffbe17d3d099cf82d923941a2d6e6b4cc9a499dd21b6d0"
+    },
+    {
+      "name": "search-2",
+      "url": "https://www.bing.com/search?q=machine%20exercise%20photo%20library%20license",
+      "finalUrl": "https://www.bing.com/search?q=machine%20exercise%20photo%20library%20license",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 416298,
+      "sha256": "1e6cd95d130deec03b7d1bd955144c0e1ab07b0854234b50f988b86e9e68435f"
+    },
+    {
+      "name": "search-3",
+      "url": "https://www.bing.com/search?q=Wikimedia%20Commons%20strength%20training%20exercise%20photos",
+      "finalUrl": "https://www.bing.com/search?q=Wikimedia%20Commons%20strength%20training%20exercise%20photos",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 357380,
+      "sha256": "4db0aa6e66d2f04344618332b80f1cbba937c238d247ef2dc6c7fc27012682e0"
+    },
+    {
+      "name": "commons-api",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=filetype%3Abitmap%20leg%20press%20exercise&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=url%7Cextmetadata",
+      "finalUrl": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=filetype%3Abitmap%20leg%20press%20exercise&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=url%7Cextmetadata",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 83995,
+      "sha256": "1563b57a9d45b70349f2f923c981808b795e3d5a51976c29c7c4abb84f44a291"
+    },
+    {
+      "name": "gymvisual-home",
+      "url": "https://gymvisual.com/",
+      "finalUrl": "https://gymvisual.com/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 78383,
+      "sha256": "8e7cff80cfca01b14833ad41bee3eb4a9af4852458e46ad7ab5d19bc9d08a0f0"
+    },
+    {
+      "name": "exrx-licensing",
+      "url": "https://exrx.net/Store/Licensing",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "physitrack-library",
+      "url": "https://www.physitrack.com/exercise-library",
+      "finalUrl": "https://www.physitrack.com/exercise-library",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 588632,
+      "sha256": "2e4e0a91884ac8af66c8f3eccf978011471ff816c2c06f0d1b95bd9659db9b70"
+    },
+    {
+      "name": "physiotools-home",
+      "url": "https://www.physiotools.com/",
+      "finalUrl": "https://login.physiotoolsonline.com/physiotools_login.html",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 15250,
+      "sha256": "7a1e6498a64ebb596748fa65b90b5ab9c3fe06ad2dec17a5931cecbb4c6e7693"
+    },
+    {
+      "name": "fitlifemedia",
+      "url": "https://www.fitlifemedia.com/",
+      "finalUrl": "https://www.fitlifemedia.com/",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 114,
+      "sha256": "6dc9c7fc93bb488bb0520a6c780a8d3c0fb5486a4711aca49b4c53fac7393023"
+    },
+    {
+      "name": "musclewiki-api",
+      "url": "https://musclewiki.com/api",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "commons-0",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22bench+press%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "finalUrl": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22bench+press%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 33982,
+      "sha256": "5d7f28697bcde4a3018c6371364c6204bff87bf7a2700faf7e4be025e0de59b4"
+    },
+    {
+      "name": "commons-1",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22barbell+squat%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "finalUrl": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22barbell+squat%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 3072,
+      "sha256": "a680697e7f018279d5eec900626a4c82a38ff73c946cc811597f8135d278b32d"
+    },
+    {
+      "name": "commons-2",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22lat+pulldown%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "finalUrl": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22lat+pulldown%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 24721,
+      "sha256": "c827e538f6ab1fb281f6dc979e6c8440bf17e6b1991959df0fdc1eb62b46ca3f"
+    },
+    {
+      "name": "commons-3",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22dumbbell+row%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "finalUrl": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22dumbbell+row%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 20,
+      "sha256": "ada2a601f24c7f102c6432340d6adca256996c391606174b387338725fe7cf7d"
+    },
+    {
+      "name": "commons-4",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22push+up%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "finalUrl": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22push+up%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 46547,
+      "sha256": "7f5349f7c914052769f61d4bfe04acc36735324fc29006f0118dc2dee065c369"
+    },
+    {
+      "name": "commons-5",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22plank%22+exercise&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "finalUrl": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22plank%22+exercise&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 39643,
+      "sha256": "f079717c8fddabc7bad363f08854946f989386e880eda0ea88114d2d5e3786a7"
+    },
+    {
+      "name": "commons-6",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22Romanian+deadlift%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "finalUrl": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22Romanian+deadlift%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 5486,
+      "sha256": "298ce4b6e86566354b8d1e05ec20c25a84ea08623287e54a82aecf0aa905a7b6"
+    },
+    {
+      "name": "commons-7",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22treadmill%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "finalUrl": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22treadmill%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 46107,
+      "sha256": "bc2a4f40c870e3341560ddec7e99481f4038f478e529e9e33bc991ee92f0cd79"
+    },
+    {
+      "name": "commons-8",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22rowing+machine%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "finalUrl": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22rowing+machine%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 58471,
+      "sha256": "c7da621bf7cfdd520b9d7ed210b14070f3d0b337accffe1292effa7c932755d6"
+    },
+    {
+      "name": "commons-9",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22pull+up%22+exercise&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "finalUrl": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22pull+up%22+exercise&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 77451,
+      "sha256": "fdf804a4cc196baa8a7899c2912f22fde20d9818439d770af2c5ca3029729bcb"
+    },
+    {
+      "name": "commons-10",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22stationary+bicycle%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "finalUrl": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22stationary+bicycle%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 9256,
+      "sha256": "acb23471186821212a551589921b8e0dd9f6164c092e2c6232fb5aac62d16a7c"
+    },
+    {
+      "name": "commons-11",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22biceps+curl%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "finalUrl": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22biceps+curl%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 33165,
+      "sha256": "4f6371e4d47ce597c4caf6dea7e410575edffaa903b4a9e12cb9269eb82c3022"
+    },
+    {
+      "name": "commons-12",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22shoulder+press%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "name": "commons-13",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22calf+raise%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "finalUrl": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22calf+raise%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 32980,
+      "sha256": "c38f1ad414f0d0f85d0f0e247c9bf7b57f920ba0a089333bd55be021114ec7d6"
+    },
+    {
+      "name": "commons-14",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22Smith+machine%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "finalUrl": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=intitle%3A%22Smith+machine%22&gsrnamespace=6&gsrlimit=12&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 35612,
+      "sha256": "1bf1eb5c64065768fef6a3c744c3f71af02ef8e5797452f4d75c1efcb6ba2dda"
+    },
+    {
+      "name": "hyperhuman",
+      "url": "https://hyperhuman.cc/fitness-content-licensing",
+      "finalUrl": "https://hyperhuman.cc/fitness-content-licensing",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 316076,
+      "sha256": "c4b6bd7a7bc89c4df859d24731be01196d456db4b0605c56f161e923eea31e94"
+    },
+    {
+      "name": "ymove-library",
+      "url": "https://ymove.app/exercise-video-library",
+      "finalUrl": "https://ymove.app/exercise-video-library",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 567668,
+      "sha256": "df0a5a9c8159f61ac7b608afafbe1b62d08777fcad497f6eaa0360fdf28fb206"
+    },
+    {
+      "name": "ymove-api",
+      "url": "https://ymove.app/exercise-api",
+      "finalUrl": "https://ymove.app/exercise-api",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 633386,
+      "sha256": "958c42013a169d2035e178153ea18bb8bcbcb462aefe8a2edb23d6ccab96a99c"
+    },
+    {
+      "name": "ymove-terms",
+      "url": "https://ymove.app/terms",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "exrx-home",
+      "url": "https://exrx.net/",
+      "finalUrl": "https://exrx.net/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 79804,
+      "sha256": "927e824a168714a64608cb944ecc68367d4a38f097e71d918ae9fa464f38728e"
+    },
+    {
+      "name": "gymvisual-terms",
+      "url": "https://gymvisual.com/content/6-terms-and-conditions-of-use",
+      "finalUrl": "https://gymvisual.com/content/6-price-rules",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 34839,
+      "sha256": "8a44d9cbc5079c31c9bad19fb0fb5d734b0c75408f37ca3d0dc05eba36efae20"
+    },
+    {
+      "name": "workoutlabs-license",
+      "url": "https://workoutlabs.com/exercise-illustrations-licensing/",
+      "finalUrl": "https://workoutlabs.com/exercise-illustrations-licensing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 98554,
+      "sha256": "0f9666a360c204a31965ea7d30d93fbd2e2682bc8d5184b07b54a951c7479251"
+    },
+    {
+      "name": "pexels-license",
+      "url": "https://www.pexels.com/license/",
+      "finalUrl": "https://www.pexels.com/license/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 80304,
+      "sha256": "564332b156d749703b3a2b0b3774c1bc0c01e425b3b8937d2b43b000549710b5"
+    },
+    {
+      "name": "physitrack-legal",
+      "url": "https://www.physitrack.com/legal",
+      "finalUrl": "https://www.physitrack.com/legal",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 141636,
+      "sha256": "84b00478f06840ee93459941da5182ec8458f66ac7da4c9ceee8d492a971ea3c"
+    },
+    {
+      "name": "workoutdb-license",
+      "url": "https://work-out-db.com/answers/exercise-photos-api",
+      "finalUrl": "https://work-out-db.com/answers/exercise-photos-api",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 36127,
+      "sha256": "8bbb972013519bbd9efbf9163973a348c824b17f2378e43899f4628524ed8f86"
+    },
+    {
+      "name": "ymove-legal",
+      "url": "https://ymove.app/terms-and-conditions",
+      "finalUrl": "https://ymove.app/terms-and-conditions",
+      "status": 200,
+      "bytes": 383141,
+      "sha256": "a4a6c110437a05a4e38d6c39f740e456dc94d8c7be64fe5245855c871cb4685e"
+    },
+    {
+      "name": "gymvisual-legal",
+      "url": "https://gymvisual.com/content/3-terms-and-conditions-of-use",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "exrx-legal",
+      "url": "https://exrx.net/Notes/Legal",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "hyperhuman-legal",
+      "url": "https://hyperhuman.cc/legal",
+      "finalUrl": "https://hyperhuman.cc/legal",
+      "status": 200,
+      "bytes": 283120,
+      "sha256": "8dffd2724cc53a757205dd284be88b9322ca3edab94ccf22a1ffde3667d87731"
+    },
+    {
+      "name": "physitrack-terms",
+      "url": "https://www.physitrack.com/legal/terms",
+      "finalUrl": "https://www.physitrack.com/legal/terms",
+      "status": 200,
+      "bytes": 353987,
+      "sha256": "021be3c838fa141ea3dfdf87e695808c776e36a3cd13ae28e8b1e08326f9a42c"
+    },
+    {
+      "name": "ymove-pricing",
+      "url": "https://ymove.app/exercise-api/pricing",
+      "finalUrl": "https://ymove.app/exercise-api/pricing",
+      "status": 200,
+      "bytes": 72283,
+      "sha256": "3be7842a351c98af389a86f8e57ee6bea4ef8aaa034f4d6abf1d2cc65f5d108d"
+    },
+    {
+      "name": "ymove-free",
+      "url": "https://ymove.app/free-exercise-videos",
+      "finalUrl": "https://ymove.app/free-exercise-videos",
+      "status": 200,
+      "bytes": 161249,
+      "sha256": "b91671489c9b439d1d4c871e11feeac041ee063c0e38848ebfc7b5600e4fa505"
+    },
+    {
+      "name": "pexels-legpress",
+      "url": "https://www.pexels.com/search/leg%20press/",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "pexels-pulldown",
+      "url": "https://www.pexels.com/search/lat%20pulldown/",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "wikimedia-identified-image",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Young_man_using_a_leg_press_machine_at_the_gym.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "finalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Young_man_using_a_leg_press_machine_at_the_gym.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 8388608,
+      "sha256": "9ca177e42b41fa15db134a9bf7e69b9534a8f3ab96dd914d141f12b6e31eaa16",
+      "partialBody": true,
+      "inspectionUse": "Discarded for inspection: body hit 8 MiB read limit; complete thumbnail fetched separately."
+    },
+    {
+      "name": "ymove-band-row-preview",
+      "url": "https://ymove.app/mkt/band-row.jpg",
+      "finalUrl": "https://ymove.app/mkt/band-row.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 17303,
+      "sha256": "fcafb2466e83b727cec2ac1a85e4562b72fc97606bf202ffa197004994823ef0"
+    },
+    {
+      "name": "lifefitness-terms",
+      "url": "https://www.lifefitness.com/en-us/legal/terms-conditions",
+      "finalUrl": "https://www.lifefitness.com/en-us/legal/terms-conditions",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 273701,
+      "sha256": "8f4a37615907074a0b14bc3825275f1685b2b160a07d4f31c40a203390b9feb5"
+    },
+    {
+      "name": "commons-shortlist-metadata",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&pageids=141589532%7C170736759%7C116285536%7C170736773%7C184589835%7C104746970%7C141590145%7C29763177%7C141589535%7C182010455%7C149961995%7C25571750&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "finalUrl": "https://commons.wikimedia.org/w/api.php?action=query&format=json&pageids=141589532%7C170736759%7C116285536%7C170736773%7C184589835%7C104746970%7C141590145%7C29763177%7C141589535%7C182010455%7C149961995%7C25571750&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=400",
+      "status": 200,
+      "bytes": 55125,
+      "sha256": "8d7c41d5b9f9429c6dbee132daab58a12057435987c21a2bc487203f8d516bdd"
+    },
+    {
+      "pageid": "141589532",
+      "title": "File:Girl doing lat pulldown exercise.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Girl_doing_lat_pulldown_exercise.jpg/500px-Girl_doing_lat_pulldown_exercise.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "error": "HTTP Error 403: Forbidden",
+      "phase": "sample-fetches"
+    },
+    {
+      "pageid": "170736759",
+      "title": "File:Amer-Lat-Pulldown.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Amer-Lat-Pulldown.jpg/500px-Amer-Lat-Pulldown.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "error": "HTTP Error 403: Forbidden",
+      "phase": "sample-fetches"
+    },
+    {
+      "pageid": "116285536",
+      "title": "File:Young man using a leg press machine at the gym.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Young_man_using_a_leg_press_machine_at_the_gym.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "error": "HTTP Error 403: Forbidden",
+      "phase": "sample-fetches"
+    },
+    {
+      "pageid": "170736773",
+      "title": "File:Marian-Leg-Press.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Marian-Leg-Press.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "error": "HTTP Error 403: Forbidden",
+      "phase": "sample-fetches"
+    },
+    {
+      "pageid": "184589835",
+      "title": "File:Bench press.webp",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Bench_press.webp/500px-Bench_press.webp?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "error": "HTTP Error 403: Forbidden",
+      "phase": "sample-fetches"
+    },
+    {
+      "pageid": "104746970",
+      "title": "File:Eibl. bench press.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Eibl._bench_press.jpg/500px-Eibl._bench_press.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "error": "HTTP Error 403: Forbidden",
+      "phase": "sample-fetches"
+    },
+    {
+      "pageid": "141590145",
+      "title": "File:Girl exercising doing a plank.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Girl_exercising_doing_a_plank.jpg/500px-Girl_exercising_doing_a_plank.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "error": "HTTP Error 403: Forbidden",
+      "phase": "sample-fetches"
+    },
+    {
+      "pageid": "29763177",
+      "title": "File:Plank.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Plank.jpg/500px-Plank.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "error": "HTTP Error 403: Forbidden",
+      "phase": "sample-fetches"
+    },
+    {
+      "pageid": "141589535",
+      "title": "File:Girl exercising side plank.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Girl_exercising_side_plank.jpg/500px-Girl_exercising_side_plank.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "error": "HTTP Error 403: Forbidden",
+      "phase": "sample-fetches"
+    },
+    {
+      "pageid": "182010455",
+      "title": "File:Girl exercising doing plank on stability ball.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Girl_exercising_doing_plank_on_stability_ball.jpg/500px-Girl_exercising_doing_plank_on_stability_ball.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "error": "HTTP Error 403: Forbidden",
+      "phase": "sample-fetches"
+    },
+    {
+      "pageid": "149961995",
+      "title": "File:2008 CrossFit Games - athletes performing a chest-to-bar pull-up.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/2008_CrossFit_Games_-_athletes_performing_a_chest-to-bar_pull-up.jpg/500px-2008_CrossFit_Games_-_athletes_performing_a_chest-to-bar_pull-up.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "error": "HTTP Error 403: Forbidden",
+      "phase": "sample-fetches"
+    },
+    {
+      "pageid": "25571750",
+      "title": "File:From front left, U.S. Army Maj. Roger Miranda and Capt. Edward McDonald, both with the 1st Cavalry Division, and 2nd Lt. Wesley Gordon with the 1st Air Cavalry Brigade, exercise using pull-up bars during 130405-A-CJ112-270.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/From_front_left%2C_U.S._Army_Maj._Roger_Miranda_and_Capt._Edward_McDonald%2C_both_with_the_1st_Cavalry_Division%2C_and_2nd_Lt._Wesley_Gordon_with_the_1st_Air_Cavalry_Brigade%2C_exercise_using_pull-up_bars_during_130405-A-CJ112-270.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "error": "HTTP Error 403: Forbidden",
+      "phase": "sample-fetches"
+    },
+    {
+      "pageid": "25571750",
+      "title": "File:From front left, U.S. Army Maj. Roger Miranda and Capt. Edward McDonald, both with the 1st Cavalry Division, and 2nd Lt. Wesley Gordon with the 1st Air Cavalry Brigade, exercise using pull-up bars during 130405-A-CJ112-270.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/From_front_left%2C_U.S._Army_Maj._Roger_Miranda_and_Capt._Edward_McDonald%2C_both_with_the_1st_Cavalry_Division%2C_and_2nd_Lt._Wesley_Gordon_with_the_1st_Air_Cavalry_Brigade%2C_exercise_using_pull-up_bars_during_130405-A-CJ112-270.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "contentType": "image/jpeg",
+      "bytes": 76329,
+      "sha256": "d049f7b56e3ffe218c180fbdc68385f18e97314ce87b60392ec89180da25a949",
+      "complete": true,
+      "phase": "identified-sample-fetches"
+    },
+    {
+      "pageid": "29763177",
+      "title": "File:Plank.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Plank.jpg/500px-Plank.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "contentType": "image/jpeg",
+      "bytes": 33682,
+      "sha256": "ad7b6e164d13c14177baa4351c28471ff6136d55c28c5810960dccaa75ea7efb",
+      "complete": true,
+      "phase": "identified-sample-fetches"
+    },
+    {
+      "pageid": "104746970",
+      "title": "File:Eibl. bench press.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Eibl._bench_press.jpg/500px-Eibl._bench_press.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "contentType": "image/jpeg",
+      "bytes": 59675,
+      "sha256": "8604a399d42026b63649286ece465da254f1b54907508cafe1aab551db64fe07",
+      "complete": true,
+      "phase": "identified-sample-fetches"
+    },
+    {
+      "pageid": "116285536",
+      "title": "File:Young man using a leg press machine at the gym.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Young_man_using_a_leg_press_machine_at_the_gym.jpg/500px-Young_man_using_a_leg_press_machine_at_the_gym.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "contentType": "image/jpeg",
+      "bytes": 77963,
+      "sha256": "591e4bc7495f92fde681f67e92706298729bfed4257e8953adcd0a5c2bc561f4",
+      "complete": true,
+      "phase": "identified-sample-fetches"
+    },
+    {
+      "pageid": "141589532",
+      "title": "File:Girl doing lat pulldown exercise.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Girl_doing_lat_pulldown_exercise.jpg/500px-Girl_doing_lat_pulldown_exercise.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "contentType": "image/jpeg",
+      "bytes": 31742,
+      "sha256": "364386369986c5c26ab29ff49a4fbaf04776827e10f0c087b0163169d41c6da0",
+      "complete": true,
+      "phase": "identified-sample-fetches"
+    },
+    {
+      "pageid": "141589535",
+      "title": "File:Girl exercising side plank.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Girl_exercising_side_plank.jpg/500px-Girl_exercising_side_plank.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "contentType": "image/jpeg",
+      "bytes": 62832,
+      "sha256": "2263399cdce5132fc9ffd3d681b95c01df8ab512edc56d47dd0faf2861b7d3b3",
+      "complete": true,
+      "phase": "identified-sample-fetches"
+    },
+    {
+      "pageid": "141590145",
+      "title": "File:Girl exercising doing a plank.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Girl_exercising_doing_a_plank.jpg/500px-Girl_exercising_doing_a_plank.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "contentType": "image/jpeg",
+      "bytes": 59824,
+      "sha256": "ee60321091111d14b63b40a83db6fc672c60a43d1d281a11183efd4d006eb8d2",
+      "complete": true,
+      "phase": "identified-sample-fetches"
+    },
+    {
+      "pageid": "149961995",
+      "title": "File:2008 CrossFit Games - athletes performing a chest-to-bar pull-up.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/2008_CrossFit_Games_-_athletes_performing_a_chest-to-bar_pull-up.jpg/500px-2008_CrossFit_Games_-_athletes_performing_a_chest-to-bar_pull-up.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "contentType": "image/jpeg",
+      "bytes": 53147,
+      "sha256": "a992c33b69bd0e1164927644a2e4ab3471b6020f3a20413da8e150f74cd0f4fa",
+      "complete": true,
+      "phase": "identified-sample-fetches"
+    },
+    {
+      "pageid": "170736759",
+      "title": "File:Amer-Lat-Pulldown.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Amer-Lat-Pulldown.jpg/500px-Amer-Lat-Pulldown.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "contentType": "image/jpeg",
+      "bytes": 56092,
+      "sha256": "bcfb9270f3975e5966e3c6d456e6eed4484b752400d9fb7243348829e51ed0f0",
+      "complete": true,
+      "phase": "identified-sample-fetches"
+    },
+    {
+      "pageid": "170736773",
+      "title": "File:Marian-Leg-Press.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Marian-Leg-Press.jpg/500px-Marian-Leg-Press.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "contentType": "image/jpeg",
+      "bytes": 47032,
+      "sha256": "0e5b2223959747cba08537cceb348ca0b2e3dff66f02402fabc3fbcc3256abf8",
+      "complete": true,
+      "phase": "identified-sample-fetches"
+    },
+    {
+      "pageid": "182010455",
+      "title": "File:Girl exercising doing plank on stability ball.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Girl_exercising_doing_plank_on_stability_ball.jpg/500px-Girl_exercising_doing_plank_on_stability_ball.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "contentType": "image/jpeg",
+      "bytes": 74393,
+      "sha256": "d659f17f7f30f81abc196233708891947978d6faf9557a014b6a8e7de96721a0",
+      "complete": true,
+      "phase": "identified-sample-fetches"
+    },
+    {
+      "pageid": "184589835",
+      "title": "File:Bench press.webp",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Bench_press.webp/500px-Bench_press.webp?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "contentType": "image/webp",
+      "bytes": 54436,
+      "sha256": "15a58bda891f2983958ab6ae95c4737cf78a1201b327d8c5c4c20b215100e588",
+      "complete": true,
+      "phase": "identified-sample-fetches"
+    },
+    {
+      "name": "Barbell Back Squat",
+      "url": "https://ymove.app/api/free/fd0eaa34-d14b-4421-b41c-1669f93253b3?type=thumbnail",
+      "finalHost": "ymove.app",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 51113,
+      "sha256": "0874921046cfc8cce73a22c77a3ebee09fb939ab5ad7f89a107ee08ba0ecf554",
+      "phase": "ymove-sample-fetches"
+    },
+    {
+      "name": "Barbell Bench Press",
+      "url": "https://ymove.app/api/free/dd7e706c-2086-4f4b-867f-d7fece2f720d?type=thumbnail",
+      "finalHost": "ymove.app",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 46952,
+      "sha256": "5376b3b7bd0597eee534d3f9b2dc9b5c1023aa84938c1e00648e0d2bd531feff",
+      "phase": "ymove-sample-fetches"
+    },
+    {
+      "name": "Dumbbell Lateral Raise",
+      "url": "https://ymove.app/api/free/a16f0235-20eb-4306-b9cc-c01ae51b3b9b?type=thumbnail",
+      "finalHost": "ymove.app",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 34490,
+      "sha256": "aa84b462dc8b900f7b798102c6d47c73da5e00aaa9fc4f018eb8ab8a951c98ba",
+      "phase": "ymove-sample-fetches"
+    },
+    {
+      "name": "Hammer Curls",
+      "url": "https://ymove.app/api/free/b11e6c6f-b2e8-44ca-95dc-adf0dcd34426?type=thumbnail",
+      "finalHost": "ymove.app",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 39026,
+      "sha256": "dac4206bcc81f1d9b5a50caf8b6594d724fab6204bff08aa2e10a9aa142bb2e2",
+      "phase": "ymove-sample-fetches"
+    },
+    {
+      "name": "Lat Pulldown",
+      "url": "https://ymove.app/api/free/5971eaa2-5264-49cc-99c2-1310305c5342?type=thumbnail",
+      "finalHost": "ymove.app",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 79671,
+      "sha256": "b6f235e3261dd244b0b5e0fc780675dd8e6111fa570a4b3aa491b23ca534e897",
+      "phase": "ymove-sample-fetches"
+    },
+    {
+      "name": "Leg Extension",
+      "url": "https://ymove.app/api/free/af0c3d19-5ee2-4a19-8688-f8504bb33e3c?type=thumbnail",
+      "finalHost": "ymove.app",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 100325,
+      "sha256": "ad6ecda1928587fb2ef490e34b144ccb6b1522f17f62623347012caf8807b166",
+      "phase": "ymove-sample-fetches"
+    },
+    {
+      "name": "Leg Press",
+      "url": "https://ymove.app/api/free/d0bc669e-0d78-46f0-95f1-86503ab746e1?type=thumbnail",
+      "finalHost": "ymove.app",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 71971,
+      "sha256": "c4a7ae6d050a86d4fcbcbb9244b4772fae69835bb7e89237f6606b772cd054f3",
+      "phase": "ymove-sample-fetches"
+    },
+    {
+      "name": "Glute Kickback Machine",
+      "url": "https://ymove.app/api/free/5611abf4-57f7-4153-b29d-a17cd7e2907d?type=thumbnail",
+      "finalHost": "ymove.app",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 69427,
+      "sha256": "93a1bf1ea24d8791945e05f16725a1945d618754b3f14e816b7dd2f38540466c",
+      "phase": "ymove-sample-fetches"
+    }
+  ]
+}

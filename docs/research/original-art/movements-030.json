@@ -1,0 +1,222 @@
+{
+  "name": "movements-030",
+  "columns": 4,
+  "rows": 3,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/movements-030.png",
+  "prompt": "Create beautiful ORIGINAL FORMA exercise art in a clean modern illustrated fitness manual style. Exactly FOUR columns and THREE rows, 12 equal cells, landscape 1536x1024. Each cell white with generous margins; no labels, letters, logos, borders or watermarks. Varied fully clothed adult athletes, charcoal/gray sportswear with a small lime-green accent. Correct anatomy (two arms, two legs), plausible support and weight-bearing, detailed accurate equipment, subtle shadows. Every cell is an EXACT distinct movement/variation matching its description. Show ONE clear representative working position per cell; do not show duplicate athletes, extra limbs, arrows or overlapping phases. Keep the entire athlete and apparatus inside own cell. Never swap freeweights, benches, grips or variations. Read each guide to choose a physically correct pose. Cell positions are mandatory:\nRow 1 column 1: Elbow Circles. Equipment: Bodyweight. Exercise guide: Sit or stand with your feet slightly apart. Place your hands on your shoulders with your elbows at shoulder level and pointing out. Slowly make a circle with your elbows. Breathe out as you start the circle and breathe in as you complete the circle.\n\nRow 1 column 2: elbow lever. Equipment: Bodyweight. Exercise guide: ​A calisthenics static balance skill where the entire body is held straight and parallel to the ground, supported by tucking the elbows firmly into the abdomen or pelvic bones.\n\nRow 1 column 3: Elbow to Knee. Equipment: Bodyweight. Exercise guide: Lie on the floor, crossing your right leg across your bent left knee. Clasp your hands behind your head, beginning with your shoulder blades on the ground. This will be your starting position. Perform the motion by flexing the spine and rotating your torso to bring the left elbow to the right knee. Return to the starting position and repeat the movement for the desired number of repetitions before switching sides.\n\nRow 1 column 4: Elbows Back. Equipment: Bodyweight. Exercise guide: Stand up straight. Place both hands on your lower back, fingers pointing downward and elbows out. Then gently pull your elbows back aiming to touch them together.\n\nRow 2 column 1: Elbows Tucked DB Bench Press. Equipment: Bench + Dumbbell. Exercise guide: Elbows Tucked DB Bench Press, chest press movement focusing on the triceps. DB stays parallel with body\n\nRow 2 column 2: Elephant Walks. Equipment: Bodyweight. Exercise guide: Hinge at your hips until you feel a stretch behind your knees. Bend one leg while the other is straight then fluidly bend the other knee while straightening the first knee.\n\nRow 2 column 3: Elevated Back Lunge. Equipment: Barbell. Exercise guide: Position a bar onto a rack at shoulder height loaded to an appropriate weight. Place a short, raised platform behind you. Rack the bar onto your upper back, keeping your back arched and tight. Step onto your raised platform with both feet. This will be your starting position. Begin by stepping backwards with one leg. Descend by flexing your hips and knees until your knee touches the floor. Pause, and extend through the hips and knees to rise up, returning all the way to the starting position before alternating.\n\nRow 2 column 4: Elevated Hamstring Stretch. Equipment: Bodyweight. Exercise guide: Stand facing a bar, box or bench at roughly hip height and place the heel of one leg on it. Keep that leg straight with the toes pointing up, and keep the standing leg straight with both hips square to the support. Hinge forward at the hips with a flat back until you feel a stretch in the back of the elevated thigh. Hold the position while breathing calmly, then switch legs. Stretch for the hamstrings. The height of the support controls the intensity: the higher the leg, the stronger the stretch.\n\nRow 3 column 1: Elevated prayer stretch. Equipment: Bench. Exercise guide: **Starting position:** Kneel in front of a bench, far enough so that your torso can fit between your knees and the bench. With your back straight, place your elbows on the bench, with palms together, hands pointing up. **Steps:** 1. On exhale, stretch your chest down toward the floor without moving your lower back. At the same time, bring your hands toward your shoulders, keeping palms together and elbows on the bench. 2. Hold for a few seconds. 3. On inhale, relax your back to return to the starting position. 4. 4. Repeat.\n\nRow 3 column 2: Estiramiento de brazos y cuello. Equipment: Bodyweight. Exercise guide: Alivia tensiones en la parte superior del cuerpo, especialmente útil para personas con trabajo de oficina o posturas prolongadas.\n\nRow 3 column 3: Estiramiento de piernas y cadera. Equipment: Bodyweight. Exercise guide: Movimientos suaves para mejorar la flexibilidad de la parte inferior del cuerpo y liberar tensión en la cadera.\n\nRow 3 column 4: Exercise Ball Crunch. Equipment: Exercise ball. Exercise guide: Lie on an exercise ball with your lower back curvature pressed against the spherical surface of the ball. Your feet should be bent at the knee and pressed firmly against the floor. The upper torso should be hanging off the top of the ball. The arms should either be kept alongside the body or crossed on top of your chest as these positions avoid neck strains (as opposed to the hands behind the back of the head position). Lower your torso into a stretch position keeping the neck stationary at all times. This will be your starting position. With the hips stationary, flex the waist by contracting the abdominals and curl the shoulders and trunk upward until you feel a nice contraction on your abdominals. The arms should simply slide up the side of your legs if you have them at the side or just stay on top of your chest if you have them crossed. The lower back should always stay in contact with the ball. Exhale as you perform this movement and hold the contraction for a second. As you inhale, go back to the starting position. Repeat for the recommended amount of repetitions.",
+  "cells": [
+    {
+      "id": "db-elbow-circles",
+      "title": "Elbow Circles",
+      "equipment": "Bodyweight",
+      "guideText": "Sit or stand with your feet slightly apart.\n\nPlace your hands on your shoulders with your elbows at shoulder level and pointing out.\n\nSlowly make a circle with your elbows. Breathe out as you start the circle and breathe in as you complete the circle.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Elbow_Circles.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
+    },
+    {
+      "id": "wger-1d1a53dd-e00f-477e-83f7-09c8ef9a71cd",
+      "title": "elbow lever",
+      "equipment": "Bodyweight",
+      "guideText": "​A calisthenics static balance skill where the entire body is held straight and parallel to the ground, supported by tucking the elbows firmly into the abdomen or pelvic bones.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2531/view/",
+        "author": "ege",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Elbow lever athlete floats without palm contact on ground; the required hand support is absent."
+    },
+    {
+      "id": "db-elbow-to-knee",
+      "title": "Elbow to Knee",
+      "equipment": "Bodyweight",
+      "guideText": "Lie on the floor, crossing your right leg across your bent left knee. Clasp your hands behind your head, beginning with your shoulder blades on the ground. This will be your starting position.\n\nPerform the motion by flexing the spine and rotating your torso to bring the left elbow to the right knee.\n\nReturn to the starting position and repeat the movement for the desired number of repetitions before switching sides.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Elbow_to_Knee.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Working ankle is not clearly crossed/resting on the opposite bent knee as this specific elbow-to-knee guide requires."
+    },
+    {
+      "id": "db-elbows-back",
+      "title": "Elbows Back",
+      "equipment": "Bodyweight",
+      "guideText": "Stand up straight.\n\nPlace both hands on your lower back, fingers pointing downward and elbows out.\n\nThen gently pull your elbows back aiming to touch them together.",
+      "column": 3,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Elbows_Back.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
+    },
+    {
+      "id": "wger-732a9a7f-fb45-41ea-94a3-6a7246a699f6",
+      "title": "Elbows Tucked DB Bench Press",
+      "equipment": "Bench + Dumbbell",
+      "guideText": "Elbows Tucked DB Bench Press, chest press movement focusing on the triceps. DB stays parallel with body",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1498/view/",
+        "author": "JohnPreston",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
+    },
+    {
+      "id": "wger-34cce09a-edb3-4140-892a-1cf70da8d98b",
+      "title": "Elephant Walks",
+      "equipment": "Bodyweight",
+      "guideText": "Hinge at your hips until you feel a stretch behind your knees. Bend one leg while the other is straight then fluidly bend the other knee while straightening the first knee.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1391/view/",
+        "author": "captive0592",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
+    },
+    {
+      "id": "db-elevated-back-lunge",
+      "title": "Elevated Back Lunge",
+      "equipment": "Barbell",
+      "guideText": "Position a bar onto a rack at shoulder height loaded to an appropriate weight. Place a short, raised platform behind you.\n\nRack the bar onto your upper back, keeping your back arched and tight. Step onto your raised platform with both feet. This will be your starting position.\n\nBegin by stepping backwards with one leg. Descend by flexing your hips and knees until your knee touches the floor.\n\nPause, and extend through the hips and knees to rise up, returning all the way to the starting position before alternating.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Elevated_Back_Lunge.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Raised support is under the rear knee rather than the front standing foot; elevated reverse-lunge setup is reversed."
+    },
+    {
+      "id": "wger-e205aa88-c7b8-43a7-a527-c881b2d5f259",
+      "title": "Elevated Hamstring Stretch",
+      "equipment": "Bodyweight",
+      "guideText": "Stand facing a bar, box or bench at roughly hip height and place the heel of one leg on it. Keep that leg straight with the toes pointing up, and keep the standing leg straight with both hips square to the support.\n\nHinge forward at the hips with a flat back until you feel a stretch in the back of the elevated thigh. Hold the position while breathing calmly, then switch legs.\n\nStretch for the hamstrings. The height of the support controls the intensity: the higher the leg, the stronger the stretch.",
+      "column": 3,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2615/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
+    },
+    {
+      "id": "wger-302e02df-4270-4a0b-8c5d-b743cdb06fc9",
+      "title": "Elevated prayer stretch",
+      "equipment": "Bench",
+      "guideText": "**Starting position:** Kneel in front of a bench, far enough so that your torso can fit between your knees and the bench. With your back straight, place your elbows on the bench, with palms together, hands pointing up. **Steps:** 1. On exhale, stretch your chest down toward the floor without moving your lower back. At the same time, bring your hands toward your shoulders, keeping palms together and elbows on the bench. 2. Hold for a few seconds. 3. On inhale, relax your back to return to the starting position. 4. 4. Repeat.",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1027/view/",
+        "author": "tinman",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
+    },
+    {
+      "id": "wger-b48cd640-dd9f-4557-a4db-8cd33d5655a6",
+      "title": "Estiramiento de brazos y cuello",
+      "equipment": "Bodyweight",
+      "guideText": "Alivia tensiones en la parte superior del cuerpo, especialmente útil para personas con trabajo de oficina o posturas prolongadas.",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1590/view/",
+        "author": "MrAlfaRobot",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
+    },
+    {
+      "id": "wger-505d6a28-1e24-4349-ab2b-49af3300e08e",
+      "title": "Estiramiento de piernas y cadera",
+      "equipment": "Bodyweight",
+      "guideText": "Movimientos suaves para mejorar la flexibilidad de la parte inferior del cuerpo y liberar tensión en la cadera.",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1589/view/",
+        "author": "MrAlfaRobot",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
+    },
+    {
+      "id": "db-exercise-ball-crunch",
+      "title": "Exercise Ball Crunch",
+      "equipment": "Exercise ball",
+      "guideText": "Lie on an exercise ball with your lower back curvature pressed against the spherical surface of the ball. Your feet should be bent at the knee and pressed firmly against the floor. The upper torso should be hanging off the top of the ball. The arms should either be kept alongside the body or crossed on top of your chest as these positions avoid neck strains (as opposed to the hands behind the back of the head position).\n\nLower your torso into a stretch position keeping the neck stationary at all times. This will be your starting position.\n\nWith the hips stationary, flex the waist by contracting the abdominals and curl the shoulders and trunk upward until you feel a nice contraction on your abdominals. The arms should simply slide up the side of your legs if you have them at the side or just stay on top of your chest if you have them crossed. The lower back should always stay in contact with the ball. Exhale as you perform this movement and hold the contraction for a second.\n\nAs you inhale, go back to the starting position.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 3,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Exercise_Ball_Crunch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-2ab231e6-0721-4356-b82b-dea7d8b788a6.png"
+}

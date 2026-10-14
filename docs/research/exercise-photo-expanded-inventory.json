@@ -1,0 +1,844 @@
+{
+  "reviewedDate": "2026-10-14",
+  "timezone": "Australia/Sydney",
+  "catalogCommit": "c8b2192",
+  "scope": "Expanded web research. No images deployed, no subscriptions/accounts created and no providers contacted.",
+  "summary": {
+    "freeDemonstrationsWithThumbnailUrls": 25,
+    "freeDemonstrationThumbnailsVisuallyInspected": 8,
+    "commonsJpegWebpSearchHits": 78,
+    "commonsFilesShortlistedAndInspected": 12,
+    "commonsPreferredMovementCandidates": 5,
+    "distinctExerciseIdsWithPreferredVisualCandidates": 10,
+    "approvedPhotos": 0
+  },
+  "limits": [
+    "Bounded Commons queries retain continuation markers; not an exhaustive Commons inventory.",
+    "Do not add these asset counts to the 205-movement wger count; assets overlap and some are excluded.",
+    "Provider library counts are advertised totals and do not establish exact FORMA movement coverage.",
+    "Static images cannot verify complete exercise execution."
+  ],
+  "providers": [
+    {
+      "name": "YMove",
+      "url": "https://ymove.app/exercise-video-library",
+      "type": "Filmed exercises with photo thumbnails",
+      "advertisedLibrary": 1413,
+      "status": "Strong candidate for licensed consistent media; actual FORMA coverage not audited",
+      "rights": "Free set of 25 clips; larger API/subscription licences. Terms and pricing include brand registration, time-limited URLs, subscription-only rights and separate self-hosting permission. Product pages and terms differ on brand/white-label entitlements; obtain exact plan agreement."
+    },
+    {
+      "name": "Hyperhuman",
+      "url": "https://hyperhuman.cc/fitness-content-licensing",
+      "type": "Filmed exercises/classes and stock stills",
+      "status": "App/web/API licensing offered, individual catalogue access and rights depend on plan",
+      "rights": "Commercial agreement defines channels, territory and provider scope; still extraction/rehosting must be included."
+    },
+    {
+      "name": "WorkoutDB",
+      "url": "https://work-out-db.com/answers/exercise-photos-api",
+      "type": "Exercise photos plus videos/GIFs",
+      "advertisedLibraryApprox": 873,
+      "status": "Additional photo/API provider; exact matches unverified",
+      "rights": "Page states commercial media use on Pro/Scale; free tier noncommercial with attribution. Full licence/storage rights not verified."
+    },
+    {
+      "name": "Physitrack",
+      "url": "https://www.physitrack.com/exercise-library",
+      "type": "Professionally filmed clinical, conditioning and machine exercises",
+      "status": "Useful catalogue lead, not an unrestricted image source",
+      "rights": "Current service terms restrict copying/commercial redistribution outside granted scope. Separate agreement needed for FORMA."
+    },
+    {
+      "name": "Pexels",
+      "url": "https://www.pexels.com/license/",
+      "type": "General stock photos/videos",
+      "status": "License page retrieved; exercise search pages HTTP 403; no exact-variation candidates approved",
+      "rights": "Free use and modification, attribution optional; no implied endorsement or redistribution as a stock service."
+    },
+    {
+      "name": "GymVisual",
+      "url": "https://gymvisual.com/",
+      "type": "Anatomical illustrations/animations",
+      "status": "Home retrieved; actual terms HTTP 403. Not counted as real-photo coverage",
+      "rights": "Old /content/6 terms URL now redirects to Price rules; actual terms link is /content/3-terms-and-conditions-of-use."
+    },
+    {
+      "name": "WorkoutLabs",
+      "url": "https://workoutlabs.com/exercise-illustrations-licensing/",
+      "type": "Original anatomical illustrations",
+      "advertisedExerciseLibrary": 679,
+      "status": "Licensing page retrieved; alternative illustration style, not real photos",
+      "rights": "Case-specific commercial illustration licence. Advertised full-library starting prices are $1,200/year or $3,500+ perpetual; not purchased."
+    },
+    {
+      "name": "ExRx",
+      "url": "https://exrx.net/",
+      "type": "Exercise reference and demonstrations",
+      "status": "Homepage retrieved; actual legal page HTTP 403; reuse terms unresolved",
+      "rights": "No permission to copy inferred from public access."
+    },
+    {
+      "name": "Life Fitness",
+      "url": "https://www.lifefitness.com/en-us/legal/terms-conditions",
+      "type": "Manufacturer apparatus imagery",
+      "status": "Fetched page is Commercial Terms and Conditions of Sale, not a media reuse licence",
+      "rights": "Equipment identity references do not confer publication permission for product photos."
+    }
+  ],
+  "commonsCandidates": [
+    {
+      "source": "Wikimedia Commons",
+      "pageId": 25571750,
+      "title": "File:From front left, U.S. Army Maj. Roger Miranda and Capt. Edward McDonald, both with the 1st Cavalry Division, and 2nd Lt. Wesley Gordon with the 1st Air Cavalry Brigade, exercise using pull-up bars during 130405-A-CJ112-270.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:From_front_left,_U.S._Army_Maj._Roger_Miranda_and_Capt._Edward_McDonald,_both_with_the_1st_Cavalry_Division,_and_2nd_Lt._Wesley_Gordon_with_the_1st_Air_Cavalry_Brigade,_exercise_using_pull-up_bars_during_130405-A-CJ112-270.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/57/From_front_left%2C_U.S._Army_Maj._Roger_Miranda_and_Capt._Edward_McDonald%2C_both_with_the_1st_Cavalry_Division%2C_and_2nd_Lt._Wesley_Gordon_with_the_1st_Air_Cavalry_Brigade%2C_exercise_using_pull-up_bars_during_130405-A-CJ112-270.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/From_front_left%2C_U.S._Army_Maj._Roger_Miranda_and_Capt._Edward_McDonald%2C_both_with_the_1st_Cavalry_Division%2C_and_2nd_Lt._Wesley_Gordon_with_the_1st_Air_Cavalry_Brigade%2C_exercise_using_pull-up_bars_during_130405-A-CJ112-270.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "artist": "Sgt. Quentin Johnson",
+      "artistHtml": "Sgt. Quentin Johnson",
+      "creditHtml": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.defenseimagery.mil/imageRetrieve.action?guid=0c13b34bfe65cc3df0328608f6e6aae16e6566d9&amp;t=2\">http://www.defenseimagery.mil/imageRetrieve.action?guid=0c13b34bfe65cc3df0328608f6e6aae16e6566d9&amp;t=2</a>",
+      "descriptionHtml": "From front left, U.S. Army Maj. Roger Miranda and Capt. Edward McDonald, both with the 1st Cavalry Division, and 2nd Lt. Wesley Gordon with the 1st Air Cavalry Brigade, exercise using pull-up bars during the CrossFit Open competition at Fort Hood, Texas, April 5, 2013.",
+      "restrictions": "",
+      "candidateExerciseIds": ["db-pullups"],
+      "visualReview": {
+        "status": "composition-and-execution-review-needed",
+        "finding": "Group doing pull-ups with mixed grips. Foreground is overhand; scene is not an unambiguous single-exercise technique guide.",
+        "inspected": true
+      },
+      "previewSha256": "d049f7b56e3ffe218c180fbdc68385f18e97314ce87b60392ec89180da25a949",
+      "approvedForPublication": false
+    },
+    {
+      "source": "Wikimedia Commons",
+      "pageId": 29763177,
+      "title": "File:Plank.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plank.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Plank.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Plank.jpg/500px-Plank.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "artist": "Jaykayfit",
+      "artistHtml": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Jaykayfit&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Jaykayfit (page does not exist)\">Jaykayfit</a>",
+      "creditHtml": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+      "descriptionHtml": "Planks activate and strengthen the inner core muscles as well as rectus abdominis and transverse abdominis. Planks help stabilize your spine and hips. Performing this exercise can help prevent back injury and back pain.",
+      "restrictions": "",
+      "candidateExerciseIds": ["wger-b2b40a54-e42b-49ec-97da-4c929ae41d42"],
+      "visualReview": {
+        "status": "visual-movement-candidate",
+        "finding": "Straight-arm high plank. Excluded for the forearm-plank guide; high-plank candidate only.",
+        "inspected": true
+      },
+      "previewSha256": "ad7b6e164d13c14177baa4351c28471ff6136d55c28c5810960dccaa75ea7efb",
+      "approvedForPublication": false
+    },
+    {
+      "source": "Wikimedia Commons",
+      "pageId": 104746970,
+      "title": "File:Eibl. bench press.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eibl._bench_press.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Eibl._bench_press.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Eibl._bench_press.jpg/500px-Eibl._bench_press.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Christopher Eibl",
+      "artistHtml": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Christopher_Eibl&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Christopher Eibl (page does not exist)\">Christopher Eibl</a>",
+      "creditHtml": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+      "descriptionHtml": "Training",
+      "restrictions": "",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "different-setup-review-needed",
+        "finding": "Powerlifting bench setup with pronounced arch; not accepted for the general FORMA bench guide.",
+        "inspected": true
+      },
+      "previewSha256": "8604a399d42026b63649286ece465da254f1b54907508cafe1aab551db64fe07",
+      "approvedForPublication": false
+    },
+    {
+      "source": "Wikimedia Commons",
+      "pageId": 116285536,
+      "title": "File:Young man using a leg press machine at the gym.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Young_man_using_a_leg_press_machine_at_the_gym.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Young_man_using_a_leg_press_machine_at_the_gym.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Young_man_using_a_leg_press_machine_at_the_gym.jpg/500px-Young_man_using_a_leg_press_machine_at_the_gym.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "Nenad Stojkovic",
+      "artistHtml": "Nenad Stojkovic",
+      "creditHtml": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/nenadstojkovic/48938278117/\">https://www.flickr.com/photos/nenadstojkovic/48938278117/</a>",
+      "descriptionHtml": "Young man using a leg press machine at the gym",
+      "restrictions": "",
+      "candidateExerciseIds": ["legpress"],
+      "visualReview": {
+        "status": "visual-movement-candidate",
+        "finding": "Seated horizontal leg-press photo, cropped to legs and apparatus. Suitable for apparatus recognition; does not show supported back or full technique.",
+        "inspected": true
+      },
+      "previewSha256": "591e4bc7495f92fde681f67e92706298729bfed4257e8953adcd0a5c2bc561f4",
+      "approvedForPublication": false
+    },
+    {
+      "source": "Wikimedia Commons",
+      "pageId": 141589532,
+      "title": "File:Girl doing lat pulldown exercise.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Girl_doing_lat_pulldown_exercise.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/38/Girl_doing_lat_pulldown_exercise.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Girl_doing_lat_pulldown_exercise.jpg/500px-Girl_doing_lat_pulldown_exercise.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "Tyler  Read",
+      "artistHtml": "Tyler  Read",
+      "creditHtml": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/ptpioneer/48834290862/\">https://www.flickr.com/photos/ptpioneer/48834290862/</a>",
+      "descriptionHtml": "Must attribute with link to: www.ptpioneer.com\nGirl doing lat pulldown exercise",
+      "restrictions": "",
+      "candidateExerciseIds": ["pulldown"],
+      "visualReview": {
+        "status": "visual-movement-candidate",
+        "finding": "Front cable lat-pulldown photo; verify grip and full execution. Credit metadata requests a PTPioneer link as well as photographer attribution.",
+        "inspected": true
+      },
+      "previewSha256": "364386369986c5c26ab29ff49a4fbaf04776827e10f0c087b0163169d41c6da0",
+      "approvedForPublication": false
+    },
+    {
+      "source": "Wikimedia Commons",
+      "pageId": 141589535,
+      "title": "File:Girl exercising side plank.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Girl_exercising_side_plank.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Girl_exercising_side_plank.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Girl_exercising_side_plank.jpg/500px-Girl_exercising_side_plank.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "Tyler  Read",
+      "artistHtml": "Tyler  Read",
+      "creditHtml": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/ptpioneer/48316641941/\">https://www.flickr.com/photos/ptpioneer/48316641941/</a>",
+      "descriptionHtml": "Must attribute with link to: www.ptpioneer.com\nPicture of a girl exercising outdoors on a yoga mat doing the side plank exercise and wearing gym clothing.",
+      "restrictions": "",
+      "candidateExerciseIds": ["wger-e1b99153-0102-47fc-b0cd-c21509827b0b"],
+      "visualReview": {
+        "status": "visual-movement-candidate",
+        "finding": "Forearm side plank with top arm raised and stacked feet; check guide and credit requirements.",
+        "inspected": true
+      },
+      "previewSha256": "2263399cdce5132fc9ffd3d681b95c01df8ab512edc56d47dd0faf2861b7d3b3",
+      "approvedForPublication": false
+    },
+    {
+      "source": "Wikimedia Commons",
+      "pageId": 141590145,
+      "title": "File:Girl exercising doing a plank.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Girl_exercising_doing_a_plank.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Girl_exercising_doing_a_plank.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Girl_exercising_doing_a_plank.jpg/500px-Girl_exercising_doing_a_plank.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "Tyler  Read",
+      "artistHtml": "Tyler  Read",
+      "creditHtml": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/ptpioneer/48317465981/\">https://www.flickr.com/photos/ptpioneer/48317465981/</a>",
+      "descriptionHtml": "Must attribute with link to: www.ptpioneer.com\nImage of a girl exercising doing a plank on a yoga mat.",
+      "restrictions": "",
+      "candidateExerciseIds": ["db-plank"],
+      "visualReview": {
+        "status": "visual-movement-candidate",
+        "finding": "Forearm plank on a mat; forearm support matches the guide. Single still does not establish full execution.",
+        "inspected": true
+      },
+      "previewSha256": "ee60321091111d14b63b40a83db6fc672c60a43d1d281a11183efd4d006eb8d2",
+      "approvedForPublication": false
+    },
+    {
+      "source": "Wikimedia Commons",
+      "pageId": 149961995,
+      "title": "File:2008 CrossFit Games - athletes performing a chest-to-bar pull-up.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:2008_CrossFit_Games_-_athletes_performing_a_chest-to-bar_pull-up.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c1/2008_CrossFit_Games_-_athletes_performing_a_chest-to-bar_pull-up.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/2008_CrossFit_Games_-_athletes_performing_a_chest-to-bar_pull-up.jpg/500px-2008_CrossFit_Games_-_athletes_performing_a_chest-to-bar_pull-up.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "Brad Greenlee (photos · photo sets)",
+      "artistHtml": "<a href=\"//www.flickr.com/people/bgreenlee\" class=\"extiw\" title=\"flickruser:bgreenlee\">Brad Greenlee</a> (<span class=\"plainlinks\"><a rel=\"nofollow\" class=\"external text\" href=\"//www.flickr.com/photos/bgreenlee\">photos</a><b style=\"white-space:nowrap;\"> ·</b> <a rel=\"nofollow\" class=\"external text\" href=\"//www.flickr.com/photos/bgreenlee/sets\">photo sets</a></span>)",
+      "creditHtml": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/bgreenlee/2643154817/\">https://www.flickr.com/photos/bgreenlee/2643154817/</a>",
+      "descriptionHtml": "2008 CrossFit Games, Aromas, CA, Loren performing a chest-to-bar pull-up",
+      "restrictions": "",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "different-setup-review-needed",
+        "finding": "Chest-to-bar contest image with underhand grip. Do not substitute for a general overhand pull-up; range/action require review.",
+        "inspected": true
+      },
+      "previewSha256": "a992c33b69bd0e1164927644a2e4ab3471b6020f3a20413da8e150f74cd0f4fa",
+      "approvedForPublication": false
+    },
+    {
+      "source": "Wikimedia Commons",
+      "pageId": 170736759,
+      "title": "File:Amer-Lat-Pulldown.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amer-Lat-Pulldown.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/33/Amer-Lat-Pulldown.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Amer-Lat-Pulldown.jpg/500px-Amer-Lat-Pulldown.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Abooyeah",
+      "artistHtml": "<a href=\"//commons.wikimedia.org/wiki/User:Abooyeah\" title=\"User:Abooyeah\">Abooyeah</a>",
+      "creditHtml": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+      "descriptionHtml": "A photo of Emirati Bodybuilder, doin Lat-Pulldown Exercise in Binous Gym Dubai.\n<p>Photo by Abooyeah, founder of AthletixVisuals Dubai.\nLicensed under Creative Commons Attribution 4.0.\n</p>\nCredit: <a rel=\"nofollow\" class=\"external free\" href=\"https://abooyeah.com\">https://abooyeah.com</a>",
+      "restrictions": "",
+      "candidateExerciseIds": ["db-wide-grip-pulldown-behind-the-neck"],
+      "visualReview": {
+        "status": "hold-licence-and-variant-review",
+        "finding": "Behind-neck pulldown, excluded for ordinary front pulldown. Description declares CC BY 4.0 while licence metadata declares CC BY-SA 4.0; clarify provenance/licence.",
+        "inspected": true
+      },
+      "previewSha256": "bcfb9270f3975e5966e3c6d456e6eed4484b752400d9fb7243348829e51ed0f0",
+      "approvedForPublication": false
+    },
+    {
+      "source": "Wikimedia Commons",
+      "pageId": 170736773,
+      "title": "File:Marian-Leg-Press.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marian-Leg-Press.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Marian-Leg-Press.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Marian-Leg-Press.jpg/500px-Marian-Leg-Press.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Abooyeah",
+      "artistHtml": "<a href=\"//commons.wikimedia.org/wiki/User:Abooyeah\" title=\"User:Abooyeah\">Abooyeah</a>",
+      "creditHtml": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+      "descriptionHtml": "A muscular Men's Physique Athlete exercising legs on a Leg Press machine at Binous Gym Dubai.\n<p>Photo by Abooyeah, founder of AthletixVisuals Dubai.\nLicensed under Creative Commons Attribution 4.0.\n</p>\nCredit: <a rel=\"nofollow\" class=\"external free\" href=\"https://abooyeah.com\">https://abooyeah.com</a>",
+      "restrictions": "",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "hold-licence-and-variant-review",
+        "finding": "Vertical leg-press photo with near-extended knees. No exact vertical-machine guide mapped. Description declares CC BY 4.0 while licence metadata declares CC BY-SA 4.0.",
+        "inspected": true
+      },
+      "previewSha256": "0e5b2223959747cba08537cceb348ca0b2e3dff66f02402fabc3fbcc3256abf8",
+      "approvedForPublication": false
+    },
+    {
+      "source": "Wikimedia Commons",
+      "pageId": 182010455,
+      "title": "File:Girl exercising doing plank on stability ball.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Girl_exercising_doing_plank_on_stability_ball.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/92/Girl_exercising_doing_plank_on_stability_ball.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Girl_exercising_doing_plank_on_stability_ball.jpg/500px-Girl_exercising_doing_plank_on_stability_ball.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "PTPioneer",
+      "artistHtml": "PTPioneer",
+      "creditHtml": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/182613284@N02/48317626392/\">https://www.flickr.com/photos/182613284@N02/48317626392/</a>",
+      "descriptionHtml": "Must attribute with link to: www.ptpioneer.com\nImage of a girl working out Outside doing stability ball Planks with feet on stability ball.",
+      "restrictions": "",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "different-setup-review-needed",
+        "finding": "Forearm plank with feet on stability ball. Do not substitute for ordinary plank or a forearms-on-ball variation.",
+        "inspected": true
+      },
+      "previewSha256": "d659f17f7f30f81abc196233708891947978d6faf9557a014b6a8e7de96721a0",
+      "approvedForPublication": false
+    },
+    {
+      "source": "Wikimedia Commons",
+      "pageId": 184589835,
+      "title": "File:Bench press.webp",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bench_press.webp",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/39/Bench_press.webp?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Bench_press.webp/500px-Bench_press.webp?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "artist": "Wikideas1",
+      "artistHtml": "<a href=\"//commons.wikimedia.org/wiki/User:Wikideas1\" title=\"User:Wikideas1\">Wikideas1</a>",
+      "creditHtml": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+      "descriptionHtml": "Bench press",
+      "restrictions": "",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "exclude-from-execution-photos",
+        "finding": "Empty bench and rack; no person or movement demonstration.",
+        "inspected": true
+      },
+      "previewSha256": "15a58bda891f2983958ab6ae95c4737cf78a1201b327d8c5c4c20b215100e588",
+      "approvedForPublication": false
+    }
+  ],
+  "ymoveFreeCandidates": [
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Barbell Back Squat",
+      "description": "Barbell Back Squat exercise demonstration - Quads exercise with barbell equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/fd0eaa34-d14b-4421-b41c-1669f93253b3",
+      "thumbnailUrl": "https://ymove.app/api/free/fd0eaa34-d14b-4421-b41c-1669f93253b3?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": ["squat"],
+      "visualReview": {
+        "status": "visual-movement-candidate",
+        "inspected": true,
+        "finding": "Real filmed-person thumbnail with relevant exercise setup. Your Move branding is present. Full clip and standalone still/thumbnail reuse scope remain unreviewed."
+      },
+      "previewSha256": "0874921046cfc8cce73a22c77a3ebee09fb939ab5ad7f89a107ee08ba0ecf554",
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Barbell Bench Press",
+      "description": "Barbell Bench Press exercise demonstration - Chest exercise with barbell equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/dd7e706c-2086-4f4b-867f-d7fece2f720d",
+      "thumbnailUrl": "https://ymove.app/api/free/dd7e706c-2086-4f4b-867f-d7fece2f720d?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": ["bench"],
+      "visualReview": {
+        "status": "visual-movement-candidate",
+        "inspected": true,
+        "finding": "Real filmed-person thumbnail with relevant exercise setup. Your Move branding is present. Full clip and standalone still/thumbnail reuse scope remain unreviewed."
+      },
+      "previewSha256": "5376b3b7bd0597eee534d3f9b2dc9b5c1023aa84938c1e00648e0d2bd531feff",
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Barbell Deadlift",
+      "description": "Barbell Deadlift exercise demonstration - Full Body exercise with barbell equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/b59952ca-1551-4c07-835d-ab78bfe9953c",
+      "thumbnailUrl": "https://ymove.app/api/free/b59952ca-1551-4c07-835d-ab78bfe9953c?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "not-visually-reviewed",
+        "inspected": false,
+        "finding": "Full movement, equipment and thumbnail/still reuse rights require review."
+      },
+      "previewSha256": null,
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Dumbbell Lateral Raise",
+      "description": "Dumbbell Lateral Raise exercise demonstration - Shoulders exercise with dumbbell equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/a16f0235-20eb-4306-b9cc-c01ae51b3b9b",
+      "thumbnailUrl": "https://ymove.app/api/free/a16f0235-20eb-4306-b9cc-c01ae51b3b9b?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": ["lateral"],
+      "visualReview": {
+        "status": "visual-movement-candidate",
+        "inspected": true,
+        "finding": "Real filmed-person thumbnail with relevant exercise setup. Your Move branding is present. Full clip and standalone still/thumbnail reuse scope remain unreviewed."
+      },
+      "previewSha256": "aa84b462dc8b900f7b798102c6d47c73da5e00aaa9fc4f018eb8ab8a951c98ba",
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Hammer Curls",
+      "description": "Hammer Curls exercise demonstration - Biceps exercise with dumbbell equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/b11e6c6f-b2e8-44ca-95dc-adf0dcd34426",
+      "thumbnailUrl": "https://ymove.app/api/free/b11e6c6f-b2e8-44ca-95dc-adf0dcd34426?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": ["db-hammer-curls"],
+      "visualReview": {
+        "status": "visual-movement-candidate",
+        "inspected": true,
+        "finding": "Real filmed-person thumbnail with relevant exercise setup. Your Move branding is present. Full clip and standalone still/thumbnail reuse scope remain unreviewed. Thumbnail is the neutral-grip starting position; verify simultaneous versus alternating action in the clip."
+      },
+      "previewSha256": "dac4206bcc81f1d9b5a50caf8b6594d724fab6204bff08aa2e10a9aa142bb2e2",
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Single Arm Dumbbell Row - Legs apart",
+      "description": "Single Arm Dumbbell Row - Legs apart exercise demonstration - Back exercise with dumbbell equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/d3fece95-c7e2-4794-ba8f-65a5b3e30a28",
+      "thumbnailUrl": "https://ymove.app/api/free/d3fece95-c7e2-4794-ba8f-65a5b3e30a28?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "not-visually-reviewed",
+        "inspected": false,
+        "finding": "Full movement, equipment and thumbnail/still reuse rights require review."
+      },
+      "previewSha256": null,
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Dumbbell Goblet Squat",
+      "description": "Dumbbell Goblet Squat exercise demonstration - Quads exercise with dumbbell equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/a2a797d0-f6f6-436e-8616-6c1d93e73d67",
+      "thumbnailUrl": "https://ymove.app/api/free/a2a797d0-f6f6-436e-8616-6c1d93e73d67?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "not-visually-reviewed",
+        "inspected": false,
+        "finding": "Full movement, equipment and thumbnail/still reuse rights require review."
+      },
+      "previewSha256": null,
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Kettlebell swing",
+      "description": "Kettlebell swing exercise demonstration - Core exercise with kettlebell equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/13263f92-5fe2-4d92-bec0-808f8b315620",
+      "thumbnailUrl": "https://ymove.app/api/free/13263f92-5fe2-4d92-bec0-808f8b315620?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "not-visually-reviewed",
+        "inspected": false,
+        "finding": "Full movement, equipment and thumbnail/still reuse rights require review."
+      },
+      "previewSha256": null,
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Kettlebell Push Press",
+      "description": "Kettlebell Push Press exercise demonstration - Shoulders exercise with kettlebell equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/3880aaa4-e1c0-4153-95d0-da44ea01e099",
+      "thumbnailUrl": "https://ymove.app/api/free/3880aaa4-e1c0-4153-95d0-da44ea01e099?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "not-visually-reviewed",
+        "inspected": false,
+        "finding": "Full movement, equipment and thumbnail/still reuse rights require review."
+      },
+      "previewSha256": null,
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Kettlebell Romanian Deadlift",
+      "description": "Kettlebell Romanian Deadlift exercise demonstration - Hamstrings exercise with kettlebell equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/e7175536-9d7d-4f5d-8d49-26c3411eac80",
+      "thumbnailUrl": "https://ymove.app/api/free/e7175536-9d7d-4f5d-8d49-26c3411eac80?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "not-visually-reviewed",
+        "inspected": false,
+        "finding": "Full movement, equipment and thumbnail/still reuse rights require review."
+      },
+      "previewSha256": null,
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Goblet Squat with Kettlebell",
+      "description": "Goblet Squat with Kettlebell exercise demonstration - Quads exercise with kettlebell equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/198d4a7d-bc23-41f8-ad67-4fe9ab876b89",
+      "thumbnailUrl": "https://ymove.app/api/free/198d4a7d-bc23-41f8-ad67-4fe9ab876b89?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "not-visually-reviewed",
+        "inspected": false,
+        "finding": "Full movement, equipment and thumbnail/still reuse rights require review."
+      },
+      "previewSha256": null,
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Lat Pulldown",
+      "description": "Lat Pulldown exercise demonstration - Back exercise with cable equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/5971eaa2-5264-49cc-99c2-1310305c5342",
+      "thumbnailUrl": "https://ymove.app/api/free/5971eaa2-5264-49cc-99c2-1310305c5342?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": ["pulldown"],
+      "visualReview": {
+        "status": "visual-movement-candidate",
+        "inspected": true,
+        "finding": "Real filmed-person thumbnail with relevant exercise setup. Your Move branding is present. Full clip and standalone still/thumbnail reuse scope remain unreviewed."
+      },
+      "previewSha256": "b6f235e3261dd244b0b5e0fc780675dd8e6111fa570a4b3aa491b23ca534e897",
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Seated Cable Row close V bar",
+      "description": "Seated Cable Row close V bar exercise demonstration - Back exercise with cable equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/77976f52-b13a-4fd0-addf-f4404e3a8e95",
+      "thumbnailUrl": "https://ymove.app/api/free/77976f52-b13a-4fd0-addf-f4404e3a8e95?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "not-visually-reviewed",
+        "inspected": false,
+        "finding": "Full movement, equipment and thumbnail/still reuse rights require review."
+      },
+      "previewSha256": null,
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Seated Machine Chest Press",
+      "description": "Seated Machine Chest Press exercise demonstration - Chest exercise with machine equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/20cc4825-dd52-4887-99db-c492546741dc",
+      "thumbnailUrl": "https://ymove.app/api/free/20cc4825-dd52-4887-99db-c492546741dc?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "not-visually-reviewed",
+        "inspected": false,
+        "finding": "Full movement, equipment and thumbnail/still reuse rights require review."
+      },
+      "previewSha256": null,
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Cable Crossover (Mid)",
+      "description": "Cable Crossover (Mid) exercise demonstration - Chest exercise with cable equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/8de0e422-f771-4916-8bab-3ca29cc2abe5",
+      "thumbnailUrl": "https://ymove.app/api/free/8de0e422-f771-4916-8bab-3ca29cc2abe5?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "not-visually-reviewed",
+        "inspected": false,
+        "finding": "Full movement, equipment and thumbnail/still reuse rights require review."
+      },
+      "previewSha256": null,
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Cable Lateral Raise",
+      "description": "Cable Lateral Raise exercise demonstration - Shoulders exercise with cable equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/710d4aa4-e4ea-4fad-8930-a7b9bf582cae",
+      "thumbnailUrl": "https://ymove.app/api/free/710d4aa4-e4ea-4fad-8930-a7b9bf582cae?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "not-visually-reviewed",
+        "inspected": false,
+        "finding": "Full movement, equipment and thumbnail/still reuse rights require review."
+      },
+      "previewSha256": null,
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Cable Rope Face Pull",
+      "description": "Cable Rope Face Pull exercise demonstration - Shoulders exercise with cable equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/d9b9cf47-c5ff-4672-b8a8-2fe5f4845231",
+      "thumbnailUrl": "https://ymove.app/api/free/d9b9cf47-c5ff-4672-b8a8-2fe5f4845231?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "not-visually-reviewed",
+        "inspected": false,
+        "finding": "Full movement, equipment and thumbnail/still reuse rights require review."
+      },
+      "previewSha256": null,
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Cable Bicep Curl rope",
+      "description": "Cable Bicep Curl rope exercise demonstration - Biceps exercise with cable equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/f32940f7-7da6-4741-a72f-13e52c56a79c",
+      "thumbnailUrl": "https://ymove.app/api/free/f32940f7-7da6-4741-a72f-13e52c56a79c?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "not-visually-reviewed",
+        "inspected": false,
+        "finding": "Full movement, equipment and thumbnail/still reuse rights require review."
+      },
+      "previewSha256": null,
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Cable Tricep Pushdown",
+      "description": "Cable Tricep Pushdown exercise demonstration - Triceps exercise with cable equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/3875dae4-14a6-4533-84d3-ef9acbadbaea",
+      "thumbnailUrl": "https://ymove.app/api/free/3875dae4-14a6-4533-84d3-ef9acbadbaea?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "not-visually-reviewed",
+        "inspected": false,
+        "finding": "Full movement, equipment and thumbnail/still reuse rights require review."
+      },
+      "previewSha256": null,
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Overhead Cable Rope Extension",
+      "description": "Overhead Cable Rope Extension exercise demonstration - Triceps exercise with cable equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/a1c3384e-62db-4595-9b97-df2e7f131234",
+      "thumbnailUrl": "https://ymove.app/api/free/a1c3384e-62db-4595-9b97-df2e7f131234?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "not-visually-reviewed",
+        "inspected": false,
+        "finding": "Full movement, equipment and thumbnail/still reuse rights require review."
+      },
+      "previewSha256": null,
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Leg Extension",
+      "description": "Leg Extension exercise demonstration - Quads exercise with machine equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/af0c3d19-5ee2-4a19-8688-f8504bb33e3c",
+      "thumbnailUrl": "https://ymove.app/api/free/af0c3d19-5ee2-4a19-8688-f8504bb33e3c?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": ["db-leg-extensions"],
+      "visualReview": {
+        "status": "visual-movement-candidate",
+        "inspected": true,
+        "finding": "Real filmed-person thumbnail with relevant exercise setup. Your Move branding is present. Full clip and standalone still/thumbnail reuse scope remain unreviewed."
+      },
+      "previewSha256": "ad6ecda1928587fb2ef490e34b144ccb6b1522f17f62623347012caf8807b166",
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Leg Press",
+      "description": "Leg Press exercise demonstration - Quads exercise with machine equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/d0bc669e-0d78-46f0-95f1-86503ab746e1",
+      "thumbnailUrl": "https://ymove.app/api/free/d0bc669e-0d78-46f0-95f1-86503ab746e1?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": ["legpress"],
+      "visualReview": {
+        "status": "visual-movement-candidate",
+        "inspected": true,
+        "finding": "Real filmed-person thumbnail with relevant exercise setup. Your Move branding is present. Full clip and standalone still/thumbnail reuse scope remain unreviewed."
+      },
+      "previewSha256": "c4a7ae6d050a86d4fcbcbb9244b4772fae69835bb7e89237f6606b772cd054f3",
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Lying Leg Curl",
+      "description": "Lying Leg Curl exercise demonstration - Hamstrings exercise with machine equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/ee452f3b-4d5f-4deb-995e-64dd2a23f453",
+      "thumbnailUrl": "https://ymove.app/api/free/ee452f3b-4d5f-4deb-995e-64dd2a23f453?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "not-visually-reviewed",
+        "inspected": false,
+        "finding": "Full movement, equipment and thumbnail/still reuse rights require review."
+      },
+      "previewSha256": null,
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Glute Kickback Machine",
+      "description": "Glute Kickback Machine exercise demonstration - Glutes exercise with machine equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/5611abf4-57f7-4153-b29d-a17cd7e2907d",
+      "thumbnailUrl": "https://ymove.app/api/free/5611abf4-57f7-4153-b29d-a17cd7e2907d?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "hold-equipment-mismatch",
+        "inspected": true,
+        "finding": "Machine label reads Standing Leg Curl and pad setup appears for knee flexion. Do not map to hip-extension kickback without full video and equipment review."
+      },
+      "previewSha256": "93a1bf1ea24d8791945e05f16725a1945d618754b3f14e816b7dd2f38540466c",
+      "approvedForPublication": false
+    },
+    {
+      "source": "YMove free exercise demonstrations",
+      "name": "Cable Woodchop (High to Low)",
+      "description": "Cable Woodchop (High to Low) exercise demonstration - Core exercise with cable equipment.",
+      "sourceUrl": "https://ymove.app/free-exercise-videos",
+      "videoUrl": "https://ymove.app/api/free/3a47b35a-a5ee-4b0c-8780-ba368d122f10",
+      "thumbnailUrl": "https://ymove.app/api/free/3a47b35a-a5ee-4b0c-8780-ba368d122f10?type=thumbnail",
+      "providerUploadDate": "2026-08-01",
+      "licenceEvidenceUrl": "https://ymove.app/free-exercise-videos#licence",
+      "rightsObserved": "Free clips explicitly offered for commercial app/site use, no signup, attribution appreciated; no resale or redistribution as a standalone library. Standalone photo/thumbnail rights are not independently cleared.",
+      "candidateExerciseIds": [],
+      "visualReview": {
+        "status": "not-visually-reviewed",
+        "inspected": false,
+        "finding": "Full movement, equipment and thumbnail/still reuse rights require review."
+      },
+      "previewSha256": null,
+      "approvedForPublication": false
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "name": "cardio-01",
+  "columns": 4,
+  "rows": 3,
+  "kind": "equipment_illustration",
+  "sourceGeneratedPath": "/workspace/generated_images/exec-e71e98db-e439-4695-accd-f38b2aa4d2c1.png",
+  "publicPath": "/exercise-media/original/cardio-01.png",
+  "prompt": "Create original FORMA gym illustrations, a precisely aligned atlas with exactly FOUR columns and THREE rows, 12 equally sized cells, landscape 1536x1024 composition. Every cell pure white, no visible borders, no labels or lettering or logos or watermarks. Same polished technical drawing style throughout: matte charcoal steel, gray padding, subtle soft gray shadow, sparse bright lime green adjustment controls. Three-quarter views, entire subject within its cell with generous margins. Each cell is a distinct physically plausible gym apparatus, no people. Mechanical pivots, supports, load paths and usable pads/handles must make functional sense. This is original art, not reproductions of existing photos. Strict row-major positions:\nRow 1, column 1: Motorized treadmill. long flat moving belt deck with rear roller, two upright forward console supports and safety handrails, no curved air-runner deck.\nRow 1, column 2: Elliptical cross trainer. two long articulated foot platforms connected to elliptical crank/flywheel, tall moving pole handles, stationary centre grips and blank console.\nRow 1, column 3: Stationary rowing ergometer. long horizontal rail with sliding low seat, rear rail foot, front fan flywheel housing, paired strapped footrests and cable pull handle reachable ahead of seat.\nRow 1, column 4: Upright stationary cycle. upright adjustable bicycle saddle above bottom crank, fixed front handlebars and blank console, conventional enclosed resistance flywheel and pedals; NOT air bike.\nRow 2, column 1: Recumbent stationary cycle. low reclined padded seat/backrest at rear, pedal crank far in FRONT of seat on low long frame, forward console and small side hand grips.\nRow 2, column 2: Fan air bike. upright cycle saddle, large exposed front fan wheel, reciprocating two long arm handles mechanically linked to crank, foot pedals.\nRow 2, column 3: Pedal stair stepper. two independent large foot pedals that move vertically up/down, support handrails and blank upper console, resistance cylinders; NO revolving stair belt.\nRow 2, column 4: Revolving step mill. actual short revolving STAIRCASE with three visible broad stair treads on sloping moving belt, high side handrails and blank console.\nRow 3, column 1: Standing double-pole ski ergometer. vertical column with bottom flywheel resistance unit, two separated HIGH overhead cable pulleys and two hanging hand grips at head height, standing floor platform, no seat or skis.\nRow 3, column 2: Dual adjustable cable crossover station. wide rectangular cross-connected two towers each with independent weight stack and full-height adjustable pulley carriage. One high and one low pulley with handle each, spare straight bar/rope/ankle cuff neatly laid outside centre standing area.\nRow 3, column 3: Smith machine with adjustable bench. two vertical guide rails carrying ONE horizontal barbell with two plate sleeves, rotary catch hooks and adjustable safety stops; removable adjustable bench positioned under bar with backrest inclined 30 degrees, robust rack; guided bar not free rack.\nRow 3, column 4: Smith machine without bench. two vertical guide rails holding horizontal barbell on bearing carriages, equal plate sleeves, side safety catch ladders and stops, open floor space to stand, no seat/bench.",
+  "cells": [
+    {
+      "title": "Motorized treadmill",
+      "ids": [
+        "db-jogging-treadmill",
+        "db-running-treadmill",
+        "db-walking-treadmill"
+      ],
+      "desc": "long flat moving belt deck with rear roller, two upright forward console supports and safety handrails, no curved air-runner deck",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: correct distinct cardio motion mechanism / adjustable cable or guided Smith apparatus. Each selected guide uses this compatible apparatus; equipment reference explicitly labelled, not a demonstration or exact attachment setup."
+    },
+    {
+      "title": "Elliptical cross trainer",
+      "ids": [
+        "db-elliptical-trainer"
+      ],
+      "desc": "two long articulated foot platforms connected to elliptical crank/flywheel, tall moving pole handles, stationary centre grips and blank console",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: correct distinct cardio motion mechanism / adjustable cable or guided Smith apparatus. Each selected guide uses this compatible apparatus; equipment reference explicitly labelled, not a demonstration or exact attachment setup."
+    },
+    {
+      "title": "Stationary rowing ergometer",
+      "ids": [
+        "db-rowing-stationary"
+      ],
+      "desc": "long horizontal rail with sliding low seat, rear rail foot, front fan flywheel housing, paired strapped footrests and cable pull handle reachable ahead of seat",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: correct distinct cardio motion mechanism / adjustable cable or guided Smith apparatus. Each selected guide uses this compatible apparatus; equipment reference explicitly labelled, not a demonstration or exact attachment setup."
+    },
+    {
+      "title": "Upright stationary cycle",
+      "ids": [
+        "db-bicycling-stationary"
+      ],
+      "desc": "upright adjustable bicycle saddle above bottom crank, fixed front handlebars and blank console, conventional enclosed resistance flywheel and pedals; NOT air bike",
+      "column": 3,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: correct distinct cardio motion mechanism / adjustable cable or guided Smith apparatus. Each selected guide uses this compatible apparatus; equipment reference explicitly labelled, not a demonstration or exact attachment setup."
+    },
+    {
+      "title": "Recumbent stationary cycle",
+      "ids": [
+        "db-recumbent-bike"
+      ],
+      "desc": "low reclined padded seat/backrest at rear, pedal crank far in FRONT of seat on low long frame, forward console and small side hand grips",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: correct distinct cardio motion mechanism / adjustable cable or guided Smith apparatus. Each selected guide uses this compatible apparatus; equipment reference explicitly labelled, not a demonstration or exact attachment setup."
+    },
+    {
+      "title": "Fan air bike",
+      "ids": [
+        "forma-fan-bike"
+      ],
+      "desc": "upright cycle saddle, large exposed front fan wheel, reciprocating two long arm handles mechanically linked to crank, foot pedals",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: correct distinct cardio motion mechanism / adjustable cable or guided Smith apparatus. Each selected guide uses this compatible apparatus; equipment reference explicitly labelled, not a demonstration or exact attachment setup."
+    },
+    {
+      "title": "Pedal stair stepper",
+      "ids": [
+        "db-stairmaster"
+      ],
+      "desc": "two independent large foot pedals that move vertically up/down, support handrails and blank upper console, resistance cylinders; NO revolving stair belt",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: correct distinct cardio motion mechanism / adjustable cable or guided Smith apparatus. Each selected guide uses this compatible apparatus; equipment reference explicitly labelled, not a demonstration or exact attachment setup."
+    },
+    {
+      "title": "Revolving step mill",
+      "ids": [
+        "db-step-mill"
+      ],
+      "desc": "actual short revolving STAIRCASE with three visible broad stair treads on sloping moving belt, high side handrails and blank console",
+      "column": 3,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: correct distinct cardio motion mechanism / adjustable cable or guided Smith apparatus. Each selected guide uses this compatible apparatus; equipment reference explicitly labelled, not a demonstration or exact attachment setup."
+    },
+    {
+      "title": "Standing double-pole ski ergometer",
+      "ids": [
+        "wger-e29d9914-6b02-490b-8f3a-f9fe8f21993c"
+      ],
+      "desc": "vertical column with bottom flywheel resistance unit, two separated HIGH overhead cable pulleys and two hanging hand grips at head height, standing floor platform, no seat or skis",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: correct distinct cardio motion mechanism / adjustable cable or guided Smith apparatus. Each selected guide uses this compatible apparatus; equipment reference explicitly labelled, not a demonstration or exact attachment setup."
+    },
+    {
+      "title": "Dual adjustable cable crossover station",
+      "ids": [
+        "triceps",
+        "db-alternating-cable-shoulder-press",
+        "wger-45251627-5f89-4858-bf0c-8884a21cbb1f",
+        "wger-57018827-f344-4627-88e5-03e4f2f49859",
+        "db-bent-over-low-pulley-side-lateral",
+        "wger-b2865908-b93e-4507-ada4-a5bb9317566c",
+        "wger-e22c4320-7753-49c6-b7f7-4be21b025fb6",
+        "db-cable-crossover",
+        "db-cable-crunch",
+        "db-cable-deadlifts",
+        "wger-ae695660-7cee-4601-8241-edd3e2a6d896",
+        "wger-5b4fb3ec-53a1-4525-a58a-c070798ea86e",
+        "wger-6e03ecb3-6bfe-4b34-be9d-e5c33e820cc6",
+        "db-cable-hammer-curls-rope-attachment",
+        "db-cable-hip-adduction",
+        "db-cable-iron-cross",
+        "db-cable-judo-flip",
+        "db-cable-one-arm-tricep-extension",
+        "wger-70479b75-0df4-4ac2-a324-4a44b148304c",
+        "db-cable-rear-delt-fly",
+        "wger-0285f198-36d5-4a77-bb76-5f72e1a4d6c9",
+        "db-cable-rope-overhead-triceps-extension",
+        "db-cable-shoulder-press",
+        "wger-05853a58-4426-450c-9b06-bfa461a767bf",
+        "db-cable-shrugs",
+        "wger-4c8cf398-b400-46dc-89b4-94bb478f4ea9",
+        "wger-07ded945-de5d-4e77-b13c-17d51a2f0007",
+        "wger-1ea73578-08a5-4f3e-9255-3c58b29b170d",
+        "wger-5aee8ae1-2752-4868-af62-e3c79954d811",
+        "wger-c867836d-2929-4977-b23c-014bc21ec08d",
+        "wger-37314b67-1aad-4405-aa88-70846d5f035d",
+        "db-external-rotation-with-cable",
+        "db-face-pull",
+        "db-front-cable-raise",
+        "db-high-cable-curls",
+        "wger-4ef75e13-c058-4410-91c0-2f2d2df98130",
+        "wger-47b244f0-ebc6-4498-9d9f-7e7bff47322e",
+        "db-kneeling-cable-crunch-with-alternating-oblique-twists",
+        "db-kneeling-high-pulley-row",
+        "db-kneeling-single-arm-high-pulley-row",
+        "wger-57263316-6f34-4539-952b-b07e09bac3ba",
+        "wger-28d18142-8777-4dba-a3a1-6151cec94500",
+        "db-low-cable-crossover",
+        "wger-ac00021c-12f9-4827-8003-ea07de980b76",
+        "db-one-arm-high-pulley-cable-side-bends",
+        "db-one-legged-cable-kickback",
+        "wger-c7058ff8-ca3b-4822-abdb-6341ce37c4d1",
+        "wger-f2e17c8d-7285-4fd5-bfe8-26f407802850",
+        "db-pallof-press",
+        "db-pallof-press-with-rotation",
+        "db-pull-through",
+        "db-reverse-cable-curl",
+        "db-reverse-grip-triceps-pushdown",
+        "db-shotgun-row",
+        "wger-7e039ac7-37ab-49f9-9ae8-c7efeef070cd",
+        "db-single-arm-cable-crossover",
+        "wger-83af8d94-319b-456b-92d8-75cec821a195",
+        "wger-0cb0c5aa-f3dc-4883-b181-0b5efda1bc4f",
+        "db-standing-biceps-cable-curl",
+        "db-standing-cable-chest-press",
+        "db-standing-cable-lift",
+        "db-standing-cable-wood-chop",
+        "db-standing-low-pulley-deltoid-raise",
+        "db-standing-low-pulley-one-arm-triceps-extension",
+        "db-standing-one-arm-cable-curl",
+        "db-standing-rope-crunch",
+        "db-triceps-pushdown-rope-attachment",
+        "db-triceps-pushdown-v-bar-attachment",
+        "wger-788b66aa-7e59-493f-ad9a-0522736c7ef0",
+        "db-upright-cable-row",
+        "wger-f6471f4a-0290-4a71-9580-bf3d046fdb9d",
+        "forma-cable-standing-hip-abduction"
+      ],
+      "desc": "wide rectangular cross-connected two towers each with independent weight stack and full-height adjustable pulley carriage. One high and one low pulley with handle each, spare straight bar/rope/ankle cuff neatly laid outside centre standing area",
+      "caption": "Adjustable cable station · Equipment reference; pulley height, attachments and posture follow each exercise guide.",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: correct distinct cardio motion mechanism / adjustable cable or guided Smith apparatus. Each selected guide uses this compatible apparatus; equipment reference explicitly labelled, not a demonstration or exact attachment setup."
+    },
+    {
+      "title": "Smith machine with adjustable bench",
+      "ids": [
+        "wger-ecba2395-f364-4e5f-a34c-04f178c8b822",
+        "db-smith-machine-bench-press",
+        "db-smith-machine-close-grip-bench-press",
+        "db-smith-machine-hip-raise",
+        "db-smith-machine-incline-bench-press",
+        "db-smith-machine-overhead-shoulder-press",
+        "wger-ef2df6a2-41df-4a25-b2e0-4808dc2c3305",
+        "db-smith-single-leg-split-squat"
+      ],
+      "desc": "two vertical guide rails carrying ONE horizontal barbell with two plate sleeves, rotary catch hooks and adjustable safety stops; removable adjustable bench positioned under bar with backrest inclined 30 degrees, robust rack; guided bar not free rack",
+      "caption": "Smith machine with adjustable bench · Equipment reference; set the bench angle and safety stops as described in the guide.",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: correct distinct cardio motion mechanism / adjustable cable or guided Smith apparatus. Each selected guide uses this compatible apparatus; equipment reference explicitly labelled, not a demonstration or exact attachment setup."
+    },
+    {
+      "title": "Smith machine without bench",
+      "ids": [
+        "db-smith-machine-behind-the-back-shrug",
+        "db-smith-machine-bent-over-row",
+        "db-smith-machine-calf-raise",
+        "db-smith-machine-hang-power-clean",
+        "db-smith-machine-one-arm-upright-row",
+        "db-smith-machine-pistol-squat",
+        "db-smith-machine-reverse-calf-raises",
+        "wger-b382dcb2-60a8-412d-b0ee-6afe9c9f36d7",
+        "db-smith-machine-squat",
+        "db-smith-machine-stiff-legged-deadlift",
+        "db-smith-machine-upright-row",
+        "forma-smith-romanian-deadlift"
+      ],
+      "desc": "two vertical guide rails holding horizontal barbell on bearing carriages, equal plate sleeves, side safety catch ladders and stops, open floor space to stand, no seat/bench",
+      "caption": "Guided-bar Smith machine · Equipment reference; follow the guide for the stance and required supports.",
+      "column": 3,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: correct distinct cardio motion mechanism / adjustable cable or guided Smith apparatus. Each selected guide uses this compatible apparatus; equipment reference explicitly labelled, not a demonstration or exact attachment setup."
+    }
+  ]
+}

@@ -1,9 +1,10 @@
-import { Dumbbell, BookOpen } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import { Button, Modal } from "./UI";
 import { useEffect, useState } from "react";
 import { metricFields } from "../exerciseMetrics.js";
 import Loading from "./Loading";
 import { guideExercise } from "../data.js";
+import ExerciseMedia from "./ExerciseMedia";
 let instructionRequest;
 function loadInstructions() {
   instructionRequest ??= import("../catalog/instructions.json")
@@ -38,9 +39,7 @@ export default function ExerciseGuide({ exercise, onClose }) {
   return (
     <Modal title={exercise.name} onClose={onClose}>
       <div className="modal-content">
-        <div className="exercise-detail-icon">
-          <Dumbbell size={45} />
-        </div>
+        <ExerciseMedia id={guide.id} name={guide.name} />
         <div className="tags">
           <span>{guide.muscle}</span>
           <span>{guide.equipment}</span>

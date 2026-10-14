@@ -41,6 +41,15 @@ test("new fan-bike guide and routine selection use real cardio units", async ({
   await expect(page.locator(".exercise-picker button")).toHaveCount(1);
   await page.locator(".exercise-picker button").click();
   await page.getByRole("button", { name: "Save routine", exact: true }).click();
+  await expect
+    .poll(() =>
+      page.evaluate(() =>
+        JSON.parse(localStorage.getItem("forma-v1"))?.routines.some(
+          (row) => row.name === "Fan bike session",
+        ),
+      ),
+    )
+    .toBe(true);
   const data = await page.evaluate(() =>
     JSON.parse(localStorage.getItem("forma-v1")),
   );

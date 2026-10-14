@@ -1,0 +1,131 @@
+{
+  "name": "movements-005",
+  "columns": 4,
+  "rows": 3,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/movements-005.png",
+  "prompt": "Create beautiful ORIGINAL FORMA exercise art in a clean modern illustrated fitness manual style. Exactly FOUR columns and THREE rows, 12 equal cells, landscape 1536x1024. Each cell white with generous margins; no labels, letters, logos, borders or watermarks. Varied fully clothed adult athletes, charcoal/gray sportswear with a small lime-green accent. Correct anatomy (two arms, two legs), plausible support and weight-bearing, detailed accurate equipment, subtle shadows. Every cell is an EXACT distinct movement/variation matching its description. Show ONE clear representative working position per cell; do not show duplicate athletes, extra limbs, arrows or overlapping phases. Keep the entire athlete and apparatus inside own cell. Never swap freeweights, benches, grips or variations. Read each guide to choose a physically correct pose. Cell positions are mandatory:\nRow 1 column 1: Backward arm circles. Equipment: Bodyweight. Exercise guide: Starting position: Stand tall with your back straight. Steps: 1. Keeping your arms straight, bring them in front of you, raise them over your head, then continue the motion behind your back and down to the initial position. 2. Keep circling your arms as described in step 1.\n\nRow 1 column 2: Backward Drag. Equipment: Specialty equipment. Exercise guide: Load a sled with the desired weight, attaching a rope or straps to the sled that you can hold onto. Begin the exercise by moving backwards for a given distance. Leaning back, extend through the legs for short steps to move as quickly as possible.\n\nRow 1 column 3: Backward Medicine Ball Throw. Equipment: Medicine ball. Exercise guide: This exercise is best done with a partner. If you lack a partner, the ball can be thrown and retrieved or thrown against a wall. Begin standing a few meters in front of your partner, both facing the same direction. Begin holding the ball between your legs. Squat down and then forcefully reverse direction, coming to full extension and you toss the ball over your head to your partner. Your partner can then roll the ball back to you. Repeat for the desired number of repetitions.\n\nRow 1 column 4: Backward shoulder rotation. Equipment: Bodyweight. Exercise guide: Starting position: Sit or stand with your back straight. Steps: 1. Place your hands on your shoulders. 2. Repeatedly rotate both shoulder joints in a circular motion at a moderate pace.\n\nRow 2 column 1: Bag training. Equipment: Bodyweight. Exercise guide: Bag training improves muscle definition of: deltoids; rear deltoids; triceps; biceps, as well as being a great cardio exercise\n\nRow 2 column 2: Balance Board. Equipment: Specialty equipment. Exercise guide: Place a balance board in front of you. Stand up on it and try to balance yourself. Hold the balance for as long as desired.\n\nRow 2 column 3: Ball Leg Curl. Equipment: Exercise ball. Exercise guide: Begin on the floor laying on your back with your feet on top of the ball. Position the ball so that when your legs are extended your ankles are on top of the ball. This will be your starting position. Raise your hips off of the ground, keeping your weight on the shoulder blades and your feet. Flex the knees, pulling the ball as close to you as you can, contracting the hamstrings. After a brief pause, return to the starting position.\n\nRow 2 column 4: Band Assisted Pull-Up. Equipment: Specialty equipment. Exercise guide: Choke the band around the center of the pullup bar. You can use different bands to provide varying levels of assistance. Pull the end of the band down, and place one bent knee into the loop, ensuring it won't slip out. Take a medium to wide grip on the bar. This will be your starting position. Pull yourself upward by contracting the lats as you flex the elbow. The elbow should be driven to your side. Pull to the front, attempting to get your chin over the bar. Avoid swinging or jerking movements. After a brief pause, return to the starting position.\n\nRow 3 column 1: Band Good Morning. Equipment: Resistance band. Exercise guide: Using a 41 inch band, stand on one end, spreading your feet a small amount. Bend at the hips to loop the end of the band behind your neck. This will be your starting position. Keeping your legs straight, extend through the hips to come to a near vertical position. Ensure that you do not round your back as you go down back to the starting position.\n\nRow 3 column 2: Band Good Morning (Pull Through). Equipment: Resistance band. Exercise guide: Loop the band around a post. Standing a little ways away, loop the opposite end around the neck. Your hands can help hold the band in position. Begin by bending at the hips, getting your butt back as far as possible. Keep your back flat and bend forward to about 90 degrees. Your knees should be only slightly bent. Return to the starting position be driving through with the hips to come back to a standing position.\n\nRow 3 column 3: Band Hip Adductions. Equipment: Resistance band. Exercise guide: Anchor a band around a solid post or other object. Stand with your left side to the post, and put your right foot through the band, getting it around the ankle. Stand up straight and hold onto the post if needed. This will be your starting position. Keeping the knee straight, raise your right legs out to the side as far as you can. Return to the starting position and repeat for the desired rep count. Switch sides.\n\nRow 3 column 4: Band Pull Apart. Equipment: Resistance band. Exercise guide: Begin with your arms extended straight out in front of you, holding the band with both hands. Initiate the movement by performing a reverse fly motion, moving your hands out laterally to your sides. Keep your elbows extended as you perform the movement, bringing the band to your chest. Ensure that you keep your shoulders back during the exercise. Pause as you complete the movement, returning to the starting position under control.",
+  "cells": [
+    {
+      "id": "wger-69b3da17-11cc-41fe-bbc1-ee6c45ced41c",
+      "title": "Backward arm circles",
+      "equipment": "Bodyweight",
+      "guideText": "Starting position: Stand tall with your back straight. Steps: 1. Keeping your arms straight, bring them in front of you, raise them over your head, then continue the motion behind your back and down to the initial position. 2. Keep circling your arms as described in step 1.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against complete guide: correct equipment, support, load placement and representative movement phase; intact anatomy."
+    },
+    {
+      "id": "db-backward-drag",
+      "title": "Backward Drag",
+      "equipment": "Specialty equipment",
+      "guideText": "Load a sled with the desired weight, attaching a rope or straps to the sled that you can hold onto.\n\nBegin the exercise by moving backwards for a given distance. Leaning back, extend through the legs for short steps to move as quickly as possible.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against complete guide: correct equipment, support, load placement and representative movement phase; intact anatomy."
+    },
+    {
+      "id": "db-backward-medicine-ball-throw",
+      "title": "Backward Medicine Ball Throw",
+      "equipment": "Medicine ball",
+      "guideText": "This exercise is best done with a partner. If you lack a partner, the ball can be thrown and retrieved or thrown against a wall.\n\nBegin standing a few meters in front of your partner, both facing the same direction. Begin holding the ball between your legs.\n\nSquat down and then forcefully reverse direction, coming to full extension and you toss the ball over your head to your partner.\n\nYour partner can then roll the ball back to you. Repeat for the desired number of repetitions.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "held",
+      "reviewNote": "Throw is shown forward rather than backward over the head to the partner."
+    },
+    {
+      "id": "wger-1a40cc23-4609-4951-9b76-237715ae85ed",
+      "title": "Backward shoulder rotation",
+      "equipment": "Bodyweight",
+      "guideText": "Starting position: Sit or stand with your back straight. Steps: 1. Place your hands on your shoulders. 2. Repeatedly rotate both shoulder joints in a circular motion at a moderate pace.",
+      "column": 3,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against complete guide: correct equipment, support, load placement and representative movement phase; intact anatomy."
+    },
+    {
+      "id": "wger-d301d901-a2c6-4916-b09e-07ab7a3c8519",
+      "title": "Bag training",
+      "equipment": "Bodyweight",
+      "guideText": "Bag training improves muscle definition of: deltoids; rear deltoids; triceps; biceps, as well as being a great cardio exercise",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against complete guide: correct equipment, support, load placement and representative movement phase; intact anatomy."
+    },
+    {
+      "id": "db-balance-board",
+      "title": "Balance Board",
+      "equipment": "Specialty equipment",
+      "guideText": "Place a balance board in front of you.\n\nStand up on it and try to balance yourself.\n\nHold the balance for as long as desired.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against complete guide: correct equipment, support, load placement and representative movement phase; intact anatomy."
+    },
+    {
+      "id": "db-ball-leg-curl",
+      "title": "Ball Leg Curl",
+      "equipment": "Exercise ball",
+      "guideText": "Begin on the floor laying on your back with your feet on top of the ball.\n\nPosition the ball so that when your legs are extended your ankles are on top of the ball. This will be your starting position.\n\nRaise your hips off of the ground, keeping your weight on the shoulder blades and your feet.\n\nFlex the knees, pulling the ball as close to you as you can, contracting the hamstrings.\n\nAfter a brief pause, return to the starting position.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against complete guide: correct equipment, support, load placement and representative movement phase; intact anatomy."
+    },
+    {
+      "id": "db-band-assisted-pull-up",
+      "title": "Band Assisted Pull-Up",
+      "equipment": "Specialty equipment",
+      "guideText": "Choke the band around the center of the pullup bar. You can use different bands to provide varying levels of assistance.\n\nPull the end of the band down, and place one bent knee into the loop, ensuring it won't slip out. Take a medium to wide grip on the bar. This will be your starting position.\n\nPull yourself upward by contracting the lats as you flex the elbow. The elbow should be driven to your side. Pull to the front, attempting to get your chin over the bar. Avoid swinging or jerking movements.\n\nAfter a brief pause, return to the starting position.",
+      "column": 3,
+      "row": 1,
+      "reviewStatus": "held",
+      "reviewNote": "Assistance band is not clearly looped beneath the bent knee required by this guide."
+    },
+    {
+      "id": "db-band-good-morning",
+      "title": "Band Good Morning",
+      "equipment": "Resistance band",
+      "guideText": "Using a 41 inch band, stand on one end, spreading your feet a small amount. Bend at the hips to loop the end of the band behind your neck. This will be your starting position.\n\nKeeping your legs straight, extend through the hips to come to a near vertical position.\n\nEnsure that you do not round your back as you go down back to the starting position.",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against complete guide: correct equipment, support, load placement and representative movement phase; intact anatomy."
+    },
+    {
+      "id": "db-band-good-morning-pull-through",
+      "title": "Band Good Morning (Pull Through)",
+      "equipment": "Resistance band",
+      "guideText": "Loop the band around a post. Standing a little ways away, loop the opposite end around the neck. Your hands can help hold the band in position.\n\nBegin by bending at the hips, getting your butt back as far as possible. Keep your back flat and bend forward to about 90 degrees. Your knees should be only slightly bent.\n\nReturn to the starting position be driving through with the hips to come back to a standing position.",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against complete guide: correct equipment, support, load placement and representative movement phase; intact anatomy."
+    },
+    {
+      "id": "db-band-hip-adductions",
+      "title": "Band Hip Adductions",
+      "equipment": "Resistance band",
+      "guideText": "Anchor a band around a solid post or other object.\n\nStand with your left side to the post, and put your right foot through the band, getting it around the ankle.\n\nStand up straight and hold onto the post if needed. This will be your starting position.\n\nKeeping the knee straight, raise your right legs out to the side as far as you can.\n\nReturn to the starting position and repeat for the desired rep count.\n\nSwitch sides.",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "held",
+      "reviewNote": "Source name says adduction while guide and pose describe abduction; reconcile identity."
+    },
+    {
+      "id": "db-band-pull-apart",
+      "title": "Band Pull Apart",
+      "equipment": "Resistance band",
+      "guideText": "Begin with your arms extended straight out in front of you, holding the band with both hands.\n\nInitiate the movement by performing a reverse fly motion, moving your hands out laterally to your sides.\n\nKeep your elbows extended as you perform the movement, bringing the band to your chest. Ensure that you keep your shoulders back during the exercise.\n\nPause as you complete the movement, returning to the starting position under control.",
+      "column": 3,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against complete guide: correct equipment, support, load placement and representative movement phase; intact anatomy."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-14f7a0fc-294c-4176-9188-d30994b70a9a.png"
+}

@@ -1,0 +1,221 @@
+{
+  "name": "movements-001",
+  "columns": 4,
+  "rows": 3,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/movements-001.png",
+  "prompt": "Create beautiful ORIGINAL FORMA exercise art in a clean modern illustrated fitness manual style. Exactly FOUR columns and THREE rows, 12 equal cells, landscape 1536x1024. Each cell white with generous margins; no labels, letters, logos, borders or watermarks. Varied fully clothed adult athletes, charcoal/gray sportswear with a small lime-green accent. Correct anatomy (two arms, two legs), plausible support and weight-bearing, detailed accurate equipment, subtle shadows. Every cell is an EXACT distinct movement/variation matching its description. Show ONE clear representative working position per cell; do not show duplicate athletes, extra limbs, arrows or overlapping phases. Keep the entire athlete and apparatus inside own cell. Never swap freeweights, benches, grips or variations. Read each guide to choose a physically correct pose. Cell positions are mandatory:\nRow 1 column 1: 1 Leg Box Squat. Equipment: Bodyweight. Exercise guide: This exercise requires a sturdy box or a chair. Simple stand ~6 inches in front of it and balance yourself on one leg. From here, begin squatting down in a smooth controlled motion while keeping your other leg straight out in front of you for balance. Slowly sit down on the box, pause for a 1 count and push back up with the working leg, while never letting your other leg touch the ground.\n\nRow 1 column 2: 1-Arm Half-Kneeling Lat Pulldown. Equipment: Bodyweight. Exercise guide: Attach a D-Handle to a high pully. And use your lat muscles to pull the weight single handedly.\n\nRow 1 column 3: 1/2 Kneeling Thoracic Rotation. Equipment: Bodyweight. Exercise guide: - Begin in a half kneeling position with the leg away from the wall stabilized against the wall with a ball. - With both hands directly in front of you, rotate one arm open attempting to reach the wall behind you. - Exhale as you rotate, inhale as you return to neutral and repeat.\n\nRow 1 column 4: 3/4 Sit-Up. Equipment: Bodyweight. Exercise guide: Lie down on the floor and secure your feet. Your legs should be bent at the knees. Place your hands behind or to the side of your head. You will begin with your back on the ground. This will be your starting position. Flex your hips and spine to raise your torso toward your knees. At the top of the contraction your torso should be perpendicular to the ground. Reverse the motion, going only ¾ of the way down. Repeat for the recommended amount of repetitions.\n\nRow 2 column 1: 3008 Abdominal Crunch. Equipment: Bodyweight. Exercise guide: This is especially for the gym80 device 3008 Abdominal Crunch.\n\nRow 2 column 2: 3D lunge warmup. Equipment: Dumbbell. Exercise guide: As a warmup, use light dumbbells, one in each hand. Lunge in alternating directions, forward, sideways, backwards and 45 degree angles.\n\nRow 2 column 3: 90/90 Hamstring. Equipment: Bodyweight. Exercise guide: Lie on your back, with one leg extended straight out. With the other leg, bend the hip and knee to 90 degrees. You may brace your leg with your hands if necessary. This will be your starting position. Extend your leg straight into the air, pausing briefly at the top. Return the leg to the starting position. Repeat for 10-20 repetitions, and then switch to the other leg.\n\nRow 2 column 4: Ab Roller. Equipment: Specialty equipment. Exercise guide: Hold the Ab Roller with both hands and kneel on the floor. Now place the ab roller on the floor in front of you so that you are on all your hands and knees (as in a kneeling push up position). This will be your starting position. Slowly roll the ab roller straight forward, stretching your body into a straight position. Tip: Go down as far as you can without touching the floor with your body. Breathe in during this portion of the movement. After a pause at the stretched position, start pulling yourself back to the starting position as you breathe out. Tip: Go slowly and keep your abs tight at all times.\n\nRow 3 column 1: Abduction while standing. Equipment: Bodyweight. Exercise guide: Training a stable stance, predominantly on one leg, is crucial for both sides. On the one hand, it prevents discomfort and, on the other, it establishes a stable foundation. The practitioner assumes the usual standing position and, with a stable upper body, attempts to repeatedly lift the unloaded leg, bend it at the hip and knee, and then lower it again. The movement is also repeated on the other side. The exercise trains the stability of the hip-surrounding muscles.\n\nRow 3 column 2: Adductor. Equipment: Foam roller. Exercise guide: Lie face down with one leg on a foam roll. Rotate the leg so that the foam roll contacts against your inner thigh. Shift as much weight onto the foam roll as can be tolerated. While trying to relax the muscles if the inner thigh, roll over the foam between your hip and knee, holding points of tension for 10-30 seconds. Repeat with the other leg.\n\nRow 3 column 3: Adductor/Groin. Equipment: Bodyweight. Exercise guide: Lie on your back with your feet raised towards the ceiling. Have your partner hold your feet or ankles. Abduct your legs as far as you can. This will be your starting position. Attempt to squeeze your legs together for 10 or more seconds, while your partner prevents you from doing so. Now, relax the muscles in your legs as your partner pushes your feet apart, stretching as far as is comfortable for you. Be sure to let your partner know when the stretch is adequate to prevent overstretching or injury.\n\nRow 3 column 4: Advanced Kettlebell Windmill. Equipment: Kettlebell. Exercise guide: Clean and press a kettlebell overhead with one arm. Keeping the kettlebell locked out at all times, push your butt out in the direction of the locked out kettlebell. Keep the non-working arm behind your back and turn your feet out at a forty-five degree angle from the arm with the kettlebell. Lower yourself as far as possible. Pause for a second and reverse the motion back to the starting position.",
+  "cells": [
+    {
+      "id": "wger-c463f618-2777-4836-9c57-92a46d87cf1b",
+      "title": "1 Leg Box Squat",
+      "equipment": "Bodyweight",
+      "guideText": "This exercise requires a sturdy box or a chair. Simple stand ~6 inches in front of it and balance yourself on one leg. From here, begin squatting down in a smooth controlled motion while keeping your other leg straight out in front of you for balance. Slowly sit down on the box, pause for a 1 count and push back up with the working leg, while never letting your other leg touch the ground.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against guide: appropriate support points, equipment, grip and representative working pose; intact limb anatomy. Dynamic exercise represented by a single phase.",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1948/view/",
+        "author": "jesusd",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-a8a4ea81-9531-48e1-b6dc-f7621c7b9283",
+      "title": "1-Arm Half-Kneeling Lat Pulldown",
+      "equipment": "Bodyweight",
+      "guideText": "Attach a D-Handle to a high pully. And use your lat muscles to pull the weight single handedly.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against guide: appropriate support points, equipment, grip and representative working pose; intact limb anatomy. Dynamic exercise represented by a single phase.",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1470/view/",
+        "author": "Expenses7000",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-d561c00c-436d-47d9-b647-222e7b637abd",
+      "title": "1/2 Kneeling Thoracic Rotation",
+      "equipment": "Bodyweight",
+      "guideText": "- Begin in a half kneeling position with the\nleg away from the wall stabilized against the wall\nwith a ball.\n- With both hands directly in front of\nyou, rotate one arm open attempting to reach\nthe wall behind you.\n- Exhale as you rotate, inhale\nas you return to neutral and repeat.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "held",
+      "reviewNote": "Wall-leg stabilization conflicts with imported guide; resolve before publication.",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1966/view/",
+        "author": "amwang4",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-3-4-sit-up",
+      "title": "3/4 Sit-Up",
+      "equipment": "Bodyweight",
+      "guideText": "Lie down on the floor and secure your feet. Your legs should be bent at the knees.\n\nPlace your hands behind or to the side of your head. You will begin with your back on the ground. This will be your starting position.\n\nFlex your hips and spine to raise your torso toward your knees.\n\nAt the top of the contraction your torso should be perpendicular to the ground. Reverse the motion, going only ¾ of the way down.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 3,
+      "row": 0,
+      "reviewStatus": "held",
+      "reviewNote": "Guide asks for secured feet; illustration shows no restraint. Need a clear appropriate anchor.",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/3_4_Sit-Up.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "wger-7870ad8d-a0c1-4e3a-a4fe-a237908eba9b",
+      "title": "3008 Abdominal Crunch",
+      "equipment": "Bodyweight",
+      "guideText": "This is especially for the gym80 device 3008 Abdominal Crunch.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "held",
+      "reviewNote": "Model-specific guide lacks setup description; generated machine identity is unverified and logo-like marks present.",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1924/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "wger-7c2a70bc-ed97-440c-afd6-ed27daf63f25",
+      "title": "3D lunge warmup",
+      "equipment": "Dumbbell",
+      "guideText": "As a warmup, use light dumbbells, one in each hand. Lunge in alternating directions, forward, sideways, backwards and 45 degree angles.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against guide: appropriate support points, equipment, grip and representative working pose; intact limb anatomy. Dynamic exercise represented by a single phase.",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1115/view/",
+        "author": "philip",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-90-90-hamstring",
+      "title": "90/90 Hamstring",
+      "equipment": "Bodyweight",
+      "guideText": "Lie on your back, with one leg extended straight out.\n\nWith the other leg, bend the hip and knee to 90 degrees. You may brace your leg with your hands if necessary. This will be your starting position.\n\nExtend your leg straight into the air, pausing briefly at the top. Return the leg to the starting position.\n\nRepeat for 10-20 repetitions, and then switch to the other leg.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against guide: appropriate support points, equipment, grip and representative working pose; intact limb anatomy. Dynamic exercise represented by a single phase.",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/90_90_Hamstring.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "db-ab-roller",
+      "title": "Ab Roller",
+      "equipment": "Specialty equipment",
+      "guideText": "Hold the Ab Roller with both hands and kneel on the floor.\n\nNow place the ab roller on the floor in front of you so that you are on all your hands and knees (as in a kneeling push up position). This will be your starting position.\n\nSlowly roll the ab roller straight forward, stretching your body into a straight position. Tip: Go down as far as you can without touching the floor with your body. Breathe in during this portion of the movement.\n\nAfter a pause at the stretched position, start pulling yourself back to the starting position as you breathe out. Tip: Go slowly and keep your abs tight at all times.",
+      "column": 3,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against guide: appropriate support points, equipment, grip and representative working pose; intact limb anatomy. Dynamic exercise represented by a single phase.",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Ab_Roller.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "wger-d015a276-02ad-4c28-9d36-aedfbb431f53",
+      "title": "Abduction while standing",
+      "equipment": "Bodyweight",
+      "guideText": "Training a stable stance, predominantly on one leg, is crucial for both sides. On the one hand, it prevents discomfort and, on the other, it establishes a stable foundation. The practitioner assumes the usual standing position and, with a stable upper body, attempts to repeatedly lift the unloaded leg, bend it at the hip and knee, and then lower it again. The movement is also repeated on the other side. The exercise trains the stability of the hip-surrounding muscles.",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "held",
+      "reviewNote": "Name says abduction but guide describes bent-knee hip flexion; illustration follows guide. Resolve name/guide identity before publication.",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1096/view/",
+        "author": "tregga",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      }
+    },
+    {
+      "id": "db-adductor",
+      "title": "Adductor",
+      "equipment": "Foam roller",
+      "guideText": "Lie face down with one leg on a foam roll.\n\nRotate the leg so that the foam roll contacts against your inner thigh. Shift as much weight onto the foam roll as can be tolerated.\n\nWhile trying to relax the muscles if the inner thigh, roll over the foam between your hip and knee, holding points of tension for 10-30 seconds. Repeat with the other leg.",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against guide: appropriate support points, equipment, grip and representative working pose; intact limb anatomy. Dynamic exercise represented by a single phase.",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Adductor.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "db-adductor-groin",
+      "title": "Adductor/Groin",
+      "equipment": "Bodyweight",
+      "guideText": "Lie on your back with your feet raised towards the ceiling.\n\nHave your partner hold your feet or ankles. Abduct your legs as far as you can. This will be your starting position.\n\nAttempt to squeeze your legs together for 10 or more seconds, while your partner prevents you from doing so.\n\nNow, relax the muscles in your legs as your partner pushes your feet apart, stretching as far as is comfortable for you. Be sure to let your partner know when the stretch is adequate to prevent overstretching or injury.",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually checked against guide: appropriate support points, equipment, grip and representative working pose; intact limb anatomy. Dynamic exercise represented by a single phase.",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Adductor_Groin.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    },
+    {
+      "id": "db-advanced-kettlebell-windmill",
+      "title": "Advanced Kettlebell Windmill",
+      "equipment": "Kettlebell",
+      "guideText": "Clean and press a kettlebell overhead with one arm.\n\nKeeping the kettlebell locked out at all times, push your butt out in the direction of the locked out kettlebell. Keep the non-working arm behind your back and turn your feet out at a forty-five degree angle from the arm with the kettlebell.\n\nLower yourself as far as possible.\n\nPause for a second and reverse the motion back to the starting position.",
+      "column": 3,
+      "row": 2,
+      "reviewStatus": "held",
+      "reviewNote": "Free hand reaches down instead of staying behind back as this advanced variation requires.",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Advanced_Kettlebell_Windmill.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      }
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-c8995966-ffae-4f1e-b1ff-d507495720a4.png"
+}

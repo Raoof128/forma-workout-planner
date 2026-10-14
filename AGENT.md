@@ -57,6 +57,41 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-14 — Original exercise artwork in progress
+
+- **Scope:** owner now requests original AI-assisted FORMA illustrations for
+  every selectable exercise. This supersedes mixed-source runtime media; retain
+  earlier source research as evidence, not original-art coverage.
+- **Review:** record each accepted/held atlas cell against the actual current
+  guide; preserve equipment, support, grip and variation distinctions. Compatible
+  machine/cardio apparatus references are allowed and must be labelled. Prompts
+  and generated files alone never establish complete coverage.
+- **Implementation:** local lazy thumbnails/guide imagery, proportion-preserving
+  atlas views, finite image-error states, per-guide fingerprints and strict
+  full-catalog coverage check. See `docs/research/original-art/README.md` and
+  `coverage.json`. Original source images remain preserved.
+- **Verification so far:** six focused Chromium catalog/media cases passed;
+  60 unit cases, lint, formatting, type checking, docs and build passed.
+  The checkpoint has 532 accepted matches; crop review remains pending.
+  Generation and review are ongoing; no image release was deployed,
+  and no account, database, API contract or logging units changed.
+
+### Raouf: 2026-10-14 — Expanded photo search
+
+- **Sources:** new research/inventory covers 25 YMove free demonstrations and
+  12 inspected Commons files, plus commercial providers and specialist libraries.
+  Twenty shortlist thumbnails were visually inspected; preferred candidates
+  reference 10 distinct FORMA IDs. This is not deployed or approved coverage.
+- **Matching:** hold the provider's Glute Kickback thumbnail showing a Standing
+  Leg Curl station. Preserve front/behind-neck pulldown, forearm/high plank and
+  ball-support distinctions; clarify two conflicting Commons licence records.
+- **Network:** Commons image access recovered by supplying its required legitimate
+  project User-Agent. Complete small thumbnails replaced a size-limited original
+  probe. Do not bypass limits or repeatedly retry HTTP 429 responses.
+- **Rights:** free-video use and standalone still/thumbnail rights are separate
+  observations. Paid hosting/brand permissions depend on the agreement; no plan
+  was purchased, provider contacted or media deployed for this research.
+
 ### Raouf: 2026-10-14 — Photo-source feasibility
 
 - **Research:** `docs/research/exercise-photos.md` and its per-movement inventory

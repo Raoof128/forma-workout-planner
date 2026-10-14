@@ -1,0 +1,142 @@
+{
+  "name": "machines-05",
+  "columns": 4,
+  "rows": 3,
+  "kind": "equipment_illustration",
+  "sourceGeneratedPath": "/workspace/generated_images/exec-8e537a6f-b209-43ab-8e7a-ac22a99dc6f9.png",
+  "publicPath": "/exercise-media/original/machines-05.png",
+  "prompt": "Create original FORMA gym illustrations, a precisely aligned atlas with exactly FOUR columns and THREE rows, 12 equally sized cells, landscape 1536x1024 composition. Every cell pure white, no visible borders, no labels or lettering or logos or watermarks. Same polished technical drawing style throughout: matte charcoal steel, gray padding, subtle soft gray shadow, sparse bright lime green adjustment controls. Three-quarter views, entire subject within its cell with generous margins. Each cell is a distinct physically plausible gym apparatus, no people. Mechanical pivots, supports, load paths and usable pads/handles must make functional sense. This is original art, not reproductions of existing photos. Strict row-major positions:\nRow 1, column 1: Plate-loaded seated flat chest press. upright padded seat/backrest, two independent plate-loaded lever arms with horizontal forward push grips at mid-chest height.\nRow 1, column 2: Plate-loaded seated decline chest press. upright supported seat, independent levers with handles near LOWER chest and pressing downward-forward arc, plate horns; not a barbell decline bench.\nRow 1, column 3: Incline chest press machine. back-supported seat angled slightly backward, two independent lever handles at UPPER chest level pressing forward-UPWARD through inclined arc, plate-loaded lever horns.\nRow 1, column 4: Plate-loaded shoulder press. upright high backrest and seat, independent overhead press levers with grips beside shoulders, upward overhead movement and plate horns.\nRow 2, column 1: Standing glute kickback machine. forward angled chest support and front hand grips, small stable platform for standing supporting foot, rear-pushing large padded footplate on low pivoted resistance lever and weight stack; one leg pushes backward behind hips.\nRow 2, column 2: Horizontal seated calf/leg press. low seated back support, horizontal forward guide rails to broad footplate directly ahead, forefoot/heel room, weight stack and side hand grips.\nRow 2, column 3: Chest-supported T-bar row machine. 45degree inclined chest pad above two foot step platforms, low anchored long T-bar lever pivot with front plate horn, two transverse pull grips hanging below chest pad.\nRow 2, column 4: Seated upper-arm-supported triceps extension machine. upright seat behind broad upper-arm support pad, elbow-aligned pivoted lever with two hand grips ahead that extend DOWNWARD/away from supported upper arms against weight stack; not a dip press or biceps curl.\nRow 3, column 1: Reverse hyperextension with padded ankle attachment. high horizontal torso pad with hands grips at front, hips project past rear pad edge; load pendulum pivots right below rear edge, hanging down with two padded ankle rollers and ankle strap visibly attached at bottom and plate horns below. Attachment for BOTH feet clearly visible.\nRow 3, column 2: Smith guided-bar rack with decline bench. guided horizontal bar on two vertical rails, safe adjustable catch stops, a DECLINE bench beneath with head end LOWER than leg end and padded ankle rollers at raised foot end.\nRow 3, column 3: Assisted pull-up/dip station. tall twin overhead pull-up grips and mid-height parallel dip handles, movable assistance kneeling platform attached to counterweight stack, low steps.\nRow 3, column 4: 45-degree back extension station. two broad angled hip pads at top, feet platform and paired ankle rollers at low end on 45-degree angled support frame, handles near hip pads; no seat/backrest.",
+  "cells": [
+    {
+      "title": "Plate-loaded seated flat chest press",
+      "ids": [
+        "db-leverage-chest-press"
+      ],
+      "desc": "upright padded seat/backrest, two independent plate-loaded lever arms with horizontal forward push grips at mid-chest height",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: distinct intended machine family, supports, grips and lever/load mechanism; labelled equipment reference. No branded model claims."
+    },
+    {
+      "title": "Plate-loaded seated decline chest press",
+      "ids": [
+        "db-leverage-decline-chest-press"
+      ],
+      "desc": "upright supported seat, independent levers with handles near LOWER chest and pressing downward-forward arc, plate horns; not a barbell decline bench",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: distinct intended machine family, supports, grips and lever/load mechanism; labelled equipment reference. No branded model claims."
+    },
+    {
+      "title": "Incline chest press machine",
+      "ids": [
+        "db-leverage-incline-chest-press",
+        "wger-fe0c2a17-fad9-4235-8786-84bb1de93530"
+      ],
+      "desc": "back-supported seat angled slightly backward, two independent lever handles at UPPER chest level pressing forward-UPWARD through inclined arc, plate-loaded lever horns",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: distinct intended machine family, supports, grips and lever/load mechanism; labelled equipment reference. No branded model claims."
+    },
+    {
+      "title": "Plate-loaded shoulder press",
+      "ids": [
+        "db-leverage-shoulder-press"
+      ],
+      "desc": "upright high backrest and seat, independent overhead press levers with grips beside shoulders, upward overhead movement and plate horns",
+      "column": 3,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: distinct intended machine family, supports, grips and lever/load mechanism; labelled equipment reference. No branded model claims."
+    },
+    {
+      "title": "Standing glute kickback machine",
+      "ids": [
+        "wger-66ed6788-a1d8-49a2-af4d-397107fbf5fb"
+      ],
+      "desc": "forward angled chest support and front hand grips, small stable platform for standing supporting foot, rear-pushing large padded footplate on low pivoted resistance lever and weight stack; one leg pushes backward behind hips",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: distinct intended machine family, supports, grips and lever/load mechanism; labelled equipment reference. No branded model claims."
+    },
+    {
+      "title": "Horizontal seated calf/leg press",
+      "ids": [
+        "db-calf-press"
+      ],
+      "desc": "low seated back support, horizontal forward guide rails to broad footplate directly ahead, forefoot/heel room, weight stack and side hand grips",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: distinct intended machine family, supports, grips and lever/load mechanism; labelled equipment reference. No branded model claims."
+    },
+    {
+      "title": "Chest-supported T-bar row machine",
+      "ids": [
+        "db-lying-t-bar-row"
+      ],
+      "desc": "45degree inclined chest pad above two foot step platforms, low anchored long T-bar lever pivot with front plate horn, two transverse pull grips hanging below chest pad",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: distinct intended machine family, supports, grips and lever/load mechanism; labelled equipment reference. No branded model claims."
+    },
+    {
+      "title": "Seated upper-arm-supported triceps extension machine",
+      "ids": [
+        "db-machine-triceps-extension"
+      ],
+      "desc": "upright seat behind broad upper-arm support pad, elbow-aligned pivoted lever with two hand grips ahead that extend DOWNWARD/away from supported upper arms against weight stack; not a dip press or biceps curl",
+      "column": 3,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: distinct intended machine family, supports, grips and lever/load mechanism; labelled equipment reference. No branded model claims."
+    },
+    {
+      "title": "Reverse hyperextension with padded ankle attachment",
+      "ids": [
+        "db-reverse-hyperextension"
+      ],
+      "desc": "high horizontal torso pad with hands grips at front, hips project past rear pad edge; load pendulum pivots right below rear edge, hanging down with two padded ankle rollers and ankle strap visibly attached at bottom and plate horns below. Attachment for BOTH feet clearly visible",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "held",
+      "reviewNote": "Ankle attachment/load coupling is still unclear; generate a dedicated side-view diagram."
+    },
+    {
+      "title": "Smith guided-bar rack with decline bench",
+      "ids": [
+        "db-smith-machine-decline-press"
+      ],
+      "desc": "guided horizontal bar on two vertical rails, safe adjustable catch stops, a DECLINE bench beneath with head end LOWER than leg end and padded ankle rollers at raised foot end",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "held",
+      "reviewNote": "Decline bench orientation is unclear; verify a dedicated head-lower-than-feet bench."
+    },
+    {
+      "title": "Assisted pull-up/dip station",
+      "ids": [],
+      "desc": "tall twin overhead pull-up grips and mid-height parallel dip handles, movable assistance kneeling platform attached to counterweight stack, low steps",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: distinct intended machine family, supports, grips and lever/load mechanism; labelled equipment reference. No branded model claims."
+    },
+    {
+      "title": "45-degree back extension station",
+      "ids": [
+        "db-hyperextensions-back-extensions"
+      ],
+      "desc": "two broad angled hip pads at top, feet platform and paired ankle rollers at low end on 45-degree angled support frame, handles near hip pads; no seat/backrest",
+      "column": 3,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected: distinct intended machine family, supports, grips and lever/load mechanism; labelled equipment reference. No branded model claims."
+    }
+  ]
+}

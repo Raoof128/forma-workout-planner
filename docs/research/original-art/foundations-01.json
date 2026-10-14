@@ -1,0 +1,119 @@
+{
+  "name": "foundations-01",
+  "columns": 4,
+  "rows": 3,
+  "kind": "movement_illustration",
+  "sourceGeneratedPath": "/workspace/generated_images/exec-e841f9c4-cc7c-4263-a8a5-878ba0cf1a82.png",
+  "publicPath": "/exercise-media/original/foundations-01.png",
+  "prompt": "Create a beautiful original FORMA technical fitness illustration atlas, EXACTLY FOUR columns and THREE rows, 12 evenly spaced equal cells in landscape 1536x1024. White cell backgrounds, no text/labels/letters/logos/watermarks or borders. Illustrated adults, fully clothed in charcoal gray sportswear with sparse lime green details, varied skin tones, anatomically accurate with only two arms/two legs. Clean precise gray/charcoal equipment, soft shadows, modern premium fitness manual aesthetic matching attached style. No photorealism. Each entire person/equipment fully inside own cell with margin. Show precisely the described exercise posture, not an arbitrary athlete. Row-major cells:\nRow 1, column 1: Barbell flat bench press. Side three-quarter view. Adult lying face-up on horizontal flat bench, feet planted, bar held horizontally by both hands slightly wider than shoulders above mid chest, elbows bent near bottom of press. Ordinary barbell, two end plates, neutral supported torso.\nRow 1, column 2: One-arm dumbbell row. Left hand and LEFT knee supported on a flat bench, right foot on ground, back horizontal and neutral; RIGHT hand holds one dumbbell beside ribs, right elbow drawn up close to body. Only two arms, two legs.\nRow 1, column 3: Seated dumbbell shoulder press. Adult sits against upright back-supported bench, feet on ground, one dumbbell in each hand at either side of shoulders, palms forward, elbows bent below weights, ready to press overhead.\nRow 1, column 4: Standing dumbbell biceps curl. Adult standing tall, elbows kept at torso sides, both palms facing up/forward and hands holding dumbbells half curled up toward shoulders, upper arms vertical.\nRow 2, column 1: Barbell back squat. Adult in controlled bottom of squat, heels planted, knees track toes, neutral trunk inclined slightly; bar rests horizontally across upper back behind head, hands grip either side. Not a front squat.\nRow 2, column 2: Barbell Romanian deadlift. Adult side profile with hips hinged backward, knees slightly bent, straight neutral back angled forward, two arms straight holding horizontal bar close to legs just below knees, head aligned with spine.\nRow 2, column 3: Dumbbell reverse lunge. Adult with one foot stepped backward, back knee hovering just above floor and front knee bent, torso upright, both hands down at sides holding dumbbells, front foot flat.\nRow 2, column 4: Standing dumbbell calf raise. Adult standing tall, feet close together, heels lifted off floor, weight on forefeet, straight relaxed knees, one dumbbell in right hand beside thigh. No machine.\nRow 3, column 1: Kettlebell goblet squat. Adult at bottom of squat, feet flat and knees out following toes, upright chest; BOTH hands hold ONE kettlebell by horns against front chest, elbows inside knees.\nRow 3, column 2: Push-up. Adult in low push-up, hands on floor wider than shoulders, elbows bent, chest hovering off floor, straight line shoulders hips heels, both toes support rear. No bench, no kneeling.\nRow 3, column 3: Standing dumbbell lateral raise. Adult standing with arms extended to either SIDE at shoulder height, slight elbow bend, one dumbbell in EACH hand, arms in lateral plane, not forward.\nRow 3, column 4: Dead bug. Adult lying supine on mat. RIGHT arm reaches behind head overhead toward floor and LEFT leg extends straight low forward; LEFT arm vertical toward ceiling, RIGHT hip and knee remain bent 90 degrees. Lower back stable. Exactly two arms and two legs.",
+  "cells": [
+    {
+      "title": "Barbell flat bench press",
+      "id": "bench",
+      "desc": "Side three-quarter view. Adult lying face-up on horizontal flat bench, feet planted, bar held horizontally by both hands slightly wider than shoulders above mid chest, elbows bent near bottom of press. Ordinary barbell, two end plates, neutral supported torso.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected against the guide: correct free-weight/bodyweight modality, support points and representative posture; intact two-arm/two-leg anatomy. Side orientation may be mirrored."
+    },
+    {
+      "title": "One-arm dumbbell row",
+      "id": "row",
+      "desc": "Left hand and LEFT knee supported on a flat bench, right foot on ground, back horizontal and neutral; RIGHT hand holds one dumbbell beside ribs, right elbow drawn up close to body. Only two arms, two legs.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected against the guide: correct free-weight/bodyweight modality, support points and representative posture; intact two-arm/two-leg anatomy. Side orientation may be mirrored."
+    },
+    {
+      "title": "Seated dumbbell shoulder press",
+      "id": "shoulder",
+      "desc": "Adult sits against upright back-supported bench, feet on ground, one dumbbell in each hand at either side of shoulders, palms forward, elbows bent below weights, ready to press overhead.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected against the guide: correct free-weight/bodyweight modality, support points and representative posture; intact two-arm/two-leg anatomy. Side orientation may be mirrored."
+    },
+    {
+      "title": "Standing dumbbell biceps curl",
+      "id": "curl",
+      "desc": "Adult standing tall, elbows kept at torso sides, both palms facing up/forward and hands holding dumbbells half curled up toward shoulders, upper arms vertical.",
+      "column": 3,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected against the guide: correct free-weight/bodyweight modality, support points and representative posture; intact two-arm/two-leg anatomy. Side orientation may be mirrored."
+    },
+    {
+      "title": "Barbell back squat",
+      "id": "squat",
+      "desc": "Adult in controlled bottom of squat, heels planted, knees track toes, neutral trunk inclined slightly; bar rests horizontally across upper back behind head, hands grip either side. Not a front squat.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected against the guide: correct free-weight/bodyweight modality, support points and representative posture; intact two-arm/two-leg anatomy. Side orientation may be mirrored."
+    },
+    {
+      "title": "Barbell Romanian deadlift",
+      "id": "rdl",
+      "desc": "Adult side profile with hips hinged backward, knees slightly bent, straight neutral back angled forward, two arms straight holding horizontal bar close to legs just below knees, head aligned with spine.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected against the guide: correct free-weight/bodyweight modality, support points and representative posture; intact two-arm/two-leg anatomy. Side orientation may be mirrored."
+    },
+    {
+      "title": "Dumbbell reverse lunge",
+      "id": "lunge",
+      "desc": "Adult with one foot stepped backward, back knee hovering just above floor and front knee bent, torso upright, both hands down at sides holding dumbbells, front foot flat.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected against the guide: correct free-weight/bodyweight modality, support points and representative posture; intact two-arm/two-leg anatomy. Side orientation may be mirrored."
+    },
+    {
+      "title": "Standing dumbbell calf raise",
+      "id": "calf",
+      "desc": "Adult standing tall, feet close together, heels lifted off floor, weight on forefeet, straight relaxed knees, one dumbbell in right hand beside thigh. No machine.",
+      "column": 3,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected against the guide: correct free-weight/bodyweight modality, support points and representative posture; intact two-arm/two-leg anatomy. Side orientation may be mirrored."
+    },
+    {
+      "title": "Kettlebell goblet squat",
+      "id": "goblet",
+      "desc": "Adult at bottom of squat, feet flat and knees out following toes, upright chest; BOTH hands hold ONE kettlebell by horns against front chest, elbows inside knees.",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected against the guide: correct free-weight/bodyweight modality, support points and representative posture; intact two-arm/two-leg anatomy. Side orientation may be mirrored."
+    },
+    {
+      "title": "Push-up",
+      "id": "pushup",
+      "desc": "Adult in low push-up, hands on floor wider than shoulders, elbows bent, chest hovering off floor, straight line shoulders hips heels, both toes support rear. No bench, no kneeling.",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected against the guide: correct free-weight/bodyweight modality, support points and representative posture; intact two-arm/two-leg anatomy. Side orientation may be mirrored."
+    },
+    {
+      "title": "Standing dumbbell lateral raise",
+      "id": "lateral",
+      "desc": "Adult standing with arms extended to either SIDE at shoulder height, slight elbow bend, one dumbbell in EACH hand, arms in lateral plane, not forward.",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected against the guide: correct free-weight/bodyweight modality, support points and representative posture; intact two-arm/two-leg anatomy. Side orientation may be mirrored."
+    },
+    {
+      "title": "Dead bug",
+      "id": "deadbug",
+      "desc": "Adult lying supine on mat. RIGHT arm reaches behind head overhead toward floor and LEFT leg extends straight low forward; LEFT arm vertical toward ceiling, RIGHT hip and knee remain bent 90 degrees. Lower back stable. Exactly two arms and two legs.",
+      "column": 3,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "reviewNote": "Visually inspected against the guide: correct free-weight/bodyweight modality, support points and representative posture; intact two-arm/two-leg anatomy. Side orientation may be mirrored."
+    }
+  ]
+}

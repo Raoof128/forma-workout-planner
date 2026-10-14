@@ -1,0 +1,218 @@
+{
+  "name": "movements-016",
+  "columns": 4,
+  "rows": 3,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/movements-016.png",
+  "prompt": "Create beautiful ORIGINAL FORMA exercise art in a clean modern illustrated fitness manual style. Exactly FOUR columns and THREE rows, 12 equal cells, landscape 1536x1024. Each cell white with generous margins; no labels, letters, logos, borders or watermarks. Varied fully clothed adult athletes, charcoal/gray sportswear with a small lime-green accent. Correct anatomy (two arms, two legs), plausible support and weight-bearing, detailed accurate equipment, subtle shadows. Every cell is an EXACT distinct movement/variation matching its description. Show ONE clear representative working position per cell; do not show duplicate athletes, extra limbs, arrows or overlapping phases. Keep the entire athlete and apparatus inside own cell. Never swap freeweights, benches, grips or variations. Read each guide to choose a physically correct pose. Cell positions are mandatory:\nRow 1 column 1: Chest Push (multiple response). Equipment: Medicine ball. Exercise guide: Begin in a kneeling position facing a wall or utilize a partner. Hold the ball with both hands tight into the chest. Execute the pass by exploding forward and outward with the hips while pushing the ball as hard as possible. Follow through by falling forward, catching yourself with your hands. Immediately return to an upright position. Repeat for the desired number of repetitions.\n\nRow 1 column 2: Chest Push (single response). Equipment: Medicine ball. Exercise guide: Begin in a kneeling position holding the medicine ball with both hands tightly into the chest. Execute the pass by exploding forward and outward with the hips while pushing the ball as far as possible. Follow through by falling forward, catching yourself with your hands.\n\nRow 1 column 3: Chest Push from 3 point stance. Equipment: Medicine ball. Exercise guide: Begin in a three point stance, squatted down with your back flat and one hand on the ground. Place the medicine ball directly in front of you. To begin, take your first step as you pull the ball to your chest, positioning both hands to prepare for the throw. As you execute the second step, explosively release the ball forward as hard as possible.\n\nRow 1 column 4: Chest Push with Run Release. Equipment: Medicine ball. Exercise guide: Begin in an athletic stance with the knees bent, hips back, and back flat. Hold the medicine ball near your legs. This will be your starting position. While taking your first step draw the medicine ball into your chest. As you take the second step, explosively push the ball forward, immediately sprinting for 10 yards after the release. If you are really fast, you can catch your own pass!\n\nRow 2 column 1: Chest Stretch on Stability Ball. Equipment: Exercise ball. Exercise guide: Get on your hands and knees next to an exercise ball. Place your elbows on top of the ball, keeping your arm out to your side. This will be your starting position. Lower your torso towards the floor, keeping your elbow on top of the ball. Hold the stretch for 20-30 seconds, and repeat with the other arm.\n\nRow 2 column 2: Chest-Supported Rear Delt Raise. Equipment: Bench + Dumbbell. Exercise guide: \"The Y\"Position: Set an incline bench to 30-45 degrees. Lie face-down with your chest supported, keeping your head neutral or looking slightly down to avoid neck strain.Grip: Hold light dumbbells with a neutral or thumbs-up grip (thumb pointing to the ceiling).Movement: With straight or slightly bent elbows, raise the dumbbells up and out in a \"Y\" shape. Focus on moving the shoulders and shoulder blades rather than just lifting the arms.Top Position: Squeeze the shoulder blades together and reach high, ensuring the arms are angled to form a \"Y\".Control: Lower the dumbbells slowly to the starting position.\n\nRow 2 column 3: Child's Pose. Equipment: Bodyweight. Exercise guide: Get on your hands and knees, walk your hands in front of you. Lower your buttocks down to sit on your heels. Let your arms drag along the floor as you sit back to stretch your entire spine. Once you settle onto your heels, bring your hands next to your feet and relax. \"breathe\" into your back. Rest your forehead on the floor. Avoid this position if you have knee problems.\n\nRow 2 column 4: Chin To Chest Stretch. Equipment: Bodyweight. Exercise guide: Get into a seated position on the floor. Place both hands at the rear of your head, fingers interlocked, thumbs pointing down and elbows pointing straight ahead. Slowly pull your head down to your chest. Hold for 20-30 seconds.\n\nRow 3 column 1: Chin tuck. Equipment: Bodyweight. Exercise guide: Starting position: Sit or stand with your back straight. Steps: 1. Use fingers on your chin to slowly tuck your chin in, moving your head back to align it with your spine. 2. Hold for 5 seconds. 3. Go back to normal head position and repeat.\n\nRow 3 column 2: Chin-Up. Equipment: Bodyweight. Exercise guide: Grab the pull-up bar with the palms facing your torso and a grip closer than the shoulder width. As you have both arms extended in front of you holding the bar at the chosen grip width, keep your torso as straight as possible while creating a curvature on your lower back and sticking your chest out. This is your starting position. Tip: Keeping the torso as straight as possible maximizes biceps stimulation while minimizing back involvement. As you breathe out, pull your torso up until your head is around the level of the pull-up bar. Concentrate on using the biceps muscles in order to perform the movement. Keep the elbows close to your body. Tip: The upper torso should remain stationary as it moves through space and only the arms should move. The forearms should do no other work other than hold the bar. After a second of squeezing the biceps in the contracted position, slowly lower your torso back to the starting position; when your arms are fully extended. Breathe in as you perform this portion of the movement. Repeat this motion for the prescribed amount of repetitions.\n\nRow 3 column 3: Circus Bell. Equipment: Specialty equipment. Exercise guide: The circus bell is an oversized dumbbell with a thick handle. Begin with the dumbbell between your feet, and grip the handle with both hands. Clean the dumbbell by extending through your hips and knees to deliver the implement to the desired shoulder, letting go with the extra hand. Ensure that you get one of the dumbbell heads behind the shoulder to keep from being thrown off balance. To raise it overhead, dip by flexing the knees, and the drive upwards as you extend the dumbbell overhead, leaning slightly away from it as you do so. Carefully guide the bell back to the floor, keeping it under control as much as possible. It is best to perform this event on a thick rubber mat to prevent damage to the floor.\n\nRow 3 column 4: Clamshell. Equipment: Bodyweight. Exercise guide: **Position** Side plank with the elbow and the forearm on the ground and the legs slightly bent. **Execution** Lift your upper knee while keeping your feet close together, like a “shell opening,” then slowly return to the starting position. Keep your core stable and your hips aligned.",
+  "cells": [
+    {
+      "id": "db-chest-push-multiple-response",
+      "title": "Chest Push (multiple response)",
+      "equipment": "Medicine ball",
+      "guideText": "Begin in a kneeling position facing a wall or utilize a partner. Hold the ball with both hands tight into the chest.\n\nExecute the pass by exploding forward and outward with the hips while pushing the ball as hard as possible.\n\nFollow through by falling forward, catching yourself with your hands.\n\nImmediately return to an upright position. Repeat for the desired number of repetitions.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Chest_Push_multiple_response.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "db-chest-push-single-response",
+      "title": "Chest Push (single response)",
+      "equipment": "Medicine ball",
+      "guideText": "Begin in a kneeling position holding the medicine ball with both hands tightly into the chest.\n\nExecute the pass by exploding forward and outward with the hips while pushing the ball as far as possible.\n\nFollow through by falling forward, catching yourself with your hands.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Chest_Push_single_response.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "db-chest-push-from-3-point-stance",
+      "title": "Chest Push from 3 point stance",
+      "equipment": "Medicine ball",
+      "guideText": "Begin in a three point stance, squatted down with your back flat and one hand on the ground. Place the medicine ball directly in front of you.\n\nTo begin, take your first step as you pull the ball to your chest, positioning both hands to prepare for the throw.\n\nAs you execute the second step, explosively release the ball forward as hard as possible.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Chest_Push_from_3_point_stance.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "db-chest-push-with-run-release",
+      "title": "Chest Push with Run Release",
+      "equipment": "Medicine ball",
+      "guideText": "Begin in an athletic stance with the knees bent, hips back, and back flat. Hold the medicine ball near your legs. This will be your starting position.\n\nWhile taking your first step draw the medicine ball into your chest.\n\nAs you take the second step, explosively push the ball forward, immediately sprinting for 10 yards after the release. If you are really fast, you can catch your own pass!",
+      "column": 3,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Chest_Push_with_Run_Release.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "db-chest-stretch-on-stability-ball",
+      "title": "Chest Stretch on Stability Ball",
+      "equipment": "Exercise ball",
+      "guideText": "Get on your hands and knees next to an exercise ball.\n\nPlace your elbows on top of the ball, keeping your arm out to your side. This will be your starting position.\n\nLower your torso towards the floor, keeping your elbow on top of the ball. Hold the stretch for 20-30 seconds, and repeat with the other arm.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Chest_Stretch_on_Stability_Ball.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "wger-25cbc266-aa84-44f5-989b-53c9cc8fdc77",
+      "title": "Chest-Supported Rear Delt Raise",
+      "equipment": "Bench + Dumbbell",
+      "guideText": "\"The Y\"Position: Set an incline bench to 30-45 degrees. Lie face-down with your chest supported, keeping your head neutral or looking slightly down to avoid neck strain.Grip: Hold light dumbbells with a neutral or thumbs-up grip (thumb pointing to the ceiling).Movement: With straight or slightly bent elbows, raise the dumbbells up and out in a \"Y\" shape. Focus on moving the shoulders and shoulder blades rather than just lifting the arms.Top Position: Squeeze the shoulder blades together and reach high, ensuring the arms are angled to form a \"Y\".Control: Lower the dumbbells slowly to the starting position.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1825/view/",
+        "author": "beagle",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "db-childs-pose",
+      "title": "Child's Pose",
+      "equipment": "Bodyweight",
+      "guideText": "Get on your hands and knees, walk your hands in front of you.\n\nLower your buttocks down to sit on your heels. Let your arms drag along the floor as you sit back to stretch your entire spine.\n\nOnce you settle onto your heels, bring your hands next to your feet and relax. \"breathe\" into your back. Rest your forehead on the floor. Avoid this position if you have knee problems.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Childs_Pose.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "db-chin-to-chest-stretch",
+      "title": "Chin To Chest Stretch",
+      "equipment": "Bodyweight",
+      "guideText": "Get into a seated position on the floor.\n\nPlace both hands at the rear of your head, fingers interlocked, thumbs pointing down and elbows pointing straight ahead. Slowly pull your head down to your chest. Hold for 20-30 seconds.",
+      "column": 3,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Chin_To_Chest_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "wger-04e7fd92-e2e5-4212-ad7c-7542e98f7d83",
+      "title": "Chin tuck",
+      "equipment": "Bodyweight",
+      "guideText": "Starting position: Sit or stand with your back straight. Steps: 1. Use fingers on your chin to slowly tuck your chin in, moving your head back to align it with your spine. 2. Hold for 5 seconds. 3. Go back to normal head position and repeat.",
+      "column": 0,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1006/view/",
+        "author": "wger contributors",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "db-chin-up",
+      "title": "Chin-Up",
+      "equipment": "Bodyweight",
+      "guideText": "Grab the pull-up bar with the palms facing your torso and a grip closer than the shoulder width.\n\nAs you have both arms extended in front of you holding the bar at the chosen grip width, keep your torso as straight as possible while creating a curvature on your lower back and sticking your chest out. This is your starting position. Tip: Keeping the torso as straight as possible maximizes biceps stimulation while minimizing back involvement.\n\nAs you breathe out, pull your torso up until your head is around the level of the pull-up bar. Concentrate on using the biceps muscles in order to perform the movement. Keep the elbows close to your body. Tip: The upper torso should remain stationary as it moves through space and only the arms should move. The forearms should do no other work other than hold the bar.\n\nAfter a second of squeezing the biceps in the contracted position, slowly lower your torso back to the starting position; when your arms are fully extended. Breathe in as you perform this portion of the movement.\n\nRepeat this motion for the prescribed amount of repetitions.",
+      "column": 1,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Chin-Up.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "db-circus-bell",
+      "title": "Circus Bell",
+      "equipment": "Specialty equipment",
+      "guideText": "The circus bell is an oversized dumbbell with a thick handle. Begin with the dumbbell between your feet, and grip the handle with both hands.\n\nClean the dumbbell by extending through your hips and knees to deliver the implement to the desired shoulder, letting go with the extra hand.\n\nEnsure that you get one of the dumbbell heads behind the shoulder to keep from being thrown off balance. To raise it overhead, dip by flexing the knees, and the drive upwards as you extend the dumbbell overhead, leaning slightly away from it as you do so.\n\nCarefully guide the bell back to the floor, keeping it under control as much as possible. It is best to perform this event on a thick rubber mat to prevent damage to the floor.",
+      "column": 2,
+      "row": 2,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Circus_Bell.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Visually checked against complete guide: proper apparatus, body support, free-weight/band placement and representative phase; intact anatomy."
+    },
+    {
+      "id": "wger-ca3ca5d0-5231-4420-ad06-fa3d32693a1b",
+      "title": "Clamshell",
+      "equipment": "Bodyweight",
+      "guideText": "**Position** Side plank with the elbow and the forearm on the ground and the legs slightly bent. **Execution** Lift your upper knee while keeping your feet close together, like a “shell opening,” then slowly return to the starting position. Keep your core stable and your hips aligned.",
+      "column": 3,
+      "row": 2,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1823/view/",
+        "author": "teus_ergaster",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "reviewNote": "Guide specifically requires side-plank support with lifted hips; generated clamshell rests hips on the floor."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-d7bb23f1-c1bf-459b-9b56-954d036a9e40.png"
+}
