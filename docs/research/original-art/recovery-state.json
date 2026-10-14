@@ -3,8 +3,8 @@
   "updatedAt": "2026-10-14",
   "recoveredRemoteCommit": "8d0c5a765fe8a7276884e5198827d0f5f193c69c",
   "total": 1414,
-  "accepted": 1410,
-  "remaining": 4,
+  "accepted": 1412,
+  "remaining": 2,
   "ownerRequest": "Push assets and logs frequently so a crashed cloud session can be recovered.",
   "resumeInstructions": [
     "git fetch origin main and compare remote coverage before generating",
@@ -494,6 +494,46 @@
         "held": 0,
         "pending": 0
       }
+    },
+    {
+      "batch": "finish-solo-004",
+      "sourceAssetPath": "assets/exercise-artwork/finish-solo-004.png",
+      "recordPath": "docs/research/original-art/finish-solo-004.json",
+      "reviewCounts": {
+        "accepted": 0,
+        "held": 1,
+        "pending": 0
+      }
+    },
+    {
+      "batch": "finish-solo-004-retry",
+      "sourceAssetPath": "assets/exercise-artwork/finish-solo-004-retry.png",
+      "recordPath": "docs/research/original-art/finish-solo-004-retry.json",
+      "reviewCounts": {
+        "accepted": 1,
+        "held": 0,
+        "pending": 0
+      }
+    },
+    {
+      "batch": "finish-solo-001",
+      "sourceAssetPath": "assets/exercise-artwork/finish-solo-001.png",
+      "recordPath": "docs/research/original-art/finish-solo-001.json",
+      "reviewCounts": {
+        "accepted": 0,
+        "held": 1,
+        "pending": 0
+      }
+    },
+    {
+      "batch": "finish-solo-001-retry",
+      "sourceAssetPath": "assets/exercise-artwork/finish-solo-001-retry.png",
+      "recordPath": "docs/research/original-art/finish-solo-001-retry.json",
+      "reviewCounts": {
+        "accepted": 1,
+        "held": 0,
+        "pending": 0
+      }
     }
   ],
   "remainingAssignments": [
@@ -509,20 +549,6 @@
       "name": "Incline Dumbbell Flyes - With A Twist",
       "equipment": "Dumbbell",
       "guideSha256": "43c0ac189fd0ad843fef7e3deea321cffdcf6fe5158e7c25194fd3d8feecbe9d",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "wger-b4e78b5a-6141-4fc9-a6f7-cba13ce6559b",
-      "name": "Kreis Press DB",
-      "equipment": "Dumbbell",
-      "guideSha256": "261b1745434f4786232f5e8b16732b47363e037396e33163560a45ef391f20b7",
-      "status": "pending"
-    },
-    {
-      "exerciseId": "wger-cf6bf132-fe21-4b70-8f73-006545246f05",
-      "name": "Reverse Clamshell",
-      "equipment": "Bodyweight",
-      "guideSha256": "036ffb9cfcfce9a8a6907963453a51221586c7b4b1b964efc25c05b106114759",
       "status": "pending"
     }
   ],
@@ -649,6 +675,19 @@
       ],
       "accepted": 1410,
       "remaining": 4,
+      "mediaValidation": "passed",
+      "action": "commit and push original assets, full prompts, reviews and coverage"
+    },
+    {
+      "date": "2026-10-14",
+      "batches": [
+        "finish-solo-004",
+        "finish-solo-004-retry",
+        "finish-solo-001",
+        "finish-solo-001-retry"
+      ],
+      "accepted": 1412,
+      "remaining": 2,
       "mediaValidation": "passed",
       "action": "commit and push original assets, full prompts, reviews and coverage"
     }

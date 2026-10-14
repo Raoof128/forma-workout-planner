@@ -1,0 +1,40 @@
+{
+  "name": "finish-solo-004",
+  "columns": 1,
+  "rows": 1,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-solo-004.png",
+  "prompt": "Original FORMA fitness manual SINGLE standalone landscape1536x1024 whitebackground no grid labels arrows letters borders. Fullyclothed adult charcoalgray lime trim with2dumbbells, correct2arms2legs allfigureequipmentcontained generous80pixelmargins. This depicts KreisPressDB FORWARD EXTENDED PALMS-UP PHASE.\nSTRICT ORTHOGRAPHIC SIDE PROFILE camera at shoulderheight showing full bench diagonal. Bench backrest MUST EXACT45DEGREES abovehorizontal: from seatpivot to topofbackrest VERTICAL RISE equals HORIZONTAL RUN. Adult torsoleansback along45degree backrest with HEAD and BACK supported, hips onseathorizontal, kneesbentfeetflatfloor.\nBOTH ARMS reach STRAIGHT FORWARD horizontally atshoulderheight parallelfloor, palms FACE CEILING supinated, forearmsinsidewrists upward. Two dumbbells meet sidebyside directlyinfront body while elbowsalmoststraight. Shownearhand inlargeclearprofile withPALMunder handle andfingerscurlupward aroundhandle, palmup not down. Fararmparallelneararm visible slightoffset noanatomicextras. Dumbbellhandles horizontal frontback so palms cupweightsupward. Do not raise weights overhead. Bench45degree clearmechanical geometry priority; headrestsback diagonally not uprightoffpad. Entirebenchbaseandfeet visible onflatgroundshadow.",
+  "cells": [
+    {
+      "id": "wger-b4e78b5a-6141-4fc9-a6f7-cba13ce6559b",
+      "title": "Kreis Press DB",
+      "equipment": "Dumbbell",
+      "guideText": "* Sit on a bench with 45° incline * Hold dumbbells overhead * Move dumbbells down as if doing overhead press * Rotate dumbbells palms facing up and extend your arms in front of your body * Move hands together until dumbbells meet, keep arms extended * Reverse the motion until dumbbells are overhead again * This is one repetition",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1442/view/",
+        "author": "M9",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "references": null,
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "held",
+      "reviewNote": "Supported45degree bench and straight forward supinated arms are correct, but hands converge on one visible dumbbell/overlapped handles; two separate dumbbells meeting are not verifiable.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "cropReviewNote": "Complete athlete, bench and feet contained in actual1536x1024 source.",
+      "illustrationCaption": "Kreis press — forward extension phase with palms upward."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-cad17605-d562-4c73-99d9-707595c4186d.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-solo-004.png",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

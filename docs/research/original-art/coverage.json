@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1410,
+  "accepted": 1412,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -6070,7 +6070,9 @@
       "name": "Kreis Press DB",
       "equipment": "Dumbbell",
       "guideSha256": "261b1745434f4786232f5e8b16732b47363e037396e33163560a45ef391f20b7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-solo-004-retry-0-0",
+      "reviewNote": "Side-profile bench has equal rise/run near45degrees with head/back supported and feet grounded. Both straight forward arms visibly supinated palms upward; two distinct dumbbells with four heads and independent handles meet side by side in representative forward phase."
     },
     {
       "exerciseId": "wger-16202754-f567-4d23-a866-2c9cc8eba71d",
@@ -8678,7 +8680,9 @@
       "name": "Reverse Clamshell",
       "equipment": "Bodyweight",
       "guideSha256": "036ffb9cfcfce9a8a6907963453a51221586c7b4b1b964efc25c05b106114759",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-solo-001-retry-0-0",
+      "reviewNote": "Side-lying bent-knee setup with knees visibly stacked in contact, bottom shin supported and upper foot raised away from lower foot; hand controls knee contact and pelvis stays stacked."
     },
     {
       "exerciseId": "db-reverse-crunch",

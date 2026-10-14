@@ -35033,6 +35033,62 @@
           "height": 1536
         }
       }
+    },
+    "forma-original-finish-solo-004-retry-0-0": {
+      "src": "/exercise-media/original/finish-solo-004-retry.png?v=53b7e7cf8026",
+      "sha256": "53b7e7cf8026049e530862fd9c714cd5604ca0c2c5cb93b25309cc2ebf134b7d",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Kreis Press DB",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-solo-004-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 1,
+        "rows": 1,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    "forma-original-finish-solo-001-retry-0-0": {
+      "src": "/exercise-media/original/finish-solo-001-retry.png?v=239664091f2b",
+      "sha256": "239664091f2b90bb1ccc50191cd0294a461fd06e968c2a8420f647cb02f49b48",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Reverse Clamshell",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-solo-001-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 1,
+        "rows": 1,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1536,
+          "height": 1024
+        }
+      }
     }
   },
   "exercises": {
@@ -44905,6 +44961,20 @@
       "reviewStatus": "accepted",
       "reviewNote": "Rested pin-press starting phase: supine athlete on flat bench with feet planted and bent elbows gripping one loaded bar. Bar shaft contacts both horizontal safety rails at their rear portions; full four-post cage/top beams/base supports and complete athlete remain visible. Guide allows pins at selected range of motion.",
       "guideSha256": "dd8f1eb1a61eb173e759826c5f9be7488abc560f2b0f19303e8b337b4b5384ac"
+    },
+    "wger-b4e78b5a-6141-4fc9-a6f7-cba13ce6559b": {
+      "assetId": "forma-original-finish-solo-004-retry-0-0",
+      "caption": "Kreis Press DB · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Side-profile bench has equal rise/run near45degrees with head/back supported and feet grounded. Both straight forward arms visibly supinated palms upward; two distinct dumbbells with four heads and independent handles meet side by side in representative forward phase.",
+      "guideSha256": "261b1745434f4786232f5e8b16732b47363e037396e33163560a45ef391f20b7"
+    },
+    "wger-cf6bf132-fe21-4b70-8f73-006545246f05": {
+      "assetId": "forma-original-finish-solo-001-retry-0-0",
+      "caption": "Reverse Clamshell · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Side-lying bent-knee setup with knees visibly stacked in contact, bottom shin supported and upper foot raised away from lower foot; hand controls knee contact and pelvis stays stacked.",
+      "guideSha256": "036ffb9cfcfce9a8a6907963453a51221586c7b4b1b964efc25c05b106114759"
     }
   }
 }

@@ -1,0 +1,64 @@
+{
+  "name": "finish-solo-001-retry",
+  "columns": 1,
+  "rows": 1,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-solo-001-retry.png",
+  "prompt": "Edit this original fitness illustration to correct reverse clamshell lower limbs. Retain fullbody white gray lime style. BOTH thighs angle FORWARD toward camera from hips about45degrees. BOTH KNEES must bend sharply90degrees, shin direction BACKWARD toward right edge so feet are BEHIND knees. Knees are stacked and physically TOUCH each other. Bottom shin mat-supported. Top knee remains touching bottom knee while top shin rotates upward and top foot lifts20cm above bottom foot. Right hand lightly holds top knee stacked in contact. Visually show bent-knee zigzag legs not straight legs; hip internal rotation feet-open knees-closed. All limbs fully insideframe. Full currentguide:Lie on your side with your hips and knees bent, keeping your knees stacked on top of each other. Keep your feet together at first, then keep your knees touching while lifting your top foot upward. Slowly lower the foot back down with control.\n\nMove only through the hip and avoid rolling your pelvis backward. The movement should be small, controlled, and focused on hip rotation.",
+  "sourceGeneratedPath": "/workspace/generated_images/exec-4d83f7d2-133a-493c-8d56-9e211f021114.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-solo-001-retry.png",
+  "cells": [
+    {
+      "id": "wger-cf6bf132-fe21-4b70-8f73-006545246f05",
+      "name": "Reverse Clamshell",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [
+        "Glutes"
+      ],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Lie on your side with your hips and knees bent, keeping your knees stacked on top of each other. Keep your feet together at first, then keep your knees touching while lifting your top foot upward. Slowly lower the foot back down with control.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2448/view/",
+        "author": "TobiasFalk",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "weight": 0,
+      "metric": "load_reps",
+      "equipmentTags": [
+        "Bodyweight"
+      ],
+      "guideText": "Lie on your side with your hips and knees bent, keeping your knees stacked on top of each other. Keep your feet together at first, then keep your knees touching while lifting your top foot upward. Slowly lower the foot back down with control.\n\nMove only through the hip and avoid rolling your pelvis backward. The movement should be small, controlled, and focused on hip rotation.",
+      "title": "Reverse Clamshell",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2448/view/",
+        "author": "TobiasFalk",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "reviewNote": "Side-lying bent-knee setup with knees visibly stacked in contact, bottom shin supported and upper foot raised away from lower foot; hand controls knee contact and pelvis stays stacked.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "cropReviewNote": "Inspected complete1536x1024 standalone PNG; full athlete, both hands, knees, feet and mat contained.",
+      "ids": [
+        "wger-cf6bf132-fe21-4b70-8f73-006545246f05"
+      ]
+    }
+  ],
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

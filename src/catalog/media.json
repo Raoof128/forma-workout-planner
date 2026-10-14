@@ -15247,6 +15247,34 @@
         }
       }
     },
+    "forma-original-finish-solo-004-retry-0-0": {
+      "src": "/exercise-media/original/finish-solo-004-retry.png?v=53b7e7cf8026",
+      "sha256": "53b7e7cf8026049e530862fd9c714cd5604ca0c2c5cb93b25309cc2ebf134b7d",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Kreis Press DB",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-solo-004-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 1,
+        "rows": 1,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
     "forma-original-movements-049-1-0": {
       "src": "/exercise-media/original/movements-049.png?v=dae1c794cf8e",
       "sha256": "dae1c794cf8e020ae8862cc3c357fee4877a2979d84532c23467c1c87be2ac57",
@@ -22472,6 +22500,34 @@
           "y": 488,
           "width": 768,
           "height": 536
+        }
+      }
+    },
+    "forma-original-finish-solo-001-retry-0-0": {
+      "src": "/exercise-media/original/finish-solo-001-retry.png?v=239664091f2b",
+      "sha256": "239664091f2b90bb1ccc50191cd0294a461fd06e968c2a8420f647cb02f49b48",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Reverse Clamshell",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-solo-001-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 1,
+        "rows": 1,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1536,
+          "height": 1024
         }
       }
     },
@@ -35753,6 +35809,10 @@
       "assetId": "forma-original-authored-c-001-retry-1-0",
       "caption": "Chest-supported kettlebell row · Representative exercise position; follow the guide for the complete movement."
     },
+    "wger-b4e78b5a-6141-4fc9-a6f7-cba13ce6559b": {
+      "assetId": "forma-original-finish-solo-004-retry-0-0",
+      "caption": "Kreis Press DB · Representative exercise position; follow the guide for the complete movement."
+    },
     "wger-16202754-f567-4d23-a866-2c9cc8eba71d": {
       "assetId": "forma-original-movements-049-1-0",
       "caption": "L-sit · Representative exercise position; follow the guide for the complete movement."
@@ -36908,6 +36968,10 @@
     "db-reverse-cable-curl": {
       "assetId": "forma-original-cardio-01-1-2",
       "caption": "Adjustable cable station · Equipment reference; pulley height, attachments and posture follow each exercise guide."
+    },
+    "wger-cf6bf132-fe21-4b70-8f73-006545246f05": {
+      "assetId": "forma-original-finish-solo-001-retry-0-0",
+      "caption": "Reverse Clamshell · Representative exercise position; follow the guide for the complete movement."
     },
     "db-reverse-crunch": {
       "assetId": "forma-original-movements-069-3-1",

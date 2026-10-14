@@ -1,0 +1,61 @@
+{
+  "name": "finish-solo-001",
+  "columns": 1,
+  "rows": 1,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-solo-001.png",
+  "prompt": "Create ORIGINAL FORMA precise exercise manual illustration, ONE standalone fullbody scene on white background landscape1536x1024. No text arrows labels. Fully clothed adult charcoalgray shirt and SHORTS exposing both knees, lime shoe trim. Exactly2arms2legs. Full mat and athlete generously contained. REVERSE CLAMSHELL hip INTERNAL ROTATION. Athlete lying on LEFT SIDE facing camera, left forearm supports head. BOTH hips flexed and both knees bent90degrees, thighs stacked with TWO KNEECAPS DIRECTLY TOUCHING and SAME POSITION. Bottom LEFT shin lies on mat, bottom foot rests mat. TOP RIGHT KNEE stays in physical contact with bottom knee at hinge while TOP RIGHT LOWER LEG pivots UPWARD, TOP RIGHT FOOT raised20cm above bottom foot. Show obvious separation of feet but NO separation of knees. Right hand lightly over top knee keeps contact. Pelvis stays stacked stable. This is reverse clam: feet open, knees closed. NOT ordinary clamshell where knee opens. Correct anatomy and physically plausible shortrange motion. Full guide: Lie on your side with your hips and knees bent, keeping your knees stacked on top of each other. Keep your feet together at first, then keep your knees touching while lifting your top foot upward. Slowly lower the foot back down with control.\n\nMove only through the hip and avoid rolling your pelvis backward. The movement should be small, controlled, and focused on hip rotation.",
+  "sourceGeneratedPath": "/workspace/generated_images/exec-ed5b8f08-6acf-4078-9a0e-1aeeecd69a59.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-solo-001.png",
+  "cells": [
+    {
+      "id": "wger-cf6bf132-fe21-4b70-8f73-006545246f05",
+      "name": "Reverse Clamshell",
+      "muscle": "Legs",
+      "equipment": "Bodyweight",
+      "primaryMuscles": [
+        "Glutes"
+      ],
+      "secondaryMuscles": [],
+      "category": "strength",
+      "level": "Unspecified",
+      "description": "Lie on your side with your hips and knees bent, keeping your knees stacked on top of each other. Keep your feet together at first, then keep your knees touching while lifting your top foot upward. Slowly lower the foot back down with control.",
+      "aliases": [],
+      "source": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2448/view/",
+        "author": "TobiasFalk",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "weight": 0,
+      "metric": "load_reps",
+      "equipmentTags": [
+        "Bodyweight"
+      ],
+      "guideText": "Lie on your side with your hips and knees bent, keeping your knees stacked on top of each other. Keep your feet together at first, then keep your knees touching while lifting your top foot upward. Slowly lower the foot back down with control.\n\nMove only through the hip and avoid rolling your pelvis backward. The movement should be small, controlled, and focused on hip rotation.",
+      "title": "Reverse Clamshell",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2448/view/",
+        "author": "TobiasFalk",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "held",
+      "reviewNote": "Knees nearly straight and legs extended; defining bent-hip/bent-knee reverse clamshell setup absent despite foot lift.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "cropReviewNote": "Full source inspected; all athlete limbs and mat retained within standalone bounds."
+    }
+  ],
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}
