@@ -13,7 +13,7 @@
       "guideText": "Start position as row, extend to plank and back. Finish with row and repeat",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1022/view/",
@@ -21,7 +21,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 338
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "wger-81dd44b3-67b3-4198-9e57-c2a80b3c4102",
@@ -30,7 +38,7 @@
       "guideText": "Sitting on the ground, use a high cable in a single grip, to do lat pulldowns with a focus on a long stretch in the lats.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1637/view/",
@@ -38,7 +46,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: single-arm row title conflicts with floor-seated high-cable lat-pulldown guide; resolve identity.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 338
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "db-single-dumbbell-raise",
@@ -47,14 +63,22 @@
       "guideText": "With a wide stance, hold a dumbell with both hands, grasping the head of the dumbbell instead of the handle. Your arms should be extended and hanging at the waist. This will be your starting position.\n\nRaise the weight until it is above shoulder level, keeping your arms extended. Your torso and hips should remain stationary throughout the movement.\n\nReturn to the starting position and repeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Single_Dumbbell_Raise.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 338
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "db-single-leg-butt-kick",
@@ -63,14 +87,22 @@
       "guideText": "Begin by standing on one leg, with the bent knee raised. This will be your start position.\n\nUsing a countermovement jump, take off upward by extending the hip, knee, and ankle of the grounded leg.\n\nImmediately flex the knee and attempt to touch your butt with the heel of your jumping leg.\n\nReturn the leg to a partially bent position underneath the hips and land. Your opposite leg should stay in relatively the same position throughout the drill.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Single_Leg_Butt_Kick.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 338
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "db-single-leg-glute-bridge",
@@ -79,14 +111,22 @@
       "guideText": "Lay on the floor with your feet flat and knees bent.\n\nRaise one leg off of the ground, pulling the knee to your chest. This will be your starting position.\n\nExecute the movement by driving through the heel, extending your hip upward and raising your glutes off of the ground.\n\nExtend as far as possible, pause and then return to the starting position.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Single_Leg_Glute_Bridge.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase.",
+      "bounds": {
+        "x": 0,
+        "y": 338,
+        "width": 384,
+        "height": 335
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "wger-45cd73d7-98ac-4451-849a-a645fcfe9bee",
@@ -95,7 +135,7 @@
       "guideText": "Sit on the ground with one leg straight out in front of you and the other leg bent in toward you. Reach forward with both hands, trying to touch the toes of your straight leg.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1393/view/",
@@ -103,7 +143,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase.",
+      "bounds": {
+        "x": 384,
+        "y": 338,
+        "width": 384,
+        "height": 335
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "wger-09c9a566-c1b3-4bf6-8a48-f9dd2bbec1f2",
@@ -112,7 +160,7 @@
       "guideText": "Strength training exercise where you push a weight away from your body using one leg at a time on a leg press machine. It helps to improve leg strength, balance, and muscular symmetry by isolating each leg individually. This exercise is particularly useful for identifying and correcting muscle imbalances between your legs.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2677/view/",
@@ -120,7 +168,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase.",
+      "bounds": {
+        "x": 768,
+        "y": 338,
+        "width": 384,
+        "height": 335
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "db-single-leg-push-off",
@@ -129,14 +185,22 @@
       "guideText": "Stand on the ground with one foot resting on the box, heel close to the edge.\n\nPush off with your foot on top of the box, trying to gain as much height as possible by extending through the hip and knee.\n\nLand with the same foot on top of the box, returning your other foot back to the start position.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Single_Leg_Push-off.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase.",
+      "bounds": {
+        "x": 1152,
+        "y": 338,
+        "width": 384,
+        "height": 335
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "wger-957ca37c-b6d7-4c30-8ba9-9512b0fa2659",
@@ -145,7 +209,7 @@
       "guideText": "1. Stand upright and hold weights in both hands if using loads. 2. Brace your core and lift one leg off the ground. 3. Keep your back straight, hinge at the hips while lowering your torso forward, ensuring you don’t rotate your hips. 4. Lower until you feel a stretch in your standing leg's hamstring, then return to standing position. Repeat on both sides.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1388/view/",
@@ -153,7 +217,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase.",
+      "bounds": {
+        "x": 0,
+        "y": 673,
+        "width": 384,
+        "height": 351
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "db-single-arm-linear-jammer",
@@ -162,14 +234,22 @@
       "guideText": "Position a bar into a landmine or securely anchor it in a corner. Load the bar to an appropriate weight.\n\nRaise the bar from the floor, taking it to your shoulders with one or both hands. Adopt a wide stance. This will be your starting position.\n\nPerform the movement by extending the elbow, pressing the weight up. Move explosively, extending the hips and knees fully to produce maximal force.\n\nReturn to the starting position.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Single-Arm_Linear_Jammer.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase.",
+      "bounds": {
+        "x": 384,
+        "y": 673,
+        "width": 384,
+        "height": 351
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "db-single-arm-push-up",
@@ -178,14 +258,22 @@
       "guideText": "Begin laying prone on the ground. Move yourself into a position supporting your weight on your toes and one arm. Your working arm should be placed directly under the shoulder, fully extended. Your legs should be extended, and for this movement you may need a wider base, placing your feet further apart than in a normal push-up.\n\nMaintain good posture, and place your free hand behind your back. This will be your starting position.\n\nLower yourself by allowing the elbow to flex until you touch the ground.\n\nDescend slowly, and reverse direction be extending the arm to return to the starting position.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Single-Arm_Push-Up.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase.",
+      "bounds": {
+        "x": 768,
+        "y": 673,
+        "width": 384,
+        "height": 351
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "db-single-cone-sprint-drill",
@@ -194,14 +282,22 @@
       "guideText": "This drill teaches quick foot action. You need a single cone. Begin standing next to the cone with one arm back and one arm forward.\n\nChop the feet as quickly as possible, blocking with the arms. Circle the cone, keep your knees up, with violent foot action.\n\nRest after three trips around the cone.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Single-Cone_Sprint_Drill.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase.",
+      "bounds": {
+        "x": 1152,
+        "y": 673,
+        "width": 384,
+        "height": 351
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-c923f912-d5b7-45c5-83ad-e9a8aeee9387.png",

@@ -13,8 +13,16 @@
       "guideText": "Place a dumbbell standing up on a flat bench.\n\nEnsuring that the dumbbell stays securely placed at the top of the bench, lie perpendicular to the bench (torso across it as in forming a cross) with only your shoulders lying on the surface. Hips should be below the bench and legs bent with feet firmly on the floor. The head will be off the bench as well.\n\nGrasp the dumbbell with both hands and hold it straight over your chest with a bend in your arms. Both palms should be pressing against the underside one of the sides of the dumbbell. This will be your starting position. Caution: Always ensure that the dumbbell used for this exercise is secure. Using a dumbbell with loose plates can result in the dumbbell falling apart and falling on your face.\n\nWhile keeping your arms locked in the bent arm position, lower the weight slowly in an arc behind your head while breathing in until you feel a stretch on the chest.\n\nAt that point, bring the dumbbell back to the starting position using the arc through which the weight was lowered and exhale as you perform this movement.\n\nHold the weight on the initial position for a second and repeat the motion for the prescribed number of repetitions.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
-      "correctionRequirement": "PERPENDICULAR across flat bench: only upper back/shoulders supported, hips unsupported, feet floor; two hands ONE dumbbell lowered behind head."
+      "reviewStatus": "accepted",
+      "correctionRequirement": "PERPENDICULAR across flat bench: only upper back/shoulders supported, hips unsupported, feet floor; two hands ONE dumbbell lowered behind head.",
+      "reviewNote": "Correction reviewed: shoulder-only perpendicular bench pullover with unsupported hips, outdoor conventional bicycle, strapped stable chest boards for bar press, inverted bell body above grip and two feet landing on box.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 513,
+        "height": 489
+      },
+      "cropReviewNote": "Inspected correction source sheet and actual panel outlines; main movement and apparatus remain in cell."
     },
     {
       "id": "db-bicycling",
@@ -23,7 +31,7 @@
       "guideText": "To begin, seat yourself on the bike and adjust the seat to your height.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Bicycling.json",
@@ -31,7 +39,15 @@
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
       },
-      "correctionRequirement": "Outdoor conventional two-wheel bicycle, athlete riding outdoors; never stationary gym bicycle."
+      "correctionRequirement": "Outdoor conventional two-wheel bicycle, athlete riding outdoors; never stationary gym bicycle.",
+      "reviewNote": "Correction reviewed: shoulder-only perpendicular bench pullover with unsupported hips, outdoor conventional bicycle, strapped stable chest boards for bar press, inverted bell body above grip and two feet landing on box.",
+      "bounds": {
+        "x": 513,
+        "y": 0,
+        "width": 511,
+        "height": 489
+      },
+      "cropReviewNote": "Inspected correction source sheet and actual panel outlines; main movement and apparatus remain in cell."
     },
     {
       "id": "wger-64ebb7a5-15ec-48dd-8f82-47cdb022f215",
@@ -40,7 +56,7 @@
       "guideText": "In this bottom-up rotation exercise movement, you’ll cross your knee over and drive it into that opposite elbow. Start in high plank position (or tabletop position) with hands directly beneath your shoulders. Lift the left knee toward the right arm and slide it up the forearm to get more of that posterior pelvic tilt and engagement of the abdominal muscles. Then do the opposite side, bringing your right knee toward your left hand.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1475/view/",
@@ -49,7 +65,15 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "correctionRequirement": "FOREARM plank with bent knee sliding ACROSS torso to OPPOSITE forearm."
+      "correctionRequirement": "FOREARM plank with bent knee sliding ACROSS torso to OPPOSITE forearm.",
+      "reviewNote": "Hold: Black Widow slide still does not clearly establish knee contacting the opposite forearm.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 489
+      },
+      "cropReviewNote": "Inspected correction source sheet and actual panel outlines; main movement and apparatus remain in cell."
     },
     {
       "id": "db-board-press",
@@ -58,7 +82,7 @@
       "guideText": "Begin by lying on the bench, getting your head beyond the bar if possible. One to five boards, made out of 2x6's, can be screwed together and held in place by a training partner, bands, or just tucked under your shirt.\n\nTuck your feet underneath you and arch your back. Using the bar to help support your weight, lift your shoulder off the bench and retract them, squeezing the shoulder blades together. Use your feet to drive your traps into the bench. Maintain this tight body position throughout the movement.\n\nYou can take a standard bench grip, or shoulder width to focus on the triceps. Pull the bar out of the rack without protracting your shoulders. The bar, wrist, and elbow should stay in line at all times. Focus on squeezing the bar and trying to pull it apart.\n\nLower the bar to the boards, and then drive the bar up with as much force as possible. The elbows should be tucked in until lockout.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Board_Press.json",
@@ -66,7 +90,15 @@
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
       },
-      "correctionRequirement": "Flat barbell bench press with small wooden boards on chest visibly SECURED by nonelastic broad torso strap."
+      "correctionRequirement": "Flat barbell bench press with small wooden boards on chest visibly SECURED by nonelastic broad torso strap.",
+      "reviewNote": "Correction reviewed: shoulder-only perpendicular bench pullover with unsupported hips, outdoor conventional bicycle, strapped stable chest boards for bar press, inverted bell body above grip and two feet landing on box.",
+      "bounds": {
+        "x": 0,
+        "y": 489,
+        "width": 513,
+        "height": 535
+      },
+      "cropReviewNote": "Inspected correction source sheet and actual panel outlines; main movement and apparatus remain in cell."
     },
     {
       "id": "db-bottoms-up-clean-from-the-hang-position",
@@ -75,7 +107,7 @@
       "guideText": "Initiate the exercise by standing upright with a kettlebell in one hand.\n\nSwing the kettlebell back forcefully and then reverse the motion forcefully. Crush the kettlebell handle as hard as possible and raise the kettlebell to your shoulder.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Bottoms-Up_Clean_From_The_Hang_Position.json",
@@ -83,7 +115,15 @@
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
       },
-      "correctionRequirement": "Standing rack catch: bell INVERTED above hand, sphere ABOVE handle and hand, arm bent elbow close to torso."
+      "correctionRequirement": "Standing rack catch: bell INVERTED above hand, sphere ABOVE handle and hand, arm bent elbow close to torso.",
+      "reviewNote": "Correction reviewed: shoulder-only perpendicular bench pullover with unsupported hips, outdoor conventional bicycle, strapped stable chest boards for bar press, inverted bell body above grip and two feet landing on box.",
+      "bounds": {
+        "x": 513,
+        "y": 489,
+        "width": 511,
+        "height": 535
+      },
+      "cropReviewNote": "Inspected correction source sheet and actual panel outlines; main movement and apparatus remain in cell."
     },
     {
       "id": "wger-002c6a4f-28ac-4b07-8e94-053e5b05d52b",
@@ -92,7 +132,7 @@
       "guideText": "Jump from a standing position onto the box, stretch your body, then step down again (do not jump)",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1373/view/",
@@ -101,7 +141,15 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "correctionRequirement": "BOTH feet flat on top of box, knees bent in two-foot landing, neither foot on ground."
+      "correctionRequirement": "BOTH feet flat on top of box, knees bent in two-foot landing, neither foot on ground.",
+      "reviewNote": "Correction reviewed: shoulder-only perpendicular bench pullover with unsupported hips, outdoor conventional bicycle, strapped stable chest boards for bar press, inverted bell body above grip and two feet landing on box.",
+      "bounds": {
+        "x": 1024,
+        "y": 489,
+        "width": 512,
+        "height": 535
+      },
+      "cropReviewNote": "Inspected correction source sheet and actual panel outlines; main movement and apparatus remain in cell."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-d803cf6e-3cf8-4ecb-961d-25e27a18fb37.png",

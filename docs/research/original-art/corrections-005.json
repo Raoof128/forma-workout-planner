@@ -13,7 +13,7 @@
       "guideText": "Grasp a moderately weighted dumbbell so your palms are flat against the underside of the top plates and your thumbs are around the bar. Lie on your back across a flat bench so only your upper back and shoulders are in contact with the bench. Your feet should be set about shoulder-width apart and your head should hang slightly downward. With the dumbbell supported at arm's length directly about your chest, bend your arms about 15 degrees and keep them bent throughout the movement. Slowly lower the dumbbell backward and downward in a semicircle arc to as low a position as is comfortably possible. Raise it slowly back along the same arc to the starting point, and repeat for the required number of repetitions.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/161/view/",
@@ -22,7 +22,15 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "correctionRequirement": "PERPENDICULAR across flat bench: only shoulders/upper back supported, hips unsupported, feet floor, two hands ONE dumbbell behind head."
+      "correctionRequirement": "PERPENDICULAR across flat bench: only shoulders/upper back supported, hips unsupported, feet floor, two hands ONE dumbbell behind head.",
+      "reviewNote": "Correction reviewed: perpendicular shoulders-only dumbbell pullover, lower-back-grounded straight-overhead-arm partial crunch, exactly two arms/two dumbbells in flat-bench fly and single-dumbbell-loaded one-foot hip thrust.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected correction source sheet and actual panel outlines; main movement and apparatus remain in cell."
     },
     {
       "id": "db-crunch-hands-overhead",
@@ -31,7 +39,7 @@
       "guideText": "Lie on the floor with your back flat and knees bent with around a 60-degree angle between the hamstrings and the calves.\n\nKeep your feet flat on the floor and stretch your arms overhead with your palms crossed. This will be your starting position.\n\nCurl your upper body forward and bring your shoulder blades just off the floor. At all times, keep your arms aligned with your head, neck and shoulder. Don't move them forward from that position. Exhale as you perform this portion of the movement and hold the contraction for a second.\n\nSlowly lower down to the starting position as you inhale.\n\nRepeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Crunch_-_Hands_Overhead.json",
@@ -39,7 +47,15 @@
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
       },
-      "correctionRequirement": "Small supine crunch, lower back floor, shoulder blades raised slightly, BOTH ARMS STRAIGHT alongside ears, knees bent feet floor."
+      "correctionRequirement": "Small supine crunch, lower back floor, shoulder blades raised slightly, BOTH ARMS STRAIGHT alongside ears, knees bent feet floor.",
+      "reviewNote": "Correction reviewed: perpendicular shoulders-only dumbbell pullover, lower-back-grounded straight-overhead-arm partial crunch, exactly two arms/two dumbbells in flat-bench fly and single-dumbbell-loaded one-foot hip thrust.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected correction source sheet and actual panel outlines; main movement and apparatus remain in cell."
     },
     {
       "id": "wger-f5ad82a8-adf8-4795-9874-1f6d183c56ed",
@@ -48,7 +64,7 @@
       "guideText": "Keep your body completely rigid throughout the movement, avoiding sagging in your lower back. Use a firm grip to stabilize your upper body. Start with simpler versions (such as with bent knees) to build strength and control.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1409/view/",
@@ -57,7 +73,15 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "correctionRequirement": "Only shoulders/upper back on bench, hands grip behind head; rigid straight line TRUNK HIPS LEGS lifted together diagonally, NO bend at hips."
+      "correctionRequirement": "Only shoulders/upper back on bench, hands grip behind head; rigid straight line TRUNK HIPS LEGS lifted together diagonally, NO bend at hips.",
+      "reviewNote": "Hold: rigid dragon-flag body line corrected, but hands appear behind head rather than a clearly firm bench grip.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected correction source sheet and actual panel outlines; main movement and apparatus remain in cell."
     },
     {
       "id": "db-dumbbell-flyes",
@@ -66,7 +90,7 @@
       "guideText": "Lie down on a flat bench with a dumbbell on each hand resting on top of your thighs. The palms of your hand will be facing each other.\n\nThen using your thighs to help raise the dumbbells, lift the dumbbells one at a time so you can hold them in front of you at shoulder width with the palms of your hands facing each other. Raise the dumbbells up like you're pressing them, but stop and hold just before you lock out. This will be your starting position.\n\nWith a slight bend on your elbows in order to prevent stress at the biceps tendon, lower your arms out at both sides in a wide arc until you feel a stretch on your chest. Breathe in as you perform this portion of the movement. Tip: Keep in mind that throughout the movement, the arms should remain stationary; the movement should only occur at the shoulder joint.\n\nReturn your arms back to the starting position as you squeeze your chest muscles and breathe out. Tip: Make sure to use the same arc of motion used to lower the weights.\n\nHold for a second at the contracted position and repeat the movement for the prescribed amount of repetitions.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Dumbbell_Flyes.json",
@@ -74,7 +98,15 @@
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
       },
-      "correctionRequirement": "Flat bench fly: EXACTLY TWO arms, TWO dumbbells, both arms spread laterally with slight elbow bend."
+      "correctionRequirement": "Flat bench fly: EXACTLY TWO arms, TWO dumbbells, both arms spread laterally with slight elbow bend.",
+      "reviewNote": "Correction reviewed: perpendicular shoulders-only dumbbell pullover, lower-back-grounded straight-overhead-arm partial crunch, exactly two arms/two dumbbells in flat-bench fly and single-dumbbell-loaded one-foot hip thrust.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected correction source sheet and actual panel outlines; main movement and apparatus remain in cell."
     },
     {
       "id": "wger-b407768d-d519-47b8-818a-44c9761a8be6",
@@ -83,7 +115,7 @@
       "guideText": "Similar to hip thrust, but with feet put up together, lifting the butt off the ground in a frog like position.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1503/view/",
@@ -92,7 +124,15 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "correctionRequirement": "Flat bench bilateral dumbbell press, SOLES of feet TOUCHING each other in diamond shape, knees open outward."
+      "correctionRequirement": "Flat bench bilateral dumbbell press, SOLES of feet TOUCHING each other in diamond shape, knees open outward.",
+      "reviewNote": "Hold: actual source describes frog-position HIP THRUST/glute bridge; rendering is chest press. Generate a floor frog pump with dumbbell across pelvis, not a bench chest press.",
+      "bounds": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected correction source sheet and actual panel outlines; main movement and apparatus remain in cell."
     },
     {
       "id": "wger-7cc24acf-3fc9-4d14-a461-cd00d1d18f0e",
@@ -101,7 +141,7 @@
       "guideText": "The single-leg hip thrust is performed by placing your upper back on a weight bench, raising one leg, and extending the hip of the other leg to achieve an isolated contraction of the glute. By working each side separately, you can fully isolate your glutes unilaterally, providing maximal training stimulus.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1234/view/",
@@ -110,7 +150,15 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
       },
-      "correctionRequirement": "Upper back on bench, hips up, one foot floor other knee raised; ONE DUMBBELL across pelvis steadied with hands, NEVER barbell."
+      "correctionRequirement": "Upper back on bench, hips up, one foot floor other knee raised; ONE DUMBBELL across pelvis steadied with hands, NEVER barbell.",
+      "reviewNote": "Correction reviewed: perpendicular shoulders-only dumbbell pullover, lower-back-grounded straight-overhead-arm partial crunch, exactly two arms/two dumbbells in flat-bench fly and single-dumbbell-loaded one-foot hip thrust.",
+      "bounds": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected correction source sheet and actual panel outlines; main movement and apparatus remain in cell."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-593d13ac-c987-4352-a061-8d51bc3107cd.png",

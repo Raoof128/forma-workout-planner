@@ -13,7 +13,7 @@
       "guideText": "Works your obliques and helps stabilize your spine. Lie on your side and support your body between your forearm and knee to your feet.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/580/view/",
@@ -21,7 +21,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed bent-knee forearm side-plank regression, defensive low side-slide stance, one-knee lateral split squat, airborne sideways long jump, one-foot-on-box lateral shuffle, side-shifted wide chin, lateral-weight-shift push-up, wrist-grasp cross-body pull and side-kicking board-assisted swimming breathing phase.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 305
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "wger-5e2761cf-839e-435e-bedb-35e132dcb5ce",
@@ -30,7 +38,7 @@
       "guideText": "Starting position: Lie down on your side, with your bottom elbow at a right angle, arm sticking out. Lift your pelvis off the floor by lifting your bottom shoulder up, keeping the forearm on the floor; your head, pelvis, and feet should be in a straight line. Steps: 1. Hold this position.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1019/view/",
@@ -38,7 +46,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: right-side plank depicts apparent left-side support; regenerate unequivocal right forearm/right foot support.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 305
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "wger-cd7bbafc-4092-4194-aa20-e380f1fe45f0",
@@ -47,7 +63,7 @@
       "guideText": "With feet a little wider than shoulder-width apart and staying low to mimic a defensive position, you should step with their lead leg and push off with their plant leg. After three slides, rotate your body for 180 degree on the guiding (/outer) leg and do a squat. Continue.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1195/view/",
@@ -55,7 +71,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed bent-knee forearm side-plank regression, defensive low side-slide stance, one-knee lateral split squat, airborne sideways long jump, one-foot-on-box lateral shuffle, side-shifted wide chin, lateral-weight-shift push-up, wrist-grasp cross-body pull and side-kicking board-assisted swimming breathing phase.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 305
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "wger-9801e20b-69c3-43d0-9066-450a68230c42",
@@ -64,7 +88,7 @@
       "guideText": "Starting position: 1. Stand tall and take a wide lateral stride, just greater than shoulder width. Steps: 1. Bend one knee until your thigh is parallel to the floor. The bent knee must be in line with the foot. 2. Push back to the starting position. 3. Repeat.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/986/view/",
@@ -72,7 +96,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed bent-knee forearm side-plank regression, defensive low side-slide stance, one-knee lateral split squat, airborne sideways long jump, one-foot-on-box lateral shuffle, side-shifted wide chin, lateral-weight-shift push-up, wrist-grasp cross-body pull and side-kicking board-assisted swimming breathing phase.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 305
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "db-side-standing-long-jump",
@@ -81,14 +113,22 @@
       "guideText": "Begin standing with your feet hip width apart in an athletic stance. Your head and chest should be up, knees and hips slightly bent. This will be your starting position.\n\nLeaning to your right, extend through your hips, knees, and ankles to jump into the air. Block with the arms to lead the movement, jumping as far to your right as you can.\n\nLand facing the same direction with your feet hip width apart, absorbing the impact through your lower body.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Side_Standing_Long_Jump.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed bent-knee forearm side-plank regression, defensive low side-slide stance, one-knee lateral split squat, airborne sideways long jump, one-foot-on-box lateral shuffle, side-shifted wide chin, lateral-weight-shift push-up, wrist-grasp cross-body pull and side-kicking board-assisted swimming breathing phase.",
+      "bounds": {
+        "x": 0,
+        "y": 305,
+        "width": 384,
+        "height": 343
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "db-side-to-side-box-shuffle",
@@ -97,14 +137,22 @@
       "guideText": "Stand to one side of the box with your left foot resting on the middle of it.\n\nTo begin, jump up and over to the other side of the box, landing with your right foot on top of the box and your left foot on the floor. Swing your arms to aid your movement.\n\nContinue shuffling back and forth across the box.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Side_to_Side_Box_Shuffle.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed bent-knee forearm side-plank regression, defensive low side-slide stance, one-knee lateral split squat, airborne sideways long jump, one-foot-on-box lateral shuffle, side-shifted wide chin, lateral-weight-shift push-up, wrist-grasp cross-body pull and side-kicking board-assisted swimming breathing phase.",
+      "bounds": {
+        "x": 384,
+        "y": 305,
+        "width": 384,
+        "height": 343
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "db-side-to-side-chins",
@@ -113,14 +161,22 @@
       "guideText": "Grab the pull-up bar with the palms facing forward using a wide grip.\n\nAs you have both arms extended in front of you holding the bar at a wide grip, bring your torso back around 30 degrees or so while creating a curvature on your lower back and sticking your chest out. This is your starting position.\n\nPull your torso up while leaning to the left hand side until the bar almost touches your upper chest by drawing the shoulders and the upper arms down and back. Exhale as you perform this portion of the movement. Tip: Concentrate on squeezing the back muscles once you reach the full contracted position. The upper torso should remain stationary as it moves through space (no swinging) and only the arms should move. The forearms should do no other work other than hold the bar.\n\nAfter a second of contraction, inhale as you go back to the starting position.\n\nNow, pull your torso up while leaning to the right hand side until the bar almost touches your upper chest by drawing the shoulders and the upper arms down and back. Exhale as you perform this portion of the movement. Tip: Concentrate on squeezing the back muscles once you reach the full contracted position. The upper torso should remain stationary as it moves through space and only the arms should move. The forearms should do no other work other than hold the bar.\n\nAfter a second of contraction, inhale as you go back to the starting position.\n\nRepeat steps 3-6 until you have performed the prescribed amount of repetitions for each side.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Side_To_Side_Chins.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed bent-knee forearm side-plank regression, defensive low side-slide stance, one-knee lateral split squat, airborne sideways long jump, one-foot-on-box lateral shuffle, side-shifted wide chin, lateral-weight-shift push-up, wrist-grasp cross-body pull and side-kicking board-assisted swimming breathing phase.",
+      "bounds": {
+        "x": 768,
+        "y": 305,
+        "width": 384,
+        "height": 343
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "wger-9374fdaf-411f-4ae6-8f0c-21cc2d3dc667",
@@ -129,7 +185,7 @@
       "guideText": "-start in push up position -lean the body weight to the right side, and complete a push up with the chest over the right hand -come back to the centered position -on rep 2, lean to the left side",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/583/view/",
@@ -137,7 +193,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed bent-knee forearm side-plank regression, defensive low side-slide stance, one-knee lateral split squat, airborne sideways long jump, one-foot-on-box lateral shuffle, side-shifted wide chin, lateral-weight-shift push-up, wrist-grasp cross-body pull and side-kicking board-assisted swimming breathing phase.",
+      "bounds": {
+        "x": 1152,
+        "y": 305,
+        "width": 384,
+        "height": 343
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "db-side-wrist-pull",
@@ -146,14 +210,22 @@
       "guideText": "This stretch works best standing. Cross your left arm over the midline of your body and hold the left wrist in your right hand down at the level of your hips. Start the stretch with a bent left arm.\n\nSlowly straighten, pull, and lift it up to shoulder height, as pictured. Feel this stretch originate in your back, not your shoulders, and don't pull too hard on the shoulders joint. Switch sides.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Side_Wrist_Pull.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed bent-knee forearm side-plank regression, defensive low side-slide stance, one-knee lateral split squat, airborne sideways long jump, one-foot-on-box lateral shuffle, side-shifted wide chin, lateral-weight-shift push-up, wrist-grasp cross-body pull and side-kicking board-assisted swimming breathing phase.",
+      "bounds": {
+        "x": 0,
+        "y": 648,
+        "width": 384,
+        "height": 376
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "wger-6ec2d684-8091-4da9-8814-8a3052d0a302",
@@ -162,7 +234,7 @@
       "guideText": "Push off the wall on your side (not flat on your stomach), one arm extended forward holding the board or just extended, kicking continuously. Keep your head in a neutral position looking at the bottom of the pool, and when you need air, rotate your head sideways (one ear stays in the water, other faces up) to breathe, then rotate back to neutral. Swim a length like this, then repeat on the other side. This teaches the exact head position and rotation you'll use once full stroke breathing comes in.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2484/view/",
@@ -170,7 +242,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed bent-knee forearm side-plank regression, defensive low side-slide stance, one-knee lateral split squat, airborne sideways long jump, one-foot-on-box lateral shuffle, side-shifted wide chin, lateral-weight-shift push-up, wrist-grasp cross-body pull and side-kicking board-assisted swimming breathing phase.",
+      "bounds": {
+        "x": 384,
+        "y": 648,
+        "width": 384,
+        "height": 376
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "wger-d9c1f78c-7bf6-4e6a-92e4-7bf4ed4a0a67",
@@ -179,7 +259,7 @@
       "guideText": "Laying on your side and using the arm closest to the bench, maintain a 90 degree bend at the elbow and allow the weight to fall towards the ground past the bench as low as comfortable. Bring the weight up using only rotation of the shoulder to the opposing shoulder.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1582/view/",
@@ -187,7 +267,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: side-lying internal shoulder rotation needs lower working arm with elbow bent 90 degrees; image hangs upper arm straight.",
+      "bounds": {
+        "x": 768,
+        "y": 648,
+        "width": 384,
+        "height": 376
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     },
     {
       "id": "db-side-lying-floor-stretch",
@@ -196,14 +284,22 @@
       "guideText": "First lie on your left side, bending your left knee in front of you to stabilize your torso (use your abdominal muscles as well to hold you upright).\n\nStraighten your right leg and rest the right foot on the floor behind your left. Straighten your right arm over your head and gently pull on your right wrist to stretch the entire right side of the body. Switch sides.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Side-Lying_Floor_Stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: side-lying floor stretch top leg remains bent; guide requires straight upper leg extended behind lower bent knee.",
+      "bounds": {
+        "x": 1152,
+        "y": 648,
+        "width": 384,
+        "height": 376
+      },
+      "cropReviewNote": "Inspected actual source separator pixels and representative poses."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-b6063162-e4d2-4074-83d5-6d08a4a500de.png",

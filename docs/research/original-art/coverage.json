@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 958,
+  "accepted": 1004,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -1268,7 +1268,9 @@
       "name": "Bent-Arm Dumbbell Pullover",
       "equipment": "Dumbbell",
       "guideSha256": "2e85fa4079be63cca1f188b9ffab9145dfae5ec5e8181e7223b5228411f59366",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-003-0-0",
+      "reviewNote": "Correction reviewed: shoulder-only perpendicular bench pullover with unsupported hips, outdoor conventional bicycle, strapped stable chest boards for bar press, inverted bell body above grip and two feet landing on box."
     },
     {
       "exerciseId": "db-bent-knee-hip-raise",
@@ -1307,7 +1309,9 @@
       "name": "Bicycling",
       "equipment": "Specialty equipment",
       "guideSha256": "cf6c23b54c03c548901c1c087bb5f6c3c4818d7fc1d5ee926965127f36496d89",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-003-1-0",
+      "reviewNote": "Correction reviewed: shoulder-only perpendicular bench pullover with unsupported hips, outdoor conventional bicycle, strapped stable chest boards for bar press, inverted bell body above grip and two feet landing on box."
     },
     {
       "exerciseId": "db-bicycling-stationary",
@@ -1366,7 +1370,9 @@
       "name": "Board Press",
       "equipment": "Barbell",
       "guideSha256": "631250b16b69cd33135e431a2ddd835bf7d33f82bf32baca3253494131f96cb7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-003-0-1",
+      "reviewNote": "Correction reviewed: shoulder-only perpendicular bench pullover with unsupported hips, outdoor conventional bicycle, strapped stable chest boards for bar press, inverted bell body above grip and two feet landing on box."
     },
     {
       "exerciseId": "wger-c4b2ed05-38d5-47fc-9ad1-c23f09fddd61",
@@ -1463,7 +1469,9 @@
       "name": "Bottoms-Up Clean From The Hang Position",
       "equipment": "Kettlebell",
       "guideSha256": "49298213249f3c3282e9cf6a552a1087953032819295d097f9ee41912f8f5ca4",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-003-1-1",
+      "reviewNote": "Correction reviewed: shoulder-only perpendicular bench pullover with unsupported hips, outdoor conventional bicycle, strapped stable chest boards for bar press, inverted bell body above grip and two feet landing on box."
     },
     {
       "exerciseId": "wger-6f919d6d-e8b2-4aac-bc43-fd6184978b70",
@@ -1488,7 +1496,9 @@
       "name": "box jumps",
       "equipment": "Bodyweight",
       "guideSha256": "df4bbd2ad022c5a0a01903c5602dfabac6d8b304048689c05bf6194446c6015b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-003-2-1",
+      "reviewNote": "Correction reviewed: shoulder-only perpendicular bench pullover with unsupported hips, outdoor conventional bicycle, strapped stable chest boards for bar press, inverted bell body above grip and two feet landing on box."
     },
     {
       "exerciseId": "db-box-skip",
@@ -2177,7 +2187,9 @@
       "name": "Chain Handle Extension",
       "equipment": "Specialty equipment",
       "guideSha256": "fb63e8bb8ce2ded2f7dedbf124a67120ef736233ed6213fee3ea35bdfb249a00",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-004-0-0",
+      "reviewNote": "Correction reviewed: free downward chains on triceps handles, lifted-hip forearm clamshell, straight-arm block clean starting pull, airborne quarter-turn clock push-up and floor-padded rear knee with couch-supported rear foot."
     },
     {
       "exerciseId": "db-chain-press",
@@ -2335,7 +2347,9 @@
       "name": "Clamshell",
       "equipment": "Bodyweight",
       "guideSha256": "8fc3c348170ff3ceae4dfe631414655b49fa6e85fd51458d02331a714ed28832",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-004-1-0",
+      "reviewNote": "Correction reviewed: free downward chains on triceps handles, lifted-hip forearm clamshell, straight-arm block clean starting pull, airborne quarter-turn clock push-up and floor-padded rear knee with couch-supported rear foot."
     },
     {
       "exerciseId": "wger-f77b7cc6-e163-4f92-afa8-5ec431f32588",
@@ -2403,7 +2417,9 @@
       "name": "Clean from Blocks",
       "equipment": "Barbell",
       "guideSha256": "8bc25602ed9c1c4d9d756ca1eaf2ba6cf771a5a4833e6aa0fb51183302abaf78",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-004-0-1",
+      "reviewNote": "Correction reviewed: free downward chains on triceps handles, lifted-hip forearm clamshell, straight-arm block clean starting pull, airborne quarter-turn clock push-up and floor-padded rear knee with couch-supported rear foot."
     },
     {
       "exerciseId": "db-clean-pull",
@@ -2428,7 +2444,9 @@
       "name": "Clock Push-Up",
       "equipment": "Bodyweight",
       "guideSha256": "72c87df87e32bceda4767f4ed067d663b868bc4f166573deb6a26d098bae24ad",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-004-1-1",
+      "reviewNote": "Correction reviewed: free downward chains on triceps handles, lifted-hip forearm clamshell, straight-arm block clean starting pull, airborne quarter-turn clock push-up and floor-padded rear knee with couch-supported rear foot."
     },
     {
       "exerciseId": "wger-b50a3d3e-cf75-42de-8729-80e163748fb1",
@@ -2602,7 +2620,9 @@
       "name": "Couch Stretch",
       "equipment": "Bench",
       "guideSha256": "8014298788b41667686d83e9d253c32565b851a77496c4ac11c5aba1e5bac53d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-004-2-1",
+      "reviewNote": "Correction reviewed: free downward chains on triceps handles, lifted-hip forearm clamshell, straight-arm block clean starting pull, airborne quarter-turn clock push-up and floor-padded rear knee with couch-supported rear foot."
     },
     {
       "exerciseId": "wger-00ecb956-9483-4d08-a9b1-6a236d4d8ff3",
@@ -2636,7 +2656,9 @@
       "name": "Cross-Bench Dumbbell Pullovers",
       "equipment": "Dumbbell",
       "guideSha256": "bda03e0002d3f55cbd9620999692454be1d518dc6bf3f6681ed2b3f49c376bcf",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-005-0-0",
+      "reviewNote": "Correction reviewed: perpendicular shoulders-only dumbbell pullover, lower-back-grounded straight-overhead-arm partial crunch, exactly two arms/two dumbbells in flat-bench fly and single-dumbbell-loaded one-foot hip thrust."
     },
     {
       "exerciseId": "wger-37314b67-1aad-4405-aa88-70846d5f035d",
@@ -2697,7 +2719,9 @@
       "name": "Crunch - Hands Overhead",
       "equipment": "Bodyweight",
       "guideSha256": "01b4de06c8c2fc693cc019a2561436047f2c0bc39b1c688ef73f214653828988",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-005-1-0",
+      "reviewNote": "Correction reviewed: perpendicular shoulders-only dumbbell pullover, lower-back-grounded straight-overhead-arm partial crunch, exactly two arms/two dumbbells in flat-bench fly and single-dumbbell-loaded one-foot hip thrust."
     },
     {
       "exerciseId": "db-crunch-legs-on-exercise-ball",
@@ -3330,7 +3354,9 @@
       "name": "Dumbbell Flyes",
       "equipment": "Dumbbell",
       "guideSha256": "785b8d20c1f35b164762a8d78bfe781c8300a285be3f2694e4c9b6a9616a1343",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-005-0-1",
+      "reviewNote": "Correction reviewed: perpendicular shoulders-only dumbbell pullover, lower-back-grounded straight-overhead-arm partial crunch, exactly two arms/two dumbbells in flat-bench fly and single-dumbbell-loaded one-foot hip thrust."
     },
     {
       "exerciseId": "wger-b407768d-d519-47b8-818a-44c9761a8be6",
@@ -3588,7 +3614,9 @@
       "name": "Dumbbell Single-leg Hip Thrust",
       "equipment": "Barbell",
       "guideSha256": "d3d46ce5d4729afa460e8db971c32f8e0ea826cade5521791ba66c10a909f7c2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-005-2-1",
+      "reviewNote": "Correction reviewed: perpendicular shoulders-only dumbbell pullover, lower-back-grounded straight-overhead-arm partial crunch, exactly two arms/two dumbbells in flat-bench fly and single-dumbbell-loaded one-foot hip thrust."
     },
     {
       "exerciseId": "wger-51fe0871-1390-4755-bd04-01a93e32f533",
@@ -9274,35 +9302,45 @@
       "name": "Shoulder Press (Dumbbell)",
       "equipment": "Dumbbell",
       "guideSha256": "a006df8b55df03ec3ddb4fb94ad78bfe1186aace50ce5e3e741c528f499abd88",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-077-0-0",
+      "reviewNote": "Reviewed supported dumbbell shoulder press, near-upright Smith shoulder press, unloaded and dumbbell straight-arm shoulder shrugs, three-point one-foot-raised push-up, weighted standing side bend, lateral cone hop, bilateral front-raise phase, chair-supported straight-leg side swing, side-lying top-leg assisted groin stretch, bent-bottom-knee side hip abduction and gentle hand-assisted lateral neck stretch."
     },
     {
       "exerciseId": "wger-141bc870-56be-4749-a3b9-e56d5d5618b4",
       "name": "Shoulder Press, on Multi Press",
       "equipment": "Bodyweight",
       "guideSha256": "1a9c34e374fc732249fd4d6d4d095c4976bf8e7bd7c3e3a8d77a9ad248b0ba2d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-077-1-0",
+      "reviewNote": "Reviewed supported dumbbell shoulder press, near-upright Smith shoulder press, unloaded and dumbbell straight-arm shoulder shrugs, three-point one-foot-raised push-up, weighted standing side bend, lateral cone hop, bilateral front-raise phase, chair-supported straight-leg side swing, side-lying top-leg assisted groin stretch, bent-bottom-knee side hip abduction and gentle hand-assisted lateral neck stretch."
     },
     {
       "exerciseId": "db-shoulder-raise",
       "name": "Shoulder Raise",
       "equipment": "Bodyweight",
       "guideSha256": "770aa28b443a58c72840f0de39dac8b84228b04f9ba781fbc534e0b0447dc75e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-077-2-0",
+      "reviewNote": "Reviewed supported dumbbell shoulder press, near-upright Smith shoulder press, unloaded and dumbbell straight-arm shoulder shrugs, three-point one-foot-raised push-up, weighted standing side bend, lateral cone hop, bilateral front-raise phase, chair-supported straight-leg side swing, side-lying top-leg assisted groin stretch, bent-bottom-knee side hip abduction and gentle hand-assisted lateral neck stretch."
     },
     {
       "exerciseId": "wger-f956977e-cc05-4db2-a387-ba6140b1ef34",
       "name": "Shoulder Shrug",
       "equipment": "Bodyweight",
       "guideSha256": "00f6ead149e988e2c585f3b16a82291e630d0eaaf23d1d6bdee360ee9bf6d297",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-077-3-0",
+      "reviewNote": "Reviewed supported dumbbell shoulder press, near-upright Smith shoulder press, unloaded and dumbbell straight-arm shoulder shrugs, three-point one-foot-raised push-up, weighted standing side bend, lateral cone hop, bilateral front-raise phase, chair-supported straight-leg side swing, side-lying top-leg assisted groin stretch, bent-bottom-knee side hip abduction and gentle hand-assisted lateral neck stretch."
     },
     {
       "exerciseId": "wger-716286dd-05b1-4f87-8b3b-a0c559bcafc4",
       "name": "Shoulder width three-point push-up",
       "equipment": "Bodyweight",
       "guideSha256": "d374e8d454ecf56a8444ae5484c109337d1372682945b2582db0e2a84a40b14f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-077-0-1",
+      "reviewNote": "Reviewed supported dumbbell shoulder press, near-upright Smith shoulder press, unloaded and dumbbell straight-arm shoulder shrugs, three-point one-foot-raised push-up, weighted standing side bend, lateral cone hop, bilateral front-raise phase, chair-supported straight-leg side swing, side-lying top-leg assisted groin stretch, bent-bottom-knee side hip abduction and gentle hand-assisted lateral neck stretch."
     },
     {
       "exerciseId": "wger-7e039ac7-37ab-49f9-9ae8-c7efeef070cd",
@@ -9318,56 +9356,72 @@
       "name": "Side Crunch",
       "equipment": "Bodyweight",
       "guideSha256": "afee39ec52b98138ca437a485e66ca270c44eb7d15ee8f516a516ad30de19309",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-077-1-1",
+      "reviewNote": "Reviewed supported dumbbell shoulder press, near-upright Smith shoulder press, unloaded and dumbbell straight-arm shoulder shrugs, three-point one-foot-raised push-up, weighted standing side bend, lateral cone hop, bilateral front-raise phase, chair-supported straight-leg side swing, side-lying top-leg assisted groin stretch, bent-bottom-knee side hip abduction and gentle hand-assisted lateral neck stretch."
     },
     {
       "exerciseId": "db-side-hop-sprint",
       "name": "Side Hop-Sprint",
       "equipment": "Specialty equipment",
       "guideSha256": "6db41c048850bb3c8c4072d64a50f09f7e53e8d72744d0cec682e410714c541e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-077-2-1",
+      "reviewNote": "Reviewed supported dumbbell shoulder press, near-upright Smith shoulder press, unloaded and dumbbell straight-arm shoulder shrugs, three-point one-foot-raised push-up, weighted standing side bend, lateral cone hop, bilateral front-raise phase, chair-supported straight-leg side swing, side-lying top-leg assisted groin stretch, bent-bottom-knee side hip abduction and gentle hand-assisted lateral neck stretch."
     },
     {
       "exerciseId": "db-side-laterals-to-front-raise",
       "name": "Side Laterals to Front Raise",
       "equipment": "Dumbbell",
       "guideSha256": "64aecf1d81fca2ad00026b6b011b225fc6aef161c3806e1c7d2dddc68812593d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-077-3-1",
+      "reviewNote": "Reviewed supported dumbbell shoulder press, near-upright Smith shoulder press, unloaded and dumbbell straight-arm shoulder shrugs, three-point one-foot-raised push-up, weighted standing side bend, lateral cone hop, bilateral front-raise phase, chair-supported straight-leg side swing, side-lying top-leg assisted groin stretch, bent-bottom-knee side hip abduction and gentle hand-assisted lateral neck stretch."
     },
     {
       "exerciseId": "db-side-leg-raises",
       "name": "Side Leg Raises",
       "equipment": "Bodyweight",
       "guideSha256": "1d8428fb1f841b529cc5fa817e6952fd2fbd610ee229f9bb0fc43674751ad599",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-077-0-2",
+      "reviewNote": "Reviewed supported dumbbell shoulder press, near-upright Smith shoulder press, unloaded and dumbbell straight-arm shoulder shrugs, three-point one-foot-raised push-up, weighted standing side bend, lateral cone hop, bilateral front-raise phase, chair-supported straight-leg side swing, side-lying top-leg assisted groin stretch, bent-bottom-knee side hip abduction and gentle hand-assisted lateral neck stretch."
     },
     {
       "exerciseId": "db-side-lying-groin-stretch",
       "name": "Side Lying Groin Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "58fe8ddabc1d8e72e47c64ce71585afc12d1ce7552a95162f3b3d6d5d21dd92b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-077-1-2",
+      "reviewNote": "Reviewed supported dumbbell shoulder press, near-upright Smith shoulder press, unloaded and dumbbell straight-arm shoulder shrugs, three-point one-foot-raised push-up, weighted standing side bend, lateral cone hop, bilateral front-raise phase, chair-supported straight-leg side swing, side-lying top-leg assisted groin stretch, bent-bottom-knee side hip abduction and gentle hand-assisted lateral neck stretch."
     },
     {
       "exerciseId": "wger-7212cc74-656e-47ce-8292-d211676f2ee1",
       "name": "Side Lying Hip Abduction",
       "equipment": "Bodyweight",
       "guideSha256": "9bba909a4227c36e012ad08bfe3c3fe18ce13dfc1950c70a599253020127bf85",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-077-2-2",
+      "reviewNote": "Reviewed supported dumbbell shoulder press, near-upright Smith shoulder press, unloaded and dumbbell straight-arm shoulder shrugs, three-point one-foot-raised push-up, weighted standing side bend, lateral cone hop, bilateral front-raise phase, chair-supported straight-leg side swing, side-lying top-leg assisted groin stretch, bent-bottom-knee side hip abduction and gentle hand-assisted lateral neck stretch."
     },
     {
       "exerciseId": "db-side-neck-stretch",
       "name": "Side Neck Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "95e980efde038c2d1e436930d5764ee9b76b0dc22d172b0f7b05f05e5d7e4944",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-077-3-2",
+      "reviewNote": "Reviewed supported dumbbell shoulder press, near-upright Smith shoulder press, unloaded and dumbbell straight-arm shoulder shrugs, three-point one-foot-raised push-up, weighted standing side bend, lateral cone hop, bilateral front-raise phase, chair-supported straight-leg side swing, side-lying top-leg assisted groin stretch, bent-bottom-knee side hip abduction and gentle hand-assisted lateral neck stretch."
     },
     {
       "exerciseId": "wger-e1b99153-0102-47fc-b0cd-c21509827b0b",
       "name": "Side Plank",
       "equipment": "Bodyweight",
       "guideSha256": "ea4ac15aa28f36da87afeb472d81f0d699535eccd0bdd376322cc1beb84626e1",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-078-0-0",
+      "reviewNote": "Reviewed bent-knee forearm side-plank regression, defensive low side-slide stance, one-knee lateral split squat, airborne sideways long jump, one-foot-on-box lateral shuffle, side-shifted wide chin, lateral-weight-shift push-up, wrist-grasp cross-body pull and side-kicking board-assisted swimming breathing phase."
     },
     {
       "exerciseId": "wger-5e2761cf-839e-435e-bedb-35e132dcb5ce",
@@ -9381,21 +9435,27 @@
       "name": "Side Slides + Squats",
       "equipment": "Bodyweight",
       "guideSha256": "e7395b1e596c7cdfb3af20b0a7c81111407679ff999c0ecd29351eaffb721a63",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-078-2-0",
+      "reviewNote": "Reviewed bent-knee forearm side-plank regression, defensive low side-slide stance, one-knee lateral split squat, airborne sideways long jump, one-foot-on-box lateral shuffle, side-shifted wide chin, lateral-weight-shift push-up, wrist-grasp cross-body pull and side-kicking board-assisted swimming breathing phase."
     },
     {
       "exerciseId": "wger-9801e20b-69c3-43d0-9066-450a68230c42",
       "name": "Bodyweight lateral split squat",
       "equipment": "Bodyweight",
       "guideSha256": "2c01ece82f0596f81c4882d793866af16d13f1be3390cf8fdb31b2c033140bde",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-078-3-0",
+      "reviewNote": "Reviewed bent-knee forearm side-plank regression, defensive low side-slide stance, one-knee lateral split squat, airborne sideways long jump, one-foot-on-box lateral shuffle, side-shifted wide chin, lateral-weight-shift push-up, wrist-grasp cross-body pull and side-kicking board-assisted swimming breathing phase."
     },
     {
       "exerciseId": "db-side-standing-long-jump",
       "name": "Side Standing Long Jump",
       "equipment": "Bodyweight",
       "guideSha256": "f15ed325df99706cea68dfda00d92896d701789d7a287afc02590655853b3c77",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-078-0-1",
+      "reviewNote": "Reviewed bent-knee forearm side-plank regression, defensive low side-slide stance, one-knee lateral split squat, airborne sideways long jump, one-foot-on-box lateral shuffle, side-shifted wide chin, lateral-weight-shift push-up, wrist-grasp cross-body pull and side-kicking board-assisted swimming breathing phase."
     },
     {
       "exerciseId": "wger-0dd4dde7-9712-4c06-8ebe-16bc7a0b1917",
@@ -9411,35 +9471,45 @@
       "name": "Side to Side Box Shuffle",
       "equipment": "Specialty equipment",
       "guideSha256": "364cfdd58e1acd89f5de441bc22295f33b82ae85a48ff5f74288609d7090bdd3",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-078-1-1",
+      "reviewNote": "Reviewed bent-knee forearm side-plank regression, defensive low side-slide stance, one-knee lateral split squat, airborne sideways long jump, one-foot-on-box lateral shuffle, side-shifted wide chin, lateral-weight-shift push-up, wrist-grasp cross-body pull and side-kicking board-assisted swimming breathing phase."
     },
     {
       "exerciseId": "db-side-to-side-chins",
       "name": "Side To Side Chins",
       "equipment": "Specialty equipment",
       "guideSha256": "9f695d4a486440839f4eeb7d71af94432031074d011b166399bf526465c40d0f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-078-2-1",
+      "reviewNote": "Reviewed bent-knee forearm side-plank regression, defensive low side-slide stance, one-knee lateral split squat, airborne sideways long jump, one-foot-on-box lateral shuffle, side-shifted wide chin, lateral-weight-shift push-up, wrist-grasp cross-body pull and side-kicking board-assisted swimming breathing phase."
     },
     {
       "exerciseId": "wger-9374fdaf-411f-4ae6-8f0c-21cc2d3dc667",
       "name": "Side to Side Push Ups",
       "equipment": "Bodyweight",
       "guideSha256": "52a79f513efac5eda631d3bc58994fb4f265282649811abaa5a37d90b79b1e0e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-078-3-1",
+      "reviewNote": "Reviewed bent-knee forearm side-plank regression, defensive low side-slide stance, one-knee lateral split squat, airborne sideways long jump, one-foot-on-box lateral shuffle, side-shifted wide chin, lateral-weight-shift push-up, wrist-grasp cross-body pull and side-kicking board-assisted swimming breathing phase."
     },
     {
       "exerciseId": "db-side-wrist-pull",
       "name": "Side Wrist Pull",
       "equipment": "Bodyweight",
       "guideSha256": "1d62ad057489d1ecd0a52e1206d35a66d807ad95ed2fff5d091494f25c0a2d74",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-078-0-2",
+      "reviewNote": "Reviewed bent-knee forearm side-plank regression, defensive low side-slide stance, one-knee lateral split squat, airborne sideways long jump, one-foot-on-box lateral shuffle, side-shifted wide chin, lateral-weight-shift push-up, wrist-grasp cross-body pull and side-kicking board-assisted swimming breathing phase."
     },
     {
       "exerciseId": "wger-6ec2d684-8091-4da9-8814-8a3052d0a302",
       "name": "Side-Kick Breathing (Kickboard)",
       "equipment": "Bodyweight",
       "guideSha256": "2048d902706cac92f0c75cae38f9bbee4c5f8681f36fec5e642644f1527d2a54",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-078-1-2",
+      "reviewNote": "Reviewed bent-knee forearm side-plank regression, defensive low side-slide stance, one-knee lateral split squat, airborne sideways long jump, one-foot-on-box lateral shuffle, side-shifted wide chin, lateral-weight-shift push-up, wrist-grasp cross-body pull and side-kicking board-assisted swimming breathing phase."
     },
     {
       "exerciseId": "wger-d9c1f78c-7bf6-4e6a-92e4-7bf4ed4a0a67",
@@ -9460,7 +9530,9 @@
       "name": "Single Arm Plank to Row",
       "equipment": "Kettlebell",
       "guideSha256": "71fbf5accaa1c9aab457a00adb0a9251160709332e2169d6d7ddea1ec52ec62a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-079-0-0",
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase."
     },
     {
       "exerciseId": "wger-81dd44b3-67b3-4198-9e57-c2a80b3c4102",
@@ -9474,49 +9546,63 @@
       "name": "Single Dumbbell Raise",
       "equipment": "Dumbbell",
       "guideSha256": "bac0798ebff1bf02ef2136749958aa0b71e736729d69f950da0a63eb8c8d5d18",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-079-2-0",
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase."
     },
     {
       "exerciseId": "db-single-leg-butt-kick",
       "name": "Single Leg Butt Kick",
       "equipment": "Bodyweight",
       "guideSha256": "e6b2c4346d9a5a992ee65a1eef87e62f66efd3094780514529923ed7c69c9d5d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-079-3-0",
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase."
     },
     {
       "exerciseId": "db-single-leg-glute-bridge",
       "name": "Single Leg Glute Bridge",
       "equipment": "Bodyweight",
       "guideSha256": "87d21432d06b566491a1053b89978a896ca26738e8d8d22f27bfa1e6c261430f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-079-0-1",
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase."
     },
     {
       "exerciseId": "wger-45cd73d7-98ac-4451-849a-a645fcfe9bee",
       "name": "Single Leg Hamstring Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "07431e337f50f33104610fe5997cb1ca6dabc23dc98244e15731b70189648c80",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-079-1-1",
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase."
     },
     {
       "exerciseId": "wger-09c9a566-c1b3-4bf6-8a48-f9dd2bbec1f2",
       "name": "Single leg press",
       "equipment": "Bodyweight",
       "guideSha256": "b07135f48ab5461416c336fbd35a992d517e87d985313edba919395bf53be7e5",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-079-2-1",
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase."
     },
     {
       "exerciseId": "db-single-leg-push-off",
       "name": "Single Leg Push-off",
       "equipment": "Specialty equipment",
       "guideSha256": "9ff872b100c6d054101258eea104fc791983b18775bb7977a2ebf76f72abf8d7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-079-3-1",
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase."
     },
     {
       "exerciseId": "wger-957ca37c-b6d7-4c30-8ba9-9512b0fa2659",
       "name": "Single Leg RDL",
       "equipment": "Bodyweight",
       "guideSha256": "f720aaae75954abf5eb1e257331a921a61d3dfadf5fb2a823242784512542a06",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-079-0-2",
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase."
     },
     {
       "exerciseId": "db-single-arm-cable-crossover",
@@ -9559,21 +9645,27 @@
       "name": "Single-Arm Linear Jammer",
       "equipment": "Barbell",
       "guideSha256": "f6d1b281d237c8861b7ffaa3a734bd77fcf8bfc80b7195cfdbf43ea61a4e96e7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-079-1-2",
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase."
     },
     {
       "exerciseId": "db-single-arm-push-up",
       "name": "Single-Arm Push-Up",
       "equipment": "Bodyweight",
       "guideSha256": "e29423436fb4f982c7a84828a81c3a5f7b82b7658df49f3ed466222c2f7dbd90",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-079-2-2",
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase."
     },
     {
       "exerciseId": "db-single-cone-sprint-drill",
       "name": "Single-Cone Sprint Drill",
       "equipment": "Specialty equipment",
       "guideSha256": "69df6f63c41e3936255ac63a495e1eb699b260573599195656c338fc4c6d5386",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-079-3-2",
+      "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase."
     },
     {
       "exerciseId": "wger-f9880802-e5bd-4143-97f6-d0ee82ba9dd2",
