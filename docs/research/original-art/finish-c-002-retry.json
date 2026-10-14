@@ -1,0 +1,133 @@
+{
+  "name": "finish-c-002-retry",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-c-002-retry.png",
+  "prompt": "Edit this exercise sheet. Keep top-left anchored sit-up, top-right overhead sled walker facing sled, and bottom-right pronated dumbbell reverse curl exactly as shown, fully contained. In BOTTOM LEFT ONLY, shrink the ENTIRE Smith decline press scene enough (roughly 70% of its present scale) to show COMPLETE rail tops and horizontal machine top beam inside the bottom-left cell with at least40pixels WHITE SPACE ABOVE machine top and30pixels beneath base. Reconstruct full upright Smith machine with BOTH RAIL TOPS AND MACHINE TOP BEAM visible; do not crop any equipment at the row divider. Preserve decline bench angled downward toward head, athlete supine with head below hips and feet secured on higher rollers, Smith bar attached to guide rails above chest. Keep original1536x1024 two-column two-row format. No words or labels. Reference scene requirements:\nCreate original FORMA fitness instruction illustration atlas, EXACTLY TWO COLUMNS and TWO ROWS with FOUR large independent 768x512 cells, landscape canvas1536x1024. Clean white backgrounds with subtle shadows, precise detailed charcoalgray sportswear and equipment, small lime accents. NO letters, words, numbers, labels, logos, borders or watermarks. One fully clothed anatomically correct adult athlete per cell, exactly TWO arms TWO legs. All bodies, equipment, bar ends and machine rail tops stay WITHIN own cell with30px blank margins. Respect exact defining equipment, support, grip and phase. Single representative pose per cell. Make torso angles and palm orientations very clear.\n\nROW1 COLUMN1: Sit-Up. Anchored bodyweight SIT-UP side view. Adult on floor mat with knees bent90degrees, BOTH FEET firmly wedged UNDER fixed heavy low horizontal anchor bar bolted to floor at ankle/instep height. Fixed anchor and its bolts clearly visible. Upper body rises into45degree torso position making V shape with thighs, pelvis remains mat. TWO hands clasp fingers together BEHIND HEAD, elbows spread. No partner, no added weight. Feet stay anchored, not loose.\n\nROW1 COLUMN2: Sled Overhead Backward Walk. Sled overhead BACKWARD walk strict side view. Athlete at LEFT side of cell FACES RIGHT, looking directly at weight sled located on RIGHT in front of athlete. Two STRAIGHT arms directly overhead above crown, elbows fully extended, both hands hold separate handles. TWO taut long ropes run down and RIGHT from overhead handles to sled pulling point. Athlete steps BACKWARD TOWARD LEFT with rear left foot landing behind, chest/head still face RIGHT toward sled. Entire light plate-loaded low sled and full ropes/athlete visible. Face must point toward sled, equipment in front, no turn away. No labels or arrows.\n\nROW2 COLUMN1: Smith Machine Decline Press. SMITH machine DECLINE bench press. Full Smith machine with two VERTICAL guide rails, bar sleeves visibly attached to rails and loaded plates; base/feet and rail tops fully contained. Decline bench underneath tilts gently15-20degrees downward from HIGH LEGS at left toward LOW HEAD at right. Adult supine with FEET/ANKLES secured under high-end decline rollers, pelvis/chest/head along downward pad, head clearly LOWER THAN HIPS. Two hands hold Smith bar just above chest with elbows bent. Shoulder blades supported, slight back arch. Entire equipment inside cell, do not crop rails; do not use free barbell or incline bench.\n\nROW2 COLUMN2: Standing Dumbbell Reverse Curl. STANDING dumbbell REVERSE curl at MID-RANGE, front three-quarter view from slightly ABOVE hands. Adult upright, elbows fixed close to waist, BOTH FOREARMS HORIZONTAL forward pointing toward camera. Holds TWO separate dumbbells. BOTH forearms and wrists clearly PRONATED: PALMS face DOWN toward FLOOR, BACKS OF HANDS with visible fingernails and knuckles face UP toward camera. Dumbbell shafts horizontal left-right across fists. Thumbs on inner edges and fingers curl downward under shaft; no upward palm surfaces, no neutral hammer grip. Upper arms vertical and remain at sides. Full adult and dumbbells within cell.",
+  "cells": [
+    {
+      "id": "db-sit-up",
+      "title": "Sit-Up",
+      "equipment": "Bodyweight",
+      "guideText": "Lie down on the floor placing your feet either under something that will not move or by having a partner hold them. Your legs should be bent at the knees.\n\nPlace your hands behind your head and lock them together by clasping your fingers. This is the starting position.\n\nElevate your upper body so that it creates an imaginary V-shape with your thighs. Breathe out when performing this part of the exercise.\n\nOnce you feel the contraction for a second, lower your upper body back down to the starting position while inhaling.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sit-Up.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "reviewNote": "Bent-knee floor sit-up retains both feet beneath bolted fixed anchor and clasped hands behind head; raised torso and complete support fit panel.",
+      "priorBatch": "docs/research/original-art/movements-081.json",
+      "references": null,
+      "priorReviewNote": "Hold: sit-up lacks the fixed foot anchor/partner required by guide.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 481
+      },
+      "cropReviewNote": "Inspected original 1536x1024 PNG; actual cell boundaries x=768, y=481. Complete athlete and intended apparatus retained inside this panel without adjacent-cell intrusion.",
+      "ids": []
+    },
+    {
+      "id": "db-sled-overhead-backward-walk",
+      "title": "Sled Overhead Backward Walk",
+      "equipment": "Specialty equipment",
+      "guideText": "Attach dual handles to a sled connected by a rope or chain. Load the sled to a light weight.\n\nFace the sled, backing up until there is some tension in the line. Hold your hands directly above your head with your elbows extended. This will be your starting position.\n\nWalk backwards, keeping your arms raised above your head. Avoid jerky movements.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Sled_Overhead_Backward_Walk.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: backward overhead sled walk faces away from sled; guide requires facing sled while stepping backward.",
+      "reviewNote": "Walker faces directly toward sled ahead while hands/extended arms stay overhead with dual taut ropes and staggered backward-step stance; complete scene retained.",
+      "priorBatch": "docs/research/original-art/corrections-031.json",
+      "references": null,
+      "priorReviewNote": "Backward overhead sled walker still faces away from the sled.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 481
+      },
+      "cropReviewNote": "Inspected original 1536x1024 PNG; actual cell boundaries x=768, y=481. Complete athlete and intended apparatus retained inside this panel without adjacent-cell intrusion.",
+      "ids": []
+    },
+    {
+      "id": "db-smith-machine-decline-press",
+      "title": "Smith Machine Decline Press",
+      "equipment": "Smith machine",
+      "guideText": "Position a decline bench in the rack so that the bar will be above your chest. Load an appropriate weight and take your place on the bench.\n\nRotate the bar to unhook it from the rack and fully extend your arms. Your back should be slightly arched and your shoulder blades retracted. This will be your starting position.\n\nBegin the movement by flexing your arms, lowering the bar to your chest.\n\nPause briefly, and then extend your arms to push the weight back to the starting position.\n\nAfter completing the desired number of repetitions, rotate the bar to rack the weight.",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Smith_Machine_Decline_Press.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "references": null,
+      "column": 0,
+      "row": 1,
+      "priorReviewNote": null,
+      "reviewStatus": "accepted",
+      "reviewNote": "Complete Smith machine including rail tops/top beam and base now fits panel. Bar remains attached to guide rails, bench declines toward head below hips, feet secured on elevated rollers; supine pressing pose matches guide.",
+      "bounds": {
+        "x": 0,
+        "y": 481,
+        "width": 768,
+        "height": 543
+      },
+      "cropReviewNote": "Inspected original 1536x1024 PNG; actual cell boundaries x=768, y=481. Complete athlete and intended apparatus retained inside this panel without adjacent-cell intrusion.",
+      "ids": [
+        "db-smith-machine-decline-press"
+      ]
+    },
+    {
+      "id": "db-standing-dumbbell-reverse-curl",
+      "title": "Standing Dumbbell Reverse Curl",
+      "equipment": "Dumbbell",
+      "guideText": "To begin, stand straight with a dumbbell in each hand using a pronated grip (palms facing down). Your arms should be fully extended while your feet are shoulder width apart from each other. This is the starting position.\n\nWhile holding the upper arms stationary, curl the weights while contracting the biceps as you breathe out. Only the forearms should move. Continue the movement until your biceps are fully contracted and the dumbbells are at shoulder level. Hold the contracted position for a second as you squeeze the muscle.\n\nSlowly begin to bring the dumbbells back to starting position as your breathe in.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Standing_Dumbbell_Reverse_Curl.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Frontal athlete holding two separate dumbbells with horizontal forearms, elbows at waist. Both forearms PRONATED, knuckles and fingernails face UP toward camera, palms toward FLOOR. Back-of-hand surface visible.",
+      "reviewNote": "Two horizontal forearms hold separate dumbbells in clear pronated grip with backs/knuckles upward and palms down; upper arms remain fixed at sides.",
+      "priorBatch": "docs/research/original-art/corrections-036.json",
+      "references": null,
+      "priorReviewNote": "Dumbbell forearms still appear supinated rather than pronated.",
+      "bounds": {
+        "x": 768,
+        "y": 481,
+        "width": 768,
+        "height": 543
+      },
+      "cropReviewNote": "Inspected original 1536x1024 PNG; actual cell boundaries x=768, y=481. Complete athlete and intended apparatus retained inside this panel without adjacent-cell intrusion.",
+      "ids": []
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-0f7bea2f-7129-40b6-826b-08e33a9c0eab.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-c-002-retry.png",
+  "reviewedAt": "2026-10-14T05:06:40.016Z",
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only.",
+  "retryOf": "finish-c-002",
+  "referencedImagePaths": [
+    "/workspace/generated_images/exec-45873570-126b-43c1-95af-456a5e245709.png"
+  ]
+}

@@ -1275,6 +1275,62 @@
         }
       ]
     },
+    "wger-81dd44b3-67b3-4198-9e57-c2a80b3c4102": {
+      "name": "Single-arm high-cable pulldown",
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"],
+      "description": "Sit on the floor at a high cable pulley and hold its single grip in one hand. Begin with the working arm reaching toward the pulley so the lat is stretched. Pull the grip downward by bending the elbow, then return with control to the stretched position. Repeat on the other side.",
+      "source": null,
+      "references": [
+        {
+          "title": "wger exercise 1637",
+          "url": "https://wger.de/en/exercise/1637/view/"
+        }
+      ]
+    },
+    "wger-5ed12527-c8be-4e86-8f2a-cf9dd4781f5b": {
+      "equipment": "Cable",
+      "equipmentTags": ["Machine", "Cable"]
+    },
+    "wger-671568f9-6653-4e11-ac71-3f34c74329a0": {
+      "name": "Standing biceps stretch right",
+      "equipment": "Bodyweight",
+      "equipmentTags": ["Bodyweight"],
+      "description": "Stand beside a wall with your right arm extended. Place your right hand against the wall, keep the shoulder relaxed and gently turn your torso to the left until you feel a comfortable stretch along the right upper arm. Avoid forcing the shoulder or wrist. Hold while breathing steadily, then release slowly.",
+      "source": null,
+      "references": [
+        {
+          "title": "wger exercise 1233",
+          "url": "https://wger.de/en/exercise/1233/view/"
+        }
+      ]
+    },
+    "wger-346634cf-3896-4c10-bd66-28fb69d02573": {
+      "name": "Medicine-ball V-up",
+      "equipment": "Medicine ball",
+      "equipmentTags": ["Medicine ball"],
+      "description": "Lie on your back with your legs straight and hold a medicine ball in both hands above and behind your head. Lift your legs and upper body together, bringing the ball toward your feet to form a V. Lower your legs and torso with control and repeat.",
+      "source": null,
+      "references": [
+        {
+          "title": "wger exercise 976",
+          "url": "https://wger.de/en/exercise/976/view/"
+        }
+      ]
+    },
+    "wger-148f2ffc-05e2-486b-874f-2a401337a1c6": {
+      "name": "Chest-supported low-cable rope row",
+      "equipment": "Cable",
+      "equipmentTags": ["Cable", "Incline bench", "Machine"],
+      "description": "Position an incline bench facing a low cable pulley fitted with a rope. Stand with your feet stable and lean your chest into the upper bench pad. Hold the rope ends with your palms facing each other and reach toward the pulley. Draw your elbows back toward your sides to bring the rope toward your lower chest. Return slowly while keeping your chest supported and your trunk steady.",
+      "source": null,
+      "references": [
+        {
+          "title": "wger rope pullover/row setup and source illustration",
+          "url": "https://wger.de/en/exercise/1634/view/"
+        }
+      ]
+    },
     "legpress": {
       "equipment": "Leg press machine",
       "equipmentTags": ["Leg press machine"]

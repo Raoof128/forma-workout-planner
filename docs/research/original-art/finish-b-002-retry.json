@@ -1,0 +1,131 @@
+{
+  "name": "finish-b-002-retry",
+  "columns": 2,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/finish-b-002-retry.png",
+  "prompt": "Original FORMA exercise illustration landscape1536x1024 exactly TWO columns TWO rows equal768x512 white cells. No text labels arrows. Charcoalgray clothing equipment lime accents, anatomy2arms2legs. Full person apparatus contained generous margins. Precise variation one pose each. \nRow1column1 One-Arm Side Deadlift: One-arm SIDE deadlift upright endpoint threequarter view. Complete barbell beside RIGHT thigh aligned FRONT-TO-BACK parallel to feet, two plates both clearly visible at opposite ends. Right straight arm grasps central shaft like suitcase handle, palm toward thigh. Left hand empty by side. Barbell wholly on athlete's right, not in front and not between legs.\nRow1column2 Pin Presses: Pin bench press in complete POWER RACK. Flat bench athlete supine shoulders retracted feet tucked. Barbell resting visibly on TWO LONG HORIZONTAL safety rails running front-to-back between front/rear rack uprights at chest height. Hands bench grip elbows bent, preparing dead-start press. Clearly four upright rack posts and spanning horizontal safety supports, not Jhooks.\nRow2column1 Plyo Push-up: Plyometric pushup side view straight body diagonal plank. BOTH TOE TIPS firmly contact floor supporting feet. BOTH open hands hovering10cm visibly ABOVE floor, arms nearly extended during explosive upper-body launch. Visible gap under hands only, toes firmly grounded. No clapping required.\nRow2column2 Reverse Flyes With External Rotation: Prone reverse fly on exactly30degree shallow incline bench side/front threequarter view, chest and abdomen supported, toes bear weight and heels clearly lifted. BOTH arms out to sides level with head slight elbow bend, both dumbbells neutral palms facing one another following external rotation. Bench angle visually shallow30degrees, not steep.\nRETRY PRIORITIES: topLEFT use SIDE view with athlete nose pointing RIGHT, barbell shaft also points RIGHT front-to-back beside thigh; shaft PARALLEL with athlete sagittal plane, one plate in front of toes to RIGHT and other behind heels LEFT, hand between. TopRIGHT LOWER barbell until it TOUCHES safety rails, no gap; entire rack top contained. BottomRIGHT externally rotated fly means THUMBS POINT UP toward ceiling, palms face inward toward head, dumbbell handle shafts near VERTICAL, not palmsdown horizontal handles. Keep shallow30degree bench and toe support. BottomLEFT retain correct toes grounded hands airborne.",
+  "sourceGeneratedPath": "/workspace/generated_images/exec-a0dad0e4-32f8-4f10-a009-f5dea8f54d86.png",
+  "sourceAssetPath": "assets/exercise-artwork/finish-b-002-retry.png",
+  "cells": [
+    {
+      "id": "db-one-arm-side-deadlift",
+      "title": "One-Arm Side Deadlift",
+      "equipment": "Barbell",
+      "guideText": "Stand to the side of a barbell next to its center. Bend your knees and lower your body until you are able to reach the barbell.\n\nGrasp the bar as if you were grabbing a briefcase (palms facing you since the bar is sideways). You may need a wrist wrap if you are using a significant amount of weight. This is your starting position.\n\nUse your legs to help lift the barbell up while exhaling. Your arms should extend fully as bring the barbell up until you are in a standing position.\n\nSlowly bring the barbell back down while inhaling. Tip: Make sure to bend your knees while lowering the weight to avoid any injury from occurring.\n\nRepeat for the recommended amount of repetitions.\n\nSwitch arms and repeat the movement.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/One-Arm_Side_Deadlift.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "priorBatch": "docs/research/original-art/recovery-d-002.json",
+      "reviewNote": "Side view establishes complete barbell running front-to-back parallel to feet, center shaft held at side with straight arm and palm inward.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Visually inspected1536x1024 source at equal panels x768 y512; complete intended athletes and equipment except held rack top cropping.",
+      "references": null,
+      "priorReviewNote": "Hold: far end of barbell is hidden; rendering shows single near plate assembly beside athlete without clearly establishing complete front-to-back barbell and center shaft grip.",
+      "ids": [
+        "db-one-arm-side-deadlift"
+      ]
+    },
+    {
+      "id": "db-pin-presses",
+      "title": "Pin Presses",
+      "equipment": "Barbell",
+      "guideText": "Pin presses remove the eccentric phase of the bench press, developing starting strength. They also allow you to train a desired range of motion.\n\nThe bench should be set up in a power rack. Set the pins to the desired point in your range of motion, whether it just be lockout or an inch off of your chest. The bar should be moved to the pins and prepared for lifting.\n\nBegin by lying on the bench, with the bar directly above the contact point during your regular bench. Tuck your feet underneath you and arch your back. Using the bar to help support your weight, lift your shoulder off the bench and retract them, squeezing the shoulder blades together. Use your feet to drive your traps into the bench. Maintain this tight body position throughout the movement.\n\nYou can take a standard bench grip, or shoulder width to focus on the triceps. The bar, wrist, and elbow should stay in line at all times. Focus on squeezing the bar and trying to pull it apart.\n\nDrive the bar up with as much force as possible. The elbows should be tucked in until lockout.\n\nReturn the bar to the pins, pausing before beginning the next repetition.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Pin_Presses.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: pin press illustration does not clearly distinguish pins from standard unrack hooks.",
+      "reviewNote": "Bar still visibly above safety rails rather than resting on them; rack top clipped. Precise dead-start pin contact unresolved.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Visually inspected1536x1024 source at equal panels x768 y512; complete intended athletes and equipment except held rack top cropping.",
+      "priorBatch": "docs/research/original-art/corrections-024.json",
+      "references": null,
+      "priorReviewNote": "Safety supports resemble unrack hooks rather than horizontal pin support in the working range."
+    },
+    {
+      "id": "db-plyo-push-up",
+      "title": "Plyo Push-up",
+      "equipment": "Bodyweight",
+      "guideText": "Move into a prone position on the floor, supporting your weight on your hands and toes.\n\nYour arms should be fully extended with the hands around shoulder width. Keep your body straight throughout the movement. This will be your starting position.\n\nDescend by flexing at the elbow, lowering your chest towards the ground.\n\nAt the bottom, reverse the motion by pushing yourself up through elbow extension as quickly as possible. Attempt to push your upper body up until your hands leave the ground.\n\nReturn to the starting position and repeat the exercise.\n\nFor added difficulty, add claps into the movement while you are air borne.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Plyo_Push-up.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: standard plyometric push-up illustration has both feet airborne; regenerate hands airborne with toes supported.",
+      "reviewNote": "Hands airborne and toe tips supported, straight body establishes standard plyometric pushup.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Visually inspected1536x1024 source at equal panels x768 y512; complete intended athletes and equipment except held rack top cropping.",
+      "priorBatch": "docs/research/original-art/corrections-024.json",
+      "references": null,
+      "priorReviewNote": "Both feet remain airborne rather than toes supporting the standard plyometric push-up.",
+      "ids": []
+    },
+    {
+      "id": "db-reverse-flyes-with-external-rotation",
+      "title": "Reverse Flyes With External Rotation",
+      "equipment": "Dumbbell",
+      "guideText": "To begin, lie down on an incline bench set at a 30-degree angle with the chest and stomach pressing against the incline.\n\nHave the dumbbells in each hand with the palms facing down to the floor. Your arms should be in front of you so that they are perpendicular to the angle of the bench. Tip: Your elbows should have a slight bend. The legs should be stationary while applying pressure with the ball of your toes (your heels should not be touching the floor). This is the starting position.\n\nMaintaining the slight bend of the elbows, move the weights out and away from each other in an arc motion while exhaling.\n\nAs you lift the weight, your wrist should externally rotate by 90-degrees so that you go from a palms down (pronated) grip to a palms facing each other (neutral) grip. Tip: Try to squeeze your shoulder blades together to get the best results from this exercise.\n\nThe arms should be elevated until they are level with the head.\n\nFeel the contraction and slowly lower the weights back down to the starting position while inhaling.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Reverse_Flyes_With_External_Rotation.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hold: externally rotated reverse fly requires low 30-degree support; illustrated bench is substantially steeper.",
+      "reviewNote": "Shallow approximately30degree bench supports chest/abdomen, heels lifted on toes, bilateral fly endpoint with thumbs up and inward neutral palms.",
+      "bounds": {
+        "x": 768,
+        "y": 512,
+        "width": 768,
+        "height": 512
+      },
+      "cropReviewNote": "Visually inspected1536x1024 source at equal panels x768 y512; complete intended athletes and equipment except held rack top cropping.",
+      "priorBatch": "docs/research/original-art/corrections-027.json",
+      "references": null,
+      "priorReviewNote": "Bench incline remains steeper than the specified 30 degrees.",
+      "ids": [
+        "db-reverse-flyes-with-external-rotation"
+      ]
+    }
+  ],
+  "registrationPolicy": "Preserve existing accepted mappings; register explicitly listed newly reviewed IDs only."
+}

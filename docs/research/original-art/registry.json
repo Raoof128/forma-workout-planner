@@ -33437,6 +33437,342 @@
           "height": 512
         }
       }
+    },
+    "forma-original-finish-b-002-retry-0-0": {
+      "src": "/exercise-media/original/finish-b-002-retry.png?v=87f7578210dc",
+      "sha256": "87f7578210dc870bc57e4df998896b6ec64249291e980589ecb0d96c3ee65c0f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "One-Arm Side Deadlift",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-b-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-finish-b-002-retry-0-1": {
+      "src": "/exercise-media/original/finish-b-002-retry.png?v=87f7578210dc",
+      "sha256": "87f7578210dc870bc57e4df998896b6ec64249291e980589ecb0d96c3ee65c0f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Plyo Push-up",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-b-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 512,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-finish-b-002-retry-1-1": {
+      "src": "/exercise-media/original/finish-b-002-retry.png?v=87f7578210dc",
+      "sha256": "87f7578210dc870bc57e4df998896b6ec64249291e980589ecb0d96c3ee65c0f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Reverse Flyes With External Rotation",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-b-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 512,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
+    "forma-original-finish-c-002-retry-0-0": {
+      "src": "/exercise-media/original/finish-c-002-retry.png?v=5b295f7bb473",
+      "sha256": "5b295f7bb47303cc225ff19cc2bb30a0063ed8f1cd88ed558bbaa4b4a39f497f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Sit-Up",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-c-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 481
+        }
+      }
+    },
+    "forma-original-finish-c-002-retry-1-0": {
+      "src": "/exercise-media/original/finish-c-002-retry.png?v=5b295f7bb473",
+      "sha256": "5b295f7bb47303cc225ff19cc2bb30a0063ed8f1cd88ed558bbaa4b4a39f497f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Sled Overhead Backward Walk",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-c-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 481
+        }
+      }
+    },
+    "forma-original-finish-c-002-retry-0-1": {
+      "src": "/exercise-media/original/finish-c-002-retry.png?v=5b295f7bb473",
+      "sha256": "5b295f7bb47303cc225ff19cc2bb30a0063ed8f1cd88ed558bbaa4b4a39f497f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Smith Machine Decline Press",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-c-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 481,
+          "width": 768,
+          "height": 543
+        }
+      }
+    },
+    "forma-original-finish-c-002-retry-1-1": {
+      "src": "/exercise-media/original/finish-c-002-retry.png?v=5b295f7bb473",
+      "sha256": "5b295f7bb47303cc225ff19cc2bb30a0063ed8f1cd88ed558bbaa4b4a39f497f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Standing Dumbbell Reverse Curl",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-c-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 481,
+          "width": 768,
+          "height": 543
+        }
+      }
+    },
+    "forma-original-finish-d-002-retry-1-0": {
+      "src": "/exercise-media/original/finish-d-002-retry.png?v=fa0f92f50851",
+      "sha256": "fa0f92f508512e523c6cd74151ce0dc9e92ea6d2c84166ff4ce2388ca959e589",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Roman-chair dumbbell hip hinge",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-d-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 492
+        }
+      }
+    },
+    "forma-original-finish-d-002-retry-0-1": {
+      "src": "/exercise-media/original/finish-d-002-retry.png?v=fa0f92f50851",
+      "sha256": "fa0f92f508512e523c6cd74151ce0dc9e92ea6d2c84166ff4ce2388ca959e589",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Low Box Squat - Wide Stance",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-d-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 492,
+          "width": 768,
+          "height": 532
+        }
+      }
+    },
+    "forma-original-finish-d-002-retry-1-1": {
+      "src": "/exercise-media/original/finish-d-002-retry.png?v=fa0f92f50851",
+      "sha256": "fa0f92f508512e523c6cd74151ce0dc9e92ea6d2c84166ff4ce2388ca959e589",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Dumbbell Underhand Dead Row",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-d-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 492,
+          "width": 768,
+          "height": 532
+        }
+      }
+    },
+    "forma-original-finish-a-002-retry-0-0": {
+      "src": "/exercise-media/original/finish-a-002-retry.png?v=b5aa918fbddc",
+      "sha256": "b5aa918fbddcdbde956ade20b3f714ae1c98253998494dd317d43a47d2e44a58",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Incline Barbell Triceps Extension",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-a-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 530
+        }
+      }
+    },
+    "forma-original-finish-a-002-retry-1-1": {
+      "src": "/exercise-media/original/finish-a-002-retry.png?v=b5aa918fbddc",
+      "sha256": "b5aa918fbddcdbde956ade20b3f714ae1c98253998494dd317d43a47d2e44a58",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Intermediate Hip Flexor and Quad Stretch",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-a-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 530,
+          "width": 768,
+          "height": 494
+        }
+      }
     }
   },
   "exercises": {
@@ -43036,6 +43372,34 @@
       "reviewStatus": "accepted",
       "reviewNote": "Full balanced barbell now runs longitudinally parallel to torso; single midpoint grip palm inward, opposite arm rests beside body and knees bent.",
       "guideSha256": "d2360db615aa2d9e24110470c0de1a051f64ec202fea345fe7d45863a178e75e"
+    },
+    "db-one-arm-side-deadlift": {
+      "assetId": "forma-original-finish-b-002-retry-0-0",
+      "caption": "One-Arm Side Deadlift · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Side view establishes complete barbell running front-to-back parallel to feet, center shaft held at side with straight arm and palm inward.",
+      "guideSha256": "34070e809c2cdc27bb9340dac981e86be4729add6b54e6ff730a8989f61afa54"
+    },
+    "db-reverse-flyes-with-external-rotation": {
+      "assetId": "forma-original-finish-b-002-retry-1-1",
+      "caption": "Reverse Flyes With External Rotation · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Shallow approximately30degree bench supports chest/abdomen, heels lifted on toes, bilateral fly endpoint with thumbs up and inward neutral palms.",
+      "guideSha256": "7511258a6daa0f2f21a550b977ba4cc977b24eed9947e017ee3de8ae941f566a"
+    },
+    "db-smith-machine-decline-press": {
+      "assetId": "forma-original-finish-c-002-retry-0-1",
+      "caption": "Smith Machine Decline Press · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Complete Smith machine including rail tops/top beam and base now fits panel. Bar remains attached to guide rails, bench declines toward head below hips, feet secured on elevated rollers; supine pressing pose matches guide.",
+      "guideSha256": "785e719aa11ca4870465a6c2c030805910a0ff336fdcb106a5e32849a78d8622"
+    },
+    "db-incline-barbell-triceps-extension": {
+      "assetId": "forma-original-finish-a-002-retry-0-0",
+      "caption": "Incline Barbell Triceps Extension · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Incline bench within45–75degree range; upper arms alongside ears broadly follow torso line, elbows deeply flexed with bar visibly behind head; complete apparatus and grounded feet.",
+      "guideSha256": "885269ff1924284f12aaebfe5d96ab6dc556a7e720c14a247245b814f5ba16b3"
     }
   }
 }

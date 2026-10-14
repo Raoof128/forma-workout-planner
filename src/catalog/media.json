@@ -12201,6 +12201,34 @@
         }
       }
     },
+    "forma-original-finish-a-002-retry-0-0": {
+      "src": "/exercise-media/original/finish-a-002-retry.png?v=b5aa918fbddc",
+      "sha256": "b5aa918fbddcdbde956ade20b3f714ae1c98253998494dd317d43a47d2e44a58",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Incline Barbell Triceps Extension",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-a-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 530
+        }
+      }
+    },
     "forma-original-corrections-039-0-0": {
       "src": "/exercise-media/original/corrections-039.png?v=f1ce3bfeac79",
       "sha256": "f1ce3bfeac79c4d4b633a5f959ce9eb1f01a300b55506e162ec3f7236b0b2fe3",
@@ -18685,6 +18713,34 @@
         }
       }
     },
+    "forma-original-finish-b-002-retry-0-0": {
+      "src": "/exercise-media/original/finish-b-002-retry.png?v=87f7578210dc",
+      "sha256": "87f7578210dc870bc57e4df998896b6ec64249291e980589ecb0d96c3ee65c0f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "One-Arm Side Deadlift",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-b-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 512
+        }
+      }
+    },
     "forma-original-movements-060-0-1": {
       "src": "/exercise-media/original/movements-060.png?v=863c3001b6eb",
       "sha256": "863c3001b6ebcbe8f473522cab59d4c4e955ba798637b02c07eaae0bd55e9ab9",
@@ -21744,6 +21800,34 @@
           "y": 676,
           "width": 384,
           "height": 348
+        }
+      }
+    },
+    "forma-original-finish-b-002-retry-1-1": {
+      "src": "/exercise-media/original/finish-b-002-retry.png?v=87f7578210dc",
+      "sha256": "87f7578210dc870bc57e4df998896b6ec64249291e980589ecb0d96c3ee65c0f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Reverse Flyes With External Rotation",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-b-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 768,
+          "y": 512,
+          "width": 768,
+          "height": 512
         }
       }
     },
@@ -26076,6 +26160,34 @@
           "y": 342,
           "width": 384,
           "height": 341
+        }
+      }
+    },
+    "forma-original-finish-c-002-retry-0-1": {
+      "src": "/exercise-media/original/finish-c-002-retry.png?v=5b295f7bb473",
+      "sha256": "5b295f7bb47303cc225ff19cc2bb30a0063ed8f1cd88ed558bbaa4b4a39f497f",
+      "width": 1536,
+      "height": 1024,
+      "sourceLabel": "FORMA original artwork",
+      "title": "Smith Machine Decline Press",
+      "kind": "movement_illustration",
+      "original": true,
+      "sourceUrl": "/exercise-media/original/finish-c-002-retry.png",
+      "creator": "FORMA (AI-assisted original illustration)",
+      "credit": "Original artwork created for FORMA.",
+      "creditLinks": [],
+      "license": "Original artwork commissioned for FORMA (AI-assisted)",
+      "licenseUrl": "https://openai.com/policies/terms-of-use/",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 481,
+          "width": 768,
+          "height": 543
         }
       }
     },
@@ -34201,6 +34313,10 @@
       "assetId": "forma-original-movements-041-1-0",
       "caption": "Inchworm · Representative exercise position; follow the guide for the complete movement."
     },
+    "db-incline-barbell-triceps-extension": {
+      "assetId": "forma-original-finish-a-002-retry-0-0",
+      "caption": "Incline Barbell Triceps Extension · Representative exercise position; follow the guide for the complete movement."
+    },
     "db-incline-bench-pull": {
       "assetId": "forma-original-corrections-039-0-0",
       "caption": "Incline Bench Pull · Representative exercise position; follow the guide for the complete movement."
@@ -35241,6 +35357,10 @@
       "assetId": "forma-original-movements-060-2-0",
       "caption": "One-Arm Overhead Kettlebell Squats · Representative exercise position; follow the guide for the complete movement."
     },
+    "db-one-arm-side-deadlift": {
+      "assetId": "forma-original-finish-b-002-retry-0-0",
+      "caption": "One-Arm Side Deadlift · Representative exercise position; follow the guide for the complete movement."
+    },
     "db-one-arm-side-laterals": {
       "assetId": "forma-original-movements-060-0-1",
       "caption": "One-Arm Side Laterals · Representative exercise position; follow the guide for the complete movement."
@@ -35716,6 +35836,10 @@
     "db-reverse-flyes": {
       "assetId": "forma-original-movements-069-2-2",
       "caption": "Reverse Flyes · Representative exercise position; follow the guide for the complete movement."
+    },
+    "db-reverse-flyes-with-external-rotation": {
+      "assetId": "forma-original-finish-b-002-retry-1-1",
+      "caption": "Reverse Flyes With External Rotation · Representative exercise position; follow the guide for the complete movement."
     },
     "db-reverse-grip-bent-over-rows": {
       "assetId": "forma-original-finish-c-001-0-0",
@@ -36428,6 +36552,10 @@
     "db-smith-machine-close-grip-bench-press": {
       "assetId": "forma-original-cardio-01-2-2",
       "caption": "Smith machine with adjustable bench · Equipment reference; set the bench angle and safety stops as described in the guide."
+    },
+    "db-smith-machine-decline-press": {
+      "assetId": "forma-original-finish-c-002-retry-0-1",
+      "caption": "Smith Machine Decline Press · Representative exercise position; follow the guide for the complete movement."
     },
     "db-smith-machine-hang-power-clean": {
       "assetId": "forma-original-cardio-01-3-2",

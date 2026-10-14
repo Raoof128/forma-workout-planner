@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1371,
+  "accepted": 1375,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -5133,7 +5133,9 @@
       "name": "Incline Barbell Triceps Extension",
       "equipment": "Barbell",
       "guideSha256": "885269ff1924284f12aaebfe5d96ab6dc556a7e720c14a247245b814f5ba16b3",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-a-002-retry-0-0",
+      "reviewNote": "Incline bench within45–75degree range; upper arms alongside ears broadly follow torso line, elbows deeply flexed with bar visibly behind head; complete apparatus and grounded feet."
     },
     {
       "exerciseId": "db-incline-bench-pull",
@@ -6952,9 +6954,9 @@
     },
     {
       "exerciseId": "wger-346634cf-3896-4c10-bd66-28fb69d02573",
-      "name": "Medicine ball booklet crunch",
-      "equipment": "Bodyweight",
-      "guideSha256": "12b4d8a796888855aec66004237f5c772d3b4048fe742e29d0ac8c1cc3828cbd",
+      "name": "Medicine-ball V-up",
+      "equipment": "Medicine ball",
+      "guideSha256": "c643c56a393bba2f7da3ce7b27b0ba45a718f53dcccd260af2a63ba9a1469e61",
       "status": "pending"
     },
     {
@@ -7318,7 +7320,7 @@
     {
       "exerciseId": "wger-5ed12527-c8be-4e86-8f2a-cf9dd4781f5b",
       "name": "One Arm Overhead Cable Tricep Extension",
-      "equipment": "Resistance band",
+      "equipment": "Cable",
       "guideSha256": "fa0ef5d52f3e4531e590479c3848a51b49b973c14a83b753ea20c08501f7678f",
       "status": "pending"
     },
@@ -7543,7 +7545,9 @@
       "name": "One-Arm Side Deadlift",
       "equipment": "Barbell",
       "guideSha256": "34070e809c2cdc27bb9340dac981e86be4729add6b54e6ff730a8989f61afa54",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-b-002-retry-0-0",
+      "reviewNote": "Side view establishes complete barbell running front-to-back parallel to feet, center shaft held at side with straight arm and palm inward."
     },
     {
       "exerciseId": "db-one-arm-side-laterals",
@@ -8663,7 +8667,9 @@
       "name": "Reverse Flyes With External Rotation",
       "equipment": "Dumbbell",
       "guideSha256": "7511258a6daa0f2f21a550b977ba4cc977b24eed9947e017ee3de8ae941f566a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-b-002-retry-1-1",
+      "reviewNote": "Shallow approximately30degree bench supports chest/abdomen, heels lifted on toes, bilateral fly endpoint with thumbs up and inward neutral palms."
     },
     {
       "exerciseId": "db-reverse-grip-bent-over-rows",
@@ -8899,9 +8905,9 @@
     },
     {
       "exerciseId": "wger-148f2ffc-05e2-486b-874f-2a401337a1c6",
-      "name": "Rope Pullover/row",
-      "equipment": "Incline bench",
-      "guideSha256": "0def5b0230737406974c6ccbf5059636346e92734eb28687ad27fb0bf79af784",
+      "name": "Chest-supported low-cable rope row",
+      "equipment": "Cable",
+      "guideSha256": "35850454300235ace1c1b4f5a2d54a304b5b1d2e7aad198d934ca0596ace2fbf",
       "status": "pending"
     },
     {
@@ -9806,9 +9812,9 @@
     },
     {
       "exerciseId": "wger-81dd44b3-67b3-4198-9e57-c2a80b3c4102",
-      "name": "Single arm row",
-      "equipment": "Incline bench",
-      "guideSha256": "1bdabc057ab96024df7f308e35877cc7e99f912624276634d0b6d91ab117d808",
+      "name": "Single-arm high-cable pulldown",
+      "equipment": "Cable",
+      "guideSha256": "11cba0e25841ffef051a726684b744f5a88edfb28f48ee6ea06bc5c50f429537",
       "status": "pending"
     },
     {
@@ -10293,7 +10299,9 @@
       "name": "Smith Machine Decline Press",
       "equipment": "Smith machine",
       "guideSha256": "785e719aa11ca4870465a6c2c030805910a0ff336fdcb106a5e32849a78d8622",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-finish-c-002-retry-0-1",
+      "reviewNote": "Complete Smith machine including rail tops/top beam and base now fits panel. Bar remains attached to guide rails, bench declines toward head below hips, feet secured on elevated rollers; supine pressing pose matches guide."
     },
     {
       "exerciseId": "db-smith-machine-hang-power-clean",
@@ -10792,7 +10800,7 @@
       "exerciseId": "wger-671568f9-6653-4e11-ac71-3f34c74329a0",
       "name": "Standing biceps stretch right",
       "equipment": "Bodyweight",
-      "guideSha256": "c23744a383052c2e0f061a6248356d0e1f8b9bc0e3715b912862a606853548e7",
+      "guideSha256": "432a0e9cdd1b896011d36b9e7f6e56568f70b0346d363382660a56f2f3800006",
       "status": "pending"
     },
     {

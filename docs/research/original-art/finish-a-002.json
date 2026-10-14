@@ -49,16 +49,6 @@
         "licenseUrl": "https://unlicense.org/"
       },
       "correctionRequirement": "SIDE three-quarter view bilateral dumbbell fly. Bench backrest angle ONLY20DEGREES above floor, low incline. Both arms spread laterally with soft elbows, palms toward ceiling. Two dumbbells. Feet floor and back supported.",
-      "ids": [
-        "db-incline-dumbbell-flyes"
-      ],
-      "additionalGuideReviews": [
-        {
-          "id": "db-incline-dumbbell-flyes-with-a-twist",
-          "title": "Incline Dumbbell Flyes - With A Twist",
-          "guideText": "Hold a dumbbell in each hand and lie on an incline bench that is set to an incline angle of no more than 30 degrees.\n\nExtend your arms above you with a slight bend at the elbows.\n\nNow rotate the wrists so that the palms of your hands are facing you. Tip: The pinky fingers should be next to each other. This will be your starting position.\n\nAs you breathe in, start to slowly lower the arms to the side while keeping the arms extended and while rotating the wrists until the palms of the hand are facing each other. Tip: At the end of the movement the arms will be by your side with the palms facing the ceiling.\n\nAs you exhale start to bring the dumbbells back up to the starting position by reversing the motion and rotating the hands so that the pinky fingers are next to each other again. Tip: Keep in mind that the movement will only happen at the shoulder joint and at the wrist. There is no motion that happens at the elbow joint.\n\nRepeat for the recommended amount of repetitions."
-        }
-      ],
       "reviewNote": "Both arms spread symmetrically with soft elbows and two dumbbells, palms upward; shallow supported backrest and planted feet match bottom fly phase.",
       "bounds": {
         "x": 768,
@@ -122,10 +112,7 @@
       },
       "cropReviewNote": "Reviewed actual gap between rows at y475; complete equipment and figures fit isolated bounds.",
       "priorBatch": "docs/research/original-art/corrections-014.json",
-      "references": null,
-      "ids": [
-        "db-intermediate-hip-flexor-and-quad-stretch"
-      ]
+      "references": null
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-c80f9bf7-1560-4e0a-ac69-00be25f05f85.png",
