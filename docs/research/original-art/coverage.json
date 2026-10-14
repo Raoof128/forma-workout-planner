@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 781,
+  "accepted": 833,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -7176,42 +7176,54 @@
       "name": "One-Arm Kettlebell Clean",
       "equipment": "Kettlebell",
       "guideSha256": "8acaee34b3efe31346aca9c4bd2ba67f150402a87463a2423cd6d60b163c52f5",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-059-0-0",
+      "reviewNote": "Reviewed single-bell clean front rack, squat receiving phase of clean-and-jerk and jerk, supine bell press, looked-at overhead side military press, para-press lockout, bent-over bell row, snatch standing lockout, split receiving jerk/snatch and single-arm anchored landmine row."
     },
     {
       "exerciseId": "db-one-arm-kettlebell-clean-and-jerk",
       "name": "One-Arm Kettlebell Clean and Jerk",
       "equipment": "Kettlebell",
       "guideSha256": "010cc33f60f4d95bce566bc85800266214d7805e8a93aac116adc2aea33c2d63",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-059-1-0",
+      "reviewNote": "Reviewed single-bell clean front rack, squat receiving phase of clean-and-jerk and jerk, supine bell press, looked-at overhead side military press, para-press lockout, bent-over bell row, snatch standing lockout, split receiving jerk/snatch and single-arm anchored landmine row."
     },
     {
       "exerciseId": "db-one-arm-kettlebell-floor-press",
       "name": "One-Arm Kettlebell Floor Press",
       "equipment": "Kettlebell",
       "guideSha256": "41284f5ebfc96c4b3891a56e5d7cf0a41f7a7fb04d4309c7ad68eb07ed0702e2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-059-2-0",
+      "reviewNote": "Reviewed single-bell clean front rack, squat receiving phase of clean-and-jerk and jerk, supine bell press, looked-at overhead side military press, para-press lockout, bent-over bell row, snatch standing lockout, split receiving jerk/snatch and single-arm anchored landmine row."
     },
     {
       "exerciseId": "db-one-arm-kettlebell-jerk",
       "name": "One-Arm Kettlebell Jerk",
       "equipment": "Kettlebell",
       "guideSha256": "1af8cfd2599e7d9651fbab0ca549d05c65b11d69718cb006092a08c13cf8af0e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-059-3-0",
+      "reviewNote": "Reviewed single-bell clean front rack, squat receiving phase of clean-and-jerk and jerk, supine bell press, looked-at overhead side military press, para-press lockout, bent-over bell row, snatch standing lockout, split receiving jerk/snatch and single-arm anchored landmine row."
     },
     {
       "exerciseId": "db-one-arm-kettlebell-military-press-to-the-side",
       "name": "One-Arm Kettlebell Military Press To The Side",
       "equipment": "Kettlebell",
       "guideSha256": "087df855320cba68786c390947cfc6b56289ce148c84e3d3093e7681c2ec089e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-059-0-1",
+      "reviewNote": "Reviewed single-bell clean front rack, squat receiving phase of clean-and-jerk and jerk, supine bell press, looked-at overhead side military press, para-press lockout, bent-over bell row, snatch standing lockout, split receiving jerk/snatch and single-arm anchored landmine row."
     },
     {
       "exerciseId": "db-one-arm-kettlebell-para-press",
       "name": "One-Arm Kettlebell Para Press",
       "equipment": "Kettlebell",
       "guideSha256": "04d4f0a31cc23b0b9a0cfff66521bed1a135b7d96050e5952b47efdcd63a7dc2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-059-1-1",
+      "reviewNote": "Reviewed single-bell clean front rack, squat receiving phase of clean-and-jerk and jerk, supine bell press, looked-at overhead side military press, para-press lockout, bent-over bell row, snatch standing lockout, split receiving jerk/snatch and single-arm anchored landmine row."
     },
     {
       "exerciseId": "db-one-arm-kettlebell-push-press",
@@ -7225,56 +7237,72 @@
       "name": "One-Arm Kettlebell Row",
       "equipment": "Kettlebell",
       "guideSha256": "e89b62cb7e16dd25fdea8c4985c652dc8d19ce2ee216bf835a6702f55f281deb",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-059-3-1",
+      "reviewNote": "Reviewed single-bell clean front rack, squat receiving phase of clean-and-jerk and jerk, supine bell press, looked-at overhead side military press, para-press lockout, bent-over bell row, snatch standing lockout, split receiving jerk/snatch and single-arm anchored landmine row."
     },
     {
       "exerciseId": "db-one-arm-kettlebell-snatch",
       "name": "One-Arm Kettlebell Snatch",
       "equipment": "Kettlebell",
       "guideSha256": "da4f6a779c57d958156b0c62c44a602d9135a933cdbf5d20c3e81132138901a4",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-059-0-2",
+      "reviewNote": "Reviewed single-bell clean front rack, squat receiving phase of clean-and-jerk and jerk, supine bell press, looked-at overhead side military press, para-press lockout, bent-over bell row, snatch standing lockout, split receiving jerk/snatch and single-arm anchored landmine row."
     },
     {
       "exerciseId": "db-one-arm-kettlebell-split-jerk",
       "name": "One-Arm Kettlebell Split Jerk",
       "equipment": "Kettlebell",
       "guideSha256": "ca446e0559357013a7c5514b38583a206c44b2afb5faa5694589758faca8f790",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-059-1-2",
+      "reviewNote": "Reviewed single-bell clean front rack, squat receiving phase of clean-and-jerk and jerk, supine bell press, looked-at overhead side military press, para-press lockout, bent-over bell row, snatch standing lockout, split receiving jerk/snatch and single-arm anchored landmine row."
     },
     {
       "exerciseId": "db-one-arm-kettlebell-split-snatch",
       "name": "One-Arm Kettlebell Split Snatch",
       "equipment": "Kettlebell",
       "guideSha256": "b7969fa55f10e6a42d2102396da107b705f5693886e68041bd13cca91c74758d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-059-2-2",
+      "reviewNote": "Reviewed single-bell clean front rack, squat receiving phase of clean-and-jerk and jerk, supine bell press, looked-at overhead side military press, para-press lockout, bent-over bell row, snatch standing lockout, split receiving jerk/snatch and single-arm anchored landmine row."
     },
     {
       "exerciseId": "db-one-arm-long-bar-row",
       "name": "One-Arm Long Bar Row",
       "equipment": "Barbell",
       "guideSha256": "6f1171087f09b7d5bc76b5013905af15efe0054ab40ef43b456caa323c0431ea",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-059-3-2",
+      "reviewNote": "Reviewed single-bell clean front rack, squat receiving phase of clean-and-jerk and jerk, supine bell press, looked-at overhead side military press, para-press lockout, bent-over bell row, snatch standing lockout, split receiving jerk/snatch and single-arm anchored landmine row."
     },
     {
       "exerciseId": "db-one-arm-medicine-ball-slam",
       "name": "One-Arm Medicine Ball Slam",
       "equipment": "Medicine ball",
       "guideSha256": "d753326567fc984550ff3df838a8881ae0dced48859eb754c75c3a6252d42aeb",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-060-0-0",
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation."
     },
     {
       "exerciseId": "db-one-arm-open-palm-kettlebell-clean",
       "name": "One-Arm Open Palm Kettlebell Clean",
       "equipment": "Kettlebell",
       "guideSha256": "01a706c3011a99260801057b9490b8b946bcff078a3dc83f7b5ed66d687cce83",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-060-1-0",
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation."
     },
     {
       "exerciseId": "db-one-arm-overhead-kettlebell-squats",
       "name": "One-Arm Overhead Kettlebell Squats",
       "equipment": "Kettlebell",
       "guideSha256": "72c307c7ff45540ceb8eb5b2b2963b9bff124dd1a87f5a0053304bac2d02fb3d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-060-2-0",
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation."
     },
     {
       "exerciseId": "db-one-arm-side-deadlift",
@@ -7288,14 +7316,18 @@
       "name": "One-Arm Side Laterals",
       "equipment": "Dumbbell",
       "guideSha256": "ea452183d627dde702bcbbd4c7a95f9b8ecf12e88c61a106b2d35a62b298c57e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-060-0-1",
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation."
     },
     {
       "exerciseId": "wger-d7d4fc16-08cd-4568-87e7-d9e4e2f77393",
       "name": "one-handed kettlebell curls",
       "equipment": "Kettlebell",
       "guideSha256": "10e5b4fbc60feb2f0f85aff474465237030f3f804ed661672c7b8698be9056b4",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-060-1-1",
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation."
     },
     {
       "exerciseId": "db-one-legged-cable-kickback",
@@ -7311,7 +7343,9 @@
       "name": "Open Book",
       "equipment": "Bodyweight",
       "guideSha256": "801642c3fedcebcc127d08b9ebe02040c5c23685734a190069ddff5e82a6406f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-060-2-1",
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation."
     },
     {
       "exerciseId": "db-open-palm-kettlebell-clean",
@@ -7325,7 +7359,9 @@
       "name": "Otis-Up",
       "equipment": "Specialty equipment",
       "guideSha256": "10073a2af4f6c2cc1d6b121b6b7dce0a727822046e2b04927ff7f3254e17915e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-060-0-2",
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation."
     },
     {
       "exerciseId": "wger-c7058ff8-ca3b-4822-abdb-6341ce37c4d1",
@@ -7350,49 +7386,63 @@
       "name": "Overhead Lat",
       "equipment": "Specialty equipment",
       "guideSha256": "5d1fee1d14aecfb271d07368d4665b44e08919743c5281848f2273cde7990af2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-060-1-2",
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation."
     },
     {
       "exerciseId": "wger-993c7f0c-729b-4834-a0f5-67d126d92fbf",
       "name": "Overhead Press Isometric",
       "equipment": "Barbell",
       "guideSha256": "635e8013bbec11f2360c1d03fcd8ca9456681f39aab1308447e31bfd6b7ff9b3",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-060-2-2",
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation."
     },
     {
       "exerciseId": "db-overhead-slam",
       "name": "Overhead Slam",
       "equipment": "Medicine ball",
       "guideSha256": "ac3cb3df2815f50652f00ad6e542cf5e5826981d35abebc7d469e1aa2f2f652e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-060-3-2",
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation."
     },
     {
       "exerciseId": "db-overhead-squat",
       "name": "Overhead Squat",
       "equipment": "Barbell",
       "guideSha256": "9008a0c1c4a4d0965213e63e564596225bbdb57b7eeeff822cbff3d02bceb62f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-061-0-0",
+      "reviewNote": "Reviewed barbell overhead squat, interlaced palms-to-ceiling stretch, partner-held overhead triceps stretch, seated overhead EZ extension, kneeling supported pronated dumbbell/bar wrist extensions, parallel bar dip, quadruped dumbbell clamped behind bent knee, supported straight-arm dumbbell kickback and flat-bench paused chest press."
     },
     {
       "exerciseId": "db-overhead-stretch",
       "name": "Overhead Stretch",
       "equipment": "Bodyweight",
       "guideSha256": "8c5fc74fd1ffa60214dd5503f306819a06adb73b977f2975bd671dbb816752d6",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-061-1-0",
+      "reviewNote": "Reviewed barbell overhead squat, interlaced palms-to-ceiling stretch, partner-held overhead triceps stretch, seated overhead EZ extension, kneeling supported pronated dumbbell/bar wrist extensions, parallel bar dip, quadruped dumbbell clamped behind bent knee, supported straight-arm dumbbell kickback and flat-bench paused chest press."
     },
     {
       "exerciseId": "db-overhead-triceps",
       "name": "Overhead Triceps",
       "equipment": "Bodyweight",
       "guideSha256": "c2c3cd17c7b42c69ec6d2c1e856d71a6084ac3b7a0c84bf60353b539c4a10aba",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-061-2-0",
+      "reviewNote": "Reviewed barbell overhead squat, interlaced palms-to-ceiling stretch, partner-held overhead triceps stretch, seated overhead EZ extension, kneeling supported pronated dumbbell/bar wrist extensions, parallel bar dip, quadruped dumbbell clamped behind bent knee, supported straight-arm dumbbell kickback and flat-bench paused chest press."
     },
     {
       "exerciseId": "wger-c5797bdf-1aa1-4d51-9775-c929ec5a2aaf",
       "name": "Overhead Triceps Extension",
       "equipment": "EZ bar",
       "guideSha256": "8608d68fe6982151915240744ad6759610189bfa259b7836b2f8635b3dd5c606",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-061-3-0",
+      "reviewNote": "Reviewed barbell overhead squat, interlaced palms-to-ceiling stretch, partner-held overhead triceps stretch, seated overhead EZ extension, kneeling supported pronated dumbbell/bar wrist extensions, parallel bar dip, quadruped dumbbell clamped behind bent knee, supported straight-arm dumbbell kickback and flat-bench paused chest press."
     },
     {
       "exerciseId": "db-pallof-press",
@@ -7417,14 +7467,18 @@
       "name": "Palms-Down Dumbbell Wrist Curl Over A Bench",
       "equipment": "Dumbbell",
       "guideSha256": "902977acf77fbc5daea3fab3738df03ae66acb90bc6bfeb31a05e63057b1cdda",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-061-0-1",
+      "reviewNote": "Reviewed barbell overhead squat, interlaced palms-to-ceiling stretch, partner-held overhead triceps stretch, seated overhead EZ extension, kneeling supported pronated dumbbell/bar wrist extensions, parallel bar dip, quadruped dumbbell clamped behind bent knee, supported straight-arm dumbbell kickback and flat-bench paused chest press."
     },
     {
       "exerciseId": "db-palms-down-wrist-curl-over-a-bench",
       "name": "Palms-Down Wrist Curl Over A Bench",
       "equipment": "Barbell",
       "guideSha256": "5db8702bba571e3bf50885c092e0067d6eb65c3722c897c73dba1b18ae74f11c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-061-1-1",
+      "reviewNote": "Reviewed barbell overhead squat, interlaced palms-to-ceiling stretch, partner-held overhead triceps stretch, seated overhead EZ extension, kneeling supported pronated dumbbell/bar wrist extensions, parallel bar dip, quadruped dumbbell clamped behind bent knee, supported straight-arm dumbbell kickback and flat-bench paused chest press."
     },
     {
       "exerciseId": "db-palms-up-barbell-wrist-curl-over-a-bench",
@@ -7445,28 +7499,36 @@
       "name": "Parallel Bar Dip",
       "equipment": "Specialty equipment",
       "guideSha256": "cf55e7ab8e4e9818968167699fc5353ca31d9049423b343d28eee738b5a7e786",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-061-0-2",
+      "reviewNote": "Reviewed barbell overhead squat, interlaced palms-to-ceiling stretch, partner-held overhead triceps stretch, seated overhead EZ extension, kneeling supported pronated dumbbell/bar wrist extensions, parallel bar dip, quadruped dumbbell clamped behind bent knee, supported straight-arm dumbbell kickback and flat-bench paused chest press."
     },
     {
       "exerciseId": "wger-2539f907-0c10-4af5-807c-48cd15fd0878",
       "name": "Patada de burro con mancuerna",
       "equipment": "Dumbbell",
       "guideSha256": "7808ea544404a16236adcc8a5355d683fe8db56d2c7c076590b042a66aa42268",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-061-1-2",
+      "reviewNote": "Reviewed barbell overhead squat, interlaced palms-to-ceiling stretch, partner-held overhead triceps stretch, seated overhead EZ extension, kneeling supported pronated dumbbell/bar wrist extensions, parallel bar dip, quadruped dumbbell clamped behind bent knee, supported straight-arm dumbbell kickback and flat-bench paused chest press."
     },
     {
       "exerciseId": "wger-17dd0986-5248-410d-89a4-9268282d103b",
       "name": "Patadas traseras",
       "equipment": "Bench + Dumbbell",
       "guideSha256": "9716754947212a9ccc5ac352896af1fd0eae8ebd236359f60b55567d2e5f1b27",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-061-2-2",
+      "reviewNote": "Reviewed barbell overhead squat, interlaced palms-to-ceiling stretch, partner-held overhead triceps stretch, seated overhead EZ extension, kneeling supported pronated dumbbell/bar wrist extensions, parallel bar dip, quadruped dumbbell clamped behind bent knee, supported straight-arm dumbbell kickback and flat-bench paused chest press."
     },
     {
       "exerciseId": "wger-6441ff9e-037e-48d9-8800-67b430dc8e37",
       "name": "Pause Bench",
       "equipment": "Barbell + Bench",
       "guideSha256": "4a602203bbdbdf41cb07e0ec9375a5a2942b6a2a4c4770dc61ed21292a020e35",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-061-3-2",
+      "reviewNote": "Reviewed barbell overhead squat, interlaced palms-to-ceiling stretch, partner-held overhead triceps stretch, seated overhead EZ extension, kneeling supported pronated dumbbell/bar wrist extensions, parallel bar dip, quadruped dumbbell clamped behind bent knee, supported straight-arm dumbbell kickback and flat-bench paused chest press."
     },
     {
       "exerciseId": "wger-1b329beb-fcda-4471-ba70-eea62da410dd",
@@ -7480,14 +7542,18 @@
       "name": "Paused Squats",
       "equipment": "Barbell",
       "guideSha256": "58d4f7bbc9222d2d2953054d9c65f610d275824ecc98bbce426bdabfaadf3d50",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-062-1-0",
+      "reviewNote": "Reviewed paused rear-rack squat, supine bridge phase after pelvic tilt, side lower-leg roller with hips lifted, upper-back ball-supported hip bridge and bent-arm pike push-up."
     },
     {
       "exerciseId": "db-pelvic-tilt-into-bridge",
       "name": "Pelvic Tilt Into Bridge",
       "equipment": "Bodyweight",
       "guideSha256": "e46f935c69a2b371390ce9f935b4e71562ed391c8bd2b787cd6b5f8d189a1cd7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-062-2-0",
+      "reviewNote": "Reviewed paused rear-rack squat, supine bridge phase after pelvic tilt, side lower-leg roller with hips lifted, upper-back ball-supported hip bridge and bent-arm pike push-up."
     },
     {
       "exerciseId": "wger-748e9635-7958-4a41-b1ed-93de74c7ef72",
@@ -7517,7 +7583,9 @@
       "name": "Peroneals-SMR",
       "equipment": "Foam roller",
       "guideSha256": "25935cd77d03d73efae48c3c41191027c76f5e0e47f77b741d7b9d0313552317",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-062-1-1",
+      "reviewNote": "Reviewed paused rear-rack squat, supine bridge phase after pelvic tilt, side lower-leg roller with hips lifted, upper-back ball-supported hip bridge and bent-arm pike push-up."
     },
     {
       "exerciseId": "wger-7ae1aca7-cdd4-4a81-b22c-f31778462b6b",
@@ -7531,14 +7599,18 @@
       "name": "Physioball Hip Bridge",
       "equipment": "Exercise ball",
       "guideSha256": "cbbc7b8c8119cd340a6439fe9bea936b0ed0010a4aefdf60747c08fe286025c7",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-062-3-1",
+      "reviewNote": "Reviewed paused rear-rack squat, supine bridge phase after pelvic tilt, side lower-leg roller with hips lifted, upper-back ball-supported hip bridge and bent-arm pike push-up."
     },
     {
       "exerciseId": "wger-3b96a05b-9705-48da-b43e-6e098234bb35",
       "name": "Pike Push Ups",
       "equipment": "Bodyweight",
       "guideSha256": "2cba154e2a0031c11d8faf5acab3aafb37fbe286a7de67568667751427ee130c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-062-0-2",
+      "reviewNote": "Reviewed paused rear-rack squat, supine bridge phase after pelvic tilt, side lower-leg roller with hips lifted, upper-back ball-supported hip bridge and bent-arm pike push-up."
     },
     {
       "exerciseId": "wger-abd2854b-114a-4584-8746-30bd40127863",
@@ -7566,28 +7638,36 @@
       "name": "Pin Squat",
       "equipment": "Barbell",
       "guideSha256": "7b80bcaf5e99dcbfae137aa8035dec148a921c09be40bf1d92788f87bd5a65de",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-063-0-0",
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide."
     },
     {
       "exerciseId": "db-piriformis-smr",
       "name": "Piriformis-SMR",
       "equipment": "Foam roller",
       "guideSha256": "fa739fa3c7ae8dac941175822cb9a3ec596bd0503bc85ed425856d8bfb5cfad2",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-063-1-0",
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide."
     },
     {
       "exerciseId": "wger-fe04cf35-1af5-4b51-89d4-c38d7eaa0db1",
       "name": "Pistol Squat",
       "equipment": "Bodyweight",
       "guideSha256": "b009caf42562c990ff31ceb06824063c3f91e5ce7b30fbf0e80d65bccff30475",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-063-2-0",
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide."
     },
     {
       "exerciseId": "wger-81c6b9ef-7cb7-4328-8cb4-47ae8ecc42be",
       "name": "Planche de cote dynamique",
       "equipment": "Bodyweight",
       "guideSha256": "411766e0abbb5c79b2cd9d1fc46fb31d117165b4fdfa53336fe146f697961f2f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-063-3-0",
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide."
     },
     {
       "exerciseId": "wger-a82944ae-24f4-4f7a-8aac-af251f6907e5",
@@ -7601,28 +7681,36 @@
       "name": "Plank",
       "equipment": "Bodyweight",
       "guideSha256": "55c8e3ade5b658bed38c14d61b0efb964c58619d2f37e58c29b17da4e09584a9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-063-1-1",
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide."
     },
     {
       "exerciseId": "wger-12418067-6cb5-44db-8973-b5be25c0146b",
       "name": "Plank Reach",
       "equipment": "Bodyweight",
       "guideSha256": "2e0e87bfe3deae78c0c7b09f5b3f63a4602bd845c69fb988c78e440a7844b387",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-063-2-1",
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide."
     },
     {
       "exerciseId": "wger-75d730d0-3b26-4a25-8f1a-7119a98e02ef",
       "name": "Plank Shoulder Taps",
       "equipment": "Bodyweight",
       "guideSha256": "0833c55365b0b305909e9fa3bd64b9e41ac32e92be48e7598bd4554a29d1437c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-063-3-1",
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide."
     },
     {
       "exerciseId": "wger-e75629ed-4991-4a48-984c-b297f3f9fb58",
       "name": "Plank-to-Elbow Extension",
       "equipment": "Bodyweight",
       "guideSha256": "3d65f4bd09a19c4f120475b51612c751bf8653ce2f2e420be3f874b8a6b199a3",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-063-0-2",
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide."
     },
     {
       "exerciseId": "wger-f397656d-6f26-47c6-9e4c-221687f3f2fa",
@@ -7636,7 +7724,9 @@
       "name": "Plate Twist",
       "equipment": "Specialty equipment",
       "guideSha256": "3b9a3d5424b14ca0b782d496b0a3ae948f67f7aa4801b105018502f8c611ebbc",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-063-2-2",
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide."
     },
     {
       "exerciseId": "wger-5d5122e0-65f3-4afc-ac36-21955e2c7dde",
@@ -7652,21 +7742,27 @@
       "name": "Platform Hamstring Slides",
       "equipment": "Specialty equipment",
       "guideSha256": "ed2f8a43d8e4ff6897cda672027b91b0d0a3085e200277baa1deaa8fe5b30c8a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-063-3-2",
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide."
     },
     {
       "exerciseId": "db-plie-dumbbell-squat",
       "name": "Plie Dumbbell Squat",
       "equipment": "Dumbbell",
       "guideSha256": "4b1447162b28e6a743cb6ff2e5a7b2e3bd8c977870088507b1dd93cdfcd91015",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-064-0-0",
+      "reviewNote": "Reviewed two-hand dumbbell plie squat, one palm/one kettlebell supported plyometric push-up starting pose, supine posterior pelvic tilt setup, pronated floor power-clean starting pull, bilateral lateral-raise power partial and two-hand tire loading onto stairs."
     },
     {
       "exerciseId": "db-plyo-kettlebell-pushups",
       "name": "Plyo Kettlebell Pushups",
       "equipment": "Kettlebell",
       "guideSha256": "299511af48819fdfd02603c0bce4433d3bce2f349ebe8781a164d4deac2be16c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-064-1-0",
+      "reviewNote": "Reviewed two-hand dumbbell plie squat, one palm/one kettlebell supported plyometric push-up starting pose, supine posterior pelvic tilt setup, pronated floor power-clean starting pull, bilateral lateral-raise power partial and two-hand tire loading onto stairs."
     },
     {
       "exerciseId": "db-plyo-push-up",
@@ -7680,7 +7776,9 @@
       "name": "Posterior Pelvic Tilt",
       "equipment": "Bodyweight",
       "guideSha256": "4685c3ef7b9b56b339edd5f99f89276ab79f2f8d6952916a1961e5f9003cd6bb",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-064-3-0",
+      "reviewNote": "Reviewed two-hand dumbbell plie squat, one palm/one kettlebell supported plyometric push-up starting pose, supine posterior pelvic tilt setup, pronated floor power-clean starting pull, bilateral lateral-raise power partial and two-hand tire loading onto stairs."
     },
     {
       "exerciseId": "db-posterior-tibialis-stretch",
@@ -7694,7 +7792,9 @@
       "name": "Power Clean",
       "equipment": "Barbell",
       "guideSha256": "bd5796ae6447dc90e1c1adb49d784dd58786c55b7159c5adb3e3d334779b50e5",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-064-1-1",
+      "reviewNote": "Reviewed two-hand dumbbell plie squat, one palm/one kettlebell supported plyometric push-up starting pose, supine posterior pelvic tilt setup, pronated floor power-clean starting pull, bilateral lateral-raise power partial and two-hand tire loading onto stairs."
     },
     {
       "exerciseId": "db-power-clean-from-blocks",
@@ -7715,7 +7815,9 @@
       "name": "Power Partials",
       "equipment": "Dumbbell",
       "guideSha256": "b647896013858997cfa652931543493a3e0306e4eb42831359e401522dec69c0",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-064-0-2",
+      "reviewNote": "Reviewed two-hand dumbbell plie squat, one palm/one kettlebell supported plyometric push-up starting pose, supine posterior pelvic tilt setup, pronated floor power-clean starting pull, bilateral lateral-raise power partial and two-hand tire loading onto stairs."
     },
     {
       "exerciseId": "db-power-snatch",
@@ -7736,7 +7838,9 @@
       "name": "Power Stairs",
       "equipment": "Specialty equipment",
       "guideSha256": "59ba215dd1c6eab1725b300a79b64719bcf2c974269a3a6cf5ca40f74b60c94e",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-movements-064-3-2",
+      "reviewNote": "Reviewed two-hand dumbbell plie squat, one palm/one kettlebell supported plyometric push-up starting pose, supine posterior pelvic tilt setup, pronated floor power-clean starting pull, bilateral lateral-raise power partial and two-hand tire loading onto stairs."
     },
     {
       "exerciseId": "db-preacher-curl",

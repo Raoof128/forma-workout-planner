@@ -13,14 +13,22 @@
       "guideText": "Start in a standing position with a staggered, athletic stance. Hold a medicine ball in one hand, on the same side as your back leg. This will be your starting position.\n\nBegin by winding the arm, raising the medicine ball above your head. As you do so, extend through the hips, knees, and ankles to load up for the slam.\n\nAt peak extension, flex the shoulders, spine, and hips to throw the ball hard into the ground directly in front of you.\n\nCatch the ball on the bounce and continue for the desired number of repetitions.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/One-Arm_Medicine_Ball_Slam.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-one-arm-open-palm-kettlebell-clean",
@@ -29,14 +37,22 @@
       "guideText": "Place one kettlebell between your feet.\n\nGrab the handle with one hand and raise the kettlebell rapidly, let it flip so that the ball of the kettlebell lands in the palm of your hand.\n\nThrow the kettlebell out in front of you and catch the handle with one hand.\n\nTake the kettlebell to the floor and repeat. Make sure to work both arms.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/One-Arm_Open_Palm_Kettlebell_Clean.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-one-arm-overhead-kettlebell-squats",
@@ -45,14 +61,22 @@
       "guideText": "Clean and press a kettlebell with one arm. Clean the kettlebell to your shoulder by extending through the legs and hips as you pull the kettlebell towards your shoulder. Rotate your wrist as you do so. Press the weight overhead by extending through the elbow.This will be your starting position.\n\nLooking straight ahead and keeping a kettlebell locked out above you, flex the knees and hips and lower your torso between your legs, keeping your head and chest up.\n\nPause at the bottom position for a second before rising back to the top, driving through the heels of your feet.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/One-Arm_Overhead_Kettlebell_Squats.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-one-arm-side-deadlift",
@@ -61,14 +85,22 @@
       "guideText": "Stand to the side of a barbell next to its center. Bend your knees and lower your body until you are able to reach the barbell.\n\nGrasp the bar as if you were grabbing a briefcase (palms facing you since the bar is sideways). You may need a wrist wrap if you are using a significant amount of weight. This is your starting position.\n\nUse your legs to help lift the barbell up while exhaling. Your arms should extend fully as bring the barbell up until you are in a standing position.\n\nSlowly bring the barbell back down while inhaling. Tip: Make sure to bend your knees while lowering the weight to avoid any injury from occurring.\n\nRepeat for the recommended amount of repetitions.\n\nSwitch arms and repeat the movement.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/One-Arm_Side_Deadlift.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: side barbell deadlift implement is across front of thighs rather than clearly beside the body in briefcase orientation.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-one-arm-side-laterals",
@@ -77,14 +109,22 @@
       "guideText": "Pick a dumbbell and place it in one of your hands. Your non lifting hand should be used to grab something steady such as an incline bench press. Lean towards your lifting arm and away from the hand that is gripping the incline bench as this will allow you to keep your balance.\n\nStand with a straight torso and have the dumbbell by your side at arm's length with the palm of the hand facing you. This will be your starting position.\n\nWhile maintaining the torso stationary (no swinging), lift the dumbbell to your side with a slight bend on the elbow and your hand slightly tilted forward as if pouring water in a glass. Continue to go up until you arm is parallel to the floor. Exhale as you execute this movement and pause for a second at the top.\n\nLower the dumbbell back down slowly to the starting position as you inhale.\n\nRepeat for the recommended amount of repetitions.\n\nSwitch arms and repeat the exercise.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/One-Arm_Side_Laterals.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation.",
+      "bounds": {
+        "x": 0,
+        "y": 342,
+        "width": 384,
+        "height": 325
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "wger-d7d4fc16-08cd-4568-87e7-d9e4e2f77393",
@@ -93,7 +133,7 @@
       "guideText": "Standing with the kettlebell in one hand and bent at the elbow, start from a fully extended position until your hand reaches shoulder height. To perform the movement correctly, try not to push with your back or body.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/975/view/",
@@ -101,7 +141,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation.",
+      "bounds": {
+        "x": 384,
+        "y": 342,
+        "width": 384,
+        "height": 325
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "wger-164b83aa-195e-4eed-b820-b81df950d9bb",
@@ -110,7 +158,7 @@
       "guideText": "**Basic exercise** * **Focus:** enhances thoracic mobility and spinal segmentation while opening the shoulders and chest. * **Position:**kneeling on the floor with your right side facing a wall. Hips are square and stable, with the right knee down and the left foot forward. Lengthen your spine and align your head comfortably. Begin with your arms relaxed and open in front of your chest, palms facing each other and hands apart. * **Inhale** to initiate the movement, allowing your left arm —the one farther from the wall— to open outward and backward. Lead the twist from your thoracic spine, rotating your upper back progressively while keeping your pelvis still. * **Exhale** as you complete the rotation, guiding your left hand toward the wall as your gaze follows your hand. * **Return by inhaling** and slowly bringing your arm forward, reversing the spinal rotation segment by segment. * **Repeat on the opposite side.** **Progression** * **Position:**kneeling on the floor with your right side facing a wall. Left knee down and right foot forward. * **Before the basic exercise: inhale**, **exhale**while moving the right arm along the wall with a circle upwards and backwards, **inhale**while bringing back the arm. * **Basic exercise.** * **Repeat on the opposite side.**",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1822/view/",
@@ -118,7 +166,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation.",
+      "bounds": {
+        "x": 768,
+        "y": 342,
+        "width": 384,
+        "height": 325
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-open-palm-kettlebell-clean",
@@ -127,14 +183,22 @@
       "guideText": "Place one kettlebell between your feet. Clean the kettlebell by extending through the legs and hips as you raise the kettlebell towards your shoulders.\n\nRelease the kettlebell as it comes up, and let it flip so that the ball of the kettlebell lands in the palms of your hands.\n\nRelease the kettlebell out in front of you and catch the handle with both hands. Lower the kettlebell to the starting position and repeat.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Open_Palm_Kettlebell_Clean.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: two-hand open-palm clean depicts gripping the handle low instead of catching bell body on open palms.",
+      "bounds": {
+        "x": 1152,
+        "y": 342,
+        "width": 384,
+        "height": 325
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-otis-up",
@@ -143,14 +207,22 @@
       "guideText": "Secure your feet and lay back on the floor. Your knees should be bent. Hold a weight with both hands to your chest. This will be your starting position.\n\nInitiate the movement by flexing the hips and spine to raise your torso up from the ground.\n\nAs you move up, press the weight up so that it is above your head at the top of the movement.\n\nReturn the weight to your chest as you reverse the sit-up motion, ensuring not to go all the way down to the floor.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Otis-Up.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation.",
+      "bounds": {
+        "x": 0,
+        "y": 667,
+        "width": 384,
+        "height": 357
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-overhead-lat",
@@ -159,14 +231,22 @@
       "guideText": "Sit upright on the floor with your partner behind you. Raise one arm straight up, and flex the elbow, attempting to touch your hand to your back. Your parner should hold your tricep and wrist. This will be your starting position.\n\nAttempt to pull your upper arm to your side as your partner prevents you from doing actually doing so.\n\nAfter 10-20 seconds, relax the arm and allow your partner to further stretch the lat by applying gentle pressure to the tricep. Hold for 10-20 seconds, and then switch sides.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Overhead_Lat.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation.",
+      "bounds": {
+        "x": 384,
+        "y": 667,
+        "width": 384,
+        "height": 357
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "wger-993c7f0c-729b-4834-a0f5-67d126d92fbf",
@@ -175,7 +255,7 @@
       "guideText": "An isometric overhead press involves holding a weight statically overhead or pushing against an immovable object at a specific point in the press without moving the joint.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2537/view/",
@@ -183,7 +263,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation.",
+      "bounds": {
+        "x": 768,
+        "y": 667,
+        "width": 384,
+        "height": 357
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     },
     {
       "id": "db-overhead-slam",
@@ -192,14 +280,22 @@
       "guideText": "Hold a medine ball with both hands and stand with your feet at shoulder width. This will be your starting position.\n\nInitiate the countermovement by raising the ball above your head and fully extending your body.\n\nReverse the motion, slamming the ball into the ground directly in front of you as hard as you can.\n\nReceive the ball with both hands on the bounce and repeat the movement.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Overhead_Slam.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed single-arm medicine-ball floor release, open-palm bell catch, single-arm overhead squat, supported leaning lateral raise, stationary bell biceps curl, half-kneeling wall thoracic rotation phase, securely anchored feet with weighted Otis sit-up, partner-supported overhead lat stretch, static overhead bar lockout and overhead medicine-ball slam preparation.",
+      "bounds": {
+        "x": 1152,
+        "y": 667,
+        "width": 384,
+        "height": 357
+      },
+      "cropReviewNote": "Inspected source panel boundaries and separator pixels."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-d5fc26ec-d1fa-4c87-b786-3d30adb31684.png",

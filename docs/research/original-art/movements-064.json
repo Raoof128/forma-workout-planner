@@ -13,14 +13,22 @@
       "guideText": "Hold a dumbbell at the base with both hands and stand straight up. Move your legs so that they are wider than shoulder width apart from each other with your knees slightly bent.\n\nYour toes should be facing out. Note: Your arms should be stationary while performing the exercise. This is the starting position.\n\nSlowly bend the knees and lower your legs until your thighs are parallel to the floor. Make sure to inhale as this is the eccentric part of the exercise.\n\nPress mainly with the heel of the foot to bring the body back to the starting position while exhaling.\n\nRepeat for the recommended amount of repetitions.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Plie_Dumbbell_Squat.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed two-hand dumbbell plie squat, one palm/one kettlebell supported plyometric push-up starting pose, supine posterior pelvic tilt setup, pronated floor power-clean starting pull, bilateral lateral-raise power partial and two-hand tire loading onto stairs.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 385,
+        "height": 319
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "db-plyo-kettlebell-pushups",
@@ -29,14 +37,22 @@
       "guideText": "Place a kettlebell on the floor. Place yourself in a pushup position, on your toes with one hand on the ground and one hand holding the kettlebell, with your elbows extended. This will be your starting position.\n\nBegin by lowering yourself as low as you can, keeping your back straight.\n\nQuickly and forcefully reverse direction, pushing yourself up to the other side of the kettlebell, switching hands as you do so. Continue the movement by descending and repeating the movement back and forth.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Plyo_Kettlebell_Pushups.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed two-hand dumbbell plie squat, one palm/one kettlebell supported plyometric push-up starting pose, supine posterior pelvic tilt setup, pronated floor power-clean starting pull, bilateral lateral-raise power partial and two-hand tire loading onto stairs.",
+      "bounds": {
+        "x": 385,
+        "y": 0,
+        "width": 383,
+        "height": 319
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "db-plyo-push-up",
@@ -45,14 +61,22 @@
       "guideText": "Move into a prone position on the floor, supporting your weight on your hands and toes.\n\nYour arms should be fully extended with the hands around shoulder width. Keep your body straight throughout the movement. This will be your starting position.\n\nDescend by flexing at the elbow, lowering your chest towards the ground.\n\nAt the bottom, reverse the motion by pushing yourself up through elbow extension as quickly as possible. Attempt to push your upper body up until your hands leave the ground.\n\nReturn to the starting position and repeat the exercise.\n\nFor added difficulty, add claps into the movement while you are air borne.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Plyo_Push-up.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: standard plyometric push-up illustration has both feet airborne; regenerate hands airborne with toes supported.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 319
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "wger-0e8fd83f-4e97-4749-b5fd-da9d0e85e97a",
@@ -61,7 +85,7 @@
       "guideText": "Lie on your back with knees bent, feet flat on the floor. Flatten your lower back against the floor by tilting your pelvis posteriorly, engaging your abs and glutes. Hold 5 seconds, release. This retrains pelvic positioning to counter anterior pelvic tilt.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2488/view/",
@@ -69,7 +93,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed two-hand dumbbell plie squat, one palm/one kettlebell supported plyometric push-up starting pose, supine posterior pelvic tilt setup, pronated floor power-clean starting pull, bilateral lateral-raise power partial and two-hand tire loading onto stairs.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 319
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "db-posterior-tibialis-stretch",
@@ -78,14 +110,22 @@
       "guideText": "In a seated position, loop a belt, rope, or band around one foot. This will be your starting position.\n\nWith the leg extended and the heel off of the ground, pull on the belt so that the foot is everted, with the outside of the foot being pulled towards you. Hold for 10-20 seconds, and then switch sides.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Posterior_Tibialis_Stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: posterior tibialis strap stretch does not clearly show prescribed eversion.",
+      "bounds": {
+        "x": 0,
+        "y": 319,
+        "width": 385,
+        "height": 321
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "db-power-clean",
@@ -94,14 +134,22 @@
       "guideText": "Stand with your feet slightly wider than shoulder width apart and toes pointing out slightly.\n\nSquat down and grasp bar with a closed, pronated grip. Your hands should be slightly wider than shoulder width apart outside knees with elbows fully extended.\n\nPlace the bar about 1 inch in front of your shins and over the balls of your feet.\n\nYour back should be flat or slightly arched, your chest held up and out and your shoulder blades should be retracted.\n\nKeep your head in a neutral position (in line with vertebral column and not tilted or rotated) with your eyes focused straight ahead. Inhale during this phase.\n\nLift the bar from the floor by forcefully extending the hips and the knees as you exhale. Tip: The upper torso should maintain the same angle. Do not bend at the waist yet and do not let the hips rise before the shoulders (this would have the effect of pushing the glutes in the air and stretching the hamstrings.\n\nKeep elbows fully extended with the head in a neutral position and the shoulders over the bar.\n\nAs the bar raises keep it as close to the shins as possible.\n\nAs the bar passes the knees, thrust your hips forward and slightly bend the knees to avoid locking them. Tip: At this point your thighs should be against the bar.\n\nKeep the back flat or slightly arched, elbows fully extended and your head neutral. Tip: You will hold your breath until the next phase.\n\nInhale and then forcefully and quickly extend your hips and knees and stand on your toes.\n\nKeep the bar as close to your body as possible. Tip: Your back should be flat with the elbows pointed out to the sides and your head in a neutral position. Also, keep your shoulders over the bar and arms straight as long as possible.\n\nWhen your lower body joints are fully extended, shrug the shoulders upward rapidly without letting the elbows flex yet. Exhale during this portion of the movement.\n\nAs the shoulders reach their highest elevation flex your elbows to begin pulling your body under the bar.\n\nContinue to pull the arms as high and as long as possible. Tip: Due to the explosive nature of this phase, your torso will be erect or with an arched back, your head will be tilted back slightly and your feet may lose contact with the floor.\n\nAfter the lower body has fully extended and the bar reaches near maximal height, pull your body under the bar and rotate the arms around and under the bar.\n\nSimultaneously, flex the hips and knees into a quarter squat position.\n\nOnce the arms are under the bar, inhale and then lift your elbows to position the upper arms parallel to the floor. Rack the bar across the front of your collar bones and front shoulder muscles.\n\nCatch the bar with an erect and tight torso, a neutral head position and flat feet. Exhale during this movement.\n\nStand up by extending the hips and knees to a fully erect position.\n\nLower the bar by gradually reducing the muscular tension of the arms to allow a controlled descent of the bar to the thighs. Inhale during this movement.\n\nSimultaneously flex the hips and knees to cushion the impact of the bar on the thighs.\n\nSquat down with the elbows fully extended until the bar touches the floor.\n\nStart over at Phase 1 and repeat for the recommended amount of repetitions.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Power_Clean.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed two-hand dumbbell plie squat, one palm/one kettlebell supported plyometric push-up starting pose, supine posterior pelvic tilt setup, pronated floor power-clean starting pull, bilateral lateral-raise power partial and two-hand tire loading onto stairs.",
+      "bounds": {
+        "x": 385,
+        "y": 319,
+        "width": 383,
+        "height": 321
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "db-power-clean-from-blocks",
@@ -110,14 +158,22 @@
       "guideText": "With a barbell on boxes of the desired height, take a grip just outside the legs. Lower your hips with the weight focused on the heels, back straight, head facing forward, chest up, with your shoulders just in front of the bar. This will be your starting position.\n\nBegin the first pull by driving through the heels, extending your knees. Your back angle should stay the same, and your arms should remain straight. As the bar approaches the mid-thigh position, begin extending through the hips.\n\nIn a jumping motion, accelerate by extending the hips, knees, and ankles, using speed to move the bar upward. There should be no need to actively pull through the arms to accelerate the weight. At the end of the second pull, the body should be fully extended, leaning slightly back, with the arms still extended.\n\nAs full extension is achieved, transition into the third pull by aggressively shrugging and flexing the arms with the elbows up and out. At peak extension, pull yourself under the bar far enough that it can be racked onto the shoulders, rotating your elbows under the bar as you do so. The bar should be racked onto the protracted shoulders, lightly touching the throat with the hands relaxed.\n\nImmediately recover by driving through the heels, keeping the torso upright and elbows up. Continue until you have risen to a standing position, and complete the repetition by returning the weight to the boxes.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Power_Clean_from_Blocks.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: power clean receiving position is deep squat with plates still resting on blocks, instead of partial catch clear of blocks.",
+      "bounds": {
+        "x": 768,
+        "y": 319,
+        "width": 384,
+        "height": 321
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "db-power-jerk",
@@ -126,14 +182,22 @@
       "guideText": "Standing with the weight racked on the front of the shoulders, begin with the dip. With your feet directly under your hips, flex the knees without moving the hips backward. Go down only slightly, and reverse direction as powerfully as possible.\n\nDrive through the heels create as much speed and force as possible, and be sure to move your head out of the way as the bar leaves the shoulders.\n\nAt this moment as the feet leave the floor, the feet must be placed into the receiving position as quickly as possible. In the brief moment the feet are not actively driving against the platform, the athletes effort to push the bar up will drive them down. The feet should be moved to a slightly wider stance, with the knees partially bent.\n\nReceive the bar with the arms locked out overhead.\n\nReturn to a standing position.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Power_Jerk.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: power jerk drawn as split-lunge receiving stance rather than wider parallel-foot partial squat.",
+      "bounds": {
+        "x": 1152,
+        "y": 319,
+        "width": 384,
+        "height": 321
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "db-power-partials",
@@ -142,14 +206,22 @@
       "guideText": "Stand up with your torso upright and a dumbbell on each hand being held at arms length. The elbows should be close to the torso.\n\nThe palms of the hands should be facing your torso. Your feet should be about shoulder width apart. This will be your starting position.\n\nKeeping your arms straight and the torso stationary, lift the weights out to your sides until they are about shoulder level height while exhaling.\n\nFeel the contraction for a second and begin to lower the weights back down to the starting position while inhaling. Tip: Keep the palms facing down with the little finger slightly higher while lifting and lowering the weights as it will concentrate the stress on your shoulders mainly.\n\nRepeat for the recommended amount of repetitions.",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Power_Partials.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed two-hand dumbbell plie squat, one palm/one kettlebell supported plyometric push-up starting pose, supine posterior pelvic tilt setup, pronated floor power-clean starting pull, bilateral lateral-raise power partial and two-hand tire loading onto stairs.",
+      "bounds": {
+        "x": 0,
+        "y": 640,
+        "width": 385,
+        "height": 384
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "db-power-snatch",
@@ -158,14 +230,22 @@
       "guideText": "Begin with a loaded barbell on the floor. The bar should be close to or touching the shins, and a wide grip should be taken on the bar. The feet should be directly below the hips, with the feet turned out as needed. Lower the hips, with the chest up and the head looking forward. The shoulders should be just in front of the bar. This will be the starting position.\n\nBegin the first pull by driving through the front of the heels, raising the bar from the ground. The back angle should stay the same until the bar passes the knees.\n\nTransition into the second pull by extending through the hips knees and ankles, driving the bar up as quickly as possible. The bar should be close to the body. At peak extension, shrug the shoulders and allow the elbows to flex to the side.\n\nAs you move your feet into the receiving position, a slightly wider position, pull yourself below the bar as you elevate the bar overhead. The bar should be received in a partial squat. Continue raising the bar to the overhead position, receiving the bar locked out overhead.\n\nReturn to a standing position with the weight over head.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Power_Snatch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: power snatch needs partial receiving squat; illustration is deep full squat.",
+      "bounds": {
+        "x": 385,
+        "y": 640,
+        "width": 383,
+        "height": 384
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "db-power-snatch-from-blocks",
@@ -174,14 +254,22 @@
       "guideText": "Begin with a loaded barbell on boxes or stands of the desired height. A wide grip should be taken on the bar. The feet should be directly below the hips, with the feet turned out as needed. Lower the hips, with the chest up and the head looking forward. The shoulders should be just in front of the bar, with the elbows pointed out. This will be the starting position.\n\nBegin the first pull by driving through the front of the heels, raising the bar from the boxes.\n\nTransition into the second pull by extending through the hips knees and ankles, driving the bar up as quickly as possible. The bar should be close to the body. At peak extension, shrug the shoulders and allow the elbows to flex to the side.\n\nAs you move your feet into the receiving position, forcefully pull yourself below the bar as you elevate the bar overhead. The feet should move to just outside the hips, turned out as necessary. Receive the bar above a full squat and with the arms fully extended overhead.\n\nKeeping the bar aligned over the front of the heels, your head and chest up, drive through heels of the feet to move to a standing position. Carefully return the weight to the boxes.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Power_Snatch_from_Blocks.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: power snatch from blocks drawn deep under bar resting on upright stands; requires partial catch clear of starting blocks.",
+      "bounds": {
+        "x": 768,
+        "y": 640,
+        "width": 384,
+        "height": 384
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "db-power-stairs",
@@ -190,14 +278,22 @@
       "guideText": "In the power stairs, implements are moved up a staircase. For training purposes, these can be performed with a tire or box.\n\nBegin by taking the implement with both hands. Set your feet wide, with your head and chest up. Drive through the ground with your heels, extending your knees and hips to raise the weight from the ground.\n\nAs you lean back, attempt to swing the weight onto the stairs, which are usually around 16-18\" high. You can use your legs to help push the weight onto the stair.\n\nRepeat for 3-5 repetitions, and continue with a heavier weight, moving as fast as possible.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Power_Stairs.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed two-hand dumbbell plie squat, one palm/one kettlebell supported plyometric push-up starting pose, supine posterior pelvic tilt setup, pronated floor power-clean starting pull, bilateral lateral-raise power partial and two-hand tire loading onto stairs.",
+      "bounds": {
+        "x": 1152,
+        "y": 640,
+        "width": 384,
+        "height": 384
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-3f6b4d34-6bd3-4539-9e93-b145308aae77.png",

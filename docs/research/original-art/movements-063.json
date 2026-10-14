@@ -13,7 +13,7 @@
       "guideText": "* Set security pins to about the height of your sticking point * Lower the bar, rest on the pins for 2s keeping tension * Stand up with maximum force",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1437/view/",
@@ -21,7 +21,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected borderless panel gutters and complete subject positions; row boundaries 342 and 703."
     },
     {
       "id": "db-piriformis-smr",
@@ -30,14 +38,22 @@
       "guideText": "Sit with your buttocks on top of a foam roll. Bend your knees, and then cross one leg so that the ankle is over the knee. This will be your starting position.\n\nShift your weight to the side of the crossed leg, rolling over the buttocks until you feel tension in your upper glute. You may assist the stretch by using one hand to pull the bent knee towards your chest. Hold this position for 10-30 seconds, and then switch sides.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Piriformis-SMR.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected borderless panel gutters and complete subject positions; row boundaries 342 and 703."
     },
     {
       "id": "wger-fe04cf35-1af5-4b51-89d4-c38d7eaa0db1",
@@ -46,7 +62,7 @@
       "guideText": "1. Stand with feet hip-width apart, toes pointed forward, and chest tall. 2. Extend your leg straight out; extend both arms in front of you, at shoulder level. Brace your core and look straight ahead. 3. Slowly squat down. 4. (optional) pause at the bottom. Keep your (free) leg and arms extended for the whole duration.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/456/view/",
@@ -54,7 +70,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected borderless panel gutters and complete subject positions; row boundaries 342 and 703."
     },
     {
       "id": "wger-81c6b9ef-7cb7-4328-8cb4-47ae8ecc42be",
@@ -63,7 +87,7 @@
       "guideText": "La planche latérale dynamique implique de se placer sur le côté, en appui sur un coude et le côté du pied, puis de basculer les hanches de haut en bas tout en maintenant une ligne droite du corps.",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1288/view/",
@@ -71,7 +95,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide.",
+      "bounds": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 342
+      },
+      "cropReviewNote": "Inspected borderless panel gutters and complete subject positions; row boundaries 342 and 703."
     },
     {
       "id": "wger-a82944ae-24f4-4f7a-8aac-af251f6907e5",
@@ -80,7 +112,7 @@
       "guideText": "A straight-arm calisthenics static hold where you assume a plank position and lean the shoulders as far forward as possible past the wrists with protracted scapulae and a hollow body.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2532/view/",
@@ -88,7 +120,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: planche lean shoulders are not clearly forward past wrists; regenerate pronounced forward lean.",
+      "bounds": {
+        "x": 0,
+        "y": 342,
+        "width": 384,
+        "height": 361
+      },
+      "cropReviewNote": "Inspected borderless panel gutters and complete subject positions; row boundaries 342 and 703."
     },
     {
       "id": "db-plank",
@@ -97,14 +137,22 @@
       "guideText": "Get into a prone position on the floor, supporting your weight on your toes and your forearms. Your arms are bent and directly below the shoulder.\n\nKeep your body straight at all times, and hold this position as long as possible. To increase difficulty, an arm or leg can be raised.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Plank.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide.",
+      "bounds": {
+        "x": 384,
+        "y": 342,
+        "width": 384,
+        "height": 361
+      },
+      "cropReviewNote": "Inspected borderless panel gutters and complete subject positions; row boundaries 342 and 703."
     },
     {
       "id": "wger-12418067-6cb5-44db-8973-b5be25c0146b",
@@ -113,7 +161,7 @@
       "guideText": "Position your body in plank position, keeping your eyes on the ground. Raise one arm in front of you and return it. Repeat with the other arm. Raise and return slowly while keeping your body as still as possible.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1766/view/",
@@ -121,7 +169,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide.",
+      "bounds": {
+        "x": 768,
+        "y": 342,
+        "width": 384,
+        "height": 361
+      },
+      "cropReviewNote": "Inspected borderless panel gutters and complete subject positions; row boundaries 342 and 703."
     },
     {
       "id": "wger-75d730d0-3b26-4a25-8f1a-7119a98e02ef",
@@ -130,7 +186,7 @@
       "guideText": "In the correct plank position, place your feet slightly wider than shoulder-width apart. alternately lift and touch the opposite shoulder with one hand.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1091/view/",
@@ -138,7 +194,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide.",
+      "bounds": {
+        "x": 1152,
+        "y": 342,
+        "width": 384,
+        "height": 361
+      },
+      "cropReviewNote": "Inspected borderless panel gutters and complete subject positions; row boundaries 342 and 703."
     },
     {
       "id": "wger-e75629ed-4991-4a48-984c-b297f3f9fb58",
@@ -147,7 +211,7 @@
       "guideText": "The Plank-to-Elbow Extension is a dynamic exercise that combines the plank with an elbow extension movement",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1406/view/",
@@ -155,7 +219,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide.",
+      "bounds": {
+        "x": 0,
+        "y": 703,
+        "width": 384,
+        "height": 321
+      },
+      "cropReviewNote": "Inspected borderless panel gutters and complete subject positions; row boundaries 342 and 703."
     },
     {
       "id": "wger-f397656d-6f26-47c6-9e4c-221687f3f2fa",
@@ -164,7 +236,7 @@
       "guideText": "This stretch is for the ankles, as well as Tibialis anterior.",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1275/view/",
@@ -172,7 +244,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: plantarflexion ankle stretch shown as toes-pulled-up dorsiflexion.",
+      "bounds": {
+        "x": 384,
+        "y": 703,
+        "width": 384,
+        "height": 321
+      },
+      "cropReviewNote": "Inspected borderless panel gutters and complete subject positions; row boundaries 342 and 703."
     },
     {
       "id": "db-plate-twist",
@@ -181,14 +261,22 @@
       "guideText": "Lie down on the floor or an exercise mat with your legs fully extended and your upper body upright. Grab the plate by its sides with both hands out in front of your abdominals with your arms slightly bent.\n\nSlowly cross your legs near your ankles and lift them up off the ground. Your knees should also be bent slightly. Note: Move your upper body back slightly to help keep you balanced turning this exercise. This is the starting position.\n\nMove the plate to the left side and touch the floor with it. Breathe out as you perform that movement.\n\nCome back to the starting position as you breathe in and then repeat the movement but this time to the right side of the body. Tip: Use a slow controlled movement at all times. Jerking motions can injure the back.\n\nRepeat for the recommended amount of repetitions.",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Plate_Twist.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide.",
+      "bounds": {
+        "x": 768,
+        "y": 703,
+        "width": 384,
+        "height": 321
+      },
+      "cropReviewNote": "Inspected borderless panel gutters and complete subject positions; row boundaries 342 and 703."
     },
     {
       "id": "db-platform-hamstring-slides",
@@ -197,14 +285,22 @@
       "guideText": "For this movement a wooden floor or similar is needed. Lay on your back with your legs extended. Place a gym towel or a light weight underneath your heel. This will be your starting position.\n\nBegin the movement by flexing the knee, keeping your other leg straight.\n\nContinue bringing the heel closer to you, sliding it on the floor.\n\nAt full knee flexion, reverse the movement to return to the starting position.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Platform_Hamstring_Slides.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide.",
+      "bounds": {
+        "x": 1152,
+        "y": 703,
+        "width": 384,
+        "height": 321
+      },
+      "cropReviewNote": "Inspected borderless panel gutters and complete subject positions; row boundaries 342 and 703."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-a8a7c511-7164-4060-8c34-e271cdc3ab96.png",

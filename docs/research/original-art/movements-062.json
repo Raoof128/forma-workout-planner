@@ -13,7 +13,7 @@
       "guideText": "Hack Squats but with a 1-2s pause at the bottom of the movement. This makes sure that there is no more elastic energy stored in the muscles.",
       "column": 0,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1464/view/",
@@ -21,7 +21,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: paused hack squat shown as ordinary unweighted squat, with neither hack apparatus nor barbell hack setup.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 328
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "wger-a4c97a23-f044-4095-a041-94d92ffe44bd",
@@ -30,7 +38,7 @@
       "guideText": "Use the same technic as your normal squat. Except that you make a pause at the bottom of the squat for about 1-2 seconds, in other words a bit longer than your normal squat.",
       "column": 1,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/2662/view/",
@@ -38,7 +46,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed paused rear-rack squat, supine bridge phase after pelvic tilt, side lower-leg roller with hips lifted, upper-back ball-supported hip bridge and bent-arm pike push-up.",
+      "bounds": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 328
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "db-pelvic-tilt-into-bridge",
@@ -47,14 +63,22 @@
       "guideText": "Lie down with your feet on the floor, heels directly under your knees.\n\nLift only your tailbone to the ceiling to stretch your lower back. (Don't lift the entire spine yet.) Pull in your stomach.\n\nTo go into a bridge, lift the entire spine except the neck.",
       "column": 2,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Pelvic_Tilt_Into_Bridge.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed paused rear-rack squat, supine bridge phase after pelvic tilt, side lower-leg roller with hips lifted, upper-back ball-supported hip bridge and bent-arm pike push-up.",
+      "bounds": {
+        "x": 768,
+        "y": 0,
+        "width": 385,
+        "height": 328
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "wger-748e9635-7958-4a41-b1ed-93de74c7ef72",
@@ -63,7 +87,7 @@
       "guideText": "Back excercise with a barbell with a starting position which is in a bent over position with the back paralell to the ground. The barbell is on the ground at chest level.For the movement grab the barbell at shoulder width grip and pull towards your chest without losing the bent over position and without moving anything but your arms",
       "column": 3,
       "row": 0,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/448/view/",
@@ -71,7 +95,15 @@
         "license": "CC-BY-SA 3",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: Pendlay row requires horizontal back; illustration torso is too upright.",
+      "bounds": {
+        "x": 1153,
+        "y": 0,
+        "width": 383,
+        "height": 328
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "db-peroneals-stretch",
@@ -80,14 +112,22 @@
       "guideText": "In a seated position, loop a belt, rope, or band around one foot. This will be your starting position.\n\nWith the leg extended and the heel off of the ground, pull on the belt so that the foot is inverted, with the inside of the foot being pulled towards you. Hold for 10-20 seconds, and then switch sides.",
       "column": 0,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Peroneals_Stretch.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: peroneal strap stretch does not clearly establish foot inversion instead of ordinary dorsiflexion.",
+      "bounds": {
+        "x": 0,
+        "y": 328,
+        "width": 384,
+        "height": 325
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "db-peroneals-smr",
@@ -96,14 +136,22 @@
       "guideText": "Lay on your side, supporting your weight on your forearm and on a foam roller placed on the outside of your lower leg. Your upper leg can either be on top of your lower leg, or you can cross it in front of you. This will be your starting position.\n\nRaise your hips off of the ground and begin to roll from below the knee to above the ankle on the side of your leg, pausing at points of tension for 10-30 seconds. Repeat on the other leg.",
       "column": 1,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Peroneals-SMR.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed paused rear-rack squat, supine bridge phase after pelvic tilt, side lower-leg roller with hips lifted, upper-back ball-supported hip bridge and bent-arm pike push-up.",
+      "bounds": {
+        "x": 384,
+        "y": 328,
+        "width": 384,
+        "height": 325
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "wger-7ae1aca7-cdd4-4a81-b22c-f31778462b6b",
@@ -112,7 +160,7 @@
       "guideText": "Using a landmine attachment with the barbell running at 90 degrees to either side, hinge slightly at the hips and grip the barbell by the plate sleeve. Raise the barbell to chest height, with your upper arm parallel to the floor at the top of the movement.",
       "column": 2,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1580/view/",
@@ -120,7 +168,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: perpendicular unilateral landmine row shows two hands on bar and an along-bar stance.",
+      "bounds": {
+        "x": 768,
+        "y": 328,
+        "width": 385,
+        "height": 325
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "db-physioball-hip-bridge",
@@ -129,14 +185,22 @@
       "guideText": "Lay on a ball so that your upper back is on the ball with your hips unsupported. Both feet should be flat on the floor, hip width apart or wider. This will be your starting position.\n\nBegin by extending the hips using your glutes and hamstrings, raising your hips upward as you bridge.\n\nPause at the top of the motion and return to the starting position.",
       "column": 3,
       "row": 1,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Physioball_Hip_Bridge.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Reviewed paused rear-rack squat, supine bridge phase after pelvic tilt, side lower-leg roller with hips lifted, upper-back ball-supported hip bridge and bent-arm pike push-up.",
+      "bounds": {
+        "x": 1153,
+        "y": 328,
+        "width": 383,
+        "height": 325
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "wger-3b96a05b-9705-48da-b43e-6e098234bb35",
@@ -145,7 +209,7 @@
       "guideText": "Push Up performed from a pike position (optional to have feet elevated).",
       "column": 0,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "accepted",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/454/view/",
@@ -153,7 +217,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Reviewed paused rear-rack squat, supine bridge phase after pelvic tilt, side lower-leg roller with hips lifted, upper-back ball-supported hip bridge and bent-arm pike push-up.",
+      "bounds": {
+        "x": 0,
+        "y": 653,
+        "width": 384,
+        "height": 371
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "wger-abd2854b-114a-4584-8746-30bd40127863",
@@ -162,7 +234,7 @@
       "guideText": "* Set security pins to about the height of your sticking point * Lower the bar, rest on the pins for 1s while holding tension * Move bar up with maximum force",
       "column": 1,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1436/view/",
@@ -170,7 +242,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: pin bench illustration does not clearly establish horizontal safety-pin support.",
+      "bounds": {
+        "x": 384,
+        "y": 653,
+        "width": 384,
+        "height": 371
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "wger-a33ba0c7-1680-4e42-a84e-aecc18c5d75b",
@@ -179,7 +259,7 @@
       "guideText": "* Set security pins to the height of your lower chin * Rest bar on pins keeping tension * Raise bar over head",
       "column": 2,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "wger",
         "url": "https://wger.de/en/exercise/1439/view/",
@@ -187,7 +267,15 @@
         "license": "CC-BY-SA 4",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
         "modified": "HTML removed; taxonomy and measurement labels normalized"
-      }
+      },
+      "reviewNote": "Hold: pin overhead press depicts unsupported bar/J-hook setup instead of chin-height safety pins.",
+      "bounds": {
+        "x": 768,
+        "y": 653,
+        "width": 385,
+        "height": 371
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     },
     {
       "id": "db-pin-presses",
@@ -196,14 +284,22 @@
       "guideText": "Pin presses remove the eccentric phase of the bench press, developing starting strength. They also allow you to train a desired range of motion.\n\nThe bench should be set up in a power rack. Set the pins to the desired point in your range of motion, whether it just be lockout or an inch off of your chest. The bar should be moved to the pins and prepared for lifting.\n\nBegin by lying on the bench, with the bar directly above the contact point during your regular bench. Tuck your feet underneath you and arch your back. Using the bar to help support your weight, lift your shoulder off the bench and retract them, squeezing the shoulder blades together. Use your feet to drive your traps into the bench. Maintain this tight body position throughout the movement.\n\nYou can take a standard bench grip, or shoulder width to focus on the triceps. The bar, wrist, and elbow should stay in line at all times. Focus on squeezing the bar and trying to pull it apart.\n\nDrive the bar up with as much force as possible. The elbows should be tucked in until lockout.\n\nReturn the bar to the pins, pausing before beginning the next repetition.",
       "column": 3,
       "row": 2,
-      "reviewStatus": "pending",
+      "reviewStatus": "held",
       "guideSource": {
         "title": "Free Exercise DB",
         "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Pin_Presses.json",
         "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
         "license": "Unlicense",
         "licenseUrl": "https://unlicense.org/"
-      }
+      },
+      "reviewNote": "Hold: pin press illustration does not clearly distinguish pins from standard unrack hooks.",
+      "bounds": {
+        "x": 1153,
+        "y": 653,
+        "width": 383,
+        "height": 371
+      },
+      "cropReviewNote": "Inspected source separator pixels and actual panel bounds."
     }
   ],
   "sourceGeneratedPath": "/workspace/generated_images/exec-ba27723d-fce6-45e3-832c-eeb674990ebb.png",
