@@ -57,6 +57,24 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-14 — Full artwork coverage and whole-site sweep
+
+- All 1,414 selectable exercises have reviewed original artwork. Strict coverage
+  passed and checkpoint `0f8bc3c` was pushed before starting the site review.
+- Owner requests a whole-site desktop/mobile sweep using current official
+  documentation and original photos where needed. Evidence and final results
+  belong in `docs/qa/site-sweep`; preserve sources, prompts and review decisions
+  in `assets/site-visuals` and `docs/research/site-visuals`.
+- Compact WebP previews must preserve reviewed atlas proportions; full guides
+  retain original PNGs. Keep provenance in the original registry and verify
+  runtime metadata and derivative hashes against it. Preview regeneration needs
+  FFmpeg with libwebp; ordinary builds consume committed previews.
+- Legal contents links transfer keyboard focus to headings and honor reduced
+  motion. Account import retains its native file input with visible focus.
+- Test service credentials are synthetic and stay in ignored local scratch.
+  Account checks use disposable database schemas and an in-memory email sink;
+  never redirect them to live member data. No deployment is authorized here.
+
 ### Raouf: 2026-10-14 — Cloud crash recovery and pushed checkpoints
 
 - On resume, fetch origin and compare coverage before generating: the restored

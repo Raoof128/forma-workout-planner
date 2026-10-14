@@ -84,3 +84,47 @@ test("legal pages open directly by URL and fit a phone screen", async ({
     expect(overflow).toBe(false);
   }
 });
+
+for (const document of documents) {
+  test(`${document.title} contents moves keyboard focus to the selected section`, async ({
+    page,
+  }) => {
+    await page.goto(`/#${document.hash}`);
+    const section = document.sections.at(-1);
+    const link = page
+      .getByRole("navigation", { name: `${document.title} contents` })
+      .getByRole("link", { name: section, exact: true });
+    await link.focus();
+    await page.keyboard.press("Enter");
+    await expect(
+      page.getByRole("heading", { level: 2, name: section, exact: true }),
+    ).toBeFocused();
+    await expect(page).toHaveURL(new RegExp(`#${document.hash}$`));
+  });
+}
+
+test("legal contents avoids animated scrolling when reduced motion is requested", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/#privacy");
+  await page.evaluate(() => {
+    window.legalScrollCalls = [];
+    const scroll = Element.prototype.scrollIntoView;
+    Element.prototype.scrollIntoView = function (options) {
+      window.legalScrollCalls.push(options);
+      return scroll.call(this, options);
+    };
+  });
+  const link = page
+    .getByRole("navigation", { name: "Privacy Policy contents" })
+    .getByRole("link", { name: "Complaints", exact: true });
+  await link.focus();
+  await page.keyboard.press("Enter");
+  await expect
+    .poll(() => page.evaluate(() => window.legalScrollCalls.at(-1)?.behavior))
+    .toBe("auto");
+  await expect(
+    page.getByRole("heading", { level: 2, name: "Complaints", exact: true }),
+  ).toBeFocused();
+});

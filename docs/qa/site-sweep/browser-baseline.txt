@@ -1,0 +1,293 @@
+
+Running 94 tests using 2 workers
+
+(node:8768) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:8769) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [chromium] › tests/catalog-alias-editor.spec.js:3:1 › removing and restoring a canonical group preserves all historical alias prescriptions (10.1s)
+  ✓   3 [chromium] › tests/catalog-quality.spec.js:4:1 › library synonyms share one representative and machine filters expose corrected stations (6.4s)
+  ✓   4 [chromium] › tests/catalog-quality.spec.js:25:1 › new fan-bike guide and routine selection use real cardio units (9.3s)
+  ✘   1 [chromium] › tests/accessibility.spec.js:8:3 › accessible pages and dialogs at 1536px (38.7s)
+  ✓   5 [chromium] › tests/catalog-quality.spec.js:62:1 › a saved duplicate ID keeps its name, measurements and guide after canonicalization (22.2s)
+(node:9189) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [chromium] › tests/catalog.spec.js:3:1 › public guest workspace offers working backups rather than unavailable account forms (4.3s)
+  ✓   8 [chromium] › tests/catalog.spec.js:20:1 › expanded exercise library searches all pages and loads source-attributed full guides (10.2s)
+  ✓   9 [chromium] › tests/catalog.spec.js:40:1 › cardio templates log time and distance, persist history and allow measurement correction (11.3s)
+  ✓   7 [chromium] › tests/accessibility.spec.js:8:3 › accessible pages and dialogs at 390px (29.0s)
+  ✓  10 [chromium] › tests/exercise-media.spec.js:16:1 › machine equipment references do not replace free-weight exercise poses (9.7s)
+  ✓  11 [chromium] › tests/legal.spec.js:35:3 › Privacy Policy is reachable, complete, and accessible (9.3s)
+  ✓  12 [chromium] › tests/exercise-media.spec.js:37:1 › original equipment illustration loads locally and the guide remains keyboard accessible (8.4s)
+  ✓  13 [chromium] › tests/legal.spec.js:35:3 › Terms of Use is reachable, complete, and accessible (8.2s)
+  ✓  14 [chromium] › tests/exercise-media.spec.js:61:1 › failed image delivery does not leave a permanent loader or hide exercise instructions (10.0s)
+  ✓  15 [chromium] › tests/legal.spec.js:70:1 › legal pages open directly by URL and fit a phone screen (6.5s)
+  ✓  17 [chromium] › tests/navigation-release.spec.js:3:1 › a hash change between first render and listener setup selects the current URL (11.1s)
+  ✓  16 [chromium] › tests/exercise-media.spec.js:74:1 › uneven atlas rows keep the complete EZ-bar curl pose inside the guide (14.1s)
+  ✓  19 [chromium] › tests/persistence.spec.js:5:1 › rejected Web Locks keep the app usable without unhandled errors (10.9s)
+  ✓  18 [chromium] › tests/persistence-release.spec.js:21:1 › a valid backup reviewed before another tab saves is rejected without replacing current data (12.8s)
+  ✓  20 [chromium] › tests/persistence.spec.js:30:1 › missing secure-context UUID and locks still permit temporary routines and workouts (11.1s)
+  ✓  21 [chromium] › tests/persistence-release.spec.js:62:1 › corrupt-data recovery refuses to replace a newer restore from another tab (16.2s)
+  ✓  22 [chromium] › tests/persistence.spec.js:55:1 › restore after quota recovery preserves temporary edits and saved originals (9.1s)
+  ✓  23 [chromium] › tests/persistence-release.spec.js:126:1 › the latest selected backup keeps its preview when an earlier file read finishes later (11.9s)
+  ✓  24 [chromium] › tests/persistence.spec.js:97:1 › starting stale routine details cannot silently use old prescriptions (14.4s)
+  ✓  25 [chromium] › tests/persistence-release.spec.js:177:1 › a late invalid import cannot clear the latest valid backup or add its error (9.8s)
+  ✓  26 [chromium] › tests/persistence.spec.js:129:1 › fractional imported weights can be corrected and a future rest timer can pause (14.3s)
+  ✓  27 [chromium] › tests/regressions.spec.js:52:1 › concurrent tabs preserve independent edits and merge session fields (18.2s)
+  ✓  29 [chromium] › tests/regressions.spec.js:89:1 › stale routine drafts cannot overwrite newer tab changes (19.6s)
+  ✓  28 [chromium] › tests/persistence.spec.js:188:1 › repeated concurrent profile and session writes preserve both fields (30.1s)
+  ✓  30 [chromium] › tests/regressions.spec.js:111:3 › invalid JSON is preserved and recoverable (12.6s)
+  ✓  32 [chromium] › tests/regressions.spec.js:111:3 › invalid nested shape is preserved and recoverable (7.9s)
+  ✓  31 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 320px (18.2s)
+  ✓  33 [chromium] › tests/regressions.spec.js:111:3 › unknown exercise is preserved and recoverable (9.3s)
+  ✓  35 [chromium] › tests/regressions.spec.js:144:1 › denied storage stays usable and accurately reports temporary data (15.6s)
+  ✓  34 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 375px (24.9s)
+  ✓  36 [chromium] › tests/regressions.spec.js:171:1 › rest duration, running deadline and paused state survive routes and reload (16.5s)
+  ✓  37 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 390px (19.9s)
+  ✓  38 [chromium] › tests/regressions.spec.js:200:1 › finish dialog traps keyboard focus and does not reset it on timer ticks (11.4s)
+  ✓  40 [chromium] › tests/regressions.spec.js:229:1 › mobile drawer keeps hidden controls out of tab order and traps open navigation (5.8s)
+  ✓  39 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 540px (16.2s)
+  ✓  42 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 768px (15.3s)
+  ✘  41 [chromium] › tests/regressions.spec.js:261:1 › dirty routine changes are retained and duration and prescriptions are preserved (31.1s)
+  ✓  43 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 1024px (15.3s)
+(node:10958) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  45 [chromium] › tests/regressions.spec.js:297:1 › hero names the active routine and starting another asks which session to keep (13.2s)
+  ✓  44 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 1440px (23.8s)
+  ✓  46 [chromium] › tests/regressions.spec.js:314:1 › maximum length title keeps its start button inside the hero (13.1s)
+  ✓  48 [chromium] › tests/regressions.spec.js:334:1 › weekly bars use actual counts and eight progress bars fit 320px (9.3s)
+  ✓  47 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 1536px (23.3s)
+  ✓  49 [chromium] › tests/regressions.spec.js:368:1 › backup validation and export/import round trip preserve data (26.4s)
+  ✓  50 [chromium] › tests/responsive.spec.js:80:3 › all screens and editing dialogs contain maximum content at 1920px (27.3s)
+  ✓  51 [chromium] › tests/regressions.spec.js:403:1 › history correction and deletion recalculate progress; one rep uses actual load (12.8s)
+  ✓  52 [chromium] › tests/responsive.spec.js:130:1 › short landscape drawer can reach settings and return focus (7.1s)
+  ✓  53 [chromium] › tests/regressions.spec.js:434:1 › hash navigation supports bookmarks and browser Back (13.1s)
+  ✓  54 [chromium] › tests/responsive.spec.js:142:1 › routine picker explains no matches and empty overview offers creation (12.6s)
+  ✓  56 [chromium] › tests/responsive.spec.js:156:1 › local fonts load without a third-party font service and motion preference is respected (5.1s)
+  ✓  57 [chromium] › tests/responsive.spec.js:182:1 › history stays chronological after an unordered backup (9.1s)
+  ✓  55 [chromium] › tests/regressions.spec.js:447:1 › finishing in one tab and updating preferences in another preserves both saves (18.4s)
+  ✓  58 [chromium] › tests/responsive.spec.js:201:1 › imported timestamps with mixed precision sort by time (16.2s)
+  ✓  60 [chromium] › tests/security-release.spec.js:13:1 › malformed import reports failure and leaves the current workspace untouched (5.0s)
+  ✓  59 [chromium] › tests/regressions.spec.js:473:1 › mobile rest controls stay reachable and expose instructions during logging (25.8s)
+  ✓  61 [chromium] › tests/security-release.spec.js:35:1 › dangerous imported text stays literal and application assets make no external requests (11.9s)
+  ✓  63 [chromium] › tests/security-release.spec.js:117:1 › export failure is surfaced to the user (5.2s)
+  ✓  62 [chromium] › tests/regressions.spec.js:518:1 › fast typing persists complete values and a valid backup restores from recovery (22.5s)
+  ✓  64 [chromium] › tests/ui-controls.spec.js:22:1 › calendar navigation selects weeks and schedule saves only after confirmation (22.8s)
+  ✓  65 [chromium] › tests/regressions.spec.js:552:1 › a storage read failure preserves the current session for export (24.4s)
+  ✓  67 [chromium] › tests/regressions.spec.js:589:1 › recovery distinguishes an invalid backup from a failed storage write (8.7s)
+  ✓  66 [chromium] › tests/ui-controls.spec.js:94:1 › routine prescriptions reorder and delete confirmation preserves or removes the selected routine (27.4s)
+  ✓  68 [chromium] › tests/ui-coverage-gaps.spec.js:45:1 › skip link, desktop brand, profile shortcut and active session navigation reach their targets (13.2s)
+  ✓  69 [chromium] › tests/ui-controls.spec.js:175:1 › dirty routine editor keeps drafts on cancel and discards only after confirmation (15.8s)
+  ✓  70 [chromium] › tests/ui-coverage-gaps.spec.js:101:1 › preferred next routine updates the overview start target and creates that active session (16.8s)
+  ✓  71 [chromium] › tests/ui-controls.spec.js:207:1 › library search, muscle and equipment filters compose and guide closes with keyboard (14.7s)
+  ✓  72 [chromium] › tests/ui-coverage-gaps.spec.js:153:1 › schedule opens from its overview banner and a clean close leaves the schedule unchanged (11.1s)
+  ✓  73 [chromium] › tests/ui-controls.spec.js:255:1 › profile name and weekly goal enforce their UI bounds and persist selected targets (10.4s)
+  ✓  74 [chromium] › tests/ui-coverage-gaps.spec.js:177:1 › routine editor closes a clean draft directly and keeps invalid submissions open (13.9s)
+  ✓  75 [chromium] › tests/ui-controls.spec.js:283:1 › Settings backup restore can be cancelled or confirmed and changes persisted data (11.1s)
+  ✓  77 [chromium] › tests/ui-controls.spec.js:322:1 › recovery reset confirmation preserves the corrupt original until a confirmed reset (10.1s)
+  ✓  76 [chromium] › tests/ui-coverage-gaps.spec.js:212:1 › history editor retains notes on keep, rejects removing every completed set, and discards without saving (16.8s)
+  ✓  78 [chromium] › tests/ui-controls.spec.js:366:1 › navigation handles unknown hashes, forward and Back with page focus and title updates (7.8s)
+  ✓  80 [chromium] › tests/ui-controls.spec.js:394:1 › mobile navigation and shared guide dialog support focus return and keyboard trapping at 375px (13.9s)
+  ✓  79 [chromium] › tests/ui-coverage-gaps.spec.js:259:1 › empty overview, workout, history and progress calls to action start the default routine (23.8s)
+  ✓  81 [chromium] › tests/ui-controls.spec.js:446:1 › error fallback downloads saved data, reports denied storage and reloads the workspace (18.0s)
+  ✓  82 [chromium] › tests/ui-coverage-gaps.spec.js:301:1 › keeping a history workout after opening deletion leaves its details and saved data intact (17.0s)
+  ✓  84 [chromium] › tests/ui-coverage-gaps.spec.js:331:1 › routine detail closes cleanly and workout Back returns to overview with the session active (14.1s)
+  ✓  85 [chromium] › tests/ui-coverage-gaps.spec.js:377:1 › history detail closes by button and backdrop, restores row focus, and stays open for inside clicks (19.7s)
+  ✘  83 [chromium] › tests/workflows.spec.js:3:1 › personal training workflow persists routines, sessions and calculated progress (39.3s)
+(node:13215) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  86 [chromium] › tests/workout-release.spec.js:42:1 › set validation, completion undo, added sets, finish cancel and save preserve exact data (18.3s)
+  ✓  87 [chromium] › tests/workflows.spec.js:161:1 › mobile navigation, modal and active workout fit a phone (16.5s)
+  ✘  88 [chromium] › tests/workout-release.spec.js:154:1 › empty finish is blocked; discard can be canceled or confirmed; routine switch can resume, cancel, or replace (32.1s)
+(node:13487) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  89 [chromium] › tests/workout-release.spec.js:236:1 › 60, 90, and 120 second timers persist their deadlines and expiry clears timer state (14.3s)
+  ✓  90 [chromium] › tests/workout-release.spec.js:283:1 › real-time rest timer smoke decrements and survives a reload (20.2s)
+  ✓  91 [chromium] › tests/workout-release.spec.js:302:1 › bodyweight logging counts completed sets with zero external-load volume and survives reload (8.8s)
+  ✓  92 [chromium] › tests/workout-release.spec.js:371:1 › history editor discard keeps persisted data unchanged and stale edits are rejected (15.9s)
+  ✓  93 [chromium] › tests/workout-release.spec.js:438:1 › 2,000 completed workouts render correct aggregate progress within a practical bound (9.4s)
+  ✓  94 [chromium] › tests/workout-release.spec.js:488:1 › progress verifies 80 kg × 5 rounding, includes 12 reps, and excludes 13 (10.3s)
+
+
+  1) [chromium] › tests/accessibility.spec.js:8:3 › accessible pages and dialogs at 1536px ─────────
+
+    Test timeout of 30000ms exceeded.
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/dev/accessibility-accessible-pages-and-dialogs-at-1536px-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/dev/accessibility-accessible-pages-and-dialogs-at-1536px-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/dev/accessibility-accessible-pages-and-dialogs-at-1536px-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/dev/accessibility-accessible-pages-and-dialogs-at-1536px-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/regressions.spec.js:261:1 › dirty routine changes are retained and duration and prescriptions are preserved 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Browser logs:
+
+    <launching> /usr/bin/chromium --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-Uheu1r --remote-debugging-pipe --no-startup-window
+    <launched> pid=9242
+    [pid=9242][err] [9242:9272:1014/055419.467017:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+    [pid=9242][err] [9242:9272:1014/055419.467236:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+    [pid=9242][err] [9242:9272:1014/055419.491589:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+    [pid=9242][err] [9242:9272:1014/055419.491743:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+    [pid=9242][err] [9242:9272:1014/055419.491757:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+    [pid=9242][err] [9242:9272:1014/055419.798208:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+    [pid=9242][err] [9242:9242:1014/055420.055038:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+    [pid=9242][err] [9242:9272:1014/055420.058103:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+    [pid=9242][err] [9242:9242:1014/055420.059049:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+    [pid=9242][err] [9242:9272:1014/055420.059456:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+    [pid=9242][err] [9242:9242:1014/055420.103542:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+    [pid=9242][err] [9242:9272:1014/055420.107790:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+    [pid=9242][err] [9242:9242:1014/055420.144399:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+    [pid=9242][err] [9242:9242:1014/055420.144624:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+    [pid=9242][err] [9242:9272:1014/055420.144628:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+    [pid=9242][err] [9242:9272:1014/055420.144679:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+    [pid=9242][err] [9242:9272:1014/055420.144691:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+    [pid=9242][err] [9242:9242:1014/055420.155815:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+    [pid=9242][err] [9242:9242:1014/055420.169934:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.Properties.GetAll: object_path= /org/freedesktop/UPower/devices/DisplayDevice: unknown error type: 
+    [pid=9242][err] [9242:9242:1014/055420.170022:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+    [pid=9242][err] [9242:9272:1014/055420.170781:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+    [pid=9242][err] [9242:9242:1014/055420.215409:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+    [pid=9242][err] [9242:9272:1014/055420.221745:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+    [pid=9242][err] [9242:9242:1014/055420.228161:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+    [pid=9242][err] [9283:9298:1014/055603.532448:ERROR:components/viz/service/display/display.cc:271] Frame latency is negative: -0.118 ms
+    [pid=9242][err] [9242:9273:1014/055629.820088:ERROR:google_apis/gcm/engine/connection_handler_impl.cc:404] Received message of invalid type 84
+    [pid=9242][err] [9242:9273:1014/055629.820125:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:484] ConnectionHandler failed with net error: -4
+    [pid=9242][err] [9242:9273:1014/055629.885331:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+    [pid=9242][err] [9242:9273:1014/055652.169119:ERROR:google_apis/gcm/engine/connection_handler_impl.cc:404] Received message of invalid type 84
+    [pid=9242][err] [9242:9273:1014/055652.169143:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:484] ConnectionHandler failed with net error: -4
+    [pid=9242][err] [9242:9273:1014/055654.596084:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+    [pid=9242][err] Warning: vkCreateInstance: Found no drivers!
+    [pid=9242][err] Warning: vkCreateInstance failed with VK_ERROR_INCOMPATIBLE_DRIVER
+    [pid=9242][err]     at CheckVkSuccessImpl (../../third_party/dawn/src/dawn/native/vulkan/VulkanError.cpp:106)
+    [pid=9242][err] 
+    [pid=9242][err] [9242:9273:1014/055746.987440:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+    [pid=9242][err] [9242:9273:1014/055747.251435:ERROR:google_apis/gcm/engine/connection_handler_impl.cc:404] Received message of invalid type 84
+    [pid=9242][err] [9242:9273:1014/055747.251521:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:484] ConnectionHandler failed with net error: -4
+    [pid=9242] <gracefully close start>
+    Call log:
+      - waiting for getByLabel('Move Barbell bench press up', { exact: true })
+        - locator resolved to <button disabled type="button" class="icon-button" aria-label="Move Barbell bench press up">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+          - waiting 100ms
+        36 × waiting for element to be visible, enabled and stable
+           - element is not enabled
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+      285 |     page.getByLabel("Barbell bench press weight", { exact: true }),
+      286 |   ).toHaveValue("72.5");
+    > 287 |   await page.getByLabel("Move Barbell bench press up", { exact: true }).click();
+          |                                                                         ^
+      288 |   await nav(page, "Save routine");
+      289 |   await expect(page.getByRole("dialog")).toHaveCount(0);
+      290 |   const routine = (await stored(page)).routines[0];
+        at /workspace/forma-workout-planner/tests/regressions.spec.js:287:73
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/dev/regressions-dirty-routine--9104a-prescriptions-are-preserved-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/dev/regressions-dirty-routine--9104a-prescriptions-are-preserved-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/dev/regressions-dirty-routine--9104a-prescriptions-are-preserved-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/dev/regressions-dirty-routine--9104a-prescriptions-are-preserved-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/workflows.spec.js:3:1 › personal training workflow persists routines, sessions and calculated progress 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.history-row')
+        - locator resolved to <button class="history-row panel journal-row">…</button>
+      - attempting click action
+        - waiting for element to be visible, enabled and stable
+
+
+      122 |   await page.getByRole("button", { name: "Save workout", exact: true }).click();
+      123 |   await expect(page.locator(".history-row")).toHaveCount(1);
+    > 124 |   await page.locator(".history-row").click();
+          |                                      ^
+      125 |   await expect(
+      126 |     page.getByText("Felt strong today", { exact: true }),
+      127 |   ).toBeVisible();
+        at /workspace/forma-workout-planner/tests/workflows.spec.js:124:38
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/dev/workflows-personal-trainin-41e7d-ons-and-calculated-progress-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/dev/workflows-personal-trainin-41e7d-ons-and-calculated-progress-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/dev/workflows-personal-trainin-41e7d-ons-and-calculated-progress-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/dev/workflows-personal-trainin-41e7d-ons-and-calculated-progress-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/workout-release.spec.js:154:1 › empty finish is blocked; discard can be canceled or confirmed; routine switch can resume, cancel, or replace 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.routine-card').first()
+        - locator resolved to <button class="routine-card">…</button>
+
+
+      200 |   });
+      201 |   await seed(page, switching, "overview");
+    > 202 |   await page.locator(".routine-card").first().click();
+          |                                               ^
+      203 |   await page
+      204 |     .getByRole("button", { name: "Start workout", exact: true })
+      205 |     .click();
+        at /workspace/forma-workout-planner/tests/workout-release.spec.js:202:47
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/dev/workout-release-empty-fini-46f68-an-resume-cancel-or-replace-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/dev/workout-release-empty-fini-46f68-an-resume-cancel-or-replace-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/dev/workout-release-empty-fini-46f68-an-resume-cancel-or-replace-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/dev/workout-release-empty-fini-46f68-an-resume-cancel-or-replace-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [chromium] › tests/accessibility.spec.js:8:3 › accessible pages and dialogs at 1536px ──────────
+    [chromium] › tests/regressions.spec.js:261:1 › dirty routine changes are retained and duration and prescriptions are preserved 
+    [chromium] › tests/workflows.spec.js:3:1 › personal training workflow persists routines, sessions and calculated progress 
+    [chromium] › tests/workout-release.spec.js:154:1 › empty finish is blocked; discard can be canceled or confirmed; routine switch can resume, cancel, or replace 
+  90 passed (13.2m)

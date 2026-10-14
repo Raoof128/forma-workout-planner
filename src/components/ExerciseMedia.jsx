@@ -46,7 +46,7 @@ function MediaImage({ asset, name, compact }) {
               }
             : { opacity: status === "ready" ? 1 : 0 }
         }
-        src={asset.src}
+        src={compact ? (asset.preview?.src ?? asset.src) : asset.src}
         onLoad={() => setStatus("ready")}
         onError={() => setStatus("error")}
       />
@@ -69,12 +69,21 @@ function MediaImage({ asset, name, compact }) {
 
 export default function ExerciseMedia({ id, name, compact = false }) {
   const entry = media.exercises[id];
-  const asset = entry && media.assets[entry.assetId];
+  const storedAsset = entry && media.assets[entry.assetId];
+  const asset = storedAsset && {
+    ...storedAsset,
+    preview: media.previews?.[storedAsset.previewId],
+  };
   if (!asset) return null;
   if (compact)
     return (
       <span className="exercise-media-preview" aria-hidden="true">
-        <MediaImage key={asset.src} asset={asset} name={name} compact />
+        <MediaImage
+          key={asset.preview?.src ?? asset.src}
+          asset={asset}
+          name={name}
+          compact
+        />
       </span>
     );
   return (

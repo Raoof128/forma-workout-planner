@@ -1,0 +1,140 @@
+
+Running 4 tests using 1 worker
+
+(node:14092) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 work/a11y-regressions.spec.js:89:3 › Privacy Policy contents moves keyboard focus to the selected section (8.6s)
+(node:14433) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 work/a11y-regressions.spec.js:89:3 › Terms of Use contents moves keyboard focus to the selected section (8.1s)
+(node:14625) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 work/a11y-regressions.spec.js:106:1 › legal contents avoids animated scrolling when reduced motion is requested (7.5s)
+(node:14833) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 work/a11y-regressions.spec.js:135:1 › account import wrapper shows keyboard focus around its transparent file input (8.7s)
+
+
+  1) work/a11y-regressions.spec.js:89:3 › Privacy Policy contents moves keyboard focus to the selected section 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('heading', { name: 'Complaints', exact: true, level: 2 })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('heading', { name: 'Complaints', exact: true, level: 2 }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Complaints', exact: true, level: 2 })
+        12 × locator resolved to <h2 id="complaints">Complaints</h2>
+           - unexpected value "inactive"
+
+
+       99 |     await expect(
+      100 |       page.getByRole("heading", { level: 2, name: section, exact: true }),
+    > 101 |     ).toBeFocused();
+          |       ^
+      102 |     await expect(page).toHaveURL(new RegExp(`#${document.hash}$`));
+      103 |   });
+      104 | }
+        at /workspace/forma-workout-planner/work/a11y-regressions.spec.js:101:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/a11y-test-results/a11y-regressions-Privacy-P-3c5e8-cus-to-the-selected-section/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/a11y-test-results/a11y-regressions-Privacy-P-3c5e8-cus-to-the-selected-section/error-context.md
+
+  2) work/a11y-regressions.spec.js:89:3 › Terms of Use contents moves keyboard focus to the selected section 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('heading', { name: 'Governing law', exact: true, level: 2 })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('heading', { name: 'Governing law', exact: true, level: 2 }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Governing law', exact: true, level: 2 })
+        13 × locator resolved to <h2 id="governing-law">Governing law</h2>
+           - unexpected value "inactive"
+
+
+       99 |     await expect(
+      100 |       page.getByRole("heading", { level: 2, name: section, exact: true }),
+    > 101 |     ).toBeFocused();
+          |       ^
+      102 |     await expect(page).toHaveURL(new RegExp(`#${document.hash}$`));
+      103 |   });
+      104 | }
+        at /workspace/forma-workout-planner/work/a11y-regressions.spec.js:101:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/a11y-test-results/a11y-regressions-Terms-of--11026-cus-to-the-selected-section/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/a11y-test-results/a11y-regressions-Terms-of--11026-cus-to-the-selected-section/error-context.md
+
+  3) work/a11y-regressions.spec.js:106:1 › legal contents avoids animated scrolling when reduced motion is requested 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "auto"
+    Received: "smooth"
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      124 |   await expect
+      125 |     .poll(() => page.evaluate(() => window.legalScrollCalls.at(-1)?.behavior))
+    > 126 |     .toBe("auto");
+          |      ^
+      127 |   await expect(
+      128 |     page.getByRole("heading", { level: 2, name: "Complaints", exact: true }),
+      129 |   ).toBeFocused();
+        at /workspace/forma-workout-planner/work/a11y-regressions.spec.js:126:6
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/a11y-test-results/a11y-regressions-legal-con-b1945-reduced-motion-is-requested/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/a11y-test-results/a11y-regressions-legal-con-b1945-reduced-motion-is-requested/error-context.md
+
+  4) work/a11y-regressions.spec.js:135:1 › account import wrapper shows keyboard focus around its transparent file input 
+
+    Error: expect(locator).toHaveCSS(expected) failed
+
+    Locator:  locator('.account-import-label')
+    Expected: "solid"
+    Received: "none"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCSS" locator('.account-import-label') with timeout 5000ms
+      - waiting for locator('.account-import-label')
+        13 × locator resolved to <label class="account-secondary account-import-label">…</label>
+           - unexpected value "none"
+
+
+      151 |   await expect(input).toHaveCSS("opacity", "0");
+      152 |   const wrapper = page.locator(".account-import-label");
+    > 153 |   await expect(wrapper).toHaveCSS("outline-style", "solid");
+          |                         ^
+      154 |   await expect(wrapper).toHaveCSS("outline-width", "3px");
+      155 | });
+      156 |
+        at /workspace/forma-workout-planner/work/a11y-regressions.spec.js:153:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    work/a11y-test-results/a11y-regressions-account-i-c1d4f--its-transparent-file-input/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: work/a11y-test-results/a11y-regressions-account-i-c1d4f--its-transparent-file-input/error-context.md
+
+  4 failed
+    work/a11y-regressions.spec.js:89:3 › Privacy Policy contents moves keyboard focus to the selected section 
+    work/a11y-regressions.spec.js:89:3 › Terms of Use contents moves keyboard focus to the selected section 
+    work/a11y-regressions.spec.js:106:1 › legal contents avoids animated scrolling when reduced motion is requested 
+    work/a11y-regressions.spec.js:135:1 › account import wrapper shows keyboard focus around its transparent file input 

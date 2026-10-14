@@ -4,6 +4,21 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-14 — Complete artwork and whole-site review
+
+- Completed and pushed reviewed original illustrations for all 1,414 selectable
+  exercises, preserving historical identities and measurement units. Replaced
+  unusable movement sources with clearly attributed, independently authored
+  guides as requested; archived source text and review decisions.
+- Whole-site review covers desktop/mobile routes and workflows using current
+  React, Vite, MDN and WCAG documentation. Fixes add compact artwork previews,
+  keyboard focus and reduced-motion support for legal navigation, and visible
+  account backup-import focus. Exercise counts now use the singular when needed.
+- Original generated hero and routine photography replace images whose
+  redistribution terms were undocumented. Sources and prompts are preserved.
+  Validation is being completed in [the site review](docs/qa/site-sweep/README.md);
+  these changes have not been deployed.
+
 ### Raouf: 2026-10-14 — Roman-chair guide correction
 
 - Replaced a selectable save-error placeholder with a clear secured-foot

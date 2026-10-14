@@ -4,75 +4,78 @@ import { createRequire } from "node:module";
 import { initialData } from "../src/data.js";
 const require = createRequire(import.meta.url);
 const axePath = require.resolve("axe-core/axe.min.js");
+const routes = [
+  "overview",
+  "routines",
+  "library",
+  "workout",
+  "history",
+  "progress",
+  "settings",
+];
 for (const width of [1536, 390])
-  test(`accessible pages and dialogs at ${width}px`, async ({ page }) => {
-    await page.setViewportSize({ width, height: 1024 });
-    await page.goto("http://localhost:5173");
-    const data = structuredClone(initialData);
-    data.active = {
-      id: "a11y-session",
-      routineId: data.routines[0].id,
-      name: data.routines[0].name,
-      startedAt: Date.now() - 60000,
-      notes: "",
-      exercises: data.routines[0].exercises.map((e) => ({
-        exerciseId: e.exerciseId,
-        sets: [{ weight: e.weight, reps: e.reps, done: true }],
-      })),
-    };
-    data.history = [
-      {
-        ...data.active,
-        id: "a11y-history",
-        date: new Date().toISOString(),
-        duration: 60,
-      },
-    ];
-    await page.evaluate(
-      (data) => localStorage.setItem("forma-v1", JSON.stringify(data)),
-      data,
-    );
-    await page.reload();
-    const errors = [];
-    page.on("pageerror", (error) => errors.push(error.message));
-    async function audit(label) {
-      await settlePage(page);
-      await page.addScriptTag({ path: axePath });
-      const violations = await page.evaluate(async () => {
-        const result = await window.axe.run(document, {
-          runOnly: {
-            type: "tag",
-            values: ["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"],
-          },
+  for (const route of routes)
+    test(`accessible ${route} page and dialogs at ${width}px`, async ({
+      page,
+    }) => {
+      await page.setViewportSize({ width, height: 1024 });
+      await page.goto("http://localhost:5173");
+      const data = structuredClone(initialData);
+      data.active = {
+        id: "a11y-session",
+        routineId: data.routines[0].id,
+        name: data.routines[0].name,
+        startedAt: Date.now() - 60000,
+        notes: "",
+        exercises: data.routines[0].exercises.map((e) => ({
+          exerciseId: e.exerciseId,
+          sets: [{ weight: e.weight, reps: e.reps, done: true }],
+        })),
+      };
+      data.history = [
+        {
+          ...data.active,
+          id: "a11y-history",
+          date: new Date().toISOString(),
+          duration: 60,
+        },
+      ];
+      await page.evaluate(
+        (data) => localStorage.setItem("forma-v1", JSON.stringify(data)),
+        data,
+      );
+      await page.reload();
+      const errors = [];
+      page.on("pageerror", (error) => errors.push(error.message));
+      async function audit(label) {
+        await settlePage(page);
+        await page.addScriptTag({ path: axePath });
+        const violations = await page.evaluate(async () => {
+          const result = await window.axe.run(document, {
+            runOnly: {
+              type: "tag",
+              values: ["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"],
+            },
+          });
+          return result.violations.map((v) => ({
+            id: v.id,
+            impact: v.impact,
+            nodes: v.nodes.map((n) => ({
+              html: n.html,
+              summary: n.failureSummary,
+            })),
+          }));
         });
-        return result.violations.map((v) => ({
-          id: v.id,
-          impact: v.impact,
-          nodes: v.nodes.map((n) => ({
-            html: n.html,
-            summary: n.failureSummary,
-          })),
-        }));
-      });
-      expect.soft(violations, label).toEqual([]);
-      expect
-        .soft(
-          await page.evaluate(
-            () => document.documentElement.scrollWidth <= innerWidth,
-          ),
-          `${label} overflow`,
-        )
-        .toBe(true);
-    }
-    for (const route of [
-      "overview",
-      "routines",
-      "library",
-      "workout",
-      "history",
-      "progress",
-      "settings",
-    ]) {
+        expect.soft(violations, label).toEqual([]);
+        expect
+          .soft(
+            await page.evaluate(
+              () => document.documentElement.scrollWidth <= innerWidth,
+            ),
+            `${label} overflow`,
+          )
+          .toBe(true);
+      }
       await page.goto(`http://localhost:5173/#${route}`);
       await expect(page.locator("main h1")).toBeVisible();
       await audit(route);
@@ -110,6 +113,5 @@ for (const width of [1536, 390])
         await page.keyboard.press("Escape");
         await page.keyboard.press("Escape");
       }
-    }
-    expect(errors).toEqual([]);
-  });
+      expect(errors).toEqual([]);
+    });

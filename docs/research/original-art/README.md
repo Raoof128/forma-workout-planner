@@ -6,10 +6,10 @@ uses charcoal/gray equipment and clothing, white backgrounds, subtle shadows and
 lime accents. These are AI-assisted original illustrations, not third-party
 photographs or claims of exclusive copyright.
 
-`coverage.json` is the current per-ID progress record. Its scope must remain all
-1,414 selectable exercises. Unmatched movements remain pending; a generated
-image or a prompt alone does not count as an accepted exercise match. No image
-release has been deployed during generation.
+`coverage.json` is the current per-ID record. All 1,414 selectable exercises now
+have accepted, guide-matched artwork and pass the strict complete-coverage check.
+A generated image or a prompt alone does not count as an accepted match. Source
+records retain held attempts as review history. No image release has been deployed.
 
 `registry.json` contains accepted mappings and guide fingerprints. The individual
 batch records retain the generation prompt, original generated file, cell
@@ -28,12 +28,16 @@ references and direct the member to the guide for exact settings and movement.
 Free-weight/bodyweight illustrations show a matching representative pose.
 Multi-step drills/classes may use a clearly captioned example or starting phase.
 
-The app loads local artwork lazily in library cards and immediately in a guide.
+The app loads small local WebP atlas previews lazily in library cards and original
+PNG artwork immediately in a guide. Preview crops use the same reviewed geometry.
+Source and recipe hashes identify preview filenames, with byte hashes for caching.
+The builder needs FFmpeg with libwebp only when a new preview is missing; ordinary
+Vite builds use committed previews and need no encoder. Full provenance remains
+in the original registry and is checked against the smaller runtime manifest.
 Atlas cells are displayed with CSS, preserving the generated source files and
 image proportions. Image failures leave instructions visible and end the loader.
 Generated row boundaries can vary from the requested equal grid. Reviewed batches
-now support explicit pixel bounds; remaining equal-grid views still need crop
-review before releasing the complete library.
+support explicit pixel bounds, and accepted equal-grid views have crop reviews.
 Saved exercise aliases still resolve through the existing canonical-guide logic.
 Exercise IDs, logging units, account data and backend services are unchanged.
 
@@ -53,5 +57,5 @@ node scripts/check-exercise-media.mjs --require-complete
 
 It verifies full coverage, local assets, original-art status, byte hashes, cache
 versions and atlas geometry. A changed guide invalidates its previous review
-when the runtime manifest is rebuilt. Generation/review remains in progress until
-every ID passes; the existing live deployment is unchanged meanwhile.
+when the runtime manifest is rebuilt. Re-run the strict gate after any guide,
+artwork or manifest change; the existing live deployment is unchanged.

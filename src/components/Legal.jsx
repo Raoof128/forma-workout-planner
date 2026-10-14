@@ -4,7 +4,12 @@ export const isLegalPage = (page) => page === "privacy" || page === "terms";
 export const legalTitle = (page) => legalDocuments[page]?.title ?? "";
 
 function Block({ block, onNavigate }) {
-  if (block.h) return <h2 id={block.id}>{block.h}</h2>;
+  if (block.h)
+    return (
+      <h2 id={block.id} tabIndex={-1}>
+        {block.h}
+      </h2>
+    );
   if (block.h3) return <h3>{block.h3}</h3>;
   if (block.ul)
     return (
@@ -55,9 +60,16 @@ export default function Legal({ page, onNavigate }) {
                 href={`#${page}`}
                 onClick={(event) => {
                   event.preventDefault();
-                  document
-                    .getElementById(section.id)
-                    ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  const heading = document.getElementById(section.id);
+                  if (!heading) return;
+                  const reducedMotion = window.matchMedia(
+                    "(prefers-reduced-motion: reduce)",
+                  ).matches;
+                  heading.focus({ preventScroll: true });
+                  heading.scrollIntoView({
+                    behavior: reducedMotion ? "auto" : "smooth",
+                    block: "start",
+                  });
                 }}
               >
                 {section.h}

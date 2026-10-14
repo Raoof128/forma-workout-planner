@@ -1,0 +1,65 @@
+{
+  "completedAt": "2026-10-14T06:20:46.731629+00:00",
+  "changes": [
+    {
+      "path": "src/components/Legal.jsx",
+      "behavior": "Section headings accept programmatic focus without joining Tab order. Contents activation focuses its matching section and scrolls with auto behavior when reduced motion is requested."
+    },
+    {
+      "path": "src/account.css",
+      "behavior": "Account import label receives a visible 3px focus-within outline while its transparent native file input remains keyboard operable."
+    },
+    {
+      "path": "tests/legal.spec.js",
+      "behavior": "Adds Privacy/Terms Enter-to-section-focus regressions and a reduced-motion scrolling regression."
+    },
+    {
+      "path": "tests/keyboard-focus.spec.js",
+      "behavior": "Native keyboard styling fixture checks focus and visible wrapper outline without member/session access."
+    }
+  ],
+  "redBeforeFix": {
+    "log": "work/a11y-red.txt",
+    "tests": 4,
+    "expectedFailures": [
+      "Privacy destination heading remains inactive after Enter.",
+      "Terms destination heading remains inactive after Enter.",
+      "Reduced-motion contents requests smooth scrolling rather than auto.",
+      "Account import input receives focus but label outline style is none."
+    ]
+  },
+  "greenAfterFix": {
+    "command": "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium PLAYWRIGHT_REUSE_SERVER=1 node node_modules/playwright/cli.js test tests/legal.spec.js tests/keyboard-focus.spec.js --project=chromium --workers=1 --output=work/site-sweep-a11y-results",
+    "log": "work/site-sweep-a11y-green.txt",
+    "exitCode": 0,
+    "passed": 7,
+    "failed": 0,
+    "includes": [
+      "Privacy and Terms axe WCAG2/2.1/2.2 A/AA scans.",
+      "360px direct privacy/terms routes without horizontal overflow.",
+      "Both legal contents keyboard focus cases.",
+      "Reduced-motion behavior.",
+      "Account file input keyboard focus and wrapper outline."
+    ]
+  },
+  "renderedAccountComponent": {
+    "fixture": "work/account-focus.html",
+    "script": "work/verify-account-focus.mjs",
+    "result": "work/account-focus-rendered.json",
+    "screenshot": "work/account-import-focus-after.png",
+    "passed": true,
+    "actualComponent": "src/components/Account.jsx",
+    "data": "Synthetic props only; no API or actual account session.",
+    "checks": "Tab from Export my data focused real import file input; its opacity remained 0 and wrapper computed outline was solid 3px. Screenshot inspected; zero page errors."
+  },
+  "sourceChecks": {
+    "eslint": "exit 0; empty work/a11y-eslint.txt",
+    "prettier": "Scoped check passed."
+  },
+  "limitations": [
+    "Chromium only for this targeted verification; root owns whole-site and production validation.",
+    "Earlier green attempt was interrupted by generated trace HTML triggering Vite reloads; final run took place after root fixed artifact watch ignores, with unique output.",
+    "No App changes, account API access, commits or pushes."
+  ],
+  "sources": "work/site-sweep-a11y-sources.json"
+}

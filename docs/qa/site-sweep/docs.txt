@@ -1,0 +1,5 @@
+
+> forma-workout-planner@1.0.0 docs:check
+> node scripts/check-docs.mjs
+
+Documentation check passed: 79 Markdown files, local links/images/fragments, and npm script names.

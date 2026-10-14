@@ -751,7 +751,7 @@
   "ownerGuidePreference": "Replace ambiguous source entries with clearly defined independently authored guides and matching artwork, preserving historical IDs and units.",
   "nextTask": "Whole-site desktop/mobile audit and fixes; all 1414 original exercise illustrations complete. Current site work is not deployed.",
   "siteSweep": {
-    "status": "audit and fixes in progress",
+    "status": "Fixes implemented; focused verification passed; full guest/account and final crops pending",
     "baselineCommit": "0f8bc3c4eaa126bad139afa49662cbb546b9ecd5",
     "evidence": "docs/qa/site-sweep",
     "actualColdLibraryBytes": {
@@ -763,6 +763,17 @@
       "Legal table of contents does not transfer keyboard focus or respect reduced motion",
       "Account backup import control lacks a visible keyboard focus indication"
     ],
-    "plannedVisuals": "Replace existing hero and routine photographs whose redistribution terms are undocumented with original generated FORMA imagery"
+    "plannedVisuals": "Replace existing hero and routine photographs whose redistribution terms are undocumented with original generated FORMA imagery",
+    "actualColdLibraryAfterBytes": {
+      "desktop": 278134,
+      "mobile": 155102
+    },
+    "focusedChecks": {
+      "unit": 62,
+      "mediaBrowser": 5,
+      "accessibilityBrowser": 7,
+      "strictArtwork": "1414/1414; zero remaining"
+    },
+    "watcherFix": "Generated trace HTML excluded from Vite watch; browser probe recorded no full reloads"
   }
 }

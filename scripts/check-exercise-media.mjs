@@ -69,15 +69,66 @@ for (const [id, asset] of Object.entries(media.assets)) {
     sha.slice(0, 12),
     `Stale image version: ${id}`,
   );
+  const original = registry.assets[id];
   assert(
-    asset.creator && asset.license && asset.sourceUrl,
-    `Missing attribution: ${id}`,
+    original?.creator && original.license && original.sourceUrl,
+    `Missing original attribution: ${id}`,
   );
   assert.equal(
-    asset.original,
+    original.original,
     true,
     `Third-party artwork is not allowed: ${id}`,
   );
+  for (const key of [
+    "src",
+    "sha256",
+    "width",
+    "height",
+    "title",
+    "kind",
+    "region",
+  ])
+    assert.deepEqual(
+      asset[key],
+      original[key],
+      `Runtime artwork changed: ${id} ${key}`,
+    );
+  assert.equal(
+    asset.previewId,
+    asset.sha256.slice(0, 16),
+    `Wrong preview mapping: ${id}`,
+  );
+  const preview = media.previews?.[asset.previewId];
+  assert(preview, `Missing compact preview: ${id}`);
+  const previewUrl = new URL(preview.src, "https://forma.example");
+  assert.equal(previewUrl.origin, "https://forma.example");
+  assert(previewUrl.pathname.startsWith("/exercise-media/previews/"));
+  const recipeKey = crypto
+    .createHash("sha256")
+    .update(`${asset.sha256}:half-lanczos-webp-q78-v1`)
+    .digest("hex")
+    .slice(0, 16);
+  assert.equal(
+    path.basename(previewUrl.pathname),
+    `${path.basename(url.pathname, ".png")}-${recipeKey}.webp`,
+  );
+  const previewBytes = fs.readFileSync(
+    path.resolve(root, "public", `.${previewUrl.pathname}`),
+  );
+  assert.equal(previewBytes.toString("ascii", 0, 4), "RIFF");
+  assert.equal(previewBytes.toString("ascii", 8, 12), "WEBP");
+  assert.equal(previewBytes.toString("ascii", 12, 16), "VP8 ");
+  assert.equal(previewBytes.readUInt16LE(26) & 0x3fff, preview.width);
+  assert.equal(previewBytes.readUInt16LE(28) & 0x3fff, preview.height);
+  const previewSha = crypto
+    .createHash("sha256")
+    .update(previewBytes)
+    .digest("hex");
+  assert.equal(preview.sha256, previewSha, `Changed preview bytes: ${id}`);
+  assert.equal(previewUrl.searchParams.get("v"), previewSha.slice(0, 12));
+  assert(previewBytes.length < bytes.length, `Preview is not smaller: ${id}`);
+  assert.equal(preview.width * asset.height, preview.height * asset.width);
+  assert([preview.width, preview.height].every(Number.isInteger));
   if (asset.region) {
     const { column, row, columns, rows } = asset.region;
     assert([column, row, columns, rows].every(Number.isInteger));

@@ -1,0 +1,14 @@
+
+Running 7 tests using 1 worker
+
+(node:23286) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/keyboard-focus.spec.js:5:1 › account import wrapper shows keyboard focus around its transparent file input (21.3s)
+  ✓  2 [chromium] › tests/legal.spec.js:35:3 › Privacy Policy is reachable, complete, and accessible (27.0s)
+  ✓  3 [chromium] › tests/legal.spec.js:35:3 › Terms of Use is reachable, complete, and accessible (22.7s)
+  ✓  4 [chromium] › tests/legal.spec.js:70:1 › legal pages open directly by URL and fit a phone screen (20.5s)
+  ✓  5 [chromium] › tests/legal.spec.js:89:3 › Privacy Policy contents moves keyboard focus to the selected section (16.0s)
+  ✓  6 [chromium] › tests/legal.spec.js:89:3 › Terms of Use contents moves keyboard focus to the selected section (18.9s)
+  ✓  7 [chromium] › tests/legal.spec.js:106:1 › legal contents avoids animated scrolling when reduced motion is requested (18.4s)
+
+  7 passed (2.6m)

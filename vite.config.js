@@ -31,6 +31,12 @@ const apiProxy = target
 
 export default defineConfig({
   plugins: [react()],
-  server: { proxy: apiProxy },
+  server: {
+    proxy: apiProxy,
+    // Browser traces contain HTML; watching generated artifacts reloads live tests.
+    watch: {
+      ignored: ["**/work/**", "**/test-results/**", "**/playwright-report/**"],
+    },
+  },
   preview: { proxy: apiProxy },
 });

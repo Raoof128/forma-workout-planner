@@ -32,3 +32,29 @@ restructuring, are not proven runtime defects or completed fixes.
 
 Final validation and implementation details will be recorded here when the
 reviewed fixes are complete. No site deployment is part of this checkpoint.
+
+## Implemented checkpoint
+
+Compact previews are now committed for all 186 source atlases, totaling 5,681,534
+bytes. Original PNGs and registry are unchanged. Fresh cold-load observations
+were 278,134 image bytes on desktop and 155,102 on mobile (about 98% less than
+the original observation). Guides still load the original full-size image.
+Preview and guide crop percentages agree in the uneven-row regression.
+Runtime JSON now stores shared preview metadata once; its raw size fell, while
+gzip size rose slightly because the new hash metadata is less compressible.
+This is an image-payload improvement, not a claim of improved Core Web Vitals.
+
+Keyboard/reduced-motion fixes passed all seven focused browser checks, after
+four expected failures before the fixes. Five artwork browser checks, 62 unit
+cases, strict 1,414 coverage, lint, types, formatting, docs and build passed.
+The full baseline was 90 passed / four failures: a stale test clicked a disabled
+reorder button, and long aggregate tests exhausted their budgets. The corrected
+tests preserve the underlying assertions and default timeouts. Diagnostics
+also found generated trace HTML causing Vite reloads and parallel Playwright
+runners colliding on an output directory. Generated directories are now
+excluded from the watcher; independent runs use separate artifact folders.
+A browser websocket probe confirmed that creating/deleting scratch HTML causes
+no full reload.
+
+Final complete guest/account browser runs and final photo crops are pending.
+No deployment or live member-data operation occurred.

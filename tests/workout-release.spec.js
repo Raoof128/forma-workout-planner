@@ -151,7 +151,7 @@ test("set validation, completion undo, added sets, finish cancel and save preser
   ).toBe(true);
 });
 
-test("empty finish is blocked; discard can be canceled or confirmed; routine switch can resume, cancel, or replace", async ({
+test("empty finish is blocked and discard can be canceled or confirmed", async ({
   page,
 }) => {
   const data = snapshot();
@@ -183,7 +183,11 @@ test("empty finish is blocked; discard can be canceled or confirmed; routine swi
   await expect(page.locator(".hero")).toBeVisible();
   expect((await stored(page)).active).toBeNull();
   expect((await stored(page)).history).toHaveLength(0);
+});
 
+test("routine switch can resume, cancel, or replace an active session", async ({
+  page,
+}) => {
   const switching = snapshot();
   switching.active = singleSession({
     id: "switch-source",

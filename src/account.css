@@ -744,6 +744,10 @@
   overflow: hidden;
   cursor: pointer;
 }
+.account-import-label:focus-within {
+  outline: 3px solid #5a7028;
+  outline-offset: 3px;
+}
 .account-import-label input {
   position: absolute;
   inset: 0;

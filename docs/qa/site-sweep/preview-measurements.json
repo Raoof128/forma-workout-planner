@@ -1,0 +1,34 @@
+{
+  "matchedBaselineImageFiles": [
+    {
+      "viewport": "desktop",
+      "originalBytes": 15047445,
+      "previewBytes": 275550,
+      "reductionPercent": 98.16879211055432
+    },
+    {
+      "viewport": "mobile",
+      "originalBytes": 7330382,
+      "previewBytes": 155102,
+      "reductionPercent": 97.88412118222489
+    }
+  ],
+  "previewFiles": 186,
+  "totalPreviewBytes": 5681534,
+  "runtimeManifestBytes": 1065852,
+  "runtimeManifestGzipBytes": 94557,
+  "validation": {
+    "initialFullUnitSuite": "62 passed",
+    "strictCoverage": "1414/1414",
+    "ownedPathsLint": "passed",
+    "typecheck": "passed",
+    "focusedChromium": "5 passed (2.0m) with isolated work/media-results",
+    "initialBrowserIssue": "Concurrent shared artifact directory ENOENT; resolved by unique output directory"
+  },
+  "behavior": {
+    "library": "half-size q78WebP atlas previews with unchanged percentage crops",
+    "guides": "unchanged full PNG original",
+    "runtimeMetadata": "minimal assets with shared186preview records; fullprovenance retained inregistry and strictly crosschecked",
+    "workout": "existing exerciseById Map replaces catalog linear lookups; timer semantics unchanged"
+  }
+}

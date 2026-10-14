@@ -176,7 +176,8 @@ export default function Overview({
             <div className="hero-meta">
               <span>
                 <Dumbbell size={19} />
-                {routine?.exercises.length || 0} exercises
+                {routine?.exercises.length || 0} exercise
+                {routine?.exercises.length === 1 ? "" : "s"}
               </span>
               {routine?.minutes && (
                 <span>

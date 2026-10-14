@@ -15,7 +15,7 @@ import {
 import { Button, PageHeading, Modal } from "./UI";
 import ExerciseGuide from "./ExerciseGuide";
 import SavedField from "./SavedField";
-import { exercises, formatTime, sessionSets, sessionVolume } from "../data";
+import { exerciseById, formatTime, sessionSets, sessionVolume } from "../data";
 import { metricFields, validMeasurement } from "../exerciseMetrics.js";
 export default function Workout({
   session,
@@ -73,14 +73,8 @@ export default function Workout({
   function check(exerciseId, index) {
     const set = session.exercises.find((item) => item.exerciseId === exerciseId)
       .sets[index];
-    if (
-      !set.done &&
-      !validMeasurement(
-        exercises.find((item) => item.id === exerciseId),
-        set,
-      )
-    ) {
-      const exercise = exercises.find((item) => item.id === exerciseId);
+    if (!set.done && !validMeasurement(exerciseById.get(exerciseId), set)) {
+      const exercise = exerciseById.get(exerciseId);
       notify(
         !exercise?.metric || exercise.metric === "load_reps"
           ? "Enter 1–100 reps and a weight from 0–1,000 kg."
@@ -185,9 +179,7 @@ export default function Workout({
       <div className="workout-layout">
         <div className="workout-exercises">
           {session.exercises.map((entry) => {
-            const exercise = exercises.find(
-              (item) => item.id === entry.exerciseId,
-            );
+            const exercise = exerciseById.get(entry.exerciseId);
             return (
               <section className="panel log-exercise" key={entry.exerciseId}>
                 <header>

@@ -115,7 +115,10 @@ export function RoutineCard({ routine, onClick }) {
           <h3>{routine.name}</h3>
           <div className="meta">
             <Dumbbell size={16} />
-            <span>{routine.exercises.length} exercises</span>
+            <span>
+              {routine.exercises.length} exercise
+              {routine.exercises.length === 1 ? "" : "s"}
+            </span>
             <span className="dot">·</span>
             <Clock size={15} />
             <span>{routine.minutes} min</span>

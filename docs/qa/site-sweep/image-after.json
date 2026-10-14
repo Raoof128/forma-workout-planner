@@ -1,0 +1,96 @@
+[
+  {
+    "label": "desktop",
+    "width": 1536,
+    "resources": [
+      {
+        "url": "http://127.0.0.1:5173/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+        "bytes": 32796,
+        "transfer": 33096,
+        "duration": 2838.5
+      },
+      {
+        "url": "http://127.0.0.1:5173/exercise-media/previews/machines-04-e1095f31c69951f0.webp?v=638726164664",
+        "bytes": 46944,
+        "transfer": 47244,
+        "duration": 2828.2999999998137
+      },
+      {
+        "url": "http://127.0.0.1:5173/exercise-media/previews/cardio-01-5c38f1ac06c14b8d.webp?v=56afef82c735",
+        "bytes": 37334,
+        "transfer": 37634,
+        "duration": 2827.800000000745
+      },
+      {
+        "url": "http://127.0.0.1:5173/exercise-media/previews/machines-03-988892f417205330.webp?v=399c8a35687d",
+        "bytes": 38028,
+        "transfer": 38328,
+        "duration": 2825.800000000745
+      },
+      {
+        "url": "http://127.0.0.1:5173/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+        "bytes": 31290,
+        "transfer": 31590,
+        "duration": 2815.7000000001863
+      },
+      {
+        "url": "http://127.0.0.1:5173/exercise-media/previews/authored-a-001-retry-11584f1d40205695.webp?v=ae22bd62d1cf",
+        "bytes": 19900,
+        "transfer": 20200,
+        "duration": 2813.600000000559
+      },
+      {
+        "url": "http://127.0.0.1:5173/exercise-media/previews/corrections-001-d8f73f2ae7c3ccac.webp?v=e8f308e3856a",
+        "bytes": 22816,
+        "transfer": 23116,
+        "duration": 2822.7000000001863
+      },
+      {
+        "url": "http://127.0.0.1:5173/exercise-media/previews/mobility-01-141a68d883c6178a.webp?v=004a10f349f6",
+        "bytes": 26542,
+        "transfer": 26842,
+        "duration": 2823
+      },
+      {
+        "url": "http://127.0.0.1:5173/exercise-media/previews/authored-a-001-7a9ea285cb29df52.webp?v=e8ebefd1dc56",
+        "bytes": 22484,
+        "transfer": 22784,
+        "duration": 2823.4000000003725
+      }
+    ],
+    "totalEncodedBytes": 278134,
+    "allVisibleImagesReady": true
+  },
+  {
+    "label": "mobile",
+    "width": 390,
+    "resources": [
+      {
+        "url": "http://127.0.0.1:5173/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+        "bytes": 32796,
+        "transfer": 33096,
+        "duration": 23.600000000558794
+      },
+      {
+        "url": "http://127.0.0.1:5173/exercise-media/previews/machines-04-e1095f31c69951f0.webp?v=638726164664",
+        "bytes": 46944,
+        "transfer": 47244,
+        "duration": 50.10000000055879
+      },
+      {
+        "url": "http://127.0.0.1:5173/exercise-media/previews/cardio-01-5c38f1ac06c14b8d.webp?v=56afef82c735",
+        "bytes": 37334,
+        "transfer": 37634,
+        "duration": 53
+      },
+      {
+        "url": "http://127.0.0.1:5173/exercise-media/previews/machines-03-988892f417205330.webp?v=399c8a35687d",
+        "bytes": 38028,
+        "transfer": 38328,
+        "duration": 53.10000000055879
+      }
+    ],
+    "totalEncodedBytes": 155102,
+    "allVisibleImagesReady": true
+  }
+]

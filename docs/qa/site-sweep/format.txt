@@ -1,0 +1,6 @@
+
+> forma-workout-planner@1.0.0 format:check
+> prettier --check src tests unit server worker scripts *.js *.json wrangler.jsonc index.html
+
+Checking formatting...
+All matched files use Prettier code style!

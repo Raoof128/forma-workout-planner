@@ -11,6 +11,7 @@ export default [
       "node_modules/**",
       "playwright-report/**",
       "test-results/**",
+      "work/**",
     ],
   },
   js.configs.recommended,

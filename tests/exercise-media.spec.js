@@ -89,3 +89,44 @@ test("uneven atlas rows keep the complete EZ-bar curl pose inside the guide", as
   });
   expect(sourceTop).toBeCloseTo(642, 0);
 });
+
+test("compact previews keep reviewed crops while guides retain the full original", async ({
+  page,
+}) => {
+  await page.goto("/#library");
+  await page.getByLabel("Search exercise library").fill("EZ-Bar Curl");
+  const card = page.locator(".library-card").filter({
+    has: page.getByRole("heading", { name: "EZ-Bar Curl", exact: true }),
+  });
+  const preview = card.locator("img");
+  await expect(preview).toHaveAttribute(
+    "src",
+    /\/exercise-media\/previews\/.*\.webp\?v=[a-f0-9]{12}$/,
+  );
+  await expect(preview).toHaveJSProperty("naturalWidth", 768);
+  const previewCrop = await preview.evaluate((img) => ({
+    width: img.style.width,
+    height: img.style.height,
+    left: img.style.left,
+    top: img.style.top,
+    ratio: img.parentElement.style.aspectRatio,
+  }));
+  await card.click();
+  const original = page
+    .getByRole("dialog")
+    .getByRole("img", { name: /Exercise illustration/ });
+  await expect(original).toHaveAttribute(
+    "src",
+    /\/exercise-media\/original\/.*\.png\?v=[a-f0-9]{12}$/,
+  );
+  await expect(original).toHaveJSProperty("naturalWidth", 1536);
+  expect(
+    await original.evaluate((img) => ({
+      width: img.style.width,
+      height: img.style.height,
+      left: img.style.left,
+      top: img.style.top,
+      ratio: img.parentElement.style.aspectRatio,
+    })),
+  ).toEqual(previewCrop);
+});

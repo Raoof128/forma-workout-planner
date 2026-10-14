@@ -125,5 +125,8 @@ include billing, social networking, Apple Health integration, or automated
 coaching.
 
 The repository does not currently include a project-wide software license. The
-Barlow Condensed and DM Sans font licenses are in `public/fonts/`; the
-redistribution terms for the workout photographs are not documented here.
+Barlow Condensed and DM Sans font licenses are in `public/fonts/`. Runtime
+exercise illustrations and hero/routine photography are original AI-assisted
+FORMA assets; generated sources, prompts and review records are preserved in
+`assets/exercise-artwork`, `assets/site-visuals` and `docs/research`. This describes
+their provenance and does not assert exclusive copyright over generated images.

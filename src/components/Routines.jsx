@@ -74,7 +74,9 @@ export function Routines({ routines, onOpen, onCreate, onUseTemplate }) {
             <h3>{template.name}</h3>
             <p>{template.description}</p>
             <span className="small muted">
-              {template.exercises.length} exercises · {template.minutes} min
+              {template.exercises.length} exercise
+              {template.exercises.length === 1 ? "" : "s"} · {template.minutes}{" "}
+              min
             </span>
           </button>
         ))}
@@ -94,7 +96,8 @@ export function RoutineDetail({ routine, onClose, onStart, onEdit, onDelete }) {
         <div className="detail-meta">
           <span>
             <Dumbbell size={17} />
-            {routine.exercises.length} exercises
+            {routine.exercises.length} exercise
+            {routine.exercises.length === 1 ? "" : "s"}
           </span>
           <span>
             <Clock size={17} />

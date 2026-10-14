@@ -284,10 +284,18 @@ test("dirty routine changes are retained and duration and prescriptions are pres
   await expect(
     page.getByLabel("Barbell bench press weight", { exact: true }),
   ).toHaveValue("72.5");
-  await page.getByLabel("Move Barbell bench press up", { exact: true }).click();
+  // Restoring a deselected exercise retains its original position as well as
+  // its prescription; the first exercise can move down, but cannot move up.
+  await expect(
+    page.getByLabel("Move Barbell bench press up", { exact: true }),
+  ).toBeDisabled();
+  await page
+    .getByLabel("Move Barbell bench press down", { exact: true })
+    .click();
   await nav(page, "Save routine");
   await expect(page.getByRole("dialog")).toHaveCount(0);
   const routine = (await stored(page)).routines[0];
+  expect(routine.exercises[1].exerciseId).toBe("bench");
   expect(routine.minutes).toBe(Number(minutes));
   expect(routine.exercises.find((e) => e.exerciseId === "bench").weight).toBe(
     72.5,
