@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "total": 1414,
-  "accepted": 1203,
+  "accepted": 1236,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -702,7 +702,9 @@
       "name": "Band Assisted Pull-Up",
       "equipment": "Specialty equipment",
       "guideSha256": "35a8a4ed976cd47981f1397bbc337c14bfe3344e6c0e0c53a1a58babac7d0f64",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-006-0-0",
+      "reviewNote": "Reviewed knee-in-band assisted pull-up, forward-anchored terminal knee extension, bent-knee supine rotation, one-chair back-grip stretch and toes-grounded hands-airborne clap push-up."
     },
     {
       "exerciseId": "db-band-good-morning",
@@ -761,7 +763,9 @@
       "name": "Band Terminal Knee extension",
       "equipment": "Resistance band",
       "guideSha256": "4b2427ff8e0659feb0456d4f65f698e60b8975af58b1402a5455f815db059d8c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-006-1-0",
+      "reviewNote": "Reviewed knee-in-band assisted pull-up, forward-anchored terminal knee extension, bent-knee supine rotation, one-chair back-grip stretch and toes-grounded hands-airborne clap push-up."
     },
     {
       "exerciseId": "wger-8cc84753-e638-4c43-91c6-51c097813ca4",
@@ -1286,7 +1290,9 @@
       "name": "Bent-knee Iron Cross",
       "equipment": "Bodyweight",
       "guideSha256": "fe6e29f0aa9c5692e1d53f891125f64d20f057b078db239dc64bc6fe07e9bbeb",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-006-2-0",
+      "reviewNote": "Reviewed knee-in-band assisted pull-up, forward-anchored terminal knee extension, bent-knee supine rotation, one-chair back-grip stretch and toes-grounded hands-airborne clap push-up."
     },
     {
       "exerciseId": "wger-abdd2b41-0c30-4ec1-8d14-f6dc5deb3561",
@@ -2232,7 +2238,9 @@
       "name": "Chair Upper Body Stretch",
       "equipment": "Specialty equipment",
       "guideSha256": "b877dbdf3a7d2f6f0fa3f07dc81c2f4bd777112f049226324ebc42a36c1df8de",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-006-0-1",
+      "reviewNote": "Reviewed knee-in-band assisted pull-up, forward-anchored terminal knee extension, bent-knee supine rotation, one-chair back-grip stretch and toes-grounded hands-airborne clap push-up."
     },
     {
       "exerciseId": "db-chest-and-front-of-shoulder-stretch",
@@ -2365,7 +2373,9 @@
       "name": "Clap Push-UP",
       "equipment": "Bodyweight",
       "guideSha256": "1dada75cebeed19308bad801440d8318b2850c3825f582c543a1704a605c25e6",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-006-1-1",
+      "reviewNote": "Reviewed knee-in-band assisted pull-up, forward-anchored terminal knee extension, bent-knee supine rotation, one-chair back-grip stretch and toes-grounded hands-airborne clap push-up."
     },
     {
       "exerciseId": "wger-ecf9c0e2-a1d0-4e6e-90e9-5c029e98f2c9",
@@ -2568,7 +2578,9 @@
       "name": "Conan's Wheel",
       "equipment": "Specialty equipment",
       "guideSha256": "c44057f31074cf78781040dcef6187681b2650e80d364ceaa62f1e25ff58c23b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-007-0-0",
+      "reviewNote": "Reviewed pivot-anchored Conan wheel carry, shoulder-height elbow curl, supported palms-down wrist extension and clearly head-lower-than-secured-feet decline bench press."
     },
     {
       "exerciseId": "db-concentration-curls",
@@ -2773,7 +2785,9 @@
       "name": "Curl  - With Shoulder Elevated",
       "equipment": "Dumbbell",
       "guideSha256": "62568300e3adb5057d009a27dcfe1b687e92a793c7f5af8a4ccb38bc99f95f80",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-007-1-0",
+      "reviewNote": "Reviewed pivot-anchored Conan wheel carry, shoulder-height elbow curl, supported palms-down wrist extension and clearly head-lower-than-secured-feet decline bench press."
     },
     {
       "exerciseId": "wger-9ce236dc-7704-4f3e-a3d0-4fea382a950b",
@@ -2857,7 +2871,9 @@
       "name": "DB Wrist Extension",
       "equipment": "Dumbbell",
       "guideSha256": "55c941113492eab75c109dfc7d60baa681bd49b73b8bc97834b1fd2754fb210f",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-007-0-1",
+      "reviewNote": "Reviewed pivot-anchored Conan wheel carry, shoulder-height elbow curl, supported palms-down wrist extension and clearly head-lower-than-secured-feet decline bench press."
     },
     {
       "exerciseId": "wger-74d4697d-8a97-4ea2-9d05-fa4d2bd7221e",
@@ -2898,7 +2914,9 @@
       "name": "Decline Barbell Bench Press",
       "equipment": "Barbell",
       "guideSha256": "0b8fa8ffb3c6799aa2e26b805db7d56b3615922784c4ad041387667f366f103c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-007-2-1",
+      "reviewNote": "Reviewed pivot-anchored Conan wheel carry, shoulder-height elbow curl, supported palms-down wrist extension and clearly head-lower-than-secured-feet decline bench press."
     },
     {
       "exerciseId": "wger-9ac4813e-79a6-4a4d-ab93-9cfa5bf7b8fa",
@@ -2914,7 +2932,9 @@
       "name": "Decline Close-Grip Bench To Skull Crusher",
       "equipment": "Barbell",
       "guideSha256": "d625d9c1b37d741f8f9ac9ab306efe3e5ead3f288dc1abe70b491945e7f70867",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-008-0-0",
+      "reviewNote": "Reviewed two secured decline triceps setups, rigid shoulder-supported dragon flag with visible bench grip, floor-backed dumbbell crunch and heels-only elevated cyclist squat."
     },
     {
       "exerciseId": "db-decline-crunch",
@@ -2957,7 +2977,9 @@
       "name": "Decline EZ Bar Triceps Extension",
       "equipment": "Barbell",
       "guideSha256": "b0d57958ae2ed70c6417a72eb16bcb3b946c7329f3d5f8e3256959f59b84f59b",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-008-1-0",
+      "reviewNote": "Reviewed two secured decline triceps setups, rigid shoulder-supported dragon flag with visible bench grip, floor-backed dumbbell crunch and heels-only elevated cyclist squat."
     },
     {
       "exerciseId": "db-decline-oblique-crunch",
@@ -3207,7 +3229,9 @@
       "name": "Dragon-flag",
       "equipment": "Bodyweight",
       "guideSha256": "60994c2e37a5082057d509c3da8a6ccccaf6fc790d3ac56478b45172403ccca9",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-008-2-0",
+      "reviewNote": "Reviewed two secured decline triceps setups, rigid shoulder-supported dragon flag with visible bench grip, floor-backed dumbbell crunch and heels-only elevated cyclist squat."
     },
     {
       "exerciseId": "wger-15ee508d-fbd7-4acf-ab44-e35525582693",
@@ -3313,14 +3337,18 @@
       "name": "Dumbbell Crunches",
       "equipment": "Dumbbell",
       "guideSha256": "38d3d442164c847e6b68d85975c81147a4c28214d5d631f0403d7eb4af9d73dc",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-008-0-1",
+      "reviewNote": "Reviewed two secured decline triceps setups, rigid shoulder-supported dragon flag with visible bench grip, floor-backed dumbbell crunch and heels-only elevated cyclist squat."
     },
     {
       "exerciseId": "wger-e547df0d-d9aa-4c39-af40-59667aaa2cc9",
       "name": "Dumbbell cyclist squat",
       "equipment": "Dumbbell",
       "guideSha256": "7ac63f8eb424e32aef71cf4a822d784cfd2109c20ac106dc533b6fdb5047b07d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-008-1-1",
+      "reviewNote": "Reviewed two secured decline triceps setups, rigid shoulder-supported dragon flag with visible bench grip, floor-backed dumbbell crunch and heels-only elevated cyclist squat."
     },
     {
       "exerciseId": "wger-b199baca-7353-4dee-bbcf-620f96dba5b4",
@@ -3451,7 +3479,9 @@
       "name": "Dumbbell Lying One-Arm Rear Lateral Raise",
       "equipment": "Dumbbell",
       "guideSha256": "45085e811a5bf25b2b11ab1b3517ad9c20423dfac41054eeea02e184f93b1cb5",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-009-0-0",
+      "reviewNote": "Reviewed approximately 15-degree prone single/bilateral rear raises, elbow-led dumbbell raise, upright overhead thruster finish and grounded-palm elbow lever."
     },
     {
       "exerciseId": "db-dumbbell-lying-pronation",
@@ -3465,7 +3495,9 @@
       "name": "Dumbbell Lying Rear Lateral Raise",
       "equipment": "Dumbbell",
       "guideSha256": "4a21fde2f0e14da58849b984b8a84155a6823972d63d460833250c756cdfc445",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-009-2-0",
+      "reviewNote": "Reviewed approximately 15-degree prone single/bilateral rear raises, elbow-led dumbbell raise, upright overhead thruster finish and grounded-palm elbow lever."
     },
     {
       "exerciseId": "db-dumbbell-lying-supination",
@@ -3526,7 +3558,9 @@
       "name": "Dumbbell Raise",
       "equipment": "Dumbbell",
       "guideSha256": "2934086995fc98279a5527f2d298fe1062672915916d9e292d5f4f35c83572a5",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-009-0-1",
+      "reviewNote": "Reviewed approximately 15-degree prone single/bilateral rear raises, elbow-led dumbbell raise, upright overhead thruster finish and grounded-palm elbow lever."
     },
     {
       "exerciseId": "wger-adb6067f-fd48-4a25-a9b4-0793c5f158fa",
@@ -3668,7 +3702,9 @@
       "name": "Dumbbell Thruster",
       "equipment": "Dumbbell",
       "guideSha256": "9dd95b3e3e66e73e4b139922d665ffd1ac041508f8a878627ce4a8bd346c39aa",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-009-1-1",
+      "reviewNote": "Reviewed approximately 15-degree prone single/bilateral rear raises, elbow-led dumbbell raise, upright overhead thruster finish and grounded-palm elbow lever."
     },
     {
       "exerciseId": "db-dumbbell-tricep-extension-pronated-grip",
@@ -3763,14 +3799,18 @@
       "name": "elbow lever",
       "equipment": "Bodyweight",
       "guideSha256": "ae56f12af80f73d63e32a8c1a4d6e344a98fab7a53fb5b4c4f3dd9dd2fda9068",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-009-2-1",
+      "reviewNote": "Reviewed approximately 15-degree prone single/bilateral rear raises, elbow-led dumbbell raise, upright overhead thruster finish and grounded-palm elbow lever."
     },
     {
       "exerciseId": "db-elbow-to-knee",
       "name": "Elbow to Knee",
       "equipment": "Bodyweight",
       "guideSha256": "c8ce39d9f348ea54a83a5fb8ba0980f9ce6727e8a0a717712c851efb4726d54c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-010-0-0",
+      "reviewNote": "Reviewed figure-four opposite-elbow crunch, front-foot-elevated rear lunge, forward-resisted seated dorsiflexion and midline-crossing one-arm kettlebell floor press."
     },
     {
       "exerciseId": "db-elbows-back",
@@ -3804,7 +3844,9 @@
       "name": "Elevated Back Lunge",
       "equipment": "Barbell",
       "guideSha256": "bc23473a8dd9e0112b92206953d411a4ed904100cdaf59bd8fb6a22fd00b081c",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-010-1-0",
+      "reviewNote": "Reviewed figure-four opposite-elbow crunch, front-foot-elevated rear lunge, forward-resisted seated dorsiflexion and midline-crossing one-arm kettlebell floor press."
     },
     {
       "exerciseId": "db-elevated-cable-rows",
@@ -3883,7 +3925,9 @@
       "name": "Exercise Band Dorsiflexion",
       "equipment": "Bodyweight",
       "guideSha256": "21067dc36f6160696030a0a586356a5e003fa540f4274568a2f0efc530064ae4",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-010-2-0",
+      "reviewNote": "Reviewed figure-four opposite-elbow crunch, front-foot-elevated rear lunge, forward-resisted seated dorsiflexion and midline-crossing one-arm kettlebell floor press."
     },
     {
       "exerciseId": "wger-70c97a79-5e88-4549-a74c-0e5190a5c048",
@@ -3899,7 +3943,9 @@
       "name": "Extended Range One-Arm Kettlebell Floor Press",
       "equipment": "Kettlebell",
       "guideSha256": "d93f695c1ed6ca396e6ca421838bbc6601e46a3bc9b7a2ed1a696d3198efb981",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-010-0-1",
+      "reviewNote": "Reviewed figure-four opposite-elbow crunch, front-foot-elevated rear lunge, forward-resisted seated dorsiflexion and midline-crossing one-arm kettlebell floor press."
     },
     {
       "exerciseId": "wger-ab872d04-ca20-4341-b3c9-76763b25ef42",
@@ -4168,7 +4214,9 @@
       "name": "Foam Roller Anterior tibialis",
       "equipment": "Bodyweight",
       "guideSha256": "43bbd11e903f06d3e5ad9a76283f933a526cdda317eee90d454c687436227060",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-011-1-0",
+      "reviewNote": "Reviewed anterior-shin foam contact, palms-up supported forearm curls, independent paired-dumbbell front raises and airborne underhand sternum chin."
     },
     {
       "exerciseId": "wger-164a31e9-ce70-4339-aee5-4ea7a3bdd246",
@@ -4193,7 +4241,9 @@
       "name": "Forearm Curls (underhand grip)",
       "equipment": "Dumbbell",
       "guideSha256": "7dbb1b1751514249dbee951b139e561f9d0d9f0a757dd749f0aea412a4542b8a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-011-2-0",
+      "reviewNote": "Reviewed anterior-shin foam contact, palms-up supported forearm curls, independent paired-dumbbell front raises and airborne underhand sternum chin."
     },
     {
       "exerciseId": "wger-9d9c4c9f-045f-4af5-adf2-8bb07c3516dc",
@@ -4396,7 +4446,9 @@
       "name": "Front Raises",
       "equipment": "Barbell + Dumbbell",
       "guideSha256": "7a31a11e08a0d8299f5753acd7e7bca0f439ba7ad5a0992574949e4a1e4d977d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-011-0-1",
+      "reviewNote": "Reviewed anterior-shin foam contact, palms-up supported forearm curls, independent paired-dumbbell front raises and airborne underhand sternum chin."
     },
     {
       "exerciseId": "wger-d5e5c5a1-69af-42b0-9106-dc8284e7262a",
@@ -4466,7 +4518,9 @@
       "name": "Gironda Sternum Chins",
       "equipment": "Specialty equipment",
       "guideSha256": "4bd293e9f5a83aede69108a3ba0f24b4e9192f8c83d9cd9b7a71061faf8e7af0",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-011-1-1",
+      "reviewNote": "Reviewed anterior-shin foam contact, palms-up supported forearm curls, independent paired-dumbbell front raises and airborne underhand sternum chin."
     },
     {
       "exerciseId": "wger-8c4a9c16-294b-40e5-ba6d-50ae523704ba",
@@ -4525,7 +4579,9 @@
       "name": "Good Morning off Pins",
       "equipment": "Barbell",
       "guideSha256": "4e9c537dc09101e282f9b3fa3a41375e4a494683b43c87f97dd99546989b047d",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-012-0-0",
+      "reviewNote": "Reviewed rear-shoulder bar good morning on safety pins, unloaded single-leg hip-airplane posture and unloaded hip hinge."
     },
     {
       "exerciseId": "db-gorilla-chin-crunch",
@@ -4870,7 +4926,9 @@
       "name": "Hip Airplane",
       "equipment": "Kettlebell",
       "guideSha256": "64531c7870b9bc4f13e873d6d4016fdbb4d888266e5a29dc8d78447784a867ee",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-012-0-1",
+      "reviewNote": "Reviewed rear-shoulder bar good morning on safety pins, unloaded single-leg hip-airplane posture and unloaded hip hinge."
     },
     {
       "exerciseId": "wger-6b127132-cc0b-4b40-ac8c-177a28ccb6e2",
@@ -4913,7 +4971,9 @@
       "name": "Hip hinge",
       "equipment": "Barbell",
       "guideSha256": "5cb825164adf44dc6ffbbbd3ff91f988da98c1824239ce33d7eba781aa7982af",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-012-1-1",
+      "reviewNote": "Reviewed rear-shoulder bar good morning on safety pins, unloaded single-leg hip-airplane posture and unloaded hip hinge."
     },
     {
       "exerciseId": "db-hip-lift-with-band",
@@ -5244,7 +5304,9 @@
       "name": "Incline Push-Up Reverse Grip",
       "equipment": "Bodyweight",
       "guideSha256": "152b6837d831b8b63958a2349da1036a473f88aecd8250ea0a1178e5e3f02476",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-014-2-0",
+      "reviewNote": "Reviewed clear palms-up elevated-bar reverse push-up, laterally abducted supine strap groin stretch and forward-pointing palm-to-palm chest squeeze."
     },
     {
       "exerciseId": "db-incline-push-up-wide",
@@ -5296,7 +5358,9 @@
       "name": "Intermediate Groin Stretch",
       "equipment": "Specialty equipment",
       "guideSha256": "5f3c69d88bdefd1dd64efff977024529319f087ffa424688165952f12a4f6e2a",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-014-0-1",
+      "reviewNote": "Reviewed clear palms-up elevated-bar reverse push-up, laterally abducted supine strap groin stretch and forward-pointing palm-to-palm chest squeeze."
     },
     {
       "exerciseId": "db-intermediate-hip-flexor-and-quad-stretch",
@@ -5355,7 +5419,9 @@
       "name": "Isometric Chest Squeezes",
       "equipment": "Bodyweight",
       "guideSha256": "03c7eff38beffc1e40770f5d20d2b584dad7d8fb9dd47fc6dec903ac60415292",
-      "status": "pending"
+      "status": "accepted",
+      "assetId": "forma-original-corrections-014-2-1",
+      "reviewNote": "Reviewed clear palms-up elevated-bar reverse push-up, laterally abducted supine strap groin stretch and forward-pointing palm-to-palm chest squeeze."
     },
     {
       "exerciseId": "db-isometric-neck-exercise-front-and-back",

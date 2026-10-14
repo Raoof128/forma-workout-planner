@@ -1,0 +1,163 @@
+{
+  "name": "corrections-014",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-014.png",
+  "prompt": "Create ORIGINAL FORMA fitness manual art. Exactly THREE columns TWO rows SIX panels landscape1536x1024. Whitebackground, generous margins, fullyclothedvariedadults, charcoalgrayclothing/equipment limeaccent, correcttwoarms/twolegs andphysicallyplausible support. No lettering logoswatermarks. Complete figures and apparatus insideownpanel. ONE representative workingphase. Mandatorycorrections and fullactualguides below. \n\nRow 1 column 1: Incline Dumbbell Flyes - With A Twist. MANDATORY Incline dumbbell fly with twist, bench ONLY 20-30DEGREES, both arms symmetric, rotate to neutral at top as actual guide.. Actual guide: Hold a dumbbell in each hand and lie on an incline bench that is set to an incline angle of no more than 30 degrees.\n\nExtend your arms above you with a slight bend at the elbows.\n\nNow rotate the wrists so that the palms of your hands are facing you. Tip: The pinky fingers should be next to each other. This will be your starting position.\n\nAs you breathe in, start to slowly lower the arms to the side while keeping the arms extended and while rotating the wrists until the palms of the hand are facing each other. Tip: At the end of the movement the arms will be by your side with the palms facing the ceiling.\n\nAs you exhale start to bring the dumbbells back up to the starting position by reversing the motion and rotating the hands so that the pinky fingers are next to each other again. Tip: Keep in mind that the movement will only happen at the shoulder joint and at the wrist. There is no motion that happens at the elbow joint.\n\nRepeat for the recommended amount of repetitions.\n\nRow 1 column 2: Incline OHP DB. MANDATORY Dumbbell inclined overhead press: backrest exactly45DEGREES, no almost-upright bench. Pairedbells overhead.. Actual guide: * Sit on a bench with 45° incline * Ellbows 45° out * Move dumbbells down until upper arms are parallel to shoulders * Move dumbbells up, meeting overhead\n\nRow 1 column 3: Incline Push-Up Reverse Grip. MANDATORY INCLINE reverse grip push-up: elevated bar, BOTH palms UP toward face, supinated bar grasp, body rigid feet floor.. Actual guide: Stand facing a Smith machine bar or sturdy elevated platform at an appropriate height.\n\nPlace your hands on the bar palms up, with your hands about shoulder width apart.\n\nPosition your feet back from the bar with arms and body straight. This will be your starting position.\n\nKeeping your body straight, lower your chest to the bar by bending the arms.\n\nReturn to the starting position by extending the elbows, pressing yourself back up.\n\nRow 2 column 1: Intermediate Groin Stretch. MANDATORY Supine STRAP groin stretch: straight strap-held leg clearly moved OUT TO SIDE (ABDUCTED), not vertical hamstring stretch.. Actual guide: Lie on your back with your legs extended. Loop a belt, rope, or band around one of your feet, and swing that leg as far to the side as you can. This will be your starting position.\n\nPull gently on the belt to create tension in your groin and hamstring muscles. Hold for 10-20 seconds, and repeat on the other side.\n\nRow 2 column 2: Intermediate Hip Flexor and Quad Stretch. MANDATORY Prone STRAP quad/hip-flexor stretch: flexed knee and thigh visibly lifted OFF FLOOR, strap over shoulder draws foot toward head.. Actual guide: Lie face down on the floor, with a rope, belt, or band looped around one foot.\n\nFlex the knee and extend the hip of the leg to be stretched, using both hands to pull on the belt. Your knee and your hip should come off of the floor, creating tension in the hip flexors and quadriceps. Hold the stretch for 10-20 seconds, and repeat on the other leg.\n\nRow 2 column 3: Isometric Chest Squeezes. MANDATORY Standing isometric chest squeeze: palms together with FINGERS POINTING FORWARD horizontally, not upward prayer hands.. Actual guide: While either seating or standing, bend your arms at a 90-degree angle and place the palms of your hands together in front of your chest. Tip: Your hands should be open with the palms together and fingers facing forward (perpendicular to your torso).\n\nPush both hands against each other as you contract your chest. Start with slow tension and increase slowly. Keep breathing normally as you execute this contraction.\n\nHold for the recommended number of seconds.\n\nNow release the tension slowly.\n\nRest for the recommended amount of time and repeat.",
+  "cells": [
+    {
+      "id": "db-incline-dumbbell-flyes-with-a-twist",
+      "title": "Incline Dumbbell Flyes - With A Twist",
+      "equipment": "Dumbbell",
+      "guideText": "Hold a dumbbell in each hand and lie on an incline bench that is set to an incline angle of no more than 30 degrees.\n\nExtend your arms above you with a slight bend at the elbows.\n\nNow rotate the wrists so that the palms of your hands are facing you. Tip: The pinky fingers should be next to each other. This will be your starting position.\n\nAs you breathe in, start to slowly lower the arms to the side while keeping the arms extended and while rotating the wrists until the palms of the hand are facing each other. Tip: At the end of the movement the arms will be by your side with the palms facing the ceiling.\n\nAs you exhale start to bring the dumbbells back up to the starting position by reversing the motion and rotating the hands so that the pinky fingers are next to each other again. Tip: Keep in mind that the movement will only happen at the shoulder joint and at the wrist. There is no motion that happens at the elbow joint.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Dumbbell_Flyes_-_With_A_Twist.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Incline dumbbell fly with twist, bench ONLY 20-30DEGREES, both arms symmetric, rotate to neutral at top as actual guide.",
+      "reviewNote": "Incline remains steeper than the no-more-than-30-degree guide.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "wger-f89b3662-f911-4aab-9402-cfa6d47cea2b",
+      "title": "Incline OHP DB",
+      "equipment": "Dumbbell",
+      "guideText": "* Sit on a bench with 45° incline * Ellbows 45° out * Move dumbbells down until upper arms are parallel to shoulders * Move dumbbells up, meeting overhead",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1441/view/",
+        "author": "M9",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Dumbbell inclined overhead press: backrest exactly45DEGREES, no almost-upright bench. Pairedbells overhead.",
+      "reviewNote": "Backrest remains steeper than specified 45 degrees.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "db-incline-push-up-reverse-grip",
+      "title": "Incline Push-Up Reverse Grip",
+      "equipment": "Bodyweight",
+      "guideText": "Stand facing a Smith machine bar or sturdy elevated platform at an appropriate height.\n\nPlace your hands on the bar palms up, with your hands about shoulder width apart.\n\nPosition your feet back from the bar with arms and body straight. This will be your starting position.\n\nKeeping your body straight, lower your chest to the bar by bending the arms.\n\nReturn to the starting position by extending the elbows, pressing yourself back up.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Push-Up_Reverse_Grip.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "INCLINE reverse grip push-up: elevated bar, BOTH palms UP toward face, supinated bar grasp, body rigid feet floor.",
+      "reviewNote": "Reviewed clear palms-up elevated-bar reverse push-up, laterally abducted supine strap groin stretch and forward-pointing palm-to-palm chest squeeze.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "db-intermediate-groin-stretch",
+      "title": "Intermediate Groin Stretch",
+      "equipment": "Specialty equipment",
+      "guideText": "Lie on your back with your legs extended. Loop a belt, rope, or band around one of your feet, and swing that leg as far to the side as you can. This will be your starting position.\n\nPull gently on the belt to create tension in your groin and hamstring muscles. Hold for 10-20 seconds, and repeat on the other side.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Intermediate_Groin_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Supine STRAP groin stretch: straight strap-held leg clearly moved OUT TO SIDE (ABDUCTED), not vertical hamstring stretch.",
+      "reviewNote": "Reviewed clear palms-up elevated-bar reverse push-up, laterally abducted supine strap groin stretch and forward-pointing palm-to-palm chest squeeze.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "db-intermediate-hip-flexor-and-quad-stretch",
+      "title": "Intermediate Hip Flexor and Quad Stretch",
+      "equipment": "Specialty equipment",
+      "guideText": "Lie face down on the floor, with a rope, belt, or band looped around one foot.\n\nFlex the knee and extend the hip of the leg to be stretched, using both hands to pull on the belt. Your knee and your hip should come off of the floor, creating tension in the hip flexors and quadriceps. Hold the stretch for 10-20 seconds, and repeat on the other leg.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Intermediate_Hip_Flexor_and_Quad_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Prone STRAP quad/hip-flexor stretch: flexed knee and thigh visibly lifted OFF FLOOR, strap over shoulder draws foot toward head.",
+      "reviewNote": "Stretched knee/thigh appear grounded rather than lifted clear as the guide requires.",
+      "bounds": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "db-isometric-chest-squeezes",
+      "title": "Isometric Chest Squeezes",
+      "equipment": "Bodyweight",
+      "guideText": "While either seating or standing, bend your arms at a 90-degree angle and place the palms of your hands together in front of your chest. Tip: Your hands should be open with the palms together and fingers facing forward (perpendicular to your torso).\n\nPush both hands against each other as you contract your chest. Start with slow tension and increase slowly. Keep breathing normally as you execute this contraction.\n\nHold for the recommended number of seconds.\n\nNow release the tension slowly.\n\nRest for the recommended amount of time and repeat.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Isometric_Chest_Squeezes.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Standing isometric chest squeeze: palms together with FINGERS POINTING FORWARD horizontally, not upward prayer hands.",
+      "reviewNote": "Reviewed clear palms-up elevated-bar reverse push-up, laterally abducted supine strap groin stretch and forward-pointing palm-to-palm chest squeeze.",
+      "bounds": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within equal 512-pixel panel boundaries."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-5c1076f1-a1e2-4dca-a082-1ca8645a3757.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-014.png"
+}

@@ -1,0 +1,143 @@
+{
+  "name": "corrections-006",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-006.png",
+  "prompt": "Create ORIGINAL FORMA fitness-manual illustrations. Exactly THREE columns TWO rows, SIX large separate panels, landscape 1536x1024. Pure white panels with generous margins, fully clothed varied adult athletes, charcoal/gray sportswear and equipment, small lime accents. Correct anatomy and plausible weight bearing. Full athlete and equipment fits entirely inside own panel. No letters, labels, logos, watermark. ONE clear accurate representative position per panel. Respect the mandatory correction, not a generic similar exercise. \n\nRow 1 column 1: Band Assisted Pull-Up. MANDATORY: Assisted pull-up: band LOOP beneath one BENT KNEE, knee resting in loop; NO loop under foot. Athlete entirely airborne with both hands bar.. Actual guide: Choke the band around the center of the pullup bar. You can use different bands to provide varying levels of assistance.\n\nPull the end of the band down, and place one bent knee into the loop, ensuring it won't slip out. Take a medium to wide grip on the bar. This will be your starting position.\n\nPull yourself upward by contracting the lats as you flex the elbow. The elbow should be driven to your side. Pull to the front, attempting to get your chin over the bar. Avoid swinging or jerking movements.\n\nAfter a brief pause, return to the starting position.\n\nRow 1 column 2: Band Terminal Knee extension. MANDATORY: Standing band terminal knee extension: band fixed to rack IN FRONT of athlete at knee height and behind working knee. Leg nearly straight, resisting forward pull.. Actual guide: This is an end range strengthening exercise for the knee extensors. Start by looping a band around the back of one knee and anchoring the other end to a stable surface in front of you. Stand in a split stance with the banded knee bent and placed as the front leg. Straighten the knee to pull against the bands resistance and maintain a contraction in your quadriceps for up to 5 seconds before releasing.\n\nRow 1 column 3: Bent-knee Iron Cross. MANDATORY: Supine bent-knee Iron Cross rotational stretch: both knees together bent at 90 and rotated to one side, shoulders flat floor, arms extended T.. Actual guide: Bent-knee Iron Cross\nPart of: Limber 11\nSource: Joe DeFranco\nPrescription: 5-10 reps each side\nType: dynamic\n\nRow 2 column 1: Chair Upper Body Stretch. MANDATORY: One chair only. Seated facing chair back or suitable chair-back stretch exactly as guide; read guide and make support clear.. Actual guide: Sit on the edge of a chair, gripping the back of it.\n\nStraighten your arms, keeping your back straight, and pull your upper body forward so you feel a stretch. Hold for 20-30 seconds.\n\nRow 2 column 2: Clap Push-UP. MANDATORY: Standard CLAP push-up: both toes STILL TOUCH FLOOR, heels raised; hands airborne clapping in front chest, rigid body. NEVER airborne feet.. Actual guide: The clap push-up is an explosive upper body movement that builds power and fast-twitch muscle strength. It adds a plyometric challenge to the traditional push-up by requiring the hands to leave the ground mid-rep. 1. Start in a strong push-up position with your hands slightly wider than shoulder-width and core engaged 2. Lower your body explosively and push off the ground with enough force to lift your hands. 3. Quickly clap your hands together at chest level before returning them to the floor. 4. Land with soft elbows to absorb the impact and immediately move into the next rep\n\nRow 2 column 3: commando pull-ups. MANDATORY: Commando pull-up with both hands on same bar facing opposite directions: one palm TOWARDS face and other AWAY. Body sideways under lengthwise bar; chin to side.. Actual guide: variation of the pull-up exercise, it is performed with a grip of one hand supine and one hand prone, do not twist the torso to get back to the front, the head passes once to one side, once to the other.",
+  "cells": [
+    {
+      "id": "db-band-assisted-pull-up",
+      "title": "Band Assisted Pull-Up",
+      "equipment": "Specialty equipment",
+      "guideText": "Choke the band around the center of the pullup bar. You can use different bands to provide varying levels of assistance.\n\nPull the end of the band down, and place one bent knee into the loop, ensuring it won't slip out. Take a medium to wide grip on the bar. This will be your starting position.\n\nPull yourself upward by contracting the lats as you flex the elbow. The elbow should be driven to your side. Pull to the front, attempting to get your chin over the bar. Avoid swinging or jerking movements.\n\nAfter a brief pause, return to the starting position.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "correctionRequirement": "Assisted pull-up: band LOOP beneath one BENT KNEE, knee resting in loop; NO loop under foot. Athlete entirely airborne with both hands bar.",
+      "reviewNote": "Reviewed knee-in-band assisted pull-up, forward-anchored terminal knee extension, bent-knee supine rotation, one-chair back-grip stretch and toes-grounded hands-airborne clap push-up.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within the explicit equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "wger-3096b34e-1781-4f99-8187-d9acac8e712b",
+      "title": "Band Terminal Knee extension",
+      "equipment": "Resistance band",
+      "guideText": "This is an end range strengthening exercise for the knee extensors. Start by looping a band around the back of one knee and anchoring the other end to a stable surface in front of you. Stand in a split stance with the banded knee bent and placed as the front leg. Straighten the knee to pull against the bands resistance and maintain a contraction in your quadriceps for up to 5 seconds before releasing.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "correctionRequirement": "Standing band terminal knee extension: band fixed to rack IN FRONT of athlete at knee height and behind working knee. Leg nearly straight, resisting forward pull.",
+      "reviewNote": "Reviewed knee-in-band assisted pull-up, forward-anchored terminal knee extension, bent-knee supine rotation, one-chair back-grip stretch and toes-grounded hands-airborne clap push-up.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within the explicit equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "wger-4ce9740f-313d-4419-8a23-6c884d3a1a17",
+      "title": "Bent-knee Iron Cross",
+      "equipment": "Bodyweight",
+      "guideText": "Bent-knee Iron Cross\nPart of: Limber 11\nSource: Joe DeFranco\nPrescription: 5-10 reps each side\nType: dynamic",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "correctionRequirement": "Supine bent-knee Iron Cross rotational stretch: both knees together bent at 90 and rotated to one side, shoulders flat floor, arms extended T.",
+      "reviewNote": "Reviewed knee-in-band assisted pull-up, forward-anchored terminal knee extension, bent-knee supine rotation, one-chair back-grip stretch and toes-grounded hands-airborne clap push-up.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within the explicit equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "db-chair-upper-body-stretch",
+      "title": "Chair Upper Body Stretch",
+      "equipment": "Specialty equipment",
+      "guideText": "Sit on the edge of a chair, gripping the back of it.\n\nStraighten your arms, keeping your back straight, and pull your upper body forward so you feel a stretch. Hold for 20-30 seconds.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Chair_Upper_Body_Stretch.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "One chair only. Seated facing chair back or suitable chair-back stretch exactly as guide; read guide and make support clear.",
+      "reviewNote": "Reviewed knee-in-band assisted pull-up, forward-anchored terminal knee extension, bent-knee supine rotation, one-chair back-grip stretch and toes-grounded hands-airborne clap push-up.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within the explicit equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "wger-fdeb0973-121f-494d-8b94-54f1d7ba003f",
+      "title": "Clap Push-UP",
+      "equipment": "Bodyweight",
+      "guideText": "The clap push-up is an explosive upper body movement that builds power and fast-twitch muscle strength. It adds a plyometric challenge to the traditional push-up by requiring the hands to leave the ground mid-rep. 1. Start in a strong push-up position with your hands slightly wider than shoulder-width and core engaged 2. Lower your body explosively and push off the ground with enough force to lift your hands. 3. Quickly clap your hands together at chest level before returning them to the floor. 4. Land with soft elbows to absorb the impact and immediately move into the next rep",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1554/view/",
+        "author": "Settebello",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Standard CLAP push-up: both toes STILL TOUCH FLOOR, heels raised; hands airborne clapping in front chest, rigid body. NEVER airborne feet.",
+      "reviewNote": "Reviewed knee-in-band assisted pull-up, forward-anchored terminal knee extension, bent-knee supine rotation, one-chair back-grip stretch and toes-grounded hands-airborne clap push-up.",
+      "bounds": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within the explicit equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "wger-e872658a-3bac-4d9e-bcf2-15919ebea43a",
+      "title": "commando pull-ups",
+      "equipment": "Pull-up bar",
+      "guideText": "variation of the pull-up exercise, it is performed with a grip of one hand supine and one hand prone, do not twist the torso to get back to the front, the head passes once to one side, once to the other.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/980/view/",
+        "author": "clafal",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Commando pull-up with both hands on same bar facing opposite directions: one palm TOWARDS face and other AWAY. Body sideways under lengthwise bar; chin to side.",
+      "reviewNote": "Grips/body alignment still resemble a normal wide pull-up rather than lengthwise mixed-grip commando setup.",
+      "bounds": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within the explicit equal 512-pixel panel boundaries."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-26afbca7-2b98-4fa9-b467-66c1dcebe7b1.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-006.png"
+}

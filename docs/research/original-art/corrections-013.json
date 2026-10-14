@@ -1,0 +1,114 @@
+{
+  "name": "corrections-013",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-013.png",
+  "prompt": "Create ORIGINAL FORMA fitness manual art. Exactly THREE columns TWO rows SIX panels landscape1536x1024. Whitebackground, generous margins, fullyclothedvariedadults, charcoalgrayclothing/equipment limeaccent, correcttwoarms/twolegs andphysicallyplausible support. No lettering logoswatermarks. Complete figures and apparatus insideownpanel. ONE representative workingphase. Mandatorycorrections and fullactualguides below. \n\nRow 1 column 1: Hug A Ball. MANDATORY Hug a stability ball: athlete STRADDLES and HUGS the ball while HIPS near FLOOR behind ball, not sitting ON TOP of ball.. Actual guide: Seat yourself on the floor.\n\nStraddle an exercise ball between both legs and lower your hips down toward the floor.\n\nHug your arms around the ball to support your body. Adjust your legs so that your feet are flat on the floor and your knees line up over your ankles. Keep a good grip on the ball so it doesn't roll away from you and send you back onto your buttocks.\n\nRow 1 column 2: Hug Knees To Chest. MANDATORY Supine BOTH knees to chest: BOTH hands visibly UNDER knees behind thighs, NO hands over kneecaps.. Actual guide: Lie down on your back and pull both knees up to your chest.\n\nHold your arms under the knees, not over (that would put to much pressure on your knee joints).\n\nSlowly pull the knees toward your shoulders. This also stretches your buttocks muscles.\n\nRow 1 column 3: Hyperextensions With No Hyperextension Bench. MANDATORY Prone FLAT bench hyperextension with SECOND fully clothed adult partner clearly securing both ankles/legs on bench. Working torso hangs past bench edge.. Actual guide: With someone holding down your legs, slide yourself down to the edge a flat bench until your hips hang off the end of the bench. Tip: Your entire upper body should be hanging down towards the floor. Also, you will be in the same position as if you were on a hyperextension bench but the range of motion will be shorter due to the height of the flat bench vs. that of the hyperextension bench.\n\nWith your body straight, cross your arms in front of you (my preference) or behind your head. This will be your starting position. Tip: You can also hold a weight plate for extra resistance in front of you under your crossed arms.\n\nStart bending forward slowly at the waist as far as you can while keeping your back flat. Inhale as you perform this movement. Keep moving forward until you almost touch the floor or you feel a nice stretch on the hamstrings (whichever comes first). Tip: Never round the back as you perform this exercise.\n\nSlowly raise your torso back to the initial position as you exhale. Tip: Avoid the temptation to arch your back past a straight line. Also, do not swing the torso at any time in order to protect the back from injury.\n\nRepeat for the recommended amount of repetitions.\n\nRow 2 column 1: Incline Barbell Triceps Extension. MANDATORY INCLINE bench barbell triceps extension: upper arms aligned torso, bar lowered BEHIND head, elbows flexed. Follow actual guide for slope.. Actual guide: Hold a barbell with an overhand grip (palms down) that is a little closer together than shoulder width.\n\nLie back on an incline bench set at any angle between 45-75-degrees.\n\nBring the bar overhead with your arms extended and elbows in. The arms should be in line with the torso above the head. This will be your starting position.\n\nNow lower the bar in a semicircular motion behind your head until your forearms touch your biceps. Inhale as you perform this movement. Tip: Keep your upper arms stationary and close to your head at all times. Only the forearms should move.\n\nReturn to the starting position as you breathe out and you contract the triceps. Hold the contraction for a second.\n\nRepeat for the recommended amount of repetitions.\n\nRow 2 column 2: Incline Bench Pull. MANDATORY Prone incline bench barbell PULL endpoint, elbows FLARED SIDEWAYS so upper arms form a T across shoulders, bar under chest.. Actual guide: Grab a dumbbell in each hand and lie face down on an incline bench that is set to an incline that is approximately 30 degrees.\n\nLet the arms hang to your sides fully extended as they point to the floor.\n\nTurn the wrists until your hands have a pronated (palms down) grip.\n\nNow flare the elbows out. This will be your starting position.\n\nAs you breathe out, start to pull the dumbbells up as if you are doing a reverse bench press. You will do this by bending at the elbows and bringing the upper arms up as you let the forearms hang. Continue this motion until the upper arms are at the same level as your back. Tip: The elbows will come out to the side and your upper arms and torso should make the letter \"T\" at the top of the movement. Hold the contraction at the top for a second.\n\nSlowly go back down to the starting position as you breathe in.\n\nRepeat for the recommended amount of repetitions.\n\nRow 2 column 3: Incline Dumbbell Flyes. MANDATORY INCLINE bilateral dumbbell FLY, both arms at SAME laterally spread phase, elbows slightly bent, exactly two dumbbells.. Actual guide: Hold a dumbbell on each hand and lie on an incline bench that is set to an incline angle of no more than 30 degrees.\n\nExtend your arms above you with a slight bend at the elbows.\n\nNow rotate the wrists so that the palms of your hands are facing you. Tip: The pinky fingers should be next to each other. This will be your starting position.\n\nAs you breathe in, start to slowly lower the arms to the side while keeping the arms extended and while rotating the wrists until the palms of the hand are facing each other. Tip: At the end of the movement the arms will be by your side with the palms facing the ceiling.\n\nAs you exhale start to bring the dumbbells back up to the starting position by reversing the motion and rotating the hands so that the pinky fingers are next to each other again. Tip: Keep in mind that the movement will only happen at the shoulder joint and at the wrist. There is no motion that happens at the elbow joint.\n\nRepeat for the recommended amount of repetitions.",
+  "cells": [
+    {
+      "id": "db-hug-a-ball",
+      "title": "Hug A Ball",
+      "equipment": "Exercise ball",
+      "guideText": "Seat yourself on the floor.\n\nStraddle an exercise ball between both legs and lower your hips down toward the floor.\n\nHug your arms around the ball to support your body. Adjust your legs so that your feet are flat on the floor and your knees line up over your ankles. Keep a good grip on the ball so it doesn't roll away from you and send you back onto your buttocks.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hug_A_Ball.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Hug a stability ball: athlete STRADDLES and HUGS the ball while HIPS near FLOOR behind ball, not sitting ON TOP of ball."
+    },
+    {
+      "id": "db-hug-knees-to-chest",
+      "title": "Hug Knees To Chest",
+      "equipment": "Bodyweight",
+      "guideText": "Lie down on your back and pull both knees up to your chest.\n\nHold your arms under the knees, not over (that would put to much pressure on your knee joints).\n\nSlowly pull the knees toward your shoulders. This also stretches your buttocks muscles.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hug_Knees_To_Chest.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Supine BOTH knees to chest: BOTH hands visibly UNDER knees behind thighs, NO hands over kneecaps."
+    },
+    {
+      "id": "db-hyperextensions-with-no-hyperextension-bench",
+      "title": "Hyperextensions With No Hyperextension Bench",
+      "equipment": "Bodyweight",
+      "guideText": "With someone holding down your legs, slide yourself down to the edge a flat bench until your hips hang off the end of the bench. Tip: Your entire upper body should be hanging down towards the floor. Also, you will be in the same position as if you were on a hyperextension bench but the range of motion will be shorter due to the height of the flat bench vs. that of the hyperextension bench.\n\nWith your body straight, cross your arms in front of you (my preference) or behind your head. This will be your starting position. Tip: You can also hold a weight plate for extra resistance in front of you under your crossed arms.\n\nStart bending forward slowly at the waist as far as you can while keeping your back flat. Inhale as you perform this movement. Keep moving forward until you almost touch the floor or you feel a nice stretch on the hamstrings (whichever comes first). Tip: Never round the back as you perform this exercise.\n\nSlowly raise your torso back to the initial position as you exhale. Tip: Avoid the temptation to arch your back past a straight line. Also, do not swing the torso at any time in order to protect the back from injury.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Hyperextensions_With_No_Hyperextension_Bench.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Prone FLAT bench hyperextension with SECOND fully clothed adult partner clearly securing both ankles/legs on bench. Working torso hangs past bench edge."
+    },
+    {
+      "id": "db-incline-barbell-triceps-extension",
+      "title": "Incline Barbell Triceps Extension",
+      "equipment": "Barbell",
+      "guideText": "Hold a barbell with an overhand grip (palms down) that is a little closer together than shoulder width.\n\nLie back on an incline bench set at any angle between 45-75-degrees.\n\nBring the bar overhead with your arms extended and elbows in. The arms should be in line with the torso above the head. This will be your starting position.\n\nNow lower the bar in a semicircular motion behind your head until your forearms touch your biceps. Inhale as you perform this movement. Tip: Keep your upper arms stationary and close to your head at all times. Only the forearms should move.\n\nReturn to the starting position as you breathe out and you contract the triceps. Hold the contraction for a second.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Barbell_Triceps_Extension.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "INCLINE bench barbell triceps extension: upper arms aligned torso, bar lowered BEHIND head, elbows flexed. Follow actual guide for slope."
+    },
+    {
+      "id": "db-incline-bench-pull",
+      "title": "Incline Bench Pull",
+      "equipment": "Barbell",
+      "guideText": "Grab a dumbbell in each hand and lie face down on an incline bench that is set to an incline that is approximately 30 degrees.\n\nLet the arms hang to your sides fully extended as they point to the floor.\n\nTurn the wrists until your hands have a pronated (palms down) grip.\n\nNow flare the elbows out. This will be your starting position.\n\nAs you breathe out, start to pull the dumbbells up as if you are doing a reverse bench press. You will do this by bending at the elbows and bringing the upper arms up as you let the forearms hang. Continue this motion until the upper arms are at the same level as your back. Tip: The elbows will come out to the side and your upper arms and torso should make the letter \"T\" at the top of the movement. Hold the contraction at the top for a second.\n\nSlowly go back down to the starting position as you breathe in.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Bench_Pull.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "Prone incline bench barbell PULL endpoint, elbows FLARED SIDEWAYS so upper arms form a T across shoulders, bar under chest."
+    },
+    {
+      "id": "db-incline-dumbbell-flyes",
+      "title": "Incline Dumbbell Flyes",
+      "equipment": "Dumbbell",
+      "guideText": "Hold a dumbbell on each hand and lie on an incline bench that is set to an incline angle of no more than 30 degrees.\n\nExtend your arms above you with a slight bend at the elbows.\n\nNow rotate the wrists so that the palms of your hands are facing you. Tip: The pinky fingers should be next to each other. This will be your starting position.\n\nAs you breathe in, start to slowly lower the arms to the side while keeping the arms extended and while rotating the wrists until the palms of the hand are facing each other. Tip: At the end of the movement the arms will be by your side with the palms facing the ceiling.\n\nAs you exhale start to bring the dumbbells back up to the starting position by reversing the motion and rotating the hands so that the pinky fingers are next to each other again. Tip: Keep in mind that the movement will only happen at the shoulder joint and at the wrist. There is no motion that happens at the elbow joint.\n\nRepeat for the recommended amount of repetitions.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "pending",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Incline_Dumbbell_Flyes.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "INCLINE bilateral dumbbell FLY, both arms at SAME laterally spread phase, elbows slightly bent, exactly two dumbbells."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-d176fce3-29dc-483d-9ef1-90b2ac48a1f0.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-013.png"
+}

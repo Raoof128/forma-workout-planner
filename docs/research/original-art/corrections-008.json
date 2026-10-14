@@ -1,0 +1,166 @@
+{
+  "name": "corrections-008",
+  "columns": 3,
+  "rows": 2,
+  "kind": "movement_illustration",
+  "publicPath": "/exercise-media/original/corrections-008.png",
+  "prompt": "Create ORIGINAL FORMA fitness-manual illustrations. Exactly THREE columns TWO rows, SIX large separate panels, landscape 1536x1024. Pure white panels with generous margins, fully clothed varied adult athletes, charcoal/gray sportswear and equipment, small lime accents. Correct anatomy and plausible weight bearing. Full athlete and equipment fits entirely inside own panel. No letters, labels, logos, watermark. ONE clear accurate representative position per panel. Respect the mandatory correction, not a generic similar exercise. \n\nRow 1 column 1: Decline Close-Grip Bench To Skull Crusher. MANDATORY: DECLINE close-grip press to skull crusher: HEAD LOWER than secured FEET, feet supported by raised rollers. Close grip bar over forehead, bent elbows.. Actual guide: Secure your legs at the end of the decline bench and slowly lay down on the bench.\n\nUsing a close grip (a grip that is slightly less than shoulder width), lift the bar from the rack and hold it straight over you with your arms locked and elbows in. The arms should be perpendicular to the floor. This will be your starting position. Tip: In order to protect your rotator cuff, it is best if you have a spotter help you lift the barbell off the rack.\n\nNow lower the bar down to your lower chest as you breathe in. Keep the elbows in as you perform this movement.\n\nUsing the triceps to push the bar back up, press it back to the starting position as you exhale.\n\nAs you breathe in and you keep the upper arms stationary, bring the bar down slowly by moving your forearms in a semicircular motion towards you until you feel the bar slightly touch your forehead. Breathe in as you perform this portion of the movement.\n\nLift the bar back to the starting position by contracting the triceps and exhaling.\n\nRepeat steps 3-6 until the recommended amount of repetitions is performed.\n\nRow 1 column 2: Decline EZ Bar Triceps Extension. MANDATORY: DECLINE EZ triceps extension: HEAD LOWER than secured FEET, raised foot rollers. Close-grip EZ bar lowered behind/above head elbows bent.. Actual guide: Secure your legs at the end of the decline bench and slowly lay down on the bench.\n\nUsing a close grip (a grip that is slightly less than shoulder width), lift the EZ bar from the rack and hold it straight over you with your arms locked and elbows in. The arms should be perpendicular to the floor. This will be your starting position. Tip: In order to protect your rotator cuff, it is best if you have a spotter help you lift the barbell off the rack.\n\nAs you breathe in and you keep the upper arms stationary, bring the bar down slowly by moving your forearms in a semicircular motion towards you until you feel the bar slightly touch your forehead. Breathe in as you perform this portion of the movement.\n\nLift the bar back to the starting position by contracting the triceps and exhaling.\n\nRepeat until the recommended amount of repetitions is performed.\n\nRow 1 column 3: Dragon-flag. MANDATORY: DRAGON FLAG: shoulders/upper back only contact bench, torso-hips-legs RIGID STRAIGHT LINE raised off bench, BOTH HANDS FIRMLY GRIP bench edges behind head visibly. NOT hands behind head or hip-flexed leg raise.. Actual guide: Keep your body completely rigid throughout the movement, avoiding sagging in your lower back. Use a firm grip to stabilize your upper body. Start with simpler versions (such as with bent knees) to build strength and control.\n\nRow 2 column 1: Dumbbell Crunches. MANDATORY: Dumbbell crunch: feet floor knees bent, ONE dumbbell chest, shoulders raised only a few inches, LOWER BACK CLEARLY RESTS ON FLOOR. Not full sit-up.. Actual guide: Dumbbell crunches are a weighted variation of traditional crunches designed to target the abdominal muscles more intensely. Lie flat on your back with your knees bent and feet flat on the floor. Hold a dumbbell with both hands close to your chest or above your head. Lift your shoulders and upper back off the ground in a crunching motion, engaging your core. Slowly lower yourself back to the starting position. Ensure controlled movements throughout the exercise to prevent strain.\n\nRow 2 column 2: Dumbbell cyclist squat. MANDATORY: Dumbbell cyclist squat: ONLY HEELS elevated on narrow slanted wedge, TOES contact floor. One dumbbell each side. No whole-foot platform.. Actual guide: Dumbbell squats with elevated heel position. Stand on either squat wedges or weight plates to raise heels higher than toes, while holding the dumbbells on your sides.\n\nRow 2 column 3: Dumbbell Frog Press. MANDATORY: ACTUAL GUIDE IS HIP THRUST: Supine on FLOOR, one dumbbell across PELVIS held with both hands, SOLES TOUCHING in diamond feet-together position, knees open, hips raised. NO chest press, NO weights above chest.. Actual guide: Similar to hip thrust, but with feet put up together, lifting the butt off the ground in a frog like position.",
+  "cells": [
+    {
+      "id": "db-decline-close-grip-bench-to-skull-crusher",
+      "title": "Decline Close-Grip Bench To Skull Crusher",
+      "equipment": "Barbell",
+      "guideText": "Secure your legs at the end of the decline bench and slowly lay down on the bench.\n\nUsing a close grip (a grip that is slightly less than shoulder width), lift the bar from the rack and hold it straight over you with your arms locked and elbows in. The arms should be perpendicular to the floor. This will be your starting position. Tip: In order to protect your rotator cuff, it is best if you have a spotter help you lift the barbell off the rack.\n\nNow lower the bar down to your lower chest as you breathe in. Keep the elbows in as you perform this movement.\n\nUsing the triceps to push the bar back up, press it back to the starting position as you exhale.\n\nAs you breathe in and you keep the upper arms stationary, bring the bar down slowly by moving your forearms in a semicircular motion towards you until you feel the bar slightly touch your forehead. Breathe in as you perform this portion of the movement.\n\nLift the bar back to the starting position by contracting the triceps and exhaling.\n\nRepeat steps 3-6 until the recommended amount of repetitions is performed.",
+      "column": 0,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Decline_Close-Grip_Bench_To_Skull_Crusher.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "DECLINE close-grip press to skull crusher: HEAD LOWER than secured FEET, feet supported by raised rollers. Close grip bar over forehead, bent elbows.",
+      "reviewNote": "Reviewed two secured decline triceps setups, rigid shoulder-supported dragon flag with visible bench grip, floor-backed dumbbell crunch and heels-only elevated cyclist squat.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "db-decline-ez-bar-triceps-extension",
+      "title": "Decline EZ Bar Triceps Extension",
+      "equipment": "Barbell",
+      "guideText": "Secure your legs at the end of the decline bench and slowly lay down on the bench.\n\nUsing a close grip (a grip that is slightly less than shoulder width), lift the EZ bar from the rack and hold it straight over you with your arms locked and elbows in. The arms should be perpendicular to the floor. This will be your starting position. Tip: In order to protect your rotator cuff, it is best if you have a spotter help you lift the barbell off the rack.\n\nAs you breathe in and you keep the upper arms stationary, bring the bar down slowly by moving your forearms in a semicircular motion towards you until you feel the bar slightly touch your forehead. Breathe in as you perform this portion of the movement.\n\nLift the bar back to the starting position by contracting the triceps and exhaling.\n\nRepeat until the recommended amount of repetitions is performed.",
+      "column": 1,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "Free Exercise DB",
+        "url": "https://github.com/yuhonas/free-exercise-db/blob/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Decline_EZ_Bar_Triceps_Extension.json",
+        "author": "Free Exercise DB contributors; original dataset by Ollie Jennings",
+        "license": "Unlicense",
+        "licenseUrl": "https://unlicense.org/"
+      },
+      "correctionRequirement": "DECLINE EZ triceps extension: HEAD LOWER than secured FEET, raised foot rollers. Close-grip EZ bar lowered behind/above head elbows bent.",
+      "reviewNote": "Reviewed two secured decline triceps setups, rigid shoulder-supported dragon flag with visible bench grip, floor-backed dumbbell crunch and heels-only elevated cyclist squat.",
+      "bounds": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "wger-f5ad82a8-adf8-4795-9874-1f6d183c56ed",
+      "title": "Dragon-flag",
+      "equipment": "Bodyweight",
+      "guideText": "Keep your body completely rigid throughout the movement, avoiding sagging in your lower back. Use a firm grip to stabilize your upper body. Start with simpler versions (such as with bent knees) to build strength and control.",
+      "column": 2,
+      "row": 0,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1409/view/",
+        "author": "clafal",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "DRAGON FLAG: shoulders/upper back only contact bench, torso-hips-legs RIGID STRAIGHT LINE raised off bench, BOTH HANDS FIRMLY GRIP bench edges behind head visibly. NOT hands behind head or hip-flexed leg raise.",
+      "reviewNote": "Reviewed two secured decline triceps setups, rigid shoulder-supported dragon flag with visible bench grip, floor-backed dumbbell crunch and heels-only elevated cyclist squat.",
+      "bounds": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "wger-b48e4d9d-f7fc-4619-85fb-6dabe5d7c999",
+      "title": "Dumbbell Crunches",
+      "equipment": "Dumbbell",
+      "guideText": "Dumbbell crunches are a weighted variation of traditional crunches designed to target the abdominal muscles more intensely. Lie flat on your back with your knees bent and feet flat on the floor. Hold a dumbbell with both hands close to your chest or above your head. Lift your shoulders and upper back off the ground in a crunching motion, engaging your core. Slowly lower yourself back to the starting position. Ensure controlled movements throughout the exercise to prevent strain.",
+      "column": 0,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1415/view/",
+        "author": "hpmbala@gmail.com",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Dumbbell crunch: feet floor knees bent, ONE dumbbell chest, shoulders raised only a few inches, LOWER BACK CLEARLY RESTS ON FLOOR. Not full sit-up.",
+      "reviewNote": "Reviewed two secured decline triceps setups, rigid shoulder-supported dragon flag with visible bench grip, floor-backed dumbbell crunch and heels-only elevated cyclist squat.",
+      "bounds": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "wger-e547df0d-d9aa-4c39-af40-59667aaa2cc9",
+      "title": "Dumbbell cyclist squat",
+      "equipment": "Dumbbell",
+      "guideText": "Dumbbell squats with elevated heel position. Stand on either squat wedges or weight plates to raise heels higher than toes, while holding the dumbbells on your sides.",
+      "column": 1,
+      "row": 1,
+      "reviewStatus": "accepted",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/2682/view/",
+        "author": "JuustoKakku",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "Dumbbell cyclist squat: ONLY HEELS elevated on narrow slanted wedge, TOES contact floor. One dumbbell each side. No whole-foot platform.",
+      "reviewNote": "Reviewed two secured decline triceps setups, rigid shoulder-supported dragon flag with visible bench grip, floor-backed dumbbell crunch and heels-only elevated cyclist squat.",
+      "bounds": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within equal 512-pixel panel boundaries."
+    },
+    {
+      "id": "wger-b407768d-d519-47b8-818a-44c9761a8be6",
+      "title": "Dumbbell Frog Press",
+      "equipment": "Dumbbell",
+      "guideText": "Similar to hip thrust, but with feet put up together, lifting the butt off the ground in a frog like position.",
+      "column": 2,
+      "row": 1,
+      "reviewStatus": "held",
+      "guideSource": {
+        "title": "wger",
+        "url": "https://wger.de/en/exercise/1503/view/",
+        "author": "JohnPreston",
+        "license": "CC-BY-SA 4",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "modified": "HTML removed; taxonomy and measurement labels normalized"
+      },
+      "correctionRequirement": "ACTUAL GUIDE IS HIP THRUST: Supine on FLOOR, one dumbbell across PELVIS held with both hands, SOLES TOUCHING in diamond feet-together position, knees open, hips raised. NO chest press, NO weights above chest.",
+      "reviewNote": "Feet remain separated/parallel; the actual frog hip-thrust guide requires soles together and knees opened.",
+      "bounds": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "cropReviewNote": "Inspected complete figures within equal 512-pixel panel boundaries."
+    }
+  ],
+  "sourceGeneratedPath": "/workspace/generated_images/exec-cc5d55e5-6948-4c4e-b64a-77235272393a.png",
+  "sourceAssetPath": "assets/exercise-artwork/corrections-008.png"
+}
