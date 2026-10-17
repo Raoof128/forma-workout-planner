@@ -155,9 +155,17 @@ test("a fast move across multiple rows catches up while held and saves the displ
 
 test("Escape cancels a dragged preview without closing the editor or losing a superset", async ({
   page,
+  isMobile,
 }) => {
+  // Keep the two-slot preview inside the phone viewport before cancelling it.
+  if (isMobile)
+    await page.setViewportSize({ ...page.viewportSize(), height: 1100 });
   const editor = await openDragEditor(page);
-  const { row, initial } = await holdRowOverNext(page, editor, 2);
+  const { row, initial, pointer } = await holdRowOverNext(page, editor, 2);
+  const bounds = await editor.dialog.boundingBox();
+  expect(pointer.y).toBeLessThan(
+    Math.min(bounds.y + bounds.height, page.viewportSize().height),
+  );
   await expect
     .poll(async () => (await row.boundingBox()).y)
     .toBeGreaterThan(initial.y + 25);

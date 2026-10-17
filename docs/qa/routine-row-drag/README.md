@@ -169,7 +169,7 @@ rendered order update and stops when pointer velocity reaches zero. The existing
 RAF collision check now continues in the last pointer direction even without
 scrolling; actual scroll direction takes precedence, and pointer reversal
 updates the stored direction. DOM identity guards still permit one rendered
-neighbor at a time. The original failing Escape scenario is unchanged, and a
+neighbor at a time. The Escape scenario retains its exact cancellation and superset assertions; a
 new fast two-slot save case checks exact order and superset normalization.
 Log review of 36 repeated scenarios also exposed a missing-neighbor exception
 at the list boundary, despite their data assertions passing. An explicit neighbor
@@ -209,6 +209,17 @@ Enter activated the link. The existing navigation title/focus work now runs in
 focus assertion is retained, with no delay, retry or larger timeout. Independent
 review found no actionable concern. All 72 repeated legal/navigation/keyboard
 checks passed across three engines before the full final-head verification.
+
+A subsequent CI run passed all 393 development cases and 142/143 production
+cases. The remaining mobile Escape fixture moved from y=232.59375 to
+y=790.59375 in a 390×664 viewport, then expected two preview swaps while held
+outside the viewport. Bounded edge/collision continuation intentionally runs
+inside the visible dialog. This Escape fixture now uses the same 1100px phone
+height as the two-slot save fixture, and explicitly checks the held pointer is
+inside the viewport/dialog. It retains the exact two-slot preview, Escape,
+original order and superset assertions. Normal-height phone edge and trusted
+touch tests are unchanged. Independent review found no actionable concern;
+all 25 repetitions across the five production profiles passed with zero retries.
 
 ## Final verification
 

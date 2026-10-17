@@ -589,3 +589,21 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   browser assertions and performance budgets remain intact.
 - **Follow-ups:** retain the CI trace privately, finish both frontend deployments
   and record live verification in PR #9. No backend/schema change is needed.
+
+### Raouf: 2026-10-17 — Keep the Escape preview gesture onscreen
+
+- **Scope:** correct the mobile fixture exposed by final CI in PR #9.
+- **Evidence:** development passed 393/393; production passed 142/143. The
+  failing Escape trace moved the pointer to y=790.59375 in a 664px viewport,
+  then expected another in-bounds preview collision while held offscreen.
+- **Change:** give this two-slot phone gesture the same 1100px height as the
+  multi-slot save case and assert its held pointer is inside the viewport and
+  dialog. Preserve exact preview, Escape, original-order and superset checks.
+  Normal-height edge scrolling, touch tests and application code are unchanged.
+- **Files:** `tests/routine-drag.spec.js`, QA notes, this log and `CHANGELOG.md`.
+- **Verification:** all 25 repeated Escape cases pass across five production
+  profiles, without retries. Independent review has no actionable finding;
+  lint, formatting, types, documentation and whitespace checks pass. Complete
+  the full production matrix and final-head CI before redeploying both frontends.
+- **Follow-ups:** record final CI and hosted receipts in PR #9; no API, schema,
+  member-data change or merge is required.
