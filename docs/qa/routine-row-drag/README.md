@@ -233,6 +233,45 @@ immediately, waits for no Save between gestures and requires the same exact
 saved order and every prescription value. No application change or test retry
 was added for this automation issue.
 
+The explicit-input fixture next caught offscreen phone centers. It now aligns
+the list below the sticky header before each press, fits the rapid phone-width
+sequence onscreen and asserts visible release coordinates. Other phone edge
+and trusted-touch cases retain normal viewport heights. With all three
+intended native presses verified, the old bundle failed 11/20 rapid-scroll cases
+across engines: scrolling before Motion's queued end callback changed the
+geometry used to resolve the preceding release, altering saved order and
+sometimes splitting the superset. The application now freezes the resolved
+slot at native window pointer-up/cancel capture, before the queued callback.
+Each immutable snapshot belongs to its press, pointer ID and start timestamp;
+one release is accepted per press. The anchor is measured before focus, and
+the later commit still checks cancellation, event time, membership and latest
+field values. All 12 repeated rapid-scroll checks then passed across three
+engines; independent review found no actionable issue. Full local and CI
+matrices verify the complete change before frontend deployment. A full local
+production attempt also exposed a default account-mode build used for guest
+expectations; subsequent builds explicitly set `VITE_ACCOUNT_MODE=guest`. Its
+stationary top-edge release showed why a scroll-advanced preview must be
+retained when the pointer has not moved: the original anchor no longer
+describes that displayed slot. This release now freezes the current preview
+when RAF edge scrolling advanced it at the same pointer coordinates. All 30
+rapid/top-edge repetitions across the five production profiles passed, followed
+by the complete 143-case production matrix. Final review also clears the
+stationary marker whenever the pointer moves, so returning to an old coordinate
+cannot reuse it; focused checks and final-head CI verify that cleanup.
+
+Focused WebKit instrumentation then reproduced a pre-release edge stall even
+without another suite running. The page remained visible and focused; median
+animation-frame intervals were 213–275ms. The old 100ms elapsed cap moved only
+44px per frame at this edge, discarding most elapsed time and slowing the drag.
+The cap is now a bounded 500ms, covering measured active intervals. Collision
+continuation walks every crossed original-layout neighbor center and commits
+one preview per frame. Unvisited neighbor positions remain valid across these
+swaps; DOM-key guards reject pending layout/order mismatches. Independent
+review found no actionable issue. Timeouts, progress assertions and retries
+remain unchanged. All 60 rapid, fast-multi-row and top/bottom-edge repetitions
+then passed across the five production profiles, followed by the complete
+143-case production matrix on this final code.
+
 ## Final verification
 
 The final CI matrix contains 393 development, 143 production-bundle, 65 account

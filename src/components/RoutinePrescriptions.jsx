@@ -18,6 +18,7 @@ export default function RoutinePrescriptions({
 }) {
   const group = useRef(null);
   const drag = useRef(null);
+  const pendingPress = useRef(null);
   const [preview, setPreview] = useState(null);
   const [active, setActive] = useState(null);
   const [announcement, setAnnouncement] = useState("");
@@ -28,6 +29,59 @@ export default function RoutinePrescriptions({
   useEffect(() => {
     onReady(true);
   }, [onReady]);
+
+  useEffect(() => {
+    function captureRelease(event) {
+      const press = pendingPress.current;
+      if (
+        !press ||
+        press.release ||
+        press.pointerId !== event.pointerId ||
+        event.timeStamp < press.startedAt
+      )
+        return;
+      const gesture = drag.current?.press === press ? drag.current : null;
+      const bounds = group.current.getBoundingClientRect();
+      const scroller = group.current.closest("dialog");
+      const viewport = scroller.getBoundingClientRect();
+      const order =
+        gesture?.order ??
+        [...group.current.children].map((row) => row.dataset.entryKey);
+      const stationaryScrollPreview =
+        gesture?.scrollPreviewPointer?.x === event.clientX &&
+        gesture?.scrollPreviewPointer?.y === event.clientY;
+      const valid =
+        event.type === "pointerup" &&
+        event.clientX >= bounds.left &&
+        event.clientX <= bounds.right &&
+        event.clientY >=
+          Math.max(
+            bounds.top,
+            scroller.querySelector(".modal-header").getBoundingClientRect()
+              .bottom,
+          ) &&
+        event.clientY <=
+          Math.min(bounds.bottom, viewport.bottom, window.innerHeight);
+      press.release = {
+        time: event.timeStamp,
+        valid,
+        order:
+          valid && !stationaryScrollPreview
+            ? orderAtRelease(
+                { key: press.key, order, pointerOffset: press.offset },
+                event,
+                bounds,
+              )
+            : [...order],
+      };
+    }
+    window.addEventListener("pointerup", captureRelease, true);
+    window.addEventListener("pointercancel", captureRelease, true);
+    return () => {
+      window.removeEventListener("pointerup", captureRelease, true);
+      window.removeEventListener("pointercancel", captureRelease, true);
+    };
+  }, []);
 
   useEffect(() => {
     const gesture = active;
@@ -47,7 +101,7 @@ export default function RoutinePrescriptions({
       cancelOnBlur();
     };
     function scroll(now) {
-      const elapsed = Math.min(100, now - (previousFrame ?? now - 1000 / 60));
+      const elapsed = Math.min(500, now - (previousFrame ?? now - 1000 / 60));
       previousFrame = now;
       if (drag.current !== gesture) return;
       const { scroller, pointer, scrollLimit } = gesture;
@@ -83,27 +137,43 @@ export default function RoutinePrescriptions({
         );
         const direction =
           Math.sign(scroller.scrollTop - before) || gesture.direction;
-        const neighbor = group.current.children[index + direction];
         // Motion can advance only one neighbor per rendered order update.
-        // Continue catching up after a fast move or stationary edge scrolling.
-        // offsetTop excludes the neighbor's temporary layout animation.
-        if (
-          direction &&
-          rowBounds &&
-          neighbor &&
-          row.dataset.entryKey === gesture.key &&
-          neighbor.dataset.entryKey === gesture.order[index + direction]
-        ) {
-          const center =
-            group.current.getBoundingClientRect().top +
-            neighbor.offsetTop +
-            neighbor.offsetHeight / 2;
-          if (
-            direction > 0 ? rowBounds.bottom > center : rowBounds.top < center
+        // Catch up across all crossed layout centers in one preview commit.
+        if (direction && rowBounds && row.dataset.entryKey === gesture.key) {
+          const original = gesture.order;
+          const next = [...original];
+          const top = group.current.getBoundingClientRect().top;
+          let destination = index;
+          for (
+            let neighborIndex = index + direction;
+            neighborIndex >= 0 && neighborIndex < original.length;
+            neighborIndex += direction
           ) {
-            const next = [...gesture.order];
-            next.splice(index + direction, 0, ...next.splice(index, 1));
+            const neighbor = group.current.children[neighborIndex];
+            if (
+              !neighbor ||
+              neighbor.dataset.entryKey !== original[neighborIndex]
+            )
+              break;
+            // offsetTop excludes the neighbor's temporary layout animation.
+            const center = top + neighbor.offsetTop + neighbor.offsetHeight / 2;
+            if (
+              direction > 0
+                ? rowBounds.bottom <= center
+                : rowBounds.top >= center
+            )
+              break;
+            next.splice(
+              destination + direction,
+              0,
+              ...next.splice(destination, 1),
+            );
+            destination += direction;
+          }
+          if (destination !== index) {
             gesture.order = next;
+            if (scroller.scrollTop !== before)
+              gesture.scrollPreviewPointer = { ...pointer };
             setPreview(next);
           }
         }
@@ -125,14 +195,14 @@ export default function RoutinePrescriptions({
     };
   }, [active, onOrderingChange]);
 
-  function begin(key, controls, event, info, pointerOffset) {
+  function begin(key, controls, event, info, press) {
     if (drag.current && event.timeStamp < drag.current.startedAt) return;
     const scroller = group.current.closest("dialog");
     drag.current = {
       key,
       startedAt: event.timeStamp,
       direction: Math.sign(info.offset.y),
-      pointerOffset,
+      press,
       controls,
       order: items.map(entryKey),
       cancelled: false,
@@ -189,25 +259,16 @@ export default function RoutinePrescriptions({
     // Motion delivers drag-end after rendering. An earlier release must not
     // finish a newer gesture that already started on the same handle.
     if (!gesture || event.timeStamp < gesture.startedAt) return;
-    const bounds = group.current.getBoundingClientRect();
-    const viewport = gesture.scroller.getBoundingClientRect();
+    const release = gesture.press.release;
     const valid =
       !gesture.cancelled &&
-      gesture.order.length === items.length &&
-      gesture.order.every((key) => byKey.has(key)) &&
-      event.clientX >= bounds.left &&
-      event.clientX <= bounds.right &&
-      event.clientY >=
-        Math.max(
-          bounds.top,
-          gesture.scroller
-            .querySelector(".modal-header")
-            .getBoundingClientRect().bottom,
-        ) &&
-      event.clientY <= Math.min(bounds.bottom, viewport.bottom);
+      release?.time === event.timeStamp &&
+      release.valid &&
+      release.order.length === items.length &&
+      release.order.every((key) => byKey.has(key));
     const name = exerciseById.get(byKey.get(gesture.key).exerciseId).name;
     if (valid) {
-      const next = orderAtRelease(gesture, event, bounds);
+      const next = release.order;
       onReorder(next);
       setAnnouncement(
         `Moved ${name} to position ${next.indexOf(gesture.key) + 1} of ${items.length}.`,
@@ -265,12 +326,28 @@ export default function RoutinePrescriptions({
             defaultRest={defaultRest}
             dragging={active?.key === entryKey(item)}
             ordering={!!active}
-            onDragStart={(controls, event, info, pointerOffset) =>
-              begin(entryKey(item), controls, event, info, pointerOffset)
+            onPress={(event, offset) => {
+              const press = {
+                key: entryKey(item),
+                startedAt: event.timeStamp,
+                pointerId: event.pointerId,
+                offset,
+                release: null,
+              };
+              pendingPress.current = press;
+              return press;
+            }}
+            onDragStart={(controls, event, info, press) =>
+              begin(entryKey(item), controls, event, info, press)
             }
             onDrag={(event) => {
               const gesture = drag.current;
               if (gesture && event.timeStamp >= gesture.startedAt) {
+                if (
+                  event.clientX !== gesture.pointer.x ||
+                  event.clientY !== gesture.pointer.y
+                )
+                  gesture.scrollPreviewPointer = null;
                 gesture.direction =
                   Math.sign(event.clientY - gesture.pointer.y) ||
                   gesture.direction;

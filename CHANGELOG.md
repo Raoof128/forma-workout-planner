@@ -559,3 +559,37 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   Complete full production and final-head CI before frontend deployment.
 - **Follow-ups:** record CI/live receipts in PR #9; no backend, schema,
   member-data change or merge is required.
+
+### Raouf: 2026-10-17 — Freeze drop geometry at native pointer release
+
+- **Scope:** preserve the released slot when the next gesture scrolls immediately.
+- **Evidence:** the explicit-input phone fixture first exposed offscreen target
+  centers. Align the list below the header before each press, fit the phone-width
+  rapid sequence onscreen and assert visible release coordinates. With all three intended
+  native presses verified, the old bundle failed 11/20 valid rapid-scroll cases
+  across engines, changing saved order and sometimes splitting the superset.
+- **Change:** snapshot the resolved order in window pointer-up/cancel capture,
+  before Motion's delayed end callback or subsequent scrolling changes geometry.
+  Bind the snapshot to the native press, pointer ID and start timestamp, capture
+  the visible anchor before focus and accept only one release per press. The
+  eventual commit still validates cancellation, timestamp, keys and latest values.
+  Preserve the current preview when stationary edge scrolling has advanced it,
+  instead of resolving that release against the original pointer anchor. Clear
+  this marker whenever the pointer moves, so a return does not reuse it.
+  Measured visible/focused WebKit frames took roughly 200–300ms: the old 100ms
+  scroll cap discarded elapsed time. Preserve elapsed time up to a bounded
+  500ms and cross all reached neighbor centers in one preview commit, retaining
+  DOM-key guards, speed and exact data assertions without larger test budgets.
+- **Files:** both prescription components, rapid-drag regression, QA notes,
+  this log and `CHANGELOG.md`.
+- **Verification:** 12 repeated rapid-scroll regressions pass across three
+  development engines, then all 30 rapid/top-edge repeats pass across five
+  production profiles with an explicit guest build. Independent review found
+  no actionable issue. Lint, formatting, types, documentation and whitespace
+  checks pass. All 60 rapid, fast-multi-row and top/bottom-edge repeats then pass
+  across five production profiles after elapsed-time and collision catch-up fixes.
+  The complete production matrix then passes 143/143. Complete the remaining
+  development matrix and final-head CI before deployment, with zero retries
+  and unchanged exact data, cancellation and performance assertions.
+- **Follow-ups:** publish both frontends and retain final CI/live receipts in
+  PR #9; no backend, schema, member-data change or merge is required.

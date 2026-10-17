@@ -23,6 +23,7 @@ export default function RoutinePrescription({
   defaultRest,
   dragging,
   ordering,
+  onPress,
   onDragStart,
   onDrag,
   onDragEnd,
@@ -76,7 +77,7 @@ export default function RoutinePrescription({
       onDragStart={(event, info) => {
         const anchor = pointerAnchor.current;
         if (!anchor || anchor.time > event.timeStamp) return;
-        onDragStart(controls, event, info, anchor.offset);
+        onDragStart(controls, event, info, anchor.press);
       }}
       onDrag={onDrag}
       onDragEnd={(event) => {
@@ -97,15 +98,16 @@ export default function RoutinePrescription({
             disabled={ordering && !dragging}
             onPointerDown={(event) => {
               if (!event.isPrimary || event.button !== 0) return;
-              event.currentTarget.focus({ preventScroll: true });
+              const offset =
+                event.clientY -
+                event.currentTarget
+                  .closest(".prescription")
+                  .getBoundingClientRect().top;
               pointerAnchor.current = {
                 time: event.timeStamp,
-                offset:
-                  event.clientY -
-                  event.currentTarget
-                    .closest(".prescription")
-                    .getBoundingClientRect().top,
+                press: onPress(event, offset),
               };
+              event.currentTarget.focus({ preventScroll: true });
               controls.start(event, { distanceThreshold: 6 });
             }}
           >

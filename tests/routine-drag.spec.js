@@ -76,7 +76,11 @@ test("saving waits for the lazy prescription fields to finish loading", async ({
 
 test("immediate drag releases retain a usable editor and every saved field", async ({
   page,
+  isMobile,
 }) => {
+  // Keep this rapid sequence visible at phone width; edge tests use normal height.
+  if (isMobile)
+    await page.setViewportSize({ ...page.viewportSize(), height: 1800 });
   const errors = [];
   page.on("pageerror", (error) => errors.push(error.message));
   await page.addInitScript(() => {
@@ -102,13 +106,23 @@ test("immediate drag releases retain a usable editor and every saved field", asy
   // dragTo can retry an intercepted press without releasing the mouse.
   // Hover resolves spring hit-testing before each single trusted press.
   for (let attempt = 0; attempt < 3; attempt++) {
+    await editor.dialog.evaluate((scroller) => {
+      const list = scroller.querySelector(".prescription-order");
+      const header = scroller.querySelector(".modal-header");
+      scroller.scrollTop +=
+        list.getBoundingClientRect().top -
+        header.getBoundingClientRect().bottom -
+        16;
+    });
     await handle.hover();
     await page.mouse.down();
     const destination = await target.boundingBox();
-    await page.mouse.move(
-      destination.x + destination.width / 2,
-      destination.y + destination.height / 2,
+    const releaseY = destination.y + destination.height / 2;
+    const bounds = await editor.dialog.boundingBox();
+    expect(releaseY).toBeLessThan(
+      Math.min(bounds.y + bounds.height, page.viewportSize().height),
     );
+    await page.mouse.move(destination.x + destination.width / 2, releaseY);
     await page.mouse.up();
   }
   expect(await page.evaluate(() => window.__routineDragPresses)).toEqual(
