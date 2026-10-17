@@ -64,7 +64,7 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   `CLOUDFLARE_API_TOKEN` on this Mac, the frontend was deployed with the owner's
   existing Wrangler OAuth login (`wrangler deploy --env staging|production`,
   account `25c840ad…`). This is a one-off exception to the one-hour-token rule;
-  prefer `npm run worker:deploy:*` whenever a management token is available.
+  prefer `npm run worker:deploy:staging` and `npm run worker:deploy:production` whenever a management token is available.
 - On this host Node's fetch stalls on Cloudflare's API over IPv6 while curl is
   fine. Set `NODE_OPTIONS=--dns-result-order=ipv4first` for Wrangler, and run it
   outside the command sandbox. Wrangler needs `CLOUDFLARE_ACCOUNT_ID` because
