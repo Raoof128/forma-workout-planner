@@ -157,7 +157,7 @@ now retains the gesture object, and the effect checks that exact identity before
 installing listeners, scrolling or cleaning up. A finished gesture cannot read a
 cleared ref or cancel a newer one. Event timestamps also reject an older queued
 release/start/move after a later gesture begins. The rapid regression performs
-four drags without waiting for Save between gestures. All saved-field assertions
+three drags without waiting for Save between gestures. All saved-field assertions
 remain exact. The final rapid-release and original duplication cases passed
 three repeats in all three development engines (18 checks); follow-up review
 found no remaining actionable issue.
@@ -184,6 +184,22 @@ its release point is inside the viewport/dialog. Normal-height edge scrolling
 and trusted-touch coverage remain in their original profiles. The corrected
 multi-slot case passed three repeats in all five profiles (15 checks), completing
 coverage of the 143 unique production cases. Final CI runs the complete matrix.
+
+The superseded CI also exposed an immediate-release miss in the original
+one-slot duplicate test. Six local repeats reproduced it once before the next
+fix. A valid release now resolves its destination synchronously using the release
+coordinate, pointer anchor captured on pointer-down and virtual row heights
+keyed by entry ID. Capturing the visible row avoids assuming a preceding spring
+has finished.
+This handles a pending preview commit or snap-back transform without depending
+on another animation frame. Cancellation bypasses this calculation. The rapid
+three-gesture regression now requires an explicit expected saved order, rather
+than deriving its expectation from the displayed order. Source and target use
+stable exercise identities: positional locators could resolve the previous first
+row before its queued drop committed and accidentally drag it onto itself.
+Follow-up review found
+no actionable issue in the resolver. All 36 repeated regressions and the complete
+143-case production matrix then passed with page-error checks enabled.
 
 ## Final verification
 

@@ -80,24 +80,24 @@ test("immediate drag releases retain a usable editor and every saved field", asy
   const errors = [];
   page.on("pageerror", (error) => errors.push(error.message));
   const editor = await openDragEditor(page);
-  for (let attempt = 0; attempt < 4; attempt++) {
-    await editor.rows
-      .first()
-      .getByRole("button", { name: /^Drag / })
-      .dragTo(editor.rows.nth(1));
-  }
+  const handle = editor.dialog.getByRole("button", {
+    name: `Drag ${editor.names[0]}`,
+    exact: true,
+  });
+  const target = editor.rows.filter({
+    has: page.getByLabel(`${editor.names[1]} reps`, { exact: true }),
+  });
+  for (let attempt = 0; attempt < 3; attempt++) await handle.dragTo(target);
   await expect(editor.rows).toHaveCount(3);
   await expect(
     editor.dialog.getByRole("button", { name: "Save routine", exact: true }),
   ).toBeEnabled();
   expect(errors).toEqual([]);
-  const keys = await editor.rows.evaluateAll((rows) =>
-    rows.map((row) => row.dataset.entryKey),
-  );
-  expect(new Set(keys).size).toBe(3);
-  expect(await saveAndReadDrag(page, editor.dialog)).toEqual(
-    keys.map((key) => editor.original.find((item) => item.entryId === key)),
-  );
+  expect(await saveAndReadDrag(page, editor.dialog)).toEqual([
+    editor.original[1],
+    editor.original[0],
+    editor.original[2],
+  ]);
   expect(errors).toEqual([]);
 });
 

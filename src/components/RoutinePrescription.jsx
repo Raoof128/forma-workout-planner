@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { ArrowUp, ArrowDown, GripVertical } from "lucide-react";
 import {
   Reorder,
@@ -28,6 +29,7 @@ export default function RoutinePrescription({
 }) {
   const key = entryKey(item);
   const controls = useDragControls();
+  const pointerAnchor = useRef(null);
   const reduceMotion = useReducedMotion();
   const vertical = useMotionValue(0);
   const fields = [
@@ -71,7 +73,11 @@ export default function RoutinePrescription({
         bounceDamping: 42,
         timeConstant: 180,
       }}
-      onDragStart={(event, info) => onDragStart(controls, event, info)}
+      onDragStart={(event, info) => {
+        const anchor = pointerAnchor.current;
+        if (!anchor || anchor.time > event.timeStamp) return;
+        onDragStart(controls, event, info, anchor.offset);
+      }}
       onDrag={onDrag}
       onDragEnd={(event) => {
         if (reduceMotion) {
@@ -92,6 +98,14 @@ export default function RoutinePrescription({
             onPointerDown={(event) => {
               if (!event.isPrimary || event.button !== 0) return;
               event.currentTarget.focus({ preventScroll: true });
+              pointerAnchor.current = {
+                time: event.timeStamp,
+                offset:
+                  event.clientY -
+                  event.currentTarget
+                    .closest(".prescription")
+                    .getBoundingClientRect().top,
+              };
               controls.start(event, { distanceThreshold: 6 });
             }}
           >

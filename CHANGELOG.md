@@ -485,3 +485,24 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   Final CI runs all 666 browser cases with zero retries and exact data checks.
 - **Follow-ups:** deploy both frontends after final-head verification, then
   check hosted behavior and assets. No API/schema/member-data change is needed.
+
+### Raouf: 2026-10-17 — Resolve the drop slot synchronously on release
+
+- **Scope:** handle release before the next preview collision frame in PR #9.
+- **Evidence:** the superseded CI duplicate/drag journey retained its original
+  slot; six local repeats reproduced one failure before this fix.
+- **Change:** save the pointer anchor and resolve valid releases against virtual
+  row positions built from entry-keyed heights. Derive direction from the final
+  coordinate and walk adjacent centers. Capture the anchor at pointer-down to
+  account for visible spring positions. Cancelled gestures bypass resolution;
+  latest-state commits continue preserving editable values and supersets.
+- **Files:** `src/components/RoutinePrescriptions.jsx`, drag regression spec,
+  `src/components/RoutinePrescription.jsx`, QA notes, this log and `CHANGELOG.md`.
+- **Verification:** strengthen the rapid three-gesture test to an explicit known
+  saved order using stable exercise identities across pending drops. Independent
+  review found no actionable resolver issue. All 36 repeated regressions and
+  the complete 143-case production matrix pass, with no page errors. Lint,
+  formatting, types and docs pass. Final CI runs 666 browser cases without retries
+  before deployment, retaining exact data and performance assertions.
+- **Follow-ups:** redeploy both frontends after clean verification and retain
+  hosted assets/boundary receipts in PR #9. No backend/data change is needed.

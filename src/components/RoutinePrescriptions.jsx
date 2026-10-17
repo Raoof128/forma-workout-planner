@@ -125,13 +125,14 @@ export default function RoutinePrescriptions({
     };
   }, [active, onOrderingChange]);
 
-  function begin(key, controls, event, info) {
+  function begin(key, controls, event, info, pointerOffset) {
     if (drag.current && event.timeStamp < drag.current.startedAt) return;
     const scroller = group.current.closest("dialog");
     drag.current = {
       key,
       startedAt: event.timeStamp,
       direction: Math.sign(info.offset.y),
+      pointerOffset,
       controls,
       order: items.map(entryKey),
       cancelled: false,
@@ -145,6 +146,42 @@ export default function RoutinePrescriptions({
     setAnnouncement(
       `Moving ${exerciseById.get(byKey.get(key).exerciseId).name}. Press Escape to cancel.`,
     );
+  }
+
+  function orderAtRelease(gesture, event, bounds) {
+    const next = [...gesture.order];
+    const heights = new Map(
+      [...group.current.children].map((row) => [
+        row.dataset.entryKey,
+        row.getBoundingClientRect().height,
+      ]),
+    );
+    if (next.some((key) => !heights.has(key))) return next;
+    let index = next.indexOf(gesture.key);
+    let top =
+      bounds.top +
+      next.slice(0, index).reduce((sum, key) => sum + heights.get(key), 0);
+    const height = heights.get(gesture.key);
+    const targetTop = event.clientY - gesture.pointerOffset;
+    const direction = Math.sign(targetTop - top);
+    // Resolve against virtual layout positions: preview commits and snap-back
+    // transforms can still be pending when Motion delivers the release.
+    while (direction && next[index + direction]) {
+      const neighborHeight = heights.get(next[index + direction]);
+      const center =
+        direction > 0
+          ? top + height + neighborHeight / 2
+          : top - neighborHeight / 2;
+      if (direction > 0 ? targetTop + height <= center : targetTop >= center)
+        break;
+      [next[index], next[index + direction]] = [
+        next[index + direction],
+        next[index],
+      ];
+      index += direction;
+      top += direction * neighborHeight;
+    }
+    return next;
   }
 
   function finish(event) {
@@ -170,9 +207,10 @@ export default function RoutinePrescriptions({
       event.clientY <= Math.min(bounds.bottom, viewport.bottom);
     const name = exerciseById.get(byKey.get(gesture.key).exerciseId).name;
     if (valid) {
-      onReorder(gesture.order);
+      const next = orderAtRelease(gesture, event, bounds);
+      onReorder(next);
       setAnnouncement(
-        `Moved ${name} to position ${gesture.order.indexOf(gesture.key) + 1} of ${items.length}.`,
+        `Moved ${name} to position ${next.indexOf(gesture.key) + 1} of ${items.length}.`,
       );
     } else
       setAnnouncement(
@@ -227,8 +265,8 @@ export default function RoutinePrescriptions({
             defaultRest={defaultRest}
             dragging={active?.key === entryKey(item)}
             ordering={!!active}
-            onDragStart={(controls, event, info) =>
-              begin(entryKey(item), controls, event, info)
+            onDragStart={(controls, event, info, pointerOffset) =>
+              begin(entryKey(item), controls, event, info, pointerOffset)
             }
             onDrag={(event) => {
               const gesture = drag.current;
