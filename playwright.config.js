@@ -4,7 +4,12 @@ const executablePath = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH;
 
 export default defineConfig({
   testDir: "./tests",
-  testIgnore: ["production.spec.js", "accounts*.spec.js", "account-ui.spec.js"],
+  testIgnore: [
+    "production.spec.js",
+    "accounts*.spec.js",
+    "account-ui.spec.js",
+    "routine-drag-touch.spec.js",
+  ],
   workers: 2,
   retries: 0,
   forbidOnly: !!process.env.CI,

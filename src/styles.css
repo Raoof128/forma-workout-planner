@@ -1223,6 +1223,7 @@ input[type="checkbox"] {
   margin-top: 25px;
 }
 .prescription {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(115px, 1fr) 48px 68px 65px 48px 60px 28px;
   align-items: center;
@@ -1262,6 +1263,34 @@ input[type="checkbox"] {
 }
 .reorder-actions .icon-button {
   background: #f4f6ef;
+}
+.prescription-order {
+  position: relative;
+  isolation: isolate;
+}
+.prescription:not(.labels) {
+  transition: box-shadow 140ms ease-out;
+}
+.prescription.is-dragging {
+  background: white;
+  border-radius: 10px;
+  box-shadow:
+    0 10px 28px #17221b29,
+    0 0 0 1px #aec477;
+}
+.row-drag-handle {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+.row-drag-handle:active {
+  cursor: grabbing;
+}
+@media (pointer: coarse) {
+  .reorder-actions .row-drag-handle {
+    min-width: 44px;
+    min-height: 44px;
+  }
 }
 .routine-card-wrap {
   position: relative;
@@ -1426,6 +1455,13 @@ input[type="checkbox"] {
 .library-card:hover {
   border-color: #9bb969;
   transform: translateY(-2px);
+}
+.library-card.is-selected {
+  background: var(--lime-soft);
+  border-color: #9bb969;
+}
+.routine-library-opener {
+  margin-bottom: 16px;
 }
 .library-card > div {
   flex: 1;

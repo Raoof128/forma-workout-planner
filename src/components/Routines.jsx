@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { lazy, Suspense, useState, useEffect, useRef } from "react";
 import {
   Plus,
   Search,
@@ -8,6 +8,8 @@ import {
   Play,
   Pencil,
   Clock,
+  BookOpen,
+  ArrowLeft,
 } from "lucide-react";
 import { Button, Modal, RoutineCard, PageHeading } from "./UI";
 import { createId, exerciseById, selectableExercises } from "../data";
@@ -21,7 +23,8 @@ import { workoutTemplates } from "../workoutTemplates.js";
 import { matchesExercise } from "../catalog/search.js";
 import { canonicalId } from "../catalog/curation.js";
 import curation from "../catalog/curation.json" with { type: "json" };
-import RoutinePrescription from "./RoutinePrescription.jsx";
+import Library from "./Library.jsx";
+const RoutinePrescriptions = lazy(() => import("./RoutinePrescriptions.jsx"));
 import {
   entryKey,
   parseRepRange,
@@ -255,6 +258,29 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
   const [error, setError] = useState("");
   const [discard, setDiscard] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [ordering, setOrdering] = useState(false);
+  const [prescriptionsReady, setPrescriptionsReady] = useState(false);
+  const [libraryOpen, setLibraryOpen] = useState(false);
+  const libraryOpener = useRef(null);
+  const libraryBack = useRef(null);
+  const libraryWasOpen = useRef(false);
+  const editorScroll = useRef(0);
+  useEffect(() => {
+    const dialog = libraryOpener.current?.closest("dialog");
+    if (libraryOpen) {
+      if (dialog) dialog.scrollTop = 0;
+      libraryBack.current?.focus({ preventScroll: true });
+    } else if (libraryWasOpen.current) {
+      libraryOpener.current?.focus({ preventScroll: true });
+      if (dialog) dialog.scrollTop = editorScroll.current;
+    }
+    libraryWasOpen.current = libraryOpen;
+  }, [libraryOpen]);
+  function openLibrary() {
+    if (ordering || saving) return;
+    editorScroll.current = libraryOpener.current.closest("dialog").scrollTop;
+    setLibraryOpen(true);
+  }
   const removed = useRef(new Map());
   const dirty =
     name !== (routine?.name || "") ||
@@ -279,11 +305,12 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
     if (discard) document.querySelector(".draft-confirm button")?.focus();
   }, [discard]);
   function close() {
-    if (saving) return;
+    if (saving || ordering) return;
     if (dirty) setDiscard(true);
     else onClose();
   }
   function toggle(exercise) {
+    if (ordering) return;
     const group = items
       .map((item, index) => ({ item, index }))
       .filter(
@@ -335,9 +362,19 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
     });
   }
   function move(index, direction) {
+    if (ordering) return;
     reorder(entryKey(items[index]), entryKey(items[index + direction]));
   }
+  function finishReorder(keys) {
+    setItems((current) => {
+      const byKey = new Map(current.map((item) => [entryKey(item), item]));
+      if (keys.length !== current.length || keys.some((key) => !byKey.has(key)))
+        return current;
+      return normalizeGroups(keys.map((key) => byKey.get(key)));
+    });
+  }
   function join(index, checked) {
+    if (ordering) return;
     setItems((current) => {
       if (!checked)
         return normalizeGroups(
@@ -361,6 +398,8 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
   }
   async function save(event) {
     event.preventDefault();
+    if (ordering || libraryOpen || (items.length > 0 && !prescriptionsReady))
+      return;
     if (!name.trim() || !items.length) {
       setError("Give your routine a name and choose at least one exercise.");
       return;
@@ -419,11 +458,19 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
       title={
         discard
           ? "Discard unsaved changes?"
-          : routine
-            ? "Edit your routine"
-            : "Create your routine"
+          : libraryOpen
+            ? "Exercise library"
+            : routine
+              ? "Edit your routine"
+              : "Create your routine"
       }
-      onClose={discard ? () => setDiscard(false) : close}
+      onClose={
+        discard
+          ? () => setDiscard(false)
+          : libraryOpen
+            ? () => setLibraryOpen(false)
+            : close
+      }
       wide
     >
       {discard ? (
@@ -441,145 +488,186 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
           </div>
         </div>
       ) : (
-        <form onSubmit={save} className="modal-content">
-          <label className="field">
-            Routine name
-            <input
-              data-autofocus
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-              placeholder="e.g. Monday upper body"
-              maxLength={60}
-            />
-          </label>
-          <label className="field duration-field">
-            Estimated duration (minutes)
-            <input
-              type="number"
-              required
-              min="1"
-              max="1000"
-              value={minutes}
-              onChange={(event) =>
-                setMinutes(
-                  event.target.value === "" ? "" : Number(event.target.value),
-                )
-              }
-            />
-          </label>
-          <div className="editor-heading">
-            <h3>Choose your exercises</h3>
-            <span className="muted small" role="status">
-              {items.length} selected
-            </span>
-          </div>
-          <div className="search-field">
-            <Search size={18} />
-            <input
-              aria-label="Search exercises for routine"
-              value={query}
-              onChange={(event) => {
-                setQuery(event.target.value);
-                setPickerLimit(40);
-              }}
-              placeholder="Search exercises…"
-            />
-          </div>
-          <div className="exercise-picker">
-            {!matchingExercises.length && (
-              <p className="picker-empty" role="status">
-                No matching exercises. Try a different name or muscle group.
+        <>
+          {libraryOpen && (
+            <section
+              className="modal-content routine-library"
+              aria-label="Choose exercises for your routine"
+            >
+              <div className="editor-heading">
+                <Button
+                  ref={libraryBack}
+                  variant="secondary"
+                  onClick={() => setLibraryOpen(false)}
+                >
+                  <ArrowLeft size={17} /> Back to routine
+                </Button>
+                <span className="small muted" role="status">
+                  {items.length} selected
+                </span>
+              </div>
+              <Library
+                onToggle={toggle}
+                selectedIds={items.map((item) =>
+                  canonicalId(item.exerciseId, curation),
+                )}
+              />
+              <div className="modal-actions">
+                <Button variant="lime" onClick={() => setLibraryOpen(false)}>
+                  Done choosing exercises
+                </Button>
+              </div>
+            </section>
+          )}
+          <form onSubmit={save} className="modal-content" hidden={libraryOpen}>
+            <label className="field">
+              Routine name
+              <input
+                data-autofocus
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                placeholder="e.g. Monday upper body"
+                maxLength={60}
+              />
+            </label>
+            <label className="field duration-field">
+              Estimated duration (minutes)
+              <input
+                type="number"
+                required
+                min="1"
+                max="1000"
+                value={minutes}
+                onChange={(event) =>
+                  setMinutes(
+                    event.target.value === "" ? "" : Number(event.target.value),
+                  )
+                }
+              />
+            </label>
+            <div className="editor-heading">
+              <h3>Choose your exercises</h3>
+              <span className="muted small" role="status">
+                {items.length} selected
+              </span>
+            </div>
+            <Button
+              ref={libraryOpener}
+              variant="secondary"
+              className="routine-library-opener"
+              onClick={openLibrary}
+              disabled={saving || ordering}
+            >
+              <BookOpen size={17} /> Browse exercise library
+            </Button>
+            <div className="search-field">
+              <Search size={18} />
+              <input
+                aria-label="Search exercises for routine"
+                value={query}
+                onChange={(event) => {
+                  setQuery(event.target.value);
+                  setPickerLimit(40);
+                }}
+                placeholder="Search exercises…"
+              />
+            </div>
+            <div className="exercise-picker">
+              {!matchingExercises.length && (
+                <p className="picker-empty" role="status">
+                  No matching exercises. Try a different name or muscle group.
+                </p>
+              )}
+              {matchingExercises.slice(0, pickerLimit).map((exercise) => {
+                const picked = items.some(
+                  (item) =>
+                    canonicalId(item.exerciseId, curation) === exercise.id,
+                );
+                return (
+                  <button
+                    type="button"
+                    key={exercise.id}
+                    aria-pressed={picked}
+                    disabled={ordering}
+                    className={picked ? "picked" : ""}
+                    onClick={() => toggle(exercise)}
+                  >
+                    <Dumbbell size={17} />
+                    <span>
+                      {exercise.name}
+                      <small>
+                        {exercise.muscle} · {exercise.equipment}
+                      </small>
+                    </span>
+                    {picked ? <Check size={18} /> : <Plus size={18} />}
+                  </button>
+                );
+              })}
+            </div>
+            {matchingExercises.length > pickerLimit && (
+              <Button
+                variant="secondary"
+                onClick={() => setPickerLimit((limit) => limit + 40)}
+              >
+                Show more matching exercises
+              </Button>
+            )}
+            {items.length > 0 && (
+              <div className="prescriptions">
+                <div className="prescription labels">
+                  <span>EXERCISE / ORDER</span>
+                  <span>Sets</span>
+                  <span>Reps</span>
+                  <span>Load (kg)</span>
+                  <span>RPE</span>
+                  <span>Rest (s)</span>
+                  <span>⋯</span>
+                </div>
+                <Suspense
+                  fallback={<p role="status">Loading exercise order…</p>}
+                >
+                  <RoutinePrescriptions
+                    items={items}
+                    repInputs={repInputs}
+                    onRepInput={(key, value) =>
+                      setRepInputs((current) => ({ ...current, [key]: value }))
+                    }
+                    update={update}
+                    move={move}
+                    onReorder={finishReorder}
+                    onOrderingChange={setOrdering}
+                    onReady={setPrescriptionsReady}
+                    join={join}
+                    defaultRest={defaultRest}
+                  />
+                </Suspense>
+              </div>
+            )}
+            {error && (
+              <p role="alert" className="error">
+                {error}
               </p>
             )}
-            {matchingExercises.slice(0, pickerLimit).map((exercise) => {
-              const picked = items.some(
-                (item) =>
-                  canonicalId(item.exerciseId, curation) === exercise.id,
-              );
-              return (
-                <button
-                  type="button"
-                  key={exercise.id}
-                  aria-pressed={picked}
-                  className={picked ? "picked" : ""}
-                  onClick={() => toggle(exercise)}
-                >
-                  <Dumbbell size={17} />
-                  <span>
-                    {exercise.name}
-                    <small>
-                      {exercise.muscle} · {exercise.equipment}
-                    </small>
-                  </span>
-                  {picked ? <Check size={18} /> : <Plus size={18} />}
-                </button>
-              );
-            })}
-          </div>
-          {matchingExercises.length > pickerLimit && (
-            <Button
-              variant="secondary"
-              onClick={() => setPickerLimit((limit) => limit + 40)}
-            >
-              Show more matching exercises
-            </Button>
-          )}
-          {items.length > 0 && (
-            <div className="prescriptions">
-              <div className="prescription labels">
-                <span>EXERCISE / ORDER</span>
-                <span>Sets</span>
-                <span>Reps</span>
-                <span>Load (kg)</span>
-                <span>RPE</span>
-                <span>Rest (s)</span>
-                <span>⋯</span>
-              </div>
-              {items.map((item, index) => (
-                <RoutinePrescription
-                  key={entryKey(item)}
-                  item={item}
-                  exercise={exerciseById.get(item.exerciseId)}
-                  index={index}
-                  count={items.length}
-                  repInput={repInputs[entryKey(item)] ?? repRangeText(item)}
-                  onRepInput={(key, value) =>
-                    setRepInputs((current) => ({ ...current, [key]: value }))
-                  }
-                  update={update}
-                  move={move}
-                  reorder={reorder}
-                  join={join}
-                  joined={
-                    !!item.groupId &&
-                    index > 0 &&
-                    items[index - 1].groupId === item.groupId
-                  }
-                  defaultRest={defaultRest}
-                />
-              ))}
+            <div className="modal-actions">
+              <Button variant="secondary" disabled={saving} onClick={close}>
+                Cancel
+              </Button>
+              <Button
+                type="submit"
+                variant="lime"
+                disabled={
+                  saving ||
+                  ordering ||
+                  (items.length > 0 && !prescriptionsReady)
+                }
+                loading={saving}
+              >
+                <Check size={17} />
+                Save routine
+              </Button>
             </div>
-          )}
-          {error && (
-            <p role="alert" className="error">
-              {error}
-            </p>
-          )}
-          <div className="modal-actions">
-            <Button variant="secondary" disabled={saving} onClick={close}>
-              Cancel
-            </Button>
-            <Button
-              type="submit"
-              variant="lime"
-              disabled={saving}
-              loading={saving}
-            >
-              <Check size={17} />
-              Save routine
-            </Button>
-          </div>
-        </form>
+          </form>
+        </>
       )}
     </Modal>
   );

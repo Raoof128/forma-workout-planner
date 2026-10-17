@@ -1,4 +1,10 @@
 import { ArrowUp, ArrowDown, GripVertical } from "lucide-react";
+import {
+  Reorder,
+  useDragControls,
+  useMotionValue,
+  useReducedMotion,
+} from "motion/react";
 import { metricFields, tracksLoadReps } from "../exerciseMetrics.js";
 import { entryKey, sideLabel } from "../routineProgramming.js";
 
@@ -11,12 +17,19 @@ export default function RoutinePrescription({
   onRepInput,
   update,
   move,
-  reorder,
   join,
   joined,
   defaultRest,
+  dragging,
+  ordering,
+  onDragStart,
+  onDrag,
+  onDragEnd,
 }) {
   const key = entryKey(item);
+  const controls = useDragControls();
+  const reduceMotion = useReducedMotion();
+  const vertical = useMotionValue(0);
   const fields = [
     { key: "sets", label: "Sets", min: 1, max: 12, step: 1 },
     ...(tracksLoadReps(exercise)
@@ -38,13 +51,34 @@ export default function RoutinePrescription({
     },
   ];
   return (
-    <div
-      className="prescription"
-      onDragOver={(event) => event.preventDefault()}
-      onDrop={(event) => {
-        event.preventDefault();
-        const from = event.dataTransfer.getData("text/plain");
-        if (from) reorder(from, key);
+    <Reorder.Item
+      as="div"
+      value={key}
+      data-entry-key={key}
+      className={`prescription${dragging ? " is-dragging" : ""}`}
+      dragListener={false}
+      dragControls={controls}
+      dragMomentum={false}
+      style={{ y: vertical }}
+      layout="position"
+      transition={{
+        layout: reduceMotion
+          ? { duration: 0 }
+          : { type: "spring", stiffness: 500, damping: 42 },
+      }}
+      dragTransition={{
+        bounceStiffness: 500,
+        bounceDamping: 42,
+        timeConstant: 180,
+      }}
+      onDragStart={(event) => onDragStart(controls, event)}
+      onDrag={onDrag}
+      onDragEnd={(event) => {
+        if (reduceMotion) {
+          vertical.stop();
+          vertical.set(0);
+        }
+        onDragEnd(event);
       }}
     >
       <div className="prescription-name">
@@ -52,12 +86,13 @@ export default function RoutinePrescription({
         <div className="reorder-actions">
           <button
             type="button"
-            className="icon-button"
-            draggable
+            className="icon-button row-drag-handle"
             aria-label={`Drag ${exercise.name}`}
-            onDragStart={(event) => {
-              event.dataTransfer.setData("text/plain", key);
-              event.dataTransfer.effectAllowed = "move";
+            disabled={ordering && !dragging}
+            onPointerDown={(event) => {
+              if (!event.isPrimary || event.button !== 0) return;
+              event.currentTarget.focus({ preventScroll: true });
+              controls.start(event, { distanceThreshold: 6 });
             }}
           >
             <GripVertical size={14} />
@@ -65,7 +100,7 @@ export default function RoutinePrescription({
           <button
             type="button"
             className="icon-button"
-            disabled={index === 0}
+            disabled={ordering || index === 0}
             aria-label={`Move ${exercise.name} up`}
             onClick={() => move(index, -1)}
           >
@@ -74,7 +109,7 @@ export default function RoutinePrescription({
           <button
             type="button"
             className="icon-button"
-            disabled={index === count - 1}
+            disabled={ordering || index === count - 1}
             aria-label={`Move ${exercise.name} down`}
             onClick={() => move(index, 1)}
           >
@@ -147,7 +182,7 @@ export default function RoutinePrescription({
             <input
               type="checkbox"
               aria-label={`${exercise.name} superset with previous`}
-              disabled={index === 0}
+              disabled={ordering || index === 0}
               checked={joined}
               onChange={(event) => join(index, event.target.checked)}
             />
@@ -155,6 +190,6 @@ export default function RoutinePrescription({
           </label>
         </div>
       </details>
-    </div>
+    </Reorder.Item>
   );
 }

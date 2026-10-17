@@ -4,16 +4,19 @@ const executablePath = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH;
 const chromiumLaunchOptions = executablePath
   ? { launchOptions: { executablePath } }
   : {};
+const productionTests = [
+  "production.spec.js",
+  "catalog.spec.js",
+  "navigation-release.spec.js",
+  "routine-programming.spec.js",
+  "routine-archive.spec.js",
+  "routine-drag.spec.js",
+  "routine-library.spec.js",
+];
 
 export default defineConfig({
   testDir: "./tests",
-  testMatch: [
-    "production.spec.js",
-    "catalog.spec.js",
-    "navigation-release.spec.js",
-    "routine-programming.spec.js",
-    "routine-archive.spec.js",
-  ],
+  testMatch: productionTests,
   workers: 2,
   retries: 0,
   forbidOnly: !!process.env.CI,
@@ -53,6 +56,7 @@ export default defineConfig({
     },
     {
       name: "production-chromium-mobile",
+      testMatch: [...productionTests, "routine-drag-touch.spec.js"],
       use: {
         ...devices["iPhone 13"],
         browserName: "chromium",

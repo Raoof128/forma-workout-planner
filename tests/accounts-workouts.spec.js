@@ -1,6 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { createRequire } from "node:module";
-import { initialData } from "../src/data.js";
+import { initialData, exerciseById } from "../src/data.js";
+import { holdRowOverNext } from "./routine-drag.helpers.js";
 
 const require = createRequire(import.meta.url);
 const axePath = require.resolve("axe-core/axe.min.js");
@@ -148,6 +149,69 @@ async function createTwoSetRoutine(page, name) {
     page.locator(".routine-card").filter({ hasText: name }),
   ).toBeVisible();
 }
+
+test("dragged routine order and prescriptions persist in the member workspace after reload", async ({
+  page,
+}) => {
+  const memberId = await createVerifiedAccount(
+    page,
+    "Drag Member",
+    `drag-${stamp()}@example.test`,
+  );
+  const baseline = await readWorkspace(page, memberId);
+  expect(baseline.status).toBe(200);
+  const routine = baseline.body.data.routines[0];
+  const names = routine.exercises.map(
+    (item) => exerciseById.get(item.exerciseId).name,
+  );
+  await clickMainNavigation(page, "My routines");
+  await page.locator(".routine-card").filter({ hasText: routine.name }).click();
+  await page.getByRole("button", { name: "Edit routine", exact: true }).click();
+  const dialog = page.getByRole("dialog");
+  const rows = dialog.locator(".prescription:not(.labels)");
+  await dialog
+    .getByRole("button", { name: "Browse exercise library", exact: true })
+    .click();
+  await expect(
+    dialog.getByRole("heading", { name: "Exercise library", exact: true }),
+  ).toBeVisible();
+  await expect(
+    dialog.getByRole("button", {
+      name: `Remove ${names[0]} from routine`,
+      exact: true,
+    }),
+  ).toHaveAttribute("aria-pressed", "true");
+  await dialog
+    .getByRole("button", { name: "Back to routine", exact: true })
+    .click();
+  await rows
+    .first()
+    .evaluate((node) => node.scrollIntoView({ block: "center" }));
+  await holdRowOverNext(page, { dialog, rows, names });
+  await page.mouse.up();
+  await expect(rows.nth(1)).toContainText(names[0]);
+  await dialog
+    .getByRole("button", { name: "Save routine", exact: true })
+    .click();
+  await expect(dialog).toHaveCount(0);
+  const expected = [
+    routine.exercises[1],
+    routine.exercises[0],
+    ...routine.exercises.slice(2),
+  ];
+  const saved = await readWorkspace(page, memberId);
+  expect(saved.status).toBe(200);
+  expect(
+    saved.body.data.routines.find((item) => item.id === routine.id).exercises,
+  ).toEqual(expected);
+  await page.reload();
+  await clickMainNavigation(page, "My routines");
+  await page.locator(".routine-card").filter({ hasText: routine.name }).click();
+  await page.getByRole("button", { name: "Edit routine", exact: true }).click();
+  await expect(
+    page.getByRole("dialog").locator(".prescription:not(.labels)").first(),
+  ).toContainText(names[1]);
+});
 
 test("a completed workout persists through reload and a second browser context", async ({
   browser,

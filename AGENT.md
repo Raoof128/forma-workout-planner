@@ -470,3 +470,30 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 - **Verification:** the full 70-case production matrix and nine archive replays
   across three engines pass; final CI remains required. Runtime sources and deployed
   versions remain unchanged; no further member-data operation is needed.
+
+### Raouf: 2026-10-17 — Animate complete routine rows and restore draft selection
+
+- **Scope:** owner-approved follow-up in PR #9; keep the existing branch and PR.
+- **Change:** pin Motion 14.3.0 and lazy-load handle-driven whole-row ordering,
+  neighbor animation, bounded edge scrolling, cancel and reduced-motion support.
+  Preserve editable values with stable keys and latest-state drop commits; block
+  structural actions during dragging and Save until lazy fields are ready.
+  Restore the routine's full exercise-library chooser with draft/focus retention
+  and the lime session-loading backdrop without adding a loading delay.
+- **Files:** routine/editor/library components and styles, package manifests,
+  browser configurations and regression helpers/specs, the isolated account
+  browser runner, `docs/qa/routine-row-drag`, this log and `CHANGELOG.md`.
+- **Evidence:** current official Motion/design/accessibility documentation and
+  reviewed desktop/touch recordings are linked in QA. Live assets matched the
+  recorded release; reachable history did not identify a specific UI revert.
+  Regressions reproduced lazy-save, delayed-note and dialog-Escape races before
+  fixes. Account profiles now own fresh test servers instead of sharing a
+  synthetic rate bucket; production authentication limits remain unchanged.
+- **Verification:** 133 production browser cases; 18 lazy/stale-draft, 15 saved-note
+  and 10 dialog-Escape checks; 89 unit, 49 API, 21 Worker and 14 operations cases
+  passed, as did all 65 isolated account cases. Final CI runs 650 browser cases
+  with zero retries. Final production-account, security/CI and hosted deployment
+  receipts are retained in PR #9.
+- **Follow-ups:** publish this frontend to staging and production only after
+  final-head checks pass; verify hosted behavior/assets and remove temporary
+  staging access. No API/schema/member-data change or PR merge is required.
