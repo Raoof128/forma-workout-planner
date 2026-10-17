@@ -201,6 +201,15 @@ Follow-up review found
 no actionable issue in the resolver. All 36 repeated regressions and the complete
 143-case production matrix then passed with page-error checks enabled.
 
+A final CI run exposed an existing legal-page keyboard race. Its trace shows
+`legal-title` without `tabindex` after load, then gaining it while the test
+focused the contents link: the page-entry passive effect stole focus before
+Enter activated the link. The existing navigation title/focus work now runs in
+`useLayoutEffect`, before paint in this client-rendered application. The original
+focus assertion is retained, with no delay, retry or larger timeout. Independent
+review found no actionable concern. All 72 repeated legal/navigation/keyboard
+checks passed across three engines before the full final-head verification.
+
 ## Final verification
 
 The final CI matrix contains 393 development, 143 production-bundle, 65 account

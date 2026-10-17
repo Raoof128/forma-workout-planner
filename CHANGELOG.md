@@ -506,3 +506,20 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   before deployment, retaining exact data and performance assertions.
 - **Follow-ups:** redeploy both frontends after clean verification and retain
   hosted assets/boundary receipts in PR #9. No backend/data change is needed.
+
+### Raouf: 2026-10-17 — Complete page-entry focus before paint
+
+- **Scope:** resolve the remaining WebKit legal-keyboard failure in final CI.
+- **Evidence:** the trace shows the legal heading without its navigation tabindex
+  after load, then gaining it during the test's contents-link focus operation.
+  The delayed page-entry effect stole focus before Enter could activate the link.
+- **Change:** run the existing title/page-heading focus in `useLayoutEffect` so
+  it completes before paint in this client-rendered app. Preserve the original
+  keyboard assertion and navigation behavior; add no timer or test retry.
+- **Files:** `src/hooks/useNavigation.js`, QA notes, this log and `CHANGELOG.md`.
+- **Verification:** independent review found no actionable concern. Run repeated
+  legal, navigation and keyboard checks: all 72 pass across three engines. Lint,
+  formatting, types and docs pass. Complete final-head CI before deployment;
+  browser assertions and performance budgets remain intact.
+- **Follow-ups:** retain the CI trace privately, finish both frontend deployments
+  and record live verification in PR #9. No backend/schema change is needed.
