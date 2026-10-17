@@ -3,6 +3,7 @@ import { test, expect } from "@playwright/test";
 
 test("program every field, reload, overview, superset rest and actual RPE", async ({
   page,
+  isMobile,
 }) => {
   await page.goto("/#routines");
   await page
@@ -78,7 +79,7 @@ test("program every field, reload, overview, superset rest and actual RPE", asyn
     .getByRole("button", { name: "Start workout", exact: true })
     .click();
   await expect(
-    page.getByRole("heading", { name: "Program v2", exact: true }),
+    page.getByRole("heading", { name: "Program v2", level: 1, exact: true }),
   ).toBeVisible();
   await expect(
     page.getByText("Target: 8–10 reps", { exact: false }),
@@ -92,23 +93,39 @@ test("program every field, reload, overview, superset rest and actual RPE", asyn
       exact: true,
     })
     .click();
+  if (isMobile)
+    await page
+      .getByRole("button", { name: "Open rest timer", exact: true })
+      .click();
   await expect(page.getByRole("timer")).toHaveText("00:00");
+  if (isMobile)
+    await page
+      .getByRole("button", { name: "Close dialog", exact: true })
+      .click();
   await page
     .getByRole("button", {
       name: "Complete Dumbbell reverse lunge set 1",
       exact: true,
     })
     .click();
+  if (isMobile)
+    await page
+      .getByRole("button", { name: "Open rest timer", exact: true })
+      .click();
   await expect(page.getByRole("timer")).toHaveText(/01:1[0-5]/);
   await page
     .getByRole("button", { name: "Add 15 seconds", exact: true })
     .click();
   await expect(page.getByRole("timer")).toHaveText(/01:[23]\d/);
   await page.reload();
-  await expect(page.getByRole("timer")).toHaveText(/01:[123]\d/);
   await expect(
     page.getByLabel("Incline Dumbbell Press set 1 rpe", { exact: true }),
   ).toHaveValue("8.5");
+  if (isMobile)
+    await page
+      .getByRole("button", { name: "Open rest timer", exact: true })
+      .click();
+  await expect(page.getByRole("timer")).toHaveText(/01:[123]\d/);
   await page.getByRole("button", { name: "Skip", exact: true }).click();
   await expect(page.getByRole("timer")).toHaveText("00:00");
 });
@@ -151,8 +168,7 @@ test("duplicate routine is independent; drag and arrows preserve programming", a
     .click();
   await page
     .getByRole("button", {
-      name: "Upper body strength 6 exercises · 50 min",
-      exact: true,
+      name: /^Upper body strength 6 exercises (?:· )?50 min$/,
     })
     .click();
   await expect(page.getByRole("dialog").getByText("3 × 10 reps")).toHaveCount(

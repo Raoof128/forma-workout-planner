@@ -11,6 +11,7 @@ export default defineConfig({
     "production.spec.js",
     "catalog.spec.js",
     "navigation-release.spec.js",
+    "routine-programming.spec.js",
   ],
   workers: 2,
   retries: 0,

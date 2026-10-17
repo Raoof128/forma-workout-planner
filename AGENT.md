@@ -366,3 +366,21 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   deployment; existing complete local browser matrices remain recorded above.
 - **Follow-ups:** staging/production backups, v2 migration, API/frontend rollout
   and hosted verification under the owner's current deployment authorization.
+
+### Raouf: 2026-10-17 — Hosted and responsive routine verification
+
+- **Scope:** full E2E verification for the owner-authorised routine deployment.
+- **Summary:** hosted latency exposed a transitional duplicate-heading selector;
+  target the active workout h1. Phone journeys open their rest panel and accept
+  the card's responsive separator. Add routine programming to the production
+  browser matrix; retain exact saved-data, timer and independence assertions.
+- **Files:** `tests/routine-programming.spec.js`,
+  `playwright.production.config.js`, `AGENT.md`, `CHANGELOG.md`.
+- **Verification:** 12 focused desktop cases pass across three engines; the
+  expanded production suite passes 65 cases across five desktop/phone projects.
+  Hosted staging passes all 12 Chromium/WebKit desktop/phone programming cases.
+  Staging backups/migration and stored-v2 validation pass; other container IDs
+  are unchanged. Firefox hosted TLS was blocked by proxy certificate trust;
+  local Firefox production coverage passes with certificate checks unchanged.
+- **Follow-ups:** complete CI and the production rollout, then record final
+  versions and hosted evidence. Runtime application source remains `c491889`.
