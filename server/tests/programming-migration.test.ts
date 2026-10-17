@@ -28,6 +28,7 @@ test("SQL v2 migration matches browser migration for all paths, preserves collis
     const data = freshData();
     data.version = 1;
     data.revision = 7;
+    data.routines[0].archivedAt = 1;
     data.routines[0].exercises = [
       {
         exerciseId: "wger-4b23738a-67a8-41af-996d-abc53a7c3f97",
@@ -86,6 +87,11 @@ test("SQL v2 migration matches browser migration for all paths, preserves collis
       await pool.query("SELECT data,revision,updated_at FROM member_workspace")
     ).rows[0];
     assert.equal(first.data.version, 2);
+    assert.equal(first.data.routines[0].archivedAt, 1);
+    assert.equal(
+      validateData(first.data, { strict: true }).routines[0].archivedAt,
+      1,
+    );
     assert.equal(first.revision, 8);
     assert.deepEqual(validateData(first.data), {
       ...validateData(data),

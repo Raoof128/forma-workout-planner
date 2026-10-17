@@ -18,6 +18,8 @@ The version 2 workspace shape is shared by guest mode, JSON backups, and the aut
 
 See [routine programming and migration](routine-programming-v2.md) for rep ranges, RPE, exercise rest, per-side targets, cues, supersets and rollout commands.
 
+Routine `archivedAt` is an optional bounded millisecond timestamp retained from live v1 data. Archived routines remain in backups and history links; restore removes the timestamp. Editing preserves it and duplication creates an active copy.
+
 ## Routine and session records
 
 Routine names contain 1–60 trimmed characters. Routine exercises reference built-in exercise IDs and specify 1–12 sets, 1–100 reps, and 0–1,000 kg. Estimated duration is 1–1,000 minutes. Duplicate row identities are rejected. Migrated alias collisions retain stable `entryId` values so separate prescriptions survive.

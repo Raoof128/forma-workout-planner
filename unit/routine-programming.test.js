@@ -289,3 +289,22 @@ test("unrelated historical alias names remain stable while picker IDs use review
     "Hammer Curl",
   );
 });
+
+test("legacy archived routine timestamps survive strict migration and backups", () => {
+  const data = freshData();
+  data.version = 1;
+  data.routines[0].archivedAt = 1;
+  const migrated = validateData(data, { strict: true });
+  assert.equal(migrated.routines[0].archivedAt, 1);
+  assert.equal(
+    validateData(migrated, { strict: true }).routines[0].archivedAt,
+    1,
+  );
+  assert.equal(parseBackup(JSON.stringify(migrated)).routines[0].archivedAt, 1);
+  const invalid = structuredClone(migrated);
+  invalid.routines[0].archivedAt = -1;
+  assert.throws(() => validateData(invalid, { strict: true }));
+  const unknown = structuredClone(migrated);
+  unknown.routines[0].ownerId = "forged";
+  assert.throws(() => validateData(unknown, { strict: true }));
+});

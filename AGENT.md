@@ -384,3 +384,24 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   local Firefox production coverage passes with certificate checks unchanged.
 - **Follow-ups:** complete CI and the production rollout, then record final
   versions and hosted evidence. Runtime application source remains `c491889`.
+
+### Raouf: 2026-10-17 — Preserve live routine archive compatibility
+
+- **Scope:** production validation during the owner-authorised v2 rollout found
+  existing routine `archivedAt` timestamps absent from this checkout's schema.
+- **Summary:** retain the bounded optional timestamp in strict validation and
+  backups; keep archived routines out of overview/start defaults, with Active /
+  Archived views and stale-checked restore/archive actions. Editing preserves the
+  timestamp; duplication creates an active copy. Stack the card actions visibly.
+- **Files:** shared storage/programming helpers, `App.jsx`, `Routines.jsx`,
+  `styles.css`, unit/API/SQL parity and archive browser regressions, production
+  browser configuration, data/migration/release documentation and both logs.
+- **Verification:** regression failed before the schema correction; 89 unit,
+  49 real-PostgreSQL API and 15 focused development browser cases pass. The new
+  image validates every stored production workspace on the private host with
+  archive metadata intact. All 70 unique production cases are verified, including
+  25 programming/archive replays after fixing two menu-interception failures.
+  The API matrix also passes under Node 26. Applied migration 0004 is unchanged.
+- **Follow-ups:** deploy the matching compatibility image/frontends, verify
+  hosted archive/programming journeys and retain the final deployment receipts.
+  Production writers remain paused until the coordinated release is ready.

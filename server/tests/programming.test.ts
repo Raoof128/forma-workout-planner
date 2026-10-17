@@ -5,6 +5,7 @@ import { freshData } from "../../src/storage.js";
 
 test("API retains v2 programming fields and rejects every invalid bound and nested unknown key", () => {
   const data = freshData();
+  data.routines[0].archivedAt = 1;
   Object.assign(data.routines[0].exercises[0], {
     reps: 8,
     repsMax: 10,
@@ -20,6 +21,7 @@ test("API retains v2 programming fields and rejects every invalid bound and nest
   });
   const parsed = workspacePutSchema.parse(payload());
   assert.equal(parsed.data.routines[0].exercises[0].rpe, 8.5);
+  assert.equal(parsed.data.routines[0].archivedAt, 1);
   for (const [key, value] of [
     ["repsMax", 0],
     ["repsMax", 101],

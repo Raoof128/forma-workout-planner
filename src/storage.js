@@ -123,6 +123,7 @@ const routineSchema = z.object({
   minutes: number.int().positive().max(1000),
   level: z.string().min(1).max(50),
   image: number.int().min(0).max(2),
+  archivedAt: timestamp.optional(),
   exercises: z
     .array(
       z

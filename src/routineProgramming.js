@@ -1,6 +1,7 @@
 import aliases from "./catalog/programming-aliases.json" with { type: "json" };
 
 export const entryKey = (entry) => entry.entryId ?? entry.exerciseId;
+export const isArchived = (routine) => routine.archivedAt !== undefined;
 export function parseRepRange(value) {
   const match = /^\s*(\d{1,3})(?:\s*[-–]\s*(\d{1,3}))?\s*$/.exec(String(value));
   const reps = Number(match?.[1]);

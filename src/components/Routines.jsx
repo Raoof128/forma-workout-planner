@@ -29,6 +29,7 @@ import {
   repsText,
   groupLabels,
   normalizeGroups,
+  isArchived,
 } from "../routineProgramming.js";
 export function Routines({
   routines,
@@ -36,7 +37,12 @@ export function Routines({
   onCreate,
   onUseTemplate,
   onDuplicate,
+  onArchive,
 }) {
+  const [showArchived, setShowArchived] = useState(false);
+  const visibleRoutines = routines.filter(
+    (routine) => isArchived(routine) === showArchived,
+  );
   return (
     <>
       <PageHeading
@@ -49,21 +55,59 @@ export function Routines({
           Create routine
         </Button>
       </PageHeading>
+      <div
+        className="modal-actions"
+        role="group"
+        aria-label="Routine visibility"
+      >
+        <Button
+          variant={showArchived ? "secondary" : "lime"}
+          aria-pressed={!showArchived}
+          onClick={() => setShowArchived(false)}
+        >
+          Active
+        </Button>
+        <Button
+          variant={showArchived ? "lime" : "secondary"}
+          aria-pressed={showArchived}
+          onClick={() => setShowArchived(true)}
+        >
+          Archived
+        </Button>
+      </div>
       <div className="section-title">
         <h2>
-          My routines <span className="count-label">{routines.length}</span>
+          {showArchived ? "Archived routines" : "My routines"}{" "}
+          <span className="count-label">{visibleRoutines.length}</span>
         </h2>
         <span className="muted small">Ready when you are</span>
       </div>
       <div className="routine-grid full-grid">
-        {routines.map((r) => (
+        {visibleRoutines.map((r) => (
           <div className="routine-card-wrap" key={r.id}>
             <RoutineCard routine={r} onClick={onOpen} />
             <details className="routine-card-menu">
               <summary aria-label={`Actions for ${r.name}`}>⋯</summary>
-              <Button variant="secondary" onClick={() => onDuplicate(r)}>
-                Duplicate routine
-              </Button>
+              <div>
+                <Button
+                  variant="secondary"
+                  onClick={(event) => {
+                    event.currentTarget.closest("details").open = false;
+                    onDuplicate(r);
+                  }}
+                >
+                  Duplicate routine
+                </Button>
+                <Button
+                  variant="secondary"
+                  onClick={(event) => {
+                    event.currentTarget.closest("details").open = false;
+                    onArchive(r);
+                  }}
+                >
+                  {showArchived ? "Restore routine" : "Archive routine"}
+                </Button>
+              </div>
             </details>
           </div>
         ))}
@@ -111,6 +155,7 @@ export function RoutineDetail({
   onStart,
   onEdit,
   onDelete,
+  onArchive,
   defaultRest = 90,
 }) {
   const labels = groupLabels(routine.exercises);
@@ -175,10 +220,16 @@ export function RoutineDetail({
             <Pencil size={16} />
             Edit routine
           </Button>
-          <Button variant="lime" onClick={() => onStart(routine)}>
-            <Play size={17} />
-            Start workout
-          </Button>
+          {isArchived(routine) ? (
+            <Button variant="lime" onClick={() => onArchive(routine)}>
+              Restore routine
+            </Button>
+          ) : (
+            <Button variant="lime" onClick={() => onStart(routine)}>
+              <Play size={17} />
+              Start workout
+            </Button>
+          )}
         </div>
       </div>
     </Modal>

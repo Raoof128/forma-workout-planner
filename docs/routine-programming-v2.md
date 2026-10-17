@@ -78,7 +78,7 @@ migration; restore through the existing controlled recovery procedure if needed.
 Old clients can import v1 payloads through the new API; stale revisions still
 return 409. Retained operation hashes from before the upgrade can also return 409
 for an old retry after normalization, so reload/reconcile before a fresh operation.
-The migration and API must ship together. This PR does not deploy either service.
+The migration and API must ship together. The owner-authorised rollout is recorded in the release evidence linked below.
 
 ## Verification
 
@@ -102,3 +102,19 @@ The real account journey also checks target/cue persistence in another browser
 context. The equipment script audits cable, barbell, dumbbell/DB, machine,
 kettlebell, band and Smith names. One reviewed exception retains an EZ-bar guide
 whose historical title says Barbell; the script records the reason explicitly.
+
+## Existing archived routines
+
+The live v1 application also persisted an optional `archivedAt` timestamp on
+routines. Preserve it through browser/import/SQL migration and strict API
+validation. Archived routines remain in the workspace and backup, with their
+original prescriptions and history links, but stay out of the overview and start
+suggestions. Active/Archived views allow restoration; editing keeps the timestamp
+and duplication produces an active copy. Archive/restore actions reject stale
+routine snapshots just like other routine changes.
+
+During the initial production rollout, the post-migration validator detected
+this missing compatibility field before the v2 frontend was enabled. Writers
+were paused while the schema/UI compatibility correction was verified. The SQL
+migration had already retained the field, so no applied migration was changed and
+no member row was deleted or exported. See the [release evidence](qa/routine-programming-v2/README.md).

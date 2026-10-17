@@ -12,6 +12,7 @@ export default defineConfig({
     "catalog.spec.js",
     "navigation-release.spec.js",
     "routine-programming.spec.js",
+    "routine-archive.spec.js",
   ],
   workers: 2,
   retries: 0,
