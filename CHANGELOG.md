@@ -431,3 +431,16 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 - **Follow-ups:** publish this frontend to staging and production only after
   final-head checks pass; verify hosted behavior/assets and remove temporary
   staging access. No API/schema/member-data change or PR merge is required.
+
+### Raouf: 2026-10-17 — Use literal account project filtering
+
+- **Scope:** resolve the final-head static-analysis finding in PR #9.
+- **Finding:** Semgrep flagged the account runner's generated wildcard regular
+  expression for possible excessive backtracking. Replace it with literal
+  segment matching; only `*` is special and no dynamic regex is constructed.
+- **Files:** `scripts/test-account-browsers.mjs`, this log and `CHANGELOG.md`.
+- **Verification:** eight CLI discovery/selection checks pass, including exact,
+  prefix/suffix/multiple wildcards, literal punctuation and mixed invalid filters.
+  Lint, formatting and the unchanged pinned Semgrep scan pass with zero findings.
+  Final CI reruns all checks; application sources, authentication limits and
+  browser assertions are unchanged.

@@ -23,13 +23,21 @@ for (let index = 0; index < args.length; index++) {
 }
 if (selected.some((name) => !name) || !output)
   throw new Error("--project and --output require values");
-const matches = (name, pattern) =>
-  new RegExp(
-    `^${pattern
-      .split("*")
-      .map((part) => part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
-      .join(".*")}$`,
-  ).test(name);
+// Only '*' is special; compare literal segments without a dynamic regular
+// expression or backtracking, including for very long CLI filters.
+const matches = (name, pattern) => {
+  const parts = pattern.split("*");
+  if (parts.length === 1) return name === pattern;
+  if (!name.startsWith(parts[0])) return false;
+  let offset = parts[0].length;
+  for (const part of parts.slice(1, -1)) {
+    const found = name.indexOf(part, offset);
+    if (found < 0) return false;
+    offset = found + part.length;
+  }
+  const last = parts.at(-1);
+  return name.length - offset >= last.length && name.endsWith(last);
+};
 const allNames = config.projects.map((project) => project.name);
 if (
   selected.some((pattern) => !allNames.some((name) => matches(name, pattern)))
