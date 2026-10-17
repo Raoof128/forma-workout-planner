@@ -352,3 +352,17 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   and an isolated 4.4-second performance check with its 10-second limit unchanged.
 - **Follow-ups:** coordinated deployment, backup and any privacy notice required
   before rollout. No requested feature is deferred; no deployment or merge here.
+
+### Raouf: 2026-10-17 — Deployment packaging verification
+
+- **Scope:** owner requested full E2E verification, commit, push and redeploy in
+  the existing routine programming PR.
+- **Summary:** CI exposed the Dockerfile-specific build-context allowlist
+  excluding the new shared routine helper and alias JSON. Added both explicit
+  inclusions; no application behavior or security boundary changes.
+- **Files:** `ops/Dockerfile.dockerignore`, `AGENT.md`, `CHANGELOG.md`.
+- **Verification:** the previous CI image build failed at COPY with the helper
+  missing. Rebuilding the actual pinned Node 26 image and rerunning CI before
+  deployment; existing complete local browser matrices remain recorded above.
+- **Follow-ups:** staging/production backups, v2 migration, API/frontend rollout
+  and hosted verification under the owner's current deployment authorization.
