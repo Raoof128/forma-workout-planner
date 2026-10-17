@@ -79,6 +79,18 @@ test("immediate drag releases retain a usable editor and every saved field", asy
 }) => {
   const errors = [];
   page.on("pageerror", (error) => errors.push(error.message));
+  await page.addInitScript(() => {
+    window.__routineDragPresses = [];
+    window.addEventListener(
+      "pointerdown",
+      (event) => {
+        const handle = event.target.closest(".row-drag-handle");
+        if (handle)
+          window.__routineDragPresses.push(handle.getAttribute("aria-label"));
+      },
+      true,
+    );
+  });
   const editor = await openDragEditor(page);
   const handle = editor.dialog.getByRole("button", {
     name: `Drag ${editor.names[0]}`,
@@ -87,7 +99,21 @@ test("immediate drag releases retain a usable editor and every saved field", asy
   const target = editor.rows.filter({
     has: page.getByLabel(`${editor.names[1]} reps`, { exact: true }),
   });
-  for (let attempt = 0; attempt < 3; attempt++) await handle.dragTo(target);
+  // dragTo can retry an intercepted press without releasing the mouse.
+  // Hover resolves spring hit-testing before each single trusted press.
+  for (let attempt = 0; attempt < 3; attempt++) {
+    await handle.hover();
+    await page.mouse.down();
+    const destination = await target.boundingBox();
+    await page.mouse.move(
+      destination.x + destination.width / 2,
+      destination.y + destination.height / 2,
+    );
+    await page.mouse.up();
+  }
+  expect(await page.evaluate(() => window.__routineDragPresses)).toEqual(
+    Array(3).fill(`Drag ${editor.names[0]}`),
+  );
   await expect(editor.rows).toHaveCount(3);
   await expect(
     editor.dialog.getByRole("button", { name: "Save routine", exact: true }),

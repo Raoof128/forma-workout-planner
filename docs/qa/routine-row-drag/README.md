@@ -221,6 +221,18 @@ original order and superset assertions. Normal-height phone edge and trusted
 touch tests are unchanged. Independent review found no actionable concern;
 all 25 repetitions across the five production profiles passed with zero retries.
 
+The next push CI passed 392/393 development cases; the independent PR run
+passed all 393 development and 143 production cases on the same application.
+The failing rapid-drag trace shows `dragTo` pressing during a spring hit-target
+interception, then retrying without releasing the button. An isolated WebKit
+reproduction confirms that sequence emits only a pointer-down on the interceptor
+and none on the intended source. The rapid regression now resolves the handle
+with hover, sends exactly one trusted mouse-down/move/up per gesture and verifies
+all three native presses reached the intended handle. It still releases
+immediately, waits for no Save between gestures and requires the same exact
+saved order and every prescription value. No application change or test retry
+was added for this automation issue.
+
 ## Final verification
 
 The final CI matrix contains 393 development, 143 production-bundle, 65 account

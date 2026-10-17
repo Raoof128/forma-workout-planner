@@ -607,3 +607,21 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   the full production matrix and final-head CI before redeploying both frontends.
 - **Follow-ups:** record final CI and hosted receipts in PR #9; no API, schema,
   member-data change or merge is required.
+
+### Raouf: 2026-10-17 — Verify trusted presses in the rapid drag regression
+
+- **Scope:** fix the rapid-drag driver issue exposed by final CI in PR #9.
+- **Evidence:** push development passed 392/393 while independent PR development
+  and production passed 393/393 and 143/143 on the same application. The failing
+  trace shows Playwright pressing an animated interceptor, then retrying without
+  releasing the mouse. An isolated WebKit reproduction emits no source press.
+- **Change:** resolve handle hit-testing with hover, then send one trusted
+  mouse-down/move/up per gesture and assert all three native handle presses.
+  Retain immediate releases, no Save waits between gestures and exact saved
+  order and field assertions. Application code and retry settings are unchanged.
+- **Files:** `tests/routine-drag.spec.js`, QA notes, this log and `CHANGELOG.md`.
+- **Verification:** all 15 repeated rapid gestures pass across three engines;
+  lint and formatting pass. Independent review found no actionable concern.
+  Complete full production and final-head CI before frontend deployment.
+- **Follow-ups:** record CI/live receipts in PR #9; no backend, schema,
+  member-data change or merge is required.
