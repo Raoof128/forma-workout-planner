@@ -11,7 +11,7 @@ import {
   BookOpen,
   ArrowLeft,
 } from "lucide-react";
-import { Button, Modal, RoutineCard, PageHeading } from "./UI";
+import { Button, Modal, PageHeading } from "./UI";
 import { createId, exerciseById, selectableExercises } from "../data";
 import {
   defaultPrescription,
@@ -24,6 +24,7 @@ import { matchesExercise } from "../catalog/search.js";
 import { canonicalId } from "../catalog/curation.js";
 import curation from "../catalog/curation.json" with { type: "json" };
 import Library from "./Library.jsx";
+import RoutineCardOrder from "./RoutineCardOrder.jsx";
 const RoutinePrescriptions = lazy(() => import("./RoutinePrescriptions.jsx"));
 import {
   entryKey,
@@ -41,6 +42,7 @@ export function Routines({
   onUseTemplate,
   onDuplicate,
   onArchive,
+  onReorder,
 }) {
   const [showArchived, setShowArchived] = useState(false);
   const visibleRoutines = routines.filter(
@@ -85,35 +87,14 @@ export function Routines({
         </h2>
         <span className="muted small">Ready when you are</span>
       </div>
-      <div className="routine-grid full-grid">
-        {visibleRoutines.map((r) => (
-          <div className="routine-card-wrap" key={r.id}>
-            <RoutineCard routine={r} onClick={onOpen} />
-            <details className="routine-card-menu">
-              <summary aria-label={`Actions for ${r.name}`}>⋯</summary>
-              <div>
-                <Button
-                  variant="secondary"
-                  onClick={(event) => {
-                    event.currentTarget.closest("details").open = false;
-                    onDuplicate(r);
-                  }}
-                >
-                  Duplicate routine
-                </Button>
-                <Button
-                  variant="secondary"
-                  onClick={(event) => {
-                    event.currentTarget.closest("details").open = false;
-                    onArchive(r);
-                  }}
-                >
-                  {showArchived ? "Restore routine" : "Archive routine"}
-                </Button>
-              </div>
-            </details>
-          </div>
-        ))}
+      <RoutineCardOrder
+        routines={visibleRoutines}
+        archived={showArchived}
+        onOpen={onOpen}
+        onDuplicate={onDuplicate}
+        onArchive={onArchive}
+        onReorder={onReorder}
+      >
         <button className="create-card" onClick={onCreate}>
           <span className="empty-icon">
             <Plus size={24} />
@@ -121,7 +102,7 @@ export function Routines({
           <h3>A routine of your own</h3>
           <p>Build your next favorite workout.</p>
         </button>
-      </div>
+      </RoutineCardOrder>
       <div className="section-title">
         <h2>Workout templates</h2>
         <span className="small muted">

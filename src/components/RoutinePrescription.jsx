@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowUp, ArrowDown, GripVertical } from "lucide-react";
 import {
   Reorder,
@@ -23,6 +23,7 @@ export default function RoutinePrescription({
   defaultRest,
   dragging,
   ordering,
+  landed,
   onPress,
   onDragStart,
   onDrag,
@@ -33,6 +34,19 @@ export default function RoutinePrescription({
   const pointerAnchor = useRef(null);
   const reduceMotion = useReducedMotion();
   const vertical = useMotionValue(0);
+  // Keeps the lifted surface raised until the row has snapped into its slot.
+  const [settling, setSettling] = useState(false);
+  useEffect(() => {
+    if (!settling) return;
+    const settle = () => setSettling(false);
+    const stop = vertical.on("animationComplete", settle);
+    const fallback = setTimeout(settle, 600);
+    return () => {
+      stop();
+      clearTimeout(fallback);
+    };
+  }, [settling, vertical]);
+  const lifted = dragging || settling;
   const fields = [
     { key: "sets", label: "Sets", min: 1, max: 12, step: 1 },
     ...(tracksLoadReps(exercise)
@@ -58,7 +72,9 @@ export default function RoutinePrescription({
       as="div"
       value={key}
       data-entry-key={key}
-      className={`prescription${dragging ? " is-dragging" : ""}`}
+      className={`prescription${dragging ? " is-dragging" : ""}${
+        lifted ? " is-lifted" : ""
+      }${landed && !lifted ? " is-landed" : ""}`}
       dragListener={false}
       dragControls={controls}
       dragMomentum={false}
@@ -84,7 +100,7 @@ export default function RoutinePrescription({
         if (reduceMotion) {
           vertical.stop();
           vertical.set(0);
-        }
+        } else if (Math.abs(vertical.get()) > 0.5) setSettling(true);
         onDragEnd(event);
       }}
     >

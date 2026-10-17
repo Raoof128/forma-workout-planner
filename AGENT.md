@@ -58,6 +58,26 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-17 — Drag animation for routine rows and cards
+
+- Drag motion tokens (`--spring-lift`, `--spring-settle`, `--ease-standard`)
+  live on `:root` and come from M3 Expressive springs. Reuse them for any new
+  drag surface instead of new curves.
+- Prescription rows must never scale: drag tests assert exact row positions
+  and an identity transform after drop. Their lift lives on `::before`.
+  Card lift scales the inner `.routine-card`; the Motion wrapper only
+  translates.
+- Card ordering uses `RoutineCardOrder.jsx` with Motion `layout` + 2D drag and
+  offset-based hit-testing (`.routine-grid.full-grid` is positioned for this).
+  `reorderRoutines` only permutes the visible ids within their existing slots;
+  hidden/archived routines never move. Touch requires a 400 ms hold before
+  dragging; keep native scrolling for quick swipes.
+- Only the page toast may use `role="status"`: existing tests locate it with
+  `getByRole("status")`. Extra announcers use plain `aria-live`.
+- Known unrelated failures on this branch: 7 WebKit focus cases, one
+  routine-library case, an intermittent empty-overview case. Firefox Nightly
+  does not launch on this macOS host.
+
 ### Raouf: 2026-10-14 — Owner-authorised artwork redeployment
 
 - Owner requested commit, push and redeploy after the completed artwork/site sweep.

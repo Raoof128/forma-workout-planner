@@ -4,6 +4,33 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-17 — Professional drag animation for routine rows and cards
+
+- **Scope:** routine editor exercise rows (existing drag) and the My routines
+  card grid (new drag to reorder), on `feat/routine-programming-v2`.
+- **Motion:** a dragged item lifts on a raised surface with a two-layer shadow
+  and lime outline, springs in with the Material 3 Expressive fast-spatial
+  curve, stays raised until it lands, then shows a 700 ms lime confirmation
+  (Atlassian drop pattern). No tilt. Neighbours slide with the existing layout
+  spring. Reduced motion keeps the shadow/outline but drops scale and flash.
+- **Cards:** mouse/pen drags after 6 px; touch needs a 400 ms hold so swipes
+  still scroll; the page auto-scrolls near the edges and Escape cancels.
+  **Move earlier / Move later** in each card's ⋯ menu give a single-pointer,
+  keyboard-friendly alternative (WCAG 2.2 SC 2.5.7) with spoken position.
+  Order saves through the normal workspace change; archived routines keep
+  their slots, and clicking a card without dragging still opens it.
+- **Files:** `src/components/RoutineCardOrder.jsx` (new), `Routines.jsx`,
+  `RoutinePrescription(s).jsx`, `src/App.jsx`, `src/styles.css`,
+  `tests/routine-card-drag.*`, `tests/routine-drag*.spec.js`,
+  `docs/user-guide.md`.
+- **Verification:** 3 new row and 5 new card tests failed first, then passed
+  in Chromium and WebKit; 2 new touch tests pass on mobile Chromium. Lint,
+  format, types, docs, build and 89 unit tests pass. The full Chromium+WebKit
+  run matches an untouched checkout of the branch except for fixes made here.
+  Remaining failures also occur on that checkout: 7 WebKit focus cases, one
+  routine-library case and an intermittent empty-overview case. Firefox
+  Nightly does not start on this Mac and was not run.
+
 ### Raouf: 2026-10-14 — Artwork deployment and edge privacy
 
 - Owner authorised deploying the completed 1,414-exercise artwork and site fixes.

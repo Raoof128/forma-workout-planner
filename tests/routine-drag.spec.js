@@ -400,3 +400,67 @@ test("structural controls stay disabled during a preview and return after cancel
   ).toBeEnabled();
   expect(await saveAndReadDrag(page, editor.dialog)).toEqual(editor.original);
 });
+
+function liftStyle(row) {
+  return row.evaluate((node) => {
+    const surface = getComputedStyle(node, "::before");
+    const matrix = new DOMMatrixReadOnly(getComputedStyle(node).transform);
+    return {
+      opacity: Number(surface.opacity),
+      scale: surface.scale,
+      shadow: surface.boxShadow,
+      rowScaled: matrix.a !== 1 || matrix.d !== 1,
+    };
+  });
+}
+
+test("a dragged row lifts on its own surface and confirms where it lands", async ({
+  page,
+}) => {
+  const editor = await openDragEditor(page);
+  const { row } = await holdRowOverNext(page, editor);
+  await expect(row).toHaveClass(/is-lifted/);
+  await expect.poll(async () => (await liftStyle(row)).opacity).toBe(1);
+  const lifted = await liftStyle(row);
+  expect(lifted.shadow).not.toBe("none");
+  expect(Number(lifted.scale)).toBeGreaterThan(1);
+  // The row itself only translates, so drop geometry stays exact.
+  expect(lifted.rowScaled).toBe(false);
+  await page.mouse.up();
+  await expect(row).toHaveClass(/is-landed/);
+  await expect(row).not.toHaveClass(/is-lifted/);
+  await expect(row).not.toHaveClass(/is-landed/, { timeout: 3000 });
+  await expect.poll(async () => (await liftStyle(row)).opacity).toBe(0);
+  expect(
+    await row.evaluate(
+      (node) =>
+        new DOMMatrixReadOnly(getComputedStyle(node).transform).isIdentity,
+    ),
+  ).toBe(true);
+});
+
+test("reduced motion keeps the lifted outline without scaling or flashing", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  const editor = await openDragEditor(page);
+  const { row } = await holdRowOverNext(page, editor);
+  const lifted = await liftStyle(row);
+  expect(lifted.opacity).toBe(1);
+  expect(lifted.shadow).not.toBe("none");
+  expect(lifted.scale).toBe("none");
+  await page.mouse.up();
+  await expect(row).not.toHaveClass(/is-lifted/);
+  expect((await liftStyle(row)).opacity).toBe(0);
+});
+
+test("a cancelled drag settles without the landing confirmation", async ({
+  page,
+}) => {
+  const editor = await openDragEditor(page);
+  const { row } = await holdRowOverNext(page, editor);
+  await page.keyboard.press("Escape");
+  await page.mouse.up();
+  await expect(row).not.toHaveClass(/is-lifted/);
+  await expect(editor.dialog.locator(".is-landed")).toHaveCount(0);
+});

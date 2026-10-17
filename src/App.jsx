@@ -236,6 +236,24 @@ function AccountWorkspace() {
     }
     return !!result;
   }
+  async function reorderRoutines(ids) {
+    const result = await change((current) => {
+      const moving = new Set(ids);
+      // Only the visible routines trade places; hidden ones keep their slots.
+      const slots = current.routines.flatMap((item, index) =>
+        moving.has(item.id) ? [index] : [],
+      );
+      if (slots.length !== ids.length)
+        throw new Error("Your routines changed. Try moving it again.");
+      const byId = new Map(current.routines.map((item) => [item.id, item]));
+      const routines = [...current.routines];
+      slots.forEach((slot, index) => {
+        routines[slot] = byId.get(ids[index]);
+      });
+      return { ...current, routines };
+    }, "Routine order saved.");
+    return !!result;
+  }
   async function archiveRoutine(routine) {
     const archived = isArchived(routine);
     const result = await change(
@@ -480,6 +498,7 @@ function AccountWorkspace() {
                   routines={data.routines}
                   onDuplicate={duplicateRoutine}
                   onArchive={archiveRoutine}
+                  onReorder={reorderRoutines}
                   onOpen={(routine) => setModal({ type: "detail", routine })}
                   onCreate={() => setModal({ type: "editor" })}
                   onUseTemplate={async (template) => {

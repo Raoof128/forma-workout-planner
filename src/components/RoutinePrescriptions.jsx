@@ -22,6 +22,7 @@ export default function RoutinePrescriptions({
   const [preview, setPreview] = useState(null);
   const [active, setActive] = useState(null);
   const [announcement, setAnnouncement] = useState("");
+  const [landed, setLanded] = useState(null);
   const byKey = new Map(items.map((item) => [entryKey(item), item]));
   const order = preview ?? items.map(entryKey);
   const ordered = order.map((key) => byKey.get(key)).filter(Boolean);
@@ -29,6 +30,13 @@ export default function RoutinePrescriptions({
   useEffect(() => {
     onReady(true);
   }, [onReady]);
+
+  useEffect(() => {
+    if (!landed) return;
+    // Long enough for the row to settle and the confirmation to finish.
+    const clear = setTimeout(() => setLanded(null), 1400);
+    return () => clearTimeout(clear);
+  }, [landed]);
 
   useEffect(() => {
     function captureRelease(event) {
@@ -270,6 +278,7 @@ export default function RoutinePrescriptions({
     if (valid) {
       const next = release.order;
       onReorder(next);
+      setLanded({ key: gesture.key });
       setAnnouncement(
         `Moved ${name} to position ${next.indexOf(gesture.key) + 1} of ${items.length}.`,
       );
@@ -326,6 +335,7 @@ export default function RoutinePrescriptions({
             defaultRest={defaultRest}
             dragging={active?.key === entryKey(item)}
             ordering={!!active}
+            landed={landed?.key === entryKey(item)}
             onPress={(event, offset) => {
               const press = {
                 key: entryKey(item),

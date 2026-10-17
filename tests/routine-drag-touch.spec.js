@@ -1,5 +1,9 @@
 import { test, expect } from "@playwright/test";
 import { openDragEditor, saveAndReadDrag } from "./routine-drag.helpers.js";
+import {
+  openRoutineCards,
+  savedRoutineIds,
+} from "./routine-card-drag.helpers.js";
 
 async function touchMove(page, session, start, end) {
   await session.send("Input.dispatchTouchEvent", {
@@ -101,5 +105,64 @@ test("touch scrolling outside the handle remains native and does not reorder exe
     .poll(() => editor.dialog.evaluate((node) => node.scrollTop))
     .toBeGreaterThan(before + 50);
   expect(await saveAndReadDrag(page, editor.dialog)).toEqual(editor.original);
+  await session.detach();
+});
+
+test("holding a routine card on touch lifts it and reorders the stacked cards", async ({
+  page,
+  context,
+}) => {
+  const grid = await openRoutineCards(page);
+  const session = await context.newCDPSession(page);
+  const card = grid.card(grid.ids[0]);
+  // Start mid-screen so edge auto-scroll does not carry the card further.
+  await card.evaluate((node) => node.scrollIntoView({ block: "center" }));
+  const from = await card.boundingBox();
+  const to = await grid.card(grid.ids[1]).boundingBox();
+  const start = { x: from.x + from.width / 2, y: from.y + 40 };
+  await session.send("Input.dispatchTouchEvent", {
+    type: "touchStart",
+    touchPoints: [{ ...start, id: 1 }],
+  });
+  await page.waitForTimeout(550);
+  await touchMove(page, session, start, {
+    x: start.x,
+    y: to.y + to.height / 2,
+  });
+  await expect(card).toHaveClass(/is-lifted/);
+  await session.send("Input.dispatchTouchEvent", {
+    type: "touchEnd",
+    touchPoints: [],
+  });
+  await expect(grid.cards.nth(1)).toHaveAttribute(
+    "data-routine-id",
+    grid.ids[0],
+  );
+  await expect(page.getByRole("dialog")).toHaveCount(0);
+  await expect
+    .poll(() => savedRoutineIds(page))
+    .toEqual([grid.ids[1], grid.ids[0], grid.archived, ...grid.ids.slice(2)]);
+  await session.detach();
+});
+
+test("a quick swipe over routine cards scrolls instead of reordering", async ({
+  page,
+  context,
+}) => {
+  const grid = await openRoutineCards(page);
+  const session = await context.newCDPSession(page);
+  const card = await grid.card(grid.ids[1]).boundingBox();
+  const before = await page.evaluate(() => scrollY);
+  const start = { x: card.x + card.width / 2, y: card.y + 60 };
+  await touchMove(page, session, start, { x: start.x, y: start.y - 260 });
+  await session.send("Input.dispatchTouchEvent", {
+    type: "touchEnd",
+    touchPoints: [],
+  });
+  await expect
+    .poll(() => page.evaluate(() => scrollY))
+    .toBeGreaterThan(before + 50);
+  await expect(page.locator(".routine-card-wrap.is-lifted")).toHaveCount(0);
+  expect(await savedRoutineIds(page)).toEqual(grid.saved);
   await session.detach();
 });
