@@ -4471,27 +4471,6 @@
       },
       "previewId": "3a167624d586d55c"
     },
-    "forma-original-authored-b-001-retry-0-1": {
-      "src": "/exercise-media/original/authored-b-001-retry.png?v=be03d865dd24",
-      "sha256": "be03d865dd248ab7ba30840c8fa7369a22d418d5ea2a037e6006adc218e33df8",
-      "width": 1536,
-      "height": 1024,
-      "title": "Incline dumbbell press",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 2,
-        "rows": 2,
-        "column": 0,
-        "row": 1,
-        "bounds": {
-          "x": 4,
-          "y": 489,
-          "width": 762,
-          "height": 531
-        }
-      },
-      "previewId": "be03d865dd248ab7"
-    },
     "forma-original-corrections-007-0-1": {
       "src": "/exercise-media/original/corrections-007.png?v=07ebf178c582",
       "sha256": "07ebf178c582f6420d04ed7cabea81a6d4a2229e946fd4b9c124cc7bd74bdd7e",
@@ -9037,27 +9016,6 @@
       },
       "previewId": "675ff4bc9f026714"
     },
-    "forma-original-movements-041-1-1": {
-      "src": "/exercise-media/original/movements-041.png?v=675ff4bc9f02",
-      "sha256": "675ff4bc9f0267141d5bc915b3650705e42f749700da46871c28d28eff174a25",
-      "width": 1536,
-      "height": 1024,
-      "title": "Incline Chest Press DB",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 1,
-        "row": 1,
-        "bounds": {
-          "x": 392,
-          "y": 336,
-          "width": 377,
-          "height": 337
-        }
-      },
-      "previewId": "675ff4bc9f026714"
-    },
     "forma-original-movements-041-2-1": {
       "src": "/exercise-media/original/movements-041.png?v=675ff4bc9f02",
       "sha256": "675ff4bc9f0267141d5bc915b3650705e42f749700da46871c28d28eff174a25",
@@ -9183,27 +9141,6 @@
         }
       },
       "previewId": "675ff4bc9f026714"
-    },
-    "forma-original-finish-a-002-1-0": {
-      "src": "/exercise-media/original/finish-a-002.png?v=e117e261ef27",
-      "sha256": "e117e261ef276a87f7fa223cd71f9a77b4a1d5d149f891a26b3308b198a03135",
-      "width": 1536,
-      "height": 1024,
-      "title": "Incline Dumbbell Flyes",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 2,
-        "rows": 2,
-        "column": 1,
-        "row": 0,
-        "bounds": {
-          "x": 768,
-          "y": 0,
-          "width": 768,
-          "height": 475
-        }
-      },
-      "previewId": "e117e261ef276a87"
     },
     "forma-original-finish-solo-005-retry-0-0": {
       "src": "/exercise-media/original/finish-solo-005-retry.png?v=5843757540e3",
@@ -24573,12 +24510,6 @@
       "width": 768,
       "height": 512
     },
-    "be03d865dd248ab7": {
-      "src": "/exercise-media/previews/authored-b-001-retry-e13250547580ec63.webp?v=fae19339ed40",
-      "sha256": "fae19339ed40319d57de552a3b8386865cbe1ae8bbb2c519c9fb3a16f5d675c6",
-      "width": 768,
-      "height": 512
-    },
     "b416de8dcd44a3fa": {
       "src": "/exercise-media/previews/finish-f-002-retry-63792097573fe538.webp?v=3eda88f617f5",
       "sha256": "3eda88f617f5d025738d1936c9cad9d9a5f39dd97771538add3eb32262e45aea",
@@ -24807,12 +24738,6 @@
       "width": 768,
       "height": 512
     },
-    "e117e261ef276a87": {
-      "src": "/exercise-media/previews/finish-a-002-f92a4aa16350a09f.webp?v=1a563df77477",
-      "sha256": "1a563df77477ac4bc74c687ac49ef429c2313bf0ae16bcfbcbaae7a540252117",
-      "width": 768,
-      "height": 512
-    },
     "5843757540e386b4": {
       "src": "/exercise-media/previews/finish-solo-005-retry-62a36931a5fa624b.webp?v=889673c4bfdf",
       "sha256": "889673c4bfdf14798aef4ea619a65b71e1cada4dfc588c3b2a8caddd51c66764",
@@ -24834,6 +24759,12 @@
     "fd615d8ccc3f9fa2": {
       "src": "/exercise-media/previews/movements-043-49a1cabff9876876.webp?v=3f81d7d7a696",
       "sha256": "3f81d7d7a6961fc22302f7f7ab7787e06397bcf95109cd7dd4791fe41049e07b",
+      "width": 768,
+      "height": 512
+    },
+    "e117e261ef276a87": {
+      "src": "/exercise-media/previews/finish-a-002-f92a4aa16350a09f.webp?v=1a563df77477",
+      "sha256": "1a563df77477ac4bc74c687ac49ef429c2313bf0ae16bcfbcbaae7a540252117",
       "width": 768,
       "height": 512
     },
@@ -26713,10 +26644,6 @@
       "assetId": "forma-original-movements-021-0-1",
       "caption": "DB Underhand bench press · Representative exercise position; follow the guide for the complete movement."
     },
-    "wger-4b23738a-67a8-41af-996d-abc53a7c3f97": {
-      "assetId": "forma-original-authored-b-001-retry-0-1",
-      "caption": "Incline dumbbell press · Representative exercise position; follow the guide for the complete movement."
-    },
     "wger-73646b21-62e3-493b-8d75-4179326cd404": {
       "assetId": "forma-original-corrections-007-0-1",
       "caption": "DB Wrist Extension · Representative exercise position; follow the guide for the complete movement."
@@ -27745,10 +27672,6 @@
       "assetId": "forma-original-cable-config-01-2-0",
       "caption": "Cable station with incline bench · Equipment reference; follow the guide for setup and movement."
     },
-    "wger-e5e17c42-3c34-410b-84ab-81fde378778f": {
-      "assetId": "forma-original-movements-041-1-1",
-      "caption": "Incline Chest Press DB · Representative exercise position; follow the guide for the complete movement."
-    },
     "wger-fca05168-7212-42ec-8927-efb1e8dd0971": {
       "assetId": "forma-original-movements-041-2-1",
       "caption": "Incline Close Grip Barbell Bench Press · Representative exercise position; follow the guide for the complete movement."
@@ -27772,10 +27695,6 @@
     "wger-55ff32e6-24ab-4303-9b50-176d60d48796": {
       "assetId": "forma-original-movements-041-3-2",
       "caption": "Incline Dumbbell Fly · Representative exercise position; follow the guide for the complete movement."
-    },
-    "db-incline-dumbbell-flyes": {
-      "assetId": "forma-original-finish-a-002-1-0",
-      "caption": "Incline Dumbbell Flyes · Representative exercise position; follow the guide for the complete movement."
     },
     "db-incline-dumbbell-flyes-with-a-twist": {
       "assetId": "forma-original-finish-solo-005-retry-0-0",

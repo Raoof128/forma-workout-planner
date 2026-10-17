@@ -65,6 +65,11 @@ for (const correction of review.measurementCorrections) {
   for (const id of correction.aliasIds)
     policy.aliases[id] = correction.replacementId;
 }
+// Reviewed identical-unit programming aliases, also used by the v2 data migration.
+for (const [id, correction] of Object.entries(
+  await read("src/catalog/equipment-corrections.json"),
+))
+  edit(id, correction);
 const records = [...publishedExercises, ...additions];
 const recordById = new Map(records.map((row) => [row.id, row]));
 for (const correction of machines.equipmentMetadataCorrections) {
@@ -75,6 +80,10 @@ for (const correction of machines.equipmentMetadataCorrections) {
 }
 for (const [id, repair] of Object.entries(repairs))
   edit(canonicalId(id, policy), repair);
+Object.assign(
+  policy.aliases,
+  await read("src/catalog/programming-aliases.json"),
+);
 // Specific station names augment broad Machine/Cable filters. They do not merge identities.
 const stationNames = [
   ["smith", "Smith machine"],

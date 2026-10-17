@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useSyncExternalStore } from "react";
+import { useCallback, useLayoutEffect, useSyncExternalStore } from "react";
 const pages = new Set([
   "overview",
   "routines",
@@ -25,7 +25,7 @@ export function useNavigation() {
     location.hash = next;
     window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const labels = {
       overview: "Overview",
       routines: "My routines",

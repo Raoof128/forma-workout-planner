@@ -9,7 +9,7 @@ adds `member_workspace` and `member_workspace_operations`.
 
 `member_workspace` has one row per Better Auth user. Its text `owner_id` is both
 the primary key and a foreign key to `"user"(id) ON DELETE CASCADE`. It stores
-the validated version 1 FORMA data in JSONB, an authoritative PostgreSQL integer
+the validated version 2 FORMA data in JSONB, an authoritative PostgreSQL integer
 revision, and a server-assigned timestamp. The JSONB keeps the existing FORMA
 backup contract intact while the relational key provides a strict member
 boundary. Starter routines are copied for new members; workout history remains

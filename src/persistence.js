@@ -97,7 +97,10 @@ export function createWorkoutRepository({
           unavailable();
           return;
         }
-        if (!latest.issue && latest.raw === null) {
+        if (
+          !latest.issue &&
+          (latest.raw === null || JSON.parse(latest.raw).version === 1)
+        ) {
           try {
             const raw = JSON.stringify(latest.data);
             write(STORAGE_KEY, raw);

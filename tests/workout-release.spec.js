@@ -105,6 +105,8 @@ test("set validation, completion undo, added sets, finish cancel and save preser
     weight: 50,
     reps: 8,
     done: false,
+    rpe: null,
+    legacyDraft: null,
   });
   await page.reload();
   await expect(
@@ -344,6 +346,8 @@ test("bodyweight logging counts completed sets with zero external-load volume an
     weight: 0,
     reps: 12,
     done: true,
+    rpe: null,
+    legacyDraft: null,
   });
   await page.reload();
   await expect(

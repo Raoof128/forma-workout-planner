@@ -52,6 +52,7 @@ before(async () => {
     "0001-auth.sql",
     "0002-workspace.sql",
     "0003-security-throttle.sql",
+    "0004-routine-programming.sql",
   ]) {
     const migration = await readFile(
       join(testDir, "..", "migrations", migrationName),

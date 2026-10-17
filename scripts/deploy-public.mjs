@@ -19,6 +19,7 @@ if (!management) throw new Error("CLOUDFLARE_API_TOKEN is required");
 async function api(path, token = management, options = {}) {
   const response = await globalThis.fetch(base + path, {
     ...options,
+    cache: "no-store",
     headers: {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",

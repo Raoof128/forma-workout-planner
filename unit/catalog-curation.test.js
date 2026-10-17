@@ -159,9 +159,11 @@ test("every selectable exercise has an actual guide and correct source attributi
   );
 });
 
-test("all historical IDs retain the same objects and backup measurements after deduplication", () => {
+test("historical IDs retain measurement units while reviewed display metadata and incline aliases migrate", () => {
   for (const row of publishedExercises)
-    assert.equal(exerciseById.get(row.id), row);
+    assert.equal(exerciseById.get(row.id).metric, row.metric);
+  for (const row of publishedExercises)
+    assert.equal(exerciseById.get(row.id).weight, row.weight);
   const data = freshData();
   data.history = Object.keys(curation.aliases).map((id, index) => {
     const prescription = defaultPrescription(exerciseById.get(id));
@@ -177,10 +179,18 @@ test("all historical IDs retain the same objects and backup measurements after d
     };
   });
   const restored = parseBackup(JSON.stringify(data));
-  assert.deepEqual(
-    restored.history.map((x) => x.exercises),
-    data.history.map((x) => x.exercises),
-  );
+  restored.history.forEach((session, index) => {
+    const before = data.history[index].exercises[0].sets[0];
+    const after = session.exercises[0].sets[0];
+    for (const key of [
+      "weight",
+      "reps",
+      "durationSeconds",
+      "distanceMeters",
+      "done",
+    ])
+      assert.equal(after[key], before[key]);
+  });
   assert.equal(exerciseById.get("plank").metric, undefined);
   assert.equal(exerciseById.get("db-plank").metric, "duration");
 });
