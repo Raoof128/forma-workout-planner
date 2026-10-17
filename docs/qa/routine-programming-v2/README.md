@@ -29,6 +29,7 @@ unrelated container retained their IDs.
 | Worker gateway | 21 passed |
 | Operations | 14 passed |
 | Development baseline | 348 unique cases, 116 per engine |
+| Full development CI after compatibility corrections | 351 passed, 117 per engine |
 | Archive/programming after compatibility correction | 15 development cases passed across three engines |
 | Production guest browsers | All 70 unique cases verified, including exact menu replays |
 | Production-built real account browsers | Fresh final matrix: 55 passed across five desktop/phone projects |
@@ -47,6 +48,16 @@ failures were corrected, then all 25 programming/archive cases passed across the
 five profiles, completing the 70 unique cases. Failed evidence was retained.
 No saved-data assertions or performance limits were weakened. Account suites
 used a 60-second CLI test budget in this shared cloud environment.
+
+The final CI production archive test initially reloaded while the trace still
+showed `data-saving` and the busy Save control. Both account matrices (55 cases
+each) and all 351 development cases passed on those runs. The archive test now
+waits for the editor to close after its successful save before reloading, keeping
+all range/archive persistence and duplicate assertions. A fresh local production
+matrix also passed all 70 cases before this synchronization correction. After the
+correction, the full 70-case matrix and nine repeated archive journeys across three
+engines passed again. No runtime bundle, sleep, retry, assertion reduction or
+larger timeout was added for it.
 
 Hosted checks use Chromium desktop/phone and WebKit phone. Firefox is covered by
 local/CI production and account matrices; its hosted attempt was blocked by the

@@ -33,6 +33,7 @@ test("existing archived routines stay hidden, editable and restorable without lo
     .getByLabel("Barbell bench press reps", { exact: true })
     .fill("6-8");
   await page.getByRole("button", { name: "Save routine", exact: true }).click();
+  await expect(page.getByRole("dialog")).toHaveCount(0);
   await page.reload();
   await page.getByRole("button", { name: "Archived", exact: true }).click();
   await page

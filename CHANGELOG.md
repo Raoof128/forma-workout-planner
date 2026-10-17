@@ -390,3 +390,17 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 - **Verification:** rerun the unchanged pinned full-history scan, docs and patch
   checks before push; final GitHub security/application matrices remain required.
   Deployed frontend/API bundles and saved member data are unchanged.
+
+### Raouf: 2026-10-17 — Await archive edit save acknowledgement
+
+- **Scope:** resolve the final CI production browser failure in PR #9.
+- **Evidence:** both runs passed 351 development cases and both 55-case account
+  matrices; production passed 69/70. The Chromium trace shows reload while
+  `data-saving` is true and the editor displays its busy Save control, before
+  the pending browser write completes. A fresh local 70-case matrix passed.
+- **Change:** `tests/routine-archive.spec.js` now waits for the editor to close
+  after the successful save before reloading. All range/archive persistence and
+  duplicate assertions remain, with no sleep, retry or larger timeout added.
+- **Verification:** the full 70-case production matrix and nine archive replays
+  across three engines pass; final CI remains required. Runtime sources and deployed
+  versions remain unchanged; no further member-data operation is needed.
