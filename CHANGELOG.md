@@ -353,3 +353,27 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   assets. Lint, formatting and type checks pass. Backend schema/image is unchanged.
 - **Follow-ups:** deploy the frontend correction and complete the full account
   matrix plus final hosted verification; retain failed traces in private scratch.
+
+### Raouf: 2026-10-17 — Verified routine v2 redeployment
+
+- **Scope:** completed owner-authorised commit/push/redeployment in PR #9.
+- **Summary:** production and staging serve frontend `27e3728` with matching API
+  `cca9b07`. Verified encrypted signed backups bracket SQL 0004; stored workspaces
+  and legacy archive timestamps validate, with record counts preserved. No member
+  data was exported/deleted and no applied migration or unrelated service changed.
+- **Files:** `scripts/deploy-public.mjs`, deployment/gateway/asset/layout receipts
+  under `docs/qa/routine-programming-v2`, this log and `CHANGELOG.md`. Control-plane
+  requests use `no-store` after a stale/transient permission lookup failed; the
+  fresh lookup and final staging deployment succeeded without widening access.
+- **Verification:** 89 unit, 49 Node 26 API, 21 Worker, 14 operations, 70 unique
+  production browser cases and a fresh 55-case production account matrix pass.
+  Hosted production and staging each pass 15 programming/archive journeys. Live
+  assets match the build; desktop/phone layouts have no overflow/browser errors.
+  Health/anonymous boundaries, private ports and existing memory limits pass.
+- **Release:** production `e6ea40f3-dbc8-46ee-a7d6-5fc9eb5205ce`; staging
+  `29a7cfc6-0caf-428f-9ba8-58803b287573`. Temporary maintenance access and scoped
+  deploy credentials were removed/revoked. Both APIs are healthy.
+- **Follow-ups:** preflight candidate validators against live workspace shapes
+  on the host before future schema migrations; keep nullable account-loading
+  routes covered. Full CI reruns on pushed commits; no requested feature remains
+  deferred, and the PR is not merged by this deployment.
