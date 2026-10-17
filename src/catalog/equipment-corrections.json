@@ -1,0 +1,98 @@
+{
+  "db-band-assisted-pull-up": {
+    "equipment": "Band",
+    "equipmentTags": ["Band"]
+  },
+  "db-box-squat-with-bands": {
+    "equipment": "Barbell + Band",
+    "equipmentTags": ["Barbell", "Band"]
+  },
+  "db-close-grip-ez-bar-curl-with-band": {
+    "equipment": "EZ bar + Band",
+    "equipmentTags": ["EZ bar", "Band"]
+  },
+  "db-close-grip-push-up-off-of-a-dumbbell": {
+    "equipment": "Dumbbell",
+    "equipmentTags": ["Dumbbell"]
+  },
+  "db-deadlift-with-bands": {
+    "equipment": "Barbell + Band",
+    "equipmentTags": ["Barbell", "Band"]
+  },
+  "wger-e5ccfcaf-d93c-4924-9042-24037f3f0499": {
+    "equipment": "Dumbbell + Bench",
+    "equipmentTags": ["Dumbbell", "Bench"]
+  },
+  "wger-412ba9ab-ae29-4411-9bbc-74af1263494c": {
+    "equipment": "Dumbbell",
+    "equipmentTags": ["Dumbbell"]
+  },
+  "wger-7cc24acf-3fc9-4d14-a461-cd00d1d18f0e": {
+    "equipment": "Dumbbell + Bench",
+    "equipmentTags": ["Dumbbell", "Bench"]
+  },
+  "wger-29a361d5-1300-4fb4-90d6-d6350bec9cb9": {
+    "equipment": "Bodyweight + Band",
+    "equipmentTags": ["Bodyweight", "Band"]
+  },
+  "wger-70c97a79-5e88-4549-a74c-0e5190a5c048": {
+    "equipment": "Bodyweight + Band",
+    "equipmentTags": ["Bodyweight", "Band"]
+  },
+  "db-it-band-and-glute-stretch": {
+    "equipment": "Band",
+    "equipmentTags": ["Band"]
+  },
+  "db-lying-close-grip-barbell-triceps-press-to-chin": {
+    "equipment": "Barbell + EZ bar",
+    "equipmentTags": ["Barbell", "EZ bar"]
+  },
+  "wger-f397656d-6f26-47c6-9e4c-221687f3f2fa": {
+    "equipment": "Bodyweight + Band",
+    "equipmentTags": ["Bodyweight", "Band"]
+  },
+  "db-rack-pull-with-bands": {
+    "equipment": "Barbell + Band",
+    "equipmentTags": ["Barbell", "Band"]
+  },
+  "db-reverse-band-bench-press": {
+    "equipment": "Barbell + Band",
+    "equipmentTags": ["Barbell", "Band"]
+  },
+  "db-reverse-band-box-squat": {
+    "equipment": "Barbell + Band",
+    "equipmentTags": ["Barbell", "Band"]
+  },
+  "db-reverse-band-deadlift": {
+    "equipment": "Barbell + Band",
+    "equipmentTags": ["Barbell", "Band"]
+  },
+  "db-reverse-band-power-squat": {
+    "equipment": "Barbell + Band",
+    "equipmentTags": ["Barbell", "Band"]
+  },
+  "db-reverse-band-sumo-deadlift": {
+    "equipment": "Barbell + Band",
+    "equipmentTags": ["Barbell", "Band"]
+  },
+  "db-seated-band-hamstring-curl": {
+    "equipment": "Band",
+    "equipmentTags": ["Band"]
+  },
+  "db-smith-incline-shoulder-raise": {
+    "equipment": "Smith machine",
+    "equipmentTags": ["Smith machine"]
+  },
+  "db-squat-with-bands": {
+    "equipment": "Barbell + Band",
+    "equipmentTags": ["Barbell", "Band"]
+  },
+  "db-sumo-deadlift-with-bands": {
+    "equipment": "Barbell + Band",
+    "equipmentTags": ["Barbell", "Band"]
+  },
+  "db-weighted-sit-ups-with-bands": {
+    "equipment": "Band",
+    "equipmentTags": ["Band"]
+  }
+}

@@ -129,7 +129,17 @@ async function createTwoSetRoutine(page, name) {
     .filter({ hasText: "Barbell bench press" })
     .click();
   await page.getByLabel("Barbell bench press sets", { exact: true }).fill("2");
-  await page.getByLabel("Barbell bench press reps", { exact: true }).fill("8");
+  await page
+    .getByLabel("Barbell bench press reps", { exact: true })
+    .fill("8-10");
+  await page.getByLabel("Barbell bench press rpe", { exact: true }).fill("8.5");
+  await page
+    .getByLabel("Barbell bench press restSeconds", { exact: true })
+    .fill("75");
+  await page.getByLabel("Options for Barbell bench press").click();
+  await page
+    .getByLabel("Barbell bench press note", { exact: true })
+    .fill("30° bench");
   await page
     .getByLabel("Barbell bench press weight", { exact: true })
     .fill("42");
@@ -192,6 +202,16 @@ test("a completed workout persists through reload and a second browser context",
     expect(owned.body.data.routines.map((item) => item.name)).toContain(
       routineName,
     );
+    expect(owned.body.data.version).toBe(2);
+    expect(
+      owned.body.data.routines.find((r) => r.name === routineName).exercises[0],
+    ).toMatchObject({
+      reps: 8,
+      repsMax: 10,
+      rpe: 8.5,
+      restSeconds: 75,
+      note: "30° bench",
+    });
     expect(owned.body.data.history).toHaveLength(1);
     expect(owned.body.data.history[0].exercises[0].sets[0]).toMatchObject({
       weight: 42,
@@ -211,6 +231,23 @@ test("a completed workout persists through reload and a second browser context",
     expect(shared.body.data.routines.map((item) => item.name)).toContain(
       routineName,
     );
+    expect(
+      shared.body.data.routines.find((r) => r.name === routineName)
+        .exercises[0],
+    ).toMatchObject({
+      reps: 8,
+      repsMax: 10,
+      rpe: 8.5,
+      restSeconds: 75,
+      note: "30° bench",
+    });
+    expect(shared.body.data.history[0].exercises[0]).toMatchObject({
+      targetReps: 8,
+      repsMax: 10,
+      rpe: 8.5,
+      restSeconds: 75,
+      note: "30° bench",
+    });
     expect(shared.body.data.history).toHaveLength(1);
     await clickMainNavigation(secondPage, "My routines");
     await expect(

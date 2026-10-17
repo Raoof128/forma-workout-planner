@@ -10,7 +10,7 @@ so the app and this record cannot drift apart.
 
 | Document       | Version | Effective       | Operator                                | Contact             |
 | -------------- | ------- | --------------- | --------------------------------------- | ------------------- |
-| Privacy Policy | 1.0     | 13 October 2026 | Raouf Abedini (individual), Sydney, NSW | raoof.r12@gmail.com |
+| Privacy Policy | 1.3     | 17 October 2026 | Raouf Abedini (individual), Sydney, NSW | raoof.r12@gmail.com |
 | Terms of Use   | 1.0     | 13 October 2026 | Raouf Abedini (individual), Sydney, NSW | raoof.r12@gmail.com |
 
 **These documents were drafted from official guidance and are not legal

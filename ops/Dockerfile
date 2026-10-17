@@ -6,9 +6,9 @@ RUN --mount=type=secret,id=proxy_ca,required=false \
     if [ -s /run/secrets/proxy_ca ]; then export NODE_EXTRA_CA_CERTS=/run/secrets/proxy_ca; fi \
     && npm ci --strict-ssl=true --no-audit --no-fund --maxsockets=5 --fetch-retries=5
 COPY server ./server
-COPY src/data.js src/storage.js src/exerciseMetrics.js ./src/
+COPY src/data.js src/storage.js src/exerciseMetrics.js src/routineProgramming.js ./src/
 COPY src/catalog/exercises.json ./src/catalog/exercises.json
-COPY src/catalog/curation.js src/catalog/curation.json src/catalog/machine-exercises.json ./src/catalog/
+COPY src/catalog/curation.js src/catalog/curation.json src/catalog/machine-exercises.json src/catalog/programming-aliases.json ./src/catalog/
 COPY tsconfig.json tsconfig.server.json ./
 RUN npm run build:server \
     && npm prune --omit=dev --offline --strict-ssl=true --no-audit --no-fund \

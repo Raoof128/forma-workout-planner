@@ -271,7 +271,12 @@ test(
     await page.getByRole("button", { name: "Save preferences" }).click();
     await expect
       .poll(async () => (await stored(page)).profile)
-      .toEqual({ name: "X".repeat(50), goal: 1 });
+      .toEqual({
+        name: "X".repeat(50),
+        goal: 1,
+        restSeconds: 90,
+        muted: false,
+      });
 
     await page.getByLabel("Weekly workout goal").selectOption("7");
     await page.getByRole("button", { name: "Save preferences" }).click();
@@ -314,7 +319,11 @@ test(
     await page.getByRole("button", { name: "Restore backup" }).click();
     await expect(page.locator(".hero")).toBeVisible();
     await expect(page.getByRole("dialog")).toHaveCount(0);
-    expect((await stored(page)).profile).toEqual(backup.profile);
+    expect((await stored(page)).profile).toEqual({
+      ...backup.profile,
+      restSeconds: 90,
+      muted: false,
+    });
     expect((await stored(page)).schedule).toEqual(backup.schedule);
   },
 );

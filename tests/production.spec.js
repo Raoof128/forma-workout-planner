@@ -1,3 +1,4 @@
+import { verifyAliasCollisionMigration } from "./helpers.js";
 import { expect, test } from "@playwright/test";
 
 function monitorBrowser(page) {
@@ -217,4 +218,10 @@ test("production writes from concurrent tabs preserve profile and active workout
     });
   expect(problems).toEqual([]);
   expect(otherProblems).toEqual([]);
+});
+
+test("production first migrated alias collision starts without a false conflict", async ({
+  page,
+}) => {
+  await verifyAliasCollisionMigration(page);
 });

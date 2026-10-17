@@ -1,5 +1,10 @@
 import { z } from "zod";
 import { exercises, exerciseById, initialData, dateKey } from "./data.js";
+import {
+  migrateProgramming,
+  entryKey,
+  validGroups,
+} from "./routineProgramming.js";
 import { validMeasurement } from "./exerciseMetrics.js";
 
 export const STORAGE_KEY = "forma-v1";
@@ -13,11 +18,49 @@ const number = z.number().finite();
 const timestamp = number.min(0).max(8640000000000000);
 const id = z.string().min(1).max(200);
 const exerciseId = z.enum(exercises.map((exercise) => exercise.id));
-const editableNumber = z.union([number, z.literal("")]);
+const editableNumber = z.union([number.min(0).max(1000), z.literal("")]);
+const rpe = number
+  .min(1)
+  .max(10)
+  .multipleOf(0.5)
+  .nullable()
+  .optional()
+  .default(null);
+const programmingFields = {
+  entryId: id.optional(),
+  repsMax: number.int().min(1).max(100).nullable().optional().default(null),
+  rpe,
+  restSeconds: number
+    .int()
+    .min(10)
+    .max(600)
+    .nullable()
+    .optional()
+    .default(null),
+  perSide: z.boolean().optional().default(false),
+  note: z.string().max(140).nullable().optional().default(null),
+  groupId: id.nullable().optional().default(null),
+};
+const uniqueEntries = (entries) =>
+  new Set(entries.map(entryKey)).size === entries.length;
+const legacyDraftNumber = z
+  .string()
+  .max(350)
+  .refine((value) => value.trim() !== "" && Number.isFinite(Number(value)))
+  .transform((value) => String(Number(value)));
 const setSchema = z
   .object({
+    legacyDraft: z
+      .object({
+        weight: legacyDraftNumber.optional(),
+        reps: legacyDraftNumber.optional(),
+      })
+      .nullable()
+      .optional()
+      .default(null),
     weight: editableNumber,
-    reps: editableNumber,
+    reps: z.union([number.int().min(1).max(100), z.literal("")]),
+    rpe,
     done: z.boolean(),
     durationSeconds: z
       .union([number.min(0).max(86400), z.literal("")])
@@ -51,7 +94,12 @@ const sessionSchema = z.object({
   exercises: z
     .array(
       z
-        .object({ exerciseId, sets: z.array(setSchema).min(1).max(100) })
+        .object({
+          exerciseId,
+          ...programmingFields,
+          targetReps: number.int().min(1).max(100).optional(),
+          sets: z.array(setSchema).min(1).max(100),
+        })
         .superRefine((entry, context) => {
           const exercise = exerciseById.get(entry.exerciseId);
           entry.sets.forEach((set, index) => {
@@ -66,7 +114,7 @@ const sessionSchema = z.object({
     )
     .min(1)
     .max(100)
-    .refine(unique("exerciseId"), "Duplicate exercise"),
+    .refine(validGroups, "Supersets need two or more consecutive exercises."),
 });
 const routineSchema = z.object({
   id,
@@ -80,6 +128,7 @@ const routineSchema = z.object({
       z
         .object({
           exerciseId,
+          ...programmingFields,
           sets: number.int().min(1).max(12),
           reps: number.int().min(1).max(100),
           weight: number.min(0).max(1000),
@@ -87,16 +136,20 @@ const routineSchema = z.object({
           distanceMeters: number.positive().max(1000000).optional(),
         })
         .refine(
+          (item) => item.repsMax === null || item.repsMax >= item.reps,
+          "Maximum reps must be at least minimum reps.",
+        )
+        .refine(
           (item) => validMeasurement(exerciseById.get(item.exerciseId), item),
           "Routine targets require valid exercise measurements.",
         ),
     )
     .min(1)
     .max(100)
-    .refine(unique("exerciseId"), "Duplicate exercise"),
+    .refine(validGroups, "Supersets need two or more consecutive exercises."),
 });
 export const dataSchema = z.object({
-  version: z.literal(1),
+  version: z.union([z.literal(1), z.literal(2)]),
   revision: number.int().nonnegative().default(0),
   routines: z
     .array(routineSchema)
@@ -122,6 +175,8 @@ export const dataSchema = z.object({
   profile: z.object({
     name: z.string().trim().min(1).max(50),
     goal: number.int().min(1).max(7),
+    restSeconds: number.int().min(10).max(600).default(90),
+    muted: z.boolean().default(false),
   }),
   schedule: z
     .array(number.int().min(0).max(6))
@@ -149,9 +204,78 @@ function assertBounded(value) {
       throw new Error(`A workspace can hold at most ${MAX_TOTAL_SETS} sets.`);
   }
 }
-export function validateData(value) {
+function prepareLegacyDrafts(value) {
+  if (value?.version !== 1) return value;
+  const session = (owner) => {
+    if (!owner || !Array.isArray(owner.exercises)) return owner;
+    return {
+      ...owner,
+      exercises: owner.exercises.map((entry) => {
+        if (!entry || !Array.isArray(entry.sets)) return entry;
+        return {
+          ...entry,
+          sets: entry.sets.map((set) => {
+            if (!set || set.done !== false) return set;
+            const next = { ...set };
+            for (const key of ["weight", "reps"]) {
+              const number = set[key];
+              if (typeof number !== "number" || !Number.isFinite(number))
+                continue;
+              const valid =
+                key === "weight"
+                  ? number >= 0 && number <= 1000
+                  : Number.isInteger(number) && number >= 1 && number <= 100;
+              if (!valid) {
+                next[key] = "";
+                next.legacyDraft = {
+                  ...next.legacyDraft,
+                  [key]: String(number),
+                };
+              }
+            }
+            return next;
+          }),
+        };
+      }),
+    };
+  };
+  return {
+    ...value,
+    active: session(value.active),
+    history: Array.isArray(value.history)
+      ? value.history.map(session)
+      : value.history,
+  };
+}
+function assertKnownKeys(input, parsed) {
+  if (
+    !input ||
+    typeof input !== "object" ||
+    !parsed ||
+    typeof parsed !== "object"
+  )
+    return;
+  for (const key of Object.keys(input)) {
+    if (!Object.hasOwn(parsed, key))
+      throw new Error("Unknown workspace field.");
+    assertKnownKeys(input[key], parsed[key]);
+  }
+}
+export function validateData(value, { strict = false } = {}) {
   assertBounded(value);
-  const data = dataSchema.parse(value);
+  const parsed = dataSchema.parse(prepareLegacyDrafts(value));
+  if (strict) assertKnownKeys(value, parsed);
+  for (const owner of [
+    ...parsed.routines,
+    ...parsed.history,
+    parsed.active,
+  ].filter(Boolean))
+    if (!uniqueEntries(owner.exercises)) throw new Error("Duplicate exercise");
+  const data = migrateProgramming(parsed);
+  for (const owner of [...data.routines, ...data.history, data.active].filter(
+    Boolean,
+  ))
+    if (!uniqueEntries(owner.exercises)) throw new Error("Duplicate exercise");
   if (
     data.active &&
     data.history.some((session) => session.id === data.active.id)

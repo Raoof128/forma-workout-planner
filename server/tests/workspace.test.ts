@@ -50,6 +50,12 @@ before(async () => {
   );
   await pool.query(migration);
   await pool.query(
+    await readFile(
+      join(testDir, "..", "migrations", "0004-routine-programming.sql"),
+      "utf8",
+    ),
+  );
+  await pool.query(
     `INSERT INTO "user" (id, name, email) VALUES
       ($1, 'Member A', $2), ($3, 'Member B', $4)`,
     [userA, `${userA}@example.test`, userB, `${userB}@example.test`],

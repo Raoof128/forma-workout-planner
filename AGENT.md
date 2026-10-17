@@ -326,3 +326,29 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   secret rotated with no MFA rows remaining. Staging and unrelated services
   unchanged. Public health/registration and private workspace denial passed;
   no new canary account was created. Backups retain the 34-day lifecycle.
+
+### Raouf: 2026-10-17 — Routine programming v2
+
+- **Scope:** all requested routine programming features in one PR, including
+  supersets, duplication, drag handles and accessible arrow reordering.
+- **Summary:** schema v2 adds rep ranges, target/actual RPE, exercise rest,
+  per-side targets and plain-text cues. Timestamp timers support automatic rest,
+  skip, pause/resume, ±15 seconds, vibration and mute-aware sound. Picker and
+  saved metadata agree; 24 equipment corrections and incline press/fly aliases
+  preserve separate prescription/history rows and original measurement units.
+- **Files:** `src/storage.js`, `src/routineProgramming.js`, routine/workout/history
+  and preferences components, catalog metadata/audit, shared API validation,
+  `ops/Dockerfile`, tests and data/API/migration documentation. Privacy Policy
+  1.3 discloses the optional programming and exertion fields.
+- **Migration:** `server/migrations/0004-routine-programming.sql`; back up and
+  pause old API writers, then run `npm run server:migrate` with migration-role
+  `DATABASE_URL` and deploy the matching API before the v2 frontend. Browser
+  `forma-v1` data and v1 imports migrate idempotently; invalid old unfinished
+  numeric drafts retain their original values for correction and export.
+- **Verification:** 88 unit, 49 API, 21 Worker, 14 operations, 348 development,
+  55 account and 45 production browser cases pass; lint, formatting, types, docs,
+  server/frontend builds, equipment audit and strict 1,411-exercise artwork
+  coverage pass. Browser results include exact replays after a test-server exit
+  and an isolated 4.4-second performance check with its 10-second limit unchanged.
+- **Follow-ups:** coordinated deployment, backup and any privacy notice required
+  before rollout. No requested feature is deferred; no deployment or merge here.

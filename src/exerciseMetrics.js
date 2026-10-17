@@ -1,3 +1,4 @@
+import { defaultPerSide } from "./routineProgramming.js";
 const field = (key, label, max, min = 0, step = "any") => ({
   key,
   label,
@@ -24,6 +25,7 @@ export function metricFields(exercise) {
 export function defaultPrescription(exercise) {
   const fields = metricFields(exercise);
   return {
+    perSide: defaultPerSide(exercise),
     sets: exercise?.metric === "duration_distance" ? 1 : 3,
     reps: exercise?.metric && exercise.metric !== "load_reps" ? 1 : 10,
     weight: exercise?.weight ?? 0,

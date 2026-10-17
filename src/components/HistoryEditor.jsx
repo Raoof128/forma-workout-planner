@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button, Modal } from "./UI";
-import { exercises, sessionSets } from "../data";
+import { exerciseById, sessionSets } from "../data";
+import { entryKey } from "../routineProgramming.js";
 import { metricFields } from "../exerciseMetrics.js";
 export default function HistoryEditor({ session, onSave, onClose }) {
   const [draft, setDraft] = useState(() => structuredClone(session));
@@ -91,19 +92,18 @@ export default function HistoryEditor({ session, onSave, onClose }) {
             />
           </label>
           {draft.exercises.map((entry, ei) => {
-            const exercise = exercises.find(
-              (item) => item.id === entry.exerciseId,
-            );
+            const exercise = exerciseById.get(entry.exerciseId);
             if (!session.exercises[ei].sets.some((set) => set.done))
               return null;
             return (
-              <section className="history-edit-exercise" key={entry.exerciseId}>
+              <section className="history-edit-exercise" key={entryKey(entry)}>
                 <h3>{exercise.name}</h3>
                 <div className="set-row set-labels">
                   <span>SET</span>
                   {metricFields(exercise).map((field) => (
                     <span key={field.key}>{field.label}</span>
                   ))}
+                  <span>RPE</span>
                   <span>KEEP</span>
                 </div>
                 {entry.sets.map(
@@ -120,6 +120,7 @@ export default function HistoryEditor({ session, onSave, onClose }) {
                             max={field.max}
                             step={field.step}
                             required={set.done}
+                            placeholder={set.legacyDraft?.[field.key]}
                             value={set[field.key] ?? ""}
                             onChange={(event) =>
                               update(
@@ -133,6 +134,24 @@ export default function HistoryEditor({ session, onSave, onClose }) {
                             }
                           />
                         ))}
+                        <input
+                          aria-label={`Correct ${exercise.name} set ${si + 1} rpe`}
+                          type="number"
+                          min="1"
+                          max="10"
+                          step="0.5"
+                          value={set.rpe ?? ""}
+                          onChange={(event) =>
+                            update(
+                              ei,
+                              si,
+                              "rpe",
+                              event.target.value === ""
+                                ? null
+                                : Number(event.target.value),
+                            )
+                          }
+                        />
                         <input
                           aria-label={`Keep ${exercise.name} set ${si + 1}`}
                           type="checkbox"

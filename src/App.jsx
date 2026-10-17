@@ -125,11 +125,19 @@ function AccountWorkspace() {
       routineId: routine.id,
       startedAt: Date.now(),
       notes: "",
-      restSeconds: 90,
+      restSeconds: data.profile.restSeconds ?? 90,
       restEnd: null,
       restPaused: null,
       exercises: routine.exercises.map((item) => ({
         exerciseId: item.exerciseId,
+        ...(item.entryId ? { entryId: item.entryId } : {}),
+        targetReps: item.reps,
+        repsMax: item.repsMax,
+        rpe: item.rpe,
+        restSeconds: item.restSeconds,
+        perSide: item.perSide,
+        note: item.note,
+        groupId: item.groupId,
         sets: Array.from({ length: item.sets }, () => ({
           weight: item.weight,
           reps: item.reps,
@@ -180,6 +188,24 @@ function AccountWorkspace() {
       return;
     }
     void begin(routine);
+  }
+  async function duplicateRoutine(routine) {
+    const copy = {
+      ...structuredClone(routine),
+      id: createId(),
+      name: `${routine.name.slice(0, 55)} copy`,
+    };
+    const result = await change((current) => {
+      const latest = current.routines.find((item) => item.id === routine.id);
+      if (!equal(latest, routine))
+        throw new Error("This routine changed. Reopen it before duplicating.");
+      return { ...current, routines: [...current.routines, copy] };
+    }, "Routine duplicated.");
+    if (result)
+      setModal({
+        type: "detail",
+        routine: result.data.routines.find((item) => item.id === copy.id),
+      });
   }
   async function saveRoutine(routine) {
     const original = modal?.routine;
@@ -420,6 +446,7 @@ function AccountWorkspace() {
               {visiblePage === "routines" && (
                 <Routines
                   routines={data.routines}
+                  onDuplicate={duplicateRoutine}
                   onOpen={(routine) => setModal({ type: "detail", routine })}
                   onCreate={() => setModal({ type: "editor" })}
                   onUseTemplate={async (template) => {
@@ -434,7 +461,13 @@ function AccountWorkspace() {
                       }),
                       "Workout template added to your routines.",
                     );
-                    if (result) setModal({ type: "detail", routine: copy });
+                    if (result)
+                      setModal({
+                        type: "detail",
+                        routine: result.data.routines.find(
+                          (item) => item.id === copy.id,
+                        ),
+                      });
                   }}
                 />
               )}
@@ -444,6 +477,7 @@ function AccountWorkspace() {
                   <Workout
                     key={data.active.id}
                     session={data.active}
+                    muted={data.profile.muted}
                     onUpdate={updateSession}
                     onFinish={finish}
                     onCancel={() =>
@@ -532,6 +566,7 @@ function AccountWorkspace() {
       {modal?.type === "detail" && (
         <RoutineDetail
           routine={modal.routine}
+          defaultRest={data.profile.restSeconds}
           onClose={() => setModal(null)}
           onStart={start}
           onEdit={(routine) => setModal({ type: "editor", routine })}
@@ -541,6 +576,7 @@ function AccountWorkspace() {
       {modal?.type === "editor" && (
         <RoutineEditor
           routine={modal.routine}
+          defaultRest={data.profile.restSeconds}
           onClose={() => setModal(null)}
           onSave={saveRoutine}
         />

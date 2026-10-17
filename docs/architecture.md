@@ -2,7 +2,7 @@
 
 [Back to README](../README.md)
 
-FORMA has two workspace modes. Guest mode stores a validated version 1
+FORMA has two workspace modes. Guest mode stores a validated version 2
 workspace in the browser. Account mode authenticates with Better Auth and uses
 PostgreSQL as the authoritative store. The account implementation is designed
 for Cloudflare Workers static assets and same-origin API routing to a private
@@ -47,7 +47,7 @@ owner.
 
 ## Member workspace writes
 
-The workspace preserves FORMA's version 1 JSON shape while PostgreSQL owns the
+The workspace preserves FORMA's version 2 JSON shape while PostgreSQL owns the
 member key, integer revision, and monotonic `updatedAt`. The client sends
 `expectedRevision` and an operation ID. The API locks the member's row,
 validates the full payload, and either commits the next revision or returns a

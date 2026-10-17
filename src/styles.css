@@ -1224,7 +1224,7 @@ input[type="checkbox"] {
 }
 .prescription {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 66px 66px 80px;
+  grid-template-columns: minmax(115px, 1fr) 48px 68px 65px 48px 60px 28px;
   align-items: center;
   gap: 10px;
   padding: 12px 0;
@@ -1262,6 +1262,99 @@ input[type="checkbox"] {
 }
 .reorder-actions .icon-button {
   background: #f4f6ef;
+}
+.routine-card-wrap {
+  position: relative;
+  min-width: 0;
+}
+.routine-card-wrap > .routine-card {
+  width: 100%;
+  height: 100%;
+}
+.routine-card-menu {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+}
+.routine-card-menu summary,
+.prescription-options summary {
+  cursor: pointer;
+  list-style: none;
+  border-radius: 8px;
+  text-align: center;
+  padding: 6px;
+  font-size: 20px;
+  background: var(--paper, #fff);
+}
+.routine-card-menu .button {
+  position: absolute;
+  top: 38px;
+  right: 0;
+  white-space: nowrap;
+}
+.prescription-options {
+  position: relative;
+}
+.prescription-options[open] {
+  grid-column: 1 / -1;
+}
+.prescription-options[open] summary {
+  width: 32px;
+  margin-left: auto;
+}
+.prescription-options > div {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  padding: 16px;
+  box-shadow: 0 8px 30px #0002;
+}
+.prescription-options .field {
+  margin-bottom: 14px;
+}
+.prescription-options input:not([type="checkbox"]) {
+  text-align: left;
+  padding: 8px;
+}
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  margin: 12px 0;
+}
+.checkbox-field input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--ink);
+}
+.program-note {
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+.program-target {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 4px;
+}
+.superset-label {
+  color: var(--muted);
+  font-size: 13px;
+}
+.timer-adjustments {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.timer-adjustments .button {
+  flex: 1;
 }
 .prescription small {
   font-size: 11px;
@@ -1592,7 +1685,9 @@ input[type="checkbox"] {
 }
 .set-row {
   display: grid;
-  grid-template-columns: 36px minmax(0, 1fr) minmax(0, 1fr) 48px;
+  grid-template-columns:
+    36px minmax(0, 1fr) minmax(0, 1fr) minmax(45px, 0.7fr)
+    48px;
   align-items: center;
   gap: 14px;
   padding: 8px;
@@ -2526,7 +2621,9 @@ input[type="checkbox"] {
     font-size: 11px;
   }
   .set-row {
-    grid-template-columns: 24px minmax(0, 1fr) minmax(0, 1fr) 44px;
+    grid-template-columns:
+      24px minmax(0, 1fr) minmax(0, 1fr) minmax(40px, 0.7fr)
+      44px;
     padding: 8px 0;
     gap: 8px;
   }
@@ -2942,4 +3039,36 @@ input[type="checkbox"] {
 .sidebar .legal-links {
   flex-direction: row;
   align-items: center;
+}
+
+/* Programming fields retain labelled inputs on narrow screens. */
+@media (max-width: 700px) {
+  .prescription:not(.labels) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .prescription-name {
+    grid-column: 1 / -1;
+  }
+  .prescription-options > div {
+    right: auto;
+    left: 0;
+  }
+  .prescription-options {
+    grid-column: 1 / -1;
+  }
+  .prescription-field > span {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .prescription.labels {
+    display: none;
+  }
+  .set-row {
+    grid-template-columns:
+      26px minmax(0, 1fr) minmax(0, 1fr) minmax(40px, 0.7fr)
+      34px;
+    gap: 6px;
+  }
 }

@@ -54,6 +54,7 @@ before(async () => {
     "0001-auth.sql",
     "0002-workspace.sql",
     "0003-security-throttle.sql",
+    "0004-routine-programming.sql",
   ]) {
     const sql = await readFile(join(testDir, "..", "migrations", name), "utf8");
     await pool.query(sql);

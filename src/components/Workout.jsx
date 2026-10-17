@@ -1,4 +1,4 @@
-import { useEffect, useState, useEffectEvent } from "react";
+import { useEffect, useState, useEffectEvent, useRef } from "react";
 import {
   Check,
   Plus,
@@ -17,14 +17,44 @@ import ExerciseGuide from "./ExerciseGuide";
 import SavedField from "./SavedField";
 import { exerciseById, formatTime, sessionSets, sessionVolume } from "../data";
 import { metricFields, validMeasurement } from "../exerciseMetrics.js";
+import {
+  entryKey,
+  repsText,
+  groupLabels,
+  shouldRest,
+  restRemaining,
+  adjustRest,
+  toggleRest,
+} from "../routineProgramming.js";
 export default function Workout({
   session,
+  muted = false,
   onUpdate,
   onFinish,
   onCancel,
   onBack,
   notify,
 }) {
+  const announcedEnd = useRef(null);
+  const invalidDrafts = useRef(new Set());
+  const audio = useRef(null);
+  function prepareCue() {
+    if (muted) return;
+    const Audio = window.AudioContext || window.webkitAudioContext;
+    if (!Audio) return;
+    try {
+      audio.current ??= new Audio();
+      void audio.current.resume().catch(() => {});
+    } catch {
+      /* Sound is optional on unsupported devices. */
+    }
+  }
+  useEffect(
+    () => () => {
+      void audio.current?.close().catch(() => {});
+    },
+    [],
+  );
   const [now, setNow] = useState(() => Date.now());
   const [confirm, setConfirm] = useState(false);
   const [guide, setGuide] = useState(null);
@@ -32,13 +62,39 @@ export default function Workout({
   const [restOpen, setRestOpen] = useState(false);
   useEffect(() => {
     const timer = setInterval(() => setNow(Date.now()), 250);
-    return () => clearInterval(timer);
+    const refresh = () => setNow(Date.now());
+    window.addEventListener("focus", refresh);
+    document.addEventListener("visibilitychange", refresh);
+    return () => {
+      clearInterval(timer);
+      window.removeEventListener("focus", refresh);
+      document.removeEventListener("visibilitychange", refresh);
+    };
   }, []);
-  const remaining = session.restEnd
-    ? Math.max(0, Math.ceil((session.restEnd - now) / 1000))
-    : session.restPaused || 0;
+  const remaining = restRemaining(session, now);
   const endRest = useEffectEvent(() => {
     const expected = session.restEnd;
+    if (announcedEnd.current === expected) return;
+    announcedEnd.current = expected;
+    try {
+      navigator.vibrate?.([150, 80, 150]);
+    } catch {
+      /* Optional device capability. */
+    }
+    if (!muted && audio.current?.state === "running") {
+      const oscillator = audio.current.createOscillator();
+      const gain = audio.current.createGain();
+      oscillator.frequency.value = 880;
+      gain.gain.setValueAtTime(0.15, audio.current.currentTime);
+      gain.gain.exponentialRampToValueAtTime(
+        0.001,
+        audio.current.currentTime + 0.3,
+      );
+      oscillator.connect(gain);
+      gain.connect(audio.current.destination);
+      oscillator.start();
+      oscillator.stop(audio.current.currentTime + 0.3);
+    }
     void onUpdate((current) =>
       current.restEnd === expected
         ? { ...current, restEnd: null, restPaused: null }
@@ -55,11 +111,32 @@ export default function Workout({
     (sum, item) => sum + item.sets.length,
     0,
   );
-  function updateSet(exerciseId, index, key, value) {
+  function updateSet(rowKey, index, key, value) {
+    const entry = session.exercises.find((item) => entryKey(item) === rowKey);
+    const field =
+      key === "rpe"
+        ? { min: 1, max: 10, step: 0.5 }
+        : metricFields(exerciseById.get(entry.exerciseId)).find(
+            (field) => field.key === key,
+          );
+    const draftKey = JSON.stringify([rowKey, index, key]);
+    const valid =
+      value === "" ||
+      value === null ||
+      (typeof value === "number" &&
+        Number.isFinite(value) &&
+        value >= field.min &&
+        value <= field.max &&
+        (field.step === "any" || Number.isInteger(value / Number(field.step))));
+    if (!valid) {
+      invalidDrafts.current.add(draftKey);
+      return;
+    }
+    invalidDrafts.current.delete(draftKey);
     void onUpdate((current) => ({
       ...current,
       exercises: current.exercises.map((item) =>
-        item.exerciseId !== exerciseId
+        entryKey(item) !== rowKey
           ? item
           : {
               ...item,
@@ -70,10 +147,27 @@ export default function Workout({
       ),
     }));
   }
-  function check(exerciseId, index) {
-    const set = session.exercises.find((item) => item.exerciseId === exerciseId)
-      .sets[index];
-    if (!set.done && !validMeasurement(exerciseById.get(exerciseId), set)) {
+  function check(rowKey, index) {
+    const entry = session.exercises.find((item) => entryKey(item) === rowKey);
+    const exerciseId = entry.exerciseId;
+    const set = entry.sets[index];
+    prepareCue();
+    const clickedAt = Date.now();
+    if (
+      !set.done &&
+      invalidDrafts.current.has(JSON.stringify([rowKey, index, "rpe"]))
+    ) {
+      notify("Enter RPE from 1–10 in half steps, or clear it.");
+      return;
+    }
+    const invalid = [...invalidDrafts.current].some((key) => {
+      const [row, si] = JSON.parse(key);
+      return row === rowKey && si === index;
+    });
+    if (
+      !set.done &&
+      (invalid || !validMeasurement(exerciseById.get(exerciseId), set))
+    ) {
       const exercise = exerciseById.get(exerciseId);
       notify(
         !exercise?.metric || exercise.metric === "load_reps"
@@ -84,23 +178,32 @@ export default function Workout({
     }
     const expected = set.done;
     void onUpdate((current) => {
-      const latest = current.exercises.find(
-        (item) => item.exerciseId === exerciseId,
-      ).sets[index];
+      const latest = current.exercises.find((item) => entryKey(item) === rowKey)
+        .sets[index];
       if (latest.done !== expected)
         throw new Error(
           "This set changed in another tab. Check its latest state before changing it.",
         );
       return {
         ...current,
-        ...(!expected
+        ...(!expected &&
+        shouldRest(
+          current.exercises,
+          current.exercises.findIndex((item) => entryKey(item) === rowKey),
+        )
           ? {
-              restEnd: Date.now() + (current.restSeconds || 90) * 1000,
+              restEnd:
+                clickedAt +
+                (current.exercises.find((item) => entryKey(item) === rowKey)
+                  .restSeconds ??
+                  current.restSeconds ??
+                  90) *
+                  1000,
               restPaused: null,
             }
           : {}),
         exercises: current.exercises.map((item) =>
-          item.exerciseId !== exerciseId
+          entryKey(item) !== rowKey
             ? item
             : {
                 ...item,
@@ -178,16 +281,38 @@ export default function Workout({
       </div>
       <div className="workout-layout">
         <div className="workout-exercises">
-          {session.exercises.map((entry) => {
+          {session.exercises.map((entry, entryIndex) => {
             const exercise = exerciseById.get(entry.exerciseId);
             return (
-              <section className="panel log-exercise" key={entry.exerciseId}>
+              <section className="panel log-exercise" key={entryKey(entry)}>
                 <header>
                   <div className="exercise-icon">
                     <Dumbbell size={21} />
                   </div>
                   <div>
-                    <h3>{exercise.name}</h3>
+                    <h3>
+                      {entry.groupId && (
+                        <span className="superset-label">
+                          {groupLabels(session.exercises)[entryIndex]}{" "}
+                        </span>
+                      )}
+                      {exercise.name}
+                    </h3>
+                    {entry.note && <p className="program-note">{entry.note}</p>}
+                    <p className="program-target">
+                      {entry.targetReps && (
+                        <>
+                          Target:{" "}
+                          {repsText(
+                            { ...entry, reps: entry.targetReps },
+                            exercise,
+                          )}{" "}
+                          ·{" "}
+                        </>
+                      )}
+                      {entry.rpe != null && <>RPE {entry.rpe} · </>}
+                      {entry.restSeconds ?? session.restSeconds} s rest
+                    </p>
                     <p>
                       {exercise.muscle} · {exercise.equipment}
                     </p>
@@ -215,6 +340,7 @@ export default function Workout({
                   {metricFields(exercise).map((field) => (
                     <span key={field.key}>{field.label}</span>
                   ))}
+                  <span>RPE</span>
                   <span>DONE</span>
                 </div>
                 {entry.sets.map((set, index) => (
@@ -232,10 +358,11 @@ export default function Workout({
                         min={field.min}
                         max={field.max}
                         step={field.step}
+                        placeholder={set.legacyDraft?.[field.key]}
                         value={set[field.key] ?? ""}
                         onChange={(event) =>
                           updateSet(
-                            exercise.id,
+                            entryKey(entry),
                             index,
                             field.key,
                             event.target.value === ""
@@ -245,11 +372,31 @@ export default function Workout({
                         }
                       />
                     ))}
+                    <SavedField
+                      type="number"
+                      disabled={set.done}
+                      aria-label={`${exercise.name} set ${index + 1} rpe`}
+                      min="1"
+                      max="10"
+                      step="0.5"
+                      placeholder="—"
+                      value={set.rpe ?? ""}
+                      onChange={(event) =>
+                        updateSet(
+                          entryKey(entry),
+                          index,
+                          "rpe",
+                          event.target.value === ""
+                            ? null
+                            : Number(event.target.value),
+                        )
+                      }
+                    />
                     <button
                       aria-label={`${set.done ? "Uncomplete" : "Complete"} ${exercise.name} set ${index + 1}`}
                       aria-pressed={set.done}
                       className="check-set"
-                      onClick={() => check(exercise.id, index)}
+                      onClick={() => check(entryKey(entry), index)}
                     >
                       {set.done ? (
                         <Check size={18} />
@@ -266,13 +413,13 @@ export default function Workout({
                     void onUpdate((current) => ({
                       ...current,
                       exercises: current.exercises.map((item) =>
-                        item.exerciseId !== exercise.id
+                        entryKey(item) !== entryKey(entry)
                           ? item
                           : {
                               ...item,
                               sets: [
                                 ...item.sets,
-                                { ...item.sets.at(-1), done: false },
+                                { ...item.sets.at(-1), rpe: null, done: false },
                               ],
                             },
                       ),
@@ -420,35 +567,40 @@ function RestControls({ session, remaining, onUpdate }) {
         ))}
       </div>
       <p className="rest-preference">
-        {session.restSeconds || 90} seconds after each completed set
+        Default rest: {session.restSeconds || 90} seconds
       </p>
+      <div className="timer-adjustments">
+        <Button
+          variant="secondary"
+          aria-label="Subtract 15 seconds"
+          disabled={!remaining}
+          onClick={() => {
+            const clickedAt = Date.now();
+            void onUpdate((current) => adjustRest(current, -15, clickedAt));
+          }}
+        >
+          −15 s
+        </Button>
+        <Button
+          variant="secondary"
+          aria-label="Add 15 seconds"
+          disabled={!remaining}
+          onClick={() => {
+            const clickedAt = Date.now();
+            void onUpdate((current) => adjustRest(current, 15, clickedAt));
+          }}
+        >
+          +15 s
+        </Button>
+      </div>
       <div className="timer-actions">
         <Button
           aria-label={session.restEnd ? "Pause rest timer" : "Start rest timer"}
           variant="secondary"
-          onClick={() =>
-            void onUpdate((current) =>
-              current.restEnd
-                ? {
-                    ...current,
-                    restPaused: Math.min(
-                      600,
-                      Math.max(
-                        0,
-                        Math.ceil((current.restEnd - Date.now()) / 1000),
-                      ),
-                    ),
-                    restEnd: null,
-                  }
-                : {
-                    ...current,
-                    restEnd:
-                      Date.now() +
-                      (current.restPaused || current.restSeconds || 90) * 1000,
-                    restPaused: null,
-                  },
-            )
-          }
+          onClick={() => {
+            const clickedAt = Date.now();
+            void onUpdate((current) => toggleRest(current, clickedAt));
+          }}
         >
           {session.restEnd ? <Pause size={16} /> : <Play size={16} />}
         </Button>
