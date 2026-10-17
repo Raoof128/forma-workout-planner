@@ -5,10 +5,11 @@ default branch. The Node 26 Docker base and action releases are pinned. ESLint
 stays at 9.39.5 until the React/accessibility plugins declare ESLint 10 support;
 the attempted upgrade fails normal `npm ci`. Preserve peer checks.
 
-`.gitleaksignore` contains one exact historical fingerprint for the public
-Cloudflare Access audience in dashboard configuration. It grants no access;
-signature, issuer and owner validation are still mandatory. Do not replace this
-with a general path/rule allowlist or add exceptions for credential material.
+`.gitleaksignore` contains exact historical fingerprints for the public
+Cloudflare Access audience and two public container-label receipt findings.
+These grant no access; signature, issuer and owner validation remain mandatory.
+Do not replace these with a general path/rule allowlist or add exceptions for
+credential material.
 
 Catalog import measurement classification lives in
 `scripts/exercise-measurement.mjs`; use ordered string matching and retain
@@ -442,3 +443,16 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   on the host before future schema migrations; keep nullable account-loading
   routes covered. Full CI reruns on pushed commits; no requested feature remains
   deferred, and the PR is not merged by this deployment.
+
+### Raouf: 2026-10-17 — Review deployment-label scan findings
+
+- **Scope:** complete the final-head security checks for PR #9.
+- **Finding:** the pinned history scanner classified the public deployment image
+  label as a generic key in two release receipts. Neither value authenticates
+  a request or grants access. The findings were reproduced locally.
+- **Files:** `.gitleaksignore` records only the two exact commit/path/rule/line
+  fingerprints; this log and `CHANGELOG.md` document the review. No general rule
+  or path exception was added, and no credential material was exempted.
+- **Verification:** rerun the unchanged pinned full-history scan, docs and patch
+  checks before push; final GitHub security/application matrices remain required.
+  Deployed frontend/API bundles and saved member data are unchanged.

@@ -377,3 +377,16 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   on the host before future schema migrations; keep nullable account-loading
   routes covered. Full CI reruns on pushed commits; no requested feature remains
   deferred, and the PR is not merged by this deployment.
+
+### Raouf: 2026-10-17 — Review deployment-label scan findings
+
+- **Scope:** complete the final-head security checks for PR #9.
+- **Finding:** the pinned history scanner classified the public deployment image
+  label as a generic key in two release receipts. Neither value authenticates
+  a request or grants access. The findings were reproduced locally.
+- **Files:** `.gitleaksignore` records only the two exact commit/path/rule/line
+  fingerprints; this log and `CHANGELOG.md` document the review. No general rule
+  or path exception was added, and no credential material was exempted.
+- **Verification:** rerun the unchanged pinned full-history scan, docs and patch
+  checks before push; final GitHub security/application matrices remain required.
+  Deployed frontend/API bundles and saved member data are unchanged.

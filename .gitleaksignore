@@ -1,3 +1,7 @@
 # Public Cloudflare Access application audience (JWT aud), not a credential.
 # Exact historical finding only: signature, issuer and owner checks remain required.
 95d6f91f3599d3be6fdbebedf6316e902c308fb4:ops/wrangler.dashboard.jsonc:generic-api-key:28
+# Public container image tag in deployment receipts, not a credential.
+# Exact historical findings only; do not allowlist the rule or documentation path.
+d6ffba239f13b16ab5de6b3db06ca642ce01c461:docs/qa/routine-programming-v2/README.md:generic-api-key:15
+d6ffba239f13b16ab5de6b3db06ca642ce01c461:docs/qa/routine-programming-v2/deployment.json:generic-api-key:15
