@@ -79,7 +79,7 @@ emulation, not a claim of testing on a physical iPhone.
 | Animation | [Recording](desktop-drag.webm) | [Touch recording](phone-drag.webm) |
 
 [Machine-readable visual checks](visual-checks.json) contain synthetic fixture
-results only. Eleven drag/editor scenarios run in all three development engines and all
+results only. Twelve drag/editor scenarios run in all three development engines and all
 five production profiles. Three additional trusted-touch scenarios run only in
 Chromium mobile: drag/save, touch cancellation and native scrolling outside the
 handle. A real-account journey verifies exact server-saved order and values
@@ -162,9 +162,32 @@ remain exact. The final rapid-release and original duplication cases passed
 three repeats in all three development engines (18 checks); follow-up review
 found no remaining actionable issue.
 
+A later full run passed 389/390 cases and exposed a WebKit catch-up gap: a
+170px move over about 45ms reached its physical destination, but order advanced
+only one neighbor and stayed there while held. Motion checks one neighbor per
+rendered order update and stops when pointer velocity reaches zero. The existing
+RAF collision check now continues in the last pointer direction even without
+scrolling; actual scroll direction takes precedence, and pointer reversal
+updates the stored direction. DOM identity guards still permit one rendered
+neighbor at a time. The original failing Escape scenario is unchanged, and a
+new fast two-slot save case checks exact order and superset normalization.
+Log review of 36 repeated scenarios also exposed a missing-neighbor exception
+at the list boundary, despite their data assertions passing. An explicit neighbor
+existence guard fixes it; a page-error check now applies to every drag scenario
+and reproduced that exception before the guard.
+
+The subsequent production matrix passed 141/143 cases. Both failures were the
+new multi-slot save scenario releasing below the normal 664px phone viewport;
+the app correctly cancelled those drops. That specific scenario now retains the
+phone width with a 1100px viewport so the complete fast jump fits, and asserts
+its release point is inside the viewport/dialog. Normal-height edge scrolling
+and trusted-touch coverage remain in their original profiles. The corrected
+multi-slot case passed three repeats in all five profiles (15 checks), completing
+coverage of the 143 unique production cases. Final CI runs the complete matrix.
+
 ## Final verification
 
-The final CI matrix contains 390 development, 138 production-bundle, 65 account
-and 65 production-account browser cases (658 total), with zero configured
+The final CI matrix contains 393 development, 143 production-bundle, 65 account
+and 65 production-account browser cases (666 total), with zero configured
 retries. Final-head CI links, production/staging Worker versions and live asset
 and boundary receipts are recorded in [PR #9](https://github.com/Raoof128/forma-workout-planner/pull/9).

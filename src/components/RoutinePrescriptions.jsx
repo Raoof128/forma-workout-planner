@@ -81,16 +81,18 @@ export default function RoutinePrescriptions({
           0,
           Math.min(scrollLimit, scroller.scrollTop + amount),
         );
-        const direction = Math.sign(scroller.scrollTop - before);
+        const direction =
+          Math.sign(scroller.scrollTop - before) || gesture.direction;
         const neighbor = group.current.children[index + direction];
-        // Motion checks collisions on pointer movement. Continue checking the
-        // next layout position when a stationary pointer scrolls the dialog.
+        // Motion can advance only one neighbor per rendered order update.
+        // Continue catching up after a fast move or stationary edge scrolling.
         // offsetTop excludes the neighbor's temporary layout animation.
         if (
           direction &&
           rowBounds &&
+          neighbor &&
           row.dataset.entryKey === gesture.key &&
-          neighbor?.dataset.entryKey === gesture.order[index + direction]
+          neighbor.dataset.entryKey === gesture.order[index + direction]
         ) {
           const center =
             group.current.getBoundingClientRect().top +
@@ -123,12 +125,13 @@ export default function RoutinePrescriptions({
     };
   }, [active, onOrderingChange]);
 
-  function begin(key, controls, event) {
+  function begin(key, controls, event, info) {
     if (drag.current && event.timeStamp < drag.current.startedAt) return;
     const scroller = group.current.closest("dialog");
     drag.current = {
       key,
       startedAt: event.timeStamp,
+      direction: Math.sign(info.offset.y),
       controls,
       order: items.map(entryKey),
       cancelled: false,
@@ -224,12 +227,17 @@ export default function RoutinePrescriptions({
             defaultRest={defaultRest}
             dragging={active?.key === entryKey(item)}
             ordering={!!active}
-            onDragStart={(controls, event) =>
-              begin(entryKey(item), controls, event)
+            onDragStart={(controls, event, info) =>
+              begin(entryKey(item), controls, event, info)
             }
             onDrag={(event) => {
-              if (drag.current && event.timeStamp >= drag.current.startedAt)
-                drag.current.pointer = { x: event.clientX, y: event.clientY };
+              const gesture = drag.current;
+              if (gesture && event.timeStamp >= gesture.startedAt) {
+                gesture.direction =
+                  Math.sign(event.clientY - gesture.pointer.y) ||
+                  gesture.direction;
+                gesture.pointer = { x: event.clientX, y: event.clientY };
+              }
             }}
             onDragEnd={finish}
           />

@@ -463,3 +463,25 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   matrices on the final head (658 browser cases, zero retries).
 - **Follow-ups:** deploy both frontends only after final checks pass; record
   hosted verification in PR #9. API, schema and member data remain unchanged.
+
+### Raouf: 2026-10-17 — Continue collision checks after fast pointer movement
+
+- **Scope:** close the last issue found by the complete 390-case local run.
+- **Evidence:** 389 cases passed; WebKit reached the physical two-slot target
+  after a roughly 45ms move but its preview remained one slot behind for seconds.
+  Motion advances one neighbor per rendered update and stops at zero velocity.
+- **Change:** continue the existing RAF collision check in the last pointer
+  direction while held. Update direction on reversal; actual scrolling takes
+  precedence. Retain neighbor layout centers, DOM identity guards and bounded
+  scrolling. Preserve the failing test and add an exact multi-slot save case.
+  Guard absent boundary neighbors; every drag scenario now fails on page errors,
+  exposing an exception that saved-data assertions alone had not caught.
+- **Files:** both prescription components, drag regression spec, QA notes,
+  this log and `CHANGELOG.md`.
+- **Verification:** run repeated rapid-release, multi-slot, Escape and original
+  duplication regressions across engines. Production covered 141 cases in the
+  full run; two offscreen phone test drops were corrected to use a tall phone-width
+  viewport, then the exact multi-slot case passed 15 repeats across five profiles.
+  Final CI runs all 666 browser cases with zero retries and exact data checks.
+- **Follow-ups:** deploy both frontends after final-head verification, then
+  check hosted behavior and assets. No API/schema/member-data change is needed.

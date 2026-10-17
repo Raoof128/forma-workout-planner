@@ -71,7 +71,7 @@ export default function RoutinePrescription({
         bounceDamping: 42,
         timeConstant: 180,
       }}
-      onDragStart={(event) => onDragStart(controls, event)}
+      onDragStart={(event, info) => onDragStart(controls, event, info)}
       onDrag={onDrag}
       onDragEnd={(event) => {
         if (reduceMotion) {

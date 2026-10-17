@@ -6,6 +6,16 @@ import {
   saveAndReadDrag,
 } from "./routine-drag.helpers.js";
 
+const pageErrors = new WeakMap();
+test.beforeEach(({ page }) => {
+  const errors = [];
+  pageErrors.set(page, errors);
+  page.on("pageerror", (error) => errors.push(error.message));
+});
+test.afterEach(({ page }) => {
+  expect(pageErrors.get(page)).toEqual([]);
+});
+
 test("saving waits for the lazy prescription fields to finish loading", async ({
   page,
 }) => {
@@ -117,6 +127,29 @@ test("the entire exercise row follows the pointer while neighbors make room and 
     editor.original[1],
     editor.original[0],
     editor.original[2],
+  ]);
+});
+
+test("a fast move across multiple rows catches up while held and saves the displayed slot", async ({
+  page,
+  isMobile,
+}) => {
+  // Fit the full two-row jump inside the viewport. Normal phone-height edge
+  // scrolling is covered separately; an offscreen release must cancel.
+  if (isMobile)
+    await page.setViewportSize({ ...page.viewportSize(), height: 1100 });
+  const editor = await openDragEditor(page);
+  const { pointer } = await holdRowOverNext(page, editor, 2);
+  const bounds = await editor.dialog.boundingBox();
+  expect(pointer.y).toBeLessThan(
+    Math.min(bounds.y + bounds.height, page.viewportSize().height),
+  );
+  await page.mouse.up();
+  await expect(editor.rows.last()).toContainText(editor.names[0]);
+  expect(await saveAndReadDrag(page, editor.dialog)).toEqual([
+    { ...editor.original[1], groupId: null },
+    editor.original[2],
+    { ...editor.original[0], groupId: null },
   ]);
 });
 

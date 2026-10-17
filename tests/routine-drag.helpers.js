@@ -79,7 +79,14 @@ export async function holdRowOverNext(page, editor, positions = 1) {
       row.evaluate((node) => [...node.parentNode.children].indexOf(node)),
     )
     .toBe(positions);
-  return { row, neighbor, initial, next, destination: initial.y + distance };
+  return {
+    row,
+    neighbor,
+    initial,
+    next,
+    destination: initial.y + distance,
+    pointer: { x, y: y + distance },
+  };
 }
 
 export async function saveAndReadDrag(page, dialog) {
