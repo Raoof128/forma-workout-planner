@@ -79,7 +79,7 @@ emulation, not a claim of testing on a physical iPhone.
 | Animation | [Recording](desktop-drag.webm) | [Touch recording](phone-drag.webm) |
 
 [Machine-readable visual checks](visual-checks.json) contain synthetic fixture
-results only. Ten drag/editor scenarios run in all three development engines and all
+results only. Eleven drag/editor scenarios run in all three development engines and all
 five production profiles. Three additional trusted-touch scenarios run only in
 Chromium mobile: drag/save, touch cancellation and native scrolling outside the
 handle. A real-account journey verifies exact server-saved order and values
@@ -150,9 +150,21 @@ isolated account matrix. All 65 cases then passed across five freshly isolated
 browser profiles, with no failed project. Independent review found no important
 remaining issues.
 
+A subsequent complete development run caught a fast-release lifecycle race in
+an existing duplicate/drag journey. A new four-gesture rapid-release regression
+also reproduced the null reference in its first two attempts. The active state
+now retains the gesture object, and the effect checks that exact identity before
+installing listeners, scrolling or cleaning up. A finished gesture cannot read a
+cleared ref or cancel a newer one. Event timestamps also reject an older queued
+release/start/move after a later gesture begins. The rapid regression performs
+four drags without waiting for Save between gestures. All saved-field assertions
+remain exact. The final rapid-release and original duplication cases passed
+three repeats in all three development engines (18 checks); follow-up review
+found no remaining actionable issue.
+
 ## Final verification
 
-The final CI matrix contains 387 development, 133 production-bundle, 65 account
-and 65 production-account browser cases (650 total), with zero configured
+The final CI matrix contains 390 development, 138 production-bundle, 65 account
+and 65 production-account browser cases (658 total), with zero configured
 retries. Final-head CI links, production/staging Worker versions and live asset
 and boundary receipts are recorded in [PR #9](https://github.com/Raoof128/forma-workout-planner/pull/9).

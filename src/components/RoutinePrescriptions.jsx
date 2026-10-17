@@ -30,14 +30,15 @@ export default function RoutinePrescriptions({
   }, [onReady]);
 
   useEffect(() => {
-    if (!active) return;
+    const gesture = active;
+    if (!gesture || drag.current !== gesture) return;
     let frame;
     let previousFrame;
-    const dialog = drag.current.scroller;
+    const dialog = gesture.scroller;
     const cancelOnBlur = () => {
-      if (!drag.current) return;
-      drag.current.cancelled = true;
-      drag.current.controls.stop();
+      if (drag.current !== gesture) return;
+      gesture.cancelled = true;
+      gesture.controls.stop();
     };
     const cancelOnEscape = (event) => {
       if (event.key !== "Escape") return;
@@ -48,8 +49,7 @@ export default function RoutinePrescriptions({
     function scroll(now) {
       const elapsed = Math.min(100, now - (previousFrame ?? now - 1000 / 60));
       previousFrame = now;
-      const gesture = drag.current;
-      if (!gesture) return;
+      if (drag.current !== gesture) return;
       const { scroller, pointer, scrollLimit } = gesture;
       const bounds = scroller.getBoundingClientRect();
       const top = Math.max(
@@ -115,8 +115,8 @@ export default function RoutinePrescriptions({
       cancelAnimationFrame(frame);
       window.removeEventListener("blur", cancelOnBlur);
       dialog.removeEventListener("keydown", cancelOnEscape, true);
-      if (drag.current) {
-        drag.current.controls.cancel();
+      if (drag.current === gesture) {
+        gesture.controls.cancel();
         drag.current = null;
         onOrderingChange(false);
       }
@@ -124,9 +124,11 @@ export default function RoutinePrescriptions({
   }, [active, onOrderingChange]);
 
   function begin(key, controls, event) {
+    if (drag.current && event.timeStamp < drag.current.startedAt) return;
     const scroller = group.current.closest("dialog");
     drag.current = {
       key,
+      startedAt: event.timeStamp,
       controls,
       order: items.map(entryKey),
       cancelled: false,
@@ -134,7 +136,7 @@ export default function RoutinePrescriptions({
       scrollLimit: scroller.scrollHeight - scroller.clientHeight,
       pointer: { x: event.clientX, y: event.clientY },
     };
-    setActive(key);
+    setActive(drag.current);
     setPreview(items.map(entryKey));
     onOrderingChange(true);
     setAnnouncement(
@@ -144,7 +146,9 @@ export default function RoutinePrescriptions({
 
   function finish(event) {
     const gesture = drag.current;
-    if (!gesture) return;
+    // Motion delivers drag-end after rendering. An earlier release must not
+    // finish a newer gesture that already started on the same handle.
+    if (!gesture || event.timeStamp < gesture.startedAt) return;
     const bounds = group.current.getBoundingClientRect();
     const viewport = gesture.scroller.getBoundingClientRect();
     const valid =
@@ -218,13 +222,13 @@ export default function RoutinePrescriptions({
               ordered[index - 1].groupId === item.groupId
             }
             defaultRest={defaultRest}
-            dragging={active === entryKey(item)}
+            dragging={active?.key === entryKey(item)}
             ordering={!!active}
             onDragStart={(controls, event) =>
               begin(entryKey(item), controls, event)
             }
             onDrag={(event) => {
-              if (drag.current)
+              if (drag.current && event.timeStamp >= drag.current.startedAt)
                 drag.current.pointer = { x: event.clientX, y: event.clientY };
             }}
             onDragEnd={finish}

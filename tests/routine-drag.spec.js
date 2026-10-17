@@ -64,6 +64,33 @@ test("saving waits for the lazy prescription fields to finish loading", async ({
   });
 });
 
+test("immediate drag releases retain a usable editor and every saved field", async ({
+  page,
+}) => {
+  const errors = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  const editor = await openDragEditor(page);
+  for (let attempt = 0; attempt < 4; attempt++) {
+    await editor.rows
+      .first()
+      .getByRole("button", { name: /^Drag / })
+      .dragTo(editor.rows.nth(1));
+  }
+  await expect(editor.rows).toHaveCount(3);
+  await expect(
+    editor.dialog.getByRole("button", { name: "Save routine", exact: true }),
+  ).toBeEnabled();
+  expect(errors).toEqual([]);
+  const keys = await editor.rows.evaluateAll((rows) =>
+    rows.map((row) => row.dataset.entryKey),
+  );
+  expect(new Set(keys).size).toBe(3);
+  expect(await saveAndReadDrag(page, editor.dialog)).toEqual(
+    keys.map((key) => editor.original.find((item) => item.entryId === key)),
+  );
+  expect(errors).toEqual([]);
+});
+
 test("the entire exercise row follows the pointer while neighbors make room and values survive save", async ({
   page,
 }) => {

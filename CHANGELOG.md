@@ -444,3 +444,22 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   Lint, formatting and the unchanged pinned Semgrep scan pass with zero findings.
   Final CI reruns all checks; application sources, authentication limits and
   browser assertions are unchanged.
+
+### Raouf: 2026-10-17 — Bind drag effects to their gesture
+
+- **Scope:** fix the fast-release crash caught by complete development testing.
+- **Evidence:** the existing duplicate/drag journey hit a null scroller reference;
+  a new rapid-release regression reproduced it in both initial attempts.
+- **Change:** retain the gesture object in active state and check its identity
+  before installing effects, scrolling or cleanup. An ended gesture cannot read
+  a cleared reference or cancel a newer gesture. Reject older queued gesture
+  events by timestamp, including a release after a fast restart. Preserve exact
+  saved values.
+- **Files:** `src/components/RoutinePrescriptions.jsx`,
+  `tests/routine-drag.spec.js`, QA notes, this log and `CHANGELOG.md`.
+- **Verification:** rerun rapid-release and original duplication regressions
+  across engines: all 18 repeated checks pass. Independent review has no further
+  actionable finding; lint, formatting, types and docs pass. Complete the full
+  matrices on the final head (658 browser cases, zero retries).
+- **Follow-ups:** deploy both frontends only after final checks pass; record
+  hosted verification in PR #9. API, schema and member data remain unchanged.
