@@ -4,6 +4,19 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-18 — Drag animation deployed
+
+- Owner-authorised frontend-only redeploy of `57bd68d` (routine row and card
+  drag animation). API, database and Worker secrets unchanged.
+- Production Worker version `64806558-cb0d-40dc-a029-3767586b456b`; staging
+  `c299adb6-8e4d-4dcb-9e39-9e6a13eb5716`. Live `index-Cdbv3-NY.js` matches the
+  local account-mode build and contains the new drag code.
+- Live checks: home 200 with `no-transform` and no beacon, health 200,
+  anonymous workspace 401, session null, staging Access 302. A headless drag
+  on the live guest workspace lifted and reordered a card; no member data used.
+- Deployed with the owner's local Wrangler login rather than the one-hour
+  token script (no management token on this host). See AGENT.md.
+
 ### Raouf: 2026-10-17 — Professional drag animation for routine rows and cards
 
 - **Scope:** routine editor exercise rows (existing drag) and the My routines

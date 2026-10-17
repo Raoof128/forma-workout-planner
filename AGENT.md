@@ -58,6 +58,23 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-18 — Drag animation redeploy
+
+- Owner asked for a redeploy of `57bd68d` and then to "do all yourself". With no
+  `CLOUDFLARE_API_TOKEN` on this Mac, the frontend was deployed with the owner's
+  existing Wrangler OAuth login (`wrangler deploy --env staging|production`,
+  account `25c840ad…`). This is a one-off exception to the one-hour-token rule;
+  prefer `npm run worker:deploy:*` whenever a management token is available.
+- On this host Node's fetch stalls on Cloudflare's API over IPv6 while curl is
+  fine. Set `NODE_OPTIONS=--dns-result-order=ipv4first` for Wrangler, and run it
+  outside the command sandbox. Wrangler needs `CLOUDFLARE_ACCOUNT_ID` because
+  the login can see two accounts.
+- A failed custom-domain trigger update after "Uploaded" still left the new
+  version active; confirm with `wrangler deployments list` and live asset hashes.
+- Production `64806558-cb0d-40dc-a029-3767586b456b`, staging
+  `c299adb6-8e4d-4dcb-9e39-9e6a13eb5716`; live gateway checks match the
+  previous record. API/database untouched.
+
 ### Raouf: 2026-10-17 — Drag animation for routine rows and cards
 
 - Drag motion tokens (`--spring-lift`, `--spring-settle`, `--ease-standard`)
