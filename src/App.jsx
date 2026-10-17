@@ -384,7 +384,7 @@ function AccountWorkspace() {
       </main>
     );
   const visiblePage = page;
-  const activeRoutines = data.routines.filter(
+  const activeRoutines = (data?.routines ?? []).filter(
     (routine) => !isArchived(routine),
   );
   return (

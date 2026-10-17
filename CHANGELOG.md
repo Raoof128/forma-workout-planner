@@ -340,3 +340,16 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 - **Follow-ups:** deploy the matching compatibility image/frontends, verify
   hosted archive/programming journeys and retain the final deployment receipts.
   Production writers remain paused until the coordinated release is ready.
+
+### Raouf: 2026-10-17 — Guard private workspace initialization
+
+- **Scope:** final production-built account verification after archive support.
+- **Summary:** account/legal routes intentionally render before the private
+  workspace arrives. Derive active routines from an empty list while data is
+  null, preserving those routes and the existing private loading boundary.
+- **Files:** `src/App.jsx`, `AGENT.md`, `CHANGELOG.md`.
+- **Verification:** the existing real-account control and conflict journeys
+  exposed the null read before this fix; both now pass against production-built
+  assets. Lint, formatting and type checks pass. Backend schema/image is unchanged.
+- **Follow-ups:** deploy the frontend correction and complete the full account
+  matrix plus final hosted verification; retain failed traces in private scratch.
