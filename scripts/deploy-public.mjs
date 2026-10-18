@@ -8,9 +8,17 @@ import process from "node:process";
 // Its value lives only in child-process memory; revoke it on every exit path.
 const base = "https://api.cloudflare.com/client/v4";
 if (
-  process.argv.slice(2).some((arg) => !["--staging", "--inspect"].includes(arg))
+  process.argv
+    .slice(2)
+    .some((arg) => !["--staging", "--inspect", "--dashboard"].includes(arg))
 )
-  throw new Error("Supported deployment flags: --staging, --inspect");
+  throw new Error(
+    "Supported deployment flags: --staging, --inspect, --dashboard",
+  );
+// --dashboard deploys the private operations dashboard Worker instead.
+const dashboard = process.argv.includes("--dashboard");
+if (dashboard && process.argv.includes("--staging"))
+  throw new Error("The operations dashboard has no staging environment");
 const management = process.env.CLOUDFLARE_API_TOKEN;
 const environment = process.argv.includes("--staging")
   ? "staging"
@@ -111,17 +119,22 @@ try {
       }),
     );
   } else {
-    const manifest = await readFile(
-      new URL("../wrangler.jsonc", import.meta.url),
-      "utf8",
-    );
+    const config = dashboard
+      ? "../ops/wrangler.dashboard.jsonc"
+      : "../wrangler.jsonc";
+    const manifest = await readFile(new URL(config, import.meta.url), "utf8");
     if (
-      !manifest.includes("forma.raoufabedini.dev") ||
+      !manifest.includes(
+        dashboard ? "forma-ops.raoufabedini.dev" : "forma.raoufabedini.dev",
+      ) ||
       manifest.includes("forma-api.invalid")
     )
       throw new Error("Launch configuration is incomplete");
+    const args = dashboard
+      ? ["wrangler", "deploy", "--config", "ops/wrangler.dashboard.jsonc"]
+      : ["wrangler", "deploy", "--env", environment];
     const exitCode = await new Promise((resolve, reject) => {
-      const child = spawn("npx", ["wrangler", "deploy", "--env", environment], {
+      const child = spawn("npx", args, {
         stdio: "inherit",
         env: {
           ...process.env,

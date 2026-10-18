@@ -58,6 +58,14 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-18 — Dashboard deploy and branch links
+
+- Deploy the operations dashboard with `npm run worker:deploy:dashboard`; it
+  has no staging environment. It sits behind Cloudflare Access, so an anonymous
+  check only proves the 302 to Access, not the page content.
+- Link to repository files through `blob/main/`, never a feature or release
+  branch: merged branches are deleted, and the links then 404.
+
 ### Raouf: 2026-10-18 — Sign-out release deployment
 
 - The Droplet address and a Cloudflare management token are in the owner's
