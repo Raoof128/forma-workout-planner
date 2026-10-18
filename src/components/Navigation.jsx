@@ -9,6 +9,8 @@ import {
   Settings,
   UserRound,
   ChevronRight,
+  ChevronUp,
+  LogOut,
   Menu,
   X,
   Play,
@@ -20,7 +22,7 @@ export const navigationItems = [
   ["history", "Workout history", History],
   ["progress", "Progress", ChartNoAxesColumnIncreasing],
 ];
-export default function Navigation({ page, navigate, data, account }) {
+export default function Navigation({ page, navigate, data, account, notify }) {
   const [mobile, setMobile] = useState(
     () => matchMedia("(max-width:700px)").matches,
   );
@@ -76,6 +78,12 @@ export default function Navigation({ page, navigate, data, account }) {
     setOpen(false);
     navigate(next);
   }
+  const displayName = account?.user?.name || data?.profile?.name || "Guest";
+  const initials = displayName
+    .split(/\s+/)
+    .map((part) => part[0])
+    .slice(0, 2)
+    .join("");
   return (
     <>
       <div className="mobile-top">
@@ -170,24 +178,33 @@ export default function Navigation({ page, navigate, data, account }) {
             <Settings size={20} />
             Settings
           </button>
-          <button className="profile-button" onClick={() => go("account")}>
-            <span className="avatar">
-              {(account?.user?.name || data?.profile?.name || "Guest")
-                .split(/\s+/)
-                .map((part) => part[0])
-                .slice(0, 2)
-                .join("")}
-            </span>
-            <div>
-              <strong>
-                {account?.user?.name || data?.profile?.name || "Guest"}
-              </strong>
-              <small>
-                {account?.user ? account.user.email : "Guest workspace"}
-              </small>
-            </div>
-            <ChevronRight size={16} />
-          </button>
+          {account?.user ? (
+            <ProfileMenu
+              name={displayName}
+              email={account.user.email}
+              initials={initials}
+              onManage={() => go("account")}
+              onSignOut={async () => {
+                await account.signOut();
+                notify?.("You’ve signed out.");
+                go("account");
+              }}
+              onError={() =>
+                notify?.(
+                  "Could not sign out. Check your connection and try again.",
+                )
+              }
+            />
+          ) : (
+            <button className="profile-button" onClick={() => go("account")}>
+              <span className="avatar">{initials}</span>
+              <div>
+                <strong>{displayName}</strong>
+                <small>Guest workspace</small>
+              </div>
+              <ChevronRight size={16} />
+            </button>
+          )}
           <nav className="legal-links" aria-label="Legal">
             <a
               href="#privacy"
@@ -213,5 +230,120 @@ export default function Navigation({ page, navigate, data, account }) {
         </div>
       </aside>
     </>
+  );
+}
+
+// Signed-in profile row: opens a small menu above it, following the WAI-ARIA
+// menu button pattern (arrow keys, Home/End, Escape returns focus).
+function ProfileMenu({ name, email, initials, onManage, onSignOut, onError }) {
+  const [open, setOpen] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const wrapper = useRef(null);
+  const trigger = useRef(null);
+  const menu = useRef(null);
+  useEffect(() => {
+    if (!open) return;
+    menu.current?.querySelector('[role="menuitem"]')?.focus();
+    const outside = (event) => {
+      if (!wrapper.current?.contains(event.target)) setOpen(false);
+    };
+    document.addEventListener("pointerdown", outside);
+    return () => document.removeEventListener("pointerdown", outside);
+  }, [open]);
+  function close() {
+    setOpen(false);
+    trigger.current?.focus();
+  }
+  function onKeyDown(event) {
+    const items = [...menu.current.querySelectorAll('[role="menuitem"]')];
+    const index = items.indexOf(document.activeElement);
+    const move = {
+      ArrowDown: (index + 1) % items.length,
+      ArrowUp: (index - 1 + items.length) % items.length,
+      Home: 0,
+      End: items.length - 1,
+    }[event.key];
+    if (move !== undefined) {
+      event.preventDefault();
+      items[move].focus();
+    } else if (event.key === "Escape") {
+      // Keep the phone drawer open; only the menu closes.
+      event.preventDefault();
+      event.stopPropagation();
+      close();
+    } else if (event.key === "Tab") setOpen(false);
+  }
+  return (
+    <div className="profile-menu-wrap" ref={wrapper}>
+      {open && (
+        <div
+          ref={menu}
+          id="profile-menu"
+          role="menu"
+          tabIndex={-1}
+          aria-label="Account menu"
+          className="profile-menu"
+          onKeyDown={onKeyDown}
+        >
+          <button
+            type="button"
+            role="menuitem"
+            tabIndex={-1}
+            onClick={() => {
+              setOpen(false);
+              onManage();
+            }}
+          >
+            <UserRound size={17} />
+            Manage account
+          </button>
+          <button
+            type="button"
+            role="menuitem"
+            tabIndex={-1}
+            className="profile-menu-signout"
+            aria-disabled={busy || undefined}
+            onClick={async () => {
+              if (busy) return;
+              setBusy(true);
+              try {
+                await onSignOut();
+                setOpen(false);
+              } catch {
+                onError();
+              } finally {
+                setBusy(false);
+              }
+            }}
+          >
+            <LogOut size={17} />
+            {busy ? "Signing out…" : "Sign out"}
+          </button>
+        </div>
+      )}
+      <button
+        ref={trigger}
+        type="button"
+        className="profile-button"
+        aria-label={`Account menu: ${name}, ${email}`}
+        aria-haspopup="menu"
+        aria-expanded={open}
+        aria-controls={open ? "profile-menu" : undefined}
+        onClick={() => setOpen((value) => !value)}
+        onKeyDown={(event) => {
+          if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+            event.preventDefault();
+            setOpen(true);
+          }
+        }}
+      >
+        <span className="avatar">{initials}</span>
+        <div>
+          <strong>{name}</strong>
+          <small>{email}</small>
+        </div>
+        <ChevronUp size={16} className="profile-chevron" />
+      </button>
+    </div>
   );
 }

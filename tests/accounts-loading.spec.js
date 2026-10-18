@@ -13,9 +13,11 @@ test("real session loading uses the lime background and completes without a forc
   });
   try {
     await page.goto("/");
-    await expect(page.getByRole("status")).toContainText(
-      "Checking your account session",
-    );
+    await expect(
+      page
+        .getByRole("status")
+        .filter({ hasText: "Checking your account session" }),
+    ).toContainText("Checking your account session");
     await expect(page.getByRole("main")).toHaveCSS(
       "background-color",
       "rgb(223, 247, 128)",

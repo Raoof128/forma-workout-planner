@@ -25,15 +25,17 @@ function normalizeUser(user) {
   };
 }
 
-async function accountApi(path, method = "GET", memberId) {
+async function accountApi(path, method = "GET", memberId, payload) {
   const response = await fetch(path, {
     method,
     credentials: "same-origin",
     cache: "no-store",
     headers: {
       Accept: "application/json",
+      ...(payload ? { "Content-Type": "application/json" } : {}),
       ...(memberId ? { "X-Forma-Member": memberId } : {}),
     },
+    ...(payload ? { body: JSON.stringify(payload) } : {}),
   });
   let body;
   try {
@@ -47,6 +49,7 @@ async function accountApi(path, method = "GET", memberId) {
     );
     error.status = response.status;
     error.code = body?.error;
+    error.twoFactor = body?.twoFactor === true;
     throw error;
   }
   return body;
@@ -68,7 +71,8 @@ export function AccountProvider({ children }) {
     [memberId],
   );
   const boundAccountApi = useCallback(
-    (path, method = "GET", id = memberId) => accountApi(path, method, id),
+    (path, method = "GET", payload) =>
+      accountApi(path, method, memberId, payload),
     [memberId],
   );
 
@@ -258,14 +262,20 @@ export function AccountProvider({ children }) {
       listSessions: call(async () => {
         return boundAccountApi("/api/account/sessions");
       }),
-      revokeSession: call(({ id }) =>
+      // An older sign-in confirms these with { password, code } (step-up).
+      revokeSession: call(({ id, ...confirmation }) =>
         boundAccountApi(
           `/api/account/sessions/${encodeURIComponent(id)}/revoke`,
           "DELETE",
+          confirmation.password ? confirmation : undefined,
         ),
       ),
-      signOutOthers: call(() =>
-        boundAccountApi("/api/account/sessions/revoke-others", "POST"),
+      signOutOthers: call((confirmation = {}) =>
+        boundAccountApi(
+          "/api/account/sessions/revoke-others",
+          "POST",
+          confirmation.password ? confirmation : undefined,
+        ),
       ),
       signOutEverywhere: call(async () => {
         const result = await boundAccountApi(

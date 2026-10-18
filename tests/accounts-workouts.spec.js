@@ -62,7 +62,9 @@ async function createVerifiedAccount(page, name, email) {
   await page
     .getByRole("button", { name: "Create account", exact: true })
     .click();
-  await expect(page.getByRole("status")).toContainText("verification link");
+  await expect(
+    page.getByRole("status").filter({ hasText: "verification link" }),
+  ).toContainText("verification link");
 
   const verification = await latestVerificationEmail(page.request, email);
   expect(verification.url).toBeTruthy();
@@ -389,9 +391,9 @@ test("local training migration requires review and leaves the browser copy intac
     "forma-account-export",
   );
   await page.getByRole("button", { name: "Import to account" }).click();
-  await expect(page.getByRole("status")).toContainText(
-    "imported into your account",
-  );
+  await expect(
+    page.getByRole("status").filter({ hasText: "imported into your account" }),
+  ).toContainText("imported into your account");
 
   const localAfter = await page.evaluate(() =>
     JSON.parse(localStorage.getItem("forma-v1")),
@@ -454,9 +456,9 @@ test("local training migration requires review and leaves the browser copy intac
     "forma-account-export",
   );
   await page.getByRole("button", { name: "Import to account" }).click();
-  await expect(page.getByRole("status")).toContainText(
-    "imported into your account",
-  );
+  await expect(
+    page.getByRole("status").filter({ hasText: "imported into your account" }),
+  ).toContainText("imported into your account");
   const afterFileImport = await readWorkspace(page, memberId);
   expect(afterFileImport.body.data.routines.map((item) => item.name)).toContain(
     `File backup ${run}`,

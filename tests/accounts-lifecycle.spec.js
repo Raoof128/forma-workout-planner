@@ -58,7 +58,9 @@ async function registerAndVerify(page, name, email) {
   await page
     .getByRole("button", { name: "Create account", exact: true })
     .click();
-  await expect(page.getByRole("status")).toContainText("verification link");
+  await expect(
+    page.getByRole("status").filter({ hasText: "verification link" }),
+  ).toContainText("verification link");
   const message = await emailOfKind(page.request, email, "verify-email");
   expect(message.url).toBeTruthy();
   await page.goto(message.url);
@@ -111,9 +113,9 @@ test("password recovery, sessions, authenticator recovery, and deletion use real
     // must not reveal whether an address has an account.
     await clickMainNavigation(firstPage, "Account");
     await pageAsSignedOutReset(firstPage, email, replacementPassword);
-    await expect(firstPage.getByRole("status")).toContainText(
-      "Password updated",
-    );
+    await expect(
+      firstPage.getByRole("status").filter({ hasText: "Password updated" }),
+    ).toContainText("Password updated");
     await expect(
       firstPage.getByRole("heading", { name: "Welcome back" }),
     ).toBeVisible();
@@ -169,9 +171,11 @@ test("password recovery, sessions, authenticator recovery, and deletion use real
       .getByLabel("Authenticator code")
       .fill(await totpFromUri(totpURI));
     await firstPage.getByRole("button", { name: "Verify and enable" }).click();
-    await expect(firstPage.getByRole("status")).toContainText(
-      "Two-step verification is now on",
-    );
+    await expect(
+      firstPage
+        .getByRole("status")
+        .filter({ hasText: "Two-step verification is now on" }),
+    ).toContainText("Two-step verification is now on");
     const recoveryDownloadPromise = firstPage.waitForEvent("download");
     await firstPage.getByRole("button", { name: "Download codes" }).click();
     const recoveryDownload = await recoveryDownloadPromise;
@@ -206,9 +210,11 @@ test("password recovery, sessions, authenticator recovery, and deletion use real
     await secondPage
       .getByRole("button", { name: "Send verification", exact: true })
       .click();
-    await expect(secondPage.getByRole("status")).toContainText(
-      "current inbox, then verify the new address",
-    );
+    await expect(
+      secondPage
+        .getByRole("status")
+        .filter({ hasText: "current inbox, then verify the new address" }),
+    ).toContainText("current inbox, then verify the new address");
     const approval = await emailOfKind(
       secondPage.request,
       email,
@@ -250,7 +256,12 @@ test("password recovery, sessions, authenticator recovery, and deletion use real
     await secondPage
       .getByRole("button", { name: "Send confirmation email" })
       .click();
-    await expect(secondPage.getByRole("status")).toContainText(
+    await expect(
+      secondPage.getByRole("status").filter({
+        hasText:
+          "Confirmation email sent. Your account remains active until you confirm.",
+      }),
+    ).toContainText(
       "Confirmation email sent. Your account remains active until you confirm.",
     );
     expect(await getSessionUser(secondPage)).toBeTruthy();
@@ -271,9 +282,9 @@ async function pageAsSignedOutReset(page, email, newPassword) {
   await page.getByRole("button", { name: /forgot password/i }).click();
   await page.getByLabel("Email address").fill(email);
   await page.getByRole("button", { name: "Send reset link" }).click();
-  await expect(page.getByRole("status")).toContainText(
-    "reset link is on its way",
-  );
+  await expect(
+    page.getByRole("status").filter({ hasText: "reset link is on its way" }),
+  ).toContainText("reset link is on its way");
   const reset = await emailOfKind(page.request, email, "reset-password");
   expect(reset.url).toBeTruthy();
   await page.goto(reset.url);

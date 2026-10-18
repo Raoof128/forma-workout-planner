@@ -28,26 +28,9 @@ import { isArchived } from "./routineProgramming.js";
 const equal = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 export default function App() {
   const account = useAccount();
-  return (
-    <AccountWorkspace
-      key={
-        account.status === "authenticated" ? account.user?.id : account.status
-      }
-    />
-  );
-}
-
-function AccountWorkspace() {
-  const account = useAccount();
-  const { data, issue, raw, commit, saving, repository, status } =
-    useWorkoutStore(account);
-  const [page, navigate] = useNavigation();
-  const [modal, setModal] = useState(null);
+  // Toasts live above the per-account remount so a message raised while
+  // signing in or out ("You’ve signed out.") survives the workspace switch.
   const [toast, setToast] = useState("");
-  const [legacySnapshot] = useState(() => readStore());
-  const [legacyMigration, setLegacyMigration] = useState(() =>
-    readLegacyMigration(),
-  );
   const toastTimer = useRef(null);
   const notify = useCallback((message) => {
     setToast(message);
@@ -55,6 +38,29 @@ function AccountWorkspace() {
     toastTimer.current = setTimeout(() => setToast(""), 6000);
   }, []);
   useEffect(() => () => clearTimeout(toastTimer.current), []);
+  return (
+    <>
+      <AccountWorkspace
+        key={
+          account.status === "authenticated" ? account.user?.id : account.status
+        }
+        notify={notify}
+      />
+      {toast && <Notification message={toast} onDismiss={() => setToast("")} />}
+    </>
+  );
+}
+
+function AccountWorkspace({ notify }) {
+  const account = useAccount();
+  const { data, issue, raw, commit, saving, repository, status } =
+    useWorkoutStore(account);
+  const [page, navigate] = useNavigation();
+  const [modal, setModal] = useState(null);
+  const [legacySnapshot] = useState(() => readStore());
+  const [legacyMigration, setLegacyMigration] = useState(() =>
+    readLegacyMigration(),
+  );
   const workspace = {
     status:
       account.status !== "authenticated"
@@ -422,6 +428,7 @@ function AccountWorkspace() {
         navigate={navigate}
         data={data}
         account={account}
+        notify={notify}
       />
       <main id="main-content" data-page={visiblePage}>
         <header className="topbar">
@@ -746,7 +753,6 @@ function AccountWorkspace() {
           </div>
         </Modal>
       )}
-      {toast && <Notification message={toast} onDismiss={() => setToast("")} />}
     </div>
   );
 }

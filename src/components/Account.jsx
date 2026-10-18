@@ -503,6 +503,13 @@ export default function Account({
   const [sessionsBusy, setSessionsBusy] = useState(false);
   const [sessionError, setSessionError] = useState("");
   const [sessionAction, setSessionAction] = useState(null);
+  // Step-up for removing other sessions after an older sign-in.
+  const [stepUp, setStepUp] = useState(null);
+  const [stepUpPassword, setStepUpPassword] = useState("");
+  const [stepUpCode, setStepUpCode] = useState("");
+  const [stepUpError, setStepUpError] = useState("");
+  const [stepUpBusy, setStepUpBusy] = useState(false);
+  const stepUpField = useRef(null);
   const [signOutBusy, setSignOutBusy] = useState(false);
   const [mfaPassword, setMfaPassword] = useState("");
   const [mfaCode, setMfaCode] = useState("");
@@ -530,6 +537,77 @@ export default function Account({
   // The cloud revision captured by the safety export; import is pinned to it.
   const [exportedRevision, setExportedRevision] = useState(null);
   const [legacyImported, setLegacyImported] = useState(false);
+
+  useEffect(() => {
+    if (stepUp) stepUpField.current?.focus();
+  }, [stepUp]);
+
+  function sessionErrorText(cause, fallback) {
+    if (cause?.code === "invalid_password") return "That password isn’t right.";
+    if (cause?.code === "invalid_code")
+      return "That code didn’t work. Enter the current 6-digit code from your authenticator app.";
+    if (cause?.code === "session_not_found")
+      return "That device was already signed out.";
+    return safeError(cause, fallback);
+  }
+
+  // `action` is "others" or the reference of one session to revoke.
+  async function endSessions(action, confirmation) {
+    if (action === "others") {
+      await account.signOutOthers(confirmation);
+      setSessions((items) => items.filter((item) => item.current));
+      notify?.("Other devices were signed out.");
+    } else {
+      await account.revokeSession({ id: action, ...confirmation });
+      setSessions((items) => items.filter((item) => item.id !== action));
+      notify?.("That device was signed out.");
+    }
+  }
+
+  async function startSessionAction(action, fallback) {
+    if (sessionAction) return;
+    setSessionAction(action);
+    setSessionError("");
+    try {
+      await endSessions(action);
+    } catch (cause) {
+      if (cause?.code === "reauthentication_required") {
+        setStepUpPassword("");
+        setStepUpCode("");
+        setStepUpError("");
+        setStepUp({ action, twoFactor: cause.twoFactor });
+      } else setSessionError(sessionErrorText(cause, fallback));
+    } finally {
+      setSessionAction(null);
+    }
+  }
+
+  function closeStepUp() {
+    setStepUp(null);
+    setStepUpPassword("");
+    setStepUpCode("");
+    setStepUpError("");
+  }
+
+  async function confirmStepUp(event) {
+    event.preventDefault();
+    if (!stepUp || stepUpBusy) return;
+    setStepUpBusy(true);
+    setStepUpError("");
+    try {
+      await endSessions(stepUp.action, {
+        password: stepUpPassword,
+        ...(stepUp.twoFactor ? { code: stepUpCode.trim() } : {}),
+      });
+      closeStepUp();
+    } catch (cause) {
+      setStepUpError(
+        sessionErrorText(cause, "Those sessions could not be signed out."),
+      );
+    } finally {
+      setStepUpBusy(false);
+    }
+  }
 
   const userId = account.user?.id;
   const userName = account.user?.name;
@@ -1798,29 +1876,14 @@ export default function Account({
                           <BusyButton
                             type="button"
                             className="account-text-button"
-                            disabled={!!sessionAction}
+                            disabled={!!sessionAction || !!stepUp}
                             loading={sessionAction === session.id}
-                            onClick={async () => {
-                              if (sessionAction) return;
-                              setSessionAction(session.id);
-                              try {
-                                await account.revokeSession({ id: session.id });
-                                setSessions((items) =>
-                                  items.filter(
-                                    (item) => item.id !== session.id,
-                                  ),
-                                );
-                              } catch (cause) {
-                                setPasswordError(
-                                  safeError(
-                                    cause,
-                                    "Session could not be revoked.",
-                                  ),
-                                );
-                              } finally {
-                                setSessionAction(null);
-                              }
-                            }}
+                            onClick={() =>
+                              startSessionAction(
+                                session.id,
+                                "That device could not be signed out.",
+                              )
+                            }
                           >
                             Revoke
                           </BusyButton>
@@ -1833,30 +1896,82 @@ export default function Account({
                     No session details are available.
                   </p>
                 )}
+                {stepUp && (
+                  <form
+                    className="account-inline-form account-step-up"
+                    onSubmit={confirmStepUp}
+                  >
+                    <p className="account-form-intro">
+                      For your security, confirm it’s you. You signed in more
+                      than 5 minutes ago.
+                    </p>
+                    <label>
+                      Confirm your password
+                      <input
+                        ref={stepUpField}
+                        type="password"
+                        autoComplete="current-password"
+                        required
+                        value={stepUpPassword}
+                        onChange={(event) =>
+                          setStepUpPassword(event.target.value)
+                        }
+                      />
+                    </label>
+                    {stepUp.twoFactor && (
+                      <label>
+                        Authenticator code
+                        <input
+                          inputMode="numeric"
+                          autoComplete="one-time-code"
+                          pattern="[0-9]{6}"
+                          maxLength={6}
+                          required
+                          value={stepUpCode}
+                          onChange={(event) =>
+                            setStepUpCode(event.target.value)
+                          }
+                        />
+                      </label>
+                    )}
+                    {stepUpError && (
+                      <p className="account-alert" role="alert">
+                        {stepUpError}
+                      </p>
+                    )}
+                    <div className="account-form-foot">
+                      <button
+                        type="button"
+                        className="account-text-button"
+                        onClick={closeStepUp}
+                      >
+                        Cancel
+                      </button>
+                      <BusyButton
+                        type="submit"
+                        className="account-danger-button"
+                        disabled={stepUpBusy}
+                        loading={stepUpBusy}
+                      >
+                        {stepUp.action === "others"
+                          ? "Confirm and sign out"
+                          : "Confirm and sign out device"}
+                      </BusyButton>
+                    </div>
+                  </form>
+                )}
                 <BusyButton
                   type="button"
                   className="account-danger-link account-signout-others"
-                  disabled={!!sessionAction}
+                  disabled={!!sessionAction || !!stepUp}
                   loading={sessionAction === "others"}
-                  onClick={async () => {
+                  onClick={() => {
                     if (sessionAction) return;
                     if (!window.confirm("Sign out all other devices?")) return;
-                    setSessionAction("others");
-                    try {
-                      await account.signOutOthers();
-                      setSessions((items) =>
-                        items.filter((item) => item.current),
-                      );
-                    } catch (cause) {
-                      setPasswordError(
-                        safeError(
-                          cause,
-                          "Other sessions could not be signed out.",
-                        ),
-                      );
-                    } finally {
-                      setSessionAction(null);
-                    }
+                    void startSessionAction(
+                      "others",
+                      "Other devices could not be signed out.",
+                    );
                   }}
                 >
                   Sign out other devices <ArrowRight size={15} />
@@ -1864,7 +1979,7 @@ export default function Account({
                 <BusyButton
                   type="button"
                   className="account-danger-link account-signout-others"
-                  disabled={!!sessionAction}
+                  disabled={!!sessionAction || !!stepUp}
                   loading={sessionAction === "everywhere"}
                   onClick={async () => {
                     if (sessionAction) return;

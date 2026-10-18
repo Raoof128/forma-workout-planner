@@ -100,7 +100,7 @@ export function createRequireMember(
   };
 }
 
-async function resolveSession(auth: AuthInstance, request: FastifyRequest) {
+function requestHeaders(request: FastifyRequest): Headers {
   const headers = new Headers();
   for (const [name, value] of Object.entries(request.headers)) {
     if (Array.isArray(value)) {
@@ -109,7 +109,11 @@ async function resolveSession(auth: AuthInstance, request: FastifyRequest) {
       headers.set(name, value);
     }
   }
-  return auth.api.getSession({ headers });
+  return headers;
+}
+
+async function resolveSession(auth: AuthInstance, request: FastifyRequest) {
+  return auth.api.getSession({ headers: requestHeaders(request) });
 }
 
 function headerValue(value: string | string[] | undefined): string | undefined {
@@ -832,6 +836,94 @@ export async function createApp({
     },
   });
 
+  // Removing *other* sessions needs a sign-in from the last five minutes, so a
+  // stolen session cannot lock the owner out and keep itself. An older session
+  // may instead confirm the password (plus an unused TOTP code when two-step
+  // is on) in the same request. Wrong attempts share the signed-in
+  // password-check throttle; nothing about the session or cookies changes.
+  async function confirmStepUp(
+    request: FastifyRequest,
+    reply: FastifyReply,
+    userId: string,
+    current: NonNullable<Awaited<ReturnType<typeof resolveSession>>>,
+  ): Promise<boolean> {
+    const createdAt = new Date(current.session.createdAt).getTime();
+    if (Number.isFinite(createdAt) && Date.now() - createdAt <= 5 * 60_000)
+      return true;
+    const twoFactor = !!(current.user as { twoFactorEnabled?: boolean })
+      .twoFactorEnabled;
+    const body = request.body as
+      { password?: unknown; code?: unknown } | undefined;
+    const password =
+      typeof body?.password === "string" &&
+      body.password.length > 0 &&
+      body.password.length <= 1024
+        ? body.password
+        : null;
+    if (!password) {
+      reply.code(403).send({ error: "reauthentication_required", twoFactor });
+      return false;
+    }
+    const key = throttleKey(config.authSecret, "password-check", userId);
+    if (
+      !(await reserveAttempt(pool, key, signInPolicy, PASSWORD_CHECK_SCOPE))
+    ) {
+      reply.code(429).send({
+        message:
+          "Too many password attempts for this account. Try again later or reset your password.",
+        code: "TOO_MANY_ATTEMPTS",
+      });
+      return false;
+    }
+    try {
+      const context = await auth.$context;
+      const accounts = await context.internalAdapter.findAccounts(userId);
+      const hash = accounts.find(
+        (account) => account.providerId === "credential",
+      )?.password;
+      if (!hash || !(await context.password.verify({ hash, password }))) {
+        await settleFailure(pool, key, signInPolicy, PASSWORD_CHECK_SCOPE);
+        reply.code(401).send({ error: "invalid_password" });
+        return false;
+      }
+      if (twoFactor) {
+        const code =
+          typeof body?.code === "string" && /^\d{6}$/.test(body.code)
+            ? body.code
+            : null;
+        let accepted = false;
+        if (code) {
+          try {
+            // With a session, Better Auth only checks the code; it creates no
+            // session and sets no cookie.
+            await auth.api.verifyTOTP({
+              body: { code },
+              headers: requestHeaders(request),
+            });
+            accepted = await storeTotpUse(
+              pool,
+              config.authSecret,
+              userId,
+              code,
+            );
+          } catch {
+            accepted = false;
+          }
+        }
+        if (!accepted) {
+          await settleFailure(pool, key, signInPolicy, PASSWORD_CHECK_SCOPE);
+          reply.code(401).send({ error: "invalid_code" });
+          return false;
+        }
+      }
+      await clearSignInFailures(pool, key, PASSWORD_CHECK_SCOPE);
+      return true;
+    } catch (error) {
+      await refundAttempt(pool, key, PASSWORD_CHECK_SCOPE);
+      throw error;
+    }
+  }
+
   app.get("/api/account/sessions", async (request, reply) => {
     const member = await requireMember(request, reply);
     if (!member) return reply;
@@ -864,12 +956,10 @@ export async function createApp({
       const member = await requireMember(request, reply);
       if (!member) return reply;
       const current = await resolveSession(auth, request);
-      if (
-        !current ||
-        Date.now() - current.session.createdAt.getTime() > 5 * 60_000
-      ) {
+      if (!current)
         return reply.code(403).send({ error: "reauthentication_required" });
-      }
+      if (!(await confirmStepUp(request, reply, member.userId, current)))
+        return reply;
       const result = await pool.query<{ id: string }>(
         `SELECT id FROM "session" WHERE "userId" = $1 AND "expiresAt" > now()`,
         [member.userId],
@@ -893,12 +983,10 @@ export async function createApp({
     const member = await requireMember(request, reply);
     if (!member) return reply;
     const current = await resolveSession(auth, request);
-    if (
-      !current ||
-      Date.now() - current.session.createdAt.getTime() > 5 * 60_000
-    ) {
+    if (!current)
       return reply.code(403).send({ error: "reauthentication_required" });
-    }
+    if (!(await confirmStepUp(request, reply, member.userId, current)))
+      return reply;
     await pool.query(`DELETE FROM "session" WHERE "userId" = $1 AND id <> $2`, [
       member.userId,
       current.session.id,
@@ -906,16 +994,11 @@ export async function createApp({
     return reply.send({ status: true });
   });
 
+  // Ending every session, including the caller's, cannot help a stolen
+  // session keep access, so it needs no recent sign-in.
   app.post("/api/account/sessions/revoke-all", async (request, reply) => {
     const member = await requireMember(request, reply);
     if (!member) return reply;
-    const current = await resolveSession(auth, request);
-    if (
-      !current ||
-      Date.now() - current.session.createdAt.getTime() > 5 * 60_000
-    ) {
-      return reply.code(403).send({ error: "reauthentication_required" });
-    }
     await pool.query(`DELETE FROM "session" WHERE "userId" = $1`, [
       member.userId,
     ]);

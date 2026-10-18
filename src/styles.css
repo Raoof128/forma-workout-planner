@@ -430,6 +430,79 @@ input[type="checkbox"] {
   margin-top: 16px;
   padding: 20px 4px 4px;
 }
+.profile-menu-wrap {
+  position: relative;
+}
+.profile-chevron {
+  color: var(--muted);
+  transition: rotate 200ms var(--ease-standard);
+}
+.profile-button[aria-expanded="false"] .profile-chevron {
+  rotate: 180deg;
+}
+.profile-menu {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 5;
+  display: grid;
+  gap: 2px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow:
+    0 12px 32px #17221b24,
+    0 2px 6px #17221b14;
+  transform-origin: bottom center;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .profile-menu {
+    animation: profile-menu-in 180ms var(--ease-standard);
+  }
+  @keyframes profile-menu-in {
+    from {
+      opacity: 0;
+      translate: 0 6px;
+      scale: 0.98;
+    }
+  }
+}
+.profile-menu [role="menuitem"] {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 550;
+  text-align: left;
+}
+.profile-menu [role="menuitem"]:hover,
+.profile-menu [role="menuitem"]:focus-visible {
+  background: var(--lime-soft);
+  outline: none;
+}
+.profile-menu [role="menuitem"]:focus-visible {
+  box-shadow: 0 0 0 2px #aec477;
+}
+.profile-menu .profile-menu-signout {
+  color: #9b2c22;
+}
+.profile-menu .profile-menu-signout:hover,
+.profile-menu .profile-menu-signout:focus-visible {
+  background: #fbebe8;
+}
+@media (pointer: coarse) {
+  .profile-menu [role="menuitem"] {
+    min-height: 44px;
+  }
+}
 .avatar {
   width: 35px;
   height: 35px;
@@ -1314,13 +1387,19 @@ input[type="checkbox"] {
   transition: border-color 150ms var(--ease-standard);
 }
 .prescription:not(.labels)::before {
+  /* The 10px side bleed is a shadow spread, not a wider box: shadows never
+     add scrollable overflow, so narrow dialogs stay exactly their width. */
   content: "";
   position: absolute;
-  inset: 0 -10px;
+  inset: 10px 0;
   z-index: -1;
-  border-radius: 12px;
+  border-radius: 2px;
   background: var(--surface);
-  box-shadow: 0 0 0 1px transparent;
+  box-shadow:
+    0 0 0 10px var(--surface),
+    0 0 0 10px transparent,
+    0 0 32px 10px transparent,
+    0 0 8px 10px transparent;
   opacity: 0;
   scale: 0.985;
   pointer-events: none;
@@ -1337,9 +1416,10 @@ input[type="checkbox"] {
   opacity: 1;
   scale: 1.012;
   box-shadow:
-    0 14px 32px #17221b2e,
-    0 3px 8px #17221b1f,
-    0 0 0 1px #aec477;
+    0 0 0 10px var(--surface),
+    0 0 0 11px #aec477,
+    0 14px 32px 10px #17221b2e,
+    0 3px 8px 10px #17221b1f;
   transition:
     opacity 120ms ease-out,
     scale 350ms var(--spring-lift),
@@ -1357,13 +1437,21 @@ input[type="checkbox"] {
     opacity: 1;
     scale: 1;
     background: var(--lime-soft);
-    box-shadow: 0 0 0 1px #aec477;
+    box-shadow:
+      0 0 0 10px var(--lime-soft),
+      0 0 0 11px #aec477,
+      0 0 32px 10px transparent,
+      0 0 8px 10px transparent;
   }
   to {
     opacity: 0;
     scale: 1;
     background: var(--lime-soft);
-    box-shadow: 0 0 0 1px transparent;
+    box-shadow:
+      0 0 0 10px var(--lime-soft),
+      0 0 0 10px transparent,
+      0 0 32px 10px transparent,
+      0 0 8px 10px transparent;
   }
 }
 @media (prefers-reduced-motion: reduce) {
