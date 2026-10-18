@@ -60,8 +60,9 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ### Raouf: 2026-10-18 — Coach tokens production deployment
 
-- The production API host is the shared DigitalOcean Droplet at
-  `170.64.167.95`; SSH is key-only as `eoiadmin` then `sudo`. FORMA lives under
+- The production API host is the shared DigitalOcean Droplet (address in the
+  owner's deploy env, not recorded here); SSH is key-only as `eoiadmin` then
+  `sudo`. FORMA lives under
   `/opt/forma-production` (`.env`, `ops/`, `releases/<name>/`, `operations/`),
   Compose project `forma-production`, files `ops/compose.yaml` +
   `ops/compose.production-host.yaml`. The host has ~2 GB RAM: build the API
