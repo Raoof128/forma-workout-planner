@@ -4,6 +4,23 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-18 — Read-only coach access tokens
+
+- Members can mint up to five read-only coach tokens in Account › Security.
+  `GET /api/coach/workspace` accepts `Authorization: Bearer forma_coach_…` and
+  returns routines, recent sessions, personal bests and weekly totals for the
+  token's owner only, without email, member reference, revision or operation
+  data. Tokens expire after 90 days and can be revoked; minting requires a
+  session less than five minutes old.
+- Migration `0004-coach-tokens` stores HMAC-SHA-256 digests only; the runtime
+  role gains DML on `member_coach_token`. Bearer failures are budgeted per
+  client (20 per 15 minutes) and reads per token (120 per hour), with
+  `coach_token_failure` and `coach_token_lockout` security events.
+- The Worker forwards `Authorization` only to `/api/coach/workspace` and
+  withholds cookies and the member reference there. New Worker and real
+  PostgreSQL regressions cover isolation, revocation, expiry, cascade and
+  budgets; documentation, threat model (T-24) and coverage matrix updated.
+
 ### Raouf: 2026-10-14 — Artwork deployment and edge privacy
 
 - Owner authorised deploying the completed 1,414-exercise artwork and site fixes.

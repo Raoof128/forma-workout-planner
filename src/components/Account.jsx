@@ -5,6 +5,7 @@ import {
   ArrowLeft,
   ArrowRight,
   BadgeCheck,
+  Bot,
   CalendarDays,
   Check,
   ChevronRight,
@@ -504,6 +505,14 @@ export default function Account({
   const [sessionError, setSessionError] = useState("");
   const [sessionAction, setSessionAction] = useState(null);
   const [signOutBusy, setSignOutBusy] = useState(false);
+  const [coachTokens, setCoachTokens] = useState([]);
+  const [coachBusy, setCoachBusy] = useState(false);
+  const [coachError, setCoachError] = useState("");
+  const [coachLabel, setCoachLabel] = useState("");
+  const [coachAction, setCoachAction] = useState(null);
+  // The plaintext token exists only here, until the member dismisses it.
+  const [issuedCoachToken, setIssuedCoachToken] = useState(null);
+  const [coachCopied, setCoachCopied] = useState(false);
   const [mfaPassword, setMfaPassword] = useState("");
   const [mfaCode, setMfaCode] = useState("");
   const [mfaEnrollment, setMfaEnrollment] = useState(null);
@@ -578,6 +587,77 @@ export default function Account({
       current = false;
     };
   }, [section, userId, listSessions]);
+  const listCoachTokens = account.listCoachTokens;
+  useEffect(() => {
+    if (section !== "security" || !userId || !listCoachTokens) return;
+    let current = true;
+    setCoachBusy(true);
+    listCoachTokens()
+      .then((items) => {
+        if (current) setCoachTokens(Array.isArray(items) ? items : []);
+      })
+      .catch((cause) => {
+        if (current)
+          setCoachError(safeError(cause, "Coach access could not be loaded."));
+      })
+      .finally(() => {
+        if (current) setCoachBusy(false);
+      });
+    return () => {
+      current = false;
+    };
+  }, [section, userId, listCoachTokens]);
+
+  async function createCoachToken(event) {
+    event.preventDefault();
+    if (coachAction) return;
+    setCoachAction("create");
+    setCoachError("");
+    setCoachCopied(false);
+    try {
+      const issued = await account.createCoachToken({ label: coachLabel });
+      setIssuedCoachToken(issued);
+      setCoachLabel("");
+      if (issued?.record) setCoachTokens((items) => [issued.record, ...items]);
+    } catch (cause) {
+      setCoachError(
+        cause?.code === "token_limit"
+          ? "You already have the maximum number of coach tokens. Revoke one first."
+          : cause?.code === "reauthentication_required"
+            ? "Sign in again before creating a coach token."
+            : cause?.code === "invalid_label"
+              ? "Use a short plain-text name of up to 60 characters."
+              : safeError(cause, "The coach token could not be created."),
+      );
+    } finally {
+      setCoachAction(null);
+    }
+  }
+
+  async function revokeCoachToken(id) {
+    if (coachAction) return;
+    setCoachAction(id);
+    setCoachError("");
+    try {
+      await account.revokeCoachToken({ id });
+      setCoachTokens((items) => items.filter((item) => item.id !== id));
+      if (issuedCoachToken?.record?.id === id) setIssuedCoachToken(null);
+    } catch (cause) {
+      setCoachError(safeError(cause, "The coach token could not be revoked."));
+    } finally {
+      setCoachAction(null);
+    }
+  }
+
+  async function copyCoachToken() {
+    if (!issuedCoachToken?.token) return;
+    try {
+      await navigator.clipboard.writeText(issuedCoachToken.token);
+      setCoachCopied(true);
+    } catch {
+      setCoachError("Copy failed. Select the token and copy it manually.");
+    }
+  }
 
   const data = workspace?.data || {};
   const storedGoal = Number(data.profile?.goal);
@@ -1886,6 +1966,132 @@ export default function Account({
                 >
                   Sign out everywhere <ArrowRight size={15} />
                 </BusyButton>
+              </section>
+              <section
+                className="account-settings-form"
+                aria-labelledby="coach-access-title"
+              >
+                <div className="account-settings-title">
+                  <Bot size={18} />
+                  <div>
+                    <h3 id="coach-access-title">Coach access</h3>
+                    <small>
+                      Read-only tokens let a coaching tool or AI assistant read
+                      your routines, workouts and personal bests. They cannot
+                      change anything or see your email.
+                    </small>
+                  </div>
+                </div>
+                {coachError && (
+                  <p className="account-alert" role="alert">
+                    {coachError}
+                  </p>
+                )}
+                {issuedCoachToken?.token && (
+                  <div className="account-codes" role="status">
+                    <strong>
+                      Copy this token now. It will not be shown again.
+                    </strong>
+                    <p>
+                      Store it like a password, for example in your coaching
+                      tool’s secret settings. Never paste it into a chat. It
+                      expires on {dateLabel(issuedCoachToken.record?.expiresAt)}
+                      .
+                    </p>
+                    <pre>{issuedCoachToken.token}</pre>
+                    <div className="account-mfa-actions">
+                      <button
+                        type="button"
+                        className="account-text-button"
+                        onClick={copyCoachToken}
+                      >
+                        {coachCopied ? "Copied" : "Copy token"}
+                      </button>
+                      <button
+                        type="button"
+                        className="account-text-button"
+                        onClick={() => {
+                          setIssuedCoachToken(null);
+                          setCoachCopied(false);
+                        }}
+                      >
+                        I’ve saved it
+                      </button>
+                    </div>
+                  </div>
+                )}
+                <form
+                  className="account-inline-form"
+                  onSubmit={createCoachToken}
+                >
+                  <label>
+                    Token name
+                    <input
+                      type="text"
+                      autoComplete="off"
+                      maxLength={60}
+                      required
+                      placeholder="e.g. Claude coach"
+                      value={coachLabel}
+                      onChange={(event) => setCoachLabel(event.target.value)}
+                    />
+                  </label>
+                  <BusyButton
+                    type="submit"
+                    className="account-secondary"
+                    disabled={!!coachAction || coachBusy}
+                    loading={coachAction === "create"}
+                  >
+                    Create read-only token <ArrowRight size={16} />
+                  </BusyButton>
+                </form>
+                {coachBusy ? (
+                  <Loading
+                    inline
+                    className="account-muted-row"
+                    label="Loading coach access…"
+                  />
+                ) : coachTokens.length ? (
+                  <div className="account-session-list">
+                    {coachTokens.map((item) => (
+                      <div className="account-device-row" key={item.id}>
+                        <span className="account-device-icon">
+                          <KeyRound size={16} />
+                        </span>
+                        <span>
+                          <strong>{item.label}</strong>
+                          <small>
+                            {item.lastUsedAt
+                              ? `Last used ${dateLabel(item.lastUsedAt)}`
+                              : "Never used"}
+                            {" · "}Expires {dateLabel(item.expiresAt)}
+                          </small>
+                        </span>
+                        <BusyButton
+                          type="button"
+                          className="account-text-button"
+                          disabled={!!coachAction}
+                          loading={coachAction === item.id}
+                          onClick={() => {
+                            if (
+                              window.confirm(
+                                `Revoke the "${item.label}" token? Tools using it will lose access immediately.`,
+                              )
+                            )
+                              void revokeCoachToken(item.id);
+                          }}
+                        >
+                          Revoke
+                        </BusyButton>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="account-muted-row">
+                    No coach tokens yet. Tokens expire after 90 days and you can
+                    hold up to five at a time.
+                  </p>
+                )}
               </section>
               <div className="account-security-foot">
                 <ShieldCheck size={18} />

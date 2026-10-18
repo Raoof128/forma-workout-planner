@@ -142,7 +142,7 @@ created while host connectivity and production email configuration remain
 unavailable. Provision the isolated backend and verify the protected origin
 before publishing the public application.
 
-The Worker accepts the explicit routes and methods in its allowlist, including `/api/health`, approved `/api/auth/*` endpoints, `/api/account/sessions` and its revocation routes, `/api/workspace`, and `/api/workspace/export`. Set `BACKEND_URL` to the fixed backend HTTPS origin
+The Worker accepts the explicit routes and methods in its allowlist, including `/api/health`, approved `/api/auth/*` endpoints, `/api/account/sessions` and its revocation routes, `/api/account/coach-tokens` and its revoke route, `/api/coach/workspace` (bearer coach token), `/api/workspace`, and `/api/workspace/export`. Set `BACKEND_URL` to the fixed backend HTTPS origin
 that resolves through the Tunnel and requires an Access Service Auth policy.
 Configure the Cloudflare Access service token only on that origin policy. Store
 the Worker secrets in Wrangler, separately for staging and production:

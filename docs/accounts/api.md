@@ -58,6 +58,59 @@ a database ID or a session token. The session routes do not accept an owner ID.
 Sensitive session revocations require reauthentication through a fresh
 Better Auth session.
 
+## Coach access (read-only tokens)
+
+A member can mint up to five read-only **coach tokens** in Account › Security
+and give one to a coaching tool or AI assistant. The token reads a training
+summary and nothing else: it cannot write, cannot reach any other route, and
+the summary carries no email address, member reference, revision or operation
+data. Tokens expire 90 days after creation and can be revoked at any time.
+
+| Method and path                           | Authentication                            | Result                                                                                                       |
+| ----------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `GET /api/account/coach-tokens`           | Member session                            | Active tokens for the member: `id`, `label`, `createdAt`, `expiresAt`, `lastUsedAt`. Never the token itself. |
+| `POST /api/account/coach-tokens`          | Recent session, at most 5 minutes old     | Body `{ "label": "Claude coach" }` (1–60 plain characters). Returns `{ token, record }`; `token` is shown once. |
+| `DELETE /api/account/coach-tokens/:id`    | Member session                            | Revokes one of the caller's tokens by its 22-character ID; another member's ID is `404`.                      |
+| `GET /api/coach/workspace?days=28`        | `Authorization: Bearer forma_coach_…`     | The owner's coach summary for the last `days` days (1–365, default 28).                                      |
+
+Tokens look like `forma_coach_` followed by 43 URL-safe characters (32 random
+bytes). PostgreSQL stores only an HMAC-SHA-256 digest of the token under the
+server auth secret, so a database read never yields a usable credential.
+Minting is a step-up action and returns `403 reauthentication_required` from a
+session older than five minutes; a sixth active token returns
+`409 token_limit`; a bad label returns `400 invalid_label`.
+
+The bearer route ignores cookies and the member reference. It is the only
+route for which the Worker forwards an `Authorization` header, and the Worker
+withholds cookies on it so the two credential types never travel together.
+Failures return `401` with `WWW-Authenticate: Bearer realm="forma-coach"`;
+after 20 failures from one client in 15 minutes the route returns
+`429 too_many_attempts`. Each token may read 120 times per hour, after which
+the route returns `429 rate_limited` with `Retry-After: 3600`. A revoked or
+expired token is indistinguishable from an unknown one.
+
+The summary has this shape (abbreviated):
+
+```json
+{
+  "generatedAt": "2026-10-18T01:00:00.000Z",
+  "days": 28,
+  "member": { "name": "Raouf", "weeklyGoal": 5 },
+  "schedule": ["Monday", "Wednesday", "Friday"],
+  "routines": [{ "id": "…", "name": "Upper A", "minutes": 60, "level": "…", "exercises": [{ "exerciseId": "…", "name": "Bench Press", "sets": 3, "reps": 10, "weight": 40 }] }],
+  "activeWorkout": null,
+  "sessions": [{ "id": "…", "name": "Upper A", "routineId": "…", "date": "…", "durationSeconds": 3540, "notes": "…", "exercises": [{ "exerciseId": "…", "name": "Bench Press", "sets": [{ "weight": 40, "reps": 10, "done": true }] }] }],
+  "personalBests": [{ "exerciseId": "…", "name": "Bench Press", "bestWeight": 42.5, "estimatedOneRM": 53.8, "lastPerformed": "…" }],
+  "weekly": [{ "weekStart": "2026-10-12", "sessions": 3, "volume": 9120 }],
+  "totalSessions": 41
+}
+```
+
+Sessions are newest first and capped at 200; notes are truncated to 1,000
+characters; personal bests and estimated one-rep maximums follow the
+[data model](../data-model.md#calculations) and count completed load/reps sets
+only.
+
 ## Workspace data
 
 | Method and path             | Authentication                           | Result                                                                                        |

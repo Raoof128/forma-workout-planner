@@ -24,6 +24,7 @@ Accounts remain private pending the outstanding release gates in the
 | Weekly training schedule                               | Exercise instructions while logging          | Validated JSON backup and restore           |
 | Searchable 1,661-exercise library with source licences | Resume an unfinished session                 | Profile, backup, and training-data settings |
 | Local guest mode or member account                     | Authenticated workspace sync across sessions | Session revocation, MFA, import, and export |
+| Read-only coach tokens for a coaching tool or AI       |                                              | Token list, expiry, and one-click revocation |
 
 The interface uses semantic controls, keyboard navigation, accessible dialogs,
 mobile workout controls, and locally hosted fonts. See the [verification

@@ -57,6 +57,20 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-18 — Read-only coach tokens
+
+- **Scope:** owner asked for an API so an AI coach can read FORMA progress
+  between conversations without sharing the account password.
+- **Constraints added:** `/api/coach/workspace` is the only bearer-token route;
+  it must never accept cookies, write, or return identity fields (email,
+  member reference, revision, operation IDs). Keep the `Authorization` forward
+  in the Worker scoped to that path. Tokens are digest-only in
+  `member_coach_token`; never log or return a token after the create response.
+  Minting is a fresh-session step-up like session revocation. Budgets live in
+  `server/coachRoutes.ts`; change them with a test.
+- **Verification:** `server/tests/coach.test.ts`, `coach-summary.test.ts` and
+  `worker/tests/coach.test.ts`; see the changelog for the full run.
+
 ### Raouf: 2026-10-14 — Owner-authorised artwork redeployment
 
 - Owner requested commit, push and redeploy after the completed artwork/site sweep.

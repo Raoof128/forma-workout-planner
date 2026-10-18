@@ -71,6 +71,7 @@ branch.
 | T-21 | D      | Targeted lockout of a known email                                     | Member access        | Accepted trade-off; reset path stays available                              | RT-04                                           | M        |
 | T-22 | I      | Compromised API process exfiltrates data                              | All data             | Least-privilege DB role; API egress currently unrestricted                  | Role checks in the report                       | M        |
 | T-23 | D      | Cloudflare or Droplet outage                                          | Availability         | Guest mode stays local; documented runbook                                  | Not executed                                    | M        |
+| T-24 | I/E    | Leaked or guessed read-only coach token                               | Workout data         | Read-only summary without identity; 256-bit random, digest-only storage, 90-day expiry, revocation, 20 failures per IP, 120 reads per token per hour; minting needs a fresh session | `coach.test.ts` (server and Worker)             | L        |
 
 ### Compound threats considered
 
