@@ -1,0 +1,48 @@
+{
+  "sourceTree": "746fdf8",
+  "imageSourceCommit": "ea2dc4b",
+  "schemaVersion": 5,
+  "production": {
+    "url": "https://forma.raoufabedini.dev",
+    "workerVersion": "4b87caa9-25ff-4181-b298-1d795e518301",
+    "previousWorkerVersion": "4005f27c-03ea-427c-b087-7173d62c804b"
+  },
+  "staging": {
+    "workerVersion": "712219ca-42b0-4b6c-8324-7dc520c77956",
+    "migrationsApplied": ["0005-coach-tokens.sql"],
+    "previousApiImageTag": "forma-api:routine-v2-20261017-cca9b07"
+  },
+  "api": {
+    "imageTag": "forma-api:signout-20261018-ea2dc4b",
+    "previousProductionImageTag": "forma-api:coach-20261018-a831507",
+    "transferArchiveSha256": "8e843c29366c9c0d40441f756f89ec25efcd1f412da2f0b061e20f1f8b835965",
+    "configDigest": "sha256:80b406001ea0ab15e4e4183641ba41e5c09280bf9e83e5bf15b2d43b0c1dea95",
+    "manifestDigest": "sha256:7eba2e8b414cda56a1c049ecbcdb155efb7bfd6b5e61a84effacb7554d59fc10",
+    "node": "26.11.1",
+    "uid": 10001,
+    "platform": "linux/amd64"
+  },
+  "backups": {
+    "stagingBefore": "archives/forma-staging-20261018T073748Z.dump.age",
+    "stagingAfter": "archives/forma-staging-20261018T073911Z.dump.age",
+    "productionBefore": "archives/forma-production-20261018T073947Z.dump.age",
+    "productionAfter": "archives/forma-production-20261018T074006Z.dump.age",
+    "rowCountsUnchanged": true
+  },
+  "unrelatedContainersUnchanged": true,
+  "liveChecks": {
+    "home": 200,
+    "noTransform": true,
+    "beacon": false,
+    "assetHashesMatchLocalBuild": true,
+    "health": 200,
+    "workspaceAnonymous": 401,
+    "coachWorkspaceNoToken": 401,
+    "unknownRoute": 404,
+    "sessionAnonymous": null,
+    "revokeAllAnonymous": 401,
+    "revokeOthersAnonymous": 401,
+    "stagingAnonymous": 302,
+    "guestPageErrorsDesktopAndPhone": 0
+  }
+}

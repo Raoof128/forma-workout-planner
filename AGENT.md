@@ -58,6 +58,22 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-18 — Sign-out release deployment
+
+- The Droplet address and a Cloudflare management token are in the owner's
+  local deploy env file outside the repository (ask the owner where). Source it
+  inside commands; never print values.
+  SSH is key-only as `eoiadmin` with `~/.ssh/eoi_droplet_ed25519`; do not use
+  the password in that file.
+- When piping a remote script into `sudo bash -s`, give every
+  `docker compose run`/`exec` `< /dev/null`: otherwise it reads the rest of the
+  script from stdin and the remaining steps silently never run.
+- Release folders under `/opt/forma-*/releases` are root-only; run their steps
+  inside one `sudo` shell. The ledger table is `forma_schema_migrations`.
+- Staging and production both run `forma-api:signout-20261018-ea2dc4b` at
+  schema 0005. Staging's `compose.small-host.yaml` and production's
+  `compose.production-host.yaml` intentionally differ from the repository.
+
 ### Raouf: 2026-10-18 — Session sign-out step-up and sidebar menu
 
 - `revoke-all` needs only a member session. `revoke-others` and single revoke
