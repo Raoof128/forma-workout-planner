@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { freshData } from "../../src/storage.js";
+import { freshData, validateData } from "../../src/storage.js";
 import {
   bearerCoachToken,
   coachSummary,
@@ -67,8 +67,8 @@ test("labels follow the profile-name rules and the history window is bounded", (
 });
 
 test("the coach summary exposes training data only and computes bests and weekly totals", () => {
-  const data = freshData() as WorkspaceData;
-  const [routine] = data.routines;
+  const base = freshData() as WorkspaceData;
+  const [routine] = base.routines;
   const loadReps = routine.exercises.find((item) => item.weight !== undefined)!;
   const now = Date.parse("2026-10-18T09:00:00.000Z");
   const day = 24 * 60 * 60 * 1000;
@@ -93,19 +93,24 @@ test("the coach summary exposes training data only and computes bests and weekly
       },
     ],
   });
-  data.history = [
-    session("old", now - 200 * day, 100, 5),
-    session("recent-1", now - 10 * day, 60, 10),
-    session("recent-2", now - 2 * day, 62.5, 10),
-  ];
   const {
     date: _date,
     duration: _duration,
     ...active
   } = session("active", now - 60_000, 1, 1);
-  data.active = active;
-  data.profile = { name: "Raouf", goal: 5 };
-  data.schedule = [4, 0, 2];
+  // Validate the fixture so schema defaults apply whatever the current
+  // workspace version adds to exercise entries and the profile.
+  const data = validateData({
+    ...base,
+    history: [
+      session("old", now - 200 * day, 100, 5),
+      session("recent-1", now - 10 * day, 60, 10),
+      session("recent-2", now - 2 * day, 62.5, 10),
+    ],
+    active,
+    profile: { ...base.profile, name: "Raouf", goal: 5 },
+    schedule: [4, 0, 2],
+  }) as WorkspaceData;
 
   const summary = coachSummary(data, 28, now);
   assert.equal(summary.member.name, "Raouf");

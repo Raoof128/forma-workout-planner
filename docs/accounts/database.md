@@ -40,7 +40,7 @@ handling, is in [Member workspace API and conflict handling](../member-data-sync
 
 ## Coach tokens
 
-Migration `0004-coach-tokens` adds `member_coach_token`: one row per read-only
+Migration `0005-coach-tokens` adds `member_coach_token`: one row per read-only
 coach token with a random 22-character `id`, the owning `owner_id` (foreign key
 to `"user"(id) ON DELETE CASCADE`), a unique HMAC-SHA-256 `token_digest`, a
 1–60 character `label`, `created_at`, `expires_at` (checked to be after

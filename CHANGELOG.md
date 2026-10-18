@@ -12,7 +12,7 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   token's owner only, without email, member reference, revision or operation
   data. Tokens expire after 90 days and can be revoked; minting requires a
   session less than five minutes old.
-- Migration `0004-coach-tokens` stores HMAC-SHA-256 digests only; the runtime
+- Migration `0005-coach-tokens` stores HMAC-SHA-256 digests only; the runtime
   role gains DML on `member_coach_token`. Bearer failures are budgeted per
   client (20 per 15 minutes) and reads per token (120 per hour), with
   `coach_token_failure` and `coach_token_lockout` security events.
@@ -270,7 +270,6 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 - Added routine planning, exercise library, workout logging, rest timers, history, progress, and preferences.
 - Added browser-local persistence, cross-tab coordination, validated backup restore, and corrupt-data recovery.
 - Published the personal-use application and reference research.
-
 
 ## 2026-10-14 — Workout artwork cloud recovery
 
