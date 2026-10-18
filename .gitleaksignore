@@ -5,3 +5,13 @@
 # Exact historical findings only; do not allowlist the rule or documentation path.
 d6ffba239f13b16ab5de6b3db06ca642ce01c461:docs/qa/routine-programming-v2/README.md:generic-api-key:15
 d6ffba239f13b16ab5de6b3db06ca642ce01c461:docs/qa/routine-programming-v2/deployment.json:generic-api-key:15
+# Public container image tags in the coach tokens deployment record, not credentials.
+# Exact historical findings only; do not allowlist the rule or documentation path.
+048aeb8fd2c74911cdcfe8677f085d9f84bb02e2:AGENT.md:generic-api-key:81
+048aeb8fd2c74911cdcfe8677f085d9f84bb02e2:CHANGELOG.md:generic-api-key:10
+048aeb8fd2c74911cdcfe8677f085d9f84bb02e2:CHANGELOG.md:generic-api-key:27
+048aeb8fd2c74911cdcfe8677f085d9f84bb02e2:docs/qa/coach-tokens/README.md:generic-api-key:12
+048aeb8fd2c74911cdcfe8677f085d9f84bb02e2:docs/qa/coach-tokens/README.md:generic-api-key:14
+048aeb8fd2c74911cdcfe8677f085d9f84bb02e2:docs/qa/coach-tokens/README.md:generic-api-key:15
+048aeb8fd2c74911cdcfe8677f085d9f84bb02e2:docs/qa/coach-tokens/deployment.json:generic-api-key:10
+048aeb8fd2c74911cdcfe8677f085d9f84bb02e2:docs/qa/coach-tokens/deployment.json:generic-api-key:11

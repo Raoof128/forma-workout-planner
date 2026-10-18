@@ -34,6 +34,46 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   `src/styles.css`, `server/tests/session-step-up.test.ts`,
   `tests/accounts-sign-out.spec.js`, `docs/security/*`.
 
+### Raouf: 2026-10-18 — Coach tokens deployed to production
+
+- Owner-authorised production release of the read-only coach token API on top
+  of routine programming v2. API image `forma-api:coach-20261018-a831507`
+  (source tree identical to `25154af`, Node 26.11.1, amd64), built on the
+  owner's Mac, transferred as a checksum-verified archive and loaded on the
+  host. Migration `0005-coach-tokens.sql` applied through the one-shot migrate
+  service; `ops/grant-runtime-access.sql` updated on the host and re-run, so
+  `forma_runtime` has DML on `member_coach_token`. API recreated and healthy;
+  database, connector and every unrelated container kept their IDs.
+- Production Worker version `4005f27c-03ea-427c-b087-7173d62c804b` deployed
+  with the one-hour scoped-token helper (`npm run worker:deploy:production`).
+  Live checks: home 200 with `no-transform`, CSP and HSTS; health 200;
+  anonymous workspace 401; `/api/coach/workspace` 401 JSON without and with an
+  invalid bearer; session null; unknown route 404 JSON. Live HTML and JS hashes
+  match the local account build.
+- Encrypted, signed off-host backups before (`…20261018T021730Z`) and after
+  (`…20261018T022111Z`) migration; row counts unchanged (1 user, 1 workspace,
+  21 operations, 2 sessions, 0 coach tokens). Rollback targets: Worker
+  `64806558-cb0d-40dc-a029-3767586b456b`, API image
+  `forma-api:routine-v2-20261017-cca9b07`. Private staging was not updated.
+  See [the deployment record](docs/qa/coach-tokens/README.md).
+
+### Raouf: 2026-10-18 — Read-only coach access tokens
+
+- Members can mint up to five read-only coach tokens in Account › Security.
+  `GET /api/coach/workspace` accepts `Authorization: Bearer forma_coach_…` and
+  returns routines, recent sessions, personal bests and weekly totals for the
+  token's owner only, without email, member reference, revision or operation
+  data. Tokens expire after 90 days and can be revoked; minting requires a
+  session less than five minutes old.
+- Migration `0005-coach-tokens` stores HMAC-SHA-256 digests only; the runtime
+  role gains DML on `member_coach_token`. Bearer failures are budgeted per
+  client (20 per 15 minutes) and reads per token (120 per hour), with
+  `coach_token_failure` and `coach_token_lockout` security events.
+- The Worker forwards `Authorization` only to `/api/coach/workspace` and
+  withholds cookies and the member reference there. New Worker and real
+  PostgreSQL regressions cover isolation, revocation, expiry, cascade and
+  budgets; documentation, threat model (T-24) and coverage matrix updated.
+
 ### Raouf: 2026-10-18 — Drag animation deployed
 
 - Owner-authorised frontend-only redeploy of `57bd68d` (routine row and card
@@ -323,7 +363,6 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 - Added routine planning, exercise library, workout logging, rest timers, history, progress, and preferences.
 - Added browser-local persistence, cross-tab coordination, validated backup restore, and corrupt-data recovery.
 - Published the personal-use application and reference research.
-
 
 ## 2026-10-14 — Workout artwork cloud recovery
 

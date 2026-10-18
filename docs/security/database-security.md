@@ -21,7 +21,7 @@ against PostgreSQL 18.4 during the engagement, followed by migrations as
 | `pg_read_file`, `COPY ... TO PROGRAM`                       | Denied             |
 | Read `forma_schema_migrations`                              | Denied             |
 | Connect to the `postgres` database                          | Denied             |
-| DML on the eight application tables and `security_throttle` | Allowed (required) |
+| DML on the nine application tables and `security_throttle`  | Allowed (required) |
 
 Migrations run as `forma_migrator`, which owns the schema. The runtime role
 cannot change schema.
@@ -38,6 +38,8 @@ cannot change schema.
 - All queries are parameterised. Row-level security is not used; isolation is
   enforced by the API and by owner keys.
 - `security_throttle` stores only HMAC digests of emails and member IDs.
+- `member_coach_token` stores only an HMAC digest of each read-only coach
+  token, with expiry and revocation timestamps; rows cascade with the user.
 
 ## Backups
 

@@ -27,6 +27,7 @@ import {
   throttleKey,
 } from "./throttle.js";
 import { registerWorkspaceRoutes } from "./workspaceRoutes.js";
+import { registerCoachRoutes } from "./coachRoutes.js";
 import { securityEvent } from "./securityEvents.js";
 
 declare module "fastify" {
@@ -1016,6 +1017,18 @@ export async function createApp({
         workspaceWriteLimit,
         60,
       ),
+  });
+  registerCoachRoutes(app, {
+    pool,
+    authSecret: config.authSecret,
+    requireMember,
+    sessionCreatedAt: async (request) => {
+      const current = await resolveSession(auth, request).catch(() => null);
+      return current ? new Date(current.session.createdAt) : null;
+    },
+    ...(testLimit !== null
+      ? { failureLimit: testLimit, readLimit: testLimit }
+      : {}),
   });
   return app;
 }

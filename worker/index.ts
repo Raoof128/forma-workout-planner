@@ -39,6 +39,10 @@ const FORWARDED_RESPONSE_HEADERS = new Set([
   "vary",
 ]);
 const API_CONTENT_TYPES = ["application/json", "text/plain"];
+// The one route that authenticates with a bearer token instead of a cookie.
+// Authorization is forwarded there and nowhere else; cookies and the member
+// reference are withheld there so the two credential types never mix.
+const COACH_READ_PATH = "/api/coach/workspace";
 // Only FORMA's own Better Auth cookies may be set through the gateway. This
 // also keeps any Cloudflare Access cookie on the Worker-to-origin hop private.
 const APP_COOKIE = /^(?:__Secure-|__Host-)?forma\.[A-Za-z0-9_.-]+$/;
@@ -142,6 +146,11 @@ function allowedMethods(pathname: string): Set<string> | null {
   if (pathname === "/api/health") return new Set(["GET", "HEAD"]);
   if (pathname === "/api/workspace") return new Set(["GET", "PUT"]);
   if (pathname === "/api/workspace/export") return new Set(["GET"]);
+  // Read-only coach access: a bearer token, never a cookie, reads a summary.
+  if (pathname === COACH_READ_PATH) return new Set(["GET"]);
+  if (pathname === "/api/account/coach-tokens") return new Set(["GET", "POST"]);
+  if (/^\/api\/account\/coach-tokens\/[A-Za-z0-9_-]{22}$/.test(pathname))
+    return new Set(["DELETE"]);
   if (pathname === "/api/account/sessions") return new Set(["GET"]);
   if (
     pathname === "/api/account/sessions/revoke-others" ||
@@ -161,7 +170,12 @@ function allowedMethods(pathname: string): Set<string> | null {
   return null;
 }
 
-function filteredRequestHeaders(request: Request, env: Env): Headers {
+function filteredRequestHeaders(
+  request: Request,
+  env: Env,
+  pathname: string,
+): Headers {
+  const bearerRoute = pathname === COACH_READ_PATH;
   // Cloudflare overwrites CF-Connecting-IP at the app edge. It can be rewritten
   // again when the Worker calls a private Tunnel, so copy the trusted inbound
   // value to our own header before stripping caller-supplied metadata.
@@ -169,7 +183,14 @@ function filteredRequestHeaders(request: Request, env: Env): Headers {
   const headers = new Headers();
   for (const [name, value] of request.headers) {
     const lower = name.toLowerCase();
+    if (lower === "authorization") {
+      if (bearerRoute && /^Bearer [A-Za-z0-9_.-]{1,120}$/.test(value))
+        headers.set("authorization", value);
+      continue;
+    }
     if (!FORWARDED_REQUEST_HEADERS.has(lower) || HOP_HEADERS.has(lower))
+      continue;
+    if (bearerRoute && (lower === "cookie" || lower === "x-forma-member"))
       continue;
     if (lower === "cookie") {
       // Forward only FORMA's own cookies. Cloudflare Access (CF_Authorization)
@@ -373,7 +394,7 @@ function createHandler(fetcher: Fetcher) {
     );
 
     try {
-      const headers = filteredRequestHeaders(request, env);
+      const headers = filteredRequestHeaders(request, env, url.pathname);
       let body: ReadableStream<Uint8Array> | undefined;
       if (
         request.method !== "GET" &&
