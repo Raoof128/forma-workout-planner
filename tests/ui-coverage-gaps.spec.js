@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { validateData } from "../src/storage.js";
 import { initialData } from "../src/data.js";
 
 const origin = "http://localhost:5173";
@@ -20,7 +21,7 @@ async function stored(page) {
 
 function historicalSession() {
   const routine = structuredClone(initialData.routines[0]);
-  return {
+  const session = {
     id: "ui-history-fixture",
     routineId: routine.id,
     name: routine.name,
@@ -40,6 +41,7 @@ function historicalSession() {
       })),
     })),
   };
+  return validateData({ ...snapshot(), history: [session] }).history[0];
 }
 
 test(

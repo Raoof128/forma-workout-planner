@@ -20,8 +20,10 @@ src/**
 !src/data.js
 !src/storage.js
 !src/exerciseMetrics.js
+!src/routineProgramming.js
 !src/catalog/
 !src/catalog/exercises.json
 !src/catalog/curation.js
 !src/catalog/curation.json
 !src/catalog/machine-exercises.json
+!src/catalog/programming-aliases.json

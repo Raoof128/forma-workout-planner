@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { lazy, Suspense, useState, useEffect, useRef } from "react";
 import {
   Plus,
   Search,
@@ -8,22 +8,46 @@ import {
   Play,
   Pencil,
   Clock,
-  ArrowUp,
-  ArrowDown,
+  BookOpen,
+  ArrowLeft,
 } from "lucide-react";
-import { Button, Modal, RoutineCard, PageHeading } from "./UI";
-import { createId, exercises, selectableExercises } from "../data";
+import { Button, Modal, PageHeading } from "./UI";
+import { createId, exerciseById, selectableExercises } from "../data";
 import {
   defaultPrescription,
-  metricFields,
   validMeasurement,
   measurementText,
+  tracksLoadReps,
 } from "../exerciseMetrics.js";
 import { workoutTemplates } from "../workoutTemplates.js";
 import { matchesExercise } from "../catalog/search.js";
 import { canonicalId } from "../catalog/curation.js";
 import curation from "../catalog/curation.json" with { type: "json" };
-export function Routines({ routines, onOpen, onCreate, onUseTemplate }) {
+import Library from "./Library.jsx";
+import RoutineCardOrder from "./RoutineCardOrder.jsx";
+const RoutinePrescriptions = lazy(() => import("./RoutinePrescriptions.jsx"));
+import {
+  entryKey,
+  parseRepRange,
+  repRangeText,
+  repsText,
+  groupLabels,
+  normalizeGroups,
+  isArchived,
+} from "../routineProgramming.js";
+export function Routines({
+  routines,
+  onOpen,
+  onCreate,
+  onUseTemplate,
+  onDuplicate,
+  onArchive,
+  onReorder,
+}) {
+  const [showArchived, setShowArchived] = useState(false);
+  const visibleRoutines = routines.filter(
+    (routine) => isArchived(routine) === showArchived,
+  );
   return (
     <>
       <PageHeading
@@ -36,16 +60,41 @@ export function Routines({ routines, onOpen, onCreate, onUseTemplate }) {
           Create routine
         </Button>
       </PageHeading>
+      <div
+        className="modal-actions"
+        role="group"
+        aria-label="Routine visibility"
+      >
+        <Button
+          variant={showArchived ? "secondary" : "lime"}
+          aria-pressed={!showArchived}
+          onClick={() => setShowArchived(false)}
+        >
+          Active
+        </Button>
+        <Button
+          variant={showArchived ? "lime" : "secondary"}
+          aria-pressed={showArchived}
+          onClick={() => setShowArchived(true)}
+        >
+          Archived
+        </Button>
+      </div>
       <div className="section-title">
         <h2>
-          My routines <span className="count-label">{routines.length}</span>
+          {showArchived ? "Archived routines" : "My routines"}{" "}
+          <span className="count-label">{visibleRoutines.length}</span>
         </h2>
         <span className="muted small">Ready when you are</span>
       </div>
-      <div className="routine-grid full-grid">
-        {routines.map((r) => (
-          <RoutineCard key={r.id} routine={r} onClick={onOpen} />
-        ))}
+      <RoutineCardOrder
+        routines={visibleRoutines}
+        archived={showArchived}
+        onOpen={onOpen}
+        onDuplicate={onDuplicate}
+        onArchive={onArchive}
+        onReorder={onReorder}
+      >
         <button className="create-card" onClick={onCreate}>
           <span className="empty-icon">
             <Plus size={24} />
@@ -53,7 +102,7 @@ export function Routines({ routines, onOpen, onCreate, onUseTemplate }) {
           <h3>A routine of your own</h3>
           <p>Build your next favorite workout.</p>
         </button>
-      </div>
+      </RoutineCardOrder>
       <div className="section-title">
         <h2>Workout templates</h2>
         <span className="small muted">
@@ -84,7 +133,16 @@ export function Routines({ routines, onOpen, onCreate, onUseTemplate }) {
     </>
   );
 }
-export function RoutineDetail({ routine, onClose, onStart, onEdit, onDelete }) {
+export function RoutineDetail({
+  routine,
+  onClose,
+  onStart,
+  onEdit,
+  onDelete,
+  onArchive,
+  defaultRest = 90,
+}) {
+  const labels = groupLabels(routine.exercises);
   return (
     <Modal title="Routine overview" onClose={onClose} wide>
       <div
@@ -107,14 +165,15 @@ export function RoutineDetail({ routine, onClose, onStart, onEdit, onDelete }) {
         </div>
         <div className="exercise-list">
           {routine.exercises.map((item, i) => {
-            const e = exercises.find((e) => e.id === item.exerciseId);
+            const e = exerciseById.get(item.exerciseId);
             return (
-              <div className="exercise-row" key={item.exerciseId}>
-                <span className="exercise-number">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
+              <div className="exercise-row" key={entryKey(item)}>
+                <span className="exercise-number">{labels[i]}</span>
                 <div>
                   <strong>{e.name}</strong>
+                  {item.note && (
+                    <span className="program-note">{item.note}</span>
+                  )}
                   <span>
                     {e.muscle} · {e.equipment}
                   </span>
@@ -123,7 +182,11 @@ export function RoutineDetail({ routine, onClose, onStart, onEdit, onDelete }) {
                   {item.sets} ×{" "}
                   {e.metric && e.metric !== "load_reps"
                     ? measurementText(e, item)
-                    : `${item.reps} reps`}
+                    : repsText(item, e)}
+                  <small className="program-target">
+                    {item.rpe != null && `RPE ${item.rpe} · `}
+                    {item.restSeconds ?? defaultRest} s rest
+                  </small>
                 </span>
               </div>
             );
@@ -141,16 +204,30 @@ export function RoutineDetail({ routine, onClose, onStart, onEdit, onDelete }) {
             <Pencil size={16} />
             Edit routine
           </Button>
-          <Button variant="lime" onClick={() => onStart(routine)}>
-            <Play size={17} />
-            Start workout
-          </Button>
+          {isArchived(routine) ? (
+            <Button variant="lime" onClick={() => onArchive(routine)}>
+              Restore routine
+            </Button>
+          ) : (
+            <Button variant="lime" onClick={() => onStart(routine)}>
+              <Play size={17} />
+              Start workout
+            </Button>
+          )}
         </div>
       </div>
     </Modal>
   );
 }
-export function RoutineEditor({ routine, onClose, onSave }) {
+export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
+  const [repInputs, setRepInputs] = useState(() =>
+    Object.fromEntries(
+      (routine?.exercises ?? []).map((item) => [
+        entryKey(item),
+        repRangeText(item),
+      ]),
+    ),
+  );
   const [name, setName] = useState(routine?.name || "");
   const [items, setItems] = useState(routine?.exercises || []);
   const [minutes, setMinutes] = useState(routine?.minutes || 45);
@@ -162,9 +239,38 @@ export function RoutineEditor({ routine, onClose, onSave }) {
   const [error, setError] = useState("");
   const [discard, setDiscard] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [ordering, setOrdering] = useState(false);
+  const [prescriptionsReady, setPrescriptionsReady] = useState(false);
+  const [libraryOpen, setLibraryOpen] = useState(false);
+  const libraryOpener = useRef(null);
+  const libraryBack = useRef(null);
+  const libraryWasOpen = useRef(false);
+  const editorScroll = useRef(0);
+  useEffect(() => {
+    const dialog = libraryOpener.current?.closest("dialog");
+    if (libraryOpen) {
+      if (dialog) dialog.scrollTop = 0;
+      libraryBack.current?.focus({ preventScroll: true });
+    } else if (libraryWasOpen.current) {
+      libraryOpener.current?.focus({ preventScroll: true });
+      if (dialog) dialog.scrollTop = editorScroll.current;
+    }
+    libraryWasOpen.current = libraryOpen;
+  }, [libraryOpen]);
+  function openLibrary() {
+    if (ordering || saving) return;
+    editorScroll.current = libraryOpener.current.closest("dialog").scrollTop;
+    setLibraryOpen(true);
+  }
   const removed = useRef(new Map());
   const dirty =
     name !== (routine?.name || "") ||
+    items.some(
+      (item) =>
+        tracksLoadReps(exerciseById.get(item.exerciseId)) &&
+        repInputs[entryKey(item)] !== undefined &&
+        repInputs[entryKey(item)] !== repRangeText(item),
+    ) ||
     minutes !== (routine?.minutes || 45) ||
     JSON.stringify(items) !== JSON.stringify(routine?.exercises || []);
   useEffect(() => {
@@ -180,11 +286,12 @@ export function RoutineEditor({ routine, onClose, onSave }) {
     if (discard) document.querySelector(".draft-confirm button")?.focus();
   }, [discard]);
   function close() {
-    if (saving) return;
+    if (saving || ordering) return;
     if (dirty) setDiscard(true);
     else onClose();
   }
   function toggle(exercise) {
+    if (ordering) return;
     const group = items
       .map((item, index) => ({ item, index }))
       .filter(
@@ -193,8 +300,10 @@ export function RoutineEditor({ routine, onClose, onSave }) {
     if (group.length) {
       removed.current.set(exercise.id, group);
       setItems((current) =>
-        current.filter(
-          (item) => canonicalId(item.exerciseId, curation) !== exercise.id,
+        normalizeGroups(
+          current.filter(
+            (item) => canonicalId(item.exerciseId, curation) !== exercise.id,
+          ),
         ),
       );
     } else {
@@ -204,7 +313,7 @@ export function RoutineEditor({ routine, onClose, onSave }) {
           const next = [...current];
           for (const { item, index } of restored)
             next.splice(Math.min(index, next.length), 0, item);
-          return next;
+          return normalizeGroups(next);
         }
         return [
           ...current,
@@ -219,39 +328,87 @@ export function RoutineEditor({ routine, onClose, onSave }) {
   function update(id, key, value) {
     setItems((current) =>
       current.map((item) =>
-        item.exerciseId === id ? { ...item, [key]: value } : item,
+        entryKey(item) === id ? { ...item, [key]: value } : item,
       ),
     );
   }
-  function move(index, direction) {
+  function reorder(from, to) {
     setItems((current) => {
       const next = [...current];
-      [next[index], next[index + direction]] = [
-        next[index + direction],
-        next[index],
-      ];
-      return next;
+      const fromIndex = next.findIndex((item) => entryKey(item) === from);
+      const toIndex = next.findIndex((item) => entryKey(item) === to);
+      if (fromIndex < 0 || toIndex < 0) return current;
+      next.splice(toIndex, 0, ...next.splice(fromIndex, 1));
+      return normalizeGroups(next);
+    });
+  }
+  function move(index, direction) {
+    if (ordering) return;
+    reorder(entryKey(items[index]), entryKey(items[index + direction]));
+  }
+  function finishReorder(keys) {
+    setItems((current) => {
+      const byKey = new Map(current.map((item) => [entryKey(item), item]));
+      if (keys.length !== current.length || keys.some((key) => !byKey.has(key)))
+        return current;
+      return normalizeGroups(keys.map((key) => byKey.get(key)));
+    });
+  }
+  function join(index, checked) {
+    if (ordering) return;
+    setItems((current) => {
+      if (!checked)
+        return normalizeGroups(
+          current.map((item, i) =>
+            i === index ? { ...item, groupId: null } : item,
+          ),
+        );
+      const previous = current[index - 1].groupId;
+      const existing = current[index].groupId;
+      const groupId = previous || createId();
+      return normalizeGroups(
+        current.map((item, i) =>
+          i === index ||
+          i === index - 1 ||
+          (existing && item.groupId === existing)
+            ? { ...item, groupId }
+            : item,
+        ),
+      );
     });
   }
   async function save(event) {
     event.preventDefault();
+    if (ordering || libraryOpen || (items.length > 0 && !prescriptionsReady))
+      return;
     if (!name.trim() || !items.length) {
       setError("Give your routine a name and choose at least one exercise.");
+      return;
+    }
+    let prescribed;
+    try {
+      prescribed = items.map((item) =>
+        tracksLoadReps(exerciseById.get(item.exerciseId))
+          ? {
+              ...item,
+              ...parseRepRange(repInputs[entryKey(item)] ?? repRangeText(item)),
+            }
+          : item,
+      );
+    } catch (cause) {
+      setError(cause.message);
       return;
     }
     if (
       !Number.isInteger(minutes) ||
       minutes < 1 ||
       minutes > 1000 ||
-      items.some(
+      prescribed.some(
         (item) =>
           !Number.isInteger(item.sets) ||
           item.sets < 1 ||
           item.sets > 12 ||
-          !validMeasurement(
-            exercises.find((exercise) => exercise.id === item.exerciseId),
-            item,
-          ),
+          !validMeasurement(exerciseById.get(item.exerciseId), item),
       )
     ) {
       setError(
@@ -269,7 +426,7 @@ export function RoutineEditor({ routine, onClose, onSave }) {
         minutes,
         level: routine?.level || "Custom",
         image: routine?.image ?? 2,
-        exercises: items,
+        exercises: prescribed,
       });
       if (!saved)
         setError("Could not save. Check the message and keep your draft open.");
@@ -282,11 +439,19 @@ export function RoutineEditor({ routine, onClose, onSave }) {
       title={
         discard
           ? "Discard unsaved changes?"
-          : routine
-            ? "Edit your routine"
-            : "Create your routine"
+          : libraryOpen
+            ? "Exercise library"
+            : routine
+              ? "Edit your routine"
+              : "Create your routine"
       }
-      onClose={discard ? () => setDiscard(false) : close}
+      onClose={
+        discard
+          ? () => setDiscard(false)
+          : libraryOpen
+            ? () => setLibraryOpen(false)
+            : close
+      }
       wide
     >
       {discard ? (
@@ -304,180 +469,186 @@ export function RoutineEditor({ routine, onClose, onSave }) {
           </div>
         </div>
       ) : (
-        <form onSubmit={save} className="modal-content">
-          <label className="field">
-            Routine name
-            <input
-              data-autofocus
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-              placeholder="e.g. Monday upper body"
-              maxLength={60}
-            />
-          </label>
-          <label className="field duration-field">
-            Estimated duration (minutes)
-            <input
-              type="number"
-              required
-              min="1"
-              max="1000"
-              value={minutes}
-              onChange={(event) =>
-                setMinutes(
-                  event.target.value === "" ? "" : Number(event.target.value),
-                )
-              }
-            />
-          </label>
-          <div className="editor-heading">
-            <h3>Choose your exercises</h3>
-            <span className="muted small" role="status">
-              {items.length} selected
-            </span>
-          </div>
-          <div className="search-field">
-            <Search size={18} />
-            <input
-              aria-label="Search exercises for routine"
-              value={query}
-              onChange={(event) => {
-                setQuery(event.target.value);
-                setPickerLimit(40);
-              }}
-              placeholder="Search exercises…"
-            />
-          </div>
-          <div className="exercise-picker">
-            {!matchingExercises.length && (
-              <p className="picker-empty" role="status">
-                No matching exercises. Try a different name or muscle group.
-              </p>
-            )}
-            {matchingExercises.slice(0, pickerLimit).map((exercise) => {
-              const picked = items.some(
-                (item) =>
-                  canonicalId(item.exerciseId, curation) === exercise.id,
-              );
-              return (
-                <button
-                  type="button"
-                  key={exercise.id}
-                  aria-pressed={picked}
-                  className={picked ? "picked" : ""}
-                  onClick={() => toggle(exercise)}
-                >
-                  <Dumbbell size={17} />
-                  <span>
-                    {exercise.name}
-                    <small>
-                      {exercise.muscle} · {exercise.equipment}
-                    </small>
-                  </span>
-                  {picked ? <Check size={18} /> : <Plus size={18} />}
-                </button>
-              );
-            })}
-          </div>
-          {matchingExercises.length > pickerLimit && (
-            <Button
-              variant="secondary"
-              onClick={() => setPickerLimit((limit) => limit + 40)}
+        <>
+          {libraryOpen && (
+            <section
+              className="modal-content routine-library"
+              aria-label="Choose exercises for your routine"
             >
-              Show more matching exercises
-            </Button>
-          )}
-          {items.length > 0 && (
-            <div className="prescriptions">
-              <div className="prescription labels">
-                <span>EXERCISE / ORDER</span>
-                <span>SETS</span>
-                <span>TARGET</span>
-                <span>MEASUREMENT</span>
+              <div className="editor-heading">
+                <Button
+                  ref={libraryBack}
+                  variant="secondary"
+                  onClick={() => setLibraryOpen(false)}
+                >
+                  <ArrowLeft size={17} /> Back to routine
+                </Button>
+                <span className="small muted" role="status">
+                  {items.length} selected
+                </span>
               </div>
-              {items.map((item, index) => {
-                const exercise = exercises.find(
-                  (value) => value.id === item.exerciseId,
+              <Library
+                onToggle={toggle}
+                selectedIds={items.map((item) =>
+                  canonicalId(item.exerciseId, curation),
+                )}
+              />
+              <div className="modal-actions">
+                <Button variant="lime" onClick={() => setLibraryOpen(false)}>
+                  Done choosing exercises
+                </Button>
+              </div>
+            </section>
+          )}
+          <form onSubmit={save} className="modal-content" hidden={libraryOpen}>
+            <label className="field">
+              Routine name
+              <input
+                data-autofocus
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                placeholder="e.g. Monday upper body"
+                maxLength={60}
+              />
+            </label>
+            <label className="field duration-field">
+              Estimated duration (minutes)
+              <input
+                type="number"
+                required
+                min="1"
+                max="1000"
+                value={minutes}
+                onChange={(event) =>
+                  setMinutes(
+                    event.target.value === "" ? "" : Number(event.target.value),
+                  )
+                }
+              />
+            </label>
+            <div className="editor-heading">
+              <h3>Choose your exercises</h3>
+              <span className="muted small" role="status">
+                {items.length} selected
+              </span>
+            </div>
+            <Button
+              ref={libraryOpener}
+              variant="secondary"
+              className="routine-library-opener"
+              onClick={openLibrary}
+              disabled={saving || ordering}
+            >
+              <BookOpen size={17} /> Browse exercise library
+            </Button>
+            <div className="search-field">
+              <Search size={18} />
+              <input
+                aria-label="Search exercises for routine"
+                value={query}
+                onChange={(event) => {
+                  setQuery(event.target.value);
+                  setPickerLimit(40);
+                }}
+                placeholder="Search exercises…"
+              />
+            </div>
+            <div className="exercise-picker">
+              {!matchingExercises.length && (
+                <p className="picker-empty" role="status">
+                  No matching exercises. Try a different name or muscle group.
+                </p>
+              )}
+              {matchingExercises.slice(0, pickerLimit).map((exercise) => {
+                const picked = items.some(
+                  (item) =>
+                    canonicalId(item.exerciseId, curation) === exercise.id,
                 );
                 return (
-                  <div className="prescription" key={item.exerciseId}>
-                    <div>
-                      <span>{exercise.name}</span>
-                      <div className="reorder-actions">
-                        <button
-                          type="button"
-                          className="icon-button"
-                          disabled={index === 0}
-                          aria-label={`Move ${exercise.name} up`}
-                          onClick={() => move(index, -1)}
-                        >
-                          <ArrowUp size={14} />
-                        </button>
-                        <button
-                          type="button"
-                          className="icon-button"
-                          disabled={index === items.length - 1}
-                          aria-label={`Move ${exercise.name} down`}
-                          onClick={() => move(index, 1)}
-                        >
-                          <ArrowDown size={14} />
-                        </button>
-                      </div>
-                      {exercise.id === "plank" && (
-                        <small>1 rep = 10-second hold</small>
-                      )}
-                    </div>
-                    {[
-                      { key: "sets", label: "SETS", min: 1, max: 12, step: 1 },
-                      ...metricFields(exercise),
-                    ].map(({ key, label, min, max, step }) => (
-                      <label className="prescription-field" key={key}>
-                        <span>{label}</span>
-                        <input
-                          aria-label={`${exercise.name} ${key}`}
-                          type="number"
-                          min={min}
-                          max={max}
-                          step={step}
-                          required
-                          value={item[key] ?? ""}
-                          onChange={(event) =>
-                            update(
-                              item.exerciseId,
-                              key,
-                              event.target.value === ""
-                                ? ""
-                                : Number(event.target.value),
-                            )
-                          }
-                        />
-                      </label>
-                    ))}
-                  </div>
+                  <button
+                    type="button"
+                    key={exercise.id}
+                    aria-pressed={picked}
+                    disabled={ordering}
+                    className={picked ? "picked" : ""}
+                    onClick={() => toggle(exercise)}
+                  >
+                    <Dumbbell size={17} />
+                    <span>
+                      {exercise.name}
+                      <small>
+                        {exercise.muscle} · {exercise.equipment}
+                      </small>
+                    </span>
+                    {picked ? <Check size={18} /> : <Plus size={18} />}
+                  </button>
                 );
               })}
             </div>
-          )}
-          {error && (
-            <p role="alert" className="error">
-              {error}
-            </p>
-          )}
-          <div className="modal-actions">
-            <Button variant="secondary" disabled={saving} onClick={close}>
-              Cancel
-            </Button>
-            <Button
-              type="submit"
-              variant="lime"
-              disabled={saving}
-              loading={saving}
-            >
-              <Check size={17} />
-              Save routine
-            </Button>
-          </div>
-        </form>
+            {matchingExercises.length > pickerLimit && (
+              <Button
+                variant="secondary"
+                onClick={() => setPickerLimit((limit) => limit + 40)}
+              >
+                Show more matching exercises
+              </Button>
+            )}
+            {items.length > 0 && (
+              <div className="prescriptions">
+                <div className="prescription labels">
+                  <span>EXERCISE / ORDER</span>
+                  <span>Sets</span>
+                  <span>Reps</span>
+                  <span>Load (kg)</span>
+                  <span>RPE</span>
+                  <span>Rest (s)</span>
+                  <span>⋯</span>
+                </div>
+                <Suspense
+                  fallback={<p role="status">Loading exercise order…</p>}
+                >
+                  <RoutinePrescriptions
+                    items={items}
+                    repInputs={repInputs}
+                    onRepInput={(key, value) =>
+                      setRepInputs((current) => ({ ...current, [key]: value }))
+                    }
+                    update={update}
+                    move={move}
+                    onReorder={finishReorder}
+                    onOrderingChange={setOrdering}
+                    onReady={setPrescriptionsReady}
+                    join={join}
+                    defaultRest={defaultRest}
+                  />
+                </Suspense>
+              </div>
+            )}
+            {error && (
+              <p role="alert" className="error">
+                {error}
+              </p>
+            )}
+            <div className="modal-actions">
+              <Button variant="secondary" disabled={saving} onClick={close}>
+                Cancel
+              </Button>
+              <Button
+                type="submit"
+                variant="lime"
+                disabled={
+                  saving ||
+                  ordering ||
+                  (items.length > 0 && !prescriptionsReady)
+                }
+                loading={saving}
+              >
+                <Check size={17} />
+                Save routine
+              </Button>
+            </div>
+          </form>
+        </>
       )}
     </Modal>
   );

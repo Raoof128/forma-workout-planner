@@ -21,6 +21,46 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   PostgreSQL regressions cover isolation, revocation, expiry, cascade and
   budgets; documentation, threat model (T-24) and coverage matrix updated.
 
+### Raouf: 2026-10-18 — Drag animation deployed
+
+- Owner-authorised frontend-only redeploy of `57bd68d` (routine row and card
+  drag animation). API, database and Worker secrets unchanged.
+- Production Worker version `64806558-cb0d-40dc-a029-3767586b456b`; staging
+  `c299adb6-8e4d-4dcb-9e39-9e6a13eb5716`. Live `index-Cdbv3-NY.js` matches the
+  local account-mode build and contains the new drag code.
+- Live checks: home 200 with `no-transform` and no beacon, health 200,
+  anonymous workspace 401, session null, staging Access 302. A headless drag
+  on the live guest workspace lifted and reordered a card; no member data used.
+- Deployed with the owner's local Wrangler login rather than the one-hour
+  token script (no management token on this host). See AGENT.md.
+
+### Raouf: 2026-10-17 — Professional drag animation for routine rows and cards
+
+- **Scope:** routine editor exercise rows (existing drag) and the My routines
+  card grid (new drag to reorder), on `feat/routine-programming-v2`.
+- **Motion:** a dragged item lifts on a raised surface with a two-layer shadow
+  and lime outline, springs in with the Material 3 Expressive fast-spatial
+  curve, stays raised until it lands, then shows a 700 ms lime confirmation
+  (Atlassian drop pattern). No tilt. Neighbours slide with the existing layout
+  spring. Reduced motion keeps the shadow/outline but drops scale and flash.
+- **Cards:** mouse/pen drags after 6 px; touch needs a 400 ms hold so swipes
+  still scroll; the page auto-scrolls near the edges and Escape cancels.
+  **Move earlier / Move later** in each card's ⋯ menu give a single-pointer,
+  keyboard-friendly alternative (WCAG 2.2 SC 2.5.7) with spoken position.
+  Order saves through the normal workspace change; archived routines keep
+  their slots, and clicking a card without dragging still opens it.
+- **Files:** `src/components/RoutineCardOrder.jsx` (new), `Routines.jsx`,
+  `RoutinePrescription(s).jsx`, `src/App.jsx`, `src/styles.css`,
+  `tests/routine-card-drag.*`, `tests/routine-drag*.spec.js`,
+  `docs/user-guide.md`.
+- **Verification:** 3 new row and 5 new card tests failed first, then passed
+  in Chromium and WebKit; 2 new touch tests pass on mobile Chromium. Lint,
+  format, types, docs, build and 89 unit tests pass. The full Chromium+WebKit
+  run matches an untouched checkout of the branch except for fixes made here.
+  Remaining failures also occur on that checkout: 7 WebKit focus cases, one
+  routine-library case and an intermittent empty-overview case. Firefox
+  Nightly does not start on this Mac and was not run.
+
 ### Raouf: 2026-10-14 — Artwork deployment and edge privacy
 
 - Owner authorised deploying the completed 1,414-exercise artwork and site fixes.
@@ -277,3 +317,335 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 - Preserved new original sheets, full prompts and cell reviews; only newly covered IDs replace pending mappings.
 - Clarified standing hip raise, band-guide hip abduction, supine rotation, neutral-grip pulldown and bodyweight lateral-step identities without changing saved IDs or units.
 - Keep pushing complete assets and recovery logs after each reviewed batch; consult `docs/research/original-art/recovery-state.json` before resuming.
+
+### Raouf: 2026-10-17 — Routine programming v2
+
+- **Scope:** all requested routine programming features in one PR, including
+  supersets, duplication, drag handles and accessible arrow reordering.
+- **Summary:** schema v2 adds rep ranges, target/actual RPE, exercise rest,
+  per-side targets and plain-text cues. Timestamp timers support automatic rest,
+  skip, pause/resume, ±15 seconds, vibration and mute-aware sound. Picker and
+  saved metadata agree; 24 equipment corrections and incline press/fly aliases
+  preserve separate prescription/history rows and original measurement units.
+- **Files:** `src/storage.js`, `src/routineProgramming.js`, routine/workout/history
+  and preferences components, catalog metadata/audit, shared API validation,
+  `ops/Dockerfile`, tests and data/API/migration documentation. Privacy Policy
+  1.3 discloses the optional programming and exertion fields.
+- **Migration:** `server/migrations/0004-routine-programming.sql`; back up and
+  pause old API writers, then run `npm run server:migrate` with migration-role
+  `DATABASE_URL` and deploy the matching API before the v2 frontend. Browser
+  `forma-v1` data and v1 imports migrate idempotently; invalid old unfinished
+  numeric drafts retain their original values for correction and export.
+- **Verification:** 88 unit, 49 API, 21 Worker, 14 operations, 348 development,
+  55 account and 45 production browser cases pass; lint, formatting, types, docs,
+  server/frontend builds, equipment audit and strict 1,411-exercise artwork
+  coverage pass. Browser results include exact replays after a test-server exit
+  and an isolated 4.4-second performance check with its 10-second limit unchanged.
+- **Follow-ups:** coordinated deployment, backup and any privacy notice required
+  before rollout. No requested feature is deferred; no deployment or merge here.
+
+### Raouf: 2026-10-17 — Deployment packaging verification
+
+- **Scope:** owner requested full E2E verification, commit, push and redeploy in
+  the existing routine programming PR.
+- **Summary:** CI exposed the Dockerfile-specific build-context allowlist
+  excluding the new shared routine helper and alias JSON. Added both explicit
+  inclusions; no application behavior or security boundary changes.
+- **Files:** `ops/Dockerfile.dockerignore`, `AGENT.md`, `CHANGELOG.md`.
+- **Verification:** the previous CI image build failed at COPY with the helper
+  missing. Rebuilding the actual pinned Node 26 image and rerunning CI before
+  deployment; existing complete local browser matrices remain recorded above.
+- **Follow-ups:** staging/production backups, v2 migration, API/frontend rollout
+  and hosted verification under the owner's current deployment authorization.
+
+### Raouf: 2026-10-17 — Hosted and responsive routine verification
+
+- **Scope:** full E2E verification for the owner-authorised routine deployment.
+- **Summary:** hosted latency exposed a transitional duplicate-heading selector;
+  target the active workout h1. Phone journeys open their rest panel and accept
+  the card's responsive separator. Add routine programming to the production
+  browser matrix; retain exact saved-data, timer and independence assertions.
+- **Files:** `tests/routine-programming.spec.js`,
+  `playwright.production.config.js`, `AGENT.md`, `CHANGELOG.md`.
+- **Verification:** 12 focused desktop cases pass across three engines; the
+  expanded production suite passes 65 cases across five desktop/phone projects.
+  Hosted staging passes all 12 Chromium/WebKit desktop/phone programming cases.
+  Staging backups/migration and stored-v2 validation pass; other container IDs
+  are unchanged. Firefox hosted TLS was blocked by proxy certificate trust;
+  local Firefox production coverage passes with certificate checks unchanged.
+- **Follow-ups:** complete CI and the production rollout, then record final
+  versions and hosted evidence. Runtime application source remains `c491889`.
+
+### Raouf: 2026-10-17 — Preserve live routine archive compatibility
+
+- **Scope:** production validation during the owner-authorised v2 rollout found
+  existing routine `archivedAt` timestamps absent from this checkout's schema.
+- **Summary:** retain the bounded optional timestamp in strict validation and
+  backups; keep archived routines out of overview/start defaults, with Active /
+  Archived views and stale-checked restore/archive actions. Editing preserves the
+  timestamp; duplication creates an active copy. Stack the card actions visibly.
+- **Files:** shared storage/programming helpers, `App.jsx`, `Routines.jsx`,
+  `styles.css`, unit/API/SQL parity and archive browser regressions, production
+  browser configuration, data/migration/release documentation and both logs.
+- **Verification:** regression failed before the schema correction; 89 unit,
+  49 real-PostgreSQL API and 15 focused development browser cases pass. The new
+  image validates every stored production workspace on the private host with
+  archive metadata intact. All 70 unique production cases are verified, including
+  25 programming/archive replays after fixing two menu-interception failures.
+  The API matrix also passes under Node 26. Applied migration 0004 is unchanged.
+- **Follow-ups:** deploy the matching compatibility image/frontends, verify
+  hosted archive/programming journeys and retain the final deployment receipts.
+  Production writers remain paused until the coordinated release is ready.
+
+### Raouf: 2026-10-17 — Guard private workspace initialization
+
+- **Scope:** final production-built account verification after archive support.
+- **Summary:** account/legal routes intentionally render before the private
+  workspace arrives. Derive active routines from an empty list while data is
+  null, preserving those routes and the existing private loading boundary.
+- **Files:** `src/App.jsx`, `AGENT.md`, `CHANGELOG.md`.
+- **Verification:** the existing real-account control and conflict journeys
+  exposed the null read before this fix; both now pass against production-built
+  assets. Lint, formatting and type checks pass. Backend schema/image is unchanged.
+- **Follow-ups:** deploy the frontend correction and complete the full account
+  matrix plus final hosted verification; retain failed traces in private scratch.
+
+### Raouf: 2026-10-17 — Verified routine v2 redeployment
+
+- **Scope:** completed owner-authorised commit/push/redeployment in PR #9.
+- **Summary:** production and staging serve frontend `27e3728` with matching API
+  `cca9b07`. Verified encrypted signed backups bracket SQL 0004; stored workspaces
+  and legacy archive timestamps validate, with record counts preserved. No member
+  data was exported/deleted and no applied migration or unrelated service changed.
+- **Files:** `scripts/deploy-public.mjs`, deployment/gateway/asset/layout receipts
+  under `docs/qa/routine-programming-v2`, this log and `CHANGELOG.md`. Control-plane
+  requests use `no-store` after a stale/transient permission lookup failed; the
+  fresh lookup and final staging deployment succeeded without widening access.
+- **Verification:** 89 unit, 49 Node 26 API, 21 Worker, 14 operations, 70 unique
+  production browser cases and a fresh 55-case production account matrix pass.
+  Hosted production and staging each pass 15 programming/archive journeys. Live
+  assets match the build; desktop/phone layouts have no overflow/browser errors.
+  Health/anonymous boundaries, private ports and existing memory limits pass.
+- **Release:** production `e6ea40f3-dbc8-46ee-a7d6-5fc9eb5205ce`; staging
+  `29a7cfc6-0caf-428f-9ba8-58803b287573`. Temporary maintenance access and scoped
+  deploy credentials were removed/revoked. Both APIs are healthy.
+- **Follow-ups:** preflight candidate validators against live workspace shapes
+  on the host before future schema migrations; keep nullable account-loading
+  routes covered. Full CI reruns on pushed commits; no requested feature remains
+  deferred, and the PR is not merged by this deployment.
+
+### Raouf: 2026-10-17 — Review deployment-label scan findings
+
+- **Scope:** complete the final-head security checks for PR #9.
+- **Finding:** the pinned history scanner classified the public deployment image
+  label as a generic key in two release receipts. Neither value authenticates
+  a request or grants access. The findings were reproduced locally.
+- **Files:** `.gitleaksignore` records only the two exact commit/path/rule/line
+  fingerprints; this log and `CHANGELOG.md` document the review. No general rule
+  or path exception was added, and no credential material was exempted.
+- **Verification:** rerun the unchanged pinned full-history scan, docs and patch
+  checks before push; final GitHub security/application matrices remain required.
+  Deployed frontend/API bundles and saved member data are unchanged.
+
+### Raouf: 2026-10-17 — Await archive edit save acknowledgement
+
+- **Scope:** resolve the final CI production browser failure in PR #9.
+- **Evidence:** both runs passed 351 development cases and both 55-case account
+  matrices; production passed 69/70. The Chromium trace shows reload while
+  `data-saving` is true and the editor displays its busy Save control, before
+  the pending browser write completes. A fresh local 70-case matrix passed.
+- **Change:** `tests/routine-archive.spec.js` now waits for the editor to close
+  after the successful save before reloading. All range/archive persistence and
+  duplicate assertions remain, with no sleep, retry or larger timeout added.
+- **Verification:** the full 70-case production matrix and nine archive replays
+  across three engines pass; final CI remains required. Runtime sources and deployed
+  versions remain unchanged; no further member-data operation is needed.
+
+### Raouf: 2026-10-17 — Animate complete routine rows and restore draft selection
+
+- **Scope:** owner-approved follow-up in PR #9; keep the existing branch and PR.
+- **Change:** pin Motion 14.3.0 and lazy-load handle-driven whole-row ordering,
+  neighbor animation, bounded edge scrolling, cancel and reduced-motion support.
+  Preserve editable values with stable keys and latest-state drop commits; block
+  structural actions during dragging and Save until lazy fields are ready.
+  Restore the routine's full exercise-library chooser with draft/focus retention
+  and the lime session-loading backdrop without adding a loading delay.
+- **Files:** routine/editor/library components and styles, package manifests,
+  browser configurations and regression helpers/specs, the isolated account
+  browser runner, `docs/qa/routine-row-drag`, this log and `CHANGELOG.md`.
+- **Evidence:** current official Motion/design/accessibility documentation and
+  reviewed desktop/touch recordings are linked in QA. Live assets matched the
+  recorded release; reachable history did not identify a specific UI revert.
+  Regressions reproduced lazy-save, delayed-note and dialog-Escape races before
+  fixes. Account profiles now own fresh test servers instead of sharing a
+  synthetic rate bucket; production authentication limits remain unchanged.
+- **Verification:** 133 production browser cases; 18 lazy/stale-draft, 15 saved-note
+  and 10 dialog-Escape checks; 89 unit, 49 API, 21 Worker and 14 operations cases
+  passed, as did all 65 isolated account cases. Final CI runs 650 browser cases
+  with zero retries. Final production-account, security/CI and hosted deployment
+  receipts are retained in PR #9.
+- **Follow-ups:** publish this frontend to staging and production only after
+  final-head checks pass; verify hosted behavior/assets and remove temporary
+  staging access. No API/schema/member-data change or PR merge is required.
+
+### Raouf: 2026-10-17 — Use literal account project filtering
+
+- **Scope:** resolve the final-head static-analysis finding in PR #9.
+- **Finding:** Semgrep flagged the account runner's generated wildcard regular
+  expression for possible excessive backtracking. Replace it with literal
+  segment matching; only `*` is special and no dynamic regex is constructed.
+- **Files:** `scripts/test-account-browsers.mjs`, this log and `CHANGELOG.md`.
+- **Verification:** eight CLI discovery/selection checks pass, including exact,
+  prefix/suffix/multiple wildcards, literal punctuation and mixed invalid filters.
+  Lint, formatting and the unchanged pinned Semgrep scan pass with zero findings.
+  Final CI reruns all checks; application sources, authentication limits and
+  browser assertions are unchanged.
+
+### Raouf: 2026-10-17 — Bind drag effects to their gesture
+
+- **Scope:** fix the fast-release crash caught by complete development testing.
+- **Evidence:** the existing duplicate/drag journey hit a null scroller reference;
+  a new rapid-release regression reproduced it in both initial attempts.
+- **Change:** retain the gesture object in active state and check its identity
+  before installing effects, scrolling or cleanup. An ended gesture cannot read
+  a cleared reference or cancel a newer gesture. Reject older queued gesture
+  events by timestamp, including a release after a fast restart. Preserve exact
+  saved values.
+- **Files:** `src/components/RoutinePrescriptions.jsx`,
+  `tests/routine-drag.spec.js`, QA notes, this log and `CHANGELOG.md`.
+- **Verification:** rerun rapid-release and original duplication regressions
+  across engines: all 18 repeated checks pass. Independent review has no further
+  actionable finding; lint, formatting, types and docs pass. Complete the full
+  matrices on the final head (658 browser cases, zero retries).
+- **Follow-ups:** deploy both frontends only after final checks pass; record
+  hosted verification in PR #9. API, schema and member data remain unchanged.
+
+### Raouf: 2026-10-17 — Continue collision checks after fast pointer movement
+
+- **Scope:** close the last issue found by the complete 390-case local run.
+- **Evidence:** 389 cases passed; WebKit reached the physical two-slot target
+  after a roughly 45ms move but its preview remained one slot behind for seconds.
+  Motion advances one neighbor per rendered update and stops at zero velocity.
+- **Change:** continue the existing RAF collision check in the last pointer
+  direction while held. Update direction on reversal; actual scrolling takes
+  precedence. Retain neighbor layout centers, DOM identity guards and bounded
+  scrolling. Preserve the failing test and add an exact multi-slot save case.
+  Guard absent boundary neighbors; every drag scenario now fails on page errors,
+  exposing an exception that saved-data assertions alone had not caught.
+- **Files:** both prescription components, drag regression spec, QA notes,
+  this log and `CHANGELOG.md`.
+- **Verification:** run repeated rapid-release, multi-slot, Escape and original
+  duplication regressions across engines. Production covered 141 cases in the
+  full run; two offscreen phone test drops were corrected to use a tall phone-width
+  viewport, then the exact multi-slot case passed 15 repeats across five profiles.
+  Final CI runs all 666 browser cases with zero retries and exact data checks.
+- **Follow-ups:** deploy both frontends after final-head verification, then
+  check hosted behavior and assets. No API/schema/member-data change is needed.
+
+### Raouf: 2026-10-17 — Resolve the drop slot synchronously on release
+
+- **Scope:** handle release before the next preview collision frame in PR #9.
+- **Evidence:** the superseded CI duplicate/drag journey retained its original
+  slot; six local repeats reproduced one failure before this fix.
+- **Change:** save the pointer anchor and resolve valid releases against virtual
+  row positions built from entry-keyed heights. Derive direction from the final
+  coordinate and walk adjacent centers. Capture the anchor at pointer-down to
+  account for visible spring positions. Cancelled gestures bypass resolution;
+  latest-state commits continue preserving editable values and supersets.
+- **Files:** `src/components/RoutinePrescriptions.jsx`, drag regression spec,
+  `src/components/RoutinePrescription.jsx`, QA notes, this log and `CHANGELOG.md`.
+- **Verification:** strengthen the rapid three-gesture test to an explicit known
+  saved order using stable exercise identities across pending drops. Independent
+  review found no actionable resolver issue. All 36 repeated regressions and
+  the complete 143-case production matrix pass, with no page errors. Lint,
+  formatting, types and docs pass. Final CI runs 666 browser cases without retries
+  before deployment, retaining exact data and performance assertions.
+- **Follow-ups:** redeploy both frontends after clean verification and retain
+  hosted assets/boundary receipts in PR #9. No backend/data change is needed.
+
+### Raouf: 2026-10-17 — Complete page-entry focus before paint
+
+- **Scope:** resolve the remaining WebKit legal-keyboard failure in final CI.
+- **Evidence:** the trace shows the legal heading without its navigation tabindex
+  after load, then gaining it during the test's contents-link focus operation.
+  The delayed page-entry effect stole focus before Enter could activate the link.
+- **Change:** run the existing title/page-heading focus in `useLayoutEffect` so
+  it completes before paint in this client-rendered app. Preserve the original
+  keyboard assertion and navigation behavior; add no timer or test retry.
+- **Files:** `src/hooks/useNavigation.js`, QA notes, this log and `CHANGELOG.md`.
+- **Verification:** independent review found no actionable concern. Run repeated
+  legal, navigation and keyboard checks: all 72 pass across three engines. Lint,
+  formatting, types and docs pass. Complete final-head CI before deployment;
+  browser assertions and performance budgets remain intact.
+- **Follow-ups:** retain the CI trace privately, finish both frontend deployments
+  and record live verification in PR #9. No backend/schema change is needed.
+
+### Raouf: 2026-10-17 — Keep the Escape preview gesture onscreen
+
+- **Scope:** correct the mobile fixture exposed by final CI in PR #9.
+- **Evidence:** development passed 393/393; production passed 142/143. The
+  failing Escape trace moved the pointer to y=790.59375 in a 664px viewport,
+  then expected another in-bounds preview collision while held offscreen.
+- **Change:** give this two-slot phone gesture the same 1100px height as the
+  multi-slot save case and assert its held pointer is inside the viewport and
+  dialog. Preserve exact preview, Escape, original-order and superset checks.
+  Normal-height edge scrolling, touch tests and application code are unchanged.
+- **Files:** `tests/routine-drag.spec.js`, QA notes, this log and `CHANGELOG.md`.
+- **Verification:** all 25 repeated Escape cases pass across five production
+  profiles, without retries. Independent review has no actionable finding;
+  lint, formatting, types, documentation and whitespace checks pass. Complete
+  the full production matrix and final-head CI before redeploying both frontends.
+- **Follow-ups:** record final CI and hosted receipts in PR #9; no API, schema,
+  member-data change or merge is required.
+
+### Raouf: 2026-10-17 — Verify trusted presses in the rapid drag regression
+
+- **Scope:** fix the rapid-drag driver issue exposed by final CI in PR #9.
+- **Evidence:** push development passed 392/393 while independent PR development
+  and production passed 393/393 and 143/143 on the same application. The failing
+  trace shows Playwright pressing an animated interceptor, then retrying without
+  releasing the mouse. An isolated WebKit reproduction emits no source press.
+- **Change:** resolve handle hit-testing with hover, then send one trusted
+  mouse-down/move/up per gesture and assert all three native handle presses.
+  Retain immediate releases, no Save waits between gestures and exact saved
+  order and field assertions. Application code and retry settings are unchanged.
+- **Files:** `tests/routine-drag.spec.js`, QA notes, this log and `CHANGELOG.md`.
+- **Verification:** all 15 repeated rapid gestures pass across three engines;
+  lint and formatting pass. Independent review found no actionable concern.
+  Complete full production and final-head CI before frontend deployment.
+- **Follow-ups:** record CI/live receipts in PR #9; no backend, schema,
+  member-data change or merge is required.
+
+### Raouf: 2026-10-17 — Freeze drop geometry at native pointer release
+
+- **Scope:** preserve the released slot when the next gesture scrolls immediately.
+- **Evidence:** the explicit-input phone fixture first exposed offscreen target
+  centers. Align the list below the header before each press, fit the phone-width
+  rapid sequence onscreen and assert visible release coordinates. With all three intended
+  native presses verified, the old bundle failed 11/20 valid rapid-scroll cases
+  across engines, changing saved order and sometimes splitting the superset.
+- **Change:** snapshot the resolved order in window pointer-up/cancel capture,
+  before Motion's delayed end callback or subsequent scrolling changes geometry.
+  Bind the snapshot to the native press, pointer ID and start timestamp, capture
+  the visible anchor before focus and accept only one release per press. The
+  eventual commit still validates cancellation, timestamp, keys and latest values.
+  Preserve the current preview when stationary edge scrolling has advanced it,
+  instead of resolving that release against the original pointer anchor. Clear
+  this marker whenever the pointer moves, so a return does not reuse it.
+  Measured visible/focused WebKit frames took roughly 200–300ms: the old 100ms
+  scroll cap discarded elapsed time. Preserve elapsed time up to a bounded
+  500ms and cross all reached neighbor centers in one preview commit, retaining
+  DOM-key guards, speed and exact data assertions without larger test budgets.
+- **Files:** both prescription components, rapid-drag regression, QA notes,
+  this log and `CHANGELOG.md`.
+- **Verification:** 12 repeated rapid-scroll regressions pass across three
+  development engines, then all 30 rapid/top-edge repeats pass across five
+  production profiles with an explicit guest build. Independent review found
+  no actionable issue. Lint, formatting, types, documentation and whitespace
+  checks pass. All 60 rapid, fast-multi-row and top/bottom-edge repeats then pass
+  across five production profiles after elapsed-time and collision catch-up fixes.
+  The complete production matrix then passes 143/143. Complete the remaining
+  development matrix and final-head CI before deployment, with zero retries
+  and unchanged exact data, cancellation and performance assertions.
+- **Follow-ups:** publish both frontends and retain final CI/live receipts in
+  PR #9; no backend, schema, member-data change or merge is required.

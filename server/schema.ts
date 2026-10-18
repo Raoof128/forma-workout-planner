@@ -2,15 +2,14 @@ import { z } from "zod";
 import { dataSchema, validateData } from "../src/storage.js";
 
 // Keep the API contract tied to the same schema that validates browser backups.
-// Unknown member/ownership fields are stripped by dataSchema, so an imported
-// backup can never choose the database owner.
+// The API rejects unknown fields at every level; ownership comes from the session.
 export { dataSchema };
 
 // dataSchema handles the serialized shape. validateData also enforces the
 // cross-field invariant that the active session cannot already be in history.
 export const workspaceDataSchema = z.unknown().transform((value, context) => {
   try {
-    return validateData(value);
+    return validateData(value, { strict: true });
   } catch (error) {
     if (error instanceof z.ZodError) {
       for (const issue of error.issues) {

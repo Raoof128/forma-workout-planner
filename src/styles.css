@@ -29,6 +29,45 @@
   --radius: 14px;
   --display: "Barlow Condensed", sans-serif;
   --sidebar: 238px;
+  /* Drag motion: Material 3 Expressive fast-spatial (lift) and
+     default-spatial (settle) springs, plus M3 standard easing. */
+  --spring-lift: linear(
+    0,
+    0.185,
+    0.527,
+    0.827,
+    1.011,
+    1.086,
+    1.091,
+    1.063,
+    1.031,
+    1.007,
+    0.995,
+    0.991,
+    0.992,
+    0.995,
+    0.998,
+    1
+  );
+  --spring-settle: linear(
+    0,
+    0.122,
+    0.357,
+    0.586,
+    0.765,
+    0.886,
+    0.958,
+    0.995,
+    1.011,
+    1.015,
+    1.013,
+    1.01,
+    1.006,
+    1.004,
+    1.002,
+    1
+  );
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
 }
 * {
   box-sizing: border-box;
@@ -1223,8 +1262,9 @@ input[type="checkbox"] {
   margin-top: 25px;
 }
 .prescription {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 66px 66px 80px;
+  grid-template-columns: minmax(115px, 1fr) 48px 68px 65px 48px 60px 28px;
   align-items: center;
   gap: 10px;
   padding: 12px 0;
@@ -1262,6 +1302,250 @@ input[type="checkbox"] {
 }
 .reorder-actions .icon-button {
   background: #f4f6ef;
+}
+.prescription-order {
+  position: relative;
+  isolation: isolate;
+}
+/* Drag lift for prescription rows. The surface is a pseudo-element so the row
+   itself only translates and drop geometry stays exact. */
+.prescription:not(.labels) {
+  isolation: isolate;
+  transition: border-color 150ms var(--ease-standard);
+}
+.prescription:not(.labels)::before {
+  content: "";
+  position: absolute;
+  inset: 0 -10px;
+  z-index: -1;
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: 0 0 0 1px transparent;
+  opacity: 0;
+  scale: 0.985;
+  pointer-events: none;
+  transition:
+    opacity 180ms ease-out 60ms,
+    scale 415ms var(--spring-settle),
+    box-shadow 240ms var(--ease-standard);
+}
+.prescription.is-lifted,
+.prescription.is-lifted + .prescription {
+  border-top-color: transparent;
+}
+.prescription.is-lifted::before {
+  opacity: 1;
+  scale: 1.012;
+  box-shadow:
+    0 14px 32px #17221b2e,
+    0 3px 8px #17221b1f,
+    0 0 0 1px #aec477;
+  transition:
+    opacity 120ms ease-out,
+    scale 350ms var(--spring-lift),
+    box-shadow 200ms var(--ease-standard);
+}
+.prescription.is-lifted .row-drag-handle {
+  background: var(--lime);
+  color: var(--ink);
+}
+.prescription.is-landed::before {
+  animation: prescription-landed 700ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+@keyframes prescription-landed {
+  from {
+    opacity: 1;
+    scale: 1;
+    background: var(--lime-soft);
+    box-shadow: 0 0 0 1px #aec477;
+  }
+  to {
+    opacity: 0;
+    scale: 1;
+    background: var(--lime-soft);
+    box-shadow: 0 0 0 1px transparent;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .prescription.is-lifted::before {
+    scale: none;
+  }
+}
+.row-drag-handle {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+.row-drag-handle:active {
+  cursor: grabbing;
+}
+@media (pointer: coarse) {
+  .reorder-actions .row-drag-handle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+.routine-card-wrap {
+  position: relative;
+  min-width: 0;
+}
+.routine-card-wrap > .routine-card {
+  width: 100%;
+  height: 100%;
+}
+/* Drag lift for routine cards; the wrapper translates, the card scales. */
+.routine-card-wrap {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.routine-card-wrap > .routine-card {
+  transition:
+    border-color 0.2s,
+    box-shadow 240ms var(--ease-standard),
+    transform 0.2s,
+    scale 415ms var(--spring-settle);
+}
+.routine-grid.full-grid {
+  /* Card hit-testing measures offsets from the grid. */
+  position: relative;
+}
+.routine-grid.is-ordering,
+.routine-grid.is-ordering .routine-card {
+  cursor: grabbing;
+}
+.routine-grid.is-ordering .routine-card:hover {
+  transform: none;
+}
+.routine-card-wrap.is-lifted {
+  z-index: 3;
+}
+.routine-card-wrap.is-lifted > .routine-card {
+  transform: none;
+  scale: 1.03;
+  border-color: #aec477;
+  box-shadow:
+    0 22px 44px #17221b2e,
+    0 4px 12px #17221b1f,
+    0 0 0 1px #aec477;
+  transition:
+    border-color 120ms ease-out,
+    box-shadow 200ms var(--ease-standard),
+    scale 350ms var(--spring-lift);
+}
+.routine-card-wrap.is-landed > .routine-card {
+  animation: routine-card-landed 700ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+@keyframes routine-card-landed {
+  from {
+    border-color: #aec477;
+    box-shadow:
+      0 0 0 1px #aec477,
+      0 0 0 6px #dff78080;
+  }
+  to {
+    box-shadow:
+      0 0 0 1px transparent,
+      0 0 0 6px transparent;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .routine-card-wrap.is-lifted > .routine-card {
+    scale: none;
+  }
+}
+.routine-card-menu {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+}
+.routine-card-menu summary,
+.prescription-options summary {
+  cursor: pointer;
+  list-style: none;
+  border-radius: 8px;
+  text-align: center;
+  padding: 6px;
+  font-size: 20px;
+  background: var(--paper, #fff);
+}
+.routine-card-menu > div {
+  position: absolute;
+  top: 38px;
+  right: 0;
+  display: grid;
+  gap: 6px;
+  padding: 6px;
+  background: var(--paper, #fff);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px #0002;
+}
+.routine-card-menu .button {
+  white-space: nowrap;
+}
+.prescription-options {
+  position: relative;
+}
+.prescription-options[open] {
+  grid-column: 1 / -1;
+}
+.prescription-options[open] summary {
+  width: 32px;
+  margin-left: auto;
+}
+.prescription-options > div {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  padding: 16px;
+  box-shadow: 0 8px 30px #0002;
+}
+.prescription-options .field {
+  margin-bottom: 14px;
+}
+.prescription-options input:not([type="checkbox"]) {
+  text-align: left;
+  padding: 8px;
+}
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  margin: 12px 0;
+}
+.checkbox-field input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--ink);
+}
+.program-note {
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+.program-target {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 4px;
+}
+.superset-label {
+  color: var(--muted);
+  font-size: 13px;
+}
+.timer-adjustments {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.timer-adjustments .button {
+  flex: 1;
 }
 .prescription small {
   font-size: 11px;
@@ -1325,6 +1609,13 @@ input[type="checkbox"] {
 .library-card:hover {
   border-color: #9bb969;
   transform: translateY(-2px);
+}
+.library-card.is-selected {
+  background: var(--lime-soft);
+  border-color: #9bb969;
+}
+.routine-library-opener {
+  margin-bottom: 16px;
 }
 .library-card > div {
   flex: 1;
@@ -1592,7 +1883,9 @@ input[type="checkbox"] {
 }
 .set-row {
   display: grid;
-  grid-template-columns: 36px minmax(0, 1fr) minmax(0, 1fr) 48px;
+  grid-template-columns:
+    36px minmax(0, 1fr) minmax(0, 1fr) minmax(45px, 0.7fr)
+    48px;
   align-items: center;
   gap: 14px;
   padding: 8px;
@@ -2526,7 +2819,9 @@ input[type="checkbox"] {
     font-size: 11px;
   }
   .set-row {
-    grid-template-columns: 24px minmax(0, 1fr) minmax(0, 1fr) 44px;
+    grid-template-columns:
+      24px minmax(0, 1fr) minmax(0, 1fr) minmax(40px, 0.7fr)
+      44px;
     padding: 8px 0;
     gap: 8px;
   }
@@ -2942,4 +3237,36 @@ input[type="checkbox"] {
 .sidebar .legal-links {
   flex-direction: row;
   align-items: center;
+}
+
+/* Programming fields retain labelled inputs on narrow screens. */
+@media (max-width: 700px) {
+  .prescription:not(.labels) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .prescription-name {
+    grid-column: 1 / -1;
+  }
+  .prescription-options > div {
+    right: auto;
+    left: 0;
+  }
+  .prescription-options {
+    grid-column: 1 / -1;
+  }
+  .prescription-field > span {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .prescription.labels {
+    display: none;
+  }
+  .set-row {
+    grid-template-columns:
+      26px minmax(0, 1fr) minmax(0, 1fr) minmax(40px, 0.7fr)
+      34px;
+    gap: 6px;
+  }
 }

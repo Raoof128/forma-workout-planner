@@ -9,6 +9,8 @@ import {
   StretchHorizontal,
   StretchVertical,
   MoveUp,
+  Check,
+  Plus,
 } from "lucide-react";
 import { PageHeading, Empty, Button } from "./UI";
 import { selectableExercises as exercises } from "../data";
@@ -24,7 +26,9 @@ const muscleIcons = {
   Legs: Footprints,
   Core: Activity,
 };
-export default function Library() {
+export default function Library({ onToggle, selectedIds = [] }) {
+  const choosing = typeof onToggle === "function";
+  const pickedIds = new Set(selectedIds);
   const [query, setQuery] = useState("");
   const [muscle, setMuscle] = useState("All muscles");
   const [equipment, setEquipment] = useState("All equipment");
@@ -47,9 +51,15 @@ export default function Library() {
   return (
     <>
       <PageHeading
-        eyebrow="Know your movement"
-        title="Good form. Better sessions."
-        subtitle="Get to know your next movement. Explore your exercise library."
+        eyebrow={choosing ? "Build your routine" : "Know your movement"}
+        title={
+          choosing ? "Choose your movements." : "Good form. Better sessions."
+        }
+        subtitle={
+          choosing
+            ? "Select exercises, then return to your routine to set the details."
+            : "Get to know your next movement. Explore your exercise library."
+        }
       />
       <div className="library-toolbar">
         <div className="search-field">
@@ -132,11 +142,18 @@ export default function Library() {
       <div className="library-grid">
         {filtered.slice(0, visible).map((e) => {
           const Icon = muscleIcons[e.muscle] || Dumbbell;
+          const picked = pickedIds.has(e.id);
           return (
             <button
               key={e.id}
-              className="library-card"
-              onClick={() => setSelected(e)}
+              className={`library-card${choosing && picked ? " is-selected" : ""}`}
+              aria-pressed={choosing ? picked : undefined}
+              aria-label={
+                choosing
+                  ? `${picked ? "Remove" : "Add"} ${e.name} ${picked ? "from" : "to"} routine`
+                  : undefined
+              }
+              onClick={() => (choosing ? onToggle(e) : setSelected(e))}
             >
               {hasExerciseMedia(e.id) ? (
                 <ExerciseMedia id={e.id} name={e.name} compact />
@@ -152,7 +169,15 @@ export default function Library() {
                 <h3>{e.name}</h3>
                 <p>{e.equipment}</p>
               </div>
-              <ArrowUpRight size={19} />
+              {choosing ? (
+                picked ? (
+                  <Check size={19} aria-hidden="true" />
+                ) : (
+                  <Plus size={19} aria-hidden="true" />
+                )
+              ) : (
+                <ArrowUpRight size={19} />
+              )}
             </button>
           );
         })}

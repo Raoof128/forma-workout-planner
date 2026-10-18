@@ -4,7 +4,9 @@
 
 ## Plan a routine
 
-Open **My routines** to use a starter routine or create your own. Give it a name, choose exercises, set an estimated duration, and enter the number of sets, reps, and starting weight. Use the up/down controls to reorder exercises. Save the routine before starting.
+Open **My routines** to use a starter routine or create your own. Give it a name, choose exercises, set an estimated duration, and enter the number of sets, reps, and starting weight. Drag an exercise by its grip, or use the up/down controls, to reorder exercises. Save the routine before starting.
+
+To change the order of your routines, drag a card on **My routines** (on a phone, touch and hold the card first), or open its **⋯** menu and choose **Move earlier** or **Move later**. Press Escape while dragging to cancel.
 
 Changing or deleting a routine does not rewrite completed workout history. An active workout keeps its own exercise and prescription snapshot.
 

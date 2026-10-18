@@ -24,7 +24,7 @@ import {
   Users,
   X,
 } from "lucide-react";
-import { exercises } from "../data";
+import { exerciseById } from "../data";
 import { readBackupFile } from "../storage";
 import { BrandSymbol } from "./BrandMark";
 import Loading, { LoadingGlyph } from "./Loading";
@@ -698,8 +698,7 @@ export default function Account({
               weight,
               name:
                 exercise.name ||
-                exercises.find((item) => item.id === exercise.exerciseId)
-                  ?.name ||
+                exerciseById.get(exercise.exerciseId)?.name ||
                 key,
             });
         }),

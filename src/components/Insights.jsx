@@ -1,3 +1,4 @@
+import { entryKey } from "../routineProgramming.js";
 import { useState } from "react";
 import HistoryEditor from "./HistoryEditor";
 import {
@@ -289,7 +290,7 @@ export function WorkoutHistory({ history, onStart, onSave, onDelete }) {
                 </span>
               </div>
               {detailExercises.map((e) => (
-                <div className="history-exercise" key={e.exerciseId}>
+                <div className="history-exercise" key={entryKey(e)}>
                   <strong>
                     {exerciseById.get(e.exerciseId)?.name || e.exerciseId}
                   </strong>
@@ -299,6 +300,7 @@ export function WorkoutHistory({ history, onStart, onSave, onDelete }) {
                       .map((s, i) => (
                         <span key={i}>
                           {measurementText(exerciseById.get(e.exerciseId), s)}
+                          {s.rpe != null && ` · RPE ${s.rpe}`}
                         </span>
                       ))}
                   </p>

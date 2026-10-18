@@ -1,0 +1,27 @@
+{
+  "source": "27e3728",
+  "checkedAt": "2026-10-17T03:03:20.722Z",
+  "results": [
+    {
+      "file": "/index.html",
+      "status": 200,
+      "bytes": 1013,
+      "sha256": "1e105a3e7a84736e12531dbc81c9473d1c7ad3ddcbd588b20d7f2859efb1e9f6",
+      "matchesBuild": true
+    },
+    {
+      "file": "/assets/index-BFiqWsxh.js",
+      "status": 200,
+      "bytes": 2705673,
+      "sha256": "f9f73f3fb12823c2101b930263e7f2fb7561994bc2e2937edaccff6c2401a681",
+      "matchesBuild": true
+    },
+    {
+      "file": "/assets/index-DKu8XhPK.css",
+      "status": 200,
+      "bytes": 75332,
+      "sha256": "27dbde52fe0aabaaa996938be7c1ce5fbc25d87699fa4872c2bce72839b91f42",
+      "matchesBuild": true
+    }
+  ]
+}

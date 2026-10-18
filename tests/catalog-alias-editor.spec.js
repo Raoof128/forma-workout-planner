@@ -36,5 +36,15 @@ test("removing and restoring a canonical group preserves all historical alias pr
   const saved = await page.evaluate(() =>
     JSON.parse(localStorage.getItem("forma-v1")),
   );
-  expect(saved.routines[0].exercises).toEqual(rows);
+  expect(saved.routines[0].exercises).toEqual(
+    rows.map((row) => ({
+      ...row,
+      repsMax: null,
+      rpe: null,
+      restSeconds: null,
+      perSide: false,
+      note: null,
+      groupId: null,
+    })),
+  );
 });

@@ -4,21 +4,25 @@
 
 ## Workspace envelope
 
-The version 1 workspace shape is shared by guest mode, JSON backups, and the authenticated server workspace. Guest mode stores it under `localStorage['forma-v1']`; account mode stores it as owner-scoped JSONB in PostgreSQL. Exports contain the same versioned envelope. `src/storage.js` is the source of truth for validation; this document explains the data contract. See [account database details](accounts/database.md) for the server revision and ownership boundary.
+The version 2 workspace shape is shared by guest mode, JSON backups, and the authenticated server workspace. Guest mode stores it under `localStorage['forma-v1']`; account mode stores it as owner-scoped JSONB in PostgreSQL. Exports contain the same versioned envelope. `src/storage.js` is the source of truth for validation; this document explains the data contract. See [account database details](accounts/database.md) for the server revision and ownership boundary.
 
 | Field      | Meaning                                                                                   |
 | ---------- | ----------------------------------------------------------------------------------------- |
-| `version`  | Schema version; currently `1`                                                             |
+| `version`  | Schema version; currently `2`                                                             |
 | `revision` | Monotonic workspace revision used for conflict detection; defaults to 0 for older backups |
 | `routines` | Routine definitions, each with a unique ID and ordered exercise prescriptions             |
 | `active`   | One active workout snapshot, or `null`                                                    |
 | `history`  | Completed workout snapshots with unique IDs, completion dates, and durations              |
-| `profile`  | Display name and weekly goal                                                              |
+| `profile`  | Display name, weekly goal, default rest and timer mute preference                                                              |
 | `schedule` | Unique weekday indices, Monday = 0 through Sunday = 6                                     |
+
+See [routine programming and migration](routine-programming-v2.md) for rep ranges, RPE, exercise rest, per-side targets, cues, supersets and rollout commands.
+
+Routine `archivedAt` is an optional bounded millisecond timestamp retained from live v1 data. Archived routines remain in backups and history links; restore removes the timestamp. Editing preserves it and duplication creates an active copy.
 
 ## Routine and session records
 
-Routine names contain 1–60 trimmed characters. Routine exercises reference built-in exercise IDs and specify 1–12 sets, 1–100 reps, and 0–1,000 kg. Estimated duration is 1–1,000 minutes. Duplicate exercises within a routine are rejected; use multiple sets for the same exercise.
+Routine names contain 1–60 trimmed characters. Routine exercises reference built-in exercise IDs and specify 1–12 sets, 1–100 reps, and 0–1,000 kg. Estimated duration is 1–1,000 minutes. Duplicate row identities are rejected. Migrated alias collisions retain stable `entryId` values so separate prescriptions survive.
 
 A session snapshots the routine name and prescribed sets at the start. Each set has `weight`, `reps`, and `done`. Depending on the exercise, routine prescriptions and sets also carry `durationSeconds` (1–86,400) and/or `distanceMeters` (1–1,000,000). Completed sets require all fields appropriate to that exercise's measurement profile. Unfinished fields can be blank while being edited. Fractional weights are supported consistently by validation and editing controls. Session notes can contain up to 10,000 characters. Each exercise can contain up to 100 logged sets, and each routine or session at most 100 exercises.
 
@@ -28,7 +32,7 @@ The profile name contains 1–50 trimmed characters and the weekly goal is 1–7
 
 ## Compatibility and recovery
 
-Only version 1 backups are accepted. Existing version 1 snapshots without `revision`, notes, or rest-state fields receive their documented defaults during validation. Unknown exercise IDs, duplicate record IDs, invalid nested objects, and unsupported versions are rejected before replacement.
+Version 1 and version 2 backups are accepted; v1 data migrates idempotently to v2. Existing version 1 snapshots without `revision`, notes, or rest-state fields receive their documented defaults during validation. Unknown exercise IDs, duplicate record IDs, invalid nested objects, and unsupported versions are rejected before replacement.
 
 Malformed saved data is left untouched and opens the recovery screen. Restore/reset preserve the previous raw content under a `forma-v1-recovery-*` key before replacing the main workspace. If preservation or replacement fails, recovery reports an error. Originals use unique keys even when multiple restores happen in the same millisecond. When restoring out of temporary mode, both the last saved version and unsaved in-memory version are preserved if they differ. Browser quota is implementation-dependent and may be smaller than the 20 MiB (20,971,520 bytes) backup-input limit. Both file imports and raw saved JSON are size-checked before parsing.
 

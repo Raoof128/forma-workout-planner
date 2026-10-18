@@ -10,8 +10,8 @@ const EFFECTIVE = "13 October 2026";
 
 const privacy = {
   title: "Privacy Policy",
-  version: "1.2",
-  effective: EFFECTIVE,
+  version: "1.3",
+  effective: "17 October 2026",
   summary:
     "FORMA is a workout planner. In guest mode your training data stays in your browser and is never sent to us. If you create an account, we store only what is needed to run it: your name, email, sign-in records and your workout data. We do not sell your information, show ads, or use analytics or tracking.",
   blocks: [
@@ -38,7 +38,7 @@ const privacy = {
         "Account details: your display name (up to 60 characters) and email address.",
         "Your password, which we never store in readable form. We keep only a one-way scrypt hash.",
         "Optional two-step verification: an authenticator secret and recovery codes, stored encrypted.",
-        "Workout data: routines, exercises, sets, repetitions, weights, exercise durations and distances, workout dates and durations, notes, your weekly goal and training schedule.",
+        "Workout data: routines, exercises, sets, repetition ranges, weights, target and actual ratings of perceived exertion (RPE), rest durations, per-side targets, superset groups, exercise durations and distances, workout dates and durations, notes, your weekly goal and training schedule.",
       ],
     },
     { h3: "Information collected automatically" },
