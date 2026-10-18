@@ -60,9 +60,11 @@ test("guest account entry offers accessible sign-in and registration flows", asy
   await page.getByRole("button", { name: /back to sign in/i }).click();
   await page.getByLabel("Email address").fill("resend@example.test");
   await page.getByRole("button", { name: "Resend verification" }).click();
-  await expect(page.getByRole("status")).toContainText(
-    "If this address needs verification, a link is on its way.",
-  );
+  await expect(
+    page.getByRole("status").filter({
+      hasText: "If this address needs verification, a link is on its way.",
+    }),
+  ).toContainText("If this address needs verification, a link is on its way.");
   await page.getByRole("button", { name: /continue as guest/i }).click();
   await expect(
     page.getByRole("heading", { name: "A little stronger, every day." }),

@@ -4,6 +4,36 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-18 — Sidebar sign out and working session sign-out
+
+- **Fix:** "Sign out everywhere" failed for anyone who had signed in more
+  than 5 minutes earlier. The API returned `403 reauthentication_required`,
+  and the screen showed that raw code. It now works at any time, because it
+  also ends the session that asks, so a stolen session cannot use it to keep
+  access.
+- **Step-up:** "Sign out other devices" and revoking one device keep the
+  5-minute rule. An older sign-in now confirms the password, plus the 2-step
+  code when enabled, in a prompt in the sessions panel. The server checks them
+  in the same request using the existing password-check throttle and TOTP
+  replay table. No session or cookie changes. Their errors now appear in the
+  sessions panel in plain words; previously some went to the password form.
+- **Sidebar:** the signed-in profile row opens an account menu with
+  **Manage account** and **Sign out**. It follows the WAI-ARIA menu button
+  pattern (arrow keys, Home/End, Escape returns focus) and works in the phone
+  drawer. Guests keep the direct link to Account.
+- **Toasts:** messages raised while signing in or out, such as "You’ve signed
+  out.", were lost when the workspace remounted for the new account. Toasts
+  now live above that boundary.
+- **Row overflow:** the editor-row drag surface (from the 2026-10-17 drag
+  animation) extended 10px past each row, so every row reported 6px of
+  horizontal overflow. The responsive guard caught this only when it measured
+  after rows loaded. The side bleed is now a shadow spread, which adds no
+  overflow; the lifted look is unchanged.
+- **Files:** `server/app.ts`, `src/App.jsx`, `src/account/AccountProvider.jsx`,
+  `src/components/Account.jsx`, `src/components/Navigation.jsx`,
+  `src/styles.css`, `server/tests/session-step-up.test.ts`,
+  `tests/accounts-sign-out.spec.js`, `docs/security/*`.
+
 ### Raouf: 2026-10-18 — Coach tokens deployed to production
 
 - Owner-authorised production release of the read-only coach token API on top

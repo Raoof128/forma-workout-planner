@@ -49,6 +49,7 @@ async function accountApi(path, method = "GET", memberId, payload) {
     );
     error.status = response.status;
     error.code = body?.error;
+    error.twoFactor = body?.twoFactor === true;
     throw error;
   }
   return body;
@@ -261,14 +262,20 @@ export function AccountProvider({ children }) {
       listSessions: call(async () => {
         return boundAccountApi("/api/account/sessions");
       }),
-      revokeSession: call(({ id }) =>
+      // An older sign-in confirms these with { password, code } (step-up).
+      revokeSession: call(({ id, ...confirmation }) =>
         boundAccountApi(
           `/api/account/sessions/${encodeURIComponent(id)}/revoke`,
           "DELETE",
+          confirmation.password ? confirmation : undefined,
         ),
       ),
-      signOutOthers: call(() =>
-        boundAccountApi("/api/account/sessions/revoke-others", "POST"),
+      signOutOthers: call((confirmation = {}) =>
+        boundAccountApi(
+          "/api/account/sessions/revoke-others",
+          "POST",
+          confirmation.password ? confirmation : undefined,
+        ),
       ),
       // Read-only coach tokens. The plaintext token is in the create result
       // only; it is never stored client-side.

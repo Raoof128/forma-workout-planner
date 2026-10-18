@@ -55,7 +55,9 @@ async function createAccount(page, name, email) {
   await page
     .getByRole("button", { name: "Create account", exact: true })
     .click();
-  await expect(page.getByRole("status")).toContainText("verification link");
+  await expect(
+    page.getByRole("status").filter({ hasText: "verification link" }),
+  ).toContainText("verification link");
   const verification = await verificationEmail(page.request, email);
   await page.goto(verification.url);
   await clickMainNavigation(page, "Account");

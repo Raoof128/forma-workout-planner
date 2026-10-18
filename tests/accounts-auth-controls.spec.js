@@ -69,7 +69,9 @@ async function registerAndSignIn(page, email) {
   await page
     .getByRole("button", { name: "Create account", exact: true })
     .click();
-  await expect(page.getByRole("status")).toContainText("verification link");
+  await expect(
+    page.getByRole("status").filter({ hasText: "verification link" }),
+  ).toContainText("verification link");
   const verification = await latestVerification(page.request, email);
   expect(verification.url).toBeTruthy();
   await page.goto(verification.url);

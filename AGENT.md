@@ -58,6 +58,30 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-18 — Session sign-out step-up and sidebar menu
+
+- `revoke-all` needs only a member session. `revoke-others` and single revoke
+  use `confirmStepUp` in `server/app.ts`: a session under 5 minutes old, or
+  `{ password, code? }` in the JSON body. Keep both checks on the
+  `password-check` throttle key and `storeTotpUse` replay table, and never
+  mutate the session or set cookies to satisfy step-up.
+- Do not re-authenticate in the browser by calling `sign-in/email` while
+  signed in: Better Auth's two-factor hook clears the current session cookie
+  before the code step, which flips the app to guest mid-prompt.
+- 403 bodies include `twoFactor` so the client knows to ask for a code.
+  `accountApi` attaches it as `error.twoFactor`.
+- `AccountWorkspace` remounts per account (keyed by user ID). App-wide state
+  that must survive sign-in/out, such as toasts, belongs in `App` above it.
+- Drag lift surfaces must not extend their box past the row: use a
+  box-shadow spread for side bleed. Any wider box counts as scrollable overflow
+  and trips `tests/responsive.spec.js` at 540px.
+- Assert a specific status message with
+  `getByRole("status").filter({ hasText })`: the app toast is also a status
+  region and now survives sign-in/out.
+- Account browser tests age sessions directly in the isolated
+  `forma_browser_*` schema to simulate older sign-ins; they need
+  PostgreSQL 18 (`RETURNING old.*` in the throttle).
+
 ### Raouf: 2026-10-18 — Coach tokens production deployment
 
 - The production API host is the shared DigitalOcean Droplet (address in the

@@ -22,20 +22,21 @@ administrative API exists.
 
 ## Route inventory
 
-| Route                                               | Method | Authentication                                                | Owner rule                                          | Limit                                               |
-| --------------------------------------------------- | ------ | ------------------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
-| `/api/health` → `/healthz`                          | GET    | None                                                          | None                                                | Worker                                              |
-| `/api/workspace`                                    | GET    | Session + member reference                                    | Session user                                        | Worker                                              |
-| `/api/workspace`                                    | PUT    | Session + member reference, checked before the body is parsed | Session user, revision CAS, idempotent operation ID | 120 per minute per member, 20 MiB, aggregate bounds |
-| `/api/workspace/export`                             | GET    | Session + member reference                                    | Session user                                        | Worker                                              |
-| `/api/account/sessions`                             | GET    | Session + member reference                                    | `WHERE "userId" = session user`                     | Worker                                              |
-| `/api/account/sessions/:ref/revoke`                 | DELETE | Fresh session (5 min)                                         | Reference matched within caller's sessions          | Worker                                              |
-| `/api/account/sessions/revoke-others`, `revoke-all` | POST   | Fresh session (5 min)                                         | Caller's sessions only                              | Worker                                              |
-| `/api/account/coach-tokens`                         | GET    | Session + member reference                                    | `WHERE owner_id = session user`                     | Worker                                              |
-| `/api/account/coach-tokens`                         | POST   | Fresh session (5 min) + same-origin `Origin`                  | Session user; at most 5 active tokens               | Worker                                              |
-| `/api/account/coach-tokens/:id`                     | DELETE | Session + member reference + same-origin `Origin`             | ID matched within caller's tokens                   | Worker                                              |
-| `/api/coach/workspace`                              | GET    | Bearer coach token (HMAC digest lookup); cookies ignored      | Token owner; read-only summary, no identity fields  | 20 failures/15 min per IP; 120 reads/hour per token |
-| `/api/auth/*` (allowlisted)                         | Varies | See [authentication](authentication.md)                       | Better Auth session user                            | Per-IP and per-account                              |
+| Route                                 | Method | Authentication                                                | Owner rule                                          | Limit                                               |
+| ------------------------------------- | ------ | ------------------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `/api/health` → `/healthz`            | GET    | None                                                          | None                                                | Worker                                              |
+| `/api/workspace`                      | GET    | Session + member reference                                    | Session user                                        | Worker                                              |
+| `/api/workspace`                      | PUT    | Session + member reference, checked before the body is parsed | Session user, revision CAS, idempotent operation ID | 120 per minute per member, 20 MiB, aggregate bounds |
+| `/api/workspace/export`               | GET    | Session + member reference                                    | Session user                                        | Worker                                              |
+| `/api/account/sessions`               | GET    | Session + member reference                                    | `WHERE "userId" = session user`                     | Worker                                              |
+| `/api/account/sessions/:ref/revoke`   | DELETE | Fresh session (5 min), or password (+ TOTP) in the body       | Reference matched within caller's sessions          | Worker; password-check throttle                     |
+| `/api/account/sessions/revoke-others` | POST   | Fresh session (5 min), or password (+ TOTP) in the body       | Caller's sessions only                              | Worker; password-check throttle                     |
+| `/api/account/sessions/revoke-all`    | POST   | Session + member reference                                    | Caller's sessions only, including the current one   | Worker                                              |
+| `/api/account/coach-tokens`           | GET    | Session + member reference                                    | `WHERE owner_id = session user`                     | Worker                                              |
+| `/api/account/coach-tokens`           | POST   | Fresh session (5 min) + same-origin `Origin`                  | Session user; at most 5 active tokens               | Worker                                              |
+| `/api/account/coach-tokens/:id`       | DELETE | Session + member reference + same-origin `Origin`             | ID matched within caller's tokens                   | Worker                                              |
+| `/api/coach/workspace`                | GET    | Bearer coach token (HMAC digest lookup); cookies ignored      | Token owner; read-only summary, no identity fields  | 20 failures/15 min per IP; 120 reads/hour per token |
+| `/api/auth/*` (allowlisted)           | Varies | See [authentication](authentication.md)                       | Better Auth session user                            | Per-IP and per-account                              |
 
 Anything else returns 404 at the Worker and at the API.
 
