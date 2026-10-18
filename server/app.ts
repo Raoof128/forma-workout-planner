@@ -888,8 +888,11 @@ export async function createApp({
         return false;
       }
       if (twoFactor) {
+        // Six ASCII digits, checked without a regex on member input.
         const code =
-          typeof body?.code === "string" && /^\d{6}$/.test(body.code)
+          typeof body?.code === "string" &&
+          body.code.length === 6 &&
+          [...body.code].every((digit) => digit >= "0" && digit <= "9")
             ? body.code
             : null;
         let accepted = false;
