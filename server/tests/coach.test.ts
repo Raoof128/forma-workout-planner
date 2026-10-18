@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { randomUUID } from "node:crypto";
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { after, before, test } from "node:test";
@@ -59,15 +59,13 @@ before(async () => {
       "TEST_DATABASE_URL is required; coach token tests require real PostgreSQL.",
     );
   await adminPool.query(`CREATE SCHEMA ${schema}`);
-  for (const name of [
-    "0001-auth.sql",
-    "0002-workspace.sql",
-    "0003-security-throttle.sql",
-    "0005-coach-tokens.sql",
-  ]) {
-    await pool.query(
-      await readFile(join(testDir, "..", "migrations", name), "utf8"),
-    );
+  // Apply every versioned migration in order, like the runner does, so this
+  // suite follows the workspace schema whatever version is current.
+  const migrationsDir = join(testDir, "..", "migrations");
+  for (const name of (await readdir(migrationsDir))
+    .filter((entry) => entry.endsWith(".sql"))
+    .sort()) {
+    await pool.query(await readFile(join(migrationsDir, name), "utf8"));
   }
   app = await createApp({ pool, config });
   await app.ready();
