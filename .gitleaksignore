@@ -15,3 +15,9 @@ d6ffba239f13b16ab5de6b3db06ca642ce01c461:docs/qa/routine-programming-v2/deployme
 048aeb8fd2c74911cdcfe8677f085d9f84bb02e2:docs/qa/coach-tokens/README.md:generic-api-key:15
 048aeb8fd2c74911cdcfe8677f085d9f84bb02e2:docs/qa/coach-tokens/deployment.json:generic-api-key:10
 048aeb8fd2c74911cdcfe8677f085d9f84bb02e2:docs/qa/coach-tokens/deployment.json:generic-api-key:11
+# Public container image tags in the sign-out release record, not credentials.
+# Exact historical findings only; do not allowlist the rule or documentation path.
+6ff4ecf9c9b7d0dae556731473254ba5e1113d9e:docs/qa/sign-out/deployment.json:generic-api-key:13
+6ff4ecf9c9b7d0dae556731473254ba5e1113d9e:docs/qa/sign-out/deployment.json:generic-api-key:17
+6ff4ecf9c9b7d0dae556731473254ba5e1113d9e:docs/qa/sign-out/README.md:generic-api-key:16
+6ff4ecf9c9b7d0dae556731473254ba5e1113d9e:docs/qa/sign-out/README.md:generic-api-key:17

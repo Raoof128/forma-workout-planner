@@ -4,6 +4,16 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-18 — Operations dashboard runbook link
+
+- The private operations dashboard linked its recovery runbook through the
+  deleted `release/complete-live-catalog` branch (404). It now links to
+  `main`. Every other link to this repository or the FORMA sites was checked:
+  all resolve (the API origin's 403 is expected).
+- `npm run worker:deploy:dashboard` builds and deploys the dashboard Worker with
+  the same one-hour scoped token flow as the site (`deploy-public.mjs
+--dashboard`). Deployed as version `b2911e08-…`; Access still guards it.
+
 ### Raouf: 2026-10-18 — Sign-out release deployed
 
 - Owner-authorised release of PR #11 (`746fdf8`) to private staging and

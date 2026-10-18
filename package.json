@@ -30,6 +30,7 @@
     "worker:dev": "wrangler dev",
     "worker:deploy:staging": "VITE_ACCOUNT_MODE=account npm run build && NODE_USE_ENV_PROXY=1 node scripts/deploy-public.mjs --staging",
     "worker:deploy:production": "VITE_ACCOUNT_MODE=account npm run build && NODE_USE_ENV_PROXY=1 node scripts/deploy-public.mjs",
+    "worker:deploy:dashboard": "node scripts/build-dashboard.mjs && NODE_USE_ENV_PROXY=1 node scripts/deploy-public.mjs --dashboard",
     "build:server": "tsc -p tsconfig.server.json && mkdir -p build/server/migrations && cp server/migrations/*.sql build/server/migrations/"
   },
   "dependencies": {
