@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-17T03:03:41.795Z",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "noTransform": true,
+      "noBeacon": true
+    },
+    {
+      "path": "/api/health",
+      "status": 200
+    },
+    {
+      "path": "/api/workspace",
+      "status": 401
+    },
+    {
+      "path": "/api/auth/get-session",
+      "status": 200,
+      "anonymousSession": null
+    },
+    {
+      "environment": "staging",
+      "anonymousStatus": 302
+    }
+  ]
+}

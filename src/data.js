@@ -153,10 +153,24 @@ const originalExercises = [
 // Compatibility records keep every published ID and its original logging units.
 export const publishedExercises = [...originalExercises, ...catalog];
 export const exercises = [...publishedExercises, ...machineExercises];
-export const exerciseById = new Map(
-  exercises.map((exercise) => [exercise.id, exercise]),
-);
 export const selectableExercises = createCatalogView(exercises, curation);
+// Saved rows and pickers share reviewed names/equipment without changing metric units.
+const selectableById = new Map(selectableExercises.map((row) => [row.id, row]));
+export const exerciseById = new Map(
+  exercises.map((exercise) => {
+    const reviewed = selectableById.get(exercise.id);
+    const family = selectableById.get(canonicalId(exercise.id, curation));
+    return [
+      exercise.id,
+      {
+        ...exercise,
+        name: reviewed?.name ?? exercise.name,
+        equipment:
+          reviewed?.equipment ?? family?.equipment ?? exercise.equipment,
+      },
+    ];
+  }),
+);
 const reviewedGuides = new Map(selectableExercises.map((row) => [row.id, row]));
 export function guideExercise(id) {
   return (
@@ -218,7 +232,7 @@ export const starterRoutines = [
   },
 ];
 export const initialData = {
-  version: 1,
+  version: 2,
   routines: starterRoutines,
   history: [],
   active: null,

@@ -19,6 +19,10 @@ export function Settings({
 }) {
   const [name, setName] = useState(data.profile.name);
   const [goal, setGoal] = useState(data.profile.goal);
+  const [restSeconds, setRestSeconds] = useState(
+    data.profile.restSeconds ?? 90,
+  );
+  const [muted, setMuted] = useState(data.profile.muted ?? false);
   const original = useRef(data.profile);
   const [backup, setBackup] = useState(null);
   const [error, setError] = useState("");
@@ -28,7 +32,12 @@ export function Settings({
     event.preventDefault();
     setBusy(true);
     try {
-      const profile = { name: name.trim(), goal: Number(goal) };
+      const profile = {
+        name: name.trim(),
+        goal: Number(goal),
+        restSeconds: Number(restSeconds),
+        muted,
+      };
       if (await onSave(profile, original.current)) original.current = profile;
     } finally {
       setBusy(false);
@@ -84,6 +93,26 @@ export function Settings({
               </option>
             ))}
           </select>
+        </label>
+        <label className="field">
+          Default rest (seconds)
+          <input
+            type="number"
+            min="10"
+            max="600"
+            step="1"
+            required
+            value={restSeconds}
+            onChange={(event) => setRestSeconds(event.target.value)}
+          />
+        </label>
+        <label className="checkbox-field">
+          <input
+            type="checkbox"
+            checked={muted}
+            onChange={(event) => setMuted(event.target.checked)}
+          />
+          Mute rest timer sound
         </label>
         <p className="muted small">
           Weights are logged in kilograms (kg). Dates use Sydney time.

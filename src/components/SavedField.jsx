@@ -10,9 +10,10 @@ export default function SavedField({
 }) {
   const [draft, setDraft] = useState(value);
   const [focused, setFocused] = useState(false);
+  const [invalid, setInvalid] = useState(false);
   useEffect(() => {
-    if (!focused) setDraft(value);
-  }, [value, focused]);
+    if (!focused && !invalid) setDraft(value);
+  }, [value, focused, invalid]);
   return (
     <Tag
       {...props}
@@ -21,6 +22,7 @@ export default function SavedField({
       onBlur={() => setFocused(false)}
       onChange={(event) => {
         setDraft(event.target.value);
+        setInvalid(event.target.validity?.valid === false);
         onChange(event);
       }}
     />

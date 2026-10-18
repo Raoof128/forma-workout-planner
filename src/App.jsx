@@ -24,6 +24,7 @@ import Account from "./components/Account.jsx";
 import Loading from "./components/Loading.jsx";
 import Legal, { isLegalPage, legalTitle } from "./components/Legal.jsx";
 import { useAccount } from "./account/AccountProvider.jsx";
+import { isArchived } from "./routineProgramming.js";
 const equal = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 export default function App() {
   const account = useAccount();
@@ -125,11 +126,19 @@ function AccountWorkspace() {
       routineId: routine.id,
       startedAt: Date.now(),
       notes: "",
-      restSeconds: 90,
+      restSeconds: data.profile.restSeconds ?? 90,
       restEnd: null,
       restPaused: null,
       exercises: routine.exercises.map((item) => ({
         exerciseId: item.exerciseId,
+        ...(item.entryId ? { entryId: item.entryId } : {}),
+        targetReps: item.reps,
+        repsMax: item.repsMax,
+        rpe: item.rpe,
+        restSeconds: item.restSeconds,
+        perSide: item.perSide,
+        note: item.note,
+        groupId: item.groupId,
         sets: Array.from({ length: item.sets }, () => ({
           weight: item.weight,
           reps: item.reps,
@@ -174,12 +183,35 @@ function AccountWorkspace() {
       navigate("workout");
       return;
     }
+    if (routine && isArchived(routine)) {
+      notify("Restore this routine before starting a workout.");
+      return;
+    }
     if (!routine) {
       navigate("routines");
       setModal({ type: "editor" });
       return;
     }
     void begin(routine);
+  }
+  async function duplicateRoutine(routine) {
+    const copy = {
+      ...structuredClone(routine),
+      id: createId(),
+      name: `${routine.name.slice(0, 55)} copy`,
+    };
+    delete copy.archivedAt;
+    const result = await change((current) => {
+      const latest = current.routines.find((item) => item.id === routine.id);
+      if (!equal(latest, routine))
+        throw new Error("This routine changed. Reopen it before duplicating.");
+      return { ...current, routines: [...current.routines, copy] };
+    }, "Routine duplicated.");
+    if (result)
+      setModal({
+        type: "detail",
+        routine: result.data.routines.find((item) => item.id === copy.id),
+      });
   }
   async function saveRoutine(routine) {
     const original = modal?.routine;
@@ -203,6 +235,47 @@ function AccountWorkspace() {
       navigate("routines");
     }
     return !!result;
+  }
+  async function reorderRoutines(ids) {
+    const result = await change((current) => {
+      const moving = new Set(ids);
+      // Only the visible routines trade places; hidden ones keep their slots.
+      const slots = current.routines.flatMap((item, index) =>
+        moving.has(item.id) ? [index] : [],
+      );
+      if (slots.length !== ids.length)
+        throw new Error("Your routines changed. Try moving it again.");
+      const byId = new Map(current.routines.map((item) => [item.id, item]));
+      const routines = [...current.routines];
+      slots.forEach((slot, index) => {
+        routines[slot] = byId.get(ids[index]);
+      });
+      return { ...current, routines };
+    }, "Routine order saved.");
+    return !!result;
+  }
+  async function archiveRoutine(routine) {
+    const archived = isArchived(routine);
+    const result = await change(
+      (current) => {
+        const latest = current.routines.find((item) => item.id === routine.id);
+        if (!equal(latest, routine))
+          throw new Error(
+            "This routine changed. Reopen it before changing its archive status.",
+          );
+        const next = { ...latest };
+        if (archived) delete next.archivedAt;
+        else next.archivedAt = Date.now();
+        return {
+          ...current,
+          routines: current.routines.map((item) =>
+            item.id === routine.id ? next : item,
+          ),
+        };
+      },
+      archived ? "Routine restored." : "Routine archived.",
+    );
+    if (result) setModal(null);
   }
   async function updateSession(update) {
     const id = data.active?.id;
@@ -329,6 +402,9 @@ function AccountWorkspace() {
       </main>
     );
   const visiblePage = page;
+  const activeRoutines = (data?.routines ?? []).filter(
+    (routine) => !isArchived(routine),
+  );
   return (
     <div className="app-shell" data-saving={saving}>
       <a
@@ -407,7 +483,7 @@ function AccountWorkspace() {
               )}
               {visiblePage === "overview" && (
                 <Overview
-                  data={data}
+                  data={{ ...data, routines: activeRoutines }}
                   saved={issue !== "unavailable"}
                   onStart={start}
                   onRoutine={(routine) => setModal({ type: "detail", routine })}
@@ -420,6 +496,9 @@ function AccountWorkspace() {
               {visiblePage === "routines" && (
                 <Routines
                   routines={data.routines}
+                  onDuplicate={duplicateRoutine}
+                  onArchive={archiveRoutine}
+                  onReorder={reorderRoutines}
                   onOpen={(routine) => setModal({ type: "detail", routine })}
                   onCreate={() => setModal({ type: "editor" })}
                   onUseTemplate={async (template) => {
@@ -434,7 +513,13 @@ function AccountWorkspace() {
                       }),
                       "Workout template added to your routines.",
                     );
-                    if (result) setModal({ type: "detail", routine: copy });
+                    if (result)
+                      setModal({
+                        type: "detail",
+                        routine: result.data.routines.find(
+                          (item) => item.id === copy.id,
+                        ),
+                      });
                   }}
                 />
               )}
@@ -444,6 +529,7 @@ function AccountWorkspace() {
                   <Workout
                     key={data.active.id}
                     session={data.active}
+                    muted={data.profile.muted}
                     onUpdate={updateSession}
                     onFinish={finish}
                     onCancel={() =>
@@ -460,7 +546,7 @@ function AccountWorkspace() {
                   >
                     <Button
                       variant="lime"
-                      onClick={() => start(data.routines[0])}
+                      onClick={() => start(activeRoutines[0])}
                     >
                       Start workout
                     </Button>
@@ -469,7 +555,7 @@ function AccountWorkspace() {
               {visiblePage === "history" && (
                 <WorkoutHistory
                   history={data.history}
-                  onStart={() => start(data.routines[0])}
+                  onStart={() => start(activeRoutines[0])}
                   onSave={saveHistory}
                   onDelete={async (session) => {
                     const result = await change((current) => {
@@ -498,7 +584,7 @@ function AccountWorkspace() {
               {visiblePage === "progress" && (
                 <Progress
                   history={data.history}
-                  onStart={() => start(data.routines[0])}
+                  onStart={() => start(activeRoutines[0])}
                 />
               )}
               {visiblePage === "settings" && (
@@ -532,8 +618,10 @@ function AccountWorkspace() {
       {modal?.type === "detail" && (
         <RoutineDetail
           routine={modal.routine}
+          defaultRest={data.profile.restSeconds}
           onClose={() => setModal(null)}
           onStart={start}
+          onArchive={archiveRoutine}
           onEdit={(routine) => setModal({ type: "editor", routine })}
           onDelete={(routine) => setModal({ type: "delete", routine })}
         />
@@ -541,6 +629,7 @@ function AccountWorkspace() {
       {modal?.type === "editor" && (
         <RoutineEditor
           routine={modal.routine}
+          defaultRest={data.profile.restSeconds}
           onClose={() => setModal(null)}
           onSave={saveRoutine}
         />

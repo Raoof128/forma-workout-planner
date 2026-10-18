@@ -1,0 +1,45 @@
+{
+  "frontendSource": "27e3728",
+  "apiSource": "cca9b07",
+  "schemaVersion": 2,
+  "production": {
+    "url": "https://forma.raoufabedini.dev",
+    "workerVersion": "e6ea40f3-dbc8-46ee-a7d6-5fc9eb5205ce",
+    "apiMemoryBytes": 268435456
+  },
+  "staging": {
+    "workerVersion": "29a7cfc6-0caf-428f-9ba8-58803b287573",
+    "apiMemoryBytes": 335544320
+  },
+  "api": {
+    "imageTag": "forma-api:routine-v2-20261017-cca9b07",
+    "configSha256": "0291febef76ec8143eab141fcdea6b5e369d78e15aeca2660007b99c5f095323",
+    "manifestSha256": "5674089fac6cfc10e3f5a5443640996e876ed816f9e2ff1ae7d9bdf8bd0f6808",
+    "transferArchiveSha256": "392715a1aabb1dfac94e4372c2f05eee220516a24d9b79cfdc3f5106e9837df1",
+    "node": "26.11.1",
+    "uid": 10001,
+    "portsPublished": false
+  },
+  "dataPreservation": {
+    "verifiedEncryptedSignedBackupsBeforeAndAfter": true,
+    "workspaceRoutineHistoryActiveCountsPreserved": true,
+    "allStoredWorkspacesValidatedOnHost": true,
+    "legacyArchiveTimestampsPreserved": true,
+    "unrelatedContainerIdsUnchanged": true,
+    "memberRowsExportedToSandbox": false,
+    "appliedMigrationsEdited": false
+  },
+  "verifiedCases": {
+    "unit": 89,
+    "apiNode26": 49,
+    "worker": 21,
+    "operations": 14,
+    "developmentBaseline": 348,
+    "developmentArchiveAndProgramming": 15,
+    "productionUniqueIncludingExactReplays": 70,
+    "productionBuiltAccount": 55,
+    "hostedProduction": 15,
+    "hostedStaging": 15
+  },
+  "temporaryAccess": "SSH ingress/DNS/app/service credential and scoped maintenance tokens removed; frontend smoke policies/credentials and deployment tokens revoked"
+}

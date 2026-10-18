@@ -79,6 +79,9 @@
 .account-session-state > h1 {
   max-width: 640px;
 }
+.account-session-state:has(.forma-loading-panel) {
+  background: var(--lime);
+}
 .forma-loading-panel {
   position: relative;
   display: grid;

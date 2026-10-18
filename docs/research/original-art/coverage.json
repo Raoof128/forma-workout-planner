@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "total": 1414,
-  "accepted": 1414,
+  "total": 1411,
+  "accepted": 1411,
   "assignments": [
     {
       "exerciseId": "bench",
@@ -708,7 +708,7 @@
     {
       "exerciseId": "db-band-assisted-pull-up",
       "name": "Band Assisted Pull-Up",
-      "equipment": "Specialty equipment",
+      "equipment": "Band",
       "guideSha256": "35a8a4ed976cd47981f1397bbc337c14bfe3344e6c0e0c53a1a58babac7d0f64",
       "status": "accepted",
       "assetId": "forma-original-corrections-006-0-0",
@@ -1545,7 +1545,7 @@
     {
       "exerciseId": "db-box-squat-with-bands",
       "name": "Box Squat with Bands",
-      "equipment": "Barbell",
+      "equipment": "Barbell + Band",
       "guideSha256": "027bd06864afcc4c6eb801758f01c4a72aaa9d4cf32b7ee4ef9d51ed44cda973",
       "status": "accepted",
       "assetId": "forma-original-movements-012-3-2",
@@ -2517,7 +2517,7 @@
     {
       "exerciseId": "db-close-grip-ez-bar-curl-with-band",
       "name": "Close-Grip EZ-Bar Curl with Band",
-      "equipment": "EZ bar",
+      "equipment": "EZ bar + Band",
       "guideSha256": "cc427b6c314308bb9afca33c2cb85c53715dc57c343f722ebbbb21e0b8f45cce",
       "status": "accepted",
       "assetId": "forma-original-movements-018-3-0",
@@ -2553,7 +2553,7 @@
     {
       "exerciseId": "db-close-grip-push-up-off-of-a-dumbbell",
       "name": "Close-Grip Push-Up off of a Dumbbell",
-      "equipment": "Bodyweight",
+      "equipment": "Dumbbell",
       "guideSha256": "70854999d395a1617b7dcb2f22bfceed1d2edec134cead94b7e2afdd5984a54e",
       "status": "accepted",
       "assetId": "forma-original-movements-018-2-1",
@@ -2884,15 +2884,6 @@
       "reviewNote": "Visually checked against complete guide: specified apparatus, body support, grip and representative exercise phase; intact anatomy."
     },
     {
-      "exerciseId": "wger-4b23738a-67a8-41af-996d-abc53a7c3f97",
-      "name": "Incline dumbbell press",
-      "equipment": "Dumbbell + Incline bench",
-      "guideSha256": "0dd09e9a87bd2304c4d17e9549cdaa98e9091265a7a8ee0fd4a1d665e01c1bca",
-      "status": "accepted",
-      "assetId": "forma-original-authored-b-001-retry-0-1",
-      "reviewNote": "Shallow approximately30degree bench now supports head upperback and hips; both feet planted, independent dumbbells beside upper chest with straight wrists above elbows."
-    },
-    {
       "exerciseId": "wger-73646b21-62e3-493b-8d75-4179326cd404",
       "name": "DB Wrist Extension",
       "equipment": "Dumbbell",
@@ -2913,7 +2904,7 @@
     {
       "exerciseId": "db-deadlift-with-bands",
       "name": "Deadlift with Bands",
-      "equipment": "Barbell",
+      "equipment": "Barbell + Band",
       "guideSha256": "637ae3c53a66684689c0cd343f704db2cb45ab311eb4b04ecb8612ab85bba902",
       "status": "accepted",
       "assetId": "forma-original-movements-021-0-2",
@@ -3462,7 +3453,7 @@
     {
       "exerciseId": "wger-e5ccfcaf-d93c-4924-9042-24037f3f0499",
       "name": "Dumbbell Hip Thrust",
-      "equipment": "Bench",
+      "equipment": "Dumbbell + Bench",
       "guideSha256": "71f8f4aa2da9ebe4fbbff7810a0c864567f2cd0c86af7940fc775174fac8a00c",
       "status": "accepted",
       "assetId": "forma-original-movements-026-0-2",
@@ -3669,7 +3660,7 @@
     {
       "exerciseId": "wger-412ba9ab-ae29-4411-9bbc-74af1263494c",
       "name": "Dumbbell Side Squat",
-      "equipment": "Bodyweight",
+      "equipment": "Dumbbell",
       "guideSha256": "b60795c4bacac36ad1862e938483bdc8d581ee55f702d8e82f687cc2851035f3",
       "status": "accepted",
       "assetId": "forma-original-movements-028-3-1",
@@ -3678,7 +3669,7 @@
     {
       "exerciseId": "wger-7cc24acf-3fc9-4d14-a461-cd00d1d18f0e",
       "name": "Dumbbell Single-leg Hip Thrust",
-      "equipment": "Barbell",
+      "equipment": "Dumbbell + Bench",
       "guideSha256": "d3d46ce5d4729afa460e8db971c32f8e0ea826cade5521791ba66c10a909f7c2",
       "status": "accepted",
       "assetId": "forma-original-corrections-005-2-1",
@@ -3957,7 +3948,7 @@
     {
       "exerciseId": "wger-29a361d5-1300-4fb4-90d6-d6350bec9cb9",
       "name": "Exercise Band Dorsiflexion",
-      "equipment": "Bodyweight",
+      "equipment": "Bodyweight + Band",
       "guideSha256": "21067dc36f6160696030a0a586356a5e003fa540f4274568a2f0efc530064ae4",
       "status": "accepted",
       "assetId": "forma-original-corrections-010-2-0",
@@ -3966,7 +3957,7 @@
     {
       "exerciseId": "wger-70c97a79-5e88-4549-a74c-0e5190a5c048",
       "name": "Exercise Band Plantarflexion",
-      "equipment": "Bodyweight",
+      "equipment": "Bodyweight + Band",
       "guideSha256": "272950fa14a2f29c7b587376df0a377a158280d1812a1581297c9141bef449fe",
       "status": "accepted",
       "assetId": "forma-original-movements-031-2-0",
@@ -5206,15 +5197,6 @@
       "reviewNote": "Visually inspected: depicted cable tower, pulley mechanism, bench/foot support/ball configuration matches required equipment family. Selected movement guides determine precise attachment, pulley setting and bench placement; this is labelled an equipment reference."
     },
     {
-      "exerciseId": "wger-e5e17c42-3c34-410b-84ab-81fde378778f",
-      "name": "Incline Chest Press DB",
-      "equipment": "Dumbbell",
-      "guideSha256": "4a3dbe65967665e598ea9c11865ede509086fe5ffbbc4f5f628c8ed3e4b13b3f",
-      "status": "accepted",
-      "assetId": "forma-original-movements-041-1-1",
-      "reviewNote": "Reviewed lateral-thigh foam contact, long-arm inchworm plank phase, prone incline reverse fly, supported incline dumbbell chest press, close-grip incline barbell press, secured-foot incline abdominal curl, prone neutral-grip Y raise, palms-in incline press, supinated incline curl and bent-elbow wide fly."
-    },
-    {
       "exerciseId": "wger-fca05168-7212-42ec-8927-efb1e8dd0971",
       "name": "Incline Close Grip Barbell Bench Press",
       "equipment": "Barbell",
@@ -5267,15 +5249,6 @@
       "status": "accepted",
       "assetId": "forma-original-movements-041-3-2",
       "reviewNote": "Reviewed lateral-thigh foam contact, long-arm inchworm plank phase, prone incline reverse fly, supported incline dumbbell chest press, close-grip incline barbell press, secured-foot incline abdominal curl, prone neutral-grip Y raise, palms-in incline press, supinated incline curl and bent-elbow wide fly."
-    },
-    {
-      "exerciseId": "db-incline-dumbbell-flyes",
-      "name": "Incline Dumbbell Flyes",
-      "equipment": "Dumbbell",
-      "guideSha256": "c526aeceb912f777ade3e17f0692991bdc5a28de5d1ae6698eccf812d5c62c4b",
-      "status": "accepted",
-      "assetId": "forma-original-finish-a-002-1-0",
-      "reviewNote": "Both arms spread symmetrically with soft elbows and two dumbbells, palms upward; shallow supported backrest and planted feet match bottom fly phase."
     },
     {
       "exerciseId": "db-incline-dumbbell-flyes-with-a-twist",
@@ -5532,7 +5505,7 @@
     {
       "exerciseId": "db-it-band-and-glute-stretch",
       "name": "IT Band and Glute Stretch",
-      "equipment": "Specialty equipment",
+      "equipment": "Band",
       "guideSha256": "eed4cf024774b335f2f2688d1c905fe686b0b23afe01e898773f9ba1b196e636",
       "status": "accepted",
       "assetId": "forma-original-finish-b-001-0-0",
@@ -6738,7 +6711,7 @@
     {
       "exerciseId": "db-lying-close-grip-barbell-triceps-press-to-chin",
       "name": "Lying Close-Grip Barbell Triceps Press To Chin",
-      "equipment": "EZ bar",
+      "equipment": "Barbell + EZ bar",
       "guideSha256": "8bdd106e221c849ef8ba49b75237ed7d5e01bccceb941d067af9e7c25bdcd88d",
       "status": "accepted",
       "assetId": "forma-original-movements-053-0-2",
@@ -8025,7 +7998,7 @@
     {
       "exerciseId": "wger-f397656d-6f26-47c6-9e4c-221687f3f2fa",
       "name": "Plantarflexion Stretch with Band",
-      "equipment": "Bodyweight",
+      "equipment": "Bodyweight + Band",
       "guideSha256": "c2d459ab6d2be86f3a4bd975703f4433845bff300d7750a03586ccfd2346f065",
       "status": "accepted",
       "assetId": "forma-original-corrections-024-2-0",
@@ -8475,7 +8448,7 @@
     {
       "exerciseId": "db-rack-pull-with-bands",
       "name": "Rack Pull with Bands",
-      "equipment": "Barbell",
+      "equipment": "Barbell + Band",
       "guideSha256": "1c936d80ef6a4d2df20e957febde603ec99c826fe97dc1424e2c0d4cbac73868",
       "status": "accepted",
       "assetId": "forma-original-movements-067-1-2",
@@ -8601,7 +8574,7 @@
     {
       "exerciseId": "db-reverse-band-bench-press",
       "name": "Reverse Band Bench Press",
-      "equipment": "Barbell",
+      "equipment": "Barbell + Band",
       "guideSha256": "b08eeec75cec7cf4505452c71712f607addc0d7000f043d5f4d090d36a1cdf92",
       "status": "accepted",
       "assetId": "forma-original-movements-068-2-2",
@@ -8610,7 +8583,7 @@
     {
       "exerciseId": "db-reverse-band-box-squat",
       "name": "Reverse Band Box Squat",
-      "equipment": "Barbell",
+      "equipment": "Barbell + Band",
       "guideSha256": "4b2fc4b687023b4eac88930ab01fa9da4df7c28123c6eb8944f90a50b36cc60c",
       "status": "accepted",
       "assetId": "forma-original-movements-068-3-2",
@@ -8619,7 +8592,7 @@
     {
       "exerciseId": "db-reverse-band-deadlift",
       "name": "Reverse Band Deadlift",
-      "equipment": "Barbell",
+      "equipment": "Barbell + Band",
       "guideSha256": "93361ed3a2b24fa33a2f4fc7c1d04ee4fcc0defb5503fcc6580c2863ec0c0666",
       "status": "accepted",
       "assetId": "forma-original-movements-069-0-0",
@@ -8628,7 +8601,7 @@
     {
       "exerciseId": "db-reverse-band-power-squat",
       "name": "Reverse Band Power Squat",
-      "equipment": "Barbell",
+      "equipment": "Barbell + Band",
       "guideSha256": "390f186e2cd1fc19fe930e066cd7701ce6889b7d0e65c2f15f825bd53be912e7",
       "status": "accepted",
       "assetId": "forma-original-movements-069-1-0",
@@ -8637,7 +8610,7 @@
     {
       "exerciseId": "db-reverse-band-sumo-deadlift",
       "name": "Reverse Band Sumo Deadlift",
-      "equipment": "Barbell",
+      "equipment": "Barbell + Band",
       "guideSha256": "d236524d9f7a82284df42f3cae518cf6405b9d81e025f38d69187809e438771f",
       "status": "accepted",
       "assetId": "forma-original-movements-069-2-0",
@@ -9159,7 +9132,7 @@
     {
       "exerciseId": "db-seated-band-hamstring-curl",
       "name": "Seated Band Hamstring Curl",
-      "equipment": "Specialty equipment",
+      "equipment": "Band",
       "guideSha256": "76484cd47d9b84ee713ac97ae011bcf9764ba10ae8c7b7129990f7f4d12c5762",
       "status": "accepted",
       "assetId": "forma-original-movements-073-0-1",
@@ -10311,7 +10284,7 @@
     {
       "exerciseId": "db-smith-incline-shoulder-raise",
       "name": "Smith Incline Shoulder Raise",
-      "equipment": "Barbell",
+      "equipment": "Smith machine",
       "guideSha256": "5b9bdd654665b208dad9f02b37d02396dbba3ff43620424007c0cc1638e27b94",
       "status": "accepted",
       "assetId": "forma-original-movements-082-3-1",
@@ -10752,7 +10725,7 @@
     {
       "exerciseId": "db-squat-with-bands",
       "name": "Squat with Bands",
-      "equipment": "Barbell",
+      "equipment": "Barbell + Band",
       "guideSha256": "65dd0b69de2f06162002cca76773c399be826ebdcb50163c94d921c5f42106ea",
       "status": "accepted",
       "assetId": "forma-original-movements-085-0-0",
@@ -11436,7 +11409,7 @@
     {
       "exerciseId": "db-sumo-deadlift-with-bands",
       "name": "Sumo Deadlift with Bands",
-      "equipment": "Barbell",
+      "equipment": "Barbell + Band",
       "guideSha256": "41a9f926428d8bf9c984ed97a8cb192ebd487bac1615b69b66a12a0e411ba137",
       "status": "accepted",
       "assetId": "forma-original-movements-090-3-0",
@@ -12291,7 +12264,7 @@
     {
       "exerciseId": "db-weighted-sit-ups-with-bands",
       "name": "Weighted Sit-Ups - With Bands",
-      "equipment": "Specialty equipment",
+      "equipment": "Band",
       "guideSha256": "3ed3ed8a28a798164a065bac0fadb51470a1b16a4296a606897b57eb317d446f",
       "status": "accepted",
       "assetId": "forma-original-corrections-040-0-0",

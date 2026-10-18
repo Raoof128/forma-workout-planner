@@ -63,7 +63,7 @@ Better Auth session.
 | Method and path             | Authentication                           | Result                                                                                        |
 | --------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `GET /api/workspace`        | Member session                           | `{ data, revision, updatedAt }` for the signed-in member.                                     |
-| `PUT /api/workspace`        | Member session and same-origin `Origin`  | Stores one validated version 1 workspace using optimistic concurrency.                        |
+| `PUT /api/workspace`        | Member session and same-origin `Origin`  | Stores one validated version 2 workspace using optimistic concurrency.                        |
 | `GET /api/workspace/export` | Member session                           | The same member's validated workspace as an `application/json` attachment.                    |
 | `GET /api/health`           | Worker service credentials at the origin | Maps to API liveness check `/healthz`; it does not prove database, mail, or backup readiness. |
 
@@ -71,7 +71,7 @@ PUT accepts exactly this top-level shape:
 
 ```json
 {
-  "data": { "version": 1 },
+  "data": { "version": 2 },
   "expectedRevision": 0,
   "operationId": "client-generated-id"
 }
@@ -81,9 +81,9 @@ The abbreviated `data` stands for the full existing FORMA backup structure.
 The server validates it with the browser's runtime schema, including duplicate
 record IDs and active/history consistency. The workspace data limit is 20 MiB;
 the Worker permits a small JSON/framing allowance. The user ID is resolved only
-from the authenticated server session. Unknown ownership properties in the
-data are discarded by the shared schema; extra top-level request properties
-are rejected.
+from the authenticated server session. Unknown properties in the data are rejected at every nesting level, including
+ownership fields; extra top-level request properties are also rejected.
+Version 1 payloads migrate before storage; see the [v2 migration guide](../routine-programming-v2.md).
 
 On success PUT returns the committed `{ data, revision, updatedAt }`. The
 server advances `revision` and `updatedAt`. A stale expected revision returns
