@@ -12,7 +12,7 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   all resolve (the API origin's 403 is expected).
 - `npm run worker:deploy:dashboard` builds and deploys the dashboard Worker with
   the same one-hour scoped token flow as the site (`deploy-public.mjs
-  --dashboard`). Deployed as version `b2911e08-…`; Access still guards it.
+--dashboard`). Deployed as version `b2911e08-…`; Access still guards it.
 
 ### Raouf: 2026-10-18 — Sign-out release deployed
 
