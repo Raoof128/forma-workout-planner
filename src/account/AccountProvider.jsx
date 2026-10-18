@@ -25,7 +25,7 @@ function normalizeUser(user) {
   };
 }
 
-async function accountApi(path, method = "GET", memberId) {
+async function accountApi(path, method = "GET", memberId, payload) {
   const response = await fetch(path, {
     method,
     credentials: "same-origin",
@@ -33,7 +33,9 @@ async function accountApi(path, method = "GET", memberId) {
     headers: {
       Accept: "application/json",
       ...(memberId ? { "X-Forma-Member": memberId } : {}),
+      ...(payload !== undefined ? { "Content-Type": "application/json" } : {}),
     },
+    ...(payload !== undefined ? { body: JSON.stringify(payload) } : {}),
   });
   let body;
   try {
@@ -68,7 +70,8 @@ export function AccountProvider({ children }) {
     [memberId],
   );
   const boundAccountApi = useCallback(
-    (path, method = "GET", id = memberId) => accountApi(path, method, id),
+    (path, method = "GET", body, id = memberId) =>
+      accountApi(path, method, id, body),
     [memberId],
   );
 
@@ -266,6 +269,18 @@ export function AccountProvider({ children }) {
       ),
       signOutOthers: call(() =>
         boundAccountApi("/api/account/sessions/revoke-others", "POST"),
+      ),
+      // Read-only coach tokens. The plaintext token is in the create result
+      // only; it is never stored client-side.
+      listCoachTokens: call(() => boundAccountApi("/api/account/coach-tokens")),
+      createCoachToken: call(({ label }) =>
+        boundAccountApi("/api/account/coach-tokens", "POST", { label }),
+      ),
+      revokeCoachToken: call(({ id }) =>
+        boundAccountApi(
+          `/api/account/coach-tokens/${encodeURIComponent(id)}`,
+          "DELETE",
+        ),
       ),
       signOutEverywhere: call(async () => {
         const result = await boundAccountApi(

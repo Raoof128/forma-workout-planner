@@ -31,6 +31,10 @@ administrative API exists.
 | `/api/account/sessions`                             | GET    | Session + member reference                                    | `WHERE "userId" = session user`                     | Worker                                              |
 | `/api/account/sessions/:ref/revoke`                 | DELETE | Fresh session (5 min)                                         | Reference matched within caller's sessions          | Worker                                              |
 | `/api/account/sessions/revoke-others`, `revoke-all` | POST   | Fresh session (5 min)                                         | Caller's sessions only                              | Worker                                              |
+| `/api/account/coach-tokens`                         | GET    | Session + member reference                                    | `WHERE owner_id = session user`                     | Worker                                              |
+| `/api/account/coach-tokens`                         | POST   | Fresh session (5 min) + same-origin `Origin`                  | Session user; at most 5 active tokens               | Worker                                              |
+| `/api/account/coach-tokens/:id`                     | DELETE | Session + member reference + same-origin `Origin`             | ID matched within caller's tokens                   | Worker                                              |
+| `/api/coach/workspace`                              | GET    | Bearer coach token (HMAC digest lookup); cookies ignored      | Token owner; read-only summary, no identity fields  | 20 failures/15 min per IP; 120 reads/hour per token |
 | `/api/auth/*` (allowlisted)                         | Varies | See [authentication](authentication.md)                       | Better Auth session user                            | Per-IP and per-account                              |
 
 Anything else returns 404 at the Worker and at the API.
@@ -42,6 +46,10 @@ Anything else returns 404 at the Worker and at the API.
   are rejected.
 - `server/tests/workspace.test.ts`: ownership, concurrency, idempotency and
   cascade in PostgreSQL.
+- `server/tests/coach.test.ts`: a coach token reads only its owner's summary;
+  another member cannot revoke it; revocation, expiry and user deletion end it;
+  guessing and polling are budgeted. `worker/tests/coach.test.ts` shows the
+  bearer header reaches the origin only on the coach route, without cookies.
 - `tests/accounts-security.spec.js`: isolation and account switching in real
   browsers.
 - Independent re-attack during the engagement: every combination of one

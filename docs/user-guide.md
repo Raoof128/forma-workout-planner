@@ -51,6 +51,16 @@ Import validates the file before showing a confirmation. If you select another f
 
 If data cannot be read, first use **Download original data** and keep the downloaded file outside the browser. Then restore a known-good backup, or use the explicit reset option only after confirming you have preserved anything you need. If storage is full or blocked, follow the displayed error; do not clear site data as the first recovery step. Temporary mode keeps changes only in memory for that visit: export before closing or refreshing. A conflict message means another tab changed the record you were editing. Reopen that record and reapply your changes to the latest version.
 
+## Share progress with a coach
+
+Account members can create a **read-only coach token** under Account ›
+Security › Coach access. Give the token to a coaching tool or AI assistant and
+it can read your routines, recent workouts and personal bests through
+`GET /api/coach/workspace`; it cannot change anything or see your email. The
+token is shown once, expires after 90 days, and can be revoked at any time.
+Treat it like a password: store it in the tool's secret settings and never
+paste it into a chat. Details are in the [API reference](accounts/api.md#coach-access-read-only-tokens).
+
 ## Preferences and limits
 
 Settings controls the profile name and weekly workout target. Dates use Sydney time, weights use kilograms, and one plank rep means a 10-second hold. In guest mode, data stays in browser storage and does not sync between devices. In account mode, validated workspace changes save to the self-hosted API and can be used from another signed-in device. Account mode requires a deployed, configured service; see the [account help and limitations](accounts/README.md). Browser-local guest storage is not encrypted by FORMA; same-origin scripts, browser extensions, and people with access to your browser profile may be able to read it. A hosting provider may also keep ordinary access logs. Review the provider's privacy and retention settings separately.
