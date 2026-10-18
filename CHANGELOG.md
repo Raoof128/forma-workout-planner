@@ -4,6 +4,17 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-18 — Sign-out release deployed
+
+- Owner-authorised release of PR #11 (`746fdf8`) to private staging and
+  production: working "Sign out everywhere", password step-up for signing out
+  other devices, and the sidebar account menu.
+- API image `forma-api:signout-20261018-ea2dc4b` on both environments; staging
+  also received migration 0005 and the current runtime grants. Production
+  Worker `4b87caa9-…`, staging Worker `712219ca-…`. Encrypted backups before
+  and after each API switch; row counts and unrelated containers unchanged.
+- Live checks passed; see [the release record](docs/qa/sign-out/README.md).
+
 ### Raouf: 2026-10-18 — Sidebar sign out and working session sign-out
 
 - **Fix:** "Sign out everywhere" failed for anyone who had signed in more
