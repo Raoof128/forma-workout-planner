@@ -1,0 +1,39 @@
+{
+  "sourceTree": "25154af",
+  "schemaVersion": 5,
+  "production": {
+    "url": "https://forma.raoufabedini.dev",
+    "workerVersion": "4005f27c-03ea-427c-b087-7173d62c804b",
+    "previousWorkerVersion": "64806558-cb0d-40dc-a029-3767586b456b"
+  },
+  "api": {
+    "imageTag": "forma-api:coach-20261018-a831507",
+    "previousImageTag": "forma-api:routine-v2-20261017-cca9b07",
+    "transferArchiveSha256": "2f99d462d972a08507cf3d3853e0e453f8327499ab62ddcbfdffa836fa1506db",
+    "hostConfigSha256": "0b5b32e29f289fa2e1bd009a15fb934a227d8548f3cbf1daa70fa38830bb5067",
+    "node": "26.11.1",
+    "uid": 10001,
+    "platform": "linux/amd64",
+    "portsPublished": false
+  },
+  "migration": {
+    "applied": ["0005-coach-tokens.sql"],
+    "appliedAt": "2026-10-18T02:18:19Z",
+    "runtimeGrant": "member_coach_token: SELECT, INSERT, UPDATE, DELETE"
+  },
+  "backups": {
+    "before": "archives/forma-production-20261018T021730Z.dump.age",
+    "after": "archives/forma-production-20261018T022111Z.dump.age",
+    "rowCountsUnchanged": true
+  },
+  "staging": { "updated": false },
+  "liveChecks": {
+    "home": 200,
+    "health": 200,
+    "workspaceAnonymous": 401,
+    "coachWorkspaceNoToken": 401,
+    "coachWorkspaceInvalidToken": 401,
+    "unknownRoute": 404,
+    "assetHashesMatch": true
+  }
+}

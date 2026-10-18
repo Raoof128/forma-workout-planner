@@ -58,6 +58,28 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-18 — Coach tokens production deployment
+
+- The production API host is the shared DigitalOcean Droplet at
+  `170.64.167.95`; SSH is key-only as `eoiadmin` then `sudo`. FORMA lives under
+  `/opt/forma-production` (`.env`, `ops/`, `releases/<name>/`, `operations/`),
+  Compose project `forma-production`, files `ops/compose.yaml` +
+  `ops/compose.production-host.yaml`. The host has ~2 GB RAM: build the API
+  image elsewhere for `linux/amd64`, `docker save | gzip`, transfer, verify the
+  SHA-256, `docker load`. Keep each release's evidence in its `releases/` dir.
+- Migrate with `IMAGE_TAG=<new> docker compose … --profile migrate run --rm
+migrate` from the root-owned `ops/` directory (`sudo sh -c 'cd … && …'`),
+  then install the current `ops/grant-runtime-access.sql` and run
+  `ops/grant-runtime-access.sh` with the `.env` sourced, then set `IMAGE_TAG`
+  in `.env` and `up -d --no-deps api`. The database admin role is
+  `$POSTGRES_USER` inside the db container, not `postgres`.
+- `scripts/deploy-public.mjs` works with a management token that only has
+  "API Tokens Write" plus zone read; it mints and revokes the scoped deploy
+  token itself. Keep the token in a mode-0600 file outside the repository and
+  source it inside the command.
+- Production and staging share the host; this release updated production
+  only. Staging still runs `forma-api:routine-v2-20261017-cca9b07`.
+
 ### Raouf: 2026-10-18 — Read-only coach tokens
 
 - **Scope:** owner asked for an API so an AI coach can read FORMA progress

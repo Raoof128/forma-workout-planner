@@ -4,6 +4,29 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-18 — Coach tokens deployed to production
+
+- Owner-authorised production release of the read-only coach token API on top
+  of routine programming v2. API image `forma-api:coach-20261018-a831507`
+  (source tree identical to `25154af`, Node 26.11.1, amd64), built on the
+  owner's Mac, transferred as a checksum-verified archive and loaded on the
+  host. Migration `0005-coach-tokens.sql` applied through the one-shot migrate
+  service; `ops/grant-runtime-access.sql` updated on the host and re-run, so
+  `forma_runtime` has DML on `member_coach_token`. API recreated and healthy;
+  database, connector and every unrelated container kept their IDs.
+- Production Worker version `4005f27c-03ea-427c-b087-7173d62c804b` deployed
+  with the one-hour scoped-token helper (`npm run worker:deploy:production`).
+  Live checks: home 200 with `no-transform`, CSP and HSTS; health 200;
+  anonymous workspace 401; `/api/coach/workspace` 401 JSON without and with an
+  invalid bearer; session null; unknown route 404 JSON. Live HTML and JS hashes
+  match the local account build.
+- Encrypted, signed off-host backups before (`…20261018T021730Z`) and after
+  (`…20261018T022111Z`) migration; row counts unchanged (1 user, 1 workspace,
+  21 operations, 2 sessions, 0 coach tokens). Rollback targets: Worker
+  `64806558-cb0d-40dc-a029-3767586b456b`, API image
+  `forma-api:routine-v2-20261017-cca9b07`. Private staging was not updated.
+  See [the deployment record](docs/qa/coach-tokens/README.md).
+
 ### Raouf: 2026-10-18 — Read-only coach access tokens
 
 - Members can mint up to five read-only coach tokens in Account › Security.
