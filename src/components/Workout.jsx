@@ -11,12 +11,21 @@ import {
   Trash2,
   Dumbbell,
   BookOpen,
+  Minus,
+  Pencil,
 } from "lucide-react";
 import { Button, PageHeading, Modal } from "./UI";
 import ExerciseGuide from "./ExerciseGuide";
 import SavedField from "./SavedField";
+import WorkoutEditor from "./WorkoutEditor";
 import { exerciseById, formatTime, sessionSets, sessionVolume } from "../data";
-import { metricFields, validMeasurement } from "../exerciseMetrics.js";
+import {
+  logsSides,
+  readSetValue,
+  setFields,
+  validMeasurement,
+} from "../exerciseMetrics.js";
+import { updateSetValue } from "../workoutSession.js";
 import {
   entryKey,
   repsText,
@@ -29,6 +38,8 @@ import {
 export default function Workout({
   session,
   muted = false,
+  fillSets = true,
+  onFillSets,
   onUpdate,
   onFinish,
   onCancel,
@@ -60,6 +71,12 @@ export default function Workout({
   const [guide, setGuide] = useState(null);
   const [saving, setSaving] = useState(false);
   const [restOpen, setRestOpen] = useState(false);
+  const [editing, setEditing] = useState(false);
+  // The toggle flips at once; the profile save follows and wins if it fails.
+  const [fill, setFill] = useState(fillSets);
+  useEffect(() => {
+    setFill(fillSets);
+  }, [fillSets]);
   useEffect(() => {
     const timer = setInterval(() => setNow(Date.now()), 250);
     const refresh = () => setNow(Date.now());
@@ -116,7 +133,7 @@ export default function Workout({
     const field =
       key === "rpe"
         ? { min: 1, max: 10, step: 0.5 }
-        : metricFields(exerciseById.get(entry.exerciseId)).find(
+        : setFields(exerciseById.get(entry.exerciseId), entry).find(
             (field) => field.key === key,
           );
     const draftKey = JSON.stringify([rowKey, index, key]);
@@ -133,17 +150,22 @@ export default function Workout({
       return;
     }
     invalidDrafts.current.delete(draftKey);
+    // Measurements can flow on to the remaining sets; RPE is always per set.
+    const follow = fill && key !== "rpe";
     void onUpdate((current) => ({
       ...current,
       exercises: current.exercises.map((item) =>
         entryKey(item) !== rowKey
           ? item
-          : {
-              ...item,
-              sets: item.sets.map((set, si) =>
-                si !== index || set.done ? set : { ...set, [key]: value },
-              ),
-            },
+          : updateSetValue(item, index, key, value, { fill: follow }),
+      ),
+    }));
+  }
+  function changeSets(rowKey, change) {
+    void onUpdate((current) => ({
+      ...current,
+      exercises: current.exercises.map((item) =>
+        entryKey(item) !== rowKey ? item : { ...item, sets: change(item.sets) },
       ),
     }));
   }
@@ -164,16 +186,14 @@ export default function Workout({
       const [row, si] = JSON.parse(key);
       return row === rowKey && si === index;
     });
-    if (
-      !set.done &&
-      (invalid || !validMeasurement(exerciseById.get(exerciseId), set))
-    ) {
-      const exercise = exerciseById.get(exerciseId);
-      notify(
-        !exercise?.metric || exercise.metric === "load_reps"
-          ? "Enter 1–100 reps and a weight from 0–1,000 kg."
-          : "Enter valid measurements in the units shown before completing the set.",
-      );
+    const exercise = exerciseById.get(exerciseId);
+    const measurementMessage = logsSides(exercise, entry)
+      ? "Enter 1–50 reps for the left and the right side and a weight from 0–1,000 kg."
+      : !exercise?.metric || exercise.metric === "load_reps"
+        ? "Enter 1–100 reps and a weight from 0–1,000 kg."
+        : "Enter valid measurements in the units shown before completing the set.";
+    if (!set.done && (invalid || !validMeasurement(exercise, set))) {
+      notify(measurementMessage);
       return;
     }
     const expected = set.done;
@@ -184,6 +204,9 @@ export default function Workout({
         throw new Error(
           "This set changed in another tab. Check its latest state before changing it.",
         );
+      // A value typed an instant ago may only land here; keep the same advice.
+      if (!expected && !validMeasurement(exercise, latest))
+        throw new Error(measurementMessage);
       return {
         ...current,
         ...(!expected &&
@@ -229,6 +252,10 @@ export default function Workout({
         title={session.name}
         subtitle="One set at a time. You’ve got this."
       >
+        <Button variant="secondary" onClick={() => setEditing(true)}>
+          <Pencil size={16} />
+          Edit workout
+        </Button>
         <Button variant="lime" onClick={finish}>
           <Flag size={17} />
           Finish workout
@@ -283,6 +310,9 @@ export default function Workout({
         <div className="workout-exercises">
           {session.exercises.map((entry, entryIndex) => {
             const exercise = exerciseById.get(entry.exerciseId);
+            const fields = setFields(exercise, entry);
+            const rowClass = `set-row${fields.length > 2 ? " set-row-sides" : ""}`;
+            const lastSet = entry.sets.at(-1);
             return (
               <section className="panel log-exercise" key={entryKey(entry)}>
                 <header>
@@ -335,9 +365,9 @@ export default function Workout({
                     reps.
                   </p>
                 )}
-                <div className="set-row set-labels">
+                <div className={`${rowClass} set-labels`}>
                   <span>SET</span>
-                  {metricFields(exercise).map((field) => (
+                  {fields.map((field) => (
                     <span key={field.key}>{field.label}</span>
                   ))}
                   <span>RPE</span>
@@ -345,11 +375,11 @@ export default function Workout({
                 </div>
                 {entry.sets.map((set, index) => (
                   <div
-                    className={`set-row ${set.done ? "set-done" : ""}`}
+                    className={`${rowClass} ${set.done ? "set-done" : ""}`}
                     key={index}
                   >
                     <span>{index + 1}</span>
-                    {metricFields(exercise).map((field) => (
+                    {fields.map((field) => (
                       <SavedField
                         key={field.key}
                         type="number"
@@ -358,8 +388,14 @@ export default function Workout({
                         min={field.min}
                         max={field.max}
                         step={field.step}
-                        placeholder={set.legacyDraft?.[field.key]}
-                        value={set[field.key] ?? ""}
+                        placeholder={
+                          field.side
+                            ? set.sides
+                              ? undefined
+                              : String(set.reps || "")
+                            : set.legacyDraft?.[field.key]
+                        }
+                        value={readSetValue(set, field.key)}
                         onChange={(event) =>
                           updateSet(
                             entryKey(entry),
@@ -406,29 +442,41 @@ export default function Workout({
                     </button>
                   </div>
                 ))}
-                <button
-                  className="add-set"
-                  disabled={entry.sets.length >= 100}
-                  onClick={() =>
-                    void onUpdate((current) => ({
-                      ...current,
-                      exercises: current.exercises.map((item) =>
-                        entryKey(item) !== entryKey(entry)
-                          ? item
-                          : {
-                              ...item,
-                              sets: [
-                                ...item.sets,
-                                { ...item.sets.at(-1), rpe: null, done: false },
-                              ],
-                            },
-                      ),
-                    }))
-                  }
-                >
-                  <Plus size={16} />
-                  Add set
-                </button>
+                <div className="set-actions">
+                  <button
+                    className="add-set"
+                    disabled={entry.sets.length >= 100}
+                    onClick={() =>
+                      changeSets(entryKey(entry), (sets) =>
+                        sets.length >= 100
+                          ? sets
+                          : [
+                              ...sets,
+                              { ...sets.at(-1), rpe: null, done: false },
+                            ],
+                      )
+                    }
+                  >
+                    <Plus size={16} />
+                    Add set
+                  </button>
+                  {entry.sets.length > 1 && !lastSet.done && (
+                    <button
+                      className="add-set remove-set"
+                      aria-label={`Remove ${exercise.name} set ${entry.sets.length}`}
+                      onClick={() =>
+                        changeSets(entryKey(entry), (sets) =>
+                          sets.length > 1 && !sets.at(-1).done
+                            ? sets.slice(0, -1)
+                            : sets,
+                        )
+                      }
+                    >
+                      <Minus size={16} />
+                      Remove set
+                    </button>
+                  )}
+                </div>
               </section>
             );
           })}
@@ -446,6 +494,18 @@ export default function Workout({
             />
           </div>
           <section className="panel notes-panel">
+            <label className="checkbox-field fill-toggle">
+              <input
+                type="checkbox"
+                checked={fill}
+                onChange={async (event) => {
+                  const next = event.target.checked;
+                  setFill(next);
+                  if ((await onFillSets?.(next)) === null) setFill(!next);
+                }}
+              />
+              Fill the remaining sets with what I type
+            </label>
             <h3>Session notes</h3>
             <SavedField
               as="textarea"
@@ -476,7 +536,15 @@ export default function Workout({
       )}
       {guide && (
         <ExerciseGuide exercise={guide} onClose={() => setGuide(null)} />
-      )}{" "}
+      )}
+      {editing && (
+        <WorkoutEditor
+          session={session}
+          onUpdate={onUpdate}
+          onClose={() => setEditing(false)}
+          notify={notify}
+        />
+      )}
       {confirm && (
         <Modal
           title="Finish strong."

@@ -33,18 +33,25 @@ test("removing and restoring a canonical group preserves all historical alias pr
   await expect(entry).toHaveAttribute("aria-pressed", "false");
   await entry.click();
   await page.getByRole("button", { name: "Save routine", exact: true }).click();
-  const saved = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("forma-v1")),
-  );
-  expect(saved.routines[0].exercises).toEqual(
-    rows.map((row) => ({
-      ...row,
-      repsMax: null,
-      rpe: null,
-      restSeconds: null,
-      perSide: false,
-      note: null,
-      groupId: null,
-    })),
-  );
+  // The save lands after the storage lock's checkpoints; poll for it.
+  await expect
+    .poll(
+      async () =>
+        (
+          await page.evaluate(() =>
+            JSON.parse(localStorage.getItem("forma-v1")),
+          )
+        ).routines[0].exercises,
+    )
+    .toEqual(
+      rows.map((row) => ({
+        ...row,
+        repsMax: null,
+        rpe: null,
+        restSeconds: null,
+        perSide: false,
+        note: null,
+        groupId: null,
+      })),
+    );
 });

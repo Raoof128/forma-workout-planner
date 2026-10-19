@@ -27,7 +27,7 @@ import {
   throttleKey,
 } from "./throttle.js";
 import { registerWorkspaceRoutes } from "./workspaceRoutes.js";
-import { registerCoachRoutes } from "./coachRoutes.js";
+import { COACH_DATA_PATH, registerCoachRoutes } from "./coachRoutes.js";
 import { securityEvent } from "./securityEvents.js";
 
 declare module "fastify" {
@@ -391,7 +391,10 @@ export async function createApp({
   app.decorateRequest("rawBody", null);
   app.addHook("onSend", async (request, reply, payload) => {
     let errorCode: string | undefined;
-    if (reply.statusCode === 409 && typeof payload === "string") {
+    if (
+      (reply.statusCode === 409 || reply.statusCode === 429) &&
+      typeof payload === "string"
+    ) {
       try {
         errorCode = (JSON.parse(payload) as { error?: string }).error;
       } catch {
@@ -404,6 +407,7 @@ export async function createApp({
       headerValue(request.headers["x-forma-client-ip"]) || request.ip,
       config.authSecret,
       errorCode,
+      request.method,
     );
     if (event)
       request.log.warn(
@@ -530,7 +534,15 @@ export async function createApp({
 
     if (!["GET", "HEAD", "OPTIONS"].includes(request.method)) {
       const origin = headerValue(request.headers.origin);
-      if (origin !== config.appOrigin) {
+      // A coach edit authenticates only with an explicit bearer header, which
+      // browsers never attach on their own, and the route ignores cookies, so
+      // there is no ambient credential to forge. A tool calling from a server
+      // sends no Origin; a foreign Origin is still refused.
+      const bearerEdit =
+        request.method === "PATCH" &&
+        path === COACH_DATA_PATH &&
+        origin === undefined;
+      if (origin !== config.appOrigin && !bearerEdit) {
         reply.code(403).send({ error: "forbidden" });
       }
     }
@@ -1030,7 +1042,7 @@ export async function createApp({
       return current ? new Date(current.session.createdAt) : null;
     },
     ...(testLimit !== null
-      ? { failureLimit: testLimit, readLimit: testLimit }
+      ? { failureLimit: testLimit, readLimit: testLimit, writeLimit: testLimit }
       : {}),
   });
   return app;

@@ -38,8 +38,8 @@ cannot change schema.
 - All queries are parameterised. Row-level security is not used; isolation is
   enforced by the API and by owner keys.
 - `security_throttle` stores only HMAC digests of emails and member IDs.
-- `member_coach_token` stores only an HMAC digest of each read-only coach
-  token, with expiry and revocation timestamps; rows cascade with the user.
+- `member_coach_token` stores only an HMAC digest of each coach token, with
+  its scope, expiry and revocation timestamps; rows cascade with the user.
 
 ## Backups
 

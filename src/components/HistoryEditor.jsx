@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button, Modal } from "./UI";
 import { exerciseById, sessionSets } from "../data";
 import { entryKey } from "../routineProgramming.js";
-import { metricFields } from "../exerciseMetrics.js";
+import { applySetValue, readSetValue, setFields } from "../exerciseMetrics.js";
 export default function HistoryEditor({ session, onSave, onClose }) {
   const [draft, setDraft] = useState(() => structuredClone(session));
   const [discard, setDiscard] = useState(false);
@@ -33,7 +33,7 @@ export default function HistoryEditor({ session, onSave, onClose }) {
           : {
               ...entry,
               sets: entry.sets.map((set, index) =>
-                index !== si ? set : { ...set, [key]: value },
+                index !== si ? set : applySetValue(set, key, value),
               ),
             },
       ),
@@ -95,12 +95,14 @@ export default function HistoryEditor({ session, onSave, onClose }) {
             const exercise = exerciseById.get(entry.exerciseId);
             if (!session.exercises[ei].sets.some((set) => set.done))
               return null;
+            const fields = setFields(exercise, entry);
+            const rowClass = `set-row${fields.length > 2 ? " set-row-sides" : ""}`;
             return (
               <section className="history-edit-exercise" key={entryKey(entry)}>
                 <h3>{exercise.name}</h3>
-                <div className="set-row set-labels">
+                <div className={`${rowClass} set-labels`}>
                   <span>SET</span>
-                  {metricFields(exercise).map((field) => (
+                  {fields.map((field) => (
                     <span key={field.key}>{field.label}</span>
                   ))}
                   <span>RPE</span>
@@ -109,9 +111,9 @@ export default function HistoryEditor({ session, onSave, onClose }) {
                 {entry.sets.map(
                   (set, si) =>
                     session.exercises[ei].sets[si].done && (
-                      <div className="set-row" key={si}>
+                      <div className={rowClass} key={si}>
                         <span>{si + 1}</span>
-                        {metricFields(exercise).map((field) => (
+                        {fields.map((field) => (
                           <input
                             key={field.key}
                             aria-label={`Correct ${exercise.name} set ${si + 1} ${field.key}`}
@@ -121,7 +123,7 @@ export default function HistoryEditor({ session, onSave, onClose }) {
                             step={field.step}
                             required={set.done}
                             placeholder={set.legacyDraft?.[field.key]}
-                            value={set[field.key] ?? ""}
+                            value={readSetValue(set, field.key)}
                             onChange={(event) =>
                               update(
                                 ei,

@@ -21,10 +21,15 @@ On Overview, choose your next session and use **Schedule your week** to mark you
 ## Log a workout
 
 1. Start a routine from Overview or its details.
-2. Enter the displayed measurements for a set, then mark it complete: weight/reps, seconds, metres, or loaded carry distance.
+2. Enter the displayed measurements for a set, then mark it complete: weight/reps, seconds, metres, or loaded carry distance. A one-side-at-a-time exercise (a lunge, a one-arm row, a side plank) shows **Left** and **Right** rep fields instead of one rep count; both sides are needed before the set can be completed, and the set's total reps count toward volume.
 3. Use the rest timer between sets; choose 60, 90, or 120 seconds, pause it, or skip rest.
-4. Add sets and session notes as needed. Open the book icon for exercise instructions.
-5. Finish the workout and confirm **Save workout**.
+4. Add sets, remove an unfinished last set, and write session notes as needed. Open the book icon for exercise instructions.
+5. Use **Edit workout** to add an exercise, move one earlier or later, or remove one while the workout is running. Removing an exercise that has completed sets asks once more and discards those sets.
+6. Finish the workout and confirm **Save workout**.
+
+By default the weight and reps you type into a set also fill the later unfinished sets of that exercise, as long as they still show the value you replaced; a set you changed deliberately keeps its own value. Turn **Fill the remaining sets with what I type** off in the workout side panel or in Settings to enter every set by hand.
+
+The exercise library marks 408 movements as performed one side at a time. They log left and right by default; the **Reps per leg/arm/side** option in a routine's exercise menu turns side logging on or off for any load-and-reps exercise.
 
 Only completed sets count toward volume and progress. Complete at least one set before saving a workout. Completed sets are locked for entry; undo completion before changing them. A different routine cannot silently replace an active workout: the app offers a choice to resume or discard and start again.
 
@@ -53,13 +58,22 @@ If data cannot be read, first use **Download original data** and keep the downlo
 
 ## Share progress with a coach
 
-Account members can create a **read-only coach token** under Account ›
-Security › Coach access. Give the token to a coaching tool or AI assistant and
-it can read your routines, recent workouts and personal bests through
-`GET /api/coach/workspace`; it cannot change anything or see your email. The
-token is shown once, expires after 90 days, and can be revoked at any time.
+Account members can create a **coach token** under Account › Security ›
+Coach access and give it to a coaching tool or AI assistant. Choose its access
+when you create it:
+
+- **Read only** lets the tool read your routines, recent workouts and
+  personal bests.
+- **Full access: read and edit** also lets it read everything in your
+  training workspace and change it: build or rewrite routines, log or correct
+  workouts, plan your week and adjust your preferences. If it would delete
+  logged workouts, it has to say how many, or the change is refused.
+
+No coach token can see your email or change your password, sign-ins, 2-step
+verification, coach tokens or account. The token is shown once, expires after
+90 days, and can be revoked at any time.
 Treat it like a password: store it in the tool's secret settings and never
-paste it into a chat. Details are in the [API reference](accounts/api.md#coach-access-read-only-tokens).
+paste it into a chat. Details are in the [API reference](accounts/api.md#coach-access-read-only-and-full-access-tokens).
 
 ## Preferences and limits
 

@@ -58,36 +58,96 @@ a database ID or a session token. The session routes do not accept an owner ID.
 Sensitive session revocations require reauthentication through a fresh
 Better Auth session.
 
-## Coach access (read-only tokens)
+## Coach access (read-only and full-access tokens)
 
-A member can mint up to five read-only **coach tokens** in Account › Security
-and give one to a coaching tool or AI assistant. The token reads a training
-summary and nothing else: it cannot write, cannot reach any other route, and
-the summary carries no email address, member reference, revision or operation
-data. Tokens expire 90 days after creation and can be revoked at any time.
+A member can mint up to five **coach tokens** in Account › Security and give
+one to a coaching tool or AI assistant. Each token has a scope chosen when it
+is minted:
+
+- **`read`** (the default, and every token minted before scopes existed)
+  reads the training summary and the exercise catalogue.
+- **`full`** also reads the whole workspace and edits any part of it:
+  routines, the active workout, workout history, profile and schedule.
+
+No token reaches the account itself. Email, password, sessions, 2-step
+verification, other coach tokens and account deletion stay behind the
+member's own sign-in, and no coach response carries the email address or
+member reference. Tokens expire 90 days after creation and can be revoked at
+any time.
 
 | Method and path                           | Authentication                            | Result                                                                                                       |
 | ----------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `GET /api/account/coach-tokens`           | Member session                            | Active tokens for the member: `id`, `label`, `createdAt`, `expiresAt`, `lastUsedAt`. Never the token itself. |
-| `POST /api/account/coach-tokens`          | Recent session, at most 5 minutes old     | Body `{ "label": "Claude coach" }` (1–60 plain characters). Returns `{ token, record }`; `token` is shown once. |
+| `GET /api/account/coach-tokens`           | Member session                            | Active tokens for the member: `id`, `label`, `scope`, `createdAt`, `expiresAt`, `lastUsedAt`. Never the token itself. |
+| `POST /api/account/coach-tokens`          | Recent session, at most 5 minutes old     | Body `{ "label": "Claude coach", "scope": "read" }` (label 1–60 plain characters; scope `read` or `full`, default `read`). Returns `{ token, record }`; `token` is shown once. |
 | `DELETE /api/account/coach-tokens/:id`    | Member session                            | Revokes one of the caller's tokens by its 22-character ID; another member's ID is `404`.                      |
-| `GET /api/coach/workspace?days=28`        | `Authorization: Bearer forma_coach_…`     | The owner's coach summary for the last `days` days (1–365, default 28).                                      |
+| `GET /api/coach/workspace?days=28`        | Bearer token, any scope                   | The owner's coach summary for the last `days` days (1–365, default 28), with `access` set to the token's scope. |
+| `GET /api/coach/exercises?q=row&limit=25` | Bearer token, any scope                   | Catalogue search: `{ total, exercises }`, each with `id`, `name`, `muscle`, `equipment`, `metric`, `logs` (the fields a set records), `perSideByDefault` and `side`. `limit` is 1–100. |
+| `GET /api/coach/workspace/data`           | Bearer token, `full` scope                | The whole workspace `{ data, revision, updatedAt }`, exactly as the member's app loads it.                  |
+| `PATCH /api/coach/workspace/data`         | Bearer token, `full` scope                | Replaces the named sections; see [coach edits](#coach-edits). Returns `{ revision, updatedAt, replayed }`.     |
 
 Tokens look like `forma_coach_` followed by 43 URL-safe characters (32 random
 bytes). PostgreSQL stores only an HMAC-SHA-256 digest of the token under the
 server auth secret, so a database read never yields a usable credential.
 Minting is a step-up action and returns `403 reauthentication_required` from a
 session older than five minutes; a sixth active token returns
-`409 token_limit`; a bad label returns `400 invalid_label`.
+`409 token_limit`; a bad label returns `400 invalid_label`; a scope other than
+`read` or `full` returns `400 invalid_scope`. Scopes never change after
+minting: to widen access, mint a new token and revoke the old one.
 
-The bearer route ignores cookies and the member reference. It is the only
-route for which the Worker forwards an `Authorization` header, and the Worker
-withholds cookies on it so the two credential types never travel together.
+The bearer routes ignore cookies and the member reference. They are the only
+routes for which the Worker forwards an `Authorization` header, and the Worker
+withholds cookies on them so the two credential types never travel together.
+A read-only token on a `full` route gets `403 insufficient_scope`.
 Failures return `401` with `WWW-Authenticate: Bearer realm="forma-coach"`;
 after 20 failures from one client in 15 minutes the route returns
-`429 too_many_attempts`. Each token may read 120 times per hour, after which
-the route returns `429 rate_limited` with `Retry-After: 3600`. A revoked or
-expired token is indistinguishable from an unknown one.
+`429 too_many_attempts`. Each token may read 120 times per hour across the
+read routes and edit 60 times per hour, after which the route returns
+`429 rate_limited` with `Retry-After: 3600`. A revoked or expired token is
+indistinguishable from an unknown one.
+
+### Coach edits
+
+`PATCH /api/coach/workspace/data` takes a JSON body:
+
+```json
+{
+  "expectedRevision": 41,
+  "operationId": "coach-2026-10-19-plan-week",
+  "changes": {
+    "routines": [],
+    "schedule": [0, 2, 4]
+  },
+  "removesSessions": 1
+}
+```
+
+- `changes` names one or more of `routines`, `history`, `active`, `profile`
+  and `schedule`. Each named section replaces the stored one as a whole;
+  unnamed sections are kept. Read the workspace first, change it, and send
+  back the sections you changed. Any other key is `400`.
+- The merged workspace passes the same strict validator as a member save, so
+  a coach cannot store anything the app could not. A refusal is
+  `400 invalid_workspace` with up to ten `issues`, each `{ path, message }`,
+  for example `history.0.exercises.0.sets.0`.
+- `expectedRevision` must equal the stored revision, otherwise
+  `409 stale_revision` returns the current `revision` and `updatedAt`; read
+  again and redo the change. `operationId` (1–200 characters) makes a retry
+  safe: the same operation and body replays its first result with
+  `replayed: true`, and reusing the ID for a different body is
+  `409 operation_id_reused`.
+- An edit that leaves out workouts already in `history` must say how many
+  with `removesSessions`. Without the exact count it is refused with
+  `400 history_removal_unconfirmed` and `removedSessions`. This stops a tool
+  that only read the recent summary from erasing older history by accident.
+- To finish a workout, send `active: null` and a `history` that adds the
+  session with `date` and `duration`. Unilateral sets keep `reps` as the total
+  of `sides: { left, right }`.
+
+Edits need no browser `Origin`, because a bearer header is never attached by a
+browser on its own and the route ignores cookies. A request that does carry a
+foreign `Origin`, or `Sec-Fetch-Site: cross-site`, is refused, so a web page
+on another site cannot drive an edit. Every successful edit is logged as the
+`coach_workspace_write` security event.
 
 The summary has this shape (abbreviated):
 

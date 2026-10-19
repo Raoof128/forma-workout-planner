@@ -208,7 +208,7 @@ export default function RoutinePrescription({
               checked={item.perSide ?? false}
               onChange={(event) => update(key, "perSide", event.target.checked)}
             />
-            Reps per {sideLabel(exercise)}
+            Reps per {sideLabel(exercise)} · log left and right separately
           </label>
           <label className="checkbox-field">
             <input

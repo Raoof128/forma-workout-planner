@@ -1,0 +1,52 @@
+{
+  "sourceCommit": "98f853d",
+  "pullRequest": 14,
+  "schemaVersion": 6,
+  "production": {
+    "url": "https://forma.raoufabedini.dev",
+    "workerVersion": "a09aec75-b94d-47a2-b392-e9fa2fc63f1b",
+    "previousWorkerVersion": "4b87caa9-25ff-4181-b298-1d795e518301",
+    "migrationsApplied": ["0006-coach-token-scope.sql"],
+    "coachTokensAfterMigration": { "read": 3, "full": 0 }
+  },
+  "staging": {
+    "workerVersion": "27deb76c-9af5-4fab-8286-cf31c9af7e73",
+    "previousWorkerVersion": "712219ca-42b0-4b6c-8324-7dc520c77956",
+    "migrationsApplied": ["0006-coach-token-scope.sql"]
+  },
+  "api": {
+    "imageTag": "forma-api:workout-coach-20261019-98f853d",
+    "previousImageTag": "forma-api:signout-20261018-ea2dc4b",
+    "transferArchiveSha256": "99b20ef68c7651f58eb740d517a5d16f00c7eaea04d1b70df99b3cb4d7b9118f",
+    "configDigest": "sha256:d2187e7827696c493c601972c5ae50adb2b21c1abdc02c22361723eaff740a24",
+    "manifestDigest": "sha256:4e116746db7683c6948d3065cc615c302ab605fc5f8ab7e5f861ed4ba4334361",
+    "node": "26.11.1",
+    "uid": 10001,
+    "platform": "linux/amd64",
+    "modulesLoadInImage": true
+  },
+  "backups": {
+    "stagingBefore": "archives/forma-staging-20261019T112024Z.dump.age",
+    "stagingAfter": "archives/forma-staging-20261019T112036Z.dump.age",
+    "productionBefore": "archives/forma-production-20261019T112108Z.dump.age",
+    "productionAfter": "archives/forma-production-20261019T112121Z.dump.age",
+    "rowCountsUnchanged": true
+  },
+  "unrelatedContainersUnchanged": true,
+  "liveChecks": {
+    "home": 200,
+    "noTransform": true,
+    "assetHashesMatchLocalBuild": true,
+    "health": 200,
+    "workspaceAnonymous": 401,
+    "coachSummaryNoToken": 401,
+    "coachDataNoToken": 401,
+    "coachExercisesInvalidToken": 401,
+    "coachPatchNoToken": 401,
+    "coachPatchForeignOrigin": 403,
+    "coachPutOnData": 405,
+    "sessionAnonymous": null,
+    "unknownRoute": 404,
+    "guestWorkoutEditFillAndSides": true
+  }
+}

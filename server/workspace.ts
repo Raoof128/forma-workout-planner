@@ -2,7 +2,11 @@ import { createHash } from "node:crypto";
 import type { Pool, PoolClient } from "pg";
 import { freshData } from "../src/storage.js";
 import type { WorkspaceAcknowledgement, WorkspaceData } from "./schema.js";
-import { workspaceDataSchema, workspacePutSchema } from "./schema.js";
+import {
+  coachPatchSchema,
+  workspaceDataSchema,
+  workspacePutSchema,
+} from "./schema.js";
 
 export class WorkspaceConflict extends Error {
   constructor(
@@ -15,12 +19,30 @@ export class WorkspaceConflict extends Error {
   }
 }
 
+export type WorkspaceIssue = { path: string; message: string };
+
 export class InvalidWorkspace extends Error {
-  constructor(message: string) {
+  constructor(
+    message: string,
+    /** Field-level reasons, returned to coach tools so they can fix a write. */
+    readonly issues: WorkspaceIssue[] = [],
+  ) {
     super(message);
     this.name = "InvalidWorkspace";
   }
 }
+
+/** A coach edit would delete logged workouts without saying how many. */
+export class UnconfirmedHistoryRemoval extends Error {
+  constructor(readonly removed: number) {
+    super(
+      `This change removes ${removed} logged workout(s); confirm with removesSessions.`,
+    );
+    this.name = "UnconfirmedHistoryRemoval";
+  }
+}
+
+const MAX_WORKSPACE_BYTES = 20 * 1024 * 1024;
 
 type WorkspaceRow = {
   data: WorkspaceData;
@@ -128,24 +150,30 @@ export async function getWorkspace(
   }
 }
 
-export async function putWorkspace(
+type WriteRequest = {
+  operationId: string;
+  /** Fingerprint of the caller's payload, for idempotent retries. */
+  hash: string;
+  expectedRevision: number;
+  /** Produces the validated next workspace from the locked current one. */
+  build: (current: WorkspaceData) => WorkspaceData;
+};
+
+type WriteResult =
+  | { replayed: false; acknowledgement: WorkspaceAcknowledgement }
+  | { replayed: true; revision: number; updatedAt: string };
+
+/**
+ * The one write path for a member workspace: lock the row, replay a repeated
+ * operation, refuse a stale revision, then store the next version. Member
+ * saves and coach edits both go through here.
+ */
+async function writeWorkspace(
   pool: Pool,
   userId: string,
   memberName: string | undefined,
-  input: unknown,
-): Promise<WorkspaceAcknowledgement> {
-  const parsed = workspacePutSchema.safeParse(input);
-  if (!parsed.success)
-    throw new InvalidWorkspace("Workspace payload is invalid.");
-
-  const { expectedRevision, operationId } = parsed.data;
-  // workspacePutSchema already ran the full workspace validator.
-  const incoming = parsed.data.data;
-  const maxBytes = 20 * 1024 * 1024;
-  if (Buffer.byteLength(JSON.stringify(incoming), "utf8") > maxBytes)
-    throw new InvalidWorkspace("Workspace data exceeds 20 MiB.");
-  const hash = requestHash(incoming, expectedRevision);
-
+  { operationId, hash, expectedRevision, build }: WriteRequest,
+): Promise<WriteResult> {
   const client = await pool.connect();
   try {
     await client.query("BEGIN");
@@ -177,11 +205,7 @@ export async function putWorkspace(
       }
       const acknowledgement = prior.rows[0].acknowledgement;
       await client.query("COMMIT");
-      const retryAcknowledgement: WorkspaceAcknowledgement = {
-        ...acknowledgement,
-        data: { ...incoming, revision: acknowledgement.revision },
-      };
-      return retryAcknowledgement;
+      return { replayed: true, ...acknowledgement };
     }
 
     if (locked.revision !== expectedRevision) {
@@ -194,7 +218,10 @@ export async function putWorkspace(
     const nextRevision = locked.revision + 1;
     if (nextRevision > 2_147_483_647)
       throw new InvalidWorkspace("Workspace revision limit reached.");
-    const saved: WorkspaceData = { ...incoming, revision: nextRevision };
+    const saved: WorkspaceData = {
+      ...build(locked.data),
+      revision: nextRevision,
+    };
     const updated = await client.query<WorkspaceRow>(
       `UPDATE member_workspace
           SET data = $2::jsonb,
@@ -240,13 +267,129 @@ export async function putWorkspace(
       [userId],
     );
     await client.query("COMMIT");
-    return acknowledgement;
+    return { replayed: false, acknowledgement };
   } catch (error) {
     await client.query("ROLLBACK");
     throw error;
   } finally {
     client.release();
   }
+}
+
+export async function putWorkspace(
+  pool: Pool,
+  userId: string,
+  memberName: string | undefined,
+  input: unknown,
+): Promise<WorkspaceAcknowledgement> {
+  const parsed = workspacePutSchema.safeParse(input);
+  if (!parsed.success)
+    throw new InvalidWorkspace("Workspace payload is invalid.");
+
+  const { expectedRevision, operationId } = parsed.data;
+  // workspacePutSchema already ran the full workspace validator.
+  const incoming = parsed.data.data;
+  if (Buffer.byteLength(JSON.stringify(incoming), "utf8") > MAX_WORKSPACE_BYTES)
+    throw new InvalidWorkspace("Workspace data exceeds 20 MiB.");
+  const result = await writeWorkspace(pool, userId, memberName, {
+    operationId,
+    hash: requestHash(incoming, expectedRevision),
+    expectedRevision,
+    build: () => incoming,
+  });
+  if (!result.replayed) return result.acknowledgement;
+  return {
+    revision: result.revision,
+    updatedAt: result.updatedAt,
+    data: { ...incoming, revision: result.revision },
+  };
+}
+
+/** The workspace sections a coach edit may replace, each as a whole. */
+export const COACH_SECTIONS = [
+  "routines",
+  "history",
+  "active",
+  "profile",
+  "schedule",
+] as const;
+
+function issuesOf(error: {
+  issues: { path: PropertyKey[]; message: string }[];
+}) {
+  return error.issues.slice(0, 10).map((issue) => ({
+    path: issue.path.map(String).join("."),
+    message: issue.message,
+  }));
+}
+
+/**
+ * Apply a coach edit: each section named in `changes` replaces the stored
+ * section; everything else is kept. The merged workspace passes the same
+ * strict validator as a member save. Dropping logged workouts must be
+ * confirmed with their exact count, so a tool that only read the recent
+ * summary cannot erase older history by accident.
+ */
+export async function patchWorkspace(
+  pool: Pool,
+  userId: string,
+  memberName: string | undefined,
+  input: unknown,
+): Promise<{ revision: number; updatedAt: string; replayed: boolean }> {
+  const parsed = coachPatchSchema.safeParse(input);
+  if (!parsed.success)
+    throw new InvalidWorkspace(
+      "Send expectedRevision, operationId and changes with at least one of: routines, history, active, profile, schedule.",
+      issuesOf(parsed.error),
+    );
+  const { expectedRevision, operationId, changes, removesSessions } =
+    parsed.data;
+  const hash = createHash("sha256")
+    .update(
+      stableJson({
+        coach: true,
+        changes,
+        removesSessions: removesSessions ?? null,
+        expectedRevision,
+      }),
+    )
+    .digest("hex");
+  const result = await writeWorkspace(pool, userId, memberName, {
+    operationId,
+    hash,
+    expectedRevision,
+    build(current) {
+      const merged: Record<string, unknown> = { ...current };
+      for (const section of COACH_SECTIONS)
+        if (Object.hasOwn(changes, section)) merged[section] = changes[section];
+      const checked = workspaceDataSchema.safeParse(merged);
+      if (!checked.success)
+        throw new InvalidWorkspace(
+          "The edited workspace is invalid.",
+          issuesOf(checked.error),
+        );
+      if (
+        Buffer.byteLength(JSON.stringify(checked.data), "utf8") >
+        MAX_WORKSPACE_BYTES
+      )
+        throw new InvalidWorkspace("Workspace data exceeds 20 MiB.");
+      const next = checked.data as WorkspaceData;
+      const kept = new Set(next.history.map((session) => session.id));
+      const removed = current.history.filter(
+        (session: { id: string }) => !kept.has(session.id),
+      ).length;
+      if (removed > 0 && removesSessions !== removed)
+        throw new UnconfirmedHistoryRemoval(removed);
+      return next;
+    },
+  });
+  return result.replayed
+    ? { revision: result.revision, updatedAt: result.updatedAt, replayed: true }
+    : {
+        revision: result.acknowledgement.revision,
+        updatedAt: result.acknowledgement.updatedAt,
+        replayed: false,
+      };
 }
 
 export function parseWorkspace(value: unknown): WorkspaceData {

@@ -296,6 +296,9 @@ test("real-time rest timer smoke decrements and survives a reload", async ({
   data.active = singleSession();
   await seed(page, data, "workout");
   await page.getByRole("button", { name: "60s", exact: true }).click();
+  await expect
+    .poll(async () => (await stored(page)).active.restEnd)
+    .not.toBeNull();
   const deadline = (await stored(page)).active.restEnd;
   await expect(page.locator('[role="timer"]')).toContainText("00:5");
   await page.waitForTimeout(1200);

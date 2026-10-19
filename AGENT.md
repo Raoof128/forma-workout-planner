@@ -58,6 +58,75 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-19 — Workout and coach release deployment
+
+- `~/.config/forma/production-deploy.env` names `DROPLET_USER=root`, and the
+  key `~/.ssh/eoi_droplet_ed25519` is also accepted for root. Connect as
+  `eoiadmin@$DROPLET_IP` and use `sudo`, per the earlier rule; only
+  `DROPLET_IP` and `CLOUDFLARE_API_TOKEN` are needed from that file.
+- `ops/Dockerfile` copies an explicit list of shared `src` files. A new
+  import from `server/` into `src/` must be added there; CI now imports every
+  server entry module inside the built image to catch a miss.
+- Host backups: `cd /opt/forma-<env> && python3 operations/account-operations.py operations/config.json backup`
+  (encrypted, signed, off-host). Each API container's compose files and env
+  file are in its `com.docker.compose.project.*` labels.
+- Both environments run `forma-api:workout-coach-20261019-98f853d` at schema 0006. Production Worker `a09aec75-…`, staging `27deb76c-…`. Record in
+  `docs/qa/workout-coach/`.
+
+### Raouf: 2026-10-19 — Full-access coach tokens
+
+- **Supersedes** the 2026-10-18 rule that `/api/coach/workspace` "must never
+  write": the owner asked for coach tokens with full read and edit access.
+  Coach tokens now carry `scope` (`read` | `full`, migration
+  `0006-coach-token-scope`). Existing and default tokens stay `read`; never
+  widen a minted token in place.
+- Bearer routes: `GET /api/coach/workspace`, `GET /api/coach/exercises` (any
+  scope), `GET`/`PATCH /api/coach/workspace/data` (`full`). Keep them out of
+  account, credential, session, token and deletion routes; a coach token must
+  never reach `/api/account/*` or `/api/auth/*`.
+- Coach edits go through `patchWorkspace` → `writeWorkspace` in
+  `server/workspace.ts`, the same locked, revision-checked, idempotent path as
+  `PUT /api/workspace`. Do not add a second write path. Each named section
+  replaces the stored one; the merged result passes `workspaceDataSchema`.
+  Dropping history needs `removesSessions` equal to the count removed.
+- The coach `PATCH` is the only mutation that may arrive without the app
+  `Origin` (Worker `bearerEdit` and server onRequest). It still refuses a
+  foreign `Origin` and `Sec-Fetch-Site: cross-site`. Keep that exemption tied
+  to that exact path, method and missing Origin.
+- Budgets in `server/coachRoutes.ts`: 120 reads/hour (summary, data and
+  exercises share it), 60 edits/hour per token, 20 failures/15 min per IP.
+  Security events: `coach_scope_denied`, `coach_token_rate_limited`,
+  `coach_workspace_write` (successful PATCH).
+- Server tests register members by display name; names must be unique per
+  file (`coach.test.ts` already uses Alpha–Delta). A repeated sign-up
+  answers 200 without sending mail, by design.
+- Local PostgreSQL 18 for server and account browser tests: start Docker
+  Desktop, run the CI image (`postgres:18.4-alpine@sha256:9a8a…`) on
+  `127.0.0.1:55432`, and set `TEST_DATABASE_URL` to it.
+
+### Raouf: 2026-10-19 — Workout editing, set fill and left/right logging
+
+- A per-side load/reps set stores `sides: { left, right }` and keeps `reps`
+  as their total; `validSides` in `src/exerciseMetrics.js` enforces that on
+  completed sets in the shared schema. Never store per-side reps in `reps`:
+  volume, the coach API and history all read `reps` as the set total. Use
+  `sideReps(set)` for strength estimates.
+- Side logging follows the entry's `perSide` flag, not the catalogue directly:
+  `defaultPerSide` turns it on for rows in `src/catalog/unilateral.json`
+  (`id → arm | leg | side`) and `sideLabel` reads that label. Keep that file
+  keyed by catalogue ID; `unit/workout-session.test.js` fails on unknown IDs.
+  The review covered every catalogue row; a new import needs its new rows
+  reviewed and added there, since `catalog:sync` does not touch it.
+- Build session entries with `sessionEntry` / `addedEntry`
+  (`src/workoutSession.js`), never by hand: they set `sides` and the fresh
+  `entryId` that keeps duplicate exercises unique. `updateSetValue` holds the
+  fill rule (later unfinished sets that still match the replaced value).
+- `WorkoutEditor` commits each action through `onUpdate`; there is no draft.
+  Removing an exercise with completed sets is a two-click confirm on the same
+  button (`aria-label` changes), which the browser test relies on.
+- Profile gains `fillSets` (default true). The API's strict parser accepts it,
+  so deploy the API with or before the frontend.
+
 ### Raouf: 2026-10-18 — Dashboard deploy and branch links
 
 - Deploy the operations dashboard with `npm run worker:deploy:dashboard`; it

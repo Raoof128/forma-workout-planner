@@ -19,9 +19,38 @@ test("API retains v2 programming fields and rejects every invalid bound and nest
     expectedRevision: 0,
     operationId: "programming",
   });
+  data.profile.fillSets = false;
+  data.active = {
+    id: "sides",
+    name: "Sides",
+    startedAt: 1000,
+    notes: "",
+    restSeconds: 90,
+    restEnd: null,
+    restPaused: null,
+    exercises: [
+      {
+        exerciseId: "lunge",
+        perSide: true,
+        sets: [
+          { weight: 12, reps: 18, sides: { left: 8, right: 10 }, done: true },
+        ],
+      },
+    ],
+  };
   const parsed = workspacePutSchema.parse(payload());
   assert.equal(parsed.data.routines[0].exercises[0].rpe, 8.5);
   assert.equal(parsed.data.routines[0].archivedAt, 1);
+  assert.equal(parsed.data.profile.fillSets, false);
+  assert.deepEqual(parsed.data.active?.exercises[0].sets[0].sides, {
+    left: 8,
+    right: 10,
+  });
+  {
+    const input = payload();
+    input.data.active.exercises[0].sets[0].reps = 20;
+    assert.equal(workspacePutSchema.safeParse(input).success, false, "sides");
+  }
   for (const [key, value] of [
     ["repsMax", 0],
     ["repsMax", 101],

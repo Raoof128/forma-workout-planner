@@ -516,6 +516,7 @@ export default function Account({
   const [coachBusy, setCoachBusy] = useState(false);
   const [coachError, setCoachError] = useState("");
   const [coachLabel, setCoachLabel] = useState("");
+  const [coachScope, setCoachScope] = useState("read");
   const [coachAction, setCoachAction] = useState(null);
   // The plaintext token exists only here, until the member dismisses it.
   const [issuedCoachToken, setIssuedCoachToken] = useState(null);
@@ -693,9 +694,13 @@ export default function Account({
     setCoachError("");
     setCoachCopied(false);
     try {
-      const issued = await account.createCoachToken({ label: coachLabel });
+      const issued = await account.createCoachToken({
+        label: coachLabel,
+        scope: coachScope,
+      });
       setIssuedCoachToken(issued);
       setCoachLabel("");
+      setCoachScope("read");
       if (issued?.record) setCoachTokens((items) => [issued.record, ...items]);
     } catch (cause) {
       setCoachError(
@@ -2090,9 +2095,12 @@ export default function Account({
                   <div>
                     <h3 id="coach-access-title">Coach access</h3>
                     <small>
-                      Read-only tokens let a coaching tool or AI assistant read
-                      your routines, workouts and personal bests. They cannot
-                      change anything or see your email.
+                      Give a coaching tool or AI assistant its own token. A
+                      read-only token reads your routines, workouts and personal
+                      bests. A full-access token can also read and change
+                      everything in your training workspace. No token can see
+                      your email or change your password, sign-ins, 2-step
+                      verification or account.
                     </small>
                   </div>
                 </div>
@@ -2107,6 +2115,9 @@ export default function Account({
                       Copy this token now. It will not be shown again.
                     </strong>
                     <p>
+                      {issuedCoachToken.record?.scope === "full"
+                        ? "This token can read and change your routines, workouts, history, profile and schedule. "
+                        : "This token can only read your training. "}
                       Store it like a password, for example in your coaching
                       tool’s secret settings. Never paste it into a chat. It
                       expires on {dateLabel(issuedCoachToken.record?.expiresAt)}
@@ -2135,7 +2146,7 @@ export default function Account({
                   </div>
                 )}
                 <form
-                  className="account-inline-form"
+                  className="account-inline-form account-coach-form"
                   onSubmit={createCoachToken}
                 >
                   <label>
@@ -2150,13 +2161,39 @@ export default function Account({
                       onChange={(event) => setCoachLabel(event.target.value)}
                     />
                   </label>
+                  <fieldset className="account-coach-scope">
+                    <legend>Access</legend>
+                    <label>
+                      <input
+                        type="radio"
+                        name="coach-scope"
+                        value="read"
+                        checked={coachScope === "read"}
+                        onChange={() => setCoachScope("read")}
+                      />
+                      Read only
+                    </label>
+                    <label>
+                      <input
+                        type="radio"
+                        name="coach-scope"
+                        value="full"
+                        checked={coachScope === "full"}
+                        onChange={() => setCoachScope("full")}
+                      />
+                      Full access: read and edit
+                    </label>
+                  </fieldset>
                   <BusyButton
                     type="submit"
                     className="account-secondary"
                     disabled={!!coachAction || coachBusy}
                     loading={coachAction === "create"}
                   >
-                    Create read-only token <ArrowRight size={16} />
+                    {coachScope === "full"
+                      ? "Create full-access token"
+                      : "Create read-only token"}{" "}
+                    <ArrowRight size={16} />
                   </BusyButton>
                 </form>
                 {coachBusy ? (
@@ -2175,6 +2212,9 @@ export default function Account({
                         <span>
                           <strong>{item.label}</strong>
                           <small>
+                            {item.scope === "full"
+                              ? "Full access · "
+                              : "Read only · "}
                             {item.lastUsedAt
                               ? `Last used ${dateLabel(item.lastUsedAt)}`
                               : "Never used"}

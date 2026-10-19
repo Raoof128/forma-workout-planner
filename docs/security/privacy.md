@@ -20,7 +20,7 @@ practical benchmark.
 | Workout workspace           | The product                 | `member_workspace` (JSON)              | Until deletion                                    | Member only              |
 | Operation acknowledgements  | Idempotent retries          | `member_workspace_operations`          | 30 days or latest 1,000                           | API only                 |
 | Abuse counters              | Rate limiting               | `security_throttle`, HMAC digests only | Pruned after 2 days unless locked                 | API only                 |
-| Coach tokens                | Read-only coaching access   | `member_coach_token`, HMAC digest only | 90 days, or until revoked or account deletion     | Member sees label, dates |
+| Coach tokens                | Coaching access (read/full) | `member_coach_token`, HMAC digest only | 90 days, or until revoked or account deletion     | Member sees label, dates |
 | Guest data                  | Local-only mode             | Browser `localStorage` (`forma-v1`)    | Until the person clears it                        | That browser             |
 | Logs                        | Operations                  | Container logs, 3 × 10 MB rotation     | Rotation                                          | Operator                 |
 | Backups                     | Recovery                    | Off-host, age-encrypted                | Owner to define (open)                            | Operator                 |

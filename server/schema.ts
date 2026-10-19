@@ -43,3 +43,26 @@ export type WorkspaceAcknowledgement = {
   revision: number;
   updatedAt: string;
 };
+
+// A coach edit names whole sections to replace; the merged result is checked
+// with workspaceDataSchema. Unknown sections (revision, version) are refused.
+export const coachPatchSchema = z
+  .object({
+    expectedRevision: z.number().int().min(0).max(2_147_483_647),
+    operationId: z.string().trim().min(1).max(200),
+    changes: z
+      .object({
+        routines: z.unknown().optional(),
+        history: z.unknown().optional(),
+        active: z.unknown().optional(),
+        profile: z.unknown().optional(),
+        schedule: z.unknown().optional(),
+      })
+      .strict()
+      .refine(
+        (changes) => Object.keys(changes).length > 0,
+        "Name at least one section to change.",
+      ),
+    removesSessions: z.number().int().min(1).max(10_000).optional(),
+  })
+  .strict();

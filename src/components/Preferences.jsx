@@ -23,6 +23,7 @@ export function Settings({
     data.profile.restSeconds ?? 90,
   );
   const [muted, setMuted] = useState(data.profile.muted ?? false);
+  const [fillSets, setFillSets] = useState(data.profile.fillSets ?? true);
   const original = useRef(data.profile);
   const [backup, setBackup] = useState(null);
   const [error, setError] = useState("");
@@ -37,6 +38,7 @@ export function Settings({
         goal: Number(goal),
         restSeconds: Number(restSeconds),
         muted,
+        fillSets,
       };
       if (await onSave(profile, original.current)) original.current = profile;
     } finally {
@@ -113,6 +115,14 @@ export function Settings({
             onChange={(event) => setMuted(event.target.checked)}
           />
           Mute rest timer sound
+        </label>
+        <label className="checkbox-field">
+          <input
+            type="checkbox"
+            checked={fillSets}
+            onChange={(event) => setFillSets(event.target.checked)}
+          />
+          Fill the remaining sets with the weight and reps I type
         </label>
         <p className="muted small">
           Weights are logged in kilograms (kg). Dates use Sydney time.

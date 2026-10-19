@@ -40,7 +40,7 @@ handling, is in [Member workspace API and conflict handling](../member-data-sync
 
 ## Coach tokens
 
-Migration `0005-coach-tokens` adds `member_coach_token`: one row per read-only
+Migration `0005-coach-tokens` adds `member_coach_token`: one row per
 coach token with a random 22-character `id`, the owning `owner_id` (foreign key
 to `"user"(id) ON DELETE CASCADE`), a unique HMAC-SHA-256 `token_digest`, a
 1–60 character `label`, `created_at`, `expires_at` (checked to be after
@@ -48,7 +48,9 @@ creation), `last_used_at` and `revoked_at`. The plaintext token is never
 stored. Lookups are by digest and exclude revoked and expired rows; the runtime
 role has DML on the table (see `ops/grant-runtime-access.sql`). Minting takes
 a per-member advisory lock so the five-active-token cap holds under
-concurrency.
+concurrency. Migration `0006-coach-token-scope` adds `scope` (`read` or
+`full`, checked; default `read`), so every token minted before it stays
+read-only.
 
 ## Migrations and database roles
 
@@ -71,8 +73,11 @@ to verify recovery.
 - `GET /api/workspace`: authenticated `{data, revision, updatedAt}`.
 - `PUT /api/workspace`: authenticated strict body `{data, expectedRevision, operationId}`.
 - `GET /api/workspace/export`: authenticated validated workspace JSON attachment.
-- `GET /api/coach/workspace`: bearer coach token; read-only training summary
-  for the token's owner (see the [API reference](api.md#coach-access-read-only-tokens)).
+- `GET /api/coach/workspace` and `GET /api/coach/exercises`: bearer coach
+  token; training summary and catalogue search for the token's owner.
+- `GET`/`PATCH /api/coach/workspace/data`: full-access bearer token; whole
+  workspace read, and section edits through the same locked, revision-checked
+  and idempotent write path as `PUT /api/workspace` (see the [API reference](api.md#coach-access-read-only-and-full-access-tokens)).
 
 All workspace responses use `Cache-Control: private, no-store`. The API validates
 the same data rules as the browser backup parser, including unique routine and

@@ -5,7 +5,7 @@ import {
   entryKey,
   validGroups,
 } from "./routineProgramming.js";
-import { validMeasurement } from "./exerciseMetrics.js";
+import { validMeasurement, validSides } from "./exerciseMetrics.js";
 
 export const STORAGE_KEY = "forma-v1";
 export const MAX_BACKUP_BYTES = 20 * 1024 * 1024;
@@ -48,6 +48,7 @@ const legacyDraftNumber = z
   .max(350)
   .refine((value) => value.trim() !== "" && Number.isFinite(Number(value)))
   .transform((value) => String(Number(value)));
+const sideReps = z.union([number.int().min(1).max(100), z.literal("")]);
 const setSchema = z
   .object({
     legacyDraft: z
@@ -60,6 +61,8 @@ const setSchema = z
       .default(null),
     weight: editableNumber,
     reps: z.union([number.int().min(1).max(100), z.literal("")]),
+    // Unilateral sets log each side; reps then holds the total of both.
+    sides: z.object({ left: sideReps, right: sideReps }).optional(),
     rpe,
     done: z.boolean(),
     durationSeconds: z
@@ -79,6 +82,10 @@ const setSchema = z
         set.reps >= 1 &&
         set.reps <= 100),
     "Completed sets require valid weight and repetitions.",
+  )
+  .refine(
+    (set) => !set.done || validSides(set),
+    "Completed sets require valid left and right repetitions.",
   );
 const unique = (key) => (values) =>
   new Set(values.map((value) => value[key])).size === values.length;
@@ -178,6 +185,7 @@ export const dataSchema = z.object({
     goal: number.int().min(1).max(7),
     restSeconds: number.int().min(10).max(600).default(90),
     muted: z.boolean().default(false),
+    fillSets: z.boolean().default(true),
   }),
   schedule: z
     .array(number.int().min(0).max(6))

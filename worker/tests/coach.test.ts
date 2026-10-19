@@ -233,3 +233,163 @@ test("COACH-04: minting and revoking tokens still need the same-origin browser c
   assert.equal(crossSiteRead.status, 403);
   assert.equal(calls, 0);
 });
+
+test("COACH-05: full-access routes forward the bearer only, and edits need no browser Origin", async () => {
+  const seen: {
+    method?: string;
+    path: string;
+    headers: Headers;
+    size: number;
+  }[] = [];
+  const fetcher = async (input: RequestInfo | URL, init?: RequestInit) => {
+    const headers = new Headers(init?.headers);
+    const body = init?.body
+      ? await new Response(init.body as BodyInit).arrayBuffer()
+      : new ArrayBuffer(0);
+    seen.push({
+      method: init?.method,
+      path: new URL(input.toString()).pathname,
+      headers,
+      size: body.byteLength,
+    });
+    return json();
+  };
+  const bearer = { authorization: `Bearer ${token}` };
+  const ambient = {
+    cookie: "forma.session_token=abc; other=1",
+    "x-forma-member": "member-ref",
+  };
+  // A server-side tool: bearer, JSON, no Origin, no Fetch metadata.
+  const edit = await handleApiRequest(
+    edgeRequest("/api/coach/workspace/data", {
+      method: "PATCH",
+      headers: { ...bearer, ...ambient, "content-type": "application/json" },
+      body: JSON.stringify({ changes: { schedule: [1] } }),
+    }),
+    env,
+    fetcher,
+  );
+  assert.equal(edit.status, 200);
+  const read = await handleApiRequest(
+    edgeRequest("/api/coach/workspace/data", {
+      headers: { ...bearer, ...ambient },
+    }),
+    env,
+    fetcher,
+  );
+  assert.equal(read.status, 200);
+  const search = await handleApiRequest(
+    edgeRequest("/api/coach/exercises?q=row", { headers: bearer }),
+    env,
+    fetcher,
+  );
+  assert.equal(search.status, 200);
+  assert.deepEqual(
+    seen.map((item) => `${item.method} ${item.path}`),
+    [
+      "PATCH /api/coach/workspace/data",
+      "GET /api/coach/workspace/data",
+      "GET /api/coach/exercises",
+    ],
+  );
+  for (const item of seen) {
+    assert.equal(item.headers.get("authorization"), `Bearer ${token}`);
+    assert.equal(item.headers.get("cookie"), null);
+    assert.equal(item.headers.get("x-forma-member"), null);
+  }
+
+  // A large edit (a whole history) is allowed the workspace body limit.
+  const big = "x".repeat(200 * 1024);
+  const large = await handleApiRequest(
+    edgeRequest("/api/coach/workspace/data", {
+      method: "PATCH",
+      headers: { ...bearer, "content-type": "application/json" },
+      body: JSON.stringify({ note: big }),
+    }),
+    env,
+    fetcher,
+  );
+  assert.equal(large.status, 200);
+  assert.ok(seen.at(-1)!.size > 200 * 1024);
+
+  let calls = 0;
+  const counting = async () => {
+    calls += 1;
+    return json();
+  };
+  const refused = await Promise.all([
+    // A web page on another site cannot drive an edit, even with a token.
+    handleApiRequest(
+      edgeRequest("/api/coach/workspace/data", {
+        method: "PATCH",
+        headers: { ...bearer, origin: "https://attacker.example" },
+        body: "{}",
+      }),
+      env,
+      counting,
+    ),
+    handleApiRequest(
+      edgeRequest("/api/coach/workspace/data", {
+        method: "PATCH",
+        headers: { ...bearer, "sec-fetch-site": "cross-site" },
+        body: "{}",
+      }),
+      env,
+      counting,
+    ),
+    // Only PATCH edits; PUT, POST and DELETE stay closed on the coach routes.
+    ...["PUT", "POST", "DELETE"].map((method) =>
+      handleApiRequest(
+        edgeRequest("/api/coach/workspace/data", {
+          method,
+          headers: bearer,
+          body: method === "DELETE" ? undefined : "{}",
+        }),
+        env,
+        counting,
+      ),
+    ),
+    handleApiRequest(
+      edgeRequest("/api/coach/exercises", {
+        method: "POST",
+        headers: bearer,
+        body: "{}",
+      }),
+      env,
+      counting,
+    ),
+    handleApiRequest(
+      edgeRequest("/api/coach/workspace/data/extra"),
+      env,
+      counting,
+    ),
+  ]);
+  assert.deepEqual(
+    refused.map((response) => response.status),
+    [403, 403, 405, 405, 405, 405, 404],
+  );
+  assert.equal(calls, 0);
+
+  // The member's own workspace save still needs the same-origin proof.
+  const memberSave = await handleApiRequest(
+    edgeRequest("/api/workspace", {
+      method: "PUT",
+      headers: { ...ambient, "content-type": "application/json" },
+      body: "{}",
+    }),
+    env,
+    counting,
+  );
+  assert.equal(memberSave.status, 403);
+  // And the bearer header never reaches the member routes.
+  const elsewhere: Headers[] = [];
+  await handleApiRequest(
+    edgeRequest("/api/workspace", { headers: bearer }),
+    env,
+    async (_input, init) => {
+      elsewhere.push(new Headers(init?.headers));
+      return json();
+    },
+  );
+  assert.equal(elsewhere[0].get("authorization"), null);
+});

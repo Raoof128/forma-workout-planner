@@ -15,14 +15,20 @@ export const repRangeText = (entry) =>
     ? `${entry.reps}–${entry.repsMax}`
     : `${entry.reps}`;
 export function sideLabel(exercise) {
+  if (exercise?.side) return exercise.side;
   return exercise?.muscle === "Legs" ||
     /lunge|split squat|single.leg|calf|step.up/i.test(exercise?.name ?? "")
     ? "leg"
     : "arm";
 }
+// Reviewed unilateral catalogue entries (`side`) default to per-side logging;
+// the name test keeps custom or unreviewed rows sensible.
 export function defaultPerSide(exercise) {
-  return /\b(lunge|lunges|split squat|single.arm|one.arm|single.leg|one.leg|bulgarian)\b/i.test(
-    exercise?.name ?? "",
+  return (
+    exercise?.side !== undefined ||
+    /\b(lunge|lunges|split squat|single.arm|one.arm|single.leg|one.leg|bulgarian)\b/i.test(
+      exercise?.name ?? "",
+    )
   );
 }
 export const repsText = (entry, exercise) =>

@@ -39,10 +39,17 @@ const FORWARDED_RESPONSE_HEADERS = new Set([
   "vary",
 ]);
 const API_CONTENT_TYPES = ["application/json", "text/plain"];
-// The one route that authenticates with a bearer token instead of a cookie.
+// The routes that authenticate with a bearer token instead of a cookie.
 // Authorization is forwarded there and nowhere else; cookies and the member
 // reference are withheld there so the two credential types never mix.
 const COACH_READ_PATH = "/api/coach/workspace";
+const COACH_DATA_PATH = "/api/coach/workspace/data";
+const COACH_EXERCISES_PATH = "/api/coach/exercises";
+const BEARER_PATHS = new Set([
+  COACH_READ_PATH,
+  COACH_DATA_PATH,
+  COACH_EXERCISES_PATH,
+]);
 // Only FORMA's own Better Auth cookies may be set through the gateway. This
 // also keeps any Cloudflare Access cookie on the Worker-to-origin hop private.
 const APP_COOKIE = /^(?:__Secure-|__Host-)?forma\.[A-Za-z0-9_.-]+$/;
@@ -146,8 +153,12 @@ function allowedMethods(pathname: string): Set<string> | null {
   if (pathname === "/api/health") return new Set(["GET", "HEAD"]);
   if (pathname === "/api/workspace") return new Set(["GET", "PUT"]);
   if (pathname === "/api/workspace/export") return new Set(["GET"]);
-  // Read-only coach access: a bearer token, never a cookie, reads a summary.
+  // Coach access: a bearer token, never a cookie. Every token reads the
+  // summary and the exercise catalogue; full-access tokens (checked at the
+  // origin) also read the whole workspace and edit it.
   if (pathname === COACH_READ_PATH) return new Set(["GET"]);
+  if (pathname === COACH_EXERCISES_PATH) return new Set(["GET"]);
+  if (pathname === COACH_DATA_PATH) return new Set(["GET", "PATCH"]);
   if (pathname === "/api/account/coach-tokens") return new Set(["GET", "POST"]);
   if (/^\/api\/account\/coach-tokens\/[A-Za-z0-9_-]{22}$/.test(pathname))
     return new Set(["DELETE"]);
@@ -175,7 +186,7 @@ function filteredRequestHeaders(
   env: Env,
   pathname: string,
 ): Headers {
-  const bearerRoute = pathname === COACH_READ_PATH;
+  const bearerRoute = BEARER_PATHS.has(pathname);
   // Cloudflare overwrites CF-Connecting-IP at the app edge. It can be rewritten
   // again when the Worker calls a private Tunnel, so copy the trusted inbound
   // value to our own header before stripping caller-supplied metadata.
@@ -360,15 +371,24 @@ function createHandler(fetcher: Fetcher) {
     const origin = request.headers.get("origin");
     if (origin && origin !== appOrigin.origin)
       return jsonError(403, "Origin is not allowed");
+    // A coach edit carries an explicit bearer header that browsers never add
+    // by themselves, and its cookies are withheld below, so it needs no
+    // same-origin proof. A foreign Origin was already refused above.
+    const bearerEdit =
+      request.method === "PATCH" &&
+      url.pathname === COACH_DATA_PATH &&
+      origin === null;
     if (
       ["POST", "PUT", "PATCH", "DELETE"].includes(request.method) &&
-      origin !== appOrigin.origin
+      origin !== appOrigin.origin &&
+      !bearerEdit
     ) {
       return jsonError(403, "A same-origin request is required");
     }
 
     const bodyLimit =
-      request.method === "PUT" && url.pathname === "/api/workspace"
+      (request.method === "PUT" && url.pathname === "/api/workspace") ||
+      (request.method === "PATCH" && url.pathname === COACH_DATA_PATH)
         ? MAX_BODY_BYTES
         : MAX_SMALL_BODY_BYTES;
     const declaredLength = request.headers.get("content-length");

@@ -34,8 +34,12 @@ suspended devices may deliver the completion cue when they resume.
 `version: 2`; the browser key remains `forma-v1` so existing installations are
 found. Routine/session exercise records gain optional `repsMax`, `rpe`,
 `restSeconds`, `perSide`, `note` and `groupId`. Nullable fields default to null;
-`perSide` defaults false. Sessions additionally snapshot `targetReps`. Logged sets
-have nullable actual `rpe`. Profile defaults are `restSeconds: 90`, `muted: false`.
+`perSide` defaults false (true by default for catalogue rows reviewed as
+unilateral in `src/catalog/unilateral.json`). Sessions additionally snapshot
+`targetReps`. A per-side load/reps set also carries `sides: { left, right }`;
+its `reps` is then the total of both sides and is validated as such. Logged sets
+have nullable actual `rpe`. Profile defaults are `restSeconds: 90`, `muted: false`,
+`fillSets: true`.
 
 Only the reviewed identical-unit incline press/fly synonyms in
 `src/catalog/programming-aliases.json` migrate IDs. If old aliases and their

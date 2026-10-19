@@ -568,3 +568,370 @@ test("bearer guessing and polling are budgeted and malformed credentials never r
   assert.deepEqual(exhausted.json(), { error: "rate_limited" });
   assert.equal(exhausted.headers["retry-after"], "3600");
 });
+
+type Ack = { data: WorkspaceData; revision: number; updatedAt: string };
+
+async function coachData(
+  authorization: string,
+  method: "GET" | "PATCH" = "GET",
+  payload?: unknown,
+  extra: Record<string, string> = {},
+) {
+  assert.ok(app);
+  return app.inject({
+    method,
+    url: "/api/coach/workspace/data",
+    headers: {
+      ...gateway("203.0.113.140"),
+      authorization,
+      ...(payload === undefined ? {} : { "content-type": "application/json" }),
+      ...extra,
+    },
+    ...(payload === undefined ? {} : { payload: payload as object }),
+  });
+}
+
+test("a full-access token reads the whole workspace and edits it safely; a read-only token cannot", async () => {
+  assert.ok(app && pool);
+  clearEmailSink();
+  const delta = await registerMember("Kappa");
+  const epsilon = await registerMember("Lambda");
+
+  // Scope is explicit, defaults to read, and rejects anything unknown.
+  const unknownScope = await app.inject({
+    method: "POST",
+    url: "/api/account/coach-tokens",
+    headers: { ...asMember(delta), "content-type": "application/json" },
+    payload: { label: "Admin", scope: "admin" },
+  });
+  assert.equal(unknownScope.statusCode, 400);
+  assert.deepEqual(unknownScope.json(), { error: "invalid_scope" });
+  const readToken = (await mint(delta, "Reader")).json() as {
+    token: string;
+    record: { scope: string };
+  };
+  assert.equal(readToken.record.scope, "read");
+  const fullMint = await app.inject({
+    method: "POST",
+    url: "/api/account/coach-tokens",
+    headers: { ...asMember(delta), "content-type": "application/json" },
+    payload: { label: "Claude coach", scope: "full" },
+  });
+  assert.equal(fullMint.statusCode, 201, fullMint.body);
+  const fullToken = fullMint.json() as {
+    token: string;
+    record: { id: string; scope: string };
+  };
+  assert.equal(fullToken.record.scope, "full");
+  const listed = await app.inject({
+    method: "GET",
+    url: "/api/account/coach-tokens",
+    headers: asMember(delta),
+  });
+  assert.deepEqual(
+    (listed.json() as { label: string; scope: string }[])
+      .map((item) => `${item.label}:${item.scope}`)
+      .sort(),
+    ["Claude coach:full", "Reader:read"],
+  );
+  const full = `Bearer ${fullToken.token}`;
+  const reader = `Bearer ${readToken.token}`;
+
+  // Read-only tokens keep the summary and catalogue but nothing more.
+  assert.equal((await coachRead(reader)).json().access, "read");
+  assert.equal((await coachRead(full)).json().access, "full");
+  for (const response of [
+    await coachData(reader),
+    await coachData(reader, "PATCH", {
+      expectedRevision: 0,
+      operationId: "nope",
+      changes: { schedule: [] },
+    }),
+  ]) {
+    assert.equal(response.statusCode, 403, response.body);
+    assert.equal(response.json().error, "insufficient_scope");
+  }
+
+  const exercises = await app.inject({
+    method: "GET",
+    url: "/api/coach/exercises?q=reverse%20lunge&limit=5",
+    headers: { ...gateway(), authorization: reader },
+  });
+  assert.equal(exercises.statusCode, 200, exercises.body);
+  const lunge = (
+    exercises.json() as {
+      exercises: {
+        id: string;
+        logs: string[];
+        perSideByDefault: boolean;
+        side?: string;
+      }[];
+    }
+  ).exercises.find((item) => item.id === "lunge");
+  assert.deepEqual(lunge, {
+    ...lunge,
+    logs: ["weight", "reps"],
+    perSideByDefault: true,
+    side: "leg",
+  });
+  for (const query of [
+    "?limit=0",
+    "?limit=101",
+    "?limit=x",
+    `?q=${"a".repeat(101)}`,
+  ]) {
+    const bad: Awaited<ReturnType<NonNullable<typeof app>["inject"]>> =
+      await app.inject({
+        method: "GET",
+        url: `/api/coach/exercises${query}`,
+        headers: { ...gateway(), authorization: reader },
+      });
+    assert.equal(bad.statusCode, 400, query);
+  }
+
+  // The full read is exactly what the member's own app loads.
+  const own = (
+    await app.inject({
+      method: "GET",
+      url: "/api/workspace",
+      headers: asMember(delta),
+    })
+  ).json() as Ack;
+  const fullRead = await coachData(full);
+  assert.equal(fullRead.statusCode, 200, fullRead.body);
+  assert.deepEqual(fullRead.json(), own);
+  assert.equal(fullRead.body.includes(delta.email), false);
+
+  // A tool calling from a server sends no Origin and can edit any section.
+  const now = Date.now();
+  const session = {
+    id: `delta-session-${suffix}`,
+    name: "Coach logged legs",
+    startedAt: now - 3_600_000,
+    notes: "Logged by the coach",
+    restSeconds: 90,
+    restEnd: null,
+    restPaused: null,
+    date: new Date(now - 60_000).toISOString(),
+    duration: 3_000,
+    exercises: [
+      {
+        exerciseId: "lunge",
+        perSide: true,
+        sets: [
+          {
+            weight: 12,
+            reps: 18,
+            sides: { left: 8, right: 10 },
+            rpe: 8,
+            done: true,
+          },
+        ],
+      },
+    ],
+  };
+  const editedRoutines = own.data.routines.map((routine, index) =>
+    index === 0
+      ? {
+          ...routine,
+          name: "Coach upper",
+          exercises: routine.exercises.map((item, itemIndex) =>
+            itemIndex === 0
+              ? { ...item, reps: 6, repsMax: 8, rpe: 8, restSeconds: 120 }
+              : item,
+          ),
+        }
+      : routine,
+  );
+  const editChanges = {
+    routines: editedRoutines,
+    history: [session],
+    profile: { ...own.data.profile, goal: 5, fillSets: false },
+    schedule: [0, 2, 4],
+  };
+  const edit = await coachData(full, "PATCH", {
+    expectedRevision: own.revision,
+    operationId: `delta-edit-${suffix}`,
+    changes: editChanges,
+  });
+  assert.equal(edit.statusCode, 200, edit.body);
+  assert.deepEqual(Object.keys(edit.json()).sort(), [
+    "replayed",
+    "revision",
+    "updatedAt",
+  ]);
+  assert.equal(edit.json().revision, own.revision + 1);
+  const after = (
+    await app.inject({
+      method: "GET",
+      url: "/api/workspace",
+      headers: asMember(delta),
+    })
+  ).json() as Ack;
+  assert.equal(after.revision, own.revision + 1);
+  assert.equal(after.data.routines[0].name, "Coach upper");
+  assert.equal(after.data.routines[0].exercises[0].repsMax, 8);
+  assert.deepEqual(after.data.schedule, [0, 2, 4]);
+  assert.equal(after.data.profile.fillSets, false);
+  assert.deepEqual(after.data.history[0].exercises[0].sets[0].sides, {
+    left: 8,
+    right: 10,
+  });
+  // Sections the edit did not name are untouched.
+  assert.deepEqual(after.data.routines.slice(1), own.data.routines.slice(1));
+  assert.equal(after.data.active, own.data.active);
+
+  // The same operation replays; reusing its ID for something else conflicts.
+  const replay = await coachData(full, "PATCH", {
+    expectedRevision: own.revision,
+    operationId: `delta-edit-${suffix}`,
+    changes: editChanges,
+  });
+  assert.equal(replay.statusCode, 200, replay.body);
+  assert.equal(replay.json().replayed, true);
+  assert.equal(replay.json().revision, own.revision + 1);
+  const reused = await coachData(full, "PATCH", {
+    expectedRevision: own.revision,
+    operationId: `delta-edit-${suffix}`,
+    changes: { schedule: [1] },
+  });
+  assert.equal(reused.statusCode, 409);
+  assert.equal(reused.json().error, "operation_id_reused");
+
+  // A stale revision is refused with the revision to reload from.
+  const stale = await coachData(full, "PATCH", {
+    expectedRevision: own.revision,
+    operationId: `delta-stale-${suffix}`,
+    changes: { schedule: [1] },
+  });
+  assert.equal(stale.statusCode, 409);
+  assert.equal(stale.json().error, "stale_revision");
+  assert.equal(stale.json().revision, after.revision);
+  assert.equal("data" in stale.json(), false);
+
+  // Invalid content is refused with the field that is wrong.
+  const invalid = await coachData(full, "PATCH", {
+    expectedRevision: after.revision,
+    operationId: `delta-invalid-${suffix}`,
+    changes: {
+      history: [
+        {
+          ...session,
+          exercises: [
+            {
+              ...session.exercises[0],
+              sets: [{ ...session.exercises[0].sets[0], reps: 30 }],
+            },
+          ],
+        },
+      ],
+    },
+  });
+  assert.equal(invalid.statusCode, 400, invalid.body);
+  assert.equal(invalid.json().error, "invalid_workspace");
+  assert.ok(
+    (invalid.json().issues as { path: string }[]).some((issue) =>
+      issue.path.startsWith("history.0.exercises.0.sets.0"),
+    ),
+    invalid.body,
+  );
+  for (const changes of [{}, { revision: 99 }, { email: "x@example.test" }]) {
+    const refused = await coachData(full, "PATCH", {
+      expectedRevision: after.revision,
+      operationId: `delta-shape-${JSON.stringify(changes)}`,
+      changes,
+    });
+    assert.equal(refused.statusCode, 400, JSON.stringify(changes));
+  }
+
+  // Dropping logged workouts needs their exact count.
+  const unconfirmed = await coachData(full, "PATCH", {
+    expectedRevision: after.revision,
+    operationId: `delta-drop-${suffix}`,
+    changes: { history: [] },
+  });
+  assert.equal(unconfirmed.statusCode, 400);
+  assert.equal(unconfirmed.json().error, "history_removal_unconfirmed");
+  assert.equal(unconfirmed.json().removedSessions, 1);
+  const wrongCount = await coachData(full, "PATCH", {
+    expectedRevision: after.revision,
+    operationId: `delta-drop-2-${suffix}`,
+    changes: { history: [] },
+    removesSessions: 2,
+  });
+  assert.equal(wrongCount.statusCode, 400);
+  const confirmed = await coachData(full, "PATCH", {
+    expectedRevision: after.revision,
+    operationId: `delta-drop-3-${suffix}`,
+    changes: { history: [] },
+    removesSessions: 1,
+  });
+  assert.equal(confirmed.statusCode, 200, confirmed.body);
+
+  // A foreign Origin is refused even with a valid token.
+  const foreign = await coachData(
+    full,
+    "PATCH",
+    {
+      expectedRevision: after.revision + 1,
+      operationId: `delta-foreign-${suffix}`,
+      changes: { schedule: [6] },
+    },
+    { origin: "https://attacker.example" },
+  );
+  assert.equal(foreign.statusCode, 403);
+
+  // The token decides whose workspace changes; a cookie riding along does not.
+  const epsilonBefore = (
+    await app.inject({
+      method: "GET",
+      url: "/api/workspace",
+      headers: asMember(epsilon),
+    })
+  ).json() as Ack;
+  const mixed = await coachData(
+    full,
+    "PATCH",
+    {
+      expectedRevision: after.revision + 1,
+      operationId: `delta-mixed-${suffix}`,
+      changes: { schedule: [3] },
+    },
+    { cookie: epsilon.cookie, "x-forma-member": epsilon.memberRef },
+  );
+  assert.equal(mixed.statusCode, 200, mixed.body);
+  const epsilonAfter = (
+    await app.inject({
+      method: "GET",
+      url: "/api/workspace",
+      headers: asMember(epsilon),
+    })
+  ).json() as Ack;
+  assert.deepEqual(epsilonAfter, epsilonBefore);
+  // A member cookie alone never reaches the coach routes.
+  const cookieOnly = await app.inject({
+    method: "GET",
+    url: "/api/coach/workspace/data",
+    headers: asMember(delta),
+  });
+  assert.equal(cookieOnly.statusCode, 401);
+
+  // Revocation ends full access immediately.
+  const revoked = await app.inject({
+    method: "DELETE",
+    url: `/api/account/coach-tokens/${fullToken.record.id}`,
+    headers: asMember(delta),
+  });
+  assert.equal(revoked.statusCode, 200);
+  assert.equal((await coachData(full)).statusCode, 401);
+  assert.equal(
+    (
+      await coachData(full, "PATCH", {
+        expectedRevision: after.revision + 2,
+        operationId: `delta-late-${suffix}`,
+        changes: { schedule: [] },
+      })
+    ).statusCode,
+    401,
+  );
+});
