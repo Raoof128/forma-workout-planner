@@ -5,11 +5,14 @@ import { tracksLoadReps } from "../src/exerciseMetrics.js";
 import type { WorkspaceData } from "./schema.js";
 
 /**
- * Read-only coach tokens let a member hand a coaching tool (a script, an AI
- * assistant) a credential that can read their training summary and nothing
- * else. The plaintext token is shown once; PostgreSQL stores only an HMAC
- * digest under the server auth secret, so a database read yields no usable
- * credential and a leaked token cannot act on the account.
+ * Coach tokens let a member hand a coaching tool (a script, an AI assistant)
+ * a credential for their training data. A `read` token reads the training
+ * summary only. A `full` token also reads the whole workspace and edits any
+ * part of it (routines, workouts, history, profile, schedule). No token can
+ * reach the account itself: email, password, sessions, 2-step verification,
+ * other tokens and account deletion stay behind the member's own sign-in.
+ * The plaintext token is shown once; PostgreSQL stores only an HMAC digest
+ * under the server auth secret, so a database read yields no usable credential.
  */
 
 export const COACH_TOKEN_PREFIX = "forma_coach_";
@@ -21,6 +24,8 @@ export const MAX_ACTIVE_COACH_TOKENS = 5;
 export const DEFAULT_SUMMARY_DAYS = 28;
 export const MAX_SUMMARY_DAYS = 365;
 export const MAX_SUMMARY_SESSIONS = 200;
+export const COACH_SCOPES = ["read", "full"] as const;
+export type CoachScope = (typeof COACH_SCOPES)[number];
 const MAX_NOTE_CHARS = 1000;
 
 const TOKEN_PATTERN = /^forma_coach_[A-Za-z0-9_-]{43}$/;
@@ -32,6 +37,7 @@ const LABEL_FORBIDDEN =
 export type CoachTokenRecord = {
   id: string;
   label: string;
+  scope: CoachScope;
   createdAt: string;
   expiresAt: string;
   lastUsedAt: string | null;
@@ -42,6 +48,20 @@ export class CoachTokenLimit extends Error {
     super("Too many active coach tokens.");
     this.name = "CoachTokenLimit";
   }
+}
+
+export class InvalidCoachTokenScope extends Error {
+  constructor() {
+    super("Coach token scope is invalid.");
+    this.name = "InvalidCoachTokenScope";
+  }
+}
+
+/** Absent means read-only: widening access is always an explicit choice. */
+export function normaliseCoachScope(value: unknown): CoachScope {
+  if (value === undefined) return "read";
+  if (value === "read" || value === "full") return value;
+  throw new InvalidCoachTokenScope();
 }
 
 export class InvalidCoachTokenLabel extends Error {
@@ -82,6 +102,7 @@ export function normaliseCoachLabel(value: unknown): string {
 type TokenRow = {
   id: string;
   label: string;
+  scope: CoachScope;
   created_at: Date;
   expires_at: Date;
   last_used_at: Date | null;
@@ -91,6 +112,7 @@ function asRecord(row: TokenRow): CoachTokenRecord {
   return {
     id: row.id,
     label: row.label,
+    scope: row.scope === "full" ? "full" : "read",
     createdAt: new Date(row.created_at).toISOString(),
     expiresAt: new Date(row.expires_at).toISOString(),
     lastUsedAt: row.last_used_at
@@ -104,7 +126,7 @@ export async function listCoachTokens(
   userId: string,
 ): Promise<CoachTokenRecord[]> {
   const result = await pool.query<TokenRow>(
-    `SELECT id, label, created_at, expires_at, last_used_at
+    `SELECT id, label, scope, created_at, expires_at, last_used_at
        FROM member_coach_token
       WHERE owner_id = $1
         AND revoked_at IS NULL
@@ -124,8 +146,10 @@ export async function issueCoachToken(
   secret: string,
   userId: string,
   labelInput: unknown,
+  scopeInput?: unknown,
 ): Promise<{ token: string; record: CoachTokenRecord }> {
   const label = normaliseCoachLabel(labelInput);
+  const scope = normaliseCoachScope(scopeInput);
   const token = `${COACH_TOKEN_PREFIX}${randomBytes(32).toString("base64url")}`;
   const id = randomBytes(16).toString("base64url");
   const client = await pool.connect();
@@ -147,16 +171,17 @@ export async function issueCoachToken(
     }
     const inserted = await client.query<TokenRow>(
       `INSERT INTO member_coach_token
-         (id, owner_id, token_digest, label, created_at, expires_at)
-       VALUES ($1, $2, $3, $4, clock_timestamp(),
+         (id, owner_id, token_digest, label, scope, created_at, expires_at)
+       VALUES ($1, $2, $3, $4, $6, clock_timestamp(),
                clock_timestamp() + make_interval(days => $5))
-       RETURNING id, label, created_at, expires_at, last_used_at`,
+       RETURNING id, label, scope, created_at, expires_at, last_used_at`,
       [
         id,
         userId,
         coachTokenDigest(token, secret),
         label,
         COACH_TOKEN_LIFETIME_DAYS,
+        scope,
       ],
     );
     await client.query("COMMIT");
@@ -195,16 +220,22 @@ export async function resolveCoachToken(
   pool: Pool,
   secret: string,
   token: string,
-): Promise<{ userId: string; memberName?: string; tokenId: string } | null> {
+): Promise<{
+  userId: string;
+  memberName?: string;
+  tokenId: string;
+  scope: CoachScope;
+} | null> {
   if (!TOKEN_PATTERN.test(token)) return null;
   const digest = coachTokenDigest(token, secret);
   const result = await pool.query<{
     id: string;
     owner_id: string;
     token_digest: string;
+    scope: string;
     member_name: string | null;
   }>(
-    `SELECT t.id, t.owner_id, t.token_digest, u.name AS member_name
+    `SELECT t.id, t.owner_id, t.token_digest, t.scope, u.name AS member_name
        FROM member_coach_token AS t
        JOIN "user" AS u ON u.id = t.owner_id
       WHERE t.token_digest = $1
@@ -226,6 +257,7 @@ export async function resolveCoachToken(
     userId: row.owner_id,
     memberName: row.member_name || undefined,
     tokenId: row.id,
+    scope: row.scope === "full" ? "full" : "read",
   };
 }
 
@@ -242,6 +274,8 @@ const WEEKDAYS = [
 type AnySet = {
   weight: number | "";
   reps: number | "";
+  sides?: { left: number | ""; right: number | "" };
+  rpe?: number | null;
   done: boolean;
   durationSeconds?: number | "";
   distanceMeters?: number | "";
@@ -255,6 +289,9 @@ function compactSet(set: AnySet) {
   return {
     weight: set.weight,
     reps: set.reps,
+    // Unilateral sets: reps is the total of both sides.
+    ...(set.sides ? { sides: set.sides } : {}),
+    ...(set.rpe != null ? { rpe: set.rpe } : {}),
     done: set.done,
     ...(set.durationSeconds !== undefined
       ? { durationSeconds: set.durationSeconds }

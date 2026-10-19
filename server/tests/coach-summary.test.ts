@@ -170,6 +170,46 @@ test("coach bearer failures and lockouts are distinct security events", () => {
     "coach_token_lockout",
   );
   assert.equal(securityEvent("/api/coach/workspace", 200, "ip", "s"), null);
+  // Full-access routes share the failure signals and add scope and edit audit.
+  assert.equal(
+    securityEvent("/api/coach/workspace/data", 401, "ip", "s")?.event,
+    "coach_token_failure",
+  );
+  assert.equal(
+    securityEvent("/api/coach/exercises?q=row", 429, "ip", "s")?.event,
+    "coach_token_lockout",
+  );
+  assert.equal(
+    securityEvent("/api/coach/workspace", 429, "ip", "s", "rate_limited")
+      ?.event,
+    "coach_token_rate_limited",
+  );
+  assert.equal(
+    securityEvent("/api/coach/workspace/data", 403, "ip", "s")?.event,
+    "coach_scope_denied",
+  );
+  assert.equal(
+    securityEvent(
+      "/api/coach/workspace/data",
+      200,
+      "ip",
+      "s",
+      undefined,
+      "PATCH",
+    )?.event,
+    "coach_workspace_write",
+  );
+  assert.equal(
+    securityEvent(
+      "/api/coach/workspace/data",
+      200,
+      "ip",
+      "s",
+      undefined,
+      "GET",
+    ),
+    null,
+  );
   assert.equal(
     securityEvent("/api/account/coach-tokens", 401, "ip", "s"),
     null,

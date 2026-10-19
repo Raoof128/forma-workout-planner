@@ -58,6 +58,37 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-19 — Full-access coach tokens
+
+- **Supersedes** the 2026-10-18 rule that `/api/coach/workspace` "must never
+  write": the owner asked for coach tokens with full read and edit access.
+  Coach tokens now carry `scope` (`read` | `full`, migration
+  `0006-coach-token-scope`). Existing and default tokens stay `read`; never
+  widen a minted token in place.
+- Bearer routes: `GET /api/coach/workspace`, `GET /api/coach/exercises` (any
+  scope), `GET`/`PATCH /api/coach/workspace/data` (`full`). Keep them out of
+  account, credential, session, token and deletion routes; a coach token must
+  never reach `/api/account/*` or `/api/auth/*`.
+- Coach edits go through `patchWorkspace` → `writeWorkspace` in
+  `server/workspace.ts`, the same locked, revision-checked, idempotent path as
+  `PUT /api/workspace`. Do not add a second write path. Each named section
+  replaces the stored one; the merged result passes `workspaceDataSchema`.
+  Dropping history needs `removesSessions` equal to the count removed.
+- The coach `PATCH` is the only mutation that may arrive without the app
+  `Origin` (Worker `bearerEdit` and server onRequest). It still refuses a
+  foreign `Origin` and `Sec-Fetch-Site: cross-site`. Keep that exemption tied
+  to that exact path, method and missing Origin.
+- Budgets in `server/coachRoutes.ts`: 120 reads/hour (summary, data and
+  exercises share it), 60 edits/hour per token, 20 failures/15 min per IP.
+  Security events: `coach_scope_denied`, `coach_token_rate_limited`,
+  `coach_workspace_write` (successful PATCH).
+- Server tests register members by display name; names must be unique per
+  file (`coach.test.ts` already uses Alpha–Delta). A repeated sign-up
+  answers 200 without sending mail, by design.
+- Local PostgreSQL 18 for server and account browser tests: start Docker
+  Desktop, run the CI image (`postgres:18.4-alpine@sha256:9a8a…`) on
+  `127.0.0.1:55432`, and set `TEST_DATABASE_URL` to it.
+
 ### Raouf: 2026-10-19 — Workout editing, set fill and left/right logging
 
 - A per-side load/reps set stores `sides: { left, right }` and keeps `reps`

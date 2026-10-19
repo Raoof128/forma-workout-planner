@@ -1413,3 +1413,44 @@
   color: inherit;
   font-weight: 700;
 }
+/* Coach token form: name, then the access choice, then the button. */
+.account-inline-form.account-coach-form {
+  flex-wrap: wrap;
+}
+.account-coach-form > label {
+  flex: 1 1 100%;
+}
+.account-coach-scope {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.account-coach-scope legend {
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 0;
+  color: #343b36;
+  font-size: 11px;
+  font-weight: 700;
+}
+.account-inline-form .account-coach-scope label {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.account-inline-form .account-coach-scope input {
+  width: 18px;
+  min-height: 0;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--ink, #202522);
+}

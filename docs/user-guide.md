@@ -58,13 +58,22 @@ If data cannot be read, first use **Download original data** and keep the downlo
 
 ## Share progress with a coach
 
-Account members can create a **read-only coach token** under Account ›
-Security › Coach access. Give the token to a coaching tool or AI assistant and
-it can read your routines, recent workouts and personal bests through
-`GET /api/coach/workspace`; it cannot change anything or see your email. The
-token is shown once, expires after 90 days, and can be revoked at any time.
+Account members can create a **coach token** under Account › Security ›
+Coach access and give it to a coaching tool or AI assistant. Choose its access
+when you create it:
+
+- **Read only** lets the tool read your routines, recent workouts and
+  personal bests.
+- **Full access: read and edit** also lets it read everything in your
+  training workspace and change it: build or rewrite routines, log or correct
+  workouts, plan your week and adjust your preferences. If it would delete
+  logged workouts, it has to say how many, or the change is refused.
+
+No coach token can see your email or change your password, sign-ins, 2-step
+verification, coach tokens or account. The token is shown once, expires after
+90 days, and can be revoked at any time.
 Treat it like a password: store it in the tool's secret settings and never
-paste it into a chat. Details are in the [API reference](accounts/api.md#coach-access-read-only-tokens).
+paste it into a chat. Details are in the [API reference](accounts/api.md#coach-access-read-only-and-full-access-tokens).
 
 ## Preferences and limits
 

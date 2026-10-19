@@ -72,6 +72,7 @@ branch.
 | T-22 | I      | Compromised API process exfiltrates data                              | All data             | Least-privilege DB role; API egress currently unrestricted                  | Role checks in the report                       | M        |
 | T-23 | D      | Cloudflare or Droplet outage                                          | Availability         | Guest mode stays local; documented runbook                                  | Not executed                                    | M        |
 | T-24 | I/E    | Leaked or guessed read-only coach token                               | Workout data         | Read-only summary without identity; 256-bit random, digest-only storage, 90-day expiry, revocation, 20 failures per IP, 120 reads per token per hour; minting needs a fresh session | `coach.test.ts` (server and Worker)             | L        |
+| T-25 | T/D/E  | Leaked full-access coach token rewrites or erases training data       | Workout data         | Scope chosen at a fresh-session mint, never widened; same strict validator and revision check as a member save; history removal needs the exact count; 60 edits per token per hour; foreign `Origin` and cross-site refused; `coach_workspace_write` audit event; no account or credential routes; revocation | `coach.test.ts` (server and Worker), `accounts-coach.spec.js` | M        |
 
 ### Compound threats considered
 

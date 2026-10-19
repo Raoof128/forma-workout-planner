@@ -1,8 +1,8 @@
 import { expect, test } from "@playwright/test";
 
-// End-to-end coverage for read-only coach tokens: mint in Account › Security,
-// read the summary with the bearer token, confirm it is owner-scoped and
-// read-only, then revoke it.
+// End-to-end coverage for coach tokens: mint in Account › Security, read the
+// summary with the bearer token, confirm it is owner-scoped, then revoke it.
+// A full-access token also reads and edits the whole workspace.
 
 const emailSink = "http://127.0.0.1:3002/emails";
 const password = "FORMA-local-test-passphrase-2026";
@@ -196,6 +196,91 @@ test("a member mints a read-only coach token, a coach reads only that member, an
   } finally {
     await contextA.close();
     await contextB.close();
+    await coachContext.close();
+  }
+});
+
+test("a full-access coach token reads the whole workspace and its edits reach the member's app", async ({
+  browser,
+}) => {
+  test.setTimeout(150_000);
+  const stamp = `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+  const memberContext = await browser.newContext();
+  const coachContext = await browser.newContext();
+  const page = await memberContext.newPage();
+  const coach = await coachContext.newPage();
+  try {
+    await registerAndSignIn(
+      page,
+      "Coach Gamma",
+      `coach-c-${stamp}@example.test`,
+    );
+    await coach.goto("/");
+    await openSecurity(page);
+    await page.getByLabel("Token name").fill("Claude full coach");
+    await page
+      .getByRole("radio", { name: "Full access: read and edit" })
+      .check();
+    await page
+      .getByRole("button", { name: "Create full-access token" })
+      .click();
+    const issued = page.getByRole("status").filter({
+      hasText: "Copy this token now",
+    });
+    await expect(issued).toContainText("read and change your routines");
+    const token = (await issued.locator("pre").innerText()).trim();
+    await page.getByRole("button", { name: "I’ve saved it" }).click();
+    await expect(
+      page.locator(".account-device-row").filter({
+        hasText: "Claude full coach",
+      }),
+    ).toContainText("Full access");
+    // The form returns to the least-privilege choice for the next token.
+    await expect(page.getByRole("radio", { name: "Read only" })).toBeChecked();
+
+    const headers = { authorization: `Bearer ${token}` };
+    const summary = await coachRead(coach.request, token);
+    expect(summary.body.access).toBe("full");
+    const full = await coach.request.get("/api/coach/workspace/data", {
+      headers,
+    });
+    expect(full.status()).toBe(200);
+    const workspace = await full.json();
+    expect(workspace.data.profile.name).toBe("Coach Gamma");
+    expect(JSON.stringify(workspace)).not.toContain(
+      `coach-c-${stamp}@example.test`,
+    );
+
+    // The coach renames the first routine and plans the week, from a client
+    // that sends no browser Origin.
+    const routines = workspace.data.routines.map((routine, index) =>
+      index === 0 ? { ...routine, name: "Coach planned upper" } : routine,
+    );
+    const edit = await coach.request.patch("/api/coach/workspace/data", {
+      headers,
+      data: {
+        expectedRevision: workspace.revision,
+        operationId: `coach-edit-${stamp}`,
+        changes: { routines, schedule: [0, 2, 4] },
+      },
+      failOnStatusCode: false,
+    });
+    expect(edit.status(), await edit.text()).toBe(200);
+    expect((await edit.json()).revision).toBe(workspace.revision + 1);
+
+    await page.reload();
+    await clickMainNavigation(page, "My routines");
+    await expect(
+      page.locator(".routine-card").filter({ hasText: "Coach planned upper" }),
+    ).toBeVisible();
+    // Account actions stay out of reach of any coach token.
+    const accountRoute = await coach.request.get("/api/account/coach-tokens", {
+      headers,
+      failOnStatusCode: false,
+    });
+    expect([401, 403]).toContain(accountRoute.status());
+  } finally {
+    await memberContext.close();
     await coachContext.close();
   }
 });

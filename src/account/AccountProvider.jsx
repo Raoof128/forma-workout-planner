@@ -277,11 +277,11 @@ export function AccountProvider({ children }) {
           confirmation.password ? confirmation : undefined,
         ),
       ),
-      // Read-only coach tokens. The plaintext token is in the create result
-      // only; it is never stored client-side.
+      // Coach tokens (read-only or full access). The plaintext token is in
+      // the create result only; it is never stored client-side.
       listCoachTokens: call(() => boundAccountApi("/api/account/coach-tokens")),
-      createCoachToken: call(({ label }) =>
-        boundAccountApi("/api/account/coach-tokens", "POST", { label }),
+      createCoachToken: call(({ label, scope = "read" }) =>
+        boundAccountApi("/api/account/coach-tokens", "POST", { label, scope }),
       ),
       revokeCoachToken: call(({ id }) =>
         boundAccountApi(

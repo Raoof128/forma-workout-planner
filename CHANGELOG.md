@@ -4,6 +4,47 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-19 — Full-access coach tokens
+
+- **What changed:** coach tokens gain a scope chosen when they are minted.
+  **Read only** (the default, and every existing token) keeps the training
+  summary. **Full access: read and edit** can also read the whole workspace
+  and change any part of it: routines, the active workout, history, profile
+  and schedule. Account › Security offers the choice, labels each token's
+  scope and resets to read-only after each mint.
+- **New bearer routes:** `GET /api/coach/exercises` searches the catalogue
+  (IDs, logged fields, per-side defaults) for any token.
+  `GET /api/coach/workspace/data` returns `{ data, revision, updatedAt }` and
+  `PATCH /api/coach/workspace/data` replaces named sections, for `full`
+  tokens only. The summary now reports `access` and includes per-set RPE and
+  left/right `sides`.
+- **Safety:** edits use the member save path (row lock, revision check,
+  idempotent `operationId`, the shared strict validator) and return field
+  `issues` on refusal. Removing logged workouts needs `removesSessions` equal
+  to the count removed. 60 edits per token per hour. The edit needs no
+  browser `Origin`, but a foreign `Origin` or a cross-site request is
+  refused. No token can reach email, password, sessions, 2-step
+  verification, coach tokens or account deletion. New security events:
+  `coach_scope_denied`, `coach_token_rate_limited`, `coach_workspace_write`.
+  Threat T-25 and coverage row API2-06 added.
+- **Internals:** `putWorkspace` and the new `patchWorkspace` share one
+  `writeWorkspace` transaction. Migration `0006-coach-token-scope` adds the
+  checked `scope` column with default `read`; no grant change is needed.
+- **Files:** `server/coachRoutes.ts`, `server/coachTokens.ts`,
+  `server/workspace.ts`, `server/schema.ts`, `server/app.ts`,
+  `server/securityEvents.ts`, `server/migrations/0006-coach-token-scope.sql`
+  (new), `worker/index.ts`, `src/components/Account.jsx`,
+  `src/account/AccountProvider.jsx`, `src/account.css`, tests in
+  `server/tests/coach.test.ts`, `server/tests/coach-summary.test.ts`,
+  `worker/tests/coach.test.ts`, `tests/accounts-coach.spec.js`, and the API,
+  security, database and user docs.
+- **Verification:** on a local PostgreSQL 18.4 container (the CI image), the
+  full server suite passes 63/63, including the new full-access test; the
+  account browser suite passes 18/18 in Chromium and 18/18 in WebKit,
+  including the new full-access journey; Worker tests 26/26 (new COACH-05);
+  type check, lint, Prettier and docs check pass. Not deployed: the API needs
+  migration 0006 before the frontend and Worker ship.
+
 ### Raouf: 2026-10-19 — Edit a running workout, fill remaining sets, left/right logging
 
 - **Edit workout (mid-session):** the active workout page gains **Edit
