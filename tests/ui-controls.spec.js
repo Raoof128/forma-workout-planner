@@ -276,6 +276,7 @@ test(
         goal: 1,
         restSeconds: 90,
         muted: false,
+        fillSets: true,
       });
 
     await page.getByLabel("Weekly workout goal").selectOption("7");
@@ -323,6 +324,7 @@ test(
       ...backup.profile,
       restSeconds: 90,
       muted: false,
+      fillSets: true,
     });
     expect((await stored(page)).schedule).toEqual(backup.schedule);
   },

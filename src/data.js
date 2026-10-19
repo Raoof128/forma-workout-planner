@@ -1,8 +1,10 @@
 import catalog from "./catalog/exercises.json" with { type: "json" };
 import machineExercises from "./catalog/machine-exercises.json" with { type: "json" };
 import curation from "./catalog/curation.json" with { type: "json" };
+import unilateral from "./catalog/unilateral.json" with { type: "json" };
 import { canonicalId, createCatalogView } from "./catalog/curation.js";
 import { tracksLoadReps } from "./exerciseMetrics.js";
+import { defaultPerSide } from "./routineProgramming.js";
 
 const originalExercises = [
   {
@@ -150,9 +152,17 @@ const originalExercises = [
     weight: 0,
   },
 ];
+// Reviewed one-side-at-a-time movements carry the limb they are logged per
+// (`side`: arm, leg or side); the catalogue review lives in unilateral.json.
+const withSide = (records) =>
+  records.map((exercise) => {
+    const side =
+      unilateral[exercise.id] ?? unilateral[canonicalId(exercise.id, curation)];
+    return side ? { ...exercise, side } : exercise;
+  });
 // Compatibility records keep every published ID and its original logging units.
-export const publishedExercises = [...originalExercises, ...catalog];
-export const exercises = [...publishedExercises, ...machineExercises];
+export const publishedExercises = withSide([...originalExercises, ...catalog]);
+export const exercises = [...publishedExercises, ...withSide(machineExercises)];
 export const selectableExercises = createCatalogView(exercises, curation);
 // Saved rows and pickers share reviewed names/equipment without changing metric units.
 const selectableById = new Map(selectableExercises.map((row) => [row.id, row]));
@@ -182,12 +192,16 @@ export function guideExercise(id) {
   );
 }
 const items = (ids) =>
-  ids.map((id) => ({
-    exerciseId: id,
-    sets: 3,
-    reps: 10,
-    weight: exercises.find((e) => e.id === id).weight,
-  }));
+  ids.map((id) => {
+    const exercise = exercises.find((e) => e.id === id);
+    return {
+      exerciseId: id,
+      sets: 3,
+      reps: 10,
+      weight: exercise.weight,
+      perSide: defaultPerSide(exercise),
+    };
+  });
 export const starterRoutines = [
   {
     id: "upper",

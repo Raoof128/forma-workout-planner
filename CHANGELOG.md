@@ -4,6 +4,60 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-19 — Edit a running workout, fill remaining sets, left/right logging
+
+- **Edit workout (mid-session):** the active workout page gains **Edit
+  workout**, a dialog that adds an exercise from the searchable library, moves
+  one earlier or later, or removes one. Each change saves immediately like
+  adding a set does. Removing an exercise with completed sets asks a second
+  time and says how many sets it drops; the last exercise cannot be removed.
+  Added exercises get a fresh `entryId`, so the same movement can appear twice.
+  An unfinished last set can now be removed with **Remove set**.
+- **Fill remaining sets:** a weight, rep, time or distance typed into a set
+  also fills the later unfinished sets of that exercise that still show the
+  value just replaced; a set changed on purpose, or already completed, keeps
+  its value. The profile preference `fillSets` (default on) controls it from
+  the workout side panel and Settings.
+- **Left and right reps:** all 1,681 catalogue rows were reviewed one by one
+  for one-side-at-a-time movements. `src/catalog/unilateral.json` records 408
+  of them with the limb they are logged per (177 arm, 158 leg, 73 side);
+  alias rows inherit their canonical verdict. Those exercises default to
+  **Reps per leg/arm/side**, and a per-side load/reps entry logs **Left** and
+  **Right** fields; the set's `reps` holds the total (each side 1–50) and
+  volume counts it, while personal-best estimates use the reps one side
+  performed. History shows `10 kg × 12 L / 9 R` and the history editor
+  corrects each side. Sets logged before this change stay valid as they are.
+  The three starter routines now mark their lunge, one-arm row and dead bug
+  per side.
+- **Files:** `src/components/WorkoutEditor.jsx` and `src/workoutSession.js`
+  (new), `src/catalog/unilateral.json` (new), `src/components/Workout.jsx`,
+  `HistoryEditor.jsx`, `Insights.jsx`, `Preferences.jsx`,
+  `RoutinePrescription.jsx`, `src/App.jsx`, `src/data.js`,
+  `src/exerciseMetrics.js`, `src/routineProgramming.js`, `src/storage.js`,
+  `src/styles.css`, `unit/workout-session.test.js` (new),
+  `tests/workout-editing.spec.js` (new), `server/tests/programming.test.ts`,
+  `docs/user-guide.md`, `docs/routine-programming-v2.md`.
+- **Verification:** lint, Prettier, `tsc`, docs check and the production
+  build pass. Unit 97/97 (8 new). `server/tests/programming.test.ts` 2/2 with
+  the new `sides` and `fillSets` assertions; worker tests pass. Chromium:
+  137/143 on the first full run, then the 6 failures triaged: two Settings
+  profile snapshots and the duplicate-routine count now expect `fillSets` and
+  the one-arm row's "per arm" text; the alias-editor save and the rest-timer
+  deadline were read before the storage lock's checkpoints wrote them and now
+  poll (they failed 1-in-3 and 2-in-3 here against 0 on the untouched tree,
+  with the same 20–70 ms click-to-write window on both); the empty-overview
+  case is the known intermittent one and fails on the untouched tree too.
+  After the fixes the touched specs passed 24/24 over four Chromium
+  repetitions and 16/16 in WebKit. The new browser spec `workout-editing`
+  covers fill, left/right logging through history, the editor and starting a
+  per-side routine. `server/tests/programming-migration.test.ts` needs
+  PostgreSQL and was not run; Firefox was not run. Live checks in the dev
+  preview: fill propagation, left/right completion and total volume, the
+  editor's add/move/remove flow, and a 540 px layout for three-field rows.
+- **Known, pre-existing:** at 540 px the bilateral set row's 34 px done column
+  holds a 44 px button, so each row reports 10 px of horizontal overflow; the
+  new three-field rows fit. Not changed here.
+
 ### Raouf: 2026-10-18 — Operations dashboard runbook link
 
 - The private operations dashboard linked its recovery runbook through the

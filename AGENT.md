@@ -58,6 +58,29 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-19 — Workout editing, set fill and left/right logging
+
+- A per-side load/reps set stores `sides: { left, right }` and keeps `reps`
+  as their total; `validSides` in `src/exerciseMetrics.js` enforces that on
+  completed sets in the shared schema. Never store per-side reps in `reps`:
+  volume, the coach API and history all read `reps` as the set total. Use
+  `sideReps(set)` for strength estimates.
+- Side logging follows the entry's `perSide` flag, not the catalogue directly:
+  `defaultPerSide` turns it on for rows in `src/catalog/unilateral.json`
+  (`id → arm | leg | side`) and `sideLabel` reads that label. Keep that file
+  keyed by catalogue ID; `unit/workout-session.test.js` fails on unknown IDs.
+  The review covered every catalogue row; a new import needs its new rows
+  reviewed and added there, since `catalog:sync` does not touch it.
+- Build session entries with `sessionEntry` / `addedEntry`
+  (`src/workoutSession.js`), never by hand: they set `sides` and the fresh
+  `entryId` that keeps duplicate exercises unique. `updateSetValue` holds the
+  fill rule (later unfinished sets that still match the replaced value).
+- `WorkoutEditor` commits each action through `onUpdate`; there is no draft.
+  Removing an exercise with completed sets is a two-click confirm on the same
+  button (`aria-label` changes), which the browser test relies on.
+- Profile gains `fillSets` (default true). The API's strict parser accepts it,
+  so deploy the API with or before the frontend.
+
 ### Raouf: 2026-10-18 — Dashboard deploy and branch links
 
 - Deploy the operations dashboard with `npm run worker:deploy:dashboard`; it

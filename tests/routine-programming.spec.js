@@ -171,8 +171,12 @@ test("duplicate routine is independent; drag and arrows preserve programming", a
       name: /^Upper body strength 6 exercises (?:· )?50 min$/,
     })
     .click();
+  // The one-arm row is a reviewed unilateral movement: it shows reps per arm.
   await expect(page.getByRole("dialog").getByText("3 × 10 reps")).toHaveCount(
-    6,
+    5,
+  );
+  await expect(page.getByRole("dialog").getByText("3 × 10 / arm")).toHaveCount(
+    1,
   );
 });
 

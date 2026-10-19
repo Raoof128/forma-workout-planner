@@ -3358,3 +3358,56 @@ input[type="checkbox"] {
     gap: 6px;
   }
 }
+/* Unilateral sets log each side: one more column than a two-measure row. */
+.set-row.set-row-sides {
+  grid-template-columns:
+    36px minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(45px, 0.7fr)
+    48px;
+}
+.set-actions {
+  display: flex;
+  gap: 10px;
+}
+.set-actions .remove-set {
+  flex: 0 0 auto;
+  width: auto;
+  padding-inline: 16px;
+}
+.fill-toggle {
+  margin: 0 0 14px;
+}
+.workout-editor h3 {
+  margin-top: 8px;
+}
+.workout-editor .exercise-list {
+  margin-bottom: 8px;
+}
+.workout-editor .reorder-actions {
+  margin-top: 0;
+  align-items: center;
+}
+.workout-editor .confirm-remove {
+  width: auto;
+  gap: 6px;
+  padding-inline: 8px;
+  color: var(--danger, #b3261e);
+}
+.workout-editor .confirm-remove small {
+  font-size: 11px;
+  white-space: nowrap;
+}
+@media (max-width: 540px) {
+  .set-row.set-row-sides {
+    grid-template-columns:
+      24px minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(36px, 0.6fr)
+      44px;
+    gap: 6px;
+  }
+  .set-actions {
+    flex-direction: column;
+    gap: 0;
+  }
+  .set-actions .remove-set {
+    width: 100%;
+  }
+}

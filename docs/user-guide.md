@@ -21,10 +21,15 @@ On Overview, choose your next session and use **Schedule your week** to mark you
 ## Log a workout
 
 1. Start a routine from Overview or its details.
-2. Enter the displayed measurements for a set, then mark it complete: weight/reps, seconds, metres, or loaded carry distance.
+2. Enter the displayed measurements for a set, then mark it complete: weight/reps, seconds, metres, or loaded carry distance. A one-side-at-a-time exercise (a lunge, a one-arm row, a side plank) shows **Left** and **Right** rep fields instead of one rep count; both sides are needed before the set can be completed, and the set's total reps count toward volume.
 3. Use the rest timer between sets; choose 60, 90, or 120 seconds, pause it, or skip rest.
-4. Add sets and session notes as needed. Open the book icon for exercise instructions.
-5. Finish the workout and confirm **Save workout**.
+4. Add sets, remove an unfinished last set, and write session notes as needed. Open the book icon for exercise instructions.
+5. Use **Edit workout** to add an exercise, move one earlier or later, or remove one while the workout is running. Removing an exercise that has completed sets asks once more and discards those sets.
+6. Finish the workout and confirm **Save workout**.
+
+By default the weight and reps you type into a set also fill the later unfinished sets of that exercise, as long as they still show the value you replaced; a set you changed deliberately keeps its own value. Turn **Fill the remaining sets with what I type** off in the workout side panel or in Settings to enter every set by hand.
+
+The exercise library marks 408 movements as performed one side at a time. They log left and right by default; the **Reps per leg/arm/side** option in a routine's exercise menu turns side logging on or off for any load-and-reps exercise.
 
 Only completed sets count toward volume and progress. Complete at least one set before saving a workout. Completed sets are locked for entry; undo completion before changing them. A different routine cannot silently replace an active workout: the app offers a choice to resume or discard and start again.
 

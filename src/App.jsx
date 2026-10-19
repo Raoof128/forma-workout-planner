@@ -25,6 +25,7 @@ import Loading from "./components/Loading.jsx";
 import Legal, { isLegalPage, legalTitle } from "./components/Legal.jsx";
 import { useAccount } from "./account/AccountProvider.jsx";
 import { isArchived } from "./routineProgramming.js";
+import { sessionEntry } from "./workoutSession.js";
 const equal = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 export default function App() {
   const account = useAccount();
@@ -135,28 +136,7 @@ function AccountWorkspace({ notify }) {
       restSeconds: data.profile.restSeconds ?? 90,
       restEnd: null,
       restPaused: null,
-      exercises: routine.exercises.map((item) => ({
-        exerciseId: item.exerciseId,
-        ...(item.entryId ? { entryId: item.entryId } : {}),
-        targetReps: item.reps,
-        repsMax: item.repsMax,
-        rpe: item.rpe,
-        restSeconds: item.restSeconds,
-        perSide: item.perSide,
-        note: item.note,
-        groupId: item.groupId,
-        sets: Array.from({ length: item.sets }, () => ({
-          weight: item.weight,
-          reps: item.reps,
-          ...(item.durationSeconds === undefined
-            ? {}
-            : { durationSeconds: item.durationSeconds }),
-          ...(item.distanceMeters === undefined
-            ? {}
-            : { distanceMeters: item.distanceMeters }),
-          done: false,
-        })),
-      })),
+      exercises: routine.exercises.map((item) => sessionEntry(item)),
     };
     const result = await change((current) => {
       if (
@@ -537,6 +517,18 @@ function AccountWorkspace({ notify }) {
                     key={data.active.id}
                     session={data.active}
                     muted={data.profile.muted}
+                    fillSets={data.profile.fillSets ?? true}
+                    onFillSets={(fillSets) =>
+                      change(
+                        (current) => ({
+                          ...current,
+                          profile: { ...current.profile, fillSets },
+                        }),
+                        fillSets
+                          ? "Remaining sets now follow what you type."
+                          : "Each set now keeps its own values.",
+                      )
+                    }
                     onUpdate={updateSession}
                     onFinish={finish}
                     onCancel={() =>

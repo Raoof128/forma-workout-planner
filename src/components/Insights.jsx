@@ -14,7 +14,11 @@ import {
   Trash2,
 } from "lucide-react";
 import { Button, PageHeading, Empty, Modal } from "./UI";
-import { measurementText, tracksLoadReps } from "../exerciseMetrics.js";
+import {
+  measurementText,
+  sideReps,
+  tracksLoadReps,
+} from "../exerciseMetrics.js";
 import "../workout-history.css";
 import {
   exercises,
@@ -357,10 +361,11 @@ export function Progress({ history, onStart }) {
       return {
         ...e,
         maxWeight: done.reduce((max, set) => Math.max(max, set.weight), 0),
+        // A unilateral set estimates from the reps one side performed.
         oneRM: done.reduce(
           (max, set) =>
-            set.reps <= 12
-              ? Math.max(max, estimatedOneRM(set.weight, set.reps))
+            sideReps(set) <= 12
+              ? Math.max(max, estimatedOneRM(set.weight, sideReps(set)))
               : max,
           0,
         ),
