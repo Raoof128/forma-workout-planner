@@ -24,7 +24,7 @@ On Overview, choose your next session and use **Schedule your week** to mark you
 2. Enter the displayed measurements for a set, then mark it complete: weight/reps, seconds, metres, or loaded carry distance. A one-side-at-a-time exercise (a lunge, a one-arm row, a side plank) shows **Left** and **Right** rep fields instead of one rep count; both sides are needed before the set can be completed, and the set's total reps count toward volume.
 3. Use the rest timer between sets; choose 60, 90, or 120 seconds, pause it, or skip rest.
 4. Add sets, remove an unfinished last set, and write session notes as needed. Open the book icon for exercise instructions.
-5. Use **Edit workout** to add an exercise, move one earlier or later, or remove one while the workout is running. Removing an exercise that has completed sets asks once more and discards those sets.
+5. Each exercise card has a **⋯** menu with **Move up**, **Move down**, **Replace exercise** and **Remove exercise**; use **Add exercise** below the last card to add one. Replacing keeps the logged sets when both exercises record the same measurements. Removing an exercise, or replacing it with one that records different measurements, asks first when it would discard completed sets. The menu works with the keyboard: Enter or the arrow keys open it, arrows move, Escape closes.
 6. Finish the workout and confirm **Save workout**.
 
 By default the weight and reps you type into a set also fill the later unfinished sets of that exercise, as long as they still show the value you replaced; a set you changed deliberately keeps its own value. Turn **Fill the remaining sets with what I type** off in the workout side panel or in Settings to enter every set by hand.

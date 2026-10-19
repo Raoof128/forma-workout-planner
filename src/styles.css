@@ -3376,26 +3376,6 @@ input[type="checkbox"] {
 .fill-toggle {
   margin: 0 0 14px;
 }
-.workout-editor h3 {
-  margin-top: 8px;
-}
-.workout-editor .exercise-list {
-  margin-bottom: 8px;
-}
-.workout-editor .reorder-actions {
-  margin-top: 0;
-  align-items: center;
-}
-.workout-editor .confirm-remove {
-  width: auto;
-  gap: 6px;
-  padding-inline: 8px;
-  color: var(--danger, #b3261e);
-}
-.workout-editor .confirm-remove small {
-  font-size: 11px;
-  white-space: nowrap;
-}
 @media (max-width: 540px) {
   .set-row.set-row-sides {
     grid-template-columns:
@@ -3410,4 +3390,89 @@ input[type="checkbox"] {
   .set-actions .remove-set {
     width: 100%;
   }
+}
+/* Per-exercise ⋯ menu on the active workout (WAI-ARIA menu button). */
+.actions-menu {
+  position: relative;
+  flex-shrink: 0;
+}
+.actions-menu-trigger[aria-expanded="true"] {
+  background: var(--lime-soft);
+}
+.actions-menu-list {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 6;
+  display: grid;
+  gap: 2px;
+  min-width: 200px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow:
+    0 12px 32px #17221b24,
+    0 2px 6px #17221b14;
+  transform-origin: top right;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .actions-menu-list {
+    animation: actions-menu-in 160ms var(--ease-standard);
+  }
+  @keyframes actions-menu-in {
+    from {
+      opacity: 0;
+      translate: 0 -4px;
+      scale: 0.98;
+    }
+  }
+}
+.actions-menu-list [role="menuitem"] {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 550;
+  text-align: left;
+  white-space: nowrap;
+}
+.actions-menu-list [role="menuitem"]:hover,
+.actions-menu-list [role="menuitem"]:focus-visible {
+  background: var(--lime-soft);
+  outline: none;
+}
+.actions-menu-list [role="menuitem"]:focus-visible {
+  box-shadow: 0 0 0 2px #aec477;
+}
+.actions-menu-list [role="menuitem"][aria-disabled="true"] {
+  color: var(--muted);
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.actions-menu-list [role="menuitem"][aria-disabled="true"]:hover,
+.actions-menu-list [role="menuitem"][aria-disabled="true"]:focus-visible {
+  background: none;
+}
+.actions-menu-list .is-danger {
+  color: #9b2c22;
+}
+.actions-menu-list .is-danger:not([aria-disabled="true"]):hover,
+.actions-menu-list .is-danger:focus-visible {
+  background: #fbebe8;
+}
+.add-set.add-exercise {
+  margin-top: 0;
+  min-height: 52px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.exercise-picker-dialog .exercise-picker {
+  max-height: min(52vh, 460px);
 }

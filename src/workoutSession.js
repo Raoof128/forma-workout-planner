@@ -4,6 +4,7 @@ import {
   defaultPrescription,
   logsSides,
   readSetValue,
+  setFields,
 } from "./exerciseMetrics.js";
 import { entryKey, normalizeGroups } from "./routineProgramming.js";
 
@@ -83,4 +84,40 @@ export function moveEntry(entries, key, direction) {
 export function removeEntry(entries, key) {
   if (entries.length <= 1) return entries;
   return normalizeGroups(entries.filter((entry) => entryKey(entry) !== key));
+}
+
+const loggedKeys = (entry) =>
+  setFields(exerciseById.get(entry.exerciseId), entry)
+    .map((field) => field.key)
+    .join(",");
+
+/**
+ * Swap one exercise for another in place. When both log the same fields
+ * (say, weight and reps), every set, done or not, moves to the new exercise;
+ * otherwise the new exercise starts with the same number of fresh sets.
+ * Position, superset and rest stay with the slot.
+ */
+export function replaceEntry(entries, key, exercise) {
+  const index = entries.findIndex((entry) => entryKey(entry) === key);
+  if (index < 0) return entries;
+  const previous = entries[index];
+  const fresh = addedEntry(exercise);
+  const keep = loggedKeys(previous) === loggedKeys(fresh);
+  const next = {
+    ...fresh,
+    groupId: previous.groupId ?? null,
+    restSeconds: previous.restSeconds ?? null,
+    sets: keep
+      ? previous.sets
+      : previous.sets.map(() => ({ ...fresh.sets[0] })),
+  };
+  return entries.map((entry, position) => (position === index ? next : entry));
+}
+
+/** Completed sets that replacing this entry with `exercise` would discard. */
+export function setsLostByReplacing(entry, exercise) {
+  const fresh = addedEntry(exercise);
+  return loggedKeys(entry) === loggedKeys(fresh)
+    ? 0
+    : entry.sets.filter((set) => set.done).length;
 }

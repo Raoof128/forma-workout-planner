@@ -4,6 +4,34 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-19 — Per-exercise ⋯ menu in a running workout
+
+- **What changed:** the single **Edit workout** dialog on the active workout
+  is replaced by a **⋯** menu on each exercise card (Move up, Move down,
+  Replace exercise, Remove exercise) and an **Add exercise** button below the
+  last card, matching how mainstream workout loggers place these actions.
+- **Replace** is new: the replacement takes the slot, superset and rest of
+  the old exercise and keeps every set when both log the same fields;
+  otherwise it starts the same number of fresh sets and asks first if
+  completed sets would be lost.
+- **Accessibility:** `ActionsMenu` follows the WAI-ARIA APG menu button
+  pattern (`aria-haspopup="menu"`, `aria-expanded`, roving focus, arrows
+  wrap, Home/End, Escape returns focus, Tab and outside clicks close).
+  Unavailable actions stay listed with `aria-disabled`, and the menu opens on
+  the first available one. After a move, add, replace or remove, focus
+  returns to the affected card's ⋯ button and the change is announced. The
+  confirm dialog focuses **Keep** first.
+- **Files:** `src/components/ActionsMenu.jsx` and `ExercisePicker.jsx` (new),
+  `WorkoutEditor.jsx` (removed), `Workout.jsx`, `src/workoutSession.js`
+  (`replaceEntry`, `setsLostByReplacing`), `src/styles.css`,
+  `tests/workout-editing.spec.js`, `unit/workout-session.test.js`,
+  `docs/user-guide.md`.
+- **Verification:** unit 98/98; the editing spec 10/10 in Chromium and WebKit
+  and 15/15 over three Chromium repeats; accessibility, responsive,
+  keyboard-focus, workout and regression specs 69/70 in Chromium, the one
+  failure being the known intermittent empty-overview case. Checked by hand
+  in the dev preview with mouse and keyboard, and at 390 px.
+
 ### Raouf: 2026-10-19 — Workout and coach release deployed
 
 - Owner-authorised release of PR #14 (`98f853d`) to private staging and

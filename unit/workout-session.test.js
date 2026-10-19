@@ -255,3 +255,47 @@ test("mid-workout edits add unique entries, move them and keep one exercise", ()
   assert.equal(removed[1].groupId, null);
   assert.equal(removeEntry([session.exercises[0]], "bench").length, 1);
 });
+
+test("replacing an exercise keeps sets only when both log the same fields", async () => {
+  const { replaceEntry, setsLostByReplacing } =
+    await import("../src/workoutSession.js");
+  const bench = {
+    ...sessionEntry({ exerciseId: "bench", sets: 2, reps: 8, weight: 40 }),
+    groupId: "g",
+    restSeconds: 120,
+  };
+  bench.sets[0] = { ...bench.sets[0], done: true };
+  const curl = sessionEntry({
+    exerciseId: "curl",
+    sets: 1,
+    reps: 8,
+    weight: 10,
+  });
+  const incline = exerciseById.get("db-incline-dumbbell-press");
+  const kept = replaceEntry([bench, curl], "bench", incline);
+  assert.equal(kept[0].exerciseId, "db-incline-dumbbell-press");
+  assert.deepEqual(kept[0].sets, bench.sets);
+  assert.equal(kept[0].groupId, "g");
+  assert.equal(kept[0].restSeconds, 120);
+  assert.ok(kept[0].entryId);
+  assert.equal(kept[1], curl);
+  assert.equal(setsLostByReplacing(bench, incline), 0);
+  const plank = exerciseById.get("db-plank");
+  assert.equal(setsLostByReplacing(bench, plank), 1);
+  const swapped = replaceEntry([bench, curl], "bench", plank);
+  assert.equal(swapped[0].sets.length, 2);
+  assert.ok(swapped[0].sets.every((set) => !set.done && set.durationSeconds));
+  // A per-side lunge logs left/right, so a bilateral swap starts fresh sets.
+  const lunge = sessionEntry({
+    exerciseId: "lunge",
+    sets: 1,
+    reps: 10,
+    weight: 10,
+    perSide: true,
+  });
+  assert.equal(
+    replaceEntry([lunge], "lunge", exerciseById.get("squat"))[0].sets[0].sides,
+    undefined,
+  );
+  assert.equal(replaceEntry([bench], "missing", plank)[0], bench);
+});
