@@ -116,6 +116,9 @@ jobs:
         run: |
           docker build -f ops/Dockerfile -t forma-api:ci .
           test "$(docker run --rm --entrypoint id forma-api:ci -u)" = 10001
+          # The image copies an explicit list of shared src files; prove every
+          # server module still resolves its imports inside the image.
+          docker run --rm --entrypoint node forma-api:ci -e 'Promise.all(["app", "coachRoutes", "workspace", "migrate"].map((name) => import(`/app/build/server/${name}.js`))).then(() => console.log("API modules load"))'
 
       - name: Test real PostgreSQL identity and ownership
         run: npm run test:server
