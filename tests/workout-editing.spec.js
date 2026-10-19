@@ -205,31 +205,51 @@ test("a running workout can gain, reorder and lose exercises and drop an unfinis
     }),
   ).toHaveCount(0);
 
-  await page.getByRole("button", { name: "Edit workout", exact: true }).click();
-  const dialog = page.getByRole("dialog");
-  await dialog
-    .getByRole("textbox", { name: "Search exercises to add" })
-    .fill("alternate hammer curl");
-  await dialog
-    .getByRole("button")
-    .filter({ hasText: "Alternate Hammer Curl" })
-    .filter({ has: page.locator("small") })
-    .first()
+  const menu = (name) =>
+    page.getByRole("button", { name: `Options for ${name}`, exact: true });
+  const choose = async (name, item) => {
+    await menu(name).click();
+    await page.getByRole("menuitem", { name: item, exact: true }).click();
+  };
+  const order = async () =>
+    (await stored(page)).active.exercises.map((item) => item.exerciseId);
+
+  // The ⋯ menu follows the menu button pattern and opens on the first
+  // available action; on the first card that is "Move down".
+  await expect(menu("Barbell bench press")).toHaveAttribute(
+    "aria-haspopup",
+    "menu",
+  );
+  await menu("Barbell bench press").click();
+  await expect(menu("Barbell bench press")).toHaveAttribute(
+    "aria-expanded",
+    "true",
+  );
+  await expect(page.getByRole("menuitem", { name: "Move up" })).toHaveAttribute(
+    "aria-disabled",
+    "true",
+  );
+  await expect(page.getByRole("menuitem", { name: "Move down" })).toBeFocused();
+  await page.keyboard.press("End");
+  await expect(
+    page.getByRole("menuitem", { name: "Remove exercise" }),
+  ).toBeFocused();
+  await page.keyboard.press("Escape");
+  await expect(page.getByRole("menu")).toHaveCount(0);
+  await expect(menu("Barbell bench press")).toBeFocused();
+
+  // Add an exercise below the last card; a reviewed unilateral move logs sides.
+  await page.getByRole("button", { name: "Add exercise", exact: true }).click();
+  const picker = page.getByRole("dialog", { name: "Add an exercise" });
+  await picker.getByLabel("Search exercises").fill("alternate hammer curl");
+  await picker
+    .getByRole("button", { name: "Add Alternate Hammer Curl", exact: true })
     .click();
   await expect(
     status(page, "Alternate Hammer Curl added to this workout."),
   ).toBeVisible();
-  await expect(dialog.locator(".exercise-row")).toHaveCount(3);
-  await dialog
-    .getByRole("button", { name: "Move Alternate Hammer Curl up", exact: true })
-    .click();
-  await expect
-    .poll(async () =>
-      (await stored(page)).active.exercises.map((item) => item.exerciseId),
-    )
-    .toEqual(["bench", "db-alternate-hammer-curl", "lunge"]);
-  // A reviewed unilateral exercise starts logging each side at once.
-  const added = (await stored(page)).active.exercises[1];
+  await expect(menu("Alternate Hammer Curl")).toBeFocused();
+  const added = (await stored(page)).active.exercises[2];
   expect(added.perSide).toBe(true);
   expect(added.sets).toHaveLength(3);
   expect(added.sets[0]).toMatchObject({
@@ -237,42 +257,114 @@ test("a running workout can gain, reorder and lose exercises and drop an unfinis
     reps: 20,
   });
 
-  await dialog
-    .getByRole("button", { name: "Remove Barbell bench press", exact: true })
-    .click();
-  await expect(
-    status(page, "Barbell bench press removed from this workout."),
-  ).toBeVisible();
-  const removeLunge = dialog.getByRole("button", {
-    name: /^Remove Dumbbell reverse lunge/,
-  });
-  await removeLunge.click();
-  await expect(removeLunge).toHaveAccessibleName(
-    "Remove Dumbbell reverse lunge and its 1 completed set",
-  );
-  expect((await stored(page)).active.exercises).toHaveLength(2);
-  await removeLunge.click();
+  // Keyboard: open with Enter, move up, and focus stays with the card.
+  await page.keyboard.press("Enter");
+  await expect(page.getByRole("menuitem", { name: "Move up" })).toBeFocused();
+  await page.keyboard.press("Enter");
   await expect
-    .poll(async () =>
-      (await stored(page)).active.exercises.map((item) => item.exerciseId),
-    )
-    .toEqual(["db-alternate-hammer-curl"]);
+    .poll(order)
+    .toEqual(["bench", "db-alternate-hammer-curl", "lunge"]);
   await expect(
-    dialog.getByRole("button", {
-      name: "Remove Alternate Hammer Curl",
+    status(page, "Moved Alternate Hammer Curl to position 2 of 3."),
+  ).toBeVisible();
+  await expect(menu("Alternate Hammer Curl")).toBeFocused();
+
+  // Replace keeps every set when both exercises log the same fields.
+  await choose("Barbell bench press", "Replace exercise");
+  const replacing = page.getByRole("dialog", {
+    name: "Replace Barbell bench press",
+  });
+  await replacing.getByLabel("Search exercises").fill("incline dumbbell press");
+  await replacing
+    .getByRole("button", {
+      name: "Replace with Incline Dumbbell Press",
       exact: true,
-    }),
-  ).toBeDisabled();
-  await dialog
-    .getByRole("button", { name: "Done editing", exact: true })
+    })
     .click();
-  await expect(page.locator(".log-exercise")).toHaveCount(1);
+  await expect
+    .poll(order)
+    .toEqual([
+      "db-incline-dumbbell-press",
+      "db-alternate-hammer-curl",
+      "lunge",
+    ]);
+  expect((await stored(page)).active.exercises[0].sets).toHaveLength(2);
+
+  // Removing an exercise with a completed set asks first, and Keep is safe.
+  await choose("Dumbbell reverse lunge", "Remove exercise");
+  const confirm = page.getByRole("dialog", {
+    name: "Remove Dumbbell reverse lunge?",
+  });
+  await expect(confirm).toContainText("Its 1 completed set will not be saved");
+  await expect(
+    confirm.getByRole("button", { name: "Keep Dumbbell reverse lunge" }),
+  ).toBeFocused();
+  await confirm
+    .getByRole("button", { name: "Keep Dumbbell reverse lunge" })
+    .click();
+  expect(await order()).toHaveLength(3);
+  await choose("Dumbbell reverse lunge", "Remove exercise");
+  await page
+    .getByRole("dialog", { name: "Remove Dumbbell reverse lunge?" })
+    .getByRole("button", { name: "Remove exercise", exact: true })
+    .click();
+  await expect
+    .poll(order)
+    .toEqual(["db-incline-dumbbell-press", "db-alternate-hammer-curl"]);
+  // An exercise with no completed sets is removed straight away.
+  await choose("Incline Dumbbell Press", "Remove exercise");
+  await expect(
+    status(page, "Incline Dumbbell Press removed from this workout."),
+  ).toBeVisible();
+  await expect.poll(order).toEqual(["db-alternate-hammer-curl"]);
+  // The last exercise cannot be removed.
+  await menu("Alternate Hammer Curl").click();
+  await expect(
+    page.getByRole("menuitem", { name: "Remove exercise" }),
+  ).toHaveAttribute("aria-disabled", "true");
+  await page.keyboard.press("Escape");
   await expect(page.locator(".log-exercise .set-labels")).toContainText("LEFT");
   await page.reload();
   await expect(page.locator(".log-exercise")).toHaveCount(1);
   await expect(
     page.getByRole("heading", { name: "Alternate Hammer Curl" }),
   ).toBeVisible();
+});
+
+test("replacing with an exercise that logs different fields asks before dropping completed sets", async ({
+  page,
+}) => {
+  const data = snapshot();
+  data.active = activeSession();
+  data.active.exercises[0].sets[0].done = true;
+  await seed(page, data);
+  await page
+    .getByRole("button", {
+      name: "Options for Barbell bench press",
+      exact: true,
+    })
+    .click();
+  await page.getByRole("menuitem", { name: "Replace exercise" }).click();
+  const picker = page.getByRole("dialog", {
+    name: "Replace Barbell bench press",
+  });
+  await picker.getByLabel("Search exercises").fill("high plank");
+  await picker
+    .getByRole("button", { name: "Replace with High plank", exact: true })
+    .click();
+  const confirm = page.getByRole("dialog", {
+    name: "Replace Barbell bench press with High plank?",
+  });
+  await expect(confirm).toContainText("records different measurements");
+  await confirm.getByRole("button", { name: "Replace exercise" }).click();
+  await expect
+    .poll(async () => (await stored(page)).active.exercises[0].exerciseId)
+    .toBe("wger-b2b40a54-e42b-49ec-97da-4c929ae41d42");
+  const sets = (await stored(page)).active.exercises[0].sets;
+  expect(sets).toHaveLength(3);
+  expect(sets.every((set) => !set.done && set.durationSeconds === 60)).toBe(
+    true,
+  );
 });
 
 test("starting a routine with a per-side exercise plans both sides", async ({

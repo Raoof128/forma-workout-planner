@@ -58,6 +58,18 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-19 — Per-exercise ⋯ menu
+
+- Mid-workout exercise actions live in each card's `ActionsMenu`
+  (`src/components/ActionsMenu.jsx`); reuse it for any new ⋯ menu instead of
+  a `<details>` dropdown. Items take `{ label, icon, onSelect, disabled,
+danger }`; keep unavailable actions listed with `disabled`.
+- Every action calls `focusCard(key)` after its update so focus returns to the
+  card's ⋯ button; keep that when adding actions. Tests locate menus by
+  `Options for <exercise name>` and items by `menuitem` role.
+- `replaceEntry` keeps sets only when `setFields` match (which includes the
+  per-side mode); use `setsLostByReplacing` before replacing.
+
 ### Raouf: 2026-10-19 — Workout and coach release deployment
 
 - `~/.config/forma/production-deploy.env` names `DROPLET_USER=root`, and the

@@ -12,12 +12,15 @@ import {
   Dumbbell,
   BookOpen,
   Minus,
-  Pencil,
+  ArrowUp,
+  ArrowDown,
+  ArrowLeftRight,
 } from "lucide-react";
 import { Button, PageHeading, Modal } from "./UI";
 import ExerciseGuide from "./ExerciseGuide";
 import SavedField from "./SavedField";
-import WorkoutEditor from "./WorkoutEditor";
+import ActionsMenu from "./ActionsMenu";
+import ExercisePicker from "./ExercisePicker";
 import { exerciseById, formatTime, sessionSets, sessionVolume } from "../data";
 import {
   logsSides,
@@ -25,7 +28,14 @@ import {
   setFields,
   validMeasurement,
 } from "../exerciseMetrics.js";
-import { updateSetValue } from "../workoutSession.js";
+import {
+  addedEntry,
+  moveEntry,
+  removeEntry,
+  replaceEntry,
+  setsLostByReplacing,
+  updateSetValue,
+} from "../workoutSession.js";
 import {
   entryKey,
   repsText,
@@ -71,7 +81,10 @@ export default function Workout({
   const [guide, setGuide] = useState(null);
   const [saving, setSaving] = useState(false);
   const [restOpen, setRestOpen] = useState(false);
-  const [editing, setEditing] = useState(false);
+  // { mode: "add" } or { mode: "replace", key } while the exercise picker is open.
+  const [picker, setPicker] = useState(null);
+  // A change that would discard completed sets waits here for confirmation.
+  const [pending, setPending] = useState(null);
   // The toggle flips at once; the profile save follows and wins if it fails.
   const [fill, setFill] = useState(fillSets);
   useEffect(() => {
@@ -238,6 +251,78 @@ export default function Workout({
       };
     });
   }
+  const setsDone = (entry) => entry.sets.filter((set) => set.done).length;
+  const nameOf = (entry) => exerciseById.get(entry.exerciseId).name;
+  // Menus and dialogs close on use; put focus back on a card's ⋯ button once
+  // the change has rendered, so keyboard users keep their place.
+  function focusCard(key) {
+    requestAnimationFrame(() => {
+      const card = [...document.querySelectorAll(".log-exercise")].find(
+        (item) => item.dataset.entryKey === key,
+      );
+      if (!card) return;
+      card.scrollIntoView({ block: "nearest" });
+      card
+        .querySelector(".actions-menu-trigger")
+        ?.focus({ preventScroll: true });
+    });
+  }
+  async function move(entry, direction) {
+    const key = entryKey(entry);
+    const to = session.exercises.indexOf(entry) + direction;
+    const result = await onUpdate((current) => ({
+      ...current,
+      exercises: moveEntry(current.exercises, key, direction),
+    }));
+    if (!result) return;
+    notify(
+      `Moved ${nameOf(entry)} to position ${to + 1} of ${session.exercises.length}.`,
+    );
+    focusCard(key);
+  }
+  async function remove(entry) {
+    const key = entryKey(entry);
+    const keys = session.exercises.map(entryKey);
+    const index = keys.indexOf(key);
+    const neighbour = keys[index + 1] ?? keys[index - 1];
+    setPending(null);
+    const result = await onUpdate((current) => ({
+      ...current,
+      exercises: removeEntry(current.exercises, key),
+    }));
+    if (!result) return;
+    notify(`${nameOf(entry)} removed from this workout.`);
+    focusCard(neighbour);
+  }
+  async function add(exercise) {
+    setPicker(null);
+    if (session.exercises.length >= 100) {
+      notify("A workout can hold at most 100 exercises.");
+      return;
+    }
+    const entry = addedEntry(exercise);
+    const result = await onUpdate((current) =>
+      current.exercises.length >= 100
+        ? current
+        : { ...current, exercises: [...current.exercises, entry] },
+    );
+    if (!result) return;
+    notify(`${exercise.name} added to this workout.`);
+    focusCard(entryKey(entry));
+  }
+  async function replace(entry, exercise) {
+    const index = session.exercises.indexOf(entry);
+    setPicker(null);
+    setPending(null);
+    const result = await onUpdate((current) => ({
+      ...current,
+      exercises: replaceEntry(current.exercises, entryKey(entry), exercise),
+    }));
+    if (!result) return;
+    notify(`Replaced ${nameOf(entry)} with ${exercise.name}.`);
+    const next = result.data?.active?.exercises[index];
+    if (next) focusCard(entryKey(next));
+  }
   function finish() {
     if (!complete) notify("Complete at least one set to save your workout.");
     else setConfirm(true);
@@ -252,10 +337,6 @@ export default function Workout({
         title={session.name}
         subtitle="One set at a time. You’ve got this."
       >
-        <Button variant="secondary" onClick={() => setEditing(true)}>
-          <Pencil size={16} />
-          Edit workout
-        </Button>
         <Button variant="lime" onClick={finish}>
           <Flag size={17} />
           Finish workout
@@ -314,7 +395,11 @@ export default function Workout({
             const rowClass = `set-row${fields.length > 2 ? " set-row-sides" : ""}`;
             const lastSet = entry.sets.at(-1);
             return (
-              <section className="panel log-exercise" key={entryKey(entry)}>
+              <section
+                className="panel log-exercise"
+                key={entryKey(entry)}
+                data-entry-key={entryKey(entry)}
+              >
                 <header>
                   <div className="exercise-icon">
                     <Dumbbell size={21} />
@@ -358,6 +443,42 @@ export default function Workout({
                     {entry.sets.filter((set) => set.done).length}/
                     {entry.sets.length}
                   </span>
+                  <ActionsMenu
+                    label={`Options for ${exercise.name}`}
+                    items={[
+                      {
+                        label: "Move up",
+                        icon: <ArrowUp size={16} />,
+                        disabled: entryIndex === 0,
+                        onSelect: () => void move(entry, -1),
+                      },
+                      {
+                        label: "Move down",
+                        icon: <ArrowDown size={16} />,
+                        disabled: entryIndex === session.exercises.length - 1,
+                        onSelect: () => void move(entry, 1),
+                      },
+                      {
+                        label: "Replace exercise",
+                        icon: <ArrowLeftRight size={16} />,
+                        onSelect: () =>
+                          setPicker({ mode: "replace", key: entryKey(entry) }),
+                      },
+                      {
+                        label: "Remove exercise",
+                        icon: <Trash2 size={16} />,
+                        danger: true,
+                        disabled: session.exercises.length <= 1,
+                        onSelect: () =>
+                          setsDone(entry)
+                            ? setPending({
+                                kind: "remove",
+                                key: entryKey(entry),
+                              })
+                            : void remove(entry),
+                      },
+                    ]}
+                  />
                 </header>
                 {exercise.id === "plank" && (
                   <p className="movement-note">
@@ -480,6 +601,15 @@ export default function Workout({
               </section>
             );
           })}
+          <button
+            type="button"
+            className="add-set add-exercise"
+            disabled={session.exercises.length >= 100}
+            onClick={() => setPicker({ mode: "add" })}
+          >
+            <Plus size={16} />
+            Add exercise
+          </button>
           <Button variant="lime" className="finish-bottom" onClick={finish}>
             <Flag size={17} />
             Finish workout
@@ -537,14 +667,61 @@ export default function Workout({
       {guide && (
         <ExerciseGuide exercise={guide} onClose={() => setGuide(null)} />
       )}
-      {editing && (
-        <WorkoutEditor
-          session={session}
-          onUpdate={onUpdate}
-          onClose={() => setEditing(false)}
-          notify={notify}
+      {picker && (
+        <ExercisePicker
+          title={
+            picker.mode === "add"
+              ? "Add an exercise"
+              : `Replace ${nameOf(session.exercises.find((item) => entryKey(item) === picker.key))}`
+          }
+          actionLabel={picker.mode === "add" ? "Add" : "Replace with"}
+          onClose={() => {
+            const key = picker.key;
+            setPicker(null);
+            if (key) focusCard(key);
+          }}
+          onPick={(exercise) => {
+            if (picker.mode === "add") {
+              void add(exercise);
+              return;
+            }
+            const entry = session.exercises.find(
+              (item) => entryKey(item) === picker.key,
+            );
+            if (!entry) {
+              setPicker(null);
+              return;
+            }
+            const lost = setsLostByReplacing(entry, exercise);
+            if (lost) {
+              setPicker(null);
+              setPending({ kind: "replace", key: picker.key, exercise, lost });
+            } else void replace(entry, exercise);
+          }}
         />
       )}
+      {pending &&
+        session.exercises.find((item) => entryKey(item) === pending.key) && (
+          <ConfirmChange
+            pending={pending}
+            entry={session.exercises.find(
+              (item) => entryKey(item) === pending.key,
+            )}
+            done={setsDone(
+              session.exercises.find((item) => entryKey(item) === pending.key),
+            )}
+            onCancel={() => {
+              const key = pending.key;
+              setPending(null);
+              focusCard(key);
+            }}
+            onConfirm={(entry) =>
+              void (pending.kind === "remove"
+                ? remove(entry)
+                : replace(entry, pending.exercise))
+            }
+          />
+        )}
       {confirm && (
         <Modal
           title="Finish strong."
@@ -687,5 +864,37 @@ function RestControls({ session, remaining, onUpdate }) {
         </Button>
       </div>
     </section>
+  );
+}
+
+function ConfirmChange({ pending, entry, done, onCancel, onConfirm }) {
+  const name = exerciseById.get(entry.exerciseId).name;
+  const sets = `${done} completed ${done === 1 ? "set" : "sets"}`;
+  const replacing = pending.kind === "replace";
+  return (
+    <Modal
+      title={
+        replacing
+          ? `Replace ${name} with ${pending.exercise.name}?`
+          : `Remove ${name}?`
+      }
+      onClose={onCancel}
+    >
+      <div className="modal-content">
+        <p>
+          {replacing
+            ? `${pending.exercise.name} records different measurements, so the ${sets} of ${name} will not be saved.`
+            : `Its ${sets} will not be saved with this workout.`}
+        </p>
+        <div className="modal-actions">
+          <Button variant="secondary" data-autofocus onClick={onCancel}>
+            Keep {name}
+          </Button>
+          <Button variant="danger-solid" onClick={() => onConfirm(entry)}>
+            {replacing ? "Replace exercise" : "Remove exercise"}
+          </Button>
+        </div>
+      </div>
+    </Modal>
   );
 }
