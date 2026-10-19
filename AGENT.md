@@ -58,6 +58,21 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-19 — Workout and coach release deployment
+
+- `~/.config/forma/production-deploy.env` names `DROPLET_USER=root`, and the
+  key `~/.ssh/eoi_droplet_ed25519` is also accepted for root. Connect as
+  `eoiadmin@$DROPLET_IP` and use `sudo`, per the earlier rule; only
+  `DROPLET_IP` and `CLOUDFLARE_API_TOKEN` are needed from that file.
+- `ops/Dockerfile` copies an explicit list of shared `src` files. A new
+  import from `server/` into `src/` must be added there; CI now imports every
+  server entry module inside the built image to catch a miss.
+- Host backups: `cd /opt/forma-<env> && python3 operations/account-operations.py operations/config.json backup`
+  (encrypted, signed, off-host). Each API container's compose files and env
+  file are in its `com.docker.compose.project.*` labels.
+- Both environments run `forma-api:workout-coach-20261019-98f853d` at schema 0006. Production Worker `a09aec75-…`, staging `27deb76c-…`. Record in
+  `docs/qa/workout-coach/`.
+
 ### Raouf: 2026-10-19 — Full-access coach tokens
 
 - **Supersedes** the 2026-10-18 rule that `/api/coach/workspace` "must never

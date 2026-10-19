@@ -4,6 +4,22 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-19 — Workout and coach release deployed
+
+- Owner-authorised release of PR #14 (`98f853d`) to private staging and
+  production: workout editing, fill-remaining-sets, left/right reps and
+  full-access coach tokens.
+- **Fix found while releasing:** the API image lacked the two shared
+  catalogue files the server now imports, so it would not have started. CI's
+  image step caught it as a build error; `98f853d` adds them to
+  `ops/Dockerfile`, and CI now imports every server module inside the image.
+- API image `forma-api:workout-coach-20261019-98f853d` with migration 0006 on
+  both environments. Production Worker `a09aec75-…`, staging Worker
+  `27deb76c-…`. Encrypted backups before and after each API switch; row
+  counts and unrelated containers unchanged. Production's three existing
+  coach tokens are read-only; mint a full-access token to let a coach edit.
+- Live checks passed; see [the release record](docs/qa/workout-coach/README.md).
+
 ### Raouf: 2026-10-19 — Full-access coach tokens
 
 - **What changed:** coach tokens gain a scope chosen when they are minted.
