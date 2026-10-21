@@ -67,7 +67,9 @@ jobs:
   verify:
     name: Verify application
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
+    # The four browser suites run back to back and now take about 50 minutes;
+    # 45 cut off the account integration steps on main and on PR #19.
+    timeout-minutes: 70
     services:
       postgres:
         image: postgres:18.4-alpine@sha256:9a8afca54e7861fd90fab5fdf4c42477a6b1cb7d293595148e674e0a3181de15

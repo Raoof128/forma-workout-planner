@@ -58,6 +58,13 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-21 — CI Verify job limit
+
+- `.github/workflows/ci.yml` gives `verify` 70 minutes; the four browser
+  suites run sequentially (~23 + 6 + 13 + 4 min). If it times out again,
+  split the account suites into their own job rather than raising the limit
+  further. Treat a cancelled step as not passed.
+
 ### Raouf: 2026-10-21 — Preview and demo production release
 
 - Production runs `846919b` (version `c0778873-…`), staging `27a43e9`
