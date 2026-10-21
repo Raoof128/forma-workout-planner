@@ -1,3 +1,5 @@
+import curation from "./catalog/curation.json" with { type: "json" };
+import { canonicalId } from "./catalog/curation.js";
 import { createId, exerciseById } from "./data.js";
 import {
   applySetValue,
@@ -95,7 +97,8 @@ const loggedKeys = (entry) =>
  * Swap one exercise for another in place. When both log the same fields
  * (say, weight and reps), every set, done or not, moves to the new exercise;
  * otherwise the new exercise starts with the same number of fresh sets.
- * Position, superset and rest stay with the slot.
+ * Position, superset and rest stay with the slot; the note and RPE stay too
+ * when it is the same movement (a hold moving from reps to seconds).
  */
 export function replaceEntry(entries, key, exercise) {
   const index = entries.findIndex((entry) => entryKey(entry) === key);
@@ -103,13 +106,23 @@ export function replaceEntry(entries, key, exercise) {
   const previous = entries[index];
   const fresh = addedEntry(exercise);
   const keep = loggedKeys(previous) === loggedKeys(fresh);
+  const same =
+    canonicalId(previous.exerciseId, curation) ===
+    canonicalId(exercise.id, curation);
   const next = {
     ...fresh,
+    ...(same ? { note: previous.note ?? null, rpe: previous.rpe ?? null } : {}),
     groupId: previous.groupId ?? null,
     restSeconds: previous.restSeconds ?? null,
     sets: keep
       ? previous.sets
-      : previous.sets.map(() => ({ ...fresh.sets[0] })),
+      : previous.sets.map((set) => ({
+          ...fresh.sets[0],
+          // The same movement keeps the load each set was planned with.
+          ...(same && typeof set.weight === "number"
+            ? { weight: set.weight }
+            : {}),
+        })),
   };
   return entries.map((entry, position) => (position === index ? next : entry));
 }
