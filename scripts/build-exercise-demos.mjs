@@ -2,7 +2,8 @@
 //
 //   node scripts/build-exercise-demos.mjs <folder of downloaded originals>
 //
-// Each original must match the SHA-1 recorded from Wikimedia Commons. Clips
+// Each original must match the SHA-256 recorded at review (Commons' own
+// SHA-1 is kept in the registry as provenance). Clips
 // are trimmed, scaled to at most 720 px wide, stripped of audio and encoded
 // as H.264 MP4 with a JPEG poster. Ordinary builds use the committed output;
 // rerun this only after changing the registry. Needs FFmpeg with libx264.
@@ -34,9 +35,11 @@ for (const clip of registry.clips) {
   if (!clip.formaIds.length) continue;
   // A segment of a longer source names that source's file in `original`.
   const original = path.join(originals, `${clip.original ?? clip.id}.webm`);
+  // `sha1` is the checksum Commons publishes (provenance only); verify the
+  // download against the SHA-256 recorded when it was reviewed.
   assert.equal(
-    crypto.createHash("sha1").update(fs.readFileSync(original)).digest("hex"),
-    clip.sha1,
+    sha256(original),
+    clip.originalSha256,
     `Original changed: ${clip.id}`,
   );
   const [start, end] = clip.trim;

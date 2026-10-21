@@ -65,6 +65,9 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   (agent sessions in auto mode are refused production deploys; do not work
   around that, hand the command to the owner). After production, merge
   PR #19 so `main` matches production.
+- CI Semgrep (`p/nodejsscan`) blocks any `createHash("sha1")` in `scripts/`.
+  The demo registry keeps Commons' SHA-1 as provenance only and verifies
+  originals with `originalSha256`.
 - Deploy env: `set -a; . ~/.config/forma/production-deploy.env; set +a`, then
   unset the Droplet variables before running the deploy script; only
   `CLOUDFLARE_API_TOKEN` is needed for website releases.
