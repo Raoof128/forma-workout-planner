@@ -17,14 +17,14 @@ Accounts remain private pending the outstanding release gates in the
 
 ## Features
 
-| Plan                                                   | Train                                        | Review and manage                           |
-| ------------------------------------------------------ | -------------------------------------------- | ------------------------------------------- |
-| Three starters and 12 additional templates             | Weight/reps, time, and distance logging      | Editable workout history                    |
-| Custom routines and exercise order                     | Persistent rest timer and session notes      | Volume, completed sets, and personal bests  |
-| Weekly training schedule                               | Exercise instructions while logging          | Validated JSON backup and restore           |
-| Searchable 1,661-exercise library with source licences | Resume an unfinished session                 | Profile, backup, and training-data settings |
-| Local guest mode or member account                     | Authenticated workspace sync across sessions | Session revocation, MFA, import, and export |
-| Read-only coach tokens for a coaching tool or AI       |                                              | Token list, expiry, and one-click revocation |
+| Plan                                                   | Train                                               | Review and manage                            |
+| ------------------------------------------------------ | --------------------------------------------------- | -------------------------------------------- |
+| Three starters and 12 additional templates             | Weight/reps, time, and distance logging             | Editable workout history                     |
+| Custom routines and exercise order                     | Persistent rest timer, hold timer and session notes | Volume, completed sets, and personal bests   |
+| Weekly training schedule                               | Exercise instructions while logging                 | Validated JSON backup and restore            |
+| Searchable 1,661-exercise library with source licences | Resume an unfinished session                        | Profile, backup, and training-data settings  |
+| Local guest mode or member account                     | Authenticated workspace sync across sessions        | Session revocation, MFA, import, and export  |
+| Read-only coach tokens for a coaching tool or AI       |                                                     | Token list, expiry, and one-click revocation |
 
 The interface uses semantic controls, keyboard navigation, accessible dialogs,
 mobile workout controls, and locally hosted fonts. See the [verification
@@ -121,7 +121,8 @@ configured and verified. Earlier staging evidence remains in the
 | [Security](SECURITY.md)                                 | Responsible reporting and security notes                        |
 
 Weights use kilograms and dates use Australia/Sydney. Starter weights are
-editable examples. One plank rep represents a 10-second hold. FORMA does not
+editable examples. One rep of the starter Forearm plank represents a 10-second
+hold, and exercises with no external load log no weight. FORMA does not
 include billing, social networking, Apple Health integration, or automated
 coaching.
 

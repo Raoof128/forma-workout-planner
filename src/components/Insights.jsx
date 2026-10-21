@@ -1,3 +1,4 @@
+import { loggedText } from "../exerciseLoad.js";
 import { entryKey } from "../routineProgramming.js";
 import { useState } from "react";
 import HistoryEditor from "./HistoryEditor";
@@ -14,11 +15,7 @@ import {
   Trash2,
 } from "lucide-react";
 import { Button, PageHeading, Empty, Modal } from "./UI";
-import {
-  measurementText,
-  sideReps,
-  tracksLoadReps,
-} from "../exerciseMetrics.js";
+import { sideReps, tracksLoadReps } from "../exerciseMetrics.js";
 import "../workout-history.css";
 import {
   exercises,
@@ -303,7 +300,7 @@ export function WorkoutHistory({ history, onStart, onSave, onDelete }) {
                       .filter((s) => s.done)
                       .map((s, i) => (
                         <span key={i}>
-                          {measurementText(exerciseById.get(e.exerciseId), s)}
+                          {loggedText(exerciseById.get(e.exerciseId), s)}
                           {s.rpe != null && ` · RPE ${s.rpe}`}
                         </span>
                       ))}

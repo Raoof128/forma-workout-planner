@@ -4,7 +4,7 @@
 
 ## Plan a routine
 
-Open **My routines** to use a starter routine or create your own. Give it a name, choose exercises, set an estimated duration, and enter the number of sets, reps, and starting weight. Drag an exercise by its grip, or use the up/down controls, to reorder exercises. Save the routine before starting.
+Open **My routines** to use a starter routine or create your own. Give it a name, choose exercises, set an estimated duration, and enter the number of sets, reps, and starting weight. Exercises that carry no external load, such as the plank or the ab roller, have no load field; bodyweight exercises that are often loaded, such as pull-ups and dips, show **Added (kg)** for a dip belt or vest. Drag an exercise by its grip, or use the up/down controls, to reorder exercises. Save the routine before starting.
 
 To change the order of your routines, drag a card on **My routines** (on a phone, touch and hold the card first), or open its **⋯** menu and choose **Move earlier** or **Move later**. Press Escape while dragging to cancel.
 
@@ -31,6 +31,10 @@ On Overview, choose your next session and use **Schedule your week** to mark you
 5. Each exercise card has a **⋯** menu with **Move up**, **Move down**, **Replace exercise** and **Remove exercise**; use **Add exercise** below the last card to add one. Replacing keeps the logged sets when both exercises record the same measurements. Removing an exercise, or replacing it with one that records different measurements, asks first when it would discard completed sets. The menu works with the keyboard: Enter or the arrow keys open it, arrows move, Escape closes.
 6. Finish the workout and confirm **Save workout**.
 
+Exercises with no external load (567 of the library's 1,411, including the plank, the ab roller, most push-up variations, stretches and band work) have no weight column, so you only enter reps or time. If an older log already gave one of their sets a weight, the column stays so nothing is hidden. Pull-ups, dips, standard push-ups and other bodyweight exercises that are often loaded show **ADDED (KG)**: enter only the extra weight, or leave it at 0.
+
+Timed holds, such as the plank, side plank, wall sit and timed stretches, have a hold timer at the top of their card. It starts at the next set's planned time; change it with **−5** and **+5**, then press **Start**. While it runs, **Pause** and **Resume** it, choose **End set** to log the time you actually held, or press **×** to cancel without logging. When time is up, the set is logged and completed and your rest timer starts, just as if you had ticked it. The starter routines' Forearm plank counts one rep as a 10-second hold, so its timer moves in 10-second steps and logs one rep for every full 10 seconds. While the timer runs it asks the browser to keep the screen on. It ends with a beep, unless **Mute rest timer sound** is on, and a vibration on devices that support one (iPhones do not vibrate for web pages). Keep FORMA on screen during a hold: if you lock the phone or switch apps, the countdown keeps time, but the beep and the logging wait until you come back. Repetition, distance and cardio exercises have no hold timer.
+
 By default the weight and reps you type into a set also fill the later unfinished sets of that exercise, as long as they still show the value you replaced; a set you changed deliberately keeps its own value. Turn **Fill the remaining sets with what I type** off in the workout side panel or in Settings to enter every set by hand.
 
 The exercise library marks 408 movements as performed one side at a time. They log left and right by default; the **Reps per leg/arm/side** option in a routine's exercise menu turns side logging on or off for any load-and-reps exercise.
@@ -43,7 +47,7 @@ Persistent sessions and timers survive navigation and reload. Wait for “Saving
 
 **Workout history** shows completed sessions newest first. Open a workout to inspect its sets and notes, correct its name or logged values, or delete it with confirmation. Corrections update the progress totals.
 
-**Progress** shows completed workouts, completed sets, and volume, calculated as the sum of `weight × reps` for completed sets. Bodyweight sets logged at 0 kg contribute completed sets but zero external-load volume. Dumbbell volume uses the weight entered; it does not automatically double for two hands or both sides.
+**Progress** shows completed workouts, completed sets, and volume, calculated as the sum of `weight × reps` for completed sets. Bodyweight sets logged at 0 kg contribute completed sets but zero external-load volume, and history shows them as reps or time without "0 kg". Dumbbell volume uses the weight entered; it does not automatically double for two hands or both sides.
 
 Time and distance stay visible in workout history and corrections but do not
 become kilogram volume or lifting personal bests. Personal bests for load/reps
@@ -81,4 +85,4 @@ paste it into a chat. Details are in the [API reference](accounts/api.md#coach-a
 
 ## Preferences and limits
 
-Settings controls the profile name and weekly workout target. Dates use Sydney time, weights use kilograms, and one plank rep means a 10-second hold. In guest mode, data stays in browser storage and does not sync between devices. In account mode, validated workspace changes save to the self-hosted API and can be used from another signed-in device. Account mode requires a deployed, configured service; see the [account help and limitations](accounts/README.md). Browser-local guest storage is not encrypted by FORMA; same-origin scripts, browser extensions, and people with access to your browser profile may be able to read it. A hosting provider may also keep ordinary access logs. Review the provider's privacy and retention settings separately.
+Settings controls the profile name and weekly workout target. Dates use Sydney time, weights use kilograms, and one rep of the starter routines' Forearm plank means a 10-second hold. In guest mode, data stays in browser storage and does not sync between devices. In account mode, validated workspace changes save to the self-hosted API and can be used from another signed-in device. Account mode requires a deployed, configured service; see the [account help and limitations](accounts/README.md). Browser-local guest storage is not encrypted by FORMA; same-origin scripts, browser extensions, and people with access to your browser profile may be able to read it. A hosting provider may also keep ordinary access logs. Review the provider's privacy and retention settings separately.

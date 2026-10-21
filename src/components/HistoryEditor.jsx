@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { Button, Modal } from "./UI";
 import { exerciseById, sessionSets } from "../data";
 import { entryKey } from "../routineProgramming.js";
-import { applySetValue, readSetValue, setFields } from "../exerciseMetrics.js";
+import { applySetValue, readSetValue } from "../exerciseMetrics.js";
+import { visibleFields } from "../exerciseLoad.js";
 export default function HistoryEditor({ session, onSave, onClose }) {
   const [draft, setDraft] = useState(() => structuredClone(session));
   const [discard, setDiscard] = useState(false);
@@ -95,8 +96,14 @@ export default function HistoryEditor({ session, onSave, onClose }) {
             const exercise = exerciseById.get(entry.exerciseId);
             if (!session.exercises[ei].sets.some((set) => set.done))
               return null;
-            const fields = setFields(exercise, entry);
-            const rowClass = `set-row${fields.length > 2 ? " set-row-sides" : ""}`;
+            const fields = visibleFields(exercise, entry);
+            const rowClass = `set-row${
+              fields.length > 2
+                ? " set-row-sides"
+                : fields.length === 1
+                  ? " set-row-single"
+                  : ""
+            }`;
             return (
               <section className="history-edit-exercise" key={entryKey(entry)}>
                 <h3>{exercise.name}</h3>
