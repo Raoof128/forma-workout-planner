@@ -45150,6 +45150,111 @@
       "reviewStatus": "accepted",
       "reviewNote": "Carried over on 2026-10-21 from wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
       "guideSha256": "d117f840c78fd86c471657e8fe55a632ecb2f6e6ae9608f3f81d56ebc978473f"
+    },
+    "forma-db-crucifix": {
+      "assetId": "forma-original-movements-020-2-0",
+      "caption": "Crucifix · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from db-crucifix, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "574e8dfe3f8c5bf50c64c79bbef965ffe31dddb907514540c7d6862ecf769662"
+    },
+    "forma-wger-f2733700-aa5d-4df7-bc52-1876ab4fb479": {
+      "assetId": "forma-original-movements-004-2-1",
+      "caption": "Axe Hold · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-f2733700-aa5d-4df7-bc52-1876ab4fb479, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "f242cb6303cac36aeca04f8ee214f0150b05c0e9a74a60fe887da62cc7068938"
+    },
+    "forma-wger-88afb956-8d4a-45b3-8c7c-c23719316bfe": {
+      "assetId": "forma-original-movements-043-0-1",
+      "caption": "Incline Static Hold · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-88afb956-8d4a-45b3-8c7c-c23719316bfe, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "36d570a9c2b2c0a4c1e474978b72b75c630bb4247b5bff4682d140e12f9fcf03"
+    },
+    "forma-wger-8381f40c-3168-4d98-af60-6a89800dd308": {
+      "assetId": "forma-original-movements-038-0-2",
+      "caption": "Hercules Pillars · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-8381f40c-3168-4d98-af60-6a89800dd308, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "7695381534e40e934f1330f45e8901feacfccbccec4420f13ee985f51270bcb9"
+    },
+    "forma-db-balance-board": {
+      "assetId": "forma-original-movements-005-1-1",
+      "caption": "Balance Board · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from db-balance-board, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "0d0c0a603521c0123b0ca93b293cd8dee06bb80184419af88a79b0b0b7274a59"
+    },
+    "forma-db-downward-facing-balance": {
+      "assetId": "forma-original-movements-024-1-1",
+      "caption": "Downward Facing Balance · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from db-downward-facing-balance, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "7c90495b59d0279e8c1cf232ca75fca920a11598426b03a3a9453fca15ca215f"
+    },
+    "forma-wger-00eae665-ff78-4373-9c43-f44a4a1b43e0": {
+      "assetId": "forma-original-authored-c-001-retry-0-0",
+      "caption": "Frog stand balance · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-00eae665-ff78-4373-9c43-f44a4a1b43e0, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "74c671570bd13f0c93a89dae587947ceefb33210ad93c52a6362bae229d19fe3"
+    },
+    "forma-wger-53b8727f-ad5c-402a-83e6-7b8e9c0bd99a": {
+      "assetId": "forma-original-movements-080-2-0",
+      "caption": "Single-leg BOSU balance · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-53b8727f-ad5c-402a-83e6-7b8e9c0bd99a, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "d536c29387cf463eb2b363dae1c5d3fcb17e837f61c29ad87de88952cb615419"
+    },
+    "forma-wger-f9880802-e5bd-4143-97f6-d0ee82ba9dd2": {
+      "assetId": "forma-original-movements-080-0-0",
+      "caption": "Single-Leg Balance with Eyes Closed · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-f9880802-e5bd-4143-97f6-d0ee82ba9dd2, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "769d78f72118945f5e9d2cf3b7813b1c06bca58f2a8b52bf657fab223b2fda24"
+    },
+    "forma-wger-00f4a2b1-b1ac-49e6-a657-1d27e46522fd": {
+      "assetId": "forma-original-movements-048-1-2",
+      "caption": "Kneeling Superman · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-00f4a2b1-b1ac-49e6-a657-1d27e46522fd, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "f92b5dfa192f16beb3a5c8fbedee8bcd0bd6b6de3664fd5a783018ad858351a8"
+    },
+    "forma-wger-541941e0-0fa5-4474-a382-9baf04948f8d": {
+      "assetId": "forma-original-movements-040-0-0",
+      "caption": "Hip Raise, Lying · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-541941e0-0fa5-4474-a382-9baf04948f8d, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "cf6be61624960b8d4b366b2fdbce50e9b07c9a9270348481d37d03ff7e597c9b"
+    },
+    "forma-wger-45d89ca5-f5c7-4e56-9833-fd160cd2666d": {
+      "assetId": "forma-original-movements-029-2-2",
+      "caption": "Dynamic side hold · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-45d89ca5-f5c7-4e56-9833-fd160cd2666d, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "3fd0097944cfd5220b6856d9b8c33b41e1a9c14bcb97c5f4c0c3f74244424247"
+    },
+    "forma-wger-af59f161-147a-49ba-85c8-6c9f4e5ffe63": {
+      "assetId": "forma-original-movements-088-1-0",
+      "caption": "Standing Pancake · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-af59f161-147a-49ba-85c8-6c9f4e5ffe63, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "8b8e1fedbf026ec8cc128cfb59862c1b3f26432f290bba629c4b4f53768f857f"
+    },
+    "forma-wger-cf434716-f846-46d8-b267-8b33d311d8b5": {
+      "assetId": "forma-original-finish-f-001-1-0",
+      "caption": "Recruitment Pulls · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-cf434716-f846-46d8-b267-8b33d311d8b5, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "53fb4c19a3cc8c27901c4d3213457606aa413cad626d5ab80e4e3ff26f43c74b"
+    },
+    "forma-wger-f0823bb5-3f18-48d4-98de-cbe38f9fd8ff": {
+      "assetId": "forma-original-movements-024-0-1",
+      "caption": "Double-Leg Abdominal Press · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-f0823bb5-3f18-48d4-98de-cbe38f9fd8ff, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "08dc17fe53f2a47f256a6021c0c6f5fac1e8e3ecc2c36f9baaea7c6fae8e75e1"
     }
   }
 }

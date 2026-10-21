@@ -21,8 +21,8 @@ import {
 } from "../src/exerciseLoad.js";
 
 // The holds whose guides describe holding a position, each with the load
-// class it was reviewed with. Arch Hang is not here: its guide says "Hold it
-// for time/reps", so its rep logging stays.
+// class it was reviewed with. The first fifteen moved in the first review;
+// the rest in the second. Holds whose guides prescribe reps are in `kept`.
 const holds = [
   ["wger-d059c63d-0a81-48a3-912a-44070c0def2e", "Hollow Hold", "none"],
   ["wger-16202754-f567-4d23-a866-2c9cc8eba71d", "L-sit", "none"],
@@ -43,10 +43,67 @@ const holds = [
   ["wger-35008ce6-74ca-40db-b965-44a1eccfa061", "Handstand", "none"],
   ["wger-1d1a53dd-e00f-477e-83f7-09c8ef9a71cd", "elbow lever", "none"],
   ["wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6", "Sphinx", "none"],
+  ["db-crucifix", "Crucifix", "load"],
+  ["wger-f2733700-aa5d-4df7-bc52-1876ab4fb479", "Axe Hold", "load"],
+  ["wger-88afb956-8d4a-45b3-8c7c-c23719316bfe", "Incline Static Hold", "load"],
+  ["wger-8381f40c-3168-4d98-af60-6a89800dd308", "Hercules Pillars", "load"],
+  ["db-balance-board", "Balance Board", "none"],
+  ["db-downward-facing-balance", "Downward Facing Balance", "none"],
+  ["wger-00eae665-ff78-4373-9c43-f44a4a1b43e0", "Frog stand balance", "none"],
+  [
+    "wger-53b8727f-ad5c-402a-83e6-7b8e9c0bd99a",
+    "Single-leg BOSU balance",
+    "none",
+  ],
+  [
+    "wger-f9880802-e5bd-4143-97f6-d0ee82ba9dd2",
+    "Single-Leg Balance with Eyes Closed",
+    "none",
+  ],
+  ["wger-00f4a2b1-b1ac-49e6-a657-1d27e46522fd", "Kneeling Superman", "none"],
+  ["wger-541941e0-0fa5-4474-a382-9baf04948f8d", "Hip Raise, Lying", "added"],
+  ["wger-45d89ca5-f5c7-4e56-9833-fd160cd2666d", "Dynamic side hold", "load"],
+  ["wger-af59f161-147a-49ba-85c8-6c9f4e5ffe63", "Standing Pancake", "none"],
+  ["wger-cf434716-f846-46d8-b267-8b33d311d8b5", "Recruitment Pulls", "none"],
+  [
+    "wger-f0823bb5-3f18-48d4-98de-cbe38f9fd8ff",
+    "Double-Leg Abdominal Press",
+    "none",
+  ],
 ];
+// Reviewed and kept in reps: each guide prescribes repetitions, or (Back
+// bridge, the Spanish stretch, the rest placeholder) describes no hold to time.
+const kept = [
+  ["wger-f4291da4-09c2-4605-a90c-c926c6a92515", "Arch Hang"],
+  [
+    "wger-a3afaf43-b087-4f65-9e62-d038ab09ce90",
+    "Seated Knee Extension with Overpressure",
+  ],
+  ["wger-04e7fd92-e2e5-4212-ad7c-7542e98f7d83", "Chin tuck"],
+  ["wger-17593b54-1e4e-49d7-8f9f-3a706823a4c5", "Back bridge"],
+  [
+    "wger-eb8d3fa8-8cfc-4961-8e3d-5bf0a5081797",
+    "Single-Leg Soft-Landing Holds",
+  ],
+  [
+    "wger-b48cd640-dd9f-4557-a4db-8cd33d5655a6",
+    "Estiramiento de brazos y cuello",
+  ],
+  ["wger-af5a3520-25eb-4dd7-b802-a7382b8ce3ef", "Rest (for timed workouts)"],
+];
+// One-side-at-a-time holds keep their reviewed side under the timed ID.
+const sides = {
+  "wger-53b8727f-ad5c-402a-83e6-7b8e9c0bd99a": "leg",
+  "wger-f9880802-e5bd-4143-97f6-d0ee82ba9dd2": "leg",
+  "wger-00f4a2b1-b1ac-49e6-a657-1d27e46522fd": "side",
+  "wger-45d89ca5-f5c7-4e56-9833-fd160cd2666d": "side",
+  "wger-cf434716-f846-46d8-b267-8b33d311d8b5": "arm",
+};
 const HOLLOW = "wger-d059c63d-0a81-48a3-912a-44070c0def2e";
 const DEADHANG = "wger-74d4697d-8a97-4ea2-9d05-fa4d2bd7221e";
-const ARCH_HANG = "wger-f4291da4-09c2-4605-a90c-c926c6a92515";
+const CRUCIFIX = "db-crucifix";
+const HIP_RAISE = "wger-541941e0-0fa5-4474-a382-9baf04948f8d";
+const FROG_STAND = "wger-00eae665-ff78-4373-9c43-f44a4a1b43e0";
 const timed = (id) => `forma-${id}`;
 const selectable = new Set(selectableExercises.map((row) => row.id));
 const workout = (id, exercises) => ({
@@ -77,6 +134,8 @@ test("each reviewed hold has a timed identity that new selections use", () => {
     });
     assert.equal(loadType(hold), load, name);
     assert.equal(loadType(saved), load, name);
+    assert.equal(hold.side, sides[id], `${name} keeps its side`);
+    assert.equal(saved.side, sides[id], `${name} rep logs keep their side`);
     const guide = guideExercise(id);
     assert.equal(guide.id, timed(id), `${name} rep logs open the same guide`);
     assert.equal(instructions[guide.instructionId], instructions[id], name);
@@ -88,13 +147,25 @@ test("each reviewed hold has a timed identity that new selections use", () => {
   }
 });
 
-test("Arch Hang keeps reps because its guide also prescribes reps", () => {
-  const archHang = exerciseById.get(ARCH_HANG);
-  assert.equal(archHang.metric, "load_reps");
-  assert(selectable.has(ARCH_HANG));
-  assert.equal(canonicalId(ARCH_HANG, curation), ARCH_HANG);
-  assert.equal(exerciseById.has(timed(ARCH_HANG)), false);
-  assert.equal(usesHoldTimer(archHang), false);
+test("holds whose guides prescribe reps keep reps", () => {
+  for (const [id, name] of kept) {
+    const exercise = exerciseById.get(id);
+    assert.equal(exercise.name, name);
+    assert.equal(exercise.metric, "load_reps", name);
+    assert(selectable.has(id), `${name} is still offered`);
+    assert.equal(canonicalId(id, curation), id, name);
+    assert.equal(exerciseById.has(timed(id)), false, name);
+    assert.equal(usesHoldTimer(exercise), false, name);
+  }
+});
+
+test("a reviewed guide repair moves to the timed identity", () => {
+  // The frog stand's shown guide is a reviewed repair, not the source text.
+  const guide = guideExercise(FROG_STAND);
+  assert.equal(guide.id, timed(FROG_STAND));
+  assert.equal(guide.source, null);
+  assert.match(guide.description, /^Squat on a mat and place both palms/);
+  assert.match(guide.description, /Hold briefly with control/);
 });
 
 test("saved rep sets of a migrated hold keep their meaning", () => {
@@ -196,6 +267,31 @@ test("new sets of a timed hold log seconds and add no lifting volume", () => {
   assert.equal(sessionVolume(restored.history[0]), 0);
   assert.deepEqual(
     visibleFields(exerciseById.get(timed(DEADHANG)), deadhang).map(
+      (f) => f.label,
+    ),
+    ["TIME (SECONDS)", "ADDED (KG)"],
+  );
+
+  // A loaded hold keeps its weight column; the hip raise's load is optional.
+  const crucifix = { exerciseId: timed(CRUCIFIX), sets: [] };
+  assert.deepEqual(
+    visibleFields(exerciseById.get(timed(CRUCIFIX)), crucifix).map(
+      (f) => f.label,
+    ),
+    ["TIME (SECONDS)", "WEIGHT (KG)"],
+  );
+  assert.equal(
+    loggedText(exerciseById.get(timed(CRUCIFIX)), {
+      weight: 20,
+      reps: 1,
+      durationSeconds: 45,
+      done: true,
+    }),
+    "45 sec · 20 kg",
+  );
+  const hipRaise = { exerciseId: timed(HIP_RAISE), sets: [] };
+  assert.deepEqual(
+    visibleFields(exerciseById.get(timed(HIP_RAISE)), hipRaise).map(
       (f) => f.label,
     ),
     ["TIME (SECONDS)", "ADDED (KG)"],

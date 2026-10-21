@@ -3,6 +3,7 @@ import { initialData } from "../src/data.js";
 
 const HOLLOW = "wger-d059c63d-0a81-48a3-912a-44070c0def2e";
 const LSIT = "wger-16202754-f567-4d23-a866-2c9cc8eba71d";
+const CRUCIFIX = "db-crucifix";
 const snapshot = () => ({ ...structuredClone(initialData), revision: 0 });
 const session = (exercises) => ({
   id: "skills-active",
@@ -123,4 +124,35 @@ test("older rep logs of a migrated hold keep their reps and get no timer", async
   const logged = page.locator(".history-exercise");
   await expect(logged).toContainText("L-sit");
   await expect(logged).toContainText("12 reps");
+});
+
+test("a loaded hold keeps its weight column beside the seconds", async ({
+  page,
+}) => {
+  await page.clock.install({ time: new Date("2026-10-21T00:00:00Z") });
+  const data = snapshot();
+  data.active = session([
+    { exerciseId: "bench", sets: [{ weight: 50, reps: 8, done: false }] },
+  ]);
+  await seed(page, data, "workout");
+
+  await page.getByRole("button", { name: "Add exercise", exact: true }).click();
+  await page.getByLabel("Search exercises").fill("Crucifix");
+  await page.getByRole("button", { name: "Add Crucifix", exact: true }).click();
+
+  const crucifix = card(page, "Crucifix");
+  await expect(
+    crucifix.getByRole("group", { name: "Hold timer for Crucifix" }),
+  ).toBeVisible();
+  await expect(crucifix.getByLabel("Crucifix set 1 reps")).toHaveCount(0);
+  await crucifix.getByLabel("Crucifix set 1 weight").fill("10");
+  await crucifix.getByLabel("Crucifix set 1 durationSeconds").fill("40");
+  await crucifix
+    .getByRole("button", { name: "Complete Crucifix set 1", exact: true })
+    .click();
+  const crucifixEntry = async () => (await stored(page)).active.exercises[1];
+  await expect
+    .poll(async () => (await crucifixEntry()).sets[0])
+    .toMatchObject({ weight: 10, durationSeconds: 40, done: true });
+  expect((await crucifixEntry()).exerciseId).toBe(`forma-${CRUCIFIX}`);
 });
