@@ -8076,7 +8076,7 @@
     "candidateGroupsEvaluated": 283,
     "catalogEntriesNameEquipmentReviewed": 1661,
     "equipmentCorrectionsWithinGroups": 169,
-    "measurementReplacementsRequired": 5
+    "measurementReplacementsRequired": 20
   },
   "uncertainGroups": [
     {
@@ -9879,6 +9879,179 @@
         "wger-4632c471-5c5e-4570-9dec-509c5d4d58bb",
         "wger-728b00ba-f9cb-4f04-915a-ccd5cd0b86bf"
       ]
+    },
+    {
+      "existingId": "wger-d059c63d-0a81-48a3-912a-44070c0def2e",
+      "replacementId": "forma-wger-d059c63d-0a81-48a3-912a-44070c0def2e",
+      "name": "Hollow Hold",
+      "from": "load_reps",
+      "to": "duration",
+      "guideInstructionId": "wger-d059c63d-0a81-48a3-912a-44070c0def2e",
+      "reviewedAt": "2026-10-21",
+      "reason": "Guide holds a supine hollow position (arms, legs, head and shoulders raised, lower back on the mat); a hold timed in seconds. Saved rep logs keep the original ID and units.",
+      "aliasIds": ["wger-d059c63d-0a81-48a3-912a-44070c0def2e"]
+    },
+    {
+      "existingId": "wger-16202754-f567-4d23-a866-2c9cc8eba71d",
+      "replacementId": "forma-wger-16202754-f567-4d23-a866-2c9cc8eba71d",
+      "name": "L-sit",
+      "from": "load_reps",
+      "to": "duration",
+      "guideInstructionId": "wger-16202754-f567-4d23-a866-2c9cc8eba71d",
+      "reviewedAt": "2026-10-21",
+      "reason": "Guide lifts the body off the ground with straight legs and says to hold for as long as required; a timed hold. Saved rep logs keep the original ID and units.",
+      "aliasIds": ["wger-16202754-f567-4d23-a866-2c9cc8eba71d"]
+    },
+    {
+      "existingId": "wger-a092afaf-aa5a-4384-b407-a6b52cf1c008",
+      "replacementId": "forma-wger-a092afaf-aa5a-4384-b407-a6b52cf1c008",
+      "name": "L-Sit (Foot Supported)",
+      "from": "load_reps",
+      "to": "duration",
+      "guideInstructionId": "wger-a092afaf-aa5a-4384-b407-a6b52cf1c008",
+      "reviewedAt": "2026-10-21",
+      "reason": "Guide is the L-sit hold with the feet taking some of the legs' weight; timed like the L-sit. Saved rep logs keep the original ID and units.",
+      "aliasIds": ["wger-a092afaf-aa5a-4384-b407-a6b52cf1c008"]
+    },
+    {
+      "existingId": "wger-d2cf769a-9271-41ae-90fc-aef813e41740",
+      "replacementId": "forma-wger-d2cf769a-9271-41ae-90fc-aef813e41740",
+      "name": "Straddle L-Sit",
+      "from": "load_reps",
+      "to": "duration",
+      "guideInstructionId": "wger-d2cf769a-9271-41ae-90fc-aef813e41740",
+      "reviewedAt": "2026-10-21",
+      "reason": "Guide says to hold isometrically as long as required; a timed hold. Saved rep logs keep the original ID and units.",
+      "aliasIds": ["wger-d2cf769a-9271-41ae-90fc-aef813e41740"]
+    },
+    {
+      "existingId": "wger-9396a728-3da4-4390-ae4d-882395805008",
+      "replacementId": "forma-wger-9396a728-3da4-4390-ae4d-882395805008",
+      "name": "Tuck L-sit",
+      "from": "load_reps",
+      "to": "duration",
+      "guideInstructionId": "wger-9396a728-3da4-4390-ae4d-882395805008",
+      "reviewedAt": "2026-10-21",
+      "reason": "Guide calls it a bodyweight static hold and a progression toward the full L-sit; a timed hold. Saved rep logs keep the original ID and units.",
+      "aliasIds": ["wger-9396a728-3da4-4390-ae4d-882395805008"]
+    },
+    {
+      "existingId": "wger-f41ac754-45a0-443b-afe5-e624e215229f",
+      "replacementId": "forma-wger-f41ac754-45a0-443b-afe5-e624e215229f",
+      "name": "Front Lever",
+      "from": "load_reps",
+      "to": "duration",
+      "guideInstructionId": "wger-f41ac754-45a0-443b-afe5-e624e215229f",
+      "reviewedAt": "2026-10-21",
+      "reason": "Guide keeps the body horizontal and parallel to the floor; a static lever held for time. Saved rep logs keep the original ID and units.",
+      "aliasIds": ["wger-f41ac754-45a0-443b-afe5-e624e215229f"]
+    },
+    {
+      "existingId": "wger-e79616cb-f5fb-4b10-b99d-09d43774e142",
+      "replacementId": "forma-wger-e79616cb-f5fb-4b10-b99d-09d43774e142",
+      "name": "Front lever tuck",
+      "from": "load_reps",
+      "to": "duration",
+      "guideInstructionId": "wger-e79616cb-f5fb-4b10-b99d-09d43774e142",
+      "reviewedAt": "2026-10-21",
+      "reason": "Tucked progression of the static front lever; the guide lists the working muscles and prescribes no repetitions, so it is timed like the full lever. Saved rep logs keep the original ID and units.",
+      "aliasIds": ["wger-e79616cb-f5fb-4b10-b99d-09d43774e142"]
+    },
+    {
+      "existingId": "wger-8e1cda15-542b-4714-8cc5-c1fe5089ee27",
+      "replacementId": "forma-wger-8e1cda15-542b-4714-8cc5-c1fe5089ee27",
+      "name": "Back Lever",
+      "from": "load_reps",
+      "to": "duration",
+      "guideInstructionId": "wger-8e1cda15-542b-4714-8cc5-c1fe5089ee27",
+      "reviewedAt": "2026-10-21",
+      "reason": "Guide hangs face down from a pull-up bar with the arms extended; a static lever held for time. Saved rep logs keep the original ID and units.",
+      "aliasIds": ["wger-8e1cda15-542b-4714-8cc5-c1fe5089ee27"]
+    },
+    {
+      "existingId": "wger-a82944ae-24f4-4f7a-8aac-af251f6907e5",
+      "replacementId": "forma-wger-a82944ae-24f4-4f7a-8aac-af251f6907e5",
+      "name": "Planche Lean Hold",
+      "from": "load_reps",
+      "to": "duration",
+      "guideInstructionId": "wger-a82944ae-24f4-4f7a-8aac-af251f6907e5",
+      "reviewedAt": "2026-10-21",
+      "reason": "Guide calls it a straight-arm static hold leaning the shoulders past the wrists; a timed hold. Saved rep logs keep the original ID and units.",
+      "aliasIds": ["wger-a82944ae-24f4-4f7a-8aac-af251f6907e5"]
+    },
+    {
+      "existingId": "wger-74d4697d-8a97-4ea2-9d05-fa4d2bd7221e",
+      "replacementId": "forma-wger-74d4697d-8a97-4ea2-9d05-fa4d2bd7221e",
+      "name": "Deadhang",
+      "from": "load_reps",
+      "to": "duration",
+      "guideInstructionId": "wger-74d4697d-8a97-4ea2-9d05-fa4d2bd7221e",
+      "reviewedAt": "2026-10-21",
+      "reason": "Guide is a dead hang on an edge, with or without added weight; a hang held for time that keeps its optional added load. Saved rep logs keep the original ID and units.",
+      "aliasIds": ["wger-74d4697d-8a97-4ea2-9d05-fa4d2bd7221e"]
+    },
+    {
+      "existingId": "wger-9f9edad8-7da0-448c-bfcb-ec61f2d28162",
+      "replacementId": "forma-wger-9f9edad8-7da0-448c-bfcb-ec61f2d28162",
+      "name": "Sloper hanging",
+      "from": "load_reps",
+      "to": "duration",
+      "guideInstructionId": "wger-9f9edad8-7da0-448c-bfcb-ec61f2d28162",
+      "reviewedAt": "2026-10-21",
+      "reason": "Guide hangs on fingerboard slopers for a number of seconds; a timed hang. Saved rep logs keep the original ID and units.",
+      "aliasIds": ["wger-9f9edad8-7da0-448c-bfcb-ec61f2d28162"]
+    },
+    {
+      "existingId": "wger-6c9c9d14-e6bf-43ed-9859-a689e2131fe0",
+      "replacementId": "forma-wger-6c9c9d14-e6bf-43ed-9859-a689e2131fe0",
+      "name": "Ring Support Hold",
+      "from": "load_reps",
+      "to": "duration",
+      "guideInstructionId": "wger-6c9c9d14-e6bf-43ed-9859-a689e2131fe0",
+      "reviewedAt": "2026-10-21",
+      "reason": "Guide holds a straight-arm support on the rings and calls it an isometric hold; a timed hold. Saved rep logs keep the original ID and units.",
+      "aliasIds": ["wger-6c9c9d14-e6bf-43ed-9859-a689e2131fe0"]
+    },
+    {
+      "existingId": "wger-35008ce6-74ca-40db-b965-44a1eccfa061",
+      "replacementId": "forma-wger-35008ce6-74ca-40db-b965-44a1eccfa061",
+      "name": "Handstand",
+      "from": "load_reps",
+      "to": "duration",
+      "guideInstructionId": "wger-35008ce6-74ca-40db-b965-44a1eccfa061",
+      "reviewedAt": "2026-10-21",
+      "reason": "Guide is a free-standing handstand held by pressing into the ground with the core and glutes tight; a balance held for time. Saved rep logs keep the original ID and units.",
+      "aliasIds": ["wger-35008ce6-74ca-40db-b965-44a1eccfa061"]
+    },
+    {
+      "existingId": "wger-1d1a53dd-e00f-477e-83f7-09c8ef9a71cd",
+      "replacementId": "forma-wger-1d1a53dd-e00f-477e-83f7-09c8ef9a71cd",
+      "name": "elbow lever",
+      "from": "load_reps",
+      "to": "duration",
+      "guideInstructionId": "wger-1d1a53dd-e00f-477e-83f7-09c8ef9a71cd",
+      "reviewedAt": "2026-10-21",
+      "reason": "Guide calls it a static balance skill with the body held straight and parallel to the ground on the elbows; a timed hold. Saved rep logs keep the original ID and units.",
+      "aliasIds": ["wger-1d1a53dd-e00f-477e-83f7-09c8ef9a71cd"]
+    },
+    {
+      "existingId": "wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6",
+      "replacementId": "forma-wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6",
+      "name": "Sphinx",
+      "from": "load_reps",
+      "to": "duration",
+      "guideInstructionId": "wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6",
+      "reviewedAt": "2026-10-21",
+      "reason": "Guide sets up a prone yoga pose on the forearms with the chest lifted and the lower back relaxed, and prescribes no repetitions; a pose held for time. Saved rep logs keep the original ID and units.",
+      "aliasIds": ["wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6"]
+    }
+  ],
+  "excludedMeasurementCorrections": [
+    {
+      "existingId": "wger-f4291da4-09c2-4605-a90c-c926c6a92515",
+      "name": "Arch Hang",
+      "reviewedAt": "2026-10-21",
+      "reason": "Guide says to hold it for time/reps, so repetitions are a prescribed measure; it keeps load_reps and has no hold timer."
     }
   ],
   "implementationNotes": [

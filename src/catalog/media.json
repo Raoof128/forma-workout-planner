@@ -1042,21 +1042,6 @@
       },
       "previewId": "c0be60fc3e8a6a6b"
     },
-    "forma-original-movements-004-2-2": {
-      "src": "/exercise-media/original/movements-004.png?v=c0be60fc3e8a",
-      "sha256": "c0be60fc3e8a6a6b7c2f0fc9a15f5fc615ae69a6f6faa32eab94b69b751d5b0d",
-      "width": 1536,
-      "height": 1024,
-      "title": "Back Lever",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 2,
-        "row": 2
-      },
-      "previewId": "c0be60fc3e8a6a6b"
-    },
     "forma-original-movements-004-3-2": {
       "src": "/exercise-media/original/movements-004.png?v=c0be60fc3e8a",
       "sha256": "c0be60fc3e8a6a6b7c2f0fc9a15f5fc615ae69a6f6faa32eab94b69b751d5b0d",
@@ -4492,21 +4477,6 @@
       },
       "previewId": "07ebf178c582f642"
     },
-    "forma-original-movements-021-3-1": {
-      "src": "/exercise-media/original/movements-021.png?v=3a167624d586",
-      "sha256": "3a167624d586d55c89e7ad290b7340dc5fa1d576c36f69b74e10de24cf0b5dd8",
-      "width": 1536,
-      "height": 1024,
-      "title": "Deadhang",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 3,
-        "row": 1
-      },
-      "previewId": "3a167624d586d55c"
-    },
     "forma-original-movements-021-0-2": {
       "src": "/exercise-media/original/movements-021.png?v=3a167624d586",
       "sha256": "3a167624d586d55c89e7ad290b7340dc5fa1d576c36f69b74e10de24cf0b5dd8",
@@ -6133,27 +6103,6 @@
       },
       "previewId": "58994f2c7acf73e0"
     },
-    "forma-original-corrections-009-2-1": {
-      "src": "/exercise-media/original/corrections-009.png?v=cd229e7a97df",
-      "sha256": "cd229e7a97dfee548b1918e772895c3f4d6e98d18d4294d8cc04d2335e5ab86e",
-      "width": 1536,
-      "height": 1024,
-      "title": "elbow lever",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 3,
-        "rows": 2,
-        "column": 2,
-        "row": 1,
-        "bounds": {
-          "x": 1024,
-          "y": 512,
-          "width": 512,
-          "height": 512
-        }
-      },
-      "previewId": "cd229e7a97dfee54"
-    },
     "forma-original-corrections-010-0-0": {
       "src": "/exercise-media/original/corrections-010.png?v=760514bf9d60",
       "sha256": "760514bf9d60eff50902e70756c9e11cb7fd067edcacb59a9780434ba28de5bf",
@@ -7381,27 +7330,6 @@
       },
       "previewId": "31e7cc256554e304"
     },
-    "forma-original-movements-035-2-0": {
-      "src": "/exercise-media/original/movements-035.png?v=31e7cc256554",
-      "sha256": "31e7cc256554e304145f926d79dc89cc53b15d837231b23b6300a32f0d122a72",
-      "width": 1536,
-      "height": 1024,
-      "title": "Front Lever",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 2,
-        "row": 0,
-        "bounds": {
-          "x": 768,
-          "y": 0,
-          "width": 384,
-          "height": 342
-        }
-      },
-      "previewId": "31e7cc256554e304"
-    },
     "forma-original-movements-035-3-0": {
       "src": "/exercise-media/original/movements-035.png?v=31e7cc256554",
       "sha256": "31e7cc256554e304145f926d79dc89cc53b15d837231b23b6300a32f0d122a72",
@@ -7419,27 +7347,6 @@
           "y": 0,
           "width": 384,
           "height": 342
-        }
-      },
-      "previewId": "31e7cc256554e304"
-    },
-    "forma-original-movements-035-0-1": {
-      "src": "/exercise-media/original/movements-035.png?v=31e7cc256554",
-      "sha256": "31e7cc256554e304145f926d79dc89cc53b15d837231b23b6300a32f0d122a72",
-      "width": 1536,
-      "height": 1024,
-      "title": "Front lever tuck",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 0,
-        "row": 1,
-        "bounds": {
-          "x": 0,
-          "y": 342,
-          "width": 384,
-          "height": 330
         }
       },
       "previewId": "31e7cc256554e304"
@@ -7968,27 +7875,6 @@
           "y": 0,
           "width": 384,
           "height": 320
-        }
-      },
-      "previewId": "3019b65bc79f0a56"
-    },
-    "forma-original-movements-037-0-1": {
-      "src": "/exercise-media/original/movements-037.png?v=3019b65bc79f",
-      "sha256": "3019b65bc79f0a56ae52764bf19af97ee872ada803c60ed5871205e93cabb830",
-      "width": 1536,
-      "height": 1024,
-      "title": "Handstand",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 0,
-        "row": 1,
-        "bounds": {
-          "x": 0,
-          "y": 320,
-          "width": 384,
-          "height": 349
         }
       },
       "previewId": "3019b65bc79f0a56"
@@ -8700,27 +8586,6 @@
         }
       },
       "previewId": "d46620da7b263f89"
-    },
-    "forma-original-movements-040-2-0": {
-      "src": "/exercise-media/original/movements-040.png?v=5b243d916bfa",
-      "sha256": "5b243d916bfa254c5da3c3f6a202a6f7ec289262b7ca672bc7508591b0a1deab",
-      "width": 1536,
-      "height": 1024,
-      "title": "Hollow Hold",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 2,
-        "row": 0,
-        "bounds": {
-          "x": 768,
-          "y": 0,
-          "width": 384,
-          "height": 342
-        }
-      },
-      "previewId": "5b243d916bfa254c"
     },
     "forma-original-movements-040-3-0": {
       "src": "/exercise-media/original/movements-040.png?v=5b243d916bfa",
@@ -10920,48 +10785,6 @@
         }
       },
       "previewId": "53b7e7cf8026049e"
-    },
-    "forma-original-movements-049-1-0": {
-      "src": "/exercise-media/original/movements-049.png?v=dae1c794cf8e",
-      "sha256": "dae1c794cf8e020ae8862cc3c357fee4877a2979d84532c23467c1c87be2ac57",
-      "width": 1536,
-      "height": 1024,
-      "title": "L-sit",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 1,
-        "row": 0,
-        "bounds": {
-          "x": 385,
-          "y": 0,
-          "width": 384,
-          "height": 321
-        }
-      },
-      "previewId": "dae1c794cf8e020a"
-    },
-    "forma-original-movements-049-2-0": {
-      "src": "/exercise-media/original/movements-049.png?v=dae1c794cf8e",
-      "sha256": "dae1c794cf8e020ae8862cc3c357fee4877a2979d84532c23467c1c87be2ac57",
-      "width": 1536,
-      "height": 1024,
-      "title": "L-Sit (Foot Supported)",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 2,
-        "row": 0,
-        "bounds": {
-          "x": 769,
-          "y": 0,
-          "width": 384,
-          "height": 321
-        }
-      },
-      "previewId": "dae1c794cf8e020a"
     },
     "forma-original-movements-049-3-0": {
       "src": "/exercise-media/original/movements-049.png?v=dae1c794cf8e",
@@ -14752,27 +14575,6 @@
       },
       "previewId": "1ceb5046dd0cc6ac"
     },
-    "forma-original-corrections-024-1-0": {
-      "src": "/exercise-media/original/corrections-024.png?v=369a3407f51e",
-      "sha256": "369a3407f51e3fcf98309a105f35f3ad13d22845621443608b5b0a62c4f9de6a",
-      "width": 1536,
-      "height": 1024,
-      "title": "Planche Lean Hold",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 3,
-        "rows": 2,
-        "column": 1,
-        "row": 0,
-        "bounds": {
-          "x": 512,
-          "y": 0,
-          "width": 512,
-          "height": 512
-        }
-      },
-      "previewId": "369a3407f51e3fcf"
-    },
     "forma-original-movements-063-1-1": {
       "src": "/exercise-media/original/movements-063.png?v=1ceb5046dd0c",
       "sha256": "1ceb5046dd0cc6ac24214d51381eb5209a24151013930356a38ac645afeb7db0",
@@ -16680,27 +16482,6 @@
         "row": 2,
         "bounds": {
           "x": 768,
-          "y": 648,
-          "width": 384,
-          "height": 376
-        }
-      },
-      "previewId": "39112ee1c7431918"
-    },
-    "forma-original-movements-070-3-2": {
-      "src": "/exercise-media/original/movements-070.png?v=39112ee1c743",
-      "sha256": "39112ee1c74319181b5ace506118485a0cf4a37a3297089aa3f9099a48106c25",
-      "width": 1536,
-      "height": 1024,
-      "title": "Ring Support Hold",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 3,
-        "row": 2,
-        "bounds": {
-          "x": 1152,
           "y": 648,
           "width": 384,
           "height": 376
@@ -19660,27 +19441,6 @@
       },
       "previewId": "1fc1f029c6f72e23"
     },
-    "forma-original-movements-082-1-1": {
-      "src": "/exercise-media/original/movements-082.png?v=1fc1f029c6f7",
-      "sha256": "1fc1f029c6f72e23a8512189f834bc0332bacf36a553c6c454b2abf9a58290bc",
-      "width": 1536,
-      "height": 1024,
-      "title": "Sloper hanging",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 1,
-        "row": 1,
-        "bounds": {
-          "x": 384,
-          "y": 342,
-          "width": 384,
-          "height": 341
-        }
-      },
-      "previewId": "1fc1f029c6f72e23"
-    },
     "forma-original-movements-082-2-1": {
       "src": "/exercise-media/original/movements-082.png?v=1fc1f029c6f7",
       "sha256": "1fc1f029c6f72e23a8512189f834bc0332bacf36a553c6c454b2abf9a58290bc",
@@ -20010,27 +19770,6 @@
         "row": 2,
         "bounds": {
           "x": 0,
-          "y": 662,
-          "width": 384,
-          "height": 362
-        }
-      },
-      "previewId": "db4109baafff958e"
-    },
-    "forma-original-movements-083-1-2": {
-      "src": "/exercise-media/original/movements-083.png?v=db4109baafff",
-      "sha256": "db4109baafff958e9bf7aa1cd8b32495b269966f8a43a671bcbd533ebd0a3cf6",
-      "width": 1536,
-      "height": 1024,
-      "title": "Sphinx",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 1,
-        "row": 2,
-        "bounds": {
-          "x": 384,
           "y": 662,
           "width": 384,
           "height": 362
@@ -21532,27 +21271,6 @@
       },
       "previewId": "ae4f59e376038961"
     },
-    "forma-original-movements-089-3-1": {
-      "src": "/exercise-media/original/movements-089.png?v=ae4f59e37603",
-      "sha256": "ae4f59e376038961342dcfdfcb58ea62b6356717dfe7096ac41a428f6a7b653c",
-      "width": 1536,
-      "height": 1024,
-      "title": "Straddle L-Sit",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 3,
-        "row": 1,
-        "bounds": {
-          "x": 1152,
-          "y": 338,
-          "width": 384,
-          "height": 329
-        }
-      },
-      "previewId": "ae4f59e376038961"
-    },
     "forma-original-movements-089-0-2": {
       "src": "/exercise-media/original/movements-089.png?v=ae4f59e37603",
       "sha256": "ae4f59e376038961342dcfdfcb58ea62b6356717dfe7096ac41a428f6a7b653c",
@@ -22722,27 +22440,6 @@
         }
       },
       "previewId": "f5d8cfc93ab0aab0"
-    },
-    "forma-original-corrections-041-1-0": {
-      "src": "/exercise-media/original/corrections-041.png?v=118667047293",
-      "sha256": "118667047293fba66506d353b5a43c149fcbcf2735a0c9f1886721d21869a9b7",
-      "width": 1536,
-      "height": 1024,
-      "title": "Tuck L-sit",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 2,
-        "rows": 2,
-        "column": 1,
-        "row": 0,
-        "bounds": {
-          "x": 768,
-          "y": 0,
-          "width": 768,
-          "height": 512
-        }
-      },
-      "previewId": "118667047293fba6"
     },
     "forma-original-movements-094-0-1": {
       "src": "/exercise-media/original/movements-094.png?v=f5d8cfc93ab0",
@@ -24249,6 +23946,309 @@
         }
       },
       "previewId": "41c111d9904c2c52"
+    },
+    "forma-original-movements-040-2-0": {
+      "src": "/exercise-media/original/movements-040.png?v=5b243d916bfa",
+      "sha256": "5b243d916bfa254c5da3c3f6a202a6f7ec289262b7ca672bc7508591b0a1deab",
+      "width": 1536,
+      "height": 1024,
+      "title": "Hollow Hold",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 2,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 384,
+          "height": 342
+        }
+      },
+      "previewId": "5b243d916bfa254c"
+    },
+    "forma-original-movements-049-1-0": {
+      "src": "/exercise-media/original/movements-049.png?v=dae1c794cf8e",
+      "sha256": "dae1c794cf8e020ae8862cc3c357fee4877a2979d84532c23467c1c87be2ac57",
+      "width": 1536,
+      "height": 1024,
+      "title": "L-sit",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 385,
+          "y": 0,
+          "width": 384,
+          "height": 321
+        }
+      },
+      "previewId": "dae1c794cf8e020a"
+    },
+    "forma-original-movements-049-2-0": {
+      "src": "/exercise-media/original/movements-049.png?v=dae1c794cf8e",
+      "sha256": "dae1c794cf8e020ae8862cc3c357fee4877a2979d84532c23467c1c87be2ac57",
+      "width": 1536,
+      "height": 1024,
+      "title": "L-Sit (Foot Supported)",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 2,
+        "row": 0,
+        "bounds": {
+          "x": 769,
+          "y": 0,
+          "width": 384,
+          "height": 321
+        }
+      },
+      "previewId": "dae1c794cf8e020a"
+    },
+    "forma-original-movements-089-3-1": {
+      "src": "/exercise-media/original/movements-089.png?v=ae4f59e37603",
+      "sha256": "ae4f59e376038961342dcfdfcb58ea62b6356717dfe7096ac41a428f6a7b653c",
+      "width": 1536,
+      "height": 1024,
+      "title": "Straddle L-Sit",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 3,
+        "row": 1,
+        "bounds": {
+          "x": 1152,
+          "y": 338,
+          "width": 384,
+          "height": 329
+        }
+      },
+      "previewId": "ae4f59e376038961"
+    },
+    "forma-original-corrections-041-1-0": {
+      "src": "/exercise-media/original/corrections-041.png?v=118667047293",
+      "sha256": "118667047293fba66506d353b5a43c149fcbcf2735a0c9f1886721d21869a9b7",
+      "width": 1536,
+      "height": 1024,
+      "title": "Tuck L-sit",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 512
+        }
+      },
+      "previewId": "118667047293fba6"
+    },
+    "forma-original-movements-035-2-0": {
+      "src": "/exercise-media/original/movements-035.png?v=31e7cc256554",
+      "sha256": "31e7cc256554e304145f926d79dc89cc53b15d837231b23b6300a32f0d122a72",
+      "width": 1536,
+      "height": 1024,
+      "title": "Front Lever",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 2,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 384,
+          "height": 342
+        }
+      },
+      "previewId": "31e7cc256554e304"
+    },
+    "forma-original-movements-035-0-1": {
+      "src": "/exercise-media/original/movements-035.png?v=31e7cc256554",
+      "sha256": "31e7cc256554e304145f926d79dc89cc53b15d837231b23b6300a32f0d122a72",
+      "width": 1536,
+      "height": 1024,
+      "title": "Front lever tuck",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 342,
+          "width": 384,
+          "height": 330
+        }
+      },
+      "previewId": "31e7cc256554e304"
+    },
+    "forma-original-movements-004-2-2": {
+      "src": "/exercise-media/original/movements-004.png?v=c0be60fc3e8a",
+      "sha256": "c0be60fc3e8a6a6b7c2f0fc9a15f5fc615ae69a6f6faa32eab94b69b751d5b0d",
+      "width": 1536,
+      "height": 1024,
+      "title": "Back Lever",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 2,
+        "row": 2
+      },
+      "previewId": "c0be60fc3e8a6a6b"
+    },
+    "forma-original-corrections-024-1-0": {
+      "src": "/exercise-media/original/corrections-024.png?v=369a3407f51e",
+      "sha256": "369a3407f51e3fcf98309a105f35f3ad13d22845621443608b5b0a62c4f9de6a",
+      "width": 1536,
+      "height": 1024,
+      "title": "Planche Lean Hold",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 512,
+          "y": 0,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "previewId": "369a3407f51e3fcf"
+    },
+    "forma-original-movements-021-3-1": {
+      "src": "/exercise-media/original/movements-021.png?v=3a167624d586",
+      "sha256": "3a167624d586d55c89e7ad290b7340dc5fa1d576c36f69b74e10de24cf0b5dd8",
+      "width": 1536,
+      "height": 1024,
+      "title": "Deadhang",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 3,
+        "row": 1
+      },
+      "previewId": "3a167624d586d55c"
+    },
+    "forma-original-movements-082-1-1": {
+      "src": "/exercise-media/original/movements-082.png?v=1fc1f029c6f7",
+      "sha256": "1fc1f029c6f72e23a8512189f834bc0332bacf36a553c6c454b2abf9a58290bc",
+      "width": 1536,
+      "height": 1024,
+      "title": "Sloper hanging",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 1,
+        "row": 1,
+        "bounds": {
+          "x": 384,
+          "y": 342,
+          "width": 384,
+          "height": 341
+        }
+      },
+      "previewId": "1fc1f029c6f72e23"
+    },
+    "forma-original-movements-070-3-2": {
+      "src": "/exercise-media/original/movements-070.png?v=39112ee1c743",
+      "sha256": "39112ee1c74319181b5ace506118485a0cf4a37a3297089aa3f9099a48106c25",
+      "width": 1536,
+      "height": 1024,
+      "title": "Ring Support Hold",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 3,
+        "row": 2,
+        "bounds": {
+          "x": 1152,
+          "y": 648,
+          "width": 384,
+          "height": 376
+        }
+      },
+      "previewId": "39112ee1c7431918"
+    },
+    "forma-original-movements-037-0-1": {
+      "src": "/exercise-media/original/movements-037.png?v=3019b65bc79f",
+      "sha256": "3019b65bc79f0a56ae52764bf19af97ee872ada803c60ed5871205e93cabb830",
+      "width": 1536,
+      "height": 1024,
+      "title": "Handstand",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 320,
+          "width": 384,
+          "height": 349
+        }
+      },
+      "previewId": "3019b65bc79f0a56"
+    },
+    "forma-original-corrections-009-2-1": {
+      "src": "/exercise-media/original/corrections-009.png?v=cd229e7a97df",
+      "sha256": "cd229e7a97dfee548b1918e772895c3f4d6e98d18d4294d8cc04d2335e5ab86e",
+      "width": 1536,
+      "height": 1024,
+      "title": "elbow lever",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 1,
+        "bounds": {
+          "x": 1024,
+          "y": 512,
+          "width": 512,
+          "height": 512
+        }
+      },
+      "previewId": "cd229e7a97dfee54"
+    },
+    "forma-original-movements-083-1-2": {
+      "src": "/exercise-media/original/movements-083.png?v=db4109baafff",
+      "sha256": "db4109baafff958e9bf7aa1cd8b32495b269966f8a43a671bcbd533ebd0a3cf6",
+      "width": 1536,
+      "height": 1024,
+      "title": "Sphinx",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 1,
+        "row": 2,
+        "bounds": {
+          "x": 384,
+          "y": 662,
+          "width": 384,
+          "height": 362
+        }
+      },
+      "previewId": "db4109baafff958e"
     }
   },
   "previews": {
@@ -25640,10 +25640,6 @@
       "assetId": "forma-original-movements-004-1-2",
       "caption": "Back Flyes - With Bands · Representative exercise position; follow the guide for the complete movement."
     },
-    "wger-8e1cda15-542b-4714-8cc5-c1fe5089ee27": {
-      "assetId": "forma-original-movements-004-2-2",
-      "caption": "Back Lever · Representative exercise position; follow the guide for the complete movement."
-    },
     "wger-b646e62d-c616-4460-b4d1-23cc6a6ddb51": {
       "assetId": "forma-original-movements-004-3-2",
       "caption": "Back neck stretch · Representative exercise position; follow the guide for the complete movement."
@@ -26648,10 +26644,6 @@
       "assetId": "forma-original-corrections-007-0-1",
       "caption": "DB Wrist Extension · Representative exercise position; follow the guide for the complete movement."
     },
-    "wger-74d4697d-8a97-4ea2-9d05-fa4d2bd7221e": {
-      "assetId": "forma-original-movements-021-3-1",
-      "caption": "Deadhang · Representative exercise position; follow the guide for the complete movement."
-    },
     "db-deadlift-with-bands": {
       "assetId": "forma-original-movements-021-0-2",
       "caption": "Deadlift with Bands · Representative exercise position; follow the guide for the complete movement."
@@ -27060,10 +27052,6 @@
       "assetId": "forma-original-movements-030-0-0",
       "caption": "Elbow Circles · Representative exercise position; follow the guide for the complete movement."
     },
-    "wger-1d1a53dd-e00f-477e-83f7-09c8ef9a71cd": {
-      "assetId": "forma-original-corrections-009-2-1",
-      "caption": "elbow lever · Representative exercise position; follow the guide for the complete movement."
-    },
     "db-elbow-to-knee": {
       "assetId": "forma-original-corrections-010-0-0",
       "caption": "Elbow to Knee · Representative exercise position; follow the guide for the complete movement."
@@ -27328,17 +27316,9 @@
       "assetId": "forma-original-movements-035-1-0",
       "caption": "Front Leg Raises · Representative exercise position; follow the guide for the complete movement."
     },
-    "wger-f41ac754-45a0-443b-afe5-e624e215229f": {
-      "assetId": "forma-original-movements-035-2-0",
-      "caption": "Front Lever · Representative exercise position; follow the guide for the complete movement."
-    },
     "wger-b61dff58-6e47-4671-853b-208e7cd0ced4": {
       "assetId": "forma-original-movements-035-3-0",
       "caption": "Front lever pull-up · Representative exercise position; follow the guide for the complete movement."
-    },
-    "wger-e79616cb-f5fb-4b10-b99d-09d43774e142": {
-      "assetId": "forma-original-movements-035-0-1",
-      "caption": "Front lever tuck · Representative exercise position; follow the guide for the complete movement."
     },
     "wger-dcbfa3f0-ba88-4633-a30d-c188dccc5d3f": {
       "assetId": "forma-original-movements-035-1-1",
@@ -27451,10 +27431,6 @@
     "db-hamstring-smr": {
       "assetId": "forma-original-movements-037-3-0",
       "caption": "Hamstring-SMR · Representative exercise position; follow the guide for the complete movement."
-    },
-    "wger-35008ce6-74ca-40db-b965-44a1eccfa061": {
-      "assetId": "forma-original-movements-037-0-1",
-      "caption": "Handstand · Representative exercise position; follow the guide for the complete movement."
     },
     "db-handstand-push-ups": {
       "assetId": "forma-original-movements-037-1-1",
@@ -27603,10 +27579,6 @@
     "wger-a4f78033-90d7-45a2-96fa-509b41281ea3": {
       "assetId": "forma-original-recovery-b-004-2-1",
       "caption": "Hip-out and hip-in lateral steps · Representative exercise position; follow the guide for the complete movement."
-    },
-    "wger-d059c63d-0a81-48a3-912a-44070c0def2e": {
-      "assetId": "forma-original-movements-040-2-0",
-      "caption": "Hollow Hold · Representative exercise position; follow the guide for the complete movement."
     },
     "wger-ca4c8872-e53c-47ca-bc33-448b9ba9360f": {
       "assetId": "forma-original-movements-040-3-0",
@@ -28051,14 +28023,6 @@
     "wger-b4e78b5a-6141-4fc9-a6f7-cba13ce6559b": {
       "assetId": "forma-original-finish-solo-004-retry-0-0",
       "caption": "Kreis Press DB · Representative exercise position; follow the guide for the complete movement."
-    },
-    "wger-16202754-f567-4d23-a866-2c9cc8eba71d": {
-      "assetId": "forma-original-movements-049-1-0",
-      "caption": "L-sit · Representative exercise position; follow the guide for the complete movement."
-    },
-    "wger-a092afaf-aa5a-4384-b407-a6b52cf1c008": {
-      "assetId": "forma-original-movements-049-2-0",
-      "caption": "L-Sit (Foot Supported) · Representative exercise position; follow the guide for the complete movement."
     },
     "db-landmine-180s": {
       "assetId": "forma-original-movements-049-3-0",
@@ -28896,10 +28860,6 @@
       "assetId": "forma-original-movements-063-3-0",
       "caption": "Planche de cote dynamique · Representative exercise position; follow the guide for the complete movement."
     },
-    "wger-a82944ae-24f4-4f7a-8aac-af251f6907e5": {
-      "assetId": "forma-original-corrections-024-1-0",
-      "caption": "Planche Lean Hold · Representative exercise position; follow the guide for the complete movement."
-    },
     "db-plank": {
       "assetId": "forma-original-movements-063-1-1",
       "caption": "Plank · Representative exercise position; follow the guide for the complete movement."
@@ -29291,10 +29251,6 @@
     "db-ring-dips": {
       "assetId": "forma-original-movements-070-2-2",
       "caption": "Ring Dips · Representative exercise position; follow the guide for the complete movement."
-    },
-    "wger-6c9c9d14-e6bf-43ed-9859-a689e2131fe0": {
-      "assetId": "forma-original-movements-070-3-2",
-      "caption": "Ring Support Hold · Representative exercise position; follow the guide for the complete movement."
     },
     "db-rocket-jump": {
       "assetId": "forma-original-movements-071-0-0",
@@ -29924,10 +29880,6 @@
       "assetId": "forma-original-movements-082-0-1",
       "caption": "Sliding Lateral Lunge · Representative exercise position; follow the guide for the complete movement."
     },
-    "wger-9f9edad8-7da0-448c-bfcb-ec61f2d28162": {
-      "assetId": "forma-original-movements-082-1-1",
-      "caption": "Sloper hanging · Representative exercise position; follow the guide for the complete movement."
-    },
     "wger-2398e14f-02a6-4fdc-9f69-029e52dfe033": {
       "assetId": "forma-original-movements-082-2-1",
       "caption": "Slow Squat · Representative exercise position; follow the guide for the complete movement."
@@ -30067,10 +30019,6 @@
     "db-spell-caster": {
       "assetId": "forma-original-movements-083-0-2",
       "caption": "Spell Caster · Representative exercise position; follow the guide for the complete movement."
-    },
-    "wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6": {
-      "assetId": "forma-original-movements-083-1-2",
-      "caption": "Sphinx · Representative exercise position; follow the guide for the complete movement."
     },
     "db-spider-crawl": {
       "assetId": "forma-original-movements-083-2-2",
@@ -30396,10 +30344,6 @@
       "assetId": "forma-original-movements-089-2-1",
       "caption": "Stomach Vacuum · Representative exercise position; follow the guide for the complete movement."
     },
-    "wger-d2cf769a-9271-41ae-90fc-aef813e41740": {
-      "assetId": "forma-original-movements-089-3-1",
-      "caption": "Straddle L-Sit · Representative exercise position; follow the guide for the complete movement."
-    },
     "db-straight-bar-bench-mid-rows": {
       "assetId": "forma-original-movements-089-0-2",
       "caption": "Straight Bar Bench Mid Rows · Representative exercise position; follow the guide for the complete movement."
@@ -30647,10 +30591,6 @@
     "db-tuck-crunch": {
       "assetId": "forma-original-movements-094-2-0",
       "caption": "Tuck Crunch · Representative exercise position; follow the guide for the complete movement."
-    },
-    "wger-9396a728-3da4-4390-ae4d-882395805008": {
-      "assetId": "forma-original-corrections-041-1-0",
-      "caption": "Tuck L-sit · Representative exercise position; follow the guide for the complete movement."
     },
     "wger-309bfd2b-1af4-49db-b64b-d7d7c7dd39bb": {
       "assetId": "forma-original-movements-094-0-1",
@@ -31007,6 +30947,66 @@
     "forma-wger-4632c471-5c5e-4570-9dec-509c5d4d58bb": {
       "assetId": "forma-original-movements-099-1-2",
       "caption": "Diaphragmatic Breathing · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-d059c63d-0a81-48a3-912a-44070c0def2e": {
+      "assetId": "forma-original-movements-040-2-0",
+      "caption": "Hollow Hold · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-16202754-f567-4d23-a866-2c9cc8eba71d": {
+      "assetId": "forma-original-movements-049-1-0",
+      "caption": "L-sit · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-a092afaf-aa5a-4384-b407-a6b52cf1c008": {
+      "assetId": "forma-original-movements-049-2-0",
+      "caption": "L-Sit (Foot Supported) · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-d2cf769a-9271-41ae-90fc-aef813e41740": {
+      "assetId": "forma-original-movements-089-3-1",
+      "caption": "Straddle L-Sit · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-9396a728-3da4-4390-ae4d-882395805008": {
+      "assetId": "forma-original-corrections-041-1-0",
+      "caption": "Tuck L-sit · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-f41ac754-45a0-443b-afe5-e624e215229f": {
+      "assetId": "forma-original-movements-035-2-0",
+      "caption": "Front Lever · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-e79616cb-f5fb-4b10-b99d-09d43774e142": {
+      "assetId": "forma-original-movements-035-0-1",
+      "caption": "Front lever tuck · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-8e1cda15-542b-4714-8cc5-c1fe5089ee27": {
+      "assetId": "forma-original-movements-004-2-2",
+      "caption": "Back Lever · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-a82944ae-24f4-4f7a-8aac-af251f6907e5": {
+      "assetId": "forma-original-corrections-024-1-0",
+      "caption": "Planche Lean Hold · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-74d4697d-8a97-4ea2-9d05-fa4d2bd7221e": {
+      "assetId": "forma-original-movements-021-3-1",
+      "caption": "Deadhang · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-9f9edad8-7da0-448c-bfcb-ec61f2d28162": {
+      "assetId": "forma-original-movements-082-1-1",
+      "caption": "Sloper hanging · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-6c9c9d14-e6bf-43ed-9859-a689e2131fe0": {
+      "assetId": "forma-original-movements-070-3-2",
+      "caption": "Ring Support Hold · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-35008ce6-74ca-40db-b965-44a1eccfa061": {
+      "assetId": "forma-original-movements-037-0-1",
+      "caption": "Handstand · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-1d1a53dd-e00f-477e-83f7-09c8ef9a71cd": {
+      "assetId": "forma-original-corrections-009-2-1",
+      "caption": "elbow lever · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6": {
+      "assetId": "forma-original-movements-083-1-2",
+      "caption": "Sphinx · Representative exercise position; follow the guide for the complete movement."
     }
   }
 }

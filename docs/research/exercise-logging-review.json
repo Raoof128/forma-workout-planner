@@ -6925,6 +6925,46 @@
   "reason": "cardio ergometer (resistance level, not kg); timed session",
   "flag": "debatable timer: steady-state cardio may prefer a count-up stopwatch"
  },
+ "forma-wger-16202754-f567-4d23-a866-2c9cc8eba71d": {
+  "name": "L-sit",
+  "equipment": "Bodyweight",
+  "metric": "duration",
+  "load": "none",
+  "timer": true,
+  "reason": "Bodyweight isometric hold; weighting is not standard.",
+  "replaces": "wger-16202754-f567-4d23-a866-2c9cc8eba71d",
+  "migration": "2026-10-21 metric migration. Guide: hold for as long as required. New sets log seconds under this timed identity; sets saved in reps keep the replaced ID and their units."
+ },
+ "forma-wger-1d1a53dd-e00f-477e-83f7-09c8ef9a71cd": {
+  "name": "elbow lever",
+  "equipment": "Bodyweight",
+  "metric": "duration",
+  "load": "none",
+  "timer": true,
+  "reason": "Calisthenics static balance skill; bodyweight only.",
+  "replaces": "wger-1d1a53dd-e00f-477e-83f7-09c8ef9a71cd",
+  "migration": "2026-10-21 metric migration. Guide calls it a static balance skill. New sets log seconds under this timed identity; sets saved in reps keep the replaced ID and their units."
+ },
+ "forma-wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6": {
+  "name": "Sphinx",
+  "equipment": "Bodyweight",
+  "metric": "duration",
+  "load": "none",
+  "timer": true,
+  "reason": "Yoga pose; no implement.",
+  "replaces": "wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6",
+  "migration": "2026-10-21 metric migration. Prone yoga pose held; the guide prescribes no reps. New sets log seconds under this timed identity; sets saved in reps keep the replaced ID and their units."
+ },
+ "forma-wger-35008ce6-74ca-40db-b965-44a1eccfa061": {
+  "name": "Handstand",
+  "equipment": "Bodyweight",
+  "metric": "duration",
+  "load": "none",
+  "timer": true,
+  "reason": "Bodyweight skill; weighting is not standard.",
+  "replaces": "wger-35008ce6-74ca-40db-b965-44a1eccfa061",
+  "migration": "2026-10-21 metric migration. A free-standing handstand held for time. New sets log seconds under this timed identity; sets saved in reps keep the replaced ID and their units."
+ },
  "forma-wger-3f8ad988-1aee-48ca-ad37-44e39ae1715d": {
   "name": "Wall-sit",
   "equipment": "Bodyweight",
@@ -6942,6 +6982,36 @@
   "reason": "timed breathing set (e.g. 1-2 min)",
   "flag": "category 'cardio' but it is a breathing drill; guide counts breaths (8-10)"
  },
+ "forma-wger-6c9c9d14-e6bf-43ed-9859-a689e2131fe0": {
+  "name": "Ring Support Hold",
+  "equipment": "Bodyweight",
+  "metric": "duration",
+  "load": "none",
+  "timer": true,
+  "reason": "Bodyweight isometric hold on rings; weighting is rare.",
+  "replaces": "wger-6c9c9d14-e6bf-43ed-9859-a689e2131fe0",
+  "migration": "2026-10-21 metric migration. Guide calls it an isometric hold. New sets log seconds under this timed identity; sets saved in reps keep the replaced ID and their units."
+ },
+ "forma-wger-74d4697d-8a97-4ea2-9d05-fa4d2bd7221e": {
+  "name": "Deadhang",
+  "equipment": "Bodyweight",
+  "metric": "duration",
+  "load": "added",
+  "timer": true,
+  "reason": "Guide says hang with or without added weight; belt or vest is the standard progression.",
+  "replaces": "wger-74d4697d-8a97-4ea2-9d05-fa4d2bd7221e",
+  "migration": "2026-10-21 metric migration. A hang held for time, with or without added weight (belt or vest). New sets log seconds under this timed identity; sets saved in reps keep the replaced ID and their units."
+ },
+ "forma-wger-8e1cda15-542b-4714-8cc5-c1fe5089ee27": {
+  "name": "Back Lever",
+  "equipment": "Pull-up bar + none (bodyweight exercise)",
+  "metric": "duration",
+  "load": "none",
+  "timer": true,
+  "reason": "Bodyweight gymnastics hold.",
+  "replaces": "wger-8e1cda15-542b-4714-8cc5-c1fe5089ee27",
+  "migration": "2026-10-21 metric migration. Static lever hanging face down from a pull-up bar. New sets log seconds under this timed identity; sets saved in reps keep the replaced ID and their units."
+ },
  "forma-wger-934856f3-6eb3-4b37-9536-0ff67a6aa036": {
   "name": "Parallel Bar Hold",
   "equipment": "Bodyweight",
@@ -6949,6 +7019,36 @@
   "load": "none",
   "timer": true,
   "reason": "isometric support hold 'for the required time'"
+ },
+ "forma-wger-9396a728-3da4-4390-ae4d-882395805008": {
+  "name": "Tuck L-sit",
+  "equipment": "Bench",
+  "metric": "duration",
+  "load": "none",
+  "timer": true,
+  "reason": "Bodyweight hold on bars or floor.",
+  "replaces": "wger-9396a728-3da4-4390-ae4d-882395805008",
+  "migration": "2026-10-21 metric migration. Guide calls it a bodyweight static hold. New sets log seconds under this timed identity; sets saved in reps keep the replaced ID and their units."
+ },
+ "forma-wger-9f9edad8-7da0-448c-bfcb-ec61f2d28162": {
+  "name": "Sloper hanging",
+  "equipment": "Bodyweight",
+  "metric": "duration",
+  "load": "none",
+  "timer": true,
+  "reason": "Bodyweight fingerboard hang.",
+  "replaces": "wger-9f9edad8-7da0-448c-bfcb-ec61f2d28162",
+  "migration": "2026-10-21 metric migration. Guide: hang on the slopers for a number of seconds. New sets log seconds under this timed identity; sets saved in reps keep the replaced ID and their units."
+ },
+ "forma-wger-a092afaf-aa5a-4384-b407-a6b52cf1c008": {
+  "name": "L-Sit (Foot Supported)",
+  "equipment": "Bodyweight",
+  "metric": "duration",
+  "load": "none",
+  "timer": true,
+  "reason": "Bodyweight hold.",
+  "replaces": "wger-a092afaf-aa5a-4384-b407-a6b52cf1c008",
+  "migration": "2026-10-21 metric migration. The L-sit hold with the feet taking some of the weight. New sets log seconds under this timed identity; sets saved in reps keep the replaced ID and their units."
  },
  "forma-wger-a5d1f45b-ff07-45d7-a699-a654f9328934": {
   "name": "Battle ropes",
@@ -6958,6 +7058,56 @@
   "timer": true,
   "reason": "timed work intervals; rope is a fixed implement, its weight is not logged",
   "flag": "debatable load: 'load' if rope weight should be logged; muscle listed as Back"
+ },
+ "forma-wger-a82944ae-24f4-4f7a-8aac-af251f6907e5": {
+  "name": "Planche Lean Hold",
+  "equipment": "Bodyweight",
+  "metric": "duration",
+  "load": "none",
+  "timer": true,
+  "reason": "Bodyweight hold.",
+  "replaces": "wger-a82944ae-24f4-4f7a-8aac-af251f6907e5",
+  "migration": "2026-10-21 metric migration. Guide calls it a straight-arm static hold. New sets log seconds under this timed identity; sets saved in reps keep the replaced ID and their units."
+ },
+ "forma-wger-d059c63d-0a81-48a3-912a-44070c0def2e": {
+  "name": "Hollow Hold",
+  "equipment": "Gym mat + none (bodyweight exercise)",
+  "metric": "duration",
+  "load": "none",
+  "timer": true,
+  "reason": "Hollow hold (owner rule: none).",
+  "replaces": "wger-d059c63d-0a81-48a3-912a-44070c0def2e",
+  "migration": "2026-10-21 metric migration. Supine hollow position held with the lower back on the mat. New sets log seconds under this timed identity; sets saved in reps keep the replaced ID and their units."
+ },
+ "forma-wger-d2cf769a-9271-41ae-90fc-aef813e41740": {
+  "name": "Straddle L-Sit",
+  "equipment": "Bodyweight",
+  "metric": "duration",
+  "load": "none",
+  "timer": true,
+  "reason": "Bodyweight gymnastic hold.",
+  "replaces": "wger-d2cf769a-9271-41ae-90fc-aef813e41740",
+  "migration": "2026-10-21 metric migration. Guide: hold isometrically as long as required. New sets log seconds under this timed identity; sets saved in reps keep the replaced ID and their units."
+ },
+ "forma-wger-e79616cb-f5fb-4b10-b99d-09d43774e142": {
+  "name": "Front lever tuck",
+  "equipment": "Pull-up bar",
+  "metric": "duration",
+  "load": "none",
+  "timer": true,
+  "reason": "Static bodyweight skill progressed by leverage.",
+  "replaces": "wger-e79616cb-f5fb-4b10-b99d-09d43774e142",
+  "migration": "2026-10-21 metric migration. Tucked front-lever progression; the guide prescribes no reps. New sets log seconds under this timed identity; sets saved in reps keep the replaced ID and their units."
+ },
+ "forma-wger-f41ac754-45a0-443b-afe5-e624e215229f": {
+  "name": "Front Lever",
+  "equipment": "Bodyweight",
+  "metric": "duration",
+  "load": "none",
+  "timer": true,
+  "reason": "Static bodyweight skill.",
+  "replaces": "wger-f41ac754-45a0-443b-afe5-e624e215229f",
+  "migration": "2026-10-21 metric migration. Body held horizontal, parallel to the floor. New sets log seconds under this timed identity; sets saved in reps keep the replaced ID and their units."
  },
  "goblet": {
   "name": "Kettlebell goblet squat",
@@ -7438,15 +7588,6 @@
   "reason": "Pull-up (TRX row is the alternative); weighted pull-ups are standard.",
   "flag": "Two exercises in one entry (neutral-grip pull-ups OR TRX rows); overlaps 'Pull-Ups (Neutral Grip)'."
  },
- "wger-16202754-f567-4d23-a866-2c9cc8eba71d": {
-  "name": "L-sit",
-  "equipment": "Bodyweight",
-  "metric": "load_reps",
-  "load": "none",
-  "timer": null,
-  "reason": "Bodyweight isometric hold; weighting is not standard.",
-  "flag": "Static hold ('hold for as long as required') logged as load_reps; arguably should be duration."
- },
  "wger-1639425c-7dc6-4776-b039-47ef14a328ee": {
   "name": "Inverted Lat Pull Down",
   "equipment": "Pull-up bar",
@@ -7580,15 +7721,6 @@
   "timer": null,
   "reason": "Swim drill, cardio."
  },
- "wger-1d1a53dd-e00f-477e-83f7-09c8ef9a71cd": {
-  "name": "elbow lever",
-  "equipment": "Bodyweight",
-  "metric": "load_reps",
-  "load": "none",
-  "timer": null,
-  "reason": "Calisthenics static balance skill; bodyweight only.",
-  "flag": "Static hold logged as load_reps; could be duration."
- },
  "wger-1d610575-eed0-42cf-8737-29788a372af6": {
   "name": "Hindu Squats",
   "equipment": "Bodyweight",
@@ -7661,15 +7793,6 @@
   "load": "none",
   "timer": null,
   "reason": "Bodyweight tempo squat; no implement."
- },
- "wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6": {
-  "name": "Sphinx",
-  "equipment": "Bodyweight",
-  "metric": "load_reps",
-  "load": "none",
-  "timer": null,
-  "reason": "Yoga pose; no implement.",
-  "flag": "Static yoga hold logged as load_reps; could be duration."
  },
  "wger-2418b290-801c-45fd-a990-fc9f234ab1e5": {
   "name": "Dumbbell drag curls",
@@ -8026,15 +8149,6 @@
   "load": "none",
   "timer": null,
   "reason": "Hamstring mobility drill."
- },
- "wger-35008ce6-74ca-40db-b965-44a1eccfa061": {
-  "name": "Handstand",
-  "equipment": "Bodyweight",
-  "metric": "load_reps",
-  "load": "none",
-  "timer": null,
-  "reason": "Bodyweight skill; weighting is not standard.",
-  "flag": "Handstand is normally a timed hold; logged as load_reps."
  },
  "wger-36411665-4a87-4ab5-b5d3-e4eaa2802a62": {
   "name": "Horse Stance (Side Splits)",
@@ -9040,15 +9154,6 @@
   "timer": null,
   "reason": "Machine."
  },
- "wger-6c9c9d14-e6bf-43ed-9859-a689e2131fe0": {
-  "name": "Ring Support Hold",
-  "equipment": "Bodyweight",
-  "metric": "load_reps",
-  "load": "none",
-  "timer": null,
-  "reason": "Bodyweight isometric hold on rings; weighting is rare.",
-  "flag": "Isometric hold logged as load_reps; should be duration."
- },
  "wger-6cbdd70c-0691-4288-b58a-24001384f1b3": {
   "name": "Reverse Nordic Curl",
   "equipment": "Bodyweight",
@@ -9194,15 +9299,6 @@
   "load": "load",
   "timer": null,
   "reason": "Barbell."
- },
- "wger-74d4697d-8a97-4ea2-9d05-fa4d2bd7221e": {
-  "name": "Deadhang",
-  "equipment": "Bodyweight",
-  "metric": "load_reps",
-  "load": "added",
-  "timer": null,
-  "reason": "Guide says hang with or without added weight; belt or vest is the standard progression.",
-  "flag": "Timed hold logged as load_reps; should be duration."
  },
  "wger-752c0380-a0f9-4332-8265-cf503bac4703": {
   "name": "Roll-overs into V-sits",
@@ -9712,15 +9808,6 @@
   "reason": "Cycling, no load.",
   "flag": "Possible duplicate of db-bicycling (Bicycling)."
  },
- "wger-8e1cda15-542b-4714-8cc5-c1fe5089ee27": {
-  "name": "Back Lever",
-  "equipment": "Pull-up bar + none (bodyweight exercise)",
-  "metric": "load_reps",
-  "load": "none",
-  "timer": null,
-  "reason": "Bodyweight gymnastics hold.",
-  "flag": "Equipment label is garbled (Pull-up bar + none (bodyweight exercise)); isometric hold logged as load_reps."
- },
  "wger-90dea8b9-4cf8-430e-8633-e08df1dd900b": {
   "name": "Lat Pull DB",
   "equipment": "Dumbbell",
@@ -9752,15 +9839,6 @@
   "load": "none",
   "timer": null,
   "reason": "Consistency pass: skill variant rarely loaded; matches archer pull-up / finger push-up."
- },
- "wger-9396a728-3da4-4390-ae4d-882395805008": {
-  "name": "Tuck L-sit",
-  "equipment": "Bench",
-  "metric": "load_reps",
-  "load": "none",
-  "timer": null,
-  "reason": "Bodyweight hold on bars or floor.",
-  "flag": "Equipment Bench is misleading (bars, parallettes or floor); isometric hold logged as load_reps."
  },
  "wger-957ca37c-b6d7-4c30-8ba9-9512b0fa2659": {
   "name": "Single Leg RDL",
@@ -9984,15 +10062,6 @@
   "timer": true,
   "reason": "Static stretch held for time."
  },
- "wger-9f9edad8-7da0-448c-bfcb-ec61f2d28162": {
-  "name": "Sloper hanging",
-  "equipment": "Bodyweight",
-  "metric": "load_reps",
-  "load": "none",
-  "timer": null,
-  "reason": "Bodyweight fingerboard hang.",
-  "flag": "Timed hang logged as load_reps; should be duration."
- },
  "wger-a00b852c-0d2b-4b4a-bbc2-ef538f211b6c": {
   "name": "Seated Shoulder Extension Stretch",
   "equipment": "Bodyweight",
@@ -10000,15 +10069,6 @@
   "load": "none",
   "timer": true,
   "reason": "Static stretch held for time."
- },
- "wger-a092afaf-aa5a-4384-b407-a6b52cf1c008": {
-  "name": "L-Sit (Foot Supported)",
-  "equipment": "Bodyweight",
-  "metric": "load_reps",
-  "load": "none",
-  "timer": null,
-  "reason": "Bodyweight hold.",
-  "flag": "Isometric hold logged as load_reps; should be duration."
  },
  "wger-a33ba0c7-1680-4e42-a84e-aecc18c5d75b": {
   "name": "Pin OHP",
@@ -10117,15 +10177,6 @@
   "load": "none",
   "timer": null,
   "reason": "Bodyweight mobility drill."
- },
- "wger-a82944ae-24f4-4f7a-8aac-af251f6907e5": {
-  "name": "Planche Lean Hold",
-  "equipment": "Bodyweight",
-  "metric": "load_reps",
-  "load": "none",
-  "timer": null,
-  "reason": "Bodyweight hold.",
-  "flag": "Isometric hold logged as load_reps; should be duration."
  },
  "wger-a8a4ea81-9531-48e1-b6dc-f7621c7b9283": {
   "name": "1-Arm Half-Kneeling Lat Pulldown",
@@ -10725,15 +10776,6 @@
   "timer": null,
   "reason": "Bodyweight balance/hip drill."
  },
- "wger-d059c63d-0a81-48a3-912a-44070c0def2e": {
-  "name": "Hollow Hold",
-  "equipment": "Gym mat + none (bodyweight exercise)",
-  "metric": "load_reps",
-  "load": "none",
-  "timer": null,
-  "reason": "Hollow hold (owner rule: none).",
-  "flag": "Timed isometric hold logged as load_reps; duration metric with timer would fit."
- },
  "wger-d0ebbc8f-530f-4886-b0ee-f46d09b5780e": {
   "name": "Lying Leg Raise",
   "equipment": "Bodyweight",
@@ -10775,15 +10817,6 @@
   "timer": null,
   "reason": "Guide describes a leg-press machine variation.",
   "flag": "Equipment label says Incline bench but the guide describes a leg-press machine."
- },
- "wger-d2cf769a-9271-41ae-90fc-aef813e41740": {
-  "name": "Straddle L-Sit",
-  "equipment": "Bodyweight",
-  "metric": "load_reps",
-  "load": "none",
-  "timer": null,
-  "reason": "Bodyweight gymnastic hold.",
-  "flag": "Isometric hold logged as load_reps; duration metric would fit."
  },
  "wger-d301d901-a2c6-4916-b09e-07ab7a3c8519": {
   "name": "Bag training",
@@ -11155,15 +11188,6 @@
   "timer": null,
   "reason": "Dumbbells."
  },
- "wger-e79616cb-f5fb-4b10-b99d-09d43774e142": {
-  "name": "Front lever tuck",
-  "equipment": "Pull-up bar",
-  "metric": "load_reps",
-  "load": "none",
-  "timer": null,
-  "reason": "Static bodyweight skill progressed by leverage.",
-  "flag": "Isometric hold logged as load_reps; duration metric would fit."
- },
  "wger-e872658a-3bac-4d9e-bcf2-15919ebea43a": {
   "name": "commando pull-ups",
   "equipment": "Pull-up bar",
@@ -11355,15 +11379,6 @@
   "reason": "Bodyweight cuff/scapular drill; guide names no weight.",
   "flag": "Often done with a light dumbbell or band; no implement named in the guide."
  },
- "wger-f41ac754-45a0-443b-afe5-e624e215229f": {
-  "name": "Front Lever",
-  "equipment": "Bodyweight",
-  "metric": "load_reps",
-  "load": "none",
-  "timer": null,
-  "reason": "Static bodyweight skill.",
-  "flag": "Isometric hold logged as load_reps; duration metric would fit."
- },
  "wger-f4291da4-09c2-4605-a90c-c926c6a92515": {
   "name": "Arch Hang",
   "equipment": "Pull-up bar",
@@ -11371,7 +11386,7 @@
   "load": "none",
   "timer": null,
   "reason": "Bodyweight bar hang/scapular drill.",
-  "flag": "Guide says hold for time/reps; hold logged as load_reps."
+  "flag": "Reviewed for the 2026-10-21 metric migration and kept in reps: the guide says to hold it for time/reps."
  },
  "wger-f44cf553-067e-4f3a-b35b-e16549c1d055": {
   "name": "Towel Superman",

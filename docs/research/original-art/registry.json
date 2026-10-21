@@ -45045,6 +45045,111 @@
       "reviewStatus": "accepted",
       "reviewNote": "Root visually re-reviewed actual standalone image against the independently clarified guide: approximately45degree head/back support, complete grounded feet, two distinct supinated dumbbell grips offset toward the outer ends, stable upper arms and a controlled curl with comfortable wrists. No maximum wrist-extension claim is made; original rejected guide and review remain archived.",
       "guideSha256": "c08e5398256d9dc8bffbe4d9edee5219c82a96fbd4f7702ef3a4c6d8b38b0128"
+    },
+    "forma-wger-d059c63d-0a81-48a3-912a-44070c0def2e": {
+      "assetId": "forma-original-movements-040-2-0",
+      "caption": "Hollow Hold · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-d059c63d-0a81-48a3-912a-44070c0def2e, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "a8258f5e17d5adfa9dd17edd502734fc16cf8fb8db550e1c54469552dbbd00d7"
+    },
+    "forma-wger-16202754-f567-4d23-a866-2c9cc8eba71d": {
+      "assetId": "forma-original-movements-049-1-0",
+      "caption": "L-sit · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-16202754-f567-4d23-a866-2c9cc8eba71d, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "01b6d8463e323df03e176356ff1b806dbc2d6aac1dc56d3d259c7467d69a717c"
+    },
+    "forma-wger-a092afaf-aa5a-4384-b407-a6b52cf1c008": {
+      "assetId": "forma-original-movements-049-2-0",
+      "caption": "L-Sit (Foot Supported) · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-a092afaf-aa5a-4384-b407-a6b52cf1c008, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "4d00d483ddf49265b7064b77075b1aaf4a52c935941051ebb7e1ed0354e605d8"
+    },
+    "forma-wger-d2cf769a-9271-41ae-90fc-aef813e41740": {
+      "assetId": "forma-original-movements-089-3-1",
+      "caption": "Straddle L-Sit · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-d2cf769a-9271-41ae-90fc-aef813e41740, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "3264c3fd196142cb6859d3381fa014863fd75e59b13d934147bcdb0fcae50173"
+    },
+    "forma-wger-9396a728-3da4-4390-ae4d-882395805008": {
+      "assetId": "forma-original-corrections-041-1-0",
+      "caption": "Tuck L-sit · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-9396a728-3da4-4390-ae4d-882395805008, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "b7b725a573ecd6483e9572ca4afd8d68ded928040f310bcb39f8d81fcb1be55f"
+    },
+    "forma-wger-f41ac754-45a0-443b-afe5-e624e215229f": {
+      "assetId": "forma-original-movements-035-2-0",
+      "caption": "Front Lever · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-f41ac754-45a0-443b-afe5-e624e215229f, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "0a52d747d136205812cc7c61ccbfa329269874f53d9b36057fe7e4162c4ee0d6"
+    },
+    "forma-wger-e79616cb-f5fb-4b10-b99d-09d43774e142": {
+      "assetId": "forma-original-movements-035-0-1",
+      "caption": "Front lever tuck · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-e79616cb-f5fb-4b10-b99d-09d43774e142, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "903de0ca896b19b8ddce6efddb0e191083b3fd7cb6ad1fa10faeef43de0a2693"
+    },
+    "forma-wger-8e1cda15-542b-4714-8cc5-c1fe5089ee27": {
+      "assetId": "forma-original-movements-004-2-2",
+      "caption": "Back Lever · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-8e1cda15-542b-4714-8cc5-c1fe5089ee27, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "286745a477cda2feac58b0195a36f30ea3b186456b49cd8bb8ead057b763d260"
+    },
+    "forma-wger-a82944ae-24f4-4f7a-8aac-af251f6907e5": {
+      "assetId": "forma-original-corrections-024-1-0",
+      "caption": "Planche Lean Hold · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-a82944ae-24f4-4f7a-8aac-af251f6907e5, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "6e5323400c2c91a2291841a83f545ba1b5e005d6bd046e95def3af4e77957e6d"
+    },
+    "forma-wger-74d4697d-8a97-4ea2-9d05-fa4d2bd7221e": {
+      "assetId": "forma-original-movements-021-3-1",
+      "caption": "Deadhang · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-74d4697d-8a97-4ea2-9d05-fa4d2bd7221e, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "422f10c3b9f27771f76245c1fa82eb95a7bc5af9a1a463d0790dcc0070ecdfbc"
+    },
+    "forma-wger-9f9edad8-7da0-448c-bfcb-ec61f2d28162": {
+      "assetId": "forma-original-movements-082-1-1",
+      "caption": "Sloper hanging · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-9f9edad8-7da0-448c-bfcb-ec61f2d28162, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "728ddf286dec43487abf22c319ba7d1736c5acf41c9e7a2d44e183ef753adca1"
+    },
+    "forma-wger-6c9c9d14-e6bf-43ed-9859-a689e2131fe0": {
+      "assetId": "forma-original-movements-070-3-2",
+      "caption": "Ring Support Hold · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-6c9c9d14-e6bf-43ed-9859-a689e2131fe0, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "dba982fb939f5fd7e8e3198edd0b79abe7e4239cd37d10f5e2dd6da1069bc8d1"
+    },
+    "forma-wger-35008ce6-74ca-40db-b965-44a1eccfa061": {
+      "assetId": "forma-original-movements-037-0-1",
+      "caption": "Handstand · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-35008ce6-74ca-40db-b965-44a1eccfa061, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "dedcc1a5bc94e30e1764ec4956562b1f71fb077eaed1d0ac3d91999366d464c5"
+    },
+    "forma-wger-1d1a53dd-e00f-477e-83f7-09c8ef9a71cd": {
+      "assetId": "forma-original-corrections-009-2-1",
+      "caption": "elbow lever · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-1d1a53dd-e00f-477e-83f7-09c8ef9a71cd, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "ae56f12af80f73d63e32a8c1a4d6e344a98fab7a53fb5b4c4f3dd9dd2fda9068"
+    },
+    "forma-wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6": {
+      "assetId": "forma-original-movements-083-1-2",
+      "caption": "Sphinx · Representative exercise position; follow the guide for the complete movement.",
+      "reviewStatus": "accepted",
+      "reviewNote": "Carried over on 2026-10-21 from wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6, accepted for the same movement and guide; the timed identity changes only how sets are measured.",
+      "guideSha256": "d117f840c78fd86c471657e8fe55a632ecb2f6e6ae9608f3f81d56ebc978473f"
     }
   }
 }

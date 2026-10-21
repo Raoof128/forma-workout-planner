@@ -25,7 +25,11 @@ alias prescription and its position when the group is removed and re-added.
 
 The legacy plank keeps its ten-second-per-rep convention in saved data; new
 selections use the existing timed plank ID. Five new IDs represent corrected
-timed measurement profiles without reinterpreting historical records. The old
+timed measurement profiles without reinterpreting historical records. On
+21 October 2026 fifteen more were added the same way, for calisthenics holds
+that had been stored as reps; the 1,411 selectable movements of that date are
+backed by 1,696 compatibility records (see
+[the hold metric migration](exercise-logging-review.md#hold-metric-migration)). The old
 “Air Bike” describes a bicycle crunch; its browsing label now says so, while the
 new fan-bike entry represents the cardio apparatus.
 
