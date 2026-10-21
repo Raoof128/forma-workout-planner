@@ -4,6 +4,32 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-21 — Routine-editor drag tests reliable under parallel load
+
+- **Fix:** routine rows no longer slide back into place after you close the
+  exercise library. Hiding the editor made every row spring towards an empty
+  box. If you returned within about 400 ms, the rows reappeared mid-spring,
+  70–220 px off, and a press could land on the header or a moving handle.
+  Layout changes now settle instantly while the editor is hidden.
+- **Tests:** the new case `returning from the library shows the exercise rows
+  at rest` failed 16/20 before the fix. The rapid-release case now waits, before
+  aiming each press, until the previous drop has landed at its expected slot
+  and every row is at rest. That also checks each intermediate landing. The
+  edge-hold case derives the expected superset from the final order, because
+  a top-edge drop can land between the superset's two entries.
+- **Root causes:** `routine-library.spec.js:78` pressed rows still sliding
+  after the library closed; three of five traced failures hit the sticky
+  header. The CI WebKit failure of `routine-drag.spec.js:77` aimed its third
+  press before the previous drop had been committed. Motion delivers drag
+  start and end on later frames, and those frames lagged about 700 ms. The CI
+  failure at `:321` saved the displayed order exactly; the drop at slot 1
+  correctly ungrouped the superset, which the old expectation did not allow.
+- **Files:** `src/components/Routines.jsx`, `RoutinePrescriptions.jsx`,
+  `RoutinePrescription.jsx`, `tests/routine-drag.spec.js`,
+  `tests/routine-library.spec.js`, `docs/qa/routine-row-drag/README.md`,
+  `AGENT.md`.
+- **Verification:** VERIFICATION-TBD
+
 ### Raouf: 2026-10-19 — Per-exercise ⋯ menu in a running workout
 
 - **What changed:** the single **Edit workout** dialog on the active workout

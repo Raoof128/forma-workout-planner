@@ -114,6 +114,25 @@ test("immediate drag releases retain a usable editor and every saved field", asy
         header.getBoundingClientRect().bottom -
         16;
     });
+    // Motion reports drag start and end on later frames. Aim only once the
+    // previous drop has landed and every row is at rest: under load a late
+    // commit or a stalled spring moves another handle or the target.
+    await expect
+      .poll(() =>
+        editor.rows.evaluateAll(
+          (nodes, key) =>
+            nodes.every(
+              (node) =>
+                !node.classList.contains("is-dragging") &&
+                new DOMMatrixReadOnly(getComputedStyle(node).transform)
+                  .isIdentity,
+            )
+              ? nodes.findIndex((node) => node.dataset.entryKey === key)
+              : -1,
+          editor.original[0].entryId,
+        ),
+      )
+      .toBe(attempt % 2);
     await handle.hover();
     await page.mouse.down();
     const destination = await target.boundingBox();
@@ -359,11 +378,19 @@ for (const direction of [1, -1]) {
     );
     expect(direction * (dropPosition - before)).toBeGreaterThan(2);
     const saved = await saveAndReadDrag(page, editor.dialog);
-    const expected = editor.original.map((item, index) =>
-      direction > 0 && index < 2 ? { ...item, groupId: null } : item,
-    );
+    const expected = [...editor.original];
     expected.splice(dropPosition, 0, ...expected.splice(sourceIndex, 1));
-    expect(saved).toEqual(expected);
+    // The superset survives only while its two entries stay adjacent. The
+    // bottom drag always splits it; a top drop can land between its entries.
+    const pair = expected.flatMap((item, index) =>
+      item.groupId ? [index] : [],
+    );
+    const split = pair[1] - pair[0] !== 1;
+    expect(saved).toEqual(
+      expected.map((item) =>
+        split && item.groupId ? { ...item, groupId: null } : item,
+      ),
+    );
   });
 }
 

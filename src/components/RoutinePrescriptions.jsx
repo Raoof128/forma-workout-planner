@@ -15,6 +15,7 @@ export default function RoutinePrescriptions({
   onReorder,
   onOrderingChange,
   onReady,
+  hidden,
 }) {
   const group = useRef(null);
   const drag = useRef(null);
@@ -336,6 +337,7 @@ export default function RoutinePrescriptions({
             dragging={active?.key === entryKey(item)}
             ordering={!!active}
             landed={landed?.key === entryKey(item)}
+            hidden={hidden}
             onPress={(event, offset) => {
               const press = {
                 key: entryKey(item),

@@ -58,6 +58,37 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-21 — Drag tests reliable under parallel load
+
+- **Scope:** CI reruns of PRs #19 and #20 and parallel local runs flaked
+  `tests/routine-library.spec.js:78`, `tests/routine-drag.spec.js:77` and the
+  top-edge case at `:321`. Each cause was traced first; no assertion was
+  loosened.
+- The editor hides with `<form hidden>`, which collapses every `Reorder.Item`
+  to a zero box. Motion 14.3 springs each row into that box. It discards only
+  zero-size snapshots, so the reveal never animates but the hide does.
+  `RoutinePrescriptions` takes `hidden` and makes the layout transition
+  instant while the library is open. Without it, closing the library within
+  about 400 ms brought the rows back mid-spring, 70–220 px off. The drag
+  helper then pressed moving rows or the sticky header.
+- Motion delivers `onDragStart` and `onDragEnd` on later frames. Starved
+  WebKit frames on CI spread one gesture's start and commit over about 700 ms,
+  and `hover()`'s stability check passes between stalled frames. A test that
+  aims a new press must first wait until the previous drop has landed and
+  every row is at rest: no `.is-dragging` and identity transforms. App logs
+  showed every such gesture beginning and finishing with a valid release.
+- A superset survives only while its entries stay adjacent
+  (`normalizeGroups`). Drag expectations derive `groupId` from the final
+  order: a top-edge drop can land between the two superset entries.
+- To reproduce starved frames, delay the page's `requestAnimationFrame`
+  callbacks in an init script. Playwright's isolated world keeps native
+  timing. Chromium CPU throttling does not reproduce the failure.
+- **Files:** `src/components/Routines.jsx`, `RoutinePrescriptions.jsx`,
+  `RoutinePrescription.jsx`, `tests/routine-drag.spec.js`,
+  `tests/routine-library.spec.js`, `docs/qa/routine-row-drag/README.md`, this
+  log and `CHANGELOG.md`.
+- **Verification:** VERIFICATION-TBD
+
 ### Raouf: 2026-10-19 — Per-exercise ⋯ menu
 
 - Mid-workout exercise actions live in each card's `ActionsMenu`

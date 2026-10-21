@@ -620,6 +620,7 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
                     onReady={setPrescriptionsReady}
                     join={join}
                     defaultRest={defaultRest}
+                    hidden={libraryOpen}
                   />
                 </Suspense>
               </div>

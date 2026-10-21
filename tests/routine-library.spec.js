@@ -126,3 +126,27 @@ test("returning from the library preserves unsaved inputs, notes, supersets and 
     ...editor.original.slice(2),
   ]);
 });
+
+test("returning from the library shows the exercise rows at rest", async ({
+  page,
+}) => {
+  const { dialog, rows } = await openDragEditor(page);
+  await dialog
+    .getByRole("button", { name: "Browse exercise library", exact: true })
+    .click();
+  await expect(
+    dialog.getByRole("heading", { name: "Exercise library", exact: true }),
+  ).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(rows.first()).toBeVisible();
+  // Hidden rows must not keep a layout spring running and slide back into place.
+  const frames = await rows.evaluateAll(async (nodes) => {
+    const tops = [];
+    for (let frame = 0; frame < 6; frame++) {
+      tops.push(nodes.map((node) => node.getBoundingClientRect().top));
+      await new Promise(requestAnimationFrame);
+    }
+    return tops;
+  });
+  for (const tops of frames) expect(tops).toEqual(frames[0]);
+});

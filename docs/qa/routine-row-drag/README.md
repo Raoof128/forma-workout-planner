@@ -272,6 +272,38 @@ remain unchanged. All 60 rapid, fast-multi-row and top/bottom-edge repetitions
 then passed across the five production profiles, followed by the complete
 143-case production matrix on this final code.
 
+## Parallel-load reliability (21 October 2026)
+
+Three tests flaked under CI and local parallel load. Each was traced before
+any change.
+
+- **Returning from the library.** `<form hidden>` collapses every row to a
+  zero box, and Motion springs each row towards it. Motion discards zero-size
+  snapshots, so the reveal never animates, but the hide does. Per-frame
+  instrumentation on the phone profile showed rows starting at
+  `translate3d(35px, 764px)`. They were still 70–220 px off when the editor
+  came back, so `scrollIntoView` and the drag helper measured moving rows.
+  Three of five traced presses hit the sticky header and selected text
+  instead of dragging. Layout transitions are now instant while the editor is
+  hidden. A new regression case samples six frames after returning; it failed
+  16 of 20 runs before the fix.
+- **Rapid releases on CI WebKit.** The CI trace shows the third press aimed
+  while the second gesture was still being processed. Motion delivers drag
+  start and end on later frames, and on that runner they arrived about 700 ms
+  apart. Playwright's hover found the handle stable between stalled frames,
+  and the late commit then moved the row handle under the hovered point.
+  Delaying only the page's `requestAnimationFrame` callbacks by 120 ms
+  reproduces this locally; Chromium CPU throttling does not. App logs showed
+  every gesture beginning and finishing with a valid release. The test now
+  waits until the previous drop has landed at its expected slot and every row
+  is at rest, then hovers and presses. With the lag, the old logic failed 11
+  of 32 runs and the new logic passed 32 of 32.
+- **Top-edge hold.** CI saved exactly the displayed order. The drop at slot 1
+  landed between the two superset entries and correctly ungrouped both, which
+  the expectation only allowed for the bottom direction. Releasing at slot 1
+  on purpose failed the old expectation and passed the new one in all four
+  production projects.
+
 ## Final verification
 
 The final CI matrix contains 393 development, 143 production-bundle, 65 account
