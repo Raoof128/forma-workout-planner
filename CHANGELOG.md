@@ -4,6 +4,16 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-21 — Card animations released
+
+- Owner-approved deploy of `7079e21` (`feat/exercise-animations`, PR #20):
+  staging Worker version `9814b283-9b12-4418-b3ad-c724ce27a4f0`, production
+  `5fa82b05-afea-4dee-94f9-613a67e0f043` (68 new assets, including the 64
+  animated and still SVGs); both one-hour tokens were revoked.
+- **Live check on forma.raoufabedini.dev:** in the Push day template preview
+  the bench press card shows the cover illustration, the video, then the
+  animation, which loads at 960 px and pauses to its still; no console errors.
+
 ### Raouf: 2026-10-21 — Animated demonstrations in the exercise cards
 
 - **What changed:** the 32 animated SVG demonstrations now appear at the top

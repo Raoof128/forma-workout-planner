@@ -58,6 +58,12 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-21 — Card animations release
+
+- Production runs `7079e21` (version `5fa82b05-…`), staging `9814b283-…`.
+  This is ahead of PR #19's `main` merge: merge #19, retarget #20 to `main`,
+  then merge #20 so `main` matches production.
+
 ### Raouf: 2026-10-21 — Animations in the cards
 
 - `ExerciseAnimation` reads `src/catalog/animations.json` (canonical guide ID
