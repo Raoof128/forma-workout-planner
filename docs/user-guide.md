@@ -8,6 +8,10 @@ Open **My routines** to use a starter routine or create your own. Give it a name
 
 To change the order of your routines, drag a card on **My routines** (on a phone, touch and hold the card first), or open its **⋯** menu and choose **Move earlier** or **Move later**. Press Escape while dragging to cancel.
 
+To look through a routine before you train, open it and choose **Preview workout**, or choose **Preview workout** from its card's **⋯** menu. The preview shows one exercise at a time with its illustration, sets, reps, rest and how to perform it. Use **Previous** and **Next**, or pick an exercise from the strip at the top. To look at a single exercise, select its name in the routine overview; that opens only that exercise's card. Previewing does not start a workout. Each workout template has its own **Preview** button, so you can look at it before adding it to your routines.
+
+Twenty-two common exercises, such as the barbell bench press, back squat, deadlift, pull-up, leg press and several gym machines, also have a short demonstration video in the preview and in the exercise library guide. Press play to watch; the clips are silent and loop. Each one credits its source and licence.
+
 Changing or deleting a routine does not rewrite completed workout history. An active workout keeps its own exercise and prescription snapshot.
 
 The template section adds strength, bodyweight, core, cardio, carries and mobility

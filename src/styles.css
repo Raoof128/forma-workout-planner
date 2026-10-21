@@ -1863,6 +1863,152 @@ input[type="checkbox"] {
 .workout-template:hover {
   border-color: #71834a;
 }
+.workout-template-wrap {
+  position: relative;
+  display: grid;
+}
+.workout-template-wrap .workout-template {
+  padding-bottom: 72px;
+}
+.workout-template-preview {
+  position: absolute;
+  left: 24px;
+  bottom: 20px;
+}
+.exercise-row-link {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+}
+.exercise-row-link:hover {
+  text-decoration-color: currentColor;
+}
+.routine-preview-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 16px;
+}
+.routine-preview-heading h3 {
+  margin: 0;
+}
+.routine-preview-heading .small {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.routine-preview-from {
+  margin: 0 0 12px;
+}
+.routine-preview-controls {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0;
+}
+.routine-preview-position {
+  text-align: center;
+}
+@media (max-width: 480px) {
+  .routine-preview-controls .button {
+    padding-inline: 12px;
+  }
+  .routine-preview-step-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+.routine-preview-controls [aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: default;
+}
+.routine-preview-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 6px;
+  font-size: 18px;
+}
+.routine-preview-target {
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+.routine-preview-target strong {
+  color: var(--ink);
+}
+.routine-preview-slide h5 {
+  margin: 18px 0 6px;
+  font-size: 14px;
+}
+.routine-preview-picker {
+  position: relative;
+  display: flex;
+  gap: 6px;
+  margin: 0 -4px 4px;
+  padding: 4px 4px 10px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  border-bottom: 1px solid var(--line);
+}
+.routine-preview-picker button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  max-width: 220px;
+  min-height: 44px;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: none;
+  scroll-snap-align: start;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.routine-preview-picker button > span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.routine-preview-picker button:hover {
+  background: var(--lime-soft);
+}
+.routine-preview-picker button[aria-current="step"] {
+  border-color: #b6c87c;
+  background: var(--lime-soft);
+  cursor: default;
+}
+.exercise-demo {
+  margin: 16px 0 0;
+}
+.exercise-demo video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #101410;
+}
+.exercise-demo figcaption {
+  margin-top: 8px;
+}
 .library-toolbar .search-field {
   min-width: min(260px, 100%);
 }

@@ -1,0 +1,362 @@
+{
+  "sources": {
+    "cdc": {
+      "name": "Centers for Disease Control and Prevention",
+      "license": "Public domain",
+      "licenseUrl": "https://www.cdc.gov/other/agencymaterials.html",
+      "notice": "U.S. government work; no CDC endorsement implied"
+    },
+    "us-army": {
+      "name": "U.S. Army",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "notice": "U.S. government work; no endorsement implied"
+    },
+    "usmc": {
+      "name": "U.S. Marine Corps",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "notice": "U.S. government work; no endorsement implied"
+    },
+    "fitnessscape": {
+      "name": "FitnessScape",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "notice": "Trimmed, resized and muted by FORMA"
+    }
+  },
+  "clips": {
+    "army-combat-fitness-test-3-repetition-maximum-deadlift-mdl-e": {
+      "src": "/exercise-demos/army-combat-fitness-test-3-repetition-maximum-deadlift-mdl-e.mp4",
+      "poster": "/exercise-demos/army-combat-fitness-test-3-repetition-maximum-deadlift-mdl-e.jpg",
+      "width": 720,
+      "height": 406,
+      "sourceId": "us-army",
+      "title": "Army Combat Fitness Test- 3 Repetition Maximum Deadlift (MDL) (Event 1)",
+      "url": "https://commons.wikimedia.org/wiki/File:Army_Combat_Fitness_Test-_3_Repetition_Maximum_Deadlift_(MDL)_(Event_1).webm",
+      "author": "U.S. Army (Army Combat Fitness Test)",
+      "sha256": "739543604492dba613bb40d079b234a899c7083bcb4954df7ae75e3993e30ed2"
+    },
+    "army-combat-fitness-test-standing-power-throw-spt-event-2": {
+      "src": "/exercise-demos/army-combat-fitness-test-standing-power-throw-spt-event-2.mp4",
+      "poster": "/exercise-demos/army-combat-fitness-test-standing-power-throw-spt-event-2.jpg",
+      "width": 720,
+      "height": 406,
+      "sourceId": "us-army",
+      "title": "Army Combat Fitness Test- Standing Power Throw (SPT) (Event 2)",
+      "url": "https://commons.wikimedia.org/wiki/File:Army_Combat_Fitness_Test-_Standing_Power_Throw_(SPT)_(Event_2).webm",
+      "author": "U.S. Army (Army Combat Fitness Test)",
+      "sha256": "d3dba82d87ac8200f6e5467695650b8887efef82a388f8fd712c93a7439f665c"
+    },
+    "bench-press-exercise-demonstration-video": {
+      "src": "/exercise-demos/bench-press-exercise-demonstration-video.mp4",
+      "poster": "/exercise-demos/bench-press-exercise-demonstration-video.jpg",
+      "width": 720,
+      "height": 406,
+      "sourceId": "fitnessscape",
+      "title": "Bench press - exercise demonstration video",
+      "url": "https://commons.wikimedia.org/wiki/File:Bench_press_-_exercise_demonstration_video.webm",
+      "author": "FitnessScape",
+      "sha256": "35f1c69b536da28118040515b1b144352aaf47b098fb371688f7d96f562ec7b6"
+    },
+    "bent-over-row-exercise-demonstration-video": {
+      "src": "/exercise-demos/bent-over-row-exercise-demonstration-video.mp4",
+      "poster": "/exercise-demos/bent-over-row-exercise-demonstration-video.jpg",
+      "width": 720,
+      "height": 406,
+      "sourceId": "fitnessscape",
+      "title": "Bent-over row - exercise demonstration video",
+      "url": "https://commons.wikimedia.org/wiki/File:Bent-over_row_-_exercise_demonstration_video.webm",
+      "author": "FitnessScape",
+      "sha256": "7f257bf279b9b749d1fadf0a77e89d4afdd0614653c6d537cc830e68715e7b89"
+    },
+    "conditional-drill-tuck-jump": {
+      "src": "/exercise-demos/conditional-drill-tuck-jump.mp4",
+      "poster": "/exercise-demos/conditional-drill-tuck-jump.jpg",
+      "width": 720,
+      "height": 406,
+      "sourceId": "us-army",
+      "title": "Conditional Drill- Tuck Jump",
+      "url": "https://commons.wikimedia.org/wiki/File:Conditional_Drill-_Tuck_Jump.webm",
+      "author": "U.S. Army (Army Combat Fitness Test)",
+      "sha256": "96de78174f69d8461d1d7acddc4268994ad389076fc1a9f4f89506c6c8f42112"
+    },
+    "deadlift-exercise-demonstration-video": {
+      "src": "/exercise-demos/deadlift-exercise-demonstration-video.mp4",
+      "poster": "/exercise-demos/deadlift-exercise-demonstration-video.jpg",
+      "width": 720,
+      "height": 406,
+      "sourceId": "fitnessscape",
+      "title": "Deadlift - exercise demonstration video",
+      "url": "https://commons.wikimedia.org/wiki/File:Deadlift_-_exercise_demonstration_video.webm",
+      "author": "FitnessScape",
+      "sha256": "40a01cc0c6b9acb4c857b239bf36829cc2ae9d35f76c651e0adae2a991016e09"
+    },
+    "hip-sled-how-to-perform-a-45-degree-leg-press": {
+      "src": "/exercise-demos/hip-sled-how-to-perform-a-45-degree-leg-press.mp4",
+      "poster": "/exercise-demos/hip-sled-how-to-perform-a-45-degree-leg-press.jpg",
+      "width": 720,
+      "height": 406,
+      "sourceId": "fitnessscape",
+      "title": "Hip Sled - How to perform a 45 degree leg press",
+      "url": "https://commons.wikimedia.org/wiki/File:Hip_Sled_-_How_to_perform_a_45_degree_leg_press.webm",
+      "author": "FitnessScape",
+      "sha256": "2a4240abfe7a8a921ab9fa4d7c4fc831bb05d18cfee7b328d047f77b61e5c4bd"
+    },
+    "incline-press-exercise-demonstration-video": {
+      "src": "/exercise-demos/incline-press-exercise-demonstration-video.mp4",
+      "poster": "/exercise-demos/incline-press-exercise-demonstration-video.jpg",
+      "width": 720,
+      "height": 406,
+      "sourceId": "fitnessscape",
+      "title": "Incline press - exercise demonstration video",
+      "url": "https://commons.wikimedia.org/wiki/File:Incline_press_-_exercise_demonstration_video.webm",
+      "author": "FitnessScape",
+      "sha256": "b27297ec298af00170f6bcdca3774b9a17189511d104aab77f71a408903cd925"
+    },
+    "muscle-strengthening-at-home-bicep-curls": {
+      "src": "/exercise-demos/muscle-strengthening-at-home-bicep-curls.mp4",
+      "poster": "/exercise-demos/muscle-strengthening-at-home-bicep-curls.jpg",
+      "width": 320,
+      "height": 240,
+      "sourceId": "cdc",
+      "title": "Muscle Strengthening at Home - Bicep Curls",
+      "url": "https://commons.wikimedia.org/wiki/File:Muscle_Strengthening_at_Home_-_Bicep_Curls.webm",
+      "author": "Centers for Disease Control and Prevention",
+      "sha256": "c3a5f607768922dddf9cd46ff8b94073c82d8539135a1efd7532b173fe59e2bf"
+    },
+    "muscle-strengthening-at-home-overhead-press": {
+      "src": "/exercise-demos/muscle-strengthening-at-home-overhead-press.mp4",
+      "poster": "/exercise-demos/muscle-strengthening-at-home-overhead-press.jpg",
+      "width": 320,
+      "height": 240,
+      "sourceId": "cdc",
+      "title": "Muscle Strengthening at Home - Overhead Press",
+      "url": "https://commons.wikimedia.org/wiki/File:Muscle_Strengthening_at_Home_-_Overhead_Press.webm",
+      "author": "Centers for Disease Control and Prevention",
+      "sha256": "ef4465c44bced10be9f7112b8143555403685280d9acb060f14a566ce56bf2b3"
+    },
+    "muscle-strengthening-at-home-superman": {
+      "src": "/exercise-demos/muscle-strengthening-at-home-superman.mp4",
+      "poster": "/exercise-demos/muscle-strengthening-at-home-superman.jpg",
+      "width": 320,
+      "height": 240,
+      "sourceId": "cdc",
+      "title": "Muscle Strengthening at Home - Superman",
+      "url": "https://commons.wikimedia.org/wiki/File:Muscle_Strengthening_at_Home_-_Superman.webm",
+      "author": "Centers for Disease Control and Prevention",
+      "sha256": "1575afadd0dd1ba6e053bfebc7441ae458ac42f8553954a632ff8255439e3230"
+    },
+    "muscle-strengthening-at-the-gym-back-extension": {
+      "src": "/exercise-demos/muscle-strengthening-at-the-gym-back-extension.mp4",
+      "poster": "/exercise-demos/muscle-strengthening-at-the-gym-back-extension.jpg",
+      "width": 320,
+      "height": 240,
+      "sourceId": "cdc",
+      "title": "Muscle Strengthening at the Gym - Back Extension",
+      "url": "https://commons.wikimedia.org/wiki/File:Muscle_Strengthening_at_the_Gym_-_Back_Extension.webm",
+      "author": "Centers for Disease Control and Prevention",
+      "sha256": "ea2743d694cdeaa0da6ef8f7b1f4d86f1ffccb8ac75162ddfc8832b1e2574704"
+    },
+    "muscle-strengthening-at-the-gym-chest-press": {
+      "src": "/exercise-demos/muscle-strengthening-at-the-gym-chest-press.mp4",
+      "poster": "/exercise-demos/muscle-strengthening-at-the-gym-chest-press.jpg",
+      "width": 320,
+      "height": 240,
+      "sourceId": "cdc",
+      "title": "Muscle Strengthening at the Gym - Chest Press",
+      "url": "https://commons.wikimedia.org/wiki/File:Muscle_Strengthening_at_the_Gym_-_Chest_Press.webm",
+      "author": "Centers for Disease Control and Prevention",
+      "sha256": "e0a785b42154c2eecf0a6456a95f061b527fdac83ca06675cba718c7a626040b"
+    },
+    "muscle-strengthening-at-the-gym-leg-curl": {
+      "src": "/exercise-demos/muscle-strengthening-at-the-gym-leg-curl.mp4",
+      "poster": "/exercise-demos/muscle-strengthening-at-the-gym-leg-curl.jpg",
+      "width": 320,
+      "height": 240,
+      "sourceId": "cdc",
+      "title": "Muscle Strengthening at the Gym - Leg Curl",
+      "url": "https://commons.wikimedia.org/wiki/File:Muscle_Strengthening_at_the_Gym_-_Leg_Curl.webm",
+      "author": "Centers for Disease Control and Prevention",
+      "sha256": "ae2ea3870fb10efddbc0c8e270fc1fb614682e5556f85115ab8ba7b4ba3df776"
+    },
+    "muscle-strengthening-at-the-gym-leg-extension": {
+      "src": "/exercise-demos/muscle-strengthening-at-the-gym-leg-extension.mp4",
+      "poster": "/exercise-demos/muscle-strengthening-at-the-gym-leg-extension.jpg",
+      "width": 320,
+      "height": 240,
+      "sourceId": "cdc",
+      "title": "Muscle Strengthening at the Gym - Leg Extension",
+      "url": "https://commons.wikimedia.org/wiki/File:Muscle_Strengthening_at_the_Gym_-_Leg_Extension.webm",
+      "author": "Centers for Disease Control and Prevention",
+      "sha256": "c35db02041adb1b7e0b5f597e6e7db46136f3e0b4ae83d53b961ff71d08d1281"
+    },
+    "muscle-strengthening-at-the-gym-overhead-press": {
+      "src": "/exercise-demos/muscle-strengthening-at-the-gym-overhead-press.mp4",
+      "poster": "/exercise-demos/muscle-strengthening-at-the-gym-overhead-press.jpg",
+      "width": 320,
+      "height": 240,
+      "sourceId": "cdc",
+      "title": "Muscle Strengthening at the Gym - Overhead Press",
+      "url": "https://commons.wikimedia.org/wiki/File:Muscle_Strengthening_at_the_Gym_-_Overhead_Press.webm",
+      "author": "Centers for Disease Control and Prevention",
+      "sha256": "c3aa92d604ab5f1d8ca26a6d65f286996cdd7653b02bd5125fd1063496a0c051"
+    },
+    "muscle-strengthening-at-the-gym-row-machine": {
+      "src": "/exercise-demos/muscle-strengthening-at-the-gym-row-machine.mp4",
+      "poster": "/exercise-demos/muscle-strengthening-at-the-gym-row-machine.jpg",
+      "width": 320,
+      "height": 240,
+      "sourceId": "cdc",
+      "title": "Muscle Strengthening at the Gym - Row Machine",
+      "url": "https://commons.wikimedia.org/wiki/File:Muscle_Strengthening_at_the_Gym_-_Row_Machine.webm",
+      "author": "Centers for Disease Control and Prevention",
+      "sha256": "94e1124719897930b497e810d86de0548d0698ec8651fb2f5b17c56916afed51"
+    },
+    "pull-ups-exercise-demonstration-video": {
+      "src": "/exercise-demos/pull-ups-exercise-demonstration-video.mp4",
+      "poster": "/exercise-demos/pull-ups-exercise-demonstration-video.jpg",
+      "width": 720,
+      "height": 406,
+      "sourceId": "fitnessscape",
+      "title": "Pull-ups - exercise demonstration video",
+      "url": "https://commons.wikimedia.org/wiki/File:Pull-ups_-_exercise_demonstration_video.webm",
+      "author": "FitnessScape",
+      "sha256": "235f6099c513fb256f04825afbd978cfe4690f44ea58150852e10f321559e566"
+    },
+    "shoulder-press-exercise-demonstration-video": {
+      "src": "/exercise-demos/shoulder-press-exercise-demonstration-video.mp4",
+      "poster": "/exercise-demos/shoulder-press-exercise-demonstration-video.jpg",
+      "width": 720,
+      "height": 406,
+      "sourceId": "fitnessscape",
+      "title": "Shoulder press - exercise demonstration video",
+      "url": "https://commons.wikimedia.org/wiki/File:Shoulder_press_-_exercise_demonstration_video.webm",
+      "author": "FitnessScape",
+      "sha256": "a9604f409feea8c26d0f61f2452d5674fb00d0435c2a76dfdf4838197b1f8a1d"
+    },
+    "squat-exercise-demonstration-video": {
+      "src": "/exercise-demos/squat-exercise-demonstration-video.mp4",
+      "poster": "/exercise-demos/squat-exercise-demonstration-video.jpg",
+      "width": 720,
+      "height": 406,
+      "sourceId": "fitnessscape",
+      "title": "Squat - exercise demonstration video",
+      "url": "https://commons.wikimedia.org/wiki/File:Squat_-_exercise_demonstration_video.webm",
+      "author": "FitnessScape",
+      "sha256": "a3bde4fa041e0e3f367d43a0e6a1285bee1e91d35e9a0de97fe6227d60a23c13"
+    },
+    "strength-training-circuit-overhead-push-press": {
+      "src": "/exercise-demos/strength-training-circuit-overhead-push-press.mp4",
+      "poster": "/exercise-demos/strength-training-circuit-overhead-push-press.jpg",
+      "width": 720,
+      "height": 406,
+      "sourceId": "us-army",
+      "title": "Strength Training Circuit- Overhead Push Press",
+      "url": "https://commons.wikimedia.org/wiki/File:Strength_Training_Circuit-_Overhead_Push_Press.webm",
+      "author": "U.S. Army (Army Combat Fitness Test)",
+      "sha256": "491b3cb6eed12b6ff7e040654a3439a494250fbc938b2e0d5870178e3ef1087a"
+    },
+    "hip-sled-calf-press": {
+      "src": "/exercise-demos/hip-sled-calf-press.mp4",
+      "poster": "/exercise-demos/hip-sled-calf-press.jpg",
+      "width": 720,
+      "height": 406,
+      "sourceId": "fitnessscape",
+      "title": "Hip Sled - How to perform a 45 degree leg press (calf press segment)",
+      "url": "https://commons.wikimedia.org/wiki/File:Hip_Sled_-_How_to_perform_a_45_degree_leg_press.webm",
+      "author": "FitnessScape",
+      "sha256": "957731e4642151af9a724b780a18e894566a3792ef791a293f48dc855b91e29c"
+    }
+  },
+  "exercises": {
+    "db-trap-bar-deadlift": {
+      "clipId": "army-combat-fitness-test-3-repetition-maximum-deadlift-mdl-e",
+      "caption": "Trap (hex) bar deadlift: standing inside the bar, hinge and stand to lockout."
+    },
+    "db-backward-medicine-ball-throw": {
+      "clipId": "army-combat-fitness-test-standing-power-throw-spt-event-2",
+      "caption": "Backward overhead medicine ball throw: ball lowered between the legs in a squat, then thrown back over the head."
+    },
+    "bench": {
+      "clipId": "bench-press-exercise-demonstration-video",
+      "caption": "Flat barbell bench press, overhand grip, bar to mid-chest and back to lockout."
+    },
+    "db-bent-over-barbell-row": {
+      "clipId": "bent-over-row-exercise-demonstration-video",
+      "caption": "Bent-over barbell row, overhand grip, hinge to about 45 degrees, bar to the lower ribs."
+    },
+    "db-knee-tuck-jump": {
+      "clipId": "conditional-drill-tuck-jump",
+      "caption": "Tuck jump: quarter squat, explosive vertical jump, knees driven toward the chest, soft landing."
+    },
+    "db-barbell-deadlift": {
+      "clipId": "deadlift-exercise-demonstration-video",
+      "caption": "Conventional barbell deadlift, shoulder-width stance, double-overhand grip, to standing lockout."
+    },
+    "legpress": {
+      "clipId": "hip-sled-how-to-perform-a-45-degree-leg-press",
+      "caption": "45-degree plate-loaded leg press: feet on the platform, pressing the sled away and back."
+    },
+    "db-barbell-incline-bench-press-medium-grip": {
+      "clipId": "incline-press-exercise-demonstration-video",
+      "caption": "Incline barbell bench press, medium overhand grip, bar to upper chest and back to lockout."
+    },
+    "curl": {
+      "clipId": "muscle-strengthening-at-home-bicep-curls",
+      "caption": "Standing two-arm dumbbell biceps curl, both arms together, no swinging."
+    },
+    "shoulder": {
+      "clipId": "muscle-strengthening-at-home-overhead-press",
+      "caption": "Seated two-arm dumbbell shoulder press on a chair, from shoulder height to overhead lockout."
+    },
+    "db-superman": {
+      "clipId": "muscle-strengthening-at-home-superman",
+      "caption": "Superman: face down, arms reaching forward, arms, chest and legs lifted off the floor together, then lowered."
+    },
+    "forma-machine-seated-back-extension": {
+      "clipId": "muscle-strengthening-at-the-gym-back-extension",
+      "caption": "Seated back extension machine: lap belt on, arms crossed, torso extended back against the pad."
+    },
+    "db-machine-bench-press": {
+      "clipId": "muscle-strengthening-at-the-gym-chest-press",
+      "caption": "Seated chest press machine: handles at chest height, pressed forward and returned slowly."
+    },
+    "db-seated-leg-curl": {
+      "clipId": "muscle-strengthening-at-the-gym-leg-curl",
+      "caption": "Seated leg curl machine: thigh pad down, ankles over the lower pad, heels curled down and back."
+    },
+    "db-leg-extensions": {
+      "clipId": "muscle-strengthening-at-the-gym-leg-extension",
+      "caption": "Seated leg extension machine: shins under the pad, legs straightened and lowered under control."
+    },
+    "db-machine-shoulder-military-press": {
+      "clipId": "muscle-strengthening-at-the-gym-overhead-press",
+      "caption": "Seated shoulder press machine: handles at shoulder height, pressed overhead and lowered."
+    },
+    "wger-af11a7c1-876c-455b-b59a-d8456a99d6e5": {
+      "clipId": "muscle-strengthening-at-the-gym-row-machine",
+      "caption": "Seated machine row with a chest pad and neutral-grip handles, pulling the elbows back."
+    },
+    "db-pullups": {
+      "clipId": "pull-ups-exercise-demonstration-video",
+      "caption": "Pull-up with an overhand shoulder-width grip, chin over the bar, full hang between reps."
+    },
+    "db-standing-military-press": {
+      "clipId": "shoulder-press-exercise-demonstration-video",
+      "caption": "Standing barbell overhead press from the front rack to lockout, no leg drive, filmed from behind."
+    },
+    "squat": {
+      "clipId": "squat-exercise-demonstration-video",
+      "caption": "High-bar barbell back squat in a rack to about parallel."
+    },
+    "db-double-kettlebell-push-press": {
+      "clipId": "strength-training-circuit-overhead-push-press",
+      "caption": "Two-kettlebell push press: kettlebells racked at the chest, a short knee dip, then leg drive to overhead lockout."
+    },
+    "db-calf-press-on-the-leg-press-machine": {
+      "clipId": "hip-sled-calf-press",
+      "caption": "Calf press on the 45-degree leg press: balls of the feet on the platform edge, pushing the sled with the ankles only."
+    }
+  }
+}

@@ -57,7 +57,7 @@ export function Modal({ title, children, onClose, wide = false }) {
       if (event.key !== "Tab") return;
       const controls = [
         ...dialog.querySelectorAll(
-          'button:not(:disabled),input:not(:disabled),select:not(:disabled),textarea:not(:disabled),a[href],[tabindex="0"]',
+          'button:not(:disabled),input:not(:disabled),select:not(:disabled),textarea:not(:disabled),a[href],video[controls],[tabindex="0"]',
         ),
       ].filter((node) => node.getClientRects().length);
       const first = controls[0],

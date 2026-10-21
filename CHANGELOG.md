@@ -44,6 +44,162 @@ at rest` failed 16/20 before the fix. The rapid-release case now waits, before
   on unmodified `main` on this Mac. Lint, format, types, docs and 98 unit
   tests pass. Firefox cannot launch here; CI covers it.
 
+### Raouf: 2026-10-21 — CI time limit for the Verify job
+
+- Raised the `Verify application` job limit from 45 to 70 minutes. The
+  development browser suite now takes about 23 minutes and the account
+  integration steps were being cancelled at the limit: on `main` (`307b3ea`,
+  19 Oct) and on PR #19, where step 22 was cut off after the earlier suites
+  passed. A cancelled step is not a pass, so PRs are merged only after a full
+  green run.
+
+### Raouf: 2026-10-21 — Production release of the preview and demo work
+
+- Owner-approved production deploy of `846919b` with
+  `npm run worker:deploy:production`: Worker
+  `forma-workout-planner-production`, version
+  `c0778873-1a38-482e-8971-0bd15b0b4231`, the same 48 new assets as staging;
+  the one-hour deploy token was revoked. Frontend only; the API is unchanged.
+- **Live checks on forma.raoufabedini.dev:** home 200; bundle
+  `index-u60d_fDw.js` (identical to staging) contains the preview and demo
+  code; the bench press clip and poster return 200 as `video/mp4` and
+  `image/jpeg` under the unchanged CSP. In a browser, the Push day template
+  preview opened on "1 of 4: Barbell bench press" and the clip played with
+  its CC BY credit; no console errors.
+
+### Raouf: 2026-10-21 — Staging release of the preview and demo work
+
+- Pushed `feat/routine-preview-demos` and opened
+  [PR #19](https://github.com/Raoof128/forma-workout-planner/pull/19).
+- Owner-authorised staging deploy of `27a43e9` with
+  `npm run worker:deploy:staging`: Worker `forma-workout-planner-staging`,
+  version `85e28324-f611-487e-b9a6-773fe4dda76e`, 48 new assets including the
+  22 demonstration clips; the one-hour deploy token was revoked. Frontend
+  only, no API or schema change. Staging is behind Cloudflare Access, so the
+  live check from the agent stopped at the Access redirect.
+- **Not yet in production:** the production deploy was blocked by the agent
+  session's permission policy and is waiting for the owner to run
+  `npm run worker:deploy:production`. Merge PR #19 after CI so `main` matches
+  what is deployed.
+
+### Raouf: 2026-10-21 — Romanian deadlift demo polished
+
+- The arms now stay straight and the bar position is solved where straight
+  arms meet the front of the legs, so it slides down the thighs and shins to
+  the knees. A dotted flat-back guide shows at the hamstring stretch, followed
+  by a red rounded-back outline with a cross ("Never let the back round").
+  Checked in Chromium and WebKit.
+
+### Raouf: 2026-10-21 — Animated demos for Legs B
+
+- Five more animated SVG demos in `assets/exercise-svg/legs-b/`: dumbbell
+  goblet squat (front and side views), Romanian deadlift (soft knees, hips
+  back, bar sliding down the legs to a hamstring stretch), leg press
+  (standard stance, hips stay down), dumbbell reverse lunge and barbell hip
+  thrust (chin tucked, one-second squeeze). The routine's seated leg curl and
+  standing calf raise reuse existing demos.
+- Verified by reviewing start, middle and end frames in Chromium, two demos
+  in WebKit, and a byte-identical rebuild of all 33 files.
+
+### Raouf: 2026-10-21 — Animated demos for Upper B
+
+- Six more animated SVG demos in `assets/exercise-svg/upper-b/`: incline
+  dumbbell press, wide-grip lat pulldown and face pull (front and side views
+  together), seated cable row, cable rope overhead triceps extension (rope
+  from the low pulley lowered behind the head to a full stretch, per the
+  FORMA guide) and incline dumbbell curl. The routine's lateral raise reuses
+  the existing core-set demo.
+- Verified by reviewing start, middle and end frames in Chromium, the two
+  dual-view demos in WebKit, and a byte-identical rebuild of all 28 files.
+
+### Raouf: 2026-10-21 — Animated SVG exercise demonstrations
+
+- **What changed:** 22 self-contained animated SVGs show how to perform the
+  exercises in three routines (upper body, legs, core) without video: a figure
+  moves through each rep at its tempo with phase captions, a progress bar,
+  the bar or handle path, working-muscle highlights, and fault outlines for
+  the ab roller and plank. Twisting moves use a 3D camera; the lateral raise
+  shows front and side views together. About 100–160 KB each, fonts embedded.
+- **Tooling:** `scripts/exercise-svg/` (Python, standard library only)
+  rebuilds `assets/exercise-svg/` deterministically; see
+  [the README](assets/exercise-svg/README.md).
+- **Verification:** start, middle and end frames of every demo reviewed in
+  Chromium, spot-checked in WebKit; all files are valid XML and a rebuild is
+  byte-identical. Not shown in the app yet.
+
+### Raouf: 2026-10-21 — Demonstration clips and single-exercise card
+
+- **Single exercise:** selecting an exercise name in a routine overview now
+  opens only that exercise's card (illustration, prescription, demonstration
+  and guide) with **Back to overview**, instead of the whole workout preview.
+  **Preview workout** still steps through every exercise.
+- **Demonstration clips:** 22 exercises gain a short, silent, looping video in
+  the preview and in the exercise library guide: barbell bench press, incline
+  bench press, back squat, deadlift, trap-bar deadlift, standing military
+  press, pull-up, bent-over row, 45-degree leg press, calf press on the leg
+  press, seated leg curl, leg extension, machine chest press, machine shoulder
+  press, seated machine row, seated back extension, dumbbell shoulder press,
+  dumbbell biceps curl, superman, double kettlebell push press, knee tuck jump
+  and backward medicine-ball throw. Sources: CDC and U.S. Army (public domain)
+  and FitnessScape (CC BY 3.0), credited under each clip. Each was reviewed
+  frame by frame against the exact FORMA variant; 16 uncertain matches are
+  held back. Clips are self-hosted (5 MB in total), never autoplay and load
+  only when played.
+- **Tooling:** `docs/research/exercise-videos/registry.json` records every
+  candidate, licence, checksum, review and trim;
+  `scripts/build-exercise-demos.mjs` rebuilds `public/exercise-demos/` and
+  `src/catalog/demos.json`; `unit/exercise-demos.test.js` guards them.
+- **Files:** `src/components/ExerciseDemo.jsx`, `RoutinePreview.jsx`
+  (`PreviewSlide`), `Routines.jsx`, `ExerciseGuide.jsx`, `UI.jsx`,
+  `src/styles.css`, `src/catalog/demos.json`, `public/exercise-demos/` (new),
+  `scripts/build-exercise-demos.mjs` (new), `unit/exercise-demos.test.js`
+  (new), `tests/routine-preview.spec.js`, `tests/ui-controls.spec.js`,
+  `docs/user-guide.md`, `docs/research/exercise-videos.md`.
+- **Verification:** preview spec 10/10 in Chromium and WebKit, including clip
+  playback in both and no external media requests; unit 99/99; lint,
+  Prettier, type check, docs check and build pass; 15 affected Chromium specs
+  94/95, the failure being the focus-trap test that assumed nothing focusable
+  between Close and Got it (updated, then 49/50 across both engines for the
+  UI, keyboard and accessibility specs). The remaining WebKit failure,
+  account-import focus, also fails on `main`. Firefox cannot launch in this
+  environment. Not committed or deployed.
+
+### Raouf: 2026-10-21 — Preview a routine or template without starting it
+
+- **What changed:** routines can be looked through exercise by exercise before
+  training. **Preview workout** sits in the routine overview and in each
+  routine card's **⋯** menu, and each exercise name in the overview opens the
+  preview at that exercise. Every workout template has a **Preview** button,
+  so it can be checked before **Add to my routines**. Each step shows the
+  FORMA illustration, sets × reps or measurement, RPE, rest, notes, muscle and
+  equipment, and the full technique guide with its credits. Previewing never
+  starts a workout or changes saved data.
+- **Accessibility:** follows the WAI-ARIA APG carousel pattern: labelled
+  carousel and slides ("2 of 6: …"), Previous/Next keep focus and stay
+  focusable at the ends, a polite one-line announcement per step, and an
+  exercise strip for jumping (current item `aria-current="step"`). Focus moves
+  to **Back to overview** on entry and returns to the opener on exit. On
+  screens under 480 px Previous/Next show arrows only.
+- **Demonstration videos:** researched, not shipped. Open-licence clips that
+  can be self-hosted (CDC and US Army public domain, FitnessScape CC BY, wger
+  CC BY-SA) cover roughly 2–5% of the catalogue; see
+  [the research note](docs/research/exercise-videos.md). The preview has an
+  empty video slot (`ExerciseDemo`, `src/catalog/demos.json`) for reviewed
+  clips.
+- **Files:** `src/components/RoutinePreview.jsx`, `GuideInstructions.jsx`,
+  `ExerciseDemo.jsx`, `src/catalog/demos.json` (new); `Routines.jsx`,
+  `RoutineCardOrder.jsx`, `ExerciseGuide.jsx`, `src/App.jsx`,
+  `src/styles.css`; `tests/routine-preview.spec.js` (new);
+  `docs/user-guide.md`, `docs/research/exercise-videos.md` (new).
+- **Verification:** new spec 6/6 in Chromium and WebKit; preview, responsive
+  and accessibility specs 62/62 across both engines after the narrow-screen
+  fix; 15 affected Chromium specs 96/99 on the first run, with the three
+  failures (history order, reduced-motion drag outline, personal training
+  workflow) passing on rerun; unit 98/98; lint, Prettier, type check and docs
+  check pass. Firefox could not launch in this environment, on any spec.
+  Checked by hand in the dev preview at desktop width, 375 px and 316 px. Not
+  committed or deployed.
+
 ### Raouf: 2026-10-19 — Per-exercise ⋯ menu in a running workout
 
 - **What changed:** the single **Edit workout** dialog on the active workout
