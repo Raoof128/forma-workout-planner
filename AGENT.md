@@ -58,6 +58,23 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-21 — Animated SVG exercise demonstrations
+
+- `assets/exercise-svg/<set>/` holds one animated SVG per exercise (22 so far:
+  upper-a, legs-a, core), built by `scripts/exercise-svg/build.py` from a 3D
+  figure rig (`rig.py`) and per-set pose files (`exercises.py`, `legs.py`,
+  `core.py`). Never hand-edit the SVGs; rebuild, and confirm the output is
+  byte-identical to what is committed. Not wired into the app yet.
+- Keep each exercise's draw order constant across frames (`render` asserts
+  it); `keySplines` is not used, poses are sampled at 15 fps with linear
+  interpolation. Overlays (fault outlines, timers, labels) take step indices.
+- Review every new demo by rendering start, middle and end frames
+  (Playwright `pauseAnimations` + `setCurrentTime`) in Chromium and WebKit,
+  and update the set's `key-poses.png`. Follow the FORMA guide; where coaching
+  sources give a safer cue, use it and say so in the README.
+- Personal routine material (the Monday overview SVG/GIF) stays outside the
+  public repo.
+
 ### Raouf: 2026-10-21 — Exercise demonstration clips and single-exercise card
 
 - **Supersedes** the earlier same-day note that the demo slot is empty and no

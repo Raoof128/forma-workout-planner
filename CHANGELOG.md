@@ -4,6 +4,21 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-21 — Animated SVG exercise demonstrations
+
+- **What changed:** 22 self-contained animated SVGs show how to perform the
+  exercises in three routines (upper body, legs, core) without video: a figure
+  moves through each rep at its tempo with phase captions, a progress bar,
+  the bar or handle path, working-muscle highlights, and fault outlines for
+  the ab roller and plank. Twisting moves use a 3D camera; the lateral raise
+  shows front and side views together. About 100–160 KB each, fonts embedded.
+- **Tooling:** `scripts/exercise-svg/` (Python, standard library only)
+  rebuilds `assets/exercise-svg/` deterministically; see
+  [the README](assets/exercise-svg/README.md).
+- **Verification:** start, middle and end frames of every demo reviewed in
+  Chromium, spot-checked in WebKit; all files are valid XML and a rebuild is
+  byte-identical. Not shown in the app yet.
+
 ### Raouf: 2026-10-21 — Demonstration clips and single-exercise card
 
 - **Single exercise:** selecting an exercise name in a routine overview now
