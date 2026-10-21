@@ -58,6 +58,47 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-21 — Hold metric migration, second review
+
+- Fifteen more holds, balances and isometrics have timed identities by the
+  route above: Crucifix, Axe Hold, Incline Static Hold, Hercules Pillars,
+  Dynamic side hold (all `load`), Hip Raise, Lying (`added`), Balance Board,
+  Downward Facing Balance, Frog stand balance, Single-leg BOSU balance,
+  Single-Leg Balance with Eyes Closed, Kneeling Superman, Standing Pancake, Recruitment Pulls and Double-Leg Abdominal Press. The
+  `duration` metric keeps a weight column, so a loaded hold logs seconds and
+  kg. 213 exercises are now timed; 200 show the hold timer.
+- Six stay in reps under `excludedMeasurementCorrections`: Seated Knee
+  Extension with Overpressure, Chin tuck and Single-Leg Soft-Landing Holds
+  (their guides repeat a short hold for reps), Back bridge (the guide pushes
+  up and lowers, never holds), Estiramiento de brazos y cuello (the guide
+  describes no position, so it needs a guide repair before any measure
+  change) and "Rest (for timed workouts)" (a placeholder; keeping,
+  timing or removing it is the owner's call).
+- A timed identity of a one-side-at-a-time hold needs the saved ID's side
+  copied to `forma-<saved ID>` in `src/catalog/unilateral.json`: `withSide`
+  looks up the canonical ID, which is the timed ID itself. A reviewed guide
+  repair (`docs/research/reviewed-guide-repairs.json`) follows the alias
+  automatically (Frog stand balance).
+- `docs/research/exercise-logging-review.json` is written as
+  `JSON.stringify(value, null, 1)` with sorted keys and no final newline, and
+  `docs/research/original-art/registry.json` as `JSON.stringify(value, null, 2)`
+  plus a newline. Running Prettier over the registry reflows 9,000 lines.
+- Same deploy order and no-rollback rule as above.
+- **Verification:** unit 111/111; `unit/hold-metric-migration.test.js` 5/5,
+  and its identity and timed-set tests fail on the base catalogue. The hold
+  spec passes 6/6 in Chromium and WebKit, including the new loaded-hold case.
+  Development suite on a private port at load average ~125: 286/318 first
+  pass. 26 of the 32 failures passed on a one-worker rerun, and the six left
+  (WebKit keyboard focus) fail the same way on `feat/hold-metric-migration`.
+  Production 129/129 on Chromium and WebKit, desktop and mobile; Firefox
+  does not launch in this sandbox. Lint, Prettier, types, docs, build,
+  server build, worker 26/26 and operations 14/14 pass. The equipment audit
+  is clean, artwork coverage is 1,411/1,411, both builders rebuild byte for
+  byte, and the compiled API accepts the timed IDs and rejects rep sets on
+  them. Docker was off, so the PostgreSQL server and account suites did not
+  run locally. An independent review of the 21 guide calls moved Back
+  bridge to reps and tightened three reasons.
+
 ### Raouf: 2026-10-21 — Hold metric migration
 
 - **Supersedes** the line below that the holds stored as reps need a reviewed

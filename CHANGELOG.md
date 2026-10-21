@@ -4,6 +4,57 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-21 — More holds and balances log seconds
+
+- **What changed:** 15 more holds, balances and isometrics that were counted
+  in reps now log seconds, with the hold timer, when they are added to a
+  routine or workout. Loaded holds keep **WEIGHT (KG)** beside the seconds:
+  Crucifix, Axe Hold, Incline Static Hold, Hercules Pillars and Dynamic side
+  hold. Hip Raise, Lying keeps **ADDED (KG)**. No load: Balance Board,
+  Downward Facing Balance, Frog stand balance, Single-leg BOSU balance,
+  Single-Leg Balance with Eyes Closed, Kneeling Superman, Standing Pancake,
+  Recruitment Pulls and Double-Leg Abdominal Press. The timer is now on 200
+  of the 213 timed exercises.
+- **Kept in reps after reading the guide:** Seated Knee Extension with
+  Overpressure, Chin tuck and Single-Leg Soft-Landing Holds repeat a short
+  hold for reps; Back bridge pushes up and lowers without a hold;
+  Estiramiento de brazos y cuello describes no position to time; "Rest (for timed workouts)" is a placeholder, not a hold.
+- **Saved data:** unchanged, as in the first review: each hold gets
+  `forma-<saved ID>`, and the saved ID stays an alias in reps. The five
+  one-side-at-a-time holds keep their side under the new ID.
+- **Deploying:** API before frontend in each environment, staging first; do
+  not roll back once a timed hold is saved. Not deployed.
+- **Files:** `docs/research/exercise-quality-review.json` (15 reviewed
+  `measurementCorrections`, 6 exclusions); regenerated
+  `src/catalog/curation.json`, `src/catalog/machine-exercises.json`,
+  `docs/research/catalog-quality-summary.json`, `src/catalog/media.json` and
+  `docs/research/original-art/coverage.json`; `src/catalog/logging-review.json`;
+  `src/catalog/unilateral.json`; `docs/research/original-art/registry.json`;
+  `docs/research/exercise-logging-review.{md,json}`,
+  `docs/research/catalog-quality.md`, `docs/user-guide.md`;
+  `unit/hold-metric-migration.test.js` and
+  `tests/hold-metric-migration.spec.js`.
+- **Verification:** unit 111/111, including the extended
+  `unit/hold-metric-migration.test.js` (5 tests; the identity and timed-set
+  tests fail on the base catalogue). The hold browser spec passes 6/6 in
+  Chromium and WebKit, including a new loaded-hold case (weight column,
+  timer, seconds). Development suite on a private port at load average ~125:
+  286/318 on the first pass. 26 of the 32 failures passed on a one-worker
+  rerun; the six left are WebKit keyboard-focus cases that fail the same way
+  on `feat/hold-metric-migration`. Production suite on a guest build: 129/129
+  on Chromium and WebKit, desktop and mobile; Firefox does not launch in this
+  sandbox. Lint, Prettier, types, docs, build, server build, worker 26/26 and
+  operations 14/14 pass. The equipment audit is clean, artwork coverage is
+  1,411/1,411, both catalogue builders rebuild byte for byte, and the
+  compiled API accepts the timed IDs and rejects rep sets on them. The
+  PostgreSQL server and account suites were not run locally (Docker off); CI
+  runs them. An independent review of the 21 guide calls moved Back bridge to
+  reps and tightened three reasons.
+- **Follow-ups:** a guide repair for Estiramiento de brazos y cuello; a
+  decision on the rest placeholder; Fast Skipping, Flutter Kicks, Mountain
+  Climbers, Jumping Jacks, Foam Roller Anterior tibialis and 90/90 Breathing
+  are timed intervals stored as reps, not holds, and were not reviewed here.
+
 ### Raouf: 2026-10-21 — Calisthenics holds log seconds with the hold timer
 
 - **What changed:** 15 holds that were counted in reps now log seconds, with

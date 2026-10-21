@@ -982,21 +982,6 @@
       },
       "previewId": "c0be60fc3e8a6a6b"
     },
-    "forma-original-movements-004-2-1": {
-      "src": "/exercise-media/original/movements-004.png?v=c0be60fc3e8a",
-      "sha256": "c0be60fc3e8a6a6b7c2f0fc9a15f5fc615ae69a6f6faa32eab94b69b751d5b0d",
-      "width": 1536,
-      "height": 1024,
-      "title": "Axe Hold",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 2,
-        "row": 1
-      },
-      "previewId": "c0be60fc3e8a6a6b"
-    },
     "forma-original-movements-004-3-1": {
       "src": "/exercise-media/original/movements-004.png?v=c0be60fc3e8a",
       "sha256": "c0be60fc3e8a6a6b7c2f0fc9a15f5fc615ae69a6f6faa32eab94b69b751d5b0d",
@@ -1134,21 +1119,6 @@
         "columns": 4,
         "rows": 3,
         "column": 0,
-        "row": 1
-      },
-      "previewId": "386cc82df12d641d"
-    },
-    "forma-original-movements-005-1-1": {
-      "src": "/exercise-media/original/movements-005.png?v=386cc82df12d",
-      "sha256": "386cc82df12d641d9f7938da97a857bd8c9a497ea8d6a46699f1e189c535cc28",
-      "width": 1536,
-      "height": 1024,
-      "title": "Balance Board",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 1,
         "row": 1
       },
       "previewId": "386cc82df12d641d"
@@ -4213,21 +4183,6 @@
       },
       "previewId": "aaaa8235832d53bd"
     },
-    "forma-original-movements-020-2-0": {
-      "src": "/exercise-media/original/movements-020.png?v=aaaa8235832d",
-      "sha256": "aaaa8235832d53bd985663a5088fbf76cd90f3b9f9495b82f17b0c3d2ab29a4a",
-      "width": 1536,
-      "height": 1024,
-      "title": "Crucifix",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 2,
-        "row": 0
-      },
-      "previewId": "aaaa8235832d53bd"
-    },
     "forma-original-corrections-005-1-0": {
       "src": "/exercise-media/original/corrections-005.png?v=b05a70ef3485",
       "sha256": "b05a70ef3485fc2b3500831304c0b9b93ffc3a72354a1dc26b1d176aeccf6548",
@@ -4993,36 +4948,6 @@
         "rows": 3,
         "column": 3,
         "row": 0
-      },
-      "previewId": "d04a0328ba332910"
-    },
-    "forma-original-movements-024-0-1": {
-      "src": "/exercise-media/original/movements-024.png?v=d04a0328ba33",
-      "sha256": "d04a0328ba3329106da488c76490452257aee5e85e9db4824f603fe630ad8959",
-      "width": 1536,
-      "height": 1024,
-      "title": "Double-Leg Abdominal Press",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 0,
-        "row": 1
-      },
-      "previewId": "d04a0328ba332910"
-    },
-    "forma-original-movements-024-1-1": {
-      "src": "/exercise-media/original/movements-024.png?v=d04a0328ba33",
-      "sha256": "d04a0328ba3329106da488c76490452257aee5e85e9db4824f603fe630ad8959",
-      "width": 1536,
-      "height": 1024,
-      "title": "Downward Facing Balance",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 1,
-        "row": 1
       },
       "previewId": "d04a0328ba332910"
     },
@@ -6054,21 +5979,6 @@
         "columns": 4,
         "rows": 3,
         "column": 1,
-        "row": 2
-      },
-      "previewId": "ed12068dedccab5c"
-    },
-    "forma-original-movements-029-2-2": {
-      "src": "/exercise-media/original/movements-029.png?v=ed12068dedcc",
-      "sha256": "ed12068dedccab5c2608702aa8ad206bff5d1891e663fbebb2fc81a4a3368eec",
-      "width": 1536,
-      "height": 1024,
-      "title": "Dynamic side hold",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 2,
         "row": 2
       },
       "previewId": "ed12068dedccab5c"
@@ -7162,27 +7072,6 @@
       },
       "previewId": "145f10be437c64ef"
     },
-    "forma-original-authored-c-001-retry-0-0": {
-      "src": "/exercise-media/original/authored-c-001-retry.png?v=6b72137b33d9",
-      "sha256": "6b72137b33d935d1f46fd51cdbd365e24b88a6287cc357fa08080eae74b8dc57",
-      "width": 1536,
-      "height": 1024,
-      "title": "Frog stand balance",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 2,
-        "rows": 2,
-        "column": 0,
-        "row": 0,
-        "bounds": {
-          "x": 0,
-          "y": 0,
-          "width": 768,
-          "height": 495
-        }
-      },
-      "previewId": "6b72137b33d935d1"
-    },
     "forma-original-movements-034-3-1": {
       "src": "/exercise-media/original/movements-034.png?v=145f10be437c",
       "sha256": "145f10be437c64efd10726f5866339060a46030795737c3e222b9916f8c7603d",
@@ -8194,27 +8083,6 @@
       },
       "previewId": "b416de8dcd44a3fa"
     },
-    "forma-original-movements-038-0-2": {
-      "src": "/exercise-media/original/movements-038.png?v=5c15e41da88c",
-      "sha256": "5c15e41da88cca680aef7493c2cd24bd60b47315b99e1c6465bf06bd05218380",
-      "width": 1536,
-      "height": 1024,
-      "title": "Hercules Pillars",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 0,
-        "row": 2,
-        "bounds": {
-          "x": 0,
-          "y": 666,
-          "width": 384,
-          "height": 358
-        }
-      },
-      "previewId": "5c15e41da88cca68"
-    },
     "forma-original-movements-038-1-2": {
       "src": "/exercise-media/original/movements-038.png?v=5c15e41da88c",
       "sha256": "5c15e41da88cca680aef7493c2cd24bd60b47315b99e1c6465bf06bd05218380",
@@ -8544,27 +8412,6 @@
         }
       },
       "previewId": "3d32e65e20080038"
-    },
-    "forma-original-movements-040-0-0": {
-      "src": "/exercise-media/original/movements-040.png?v=5b243d916bfa",
-      "sha256": "5b243d916bfa254c5da3c3f6a202a6f7ec289262b7ca672bc7508591b0a1deab",
-      "width": 1536,
-      "height": 1024,
-      "title": "Hip Raise, Lying",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 0,
-        "row": 0,
-        "bounds": {
-          "x": 0,
-          "y": 0,
-          "width": 384,
-          "height": 342
-        }
-      },
-      "previewId": "5b243d916bfa254c"
     },
     "forma-original-recovery-b-004-2-1": {
       "src": "/exercise-media/original/recovery-b-004.png?v=d46620da7b26",
@@ -9318,27 +9165,6 @@
           "y": 0,
           "width": 382,
           "height": 341
-        }
-      },
-      "previewId": "fd615d8ccc3f9fa2"
-    },
-    "forma-original-movements-043-0-1": {
-      "src": "/exercise-media/original/movements-043.png?v=fd615d8ccc3f",
-      "sha256": "fd615d8ccc3f9fa2054bc9ad8f78746ed6e34eae73171f760afd78d4ffe2a68d",
-      "width": 1536,
-      "height": 1024,
-      "title": "Incline Static Hold",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 0,
-        "row": 1,
-        "bounds": {
-          "x": 0,
-          "y": 341,
-          "width": 385,
-          "height": 318
         }
       },
       "previewId": "fd615d8ccc3f9fa2"
@@ -10697,27 +10523,6 @@
           "x": 0,
           "y": 652,
           "width": 385,
-          "height": 372
-        }
-      },
-      "previewId": "2a8fcb997868f2d2"
-    },
-    "forma-original-movements-048-1-2": {
-      "src": "/exercise-media/original/movements-048.png?v=2a8fcb997868",
-      "sha256": "2a8fcb997868f2d28a9b7302b86e3d3e58f64857db63c1262ff54af62b7fc558",
-      "width": 1536,
-      "height": 1024,
-      "title": "Kneeling Superman",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 1,
-        "row": 2,
-        "bounds": {
-          "x": 385,
-          "y": 652,
-          "width": 383,
           "height": 372
         }
       },
@@ -15808,27 +15613,6 @@
       },
       "previewId": "30ad6b76cd966778"
     },
-    "forma-original-finish-f-001-1-0": {
-      "src": "/exercise-media/original/finish-f-001.png?v=fe1806d2b112",
-      "sha256": "fe1806d2b11237797ec261d8a366ff16c14e1b39761f8e662c65df5b9f2fe943",
-      "width": 1536,
-      "height": 1024,
-      "title": "Recruitment Pulls",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 2,
-        "rows": 2,
-        "column": 1,
-        "row": 0,
-        "bounds": {
-          "x": 768,
-          "y": 0,
-          "width": 768,
-          "height": 500
-        }
-      },
-      "previewId": "fe1806d2b1123779"
-    },
     "forma-original-cardio-01-0-1": {
       "src": "/exercise-media/original/cardio-01.png?v=dc09bbfce794",
       "sha256": "dc09bbfce794675d49002e943d01799cfe5ec36ff5820ff53beb3b1110281f0a",
@@ -18817,27 +18601,6 @@
       },
       "previewId": "3aef6a56e16baba5"
     },
-    "forma-original-movements-080-0-0": {
-      "src": "/exercise-media/original/movements-080.png?v=8a99798b6ba3",
-      "sha256": "8a99798b6ba38ec1c1e2a2d79f987187d25a1f1d7ef5cb889c2432be748cd90a",
-      "width": 1536,
-      "height": 1024,
-      "title": "Single-Leg Balance with Eyes Closed",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 0,
-        "row": 0,
-        "bounds": {
-          "x": 0,
-          "y": 0,
-          "width": 384,
-          "height": 341
-        }
-      },
-      "previewId": "8a99798b6ba38ec1"
-    },
     "forma-original-movements-080-1-0": {
       "src": "/exercise-media/original/movements-080.png?v=8a99798b6ba3",
       "sha256": "8a99798b6ba38ec1c1e2a2d79f987187d25a1f1d7ef5cb889c2432be748cd90a",
@@ -18852,27 +18615,6 @@
         "row": 0,
         "bounds": {
           "x": 384,
-          "y": 0,
-          "width": 384,
-          "height": 341
-        }
-      },
-      "previewId": "8a99798b6ba38ec1"
-    },
-    "forma-original-movements-080-2-0": {
-      "src": "/exercise-media/original/movements-080.png?v=8a99798b6ba3",
-      "sha256": "8a99798b6ba38ec1c1e2a2d79f987187d25a1f1d7ef5cb889c2432be748cd90a",
-      "width": 1536,
-      "height": 1024,
-      "title": "Single-leg BOSU balance",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 2,
-        "row": 0,
-        "bounds": {
-          "x": 768,
           "y": 0,
           "width": 384,
           "height": 341
@@ -20877,27 +20619,6 @@
         }
       },
       "previewId": "7c0420451a6d3529"
-    },
-    "forma-original-movements-088-1-0": {
-      "src": "/exercise-media/original/movements-088.png?v=f83fc780b5d9",
-      "sha256": "f83fc780b5d94a93da16533ddd569d4eda5c689f55b637a9f2dcc08547c1a2ff",
-      "width": 1536,
-      "height": 1024,
-      "title": "Standing Pancake",
-      "kind": "movement_illustration",
-      "region": {
-        "columns": 4,
-        "rows": 3,
-        "column": 1,
-        "row": 0,
-        "bounds": {
-          "x": 384,
-          "y": 0,
-          "width": 384,
-          "height": 339
-        }
-      },
-      "previewId": "f83fc780b5d94a93"
     },
     "forma-original-movements-088-2-0": {
       "src": "/exercise-media/original/movements-088.png?v=f83fc780b5d9",
@@ -24249,6 +23970,285 @@
         }
       },
       "previewId": "db4109baafff958e"
+    },
+    "forma-original-movements-020-2-0": {
+      "src": "/exercise-media/original/movements-020.png?v=aaaa8235832d",
+      "sha256": "aaaa8235832d53bd985663a5088fbf76cd90f3b9f9495b82f17b0c3d2ab29a4a",
+      "width": 1536,
+      "height": 1024,
+      "title": "Crucifix",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 2,
+        "row": 0
+      },
+      "previewId": "aaaa8235832d53bd"
+    },
+    "forma-original-movements-004-2-1": {
+      "src": "/exercise-media/original/movements-004.png?v=c0be60fc3e8a",
+      "sha256": "c0be60fc3e8a6a6b7c2f0fc9a15f5fc615ae69a6f6faa32eab94b69b751d5b0d",
+      "width": 1536,
+      "height": 1024,
+      "title": "Axe Hold",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 2,
+        "row": 1
+      },
+      "previewId": "c0be60fc3e8a6a6b"
+    },
+    "forma-original-movements-043-0-1": {
+      "src": "/exercise-media/original/movements-043.png?v=fd615d8ccc3f",
+      "sha256": "fd615d8ccc3f9fa2054bc9ad8f78746ed6e34eae73171f760afd78d4ffe2a68d",
+      "width": 1536,
+      "height": 1024,
+      "title": "Incline Static Hold",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 0,
+        "row": 1,
+        "bounds": {
+          "x": 0,
+          "y": 341,
+          "width": 385,
+          "height": 318
+        }
+      },
+      "previewId": "fd615d8ccc3f9fa2"
+    },
+    "forma-original-movements-038-0-2": {
+      "src": "/exercise-media/original/movements-038.png?v=5c15e41da88c",
+      "sha256": "5c15e41da88cca680aef7493c2cd24bd60b47315b99e1c6465bf06bd05218380",
+      "width": 1536,
+      "height": 1024,
+      "title": "Hercules Pillars",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 0,
+        "row": 2,
+        "bounds": {
+          "x": 0,
+          "y": 666,
+          "width": 384,
+          "height": 358
+        }
+      },
+      "previewId": "5c15e41da88cca68"
+    },
+    "forma-original-movements-005-1-1": {
+      "src": "/exercise-media/original/movements-005.png?v=386cc82df12d",
+      "sha256": "386cc82df12d641d9f7938da97a857bd8c9a497ea8d6a46699f1e189c535cc28",
+      "width": 1536,
+      "height": 1024,
+      "title": "Balance Board",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 1,
+        "row": 1
+      },
+      "previewId": "386cc82df12d641d"
+    },
+    "forma-original-movements-024-1-1": {
+      "src": "/exercise-media/original/movements-024.png?v=d04a0328ba33",
+      "sha256": "d04a0328ba3329106da488c76490452257aee5e85e9db4824f603fe630ad8959",
+      "width": 1536,
+      "height": 1024,
+      "title": "Downward Facing Balance",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 1,
+        "row": 1
+      },
+      "previewId": "d04a0328ba332910"
+    },
+    "forma-original-authored-c-001-retry-0-0": {
+      "src": "/exercise-media/original/authored-c-001-retry.png?v=6b72137b33d9",
+      "sha256": "6b72137b33d935d1f46fd51cdbd365e24b88a6287cc357fa08080eae74b8dc57",
+      "width": 1536,
+      "height": 1024,
+      "title": "Frog stand balance",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 495
+        }
+      },
+      "previewId": "6b72137b33d935d1"
+    },
+    "forma-original-movements-080-2-0": {
+      "src": "/exercise-media/original/movements-080.png?v=8a99798b6ba3",
+      "sha256": "8a99798b6ba38ec1c1e2a2d79f987187d25a1f1d7ef5cb889c2432be748cd90a",
+      "width": 1536,
+      "height": 1024,
+      "title": "Single-leg BOSU balance",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 2,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 384,
+          "height": 341
+        }
+      },
+      "previewId": "8a99798b6ba38ec1"
+    },
+    "forma-original-movements-080-0-0": {
+      "src": "/exercise-media/original/movements-080.png?v=8a99798b6ba3",
+      "sha256": "8a99798b6ba38ec1c1e2a2d79f987187d25a1f1d7ef5cb889c2432be748cd90a",
+      "width": 1536,
+      "height": 1024,
+      "title": "Single-Leg Balance with Eyes Closed",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 384,
+          "height": 341
+        }
+      },
+      "previewId": "8a99798b6ba38ec1"
+    },
+    "forma-original-movements-048-1-2": {
+      "src": "/exercise-media/original/movements-048.png?v=2a8fcb997868",
+      "sha256": "2a8fcb997868f2d28a9b7302b86e3d3e58f64857db63c1262ff54af62b7fc558",
+      "width": 1536,
+      "height": 1024,
+      "title": "Kneeling Superman",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 1,
+        "row": 2,
+        "bounds": {
+          "x": 385,
+          "y": 652,
+          "width": 383,
+          "height": 372
+        }
+      },
+      "previewId": "2a8fcb997868f2d2"
+    },
+    "forma-original-movements-040-0-0": {
+      "src": "/exercise-media/original/movements-040.png?v=5b243d916bfa",
+      "sha256": "5b243d916bfa254c5da3c3f6a202a6f7ec289262b7ca672bc7508591b0a1deab",
+      "width": 1536,
+      "height": 1024,
+      "title": "Hip Raise, Lying",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 0,
+        "row": 0,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 384,
+          "height": 342
+        }
+      },
+      "previewId": "5b243d916bfa254c"
+    },
+    "forma-original-movements-029-2-2": {
+      "src": "/exercise-media/original/movements-029.png?v=ed12068dedcc",
+      "sha256": "ed12068dedccab5c2608702aa8ad206bff5d1891e663fbebb2fc81a4a3368eec",
+      "width": 1536,
+      "height": 1024,
+      "title": "Dynamic side hold",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 2,
+        "row": 2
+      },
+      "previewId": "ed12068dedccab5c"
+    },
+    "forma-original-movements-088-1-0": {
+      "src": "/exercise-media/original/movements-088.png?v=f83fc780b5d9",
+      "sha256": "f83fc780b5d94a93da16533ddd569d4eda5c689f55b637a9f2dcc08547c1a2ff",
+      "width": 1536,
+      "height": 1024,
+      "title": "Standing Pancake",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 384,
+          "y": 0,
+          "width": 384,
+          "height": 339
+        }
+      },
+      "previewId": "f83fc780b5d94a93"
+    },
+    "forma-original-finish-f-001-1-0": {
+      "src": "/exercise-media/original/finish-f-001.png?v=fe1806d2b112",
+      "sha256": "fe1806d2b11237797ec261d8a366ff16c14e1b39761f8e662c65df5b9f2fe943",
+      "width": 1536,
+      "height": 1024,
+      "title": "Recruitment Pulls",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 2,
+        "rows": 2,
+        "column": 1,
+        "row": 0,
+        "bounds": {
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 500
+        }
+      },
+      "previewId": "fe1806d2b1123779"
+    },
+    "forma-original-movements-024-0-1": {
+      "src": "/exercise-media/original/movements-024.png?v=d04a0328ba33",
+      "sha256": "d04a0328ba3329106da488c76490452257aee5e85e9db4824f603fe630ad8959",
+      "width": 1536,
+      "height": 1024,
+      "title": "Double-Leg Abdominal Press",
+      "kind": "movement_illustration",
+      "region": {
+        "columns": 4,
+        "rows": 3,
+        "column": 0,
+        "row": 1
+      },
+      "previewId": "d04a0328ba332910"
     }
   },
   "previews": {
@@ -24642,12 +24642,6 @@
       "width": 768,
       "height": 512
     },
-    "6b72137b33d935d1": {
-      "src": "/exercise-media/previews/authored-c-001-retry-26d4d35ce665fb6c.webp?v=b8d03c164408",
-      "sha256": "b8d03c164408d0bc8deb4264165fadbb0291c0026c0f518ec21c2347fff84887",
-      "width": 768,
-      "height": 512
-    },
     "31e7cc256554e304": {
       "src": "/exercise-media/previews/movements-035-9c9d5f47316e7711.webp?v=bb7161a4358e",
       "sha256": "bb7161a4358e30d896d826528cce0a972a81da601fb43798f431d7fbda6ae6fe",
@@ -24702,15 +24696,15 @@
       "width": 768,
       "height": 512
     },
-    "5b243d916bfa254c": {
-      "src": "/exercise-media/previews/movements-040-ccd9d4260a0b5133.webp?v=4a37d03c680d",
-      "sha256": "4a37d03c680d4de3485b8440a898bc1b2de6bab707df40b5da7cb05b2ed6e56d",
-      "width": 768,
-      "height": 512
-    },
     "d46620da7b263f89": {
       "src": "/exercise-media/previews/recovery-b-004-501910d3c5659f9c.webp?v=c8d8f693e90d",
       "sha256": "c8d8f693e90df6120c13a5b3906f4ce7ebac487f29bcfb7d57e0e5706f477e4f",
+      "width": 768,
+      "height": 512
+    },
+    "5b243d916bfa254c": {
+      "src": "/exercise-media/previews/movements-040-ccd9d4260a0b5133.webp?v=4a37d03c680d",
+      "sha256": "4a37d03c680d4de3485b8440a898bc1b2de6bab707df40b5da7cb05b2ed6e56d",
       "width": 768,
       "height": 512
     },
@@ -24831,6 +24825,12 @@
     "8fc55cd3faa22141": {
       "src": "/exercise-media/previews/corrections-017-7a3d916c2e59e5b7.webp?v=e3b4d07f4d28",
       "sha256": "e3b4d07f4d284bd66a9ec6f73a92f8aae0c93ebd5f45b500011b0d92bd24e609",
+      "width": 768,
+      "height": 512
+    },
+    "6b72137b33d935d1": {
+      "src": "/exercise-media/previews/authored-c-001-retry-26d4d35ce665fb6c.webp?v=b8d03c164408",
+      "sha256": "b8d03c164408d0bc8deb4264165fadbb0291c0026c0f518ec21c2347fff84887",
       "width": 768,
       "height": 512
     },
@@ -25065,12 +25065,6 @@
     "30ad6b76cd966778": {
       "src": "/exercise-media/previews/movements-068-f2e675161f7a323a.webp?v=893e064e863f",
       "sha256": "893e064e863f43ae1f7d00ddc743fc116f0d0dff296958a8d0c2a9f06b74fd91",
-      "width": 768,
-      "height": 512
-    },
-    "fe1806d2b1123779": {
-      "src": "/exercise-media/previews/finish-f-001-b62c16aaca33c976.webp?v=dbb353308d6f",
-      "sha256": "dbb353308d6f23ce7ca1af80d88321b3a4ce91868849575157b95afd77005fd5",
       "width": 768,
       "height": 512
     },
@@ -25361,6 +25355,12 @@
       "sha256": "e304c412cafa9b6a29041f97ff68848a2539c778439270627a1aa53a19fefbd6",
       "width": 768,
       "height": 512
+    },
+    "fe1806d2b1123779": {
+      "src": "/exercise-media/previews/finish-f-001-b62c16aaca33c976.webp?v=dbb353308d6f",
+      "sha256": "dbb353308d6f23ce7ca1af80d88321b3a4ce91868849575157b95afd77005fd5",
+      "width": 768,
+      "height": 512
     }
   },
   "exercises": {
@@ -25624,10 +25624,6 @@
       "assetId": "forma-original-movements-004-1-1",
       "caption": "Australian pull-ups · Representative exercise position; follow the guide for the complete movement."
     },
-    "wger-f2733700-aa5d-4df7-bc52-1876ab4fb479": {
-      "assetId": "forma-original-movements-004-2-1",
-      "caption": "Axe Hold · Representative exercise position; follow the guide for the complete movement."
-    },
     "db-axle-deadlift": {
       "assetId": "forma-original-movements-004-3-1",
       "caption": "Axle Deadlift · Representative exercise position; follow the guide for the complete movement."
@@ -25663,10 +25659,6 @@
     "wger-d301d901-a2c6-4916-b09e-07ab7a3c8519": {
       "assetId": "forma-original-movements-005-0-1",
       "caption": "Bag training · Representative exercise position; follow the guide for the complete movement."
-    },
-    "db-balance-board": {
-      "assetId": "forma-original-movements-005-1-1",
-      "caption": "Balance Board · Representative exercise position; follow the guide for the complete movement."
     },
     "db-ball-leg-curl": {
       "assetId": "forma-original-movements-005-2-1",
@@ -26576,10 +26568,6 @@
       "assetId": "forma-original-movements-020-1-0",
       "caption": "Crossover Reverse Lunge · Representative exercise position; follow the guide for the complete movement."
     },
-    "db-crucifix": {
-      "assetId": "forma-original-movements-020-2-0",
-      "caption": "Crucifix · Representative exercise position; follow the guide for the complete movement."
-    },
     "db-crunch-hands-overhead": {
       "assetId": "forma-original-corrections-005-1-0",
       "caption": "Crunch - Hands Overhead · Representative exercise position; follow the guide for the complete movement."
@@ -26775,14 +26763,6 @@
     "wger-58ca3e51-ea64-4771-a74a-a74d29f5c40c": {
       "assetId": "forma-original-movements-024-3-0",
       "caption": "Double Leg Calf Raise · Representative exercise position; follow the guide for the complete movement."
-    },
-    "wger-f0823bb5-3f18-48d4-98de-cbe38f9fd8ff": {
-      "assetId": "forma-original-movements-024-0-1",
-      "caption": "Double-Leg Abdominal Press · Representative exercise position; follow the guide for the complete movement."
-    },
-    "db-downward-facing-balance": {
-      "assetId": "forma-original-movements-024-1-1",
-      "caption": "Downward Facing Balance · Representative exercise position; follow the guide for the complete movement."
     },
     "db-drag-curl": {
       "assetId": "forma-original-movements-024-2-1",
@@ -27040,10 +27020,6 @@
       "assetId": "forma-original-movements-029-1-2",
       "caption": "Dynamic Planche · Representative exercise position; follow the guide for the complete movement."
     },
-    "wger-45d89ca5-f5c7-4e56-9833-fd160cd2666d": {
-      "assetId": "forma-original-movements-029-2-2",
-      "caption": "Dynamic side hold · Representative exercise position; follow the guide for the complete movement."
-    },
     "wger-ddf4111d-907d-4d6c-b583-58323b96ca03": {
       "assetId": "forma-original-movements-029-3-2",
       "caption": "Easy Continuous Swim (Freestyle) · Representative exercise position; follow the guide for the complete movement."
@@ -27280,10 +27256,6 @@
       "assetId": "forma-original-movements-034-1-1",
       "caption": "Frog Sit-Ups · Representative exercise position; follow the guide for the complete movement."
     },
-    "wger-00eae665-ff78-4373-9c43-f44a4a1b43e0": {
-      "assetId": "forma-original-authored-c-001-retry-0-0",
-      "caption": "Frog stand balance · Representative exercise position; follow the guide for the complete movement."
-    },
     "wger-a37001e9-b4b3-45db-8ee3-046f40350efa": {
       "assetId": "forma-original-movements-034-3-1",
       "caption": "Frog Stretch · Representative exercise position; follow the guide for the complete movement."
@@ -27492,10 +27464,6 @@
       "assetId": "forma-original-finish-f-002-retry-1-0",
       "caption": "Helms Row · Representative exercise position; follow the guide for the complete movement."
     },
-    "wger-8381f40c-3168-4d98-af60-6a89800dd308": {
-      "assetId": "forma-original-movements-038-0-2",
-      "caption": "Hercules Pillars · Representative exercise position; follow the guide for the complete movement."
-    },
     "db-high-cable-curls": {
       "assetId": "forma-original-cardio-01-1-2",
       "caption": "Adjustable cable station · Equipment reference; pulley height, attachments and posture follow each exercise guide."
@@ -27571,10 +27539,6 @@
     "db-hip-lift-with-band": {
       "assetId": "forma-original-movements-039-3-2",
       "caption": "Hip Lift with Band · Representative exercise position; follow the guide for the complete movement."
-    },
-    "wger-541941e0-0fa5-4474-a382-9baf04948f8d": {
-      "assetId": "forma-original-movements-040-0-0",
-      "caption": "Hip Raise, Lying · Representative exercise position; follow the guide for the complete movement."
     },
     "wger-a4f78033-90d7-45a2-96fa-509b41281ea3": {
       "assetId": "forma-original-recovery-b-004-2-1",
@@ -27727,10 +27691,6 @@
     "wger-76a2f8a6-374b-42c8-b8ac-e8d64612f046": {
       "assetId": "forma-original-movements-043-3-0",
       "caption": "Incline Skull Crush · Representative exercise position; follow the guide for the complete movement."
-    },
-    "wger-88afb956-8d4a-45b3-8c7c-c23719316bfe": {
-      "assetId": "forma-original-movements-043-0-1",
-      "caption": "Incline Static Hold · Representative exercise position; follow the guide for the complete movement."
     },
     "db-intermediate-groin-stretch": {
       "assetId": "forma-original-corrections-014-0-1",
@@ -28007,10 +27967,6 @@
     "db-kneeling-squat": {
       "assetId": "forma-original-movements-048-0-2",
       "caption": "Kneeling Squat · Representative exercise position; follow the guide for the complete movement."
-    },
-    "wger-00f4a2b1-b1ac-49e6-a657-1d27e46522fd": {
-      "assetId": "forma-original-movements-048-1-2",
-      "caption": "Kneeling Superman · Representative exercise position; follow the guide for the complete movement."
     },
     "wger-329d2adc-4b2c-4bb2-95d7-f5f6fedb9b96": {
       "assetId": "forma-original-corrections-017-0-0",
@@ -29100,10 +29056,6 @@
       "assetId": "forma-original-movements-068-2-0",
       "caption": "Recovery Bobbing · Representative exercise position; follow the guide for the complete movement."
     },
-    "wger-cf434716-f846-46d8-b267-8b33d311d8b5": {
-      "assetId": "forma-original-finish-f-001-1-0",
-      "caption": "Recruitment Pulls · Representative exercise position; follow the guide for the complete movement."
-    },
     "db-recumbent-bike": {
       "assetId": "forma-original-cardio-01-0-1",
       "caption": "Recumbent stationary cycle · Equipment reference; follow the guide for setup and movement."
@@ -29756,17 +29708,9 @@
       "assetId": "forma-original-movements-079-3-2",
       "caption": "Single-Cone Sprint Drill · Representative exercise position; follow the guide for the complete movement."
     },
-    "wger-f9880802-e5bd-4143-97f6-d0ee82ba9dd2": {
-      "assetId": "forma-original-movements-080-0-0",
-      "caption": "Single-Leg Balance with Eyes Closed · Representative exercise position; follow the guide for the complete movement."
-    },
     "wger-d229de41-3533-489f-8460-08a6e3daa25a": {
       "assetId": "forma-original-movements-080-1-0",
       "caption": "Single-Leg Balance with Kettlebell Circles · Representative exercise position; follow the guide for the complete movement."
-    },
-    "wger-53b8727f-ad5c-402a-83e6-7b8e9c0bd99a": {
-      "assetId": "forma-original-movements-080-2-0",
-      "caption": "Single-leg BOSU balance · Representative exercise position; follow the guide for the complete movement."
     },
     "wger-a630de17-9170-434c-b486-96a6b8705506": {
       "assetId": "forma-original-movements-080-3-0",
@@ -30263,10 +30207,6 @@
     "db-standing-palms-up-barbell-behind-the-back-wrist-curl": {
       "assetId": "forma-original-corrections-032-0-1",
       "caption": "Standing Palms-Up Barbell Behind The Back Wrist Curl · Representative exercise position; follow the guide for the complete movement."
-    },
-    "wger-af59f161-147a-49ba-85c8-6c9f4e5ffe63": {
-      "assetId": "forma-original-movements-088-1-0",
-      "caption": "Standing Pancake · Representative exercise position; follow the guide for the complete movement."
     },
     "wger-aa3c2791-74f7-4fed-a812-297ff454e2f9": {
       "assetId": "forma-original-movements-088-2-0",
@@ -31007,6 +30947,66 @@
     "forma-wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6": {
       "assetId": "forma-original-movements-083-1-2",
       "caption": "Sphinx · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-db-crucifix": {
+      "assetId": "forma-original-movements-020-2-0",
+      "caption": "Crucifix · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-f2733700-aa5d-4df7-bc52-1876ab4fb479": {
+      "assetId": "forma-original-movements-004-2-1",
+      "caption": "Axe Hold · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-88afb956-8d4a-45b3-8c7c-c23719316bfe": {
+      "assetId": "forma-original-movements-043-0-1",
+      "caption": "Incline Static Hold · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-8381f40c-3168-4d98-af60-6a89800dd308": {
+      "assetId": "forma-original-movements-038-0-2",
+      "caption": "Hercules Pillars · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-db-balance-board": {
+      "assetId": "forma-original-movements-005-1-1",
+      "caption": "Balance Board · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-db-downward-facing-balance": {
+      "assetId": "forma-original-movements-024-1-1",
+      "caption": "Downward Facing Balance · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-00eae665-ff78-4373-9c43-f44a4a1b43e0": {
+      "assetId": "forma-original-authored-c-001-retry-0-0",
+      "caption": "Frog stand balance · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-53b8727f-ad5c-402a-83e6-7b8e9c0bd99a": {
+      "assetId": "forma-original-movements-080-2-0",
+      "caption": "Single-leg BOSU balance · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-f9880802-e5bd-4143-97f6-d0ee82ba9dd2": {
+      "assetId": "forma-original-movements-080-0-0",
+      "caption": "Single-Leg Balance with Eyes Closed · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-00f4a2b1-b1ac-49e6-a657-1d27e46522fd": {
+      "assetId": "forma-original-movements-048-1-2",
+      "caption": "Kneeling Superman · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-541941e0-0fa5-4474-a382-9baf04948f8d": {
+      "assetId": "forma-original-movements-040-0-0",
+      "caption": "Hip Raise, Lying · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-45d89ca5-f5c7-4e56-9833-fd160cd2666d": {
+      "assetId": "forma-original-movements-029-2-2",
+      "caption": "Dynamic side hold · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-af59f161-147a-49ba-85c8-6c9f4e5ffe63": {
+      "assetId": "forma-original-movements-088-1-0",
+      "caption": "Standing Pancake · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-cf434716-f846-46d8-b267-8b33d311d8b5": {
+      "assetId": "forma-original-finish-f-001-1-0",
+      "caption": "Recruitment Pulls · Representative exercise position; follow the guide for the complete movement."
+    },
+    "forma-wger-f0823bb5-3f18-48d4-98de-cbe38f9fd8ff": {
+      "assetId": "forma-original-movements-024-0-1",
+      "caption": "Double-Leg Abdominal Press · Representative exercise position; follow the guide for the complete movement."
     }
   }
 }

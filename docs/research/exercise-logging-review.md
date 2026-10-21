@@ -39,8 +39,8 @@ decisions the app reads are in `src/catalog/logging-review.json`.
 
 ## Timer decisions
 
-The hold timer appears on the 198 exercises measured in seconds (`duration`),
-including the 15 holds moved to seconds on 21 October (see
+The hold timer appears on the 213 exercises measured in seconds (`duration`),
+including the 30 holds moved to seconds on 21 October (see
 [Hold metric migration](#hold-metric-migration)), except 13 whose guides
 prescribe repetitions rather than a hold or interval:
 Crossover Reverse Lunge, Dynamic Back Stretch, Dynamic Chest Stretch, Elbow
@@ -62,6 +62,18 @@ would reinterpret logged sets (see AGENT.md):
   Arch Hang, Deadhang, Sloper hanging, Ring Support Hold, Handstand, Elbow
   lever and Sphinx logged reps, so they had no hold timer. All but Arch Hang
   now have timed identities; see the next section.
+- **More holds, balances and isometrics stored as reps.** Crucifix, Axe Hold,
+  Incline Static Hold, Hercules Pillars, Balance Board, Downward Facing
+  Balance, Frog stand balance, Single-leg BOSU balance, Single-Leg Balance
+  with Eyes Closed, Kneeling Superman, Hip Raise (Lying), Dynamic side hold,
+  Standing Pancake, Recruitment Pulls and Double-Leg Abdominal Press now have
+  timed identities too. Seated Knee Extension with Overpressure, Chin tuck,
+  Single-Leg Soft-Landing Holds, Back bridge, Estiramiento de brazos y cuello
+  and the "Rest (for timed workouts)" placeholder stay in
+  reps; see [Second review](#second-review).
+- **Intervals stored as reps:** Fast Skipping, Flutter Kicks, Mountain
+  Climbers, Jumping Jacks, Foam Roller Anterior tibialis and 90/90 Breathing
+  are usually timed but are not holds; they were left for a separate review.
 - **Rep drills stored as seconds:** the 13 no-timer exercises above.
 - **Misleading equipment labels:** 75 rows, mostly machine, cable or barbell
   lifts labelled Bodyweight. They were classified by the guide.
@@ -76,7 +88,8 @@ seconds"), so they moved to seconds. Arch Hang stays in reps: its guide says
 "Hold it for time/reps", so counting reps is one of its prescribed measures.
 The reason for every call is in `measurementCorrections` and
 `excludedMeasurementCorrections` in
-[exercise-quality-review.json](exercise-quality-review.json).
+[exercise-quality-review.json](exercise-quality-review.json). A second review
+the same day moved 15 more; see [Second review](#second-review).
 
 ### Approach
 
@@ -119,6 +132,54 @@ Options weighed:
   sets, time and rest, and no note, RPE or superset. Removing and re-adding
   it in a single edit restores the saved entry, by design.
 
+### Second review
+
+**21 October 2026.** The 21 other holds, balances and isometrics flagged in
+[exercise-logging-review.json](exercise-logging-review.json) were checked the
+same way, one guide at a time, and 15 moved to seconds:
+
+| Exercise                            | Guide says                                                        | Load    |
+| ----------------------------------- | ----------------------------------------------------------------- | ------- |
+| Crucifix                            | Hold implements out to the sides for time; fail in 30-60 s        | `load`  |
+| Axe Hold                            | Hold dumbbells out to the sides as long as you can                | `load`  |
+| Incline Static Hold                 | Hold the dumbbells mid-press for 20-45 seconds                    | `load`  |
+| Hercules Pillars                    | Stand between two cables under tension and hold                   | `load`  |
+| Dynamic side hold                   | Hold a kettlebell at the side on one leg, switching legs          | `load`  |
+| Hip Raise, Lying                    | Raise the hips and hold as long as you can                        | `added` |
+| Balance Board                       | Hold the balance for as long as desired                           | `none`  |
+| Downward Facing Balance             | Lie on a ball, walk the hands out, lift the legs; no reps or time | `none`  |
+| Frog stand balance                  | (Reviewed guide) feet lifted, hold briefly with control           | `none`  |
+| Single-leg BOSU balance             | Hold for 10-20 seconds                                            | `none`  |
+| Single-Leg Balance with Eyes Closed | Hold for the prescribed time, then switch legs                    | `none`  |
+| Kneeling Superman                   | "Unilateral and static hold"                                      | `none`  |
+| Standing Pancake                    | Wide straddle, fold at the hips; no reps                          | `none`  |
+| Recruitment Pulls                   | Max-effort pull for 3-5 seconds, one arm at a time; no reps       | `none`  |
+| Double-Leg Abdominal Press          | Hold for 10 seconds of maximum effort                             | `none`  |
+
+Six stay in reps, with the reason under `excludedMeasurementCorrections`:
+
+- **Seated Knee Extension with Overpressure:** hold each press about three
+  seconds and repeat for the prescribed number of repetitions.
+- **Chin tuck:** hold 5 seconds, return and repeat.
+- **Single-Leg Soft-Landing Holds:** hold each landing up to 2 seconds, reset
+  and repeat.
+- **Back bridge:** the guide pushes up into the bridge and lowers with a slow,
+  controlled descent, and never says to hold the position or for how long.
+- **Estiramiento de brazos y cuello:** the guide only says the stretch eases
+  upper-body tension; it describes no position or hold, so one cannot be
+  confirmed. It needs a guide repair first.
+- **Rest (for timed workouts):** a rest placeholder, not a hold. Whether to
+  time it, remove it or leave it is a separate product decision.
+
+The loaded holds keep their **WEIGHT (KG)** column beside the seconds, and
+Hip Raise (Lying) keeps **ADDED (KG)**. The five one-side-at-a-time holds
+(the two single-leg balances, Kneeling Superman, Dynamic side hold and
+Recruitment Pulls) keep their reviewed side in `src/catalog/unilateral.json`
+under the timed ID, as the timed stretches do. Frog stand balance keeps its
+reviewed guide repair, which the curation builder now applies to the timed
+ID. Members see the same changes as in the first review: new selections log
+seconds, and saved rep logs and routines keep counting reps.
+
 ### Deploying
 
 The API validates exercise IDs against the catalogue it bundles
@@ -146,6 +207,7 @@ load class, guide and illustration, saved rep sets keep their values, text and
 volume, and a completed timed set needs its seconds. Another timed identity
 follows the same steps: add a reviewed entry to `measurementCorrections`, run
 `npm run catalog:curate`, move its decision in `src/catalog/logging-review.json`
-to the new ID, carry its artwork entry in
+to the new ID, give it the saved ID's side in `src/catalog/unilateral.json` if
+it has one, carry its artwork entry in
 `docs/research/original-art/registry.json` and run
 `node scripts/build-exercise-media.mjs`.

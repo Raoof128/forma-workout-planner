@@ -589,15 +589,6 @@
       "reviewNote": "Visually inspected against complete guide: specified free weights, bench/support, assistance counterweight and representative exercise phase; anatomy intact. Overhead press/around-world image depicts end range, not rotation/arc animation."
     },
     {
-      "exerciseId": "wger-f2733700-aa5d-4df7-bc52-1876ab4fb479",
-      "name": "Axe Hold",
-      "equipment": "Dumbbell",
-      "guideSha256": "f242cb6303cac36aeca04f8ee214f0150b05c0e9a74a60fe887da62cc7068938",
-      "status": "accepted",
-      "assetId": "forma-original-movements-004-2-1",
-      "reviewNote": "Visually inspected against complete guide: specified free weights, bench/support, assistance counterweight and representative exercise phase; anatomy intact. Overhead press/around-world image depicts end range, not rotation/arc animation."
-    },
-    {
       "exerciseId": "db-axle-deadlift",
       "name": "Axle Deadlift",
       "equipment": "Specialty equipment",
@@ -676,15 +667,6 @@
       "guideSha256": "35083a34ec15d0eb36632e0faeefab1dbc0d1b9223214a5a249d2dcce9e24302",
       "status": "accepted",
       "assetId": "forma-original-movements-005-0-1",
-      "reviewNote": "Visually checked against complete guide: correct equipment, support, load placement and representative movement phase; intact anatomy."
-    },
-    {
-      "exerciseId": "db-balance-board",
-      "name": "Balance Board",
-      "equipment": "Specialty equipment",
-      "guideSha256": "0d0c0a603521c0123b0ca93b293cd8dee06bb80184419af88a79b0b0b7274a59",
-      "status": "accepted",
-      "assetId": "forma-original-movements-005-1-1",
       "reviewNote": "Visually checked against complete guide: correct equipment, support, load placement and representative movement phase; intact anatomy."
     },
     {
@@ -2731,15 +2713,6 @@
       "reviewNote": "Visually checked against full guide: correct support, apparatus, grip and representative position; intact anatomy."
     },
     {
-      "exerciseId": "db-crucifix",
-      "name": "Crucifix",
-      "equipment": "Specialty equipment",
-      "guideSha256": "574e8dfe3f8c5bf50c64c79bbef965ffe31dddb907514540c7d6862ecf769662",
-      "status": "accepted",
-      "assetId": "forma-original-movements-020-2-0",
-      "reviewNote": "Visually checked against full guide: correct support, apparatus, grip and representative position; intact anatomy."
-    },
-    {
       "exerciseId": "db-crunch-hands-overhead",
       "name": "Crunch - Hands Overhead",
       "equipment": "Bodyweight",
@@ -3178,24 +3151,6 @@
       "guideSha256": "eab2ea0e8ba147272d9d18d86fe6b62d88f9ee35f8f081733270c06920494c56",
       "status": "accepted",
       "assetId": "forma-original-movements-024-3-0",
-      "reviewNote": "Visually reviewed against complete guide: correct support, apparatus, named grip and representative phase; intact anatomy. Compound multi-step exercises depict a valid working phase."
-    },
-    {
-      "exerciseId": "wger-f0823bb5-3f18-48d4-98de-cbe38f9fd8ff",
-      "name": "Double-Leg Abdominal Press",
-      "equipment": "Gym mat + none (bodyweight exercise)",
-      "guideSha256": "08dc17fe53f2a47f256a6021c0c6f5fac1e8e3ecc2c36f9baaea7c6fae8e75e1",
-      "status": "accepted",
-      "assetId": "forma-original-movements-024-0-1",
-      "reviewNote": "Visually reviewed against complete guide: correct support, apparatus, named grip and representative phase; intact anatomy. Compound multi-step exercises depict a valid working phase."
-    },
-    {
-      "exerciseId": "db-downward-facing-balance",
-      "name": "Downward Facing Balance",
-      "equipment": "Exercise ball",
-      "guideSha256": "7c90495b59d0279e8c1cf232ca75fca920a11598426b03a3a9453fca15ca215f",
-      "status": "accepted",
-      "assetId": "forma-original-movements-024-1-1",
       "reviewNote": "Visually reviewed against complete guide: correct support, apparatus, named grip and representative phase; intact anatomy. Compound multi-step exercises depict a valid working phase."
     },
     {
@@ -3775,15 +3730,6 @@
       "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
     },
     {
-      "exerciseId": "wger-45d89ca5-f5c7-4e56-9833-fd160cd2666d",
-      "name": "Dynamic side hold",
-      "equipment": "Kettlebell",
-      "guideSha256": "3fd0097944cfd5220b6856d9b8c33b41e1a9c14bcb97c5f4c0c3f74244424247",
-      "status": "accepted",
-      "assetId": "forma-original-movements-029-2-2",
-      "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
-    },
-    {
       "exerciseId": "wger-ddf4111d-907d-4d6c-b583-58323b96ca03",
       "name": "Easy Continuous Swim (Freestyle)",
       "equipment": "Bodyweight",
@@ -4315,15 +4261,6 @@
       "reviewNote": "Reviewed sled dual-handle press, hands-on-shoulder rotation setup, free-arm barbell front rack squat, crossed-arm jump squat, hands-behind-head frog-hop setup, soles-together partial frog crunch, wide-knee forearm frog stretch, crossed front-rack squats with/without bench, box landing and alternating pronated front raise."
     },
     {
-      "exerciseId": "wger-00eae665-ff78-4373-9c43-f44a4a1b43e0",
-      "name": "Frog stand balance",
-      "equipment": "Bodyweight",
-      "guideSha256": "74c671570bd13f0c93a89dae587947ceefb33210ad93c52a6362bae229d19fe3",
-      "status": "accepted",
-      "assetId": "forma-original-authored-c-001-retry-0-0",
-      "reviewNote": "Both elbows now visibly flexed beneath forward shoulders, inside knees rest on corresponding upper arms near elbows, palms planted fingers spread and both feet hover low; matches bent-arm frog balance."
-    },
-    {
       "exerciseId": "wger-a37001e9-b4b3-45db-8ee3-046f40350efa",
       "name": "Frog Stretch",
       "equipment": "Bodyweight",
@@ -4792,15 +4729,6 @@
       "reviewNote": "Chest alone meets towel at bench end, torso almost parallel with abdomen/hips free and dumbbells hanging; valid representative starting support."
     },
     {
-      "exerciseId": "wger-8381f40c-3168-4d98-af60-6a89800dd308",
-      "name": "Hercules Pillars",
-      "equipment": "Bodyweight",
-      "guideSha256": "7695381534e40e934f1330f45e8901feacfccbccec4420f13ee985f51270bcb9",
-      "status": "accepted",
-      "assetId": "forma-original-movements-038-0-2",
-      "reviewNote": "Reviewed straight-leg hanging raises, toes-to-bar pike, head tilt/turn, overhead snatch balance squat, staggered heavy-bag palm thrust, bilateral cable-pillar hold, airborne tuck jump, high-knee skip and running-in-place phase."
-    },
-    {
       "exerciseId": "db-high-cable-curls",
       "name": "High Cable Curls",
       "equipment": "Cable",
@@ -4970,15 +4898,6 @@
       "status": "accepted",
       "assetId": "forma-original-movements-039-3-2",
       "reviewNote": "Reviewed palm-supported high plank, upright high pull, kneeling high cable row, Hindu push-up low transition, heel-raised Hindu squat, unilateral hip bridge, bent-knee quadruped hip circle, post-facing band hip extension, post-away band hip flexion and lateral-anchor band hip lift."
-    },
-    {
-      "exerciseId": "wger-541941e0-0fa5-4474-a382-9baf04948f8d",
-      "name": "Hip Raise, Lying",
-      "equipment": "Bodyweight",
-      "guideSha256": "cf6be61624960b8d4b366b2fdbce50e9b07c9a9270348481d37d03ff7e597c9b",
-      "status": "accepted",
-      "assetId": "forma-original-movements-040-0-0",
-      "reviewNote": "Reviewed supine hip raise, straight-limb hollow hold, shoulder-height doorway turn-away stretch, wide deep horse stance, airborne bilateral hurdle hop, plate-loaded ball-supported Y raise, secured ankle hyperextension bench and horizontal suspended front-lever phase of ice-cream-maker drill."
     },
     {
       "exerciseId": "wger-a4f78033-90d7-45a2-96fa-509b41281ea3",
@@ -5320,15 +5239,6 @@
       "guideSha256": "8630e04298e213011c96f471a93bb0721f5ec75aa0633746b264941d50d0e9f3",
       "status": "accepted",
       "assetId": "forma-original-movements-043-3-0",
-      "reviewNote": "Reviewed wide-grip elevated push-up, neutral ring row, straight-elbow scapular incline push-up, reclined dumbbell skullcrusher, mid-press incline dumbbell hold, working-side anchored band internal rotation, narrow supinated lat pulldown, heel-supported bar and suspension inverted rows and prone bent-leg crossover stretch."
-    },
-    {
-      "exerciseId": "wger-88afb956-8d4a-45b3-8c7c-c23719316bfe",
-      "name": "Incline Static Hold",
-      "equipment": "Dumbbell",
-      "guideSha256": "36d570a9c2b2c0a4c1e474978b72b75c630bb4247b5bff4682d140e12f9fcf03",
-      "status": "accepted",
-      "assetId": "forma-original-movements-043-0-1",
       "reviewNote": "Reviewed wide-grip elevated push-up, neutral ring row, straight-elbow scapular incline push-up, reclined dumbbell skullcrusher, mid-press incline dumbbell hold, working-side anchored band internal rotation, narrow supinated lat pulldown, heel-supported bar and suspension inverted rows and prone bent-leg crossover stretch."
     },
     {
@@ -5950,15 +5860,6 @@
       "guideSha256": "3a945af333036a82ade60a51fc35a1212e3bd13b14c06b6829ae343fb6b3ae4b",
       "status": "accepted",
       "assetId": "forma-original-movements-048-0-2",
-      "reviewNote": "Reviewed hanging bent-knee raise, airborne tuck jump, padded-forearm parallel-bar straight-leg raise, half-kneeling running arm drill, palms-floor kneeling wrist stretch, kneeling hip-flexor lunge, barbell kneeling-jump starting setup, straight-leg quadruped kickback, tall-kneeling bar squat setup and contralateral arm/leg Superman hold."
-    },
-    {
-      "exerciseId": "wger-00f4a2b1-b1ac-49e6-a657-1d27e46522fd",
-      "name": "Kneeling Superman",
-      "equipment": "Bodyweight",
-      "guideSha256": "f92b5dfa192f16beb3a5c8fbedee8bcd0bd6b6de3664fd5a783018ad858351a8",
-      "status": "accepted",
-      "assetId": "forma-original-movements-048-1-2",
       "reviewNote": "Reviewed hanging bent-knee raise, airborne tuck jump, padded-forearm parallel-bar straight-leg raise, half-kneeling running arm drill, palms-floor kneeling wrist stretch, kneeling hip-flexor lunge, barbell kneeling-jump starting setup, straight-leg quadruped kickback, tall-kneeling bar squat setup and contralateral arm/leg Superman hold."
     },
     {
@@ -8410,15 +8311,6 @@
       "reviewNote": "Reviewed supine straight-arm reach-up crunch, rear-foot-elevated hip-flexor stretch, deep-water relaxed recovery bobbing with feet off bottom, neutral single-arm cable row, dumbbell-supported renegade row, standing chest/abdomen conscious breathing, seated rest state, partner medicine-ball stance catch/pass and top-anchored reverse-band bench press/box squat."
     },
     {
-      "exerciseId": "wger-cf434716-f846-46d8-b267-8b33d311d8b5",
-      "name": "Recruitment Pulls",
-      "equipment": "Bodyweight",
-      "guideSha256": "53fb4c19a3cc8c27901c4d3213457606aa413cad626d5ab80e4e3ff26f43c74b",
-      "status": "accepted",
-      "assetId": "forma-original-finish-f-001-1-0",
-      "reviewNote": "One hand grips hangboard edge with working elbow visibly obtuse about130degrees, free arm at side and feet grounded; board contained."
-    },
-    {
       "exerciseId": "db-recumbent-bike",
       "name": "Recumbent Bike",
       "equipment": "Machine",
@@ -9886,30 +9778,12 @@
       "reviewNote": "Reviewed one-arm kettlebell plank-row phase, two-hand head-gripped single-dumbbell front raise, airborne single-leg butt kick, bent-raised-knee single-leg glute bridge, one-leg seated hamstring reach, unilateral sled leg press, single-leg box push-off flight phase, unloaded one-leg RDL hinge, anchored one-arm landmine jammer press, free-hand-behind-back single-arm push-up and fast cone-sprint stepping phase."
     },
     {
-      "exerciseId": "wger-f9880802-e5bd-4143-97f6-d0ee82ba9dd2",
-      "name": "Single-Leg Balance with Eyes Closed",
-      "equipment": "Bodyweight",
-      "guideSha256": "769d78f72118945f5e9d2cf3b7813b1c06bca58f2a8b52bf657fab223b2fda24",
-      "status": "accepted",
-      "assetId": "forma-original-movements-080-0-0",
-      "reviewNote": "Reviewed eyes-closed single-leg balance, bell circle handoff on one leg, dome-up BOSU balance, one-dumbbell single-leg hinge, overhead-band-assisted high-box step, cone-line single-leg hop and lateral cone hop, goblet kettlebell lunge, bent-knee one-leg soft landing, box-assisted stride-jump flight phase and two-leg seated reach."
-    },
-    {
       "exerciseId": "wger-d229de41-3533-489f-8460-08a6e3daa25a",
       "name": "Single-Leg Balance with Kettlebell Circles",
       "equipment": "Kettlebell",
       "guideSha256": "2898a7147171187b09f5442d702c48dabdb2de3757482531806fcb25c4bccbf0",
       "status": "accepted",
       "assetId": "forma-original-movements-080-1-0",
-      "reviewNote": "Reviewed eyes-closed single-leg balance, bell circle handoff on one leg, dome-up BOSU balance, one-dumbbell single-leg hinge, overhead-band-assisted high-box step, cone-line single-leg hop and lateral cone hop, goblet kettlebell lunge, bent-knee one-leg soft landing, box-assisted stride-jump flight phase and two-leg seated reach."
-    },
-    {
-      "exerciseId": "wger-53b8727f-ad5c-402a-83e6-7b8e9c0bd99a",
-      "name": "Single-leg BOSU balance",
-      "equipment": "Bodyweight",
-      "guideSha256": "d536c29387cf463eb2b363dae1c5d3fcb17e837f61c29ad87de88952cb615419",
-      "status": "accepted",
-      "assetId": "forma-original-movements-080-2-0",
       "reviewNote": "Reviewed eyes-closed single-leg balance, bell circle handoff on one leg, dome-up BOSU balance, one-dumbbell single-leg hinge, overhead-band-assisted high-box step, cone-line single-leg hop and lateral cone hop, goblet kettlebell lunge, bent-knee one-leg soft landing, box-assisted stride-jump flight phase and two-leg seated reach."
     },
     {
@@ -11027,15 +10901,6 @@
       "status": "accepted",
       "assetId": "forma-original-corrections-032-0-1",
       "reviewNote": "Reviewed outward forearm inner-biceps curl, vertical neutral-grip paired shoulder press, rear-glute bar wrist curl and bodyweight chair step-up."
-    },
-    {
-      "exerciseId": "wger-af59f161-147a-49ba-85c8-6c9f4e5ffe63",
-      "name": "Standing Pancake",
-      "equipment": "Bodyweight",
-      "guideSha256": "8b8e1fedbf026ec8cc128cfb59862c1b3f26432f290bba629c4b4f53768f857f",
-      "status": "accepted",
-      "assetId": "forma-original-movements-088-1-0",
-      "reviewNote": "Reviewed wide-straddle pancake hinge, hands-behind-head pancake good morning, soft-knee pelvic tilt, extended-arm rope wrist roller, standing lateral crunch, grounded-rear-heel bent-knee soleus stretch, straight-leg hanging toe touch, partner-resisted overhead towel extension, medicine-ball throw windup and airborne star jump."
     },
     {
       "exerciseId": "wger-aa3c2791-74f7-4fed-a812-297ff454e2f9",
@@ -12701,6 +12566,141 @@
       "status": "accepted",
       "assetId": "forma-original-movements-083-1-2",
       "reviewNote": "Carried over on 2026-10-21 from wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-db-crucifix",
+      "name": "Crucifix",
+      "equipment": "Specialty equipment",
+      "guideSha256": "574e8dfe3f8c5bf50c64c79bbef965ffe31dddb907514540c7d6862ecf769662",
+      "status": "accepted",
+      "assetId": "forma-original-movements-020-2-0",
+      "reviewNote": "Carried over on 2026-10-21 from db-crucifix, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-f2733700-aa5d-4df7-bc52-1876ab4fb479",
+      "name": "Axe Hold",
+      "equipment": "Dumbbell",
+      "guideSha256": "f242cb6303cac36aeca04f8ee214f0150b05c0e9a74a60fe887da62cc7068938",
+      "status": "accepted",
+      "assetId": "forma-original-movements-004-2-1",
+      "reviewNote": "Carried over on 2026-10-21 from wger-f2733700-aa5d-4df7-bc52-1876ab4fb479, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-88afb956-8d4a-45b3-8c7c-c23719316bfe",
+      "name": "Incline Static Hold",
+      "equipment": "Dumbbell",
+      "guideSha256": "36d570a9c2b2c0a4c1e474978b72b75c630bb4247b5bff4682d140e12f9fcf03",
+      "status": "accepted",
+      "assetId": "forma-original-movements-043-0-1",
+      "reviewNote": "Carried over on 2026-10-21 from wger-88afb956-8d4a-45b3-8c7c-c23719316bfe, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-8381f40c-3168-4d98-af60-6a89800dd308",
+      "name": "Hercules Pillars",
+      "equipment": "Bodyweight",
+      "guideSha256": "7695381534e40e934f1330f45e8901feacfccbccec4420f13ee985f51270bcb9",
+      "status": "accepted",
+      "assetId": "forma-original-movements-038-0-2",
+      "reviewNote": "Carried over on 2026-10-21 from wger-8381f40c-3168-4d98-af60-6a89800dd308, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-db-balance-board",
+      "name": "Balance Board",
+      "equipment": "Specialty equipment",
+      "guideSha256": "0d0c0a603521c0123b0ca93b293cd8dee06bb80184419af88a79b0b0b7274a59",
+      "status": "accepted",
+      "assetId": "forma-original-movements-005-1-1",
+      "reviewNote": "Carried over on 2026-10-21 from db-balance-board, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-db-downward-facing-balance",
+      "name": "Downward Facing Balance",
+      "equipment": "Exercise ball",
+      "guideSha256": "7c90495b59d0279e8c1cf232ca75fca920a11598426b03a3a9453fca15ca215f",
+      "status": "accepted",
+      "assetId": "forma-original-movements-024-1-1",
+      "reviewNote": "Carried over on 2026-10-21 from db-downward-facing-balance, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-00eae665-ff78-4373-9c43-f44a4a1b43e0",
+      "name": "Frog stand balance",
+      "equipment": "Bodyweight",
+      "guideSha256": "74c671570bd13f0c93a89dae587947ceefb33210ad93c52a6362bae229d19fe3",
+      "status": "accepted",
+      "assetId": "forma-original-authored-c-001-retry-0-0",
+      "reviewNote": "Carried over on 2026-10-21 from wger-00eae665-ff78-4373-9c43-f44a4a1b43e0, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-53b8727f-ad5c-402a-83e6-7b8e9c0bd99a",
+      "name": "Single-leg BOSU balance",
+      "equipment": "Bodyweight",
+      "guideSha256": "d536c29387cf463eb2b363dae1c5d3fcb17e837f61c29ad87de88952cb615419",
+      "status": "accepted",
+      "assetId": "forma-original-movements-080-2-0",
+      "reviewNote": "Carried over on 2026-10-21 from wger-53b8727f-ad5c-402a-83e6-7b8e9c0bd99a, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-f9880802-e5bd-4143-97f6-d0ee82ba9dd2",
+      "name": "Single-Leg Balance with Eyes Closed",
+      "equipment": "Bodyweight",
+      "guideSha256": "769d78f72118945f5e9d2cf3b7813b1c06bca58f2a8b52bf657fab223b2fda24",
+      "status": "accepted",
+      "assetId": "forma-original-movements-080-0-0",
+      "reviewNote": "Carried over on 2026-10-21 from wger-f9880802-e5bd-4143-97f6-d0ee82ba9dd2, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-00f4a2b1-b1ac-49e6-a657-1d27e46522fd",
+      "name": "Kneeling Superman",
+      "equipment": "Bodyweight",
+      "guideSha256": "f92b5dfa192f16beb3a5c8fbedee8bcd0bd6b6de3664fd5a783018ad858351a8",
+      "status": "accepted",
+      "assetId": "forma-original-movements-048-1-2",
+      "reviewNote": "Carried over on 2026-10-21 from wger-00f4a2b1-b1ac-49e6-a657-1d27e46522fd, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-541941e0-0fa5-4474-a382-9baf04948f8d",
+      "name": "Hip Raise, Lying",
+      "equipment": "Bodyweight",
+      "guideSha256": "cf6be61624960b8d4b366b2fdbce50e9b07c9a9270348481d37d03ff7e597c9b",
+      "status": "accepted",
+      "assetId": "forma-original-movements-040-0-0",
+      "reviewNote": "Carried over on 2026-10-21 from wger-541941e0-0fa5-4474-a382-9baf04948f8d, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-45d89ca5-f5c7-4e56-9833-fd160cd2666d",
+      "name": "Dynamic side hold",
+      "equipment": "Kettlebell",
+      "guideSha256": "3fd0097944cfd5220b6856d9b8c33b41e1a9c14bcb97c5f4c0c3f74244424247",
+      "status": "accepted",
+      "assetId": "forma-original-movements-029-2-2",
+      "reviewNote": "Carried over on 2026-10-21 from wger-45d89ca5-f5c7-4e56-9833-fd160cd2666d, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-af59f161-147a-49ba-85c8-6c9f4e5ffe63",
+      "name": "Standing Pancake",
+      "equipment": "Bodyweight",
+      "guideSha256": "8b8e1fedbf026ec8cc128cfb59862c1b3f26432f290bba629c4b4f53768f857f",
+      "status": "accepted",
+      "assetId": "forma-original-movements-088-1-0",
+      "reviewNote": "Carried over on 2026-10-21 from wger-af59f161-147a-49ba-85c8-6c9f4e5ffe63, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-cf434716-f846-46d8-b267-8b33d311d8b5",
+      "name": "Recruitment Pulls",
+      "equipment": "Bodyweight",
+      "guideSha256": "53fb4c19a3cc8c27901c4d3213457606aa413cad626d5ab80e4e3ff26f43c74b",
+      "status": "accepted",
+      "assetId": "forma-original-finish-f-001-1-0",
+      "reviewNote": "Carried over on 2026-10-21 from wger-cf434716-f846-46d8-b267-8b33d311d8b5, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-f0823bb5-3f18-48d4-98de-cbe38f9fd8ff",
+      "name": "Double-Leg Abdominal Press",
+      "equipment": "Gym mat + none (bodyweight exercise)",
+      "guideSha256": "08dc17fe53f2a47f256a6021c0c6f5fac1e8e3ecc2c36f9baaea7c6fae8e75e1",
+      "status": "accepted",
+      "assetId": "forma-original-movements-024-0-1",
+      "reviewNote": "Carried over on 2026-10-21 from wger-f0823bb5-3f18-48d4-98de-cbe38f9fd8ff, accepted for the same movement and guide; the timed identity changes only how sets are measured."
     }
   ]
 }
