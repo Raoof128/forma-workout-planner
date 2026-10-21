@@ -222,7 +222,8 @@ test("matched exercises show a looping animated demonstration that can pause", a
     "src",
     "/exercise-animations/barbell-bench-press.svg",
   );
-  expect(await animation.evaluate((img) => img.naturalWidth)).toBe(960);
+  // Retries until the SVG has decoded; a single read can see 0 under load.
+  await expect(animation).toHaveJSProperty("naturalWidth", 960);
   // Keyboard activation: WebKit does not focus buttons on mouse click.
   await dialog
     .getByRole("button", { name: "Pause demonstration of Barbell bench press" })
