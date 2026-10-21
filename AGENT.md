@@ -65,6 +65,28 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   split the account suites into their own job rather than raising the limit
   further. Treat a cancelled step as not passed.
 
+### Raouf: 2026-10-21 — Card animations release
+
+- Production runs `7079e21` (version `5fa82b05-…`), staging `9814b283-…`.
+  This is ahead of PR #19's `main` merge: merge #19, retarget #20 to `main`,
+  then merge #20 so `main` matches production.
+
+### Raouf: 2026-10-21 — Animations in the cards
+
+- `ExerciseAnimation` reads `src/catalog/animations.json` (canonical guide ID
+  → `src`, `still`, `seconds`, `description`) built by
+  `python3 scripts/exercise-svg/build.py`, which resolves exact FORMA names
+  through `src/data.js` and fails on an ambiguous or missing name. Never
+  hand-edit the manifest or `public/exercise-animations/`.
+- Animations load through `<img>` (CSP has `object-src 'none'` and
+  `frame-ancestors 'none'`, so `<object>`/`<iframe>` would not work); pausing
+  swaps to the `-still.svg`. Keep the pause control: the loops exceed 5 s.
+- Card media order is fixed by the owner: cover illustration
+  (`ExerciseMedia`), then the video (`ExerciseDemo`) if any, then
+  `ExerciseAnimation`. Keep all three together at the top of the card.
+- Exercises without an animation simply render nothing; e.g. the starter
+  "Leg day" template opens on the barbell back squat, which has none.
+
 ### Raouf: 2026-10-21 — Preview and demo production release
 
 - Production runs `846919b` (version `c0778873-…`), staging `27a43e9`

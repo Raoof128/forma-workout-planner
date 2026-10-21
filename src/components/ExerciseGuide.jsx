@@ -4,6 +4,7 @@ import { metricFields } from "../exerciseMetrics.js";
 import { guideExercise } from "../data.js";
 import ExerciseMedia from "./ExerciseMedia";
 import ExerciseDemo from "./ExerciseDemo";
+import ExerciseAnimation from "./ExerciseAnimation";
 import GuideInstructions from "./GuideInstructions";
 export default function ExerciseGuide({ exercise, onClose }) {
   const guide = guideExercise(exercise.id);
@@ -11,11 +12,12 @@ export default function ExerciseGuide({ exercise, onClose }) {
     <Modal title={exercise.name} onClose={onClose}>
       <div className="modal-content">
         <ExerciseMedia id={guide.id} name={guide.name} />
+        <ExerciseDemo id={guide.id} name={guide.name} />
+        <ExerciseAnimation id={guide.id} name={exercise.name} />
         <div className="tags">
           <span>{guide.muscle}</span>
           <span>{guide.equipment}</span>
         </div>
-        <ExerciseDemo id={guide.id} name={guide.name} />
         <h3>How to perform</h3>
         <GuideInstructions
           key={guide.id}
