@@ -58,6 +58,169 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-22 — Wait for images in browser assertions
+
+- Check a loaded image with a retrying assertion
+  (`await expect(img).toHaveJSProperty("naturalWidth", n)`), never a one-off
+  `evaluate`: under CI load the read can land before the image decodes.
+- A Verify run cancelled at the job limit is not a failure; check the limit
+  in the PR's base branch before investigating.
+
+### Raouf: 2026-10-21 — Switching a routine hold to its timed version
+
+- **Supersedes** the line below that a routine hold keeps logging reps "until
+  the member replaces it": the routine editor now offers **Use the timed
+  version** under such an entry, and the workout card's ⋯ menu offers the
+  same. The rule is `timedVersion` in `src/timedHolds.js`: a saved ID that
+  logs reps (`tracksLoadReps` on `exerciseById`) whose canonical row
+  (`canonicalId`) has `metric: "duration"`. Take units from `exerciseById`,
+  never from `guideExercise`.
+- It only runs when the member presses it. `toTimedVersion` keeps sets, load,
+  RPE, rest, note, superset and position, sets `reps: 1`, `repsMax: null` and
+  `durationSeconds` (60 by default, editable before saving), clears
+  `perSide` (it only applies to reps), and writes the
+  old key into `entryId` so `entryKey` and the editor's `repInputs` stay put.
+  History and the active workout are never rewritten; saved sets keep the rep
+  ID and their reps.
+- Excluded on purpose: the legacy `plank` (10-second reps and its own timer)
+  and seconds-and-metres aliases (Battle Ropes, Rope Jumping), which already
+  log time and would lose their distance.
+- The workout card goes through `replaceEntry` and `setsLostByReplacing`, so
+  completed rep sets are dropped only after the confirmation, which now reads
+  "Log L-sit in seconds?" instead of "Replace L-sit with L-sit?".
+  `replaceEntry` now keeps `note`, `rpe` and each set's `weight` whenever the
+  replacement has the same canonical ID (a 20 kg Plate Pinch stays 20 kg);
+  other replacements still start from the new exercise's defaults.
+- `tests/timed-hold-switch.spec.js` uses relative URLs.
+- **Verification:** unit 116/116 (6 new); the new spec 4/4 in Chromium and
+  WebKit. Development suite on a private port at load 40-150: 256/320 first
+  pass, almost all timeouts; the 64 failures rerun serially 58/64, and the
+  six left (WebKit focus cases in `keyboard-focus`, `regressions:200/229`,
+  `ui-coverage-gaps:333/379`, `exercise-media:37`) fail the same way on
+  `9b0c216`. Production guest build: 124/160; 31 are Firefox failing to
+  launch in this sandbox, the other 5 (`routine-programming:4`,
+  `routine-archive:4`, `routine-drag:321`) passed 8/8 serially. Lint,
+  Prettier, types, docs and worker 26/26 pass. Docker was off, so the
+  PostgreSQL server and account suites did not run locally; CI runs them.
+  A vite build from a symlinked mirror fails (`index.html` resolves outside
+  the root): build in the worktree and link `dist` instead.
+
+### Raouf: 2026-10-21 — Hold metric migration, second review
+
+- Fifteen more holds, balances and isometrics have timed identities by the
+  route above: Crucifix, Axe Hold, Incline Static Hold, Hercules Pillars,
+  Dynamic side hold (all `load`), Hip Raise, Lying (`added`), Balance Board,
+  Downward Facing Balance, Frog stand balance, Single-leg BOSU balance,
+  Single-Leg Balance with Eyes Closed, Kneeling Superman, Standing Pancake, Recruitment Pulls and Double-Leg Abdominal Press. The
+  `duration` metric keeps a weight column, so a loaded hold logs seconds and
+  kg. 213 exercises are now timed; 200 show the hold timer.
+- Six stay in reps under `excludedMeasurementCorrections`: Seated Knee
+  Extension with Overpressure, Chin tuck and Single-Leg Soft-Landing Holds
+  (their guides repeat a short hold for reps), Back bridge (the guide pushes
+  up and lowers, never holds), Estiramiento de brazos y cuello (the guide
+  describes no position, so it needs a guide repair before any measure
+  change) and "Rest (for timed workouts)" (a placeholder; keeping,
+  timing or removing it is the owner's call).
+- A timed identity of a one-side-at-a-time hold needs the saved ID's side
+  copied to `forma-<saved ID>` in `src/catalog/unilateral.json`: `withSide`
+  looks up the canonical ID, which is the timed ID itself. A reviewed guide
+  repair (`docs/research/reviewed-guide-repairs.json`) follows the alias
+  automatically (Frog stand balance).
+- `docs/research/exercise-logging-review.json` is written as
+  `JSON.stringify(value, null, 1)` with sorted keys and no final newline, and
+  `docs/research/original-art/registry.json` as `JSON.stringify(value, null, 2)`
+  plus a newline. Running Prettier over the registry reflows 9,000 lines.
+- Same deploy order and no-rollback rule as above.
+- **Verification:** unit 111/111; `unit/hold-metric-migration.test.js` 5/5,
+  and its identity and timed-set tests fail on the base catalogue. The hold
+  spec passes 6/6 in Chromium and WebKit, including the new loaded-hold case.
+  Development suite on a private port at load average ~125: 286/318 first
+  pass. 26 of the 32 failures passed on a one-worker rerun, and the six left
+  (WebKit keyboard focus) fail the same way on `feat/hold-metric-migration`.
+  Production 129/129 on Chromium and WebKit, desktop and mobile; Firefox
+  does not launch in this sandbox. Lint, Prettier, types, docs, build,
+  server build, worker 26/26 and operations 14/14 pass. The equipment audit
+  is clean, artwork coverage is 1,411/1,411, both builders rebuild byte for
+  byte, and the compiled API accepts the timed IDs and rejects rep sets on
+  them. Docker was off, so the PostgreSQL server and account suites did not
+  run locally. An independent review of the 21 guide calls moved Back
+  bridge to reps and tightened three reasons.
+
+### Raouf: 2026-10-21 — Hold metric migration
+
+- **Supersedes** the line below that the holds stored as reps need a reviewed
+  metric migration. Fifteen of them now have timed identities,
+  `forma-<saved ID>` (`metric: "duration"`), built by `npm run catalog:curate`
+  from reviewed `measurementCorrections` in
+  `docs/research/exercise-quality-review.json`, the route the five 14 October
+  timed identities took. Each saved ID is a curation alias that keeps
+  `load_reps` in `exerciseById`. Never put them in
+  `src/catalog/programming-aliases.json` (it rewrites saved IDs, and the units
+  differ), and never give a rep entry the hold timer.
+- Arch Hang stays in reps: its guide says "Hold it for time/reps". The reason
+  is under `excludedMeasurementCorrections`.
+- A timed identity also needs its load decision moved to the new ID in
+  `src/catalog/logging-review.json` and its artwork entry carried to the new
+  ID in `docs/research/original-art/registry.json` (same `guideSha256`, as
+  `instructionId` keeps the guide), then
+  `node scripts/build-exercise-media.mjs`. `unit/hold-metric-migration.test.js`
+  pins all of it. Both builders reproduce the committed files byte for byte,
+  so run them rather than editing their output.
+- A routine that already lists one of these holds keeps logging reps until the
+  member replaces it. In the routine editor, removing and re-adding the hold
+  in one edit restores the saved entry (the cached-alias rule), so switching
+  takes a save in between.
+- `curation.json` and `machine-exercises.json` ship in the API image and the
+  API rejects unknown exercise IDs: deploy the API before the frontend in each
+  environment (staging API, staging frontend, production API, production
+  frontend). `src/storage.js` and `src/exerciseMetrics.js` are unchanged.
+  Once anyone saves a timed hold, do not roll back: reads re-validate stored
+  workspaces (`asAcknowledgement` in `server/workspace.ts`), so an older API
+  cannot load that workspace and an older frontend sends guest data to
+  recovery. Fix forward.
+- Eleven dev specs hard-code `127.0.0.1:5173` or `localhost:5173`. When another
+  session holds that port, run a scratch copy of `tests/` with only the port
+  rewritten (symlink `src`, `node_modules` and `package.json` beside it) on a
+  private port rather than sharing its server.
+  `tests/hold-metric-migration.spec.js` uses relative URLs.
+- **Verification:** unit 110/110; the new spec 4/4 in Chromium and WebKit
+  (red on the base catalogue first); development 309/316 and production
+  127/129 on private ports. Every failure also fails with the base catalogue
+  (six WebKit keyboard-focus cases, the `routine-library.spec.js:78` drag
+  timing) or passed on rerun (concurrent tabs). The PostgreSQL server and
+  account suites were not run locally.
+
+### Raouf: 2026-10-21 — No-load columns and the hold timer
+
+- Load display is UI-only: `src/exerciseLoad.js` reads
+  `src/catalog/logging-review.json` (`load` / `added` / `none`, plus
+  `noTimer`). Keep it out of `src/exerciseMetrics.js` and `src/storage.js`:
+  the API imports those (`metricFields`, `tracksLoadReps`,
+  `validMeasurement`) and `ops/Dockerfile` copies an explicit file list, so a
+  change there needs an API redeploy. Sets still store `weight: 0`.
+- `unit/exercise-load.test.js` fails while any selectable exercise is
+  unreviewed. A catalogue import must add each new ID to exactly one class,
+  and to `noTimer` if it is a rep-prescribed drill stored in seconds. IDs
+  resolve through `canonicalId`, so an alias (`plank` → `db-plank`) follows
+  its target's class.
+- A `none` exercise shows its weight column again when any set has weight
+  above 0. Keep that: it stops older logs disappearing.
+- The hold timer is component state in `Workout.jsx`, not persisted, so the
+  workspace schema is unchanged. It is a deadline (`endsAt`) on the existing
+  250 ms tick, holds a screen wake lock (requested again on
+  `visibilitychange`), and completes through `useEffectEvent` guarded by
+  `finishedHold` so a set logs once. It writes through `holdUnit`:
+  `durationSeconds`, or `reps` at 10 s each for the legacy `plank`, whose
+  units are preserved.
+- Do not give the holds stored as reps (Hollow Hold, L-sits, levers,
+  Handstand, Deadhang) a timer by reading reps as seconds; that needs a
+  reviewed metric migration.
+- Drag timing is flaky under load: `routine-drag.spec.js:321` and `:77` in
+  CI (local reruns 30/30), and `routine-library.spec.js:78` in
+  production Chromium mobile, which fails 2 of 6 runs on `841e518` as well.
+  Rerun a failed job once before investigating, and never merge on a red,
+  pending or cancelled run.
+
 ### Raouf: 2026-10-21 — Drag tests reliable under parallel load
 
 - **Scope:** CI reruns of PRs #19 and #20 and parallel local runs flaked
@@ -109,6 +272,28 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   suites run sequentially (~23 + 6 + 13 + 4 min). If it times out again,
   split the account suites into their own job rather than raising the limit
   further. Treat a cancelled step as not passed.
+
+### Raouf: 2026-10-21 — Card animations release
+
+- Production runs `7079e21` (version `5fa82b05-…`), staging `9814b283-…`.
+  This is ahead of PR #19's `main` merge: merge #19, retarget #20 to `main`,
+  then merge #20 so `main` matches production.
+
+### Raouf: 2026-10-21 — Animations in the cards
+
+- `ExerciseAnimation` reads `src/catalog/animations.json` (canonical guide ID
+  → `src`, `still`, `seconds`, `description`) built by
+  `python3 scripts/exercise-svg/build.py`, which resolves exact FORMA names
+  through `src/data.js` and fails on an ambiguous or missing name. Never
+  hand-edit the manifest or `public/exercise-animations/`.
+- Animations load through `<img>` (CSP has `object-src 'none'` and
+  `frame-ancestors 'none'`, so `<object>`/`<iframe>` would not work); pausing
+  swaps to the `-still.svg`. Keep the pause control: the loops exceed 5 s.
+- Card media order is fixed by the owner: cover illustration
+  (`ExerciseMedia`), then the video (`ExerciseDemo`) if any, then
+  `ExerciseAnimation`. Keep all three together at the top of the card.
+- Exercises without an animation simply render nothing; e.g. the starter
+  "Leg day" template opens on the barbell back squat, which has none.
 
 ### Raouf: 2026-10-21 — Preview and demo production release
 

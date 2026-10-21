@@ -1368,6 +1368,10 @@ input[type="checkbox"] {
 .prescription-field > span {
   display: none;
 }
+.prescription-empty {
+  color: var(--muted);
+  text-align: center;
+}
 .reorder-actions {
   display: flex;
   gap: 4px;
@@ -1638,6 +1642,16 @@ input[type="checkbox"] {
 .prescription small {
   font-size: 11px;
   color: var(--muted);
+}
+.timed-switch {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 6px;
+}
+.timed-switch .text-button {
+  text-align: left;
+  text-decoration: underline;
 }
 
 /* Exercise library */
@@ -1993,6 +2007,44 @@ input[type="checkbox"] {
   border-color: #b6c87c;
   background: var(--lime-soft);
   cursor: default;
+}
+.exercise-animation {
+  margin: 16px 0 0;
+}
+.exercise-animation img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+.exercise-animation-toggle {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.exercise-animation-toggle:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+.exercise-animation figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
 }
 .exercise-demo {
   margin: 16px 0 0;
@@ -3216,6 +3268,9 @@ input[type="checkbox"] {
     color: var(--muted);
     font-size: 11px;
   }
+  .prescription-empty {
+    display: none;
+  }
   .prescription.labels {
     display: none;
   }
@@ -3510,6 +3565,72 @@ input[type="checkbox"] {
     36px minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(45px, 0.7fr)
     48px;
 }
+/* Exercises with no external load log one measure: reps or time. */
+.set-row.set-row-single {
+  grid-template-columns: 36px minmax(0, 2fr) minmax(45px, 0.7fr) 48px;
+}
+/* Settable countdown for timed sets (planks and other holds). */
+.hold-timer {
+  margin: 0 0 14px;
+  padding: 12px 14px 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--lime-soft);
+}
+.hold-timer-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+}
+.hold-timer-value {
+  min-width: 4.2ch;
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.hold-timer.is-active .hold-timer-value {
+  font-size: 44px;
+}
+.hold-timer-adjust {
+  display: flex;
+  gap: 6px;
+}
+.hold-timer-adjust .icon-button {
+  width: auto;
+  min-width: 44px;
+  min-height: 40px;
+  padding: 0 10px;
+  font-weight: 700;
+  background: var(--surface);
+}
+.hold-timer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-left: auto;
+}
+.hold-timer-actions .button {
+  min-height: 40px;
+}
+.hold-timer-track {
+  height: 6px;
+  margin: 10px 0 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #fff;
+}
+.hold-timer-track span {
+  display: block;
+  height: 100%;
+  background: var(--ink);
+  transform-origin: left center;
+}
+.hold-timer-note {
+  margin: 0;
+}
 .set-actions {
   display: flex;
   gap: 10px;
@@ -3523,6 +3644,16 @@ input[type="checkbox"] {
   margin: 0 0 14px;
 }
 @media (max-width: 540px) {
+  .set-row.set-row-single {
+    grid-template-columns: 24px minmax(0, 2fr) minmax(40px, 0.7fr) 44px;
+  }
+  .hold-timer-actions {
+    margin-left: 0;
+    width: 100%;
+  }
+  .hold-timer-actions .button {
+    flex: 1 1 auto;
+  }
   .set-row.set-row-sides {
     grid-template-columns:
       24px minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(36px, 0.6fr)

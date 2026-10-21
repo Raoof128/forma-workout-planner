@@ -4,6 +4,210 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-22 — CI fixes across the open PR stack
+
+- `tests/routine-preview.spec.js` now waits for the animation SVG to decode
+  (`toHaveJSProperty("naturalWidth", 960)`) instead of reading the width once;
+  it failed on #21 and #24 under CI load. Fixed on `feat/exercise-animations`
+  (`ceea460`, 10/10 in Chromium and WebKit) and merged forward through #21–#24.
+- PR #19 merged into `main` (`c120eda`), bringing the 70-minute Verify limit;
+  PR #20 retargeted to `main`. PR #25 had been cancelled at `main`'s old
+  45-minute limit, not failed. #20's earlier failure was a WebKit focus flake
+  (`legal.spec.js:111`) and #23's the drag flake that #25 fixes.
+
+### Raouf: 2026-10-21 — Switch a routine hold to its timed version
+
+- **What changed:** a routine that still counts a hold in reps (Hollow Hold,
+  the L-sits, levers, Deadhang, Wall-sit, Parallel Bar Hold, Plate Pinch and
+  the other timed aliases) shows **Use the timed version** under that hold in
+  the routine editor. Pressing it keeps the hold's sets, load, RPE, rest,
+  note, superset and place, and gives it a 60-second target the member can
+  change before saving; workouts started from the routine then use the hold
+  timer. In a running workout the hold's ⋯ menu has the same option, which
+  asks first if it would discard completed sets and keeps the note, RPE and
+  each set's load.
+  The confirmation no longer reads "Replace L-sit with L-sit?".
+- **Saved data:** nothing changes until the member presses the button and
+  saves. Past workouts keep the rep ID and their reps. The switched entry
+  keeps its old ID as `entryId`, which the schema already allows; no schema,
+  validator or API change, so this needs no API deploy beyond the hold
+  migration it builds on.
+- **Not offered:** the legacy plank (10-second reps with its own timer) and
+  seconds-and-metres exercises such as Battle Ropes, which already log time.
+- **Files:** new `src/timedHolds.js`; `src/components/RoutinePrescription.jsx`,
+  `RoutinePrescriptions.jsx`, `Routines.jsx`, `Workout.jsx`;
+  `src/workoutSession.js` (`replaceEntry` keeps note, RPE and set load for
+  the same movement); `src/styles.css`; `docs/user-guide.md`,
+  `docs/research/exercise-logging-review.md`; new
+  `unit/timed-hold-switch.test.js` and `tests/timed-hold-switch.spec.js`.
+- **Verification:** unit 116/116 with 6 new tests (the routine switch keeps
+  every field and its key and validates, history is untouched, a weighted
+  hold keeps its load on the workout card). New browser spec 4/4 in Chromium
+  and WebKit. Under heavy machine load the full development suite passed
+  256/320 at first; rerun serially, 58 of the 64 failures passed and the
+  remaining six WebKit keyboard-focus cases fail identically on the base
+  commit. Production guest build: 124/160, with 31 Firefox launch failures
+  (Firefox does not start in this sandbox) and 5 timeouts that passed 8/8
+  when rerun. Lint, Prettier, types, docs and worker 26/26 pass. PostgreSQL
+  server and account suites not run locally (Docker off); CI runs them.
+  Not deployed.
+
+### Raouf: 2026-10-21 — More holds and balances log seconds
+
+- **What changed:** 15 more holds, balances and isometrics that were counted
+  in reps now log seconds, with the hold timer, when they are added to a
+  routine or workout. Loaded holds keep **WEIGHT (KG)** beside the seconds:
+  Crucifix, Axe Hold, Incline Static Hold, Hercules Pillars and Dynamic side
+  hold. Hip Raise, Lying keeps **ADDED (KG)**. No load: Balance Board,
+  Downward Facing Balance, Frog stand balance, Single-leg BOSU balance,
+  Single-Leg Balance with Eyes Closed, Kneeling Superman, Standing Pancake,
+  Recruitment Pulls and Double-Leg Abdominal Press. The timer is now on 200
+  of the 213 timed exercises.
+- **Kept in reps after reading the guide:** Seated Knee Extension with
+  Overpressure, Chin tuck and Single-Leg Soft-Landing Holds repeat a short
+  hold for reps; Back bridge pushes up and lowers without a hold;
+  Estiramiento de brazos y cuello describes no position to time; "Rest (for timed workouts)" is a placeholder, not a hold.
+- **Saved data:** unchanged, as in the first review: each hold gets
+  `forma-<saved ID>`, and the saved ID stays an alias in reps. The five
+  one-side-at-a-time holds keep their side under the new ID.
+- **Deploying:** API before frontend in each environment, staging first; do
+  not roll back once a timed hold is saved. Not deployed.
+- **Files:** `docs/research/exercise-quality-review.json` (15 reviewed
+  `measurementCorrections`, 6 exclusions); regenerated
+  `src/catalog/curation.json`, `src/catalog/machine-exercises.json`,
+  `docs/research/catalog-quality-summary.json`, `src/catalog/media.json` and
+  `docs/research/original-art/coverage.json`; `src/catalog/logging-review.json`;
+  `src/catalog/unilateral.json`; `docs/research/original-art/registry.json`;
+  `docs/research/exercise-logging-review.{md,json}`,
+  `docs/research/catalog-quality.md`, `docs/user-guide.md`;
+  `unit/hold-metric-migration.test.js` and
+  `tests/hold-metric-migration.spec.js`.
+- **Verification:** unit 111/111, including the extended
+  `unit/hold-metric-migration.test.js` (5 tests; the identity and timed-set
+  tests fail on the base catalogue). The hold browser spec passes 6/6 in
+  Chromium and WebKit, including a new loaded-hold case (weight column,
+  timer, seconds). Development suite on a private port at load average ~125:
+  286/318 on the first pass. 26 of the 32 failures passed on a one-worker
+  rerun; the six left are WebKit keyboard-focus cases that fail the same way
+  on `feat/hold-metric-migration`. Production suite on a guest build: 129/129
+  on Chromium and WebKit, desktop and mobile; Firefox does not launch in this
+  sandbox. Lint, Prettier, types, docs, build, server build, worker 26/26 and
+  operations 14/14 pass. The equipment audit is clean, artwork coverage is
+  1,411/1,411, both catalogue builders rebuild byte for byte, and the
+  compiled API accepts the timed IDs and rejects rep sets on them. The
+  PostgreSQL server and account suites were not run locally (Docker off); CI
+  runs them. An independent review of the 21 guide calls moved Back bridge to
+  reps and tightened three reasons.
+- **Follow-ups:** a guide repair for Estiramiento de brazos y cuello; a
+  decision on the rest placeholder; Fast Skipping, Flutter Kicks, Mountain
+  Climbers, Jumping Jacks, Foam Roller Anterior tibialis and 90/90 Breathing
+  are timed intervals stored as reps, not holds, and were not reviewed here.
+
+### Raouf: 2026-10-21 — Calisthenics holds log seconds with the hold timer
+
+- **What changed:** 15 holds that were counted in reps now log seconds, with
+  the hold timer, when they are added to a routine or workout: Hollow Hold;
+  L-sit and its foot-supported, straddle and tuck versions; Front Lever and
+  Front lever tuck; Back Lever; Planche Lean Hold; elbow lever; Ring Support
+  Hold; Handstand; Deadhang (keeps **ADDED (KG)**); Sloper hanging; Sphinx.
+  Each guide was checked first. Arch Hang stays in reps because its guide
+  says "Hold it for time/reps". The timer is now on 185 of the 198 timed
+  exercises.
+- **Saved data:** each hold gets a new timed ID, `forma-<saved ID>`, with the
+  same name, guide, licence and illustration, and the saved ID becomes an
+  alias that keeps its rep units (the route the 14 October timed identities
+  took). Sets, routines and backups saved in reps validate, show ("12 reps")
+  and count toward volume as before, and a routine that lists one of these
+  holds keeps counting reps until the hold is replaced. No schema, validator
+  or stored-data change. Options weighed are in
+  [the logging review](docs/research/exercise-logging-review.md#hold-metric-migration).
+- **Deploying:** the API bundles the catalogue and rejects exercise IDs it
+  does not know, so deploy the API before the frontend in each environment,
+  staging first. Once anyone has saved a timed hold, fix forward rather than
+  rolling back: an older API or frontend cannot read that data. Not deployed.
+- **Files:** `docs/research/exercise-quality-review.json` (15 reviewed
+  `measurementCorrections`; Arch Hang under `excludedMeasurementCorrections`);
+  regenerated `src/catalog/curation.json`, `src/catalog/machine-exercises.json`
+  and `docs/research/catalog-quality-summary.json`;
+  `src/catalog/logging-review.json`; `docs/research/original-art/registry.json`
+  with regenerated `src/catalog/media.json` and `coverage.json` (assets
+  unchanged); `docs/research/exercise-logging-review.{md,json}`,
+  `docs/research/catalog-quality.md`, `docs/user-guide.md`; new
+  `unit/hold-metric-migration.test.js` and `tests/hold-metric-migration.spec.js`;
+  a comment on `guideExercise` in `src/data.js`.
+- **Verification:** unit 110/110, including 4 new tests: the identity and
+  timed-set tests failed on the base catalogue first, and the saved-reps test
+  fails if any hold gains a programming alias. The new browser spec passes
+  4/4 in Chromium and WebKit; it failed on the base catalogue first. Full
+  development suite, Chromium and WebKit on a private port: 309/316. All
+  seven failures were in WebKit. The concurrent-tabs case passed on rerun,
+  and six keyboard-focus cases fail the same way with the base catalogue.
+  Production suite on a guest build (Chromium and WebKit, desktop and mobile):
+  127/129. Both failures were the drag-timing test
+  `routine-library.spec.js:78`, which failed 2 of 6 runs on the base
+  catalogue and passed 6/6 on this branch at the same load. Lint, Prettier,
+  types, docs, build, server build, worker 26/26 and operations 14/14 pass.
+  The equipment audit is clean, artwork coverage is 1,411/1,411, both
+  catalogue builders rebuild byte for byte, and the compiled API validates
+  the new IDs. Firefox does not launch in this sandbox, and the PostgreSQL
+  server and account suites were not run locally: Docker was off and another
+  session was loading the machine. CI runs them. After the review fixes
+  (tests, docs and a comment), the unit suite and the new spec were run
+  again.
+- **Follow-ups:** a one-tap "switch to the timed version" for routines that
+  list a migrated hold (it would also cover the 14 October timed identities);
+  about 20 other holds flagged in `docs/research/exercise-logging-review.json`
+  (Crucifix, Axe Hold, Incline Static Hold, balance holds, Back bridge and
+  others) are still stored as reps and need the same review.
+
+### Raouf: 2026-10-21 — No weight column for no-load exercises, and a hold timer
+
+- **Load review:** all 1,411 selectable exercises were read by name,
+  equipment and guide and classified (`src/catalog/logging-review.json`;
+  method, counts and flags in `docs/research/exercise-logging-review.md`).
+  787 log a kg load; 57 are bodyweight with an optional added load and label
+  the column **ADDED (KG)**; 567 carry no external load (the ab roller, the
+  plank, most push-up variations, stretches, band work) and no longer show a
+  weight column in the workout, the history editor, the routine editor or the
+  guide. A set that already carries weight keeps the column, so older logs
+  stay visible. Timed exercises no longer show a "1 reps" target, and history
+  drops "0 kg" for no-load sets.
+- **Hold timer:** 170 of the 183 exercises measured in seconds (13
+  rep-prescribed drills are excluded) show a settable countdown at the top
+  of their card: −5/+5 s, Start, Pause/Resume, End set (logs the time held)
+  and Cancel (logs nothing). At zero it logs and completes the set and starts
+  the programmed rest, as ticking it would. While running it holds a screen
+  wake lock (requested again when the page is shown) and it ends with the
+  existing cue: a beep unless muted, and a vibration where supported. The
+  starter Forearm plank keeps its units: 10-second steps, one rep for every
+  full 10 seconds, at most 100 reps, and no timer while it logs each side.
+- **Display only:** stored sets keep `weight` (0 when nothing is added), so
+  `src/exerciseMetrics.js`, `src/storage.js`, the API and saved data are
+  unchanged and no API deploy is needed. The timer is local state and is not
+  saved.
+- **Docs read:** MDN Screen Wake Lock API (updated 11 Sep 2026), Page
+  Visibility API, Vibration API (not available on iOS Safari), WCAG 2.2
+  SC 2.2.1 (a timer the member starts and can pause is not a time limit).
+- **Files:** `src/exerciseLoad.js`, `src/catalog/logging-review.json`,
+  `src/components/HoldTimer.jsx`, `unit/exercise-load.test.js`,
+  `tests/no-load-hold-timer.spec.js` and
+  `docs/research/exercise-logging-review.{md,json}` (new); `Workout.jsx`,
+  `RoutinePrescription.jsx`, `HistoryEditor.jsx`, `Insights.jsx`,
+  `ExerciseGuide.jsx`, `src/styles.css`, the user guide, README and AGENT.md.
+- **Verification:** unit 106/106; the new spec 10/10 in Chromium and WebKit;
+  full Chromium suite 155/155, then the workout, UI and workflow specs 26/26
+  after the legacy-plank timer; production build in Chromium and WebKit,
+  desktop and mobile, 126/129. Of the three failures, the concurrent-tabs
+  test passed 3/3 on rerun, and the library drag test
+  (`routine-library.spec.js:78`) is timing-flaky in Chromium mobile on the
+  base commit too (2 of 6 runs fail there; its rows render unchanged). Lint,
+  Prettier, types, docs and build pass; checked by hand at 375 px. Not
+  deployed.
+- **Follow-ups:** about 15 genuine holds are stored as reps (Hollow Hold,
+  L-sits, Front and Back Lever, Handstand, Deadhang), so they get no timer
+  until a reviewed metric migration; 75 equipment labels are misleading
+  (mostly machine or cable lifts labelled Bodyweight).
+
 ### Raouf: 2026-10-21 — Routine-editor drag tests reliable under parallel load
 
 - **Fix:** routine rows no longer slide back into place after you close the
@@ -52,6 +256,39 @@ at rest` failed 16/20 before the fix. The rapid-release case now waits, before
   19 Oct) and on PR #19, where step 22 was cut off after the earlier suites
   passed. A cancelled step is not a pass, so PRs are merged only after a full
   green run.
+
+### Raouf: 2026-10-21 — Card animations released
+
+- Owner-approved deploy of `7079e21` (`feat/exercise-animations`, PR #20):
+  staging Worker version `9814b283-9b12-4418-b3ad-c724ce27a4f0`, production
+  `5fa82b05-afea-4dee-94f9-613a67e0f043` (68 new assets, including the 64
+  animated and still SVGs); both one-hour tokens were revoked.
+- **Live check on forma.raoufabedini.dev:** in the Push day template preview
+  the bench press card shows the cover illustration, the video, then the
+  animation, which loads at 960 px and pauses to its still; no console errors.
+
+### Raouf: 2026-10-21 — Animated demonstrations in the exercise cards
+
+- **What changed:** the 32 animated SVG demonstrations now appear at the top
+  matching exercise cards in the routine preview, the single-exercise card
+  and the exercise guide (library and active workouts). Order in a card:
+  cover illustration, then the video clip when there is one, then the
+  animation (directly under the illustration when there is no video). They loop with phase captions; a Play/Pause
+  button below each one swaps to a still start pose, and they start paused
+  when the device asks for reduced motion.
+- **Files:** `src/components/ExerciseAnimation.jsx` (new),
+  `RoutinePreview.jsx`, `ExerciseGuide.jsx`, `src/styles.css`,
+  `src/catalog/animations.json` (new), `public/exercise-animations/` (new,
+  animated and still SVGs; the duplicate copies in `assets/exercise-svg/`
+  were removed, leaving the review sheets), `scripts/exercise-svg/build.py`
+  and `rig.py` (still mode, ID manifest), `unit/exercise-animations.test.js`
+  (new), `tests/routine-preview.spec.js`, README and user guide.
+- **Verification:** unit 100/100; routine-preview spec 14/14 in Chromium and
+  WebKit (playback, pause to still, keyboard focus, reduced motion);
+  media, UI, accessibility, keyboard, catalog, responsive, regression,
+  workflow, editing and programming specs 86/86 in Chromium; lint, Prettier,
+  types, docs and build pass; checked by hand at desktop and 375 px. The
+  build output is byte-stable. Not deployed.
 
 ### Raouf: 2026-10-21 — Production release of the preview and demo work
 

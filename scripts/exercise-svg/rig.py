@@ -8,6 +8,7 @@ working phase) plus a timeline. Poses are sampled at FPS and emitted as SMIL
 """
 import base64
 import math
+import re
 from html import escape
 from pathlib import Path
 
@@ -194,10 +195,13 @@ def fmt(n):
     return f"{n:.1f}".rstrip("0").rstrip(".")
 
 
-def render(ex, out):
+def render(ex, out, still=False):
+    """Write the animated SVG, or with still=True a frozen start pose."""
     total, steps = build_timeline(ex["steps"])
     frames = max(2, round(total * FPS))
     times = [total * i / frames for i in range(frames + 1)]
+    if still:
+        times = [0.0, 0.0]
     scenes = []
     for t in times:
         sc = Scene()
@@ -284,6 +288,10 @@ def render(ex, out):
             values, kt = "0;1", f"0;{start:.4f}"
         else:
             values, kt = "0;1;0", f"0;{start:.4f};{end:.4f}"
+        if still:
+            if start == 0:
+                captions.append(f'<text class="t" x="40" y="680" font-size="24" font-weight="600">{escape(label)}</text>')
+            continue
         captions.append(
             f'<text class="t" x="40" y="680" font-size="24" font-weight="600" opacity="{values[0]}">{escape(label)}'
             f'<animate attributeName="opacity" calcMode="discrete" values="{values}" keyTimes="{kt}" dur="{total:.2f}s" repeatCount="indefinite"/></text>'
@@ -297,6 +305,10 @@ def render(ex, out):
     for markup, indices in ex.get("overlays", []):
         if callable(markup):
             markup = markup(total, steps)
+        if still:
+            if indices is None or 0 in indices:
+                overlays.append(re.sub(r"<animate [^>]*/>", "", markup))
+            continue
         if indices is None:
             overlays.append(markup)
             continue
@@ -340,7 +352,7 @@ def render(ex, out):
         + "".join(overlays)
         + ("</g>" if ex.get("scale") else "")
         + f'<rect x="40" y="698" width="{W - 80}" height="6" rx="3" fill="{LINE}"/>'
-        f'<rect x="40" y="698" width="0" height="6" rx="3" fill="{INK}"><animate attributeName="width" values="0;{W - 80}" dur="{total:.2f}s" repeatCount="indefinite"/></rect>'
+        + ("" if still else f'<rect x="40" y="698" width="0" height="6" rx="3" fill="{INK}"><animate attributeName="width" values="0;{W - 80}" dur="{total:.2f}s" repeatCount="indefinite"/></rect>')
         + "".join(captions)
         + "</svg>"
     )

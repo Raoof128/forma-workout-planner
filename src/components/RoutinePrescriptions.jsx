@@ -11,6 +11,7 @@ export default function RoutinePrescriptions({
   update,
   move,
   join,
+  onUseTimed,
   defaultRest,
   onReorder,
   onOrderingChange,
@@ -330,6 +331,7 @@ export default function RoutinePrescriptions({
             update={update}
             move={move}
             join={join}
+            onUseTimed={onUseTimed}
             joined={
               !!item.groupId &&
               index > 0 &&

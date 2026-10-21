@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { Button, PageHeading, Modal } from "./UI";
 import ExerciseGuide from "./ExerciseGuide";
+import HoldTimer, { HOLD_MAX, HOLD_MIN } from "./HoldTimer";
 import SavedField from "./SavedField";
 import ActionsMenu from "./ActionsMenu";
 import ExercisePicker from "./ExercisePicker";
@@ -26,8 +27,11 @@ import {
   logsSides,
   readSetValue,
   setFields,
+  tracksLoadReps,
   validMeasurement,
 } from "../exerciseMetrics.js";
+import { holdUnit, usesHoldTimer, visibleFields } from "../exerciseLoad.js";
+import { timedVersion } from "../timedHolds.js";
 import {
   addedEntry,
   moveEntry,
@@ -45,6 +49,38 @@ import {
   adjustRest,
   toggleRest,
 } from "../routineProgramming.js";
+// Keep the screen on during a hold so the countdown stays visible. The lock
+// is released when the tab hides, so it is requested again on return.
+async function keepAwake(ref) {
+  if (ref.current || !navigator.wakeLock) return;
+  try {
+    const lock = await navigator.wakeLock.request("screen");
+    ref.current = lock;
+    lock.addEventListener("release", () => {
+      if (ref.current === lock) ref.current = null;
+    });
+  } catch {
+    /* Battery saver or an unsupported browser: the timer still runs. */
+  }
+}
+function letSleep(ref) {
+  const lock = ref.current;
+  ref.current = null;
+  void lock?.release().catch(() => {});
+}
+// Whole units only (the legacy plank's timer moves in 10-second reps), and
+// never longer than the set's field can record.
+const holdMax = (unit) => Math.min(HOLD_MAX, unit.max);
+const clampHold = (seconds, unit) =>
+  Math.min(
+    holdMax(unit),
+    Math.max(
+      HOLD_MIN,
+      unit.seconds,
+      Math.round(seconds / unit.seconds) * unit.seconds,
+    ),
+  );
+
 export default function Workout({
   session,
   muted = false,
@@ -90,6 +126,26 @@ export default function Workout({
   useEffect(() => {
     setFill(fillSets);
   }, [fillSets]);
+  // One hold timer at a time: { key, index, length, endsAt } while it runs,
+  // { key, index, length, left } while paused. Local only: it is a stopwatch,
+  // not workout data, so the saved workspace format is unchanged.
+  const [hold, setHold] = useState(null);
+  const [holdLengths, setHoldLengths] = useState({});
+  const wakeLock = useRef(null);
+  const finishedHold = useRef(null);
+  useEffect(() => {
+    if (!hold?.endsAt) {
+      letSleep(wakeLock);
+      return;
+    }
+    void keepAwake(wakeLock);
+    const again = () => {
+      if (document.visibilityState === "visible") void keepAwake(wakeLock);
+    };
+    document.addEventListener("visibilitychange", again);
+    return () => document.removeEventListener("visibilitychange", again);
+  }, [hold?.endsAt]);
+  useEffect(() => () => letSleep(wakeLock), []);
   useEffect(() => {
     const timer = setInterval(() => setNow(Date.now()), 250);
     const refresh = () => setNow(Date.now());
@@ -102,10 +158,7 @@ export default function Workout({
     };
   }, []);
   const remaining = restRemaining(session, now);
-  const endRest = useEffectEvent(() => {
-    const expected = session.restEnd;
-    if (announcedEnd.current === expected) return;
-    announcedEnd.current = expected;
+  function playCue() {
     try {
       navigator.vibrate?.([150, 80, 150]);
     } catch {
@@ -125,6 +178,12 @@ export default function Workout({
       oscillator.start();
       oscillator.stop(audio.current.currentTime + 0.3);
     }
+  }
+  const endRest = useEffectEvent(() => {
+    const expected = session.restEnd;
+    if (announcedEnd.current === expected) return;
+    announcedEnd.current = expected;
+    playCue();
     void onUpdate((current) =>
       current.restEnd === expected
         ? { ...current, restEnd: null, restPaused: null }
@@ -182,6 +241,20 @@ export default function Workout({
       ),
     }));
   }
+  // The rest that a completed set starts, timed from the action itself.
+  function restAfter(current, rowKey, clickedAt) {
+    const position = current.exercises.findIndex(
+      (item) => entryKey(item) === rowKey,
+    );
+    if (!shouldRest(current.exercises, position)) return {};
+    return {
+      restEnd:
+        clickedAt +
+        (current.exercises[position].restSeconds ?? current.restSeconds ?? 90) *
+          1000,
+      restPaused: null,
+    };
+  }
   function check(rowKey, index) {
     const entry = session.exercises.find((item) => entryKey(item) === rowKey);
     const exerciseId = entry.exerciseId;
@@ -200,10 +273,15 @@ export default function Workout({
       return row === rowKey && si === index;
     });
     const exercise = exerciseById.get(exerciseId);
+    const weightHint = visibleFields(exercise, entry).some(
+      (field) => field.key === "weight",
+    )
+      ? " and a weight from 0–1,000 kg"
+      : "";
     const measurementMessage = logsSides(exercise, entry)
-      ? "Enter 1–50 reps for the left and the right side and a weight from 0–1,000 kg."
+      ? `Enter 1–50 reps for the left and the right side${weightHint}.`
       : !exercise?.metric || exercise.metric === "load_reps"
-        ? "Enter 1–100 reps and a weight from 0–1,000 kg."
+        ? `Enter 1–100 reps${weightHint}.`
         : "Enter valid measurements in the units shown before completing the set.";
     if (!set.done && (invalid || !validMeasurement(exercise, set))) {
       notify(measurementMessage);
@@ -222,22 +300,7 @@ export default function Workout({
         throw new Error(measurementMessage);
       return {
         ...current,
-        ...(!expected &&
-        shouldRest(
-          current.exercises,
-          current.exercises.findIndex((item) => entryKey(item) === rowKey),
-        )
-          ? {
-              restEnd:
-                clickedAt +
-                (current.exercises.find((item) => entryKey(item) === rowKey)
-                  .restSeconds ??
-                  current.restSeconds ??
-                  90) *
-                  1000,
-              restPaused: null,
-            }
-          : {}),
+        ...(!expected ? restAfter(current, rowKey, clickedAt) : {}),
         exercises: current.exercises.map((item) =>
           entryKey(item) !== rowKey
             ? item
@@ -251,6 +314,99 @@ export default function Workout({
       };
     });
   }
+  const holdLeft = hold
+    ? hold.endsAt
+      ? Math.max(0, Math.ceil((hold.endsAt - now) / 1000))
+      : hold.left
+    : null;
+  function holdLength(entry) {
+    const unit = holdUnit(exerciseById.get(entry.exerciseId));
+    const planned =
+      Number(entry.sets.find((set) => !set.done)?.[unit.key]) * unit.seconds;
+    return clampHold(
+      holdLengths[entryKey(entry)] ?? (planned > 0 ? planned : 60),
+      unit,
+    );
+  }
+  function adjustHold(entry, delta) {
+    const key = entryKey(entry);
+    const unit = holdUnit(exerciseById.get(entry.exerciseId));
+    setHoldLengths((lengths) => ({
+      ...lengths,
+      [key]: clampHold(holdLength(entry) + delta, unit),
+    }));
+  }
+  function startHold(entry) {
+    const index = entry.sets.findIndex((set) => !set.done);
+    if (index < 0) return;
+    prepareCue();
+    const length = holdLength(entry);
+    finishedHold.current = null;
+    setHold({
+      key: entryKey(entry),
+      index,
+      length,
+      endsAt: Date.now() + length * 1000,
+    });
+  }
+  // Log the timed set (the first unfinished one if it was ticked meanwhile)
+  // and start the programmed rest, exactly as ticking it would.
+  async function logHold(timer, seconds) {
+    setHold(null);
+    playCue();
+    const clickedAt = Date.now();
+    let logged = null;
+    const result = await onUpdate((current) => {
+      const entry = current.exercises.find(
+        (item) => entryKey(item) === timer.key,
+      );
+      if (!entry) return current;
+      const index = entry.sets[timer.index]?.done
+        ? entry.sets.findIndex((set) => !set.done)
+        : timer.index;
+      if (index < 0) return current;
+      const exercise = exerciseById.get(entry.exerciseId);
+      const unit = holdUnit(exercise);
+      const count = Math.floor(seconds / unit.seconds);
+      const set = { ...entry.sets[index], [unit.key]: count, done: true };
+      if (!validMeasurement(exercise, set))
+        throw new Error(
+          "Enter valid measurements in the units shown before completing the set.",
+        );
+      logged = {
+        name: exercise.name,
+        index,
+        text:
+          unit.seconds === 1
+            ? `${count} seconds`
+            : `${count} ${count === 1 ? "rep" : "reps"} (${count * unit.seconds} seconds)`,
+      };
+      return {
+        ...current,
+        ...restAfter(current, timer.key, clickedAt),
+        exercises: current.exercises.map((item) =>
+          entryKey(item) !== timer.key
+            ? item
+            : {
+                ...item,
+                sets: item.sets.map((value, si) =>
+                  si === index ? set : value,
+                ),
+              },
+        ),
+      };
+    });
+    if (result && logged)
+      notify(`${logged.name} set ${logged.index + 1} logged: ${logged.text}.`);
+  }
+  const finishHold = useEffectEvent(() => {
+    if (!hold?.endsAt || finishedHold.current === hold.endsAt) return;
+    finishedHold.current = hold.endsAt;
+    void logHold(hold, hold.length);
+  });
+  useEffect(() => {
+    if (hold?.endsAt && holdLeft === 0) finishHold();
+  }, [hold?.endsAt, holdLeft]);
   const setsDone = (entry) => entry.sets.filter((set) => set.done).length;
   const nameOf = (entry) => exerciseById.get(entry.exerciseId).name;
   // Menus and dialogs close on use; put focus back on a card's ⋯ button once
@@ -319,9 +475,22 @@ export default function Workout({
       exercises: replaceEntry(current.exercises, entryKey(entry), exercise),
     }));
     if (!result) return;
-    notify(`Replaced ${nameOf(entry)} with ${exercise.name}.`);
+    notify(
+      timedVersion(entry.exerciseId)?.id === exercise.id
+        ? `${exercise.name} now logs seconds with the hold timer.`
+        : `Replaced ${nameOf(entry)} with ${exercise.name}.`,
+    );
     const next = result.data?.active?.exercises[index];
     if (next) focusCard(entryKey(next));
+  }
+  // A hold still logged in reps moves to its timed identity on request,
+  // through the same confirmation as any replacement that drops logged sets.
+  function switchToTimed(entry) {
+    const exercise = timedVersion(entry.exerciseId);
+    const lost = setsLostByReplacing(entry, exercise);
+    if (lost)
+      setPending({ kind: "replace", key: entryKey(entry), exercise, lost });
+    else void replace(entry, exercise);
   }
   function finish() {
     if (!complete) notify("Complete at least one set to save your workout.");
@@ -391,8 +560,17 @@ export default function Workout({
         <div className="workout-exercises">
           {session.exercises.map((entry, entryIndex) => {
             const exercise = exerciseById.get(entry.exerciseId);
-            const fields = setFields(exercise, entry);
-            const rowClass = `set-row${fields.length > 2 ? " set-row-sides" : ""}`;
+            const fields = visibleFields(exercise, entry);
+            const rowClass = `set-row${
+              fields.length > 2
+                ? " set-row-sides"
+                : fields.length === 1
+                  ? " set-row-single"
+                  : ""
+            }`;
+            const activeHold = hold?.key === entryKey(entry) ? hold : null;
+            const unit = holdUnit(exercise);
+            const openSet = entry.sets.findIndex((set) => !set.done);
             const lastSet = entry.sets.at(-1);
             return (
               <section
@@ -415,7 +593,7 @@ export default function Workout({
                     </h3>
                     {entry.note && <p className="program-note">{entry.note}</p>}
                     <p className="program-target">
-                      {entry.targetReps && (
+                      {entry.targetReps && tracksLoadReps(exercise) && (
                         <>
                           Target:{" "}
                           {repsText(
@@ -458,6 +636,15 @@ export default function Workout({
                         disabled: entryIndex === session.exercises.length - 1,
                         onSelect: () => void move(entry, 1),
                       },
+                      ...(timedVersion(entry.exerciseId)
+                        ? [
+                            {
+                              label: "Use the timed version",
+                              icon: <Timer size={16} />,
+                              onSelect: () => switchToTimed(entry),
+                            },
+                          ]
+                        : []),
                       {
                         label: "Replace exercise",
                         icon: <ArrowLeftRight size={16} />,
@@ -480,10 +667,54 @@ export default function Workout({
                     ]}
                   />
                 </header>
+                {usesHoldTimer(exercise, entry) && (
+                  <HoldTimer
+                    name={exercise.name}
+                    setNumber={
+                      activeHold
+                        ? activeHold.index + 1
+                        : openSet < 0
+                          ? null
+                          : openSet + 1
+                    }
+                    length={activeHold ? activeHold.length : holdLength(entry)}
+                    remaining={activeHold ? holdLeft : null}
+                    running={Boolean(activeHold?.endsAt)}
+                    unitSeconds={unit.seconds}
+                    max={holdMax(unit)}
+                    onAdjust={(delta) => adjustHold(entry, delta)}
+                    onStart={() => startHold(entry)}
+                    onPause={() =>
+                      setHold((timer) =>
+                        timer?.endsAt
+                          ? { ...timer, endsAt: null, left: holdLeft }
+                          : timer,
+                      )
+                    }
+                    onResume={() =>
+                      setHold((timer) =>
+                        timer && !timer.endsAt
+                          ? {
+                              key: timer.key,
+                              index: timer.index,
+                              length: timer.length,
+                              endsAt: Date.now() + timer.left * 1000,
+                            }
+                          : timer,
+                      )
+                    }
+                    onEnd={() =>
+                      hold &&
+                      hold.length - holdLeft >= unit.seconds &&
+                      void logHold(hold, hold.length - holdLeft)
+                    }
+                    onCancel={() => setHold(null)}
+                  />
+                )}
                 {exercise.id === "plank" && (
                   <p className="movement-note">
                     One rep = a 10-second hold. For a 30-second plank, enter 3
-                    reps.
+                    reps, or run the timer for 30 seconds.
                   </p>
                 )}
                 <div className={`${rowClass} set-labels`}>
@@ -871,27 +1102,38 @@ function ConfirmChange({ pending, entry, done, onCancel, onConfirm }) {
   const name = exerciseById.get(entry.exerciseId).name;
   const sets = `${done} completed ${done === 1 ? "set" : "sets"}`;
   const replacing = pending.kind === "replace";
+  // The timed version of the same hold, which often has the same name.
+  const timing =
+    replacing && timedVersion(entry.exerciseId)?.id === pending.exercise.id;
   return (
     <Modal
       title={
-        replacing
-          ? `Replace ${name} with ${pending.exercise.name}?`
-          : `Remove ${name}?`
+        timing
+          ? `Log ${name} in seconds?`
+          : replacing
+            ? `Replace ${name} with ${pending.exercise.name}?`
+            : `Remove ${name}?`
       }
       onClose={onCancel}
     >
       <div className="modal-content">
         <p>
-          {replacing
-            ? `${pending.exercise.name} records different measurements, so the ${sets} of ${name} will not be saved.`
-            : `Its ${sets} will not be saved with this workout.`}
+          {timing
+            ? `The timed version records seconds, so the ${sets} of ${name} in reps will not be saved.`
+            : replacing
+              ? `${pending.exercise.name} records different measurements, so the ${sets} of ${name} will not be saved.`
+              : `Its ${sets} will not be saved with this workout.`}
         </p>
         <div className="modal-actions">
           <Button variant="secondary" data-autofocus onClick={onCancel}>
-            Keep {name}
+            {timing ? "Keep reps" : `Keep ${name}`}
           </Button>
           <Button variant="danger-solid" onClick={() => onConfirm(entry)}>
-            {replacing ? "Replace exercise" : "Remove exercise"}
+            {timing
+              ? "Use the timed version"
+              : replacing
+                ? "Replace exercise"
+                : "Remove exercise"}
           </Button>
         </div>
       </div>
