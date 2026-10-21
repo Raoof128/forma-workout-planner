@@ -4,6 +4,54 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-21 — No weight column for no-load exercises, and a hold timer
+
+- **Load review:** all 1,411 selectable exercises were read by name,
+  equipment and guide and classified (`src/catalog/logging-review.json`;
+  method, counts and flags in `docs/research/exercise-logging-review.md`).
+  787 log a kg load; 57 are bodyweight with an optional added load and label
+  the column **ADDED (KG)**; 567 carry no external load (the ab roller, the
+  plank, most push-up variations, stretches, band work) and no longer show a
+  weight column in the workout, the history editor, the routine editor or the
+  guide. A set that already carries weight keeps the column, so older logs
+  stay visible. Timed exercises no longer show a "1 reps" target, and history
+  drops "0 kg" for no-load sets.
+- **Hold timer:** 170 of the 183 exercises measured in seconds (13
+  rep-prescribed drills are excluded) show a settable countdown at the top
+  of their card: −5/+5 s, Start, Pause/Resume, End set (logs the time held)
+  and Cancel (logs nothing). At zero it logs and completes the set and starts
+  the programmed rest, as ticking it would. While running it holds a screen
+  wake lock (requested again when the page is shown) and it ends with the
+  existing cue: a beep unless muted, and a vibration where supported. The
+  starter Forearm plank keeps its units: 10-second steps, one rep for every
+  full 10 seconds, at most 100 reps, and no timer while it logs each side.
+- **Display only:** stored sets keep `weight` (0 when nothing is added), so
+  `src/exerciseMetrics.js`, `src/storage.js`, the API and saved data are
+  unchanged and no API deploy is needed. The timer is local state and is not
+  saved.
+- **Docs read:** MDN Screen Wake Lock API (updated 11 Sep 2026), Page
+  Visibility API, Vibration API (not available on iOS Safari), WCAG 2.2
+  SC 2.2.1 (a timer the member starts and can pause is not a time limit).
+- **Files:** `src/exerciseLoad.js`, `src/catalog/logging-review.json`,
+  `src/components/HoldTimer.jsx`, `unit/exercise-load.test.js`,
+  `tests/no-load-hold-timer.spec.js` and
+  `docs/research/exercise-logging-review.{md,json}` (new); `Workout.jsx`,
+  `RoutinePrescription.jsx`, `HistoryEditor.jsx`, `Insights.jsx`,
+  `ExerciseGuide.jsx`, `src/styles.css`, the user guide, README and AGENT.md.
+- **Verification:** unit 106/106; the new spec 10/10 in Chromium and WebKit;
+  full Chromium suite 155/155, then the workout, UI and workflow specs 26/26
+  after the legacy-plank timer; production build in Chromium and WebKit,
+  desktop and mobile, 126/129. Of the three failures, the concurrent-tabs
+  test passed 3/3 on rerun, and the library drag test
+  (`routine-library.spec.js:78`) is timing-flaky in Chromium mobile on the
+  base commit too (2 of 6 runs fail there; its rows render unchanged). Lint,
+  Prettier, types, docs and build pass; checked by hand at 375 px. Not
+  deployed.
+- **Follow-ups:** about 15 genuine holds are stored as reps (Hollow Hold,
+  L-sits, Front and Back Lever, Handstand, Deadhang), so they get no timer
+  until a reviewed metric migration; 75 equipment labels are misleading
+  (mostly machine or cable lifts labelled Bodyweight).
+
 ### Raouf: 2026-10-21 — CI time limit for the Verify job
 
 - Raised the `Verify application` job limit from 45 to 70 minutes. The

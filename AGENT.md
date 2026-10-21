@@ -58,6 +58,37 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-21 — No-load columns and the hold timer
+
+- Load display is UI-only: `src/exerciseLoad.js` reads
+  `src/catalog/logging-review.json` (`load` / `added` / `none`, plus
+  `noTimer`). Keep it out of `src/exerciseMetrics.js` and `src/storage.js`:
+  the API imports those (`metricFields`, `tracksLoadReps`,
+  `validMeasurement`) and `ops/Dockerfile` copies an explicit file list, so a
+  change there needs an API redeploy. Sets still store `weight: 0`.
+- `unit/exercise-load.test.js` fails while any selectable exercise is
+  unreviewed. A catalogue import must add each new ID to exactly one class,
+  and to `noTimer` if it is a rep-prescribed drill stored in seconds. IDs
+  resolve through `canonicalId`, so an alias (`plank` → `db-plank`) follows
+  its target's class.
+- A `none` exercise shows its weight column again when any set has weight
+  above 0. Keep that: it stops older logs disappearing.
+- The hold timer is component state in `Workout.jsx`, not persisted, so the
+  workspace schema is unchanged. It is a deadline (`endsAt`) on the existing
+  250 ms tick, holds a screen wake lock (requested again on
+  `visibilitychange`), and completes through `useEffectEvent` guarded by
+  `finishedHold` so a set logs once. It writes through `holdUnit`:
+  `durationSeconds`, or `reps` at 10 s each for the legacy `plank`, whose
+  units are preserved.
+- Do not give the holds stored as reps (Hollow Hold, L-sits, levers,
+  Handstand, Deadhang) a timer by reading reps as seconds; that needs a
+  reviewed metric migration.
+- Drag timing is flaky under load: `routine-drag.spec.js:321` and `:77` in
+  CI (local reruns 30/30), and `routine-library.spec.js:78` in
+  production Chromium mobile, which fails 2 of 6 runs on `841e518` as well.
+  Rerun a failed job once before investigating, and never merge on a red,
+  pending or cancelled run.
+
 ### Raouf: 2026-10-21 — CI Verify job limit
 
 - `.github/workflows/ci.yml` gives `verify` 70 minutes; the four browser
