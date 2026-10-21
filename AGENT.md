@@ -66,6 +66,45 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 - A Verify run cancelled at the job limit is not a failure; check the limit
   in the PR's base branch before investigating.
 
+### Raouf: 2026-10-21 — Switching a routine hold to its timed version
+
+- **Supersedes** the line below that a routine hold keeps logging reps "until
+  the member replaces it": the routine editor now offers **Use the timed
+  version** under such an entry, and the workout card's ⋯ menu offers the
+  same. The rule is `timedVersion` in `src/timedHolds.js`: a saved ID that
+  logs reps (`tracksLoadReps` on `exerciseById`) whose canonical row
+  (`canonicalId`) has `metric: "duration"`. Take units from `exerciseById`,
+  never from `guideExercise`.
+- It only runs when the member presses it. `toTimedVersion` keeps sets, load,
+  RPE, rest, note, superset and position, sets `reps: 1`, `repsMax: null` and
+  `durationSeconds` (60 by default, editable before saving), clears
+  `perSide` (it only applies to reps), and writes the
+  old key into `entryId` so `entryKey` and the editor's `repInputs` stay put.
+  History and the active workout are never rewritten; saved sets keep the rep
+  ID and their reps.
+- Excluded on purpose: the legacy `plank` (10-second reps and its own timer)
+  and seconds-and-metres aliases (Battle Ropes, Rope Jumping), which already
+  log time and would lose their distance.
+- The workout card goes through `replaceEntry` and `setsLostByReplacing`, so
+  completed rep sets are dropped only after the confirmation, which now reads
+  "Log L-sit in seconds?" instead of "Replace L-sit with L-sit?".
+  `replaceEntry` now keeps `note`, `rpe` and each set's `weight` whenever the
+  replacement has the same canonical ID (a 20 kg Plate Pinch stays 20 kg);
+  other replacements still start from the new exercise's defaults.
+- `tests/timed-hold-switch.spec.js` uses relative URLs.
+- **Verification:** unit 116/116 (6 new); the new spec 4/4 in Chromium and
+  WebKit. Development suite on a private port at load 40-150: 256/320 first
+  pass, almost all timeouts; the 64 failures rerun serially 58/64, and the
+  six left (WebKit focus cases in `keyboard-focus`, `regressions:200/229`,
+  `ui-coverage-gaps:333/379`, `exercise-media:37`) fail the same way on
+  `9b0c216`. Production guest build: 124/160; 31 are Firefox failing to
+  launch in this sandbox, the other 5 (`routine-programming:4`,
+  `routine-archive:4`, `routine-drag:321`) passed 8/8 serially. Lint,
+  Prettier, types, docs and worker 26/26 pass. Docker was off, so the
+  PostgreSQL server and account suites did not run locally; CI runs them.
+  A vite build from a symlinked mirror fails (`index.html` resolves outside
+  the root): build in the worktree and link `dist` instead.
+
 ### Raouf: 2026-10-21 — Hold metric migration
 
 - **Supersedes** the line below that the holds stored as reps need a reviewed

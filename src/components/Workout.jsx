@@ -31,6 +31,7 @@ import {
   validMeasurement,
 } from "../exerciseMetrics.js";
 import { holdUnit, usesHoldTimer, visibleFields } from "../exerciseLoad.js";
+import { timedVersion } from "../timedHolds.js";
 import {
   addedEntry,
   moveEntry,
@@ -474,9 +475,22 @@ export default function Workout({
       exercises: replaceEntry(current.exercises, entryKey(entry), exercise),
     }));
     if (!result) return;
-    notify(`Replaced ${nameOf(entry)} with ${exercise.name}.`);
+    notify(
+      timedVersion(entry.exerciseId)?.id === exercise.id
+        ? `${exercise.name} now logs seconds with the hold timer.`
+        : `Replaced ${nameOf(entry)} with ${exercise.name}.`,
+    );
     const next = result.data?.active?.exercises[index];
     if (next) focusCard(entryKey(next));
+  }
+  // A hold still logged in reps moves to its timed identity on request,
+  // through the same confirmation as any replacement that drops logged sets.
+  function switchToTimed(entry) {
+    const exercise = timedVersion(entry.exerciseId);
+    const lost = setsLostByReplacing(entry, exercise);
+    if (lost)
+      setPending({ kind: "replace", key: entryKey(entry), exercise, lost });
+    else void replace(entry, exercise);
   }
   function finish() {
     if (!complete) notify("Complete at least one set to save your workout.");
@@ -622,6 +636,15 @@ export default function Workout({
                         disabled: entryIndex === session.exercises.length - 1,
                         onSelect: () => void move(entry, 1),
                       },
+                      ...(timedVersion(entry.exerciseId)
+                        ? [
+                            {
+                              label: "Use the timed version",
+                              icon: <Timer size={16} />,
+                              onSelect: () => switchToTimed(entry),
+                            },
+                          ]
+                        : []),
                       {
                         label: "Replace exercise",
                         icon: <ArrowLeftRight size={16} />,
@@ -1079,27 +1102,38 @@ function ConfirmChange({ pending, entry, done, onCancel, onConfirm }) {
   const name = exerciseById.get(entry.exerciseId).name;
   const sets = `${done} completed ${done === 1 ? "set" : "sets"}`;
   const replacing = pending.kind === "replace";
+  // The timed version of the same hold, which often has the same name.
+  const timing =
+    replacing && timedVersion(entry.exerciseId)?.id === pending.exercise.id;
   return (
     <Modal
       title={
-        replacing
-          ? `Replace ${name} with ${pending.exercise.name}?`
-          : `Remove ${name}?`
+        timing
+          ? `Log ${name} in seconds?`
+          : replacing
+            ? `Replace ${name} with ${pending.exercise.name}?`
+            : `Remove ${name}?`
       }
       onClose={onCancel}
     >
       <div className="modal-content">
         <p>
-          {replacing
-            ? `${pending.exercise.name} records different measurements, so the ${sets} of ${name} will not be saved.`
-            : `Its ${sets} will not be saved with this workout.`}
+          {timing
+            ? `The timed version records seconds, so the ${sets} of ${name} in reps will not be saved.`
+            : replacing
+              ? `${pending.exercise.name} records different measurements, so the ${sets} of ${name} will not be saved.`
+              : `Its ${sets} will not be saved with this workout.`}
         </p>
         <div className="modal-actions">
           <Button variant="secondary" data-autofocus onClick={onCancel}>
-            Keep {name}
+            {timing ? "Keep reps" : `Keep ${name}`}
           </Button>
           <Button variant="danger-solid" onClick={() => onConfirm(entry)}>
-            {replacing ? "Replace exercise" : "Remove exercise"}
+            {timing
+              ? "Use the timed version"
+              : replacing
+                ? "Replace exercise"
+                : "Remove exercise"}
           </Button>
         </div>
       </div>

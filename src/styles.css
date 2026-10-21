@@ -1643,6 +1643,16 @@ input[type="checkbox"] {
   font-size: 11px;
   color: var(--muted);
 }
+.timed-switch {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 6px;
+}
+.timed-switch .text-button {
+  text-align: left;
+  text-decoration: underline;
+}
 
 /* Exercise library */
 .library-toolbar {
