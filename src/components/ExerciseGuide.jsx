@@ -4,12 +4,14 @@ import { metricFields } from "../exerciseMetrics.js";
 import { guideExercise } from "../data.js";
 import ExerciseMedia from "./ExerciseMedia";
 import ExerciseDemo from "./ExerciseDemo";
+import ExerciseAnimation from "./ExerciseAnimation";
 import GuideInstructions from "./GuideInstructions";
 export default function ExerciseGuide({ exercise, onClose }) {
   const guide = guideExercise(exercise.id);
   return (
     <Modal title={exercise.name} onClose={onClose}>
       <div className="modal-content">
+        <ExerciseAnimation id={guide.id} name={exercise.name} />
         <ExerciseMedia id={guide.id} name={guide.name} />
         <div className="tags">
           <span>{guide.muscle}</span>

@@ -6,6 +6,7 @@ import { measurementText } from "../exerciseMetrics.js";
 import { entryKey, groupLabels, repsText } from "../routineProgramming.js";
 import ExerciseMedia from "./ExerciseMedia";
 import ExerciseDemo from "./ExerciseDemo";
+import ExerciseAnimation from "./ExerciseAnimation";
 import GuideInstructions from "./GuideInstructions";
 
 export function prescriptionText(item, exercise) {
@@ -28,6 +29,7 @@ export function PreviewSlide({
   const guide = guideExercise(item.exerciseId);
   return (
     <div className="routine-preview-slide" {...props}>
+      <ExerciseAnimation id={guide.id} name={exercise.name} />
       <ExerciseMedia id={guide.id} name={guide.name} />
       <h4 className="routine-preview-name">
         <span className="exercise-number">{label}</span>

@@ -201,3 +201,68 @@ test("the exercise library guide shows the demonstration clip", async ({
   ).toBeVisible();
   await expect(dialog.locator(".exercise-demo")).toContainText("FitnessScape");
 });
+
+test("matched exercises show a looping animated demonstration that can pause", async ({
+  page,
+}) => {
+  await seed(page);
+  await page.goto("/#routines");
+  await page
+    .getByRole("button", { name: /^Upper body strength 6 exercises/ })
+    .click();
+  const dialog = page.getByRole("dialog");
+  await dialog
+    .getByRole("button", { name: "View Barbell bench press" })
+    .click();
+  const animation = dialog.getByRole("img", {
+    name: /^How to perform Barbell bench press:/,
+  });
+  await expect(animation).toBeVisible();
+  await expect(animation).toHaveAttribute(
+    "src",
+    "/exercise-animations/barbell-bench-press.svg",
+  );
+  expect(await animation.evaluate((img) => img.naturalWidth)).toBe(960);
+  // Keyboard activation: WebKit does not focus buttons on mouse click.
+  await dialog
+    .getByRole("button", { name: "Pause demonstration of Barbell bench press" })
+    .press("Enter");
+  await expect(animation).toHaveAttribute(
+    "src",
+    "/exercise-animations/barbell-bench-press-still.svg",
+  );
+  await expect(
+    dialog.getByRole("button", {
+      name: "Play demonstration of Barbell bench press",
+    }),
+  ).toBeFocused();
+});
+
+test("reduced motion starts the demonstration on its still pose", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/#library");
+  await page.getByLabel("Search exercise library").fill("goblet squat");
+  await page
+    .locator(".library-card")
+    .filter({
+      has: page.getByRole("heading", {
+        name: "Dumbbell Goblet Squat",
+        exact: true,
+      }),
+    })
+    .click();
+  const dialog = page.getByRole("dialog");
+  await expect(
+    dialog.getByRole("img", { name: /^How to perform Dumbbell Goblet Squat:/ }),
+  ).toHaveAttribute(
+    "src",
+    "/exercise-animations/dumbbell-goblet-squat-still.svg",
+  );
+  await expect(
+    dialog.getByRole("button", {
+      name: "Play demonstration of Dumbbell Goblet Squat",
+    }),
+  ).toBeVisible();
+});

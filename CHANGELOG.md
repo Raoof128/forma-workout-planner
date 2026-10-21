@@ -4,6 +4,28 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-21 — Animated demonstrations in the exercise cards
+
+- **What changed:** the 32 animated SVG demonstrations now appear at the top
+  of each matching exercise card in the routine preview, the single-exercise
+  card and the exercise guide (library and active workouts), above the
+  illustration and any video. They loop with phase captions; a Play/Pause
+  button below each one swaps to a still start pose, and they start paused
+  when the device asks for reduced motion.
+- **Files:** `src/components/ExerciseAnimation.jsx` (new),
+  `RoutinePreview.jsx`, `ExerciseGuide.jsx`, `src/styles.css`,
+  `src/catalog/animations.json` (new), `public/exercise-animations/` (new,
+  animated and still SVGs; the duplicate copies in `assets/exercise-svg/`
+  were removed, leaving the review sheets), `scripts/exercise-svg/build.py`
+  and `rig.py` (still mode, ID manifest), `unit/exercise-animations.test.js`
+  (new), `tests/routine-preview.spec.js`, README and user guide.
+- **Verification:** unit 100/100; routine-preview spec 14/14 in Chromium and
+  WebKit (playback, pause to still, keyboard focus, reduced motion);
+  media, UI, accessibility, keyboard, catalog, responsive, regression,
+  workflow, editing and programming specs 86/86 in Chromium; lint, Prettier,
+  types, docs and build pass; checked by hand at desktop and 375 px. The
+  build output is byte-stable. Not deployed.
+
 ### Raouf: 2026-10-21 — Production release of the preview and demo work
 
 - Owner-approved production deploy of `846919b` with

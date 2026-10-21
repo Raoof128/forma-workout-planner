@@ -58,6 +58,19 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-21 — Animations in the cards
+
+- `ExerciseAnimation` reads `src/catalog/animations.json` (canonical guide ID
+  → `src`, `still`, `seconds`, `description`) built by
+  `python3 scripts/exercise-svg/build.py`, which resolves exact FORMA names
+  through `src/data.js` and fails on an ambiguous or missing name. Never
+  hand-edit the manifest or `public/exercise-animations/`.
+- Animations load through `<img>` (CSP has `object-src 'none'` and
+  `frame-ancestors 'none'`, so `<object>`/`<iframe>` would not work); pausing
+  swaps to the `-still.svg`. Keep the pause control: the loops exceed 5 s.
+- Exercises without an animation simply render nothing; e.g. the starter
+  "Leg day" template opens on the barbell back squat, which has none.
+
 ### Raouf: 2026-10-21 — Preview and demo production release
 
 - Production runs `846919b` (version `c0778873-…`), staging `27a43e9`

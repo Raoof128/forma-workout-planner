@@ -1,8 +1,11 @@
 # Animated exercise demonstrations
 
-Self-contained animated SVGs that show how to perform an exercise, one file per
-exercise. They are an alternative to video for exercises with no reviewed clip.
-They are not yet shown in the app.
+Self-contained animated SVGs that show how to perform an exercise, one per
+exercise. The app shows them at the top of each exercise card in the routine
+preview and in the exercise guide (library and workouts), with a Play/Pause
+control; the files are served from `public/exercise-animations/` and mapped to
+exercise IDs in `src/catalog/animations.json`. This folder keeps the review
+sheets.
 
 | Set                              | Exercises                                                                                                                                                                                        |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -28,8 +31,10 @@ movement, used to review the poses.
   outlines with a cross show a fault to avoid.
 - Fonts are the bundled DM Sans and Barlow Condensed (SIL Open Font Licence,
   see `public/fonts/`), embedded so the files work standalone.
-- SMIL ignores the reduced-motion setting, so the app should show the first
-  frame until the member presses play.
+- SMIL ignores the reduced-motion setting, so each exercise also has a
+  `-still.svg` start pose. The app shows it while paused and starts paused
+  when the device asks for reduced motion. They load through `<img>`, so the
+  page CSP is unchanged.
 - Cues follow each exercise's FORMA guide plus coaching sources. Where they
   differ, the safer cue is shown (bar across the upper back, not the neck, on
   the seated twist; bend toward the dumbbell on the side bend). The poses have
@@ -38,7 +43,9 @@ movement, used to review the poses.
 ## Rebuilding
 
 ```sh
-cd scripts/exercise-svg && python3 build.py
+python3 scripts/exercise-svg/build.py
 ```
 
-This rewrites every set in this folder; the output is deterministic.
+This rewrites `public/exercise-animations/` and `src/catalog/animations.json`
+deterministically, resolving each exercise by its exact FORMA name.
+`unit/exercise-animations.test.js` checks the mapping and files.

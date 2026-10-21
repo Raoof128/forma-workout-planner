@@ -1,0 +1,194 @@
+{
+  "bench": {
+    "src": "/exercise-animations/barbell-bench-press.svg",
+    "still": "/exercise-animations/barbell-bench-press-still.svg",
+    "seconds": 4.3,
+    "description": "Lying on a flat bench, feet planted, the bar lowers under control from over the shoulders to the lower chest, touches, then presses up and slightly back to lockout."
+  },
+  "calf": {
+    "src": "/exercise-animations/standing-calf-raise.svg",
+    "still": "/exercise-animations/standing-calf-raise-still.svg",
+    "seconds": 4.5,
+    "description": "Standing tall on the edge of a step with a dumbbell at one side and a light hand on a rail for balance, the heels lower into a full stretch below the step, then rise as high as possible and pause."
+  },
+  "db-ab-roller": {
+    "src": "/exercise-animations/ab-roller.svg",
+    "still": "/exercise-animations/ab-roller-still.svg",
+    "seconds": 5.7,
+    "description": "Kneeling with the hands on an ab wheel under the shoulders and the hips tucked, the wheel rolls slowly forward until the body is long, stopping before the lower back sags, then the abs pull it back."
+  },
+  "db-air-bike": {
+    "src": "/exercise-animations/bicycle-crunch.svg",
+    "still": "/exercise-animations/bicycle-crunch-still.svg",
+    "seconds": 5.0,
+    "description": "Lying on the back with the lower back pressed down, shoulders lifted and hands lightly beside the head, one elbow twists toward the opposite knee as that knee pulls in and the other leg extends, then the sides switch in a slow pedalling motion."
+  },
+  "db-barbell-hip-thrust": {
+    "src": "/exercise-animations/barbell-hip-thrust.svg",
+    "still": "/exercise-animations/barbell-hip-thrust-still.svg",
+    "seconds": 4.45,
+    "description": "With the shoulder blades on the edge of a bench, the feet flat and a barbell over the hips, the heels drive the hips up until the body is flat from shoulders to knees with the shins vertical and chin tucked, the glutes squeeze for a second, then the hips lower under control."
+  },
+  "db-barbell-step-ups": {
+    "src": "/exercise-animations/barbell-step-ups.svg",
+    "still": "/exercise-animations/barbell-step-ups-still.svg",
+    "seconds": 4.7,
+    "description": "A barbell rests on the upper back. With one foot flat on a box, drive through that heel to stand tall on the box, bring the other foot up, then step down trailing leg first."
+  },
+  "db-cable-rope-overhead-triceps-extension": {
+    "src": "/exercise-animations/cable-rope-overhead-triceps-extension.svg",
+    "still": "/exercise-animations/cable-rope-overhead-triceps-extension-still.svg",
+    "seconds": 4.35,
+    "description": "Facing away from a low pulley with a rope held overhead, the upper arms stay still beside the head while the rope lowers behind the head to a full triceps stretch, then the elbows extend to straighten the arms overhead."
+  },
+  "db-cross-body-hammer-curl": {
+    "src": "/exercise-animations/cross-body-hammer-curl.svg",
+    "still": "/exercise-animations/cross-body-hammer-curl-still.svg",
+    "seconds": 7.35,
+    "description": "Standing with dumbbells at the sides in a neutral grip, one arm at a time curls the dumbbell up and across the body toward the opposite chest with the elbow at the side, then lowers under control."
+  },
+  "db-dumbbell-side-bend": {
+    "src": "/exercise-animations/dumbbell-side-bend.svg",
+    "still": "/exercise-animations/dumbbell-side-bend-still.svg",
+    "seconds": 4.7,
+    "description": "Standing tall with a dumbbell in one hand and the other hand on the hip, the torso bends straight sideways toward the dumbbell, which slides down the outside of the leg, then the opposite obliques pull the body back upright."
+  },
+  "db-face-pull": {
+    "src": "/exercise-animations/face-pull.svg",
+    "still": "/exercise-animations/face-pull-still.svg",
+    "seconds": 4.45,
+    "description": "Shown from the front and side: facing a high pulley with a rope, a light weight pulls toward the face as the hands separate and the elbows stay high, finishing with the knuckles turned up beside the ears for a one-second squeeze."
+  },
+  "db-incline-dumbbell-curl": {
+    "src": "/exercise-animations/incline-dumbbell-curl.svg",
+    "still": "/exercise-animations/incline-dumbbell-curl-still.svg",
+    "seconds": 4.85,
+    "description": "Sitting back on an incline bench with the arms hanging straight down and palms forward, the dumbbells curl up toward the shoulders while the upper arms stay still, hold for a second, then lower slowly to a full stretch."
+  },
+  "db-incline-dumbbell-press": {
+    "src": "/exercise-animations/incline-dumbbell-press.svg",
+    "still": "/exercise-animations/incline-dumbbell-press-still.svg",
+    "seconds": 4.25,
+    "description": "Lying back on an incline bench with a dumbbell in each hand at the upper chest, the dumbbells press up until the arms are long over the shoulders, then lower under control back to the chest."
+  },
+  "db-leg-extensions": {
+    "src": "/exercise-animations/leg-extensions.svg",
+    "still": "/exercise-animations/leg-extensions-still.svg",
+    "seconds": 4.35,
+    "description": "Seated with the pad on the lower shins and knees in line with the machine pivot, the legs extend until straight, pause, then lower slowly back to about 90 degrees."
+  },
+  "db-leverage-decline-chest-press": {
+    "src": "/exercise-animations/leverage-decline-chest-press.svg",
+    "still": "/exercise-animations/leverage-decline-chest-press-still.svg",
+    "seconds": 4.35,
+    "description": "Seated on a plate-loaded lever machine, the handles press forward and slightly down from the chest until the arms are long with soft elbows, then return slowly."
+  },
+  "db-leverage-shoulder-press": {
+    "src": "/exercise-animations/leverage-shoulder-press.svg",
+    "still": "/exercise-animations/leverage-shoulder-press-still.svg",
+    "seconds": 4.35,
+    "description": "Seated with the back supported, the lever handles press from shoulder height to overhead with soft elbows, then lower back to shoulder height."
+  },
+  "db-lying-leg-curls": {
+    "src": "/exercise-animations/lying-leg-curls.svg",
+    "still": "/exercise-animations/lying-leg-curls-still.svg",
+    "seconds": 4.25,
+    "description": "Lying face down with the lever pad just above the heels, the heels curl up toward the glutes as far as possible while the hips stay on the pad, then lower back to straight legs."
+  },
+  "db-machine-bench-press": {
+    "src": "/exercise-animations/machine-bench-press.svg",
+    "still": "/exercise-animations/machine-bench-press-still.svg",
+    "seconds": 4.35,
+    "description": "Seated upright on a selectorized chest press, the handles press straight out from chest height while the weight stack rises, then return under control."
+  },
+  "db-plank": {
+    "src": "/exercise-animations/plank.svg",
+    "still": "/exercise-animations/plank-still.svg",
+    "seconds": 6.4,
+    "description": "Forearms on the floor with the elbows under the shoulders and the body in one straight line from head to heels, the glutes and abs stay tight and the breathing steady for 60 seconds. The set ends if the hips sag."
+  },
+  "db-seated-barbell-twist": {
+    "src": "/exercise-animations/seated-barbell-twist.svg",
+    "still": "/exercise-animations/seated-barbell-twist-still.svg",
+    "seconds": 5.2,
+    "description": "Seated at the end of a bench with feet planted, a light bar or stick rests across the upper back. The torso turns slowly side to side through a comfortable range while the hips and head stay still."
+  },
+  "db-seated-calf-raise": {
+    "src": "/exercise-animations/seated-calf-raise.svg",
+    "still": "/exercise-animations/seated-calf-raise-still.svg",
+    "seconds": 4.5,
+    "description": "Seated with the knee pad on the lower thighs and the balls of the feet on the edge of the step, the heels lower into a deep stretch, pause for one second, then rise as high as possible."
+  },
+  "db-seated-leg-curl": {
+    "src": "/exercise-animations/seated-leg-curl.svg",
+    "still": "/exercise-animations/seated-leg-curl-still.svg",
+    "seconds": 4.85,
+    "description": "Seated with the lap pad above the knees and the lever behind the lower calves, the heels curl down and back as far as possible, hold for a second, then return to straight legs."
+  },
+  "db-split-squat-with-dumbbells": {
+    "src": "/exercise-animations/split-squat-with-dumbbells.svg",
+    "still": "/exercise-animations/split-squat-with-dumbbells-still.svg",
+    "seconds": 4.35,
+    "description": "Holding a dumbbell in each hand with the rear foot raised on a bench, the body lowers straight down by bending the front knee and hip, then drives up through the front heel."
+  },
+  "db-wide-grip-lat-pulldown": {
+    "src": "/exercise-animations/wide-grip-lat-pulldown.svg",
+    "still": "/exercise-animations/wide-grip-lat-pulldown-still.svg",
+    "seconds": 4.4,
+    "description": "Shown from the front and side: seated with the thighs under the pad and a wide overhand grip, the bar pulls down to the upper chest as the elbows drive down to the sides and the chest lifts, then rises slowly until the arms are long."
+  },
+  "lateral": {
+    "src": "/exercise-animations/dumbbell-lateral-raise.svg",
+    "still": "/exercise-animations/dumbbell-lateral-raise-still.svg",
+    "seconds": 4.5,
+    "description": "Shown from the front and the side at once: standing with a slight forward lean and soft elbows, the dumbbells rise out to the sides, a little in front of the body, to shoulder height, leading with the elbows and without shrugging, then lower slowly."
+  },
+  "legpress": {
+    "src": "/exercise-animations/leg-press.svg",
+    "still": "/exercise-animations/leg-press-still.svg",
+    "seconds": 4.1,
+    "description": "On a 45-degree leg press with the back supported and feet about hip width on the platform, the platform lowers only as far as the hips stay down on the seat, then presses back up evenly through the whole foot without locking the knees."
+  },
+  "lunge": {
+    "src": "/exercise-animations/dumbbell-reverse-lunge.svg",
+    "still": "/exercise-animations/dumbbell-reverse-lunge-still.svg",
+    "seconds": 5.35,
+    "description": "Standing tall with a dumbbell in each hand, one foot steps back and both knees lower under control with the front knee tracking over the toes, then the front foot drives the body back to standing. The legs alternate."
+  },
+  "rdl": {
+    "src": "/exercise-animations/romanian-deadlift.svg",
+    "still": "/exercise-animations/romanian-deadlift-still.svg",
+    "seconds": 5.3,
+    "description": "Standing with straight arms and the bar against the thighs, knees slightly bent, the hips push back and the bar slides down the front of the legs with a flat back until a comfortable hamstring stretch around the knees, then the hips drive forward to stand tall. The back never rounds."
+  },
+  "row": {
+    "src": "/exercise-animations/one-arm-dumbbell-row.svg",
+    "still": "/exercise-animations/one-arm-dumbbell-row-still.svg",
+    "seconds": 4.35,
+    "description": "One knee and one hand on a bench, back flat, the free arm rows the dumbbell from a long hang up toward the hip, elbow driving past the back, then lowers to a full stretch."
+  },
+  "wger-0ecfec6f-5d0f-4e8a-8d37-f6203a8923b8": {
+    "src": "/exercise-animations/seated-cable-row.svg",
+    "still": "/exercise-animations/seated-cable-row-still.svg",
+    "seconds": 4.25,
+    "description": "Seated with the feet on the platform and knees soft, the torso stays upright while the handle rows back to just above the belly button, the shoulder blades squeeze for a moment, then the arms return long without rounding forward."
+  },
+  "wger-5d5122e0-65f3-4afc-ac36-21955e2c7dde": {
+    "src": "/exercise-animations/plate-loaded-lat-pulldown.svg",
+    "still": "/exercise-animations/plate-loaded-lat-pulldown-still.svg",
+    "seconds": 4.35,
+    "description": "Seated with thighs under the pad, the lever handles pull from arms overhead down to the upper chest as the elbows drive down and back, then rise slowly."
+  },
+  "wger-661287d4-d1dc-485c-896b-73f90b000536": {
+    "src": "/exercise-animations/leg-presses-wide.svg",
+    "still": "/exercise-animations/leg-presses-wide-still.svg",
+    "seconds": 4.1,
+    "description": "On a 45-degree leg press with the feet a little wider than the shoulders and turned out slightly, the platform lowers until the knees reach a right angle, then presses straight back up without a pause."
+  },
+  "wger-b7c6a444-90ea-4f5b-9fea-748311606eaa": {
+    "src": "/exercise-animations/dumbbell-goblet-squat.svg",
+    "still": "/exercise-animations/dumbbell-goblet-squat-still.svg",
+    "seconds": 4.25,
+    "description": "Shown from the front and side: holding a dumbbell upright against the chest with the feet about shoulder width, the hips sit down and back until the thighs are parallel, knees tracking over the toes and chest up, then drive up through the heels."
+  }
+}
