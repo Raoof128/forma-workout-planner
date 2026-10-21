@@ -7,7 +7,7 @@ from rig import (
 )
 from exercises import HIP_Z, SHOULDER_Z, plate
 from legs import PRESS, deg, smooth
-from core import GLOW, glow, shadow
+from core import GLOW, cross, ghost, glow, shadow
 from upper_b import DUAL_FRONT, DUAL_SIDE, STAND_FRONT, STAND_SIDE, dual_labels, draw_skeleton, torso_joints
 
 FOOT = 46
@@ -67,6 +67,24 @@ GOBLET = {
 
 # ------------------------------------------------------------ 2 Romanian deadlift
 ANKLE = v(520, FLOOR - 20)
+ARM = UA + FA - 6  # arms stay straight
+
+
+def leg_front(hip, knee):
+    """Polyline down the front of the thigh and shin, where the bar rides."""
+    return [add(hip, v(26, 24)), add(knee, v(27, 0)), add(ANKLE, v(22, -26))]
+
+
+def bar_on_legs(shoulder, hip, knee):
+    """First point down the leg front that straight arms reach from the shoulder."""
+    pts = leg_front(hip, knee)
+    best = pts[-1]
+    for a, b in zip(pts, pts[1:]):
+        for i in range(101):
+            p = lerp(a, b, i / 100)
+            if math.hypot(p[0] - shoulder[0], p[1] - shoulder[1]) >= ARM:
+                return p
+    return best
 
 
 def rdl_body(u):
@@ -76,11 +94,7 @@ def rdl_body(u):
     hip = add(knee, v(-TH * math.sin(thigh), -TH * math.cos(thigh)))
     torso = math.radians(3 + 74 * u)
     shoulder = add(hip, v(TORSO * math.sin(torso), -TORSO * math.cos(torso)))
-    # The bar slides down the front of the legs: mid-thigh to just below the knee.
-    thigh_front = add(lerp(hip, knee, 0.55), v(30, 0))
-    knee_front = add(knee, v(28, 4))
-    bar = lerp(thigh_front, knee_front, u)
-    return knee, hip, shoulder, bar, torso
+    return knee, hip, shoulder, bar_on_legs(shoulder, hip, knee), torso
 
 
 def rdl_pose(sc, c):
@@ -88,27 +102,49 @@ def rdl_pose(sc, c):
     for side, z in (("f", -HIP_Z), ("n", HIP_Z)):
         draw_leg(sc, side, v(hip[0], hip[1], z), v(knee[0], knee[1], z), v(ANKLE[0], ANKLE[1], z),
                  v(ANKLE[0] + FOOT, FLOOR - 8, z), 0.5 if z > 0 else -1)
-    side_body(sc, hip, shoulder, head_dir=norm((math.sin(torso + 0.15), -math.cos(torso + 0.15), 0)))
-    glow(sc, "hams", add(lerp(hip, knee, 0.2), v(-18, 4)), add(lerp(hip, knee, 0.8), v(-16, 2)), 0.56, 12)
-    plate(sc, "bar", bar, 54, 0.8)
+    side_body(sc, hip, shoulder, head_dir=norm((math.sin(torso + 0.12), -math.cos(torso + 0.12), 0)))
+    glow(sc, "hams", add(lerp(hip, knee, 0.18), v(-19, 4)), add(lerp(hip, knee, 0.82), v(-17, 2)), 0.56, 12)
+    glow(sc, "glute", add(hip, v(-26, -4)), add(hip, v(-22, 18)), 0.57, 12)
+    plate(sc, "bar", bar, 56, 0.8)
+    sc.dot("barend", bar, 9, "#9aa39c", 0.83)
     for side, z in (("f", -1), ("n", 1)):
         s = add(shoulder, v(0, 0, SHOULDER_Z * z))
-        hand = reach(s, v(bar[0], bar[1], 60 * z), UA, FA)
+        hand = reach(s, v(bar[0], bar[1], 64 * z), UA, FA)
         draw_arm(sc, side, s, ik(s, hand, UA, FA, (-0.3, 0, 0.3 * z)), hand, 1 if z > 0 else -1.5)
+
+
+def rdl_back_guide():
+    _, hip, shoulder, _, torso = rdl_body(1)
+    up = (-math.cos(torso), -math.sin(torso))
+    a = (hip[0] + up[0] * 40, hip[1] + up[1] * 40)
+    b = (shoulder[0] + up[0] * 40 + 30 * math.sin(torso), shoulder[1] + up[1] * 40 - 30 * math.cos(torso))
+    return (f'<path d="M{a[0]:.0f} {a[1]:.0f}L{b[0]:.0f} {b[1]:.0f}" stroke="#9bbb2c" stroke-width="5" '
+            'stroke-linecap="round" stroke-dasharray="1 12"/>')
+
+
+def rdl_rounded():
+    _, hip, shoulder, _, torso = rdl_body(1)
+    up = (-math.cos(torso), -math.sin(torso))
+    mid = lerp(hip, shoulder, 0.55)
+    hump = (mid[0] + up[0] * 46, mid[1] + up[1] * 46)
+    low = (shoulder[0] + 6, shoulder[1] + 40)
+    return ghost([hip[:2], hump, low]) + cross(hump[0], hump[1] - 44)
 
 
 RDL = {
     "slug": "romanian-deadlift", "name": "Romanian deadlift", "muscles": "Hamstrings · glutes · lower back",
-    "desc": "Standing with the bar against the thighs and the knees slightly bent, the hips push back and the bar slides down the legs with a flat back until a comfortable hamstring stretch, then the hips drive forward to stand tall.",
-    "pose": rdl_pose, "start": {"u": 0}, "scale": 0.86,
+    "desc": "Standing with straight arms and the bar against the thighs, knees slightly bent, the hips push back and the bar slides down the front of the legs with a flat back until a comfortable hamstring stretch around the knees, then the hips drive forward to stand tall. The back never rounds.",
+    "pose": rdl_pose, "start": {"u": 0}, "scale": 0.9,
     "steps": [
-        (0.5, {}, "Bar against the thighs, knees soft"),
-        (2.0, {"u": 1}, "Push the hips back, bar close to the legs · 2 s"),
-        (0.45, {}, "Stop at a hamstring stretch, back flat"),
+        (0.5, {}, "Arms straight, bar against the thighs, knees soft"),
+        (2.0, {"u": 1}, "Push the hips back, bar slides down the legs · 2 s"),
+        (0.6, {}, "Stop at a hamstring stretch, back flat"),
+        (0.8, {}, "Never let the back round"),
         (1.0, {"u": 0}, "Drive the hips forward to stand · 1 s"),
-        (0.4, {}, "Never to failure"),
+        (0.4, {}, "Squeeze the glutes, never to failure"),
     ],
     "path": "u", "track": "baro",
+    "overlays": [(rdl_back_guide(), [2]), (rdl_rounded(), [3])],
 }
 
 

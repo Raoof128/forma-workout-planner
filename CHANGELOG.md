@@ -4,6 +4,14 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-21 — Romanian deadlift demo polished
+
+- The arms now stay straight and the bar position is solved where straight
+  arms meet the front of the legs, so it slides down the thighs and shins to
+  the knees. A dotted flat-back guide shows at the hamstring stretch, followed
+  by a red rounded-back outline with a cross ("Never let the back round").
+  Checked in Chromium and WebKit.
+
 ### Raouf: 2026-10-21 — Animated demos for Legs B
 
 - Five more animated SVG demos in `assets/exercise-svg/legs-b/`: dumbbell

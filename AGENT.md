@@ -58,6 +58,12 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-21 — RDL polish
+
+- For any barbell hinge, place the bar with `bar_on_legs` (straight arms
+  meeting the leg-front polyline) rather than a hand-picked target, which bent
+  the elbows at lockout.
+
 ### Raouf: 2026-10-21 — Legs B demos
 
 - `scripts/exercise-svg/legs_b.py`. A Romanian deadlift hinges at the hips
