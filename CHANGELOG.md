@@ -4,6 +4,17 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-21 — Animated demos for Legs B
+
+- Five more animated SVG demos in `assets/exercise-svg/legs-b/`: dumbbell
+  goblet squat (front and side views), Romanian deadlift (soft knees, hips
+  back, bar sliding down the legs to a hamstring stretch), leg press
+  (standard stance, hips stay down), dumbbell reverse lunge and barbell hip
+  thrust (chin tucked, one-second squeeze). The routine's seated leg curl and
+  standing calf raise reuse existing demos.
+- Verified by reviewing start, middle and end frames in Chromium, two demos
+  in WebKit, and a byte-identical rebuild of all 33 files.
+
 ### Raouf: 2026-10-21 — Animated demos for Upper B
 
 - Six more animated SVG demos in `assets/exercise-svg/upper-b/`: incline

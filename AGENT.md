@@ -58,6 +58,14 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-21 — Legs B demos
+
+- `scripts/exercise-svg/legs_b.py`. A Romanian deadlift hinges at the hips
+  with the knees only soft (thigh about 20° back, shin near vertical); a first
+  pass with 50° of knee bend read as a squat, so keep that check when posing
+  hinges. Variants of an existing pose (leg press from the wide leg press) copy
+  the exercise dict and change only the slug, text and steps.
+
 ### Raouf: 2026-10-21 — Upper B demos
 
 - `scripts/exercise-svg/upper_b.py` adds the reusable `draw_skeleton` (3D

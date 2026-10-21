@@ -9,6 +9,7 @@ from pathlib import Path
 import core
 import exercises
 import legs
+import legs_b
 import upper_b
 from rig import render
 
@@ -19,6 +20,8 @@ SETS = {
     "core": core.ALL,
     # Thursday's lateral raise is the same demo as core's, so it is not repeated.
     "upper-b": upper_b.ALL,
+    # Saturday's seated leg curl (legs-a) and standing calf raise (core) are shared.
+    "legs-b": legs_b.ALL,
 }
 
 if __name__ == "__main__":
