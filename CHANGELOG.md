@@ -15,6 +15,43 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   45-minute limit, not failed. #20's earlier failure was a WebKit focus flake
   (`legal.spec.js:111`) and #23's the drag flake that #25 fixes.
 
+### Raouf: 2026-10-21 — Switch a routine hold to its timed version
+
+- **What changed:** a routine that still counts a hold in reps (Hollow Hold,
+  the L-sits, levers, Deadhang, Wall-sit, Parallel Bar Hold, Plate Pinch and
+  the other timed aliases) shows **Use the timed version** under that hold in
+  the routine editor. Pressing it keeps the hold's sets, load, RPE, rest,
+  note, superset and place, and gives it a 60-second target the member can
+  change before saving; workouts started from the routine then use the hold
+  timer. In a running workout the hold's ⋯ menu has the same option, which
+  asks first if it would discard completed sets and keeps the note, RPE and
+  each set's load.
+  The confirmation no longer reads "Replace L-sit with L-sit?".
+- **Saved data:** nothing changes until the member presses the button and
+  saves. Past workouts keep the rep ID and their reps. The switched entry
+  keeps its old ID as `entryId`, which the schema already allows; no schema,
+  validator or API change, so this needs no API deploy beyond the hold
+  migration it builds on.
+- **Not offered:** the legacy plank (10-second reps with its own timer) and
+  seconds-and-metres exercises such as Battle Ropes, which already log time.
+- **Files:** new `src/timedHolds.js`; `src/components/RoutinePrescription.jsx`,
+  `RoutinePrescriptions.jsx`, `Routines.jsx`, `Workout.jsx`;
+  `src/workoutSession.js` (`replaceEntry` keeps note, RPE and set load for
+  the same movement); `src/styles.css`; `docs/user-guide.md`,
+  `docs/research/exercise-logging-review.md`; new
+  `unit/timed-hold-switch.test.js` and `tests/timed-hold-switch.spec.js`.
+- **Verification:** unit 116/116 with 6 new tests (the routine switch keeps
+  every field and its key and validates, history is untouched, a weighted
+  hold keeps its load on the workout card). New browser spec 4/4 in Chromium
+  and WebKit. Under heavy machine load the full development suite passed
+  256/320 at first; rerun serially, 58 of the 64 failures passed and the
+  remaining six WebKit keyboard-focus cases fail identically on the base
+  commit. Production guest build: 124/160, with 31 Firefox launch failures
+  (Firefox does not start in this sandbox) and 5 timeouts that passed 8/8
+  when rerun. Lint, Prettier, types, docs and worker 26/26 pass. PostgreSQL
+  server and account suites not run locally (Docker off); CI runs them.
+  Not deployed.
+
 ### Raouf: 2026-10-21 — More holds and balances log seconds
 
 - **What changed:** 15 more holds, balances and isometrics that were counted

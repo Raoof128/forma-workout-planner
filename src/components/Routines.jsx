@@ -20,6 +20,7 @@ import {
   tracksLoadReps,
 } from "../exerciseMetrics.js";
 import { workoutTemplates } from "../workoutTemplates.js";
+import { toTimedVersion } from "../timedHolds.js";
 import { matchesExercise } from "../catalog/search.js";
 import { canonicalId } from "../catalog/curation.js";
 import curation from "../catalog/curation.json" with { type: "json" };
@@ -471,6 +472,15 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
       });
     }
   }
+  // Only on the member's request: the entry keeps its key and programming.
+  function switchToTimed(key) {
+    if (ordering) return;
+    setItems((current) =>
+      current.map((item) =>
+        entryKey(item) === key ? toTimedVersion(item) : item,
+      ),
+    );
+  }
   function update(id, key, value) {
     setItems((current) =>
       current.map((item) =>
@@ -765,6 +775,7 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
                     onOrderingChange={setOrdering}
                     onReady={setPrescriptionsReady}
                     join={join}
+                    onUseTimed={switchToTimed}
                     defaultRest={defaultRest}
                   />
                 </Suspense>

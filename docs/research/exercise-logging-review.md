@@ -124,13 +124,35 @@ Options weighed:
   version: a seconds column, the hold timer and no rep target. Deadhang keeps
   its **ADDED (KG)** column.
 - A routine that already lists one of them keeps its rep prescription and
-  logs reps, with no timer, until the hold is replaced. History, volume and
+  logs reps, with no timer, until the member switches it. History, volume and
   records count those sets exactly as before, and their guide and
   illustration are the timed version's.
-- To switch, use **Replace exercise** in a workout, or remove the hold from
-  the routine, save, and add it again; the re-added hold starts with default
-  sets, time and rest, and no note, RPE or superset. Removing and re-adding
-  it in a single edit restores the saved entry, by design.
+- To switch, the member presses **Use the timed version** under the hold in
+  the routine editor (added 21 October 2026, below). Removing and re-adding
+  it in a single edit still restores the saved entry, by design.
+
+### Switching a routine entry on request
+
+The editor offers **Use the timed version** on any routine entry whose saved
+ID logs reps (`load_reps` in `exerciseById`) while its canonical row is timed
+(`metric: "duration"`): the 15 holds above, the 14 October Wall-sit, Parallel
+Bar Hold and Plate Pinch, and the earlier timed aliases (foam-roller drills,
+Toe Touch, seated figure four, Battling Ropes). It never runs on its own.
+Pressing it keeps sets, load, RPE, rest, note, superset and position, and
+replaces the rep target with a 60-second target the member can change before
+saving. The saved ID becomes the entry's `entryId`, so the row keeps its key.
+Saved workouts keep the rep ID and their reps.
+
+Excluded: the legacy `plank` (10-second reps with its own timer), and
+seconds-and-metres aliases (Battle Ropes, Rope Jumping, Skipping, Diaphragmatic
+Breathing) that already log time, where switching would drop the distance.
+
+A workout card offers the same action in its **⋯** menu. It goes through
+**Replace exercise**: the sets start again in seconds, completed rep sets are
+discarded only after a confirmation, and the note, RPE and each set's load
+stay because it is the same movement. Per-side logging applies to reps only,
+so the switch clears it. `src/timedHolds.js` holds the rule;
+`unit/timed-hold-switch.test.js` and `tests/timed-hold-switch.spec.js` pin it.
 
 ### Second review
 
