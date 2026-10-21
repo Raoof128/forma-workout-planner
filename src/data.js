@@ -182,6 +182,8 @@ export const exerciseById = new Map(
   }),
 );
 const reviewedGuides = new Map(selectableExercises.map((row) => [row.id, row]));
+// Guide, name and artwork for any saved ID. A hold saved in reps resolves to
+// its timed row here, so take units from exerciseById, never from this.
 export function guideExercise(id) {
   return (
     reviewedGuides.get(canonicalId(id, curation)) ?? {

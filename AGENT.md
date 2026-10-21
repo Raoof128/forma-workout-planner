@@ -66,6 +66,50 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 - A Verify run cancelled at the job limit is not a failure; check the limit
   in the PR's base branch before investigating.
 
+### Raouf: 2026-10-21 — Hold metric migration
+
+- **Supersedes** the line below that the holds stored as reps need a reviewed
+  metric migration. Fifteen of them now have timed identities,
+  `forma-<saved ID>` (`metric: "duration"`), built by `npm run catalog:curate`
+  from reviewed `measurementCorrections` in
+  `docs/research/exercise-quality-review.json`, the route the five 14 October
+  timed identities took. Each saved ID is a curation alias that keeps
+  `load_reps` in `exerciseById`. Never put them in
+  `src/catalog/programming-aliases.json` (it rewrites saved IDs, and the units
+  differ), and never give a rep entry the hold timer.
+- Arch Hang stays in reps: its guide says "Hold it for time/reps". The reason
+  is under `excludedMeasurementCorrections`.
+- A timed identity also needs its load decision moved to the new ID in
+  `src/catalog/logging-review.json` and its artwork entry carried to the new
+  ID in `docs/research/original-art/registry.json` (same `guideSha256`, as
+  `instructionId` keeps the guide), then
+  `node scripts/build-exercise-media.mjs`. `unit/hold-metric-migration.test.js`
+  pins all of it. Both builders reproduce the committed files byte for byte,
+  so run them rather than editing their output.
+- A routine that already lists one of these holds keeps logging reps until the
+  member replaces it. In the routine editor, removing and re-adding the hold
+  in one edit restores the saved entry (the cached-alias rule), so switching
+  takes a save in between.
+- `curation.json` and `machine-exercises.json` ship in the API image and the
+  API rejects unknown exercise IDs: deploy the API before the frontend in each
+  environment (staging API, staging frontend, production API, production
+  frontend). `src/storage.js` and `src/exerciseMetrics.js` are unchanged.
+  Once anyone saves a timed hold, do not roll back: reads re-validate stored
+  workspaces (`asAcknowledgement` in `server/workspace.ts`), so an older API
+  cannot load that workspace and an older frontend sends guest data to
+  recovery. Fix forward.
+- Eleven dev specs hard-code `127.0.0.1:5173` or `localhost:5173`. When another
+  session holds that port, run a scratch copy of `tests/` with only the port
+  rewritten (symlink `src`, `node_modules` and `package.json` beside it) on a
+  private port rather than sharing its server.
+  `tests/hold-metric-migration.spec.js` uses relative URLs.
+- **Verification:** unit 110/110; the new spec 4/4 in Chromium and WebKit
+  (red on the base catalogue first); development 309/316 and production
+  127/129 on private ports. Every failure also fails with the base catalogue
+  (six WebKit keyboard-focus cases, the `routine-library.spec.js:78` drag
+  timing) or passed on rerun (concurrent tabs). The PostgreSQL server and
+  account suites were not run locally.
+
 ### Raouf: 2026-10-21 — No-load columns and the hold timer
 
 - Load display is UI-only: `src/exerciseLoad.js` reads

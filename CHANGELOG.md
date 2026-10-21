@@ -15,6 +15,63 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   45-minute limit, not failed. #20's earlier failure was a WebKit focus flake
   (`legal.spec.js:111`) and #23's the drag flake that #25 fixes.
 
+### Raouf: 2026-10-21 — Calisthenics holds log seconds with the hold timer
+
+- **What changed:** 15 holds that were counted in reps now log seconds, with
+  the hold timer, when they are added to a routine or workout: Hollow Hold;
+  L-sit and its foot-supported, straddle and tuck versions; Front Lever and
+  Front lever tuck; Back Lever; Planche Lean Hold; elbow lever; Ring Support
+  Hold; Handstand; Deadhang (keeps **ADDED (KG)**); Sloper hanging; Sphinx.
+  Each guide was checked first. Arch Hang stays in reps because its guide
+  says "Hold it for time/reps". The timer is now on 185 of the 198 timed
+  exercises.
+- **Saved data:** each hold gets a new timed ID, `forma-<saved ID>`, with the
+  same name, guide, licence and illustration, and the saved ID becomes an
+  alias that keeps its rep units (the route the 14 October timed identities
+  took). Sets, routines and backups saved in reps validate, show ("12 reps")
+  and count toward volume as before, and a routine that lists one of these
+  holds keeps counting reps until the hold is replaced. No schema, validator
+  or stored-data change. Options weighed are in
+  [the logging review](docs/research/exercise-logging-review.md#hold-metric-migration).
+- **Deploying:** the API bundles the catalogue and rejects exercise IDs it
+  does not know, so deploy the API before the frontend in each environment,
+  staging first. Once anyone has saved a timed hold, fix forward rather than
+  rolling back: an older API or frontend cannot read that data. Not deployed.
+- **Files:** `docs/research/exercise-quality-review.json` (15 reviewed
+  `measurementCorrections`; Arch Hang under `excludedMeasurementCorrections`);
+  regenerated `src/catalog/curation.json`, `src/catalog/machine-exercises.json`
+  and `docs/research/catalog-quality-summary.json`;
+  `src/catalog/logging-review.json`; `docs/research/original-art/registry.json`
+  with regenerated `src/catalog/media.json` and `coverage.json` (assets
+  unchanged); `docs/research/exercise-logging-review.{md,json}`,
+  `docs/research/catalog-quality.md`, `docs/user-guide.md`; new
+  `unit/hold-metric-migration.test.js` and `tests/hold-metric-migration.spec.js`;
+  a comment on `guideExercise` in `src/data.js`.
+- **Verification:** unit 110/110, including 4 new tests: the identity and
+  timed-set tests failed on the base catalogue first, and the saved-reps test
+  fails if any hold gains a programming alias. The new browser spec passes
+  4/4 in Chromium and WebKit; it failed on the base catalogue first. Full
+  development suite, Chromium and WebKit on a private port: 309/316. All
+  seven failures were in WebKit. The concurrent-tabs case passed on rerun,
+  and six keyboard-focus cases fail the same way with the base catalogue.
+  Production suite on a guest build (Chromium and WebKit, desktop and mobile):
+  127/129. Both failures were the drag-timing test
+  `routine-library.spec.js:78`, which failed 2 of 6 runs on the base
+  catalogue and passed 6/6 on this branch at the same load. Lint, Prettier,
+  types, docs, build, server build, worker 26/26 and operations 14/14 pass.
+  The equipment audit is clean, artwork coverage is 1,411/1,411, both
+  catalogue builders rebuild byte for byte, and the compiled API validates
+  the new IDs. Firefox does not launch in this sandbox, and the PostgreSQL
+  server and account suites were not run locally: Docker was off and another
+  session was loading the machine. CI runs them. After the review fixes
+  (tests, docs and a comment), the unit suite and the new spec were run
+  again.
+- **Follow-ups:** a one-tap "switch to the timed version" for routines that
+  list a migrated hold (it would also cover the 14 October timed identities);
+  about 20 other holds flagged in `docs/research/exercise-logging-review.json`
+  (Crucifix, Axe Hold, Incline Static Hold, balance holds, Back bridge and
+  others) are still stored as reps and need the same review.
+
 ### Raouf: 2026-10-21 — No weight column for no-load exercises, and a hold timer
 
 - **Load review:** all 1,411 selectable exercises were read by name,

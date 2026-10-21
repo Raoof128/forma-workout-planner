@@ -625,15 +625,6 @@
       "reviewNote": "Visually inspected against complete guide: specified free weights, bench/support, assistance counterweight and representative exercise phase; anatomy intact. Overhead press/around-world image depicts end range, not rotation/arc animation."
     },
     {
-      "exerciseId": "wger-8e1cda15-542b-4714-8cc5-c1fe5089ee27",
-      "name": "Back Lever",
-      "equipment": "Pull-up bar + none (bodyweight exercise)",
-      "guideSha256": "286745a477cda2feac58b0195a36f30ea3b186456b49cd8bb8ead057b763d260",
-      "status": "accepted",
-      "assetId": "forma-original-movements-004-2-2",
-      "reviewNote": "Visually inspected against complete guide: specified free weights, bench/support, assistance counterweight and representative exercise phase; anatomy intact. Overhead press/around-world image depicts end range, not rotation/arc animation."
-    },
-    {
       "exerciseId": "wger-b646e62d-c616-4460-b4d1-23cc6a6ddb51",
       "name": "Back neck stretch",
       "equipment": "Bodyweight",
@@ -2893,15 +2884,6 @@
       "reviewNote": "Reviewed pivot-anchored Conan wheel carry, shoulder-height elbow curl, supported palms-down wrist extension and clearly head-lower-than-secured-feet decline bench press."
     },
     {
-      "exerciseId": "wger-74d4697d-8a97-4ea2-9d05-fa4d2bd7221e",
-      "name": "Deadhang",
-      "equipment": "Bodyweight",
-      "guideSha256": "422f10c3b9f27771f76245c1fa82eb95a7bc5af9a1a463d0790dcc0070ecdfbc",
-      "status": "accepted",
-      "assetId": "forma-original-movements-021-3-1",
-      "reviewNote": "Visually checked against complete guide: specified apparatus, body support, grip and representative exercise phase; intact anatomy."
-    },
-    {
       "exerciseId": "db-deadlift-with-bands",
       "name": "Deadlift with Bands",
       "equipment": "Barbell + Band",
@@ -3820,15 +3802,6 @@
       "reviewNote": "Visually checked against complete guide: correct support, apparatus, named grip and representative position; intact anatomy. Broad stretch/drill entries show a clearly representative example."
     },
     {
-      "exerciseId": "wger-1d1a53dd-e00f-477e-83f7-09c8ef9a71cd",
-      "name": "elbow lever",
-      "equipment": "Bodyweight",
-      "guideSha256": "ae56f12af80f73d63e32a8c1a4d6e344a98fab7a53fb5b4c4f3dd9dd2fda9068",
-      "status": "accepted",
-      "assetId": "forma-original-corrections-009-2-1",
-      "reviewNote": "Reviewed approximately 15-degree prone single/bilateral rear raises, elbow-led dumbbell raise, upright overhead thruster finish and grounded-palm elbow lever."
-    },
-    {
       "exerciseId": "db-elbow-to-knee",
       "name": "Elbow to Knee",
       "equipment": "Bodyweight",
@@ -4423,30 +4396,12 @@
       "reviewNote": "Reviewed reclined pronated front raise, supported straight-leg swing, horizontal straight-arm front lever and bent-arm pull-up, tuck lever, open-mouth neck extension, 3-and-9 plate grip, full-bench bar pullover, front split, clean-grip versus crossed-grip front squats."
     },
     {
-      "exerciseId": "wger-f41ac754-45a0-443b-afe5-e624e215229f",
-      "name": "Front Lever",
-      "equipment": "Bodyweight",
-      "guideSha256": "0a52d747d136205812cc7c61ccbfa329269874f53d9b36057fe7e4162c4ee0d6",
-      "status": "accepted",
-      "assetId": "forma-original-movements-035-2-0",
-      "reviewNote": "Reviewed reclined pronated front raise, supported straight-leg swing, horizontal straight-arm front lever and bent-arm pull-up, tuck lever, open-mouth neck extension, 3-and-9 plate grip, full-bench bar pullover, front split, clean-grip versus crossed-grip front squats."
-    },
-    {
       "exerciseId": "wger-b61dff58-6e47-4671-853b-208e7cd0ced4",
       "name": "Front lever pull-up",
       "equipment": "Pull-up bar",
       "guideSha256": "9b9f81ba022341af846d252498282fea147f91d703c3491956d8006ad07abb6b",
       "status": "accepted",
       "assetId": "forma-original-movements-035-3-0",
-      "reviewNote": "Reviewed reclined pronated front raise, supported straight-leg swing, horizontal straight-arm front lever and bent-arm pull-up, tuck lever, open-mouth neck extension, 3-and-9 plate grip, full-bench bar pullover, front split, clean-grip versus crossed-grip front squats."
-    },
-    {
-      "exerciseId": "wger-e79616cb-f5fb-4b10-b99d-09d43774e142",
-      "name": "Front lever tuck",
-      "equipment": "Pull-up bar",
-      "guideSha256": "903de0ca896b19b8ddce6efddb0e191083b3fd7cb6ad1fa10faeef43de0a2693",
-      "status": "accepted",
-      "assetId": "forma-original-movements-035-0-1",
       "reviewNote": "Reviewed reclined pronated front raise, supported straight-leg swing, horizontal straight-arm front lever and bent-arm pull-up, tuck lever, open-mouth neck extension, 3-and-9 plate grip, full-bench bar pullover, front split, clean-grip versus crossed-grip front squats."
     },
     {
@@ -4699,15 +4654,6 @@
       "guideSha256": "0fbe2416ff3a6d2e9e8ab57d62eff4ae8c1bb5738340ff014394df88d2272e19",
       "status": "accepted",
       "assetId": "forma-original-movements-037-3-0",
-      "reviewNote": "Reviewed seated straight-leg hamstring choke, standing hamstring kick, supine single-leg strap stretch, posterior-thigh roller, freestanding handstand, wall-supported bent-arm handstand press and freestanding press, front-rack hang-clean receiving positions, wide-grip overhead snatch receiving squats and chain-suspended rear-shoulder good morning. Olympic-lift captions describe receiving phase; guide supplies distinct starting height."
-    },
-    {
-      "exerciseId": "wger-35008ce6-74ca-40db-b965-44a1eccfa061",
-      "name": "Handstand",
-      "equipment": "Bodyweight",
-      "guideSha256": "dedcc1a5bc94e30e1764ec4956562b1f71fb077eaed1d0ac3d91999366d464c5",
-      "status": "accepted",
-      "assetId": "forma-original-movements-037-0-1",
       "reviewNote": "Reviewed seated straight-leg hamstring choke, standing hamstring kick, supine single-leg strap stretch, posterior-thigh roller, freestanding handstand, wall-supported bent-arm handstand press and freestanding press, front-rack hang-clean receiving positions, wide-grip overhead snatch receiving squats and chain-suspended rear-shoulder good morning. Olympic-lift captions describe receiving phase; guide supplies distinct starting height."
     },
     {
@@ -5042,15 +4988,6 @@
       "status": "accepted",
       "assetId": "forma-original-recovery-b-004-2-1",
       "reviewNote": "Unloaded wide lateral step shown without added band or weights. Root validated bodyweight side-step setup against clarified independently authored guide."
-    },
-    {
-      "exerciseId": "wger-d059c63d-0a81-48a3-912a-44070c0def2e",
-      "name": "Hollow Hold",
-      "equipment": "Gym mat + none (bodyweight exercise)",
-      "guideSha256": "a8258f5e17d5adfa9dd17edd502734fc16cf8fb8db550e1c54469552dbbd00d7",
-      "status": "accepted",
-      "assetId": "forma-original-movements-040-2-0",
-      "reviewNote": "Reviewed supine hip raise, straight-limb hollow hold, shoulder-height doorway turn-away stretch, wide deep horse stance, airborne bilateral hurdle hop, plate-loaded ball-supported Y raise, secured ankle hyperextension bench and horizontal suspended front-lever phase of ice-cream-maker drill."
     },
     {
       "exerciseId": "wger-ca4c8872-e53c-47ca-bc33-448b9ba9360f",
@@ -6050,24 +5987,6 @@
       "status": "accepted",
       "assetId": "forma-original-finish-solo-004-retry-0-0",
       "reviewNote": "Side-profile bench has equal rise/run near45degrees with head/back supported and feet grounded. Both straight forward arms visibly supinated palms upward; two distinct dumbbells with four heads and independent handles meet side by side in representative forward phase."
-    },
-    {
-      "exerciseId": "wger-16202754-f567-4d23-a866-2c9cc8eba71d",
-      "name": "L-sit",
-      "equipment": "Bodyweight",
-      "guideSha256": "01b6d8463e323df03e176356ff1b806dbc2d6aac1dc56d3d259c7467d69a717c",
-      "status": "accepted",
-      "assetId": "forma-original-movements-049-1-0",
-      "reviewNote": "Reviewed suspended floor L-sit and heel-supported regression, two-hand landmine rotation with anchored pivot, handle-attached jammer squat setup, two-bench legs-supported Larsen press, diagonal single-arm cross-body cable pulldown, lateral bounding preparation and airborne lateral box landing phase."
-    },
-    {
-      "exerciseId": "wger-a092afaf-aa5a-4384-b407-a6b52cf1c008",
-      "name": "L-Sit (Foot Supported)",
-      "equipment": "Bodyweight",
-      "guideSha256": "4d00d483ddf49265b7064b77075b1aaf4a52c935941051ebb7e1ed0354e605d8",
-      "status": "accepted",
-      "assetId": "forma-original-movements-049-2-0",
-      "reviewNote": "Reviewed suspended floor L-sit and heel-supported regression, two-hand landmine rotation with anchored pivot, handle-attached jammer squat setup, two-bench legs-supported Larsen press, diagonal single-arm cross-body cable pulldown, lateral bounding preparation and airborne lateral box landing phase."
     },
     {
       "exerciseId": "db-landmine-180s",
@@ -7951,15 +7870,6 @@
       "reviewNote": "Reviewed rear-rack squat inside safety-pin cage, crossed-ankle piriformis roller, free-leg-extended pistol squat, forearm side-plank hip-lift phase, forearm plank, single-arm forearm-supported reach, opposite shoulder tap, one-forearm/one-palm transition, seated elevated-feet plate twist and unilateral floor heel slide."
     },
     {
-      "exerciseId": "wger-a82944ae-24f4-4f7a-8aac-af251f6907e5",
-      "name": "Planche Lean Hold",
-      "equipment": "Bodyweight",
-      "guideSha256": "6e5323400c2c91a2291841a83f545ba1b5e005d6bd046e95def3af4e77957e6d",
-      "status": "accepted",
-      "assetId": "forma-original-corrections-024-1-0",
-      "reviewNote": "Reviewed forward-shoulder straight-arm planche lean, toes-pointed plantarflexion position, outward-everted strap foot stretch and shallow front-rack power clean catch clear of blocks."
-    },
-    {
       "exerciseId": "db-plank",
       "name": "Plank",
       "equipment": "Bodyweight",
@@ -8839,15 +8749,6 @@
       "guideSha256": "791d4c13a2108a27e4188c7e7e3bb94444c719e0c95fc91761ae1d3e84f4278e",
       "status": "accepted",
       "assetId": "forma-original-movements-070-2-2",
-      "reviewNote": "Reviewed backward-step lunge, extended-hip kneeling reverse Nordic lean, pronated upper-rim plate curl, prone straight-arm snow-angel phase, low-anchor upward band woodchop, crossed-arm upper-back foam roll, walking rickshaw frame carry and hip-hinged frame deadlift, bent-elbow ring dip and straight-arm turned-out support hold."
-    },
-    {
-      "exerciseId": "wger-6c9c9d14-e6bf-43ed-9859-a689e2131fe0",
-      "name": "Ring Support Hold",
-      "equipment": "Bodyweight",
-      "guideSha256": "dba982fb939f5fd7e8e3198edd0b79abe7e4239cd37d10f5e2dd6da1069bc8d1",
-      "status": "accepted",
-      "assetId": "forma-original-movements-070-3-2",
       "reviewNote": "Reviewed backward-step lunge, extended-hip kneeling reverse Nordic lean, pronated upper-rim plate curl, prone straight-arm snow-angel phase, low-anchor upward band woodchop, crossed-arm upper-back foam roll, walking rickshaw frame carry and hip-hinged frame deadlift, bent-elbow ring dip and straight-arm turned-out support hold."
     },
     {
@@ -10264,15 +10165,6 @@
       "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions."
     },
     {
-      "exerciseId": "wger-9f9edad8-7da0-448c-bfcb-ec61f2d28162",
-      "name": "Sloper hanging",
-      "equipment": "Bodyweight",
-      "guideSha256": "728ddf286dec43487abf22c319ba7d1736c5acf41c9e7a2d44e183ef753adca1",
-      "status": "accepted",
-      "assetId": "forma-original-movements-082-1-1",
-      "reviewNote": "Reviewed facing-sled extended-arm reverse fly and bent-elbow row, staggered tire sledgehammer swing, floor-supported 90-degree sleeper stretch setup, goblet-bell lateral slider lunge (guide equipment overrides broad tag), open-hand sloper hang, controlled bodyweight squat, incline Smith shoulder raise, crossed-ankle lacrosse-ball glute release, soft snap-down landing, full-squat snatch and snatch-balance receiving positions."
-    },
-    {
       "exerciseId": "wger-2398e14f-02a6-4fdc-9f69-029e52dfe033",
       "name": "Slow Squat",
       "equipment": "Bodyweight",
@@ -10585,15 +10477,6 @@
       "guideSha256": "b62310fcf840eca4f0db05f6f6bc4579abb7bbe577dd6b15cf9d4d15b3de8000",
       "status": "accepted",
       "assetId": "forma-original-movements-083-0-2",
-      "reviewNote": "Reviewed wide-grip snatch first pull, overhead block-snatch catch, extended snatch pull/shrug, ground-anchored overhead band extension, banded box squat, deep back squat, straight-arm paired-dumbbell rotation, floor-supported sphinx and low spider crawl."
-    },
-    {
-      "exerciseId": "wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6",
-      "name": "Sphinx",
-      "equipment": "Bodyweight",
-      "guideSha256": "d117f840c78fd86c471657e8fe55a632ecb2f6e6ae9608f3f81d56ebc978473f",
-      "status": "accepted",
-      "assetId": "forma-original-movements-083-1-2",
       "reviewNote": "Reviewed wide-grip snatch first pull, overhead block-snatch catch, extended snatch pull/shrug, ground-anchored overhead band extension, banded box squat, deep back squat, straight-arm paired-dumbbell rotation, floor-supported sphinx and low spider crawl."
     },
     {
@@ -11326,15 +11209,6 @@
       "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump."
     },
     {
-      "exerciseId": "wger-d2cf769a-9271-41ae-90fc-aef813e41740",
-      "name": "Straddle L-Sit",
-      "equipment": "Bodyweight",
-      "guideSha256": "3264c3fd196142cb6859d3381fa014863fd75e59b13d934147bcdb0fcae50173",
-      "status": "accepted",
-      "assetId": "forma-original-movements-089-3-1",
-      "reviewNote": "Reviewed grounded step jack, supported step-up knee raise, straight-leg bar/dumbbell hip hinges, standing vacuum posture, floor-supported straddle L-sit, on-bench mid row, prone incline straight-arm bar raise and crossover jump."
-    },
-    {
       "exerciseId": "db-straight-bar-bench-mid-rows",
       "name": "Straight Bar Bench Mid Rows",
       "equipment": "Barbell",
@@ -11891,15 +11765,6 @@
       "status": "accepted",
       "assetId": "forma-original-movements-094-2-0",
       "reviewNote": "Reviewed supinated single-arm suspension curl, angled suspension triceps extension, crossed-ankle arms-crossed tuck crunch, standing top of dumbbell get-up, paired preacher dumbbell curl, two-bell clean rack, two-bell overhead military press, hinged kettlebell row and wall-supported low Tyson push-up."
-    },
-    {
-      "exerciseId": "wger-9396a728-3da4-4390-ae4d-882395805008",
-      "name": "Tuck L-sit",
-      "equipment": "Bench",
-      "guideSha256": "b7b725a573ecd6483e9572ca4afd8d68ded928040f310bcb39f8d81fcb1be55f",
-      "status": "accepted",
-      "assetId": "forma-original-corrections-041-1-0",
-      "reviewNote": "Reviewed forefoot-only step support with heels below edge, grounded-palm airborne tucked L-sit and unilateral landmine sleeve row with opposite arm braced on forward thigh."
     },
     {
       "exerciseId": "wger-309bfd2b-1af4-49db-b64b-d7d7c7dd39bb",
@@ -12701,6 +12566,141 @@
       "status": "accepted",
       "assetId": "forma-original-movements-099-1-2",
       "reviewNote": "Reviewed easy running posture, supinated working phase of standing/preacher Zottman curls, underhand assisted chin-up, coordinated fan-bike pedalling, alternating rope waves, wall-supported right-angle hold, straight-arm parallel-bar support and chest/belly-hand breathing setup."
+    },
+    {
+      "exerciseId": "forma-wger-d059c63d-0a81-48a3-912a-44070c0def2e",
+      "name": "Hollow Hold",
+      "equipment": "Gym mat + none (bodyweight exercise)",
+      "guideSha256": "a8258f5e17d5adfa9dd17edd502734fc16cf8fb8db550e1c54469552dbbd00d7",
+      "status": "accepted",
+      "assetId": "forma-original-movements-040-2-0",
+      "reviewNote": "Carried over on 2026-10-21 from wger-d059c63d-0a81-48a3-912a-44070c0def2e, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-16202754-f567-4d23-a866-2c9cc8eba71d",
+      "name": "L-sit",
+      "equipment": "Bodyweight",
+      "guideSha256": "01b6d8463e323df03e176356ff1b806dbc2d6aac1dc56d3d259c7467d69a717c",
+      "status": "accepted",
+      "assetId": "forma-original-movements-049-1-0",
+      "reviewNote": "Carried over on 2026-10-21 from wger-16202754-f567-4d23-a866-2c9cc8eba71d, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-a092afaf-aa5a-4384-b407-a6b52cf1c008",
+      "name": "L-Sit (Foot Supported)",
+      "equipment": "Bodyweight",
+      "guideSha256": "4d00d483ddf49265b7064b77075b1aaf4a52c935941051ebb7e1ed0354e605d8",
+      "status": "accepted",
+      "assetId": "forma-original-movements-049-2-0",
+      "reviewNote": "Carried over on 2026-10-21 from wger-a092afaf-aa5a-4384-b407-a6b52cf1c008, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-d2cf769a-9271-41ae-90fc-aef813e41740",
+      "name": "Straddle L-Sit",
+      "equipment": "Bodyweight",
+      "guideSha256": "3264c3fd196142cb6859d3381fa014863fd75e59b13d934147bcdb0fcae50173",
+      "status": "accepted",
+      "assetId": "forma-original-movements-089-3-1",
+      "reviewNote": "Carried over on 2026-10-21 from wger-d2cf769a-9271-41ae-90fc-aef813e41740, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-9396a728-3da4-4390-ae4d-882395805008",
+      "name": "Tuck L-sit",
+      "equipment": "Bench",
+      "guideSha256": "b7b725a573ecd6483e9572ca4afd8d68ded928040f310bcb39f8d81fcb1be55f",
+      "status": "accepted",
+      "assetId": "forma-original-corrections-041-1-0",
+      "reviewNote": "Carried over on 2026-10-21 from wger-9396a728-3da4-4390-ae4d-882395805008, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-f41ac754-45a0-443b-afe5-e624e215229f",
+      "name": "Front Lever",
+      "equipment": "Bodyweight",
+      "guideSha256": "0a52d747d136205812cc7c61ccbfa329269874f53d9b36057fe7e4162c4ee0d6",
+      "status": "accepted",
+      "assetId": "forma-original-movements-035-2-0",
+      "reviewNote": "Carried over on 2026-10-21 from wger-f41ac754-45a0-443b-afe5-e624e215229f, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-e79616cb-f5fb-4b10-b99d-09d43774e142",
+      "name": "Front lever tuck",
+      "equipment": "Pull-up bar",
+      "guideSha256": "903de0ca896b19b8ddce6efddb0e191083b3fd7cb6ad1fa10faeef43de0a2693",
+      "status": "accepted",
+      "assetId": "forma-original-movements-035-0-1",
+      "reviewNote": "Carried over on 2026-10-21 from wger-e79616cb-f5fb-4b10-b99d-09d43774e142, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-8e1cda15-542b-4714-8cc5-c1fe5089ee27",
+      "name": "Back Lever",
+      "equipment": "Pull-up bar + none (bodyweight exercise)",
+      "guideSha256": "286745a477cda2feac58b0195a36f30ea3b186456b49cd8bb8ead057b763d260",
+      "status": "accepted",
+      "assetId": "forma-original-movements-004-2-2",
+      "reviewNote": "Carried over on 2026-10-21 from wger-8e1cda15-542b-4714-8cc5-c1fe5089ee27, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-a82944ae-24f4-4f7a-8aac-af251f6907e5",
+      "name": "Planche Lean Hold",
+      "equipment": "Bodyweight",
+      "guideSha256": "6e5323400c2c91a2291841a83f545ba1b5e005d6bd046e95def3af4e77957e6d",
+      "status": "accepted",
+      "assetId": "forma-original-corrections-024-1-0",
+      "reviewNote": "Carried over on 2026-10-21 from wger-a82944ae-24f4-4f7a-8aac-af251f6907e5, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-74d4697d-8a97-4ea2-9d05-fa4d2bd7221e",
+      "name": "Deadhang",
+      "equipment": "Bodyweight",
+      "guideSha256": "422f10c3b9f27771f76245c1fa82eb95a7bc5af9a1a463d0790dcc0070ecdfbc",
+      "status": "accepted",
+      "assetId": "forma-original-movements-021-3-1",
+      "reviewNote": "Carried over on 2026-10-21 from wger-74d4697d-8a97-4ea2-9d05-fa4d2bd7221e, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-9f9edad8-7da0-448c-bfcb-ec61f2d28162",
+      "name": "Sloper hanging",
+      "equipment": "Bodyweight",
+      "guideSha256": "728ddf286dec43487abf22c319ba7d1736c5acf41c9e7a2d44e183ef753adca1",
+      "status": "accepted",
+      "assetId": "forma-original-movements-082-1-1",
+      "reviewNote": "Carried over on 2026-10-21 from wger-9f9edad8-7da0-448c-bfcb-ec61f2d28162, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-6c9c9d14-e6bf-43ed-9859-a689e2131fe0",
+      "name": "Ring Support Hold",
+      "equipment": "Bodyweight",
+      "guideSha256": "dba982fb939f5fd7e8e3198edd0b79abe7e4239cd37d10f5e2dd6da1069bc8d1",
+      "status": "accepted",
+      "assetId": "forma-original-movements-070-3-2",
+      "reviewNote": "Carried over on 2026-10-21 from wger-6c9c9d14-e6bf-43ed-9859-a689e2131fe0, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-35008ce6-74ca-40db-b965-44a1eccfa061",
+      "name": "Handstand",
+      "equipment": "Bodyweight",
+      "guideSha256": "dedcc1a5bc94e30e1764ec4956562b1f71fb077eaed1d0ac3d91999366d464c5",
+      "status": "accepted",
+      "assetId": "forma-original-movements-037-0-1",
+      "reviewNote": "Carried over on 2026-10-21 from wger-35008ce6-74ca-40db-b965-44a1eccfa061, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-1d1a53dd-e00f-477e-83f7-09c8ef9a71cd",
+      "name": "elbow lever",
+      "equipment": "Bodyweight",
+      "guideSha256": "ae56f12af80f73d63e32a8c1a4d6e344a98fab7a53fb5b4c4f3dd9dd2fda9068",
+      "status": "accepted",
+      "assetId": "forma-original-corrections-009-2-1",
+      "reviewNote": "Carried over on 2026-10-21 from wger-1d1a53dd-e00f-477e-83f7-09c8ef9a71cd, accepted for the same movement and guide; the timed identity changes only how sets are measured."
+    },
+    {
+      "exerciseId": "forma-wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6",
+      "name": "Sphinx",
+      "equipment": "Bodyweight",
+      "guideSha256": "d117f840c78fd86c471657e8fe55a632ecb2f6e6ae9608f3f81d56ebc978473f",
+      "status": "accepted",
+      "assetId": "forma-original-movements-083-1-2",
+      "reviewNote": "Carried over on 2026-10-21 from wger-23d2b2ce-4ae7-441a-a122-9f6784f15aa6, accepted for the same movement and guide; the timed identity changes only how sets are measured."
     }
   ]
 }

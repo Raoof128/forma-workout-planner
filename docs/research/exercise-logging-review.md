@@ -39,8 +39,10 @@ decisions the app reads are in `src/catalog/logging-review.json`.
 
 ## Timer decisions
 
-The hold timer appears on the 183 exercises measured in seconds (`duration`),
-except 13 whose guides prescribe repetitions rather than a hold or interval:
+The hold timer appears on the 198 exercises measured in seconds (`duration`),
+including the 15 holds moved to seconds on 21 October (see
+[Hold metric migration](#hold-metric-migration)), except 13 whose guides
+prescribe repetitions rather than a hold or interval:
 Crossover Reverse Lunge, Dynamic Back Stretch, Dynamic Chest Stretch, Elbow
 Circles, Frog Hops, Front Leg Raises, Groin and Back Stretch, Groiners, Hip
 Circles (prone), Inchworm, Iron Crosses (stretch), Knee Circles and Lower Back
@@ -58,13 +60,78 @@ would reinterpret logged sets (see AGENT.md):
 - **Holds stored as reps.** Hollow Hold, L-sit (plus foot-supported, straddle
   and tuck), Front Lever and Front lever tuck, Back Lever, Planche Lean Hold,
   Arch Hang, Deadhang, Sloper hanging, Ring Support Hold, Handstand, Elbow
-  lever and Sphinx log reps, so they get no hold timer. Giving them one needs
-  a reviewed metric migration.
+  lever and Sphinx logged reps, so they had no hold timer. All but Arch Hang
+  now have timed identities; see the next section.
 - **Rep drills stored as seconds:** the 13 no-timer exercises above.
 - **Misleading equipment labels:** 75 rows, mostly machine, cable or barbell
   lifts labelled Bodyweight. They were classified by the guide.
 - **Odd metrics:** for example Box jumps, High knees and Bag training log
   metres; a sled sprint logs time and distance without a load.
+
+## Hold metric migration
+
+**21 October 2026.** Each of the 16 holds above was checked against its guide.
+Fifteen describe holding a position (Sloper hanging even says "for a amount of
+seconds"), so they moved to seconds. Arch Hang stays in reps: its guide says
+"Hold it for time/reps", so counting reps is one of its prescribed measures.
+The reason for every call is in `measurementCorrections` and
+`excludedMeasurementCorrections` in
+[exercise-quality-review.json](exercise-quality-review.json).
+
+### Approach
+
+Each hold gets a timed identity, `forma-<saved ID>`, with `metric: "duration"`
+and the same name, guide (`instructionId`), source, licence and reviewed
+illustration. The saved ID becomes a curation alias of it. This is the route
+the catalogue review already took for Wall-sit, Parallel Bar Hold, Plate Pinch,
+Battle ropes and Diaphragmatic Breathing; `npm run catalog:curate` builds both
+from the reviewed corrections.
+
+Options weighed:
+
+- **New timed IDs with an alias (chosen).** Saved IDs keep `load_reps` in
+  `exerciseById`, so every saved set, routine and backup validates and reads
+  as before, with no schema or validator change. An older API rejects the new
+  IDs rather than misreading them, so a wrong deploy order fails safely.
+- **A per-set unit marker on the existing IDs.** Every reader of
+  `exercise.metric` (the shared validator, volume, records, the API's coach
+  summary) would have to become set-aware, saved data would need migrating,
+  and one exercise's history would mix units. During a rollout an older API
+  would read a new 45-second set as 1 rep.
+- **Rewriting saved rep sets or prescriptions as seconds.** That reinterprets
+  saved units, which AGENT.md forbids, and what "10 reps" of an L-sit meant
+  cannot be known.
+- **Reading reps as seconds, like the legacy plank.** Only the plank defines
+  how long its rep is (10 seconds).
+
+### What changes for members
+
+- Adding one of these holds (the routine editor's search or exercise library,
+  **Add exercise** or **Replace exercise** in a workout) adds the timed
+  version: a seconds column, the hold timer and no rep target. Deadhang keeps
+  its **ADDED (KG)** column.
+- A routine that already lists one of them keeps its rep prescription and
+  logs reps, with no timer, until the hold is replaced. History, volume and
+  records count those sets exactly as before, and their guide and
+  illustration are the timed version's.
+- To switch, use **Replace exercise** in a workout, or remove the hold from
+  the routine, save, and add it again; the re-added hold starts with default
+  sets, time and rest, and no note, RPE or superset. Removing and re-adding
+  it in a single edit restores the saved entry, by design.
+
+### Deploying
+
+The API validates exercise IDs against the catalogue it bundles
+(`src/catalog/curation.json` and `src/catalog/machine-exercises.json` are in
+`ops/Dockerfile`), so an older API rejects a workspace that contains a timed
+hold. Deploy the API before the frontend in each environment: staging API,
+then staging frontend; production API, then production frontend.
+`src/storage.js` and `src/exerciseMetrics.js` are unchanged.
+
+Rolling back is not safe once anyone has saved a timed hold. The API
+re-validates stored workspaces when it reads them, so an older API image
+cannot load that member's workspace, and an older frontend sends a guest's
+saved data to the recovery screen. Fix forward instead of rolling back.
 
 ## Keeping it current
 
@@ -72,3 +139,13 @@ would reinterpret logged sets (see AGENT.md):
 the review, listed twice, or unknown, and if a no-timer entry is not a timed
 exercise. A catalogue import therefore needs its new rows reviewed and added
 to `src/catalog/logging-review.json`.
+
+`unit/hold-metric-migration.test.js` pins each migrated hold: the saved ID
+keeps `load_reps` and no timer, the timed ID is the one offered, both share a
+load class, guide and illustration, saved rep sets keep their values, text and
+volume, and a completed timed set needs its seconds. Another timed identity
+follows the same steps: add a reviewed entry to `measurementCorrections`, run
+`npm run catalog:curate`, move its decision in `src/catalog/logging-review.json`
+to the new ID, carry its artwork entry in
+`docs/research/original-art/registry.json` and run
+`node scripts/build-exercise-media.mjs`.
