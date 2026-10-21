@@ -433,7 +433,9 @@ test(
     const close = page.getByRole("button", { name: "Close dialog" });
     const gotIt = page.getByRole("button", { name: "Got it" });
     await expect(close).toBeFocused();
-    await page.keyboard.press("Tab");
+    // Focus wraps both ways. The guide may hold a demonstration video and
+    // credit links between the two buttons, so wrap backwards first.
+    await page.keyboard.press("Shift+Tab");
     await expect(gotIt).toBeFocused();
     await page.keyboard.press("Tab");
     await expect(close).toBeFocused();

@@ -15,7 +15,12 @@ import { Button, Empty, Modal } from "./components/UI";
 import Recovery from "./components/Recovery";
 import Notification from "./components/Notification";
 import Overview from "./components/Overview";
-import { Routines, RoutineDetail, RoutineEditor } from "./components/Routines";
+import {
+  Routines,
+  RoutineDetail,
+  RoutineEditor,
+  TemplatePreview,
+} from "./components/Routines";
 import Library from "./components/Library";
 import Workout from "./components/Workout";
 import { WorkoutHistory, Progress } from "./components/Insights";
@@ -179,6 +184,24 @@ function AccountWorkspace({ notify }) {
       return;
     }
     void begin(routine);
+  }
+  async function addTemplate(template) {
+    const copy = {
+      ...structuredClone(template),
+      id: createId(),
+    };
+    const result = await change(
+      (current) => ({
+        ...current,
+        routines: [...current.routines, copy],
+      }),
+      "Workout template added to your routines.",
+    );
+    if (result)
+      setModal({
+        type: "detail",
+        routine: result.data.routines.find((item) => item.id === copy.id),
+      });
   }
   async function duplicateRoutine(routine) {
     const copy = {
@@ -487,27 +510,15 @@ function AccountWorkspace({ notify }) {
                   onArchive={archiveRoutine}
                   onReorder={reorderRoutines}
                   onOpen={(routine) => setModal({ type: "detail", routine })}
+                  onPreview={(routine, { template } = {}) =>
+                    setModal(
+                      template
+                        ? { type: "template-preview", template: routine }
+                        : { type: "detail", routine, preview: 0 },
+                    )
+                  }
                   onCreate={() => setModal({ type: "editor" })}
-                  onUseTemplate={async (template) => {
-                    const copy = {
-                      ...structuredClone(template),
-                      id: createId(),
-                    };
-                    const result = await change(
-                      (current) => ({
-                        ...current,
-                        routines: [...current.routines, copy],
-                      }),
-                      "Workout template added to your routines.",
-                    );
-                    if (result)
-                      setModal({
-                        type: "detail",
-                        routine: result.data.routines.find(
-                          (item) => item.id === copy.id,
-                        ),
-                      });
-                  }}
+                  onUseTemplate={addTemplate}
                 />
               )}
               {visiblePage === "library" && <Library />}
@@ -623,6 +634,15 @@ function AccountWorkspace({ notify }) {
           onArchive={archiveRoutine}
           onEdit={(routine) => setModal({ type: "editor", routine })}
           onDelete={(routine) => setModal({ type: "delete", routine })}
+          initialPreview={modal.preview ?? null}
+        />
+      )}
+      {modal?.type === "template-preview" && (
+        <TemplatePreview
+          template={modal.template}
+          defaultRest={data.profile.restSeconds}
+          onClose={() => setModal(null)}
+          onAdd={addTemplate}
         />
       )}
       {modal?.type === "editor" && (

@@ -4,6 +4,79 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-21 — Demonstration clips and single-exercise card
+
+- **Single exercise:** selecting an exercise name in a routine overview now
+  opens only that exercise's card (illustration, prescription, demonstration
+  and guide) with **Back to overview**, instead of the whole workout preview.
+  **Preview workout** still steps through every exercise.
+- **Demonstration clips:** 22 exercises gain a short, silent, looping video in
+  the preview and in the exercise library guide: barbell bench press, incline
+  bench press, back squat, deadlift, trap-bar deadlift, standing military
+  press, pull-up, bent-over row, 45-degree leg press, calf press on the leg
+  press, seated leg curl, leg extension, machine chest press, machine shoulder
+  press, seated machine row, seated back extension, dumbbell shoulder press,
+  dumbbell biceps curl, superman, double kettlebell push press, knee tuck jump
+  and backward medicine-ball throw. Sources: CDC and U.S. Army (public domain)
+  and FitnessScape (CC BY 3.0), credited under each clip. Each was reviewed
+  frame by frame against the exact FORMA variant; 16 uncertain matches are
+  held back. Clips are self-hosted (5 MB in total), never autoplay and load
+  only when played.
+- **Tooling:** `docs/research/exercise-videos/registry.json` records every
+  candidate, licence, checksum, review and trim;
+  `scripts/build-exercise-demos.mjs` rebuilds `public/exercise-demos/` and
+  `src/catalog/demos.json`; `unit/exercise-demos.test.js` guards them.
+- **Files:** `src/components/ExerciseDemo.jsx`, `RoutinePreview.jsx`
+  (`PreviewSlide`), `Routines.jsx`, `ExerciseGuide.jsx`, `UI.jsx`,
+  `src/styles.css`, `src/catalog/demos.json`, `public/exercise-demos/` (new),
+  `scripts/build-exercise-demos.mjs` (new), `unit/exercise-demos.test.js`
+  (new), `tests/routine-preview.spec.js`, `tests/ui-controls.spec.js`,
+  `docs/user-guide.md`, `docs/research/exercise-videos.md`.
+- **Verification:** preview spec 10/10 in Chromium and WebKit, including clip
+  playback in both and no external media requests; unit 99/99; lint,
+  Prettier, type check, docs check and build pass; 15 affected Chromium specs
+  94/95, the failure being the focus-trap test that assumed nothing focusable
+  between Close and Got it (updated, then 49/50 across both engines for the
+  UI, keyboard and accessibility specs). The remaining WebKit failure,
+  account-import focus, also fails on `main`. Firefox cannot launch in this
+  environment. Not committed or deployed.
+
+### Raouf: 2026-10-21 — Preview a routine or template without starting it
+
+- **What changed:** routines can be looked through exercise by exercise before
+  training. **Preview workout** sits in the routine overview and in each
+  routine card's **⋯** menu, and each exercise name in the overview opens the
+  preview at that exercise. Every workout template has a **Preview** button,
+  so it can be checked before **Add to my routines**. Each step shows the
+  FORMA illustration, sets × reps or measurement, RPE, rest, notes, muscle and
+  equipment, and the full technique guide with its credits. Previewing never
+  starts a workout or changes saved data.
+- **Accessibility:** follows the WAI-ARIA APG carousel pattern: labelled
+  carousel and slides ("2 of 6: …"), Previous/Next keep focus and stay
+  focusable at the ends, a polite one-line announcement per step, and an
+  exercise strip for jumping (current item `aria-current="step"`). Focus moves
+  to **Back to overview** on entry and returns to the opener on exit. On
+  screens under 480 px Previous/Next show arrows only.
+- **Demonstration videos:** researched, not shipped. Open-licence clips that
+  can be self-hosted (CDC and US Army public domain, FitnessScape CC BY, wger
+  CC BY-SA) cover roughly 2–5% of the catalogue; see
+  [the research note](docs/research/exercise-videos.md). The preview has an
+  empty video slot (`ExerciseDemo`, `src/catalog/demos.json`) for reviewed
+  clips.
+- **Files:** `src/components/RoutinePreview.jsx`, `GuideInstructions.jsx`,
+  `ExerciseDemo.jsx`, `src/catalog/demos.json` (new); `Routines.jsx`,
+  `RoutineCardOrder.jsx`, `ExerciseGuide.jsx`, `src/App.jsx`,
+  `src/styles.css`; `tests/routine-preview.spec.js` (new);
+  `docs/user-guide.md`, `docs/research/exercise-videos.md` (new).
+- **Verification:** new spec 6/6 in Chromium and WebKit; preview, responsive
+  and accessibility specs 62/62 across both engines after the narrow-screen
+  fix; 15 affected Chromium specs 96/99 on the first run, with the three
+  failures (history order, reduced-motion drag outline, personal training
+  workflow) passing on rerun; unit 98/98; lint, Prettier, type check and docs
+  check pass. Firefox could not launch in this environment, on any spec.
+  Checked by hand in the dev preview at desktop width, 375 px and 316 px. Not
+  committed or deployed.
+
 ### Raouf: 2026-10-19 — Per-exercise ⋯ menu in a running workout
 
 - **What changed:** the single **Edit workout** dialog on the active workout

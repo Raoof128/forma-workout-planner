@@ -10,13 +10,13 @@ import {
   Clock,
   BookOpen,
   ArrowLeft,
+  Eye,
 } from "lucide-react";
 import { Button, Modal, PageHeading } from "./UI";
 import { createId, exerciseById, selectableExercises } from "../data";
 import {
   defaultPrescription,
   validMeasurement,
-  measurementText,
   tracksLoadReps,
 } from "../exerciseMetrics.js";
 import { workoutTemplates } from "../workoutTemplates.js";
@@ -25,12 +25,15 @@ import { canonicalId } from "../catalog/curation.js";
 import curation from "../catalog/curation.json" with { type: "json" };
 import Library from "./Library.jsx";
 import RoutineCardOrder from "./RoutineCardOrder.jsx";
+import RoutinePreview, {
+  PreviewSlide,
+  prescriptionText,
+} from "./RoutinePreview.jsx";
 const RoutinePrescriptions = lazy(() => import("./RoutinePrescriptions.jsx"));
 import {
   entryKey,
   parseRepRange,
   repRangeText,
-  repsText,
   groupLabels,
   normalizeGroups,
   isArchived,
@@ -43,6 +46,7 @@ export function Routines({
   onDuplicate,
   onArchive,
   onReorder,
+  onPreview,
 }) {
   const [showArchived, setShowArchived] = useState(false);
   const visibleRoutines = routines.filter(
@@ -94,6 +98,7 @@ export function Routines({
         onDuplicate={onDuplicate}
         onArchive={onArchive}
         onReorder={onReorder}
+        onPreview={onPreview}
       >
         <button className="create-card" onClick={onCreate}>
           <span className="empty-icon">
@@ -110,24 +115,34 @@ export function Routines({
         </span>
       </div>
       <p className="muted">
-        Add a template to your routines, then adjust its sets, measurements and
-        load to suit you.
+        Preview a template to see each exercise, or add it to your routines and
+        adjust its sets, measurements and load to suit you.
       </p>
       <div className="routine-grid full-grid">
         {workoutTemplates.map((template) => (
-          <button
-            key={template.id}
-            className="panel workout-template"
-            onClick={() => onUseTemplate(template)}
-          >
-            <h3>{template.name}</h3>
-            <p>{template.description}</p>
-            <span className="small muted">
-              {template.exercises.length} exercise
-              {template.exercises.length === 1 ? "" : "s"} · {template.minutes}{" "}
-              min
-            </span>
-          </button>
+          <div key={template.id} className="workout-template-wrap">
+            <button
+              className="panel workout-template"
+              onClick={() => onUseTemplate(template)}
+            >
+              <h3>{template.name}</h3>
+              <p>{template.description}</p>
+              <span className="small muted">
+                {template.exercises.length} exercise
+                {template.exercises.length === 1 ? "" : "s"} ·{" "}
+                {template.minutes} min · Add to routines
+              </span>
+            </button>
+            <Button
+              variant="secondary"
+              className="workout-template-preview"
+              aria-label={`Preview ${template.name}`}
+              onClick={() => onPreview(template, { template: true })}
+            >
+              <Eye size={16} />
+              Preview
+            </Button>
+          </div>
         ))}
       </div>
     </>
@@ -141,8 +156,102 @@ export function RoutineDetail({
   onDelete,
   onArchive,
   defaultRest = 90,
+  initialPreview = null,
 }) {
   const labels = groupLabels(routine.exercises);
+  const [preview, setPreview] = useState(initialPreview);
+  // An exercise name opens only that exercise's card, not the whole workout.
+  const [single, setSingle] = useState(null);
+  const opener = useRef(null);
+  const back = useRef(null);
+  const wasPreviewing = useRef(initialPreview != null);
+  const previewing = preview != null || single != null;
+  useEffect(() => {
+    if (previewing && !wasPreviewing.current)
+      back.current?.focus({ preventScroll: true });
+    else if (!previewing && wasPreviewing.current)
+      (opener.current?.isConnected
+        ? opener.current
+        : document.querySelector(".routine-preview-opener")
+      )?.focus({ preventScroll: true });
+    if (previewing) back.current?.closest("dialog")?.scrollTo?.(0, 0);
+    wasPreviewing.current = previewing;
+  }, [previewing]);
+  function openPreview(index, event) {
+    opener.current = event.currentTarget;
+    setPreview(index);
+  }
+  function openExercise(index, event) {
+    opener.current = event.currentTarget;
+    setSingle(index);
+  }
+  function closePreview() {
+    setPreview(null);
+    setSingle(null);
+  }
+  const startButton = isArchived(routine) ? (
+    <Button variant="lime" onClick={() => onArchive(routine)}>
+      Restore routine
+    </Button>
+  ) : (
+    <Button variant="lime" onClick={() => onStart(routine)}>
+      <Play size={17} />
+      Start workout
+    </Button>
+  );
+  if (single != null) {
+    const item = routine.exercises[single];
+    return (
+      <Modal
+        title={exerciseById.get(item.exerciseId).name}
+        onClose={closePreview}
+        wide
+      >
+        <section className="modal-content routine-preview">
+          <p className="small muted routine-preview-from">
+            Exercise {labels[single]} in {routine.name}
+          </p>
+          <PreviewSlide
+            item={item}
+            label={labels[single]}
+            defaultRest={defaultRest}
+            retryHint="Go back and reopen this exercise to retry."
+          />
+          <div className="modal-actions">
+            <Button
+              ref={back}
+              data-autofocus
+              variant="secondary"
+              onClick={closePreview}
+            >
+              <ArrowLeft size={17} /> Back to overview
+            </Button>
+          </div>
+        </section>
+      </Modal>
+    );
+  }
+  if (preview != null)
+    return (
+      <Modal title="Workout preview" onClose={closePreview} wide>
+        <RoutinePreview
+          routine={routine}
+          index={preview}
+          onIndex={setPreview}
+          defaultRest={defaultRest}
+        >
+          <Button
+            ref={back}
+            data-autofocus
+            variant="secondary"
+            onClick={closePreview}
+          >
+            <ArrowLeft size={17} /> Back to overview
+          </Button>
+          {startButton}
+        </RoutinePreview>
+      </Modal>
+    );
   return (
     <Modal title="Routine overview" onClose={onClose} wide>
       <div
@@ -170,7 +279,14 @@ export function RoutineDetail({
               <div className="exercise-row" key={entryKey(item)}>
                 <span className="exercise-number">{labels[i]}</span>
                 <div>
-                  <strong>{e.name}</strong>
+                  <button
+                    type="button"
+                    className="exercise-row-link"
+                    aria-label={`View ${e.name}`}
+                    onClick={(event) => openExercise(i, event)}
+                  >
+                    <strong>{e.name}</strong>
+                  </button>
                   {item.note && (
                     <span className="program-note">{item.note}</span>
                   )}
@@ -179,10 +295,7 @@ export function RoutineDetail({
                   </span>
                 </div>
                 <span className="sets-label">
-                  {item.sets} ×{" "}
-                  {e.metric && e.metric !== "load_reps"
-                    ? measurementText(e, item)
-                    : repsText(item, e)}
+                  {prescriptionText(item, e)}
                   <small className="program-target">
                     {item.rpe != null && `RPE ${item.rpe} · `}
                     {item.restSeconds ?? defaultRest} s rest
@@ -204,18 +317,51 @@ export function RoutineDetail({
             <Pencil size={16} />
             Edit routine
           </Button>
-          {isArchived(routine) ? (
-            <Button variant="lime" onClick={() => onArchive(routine)}>
-              Restore routine
-            </Button>
-          ) : (
-            <Button variant="lime" onClick={() => onStart(routine)}>
-              <Play size={17} />
-              Start workout
-            </Button>
-          )}
+          <Button
+            variant="secondary"
+            className="routine-preview-opener"
+            onClick={(event) => openPreview(0, event)}
+          >
+            <Eye size={16} />
+            Preview workout
+          </Button>
+          {startButton}
         </div>
       </div>
+    </Modal>
+  );
+}
+export function TemplatePreview({ template, onClose, onAdd, defaultRest }) {
+  const [index, setIndex] = useState(0);
+  const [adding, setAdding] = useState(false);
+  return (
+    <Modal title="Workout preview" onClose={onClose} wide>
+      <RoutinePreview
+        routine={template}
+        index={index}
+        onIndex={setIndex}
+        defaultRest={defaultRest}
+      >
+        <Button variant="secondary" onClick={onClose}>
+          Close preview
+        </Button>
+        <Button
+          variant="lime"
+          loading={adding}
+          disabled={adding}
+          onClick={async () => {
+            setAdding(true);
+            try {
+              await onAdd(template);
+            } finally {
+              setAdding(false);
+            }
+          }}
+        >
+          <Plus size={17} />
+          Add to my routines
+        </Button>
+      </RoutinePreview>
     </Modal>
   );
 }
