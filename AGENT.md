@@ -58,6 +58,132 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-21 — CI Verify job limit
+
+- `.github/workflows/ci.yml` gives `verify` 70 minutes; the four browser
+  suites run sequentially (~23 + 6 + 13 + 4 min). If it times out again,
+  split the account suites into their own job rather than raising the limit
+  further. Treat a cancelled step as not passed.
+
+### Raouf: 2026-10-21 — Preview and demo production release
+
+- Production runs `846919b` (version `c0778873-…`), staging `27a43e9`
+  (`85e28324-…`); both serve the same app bundle. Merge PR #19 after CI so
+  `main` matches. The owner approved this production deploy in chat; a later
+  release needs its own approval.
+
+### Raouf: 2026-10-21 — Preview and demo staging release
+
+- Staging runs `27a43e9` (version `85e28324-…`). Production still runs the
+  previous release until the owner runs `npm run worker:deploy:production`
+  (agent sessions in auto mode are refused production deploys; do not work
+  around that, hand the command to the owner). After production, merge
+  PR #19 so `main` matches production.
+- CI Semgrep (`p/nodejsscan`) blocks any `createHash("sha1")` in `scripts/`.
+  The demo registry keeps Commons' SHA-1 as provenance only and verifies
+  originals with `originalSha256`.
+- Deploy env: `set -a; . ~/.config/forma/production-deploy.env; set +a`, then
+  unset the Droplet variables before running the deploy script; only
+  `CLOUDFLARE_API_TOKEN` is needed for website releases.
+
+### Raouf: 2026-10-21 — RDL polish
+
+- For any barbell hinge, place the bar with `bar_on_legs` (straight arms
+  meeting the leg-front polyline) rather than a hand-picked target, which bent
+  the elbows at lockout.
+
+### Raouf: 2026-10-21 — Legs B demos
+
+- `scripts/exercise-svg/legs_b.py`. A Romanian deadlift hinges at the hips
+  with the knees only soft (thigh about 20° back, shin near vertical); a first
+  pass with 50° of knee bend read as a squat, so keep that check when posing
+  hinges. Variants of an existing pose (leg press from the wide leg press) copy
+  the exercise dict and change only the slug, text and steps.
+
+### Raouf: 2026-10-21 — Upper B demos
+
+- `scripts/exercise-svg/upper_b.py` adds the reusable `draw_skeleton` (3D
+  skeleton through any camera) and `torso_joints`; use them, with
+  `dual_labels`, for any exercise where grip width or elbow path only shows
+  from the front. Standing dual views use the smaller `STAND_*` cameras so
+  the head clears the title.
+- Do not duplicate demos across sets: `build.py` builds each exercise once,
+  and the README names where a shared demo lives.
+
+### Raouf: 2026-10-21 — Animated SVG exercise demonstrations
+
+- `assets/exercise-svg/<set>/` holds one animated SVG per exercise (22 so far:
+  upper-a, legs-a, core), built by `scripts/exercise-svg/build.py` from a 3D
+  figure rig (`rig.py`) and per-set pose files (`exercises.py`, `legs.py`,
+  `core.py`). Never hand-edit the SVGs; rebuild, and confirm the output is
+  byte-identical to what is committed. Not wired into the app yet.
+- Keep each exercise's draw order constant across frames (`render` asserts
+  it); `keySplines` is not used, poses are sampled at 15 fps with linear
+  interpolation. Overlays (fault outlines, timers, labels) take step indices.
+- Review every new demo by rendering start, middle and end frames
+  (Playwright `pauseAnimations` + `setCurrentTime`) in Chromium and WebKit,
+  and update the set's `key-poses.png`. Follow the FORMA guide; where coaching
+  sources give a safer cue, use it and say so in the README.
+- Personal routine material (the Monday overview SVG/GIF) stays outside the
+  public repo.
+
+### Raouf: 2026-10-21 — Exercise demonstration clips and single-exercise card
+
+- **Supersedes** the earlier same-day note that the demo slot is empty and no
+  media was downloaded: the owner asked for the open-licence clips. 22 clips
+  (9 CDC, 4 U.S. Army public domain; 9 FitnessScape CC BY 3.0) now play for 22
+  exercises in the preview and in `ExerciseGuide`.
+- Source of truth is `docs/research/exercise-videos/registry.json`; never edit
+  `src/catalog/demos.json` by hand. Rebuild with
+  `node scripts/build-exercise-demos.mjs <originals>` (FFmpeg with libx264;
+  originals are not committed and must match the recorded SHA-1). A segment of
+  a longer source names it in `original`. Only `formaIds` publish; `heldIds`
+  are reviewed-but-uncertain and stay hidden. One clip per exercise, keyed by
+  canonical guide ID (`guideExercise(id).id === id`); duplicates resolve to it.
+- Publish a new clip only after frame review against the exact FORMA variant
+  and its illustration (the leg-press artwork is a 45-degree sled, so the CDC
+  seated selectorized clip is held). Keep per-clip credit, the CC BY change
+  notice and the government no-endorsement notice. Self-host only; CSP
+  `default-src 'self'` already covers `media-src`.
+- Clips never autoplay (`preload="none"`, muted, loop, poster). `Modal`'s
+  focus trap now lists `video[controls]`. The library guide may hold a video
+  and credit links, so the trap test wraps with Shift+Tab first.
+- An exercise name in `RoutineDetail` opens only that exercise's card
+  (`single` state, title is the exercise name, `View <name>` label); **Preview
+  workout** and the card menu open the carousel. `PreviewSlide` is the shared
+  card.
+- `keyboard-focus.spec.js:5` (account import focus) fails in WebKit on `main`
+  too; it is not caused by this work.
+
+### Raouf: 2026-10-21 — Routine preview and demo-video slot
+
+- **Preview:** `src/components/RoutinePreview.jsx` is a non-rotating WAI-ARIA
+  APG carousel (grouped style). Previous/Next use `aria-disabled`, not
+  `disabled`, at the ends so focus stays on them; Playwright waits forever on
+  `click()` of an `aria-disabled` button, so tests use `press("Enter")`. Only
+  the short "Exercise N of total: name" line is live; do not make the whole
+  slide `aria-live` (it would read the full guide on every step).
+- Entry points: **Preview workout** in `RoutineDetail` (a mode inside the same
+  `Modal`, so focus is moved by hand to **Back to overview** and back to the
+  opener), each routine card's ⋯ menu (`detail` modal with `preview: 0`),
+  exercise names in the overview, and a **Preview** button on each template
+  (`TemplatePreview`, modal type `template-preview`). The template card button
+  itself still adds the template; `tests/catalog.spec.js` relies on its
+  accessible name starting with the template name.
+- `GuideInstructions.jsx` now holds the lazy instruction loading and the
+  source/licence credits for both `ExerciseGuide` and the preview. Keep
+  attribution in that one place.
+- **Videos:** owner asked for open 2026 demonstration videos. Research in
+  `docs/research/exercise-videos.md`: rehostable public-domain/CC BY clips
+  cover only about 2–5% of exercises; YMove's free grant conflicts with its
+  terms; YouTube embeds need curation, CSP and a Privacy Policy update first.
+  `ExerciseDemo.jsx` + `src/catalog/demos.json` is an empty slot. Add a clip
+  only with a reviewed exact-variant match, recorded licence and author, and a
+  self-hosted H.264 file; never hotlink or cache provider URLs. No media was
+  downloaded and nothing was deployed.
+- Firefox will not launch inside the agent shell sandbox ("Could not find
+  profile folder"), even on untouched specs; that is environmental.
+
 ### Raouf: 2026-10-19 — Per-exercise ⋯ menu
 
 - Mid-workout exercise actions live in each card's `ActionsMenu`

@@ -26,6 +26,7 @@ export default function RoutineCardOrder({
   onDuplicate,
   onArchive,
   onReorder,
+  onPreview,
   children,
 }) {
   const grid = useRef(null);
@@ -200,6 +201,7 @@ export default function RoutineCardOrder({
             onOpen={onOpen}
             onDuplicate={onDuplicate}
             onArchive={onArchive}
+            onPreview={onPreview}
             onStep={(direction) => step(id, direction)}
             onDragStart={(controls, touch, event) =>
               begin(id, controls, touch, event)
@@ -236,6 +238,7 @@ function SortableRoutineCard({
   onOpen,
   onDuplicate,
   onArchive,
+  onPreview,
   onStep,
   onDragStart,
   onDrag,
@@ -360,6 +363,15 @@ function SortableRoutineCard({
       <details className="routine-card-menu">
         <summary aria-label={`Actions for ${routine.name}`}>⋯</summary>
         <div>
+          <Button
+            variant="secondary"
+            onClick={(event) => {
+              event.currentTarget.closest("details").open = false;
+              onPreview(routine);
+            }}
+          >
+            Preview workout
+          </Button>
           <Button
             variant="secondary"
             disabled={first || ordering}
