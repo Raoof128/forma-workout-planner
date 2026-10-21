@@ -58,6 +58,13 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-21 — Preview and demo production release
+
+- Production runs `846919b` (version `c0778873-…`), staging `27a43e9`
+  (`85e28324-…`); both serve the same app bundle. Merge PR #19 after CI so
+  `main` matches. The owner approved this production deploy in chat; a later
+  release needs its own approval.
+
 ### Raouf: 2026-10-21 — Preview and demo staging release
 
 - Staging runs `27a43e9` (version `85e28324-…`). Production still runs the

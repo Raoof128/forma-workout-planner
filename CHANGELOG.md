@@ -4,6 +4,20 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-21 — Production release of the preview and demo work
+
+- Owner-approved production deploy of `846919b` with
+  `npm run worker:deploy:production`: Worker
+  `forma-workout-planner-production`, version
+  `c0778873-1a38-482e-8971-0bd15b0b4231`, the same 48 new assets as staging;
+  the one-hour deploy token was revoked. Frontend only; the API is unchanged.
+- **Live checks on forma.raoufabedini.dev:** home 200; bundle
+  `index-u60d_fDw.js` (identical to staging) contains the preview and demo
+  code; the bench press clip and poster return 200 as `video/mp4` and
+  `image/jpeg` under the unchanged CSP. In a browser, the Push day template
+  preview opened on "1 of 4: Barbell bench press" and the clip played with
+  its CC BY credit; no console errors.
+
 ### Raouf: 2026-10-21 — Staging release of the preview and demo work
 
 - Pushed `feat/routine-preview-demos` and opened
