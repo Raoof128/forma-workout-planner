@@ -62,7 +62,7 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 - **Scope:** CI reruns of PRs #19 and #20 and parallel local runs flaked
   `tests/routine-library.spec.js:78`, `tests/routine-drag.spec.js:77` and the
-  top-edge case at `:321` (now `:404`). Each cause was traced first; no assertion was
+  top-edge case at `:321` (now `:408`). Each cause was traced first; no assertion was
   loosened.
 - The editor hides with `<form hidden>`, which collapses every `Reorder.Item`
   to a zero box. Motion 14.3 springs each row into that box. It discards only
@@ -93,7 +93,15 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   `RoutinePrescription.jsx`, `tests/routine-drag.spec.js`,
   `tests/routine-library.spec.js`, `docs/qa/routine-row-drag/README.md`, this
   log and `CHANGELOG.md`.
-- **Verification:** VERIFICATION-TBD
+- **Verification:** `--repeat-each=20` at the default two workers, one suite
+  at a time: production Chromium and WebKit, desktop and mobile, 560/560 for
+  the seven affected cases; development Chromium and WebKit 280/280. The full
+  production suite passes 141/141. The editor-related development specs pass
+  205/210; the five failures are WebKit focus cases that fail identically on
+  unmodified `main` on this host. Lint, format, types, docs and 98 unit tests
+  pass. Running several suites at once on this 8-core host (load 100–200)
+  produced only 30 s test timeouts; count those as host load, not drag
+  failures.
 
 ### Raouf: 2026-10-19 — Per-exercise ⋯ menu
 

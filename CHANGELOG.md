@@ -28,7 +28,7 @@ at rest` failed 16/20 before the fix. The rapid-release case now waits, before
   header. The CI WebKit failure of `routine-drag.spec.js:77` aimed its third
   press before the previous drop had been committed. Motion delivers drag
   start and end on later frames, and those frames lagged about 700 ms. The CI
-  failure at `:321` (now `:404`) saved the displayed order exactly; the drop at
+  failure at `:321` (now `:408`) saved the displayed order exactly; the drop at
   slot 1 correctly ungrouped the superset, which the old expectation did not
   allow. Under heavier load the same case also cancelled drops: a longer hold
   let scrolling reach the end of the list before the release.
@@ -36,7 +36,13 @@ at rest` failed 16/20 before the fix. The rapid-release case now waits, before
   `RoutinePrescription.jsx`, `tests/routine-drag.spec.js`,
   `tests/routine-library.spec.js`, `docs/qa/routine-row-drag/README.md`,
   `AGENT.md`.
-- **Verification:** VERIFICATION-TBD
+- **Verification:** 20 repeats of each of the seven affected cases, one suite
+  at a time at the default two workers: 560/560 in the production Chromium
+  and WebKit desktop and mobile projects, 280/280 in development Chromium and
+  WebKit. Full production suite 141/141; editor-related development specs
+  205/210, the five failures being WebKit focus cases that fail the same way
+  on unmodified `main` on this Mac. Lint, format, types, docs and 98 unit
+  tests pass. Firefox cannot launch here; CI covers it.
 
 ### Raouf: 2026-10-19 — Per-exercise ⋯ menu in a running workout
 

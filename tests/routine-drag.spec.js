@@ -78,6 +78,8 @@ test("immediate drag releases retain a usable editor and every saved field", asy
   page,
   isMobile,
 }) => {
+  // Starved frames can take several seconds to settle each drop's springs.
+  test.slow();
   // Keep this rapid sequence visible at phone width; edge tests use normal height.
   if (isMobile)
     await page.setViewportSize({ ...page.viewportSize(), height: 1800 });
@@ -118,19 +120,21 @@ test("immediate drag releases retain a usable editor and every saved field", asy
     // previous drop has landed and every row is at rest: under load a late
     // commit or a stalled spring moves another handle or the target.
     await expect
-      .poll(() =>
-        editor.rows.evaluateAll(
-          (nodes, key) =>
-            nodes.every(
-              (node) =>
-                !node.classList.contains("is-dragging") &&
-                new DOMMatrixReadOnly(getComputedStyle(node).transform)
-                  .isIdentity,
-            )
-              ? nodes.findIndex((node) => node.dataset.entryKey === key)
-              : -1,
-          editor.original[0].entryId,
-        ),
+      .poll(
+        () =>
+          editor.rows.evaluateAll(
+            (nodes, key) =>
+              nodes.every(
+                (node) =>
+                  !node.classList.contains("is-dragging") &&
+                  new DOMMatrixReadOnly(getComputedStyle(node).transform)
+                    .isIdentity,
+              )
+                ? nodes.findIndex((node) => node.dataset.entryKey === key)
+                : -1,
+            editor.original[0].entryId,
+          ),
+        { timeout: 15_000 },
       )
       .toBe(attempt % 2);
     await handle.hover();
