@@ -24,7 +24,8 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   [the logging review](docs/research/exercise-logging-review.md#hold-metric-migration).
 - **Deploying:** the API bundles the catalogue and rejects exercise IDs it
   does not know, so deploy the API before the frontend in each environment,
-  staging first. Not deployed.
+  staging first. Once anyone has saved a timed hold, fix forward rather than
+  rolling back: an older API or frontend cannot read that data. Not deployed.
 - **Files:** `docs/research/exercise-quality-review.json` (15 reviewed
   `measurementCorrections`; Arch Hang under `excludedMeasurementCorrections`);
   regenerated `src/catalog/curation.json`, `src/catalog/machine-exercises.json`
