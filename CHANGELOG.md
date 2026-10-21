@@ -4,6 +4,17 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-22 — CI fixes across the open PR stack
+
+- `tests/routine-preview.spec.js` now waits for the animation SVG to decode
+  (`toHaveJSProperty("naturalWidth", 960)`) instead of reading the width once;
+  it failed on #21 and #24 under CI load. Fixed on `feat/exercise-animations`
+  (`ceea460`, 10/10 in Chromium and WebKit) and merged forward through #21–#24.
+- PR #19 merged into `main` (`c120eda`), bringing the 70-minute Verify limit;
+  PR #20 retargeted to `main`. PR #25 had been cancelled at `main`'s old
+  45-minute limit, not failed. #20's earlier failure was a WebKit focus flake
+  (`legal.spec.js:111`) and #23's the drag flake that #25 fixes.
+
 ### Raouf: 2026-10-21 — No weight column for no-load exercises, and a hold timer
 
 - **Load review:** all 1,411 selectable exercises were read by name,

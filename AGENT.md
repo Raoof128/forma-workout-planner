@@ -58,6 +58,14 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-22 — Wait for images in browser assertions
+
+- Check a loaded image with a retrying assertion
+  (`await expect(img).toHaveJSProperty("naturalWidth", n)`), never a one-off
+  `evaluate`: under CI load the read can land before the image decodes.
+- A Verify run cancelled at the job limit is not a failure; check the limit
+  in the PR's base branch before investigating.
+
 ### Raouf: 2026-10-21 — No-load columns and the hold timer
 
 - Load display is UI-only: `src/exerciseLoad.js` reads
