@@ -4,6 +4,15 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-21 — CI time limit for the Verify job
+
+- Raised the `Verify application` job limit from 45 to 70 minutes. The
+  development browser suite now takes about 23 minutes and the account
+  integration steps were being cancelled at the limit: on `main` (`307b3ea`,
+  19 Oct) and on PR #19, where step 22 was cut off after the earlier suites
+  passed. A cancelled step is not a pass, so PRs are merged only after a full
+  green run.
+
 ### Raouf: 2026-10-21 — Card animations released
 
 - Owner-approved deploy of `7079e21` (`feat/exercise-animations`, PR #20):
