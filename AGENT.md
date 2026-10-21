@@ -58,6 +58,16 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-21 — Upper B demos
+
+- `scripts/exercise-svg/upper_b.py` adds the reusable `draw_skeleton` (3D
+  skeleton through any camera) and `torso_joints`; use them, with
+  `dual_labels`, for any exercise where grip width or elbow path only shows
+  from the front. Standing dual views use the smaller `STAND_*` cameras so
+  the head clears the title.
+- Do not duplicate demos across sets: `build.py` builds each exercise once,
+  and the README names where a shared demo lives.
+
 ### Raouf: 2026-10-21 — Animated SVG exercise demonstrations
 
 - `assets/exercise-svg/<set>/` holds one animated SVG per exercise (22 so far:

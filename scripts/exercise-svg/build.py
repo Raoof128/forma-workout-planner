@@ -9,6 +9,7 @@ from pathlib import Path
 import core
 import exercises
 import legs
+import upper_b
 from rig import render
 
 SETS = {
@@ -16,6 +17,8 @@ SETS = {
     "upper-a": [core.LATERAL3 if ex["slug"] == "dumbbell-lateral-raise" else ex for ex in exercises.ALL],
     "legs-a": legs.ALL,
     "core": core.ALL,
+    # Thursday's lateral raise is the same demo as core's, so it is not repeated.
+    "upper-b": upper_b.ALL,
 }
 
 if __name__ == "__main__":

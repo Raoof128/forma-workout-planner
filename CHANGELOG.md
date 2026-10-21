@@ -4,6 +4,17 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-21 — Animated demos for Upper B
+
+- Six more animated SVG demos in `assets/exercise-svg/upper-b/`: incline
+  dumbbell press, wide-grip lat pulldown and face pull (front and side views
+  together), seated cable row, cable rope overhead triceps extension (rope
+  from the low pulley lowered behind the head to a full stretch, per the
+  FORMA guide) and incline dumbbell curl. The routine's lateral raise reuses
+  the existing core-set demo.
+- Verified by reviewing start, middle and end frames in Chromium, the two
+  dual-view demos in WebKit, and a byte-identical rebuild of all 28 files.
+
 ### Raouf: 2026-10-21 — Animated SVG exercise demonstrations
 
 - **What changed:** 22 self-contained animated SVGs show how to perform the

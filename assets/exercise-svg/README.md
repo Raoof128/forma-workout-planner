@@ -9,6 +9,7 @@ They are not yet shown in the app.
 | [upper-a](upper-a/key-poses.png) | Barbell bench press, leverage decline chest press, machine bench press, leverage shoulder press, plate-loaded lat pulldown, one-arm dumbbell row, dumbbell lateral raise, cross-body hammer curl |
 | [legs-a](legs-a/key-poses.png)   | Barbell step-ups, leg extensions, leg presses (wide), lying leg curls, seated calf raise, seated leg curl, split squat with dumbbells                                                            |
 | [core](core/key-poses.png)       | Ab roller, bicycle crunch, seated barbell twist, plank, dumbbell side bend, standing calf raise, dumbbell lateral raise                                                                          |
+| [upper-b](upper-b/key-poses.png) | Incline dumbbell press, wide-grip lat pulldown, seated cable row, face pull, cable rope overhead triceps extension, incline dumbbell curl (the lateral raise is the core set's)                  |
 
 Each set folder has a `key-poses.png` with the start, middle and end of every
 movement, used to review the poses.
@@ -18,7 +19,8 @@ movement, used to review the poses.
 - A small figure rig in `scripts/exercise-svg/` places joints in 3D and
   projects them, so limbs keep their length as they move. Two-bone inverse
   kinematics keeps hands on handles and feet planted. Twisting moves use a
-  camera angle; the lateral raise shows front and side views together.
+  camera angle; the lateral raise, wide-grip lat pulldown and face pull show
+  front and side views together.
 - Poses are sampled at 15 frames a second into SMIL `<animate>` values, which
   work when the SVG is shown as an image. Captions change with each phase and a
   progress bar runs along the bottom. Green marks the working muscle; red dotted
