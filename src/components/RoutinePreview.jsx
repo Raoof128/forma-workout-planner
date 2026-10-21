@@ -29,8 +29,9 @@ export function PreviewSlide({
   const guide = guideExercise(item.exerciseId);
   return (
     <div className="routine-preview-slide" {...props}>
-      <ExerciseAnimation id={guide.id} name={exercise.name} />
       <ExerciseMedia id={guide.id} name={guide.name} />
+      <ExerciseDemo id={guide.id} name={guide.name} />
+      <ExerciseAnimation id={guide.id} name={exercise.name} />
       <h4 className="routine-preview-name">
         <span className="exercise-number">{label}</span>
         {exercise.name}
@@ -45,7 +46,6 @@ export function PreviewSlide({
         <span>{guide.muscle}</span>
         <span>{guide.equipment}</span>
       </div>
-      <ExerciseDemo id={guide.id} name={guide.name} />
       <h5>How to perform</h5>
       <GuideInstructions key={guide.id} guide={guide} retryHint={retryHint}>
         {guide.measurementNotes && (

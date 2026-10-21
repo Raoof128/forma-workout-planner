@@ -1,8 +1,8 @@
 # Animated exercise demonstrations
 
 Self-contained animated SVGs that show how to perform an exercise, one per
-exercise. The app shows them at the top of each exercise card in the routine
-preview and in the exercise guide (library and workouts), with a Play/Pause
+exercise. The app shows them in each exercise card, under the cover illustration and
+any video, in the routine preview and in the exercise guide (library and workouts), with a Play/Pause
 control; the files are served from `public/exercise-animations/` and mapped to
 exercise IDs in `src/catalog/animations.json`. This folder keeps the review
 sheets.

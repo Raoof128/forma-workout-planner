@@ -1995,7 +1995,7 @@ input[type="checkbox"] {
   cursor: default;
 }
 .exercise-animation {
-  margin: 0 0 16px;
+  margin: 16px 0 0;
 }
 .exercise-animation img {
   display: block;

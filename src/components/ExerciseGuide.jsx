@@ -11,13 +11,13 @@ export default function ExerciseGuide({ exercise, onClose }) {
   return (
     <Modal title={exercise.name} onClose={onClose}>
       <div className="modal-content">
-        <ExerciseAnimation id={guide.id} name={exercise.name} />
         <ExerciseMedia id={guide.id} name={guide.name} />
+        <ExerciseDemo id={guide.id} name={guide.name} />
+        <ExerciseAnimation id={guide.id} name={exercise.name} />
         <div className="tags">
           <span>{guide.muscle}</span>
           <span>{guide.equipment}</span>
         </div>
-        <ExerciseDemo id={guide.id} name={guide.name} />
         <h3>How to perform</h3>
         <GuideInstructions
           key={guide.id}

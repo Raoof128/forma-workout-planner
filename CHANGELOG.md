@@ -7,9 +7,10 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 ### Raouf: 2026-10-21 — Animated demonstrations in the exercise cards
 
 - **What changed:** the 32 animated SVG demonstrations now appear at the top
-  of each matching exercise card in the routine preview, the single-exercise
-  card and the exercise guide (library and active workouts), above the
-  illustration and any video. They loop with phase captions; a Play/Pause
+  matching exercise cards in the routine preview, the single-exercise card
+  and the exercise guide (library and active workouts). Order in a card:
+  cover illustration, then the video clip when there is one, then the
+  animation (directly under the illustration when there is no video). They loop with phase captions; a Play/Pause
   button below each one swaps to a still start pose, and they start paused
   when the device asks for reduced motion.
 - **Files:** `src/components/ExerciseAnimation.jsx` (new),

@@ -68,6 +68,9 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 - Animations load through `<img>` (CSP has `object-src 'none'` and
   `frame-ancestors 'none'`, so `<object>`/`<iframe>` would not work); pausing
   swaps to the `-still.svg`. Keep the pause control: the loops exceed 5 s.
+- Card media order is fixed by the owner: cover illustration
+  (`ExerciseMedia`), then the video (`ExerciseDemo`) if any, then
+  `ExerciseAnimation`. Keep all three together at the top of the card.
 - Exercises without an animation simply render nothing; e.g. the starter
   "Leg day" template opens on the barbell back squat, which has none.
 
