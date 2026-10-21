@@ -62,7 +62,7 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 - **Scope:** CI reruns of PRs #19 and #20 and parallel local runs flaked
   `tests/routine-library.spec.js:78`, `tests/routine-drag.spec.js:77` and the
-  top-edge case at `:321`. Each cause was traced first; no assertion was
+  top-edge case at `:321` (now `:404`). Each cause was traced first; no assertion was
   loosened.
 - The editor hides with `<form hidden>`, which collapses every `Reorder.Item`
   to a zero box. Motion 14.3 springs each row into that box. It discards only
@@ -80,6 +80,12 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 - A superset survives only while its entries stay adjacent
   (`normalizeGroups`). Drag expectations derive `groupId` from the final
   order: a top-edge drop can land between the two superset entries.
+- A stationary edge-scroll release is checked against the dialog's visible
+  area, not the list's bounds. Holding at an edge until scrolling stops moves
+  the list away from the pointer (the form or the Save row slides under it),
+  and the old check cancelled a drop the preview showed in the first or last
+  slot. Edge tests measure the slot reachable without scrolling _before_ the
+  pointer moves; a later read can arrive after scrolling has finished.
 - To reproduce starved frames, delay the page's `requestAnimationFrame`
   callbacks in an init script. Playwright's isolated world keeps native
   timing. Chromium CPU throttling does not reproduce the failure.

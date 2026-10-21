@@ -71,12 +71,12 @@ horizontal overflow, page exceptions or console errors. The phone recording
 uses trusted Chromium touch input through CDP. Mobile WebKit is browser
 emulation, not a claim of testing on a physical iPhone.
 
-| Evidence | Desktop | Phone |
-| --- | --- | --- |
-| Before | [Screenshot](desktop-before.png) | [Screenshot](phone-before.png) |
-| During | [Screenshot](desktop-during.png) | [Screenshot](phone-during.png) |
-| After | [Screenshot](desktop-after.png) | [Screenshot](phone-after.png) |
-| Animation | [Recording](desktop-drag.webm) | [Touch recording](phone-drag.webm) |
+| Evidence  | Desktop                          | Phone                              |
+| --------- | -------------------------------- | ---------------------------------- |
+| Before    | [Screenshot](desktop-before.png) | [Screenshot](phone-before.png)     |
+| During    | [Screenshot](desktop-during.png) | [Screenshot](phone-during.png)     |
+| After     | [Screenshot](desktop-after.png)  | [Screenshot](phone-after.png)      |
+| Animation | [Recording](desktop-drag.webm)   | [Touch recording](phone-drag.webm) |
 
 [Machine-readable visual checks](visual-checks.json) contain synthetic fixture
 results only. Twelve drag/editor scenarios run in all three development engines and all
@@ -106,9 +106,9 @@ graphite loading card. Local tests hold the real session request path pending,
 check the backdrop and reduced-motion behavior, then release it and verify the
 page appears without a forced delay. Product code adds no loading timer.
 
-| Restoration | Desktop | Phone |
-| --- | --- | --- |
-| Lime loading | [Screenshot](desktop-lime-loading.png) | [Screenshot](phone-lime-loading.png) |
+| Restoration     | Desktop                                     | Phone                                     |
+| --------------- | ------------------------------------------- | ----------------------------------------- |
+| Lime loading    | [Screenshot](desktop-lime-loading.png)      | [Screenshot](phone-lime-loading.png)      |
 | Library chooser | [Screenshot](desktop-library-selection.png) | [Screenshot](phone-library-selection.png) |
 
 [Restoration visual checks](restored-visual-checks.json) record both viewport
@@ -303,6 +303,16 @@ any change.
   the expectation only allowed for the bottom direction. Releasing at slot 1
   on purpose failed the old expectation and passed the new one in all four
   production projects.
+- **Holding until the list stops scrolling.** At load averages of 70–90 the
+  same case failed 10 of 160 runs. Traces announce "Move cancelled" on
+  release: the 2.3 s hold let edge scrolling reach the end of the list, so
+  the form above it, or the Save row below it, sat under the stationary
+  pointer, and the release counted as a drop outside the list. A stationary
+  edge-scroll release is now checked against the dialog's visible area.
+  Holding at each edge until scrolling stops, then releasing, failed 4 of 4
+  runs before the fix and drops in the first or last slot after it. The
+  advance case also measures the slot reachable without scrolling before the
+  pointer moves; its old reading could arrive after scrolling had finished.
 
 ## Final verification
 

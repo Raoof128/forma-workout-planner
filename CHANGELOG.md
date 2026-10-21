@@ -11,19 +11,27 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   box. If you returned within about 400 ms, the rows reappeared mid-spring,
   70–220 px off, and a press could land on the header or a moving handle.
   Layout changes now settle instantly while the editor is hidden.
+- **Fix:** holding a row at the top or bottom edge until the list stops
+  scrolling now drops it in the first or last slot, as the preview shows.
+  Scrolling moved the list away from the held pointer, and the release was
+  treated as a drop outside the list and cancelled.
 - **Tests:** the new case `returning from the library shows the exercise rows
-  at rest` failed 16/20 before the fix. The rapid-release case now waits, before
+at rest` failed 16/20 before the fix. The rapid-release case now waits, before
   aiming each press, until the previous drop has landed at its expected slot
   and every row is at rest. That also checks each intermediate landing. The
   edge-hold case derives the expected superset from the final order, because
-  a top-edge drop can land between the superset's two entries.
+  a top-edge drop can land between the superset's two entries, and it measures
+  the slot reachable without scrolling before the pointer moves. New cases
+  hold at each edge until scrolling stops; both failed 4/4 before the fix.
 - **Root causes:** `routine-library.spec.js:78` pressed rows still sliding
   after the library closed; three of five traced failures hit the sticky
   header. The CI WebKit failure of `routine-drag.spec.js:77` aimed its third
   press before the previous drop had been committed. Motion delivers drag
   start and end on later frames, and those frames lagged about 700 ms. The CI
-  failure at `:321` saved the displayed order exactly; the drop at slot 1
-  correctly ungrouped the superset, which the old expectation did not allow.
+  failure at `:321` (now `:404`) saved the displayed order exactly; the drop at
+  slot 1 correctly ungrouped the superset, which the old expectation did not
+  allow. Under heavier load the same case also cancelled drops: a longer hold
+  let scrolling reach the end of the list before the release.
 - **Files:** `src/components/Routines.jsx`, `RoutinePrescriptions.jsx`,
   `RoutinePrescription.jsx`, `tests/routine-drag.spec.js`,
   `tests/routine-library.spec.js`, `docs/qa/routine-row-drag/README.md`,
