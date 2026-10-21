@@ -27,6 +27,7 @@ export default function RoutinePrescription({
   dragging,
   ordering,
   landed,
+  hidden,
   onPress,
   onDragStart,
   onDrag,
@@ -103,10 +104,14 @@ export default function RoutinePrescription({
       dragMomentum={false}
       style={{ y: vertical }}
       layout="position"
+      // Hiding the editor collapses every row to an empty box. A spring into
+      // that box would still be running when the editor returns, so rows
+      // would slide back into place under the pointer.
       transition={{
-        layout: reduceMotion
-          ? { duration: 0 }
-          : { type: "spring", stiffness: 500, damping: 42 },
+        layout:
+          reduceMotion || hidden
+            ? { duration: 0 }
+            : { type: "spring", stiffness: 500, damping: 42 },
       }}
       dragTransition={{
         bounceStiffness: 500,

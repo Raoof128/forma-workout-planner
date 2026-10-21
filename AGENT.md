@@ -221,6 +221,51 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   Rerun a failed job once before investigating, and never merge on a red,
   pending or cancelled run.
 
+### Raouf: 2026-10-21 — Drag tests reliable under parallel load
+
+- **Scope:** CI reruns of PRs #19 and #20 and parallel local runs flaked
+  `tests/routine-library.spec.js:78`, `tests/routine-drag.spec.js:77` and the
+  top-edge case at `:321` (now `:408`). Each cause was traced first; no assertion was
+  loosened.
+- The editor hides with `<form hidden>`, which collapses every `Reorder.Item`
+  to a zero box. Motion 14.3 springs each row into that box. It discards only
+  zero-size snapshots, so the reveal never animates but the hide does.
+  `RoutinePrescriptions` takes `hidden` and makes the layout transition
+  instant while the library is open. Without it, closing the library within
+  about 400 ms brought the rows back mid-spring, 70–220 px off. The drag
+  helper then pressed moving rows or the sticky header.
+- Motion delivers `onDragStart` and `onDragEnd` on later frames. Starved
+  WebKit frames on CI spread one gesture's start and commit over about 700 ms,
+  and `hover()`'s stability check passes between stalled frames. A test that
+  aims a new press must first wait until the previous drop has landed and
+  every row is at rest: no `.is-dragging` and identity transforms. App logs
+  showed every such gesture beginning and finishing with a valid release.
+- A superset survives only while its entries stay adjacent
+  (`normalizeGroups`). Drag expectations derive `groupId` from the final
+  order: a top-edge drop can land between the two superset entries.
+- A stationary edge-scroll release is checked against the dialog's visible
+  area, not the list's bounds. Holding at an edge until scrolling stops moves
+  the list away from the pointer (the form or the Save row slides under it),
+  and the old check cancelled a drop the preview showed in the first or last
+  slot. Edge tests measure the slot reachable without scrolling _before_ the
+  pointer moves; a later read can arrive after scrolling has finished.
+- To reproduce starved frames, delay the page's `requestAnimationFrame`
+  callbacks in an init script. Playwright's isolated world keeps native
+  timing. Chromium CPU throttling does not reproduce the failure.
+- **Files:** `src/components/Routines.jsx`, `RoutinePrescriptions.jsx`,
+  `RoutinePrescription.jsx`, `tests/routine-drag.spec.js`,
+  `tests/routine-library.spec.js`, `docs/qa/routine-row-drag/README.md`, this
+  log and `CHANGELOG.md`.
+- **Verification:** `--repeat-each=20` at the default two workers, one suite
+  at a time: production Chromium and WebKit, desktop and mobile, 560/560 for
+  the seven affected cases; development Chromium and WebKit 280/280. The full
+  production suite passes 141/141. The editor-related development specs pass
+  205/210; the five failures are WebKit focus cases that fail identically on
+  unmodified `main` on this host. Lint, format, types, docs and 98 unit tests
+  pass. Running several suites at once on this 8-core host (load 100–200)
+  produced only 30 s test timeouts; count those as host load, not drag
+  failures.
+
 ### Raouf: 2026-10-21 — CI Verify job limit
 
 - `.github/workflows/ci.yml` gives `verify` 70 minutes; the four browser

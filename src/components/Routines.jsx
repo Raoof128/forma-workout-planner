@@ -777,6 +777,7 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
                     join={join}
                     onUseTimed={switchToTimed}
                     defaultRest={defaultRest}
+                    hidden={libraryOpen}
                   />
                 </Suspense>
               </div>

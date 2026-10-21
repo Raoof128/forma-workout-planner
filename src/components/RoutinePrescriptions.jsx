@@ -16,6 +16,7 @@ export default function RoutinePrescriptions({
   onReorder,
   onOrderingChange,
   onReady,
+  hidden,
 }) {
   const group = useRef(null);
   const drag = useRef(null);
@@ -59,18 +60,20 @@ export default function RoutinePrescriptions({
       const stationaryScrollPreview =
         gesture?.scrollPreviewPointer?.x === event.clientX &&
         gesture?.scrollPreviewPointer?.y === event.clientY;
+      const top = scroller
+        .querySelector(".modal-header")
+        .getBoundingClientRect().bottom;
+      const bottom = Math.min(viewport.bottom, window.innerHeight);
+      // Edge scrolling can carry the list away from a stationary pointer,
+      // but the displayed preview still marks where the row lands.
       const valid =
         event.type === "pointerup" &&
         event.clientX >= bounds.left &&
         event.clientX <= bounds.right &&
-        event.clientY >=
-          Math.max(
-            bounds.top,
-            scroller.querySelector(".modal-header").getBoundingClientRect()
-              .bottom,
-          ) &&
-        event.clientY <=
-          Math.min(bounds.bottom, viewport.bottom, window.innerHeight);
+        (stationaryScrollPreview
+          ? event.clientY >= top && event.clientY <= bottom
+          : event.clientY >= Math.max(bounds.top, top) &&
+            event.clientY <= Math.min(bounds.bottom, bottom));
       press.release = {
         time: event.timeStamp,
         valid,
@@ -338,6 +341,7 @@ export default function RoutinePrescriptions({
             dragging={active?.key === entryKey(item)}
             ordering={!!active}
             landed={landed?.key === entryKey(item)}
+            hidden={hidden}
             onPress={(event, offset) => {
               const press = {
                 key: entryKey(item),

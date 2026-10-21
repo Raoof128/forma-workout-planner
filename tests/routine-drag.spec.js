@@ -78,6 +78,8 @@ test("immediate drag releases retain a usable editor and every saved field", asy
   page,
   isMobile,
 }) => {
+  // Starved frames can take several seconds to settle each drop's springs.
+  test.slow();
   // Keep this rapid sequence visible at phone width; edge tests use normal height.
   if (isMobile)
     await page.setViewportSize({ ...page.viewportSize(), height: 1800 });
@@ -114,6 +116,27 @@ test("immediate drag releases retain a usable editor and every saved field", asy
         header.getBoundingClientRect().bottom -
         16;
     });
+    // Motion reports drag start and end on later frames. Aim only once the
+    // previous drop has landed and every row is at rest: under load a late
+    // commit or a stalled spring moves another handle or the target.
+    await expect
+      .poll(
+        () =>
+          editor.rows.evaluateAll(
+            (nodes, key) =>
+              nodes.every(
+                (node) =>
+                  !node.classList.contains("is-dragging") &&
+                  new DOMMatrixReadOnly(getComputedStyle(node).transform)
+                    .isIdentity,
+              )
+                ? nodes.findIndex((node) => node.dataset.entryKey === key)
+                : -1,
+            editor.original[0].entryId,
+          ),
+        { timeout: 15_000 },
+      )
+      .toBe(attempt % 2);
     await handle.hover();
     await page.mouse.down();
     const destination = await target.boundingBox();
@@ -317,53 +340,110 @@ test("dragging near the editor edge scrolls the list and cancellation restores e
   expect(await saveAndReadDrag(page, editor.dialog)).toEqual(editor.original);
 });
 
+// Presses the first (bottom) or last (top) row and holds it at that scrolling
+// edge. Returns the furthest slot the pointer reaches without scrolling.
+async function holdAtEdge(page, editor, direction) {
+  const sourceIndex = direction > 0 ? 0 : 17;
+  const source = editor.rows.nth(sourceIndex);
+  await source.evaluate((node) => node.scrollIntoView({ block: "center" }));
+  const box = await source
+    .getByRole("button", { name: /^Drag / })
+    .boundingBox();
+  const bounds = await editor.dialog.boundingBox();
+  const header = await editor.dialog.locator(".modal-header").boundingBox();
+  const x = box.x + box.width / 2;
+  const y = box.y + box.height / 2;
+  const edge =
+    direction > 0
+      ? bounds.y + bounds.height - 24
+      : header.y + header.height + 24;
+  // Measured before moving: under load, edge scrolling can already have
+  // reached the end of the list by the time a later read arrives.
+  const reachable = await editor.rows.evaluateAll(
+    (nodes, edge) =>
+      nodes.findIndex((node) => {
+        const { top, bottom } = node.getBoundingClientRect();
+        return top <= edge && edge < bottom;
+      }),
+    edge,
+  );
+  expect(reachable).not.toBe(-1);
+  await page.mouse.move(x, y);
+  await page.mouse.down();
+  await page.mouse.move(x, y + direction * 8, { steps: 2 });
+  await expect(editor.dialog.locator(".is-dragging")).toHaveCount(1);
+  await page.mouse.move(x, edge, { steps: 16 });
+  return { sourceIndex, reachable };
+}
+
+const dragPosition = (editor) =>
+  editor.rows.evaluateAll((nodes) =>
+    nodes.findIndex((node) => node.classList.contains("is-dragging")),
+  );
+
+async function releaseAndSave(page, editor, sourceIndex) {
+  await page.mouse.up();
+  await expect(editor.dialog.locator(".is-dragging")).toHaveCount(0);
+  const dropPosition = await editor.rows.evaluateAll(
+    (nodes, key) => nodes.findIndex((node) => node.dataset.entryKey === key),
+    editor.original[sourceIndex].entryId,
+  );
+  const saved = await saveAndReadDrag(page, editor.dialog);
+  const expected = [...editor.original];
+  expected.splice(dropPosition, 0, ...expected.splice(sourceIndex, 1));
+  // The superset survives only while its two entries stay adjacent. The
+  // bottom drag always splits it; a top drop can land between its entries.
+  const pair = expected.flatMap((item, index) => (item.groupId ? [index] : []));
+  const split = pair[1] - pair[0] !== 1;
+  expect(saved).toEqual(
+    expected.map((item) =>
+      split && item.groupId ? { ...item, groupId: null } : item,
+    ),
+  );
+  return dropPosition;
+}
+
 for (const direction of [1, -1]) {
-  test(`holding at the ${direction > 0 ? "bottom" : "top"} scrolling edge advances the drop through newly revealed rows`, async ({
+  const edgeName = direction > 0 ? "bottom" : "top";
+  test(`holding at the ${edgeName} scrolling edge advances the drop through newly revealed rows`, async ({
     page,
   }) => {
     const editor = await openDragEditor(page, 18);
-    const sourceIndex = direction > 0 ? 0 : 17;
-    const source = editor.rows.nth(sourceIndex);
-    await source.evaluate((node) => node.scrollIntoView({ block: "center" }));
-    const box = await source
-      .getByRole("button", { name: /^Drag / })
-      .boundingBox();
-    const bounds = await editor.dialog.boundingBox();
-    const header = await editor.dialog.locator(".modal-header").boundingBox();
-    const x = box.x + box.width / 2;
-    const y = box.y + box.height / 2;
-    await page.mouse.move(x, y);
-    await page.mouse.down();
-    await page.mouse.move(x, y + direction * 8, { steps: 2 });
-    await expect(editor.dialog.locator(".is-dragging")).toHaveCount(1);
-    await page.mouse.move(
-      x,
-      direction > 0
-        ? bounds.y + bounds.height - 24
-        : header.y + header.height + 24,
-      { steps: 16 },
+    const { sourceIndex, reachable } = await holdAtEdge(
+      page,
+      editor,
+      direction,
     );
-    const position = () =>
-      editor.rows.evaluateAll((nodes) =>
-        nodes.findIndex((node) => node.classList.contains("is-dragging")),
-      );
-    const before = await position();
     await expect
-      .poll(async () => direction * ((await position()) - before))
+      .poll(async () => direction * ((await dragPosition(editor)) - reachable))
       .toBeGreaterThan(2);
-    await page.mouse.up();
-    await expect(editor.dialog.locator(".is-dragging")).toHaveCount(0);
-    const dropPosition = await editor.rows.evaluateAll(
-      (nodes, key) => nodes.findIndex((node) => node.dataset.entryKey === key),
-      editor.original[sourceIndex].entryId,
-    );
-    expect(direction * (dropPosition - before)).toBeGreaterThan(2);
-    const saved = await saveAndReadDrag(page, editor.dialog);
-    const expected = editor.original.map((item, index) =>
-      direction > 0 && index < 2 ? { ...item, groupId: null } : item,
-    );
-    expected.splice(dropPosition, 0, ...expected.splice(sourceIndex, 1));
-    expect(saved).toEqual(expected);
+    const dropPosition = await releaseAndSave(page, editor, sourceIndex);
+    expect(direction * (dropPosition - reachable)).toBeGreaterThan(2);
+  });
+
+  test(`holding at the ${edgeName} edge until the list stops scrolling drops the row in the ${direction > 0 ? "last" : "first"} slot`, async ({
+    page,
+  }) => {
+    // Phone rows are tall, so scrolling through all 18 takes about 10 s.
+    test.slow();
+    const editor = await openDragEditor(page, 18);
+    const { sourceIndex } = await holdAtEdge(page, editor, direction);
+    const last = direction > 0 ? 17 : 0;
+    // Once scrolling stops, the list has moved away from the held pointer;
+    // the displayed preview still marks where the row lands.
+    await expect
+      .poll(() => dragPosition(editor), { timeout: 45_000 })
+      .toBe(last);
+    await expect
+      .poll(() =>
+        editor.dialog.evaluate(async (node) => {
+          const start = node.scrollTop;
+          await new Promise((resolve) => setTimeout(resolve, 500));
+          return node.scrollTop === start;
+        }),
+      )
+      .toBe(true);
+    expect(await releaseAndSave(page, editor, sourceIndex)).toBe(last);
   });
 }
 
