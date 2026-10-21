@@ -58,6 +58,17 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-21 — Preview and demo staging release
+
+- Staging runs `27a43e9` (version `85e28324-…`). Production still runs the
+  previous release until the owner runs `npm run worker:deploy:production`
+  (agent sessions in auto mode are refused production deploys; do not work
+  around that, hand the command to the owner). After production, merge
+  PR #19 so `main` matches production.
+- Deploy env: `set -a; . ~/.config/forma/production-deploy.env; set +a`, then
+  unset the Droplet variables before running the deploy script; only
+  `CLOUDFLARE_API_TOKEN` is needed for website releases.
+
 ### Raouf: 2026-10-21 — RDL polish
 
 - For any barbell hinge, place the bar with `bar_on_legs` (straight arms

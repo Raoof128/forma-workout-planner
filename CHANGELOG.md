@@ -4,6 +4,21 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-21 — Staging release of the preview and demo work
+
+- Pushed `feat/routine-preview-demos` and opened
+  [PR #19](https://github.com/Raoof128/forma-workout-planner/pull/19).
+- Owner-authorised staging deploy of `27a43e9` with
+  `npm run worker:deploy:staging`: Worker `forma-workout-planner-staging`,
+  version `85e28324-f611-487e-b9a6-773fe4dda76e`, 48 new assets including the
+  22 demonstration clips; the one-hour deploy token was revoked. Frontend
+  only, no API or schema change. Staging is behind Cloudflare Access, so the
+  live check from the agent stopped at the Access redirect.
+- **Not yet in production:** the production deploy was blocked by the agent
+  session's permission policy and is waiting for the owner to run
+  `npm run worker:deploy:production`. Merge PR #19 after CI so `main` matches
+  what is deployed.
+
 ### Raouf: 2026-10-21 — Romanian deadlift demo polished
 
 - The arms now stay straight and the bar position is solved where straight
