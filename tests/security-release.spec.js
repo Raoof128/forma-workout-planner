@@ -96,6 +96,9 @@ test("dangerous imported text stays literal and application assets make no exter
   expect(restored.history[0].name).toBe(attackText);
   expect(restored.history[0].notes).toBe(attackText);
 
+  // Reload only once the restore's writes have settled; while a save is
+  // pending the app asks before leaving, which cancels the reload.
+  await expect(page.locator(".save-indicator")).toHaveCount(0);
   await page.reload();
   await expect(page.locator(".profile-button")).toContainText(attackText);
   await page.getByRole("button", { name: "My routines", exact: true }).click();

@@ -11,6 +11,13 @@ updates:
         dependency-type: production
       development:
         dependency-type: development
+    ignore:
+      # ESLint 10 breaks `npm ci` until the React/accessibility plugins declare
+      # support (AGENT.md); raise these by hand when they do.
+      - dependency-name: eslint
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@eslint/js"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions
     directory: /
     schedule:

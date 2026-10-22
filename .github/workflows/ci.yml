@@ -139,7 +139,16 @@ jobs:
         run: npm run build
 
       - name: Check production dependencies
-        run: npm audit --omit=dev
+        # Retry only when npm's advisory service itself fails (it returned 503
+        # on 22 Oct 2026); any reported vulnerability still fails the step.
+        run: |
+          for attempt in 1 2 3; do
+            if npm audit --omit=dev > audit.log 2>&1; then cat audit.log; exit 0; fi
+            cat audit.log
+            grep -q "audit endpoint returned an error" audit.log || exit 1
+            sleep $((attempt * 30))
+          done
+          exit 1
 
       - name: Check documentation links
         run: npm run docs:check
