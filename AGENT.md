@@ -58,6 +58,15 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-22 — Dependency updates
+
+- `npm install` writes `^` ranges; this repo pins exact versions, so strip
+  them before committing. Dependabot ignores ESLint and `@eslint/js` majors
+  until the plugins support ESLint 10.
+- Server, auth and Node-base bumps change the API image: release the API
+  (`docs/qa/holds-timer/api-release.sh`, always `-p forma-<env>`) before or
+  with the website.
+
 ### Raouf: 2026-10-22 — Holds release and the Compose project name
 
 - Both hosts' `ops/compose.yaml` start with `name: forma-staging`. Every

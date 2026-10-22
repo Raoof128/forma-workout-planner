@@ -4,6 +4,19 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-22 — Dependency updates from Dependabot #15–#17
+
+- One branch off `main` replaces the three stale Dependabot PRs: the API's
+  Node base image digest (#15); better-auth 1.7.10, fastify 5.12.7,
+  lucide-react 1.58.0, react and react-dom 19.3.1, zod 4.6.7 (#16);
+  @playwright/test 1.64.1 and wrangler 4.151.1 (#17). ESLint stays at 9.39.5
+  (#17's ESLint 10 breaks `npm ci`), and `.github/dependabot.yml` now ignores
+  ESLint major versions. Exact version pins are kept.
+- Verification: unit 117/117, worker 26/26, server 63/63 on PostgreSQL 18.4,
+  operations, lint, Prettier, types, docs, web and server builds, full
+  Chromium suite 164/164. The API image changes, so a release needs the API
+  first.
+
 ### Raouf: 2026-10-22 — Hold timer and timed holds released
 
 - Owner-approved release of PRs #20–#25, merged into `main` (`c4b3b2b`).
