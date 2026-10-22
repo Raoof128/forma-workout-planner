@@ -16,6 +16,11 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   operations, lint, Prettier, types, docs, web and server builds, full
   Chromium suite 164/164. The API image changes, so a release needs the API
   first.
+- CI: the production-dependency audit retries up to three times when npm's
+  advisory service errors (it returned 503 on `main`'s run of `93ea947`); a
+  reported vulnerability still fails at once. `security-release.spec.js:35`
+  waits for the restore's saves to settle before reloading (a pending save
+  raised the leave-page prompt in WebKit and cancelled the reload).
 
 ### Raouf: 2026-10-22 — Hold timer and timed holds released
 
