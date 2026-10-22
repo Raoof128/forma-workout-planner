@@ -58,6 +58,19 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-22 — Holds release and the Compose project name
+
+- Both hosts' `ops/compose.yaml` start with `name: forma-staging`. Every
+  Compose command on the Droplet must pass `-p forma-<env>`; without it,
+  production commands act on staging's containers (this recreated the
+  staging database once). Use `docs/qa/holds-timer/api-release.sh`, which
+  pins the project, detaches the backup tool from stdin, and switches back
+  if the API is not healthy.
+- Both environments run `forma-api:holds-timer-20261022-316c5d9` at schema 0006. Do not roll back to `workout-coach-20261019-98f853d` once a timed
+  hold is saved; the older image rejects those IDs.
+- Production Worker `28ef859c-…`, staging `2b97ab5f-…`; `main` is
+  `c4b3b2b`.
+
 ### Raouf: 2026-10-22 — Wait for images in browser assertions
 
 - Check a loaded image with a retrying assertion

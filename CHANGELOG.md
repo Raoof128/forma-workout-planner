@@ -4,6 +4,23 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-22 — Hold timer and timed holds released
+
+- Owner-approved release of PRs #20–#25, merged into `main` (`c4b3b2b`).
+  API image `forma-api:holds-timer-20261022-316c5d9` on staging then
+  production (schema 0006, no migration), then the websites: staging Worker
+  `2b97ab5f-…`, production `28ef859c-…`; both one-hour tokens revoked.
+- Production serves `index-DbISlD_R.js`, matching the local build of `main`;
+  health 200, anonymous workspace 401, row counts and unrelated containers
+  unchanged, no API error lines.
+- Incident: the first production run omitted `-p forma-production`, and since
+  both `compose.yaml` files are named `forma-staging`, the staging database
+  container was recreated from production's config. Data and network were
+  staging's, nothing migrated, production untouched; restored from staging's
+  own files within minutes. Record: `docs/qa/holds-timer/`.
+- `tests/exercise-media.spec.js:16` now waits for the first guide to close
+  before searching again; it timed out once in Firefox on CI.
+
 ### Raouf: 2026-10-22 — CI fixes across the open PR stack
 
 - `tests/routine-preview.spec.js` now waits for the animation SVG to decode
