@@ -18,6 +18,8 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   container was recreated from production's config. Data and network were
   staging's, nothing migrated, production untouched; restored from staging's
   own files within minutes. Record: `docs/qa/holds-timer/`.
+- `tests/exercise-media.spec.js:16` now waits for the first guide to close
+  before searching again; it timed out once in Firefox on CI.
 
 ### Raouf: 2026-10-22 — CI fixes across the open PR stack
 

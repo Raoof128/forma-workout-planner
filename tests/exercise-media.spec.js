@@ -27,6 +27,9 @@ test("machine equipment references do not replace free-weight exercise poses", a
   await expect(dialog).toContainText("Equipment reference");
   const machineSrc = await image.getAttribute("src");
   await page.getByRole("button", { name: "Got it", exact: true }).click();
+  // Search only once the first guide has closed; a slow runner can otherwise
+  // type while the closing dialog still holds focus.
+  await expect(dialog).toBeHidden();
   await openGuide(page, "standing calf raise", "Standing calf raise");
   const freeWeight = dialog.getByRole("img", { name: /Exercise illustration/ });
   await expect(freeWeight).toBeVisible();
