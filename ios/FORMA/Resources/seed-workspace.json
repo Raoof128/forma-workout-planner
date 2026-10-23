@@ -1,0 +1,267 @@
+{
+  "version": 2,
+  "revision": 0,
+  "routines": [
+    {
+      "id": "upper",
+      "name": "Upper body strength",
+      "description": "Build strength. Find your rhythm.",
+      "minutes": 50,
+      "level": "Intermediate",
+      "image": 0,
+      "exercises": [
+        {
+          "exerciseId": "bench",
+          "repsMax": null,
+          "rpe": null,
+          "restSeconds": null,
+          "perSide": false,
+          "note": null,
+          "groupId": null,
+          "sets": 3,
+          "reps": 10,
+          "weight": 40
+        },
+        {
+          "exerciseId": "row",
+          "repsMax": null,
+          "rpe": null,
+          "restSeconds": null,
+          "perSide": true,
+          "note": null,
+          "groupId": null,
+          "sets": 3,
+          "reps": 10,
+          "weight": 16
+        },
+        {
+          "exerciseId": "shoulder",
+          "repsMax": null,
+          "rpe": null,
+          "restSeconds": null,
+          "perSide": false,
+          "note": null,
+          "groupId": null,
+          "sets": 3,
+          "reps": 10,
+          "weight": 12
+        },
+        {
+          "exerciseId": "pulldown",
+          "repsMax": null,
+          "rpe": null,
+          "restSeconds": null,
+          "perSide": false,
+          "note": null,
+          "groupId": null,
+          "sets": 3,
+          "reps": 10,
+          "weight": 35
+        },
+        {
+          "exerciseId": "curl",
+          "repsMax": null,
+          "rpe": null,
+          "restSeconds": null,
+          "perSide": false,
+          "note": null,
+          "groupId": null,
+          "sets": 3,
+          "reps": 10,
+          "weight": 10
+        },
+        {
+          "exerciseId": "triceps",
+          "repsMax": null,
+          "rpe": null,
+          "restSeconds": null,
+          "perSide": false,
+          "note": null,
+          "groupId": null,
+          "sets": 3,
+          "reps": 10,
+          "weight": 15
+        }
+      ]
+    },
+    {
+      "id": "lower",
+      "name": "Lower body foundation",
+      "description": "A stronger foundation starts here.",
+      "minutes": 50,
+      "level": "Intermediate",
+      "image": 1,
+      "exercises": [
+        {
+          "exerciseId": "squat",
+          "repsMax": null,
+          "rpe": null,
+          "restSeconds": null,
+          "perSide": false,
+          "note": null,
+          "groupId": null,
+          "sets": 3,
+          "reps": 10,
+          "weight": 40
+        },
+        {
+          "exerciseId": "rdl",
+          "repsMax": null,
+          "rpe": null,
+          "restSeconds": null,
+          "perSide": false,
+          "note": null,
+          "groupId": null,
+          "sets": 3,
+          "reps": 10,
+          "weight": 40
+        },
+        {
+          "exerciseId": "legpress",
+          "repsMax": null,
+          "rpe": null,
+          "restSeconds": null,
+          "perSide": false,
+          "note": null,
+          "groupId": null,
+          "sets": 3,
+          "reps": 10,
+          "weight": 60
+        },
+        {
+          "exerciseId": "lunge",
+          "repsMax": null,
+          "rpe": null,
+          "restSeconds": null,
+          "perSide": true,
+          "note": null,
+          "groupId": null,
+          "sets": 3,
+          "reps": 10,
+          "weight": 10
+        },
+        {
+          "exerciseId": "calf",
+          "repsMax": null,
+          "rpe": null,
+          "restSeconds": null,
+          "perSide": false,
+          "note": null,
+          "groupId": null,
+          "sets": 3,
+          "reps": 10,
+          "weight": 10
+        },
+        {
+          "exerciseId": "plank",
+          "repsMax": null,
+          "rpe": null,
+          "restSeconds": null,
+          "perSide": false,
+          "note": null,
+          "groupId": null,
+          "sets": 3,
+          "reps": 10,
+          "weight": 0
+        }
+      ]
+    },
+    {
+      "id": "full",
+      "name": "Full body essentials",
+      "description": "A little of everything. A lot of progress.",
+      "minutes": 45,
+      "level": "Beginner",
+      "image": 2,
+      "exercises": [
+        {
+          "exerciseId": "goblet",
+          "repsMax": null,
+          "rpe": null,
+          "restSeconds": null,
+          "perSide": false,
+          "note": null,
+          "groupId": null,
+          "sets": 3,
+          "reps": 10,
+          "weight": 12
+        },
+        {
+          "exerciseId": "pushup",
+          "repsMax": null,
+          "rpe": null,
+          "restSeconds": null,
+          "perSide": false,
+          "note": null,
+          "groupId": null,
+          "sets": 3,
+          "reps": 10,
+          "weight": 0
+        },
+        {
+          "exerciseId": "row",
+          "repsMax": null,
+          "rpe": null,
+          "restSeconds": null,
+          "perSide": true,
+          "note": null,
+          "groupId": null,
+          "sets": 3,
+          "reps": 10,
+          "weight": 16
+        },
+        {
+          "exerciseId": "shoulder",
+          "repsMax": null,
+          "rpe": null,
+          "restSeconds": null,
+          "perSide": false,
+          "note": null,
+          "groupId": null,
+          "sets": 3,
+          "reps": 10,
+          "weight": 12
+        },
+        {
+          "exerciseId": "lunge",
+          "repsMax": null,
+          "rpe": null,
+          "restSeconds": null,
+          "perSide": true,
+          "note": null,
+          "groupId": null,
+          "sets": 3,
+          "reps": 10,
+          "weight": 10
+        },
+        {
+          "exerciseId": "deadbug",
+          "repsMax": null,
+          "rpe": null,
+          "restSeconds": null,
+          "perSide": true,
+          "note": null,
+          "groupId": null,
+          "sets": 3,
+          "reps": 10,
+          "weight": 0
+        }
+      ]
+    }
+  ],
+  "history": [],
+  "active": null,
+  "profile": {
+    "name": "Guest",
+    "goal": 4,
+    "restSeconds": 90,
+    "muted": false,
+    "fillSets": true
+  },
+  "schedule": [
+    0,
+    1,
+    3,
+    5
+  ]
+}

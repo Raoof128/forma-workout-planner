@@ -2,14 +2,22 @@
 
 **Plan your training. Log every set. See your progress.**
 
+The [native iPhone development project](ios/README.md) adds an offline SwiftUI
+training slice alongside the web app. Its build instructions, observed checks
+and remaining device/App Store gates are recorded separately; it is not a
+published iOS release.
+
 FORMA is a workout planner built with React and Vite. Members can use an
 account-backed workspace that stores routines and workout history in
 self-hosted PostgreSQL, or use the separate local guest mode in a browser.
 The public site at [forma.raoufabedini.dev](https://forma.raoufabedini.dev)
-uses browser-local guest storage. Cloudflare Workers serve the frontend; the
-account API and PostgreSQL run in isolated private staging on DigitalOcean.
-Accounts remain private pending the outstanding release gates in the
-[deployment record](docs/security/deployment-record.md).
+supports browser-local guest storage and member accounts. Cloudflare Workers
+serve the frontend; the account API and PostgreSQL use separate private staging
+and production environments on DigitalOcean. The
+[production launch record](docs/accounts/production-launch.md) records account
+activation; the earlier [deployment record](docs/security/deployment-record.md)
+retains historical staging evidence. This describes the recorded architecture,
+not a fresh live-service health check.
 
 [Account docs](docs/accounts/README.md) · [Getting started](docs/getting-started.md) ·
 [User guide](docs/user-guide.md) · [Architecture](docs/architecture.md) ·
@@ -22,7 +30,7 @@ Accounts remain private pending the outstanding release gates in the
 | Three starters and 12 additional templates             | Weight/reps, time, and distance logging             | Editable workout history                     |
 | Custom routines and exercise order                     | Persistent rest timer, hold timer and session notes | Volume, completed sets, and personal bests   |
 | Weekly training schedule                               | Exercise instructions while logging                 | Validated JSON backup and restore            |
-| Searchable 1,661-exercise library with source licences | Resume an unfinished session                        | Profile, backup, and training-data settings  |
+| Searchable 1,411-movement library; 1,711 accepted IDs with source licences | Resume an unfinished session                        | Profile, backup, and training-data settings  |
 | Local guest mode or member account                     | Authenticated workspace sync across sessions        | Session revocation, MFA, import, and export  |
 | Read-only coach tokens for a coaching tool or AI       |                                                     | Token list, expiry, and one-click revocation |
 
@@ -115,7 +123,7 @@ configured and verified. Earlier staging evidence remains in the
 | [Legal](docs/legal/README.md)                           | Privacy Policy and Terms of Use: sources and commitments        |
 | [Sources](docs/accounts/sources.md)                     | Official source retrieval status and limits                     |
 | [User guide](docs/user-guide.md)                        | Workout use and legacy browser backup guidance                  |
-| [Data model](docs/data-model.md)                        | Version 1 workspace shape and validation                        |
+| [Data model](docs/data-model.md)                        | Version 2 workspace, version 1 migration and validation          |
 | [Testing](docs/testing.md)                              | Existing frontend suite and test conventions                    |
 | [Changelog](CHANGELOG.md)                               | Notable changes                                                 |
 | [Security](SECURITY.md)                                 | Responsible reporting and security notes                        |

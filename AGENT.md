@@ -1240,3 +1240,94 @@ migrate` from the root-owned `ops/` directory (`sudo sh -c 'cd … && …'`),
   and unchanged exact data, cancellation and performance assertions.
 - **Follow-ups:** publish both frontends and retain final CI/live receipts in
   PR #9; no backend, schema, member-data change or merge is required.
+
+
+### Raouf: 2026-10-23 — Native iPhone offline training foundation
+
+- **Scope:** Start the supplied iOS master/motion plans in an isolated `ios/`
+  SwiftUI project. Current source wins over stale plan examples: workspace v2,
+  1,711 accepted exercise IDs, 1,411 selectable movements and website policy v1.3.
+- **Summary:** Added four native tabs, routine editing/search/attributed guides,
+  measurement-aware set completion/undo, persistent rest, notes, receipt and real
+  empty-first progress; SQLite actor transactions/recovery/revisions, explicit
+  export/logical reset, protected backup-excluded storage, appearance/motion/haptic
+  preferences, original decorative art/icon and pinned macOS verification workflow.
+  Saved feedback follows COMMIT; unfinished numeric drafts are labelled unsaved.
+  Native account transport/import, production services and publication are absent.
+- **Files:** `ios/` app/core/tests/resources/project/docs/design; native resource
+  generator and contract-check scripts; `unit/ios-resources.test.js`;
+  `.github/workflows/ios.yml`; root README, AGENT and CHANGELOG.
+- **Verification:** Swift 6.2 package 30/30; JS unit 127/127; actual Swift-generated
+  workout exports 1,711/1,711 pass strict web validation; deterministic resources,
+  lint, Prettier, TypeScript, docs, existing web build, native syntax/format,
+  plist/JSON/YAML and whitespace pass. Restored stale installed dependencies with
+  the unchanged lockfile. Native SwiftUI typecheck/simulator/device checks were
+  not possible on Linux. Evidence: `ios/docs/verification.md`.
+- **Follow-ups:** Build/run the native scheme on Mac; complete keyboard/accessibility,
+  device interruption/protection and performance evidence, native auth/import and
+  App Review/legal/rights/signing gates. No push, deployment or store submission.
+
+
+### Raouf: 2026-10-23 — Apple design and Liquid Glass refinement
+
+- **Scope:** Read the native app file by file and refine it against 52 official
+  Apple text/API/session sources (including five complete WWDC26 transcripts) and three
+  inspected HIG reference images. The source register distinguishes living docs,
+  2026 changes and API availability; no whole-Apple-website claim is made.
+- **Summary:** Added guarded native resume accessories and a single functional
+  glass rest pane, semantic glass foregrounds, opaque accessibility alternatives,
+  high-contrast tokens and narrow/large-text reflow. Kept data surfaces opaque.
+  Added direct strict locale-aware target entry, protected profile/notes drafts,
+  an in-sheet picker journey, native chart accessibility and direct Finish.
+  Serialized local writes, rechecked queued session identities, preserved unequal
+  side values and bounded SQLite BLOBs before Data allocation. Completed source
+  provenance, reproducible unchanged icon tooling and Xcode/SDK 26.1 CI gates.
+- **Files:** Native app/theme/core/tests, project/CI, generated source manifest,
+  resource generator/tests, design provenance/tooling, source/file-review docs,
+  README, AGENT and CHANGELOG. Per-file hashes and dispositions:
+  `ios/docs/native-file-review.json` and `ios/docs/native-design-review.md`.
+- **Verification:** Swift 44/44, JS 129/129 (12 resource cases), actual native export
+  parity 1711/1711; deterministic resources, original icon pixels, lint, types,
+  Prettier, docs, existing web build, Swift syntax/format and config parsing pass.
+  Thirty-seven solid-color text/border pairs meet their 4.5:1/3:1 targets; this
+  does not cover glass compositing. Five native UI journeys are authored but not
+  run here. Xcode/SwiftUI compilation and rendered/device QA remain unrun on Linux.
+- **Follow-ups:** Execute the enforced SDK 26.1+ native workflow on Mac and complete
+  the actual narrow/large-text, keyboard, VoiceOver, motion/transparency/contrast,
+  glass compositing and device matrix before visual sign-off or distribution.
+  No push, deployment, TestFlight or App Store submission occurred.
+
+
+### Raouf: 2026-10-23 — Full native correctness audit
+
+- **Scope:** All 68 authored native files, eight integration files and six shared
+  contract modules; preserve the loaded draft and no-publication instruction.
+  Current Apple source register: 62 text/API/session sources and three inspected
+  reference images. Complete source reading, all-record generated checks and
+  decoded assets are distinguished in the per-file SHA-256 ledger.
+- **Summary:** Fixed workout/notes acknowledgement races without dropping queued
+  lifecycle saves; bound completion/add-set work to captured session/entry IDs;
+  corrected duplicate-entry previous-set lookup, deleted-history detail retention,
+  per-side range traps, prefix-colliding draft cleanup and duplicate routine saves.
+  Kept loaded timed-distance values visible and volume units consistent. Added
+  portable backup names, export snapshot cleanup and compact 20 MiB-bounded export;
+  a valid 150,000-set backup now occupies 11.6 MB instead of 36.4 MB. Aligned native
+  canonical validation using 38 shared boundary records; deduplicated identical
+  corrupt recovery originals; strengthened actual native default/unit/completion
+  comparisons. Avoid repeated history parsing on unchanged-history commits.
+- **Files:** Native app/core/tests/fixtures, contract checker, resource/boundary
+  unit tests and CI triggers; Apple/privacy/verification/file-review docs; README,
+  AGENT and CHANGELOG. `ios/docs/native-file-review.json` lists every input hash.
+- **Verification:** Fresh Swift 62/62 and JS 134/134 pass; all 1711 fresh actual
+  native exports pass strict web validation and independent default-measurement
+  comparisons. The session 422-input probe has no rejected native-accepted output;
+  three stronger native whitespace-name rejections remain intentional. A 150,000-
+  set export round-trips and passes the web backup reader. Resources/icon, lint,
+  types, formatting, docs, web build, Swift syntax/format and config parsing pass.
+  Linux Foundation benchmark identifies avoidable 191–341 ms history rebuild work;
+  the equality guard takes 0.020–0.066 ms in that harness, not an iPhone measurement.
+- **Follow-ups:** Eight authored UI journeys remain unrun on Linux. Xcode/SwiftUI
+  compilation, simulator/device accessibility, keyboard, interruptions/protection,
+  performance, archive/privacy/legal/rights/signing and Store gates remain open.
+  No native import/account transport, server boundary or published state changed;
+  no push, deployment, TestFlight upload or App Store submission occurred.

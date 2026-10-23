@@ -1,0 +1,20 @@
+{
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "ios/design/app-icon.svg",
+      "sha256": "2c8c3294a58624122e0f606f38f25c5e33841ab32141721b721aa61f177cdc1f",
+      "bytes": 302
+    },
+    {
+      "path": "ios/FORMA/Resources/Assets.xcassets/AppIcon.appiconset/app-icon.png",
+      "sha256": "b006d525853e8752c0d1a3688b0658fe37ca01ff2c9799a0efd28d159d13bb55",
+      "bytes": 17399
+    },
+    {
+      "path": "ios/FORMA/Resources/Assets.xcassets/TrainingEditorial.imageset/training-editorial.png",
+      "sha256": "c7d72e4f25108d22165c9facf105b6ee3643d372631628f85765eadc87d78d9d",
+      "bytes": 2187502
+    }
+  ]
+}

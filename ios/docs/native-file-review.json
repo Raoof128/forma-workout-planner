@@ -1,0 +1,1118 @@
+{
+  "date": "2026-10-23",
+  "timezone": "Australia/Sydney",
+  "scope": "All authored ios/ inputs plus the named integration and shared-contract modules. Generated build/package caches are excluded. Generated records are traversed exhaustively; they are not claimed manually read line-by-line.",
+  "native_files_including_reports": 68,
+  "native_input_files": 66,
+  "review_reports": [
+    "ios/docs/native-design-review.md",
+    "ios/docs/native-file-review.json"
+  ],
+  "supporting_files": 8,
+  "shared_contract_files": 6,
+  "total_input_files": 80,
+  "apple_text_api_session_sources": 62,
+  "apple_reference_images": 3,
+  "verification": {
+    "swift_tests_passed": 62,
+    "javascript_tests_passed": 134,
+    "resource_test_cases": 14,
+    "shared_boundary_records": 38,
+    "fresh_actual_swift_exports_checked": 1711,
+    "exploratory_inputs": 422,
+    "native_accepted_exploratory_outputs_web_valid": 168,
+    "intentional_stronger_native_name_rejections": 3,
+    "authored_ui_tests": 8,
+    "executed_ui_tests": 0,
+    "native_sdk_build_executed": false,
+    "publication_performed": false
+  },
+  "reports_validation": "Reports read back, coverage compared with complete filesystem inventory, JSON parsed and local links checked separately to avoid self-referential hashes.",
+  "files": [
+    {
+      "path": ".github/workflows/ios.yml",
+      "scope": "integration",
+      "bytes": 9735,
+      "lines": 212,
+      "sha256": "a8a106841fdc66bd2b282af1b2e70b38af64f03de3ee9b6dd3bd7d592dd6cca5",
+      "review_method": "Complete text/source read; compare current behavior against authoritative contract/configuration",
+      "decision": "Run boundary test and watch its path; SDK/runtime gates and missing-runtime reporting retained. Workflow NOT RUN remotely.",
+      "reviewed_by": [
+        "forma-audit-config-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "a8a106841fdc66bd2b282af1b2e70b38af64f03de3ee9b6dd3bd7d592dd6cca5"
+    },
+    {
+      "path": "AGENT.md",
+      "scope": "integration",
+      "bytes": 85572,
+      "lines": 1333,
+      "sha256": "b602620acfb3f517ccba56fb0aac9f4d6cc7e40511a82184b94fac74d1b88ae0",
+      "review_method": "Complete source/document read; source/evidence/link consistency checks",
+      "decision": "Read in full before edits; append matching Raouf audit entry with actual results and open native gates.",
+      "reviewed_by": [
+        "root"
+      ],
+      "previous_review_sha256": "b602620acfb3f517ccba56fb0aac9f4d6cc7e40511a82184b94fac74d1b88ae0"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "scope": "integration",
+      "bytes": 98259,
+      "lines": 1423,
+      "sha256": "9dfcd88402ff1ef79813e0c503bedfbbf4e875778d5bd0c286e42b55a0b31c93",
+      "review_method": "Complete source/document read; source/evidence/link consistency checks",
+      "decision": "Read in full before edits; append matching Raouf audit entry with actual results and open native gates.",
+      "reviewed_by": [
+        "root"
+      ],
+      "previous_review_sha256": "9dfcd88402ff1ef79813e0c503bedfbbf4e875778d5bd0c286e42b55a0b31c93"
+    },
+    {
+      "path": "README.md",
+      "scope": "integration",
+      "bytes": 8894,
+      "lines": 142,
+      "sha256": "06eab64b9fd50e194ecd0452faf53f2cd9c2f045524ae1273adc4ad9b8448308",
+      "review_method": "Complete source/document read; source/evidence/link consistency checks",
+      "decision": "Reconcile stale account-staging prose with existing launch record; current 1711 accepted / 1411 selectable and workspace v2 facts.",
+      "reviewed_by": [
+        "root"
+      ],
+      "previous_review_sha256": "06eab64b9fd50e194ecd0452faf53f2cd9c2f045524ae1273adc4ad9b8448308"
+    },
+    {
+      "path": "ios/.gitignore",
+      "scope": "native",
+      "bytes": 74,
+      "lines": 6,
+      "sha256": "2767552aa155cef9721b0ebbdfbee475aae4b4572c1995a5bda73e0004f6dbff",
+      "review_method": "Complete text/source read; compare current behavior against authoritative contract/configuration",
+      "decision": "Retain; no new concrete defect established in this file",
+      "reviewed_by": [
+        "forma-audit-config-ledger"
+      ],
+      "previous_review_sha256": "2767552aa155cef9721b0ebbdfbee475aae4b4572c1995a5bda73e0004f6dbff"
+    },
+    {
+      "path": "ios/FORMA/App/AppModel.swift",
+      "scope": "native",
+      "bytes": 9589,
+      "lines": 272,
+      "sha256": "47e00d6ea23e5cd85f8c06ae0cde18629cfed7bd18f65e8ca37d1b1a39ba5161",
+      "review_method": "complete source reading and boundary/capacity execution",
+      "decision": "Compact tested export; rebuild history only when changed; reset clears stale errors; FIFO persistence and session guards retained.",
+      "reviewed_by": [
+        "forma-audit-contract-ledger",
+        "forma-audit-ui-workout-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "47e00d6ea23e5cd85f8c06ae0cde18629cfed7bd18f65e8ca37d1b1a39ba5161"
+    },
+    {
+      "path": "ios/FORMA/App/FORMAApp.swift",
+      "scope": "native",
+      "bytes": 4780,
+      "lines": 144,
+      "sha256": "8d725ad4071075c379d52ccd9588bcab67724c3bc548a5d7f6e19eb8aaa90ad8",
+      "review_method": "Complete source read; full-screen workout lifecycle, selected-tab identity, error presentation and resume accessory availability checked against official API register. Swift parser/strict formatter.",
+      "decision": "Complete read; stable native tab/accessory identity and explicit OS guards retained; no new confirmed defect.",
+      "reviewed_by": [
+        "forma-audit-ui-workout-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "8d725ad4071075c379d52ccd9588bcab67724c3bc548a5d7f6e19eb8aaa90ad8"
+    },
+    {
+      "path": "ios/FORMA/DesignSystem/FormaTheme.swift",
+      "scope": "native",
+      "bytes": 4798,
+      "lines": 139,
+      "sha256": "c746c9f5a435ceb3acd04bed573184dcdbd0e29f72638592b2cb53df7404d65e",
+      "review_method": "Complete source read; trait-adaptive light/dark/high-contrast tokens, motion/disabled state, dynamic headings, status semantics and responsive section headings checked. Swift parser/strict formatter.",
+      "decision": "Retained: no new behavioral defect established; pending drafts continue to display unsaved status. Rendered contrast/glass/layout proof requires Mac/device.",
+      "reviewed_by": [
+        "forma-audit-ui-workout-ledger"
+      ],
+      "previous_review_sha256": "c746c9f5a435ceb3acd04bed573184dcdbd0e29f72638592b2cb53df7404d65e"
+    },
+    {
+      "path": "ios/FORMA/DesignSystem/GlassControls.swift",
+      "scope": "native",
+      "bytes": 2188,
+      "lines": 61,
+      "sha256": "fbcc717107d40282cba24a907f7342c689190a121da7c023ce2bce185015ae26",
+      "review_method": "Complete source read; iOS26 availability, safeAreaBar vertical overload, control-only regular glass, opaque transparency/contrast alternatives and adaptive layout checked against Apple primary API register. Swift parser/strict formatter.",
+      "decision": "Retained: API guards and content/control layering are consistent with source docs. Rendered glass/keyboard/safe-area behavior unverified on Linux.",
+      "reviewed_by": [
+        "forma-audit-ui-workout-ledger"
+      ],
+      "previous_review_sha256": "fbcc717107d40282cba24a907f7342c689190a121da7c023ce2bce185015ae26"
+    },
+    {
+      "path": "ios/FORMA/Features/PlanView.swift",
+      "scope": "native",
+      "bytes": 32272,
+      "lines": 856,
+      "sha256": "b1bb0caaa3021fcdba6d824600d4c28d9b3b82c26e8bac1ec8cf505ae81e8ba9",
+      "review_method": "Full source read and dataflow review; all final edits reviewed",
+      "decision": "Repair invalid per-side range, exact-row draft cleanup, duplicate Save tasks; details retain stored IDs.",
+      "reviewed_by": [
+        "forma-audit-ui-features-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "b1bb0caaa3021fcdba6d824600d4c28d9b3b82c26e8bac1ec8cf505ae81e8ba9"
+    },
+    {
+      "path": "ios/FORMA/Features/ProgressView.swift",
+      "scope": "native",
+      "bytes": 8291,
+      "lines": 208,
+      "sha256": "a15ff3c72bc26db4cfc5398a1ca3bf7d4c4453a6883f1363664d8610d8391a04",
+      "review_method": "Full source read and dataflow review; all final edits reviewed",
+      "decision": "Resolve journal details against current history after reset; consistent kg \u00d7 reps; tested load-aware summary.",
+      "reviewed_by": [
+        "forma-audit-ui-features-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "a15ff3c72bc26db4cfc5398a1ca3bf7d4c4453a6883f1363664d8610d8391a04"
+    },
+    {
+      "path": "ios/FORMA/Features/TodayView.swift",
+      "scope": "native",
+      "bytes": 9279,
+      "lines": 238,
+      "sha256": "d17852ea4f764fa045c7e5b9a5ed3a745e74065b8dae97746ce6ebab23b68f63",
+      "review_method": "Full source read and dataflow review; all final edits reviewed",
+      "decision": "Complete read; genuine history/schedule, safe active-session state and adaptive layout retained.",
+      "reviewed_by": [
+        "forma-audit-ui-features-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "d17852ea4f764fa045c7e5b9a5ed3a745e74065b8dae97746ce6ebab23b68f63"
+    },
+    {
+      "path": "ios/FORMA/Features/WorkoutView.swift",
+      "scope": "native",
+      "bytes": 29388,
+      "lines": 730,
+      "sha256": "166c6fcdfd6e68a767847498a7dd83bdbf1fda91e16697c568073470a1b191bb",
+      "review_method": "Complete source read including WorkoutView, GuideSheet, SetRow, ElapsedTime, RestDock, SessionNotesView and WorkoutReceipt; traced every save/close/Finish/dismiss path, actor reentrancy, session/entry identity, field units, timers and accessibility. Swift parser/strict formatter; tested pure acknowledgement and history helpers; catalog traversal.",
+      "decision": "Freeze submitted drafts/notes; acknowledge exact values; retain late editable drafts; captured session/entry IDs; correct duplicate previous set and loaded timed-distance fields.",
+      "reviewed_by": [
+        "forma-audit-ui-workout-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "166c6fcdfd6e68a767847498a7dd83bdbf1fda91e16697c568073470a1b191bb"
+    },
+    {
+      "path": "ios/FORMA/Features/YouView.swift",
+      "scope": "native",
+      "bytes": 12341,
+      "lines": 335,
+      "sha256": "43725550792d8bb6174fa2ec914711ba2c7172e2eda3eacd20534c8f6646a7ab",
+      "review_method": "Full source read and dataflow review; all final edits reviewed",
+      "decision": "ISO Sydney filename; release export snapshot after completion/cancellation; profile protection retained.",
+      "reviewed_by": [
+        "forma-audit-ui-features-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "43725550792d8bb6174fa2ec914711ba2c7172e2eda3eacd20534c8f6646a7ab"
+    },
+    {
+      "path": "ios/FORMA/Info.plist",
+      "scope": "native",
+      "bytes": 1366,
+      "lines": 41,
+      "sha256": "cb1d131e487076c9cce30af390b98c70e66d96cf14e9d75543ce9e2a32e4a598",
+      "review_method": "Complete text/source read; compare current behavior against authoritative contract/configuration",
+      "decision": "Retain; no new concrete defect established in this file",
+      "reviewed_by": [
+        "forma-audit-config-ledger"
+      ],
+      "previous_review_sha256": "cb1d131e487076c9cce30af390b98c70e66d96cf14e9d75543ce9e2a32e4a598"
+    },
+    {
+      "path": "ios/FORMA/Resources/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "scope": "native",
+      "bytes": 204,
+      "lines": 14,
+      "sha256": "895c44875e8781583d9e9373525415fb21ebd883526845e6e6c4562c7eefaa1c",
+      "review_method": "Complete JSON parse and referenced asset decoding/hash verification",
+      "decision": "Retain; no new concrete defect established in this file",
+      "reviewed_by": [
+        "forma-audit-config-ledger"
+      ],
+      "previous_review_sha256": "895c44875e8781583d9e9373525415fb21ebd883526845e6e6c4562c7eefaa1c"
+    },
+    {
+      "path": "ios/FORMA/Resources/Assets.xcassets/AppIcon.appiconset/app-icon.png",
+      "scope": "native",
+      "bytes": 17399,
+      "lines": null,
+      "sha256": "b006d525853e8752c0d1a3688b0658fe37ca01ff2c9799a0efd28d159d13bb55",
+      "review_method": "Decode entire PNG, validate RGB/dimensions and SHA256; unchanged bytes match prior visual inspection",
+      "decision": "Retain original asset; no image edits",
+      "reviewed_by": [
+        "forma-audit-config-ledger"
+      ],
+      "previous_review_sha256": "b006d525853e8752c0d1a3688b0658fe37ca01ff2c9799a0efd28d159d13bb55"
+    },
+    {
+      "path": "ios/FORMA/Resources/Assets.xcassets/Contents.json",
+      "scope": "native",
+      "bytes": 50,
+      "lines": 3,
+      "sha256": "2320eb3e02f9e3419d35676c6fd470ec13d5aa314c0d29700e09ec76d8e2360a",
+      "review_method": "Complete JSON parse and referenced asset decoding/hash verification",
+      "decision": "Retain; no new concrete defect established in this file",
+      "reviewed_by": [
+        "forma-audit-config-ledger"
+      ],
+      "previous_review_sha256": "2320eb3e02f9e3419d35676c6fd470ec13d5aa314c0d29700e09ec76d8e2360a"
+    },
+    {
+      "path": "ios/FORMA/Resources/Assets.xcassets/TrainingEditorial.imageset/Contents.json",
+      "scope": "native",
+      "bytes": 128,
+      "lines": 4,
+      "sha256": "cf0dbe7c7ee61517fcb71bb74eb05de7c6aa64dcdec5a30cd5506f45772d210d",
+      "review_method": "Complete JSON parse and referenced asset decoding/hash verification",
+      "decision": "Retain; no new concrete defect established in this file",
+      "reviewed_by": [
+        "forma-audit-config-ledger"
+      ],
+      "previous_review_sha256": "cf0dbe7c7ee61517fcb71bb74eb05de7c6aa64dcdec5a30cd5506f45772d210d"
+    },
+    {
+      "path": "ios/FORMA/Resources/Assets.xcassets/TrainingEditorial.imageset/training-editorial.png",
+      "scope": "native",
+      "bytes": 2187502,
+      "lines": null,
+      "sha256": "c7d72e4f25108d22165c9facf105b6ee3643d372631628f85765eadc87d78d9d",
+      "review_method": "Decode entire PNG, validate RGB/dimensions and SHA256; unchanged bytes match prior visual inspection",
+      "decision": "Retain original asset; no image edits",
+      "reviewed_by": [
+        "forma-audit-config-ledger"
+      ],
+      "previous_review_sha256": "c7d72e4f25108d22165c9facf105b6ee3643d372631628f85765eadc87d78d9d"
+    },
+    {
+      "path": "ios/FORMA/Resources/PrivacyInfo.xcprivacy",
+      "scope": "native",
+      "bytes": 397,
+      "lines": 14,
+      "sha256": "528ab3fca910d2ac2f3ef256d5ea4c2327303a7a4a5efb9236987f3018e311f3",
+      "review_method": "Complete plist read/parse and source-level privacy inventory review",
+      "decision": "No new collection/permission introduced; final required-reason/archive audit remains unrun",
+      "reviewed_by": [
+        "forma-audit-config-ledger"
+      ],
+      "previous_review_sha256": "528ab3fca910d2ac2f3ef256d5ea4c2327303a7a4a5efb9236987f3018e311f3"
+    },
+    {
+      "path": "ios/FORMA/Resources/README.md",
+      "scope": "native",
+      "bytes": 2928,
+      "lines": 52,
+      "sha256": "73ba032b2e08f45ebba54c6c72ae8604133e918154738a52d350112a900f99e7",
+      "review_method": "Complete text/source read; compare current behavior against authoritative contract/configuration",
+      "decision": "Retain; no new concrete defect established in this file",
+      "reviewed_by": [
+        "forma-audit-config-ledger"
+      ],
+      "previous_review_sha256": "73ba032b2e08f45ebba54c6c72ae8604133e918154738a52d350112a900f99e7"
+    },
+    {
+      "path": "ios/FORMA/Resources/catalog.json",
+      "scope": "native",
+      "bytes": 3679332,
+      "lines": 79547,
+      "sha256": "804237ba0cc29c9da5e570aefdda9ca78ac525fb0128463f9d473d6da29575ad",
+      "review_method": "Exhaustively traverse all1711records: types, identities, profiles, default validation, canonical/guide mappings, aliases, source/credit URLs; native resource tests",
+      "decision": "All 1,711 records and 1,411 selectable mappings match authoritative source.",
+      "reviewed_by": [
+        "forma-audit-config-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "804237ba0cc29c9da5e570aefdda9ca78ac525fb0128463f9d473d6da29575ad"
+    },
+    {
+      "path": "ios/FORMA/Resources/catalogue-notices.json",
+      "scope": "native",
+      "bytes": 1425692,
+      "lines": 33410,
+      "sha256": "e157874c5a2c9ba3b788a636007a69b5fa4ce3da68b07c91440ac70135aaf270",
+      "review_method": "Exhaustive equality against every catalog record for id, guideId, source, rawSource and references",
+      "decision": "All 1,711 per-entry notices match authoritative source.",
+      "reviewed_by": [
+        "forma-audit-config-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "e157874c5a2c9ba3b788a636007a69b5fa4ce3da68b07c91440ac70135aaf270"
+    },
+    {
+      "path": "ios/FORMA/Resources/legal.json",
+      "scope": "native",
+      "bytes": 20507,
+      "lines": 381,
+      "sha256": "02c1fcac2190e90ca365e6dac8521eb45a4ebf6f2fcaf2b9a4395cbbd173a99e",
+      "review_method": "Full unchanged legal/notice text read in prior pass plus current exact SHA256 and source-policy equality/native-scope tests",
+      "decision": "Retain truthful local guest scope; legal/final archive gates remain open",
+      "reviewed_by": [
+        "forma-audit-config-ledger"
+      ],
+      "previous_review_sha256": "02c1fcac2190e90ca365e6dac8521eb45a4ebf6f2fcaf2b9a4395cbbd173a99e"
+    },
+    {
+      "path": "ios/FORMA/Resources/native-privacy.md",
+      "scope": "native",
+      "bytes": 2228,
+      "lines": 39,
+      "sha256": "66bfa44e854d6891cd17c690a30390cddd3efdf6c127e4e632d2bb5c7bab1b9d",
+      "review_method": "Complete text/source read; compare current behavior against authoritative contract/configuration",
+      "decision": "Retain; no new concrete defect established in this file",
+      "reviewed_by": [
+        "forma-audit-config-ledger"
+      ],
+      "previous_review_sha256": "66bfa44e854d6891cd17c690a30390cddd3efdf6c127e4e632d2bb5c7bab1b9d"
+    },
+    {
+      "path": "ios/FORMA/Resources/resource-manifest.json",
+      "scope": "native",
+      "bytes": 3249,
+      "lines": 100,
+      "sha256": "202fc19c1f51965de81b08101ed0df3a93a7047862dd7377352460da5ed695d5",
+      "review_method": "Verify all16source hashes plus5output hashes/byte sizes and complete local generator import closure",
+      "decision": "All 21 source hashes match; six deterministic outputs reproduce.",
+      "reviewed_by": [
+        "forma-audit-config-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "202fc19c1f51965de81b08101ed0df3a93a7047862dd7377352460da5ed695d5"
+    },
+    {
+      "path": "ios/FORMA/Resources/seed-workspace.json",
+      "scope": "native",
+      "bytes": 5990,
+      "lines": 267,
+      "sha256": "97eaacca4ebb08db83161b3c0a23e054ad29955981c68a4006387c15aac012e1",
+      "review_method": "Programmatic strict validation of every workspace/fixture, independent aggregate totals and exact-source seed equality",
+      "decision": "Retain genuine empty history and validated editable starter routines.",
+      "reviewed_by": [
+        "forma-audit-config-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "97eaacca4ebb08db83161b3c0a23e054ad29955981c68a4006387c15aac012e1"
+    },
+    {
+      "path": "ios/FORMAUITests/OfflineWorkoutTests.swift",
+      "scope": "native",
+      "bytes": 11194,
+      "lines": 276,
+      "sha256": "e17bcbeb056d74e5aa82d8b6fa27ec2501daa081c7067ad4b66dd56c3a947b7b",
+      "review_method": "Complete source read of all eight UI journeys and wait helpers; Swift parser/strict formatter only. UI execution NOT available on Linux.",
+      "decision": "Eight authored journeys; adds invalid-draft correction, notes and stale-detail reset checks. NOT RUN without Xcode.",
+      "reviewed_by": [
+        "forma-audit-ui-workout-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "e17bcbeb056d74e5aa82d8b6fa27ec2501daa081c7067ad4b66dd56c3a947b7b"
+    },
+    {
+      "path": "ios/Fixtures/parity.json",
+      "scope": "native",
+      "bytes": 124659,
+      "lines": 4387,
+      "sha256": "0f350ae0e70d77a9c034b352d88acf8d82152ca95bab6efb62fe0bcc823f504a",
+      "review_method": "Programmatic strict validation of every workspace/fixture, independent aggregate totals and exact-source seed equality",
+      "decision": "All 12 synthetic golden cases checked record by record against both domains.",
+      "reviewed_by": [
+        "forma-audit-config-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "0f350ae0e70d77a9c034b352d88acf8d82152ca95bab6efb62fe0bcc823f504a"
+    },
+    {
+      "path": "ios/Fixtures/validation-boundaries.json",
+      "scope": "native",
+      "bytes": 4663,
+      "lines": 210,
+      "sha256": "17203a4070c04d6b644fdb9cfa6543b3a4865c608bc228fd6cdf2df9989428eb",
+      "review_method": "complete synthetic fixture reading; all38records checked independently by Swift and strict web validator",
+      "decision": "All 38 synthetic acceptance/rejection records checked independently by Swift and strict web validation.",
+      "reviewed_by": [
+        "forma-audit-contract-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "17203a4070c04d6b644fdb9cfa6543b3a4865c608bc228fd6cdf2df9989428eb"
+    },
+    {
+      "path": "ios/Package.swift",
+      "scope": "native",
+      "bytes": 656,
+      "lines": 18,
+      "sha256": "a0be97b5f73fea21cd2388ab20f790c61bb46eec457539b73f95f75726c9d651",
+      "review_method": "Complete text/source read; compare current behavior against authoritative contract/configuration",
+      "decision": "Retain; no new concrete defect established in this file",
+      "reviewed_by": [
+        "forma-audit-config-ledger"
+      ],
+      "previous_review_sha256": "a0be97b5f73fea21cd2388ab20f790c61bb46eec457539b73f95f75726c9d651"
+    },
+    {
+      "path": "ios/README.md",
+      "scope": "native",
+      "bytes": 4895,
+      "lines": 102,
+      "sha256": "940f07a113f35a90b471efb4f69c384d8398d7ab4cf89981a4f5f23eb16fb745",
+      "review_method": "Complete source/document read; source/evidence/link consistency checks",
+      "decision": "Complete read; correct SDK 26.1, deployment 17, guest-only scope and reproduction instructions retained.",
+      "reviewed_by": [
+        "root"
+      ],
+      "previous_review_sha256": "940f07a113f35a90b471efb4f69c384d8398d7ab4cf89981a4f5f23eb16fb745"
+    },
+    {
+      "path": "ios/Sources/CSQLite/module.modulemap",
+      "scope": "native",
+      "bytes": 80,
+      "lines": 5,
+      "sha256": "bbfe59a972a3e8e09e347c04bc22c0eacd2544881af8a4b6068bfc30b38466e8",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Complete read; retain verified contract, configuration or evidence boundaries.",
+      "reviewed_by": [
+        "forma-audit-core-ledger"
+      ],
+      "previous_review_sha256": "bbfe59a972a3e8e09e347c04bc22c0eacd2544881af8a4b6068bfc30b38466e8"
+    },
+    {
+      "path": "ios/Sources/CSQLite/shim.h",
+      "scope": "native",
+      "bytes": 21,
+      "lines": 1,
+      "sha256": "b052d8e561e942f97b503033ecd2eaa2b35213bdbf374983efe9e68eabdfc024",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Complete read; retain verified contract, configuration or evidence boundaries.",
+      "reviewed_by": [
+        "forma-audit-core-ledger"
+      ],
+      "previous_review_sha256": "b052d8e561e942f97b503033ecd2eaa2b35213bdbf374983efe9e68eabdfc024"
+    },
+    {
+      "path": "ios/Sources/FORMAContractProbe/main.swift",
+      "scope": "native",
+      "bytes": 2667,
+      "lines": 68,
+      "sha256": "0846c8e0a434c9e463bfded0dc0bc845f8e888572e5199b081bdec7899df5c13",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Retain synthetic per-ID start/complete/finish probe; rerun actual Swift output through the strengthened checker.",
+      "reviewed_by": [
+        "forma-audit-contract-ledger",
+        "forma-audit-core-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "0846c8e0a434c9e463bfded0dc0bc845f8e888572e5199b081bdec7899df5c13"
+    },
+    {
+      "path": "ios/Sources/FORMACore/DraftAcknowledgement.swift",
+      "scope": "native",
+      "bytes": 585,
+      "lines": 12,
+      "sha256": "8208a4c128c610e98361a021e61f75ac74b6b8e503c2b2c3c66996561f3ef3b8",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Tested exact-value acknowledgement retains newer edits and new keys across awaited saves.",
+      "reviewed_by": [
+        "forma-audit-core-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "8208a4c128c610e98361a021e61f75ac74b6b8e503c2b2c3c66996561f3ef3b8"
+    },
+    {
+      "path": "ios/Sources/FORMACore/ExerciseSearch.swift",
+      "scope": "native",
+      "bytes": 709,
+      "lines": 20,
+      "sha256": "d9564336ea7db30bdf8888927f7a33544eef621715caff9792ed63f4e5acd676",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Complete read; retain verified contract, configuration or evidence boundaries.",
+      "reviewed_by": [
+        "forma-audit-core-ledger"
+      ],
+      "previous_review_sha256": "d9564336ea7db30bdf8888927f7a33544eef621715caff9792ed63f4e5acd676"
+    },
+    {
+      "path": "ios/Sources/FORMACore/LastCompletedSet.swift",
+      "scope": "native",
+      "bytes": 513,
+      "lines": 13,
+      "sha256": "18ea4f0b53675fff5f2258c9a23d4a534c1eccc2d9220757da178bc0459e8142",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Tested newest completed occurrence across all duplicate entries, skipping unfinished/excluded sessions.",
+      "reviewed_by": [
+        "forma-audit-core-ledger",
+        "forma-audit-ui-workout-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "18ea4f0b53675fff5f2258c9a23d4a534c1eccc2d9220757da178bc0459e8142"
+    },
+    {
+      "path": "ios/Sources/FORMACore/MeasurementDraft.swift",
+      "scope": "native",
+      "bytes": 2727,
+      "lines": 64,
+      "sha256": "909e6414c1981b96ea0ca89f010d1c20436c620540de4cbd9faaf0042dfc4cb0",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Complete read; retain verified contract, configuration or evidence boundaries.",
+      "reviewed_by": [
+        "forma-audit-core-ledger"
+      ],
+      "previous_review_sha256": "909e6414c1981b96ea0ca89f010d1c20436c620540de4cbd9faaf0042dfc4cb0"
+    },
+    {
+      "path": "ios/Sources/FORMACore/MeasurementNumberInput.swift",
+      "scope": "native",
+      "bytes": 1609,
+      "lines": 37,
+      "sha256": "11682041215bcf5a4bb9ea24157fcef56d5c2e66ee8e43e251436ca620468fa0",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Complete read; retain verified contract, configuration or evidence boundaries.",
+      "reviewed_by": [
+        "forma-audit-core-ledger"
+      ],
+      "previous_review_sha256": "11682041215bcf5a4bb9ea24157fcef56d5c2e66ee8e43e251436ca620468fa0"
+    },
+    {
+      "path": "ios/Sources/FORMACore/MeasurementText.swift",
+      "scope": "native",
+      "bytes": 1308,
+      "lines": 28,
+      "sha256": "3bdd81e5a21699f37a312b2986aacca46ed78314bf01d1a2d7c280260382dd4e",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Tested summary preserves all measurement units, historical loads, unequal sides and legacy plank.",
+      "reviewed_by": [
+        "forma-audit-core-ledger",
+        "forma-audit-ui-features-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "3bdd81e5a21699f37a312b2986aacca46ed78314bf01d1a2d7c280260382dd4e"
+    },
+    {
+      "path": "ios/Sources/FORMACore/Models.swift",
+      "scope": "native",
+      "bytes": 17044,
+      "lines": 453,
+      "sha256": "4bee67da0fcd2b7e80b946e8095f9aeb11ac5b7884d4c25e2f90cd256935d378",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Retain full version 2 Codable identities, explicit active null and optional programming fields.",
+      "reviewed_by": [
+        "forma-audit-contract-ledger",
+        "forma-audit-core-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "4bee67da0fcd2b7e80b946e8095f9aeb11ac5b7884d4c25e2f90cd256935d378"
+    },
+    {
+      "path": "ios/Sources/FORMACore/SerializedMutationGate.swift",
+      "scope": "native",
+      "bytes": 1120,
+      "lines": 33,
+      "sha256": "f93788aa2f09788d0980541ff671c330abb2ff3980afa77febdf320badc67113",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Complete read; retain verified contract, configuration or evidence boundaries.",
+      "reviewed_by": [
+        "forma-audit-core-ledger"
+      ],
+      "previous_review_sha256": "f93788aa2f09788d0980541ff671c330abb2ff3980afa77febdf320badc67113"
+    },
+    {
+      "path": "ios/Sources/FORMACore/WorkoutEngine.swift",
+      "scope": "native",
+      "bytes": 17999,
+      "lines": 412,
+      "sha256": "1c6fb8046210fda183d91a7fe258576e3566e2181f8fc52a532ad3f30d2f948f",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Strict positive optional routine targets, UTC/calendar completion dates and active/history field separation; existing units/bounds preserved.",
+      "reviewed_by": [
+        "forma-audit-contract-ledger",
+        "forma-audit-core-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "1c6fb8046210fda183d91a7fe258576e3566e2181f8fc52a532ad3f30d2f948f"
+    },
+    {
+      "path": "ios/Sources/FORMACore/WorkspaceExport.swift",
+      "scope": "native",
+      "bytes": 565,
+      "lines": 15,
+      "sha256": "9ffb731c102911516d1fcddd7b85d93537ec3207aaaddb77679f49f765bd129a",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Tested compact canonical JSON fits the existing 20 MiB budget and round-trips maximum supported sets.",
+      "reviewed_by": [
+        "forma-audit-contract-ledger",
+        "forma-audit-core-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "9ffb731c102911516d1fcddd7b85d93537ec3207aaaddb77679f49f765bd129a"
+    },
+    {
+      "path": "ios/Sources/FORMACore/WorkspaceStore.swift",
+      "scope": "native",
+      "bytes": 12987,
+      "lines": 310,
+      "sha256": "dd772b1852e7db0b471e2c1e139afb7e844e06b49755f662118791b1e36fc6ae",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Deduplicate identical corrupt recovery originals without deleting distinct originals or overwriting corruption.",
+      "reviewed_by": [
+        "forma-audit-contract-ledger",
+        "forma-audit-core-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "dd772b1852e7db0b471e2c1e139afb7e844e06b49755f662118791b1e36fc6ae"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/DraftAcknowledgementTests.swift",
+      "scope": "native",
+      "bytes": 1351,
+      "lines": 29,
+      "sha256": "34fe368c26c746568984095a60a2f259a09602ea94f405a81811af645b5c7fe1",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Complete read; domain, measurement and persistence regressions retained and passing.",
+      "reviewed_by": [
+        "forma-audit-core-ledger"
+      ],
+      "previous_review_sha256": "34fe368c26c746568984095a60a2f259a09602ea94f405a81811af645b5c7fe1"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/ExerciseSearchTests.swift",
+      "scope": "native",
+      "bytes": 1199,
+      "lines": 32,
+      "sha256": "3aa01e4be8d3c91cd757e3a3d934064b4dd276e5ce2f6fa5c4c7fa0a9992ac53",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Complete read; domain, measurement and persistence regressions retained and passing.",
+      "reviewed_by": [
+        "forma-audit-core-ledger"
+      ],
+      "previous_review_sha256": "3aa01e4be8d3c91cd757e3a3d934064b4dd276e5ce2f6fa5c4c7fa0a9992ac53"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/GoldenParityTests.swift",
+      "scope": "native",
+      "bytes": 3978,
+      "lines": 94,
+      "sha256": "89117b5f8b65aa14fe6f230aed1ace1d80f9feb16bbf2a2da70c7216f56a1d61",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Retain all 12 generated golden workspaces in the passing core suite.",
+      "reviewed_by": [
+        "forma-audit-contract-ledger",
+        "forma-audit-core-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "89117b5f8b65aa14fe6f230aed1ace1d80f9feb16bbf2a2da70c7216f56a1d61"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/LastCompletedSetTests.swift",
+      "scope": "native",
+      "bytes": 2016,
+      "lines": 43,
+      "sha256": "4ee137a3cfba0ce47de61a4a1a5e27085d8e2004ed9c415f0f120afaa4f943fd",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Covers unfinished first duplicate, later completed duplicate precedence, last done set, excluded session, no completed result and unknown exercise.",
+      "reviewed_by": [
+        "forma-audit-core-ledger",
+        "forma-audit-ui-workout-ledger"
+      ],
+      "previous_review_sha256": "4ee137a3cfba0ce47de61a4a1a5e27085d8e2004ed9c415f0f120afaa4f943fd"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/MeasurementDraftTests.swift",
+      "scope": "native",
+      "bytes": 4042,
+      "lines": 102,
+      "sha256": "52ed01421516a6b9bd911ac8a5cde85671ce6cfd6fcd4010c65ef577d533c14c",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Complete read; domain, measurement and persistence regressions retained and passing.",
+      "reviewed_by": [
+        "forma-audit-core-ledger"
+      ],
+      "previous_review_sha256": "52ed01421516a6b9bd911ac8a5cde85671ce6cfd6fcd4010c65ef577d533c14c"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/MeasurementNumberInputTests.swift",
+      "scope": "native",
+      "bytes": 2705,
+      "lines": 57,
+      "sha256": "7fe4f96eae0b5b755dbf2388c655f512fff45fcb0b61d47a4e36db40833f703a",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Complete read; domain, measurement and persistence regressions retained and passing.",
+      "reviewed_by": [
+        "forma-audit-core-ledger"
+      ],
+      "previous_review_sha256": "7fe4f96eae0b5b755dbf2388c655f512fff45fcb0b61d47a4e36db40833f703a"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/MeasurementTextTests.swift",
+      "scope": "native",
+      "bytes": 2768,
+      "lines": 78,
+      "sha256": "7cf6a8dcbd18aa660795b35bc091ed301a0afec476cddb5a73c12721c05c4a1c",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Seven meaningful metric/locale/history regressions. Timed-distance load omission reproduced RED, then GREEN.",
+      "reviewed_by": [
+        "forma-audit-core-ledger",
+        "forma-audit-ui-features-ledger"
+      ],
+      "previous_review_sha256": "7cf6a8dcbd18aa660795b35bc091ed301a0afec476cddb5a73c12721c05c4a1c"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/SerializedMutationGateTests.swift",
+      "scope": "native",
+      "bytes": 3020,
+      "lines": 110,
+      "sha256": "849ccbcae131f7b631590766bf048a68141cbb26da184f0248e5f194fec642ad",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Complete read; domain, measurement and persistence regressions retained and passing.",
+      "reviewed_by": [
+        "forma-audit-core-ledger"
+      ],
+      "previous_review_sha256": "849ccbcae131f7b631590766bf048a68141cbb26da184f0248e5f194fec642ad"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/ValidationBoundaryTests.swift",
+      "scope": "native",
+      "bytes": 2980,
+      "lines": 83,
+      "sha256": "9e455f009daad3954e0f2bb9d70c11a652a66b877e00fa01002e019471f95149",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Three regression groups exercise all 38 shared boundary records; RED before validation repair, GREEN afterwards.",
+      "reviewed_by": [
+        "forma-audit-contract-ledger",
+        "forma-audit-core-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "9e455f009daad3954e0f2bb9d70c11a652a66b877e00fa01002e019471f95149"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/WorkoutEngineTests.swift",
+      "scope": "native",
+      "bytes": 9026,
+      "lines": 195,
+      "sha256": "541c3f08a4dd0c4851f63fa142aec23690c1f1f0fc565611299c72c727107de6",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Complete read; retain metric/rest/finish/validation regressions in the passing suite.",
+      "reviewed_by": [
+        "forma-audit-contract-ledger",
+        "forma-audit-core-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "541c3f08a4dd0c4851f63fa142aec23690c1f1f0fc565611299c72c727107de6"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/WorkspaceExportTests.swift",
+      "scope": "native",
+      "bytes": 1135,
+      "lines": 27,
+      "sha256": "d4f75d986021c44178c03fe125bab26189e366ac6cbb3055a6f04c4deb84664d",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "150,000-set exact round trip stays within the existing backup byte limit.",
+      "reviewed_by": [
+        "forma-audit-contract-ledger",
+        "forma-audit-core-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "d4f75d986021c44178c03fe125bab26189e366ac6cbb3055a6f04c4deb84664d"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/WorkspaceStoreTests.swift",
+      "scope": "native",
+      "bytes": 12832,
+      "lines": 271,
+      "sha256": "385af2c0114ed199ae4903fe2b458d6520b2b9be33a12e867ad817404183903e",
+      "review_method": "Full cat or contiguous sed chunks, with every authored/changed file reread after final edits",
+      "decision": "Complete read; domain, measurement and persistence regressions retained and passing.",
+      "reviewed_by": [
+        "forma-audit-core-ledger"
+      ],
+      "previous_review_sha256": "385af2c0114ed199ae4903fe2b458d6520b2b9be33a12e867ad817404183903e"
+    },
+    {
+      "path": "ios/design/app-icon.svg",
+      "scope": "native",
+      "bytes": 302,
+      "lines": 1,
+      "sha256": "2c8c3294a58624122e0f606f38f25c5e33841ab32141721b721aa61f177cdc1f",
+      "review_method": "Complete SVG text read/XML parse; exact facet raster reproduction retained",
+      "decision": "Retain; no new concrete defect established in this file",
+      "reviewed_by": [
+        "forma-audit-config-ledger"
+      ],
+      "previous_review_sha256": "2c8c3294a58624122e0f606f38f25c5e33841ab32141721b721aa61f177cdc1f"
+    },
+    {
+      "path": "ios/design/artwork-provenance.md",
+      "scope": "native",
+      "bytes": 2415,
+      "lines": 44,
+      "sha256": "1a8ea57ead8769b8b3525e89cebacfa64e82ace361cda108b4788f547712dc3a",
+      "review_method": "Complete text/source read; compare current behavior against authoritative contract/configuration",
+      "decision": "Retain; no new concrete defect established in this file",
+      "reviewed_by": [
+        "forma-audit-config-ledger"
+      ],
+      "previous_review_sha256": "1a8ea57ead8769b8b3525e89cebacfa64e82ace361cda108b4788f547712dc3a"
+    },
+    {
+      "path": "ios/design/asset-checksums.json",
+      "scope": "native",
+      "bytes": 628,
+      "lines": 20,
+      "sha256": "762bd98d850cc33182beff26bd73678eeac2d3258f20e31438b4c3d0fda8c8b8",
+      "review_method": "Full JSON read; verify all3asset hashes/byte sizes",
+      "decision": "All three durable asset hashes match; original PNG bytes retained.",
+      "reviewed_by": [
+        "forma-audit-config-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "762bd98d850cc33182beff26bd73678eeac2d3258f20e31438b4c3d0fda8c8b8"
+    },
+    {
+      "path": "ios/design/build-icon.py",
+      "scope": "native",
+      "bytes": 3855,
+      "lines": 102,
+      "sha256": "9f0e3a1c17a043e088f7f30a3f809c4da427b3a4a60d95b38d2bd8bd2ab46015",
+      "review_method": "Full source read; run --check against bundled icon and verify original pixel/PNG SHA256 reproducibility",
+      "decision": "Retain; current icon reproduction passes",
+      "reviewed_by": [
+        "forma-audit-config-ledger"
+      ],
+      "previous_review_sha256": "9f0e3a1c17a043e088f7f30a3f809c4da427b3a4a60d95b38d2bd8bd2ab46015"
+    },
+    {
+      "path": "ios/docs/app-review-matrix.md",
+      "scope": "native",
+      "bytes": 5154,
+      "lines": 59,
+      "sha256": "1d47ba63822b5ec483568508cc0a099040fe06d0f380532cbb24ab11cd82b76e",
+      "review_method": "Complete source/document read; source/evidence/link consistency checks",
+      "decision": "Complete read; retain verified contract, configuration or evidence boundaries.",
+      "reviewed_by": [
+        "root"
+      ],
+      "previous_review_sha256": "1d47ba63822b5ec483568508cc0a099040fe06d0f380532cbb24ab11cd82b76e"
+    },
+    {
+      "path": "ios/docs/apple-design-2026.md",
+      "scope": "native",
+      "bytes": 35434,
+      "lines": 420,
+      "sha256": "900f6ee9c2afcc5cdf850d35968514b77e30c3ed7192343973dedc059e01b496",
+      "review_method": "Complete source/document read; source/evidence/link consistency checks",
+      "decision": "62 official text/API/session sources and three reference images; availability, retrieval hashes and living-doc limits explicit.",
+      "reviewed_by": [
+        "root"
+      ],
+      "previous_review_sha256": "29b463ea2a546228101828acb6dea03be770b61d31770a03d572625de635ce6d"
+    },
+    {
+      "path": "ios/docs/baseline-evidence.md",
+      "scope": "native",
+      "bytes": 3305,
+      "lines": 58,
+      "sha256": "ea2963ea1d25a066504dcab9a0adc792ff98c1ce3ce16faef3e01621820846ab",
+      "review_method": "Complete source/document read; source/evidence/link consistency checks",
+      "decision": "Complete read; retain verified contract, configuration or evidence boundaries.",
+      "reviewed_by": [
+        "root"
+      ],
+      "previous_review_sha256": "ea2963ea1d25a066504dcab9a0adc792ff98c1ce3ce16faef3e01621820846ab"
+    },
+    {
+      "path": "ios/docs/implementation-plan.md",
+      "scope": "native",
+      "bytes": 3481,
+      "lines": 52,
+      "sha256": "25c8e9f9b2726f2144cf1622e118d5f6cb3b6913f4ad8460e9b86152fd03d7be",
+      "review_method": "Complete source/document read; source/evidence/link consistency checks",
+      "decision": "Complete read; retain verified contract, configuration or evidence boundaries.",
+      "reviewed_by": [
+        "root"
+      ],
+      "previous_review_sha256": "25c8e9f9b2726f2144cf1622e118d5f6cb3b6913f4ad8460e9b86152fd03d7be"
+    },
+    {
+      "path": "ios/docs/privacy-inventory.md",
+      "scope": "native",
+      "bytes": 5259,
+      "lines": 77,
+      "sha256": "77e6b197c8cb332ae3626a4ef2e631f93a8c5c396d3c15bc8f43bb31a0ef3028",
+      "review_method": "Complete source/document read; source/evidence/link consistency checks",
+      "decision": "Current direct required-reason lists checked; no reason invented for plain size/type keys; final archive audit remains open.",
+      "reviewed_by": [
+        "root"
+      ],
+      "previous_review_sha256": "77e6b197c8cb332ae3626a4ef2e631f93a8c5c396d3c15bc8f43bb31a0ef3028"
+    },
+    {
+      "path": "ios/docs/verification.md",
+      "scope": "native",
+      "bytes": 14973,
+      "lines": 246,
+      "sha256": "0e2996c8f18f1727432e8ce3bf091edbf4438ec6ca42e95fa2bd5820e23f5dd3",
+      "review_method": "Complete source/document read; source/evidence/link consistency checks",
+      "decision": "Preserve previous milestones; record fresh 62/134/1711 audit results and explicit unrun native gates.",
+      "reviewed_by": [
+        "root"
+      ],
+      "previous_review_sha256": "f671fd5170b4300e6d57682d538a97015aac6116e789bb551c68b0faf4205866"
+    },
+    {
+      "path": "ios/project.yml",
+      "scope": "native",
+      "bytes": 1855,
+      "lines": 73,
+      "sha256": "a0ed95ba7e0d3704122e555464c5c7eabe266ee90ebbb97095526db7b352a96c",
+      "review_method": "Complete text/source read; compare current behavior against authoritative contract/configuration",
+      "decision": "Retain; no new concrete defect established in this file",
+      "reviewed_by": [
+        "forma-audit-config-ledger"
+      ],
+      "previous_review_sha256": "a0ed95ba7e0d3704122e555464c5c7eabe266ee90ebbb97095526db7b352a96c"
+    },
+    {
+      "path": "scripts/build-ios-resources.mjs",
+      "scope": "integration",
+      "bytes": 14487,
+      "lines": 377,
+      "sha256": "5ce5ad538a257901e51f989e5cf7c2f6f7a3d4154b62788d6d8869a09c41d61a",
+      "review_method": "Complete text/source read; compare current behavior against authoritative contract/configuration",
+      "decision": "Retain; no new concrete defect established in this file",
+      "reviewed_by": [
+        "forma-audit-config-ledger"
+      ],
+      "previous_review_sha256": "5ce5ad538a257901e51f989e5cf7c2f6f7a3d4154b62788d6d8869a09c41d61a"
+    },
+    {
+      "path": "scripts/check-ios-contracts.mjs",
+      "scope": "integration",
+      "bytes": 3329,
+      "lines": 92,
+      "sha256": "57548a0b8351148a7580c47f58bd1aa42965299f6f02c8ac718413cd05580aba",
+      "review_method": "Complete text/source read; compare current behavior against authoritative contract/configuration",
+      "decision": "Independently compare every default measurement/target/completion; reject seven schema-valid corruptions.",
+      "reviewed_by": [
+        "forma-audit-config-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "57548a0b8351148a7580c47f58bd1aa42965299f6f02c8ac718413cd05580aba"
+    },
+    {
+      "path": "src/exerciseLoad.js",
+      "scope": "shared-contract",
+      "bytes": 3531,
+      "lines": 89,
+      "sha256": "570b5b42c3e433a766f4149d8e09b3a67f3ed62ccfdd237ba54c907906b819a8",
+      "review_method": "complete source reading and boundary/capacity execution",
+      "decision": "Complete read; shared contract boundary probes only; published source and units unchanged.",
+      "reviewed_by": [
+        "forma-audit-contract-ledger"
+      ],
+      "previous_review_sha256": "570b5b42c3e433a766f4149d8e09b3a67f3ed62ccfdd237ba54c907906b819a8"
+    },
+    {
+      "path": "src/exerciseMetrics.js",
+      "scope": "shared-contract",
+      "bytes": 3797,
+      "lines": 107,
+      "sha256": "86190abdf9ed2d2ee684117952a7e9c44b5bfab0545527f06377684242c5489e",
+      "review_method": "complete source reading and boundary/capacity execution",
+      "decision": "Complete read; shared contract boundary probes only; published source and units unchanged.",
+      "reviewed_by": [
+        "forma-audit-contract-ledger"
+      ],
+      "previous_review_sha256": "86190abdf9ed2d2ee684117952a7e9c44b5bfab0545527f06377684242c5489e"
+    },
+    {
+      "path": "src/routineProgramming.js",
+      "scope": "shared-contract",
+      "bytes": 5082,
+      "lines": 151,
+      "sha256": "0b74306b14f307af3faf8abfd7548b85852313faa4d8fb16863f3d1ad2856a22",
+      "review_method": "complete source reading and boundary/capacity execution",
+      "decision": "Complete read; shared contract boundary probes only; published source and units unchanged.",
+      "reviewed_by": [
+        "forma-audit-contract-ledger"
+      ],
+      "previous_review_sha256": "0b74306b14f307af3faf8abfd7548b85852313faa4d8fb16863f3d1ad2856a22"
+    },
+    {
+      "path": "src/storage.js",
+      "scope": "shared-contract",
+      "bytes": 12119,
+      "lines": 370,
+      "sha256": "a283be1bb493b06cd111cfe8f8d8c02a2df26738be75b3904e3e9fcf9268fcaf",
+      "review_method": "complete source reading and boundary/capacity execution",
+      "decision": "Complete read; shared contract boundary probes only; published source and units unchanged.",
+      "reviewed_by": [
+        "forma-audit-contract-ledger"
+      ],
+      "previous_review_sha256": "a283be1bb493b06cd111cfe8f8d8c02a2df26738be75b3904e3e9fcf9268fcaf"
+    },
+    {
+      "path": "src/timedHolds.js",
+      "scope": "shared-contract",
+      "bytes": 1770,
+      "lines": 46,
+      "sha256": "4e30580268fe0e91125bb3bc77fe79133a8351c5cf16a49682b00d44a3166a11",
+      "review_method": "complete source reading and boundary/capacity execution",
+      "decision": "Complete read; shared contract boundary probes only; published source and units unchanged.",
+      "reviewed_by": [
+        "forma-audit-contract-ledger"
+      ],
+      "previous_review_sha256": "4e30580268fe0e91125bb3bc77fe79133a8351c5cf16a49682b00d44a3166a11"
+    },
+    {
+      "path": "src/workoutSession.js",
+      "scope": "shared-contract",
+      "bytes": 4873,
+      "lines": 136,
+      "sha256": "768d60660f83bb25091bc75faf1b7efa5df27e2fd9fda3b8a7e0df3e36828901",
+      "review_method": "complete source reading and boundary/capacity execution",
+      "decision": "Complete read; shared contract boundary probes only; published source and units unchanged.",
+      "reviewed_by": [
+        "forma-audit-contract-ledger"
+      ],
+      "previous_review_sha256": "768d60660f83bb25091bc75faf1b7efa5df27e2fd9fda3b8a7e0df3e36828901"
+    },
+    {
+      "path": "unit/ios-resources.test.js",
+      "scope": "integration",
+      "bytes": 14464,
+      "lines": 404,
+      "sha256": "27438c8aae663851c777e6d74333e96e4149b023913684cfe852796f8dd6e5a2",
+      "review_method": "Complete text/source read; compare current behavior against authoritative contract/configuration",
+      "decision": "14 passing cases, including exhaustive 1711 controls and independent unit/completion corruption rejection.",
+      "reviewed_by": [
+        "forma-audit-config-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "27438c8aae663851c777e6d74333e96e4149b023913684cfe852796f8dd6e5a2"
+    },
+    {
+      "path": "unit/ios-validation-boundaries.test.js",
+      "scope": "integration",
+      "bytes": 1761,
+      "lines": 48,
+      "sha256": "6504dd4201a10320fb9ae15321f9e3219c7579b139b873c57206816a45da418f",
+      "review_method": "complete source reading and boundary/capacity execution",
+      "decision": "Three passing groups check all 38 shared boundary records against authoritative strict web schema.",
+      "reviewed_by": [
+        "forma-audit-contract-ledger",
+        "root"
+      ],
+      "previous_review_sha256": "6504dd4201a10320fb9ae15321f9e3219c7579b139b873c57206816a45da418f"
+    }
+  ]
+}

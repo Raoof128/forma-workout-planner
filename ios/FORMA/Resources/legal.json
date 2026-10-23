@@ -1,0 +1,381 @@
+{
+  "privacy": {
+    "title": "Privacy Policy",
+    "version": "1.3",
+    "effective": "17 October 2026",
+    "summary": "FORMA is a workout planner. In guest mode your training data stays in your browser and is never sent to us. If you create an account, we store only what is needed to run it: your name, email, sign-in records and your workout data. We do not sell your information, show ads, or use analytics or tracking.",
+    "blocks": [
+      {
+        "h": "Who we are",
+        "id": "who-we-are"
+      },
+      {
+        "p": "FORMA is operated by Raouf Abedini, an individual developer based in Sydney, New South Wales, Australia (\"we\", \"us\"). This policy explains how we collect, use, disclose and protect personal information when you use FORMA at forma.raoufabedini.dev and its account service."
+      },
+      {
+        "p": "We handle personal information in line with the Australian Privacy Principles in the Privacy Act 1988 (Cth). We follow them as our standard even where a small operator may not be legally required to."
+      },
+      {
+        "h": "The two ways to use FORMA",
+        "id": "modes"
+      },
+      {
+        "ul": [
+          "Guest mode: your routines, workouts, history and settings are stored only in your browser's local storage on your device. We do not receive or store this data. Clearing your browser data deletes it, so export a backup if you want to keep it.",
+          "Account mode: if you create an account, your workout data is stored on our servers so you can use it across devices. The rest of this policy mainly concerns account mode."
+        ]
+      },
+      {
+        "h": "What we collect",
+        "id": "what-we-collect"
+      },
+      {
+        "h3": "Information you give us"
+      },
+      {
+        "ul": [
+          "Account details: your display name (up to 60 characters) and email address.",
+          "Your password, which we never store in readable form. We keep only a one-way scrypt hash.",
+          "Optional two-step verification: an authenticator secret and recovery codes, stored encrypted.",
+          "Workout data: routines, exercises, sets, repetition ranges, weights, target and actual ratings of perceived exertion (RPE), rest durations, per-side targets, superset groups, exercise durations and distances, workout dates and durations, notes, your weekly goal and training schedule."
+        ]
+      },
+      {
+        "h3": "Information collected automatically"
+      },
+      {
+        "ul": [
+          "Sign-in records: when you sign in we record the session's IP address, browser user agent and timestamps so you can review and end your sessions and so we can protect your account.",
+          "Security counters: to stop password guessing and email abuse we keep short-lived counters keyed by a one-way code derived from your email address, not the address itself.",
+          "Delivery records: our hosting providers process network data such as IP addresses to deliver the site and protect it from attacks."
+        ]
+      },
+      {
+        "p": "We do not use cookies for advertising or analytics. We set only the cookies needed to keep you signed in and to complete two-step verification. These are marked Secure and HttpOnly so scripts cannot read them. Cloudflare may also set strictly necessary security cookies to protect the site from abuse."
+      },
+      {
+        "h": "Health-related information",
+        "id": "health"
+      },
+      {
+        "p": "Workout records and notes can reveal information about your health or physical condition, which the law treats as sensitive information. We store it only with your express consent, which you give with a separate checkbox when you create an account, and only to provide the service to you. Please do not enter medical details you do not want stored. You can withdraw consent by deleting the records or your account at any time."
+      },
+      {
+        "h": "How we use your information",
+        "id": "use"
+      },
+      {
+        "ul": [
+          "To create and run your account, sync your workouts and show your history and progress.",
+          "To send essential service emails: address verification, password reset, email-change confirmation and account deletion confirmation. We do not send marketing email.",
+          "To keep FORMA secure: preventing fraud, abuse and unauthorised access, and investigating security incidents.",
+          "To comply with the law."
+        ]
+      },
+      {
+        "p": "We do not sell or rent personal information, use it for advertising, or build profiles about you. We do not use automated decision-making that has a legal or similarly significant effect on you."
+      },
+      {
+        "h": "Who we share it with",
+        "id": "sharing"
+      },
+      {
+        "p": "We use a small number of service providers who process information on our behalf and only to provide FORMA:"
+      },
+      {
+        "ul": [
+          "Cloudflare, Inc.: content delivery, security, access control, sending our service emails, and storing encrypted operational backups.",
+          "DigitalOcean, LLC: our server and database, located in Sydney, Australia."
+        ]
+      },
+      {
+        "p": "We may also disclose information if required or authorised by law, for example to respond to a valid legal request, or to protect the safety of any person. We do not otherwise disclose your personal information to third parties."
+      },
+      {
+        "h": "Disclosure outside Australia",
+        "id": "overseas"
+      },
+      {
+        "p": "Your account database is stored on a server in Sydney, Australia. Some of your information is likely to be disclosed to recipients outside Australia:"
+      },
+      {
+        "ul": [
+          "United States: Cloudflare, Inc. and DigitalOcean, LLC are US companies. Cloudflare says it primarily stores information in the United States and the European Economic Area, and their staff may access information from other countries to support and secure their services.",
+          "Other countries: Cloudflare runs a global network, so your requests and our service emails can pass through and be processed in data centres near you or elsewhere in the world.",
+          "Backups: if we keep encrypted backups, they will be stored in Australia or the United States."
+        ]
+      },
+      {
+        "p": "Both providers process information under data processing agreements that limit how they may use it. We remain responsible for how your information is handled."
+      },
+      {
+        "h": "How we protect it",
+        "id": "security"
+      },
+      {
+        "p": "We take reasonable steps to protect personal information from misuse, interference, loss, and unauthorised access, modification or disclosure. These include encryption in transit, hashed passwords, optional two-step verification, strict separation between members' data, least-privilege database access, private networking for our servers, security testing and automated security checks. No online service can be completely secure."
+      },
+      {
+        "p": "If a data breach is likely to result in serious harm to you, we will notify you and, where required, the Office of the Australian Information Commissioner (OAIC)."
+      },
+      {
+        "h": "How long we keep it",
+        "id": "retention"
+      },
+      {
+        "ul": [
+          "Account and workout data: until you delete it or delete your account.",
+          "Sessions: up to 7 days of inactivity and never more than 30 days.",
+          "Security counters: normally up to 2 days.",
+          "Verification and reset links: they expire within 24 hours.",
+          "Backups: we keep encrypted operational backups. Copies are scheduled for deletion after 34 days and are deleted within 35 days."
+        ]
+      },
+      {
+        "p": "When you delete your account we immediately delete your account, sessions, sign-in methods and workout data from our live systems. Copies inside backups are deleted when those backups expire."
+      },
+      {
+        "h": "Access and correction",
+        "id": "access"
+      },
+      {
+        "p": "You can view, correct and export your workout data and profile in the app at any time, and delete your account from the Account page. You can also ask us for access to, or correction of, the personal information we hold about you by emailing us. We will respond within 30 days and will not charge you for making a request."
+      },
+      {
+        "h": "Children",
+        "id": "children"
+      },
+      {
+        "p": "Accounts are for people aged 16 and over. People aged 13 to 15 may create an account only with a parent or guardian's permission, and accounts are not available to children under 13. Guest mode collects nothing, so it has no minimum age. If you believe a child has given us personal information without permission, contact us and we will delete the account."
+      },
+      {
+        "h": "Visitors outside Australia",
+        "id": "international"
+      },
+      {
+        "p": "FORMA is designed for people in Australia and is not directed at people in the European Union or the United Kingdom. If you use it from elsewhere, you can still ask us to access, correct, export or delete your information, and we will help wherever we can. Your local data protection authority may also be able to help you."
+      },
+      {
+        "h": "Complaints",
+        "id": "complaints"
+      },
+      {
+        "p": "If you have a question or complaint about privacy, please contact us first at raoof.r12@gmail.com and describe the problem. We will acknowledge your complaint within 7 days and aim to resolve it within 30 days. If you are not satisfied with our response, or we have not responded within 30 days, you can complain in writing to the Office of the Australian Information Commissioner (OAIC) at oaic.gov.au or call 1300 363 992."
+      },
+      {
+        "h": "Changes to this policy",
+        "id": "changes"
+      },
+      {
+        "p": "We may update this policy. We will change the version and effective date above, and for significant changes we will tell account holders by email or in the app before the change takes effect."
+      },
+      {
+        "h": "Contact",
+        "id": "contact"
+      },
+      {
+        "p": "Raouf Abedini, Sydney, New South Wales, Australia. Email: raoof.r12@gmail.com."
+      },
+      {
+        "link": "terms",
+        "before": "See also our ",
+        "label": "Terms of Use",
+        "after": "."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms of Use",
+    "version": "1.0",
+    "effective": "13 October 2026",
+    "summary": "FORMA is a free workout planner. Use it sensibly: it is not medical advice, so check with a health professional before starting a new program. Nothing in these terms takes away your rights under the Australian Consumer Law.",
+    "blocks": [
+      {
+        "h": "About these terms",
+        "id": "about"
+      },
+      {
+        "p": "These terms apply to your use of FORMA, provided by Raouf Abedini of Sydney, New South Wales, Australia (\"we\", \"us\"). By using FORMA, or by creating an account, you agree to these terms. If you do not agree, please do not use FORMA."
+      },
+      {
+        "link": "privacy",
+        "before": "How we handle personal information is explained in our ",
+        "label": "Privacy Policy",
+        "after": "."
+      },
+      {
+        "h": "Eligibility",
+        "id": "eligibility"
+      },
+      {
+        "p": "You must be 16 or older to create an account. If you are 13 to 15, you may create one only with a parent or guardian's permission, and that parent or guardian accepts these terms on your behalf. Accounts are not available to children under 13."
+      },
+      {
+        "h": "The service",
+        "id": "service"
+      },
+      {
+        "p": "FORMA lets you plan routines, log workouts and track progress. It is free. In guest mode your data stays in your browser. Account mode, when available, stores your data with us so you can use it on more than one device."
+      },
+      {
+        "p": "We work to keep FORMA available and your data safe, but we do not promise uninterrupted or error-free operation. We may change, suspend or stop features, and will give reasonable notice before discontinuing account mode so you can export your data."
+      },
+      {
+        "h": "Health and safety",
+        "id": "health"
+      },
+      {
+        "p": "FORMA is a planning and record-keeping tool. It does not provide medical, health or fitness advice, and it is not a substitute for advice from a doctor, physiotherapist or qualified trainer."
+      },
+      {
+        "ul": [
+          "Check with a qualified health professional before starting or changing an exercise program, especially if you are pregnant, injured, recovering from illness, or have a medical condition.",
+          "Use proper technique and suitable equipment, warm up, and train within your limits.",
+          "Stop exercising and seek medical help if you feel pain, dizziness, shortness of breath or discomfort."
+        ]
+      },
+      {
+        "p": "If you are under 18, train with the guidance of a parent, coach or qualified trainer and avoid maximal lifts without supervision."
+      },
+      {
+        "p": "Exercise involves a risk of injury. You choose whether and how to exercise, and you are responsible for doing so safely."
+      },
+      {
+        "h": "Your account",
+        "id": "account"
+      },
+      {
+        "ul": [
+          "Give accurate details and keep your email address up to date so you can recover your account.",
+          "Keep your password secret and consider turning on two-step verification. Tell us promptly if you think someone else has accessed your account.",
+          "Each account is for one person. You are responsible for activity under your account unless it results from our failure to keep FORMA secure."
+        ]
+      },
+      {
+        "h": "Acceptable use",
+        "id": "acceptable-use"
+      },
+      {
+        "p": "When using FORMA you must not:"
+      },
+      {
+        "ul": [
+          "break the law or infringe anyone's rights;",
+          "try to access another person's account or data, or probe, scan or test FORMA's security without our written permission;",
+          "interfere with or overload FORMA, or use automated means to access it except through the features we provide;",
+          "upload malicious code, or use FORMA to send spam or harmful content."
+        ]
+      },
+      {
+        "h": "Your content",
+        "id": "content"
+      },
+      {
+        "p": "Your workout data belongs to you. You give us a limited permission to store, copy and display it only as needed to provide FORMA to you, including backups. This permission ends when you delete the data or your account, apart from copies in backups until they expire."
+      },
+      {
+        "h": "Our content",
+        "id": "our-content"
+      },
+      {
+        "p": "The FORMA name, design, software and exercise library are owned by us or our licensors. You may use them only to use FORMA for your personal, non-commercial training."
+      },
+      {
+        "h": "Your rights under the Australian Consumer Law",
+        "id": "consumer-law"
+      },
+      {
+        "p": "Our services come with guarantees that cannot be excluded under the Australian Consumer Law. Nothing in these terms excludes, restricts or modifies any right or remedy, or any guarantee, warranty or other term or condition, implied or imposed by the Australian Consumer Law or any other law that cannot lawfully be excluded or limited."
+      },
+      {
+        "h": "Limitation of liability",
+        "id": "liability"
+      },
+      {
+        "p": "To the extent permitted by law, and subject to your rights under the Australian Consumer Law:"
+      },
+      {
+        "ul": [
+          "FORMA is provided free of charge and on an as-available basis, and we do not make promises about it beyond those in these terms and those the law gives you;",
+          "we are not liable for loss that was not reasonably foreseeable when you started using FORMA;",
+          "we never hold guest-mode data, which is stored only on your device, so please export backups to protect it."
+        ]
+      },
+      {
+        "p": "Nothing in these terms limits liability for death or personal injury caused by our negligence, for fraud, or for anything else that cannot be limited by law."
+      },
+      {
+        "h": "Ending your use",
+        "id": "termination"
+      },
+      {
+        "p": "You can stop using FORMA at any time and delete your account from the Account page. We may suspend or close an account that seriously or repeatedly breaches these terms or puts other members or FORMA at risk. Except in urgent cases, we will tell you why and give you a chance to export your data first."
+      },
+      {
+        "h": "Changes to these terms",
+        "id": "changes"
+      },
+      {
+        "p": "We may update these terms to reflect changes to FORMA or the law. We will change the version and effective date above and, for changes that materially affect you, give account holders at least 14 days' notice by email or in the app. If you do not agree to the changes, you can delete your account before they take effect."
+      },
+      {
+        "h": "Governing law",
+        "id": "governing-law"
+      },
+      {
+        "p": "These terms are governed by the laws of New South Wales, Australia. You and we submit to the non-exclusive jurisdiction of the courts of New South Wales. If you live outside Australia, you also keep any protections given by the laws of your country that cannot be excluded."
+      },
+      {
+        "h": "Contact",
+        "id": "contact"
+      },
+      {
+        "p": "Questions about these terms: Raouf Abedini, Sydney, New South Wales, Australia. Email: raoof.r12@gmail.com."
+      }
+    ]
+  },
+  "nativeGuestNotice": {
+    "title": "Native development build: your data",
+    "version": "0.1",
+    "effective": "23 October 2026",
+    "status": "prototype-not-release-policy",
+    "summary": "This development build keeps your training records on your device. It includes no account sign-in, cloud sync, analytics or advertising.",
+    "blocks": [
+      {
+        "h": "Local storage",
+        "id": "local-storage"
+      },
+      {
+        "p": "Routines, workouts, notes and preferences are saved in the app's Application Support directory on your device, rather than in browser storage. This development build marks its data directory as excluded from device backups. Backup and file-protection behavior still needs verification in the actual iPhone build. Export a copy before uninstalling the app or changing phones."
+      },
+      {
+        "h": "Export your training",
+        "id": "export-training"
+      },
+      {
+        "p": "You can export a FORMA JSON backup through the system file exporter. Importing a backup is not available in this development build. An exported backup contains your training records and is readable by anyone who can access that file. Exported copies remain wherever you choose to save or share them, including after deleting local app data or uninstalling the app."
+      },
+      {
+        "h": "No account or tracking",
+        "id": "account-tracking"
+      },
+      {
+        "p": "No account service is connected in this development build. Your training records are not uploaded by the app. There is no analytics SDK, advertising SDK or cross-app tracking. Opening an external support or source link uses the destination service under its own terms."
+      },
+      {
+        "h": "Health and safety",
+        "id": "health-safety"
+      },
+      {
+        "p": "FORMA is a planning and record-keeping tool, not medical or personalised training advice. Use appropriate technique and equipment and seek qualified guidance when needed. No HealthKit data or physiological readiness score is collected or calculated."
+      },
+      {
+        "h": "Release policies and contact",
+        "id": "release-policies"
+      },
+      {
+        "p": "The bundled Privacy Policy version 1.3 and Terms of Use version 1.0 are unchanged source documents for the existing website. Their browser and account descriptions do not describe all native storage details above. Native release policies, developer eligibility, content rights and App Store declarations still require review before submission. Questions: raoof.r12@gmail.com."
+      }
+    ]
+  }
+}
