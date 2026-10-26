@@ -1,8 +1,11 @@
 # Catalog quality and machine coverage
 
-Reviewed **14 October 2026, Australia/Sydney**.
+Initial review: **14 October 2026, Australia/Sydney**. Current snapshot:
+**23 October 2026**, with **1,411 selectable movements** and **1,711 compatible
+exercise IDs**. The dated review and release evidence below describe the initial
+correction; later changes are recorded in the [release history](../../CHANGELOG.md).
 
-The library and routine picker now offer **1,414 selectable movements**, backed
+At the initial correction, the library and routine picker offered **1,414 selectable movements**, backed
 by 1,681 compatibility records. All 1,661 previously published IDs and their
 original measurement types remain valid for saved routines, workouts and backups.
 The smaller browsing count reflects consolidation and guide review, rather than
@@ -94,9 +97,9 @@ backup units and multiple old alias prescriptions. The compiled Node 26 image
 validates all 20 new IDs and runs as UID 10001. Existing data is validated on the
 private host during deployment without exporting member rows.
 
-## Live release
+## Initial release — 14 October 2026
 
-Both APIs use `forma-api:catalog-curation-20261014` from source commit `9f0629d`.
+Both APIs used `forma-api:catalog-curation-20261014` from source commit `9f0629d`.
 The image config digest is
 `1c56e8281de12aba07b01c81b7684b9a9f81a98a501a46d3b2c7d8f741906966`;
 the Droplet's OCI manifest digest is
@@ -107,7 +110,7 @@ existing workspaces validated; unrelated running container IDs stayed unchanged.
 The matching frontends include a follow-up wording correction removing an internal
 exercise ID from the fan-bike guide. That presentation-only note change does not
 alter API exercise identities or validation; the API image remains the version
-above. Current Worker versions:
+above. Worker versions at that release:
 
 - Public: `af5e7b21-e2f0-42fe-b30f-4b47569a0264`.
 - Private staging: `3fdc322e-f433-4fbf-808e-ecebf82be97e`.

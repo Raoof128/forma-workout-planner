@@ -113,12 +113,11 @@ async function ensureWorkspace(
   );
 }
 
-async function selectWorkspace(
-  client: PoolClient,
+async function readWorkspaceRow(
+  client: PoolClient | Pool,
   userId: string,
   lock = false,
-  validate = true,
-): Promise<WorkspaceAcknowledgement> {
+): Promise<WorkspaceRow | undefined> {
   const result = await client.query<WorkspaceRow>(
     `SELECT data, revision,
             to_char(updated_at AT TIME ZONE 'UTC', 'YYYY-MM-DD"T"HH24:MI:SS.US"Z"') AS updated_at
@@ -126,8 +125,18 @@ async function selectWorkspace(
       WHERE owner_id = $1${lock ? " FOR UPDATE" : ""}`,
     [userId],
   );
-  if (!result.rows[0]) throw new Error("Workspace row was not created.");
-  return asAcknowledgement(result.rows[0], validate);
+  return result.rows[0];
+}
+
+async function selectWorkspace(
+  client: PoolClient,
+  userId: string,
+  lock = false,
+  validate = true,
+): Promise<WorkspaceAcknowledgement> {
+  const row = await readWorkspaceRow(client, userId, lock);
+  if (!row) throw new Error("Workspace row was not created.");
+  return asAcknowledgement(row, validate);
 }
 
 export async function getWorkspace(
@@ -135,6 +144,11 @@ export async function getWorkspace(
   userId: string,
   name?: string,
 ): Promise<WorkspaceAcknowledgement> {
+  // An established workspace is a single consistent, owner-filtered row.
+  // Keep initialization transactional for concurrent first visits, without
+  // rebuilding starter data or issuing an INSERT on every ordinary read.
+  const existing = await readWorkspaceRow(pool, userId);
+  if (existing) return asAcknowledgement(existing);
   const client = await pool.connect();
   try {
     await client.query("BEGIN");

@@ -34,6 +34,16 @@ export function defaultPerSide(exercise) {
 export const repsText = (entry, exercise) =>
   `${repRangeText(entry)}${entry.perSide ? ` / ${sideLabel(exercise)}` : " reps"}`;
 
+// Saved routines retain their historical schema. New prescriptions and workout
+// starts must fit the logger's two 50-rep side fields and 100-rep total.
+export function perSideTargetError(entry, exercise) {
+  return entry.perSide &&
+    (!exercise?.metric || exercise.metric === "load_reps") &&
+    Math.max(entry.reps, entry.repsMax ?? 0) > 50
+    ? `Use 1–50 reps per side for ${exercise.name} before starting this workout.`
+    : null;
+}
+
 // Only reviewed identical-unit incline synonyms migrate; timed aliases retain units.
 export function migrateProgramming(data) {
   const migrateEntries = (entries) => {

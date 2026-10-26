@@ -2,7 +2,7 @@
 
 [Back to security overview](README.md)
 
-FORMA uses Better Auth 1.7.7 (`server/auth.ts`) behind a hardening proxy in
+FORMA uses Better Auth 1.7.11 (`server/auth.ts`) behind a hardening proxy in
 `server/app.ts`. The browser only ever talks to the same-origin Worker.
 
 ## Controls

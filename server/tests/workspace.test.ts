@@ -303,3 +303,44 @@ test("PostgreSQL workspace ownership, concurrency, idempotency, validation, and 
   assert.equal(Number(cascaded.rows[0].workspace_rows), 0);
   assert.equal(Number(cascaded.rows[0].operation_rows), 0);
 });
+
+test("established workspace reads need no writes and concurrent first reads preserve one owner-bound row", async () => {
+  assert.ok(pool && databaseUrl);
+  const owners = [`first-a-${suffix}`, `first-b-${suffix}`];
+  await pool.query(
+    'INSERT INTO "user" (id, name, email) VALUES ($1, $2, $3), ($4, $5, $6)',
+    [
+      owners[0],
+      "First A",
+      "first-a@example.test",
+      owners[1],
+      "First B",
+      "first-b@example.test",
+    ],
+  );
+  const reads = await Promise.all(
+    Array.from({ length: 20 }, (_, index) =>
+      getWorkspace(pool!, owners[index % 2], index % 2 ? "First B" : "First A"),
+    ),
+  );
+  for (const [index, read] of reads.entries()) {
+    assert.deepEqual(read, reads[index % 2]);
+    assert.equal(read.data.profile.name, index % 2 ? "First B" : "First A");
+    assert.equal(read.revision, 0);
+  }
+  const readOnly = new Pool({
+    connectionString: databaseUrl,
+    options: `-c search_path=${schema} -c default_transaction_read_only=on`,
+  });
+  try {
+    assert.deepEqual(await getWorkspace(readOnly, owners[0]), reads[0]);
+    assert.deepEqual(await getWorkspace(readOnly, owners[1]), reads[1]);
+  } finally {
+    await readOnly.end();
+  }
+  const rows = await pool.query(
+    "SELECT owner_id FROM member_workspace WHERE owner_id = ANY($1::text[])",
+    [owners],
+  );
+  assert.equal(rows.rowCount, 2);
+});

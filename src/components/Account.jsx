@@ -24,7 +24,7 @@ import {
   Users,
   X,
 } from "lucide-react";
-import { exerciseById } from "../data";
+import { dateKey, exerciseById, TIME_ZONE, weekDates } from "../data";
 import { readBackupFile } from "../storage";
 import { BrandSymbol } from "./BrandMark";
 import Loading, { LoadingGlyph } from "./Loading";
@@ -58,6 +58,7 @@ const initials = (name = "") =>
 const dateLabel = (value) =>
   value
     ? new Intl.DateTimeFormat(undefined, {
+        timeZone: TIME_ZONE,
         month: "long",
         day: "numeric",
         year: "numeric",
@@ -541,6 +542,7 @@ export default function Account({
   const [syncError, setSyncError] = useState("");
   const [conflictAck, setConflictAck] = useState(false);
   const [importDraft, setImportDraft] = useState(null);
+  const importSequence = useRef(0);
   const [importAck, setImportAck] = useState(false);
   const [importBusy, setImportBusy] = useState(false);
   const [cloudBackupReady, setCloudBackupReady] = useState(false);
@@ -755,13 +757,11 @@ export default function Account({
         new Date(a.date || a.startedAt || 0),
     )
     .slice(0, 3);
+  const monday = dateKey(weekDates()[0]);
+  const now = Date.now();
   const weeklySessions = history.filter((session) => {
     const date = new Date(session.date || session.startedAt || 0);
-    const now = new Date();
-    const monday = new Date(now);
-    monday.setDate(now.getDate() - ((now.getDay() + 6) % 7));
-    monday.setHours(0, 0, 0, 0);
-    return date >= monday && date <= now;
+    return dateKey(date) >= monday && date.getTime() <= now;
   }).length;
   const records = useMemo(() => {
     const best = new Map();
@@ -1016,10 +1016,15 @@ export default function Account({
     const input = event.currentTarget;
     const file = input.files?.[0];
     if (!file) return;
+    const sequence = ++importSequence.current;
+    setImportDraft(null);
+    setImportAck(false);
+    setCloudBackupReady(false);
     setDataError("");
     setDataMessage("");
     try {
       const backup = await readBackupFile(file);
+      if (sequence !== importSequence.current) return;
       setImportDraft({
         backup,
         source: file.name,
@@ -1031,6 +1036,7 @@ export default function Account({
       setImportAck(false);
       setCloudBackupReady(false);
     } catch (cause) {
+      if (sequence !== importSequence.current) return;
       setDataError(
         safeError(
           cause,
@@ -1038,7 +1044,7 @@ export default function Account({
         ),
       );
     } finally {
-      input.value = "";
+      if (sequence === importSequence.current) input.value = "";
     }
   }
 
@@ -1517,7 +1523,7 @@ export default function Account({
                   </select>
                 </label>
                 <div className="account-form-foot">
-                  <span>Weights use kg. Dates follow your device locale.</span>
+                  <span>Weights use kg. Dates use Sydney time.</span>
                   <button
                     type="button"
                     className="account-secondary"
@@ -2336,6 +2342,7 @@ export default function Account({
                     type="button"
                     className="account-secondary"
                     onClick={() => {
+                      importSequence.current += 1;
                       setImportDraft({
                         backup: legacy.data,
                         source: "This browser",
@@ -2403,6 +2410,7 @@ export default function Account({
                       type="button"
                       className="account-secondary"
                       onClick={() => {
+                        importSequence.current += 1;
                         setImportDraft(null);
                         setImportAck(false);
                       }}
@@ -2537,6 +2545,16 @@ export default function Account({
                   deletion.
                 </p>
               </div>
+              {dataMessage && (
+                <p className="account-success" role="status">
+                  {dataMessage}
+                </p>
+              )}
+              {dataError && !deleteOpen && (
+                <p className="account-alert" role="alert">
+                  {dataError}
+                </p>
+              )}
               <section className="account-settings-form account-privacy-card">
                 <div className="account-settings-title">
                   <Cloud size={18} />
@@ -2581,6 +2599,8 @@ export default function Account({
                   onClick={async () => {
                     if (signOutBusy) return;
                     setSignOutBusy(true);
+                    setDataError("");
+                    setDataMessage("");
                     try {
                       await account.signOut();
                       notify?.("You’ve signed out.");

@@ -30,7 +30,7 @@ cannot change schema.
 
 - Every member table is keyed by `owner_id` (or `"userId"`) with
   `ON DELETE CASCADE` from `"user"`.
-- `member_workspace` checks that `data` is an object, `version` is 1 and the
+- `member_workspace` checks that `data` is an object, `version` is 2 (since migration 0004) and the
   JSON revision equals the column revision.
 - Writes use `SELECT ... FOR UPDATE`, compare-and-swap on `revision`, and an
   idempotency table keyed by `(owner_id, operation_id)` with a request hash.
@@ -43,8 +43,16 @@ cannot change schema.
 
 ## Backups
 
-`ops/backup-postgres.sh` encrypts a custom-format dump with `age` to an
-off-host recipient and uploads it with a SHA-256 file. Open items:
+The deployed `ops/account-operations.py` workflow encrypts custom-format dumps
+with `age`, signs manifests with Ed25519 and verifies backup-time fingerprints
+during isolated restore. The [13 October launch record](../accounts/production-launch.md)
+records off-host recovery checks and scheduling. The separate manual
+`ops/backup-postgres.sh` helper uploads an encrypted archive with a SHA-256 file
+and does not provide the signed-manifest workflow.
+
+The following findings describe the original 12 October assessment. R-01 and
+R-17 were addressed for the deployed workflow in the launch record; the broad
+backup-role privilege in R-02 remains an explicit operational tradeoff:
 
 | ID   | Item                                                                                                                                                                                                                                        | Severity |
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |

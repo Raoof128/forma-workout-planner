@@ -18,9 +18,13 @@ and push and merge and deploy all").
 
 [Deployment receipt](deployment.json)
 
-Rolling the API back to `signout-20261018-ea2dc4b` is safe with schema 0006:
-the older API ignores the `scope` column. It would reject workspaces that
-contain `profile.fillSets` or set `sides`, so roll the Worker back first.
+The older `signout-20261018-ea2dc4b` API can ignore schema 0006's `scope` column,
+but it rejects workspace data containing `profile.fillSets` or set `sides`.
+Rolling the Worker back does not remove fields already saved in PostgreSQL,
+so the old API is not a safe rollback target after those fields have been
+stored. Prefer a forward fix; any rollback candidate must validate the current
+workspace schema and catalog on the host before it replaces the API. Do not
+strip saved fields or restore an older live database merely to fit old code.
 
 ## Procedure
 

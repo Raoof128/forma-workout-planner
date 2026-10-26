@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { CalendarDays, ChevronRight, Play } from "lucide-react";
-import { createId, displayDate, sessionSets } from "./data";
+import { createId, displayDate, exerciseById, sessionSets } from "./data";
 import {
   freshData,
   legacyFingerprint,
@@ -29,7 +29,7 @@ import Account from "./components/Account.jsx";
 import Loading from "./components/Loading.jsx";
 import Legal, { isLegalPage, legalTitle } from "./components/Legal.jsx";
 import { useAccount } from "./account/AccountProvider.jsx";
-import { isArchived } from "./routineProgramming.js";
+import { isArchived, perSideTargetError } from "./routineProgramming.js";
 import { sessionEntry } from "./workoutSession.js";
 const equal = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 export default function App() {
@@ -64,6 +64,9 @@ function AccountWorkspace({ notify }) {
   const [page, navigate] = useNavigation();
   const [modal, setModal] = useState(null);
   const [legacySnapshot] = useState(() => readStore());
+  const [fingerprint] = useState(() =>
+    legacySnapshot.raw === null ? null : legacyFingerprint(legacySnapshot.raw),
+  );
   const [legacyMigration, setLegacyMigration] = useState(() =>
     readLegacyMigration(),
   );
@@ -95,8 +98,6 @@ function AccountWorkspace({ notify }) {
       repository?.importLegacy(backup, options),
     exportData: () => repository?.exportData(),
   };
-  const fingerprint =
-    legacySnapshot.raw === null ? null : legacyFingerprint(legacySnapshot.raw);
   const legacy = {
     status:
       legacySnapshot.issue === "invalid"
@@ -132,6 +133,15 @@ function AccountWorkspace({ notify }) {
     }
   }
   async function begin(routine, replaceId = null) {
+    const targetError = routine.exercises
+      .map((entry) =>
+        perSideTargetError(entry, exerciseById.get(entry.exerciseId)),
+      )
+      .find(Boolean);
+    if (targetError) {
+      notify(targetError);
+      return;
+    }
     const session = {
       id: createId(),
       name: routine.name,

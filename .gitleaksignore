@@ -21,3 +21,6 @@ d6ffba239f13b16ab5de6b3db06ca642ce01c461:docs/qa/routine-programming-v2/deployme
 6ff4ecf9c9b7d0dae556731473254ba5e1113d9e:docs/qa/sign-out/deployment.json:generic-api-key:17
 6ff4ecf9c9b7d0dae556731473254ba5e1113d9e:docs/qa/sign-out/README.md:generic-api-key:16
 6ff4ecf9c9b7d0dae556731473254ba5e1113d9e:docs/qa/sign-out/README.md:generic-api-key:17
+# Historical audit prose about session lifetime, not credential material.
+# Exact historical fingerprint only; both duplicated prose matches share it.
+d770a6cb47c4c48fb1334f1d7804cd9564c0b732:docs/audits/forma-runtime-quality-2026-10/FILE_AUDIT.md:generic-api-key:259

@@ -25,9 +25,11 @@ const session = () => ({
 
 test("legacy version 1 backups receive revision and timer defaults", () => {
   const data = freshData();
+  data.version = 1;
   delete data.revision;
   data.active = session();
   const result = parseBackup(JSON.stringify(data));
+  assert.equal(result.version, 2);
   assert.equal(result.revision, 0);
   assert.equal(result.active.restSeconds, 90);
   assert.equal(result.active.restEnd, null);

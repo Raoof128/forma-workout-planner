@@ -15,16 +15,15 @@ import {
   Trash2,
 } from "lucide-react";
 import { Button, PageHeading, Empty, Modal } from "./UI";
-import { sideReps, tracksLoadReps } from "../exerciseMetrics.js";
+import { tracksLoadReps } from "../exerciseMetrics.js";
+import { progressRecords } from "../progressSummary.js";
 import "../workout-history.css";
 import {
-  exercises,
   exerciseById,
   sessionSets,
   sessionVolume,
   formatTime,
   displayDate,
-  estimatedOneRM,
 } from "../data";
 
 function sessionMeasurements(session) {
@@ -347,29 +346,7 @@ export function WorkoutHistory({ history, onStart, onSave, onDelete }) {
 export function Progress({ history, onStart }) {
   const volume = history.reduce((n, s) => n + sessionVolume(s), 0);
   const sets = history.reduce((n, s) => n + sessionSets(s), 0);
-  const records = exercises
-    .filter(tracksLoadReps)
-    .map((e) => {
-      const done = history.flatMap((s) =>
-        s.exercises
-          .filter((x) => x.exerciseId === e.id)
-          .flatMap((x) => x.sets.filter((s) => s.done)),
-      );
-      return {
-        ...e,
-        maxWeight: done.reduce((max, set) => Math.max(max, set.weight), 0),
-        // A unilateral set estimates from the reps one side performed.
-        oneRM: done.reduce(
-          (max, set) =>
-            sideReps(set) <= 12
-              ? Math.max(max, estimatedOneRM(set.weight, sideReps(set)))
-              : max,
-          0,
-        ),
-        sets: done.length,
-      };
-    })
-    .filter((e) => e.sets > 0);
+  const records = progressRecords(history);
   const recent = [...history]
     .sort((a, b) => Date.parse(a.date) - Date.parse(b.date))
     .slice(-8);

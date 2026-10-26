@@ -1,6 +1,10 @@
 # Exercise demonstration videos: licence research
 
-**21 October 2026 · 22 reviewed clips bundled; not yet deployed**
+**21 October 2026 · 22 reviewed clips bundled**
+
+The preview and demonstration work was released on 21 October 2026; see the
+[release history](../../CHANGELOG.md). The research and rights evidence below
+retain their original review date.
 
 The owner asked for open-licence 2026 demonstration videos so members can see
 how to perform each exercise. This note records what was checked and what is

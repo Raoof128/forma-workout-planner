@@ -7,12 +7,22 @@ architecture: a React SPA and API gateway on a Cloudflare Worker, a private
 Fastify and Better Auth API on a DigitalOcean Droplet behind Cloudflare Access
 and Tunnel, and PostgreSQL.
 
-**Current verdict: NO-GO for real members.** Deployed 2026-10-13 as a public guest-mode site plus private, Access-protected account staging ([deployment record](deployment-record.md)). The code-level controls were
-red-teamed and hardened, but live infrastructure, recovery and monitoring have
-not been verified. See the [release verdict](release-security-verdict.md).
+**Recorded launch verdict: GO for controlled public account activation on
+13 October 2026.** The [release verdict](release-security-verdict.md) and
+[production launch record](../accounts/production-launch.md) document the
+checks that closed the original infrastructure, recovery and monitoring gates.
+The earlier [deployment record](deployment-record.md) describes private staging.
+These dated records are evidence of those checks, not a new verification of
+current production readiness.
 
 No application can be proven secure. These documents record what was tested,
 how, what was fixed, and what remains.
+
+The ASVS and security-coverage CSVs retain the 12 October assessment, with
+dated coach-control additions in the coverage matrix. Their original line
+references, findings and statuses describe those revisions; later launch
+checks and feature changes supersede some entries. They are not a freshly
+executed certification or a current count of passing controls.
 
 ## Documents
 

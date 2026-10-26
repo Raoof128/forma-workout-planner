@@ -1,5 +1,10 @@
 # Supply chain and CI
 
+The scanner and CI results below belong to the 12 October 2026 assessment.
+Later hosted CI evidence is retained in [QA](../qa/README.md); run the current
+checks for a new release. These historical results do not establish the
+current vulnerability or branch-protection state.
+
 [Back to security overview](README.md)
 
 ## Dependencies

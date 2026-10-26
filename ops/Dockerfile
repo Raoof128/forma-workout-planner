@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM node:26-bookworm-slim@sha256:298992629d69bbd5b2b03ad57094d8e4fcb3a8eeb7c4e25d29de656519568913 AS build
+FROM node:26.12.1-bookworm-slim@sha256:28147155d47dc31abe0a46e0d12b59b2fb3d0a2dcc5dc65fce76a074180b16fe AS build
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN --mount=type=secret,id=proxy_ca,required=false \
@@ -14,7 +14,7 @@ RUN npm run build:server \
     && npm prune --omit=dev --offline --strict-ssl=true --no-audit --no-fund \
     && npm cache clean --force
 
-FROM node:26-bookworm-slim@sha256:298992629d69bbd5b2b03ad57094d8e4fcb3a8eeb7c4e25d29de656519568913 AS runtime
+FROM node:26.12.1-bookworm-slim@sha256:28147155d47dc31abe0a46e0d12b59b2fb3d0a2dcc5dc65fce76a074180b16fe AS runtime
 ENV NODE_ENV=production PORT=3000
 WORKDIR /app
 RUN groupadd --system --gid 10001 forma \
