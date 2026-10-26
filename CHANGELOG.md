@@ -4,6 +4,20 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-26 — Release preparation and scanner false positive
+
+- **Scope:** prepare the owner-requested commit, push and redeployment of the
+  completed audit; source commit `d770a6c` is published in PR #30.
+- **Change:** reword one descriptive session-lifetime ledger sentence and add
+  only its exact historical fingerprint to `.gitleaksignore`. The scanner
+  matched the same ordinary prose twice; no credential material was present.
+  Application code, dependencies and tested build inputs are unchanged.
+- **Verification:** the original redacted report identifies the single ledger
+  line and fingerprint. Recheck the complete history and documentation before
+  release; do not broaden the rule or path allowlist.
+- **Follow-up:** release the verified API image before the account frontend,
+  staging before production, and record observed hosted outcomes separately.
+
 ### Raouf: 2026-10-26 — Full runtime and file audit
 
 - Reviewed all 550 applicable human-maintained files and individually validated
