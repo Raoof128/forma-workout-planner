@@ -136,7 +136,7 @@ struct RoutineDetailView: View {
               Text("\(current.minutes) min · \(current.level)").font(.subheadline)
                 .foregroundStyle(FormaTheme.secondary)
               Button(model.workspace?.active == nil ? "Start workout" : "Resume active workout") {
-                Task { await model.start(current) }
+                Task { await model.requestStart(current) }
               }
               .buttonStyle(PrimaryButtonStyle())
               .disabled(model.busy)
@@ -399,6 +399,9 @@ private struct RoutineEditorView: View {
     } else {
       failure =
         model.errorMessage ?? "Your routine has not been saved. Keep your draft open and try again."
+      // Shown inline above; the root alert can't present over this sheet and
+      // would otherwise replay the same error after it closes.
+      model.errorMessage = nil
     }
   }
 
@@ -515,7 +518,7 @@ private struct PrescriptionEditor: View {
       } footer: {
         Text("\(exercise.muscle) · \(exercise.equipment)")
       }
-      Section("Targets") {
+      Section {
         Stepper("Sets: \(entry.sets)", value: $entry.sets, in: 1...12)
         if showsLoad {
           TargetNumberField(
@@ -576,6 +579,8 @@ private struct PrescriptionEditor: View {
             range: 1...1_000_000, fieldKey: "\(entry.id)|distanceMeters", context: exercise.name,
             drafts: $targetDrafts, focus: $focusedTarget)
         }
+      } header: {
+        Text("Targets")
       } footer: {
         Text("Enter a number directly. Use a decimal point or comma, without thousands separators.")
       }

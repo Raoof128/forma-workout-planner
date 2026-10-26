@@ -351,6 +351,11 @@ test("native legal resources retain exact current source policies and label loca
   assert.match(notice, /importing a backup is not available/);
   assert.match(notice, /excluded from device backups/);
   assert.doesNotMatch(notice, /may include these local files/);
+  // Apple Watch workouts write to Apple Health; the notice must say so and
+  // must not claim that no Health data is involved.
+  assert.match(notice, /apple health/);
+  assert.match(notice, /heart rate/);
+  assert.doesNotMatch(notice, /no healthkit data/);
 });
 
 test("catalogue notices retain original and reviewed credits without claiming license clearance", () => {

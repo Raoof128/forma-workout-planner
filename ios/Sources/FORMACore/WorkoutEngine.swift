@@ -19,9 +19,12 @@ public enum WorkoutEngine {
         metrics[prescription.exerciseId].map { $0 == "load_reps" }
         ?? (prescription.durationSeconds == nil && prescription.distanceMeters == nil)
       let logsSides = prescription.perSide && loadReps
+      // Matches the web's perSideTargetError: a rep range above 50 per side
+      // cannot fit the logger's two side fields, even when the minimum does.
       if logsSides {
         try check(
-          prescription.reps <= 50, "Per-side starting targets must total no more than 100 reps.")
+          max(prescription.reps, prescription.repsMax ?? 0) <= 50,
+          "Per-side starting targets must total no more than 100 reps.")
       }
       let sides = logsSides ? SetSides(left: prescription.reps, right: prescription.reps) : nil
       let set = LoggedSet(

@@ -22,6 +22,10 @@
     <string>$(CURRENT_PROJECT_VERSION)</string>
     <key>LSRequiresIPhoneOS</key>
     <true/>
+    <key>NSHealthShareUsageDescription</key>
+    <string>FORMA shows the heart rate and active energy your Apple Watch records during workouts you start.</string>
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>FORMA saves the workouts you record on Apple Watch, with their heart rate and active energy, to Apple Health.</string>
     <key>UILaunchScreen</key>
     <dict/>
     <key>UIApplicationSceneManifest</key>

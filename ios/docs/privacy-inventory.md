@@ -12,7 +12,7 @@ source-level inventory and submission draft, not a final App Privacy declaration
 | Catalogue and guide attribution | Bundled source/licence metadata | Review source rights and rendered attribution, including share-alike obligations |
 | Decorative generated artwork | Bundled asset, no user imagery sent | Preserve original source/prompt and review the final asset |
 | Analytics, ads, tracking identifiers | No SDK or native feature introduced | Inspect linked frameworks, privacy report and outgoing requests |
-| HealthKit, clinical inference and biometric data | Outside this slice | No entitlement or permission string; separate review if introduced |
+| Apple Watch workout: heart rate, active and basal energy, workout record | Watch records into Apple Health after permission; iPhone shows live values via the mirrored session and never stores or exports them; no clinical inference | HealthKit entitlement and purpose strings on both apps; verify on paired hardware, Health permission revocation, and that nothing leaves the device |
 | Files/share export | User explicitly selects a destination | Explain that the destination may be cloud-backed and exported copies outlive local reset |
 | External source/support/legal links | Open only following a user action | Ordinary website/email handling; never attach workout contents automatically |
 | Device diagnostics and OS services | Platform-controlled behavior | Avoid absolute claims covering Apple's independent collection |
@@ -47,8 +47,9 @@ This adds no reason to the draft manifest. See the
 [retrieval record](apple-design-2026.md#additional-sources-for-the-full-bug-audit).
 It does not replace inspection of the archive and its linked implementations.
 
-No `UserDefaults`, location, notification, camera, microphone, contacts, Photos,
-HealthKit or advertising capability is required for the scoped loop. The app
+No `UserDefaults`, location, notification, camera, microphone, contacts, Photos
+or advertising capability is required. HealthKit is requested only when a
+workout is started with Apple Watch, for the types listed above. The app
 does not request these permissions merely because they appear in future plans.
 
 ## App Privacy and legal decisions

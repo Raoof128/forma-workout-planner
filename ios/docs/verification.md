@@ -244,3 +244,41 @@ save/discard and already-open journal removal after reset. They remain **unrun**
 Xcode/SwiftUI compilation, simulator rendering, VoiceOver/keyboard/device fault
 and performance tests, signed archive and App Store approval remain open. The
 previous scorecard is unchanged. No push, publication or store action occurred.
+
+## First macOS/Xcode verification, 26 October 2026
+
+Host: macOS, Xcode 27.1, Swift 6.4, iOS 27.1 SDK. The project was generated with
+XcodeGen 2.46.0. The first `xcodebuild` failed on a SwiftUI API misuse in
+`PlanView.swift`, which Linux checks could not detect. After the
+[file-by-file audit](full-audit-2026-10-26.md) fixes:
+
+| Check | Result |
+| --- | --- |
+| Swift package | **63 passed, 0 failed**, macOS |
+| Native contract probe | **1711/1711** pass strict web validation |
+| App and UI-test bundle, Debug, iOS Simulator | Build succeeded, no Swift warnings |
+| App, Release, iOS Simulator | Build succeeded, no Swift warnings |
+| JS unit, lint, Prettier, types, docs | 134/134; pass |
+
+No iPhone simulator runtime was installed, so the eight UI journeys compiled but
+were **not run**. Device, accessibility, signing and Store gates remain open. No
+push, publication or store action occurred.
+
+## Hold timer and Apple Watch companion, 26 October 2026
+
+Same host. Added the web's hold timer and a watchOS 10+ companion that records
+workouts to Apple Health ([Apple Watch workouts](apple-watch.md)).
+
+| Check | Result |
+| --- | --- |
+| Swift package | **71 passed, 0 failed** (8 new hold-timer cases) |
+| Native contract probe | **1711/1711** pass strict web validation |
+| `FORMA` scheme with embedded Watch app: simulator Debug, device Release | Built, no Swift warnings, Swift 6 strict concurrency |
+| `FORMAWatch` scheme, watchOS Simulator | Built |
+| Watch device binary | `arm64` and `arm64_32` |
+| Resources `--check`; JS unit, lint, Prettier, types, docs | Pass; 134/134 |
+| swift-format lint on changed and new Swift files | Clean |
+
+Nothing ran on a simulator or a paired iPhone and Apple Watch. HealthKit
+sensing, permission prompts, mirroring, reconnects and saving to Apple Health
+need physical devices. The UI journeys also remain unrun.

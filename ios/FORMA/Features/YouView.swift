@@ -251,6 +251,9 @@ struct ProfileEditor: View {
     } else {
       failure =
         model.errorMessage ?? "Your profile has not been saved. Keep this draft open and try again."
+      // Shown inline above; the root alert can't present over this sheet and
+      // would otherwise replay the same error after it closes.
+      model.errorMessage = nil
     }
   }
 }

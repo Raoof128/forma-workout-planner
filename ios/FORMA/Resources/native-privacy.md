@@ -8,8 +8,15 @@ notes, display name and training preferences are stored in the app's local
 workspace. FORMA does not send those records to its operator in this build.
 
 The app includes no advertising, tracking or analytics SDK and requests no
-HealthKit, location, camera, microphone, contacts or photo-library permission.
-Exercise search runs on the device. Bundled exercise guides retain their source
+location, camera, microphone, contacts or photo-library permission. Exercise
+search runs on the device.
+
+If you start a workout on Apple Watch, FORMA asks for Apple Health permission to
+save workouts and to read and save heart rate and active energy. The Watch
+records them during the workout and saves the workout to Apple Health when it
+ends. Your iPhone shows the live values but keeps them out of your FORMA records
+and exports, and FORMA does not send them anywhere. Manage these permissions in
+the Health app. Training without a Watch needs no Health permission. Bundled exercise guides retain their source
 and licence information.
 
 The workspace uses the iPhone's file protection and is excluded from automatic

@@ -1,5 +1,24 @@
+import AudioToolbox
 import FORMACore
 import SwiftUI
+
+/// One hold timer at a time, local to the workout screen as on the web: it is
+/// a stopwatch, not workout data. Running while `endsAt` is set; paused with
+/// `left` seconds remaining otherwise.
+struct ActiveHold: Equatable {
+  let sessionID: String
+  let entryID: String
+  let exerciseID: String
+  let setIndex: Int
+  let length: Int
+  var endsAt: Date?
+  var left: Int
+
+  func remaining(at date: Date) -> Int {
+    guard let endsAt else { return left }
+    return max(0, Int(ceil(endsAt.timeIntervalSince(date))))
+  }
+}
 
 struct WorkoutView: View {
   @Environment(AppModel.self) private var model
@@ -13,6 +32,9 @@ struct WorkoutView: View {
   @State private var guide: Exercise?
   @State private var notesPresented = false
   @State private var feedback = 0
+  @State private var hold: ActiveHold?
+  @State private var holdLengths: [String: Int] = [:]
+  @State private var holdMessage: String?
   @FocusState private var focusedField: String?
 
   var body: some View {
@@ -29,6 +51,7 @@ struct WorkoutView: View {
               ElapsedTime(startedAt: session.startedAt)
             }
             LocalSaveStatus(saving: model.busy, pendingChanges: !drafts.isEmpty)
+            WatchRecordingStrip()
             if let failure = model.errorMessage {
               Label(failure, systemImage: "exclamationmark.circle")
                 .font(.subheadline).foregroundStyle(FormaTheme.error)
@@ -73,10 +96,18 @@ struct WorkoutView: View {
                 }
                 if exercise?.id == "plank" {
                   Text(
-                    "This original plank logs 10 seconds per rep. Saved records keep these units."
+                    "This original plank logs 10 seconds per rep. For a 30-second plank, enter 3 reps or run the timer for 30 seconds."
                   )
                   .font(.caption).foregroundStyle(FormaTheme.secondary)
                 }
+              }
+              if let exercise, HoldTimer.isAvailable(for: exercise, entry: entry) {
+                holdTimer(session: session, entry: entry, exercise: exercise)
+              }
+              if let holdMessage {
+                Label(holdMessage, systemImage: "checkmark.circle")
+                  .font(.subheadline).foregroundStyle(FormaTheme.accent)
+                  .accessibilityIdentifier("hold-logged")
               }
               VStack(spacing: 12) {
                 ForEach(Array(entry.sets.enumerated()), id: \.offset) { index, set in
@@ -153,7 +184,14 @@ struct WorkoutView: View {
         .toolbar {
           ToolbarItem(placement: .topBarLeading) {
             Button("Save & close") {
-              Task { if await saveDrafts() { model.workoutPresented = false } }
+              Task {
+                if await saveDrafts() {
+                  // Any earlier failure was already shown inline here; don't
+                  // replay it as an alert once the workout screen closes.
+                  model.errorMessage = nil
+                  model.workoutPresented = false
+                }
+              }
             }.disabled(model.busy)
           }
           ToolbarItem(placement: .topBarTrailing) {
@@ -196,9 +234,7 @@ struct WorkoutView: View {
           Button("Keep training", role: .cancel) {}
           Button("Discard workout", role: .destructive) {
             Task {
-              if await model.commit(forActiveSession: session.id, { $0.active = nil }) {
-                model.workoutPresented = false
-              }
+              if await model.discardActive() { model.workoutPresented = false }
             }
           }
         } message: {
@@ -213,6 +249,24 @@ struct WorkoutView: View {
           // Canonical sets are already committed. Best effort for valid in-progress edits;
           // OS suspension is never treated as a successful save acknowledgement.
           if phase == .inactive { Task { _ = await saveDrafts() } }
+        }
+        // The countdown is a deadline, so a hold that ends while the app is
+        // suspended logs as soon as the app runs again.
+        .task(id: hold?.endsAt) {
+          guard let current = hold, let endsAt = current.endsAt else { return }
+          let wait = endsAt.timeIntervalSinceNow
+          if wait > 0 { try? await Task.sleep(for: .seconds(wait)) }
+          guard !Task.isCancelled, hold == current else { return }
+          await logHold(current, seconds: current.length)
+        }
+        .onChange(of: selectedExercise) { _, _ in holdMessage = nil }
+        // Keep the screen on while a hold counts down, as the web does.
+        .onChange(of: hold?.endsAt != nil) { _, running in
+          UIApplication.shared.isIdleTimerDisabled = running
+        }
+        .onDisappear {
+          hold = nil
+          UIApplication.shared.isIdleTimerDisabled = false
         }
         .accessibilityIdentifier("workout-screen")
       }
@@ -341,6 +395,201 @@ struct WorkoutView: View {
       next.done = false
       value.active?.exercises[index].sets.append(next)
     }
+  }
+
+  private func holdTimer(session: WorkoutSession, entry: SessionEntry, exercise: Exercise)
+    -> some View
+  {
+    let unit = exercise.holdUnit
+    let current = hold.flatMap { $0.sessionID == session.id && $0.entryID == entry.id ? $0 : nil }
+    let openSet = entry.sets.firstIndex { !$0.done }
+    let length =
+      current?.length
+      ?? HoldTimer.clamp(
+        holdLengths[entry.id] ?? HoldTimer.defaultLength(for: entry, unit: unit), unit: unit)
+    return HoldTimerCard(
+      name: exercise.name,
+      setNumber: (current?.setIndex ?? openSet).map { $0 + 1 },
+      length: length, hold: current, unit: unit,
+      otherHoldRunning: hold != nil && current == nil,
+      adjust: { delta in holdLengths[entry.id] = HoldTimer.clamp(length + delta, unit: unit) },
+      start: {
+        guard let openSet else { return }
+        holdMessage = nil
+        hold = ActiveHold(
+          sessionID: session.id, entryID: entry.id, exerciseID: entry.exerciseId,
+          setIndex: openSet, length: length, endsAt: .now.addingTimeInterval(Double(length)),
+          left: length)
+      },
+      pause: {
+        guard var timer = hold, timer.endsAt != nil else { return }
+        timer.left = timer.remaining(at: .now)
+        timer.endsAt = nil
+        hold = timer
+      },
+      resume: {
+        guard var timer = hold, timer.endsAt == nil else { return }
+        timer.endsAt = .now.addingTimeInterval(Double(timer.left))
+        hold = timer
+      },
+      end: {
+        guard let timer = hold else { return }
+        let held = timer.length - timer.remaining(at: .now)
+        guard held >= unit.seconds else { return }
+        Task { await logHold(timer, seconds: held) }
+      },
+      cancel: { hold = nil })
+  }
+
+  /// Logs the timed set (the first unfinished one if it was ticked meanwhile)
+  /// and starts the programmed rest, exactly as ticking it would.
+  private func logHold(_ timer: ActiveHold, seconds: Int) async {
+    if hold == timer { hold = nil }
+    let submitted = drafts
+    var logged: (index: Int, count: Int)?
+    let saved = await model.commit(forActiveSession: timer.sessionID) { value in
+      try applyDrafts(submitted, to: &value)
+      let result = try WorkoutEngine.logHold(
+        in: value, entryID: timer.entryID, startedOn: timer.setIndex, seconds: seconds,
+        now: AppModel.now, catalog: model.catalog)
+      value = result.workspace
+      logged = (result.setIndex, result.count)
+    }
+    guard saved, let logged, let exercise = model.exercise(timer.exerciseID) else { return }
+    drafts = retainingUnacknowledgedDrafts(drafts, acknowledged: submitted)
+    validation = drafts.isEmpty ? nil : "Newer edits are still unsaved. Tap Done to save them."
+    feedback += 1
+    // The web's audible cue: a short tone unless training sounds are muted.
+    if model.workspace?.profile.muted == false { AudioServicesPlaySystemSound(1057) }
+    let message =
+      "\(exercise.name) set \(logged.index + 1) logged: \(HoldTimer.loggedText(count: logged.count, unit: exercise.holdUnit))."
+    holdMessage = message
+    AccessibilityNotification.Announcement(message).post()
+  }
+}
+
+private struct HoldTimerCard: View {
+  @Environment(\.scenePhase) private var scenePhase
+  let name: String
+  let setNumber: Int?
+  let length: Int
+  let hold: ActiveHold?
+  let unit: HoldUnit
+  let otherHoldRunning: Bool
+  let adjust: (Int) -> Void
+  let start: () -> Void
+  let pause: () -> Void
+  let resume: () -> Void
+  let end: () -> Void
+  let cancel: () -> Void
+
+  var body: some View {
+    Group {
+      if hold?.endsAt != nil, scenePhase == .active {
+        TimelineView(.periodic(from: .now, by: 0.25)) { context in panel(at: context.date) }
+      } else {
+        panel(at: .now)
+      }
+    }
+    .padding(16)
+    .background(FormaTheme.surface, in: RoundedRectangle(cornerRadius: 18))
+    .accessibilityElement(children: .contain)
+    .accessibilityLabel("Hold timer for \(name)")
+    .accessibilityIdentifier("hold-timer")
+  }
+
+  private func panel(at date: Date) -> some View {
+    let remaining = hold?.remaining(at: date)
+    let shown = remaining ?? length
+    let held = length - (remaining ?? length)
+    let units = HoldTimer.loggedCount(seconds: held, unit: unit)
+    let step = HoldTimer.step(unit)
+    return VStack(alignment: .leading, spacing: 12) {
+      HStack(alignment: .firstTextBaseline) {
+        Label("Hold timer", systemImage: "timer")
+          .font(.subheadline.weight(.semibold)).foregroundStyle(FormaTheme.secondary)
+        Spacer(minLength: 8)
+        Text(String(format: "%02d:%02d", shown / 60, shown % 60))
+          .font(.title.bold().monospacedDigit()).foregroundStyle(FormaTheme.primary)
+          .accessibilityLabel("\(shown) seconds \(hold == nil ? "hold" : "remaining")")
+          .accessibilityIdentifier("hold-remaining")
+      }
+      ViewThatFits(in: .horizontal) {
+        HStack(spacing: 10) { controls(step: step, units: units) }
+        VStack(alignment: .leading, spacing: 10) { controls(step: step, units: units) }
+      }
+      .font(.subheadline.weight(.semibold))
+      ProgressView(value: hold == nil ? 0 : min(1, Double(held) / Double(max(1, length))))
+        .tint(FormaTheme.accent)
+        .accessibilityHidden(true)
+      Text(note).font(.footnote).foregroundStyle(FormaTheme.secondary)
+        .fixedSize(horizontal: false, vertical: true)
+    }
+  }
+
+  @ViewBuilder
+  private func controls(step: Int, units: Int) -> some View {
+    if let hold {
+      let running = hold.endsAt != nil
+      Button(action: running ? pause : resume) {
+        Label(running ? "Pause" : "Resume", systemImage: running ? "pause.fill" : "play.fill")
+          .frame(minHeight: 44)
+      }
+      .buttonStyle(.bordered)
+      .accessibilityLabel(running ? "Pause hold timer" : "Resume hold timer")
+      .accessibilityIdentifier("hold-toggle")
+      Button(action: end) {
+        Label("End set", systemImage: "stop.fill").frame(minHeight: 44)
+      }
+      .buttonStyle(.bordered)
+      .disabled(units < 1)
+      .accessibilityLabel(
+        "End set \(hold.setIndex + 1) now and log \(HoldTimer.loggedText(count: units, unit: unit))"
+      )
+      .accessibilityIdentifier("hold-end")
+      Button(action: cancel) {
+        Image(systemName: "xmark").frame(minWidth: 44, minHeight: 44)
+      }
+      .accessibilityLabel("Cancel hold timer without logging")
+      .accessibilityIdentifier("hold-cancel")
+    } else {
+      Button {
+        adjust(-step)
+      } label: {
+        Text("−\(step)").frame(minWidth: 44, minHeight: 44)
+      }
+      .buttonStyle(.bordered)
+      .disabled(length <= HoldTimer.minimum(unit))
+      .accessibilityLabel(
+        "Shorter hold, \(max(HoldTimer.minimum(unit), length - step)) seconds")
+      Button {
+        adjust(step)
+      } label: {
+        Text("+\(step)").frame(minWidth: 44, minHeight: 44)
+      }
+      .buttonStyle(.bordered)
+      .disabled(length >= HoldTimer.maximum(unit))
+      .accessibilityLabel("Longer hold, \(min(HoldTimer.maximum(unit), length + step)) seconds")
+      Button(action: start) {
+        Label("Start", systemImage: "play.fill").frame(minHeight: 44)
+      }
+      .buttonStyle(.borderedProminent)
+      .disabled(setNumber == nil || otherHoldRunning)
+      .accessibilityLabel(
+        setNumber.map { "Start \(length)-second hold for \(name) set \($0)" }
+          ?? "All \(name) sets are logged"
+      )
+      .accessibilityIdentifier("hold-start")
+    }
+  }
+
+  private var note: String {
+    guard let setNumber else { return "Every set is logged." }
+    if hold != nil { return "Set \(setNumber) logs itself when time is up." }
+    if otherHoldRunning { return "Another hold timer is running. End or cancel it first." }
+    return unit.seconds == 1
+      ? "Set \(setNumber): logs the time and starts your rest when it ends."
+      : "Set \(setNumber): logs a rep for every \(unit.seconds) seconds and starts your rest when it ends."
   }
 }
 
@@ -657,6 +906,7 @@ struct SessionNotesView: View {
                 }
               } else {
                 failure = model.errorMessage
+                model.errorMessage = nil
               }
             }
           }
@@ -712,7 +962,6 @@ struct WorkoutReceipt: View {
           .font(.body).foregroundStyle(FormaTheme.secondary)
         Button {
           model.workoutPresented = false
-          model.receipt = nil
         } label: {
           HStack {
             Text("Keep the feeling.")

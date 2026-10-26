@@ -237,7 +237,7 @@ function nativeLegal() {
       effective: "23 October 2026",
       status: "prototype-not-release-policy",
       summary:
-        "This development build keeps your training records on your device. It includes no account sign-in, cloud sync, analytics or advertising.",
+        "This development build keeps your training records on your device. With your permission, a workout you start on Apple Watch records heart rate and energy to Apple Health. It includes no account sign-in, cloud sync, analytics or advertising.",
       blocks: [
         { h: "Local storage", id: "local-storage" },
         {
@@ -251,9 +251,13 @@ function nativeLegal() {
         {
           p: "No account service is connected in this development build. Your training records are not uploaded by the app. There is no analytics SDK, advertising SDK or cross-app tracking. Opening an external support or source link uses the destination service under its own terms.",
         },
+        { h: "Apple Watch and Apple Health", id: "apple-health" },
+        {
+          p: "If you start a workout on Apple Watch, FORMA asks for permission to save workouts and to read and save heart rate and active energy in Apple Health. The Watch records them while the workout runs and saves the workout to Apple Health when it ends. Your iPhone shows the live values but does not add them to your FORMA training records or exports, and FORMA does not send them anywhere. You can change these permissions in the Health app at any time. Training without a Watch needs no Health permission.",
+        },
         { h: "Health and safety", id: "health-safety" },
         {
-          p: "FORMA is a planning and record-keeping tool, not medical or personalised training advice. Use appropriate technique and equipment and seek qualified guidance when needed. No HealthKit data or physiological readiness score is collected or calculated.",
+          p: "FORMA is a planning and record-keeping tool, not medical or personalised training advice. Use appropriate technique and equipment and seek qualified guidance when needed. Heart rate is shown as recorded; FORMA calculates no physiological readiness score or diagnosis.",
         },
         { h: "Release policies and contact", id: "release-policies" },
         {

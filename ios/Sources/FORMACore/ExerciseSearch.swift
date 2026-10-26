@@ -3,8 +3,11 @@ import Foundation
 extension Exercise {
   /// Search is local. Every query word may match a different indexed field.
   public func matches(query: String) -> Bool {
+    let words = query.split(whereSeparator: \.isWhitespace)
+    // An empty query matches everything; skip folding the indexed text.
+    guard !words.isEmpty else { return true }
     let text = Self.fold(([name, muscle, equipment] + aliases).joined(separator: " "))
-    return query.split(whereSeparator: \.isWhitespace).allSatisfy {
+    return words.allSatisfy {
       text.contains(Self.fold(String($0)))
     }
   }

@@ -39,7 +39,12 @@ struct RootView: View {
             .tag(TrainingTab.you)
         }
         .modifier(ActiveTrainingAccessory())
-        .fullScreenCover(isPresented: $model.workoutPresented) {
+        .sheet(item: $model.pendingStart, onDismiss: { model.startSheetDismissed() }) { routine in
+          StartWorkoutSheet(routine: routine).environment(model)
+        }
+        // Clearing the receipt while the cover is still sliding away would
+        // re-render it as an empty screen, so clear it once dismissal ends.
+        .fullScreenCover(isPresented: $model.workoutPresented, onDismiss: { model.receipt = nil }) {
           NavigationStack {
             if let receipt = model.receipt {
               WorkoutReceipt(session: receipt)

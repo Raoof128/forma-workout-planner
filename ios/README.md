@@ -46,6 +46,22 @@ compatibility and iOS 26.0 fallback journeys when those runtimes are installed.
 Missing optional runtimes are reported as **not run**, never as passes. Generated Xcode
 projects are reproducible outputs; review `project.yml` as their source.
 
+## Apple Watch
+
+The iPhone app embeds a watchOS 10+ companion (`FORMAWatch/`). Starting a workout
+checks for a paired Watch; when one is ready, the workout begins when Start is
+pressed on the Watch, which records heart rate and energy to Apple Health and
+mirrors the session to the iPhone. See [Apple Watch workouts](docs/apple-watch.md).
+Run the `FORMAWatch` scheme on a paired Watch simulator or device; HealthKit
+sensing and Watch-to-iPhone mirroring need physical devices.
+
+## Hold timer
+
+Timed holds offer the web's countdown above their sets: adjust the length, start,
+pause, end early or cancel. When it ends, it logs the seconds (the legacy plank
+logs a rep per 10 seconds) into the next unfinished set and starts rest, as
+ticking it would. The rules live in `Sources/FORMACore/HoldTimer.swift`.
+
 ## Scope and verification boundaries
 
 The [Apple design research](docs/apple-design-2026.md) records the current HIG,
@@ -54,7 +70,8 @@ The [file review](docs/native-design-review.md) records every native project
 file's disposition and the improvements made.
 
 The first slice is local guest use. It introduces no native account adapter,
-tracking, advertising, HealthKit, purchases or medical advice. Web account routes,
+tracking, advertising, purchases or medical advice. The Apple Watch companion
+records workouts into Apple Health (see below); nothing else uses HealthKit. Web account routes,
 server authentication and production infrastructure remain separate. Guest
 progress begins empty; starter routines are editable examples, not past workouts.
 

@@ -11,7 +11,13 @@ final class AppModel {
       if oldValue?.history != workspace?.history { rebuildHistory() }
     }
   }
-  var catalog: [Exercise] = []
+  var catalog: [Exercise] = [] {
+    didSet {
+      exercisesByID = Dictionary(
+        catalog.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
+    }
+  }
+  private var exercisesByID: [String: Exercise] = [:]
   private var pendingMutations = 0
   var busy: Bool { pendingMutations > 0 }
   var errorMessage: String?
@@ -26,13 +32,25 @@ final class AppModel {
   private var preferencesURL: URL?
   private var loadingPreferences = false
   private let mutationGate = SerializedMutationGate()
+  let watch = WatchWorkoutCoordinator()
+  /// The routine waiting on the Apple Watch start sheet.
+  var pendingStart: Routine?
+  private var presentWorkoutAfterSheet = false
+
+  init() {
+    watch.onWatchStarted = { [weak self] routineID in
+      guard let self, let routine = self.workspace?.routines.first(where: { $0.id == routineID })
+      else { return }
+      Task { await self.start(routine) }
+    }
+  }
 
   var selectableExercises: [Exercise] { catalog.filter(\.selectable) }
   var routines: [Routine] { workspace?.routines.filter { $0.archivedAt == nil } ?? [] }
   private(set) var history: [WorkoutSession] = []
   static var now: Double { Date.now.timeIntervalSince1970 * 1_000 }
 
-  func exercise(_ id: String) -> Exercise? { catalog.first { $0.id == id } }
+  func exercise(_ id: String) -> Exercise? { exercisesByID[id] }
 
   private func rebuildHistory() {
     history = (workspace?.history ?? []).map { (session: $0, date: TrainingDate.date($0)) }
@@ -132,10 +150,27 @@ final class AppModel {
     }
   }
 
-  func start(_ routine: Routine) async {
+  /// Start buttons come here. With a paired Apple Watch the start sheet waits
+  /// for its Start button; without one, the workout starts on this iPhone.
+  func requestStart(_ routine: Routine) async {
     if workspace?.active != nil {
       receipt = nil
       workoutPresented = true
+      return
+    }
+    watch.reset()
+    await watch.refresh()
+    if watch.availability.hasPairedWatch {
+      pendingStart = routine
+    } else {
+      await start(routine)
+    }
+  }
+
+  func start(_ routine: Routine) async {
+    if workspace?.active != nil {
+      receipt = nil
+      presentWorkout()
       return
     }
     if await commit({ value in
@@ -145,8 +180,35 @@ final class AppModel {
       }
     }) {
       receipt = nil
+      presentWorkout()
+    }
+  }
+
+  /// A full-screen cover can't present while the start sheet is still
+  /// dismissing, so it opens once the sheet has gone.
+  private func presentWorkout() {
+    if pendingStart != nil {
+      presentWorkoutAfterSheet = true
+      pendingStart = nil
+    } else {
       workoutPresented = true
     }
+  }
+
+  func startSheetDismissed() {
+    watch.cancelWaiting()
+    if presentWorkoutAfterSheet {
+      presentWorkoutAfterSheet = false
+      workoutPresented = true
+    }
+  }
+
+  /// Discarding the FORMA workout discards the Watch recording too.
+  func discardActive() async -> Bool {
+    guard let id = workspace?.active?.id else { return false }
+    guard await commit(forActiveSession: id, { $0.active = nil }) else { return false }
+    await watch.end(save: false)
+    return true
   }
 
   @discardableResult
@@ -167,6 +229,8 @@ final class AppModel {
       })
     {
       receipt = workspace?.history.first { $0.id == id }
+      // The Watch ends its recording and saves it to Apple Health.
+      await watch.end(save: true)
     }
   }
 
@@ -188,6 +252,7 @@ final class AppModel {
       receipt = nil
       workoutPresented = false
       errorMessage = nil
+      await watch.end(save: false)
     } catch {
       errorMessage = "Your local training could not be deleted. \(error.localizedDescription)"
     }
@@ -239,30 +304,38 @@ private struct PresentationPreferences: Codable {
   var appearance: AppearancePreference
 }
 
+/// Formatters are expensive to create, and history rebuilds and journal rows
+/// call these once per session, so they are created once on the main actor.
+@MainActor
 enum TrainingDate {
-  static var calendar: Calendar {
+  static let calendar: Calendar = {
     var calendar = Calendar(identifier: .iso8601)
     calendar.timeZone = TimeZone(identifier: "Australia/Sydney")!
     return calendar
-  }
+  }()
   static func date(_ session: WorkoutSession) -> Date {
+    // Native finishes always write fractional seconds; try that form first.
     guard let text = session.date,
-      let date = ISO8601DateFormatter().date(from: text) ?? fractional.date(from: text)
+      let date = fractional.date(from: text) ?? whole.date(from: text)
     else {
       return Date(timeIntervalSince1970: session.startedAt / 1_000)
     }
     return date
   }
-  private static var fractional: ISO8601DateFormatter {
+  private static let whole = ISO8601DateFormatter()
+  private static let fractional: ISO8601DateFormatter = {
     let formatter = ISO8601DateFormatter()
     formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
     return formatter
-  }
+  }()
+  private static var labelFormatters: [String: DateFormatter] = [:]
   static func label(_ date: Date, template: String = "d MMM") -> String {
+    if let formatter = labelFormatters[template] { return formatter.string(from: date) }
     let formatter = DateFormatter()
     formatter.locale = Locale(identifier: "en_AU")
     formatter.timeZone = calendar.timeZone
     formatter.setLocalizedDateFormatFromTemplate(template)
+    labelFormatters[template] = formatter
     return formatter.string(from: date)
   }
   static func completedThisWeek(_ history: [WorkoutSession]) -> [WorkoutSession] {

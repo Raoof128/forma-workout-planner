@@ -40,7 +40,7 @@ struct TodayView: View {
             detail: "\(routine.exercises.count) exercises · about \(routine.minutes) min",
             action: "Start workout", symbol: "arrow.up.right"
           ) {
-            Task { await model.start(routine) }
+            Task { await model.requestStart(routine) }
           }
         } else {
           ContentUnavailableView {

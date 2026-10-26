@@ -1331,3 +1331,61 @@ migrate` from the root-owned `ops/` directory (`sudo sh -c 'cd … && …'`),
   performance, archive/privacy/legal/rights/signing and Store gates remain open.
   No native import/account transport, server boundary or published state changed;
   no push, deployment, TestFlight upload or App Store submission occurred.
+
+
+### Raouf: 2026-10-26 — First Xcode build and file-by-file native audit
+
+- **Scope:** All 76 files from `57d685a`, on macOS with Xcode 27.1 / iOS 27.1 SDK
+  for the first time; Apple Watch requirements rechecked against 2026 sources.
+- **Summary:** The app did not compile: `PlanView` used a nonexistent
+  `Section(title) { } footer: { }`. Native workout start now rejects per-side
+  rep ranges above 50, matching `main`'s `perSideTargetError`. The receipt no
+  longer blanks while dismissing; inline save errors no longer replay as stale
+  root alerts; UI tests query the finish alert by label. Cached date formatters,
+  indexed exercise lookup and empty-query search skip avoidable per-row work.
+- **Files:** Native app (`AppModel`, `FORMAApp`, `PlanView`, `WorkoutView`,
+  `YouView`), core (`WorkoutEngine`, `ExerciseSearch`), tests, UI tests;
+  `ios/docs/full-audit-2026-10-26.md`, `ios/docs/verification.md`; AGENT, CHANGELOG.
+- **Verification:** Swift 63/63; contract probe 1711/1711; Debug and Release
+  Xcode builds without Swift warnings; swift-format clean; resources regenerate
+  without diff; JS 134/134, lint, Prettier, types, docs. UI journeys not run (no
+  simulator runtime installed). Watch API availability matched SDK headers.
+- **Follow-ups:** Run the UI journeys on a simulator; open a PR so the Native iOS
+  workflow runs for the first time (confirm `macos-15` has Xcode 26.1+); update
+  the Watch matrix's current-state column for this branch; hold timer parity.
+  No push, deployment or store action occurred.
+
+
+### Raouf: 2026-10-26 — Native hold timer and Apple Watch workouts
+
+- **Scope:** Close the hold-timer gap with the web (PR #20) and add an Apple Watch
+  companion: a workout started on the iPhone checks for the Watch, begins when
+  Start is pressed on the Watch, and the Watch records it to Apple Health.
+- **Summary:** `HoldTimer.swift` ports the web rules (5 s to 60 min, unit steps,
+  default from the next unfinished set, legacy plank logs a rep per 10 s, no timer
+  for per-side plank) and `WorkoutEngine.logHold` completes the set with rest
+  exactly as ticking does. The workout screen adds the countdown with pause, end
+  early, cancel, keep-awake, haptic, tone unless muted and a VoiceOver
+  announcement. `FORMAWatch` (watchOS 10) runs `HKWorkoutSession` and
+  `HKLiveWorkoutBuilder`, mirrors to the iPhone, recovers after a crash and saves
+  in Apple's stop/end/finish order. The iPhone checks pairing and installation
+  first and starts on its own when no Watch is paired. Finish saves the Watch
+  workout; discard discards it. Heart rate and energy stay in Apple Health, so
+  the workspace contract is unchanged. The privacy notice, inventory and review
+  matrix now describe the Health use.
+- **Files:** `ios/Sources/FORMACore/{HoldTimer,Models}.swift`, `HoldTimerTests`;
+  `ios/Shared/`, `ios/FORMAWatch/`, `WatchWorkoutCoordinator`,
+  `StartWorkoutSheet`, `AppModel`, `FORMAApp`, `WorkoutView`, `TodayView`,
+  `PlanView`, entitlements, `Info.plist`, `project.yml`;
+  `scripts/build-ios-resources.mjs` and regenerated `legal.json`/manifest,
+  `unit/ios-resources.test.js`; `ios/docs/apple-watch.md` and privacy docs;
+  README, AGENT, CHANGELOG.
+- **Verification:** Swift 71/71; contracts 1711/1711; iPhone + embedded Watch
+  build (simulator Debug, device Release) and Watch scheme build without Swift
+  warnings; Watch binary arm64 + arm64_32; resources check, JS 134/134, lint,
+  Prettier, types, docs; swift-format clean. No simulator or device run.
+- **Follow-ups:** Test on the real iPhone and Ultra 2 (detection, permissions,
+  live metrics, reconnect, one Health workout per finish, none on discard,
+  locked-phone save, recovery, battery, heart-rate sample density). Set up the
+  team, bundle IDs and HealthKit capability for signing. Update the Watch
+  matrix's current-state column. No push, deployment or store action occurred.

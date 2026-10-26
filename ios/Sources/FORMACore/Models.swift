@@ -82,6 +82,20 @@ public struct ExerciseDefaults: Codable, Equatable, Sendable {
   }
 }
 
+/// The set field a hold timer writes, how many seconds make one unit of it, and
+/// the longest hold that field can record. Generated from the web's `holdUnit`.
+public struct HoldUnit: Codable, Equatable, Sendable {
+  public var key: String
+  public var seconds: Int
+  public var max: Int
+
+  public init(key: String = "durationSeconds", seconds: Int = 1, max: Int = 86_400) {
+    self.key = key
+    self.seconds = seconds
+    self.max = max
+  }
+}
+
 public struct Exercise: Codable, Identifiable, Equatable, Sendable {
   public var id: String
   public var name: String
@@ -103,6 +117,10 @@ public struct Exercise: Codable, Identifiable, Equatable, Sendable {
   public var side: String?
   public var guideUnavailable: Bool
   public var references: [ExerciseReference]
+  /// Catalogue-level decision from the web's `usesHoldTimer(exercise)`. Use
+  /// `HoldTimer.isAvailable(for:entry:)`, which also applies the entry's sides.
+  public var usesHoldTimer: Bool
+  public var holdUnit: HoldUnit
 
   public init(
     id: String, name: String, muscle: String, equipment: String, description: String,
@@ -110,7 +128,8 @@ public struct Exercise: Codable, Identifiable, Equatable, Sendable {
     loadType: String = "load", source: ExerciseSource? = nil, rawSource: ExerciseSource? = nil,
     selectable: Bool = true, guide: String = "", aliases: [String] = [],
     defaults: ExerciseDefaults? = nil, canonicalId: String? = nil, guideId: String? = nil,
-    side: String? = nil, guideUnavailable: Bool = false, references: [ExerciseReference] = []
+    side: String? = nil, guideUnavailable: Bool = false, references: [ExerciseReference] = [],
+    usesHoldTimer: Bool = false, holdUnit: HoldUnit? = nil
   ) {
     self.id = id
     self.name = name
@@ -138,12 +157,14 @@ public struct Exercise: Codable, Identifiable, Equatable, Sendable {
     self.side = side
     self.guideUnavailable = guideUnavailable
     self.references = references
+    self.usesHoldTimer = usesHoldTimer
+    self.holdUnit = holdUnit ?? HoldUnit()
   }
 
   private enum CodingKeys: String, CodingKey {
     case id, name, muscle, equipment, description, metric, weight, perSide, loadType, source,
       rawSource, selectable, guide, aliases, defaults, canonicalId, guideId, side, guideUnavailable,
-      references
+      references, usesHoldTimer, holdUnit
   }
   public init(from decoder: Decoder) throws {
     let c = try decoder.container(keyedBy: CodingKeys.self)
@@ -166,7 +187,9 @@ public struct Exercise: Codable, Identifiable, Equatable, Sendable {
       guideId: try c.decodeIfPresent(String.self, forKey: .guideId),
       side: try c.decodeIfPresent(String.self, forKey: .side),
       guideUnavailable: try c.decodeIfPresent(Bool.self, forKey: .guideUnavailable) ?? false,
-      references: try c.decodeIfPresent([ExerciseReference].self, forKey: .references) ?? [])
+      references: try c.decodeIfPresent([ExerciseReference].self, forKey: .references) ?? [],
+      usesHoldTimer: try c.decodeIfPresent(Bool.self, forKey: .usesHoldTimer) ?? false,
+      holdUnit: try c.decodeIfPresent(HoldUnit.self, forKey: .holdUnit))
   }
 }
 

@@ -67,7 +67,7 @@
     },
     {
       "path": "scripts/build-ios-resources.mjs",
-      "sha256": "5ce5ad538a257901e51f989e5cf7c2f6f7a3d4154b62788d6d8869a09c41d61a"
+      "sha256": "c636926465352c8ab1c6933623a837754cb7ca526d8026fe932c609d1e69e97a"
     }
   ],
   "outputs": [
@@ -83,8 +83,8 @@
     },
     {
       "path": "ios/FORMA/Resources/legal.json",
-      "sha256": "02c1fcac2190e90ca365e6dac8521eb45a4ebf6f2fcaf2b9a4395cbbd173a99e",
-      "bytes": 20507
+      "sha256": "2b93da722b6dffce30f97057419bbef421a2790a3b67c6c6ca6d057223e91da3",
+      "bytes": 21254
     },
     {
       "path": "ios/FORMA/Resources/catalogue-notices.json",

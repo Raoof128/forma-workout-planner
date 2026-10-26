@@ -115,6 +115,26 @@ final class WorkoutEngineTests: XCTestCase {
     XCTAssertNil(WorkoutEngine.estimatedOneRM(weight: .nan, reps: 8))
   }
 
+  func testPerSideRepRangeAboveFiftyCannotStartAWorkout() throws {
+    func routine(reps: Int, repsMax: Int?) -> Routine {
+      Routine(
+        name: "Single-arm rows",
+        exercises: [
+          Prescription(
+            exerciseId: "single-row", sets: 1, reps: reps, repsMax: repsMax, perSide: true)
+        ])
+    }
+    XCTAssertNoThrow(
+      try WorkoutEngine.start(
+        routine: routine(reps: 40, repsMax: 50), now: now, catalog: Fixtures.catalog))
+    XCTAssertThrowsError(
+      try WorkoutEngine.start(
+        routine: routine(reps: 40, repsMax: 60), now: now, catalog: Fixtures.catalog))
+    XCTAssertThrowsError(
+      try WorkoutEngine.start(
+        routine: routine(reps: 51, repsMax: nil), now: now, catalog: Fixtures.catalog))
+  }
+
   func testTimedPrescriptionDoesNotInventPerSideRepetitions() throws {
     // Some catalog names carry the same perSide default as a rep exercise,
     // but duration and distance still use their own measurement profile.

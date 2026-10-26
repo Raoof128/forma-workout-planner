@@ -45,7 +45,7 @@ final class OfflineWorkoutTests: XCTestCase {
     let finish = app.buttons["finish-workout"]
     XCTAssertTrue(finish.waitForExistence(timeout: 5))
     finish.tap()
-    let confirm = app.buttons["finish-confirm"]
+    let confirm = app.alerts.buttons["Finish workout"]
     XCTAssertTrue(confirm.waitForExistence(timeout: 5))
     confirm.tap()
     let done = app.buttons["receipt-done"]
@@ -154,7 +154,7 @@ final class OfflineWorkoutTests: XCTestCase {
     XCTAssertTrue(app.buttons["Save & close"].exists)
 
     app.buttons["finish-workout"].tap()
-    let confirm = app.buttons["finish-confirm"]
+    let confirm = app.alerts.buttons["Finish workout"]
     XCTAssertTrue(confirm.waitForExistence(timeout: 5))
     confirm.tap()
     XCTAssertTrue(validation.waitForExistence(timeout: 5))
@@ -217,7 +217,7 @@ final class OfflineWorkoutTests: XCTestCase {
     complete.tap()
     XCTAssertTrue(complete.waitForValue("Completed", timeout: 5))
     app.buttons["finish-workout"].tap()
-    let confirmFinish = app.buttons["finish-confirm"]
+    let confirmFinish = app.alerts.buttons["Finish workout"]
     XCTAssertTrue(confirmFinish.waitForExistence(timeout: 5))
     confirmFinish.tap()
     let done = app.buttons["receipt-done"]

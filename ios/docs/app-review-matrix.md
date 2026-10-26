@@ -13,7 +13,7 @@ current official rules and actual shipping binary control the submission.
 | 5.1.1 Privacy | Guest records stay in the local workspace; separate native notice; explicit export | Verify final binary, backup treatment, retention, permissions and App Privacy answers |
 | 5.1.1(v) Account deletion | No account creation or sign-in in the native slice | Before native accounts: build findable in-app deletion initiation and verify real deletion states |
 | 5.1.1(ix) Provider eligibility | No healthcare service claimed; seller/operator identity must be genuine | Assess the exact service and sensitive-data handling with Apple/legal counsel; neither fitness-category exemption nor mandatory incorporation is assumed |
-| 5.1.3 Health and fitness data | No HealthKit or advertising/tracking introduced | Reassess all fitness/notes collection if account sync or another provider is introduced |
+| 5.1.3 Health and fitness data | Apple Watch workouts save to Apple Health; heart rate and energy stay on device, out of FORMA records, iCloud and exports; no advertising or tracking | Verify the data flow on hardware, Health disclosures and App Privacy answers; reassess if account sync is introduced |
 | 5.2 Intellectual property | Original F geometry, generated decorative art, bundled per-guide source metadata | Verify brand/font/image/guide rights and attribution/share-alike obligations with a human reviewer |
 | 2.3 Accurate metadata | No fabricated history or claimed native features; images are decorative | Screenshots and previews must come from the final running binary with clearly synthetic review data |
 | Privacy manifests | Initial no-tracking manifest included | Audit required-reason APIs and SDK manifests in the actual archive |
