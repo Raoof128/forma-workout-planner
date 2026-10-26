@@ -1,0 +1,300 @@
+{
+  "recordVersion": 1,
+  "releaseDate": "2026-10-26",
+  "dateTimezone": "Australia/Sydney",
+  "source": {
+    "pullRequest": "https://github.com/Raoof128/forma-workout-planner/pull/30",
+    "mergeCommit": "10942dcd24de194e620550cd298fd1479d2324a4",
+    "applicationCommit": "d770a6cb47c4c48fb1334f1d7804cd9564c0b732",
+    "documentationScannerCommit": "4234d5e2eb99bdff9589adc32f21f1da0f9cd7b0",
+    "applicationInputsUnchangedAfterApplicationCommit": true,
+    "newSchemaMigration": false
+  },
+  "releaseOrder": [
+    "staging API",
+    "staging Worker/account website",
+    "staging verification",
+    "production API",
+    "production Worker/account website",
+    "production verification"
+  ],
+  "apiImage": {
+    "repository": "forma-api",
+    "tag": "runtime-audit-20261026-d770a6c",
+    "archiveSha256": "e44c23ac0072d9b394c6866a6c0d62a0bf3a54e8ff4c2a907176984dd4bd66d8",
+    "ociManifestDigest": "sha256:37201d56da9775511fac239f97ab4f4a2aaba5918a61c4f43bdac825d8490fa8",
+    "configurationDigest": "sha256:95a1529dbd360c5a660600cc6a2052507b58deaa67b2de6027472eccb3f50bfb",
+    "manifestHashVerified": true,
+    "configurationHashVerified": true,
+    "layerCount": 10,
+    "allLayerHashesAndDiffIdsVerified": true,
+    "architecture": "amd64",
+    "os": "linux",
+    "identifierSemantics": "Local classic Docker Image.Id is the configuration digest; remote containerd Image.Id is the OCI manifest target. The verified archive manifest/configuration/layer chain establishes identity."
+  },
+  "accountBuild": {
+    "source": "d770a6c",
+    "mode": "account",
+    "capturedAt": "2026-10-26T05:18:31.171Z",
+    "htmlSha256": "8c66e32dc8322f85ceaa10b12d36f38c5b6d7844d9b074a7631121cf7d9db4be",
+    "assets": [
+      {
+        "path": "/assets/RoutinePrescriptions-BAoqyg2l.js",
+        "bytes": 16552,
+        "sha256": "02d3beb210a8cb3a6b61252da3350e45e0908868745b1cc87f6e14b2641676be"
+      },
+      {
+        "path": "/assets/index-B2mput03.js",
+        "bytes": 2998818,
+        "sha256": "82ddbbd0e6b08a09779bb07d8d91194f289c3a18b73228b83265b23905918244"
+      },
+      {
+        "path": "/assets/index-CAJVbWds.css",
+        "bytes": 87298,
+        "sha256": "d050743ada44b4078687a16f16beb56ad57818c27e1549b2a23169e68ffda24a"
+      },
+      {
+        "path": "/assets/instructions-D5gYSpG2.js",
+        "bytes": 888783,
+        "sha256": "0812ed1b6d7711f453642a7083b8384f97a25b821089f0bb6744010bf84650fd"
+      }
+    ]
+  },
+  "environments": {
+    "staging": {
+      "origin": "https://forma-staging.raoufabedini.dev",
+      "worker": {
+        "version": "1ec26df9-3e4b-491f-8bb0-b0772bfc38ab",
+        "trafficPercent": 100,
+        "deploymentTokenRevoked": true
+      },
+      "api": {
+        "imageManifest": "sha256:37201d56da9775511fac239f97ab4f4a2aaba5918a61c4f43bdac825d8490fa8",
+        "health": "healthy",
+        "runtime": {
+          "node": "v26.12.1",
+          "undici": "8.12.2",
+          "uid": 10001
+        },
+        "countsUnchanged": true,
+        "unrelatedContainersUnchanged": true,
+        "apiErrors": 0
+      },
+      "backups": [
+        {
+          "encryptedOffHostBackup": true,
+          "signatureUploaded": true,
+          "archive": "archives/forma-staging-20261026T052642Z.dump.age"
+        },
+        {
+          "encryptedOffHostBackup": true,
+          "signatureUploaded": true,
+          "archive": "archives/forma-staging-20261026T052653Z.dump.age"
+        }
+      ],
+      "http": {
+        "completedAt": "2026-10-26T05:35:31.800Z",
+        "checksPassed": 38,
+        "checksTotal": 38,
+        "htmlAndAllFourAssetsMatch": true
+      },
+      "browser": {
+        "completedAt": "2026-10-26T05:35:45.521Z",
+        "version": "156.0.8078.4",
+        "widths": [320, 390, 1440],
+        "statesPerWidth": 5,
+        "functionalStatesPassed": 15,
+        "functionalPass": true,
+        "accessibilityPass": false,
+        "rawPass": false,
+        "pageErrors": 0,
+        "consoleErrors": 0,
+        "failedRequests": 0,
+        "unexpectedHttpFailures": 0,
+        "attemptedWrites": 0
+      },
+      "comparison": {
+        "comparedAt": "2026-10-26T05:35:56.085Z",
+        "releaseSmokePass": true,
+        "sameBrowser": true
+      },
+      "accessibility": {
+        "baselineNodeFindings": 30,
+        "releaseNodeFindings": 30,
+        "newOrChanged": 0,
+        "resolved": 0
+      }
+    },
+    "production": {
+      "origin": "https://forma.raoufabedini.dev",
+      "worker": {
+        "version": "d0481946-7509-4496-8dba-8bcb600e7d6f",
+        "trafficPercent": 100,
+        "deploymentTokenRevoked": true
+      },
+      "api": {
+        "imageManifest": "sha256:37201d56da9775511fac239f97ab4f4a2aaba5918a61c4f43bdac825d8490fa8",
+        "health": "healthy",
+        "runtime": {
+          "node": "v26.12.1",
+          "undici": "8.12.2",
+          "uid": 10001
+        },
+        "countsUnchanged": true,
+        "unrelatedContainersUnchanged": true,
+        "apiErrors": 0
+      },
+      "backups": [
+        {
+          "encryptedOffHostBackup": true,
+          "signatureUploaded": true,
+          "archive": "archives/forma-production-20261026T053704Z.dump.age"
+        },
+        {
+          "encryptedOffHostBackup": true,
+          "signatureUploaded": true,
+          "archive": "archives/forma-production-20261026T053717Z.dump.age"
+        }
+      ],
+      "http": {
+        "completedAt": "2026-10-26T05:40:01.190Z",
+        "checksPassed": 38,
+        "checksTotal": 38,
+        "htmlAndAllFourAssetsMatch": true
+      },
+      "browser": {
+        "completedAt": "2026-10-26T05:40:10.182Z",
+        "version": "156.0.8078.4",
+        "widths": [320, 390, 1440],
+        "statesPerWidth": 5,
+        "functionalStatesPassed": 15,
+        "functionalPass": true,
+        "accessibilityPass": false,
+        "rawPass": false,
+        "pageErrors": 0,
+        "consoleErrors": 0,
+        "failedRequests": 0,
+        "unexpectedHttpFailures": 0,
+        "attemptedWrites": 0
+      },
+      "comparison": {
+        "comparedAt": "2026-10-26T05:43:47.932Z",
+        "releaseSmokePass": true,
+        "sameBrowser": true
+      },
+      "accessibility": {
+        "baselineNodeFindings": 30,
+        "releaseNodeFindings": 30,
+        "newOrChanged": 0,
+        "resolved": 0
+      }
+    }
+  },
+  "visualEvidence": {
+    "productionLibraryDecodedImagesPerWidth": 24,
+    "stagingResponseFulfillmentHarnessHadBlankCssBackgrounds": true,
+    "stagingNativeProbeWidth": 1440,
+    "stagingNativeProbeBothPhotoResponses": 200,
+    "stagingNativeProbePhotosRendered": true,
+    "harnessLowLevelMechanismDetermined": false,
+    "productionNativePhotoRenderingVerified": true,
+    "pixelExactBeforeAfterComparison": false
+  },
+  "knownAccessibilityFollowUps": [
+    {
+      "rule": "color-contrast",
+      "subject": "Sign-in helper text",
+      "observedRatio": 3.8,
+      "requiredRatio": 4.5
+    },
+    {
+      "rule": "label-content-name-mismatch",
+      "subject": "Brand visible/accessibility label"
+    },
+    {
+      "rule": "label-content-name-mismatch",
+      "subject": "Seven Overview calendar buttons"
+    }
+  ],
+  "ci": {
+    "observedAt": "2026-10-26T05:50:00Z",
+    "runId": 40273543896,
+    "url": "https://github.com/Raoof128/forma-workout-planner/actions/runs/40273543896",
+    "security": "success",
+    "securityChecks": [
+      "gitleaks full history",
+      "OSV",
+      "Semgrep",
+      "production CycloneDX SBOM generation and upload"
+    ],
+    "allNonBrowserApplicationChecks": "success",
+    "developmentBrowserSuite": "success",
+    "productionBrowserSuite": "in_progress",
+    "accountDevelopmentBrowserSuite": "pending",
+    "accountProductionBrowserSuite": "pending",
+    "applicationJob": "in_progress"
+  },
+  "localAudit": {
+    "unitPassed": 134,
+    "apiPassed": 67,
+    "workerPassed": 27,
+    "operationsPassed": 14,
+    "browserCasesWithPassingCoverage": 902,
+    "initialBrowserPassed": 901,
+    "initialBrowserTimeouts": 1,
+    "affectedProfileRerunPassed": 22,
+    "originalBudgetPreserved": true
+  },
+  "cleanup": {
+    "status": "complete",
+    "completedAt": "2026-10-26T05:48:47.389935Z",
+    "temporarySessionServiceTokenRemoved": true,
+    "bothAddedPoliciesRemoved": true,
+    "temporarySshApplicationRemoved": true,
+    "temporarySshDnsRemoved": true,
+    "temporarySshIngressRemoved": true,
+    "scopedInfrastructureApiTokenRevoked": true,
+    "privateSessionJournalsRemoved": true,
+    "existingPoliciesPreserved": true,
+    "tunnelConfigurationVersion": 59,
+    "initialDeletionError": 12139,
+    "resolution": "Removed only exact temporary policy IDs referencing the temporary service token, then completed cleanup."
+  },
+  "scope": {
+    "memberContext": "anonymous",
+    "allowedBrowserMethods": ["GET", "HEAD", "OPTIONS"],
+    "stagingAccessCredentialsRestrictedToExactOrigin": true,
+    "healthMeaning": "liveness",
+    "authenticatedMemberJourneys": false,
+    "memberDataWrites": false,
+    "emailDelivery": false,
+    "newRestoreDrill": false,
+    "sustainedLoadTest": false,
+    "physicalDeviceTest": false,
+    "accessibilityConformanceClaim": false
+  },
+  "evidence": {
+    "publicBundle": "forma-release-evidence-2026-10-26.zip",
+    "releaseReceipts": [
+      "staging-api-verified.json",
+      "production-api-verified.json",
+      "archive-image-identity-proof.json"
+    ],
+    "smokeReceipts": [
+      "expected-account-build.json",
+      "staging/http.json",
+      "staging/browser.json",
+      "staging/comparison.json",
+      "staging/native-background-probe.json",
+      "after/http.json",
+      "after/browser.json",
+      "comparison.json"
+    ],
+    "excludes": [
+      "credentials",
+      "private session journals",
+      "host inventory",
+      "raw operational logs from this repository"
+    ]
+  }
+}

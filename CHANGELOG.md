@@ -4,6 +4,21 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-26 — Runtime audit deployed
+
+- Merged PR #30 (`10942dc`) and released the audited API then account website
+  to staging and production. Both APIs run Node 26.12.1/Undici 8.12.2; deployed
+  HTML and all four assets match the audited account build.
+- Both environments passed 38 HTTP checks and 15 responsive functional states;
+  backups, health, unchanged counts/other containers and zero observed API
+  error lines were recorded. The same 30 baseline accessibility node findings
+  remain follow-ups, without new or changed findings.
+- CI security and non-browser checks passed. At 05:50 UTC, development
+  browser CI had passed and later browser suites were unfinished. Temporary
+  release-access cleanup completed at 05:48:47 UTC; deployment credentials
+  were revoked. See [the release record](docs/qa/runtime-quality-2026-10-26/README.md)
+  for exact versions, image identity and verification limits.
+
 ### Raouf: 2026-10-26 — Release preparation and scanner false positive
 
 - **Scope:** prepare the owner-requested commit, push and redeployment of the

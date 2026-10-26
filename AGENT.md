@@ -58,6 +58,26 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-26 — Runtime audit deployed
+
+- **Source/order:** owner-authorized PR #30 merged as `10942dc`; application
+  inputs `d770a6c`, documentation/scanner follow-up `4234d5e`. Released each
+  API before its account website, staging before production, using explicit
+  Compose project names.
+- **Hosted result:** both APIs run Node 26.12.1/Undici 8.12.2 as UID 10001.
+  Encrypted signed off-host backups, unchanged counts/unrelated containers and
+  zero observed API error lines recorded. Both environments passed 38 HTTP
+  checks, exact HTML/four-asset hashes and 15 responsive functional states.
+  Thirty baseline accessibility node findings remain unchanged; staging's
+  response-fulfilling screenshot artifact was checked with native requests.
+- **Verification/follow-up:** CI security and non-browser checks passed; at
+  05:50 UTC the development browser suite had passed and later browser
+  suites were unfinished. Worker deployment tokens were revoked; temporary
+  release-access cleanup completed at 05:48:47 UTC, preserving existing
+  policies and removing private session journals. See
+  [release evidence](docs/qa/runtime-quality-2026-10-26/README.md) for image
+  identity, Worker versions, scope and retained accessibility follow-ups.
+
 ### Raouf: 2026-10-26 — Release preparation and scanner false positive
 
 - **Scope:** prepare the owner-requested commit, push and redeployment of the
