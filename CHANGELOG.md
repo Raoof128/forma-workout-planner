@@ -4,6 +4,39 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-26 — Full runtime and file audit
+
+- Reviewed all 550 applicable human-maintained files and individually validated
+  903 generated/imported/binary files: all 1,453 baseline paths accounted for.
+  Added the six requested audit reports, exhaustive file ledger and targeted
+  regressions under the existing source/test conventions.
+- Fixed cloud refresh/write recovery races, a conflict-reload edit window,
+  late wake-lock leaks, stale import reviews, cross-tab replacement crashes,
+  imported-ID focus errors, overrange per-side targets, Sydney date/week
+  inconsistencies, coach unilateral strength totals and invisible export errors.
+- Aggregate Progress records in one pass; cache unchanged catalog search text;
+  compute the captured guest fingerprint once per mount. Established workspace
+  reads use one owner-filtered SELECT while retaining validation, transactional
+  first creation and revisioned writes. The API survives idle database-client
+  loss, and the gateway preserves the documented bearer challenge.
+- Patch four transitive fast-uri lockfile records and use a scoped Miniflare
+  Undici 7.30.1 override after advisory checks. Pin Node 26.12.1 with bundled
+  Undici 8.12.2 in both Docker stages; direct library pins stay unchanged.
+  Correct schema/auth/operations
+  documentation and unsafe rollback instructions without rewriting historical
+  release receipts. No migration, visual redesign or asset-quality reduction.
+- Verification: lint, formatting, types, docs and builds pass; unit 134/134,
+  server 67/67 on Node 26.12.1, Worker 27/27 and operations 14/14. Full npm
+  audit reports zero vulnerabilities. All 902 browser cases have passing
+  coverage: the original 901-pass/1-timeout run was investigated, and the
+  affected 22-case profile passed unchanged at its original budget. Matched
+  performance and screenshot evidence are recorded in the audit reports.
+- The training lazy-load experiment was rejected after slower first navigation
+  and an offline regression. Cold startup remains a documented opportunity.
+  Changes are local and uncommitted; no deployment or production data change.
+  See `docs/audits/forma-runtime-quality-2026-10/` for findings, exact metrics,
+  test results, screenshot evidence and release-review limits.
+
 ### Raouf: 2026-10-22 — Dependency updates from Dependabot #15–#17
 
 - One branch off `main` replaces the three stale Dependabot PRs: the API's

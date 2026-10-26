@@ -6,10 +6,11 @@ FORMA is a workout planner built with React and Vite. Members can use an
 account-backed workspace that stores routines and workout history in
 self-hosted PostgreSQL, or use the separate local guest mode in a browser.
 The public site at [forma.raoufabedini.dev](https://forma.raoufabedini.dev)
-uses browser-local guest storage. Cloudflare Workers serve the frontend; the
-account API and PostgreSQL run in isolated private staging on DigitalOcean.
-Accounts remain private pending the outstanding release gates in the
-[deployment record](docs/security/deployment-record.md).
+supports member accounts and browser-local guest storage. Cloudflare Workers
+serve the frontend; the account API and PostgreSQL run in separate private
+staging and production stacks on DigitalOcean. The
+[production launch record](docs/accounts/production-launch.md) records the
+13 October 2026 activation and its operational evidence.
 
 [Account docs](docs/accounts/README.md) · [Getting started](docs/getting-started.md) ·
 [User guide](docs/user-guide.md) · [Architecture](docs/architecture.md) ·
@@ -22,9 +23,9 @@ Accounts remain private pending the outstanding release gates in the
 | Three starters and 12 additional templates             | Weight/reps, time, and distance logging             | Editable workout history                     |
 | Custom routines and exercise order                     | Persistent rest timer, hold timer and session notes | Volume, completed sets, and personal bests   |
 | Weekly training schedule                               | Exercise instructions while logging                 | Validated JSON backup and restore            |
-| Searchable 1,661-exercise library with source licences | Resume an unfinished session                        | Profile, backup, and training-data settings  |
+| Searchable reviewed exercise library with source licences | Resume an unfinished session                        | Profile, backup, and training-data settings  |
 | Local guest mode or member account                     | Authenticated workspace sync across sessions        | Session revocation, MFA, import, and export  |
-| Read-only coach tokens for a coaching tool or AI       |                                                     | Token list, expiry, and one-click revocation |
+| Read-only or full-access coach tokens for a coaching tool or AI       |                                                     | Token list, expiry, and one-click revocation |
 
 The interface uses semantic controls, keyboard navigation, accessible dialogs,
 mobile workout controls, and locally hosted fonts. See the [verification
@@ -95,9 +96,10 @@ after member confirmation, so an existing v1 backup can be transferred.
 
 The Cloudflare Access token authenticates the Worker to the protected API
 origin; it is separate from member authentication. The Worker and API share an
-additional service secret. Keep both out of client assets. A configured
-production account origin, off-host backups and actionable alerting are now
-configured and verified. Earlier staging evidence remains in the
+additional service secret. Keep both out of client assets. The production
+account origin, off-host backups and actionable alerting are documented in the
+dated launch record; this README is not a fresh live check.
+Earlier staging evidence remains in the
 [deployment record](docs/security/deployment-record.md).
 
 ## Documentation
@@ -115,7 +117,7 @@ configured and verified. Earlier staging evidence remains in the
 | [Legal](docs/legal/README.md)                           | Privacy Policy and Terms of Use: sources and commitments        |
 | [Sources](docs/accounts/sources.md)                     | Official source retrieval status and limits                     |
 | [User guide](docs/user-guide.md)                        | Workout use and legacy browser backup guidance                  |
-| [Data model](docs/data-model.md)                        | Version 1 workspace shape and validation                        |
+| [Data model](docs/data-model.md)                        | Version 2 workspace shape, v1 migration, and validation                        |
 | [Testing](docs/testing.md)                              | Existing frontend suite and test conventions                    |
 | [Changelog](CHANGELOG.md)                               | Notable changes                                                 |
 | [Security](SECURITY.md)                                 | Responsible reporting and security notes                        |

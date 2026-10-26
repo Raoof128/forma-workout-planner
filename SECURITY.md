@@ -19,5 +19,7 @@ The account architecture and known deployment boundaries are documented in
 [account security and database notes](docs/accounts/database.md),
 [infrastructure operations](docs/accounts-infrastructure.md), and
 [release readiness](docs/accounts/release-readiness.md). The repository does
-not claim a security certification, completed production deployment, tested
-off-host restore, response-time commitment, or supported-version policy.
+not claim a security certification, response-time commitment, or supported-version
+policy. The dated [production launch record](docs/accounts/production-launch.md)
+documents deployment and off-host restore checks performed then; those records
+do not certify the current state of a running service.

@@ -17,6 +17,13 @@ export async function startServer(): Promise<void> {
     idleTimeoutMillis: 30_000,
     connectionTimeoutMillis: 5_000,
   });
+  // pg discards failed idle clients. Handle that event so a transient loss
+  // does not terminate the API; subsequent requests acquire a new connection.
+  pool.on("error", () => {
+    process.stderr.write(
+      "FORMA database connection lost; discarded idle connection.\n",
+    );
+  });
   await pool.query("SELECT 1");
 
   const app = await createApp({ pool, config });

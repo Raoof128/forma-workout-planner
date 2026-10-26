@@ -53,6 +53,7 @@ export function createCloudRepository({
   };
   let disposed = false;
   let generation = 0;
+  let writeEpoch = 0;
   let queue = Promise.resolve();
   const listeners = new Set();
   const requests = new Set();
@@ -138,9 +139,14 @@ export function createCloudRepository({
 
   async function refresh({ resolveConflict = false } = {}) {
     if (disposed) return snapshot;
-    if (snapshot.retryPayload || (snapshot.conflict && !resolveConflict))
+    if (
+      snapshot.status === "saving" ||
+      snapshot.retryPayload ||
+      (snapshot.conflict && !resolveConflict)
+    )
       return snapshot;
     const requestGeneration = generation;
+    const readWriteEpoch = writeEpoch;
     const before = snapshot;
     publish(
       {
@@ -153,6 +159,9 @@ export function createCloudRepository({
     try {
       const latest = await read(requestGeneration);
       assertActive(requestGeneration);
+      // A write owns its acknowledgement, retry payload or conflict. Even a
+      // matching-revision poll must not clear that state after the write starts.
+      if (readWriteEpoch !== writeEpoch) return snapshot;
       // A focus/poll read that began before a write must not roll the client
       // back to an older server revision after the write is acknowledged.
       if (
@@ -172,6 +181,14 @@ export function createCloudRepository({
       return snapshot;
     } catch (error) {
       if (error.name === "AbortError") throw error;
+      // Session failures still hide private data; an obsolete network failure
+      // must not turn a newer successful save into an offline workspace.
+      if (
+        readWriteEpoch !== writeEpoch &&
+        !error.unauthorized &&
+        !error.accountChanged
+      )
+        return snapshot;
       if (error.unauthorized) {
         publish(
           {
@@ -312,7 +329,7 @@ export function createCloudRepository({
           error.staleReview = true;
           throw error;
         }
-        if (snapshot.status === "conflict")
+        if (snapshot.conflict)
           throw new Error(
             "Resolve the cloud conflict before saving more changes.",
           );
@@ -330,6 +347,7 @@ export function createCloudRepository({
           expectedRevision: snapshot.revision,
           operationId,
         };
+        writeEpoch += 1;
         publish(
           { ...snapshot, status: "saving", issue: null, conflict: null },
           activeGeneration,
@@ -398,6 +416,7 @@ export function createCloudRepository({
         const payload = snapshot.retryPayload;
         if (!payload)
           throw new Error("There is no pending cloud save to retry.");
+        writeEpoch += 1;
         publish(
           { ...snapshot, status: "saving", issue: null },
           activeGeneration,

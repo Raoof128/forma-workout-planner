@@ -34,6 +34,7 @@ const RoutinePrescriptions = lazy(() => import("./RoutinePrescriptions.jsx"));
 import {
   entryKey,
   parseRepRange,
+  perSideTargetError,
   repRangeText,
   groupLabels,
   normalizeGroups,
@@ -553,6 +554,15 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
       );
     } catch (cause) {
       setError(cause.message);
+      return;
+    }
+    const sideError = prescribed
+      .map((item) =>
+        perSideTargetError(item, exerciseById.get(item.exerciseId)),
+      )
+      .find(Boolean);
+    if (sideError) {
+      setError(sideError);
       return;
     }
     if (

@@ -42,8 +42,9 @@ For frontend updates, verify the account build and use the one-hour scoped token
 helper; its token is held in memory and revoked in `finally`:
 
 ```sh
-npm run worker:deploy:production
 npm run worker:deploy:staging
+# Verify staging before releasing production.
+npm run worker:deploy:production
 ```
 
 The helper uses the existing infrastructure token to mint and revoke the
@@ -100,8 +101,9 @@ migrations instead of editing applied SQL.
 
 An application rollback does not reverse member workspace data. Restore only
 to a pre-created isolated database whose name begins `forma_restore_`; verify
-the checksum and application-level integrity before considering recovery. The
-backup scripts are implemented and a staging isolated restore was verified in
-the deployment record; off-host uploads and actionable alerting remain open
-before accounts can become public. See [account operations](accounts/operations.md) and the
+the signature and backup-time application-level integrity before considering
+recovery. Signed off-host restores, scheduled uploads and alerting are recorded
+in the dated [production launch record](accounts/production-launch.md); verify
+the current backup and monitoring state for each release. See
+[account operations](accounts/operations.md) and the
 [infrastructure backup runbook](accounts-infrastructure.md#encrypted-backup-and-isolated-restore).

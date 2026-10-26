@@ -6,10 +6,11 @@ uses charcoal/gray equipment and clothing, white backgrounds, subtle shadows and
 lime accents. These are AI-assisted original illustrations, not third-party
 photographs or claims of exclusive copyright.
 
-`coverage.json` is the current per-ID record. All 1,414 selectable exercises now
+As of 23 October 2026, `coverage.json` is the current per-ID record. All 1,411 selectable exercises
 have accepted, guide-matched artwork and pass the strict complete-coverage check.
 A generated image or a prompt alone does not count as an accepted match. Source
-records retain held attempts as review history. No image release has been deployed.
+records retain held attempts as review history. The first image release was
+deployed on 14 October 2026; see the [release history](../../../CHANGELOG.md).
 
 `registry.json` contains accepted mappings and guide fingerprints. The individual
 batch records retain the generation prompt, original generated file, cell

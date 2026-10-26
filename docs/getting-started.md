@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-- Node.js 24 (the account API container and current server build target Node 24).
+- Node.js 24 for local development and CI. The account API container uses the pinned Node 26 image in `ops/Dockerfile`.
 - npm and Git.
 - A current browser. The development suite targets Chromium, Firefox, and WebKit; production smoke tests cover desktop Chromium, Firefox, and WebKit, plus mobile Chromium and WebKit emulation.
 

@@ -1,7 +1,7 @@
 import { createHmac, randomBytes, timingSafeEqual } from "node:crypto";
 import type { Pool } from "pg";
-import { estimatedOneRM, exerciseById } from "../src/data.js";
-import { tracksLoadReps } from "../src/exerciseMetrics.js";
+import { dateKey, estimatedOneRM, exerciseById } from "../src/data.js";
+import { sideReps, tracksLoadReps } from "../src/exerciseMetrics.js";
 import type { WorkspaceData } from "./schema.js";
 
 /**
@@ -337,7 +337,7 @@ export function coachSummary(
       if (!tracksLoadReps(exercise)) continue;
       for (const set of entry.sets as AnySet[]) {
         if (!set.done || typeof set.weight !== "number") continue;
-        const reps = typeof set.reps === "number" ? set.reps : 0;
+        const reps = sideReps(set);
         const current = bests.get(entry.exerciseId) ?? {
           bestWeight: 0,
           estimatedOneRM: 0,
@@ -358,10 +358,12 @@ export function coachSummary(
 
   const weeks = new Map<string, { sessions: number; volume: number }>();
   for (const session of recent) {
-    const date = new Date(session.date);
-    const weekStart = new Date(date);
-    weekStart.setUTCHours(0, 0, 0, 0);
-    weekStart.setUTCDate(date.getUTCDate() - ((date.getUTCDay() + 6) % 7));
+    // Interpret the training date in the same Sydney calendar as the app.
+    // UTC arithmetic on that date-only value avoids host-zone and DST shifts.
+    const weekStart = new Date(`${dateKey(new Date(session.date))}T12:00:00Z`);
+    weekStart.setUTCDate(
+      weekStart.getUTCDate() - ((weekStart.getUTCDay() + 6) % 7),
+    );
     const key = weekStart.toISOString().slice(0, 10);
     const week = weeks.get(key) ?? { sessions: 0, volume: 0 };
     week.sessions += 1;

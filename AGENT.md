@@ -58,6 +58,43 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-26 — Full file and runtime quality audit
+
+- **Scope:** local audit of baseline `678b483` begun 23 October and completed
+  after continuation; all 1,453 tracked paths reconciled, 550 applicable files
+  reviewed and 903 generated/imported/binary files individually validated.
+  Ten new implementation/test files and six audit reports are also inventoried.
+- **Changes:** protect cloud retry/conflict state from older refreshes; validate
+  per-side routine targets before saving/starting; release late hold wake locks;
+  close stale exercise pickers and escape imported IDs during focus restoration.
+  Sequence backup reviews, use Sydney dates/weeks, correct coach side-rep
+  estimates and expose Privacy export feedback. Aggregate Progress once, cache
+  unchanged search text, hash the captured guest backup once, and use a validated
+  owner-filtered SELECT for established workspace reads. Handle idle pool errors
+  without logging raw errors; preserve bearer authentication challenges.
+- **Files:** state/storage orchestration, Account/Workout/Routines/Insights/
+  RoutineCardOrder, new progress helper, catalog search, server workspace/coach/
+  entry point, gateway and regression tests. Correct current docs and unsafe
+  historical rollback guidance; full paths are in
+  `docs/audits/forma-runtime-quality-2026-10/FILE_AUDIT.md`.
+- **Dependencies:** the final advisory check found fast-uri advisories published
+  after the initial check. Patch four fast-uri records to 3.1.9/4.2.3; override only the exact Miniflare
+  version to patched Undici 7.30.1. The pinned Node 26.12.1 image also patches
+  its bundled Undici to 8.12.2. Direct library pins and engine constraints remain
+  unchanged. Revalidate clean installation, tooling and the API image.
+- **Verification:** lint, formatting, types, docs and builds pass; unit 134/134,
+  server 67/67 on Node 26.12.1, Worker 27/27 and operations 14/14. Full npm
+  audit reports zero vulnerabilities. All 902 browser cases have passing
+  coverage: the original 901-pass/1-timeout run was investigated, and the
+  affected 22-case profile passed unchanged at its original budget. Matched
+  performance and screenshot evidence are recorded in the audit reports.
+- **Decisions/follow-ups:** the scratch route split was rejected: it delayed first
+  training navigation and broke first-use navigation after going offline.
+  Initial payload and physical-device/hosted checks remain follow-ups. Preserve
+  schema, saved IDs/units, explicit import review and account boundaries. No
+  deployment, push, merge or production action was performed. Review the six
+  audit reports before a separate staged API/frontend release.
+
 ### Raouf: 2026-10-22 — Dependency updates
 
 - `npm install` writes `^` ranges; this repo pins exact versions, so strip

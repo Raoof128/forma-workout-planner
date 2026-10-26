@@ -4,10 +4,10 @@
 
 FORMA has two workspace modes. Guest mode stores a validated version 2
 workspace in the browser. Account mode authenticates with Better Auth and uses
-PostgreSQL as the authoritative store. The account implementation is designed
-for Cloudflare Workers static assets and same-origin API routing to a private
-Node.js API; configured public domains and a live cloud deployment are not
-included in this repository state.
+PostgreSQL as the authoritative store. Cloudflare Workers serve static assets
+and route same-origin API requests to a private Node.js API. The repository
+contains the configured public domains and dated deployment receipts; those
+records do not establish the current health of the running services.
 
 ```mermaid
 flowchart LR
@@ -34,7 +34,7 @@ owner.
 | Area                                                            | Responsibility                                                                                |
 | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `src/App.jsx` and `src/components/`                             | Workout screens, account interface, and mutation handlers.                                    |
-| `src/storage.js`                                                | Version 1 validation, guest initialization, legacy backup parsing, and download helpers.      |
+| `src/storage.js`                                                | Version 2 validation, v1 migration, guest initialization, backup parsing, and download helpers.      |
 | `src/persistence.js`                                            | Guest-mode persistence, Web Lock coordination, revision checks, recovery, and temporary mode. |
 | `src/account/AccountProvider.jsx`                               | Browser account/session state and Better Auth actions.                                        |
 | `src/account/cloudRepository.js`                                | Authenticated workspace reads, optimistic writes, retries, conflicts, and import/export.      |
@@ -85,8 +85,9 @@ ownership. A VPC-only host needs outbound connectivity for the Tunnel, updates,
 email, and approved backup/deployment traffic. Cloudflare Workers VPC is beta
 and is not a required production dependency.
 
-The repository does not establish a live origin, firewall, Tunnel, Access
-policy, database backup schedule, or restore RTO. Use the
+The dated [production launch record](accounts/production-launch.md) records
+the hosted origin, Access/Tunnel, scheduled backups and restore checks. It is
+not a current live probe or a guaranteed recovery-time commitment. Use the
 [operations guide](accounts/operations.md),
 [infrastructure reference](accounts-infrastructure.md), and
 [release-readiness report](accounts/release-readiness.md) for the actual
