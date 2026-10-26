@@ -1388,4 +1388,7 @@ migrate` from the root-owned `ops/` directory (`sudo sh -c 'cd … && …'`),
   live metrics, reconnect, one Health workout per finish, none on discard,
   locked-phone save, recovery, battery, heart-rate sample density). Set up the
   team, bundle IDs and HealthKit capability for signing. Update the Watch
-  matrix's current-state column. No push, deployment or store action occurred.
+  matrix's current-state column. No deployment or store action occurred.
+- **Release:** Committed as `718e8cf` and pushed to `origin/work` on 26 October
+  2026 (no pull request yet, so the Native iOS workflow has not run). Decisions,
+  15 evidence-backed claims and the new iOS docs are recorded in Zurvan.
