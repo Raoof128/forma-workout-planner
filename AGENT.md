@@ -58,6 +58,15 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-26 — Apple Watch readiness and full baseline audit
+
+- Published the audit of all 1,471 tracked baseline files and 37 Apple Watch
+  requirements, including relevant 2026 API and submission guidance.
+- Recorded open runtime, operations, privacy and testing findings with explicit
+  evidence limits. No native iOS/watchOS integration or application fixes added.
+- See [the audit](docs/audits/apple-watch-readiness-2026-10-26/README.md).
+  Baseline verification is separate from this documentation-only publication.
+
 ### Raouf: 2026-10-26 — Runtime audit deployed
 
 - **Source/order:** owner-authorized PR #30 merged as `10942dc`; application
