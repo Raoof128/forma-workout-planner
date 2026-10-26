@@ -4,6 +4,15 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-27 — cloudflared 2026.10.4 security upgrade
+
+- Upgraded the tunnel connector from 2026.9.3 to 2026.10.4 (digest-pinned) in
+  response to Cloudflare's eMudhra certificate advisory; versions before
+  2026.10.2 trust compromised intermediates.
+- Applied to staging then production by recreating only `cloudflared`; both
+  report 2026.10.4 with four registered edge connections. API and database
+  containers were not restarted.
+
 ### Raouf: 2026-10-26 — Runtime audit deployed
 
 - Merged PR #30 (`10942dc`) and released the audited API then account website

@@ -58,6 +58,21 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-27 — cloudflared 2026.10.4 (eMudhra advisory)
+
+- **Why:** Cloudflare's 2026-10-26 advisory: cloudflared before 2026.10.2
+  trusts eight compromised eMudhra (emSign) intermediates. Both tunnels ran
+  2026.9.3.
+- **Change:** `ops/compose.yaml` pins
+  `cloudflare/cloudflared:2026.10.4@sha256:c6c7ae1d…0515` (index digest
+  re-resolved from Docker Hub). The same line was applied on the Droplet
+  (`compose.yaml.pre-cloudflared-2026.10.4-*.bak` kept) and only the
+  `cloudflared` service recreated with `--no-deps`, staging before production,
+  with each environment's usual overlay and `.env`.
+- **Verification:** both containers report 2026.10.4 and registered four edge
+  connections. Origins are `http://api:3000`, so the upgraded trust store
+  cannot reject an origin certificate.
+
 ### Raouf: 2026-10-26 — Runtime audit deployed
 
 - **Source/order:** owner-authorized PR #30 merged as `10942dc`; application
