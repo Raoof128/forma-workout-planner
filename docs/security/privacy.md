@@ -23,10 +23,12 @@ practical benchmark.
 | Coach tokens                | Coaching access (read/full) | `member_coach_token`, HMAC digest only | 90 days, or until revoked or account deletion     | Member sees label, dates |
 | Guest data                  | Local-only mode             | Browser `localStorage` (`forma-v1`)    | Until the person clears it                        | That browser             |
 | Logs                        | Operations                  | Container logs, 3 × 10 MB rotation     | Rotation                                          | Operator                 |
-| Backups                     | Recovery                    | Off-host, age-encrypted                | Owner to define (open)                            | Operator                 |
+| Backups                     | Recovery                    | Off-host, age-encrypted                | 34-day scheduled deletion; within 35 days                            | Operator                 |
 
-No analytics, trackers or third-party scripts are loaded. The only external
-service receiving personal data is Cloudflare (edge, Access, Email Service).
+No analytics, trackers or third-party scripts are loaded. Service providers
+processing personal data are Cloudflare (edge, Access,
+Email Service and encrypted backup storage) and DigitalOcean (the private
+server and database), as described in the [published policy](../../src/legal/content.js).
 
 ## Minimisation
 
@@ -46,12 +48,16 @@ service receiving personal data is Cloudflare (edge, Access, Email Service).
   operations (cascade, verified in tests) and invalidates the old member
   reference.
 - Copies inside backups persist until those backups expire. Do not promise
-  immediate removal from backups; state the backup retention period once it is
-  defined.
+  immediate removal from backups. The published policy schedules deletion after
+  34 days and requires deletion within 35 days.
 
-## Open items
+## Operational boundaries
 
-- Backups: the published Privacy Policy commits to deleting backup copies within 35 days and storing them only in Australia or the United States; configure backups to match (see [legal](../legal/README.md)).
-- A browser's guest data is offered for import to any member who signs in on
-  that browser (R-05, Low). Recommend recording who migrated it and offering
-  it once.
+- Backups must continue to match the published retention and location commitments
+  (see [legal](../legal/README.md)). The dated
+  [launch record](../accounts/production-launch.md) records the 34-day lifecycle
+  and isolated recovery checks; it does not verify today's remote settings.
+- Guest data is browser-local and shared by people using the same browser
+  profile. Import is explicit; a migration marker records the importing member
+  and guest-data fingerprint to avoid offering unchanged data again. That
+  marker is a local convenience, not an access-control boundary.

@@ -25,7 +25,7 @@ Auth operations as well as workspace requests.
 
 ## Authentication
 
-`/api/auth/*` is Better Auth 1.7.7's self-hosted HTTP handler. Its configured
+`/api/auth/*` is Better Auth 1.7.11's self-hosted HTTP handler. Its configured
 email/password and two-factor client methods support:
 
 - Account registration, email verification, email/password sign-in, and
@@ -39,7 +39,8 @@ email/password and two-factor client methods support:
 
 Passwords must be at least 15 characters. Sign-in requires verified email.
 Session cookies are HttpOnly, SameSite=Lax, and Secure on HTTPS. Sessions have
-a seven-day lifetime, and password reset revokes prior sessions. Authentication
+a seven-day sliding lifetime, refreshed at most daily, and a 30-day absolute
+lifetime. Password reset revokes prior sessions. Authentication
 email links expire according to the Better Auth configuration. Exact endpoint
 payloads are defined by the pinned Better Auth client/server version; use the
 browser `authClient` methods rather than hand-building a parallel auth API.
@@ -49,14 +50,17 @@ browser `authClient` methods rather than hand-building a parallel auth API.
 | Method and path                            | Authentication                         | Result                                                                                                          |
 | ------------------------------------------ | -------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | `GET /api/account/sessions`                | Member session                         | Active sessions for that member, with an opaque signed reference, dates, user agent and current-session marker. |
-| `DELETE /api/account/sessions/:id/revoke`  | Recent session, at most 5 minutes old | Revokes the referenced session after matching it within the authenticated member's active sessions.             |
-| `POST /api/account/sessions/revoke-others` | Recent session                         | Revokes every other session belonging to the authenticated member.                                              |
-| `POST /api/account/sessions/revoke-all`    | Recent session                         | Revokes all sessions belonging to the authenticated member, including the current session.                      |
+| `DELETE /api/account/sessions/:id/revoke`  | Fresh session or password step-up | Revokes the referenced session after matching it within the authenticated member's active sessions.             |
+| `POST /api/account/sessions/revoke-others` | Fresh session or password step-up | Revokes every other session belonging to the authenticated member.                                              |
+| `POST /api/account/sessions/revoke-all`    | Member session                         | Revokes all sessions belonging to the authenticated member, including the current session.                      |
 
 The opaque session reference is an HMAC under the server auth secret. It is not
 a database ID or a session token. The session routes do not accept an owner ID.
-Sensitive session revocations require reauthentication through a fresh
-Better Auth session.
+Single-session and other-session revocation accept a session at most five
+minutes old. Older sessions require `password` in the same request body and,
+when MFA is enabled, a six-digit TOTP `code`. This step-up verifies the existing
+session without creating a new session or replacing its cookie. Revoking all
+sessions requires the current member session and reference, without step-up.
 
 ## Coach access (read-only and full-access tokens)
 

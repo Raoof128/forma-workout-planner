@@ -120,27 +120,19 @@ are described in the [database reference](database.md).
 
 ## Cloudflare Worker and private API origin
 
-`wrangler.jsonc` has separate staging and production environments, but their
-committed `.invalid` origins are deliberate placeholders. Before deploying,
-replace them with owned HTTPS origins and create DNS, Worker custom domains,
-Cloudflare Tunnel and Access policy resources in the intended account.
+`wrangler.jsonc` defines the following existing, separate environments:
 
-Read-only discovery on 2026-10-12 confirmed these candidate staging names are
-unused in the owner's `raoufabedini.dev` zone:
+| Environment | Application origin | Protected API origin |
+| --- | --- | --- |
+| Staging | `https://forma-staging.raoufabedini.dev` | `https://forma-api-staging.raoufabedini.dev` |
+| Production | `https://forma.raoufabedini.dev` | `https://forma-api.raoufabedini.dev` |
 
-- Application: `staging-forma.raoufabedini.dev`.
-- Protected origin: `api-staging-forma.raoufabedini.dev`.
-
-Use a new `forma-staging` Worker, a dedicated Tunnel, a separate Access
-application with a Service Auth policy and token, and DNS records limited to
-these two names. Recheck absence immediately before creating them. Do not
-reuse or change existing applications, hostnames, credentials, databases,
-firewalls, or tunnels. Resource read access succeeded for this account, but
-write permission has not been exercised. Workers subdomain lookup returned
-403; a `workers.dev` address is therefore not established. No resources were
-created while host connectivity and production email configuration remain
-unavailable. Provision the isolated backend and verify the protected origin
-before publishing the public application.
+Each uses its own Worker, Tunnel, Access policy, service credentials and backend
+stack. `workers.dev` and preview URLs are disabled. The candidate hostnames
+from the 12 October discovery were superseded by these configured names; do
+not provision replacement resources from that historical discovery. Verify the
+selected existing bindings before publishing, and preserve unrelated services.
+Hosted setup and checks are recorded in the [production launch](production-launch.md).
 
 The Worker accepts the explicit routes and methods in its allowlist, including `/api/health`, approved `/api/auth/*` endpoints, `/api/account/sessions` and its revocation routes, `/api/account/coach-tokens` and its revoke route, `/api/coach/workspace`, `/api/coach/exercises` and `/api/coach/workspace/data` (bearer coach token; `PATCH` on the last for full-access edits), `/api/workspace`, and `/api/workspace/export`. Set `BACKEND_URL` to the fixed backend HTTPS origin
 that resolves through the Tunnel and requires an Access Service Auth policy.
@@ -172,10 +164,11 @@ npm run build
 npx wrangler deploy --env staging
 ```
 
-These commands can deploy only after actual origins and required Worker secrets
-are configured. This repository's current `.invalid` hostnames are not
-deployable. See the [infrastructure guide](../accounts-infrastructure.md) for
-the request boundary and confirmed local Worker checks.
+These commands require the selected environment's existing origins and Worker
+secrets. The scoped release helpers and staging-first sequence are in
+[deployment](../deployment.md#cloudflare-worker). See the
+[infrastructure guide](../accounts-infrastructure.md) for the request boundary
+and the limits of local Worker checks.
 
 ## Cloudflare transactional email
 
@@ -239,8 +232,11 @@ backups. `ops/restore-postgres.sh` verifies the sidecar, decrypts into
 `pg_restore`, and refuses any target database whose name does not start
 `forma_restore_`.
 
-A local isolated PostgreSQL 18.4 backup/restore drill passed: custom pg_dump, age encryption/decryption, restoration into a separate database, exact workspace comparison, and corrupt-ciphertext rejection. See [the recorded evidence](backup-restore-evidence.json). No off-host upload or operational scheduler was tested. Provision off-host storage, schedule the
-backup script, alert on missing uploads, protect the decryption identity
-separately from the host and backup remote, and run an isolated restore drill
-before using this procedure for recovery. A live database backup or Droplet
-snapshot must not be treated as a completed restore test.
+The initial local PostgreSQL 18.4 drill recorded in
+[backup evidence](backup-restore-evidence.json) covered encryption, isolated
+restore, workspace comparison and corrupt-ciphertext rejection. That early
+evidence did not cover off-host storage or scheduling. The later
+[production launch record](production-launch.md) records signed remote backups,
+scheduling, alerts and off-host isolated restore using
+`ops/account-operations.py`; use its recovery procedure for the deployed signed
+archives. A live database backup or Droplet snapshot alone is not a restore test.

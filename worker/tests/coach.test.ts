@@ -29,6 +29,33 @@ const json = (body = "{}", init: ResponseInit = {}) =>
 
 const token = `forma_coach_${"a".repeat(43)}`;
 
+test("coach failures preserve the bearer challenge without forwarding private origin headers", async () => {
+  for (const [status, challenge] of [
+    [401, 'Bearer realm="forma-coach"'],
+    [403, 'Bearer realm="forma-coach", error="insufficient_scope"'],
+  ] as const) {
+    const response = await handleApiRequest(
+      edgeRequest("/api/coach/workspace/data"),
+      env,
+      async () =>
+        json('{"error":"unauthorized"}', {
+          status,
+          headers: {
+            "www-authenticate": challenge,
+            "cf-access-client-secret": "private-origin-header",
+            "x-origin-debug": "private-origin-header",
+          },
+        }),
+    );
+    assert.equal(response.status, status);
+    assert.equal(response.headers.get("www-authenticate"), challenge);
+    assert.equal(response.headers.get("cf-access-client-secret"), null);
+    assert.equal(response.headers.get("x-origin-debug"), null);
+    assert.equal(response.headers.get("cache-control"), "no-store");
+    await response.text();
+  }
+});
+
 test("COACH-01: the bearer header reaches the origin only on the coach read route, without cookies", async () => {
   let seen: Headers | undefined;
   const response = await handleApiRequest(

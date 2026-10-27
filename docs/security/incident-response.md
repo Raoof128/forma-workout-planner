@@ -2,11 +2,13 @@
 
 [Back to security overview](README.md)
 
-FORMA does not yet have security alerting (gate S16 fails). Until it does,
-detection depends on Cloudflare dashboards, container logs and member reports.
+The [13 October launch record](../accounts/production-launch.md) documents
+S16 launch monitoring, host alerts and the independent edge monitor. Confirm
+current alert delivery and backup freshness during operations; provider-wide
+Access-attempt and unexpected-deployment audits still require operator review.
 Each runbook follows: **contain, preserve, recover, communicate, verify**.
 
-## Detection requirements (not yet implemented)
+## Detection requirements and operator checks
 
 | Signal                                            | Source                                 | Suggested threshold                     |
 | ------------------------------------------------- | -------------------------------------- | --------------------------------------- |
@@ -45,7 +47,7 @@ put` it, deploy, then revoke the old token in Access. The worker secret and
    (see the `AUTH_SECRET` warning below), audit outbound traffic.
 6. **Compromised CI.** CI holds no deploy secrets. Revoke GitHub tokens,
    review workflow and branch changes, rebuild from a verified commit.
-7. **Widespread unauthorised access.** Stop the API (`docker compose stop api`)
+7. **Widespread unauthorised access.** Stop the intended API with explicit Compose project and environment arguments
    so guest mode keeps working, preserve logs and a database snapshot, find the
    root cause, end every session (`DELETE FROM "session"`), restore service,
    and notify affected members.
@@ -68,10 +70,13 @@ is believed exposed, and plan 2FA re-enrolment. Ending sessions alone does not
 require rotation.
 
 **Lifting a sign-in lock.** Locks are keyed by an HMAC, so compute the key
-for the member's address and delete the row:
+for the member's address and delete the row. First select the intended
+`COMPOSE_PROJECT_NAME` (`forma-staging` or `forma-production`) and its protected
+`COMPOSE_ENV_FILE`; do not rely on the Compose file's staging default:
 
 ```sh
-docker compose exec api node -e '
+docker compose -p "$COMPOSE_PROJECT_NAME" --env-file "$COMPOSE_ENV_FILE" \
+  -f ops/compose.yaml exec api node -e '
 const { createHmac } = require("node:crypto");
 const email = process.argv[1].trim().toLowerCase();
 console.log(createHmac("sha256", process.env.AUTH_SECRET)

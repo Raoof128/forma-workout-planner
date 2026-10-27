@@ -49,25 +49,6 @@ import {
   adjustRest,
   toggleRest,
 } from "../routineProgramming.js";
-// Keep the screen on during a hold so the countdown stays visible. The lock
-// is released when the tab hides, so it is requested again on return.
-async function keepAwake(ref) {
-  if (ref.current || !navigator.wakeLock) return;
-  try {
-    const lock = await navigator.wakeLock.request("screen");
-    ref.current = lock;
-    lock.addEventListener("release", () => {
-      if (ref.current === lock) ref.current = null;
-    });
-  } catch {
-    /* Battery saver or an unsupported browser: the timer still runs. */
-  }
-}
-function letSleep(ref) {
-  const lock = ref.current;
-  ref.current = null;
-  void lock?.release().catch(() => {});
-}
 // Whole units only (the legacy plank's timer moves in 10-second reps), and
 // never longer than the set's field can record.
 const holdMax = (unit) => Math.min(HOLD_MAX, unit.max);
@@ -119,6 +100,13 @@ export default function Workout({
   const [restOpen, setRestOpen] = useState(false);
   // { mode: "add" } or { mode: "replace", key } while the exercise picker is open.
   const [picker, setPicker] = useState(null);
+  const replacement =
+    picker?.mode === "replace"
+      ? session.exercises.find((item) => entryKey(item) === picker.key)
+      : null;
+  useEffect(() => {
+    if (picker?.mode === "replace" && !replacement) setPicker(null);
+  }, [picker, replacement]);
   // A change that would discard completed sets waits here for confirmation.
   const [pending, setPending] = useState(null);
   // The toggle flips at once; the profile save follows and wins if it fails.
@@ -131,21 +119,44 @@ export default function Workout({
   // not workout data, so the saved workspace format is unchanged.
   const [hold, setHold] = useState(null);
   const [holdLengths, setHoldLengths] = useState({});
-  const wakeLock = useRef(null);
   const finishedHold = useRef(null);
   useEffect(() => {
-    if (!hold?.endsAt) {
-      letSleep(wakeLock);
-      return;
+    if (!hold?.endsAt) return;
+    let active = true;
+    let requesting = false;
+    let lock = null;
+    // A grant can arrive after pause or navigation. Each running hold owns
+    // its request so late grants cannot keep the screen awake or replace it.
+    async function keepAwake() {
+      if (!active || requesting || lock || !navigator.wakeLock) return;
+      requesting = true;
+      try {
+        const granted = await navigator.wakeLock.request("screen");
+        if (!active) {
+          void granted.release().catch(() => {});
+          return;
+        }
+        lock = granted;
+        granted.addEventListener("release", () => {
+          if (lock === granted) lock = null;
+        });
+      } catch {
+        /* Battery saver or an unsupported browser: the timer still runs. */
+      } finally {
+        requesting = false;
+      }
     }
-    void keepAwake(wakeLock);
+    void keepAwake();
     const again = () => {
-      if (document.visibilityState === "visible") void keepAwake(wakeLock);
+      if (document.visibilityState === "visible") void keepAwake();
     };
     document.addEventListener("visibilitychange", again);
-    return () => document.removeEventListener("visibilitychange", again);
+    return () => {
+      active = false;
+      document.removeEventListener("visibilitychange", again);
+      void lock?.release().catch(() => {});
+    };
   }, [hold?.endsAt]);
-  useEffect(() => () => letSleep(wakeLock), []);
   useEffect(() => {
     const timer = setInterval(() => setNow(Date.now()), 250);
     const refresh = () => setNow(Date.now());
@@ -898,12 +909,12 @@ export default function Workout({
       {guide && (
         <ExerciseGuide exercise={guide} onClose={() => setGuide(null)} />
       )}
-      {picker && (
+      {picker && (picker.mode === "add" || replacement) && (
         <ExercisePicker
           title={
             picker.mode === "add"
               ? "Add an exercise"
-              : `Replace ${nameOf(session.exercises.find((item) => entryKey(item) === picker.key))}`
+              : `Replace ${nameOf(replacement)}`
           }
           actionLabel={picker.mode === "add" ? "Add" : "Replace with"}
           onClose={() => {

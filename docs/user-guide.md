@@ -16,7 +16,7 @@ Changing or deleting a routine does not rewrite completed workout history. An ac
 
 The template section adds strength, bodyweight, core, cardio, carries and mobility
 starting points. Selecting one creates an editable copy in your routines. Choose
-appropriate loads yourself. The library searches 1,661 exercises across all
+appropriate loads yourself. The library searches reviewed exercises across all
 pages; use equipment/activity filters and **Show more exercises** to browse.
 Imported guides show their source, author and licence.
 
@@ -25,7 +25,7 @@ On Overview, choose your next session and use **Schedule your week** to mark you
 ## Log a workout
 
 1. Start a routine from Overview or its details.
-2. Enter the displayed measurements for a set, then mark it complete: weight/reps, seconds, metres, or loaded carry distance. A one-side-at-a-time exercise (a lunge, a one-arm row, a side plank) shows **Left** and **Right** rep fields instead of one rep count; both sides are needed before the set can be completed, and the set's total reps count toward volume.
+2. Enter the displayed measurements for a set, then mark it complete: weight/reps, seconds, metres, or loaded carry distance. A one-side-at-a-time load-and-reps exercise (a lunge or a one-arm row) shows **Left** and **Right** rep fields instead of one rep count; both sides are needed before the set can be completed, and the set's total reps count toward volume.
 3. Use the rest timer between sets; choose 60, 90, or 120 seconds, pause it, or skip rest.
 4. Add sets, remove an unfinished last set, and write session notes as needed. Open the book icon for exercise instructions.
 5. Each exercise card has a **⋯** menu with **Move up**, **Move down**, **Replace exercise** and **Remove exercise** (and **Use the timed version** for a hold still counted in reps); use **Add exercise** below the last card to add one. Replacing keeps the logged sets when both exercises record the same measurements. Removing an exercise, or replacing it with one that records different measurements, asks first when it would discard completed sets. The menu works with the keyboard: Enter or the arrow keys open it, arrows move, Escape closes.
@@ -39,11 +39,11 @@ Calisthenics and gymnastic holds log seconds with the hold timer too: the hollow
 
 By default the weight and reps you type into a set also fill the later unfinished sets of that exercise, as long as they still show the value you replaced; a set you changed deliberately keeps its own value. Turn **Fill the remaining sets with what I type** off in the workout side panel or in Settings to enter every set by hand.
 
-The exercise library marks 408 movements as performed one side at a time. They log left and right by default; the **Reps per leg/arm/side** option in a routine's exercise menu turns side logging on or off for any load-and-reps exercise.
+The exercise library marks reviewed movements as performed one side at a time. Load-and-reps movements log left and right by default; the **Reps per leg/arm/side** option in a routine's exercise menu turns side logging on or off for any load-and-reps exercise.
 
 Only completed sets count toward volume and progress. Complete at least one set before saving a workout. Completed sets are locked for entry; undo completion before changing them. A different routine cannot silently replace an active workout: the app offers a choice to resume or discard and start again.
 
-Persistent sessions and timers survive navigation and reload. Wait for “Saving changes…” to disappear before closing. If the app reports temporary mode, export a backup before leaving.
+Saved sessions and rest timers survive navigation and reload. A running hold timer is local to the workout view and resets when you leave that view or reload; completed hold sets remain saved. Wait for “Saving changes…” to disappear before closing. If the app reports temporary mode, export a backup before leaving.
 
 ## Read and correct progress
 
@@ -62,7 +62,7 @@ personalized exercise prescriptions.
 
 In **Settings**, use **Export my data** to download the entire workspace as JSON. Keep a copy somewhere outside browser storage and confirm the download completed before resetting or clearing site data. To move to another browser or device, transfer that file yourself, open FORMA there, and choose **Import backup**.
 
-Import validates the file before showing a confirmation. If you select another file while an earlier file is still being read, only the most recently selected backup can open the confirmation preview; a late result from the earlier read is ignored. Restoring replaces the current workspace and attempts to preserve the previous data locally first. Files must be FORMA version 1 JSON backups within the documented size limit. A local recovery copy is not an external backup; clearing site data removes both. Recovery preservation and replacement use separate browser-storage writes, so they are not a crash-atomic transaction. Keep an external backup before restoring or resetting.
+Import validates the file before showing a confirmation. If you select another file while an earlier file is still being read, only the most recently selected backup can open the confirmation preview; a late result from the earlier read is ignored. Restoring replaces the current workspace and attempts to preserve the previous data locally first. Files must be FORMA version 1 or 2 JSON backups within the documented size limit. Version 1 backups migrate to version 2 during import. A local recovery copy is not an external backup; clearing site data removes both. Recovery preservation and replacement use separate browser-storage writes, so they are not a crash-atomic transaction. Keep an external backup before restoring or resetting.
 
 If data cannot be read, first use **Download original data** and keep the downloaded file outside the browser. Then restore a known-good backup, or use the explicit reset option only after confirming you have preserved anything you need. If storage is full or blocked, follow the displayed error; do not clear site data as the first recovery step. Temporary mode keeps changes only in memory for that visit: export before closing or refreshing. A conflict message means another tab changed the record you were editing. Reopen that record and reapply your changes to the latest version.
 

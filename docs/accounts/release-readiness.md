@@ -1,6 +1,13 @@
 # Account release readiness
 
-**Current status, 13 October 2026:** GO for the owner-authorised controlled
+**Latest maintenance release, 26 October 2026:** the runtime audit is deployed
+to staging and production. Both passed the defined anonymous HTTP and browser
+smoke; existing accessibility findings remain follow-ups. Completed temporary
+release-access cleanup and ongoing application CI are recorded separately in the
+[dated release receipt](../qa/runtime-quality-2026-10-26/README.md). The launch
+decision below remains the historical 13 October record.
+
+**Launch status, 13 October 2026:** GO for the owner-authorised controlled
 production activation. Hosted staging lifecycle, isolated production services,
 credential rotation, signed off-host restores, scheduled backups and alerts have
 now been verified. See [the current launch record](production-launch.md) and

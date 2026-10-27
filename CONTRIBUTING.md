@@ -15,7 +15,7 @@ self-hosted, member-owned account workspace.
 
 ## Maintainer notes
 
-FORMA's guest mode stores workout data in browser storage. Account mode uses the version 1 workspace in PostgreSQL. Before changing validation, import/export, ownership, revision, or account deletion behavior, review the [data model](docs/data-model.md), [database model](docs/accounts/database.md), and [API contract](docs/accounts/api.md). Do not request real workout backups in public issues. Use synthetic data when reproducing import or recovery problems.
+FORMA's guest mode stores workout data in browser storage. Account mode uses the version 2 workspace in PostgreSQL; version 1 backups migrate on import. Before changing validation, import/export, ownership, revision, or account deletion behavior, review the [data model](docs/data-model.md), [database model](docs/accounts/database.md), and [API contract](docs/accounts/api.md). Do not request real workout backups in public issues. Use synthetic data when reproducing import or recovery problems.
 
 For releases, verify the frontend and server builds and supported checks, review the diff and bundled assets, update the changelog and [account release evidence](docs/accounts/release-readiness.md) with observed results, and keep the previous application image available. Account releases require database migration compatibility and tested recovery; static-file rollback alone does not roll back member data or PostgreSQL schema. This repository does not document a release cadence or response-time commitment.
 

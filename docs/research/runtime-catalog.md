@@ -2,10 +2,12 @@
 
 [Research index](README.md) · [User guide](../user-guide.md)
 
-The current library offers **1,414 reviewed selectable movements**; see the
+As of 23 October 2026, the library offers **1,411 reviewed selectable movements**
+and retains **1,711 compatible exercise IDs**; see the
 [catalog quality correction](catalog-quality.md) for duplicate review, guide
-quality and machine coverage. All 1,661 previously published IDs remain compatible,
-and 20 new records cover missing machines and corrected timed measurements.
+quality and machine coverage, and the [logging review](exercise-logging-review.md)
+for the later timed-hold identities. All 1,661 originally published IDs remain
+compatible. The following source history describes the initial import.
 
 The original imported catalog contained **1,661 exercises**: 16 original movements with their IDs
 and names unchanged, 858 additional Free Exercise DB entries, 654 additional
@@ -36,7 +38,10 @@ licence; source and adapted text are available in the checked-in JSON files.
 wger's AGPL software licence was not treated as its content licence; no wger
 application code was imported. Free Exercise DB images were excluded because
 their provenance needs separate review. No demonstration images or videos were
-copied. Sources are not endorsements or personalised exercise prescriptions.
+copied during that initial import. Later original artwork and reviewed video
+coverage are documented in [original artwork](original-art/README.md) and
+[exercise videos](exercise-videos.md). Sources are not endorsements or
+personalised exercise prescriptions.
 
 ## Reproduce and refresh
 

@@ -38,6 +38,7 @@ const FORWARDED_RESPONSE_HEADERS = new Set([
   "last-modified",
   "retry-after",
   "vary",
+  "www-authenticate",
 ]);
 const API_CONTENT_TYPES = ["application/json", "text/plain"];
 // The routes that authenticate with a bearer token instead of a cookie.

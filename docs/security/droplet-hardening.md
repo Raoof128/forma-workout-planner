@@ -1,5 +1,10 @@
 # Droplet and container hardening
 
+This is the 12 October 2026 host-hardening checklist. Subsequent FORMA-scoped
+host checks are recorded in the [deployment record](deployment-record.md) and
+[production launch record](../accounts/production-launch.md). Historical
+BLOCKED labels below do not replace current operator checks.
+
 [Back to security overview](README.md)
 
 The Droplet was not accessed. This page records what the repository enforces

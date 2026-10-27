@@ -105,6 +105,77 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   seconds in `dyld` loading system frameworks; Apple's Settings app shows
   the same, so it is the simulator, not FORMA.
 
+### Raouf: 2026-10-27 — cloudflared 2026.10.4 security upgrade
+
+- Upgraded the tunnel connector from 2026.9.3 to 2026.10.4 (digest-pinned) in
+  response to Cloudflare's eMudhra certificate advisory; versions before
+  2026.10.2 trust compromised intermediates.
+- Applied to staging then production by recreating only `cloudflared`; both
+  report 2026.10.4 with four registered edge connections. API and database
+  containers were not restarted.
+
+### Raouf: 2026-10-26 — Runtime audit deployed
+
+- Merged PR #30 (`10942dc`) and released the audited API then account website
+  to staging and production. Both APIs run Node 26.12.1/Undici 8.12.2; deployed
+  HTML and all four assets match the audited account build.
+- Both environments passed 38 HTTP checks and 15 responsive functional states;
+  backups, health, unchanged counts/other containers and zero observed API
+  error lines were recorded. The same 30 baseline accessibility node findings
+  remain follow-ups, without new or changed findings.
+- CI security and non-browser checks passed. At 05:50 UTC, development
+  browser CI had passed and later browser suites were unfinished. Temporary
+  release-access cleanup completed at 05:48:47 UTC; deployment credentials
+  were revoked. See [the release record](docs/qa/runtime-quality-2026-10-26/README.md)
+  for exact versions, image identity and verification limits.
+
+### Raouf: 2026-10-26 — Release preparation and scanner false positive
+
+- **Scope:** prepare the owner-requested commit, push and redeployment of the
+  completed audit; source commit `d770a6c` is published in PR #30.
+- **Change:** reword one descriptive session-lifetime ledger sentence and add
+  only its exact historical fingerprint to `.gitleaksignore`. The scanner
+  matched the same ordinary prose twice; no credential material was present.
+  Application code, dependencies and tested build inputs are unchanged.
+- **Verification:** the original redacted report identifies the single ledger
+  line and fingerprint. Recheck the complete history and documentation before
+  release; do not broaden the rule or path allowlist.
+- **Follow-up:** release the verified API image before the account frontend,
+  staging before production, and record observed hosted outcomes separately.
+
+### Raouf: 2026-10-26 — Full runtime and file audit
+
+- Reviewed all 550 applicable human-maintained files and individually validated
+  903 generated/imported/binary files: all 1,453 baseline paths accounted for.
+  Added the six requested audit reports, exhaustive file ledger and targeted
+  regressions under the existing source/test conventions.
+- Fixed cloud refresh/write recovery races, a conflict-reload edit window,
+  late wake-lock leaks, stale import reviews, cross-tab replacement crashes,
+  imported-ID focus errors, overrange per-side targets, Sydney date/week
+  inconsistencies, coach unilateral strength totals and invisible export errors.
+- Aggregate Progress records in one pass; cache unchanged catalog search text;
+  compute the captured guest fingerprint once per mount. Established workspace
+  reads use one owner-filtered SELECT while retaining validation, transactional
+  first creation and revisioned writes. The API survives idle database-client
+  loss, and the gateway preserves the documented bearer challenge.
+- Patch four transitive fast-uri lockfile records and use a scoped Miniflare
+  Undici 7.30.1 override after advisory checks. Pin Node 26.12.1 with bundled
+  Undici 8.12.2 in both Docker stages; direct library pins stay unchanged.
+  Correct schema/auth/operations
+  documentation and unsafe rollback instructions without rewriting historical
+  release receipts. No migration, visual redesign or asset-quality reduction.
+- Verification: lint, formatting, types, docs and builds pass; unit 134/134,
+  server 67/67 on Node 26.12.1, Worker 27/27 and operations 14/14. Full npm
+  audit reports zero vulnerabilities. All 902 browser cases have passing
+  coverage: the original 901-pass/1-timeout run was investigated, and the
+  affected 22-case profile passed unchanged at its original budget. Matched
+  performance and screenshot evidence are recorded in the audit reports.
+- The training lazy-load experiment was rejected after slower first navigation
+  and an offline regression. Cold startup remains a documented opportunity.
+  Changes are local and uncommitted; no deployment or production data change.
+  See `docs/audits/forma-runtime-quality-2026-10/` for findings, exact metrics,
+  test results, screenshot evidence and release-review limits.
+
 ### Raouf: 2026-10-22 — Dependency updates from Dependabot #15–#17
 
 - One branch off `main` replaces the three stale Dependabot PRs: the API's

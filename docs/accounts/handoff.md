@@ -1,5 +1,10 @@
 # FORMA account implementation handoff
 
+This is the original 12 October 2026 implementation handoff. Its draft PR and
+NO-GO statements describe that review stage; the later
+[production launch record](production-launch.md) records activation and hosted
+checks. Preserve this handoff as historical evidence.
+
 The account implementation is available in [draft PR #2](https://github.com/Raoof128/forma-workout-planner/pull/2), stacked on the earlier release-audit PR. **External release remains NO-GO.** See [release readiness](release-readiness.md) for current results and mandatory gates.
 
 1. **Architecture:** React member workspaces use a same-origin Cloudflare Worker, private Fastify/Better Auth API and PostgreSQL. The planned private connection uses Tunnel plus Access service authentication. Cloudflare Email Service supplies transactional mail.

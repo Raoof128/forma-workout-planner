@@ -1,5 +1,11 @@
 # Cloudflare Worker, Access and Tunnel
 
+This document records the 12 October 2026 code review and original hosting
+checklist. Later hosted Access/Tunnel checks are recorded in the
+[deployment record](deployment-record.md) and
+[production launch record](../accounts/production-launch.md). The original
+BLOCKED items below are historical, not a current live assessment.
+
 [Back to security overview](README.md)
 
 The Worker (`worker/index.ts`) serves the SPA and is the only public path to

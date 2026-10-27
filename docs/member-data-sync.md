@@ -1,6 +1,6 @@
 # Member workspace API and conflict handling
 
-The API stores one version 1 FORMA workspace per authenticated Better Auth user
+The API stores one version 2 FORMA workspace per authenticated Better Auth user
 in PostgreSQL. Every workspace query is scoped by the user ID obtained from the
 server-validated session. The request body cannot choose an owner. The browser
 uses the same-origin `/api/workspace` endpoints; it never connects to PostgreSQL.
@@ -14,16 +14,18 @@ revision and monotonic UTC timestamp.
 
 ```json
 {
-  "data": { "version": 1 },
+  "data": { "version": 2 },
   "expectedRevision": 4,
   "operationId": "client-generated-unique-id"
 }
 ```
 
-The abbreviated `data` shown above represents the validated version 1 FORMA
-backup shape. PUT validates with the same runtime rules as browser backups,
-including duplicate-ID and active/history consistency checks, and accepts at
-most 20 MiB of workspace data. A successful response is the committed
+The abbreviated `data` shown above represents the validated version 2 FORMA
+backup shape. Version 1 input is migrated before storage. PUT shares the
+browser backup validator, including duplicate-ID and active/history consistency
+checks, but also rejects unknown fields at every level. It accepts at most
+20 MiB of workspace data, 200 routines, 10,000 completed workouts and 150,000
+sets across active and completed workouts. A successful response is the committed
 `{ data, revision, updatedAt }` acknowledgement. Clients must use that
 acknowledgement as the base for their next write.
 
@@ -46,7 +48,8 @@ workspace.
 
 `GET /api/workspace/export` returns the authenticated member's validated
 workspace as a JSON attachment. Import uses the same PUT path after explicit
-confirmation in the interface, so imported ownership fields are ignored and
-the authenticated account remains the only database owner. Account deletion
-deletes the Better Auth user; foreign-key cascades remove its workspace and
+confirmation in the interface. Browser backup parsing strips unknown fields
+before submitting the validated data; direct API requests with unknown fields
+are rejected. In both cases the authenticated account remains the only
+database owner. Account deletion deletes the Better Auth user; foreign-key cascades remove its workspace and
 idempotency records.

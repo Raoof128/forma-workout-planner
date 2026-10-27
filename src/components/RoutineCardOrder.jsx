@@ -178,7 +178,9 @@ export default function RoutineCardOrder({
     const index = order.indexOf(id);
     await commit(id, moveTo(order, id, index + direction));
     grid.current
-      ?.querySelector(`[data-routine-id="${id}"] .routine-card-menu summary`)
+      ?.querySelector(
+        `[data-routine-id="${CSS.escape(id)}"] .routine-card-menu summary`,
+      )
       ?.focus();
   }
 

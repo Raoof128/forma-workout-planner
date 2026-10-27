@@ -12,8 +12,9 @@ administrative API exists.
 - `member_workspace.owner_id` and the `member_workspace_operations` key
   `(owner_id, operation_id)` are owner-scoped, with foreign keys that cascade
   on account deletion.
-- The workspace schema strips unknown keys, so imported backups cannot carry
-  owner fields into storage.
+- Browser backup parsing strips unknown keys; the API uses strict validation
+  and rejects unknown keys at every level. Neither path lets imported owner
+  fields select the workspace owner.
 - Session list and revoke endpoints address sessions by an HMAC reference and
   always constrain SQL by the caller's user ID.
 - `X-Forma-Member` must equal the HMAC reference of the session's user on every

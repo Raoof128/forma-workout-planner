@@ -215,3 +215,85 @@ test("coach bearer failures and lockouts are distinct security events", () => {
     null,
   );
 });
+
+test("coach strength estimates use per-side reps while volume keeps both sides", () => {
+  const date = "2026-10-18T09:00:00.000Z";
+  for (const [left, right, expected] of [
+    [8, 8, 38],
+    [5, 5, 35],
+    [6, 10, 40],
+    [13, 13, 0],
+  ]) {
+    const data = validateData({
+      ...freshData(),
+      history: [
+        {
+          id: "per-side",
+          name: "Per-side workout",
+          startedAt: Date.parse(date) - 60_000,
+          date,
+          duration: 60,
+          exercises: [
+            {
+              exerciseId: "lunge",
+              perSide: true,
+              sets: [
+                {
+                  weight: 30,
+                  reps: left + right,
+                  sides: { left, right },
+                  done: true,
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    }) as WorkspaceData;
+    const summary = coachSummary(data, 28, Date.parse(date) + 1000);
+    assert.equal(summary.personalBests[0].estimatedOneRM, expected);
+    assert.equal(summary.weekly[0].volume, 30 * (left + right));
+    assert.deepEqual(summary.sessions[0].exercises[0].sets[0].sides, {
+      left,
+      right,
+    });
+  }
+});
+
+test("coach weekly totals use Sydney Mondays in standard and daylight time", () => {
+  for (const [before, after, previousWeek, nextWeek] of [
+    [
+      "2026-07-19T13:59:59.000Z",
+      "2026-07-19T14:00:00.000Z",
+      "2026-07-13",
+      "2026-07-20",
+    ],
+    [
+      "2026-10-18T12:59:59.000Z",
+      "2026-10-18T13:00:00.000Z",
+      "2026-10-12",
+      "2026-10-19",
+    ],
+  ]) {
+    const data = validateData({
+      ...freshData(),
+      history: [before, after].map((date, index) => ({
+        id: `week-boundary-${index}`,
+        name: "Weekly workout",
+        startedAt: Date.parse(date) - 60_000,
+        date,
+        duration: 60,
+        exercises: [
+          {
+            exerciseId: "bench",
+            sets: [{ weight: 20, reps: 5, done: true }],
+          },
+        ],
+      })),
+    }) as WorkspaceData;
+    assert.deepEqual(coachSummary(data, 28, Date.parse(after) + 1000).weekly, [
+      { weekStart: nextWeek, sessions: 1, volume: 100 },
+      { weekStart: previousWeek, sessions: 1, volume: 100 },
+    ]);
+  }
+});
