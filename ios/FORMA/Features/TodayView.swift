@@ -1,10 +1,20 @@
 import FORMACore
 import SwiftUI
 
+/// Hero colours are fixed, so build each `UIColor` once instead of per render.
+private enum HeroColor {
+  static let ink = Color(hex: 0x151A17)
+  static let scrim = Color(hex: 0x151A17).opacity(0.95)
+  static let detail = Color(hex: 0xDEE5DC)
+}
+
 struct TodayView: View {
   @Environment(AppModel.self) private var model
 
   var body: some View {
+    // `model.routines` filters the whole routine list on every read. Read it
+    // once per render rather than five times (once per row for its number).
+    let routines = model.routines
     ScrollView {
       VStack(alignment: .leading, spacing: 28) {
         ViewThatFits(in: .horizontal) {
@@ -34,7 +44,7 @@ struct TodayView: View {
             model.receipt = nil
             model.workoutPresented = true
           }
-        } else if let routine = model.routines.first {
+        } else if let routine = routines.first {
           trainingHero(
             name: routine.name,
             detail: "\(routine.exercises.count) exercises · about \(routine.minutes) min",
@@ -53,16 +63,13 @@ struct TodayView: View {
         WeekStrip()
 
         VStack(alignment: .leading, spacing: 16) {
-          SectionHeading(title: "Your training space", detail: "\(model.routines.count) routines")
-          ForEach(model.routines.prefix(3)) { routine in
+          SectionHeading(title: "Your training space", detail: "\(routines.count) routines")
+          ForEach(Array(routines.prefix(3).enumerated()), id: \.element.id) { position, routine in
             NavigationLink {
               RoutineDetailView(routine: routine)
             } label: {
               HStack(spacing: 16) {
-                Text(
-                  String(
-                    format: "%02d", (model.routines.firstIndex { $0.id == routine.id } ?? 0) + 1)
-                )
+                Text(String(format: "%02d", position + 1))
                 .font(.title2.weight(.black).monospacedDigit()).foregroundStyle(FormaTheme.accent)
                 VStack(alignment: .leading, spacing: 5) {
                   Text(routine.name).font(.headline).foregroundStyle(FormaTheme.primary)
@@ -124,7 +131,7 @@ struct TodayView: View {
         }
         .accessibilityHidden(true)
         LinearGradient(
-          colors: [.clear, Color(hex: 0x151A17).opacity(0.95)], startPoint: .top, endPoint: .bottom)
+          colors: [.clear, HeroColor.scrim], startPoint: .top, endPoint: .bottom)
         VStack(alignment: .leading, spacing: 10) {
           Label(
             inProgress ? "IN PROGRESS" : "YOUR NEXT SESSION",
@@ -133,7 +140,7 @@ struct TodayView: View {
           .font(.caption.weight(.bold)).tracking(1.5).foregroundStyle(FormaTheme.lime)
           Text(name).font(.system(.largeTitle, design: .default, weight: .black).width(.condensed))
             .foregroundStyle(.white).fixedSize(horizontal: false, vertical: true)
-          Text(detail).font(.subheadline).foregroundStyle(Color(hex: 0xDEE5DC))
+          Text(detail).font(.subheadline).foregroundStyle(HeroColor.detail)
         }
         .padding(24)
       }
@@ -149,7 +156,7 @@ struct TodayView: View {
       .accessibilityIdentifier("start-workout")
       .disabled(model.busy)
       .padding(16)
-      .background(Color(hex: 0x151A17))
+      .background(HeroColor.ink)
     }
     .clipShape(RoundedRectangle(cornerRadius: 24))
   }
@@ -175,16 +182,33 @@ struct WeekStrip: View {
     "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",
   ]
 
+  /// Sessions and weekdays (Monday = 0) completed this week. `model.history`
+  /// is sorted newest first, so stop at the first session before this week
+  /// instead of parsing every saved date (up to 10,000) on each render.
+  private func thisWeek() -> (count: Int, days: Set<Int>) {
+    guard let interval = TrainingDate.calendar.dateInterval(of: .weekOfYear, for: .now) else {
+      return (0, [])
+    }
+    var count = 0
+    var days = Set<Int>()
+    for session in model.history {
+      let date = TrainingDate.date(session)
+      if date < interval.start { break }
+      guard interval.contains(date) else { continue }
+      count += 1
+      days.insert((TrainingDate.calendar.component(.weekday, from: date) + 5) % 7)
+    }
+    return (count, days)
+  }
+
   var body: some View {
-    let completed = TrainingDate.completedThisWeek(model.history)
-    let completedDays = Set(
-      completed.map {
-        (TrainingDate.calendar.component(.weekday, from: TrainingDate.date($0)) + 5) % 7
-      })
+    let week = thisWeek()
+    let completedDays = week.days
+    let schedule = model.workspace?.schedule ?? []
     VStack(alignment: .leading, spacing: 18) {
       SectionHeading(
         title: "A little, consistently.",
-        detail: "\(completed.count) / \(model.workspace?.profile.goal ?? 4) this week")
+        detail: "\(week.count) / \(model.workspace?.profile.goal ?? 4) this week")
       if textSize.isAccessibilitySize {
         VStack(alignment: .leading, spacing: 16) {
           ForEach(0..<7) { day in
@@ -193,7 +217,7 @@ struct WeekStrip: View {
               Text(
                 completedDays.contains(day)
                   ? "Workout completed"
-                  : model.workspace?.schedule.contains(day) == true
+                  : schedule.contains(day)
                     ? "Planned training day" : "No workout recorded"
               )
               .font(.subheadline).foregroundStyle(FormaTheme.secondary)
@@ -204,7 +228,7 @@ struct WeekStrip: View {
         HStack(spacing: 0) {
           ForEach(0..<7) { day in
             let trained = completedDays.contains(day)
-            let scheduled = model.workspace?.schedule.contains(day) == true
+            let scheduled = schedule.contains(day)
             VStack(spacing: 10) {
               Text(days[day]).font(.caption.weight(.semibold)).foregroundStyle(FormaTheme.secondary)
               ZStack {

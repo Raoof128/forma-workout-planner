@@ -58,6 +58,24 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-27 — iOS launch path and performance rules
+
+- Keep startup work off the main thread: `AppModel.prepareLaunch()` is
+  `@concurrent` and returns everything the first screen needs. Do not add
+  synchronous decoding or SQLite work to `load()` or view initialisers.
+- Exception: `WatchWorkoutCoordinator.init` must keep activating
+  `WCSession` and registering the HealthKit mirroring handler at launch;
+  iOS may wake the app in the background for either.
+- Engine calls look the catalogue up through `ExerciseMetricIndex.cached`;
+  never rebuild a dictionary of the catalogue per call or per row.
+- `ios/FORMA.xcodeproj` is generated and untracked; a fresh worktree needs
+  `xcodegen generate` (or a copy) before building. On the iOS 27.0
+  simulator, 5 of the 8 UI tests also fail on the original code, so compare
+  against a baseline before blaming a change.
+- Device installs use automatic signing with team `3L5A4R7JNY`
+  (`-allowProvisioningUpdates`); the bundle ID is still the provisional
+  `dev.raoufabedini.forma`.
+
 ### Raouf: 2026-10-22 — Dependency updates
 
 - `npm install` writes `^` ranges; this repo pins exact versions, so strip

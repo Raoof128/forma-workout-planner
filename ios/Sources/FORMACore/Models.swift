@@ -98,9 +98,9 @@ public struct HoldUnit: Codable, Equatable, Sendable {
 
 public struct Exercise: Codable, Identifiable, Equatable, Sendable {
   public var id: String
-  public var name: String
-  public var muscle: String
-  public var equipment: String
+  public var name: String { didSet { refreshSearchKey() } }
+  public var muscle: String { didSet { refreshSearchKey() } }
+  public var equipment: String { didSet { refreshSearchKey() } }
   public var description: String
   public var metric: String
   public var weight: Double
@@ -110,7 +110,7 @@ public struct Exercise: Codable, Identifiable, Equatable, Sendable {
   public var rawSource: ExerciseSource?
   public var selectable: Bool
   public var guide: String
-  public var aliases: [String]
+  public var aliases: [String] { didSet { refreshSearchKey() } }
   public var defaults: ExerciseDefaults
   public var canonicalId: String
   public var guideId: String
@@ -121,6 +121,14 @@ public struct Exercise: Codable, Identifiable, Equatable, Sendable {
   /// `HoldTimer.isAvailable(for:entry:)`, which also applies the entry's sides.
   public var usesHoldTimer: Bool
   public var holdUnit: HoldUnit
+  /// Folded name, muscle, equipment and aliases for `matches(query:)`. Derived
+  /// from those four fields, so it never affects equality or the stored format.
+  private(set) var searchKey: String
+
+  private mutating func refreshSearchKey() {
+    searchKey = Self.makeSearchKey(
+      name: name, muscle: muscle, equipment: equipment, aliases: aliases)
+  }
 
   public init(
     id: String, name: String, muscle: String, equipment: String, description: String,
@@ -159,6 +167,8 @@ public struct Exercise: Codable, Identifiable, Equatable, Sendable {
     self.references = references
     self.usesHoldTimer = usesHoldTimer
     self.holdUnit = holdUnit ?? HoldUnit()
+    searchKey = Self.makeSearchKey(
+      name: name, muscle: muscle, equipment: equipment, aliases: aliases)
   }
 
   private enum CodingKeys: String, CodingKey {

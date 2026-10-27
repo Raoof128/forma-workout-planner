@@ -143,6 +143,50 @@ final class WorkspaceStoreTests: XCTestCase, @unchecked Sendable {
     XCTAssertEqual(try Data(contentsOf: recovery), Data("{broken".utf8))
   }
 
+  func testSaveStillDetectsDamageWrittenAfterThisConnectionsOwnCommit() async throws {
+    let url = try temporaryURL()
+    let store = try WorkspaceStore(url: url, catalog: Fixtures.catalog)
+    let original = try await store.load(seed: Fixtures.workspace())
+    var candidate = original
+    candidate.profile.name = "Verified by this connection"
+    let saved = try await store.save(candidate, expectedRevision: original.revision)
+    var connection: OpaquePointer?
+    XCTAssertEqual(sqlite3_open(url.path, &connection), SQLITE_OK)
+    XCTAssertEqual(
+      sqlite3_exec(connection, "UPDATE workspace SET snapshot = X'7B62726F6B656E'", nil, nil, nil),
+      SQLITE_OK)
+    sqlite3_close(connection)
+    var next = saved
+    next.profile.name = "Must not replace damaged data"
+    do {
+      _ = try await store.save(next, expectedRevision: saved.revision)
+      XCTFail("Damaged bytes must not be treated as the snapshot this connection verified")
+    } catch { XCTAssertEqual(error as? FormaError, .corruptStore) }
+    let files = try FileManager.default.contentsOfDirectory(
+      at: url.deletingLastPathComponent(), includingPropertiesForKeys: nil)
+    let recovery = try XCTUnwrap(files.first { $0.lastPathComponent.hasPrefix("forma-recovery-") })
+    XCTAssertEqual(try Data(contentsOf: recovery), Data("{broken".utf8))
+  }
+
+  func testConsecutiveSavesAdvanceRevisionAndKeepPreviousSnapshot() async throws {
+    let url = try temporaryURL()
+    let store = try WorkspaceStore(url: url, catalog: Fixtures.catalog)
+    var current = try await store.load(seed: Fixtures.workspace())
+    var before = current
+    for index in 1...3 {
+      before = current
+      current.profile.name = "Save \(index)"
+      current = try await store.save(current, expectedRevision: current.revision)
+      XCTAssertEqual(current.revision, index)
+    }
+    let previous = try await store.previousSnapshot()
+    XCTAssertEqual(previous?.profile.name, "Save 2")
+    XCTAssertEqual(before.revision, 2)
+    let reopened = try WorkspaceStore(url: url, catalog: Fixtures.catalog)
+    let loaded = try await reopened.load(seed: Workspace())
+    XCTAssertEqual(loaded, current)
+  }
+
   func testResetCommitsEmptyGuestErasesPreviousSnapshotAndNeverReseeds() async throws {
     let url = try temporaryURL()
     let store = try WorkspaceStore(url: url, catalog: Fixtures.catalog)

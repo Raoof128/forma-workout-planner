@@ -55,32 +55,88 @@ private struct SessionView: View {
   @Environment(WorkoutManager.self) private var manager
   @Environment(\.isLuminanceReduced) private var luminanceReduced
 
+  // Each live value lives in its own small view so a heart-rate or energy update
+  // re-renders one row, and the once-a-second clock re-renders one Text.
   var body: some View {
-    // Always On: one update a second at most, and no running animation.
-    TimelineView(.periodic(from: .now, by: luminanceReduced ? 60 : 1)) { context in
-      ScrollView {
-        VStack(alignment: .leading, spacing: 8) {
-          Text(elapsed(at: context.date))
-            .font(.system(.title, design: .rounded, weight: .semibold).monospacedDigit())
-            .foregroundStyle(manager.phase == .paused ? .secondary : lime)
-            .accessibilityLabel("Elapsed time \(elapsed(at: context.date))")
-          metric(
-            manager.metrics?.heartRate.map { "\(Int($0.rounded())) bpm" } ?? "-- bpm",
-            symbol: "heart.fill", color: .red)
-          metric(
-            manager.metrics?.activeEnergy.map { "\(Int($0.rounded())) kcal" } ?? "-- kcal",
-            symbol: "flame.fill", color: .orange)
-          if !manager.mirrored {
-            Label("Not connected to iPhone", systemImage: "iphone.slash")
-              .font(.footnote).foregroundStyle(.secondary)
-          }
-          if !luminanceReduced { controls }
+    ScrollView {
+      VStack(alignment: .leading, spacing: 8) {
+        ElapsedTimeView()
+        HeartRateRow()
+        EnergyRow()
+        if !manager.mirrored {
+          Label("Not connected to iPhone", systemImage: "iphone.slash")
+            .font(.footnote).foregroundStyle(.secondary)
         }
+        if !luminanceReduced { SessionControls() }
       }
     }
   }
+}
 
-  private var controls: some View {
+private struct ElapsedTimeView: View {
+  @Environment(WorkoutManager.self) private var manager
+  @Environment(\.isLuminanceReduced) private var luminanceReduced
+
+  var body: some View {
+    let paused = manager.phase == .paused
+    // Always On: one update a minute, and no running animation.
+    TimelineView(.periodic(from: .now, by: luminanceReduced ? 60 : 1)) { context in
+      let elapsed = Self.format(manager.elapsed(at: context.date))
+      Text(elapsed)
+        .font(.system(.title, design: .rounded, weight: .semibold).monospacedDigit())
+        .foregroundStyle(paused ? .secondary : lime)
+        .accessibilityLabel("Elapsed time \(elapsed)")
+    }
+  }
+
+  /// `m:ss` style text without `String(format:)`, which runs every second.
+  private static func format(_ interval: TimeInterval) -> String {
+    let seconds = Int(interval)
+    let minutes = seconds % 3_600 / 60
+    let rest = seconds % 60
+    let clock = "\(minutes < 10 ? "0" : "")\(minutes):\(rest < 10 ? "0" : "")\(rest)"
+    let hours = seconds / 3_600
+    return hours > 0 ? "\(hours):\(clock)" : clock
+  }
+}
+
+private struct HeartRateRow: View {
+  @Environment(WorkoutManager.self) private var manager
+
+  var body: some View {
+    MetricRow(
+      text: manager.heartRate.map { "\($0) bpm" } ?? "-- bpm", symbol: "heart.fill", color: .red)
+  }
+}
+
+private struct EnergyRow: View {
+  @Environment(WorkoutManager.self) private var manager
+
+  var body: some View {
+    MetricRow(
+      text: manager.activeEnergy.map { "\($0) kcal" } ?? "-- kcal", symbol: "flame.fill",
+      color: .orange)
+  }
+}
+
+private struct MetricRow: View {
+  let text: String
+  let symbol: String
+  let color: Color
+
+  var body: some View {
+    Label {
+      Text(text).font(.title3.monospacedDigit())
+    } icon: {
+      Image(systemName: symbol).foregroundStyle(color)
+    }
+  }
+}
+
+private struct SessionControls: View {
+  @Environment(WorkoutManager.self) private var manager
+
+  var body: some View {
     HStack {
       Button {
         manager.phase == .paused ? manager.resume() : manager.pause()
@@ -96,21 +152,6 @@ private struct SessionView: View {
       .accessibilityLabel("End workout and save to Health")
     }
     .disabled(manager.phase == .ending)
-  }
-
-  private func metric(_ text: String, symbol: String, color: Color) -> some View {
-    Label {
-      Text(text).font(.title3.monospacedDigit())
-    } icon: {
-      Image(systemName: symbol).foregroundStyle(color)
-    }
-  }
-
-  private func elapsed(at date: Date) -> String {
-    let seconds = Int(manager.elapsed(at: date))
-    let hours = seconds / 3_600
-    let rest = String(format: "%02d:%02d", seconds % 3_600 / 60, seconds % 60)
-    return hours > 0 ? "\(hours):\(rest)" : rest
   }
 }
 

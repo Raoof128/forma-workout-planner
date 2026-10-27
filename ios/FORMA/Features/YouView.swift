@@ -8,6 +8,7 @@ struct YouView: View {
   @State private var exporting = false
   @State private var document: WorkspaceDocument?
   @State private var deleteConfirmation = false
+  @State private var backupFilename = "forma-backup"
 
   var body: some View {
     @Bindable var model = model
@@ -55,6 +56,7 @@ struct YouView: View {
         Button {
           do {
             document = WorkspaceDocument(data: try model.exportData())
+            backupFilename = Self.backupFilename()
             exporting = true
           } catch { model.errorMessage = error.localizedDescription }
         } label: {
@@ -92,7 +94,7 @@ struct YouView: View {
           "Train within your ability. Stop if an exercise causes pain. FORMA is a personal training log and does not provide medical advice."
         )
         .font(.footnote).foregroundStyle(FormaTheme.secondary)
-        Text("FORMA · \(buildDescription)")
+        Text("FORMA · \(Self.buildDescription)")
           .font(.caption).foregroundStyle(FormaTheme.secondary)
       }
     }
@@ -124,7 +126,7 @@ struct YouView: View {
     }
   }
 
-  private var backupFilename: String {
+  private static func backupFilename() -> String {
     // A localized date template can insert slashes, which are path separators.
     // Keep the training date in Sydney while giving Files a portable filename.
     let dateStyle = Date.ISO8601FormatStyle(
@@ -133,13 +135,15 @@ struct YouView: View {
     return "forma-backup-\(Date.now.formatted(dateStyle))"
   }
 
-  private var buildDescription: String {
+  /// The bundle's version never changes while the app runs, so read it once
+  /// instead of on every render of this form.
+  private static let buildDescription: String = {
     let version =
       Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
       ?? "Development"
     let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "—"
     return "\(version) (\(build))"
-  }
+  }()
 }
 
 struct ProfileEditor: View {
@@ -167,6 +171,9 @@ struct ProfileEditor: View {
   }
 
   var body: some View {
+    // Trimming and counting the name allocates; do it once per keystroke, not
+    // once for each of the three places that read the result.
+    let problem = invalid
     NavigationStack {
       Form {
         Section("Your training profile") {
@@ -180,8 +187,8 @@ struct ProfileEditor: View {
           Stepper("Default rest: \(rest) seconds", value: $rest, in: 10...600, step: 5)
             .accessibilityIdentifier("profile-rest")
         }
-        if let invalid {
-          Section { Text(invalid).font(.footnote).foregroundStyle(FormaTheme.primary) }
+        if let problem {
+          Section { Text(problem).font(.footnote).foregroundStyle(FormaTheme.primary) }
         }
         if let failure {
           Section {
@@ -208,7 +215,7 @@ struct ProfileEditor: View {
           Button("Save") {
             Task { await save() }
           }
-          .disabled(model.busy || invalid != nil || !changed)
+          .disabled(model.busy || problem != nil || !changed)
           .accessibilityIdentifier("save-profile")
         }
         ToolbarItemGroup(placement: .keyboard) {

@@ -12,8 +12,7 @@ public enum WorkoutEngine {
     try checkTimestamp(now)
     try check((10...600).contains(restSeconds), "Rest must be between 10 and 600 seconds.")
     try Workspace(routines: [routine]).validateStructure(catalog: catalog.isEmpty ? nil : catalog)
-    let metrics = Dictionary(
-      catalog.map { ($0.id, $0.metric) }, uniquingKeysWith: { first, _ in first })
+    let metrics = catalog.isEmpty ? [:] : ExerciseMetricIndex.cached(for: catalog).metrics
     let entries = try routine.exercises.map { prescription in
       let loadReps =
         metrics[prescription.exerciseId].map { $0 == "load_reps" }
@@ -75,9 +74,8 @@ public enum WorkoutEngine {
     guard active.exercises.contains(where: { $0.sets.contains(where: \.done) }) else {
       throw FormaError.noCompletedSets
     }
-    let formatter = ISO8601DateFormatter()
-    formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
-    active.date = formatter.string(from: Date(timeIntervalSince1970: now / 1_000))
+    active.date = CompletionDateFormatter.shared.string(
+      from: Date(timeIntervalSince1970: now / 1_000))
     active.duration = floor(max(0, now - active.startedAt) / 1_000)
     active.restEnd = nil
     active.restPaused = nil
@@ -93,8 +91,9 @@ public enum WorkoutEngine {
   }
 
   public static func volume(_ session: WorkoutSession, catalog: [Exercise]) -> Double {
-    let measurements = Dictionary(
-      catalog.map { ($0.id, $0.metric) }, uniquingKeysWith: { first, _ in first })
+    // Sessions without a finished set (and an empty catalogue) never need the index.
+    guard !catalog.isEmpty else { return 0 }
+    let measurements = ExerciseMetricIndex.cached(for: catalog).metrics
     return session.exercises.reduce(0) { total, entry in
       guard measurements[entry.exerciseId] == "load_reps" else { return total }
       return total + entry.sets.filter(\.done).reduce(0) { $0 + $1.weight * Double($1.reps) }
@@ -182,6 +181,12 @@ extension Workspace {
   // Nil is used only for pure structural operations without a catalog. Every
   // persistence boundary passes the complete current catalog, including aliases.
   func validateStructure(catalog: [Exercise]?) throws {
+    try validateStructure(index: catalog.map(ExerciseMetricIndex.cached(for:)))
+  }
+
+  /// `index` nil means "no catalogue"; an empty index rejects every identifier,
+  /// exactly as an empty catalogue array does.
+  func validateStructure(index: ExerciseMetricIndex?) throws {
     guard version == 2 else { throw FormaError.unsupportedVersion(version) }
     try check(
       revision >= 0 && revision <= 9_007_199_254_740_991, "The workspace revision is invalid.")
@@ -198,9 +203,7 @@ extension Workspace {
     try check(
       schedule.count <= 7 && Set(schedule).count == schedule.count
         && schedule.allSatisfy { (0...6).contains($0) }, "Choose each training weekday only once.")
-    let byID = catalog.map {
-      Dictionary($0.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
-    }
+    let byID = index?.metrics
     for routine in routines {
       try checkID(routine.id)
       try checkName(routine.name, maximum: 60)
@@ -240,11 +243,12 @@ extension Workspace {
           LoggedSet(
             weight: entry.weight, reps: entry.reps, durationSeconds: entry.durationSeconds,
             distanceMeters: entry.distanceMeters, done: true),
-          metric: byID?[entry.exerciseId]?.metric)
+          metric: byID?[entry.exerciseId])
       }
     }
     var totalSets = 0
-    for session in history + (active.map { [$0] } ?? []) {
+    // History is visited in place; `history + [active]` would copy up to 10,000 sessions.
+    func visit(_ session: WorkoutSession) throws {
       totalSets += session.exercises.reduce(0) { $0 + $1.sets.count }
       try check(totalSets <= 150_000, "This workspace exceeds the supported total-set limit.")
       try checkID(session.id)
@@ -279,9 +283,11 @@ extension Workspace {
         }
         try checkProgramming(
           rpe: entry.rpe, rest: entry.restSeconds, note: entry.note, group: entry.groupId)
-        for set in entry.sets { try checkSet(set, metric: byID?[entry.exerciseId]?.metric) }
+        for set in entry.sets { try checkSet(set, metric: byID?[entry.exerciseId]) }
       }
     }
+    for session in history { try visit(session) }
+    if let active { try visit(active) }
     for session in history {
       try check(
         session.exercises.contains { $0.sets.contains(where: \.done) },
@@ -309,7 +315,11 @@ extension Workspace {
 /// parser accepts offsets and normalizes invalid dates such as 24:00 or 29
 /// February in a non-leap year, so successful parsing alone is insufficient.
 private func validCompletionDate(_ value: String) -> Bool {
-  let bytes = Array(value.utf8)
+  var value = value
+  return value.withUTF8 { validCompletionDate(bytes: $0) }
+}
+
+private func validCompletionDate(bytes: UnsafeBufferPointer<UInt8>) -> Bool {
   guard bytes.count >= 20, bytes[4] == 45, bytes[7] == 45, bytes[10] == 84,
     bytes[13] == 58, bytes[16] == 58, bytes.last == 90
   else { return false }
@@ -369,15 +379,27 @@ private func checkProgramming(rpe: Double?, rest: Int?, note: String?, group: St
 
 private func checkEntries(_ entries: [(String, String?)]) throws {
   try check((1...100).contains(entries.count), "A routine or workout needs 1–100 exercises.")
-  try check(
-    Set(entries.map(\.0)).count == entries.count, "Each exercise row must have a unique identity.")
-  var groups: [String: [Int]] = [:]
-  for (index, entry) in entries.enumerated() {
-    if let group = entry.1 { groups[group, default: []].append(index) }
+  var identities = Set<String>(minimumCapacity: entries.count)
+  var unique = true
+  for entry in entries where !identities.insert(entry.0).inserted {
+    unique = false
+    break
   }
-  for positions in groups.values {
+  try check(unique, "Each exercise row must have a unique identity.")
+  // Most rows carry no superset group, so the table is built only when one does.
+  var groups: [String: (first: Int, last: Int, count: Int)] = [:]
+  for (index, entry) in entries.enumerated() {
+    if let group = entry.1 {
+      if let seen = groups[group] {
+        groups[group] = (seen.first, index, seen.count + 1)
+      } else {
+        groups[group] = (index, index, 1)
+      }
+    }
+  }
+  for group in groups.values {
     try check(
-      positions.count >= 2 && positions.last! - positions.first! + 1 == positions.count,
+      group.count >= 2 && group.last - group.first + 1 == group.count,
       "Supersets need at least two consecutive exercises.")
   }
 }
@@ -411,5 +433,73 @@ private func checkSet(_ set: LoggedSet, metric: String?) throws {
   if metric == "duration_distance" || metric == "load_distance" {
     try check(
       (set.distanceMeters ?? 0) >= 1, "Enter at least one metre before completing this set.")
+  }
+}
+
+/// Exercise identifier to metric, first catalogue row winning on a duplicate
+/// identifier. This is the only catalogue data validation, volume and starting a
+/// workout need, so it avoids copying 1,711 full `Exercise` values per call.
+struct ExerciseMetricIndex: Sendable {
+  let metrics: [String: String]
+
+  init(_ catalog: [Exercise]) {
+    var metrics = [String: String](minimumCapacity: catalog.count)
+    for index in catalog.indices {
+      let id = catalog[index].id
+      if metrics[id] == nil { metrics[id] = catalog[index].metric }
+    }
+    self.metrics = metrics
+  }
+
+  /// Engine calls take the catalogue as an array on every tap. An array is a
+  /// copy-on-write value: while this cache holds a reference, the same storage
+  /// address and count can only be the same, unmodified content, so reusing the
+  /// index is exact rather than a heuristic.
+  static func cached(for catalog: [Exercise]) -> ExerciseMetricIndex {
+    guard !catalog.isEmpty else { return ExerciseMetricIndex(catalog) }
+    return cache.index(for: catalog)
+  }
+
+  private static let cache = Cache()
+
+  private final class Cache: @unchecked Sendable {
+    private let lock = NSLock()
+    private var catalog: [Exercise] = []
+    private var cached = ExerciseMetricIndex([])
+
+    func index(for candidate: [Exercise]) -> ExerciseMetricIndex {
+      lock.lock()
+      defer { lock.unlock() }
+      if catalog.count == candidate.count,
+        catalog.withUnsafeBufferPointer({ held in
+          candidate.withUnsafeBufferPointer { $0.baseAddress == held.baseAddress }
+        })
+      {
+        return cached
+      }
+      let built = ExerciseMetricIndex(candidate)
+      catalog = candidate
+      cached = built
+      return built
+    }
+  }
+}
+
+/// `ISO8601DateFormatter` is expensive to create and not `Sendable` on every
+/// supported OS, so one instance is shared behind a lock.
+private final class CompletionDateFormatter: @unchecked Sendable {
+  static let shared = CompletionDateFormatter()
+  private let lock = NSLock()
+  private let formatter: ISO8601DateFormatter
+
+  private init() {
+    formatter = ISO8601DateFormatter()
+    formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+  }
+
+  func string(from date: Date) -> String {
+    lock.lock()
+    defer { lock.unlock() }
+    return formatter.string(from: date)
   }
 }

@@ -22,7 +22,13 @@ final class WorkoutManager {
 
   private(set) var phase: Phase = .idle
   private(set) var routineName: String?
-  private(set) var metrics: WatchMetrics?
+  /// Whole beats per minute and kilocalories as shown on screen. They change
+  /// only when the rounded number does, so a view reading one re-renders when
+  /// its own text changes, not on every HealthKit sample.
+  private(set) var heartRate: Int?
+  private(set) var activeEnergy: Int?
+  /// The full snapshot, sent to the iPhone. Not observed: no view reads it.
+  @ObservationIgnored private(set) var metrics: WatchMetrics?
   /// Whether the iPhone is following this workout.
   private(set) var mirrored = false
 
@@ -33,6 +39,18 @@ final class WorkoutManager {
   @ObservationIgnored private var configuration = WatchWorkout.configuration()
   @ObservationIgnored private var saveWhenStopped = true
   @ObservationIgnored private var lastSent = Date.distantPast
+  @ObservationIgnored private var lastSentKey: SentKey?
+
+  /// What the iPhone shows; a message that changes none of it can wait.
+  private struct SentKey: Equatable {
+    var state: WatchMetrics.State
+    var heartRate: Int?
+    var activeEnergy: Int?
+  }
+
+  private static let beatsPerMinute = HKUnit.count().unitDivided(by: .minute())
+  private static let heartRateType = HKQuantityType(.heartRate)
+  private static let activeEnergyType = HKQuantityType(.activeEnergyBurned)
 
   private init() {
     bridge.owner = self
@@ -85,6 +103,8 @@ final class WorkoutManager {
       session.startActivity(with: startDate)
       try await builder.beginCollection(at: startDate)
       metrics = WatchMetrics(state: .running, startedAt: startDate, elapsed: 0)
+      lastSentKey = nil
+      showMetrics()
       phase = .running
       await mirror(session)
     } catch {
@@ -152,6 +172,7 @@ final class WorkoutManager {
   func dismissSummary() {
     phase = routineName == nil ? .idle : .ready
     metrics = nil
+    showMetrics()
   }
 
   // MARK: - HealthKit callbacks
@@ -161,15 +182,17 @@ final class WorkoutManager {
     case .running:
       if phase == .paused { phase = .running }
       metrics?.state = .running
+      send(force: true)
     case .paused:
       if phase == .running { phase = .paused }
       metrics?.state = .paused
+      send(force: true)
     case .stopped:
+      // `finish` sends the final snapshot; one here would only repeat the last.
       Task { await finish(at: date) }
     default:
       break
     }
-    send(force: true)
   }
 
   private func finish(at date: Date) async {
@@ -205,14 +228,22 @@ final class WorkoutManager {
 
   fileprivate func collected() {
     guard let builder, metrics != nil else { return }
-    let bpm = HKUnit.count().unitDivided(by: .minute())
-    let heart = builder.statistics(for: HKQuantityType(.heartRate))
-    metrics?.heartRate = heart?.mostRecentQuantity()?.doubleValue(for: bpm)
-    metrics?.averageHeartRate = heart?.averageQuantity()?.doubleValue(for: bpm)
-    metrics?.activeEnergy = builder.statistics(for: HKQuantityType(.activeEnergyBurned))?
+    let heart = builder.statistics(for: Self.heartRateType)
+    metrics?.heartRate = heart?.mostRecentQuantity()?.doubleValue(for: Self.beatsPerMinute)
+    metrics?.averageHeartRate = heart?.averageQuantity()?.doubleValue(for: Self.beatsPerMinute)
+    metrics?.activeEnergy = builder.statistics(for: Self.activeEnergyType)?
       .sumQuantity()?.doubleValue(for: .kilocalorie())
     metrics?.elapsed = builder.elapsedTime
+    showMetrics()
     send(force: false)
+  }
+
+  /// Publish the rounded values the views show, only when they change.
+  private func showMetrics() {
+    let rate = metrics?.heartRate.map { Int($0.rounded()) }
+    if heartRate != rate { heartRate = rate }
+    let energy = metrics?.activeEnergy.map { Int($0.rounded()) }
+    if activeEnergy != energy { activeEnergy = energy }
   }
 
   fileprivate func received(_ data: [Data]) {
@@ -228,11 +259,21 @@ final class WorkoutManager {
 
   fileprivate func disconnected() { mirrored = false }
 
-  /// At most about once a second, so the link and battery stay quiet.
+  /// At most about once a second, and unchanged readings only every ten
+  /// seconds (to keep elapsed time and average fresh), so the link and battery
+  /// stay quiet.
   private func send(force: Bool) {
     guard let session, mirrored, let metrics else { return }
-    guard force || Date.now.timeIntervalSince(lastSent) >= 1 else { return }
-    lastSent = .now
+    let key = SentKey(
+      state: metrics.state, heartRate: metrics.heartRate.map { Int($0.rounded()) },
+      activeEnergy: metrics.activeEnergy.map { Int($0.rounded()) })
+    let now = Date.now
+    if !force {
+      let age = now.timeIntervalSince(lastSent)
+      guard age >= 1, key != lastSentKey || age >= 10 else { return }
+    }
+    lastSent = now
+    lastSentKey = key
     guard let data = try? WatchWorkoutMessage.metrics(metrics).encoded() else { return }
     let target = UncheckedSendable(session)
     Task { try? await target.value.sendToRemoteWorkoutSession(data: data) }
@@ -243,6 +284,8 @@ private final class WorkoutBridge: NSObject, HKWorkoutSessionDelegate, HKLiveWor
   WCSessionDelegate, @unchecked Sendable
 {
   @MainActor weak var owner: WorkoutManager?
+  private let heartRateType: HKSampleType = HKQuantityType(.heartRate)
+  private let activeEnergyType: HKSampleType = HKQuantityType(.activeEnergyBurned)
 
   func workoutSession(
     _ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState,
@@ -271,6 +314,10 @@ private final class WorkoutBridge: NSObject, HKWorkoutSessionDelegate, HKLiveWor
   func workoutBuilder(
     _ workoutBuilder: HKLiveWorkoutBuilder, didCollectDataOf collectedTypes: Set<HKSampleType>
   ) {
+    // Basal energy and other types the Watch doesn't show arrive here too;
+    // skip them before hopping to the main actor.
+    guard collectedTypes.contains(heartRateType) || collectedTypes.contains(activeEnergyType)
+    else { return }
     Task { @MainActor in owner?.collected() }
   }
 

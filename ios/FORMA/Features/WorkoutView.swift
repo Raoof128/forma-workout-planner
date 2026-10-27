@@ -80,13 +80,7 @@ struct WorkoutView: View {
                     }.accessibilityLabel("Read \(exercise.name) instructions and source")
                   }
                 }
-                if let previous = lastSet(for: entry.exerciseId, before: session.id) {
-                  Label(
-                    "Last time · \(measurementText(previous, exercise: exercise))",
-                    systemImage: "clock.arrow.circlepath"
-                  )
-                  .font(.subheadline).foregroundStyle(FormaTheme.secondary)
-                }
+                LastSetLabel(exerciseID: entry.exerciseId, sessionID: session.id)
                 if let note = entry.note, !note.isEmpty {
                   Text(note).font(.subheadline).foregroundStyle(FormaTheme.secondary)
                 }
@@ -305,9 +299,6 @@ struct WorkoutView: View {
   }
 
   private func draftKey(entry: SessionEntry, set: Int) -> String { "\(entry.id)-\(set)" }
-  private func lastSet(for exercise: String, before sessionId: String) -> LoggedSet? {
-    WorkoutEngine.lastCompletedSet(for: exercise, in: model.history, excluding: sessionId)
-  }
 
   private func applyDrafts(_ submitted: [String: SetDraft], to value: inout Workspace) throws {
     guard var session = value.active else { throw FormaError.noActiveWorkout }
@@ -465,6 +456,28 @@ struct WorkoutView: View {
       "\(exercise.name) set \(logged.index + 1) logged: \(HoldTimer.loggedText(count: logged.count, unit: exercise.holdUnit))."
     holdMessage = message
     AccessibilityNotification.Announcement(message).post()
+  }
+}
+
+/// The "Last time" line scans the whole journal. Keeping that scan in its own
+/// view means a keystroke in a set field (which re-runs `WorkoutView.body`)
+/// does not repeat it: this body re-runs only when the exercise, the session
+/// or the journal itself changes.
+private struct LastSetLabel: View {
+  @Environment(AppModel.self) private var model
+  let exerciseID: String
+  let sessionID: String
+
+  var body: some View {
+    if let previous = WorkoutEngine.lastCompletedSet(
+      for: exerciseID, in: model.history, excluding: sessionID)
+    {
+      Label(
+        "Last time · \(measurementText(previous, exercise: model.exercise(exerciseID)))",
+        systemImage: "clock.arrow.circlepath"
+      )
+      .font(.subheadline).foregroundStyle(FormaTheme.secondary)
+    }
   }
 }
 
@@ -721,7 +734,9 @@ struct SetRow: View {
   }
 
   private func field(_ label: String, value: Binding<String>, name: String) -> some View {
-    VStack(alignment: .leading, spacing: 6) {
+    let fieldID = "\(key)-\(name)"
+    let isFocused = focusedField.wrappedValue == fieldID
+    return VStack(alignment: .leading, spacing: 6) {
       Text(label).font(.caption.weight(.semibold)).foregroundStyle(FormaTheme.secondary)
       TextField(label, text: value)
         .font(.title3.weight(.semibold).monospacedDigit())
@@ -730,11 +745,10 @@ struct SetRow: View {
         .background(FormaTheme.canvas, in: RoundedRectangle(cornerRadius: 10))
         .overlay {
           RoundedRectangle(cornerRadius: 10).stroke(
-            focusedField.wrappedValue == "\(key)-\(name)"
-              ? FormaTheme.accent : FormaTheme.fieldBorder,
-            lineWidth: focusedField.wrappedValue == "\(key)-\(name)" ? 2 : 1)
+            isFocused ? FormaTheme.accent : FormaTheme.fieldBorder,
+            lineWidth: isFocused ? 2 : 1)
         }
-        .focused(focusedField, equals: "\(key)-\(name)")
+        .focused(focusedField, equals: fieldID)
         // Ordinary completed rows are locked. A late pre-completion text event
         // remains editable until it can be validated and acknowledged.
         .disabled((set.done && !pendingChanges) || busy)
@@ -763,6 +777,27 @@ struct ElapsedTime: View {
   }
 }
 
+/// One entry per second from now until `end`, then a final entry exactly at
+/// `end` so the dock lands on zero; no entries after that.
+private struct CountdownSchedule: TimelineSchedule {
+  let end: Date
+
+  struct Entries: Sequence, IteratorProtocol {
+    var cursor: Date?
+    let end: Date
+
+    mutating func next() -> Date? {
+      guard let current = cursor else { return nil }
+      cursor = current >= end ? nil : Swift.min(current.addingTimeInterval(1), end)
+      return current
+    }
+  }
+
+  func entries(from startDate: Date, mode: Mode) -> Entries {
+    Entries(cursor: startDate, end: end)
+  }
+}
+
 struct RestDock: View {
   @Environment(AppModel.self) private var model
   @Environment(\.scenePhase) private var scenePhase
@@ -771,8 +806,14 @@ struct RestDock: View {
   var body: some View {
     if let session = model.workspace?.active, session.restEnd != nil || session.restPaused != nil {
       Group {
-        if scenePhase == .active {
-          TimelineView(.periodic(from: .now, by: 1)) { context in panel(session, at: context.date) }
+        // Tick only while a countdown is actually running, and stop at its
+        // deadline. A paused or expired rest is static, so it no longer wakes
+        // the dock once a second for the rest of the workout.
+        if scenePhase == .active, let restEnd = session.restEnd {
+          TimelineView(CountdownSchedule(end: Date(timeIntervalSince1970: restEnd / 1_000))) {
+            context in panel(session, at: context.date)
+          }
+          .id(restEnd)
         } else {
           panel(session, at: .now)
         }

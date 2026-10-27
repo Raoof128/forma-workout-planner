@@ -6,6 +6,9 @@ struct PlanView: View {
   @State private var creating = false
 
   var body: some View {
+    // `routines` filters the workspace on every read; read it once per render.
+    let routines = model.routines
+    let storedRoutineCount = model.workspace?.routines.count ?? 0
     List {
       Section {
         VStack(alignment: .leading, spacing: 12) {
@@ -24,21 +27,7 @@ struct PlanView: View {
       }
 
       Section {
-        NavigationLink {
-          ExerciseLibraryView()
-        } label: {
-          Label {
-            VStack(alignment: .leading, spacing: 4) {
-              Text("Exercise library").font(.headline)
-              Text("\(model.selectableExercises.count.formatted()) movements. Find your next one.")
-                .font(.footnote).foregroundStyle(FormaTheme.secondary)
-            }
-          } icon: {
-            Image(systemName: "figure.strengthtraining.traditional")
-              .foregroundStyle(FormaTheme.accent).frame(width: 32)
-          }
-          .padding(.vertical, 8)
-        }
+        ExerciseLibraryLink()
         NavigationLink {
           TrainingDaysView()
         } label: {
@@ -48,12 +37,12 @@ struct PlanView: View {
       }
 
       Section {
-        if model.routines.isEmpty {
+        if routines.isEmpty {
           ContentUnavailableView(
             "Make room for your first routine", systemImage: "square.stack",
             description: Text("Choose your exercises, set your targets, and make it yours."))
         }
-        ForEach(model.routines) { routine in
+        ForEach(routines) { routine in
           NavigationLink {
             RoutineDetailView(routine: routine)
           } label: {
@@ -66,12 +55,12 @@ struct PlanView: View {
           Label("Create a routine", systemImage: "plus")
             .frame(minHeight: 44)
         }
-        .disabled(model.busy || (model.workspace?.routines.count ?? 0) >= 200)
+        .disabled(model.busy || storedRoutineCount >= 200)
         .accessibilityIdentifier("create-routine")
       } header: {
-        Text("My routines · \(model.routines.count)")
+        Text("My routines · \(routines.count)")
       } footer: {
-        if (model.workspace?.routines.count ?? 0) >= 200 {
+        if storedRoutineCount >= 200 {
           Text("Your workspace holds up to 200 routines. Remove one before adding another.")
         } else {
           Text(
@@ -86,6 +75,32 @@ struct PlanView: View {
     .navigationBarTitleDisplayMode(.inline)
     .sheet(isPresented: $creating) {
       NavigationStack { RoutineEditorView(routine: nil) }
+    }
+  }
+}
+
+/// Own view so the catalogue count is recomputed only when the catalogue
+/// changes, not on every workspace commit that re-renders `PlanView`.
+private struct ExerciseLibraryLink: View {
+  @Environment(AppModel.self) private var model
+
+  var body: some View {
+    // Lazy count: no 1,700-element array copy just to read `count`.
+    let movementCount = model.catalog.lazy.filter(\.selectable).count
+    NavigationLink {
+      ExerciseLibraryView()
+    } label: {
+      Label {
+        VStack(alignment: .leading, spacing: 4) {
+          Text("Exercise library").font(.headline)
+          Text("\(movementCount.formatted()) movements. Find your next one.")
+            .font(.footnote).foregroundStyle(FormaTheme.secondary)
+        }
+      } icon: {
+        Image(systemName: "figure.strengthtraining.traditional")
+          .foregroundStyle(FormaTheme.accent).frame(width: 32)
+      }
+      .padding(.vertical, 8)
     }
   }
 }
@@ -260,6 +275,9 @@ private struct RoutineEditorView: View {
   }
 
   var body: some View {
+    // `invalid` walks the whole draft (and sorts the target drafts); the body
+    // and the toolbar both need it, so evaluate it once per render.
+    let validation = invalid
     Form {
       Section("Make it yours") {
         TextField("Routine name", text: $draft.name).accessibilityLabel("Routine name")
@@ -276,16 +294,7 @@ private struct RoutineEditorView: View {
             NavigationLink {
               PrescriptionEditor(entry: $entry, exercise: exercise, targetDrafts: $targetDrafts)
             } label: {
-              VStack(alignment: .leading, spacing: 5) {
-                Text(exercise.name).font(.headline)
-                Text(PrescriptionText.summary(entry, exercise: exercise))
-                  .font(.caption).foregroundStyle(FormaTheme.secondary)
-                if entry.groupId != nil {
-                  Label("Superset", systemImage: "link").font(.caption)
-                    .foregroundStyle(FormaTheme.accent)
-                }
-              }
-              .padding(.vertical, 6)
+              RoutineEditorRow(entry: entry, exercise: exercise)
             }
           }
         }
@@ -321,8 +330,10 @@ private struct RoutineEditorView: View {
           "Tap an exercise to set its targets. Use Edit to move or remove exercises. Moving a superset apart unlinks that group."
         )
       }
-      if let invalid {
-        Section { Label(invalid, systemImage: "info.circle").foregroundStyle(FormaTheme.secondary) }
+      if let validation {
+        Section {
+          Label(validation, systemImage: "info.circle").foregroundStyle(FormaTheme.secondary)
+        }
       }
       if let failure {
         Section {
@@ -343,7 +354,7 @@ private struct RoutineEditorView: View {
       }
       ToolbarItem(placement: .confirmationAction) {
         Button(model.busy ? "Saving…" : "Save") { Task { await save() } }
-          .fontWeight(.semibold).disabled(model.busy || invalid != nil)
+          .fontWeight(.semibold).disabled(model.busy || validation != nil)
           .accessibilityIdentifier("save-routine")
       }
     }
@@ -414,6 +425,27 @@ private struct RoutineEditorView: View {
         for index in indices { draft.exercises[index].groupId = nil }
       }
     }
+  }
+}
+
+/// Row label for the editor list. Its inputs are Equatable values, so typing in
+/// the name or description fields (which re-renders the editor) skips rebuilding
+/// the prescription summary for every unchanged exercise row.
+private struct RoutineEditorRow: View {
+  let entry: Prescription
+  let exercise: Exercise
+
+  var body: some View {
+    VStack(alignment: .leading, spacing: 5) {
+      Text(exercise.name).font(.headline)
+      Text(PrescriptionText.summary(entry, exercise: exercise))
+        .font(.caption).foregroundStyle(FormaTheme.secondary)
+      if entry.groupId != nil {
+        Label("Superset", systemImage: "link").font(.caption)
+          .foregroundStyle(FormaTheme.accent)
+      }
+    }
+    .padding(.vertical, 6)
   }
 }
 
@@ -632,34 +664,68 @@ private struct PrescriptionEditor: View {
   }
 }
 
+/// Catalogue facts the library screen needs, built once instead of on every
+/// keystroke (filtering 1,700 rows and sorting two Sets per render).
+private struct LibraryIndex: Sendable {
+  let exercises: [Exercise]
+  let muscles: [String]
+  let equipmentTypes: [String]
+  /// Size of the catalogue this was built from, to detect a reload.
+  let catalogCount: Int
+
+  init(catalog: [Exercise]) {
+    catalogCount = catalog.count
+    let selectable = catalog.filter(\.selectable)
+    exercises = selectable
+    muscles = Set(selectable.map(\.muscle)).sorted()
+    equipmentTypes = Set(selectable.map(\.equipment)).sorted()
+  }
+}
+
+/// Text-search hits over the whole selectable catalogue for one query.
+/// Muscle and equipment filters are applied on top, so changing them never
+/// re-runs the text search.
+private struct SearchHits: Sendable {
+  let query: String
+  let exercises: [Exercise]
+}
+
 struct ExerciseLibraryView: View {
   @Environment(AppModel.self) private var model
   var onSelect: ((Exercise) -> Void)? = nil
   @State private var query = ""
   @State private var muscle = "All muscles"
   @State private var equipment = "All equipment"
+  @State private var index: LibraryIndex?
+  @State private var hits: SearchHits?
 
-  private var muscles: [String] { Set(model.selectableExercises.map(\.muscle)).sorted() }
-  private var equipmentTypes: [String] { Set(model.selectableExercises.map(\.equipment)).sorted() }
-  private var results: [Exercise] {
-    return model.selectableExercises.filter { exercise in
+  /// Same rule as `Exercise.matches(query:)`: a query with no words matches all.
+  private var hasSearchWords: Bool { query.contains { !$0.isWhitespace } }
+
+  private func visibleExercises(in index: LibraryIndex) -> [Exercise] {
+    // While a search is debouncing or running off the main thread, keep showing
+    // the previous hits (already narrowed by the current filters) instead of
+    // blocking the keystroke on 1,700 Unicode folds.
+    let base = hasSearchWords ? (hits?.exercises ?? index.exercises) : index.exercises
+    guard muscle != "All muscles" || equipment != "All equipment" else { return base }
+    return base.filter { exercise in
       (muscle == "All muscles" || muscle == exercise.muscle)
         && (equipment == "All equipment" || equipment == exercise.equipment)
-        && exercise.matches(query: query)
     }
   }
 
   var body: some View {
-    let matches = results
+    let index = self.index ?? LibraryIndex(catalog: model.catalog)
+    let matches = visibleExercises(in: index)
     List {
       Section {
         Picker("Muscle", selection: $muscle) {
           Text("All muscles").tag("All muscles")
-          ForEach(muscles, id: \.self) { Text($0).tag($0) }
+          ForEach(index.muscles, id: \.self) { Text($0).tag($0) }
         }
         Picker("Equipment", selection: $equipment) {
           Text("All equipment").tag("All equipment")
-          ForEach(equipmentTypes, id: \.self) { Text($0).tag($0) }
+          ForEach(index.equipmentTypes, id: \.self) { Text($0).tag($0) }
         }
         if muscle != "All muscles" || equipment != "All equipment" || !query.isEmpty {
           Button("Clear search & filters") {
@@ -707,6 +773,37 @@ struct ExerciseLibraryView: View {
     .navigationBarTitleDisplayMode(.inline)
     .scrollContentBackground(.hidden)
     .background(FormaTheme.canvas)
+    .task(id: model.catalog.count) {
+      // `.task` restarts whenever the screen reappears (e.g. back from a guide);
+      // keep the index and hits unless the catalogue actually changed.
+      guard self.index?.catalogCount != model.catalog.count else { return }
+      self.index = LibraryIndex(catalog: model.catalog)
+      hits = nil
+    }
+    .task(id: query) { await refreshHits() }
+  }
+
+  /// Debounced, off-main text search. Results equal the former inline
+  /// `filter`: same `matches(query:)`, same catalogue order.
+  private func refreshHits() async {
+    guard hasSearchWords else {
+      if hits != nil { hits = nil }
+      return
+    }
+    let current = query
+    if hits?.query == current { return }
+    // First keystroke runs immediately; follow-ups wait for a typing pause.
+    if hits != nil {
+      try? await Task.sleep(for: .milliseconds(120))
+      if Task.isCancelled { return }
+    }
+    let pool = index?.exercises ?? model.selectableExercises
+    let found = await Task.detached(priority: .userInitiated) {
+      // Folds the query once for the whole catalogue; same hits, same order.
+      Exercise.filter(pool, matching: current)
+    }.value
+    if Task.isCancelled { return }
+    hits = SearchHits(query: current, exercises: found)
   }
 }
 

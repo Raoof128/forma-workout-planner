@@ -5,15 +5,21 @@ import Foundation
 /// sync, import migration or encryption. iOS supplies file protection separately.
 public actor WorkspaceStore {
   private let database: SQLiteConnection
-  private let catalog: [Exercise]
+  /// Built once: every save, load and decode validates against the catalogue.
+  private let catalog: ExerciseMetricIndex
   private let url: URL
   private let encoder: JSONEncoder
   private let decoder = JSONDecoder()
+  /// The newest snapshot this connection has itself written, or decoded and
+  /// validated. A stored record that is byte-for-byte equal to it needs no second
+  /// full decode and validation before the next save; any other bytes (another
+  /// writer, a damaged file) take the full path.
+  private var verified: (revision: Int, raw: Data)?
 
   public init(url: URL, catalog: [Exercise]) throws {
     guard url.isFileURL else { throw FormaError.storage("A local file URL is required.") }
     self.url = url
-    self.catalog = catalog
+    self.catalog = ExerciseMetricIndex(catalog)
     encoder = JSONEncoder()
     encoder.outputFormatting = [.sortedKeys]
     try FileManager.default.createDirectory(
@@ -57,10 +63,11 @@ public actor WorkspaceStore {
     do {
       if let record = try readRecord() {
         let workspace = try decode(record)
+        verified = (record.revision, record.raw)
         try database.execute("COMMIT")
         return workspace
       }
-      try seed.validate(catalog: catalog)
+      try seed.validateStructure(index: catalog)
       let raw = try encode(seed)
       let statement = try database.prepare(
         "INSERT INTO workspace (id, revision, snapshot) VALUES (1, ?, ?)")
@@ -68,6 +75,7 @@ public actor WorkspaceStore {
       try statement.bind(raw, at: 2)
       try statement.run()
       try database.execute("COMMIT")
+      verified = (seed.revision, raw)
       return seed
     } catch {
       try? database.execute("ROLLBACK")
@@ -78,14 +86,14 @@ public actor WorkspaceStore {
   /// Returns only after SQLite's COMMIT succeeds. Revision and a recoverable
   /// previous snapshot change in the same full-synchronous transaction.
   public func save(_ candidate: Workspace, expectedRevision: Int) throws -> Workspace {
-    try candidate.validate(catalog: catalog)
+    try candidate.validateStructure(index: catalog)
     guard candidate.revision == expectedRevision else {
       throw FormaError.invalid("The edited workspace does not match its expected revision.")
     }
     try database.execute("BEGIN IMMEDIATE")
     do {
       guard let record = try readRecord() else { throw FormaError.corruptStore }
-      _ = try decode(record)
+      try verifyStored(record)
       guard record.revision == expectedRevision else {
         throw FormaError.conflictingRevision(expected: expectedRevision, actual: record.revision)
       }
@@ -106,6 +114,7 @@ public actor WorkspaceStore {
         throw FormaError.storage("The local revision changed while saving.")
       }
       try database.execute("COMMIT")
+      verified = (result.revision, raw)
       return result
     } catch {
       try? database.execute("ROLLBACK")
@@ -122,7 +131,7 @@ public actor WorkspaceStore {
     do { snapshot = try decoder.decode(Workspace.self, from: raw) } catch {
       throw FormaError.corruptStore
     }
-    try snapshot.validate(catalog: catalog)
+    try snapshot.validateStructure(index: catalog)
     return snapshot
   }
 
@@ -161,6 +170,7 @@ public actor WorkspaceStore {
         try FileManager.default.removeItem(at: file)
       }
       try database.execute("COMMIT")
+      verified = (result.revision, raw)
       // An unrelated open connection may defer checkpointing. Once the
       // deletion has committed, never report it as an uncommitted failure.
       _ = sqlite3_wal_checkpoint_v2(database.handle, nil, SQLITE_CHECKPOINT_TRUNCATE, nil, nil)
@@ -193,10 +203,18 @@ public actor WorkspaceStore {
     return raw
   }
 
+  /// Confirms that the stored record decodes and validates, skipping the work
+  /// when it is exactly the snapshot this connection last wrote or verified.
+  private func verifyStored(_ record: Record) throws {
+    if let verified, verified.revision == record.revision, verified.raw == record.raw { return }
+    _ = try decode(record)
+    verified = (record.revision, record.raw)
+  }
+
   private func decode(_ record: Record) throws -> Workspace {
     do {
       let workspace = try decoder.decode(Workspace.self, from: record.raw)
-      try workspace.validate(catalog: catalog)
+      try workspace.validateStructure(index: catalog)
       guard workspace.revision == record.revision else { throw FormaError.corruptStore }
       return workspace
     } catch {

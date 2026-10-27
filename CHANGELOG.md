@@ -4,6 +4,45 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-27 — iOS launch and smoothness audit
+
+- **Launch:** the launch screen was an empty `UILaunchScreen`, so iOS showed
+  plain white until the first frame. It now uses a `LaunchBackground` colour
+  matching FORMA's canvas in light and dark. `AppModel.load()` decoded the
+  3.5 MB catalogue, opened SQLite and built the exercise index on the main
+  thread (about 0.5 s in a debug build); that work now runs in a
+  `@concurrent` task and the results are published once, following Apple's
+  "Reducing your app's launch time" guidance. A Points of Interest signpost
+  ("Prepare training space") marks it in Instruments. The loading screen now
+  fills the window, removing a white frame around it.
+- **Audit:** every Swift file in the iPhone app, the Watch app and
+  `FORMACore` was reviewed by six parallel Sonnet 5.5 auditors, each owning
+  separate files, then reviewed and integrated:
+  - Core: a cached exercise-metric index instead of copying the 1,711-row
+    catalogue per engine call; `save` skips re-decoding its own last write;
+    precomputed search keys and `Exercise.filter(_:matching:)`. Release
+    timings: toggle a set 0.79 ms → 0.003 ms, save a small workspace 2.7 ms
+    → 0.10 ms, search per keystroke about 7 ms → 0.3 ms.
+  - App: off-main, debounced library search; narrower observation
+    (`hasWorkspace`, `activeWorkoutName`, cached routines and selectable
+    exercises); a fast UTC date parser checked against
+    `ISO8601DateFormatter` on 300,000 strings with no mismatch; cheaper
+    week, volume-chart and "last time" calculations; the rest timer stops
+    ticking once a rest is paused or over.
+  - Watch: the 1 s timeline now redraws only the elapsed time; heart rate
+    and energy publish only when the rounded value changes; unchanged
+    readings go to the iPhone every 10 s instead of every second.
+  - Kept as Apple documents it: WatchConnectivity still activates at
+    launch (an auditor's deferral was reverted).
+- **Verification:** iPhone and Watch builds with no warnings; FORMACore
+  76/76 (71 existing plus 5 new; the suite now runs in 1.8 s instead of
+  246 s). UI tests: 3/8 pass on the iOS 27.0 simulator; the same 5 also fail
+  on the unchanged code, so they predate this work (duplicate "Finish
+  workout" matches, keyboard focus and launch timeouts on that simulator).
+- **Simulator note:** cold launches on this Mac's iOS 27.0 simulator spend
+  seconds in `dyld` loading system frameworks; Apple's Settings app shows
+  the same, so it is the simulator, not FORMA.
+
 ### Raouf: 2026-10-22 — Dependency updates from Dependabot #15–#17
 
 - One branch off `main` replaces the three stale Dependabot PRs: the API's

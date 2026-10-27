@@ -1,22 +1,36 @@
 import FORMACore
 import Foundation
 import Observation
+import os
 
 @MainActor @Observable
 final class AppModel {
   var workspace: Workspace? {
     didSet {
-      // Active-set, rest and profile commits retain the same history value.
-      // Avoid reparsing every saved date on those frequent updates.
+      // Active-set, rest and profile commits retain the same history and
+      // routines buffers, so these comparisons hit Array's identity fast path
+      // (O(1)). Avoid reparsing every saved date on those frequent updates.
       if oldValue?.history != workspace?.history { rebuildHistory() }
+      if oldValue?.routines != workspace?.routines {
+        routines = workspace?.routines.filter { $0.archivedAt == nil } ?? []
+      }
+      // Narrow facts for the root views. Each is written only when it changes,
+      // so logging a set doesn't invalidate views that only need these.
+      let ready = workspace != nil
+      if ready != hasWorkspace { hasWorkspace = ready }
+      let activeName = workspace?.active?.name
+      if activeName != activeWorkoutName { activeWorkoutName = activeName }
     }
   }
-  var catalog: [Exercise] = [] {
-    didSet {
-      exercisesByID = Dictionary(
-        catalog.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
-    }
-  }
+  /// True once a workspace has loaded. Read by the root view instead of
+  /// `workspace`, which changes on every logged set.
+  private(set) var hasWorkspace = false
+  /// The active workout's name, or nil. The tab accessory only needs this.
+  private(set) var activeWorkoutName: String?
+  private(set) var catalog: [Exercise] = []
+  /// Cached with the catalogue: filtering 1,700 rows on each access was
+  /// repeated by every Plan render and filter keystroke.
+  private(set) var selectableExercises: [Exercise] = []
   private var exercisesByID: [String: Exercise] = [:]
   private var pendingMutations = 0
   var busy: Bool { pendingMutations > 0 }
@@ -45,8 +59,8 @@ final class AppModel {
     }
   }
 
-  var selectableExercises: [Exercise] { catalog.filter(\.selectable) }
-  var routines: [Routine] { workspace?.routines.filter { $0.archivedAt == nil } ?? [] }
+  /// Cached when the routines change; views read it several times per render.
+  private(set) var routines: [Routine] = []
   private(set) var history: [WorkoutSession] = []
   static var now: Double { Date.now.timeIntervalSince1970 * 1_000 }
 
@@ -57,7 +71,7 @@ final class AppModel {
       .sorted { $0.date > $1.date }.map(\.session)
   }
 
-  func resource<T: Decodable>(_ name: String, as type: T.Type) throws -> T {
+  nonisolated static func resource<T: Decodable>(_ name: String, as type: T.Type) throws -> T {
     guard let url = Bundle.main.url(forResource: name, withExtension: "json") else {
       throw AppFailure(
         "A bundled training resource is missing. Rebuild the app resources; your saved data has not been replaced."
@@ -66,31 +80,64 @@ final class AppModel {
     return try JSONDecoder().decode(type, from: Data(contentsOf: url))
   }
 
+  /// Everything the first screen needs, prepared away from the main thread.
+  private struct LaunchPayload: Sendable {
+    let catalog: [Exercise]
+    let selectable: [Exercise]
+    let exercisesByID: [String: Exercise]
+    let store: WorkspaceStore
+    let workspace: Workspace
+    let directory: URL
+  }
+
+  /// Startup work shows in Instruments under Points of Interest.
+  nonisolated private static let signposter = OSSignposter(
+    subsystem: "dev.raoufabedini.forma", category: .pointsOfInterest)
+
   func load() async {
     guard !loading, workspace == nil else { return }
     loading = true
     defer { loading = false }
     loadFailure = nil
     do {
-      let loadedCatalog: [Exercise] = try resource("catalog", as: [Exercise].self)
-      let seed: Workspace = try resource("seed-workspace", as: Workspace.self)
-      let directory = try dataDirectory()
-      preferencesURL = directory.appendingPathComponent("presentation.json")
+      // Decoding the catalogue and opening SQLite took about half a second on
+      // the main thread, blocking the first frame. Apple's launch guidance:
+      // keep the main thread free to draw, and prepare data elsewhere.
+      let payload = try await Self.prepareLaunch()
+      preferencesURL = payload.directory.appendingPathComponent("presentation.json")
       loadPreferences()
-      let repository = try WorkspaceStore(
-        url: directory.appendingPathComponent("workspace.sqlite"), catalog: loadedCatalog)
-      let saved = try await repository.load(seed: seed)
-      try protectFiles(in: directory)
-      catalog = loadedCatalog
-      store = repository
-      workspace = saved
+      exercisesByID = payload.exercisesByID
+      catalog = payload.catalog
+      selectableExercises = payload.selectable
+      store = payload.store
+      workspace = payload.workspace
+      // WatchConnectivity activation isn't needed for the first frame.
     } catch {
       loadFailure =
         "FORMA couldn't open the local training store. No existing data has been replaced. \(error.localizedDescription)"
     }
   }
 
-  private func dataDirectory() throws -> URL {
+  @concurrent
+  nonisolated private static func prepareLaunch() async throws -> LaunchPayload {
+    let state = signposter.beginInterval("Prepare training space")
+    defer { signposter.endInterval("Prepare training space", state) }
+    let catalog: [Exercise] = try resource("catalog", as: [Exercise].self)
+    let seed: Workspace = try resource("seed-workspace", as: Workspace.self)
+    let directory = try dataDirectory()
+    let store = try WorkspaceStore(
+      url: directory.appendingPathComponent("workspace.sqlite"), catalog: catalog)
+    let workspace = try await store.load(seed: seed)
+    try protectFiles(in: directory)
+    return LaunchPayload(
+      catalog: catalog,
+      selectable: catalog.filter(\.selectable),
+      exercisesByID: Dictionary(
+        catalog.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first }),
+      store: store, workspace: workspace, directory: directory)
+  }
+
+  nonisolated private static func dataDirectory() throws -> URL {
     let support = try FileManager.default.url(
       for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
     var directory = support.appendingPathComponent("FORMA", isDirectory: true)
@@ -113,7 +160,7 @@ final class AppModel {
     return directory
   }
 
-  private func protectFiles(in directory: URL) throws {
+  nonisolated private static func protectFiles(in directory: URL) throws {
     for file in try FileManager.default.contentsOfDirectory(
       at: directory, includingPropertiesForKeys: nil)
     {
@@ -141,7 +188,9 @@ final class AppModel {
       try change(&candidate)
       let committed = try await store.save(candidate, expectedRevision: revision)
       workspace = committed
-      errorMessage = nil
+      // Skip the write when already nil: it would invalidate every view that
+      // reads the message (the root alert) on each logged set.
+      if errorMessage != nil { errorMessage = nil }
       return true
     } catch {
       errorMessage =
@@ -316,11 +365,54 @@ enum TrainingDate {
   static func date(_ session: WorkoutSession) -> Date {
     // Native finishes always write fractional seconds; try that form first.
     guard let text = session.date,
-      let date = fractional.date(from: text) ?? whole.date(from: text)
+      let date = parseUTC(text) ?? fractional.date(from: text) ?? whole.date(from: text)
     else {
       return Date(timeIntervalSince1970: session.startedAt / 1_000)
     }
     return date
+  }
+  /// Reads the exact shapes FORMA writes, `YYYY-MM-DDTHH:MM:SS.mmmZ` (native)
+  /// and `YYYY-MM-DDTHH:MM:SSZ`, with integer arithmetic. `ISO8601DateFormatter`
+  /// costs tens of microseconds per call, which adds up across a 10,000-session
+  /// rebuild. Anything else, or any out-of-range field, returns nil so the
+  /// formatter decides, exactly as before.
+  nonisolated static func parseUTC(_ text: String) -> Date? {
+    var text = text
+    return text.withUTF8 { bytes -> Date? in
+      let count = bytes.count
+      guard count == 20 || count == 24, bytes[count - 1] == 0x5A,
+        bytes[4] == 0x2D, bytes[7] == 0x2D, bytes[10] == 0x54, bytes[13] == 0x3A,
+        bytes[16] == 0x3A, count == 20 || bytes[19] == 0x2E
+      else { return nil }
+      func digits(_ start: Int, _ length: Int) -> Int? {
+        var value = 0
+        for index in start..<start + length {
+          let byte = bytes[index]
+          guard byte >= 0x30, byte <= 0x39 else { return nil }
+          value = value * 10 + Int(byte - 0x30)
+        }
+        return value
+      }
+      guard let year = digits(0, 4), let month = digits(5, 2), let day = digits(8, 2),
+        let hour = digits(11, 2), let minute = digits(14, 2), let second = digits(17, 2),
+        let millis = count == 24 ? digits(20, 3) : 0,
+        (1900...2999).contains(year), (1...12).contains(month), hour < 24, minute < 60,
+        second < 60
+      else { return nil }
+      let leap = year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)
+      let monthLength =
+        month == 2 ? (leap ? 29 : 28) : (month == 4 || month == 6 || month == 9 || month == 11) ? 30 : 31
+      guard day >= 1, day <= monthLength else { return nil }
+      // Days since 1970-01-01 (proleptic Gregorian, Hinnant's civil algorithm).
+      let shiftedYear = month <= 2 ? year - 1 : year
+      let era = shiftedYear / 400
+      let yearOfEra = shiftedYear - era * 400
+      let dayOfYear = (153 * (month + (month > 2 ? -3 : 9)) + 2) / 5 + day - 1
+      let dayOfEra = yearOfEra * 365 + yearOfEra / 4 - yearOfEra / 100 + dayOfYear
+      let days = era * 146_097 + dayOfEra - 719_468
+      let seconds = days * 86_400 + hour * 3_600 + minute * 60 + second
+      return Date(timeIntervalSince1970: Double(seconds) + Double(millis) / 1_000)
+    }
   }
   private static let whole = ISO8601DateFormatter()
   private static let fractional: ISO8601DateFormatter = {

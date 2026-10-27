@@ -53,6 +53,7 @@ final class WatchWorkoutCoordinator {
   @ObservationIgnored private let bridge = WatchBridge()
   @ObservationIgnored private var mirrored: HKWorkoutSession?
   @ObservationIgnored private var activation: [CheckedContinuation<Void, Never>] = []
+  @ObservationIgnored private var activationRequested = false
 
   init() {
     bridge.owner = self
@@ -62,11 +63,20 @@ final class WatchWorkoutCoordinator {
     healthStore.workoutSessionMirroringStartHandler = { session in
       bridge.mirroringStarted(UncheckedSendable(session))
     }
-    // Activate at launch so Watch install and pairing changes are delivered.
-    if WCSession.isSupported() {
-      WCSession.default.delegate = bridge
-      WCSession.default.activate()
-    }
+    // Activate at launch, as Apple's WCSession documentation asks: iOS can
+    // wake this app in the background for a Watch message, and the session
+    // must be active by then. `activate()` returns at once and finishes on a
+    // background queue, so it does not hold up the first frame.
+    activateSession()
+  }
+
+  /// Activates WatchConnectivity so Watch install and pairing changes are
+  /// delivered. Idempotent, so `refresh` can call it safely.
+  private func activateSession() {
+    guard !activationRequested, WCSession.isSupported() else { return }
+    activationRequested = true
+    WCSession.default.delegate = bridge
+    WCSession.default.activate()
   }
 
   // MARK: - Checking for the Watch
@@ -81,6 +91,7 @@ final class WatchWorkoutCoordinator {
       availability = .notSupported
       return
     }
+    activateSession()
     let session = WCSession.default
     if session.activationState == .notActivated {
       // WatchConnectivity sets the state before its callback hops here, so
@@ -162,9 +173,14 @@ final class WatchWorkoutCoordinator {
   }
 
   fileprivate func didReceive(_ data: [Data]) {
-    // Delivery is batched after suspension; the newest snapshot wins.
-    for message in data.compactMap(WatchWorkoutMessage.decode) {
-      if case .metrics(let snapshot) = message { metrics = snapshot }
+    // Delivery is batched after suspension; the newest snapshot wins. Decode
+    // from the newest backwards and publish once, so a backlog doesn't
+    // invalidate the live strip once per stale snapshot.
+    for message in data.reversed().lazy.compactMap(WatchWorkoutMessage.decode) {
+      if case .metrics(let snapshot) = message {
+        if metrics != snapshot { metrics = snapshot }
+        break
+      }
     }
   }
 

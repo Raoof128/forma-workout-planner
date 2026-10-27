@@ -21,14 +21,19 @@ enum FormaTheme {
   private static func adaptive(
     _ light: UInt, _ dark: UInt, highContrastLight: UInt? = nil, highContrastDark: UInt? = nil
   ) -> Color {
-    Color(
+    // The four variants are built once. The provider runs every time a view
+    // resolves this colour for a trait change or a draw, and used to allocate
+    // a new UIColor on each call.
+    let lightColor = UIColor(hex: light)
+    let darkColor = UIColor(hex: dark)
+    let lightContrast = highContrastLight.map { UIColor(hex: $0) } ?? lightColor
+    let darkContrast = highContrastDark.map { UIColor(hex: $0) } ?? darkColor
+    return Color(
       uiColor: UIColor { traits in
         let increased = traits.accessibilityContrast == .high
-        let resolved =
-          traits.userInterfaceStyle == .dark
-          ? increased ? highContrastDark ?? dark : dark
-          : increased ? highContrastLight ?? light : light
-        return UIColor(hex: resolved)
+        return traits.userInterfaceStyle == .dark
+          ? increased ? darkContrast : darkColor
+          : increased ? lightContrast : lightColor
       }
     )
   }
@@ -46,14 +51,16 @@ extension Color {
 }
 
 struct FormaMark: Shape {
+  /// Constant geometry, built once instead of on every path request.
+  private static let facets: [[CGPoint]] = [
+    [.init(x: 18, y: 12), .init(x: 29, y: 12), .init(x: 19, y: 52), .init(x: 8, y: 52)],
+    [.init(x: 32, y: 12), .init(x: 58, y: 12), .init(x: 55, y: 23), .init(x: 29, y: 23)],
+    [.init(x: 27, y: 29), .init(x: 47, y: 29), .init(x: 44, y: 40), .init(x: 24, y: 40)],
+  ]
+
   func path(in rect: CGRect) -> Path {
-    let facets: [[CGPoint]] = [
-      [.init(x: 18, y: 12), .init(x: 29, y: 12), .init(x: 19, y: 52), .init(x: 8, y: 52)],
-      [.init(x: 32, y: 12), .init(x: 58, y: 12), .init(x: 55, y: 23), .init(x: 29, y: 23)],
-      [.init(x: 27, y: 29), .init(x: 47, y: 29), .init(x: 44, y: 40), .init(x: 24, y: 40)],
-    ]
     var path = Path()
-    for points in facets {
+    for points in Self.facets {
       path.move(to: CGPoint(x: points[0].x / 64 * rect.width, y: points[0].y / 64 * rect.height))
       for point in points.dropFirst() {
         path.addLine(to: CGPoint(x: point.x / 64 * rect.width, y: point.y / 64 * rect.height))

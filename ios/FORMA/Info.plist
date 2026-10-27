@@ -27,7 +27,10 @@
     <key>NSHealthUpdateUsageDescription</key>
     <string>FORMA saves the workouts you record on Apple Watch, with their heart rate and active energy, to Apple Health.</string>
     <key>UILaunchScreen</key>
-    <dict/>
+    <dict>
+        <key>UIColorName</key>
+        <string>LaunchBackground</string>
+    </dict>
     <key>UIApplicationSceneManifest</key>
     <dict>
         <key>UIApplicationSupportsMultipleScenes</key>

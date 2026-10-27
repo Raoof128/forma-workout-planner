@@ -22,7 +22,9 @@ struct RootView: View {
   var body: some View {
     @Bindable var model = model
     Group {
-      if model.workspace != nil {
+      // `hasWorkspace` rather than `workspace`: the latter changes on every
+      // logged set and would rebuild this whole tree each time.
+      if model.hasWorkspace {
         TabView(selection: $selectedTab) {
           NavigationStack { TodayView() }
             .tabItem { Label("Today", systemImage: "sun.max") }
@@ -72,7 +74,10 @@ struct RootView: View {
         }
       }
     }
-    .background(FormaTheme.canvas)
+    // Fill the whole window so the loading state continues the launch
+    // screen's colour instead of flashing the default white around it.
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .background(FormaTheme.canvas.ignoresSafeArea())
     .preferredColorScheme(
       model.appearance == .system ? nil : model.appearance == .dark ? .dark : .light
     )
@@ -99,14 +104,14 @@ private struct ActiveTrainingAccessory: ViewModifier {
   func body(content: Content) -> some View {
     if #available(iOS 26.1, *) {
       content
-        .tabViewBottomAccessory(isEnabled: model.workspace?.active != nil) {
-          if let active = model.workspace?.active { ResumeTrainingControl(session: active) }
+        .tabViewBottomAccessory(isEnabled: model.activeWorkoutName != nil) {
+          if let name = model.activeWorkoutName { ResumeTrainingControl(name: name) }
         }
         .tabBarMinimizeBehavior(.never)
     } else {
       content.safeAreaInset(edge: .bottom, spacing: 0) {
-        if let active = model.workspace?.active {
-          ResumeTrainingControl(session: active)
+        if let name = model.activeWorkoutName {
+          ResumeTrainingControl(name: name)
             .formaControlSurface(cornerRadius: 20)
             .padding(.horizontal, 16).padding(.vertical, 8)
         }
@@ -118,7 +123,8 @@ private struct ActiveTrainingAccessory: ViewModifier {
 private struct ResumeTrainingControl: View {
   @Environment(AppModel.self) private var model
   @Environment(\.dynamicTypeSize) private var textSize
-  let session: WorkoutSession
+  /// The name alone: a whole session changes with every logged set.
+  let name: String
 
   var body: some View {
     Button {
@@ -129,7 +135,7 @@ private struct ResumeTrainingControl: View {
         Image(systemName: "figure.strengthtraining.traditional").font(.title3)
         VStack(alignment: .leading, spacing: 2) {
           Text("Workout in progress").font(.caption).foregroundStyle(.secondary)
-          Text(session.name).font(.subheadline.weight(.semibold))
+          Text(name).font(.subheadline.weight(.semibold))
             .lineLimit(textSize.isAccessibilitySize ? nil : 1)
         }
         Spacer(minLength: 4)
@@ -141,7 +147,7 @@ private struct ResumeTrainingControl: View {
       .contentShape(Rectangle())
     }
     .buttonStyle(.plain)
-    .accessibilityLabel("Resume \(session.name)")
+    .accessibilityLabel("Resume \(name)")
     .accessibilityHint("Opens your saved active workout.")
     .accessibilityIdentifier("resume-workout-accessory")
     .disabled(model.busy)
