@@ -9,21 +9,42 @@ Tunnel, DNS, WAF) is not in the repository and was **not verified**.
 
 ## Gateway behaviour (verified locally)
 
-| Control             | Behaviour                                                                                                                                                                                         |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Fixed upstream      | `BACKEND_URL` must be an HTTPS origin without path or credentials. The upstream URL is built from the request path only; 60,000 fuzzed paths never changed the upstream host.                     |
-| Routes and methods  | Exact allowlist per route. `/api/auth/*` paths containing `%`, `\`, `//` or dot segments are refused. Unknown `/api` paths are JSON 404s, never the SPA.                                          |
-| Origin and CSRF     | Mutations need `Origin` equal to `APP_ORIGIN`; any foreign `Origin` is refused. `Sec-Fetch-Site: cross-site` is refused except GET navigations to email-link endpoints.                           |
-| Request headers     | Allowlist: `accept`, `accept-language`, `content-type`, `cookie`, `origin`, `user-agent`, `x-forma-member`, `x-request-id`, `sec-fetch-*`. Credentials are added server-side.                     |
-| Client IP           | `cf-connecting-ip` is copied to `x-forma-client-ip`; client-supplied values are dropped. Outside development a request without it gets 503 so callers never share one limiter bucket.             |
-| Body limits         | 20 MiB only for `PUT /api/workspace`; 64 KiB elsewhere; enforced on declared length and while streaming.                                                                                          |
-| Timeouts            | 30 seconds for the whole exchange.                                                                                                                                                                |
-| Redirects           | Not followed. `Location` must resolve to the app origin (or the backend origin, rewritten); everything else is 502.                                                                               |
-| Response headers    | Allowlist: `content-type`, `content-language`, `content-disposition`, `etag`, `last-modified`, `retry-after`, `vary`.                                                                             |
-| Cookies             | Only `forma.*` and `__Secure-forma.*` cookies pass, with any `Domain` attribute removed. An Access `CF_Authorization` cookie can never reach the browser.                                         |
-| Response types      | Only `application/json` and `text/plain`; HTML (an Access login page), SVG and XML are refused.                                                                                                   |
-| Security headers    | API: `no-store`, `nosniff`, `default-src 'none'; frame-ancestors 'none'; sandbox`, `DENY`, `no-referrer`, CORP, HSTS. Assets: strict CSP (`script-src 'self'`), HSTS, `DENY`, Permissions-Policy. |
-| Alternate hostnames | Production sets `workers_dev: false` and `preview_urls: false`.                                                                                                                                   |
+| Control             | Behaviour                                                                                                                                                                                                                                               |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Fixed upstream      | `BACKEND_URL` must be an HTTPS origin without path or credentials. The upstream URL is built from the request path only; 60,000 fuzzed paths never changed the upstream host.                                                                           |
+| Routes and methods  | Exact allowlist per route. `/api/auth/*` paths containing `%`, `\`, `//` or dot segments are refused. Unknown `/api` paths are JSON 404s, never the SPA.                                                                                                |
+| Origin and CSRF     | Mutations need `Origin` equal to `APP_ORIGIN`; any foreign `Origin` is refused. `Sec-Fetch-Site: cross-site` is refused except GET navigations to email-link endpoints. The only write without `Origin` is a coach `PATCH` or a native request (below). |
+| Request headers     | Allowlist: `accept`, `accept-language`, `content-type`, `cookie`, `origin`, `user-agent`, `x-forma-client` (native requests only), `x-forma-member`, `x-request-id`, `sec-fetch-*`. Credentials are added server-side.                                  |
+| Client IP           | `cf-connecting-ip` is copied to `x-forma-client-ip`; client-supplied values are dropped. Outside development a request without it gets 503 so callers never share one limiter bucket.                                                                   |
+| Body limits         | 20 MiB only for `PUT /api/workspace`; 64 KiB elsewhere; enforced on declared length and while streaming.                                                                                                                                                |
+| Timeouts            | 30 seconds for the whole exchange.                                                                                                                                                                                                                      |
+| Redirects           | Not followed. `Location` must resolve to the app origin (or the backend origin, rewritten); everything else is 502.                                                                                                                                     |
+| Response headers    | Allowlist: `content-type`, `content-language`, `content-disposition`, `etag`, `last-modified`, `retry-after`, `vary`.                                                                                                                                   |
+| Cookies             | Only `forma.*` and `__Secure-forma.*` cookies pass, with any `Domain` attribute removed. An Access `CF_Authorization` cookie can never reach the browser.                                                                                               |
+| Response types      | Only `application/json` and `text/plain`; HTML (an Access login page), SVG and XML are refused.                                                                                                                                                         |
+| Security headers    | API: `no-store`, `nosniff`, `default-src 'none'; frame-ancestors 'none'; sandbox`, `DENY`, `no-referrer`, CORP, HSTS. Assets: strict CSP (`script-src 'self'`), HSTS, `DENY`, Permissions-Policy.                                                       |
+| Alternate hostnames | Production sets `workers_dev: false` and `preview_urls: false`.                                                                                                                                                                                         |
+
+### Native client requests
+
+The iOS app has no `Origin`. A request is **native** when it carries
+`X-Forma-Client: ios` and none of `Origin`, `Referer`, `Sec-Fetch-Site`,
+`Sec-Fetch-Mode` or `Sec-Fetch-Dest` (`isNativeClientRequest` in
+`worker/index.ts` and `server/app.ts`; presence counts, so an empty value is
+still a browser header). Only a native request may write without the app's
+`Origin`; the Worker forwards the marker for native requests only, and the API
+then adds the app's own `Origin` to the internal request it hands Better Auth,
+which otherwise refuses cookies without one. A browser cannot make such a
+request with a member's cookies: every cross-origin fetch carries `Origin`, a
+custom header forces a CORS preflight FORMA never approves, forms and
+navigations cannot set headers, and every browser request carries
+`Sec-Fetch-Site`. This is the same argument as the coach `PATCH` exemption.
+Routes, body limits, cookie filtering, the foreign-`Origin` and cross-site
+refusals, and the API's own checks (`X-Forma-Member`, fresh-session step-ups,
+throttles, JSON-only bodies) are unchanged, and sessions stay ordinary cookie
+sessions. A native marker beside any browser header is treated as a browser
+request. Covered by `worker/tests/native.test.ts` and
+`server/tests/native-client.test.ts`.
 
 ## Required account configuration (not verified)
 
