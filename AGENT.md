@@ -58,6 +58,28 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-27 — iOS motion system (Commit 2)
+
+- All native motion goes through `FormaMotion.swift`. Views read
+  `@Environment(\.formaMotion)` and use `motion.animation(token)`,
+  `motion.transition(...)`, `.formaAnimation(_:value:)` or
+  `.formaReveal(order:)`. Never read `accessibilityReduceMotion` or
+  `model.motion` directly in a feature view; the root resolves both (plus
+  Prefer Cross-Fade Transitions on iOS 26.4+).
+- Rules live in `ios/docs/commit-2/MOTION_SPEC.md`: animate committed state,
+  never the tap; no loops; no animating through invented chart values; no
+  animation while a field is being typed in. `.success` is reserved for the
+  finished-workout receipt; a saved set is `.impact(weight: .light)`.
+- XCUITest: lists (`Form`, `List`) are lazy, so a row below the fold does
+  not exist until scrolled to. Target the finish alert by `finish-confirm`;
+  the toolbar button shares the label "Finish workout". Replace field text by
+  selecting it (`replaceText(with:)`), not by sending one delete per
+  character. A view placed in `formaBottomBar` needs
+  `.accessibilityElement(children: .contain)` or the screen identifier
+  overrides its controls' identifiers.
+- `ScreenshotTourTests` produces named before/after screenshots; run it once
+  per appearance (`xcrun simctl ui <udid> appearance light|dark`).
+
 ### Raouf: 2026-10-27 — iOS launch path and performance rules
 
 - Keep startup work off the main thread: `AppModel.prepareLaunch()` is

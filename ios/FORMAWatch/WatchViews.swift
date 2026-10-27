@@ -5,15 +5,42 @@ private let ink = Color(red: 0x20 / 255, green: 0x25 / 255, blue: 0x22 / 255)
 
 struct WatchRootView: View {
   @Environment(WorkoutManager.self) private var manager
+  @Environment(\.isLuminanceReduced) private var luminanceReduced
 
   var body: some View {
+    Group {
+      switch manager.phase {
+      case .idle, .ready, .starting, .failed:
+        StartView().transition(.opacity)
+      case .running, .paused, .ending:
+        SessionView().transition(.opacity)
+      case .summary(let metrics, let saved):
+        SummaryView(metrics: metrics, saved: saved).transition(.opacity)
+      }
+    }
+    // A short cross-fade between screens; the same fade serves Reduce Motion.
+    // Always On is still, so nothing animates while the display is dimmed.
+    .animation(luminanceReduced ? nil : Animation.easeOut(duration: 0.16), value: screen)
+    // Feedback follows state HealthKit has confirmed (the workout is running,
+    // the save finished), never the tap that asked for it. The Watch app does
+    // not log sets, so there is no per-set cue here; the iPhone owns that.
+    .sensoryFeedback(trigger: manager.phase) { old, new in
+      switch (old, new) {
+      case (.starting, .running): return .start
+      case (.ending, .summary(_, saved: true)): return .success
+      default: return nil
+      }
+    }
+  }
+
+  /// Which screen is showing, so live changes inside a screen do not animate.
+  private enum Screen { case start, session, summary }
+
+  private var screen: Screen {
     switch manager.phase {
-    case .idle, .ready, .starting, .failed:
-      StartView()
-    case .running, .paused, .ending:
-      SessionView()
-    case .summary(let metrics, let saved):
-      SummaryView(metrics: metrics, saved: saved)
+    case .idle, .ready, .starting, .failed: .start
+    case .running, .paused, .ending: .session
+    case .summary: .summary
     }
   }
 }
@@ -120,13 +147,21 @@ private struct EnergyRow: View {
 }
 
 private struct MetricRow: View {
+  @Environment(\.accessibilityReduceMotion) private var reduceMotion
+  @Environment(\.isLuminanceReduced) private var luminanceReduced
   let text: String
   let symbol: String
   let color: Color
 
+  /// Digits roll from one real reading to the next only when the user has not
+  /// asked for less motion and the display is fully lit.
+  private var rollsDigits: Bool { !reduceMotion && !luminanceReduced }
+
   var body: some View {
     Label {
       Text(text).font(.title3.monospacedDigit())
+        .contentTransition(rollsDigits ? ContentTransition.numericText() : .identity)
+        .animation(rollsDigits ? Animation.easeOut(duration: 0.2) : nil, value: text)
     } icon: {
       Image(systemName: symbol).foregroundStyle(color)
     }

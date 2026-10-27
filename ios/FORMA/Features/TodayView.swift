@@ -8,8 +8,22 @@ private enum HeroColor {
   static let detail = Color(hex: 0xDEE5DC)
 }
 
+/// What the hero shows. Start and Resume share one hero view so the artwork
+/// and button persist and only the text cross-fades between them.
+private struct HeroContent {
+  let name: String
+  let detail: String
+  let action: String
+  let symbol: String
+  let inProgress: Bool
+  let perform: () -> Void
+}
+
 struct TodayView: View {
   @Environment(AppModel.self) private var model
+  /// True while `requestStart` waits on the Watch check or the first save, so
+  /// the Start tap is acknowledged at once.
+  @State private var starting = false
 
   var body: some View {
     // `model.routines` filters the whole routine list on every read. Read it
@@ -29,38 +43,32 @@ struct TodayView: View {
           }
         }
         .accessibilityElement(children: .combine)
+        .formaReveal(order: 0)
 
         VStack(alignment: .leading, spacing: 6) {
           Text("MAKE ROOM FOR").font(.caption.weight(.bold)).tracking(2).foregroundStyle(
             FormaTheme.secondary)
           EditorialTitle(text: "Your next stronger.")
         }
+        .formaReveal(order: 1)
 
-        if let active = model.workspace?.active {
-          trainingHero(
-            name: active.name, detail: "Pick up exactly where you left off.",
-            action: "Resume workout", symbol: "play.fill", inProgress: true
-          ) {
-            model.receipt = nil
-            model.workoutPresented = true
-          }
-        } else if let routine = routines.first {
-          trainingHero(
-            name: routine.name,
-            detail: "\(routine.exercises.count) exercises · about \(routine.minutes) min",
-            action: "Start workout", symbol: "arrow.up.right"
-          ) {
-            Task { await model.requestStart(routine) }
-          }
-        } else {
-          ContentUnavailableView {
-            Label("Your training starts here", systemImage: "dumbbell")
-          } description: {
-            Text("Create a routine in Plan, then make it yours one set at a time.")
+        // A stable container: the reveal plays once for the hero's lifetime,
+        // however often Start and Resume swap inside it.
+        VStack(alignment: .leading, spacing: 0) {
+          if let hero = heroContent(routines: routines) {
+            trainingHero(hero)
+          } else {
+            ContentUnavailableView {
+              Label("Your training starts here", systemImage: "dumbbell")
+            } description: {
+              Text("Create a routine in Plan, then make it yours one set at a time.")
+            }
           }
         }
+        .formaReveal(order: 2)
 
         WeekStrip()
+          .formaReveal(order: 3)
 
         VStack(alignment: .leading, spacing: 16) {
           SectionHeading(title: "Your training space", detail: "\(routines.count) routines")
@@ -81,37 +89,43 @@ struct TodayView: View {
               }
               .padding(.vertical, 12).contentShape(Rectangle())
             }
-            .buttonStyle(.plain)
+            .buttonStyle(PressableCardStyle())
             Divider().overlay(FormaTheme.line)
           }
         }
+        .formaReveal(order: 4)
 
-        if let recent = model.history.first {
-          VStack(alignment: .leading, spacing: 12) {
-            SectionHeading(
-              title: "Last time you showed up",
-              detail: TrainingDate.label(TrainingDate.date(recent)))
-            NavigationLink {
-              SessionDetailView(session: recent)
-            } label: {
-              HStack {
-                Image(systemName: "checkmark.seal.fill").foregroundStyle(FormaTheme.accent)
-                Text(recent.name).font(.headline)
-                Spacer()
-                Image(systemName: "chevron.right")
+        VStack(alignment: .leading, spacing: 0) {
+          if let recent = model.history.first {
+            VStack(alignment: .leading, spacing: 12) {
+              SectionHeading(
+                title: "Last time you showed up",
+                detail: TrainingDate.label(TrainingDate.date(recent)))
+              NavigationLink {
+                SessionDetailView(session: recent)
+              } label: {
+                HStack {
+                  Image(systemName: "checkmark.seal.fill").foregroundStyle(FormaTheme.accent)
+                  Text(recent.name).font(.headline)
+                  Spacer()
+                  Image(systemName: "chevron.right")
+                }
+                .foregroundStyle(FormaTheme.primary).padding(20)
+                .background(FormaTheme.surface, in: RoundedRectangle(cornerRadius: 18))
               }
-              .foregroundStyle(FormaTheme.primary).padding(20)
-              .background(FormaTheme.surface, in: RoundedRectangle(cornerRadius: 18))
+              .buttonStyle(PressableCardStyle())
+            }
+          } else {
+            HStack(alignment: .top, spacing: 12) {
+              Image(systemName: "sparkle").foregroundStyle(FormaTheme.accent)
+              Text("A fresh page. Your first completed workout will appear here.")
+                .font(.subheadline).foregroundStyle(FormaTheme.secondary)
             }
           }
-        } else {
-          HStack(alignment: .top, spacing: 12) {
-            Image(systemName: "sparkle").foregroundStyle(FormaTheme.accent)
-            Text("A fresh page. Your first completed workout will appear here.")
-              .font(.subheadline).foregroundStyle(FormaTheme.secondary)
-          }
         }
+        .formaReveal(order: 5)
         LocalSaveStatus(saving: model.busy)
+          .formaReveal(order: 6)
       }
       .padding(24)
     }
@@ -119,11 +133,36 @@ struct TodayView: View {
     .toolbar(.hidden, for: .navigationBar)
   }
 
-  private func trainingHero(
-    name: String, detail: String, action: String, symbol: String, inProgress: Bool = false,
-    perform: @escaping () -> Void
-  ) -> some View {
-    VStack(alignment: .leading, spacing: 0) {
+  /// The hero's content for the current state, or nil when there is no routine
+  /// to start. Reads `activeWorkoutName` (not `workspace`), which changes only
+  /// when a workout starts or ends.
+  private func heroContent(routines: [Routine]) -> HeroContent? {
+    if let name = model.activeWorkoutName {
+      return HeroContent(
+        name: name, detail: "Pick up exactly where you left off.",
+        action: "Resume workout", symbol: "play.fill", inProgress: true
+      ) {
+        model.receipt = nil
+        model.workoutPresented = true
+      }
+    }
+    guard let routine = routines.first else { return nil }
+    return HeroContent(
+      name: routine.name,
+      detail: "\(routine.exercises.count) exercises · about \(routine.minutes) min",
+      action: "Start workout", symbol: "arrow.up.right", inProgress: false
+    ) {
+      starting = true
+      Task {
+        await model.requestStart(routine)
+        starting = false
+      }
+    }
+  }
+
+  private func trainingHero(_ hero: HeroContent) -> some View {
+    let pending = starting && !hero.inProgress
+    return VStack(alignment: .leading, spacing: 0) {
       ZStack(alignment: .bottomLeading) {
         GeometryReader { geometry in
           Image("TrainingEditorial").resizable().scaledToFill()
@@ -132,33 +171,52 @@ struct TodayView: View {
         .accessibilityHidden(true)
         LinearGradient(
           colors: [.clear, HeroColor.scrim], startPoint: .top, endPoint: .bottom)
+        // Keyed on the state, so Start and Resume cross-fade over the same art.
         VStack(alignment: .leading, spacing: 10) {
           Label(
-            inProgress ? "IN PROGRESS" : "YOUR NEXT SESSION",
-            systemImage: inProgress ? "play.circle" : "arrow.turn.down.right"
+            hero.inProgress ? "IN PROGRESS" : "YOUR NEXT SESSION",
+            systemImage: hero.inProgress ? "play.circle" : "arrow.turn.down.right"
           )
           .font(.caption.weight(.bold)).tracking(1.5).foregroundStyle(FormaTheme.lime)
-          Text(name).font(.system(.largeTitle, design: .default, weight: .black).width(.condensed))
-            .foregroundStyle(.white).fixedSize(horizontal: false, vertical: true)
-          Text(detail).font(.subheadline).foregroundStyle(HeroColor.detail)
+          Text(hero.name).font(
+            .system(.largeTitle, design: .default, weight: .black).width(.condensed)
+          )
+          .foregroundStyle(.white).fixedSize(horizontal: false, vertical: true)
+          Text(hero.detail).font(.subheadline).foregroundStyle(HeroColor.detail)
         }
         .padding(24)
+        .id(hero.inProgress)
+        .transition(.opacity)
       }
       .frame(minHeight: 290)
-      Button(action: perform) {
-        HStack {
-          Text(action)
-          Spacer()
-          Image(systemName: symbol)
+      Button(action: hero.perform) {
+        ZStack {
+          HStack {
+            Text(hero.action)
+            Spacer()
+            if pending {
+              // Acknowledges the tap while the Watch check or first save runs.
+              ProgressView().tint(FormaTheme.ink)
+            } else {
+              Image(systemName: hero.symbol)
+            }
+          }
+          .id(hero.inProgress)
+          .transition(.opacity)
         }
       }
       .buttonStyle(PrimaryButtonStyle())
+      // The label is explicit so the outgoing text, which lingers for the
+      // cross-fade, never leaks into it.
+      .accessibilityLabel(hero.action)
+      .accessibilityValue(pending ? "Starting" : "")
       .accessibilityIdentifier("start-workout")
-      .disabled(model.busy)
+      .disabled(model.busy || pending)
       .padding(16)
       .background(HeroColor.ink)
     }
     .clipShape(RoundedRectangle(cornerRadius: 24))
+    .formaAnimation(FormaMotion.reveal, value: model.activeWorkoutName)
   }
 
   private var brand: some View {
@@ -176,7 +234,13 @@ struct TodayView: View {
 
 struct WeekStrip: View {
   @Environment(AppModel.self) private var model
+  @Environment(\.formaMotion) private var motion
   @Environment(\.dynamicTypeSize) private var textSize
+  /// The completed weekdays the circles currently draw. nil until the strip
+  /// first appears, so days already complete are simply shown complete. It
+  /// follows the committed history only while the workout screen is closed,
+  /// which is when a newly completed day can actually be seen filling in.
+  @State private var drawn: Set<Int>?
   private let days = ["M", "T", "W", "T", "F", "S", "S"]
   private let fullDays = [
     "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",
@@ -201,9 +265,34 @@ struct WeekStrip: View {
     return (count, days)
   }
 
+  /// Monday = 0, like the sets above.
+  private var todayIndex: Int {
+    (TrainingDate.calendar.component(.weekday, from: .now) + 5) % 7
+  }
+
+  /// One sentence of state for a day, in the order VoiceOver reads it. Built
+  /// from committed history, never from what the circles have animated to.
+  private func status(day: Int, trained: Bool, scheduled: Bool, today: Int) -> String {
+    if trained { return "Completed" }
+    if day == today {
+      return scheduled ? "Not yet trained, planned training day" : "Not yet trained"
+    }
+    if day > today { return scheduled ? "Planned training day" : "No workout planned" }
+    return scheduled ? "Planned training day, not completed" : "No workout recorded"
+  }
+
+  /// Brings the drawn days up to the committed ones, with the one-time
+  /// emphasis. Deferred while the workout cover is up: the strip is behind it.
+  private func syncDrawn(to completed: Set<Int>) {
+    guard drawn != completed, !model.workoutPresented else { return }
+    withFormaAnimation(motion, FormaMotion.emphasis) { drawn = completed }
+  }
+
   var body: some View {
     let week = thisWeek()
     let completedDays = week.days
+    let shownDays = drawn ?? completedDays
+    let today = todayIndex
     let schedule = model.workspace?.schedule ?? []
     VStack(alignment: .leading, spacing: 18) {
       SectionHeading(
@@ -213,12 +302,11 @@ struct WeekStrip: View {
         VStack(alignment: .leading, spacing: 16) {
           ForEach(0..<7) { day in
             VStack(alignment: .leading, spacing: 4) {
-              Text(fullDays[day]).font(.headline)
+              Text(day == today ? "\(fullDays[day]) · Today" : fullDays[day]).font(.headline)
               Text(
-                completedDays.contains(day)
-                  ? "Workout completed"
-                  : schedule.contains(day)
-                    ? "Planned training day" : "No workout recorded"
+                status(
+                  day: day, trained: completedDays.contains(day),
+                  scheduled: schedule.contains(day), today: today)
               )
               .font(.subheadline).foregroundStyle(FormaTheme.secondary)
             }.accessibilityElement(children: .combine)
@@ -227,10 +315,16 @@ struct WeekStrip: View {
       } else {
         HStack(spacing: 0) {
           ForEach(0..<7) { day in
-            let trained = completedDays.contains(day)
+            let trained = shownDays.contains(day)
             let scheduled = schedule.contains(day)
+            let isToday = day == today
+            // Spoken from committed history, so it is already right while the
+            // circle is still animating.
+            let spoken = status(
+              day: day, trained: completedDays.contains(day), scheduled: scheduled, today: today)
             VStack(spacing: 10) {
-              Text(days[day]).font(.caption.weight(.semibold)).foregroundStyle(FormaTheme.secondary)
+              Text(days[day]).font(.caption.weight(isToday ? .heavy : .semibold))
+                .foregroundStyle(isToday ? FormaTheme.primary : FormaTheme.secondary)
               ZStack {
                 Circle().fill(trained ? FormaTheme.lime : FormaTheme.surface)
                 Circle().strokeBorder(
@@ -239,17 +333,18 @@ struct WeekStrip: View {
                     lineWidth: scheduled ? 1.5 : 1, dash: scheduled && !trained ? [3, 3] : []))
                 if trained {
                   Image(systemName: "checkmark").font(.caption.bold()).foregroundStyle(
-                    FormaTheme.ink)
+                    FormaTheme.ink
+                  )
+                  .transition(motion.transition(.scale(scale: 0.3).combined(with: .opacity)))
                 } else if scheduled {
                   Circle().fill(FormaTheme.accent).frame(width: 5, height: 5)
+                    .transition(.opacity)
                 }
               }.frame(width: 34, height: 34)
             }
             .frame(maxWidth: .infinity)
             .accessibilityElement(children: .ignore)
-            .accessibilityLabel(
-              "\(fullDays[day]), \(trained ? "workout completed" : scheduled ? "planned training day" : "no workout recorded")"
-            )
+            .accessibilityLabel("\(isToday ? "Today" : fullDays[day]), \(spoken.lowercased())")
           }
         }
       }
@@ -258,5 +353,10 @@ struct WeekStrip: View {
           .font(.caption).foregroundStyle(FormaTheme.secondary)
       }
     }
+    .onAppear {
+      if drawn == nil { drawn = completedDays } else { syncDrawn(to: completedDays) }
+    }
+    .onChange(of: completedDays) { syncDrawn(to: completedDays) }
+    .onChange(of: model.workoutPresented) { syncDrawn(to: completedDays) }
   }
 }

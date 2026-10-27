@@ -25,6 +25,7 @@ struct ProgressViewScreen: View {
             MetricValue(value: "\(history.count)", label: "Workouts")
             MetricValue(value: "\(sets)", label: "Completed sets")
           }
+          .formaReveal(order: 0)
           VolumeChart(sessions: Array(history.prefix(8).reversed()))
           LazyVStack(alignment: .leading, spacing: 8) {
             SectionHeading(title: "Your training journal", detail: "Latest first")
@@ -77,20 +78,38 @@ private struct JournalRow: View {
 }
 
 struct MetricValue: View {
+  @Environment(\.formaMotion) private var motion
   let value: String
   let label: String
   var body: some View {
     VStack(alignment: .leading, spacing: 6) {
       Text(value).font(.system(.largeTitle, design: .rounded, weight: .bold)).monospacedDigit()
         .foregroundStyle(FormaTheme.primary)
+        // A new real total replaces the old one digit by digit at full motion,
+        // cross-fades at minimal and swaps at once when off. Nothing between
+        // the two values is ever drawn.
+        .contentTransition(Self.transition(for: motion))
+        .formaAnimation(FormaMotion.state, value: value)
       Text(label).font(.subheadline).foregroundStyle(FormaTheme.secondary)
     }.accessibilityElement(children: .combine)
+  }
+
+  private static func transition(for level: FormaMotionLevel) -> ContentTransition {
+    switch level {
+    case .full: .numericText()
+    case .minimal: .opacity
+    case .off: .identity
+    }
   }
 }
 
 struct VolumeChart: View {
   @Environment(AppModel.self) private var model
+  @Environment(\.formaMotion) private var motion
   @ScaledMetric(relativeTo: .body) private var chartHeight = 200.0
+  /// Flips once, when the chart first has data on screen. Only the chart's
+  /// opacity follows it; bar heights are always the real volumes.
+  @State private var marksShown = false
   let sessions: [WorkoutSession]
 
   /// Everything a session contributes to the chart, worked out once per render.
@@ -138,7 +157,17 @@ struct VolumeChart: View {
       .chartYAxis { AxisMarks(position: .leading) }
       .chartYScale(domain: 0...max(1, peak * 1.1))
       .frame(height: chartHeight)
+      // Bars are never grown from zero or tweened when a new workout lands:
+      // data changes draw the real values at once.
+      .animation(nil, value: bars.map(\.volume))
+      // First data fades in once at full motion; minimal and off show it now.
+      .opacity(marksShown || motion != .full ? 1 : 0)
+      .onAppear {
+        guard !marksShown else { return }
+        withFormaAnimation(motion, FormaMotion.reveal) { marksShown = true }
+      }
       .accessibilityLabel("Lifting volume over your latest \(sessions.count) workouts")
+      .accessibilityValue(Self.summary(bars, peak: peak))
       .accessibilityIdentifier("lifting-volume-chart")
       Text("Completed lifting sets only. Time, distance and carries are excluded.")
         .font(.caption).foregroundStyle(FormaTheme.secondary)
@@ -162,6 +191,15 @@ struct VolumeChart: View {
       }.font(.subheadline)
     }
     .padding(20).background(FormaTheme.surface, in: RoundedRectangle(cornerRadius: 20))
+  }
+
+  /// One spoken overview of the real values: the newest bar and the highest.
+  /// Each bar is still reachable on its own with its date, name and volume.
+  private static func summary(_ bars: [Bar], peak: Double) -> Text {
+    guard let latest = bars.last else { return Text("No completed lifting sets") }
+    let newest = latest.volume.formatted(.number.precision(.fractionLength(0...2)))
+    let highest = peak.formatted(.number.precision(.fractionLength(0...2)))
+    return Text("Latest, \(latest.title), \(newest). Highest, \(highest). Kilogram repetitions.")
   }
 }
 

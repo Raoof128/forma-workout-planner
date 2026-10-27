@@ -7,6 +7,9 @@ struct StartWorkoutSheet: View {
   @Environment(AppModel.self) private var model
   @Environment(\.dismiss) private var dismiss
   let routine: Routine
+  /// In-button progress, so each tap is acknowledged while its await runs.
+  @State private var opening = false
+  @State private var starting = false
 
   var body: some View {
     NavigationStack {
@@ -20,6 +23,8 @@ struct StartWorkoutSheet: View {
               .font(.subheadline).foregroundStyle(FormaTheme.secondary)
           }
           status
+            .formaAnimation(FormaMotion.state, value: model.watch.availability)
+            .formaAnimation(FormaMotion.state, value: model.watch.phase)
           if let notice = model.watch.notice {
             Label(notice, systemImage: "exclamationmark.circle")
               .font(.subheadline).foregroundStyle(FormaTheme.error)
@@ -28,11 +33,25 @@ struct StartWorkoutSheet: View {
           VStack(spacing: 12) {
             if model.watch.availability == .ready, model.watch.phase == .idle {
               Button {
-                Task { await model.watch.open(routine: routine) }
+                opening = true
+                Task {
+                  await model.watch.open(routine: routine)
+                  opening = false
+                }
               } label: {
-                Label("Open FORMA on Apple Watch", systemImage: "applewatch")
+                Label {
+                  Text("Open FORMA on Apple Watch")
+                } icon: {
+                  if opening {
+                    ProgressView().tint(FormaTheme.ink)
+                  } else {
+                    Image(systemName: "applewatch")
+                  }
+                }
               }
               .buttonStyle(PrimaryButtonStyle())
+              .disabled(opening)
+              .accessibilityValue(opening ? "Opening" : "")
               .accessibilityIdentifier("watch-open")
             } else if model.watch.availability != .ready {
               Button {
@@ -44,12 +63,21 @@ struct StartWorkoutSheet: View {
               .disabled(model.watch.availability == .checking)
             }
             Button {
-              Task { await model.start(routine) }
+              starting = true
+              Task {
+                await model.start(routine)
+                starting = false
+              }
             } label: {
-              Text("Start on iPhone only").frame(maxWidth: .infinity, minHeight: 44)
+              HStack(spacing: 10) {
+                if starting { ProgressView() }
+                Text("Start on iPhone only")
+              }
+              .frame(maxWidth: .infinity, minHeight: 44)
             }
             .buttonStyle(.bordered)
-            .disabled(model.busy)
+            .disabled(model.busy || starting)
+            .accessibilityValue(starting ? "Starting" : "")
             .accessibilityIdentifier("start-on-iphone")
           }
         }

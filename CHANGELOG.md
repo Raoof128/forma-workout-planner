@@ -4,6 +4,46 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-27 — iOS: purposeful motion (Commit 2)
+
+- **Motion system:** new `FormaMotion` resolves one level (full, minimal or
+  off) from You › Motion and the system's Reduce Motion. On iOS 26.4+ it also
+  honours Prefer Cross-Fade Transitions. The level comes with shared timing
+  tokens. The Motion setting previously changed only a 1% button scale.
+- **Workout:**
+  - Set completion animates in place after the save commits.
+  - The keyboard no longer drops while a set saves.
+  - The rest dock slides in and shows a ring counting toward the saved
+    deadline. When a rest ends on screen you get one haptic and a VoiceOver
+    announcement.
+  - The hold bar is smooth, and its digits change once a second instead of
+    four times.
+  - The receipt has a one-time seal and is the only place the success haptic
+    plays. A saved set now gets a light tap.
+- **Today, Plan, Progress, You, Watch:**
+  - Entrances play once.
+  - Start and Resume cross-fade, and Start shows progress at once.
+  - Newly completed days fill in the week strip, and today is marked.
+  - The chart fades in without ever drawing invented values.
+  - The You footer explains each setting.
+  - On the Watch, haptics fire when HealthKit confirms the workout has
+    started or has been saved, and screens stay still in Always On.
+- **Fixes found by the tests:**
+  - **Rest dock:** its controls inherited the screen's accessibility
+    identifier.
+  - **UI tests:** the 5 baseline failures came from a duplicate "Finish
+    workout" label, lazy list rows, and dropped simulator deletes. The tests
+    were corrected without weakening any assertion.
+- **Verification:**
+  - **Builds:** iPhone and Watch passed in Debug (simulator) and in signed
+    Release (iPhone Air).
+  - **FORMACore:** 76 of 76 tests pass.
+  - **UI tests:** all 12 pass on the final code. Two needed a rerun after
+    stalls on the loaded Mac; the baseline was 3 of 8.
+  - **Screenshots:** before and after for 9 screens in light and dark.
+  - **Not run:** Instruments and on-device VoiceOver. See
+    `ios/docs/commit-2/`.
+
 ### Raouf: 2026-10-27 — iOS launch and smoothness audit
 
 - **Launch:** the launch screen was an empty `UILaunchScreen`, so iOS showed

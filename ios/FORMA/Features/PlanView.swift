@@ -105,6 +105,20 @@ private struct ExerciseLibraryLink: View {
   }
 }
 
+/// Press feedback for tappable cards and rows outside a List (a List row keeps
+/// the system highlight): a 0.98 scale at full motion, opacity alone at minimal
+/// and off. Leaves the label's own colours and layout alone, unlike `.plain`
+/// which gives no feedback at all.
+struct PressableCardStyle: ButtonStyle {
+  @Environment(\.formaMotion) private var motion
+  func makeBody(configuration: Configuration) -> some View {
+    configuration.label
+      .opacity(configuration.isPressed ? 0.85 : 1)
+      .scaleEffect(configuration.isPressed && motion.allowsSpatialMotion ? 0.98 : 1)
+      .animation(motion.animation(FormaMotion.press), value: configuration.isPressed)
+  }
+}
+
 private struct RoutinePlanRow: View {
   let routine: Routine
   var body: some View {
@@ -130,6 +144,9 @@ struct RoutineDetailView: View {
   private let routineID: String
   @State private var editing: Routine?
   @State private var confirmingDelete = false
+  /// True while `requestStart` waits on the Watch check or the first save, so
+  /// the tap is acknowledged at once.
+  @State private var starting = false
   private var current: Routine? { model.workspace?.routines.first { $0.id == routineID } }
 
   init(routine: Routine) {
@@ -150,11 +167,24 @@ struct RoutineDetailView: View {
               }
               Text("\(current.minutes) min · \(current.level)").font(.subheadline)
                 .foregroundStyle(FormaTheme.secondary)
-              Button(model.workspace?.active == nil ? "Start workout" : "Resume active workout") {
-                Task { await model.requestStart(current) }
+              let startTitle =
+                model.workspace?.active == nil ? "Start workout" : "Resume active workout"
+              Button {
+                starting = true
+                Task {
+                  await model.requestStart(current)
+                  starting = false
+                }
+              } label: {
+                HStack(spacing: 10) {
+                  if starting { ProgressView().tint(FormaTheme.ink) }
+                  Text(startTitle)
+                }
               }
               .buttonStyle(PrimaryButtonStyle())
-              .disabled(model.busy)
+              .disabled(model.busy || starting)
+              .accessibilityLabel(startTitle)
+              .accessibilityValue(starting ? "Starting" : "")
               .accessibilityIdentifier("start-routine-workout")
             }
             .padding(.vertical, 8)
@@ -768,6 +798,10 @@ struct ExerciseLibraryView: View {
       }
     }
     .searchable(text: $query, prompt: "Name, muscle or equipment")
+    // Filter changes animate; typed queries never do. Results arrive after a
+    // debounce while the person is still typing, and moving rows under the
+    // keyboard would be both janky and distracting.
+    .formaAnimation(FormaMotion.reveal, value: [muscle, equipment])
     .accessibilityIdentifier(onSelect == nil ? "exercise-library" : "exercise-picker")
     .navigationTitle(onSelect == nil ? "Exercise library" : "Add exercise")
     .navigationBarTitleDisplayMode(.inline)

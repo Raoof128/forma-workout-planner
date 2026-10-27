@@ -9,6 +9,7 @@ struct FORMAApp: App {
     WindowGroup {
       RootView()
         .environment(model)
+        .formaMotionRoot(model.motion)
         .tint(FormaTheme.accent)
         .task { await model.load() }
     }
@@ -17,6 +18,7 @@ struct FORMAApp: App {
 
 struct RootView: View {
   @Environment(AppModel.self) private var model
+  @Environment(\.formaMotion) private var motion
   @State private var selectedTab: TrainingTab = .today
 
   var body: some View {
@@ -50,11 +52,17 @@ struct RootView: View {
           NavigationStack {
             if let receipt = model.receipt {
               WorkoutReceipt(session: receipt)
+                .transition(motion.transition(.opacity.combined(with: .scale(scale: 0.98))))
             } else if model.workspace?.active != nil {
               WorkoutView()
+                .transition(.opacity)
             }
           }
+          // The receipt exists only after the finished workout is saved, so
+          // this hand-off follows the durable result.
+          .animation(motion.animation(FormaMotion.navigation), value: model.receipt != nil)
           .environment(model)
+          .environment(\.formaMotion, motion)
           .interactiveDismissDisabled()
         }
       } else if let failure = model.loadFailure {
@@ -69,11 +77,15 @@ struct RootView: View {
         }
       } else {
         VStack(spacing: 24) {
-          FormaMark().fill(FormaTheme.accent).frame(width: 64, height: 64)
+          FormaLoadingMark().frame(width: 64, height: 64)
           ProgressView("Opening your training space…")
         }
+        .transition(.opacity)
       }
     }
+    // The opened workspace cross-fades in over the loading state rather than
+    // cutting to it.
+    .animation(motion.animation(FormaMotion.reveal), value: model.hasWorkspace)
     // Fill the whole window so the loading state continues the launch
     // screen's colour instead of flashing the default white around it.
     .frame(maxWidth: .infinity, maxHeight: .infinity)

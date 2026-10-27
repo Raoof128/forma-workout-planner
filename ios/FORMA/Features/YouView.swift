@@ -47,9 +47,14 @@ struct YouView: View {
       } header: {
         Text("Feel at home")
       } footer: {
-        Text(
-          "System Reduce Motion always takes precedence. Haptics follow your device settings and are paired with a visible check."
-        )
+        VStack(alignment: .leading, spacing: 8) {
+          Text(
+            "Motion: System plays full motion unless Reduce Motion is on, Minimal swaps movement for short fades, and Off shows every change at once. Reduce Motion in Settings always wins, and Off leaves system transitions such as sheets alone."
+          )
+          Text(
+            "Haptics: a light tap confirms a saved set, a firmer one marks the end of rest, and a finished workout gets one success pattern. Each is paired with something you can see. Your device's haptic settings still apply."
+          )
+        }
       }
 
       Section {

@@ -51,6 +51,12 @@ extension Color {
 }
 
 struct FormaMark: Shape {
+  /// One facet of the mark, or nil for the whole mark. The loading state
+  /// assembles the mark facet by facet.
+  var facet: Int? = nil
+
+  static let facetCount = 3
+
   /// Constant geometry, built once instead of on every path request.
   private static let facets: [[CGPoint]] = [
     [.init(x: 18, y: 12), .init(x: 29, y: 12), .init(x: 19, y: 52), .init(x: 8, y: 52)],
@@ -60,7 +66,7 @@ struct FormaMark: Shape {
 
   func path(in rect: CGRect) -> Path {
     var path = Path()
-    for points in Self.facets {
+    for points in facet.map({ [Self.facets[$0]] }) ?? Self.facets {
       path.move(to: CGPoint(x: points[0].x / 64 * rect.width, y: points[0].y / 64 * rect.height))
       for point in points.dropFirst() {
         path.addLine(to: CGPoint(x: point.x / 64 * rect.width, y: point.y / 64 * rect.height))
@@ -83,8 +89,7 @@ struct EditorialTitle: View {
 }
 
 struct PrimaryButtonStyle: ButtonStyle {
-  @Environment(\.accessibilityReduceMotion) private var reduceMotion
-  @Environment(AppModel.self) private var model
+  @Environment(\.formaMotion) private var motion
   @Environment(\.isEnabled) private var isEnabled
   func makeBody(configuration: Configuration) -> some View {
     configuration.label
@@ -93,8 +98,8 @@ struct PrimaryButtonStyle: ButtonStyle {
       .padding(.horizontal, 16)
       .background(FormaTheme.lime, in: RoundedRectangle(cornerRadius: 16))
       .opacity(isEnabled ? configuration.isPressed ? 0.85 : 1 : 0.5)
-      .scaleEffect(
-        isEnabled && configuration.isPressed && !reduceMotion && model.motion == .system ? 0.99 : 1)
+      .scaleEffect(isEnabled && configuration.isPressed && motion.allowsSpatialMotion ? 0.98 : 1)
+      .animation(motion.animation(FormaMotion.press), value: configuration.isPressed)
   }
 }
 
