@@ -38,6 +38,8 @@ final class AppModel {
   var loadFailure: String?
   var workoutPresented = false
   var receipt: WorkoutSession?
+  /// The latest haptic-worthy event; `FormaHapticRelay` plays it.
+  private(set) var hapticEvent: FormaHapticEvent?
   var hapticsEnabled = true { didSet { savePreferences() } }
   var motion: MotionPreference = .system { didSet { savePreferences() } }
   var appearance: AppearancePreference = .system { didSet { savePreferences() } }
@@ -195,8 +197,15 @@ final class AppModel {
     } catch {
       errorMessage =
         "This change was not saved. Your last saved workout is intact. \(error.localizedDescription)"
+      haptic(.failed)
       return false
     }
+  }
+
+  /// Plays `kind` once, if haptics are on. Call it after the change it
+  /// confirms has happened, never before.
+  func haptic(_ kind: FormaHaptic) {
+    hapticEvent = FormaHapticEvent(kind: kind)
   }
 
   /// Start buttons come here. With a paired Apple Watch the start sheet waits
@@ -229,6 +238,7 @@ final class AppModel {
       }
     }) {
       receipt = nil
+      haptic(.started)
       presentWorkout()
     }
   }

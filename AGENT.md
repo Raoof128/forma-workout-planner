@@ -79,6 +79,14 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   overrides its controls' identifiers.
 - `ScreenshotTourTests` produces named before/after screenshots; run it once
   per appearance (`xcrun simctl ui <udid> appearance light|dark`).
+- Haptics: call `model.haptic(_:)` with a `FormaHaptic` after the change it
+  confirms has saved; never add a bare `.sensoryFeedback` that skips
+  `hapticsEnabled`. Keep one system pattern per meaning (map in
+  `ios/docs/commit-2/IMPLEMENTATION_REPORT.md`).
+- Native sign-in: read `ios/docs/native-accounts-findings.md` first. The
+  browser Origin/cookie boundary must not be relaxed for the app, and the
+  "production must stay guest-only" note above predates the 13 Oct 2026
+  account launch.
 
 ### Raouf: 2026-10-27 — iOS launch path and performance rules
 

@@ -26,7 +26,8 @@ struct WatchRootView: View {
     // not log sets, so there is no per-set cue here; the iPhone owns that.
     .sensoryFeedback(trigger: manager.phase) { old, new in
       switch (old, new) {
-      case (.starting, .running): return .start
+      case (.starting, .running), (.paused, .running): return .start
+      case (.running, .paused): return .stop
       case (.ending, .summary(_, saved: true)): return .success
       default: return nil
       }

@@ -4,6 +4,28 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-27 — iOS haptics for every action that needs one
+
+- **Coverage:** every iOS action that warrants feedback now has a haptic, each
+  using the system pattern whose documented meaning fits (HIG Playing
+  haptics):
+  - `.start` / `.stop` for workouts, holds and rest;
+  - `.increase` / `.decrease` for stepped values;
+  - `.selection` for changing exercise;
+  - a soft or solid impact for reopening or adding a set;
+  - `.warning` when an action is refused with a visible reason;
+  - `.error` when a change cannot be saved.
+- **Routing:** everything goes through one relay (`FormaHaptics.swift`), so
+  each haptic is gated by You › Set confirmation haptics and plays only after
+  its change has saved.
+- **Watch:** now also confirms pause and resume.
+- **Still silent:** navigation, tabs, toggles and routine saves, as the HIG
+  advises.
+- **Sign-in:** native sign-in across web and app has been mapped in
+  `ios/docs/native-accounts-findings.md`. Nothing was built yet: it needs a
+  new native auth route on the server and owner decisions.
+- **Verification:** iPhone and Watch build with no errors.
+
 ### Raouf: 2026-10-27 — iOS: purposeful motion (Commit 2)
 
 - **Motion system:** new `FormaMotion` resolves one level (full, minimal or

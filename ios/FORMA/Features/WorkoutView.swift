@@ -281,7 +281,16 @@ struct WorkoutView: View {
           guard !Task.isCancelled, hold == current else { return }
           await logHold(current, seconds: current.length)
         }
-        .onChange(of: selectedExercise) { _, _ in holdMessage = nil }
+        // Only Next exercise and Choose exercise change this, after the drafts
+        // they carry have saved.
+        .onChange(of: selectedExercise) { _, _ in
+          holdMessage = nil
+          model.haptic(.selected)
+        }
+        // A refused action names its reason on screen; the warning points to it.
+        .onChange(of: validation) { old, new in
+          if let new, new != old { model.haptic(.warning) }
+        }
         // Keep the screen on while a hold counts down, as the web does.
         .onChange(of: hold?.endsAt != nil) { _, running in
           UIApplication.shared.isIdleTimerDisabled = running
@@ -401,7 +410,7 @@ struct WorkoutView: View {
         // keyboard: fields are no longer disabled by `busy`.
         if drafts.isEmpty, focusedField?.hasPrefix(rowKey + "-") == true { focusedField = nil }
         validation = drafts.isEmpty ? nil : "Newer edits are still unsaved. Tap Done to save them."
-        if !wasDone { feedback += 1 }
+        if wasDone { model.haptic(.undone) } else { feedback += 1 }
       }
     } catch { validation = error.localizedDescription }
   }
@@ -412,7 +421,7 @@ struct WorkoutView: View {
     else { return }
     let entryID = session.exercises[selectedExercise].id
     guard await saveDrafts() else { return }
-    _ = await model.commit(forActiveSession: session.id) { value in
+    let added = await model.commit(forActiveSession: session.id) { value in
       guard let index = value.active?.exercises.firstIndex(where: { $0.id == entryID }),
         let last = value.active?.exercises[index].sets.last
       else { throw AppFailure("This exercise has changed. Reopen it before adding a set.") }
@@ -420,6 +429,7 @@ struct WorkoutView: View {
       next.done = false
       value.active?.exercises[index].sets.append(next)
     }
+    if added { model.haptic(.added) }
   }
 
   private func holdTimer(session: WorkoutSession, entry: SessionEntry, exercise: Exercise)
@@ -437,7 +447,10 @@ struct WorkoutView: View {
       setNumber: (current?.setIndex ?? openSet).map { $0 + 1 },
       length: length, hold: current, unit: unit,
       otherHoldRunning: hold != nil && current == nil,
-      adjust: { delta in holdLengths[entry.id] = HoldTimer.clamp(length + delta, unit: unit) },
+      adjust: { delta in
+        holdLengths[entry.id] = HoldTimer.clamp(length + delta, unit: unit)
+        model.haptic(delta > 0 ? .increased : .decreased)
+      },
       start: {
         guard let openSet else { return }
         holdMessage = nil
@@ -445,17 +458,20 @@ struct WorkoutView: View {
           sessionID: session.id, entryID: entry.id, exerciseID: entry.exerciseId,
           setIndex: openSet, length: length, endsAt: .now.addingTimeInterval(Double(length)),
           left: length)
+        model.haptic(.started)
       },
       pause: {
         guard var timer = hold, timer.endsAt != nil else { return }
         timer.left = timer.remaining(at: .now)
         timer.endsAt = nil
         hold = timer
+        model.haptic(.stopped)
       },
       resume: {
         guard var timer = hold, timer.endsAt == nil else { return }
         timer.endsAt = .now.addingTimeInterval(Double(timer.left))
         hold = timer
+        model.haptic(.started)
       },
       end: {
         guard let timer = hold else { return }
@@ -463,7 +479,10 @@ struct WorkoutView: View {
         guard held >= unit.seconds else { return }
         Task { await logHold(timer, seconds: held) }
       },
-      cancel: { hold = nil })
+      cancel: {
+        hold = nil
+        model.haptic(.stopped)
+      })
   }
 
   /// Logs the timed set (the first unfinished one if it was ticked meanwhile)
@@ -1046,12 +1065,14 @@ struct RestDock: View {
         AdaptiveMetricGroup {
           Button {
             Task {
-              _ = await model.commit(forActiveSession: session.id) { value in
+              let resuming = session.restPaused != nil
+              let saved = await model.commit(forActiveSession: session.id) { value in
                 value =
                   value.active?.restPaused != nil
                   ? try WorkoutEngine.resumeRest(in: value, now: AppModel.now)
                   : try WorkoutEngine.pauseRest(in: value, now: AppModel.now)
               }
+              if saved { model.haptic(resuming ? .started : .stopped) }
             }
           } label: {
             let paused = session.restPaused != nil
@@ -1072,9 +1093,10 @@ struct RestDock: View {
           .accessibilityIdentifier("rest-toggle")
           Button {
             Task {
-              _ = await model.commit(forActiveSession: session.id) {
+              let saved = await model.commit(forActiveSession: session.id) {
                 $0 = try WorkoutEngine.adjustRest(in: $0, by: 15, now: AppModel.now)
               }
+              if saved { model.haptic(.increased) }
             }
           } label: {
             Label("15 sec", systemImage: "plus").frame(minWidth: 44, minHeight: 44)
@@ -1082,9 +1104,10 @@ struct RestDock: View {
           .accessibilityLabel("Add 15 seconds to rest")
           Button("Skip") {
             Task {
-              _ = await model.commit(forActiveSession: session.id) {
+              let saved = await model.commit(forActiveSession: session.id) {
                 $0 = try WorkoutEngine.skipRest(in: $0)
               }
+              if saved { model.haptic(.stopped) }
             }
           }.frame(minWidth: 44, minHeight: 44).accessibilityLabel("Skip rest")
         }

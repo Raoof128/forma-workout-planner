@@ -87,8 +87,26 @@ no WebView, no new settings. iOS 17 remains the floor; the only newer API used
 | Hold logged | `.impact(weight: .light)` | same |
 | Rest reached zero (once per rest) | `.impact(weight: .medium)` | same |
 | Workout finished and saved (receipt) | `.success`, once | same |
-| Watch workout running (confirmed) | `.start` | watchOS haptic settings |
+| Workout started (saved) | `.start` | same |
+| Hold started or resumed; rest resumed (saved) | `.start` | same |
+| Hold paused or cancelled; rest paused or skipped (saved) | `.stop` | same |
+| Hold length + / −; rest +15 s (saved) | `.increase` / `.decrease` | same |
+| Another exercise chosen (Next or Choose exercise) | `.selection` | same |
+| Completed set reopened (saved) | `.impact(flexibility: .soft)` | same |
+| Set added (saved) | `.impact(flexibility: .solid)` | same |
+| Action refused; the reason appears on screen | `.warning` | same |
+| A change could not be saved | `.error` | same |
+| Watch workout running, or resumed (confirmed) | `.start` | watchOS haptic settings |
+| Watch workout paused (confirmed) | `.stop` | watchOS haptic settings |
 | Watch summary saved | `.success` | watchOS haptic settings |
+
+The rows from "Workout started" down to "A change could not be saved" were
+added in a follow-up. They go through one relay (`FormaHaptics.swift`,
+`AppModel.haptic(_:)`), so every haptic is gated in one place and fires only
+after its change has happened. Each pattern keeps its documented system
+meaning (HIG Playing haptics). Routine actions that people expect to succeed,
+such as navigation, tabs, toggles and saving a routine, stay silent, as the
+HIG advises.
 
 Decision: before this commit, set completion used `.success`. It is now a
 light impact, so `.success` means exactly one thing, a finished workout, and

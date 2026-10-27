@@ -90,6 +90,7 @@ struct RootView: View {
     // screen's colour instead of flashing the default white around it.
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(FormaTheme.canvas.ignoresSafeArea())
+    .background { FormaHapticRelay() }
     .preferredColorScheme(
       model.appearance == .system ? nil : model.appearance == .dark ? .dark : .light
     )
