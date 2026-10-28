@@ -83,3 +83,13 @@ Each captured ref below is retained by the integration history. Duplicate local/
 ## Execution status
 
 Integration prepared and locally verified. Final combined CI, main merge, branch deletion and postflight verification are pending at this preparation commit. Their actual outcomes will be recorded after execution; no completed cleanup is implied here.
+
+## Older-SDK compatibility repair found by CI
+
+Native CI run `40764394234` selected Xcode 26.3 / iOS Simulator SDK 26.2 and failed to compile `FormaMotion.swift:103`: the SDK does not contain SwiftUI's `accessibilityPrefersCrossFadeTransitions` environment key. The previous runtime `#available(iOS 26.4, *)` cannot make a missing SDK symbol compile. The prior Xcode 27.1 audit did not establish older-SDK compilation.
+
+The root motion modifier now reads [UIKit's preference](https://developer.apple.com/documentation/uikit/uiaccessibility/preferscrossfadetransitions) and observes its [status-change notification](https://developer.apple.com/documentation/uikit/uiaccessibility/preferscrossfadetransitionsstatusdidchange), plus foreground refresh. Installed SDK declarations confirm both exist from iOS 14, below the app's iOS 17 floor. The initial value is read before the first frame; notification delivery is scheduled on the main run loop. Preference priority remains Off → none, Minimal → fade, System → minimal when either accessibility signal asks for it. There is still one authoritative resolver.
+
+A regression covers Cross-Fade, Reduce Motion, normal System, explicit Off and explicit Minimal. Local Xcode 27.1 verification passed all **33 hosted app tests + four motion/navigation UI tests** (`/tmp/forma-consolidate-motion-sdk.log`, result `Test-FORMA-2026.10.29_07-45-00-+1100.xcresult`). Strict Swift lint passed. The older-SDK CI rerun remains the actual portability gate; local compilation is not substituted for it. The published frontend ledger remains a historical source checkpoint; this repair is a later reviewed delta.
+
+The first cleanup phase removed 11 local and 13 remote branches already contained in starting main, with expected-tip checks. Four old worktrees were detached at their unchanged HEADs; all directories and local files were preserved. Remaining incoming branches wait for the final validated main merge.

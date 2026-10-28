@@ -1,4 +1,6 @@
+import Combine
 import SwiftUI
+import UIKit
 
 // FORMA's motion system: one resolved level, a small set of timing tokens and
 // helpers that degrade to a cross-fade or to nothing. See
@@ -19,11 +21,11 @@ enum FormaMotionLevel: Sendable, Equatable {
   /// Instant state changes; every final state is still shown.
   case off
 
-  init(preference: MotionPreference, reduceMotion: Bool) {
+  init(preference: MotionPreference, reduceMotion: Bool, prefersCrossFade: Bool = false) {
     switch preference {
     case .off: self = .off
     case .minimal: self = .minimal
-    case .system: self = reduceMotion ? .minimal : .full
+    case .system: self = reduceMotion || prefersCrossFade ? .minimal : .full
     }
   }
 
@@ -82,32 +84,32 @@ extension EnvironmentValues {
 
 /// Resolves the motion level from the system setting and the preference and
 /// publishes it to the whole view tree.
+@MainActor
 private struct FormaMotionRoot: ViewModifier {
   @Environment(\.accessibilityReduceMotion) private var reduceMotion
+  @Environment(\.scenePhase) private var scenePhase
+  @State private var prefersCrossFade = UIAccessibility.prefersCrossFadeTransitions
   let preference: MotionPreference
 
   func body(content: Content) -> some View {
-    if #available(iOS 26.4, *) {
-      content.modifier(CrossFadeAwareMotionRoot(preference: preference, reduceMotion: reduceMotion))
-    } else {
-      content.environment(
-        \.formaMotion, FormaMotionLevel(preference: preference, reduceMotion: reduceMotion))
-    }
-  }
-}
-
-/// From iOS 26.4 the separate "Prefer Cross-Fade Transitions" setting asks for
-/// the same cross-fades as Reduce Motion, so either one resolves to minimal.
-@available(iOS 26.4, *)
-private struct CrossFadeAwareMotionRoot: ViewModifier {
-  @Environment(\.accessibilityPrefersCrossFadeTransitions) private var prefersCrossFade
-  let preference: MotionPreference
-  let reduceMotion: Bool
-
-  func body(content: Content) -> some View {
-    content.environment(
-      \.formaMotion,
-      FormaMotionLevel(preference: preference, reduceMotion: reduceMotion || prefersCrossFade))
+    content
+      .environment(
+        \.formaMotion,
+        FormaMotionLevel(
+          preference: preference, reduceMotion: reduceMotion, prefersCrossFade: prefersCrossFade)
+      )
+      // UIKit exposes this preference from iOS 14. A runtime availability check
+      // cannot make the newer SwiftUI environment symbol compile on older SDKs.
+      .onReceive(
+        NotificationCenter.default.publisher(
+          for: UIAccessibility.prefersCrossFadeTransitionsStatusDidChange
+        ).receive(on: RunLoop.main)
+      ) { _ in
+        prefersCrossFade = UIAccessibility.prefersCrossFadeTransitions
+      }
+      .onChange(of: scenePhase) { _, phase in
+        if phase == .active { prefersCrossFade = UIAccessibility.prefersCrossFadeTransitions }
+      }
   }
 }
 
@@ -149,7 +151,7 @@ private struct FormaReveal: ViewModifier {
 
 extension View {
   /// Publishes the motion level resolved from `preference` and Reduce Motion.
-  func formaMotionRoot(_ preference: MotionPreference) -> some View {
+  @MainActor func formaMotionRoot(_ preference: MotionPreference) -> some View {
     modifier(FormaMotionRoot(preference: preference))
   }
 

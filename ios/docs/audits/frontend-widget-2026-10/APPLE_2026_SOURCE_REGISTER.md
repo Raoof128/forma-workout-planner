@@ -84,3 +84,7 @@ omitted its possible-values table.
 ## Final build-setting verification
 
 [Apple build settings reference](https://developer.apple.com/documentation/xcode/build-settings-reference), retrieved 29 October 2026: `ENABLE_CODE_COVERAGE` controls coverage instrumentation; explicit test coverage collection remains supported. Installed Xcode 27.1 confirmed a scheme-wide coverage default also instrumented Swift-package dependencies in Release. Set coverage collection to opt-in, disable Release coverage/mapping and inspect actual signed Mach-O sections. This is an applied build correctness decision, not a measured performance claim. The final app/widget/Watch binaries contain no `__llvm_prf*` sections.
+
+## Consolidation follow-up: older SDK symbol availability
+
+On 29 October, the consolidation CI using Xcode 26.3 / SDK 26.2 exposed the SwiftUI Cross-Fade environment key as unavailable at compile time. Runtime availability guarding did not solve symbol lookup. The follow-up uses UIKit's [Cross-Fade preference](https://developer.apple.com/documentation/uikit/uiaccessibility/preferscrossfadetransitions) and [notification](https://developer.apple.com/documentation/uikit/uiaccessibility/preferscrossfadetransitionsstatusdidchange), both declared from iOS 14 in the installed UIKit headers. See the [consolidation record](../../../../docs/maintenance/branch-consolidation-2026-10-29.md) for source changes, local 33 hosted/four UI tests and the separate older-SDK CI gate.

@@ -1606,3 +1606,11 @@ migrate` from the root-owned `ops/` directory (`sudo sh -c 'cd … && …'`),
 - **Files:** package manifest/lock, AGENT/CHANGELOG, historical audit annotations and `docs/maintenance/branch-consolidation-2026-10-29.md`.
 - **Verification:** 151 unit, 35 Worker, 20 repeated WebKit journeys and 1,711 contract cases passed; static/build/resource/docs checks passed; OSV found no vulnerable lockfile packages. Combined remote CI and Native iOS CI remain separate gates.
 - **Follow-ups:** merge validated integration, delete only main-contained branch tips with race checks, preserve all worktree files, and record final outcomes. No production deployment or Store action.
+
+### Raouf: 2026-10-29 — Compile the motion resolver on older SDKs
+
+- **Scope:** integration portability defect exposed by Native iOS CI on SDK 26.2.
+- **Summary:** replaced the unavailable SwiftUI Cross-Fade environment key with UIKit's iOS 14 preference/notification at the root, initialized before first render and refreshed on foreground. Kept one resolver and existing Off/Minimal/accessibility priority.
+- **Files:** `FormaMotion.swift`, hosted navigation regressions, Apple source register and consolidation record.
+- **Verification:** 33 hosted app and four motion/navigation UI tests passed on local Xcode 27.1; strict Swift lint passed. Older-SDK CI rerun is still required.
+- **Follow-ups:** finish combined CI/main merge and remaining branch cleanup. First safe cleanup removed 11 local/13 remote already-merged branches; worktree files and recovery refs retained. No deployment.

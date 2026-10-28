@@ -3,6 +3,20 @@ import XCTest
 @testable import FORMA
 
 final class TrainingNavigationTests: XCTestCase {
+  func testAccessibilityMotionSignalsAndExplicitOffRetainTheirPriority() {
+    XCTAssertEqual(
+      FormaMotionLevel(preference: .system, reduceMotion: false, prefersCrossFade: true), .minimal)
+    XCTAssertEqual(
+      FormaMotionLevel(preference: .system, reduceMotion: true, prefersCrossFade: false), .minimal)
+    XCTAssertEqual(
+      FormaMotionLevel(preference: .system, reduceMotion: false, prefersCrossFade: false), .full)
+    XCTAssertEqual(
+      FormaMotionLevel(preference: .off, reduceMotion: true, prefersCrossFade: true), .off)
+    XCTAssertEqual(
+      FormaMotionLevel(preference: .minimal, reduceMotion: false, prefersCrossFade: false), .minimal
+    )
+  }
+
   func testScrollNeedsSustainedMovementAndReversesBeforeReachingTheTop() {
     var state = TabBarScrollState()
     state.observe(offset: 100, limit: 1_000)
