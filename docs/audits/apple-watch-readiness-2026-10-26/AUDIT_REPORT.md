@@ -1,5 +1,7 @@
 # Forma complete file inventory audit and Apple Watch readiness
 
+> Historical baseline snapshot, not current implementation status. See the [current native handoff](../../../ios/docs/audits/frontend-widget-2026-10/CHANGE_SUMMARY_AND_NEXT_GATES.md) and [repository change log](../../../CHANGELOG.md) for subsequent fixes and remaining gates.
+
 Date: 26 October 2026. Baseline commit: `1794dd27fad87e8f0cc6f4923d37eedf713783ed`. Repository: `/workspace/forma-workout-planner`.
 
 ## Answer to the request

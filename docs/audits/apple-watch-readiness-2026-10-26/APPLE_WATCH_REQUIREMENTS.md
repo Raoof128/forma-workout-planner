@@ -1,5 +1,7 @@
 # Apple Watch Ultra 2 requirements and implementation matrix
 
+> Historical baseline snapshot, not current implementation status. See the [current native handoff](../../../ios/docs/audits/frontend-widget-2026-10/CHANGE_SUMMARY_AND_NEXT_GATES.md) and [repository change log](../../../CHANGELOG.md) for subsequent fixes and remaining gates.
+
 Audit date: 26 October 2026. Scope: Forma routine selection, explicit start, Watch workout collection, both-device control, reliable finish and synchronization.
 
 **No Apple Watch integration code has been added.** This report adds documented requirements and evidence, not native functionality. There is no Xcode/watchOS project in the audited repository. The prior audit did not cover every relevant detail; this matrix expands it.

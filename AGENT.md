@@ -1598,3 +1598,11 @@ migrate` from the root-owned `ops/` directory (`sudo sh -c 'cd … && …'`),
 - **Files:** AGENT, CHANGELOG, root/native READMEs, account review, audit publication records and reconciled file ledger. Zurvan reference note recorded privately; source ingestion/index refresh belongs to this delivery postflight.
 - **Verification:** Staged source hashes matched the settled audit; staged additions secret scan had zero findings. Existing native/web/contract test evidence retained. First-push GitHub CI was in progress, not a claimed pass.
 - **Follow-ups:** Finish locked-phone/Watch, physical privacy/accessibility/performance and live staging account gates. No merge, production deployment, Store action or public Zurvan push.
+
+### Raouf: 2026-10-29 — Prepare safe branch consolidation
+
+- **Scope:** owner-authorized merge and cleanup of accumulated local/remote branches.
+- **Summary:** preserved all 38 starting tips, combined the native work, release records, historical Watch audit and dependency updates. Resolved log conflicts without dropping entries; retained the narrow patched-Undici override for the new Miniflare version.
+- **Files:** package manifest/lock, AGENT/CHANGELOG, historical audit annotations and `docs/maintenance/branch-consolidation-2026-10-29.md`.
+- **Verification:** 151 unit, 35 Worker, 20 repeated WebKit journeys and 1,711 contract cases passed; static/build/resource/docs checks passed; OSV found no vulnerable lockfile packages. Combined remote CI and Native iOS CI remain separate gates.
+- **Follow-ups:** merge validated integration, delete only main-contained branch tips with race checks, preserve all worktree files, and record final outcomes. No production deployment or Store action.
