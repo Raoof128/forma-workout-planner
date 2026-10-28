@@ -154,6 +154,15 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   report 2026.10.4 with four registered edge connections. API and database
   containers were not restarted.
 
+### Raouf: 2026-10-26 — Apple Watch readiness and full baseline audit
+
+- Published the audit of all 1,471 tracked baseline files and 37 Apple Watch
+  requirements, including relevant 2026 API and submission guidance.
+- Recorded open runtime, operations, privacy and testing findings with explicit
+  evidence limits. No native iOS/watchOS integration or application fixes added.
+- See [the audit](docs/audits/apple-watch-readiness-2026-10-26/README.md).
+  Baseline verification is separate from this documentation-only publication.
+
 ### Raouf: 2026-10-26 — Runtime audit deployed
 
 - Merged PR #30 (`10942dc`) and released the audited API then account website

@@ -1,0 +1,272 @@
+[
+  {
+    "url": "https://developer.apple.com/documentation/watchos-apps/setting-up-a-watchos-project",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 3312,
+    "sha256": "3c6e5b2a54691c24b3c5d8d8dfbe506218c74ff78edab4c8199be0a54687431b",
+    "title": "Setting up a watchOS project",
+    "localAuditCacheFile": "cd910ba83b17.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/watchos-apps/creating-independent-watchos-apps",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 8210,
+    "sha256": "6442930fe5516f495a5d272a2fcef3c24937f2a92370fa8757a6da2920aa14d5",
+    "title": "Creating independent watchOS apps",
+    "localAuditCacheFile": "1aacb082b1d5.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/watchconnectivity/wcsession",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 17525,
+    "sha256": "3fa4d81f6a81e1772529ea6ec92799cad0a4b86e69583a64ff6d59ed9e37b5e5",
+    "title": "WCSession",
+    "localAuditCacheFile": "862e56231517.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/watchconnectivity/wcsessiondelegate",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 8244,
+    "sha256": "963c7cebf2c281590867eb4f6dba4a063008bc9f78abf66cc529b19c69ea9391",
+    "title": "WCSessionDelegate",
+    "localAuditCacheFile": "72dadfbcfe9b.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/watchconnectivity/wcsession/transferuserinfo(_:)",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 2163,
+    "sha256": "885ac5bd976e7b28fc7916060c28ede9769ce3d371b753735fa870dd88cbd031",
+    "title": "transferUserInfo(_:)",
+    "localAuditCacheFile": "6c2a42f55548.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/watchconnectivity/wcsession/transferfile(_:metadata:)",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 2908,
+    "sha256": "2813ac247e16f24d6432ffb41d0faa43d499de1fcf10d47870e7633f9832bc95",
+    "title": "transferFile(_:metadata:)",
+    "localAuditCacheFile": "727d11c9665d.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/healthkit/setting-up-healthkit",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 4729,
+    "sha256": "0e77393f65306a591bf79e5d2657f37a877b2a30e3dfab0f6a41523eec375364",
+    "title": "Setting up HealthKit",
+    "localAuditCacheFile": "686eba627974.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/healthkit/authorizing-access-to-health-data",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 13879,
+    "sha256": "8b519c4db8346c258b184bba2b48114a0177deb16adf130d662c9080055f0cd2",
+    "title": "Authorizing access to health data",
+    "localAuditCacheFile": "7760d6a24526.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/healthkit/protecting-user-privacy",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 5271,
+    "sha256": "44331661969f6c91c8d7b10ad8f1dd3a1ccdf7bbe7be8b16259d43123b222874",
+    "title": "Protecting user privacy",
+    "localAuditCacheFile": "60704f926726.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/healthkit/running-workout-sessions",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 16716,
+    "sha256": "8df275dc90e17ab07f4061137c411b8017fd72fc81f82aea66ab0a4fcd0df0d6",
+    "title": "Running workout sessions",
+    "localAuditCacheFile": "61da5490be93.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/healthkit/building-a-multidevice-workout-app",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 1384,
+    "sha256": "15082b9a577076f18bb9622d3bf63dde9f9072bc01cee5949580a4bcb3ecfd26",
+    "title": "Building a multidevice workout app",
+    "localAuditCacheFile": "952d9f510881.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/healthkit/hkhealthstore/startwatchapp(with:completion:)",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 4770,
+    "sha256": "876adff5d81d6b9cdd4192b716c780667ba59f7e14ec551902d0930868b3e76e",
+    "title": "startWatchApp(with:completion:)",
+    "localAuditCacheFile": "6a52636cdc38.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/healthkit/hkworkoutsession/startmirroringtocompaniondevice(completion:)",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 3220,
+    "sha256": "a03ab361ddd0fd6ef36a8f2238bffe157daeba128d66d30b094174e244d0034d",
+    "title": "startMirroringToCompanionDevice(completion:)",
+    "localAuditCacheFile": "f29d64f06df5.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/healthkit/hkhealthstore/workoutsessionmirroringstarthandler",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 2219,
+    "sha256": "2bb4f9a5bfb012641ef846a509c4e6ae68bb288b7898f62804b45479c32f5834",
+    "title": "workoutSessionMirroringStartHandler",
+    "localAuditCacheFile": "8710fe193439.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/healthkit/hkworkoutsession/sendtoremoteworkoutsession(data:completion:)",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 2484,
+    "sha256": "273fc2d228461f9fae333c03badce472fe73cc68f972c21c82752a67a4d5b25a",
+    "title": "sendToRemoteWorkoutSession(data:completion:)",
+    "localAuditCacheFile": "ab76ef5ac5fc.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/healthkit/hkworkoutsessiondelegate/workoutsession(_:didreceivedatafromremoteworkoutsession:)",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 3332,
+    "sha256": "420787887699c5cd399e9b34d0c76087b078bd15f08e4f4d6465902d37509f8e",
+    "title": "workoutSession(_:didReceiveDataFromRemoteWorkoutSession:)",
+    "localAuditCacheFile": "039875fd4f8a.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/watchkit/wkapplicationdelegate/handleactiveworkoutrecovery()",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 1388,
+    "sha256": "ce85e0f46d9e21a907f2eab5efb507d323b6dfb9b3bb045be9a5169fb16e4b48",
+    "title": "handleActiveWorkoutRecovery()",
+    "localAuditCacheFile": "1cf84f6c73d4.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/healthkit/hkhealthstore/recoveractiveworkoutsession(completion:)",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 1994,
+    "sha256": "7eb7e0b358473165576e3aaa13f46416764e01814f95709b7332f85a688c443d",
+    "title": "recoverActiveWorkoutSession(completion:)",
+    "localAuditCacheFile": "6eb516693b3a.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/healthkit/hkliveworkoutdatasource/typestocollect",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 2455,
+    "sha256": "22878fdf672a46c560417892fad553ab2a14ccb89d20250cd87442a7412265ae",
+    "title": "typesToCollect",
+    "localAuditCacheFile": "685360d33212.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/appintents/actionbuttonarticle",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 25194,
+    "sha256": "a79dc86feebcec52f79ca1d89646eda4ff33202a58283ddb545166a80ff8b12e",
+    "title": "Responding to the Action button on Apple Watch Ultra",
+    "localAuditCacheFile": "176392bbf89f.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/watchos-release-notes/watchos-27-release-notes",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 18698,
+    "sha256": "a3da0d4b4ae9899a49a61e919270bc7bf585e7881a578e1fe22d536f78971aa5",
+    "title": "watchOS 27 Release Notes",
+    "localAuditCacheFile": "1df3374c9bb2.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-27-release-notes",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 68415,
+    "sha256": "c544e3d8fee60d339135a0f53a4910d43e5255a62bb2ef066c73d9b36f5f05f3",
+    "title": "iOS & iPadOS 27 Release Notes",
+    "localAuditCacheFile": "09db97db968a.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/bundleresources/privacy-manifest-files",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 5963,
+    "sha256": "1a8fe0c32b861a2ae9557512de3b7db95c06062bad41521a162c66d7b2b1680d",
+    "title": "Privacy manifest files",
+    "localAuditCacheFile": "0c8064fb8531.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/bundleresources/describing-use-of-required-reason-api",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 4588,
+    "sha256": "e5cc866c722a51e3e06f82edf65d8ef1bc96489dae5c75a88696af5261aafafb",
+    "title": "Describing use of required reason API",
+    "localAuditCacheFile": "11457f50593f.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/healthkit/hkhealthstore/getearliestauthorizedsampledate(for:completion:)",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 5301,
+    "sha256": "33056d35c75649c98dc9ee355ef91dbc660f08d1acc653f89de6ec956ecbf003",
+    "title": "getEarliestAuthorizedSampleDate(for:completion:)",
+    "localAuditCacheFile": "8721e21dca6a.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/healthkit/hkworkoutbuilder/finishworkout(completion:)",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 1975,
+    "sha256": "a4e14b849170b973fe2e29e32fbc6ba761f98819a36ceba4a16151efc2a0f0a7",
+    "title": "finishWorkout(completion:)",
+    "localAuditCacheFile": "64b15a56577b.md"
+  },
+  {
+    "url": "https://developer.apple.com/documentation/healthkit/hkworkoutsession/stopactivity(with:)",
+    "retrieved": "2026-10-26",
+    "format": "Markdown",
+    "httpStatus": 200,
+    "bytes": 1143,
+    "sha256": "9e059d7889fedecd84d147b6cad3094841a9b5ffd4d5b2c7ccc9a7e556214a4c",
+    "title": "stopActivity(with:)",
+    "localAuditCacheFile": "fd23763389cc.md"
+  }
+]

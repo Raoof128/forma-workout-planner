@@ -1,0 +1,39 @@
+# Structured and historical documentation review
+
+Baseline: `1794dd27fad87e8f0cc6f4923d37eedf713783ed`. Read-only review of the 435 docs paths outside `docs-ops-manifest.json` and `docs-product-manifest.json`: 298 JSON, four CSV, 27 text/log files, one Markdown inventory, 101 PNG, two WebM and two public PEM files. Exactly one review row per assigned path is in `docs-structured-review.json`.
+
+No new current-runtime defect was established by these checks. Two minor historical-record inconsistencies are retained as informational findings, not release blockers or proof of an application defect.
+
+## DOC-DATA-01 — historical recovery tally differs from its batch record
+
+`docs/research/original-art/recovery-state.json:279` records `finish-d-002-retry` as three accepted cells and one held cell. All four cells in the referenced `finish-d-002-retry.json` are accepted. The recovery manifest is a dated checkpoint, not the current coverage authority. Every current selectable exercise's coverage, registry asset and guide hash reconciles; the 1,411 current accepted assignments are unaffected. Preserve the checkpoint as history, or explicitly label the embedded review counts as checkpoint-time counts if this file is maintained again.
+
+The mismatch is the only discrepancy among all 56 archived batch count/link comparisons. Git history records the recovery file at `9b5523e` (2026-10-14 08:16Z) and the batch at `d069258` (2026-10-14 05:11Z); no stronger causal explanation for the copied tally is inferred.
+
+## DOC-DATA-02 — embedded account-capture summary predates replacement
+
+`docs/qa/site-sweep/accounts/summary.json:97` embeds a null mobile-register path and explicitly rejects the initial screenshot. `docs/qa/site-sweep/accounts/captures.json:74` records the subsequent replacement image with a new review note. The other 11 captures agree, the replacement exists and decodes, and test statistics agree between the summary and full report. This is dated evidence drift: the summary was last changed at `9055d50` (06:52Z), followed by the capture manifest at `ca5e556` (07:34Z) on 2026-10-14. It does not show a current form-focus failure. A future index can point readers to the newer dedicated capture manifest.
+
+## Exhaustive checks and evidence boundaries
+
+- All 298 JSON files were parsed by the root validator with duplicate-key/nonfinite-value checks, then every node and object-record collection was traversed here. Family-specific checks cover identifiers, totals, joins, statuses, source hashes, asset geometry and paths. This is automated data validation with manual interpretation of schemas and policies, not a claim that all prompts, copied exercise guides or historical authored prose were manually read.
+- Every original-art batch cell was checked for catalog IDs, grid coordinates, review-state/note requirements, pixel bounds where supplied and archived source/public byte equality. All 1,337 registry assets were checked for file/hash/dimension/geometry/provenance consistency; all 1,444 registry exercise mappings resolve. All 1,411 active guide hashes and coverage-to-registry-to-runtime joins agree. The other 33 registry mappings are inactive history. Parent evidence independently reports the current media checker at 1,411/1,411.
+- All 99 planned generation batches, 1,186 planned cells and 56 recovery batch receipts were reconciled. The 22 archived wger API files were checked for pagination/count, filename UUID, translation parent and image-parent relations. One empty result is correctly retained as unresolved historical source evidence.
+- Research checks cover all 1,411 logging records; 180 duplicate groups, 50 uncertain groups, 86 preserved-variant groups, 35 measurement replacements; 76 equipment families, seven additional machine families, 78 metadata corrections; 579 free-media assets and 1,414 assignments; 1,414 photo movement records and their image UUID joins; all fetch receipts, 40 video candidates, 17 guide-replacement records, 34 guide repairs and 15 authored machine additions. Candidate/publication distinctions and historical 1,414 counts are preserved. URLs and digests do not independently establish rights or source accuracy.
+- Both research CSVs have unique IDs, resolvable catalog/equipment/source references, and recomputed candidate counts. All 253 ASVS rows and 63 security-control rows were parsed, status distributions checked, and explicit repository evidence references checked for existence. Historical security judgments and line coordinates were not re-certified.
+- QA checks reconcile 108 semantic interactions, 108 source-control crosswalk rows, 390 source functions, 56 function scopes and all branch/test receipt joins. All 118 dated verification receipts reconcile to their run totals. Historical source hashes were compared with current bytes and drift is expressly recorded; old PASS rows are not current test evidence.
+- Every committed log was scanned in full for run/result markers and arithmetic, preserving failures and interrupted runs. The 112-case historical guest result is 86 initial passes plus 26 replay passes, explicitly not one green suite. Historical lint/typecheck invocation-only logs do not prove completion by themselves. Account report statistics, legal/accessibility red/green receipts, deployment version chains, anonymous HTTP meanings and image metadata were cross-checked without contacting production.
+- Historical `FILE_AUDIT.md` has exactly 1,469 unique six-column file rows: all 1,453 paths from `678b48325189f83beb942bc6759e7c519eb26b19` plus 16 stated additions. Its 550 reviewed/903 excluded baseline classification recomputes exactly. All 1,018 stored SHA-256 hashes and byte sizes match. The current baseline has 1,471 files; the two additional paths are the later runtime-quality deployment README and JSON receipt. Their omission from the dated inventory is expected.
+- The 103 PNG/WebM rows retain the root's full-image-decode/video-probe evidence and add baseline hash/reference context. They are historical visuals, not fresh runtime, accessibility or physical-device validation. PEM rows retain public-key parsing and confirm environment keys differ.
+
+## Disposition of initial automated candidates
+
+The raw candidate file is `docs-structured-check-issues.json`; only the two informational items above remain after schema interpretation. Earlier candidates were resolved as follows:
+
+1. Two video posters at 0.3s precede a 0.4s clip start. `scripts/build-exercise-demos.mjs` extracts poster frames separately from the original source, so requiring the poster to lie inside the playback trim was an invalid checker assumption. Valid nonnegative source timestamps pass.
+2. The unit run uses `{passed:31, failed:0}`, while browser runs use Playwright's expected/skipped/unexpected/flaky fields. Using the proper per-run schemas gives 31 unit + 79 development + eight production = 118 receipts.
+3. Four apparent ASVS missing filenames were checker-regex truncation of `.json` or `.jsx` to `.js` (`runtime-role-evidence.json`, `AccountProvider.jsx`, `Preferences.jsx`, `Account.jsx`). With longest-extension matching and a boundary, every explicit evidence file resolves.
+4. Two null pre-repair library screenshots have explicit rejection notes; they are intentionally withheld historical captures. Later capture references exist. They are not missing accepted evidence.
+5. The historical table separator is not a file row; excluding it yields the stated 1,469 rows, not 1,470.
+
+External documentation/source bodies, deployment archives and off-host receipts referenced only by historical scratch/bundle names were not silently treated as available. No network fetch, production operation, repository edit, new restore drill or new visual approval was performed by this review.

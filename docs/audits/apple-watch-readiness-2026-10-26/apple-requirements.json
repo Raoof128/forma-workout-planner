@@ -1,0 +1,335 @@
+[
+  {
+    "id": "AP01",
+    "classification": "Device prerequisite",
+    "topic": "Ultra 2 compatibility",
+    "requirement": "Confirm the actual phone/OS pair. Apple\u2019s September 2026 update article supports Ultra 2 on watchOS 27; it requires iPhone 11+ or SE 2nd generation+ on iOS 27. Original launch minima are a different question.",
+    "source": "https://support.apple.com/en-us/108926",
+    "status": "UNVERIFIED \u2014 hardware versions not supplied",
+    "acceptance": "Record actual iPhone model, iOS, watchOS and successful system pairing."
+  },
+  {
+    "id": "AP02",
+    "classification": "Core",
+    "topic": "System pairing",
+    "requirement": "Use the system Apple Watch pairing/setup flow; app connectivity is a separate companion-app layer.",
+    "source": "https://support.apple.com/en-us/109015",
+    "status": "MISSING \u2014 no native connection/setup flow",
+    "acceptance": "Distinguish unpaired, app absent, activating, ready, disconnected and errors."
+  },
+  {
+    "id": "AP03",
+    "classification": "Core",
+    "topic": "Native companion targets",
+    "requirement": "Create iOS and watchOS app targets with matching companion bundle relationship, signing and embedding.",
+    "source": "https://developer.apple.com/documentation/watchos-apps/setting-up-a-watchos-project",
+    "status": "MISSING \u2014 no Xcode project",
+    "acceptance": "Archive and install both correctly signed apps on the paired devices."
+  },
+  {
+    "id": "AP04",
+    "classification": "Architecture choice",
+    "topic": "Independent operation",
+    "requirement": "An independent Watch app must obtain essential data independently rather than require WatchConnectivity. Companion apps can still cache workouts for temporary phone disconnection.",
+    "source": "https://developer.apple.com/documentation/watchos-apps/creating-independent-watchos-apps",
+    "status": "NOT DECIDED \u2014 companion-first recommended",
+    "acceptance": "Do not advertise independent installation until auth/data/recovery works without iOS."
+  },
+  {
+    "id": "AP05",
+    "classification": "Core",
+    "topic": "Session activation",
+    "requirement": "Assign and retain a WCSession delegate and activate in both processes; transfer only after activated.",
+    "source": "https://developer.apple.com/documentation/watchconnectivity/wcsession",
+    "status": "MISSING",
+    "acceptance": "Cold launch either app first; activation success/failure reaches correct UI state."
+  },
+  {
+    "id": "AP06",
+    "classification": "Core",
+    "topic": "Watch switching",
+    "requirement": "Implement iOS inactive/deactivate delegate handling and activate again for the new Watch.",
+    "source": "https://developer.apple.com/documentation/watchconnectivity/wcsessiondelegate",
+    "status": "MISSING",
+    "acceptance": "Switch Watches; stale device messages cannot mutate the new active session."
+  },
+  {
+    "id": "AP07",
+    "classification": "Core",
+    "topic": "Connection and concurrency",
+    "requirement": "Check supported/paired/installed properties in valid lifecycle states; callbacks are on background queues; isolate UI mutations.",
+    "source": "https://developer.apple.com/documentation/watchconnectivity/wcsession",
+    "status": "MISSING",
+    "acceptance": "Main-actor state updates, install/uninstall transitions and supported-device guards pass."
+  },
+  {
+    "id": "AP08",
+    "classification": "Transport choice",
+    "topic": "Immediate messaging",
+    "requirement": "Use sendMessage for a reachable counterpart, with reply/error handling. Reachability is not an all-purpose sync permission.",
+    "source": "https://developer.apple.com/documentation/watchconnectivity/wcsession",
+    "status": "MISSING",
+    "acceptance": "Disconnect between check/send; surface timeout and deduplicate retry."
+  },
+  {
+    "id": "AP09",
+    "classification": "Transport choice",
+    "topic": "Latest-state updates",
+    "requirement": "Use updateApplicationContext for replaceable latest routine/settings state, not an event log.",
+    "source": "https://developer.apple.com/documentation/watchconnectivity/wcsession",
+    "status": "MISSING",
+    "acceptance": "Rapid routine selections converge to the latest version without dropping completed-set events."
+  },
+  {
+    "id": "AP10",
+    "classification": "Transport choice",
+    "topic": "Queued updates",
+    "requirement": "transferUserInfo supports background queued delivery; delivery is not immediate and must be tested on hardware.",
+    "source": "https://developer.apple.com/documentation/watchconnectivity/wcsession/transferuserinfo(_:)",
+    "status": "MISSING",
+    "acceptance": "Background, offline, replay and process-restart acceptance tests pass."
+  },
+  {
+    "id": "AP11",
+    "classification": "Conditional",
+    "topic": "File transfer",
+    "requirement": "Use transferFile only for suitable larger payloads; process files/errors correctly. Simulator does not support this transfer.",
+    "source": "https://developer.apple.com/documentation/watchconnectivity/wcsession/transferfile(_:metadata:)",
+    "status": "MISSING \u2014 only needed if files are transferred",
+    "acceptance": "Verify received-file lifetime, size limits, completion and physical-device delivery."
+  },
+  {
+    "id": "AP12",
+    "classification": "Core",
+    "topic": "HealthKit setup",
+    "requirement": "Enable HealthKit only where used, check availability, supply read/write purpose strings and request relevant types.",
+    "source": "https://developer.apple.com/documentation/healthkit/setting-up-healthkit",
+    "status": "MISSING \u2014 no entitlements or Info.plist",
+    "acceptance": "Authorized and unavailable/denied paths work without crashing or inventing measurements."
+  },
+  {
+    "id": "AP13",
+    "classification": "Core",
+    "topic": "Permission semantics",
+    "requirement": "Read access denial cannot be inferred directly; a successful permission sheet does not prove all reads are authorized. Handle permission changes.",
+    "source": "https://developer.apple.com/documentation/healthkit/authorizing-access-to-health-data",
+    "status": "MISSING",
+    "acceptance": "Partial/denied/revoked access shows unavailable data, not fabricated zeros."
+  },
+  {
+    "id": "AP14",
+    "classification": "2026 API \u2014 conditional on OS",
+    "topic": "Limited-history authorization",
+    "requirement": "iOS/watchOS 27 adds limited-history behavior and getEarliestAuthorizedSampleDate. Availability-guard the API on older deployment targets; full and denied access are intentionally indistinguishable in its results.",
+    "source": "https://developer.apple.com/documentation/healthkit/hkhealthstore/getearliestauthorizedsampledate(for:completion:)",
+    "status": "MISSING",
+    "acceptance": "Queries respect per-type date bounds; trends disclose incomplete history; older OS path is tested."
+  },
+  {
+    "id": "AP15",
+    "classification": "Core",
+    "topic": "Workout engine",
+    "requirement": "Run HKWorkoutSession and HKLiveWorkoutBuilder with an appropriate activity/location configuration and data source.",
+    "source": "https://developer.apple.com/documentation/healthkit/running-workout-sessions",
+    "status": "MISSING \u2014 browser timer only",
+    "acceptance": "Start/paused/running/stopped/saved states match actual recording and workout type."
+  },
+  {
+    "id": "AP16",
+    "classification": "Core",
+    "topic": "Collect supported measurements",
+    "requirement": "Live collection varies by configuration, settings and sensors. Do not infer automatically counted strength reps/weights from heart rate.",
+    "source": "https://developer.apple.com/documentation/healthkit/hkliveworkoutdatasource/typestocollect",
+    "status": "MISSING",
+    "acceptance": "Record available heart rate/energy and activity-relevant distance; preserve units/source and missing-data states."
+  },
+  {
+    "id": "AP17",
+    "classification": "Core",
+    "topic": "Phone-initiated start",
+    "requirement": "startWatchApp wakes the Watch via WKApplicationDelegate.handle(_:) with a workout configuration; honor that configuration. Launch success alone is not recording acknowledgement.",
+    "source": "https://developer.apple.com/documentation/healthkit/hkhealthstore/startwatchapp(with:completion:)",
+    "status": "MISSING",
+    "acceptance": "Explicit Start yields one confirmed Watch session; denied/not-installed/unreachable failures remain visible."
+  },
+  {
+    "id": "AP18",
+    "classification": "Core",
+    "topic": "Start mirroring",
+    "requirement": "Watch primary session starts mirroring; iOS registers the mirroring start handler at launch. Mirroring is available from iOS 17/watchOS 10; custom routine/set/telemetry payloads still need an application protocol.",
+    "source": "https://developer.apple.com/documentation/healthkit/hkworkoutsession/startmirroringtocompaniondevice(completion:)",
+    "status": "MISSING",
+    "acceptance": "Watch-first and phone-first launch both synchronize the same session."
+  },
+  {
+    "id": "AP19",
+    "classification": "Core",
+    "topic": "Reconnection",
+    "requirement": "The mirroring start handler may run multiple times with different session instances during reconnect; retain the logical workout identity.",
+    "source": "https://developer.apple.com/documentation/healthkit/hkhealthstore/workoutsessionmirroringstarthandler",
+    "status": "MISSING",
+    "acceptance": "Reconnect does not create another workout or lose delegates/controls."
+  },
+  {
+    "id": "AP20",
+    "classification": "Core",
+    "topic": "Batched mirror delivery",
+    "requirement": "Remote data may arrive as arrays after suspension; iOS delivery can be minutes apart. Process every data object; avoid promises of continuous locked-phone updates.",
+    "source": "https://developer.apple.com/documentation/healthkit/hkworkoutsessiondelegate/workoutsession(_:didreceivedatafromremoteworkoutsession:)",
+    "status": "MISSING",
+    "acceptance": "Suspended phone catches up; duplicate and out-of-order application events reconcile safely."
+  },
+  {
+    "id": "AP21",
+    "classification": "Core",
+    "topic": "Background execution",
+    "requirement": "Enable Workout processing. Apple also specifies Audio background mode when the workout provides audio or haptic feedback. Keep CPU work bounded; excessive CPU can cause suspension.",
+    "source": "https://developer.apple.com/documentation/healthkit/running-workout-sessions",
+    "status": "MISSING",
+    "acceptance": "Wrist-down, phone-lock, interruptions and battery/CPU tests pass."
+  },
+  {
+    "id": "AP22",
+    "classification": "Core",
+    "topic": "Crash recovery",
+    "requirement": "Handle active workout recovery, call recoverActiveWorkoutSession, and reattach builder/data source/delegates.",
+    "source": "https://developer.apple.com/documentation/watchkit/wkapplicationdelegate/handleactiveworkoutrecovery()",
+    "status": "MISSING",
+    "acceptance": "Crash/relaunch restores the active workout without starting or saving a duplicate."
+  },
+  {
+    "id": "AP23",
+    "classification": "Core",
+    "topic": "Finish and locked device",
+    "requirement": "Use stopActivity, wait for stopped, successfully endCollection with the stopped date, finishWorkout, then session.end. A nil workout with nil error can mean a successful locked-device save; do not create a duplicate.",
+    "source": "https://developer.apple.com/documentation/healthkit/hkworkoutbuilder/finishworkout(completion:)",
+    "status": "MISSING",
+    "acceptance": "Stop/end/save sequence and locked-device nil-success case persist one eventual HealthKit reference."
+  },
+  {
+    "id": "AP24",
+    "classification": "Core",
+    "topic": "Health privacy",
+    "requirement": "Protect health data, minimize collection, and describe its uses. Apple Health authorization and permission to upload to Forma are separate product concerns.",
+    "source": "https://developer.apple.com/documentation/healthkit/protecting-user-privacy",
+    "status": "MISSING \u2014 existing browser privacy only",
+    "acceptance": "Health permission, cloud sync, coach access, revocation/export/deletion boundaries explicitly tested."
+  },
+  {
+    "id": "AP25",
+    "classification": "Distribution requirement",
+    "topic": "App Review health rules",
+    "requirement": "Follow 5.1.3: accurate health data, explicit disclosure, no prohibited advertising/data-mining uses, and no personal health information stored by the app in iCloud.",
+    "source": "https://developer.apple.com/app-store/review/guidelines/#health-and-health-research",
+    "status": "MISSING \u2014 native submission not prepared",
+    "acceptance": "Review the actual data flow and App Store disclosures; keep sensor data outside generic coach exports."
+  },
+  {
+    "id": "AP26",
+    "classification": "Distribution requirement",
+    "topic": "Privacy manifests",
+    "requirement": "Declare actual collection and required-reason API use in native app/SDK privacy manifests; validate the archive.",
+    "source": "https://developer.apple.com/documentation/bundleresources/privacy-manifest-files",
+    "status": "MISSING",
+    "acceptance": "All relevant targets/SDKs have accurate valid manifests; privacy report reviewed."
+  },
+  {
+    "id": "AP27",
+    "classification": "2026 submission requirement",
+    "topic": "SDK floor",
+    "requirement": "Since 28 April 2026 uploads require Xcode 26+ and corresponding 26+ SDKs. To compile 27-only APIs, use a toolchain with the 27 SDK. Deployment minimum is separate.",
+    "source": "https://developer.apple.com/news/upcoming-requirements/?id=04282026a",
+    "status": "MISSING \u2014 Linux web CI only",
+    "acceptance": "Pin supported Xcode/macOS CI and archive with the required SDK."
+  },
+  {
+    "id": "AP28",
+    "classification": "2026 submission requirement",
+    "topic": "ARM64",
+    "requirement": "The watchOS April 2026 requirement includes 64-bit support. Use Standard architectures; Ultra 2 supports arm64 under watchOS 26. Announcement was July 2025, requirement takes effect in 2026.",
+    "source": "https://developer.apple.com/news/?id=zt8rydnt",
+    "status": "MISSING",
+    "acceptance": "Check archive slices and test simulator plus Ultra 2 hardware."
+  },
+  {
+    "id": "AP29",
+    "classification": "2026 release-note guidance",
+    "topic": "Modern app lifecycle",
+    "requirement": "watchOS 27 notes deprecate WKExtension/WKExtensionDelegate for deployment targets 9.2+. Use modern app/WKApplicationDelegate lifecycle for the proposed new app.",
+    "source": "https://developer.apple.com/documentation/watchos-release-notes/watchos-27-release-notes",
+    "status": "MISSING",
+    "acceptance": "New native code uses supported lifecycle and recovery hooks."
+  },
+  {
+    "id": "AP30",
+    "classification": "2026 optional capability",
+    "topic": "Workout zones",
+    "requirement": "Heart-rate/cycling-power zones are new HealthKit capabilities in OS 27. They are optional insights, not a prerequisite for connecting the Watch.",
+    "source": "https://developer.apple.com/documentation/watchos-release-notes/watchos-27-release-notes",
+    "status": "OPTIONAL \u2014 not implemented",
+    "acceptance": "If selected, confirm API availability, permission, supported metrics and older-OS fallback."
+  },
+  {
+    "id": "AP31",
+    "classification": "2026 optional regression",
+    "topic": "Complications",
+    "requirement": "OS 27 release notes record a WidgetKit complication-transfer fix; only relevant if implementing complications.",
+    "source": "https://developer.apple.com/documentation/watchos-release-notes/watchos-27-release-notes",
+    "status": "OPTIONAL \u2014 no complication target",
+    "acceptance": "Validate selected WidgetKit update mechanism and supported OS versions on hardware."
+  },
+  {
+    "id": "AP32",
+    "classification": "Optional Ultra feature",
+    "topic": "Action button",
+    "requirement": "Implement supported StartWorkoutIntent semantics if offering Action button launch; the wearer chooses its assignment.",
+    "source": "https://developer.apple.com/documentation/appintents/actionbuttonarticle",
+    "status": "OPTIONAL \u2014 not implemented",
+    "acceptance": "Configured button starts exactly one selected/default workout; permission/setup errors are recoverable."
+  },
+  {
+    "id": "AP33",
+    "classification": "UI requirement",
+    "topic": "Always On",
+    "requirement": "Use reduced-cadence wrist-down UI, stop nonessential animation/subsecond work and respect sensitive content.",
+    "source": "https://developer.apple.com/documentation/watchos-apps/designing-your-app-for-the-always-on-state",
+    "status": "MISSING",
+    "acceptance": "Ultra 2 wrist-down/Always-On disabled/enabled cases remain readable and battery-conscious."
+  },
+  {
+    "id": "AP34",
+    "classification": "UI guidance",
+    "topic": "Workout controls and accessibility",
+    "requirement": "Prioritize current metrics and clear controls; validate VoiceOver, large text, contrast and touch interaction.",
+    "source": "https://developer.apple.com/design/human-interface-guidelines/workouts",
+    "status": "MISSING \u2014 responsive web UI is not Watch UI",
+    "acceptance": "Real Watch tests for large text, VoiceOver, haptics, pause/end/discard and wet-hand interaction."
+  },
+  {
+    "id": "AP35",
+    "classification": "Verification requirement",
+    "topic": "Physical devices",
+    "requirement": "Apple\u2019s mirrored-workout sample requires physical devices; simulator/browser tests cannot certify HealthKit sensing or queued Watch transfers.",
+    "source": "https://developer.apple.com/documentation/healthkit/building-a-multidevice-workout-app",
+    "status": "UNTESTED \u2014 no paired hardware available",
+    "acceptance": "Paired iPhone/Ultra 2 matrix passes before claiming connected/working."
+  },
+  {
+    "id": "AP36",
+    "classification": "Engineering recommendation",
+    "topic": "Idempotent event protocol",
+    "requirement": "Persist account-bound command IDs, session/set identities, acknowledgements and offline queues. This is our application design inferred from delivery/recovery behavior, not a new Apple API requirement.",
+    "source": "https://developer.apple.com/documentation/watchconnectivity/wcsession",
+    "status": "PARTIAL \u2014 server whole-workspace CAS exists; native event queue missing",
+    "acceptance": "Replay/double-Start/concurrent complete-set/old-account queue tests preserve one correct session."
+  },
+  {
+    "id": "AP37",
+    "classification": "Engineering recommendation",
+    "topic": "Native identity and credentials",
+    "requirement": "Apple device pairing does not authenticate the Forma account. Define native login/revocation, use protected credential storage such as Keychain, and bind durable device queues to the originating account.",
+    "source": "https://developer.apple.com/documentation/security/keychain-services",
+    "status": "MISSING \u2014 browser cookie flow only",
+    "acceptance": "MFA/deep links, logout, switched accounts, lost device, offline queue rejection and credential revocation pass."
+  }
+]
