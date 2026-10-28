@@ -216,6 +216,19 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   See `docs/audits/forma-runtime-quality-2026-10/` for findings, exact metrics,
   test results, screenshot evidence and release-review limits.
 
+### Raouf: 2026-10-22 — Dependency release
+
+- Owner-approved release of PR #27 (`main` `fb6f115`, the tree CI passed).
+  API image `forma-api:deps-20261022-d05d40b` (Node 26.12.0, fastify 5.12.7,
+  better-auth 1.7.10, zod 4.6.7) on staging then production with
+  `docs/qa/holds-timer/api-release.sh`: backups before and after, no
+  migration, health green, row counts and unrelated containers unchanged, no
+  API error lines. Websites: staging `a981c1e7-…`, production `c5639ed9-…`;
+  both one-hour tokens revoked.
+- Production serves `index-DXbA8n3o.js`, matching the local build of `main`;
+  health 200, anonymous workspace 401, unknown route 404. Rollback image:
+  `forma-api:holds-timer-20261022-316c5d9` (same catalogue, so safe).
+
 ### Raouf: 2026-10-22 — Dependency updates from Dependabot #15–#17
 
 - One branch off `main` replaces the three stale Dependabot PRs: the API's

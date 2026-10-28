@@ -232,6 +232,13 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   deployment, push, merge or production action was performed. Review the six
   audit reports before a separate staged API/frontend release.
 
+### Raouf: 2026-10-22 — Dependency release deployment
+
+- Both environments run `forma-api:deps-20261022-d05d40b` at schema 0006.
+  Production Worker `c5639ed9-…`, staging `a981c1e7-…`; `main` is `fb6f115`.
+  Rolling back to `holds-timer-20261022-316c5d9` is safe (same catalogue);
+  anything older rejects the timed hold IDs.
+
 ### Raouf: 2026-10-22 — Dependency updates
 
 - `npm install` writes `^` ranges; this repo pins exact versions, so strip
