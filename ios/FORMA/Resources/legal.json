@@ -336,10 +336,10 @@
   },
   "nativeGuestNotice": {
     "title": "Native development build: your data",
-    "version": "0.1",
-    "effective": "23 October 2026",
+    "version": "0.3",
+    "effective": "29 October 2026",
     "status": "prototype-not-release-policy",
-    "summary": "This development build keeps your training records on your device. With your permission, a workout you start on Apple Watch records heart rate and energy to Apple Health. It includes no account sign-in, cloud sync, analytics or advertising.",
+    "summary": "This development build keeps your training records on your device. If you choose to sign in to a FORMA account, your name, email address and workout records are also sent to, and stored in, that account so they match the website. With your permission, a workout you start on Apple Watch records heart rate and energy to Apple Health. It includes no analytics or advertising.",
     "blocks": [
       {
         "h": "Local storage",
@@ -353,21 +353,56 @@
         "id": "export-training"
       },
       {
-        "p": "You can export a FORMA JSON backup through the system file exporter. Importing a backup is not available in this development build. An exported backup contains your training records and is readable by anyone who can access that file. Exported copies remain wherever you choose to save or share them, including after deleting local app data or uninstalling the app."
+        "p": "You can export a FORMA JSON backup through the system file exporter. Importing a backup file is not available in this development build; signed in, you can instead bring the training recorded on this iPhone into your account. An exported backup contains your training records and is readable by anyone who can access that file. Exported copies remain wherever you choose to save or share them, including after deleting local app data, signing out or uninstalling the app."
       },
       {
-        "h": "No account or tracking",
-        "id": "account-tracking"
+        "h": "Without an account",
+        "id": "no-account"
       },
       {
-        "p": "No account service is connected in this development build. Your training records are not uploaded by the app. There is no analytics SDK, advertising SDK or cross-app tracking. Opening an external support or source link uses the destination service under its own terms."
+        "p": "Using FORMA without an account sends nothing about your training anywhere. There is no analytics SDK, advertising SDK or cross-app tracking. Opening an external support or source link uses the destination service under its own terms."
+      },
+      {
+        "h": "With a FORMA account",
+        "id": "account"
+      },
+      {
+        "p": "Signing in is optional and uses the same account as the FORMA website. When you create an account or sign in, the app sends FORMA's account service your email address, display name and password (to sign you in), and then your workout records: routines, workouts, sets, notes, profile and preferences. These may include health-related information, which you consent to when you create the account. They travel over an encrypted HTTPS connection to a service operated by Raouf Abedini and hosted with Cloudflare and DigitalOcean, which may process them outside Australia, mainly in the United States. FORMA uses them to provide your account and to send essential account emails."
+      },
+      {
+        "h": "Your session on this iPhone",
+        "id": "session"
+      },
+      {
+        "p": "While you are signed in, the app keeps your FORMA session cookies in the iPhone Keychain, for this device only. They are not included in device backups or shared with other apps, and they are deleted when you sign out or the session ends, at most 30 days after you sign in. Your password is never stored on the iPhone. You can see and end your sessions under Security."
+      },
+      {
+        "h": "Syncing and your saved copy",
+        "id": "sync"
+      },
+      {
+        "p": "Each change is saved on the iPhone first and then sent to your account; changes made offline wait and send later. While signed in, the app keeps a saved copy of your account's training in its local storage so it works offline. Signing out leaves that copy on the iPhone for your next sign-in; choose Sign out and remove from this iPhone to delete it. Training recorded without an account is never merged into an account automatically: Bring your phone training shows what it would replace, asks you to save a copy of your account data first, then replaces your account's training with this iPhone's, as the website's import does."
+      },
+      {
+        "h": "Delete your account",
+        "id": "delete-account"
+      },
+      {
+        "p": "You can request account deletion in the app under You, Account, Privacy and account. FORMA emails a confirmation link, and your account and active workout data are removed when you confirm. Operational backups follow the service retention schedule. Deleting an account does not delete exported files, or the training recorded on this iPhone without an account."
+      },
+      {
+        "h": "Widgets you control",
+        "id": "training-widgets"
+      },
+      {
+        "p": "Widget sharing starts off for each training space. If you enable it in You, FORMA writes a small read-only snapshot for its own widget extension on this iPhone: your next routine name and identifier, exercise count and estimated time, active workout name and saved set counts, and weekly workout totals and trained days. It contains no email, account credentials, notes, full history, heart rate or energy. The main training database stays private to the app. The snapshot is protected while the iPhone is locked and excluded from device backups; these widgets do not mirror to Mac. Widgets are updated on system timing, so an already displayed widget can take time to refresh after you switch accounts, reset training or turn sharing off. Tap to open current saved training; no widget logs a set or starts a Health recording. Remove a widget from the Home or Lock Screen if you need it hidden immediately."
       },
       {
         "h": "Apple Watch and Apple Health",
         "id": "apple-health"
       },
       {
-        "p": "If you start a workout on Apple Watch, FORMA asks for permission to save workouts and to read and save heart rate and active energy in Apple Health. The Watch records them while the workout runs and saves the workout to Apple Health when it ends. Your iPhone shows the live values but does not add them to your FORMA training records or exports, and FORMA does not send them anywhere. You can change these permissions in the Health app at any time. Training without a Watch needs no Health permission."
+        "p": "If you start a workout on Apple Watch, FORMA asks for permission to save workouts and to read and save heart rate and active energy in Apple Health. The Watch records them while the workout runs and saves the workout to Apple Health when it ends. Your iPhone shows the live values but does not add them to your FORMA training records or exports, and FORMA does not send them anywhere, with or without an account. You can change these permissions in the Health app at any time. Training without a Watch needs no Health permission."
       },
       {
         "h": "Health and safety",
@@ -381,7 +416,7 @@
         "id": "release-policies"
       },
       {
-        "p": "The bundled Privacy Policy version 1.3 and Terms of Use version 1.0 are unchanged source documents for the existing website. Their browser and account descriptions do not describe all native storage details above. Native release policies, developer eligibility, content rights and App Store declarations still require review before submission. Questions: raoof.r12@gmail.com."
+        "p": "The bundled Privacy Policy version 1.3 and Terms of Use version 1.0 are unchanged source documents for the existing website, and the website policy also governs your FORMA account. This development notice does not replace them. Native release policies, developer eligibility, content rights and App Store declarations still require review before submission. Questions: raoof.r12@gmail.com."
       }
     ]
   }

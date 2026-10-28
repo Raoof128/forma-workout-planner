@@ -39,7 +39,10 @@ final class WatchWorkoutCoordinator {
     /// FORMA is open on the Watch, waiting for its Start button.
     case waiting(routineID: String, routineName: String)
     case recording
-    case ended(saved: Bool)
+    /// An end command was sent, but the Watch has not reported session end.
+    case ending
+    /// Session end does not prove that the Watch's Health save succeeded.
+    case ended
   }
 
   private(set) var availability: Availability = .checking
@@ -162,17 +165,19 @@ final class WatchWorkoutCoordinator {
     // A reconnect delivers a new instance of the same workout: keep one
     // logical recording and never start a second FORMA workout for it.
     let first = mirrored == nil && phase != .recording
+    let ending = phase == .ending
     mirrored = session
     session.delegate = bridge
     if case .waiting(let routineID, _) = phase, first {
       phase = .recording
       onWatchStarted?(routineID)
     } else {
-      phase = .recording
+      phase = ending ? .ending : .recording
     }
   }
 
-  fileprivate func didReceive(_ data: [Data]) {
+  fileprivate func didReceive(_ data: [Data], from session: HKWorkoutSession) {
+    guard mirrored === session else { return }
     // Delivery is batched after suspension; the newest snapshot wins. Decode
     // from the newest backwards and publish once, so a backlog doesn't
     // invalidate the live strip once per stale snapshot.
@@ -184,26 +189,33 @@ final class WatchWorkoutCoordinator {
     }
   }
 
-  fileprivate func didChange(to state: HKWorkoutSessionState) {
-    if state == .ended || state == .stopped {
+  fileprivate func didChange(to state: HKWorkoutSessionState, from session: HKWorkoutSession) {
+    guard mirrored === session else { return }
+    if state == .stopped, phase == .recording {
+      phase = .ending
+    } else if state == .ended {
       mirrored = nil
-      if phase == .recording { phase = .ended(saved: true) }
+      if phase == .recording || phase == .ending { phase = .ended }
     }
   }
 
-  fileprivate func didDisconnect() {
+  fileprivate func didDisconnect(from session: HKWorkoutSession) {
+    guard mirrored === session else { return }
     notice =
-      "Your Apple Watch disconnected. It keeps recording and will reconnect when it's nearby."
+      "Your Apple Watch disconnected and keeps recording. Choose Reconnect to iPhone on your Watch when it's nearby."
   }
 
-  func pause() async { await send(.pause) }
-  func resume() async { await send(.resume) }
+  func pause() async { _ = await send(.pause) }
+  func resume() async { _ = await send(.resume) }
 
-  /// Finishing or discarding the FORMA workout ends the Watch recording too.
+  /// Ask the Watch to end its recording. Command delivery is not a Health save
+  /// acknowledgement, and a failed send leaves the recording recoverable.
   func end(save: Bool) async {
     guard phase == .recording else { return }
-    await send(.end(save: save))
-    phase = .ended(saved: save)
+    phase = .ending
+    if !(await send(.end(save: save))), phase == .ending {
+      phase = .recording
+    }
   }
 
   func reset() {
@@ -212,13 +224,19 @@ final class WatchWorkoutCoordinator {
     notice = nil
   }
 
-  private func send(_ message: WatchWorkoutMessage) async {
-    guard let mirrored else { return }
+  @discardableResult
+  private func send(_ message: WatchWorkoutMessage) async -> Bool {
+    guard let mirrored else {
+      notice = "Your Apple Watch isn't connected. Use the Watch to control its recording."
+      return false
+    }
     do {
       try await mirrored.sendToRemoteWorkoutSession(data: try message.encoded())
+      return true
     } catch {
       notice =
         "Your Apple Watch didn't receive that. End the workout on the Watch if it's still recording."
+      return false
     }
   }
 }
@@ -256,7 +274,8 @@ private final class WatchBridge: NSObject, WCSessionDelegate, HKWorkoutSessionDe
     _ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState,
     from fromState: HKWorkoutSessionState, date: Date
   ) {
-    Task { @MainActor in owner?.didChange(to: toState) }
+    let session = UncheckedSendable(workoutSession)
+    Task { @MainActor in owner?.didChange(to: toState, from: session.value) }
   }
 
   func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {}
@@ -264,13 +283,15 @@ private final class WatchBridge: NSObject, WCSessionDelegate, HKWorkoutSessionDe
   func workoutSession(
     _ workoutSession: HKWorkoutSession, didReceiveDataFromRemoteWorkoutSession data: [Data]
   ) {
-    Task { @MainActor in owner?.didReceive(data) }
+    let session = UncheckedSendable(workoutSession)
+    Task { @MainActor in owner?.didReceive(data, from: session.value) }
   }
 
   func workoutSession(
     _ workoutSession: HKWorkoutSession, didDisconnectFromRemoteDeviceWithError error: Error?
   ) {
-    Task { @MainActor in owner?.didDisconnect() }
+    let session = UncheckedSendable(workoutSession)
+    Task { @MainActor in owner?.didDisconnect(from: session.value) }
   }
 }
 

@@ -45,6 +45,7 @@ public actor AccountSync {
   public private(set) var status: SyncStatus = .idle
   private var conflict: RemoteWorkspace?
   private var signedOut: SyncSignedOutReason?
+  private var stopped = false
   private var subscribers: [UUID: AsyncStream<SyncStatus>.Continuation] = [:]
 
   /// Network and resolution steps run one at a time, in arrival order. Local
@@ -90,12 +91,26 @@ public actor AccountSync {
   /// The store's sync bookkeeping, for the app's review and import screens.
   public func metadata() async throws -> SyncMetadata { try await store.syncMetadata() }
 
+  /// The app is leaving this member's store. A request already on the wire
+  /// may finish, but it must not write back into a cache that is being closed
+  /// or removed. Its durable pending operation is reconciled on the next sign-in.
+  public func stop() async {
+    stopped = true
+    publish(.signedOut(.unauthorized))
+    for continuation in subscribers.values { continuation.finish() }
+    subscribers.removeAll()
+    // Drain store calls already enqueued before the app removes this cache.
+    _ = try? await store.syncMetadata()
+  }
+
   // MARK: Local changes
 
   /// Call after each local commit (or commit with `markingDirty: true`). Cheap
   /// and immediate; follow it with `flush()`.
   public func markDirty() async {
+    guard !stopped else { return }
     do { try await store.markDirty() } catch { fail(error) }
+    guard !stopped else { return }
     if status == .idle { publish(.saving) }
   }
 
@@ -109,9 +124,11 @@ public actor AccountSync {
 
   private func performFlush() async -> SyncStatus {
     while true {
+      guard !stopped else { return status }
       if signedOut != nil || conflict != nil { return status }
       let metadata: SyncMetadata
       do { metadata = try await store.syncMetadata() } catch { return fail(error) }
+      guard !stopped else { return status }
       guard let serverRevision = metadata.serverRevision else {
         // A member cache is filled by the full fetch first; its placeholder
         // workspace must never be uploaded over the account.
@@ -131,13 +148,16 @@ public actor AccountSync {
         return publish(.idle)
       }
 
+      guard !stopped else { return status }
       publish(.saving)
       let acknowledgement: RemoteWorkspace
       do {
         acknowledgement = try await transport.put(WorkspacePut(operation))
       } catch {
+        guard !stopped else { return status }
         return await handleSendFailure(error, operation: operation)
       }
+      guard !stopped else { return status }
       do {
         try await store.completePending(
           operationId: operation.operationId, serverRevision: acknowledgement.revision)
@@ -200,12 +220,16 @@ public actor AccountSync {
   private func performRefresh() async -> SyncStatus {
     if signedOut != nil || conflict != nil { return status }
     let remote: RemoteWorkspace
-    do { remote = try await transport.fetch() } catch { return handleReadFailure(error) }
+    do { remote = try await transport.fetch() } catch {
+      return stopped ? status : handleReadFailure(error)
+    }
+    guard !stopped else { return status }
     // Anything may have happened locally during the request, so decide on what
     // the store says now, and let the store re-check at the moment it replaces.
     for _ in 0..<3 {
       let metadata: SyncMetadata
       do { metadata = try await store.syncMetadata() } catch { return fail(error) }
+      guard !stopped else { return status }
       if metadata.pending != nil {
         // The account having moved on proves nothing here: it may be this very
         // operation, applied before its acknowledgement was lost. Resending
@@ -254,14 +278,16 @@ public actor AccountSync {
     signedOut = nil
     conflict = nil
     if !discardingLocalChanges {
-      let metadata: SyncMetadata
-      do { metadata = try await store.syncMetadata() } catch { return fail(error) }
-      if metadata.serverRevision != nil && (metadata.pending != nil || metadata.dirty) {
-        return await performRefresh()
-      }
+      // A returning member can edit their downloaded cache while this GET is
+      // in flight. Use refresh's transaction-time clean check, even when the
+      // cache was clean before the request began, so that edit is never lost.
+      return await performRefresh()
     }
     let remote: RemoteWorkspace
-    do { remote = try await transport.fetch() } catch { return handleReadFailure(error) }
+    do { remote = try await transport.fetch() } catch {
+      return stopped ? status : handleReadFailure(error)
+    }
+    guard !stopped else { return status }
     do {
       _ = try await store.replaceWorkspace(with: remote.workspace, serverRevision: remote.revision)
     } catch { return fail(error) }
@@ -353,10 +379,12 @@ public actor AccountSync {
     if signedOut != nil || conflict != nil { return status }
     var metadata: SyncMetadata
     do { metadata = try await store.syncMetadata() } catch { return fail(error) }
+    guard !stopped else { return status }
     if metadata.pending != nil {
       let settled = await performFlush()
       guard settled == .idle else { return settled }
       do { metadata = try await store.syncMetadata() } catch { return fail(error) }
+      guard !stopped else { return status }
     }
     guard let base = metadata.serverRevision else {
       return .failed("Your account has not been downloaded on this device yet.")
@@ -382,6 +410,7 @@ public actor AccountSync {
   private func exclusive(_ body: () async -> SyncStatus) async -> SyncStatus {
     await acquire()
     defer { release() }
+    guard !stopped else { return status }
     return await body()
   }
 

@@ -7,6 +7,7 @@ on:
       - "ios/**"
       - "scripts/build-ios-resources.mjs"
       - "scripts/check-ios-contracts.mjs"
+      - "scripts/check-ios-widget-bundle.py"
       - "unit/ios-resources.test.js"
       - "unit/ios-validation-boundaries.test.js"
       - "src/data.js"
@@ -169,7 +170,11 @@ jobs:
             -destination "$FORMA_SIMULATOR" \
             -derivedDataPath "$RUNNER_TEMP/forma-derived-data" \
             -resultBundlePath "$RUNNER_TEMP/forma-ios.xcresult" \
-            CODE_SIGNING_ALLOWED=NO
+            CODE_SIGNING_ALLOWED=YES CODE_SIGN_IDENTITY=- DEVELOPMENT_TEAM=3L5A4R7JNY
+
+      - name: Verify the embedded protected widget extension
+        run: |
+          python3 scripts/check-ios-widget-bundle.py "$RUNNER_TEMP/forma-derived-data/Build/Products/Debug-iphonesimulator/FORMA.app"
 
       - name: Test iOS 17 compatibility when its runtime is installed
         if: steps.simulator.outputs.compatibility != ''
@@ -182,7 +187,7 @@ jobs:
             -destination "$FORMA_COMPATIBILITY_SIMULATOR" \
             -derivedDataPath "$RUNNER_TEMP/forma-derived-data" \
             -resultBundlePath "$RUNNER_TEMP/forma-ios17.xcresult" \
-            CODE_SIGNING_ALLOWED=NO
+            CODE_SIGNING_ALLOWED=YES CODE_SIGN_IDENTITY=- DEVELOPMENT_TEAM=3L5A4R7JNY
           printf '%s\n' 'iOS 17 compatibility: passed on the installed simulator.' >> "$GITHUB_STEP_SUMMARY"
 
       - name: Test iOS 26.0 fallback when its runtime is installed
@@ -196,7 +201,7 @@ jobs:
             -destination "$FORMA_FALLBACK_SIMULATOR" \
             -derivedDataPath "$RUNNER_TEMP/forma-derived-data" \
             -resultBundlePath "$RUNNER_TEMP/forma-ios26-fallback.xcresult" \
-            CODE_SIGNING_ALLOWED=NO
+            CODE_SIGNING_ALLOWED=YES CODE_SIGN_IDENTITY=- DEVELOPMENT_TEAM=3L5A4R7JNY
           printf '%s\n' 'iOS 26.0 fallback: passed on the installed simulator.' >> "$GITHUB_STEP_SUMMARY"
 
       - name: Retain native test evidence

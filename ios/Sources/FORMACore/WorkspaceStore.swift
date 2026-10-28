@@ -208,12 +208,13 @@ public actor WorkspaceStore {
       guard sqlite3_changes(database.handle) == 1 else {
         throw FormaError.storage("The local revision changed while deleting.")
       }
-      // Raw recovery copies are only this store's uniquely named JSON
-      // files; an error aborts deletion rather than falsely claiming it.
+      // A directory can contain guest and multiple member stores. Never delete
+      // another store's originals, or historical unscoped recovery evidence
+      // whose owner cannot be established safely.
       let files = try FileManager.default.contentsOfDirectory(
         at: url.deletingLastPathComponent(), includingPropertiesForKeys: nil)
       for file in files
-      where file.lastPathComponent.hasPrefix("forma-recovery-") && file.pathExtension == "json" {
+      where Self.isRecoveryFile(file, for: url) {
         try FileManager.default.removeItem(at: file)
       }
       try database.execute("COMMIT")
@@ -226,6 +227,57 @@ public actor WorkspaceStore {
       try? database.execute("ROLLBACK")
       throw error
     }
+  }
+
+  /// Removes this store's local cache and its identifiable recovery artifacts.
+  /// Stop its sync engine and drain pending app mutations before calling. The
+  /// connection is closed first, so it cannot recreate a deleted WAL or accept
+  /// a later save. Errors propagate: callers must not claim removal succeeded.
+  ///
+  /// Pre-upgrade `forma-recovery-<UUID>.json` files deliberately remain: several
+  /// stores shared that namespace, and their owner cannot be inferred safely.
+  public func removeLocalFiles() throws {
+    let files = try FileManager.default.contentsOfDirectory(
+      at: url.deletingLastPathComponent(), includingPropertiesForKeys: [.isDirectoryKey])
+    let names = [
+      url.lastPathComponent, url.lastPathComponent + "-wal", url.lastPathComponent + "-shm",
+    ]
+    let targets = files.filter { file in
+      let name = file.lastPathComponent
+      if names.contains(name) || Self.isRecoveryFile(file, for: url) { return true }
+      return names.contains { base in
+        let prefix = base + ".unreadable-"
+        guard name.hasPrefix(prefix) else { return false }
+        let stamp = name.dropFirst(prefix.count)
+        return !stamp.isEmpty && stamp.utf8.allSatisfy { (48...57).contains($0) }
+      }
+    }
+    // Only files were created by the store; refuse unexpected directories
+    // rather than treating an artifact-shaped name as recursive deletion authority.
+    for file in targets {
+      guard try file.resourceValues(forKeys: [.isDirectoryKey]).isDirectory != true else {
+        throw FormaError.storage("A local cache artifact is not a file.")
+      }
+    }
+    try database.close()
+    verified = nil
+    for file in targets {
+      // Closing SQLite may itself remove its WAL/SHM files.
+      do { try FileManager.default.removeItem(at: file) } catch {
+        if (error as NSError).domain != NSCocoaErrorDomain
+          || (error as NSError).code != NSFileNoSuchFileError
+        {
+          throw error
+        }
+      }
+    }
+  }
+
+  private static func isRecoveryFile(_ file: URL, for storeURL: URL) -> Bool {
+    let prefix = storeURL.lastPathComponent + ".recovery-"
+    let name = file.lastPathComponent
+    guard name.hasPrefix(prefix), name.hasSuffix(".json") else { return false }
+    return UUID(uuidString: String(name.dropFirst(prefix.count).dropLast(5))) != nil
   }
 
   private struct Record {
@@ -279,14 +331,15 @@ public actor WorkspaceStore {
     let files = try FileManager.default.contentsOfDirectory(
       at: directory, includingPropertiesForKeys: Array(keys))
     for file in files
-    where file.lastPathComponent.hasPrefix("forma-recovery-") && file.pathExtension == "json" {
+    where Self.isRecoveryFile(file, for: url) {
       guard let values = try? file.resourceValues(forKeys: keys),
         values.isRegularFile == true, values.isSymbolicLink != true,
         values.fileSize == raw.count
       else { continue }
       if let saved = try? Data(contentsOf: file, options: [.mappedIfSafe]), saved == raw { return }
     }
-    let recovery = directory.appendingPathComponent("forma-recovery-\(UUID().uuidString).json")
+    let recovery = directory.appendingPathComponent(
+      url.lastPathComponent + ".recovery-\(UUID().uuidString).json")
     try raw.write(to: recovery, options: [.atomic])
   }
 }
@@ -552,6 +605,7 @@ extension String {
 /// safe destruction without accessing an actor-isolated OpaquePointer in deinit.
 private final class SQLiteConnection: @unchecked Sendable {
   let handle: OpaquePointer
+  private var closed = false
 
   init(url: URL) throws {
     var opened: OpaquePointer?
@@ -566,15 +620,24 @@ private final class SQLiteConnection: @unchecked Sendable {
     sqlite3_busy_timeout(opened, 5_000)
   }
 
-  deinit { sqlite3_close_v2(handle) }
+  deinit { if !closed { sqlite3_close_v2(handle) } }
+
+  func close() throws {
+    guard !closed else { return }
+    let code = sqlite3_close(handle)
+    guard code == SQLITE_OK else { throw FormaError.storage("SQLite close failed (\(code)).") }
+    closed = true
+  }
 
   func execute(_ sql: String) throws {
+    guard !closed else { throw FormaError.storage("This local store is closed.") }
     let code = sqlite3_exec(handle, sql, nil, nil, nil)
     guard code == SQLITE_OK else { throw FormaError.storage("SQLite operation failed (\(code)).") }
   }
 
   func prepare(_ sql: String) throws -> SQLiteStatement {
-    try SQLiteStatement(database: handle, sql: sql)
+    guard !closed else { throw FormaError.storage("This local store is closed.") }
+    return try SQLiteStatement(database: handle, sql: sql)
   }
 
   func scalarInt(_ sql: String) throws -> Int? {

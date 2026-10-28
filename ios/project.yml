@@ -14,12 +14,19 @@ packages:
     path: .
 settings:
   base:
+    # Preserve the development team already used by local device builds and CI.
+    DEVELOPMENT_TEAM: 3L5A4R7JNY
     SWIFT_VERSION: "6.0"
     SWIFT_STRICT_CONCURRENCY: complete
     IPHONEOS_DEPLOYMENT_TARGET: "17.0"
     ENABLE_USER_SCRIPT_SANDBOXING: YES
     MARKETING_VERSION: "0.1.0"
     CURRENT_PROJECT_VERSION: 1
+  configs:
+    Release:
+      # Distributed builds must not retain test coverage instrumentation.
+      ENABLE_CODE_COVERAGE: NO
+      CLANG_COVERAGE_MAPPING: NO
 targets:
   FORMA:
     type: application
@@ -33,9 +40,14 @@ targets:
       - path: FORMA/Resources
         buildPhase: resources
       - path: Shared
+      - path: WidgetPresentation
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: dev.raoufabedini.forma
+        # Where accounts and sync live (HTTPS only). Surfaced through Info.plist
+        # as FORMAAccountOrigin; override per build to point elsewhere, e.g.
+        # xcodebuild FORMA_ACCOUNT_ORIGIN=https://staging.example.
+        FORMA_ACCOUNT_ORIGIN: https://forma.raoufabedini.dev
         INFOPLIST_FILE: FORMA/Info.plist
         CODE_SIGN_ENTITLEMENTS: FORMA/FORMA.entitlements
         GENERATE_INFOPLIST_FILE: NO
@@ -47,6 +59,32 @@ targets:
       - package: FORMACore
         product: FORMACore
       - target: FORMAWatch
+      - package: FORMACore
+        product: FORMASurfaces
+      - target: FORMAWidgets
+  FORMAWidgets:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: WidgetPresentation
+      - path: FORMAWidgets
+        excludes:
+          - Info.plist
+          - FORMAWidgets.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.raoufabedini.forma.widgets
+        INFOPLIST_FILE: FORMAWidgets/Info.plist
+        CODE_SIGN_ENTITLEMENTS: FORMAWidgets/FORMAWidgets.entitlements
+        GENERATE_INFOPLIST_FILE: NO
+        TARGETED_DEVICE_FAMILY: "1"
+        SKIP_INSTALL: YES
+        APPLICATION_EXTENSION_API_ONLY: YES
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) FORMA_WIDGET_EXTENSION"
+        CODE_SIGN_STYLE: Automatic
+    dependencies:
+      - package: FORMACore
+        product: FORMASurfaces
   FORMAWatch:
     type: application
     platform: watchOS
@@ -79,18 +117,35 @@ targets:
         TEST_TARGET_NAME: FORMA
     dependencies:
       - target: FORMA
+  FORMAAppTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: FORMAAppTests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.raoufabedini.forma.apptests
+        GENERATE_INFOPLIST_FILE: YES
+        TARGETED_DEVICE_FAMILY: "1"
+    dependencies:
+      - target: FORMA
 schemes:
   FORMA:
     build:
       targets:
         FORMA: all
         FORMAUITests: [test]
+        FORMAAppTests: [test]
     run:
       config: Debug
     test:
       config: Debug
-      gatherCoverageData: true
+      # Opt in with `xcodebuild test -enableCodeCoverage YES` when collecting coverage.
+      # A scheme-wide default also instruments Swift package dependencies in Release builds.
+      gatherCoverageData: false
       targets:
+        - name: FORMAAppTests
+          parallelizable: false
         - name: FORMAUITests
           parallelizable: false
           randomExecutionOrder: true

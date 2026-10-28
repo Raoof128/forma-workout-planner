@@ -139,7 +139,8 @@ final class WorkspaceStoreTests: XCTestCase, @unchecked Sendable {
     XCTAssertEqual(previous, original)
     let files = try FileManager.default.contentsOfDirectory(
       at: url.deletingLastPathComponent(), includingPropertiesForKeys: nil)
-    let recovery = try XCTUnwrap(files.first { $0.lastPathComponent.hasPrefix("forma-recovery-") })
+    let recovery = try XCTUnwrap(
+      files.first { $0.lastPathComponent.hasPrefix(url.lastPathComponent + ".recovery-") })
     XCTAssertEqual(try Data(contentsOf: recovery), Data("{broken".utf8))
   }
 
@@ -164,7 +165,8 @@ final class WorkspaceStoreTests: XCTestCase, @unchecked Sendable {
     } catch { XCTAssertEqual(error as? FormaError, .corruptStore) }
     let files = try FileManager.default.contentsOfDirectory(
       at: url.deletingLastPathComponent(), includingPropertiesForKeys: nil)
-    let recovery = try XCTUnwrap(files.first { $0.lastPathComponent.hasPrefix("forma-recovery-") })
+    let recovery = try XCTUnwrap(
+      files.first { $0.lastPathComponent.hasPrefix(url.lastPathComponent + ".recovery-") })
     XCTAssertEqual(try Data(contentsOf: recovery), Data("{broken".utf8))
   }
 
@@ -195,7 +197,7 @@ final class WorkspaceStoreTests: XCTestCase, @unchecked Sendable {
     candidate.active!.exercises[0].sets[0].done = true
     let saved = try await store.save(candidate, expectedRevision: original.revision)
     let recovery = url.deletingLastPathComponent().appendingPathComponent(
-      "forma-recovery-\(UUID().uuidString).json")
+      url.lastPathComponent + ".recovery-\(UUID().uuidString).json")
     try JSONEncoder().encode(original).write(to: recovery)
     let reset = try await store.reset(expectedRevision: saved.revision)
     XCTAssertEqual(reset.revision, saved.revision + 1)
@@ -220,7 +222,7 @@ final class WorkspaceStoreTests: XCTestCase, @unchecked Sendable {
     changed.profile.name = "Keep the newer data"
     let saved = try await store.save(changed, expectedRevision: original.revision)
     let recovery = url.deletingLastPathComponent().appendingPathComponent(
-      "forma-recovery-\(UUID().uuidString).json")
+      url.lastPathComponent + ".recovery-\(UUID().uuidString).json")
     try JSONEncoder().encode(original).write(to: recovery)
     do {
       _ = try await store.reset(expectedRevision: original.revision)
@@ -231,6 +233,132 @@ final class WorkspaceStoreTests: XCTestCase, @unchecked Sendable {
     let loaded = try await store.load(seed: Workspace())
     XCTAssertEqual(loaded, saved)
     XCTAssertTrue(FileManager.default.fileExists(atPath: recovery.path))
+  }
+
+  func testGuestResetPreservesMemberRecoveryOriginalsAndHistoricalUnscopedEvidence() async throws {
+    let guestURL = try temporaryURL()
+    let directory = guestURL.deletingLastPathComponent()
+    let urls =
+      [guestURL]
+      + ["member-a", "member-b"].map {
+        WorkspaceStore.memberStoreURL(directory: directory, memberReference: $0)
+      }
+    var stores: [WorkspaceStore] = []
+    for (index, url) in urls.enumerated() {
+      let store = try WorkspaceStore(url: url, catalog: Fixtures.catalog)
+      _ = try await store.load(seed: Fixtures.workspace())
+      var database: OpaquePointer?
+      XCTAssertEqual(sqlite3_open(url.path, &database), SQLITE_OK)
+      let raw = Data("{broken synthetic original \(index)".utf8)
+      var statement: OpaquePointer?
+      XCTAssertEqual(
+        sqlite3_prepare_v2(database, "UPDATE workspace SET snapshot = ?", -1, &statement, nil),
+        SQLITE_OK)
+      let transient = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
+      _ = raw.withUnsafeBytes {
+        sqlite3_bind_blob(statement, 1, $0.baseAddress, Int32($0.count), transient)
+      }
+      XCTAssertEqual(sqlite3_step(statement), SQLITE_DONE)
+      sqlite3_finalize(statement)
+      sqlite3_close(database)
+      do {
+        _ = try await store.load(seed: Workspace())
+        XCTFail("Corruption must preserve a scoped original")
+      } catch { XCTAssertEqual(error as? FormaError, .corruptStore) }
+      stores.append(store)
+    }
+    let historical = directory.appendingPathComponent("forma-recovery-\(UUID().uuidString).json")
+    let historicalRaw = Data("synthetic unknown owner evidence".utf8)
+    try historicalRaw.write(to: historical)
+    let before = try FileManager.default.contentsOfDirectory(
+      at: directory, includingPropertiesForKeys: nil
+    ).filter { $0.pathExtension == "json" }
+    XCTAssertEqual(before.count, 4)
+
+    let reset = try await stores[0].reset(expectedRevision: 0)
+    XCTAssertEqual(reset.revision, 1)
+    for file in before {
+      if file.lastPathComponent.hasPrefix(guestURL.lastPathComponent + ".recovery-") {
+        XCTAssertFalse(FileManager.default.fileExists(atPath: file.path))
+      } else {
+        XCTAssertTrue(FileManager.default.fileExists(atPath: file.path), file.lastPathComponent)
+      }
+    }
+    XCTAssertEqual(try Data(contentsOf: historical), historicalRaw)
+  }
+
+  func testMemberRemovalClosesOnlyItsStoreAndRemovesOnlyItsIdentifiableArtifacts() async throws {
+    let guestURL = try temporaryURL()
+    let directory = guestURL.deletingLastPathComponent()
+    let aURL = WorkspaceStore.memberStoreURL(directory: directory, memberReference: "a")
+    let bURL = WorkspaceStore.memberStoreURL(directory: directory, memberReference: "b")
+    let guest = try WorkspaceStore(url: guestURL, catalog: Fixtures.catalog)
+    let a = try WorkspaceStore(url: aURL, catalog: Fixtures.catalog)
+    let b = try WorkspaceStore(url: bURL, catalog: Fixtures.catalog)
+    let guestSaved = try await guest.load(seed: Fixtures.workspace())
+    let bSaved = try await b.load(seed: Fixtures.active(now: 1_000))
+    _ = try await a.load(seed: Fixtures.workspace())
+    let ownNames = [
+      aURL.lastPathComponent + ".recovery-\(UUID().uuidString).json",
+      aURL.lastPathComponent + ".unreadable-1790000000",
+      aURL.lastPathComponent + "-wal.unreadable-1790000000",
+      aURL.lastPathComponent + "-shm.unreadable-1790000000",
+    ]
+    let preservedNames = [
+      guestURL.lastPathComponent + ".recovery-\(UUID().uuidString).json",
+      bURL.lastPathComponent + ".recovery-\(UUID().uuidString).json",
+      bURL.lastPathComponent + ".unreadable-1790000000",
+      "forma-recovery-\(UUID().uuidString).json",
+      aURL.lastPathComponent + ".unreadable-not-a-timestamp",
+      aURL.lastPathComponent + "-other.unreadable-1790000000",
+      aURL.lastPathComponent + ".recovery-not-a-uuid.json",
+    ]
+    let raw = Data("synthetic artifact".utf8)
+    for name in ownNames + preservedNames {
+      try raw.write(to: directory.appendingPathComponent(name))
+    }
+
+    try await a.removeLocalFiles()
+    XCTAssertFalse(FileManager.default.fileExists(atPath: aURL.path))
+    for name in ownNames {
+      XCTAssertFalse(
+        FileManager.default.fileExists(atPath: directory.appendingPathComponent(name).path))
+    }
+    for name in preservedNames {
+      XCTAssertEqual(try Data(contentsOf: directory.appendingPathComponent(name)), raw, name)
+    }
+    let guestLoaded = try await guest.load(seed: Workspace())
+    let bLoaded = try await b.load(seed: Workspace())
+    XCTAssertEqual(guestLoaded, guestSaved)
+    XCTAssertEqual(bLoaded, bSaved)
+    do {
+      _ = try await a.load(seed: Workspace())
+      XCTFail("A removed store must not silently recreate itself through its old actor")
+    } catch {
+      guard case .storage = error as? FormaError else {
+        return XCTFail("Expected closed-store error")
+      }
+    }
+    XCTAssertFalse(FileManager.default.fileExists(atPath: aURL.path))
+  }
+
+  func testRemovalRefusesUnexpectedArtifactDirectoriesWithoutDeletingTheirContents() async throws {
+    let url = try temporaryURL()
+    let store = try WorkspaceStore(url: url, catalog: Fixtures.catalog)
+    let original = try await store.load(seed: Fixtures.workspace())
+    let unexpected = URL(fileURLWithPath: url.path + ".unreadable-1790000000", isDirectory: true)
+    try FileManager.default.createDirectory(at: unexpected, withIntermediateDirectories: false)
+    let evidence = unexpected.appendingPathComponent("keep.txt")
+    try Data("keep this synthetic evidence".utf8).write(to: evidence)
+    do {
+      try await store.removeLocalFiles()
+      XCTFail("Unexpected directories must not grant recursive deletion authority")
+    } catch {
+      guard case .storage = error as? FormaError else { return XCTFail("Expected artifact error") }
+    }
+    XCTAssertTrue(FileManager.default.fileExists(atPath: evidence.path))
+    let loaded = try await store.load(seed: Workspace())
+    XCTAssertEqual(loaded, original)
   }
 
   func testOversizedSnapshotAndRecoveryBlobsAreRefusedWithoutReplacingData() async throws {
@@ -295,7 +423,10 @@ final class WorkspaceStoreTests: XCTestCase, @unchecked Sendable {
       try FileManager.default.contentsOfDirectory(
         at: url.deletingLastPathComponent(), includingPropertiesForKeys: nil
       )
-      .filter { $0.lastPathComponent.hasPrefix("forma-recovery-") && $0.pathExtension == "json" }
+      .filter {
+        $0.lastPathComponent.hasPrefix(url.lastPathComponent + ".recovery-")
+          && $0.pathExtension == "json"
+      }
     }
     XCTAssertEqual(try recoveryFiles().count, 1)
     XCTAssertEqual(try recoveryFiles().map { try Data(contentsOf: $0) }, [Data("{broken".utf8)])

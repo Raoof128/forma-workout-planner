@@ -9,6 +9,7 @@ struct YouView: View {
   @State private var document: WorkspaceDocument?
   @State private var deleteConfirmation = false
   @State private var backupFilename = "forma-backup"
+  @State private var authMode: AuthMode?
 
   var body: some View {
     @Bindable var model = model
@@ -18,11 +19,20 @@ struct YouView: View {
           FormaMark().fill(FormaTheme.accent).frame(width: 48, height: 48)
           EditorialTitle(text: "Your pace.\nYour space.")
           Text(model.workspace?.profile.name ?? "Guest").font(.title3.weight(.semibold))
-          Label("On-device training", systemImage: "iphone.and.arrow.forward")
-            .font(.subheadline).foregroundStyle(FormaTheme.secondary)
+          Label(
+            model.isSignedIn ? "Synced with your FORMA account" : "On-device training",
+            systemImage: model.isSignedIn ? "icloud" : "iphone.and.arrow.forward"
+          )
+          .font(.subheadline).foregroundStyle(FormaTheme.secondary)
         }
         .padding(.vertical, 16).listRowBackground(Color.clear)
       }
+
+      if model.syncDisplay?.needsAttention == true {
+        Section { SyncBanner().listRowInsets(EdgeInsets()).listRowBackground(Color.clear) }
+      }
+
+      AccountSection(authMode: $authMode)
 
       Section("Make it yours") {
         Button {
@@ -58,6 +68,26 @@ struct YouView: View {
       }
 
       Section {
+        Toggle(
+          "Share training with widgets",
+          isOn: Binding(
+            get: { model.widgets.sharing },
+            set: { model.widgets.setSharing($0, workspace: model.workspace) }
+          )
+        )
+        .accessibilityIdentifier("widget-sharing")
+        if let status = model.widgets.status {
+          Text(status).font(.footnote).foregroundStyle(FormaTheme.secondary)
+        }
+      } header: {
+        Text("Training at a glance")
+      } footer: {
+        Text(
+          "Widgets show your next routine, saved set counts and weekly totals. They hide while your iPhone is locked. Sharing starts off for each training space. Updates follow system timing; tap a widget to open your current saved training."
+        )
+      }
+
+      Section {
         Button {
           do {
             document = WorkspaceDocument(data: try model.exportData())
@@ -78,15 +108,21 @@ struct YouView: View {
         } label: {
           Label("Exercise sources & licences", systemImage: "text.book.closed")
         }
-        Button("Delete training data on this iPhone", role: .destructive) {
-          deleteConfirmation = true
+        // Signed in, the open store is the account's synced copy; deleting the
+        // account is under Privacy & account.
+        if !model.isSignedIn {
+          Button("Delete training data on this iPhone", role: .destructive) {
+            deleteConfirmation = true
+          }
+          .disabled(model.busy)
         }
-        .disabled(model.busy)
       } header: {
         Text("Yours to keep. Yours to control.")
       } footer: {
         Text(
-          "This native build stores training locally. Export a copy before uninstalling the app or changing phones. An exported file may contain personal information; you choose where it goes."
+          model.isSignedIn
+            ? "Your training is saved on this iPhone and in your FORMA account. Export a copy any time. An exported file may contain personal information; you choose where it goes."
+            : "Without an account, this app stores training locally. Export a copy before uninstalling the app or changing phones. An exported file may contain personal information; you choose where it goes."
         )
       }
 
@@ -104,8 +140,14 @@ struct YouView: View {
       }
     }
     .scrollContentBackground(.hidden).background(FormaTheme.canvas)
+    .formaTabScrollObserver()
     .navigationTitle("You").navigationBarTitleDisplayMode(.inline)
-    .sheet(isPresented: $profilePresented) { ProfileEditor() }
+    .sheet(isPresented: $profilePresented) { ProfileEditor().protectWidgetNavigation() }
+    .sheet(item: $authMode) { mode in
+      AuthFlowView(mode: mode).environment(model).protectWidgetNavigation()
+    }
+    .refreshable { if model.isSignedIn { await model.syncNow() } }
+    .protectWidgetNavigation(while: exporting)
     .fileExporter(
       isPresented: $exporting, document: document, contentType: .json,
       defaultFilename: backupFilename
@@ -205,7 +247,12 @@ struct ProfileEditor: View {
             .font(.subheadline).accessibilityIdentifier("profile-save-error")
           }
         }
-        Text("Your name and preferences are stored on this iPhone.").font(.footnote)
+        Text(
+          model.isSignedIn
+            ? "Your name and preferences are saved on this iPhone and in your FORMA account."
+            : "Your name and preferences are stored on this iPhone."
+        )
+        .font(.footnote)
       }
       .disabled(model.busy)
       .navigationTitle("Your profile").navigationBarTitleDisplayMode(.inline)
@@ -249,16 +296,37 @@ struct ProfileEditor: View {
   private func save() async {
     guard !model.busy, invalid == nil, let original else { return }
     let updatedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
-    if await model.commit({ value in
-      guard value.profile == original else {
-        throw AppFailure(
-          "Your profile changed while this editor was open. Keep this draft open or reopen your current profile before saving."
-        )
+    // After a failed account-name sync the training profile is already saved;
+    // saving again only retries the account.
+    let current = model.workspace?.profile
+    let alreadySaved =
+      current?.name == updatedName && current?.goal == goal && current?.restSeconds == rest
+    var saved = alreadySaved
+    if !saved {
+      saved = await model.commit({ value in
+        guard value.profile == original else {
+          throw AppFailure(
+            "Your profile changed while this editor was open. Keep this draft open or reopen your current profile before saving."
+          )
+        }
+        value.profile.name = updatedName
+        value.profile.goal = goal
+        value.profile.restSeconds = rest
+      })
+    }
+    if saved {
+      // The website keeps the account name and the training profile name in
+      // step; so does this.
+      if let accountName = model.account.profile?.name, accountName != updatedName {
+        do {
+          try await model.account.call { try await $0.updateName(updatedName) }
+          await model.account.refreshSession()
+        } catch {
+          failure =
+            "Your training profile was saved, but your account name could not be synced: \(error.accountMessage) Save again to retry."
+          return
+        }
       }
-      value.profile.name = updatedName
-      value.profile.goal = goal
-      value.profile.restSeconds = rest
-    }) {
       dismiss()
     } else {
       failure =
@@ -313,7 +381,7 @@ struct NativePrivacyView: View {
           }
         } else if unavailable {
           Text(
-            "This build couldn't open the bundled privacy notice. Your training is stored locally; no account sync, advertising or analytics runs in this native build. Contact raoof.r12@gmail.com for help."
+            "This build couldn't open the bundled privacy notice. Your training is stored on this iPhone. If you sign in to a FORMA account, your name, email address and workout records are also sent to and stored in that account; no advertising or analytics runs in this native build. Contact raoof.r12@gmail.com for help."
           )
         } else {
           ProgressView("Opening privacy notice…")

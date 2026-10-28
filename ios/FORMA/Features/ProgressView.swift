@@ -42,6 +42,7 @@ struct ProgressViewScreen: View {
       }.padding(24)
     }
     .navigationTitle("Progress").navigationBarTitleDisplayMode(.inline)
+    .formaTabScrollObserver()
     .background(FormaTheme.canvas)
   }
 }

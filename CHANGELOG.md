@@ -4,6 +4,46 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-10-28 — Native account fixes and animated navigation
+
+- **Scope:** finish the local account app review and the owner's chosen SwiftUI
+  Liquid Glass bar with icon bounce and scroll collapse.
+- **Summary:** preserve edits during downloads and store switches; reject old
+  session replies; stop abandoned sync engines; check durable unsent data at
+  sign-out; isolate account origins and restrict Debug staging credentials.
+- **Files:** native account/app/core/navigation code, app/core/UI tests,
+  project, CI, README and `ios/docs/account-review-and-tab-bar-2026-10-28.md`.
+- **Verification:** core 138/138, hosted app 13/13, final account UI 3/3 and the
+  other 13 UI journeys pass; JS 151/151, Worker 35/35, static/resource checks and
+  added-line secret scan pass. Signed Release installed and launched on iPhone.
+- **Follow-ups:** live staging/production tests need usable FORMA credentials;
+  the Watch rejects the Mac connection and needs companion USB pairing repair.
+  No push, backend deployment or store submission.
+
+### Raouf: 2026-10-28 — iOS: native accounts and sync (app half)
+
+- **Account screens:** You › Account offers Sign in and Create account (name,
+  email, 15+ character password, the website's two consents), email
+  verification with resend, two-step code or recovery code, and forgot
+  password (the reset finishes on the website). Signed in: profile (name,
+  weekly goal, change email), security (change password, two-step on/off with
+  recovery codes, active sessions, coach access), training data and privacy &
+  account (sign out, delete account by emailed link).
+- **Sync:** the account's workspace downloads on sign-in; every change saves on
+  the iPhone first and is then sent. Offline changes wait and retry. A change
+  on another device while the iPhone holds unsent edits shows the website's two
+  choices (reload cloud data, or keep this iPhone's copy).
+- **Phone training:** never merged silently. "Bring your phone training" shows
+  counts, requires a saved copy of the account's data, then replaces the
+  account's training (the website's import).
+- **Storage and privacy:** session cookies live in the Keychain
+  (this device only); each member has a separate saved copy; HTTPS only. The
+  bundled privacy notice, privacy inventory and privacy manifest describe the
+  account data (email, name, workout records and user ID, linked, app
+  functionality, no tracking).
+- **Not done:** backup-file import (the app has no file reader), live end-to-end
+  against production (owner to run after the server release).
+
 ### Raouf: 2026-10-27 — iOS haptics for every action that needs one
 
 - **Coverage:** every iOS action that warrants feedback now has a haptic, each
@@ -1654,3 +1694,11 @@ at rest` failed 16/20 before the fix. The rapid-release case now waits, before
 - **Release:** Committed as `718e8cf` and pushed to `origin/work` on 26 October
   2026 (no pull request yet, so the Native iOS workflow has not run). Decisions,
   15 evidence-backed claims and the new iOS docs are recorded in Zurvan.
+
+### Raouf: 2026-10-29 — Private native widgets and training audit
+
+- **Date/scope:** 29 October 2026, Australia/Sydney; native iPhone/Watch audit on `feat/frontend-widgets-2026-10`, preserving the existing dirty account/navigation baseline at `c0883a3`.
+- **Summary:** Added six WidgetKit families with owner-scoped opt-in, protected committed snapshots and precise draft-safe links; refined Today/accessibility layouts; repaired hold retries, recovery/import ownership and Watch failure/reconnect status. Release coverage instrumentation is disabled; test coverage remains opt-in.
+- **Files:** Native app/core/Watch/widget/shared-surface sources and tests, `ios/project.yml`, privacy/resources/README, generator, widget bundle validator and CI. Exact paths and 146-path baseline reconciliation: `ios/docs/audits/frontend-widget-2026-10/FILE_LEDGER.md`; ten reports and original visual evidence accompany it.
+- **Verification:** 141 core + 4 surfaces, 32 hosted app, 24 UI regressions, separate real widget gallery/install/link and three dark tours passed; final focused layout/render reruns passed with 120 widget images. 151 web unit tests and 1,711 native contract cases passed. Signed Release/bundle checks and final iPhone installation passed; launch remained locked. Short Simulator trace captured; no physical performance claim.
+- **Follow-ups:** Unlock/connect the companion iPhone by USB for launch and Watch pairing; verify passcode widgets, Watch/Health recovery, physical accessibility, older runtimes, live staging account deletion and Store/legal/privacy gates. Live Activity/Watch complications remain explicitly deferred. No commit, push, merge, production deployment or Store submission.

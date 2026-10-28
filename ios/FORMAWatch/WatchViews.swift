@@ -48,33 +48,59 @@ struct WatchRootView: View {
 
 private struct StartView: View {
   @Environment(WorkoutManager.self) private var manager
+  @State private var confirmingDiscard = false
 
   var body: some View {
     ScrollView {
       VStack(alignment: .leading, spacing: 10) {
-        Text(manager.routineName == nil ? "FORMA" : "READY")
-          .font(.caption2.weight(.bold)).foregroundStyle(lime)
+        Text(
+          manager.hasFailedRecording
+            ? "RECORDING STOPPED" : manager.routineName == nil ? "FORMA" : "READY"
+        )
+        .font(.caption2.weight(.bold)).foregroundStyle(lime)
         Text(manager.routineName ?? "Strength workout")
           .font(.title3.weight(.bold)).fixedSize(horizontal: false, vertical: true)
-        Button {
-          Task { await manager.start() }
-        } label: {
-          Label("Start", systemImage: "play.fill").frame(maxWidth: .infinity)
+        if manager.hasFailedRecording {
+          Text(
+            "This recording has not been confirmed saved to Health. Discard it to start again. Your iPhone sets are separate."
+          )
+          .font(.footnote)
+          if manager.savingRecording {
+            ProgressView("Finishing recording…")
+          }
+          Button("Discard failed recording", role: .destructive) { confirmingDiscard = true }
+            .disabled(manager.savingRecording)
+        } else {
+          Button {
+            Task { await manager.start() }
+          } label: {
+            Label("Start", systemImage: "play.fill").frame(maxWidth: .infinity)
+          }
+          .tint(lime).foregroundStyle(ink)
+          .buttonStyle(.borderedProminent)
+          .disabled(manager.phase == .starting)
+          .accessibilityLabel("Start \(manager.routineName ?? "strength workout")")
         }
-        .tint(lime).foregroundStyle(ink)
-        .buttonStyle(.borderedProminent)
-        .disabled(manager.phase == .starting)
-        .accessibilityLabel("Start \(manager.routineName ?? "strength workout")")
         if case .failed(let message) = manager.phase {
           Text(message).font(.footnote).foregroundStyle(.red)
         }
-        Text(
-          manager.routineName == nil
-            ? "Choose a routine on your iPhone, or start here. Heart rate and energy are recorded to Apple Health."
-            : "Your iPhone starts this workout when you press Start. Heart rate and energy are recorded to Apple Health."
-        )
-        .font(.footnote).foregroundStyle(.secondary)
+        if !manager.hasFailedRecording {
+          Text(
+            manager.routineName == nil
+              ? "Choose a routine on your iPhone, or start here. Heart rate and energy are recorded to Apple Health."
+              : "Your iPhone starts this workout when you press Start. Heart rate and energy are recorded to Apple Health."
+          )
+          .font(.footnote).foregroundStyle(.secondary)
+        }
       }
+    }
+    .confirmationDialog("Discard this failed recording?", isPresented: $confirmingDiscard) {
+      Button("Discard recording", role: .destructive) { manager.discardFailedRecording() }
+      Button("Cancel", role: .cancel) {}
+    } message: {
+      Text(
+        "This failed workout won’t be saved. Health samples already recorded may remain. Your iPhone sets are unchanged."
+      )
     }
   }
 }
@@ -94,6 +120,10 @@ private struct SessionView: View {
         if !manager.mirrored {
           Label("Not connected to iPhone", systemImage: "iphone.slash")
             .font(.footnote).foregroundStyle(.secondary)
+          if !luminanceReduced {
+            Button("Reconnect to iPhone") { Task { await manager.reconnect() } }
+              .disabled(manager.reconnecting || manager.phase == .ending)
+          }
         }
         if !luminanceReduced { SessionControls() }
       }

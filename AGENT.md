@@ -58,6 +58,46 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-28 — Native account fixes and animated navigation
+
+- **Scope:** finish the local account app review and the owner's chosen SwiftUI
+  Liquid Glass bar with icon bounce and scroll collapse.
+- **Summary:** preserve edits during downloads and store switches; reject old
+  session replies; stop abandoned sync engines; check durable unsent data at
+  sign-out; isolate account origins and restrict Debug staging credentials.
+- **Files:** native account/app/core/navigation code, app/core/UI tests,
+  project, CI, README and `ios/docs/account-review-and-tab-bar-2026-10-28.md`.
+- **Verification:** core 138/138, hosted app 13/13, final account UI 3/3 and the
+  other 13 UI journeys pass; JS 151/151, Worker 35/35, static/resource checks and
+  added-line secret scan pass. Signed Release installed and launched on iPhone.
+- **Follow-ups:** live staging/production tests need usable FORMA credentials;
+  the Watch rejects the Mac connection and needs companion USB pairing repair.
+  No push, backend deployment or store submission.
+
+### Raouf: 2026-10-28 — iOS native accounts (app half)
+
+- Code lives in `ios/FORMA/Account/` plus `AppModel+Account.swift`. The pure
+  wire layer (cookie jar value, request bodies, response decoders, error
+  wording) is in FORMACore (`AccountCookies.swift`, `AccountWire.swift`) so
+  `swift test` covers it; the app files are thin shells over it.
+- Store switching: signed out is the guest store, untouched. Signed in is one
+  SQLite file per member (`WorkspaceStore.memberStoreURL`) with an
+  `AccountSync`. The guest store is never written while signed in and is merged
+  only by "Bring your phone training". Sign-out keeps the member file unless
+  "Sign out and remove from this iPhone" is chosen.
+- Nothing schedules sync by itself: after each commit `markDirty` + `flush`, at
+  launch and on foreground `refresh`, timed retry with back-off plus a
+  reachability trigger. After any call that may replace the member workspace,
+  reload it from the store or the next save fails with `conflictingRevision`.
+- Account origin is the build setting `FORMA_ACCOUNT_ORIGIN` (project.yml →
+  Info.plist `FORMAAccountOrigin`), production by default. HTTPS only, ATS
+  default. Requests send `X-Forma-Client: ios`, never `Origin`/`Referer`/
+  `Sec-Fetch-*`; the URLSession has cookies, cache and credentials off and
+  refuses redirects. Never call the production API from tests.
+- Privacy text is generated: edit `scripts/build-ios-resources.mjs`
+  (`nativeLegal`) and run it, then keep `ios/FORMA/Resources/native-privacy.md`
+  in step.
+
 ### Raouf: 2026-10-27 — iOS motion system (Commit 2)
 
 - All native motion goes through `FormaMotion.swift`. Views read
@@ -1526,3 +1566,11 @@ migrate` from the root-owned `ops/` directory (`sudo sh -c 'cd … && …'`),
 - **Release:** Committed as `718e8cf` and pushed to `origin/work` on 26 October
   2026 (no pull request yet, so the Native iOS workflow has not run). Decisions,
   15 evidence-backed claims and the new iOS docs are recorded in Zurvan.
+
+### Raouf: 2026-10-29 — Private native widgets and training audit
+
+- **Date/scope:** 29 October 2026, Australia/Sydney; native iPhone/Watch audit on `feat/frontend-widgets-2026-10`, preserving the existing dirty account/navigation baseline at `c0883a3`.
+- **Summary:** Added six WidgetKit families with owner-scoped opt-in, protected committed snapshots and precise draft-safe links; refined Today/accessibility layouts; repaired hold retries, recovery/import ownership and Watch failure/reconnect status. Release coverage instrumentation is disabled; test coverage remains opt-in.
+- **Files:** Native app/core/Watch/widget/shared-surface sources and tests, `ios/project.yml`, privacy/resources/README, generator, widget bundle validator and CI. Exact paths and 146-path baseline reconciliation: `ios/docs/audits/frontend-widget-2026-10/FILE_LEDGER.md`; ten reports and original visual evidence accompany it.
+- **Verification:** 141 core + 4 surfaces, 32 hosted app, 24 UI regressions, separate real widget gallery/install/link and three dark tours passed; final focused layout/render reruns passed with 120 widget images. 151 web unit tests and 1,711 native contract cases passed. Signed Release/bundle checks and final iPhone installation passed; launch remained locked. Short Simulator trace captured; no physical performance claim.
+- **Follow-ups:** Unlock/connect the companion iPhone by USB for launch and Watch pairing; verify passcode widgets, Watch/Health recovery, physical accessibility, older runtimes, live staging account deletion and Store/legal/privacy gates. Live Activity/Watch complications remain explicitly deferred. No commit, push, merge, production deployment or Store submission.

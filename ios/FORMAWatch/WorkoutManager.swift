@@ -31,6 +31,13 @@ final class WorkoutManager {
   @ObservationIgnored private(set) var metrics: WatchMetrics?
   /// Whether the iPhone is following this workout.
   private(set) var mirrored = false
+  private(set) var reconnecting = false
+  private(set) var savingRecording = false
+
+  var hasFailedRecording: Bool {
+    if case .failed = phase { return session != nil }
+    return false
+  }
 
   private let healthStore = HKHealthStore()
   @ObservationIgnored private let bridge = WorkoutBridge()
@@ -118,12 +125,24 @@ final class WorkoutManager {
   /// The Watch keeps recording if the iPhone can't follow; the sets can
   /// still be logged there once the workout is opened.
   private func mirror(_ session: HKWorkoutSession) async {
+    guard self.session === session, !reconnecting else { return }
+    reconnecting = true
+    defer { reconnecting = false }
     do {
       try await session.startMirroringToCompanionDevice()
+      guard self.session === session else { return }
       mirrored = true
+      send(force: true)
     } catch {
-      mirrored = false
+      if self.session === session { mirrored = false }
     }
+  }
+
+  /// A failed mirror does not stop Health collection. Retry only on request,
+  /// and keep a single attempt in flight rather than polling in the background.
+  func reconnect() async {
+    guard !mirrored, phase == .running || phase == .paused, let session else { return }
+    await mirror(session)
   }
 
   /// Relaunch after a crash: reattach to the workout that is still running.
@@ -145,6 +164,7 @@ final class WorkoutManager {
         startedAt: builder.startDate ?? session.startDate ?? .now, elapsed: builder.elapsedTime)
       phase = session.state == .paused ? .paused : .running
       collected()
+      await mirror(session)
     } catch {
       phase = .failed("Your workout couldn't be restored. \(error.localizedDescription)")
     }
@@ -175,9 +195,31 @@ final class WorkoutManager {
     showMetrics()
   }
 
+  /// Only an explicit, confirmed discard may abandon a failed builder. A
+  /// delegate error alone must never silently throw away unsaved Health data.
+  func discardFailedRecording() {
+    guard hasFailedRecording, !savingRecording, let session else { return }
+    session.end()
+    // HealthKit discards the workout result; samples already added to Health
+    // are retained by the system. This is not a deletion of Health history.
+    builder?.discardWorkout()
+    metrics?.state = .ended
+    send(force: true)
+    self.session = nil
+    builder = nil
+    mirrored = false
+    metrics = nil
+    routineName = nil
+    showMetrics()
+    phase = .idle
+  }
+
   // MARK: - HealthKit callbacks
 
-  fileprivate func stateChanged(to state: HKWorkoutSessionState, date: Date) {
+  fileprivate func stateChanged(
+    to state: HKWorkoutSessionState, date: Date, from session: HKWorkoutSession
+  ) {
+    guard self.session === session else { return }
     switch state {
     case .running:
       if phase == .paused { phase = .running }
@@ -189,16 +231,19 @@ final class WorkoutManager {
       send(force: true)
     case .stopped:
       // `finish` sends the final snapshot; one here would only repeat the last.
-      Task { await finish(at: date) }
+      Task { await finish(at: date, session: session) }
     default:
       break
     }
   }
 
-  private func finish(at date: Date) async {
-    guard let session, let builder else { return }
+  private func finish(at date: Date, session: HKWorkoutSession) async {
+    guard self.session === session, let builder, !savingRecording else { return }
+    savingRecording = true
+    defer { savingRecording = false }
     do {
       try await builder.endCollection(at: date)
+      guard self.session === session else { return }
       if saveWhenStopped {
         // A nil workout without an error means it was saved while the
         // device was locked; never save a second copy.
@@ -208,6 +253,12 @@ final class WorkoutManager {
       }
     } catch {
       phase = .failed("Your workout couldn't be saved to Health. \(error.localizedDescription)")
+      session.end()
+      metrics?.state = .ended
+      send(force: true)
+      // Keep the failed builder reachable until the user explicitly discards.
+      // A failed save is never converted into a successful summary or a new Start.
+      return
     }
     session.end()
     metrics?.state = .ended
@@ -222,11 +273,13 @@ final class WorkoutManager {
     routineName = nil
   }
 
-  fileprivate func failed(_ error: Error) {
+  fileprivate func failed(_ error: Error, from session: HKWorkoutSession) {
+    guard self.session === session else { return }
     phase = .failed("The workout stopped unexpectedly. \(error.localizedDescription)")
   }
 
-  fileprivate func collected() {
+  fileprivate func collected(from expected: HKLiveWorkoutBuilder? = nil) {
+    if let expected, builder !== expected { return }
     guard let builder, metrics != nil else { return }
     let heart = builder.statistics(for: Self.heartRateType)
     metrics?.heartRate = heart?.mostRecentQuantity()?.doubleValue(for: Self.beatsPerMinute)
@@ -246,7 +299,8 @@ final class WorkoutManager {
     if activeEnergy != energy { activeEnergy = energy }
   }
 
-  fileprivate func received(_ data: [Data]) {
+  fileprivate func received(_ data: [Data], from session: HKWorkoutSession) {
+    guard self.session === session else { return }
     for message in data.compactMap(WatchWorkoutMessage.decode) {
       switch message {
       case .pause: pause()
@@ -257,7 +311,10 @@ final class WorkoutManager {
     }
   }
 
-  fileprivate func disconnected() { mirrored = false }
+  fileprivate func disconnected(from session: HKWorkoutSession) {
+    guard self.session === session else { return }
+    mirrored = false
+  }
 
   /// At most about once a second, and unchanged readings only every ten
   /// seconds (to keep elapsed time and average fresh), so the link and battery
@@ -291,24 +348,28 @@ private final class WorkoutBridge: NSObject, HKWorkoutSessionDelegate, HKLiveWor
     _ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState,
     from fromState: HKWorkoutSessionState, date: Date
   ) {
-    Task { @MainActor in owner?.stateChanged(to: toState, date: date) }
+    let session = UncheckedSendable(workoutSession)
+    Task { @MainActor in owner?.stateChanged(to: toState, date: date, from: session.value) }
   }
 
   func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
     let error = UncheckedSendable(error)
-    Task { @MainActor in owner?.failed(error.value) }
+    let session = UncheckedSendable(workoutSession)
+    Task { @MainActor in owner?.failed(error.value, from: session.value) }
   }
 
   func workoutSession(
     _ workoutSession: HKWorkoutSession, didReceiveDataFromRemoteWorkoutSession data: [Data]
   ) {
-    Task { @MainActor in owner?.received(data) }
+    let session = UncheckedSendable(workoutSession)
+    Task { @MainActor in owner?.received(data, from: session.value) }
   }
 
   func workoutSession(
     _ workoutSession: HKWorkoutSession, didDisconnectFromRemoteDeviceWithError error: Error?
   ) {
-    Task { @MainActor in owner?.disconnected() }
+    let session = UncheckedSendable(workoutSession)
+    Task { @MainActor in owner?.disconnected(from: session.value) }
   }
 
   func workoutBuilder(
@@ -318,7 +379,8 @@ private final class WorkoutBridge: NSObject, HKWorkoutSessionDelegate, HKLiveWor
     // skip them before hopping to the main actor.
     guard collectedTypes.contains(heartRateType) || collectedTypes.contains(activeEnergyType)
     else { return }
-    Task { @MainActor in owner?.collected() }
+    let builder = UncheckedSendable(workoutBuilder)
+    Task { @MainActor in owner?.collected(from: builder.value) }
   }
 
   func workoutBuilderDidCollectEvent(_ workoutBuilder: HKLiveWorkoutBuilder) {}

@@ -11,7 +11,9 @@ import XCTest
 actor FakeServer: WorkspaceTransport {
   enum Fault: Equatable {
     case offline, offlineAfterApply, unauthorized, accountChanged, operationReused
-    case rateLimited(TimeInterval?), invalid(String), transient(String)
+    case rateLimited(TimeInterval?)
+    case invalid(String)
+    case transient(String)
   }
 
   private(set) var workspace: Workspace
@@ -24,6 +26,9 @@ actor FakeServer: WorkspaceTransport {
   private var fetchFaults: [Fault] = []
   private var holdNext = false
   private var held: CheckedContinuation<Void, Never>?
+  private var holdFetch = false
+  private(set) var holdingFetch = false
+  private var heldFetch: CheckedContinuation<Void, Never>?
 
   init(workspace: Workspace, revision: Int) {
     var stored = workspace
@@ -35,6 +40,11 @@ actor FakeServer: WorkspaceTransport {
   func scriptPuts(_ faults: Fault...) { putFaults = faults }
   func scriptFetches(_ faults: Fault...) { fetchFaults = faults }
   func holdNextPut() { holdNext = true }
+  func holdNextFetch() { holdFetch = true }
+  func releaseHeldFetch() {
+    heldFetch?.resume()
+    heldFetch = nil
+  }
   func releaseHeldPut() {
     held?.resume()
     held = nil
@@ -48,7 +58,8 @@ actor FakeServer: WorkspaceTransport {
   }
 
   private func current() -> RemoteWorkspace {
-    RemoteWorkspace(workspace: workspace, revision: revision, updatedAt: "2026-10-28T00:00:00.000000Z")
+    RemoteWorkspace(
+      workspace: workspace, revision: revision, updatedAt: "2026-10-28T00:00:00.000000Z")
   }
 
   private func throwing(_ fault: Fault) throws -> Never {
@@ -66,7 +77,14 @@ actor FakeServer: WorkspaceTransport {
   func fetch() async throws -> RemoteWorkspace {
     fetches += 1
     if !fetchFaults.isEmpty { try throwing(fetchFaults.removeFirst()) }
-    return current()
+    let snapshot = current()
+    if holdFetch {
+      holdFetch = false
+      holdingFetch = true
+      await withCheckedContinuation { heldFetch = $0 }
+      holdingFetch = false
+    }
+    return snapshot
   }
 
   func put(_ request: WorkspacePut) async throws -> RemoteWorkspace {
@@ -365,7 +383,9 @@ final class AccountSyncTests: XCTestCase, @unchecked Sendable {
 
     let status = await phone.sync.flush()
 
-    guard case .conflict(let latest) = status else { return XCTFail("expected conflict: \(status)") }
+    guard case .conflict(let latest) = status else {
+      return XCTFail("expected conflict: \(status)")
+    }
     XCTAssertEqual(latest.revision, 4)
     XCTAssertEqual(latest.workspace.profile.name, "Theirs")
     var name = try await localName(phone.store)
@@ -562,7 +582,9 @@ final class AccountSyncTests: XCTestCase, @unchecked Sendable {
 
     let status = await phone.sync.refresh()
 
-    guard case .conflict(let latest) = status else { return XCTFail("expected conflict: \(status)") }
+    guard case .conflict(let latest) = status else {
+      return XCTFail("expected conflict: \(status)")
+    }
     XCTAssertEqual(latest.workspace.profile.name, "Theirs")
     let name = try await localName(phone.store)
     XCTAssertEqual(name, "Mine")
@@ -641,7 +663,84 @@ final class AccountSyncTests: XCTestCase, @unchecked Sendable {
     XCTAssertEqual(metadata, SyncMetadata(serverRevision: 3, dirty: false, pending: nil))
   }
 
+  func testSignInDownloadPreservesAnEditCommittedWhileTheRequestIsInFlight() async throws {
+    let phone = try await signedInPhone()
+    await phone.server.holdNextFetch()
+    let download = Task { await phone.sync.initialFetch() }
+    await waitUntil { await phone.server.holdingFetch }
+
+    try await edit(phone.store, name: "Saved while signing in")
+    await phone.server.releaseHeldFetch()
+
+    let status = await download.value
+    XCTAssertEqual(status, .idle)
+    let local = try await localName(phone.store)
+    let remote = await phone.server.workspace
+    XCTAssertEqual(local, "Saved while signing in")
+    XCTAssertEqual(remote.profile.name, local)
+  }
+
+  func testSignInDownloadConflictsWhenBothCopiesChangeWhileItIsInFlight() async throws {
+    let phone = try await signedInPhone()
+    await phone.server.externalEdit(name: "Saved on the website")
+    await phone.server.holdNextFetch()
+    let download = Task { await phone.sync.initialFetch() }
+    await waitUntil { await phone.server.holdingFetch }
+
+    try await edit(phone.store, name: "Saved on this phone")
+    await phone.server.releaseHeldFetch()
+
+    let status = await download.value
+    guard case .conflict(let remote) = status else {
+      return XCTFail("Expected a conflict, got \(status)")
+    }
+    XCTAssertEqual(remote.workspace.profile.name, "Saved on the website")
+    let local = try await localName(phone.store)
+    XCTAssertEqual(local, "Saved on this phone")
+  }
+
   // MARK: Import
+
+  func testStoppingSyncRejectsADownloadThatFinishesAfterSignOut() async throws {
+    let phone = try await signedInPhone()
+    await phone.server.externalEdit(name: "Late download")
+    await phone.server.holdNextFetch()
+    let download = Task { await phone.sync.refresh() }
+    await waitUntil { await phone.server.holdingFetch }
+    await phone.sync.stop()
+    await phone.server.releaseHeldFetch()
+
+    let result = await download.value
+    XCTAssertEqual(result, .signedOut(.unauthorized))
+    let local = try await localName(phone.store)
+    XCTAssertEqual(local, "Account")
+    let status = await phone.sync.initialFetch()
+    XCTAssertEqual(status, .signedOut(.unauthorized))
+  }
+
+  func testStoppingSyncKeepsThePendingOperationWhenItsAcknowledgementArrivesLate() async throws {
+    let phone = try await signedInPhone()
+    try await edit(phone.store, name: "Sent before sign-out")
+    await phone.server.holdNextPut()
+    let upload = Task { await phone.sync.flush() }
+    await waitUntil { await phone.server.holding }
+    let pending = try await phone.store.syncMetadata().pending
+    XCTAssertNotNil(pending)
+    await phone.sync.stop()
+    await phone.server.releaseHeldPut()
+    _ = await upload.value
+
+    let retained = try await phone.store.syncMetadata().pending
+    XCTAssertEqual(retained, pending)
+    // Re-signing in replays the same operation instead of losing its receipt.
+    let next = AccountSync(store: phone.store, transport: phone.server)
+    let result = await next.initialFetch()
+    XCTAssertEqual(result, .idle)
+    let metadata = try await phone.store.syncMetadata()
+    XCTAssertNil(metadata.pending)
+    let puts = await phone.server.puts
+    XCTAssertEqual(puts[0].operationId, puts[1].operationId)
+  }
 
   func testReplaceAccountSendsTheImportAgainstTheCurrentRevisionThenAdoptsIt() async throws {
     let phone = try await signedInPhone()
@@ -689,7 +788,9 @@ final class AccountSyncTests: XCTestCase, @unchecked Sendable {
 
     let status = await phone.sync.replaceAccount(with: imported)
 
-    guard case .conflict(let latest) = status else { return XCTFail("expected conflict: \(status)") }
+    guard case .conflict(let latest) = status else {
+      return XCTFail("expected conflict: \(status)")
+    }
     XCTAssertEqual(latest.workspace.profile.name, "Newer on the website")
     var account = await phone.server.workspace
     XCTAssertEqual(account.profile.name, "Newer on the website")
@@ -760,11 +861,16 @@ final class AccountSyncTests: XCTestCase, @unchecked Sendable {
     var statement: OpaquePointer?
     XCTAssertEqual(
       sqlite3_prepare_v2(
-        database, "INSERT INTO workspace (id, revision, snapshot, previous_snapshot) VALUES (1, 5, ?, ?)",
+        database,
+        "INSERT INTO workspace (id, revision, snapshot, previous_snapshot) VALUES (1, 5, ?, ?)",
         -1, &statement, nil), SQLITE_OK)
     let transient = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
-    _ = newRaw.withUnsafeBytes { sqlite3_bind_blob(statement, 1, $0.baseAddress, Int32($0.count), transient) }
-    _ = oldRaw.withUnsafeBytes { sqlite3_bind_blob(statement, 2, $0.baseAddress, Int32($0.count), transient) }
+    _ = newRaw.withUnsafeBytes {
+      sqlite3_bind_blob(statement, 1, $0.baseAddress, Int32($0.count), transient)
+    }
+    _ = oldRaw.withUnsafeBytes {
+      sqlite3_bind_blob(statement, 2, $0.baseAddress, Int32($0.count), transient)
+    }
     XCTAssertEqual(sqlite3_step(statement), SQLITE_DONE)
     sqlite3_finalize(statement)
     sqlite3_close(database)
@@ -786,7 +892,8 @@ final class AccountSyncTests: XCTestCase, @unchecked Sendable {
     let again = try await reopened.load(seed: Workspace())
     XCTAssertEqual(again, saved)
     XCTAssertEqual(sqlite3_open(url.path, &database), SQLITE_OK)
-    XCTAssertEqual(sqlite3_prepare_v2(database, "PRAGMA user_version", -1, &statement, nil), SQLITE_OK)
+    XCTAssertEqual(
+      sqlite3_prepare_v2(database, "PRAGMA user_version", -1, &statement, nil), SQLITE_OK)
     XCTAssertEqual(sqlite3_step(statement), SQLITE_ROW)
     XCTAssertEqual(sqlite3_column_int(statement, 0), 2)
     sqlite3_finalize(statement)
@@ -859,16 +966,19 @@ final class AccountSyncTests: XCTestCase, @unchecked Sendable {
     XCTAssertEqual(data, object as NSDictionary)
     XCTAssertNotNil(body.range(of: put.payload), "the payload bytes are spliced in unchanged")
 
-    let tricky = WorkspacePut(operationId: "a\"b\\c\nd", expectedRevision: 0, payload: Data("{}".utf8))
+    let tricky = WorkspacePut(
+      operationId: "a\"b\\c\nd", expectedRevision: 0, payload: Data("{}".utf8))
     let trickyObject = try XCTUnwrap(
       JSONSerialization.jsonObject(with: tricky.requestBody()) as? [String: Any])
     XCTAssertEqual(trickyObject["operationId"] as? String, "a\"b\\c\nd")
   }
 
   func testWireDecodesAccountResponsesAndMapsFailures() throws {
-    let workspaceJSON = String(decoding: try WorkspaceExport.encode(Fixtures.workspace()), as: UTF8.self)
+    let workspaceJSON = String(
+      decoding: try WorkspaceExport.encode(Fixtures.workspace()), as: UTF8.self)
     let ok = Data(
-      "{\"data\":\(workspaceJSON),\"revision\":7,\"updatedAt\":\"2026-10-28T10:00:00.000000Z\"}".utf8)
+      "{\"data\":\(workspaceJSON),\"revision\":7,\"updatedAt\":\"2026-10-28T10:00:00.000000Z\"}"
+        .utf8)
     let remote = try WorkspaceWire.decodeRemote(ok)
     XCTAssertEqual(remote.revision, 7)
     XCTAssertEqual(remote.updatedAt, "2026-10-28T10:00:00.000000Z")
@@ -894,7 +1004,8 @@ final class AccountSyncTests: XCTestCase, @unchecked Sendable {
     XCTAssertEqual(
       WorkspaceWire.transportError(
         status: 400,
-        body: Data("{\"error\":\"invalid_workspace\",\"message\":\"Workspace payload is invalid.\"}".utf8)),
+        body: Data(
+          "{\"error\":\"invalid_workspace\",\"message\":\"Workspace payload is invalid.\"}".utf8)),
       .invalid("Workspace payload is invalid."))
     XCTAssertEqual(
       WorkspaceWire.transportError(status: 429, body: nil, retryAfter: "60"),

@@ -4,7 +4,6 @@ import SwiftUI
 /// Hero colours are fixed, so build each `UIColor` once instead of per render.
 private enum HeroColor {
   static let ink = Color(hex: 0x151A17)
-  static let scrim = Color(hex: 0x151A17).opacity(0.95)
   static let detail = Color(hex: 0xDEE5DC)
 }
 
@@ -24,39 +23,57 @@ struct TodayView: View {
   /// True while `requestStart` waits on the Watch check or the first save, so
   /// the Start tap is acknowledged at once.
   @State private var starting = false
+  @Environment(\.dynamicTypeSize) private var textSize
+  @Environment(\.verticalSizeClass) private var verticalSizeClass
+  private var compactHeight: Bool { verticalSizeClass == .compact }
+  @ScaledMetric(relativeTo: .largeTitle) private var titleSize = 40.0
 
   var body: some View {
     // `model.routines` filters the whole routine list on every read. Read it
     // once per render rather than five times (once per row for its number).
     let routines = model.routines
     ScrollView {
-      VStack(alignment: .leading, spacing: 28) {
-        ViewThatFits(in: .horizontal) {
-          HStack(spacing: 16) {
-            brand
-            Spacer(minLength: 8)
-            date.fixedSize()
+      VStack(alignment: .leading, spacing: 22) {
+        if textSize.isAccessibilitySize {
+          brand.accessibilityAddTraits(.isHeader)
+        } else {
+          ViewThatFits(in: .horizontal) {
+            HStack(spacing: 16) {
+              brand
+              Spacer(minLength: 8)
+              date.fixedSize()
+            }
+            VStack(alignment: .leading, spacing: 12) {
+              brand
+              date
+            }
           }
-          VStack(alignment: .leading, spacing: 12) {
-            brand
-            date
-          }
-        }
-        .accessibilityElement(children: .combine)
-        .formaReveal(order: 0)
+          .accessibilityElement(children: .combine)
+          .formaReveal(order: 0)
 
-        VStack(alignment: .leading, spacing: 6) {
-          Text("MAKE ROOM FOR").font(.caption.weight(.bold)).tracking(2).foregroundStyle(
-            FormaTheme.secondary)
-          EditorialTitle(text: "Your next stronger.")
         }
-        .formaReveal(order: 1)
+
+        // Only present when syncing needs attention, so signed-out layout is unchanged.
+        if model.syncDisplay?.needsAttention == true { SyncBanner() }
+
+        if !textSize.isAccessibilitySize && !compactHeight {
+          VStack(alignment: .leading, spacing: 6) {
+            Text("MAKE ROOM FOR").font(.caption.weight(.bold)).tracking(2).foregroundStyle(
+              FormaTheme.secondary)
+            Text("Your next stronger.")
+              .font(.system(size: titleSize, weight: .black).width(.condensed))
+              .tracking(-0.6).fixedSize(horizontal: false, vertical: true)
+              .foregroundStyle(FormaTheme.primary).accessibilityAddTraits(.isHeader)
+          }
+          .formaReveal(order: 1)
+
+        }
 
         // A stable container: the reveal plays once for the hero's lifetime,
         // however often Start and Resume swap inside it.
         VStack(alignment: .leading, spacing: 0) {
           if let hero = heroContent(routines: routines) {
-            trainingHero(hero)
+            if compactHeight { compactTrainingHero(hero) } else { trainingHero(hero) }
           } else {
             ContentUnavailableView {
               Label("Your training starts here", systemImage: "dumbbell")
@@ -78,7 +95,7 @@ struct TodayView: View {
             } label: {
               HStack(spacing: 16) {
                 Text(String(format: "%02d", position + 1))
-                .font(.title2.weight(.black).monospacedDigit()).foregroundStyle(FormaTheme.accent)
+                  .font(.title2.weight(.black).monospacedDigit()).foregroundStyle(FormaTheme.accent)
                 VStack(alignment: .leading, spacing: 5) {
                   Text(routine.name).font(.headline).foregroundStyle(FormaTheme.primary)
                   Text("\(routine.exercises.count) exercises · \(routine.minutes) min")
@@ -130,6 +147,7 @@ struct TodayView: View {
       .padding(24)
     }
     .background(FormaTheme.canvas)
+    .formaTabScrollObserver()
     .toolbar(.hidden, for: .navigationBar)
   }
 
@@ -160,35 +178,64 @@ struct TodayView: View {
     }
   }
 
+  private func compactTrainingHero(_ hero: HeroContent) -> some View {
+    HStack(spacing: 20) {
+      VStack(alignment: .leading, spacing: 5) {
+        Text(hero.inProgress ? "IN PROGRESS" : "YOUR NEXT SESSION")
+          .font(.caption.weight(.bold)).foregroundStyle(FormaTheme.lime)
+        Text(hero.name).font(.title3.bold()).foregroundStyle(.white)
+          .fixedSize(horizontal: false, vertical: true)
+        Text(hero.detail).font(.subheadline).foregroundStyle(HeroColor.detail)
+      }.frame(maxWidth: .infinity, alignment: .leading)
+      Button(action: hero.perform) {
+        Label(hero.action, systemImage: starting ? "hourglass" : hero.symbol)
+      }
+      .buttonStyle(PrimaryButtonStyle())
+      .frame(maxWidth: 260)
+      .accessibilityLabel(hero.action)
+      .accessibilityValue(starting ? "Starting" : "")
+      .accessibilityIdentifier("start-workout")
+      .disabled(model.busy || starting)
+    }
+    .padding(20)
+    .background(HeroColor.ink, in: RoundedRectangle(cornerRadius: 24))
+  }
+
   private func trainingHero(_ hero: HeroContent) -> some View {
     let pending = starting && !hero.inProgress
     return VStack(alignment: .leading, spacing: 0) {
-      ZStack(alignment: .bottomLeading) {
+      if !textSize.isAccessibilitySize {
         GeometryReader { geometry in
           Image("TrainingEditorial").resizable().scaledToFill()
-            .frame(width: geometry.size.width, height: geometry.size.height).clipped()
+            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .bottom)
+            .clipped()
+        }
+        .frame(height: 112)
+        .overlay(alignment: .bottom) {
+          LinearGradient(colors: [.clear, HeroColor.ink], startPoint: .top, endPoint: .bottom)
+            .frame(height: 40)
         }
         .accessibilityHidden(true)
-        LinearGradient(
-          colors: [.clear, HeroColor.scrim], startPoint: .top, endPoint: .bottom)
-        // Keyed on the state, so Start and Resume cross-fade over the same art.
-        VStack(alignment: .leading, spacing: 10) {
+      }
+      VStack(alignment: .leading, spacing: 8) {
+        if textSize.isAccessibilitySize {
+          Text(hero.inProgress ? "In progress" : "Next session")
+            .font(.caption.weight(.bold)).foregroundStyle(FormaTheme.lime)
+        } else {
           Label(
             hero.inProgress ? "IN PROGRESS" : "YOUR NEXT SESSION",
             systemImage: hero.inProgress ? "play.circle" : "arrow.turn.down.right"
           )
-          .font(.caption.weight(.bold)).tracking(1.5).foregroundStyle(FormaTheme.lime)
-          Text(hero.name).font(
-            .system(.largeTitle, design: .default, weight: .black).width(.condensed)
-          )
-          .foregroundStyle(.white).fixedSize(horizontal: false, vertical: true)
-          Text(hero.detail).font(.subheadline).foregroundStyle(HeroColor.detail)
+          .font(.caption.weight(.bold)).tracking(1.2).foregroundStyle(FormaTheme.lime)
         }
-        .padding(24)
-        .id(hero.inProgress)
-        .transition(.opacity)
+        Text(hero.name)
+          .font(.system(.title2, weight: .bold).width(.condensed))
+          .foregroundStyle(.white).fixedSize(horizontal: false, vertical: true)
+        Text(hero.detail).font(.subheadline).foregroundStyle(HeroColor.detail)
+          .fixedSize(horizontal: false, vertical: true)
       }
-      .frame(minHeight: 290)
+      .padding(.horizontal, 20).padding(.top, textSize.isAccessibilitySize ? 20 : 8)
+      .id(hero.inProgress).transition(.opacity)
       Button(action: hero.perform) {
         ZStack {
           HStack {
@@ -215,6 +262,7 @@ struct TodayView: View {
       .padding(16)
       .background(HeroColor.ink)
     }
+    .background(HeroColor.ink)
     .clipShape(RoundedRectangle(cornerRadius: 24))
     .formaAnimation(FormaMotion.reveal, value: model.activeWorkoutName)
   }
@@ -227,7 +275,7 @@ struct TodayView: View {
     }.fixedSize()
   }
   private var date: some View {
-    Text(TrainingDate.label(.now, template: "EEE d MMM"))
+    Text(TrainingDate.label(model.trainingNow, template: "EEE d MMM"))
       .font(.caption.weight(.semibold)).foregroundStyle(FormaTheme.secondary)
   }
 }
@@ -250,7 +298,8 @@ struct WeekStrip: View {
   /// is sorted newest first, so stop at the first session before this week
   /// instead of parsing every saved date (up to 10,000) on each render.
   private func thisWeek() -> (count: Int, days: Set<Int>) {
-    guard let interval = TrainingDate.calendar.dateInterval(of: .weekOfYear, for: .now) else {
+    guard let interval = TrainingDate.calendar.dateInterval(of: .weekOfYear, for: model.trainingNow)
+    else {
       return (0, [])
     }
     var count = 0
@@ -258,7 +307,7 @@ struct WeekStrip: View {
     for session in model.history {
       let date = TrainingDate.date(session)
       if date < interval.start { break }
-      guard interval.contains(date) else { continue }
+      guard date < interval.end, date <= model.trainingNow else { continue }
       count += 1
       days.insert((TrainingDate.calendar.component(.weekday, from: date) + 5) % 7)
     }
@@ -267,7 +316,7 @@ struct WeekStrip: View {
 
   /// Monday = 0, like the sets above.
   private var todayIndex: Int {
-    (TrainingDate.calendar.component(.weekday, from: .now) + 5) % 7
+    (TrainingDate.calendar.component(.weekday, from: model.trainingNow) + 5) % 7
   }
 
   /// One sentence of state for a day, in the order VoiceOver reads it. Built

@@ -70,11 +70,12 @@ struct PlanView: View {
       }
     }
     .scrollContentBackground(.hidden)
+    .formaTabScrollObserver()
     .background(FormaTheme.canvas)
     .navigationTitle("Plan")
     .navigationBarTitleDisplayMode(.inline)
     .sheet(isPresented: $creating) {
-      NavigationStack { RoutineEditorView(routine: nil) }
+      NavigationStack { RoutineEditorView(routine: nil) }.protectWidgetNavigation()
     }
   }
 }
@@ -242,7 +243,7 @@ struct RoutineDetailView: View {
     .navigationTitle("Routine")
     .navigationBarTitleDisplayMode(.inline)
     .sheet(item: $editing) { routine in
-      NavigationStack { RoutineEditorView(routine: routine) }
+      NavigationStack { RoutineEditorView(routine: routine) }.protectWidgetNavigation()
     }
     .confirmationDialog(
       "Delete this routine?", isPresented: $confirmingDelete, titleVisibility: .visible
@@ -797,7 +798,10 @@ struct ExerciseLibraryView: View {
         }
       }
     }
-    .searchable(text: $query, prompt: "Name, muscle or equipment")
+    .searchable(
+      text: $query, placement: .navigationBarDrawer(displayMode: .always),
+      prompt: "Name, muscle or equipment"
+    )
     // Filter changes animate; typed queries never do. Results arrive after a
     // debounce while the person is still typing, and moving rows under the
     // keyboard would be both janky and distracting.

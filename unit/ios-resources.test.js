@@ -347,8 +347,14 @@ test("native legal resources retain exact current source policies and label loca
   assert.match(notice, /application support/);
   assert.match(notice, /export/);
   assert.match(notice, /no analytics/);
-  assert.match(notice, /no account/);
-  assert.match(notice, /importing a backup is not available/);
+  // Accounts exist now, but are optional and described.
+  assert.match(notice, /without an account/);
+  assert.match(notice, /with a forma account/);
+  assert.match(notice, /keychain/);
+  assert.match(notice, /bring your phone training/);
+  assert.match(notice, /sign out/);
+  assert.doesNotMatch(notice, /no account service is connected/);
+  assert.match(notice, /importing a backup file is not available/);
   assert.match(notice, /excluded from device backups/);
   assert.doesNotMatch(notice, /may include these local files/);
   // Apple Watch workouts write to Apple Health; the notice must say so and

@@ -5,15 +5,19 @@ final class OfflineWorkoutTests: XCTestCase {
   private func launchFreshWorkspace() -> XCUIApplication {
     continueAfterFailure = false
     let app = XCUIApplication()
-    app.launchArguments = ["--ui-testing", "--reset-workspace"]
+    app.launchArguments = [
+      "--ui-testing", "--reset-workspace", "-UIPreferredContentSizeCategoryName",
+      "UICTContentSizeCategoryL",
+    ]
     app.launch()
+    app.prepareReviewViewport()
     return app
   }
 
   @MainActor
   func testFreshWorkspaceHasNoInventedProgress() {
     let app = launchFreshWorkspace()
-    let progress = app.tabBars.buttons["Progress"]
+    let progress = app.trainingTab("Progress")
     XCTAssertTrue(progress.waitForExistence(timeout: 15))
     progress.tap()
     let empty = app.descendants(matching: .any).matching(identifier: "progress-empty").firstMatch
@@ -36,6 +40,7 @@ final class OfflineWorkoutTests: XCTestCase {
     app.terminate()
     app.launchArguments = ["--ui-testing"]
     app.launch()
+    app.prepareReviewViewport()
     XCTAssertTrue(start.waitForExistence(timeout: 15))
     XCTAssertTrue(start.label.contains("Resume workout"))
     start.tap()
@@ -52,7 +57,7 @@ final class OfflineWorkoutTests: XCTestCase {
     XCTAssertTrue(done.waitForExistence(timeout: 15))
     done.tap()
 
-    app.tabBars.buttons["Progress"].tap()
+    app.trainingTab("Progress").tap()
     XCTAssertFalse(
       app.descendants(matching: .any).matching(identifier: "progress-empty").firstMatch.exists)
     let journal = app.staticTexts.matching(
@@ -60,7 +65,7 @@ final class OfflineWorkoutTests: XCTestCase {
     XCTAssertTrue(journal.firstMatch.waitForExistence(timeout: 15))
     XCTAssertEqual(journal.count, 1)
     // The same finished workout cannot be resumed and submitted again.
-    app.tabBars.buttons["Today"].tap()
+    app.trainingTab("Today").tap()
     XCTAssertTrue(start.waitForExistence(timeout: 15))
     XCTAssertTrue(start.label.contains("Start workout"))
     XCTAssertFalse(start.label.contains("Resume workout"))
@@ -77,6 +82,7 @@ final class OfflineWorkoutTests: XCTestCase {
     app.terminate()
     app.launchArguments = ["--ui-testing"]
     app.launch()
+    app.prepareReviewViewport()
     XCTAssertTrue(start.waitForExistence(timeout: 15))
     XCTAssertTrue(start.label.contains("Resume workout"))
     start.tap()
@@ -87,7 +93,7 @@ final class OfflineWorkoutTests: XCTestCase {
   @MainActor
   func testResumeAccessoryPreservesTheSelectedTabAndRoutineDetails() {
     let app = launchFreshWorkspace()
-    let plan = app.tabBars.buttons["Plan"]
+    let plan = app.trainingTab("Plan")
     XCTAssertTrue(plan.waitForExistence(timeout: 15))
     plan.tap()
     app.staticTexts["Upper body strength"].firstMatch.tap()
@@ -218,13 +224,13 @@ final class OfflineWorkoutTests: XCTestCase {
     let done = app.buttons["receipt-done"]
     XCTAssertTrue(done.waitForExistence(timeout: 15))
     done.tap()
-    app.tabBars.buttons["Progress"].tap()
+    app.trainingTab("Progress").tap()
     let journal = app.staticTexts["Upper body strength"].firstMatch
     XCTAssertTrue(journal.waitForExistence(timeout: 15))
     journal.tap()
     XCTAssertTrue(app.navigationBars["Workout details"].waitForExistence(timeout: 15))
 
-    app.tabBars.buttons["You"].tap()
+    app.trainingTab("You").tap()
     let delete = app.buttons["Delete training data on this iPhone"]
     // You is a lazy list: rows below the fold are not in the hierarchy until
     // scrolled to, so scroll first and then require the button.
@@ -237,7 +243,7 @@ final class OfflineWorkoutTests: XCTestCase {
     XCTAssertTrue(confirmDelete.waitForExistence(timeout: 15))
     confirmDelete.tap()
     XCTAssertTrue(confirmDelete.waitForDisappearance(timeout: 15))
-    app.tabBars.buttons["Progress"].tap()
+    app.trainingTab("Progress").tap()
     // SwiftUI may retain this destination or return to the journal when its
     // source link disappears. Both must show the acknowledged deletion.
     let cleared = app.descendants(matching: .any).matching(

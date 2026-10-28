@@ -152,9 +152,12 @@ struct WatchRecordingStrip: View {
       .accessibilityElement(children: .combine)
       .accessibilityLabel(accessibilityText(metrics))
       .accessibilityIdentifier("watch-recording")
-    case .ended(let saved):
+    case .ending:
+      Label("Ending recording on Apple Watch…", systemImage: "applewatch")
+        .font(.subheadline).foregroundStyle(FormaTheme.secondary)
+    case .ended:
       Label(
-        saved ? "Apple Watch recording saved to Health" : "Apple Watch recording discarded",
+        "Apple Watch recording ended. Check your Watch for Health save status.",
         systemImage: "applewatch"
       )
       .font(.subheadline).foregroundStyle(FormaTheme.secondary)

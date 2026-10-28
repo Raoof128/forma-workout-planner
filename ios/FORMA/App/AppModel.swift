@@ -1,4 +1,5 @@
 import FORMACore
+import FORMASurfaces
 import Foundation
 import Observation
 import os
@@ -20,6 +21,7 @@ final class AppModel {
       if ready != hasWorkspace { hasWorkspace = ready }
       let activeName = workspace?.active?.name
       if activeName != activeWorkoutName { activeWorkoutName = activeName }
+      widgets.publish(workspace)
     }
   }
   /// True once a workspace has loaded. Read by the root view instead of
@@ -32,7 +34,7 @@ final class AppModel {
   /// repeated by every Plan render and filter keystroke.
   private(set) var selectableExercises: [Exercise] = []
   private var exercisesByID: [String: Exercise] = [:]
-  private var pendingMutations = 0
+  var pendingMutations = 0
   var busy: Bool { pendingMutations > 0 }
   var errorMessage: String?
   var loadFailure: String?
@@ -43,21 +45,61 @@ final class AppModel {
   var hapticsEnabled = true { didSet { savePreferences() } }
   var motion: MotionPreference = .system { didSet { savePreferences() } }
   var appearance: AppearancePreference = .system { didSet { savePreferences() } }
-  private var store: WorkspaceStore?
+  /// The store the screens are editing: the guest store, or a signed-in
+  /// member's own saved copy (see AppModel+Account.swift).
+  var store: WorkspaceStore?
   private var loading = false
   private var preferencesURL: URL?
   private var loadingPreferences = false
-  private let mutationGate = SerializedMutationGate()
+  let mutationGate = SerializedMutationGate()
   let watch = WatchWorkoutCoordinator()
+  let widgets = WidgetSnapshotBridge()
+  var widgetRoute: WidgetRoute?
+  var widgetNotice: String?
+  var widgetEditingCount = 0
+  /// A foreground/day tick; avoids stale guest weeks without observing all workout commits.
+  var trainingNow = Date.now
+  private(set) var checkingWatchForStart = false
+
+  // MARK: Accounts (see AppModel+Account.swift)
+  let account = AccountModel()
+  /// The member whose saved copy is the open store, or nil while it is the guest store.
+  var activeMember: String?
+  var isSignedIn: Bool { activeMember != nil }
+  /// What the sync engine last reported for the open member store.
+  var syncStatus: SyncStatus = .idle
+  /// Set while a signed-in member's copy has not been downloaded yet.
+  var accountGate: AccountGate?
+  @ObservationIgnored var guestStore: WorkspaceStore?
+  @ObservationIgnored var sync: AccountSync?
+  @ObservationIgnored var syncGeneration = 0
+  @ObservationIgnored var syncObserver: Task<Void, Never>?
+  @ObservationIgnored var retryTask: Task<Void, Never>?
+  @ObservationIgnored var retryAttempt = 0
+  @ObservationIgnored var lastForegroundSync = Date.distantPast
+  @ObservationIgnored var connectivity: ConnectivityMonitor?
+  @ObservationIgnored var accountEnvironment: AccountEnvironment?
+  @ObservationIgnored var dataDirectory: URL?
+  @ObservationIgnored var seedWorkspace: Workspace?
+  /// Nothing may be edited, signed in or signed out while this is held.
+  var canSwitchAccount: Bool {
+    workspace?.active == nil && pendingStart == nil && !checkingWatchForStart
+  }
   /// The routine waiting on the Apple Watch start sheet.
   var pendingStart: Routine?
   private var presentWorkoutAfterSheet = false
 
   init() {
+    account.app = self
     watch.onWatchStarted = { [weak self] routineID in
-      guard let self, let routine = self.workspace?.routines.first(where: { $0.id == routineID })
+      guard let self, self.pendingStart?.id == routineID,
+        let routine = self.workspace?.routines.first(where: { $0.id == routineID })
       else { return }
-      Task { await self.start(routine) }
+      let owner = self.storeIdentity
+      Task {
+        guard owner == self.storeIdentity else { return }
+        await self.start(routine)
+      }
     }
   }
 
@@ -87,8 +129,13 @@ final class AppModel {
     let catalog: [Exercise]
     let selectable: [Exercise]
     let exercisesByID: [String: Exercise]
+    let guestStore: WorkspaceStore
+    /// The store the first screen edits: the guest store, or the member's.
     let store: WorkspaceStore
-    let workspace: Workspace
+    /// Nil only for a signed-in member whose copy has not been downloaded yet.
+    let workspace: Workspace?
+    let seed: Workspace
+    let account: AccountEnvironment?
     let directory: URL
   }
 
@@ -111,10 +158,22 @@ final class AppModel {
       exercisesByID = payload.exercisesByID
       catalog = payload.catalog
       selectableExercises = payload.selectable
+      guestStore = payload.guestStore
       store = payload.store
+      seedWorkspace = payload.seed
+      dataDirectory = payload.directory
+      accountEnvironment = payload.account
+      account.attach(payload.account)
+      if let restored = payload.account?.restored {
+        activeMember = restored.id
+        accountGate = payload.workspace == nil ? .loading : nil
+        startSync(profile: restored, store: payload.store, initial: false)
+      }
+      widgets.configure(directory: payload.directory, owner: widgetOwnerIdentity)
       workspace = payload.workspace
       // WatchConnectivity activation isn't needed for the first frame.
     } catch {
+      widgets.publishUnavailable()
       loadFailure =
         "FORMA couldn't open the local training store. No existing data has been replaced. \(error.localizedDescription)"
     }
@@ -127,16 +186,33 @@ final class AppModel {
     let catalog: [Exercise] = try resource("catalog", as: [Exercise].self)
     let seed: Workspace = try resource("seed-workspace", as: Workspace.self)
     let directory = try dataDirectory()
-    let store = try WorkspaceStore(
+    let guestStore = try WorkspaceStore(
       url: directory.appendingPathComponent("workspace.sqlite"), catalog: catalog)
-    let workspace = try await store.load(seed: seed)
+    #if DEBUG
+      let testing = ProcessInfo.processInfo.arguments.contains("--ui-testing")
+    #else
+      let testing = false
+    #endif
+    let account = await AccountEnvironment.make(directory: directory, testing: testing)
+    var store = guestStore
+    var workspace: Workspace?
+    if let account, let restored = account.restored {
+      // Signed in at the last launch: open the member's own saved copy, offline.
+      let opened = try await openMemberStore(
+        directory: account.storage.directory, member: restored.id, catalog: catalog)
+      store = opened.store
+      workspace = opened.downloaded ? opened.workspace : nil
+    } else {
+      workspace = try await guestStore.load(seed: seed)
+    }
     try protectFiles(in: directory)
     return LaunchPayload(
       catalog: catalog,
       selectable: catalog.filter(\.selectable),
       exercisesByID: Dictionary(
         catalog.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first }),
-      store: store, workspace: workspace, directory: directory)
+      guestStore: guestStore, store: store, workspace: workspace, seed: seed, account: account,
+      directory: directory)
   }
 
   nonisolated private static func dataDirectory() throws -> URL {
@@ -162,7 +238,7 @@ final class AppModel {
     return directory
   }
 
-  nonisolated private static func protectFiles(in directory: URL) throws {
+  nonisolated static func protectFiles(in directory: URL) throws {
     for file in try FileManager.default.contentsOfDirectory(
       at: directory, includingPropertiesForKeys: nil)
     {
@@ -175,26 +251,38 @@ final class AppModel {
   func commit(
     forActiveSession expectedSessionID: String? = nil, _ change: (inout Workspace) throws -> Void
   ) async -> Bool {
+    let owner = storeIdentity
     pendingMutations += 1
     await mutationGate.acquire()
     defer {
       mutationGate.release()
       pendingMutations -= 1
     }
-    guard var candidate = workspace, let store else { return false }
+    // A task created by a dismissed guest/member screen can be queued behind
+    // a store switch. It must never apply its edit to the next owner's data.
+    guard owner == storeIdentity, var candidate = workspace, let store else { return false }
     do {
       if let expectedSessionID, candidate.active?.id != expectedSessionID {
         throw AppFailure("This workout has changed. Reopen your active session before editing it.")
       }
       let revision = candidate.revision
       try change(&candidate)
-      let committed = try await store.save(candidate, expectedRevision: revision)
+      // A signed-in store records "not yet sent" in the same transaction.
+      let committed = try await store.save(
+        candidate, expectedRevision: revision, markingDirty: activeMember != nil)
       workspace = committed
       // Skip the write when already nil: it would invalidate every view that
       // reads the message (the root alert) on each logged set.
       if errorMessage != nil { errorMessage = nil }
+      // Saved on the phone first; sending to the account never delays this.
+      sendAfterCommit()
       return true
     } catch {
+      if case FormaError.conflictingRevision = error {
+        // The account's newer copy replaced this store while the screen held an
+        // older revision: show the current copy before anything else is saved.
+        Task { await reloadWorkspaceFromStore() }
+      }
       errorMessage =
         "This change was not saved. Your last saved workout is intact. \(error.localizedDescription)"
       haptic(.failed)
@@ -211,17 +299,25 @@ final class AppModel {
   /// Start buttons come here. With a paired Apple Watch the start sheet waits
   /// for its Start button; without one, the workout starts on this iPhone.
   func requestStart(_ routine: Routine) async {
+    guard !checkingWatchForStart else { return }
+    let owner = storeIdentity
     if workspace?.active != nil {
       receipt = nil
       workoutPresented = true
       return
     }
     watch.reset()
+    checkingWatchForStart = true
+    defer { checkingWatchForStart = false }
     await watch.refresh()
+    guard owner == storeIdentity,
+      let current = workspace?.routines.first(where: { $0.id == routine.id && $0.archivedAt == nil }
+      )
+    else { return }
     if watch.availability.hasPairedWatch {
-      pendingStart = routine
+      pendingStart = current
     } else {
-      await start(routine)
+      await start(current)
     }
   }
 
@@ -305,7 +401,9 @@ final class AppModel {
       mutationGate.release()
       pendingMutations -= 1
     }
-    guard let workspace, let store else { return }
+    // Signed in, the open store is the member's synced copy: resetting it would
+    // empty the account. Deleting an account's data goes through account deletion.
+    guard activeMember == nil, let workspace, let store else { return }
     do {
       self.workspace = try await store.reset(expectedRevision: workspace.revision)
       receipt = nil
@@ -367,69 +465,13 @@ private struct PresentationPreferences: Codable {
 /// call these once per session, so they are created once on the main actor.
 @MainActor
 enum TrainingDate {
-  static let calendar: Calendar = {
-    var calendar = Calendar(identifier: .iso8601)
-    calendar.timeZone = TimeZone(identifier: "Australia/Sydney")!
-    return calendar
-  }()
+  static let calendar = TrainingCalendar.calendar
   static func date(_ session: WorkoutSession) -> Date {
-    // Native finishes always write fractional seconds; try that form first.
-    guard let text = session.date,
-      let date = parseUTC(text) ?? fractional.date(from: text) ?? whole.date(from: text)
-    else {
-      return Date(timeIntervalSince1970: session.startedAt / 1_000)
-    }
-    return date
+    TrainingCalendar.completionDate(session.date, startedAt: session.startedAt)
   }
-  /// Reads the exact shapes FORMA writes, `YYYY-MM-DDTHH:MM:SS.mmmZ` (native)
-  /// and `YYYY-MM-DDTHH:MM:SSZ`, with integer arithmetic. `ISO8601DateFormatter`
-  /// costs tens of microseconds per call, which adds up across a 10,000-session
-  /// rebuild. Anything else, or any out-of-range field, returns nil so the
-  /// formatter decides, exactly as before.
   nonisolated static func parseUTC(_ text: String) -> Date? {
-    var text = text
-    return text.withUTF8 { bytes -> Date? in
-      let count = bytes.count
-      guard count == 20 || count == 24, bytes[count - 1] == 0x5A,
-        bytes[4] == 0x2D, bytes[7] == 0x2D, bytes[10] == 0x54, bytes[13] == 0x3A,
-        bytes[16] == 0x3A, count == 20 || bytes[19] == 0x2E
-      else { return nil }
-      func digits(_ start: Int, _ length: Int) -> Int? {
-        var value = 0
-        for index in start..<start + length {
-          let byte = bytes[index]
-          guard byte >= 0x30, byte <= 0x39 else { return nil }
-          value = value * 10 + Int(byte - 0x30)
-        }
-        return value
-      }
-      guard let year = digits(0, 4), let month = digits(5, 2), let day = digits(8, 2),
-        let hour = digits(11, 2), let minute = digits(14, 2), let second = digits(17, 2),
-        let millis = count == 24 ? digits(20, 3) : 0,
-        (1900...2999).contains(year), (1...12).contains(month), hour < 24, minute < 60,
-        second < 60
-      else { return nil }
-      let leap = year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)
-      let monthLength =
-        month == 2 ? (leap ? 29 : 28) : (month == 4 || month == 6 || month == 9 || month == 11) ? 30 : 31
-      guard day >= 1, day <= monthLength else { return nil }
-      // Days since 1970-01-01 (proleptic Gregorian, Hinnant's civil algorithm).
-      let shiftedYear = month <= 2 ? year - 1 : year
-      let era = shiftedYear / 400
-      let yearOfEra = shiftedYear - era * 400
-      let dayOfYear = (153 * (month + (month > 2 ? -3 : 9)) + 2) / 5 + day - 1
-      let dayOfEra = yearOfEra * 365 + yearOfEra / 4 - yearOfEra / 100 + dayOfYear
-      let days = era * 146_097 + dayOfEra - 719_468
-      let seconds = days * 86_400 + hour * 3_600 + minute * 60 + second
-      return Date(timeIntervalSince1970: Double(seconds) + Double(millis) / 1_000)
-    }
+    TrainingCalendar.parseUTC(text)
   }
-  private static let whole = ISO8601DateFormatter()
-  private static let fractional: ISO8601DateFormatter = {
-    let formatter = ISO8601DateFormatter()
-    formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
-    return formatter
-  }()
   private static var labelFormatters: [String: DateFormatter] = [:]
   static func label(_ date: Date, template: String = "d MMM") -> String {
     if let formatter = labelFormatters[template] { return formatter.string(from: date) }
@@ -440,8 +482,13 @@ enum TrainingDate {
     labelFormatters[template] = formatter
     return formatter.string(from: date)
   }
-  static func completedThisWeek(_ history: [WorkoutSession]) -> [WorkoutSession] {
-    guard let interval = calendar.dateInterval(of: .weekOfYear, for: .now) else { return [] }
-    return history.filter { interval.contains(date($0)) }
+  static func completedThisWeek(_ history: [WorkoutSession], at now: Date = .now)
+    -> [WorkoutSession]
+  {
+    guard let interval = calendar.dateInterval(of: .weekOfYear, for: now) else { return [] }
+    return history.filter {
+      let date = date($0)
+      return date >= interval.start && date < interval.end && date <= now
+    }
   }
 }

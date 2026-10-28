@@ -8,8 +8,12 @@ final class MotionExperienceTests: XCTestCase {
   private func launchFreshWorkspace() -> XCUIApplication {
     continueAfterFailure = false
     let app = XCUIApplication()
-    app.launchArguments = ["--ui-testing", "--reset-workspace"]
+    app.launchArguments = [
+      "--ui-testing", "--reset-workspace", "-UIPreferredContentSizeCategoryName",
+      "UICTContentSizeCategoryL",
+    ]
     app.launch()
+    app.prepareReviewViewport()
     return app
   }
 
@@ -18,18 +22,19 @@ final class MotionExperienceTests: XCTestCase {
   @MainActor
   func testMotionOffStillShowsEveryFinalState() {
     let app = launchFreshWorkspace()
-    let you = app.tabBars.buttons["You"]
+    let you = app.trainingTab("You")
     XCTAssertTrue(you.waitForExistence(timeout: 15))
     you.tap()
     let motion = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Motion"))
       .firstMatch
+    app.revealTrainingControl(motion)
     XCTAssertTrue(motion.waitForExistence(timeout: 10))
     motion.tap()
     let off = app.buttons["Off"].firstMatch
     XCTAssertTrue(off.waitForExistence(timeout: 10))
     off.tap()
 
-    app.tabBars.buttons["Today"].tap()
+    app.trainingTab("Today").tap()
     let start = app.buttons["start-workout"]
     XCTAssertTrue(start.waitForExistence(timeout: 10))
     start.tap()

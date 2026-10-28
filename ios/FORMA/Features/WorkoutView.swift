@@ -6,6 +6,7 @@ import SwiftUI
 /// a stopwatch, not workout data. Running while `endsAt` is set; paused with
 /// `left` seconds remaining otherwise.
 struct ActiveHold: Equatable {
+  let id = UUID()
   let sessionID: String
   let entryID: String
   let exerciseID: String
@@ -57,6 +58,7 @@ struct WorkoutView: View {
   @State private var notesPresented = false
   @State private var feedback = 0
   @State private var hold: ActiveHold?
+  @State private var holdLog = HoldLogState()
   @State private var holdLengths: [String: Int] = [:]
   @State private var holdMessage: String?
   @FocusState private var focusedField: String?
@@ -66,6 +68,15 @@ struct WorkoutView: View {
       ScrollViewReader { reader in
         ScrollView {
           VStack(alignment: .leading, spacing: 24) {
+            if model.widgetRoute != nil {
+              VStack(alignment: .leading) {
+                Text("Widget link queued. Use Save & close to open it.")
+                  .font(.footnote).foregroundStyle(FormaTheme.secondary)
+              }
+              .frame(maxWidth: .infinity, alignment: .leading)
+              .accessibilityElement(children: .contain)
+              .accessibilityIdentifier("widget-link-queued")
+            }
             AdaptiveMetricGroup {
               VStack(alignment: .leading, spacing: 6) {
                 Text("IN YOUR OWN TIME.").font(.caption.weight(.bold)).tracking(1.5)
@@ -203,6 +214,7 @@ struct WorkoutView: View {
           ToolbarItem(placement: .topBarLeading) {
             Button("Save & close") {
               Task {
+                guard canLeaveTimedSet() else { return }
                 if await saveDrafts() {
                   // Any earlier failure was already shown inline here; don't
                   // replay it as an alert once the workout screen closes.
@@ -240,6 +252,7 @@ struct WorkoutView: View {
           Button("Keep training", role: .cancel) {}
           Button("Finish workout") {
             Task {
+              guard canLeaveTimedSet() else { return }
               if await saveDrafts() { await model.finish() }
             }
           }.accessibilityIdentifier("finish-confirm")
@@ -260,8 +273,9 @@ struct WorkoutView: View {
             "This removes the active session, including its completed sets. Your routines and finished workouts stay saved."
           )
         }
-        .sheet(item: $guide) { exercise in GuideSheet(exercise: exercise) }
-        .sheet(isPresented: $notesPresented) { SessionNotesView() }
+        .sheet(item: $guide) { exercise in GuideSheet(exercise: exercise).protectWidgetNavigation()
+        }
+        .sheet(isPresented: $notesPresented) { SessionNotesView().protectWidgetNavigation() }
         // A set was logged: a light, crisp tap. The success pattern is kept for
         // finishing the workout (CompletionSeal), so each pattern means one thing.
         .sensoryFeedback(.impact(weight: .light), trigger: feedback) { _, _ in
@@ -338,6 +352,16 @@ struct WorkoutView: View {
   }
 
   private func draftKey(entry: SessionEntry, set: Int) -> String { "\(entry.id)-\(set)" }
+
+  /// Closing the view would discard its stopwatch state. A failed timed-set
+  /// save needs an explicit retry or cancellation before that can happen.
+  private func canLeaveTimedSet() -> Bool {
+    guard !holdLog.needsRetry, !holdLog.isSaving else {
+      validation = "Your timed set is not saved. Retry or cancel it before closing or finishing."
+      return false
+    }
+    return true
+  }
 
   private func applyDrafts(_ submitted: [String: SetDraft], to value: inout Workspace) throws {
     guard var session = value.active else { throw FormaError.noActiveWorkout }
@@ -447,66 +471,98 @@ struct WorkoutView: View {
       setNumber: (current?.setIndex ?? openSet).map { $0 + 1 },
       length: length, hold: current, unit: unit,
       otherHoldRunning: hold != nil && current == nil,
+      saving: current != nil && holdLog.isSaving,
+      pendingSeconds: current != nil ? holdLog.attempt?.seconds : nil,
+      needsRetry: current != nil && holdLog.needsRetry,
       adjust: { delta in
         holdLengths[entry.id] = HoldTimer.clamp(length + delta, unit: unit)
         model.haptic(delta > 0 ? .increased : .decreased)
       },
       start: {
-        guard let openSet else { return }
+        guard hold == nil, let openSet else { return }
         holdMessage = nil
-        hold = ActiveHold(
+        let timer = ActiveHold(
           sessionID: session.id, entryID: entry.id, exerciseID: entry.exerciseId,
           setIndex: openSet, length: length, endsAt: .now.addingTimeInterval(Double(length)),
           left: length)
+        guard holdLog.begin(timer.id) else { return }
+        hold = timer
         model.haptic(.started)
       },
       pause: {
-        guard var timer = hold, timer.endsAt != nil else { return }
+        guard !holdLog.isSaving, !holdLog.needsRetry,
+          var timer = hold, timer.endsAt != nil
+        else { return }
         timer.left = timer.remaining(at: .now)
         timer.endsAt = nil
         hold = timer
         model.haptic(.stopped)
       },
       resume: {
-        guard var timer = hold, timer.endsAt == nil else { return }
+        guard !holdLog.isSaving, !holdLog.needsRetry,
+          var timer = hold, timer.endsAt == nil
+        else { return }
         timer.endsAt = .now.addingTimeInterval(Double(timer.left))
         hold = timer
         model.haptic(.started)
       },
       end: {
-        guard let timer = hold else { return }
+        guard !holdLog.isSaving, !holdLog.needsRetry, let timer = hold else { return }
         let held = timer.length - timer.remaining(at: .now)
         guard held >= unit.seconds else { return }
         Task { await logHold(timer, seconds: held) }
       },
       cancel: {
+        guard !holdLog.isSaving else { return }
+        if let timer = hold { holdLog.cancel(timer.id) }
         hold = nil
         model.haptic(.stopped)
+      },
+      retry: {
+        guard let timer = hold, let attempt = holdLog.attempt else { return }
+        Task { await logHold(timer, seconds: attempt.seconds) }
       })
   }
 
   /// Logs the timed set (the first unfinished one if it was ticked meanwhile)
   /// and starts the programmed rest, exactly as ticking it would.
   private func logHold(_ timer: ActiveHold, seconds: Int) async {
-    if hold == timer { hold = nil }
+    guard hold == timer,
+      let attempt = holdLog.claim(holdID: timer.id, seconds: seconds)
+    else { return }
     let submitted = drafts
     var logged: (index: Int, count: Int)?
     let saved = await model.commit(forActiveSession: timer.sessionID) { value in
       try applyDrafts(submitted, to: &value)
       let result = try WorkoutEngine.logHold(
-        in: value, entryID: timer.entryID, startedOn: timer.setIndex, seconds: seconds,
+        in: value, entryID: timer.entryID, startedOn: timer.setIndex, seconds: attempt.seconds,
         now: AppModel.now, catalog: model.catalog)
       value = result.workspace
       logged = (result.setIndex, result.count)
     }
-    guard saved, let logged, let exercise = model.exercise(timer.exerciseID) else { return }
+    guard saved, let logged else {
+      // A finished hold must remain retryable when validation or storage fails.
+      // Freeze its duration; correcting a draft must not add time to the effort.
+      if holdLog.failed(attempt), var current = hold, current.id == timer.id {
+        current.endsAt = nil
+        current.left = max(0, current.length - attempt.seconds)
+        hold = current
+      }
+      return
+    }
+    guard holdLog.acknowledged(attempt) else { return }
+    if hold?.id == timer.id { hold = nil }
     drafts = retainingUnacknowledgedDrafts(drafts, acknowledged: submitted)
     validation = drafts.isEmpty ? nil : "Newer edits are still unsaved. Tap Done to save them."
     feedback += 1
     // The web's audible cue: a short tone unless training sounds are muted.
     if model.workspace?.profile.muted == false { AudioServicesPlaySystemSound(1057) }
-    let message =
-      "\(exercise.name) set \(logged.index + 1) logged: \(HoldTimer.loggedText(count: logged.count, unit: exercise.holdUnit))."
+    let exercise = model.exercise(timer.exerciseID)
+    let name = exercise?.name ?? timer.exerciseID
+    let detail =
+      exercise.map { HoldTimer.loggedText(count: logged.count, unit: $0.holdUnit) }
+      ?? "\(attempt.seconds) seconds"
+    let message = "\(name) set \(logged.index + 1) logged: \(detail)."
     holdMessage = message
     AccessibilityNotification.Announcement(message).post()
   }
@@ -542,12 +598,16 @@ private struct HoldTimerCard: View {
   let hold: ActiveHold?
   let unit: HoldUnit
   let otherHoldRunning: Bool
+  let saving: Bool
+  let pendingSeconds: Int?
+  let needsRetry: Bool
   let adjust: (Int) -> Void
   let start: () -> Void
   let pause: () -> Void
   let resume: () -> Void
   let end: () -> Void
   let cancel: () -> Void
+  let retry: () -> Void
 
   var body: some View {
     Group {
@@ -569,7 +629,7 @@ private struct HoldTimerCard: View {
   }
 
   private func panel(at date: Date) -> some View {
-    let remaining = hold?.remaining(at: date)
+    let remaining = pendingSeconds.map { max(0, length - $0) } ?? hold?.remaining(at: date)
     let shown = remaining ?? length
     let held = length - (remaining ?? length)
     let units = HoldTimer.loggedCount(seconds: held, unit: unit)
@@ -591,7 +651,7 @@ private struct HoldTimerCard: View {
       }
       .font(.subheadline.weight(.semibold))
       HoldProgressBar(
-        hold: hold,
+        hold: pendingSeconds == nil ? hold : nil,
         stepped: hold == nil ? 0 : min(1, Double(held) / Double(max(1, length))))
       Text(note).font(.footnote).foregroundStyle(FormaTheme.secondary)
         .fixedSize(horizontal: false, vertical: true)
@@ -600,7 +660,18 @@ private struct HoldTimerCard: View {
 
   @ViewBuilder
   private func controls(step: Int, units: Int) -> some View {
-    if let hold {
+    if saving {
+      ProgressView("Saving timed set…")
+        .frame(minHeight: 44)
+        .accessibilityIdentifier("hold-saving")
+    } else if needsRetry {
+      Button("Retry save", action: retry)
+        .frame(minHeight: 44).buttonStyle(.borderedProminent)
+        .accessibilityIdentifier("hold-retry")
+      Button("Cancel timed set", action: cancel)
+        .frame(minHeight: 44).buttonStyle(.bordered)
+        .accessibilityIdentifier("hold-cancel")
+    } else if let hold {
       let running = hold.endsAt != nil
       Button(action: running ? pause : resume) {
         Label(running ? "Pause" : "Resume", systemImage: running ? "pause.fill" : "play.fill")
@@ -655,6 +726,10 @@ private struct HoldTimerCard: View {
   }
 
   private var note: String {
+    if saving { return "Your timed set is being saved. Completion appears after it is saved." }
+    if needsRetry, let pendingSeconds {
+      return "\(pendingSeconds) seconds held, not saved. Correct any invalid fields, then retry."
+    }
     guard let setNumber else { return "Every set is logged." }
     if hold != nil { return "Set \(setNumber) logs itself when time is up." }
     if otherHoldRunning { return "Another hold timer is running. End or cancel it first." }
