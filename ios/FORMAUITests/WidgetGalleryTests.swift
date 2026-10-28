@@ -46,7 +46,10 @@ final class WidgetGalleryTests: XCTestCase {
     XCTAssertTrue(search.waitForExistence(timeout: 10))
     search.tap()
     search.typeText("FORMA")
-    let provider = springboard.staticTexts["FORMA"].firstMatch
+    // Select the system's provider row. Its text child is exposed by the
+    // remote gallery AX host even when that child has no tappable hit point.
+    let provider = springboard.cells.matching(NSPredicate(format: "label == %@", "FORMA"))
+      .firstMatch
     XCTAssertTrue(provider.waitForExistence(timeout: 10))
     provider.tap()
     XCTAssertTrue(springboard.staticTexts["Training at a glance"].waitForExistence(timeout: 10))
@@ -71,7 +74,12 @@ final class WidgetGalleryTests: XCTestCase {
       ).tap()
     }
     let done = springboard.buttons["Done"].firstMatch
-    if done.waitForExistence(timeout: 5) { done.tap() }
+    if done.waitForExistence(timeout: 5) {
+      done.tap()
+    } else {
+      // Home-button phones finish editing with Home instead of an onscreen Done.
+      XCUIDevice.shared.press(.home)
+    }
     let routine = springboard.descendants(matching: .any).matching(
       NSPredicate(format: "label CONTAINS %@", "Upper body strength")
     ).firstMatch

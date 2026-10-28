@@ -27,7 +27,9 @@ final class AccountExperienceTests: XCTestCase {
   func testSignedOutYouOffersSignInAndCreateAccountAndKeepsGuestUseIntact() {
     let app = launchFreshWorkspace()
     openYou(app)
+    app.revealTrainingControl(app.buttons["account-sign-in"])
     XCTAssertTrue(app.buttons["account-sign-in"].waitForExistence(timeout: 15))
+    app.revealTrainingControl(app.buttons["account-create"])
     XCTAssertTrue(app.buttons["account-create"].exists)
     // Guest deletion stays available while signed out.
     let deletion = app.buttons.matching(
@@ -44,25 +46,35 @@ final class AccountExperienceTests: XCTestCase {
     let app = launchFreshWorkspace()
     openYou(app)
     let signIn = app.buttons["account-sign-in"]
+    app.revealTrainingControl(signIn)
     XCTAssertTrue(signIn.waitForExistence(timeout: 15))
     signIn.tap()
 
     let email = app.textFields["account-email"]
+    app.scrollUntilExists(email)
     XCTAssertTrue(email.waitForExistence(timeout: 10))
     let password = app.secureTextFields["account-password"]
+    app.scrollUntilExists(password)
     XCTAssertTrue(password.exists)
     let submit = app.buttons["account-submit"]
+    app.scrollUntilExists(submit)
     XCTAssertTrue(submit.exists)
     XCTAssertFalse(submit.isEnabled, "nothing typed yet")
 
+    app.scrollUntilExists(email, direction: .down)
     email.tap()
     email.typeText("not-an-address")
+    app.scrollUntilExists(submit)
     XCTAssertFalse(submit.isEnabled, "an address needs an @ and a dot")
+    app.scrollUntilExists(email, direction: .down)
     email.clearAndType("member@example.test")
+    app.scrollUntilExists(password)
     password.tap()
     password.typeText("x")
+    app.scrollUntilExists(submit)
     XCTAssertTrue(submit.isEnabled)
 
+    app.scrollUntilExists(app.buttons["account-forgot"])
     XCTAssertTrue(app.buttons["account-forgot"].exists)
     app.buttons["account-cancel"].tap()
     XCTAssertTrue(app.buttons["account-sign-in"].waitForExistence(timeout: 10))
@@ -73,17 +85,21 @@ final class AccountExperienceTests: XCTestCase {
     let app = launchFreshWorkspace()
     openYou(app)
     let create = app.buttons["account-create"]
+    app.revealTrainingControl(create)
     XCTAssertTrue(create.waitForExistence(timeout: 15))
     create.tap()
 
     let name = app.textFields["account-name"]
+    app.scrollUntilExists(name)
     XCTAssertTrue(name.waitForExistence(timeout: 10))
     name.tap()
     name.typeText("Nova")
     let email = app.textFields["account-email"]
+    app.scrollUntilExists(email)
     email.tap()
     email.typeText("nova@example.test")
     let password = app.secureTextFields["account-password"]
+    app.scrollUntilExists(password)
     password.tap()
     app.dismissStrongPasswordSuggestion()
     password.typeText("short")
@@ -97,8 +113,12 @@ final class AccountExperienceTests: XCTestCase {
     // We just scrolled to Submit; the consent rows are above it.
     app.scrollUntilExists(terms, direction: .down)
     terms.tap()
+    // The native toggle AX bridge reports 1/0 on some runtimes and On/Off on others.
+    XCTAssertTrue(["1", "On"].contains(terms.value as? String ?? ""))
     app.scrollUntilExists(data)
     data.tap()
+    XCTAssertTrue(["1", "On"].contains(data.value as? String ?? ""))
+    app.scrollUntilExists(submit)
     XCTAssertFalse(submit.isEnabled, "the password is still too short")
 
     app.scrollUntilExists(password, direction: .down)
@@ -111,6 +131,7 @@ final class AccountExperienceTests: XCTestCase {
     // Untick one consent again: the button follows.
     app.scrollUntilExists(terms, direction: .down)
     terms.tap()
+    XCTAssertTrue(["0", "Off"].contains(terms.value as? String ?? ""))
     app.scrollUntilExists(submit)
     XCTAssertFalse(submit.isEnabled)
   }
@@ -127,18 +148,24 @@ extension XCUIApplication {
 
   fileprivate func scrollUntilExists(_ element: XCUIElement, direction: Direction = .up) {
     for _ in 0..<12 {
-      if element.exists && element.isHittable { return }
       let list = collectionViews["account-credentials-form"]
       XCTAssertTrue(list.exists)
       let frame = list.frame
       let keyboard = keyboards.firstMatch
       let top = frame.minY + 80
       let bottom = keyboard.exists ? min(frame.maxY, keyboard.frame.minY) : frame.maxY
+      // A partially visible checkbox can be hittable while its center is
+      // covered by the sheet toolbar. Reveal its full row before tapping.
+      if element.exists && element.isHittable
+        && element.frame.minY >= top && element.frame.maxY <= bottom - 8
+      {
+        return
+      }
       let distance = min(180, max(40, (bottom - top) * 0.6))
       var upward = direction == .up
       if element.exists {
-        if element.frame.midY > bottom - 12 { upward = true }
-        if element.frame.midY < top + 12 { upward = false }
+        if element.frame.maxY > bottom - 8 { upward = true }
+        if element.frame.minY < top { upward = false }
       }
       // Keep the entire pan above the keyboard. A slow, short drag avoids
       // flinging past a tall consent row and then searching in the wrong direction.
@@ -149,8 +176,7 @@ extension XCUIApplication {
         forDuration: 0.05, thenDragTo: upward ? upper : lower,
         withVelocity: .slow, thenHoldForDuration: 0.05)
     }
-    XCTAssertTrue(
-      element.exists && element.isHittable, "The requested form control must be visible")
+    XCTFail("The requested form control must fit in the visible form above the keyboard")
   }
   fileprivate enum Direction { case up, down }
 }

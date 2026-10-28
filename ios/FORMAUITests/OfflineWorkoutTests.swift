@@ -62,6 +62,7 @@ final class OfflineWorkoutTests: XCTestCase {
       app.descendants(matching: .any).matching(identifier: "progress-empty").firstMatch.exists)
     let journal = app.staticTexts.matching(
       NSPredicate(format: "label == %@", "Upper body strength"))
+    app.revealTrainingControl(journal.firstMatch)
     XCTAssertTrue(journal.firstMatch.waitForExistence(timeout: 15))
     XCTAssertEqual(journal.count, 1)
     // The same finished workout cannot be resumed and submitted again.
@@ -226,6 +227,7 @@ final class OfflineWorkoutTests: XCTestCase {
     done.tap()
     app.trainingTab("Progress").tap()
     let journal = app.staticTexts["Upper body strength"].firstMatch
+    app.revealTrainingControl(journal)
     XCTAssertTrue(journal.waitForExistence(timeout: 15))
     journal.tap()
     XCTAssertTrue(app.navigationBars["Workout details"].waitForExistence(timeout: 15))

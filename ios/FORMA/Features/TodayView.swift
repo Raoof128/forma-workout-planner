@@ -231,8 +231,10 @@ struct TodayView: View {
         Text(hero.name)
           .font(.system(.title2, weight: .bold).width(.condensed))
           .foregroundStyle(.white).fixedSize(horizontal: false, vertical: true)
-        Text(hero.detail).font(.subheadline).foregroundStyle(HeroColor.detail)
-          .fixedSize(horizontal: false, vertical: true)
+        if !textSize.isAccessibilitySize {
+          Text(hero.detail).font(.subheadline).foregroundStyle(HeroColor.detail)
+            .fixedSize(horizontal: false, vertical: true)
+        }
       }
       .padding(.horizontal, 20).padding(.top, textSize.isAccessibilitySize ? 20 : 8)
       .id(hero.inProgress).transition(.opacity)
@@ -261,6 +263,13 @@ struct TodayView: View {
       .disabled(model.busy || pending)
       .padding(16)
       .background(HeroColor.ink)
+      if textSize.isAccessibilitySize {
+        // Keep the primary action above the fold on a compact phone at the
+        // largest text size. Metadata stays readable below it, without capping type.
+        Text(hero.detail).font(.subheadline).foregroundStyle(HeroColor.detail)
+          .fixedSize(horizontal: false, vertical: true)
+          .padding(.horizontal, 20).padding(.bottom, 20)
+      }
     }
     .background(HeroColor.ink)
     .clipShape(RoundedRectangle(cornerRadius: 24))

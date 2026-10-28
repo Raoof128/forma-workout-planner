@@ -1748,3 +1748,11 @@ at rest` failed 16/20 before the fix. The rapid-release case now waits, before
 - **Files:** `FormaMotion.swift`, hosted navigation regressions, Apple source register and consolidation record.
 - **Verification:** 33 hosted app and four motion/navigation UI tests passed on local Xcode 27.1; strict Swift lint passed. Older-SDK CI rerun is still required.
 - **Follow-ups:** finish combined CI/main merge and remaining branch cleanup. First safe cleanup removed 11 local/13 remote already-merged branches; worktree files and recovery refs retained. No deployment.
+
+### Raouf: 2026-10-29 — Repair compact-phone integration journeys
+
+- **Scope:** failures discovered while validating the all-branch consolidation on iPhone SE and the older CI SDK.
+- **Summary:** keep Start above navigation at the largest accessibility size by placing metadata after it; reveal lazy account/history/profile controls; verify consent state explicitly; select the system widget provider row and leave Home-button editing correctly.
+- **Files:** TodayView, account/history/navigation/widget UI journeys, Apple source register, consolidation record, AGENT and CHANGELOG.
+- **Verification:** final compact account/history 5/5; preceding widget install/link, profile draft and largest-text geometry checks pass. Signed Release/widget bundle, strict Swift formatting, docs and added-line secret checks pass. Combined web/security CI at 5756291 passed, including 902 browser executions; final older-SDK CI remains the merge gate.
+- **Follow-ups:** preserve all assertions and original branch ancestry; finish main merge/deletion only after final CI. Physical-device and distribution gates remain; no production deployment or Store action.

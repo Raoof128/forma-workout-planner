@@ -88,3 +88,13 @@ omitted its possible-values table.
 ## Consolidation follow-up: older SDK symbol availability
 
 On 29 October, the consolidation CI using Xcode 26.3 / SDK 26.2 exposed the SwiftUI Cross-Fade environment key as unavailable at compile time. Runtime availability guarding did not solve symbol lookup. The follow-up uses UIKit's [Cross-Fade preference](https://developer.apple.com/documentation/uikit/uiaccessibility/preferscrossfadetransitions) and [notification](https://developer.apple.com/documentation/uikit/uiaccessibility/preferscrossfadetransitionsstatusdidchange), both declared from iOS 14 in the installed UIKit headers. See the [consolidation record](../../../../docs/maintenance/branch-consolidation-2026-10-29.md) for source changes, local 33 hosted/four UI tests and the separate older-SDK CI gate.
+
+## Consolidation follow-up: compact-screen journeys
+
+Retrieved on 29 October 2026, including Apple's current Markdown representations:
+
+- [Dynamic Type environment](https://developer.apple.com/documentation/swiftui/environmentvalues/dynamictypesize): use the user's current text size to choose composition. The compact-phone repair moves session metadata after Start at accessibility sizes; it does not cap or shrink the chosen text.
+- [XCUIElement hit testing](https://developer.apple.com/documentation/xcuiautomation/xcuielement/ishittable): visibility and a computable hit point are separate from existence. Scroll lazy journal/profile rows into view and require the consent row to fit above the keyboard before tapping it; assert its changed value explicitly.
+- [Element-relative coordinates](https://developer.apple.com/documentation/xcuiautomation/xcuielement/coordinate(withnormalizedoffset:)): a coordinate is derived from the observed element frame. The widget journey selects the named system provider row rather than treating its text child as the control.
+
+The [consolidation report](../../../../docs/maintenance/branch-consolidation-2026-10-29.md) records the distinct local iOS 27 and CI iOS 26.2 runs. Neither substitutes for physical-device accessibility review.

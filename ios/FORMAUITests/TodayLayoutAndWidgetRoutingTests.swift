@@ -187,7 +187,9 @@ final class TodayLayoutAndWidgetRoutingTests: XCTestCase {
     save.tap()
     requireSelectedTab("Plan", in: app)
     app.trainingTab("You").tap()
-    XCTAssertTrue(app.staticTexts["Queued profile draft"].waitForExistence(timeout: 10))
+    let savedName = app.staticTexts["Queued profile draft"]
+    app.revealTrainingControl(savedName, direction: .down)
+    XCTAssertTrue(savedName.waitForExistence(timeout: 10))
   }
 
   @MainActor
