@@ -346,9 +346,11 @@ async function holdAtEdge(page, editor, direction) {
   const sourceIndex = direction > 0 ? 0 : 17;
   const source = editor.rows.nth(sourceIndex);
   await source.evaluate((node) => node.scrollIntoView({ block: "center" }));
-  const box = await source
-    .getByRole("button", { name: /^Drag / })
-    .boundingBox();
+  const handle = source.getByRole("button", { name: /^Drag / });
+  // Raw mouse actions do not wait for layout/scroll actionability. A trial
+  // waits for the real handle without pressing it, before measuring this gesture.
+  await handle.click({ trial: true });
+  const box = await handle.boundingBox();
   const bounds = await editor.dialog.boundingBox();
   const header = await editor.dialog.locator(".modal-header").boundingBox();
   const x = box.x + box.width / 2;

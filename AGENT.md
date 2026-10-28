@@ -1622,3 +1622,11 @@ migrate` from the root-owned `ops/` directory (`sudo sh -c 'cd … && …'`),
 - **Files:** TodayView, account/history/navigation/widget UI journeys, Apple source register, consolidation record, AGENT and CHANGELOG.
 - **Verification:** final compact account/history 5/5; preceding widget install/link, profile draft and largest-text geometry checks pass. Signed Release/widget bundle, strict Swift formatting, docs and added-line secret checks pass. Combined web/security CI at 5756291 passed, including 902 browser executions; final older-SDK CI remains the merge gate.
 - **Follow-ups:** preserve all assertions and original branch ancestry; finish main merge/deletion only after final CI. Physical-device and distribution gates remain; no production deployment or Store action.
+
+### Raouf: 2026-10-29 — Verify gallery launch and drag readiness
+
+- **Scope:** the two remaining system/test setup failures in consolidation CI.
+- **Summary:** activate the running test app through Home before widget discovery and check sharing remains enabled; wait for the real drag handle to be actionable before measuring raw pointer coordinates. Preserve all installation, routing, scroll and saved-data assertions with zero retries.
+- **Files:** widget gallery UI test, routine drag test, Apple source register, consolidation record, AGENT and CHANGELOG.
+- **Verification:** fresh compact simulator widget installation/link passes; 20 mobile WebKit repetitions and all 20 edge cases across five production browser/device projects pass. Lint, formatting, docs and added-line secret checks pass. Application/Watch/widget source is unchanged; final combined CI remains the merge gate.
+- **Follow-ups:** merge and delete remaining branch refs only after final checks; retain all 38 original tips and existing physical-device/distribution gates.

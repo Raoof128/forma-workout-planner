@@ -28,6 +28,14 @@ final class WidgetGalleryTests: XCTestCase {
     let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
     let icon = springboard.icons["FORMA"].firstMatch
     XCTAssertTrue(icon.waitForExistence(timeout: 10))
+    // WidgetKit requires a containing-app launch before gallery discovery.
+    // A fresh simulator can purge descriptors after the test-host install;
+    // activate the running app through Home so SpringBoard records that launch.
+    icon.tap()
+    XCTAssertTrue(app.wait(for: .runningForeground, timeout: 10))
+    XCTAssertEqual(
+      sharing.value as? String, "1", "Home activation must retain the opted-in test space")
+    XCUIDevice.shared.press(.home)
     icon.press(forDuration: 1.5)
     let edit = springboard.buttons["Edit Home Screen"]
     XCTAssertTrue(edit.waitForExistence(timeout: 10))

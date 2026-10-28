@@ -98,3 +98,7 @@ Retrieved on 29 October 2026, including Apple's current Markdown representations
 - [Element-relative coordinates](https://developer.apple.com/documentation/xcuiautomation/xcuielement/coordinate(withnormalizedoffset:)): a coordinate is derived from the observed element frame. The widget journey selects the named system provider row rather than treating its text child as the control.
 
 The [consolidation report](../../../../docs/maintenance/branch-consolidation-2026-10-29.md) records the distinct local iOS 27 and CI iOS 26.2 runs. Neither substitutes for physical-device accessibility review.
+
+## Fresh-simulator gallery registration
+
+[Creating a widget extension](https://developer.apple.com/documentation/widgetkit/creating-a-widget-extension), retrieved 29 October 2026: a containing-app launch after installation is required before gallery discovery. Consolidation CI's simulator log recorded descriptor purging after test-host installation, and the gallery showed “No Results.” The UI journey now explicitly activates the already-running app through Home before searching, checks that sharing remains opted in, then still requires installation and the correct non-starting routine link. This is a system-gallery lifecycle check, separate from the component render matrix and protected bundle audit.
