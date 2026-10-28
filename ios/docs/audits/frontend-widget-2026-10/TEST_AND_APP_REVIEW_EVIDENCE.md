@@ -165,3 +165,7 @@ A short Simulator Time Profiler capture completed; its exact duration, sample ro
 | FORMAWatch | `e4d165c4acf8f04780e7dd27d06b9cc46557981b9bf1960873e5de2ddba4c68a` | absent |
 
 `/tmp/forma-widget-phone-delivered.log`: the final signed app installed successfully on the physical iPhone. `/tmp/forma-widget-phone-delivered-launch.log`: launch denied because the iPhone remains locked (CoreDevice 10002, FBS locked error 7). This is installation proof only. The Watch remains blocked by the earlier CoreDevice 4000 / RemotePairing 1035 Bluetooth rejection; no new unlocked/USB state was supplied. No interactive phone, Health, paired Watch or passcode privacy success is inferred.
+
+## Authorized branch publication
+
+Implementation commit [076e267c6a4b3b5081348ddbd40cf53e22700ffd](https://github.com/Raoof128/forma-workout-planner/commit/076e267c6a4b3b5081348ddbd40cf53e22700ffd) was pushed to `origin/feat/frontend-widgets-2026-10`; `git ls-remote --heads` returned that exact SHA. This is Git delivery, not production/Store delivery. A documentation-only follow-up reconciles the release logs. All committed source hashes matched the settled audit ledger and staged additions had zero Gitleaks findings. Remote CI was started by the branch push and remains a separate observation from the locally passed test matrix.

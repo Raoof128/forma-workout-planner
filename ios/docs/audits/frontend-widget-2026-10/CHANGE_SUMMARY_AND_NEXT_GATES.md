@@ -1,6 +1,6 @@
 # Change summary and next gates
 
-29 October 2026, Australia/Sydney. Implementation is local and uncommitted on `feat/frontend-widgets-2026-10`, based on `c0883a337f6ab6f5795fde7d349ae9f397b7b8ba` plus the preserved, separately authorized dirty account/navigation work. Xcode 27.1 (27A9275), Swift 6.4, macOS 27.0.1 (26A434). Minimum iOS 17 / watchOS 10. No push, merge, production deployment or Store submission occurred.
+29 October 2026, Australia/Sydney. Implementation was committed as [076e267](https://github.com/Raoof128/forma-workout-planner/commit/076e267c6a4b3b5081348ddbd40cf53e22700ffd) and pushed to `origin/feat/frontend-widgets-2026-10`, based on `c0883a337f6ab6f5795fde7d349ae9f397b7b8ba` plus the preserved, separately authorized dirty account/navigation work. Xcode 27.1 (27A9275), Swift 6.4, macOS 27.0.1 (26A434). Minimum iOS 17 / watchOS 10. The implementation remote ref was read back and matched the commit. No merge, production deployment or Store submission occurred.
 
 ## What changed
 
@@ -36,7 +36,7 @@ Baseline 138 core tests passed. Current package run passed **141 core + 4 surfac
 | Performance | Release physical-device cold launch, set-save typing, full-catalog search, long history, hold/rest, glass transitions and Watch energy traces. Hosted projection samples prove only their measured scope. No p95/FPS/energy or speedup claim. |
 | Distribution | Owner/Apple/legal review of operator/provider eligibility, regions/age/support, content rights, account deletion, privacy answers and final archive manifests. Signed development build is not App Store acceptance. |
 
-Suggested next logical commit after reviewing the complete preserved account baseline: `feat(ios): add private training widgets and harden workout recovery`. Keep the earlier account/navigation scope explicit in the commit description; do not silently label all existing dirty input as this audit's work.
+Delivered implementation commit: `feat(ios): add native accounts and private training widgets` (`076e267`). Its description explicitly includes the earlier account/navigation scope. A documentation follow-up records publication and reconciles the handoff; inspect the branch tip for that revision.
 
 ## Exact implementation paths changed from captured native baseline
 
@@ -102,3 +102,9 @@ The list below compares file bytes against the private 146-path native snapshot,
 Final visual QA repaired large-text widget clipping with a concise accessibility composition and fixed the Simulator rotation-capture race. The evidence set contains 120 component images, 32 final app/layout images and four actual gallery/Home images, plus nine baseline originals. The signed Release executables exclude test coverage instrumentation; ordinary test assertions remain enabled and coverage can be requested explicitly. The completed 24-case UI result and separately passed gallery remain distinct from the final focused renderer/layout reruns.
 
 The final signed app was reinstalled successfully on the iPhone after the last widget changes. Launch remains blocked while the phone is locked; Watch installation still needs the unlocked companion USB connection. Final executable hashes and the exact install/launch results are in the test evidence report.
+
+## Publication and durable handoff
+
+The owner explicitly authorized commit/push and log/Zurvan synchronization after the implementation handoff. The implementation commit contains 260 changed/added files, preserving the account/tab-bar baseline and the widget/audit work. Staged additions passed a redacted Gitleaks scan with zero findings; staged source hashes matched the audit ledger. macOS metadata, environment files, build caches, signing material and result bundles were excluded.
+
+The first-push [GitHub CI run](https://github.com/Raoof128/forma-workout-planner/actions/runs/40757934931) was in progress at this recording; this is not a remote CI pass. Native iOS CI runs on pull requests/manual dispatch rather than ordinary branch push. Local native results and outstanding device gates remain unchanged. A private Zurvan reference note records the verified implementation publication; final source ingestion/index refresh follows the settled documentation revision. No Zurvan private page is published to its public remote.

@@ -161,3 +161,12 @@ The keyboard's Done action, set completion and Save & close persist valid values
 An incomplete numeric draft can be lost on process termination; completed,
 acknowledged sets and committed rest state are stored in SQLite. Physical-device
 interruption and keyboard tests remain required.
+
+### Published native development checkpoint
+
+The account/navigation and widget audit implementation is committed as
+[076e267](https://github.com/Raoof128/forma-workout-planner/commit/076e267c6a4b3b5081348ddbd40cf53e22700ffd) on the pushed
+`feat/frontend-widgets-2026-10` branch. See the
+[delivery handoff](docs/audits/frontend-widget-2026-10/CHANGE_SUMMARY_AND_NEXT_GATES.md)
+for source/visual evidence, the documentation reconciliation and device gates.
+This branch has not been merged or submitted to the App Store.

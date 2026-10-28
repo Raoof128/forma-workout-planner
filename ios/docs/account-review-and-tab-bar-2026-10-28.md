@@ -122,3 +122,12 @@ For an authorized staging account test, build with
 `FORMA_ACCOUNT_ORIGIN=https://forma-staging.raoufabedini.dev`; supply
 `FORMA_STAGING_ACCESS_ID` and `FORMA_STAGING_ACCESS_SECRET` only to the Debug
 app's launch environment. No service credential belongs in a project setting.
+
+## Publication follow-up — 29 October 2026
+
+The separately authorized account/navigation source was preserved and included in
+implementation commit [076e267](https://github.com/Raoof128/forma-workout-planner/commit/076e267c6a4b3b5081348ddbd40cf53e22700ffd), pushed to
+`origin/feat/frontend-widgets-2026-10` with the later widget/frontend audit. The
+[latest handoff](audits/frontend-widget-2026-10/CHANGE_SUMMARY_AND_NEXT_GATES.md)
+records final tests, signed iPhone installation and the still-open locked-phone,
+Watch, live-account and distribution gates. This does not deploy the account service.

@@ -16,7 +16,7 @@
 | Final device checkpoint | Final signed Release app reinstalled after final widget changes; launch attempt blocked because the phone was locked. This is not an observed interactive device run |
 | Watch device checkpoint | Installation remains blocked by CoreDevice 4000 / RemotePairing 1035; reconnect the companion iPhone by USB to repair pairing |
 
-App Group provisioning was resolved using the existing team `3L5A4R7JNY` and Xcode-managed profiles; team identity was not changed. The app and extension's matching group/protection entitlements were checked in the signed Release bundle. No push, merge, deployment, App Store submission, production-service change or new credential authority is claimed.
+App Group provisioning was resolved using the existing team `3L5A4R7JNY` and Xcode-managed profiles; team identity was not changed. The app and extension's matching group/protection entitlements were checked in the signed Release bundle. The owner subsequently authorized publication: implementation commit [076e267](https://github.com/Raoof128/forma-workout-planner/commit/076e267c6a4b3b5081348ddbd40cf53e22700ffd) was pushed to `origin/feat/frontend-widgets-2026-10` and the remote ref verified. No merge, deployment, App Store submission, production-service change or new credential authority is claimed.
 
 The separately approved account implementation is part of the actual baseline. Early guest-only native documents remain dated historical evidence; their old account statements do not override current source, disclosures or account-deletion requirements.
 

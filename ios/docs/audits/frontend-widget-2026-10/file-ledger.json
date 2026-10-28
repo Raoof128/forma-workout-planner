@@ -40,7 +40,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": false,
       "finalSourceSHA256": "34a9edb74bc55206871fe4e395023ccadb194762fb8fe6301c316147a533abb8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "AGENT.md",
@@ -64,15 +64,15 @@
       "sourceLedger": "/tmp/forma-widget-core-audit/ledger.json",
       "reviewHashStatus": "Exact reviewer hash recorded",
       "baselineSHA256": null,
-      "recordedSHA256": "ddbbed3b6dbb045b2153a838c3fd09639aaf35a2a91aacbd0524a6879645a5c5",
-      "bytes": 102492,
+      "recordedSHA256": "616e25630e8b4efbae05c66d611517e6971c4ff9263b61e4a650d829c2d8dfcf",
+      "bytes": 103554,
       "lines": 1568,
       "changedSinceReview": true,
       "inBaselineManifest": false,
-      "finalSourceSHA256": "ddbbed3b6dbb045b2153a838c3fd09639aaf35a2a91aacbd0524a6879645a5c5",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "finalSourceSHA256": "616e25630e8b4efbae05c66d611517e6971c4ff9263b61e4a650d829c2d8dfcf",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
-      "finalOwnerReviewSHA256": "ddbbed3b6dbb045b2153a838c3fd09639aaf35a2a91aacbd0524a6879645a5c5"
+      "finalOwnerReviewSHA256": "616e25630e8b4efbae05c66d611517e6971c4ff9263b61e4a650d829c2d8dfcf"
     },
     {
       "path": "CHANGELOG.md",
@@ -96,15 +96,56 @@
       "sourceLedger": "/tmp/forma-widget-core-audit/ledger.json",
       "reviewHashStatus": "Exact reviewer hash recorded",
       "baselineSHA256": null,
-      "recordedSHA256": "6fee0b09a2e3e5bda0c147e7c0ba215cb379027dd9b6ec3ac6845ae3ce951f09",
-      "bytes": 116942,
+      "recordedSHA256": "6f9beaf3aa5b0cf91eb1c2536e0e42073785ea7539cc5e1c5144e6f3e497fbfc",
+      "bytes": 118004,
       "lines": 1696,
       "changedSinceReview": true,
       "inBaselineManifest": false,
-      "finalSourceSHA256": "6fee0b09a2e3e5bda0c147e7c0ba215cb379027dd9b6ec3ac6845ae3ce951f09",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "finalSourceSHA256": "6f9beaf3aa5b0cf91eb1c2536e0e42073785ea7539cc5e1c5144e6f3e497fbfc",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
-      "finalOwnerReviewSHA256": "6fee0b09a2e3e5bda0c147e7c0ba215cb379027dd9b6ec3ac6845ae3ce951f09"
+      "finalOwnerReviewSHA256": "6f9beaf3aa5b0cf91eb1c2536e0e42073785ea7539cc5e1c5144e6f3e497fbfc"
+    },
+    {
+      "path": "README.md",
+      "baselineSHA256": null,
+      "supplementalReviews": [],
+      "type": "Markdown project overview",
+      "reviewStatus": "full-read-current-checkpoint",
+      "readRanges": [
+        [
+          1,
+          145
+        ]
+      ],
+      "reviewSHA256": "6a5110da693743e1d510d9759c9fc1e3d6c33fca0973069a28ae9696e5699de2",
+      "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit",
+      "purpose": "Current web/native gateway and published native handoff, with Health boundary separated",
+      "screens": "Project overview and native development checkpoint",
+      "changes": "Update existing tracked overview with native account/widget publication and accurate web/Watch Health boundary",
+      "disposition": "Retain committed-only/current-owner/strict-route/protected-read invariants. No production operation or extension workout write.",
+      "tests": "See root verification checkpoint and source test assertions; no additional tests run by reconciliation reviewer.",
+      "severity": null,
+      "findings": [],
+      "recordedSHA256": "6a5110da693743e1d510d9759c9fc1e3d6c33fca0973069a28ae9696e5699de2",
+      "bytes": 9258,
+      "changedSinceReview": false,
+      "finalSourceSHA256": "6a5110da693743e1d510d9759c9fc1e3d6c33fca0973069a28ae9696e5699de2",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
+      "inBaselineManifest": false,
+      "priorReviews": [
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              145
+            ]
+          ],
+          "reviewSHA256": "6a5110da693743e1d510d9759c9fc1e3d6c33fca0973069a28ae9696e5699de2",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        }
+      ]
     },
     {
       "path": "docs/accounts/api.md",
@@ -134,7 +175,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": false,
       "finalSourceSHA256": "99107cc32ddad7cf58c48b9e375723ed93e02219def7cead2d19d6d5032ae0f5",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "docs/data-model.md",
@@ -164,7 +205,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": false,
       "finalSourceSHA256": "82051b05356dfc7bda701b4b68ec176c41be1ffb83bbf6e3bf91e6595519f32a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "docs/member-data-sync.md",
@@ -194,7 +235,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": false,
       "finalSourceSHA256": "20888cc996b03eee588c1ba10408953b60e8a89ba0f6a9411e137dc68a8c369d",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "docs/security/README.md",
@@ -224,7 +265,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": false,
       "finalSourceSHA256": "df2700d20a2ecfb8956af7c3ce4aa82b64b69570feed16f22337eadb778b60e6",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/.gitignore",
@@ -252,7 +293,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "2767552aa155cef9721b0ebbdfbee475aae4b4572c1995a5bda73e0004f6dbff",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Account/AccountClient.swift",
@@ -284,7 +325,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "271bd0915ef9eae305a6c5bf6f6f3628f69991b9808f649cbe55d7665c1af28f",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Account/AccountModel.swift",
@@ -316,7 +357,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "ec8f6d76e3d38715c82491386f403856cc00b34073c564ff0fdcf5b928f7c274",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Account/AccountPrivacyView.swift",
@@ -348,7 +389,7 @@
       "changedSinceReview": true,
       "inBaselineManifest": true,
       "finalSourceSHA256": "ad0c7275cfe647830f91d7204b567fa88b1b27cb692b8c8ac7aca676fce58a83",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "ad0c7275cfe647830f91d7204b567fa88b1b27cb692b8c8ac7aca676fce58a83"
     },
@@ -382,7 +423,7 @@
       "changedSinceReview": true,
       "inBaselineManifest": true,
       "finalSourceSHA256": "a97b1ba8b2c0ccd98006822ea1777b637328cc199a1a60c0c3b0d8f63abbcfc9",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "a97b1ba8b2c0ccd98006822ea1777b637328cc199a1a60c0c3b0d8f63abbcfc9"
     },
@@ -416,7 +457,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "84cf55349a4f8d6e6e9d7befd30caef05b93b0a541a69f756c2ae755594563f2",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Account/AccountSecurityView.swift",
@@ -448,7 +489,7 @@
       "changedSinceReview": true,
       "inBaselineManifest": true,
       "finalSourceSHA256": "d146c0cb52c3751e8cdbe9644a06aa99e4c57ac4ae729743c81b64aea5b376cb",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "d146c0cb52c3751e8cdbe9644a06aa99e4c57ac4ae729743c81b64aea5b376cb"
     },
@@ -482,7 +523,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "fe3728703eef2cc0ccceb2a72313a01f2cd7b04a98c62a36f676ca482726bfc6",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Account/AccountSupport.swift",
@@ -514,7 +555,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "3fb0d0da0d1403186c1683620e9e335945281703730c833c44d4ef72c342a589",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Account/AuthFlowView.swift",
@@ -546,7 +587,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "3c71dee605f55dfda173330c19474a3a6c4ed181d211c5499feb0dc826c5267b",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Account/ConnectivityMonitor.swift",
@@ -578,7 +619,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "e78de6c9c153bb7ae223c4a0faeecf62d034897ec1439dd59d4586baae870d45",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Account/CookieJar.swift",
@@ -610,7 +651,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "62e0f12204b6862980bac6e5457d91946b83aaddf90049a066abf8a6dcd76b83",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Account/PhoneTraining.swift",
@@ -685,10 +726,32 @@
           ],
           "reviewSHA256": "fb90960e64dbb4b88b761304aa659b1931af71f7d24d4b36cd4a96641412975a",
           "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              149
+            ]
+          ],
+          "reviewSHA256": "fb90960e64dbb4b88b761304aa659b1931af71f7d24d4b36cd4a96641412975a",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              149
+            ]
+          ],
+          "reviewSHA256": "fb90960e64dbb4b88b761304aa659b1931af71f7d24d4b36cd4a96641412975a",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         }
       ],
       "finalSourceSHA256": "fb90960e64dbb4b88b761304aa659b1931af71f7d24d4b36cd4a96641412975a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Account/SyncDetailsView.swift",
@@ -720,7 +783,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "21f37534fd1855bd91405c3b831f190a6baf368e2920d5ba93ed0f144f346d83",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Account/TrainingDataView.swift",
@@ -752,7 +815,7 @@
       "changedSinceReview": true,
       "inBaselineManifest": true,
       "finalSourceSHA256": "9805fe0e2e3eac9ed22410ea16614665f184efce7e6bb87e2a2facb6a5cf54a9",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "9805fe0e2e3eac9ed22410ea16614665f184efce7e6bb87e2a2facb6a5cf54a9"
     },
@@ -814,7 +877,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "2f45b85abf728e5996d79e52a4a0d7e21de700aed62a7931b742ed7463f701fe",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/App/AppModel+WidgetRouting.swift",
@@ -841,7 +904,7 @@
       "bytes": 970,
       "changedSinceReview": false,
       "finalSourceSHA256": "26e73bdc97f890e9c55b67350f54410bb9b68a21c4bdad54e46ef322a9ce44d9",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -865,6 +928,28 @@
           ],
           "reviewSHA256": "26e73bdc97f890e9c55b67350f54410bb9b68a21c4bdad54e46ef322a9ce44d9",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              33
+            ]
+          ],
+          "reviewSHA256": "26e73bdc97f890e9c55b67350f54410bb9b68a21c4bdad54e46ef322a9ce44d9",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              33
+            ]
+          ],
+          "reviewSHA256": "26e73bdc97f890e9c55b67350f54410bb9b68a21c4bdad54e46ef322a9ce44d9",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -941,7 +1026,7 @@
       "changedSinceReview": true,
       "inBaselineManifest": true,
       "finalSourceSHA256": "282719b05e8fc31cd55854e1df94b50ec23ec5254a45b1736c9a638382f48258",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "282719b05e8fc31cd55854e1df94b50ec23ec5254a45b1736c9a638382f48258"
     },
@@ -976,7 +1061,7 @@
       "changedSinceReview": true,
       "inBaselineManifest": true,
       "finalSourceSHA256": "6936bfb936b82a05fed19f9db52fd28e2023b44e1eed7ddedaaa8dea8039edde",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "6936bfb936b82a05fed19f9db52fd28e2023b44e1eed7ddedaaa8dea8039edde"
     },
@@ -1037,7 +1122,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "46a60709d832c501cbd8f02f5aa5d08ac7629fab19aba375e3467575b2ac65f5",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/App/WidgetSnapshotBridge.swift",
@@ -1064,7 +1149,7 @@
       "bytes": 7686,
       "changedSinceReview": false,
       "finalSourceSHA256": "5014e57a13d1d4a67c6e9546f895996fc0691c24e977bf29af347710d75f3103",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -1088,6 +1173,28 @@
           ],
           "reviewSHA256": "c5d65a3e7d592c4d638b169ddbd113b1405183f44dbe2d56da3c9b7605eb8dfb",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              210
+            ]
+          ],
+          "reviewSHA256": "5014e57a13d1d4a67c6e9546f895996fc0691c24e977bf29af347710d75f3103",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              210
+            ]
+          ],
+          "reviewSHA256": "5014e57a13d1d4a67c6e9546f895996fc0691c24e977bf29af347710d75f3103",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -1133,7 +1240,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "675ac64c652673e112c582af52812fc9f483f1eb3e062d6764761a5c6351cb27",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/DesignSystem/FormaHaptics.swift",
@@ -1166,7 +1273,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "bf83c0b93fea8f35de47962b0de076a509ae01cabe24f6119fdf36443a6bc595",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/DesignSystem/FormaMotion.swift",
@@ -1199,7 +1306,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "59062dd1c491b9a800e66ccbd96a75ea8bb5aa47ea70a141540666b6266a8c45",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/DesignSystem/FormaTheme.swift",
@@ -1232,7 +1339,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "801d9c3ced833d6436643fa2ad2f8d268d7a6c0853e038f290781a1c6685ce95",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/DesignSystem/GlassControls.swift",
@@ -1265,7 +1372,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "fbcc717107d40282cba24a907f7342c689190a121da7c023ce2bce185015ae26",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/DesignSystem/TrainingTabBar.swift",
@@ -1298,7 +1405,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "807834b7f0ed034d87f208263580800902563fa84128ddbc7c3c96444515b583",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/DesignSystem/WidgetNavigationGuard.swift",
@@ -1325,7 +1432,7 @@
       "bytes": 1208,
       "changedSinceReview": false,
       "finalSourceSHA256": "fdbf609ef7e59aea939ead658bb53a78e4f1359d5f33fd4fe5ad5ed9d0e0e5ee",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -1349,6 +1456,28 @@
           ],
           "reviewSHA256": "fdbf609ef7e59aea939ead658bb53a78e4f1359d5f33fd4fe5ad5ed9d0e0e5ee",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              36
+            ]
+          ],
+          "reviewSHA256": "fdbf609ef7e59aea939ead658bb53a78e4f1359d5f33fd4fe5ad5ed9d0e0e5ee",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              36
+            ]
+          ],
+          "reviewSHA256": "fdbf609ef7e59aea939ead658bb53a78e4f1359d5f33fd4fe5ad5ed9d0e0e5ee",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -1391,7 +1520,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "3cbd0ba06a4368dabb9094b957153f94f26b19e533d461fd7fb6858e701cd8f5",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Features/HoldLogState.swift",
@@ -1467,10 +1596,32 @@
           ],
           "reviewSHA256": "56185cfca959a5ade3794dfa658fcc647c43760d26c4dafd639d8b24f0daa68d",
           "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              59
+            ]
+          ],
+          "reviewSHA256": "56185cfca959a5ade3794dfa658fcc647c43760d26c4dafd639d8b24f0daa68d",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              59
+            ]
+          ],
+          "reviewSHA256": "56185cfca959a5ade3794dfa658fcc647c43760d26c4dafd639d8b24f0daa68d",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         }
       ],
       "finalSourceSHA256": "56185cfca959a5ade3794dfa658fcc647c43760d26c4dafd639d8b24f0daa68d",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Features/PlanView.swift",
@@ -1503,7 +1654,7 @@
       "changedSinceReview": true,
       "inBaselineManifest": true,
       "finalSourceSHA256": "5817de76d4d0f5903e6981b7910e333c43d83328e660dcd24f1993cb2dc150b0",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "5817de76d4d0f5903e6981b7910e333c43d83328e660dcd24f1993cb2dc150b0"
     },
@@ -1538,7 +1689,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "024f07e0298de0380d3f110cc67870f99cc3483b2b65e49caf26281cd9a06160",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Features/StartWorkoutSheet.swift",
@@ -1597,7 +1748,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "13e8969a33d6f24ec5d067db6b80bd2df349a0f060ae5f78a1692079c827d35d",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Features/TodayView.swift",
@@ -1633,7 +1784,7 @@
       "changedSinceReview": true,
       "inBaselineManifest": true,
       "finalSourceSHA256": "432b73472cc21c945268884777453a0266aa98ed4d101daf2b255dcea8bc1d76",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "432b73472cc21c945268884777453a0266aa98ed4d101daf2b255dcea8bc1d76"
     },
@@ -1671,7 +1822,7 @@
       "changedSinceReview": true,
       "inBaselineManifest": true,
       "finalSourceSHA256": "9ad69f2ab2126ab9466cf910751cab109bdfd29d76f169f230030ce66c8f3f56",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "9ad69f2ab2126ab9466cf910751cab109bdfd29d76f169f230030ce66c8f3f56"
     },
@@ -1706,7 +1857,7 @@
       "changedSinceReview": true,
       "inBaselineManifest": true,
       "finalSourceSHA256": "415bd255ffeb0896a91ba0b1f2262838cc3fe5091877d3770e0400109ba18969",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "415bd255ffeb0896a91ba0b1f2262838cc3fe5091877d3770e0400109ba18969"
     },
@@ -1738,7 +1889,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "564cbff965fb74a2eed1caa079a1c4be3e74195ef0be5370741cdbfc74d13423",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Resources/Assets.xcassets/AppIcon.appiconset/Contents.json",
@@ -1768,7 +1919,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "895c44875e8781583d9e9373525415fb21ebd883526845e6e6c4562c7eefaa1c",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Resources/Assets.xcassets/AppIcon.appiconset/app-icon.png",
@@ -1793,7 +1944,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "b006d525853e8752c0d1a3688b0658fe37ca01ff2c9799a0efd28d159d13bb55",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Resources/Assets.xcassets/Contents.json",
@@ -1823,7 +1974,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "2320eb3e02f9e3419d35676c6fd470ec13d5aa314c0d29700e09ec76d8e2360a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Resources/Assets.xcassets/LaunchBackground.colorset/Contents.json",
@@ -1853,7 +2004,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "af92aa060b923d2411807be47dc88b8861af0145eeaf4267696ed4336b8f13b1",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Resources/Assets.xcassets/TrainingEditorial.imageset/Contents.json",
@@ -1883,7 +2034,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "cf0dbe7c7ee61517fcb71bb74eb05de7c6aa64dcdec5a30cd5506f45772d210d",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Resources/Assets.xcassets/TrainingEditorial.imageset/training-editorial.png",
@@ -1908,7 +2059,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "c7d72e4f25108d22165c9facf105b6ee3643d372631628f85765eadc87d78d9d",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Resources/PrivacyInfo.xcprivacy",
@@ -1938,7 +2089,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "311bbe00919863df08a99dafd1a0596cb090ff7fcfdbf2271332ed176e7e94d1",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Resources/README.md",
@@ -1968,7 +2119,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "fe8ae632c9dbf6c71091980d4aa4faa9dfca95c968767e55d89f9a47a32ce5da",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Resources/catalog.json",
@@ -1995,7 +2146,7 @@
       "manifestHashMatches": true,
       "manifestSizeMatches": true,
       "finalSourceSHA256": "804237ba0cc29c9da5e570aefdda9ca78ac525fb0128463f9d473d6da29575ad",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Resources/catalogue-notices.json",
@@ -2022,7 +2173,7 @@
       "manifestHashMatches": true,
       "manifestSizeMatches": true,
       "finalSourceSHA256": "e157874c5a2c9ba3b788a636007a69b5fa4ce3da68b07c91440ac70135aaf270",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Resources/legal.json",
@@ -2049,7 +2200,7 @@
       "manifestHashMatches": true,
       "manifestSizeMatches": true,
       "finalSourceSHA256": "5d1d58878567e67415e529b760dccb7776e6dee634907130614a77f9e3b03972",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Resources/native-privacy.md",
@@ -2079,7 +2230,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "126fb6cd5827c60a1fef76ba7182b530e756e7c3baf2835cef8585373c5fefec",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Resources/resource-manifest.json",
@@ -2104,7 +2255,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "2302797636a1b6321707a575987a889a7604403c83936f3206a3fa4b7132e028",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMA/Resources/seed-workspace.json",
@@ -2131,7 +2282,7 @@
       "manifestHashMatches": true,
       "manifestSizeMatches": true,
       "finalSourceSHA256": "97eaacca4ebb08db83161b3c0a23e054ad29955981c68a4006387c15aac012e1",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMAAppTests/AccountLifecycleTests.swift",
@@ -2174,7 +2325,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "83b101766c4e7bbf7a7810046654f04551f8293a4dc3732f2e035d53990203c6",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMAAppTests/HoldLogStateTests.swift",
@@ -2250,6 +2401,28 @@
           ],
           "reviewSHA256": "6f4f8b6c2c72ef5135d756b484c5a5863ed3fe3a6372faf8a78eb13748b74aa8",
           "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              68
+            ]
+          ],
+          "reviewSHA256": "6f4f8b6c2c72ef5135d756b484c5a5863ed3fe3a6372faf8a78eb13748b74aa8",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              68
+            ]
+          ],
+          "reviewSHA256": "6f4f8b6c2c72ef5135d756b484c5a5863ed3fe3a6372faf8a78eb13748b74aa8",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         }
       ],
       "assertedCases": [
@@ -2259,7 +2432,7 @@
         "testInFlightSaveCannotBeCancelledOrReplaced"
       ],
       "finalSourceSHA256": "6f4f8b6c2c72ef5135d756b484c5a5863ed3fe3a6372faf8a78eb13748b74aa8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMAAppTests/PhoneTrainingLedgerTests.swift",
@@ -2295,7 +2468,7 @@
       "bytes": 8806,
       "changedSinceReview": false,
       "finalSourceSHA256": "a43f3031c7f7f7602033cd43d240c945311fadbf0a84877a8c36e867e7ead97f",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -2319,6 +2492,28 @@
           ],
           "reviewSHA256": "d1487eb2435d951eef88fbce15582b3c9dc701a2b312866fcb5f41289c6ad921",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              187
+            ]
+          ],
+          "reviewSHA256": "a43f3031c7f7f7602033cd43d240c945311fadbf0a84877a8c36e867e7ead97f",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              187
+            ]
+          ],
+          "reviewSHA256": "a43f3031c7f7f7602033cd43d240c945311fadbf0a84877a8c36e867e7ead97f",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -2369,7 +2564,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "dd335e83c1301db5e6e08f6b37003075771f13544c7baa73a0076d43e23d2091",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMAAppTests/WidgetProjectionPerformanceTests.swift",
@@ -2399,7 +2594,7 @@
       "bytes": 3755,
       "changedSinceReview": false,
       "finalSourceSHA256": "ddac04d60b76aed9f4c41316f04af76846c6030be8af59c7e822f09c5572b23d",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -2423,6 +2618,28 @@
           ],
           "reviewSHA256": "ddac04d60b76aed9f4c41316f04af76846c6030be8af59c7e822f09c5572b23d",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              80
+            ]
+          ],
+          "reviewSHA256": "ddac04d60b76aed9f4c41316f04af76846c6030be8af59c7e822f09c5572b23d",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              80
+            ]
+          ],
+          "reviewSHA256": "ddac04d60b76aed9f4c41316f04af76846c6030be8af59c7e822f09c5572b23d",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -2470,7 +2687,7 @@
       "bytes": 7176,
       "changedSinceReview": false,
       "finalSourceSHA256": "9995c46e964fd41ae4c1406f651cc82af53879c5305499038daa26cd493b18d8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -2494,6 +2711,28 @@
           ],
           "reviewSHA256": "9995c46e964fd41ae4c1406f651cc82af53879c5305499038daa26cd493b18d8",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              151
+            ]
+          ],
+          "reviewSHA256": "9995c46e964fd41ae4c1406f651cc82af53879c5305499038daa26cd493b18d8",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              151
+            ]
+          ],
+          "reviewSHA256": "9995c46e964fd41ae4c1406f651cc82af53879c5305499038daa26cd493b18d8",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -2536,7 +2775,7 @@
       "bytes": 4072,
       "changedSinceReview": false,
       "finalSourceSHA256": "5de0dcef809fda505729c796c2a51b1d21cf6c990bd3e9d5e5d46508dd5d0c7a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -2560,6 +2799,28 @@
           ],
           "reviewSHA256": "dfcc77f8db455bcdb3a7e6fd58c1ce879a5c055ae95fb8a735a37e75d485a65a",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              91
+            ]
+          ],
+          "reviewSHA256": "5de0dcef809fda505729c796c2a51b1d21cf6c990bd3e9d5e5d46508dd5d0c7a",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              91
+            ]
+          ],
+          "reviewSHA256": "5de0dcef809fda505729c796c2a51b1d21cf6c990bd3e9d5e5d46508dd5d0c7a",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -2609,7 +2870,7 @@
       "changedSinceReview": true,
       "inBaselineManifest": true,
       "finalSourceSHA256": "f400f6abfd9571d8a3af554d2a054c3fc77ba1b8fe662c61701ce187acc40514",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "f400f6abfd9571d8a3af554d2a054c3fc77ba1b8fe662c61701ce187acc40514"
     },
@@ -2648,7 +2909,7 @@
       "changedSinceReview": true,
       "inBaselineManifest": true,
       "finalSourceSHA256": "f74ac017661bb9edf535e87686259a45de06cdbca73c76d1bc47b6bf7c7763f9",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "f74ac017661bb9edf535e87686259a45de06cdbca73c76d1bc47b6bf7c7763f9"
     },
@@ -2692,7 +2953,7 @@
       "changedSinceReview": true,
       "inBaselineManifest": true,
       "finalSourceSHA256": "685b212778764255cd6cfd7f3abd10a35b5ccbcf9754dab761abedd2f38bc240",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "685b212778764255cd6cfd7f3abd10a35b5ccbcf9754dab761abedd2f38bc240"
     },
@@ -2721,7 +2982,7 @@
       "bytes": 609,
       "changedSinceReview": false,
       "finalSourceSHA256": "8211c320fee2d935879dcb8c40fc5956782abe453005482ffed9230dbd6a4c8e",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -2745,6 +3006,28 @@
           ],
           "reviewSHA256": "8211c320fee2d935879dcb8c40fc5956782abe453005482ffed9230dbd6a4c8e",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              14
+            ]
+          ],
+          "reviewSHA256": "8211c320fee2d935879dcb8c40fc5956782abe453005482ffed9230dbd6a4c8e",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              14
+            ]
+          ],
+          "reviewSHA256": "8211c320fee2d935879dcb8c40fc5956782abe453005482ffed9230dbd6a4c8e",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -2794,7 +3077,7 @@
       "changedSinceReview": true,
       "inBaselineManifest": true,
       "finalSourceSHA256": "ecb9dad0bd6cfc043126d7921c93efa5da0225fdc49e27cc0fef2a0425f6deaf",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "ecb9dad0bd6cfc043126d7921c93efa5da0225fdc49e27cc0fef2a0425f6deaf"
     },
@@ -2871,6 +3154,28 @@
           ],
           "reviewSHA256": "308f749a1b5ca2c3c57bf938f43bb69e820882554c252241bde97421ade6709f",
           "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              233
+            ]
+          ],
+          "reviewSHA256": "308f749a1b5ca2c3c57bf938f43bb69e820882554c252241bde97421ade6709f",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              233
+            ]
+          ],
+          "reviewSHA256": "308f749a1b5ca2c3c57bf938f43bb69e820882554c252241bde97421ade6709f",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         }
       ],
       "assertedCases": [
@@ -2882,7 +3187,7 @@
         "testQueuedWidgetLinkKeepsRoutineDraftUntilExplicitDiscard"
       ],
       "finalSourceSHA256": "308f749a1b5ca2c3c57bf938f43bb69e820882554c252241bde97421ade6709f",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMAUITests/TrainingNavigationTests.swift",
@@ -2917,7 +3222,7 @@
       "changedSinceReview": true,
       "inBaselineManifest": true,
       "finalSourceSHA256": "9af1fef30070f125173d9e7af9c998473e26469a59c4da00db56307eb8a5335b",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "9af1fef30070f125173d9e7af9c998473e26469a59c4da00db56307eb8a5335b"
     },
@@ -2949,7 +3254,7 @@
       "bytes": 4341,
       "changedSinceReview": false,
       "finalSourceSHA256": "15d72bcf9e38e0fba666ce3a26a47670472b558b3534d34b3863d2082d7d02f2",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -2973,6 +3278,28 @@
           ],
           "reviewSHA256": "904ff3cd664cba15c5ca55574c1a9021fd7fa1a8acb18112d3af69bd55cbc415",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              96
+            ]
+          ],
+          "reviewSHA256": "15d72bcf9e38e0fba666ce3a26a47670472b558b3534d34b3863d2082d7d02f2",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              96
+            ]
+          ],
+          "reviewSHA256": "15d72bcf9e38e0fba666ce3a26a47670472b558b3534d34b3863d2082d7d02f2",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -3017,7 +3344,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "e24b76180f4d3bb382b3d7eb491b6eaf7b019f76d307da5d78a6f7aee668ddc5",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMAWatch/Assets.xcassets/AppIcon.appiconset/app-icon.png",
@@ -3044,7 +3371,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "b006d525853e8752c0d1a3688b0658fe37ca01ff2c9799a0efd28d159d13bb55",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMAWatch/Assets.xcassets/Contents.json",
@@ -3076,7 +3403,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "2320eb3e02f9e3419d35676c6fd470ec13d5aa314c0d29700e09ec76d8e2360a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMAWatch/FORMAWatch.entitlements",
@@ -3108,7 +3435,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "82272041afdb42137fff878981bceb5c2ca5c40904e364366d9e8c4b2d46a27e",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMAWatch/FORMAWatchApp.swift",
@@ -3140,7 +3467,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "8621d4b0908a843292ab483e5c5ccc31d5426d0e2c1c2bac999a263330b90c02",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMAWatch/Info.plist",
@@ -3172,7 +3499,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "5f46a832622f48df6dc897f7986ed6a1b9c64c09568742cee42a72a248100e26",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMAWatch/PrivacyInfo.xcprivacy",
@@ -3204,7 +3531,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "528ab3fca910d2ac2f3ef256d5ea4c2327303a7a4a5efb9236987f3018e311f3",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMAWatch/WatchViews.swift",
@@ -3239,7 +3566,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "6bd36cd61f8e1e7a5f88271014b81f90ffdd6e25f3ee879a63bb5bb3d6b682cc",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/FORMAWatch/WorkoutManager.swift",
@@ -3274,7 +3601,7 @@
       "changedSinceReview": true,
       "inBaselineManifest": true,
       "finalSourceSHA256": "4daa3580f7e4e81f471601969ebb60e2f0cb72cb92116f82d035e20e7544032a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "4daa3580f7e4e81f471601969ebb60e2f0cb72cb92116f82d035e20e7544032a"
     },
@@ -3303,7 +3630,7 @@
       "bytes": 404,
       "changedSinceReview": false,
       "finalSourceSHA256": "ecaa9d415347681103179754a339acfb96afd1a5a834913477606f2ad584b5d8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -3327,6 +3654,28 @@
           ],
           "reviewSHA256": "ecaa9d415347681103179754a339acfb96afd1a5a834913477606f2ad584b5d8",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              12
+            ]
+          ],
+          "reviewSHA256": "ecaa9d415347681103179754a339acfb96afd1a5a834913477606f2ad584b5d8",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              12
+            ]
+          ],
+          "reviewSHA256": "ecaa9d415347681103179754a339acfb96afd1a5a834913477606f2ad584b5d8",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -3366,7 +3715,7 @@
       "bytes": 794,
       "changedSinceReview": false,
       "finalSourceSHA256": "41bf607d0c6b56d9e0da95087151f70e28405aab8e39980c7621a56903ee6eb6",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -3390,6 +3739,28 @@
           ],
           "reviewSHA256": "41bf607d0c6b56d9e0da95087151f70e28405aab8e39980c7621a56903ee6eb6",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              25
+            ]
+          ],
+          "reviewSHA256": "41bf607d0c6b56d9e0da95087151f70e28405aab8e39980c7621a56903ee6eb6",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              25
+            ]
+          ],
+          "reviewSHA256": "41bf607d0c6b56d9e0da95087151f70e28405aab8e39980c7621a56903ee6eb6",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -3429,7 +3800,7 @@
       "bytes": 373,
       "changedSinceReview": false,
       "finalSourceSHA256": "74b0cd72fc23c1ef302f22ee2753f61817cdc5af0ff7a7f2d0632b524fb8acea",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -3453,6 +3824,28 @@
           ],
           "reviewSHA256": "74b0cd72fc23c1ef302f22ee2753f61817cdc5af0ff7a7f2d0632b524fb8acea",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              14
+            ]
+          ],
+          "reviewSHA256": "74b0cd72fc23c1ef302f22ee2753f61817cdc5af0ff7a7f2d0632b524fb8acea",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              14
+            ]
+          ],
+          "reviewSHA256": "74b0cd72fc23c1ef302f22ee2753f61817cdc5af0ff7a7f2d0632b524fb8acea",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -3492,7 +3885,7 @@
       "bytes": 3319,
       "changedSinceReview": false,
       "finalSourceSHA256": "7deb55bf207a97d9c52f46a245e15a9507e4a98eeacdb63955d7fcc810c6f5b8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -3516,6 +3909,28 @@
           ],
           "reviewSHA256": "7deb55bf207a97d9c52f46a245e15a9507e4a98eeacdb63955d7fcc810c6f5b8",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              89
+            ]
+          ],
+          "reviewSHA256": "7deb55bf207a97d9c52f46a245e15a9507e4a98eeacdb63955d7fcc810c6f5b8",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              89
+            ]
+          ],
+          "reviewSHA256": "7deb55bf207a97d9c52f46a245e15a9507e4a98eeacdb63955d7fcc810c6f5b8",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -3555,7 +3970,7 @@
       "manifestHashMatches": true,
       "manifestSizeMatches": true,
       "finalSourceSHA256": "0f350ae0e70d77a9c034b352d88acf8d82152ca95bab6efb62fe0bcc823f504a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Fixtures/validation-boundaries.json",
@@ -3585,7 +4000,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "17203a4070c04d6b644fdb9cfa6543b3a4865c608bc228fd6cdf2df9989428eb",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Package.swift",
@@ -3658,10 +4073,32 @@
           ],
           "reviewSHA256": "d8b934dcb858bac7a7dcb593b0c817342c39c3c4fa16355d09e5733a9dac3ae6",
           "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              21
+            ]
+          ],
+          "reviewSHA256": "d8b934dcb858bac7a7dcb593b0c817342c39c3c4fa16355d09e5733a9dac3ae6",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              21
+            ]
+          ],
+          "reviewSHA256": "d8b934dcb858bac7a7dcb593b0c817342c39c3c4fa16355d09e5733a9dac3ae6",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         }
       ],
       "finalSourceSHA256": "d8b934dcb858bac7a7dcb593b0c817342c39c3c4fa16355d09e5733a9dac3ae6",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/README.md",
@@ -3685,13 +4122,13 @@
       "sourceLedger": "/tmp/forma-widget-watch-audit/ledger.json",
       "reviewHashStatus": "Read-time hash unavailable; current hash is not substituted for exact version read.",
       "baselineSHA256": "2226d08d8db86079fe93ed42f0fe2a9d231177ca7bc5652135506405ef135915",
-      "recordedSHA256": "2d18e43d44dd50cfe85d7d1f7c10722c6416c383f02be3a7f45e5961b81b4829",
-      "bytes": 8716,
+      "recordedSHA256": "10f16ccfd355a5e0f57f4c744bbc70515d81f43550ed81097cc81ab9912873d9",
+      "bytes": 9235,
       "lines": 129,
       "changedSinceReview": null,
       "inBaselineManifest": true,
-      "finalSourceSHA256": "2d18e43d44dd50cfe85d7d1f7c10722c6416c383f02be3a7f45e5961b81b4829",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "finalSourceSHA256": "10f16ccfd355a5e0f57f4c744bbc70515d81f43550ed81097cc81ab9912873d9",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Shared/WatchWorkout.swift",
@@ -3723,7 +4160,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "d593f1b8aec212b6d50d14a1330d3cfa4fa1c2e06aff6b77577af274aba95af5",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/CSQLite/module.modulemap",
@@ -3753,7 +4190,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "bbfe59a972a3e8e09e347c04bc22c0eacd2544881af8a4b6068bfc30b38466e8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/CSQLite/shim.h",
@@ -3783,7 +4220,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "b052d8e561e942f97b503033ecd2eaa2b35213bdbf374983efe9e68eabdfc024",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/FORMAContractProbe/main.swift",
@@ -3813,7 +4250,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "0846c8e0a434c9e463bfded0dc0bc845f8e888572e5199b081bdec7899df5c13",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/FORMACore/AccountCookies.swift",
@@ -3843,7 +4280,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "6f3372cd13e9801c7a01b1d417b7eeb5aa75e5ff9f64f7f2ae260099ddad17ba",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/FORMACore/AccountSync.swift",
@@ -3873,7 +4310,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "41eeaf17679280909ecc348162d0449e91b02b3ab20745cd98b81801d4ce05d1",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/FORMACore/AccountWire.swift",
@@ -3903,7 +4340,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "1a1ab9914e7c3547966297c187642523c90d2b53321bcd5005c3dfdc3c3f3604",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/FORMACore/DraftAcknowledgement.swift",
@@ -3933,7 +4370,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "8208a4c128c610e98361a021e61f75ac74b6b8e503c2b2c3c66996561f3ef3b8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/FORMACore/ExerciseSearch.swift",
@@ -3963,7 +4400,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "3fcd0ce33c38fcf6295d951ed04fdd9e17abc0970575c251cad4bdb47f07835b",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/FORMACore/HoldTimer.swift",
@@ -3993,7 +4430,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "2de215f383c301a610812fe8817d910b80db0ff9e6aede3eb1a3a0a334472486",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/FORMACore/LastCompletedSet.swift",
@@ -4023,7 +4460,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "18ea4f0b53675fff5f2258c9a23d4a534c1eccc2d9220757da178bc0459e8142",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/FORMACore/MeasurementDraft.swift",
@@ -4053,7 +4490,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "909e6414c1981b96ea0ca89f010d1c20436c620540de4cbd9faaf0042dfc4cb0",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/FORMACore/MeasurementNumberInput.swift",
@@ -4083,7 +4520,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "11682041215bcf5a4bb9ea24157fcef56d5c2e66ee8e43e251436ca620468fa0",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/FORMACore/MeasurementText.swift",
@@ -4113,7 +4550,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "3bdd81e5a21699f37a312b2986aacca46ed78314bf01d1a2d7c280260382dd4e",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/FORMACore/Models.swift",
@@ -4143,7 +4580,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "872753a0eaa7158afa639f3b91b4e81c3945c1f9de63251bcfb77f48b5b1cad3",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/FORMACore/SerializedMutationGate.swift",
@@ -4173,7 +4610,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "f93788aa2f09788d0980541ff671c330abb2ff3980afa77febdf320badc67113",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/FORMACore/WorkoutEngine.swift",
@@ -4203,7 +4640,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "5d61c1862641f8cca32d2a719d27845c4e61a9d4a7e25f077c15ce6f873874ff",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/FORMACore/WorkspaceExport.swift",
@@ -4233,7 +4670,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "9ffb731c102911516d1fcddd7b85d93537ec3207aaaddb77679f49f765bd129a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/FORMACore/WorkspaceStore.swift",
@@ -4265,7 +4702,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "170f9a2ae861bef8e7b4c9205d66772641b4398b704f6ca9b13138a56b51b662",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/FORMACore/WorkspaceTransport.swift",
@@ -4295,7 +4732,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "dff8496d91a0585948cd7a3c356c3ab4560956f49f426bd0ef7dcb25148d8fe2",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Sources/FORMASurfaces/SnapshotFileWriter.swift",
@@ -4322,7 +4759,7 @@
       "bytes": 1300,
       "changedSinceReview": false,
       "finalSourceSHA256": "38d5ab7aa4c5528d365e91faa2364333ef82d71c42c21486fd092aabbd86de03",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -4346,6 +4783,28 @@
           ],
           "reviewSHA256": "38d5ab7aa4c5528d365e91faa2364333ef82d71c42c21486fd092aabbd86de03",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              35
+            ]
+          ],
+          "reviewSHA256": "38d5ab7aa4c5528d365e91faa2364333ef82d71c42c21486fd092aabbd86de03",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              35
+            ]
+          ],
+          "reviewSHA256": "38d5ab7aa4c5528d365e91faa2364333ef82d71c42c21486fd092aabbd86de03",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -4385,7 +4844,7 @@
       "bytes": 2687,
       "changedSinceReview": false,
       "finalSourceSHA256": "ac1e4c9873a977be292364d2209d3382022f249cf90d7e7fdc98eac094be854a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -4409,6 +4868,28 @@
           ],
           "reviewSHA256": "ac1e4c9873a977be292364d2209d3382022f249cf90d7e7fdc98eac094be854a",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              61
+            ]
+          ],
+          "reviewSHA256": "ac1e4c9873a977be292364d2209d3382022f249cf90d7e7fdc98eac094be854a",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              61
+            ]
+          ],
+          "reviewSHA256": "ac1e4c9873a977be292364d2209d3382022f249cf90d7e7fdc98eac094be854a",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -4448,7 +4929,7 @@
       "bytes": 4198,
       "changedSinceReview": false,
       "finalSourceSHA256": "21b058ca3cbdfd559da7d2b0c5d7d1baac1f231bc36e82b69c54e26f02c19da2",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -4472,6 +4953,28 @@
           ],
           "reviewSHA256": "21b058ca3cbdfd559da7d2b0c5d7d1baac1f231bc36e82b69c54e26f02c19da2",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              109
+            ]
+          ],
+          "reviewSHA256": "21b058ca3cbdfd559da7d2b0c5d7d1baac1f231bc36e82b69c54e26f02c19da2",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              109
+            ]
+          ],
+          "reviewSHA256": "21b058ca3cbdfd559da7d2b0c5d7d1baac1f231bc36e82b69c54e26f02c19da2",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -4511,7 +5014,7 @@
       "bytes": 2156,
       "changedSinceReview": false,
       "finalSourceSHA256": "830370410c61bc01883b554672808fa9b908b45970cfa430d713c4b62e08171a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -4535,6 +5038,28 @@
           ],
           "reviewSHA256": "830370410c61bc01883b554672808fa9b908b45970cfa430d713c4b62e08171a",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              55
+            ]
+          ],
+          "reviewSHA256": "830370410c61bc01883b554672808fa9b908b45970cfa430d713c4b62e08171a",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              55
+            ]
+          ],
+          "reviewSHA256": "830370410c61bc01883b554672808fa9b908b45970cfa430d713c4b62e08171a",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -4577,7 +5102,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "a6a179c790348c298554c87f27c6dabb60af3ed149560acbea087671ba53308b",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Tests/FORMACoreTests/AccountWireTests.swift",
@@ -4607,7 +5132,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "3139dafb8d807579eaeacf2ad306b45f0138ac3183b753fb1c60ae830c074904",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Tests/FORMACoreTests/DraftAcknowledgementTests.swift",
@@ -4637,7 +5162,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "34fe368c26c746568984095a60a2f259a09602ea94f405a81811af645b5c7fe1",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Tests/FORMACoreTests/ExerciseSearchTests.swift",
@@ -4667,7 +5192,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "9e93e9f94b50197791ef4ef41ba01cfe443006aca797d253b92f99fa03a552a4",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Tests/FORMACoreTests/GoldenParityTests.swift",
@@ -4697,7 +5222,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "89117b5f8b65aa14fe6f230aed1ace1d80f9feb16bbf2a2da70c7216f56a1d61",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Tests/FORMACoreTests/HoldTimerTests.swift",
@@ -4727,7 +5252,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "ecced298e74055314a4403e0696d03f176fc277e4c0cca7b88849a0c57f5bd2c",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Tests/FORMACoreTests/LastCompletedSetTests.swift",
@@ -4757,7 +5282,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "4ee137a3cfba0ce47de61a4a1a5e27085d8e2004ed9c415f0f120afaa4f943fd",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Tests/FORMACoreTests/MeasurementDraftTests.swift",
@@ -4787,7 +5312,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "52ed01421516a6b9bd911ac8a5cde85671ce6cfd6fcd4010c65ef577d533c14c",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Tests/FORMACoreTests/MeasurementNumberInputTests.swift",
@@ -4817,7 +5342,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "7fe4f96eae0b5b755dbf2388c655f512fff45fcb0b61d47a4e36db40833f703a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Tests/FORMACoreTests/MeasurementTextTests.swift",
@@ -4847,7 +5372,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "7cf6a8dcbd18aa660795b35bc091ed301a0afec476cddb5a73c12721c05c4a1c",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Tests/FORMACoreTests/SerializedMutationGateTests.swift",
@@ -4877,7 +5402,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "849ccbcae131f7b631590766bf048a68141cbb26da184f0248e5f194fec642ad",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Tests/FORMACoreTests/ValidationBoundaryTests.swift",
@@ -4907,7 +5432,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "9e455f009daad3954e0f2bb9d70c11a652a66b877e00fa01002e019471f95149",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Tests/FORMACoreTests/WorkoutEngineTests.swift",
@@ -4937,7 +5462,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "575724d590c2c5a1e960e6200e3c21e2bf69657f51282597e117c7352e46ad73",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Tests/FORMACoreTests/WorkspaceExportTests.swift",
@@ -4967,7 +5492,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "d4f75d986021c44178c03fe125bab26189e366ac6cbb3055a6f04c4deb84664d",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Tests/FORMACoreTests/WorkspaceStoreTests.swift",
@@ -4999,7 +5524,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "69c59a560643d1d70a6efadfc1e0c1bd86c277347191cfc3cfe1fd1dd58dc9fe",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/Tests/FORMASurfacesTests/TrainingSnapshotTests.swift",
@@ -5032,7 +5557,7 @@
       "bytes": 3435,
       "changedSinceReview": false,
       "finalSourceSHA256": "8cafdd71084692d11402494ff5c4d7576e8b3d05909c917a0fe79d91a49126dd",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -5056,6 +5581,28 @@
           ],
           "reviewSHA256": "8cafdd71084692d11402494ff5c4d7576e8b3d05909c917a0fe79d91a49126dd",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              80
+            ]
+          ],
+          "reviewSHA256": "8cafdd71084692d11402494ff5c4d7576e8b3d05909c917a0fe79d91a49126dd",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              80
+            ]
+          ],
+          "reviewSHA256": "8cafdd71084692d11402494ff5c4d7576e8b3d05909c917a0fe79d91a49126dd",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -5095,7 +5642,7 @@
       "bytes": 13161,
       "changedSinceReview": false,
       "finalSourceSHA256": "43fc6a84015eb28eda6bb8e24129812ce0cd5d94e712e1ae5d7e33ce359ab622",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -5119,6 +5666,28 @@
           ],
           "reviewSHA256": "10fba9093bb6fdf4158547884860b069ac330a8fdc5f3f2e0b04941c26d62fa5",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              322
+            ]
+          ],
+          "reviewSHA256": "43fc6a84015eb28eda6bb8e24129812ce0cd5d94e712e1ae5d7e33ce359ab622",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              322
+            ]
+          ],
+          "reviewSHA256": "43fc6a84015eb28eda6bb8e24129812ce0cd5d94e712e1ae5d7e33ce359ab622",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -5161,7 +5730,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "2c8c3294a58624122e0f606f38f25c5e33841ab32141721b721aa61f177cdc1f",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/design/artwork-provenance.md",
@@ -5191,7 +5760,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "1a8ea57ead8769b8b3525e89cebacfa64e82ace361cda108b4788f547712dc3a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/design/asset-checksums.json",
@@ -5221,7 +5790,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "762bd98d850cc33182beff26bd73678eeac2d3258f20e31438b4c3d0fda8c8b8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/design/build-icon.py",
@@ -5251,7 +5820,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "9f0e3a1c17a043e088f7f30a3f809c4da427b3a4a60d95b38d2bd8bd2ab46015",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/account-review-and-tab-bar-2026-10-28.md",
@@ -5273,13 +5842,15 @@
       "disposition": "Preserve historical date/scope; 28 October native accounts and current source supersede older guest-only constraints without rewriting history.",
       "reviewSHA256": "9efc8d3521f613202ba0a42eac233e215e71a19b4780cdbb23f3ba3eb13dc631",
       "baselineSHA256": "9efc8d3521f613202ba0a42eac233e215e71a19b4780cdbb23f3ba3eb13dc631",
-      "recordedSHA256": "9efc8d3521f613202ba0a42eac233e215e71a19b4780cdbb23f3ba3eb13dc631",
-      "bytes": 11191,
+      "recordedSHA256": "31bc0de1b6e25925333fd01dfb7b042a1aa63ef6ef68009f2f048734fa08cebb",
+      "bytes": 11792,
       "lines": 124,
-      "changedSinceReview": false,
+      "changedSinceReview": true,
       "inBaselineManifest": true,
-      "finalSourceSHA256": "9efc8d3521f613202ba0a42eac233e215e71a19b4780cdbb23f3ba3eb13dc631",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "finalSourceSHA256": "31bc0de1b6e25925333fd01dfb7b042a1aa63ef6ef68009f2f048734fa08cebb",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
+      "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
+      "finalOwnerReviewSHA256": "31bc0de1b6e25925333fd01dfb7b042a1aa63ef6ef68009f2f048734fa08cebb"
     },
     {
       "path": "ios/docs/app-review-matrix.md",
@@ -5309,7 +5880,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "80c618b07d71999d38d1a094e8af9fc6527a0402ad28a43fce115ae582d21e84",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/apple-design-2026.md",
@@ -5339,7 +5910,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "900f6ee9c2afcc5cdf850d35968514b77e30c3ed7192343973dedc059e01b496",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/apple-watch.md",
@@ -5367,7 +5938,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "dde219634d6f8a5d8bbcf22c09fa5bb49bac58a7f84403d8b5458efb773c8bf0",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/audits/frontend-widget-2026-10/APPLE_2026_SOURCE_REGISTER.md",
@@ -5393,7 +5964,7 @@
       "bytes": 13945,
       "changedSinceReview": true,
       "finalSourceSHA256": "cc428810128f2adf7e22dd1bc34176bd36685b73d37eabd6082babc2d22b9bc6",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "cc428810128f2adf7e22dd1bc34176bd36685b73d37eabd6082babc2d22b9bc6"
@@ -5418,12 +5989,14 @@
       "changes": "New dated audit artifact",
       "tests": "JSON inventory/links/hash reconciliation; report content does not constitute runtime verification",
       "disposition": "Preserve historical baseline evidence and explicit source/runtime/physical-device distinctions",
-      "recordedSHA256": "aba71376bad735ee39f30f66cae9b28c91fc273d57a3a4a4e280370bfdc4858e",
-      "bytes": 10505,
-      "changedSinceReview": false,
-      "finalSourceSHA256": "aba71376bad735ee39f30f66cae9b28c91fc273d57a3a4a4e280370bfdc4858e",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
-      "inBaselineManifest": false
+      "recordedSHA256": "5c4c2501aa1043323debac9a5d48cb65d545b1de90baed8450a1b72183776c43",
+      "bytes": 11715,
+      "changedSinceReview": true,
+      "finalSourceSHA256": "5c4c2501aa1043323debac9a5d48cb65d545b1de90baed8450a1b72183776c43",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
+      "inBaselineManifest": false,
+      "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
+      "finalOwnerReviewSHA256": "5c4c2501aa1043323debac9a5d48cb65d545b1de90baed8450a1b72183776c43"
     },
     {
       "path": "ios/docs/audits/frontend-widget-2026-10/DESIGN_SYSTEM_V3.md",
@@ -5449,7 +6022,7 @@
       "bytes": 4560,
       "changedSinceReview": true,
       "finalSourceSHA256": "9c320f5da0183f5d7e7c493544ba2bd7543196d64769c32b216b9bceaafd5d4e",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "9c320f5da0183f5d7e7c493544ba2bd7543196d64769c32b216b9bceaafd5d4e"
@@ -5474,14 +6047,14 @@
       "changes": "New dated audit artifact",
       "tests": "JSON inventory/links/hash reconciliation; report content does not constitute runtime verification",
       "disposition": "Preserve historical baseline evidence and explicit source/runtime/physical-device distinctions",
-      "recordedSHA256": "7296775aeba637e2e4ea8a0ddea9b16e9578bbdc8665750dc5f99a7b0cf749de",
-      "bytes": 11469,
+      "recordedSHA256": "8f0d1be50c12219a569b930236e81c0acf4a68f9dfd20193d15424add6b0f70b",
+      "bytes": 11723,
       "changedSinceReview": true,
-      "finalSourceSHA256": "7296775aeba637e2e4ea8a0ddea9b16e9578bbdc8665750dc5f99a7b0cf749de",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "finalSourceSHA256": "8f0d1be50c12219a569b930236e81c0acf4a68f9dfd20193d15424add6b0f70b",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
-      "finalOwnerReviewSHA256": "7296775aeba637e2e4ea8a0ddea9b16e9578bbdc8665750dc5f99a7b0cf749de"
+      "finalOwnerReviewSHA256": "8f0d1be50c12219a569b930236e81c0acf4a68f9dfd20193d15424add6b0f70b"
     },
     {
       "path": "ios/docs/audits/frontend-widget-2026-10/FILE_LEDGER.md",
@@ -5502,7 +6075,7 @@
       "bytes": null,
       "changedSinceReview": null,
       "finalSourceSHA256": null,
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "hashNote": "Self-referential generated ledger hashes are recorded out of band after generation, not recursively embedded."
     },
@@ -5530,7 +6103,7 @@
       "bytes": 3009,
       "changedSinceReview": false,
       "finalSourceSHA256": "794bed22850d4a84d856607068975d77c53d9f8f9deb10663cad72dfb1abbc0e",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -5557,7 +6130,7 @@
       "bytes": 11774,
       "changedSinceReview": true,
       "finalSourceSHA256": "b8ea48b13caabe258fb55dd8d5e0108a4ac73ee2b7098afca86998d378672ce9",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "b8ea48b13caabe258fb55dd8d5e0108a4ac73ee2b7098afca86998d378672ce9"
@@ -5586,7 +6159,7 @@
       "bytes": 21909,
       "changedSinceReview": false,
       "finalSourceSHA256": "3b0dccae0346a5f8fc656b54e940289af8b9b96cee2f68c119914a1c982e1629",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -5609,14 +6182,14 @@
       "changes": "New dated audit artifact",
       "tests": "JSON inventory/links/hash reconciliation; report content does not constitute runtime verification",
       "disposition": "Preserve historical baseline evidence and explicit source/runtime/physical-device distinctions",
-      "recordedSHA256": "f671d643c2c1b5f44be27fd2ce0bae3695c56d218c08f2bb85c655ab3e24ba50",
-      "bytes": 18004,
+      "recordedSHA256": "3ccf4e55a0c4ea4c41fdddbe4dbde12536b154a70c47ff2a3dfdbf0dde054376",
+      "bytes": 18642,
       "changedSinceReview": true,
-      "finalSourceSHA256": "f671d643c2c1b5f44be27fd2ce0bae3695c56d218c08f2bb85c655ab3e24ba50",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "finalSourceSHA256": "3ccf4e55a0c4ea4c41fdddbe4dbde12536b154a70c47ff2a3dfdbf0dde054376",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
-      "finalOwnerReviewSHA256": "f671d643c2c1b5f44be27fd2ce0bae3695c56d218c08f2bb85c655ab3e24ba50"
+      "finalOwnerReviewSHA256": "3ccf4e55a0c4ea4c41fdddbe4dbde12536b154a70c47ff2a3dfdbf0dde054376"
     },
     {
       "path": "ios/docs/audits/frontend-widget-2026-10/WIDGETKIT_ARCHITECTURE.md",
@@ -5642,7 +6215,7 @@
       "bytes": 14505,
       "changedSinceReview": true,
       "finalSourceSHA256": "5a83fc8752868886363d7e797410b10b4c2f6bf14d3ce699a2c973ed2205d8a4",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "finalReviewNote": "Prior full-read hash retained for provenance. Root reviewed the authored changes and final evidence during implementation; finalSourceSHA256 identifies the settled output without rewriting historical read versions.",
       "finalOwnerReviewSHA256": "5a83fc8752868886363d7e797410b10b4c2f6bf14d3ce699a2c973ed2205d8a4"
@@ -5666,7 +6239,7 @@
       "bytes": null,
       "changedSinceReview": null,
       "finalSourceSHA256": null,
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "hashNote": "Self-referential generated ledger hashes are recorded out of band after generation, not recursively embedded."
     },
@@ -5689,7 +6262,7 @@
       "bytes": 754,
       "changedSinceReview": false,
       "finalSourceSHA256": "0023cdb13ef869154ebef683ae5a0a77c5e04edfde182b09e4b9fec01a5d2ea4",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -5715,7 +6288,7 @@
       "bytes": 286301,
       "changedSinceReview": false,
       "finalSourceSHA256": "13c16f37921956d555fc86c11541ae5b50620372de2f45d9b351de81c3a41678",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -5741,7 +6314,7 @@
       "bytes": 285789,
       "changedSinceReview": false,
       "finalSourceSHA256": "83cfa1d92bd6026413e01ad06da61177428f509a4c8d231d14b6189eb04d6b2e",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -5767,7 +6340,7 @@
       "bytes": 797041,
       "changedSinceReview": false,
       "finalSourceSHA256": "c94b99da62ee97680b8cee9512179f6d729d319b260a7031cca175b33a4968d9",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -5793,7 +6366,7 @@
       "bytes": 276084,
       "changedSinceReview": false,
       "finalSourceSHA256": "82ef5a4e9e2f658ea9f4c5b5086e1646cdcf6a0427c5c58087d71ca59ef071ca",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -5819,7 +6392,7 @@
       "bytes": 259817,
       "changedSinceReview": false,
       "finalSourceSHA256": "7fa2af7bb51bba59ee0c5c06b21079fbba45adeac254253960e8c69fd2fa4f33",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -5845,7 +6418,7 @@
       "bytes": 240058,
       "changedSinceReview": false,
       "finalSourceSHA256": "70ae69835521fc7c2c93f9cf3652ab1d7d34a43e95dac007325c5438b94dceb1",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -5871,7 +6444,7 @@
       "bytes": 323599,
       "changedSinceReview": false,
       "finalSourceSHA256": "a75582e55200c189abd3bd08f2d43de91d2e18ba2f0a6336585ca69e65805730",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -5897,7 +6470,7 @@
       "bytes": 195123,
       "changedSinceReview": false,
       "finalSourceSHA256": "9ca03aa3ed0f0d74d85501b7df630a96abee1fdaeee633c78a6e047dfe99e3ef",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -5923,7 +6496,7 @@
       "bytes": 247707,
       "changedSinceReview": false,
       "finalSourceSHA256": "c814573309de270fd43a523fc2469e496c4203faa5342f176529758377ba6540",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -5949,7 +6522,7 @@
       "bytes": 274038,
       "changedSinceReview": false,
       "finalSourceSHA256": "aaf267bfc0aa424bafea28899a670379b17b0d638127a008779cda0b4591b759",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -5975,7 +6548,7 @@
       "bytes": 797229,
       "changedSinceReview": false,
       "finalSourceSHA256": "de4f198281f1b16e3cc8f394f7dbf2992315c3ac365e347adf92c981bdee81c8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6001,7 +6574,7 @@
       "bytes": 254620,
       "changedSinceReview": false,
       "finalSourceSHA256": "954fb41f9d23f953c847e31c179f1fbde6fbfe9dab8af3767ab5e27088dd892c",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6027,7 +6600,7 @@
       "bytes": 361482,
       "changedSinceReview": false,
       "finalSourceSHA256": "a023a775974c7b85fff5043367a012c0e4383adf78bbdf3d25c2a5851625d333",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6053,7 +6626,7 @@
       "bytes": 230121,
       "changedSinceReview": false,
       "finalSourceSHA256": "93e527d969aa317fc1017133d702d88bddc514ac08143733e69955c7e0ac1de5",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6079,7 +6652,7 @@
       "bytes": 246591,
       "changedSinceReview": false,
       "finalSourceSHA256": "4b23b0c5dc6d67e1c445c852d986ef7aa0ffde47285f661c875c24a127d5c551",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6105,7 +6678,7 @@
       "bytes": 246624,
       "changedSinceReview": false,
       "finalSourceSHA256": "0264dc637db233617f4dfbb23b527ea804ecea9857a31f73578fc62808ae24d3",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6131,7 +6704,7 @@
       "bytes": 246343,
       "changedSinceReview": false,
       "finalSourceSHA256": "124c7eb023ec59d71144164bc11b287f9f9292f3adff71dfccfdc390b3b0cf86",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6157,7 +6730,7 @@
       "bytes": 792066,
       "changedSinceReview": false,
       "finalSourceSHA256": "def16de8379ec75d08b7cb4eac5612b0b17896619e71c6fdc90797934a0d290a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6183,7 +6756,7 @@
       "bytes": 260968,
       "changedSinceReview": false,
       "finalSourceSHA256": "4c1ab37923fbba82c164616ba8ec45042a4b8b5e79d2c48aba462993a00aea54",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6209,7 +6782,7 @@
       "bytes": 253477,
       "changedSinceReview": false,
       "finalSourceSHA256": "6ca1c80c71cab2db5e3697ee0adf49fc49ddcbeb4b2e2b34b6a6c39e7ef3c046",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6235,7 +6808,7 @@
       "bytes": 248231,
       "changedSinceReview": false,
       "finalSourceSHA256": "fd64d0fc0521794db623f4f04b29bc53dd4398fba691371fcd543cf0219d1434",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6261,7 +6834,7 @@
       "bytes": 329340,
       "changedSinceReview": false,
       "finalSourceSHA256": "f3b2c8f983ee62a4347aa66ecf2331395d7428b83b8de84fb8f9af9eb7ef5021",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6287,7 +6860,7 @@
       "bytes": 193997,
       "changedSinceReview": false,
       "finalSourceSHA256": "c5f4da73f63a1da7a8c44bdc5bec0fb646fea9117cf0f80af98b409ebb47b10e",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6313,7 +6886,7 @@
       "bytes": 235540,
       "changedSinceReview": false,
       "finalSourceSHA256": "7ef8a06c296a35284b1a8ea5fe21ab6b5169d4f5513a4a3813f72ffd14e45a9e",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6339,7 +6912,7 @@
       "bytes": 253897,
       "changedSinceReview": false,
       "finalSourceSHA256": "e185c386767bac63aaca3740a316e7bbb2caad4b255d5821d416c1d7ab4ecfc9",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6365,7 +6938,7 @@
       "bytes": 792076,
       "changedSinceReview": false,
       "finalSourceSHA256": "dc852d7114b948da0d9326619437fb7454698980ae6128d5d4862ced643c373d",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6391,7 +6964,7 @@
       "bytes": 253834,
       "changedSinceReview": false,
       "finalSourceSHA256": "810e34bf422afb2ca9bfe335188242368ede3faee0a416442ed7eed7d05ae816",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6417,7 +6990,7 @@
       "bytes": 366180,
       "changedSinceReview": false,
       "finalSourceSHA256": "3716fc3791f316ca826d252f4e5ed91189989ba6ca53d3f1d7d3cfc8744a9667",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6443,7 +7016,7 @@
       "bytes": 238144,
       "changedSinceReview": false,
       "finalSourceSHA256": "043b6adbe574cd70401da804c18622f73201e1afd4e1adef521ae91417821ee2",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6469,7 +7042,7 @@
       "bytes": 255968,
       "changedSinceReview": false,
       "finalSourceSHA256": "32c6763940a4b00ed3bd8744dd7074375aab437ae0536c246a13f80cc6ae1095",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6495,7 +7068,7 @@
       "bytes": 255512,
       "changedSinceReview": false,
       "finalSourceSHA256": "113b336bf608f7971bf9268ed6c2746a007553c714bef0403f7d69ba9ccc03a2",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6521,7 +7094,7 @@
       "bytes": 255378,
       "changedSinceReview": false,
       "finalSourceSHA256": "9c36f2db786267f3add60a1b314858d5085b9197ac71afa1b2d501e46e5c9b7e",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6543,7 +7116,7 @@
       "bytes": 1270460,
       "changedSinceReview": false,
       "finalSourceSHA256": "d95372b06567b3e03b1d30afa9b971377336343b2b79da137912eb7773d4dfdb",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "dimensions": [
         1206,
@@ -6569,7 +7142,7 @@
       "bytes": 259603,
       "changedSinceReview": false,
       "finalSourceSHA256": "b4737ba0c2c944daafa2e0233ffb27c152ee1202c4cb0b3f1f8b762dcd707fca",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "dimensions": [
         1206,
@@ -6595,7 +7168,7 @@
       "bytes": 251896,
       "changedSinceReview": false,
       "finalSourceSHA256": "1fc4e9699b46b234d51c36dcb4ece9ef5d7789ee66219d438ca3577a4ed35535",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "dimensions": [
         1206,
@@ -6621,7 +7194,7 @@
       "bytes": 247006,
       "changedSinceReview": false,
       "finalSourceSHA256": "e543fd1e2cb334f342e5257da10735d28219e5da0f87baf97663de70781ea4a5",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "dimensions": [
         1206,
@@ -6647,7 +7220,7 @@
       "bytes": 327735,
       "changedSinceReview": false,
       "finalSourceSHA256": "5ded3dda69307e9b3bf02179e4bf0524370df57ab13e4dd0c142b68c09172646",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "dimensions": [
         1206,
@@ -6673,7 +7246,7 @@
       "bytes": 192506,
       "changedSinceReview": false,
       "finalSourceSHA256": "0fe19cc8ae68c04fd43dd29eb3e76af536657cf2dc7a69d31b07ccc593a96ca7",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "dimensions": [
         1206,
@@ -6699,7 +7272,7 @@
       "bytes": 234248,
       "changedSinceReview": false,
       "finalSourceSHA256": "f722eb8485aeaa6d86f320d40249a5a0422c3a2c7a67b3aae5d88dffe1d54a10",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "dimensions": [
         1206,
@@ -6725,7 +7298,7 @@
       "bytes": 252713,
       "changedSinceReview": false,
       "finalSourceSHA256": "0e7994fd37ea2999fd8a1712241a26e695654dd38815ad85b38c8b23cab59a21",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "dimensions": [
         1206,
@@ -6751,7 +7324,7 @@
       "bytes": 1273718,
       "changedSinceReview": false,
       "finalSourceSHA256": "080d15c9afd02207653ef64f890e38f09ff94e883020f31d5520c334816ccc38",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "dimensions": [
         1206,
@@ -6777,7 +7350,7 @@
       "bytes": 3817,
       "changedSinceReview": false,
       "finalSourceSHA256": "81791a868c8ead0f701bbea74998cdc8cf0fffe1d880ee4881daf55e85eb7070",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6799,7 +7372,7 @@
       "bytes": 69192,
       "changedSinceReview": false,
       "finalSourceSHA256": "eeb5c1e24369817713aedf4b9f1d0a7ed8fe85ab5eaedeeb5e3660ecb894076a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6825,7 +7398,7 @@
       "bytes": 7687,
       "changedSinceReview": false,
       "finalSourceSHA256": "40c35528fe1a07a4e62a78476518080876e883a6a53d582106bf7886643d6c36",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6851,7 +7424,7 @@
       "bytes": 11907,
       "changedSinceReview": false,
       "finalSourceSHA256": "b2693d269c7de3a15cdc58d6b1f9e1b0511a7796d5f095e9132846a101e64c33",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6877,7 +7450,7 @@
       "bytes": 78484,
       "changedSinceReview": false,
       "finalSourceSHA256": "ab791e1c54dc263a5b45cd15e8a1c17a49c9eec0f1a9e5221d7c7f6cf2a75506",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6903,7 +7476,7 @@
       "bytes": 49020,
       "changedSinceReview": false,
       "finalSourceSHA256": "b8134f7d668afd5075e66f0aa3fd73b4c64725eef6867b9ced4eda16180dfa76",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6929,7 +7502,7 @@
       "bytes": 19715,
       "changedSinceReview": false,
       "finalSourceSHA256": "076e85f919464d0f8d7bce543d19a634ab81842b512043bc62a8af88664069dc",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6955,7 +7528,7 @@
       "bytes": 29920,
       "changedSinceReview": false,
       "finalSourceSHA256": "5d1b74af197ef6f81c4e5fda976fc1cec4eb3fdc6eab56a4f5de30b53a711d95",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -6981,7 +7554,7 @@
       "bytes": 7312,
       "changedSinceReview": false,
       "finalSourceSHA256": "9e76d2ecd00233c412b995bbe27c5e547125976fc6800af226718364eecfd721",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7007,7 +7580,7 @@
       "bytes": 10500,
       "changedSinceReview": false,
       "finalSourceSHA256": "c6ae741b529acc305e34507c8c527202ad0eef792d558376bbbce2f7702449e6",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7033,7 +7606,7 @@
       "bytes": 66967,
       "changedSinceReview": false,
       "finalSourceSHA256": "26649d2671dfc77bee46d54373ad962ddd27a7150bfcdd9e0055ea09e0a810c8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7059,7 +7632,7 @@
       "bytes": 49746,
       "changedSinceReview": false,
       "finalSourceSHA256": "937651b1282b3949e85a1d24ab34bb454ba99c919b4d12c41da64c1f8d7ca481",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7085,7 +7658,7 @@
       "bytes": 13465,
       "changedSinceReview": false,
       "finalSourceSHA256": "33e290c6b39099614467924612cff9e2ce788135c8725c4ae44c21a0f7c9aa4e",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7111,7 +7684,7 @@
       "bytes": 22562,
       "changedSinceReview": false,
       "finalSourceSHA256": "5d20b1c2e0c1bfab25841298a2a6540d276945bbd49511b38b68f1807b02b66b",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7137,7 +7710,7 @@
       "bytes": 4235,
       "changedSinceReview": false,
       "finalSourceSHA256": "b05c925f247191cb952a6db66ae08e3c6c0548e6c3965bca4e6bfeab8e934514",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7163,7 +7736,7 @@
       "bytes": 9332,
       "changedSinceReview": false,
       "finalSourceSHA256": "067c1cd089cb6a307a8966641c80dbaa3e2fefb1ddd70b28689a35a48ec740a6",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7189,7 +7762,7 @@
       "bytes": 43758,
       "changedSinceReview": false,
       "finalSourceSHA256": "3aa58dad5e64bdbd55cafbb659cd8ff596187c678564940677442997742c1d78",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7215,7 +7788,7 @@
       "bytes": 28369,
       "changedSinceReview": false,
       "finalSourceSHA256": "b0566300ecffde1034353df613a0ce040422080b8cfba77bf8949ada41d18a76",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7241,7 +7814,7 @@
       "bytes": 12310,
       "changedSinceReview": false,
       "finalSourceSHA256": "d233b244dc03ae8534226874dd99734ecee669b765d415fd2c0361bbcfcc07a9",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7267,7 +7840,7 @@
       "bytes": 22203,
       "changedSinceReview": false,
       "finalSourceSHA256": "542bee557510d5363cfcf1ab126a7a2c5b72b6cd8cf199d25cbf5a8d81017106",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7293,7 +7866,7 @@
       "bytes": 5560,
       "changedSinceReview": false,
       "finalSourceSHA256": "61bc0657b7819dddcf492fd09c7b791e79a80e52cede0b5dc3dd2e01485bed13",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7319,7 +7892,7 @@
       "bytes": 10401,
       "changedSinceReview": false,
       "finalSourceSHA256": "995bb30fed6e08ebebb349b8cd0e635a6f95ae0b16c003c7b5f5b6e0407878d4",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7345,7 +7918,7 @@
       "bytes": 47459,
       "changedSinceReview": false,
       "finalSourceSHA256": "32f5ee33d6c9a4258119812967997cb7f244e5a96cb32293f79a3a23b138a450",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7371,7 +7944,7 @@
       "bytes": 31937,
       "changedSinceReview": false,
       "finalSourceSHA256": "7906a430faa2515538955f743c19fa39ab7a54edaa34dd3cd0f76ecefe7abab8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7397,7 +7970,7 @@
       "bytes": 17060,
       "changedSinceReview": false,
       "finalSourceSHA256": "7d75c277cd7b6fcc0c289f3e7962efa9ed810d1e9616df8002b7030721c3453f",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7423,7 +7996,7 @@
       "bytes": 26382,
       "changedSinceReview": false,
       "finalSourceSHA256": "2b7089fb662c8954e5dcb954c517b05d1ab7916f85c0b74f38d7c5800609792a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7449,7 +8022,7 @@
       "bytes": 97382,
       "changedSinceReview": false,
       "finalSourceSHA256": "804e087f2b782c15e8d1aa3773445d6ea9e2ace0f4037917621f5434cc9e9564",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7475,7 +8048,7 @@
       "bytes": 111576,
       "changedSinceReview": false,
       "finalSourceSHA256": "e732bbf0aea38e02b15e32818611159ccb35eff0ae682c2212814924a483b137",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7501,7 +8074,7 @@
       "bytes": 7687,
       "changedSinceReview": false,
       "finalSourceSHA256": "40c35528fe1a07a4e62a78476518080876e883a6a53d582106bf7886643d6c36",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7527,7 +8100,7 @@
       "bytes": 12069,
       "changedSinceReview": false,
       "finalSourceSHA256": "7d271c80d7e2229638e8e9293fa1190e07cff5d700b49446b3e437bce84e6e7a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7553,7 +8126,7 @@
       "bytes": 77352,
       "changedSinceReview": false,
       "finalSourceSHA256": "45a58c43adc4473a5f53827d14b743a0ec33e057cd1d9701ac9d9118b0e0ee7a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7579,7 +8152,7 @@
       "bytes": 54573,
       "changedSinceReview": false,
       "finalSourceSHA256": "698602291d45baf25a25e553c02e7fbe560562e4b6b348b17091a41bb5ff24aa",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7605,7 +8178,7 @@
       "bytes": 19091,
       "changedSinceReview": false,
       "finalSourceSHA256": "a4d14e32a4c883177f63fd39c379c566f817fd56f0f2d2446bfae7ff9eeb29b1",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7631,7 +8204,7 @@
       "bytes": 30782,
       "changedSinceReview": false,
       "finalSourceSHA256": "e9c55d40232324a467f6cf56dde45766ca281aeef46e56ebd7c3c91f357d7739",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7657,7 +8230,7 @@
       "bytes": 50857,
       "changedSinceReview": false,
       "finalSourceSHA256": "a1892e1369eb157ae367cd729508905bd81117bebaaed66f3d7db79ef8f0d659",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7683,7 +8256,7 @@
       "bytes": 56358,
       "changedSinceReview": false,
       "finalSourceSHA256": "0b2d0e25483c988c09e057e448db011aa6878fdd1eab8603f14db9668b500f0a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7709,7 +8282,7 @@
       "bytes": 2515,
       "changedSinceReview": false,
       "finalSourceSHA256": "719dd8b32cb2106ae034596bcbb65397b653384def7994be843a6e0e736bf8a1",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7735,7 +8308,7 @@
       "bytes": 2818,
       "changedSinceReview": false,
       "finalSourceSHA256": "9554ac34a6451f70b8bac88bc9a99035f3b4a3c48d764bfc7f422558718e86b8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7761,7 +8334,7 @@
       "bytes": 29571,
       "changedSinceReview": false,
       "finalSourceSHA256": "42a761305d6630d532ec467356cc29b154c34651d00b5586ad595c317e09f27c",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7787,7 +8360,7 @@
       "bytes": 14556,
       "changedSinceReview": false,
       "finalSourceSHA256": "584133caf498046a33fa6958f29f1ae09bcdbc32378adf9ce2e7069a89663d18",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7813,7 +8386,7 @@
       "bytes": 4022,
       "changedSinceReview": false,
       "finalSourceSHA256": "74c93033ff9d9732f8211b3716a52d9f750f2a6fcaaedab6a951ff0ac7296386",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7839,7 +8412,7 @@
       "bytes": 9124,
       "changedSinceReview": false,
       "finalSourceSHA256": "5dd579755136e92d1339cd40602bd9a4552cf27da5405a4839b4f35040f6e492",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7865,7 +8438,7 @@
       "bytes": 7687,
       "changedSinceReview": false,
       "finalSourceSHA256": "40c35528fe1a07a4e62a78476518080876e883a6a53d582106bf7886643d6c36",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7891,7 +8464,7 @@
       "bytes": 12069,
       "changedSinceReview": false,
       "finalSourceSHA256": "7d271c80d7e2229638e8e9293fa1190e07cff5d700b49446b3e437bce84e6e7a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7917,7 +8490,7 @@
       "bytes": 76385,
       "changedSinceReview": false,
       "finalSourceSHA256": "ec989253b8090a2dbe2f7ef45f8526034d5222043c176968efcb67a116429e28",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7943,7 +8516,7 @@
       "bytes": 50453,
       "changedSinceReview": false,
       "finalSourceSHA256": "37262ab387464b89543119fe6f07d2271d2929c136563f1354b6f528d46bb87c",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7969,7 +8542,7 @@
       "bytes": 19017,
       "changedSinceReview": false,
       "finalSourceSHA256": "94056b26a59886d6720cadeb5449a490b635d35db165b5aaca803b531fd096ff",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -7995,7 +8568,7 @@
       "bytes": 29089,
       "changedSinceReview": false,
       "finalSourceSHA256": "3515744c1050d9632a0da1d4323e206cecbf8fe56c0bd916ad5cdd8c3907a577",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8021,7 +8594,7 @@
       "bytes": 27012,
       "changedSinceReview": false,
       "finalSourceSHA256": "8f710dcc32b9dc324df66da00d3f153850dc63e52452dca0548acdbc94f6ab28",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8047,7 +8620,7 @@
       "bytes": 22479,
       "changedSinceReview": false,
       "finalSourceSHA256": "772b1ac362105c90c557e013f979f6ce3e0c144b71f281347503c98e3cef9316",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8073,7 +8646,7 @@
       "bytes": 5461,
       "changedSinceReview": false,
       "finalSourceSHA256": "0f6a90b1d5e5d52b0e71a3e12783bade5c7375d125ab4f25de5a3258f10667e2",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8099,7 +8672,7 @@
       "bytes": 10141,
       "changedSinceReview": false,
       "finalSourceSHA256": "9d8d1e3dd6bc18b3494beaa6fd0b6a307269318b0e08c98f4a6fd72b57705a05",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8125,7 +8698,7 @@
       "bytes": 48362,
       "changedSinceReview": false,
       "finalSourceSHA256": "0e46103039aa30b3f0a571a7e402fdce80774f0ac06e64fa9cbeb4096609a6d8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8151,7 +8724,7 @@
       "bytes": 32872,
       "changedSinceReview": false,
       "finalSourceSHA256": "8f7dcac79c9c3eb30dc4cf3dedc4e774729ab1772cf36a05d312d5a65e46aced",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8177,7 +8750,7 @@
       "bytes": 13635,
       "changedSinceReview": false,
       "finalSourceSHA256": "9656f0f5c84fa4b0809008148366f97cc888d9dee161d216dfa5c41998114ce4",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8203,7 +8776,7 @@
       "bytes": 27707,
       "changedSinceReview": false,
       "finalSourceSHA256": "ab61fd5c2547786bef694931f12b5ad9a4cc2f404a9aff7769563c4c71a02cc6",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8229,7 +8802,7 @@
       "bytes": 4823,
       "changedSinceReview": false,
       "finalSourceSHA256": "2f80f2d362de2b6f4fdccdd86edfef6f674ff06ebecce8f3e2041611dfd64790",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8255,7 +8828,7 @@
       "bytes": 9744,
       "changedSinceReview": false,
       "finalSourceSHA256": "7bf6f7c8cdde5e503dd1f1b1f5f9dc607c74fd71517ecbd718cc313279c58238",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8281,7 +8854,7 @@
       "bytes": 47764,
       "changedSinceReview": false,
       "finalSourceSHA256": "a2af1bedfe8716245704250925cc4acf01017a50fbdd52477f812100d2a0be4a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8307,7 +8880,7 @@
       "bytes": 32229,
       "changedSinceReview": false,
       "finalSourceSHA256": "ff41ff240007543b7de069844efb42720778b9a74c6d4f3bd3255bfc85ff524a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8333,7 +8906,7 @@
       "bytes": 13228,
       "changedSinceReview": false,
       "finalSourceSHA256": "a4b1c3e4d241491eb4d5e91d1bf2e1637f1d23f2b347163dab7f430e7cf1deb8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8359,7 +8932,7 @@
       "bytes": 27153,
       "changedSinceReview": false,
       "finalSourceSHA256": "ee43c0573d9363264a6471a4d70ffe777926ee6e590c1ae9a37e4a0fa3b27f84",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8385,7 +8958,7 @@
       "bytes": 7353,
       "changedSinceReview": false,
       "finalSourceSHA256": "283fc2eba5604fafa3138ec416e5c626e79c370ba52620990596b454ac6c1cb9",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8411,7 +8984,7 @@
       "bytes": 11679,
       "changedSinceReview": false,
       "finalSourceSHA256": "7ea459c67d919e82e3c444989303f7e286bcf2c8fc6396e20951463c8ae583ca",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8437,7 +9010,7 @@
       "bytes": 73973,
       "changedSinceReview": false,
       "finalSourceSHA256": "3ea1d53455dc8f225bfbd83f9de3d28dad733ebb9a7bc545a441ee5b418e66a8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8463,7 +9036,7 @@
       "bytes": 46080,
       "changedSinceReview": false,
       "finalSourceSHA256": "5603e5e90f2bb1b806a6b5bbdfea9832ee24bc439f34b9f1308ab14cea483032",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8489,7 +9062,7 @@
       "bytes": 19326,
       "changedSinceReview": false,
       "finalSourceSHA256": "8b92a82300453243da07bb928605ea35d124e27b9bd3f7f6e2ba779bfa59f560",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8515,7 +9088,7 @@
       "bytes": 28687,
       "changedSinceReview": false,
       "finalSourceSHA256": "798643a2fd7f84bbe6b73c83abe6b423fdbd1d39191f34178be52d556b010c30",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8541,7 +9114,7 @@
       "bytes": 6646,
       "changedSinceReview": false,
       "finalSourceSHA256": "836191cd7bfdc0ece47dd779ad806f0657826d7e11dabc2babba256f16db9ba7",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8567,7 +9140,7 @@
       "bytes": 10216,
       "changedSinceReview": false,
       "finalSourceSHA256": "6bc4af5dc720cc71d7adecf299f9383b40cd6ba6e55dcf0f413ac4345142194c",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8593,7 +9166,7 @@
       "bytes": 62325,
       "changedSinceReview": false,
       "finalSourceSHA256": "3f41c72f51016b3bdae6e21c155c7638c49e2078b68f581a8b73a289d2f86e5b",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8619,7 +9192,7 @@
       "bytes": 46657,
       "changedSinceReview": false,
       "finalSourceSHA256": "7cb711135c2b4c361012a4587d8901ebdb0b18d9f55ba228c274202127bdde2a",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8645,7 +9218,7 @@
       "bytes": 13251,
       "changedSinceReview": false,
       "finalSourceSHA256": "0f4df2416f1ebe66e738bffa1b8a2e4a57793edf1dc460a09c7793c9b9683fea",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8671,7 +9244,7 @@
       "bytes": 21391,
       "changedSinceReview": false,
       "finalSourceSHA256": "9de9c4430d1212f286365a0b155e20e1449f6602f91291147ee63dc287db9143",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8697,7 +9270,7 @@
       "bytes": 4050,
       "changedSinceReview": false,
       "finalSourceSHA256": "7c1085b711daa0612e1fe5ecd86b8ab9bfabe92e1e2d5bc78ad22017d2c1c7a6",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8723,7 +9296,7 @@
       "bytes": 8887,
       "changedSinceReview": false,
       "finalSourceSHA256": "ab0a281895e08567fabf80cdf8318cd69f746b319986f585a518a49d1d56b5ea",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8749,7 +9322,7 @@
       "bytes": 40477,
       "changedSinceReview": false,
       "finalSourceSHA256": "fddcf5f6722945771037772df761e3fe4c79cd9d648bc56211a2a57773ebb8f8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8775,7 +9348,7 @@
       "bytes": 26683,
       "changedSinceReview": false,
       "finalSourceSHA256": "f0bdad04e04147549e50b4ff595153330367750eda228f71660515a77ca3d5d0",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8801,7 +9374,7 @@
       "bytes": 12165,
       "changedSinceReview": false,
       "finalSourceSHA256": "bd4532e3ed515fb7326d173a980b83bb98c2a02c414c0c223b342d67aa93e1e3",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8827,7 +9400,7 @@
       "bytes": 21254,
       "changedSinceReview": false,
       "finalSourceSHA256": "3988d61b62fb433245e5d35d3f5af4543f7d6236c8d3b07ef2804e78094a0dec",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8853,7 +9426,7 @@
       "bytes": 5311,
       "changedSinceReview": false,
       "finalSourceSHA256": "78288794d01fdbd58f6c258a852524bfa67beb7ec2c5506d4bcc664d1bdacdad",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8879,7 +9452,7 @@
       "bytes": 9992,
       "changedSinceReview": false,
       "finalSourceSHA256": "663a1f1ad226e8710912e8ef25549e4a077acfec120223e9ce21838baaeded24",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8905,7 +9478,7 @@
       "bytes": 43874,
       "changedSinceReview": false,
       "finalSourceSHA256": "a9e34e45199d9d3bc31e0440bff4f7198da832274ef202af2e57e843c75e7393",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8931,7 +9504,7 @@
       "bytes": 29953,
       "changedSinceReview": false,
       "finalSourceSHA256": "f5dbdb98302dcd1afc752671331db95ffb32146f72c6ab64a3cd6d5887bf323e",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8957,7 +9530,7 @@
       "bytes": 16661,
       "changedSinceReview": false,
       "finalSourceSHA256": "db31619532641c235925cb016f77b580842e9fb5238424b8d6b0fe90c854bde7",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -8983,7 +9556,7 @@
       "bytes": 25404,
       "changedSinceReview": false,
       "finalSourceSHA256": "2dfc173dbcd0ccd2af6b6131bff78d6c4828a35dc6d6a87ec61260d134ba52d8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9009,7 +9582,7 @@
       "bytes": 92017,
       "changedSinceReview": false,
       "finalSourceSHA256": "2adc3cb0588cc72839578b5c8d5dcfd86228b6d818f8e2ac151b80ec861f2c9e",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9035,7 +9608,7 @@
       "bytes": 105143,
       "changedSinceReview": false,
       "finalSourceSHA256": "6245bc09e93178849b66188605de893b222eacd03f185ff2a65376db4886658d",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9061,7 +9634,7 @@
       "bytes": 7353,
       "changedSinceReview": false,
       "finalSourceSHA256": "283fc2eba5604fafa3138ec416e5c626e79c370ba52620990596b454ac6c1cb9",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9087,7 +9660,7 @@
       "bytes": 11758,
       "changedSinceReview": false,
       "finalSourceSHA256": "3ff167ffe3a3e1205dc2b37adb9f8ff070a90f6b4562d43845fc255e4b7961c5",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9113,7 +9686,7 @@
       "bytes": 73020,
       "changedSinceReview": false,
       "finalSourceSHA256": "c7c52e112c01dd49ed0a624681e98f5cab0f18cf90d6801e513acf7419537b8d",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9139,7 +9712,7 @@
       "bytes": 51754,
       "changedSinceReview": false,
       "finalSourceSHA256": "1742f7a2b63580f14dabe740c5db9d8f61604ff3b2a654e61acb0b632d9d43fb",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9165,7 +9738,7 @@
       "bytes": 18723,
       "changedSinceReview": false,
       "finalSourceSHA256": "c2b3479c2800d09474162a30775dd3e002a16e412f8bd9904af6e2fe379301f7",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9191,7 +9764,7 @@
       "bytes": 29631,
       "changedSinceReview": false,
       "finalSourceSHA256": "9a57f18458bb406e8b9b0a381ee393dc4dc3243909e6fb6b8dcbb78865262f60",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9217,7 +9790,7 @@
       "bytes": 48009,
       "changedSinceReview": false,
       "finalSourceSHA256": "b552c152bb800ed411e02a247e277ddda85e6fccc13539a817dda45d84be0358",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9243,7 +9816,7 @@
       "bytes": 53666,
       "changedSinceReview": false,
       "finalSourceSHA256": "dfbbef67a4d11a57ad0a3ca670c738b445c735200040a544e88f64cb442a98b8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9269,7 +9842,7 @@
       "bytes": 2247,
       "changedSinceReview": false,
       "finalSourceSHA256": "c2d3d295ae0d6e7290b183c1d8ce1d0bc4b7835895ebe020f059cceec1f36f0d",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9295,7 +9868,7 @@
       "bytes": 2661,
       "changedSinceReview": false,
       "finalSourceSHA256": "9444c64c403fd59d47bc3aedebae00363f49d66858bd68b5347e504804fbf46d",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9321,7 +9894,7 @@
       "bytes": 26594,
       "changedSinceReview": false,
       "finalSourceSHA256": "4b4f293c66cec6bbad9233769f1a68165e8ba69d1deb25ba657fca34e327f527",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9347,7 +9920,7 @@
       "bytes": 13031,
       "changedSinceReview": false,
       "finalSourceSHA256": "042742572daaf91dfccd19fb5d0ea00c31054426935f3f99519ceb4f6439a884",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9373,7 +9946,7 @@
       "bytes": 3865,
       "changedSinceReview": false,
       "finalSourceSHA256": "e184f253d705cdfc80ff016ff39b8e24f830813e6f493f18118ec243a7fb7e78",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9399,7 +9972,7 @@
       "bytes": 8549,
       "changedSinceReview": false,
       "finalSourceSHA256": "712d3fe0b4e699bba9c6e6c81ecf4aaf9cd6e703bf897dc37f91e51d259a7671",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9425,7 +9998,7 @@
       "bytes": 7353,
       "changedSinceReview": false,
       "finalSourceSHA256": "283fc2eba5604fafa3138ec416e5c626e79c370ba52620990596b454ac6c1cb9",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9451,7 +10024,7 @@
       "bytes": 11758,
       "changedSinceReview": false,
       "finalSourceSHA256": "3ff167ffe3a3e1205dc2b37adb9f8ff070a90f6b4562d43845fc255e4b7961c5",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9477,7 +10050,7 @@
       "bytes": 72045,
       "changedSinceReview": false,
       "finalSourceSHA256": "a92e9966ae3639582c26a896a46772a80fd5e9699d982a75e33131230abaddda",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9503,7 +10076,7 @@
       "bytes": 47511,
       "changedSinceReview": false,
       "finalSourceSHA256": "8d4a07df1363022cd63b8dd24cc958d6f1b60bcde85bc0e45acc7460c49613ad",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9529,7 +10102,7 @@
       "bytes": 18669,
       "changedSinceReview": false,
       "finalSourceSHA256": "908ad8e3906f2318e65867f9bde7e483ca22f1418131fbc19fb92a907750fc77",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9555,7 +10128,7 @@
       "bytes": 27982,
       "changedSinceReview": false,
       "finalSourceSHA256": "bcd827a4db23500a23aaefa85e04548dc246ba0b7454df03050158e66a8e381c",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9581,7 +10154,7 @@
       "bytes": 26049,
       "changedSinceReview": false,
       "finalSourceSHA256": "fc99589f0a18fc8ea0eacf9fe1b8461ccb27e51926bae8bfe1efbb9a43c2ca8b",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9607,7 +10180,7 @@
       "bytes": 21260,
       "changedSinceReview": false,
       "finalSourceSHA256": "c0c89f7efd15aa072f706cc378fefbd1af95aa0c40d4138354754f64a4a3ceae",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9633,7 +10206,7 @@
       "bytes": 5245,
       "changedSinceReview": false,
       "finalSourceSHA256": "a55119b2f663eea318ff73aad5e7dc693bcd06d8273eab3e13b91e4815a46af5",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9659,7 +10232,7 @@
       "bytes": 9820,
       "changedSinceReview": false,
       "finalSourceSHA256": "fbd63eb5ee8da5f8b342ddcda273f64b93af51dcea2ee67a2f06ae886c29e03f",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9685,7 +10258,7 @@
       "bytes": 44827,
       "changedSinceReview": false,
       "finalSourceSHA256": "6770e0c2e56ff4a7de680011f2015d648faf0c90bda7efb63983ebdf4342eeee",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9711,7 +10284,7 @@
       "bytes": 30938,
       "changedSinceReview": false,
       "finalSourceSHA256": "ba3830ea4ddbcd70f6c4605c851214e1bd68aae42377b6313cc68d04a9a05e10",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9737,7 +10310,7 @@
       "bytes": 13378,
       "changedSinceReview": false,
       "finalSourceSHA256": "b3989555e66ed330fd33b70aa2ed8d79bfb5a56927be354f9a3eb0f8852a5151",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9763,7 +10336,7 @@
       "bytes": 26347,
       "changedSinceReview": false,
       "finalSourceSHA256": "dd0f33baa483581ea8ef54a872c0764dfa903acd5de30307e168e32cb51d9d6e",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9789,7 +10362,7 @@
       "bytes": 4607,
       "changedSinceReview": false,
       "finalSourceSHA256": "707cd7edcc5a88a400a508861b2ed1f60f8ee808707ff67bef8ab1e17cd7da58",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9815,7 +10388,7 @@
       "bytes": 9386,
       "changedSinceReview": false,
       "finalSourceSHA256": "0b74961457748428948aed06827f6d4e57be597b76d880879bd02edc13645bf1",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9841,7 +10414,7 @@
       "bytes": 44125,
       "changedSinceReview": false,
       "finalSourceSHA256": "fcc12d1b760cd6cef0add839a8347d7fe8fd1c147f44cbf079f9575a8a0d83bb",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9867,7 +10440,7 @@
       "bytes": 30236,
       "changedSinceReview": false,
       "finalSourceSHA256": "7b99addb63046a12ef4a02019b7ae9abd813f2affb29b0fca2fa7cf270259aed",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9893,7 +10466,7 @@
       "bytes": 12849,
       "changedSinceReview": false,
       "finalSourceSHA256": "344adbc14e47e2dc39ca2a77404267cae60584b94b8137f81a524cdf89870d02",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9919,7 +10492,7 @@
       "bytes": 25638,
       "changedSinceReview": false,
       "finalSourceSHA256": "4c75cf85c3e4ea32c97188e89dc2c94ae536cb17ad0d871f9f07a76c1936a9c0",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9945,7 +10518,7 @@
       "bytes": 3256640,
       "changedSinceReview": false,
       "finalSourceSHA256": "8dd05910e83c94addffe5e3dd67a84c23606c37a8cd5a87c9b54032fe55266a5",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9971,7 +10544,7 @@
       "bytes": 2807959,
       "changedSinceReview": false,
       "finalSourceSHA256": "20593907608bf5ae6c96cd4e0b20f30fb0de09c1330b2822fdc3f4c0cef5b3be",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -9997,7 +10570,7 @@
       "bytes": 1771788,
       "changedSinceReview": false,
       "finalSourceSHA256": "420785e6876230855f3fd339144114afc053d0e3b47ea950735c0bb799c1a1db",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -10023,7 +10596,7 @@
       "bytes": 1863726,
       "changedSinceReview": false,
       "finalSourceSHA256": "7cd4571cde2f0f1365c44ed2fa61e5afa8964087313bb4cf0e202d1faf6422ef",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false
     },
     {
@@ -10052,7 +10625,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "ea2963ea1d25a066504dcab9a0adc792ff98c1ce3ce16faef3e01621820846ab",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/ACCESSIBILITY_MATRIX.md",
@@ -10084,7 +10657,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "d1e869a573897fc4e5f9a1cb05826000913cc4d9903ea98037c1dee10a5548d1",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/APPLE_RESEARCH.md",
@@ -10116,7 +10689,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "8b643d4197e7270b65cb8525a6cb7a5d1acad429570a67ce83545dbe5e5bb6ae",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/DESIGN_REVIEW.md",
@@ -10148,7 +10721,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "850fc9ca4a50acaed851bc2f4d3f8fc61a763302b1b1ac505850570817a75237",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/FILE_AUDIT.md",
@@ -10180,7 +10753,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "e0380141d0b7df4634d26b981b90c29526c8b7567d43541f558fb28b1748b9f8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/IMPLEMENTATION_REPORT.md",
@@ -10212,7 +10785,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "fba8584aeadc1c762d968e90f801d110289853ced9eec2354dbb941852735eed",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/MOTION_SPEC.md",
@@ -10244,7 +10817,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "4ee56895088e518bcc118f70699f859eb20c4cd0af3e7c9b486a3c891d571bd4",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/PERFORMANCE_RESULTS.md",
@@ -10276,7 +10849,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "9717f309e38f325ac669559c02de660235d34b25e780f31ed61f927a77e77c8d",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/REMAINING_GATES.md",
@@ -10308,7 +10881,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "2d69bd583897a1cafb6a1dfdefa772eb24445add512ed79a07a24b1f25248ceb",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/TEST_RESULTS.md",
@@ -10340,7 +10913,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "20ac826380bb508d761447464d540ab3d093d5f903c1738b69f5dbb9260a4145",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/screenshots/dark-01-today.jpg",
@@ -10367,7 +10940,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "aebf0d0fa8f4c59d6da29b589be70608c563aa12370b39d446caca87aa526d2d",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/screenshots/dark-02-plan.jpg",
@@ -10394,7 +10967,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "91354c744370e66a0d45f62e9f0db880aa60ae800c82fabf18e6b00dcbc3a001",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/screenshots/dark-03-routine-detail.jpg",
@@ -10421,7 +10994,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "2b42d3268b40649ccf62b681aca3892b9768f04a2960ab60e6a8318bebbd44dd",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/screenshots/dark-04-workout.jpg",
@@ -10448,7 +11021,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "a90747175502a5ed3bbd7e8651072e25f0ded7e38db5d04a81cf33ca83fc9f7b",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/screenshots/dark-05-set-completed-rest.jpg",
@@ -10475,7 +11048,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "bdb6d9bdb9cc326da9fcf1707576f27b3c3d17d4444b4cbdf6ac3299706cada1",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/screenshots/dark-06-receipt.jpg",
@@ -10502,7 +11075,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "e28a07477184b9ca04a4670465f950729f86d2dfcf55eb91862c483f29c4a48e",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/screenshots/dark-07-progress.jpg",
@@ -10529,7 +11102,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "541060c4badc93cef7964317f192317e08ac7f04828ae2c8e685a809c34055f8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/screenshots/dark-08-you.jpg",
@@ -10556,7 +11129,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "cdbaadb897af896546f3b3e7a5eaee5ced11cd974a88931f40d0fd105d69a973",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/screenshots/dark-09-today-after-workout.jpg",
@@ -10583,7 +11156,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "55e69ecc11a38474433bd7b1596bd51c996ce288a76cb34c79be292b33eb2bf3",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/screenshots/light-01-today.jpg",
@@ -10610,7 +11183,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "60f7ac41ded901fc385fb08f5536045099aa27702a4889f25fdd8725f0ab70ef",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/screenshots/light-02-plan.jpg",
@@ -10637,7 +11210,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "3e53cd9b97888a229b3c9c910dda5eb3ea320b18db9ee2f892db883c38b2aa2f",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/screenshots/light-03-routine-detail.jpg",
@@ -10664,7 +11237,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "d05c7df85f247374498e35fb8080dfb6a69a66fef08ad2f72af3fe51ec5705d2",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/screenshots/light-04-workout.jpg",
@@ -10691,7 +11264,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "6a8fa12689c52c195d5b0ca660f5dfffaad36929f5ea7062744b669f0323219b",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/screenshots/light-05-set-completed-rest.jpg",
@@ -10718,7 +11291,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "27fdf956f9bac3b867a2aa4ffdfd5aa019e06d244ec5637ee881e9cbb20b69f0",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/screenshots/light-06-receipt.jpg",
@@ -10745,7 +11318,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "d37fbefc40043eee9ba7b0e437453d10d8b3f682d50ea41a24394d2e13f72841",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/screenshots/light-07-progress.jpg",
@@ -10772,7 +11345,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "8b1b761f1c2f682f8e6e0afd7bcc7fc670d7721d6571261cdfb2803910663361",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/screenshots/light-08-you.jpg",
@@ -10799,7 +11372,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "238595199785c32469f8525b17dcba922cf2a7ac7d3ae4dff51da925cfb46236",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/commit-2/screenshots/light-09-today-after-workout.jpg",
@@ -10826,7 +11399,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "963a5bc8e7c1c66ec4a30b4bc28da28bb81aaa189bcdbd2c750749b062caa5d8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/full-audit-2026-10-26.md",
@@ -10856,7 +11429,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "0efe97dcf1e8c9b090a2ebb759aca8884453ee8b8728e061c662b5eb04658b7e",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/implementation-plan.md",
@@ -10884,7 +11457,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "25c8e9f9b2726f2144cf1622e118d5f6cb3b6913f4ad8460e9b86152fd03d7be",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/native-accounts-findings.md",
@@ -10914,7 +11487,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "abf1c54c1a7d3f7e9d2e5bc695abb969ea3818a7f63008ffecb11c975f28d7bd",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/native-design-review.md",
@@ -10944,7 +11517,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "cd88d2ff20e62328c6c84a8cb433083c5c253bbc6a74ac9826d61b515633793e",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/native-file-review.json",
@@ -10967,7 +11540,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": true,
       "finalSourceSHA256": "93e2226820311a4df32dac90804deba73fe725a6ea6c175076b2143fe4a54c48",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/privacy-inventory.md",
@@ -10997,7 +11570,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "745a396470c306e92afbc620b1c57d49b96b65a054964d99f43422aa5b727e61",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/docs/verification.md",
@@ -11027,7 +11600,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "195acd1d0732006306f0e6664b91aacf6f1b0182217b164e92b8df9104899863",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "ios/project.yml",
@@ -11057,7 +11630,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": true,
       "finalSourceSHA256": "cec08c46b7ee8ddb1c7d856ae419484bb886cc8b5187e3ef5101c527ff0bf255",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "scripts/build-ios-resources.mjs",
@@ -11111,7 +11684,7 @@
       "changedSinceReview": null,
       "inBaselineManifest": false,
       "finalSourceSHA256": "a5aae125a741746804f3b88f77efc1adbba4abd3959ce09973d87053e4bb9c15",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "scripts/check-ios-contracts.mjs",
@@ -11141,7 +11714,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": false,
       "finalSourceSHA256": "57548a0b8351148a7580c47f58bd1aa42965299f6f02c8ac718413cd05580aba",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "scripts/check-ios-widget-bundle.py",
@@ -11168,7 +11741,7 @@
       "bytes": 3415,
       "changedSinceReview": false,
       "finalSourceSHA256": "165198ea6d3aada7f74ca5e2b1f596e2a7c6fefa7b3b217efcee28e2fd78f112",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00",
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00",
       "inBaselineManifest": false,
       "priorReviews": [
         {
@@ -11192,6 +11765,28 @@
           ],
           "reviewSHA256": "165198ea6d3aada7f74ca5e2b1f596e2a7c6fefa7b3b217efcee28e2fd78f112",
           "ownership": "root implementation; current full read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              81
+            ]
+          ],
+          "reviewSHA256": "165198ea6d3aada7f74ca5e2b1f596e2a7c6fefa7b3b217efcee28e2fd78f112",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
+        },
+        {
+          "reviewStatus": "full-read-current-checkpoint",
+          "readRanges": [
+            [
+              1,
+              81
+            ]
+          ],
+          "reviewSHA256": "165198ea6d3aada7f74ca5e2b1f596e2a7c6fefa7b3b217efcee28e2fd78f112",
+          "ownership": "root implementation and final authored-diff review; prior full source read by core_contract_audit"
         },
         {
           "reviewStatus": "full-read-current-checkpoint",
@@ -11234,7 +11829,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": false,
       "finalSourceSHA256": "83224fbf816bf9bf5e5120969b8df09025ed3b8ad57f65855b2667c2eadb142c",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "src/exerciseLoad.js",
@@ -11264,7 +11859,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": false,
       "finalSourceSHA256": "570b5b42c3e433a766f4149d8e09b3a67f3ed62ccfdd237ba54c907906b819a8",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "src/exerciseMetrics.js",
@@ -11294,7 +11889,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": false,
       "finalSourceSHA256": "86190abdf9ed2d2ee684117952a7e9c44b5bfab0545527f06377684242c5489e",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "src/routineProgramming.js",
@@ -11324,7 +11919,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": false,
       "finalSourceSHA256": "16e6b35adc378230d01fe64716914e1da0ce8a9a4f4fa720cbc36b0bd261f6f5",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "src/storage.js",
@@ -11354,7 +11949,7 @@
       "changedSinceReview": false,
       "inBaselineManifest": false,
       "finalSourceSHA256": "a283be1bb493b06cd111cfe8f8d8c02a2df26738be75b3904e3e9fcf9268fcaf",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     },
     {
       "path": "src/workoutSession.js",
@@ -11384,10 +11979,10 @@
       "changedSinceReview": false,
       "inBaselineManifest": false,
       "finalSourceSHA256": "768d60660f83bb25091bc75faf1b7efa5df27e2fd9fda3b8a7e0df3e36828901",
-      "hashCheckpointUTC": "2026-10-28T15:51:35.263182+00:00"
+      "hashCheckpointUTC": "2026-10-28T19:56:22.627261+00:00"
     }
   ],
-  "reconciliationUTC": "2026-10-28T15:51:35.263182+00:00",
+  "reconciliationUTC": "2026-10-28T19:56:22.627261+00:00",
   "reconciliationState": "final owner-requested source hash reconciliation",
   "currentNativeAuthoredOrValidatedFiles": 347,
   "excludedCurrentPaths": [
