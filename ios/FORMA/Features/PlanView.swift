@@ -758,67 +758,14 @@ struct ExerciseLibraryView: View {
     let index = self.index ?? LibraryIndex(catalog: model.catalog)
     let matches = visibleExercises(in: index)
     List {
-      Section {
-        Picker("Muscle", selection: $muscle) {
-          Text("All muscles").tag("All muscles")
-          ForEach(index.muscles, id: \.self) { Text($0).tag($0) }
-        }
-        Picker("Equipment", selection: $equipment) {
-          Text("All equipment").tag("All equipment")
-          ForEach(index.equipmentTypes, id: \.self) { Text($0).tag($0) }
-        }
-        if let addNotice {
-          Text(addNotice).font(.footnote).foregroundStyle(FormaTheme.error)
-        }
-        if muscle != "All muscles" || equipment != "All equipment" || !query.isEmpty {
-          Button("Clear search & filters") {
-            query = ""
-            muscle = "All muscles"
-            equipment = "All equipment"
-          }
-          .frame(minHeight: 44)
-        }
-      }
+      filterSection(index)
       Section(countPhrase(matches.count, "exercise")) {
         if matches.isEmpty {
           ContentUnavailableView.search(text: query)
         }
         ForEach(matches) { exercise in
           if let onSelect {
-            // The whole row adds; the technique guide is the trailing control.
-            HStack(alignment: .center, spacing: 4) {
-              Button {
-                add(exercise, using: onSelect)
-              } label: {
-                HStack(spacing: 12) {
-                  ExerciseLibraryRow(exercise: exercise)
-                  Spacer(minLength: 0)
-                  if let count = added[exercise.id] {
-                    Label(count == 1 ? "Added" : "Added \(count) times", systemImage: "checkmark")
-                      .font(.caption.weight(.semibold)).foregroundStyle(FormaTheme.accent)
-                  } else {
-                    Image(systemName: "plus.circle.fill").font(.title2)
-                      .foregroundStyle(FormaTheme.accent)
-                  }
-                }
-                .frame(minHeight: 44).contentShape(Rectangle())
-              }
-              .buttonStyle(.borderless)
-              .accessibilityElement(children: .ignore)
-              .accessibilityLabel("Add \(exercise.name), \(exercise.muscle), \(exercise.equipment)")
-              .accessibilityValue(
-                added[exercise.id].map { $0 == 1 ? "Added" : "Added \($0) times" } ?? ""
-              )
-              .accessibilityHint("Adds it to this routine.")
-              Button {
-                guideExercise = exercise
-              } label: {
-                Image(systemName: "info.circle").font(.title3)
-                  .frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
-              }
-              .buttonStyle(.borderless)
-              .accessibilityLabel("Technique guide for \(exercise.name)")
-            }
+            pickerRow(exercise, onSelect: onSelect)
           } else {
             NavigationLink(value: TrainingRoute.guide(exercise.id)) {
               ExerciseLibraryRow(exercise: exercise)
@@ -862,6 +809,70 @@ struct ExerciseLibraryView: View {
       hits = nil
     }
     .task(id: query) { await refreshHits() }
+  }
+
+  // Rows and filters are their own functions so the list body type-checks
+  // quickly on the CI toolchain.
+  private func filterSection(_ index: LibraryIndex) -> some View {
+    Section {
+      Picker("Muscle", selection: $muscle) {
+        Text("All muscles").tag("All muscles")
+        ForEach(index.muscles, id: \.self) { Text($0).tag($0) }
+      }
+      Picker("Equipment", selection: $equipment) {
+        Text("All equipment").tag("All equipment")
+        ForEach(index.equipmentTypes, id: \.self) { Text($0).tag($0) }
+      }
+      if let addNotice {
+        Text(addNotice).font(.footnote).foregroundStyle(FormaTheme.error)
+      }
+      if muscle != "All muscles" || equipment != "All equipment" || !query.isEmpty {
+        Button("Clear search & filters") {
+          query = ""
+          muscle = "All muscles"
+          equipment = "All equipment"
+        }
+        .frame(minHeight: 44)
+      }
+    }
+  }
+
+  /// The whole row adds; the technique guide is the trailing control.
+  private func pickerRow(_ exercise: Exercise, onSelect: @escaping (Exercise) -> Bool) -> some View
+  {
+    HStack(alignment: .center, spacing: 4) {
+      Button {
+        add(exercise, using: onSelect)
+      } label: {
+        HStack(spacing: 12) {
+          ExerciseLibraryRow(exercise: exercise)
+          Spacer(minLength: 0)
+          if let count = added[exercise.id] {
+            Label(count == 1 ? "Added" : "Added \(count) times", systemImage: "checkmark")
+              .font(.caption.weight(.semibold)).foregroundStyle(FormaTheme.accent)
+          } else {
+            Image(systemName: "plus.circle.fill").font(.title2)
+              .foregroundStyle(FormaTheme.accent)
+          }
+        }
+        .frame(minHeight: 44).contentShape(Rectangle())
+      }
+      .buttonStyle(.borderless)
+      .accessibilityElement(children: .ignore)
+      .accessibilityLabel("Add \(exercise.name), \(exercise.muscle), \(exercise.equipment)")
+      .accessibilityValue(
+        added[exercise.id].map { $0 == 1 ? "Added" : "Added \($0) times" } ?? ""
+      )
+      .accessibilityHint("Adds it to this routine.")
+      Button {
+        guideExercise = exercise
+      } label: {
+        Image(systemName: "info.circle").font(.title3)
+          .frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
+      }
+      .buttonStyle(.borderless)
+      .accessibilityLabel("Technique guide for \(exercise.name)")
+    }
   }
 
   private func add(_ exercise: Exercise, using onSelect: (Exercise) -> Bool) {

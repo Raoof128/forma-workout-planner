@@ -148,338 +148,359 @@ struct WorkoutView: View {
   var body: some View {
     if let session = model.workspace?.active {
       ScrollViewReader { reader in
-        ScrollView {
-          VStack(alignment: .leading, spacing: 24) {
-            if model.widgetRoute != nil {
-              VStack(alignment: .leading) {
-                Text("Widget link queued. Use Save & close to open it.")
-                  .font(.footnote).foregroundStyle(FormaTheme.secondary)
-              }
-              .frame(maxWidth: .infinity, alignment: .leading)
-              .accessibilityElement(children: .contain)
-              .accessibilityIdentifier("widget-link-queued")
+        workoutLifecycle(
+          workoutDialogs(
+            ScrollView {
+              workoutContent(session, reader: reader)
             }
-            AdaptiveMetricGroup {
-              VStack(alignment: .leading, spacing: 6) {
-                Text("IN YOUR OWN TIME.").font(.caption.weight(.bold)).tracking(1.5)
-                  .foregroundStyle(FormaTheme.accent)
-                Text(session.name).font(.title2.bold()).fixedSize(horizontal: false, vertical: true)
+            .scrollDismissesKeyboard(.interactively)
+            .formaBottomBar {
+              VStack(spacing: 0) {
+                SaveFailureBanner()
+                RestDock(compact: focusedField != nil)
               }
-              ElapsedTime(startedAt: session.startedAt)
             }
-            saveStatus
-            WatchRecordingStrip()
-            exerciseSelector(session)
-
-            if session.exercises.indices.contains(selectedExercise) {
-              let entry = session.exercises[selectedExercise]
-              let exercise = model.exercise(entry.exerciseId)
-              VStack(alignment: .leading, spacing: 14) {
-                HStack(alignment: .top) {
-                  VStack(alignment: .leading, spacing: 6) {
-                    Text("EXERCISE \(selectedExercise + 1) OF \(session.exercises.count)")
-                      .font(.caption.weight(.semibold)).tracking(1).foregroundStyle(
-                        FormaTheme.secondary)
-                    Text(exercise?.name ?? entry.exerciseId)
-                      .font(.system(.title, design: .default, weight: .bold).width(.condensed))
-                      .accessibilityAddTraits(.isHeader)
-                  }
-                  Spacer(minLength: 4)
-                  if let exercise {
-                    Button {
-                      guide = exercise
-                    } label: {
-                      Image(systemName: "info.circle").font(.title3).frame(width: 44, height: 44)
-                    }.accessibilityLabel("Read \(exercise.name) instructions and source")
-                  }
-                }
-                LastSetLabel(exerciseID: entry.exerciseId, sessionID: session.id)
-                if let note = entry.note, !note.isEmpty {
-                  Text(note).font(.subheadline).foregroundStyle(FormaTheme.secondary)
-                }
-                if entry.groupId != nil {
-                  Label("Superset · rest after the final movement", systemImage: "link")
-                    .font(.caption).foregroundStyle(FormaTheme.accent)
-                }
-                if exercise?.id == "plank" {
-                  Text(
-                    "This original plank logs 10 seconds per rep. For a 30-second plank, enter 3 reps or run the timer for 30 seconds."
-                  )
-                  .font(.caption).foregroundStyle(FormaTheme.secondary)
-                }
-              }
-              if let exercise, HoldTimer.isAvailable(for: exercise, entry: entry) {
-                holdTimer(session: session, entry: entry, exercise: exercise)
-              }
-              if let holdMessage {
-                Label(holdMessage, systemImage: "checkmark.circle")
-                  .font(.subheadline).foregroundStyle(FormaTheme.accent)
-                  .accessibilityIdentifier("hold-logged")
-              }
-              VStack(spacing: 12) {
-                ForEach(Array(entry.sets.enumerated()), id: \.offset) { index, set in
-                  let key = draftKey(entry: entry, set: index)
-                  SetRow(
-                    index: index,
-                    entryIndex: selectedExercise,
-                    exercise: exercise,
-                    perSide: entry.perSide,
-                    set: set,
-                    draft: Binding(
-                      get: { drafts[key] ?? SetDraft(set, locale: locale) },
-                      set: { drafts[key] = $0 }),
-                    pendingChanges: drafts[key] != nil,
-                    busy: model.busy,
-                    focusedField: $focusedField,
-                    key: key,
-                    issue: validation?.rowKey == key ? validation : nil,
-                    complete: {
-                      Task { await complete(sessionID: session.id, entryID: entry.id, set: index) }
+            .background(FormaTheme.canvas)
+            .navigationTitle("Training")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+              ToolbarItem(placement: .topBarLeading) {
+                Button("Save & close") {
+                  Task {
+                    if holdIsLive {
+                      holdLeave = .close
+                    } else {
+                      await closeWorkout()
                     }
-                  )
-                  .id(key)
-                }
+                  }
+                }.disabled(model.busy)
               }
-              if let validation, validation.rowKey == nil {
-                Label(validation.message, systemImage: "exclamationmark.circle")
-                  .font(.subheadline).foregroundStyle(FormaTheme.error).accessibilityAddTraits(
-                    .isStaticText
-                  )
-                  .accessibilityIdentifier("workout-validation")
-              }
-              HStack(spacing: 16) {
-                Button {
-                  Task { await addSet() }
+              ToolbarItem(placement: .topBarTrailing) {
+                Menu {
+                  Button("Discard workout", systemImage: "trash", role: .destructive) {
+                    discardConfirmation = true
+                  }
                 } label: {
-                  Label("Add set", systemImage: "plus")
-                    .frame(minHeight: 44).contentShape(Rectangle())
+                  Image(systemName: "ellipsis.circle").frame(width: 44, height: 44)
                 }
-                .disabled(model.busy || entry.sets.count >= 100)
+                .accessibilityLabel("Workout actions")
+                .accessibilityIdentifier("workout-actions")
+              }
+              ToolbarItem(placement: .confirmationAction) {
+                Button("Finish") { requestFinish() }
+                  .accessibilityIdentifier("finish-workout")
+                  .accessibilityLabel("Finish workout")
+                  .disabled(model.busy)
+              }
+              ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
-                Button {
-                  notesPresented = true
-                } label: {
-                  Label("Notes", systemImage: "square.and.pencil")
-                    .frame(minHeight: 44).contentShape(Rectangle())
-                }
-                .disabled(model.busy)
-                .accessibilityIdentifier("session-notes")
-              }.font(.subheadline.weight(.semibold))
-              VStack(spacing: 12) {
-                if selectedExercise + 1 < session.exercises.count {
-                  Button {
-                    Task {
-                      if await showExercise(selectedExercise + 1) {
-                        reader.scrollTo("exercise-selector", anchor: .top)
-                      }
-                    }
-                  } label: {
-                    HStack {
-                      Text("Next exercise")
-                      Spacer()
-                      Image(systemName: "arrow.right")
-                    }
-                  }.buttonStyle(PrimaryButtonStyle()).disabled(model.busy)
-                } else {
-                  Button {
-                    requestFinish()
-                  } label: {
-                    HStack {
-                      Text("Finish workout")
-                      Spacer()
-                      Image(systemName: "flag.checkered")
-                    }
-                  }
-                  .buttonStyle(PrimaryButtonStyle()).disabled(model.busy)
-                  .accessibilityIdentifier("finish-workout-bottom")
-                }
-                if selectedExercise > 0 {
-                  Button {
-                    Task {
-                      if await showExercise(selectedExercise - 1) {
-                        reader.scrollTo("exercise-selector", anchor: .top)
-                      }
-                    }
-                  } label: {
-                    Label("Previous exercise", systemImage: "arrow.left")
-                      .frame(maxWidth: .infinity, minHeight: 44).contentShape(Rectangle())
-                  }
-                  .buttonStyle(.bordered).disabled(model.busy)
-                  .accessibilityIdentifier("previous-exercise")
-                }
+                Button("Done") { Task { if await saveDrafts() { focusedField = nil } } }
+                  .disabled(model.busy)
+                  .accessibilityIdentifier("save-workout-drafts")
               }
-            }
-          }.padding(24)
-        }
-        .scrollDismissesKeyboard(.interactively)
-        .formaBottomBar {
-          VStack(spacing: 0) {
-            SaveFailureBanner()
-            RestDock(compact: focusedField != nil)
-          }
-        }
-        .background(FormaTheme.canvas)
-        .navigationTitle("Training")
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-          ToolbarItem(placement: .topBarLeading) {
-            Button("Save & close") {
-              Task {
-                if holdIsLive {
-                  holdLeave = .close
-                } else {
-                  await closeWorkout()
-                }
-              }
-            }.disabled(model.busy)
-          }
-          ToolbarItem(placement: .topBarTrailing) {
-            Menu {
-              Button("Discard workout", systemImage: "trash", role: .destructive) {
-                discardConfirmation = true
-              }
-            } label: {
-              Image(systemName: "ellipsis.circle").frame(width: 44, height: 44)
-            }
-            .accessibilityLabel("Workout actions")
-            .accessibilityIdentifier("workout-actions")
-          }
-          ToolbarItem(placement: .confirmationAction) {
-            Button("Finish") { requestFinish() }
-              .accessibilityIdentifier("finish-workout")
-              .accessibilityLabel("Finish workout")
-              .disabled(model.busy)
-          }
-          ToolbarItemGroup(placement: .keyboard) {
-            Spacer()
-            Button("Done") { Task { if await saveDrafts() { focusedField = nil } } }
-              .disabled(model.busy)
-              .accessibilityIdentifier("save-workout-drafts")
-          }
-        }
-        .alert("Finish this workout?", isPresented: $finishConfirmation) {
-          Button("Keep training", role: .cancel) {}
-          Button("Finish workout") {
-            Task {
-              guard canLeaveTimedSet() else { return }
-              if await saveDrafts() { await model.finish() }
-            }
-          }.accessibilityIdentifier("finish-confirm")
-        } message: {
-          Text(finishMessage(session))
-        }
-        .alert("Discard this workout?", isPresented: $discardConfirmation) {
-          Button("Keep training", role: .cancel) {}
-          Button("Discard workout", role: .destructive) {
-            Task {
-              if await model.discardActive() { model.workoutPresented = false }
-            }
-          }
-        } message: {
-          Text(discardMessage(session))
-        }
-        .confirmationDialog(
-          "Your timer is still running", isPresented: holdLeaveBinding, titleVisibility: .visible,
-          presenting: holdLeave
-        ) { leave in
-          holdLeaveActions(leave, session: session)
-        } message: { _ in
-          Text("\(heldSeconds) seconds held so far. Choose what happens to them.")
-        }
-        .confirmationDialog(
-          "Discard this timer?", isPresented: $holdDiscardConfirmation, titleVisibility: .visible
-        ) {
-          Button("Discard timer", role: .destructive) { discardHold() }
-          Button("Keep timing", role: .cancel) {}
-        } message: {
-          Text("The \(heldSeconds) seconds held won't be logged.")
-        }
-        .sheet(item: $guide) { exercise in GuideSheet(exercise: exercise).protectWidgetNavigation()
-        }
-        .sheet(isPresented: $notesPresented) { SessionNotesView().protectWidgetNavigation() }
-        // A set was logged: a light, crisp tap. The success pattern is kept for
-        // finishing the workout (CompletionSeal), so each pattern means one thing.
-        .sensoryFeedback(.impact(weight: .light), trigger: feedback) { _, _ in
-          model.hapticsEnabled
-        }
-        .onChange(of: scenePhase) { _, phase in
-          // Canonical sets are already committed. Best effort for valid in-progress edits;
-          // OS suspension is never treated as a successful save acknowledgement.
-          if phase == .inactive { Task { _ = await saveDrafts() } }
-          Task { await syncRestReminder(active: phase == .active) }
-        }
-        // The countdown is a deadline, so a hold that ends while the app is
-        // suspended logs as soon as the app runs again.
-        .task(id: hold?.endsAt) {
-          guard let current = hold, let endsAt = current.endsAt else { return }
-          let wait = endsAt.timeIntervalSinceNow
-          if wait > 0 { try? await Task.sleep(for: .seconds(wait)) }
-          guard !Task.isCancelled, hold == current else { return }
-          await logHold(current, seconds: current.length)
-        }
-        // Open where the person left off, not at the first exercise. Done once,
-        // before any tap, so a later choice is never undone.
-        .onAppear {
-          guard !restoredPosition else { return }
-          restoredPosition = true
-          let target = WorkoutEngine.resumeIndex(session)
-          if target != selectedExercise {
-            restoringPosition = true
-            selectedExercise = target
-          }
-        }
-        // Only the exercise buttons and menu change this, after the drafts they
-        // carry have saved.
-        .onChange(of: selectedExercise) { _, _ in
-          holdMessage = nil
-          if restoringPosition {
-            restoringPosition = false
-          } else {
-            model.haptic(.selected)
-          }
-        }
-        // A refused action names its reason beside the set; the warning and the
-        // announcement point to it, and the set scrolls into view.
-        .onChange(of: validation) { old, new in
-          guard let new, new != old else { return }
-          model.haptic(.warning)
-          AccessibilityNotification.Announcement(new.message).post()
-          if let row = new.rowKey { reader.scrollTo(row, anchor: .center) }
-        }
-        // A rest is a deadline: keep the screen on while one counts down, so the
-        // dock stays readable between sets, and let it sleep again when the rest
-        // ends, is paused or skipped.
-        .task(id: session.restEnd) {
-          guard let end = session.restEnd else {
-            restCounting = false
-            return
-          }
-          let wait = end / 1_000 - Date.now.timeIntervalSince1970
-          restCounting = wait > 0
-          guard wait > 0 else { return }
-          try? await Task.sleep(for: .seconds(wait))
-          if !Task.isCancelled { restCounting = false }
-        }
-        // Also keep it on while a hold counts down, as the web does.
-        .onChange(of: hold?.endsAt != nil || restCounting) { _, awake in
-          UIApplication.shared.isIdleTimerDisabled = awake
-        }
-        .onChange(of: session.restEnd) { old, new in
-          // The first rest is the moment to ask: the reason is on screen.
-          if new != nil, new != old {
-            Task { await RestReminder.shared.requestAuthorizationIfNeeded() }
-          }
-          // Skipped, paused or extended while in front: nothing pending.
-          Task { await syncRestReminder(active: scenePhase == .active) }
-        }
-        .onDisappear {
-          hold = nil
-          UIApplication.shared.isIdleTimerDisabled = false
-          RestReminder.shared.cancel()
-        }
-        .accessibilityIdentifier("workout-screen")
+            }, session: session),
+          session: session, reader: reader)
       }
     }
+  }
+
+  // The body is split so the compiler type-checks each part on its own; one
+  // long chain took too long for the CI toolchain.
+  @ViewBuilder private func workoutContent(
+    _ session: WorkoutSession, reader: ScrollViewProxy
+  ) -> some View {
+    VStack(alignment: .leading, spacing: 24) {
+      if model.widgetRoute != nil {
+        VStack(alignment: .leading) {
+          Text("Widget link queued. Use Save & close to open it.")
+            .font(.footnote).foregroundStyle(FormaTheme.secondary)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("widget-link-queued")
+      }
+      AdaptiveMetricGroup {
+        VStack(alignment: .leading, spacing: 6) {
+          Text("IN YOUR OWN TIME.").font(.caption.weight(.bold)).tracking(1.5)
+            .foregroundStyle(FormaTheme.accent)
+          Text(session.name).font(.title2.bold()).fixedSize(horizontal: false, vertical: true)
+        }
+        ElapsedTime(startedAt: session.startedAt)
+      }
+      saveStatus
+      WatchRecordingStrip()
+      exerciseSelector(session)
+
+      if session.exercises.indices.contains(selectedExercise) {
+        let entry = session.exercises[selectedExercise]
+        let exercise = model.exercise(entry.exerciseId)
+        VStack(alignment: .leading, spacing: 14) {
+          HStack(alignment: .top) {
+            VStack(alignment: .leading, spacing: 6) {
+              Text("EXERCISE \(selectedExercise + 1) OF \(session.exercises.count)")
+                .font(.caption.weight(.semibold)).tracking(1).foregroundStyle(
+                  FormaTheme.secondary)
+              Text(exercise?.name ?? entry.exerciseId)
+                .font(.system(.title, design: .default, weight: .bold).width(.condensed))
+                .accessibilityAddTraits(.isHeader)
+            }
+            Spacer(minLength: 4)
+            if let exercise {
+              Button {
+                guide = exercise
+              } label: {
+                Image(systemName: "info.circle").font(.title3).frame(width: 44, height: 44)
+              }.accessibilityLabel("Read \(exercise.name) instructions and source")
+            }
+          }
+          LastSetLabel(exerciseID: entry.exerciseId, sessionID: session.id)
+          if let note = entry.note, !note.isEmpty {
+            Text(note).font(.subheadline).foregroundStyle(FormaTheme.secondary)
+          }
+          if entry.groupId != nil {
+            Label("Superset · rest after the final movement", systemImage: "link")
+              .font(.caption).foregroundStyle(FormaTheme.accent)
+          }
+          if exercise?.id == "plank" {
+            Text(
+              "This original plank logs 10 seconds per rep. For a 30-second plank, enter 3 reps or run the timer for 30 seconds."
+            )
+            .font(.caption).foregroundStyle(FormaTheme.secondary)
+          }
+        }
+        if let exercise, HoldTimer.isAvailable(for: exercise, entry: entry) {
+          holdTimer(session: session, entry: entry, exercise: exercise)
+        }
+        if let holdMessage {
+          Label(holdMessage, systemImage: "checkmark.circle")
+            .font(.subheadline).foregroundStyle(FormaTheme.accent)
+            .accessibilityIdentifier("hold-logged")
+        }
+        VStack(spacing: 12) {
+          ForEach(Array(entry.sets.enumerated()), id: \.offset) { index, set in
+            let key = draftKey(entry: entry, set: index)
+            SetRow(
+              index: index,
+              entryIndex: selectedExercise,
+              exercise: exercise,
+              perSide: entry.perSide,
+              set: set,
+              draft: Binding(
+                get: { drafts[key] ?? SetDraft(set, locale: locale) },
+                set: { drafts[key] = $0 }),
+              pendingChanges: drafts[key] != nil,
+              busy: model.busy,
+              focusedField: $focusedField,
+              key: key,
+              issue: validation?.rowKey == key ? validation : nil,
+              complete: {
+                Task { await complete(sessionID: session.id, entryID: entry.id, set: index) }
+              }
+            )
+            .id(key)
+          }
+        }
+        if let validation, validation.rowKey == nil {
+          Label(validation.message, systemImage: "exclamationmark.circle")
+            .font(.subheadline).foregroundStyle(FormaTheme.error).accessibilityAddTraits(
+              .isStaticText
+            )
+            .accessibilityIdentifier("workout-validation")
+        }
+        HStack(spacing: 16) {
+          Button {
+            Task { await addSet() }
+          } label: {
+            Label("Add set", systemImage: "plus")
+              .frame(minHeight: 44).contentShape(Rectangle())
+          }
+          .disabled(model.busy || entry.sets.count >= 100)
+          Spacer()
+          Button {
+            notesPresented = true
+          } label: {
+            Label("Notes", systemImage: "square.and.pencil")
+              .frame(minHeight: 44).contentShape(Rectangle())
+          }
+          .disabled(model.busy)
+          .accessibilityIdentifier("session-notes")
+        }.font(.subheadline.weight(.semibold))
+        VStack(spacing: 12) {
+          if selectedExercise + 1 < session.exercises.count {
+            Button {
+              Task {
+                if await showExercise(selectedExercise + 1) {
+                  reader.scrollTo("exercise-selector", anchor: .top)
+                }
+              }
+            } label: {
+              HStack {
+                Text("Next exercise")
+                Spacer()
+                Image(systemName: "arrow.right")
+              }
+            }.buttonStyle(PrimaryButtonStyle()).disabled(model.busy)
+          } else {
+            Button {
+              requestFinish()
+            } label: {
+              HStack {
+                Text("Finish workout")
+                Spacer()
+                Image(systemName: "flag.checkered")
+              }
+            }
+            .buttonStyle(PrimaryButtonStyle()).disabled(model.busy)
+            .accessibilityIdentifier("finish-workout-bottom")
+          }
+          if selectedExercise > 0 {
+            Button {
+              Task {
+                if await showExercise(selectedExercise - 1) {
+                  reader.scrollTo("exercise-selector", anchor: .top)
+                }
+              }
+            } label: {
+              Label("Previous exercise", systemImage: "arrow.left")
+                .frame(maxWidth: .infinity, minHeight: 44).contentShape(Rectangle())
+            }
+            .buttonStyle(.bordered).disabled(model.busy)
+            .accessibilityIdentifier("previous-exercise")
+          }
+        }
+      }
+    }.padding(24)
+  }
+
+  private func workoutDialogs(_ content: some View, session: WorkoutSession) -> some View {
+    content
+      .alert("Finish this workout?", isPresented: $finishConfirmation) {
+        Button("Keep training", role: .cancel) {}
+        Button("Finish workout") {
+          Task {
+            guard canLeaveTimedSet() else { return }
+            if await saveDrafts() { await model.finish() }
+          }
+        }.accessibilityIdentifier("finish-confirm")
+      } message: {
+        Text(finishMessage(session))
+      }
+      .alert("Discard this workout?", isPresented: $discardConfirmation) {
+        Button("Keep training", role: .cancel) {}
+        Button("Discard workout", role: .destructive) {
+          Task {
+            if await model.discardActive() { model.workoutPresented = false }
+          }
+        }
+      } message: {
+        Text(discardMessage(session))
+      }
+      .confirmationDialog(
+        "Your timer is still running", isPresented: holdLeaveBinding, titleVisibility: .visible,
+        presenting: holdLeave
+      ) { leave in
+        holdLeaveActions(leave, session: session)
+      } message: { _ in
+        Text("\(heldSeconds) seconds held so far. Choose what happens to them.")
+      }
+      .confirmationDialog(
+        "Discard this timer?", isPresented: $holdDiscardConfirmation, titleVisibility: .visible
+      ) {
+        Button("Discard timer", role: .destructive) { discardHold() }
+        Button("Keep timing", role: .cancel) {}
+      } message: {
+        Text("The \(heldSeconds) seconds held won't be logged.")
+      }
+      .sheet(item: $guide) { exercise in GuideSheet(exercise: exercise).protectWidgetNavigation()
+      }
+      .sheet(isPresented: $notesPresented) { SessionNotesView().protectWidgetNavigation() }
+  }
+
+  private func workoutLifecycle(
+    _ content: some View, session: WorkoutSession, reader: ScrollViewProxy
+  ) -> some View {
+    content
+      // A set was logged: a light, crisp tap. The success pattern is kept for
+      // finishing the workout (CompletionSeal), so each pattern means one thing.
+      .sensoryFeedback(.impact(weight: .light), trigger: feedback) { _, _ in
+        model.hapticsEnabled
+      }
+      .onChange(of: scenePhase) { _, phase in
+        // Canonical sets are already committed. Best effort for valid in-progress edits;
+        // OS suspension is never treated as a successful save acknowledgement.
+        if phase == .inactive { Task { _ = await saveDrafts() } }
+        Task { await syncRestReminder(active: phase == .active) }
+      }
+      // The countdown is a deadline, so a hold that ends while the app is
+      // suspended logs as soon as the app runs again.
+      .task(id: hold?.endsAt) {
+        guard let current = hold, let endsAt = current.endsAt else { return }
+        let wait = endsAt.timeIntervalSinceNow
+        if wait > 0 { try? await Task.sleep(for: .seconds(wait)) }
+        guard !Task.isCancelled, hold == current else { return }
+        await logHold(current, seconds: current.length)
+      }
+      // Open where the person left off, not at the first exercise. Done once,
+      // before any tap, so a later choice is never undone.
+      .onAppear {
+        guard !restoredPosition else { return }
+        restoredPosition = true
+        let target = WorkoutEngine.resumeIndex(session)
+        if target != selectedExercise {
+          restoringPosition = true
+          selectedExercise = target
+        }
+      }
+      // Only the exercise buttons and menu change this, after the drafts they
+      // carry have saved.
+      .onChange(of: selectedExercise) { _, _ in
+        holdMessage = nil
+        if restoringPosition {
+          restoringPosition = false
+        } else {
+          model.haptic(.selected)
+        }
+      }
+      // A refused action names its reason beside the set; the warning and the
+      // announcement point to it, and the set scrolls into view.
+      .onChange(of: validation) { old, new in
+        guard let new, new != old else { return }
+        model.haptic(.warning)
+        AccessibilityNotification.Announcement(new.message).post()
+        if let row = new.rowKey { reader.scrollTo(row, anchor: .center) }
+      }
+      // A rest is a deadline: keep the screen on while one counts down, so the
+      // dock stays readable between sets, and let it sleep again when the rest
+      // ends, is paused or skipped.
+      .task(id: session.restEnd) {
+        guard let end = session.restEnd else {
+          restCounting = false
+          return
+        }
+        let wait = end / 1_000 - Date.now.timeIntervalSince1970
+        restCounting = wait > 0
+        guard wait > 0 else { return }
+        try? await Task.sleep(for: .seconds(wait))
+        if !Task.isCancelled { restCounting = false }
+      }
+      // Also keep it on while a hold counts down, as the web does.
+      .onChange(of: hold?.endsAt != nil || restCounting) { _, awake in
+        UIApplication.shared.isIdleTimerDisabled = awake
+      }
+      .onChange(of: session.restEnd) { old, new in
+        // The first rest is the moment to ask: the reason is on screen.
+        if new != nil, new != old {
+          Task { await RestReminder.shared.requestAuthorizationIfNeeded() }
+        }
+        // Skipped, paused or extended while in front: nothing pending.
+        Task { await syncRestReminder(active: scenePhase == .active) }
+      }
+      .onDisappear {
+        hold = nil
+        UIApplication.shared.isIdleTimerDisabled = false
+        RestReminder.shared.cancel()
+      }
+      .accessibilityIdentifier("workout-screen")
   }
 
   private func syncRestReminder(active: Bool) async {
