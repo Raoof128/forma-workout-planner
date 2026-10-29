@@ -111,7 +111,7 @@ struct AccountSection: View {
       AccessibilityNotification.Announcement("Removed from this iPhone.").post()
     } catch {
       removalError = error.accountMessage
-      model.haptic(.failed)
+      model.haptic(.accountFailure)
     }
   }
 
@@ -134,9 +134,7 @@ struct AccountSection: View {
     .accessibilityIdentifier("account-header")
 
     if let display = model.syncDisplay {
-      NavigationLink {
-        SyncDetailsView()
-      } label: {
+      NavigationLink(value: TrainingRoute.syncDetails) {
         LabeledContent {
           Text(display.title).foregroundStyle(
             display.needsAttention ? FormaTheme.error : FormaTheme.secondary)
@@ -147,9 +145,7 @@ struct AccountSection: View {
       .accessibilityIdentifier("account-sync-status")
     }
     if !profile.emailVerified {
-      NavigationLink {
-        AccountProfileView()
-      } label: {
+      NavigationLink(value: TrainingRoute.accountProfile) {
         VStack(alignment: .leading, spacing: 2) {
           Label("Email not verified", systemImage: "envelope.badge")
             .foregroundStyle(FormaTheme.primary)
@@ -159,27 +155,19 @@ struct AccountSection: View {
       }
       .accessibilityIdentifier("account-verify-email")
     }
-    NavigationLink {
-      AccountProfileView()
-    } label: {
+    NavigationLink(value: TrainingRoute.accountProfile) {
       Label("Profile", systemImage: "person.crop.circle")
     }
     .accessibilityIdentifier("account-profile")
-    NavigationLink {
-      AccountSecurityView()
-    } label: {
+    NavigationLink(value: TrainingRoute.accountSecurity) {
       Label("Security", systemImage: "lock.shield")
     }
     .accessibilityIdentifier("account-security")
-    NavigationLink {
-      TrainingDataView()
-    } label: {
+    NavigationLink(value: TrainingRoute.trainingData) {
       Label("Training data", systemImage: "externaldrive.badge.icloud")
     }
     .accessibilityIdentifier("account-training-data")
-    NavigationLink {
-      AccountPrivacyView()
-    } label: {
+    NavigationLink(value: TrainingRoute.accountPrivacy) {
       Label("Privacy & account", systemImage: "hand.raised")
     }
     .accessibilityIdentifier("account-privacy")
@@ -198,9 +186,7 @@ struct SyncBanner: View {
 
   var body: some View {
     if let display = model.syncDisplay, display.needsAttention {
-      NavigationLink {
-        SyncDetailsView()
-      } label: {
+      NavigationLink(value: TrainingRoute.syncDetails) {
         HStack(alignment: .top, spacing: 12) {
           Image(systemName: display.symbol).font(.title3)
             .foregroundStyle(display == .conflict ? FormaTheme.error : FormaTheme.accent)

@@ -210,7 +210,17 @@ final class WidgetSnapshotBridge {
       return TrainingSnapshot(
         epoch: epoch, generatedAt: now, expiresAt: midnight, state: .unavailable)
     }
-    let routine = workspace.routines.first { $0.archivedAt == nil }
+    // The same "next session" Today offers: the routine after the last trained
+    // one, so the widget and the app never disagree.
+    // One date per session: history can hold thousands of workouts.
+    var latest: (routineId: String?, date: Date)?
+    for session in workspace.history {
+      let date = TrainingCalendar.completionDate(session.date, startedAt: session.startedAt)
+      if latest.map({ date > $0.date }) ?? true { latest = (session.routineId, date) }
+    }
+    let routine = NextRoutine.select(
+      from: workspace.routines.filter { $0.archivedAt == nil }, preferredID: nil,
+      lastRoutineID: latest?.routineId)
     let interval = TrainingCalendar.calendar.dateInterval(of: .weekOfYear, for: now)
     let completed = workspace.history.filter {
       let date = TrainingCalendar.completionDate($0.date, startedAt: $0.startedAt)

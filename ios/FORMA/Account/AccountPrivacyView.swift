@@ -33,9 +33,7 @@ struct AccountPrivacyView: View {
       }
 
       Section {
-        NavigationLink {
-          NativePrivacyView()
-        } label: {
+        NavigationLink(value: TrainingRoute.privacy) {
           Label("Privacy notice for this app", systemImage: "hand.raised")
         }
         if let origin {
@@ -133,7 +131,7 @@ struct AccountPrivacyView: View {
     error = nil
     do {
       try await model.account.signOut(removeLocalCopy: removing)
-      model.accountSucceeded()
+      model.accountSucceeded(.accountRemoved)
     } catch {
       self.error = error.accountMessage
       model.haptic(error.accountHaptic)
@@ -256,7 +254,7 @@ private struct DeleteAccountSheet: View {
       // ordinary expiry, and so Privacy shows that a request is outstanding.
       model.account.recordDeletionRequest()
       requested = true
-      model.accountSucceeded()
+      model.accountSucceeded(.accountSent)
     } catch {
       if error.rejectsCredentials { password = "" }
       self.error = error.accountMessage

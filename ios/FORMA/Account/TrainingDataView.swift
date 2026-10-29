@@ -17,9 +17,7 @@ struct TrainingDataView: View {
     Form {
       if let display = model.syncDisplay {
         Section {
-          NavigationLink {
-            SyncDetailsView()
-          } label: {
+          NavigationLink(value: TrainingRoute.syncDetails) {
             LabeledContent {
               Text(display.title).foregroundStyle(
                 display.needsAttention ? FormaTheme.error : FormaTheme.secondary)
@@ -287,14 +285,14 @@ struct PhoneTrainingReview: View {
       error = message
       copyReady = false
       acknowledged = false
-      model.haptic(.warning)
+      model.haptic(.accountWarning)
     case .conflict:
       error = "Your account changed on another device. Review it in Sync, then try again."
-      model.haptic(.warning)
+      model.haptic(.accountWarning)
     case .saving, .signedOut:
       error =
         "FORMA couldn’t finish bringing your training into the account. Nothing was lost; try again."
-      model.haptic(.failed)
+      model.haptic(.accountFailure)
     }
   }
 }

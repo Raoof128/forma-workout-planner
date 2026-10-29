@@ -131,7 +131,7 @@ struct AccountProfileView: View {
       noticeRevision += 1
       pendingEmail = address
       newEmail = ""
-      model.accountSucceeded()
+      model.accountSucceeded(.accountSent)
       await model.account.refreshSession()
     } catch {
       self.error = error.accountMessage
@@ -149,7 +149,7 @@ struct AccountProfileView: View {
       try await model.account.call { try await $0.resendVerification(email: address) }
       resendMessage = "Verification email sent to \(address)."
       noticeRevision += 1
-      model.accountSucceeded()
+      model.accountSucceeded(.accountSent)
     } catch {
       resendError = "Verification email could not be sent. \(error.accountMessage)"
       noticeRevision += 1

@@ -34,7 +34,8 @@ final class FormaDesignSystemTests: XCTestCase {
     var green: CGFloat = 0
     var blue: CGFloat = 0
     var alpha: CGFloat = 0
-    UIColor(color).resolvedColor(with: traits).getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+    UIColor(color).resolvedColor(with: traits).getRed(
+      &red, green: &green, blue: &blue, alpha: &alpha)
     return [Double(red), Double(green), Double(blue)]
   }
 

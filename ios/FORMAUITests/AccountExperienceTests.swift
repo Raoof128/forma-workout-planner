@@ -169,7 +169,8 @@ final class AccountExperienceTests: XCTestCase {
           // has no hit point. Settings exposes rows as buttons or cells by release.
           let item = settings.descendants(matching: .any).matching(
             NSPredicate(
-              format: "(elementType == %lu OR elementType == %lu) AND (identifier == %@ OR label ==[c] %@)",
+              format:
+                "(elementType == %lu OR elementType == %lu) AND (identifier == %@ OR label ==[c] %@)",
               XCUIElement.ElementType.button.rawValue, XCUIElement.ElementType.cell.rawValue,
               identifier, title)
           ).firstMatch

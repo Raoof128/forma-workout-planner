@@ -182,8 +182,13 @@ struct WatchRecordingStrip: View {
       let metrics = model.watch.metrics
       HStack(spacing: 14) {
         Image(systemName: "applewatch").foregroundStyle(FormaTheme.accent)
-        if let rate = metrics?.heartRate {
+        // A reading the Watch has stopped sending is labelled as old, never
+        // shown as if it were live. A lost link also shows the notice below.
+        if let rate = model.watch.liveHeartRate {
           Label("\(Int(rate.rounded())) bpm", systemImage: "heart.fill")
+        } else if model.watch.isReadingStale, let last = model.watch.lastHeartRate {
+          Label("Last \(Int(last.rounded())) bpm", systemImage: "heart.slash")
+            .foregroundStyle(FormaTheme.secondary)
         }
         if let energy = metrics?.activeEnergy {
           Label("\(Int(energy.rounded())) kcal", systemImage: "flame.fill")
@@ -212,8 +217,10 @@ struct WatchRecordingStrip: View {
 
   private func accessibilityText(_ metrics: WatchMetrics?) -> String {
     var parts = ["Recording on Apple Watch"]
-    if let rate = metrics?.heartRate {
+    if let rate = model.watch.liveHeartRate {
       parts.append("heart rate \(Int(rate.rounded())) beats per minute")
+    } else if model.watch.isReadingStale, let last = model.watch.lastHeartRate {
+      parts.append("heart rate not current, last \(Int(last.rounded())) beats per minute")
     }
     if let energy = metrics?.activeEnergy {
       parts.append("\(Int(energy.rounded())) active kilocalories")

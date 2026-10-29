@@ -354,7 +354,7 @@ struct AuthFlowView: View {
       case .forgot:
         try await account.requestPasswordReset(email: address)
         succeed("If an account uses this address, a reset link is on its way.")
-        model.accountSucceeded()
+        model.accountSucceeded(.accountSent)
       }
       password = ""
     } catch {
@@ -374,7 +374,7 @@ struct AuthFlowView: View {
     do {
       try await account.resendVerification(email: address)
       succeed("If this address needs verification, a link is on its way.")
-      model.accountSucceeded()
+      model.accountSucceeded(.accountSent)
     } catch {
       fail("We couldn’t send the verification email. \(error.accountMessage)")
       model.haptic(error.accountHaptic)

@@ -65,7 +65,7 @@ struct YouView: View {
             "Motion: System plays full motion unless Reduce Motion is on, Minimal swaps movement for short fades, and Off shows every change at once. Reduce Motion in Settings always wins, and Off leaves system transitions such as sheets alone."
           )
           Text(
-            "Haptics: a light tap confirms a saved set, a firmer one marks the end of rest, a finished workout gets one success pattern, and warnings and errors have their own. Each is paired with something you can see. This switch turns all of them off; your device's haptic settings still apply."
+            "Haptics: a light tap confirms a saved set, a firmer one marks the end of rest (a notification does when FORMA is in the background), a finished workout gets one success pattern, and warnings and errors have their own. Each is paired with something you can see. This switch turns all of them off; your device's haptic settings still apply."
           )
         }
       }

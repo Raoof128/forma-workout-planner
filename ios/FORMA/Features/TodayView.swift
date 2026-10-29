@@ -1,12 +1,6 @@
 import FORMACore
 import SwiftUI
 
-/// Hero colours are fixed, so build each `UIColor` once instead of per render.
-private enum HeroColor {
-  static let ink = Color(hex: 0x151A17)
-  static let detail = Color(hex: 0xDEE5DC)
-}
-
 /// Picks the routine "Your next session" offers. Mirrors the web overview
 /// (`src/components/Overview.jsx`): the routine the person chose, else the one
 /// after the last trained routine, wrapping to the first. With no history, or
@@ -276,12 +270,12 @@ struct TodayView: View {
           .font(.caption.weight(.bold)).foregroundStyle(FormaTheme.lime)
         Text(hero.name).font(.title3.bold()).foregroundStyle(.white)
           .fixedSize(horizontal: false, vertical: true)
-        Text(hero.detail).font(.subheadline).foregroundStyle(HeroColor.detail)
+        Text(hero.detail).font(.subheadline).foregroundStyle(FormaTheme.heroDetail)
       }.frame(maxWidth: .infinity, alignment: .leading)
       Button(action: hero.perform) {
         Label(hero.action, systemImage: starting ? "hourglass" : hero.symbol)
       }
-      .buttonStyle(PrimaryButtonStyle())
+      .buttonStyle(.formaPrimaryOnDark)
       .frame(maxWidth: 260)
       .accessibilityLabel(hero.action)
       .accessibilityValue(starting ? "Starting" : "")
@@ -289,7 +283,7 @@ struct TodayView: View {
       .disabled(model.busy || starting)
     }
     .padding(20)
-    .background(HeroColor.ink, in: RoundedRectangle(cornerRadius: 24))
+    .background(FormaTheme.heroInk, in: RoundedRectangle(cornerRadius: 24))
     .heroEdge(cornerRadius: 24)
   }
 
@@ -305,8 +299,10 @@ struct TodayView: View {
           }
           .clipped()
           .overlay(alignment: .bottom) {
-            LinearGradient(colors: [.clear, HeroColor.ink], startPoint: .top, endPoint: .bottom)
-              .frame(height: 40)
+            LinearGradient(
+              colors: [.clear, FormaTheme.heroInk], startPoint: .top, endPoint: .bottom
+            )
+            .frame(height: 40)
           }
           .accessibilityHidden(true)
       }
@@ -325,7 +321,7 @@ struct TodayView: View {
           .font(.system(.title2, weight: .bold).width(.condensed))
           .foregroundStyle(.white).fixedSize(horizontal: false, vertical: true)
         if !textSize.isAccessibilitySize {
-          Text(hero.detail).font(.subheadline).foregroundStyle(HeroColor.detail)
+          Text(hero.detail).font(.subheadline).foregroundStyle(FormaTheme.heroDetail)
             .fixedSize(horizontal: false, vertical: true)
         }
       }
@@ -347,7 +343,7 @@ struct TodayView: View {
           .transition(.opacity)
         }
       }
-      .buttonStyle(PrimaryButtonStyle())
+      .buttonStyle(.formaPrimaryOnDark)
       // The label is explicit so the outgoing text, which lingers for the
       // cross-fade, never leaks into it.
       .accessibilityLabel(hero.action)
@@ -355,16 +351,16 @@ struct TodayView: View {
       .accessibilityIdentifier("start-workout")
       .disabled(model.busy || pending)
       .padding(16)
-      .background(HeroColor.ink)
+      .background(FormaTheme.heroInk)
       if textSize.isAccessibilitySize {
         // Keep the primary action above the fold on a compact phone at the
         // largest text size. Metadata stays readable below it, without capping type.
-        Text(hero.detail).font(.subheadline).foregroundStyle(HeroColor.detail)
+        Text(hero.detail).font(.subheadline).foregroundStyle(FormaTheme.heroDetail)
           .fixedSize(horizontal: false, vertical: true)
           .padding(.horizontal, 20).padding(.bottom, 20)
       }
     }
-    .background(HeroColor.ink)
+    .background(FormaTheme.heroInk)
     .clipShape(RoundedRectangle(cornerRadius: 24))
     .heroEdge(cornerRadius: 24)
     .formaAnimation(FormaMotion.reveal, value: model.activeWorkoutName)
@@ -480,7 +476,7 @@ struct WeekStrip: View {
               ZStack {
                 Circle().fill(trained ? FormaTheme.lime : FormaTheme.surface)
                 Circle().strokeBorder(
-                  scheduled ? FormaTheme.accent : FormaTheme.line,
+                  scheduled ? FormaTheme.accent : FormaTheme.boundary,
                   style: StrokeStyle(
                     lineWidth: scheduled ? 1.5 : 1, dash: scheduled && !trained ? [3, 3] : []))
                 if trained {

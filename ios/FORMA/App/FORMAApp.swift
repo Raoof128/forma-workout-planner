@@ -37,6 +37,13 @@ struct FORMAApp: App {
         .onChange(of: scenePhase) { _, phase in
           if phase == .active { Task { await model.sceneBecameActive() } }
           if phase == .background { model.widgets.requestReload() }
+          // The workout screen arms the rest reminder while it is open; this
+          // covers a rest left running after Save & close.
+          Task {
+            await RestReminder.shared.sync(
+              restEnd: model.workspace?.active?.restEnd,
+              muted: model.workspace?.profile.muted ?? false, appActive: phase == .active)
+          }
         }
     }
   }
@@ -166,6 +173,23 @@ struct RootView: View {
       Button("Keep editing", role: .cancel) { model.errorMessage = nil }
     } message: {
       Text(model.errorMessage ?? "Your last saved workout has been preserved.")
+    }
+    // The account ended this sign-in on its own: say why, and what happened
+    // to the training and any open workout. Sign in continues on You.
+    .alert(
+      model.account.interruption?.title ?? "",
+      isPresented: Binding(
+        get: { model.account.interruption != nil },
+        set: { if !$0 { model.account.dismissInterruption() } }),
+      presenting: model.account.interruption
+    ) { interruption in
+      Button(interruption.signInTitle) {
+        navigation.select(.you)
+        model.account.signInFromInterruption()
+      }
+      Button(interruption.dismissTitle, role: .cancel) {}
+    } message: {
+      Text($0.message)
     }
   }
 

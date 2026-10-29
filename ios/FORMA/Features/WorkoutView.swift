@@ -1016,7 +1016,7 @@ private struct HoldTimerCard: View {
       Button(action: retry) {
         Text("Retry save").frame(minHeight: 44).contentShape(Rectangle())
       }
-      .buttonStyle(PrimaryButtonStyle())
+      .buttonStyle(.formaPrimaryCompact)
       .accessibilityIdentifier("hold-retry")
       Button(action: cancel) {
         Text("Cancel timed set").frame(minHeight: 44).contentShape(Rectangle())
@@ -1067,7 +1067,7 @@ private struct HoldTimerCard: View {
       Button(action: start) {
         Label("Start", systemImage: "play.fill").frame(minHeight: 44)
       }
-      .buttonStyle(PrimaryButtonStyle())
+      .buttonStyle(.formaPrimaryCompact)
       .disabled(setNumber == nil || otherHoldRunning)
       .accessibilityLabel(
         setNumber.map { "Start \(length)-second hold for \(name) set \($0)" }

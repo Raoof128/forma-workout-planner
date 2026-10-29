@@ -9,15 +9,11 @@ struct AccountSecurityView: View {
     let profile = model.account.profile
     Form {
       Section {
-        NavigationLink {
-          ChangePasswordView()
-        } label: {
+        NavigationLink(value: TrainingRoute.changePassword) {
           Label("Change password", systemImage: "key")
         }
         .accessibilityIdentifier("security-password")
-        NavigationLink {
-          TwoFactorView()
-        } label: {
+        NavigationLink(value: TrainingRoute.twoFactor) {
           LabeledContent {
             Text(profile?.twoFactorEnabled == true ? "On" : "Off")
               .foregroundStyle(
@@ -35,15 +31,11 @@ struct AccountSecurityView: View {
         )
       }
       Section {
-        NavigationLink {
-          SessionsView()
-        } label: {
+        NavigationLink(value: TrainingRoute.sessions) {
           Label("Active sessions", systemImage: "person.2")
         }
         .accessibilityIdentifier("security-sessions")
-        NavigationLink {
-          CoachAccessView()
-        } label: {
+        NavigationLink(value: TrainingRoute.coachAccess) {
           Label("Coach access", systemImage: "key.viewfinder")
         }
         .accessibilityIdentifier("security-coach")
@@ -138,13 +130,13 @@ struct ChangePasswordView: View {
     if new.count < 15 {
       fail("Use at least 15 characters for your new password.")
       focus = .new
-      model.haptic(.warning)
+      model.haptic(.accountWarning)
       return
     }
     if new != confirm {
       fail("The new passwords do not match.")
       focus = .confirm
-      model.haptic(.warning)
+      model.haptic(.accountWarning)
       return
     }
     working = true
@@ -445,7 +437,7 @@ struct TwoFactorView: View {
         try await model.account.call { try await $0.disableTwoFactor(password: secret) }
         recoveryCodes = []
         message = "Two-step verification is off."
-        model.accountSucceeded()
+        model.accountSucceeded(.accountRemoved)
         await model.account.refreshSession()
       }
       noticeRevision += 1
@@ -619,7 +611,7 @@ struct SessionsView: View {
     defer { acting = nil }
     do {
       try await model.account.signOutEverywhere()
-      model.accountSucceeded()
+      model.accountSucceeded(.accountRemoved)
     } catch {
       self.error = error.accountMessage
       model.haptic(error.accountHaptic)
@@ -655,7 +647,7 @@ struct SessionsView: View {
       }
       devices = devices.filter { $0.id != action }
     }
-    model.accountSucceeded()
+    model.accountSucceeded(.accountRemoved)
   }
 }
 
@@ -910,10 +902,10 @@ struct CoachAccessView: View {
       tokens.insert(result.record, at: 0)
       label = ""
       full = false
-      model.accountSucceeded()
+      model.accountSucceeded(.accountSent)
     } catch let failure as AccountFailure where failure.kind == .reauthenticationRequired {
       fail("Sign in again before creating a coach token.")
-      model.haptic(.warning)
+      model.haptic(.accountWarning)
     } catch {
       fail(error.accountMessage)
       model.haptic(error.accountHaptic)
@@ -928,7 +920,7 @@ struct CoachAccessView: View {
       try await model.account.call { try await $0.revokeCoachToken(id: token.id) }
       tokens.removeAll { $0.id == token.id }
       if issued?.record.id == token.id { issued = nil }
-      model.accountSucceeded()
+      model.accountSucceeded(.accountRemoved)
     } catch {
       fail(error.accountMessage)
       model.haptic(error.accountHaptic)

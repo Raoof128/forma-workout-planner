@@ -58,6 +58,16 @@ enum TrainingRoute: Hashable {
   case trainingDays
   case exerciseLibrary
   case privacy
+  // Account screens under You, so re-tapping You returns from them too.
+  case syncDetails
+  case accountProfile
+  case accountSecurity
+  case trainingData
+  case accountPrivacy
+  case changePassword
+  case twoFactor
+  case sessions
+  case coachAccess
 }
 
 /// What tapping the already-selected tab did, like the system tab bar: a tab
@@ -195,6 +205,15 @@ private struct TrainingDestinations: ViewModifier {
       case .trainingDays: TrainingDaysView()
       case .exerciseLibrary: ExerciseLibraryView()
       case .privacy: NativePrivacyView()
+      case .syncDetails: SyncDetailsView()
+      case .accountProfile: AccountProfileView()
+      case .accountSecurity: AccountSecurityView()
+      case .trainingData: TrainingDataView()
+      case .accountPrivacy: AccountPrivacyView()
+      case .changePassword: ChangePasswordView()
+      case .twoFactor: TwoFactorView()
+      case .sessions: SessionsView()
+      case .coachAccess: CoachAccessView()
       }
     }
   }

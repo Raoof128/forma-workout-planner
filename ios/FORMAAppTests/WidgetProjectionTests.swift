@@ -15,6 +15,23 @@ final class WidgetProjectionTests: XCTestCase {
       notes: "PRIVATE NOTE NEVER SHARED", exercises: [], date: text)
   }
 
+  func testWidgetOffersTheSameNextRoutineAsToday() {
+    let now = date("2026-10-05T14:00:00Z")
+    var older = session("older", "2026-10-03T08:00:00Z")
+    older.routineId = "b"
+    var latest = session("latest", "2026-10-04T08:00:00Z")
+    latest.routineId = "a"
+    // History out of order: the newest workout decides, not the first entry.
+    let workspace = Workspace(
+      routines: [.init(id: "a", name: "A"), .init(id: "b", name: "B"), .init(id: "c", name: "C")],
+      history: [older, latest])
+    let value = WidgetSnapshotBridge.project(workspace, sharing: true, epoch: "test", at: now)
+    XCTAssertEqual(value.routine?.id, "b")
+    XCTAssertEqual(
+      NextRoutine.select(from: workspace.routines, preferredID: nil, lastRoutineID: "a")?.id,
+      value.routine?.id)
+  }
+
   func testSydneyMondayBoundaryFutureAndDuplicateTrainingDays() {
     // Sydney daylight time: Monday starts at Sunday 13:00 UTC.
     let now = date("2026-10-05T14:00:00Z")

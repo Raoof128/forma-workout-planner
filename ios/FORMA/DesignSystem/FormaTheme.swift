@@ -1,20 +1,20 @@
+import FORMASurfaces
 import SwiftUI
 import UIKit
 
-/// The canonical brand hex values, as plain integers with no UIKit or SwiftUI
-/// dependency. `FormaTheme` builds its colours from these. The Watch app and the
-/// widget extension still hold their own copies of the same values
-/// (`WatchViews.swift`, `TrainingWidgetView.swift`); this enum is the block to
-/// move into a source folder compiled into all three targets so those copies
-/// can go. Until then, change a value here and in those two files together.
+/// The app's brand hex values. The ones the widget extension also draws (lime,
+/// ink, accent, secondary text) come from `BrandPalette` in FORMASurfaces, which
+/// the app and the extension both link, so the two cannot drift. The Watch app
+/// cannot link FORMASurfaces (it is not built for watchOS) and keeps its own
+/// copy of lime and ink in `WatchTheme`; change those together.
 enum FormaPalette {
-  static let lime: UInt = 0xDFF780
-  static let ink: UInt = 0x202522
+  static let lime = UInt(BrandPalette.lime)
+  static let ink = UInt(BrandPalette.ink)
   static let canvasLight: UInt = 0xF5F6F3
   static let canvasDark: UInt = 0x151A17
-  static let accentLight: UInt = 0x4C631C
-  static let secondaryLight: UInt = 0x59635D
-  static let secondaryDark: UInt = 0xB9C2BC
+  static let accentLight = UInt(BrandPalette.accent.light)
+  static let secondaryLight = UInt(BrandPalette.secondaryText.light)
+  static let secondaryDark = UInt(BrandPalette.secondaryText.dark)
   /// The ink panel behind the Today hero. Equal to `canvasDark`, so in dark
   /// mode the panel has no edge of its own; see `FormaTheme.line`.
   static let heroInk: UInt = 0x151A17
@@ -33,10 +33,13 @@ enum FormaTheme {
   static let primary = adaptive(
     0x202522, 0xF5F6F3, highContrastLight: 0x101712, highContrastDark: 0xFFFFFF)
   static let secondary = adaptive(
-    FormaPalette.secondaryLight, FormaPalette.secondaryDark, highContrastLight: 0x333D35,
-    highContrastDark: 0xE8EDE9)
+    FormaPalette.secondaryLight, FormaPalette.secondaryDark,
+    highContrastLight: UInt(BrandPalette.secondaryText.highContrastLight),
+    highContrastDark: UInt(BrandPalette.secondaryText.highContrastDark))
   static let accent = adaptive(
-    FormaPalette.accentLight, FormaPalette.lime, highContrastLight: 0x354A0D)
+    FormaPalette.accentLight, UInt(BrandPalette.accent.dark),
+    highContrastLight: UInt(BrandPalette.accent.highContrastLight),
+    highContrastDark: UInt(BrandPalette.accent.highContrastDark))
   /// A hairline for separators that only decorate (list dividers, card edges).
   /// It is deliberately quiet, 1.2:1 to 2:1 against canvas, so never use it for a
   /// stroke that carries meaning; use `boundary`.
@@ -212,14 +215,16 @@ extension ButtonStyle where Self == PrimaryButtonStyle {
 struct LocalSaveStatus: View {
   let saving: Bool
   var pendingChanges = false
-  /// How to save, named after a control that is on screen when the status shows.
-  var saveHint = "tap Done to save"
+  /// How to save, named after a control that is on screen when the status
+  /// shows. Without one the status just says the edits are unsaved.
+  var saveHint: String? = nil
   var body: some View {
     Label(
       saving
         && !pendingChanges
         ? "Saving on this iPhone…"
-        : pendingChanges ? "Unsaved edits · \(saveHint)" : "Saved on this iPhone",
+        : pendingChanges
+          ? saveHint.map { "Unsaved edits · \($0)" } ?? "Unsaved edits" : "Saved on this iPhone",
       systemImage: pendingChanges
         ? "pencil.circle"
         : saving

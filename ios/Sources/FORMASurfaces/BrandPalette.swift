@@ -4,6 +4,11 @@ import Foundation
 /// extension). Plain hex, no UIKit or SwiftUI, so the extension, the app and tests share one table.
 /// Each pair mirrors the matching `FormaTheme` token; change both together.
 public struct BrandPalette: Equatable, Sendable {
+  /// The brand lime. Fixed in every appearance.
+  public static let lime: UInt32 = 0xDFF780
+  /// The ink drawn on lime. Fixed in every appearance.
+  public static let ink: UInt32 = 0x202522
+
   public struct Token: Equatable, Sendable {
     public let light: UInt32
     public let dark: UInt32

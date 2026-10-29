@@ -267,12 +267,12 @@ struct RevealablePasswordField: View {
 }
 
 extension AppModel {
-  /// A completed account action (signed in, password changed, session ended
-  /// on purpose). Account outcomes deliberately do not borrow the workout
-  /// patterns (`.started` is a rep counter starting); they stay silent until
-  /// the haptics set has an account-success pattern. Refusals and failures
-  /// keep `.warning` and `.failed` through `accountHaptic`.
-  func accountSucceeded() {}
+  /// A completed account action. Account outcomes have their own patterns
+  /// (see `FormaHaptic`) rather than borrowing the workout ones: `.accountSent`
+  /// for a link, email or token that went out, `.accountRemoved` for a
+  /// sign-out, revoke or removal, and `.accountSuccess` for everything else.
+  /// Refusals and failures use `accountHaptic`.
+  func accountSucceeded(_ outcome: FormaHaptic = .accountSuccess) { haptic(outcome) }
 }
 
 extension Error {
@@ -291,8 +291,8 @@ extension Error {
 
   /// A refusal the screen explains (validation) versus a failure to save.
   var accountHaptic: FormaHaptic {
-    guard let failure = self as? AccountFailure else { return .failed }
+    guard let failure = self as? AccountFailure else { return .accountFailure }
     return failure.kind == .rejected || failure.kind == .reauthenticationRequired
-      ? .warning : .failed
+      ? .accountWarning : .accountFailure
   }
 }

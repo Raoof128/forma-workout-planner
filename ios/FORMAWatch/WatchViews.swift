@@ -1,6 +1,7 @@
 import SwiftUI
 
-/// The Watch app's colours, in one place.
+/// The Watch app's colours, in one place. Lime and ink match `BrandPalette`
+/// (FORMASurfaces), which the Watch target cannot link; change them together.
 enum WatchTheme {
   static let lime = Color(red: 0xDF / 255, green: 0xF7 / 255, blue: 0x80 / 255)
   static let ink = Color(red: 0x20 / 255, green: 0x25 / 255, blue: 0x22 / 255)
