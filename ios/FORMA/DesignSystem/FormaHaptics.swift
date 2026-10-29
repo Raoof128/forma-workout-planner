@@ -31,8 +31,13 @@ enum FormaHaptic: Sendable {
   case stopped
   /// A stepped value went up or down (hold length, rest +15 s).
   case increased, decreased
-  /// The current choice changed (another exercise).
+  /// The current choice changed (another exercise, another bar in a chart).
   case selected
+  /// Another tab opened. A firm, single tap: stronger than `selected`, so
+  /// moving between the four spaces of the app is felt clearly.
+  case tabChanged
+  /// The selected tab was tapped again and went back to its start.
+  case tabReturned
   /// A completed set was reopened.
   case undone
   /// A set was added.
@@ -59,6 +64,8 @@ enum FormaHaptic: Sendable {
     case .increased: .increase
     case .decreased: .decrease
     case .selected: .selection
+    case .tabChanged: .impact(flexibility: .solid, intensity: 0.85)
+    case .tabReturned: .impact(flexibility: .soft, intensity: 0.65)
     case .undone: .impact(flexibility: .soft, intensity: 0.6)
     case .added: .impact(flexibility: .solid, intensity: 0.7)
     case .warning: .warning
