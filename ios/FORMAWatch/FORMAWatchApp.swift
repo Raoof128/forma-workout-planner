@@ -21,6 +21,6 @@ final class WatchAppDelegate: NSObject, WKApplicationDelegate {
 
   /// watchOS relaunched FORMA after it quit during a workout.
   func handleActiveWorkoutRecovery() {
-    Task { await WorkoutManager.shared.recover() }
+    Task { @MainActor in await WorkoutManager.shared.recover() }
   }
 }
