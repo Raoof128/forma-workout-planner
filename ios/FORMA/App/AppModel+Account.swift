@@ -437,6 +437,8 @@ extension AppModel {
   /// Launch is handled by `load()`; this is every return to the foreground.
   func sceneBecameActive() async {
     refreshTrainingClock()
+    // A start that was refused while the app was in the background can succeed now.
+    syncLiveActivity(force: true)
     guard activeMember != nil, Date.now.timeIntervalSince(lastForegroundSync) > 5 else { return }
     lastForegroundSync = .now
     await account.refreshSession()

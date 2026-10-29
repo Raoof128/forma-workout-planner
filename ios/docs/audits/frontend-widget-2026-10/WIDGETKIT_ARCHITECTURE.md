@@ -179,39 +179,122 @@ editors and explicit workout Save & close, and never bypasses invalid numeric
 drafts. A banner explains the queued link. Current results are in the final
 evidence report; cached-view protection remains a separate physical-device gate.
 
-## Live Activity decision and scoped follow-up
+## Live Activity
 
-**Not shipped in this pass.** A workout has a defined beginning and end, so it
-is a reasonable ActivityKit use case. The installed SDK supports the basic
-content-based ActivityKit API below the app's iOS 17 floor. API availability is
-not the blocker. Lifecycle/ownership/privacy proof is incomplete, and a partial
-activity could outlive reset/account exit or imply an ongoing workout after
-termination. The owner's brief explicitly permits an evidenced deferral.
+**Shipped (29 October 2026), pending the physical-device gates below.** A workout
+has a defined start and end, so it is shown as one app-driven, local Live
+Activity on the Lock Screen, in the Dynamic Island, in StandBy, and on iOS 18 and
+later in the compact `.small` layout used by the Apple Watch Smart Stack and
+CarPlay. The earlier deferral set four acceptance boundaries; each is
+implemented as follows.
 
-The follow-up is a small app-owned coordinator, using the existing widget
-extension for `ActivityConfiguration`, with these acceptance boundaries:
+| Piece | Where |
+| --- | --- |
+| `NSSupportsLiveActivities` | `ios/FORMA/Info.plist` (app only; the extension has none) |
+| Pure payload model, mapping and stale date | `FORMASurfaces/WorkoutActivityState.swift` (Foundation only, also built for macOS) |
+| Session to state mapping | `FORMA/App/WorkoutLiveActivityMapping.swift` (current exercise is `WorkoutEngine.resumeIndex`, the one the workout screen opens on) |
+| Lifecycle controller and ActivityKit wrapper | `FORMA/App/WorkoutLiveActivityController.swift` (`WorkoutActivityHost` protocol, faked in tests, like `RestNotificationCenter`) |
+| Single hook | `AppModel.workspace` `didSet` calls `syncLiveActivity()`; `sceneBecameActive()` repeats it with `force` |
+| Attributes, intents, views | `WidgetPresentation/WorkoutActivity*.swift` (attributes and intents are in both targets; views only in the extension and Debug app) |
+| `ActivityConfiguration` and bundle | `FORMAWidgets/WorkoutLiveActivity.swift`, `FORMAWidgets/FORMAWidgetBundle.swift` |
 
-1. Start only after a committed active workout and explicit foreground user
-   action, conditional on Live Activity availability. Bind immutable attributes
-   to session ID and opaque owner epoch; reconcile `Activity.activities` on
-   relaunch before starting another activity.
-2. Use a neutral public title, saved elapsed/rest dates and saved phase/counts.
-   Exclude routine notes, account identity and Health metrics. Derive system
-   timer text from saved timestamps, with a finite stale date; do not send
-   high-frequency updates or introduce push infrastructure.
-3. Update after acknowledged relevant workspace commits. End immediately on
-   committed finish/discard/reset and owner exit. Include final content and
-   immediate dismissal for privacy withdrawal. A dismissed display must not
-   finish/discard training.
-4. Reconcile crashes, force termination/relaunch, reboot, denied activities,
-   duplicates, stale deadlines, owner switches and locked storage. Provide
-   Lock Screen/Dynamic Island and supported smaller presentations with guarded
-   availability. Prove public-content privacy on a physical device.
+**Lifecycle.**
 
-Integration points are workspace publication, account transitions, reset,
-finish/discard and the existing validated active-workout route. None require
-extension writes to canonical storage. No ActivityKit source, capability,
-`NSSupportsLiveActivities` claim or simulated success is included now.
+1. *Start.* Only for an active workout in the saved workspace, with the app in
+   the foreground and `ActivityAuthorizationInfo().areActivitiesEnabled`.
+   Immutable attributes are the session ID and the widget bridge's opaque owner
+   epoch; no account identifier is ever an attribute or state field. A refused
+   request leaves training untouched and is retried on the next trigger.
+2. *Update.* Only when the mapped `WorkoutActivityState` differs from the one on
+   screen, so logging a set, starting, pausing, extending or skipping a rest
+   send one update each and nothing is sent per second. Elapsed time and the
+   rest countdown are system timers over saved dates. A repeat commit while a
+   rest runs maps to an equal state on purpose (the ring length is the
+   programmed rest, not "remaining at the time of the commit"). Payload: the
+   current exercise only, names clipped to 40 characters and 96 bytes, under
+   1 KB encoded (tested; ActivityKit allows 4 KB).
+3. *Stale.* A running rest goes stale one second after it ends, and the views
+   then say "Rest over" instead of a timer parked at zero when the app is
+   suspended and cannot send the update. Anything else goes stale after three
+   idle hours and shows "Open FORMA to update". Any update refreshes it.
+4. *End.* `dismissalPolicy: .immediate` on finish, discard, reset, sign-out,
+   account switch (owner epoch change) and a changed session ID, all of which
+   reach the controller as an inactive or different workspace through the one
+   `didSet`. There is deliberately no final "Workout saved" card: the receipt
+   belongs to the app, and an ended workout should not stay readable on a
+   locked screen. Dismissing the display never finishes or discards training.
+5. *Relaunch.* Every pass compares against `Activity.activities`: the one that
+   matches the saved session and owner epoch is adopted (and updated only if its
+   state differs); every other one is ended, including ones left by a crash or
+   another owner. The first pass after launch runs even with no workout, to end
+   orphans. Two activities never coexist. An activity the person swipes away is
+   not restarted for that workout until the next launch.
+6. *Preference.* "Show workout on Lock Screen" (You tab, identifier
+   `live-activity-toggle`, on by default) is stored with the other presentation
+   preferences in `presentation.json`: local to this iPhone, never synced and not
+   tied to the widget-sharing consent. Off means no target, so a running activity
+   ends at once and none starts; on starts one for an active workout while the
+   app is in front. The person can also turn Live Activities off for FORMA in
+   Settings.
+7. *Opening.* A workspace that has not opened yet is not "no workout": on a cold
+   launch the scene becomes active while `load()` runs, and the controller is
+   not synced until the workspace arrives, so the running activity is neither
+   ended nor restarted. A workspace that closes (sign-out, account switch) or
+   fails to open (`loadFailure`) ends it.
+8. *Denied or unavailable.* No request is made; the in-app workout and the
+   rest notification are unaffected.
+
+**Presentations.** Lock Screen/banner: "FORMA workout" title, routine and
+exercise names (`.privacySensitive()`), "Set 3 of 4 · 7 of 18 done", elapsed
+time, rest ring and countdown or paused time, and the "Complete set" and (while
+resting) "Skip rest" buttons. Dynamic Island: compact leading is the FORMA
+symbol (the rest ring while resting; it fits a 28 pt circle and carries the
+meaning alone, as the limited-width guidance requires), compact trailing is the
+rest countdown or elapsed time, minimal is the ring or symbol, and expanded
+splits name, set, timer and buttons. No `isDynamicIslandLimitedInWidth` is used
+(iOS 27 only). Fixed colours: ink on lime in light, lime on ink in dark
+(`BrandPalette`), always the dark palette inside the Island.
+
+**Buttons.** `CompleteSetIntent` and `SkipRestIntent` are `LiveActivityIntent`s
+(iOS 17) with `authenticationPolicy = .requiresAuthentication`: the workout is in
+Complete-protected storage and unreadable while locked, so a press asks to
+unlock. The system runs them in the app's process. They call
+`LiveActivityActions.handler`, installed in `FORMAApp.init` before any scene
+exists, which awaits the model's `load()` if needed (a press can launch the app
+with no window), checks the session ID still matches the active workout, and
+otherwise does nothing. "Complete set" ticks the next unfinished set of the
+current exercise through `AppModel.toggleSet`; "Skip rest" uses the same
+`WorkoutEngine.skipRest` commit as the rest dock. Both then bring the pending
+rest-end notification in line (`RestReminder`), so a rest started from the Lock
+Screen still cues the end on a locked phone. The extension never writes
+storage.
+
+**Availability.** Deployment target iOS 17.0. `supplementalActivityFamilies` and
+`activityFamily` are iOS 18, and a `Widget.body` cannot branch between two
+configurations at run time, so the extension has two bundles that differ only in
+the Live Activity widget type and a `main` that picks one with `#available`.
+CI builds with the iOS 26.2 SDK; nothing newer is used, and
+`scripts/check-ios-widget-bundle.py` asserts the plist key, the bundle, the six
+Training families and one kind, `pushType: nil` and the absence of
+`isDynamicIslandLimitedInWidth`.
+
+**Remaining physical-device gates** (not provable in the simulator or by source):
+
+- No leftover activity after discard, finish, sign-out, force-quit and relaunch,
+  or reboot; exactly one after relaunch mid-workout.
+- A locked phone shows nothing private: routine and exercise names are redacted
+  where the system hides sensitive content; counts and timers are not private.
+- Landscape and the iPhone 17 family: compact leading and minimal fit, expanded
+  is not truncated, and the Lock Screen card is not cut at 160 pt at the larger
+  text sizes.
+- The circular `ProgressView(timerInterval:)` ring renders as a ring in the
+  compact leading and minimal Island, not a spinner.
+- StandBy and Always-On tint, plus Smart Stack and CarPlay `.small` rendering;
+  the Watch shows no duplicate FORMA surface next to the mirrored workout.
+- Buttons: unlock prompt, a set ticked from a cold background launch, and a
+  press after the workout ended doing nothing.
+- The bundle `main` dispatch loads the right bundle on an iOS 17 and an iOS 18
+  device.
 
 ## Watch complications and Smart Stack
 

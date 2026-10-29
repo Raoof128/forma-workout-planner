@@ -93,6 +93,15 @@ struct YouView: View {
       }
 
       Section {
+        Toggle("Show workout on Lock Screen", isOn: $model.liveActivityEnabled)
+          .accessibilityIdentifier("live-activity-toggle")
+      } footer: {
+        Text(
+          "Shows the workout, current set and rest timer on the Lock Screen and in the Dynamic Island while a workout is active. This stays on this iPhone. You can also turn Live Activities off for FORMA in Settings."
+        )
+      }
+
+      Section {
         Button {
           do {
             document = WorkspaceDocument(data: try model.exportData())
