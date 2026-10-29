@@ -78,8 +78,12 @@ This adds no reason to the draft manifest. See the
 [retrieval record](apple-design-2026.md#additional-sources-for-the-full-bug-audit).
 It does not replace inspection of the archive and its linked implementations.
 
-No `UserDefaults`, location, notification, camera, microphone, contacts, Photos
-or advertising capability is required; the Keychain and the Network framework's
+No `UserDefaults`, location, camera, microphone, contacts, Photos or advertising
+capability is required. Local notifications are requested only the first time
+a rest timer starts, for one purpose: a rest-end reminder while FORMA is in the
+background (`App/RestReminder.swift`). Its text is generic ("Rest finished /
+Ready for your next set.") so a locked screen shows nothing about the workout;
+nothing is sent remotely, and denial leaves the in-app cue unchanged; the Keychain and the Network framework's
 path monitor (reachability only, used to retry a waiting sync) are not
 required-reason APIs. HealthKit is requested only when a
 workout is started with Apple Watch, for the types listed above. The app

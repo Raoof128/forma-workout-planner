@@ -20,11 +20,12 @@ the iPhone logs the sets. Requirement IDs refer to the
    energy, all the live data its sensors provide) and mirrors the session to the
    iPhone. The iPhone starts the FORMA workout at that moment.
 3. **During the workout** the Watch shows elapsed active time, heart rate and
-   active energy, with Pause and End. The iPhone's workout screen shows the live
+   active energy on one page; Pause, End and Discard recording are on a
+   separate controls page, as in Apple's Workout app. Paused is shown in text. The iPhone's workout screen shows the live
    heart rate and calories it receives.
 4. **Finish on the iPhone**: the Watch stops, ends collection and saves the
    workout to Apple Health. **Discard** on the iPhone discards it on the Watch
-   too. Ending on the Watch saves it to Health; the sets stay on the iPhone.
+   too, if the Watch is connected and still recording. Ending on the Watch saves it to Health; the sets stay on the iPhone.
 
 The Watch can also start a strength workout by itself; the iPhone then shows it
 as recording without inventing a FORMA workout.
@@ -45,7 +46,7 @@ the devices.
 | iPhone: check, open, follow | `FORMA/App/WatchWorkoutCoordinator.swift` | AP05–AP07 activation, switching and pairing/install checks; AP12–AP13 authorization; AP17 `startWatchApp(toHandle:)`; AP18–AP20 mirroring handler registered at launch, reconnect keeps one logical workout, batched data |
 | iPhone: start sheet and live strip | `FORMA/Features/StartWorkoutSheet.swift`, `AppModel.requestStart` | Explicit start waits for the Watch; fallback to iPhone only |
 | Watch: recording | `FORMAWatch/WorkoutManager.swift` | AP15–AP16 session and live builder; AP18 `startMirroringToCompanionDevice`; AP22 `recoverActiveWorkoutSession`; AP23 stop, wait for stopped, end collection, `finishWorkout` (nil/nil is a locked-device success, never re-saved), end |
-| Watch: lifecycle and UI | `FORMAWatch/FORMAWatchApp.swift`, `WatchViews.swift` | AP29 `WKApplicationDelegate` (no `WKExtension`); AP33 Always On drops controls and updates once a minute |
+| Watch: lifecycle and UI | `FORMAWatch/FORMAWatchApp.swift`, `WatchViews.swift` | AP29 `WKApplicationDelegate` (no `WKExtension`); AP33 Always On drops controls, shows whole minutes only and updates once a minute |
 | Capabilities | `FORMA/FORMA.entitlements`, `FORMAWatch/FORMAWatch.entitlements`, both `Info.plist` files | HealthKit entitlement, purpose strings, `WKCompanionAppBundleIdentifier`, `workout-processing` background mode, privacy manifests |
 
 The phone stays on its iOS 17 target. Mirroring works from iOS 17 / watchOS 10.
@@ -61,7 +62,7 @@ no warnings. Core tests and the web contract pass.
 
 **Not verified**: nothing ran on a simulator or a paired iPhone and Watch. Apple's
 multi-device workout sample requires physical devices (AP35). Before relying on
-it, test on the actual iPhone and Ultra 2:
+it, test on the actual iPhone and the owner's Watch (reports `Watch7,12`; confirm the model and test its smallest case size):
 
 - Watch detection states, permission prompts on both devices, and starting from
   the iPhone sheet and from the Watch alone.
@@ -72,7 +73,7 @@ it, test on the actual iPhone and Ultra 2:
 - Force-quit during a workout (recovery), a second Watch (switching), and battery.
 - A developer-forum report (FB24834050, unconfirmed by Apple) says watchOS 27
   workouts record almost no heart-rate samples on Series 10. Check sample density
-  on Ultra 2.
+  on the owner's Watch.
 
 A development team, bundle IDs `dev.raoufabedini.forma` and
 `dev.raoufabedini.forma.watchkitapp`, and the HealthKit capability must be set
