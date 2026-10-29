@@ -15,15 +15,50 @@ final class TrainingSnapshotTests: XCTestCase {
       week: .init(sessions: 3, goal: 4, days: [true, false, true, false, false, false, false]))
   }
 
-  func testRoundTripAndExpiryRemoveAllPersonalContent() throws {
+  func testRoundTripAndCarryWindowEndRemoveAllPersonalContent() throws {
     let value = fixture()
     let data = try JSONEncoder().encode(value)
     XCTAssertEqual(try TrainingSnapshot.decode(data, at: now), value)
-    let expired = try TrainingSnapshot.decode(data, at: value.expiresAt)
+    let carryEnd = value.expiresAt.addingTimeInterval(TrainingSnapshot.carryWindow)
+    let expired = try TrainingSnapshot.decode(data, at: carryEnd)
     XCTAssertEqual(expired.state, .stale)
     XCTAssertNil(expired.active)
     XCTAssertNil(expired.routine)
     XCTAssertNil(expired.week)
+  }
+
+  func testNextRoutineSurvivesMidnightButSavedWorkoutDoesNot() throws {
+    let value = fixture()
+    let data = try JSONEncoder().encode(value)
+    let carried = try TrainingSnapshot.decode(data, at: value.expiresAt)
+    XCTAssertEqual(carried.state, .ready)
+    XCTAssertTrue(carried.carriedOver)
+    XCTAssertEqual(carried.routine, value.routine)
+    XCTAssertNil(carried.active)
+    XCTAssertEqual(carried.week, value.week)
+    // The carried flag is presentation state and never enters the file contract.
+    XCTAssertFalse(
+      String(decoding: try JSONEncoder().encode(carried), as: UTF8.self).contains("carriedOver"))
+    XCTAssertEqual(
+      value.visibilityBoundaries(after: now),
+      [value.expiresAt, value.expiresAt.addingTimeInterval(TrainingSnapshot.carryWindow)])
+    XCTAssertEqual(value.visibilityBoundaries(after: value.expiresAt).count, 1)
+  }
+
+  func testWeeklyCountRollsOverOnANewTrainingWeekOnly() throws {
+    // Sunday 2026-10-04 22:00 Sydney; the next training week starts Monday 00:00 Sydney.
+    let sunday = Date(timeIntervalSince1970: 1_791_111_600)
+    var value = fixture()
+    value.generatedAt = sunday
+    value.expiresAt = sunday.addingTimeInterval(3600)
+    value.week = .init(sessions: 3, goal: 4, days: [true, true, true, false, false, false, false])
+    let lateSunday = value.visible(at: sunday.addingTimeInterval(5400))
+    XCTAssertTrue(lateSunday.carriedOver)
+    XCTAssertEqual(lateSunday.week?.sessions, 3)
+    let monday = value.visible(at: sunday.addingTimeInterval(3 * 3600))
+    XCTAssertEqual(
+      monday.week, .init(sessions: 0, goal: 4, days: Array(repeating: false, count: 7)))
+    XCTAssertEqual(monday.routine, value.routine)
   }
 
   func testCorruptFutureUnsupportedAndUnboundedPayloadsFailClosed() throws {

@@ -7,7 +7,7 @@ struct TrainingConfiguration: WidgetConfigurationIntent {
   static let title: LocalizedStringResource = "Training at a glance"
   static let description = IntentDescription(
     "Choose your next session or this week’s saved progress.")
-  @Parameter(title: "Focus", default: .nextSession) var focus: TrainingFocus
+  @Parameter(title: "Show", default: .nextSession) var focus: TrainingFocus
 }
 
 struct TrainingProvider: AppIntentTimelineProvider {
@@ -18,42 +18,43 @@ struct TrainingProvider: AppIntentTimelineProvider {
   func snapshot(for configuration: TrainingConfiguration, in context: Context) async
     -> TrainingEntry
   {
-    TrainingEntry(
-      date: .now, snapshot: context.isPreview ? .example : read(), focus: configuration.focus)
+    if context.isPreview {
+      return TrainingEntry(date: .now, snapshot: .example, focus: configuration.focus)
+    }
+    return entries(for: configuration, at: .now).entries[0]
   }
 
   func timeline(for configuration: TrainingConfiguration, in context: Context) async -> Timeline<
     TrainingEntry
   > {
-    let now = Date.now
-    let value = read(at: now)
-    var entries = [TrainingEntry(date: now, snapshot: value, focus: configuration.focus)]
-    if value.state == .ready, value.expiresAt > now {
-      entries.append(
-        TrainingEntry(
-          date: value.expiresAt, snapshot: value.visible(at: value.expiresAt),
-          focus: configuration.focus))
-    }
+    let plan = entries(for: configuration, at: .now)
     // Predictable expiry is carried by the timeline. Reloads remain a system-managed request.
-    return Timeline(
-      entries: entries, policy: .after(max(now.addingTimeInterval(1800), value.expiresAt)))
+    return Timeline(entries: plan.entries, policy: .after(plan.reloadAt))
   }
 
-  private func read(at now: Date = .now) -> TrainingSnapshot {
+  /// A protected-data failure is a lock, not a fault: it gets a short-lived entry and a retry that
+  /// backs off with the time since the app last published (see `TrainingTimelinePlan`), instead of
+  /// parking the generic tile for half an hour or spending the reload budget overnight.
+  private func entries(for configuration: TrainingConfiguration, at now: Date) -> (
+    entries: [TrainingEntry], reloadAt: Date
+  ) {
+    let plan = TrainingTimelinePlan.make(from: read(at: now), at: now)
+    return (
+      plan.entries.map {
+        TrainingEntry(
+          date: $0.date, snapshot: $0.snapshot, focus: configuration.focus,
+          awaitingUnlock: $0.awaitingUnlock)
+      }, plan.reloadAt
+    )
+  }
+
+  private func read(at now: Date) -> SnapshotReadResult {
     guard
       let group = FileManager.default.containerURL(
         forSecurityApplicationGroupIdentifier: TrainingSnapshot.group)
-    else { return .unavailable(at: now) }
-    do {
-      let url = group.appendingPathComponent(TrainingSnapshot.filename)
-      // Bound the file before mapping it, then validate the independent versioned contract.
-      let size = try url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
-      guard size > 0, size <= 32_768 else { return .unavailable(at: now) }
-      return try TrainingSnapshot.decode(Data(contentsOf: url), at: now)
-    } catch {
-      // Missing, corrupt and protected files all receive a non-personal, actionable fallback.
-      return .unavailable(at: now)
-    }
+    else { return .unavailable }
+    return SnapshotReader.read(
+      url: group.appendingPathComponent(TrainingSnapshot.filename), at: now)
   }
 }
 

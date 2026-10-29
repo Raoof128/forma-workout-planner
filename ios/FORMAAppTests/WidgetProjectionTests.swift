@@ -1,6 +1,7 @@
 import FORMACore
 import FORMASurfaces
 import Foundation
+import UIKit
 import XCTest
 
 @testable import FORMA
@@ -147,5 +148,24 @@ final class WidgetProjectionTests: XCTestCase {
     let relaunched = WidgetSnapshotBridge()
     relaunched.configure(directory: directory, owner: "test")
     XCTAssertTrue(relaunched.sharing)
+  }
+
+  /// Wg-H2: unlocking or foregrounding must reload the timelines so the first look is a real tile.
+  func testProtectedDataAndForegroundReloadTheTimelines() async {
+    let center = NotificationCenter()
+    var reloads = 0
+    let reloaded = expectation(description: "timelines reloaded twice")
+    reloaded.expectedFulfillmentCount = 2
+    let bridge = WidgetSnapshotBridge(
+      reloadTimelines: {
+        reloads += 1
+        reloaded.fulfill()
+      }, notifications: center)
+    bridge.observeProtectedDataAvailability()
+    bridge.observeProtectedDataAvailability()  // a second call must not double-register
+    center.post(name: UIApplication.protectedDataDidBecomeAvailableNotification, object: nil)
+    center.post(name: UIApplication.didBecomeActiveNotification, object: nil)
+    await fulfillment(of: [reloaded], timeout: 2)
+    XCTAssertEqual(reloads, 2)
   }
 }

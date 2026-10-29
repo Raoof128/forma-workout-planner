@@ -6,7 +6,7 @@
 
   enum TrainingFocus: String, AppEnum {
     case nextSession, week
-    static let typeDisplayRepresentation = TypeDisplayRepresentation(name: "Training focus")
+    static let typeDisplayRepresentation = TypeDisplayRepresentation(name: "Show")
     static let caseDisplayRepresentations: [Self: DisplayRepresentation] = [
       .nextSession: "Next session", .week: "This week",
     ]
@@ -16,6 +16,8 @@
     let date: Date
     let snapshot: TrainingSnapshot
     var focus: TrainingFocus = .nextSession
+    /// The file could not be read because the device is locked; a retry is already scheduled.
+    var awaitingUnlock = false
     var relevance: TimelineEntryRelevance? {
       // Saved active state is useful for a limited window; never advertise indefinite urgency.
       guard snapshot.state == .ready, snapshot.active != nil else { return nil }
@@ -31,6 +33,7 @@
     private var family: WidgetFamily { reviewFamily ?? systemFamily }
     @Environment(\.widgetRenderingMode) private var renderingMode
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.colorSchemeContrast) private var contrast
     @Environment(\.redactionReasons) private var redaction
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     let entry: TrainingEntry
@@ -39,107 +42,101 @@
       self.reviewFamily = reviewFamily
     }
 
-    private var value: TrainingSnapshot { entry.snapshot }
-    private var weekFocus: Bool { entry.focus == .week }
-    private var lime: Color {
-      guard renderingMode == .fullColor else { return .primary }
-      return colorScheme == .dark
-        ? Color(red: 223.0 / 255, green: 247.0 / 255, blue: 128.0 / 255)
-        : Color(red: 76.0 / 255, green: 99.0 / 255, blue: 28.0 / 255)
+    private var model: TrainingPresentation {
+      TrainingPresentation(
+        snapshot: entry.snapshot, weekFocus: entry.focus == .week,
+        awaitingUnlock: entry.awaitingUnlock)
+    }
+    private var weekFocus: Bool { model.weekFocus }
+    private func color(_ token: BrandPalette.Token) -> Color {
+      let hex = token.hex(dark: colorScheme == .dark, highContrast: contrast == .increased)
+      return Color(
+        red: Double((hex >> 16) & 0xFF) / 255, green: Double((hex >> 8) & 0xFF) / 255,
+        blue: Double(hex & 0xFF) / 255)
+    }
+    /// Tinted, clear and vibrant renderings replace colour, so emphasis falls back to the
+    /// primary style and hierarchy comes from `detailColor` being secondary.
+    private var accent: Color {
+      renderingMode == .fullColor ? color(BrandPalette.accent) : .primary
     }
     private var detailColor: Color {
-      guard renderingMode == .fullColor else { return .primary }
-      return colorScheme == .dark
-        ? Color(red: 185.0 / 255, green: 194.0 / 255, blue: 188.0 / 255)
-        : Color(red: 89.0 / 255, green: 99.0 / 255, blue: 93.0 / 255)
+      renderingMode == .fullColor ? color(BrandPalette.secondaryText) : .secondary
     }
-    private var trainedDaySummary: String {
-      let names = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-      let trained = names.enumerated().compactMap { day, name in
-        value.week?.days[safe: day] == true ? name : nil
+    /// Small stays on the full layout only while its title, detail and action fit; the others
+    /// switch at the sizes where their fixed frames start to clip.
+    private var usesCompactLayout: Bool {
+      switch family {
+      case .systemSmall: dynamicTypeSize >= .xxLarge
+      case .systemMedium: dynamicTypeSize >= .xxxLarge
+      case .systemLarge: dynamicTypeSize.isAccessibilitySize
+      default: false
       }
-      return trained.isEmpty
-        ? "No days recorded this week" : "Trained on " + trained.joined(separator: ", ")
     }
-    private var route: WidgetRoute {
-      if family == .accessoryCircular, value.state == .ready { return .progress }
-      guard value.state == .ready else {
-        return value.state == .hidden ? .settings : value.state == .empty ? .plan : .today
-      }
-      if weekFocus { return .progress }
-      if let active = value.active { return .active(id: active.id, epoch: value.epoch) }
-      if let routine = value.routine { return .routine(id: routine.id, epoch: value.epoch) }
-      return .progress
-    }
-    private var title: String {
-      if weekFocus { return "This week" }
-      return value.active?.name ?? value.routine?.name ?? "Your training"
-    }
-    private var status: String {
-      if value.active != nil { return "SAVED WORKOUT" }
-      return weekFocus ? "A LITTLE, CONSISTENTLY" : "YOUR NEXT SESSION"
-    }
-    private var detail: String {
-      if let active = value.active, !weekFocus {
-        return "\(active.completedSets) of \(active.totalSets) sets saved"
-      }
-      if let routine = value.routine, !weekFocus {
-        return "\(routine.exercises) exercises · \(routine.minutes) min"
-      }
-      return "\(value.week?.sessions ?? 0) of \(value.week?.goal ?? 4) workouts"
-    }
+    private var route: WidgetRoute { model.route(progressOnly: family == .accessoryCircular) }
 
     var body: some View {
-      Group {
-        if redaction.contains(.privacy) {
-          fallback("Training is private", symbol: "lock")
-        } else if value.state != .ready {
-          fallback(fallbackTitle, symbol: fallbackSymbol)
-        } else if dynamicTypeSize.isAccessibilitySize,
-          family == .systemSmall || family == .systemMedium || family == .systemLarge
-        {
-          accessibleSummary
-        } else {
-          switch family {
-          case .accessoryCircular: circular
-          case .accessoryRectangular: rectangular
-          case .accessoryInline: Text("FORMA · \(detail)").lineLimit(1)
-          case .systemSmall: small
-          case .systemMedium: medium
-          case .systemLarge: large
-          default: small
+      let layout = model.layout(
+        privacyRedacted: redaction.contains(.privacy), compact: usesCompactLayout)
+      content(layout)
+        // Only personal content is redacted. The generic privacy and fallback messages carry
+        // no data and must stay readable on the Lock Screen and in StandBy.
+        .privacySensitive(layout.containsPersonalContent)
+        .widgetURL(route.url)
+        .containerBackground(for: .widget) { Color(uiColor: .secondarySystemBackground) }
+    }
+
+    @ViewBuilder
+    private func content(_ layout: TrainingPresentation.Layout) -> some View {
+      switch layout {
+      case .privacyFallback: fallback(TrainingPresentation.privacyFallback)
+      case .fallback: fallback(model.fallback)
+      case .compactSummary: accessibleSummary
+      case .data:
+        switch family {
+        case .accessoryCircular: circular
+        case .accessoryRectangular: rectangular
+        case .accessoryInline:
+          ViewThatFits {
+            Text(model.inlineText).lineLimit(1)
+            Text(model.inlineShortText).lineLimit(1)
           }
+        case .systemSmall: small
+        case .systemMedium: medium
+        case .systemLarge: large
+        default: small
         }
       }
-      .privacySensitive()
-      .widgetURL(route.url)
-      .containerBackground(for: .widget) { Color(uiColor: .secondarySystemBackground) }
     }
 
     private var brand: some View {
       HStack(spacing: 5) {
-        Image(systemName: "figure.strengthtraining.traditional").widgetAccentable()
+        Image(systemName: "figure.strengthtraining.traditional").accessibilityHidden(true)
         Text("FORMA").fontWeight(.black).tracking(1.5)
       }
-      .font(.caption2).foregroundStyle(lime)
+      .font(.caption2).foregroundStyle(accent).widgetAccentable()
     }
-    /// Fixed widget frames cannot scroll. At accessibility sizes keep the useful facts and
+    private func action(_ short: Bool = false, font: Font = .caption.weight(.semibold))
+      -> some View
+    {
+      Label(model.actionLabel(short: short), systemImage: "arrow.up.right")
+        .font(font).foregroundStyle(accent).widgetAccentable().lineLimit(1)
+        .minimumScaleFactor(0.8)
+    }
+    /// Fixed widget frames cannot scroll. At large text sizes keep the useful facts and
     /// destination visible before decoration, with the full title retained for VoiceOver.
     private var accessibleSummary: some View {
       VStack(alignment: .leading, spacing: family == .systemLarge ? 8 : 4) {
-        Text(title).font(family == .systemSmall ? .caption.weight(.bold) : .headline)
-          .lineLimit(family == .systemMedium ? 1 : 2)
+        Text(model.title).font(family == .systemSmall ? .caption.weight(.bold) : .headline)
+          .lineLimit(family == .systemMedium ? 1 : 2).widgetAccentable()
         if family == .systemLarge {
-          Text(detail).font(.caption).foregroundStyle(detailColor).lineLimit(2)
+          Text(model.detail).font(.caption).foregroundStyle(detailColor).lineLimit(2)
         }
         Spacer(minLength: 0)
         if family != .systemSmall {
-          Text("\(value.week?.sessions ?? 0) of \(value.week?.goal ?? 4) this week")
+          Text("\(model.sessions) of \(model.goal) this week")
             .font(.caption2).foregroundStyle(detailColor).lineLimit(1).minimumScaleFactor(0.8)
         }
-        Label(family == .systemSmall ? "Open" : "Open FORMA", systemImage: "arrow.up.right")
-          .font(.caption2.weight(.semibold)).foregroundStyle(lime)
-          .lineLimit(1).minimumScaleFactor(0.8)
+        action(family == .systemSmall, font: .caption2.weight(.semibold))
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
     }
@@ -150,15 +147,12 @@
         if weekFocus {
           weeklyNumber
         } else {
-          Text(title).font(.system(.title3, weight: .bold).width(.condensed)).lineLimit(3)
-          Text(detail).font(.caption).foregroundStyle(detailColor).lineLimit(2)
+          Text(model.title).font(.system(.title3, weight: .bold).width(.condensed)).lineLimit(3)
+            .minimumScaleFactor(0.8).widgetAccentable()
+          Text(model.detail).font(.caption).foregroundStyle(detailColor).lineLimit(2)
         }
         Spacer(minLength: 0)
-        Label(
-          weekFocus ? "See progress" : value.active == nil ? "View routine" : "Resume in FORMA",
-          systemImage: "arrow.up.right"
-        )
-        .font(.caption.weight(.semibold)).foregroundStyle(lime).lineLimit(1)
+        action()
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
     }
@@ -166,25 +160,21 @@
       HStack(spacing: 18) {
         VStack(alignment: .leading, spacing: 7) {
           brand
-          Text(weekFocus ? "A little, consistently." : title)
+          Text(weekFocus ? "A little, consistently." : model.title)
             .font(.system(.title3, weight: .bold).width(.condensed)).lineLimit(2).fixedSize(
-              horizontal: false, vertical: true)
-          Text(weekFocus ? "Your saved week, one session at a time." : detail)
+              horizontal: false, vertical: true
+            ).widgetAccentable()
+          Text(weekFocus ? "Your saved week, one session at a time." : model.detail)
             .font(.caption).foregroundStyle(detailColor).lineLimit(2)
           Spacer(minLength: 0)
-          Link(destination: route.url) {
-            Label(
-              weekFocus ? "See progress" : value.active == nil ? "View routine" : "Resume",
-              systemImage: "arrow.up.right"
-            ).font(.caption.weight(.semibold)).foregroundStyle(lime)
-          }
+          Link(destination: route.url) { action(true) }
         }.frame(maxWidth: .infinity, alignment: .leading)
         Divider()
         Link(destination: WidgetRoute.progress.url) {
           VStack(alignment: .leading, spacing: 9) {
             Text("THIS WEEK").font(.caption2.weight(.bold)).foregroundStyle(detailColor)
             weeklyNumber
-            dayMarks
+            dayMarks(letters: true)
           }
         }.frame(maxWidth: .infinity, alignment: .leading)
       }
@@ -192,111 +182,102 @@
     private var large: some View {
       VStack(alignment: .leading, spacing: 20) {
         brand
-        Text(status).font(.caption2.weight(.bold)).foregroundStyle(detailColor)
-        Text(title).font(.system(.largeTitle, weight: .black).width(.condensed)).lineLimit(3)
-        Text(detail).font(.subheadline).foregroundStyle(detailColor)
+        Text(model.status).font(.caption2.weight(.bold)).foregroundStyle(detailColor)
+        Text(model.title).font(.system(.largeTitle, weight: .black).width(.condensed))
+          .lineLimit(3).widgetAccentable()
+        Text(model.detail).font(.subheadline).foregroundStyle(detailColor)
         Spacer(minLength: 0)
         Divider()
         Link(destination: WidgetRoute.progress.url) {
           HStack(alignment: .bottom) {
             weeklyNumber
             Spacer()
-            dayMarks
+            dayMarks(letters: true)
           }
         }
-        Link(destination: route.url) {
-          Label(
-            weekFocus ? "See progress" : value.active == nil ? "View routine" : "Resume in FORMA",
-            systemImage: "arrow.up.right"
-          ).font(.headline).foregroundStyle(lime)
-        }
+        Link(destination: route.url) { action(font: .headline) }
       }
     }
     private var weeklyNumber: some View {
       VStack(alignment: .leading, spacing: 1) {
-        Text("\(value.week?.sessions ?? 0) / \(value.week?.goal ?? 4)")
+        Text("\(model.sessions) / \(model.goal)")
           .font(.system(.title, weight: .bold).monospacedDigit()).widgetAccentable()
           .foregroundStyle(Color.primary)
           .minimumScaleFactor(0.8).lineLimit(1)
         Text("workouts this week").font(.caption2).foregroundStyle(detailColor).lineLimit(2)
       }
       .accessibilityElement(children: .ignore)
-      .accessibilityLabel(
-        "\(value.week?.sessions ?? 0) of \(value.week?.goal ?? 4) workouts this week")
+      .accessibilityLabel(model.weeklyLabel)
     }
-    private var dayMarks: some View {
-      HStack(spacing: 4) {
-        ForEach(0..<7) { day in
-          let done = value.week?.days[safe: day] ?? false
-          Image(systemName: done ? "checkmark.circle.fill" : "circle")
-            .font(.system(size: 10, weight: .semibold))
-            .foregroundStyle(done ? lime : .secondary).widgetAccentable()
+    private func dayMarks(letters: Bool) -> some View {
+      let initials = TrainingPresentation.weekdayInitials()
+      return HStack(spacing: 4) {
+        ForEach(0..<7, id: \.self) { day in
+          let done = model.isTrained(day: day)
+          VStack(spacing: 2) {
+            if letters {
+              Text(initials[day]).font(.caption2).foregroundStyle(detailColor)
+                .lineLimit(1).minimumScaleFactor(0.6)
+            }
+            // A text style (not a point size) so the mark scales with the reader's setting.
+            Image(systemName: done ? "checkmark.circle.fill" : "circle")
+              .font(.caption2.weight(.semibold))
+              .foregroundStyle(done ? accent : detailColor).widgetAccentable()
+          }
         }
       }
       .accessibilityElement(children: .ignore)
-      .accessibilityLabel(
-        trainedDaySummary)
+      .accessibilityLabel(model.trainedDaySummary())
     }
     private var circular: some View {
       Gauge(
-        value: Double(min(value.week?.sessions ?? 0, value.week?.goal ?? 4)),
-        in: 0...Double(value.week?.goal ?? 4)
+        value: Double(min(model.sessions, model.goal)),
+        in: 0...Double(model.goal)
       ) {
         Image(systemName: "figure.strengthtraining.traditional")
       } currentValueLabel: {
-        Text("\(value.week?.sessions ?? 0)").monospacedDigit()
+        Text("\(model.sessions)").monospacedDigit()
       }
       .gaugeStyle(.accessoryCircularCapacity)
-      .accessibilityLabel(
-        "\(value.week?.sessions ?? 0) of \(value.week?.goal ?? 4) workouts this week. Open FORMA.")
+      .accessibilityLabel("\(model.weeklyLabel). Open FORMA.")
     }
     private var rectangular: some View {
       VStack(alignment: .leading, spacing: 3) {
-        Text(weekFocus ? "FORMA · This week" : title).font(.headline).lineLimit(1)
-        Text(detail).font(.caption).lineLimit(1)
+        Text(weekFocus ? "FORMA · This week" : model.title).font(.headline).lineLimit(1)
+          .minimumScaleFactor(0.8).widgetAccentable()
+        Text(model.detail).font(.caption).lineLimit(1)
         if !weekFocus {
-          Text(value.active == nil ? "View routine ↗" : "Resume in FORMA ↗").font(.caption2)
+          Label(model.actionLabel(), systemImage: "arrow.up.right").font(.caption2).lineLimit(1)
         }
       }
     }
-    private var fallbackTitle: String {
-      switch value.state {
-      case .hidden: "Choose what you share"
-      case .empty: "Your next chapter"
-      case .stale: "Refresh your training"
-      default: "Open your training"
-      }
-    }
-    private var fallbackSymbol: String {
-      switch value.state {
-      case .hidden: "hand.raised"
-      case .empty: "plus"
-      case .stale: "arrow.clockwise"
-      default: "lock"
-      }
-    }
     @ViewBuilder
-    private func fallback(_ title: String, symbol: String) -> some View {
+    private func fallback(_ content: TrainingPresentation.Fallback) -> some View {
       switch family {
-      case .accessoryInline: Label("FORMA · Open app", systemImage: symbol)
+      case .accessoryInline: Label(content.inline, systemImage: content.symbol)
       case .accessoryCircular:
         VStack(spacing: 2) {
-          Image(systemName: symbol)
-          Text("FORMA").font(.system(size: 8, weight: .bold))
-        }.accessibilityLabel(title)
+          Image(systemName: content.symbol)
+          Text("FORMA").font(.caption2.weight(.bold)).lineLimit(1).minimumScaleFactor(0.6)
+        }
+        .accessibilityElement(children: .ignore).accessibilityLabel(content.title)
+      case .accessoryRectangular:
+        VStack(alignment: .leading, spacing: 2) {
+          Label("FORMA", systemImage: content.symbol).font(.caption2.weight(.bold))
+            .widgetAccentable()
+          Text(content.title).font(.headline).lineLimit(1).minimumScaleFactor(0.8)
+          Text(content.detail).font(.caption).lineLimit(2)
+        }
       default:
+        // Fixed frames cannot scroll: at large sizes keep the title and the next step only.
+        let large = dynamicTypeSize.isAccessibilitySize
         VStack(alignment: .leading, spacing: 6) {
-          Label("FORMA", systemImage: symbol).font(.caption.weight(.bold)).widgetAccentable()
-          Text(title).font(.headline).lineLimit(2)
-          if family == .systemSmall || family == .systemMedium || family == .systemLarge {
-            Text(
-              value.state == .hidden
-                ? "Enable widgets in You."
-                : value.state == .empty
-                  ? "Create a routine in Plan." : "Tap to see your current saved training."
-            )
-            .font(.caption).foregroundStyle(detailColor)
-          }
+          Label("FORMA", systemImage: content.symbol).font(.caption.weight(.bold))
+            .widgetAccentable()
+          Text(content.title).font(.headline).lineLimit(large ? 3 : 2).minimumScaleFactor(0.7)
+            .widgetAccentable()
+          Text(content.detail).font(.caption).foregroundStyle(detailColor)
+            .lineLimit(large ? 2 : 3).minimumScaleFactor(0.8)
         }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
       }
     }
