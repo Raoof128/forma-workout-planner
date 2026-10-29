@@ -1,6 +1,7 @@
 import FORMACore
 import FORMASurfaces
 import Foundation
+import UIKit
 import XCTest
 
 @testable import FORMA
@@ -12,6 +13,23 @@ final class WidgetProjectionTests: XCTestCase {
     WorkoutSession(
       id: id, name: "Private name", startedAt: date(text).timeIntervalSince1970 * 1000,
       notes: "PRIVATE NOTE NEVER SHARED", exercises: [], date: text)
+  }
+
+  func testWidgetOffersTheSameNextRoutineAsToday() {
+    let now = date("2026-10-05T14:00:00Z")
+    var older = session("older", "2026-10-03T08:00:00Z")
+    older.routineId = "b"
+    var latest = session("latest", "2026-10-04T08:00:00Z")
+    latest.routineId = "a"
+    // History out of order: the newest workout decides, not the first entry.
+    let workspace = Workspace(
+      routines: [.init(id: "a", name: "A"), .init(id: "b", name: "B"), .init(id: "c", name: "C")],
+      history: [older, latest])
+    let value = WidgetSnapshotBridge.project(workspace, sharing: true, epoch: "test", at: now)
+    XCTAssertEqual(value.routine?.id, "b")
+    XCTAssertEqual(
+      NextRoutine.select(from: workspace.routines, preferredID: nil, lastRoutineID: "a")?.id,
+      value.routine?.id)
   }
 
   func testSydneyMondayBoundaryFutureAndDuplicateTrainingDays() {
@@ -147,5 +165,24 @@ final class WidgetProjectionTests: XCTestCase {
     let relaunched = WidgetSnapshotBridge()
     relaunched.configure(directory: directory, owner: "test")
     XCTAssertTrue(relaunched.sharing)
+  }
+
+  /// Wg-H2: unlocking or foregrounding must reload the timelines so the first look is a real tile.
+  func testProtectedDataAndForegroundReloadTheTimelines() async {
+    let center = NotificationCenter()
+    var reloads = 0
+    let reloaded = expectation(description: "timelines reloaded twice")
+    reloaded.expectedFulfillmentCount = 2
+    let bridge = WidgetSnapshotBridge(
+      reloadTimelines: {
+        reloads += 1
+        reloaded.fulfill()
+      }, notifications: center)
+    bridge.observeProtectedDataAvailability()
+    bridge.observeProtectedDataAvailability()  // a second call must not double-register
+    center.post(name: UIApplication.protectedDataDidBecomeAvailableNotification, object: nil)
+    center.post(name: UIApplication.didBecomeActiveNotification, object: nil)
+    await fulfillment(of: [reloaded], timeout: 2)
+    XCTAssertEqual(reloads, 2)
   }
 }

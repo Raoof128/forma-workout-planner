@@ -73,7 +73,7 @@ findings are not App Store certification or proof that no bugs remain.
 | [ios/FORMA/Resources/Assets.xcassets/AppIcon.appiconset/app-icon.png](<../FORMA/Resources/Assets.xcassets/AppIcon.appiconset/app-icon.png>) | Retain original asset; no image edits |
 | [ios/FORMA/Resources/Assets.xcassets/Contents.json](<../FORMA/Resources/Assets.xcassets/Contents.json>) | Retain; no new concrete defect established in this file |
 | [ios/FORMA/Resources/Assets.xcassets/TrainingEditorial.imageset/Contents.json](<../FORMA/Resources/Assets.xcassets/TrainingEditorial.imageset/Contents.json>) | Retain; no new concrete defect established in this file |
-| [ios/FORMA/Resources/Assets.xcassets/TrainingEditorial.imageset/training-editorial.png](<../FORMA/Resources/Assets.xcassets/TrainingEditorial.imageset/training-editorial.png>) | Retain original asset; no image edits |
+| [ios/FORMA/Resources/Assets.xcassets/TrainingEditorial.imageset/training-editorial.png](<../design/training-editorial-source.png>) | Retain original asset; no image edits |
 | [ios/FORMA/Resources/PrivacyInfo.xcprivacy](<../FORMA/Resources/PrivacyInfo.xcprivacy>) | No new collection/permission introduced; final required-reason/archive audit remains unrun |
 | [ios/FORMA/Resources/README.md](<../FORMA/Resources/README.md>) | Retain; no new concrete defect established in this file |
 | [ios/FORMA/Resources/catalog.json](<../FORMA/Resources/catalog.json>) | All 1,711 records and 1,411 selectable mappings match authoritative source. |

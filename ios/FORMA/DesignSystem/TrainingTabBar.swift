@@ -48,10 +48,52 @@ struct TabBarScrollState {
   }
 }
 
+/// A screen pushed onto a tab's navigation stack. It holds ids, not models, so
+/// a screen always shows the current saved data and a removed item is reported
+/// in place instead of lingering in the path.
+enum TrainingRoute: Hashable {
+  case routine(String)
+  case session(String)
+  case guide(String)
+  case trainingDays
+  case exerciseLibrary
+  case privacy
+  // Account screens under You, so re-tapping You returns from them too.
+  case syncDetails
+  case accountProfile
+  case accountSecurity
+  case trainingData
+  case accountPrivacy
+  case changePassword
+  case twoFactor
+  case sessions
+  case coachAccess
+}
+
+/// What tapping the already-selected tab did, like the system tab bar: a tab
+/// deep in a stack returns to its root; at the root it scrolls to the top.
+enum TabReselection: Equatable {
+  case poppedToRoot
+  case scrolledToTop
+}
+
+/// A place on the You screen that another part of the app asks to be shown.
+enum YouFocus: Hashable {
+  /// The "Share training with widgets" toggle, which a widget's consent prompt points to.
+  case widgetSharing
+}
+
 @MainActor @Observable
 final class TrainingNavigation {
   var selection: TrainingTab = .today
+  /// Set before opening You; the screen scrolls there, then clears it.
+  var youFocus: YouFocus?
   private(set) var collapsed = false
+  /// What each tab has pushed, bound to that tab's `NavigationStack`. Clearing
+  /// a path returns the tab to its root.
+  var paths: [TrainingTab: [TrainingRoute]] = [:]
+  /// Counts the root scroll-to-top requests per tab; each tab's root scrolls on a change.
+  private(set) var scrollToTopEvents: [TrainingTab: Int] = [:]
   @ObservationIgnored private var scroll = TabBarScrollState()
 
   func observe(offset: CGFloat, limit: CGFloat) {
@@ -68,6 +110,29 @@ final class TrainingNavigation {
     selection = tab
     expand()
   }
+
+  /// Returns every tab to its root, as when a different training space opens.
+  func popAllToRoot() {
+    paths = [:]
+  }
+
+  /// Handles a tap on the selected tab. A tab with screens pushed returns to
+  /// its root; at the root it scrolls to the top.
+  @discardableResult
+  func reselect(_ tab: TrainingTab) -> TabReselection {
+    expand()
+    if paths[tab]?.isEmpty == false {
+      paths[tab] = []
+      return .poppedToRoot
+    }
+    scrollToTopEvents[tab, default: 0] += 1
+    return .scrolledToTop
+  }
+}
+
+/// The anchor a tab's first content carries, so re-tapping the tab can scroll there.
+enum TabScrollAnchor {
+  static let top = "forma.tab.top"
 }
 
 private struct TrainingTabScrollObserver: ViewModifier {
@@ -101,10 +166,75 @@ private struct TrainingTabScrollObserver: ViewModifier {
   }
 }
 
+private struct TrainingTabRoot: ViewModifier {
+  @Environment(TrainingNavigation.self) private var navigation
+  @Environment(\.formaMotion) private var motion
+  let tab: TrainingTab
+
+  func body(content: Content) -> some View {
+    ScrollViewReader { proxy in
+      content
+        .modifier(TrainingTabScrollObserver())
+        .onChange(of: navigation.scrollToTopEvents[tab, default: 0]) {
+          withFormaAnimation(motion, FormaMotion.navigation) {
+            proxy.scrollTo(TabScrollAnchor.top, anchor: .top)
+          }
+        }
+    }
+  }
+}
+
+/// The screens a tab can push. Every tab's stack registers the same set, so a
+/// link can name its destination with a `TrainingRoute` from any tab.
+private struct TrainingDestinations: ViewModifier {
+  @Environment(AppModel.self) private var model
+
+  func body(content: Content) -> some View {
+    content.navigationDestination(for: TrainingRoute.self) { route in
+      switch route {
+      case .routine(let id): RoutineDetailView(routineID: id)
+      case .session(let id): SessionDetailView(sessionID: id)
+      case .guide(let id):
+        if let exercise = model.exercise(id) {
+          GuideView(exercise: exercise)
+        } else {
+          ContentUnavailableView(
+            "This exercise is unavailable", systemImage: "book",
+            description: Text("Return to the exercise library to choose another."))
+        }
+      case .trainingDays: TrainingDaysView()
+      case .exerciseLibrary: ExerciseLibraryView()
+      case .privacy: NativePrivacyView()
+      case .syncDetails: SyncDetailsView()
+      case .accountProfile: AccountProfileView()
+      case .accountSecurity: AccountSecurityView()
+      case .trainingData: TrainingDataView()
+      case .accountPrivacy: AccountPrivacyView()
+      case .changePassword: ChangePasswordView()
+      case .twoFactor: TwoFactorView()
+      case .sessions: SessionsView()
+      case .coachAccess: CoachAccessView()
+      }
+    }
+  }
+}
+
 extension View {
+  /// Registers the screens a tab can push; put it on a stack's root view.
+  func trainingDestinations() -> some View {
+    modifier(TrainingDestinations())
+  }
+
   /// Only primary tab scroll views drive the bar; editors stay still.
   func formaTabScrollObserver() -> some View {
     modifier(TrainingTabScrollObserver())
+  }
+
+  /// A tab's root screen: drives the bar like `formaTabScrollObserver`, and
+  /// answers a re-tap of its tab. Put `.id(TabScrollAnchor.top)` on the first
+  /// row or block of its scroll view.
+  func formaTabRoot(_ tab: TrainingTab) -> some View {
+    modifier(TrainingTabRoot(tab: tab))
   }
 }
 
@@ -165,7 +295,10 @@ struct TrainingTabBar: View {
   private func tabButton(_ tab: TrainingTab) -> some View {
     let selected = navigation.selection == tab
     return Button {
-      guard navigation.selection != tab else { return }
+      guard navigation.selection != tab else {
+        navigation.reselect(tab)
+        return
+      }
       withFormaAnimation(motion, FormaMotion.navigation) {
         navigation.select(tab)
         selectionEvents[tab, default: 0] += 1
@@ -176,16 +309,29 @@ struct TrainingTabBar: View {
           .font(.system(size: textSize.isAccessibilitySize ? 25 : 21, weight: .medium))
           .symbolEffect(.bounce, options: .nonRepeating, value: selectionEvents[tab, default: 0])
           .symbolEffectsRemoved(!motion.allowsSpatialMotion)
-        if !textSize.isAccessibilitySize {
-          Text(tab.title).font(.caption2.weight(selected ? .bold : .medium)).lineLimit(1)
-        }
+        // The label stays at every size: it scales with the text, up to a cap
+        // that keeps four tabs on one row, and shrinks a little before it clips.
+        // The large content viewer shows the full-size title and symbol.
+        Text(tab.title).font(.caption2.weight(selected ? .bold : .medium)).lineLimit(1)
+          .minimumScaleFactor(textSize.isAccessibilitySize ? 0.6 : 1)
+          .dynamicTypeSize(...DynamicTypeSize.accessibility1)
+      }
+      .accessibilityShowsLargeContentViewer {
+        Label(tab.title, systemImage: tab.symbol)
       }
       .foregroundStyle(selected ? FormaTheme.accent : FormaTheme.secondary)
       .frame(maxWidth: .infinity, minHeight: textSize.isAccessibilitySize ? 62 : 56)
       .background {
         if selected {
-          Capsule().fill(FormaTheme.accent.opacity(contrast == .increased ? 0.2 : 0.12))
-            .matchedGeometryEffect(id: "selected-tab", in: highlight)
+          // The capsule slides between tabs only at full motion; otherwise it
+          // appears under the new tab with a fade.
+          let capsule = Capsule().fill(
+            FormaTheme.accent.opacity(contrast == .increased ? 0.2 : 0.12))
+          if motion.allowsSpatialMotion {
+            capsule.matchedGeometryEffect(id: "selected-tab", in: highlight)
+          } else {
+            capsule.transition(.opacity)
+          }
         }
       }
       .contentShape(Capsule())
@@ -202,7 +348,8 @@ struct TrainingTabBar: View {
       content().background(FormaTheme.surface, in: Capsule())
         .overlay { Capsule().stroke(FormaTheme.fieldBorder, lineWidth: 1) }
     } else if #available(iOS 26.0, *) {
-      content().glassEffect(.regular.interactive(), in: .capsule)
+      // Not interactive: the capsule is a container, and each tab is the control.
+      content().glassEffect(.regular, in: .capsule)
     } else {
       content().background(.regularMaterial, in: Capsule())
     }

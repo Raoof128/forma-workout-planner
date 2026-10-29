@@ -15,6 +15,13 @@ public struct TrainingSnapshot: Codable, Equatable, Sendable {
   public var routine: RoutineSummary?
   public var active: ActiveSummary?
   public var week: WeekSummary?
+  /// Set by `visible(at:)` after `expiresAt` while the next-routine facts are still shown. Never
+  /// stored: the app only ever writes fresh snapshots, so this stays out of the file contract.
+  public var carriedOver = false
+
+  private enum CodingKeys: String, CodingKey {
+    case version, epoch, revision, generatedAt, expiresAt, state, routine, active, week
+  }
 
   public enum State: String, Codable, Sendable { case ready, empty, hidden, unavailable, stale }
   public struct RoutineSummary: Codable, Equatable, Sendable {
@@ -96,12 +103,36 @@ public struct TrainingSnapshot: Codable, Equatable, Sendable {
     return value.visible(at: now)
   }
 
+  /// How long after `expiresAt` the next routine and weekly count stay on screen. Midnight is
+  /// when the day-bound facts lapse, not when the suggested routine changes: only training moves
+  /// it, and training republishes. Bounded so a phone left alone for days does not keep offering
+  /// a routine from a stale snapshot.
+  public static let carryWindow: TimeInterval = 72 * 3600
+
+  /// Instants after `now` at which `visible(at:)` changes what is shown. A timeline carries these
+  /// as pre-built entries so content leaves on time without a reload.
+  public func visibilityBoundaries(after now: Date) -> [Date] {
+    guard state == .ready else { return [] }
+    return [expiresAt, expiresAt.addingTimeInterval(Self.carryWindow)].filter { $0 > now }
+  }
+
   public func visible(at now: Date) -> Self {
     guard state == .ready, now >= expiresAt else { return self }
-    // Do not let yesterday's routine/session remain tappable after the validity boundary.
-    return Self(
-      epoch: epoch, revision: revision, generatedAt: generatedAt,
-      expiresAt: expiresAt, state: .stale)
+    guard now < expiresAt.addingTimeInterval(Self.carryWindow) else {
+      // Past the carry window nothing personal may remain tappable.
+      return Self(
+        epoch: epoch, revision: revision, generatedAt: generatedAt,
+        expiresAt: expiresAt, state: .stale)
+    }
+    var carried = self
+    // A saved workout is only trusted for its own short window; everything else outlives midnight.
+    carried.active = nil
+    carried.carriedOver = true
+    if let week, !TrainingCalendar.isSameWeek(generatedAt, now) {
+      carried.week = .init(
+        sessions: 0, goal: week.goal, days: Array(repeating: false, count: 7))
+    }
+    return carried
   }
 
   private static func valid(_ text: String) -> Bool { !text.isEmpty && text.utf16.count <= 200 }

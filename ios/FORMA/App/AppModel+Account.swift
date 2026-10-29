@@ -156,8 +156,10 @@ extension AppModel {
   }
 
   /// The member signed out (or the account ended the session): back to the
-  /// guest store. Their saved copy stays on disk unless `removeLocalCopy`.
-  func accountDidSignOut(removeLocalCopy: Bool) async {
+  /// guest store. Their saved copy stays on disk unless `removeLocalCopy`, and
+  /// then only when nothing in it is waiting to be sent. True when it was removed.
+  @discardableResult
+  func accountDidSignOut(removeLocalCopy: Bool) async -> Bool {
     let leaving = activeMember
     let leavingStore = store
     let leavingSync = sync
@@ -183,7 +185,7 @@ extension AppModel {
     workspace = nil
     store = guestStore
     await watch.end(save: true)
-    guard let guestStore, let seedWorkspace else { return }
+    guard let guestStore, let seedWorkspace else { return false }
     do {
       workspace = try await guestStore.load(seed: seedWorkspace)
     } catch {
@@ -197,10 +199,68 @@ extension AppModel {
       // the sign-out request was in flight, after the original review.
       do {
         try await leavingStore?.removeLocalFiles()
+        return true
       } catch {
         errorMessage =
           "You’re signed out, but the saved account copy couldn’t be fully removed. \(error.localizedDescription)"
       }
+    }
+    return false
+  }
+
+  // MARK: Saved copies left on this iPhone
+
+  /// Member copies on disk that no signed-in account is using.
+  nonisolated static func savedMemberCopies(directory: URL) -> [URL] {
+    let names = (try? FileManager.default.contentsOfDirectory(atPath: directory.path)) ?? []
+    return names.filter { $0.hasPrefix("member-") && $0.hasSuffix(".sqlite") }.sorted()
+      .map { directory.appendingPathComponent($0, isDirectory: false) }
+  }
+
+  /// Updates `account.hasSavedAccountCopy`: after a sign-out, a member's
+  /// training stays on this iPhone until it is removed on purpose.
+  func refreshSavedAccountCopy() async {
+    guard let directory = accountEnvironment?.storage.directory, activeMember == nil else {
+      account.hasSavedAccountCopy = false
+      return
+    }
+    account.hasSavedAccountCopy = !Self.savedMemberCopies(directory: directory).isEmpty
+  }
+
+  /// "Remove this account's training from this iPhone": deletes every saved
+  /// member copy. The guest training and the account itself are not touched.
+  /// Anything in a copy that never reached the account is lost, which the
+  /// confirmation says. Throws with words for the screen when a file stays.
+  func removeSavedAccountCopies() async throws {
+    guard activeMember == nil, let directory = accountEnvironment?.storage.directory else {
+      throw AppFailure("Sign out first, then remove the saved copy.")
+    }
+    pendingMutations += 1
+    await mutationGate.acquire()
+    defer {
+      mutationGate.release()
+      pendingMutations -= 1
+    }
+    var failed = false
+    for url in Self.savedMemberCopies(directory: directory) {
+      do {
+        try await WorkspaceStore(url: url, catalog: catalog).removeLocalFiles()
+      } catch {
+        // A copy FORMA cannot open (damaged) is still removed by name.
+        for suffix in ["", "-wal", "-shm"] {
+          let file = URL(fileURLWithPath: url.path + suffix)
+          do {
+            if FileManager.default.fileExists(atPath: file.path) {
+              try FileManager.default.removeItem(at: file)
+            }
+          } catch { failed = true }
+        }
+      }
+    }
+    await refreshSavedAccountCopy()
+    if failed || account.hasSavedAccountCopy {
+      throw AppFailure(
+        "FORMA couldn’t remove all of the saved copy. Close and reopen FORMA, then try again.")
     }
   }
 
@@ -484,7 +544,11 @@ extension AppModel {
       guard PhoneTrainingLedger.hasTraining(guest) else {
         return record == nil
           ? (.none, nil)
-          : (.unavailable("The reserved phone training is no longer available to review."), nil)
+          : (
+            .unavailable(
+              "The training you set aside for this account is no longer on this iPhone, so there is nothing to review."
+            ), nil
+          )
       }
       let summary = PhoneTrainingSummary(
         routines: guest.routines.count, workouts: guest.history.count,
@@ -494,7 +558,9 @@ extension AppModel {
       )
     } catch {
       return (
-        .unavailable("Phone training could not be checked safely. \(error.localizedDescription)"),
+        .unavailable(
+          "FORMA couldn’t check the training on this iPhone, so it isn’t offered right now. Reopen this screen to try again."
+        ),
         nil
       )
     }
@@ -512,7 +578,9 @@ extension AppModel {
     guard let sync, let member = activeMember,
       let directory = accountEnvironment?.storage.directory
     else {
-      return .failed("Your account’s local storage is not available. Sign in again to retry.")
+      return .failed(
+        "Your account’s storage isn’t available on this iPhone. Sign out, sign in again, then retry."
+      )
     }
     let generation = syncGeneration
     let before = workspace?.revision
@@ -521,7 +589,7 @@ extension AppModel {
       reservation = try PhoneTrainingLedger.reserve(member: member, in: directory)
     } catch {
       return .failed(
-        "The import did not start because its ownership could not be saved. \(error.localizedDescription)"
+        "The import didn’t start, and nothing was changed. Try again; if it keeps failing, restart FORMA first."
       )
     }
     let status = await sync.replaceAccount(with: phone, reviewedRevision: reviewedRevision)
@@ -543,7 +611,7 @@ extension AppModel {
           try PhoneTrainingLedger.complete(reservation, in: directory)
         } catch {
           return .failed(
-            "Your training may already be in this account, but the import could not be confirmed. Its ownership remains assigned to this account. Review its training and import status before retrying. \(error.localizedDescription)"
+            "Your training may already be in this account, but FORMA couldn’t confirm it. Check Training data to see what is in your account before you try again; importing again replaces it."
           )
         }
         return status
@@ -552,7 +620,7 @@ extension AppModel {
     switch status {
     case .idle, .waiting:
       return .failed(
-        "The import was not confirmed. Your phone training remains reserved for this account. Finish syncing, then review and retry the import."
+        "FORMA couldn’t confirm the import. Your phone training is still on this iPhone. Open Sync, wait until it says Saved, then review and import again."
       )
     default:
       return status

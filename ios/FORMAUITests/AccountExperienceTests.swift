@@ -60,6 +60,9 @@ final class AccountExperienceTests: XCTestCase {
     app.scrollUntilExists(submit)
     XCTAssertTrue(submit.exists)
     XCTAssertFalse(submit.isEnabled, "nothing typed yet")
+    // The dimmed button says what it is waiting for.
+    XCTAssertTrue(
+      app.descendants(matching: .any)["account-submit-reason"].waitForExistence(timeout: 5))
 
     app.scrollUntilExists(email, direction: .down)
     email.tap()
@@ -162,17 +165,32 @@ final class AccountExperienceTests: XCTestCase {
             : title == "AutoFill & Passwords"
               ? "com.apple.settings.general.autoFillAndPasswords"
               : title
-          // Rows only: a section heading can share the title ("AUTOFILL") but
-          // has no hit point. Settings exposes rows as buttons or cells by release.
-          let item = settings.descendants(matching: .any).matching(
+          // iOS 26 Settings also exposes elements with the row's title or
+          // identifier that have no hit point (the "AUTOFILL" heading, a
+          // container cell), and asking one whether it is hittable fails the
+          // test. So never ask: take a match with a real on-screen frame,
+          // buttons before cells, and tap its centre. The heading carries the
+          // row's identifier, so a cell must also match the row's exact title.
+          let matches = settings.descendants(matching: .any).matching(
             NSPredicate(
-              format: "(elementType == %lu OR elementType == %lu) AND (identifier == %@ OR label ==[c] %@)",
-              XCUIElement.ElementType.button.rawValue, XCUIElement.ElementType.cell.rawValue,
-              identifier, title)
-          ).firstMatch
-          for _ in 0..<12 where !item.exists || !item.isHittable { settings.swipeUp() }
-          XCTAssertTrue(item.exists && item.isHittable, "Settings must expose \(title)")
-          item.tap()
+              format: "(elementType == %lu AND (identifier == %@ OR label ==[c] %@))"
+                + " OR (elementType == %lu AND label ==[c] %@)",
+              XCUIElement.ElementType.button.rawValue, identifier, title,
+              XCUIElement.ElementType.cell.rawValue, title))
+          let screen = settings.windows.firstMatch.frame
+          func visibleRow() -> XCUIElement? {
+            let rows = matches.allElementsBoundByIndex.filter { element in
+              let frame = element.frame
+              return frame.height >= 30 && frame.width >= 100
+                && screen.contains(CGPoint(x: frame.midX, y: frame.midY))
+            }
+            return rows.first { $0.elementType == .button } ?? rows.first
+          }
+          for _ in 0..<12 where visibleRow() == nil { settings.swipeUp() }
+          let row = visibleRow()
+          XCTAssertNotNil(row, "Settings must expose \(title)")
+          guard let row else { return }
+          row.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
         }
       }
       // Newer systems expose just the suggestion toggle. Older systems use

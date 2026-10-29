@@ -2,6 +2,7 @@ import FORMACore
 import FORMASurfaces
 import Foundation
 import Observation
+import UIKit
 import WidgetKit
 
 /// Private preferences never enter the group container. Consent is scoped to the current owner.
@@ -19,6 +20,10 @@ final class WidgetSnapshotBridge {
   var status: String? { consentError ?? publicationError }
   @ObservationIgnored private let writeConsent: (Data, URL) throws -> Void
   @ObservationIgnored private let removeConsent: (URL) throws -> Void
+  @ObservationIgnored private let reloadTimelines: () -> Void
+  @ObservationIgnored private let notifications: NotificationCenter
+  /// Only touched on the main actor and in `deinit`, when nothing else can reference the bridge.
+  @ObservationIgnored nonisolated(unsafe) private var observers: [NSObjectProtocol] = []
 
   init(
     writeConsent: @escaping (Data, URL) throws -> Void = {
@@ -28,18 +33,51 @@ final class WidgetSnapshotBridge {
       let values = try $0.resourceValues(forKeys: [.isRegularFileKey])
       guard values.isRegularFile == true else { throw CocoaError(.fileWriteNoPermission) }
       try FileManager.default.removeItem(at: $0)
-    }
+    },
+    reloadTimelines: @escaping () -> Void = {
+      WidgetCenter.shared.reloadTimelines(ofKind: TrainingSnapshot.kind)
+    },
+    notifications: NotificationCenter = .default
   ) {
     self.writeConsent = writeConsent
     self.removeConsent = removeConsent
+    self.reloadTimelines = reloadTimelines
+    self.notifications = notifications
   }
+
+  deinit { observers.forEach(notifications.removeObserver) }
   @ObservationIgnored private var consent: Consent?
   @ObservationIgnored private var preferencesURL: URL?
   @ObservationIgnored private var writer: SnapshotFileWriter?
   @ObservationIgnored private var sequence: UInt64 = 0
   @ObservationIgnored private var publicationTask: Task<Void, Never>?
 
+  /// The group file uses Complete protection, so a widget read while the iPhone is locked fails
+  /// and the extension shows a short-lived "updating" tile (see `TrainingTimelinePlan`). The
+  /// extension retries on its own with a back-off (2, 5, 15, then 30 minutes by time since the
+  /// last publish) because timeline reloads are budgeted; these two signals are not budgeted and
+  /// make the first look after unlocking correct sooner when the app is alive to hear them.
+  ///
+  /// Trade-off, kept deliberately: Complete protection means the Lock Screen widget never has
+  /// readable data while locked (it shows the privacy tile), and the Home Screen tile may show
+  /// "updating" for up to the retry interval after an unlock that happened with the app suspended.
+  /// `CompleteUntilFirstUserAuthentication` would remove that gap but also lets the widget read
+  /// the file on a locked, already-unlocked-once device, which weakens the privacy guarantee.
+  func observeProtectedDataAvailability() {
+    guard observers.isEmpty else { return }
+    for name in [
+      UIApplication.protectedDataDidBecomeAvailableNotification,
+      UIApplication.didBecomeActiveNotification,
+    ] {
+      observers.append(
+        notifications.addObserver(forName: name, object: nil, queue: .main) { [weak self] _ in
+          MainActor.assumeIsolated { self?.requestReload() }
+        })
+    }
+  }
+
   func configure(directory: URL, owner: String) {
+    observeProtectedDataAvailability()
     preferencesURL = directory.appendingPathComponent("widget-consent.json")
     if let preferencesURL {
       do {
@@ -63,7 +101,7 @@ final class WidgetSnapshotBridge {
 
   /// A failed database launch must not advertise an old projection as current training.
   func requestReload() {
-    WidgetCenter.shared.reloadTimelines(ofKind: TrainingSnapshot.kind)
+    reloadTimelines()
   }
 
   func publishUnavailable() {
@@ -135,7 +173,7 @@ final class WidgetSnapshotBridge {
       guard !Task.isCancelled, publication == sequence else { return }
       do {
         if try await writer.publish(snapshot, sequence: publication) {
-          WidgetCenter.shared.reloadTimelines(ofKind: TrainingSnapshot.kind)
+          reloadTimelines()
         }
         if publication == sequence { publicationError = nil }
       } catch {
@@ -172,7 +210,17 @@ final class WidgetSnapshotBridge {
       return TrainingSnapshot(
         epoch: epoch, generatedAt: now, expiresAt: midnight, state: .unavailable)
     }
-    let routine = workspace.routines.first { $0.archivedAt == nil }
+    // The same "next session" Today offers: the routine after the last trained
+    // one, so the widget and the app never disagree.
+    // One date per session: history can hold thousands of workouts.
+    var latest: (routineId: String?, date: Date)?
+    for session in workspace.history {
+      let date = TrainingCalendar.completionDate(session.date, startedAt: session.startedAt)
+      if latest.map({ date > $0.date }) ?? true { latest = (session.routineId, date) }
+    }
+    let routine = NextRoutine.select(
+      from: workspace.routines.filter { $0.archivedAt == nil }, preferredID: nil,
+      lastRoutineID: latest?.routineId)
     let interval = TrainingCalendar.calendar.dateInterval(of: .weekOfYear, for: now)
     let completed = workspace.history.filter {
       let date = TrainingCalendar.completionDate($0.date, startedAt: $0.startedAt)

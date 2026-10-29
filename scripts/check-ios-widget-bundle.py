@@ -45,6 +45,46 @@ def entitlements(bundle):
     return plistlib.loads(bytes(data).rstrip(b"\x00"))
 
 
+SOURCES = pathlib.Path(__file__).resolve().parent.parent / "ios"
+FAMILIES = {
+    "systemSmall", "systemMedium", "systemLarge",
+    "accessoryCircular", "accessoryRectangular", "accessoryInline",
+}
+
+
+def source(relative):
+    return (SOURCES / relative).read_text(encoding="utf-8")
+
+
+def check_link_contract(app_info):
+    """Widget taps are `forma://widget/...` links: they die silently if the scheme drifts."""
+    schemes = {
+        scheme
+        for entry in app_info.get("CFBundleURLTypes", [])
+        for scheme in entry.get("CFBundleURLSchemes", [])
+    }
+    route = source("Sources/FORMASurfaces/WidgetRoute.swift")
+    emitted = re.findall(r'components\.scheme = "([^"]+)"', route)
+    parsed = re.findall(r'parts\.scheme == "([^"]+)"', route)
+    host = re.findall(r'components\.host = "([^"]+)"', route)
+    assert emitted == ["forma"] and parsed == ["forma"], "WidgetRoute must emit and accept forma://"
+    assert host == ["widget"], "WidgetRoute host changed; update the app URL handling together"
+    assert emitted[0] in schemes, "App Info.plist CFBundleURLTypes no longer registers forma://"
+
+
+def check_widget_declaration(widget_info):
+    """The extension must stay a plain widget: declared families, one kind, no Live Activities."""
+    declaration = source("FORMAWidgets/TrainingWidget.swift")
+    block = re.search(r"supportedFamilies\(\[(.*?)\]\)", declaration, re.DOTALL)
+    assert block, "TrainingWidget no longer declares supportedFamilies"
+    families = set(re.findall(r"\.(system\w+|accessory\w+)", block.group(1)))
+    assert families == FAMILIES, f"Supported widget families changed: {sorted(families)}"
+    assert "NSSupportsLiveActivities" not in widget_info
+    kind = re.search(
+        r'static let kind = "([^"]+)"', source("Sources/FORMASurfaces/TrainingSnapshot.swift"))
+    assert kind and kind.group(1) == "dev.raoufabedini.forma.training", "Widget kind changed"
+
+
 def main():
     if len(sys.argv) != 2:
         raise ValueError("Usage: python3 scripts/check-ios-widget-bundle.py /path/FORMA.app")
@@ -53,6 +93,8 @@ def main():
     info = read_plist(widget / "Info.plist")
     assert info["NSExtension"]["NSExtensionPointIdentifier"] == "com.apple.widgetkit-extension"
     assert info["MinimumOSVersion"] == "17.0"
+    check_link_contract(read_plist(app / "Info.plist"))
+    check_widget_declaration(info)
     group = "group.dev.raoufabedini.forma"
     assert group in entitlements(app)["com.apple.security.application-groups"]
     signed = entitlements(widget)
@@ -71,7 +113,8 @@ def main():
     subprocess.run(["codesign", "--verify", "--deep", "--strict", str(app)], check=True)
     print(json.dumps({"extension": info["CFBundleIdentifier"], "minimum_iOS": "17.0",
                       "protected_group": True, "no_database_or_health_link": True,
-                      "embedded_signature": "verified"}, indent=2))
+                      "embedded_signature": "verified", "link_scheme": "forma",
+                      "families": sorted(FAMILIES)}, indent=2))
 
 
 if __name__ == "__main__":

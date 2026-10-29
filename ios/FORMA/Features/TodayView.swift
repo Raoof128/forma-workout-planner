@@ -1,10 +1,48 @@
 import FORMACore
 import SwiftUI
 
-/// Hero colours are fixed, so build each `UIColor` once instead of per render.
-private enum HeroColor {
-  static let ink = Color(hex: 0x151A17)
-  static let detail = Color(hex: 0xDEE5DC)
+/// Picks the routine "Your next session" offers. Mirrors the web overview
+/// (`src/components/Overview.jsx`): the routine the person chose, else the one
+/// after the last trained routine, wrapping to the first. With no history, or
+/// when the last routine is gone or archived, it is the first routine.
+enum NextRoutine {
+  static func select(
+    from routines: [Routine], preferredID: String?, lastRoutineID: String?
+  ) -> Routine? {
+    guard let first = routines.first else { return nil }
+    if let preferredID, let chosen = routines.first(where: { $0.id == preferredID }) {
+      return chosen
+    }
+    guard let lastRoutineID, let index = routines.firstIndex(where: { $0.id == lastRoutineID })
+    else { return first }
+    return routines[(index + 1) % routines.count]
+  }
+}
+
+extension View {
+  /// The hero ink equals the dark canvas, so the card has no edge in dark mode.
+  /// A hairline in the line token separates it; light mode already contrasts.
+  fileprivate func heroEdge(cornerRadius: CGFloat) -> some View {
+    modifier(HeroEdge(cornerRadius: cornerRadius))
+  }
+}
+
+private struct HeroEdge: ViewModifier {
+  @Environment(\.colorScheme) private var colorScheme
+  let cornerRadius: CGFloat
+
+  func body(content: Content) -> some View {
+    content.overlay {
+      if colorScheme == .dark {
+        RoundedRectangle(cornerRadius: cornerRadius).strokeBorder(FormaTheme.line, lineWidth: 1)
+      }
+    }
+  }
+}
+
+/// "1 routine", "3 routines": the noun agrees with the count.
+func countPhrase(_ count: Int, _ noun: String) -> String {
+  count == 1 ? "1 \(noun)" : "\(count) \(noun)s"
 }
 
 /// What the hero shows. Start and Resume share one hero view so the artwork
@@ -20,6 +58,10 @@ private struct HeroContent {
 
 struct TodayView: View {
   @Environment(AppModel.self) private var model
+  @Environment(TrainingNavigation.self) private var navigation
+  /// The routine chosen with "Choose another"; nil follows the rotation. Like
+  /// the web overview, it lasts for this visit and is not saved.
+  @State private var preferredRoutineID: String?
   /// True while `requestStart` waits on the Watch check or the first save, so
   /// the Start tap is acknowledged at once.
   @State private var starting = false
@@ -32,6 +74,9 @@ struct TodayView: View {
     // `model.routines` filters the whole routine list on every read. Read it
     // once per render rather than five times (once per row for its number).
     let routines = model.routines
+    let next = NextRoutine.select(
+      from: routines, preferredID: preferredRoutineID,
+      lastRoutineID: model.history.first?.routineId)
     ScrollView {
       VStack(alignment: .leading, spacing: 22) {
         if textSize.isAccessibilitySize {
@@ -72,8 +117,11 @@ struct TodayView: View {
         // A stable container: the reveal plays once for the hero's lifetime,
         // however often Start and Resume swap inside it.
         VStack(alignment: .leading, spacing: 0) {
-          if let hero = heroContent(routines: routines) {
+          if let hero = heroContent(next: next) {
             if compactHeight { compactTrainingHero(hero) } else { trainingHero(hero) }
+            if !hero.inProgress, routines.count > 1, let next {
+              chooseAnother(routines, next: next)
+            }
           } else {
             ContentUnavailableView {
               Label("Your training starts here", systemImage: "dumbbell")
@@ -88,26 +136,44 @@ struct TodayView: View {
           .formaReveal(order: 3)
 
         VStack(alignment: .leading, spacing: 16) {
-          SectionHeading(title: "Your training space", detail: "\(routines.count) routines")
+          SectionHeading(
+            title: "Your training space", detail: countPhrase(routines.count, "routine"))
           ForEach(Array(routines.prefix(3).enumerated()), id: \.element.id) { position, routine in
-            NavigationLink {
-              RoutineDetailView(routine: routine)
-            } label: {
+            NavigationLink(value: TrainingRoute.routine(routine.id)) {
               HStack(spacing: 16) {
                 Text(String(format: "%02d", position + 1))
                   .font(.title2.weight(.black).monospacedDigit()).foregroundStyle(FormaTheme.accent)
+                  .accessibilityHidden(true)
                 VStack(alignment: .leading, spacing: 5) {
                   Text(routine.name).font(.headline).foregroundStyle(FormaTheme.primary)
-                  Text("\(routine.exercises.count) exercises · \(routine.minutes) min")
-                    .font(.subheadline).foregroundStyle(FormaTheme.secondary)
+                  Text(
+                    "\(countPhrase(routine.exercises.count, "exercise")) · \(routine.minutes) min"
+                  )
+                  .font(.subheadline).foregroundStyle(FormaTheme.secondary)
                 }
                 Spacer(minLength: 0)
-                Image(systemName: "arrow.up.right").foregroundStyle(FormaTheme.secondary)
+                Image(systemName: "chevron.right").foregroundStyle(FormaTheme.secondary)
               }
               .padding(.vertical, 12).contentShape(Rectangle())
             }
             .buttonStyle(PressableCardStyle())
             Divider().overlay(FormaTheme.line)
+          }
+          if routines.count > 3 {
+            Button {
+              navigation.select(.plan)
+            } label: {
+              HStack {
+                Text("See all \(routines.count) routines").font(.headline)
+                Spacer(minLength: 8)
+                Image(systemName: "chevron.right")
+              }
+              .foregroundStyle(FormaTheme.accent)
+              .frame(minHeight: 44).contentShape(Rectangle())
+            }
+            .buttonStyle(PressableCardStyle())
+            .accessibilityHint("Opens Plan.")
+            .accessibilityIdentifier("see-all-routines")
           }
         }
         .formaReveal(order: 4)
@@ -118,9 +184,7 @@ struct TodayView: View {
               SectionHeading(
                 title: "Last time you showed up",
                 detail: TrainingDate.label(TrainingDate.date(recent)))
-              NavigationLink {
-                SessionDetailView(session: recent)
-              } label: {
+              NavigationLink(value: TrainingRoute.session(recent.id)) {
                 HStack {
                   Image(systemName: "checkmark.seal.fill").foregroundStyle(FormaTheme.accent)
                   Text(recent.name).font(.headline)
@@ -145,16 +209,17 @@ struct TodayView: View {
           .formaReveal(order: 6)
       }
       .padding(24)
+      .id(TabScrollAnchor.top)
     }
     .background(FormaTheme.canvas)
-    .formaTabScrollObserver()
+    .formaTabRoot(.today)
     .toolbar(.hidden, for: .navigationBar)
   }
 
   /// The hero's content for the current state, or nil when there is no routine
   /// to start. Reads `activeWorkoutName` (not `workspace`), which changes only
   /// when a workout starts or ends.
-  private func heroContent(routines: [Routine]) -> HeroContent? {
+  private func heroContent(next: Routine?) -> HeroContent? {
     if let name = model.activeWorkoutName {
       return HeroContent(
         name: name, detail: "Pick up exactly where you left off.",
@@ -164,10 +229,11 @@ struct TodayView: View {
         model.workoutPresented = true
       }
     }
-    guard let routine = routines.first else { return nil }
+    guard let routine = next else { return nil }
     return HeroContent(
       name: routine.name,
-      detail: "\(routine.exercises.count) exercises · about \(routine.minutes) min",
+      detail:
+        "\(countPhrase(routine.exercises.count, "exercise")) · about \(routine.minutes) min",
       action: "Start workout", symbol: "arrow.up.right", inProgress: false
     ) {
       starting = true
@@ -178,6 +244,25 @@ struct TodayView: View {
     }
   }
 
+  /// The rotation can be wrong for today, so the hero offers every routine
+  /// without a trip through Plan. The choice lasts for this visit.
+  private func chooseAnother(_ routines: [Routine], next: Routine) -> some View {
+    Menu {
+      Picker(
+        "Next session",
+        selection: Binding(get: { next.id }, set: { preferredRoutineID = $0 })
+      ) {
+        ForEach(routines) { Text($0.name).tag($0.id) }
+      }
+    } label: {
+      Label("Choose another session", systemImage: "arrow.left.arrow.right")
+        .font(.subheadline.weight(.semibold)).frame(minHeight: 44)
+    }
+    .foregroundStyle(FormaTheme.accent)
+    .disabled(model.busy || starting)
+    .accessibilityIdentifier("choose-next-session")
+  }
+
   private func compactTrainingHero(_ hero: HeroContent) -> some View {
     HStack(spacing: 20) {
       VStack(alignment: .leading, spacing: 5) {
@@ -185,12 +270,12 @@ struct TodayView: View {
           .font(.caption.weight(.bold)).foregroundStyle(FormaTheme.lime)
         Text(hero.name).font(.title3.bold()).foregroundStyle(.white)
           .fixedSize(horizontal: false, vertical: true)
-        Text(hero.detail).font(.subheadline).foregroundStyle(HeroColor.detail)
+        Text(hero.detail).font(.subheadline).foregroundStyle(FormaTheme.heroDetail)
       }.frame(maxWidth: .infinity, alignment: .leading)
       Button(action: hero.perform) {
         Label(hero.action, systemImage: starting ? "hourglass" : hero.symbol)
       }
-      .buttonStyle(PrimaryButtonStyle())
+      .buttonStyle(.formaPrimaryOnDark)
       .frame(maxWidth: 260)
       .accessibilityLabel(hero.action)
       .accessibilityValue(starting ? "Starting" : "")
@@ -198,24 +283,28 @@ struct TodayView: View {
       .disabled(model.busy || starting)
     }
     .padding(20)
-    .background(HeroColor.ink, in: RoundedRectangle(cornerRadius: 24))
+    .background(FormaTheme.heroInk, in: RoundedRectangle(cornerRadius: 24))
+    .heroEdge(cornerRadius: 24)
   }
 
   private func trainingHero(_ hero: HeroContent) -> some View {
     let pending = starting && !hero.inProgress
     return VStack(alignment: .leading, spacing: 0) {
       if !textSize.isAccessibilitySize {
-        GeometryReader { geometry in
-          Image("TrainingEditorial").resizable().scaledToFill()
-            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .bottom)
-            .clipped()
-        }
-        .frame(height: 112)
-        .overlay(alignment: .bottom) {
-          LinearGradient(colors: [.clear, HeroColor.ink], startPoint: .top, endPoint: .bottom)
+        // A fixed-height clear frame with the photo as an overlay crops it
+        // without a GeometryReader, and the photo never sizes the layout.
+        Color.clear.frame(height: 112)
+          .overlay(alignment: .bottom) {
+            Image("TrainingEditorial").resizable().scaledToFill()
+          }
+          .clipped()
+          .overlay(alignment: .bottom) {
+            LinearGradient(
+              colors: [.clear, FormaTheme.heroInk], startPoint: .top, endPoint: .bottom
+            )
             .frame(height: 40)
-        }
-        .accessibilityHidden(true)
+          }
+          .accessibilityHidden(true)
       }
       VStack(alignment: .leading, spacing: 8) {
         if textSize.isAccessibilitySize {
@@ -232,7 +321,7 @@ struct TodayView: View {
           .font(.system(.title2, weight: .bold).width(.condensed))
           .foregroundStyle(.white).fixedSize(horizontal: false, vertical: true)
         if !textSize.isAccessibilitySize {
-          Text(hero.detail).font(.subheadline).foregroundStyle(HeroColor.detail)
+          Text(hero.detail).font(.subheadline).foregroundStyle(FormaTheme.heroDetail)
             .fixedSize(horizontal: false, vertical: true)
         }
       }
@@ -254,7 +343,7 @@ struct TodayView: View {
           .transition(.opacity)
         }
       }
-      .buttonStyle(PrimaryButtonStyle())
+      .buttonStyle(.formaPrimaryOnDark)
       // The label is explicit so the outgoing text, which lingers for the
       // cross-fade, never leaks into it.
       .accessibilityLabel(hero.action)
@@ -262,17 +351,18 @@ struct TodayView: View {
       .accessibilityIdentifier("start-workout")
       .disabled(model.busy || pending)
       .padding(16)
-      .background(HeroColor.ink)
+      .background(FormaTheme.heroInk)
       if textSize.isAccessibilitySize {
         // Keep the primary action above the fold on a compact phone at the
         // largest text size. Metadata stays readable below it, without capping type.
-        Text(hero.detail).font(.subheadline).foregroundStyle(HeroColor.detail)
+        Text(hero.detail).font(.subheadline).foregroundStyle(FormaTheme.heroDetail)
           .fixedSize(horizontal: false, vertical: true)
           .padding(.horizontal, 20).padding(.bottom, 20)
       }
     }
-    .background(HeroColor.ink)
+    .background(FormaTheme.heroInk)
     .clipShape(RoundedRectangle(cornerRadius: 24))
+    .heroEdge(cornerRadius: 24)
     .formaAnimation(FormaMotion.reveal, value: model.activeWorkoutName)
   }
 
@@ -386,7 +476,7 @@ struct WeekStrip: View {
               ZStack {
                 Circle().fill(trained ? FormaTheme.lime : FormaTheme.surface)
                 Circle().strokeBorder(
-                  scheduled ? FormaTheme.accent : FormaTheme.line,
+                  scheduled ? FormaTheme.accent : FormaTheme.boundary,
                   style: StrokeStyle(
                     lineWidth: scheduled ? 1.5 : 1, dash: scheduled && !trained ? [3, 3] : []))
                 if trained {

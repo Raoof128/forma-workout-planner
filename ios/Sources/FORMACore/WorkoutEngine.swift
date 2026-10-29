@@ -41,8 +41,17 @@ public enum WorkoutEngine {
       exercises: entries)
   }
 
+  /// Whether completing a set starts the programmed rest. Ticking a set for
+  /// the first time always does. A set that was reopened to correct a value
+  /// starts one only when none is running, so fixing a typo never resets the
+  /// countdown the person is part-way through.
+  public enum RestTrigger: Sendable, Equatable {
+    case always, onlyIfIdle
+  }
+
   public static func toggleSet(
-    in workspace: Workspace, entryIndex: Int, setIndex: Int, now: Double, catalog: [Exercise] = []
+    in workspace: Workspace, entryIndex: Int, setIndex: Int, now: Double, catalog: [Exercise] = [],
+    rest: RestTrigger = .always
   ) throws -> Workspace {
     try checkTimestamp(now)
     guard var active = workspace.active else { throw FormaError.noActiveWorkout }
@@ -54,6 +63,7 @@ public enum WorkoutEngine {
     if entry.sets[setIndex].done
       && (entry.groupId == nil
         || active.exercises.dropFirst(entryIndex + 1).first?.groupId != entry.groupId)
+      && (rest == .always || !isResting(active, now: now))
     {
       let duration = entry.restSeconds ?? workspace.profile.restSeconds
       active.restSeconds = duration
@@ -88,6 +98,36 @@ public enum WorkoutEngine {
 
   public static func completedSets(_ session: WorkoutSession) -> Int {
     session.exercises.reduce(0) { $0 + $1.sets.filter(\.done).count }
+  }
+
+  public static func totalSets(_ session: WorkoutSession) -> Int {
+    session.exercises.reduce(0) { $0 + $1.sets.count }
+  }
+
+  /// Sets still unticked. Finishing keeps them in the saved session but they
+  /// count towards no total.
+  public static func unfinishedSets(_ session: WorkoutSession) -> Int {
+    totalSets(session) - completedSets(session)
+  }
+
+  /// "2 of 4 sets" for one exercise.
+  public static func setProgress(_ entry: SessionEntry) -> (done: Int, total: Int) {
+    (entry.sets.filter(\.done).count, entry.sets.count)
+  }
+
+  /// The exercise to open on when the workout screen appears: the first one
+  /// with an unfinished set, or the last one when every set is done (the
+  /// person is about to finish).
+  public static func resumeIndex(_ session: WorkoutSession) -> Int {
+    session.exercises.firstIndex { $0.sets.contains { !$0.done } }
+      ?? max(0, session.exercises.count - 1)
+  }
+
+  /// A rest is running when its deadline is ahead or it is paused with time
+  /// left. An expired or skipped rest is not.
+  public static func isResting(_ session: WorkoutSession, now: Double) -> Bool {
+    if let end = session.restEnd { return end > now }
+    return (session.restPaused ?? 0) > 0
   }
 
   public static func volume(_ session: WorkoutSession, catalog: [Exercise]) -> Double {

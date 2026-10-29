@@ -85,7 +85,10 @@ final class TodayLayoutAndWidgetRoutingTests: XCTestCase {
     XCTAssertTrue(app.buttons["tab-plan"].waitForExistence(timeout: 20))
     XCTAssertTrue(app.buttons["tab-plan"].isSelected)
     XCTAssertTrue(app.navigationBars["Plan"].exists)
+    // Routines come first on Plan, so the library row can start below the fold
+    // of a lazy list; scroll to it rather than assume it is already loaded.
     let library = app.staticTexts["Exercise library"].firstMatch
+    for _ in 0..<6 where !library.waitForExistence(timeout: 2) { app.swipeUp() }
     XCTAssertTrue(library.waitForExistence(timeout: 10))
   }
 

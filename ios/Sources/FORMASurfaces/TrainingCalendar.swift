@@ -8,6 +8,12 @@ public enum TrainingCalendar {
     return calendar
   }()
 
+  /// True when both dates fall in the same training week (Monday first).
+  public static func isSameWeek(_ first: Date, _ second: Date) -> Bool {
+    guard let interval = calendar.dateInterval(of: .weekOfYear, for: first) else { return false }
+    return interval.contains(second)
+  }
+
   public static func completionDate(_ text: String?, startedAt: Double) -> Date {
     if let text {
       if let exact = parseUTC(text) { return exact }

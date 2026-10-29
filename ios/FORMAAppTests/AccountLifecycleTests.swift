@@ -327,4 +327,146 @@ final class AccountLifecycleTests: XCTestCase {
     let unchangedGuest = try await guest.load(seed: seed)
     XCTAssertEqual(unchangedGuest.profile, seed.profile)
   }
+
+  // MARK: Forced sign-out, saved copies and pending deletion
+
+  func testForcedSignOutRaisesAnAnnouncedInterruptionThatNamesTheCause() async throws {
+    let environment = await environment()
+    let account = AccountModel()
+    account.attach(environment)
+    XCTAssertNil(account.interruption)
+
+    await account.sessionEnded(.sessionEnded)
+
+    let interruption = try XCTUnwrap(account.interruption)
+    XCTAssertEqual(interruption.title, "You’ve been signed out")
+    XCTAssertTrue(interruption.message.contains("30 days"))
+    XCTAssertTrue(interruption.message.contains("still saved on this iPhone"))
+    account.signInFromInterruption()
+    XCTAssertNil(account.interruption)
+    XCTAssertEqual(account.requestedAuth, .signIn)
+  }
+
+  func testInterruptionSaysWhatHappenedToAnOpenWorkout() {
+    let ended = AccountInterruption.make(
+      id: 1, reason: .sessionEnded, hadWorkout: true, removedCopy: false)
+    XCTAssertTrue(ended.message.contains("workout in progress is saved on this iPhone"))
+    let changed = AccountInterruption.make(
+      id: 2, reason: .accountChanged, hadWorkout: false, removedCopy: false)
+    XCTAssertTrue(changed.message.contains("no longer matched your account"))
+    let deleted = AccountInterruption.make(
+      id: 3, reason: .accountDeleted, hadWorkout: true, removedCopy: true)
+    XCTAssertTrue(deleted.message.contains("removed from this iPhone"))
+    XCTAssertTrue(deleted.message.contains("workout you had open"))
+    let kept = AccountInterruption.make(
+      id: 4, reason: .accountDeleted, hadWorkout: false, removedCopy: false)
+    XCTAssertTrue(kept.message.contains("still has a saved copy"))
+  }
+
+  func testDeletionRequestsAreRememberedPerMemberAndExpire() throws {
+    let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+    try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+    defer { try? FileManager.default.removeItem(at: directory) }
+    let now = Date()
+
+    XCTAssertNil(AccountDeletionLedger.requestedAt(member: "a", in: directory, now: now))
+    AccountDeletionLedger.record(member: "a", in: directory, now: now)
+    XCTAssertNotNil(AccountDeletionLedger.requestedAt(member: "a", in: directory, now: now))
+    XCTAssertNil(AccountDeletionLedger.requestedAt(member: "b", in: directory, now: now))
+    XCTAssertNil(
+      AccountDeletionLedger.requestedAt(
+        member: "a", in: directory, now: now.addingTimeInterval(AccountDeletionLedger.window + 1)))
+    AccountDeletionLedger.clear(member: "a", in: directory)
+    XCTAssertNil(AccountDeletionLedger.requestedAt(member: "a", in: directory, now: now))
+    XCTAssertFalse(
+      FileManager.default.fileExists(
+        atPath: directory.appendingPathComponent(AccountDeletionLedger.filename).path))
+  }
+
+  func testSessionEndingAfterADeletionRequestIsTreatedAsTheAccountBeingDeleted() async throws {
+    let base = await environment()
+    let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+    let storage = AccountStorage(root: directory, origin: origin)
+    try FileManager.default.createDirectory(
+      at: storage.directory, withIntermediateDirectories: true)
+    defer { try? FileManager.default.removeItem(at: directory) }
+    let environment = AccountEnvironment(
+      client: base.client, jar: base.jar, storage: storage, restored: first)
+    let account = AccountModel()
+    account.attach(environment)
+    account.recordDeletionRequest()
+    XCTAssertNotNil(account.deletionRequestedAt)
+
+    await account.sessionEnded(.sessionEnded)
+
+    XCTAssertEqual(account.phase, .signedOut)
+    XCTAssertNil(account.deletionRequestedAt)
+    XCTAssertTrue(try XCTUnwrap(account.notice).contains("asked to delete your account"))
+    XCTAssertTrue(try XCTUnwrap(account.interruption).message.contains("deletion has probably"))
+    XCTAssertNil(
+      AccountDeletionLedger.requestedAt(member: first.id, in: storage.directory),
+      "the request is spent once the session has ended")
+  }
+
+  func testSavedMemberCopiesAreFoundAndRemovedWithoutTouchingTheGuestStore() async throws {
+    let base = await environment()
+    let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+    let storage = AccountStorage(root: directory, origin: origin)
+    try FileManager.default.createDirectory(
+      at: storage.directory, withIntermediateDirectories: true)
+    defer { try? FileManager.default.removeItem(at: directory) }
+    let guest = try WorkspaceStore(
+      url: storage.directory.appendingPathComponent("workspace.sqlite"), catalog: [])
+    _ = try await guest.load(seed: Workspace(profile: Profile(name: "Guest", goal: 4)))
+    do {
+      let member = try WorkspaceStore(
+        url: WorkspaceStore.memberStoreURL(directory: storage.directory, memberReference: "mem_a"),
+        catalog: [])
+      _ = try await member.load(seed: Workspace(profile: Profile(name: "Member", goal: 3)))
+    }
+
+    let model = AppModel()
+    model.accountEnvironment = AccountEnvironment(
+      client: base.client, jar: base.jar, storage: storage, restored: nil)
+    await model.refreshSavedAccountCopy()
+    XCTAssertTrue(model.account.hasSavedAccountCopy)
+
+    try await model.removeSavedAccountCopies()
+
+    XCTAssertFalse(model.account.hasSavedAccountCopy)
+    XCTAssertTrue(AppModel.savedMemberCopies(directory: storage.directory).isEmpty)
+    let name = try await guest.load(seed: Workspace()).profile.name
+    XCTAssertEqual(name, "Guest")
+  }
+
+  func testNoticeWordsForEachForcedSignOut() {
+    XCTAssertNil(AccountModel.signedOutNotice(.requested, removedCopy: false))
+    XCTAssertTrue(
+      try XCTUnwrap(AccountModel.signedOutNotice(.sessionEnded, removedCopy: false))
+        .contains("sign in again to keep syncing"))
+    XCTAssertTrue(
+      try XCTUnwrap(AccountModel.signedOutNotice(.accountDeleted, removedCopy: true))
+        .contains("was removed from this iPhone"))
+    XCTAssertTrue(
+      try XCTUnwrap(AccountModel.signedOutNotice(.accountDeleted, removedCopy: false))
+        .contains("remove it below"))
+  }
+
+  func testAccountDeletedCodeEndsTheSessionAsADeletion() {
+    let failure = AccountFailure(
+      kind: .unauthorized, message: "Your session has ended. Sign in again.", status: 401,
+      code: "account_deleted")
+    XCTAssertEqual(failure.signOutReason, .accountDeleted)
+    XCTAssertEqual(
+      AccountFailure(kind: .accountChanged, message: "x").signOutReason, .accountChanged)
+    XCTAssertEqual(AccountFailure(kind: .unauthorized, message: "x").signOutReason, .sessionEnded)
+  }
+
+  func testRejectedCredentialsAreTheOnlyFailuresThatClearATypedPassword() {
+    XCTAssertTrue(AccountFailure(kind: .rejected, message: "x").rejectsCredentials)
+    XCTAssertTrue(AccountFailure(kind: .unauthorized, message: "x").rejectsCredentials)
+    XCTAssertFalse(AccountWire.offlineFailure().rejectsCredentials)
+    XCTAssertFalse(AccountFailure(kind: .server, message: "x").rejectsCredentials)
+    XCTAssertFalse(AccountFailure(kind: .rateLimited, message: "x").rejectsCredentials)
+  }
 }

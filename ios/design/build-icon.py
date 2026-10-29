@@ -4,6 +4,11 @@
 Run from any directory:
   python3 ios/design/build-icon.py --check
   python3 ios/design/build-icon.py --output /tmp/forma-icon.png
+  python3 ios/design/build-icon.py --variant dark --check
+
+`--variant dark` and `--variant tinted` draw the same three facets with the brand
+colours swapped (dark: lime on ink) or reduced to the grayscale that iOS 18's tinted
+appearance maps its tint onto (white on black). The geometry is never changed.
 
 Only the current absolute M/L/H/V/Z polygon paths and translate/scale transform
 are supported. A changed vector outside that subset fails rather than silently
@@ -20,7 +25,13 @@ from PIL import Image, ImageChops, ImageDraw
 
 DESIGN = Path(__file__).resolve().parent
 SOURCE = DESIGN / "app-icon.svg"
-DEFAULT_OUTPUT = DESIGN.parent / "FORMA/Resources/Assets.xcassets/AppIcon.appiconset/app-icon.png"
+ICONSET = DESIGN.parent / "FORMA/Resources/Assets.xcassets/AppIcon.appiconset"
+# variant -> (output file, background override, facet override); None keeps the SVG colour.
+VARIANTS = {
+    "any": ("app-icon.png", None, None),
+    "dark": ("app-icon-dark.png", "#202522", "#DFF780"),
+    "tinted": ("app-icon-tinted.png", "#000000", "#FFFFFF"),
+}
 NS = {"svg": "http://www.w3.org/2000/svg"}
 
 
@@ -53,7 +64,7 @@ def polygon(data):
     return points
 
 
-def render():
+def render(variant="any"):
     root = ET.parse(SOURCE).getroot()
     if root.attrib.get("viewBox") != "0 0 1024 1024":
         raise ValueError("Review rasterization before changing the icon viewBox.")
@@ -68,24 +79,34 @@ def render():
     if transform is None:
         raise ValueError("Unsupported icon transform.")
     tx, ty, scale = map(float, transform.groups())
+    _, background_override, facet_override = VARIANTS[variant]
     supersampling = 4
-    image = Image.new("RGB", (1024 * supersampling, 1024 * supersampling), background.attrib["fill"])
+    image = Image.new(
+        "RGB",
+        (1024 * supersampling, 1024 * supersampling),
+        background_override or background.attrib["fill"],
+    )
     draw = ImageDraw.Draw(image)
     for path in group.findall("svg:path", NS):
         points = [
             ((tx + scale * x) * supersampling, (ty + scale * y) * supersampling)
             for x, y in polygon(path.attrib["d"])
         ]
-        draw.polygon(points, fill=path.attrib.get("fill", group.attrib["fill"]))
+        draw.polygon(
+            points, fill=facet_override or path.attrib.get("fill", group.attrib["fill"])
+        )
     return image.resize((1024, 1024), Image.Resampling.LANCZOS)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="Check pixels without writing any file")
-    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--variant", choices=sorted(VARIANTS), default="any")
+    parser.add_argument("--output", type=Path, default=None)
     arguments = parser.parse_args()
-    image = render()
+    if arguments.output is None:
+        arguments.output = ICONSET / VARIANTS[arguments.variant][0]
+    image = render(arguments.variant)
     if arguments.check:
         with Image.open(arguments.output) as existing:
             if existing.mode != "RGB" or existing.size != image.size or ImageChops.difference(existing, image).getbbox():

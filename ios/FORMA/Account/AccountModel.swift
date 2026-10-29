@@ -1,6 +1,7 @@
 import FORMACore
 import Foundation
 import Observation
+import SwiftUI
 
 enum AccountSignOutReason: Equatable {
   case requested
@@ -9,6 +10,59 @@ enum AccountSignOutReason: Equatable {
   case sessionEnded
   /// The session now belongs to a different member.
   case accountChanged
+  /// The member asked to delete the account and the session then ended, or the
+  /// account said the account is gone.
+  case accountDeleted
+}
+
+extension AccountFailure {
+  /// Why a failure that ends the session ended it.
+  var signOutReason: AccountSignOutReason {
+    if kind == .accountChanged { return .accountChanged }
+    return code == "account_deleted" ? .accountDeleted : .sessionEnded
+  }
+}
+
+/// What the root view says when the account signs the member out without being
+/// asked: an alert that names the cause, says what happens to the training and
+/// the workout that may have been open, and offers Sign in.
+struct AccountInterruption: Equatable, Identifiable, Sendable {
+  let id: UInt64
+  let title: String
+  let message: String
+  let signInTitle = "Sign in"
+  let dismissTitle = "Not now"
+
+  /// `removedCopy`: the saved copy of the member's training was removed from
+  /// this iPhone as part of the sign-out.
+  static func make(
+    id: UInt64, reason: AccountSignOutReason, hadWorkout: Bool, removedCopy: Bool
+  ) -> AccountInterruption {
+    switch reason {
+    case .requested, .sessionEnded, .accountChanged:
+      let cause =
+        reason == .accountChanged
+        ? "This session no longer matched your account."
+        : "Your FORMA session ended. This happens after 30 days, or when you sign out from another device or the website."
+      let next =
+        hadWorkout
+        ? "Your workout in progress is saved on this iPhone. Sign in to the same account to pick it up where you left off."
+        : "Your training is still saved on this iPhone. Sign in to keep syncing."
+      return AccountInterruption(
+        id: id, title: "You’ve been signed out", message: "\(cause) \(next)")
+    case .accountDeleted:
+      let outcome =
+        removedCopy
+        ? "The saved copy of its training was removed from this iPhone."
+          + (hadWorkout ? " That included the workout you had open." : "")
+        : "Some changes hadn’t reached the account, so this iPhone still has a saved copy. You can remove it from the Account section."
+      return AccountInterruption(
+        id: id, title: "Your account was signed out",
+        message:
+          "You asked to delete your account and this session has ended, so the deletion has probably gone through. \(outcome) Training you keep without an account is unchanged."
+      )
+    }
+  }
 }
 
 /// Everything the app needs to talk to the account, made off the main thread at
@@ -69,6 +123,18 @@ final class AccountModel {
   /// sign in again.
   var notice: String?
   private(set) var isAvailable = false
+  /// Set when the account signs the member out without being asked. The root
+  /// view presents it as an alert; see `AccountInterruption`.
+  private(set) var interruption: AccountInterruption?
+  /// "Sign in" from the alert: the Account section opens the sign-in sheet.
+  var requestedAuth: AuthMode?
+  /// A signed-out iPhone still holds a member's saved training.
+  var hasSavedAccountCopy = false
+  /// When the member asked to delete the account from this iPhone, while that
+  /// request can still be outstanding.
+  private(set) var deletionRequestedAt: Date?
+  @ObservationIgnored private var storage: AccountStorage?
+  @ObservationIgnored private var interruptionCount: UInt64 = 0
   @ObservationIgnored private var client: AccountClient?
   @ObservationIgnored private var sessionGeneration: UInt64 = 0
   @ObservationIgnored weak var app: AppModel?
@@ -82,8 +148,44 @@ final class AccountModel {
   func attach(_ environment: AccountEnvironment?) {
     sessionGeneration &+= 1
     client = environment?.client
+    storage = environment?.storage
     isAvailable = environment != nil
     if let restored = environment?.restored { phase = .signedIn(restored) }
+    refreshDeletionRequest()
+  }
+
+  // MARK: Interruptions and pending deletion
+
+  func dismissInterruption() { interruption = nil }
+
+  /// The alert's "Sign in".
+  func signInFromInterruption() {
+    interruption = nil
+    requestedAuth = .signIn
+  }
+
+  private func present(_ reason: AccountSignOutReason, hadWorkout: Bool, removedCopy: Bool) {
+    interruptionCount &+= 1
+    let value = AccountInterruption.make(
+      id: interruptionCount, reason: reason, hadWorkout: hadWorkout, removedCopy: removedCopy)
+    interruption = value
+    AccessibilityNotification.Announcement("\(value.title). \(value.message)").post()
+  }
+
+  func refreshDeletionRequest() {
+    guard let storage, let profile else {
+      deletionRequestedAt = nil
+      return
+    }
+    deletionRequestedAt = AccountDeletionLedger.requestedAt(
+      member: profile.id, in: storage.directory)
+  }
+
+  /// The delete-account request went out; remember it on this iPhone.
+  func recordDeletionRequest() {
+    guard let storage, let profile else { return }
+    AccountDeletionLedger.record(member: profile.id, in: storage.directory)
+    refreshDeletionRequest()
   }
 
   private var unavailable: AccountFailure {
@@ -152,7 +254,11 @@ final class AccountModel {
       )
     }
     notice = nil
+    interruption = nil
+    hasSavedAccountCopy = false
+    if let storage { AccountDeletionLedger.clear(member: signedIn.id, in: storage.directory) }
     phase = .signedIn(signedIn)
+    refreshDeletionRequest()
   }
 
   /// Leaving the sign-in sheet part-way: a half-finished challenge is dropped.
@@ -191,7 +297,7 @@ final class AccountModel {
       return result
     } catch let failure as AccountFailure {
       if failure.endsSession, generation == sessionGeneration {
-        await sessionEnded(failure.kind == .accountChanged ? .accountChanged : .sessionEnded)
+        await sessionEnded(failure.signOutReason)
       }
       throw failure
     }
@@ -220,7 +326,7 @@ final class AccountModel {
       }
     } catch let failure as AccountFailure {
       if failure.endsSession, generation == sessionGeneration {
-        await sessionEnded(failure.kind == .accountChanged ? .accountChanged : .sessionEnded)
+        await sessionEnded(failure.signOutReason)
       }
     } catch {}
   }
@@ -244,13 +350,16 @@ final class AccountModel {
         "Signed out on this iPhone. FORMA couldn’t be reached to end the session there; you can sign it out from Security on the website."
       )
     }
-    if unsent && !removeLocalCopy {
+    if unsent {
       parts.append(
-        "Some changes hadn’t reached your account. They stay saved on this iPhone and send when you sign in again."
+        removeLocalCopy
+          ? "This iPhone still has a saved copy because some changes hadn’t reached your account. They send when you sign in again, or you can remove the copy below."
+          : "Some changes hadn’t reached your account. They stay saved on this iPhone and send when you sign in again."
       )
     }
     notice = parts.isEmpty ? nil : parts.joined(separator: " ")
     await app?.accountDidSignOut(removeLocalCopy: removeLocalCopy && !unsent)
+    await app?.refreshSavedAccountCopy()
     return confirmed
   }
 
@@ -266,21 +375,60 @@ final class AccountModel {
     phase = .signedOut
     notice = nil
     await app?.accountDidSignOut(removeLocalCopy: false)
+    await app?.refreshSavedAccountCopy()
   }
 
-  /// The account (or the sync engine) says this sign-in is over.
+  /// The account (or the sync engine) says this sign-in is over. The open
+  /// workout, if there is one, is already saved in the member's copy; the root
+  /// view explains what happened instead of the screen changing silently.
   func sessionEnded(_ reason: AccountSignOutReason) async {
-    guard case .signedIn = phase else { return }
+    guard case .signedIn(let leaving) = phase else { return }
+    var reason = reason
+    if reason == .sessionEnded, let storage,
+      AccountDeletionLedger.requestedAt(member: leaving.id, in: storage.directory) != nil
+    {
+      reason = .accountDeleted
+    }
+    let hadWorkout = app?.workoutPresented == true || app?.workspace?.active != nil
     sessionGeneration &+= 1
     busy = true
     defer { busy = false }
     phase = .signedOut
     await client?.endLocalSession()
-    notice =
-      reason == .accountChanged
-      ? "This session no longer matched your account, so you’ve been signed out. Your training is still saved on this iPhone."
-      : "Your FORMA session ended, so you’ve been signed out. Your training is still saved on this iPhone; sign in again to keep syncing."
-    await app?.accountDidSignOut(removeLocalCopy: false)
+    // A deleted account's saved copy goes with it, unless it holds changes the
+    // account never received.
+    let removed = await app?.accountDidSignOut(removeLocalCopy: reason == .accountDeleted) ?? false
+    if reason == .accountDeleted, let storage {
+      AccountDeletionLedger.clear(member: leaving.id, in: storage.directory)
+    }
+    deletionRequestedAt = nil
+    notice = Self.signedOutNotice(reason, removedCopy: removed)
+    await app?.refreshSavedAccountCopy()
+    if hadWorkout {
+      // The workout screen is still closing; an alert raised now would be lost.
+      Task { [weak self] in
+        try? await Task.sleep(for: .milliseconds(600))
+        self?.present(reason, hadWorkout: true, removedCopy: removed)
+      }
+    } else {
+      present(reason, hadWorkout: false, removedCopy: removed)
+    }
+  }
+
+  /// The note under Account while signed out after a sign-out the member did
+  /// not ask for.
+  static func signedOutNotice(_ reason: AccountSignOutReason, removedCopy: Bool) -> String? {
+    switch reason {
+    case .requested: nil
+    case .accountChanged:
+      "This session no longer matched your account, so you’ve been signed out. Your training is still saved on this iPhone."
+    case .sessionEnded:
+      "Your FORMA session ended, so you’ve been signed out. Your training is still saved on this iPhone; sign in again to keep syncing."
+    case .accountDeleted:
+      removedCopy
+        ? "You asked to delete your account and the session has ended. The saved copy of its training was removed from this iPhone."
+        : "You asked to delete your account and the session has ended. Some changes hadn’t reached the account, so this iPhone still has a saved copy; you can remove it below."
+    }
   }
 
   // MARK: Plumbing

@@ -178,6 +178,90 @@ final class WorkoutEngineTests: XCTestCase {
     XCTAssertNotNil(object["active"])
     XCTAssertTrue(object["active"] is NSNull)
   }
+
+  func testReopenedSetKeepsTheRunningRestAndStartsOneWhenNoneIsRunning() throws {
+    var workspace = Fixtures.active(now: now)
+    func toggle(_ index: Int, at time: Double, rest: WorkoutEngine.RestTrigger = .always) throws {
+      workspace = try WorkoutEngine.toggleSet(
+        in: workspace, entryIndex: 0, setIndex: index, now: time, catalog: Fixtures.catalog,
+        rest: rest)
+    }
+    try toggle(0, at: now)
+    XCTAssertEqual(workspace.active!.restEnd, now + 90_000)
+
+    // Reopen and re-tick 40 s in: the countdown keeps its original deadline.
+    try toggle(0, at: now + 40_000)
+    try toggle(0, at: now + 45_000, rest: .onlyIfIdle)
+    XCTAssertTrue(workspace.active!.exercises[0].sets[0].done)
+    XCTAssertEqual(workspace.active!.restEnd, now + 90_000)
+
+    // A paused rest is still a rest.
+    workspace = try WorkoutEngine.pauseRest(in: workspace, now: now + 50_000)
+    try toggle(0, at: now + 51_000)
+    try toggle(0, at: now + 52_000, rest: .onlyIfIdle)
+    XCTAssertNil(workspace.active!.restEnd)
+    XCTAssertEqual(workspace.active!.restPaused, 40)
+
+    // Once the rest has run out or been skipped, a correction starts the next one.
+    workspace = try WorkoutEngine.skipRest(in: workspace)
+    try toggle(0, at: now + 60_000)
+    try toggle(0, at: now + 61_000, rest: .onlyIfIdle)
+    XCTAssertEqual(workspace.active!.restEnd, now + 61_000 + 90_000)
+
+    // A first completion restarts the countdown even while one is running.
+    try toggle(1, at: now + 100_000)
+    XCTAssertEqual(workspace.active!.restEnd, now + 190_000)
+  }
+
+  func testRestIsNotRunningOnceItsDeadlinePassed() throws {
+    var workspace = Fixtures.active(now: now)
+    workspace = try WorkoutEngine.toggleSet(
+      in: workspace, entryIndex: 0, setIndex: 0, now: now, catalog: Fixtures.catalog)
+    let session = workspace.active!
+    XCTAssertTrue(WorkoutEngine.isResting(session, now: now + 89_000))
+    XCTAssertFalse(WorkoutEngine.isResting(session, now: now + 90_000))
+    var idle = session
+    idle.restEnd = nil
+    XCTAssertFalse(WorkoutEngine.isResting(idle, now: now))
+  }
+
+  func testResumeIndexProgressAndUnfinishedCounts() throws {
+    var routine = Fixtures.routine()
+    routine.exercises.append(
+      Prescription(exerciseId: "single-row", sets: 2, reps: 8, weight: 20, perSide: true))
+    var workspace = Fixtures.workspace()
+    workspace.routines = [routine]
+    workspace.active = try WorkoutEngine.start(routine: routine, now: now)
+    XCTAssertEqual(WorkoutEngine.resumeIndex(workspace.active!), 0)
+    XCTAssertEqual(WorkoutEngine.totalSets(workspace.active!), 5)
+    XCTAssertEqual(WorkoutEngine.unfinishedSets(workspace.active!), 5)
+
+    for set in 0..<3 {
+      workspace = try WorkoutEngine.toggleSet(
+        in: workspace, entryIndex: 0, setIndex: set, now: now, catalog: Fixtures.catalog)
+    }
+    let session = workspace.active!
+    XCTAssertEqual(WorkoutEngine.resumeIndex(session), 1)
+    XCTAssertEqual(WorkoutEngine.setProgress(session.exercises[0]).done, 3)
+    XCTAssertEqual(WorkoutEngine.setProgress(session.exercises[0]).total, 3)
+    XCTAssertEqual(WorkoutEngine.setProgress(session.exercises[1]).done, 0)
+    XCTAssertEqual(WorkoutEngine.unfinishedSets(session), 2)
+
+    // An earlier set left unticked wins over a later exercise's progress.
+    workspace = try WorkoutEngine.toggleSet(
+      in: workspace, entryIndex: 0, setIndex: 1, now: now, catalog: Fixtures.catalog)
+    workspace = try WorkoutEngine.toggleSet(
+      in: workspace, entryIndex: 1, setIndex: 0, now: now, catalog: Fixtures.catalog)
+    XCTAssertEqual(WorkoutEngine.resumeIndex(workspace.active!), 0)
+
+    // Everything done lands on the last exercise, beside the Finish action.
+    for (entry, set) in [(0, 1), (1, 1)] {
+      workspace = try WorkoutEngine.toggleSet(
+        in: workspace, entryIndex: entry, setIndex: set, now: now, catalog: Fixtures.catalog)
+    }
+    XCTAssertEqual(WorkoutEngine.unfinishedSets(workspace.active!), 0)
+    XCTAssertEqual(WorkoutEngine.resumeIndex(workspace.active!), 1)
+  }
 }
 
 enum Fixtures {
