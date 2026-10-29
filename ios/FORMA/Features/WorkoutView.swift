@@ -163,9 +163,10 @@ struct WorkoutView: View {
             .background(FormaTheme.canvas)
             .navigationTitle("Training")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-              ToolbarItem(placement: .topBarLeading) {
-                Button("Save & close") {
+            .modifier(
+              WorkoutToolbar(
+                busy: model.busy,
+                close: {
                   Task {
                     if holdIsLive {
                       holdLeave = .close
@@ -173,32 +174,11 @@ struct WorkoutView: View {
                       await closeWorkout()
                     }
                   }
-                }.disabled(model.busy)
-              }
-              ToolbarItem(placement: .topBarTrailing) {
-                Menu {
-                  Button("Discard workout", systemImage: "trash", role: .destructive) {
-                    discardConfirmation = true
-                  }
-                } label: {
-                  Image(systemName: "ellipsis.circle").frame(width: 44, height: 44)
-                }
-                .accessibilityLabel("Workout actions")
-                .accessibilityIdentifier("workout-actions")
-              }
-              ToolbarItem(placement: .confirmationAction) {
-                Button("Finish") { requestFinish() }
-                  .accessibilityIdentifier("finish-workout")
-                  .accessibilityLabel("Finish workout")
-                  .disabled(model.busy)
-              }
-              ToolbarItemGroup(placement: .keyboard) {
-                Spacer()
-                Button("Done") { Task { if await saveDrafts() { focusedField = nil } } }
-                  .disabled(model.busy)
-                  .accessibilityIdentifier("save-workout-drafts")
-              }
-            }, session: session),
+                },
+                discard: { discardConfirmation = true },
+                finish: requestFinish,
+                saveDrafts: { Task { if await saveDrafts() { focusedField = nil } } })),
+            session: session),
           session: session, reader: reader)
       }
     }
@@ -1160,6 +1140,84 @@ private struct GuideSheet: View {
 
 typealias SetDraft = MeasurementDraft
 
+/// The active workout's toolbar. On iOS 26 it is three Liquid Glass groups:
+/// a round close button on the left, and on the right the actions menu set
+/// apart from a prominent Finish. Earlier systems keep the text buttons.
+/// "Save & close" stays the close button's name, so VoiceOver says what it does.
+private struct WorkoutToolbar: ViewModifier {
+  let busy: Bool
+  let close: () -> Void
+  let discard: () -> Void
+  let finish: () -> Void
+  let saveDrafts: () -> Void
+
+  func body(content: Content) -> some View {
+    if #available(iOS 26.0, *) {
+      content.toolbar {
+        ToolbarItem(placement: .topBarLeading) {
+          Button(action: close) {
+            Image(systemName: "chevron.down").fontWeight(.semibold)
+          }
+          .disabled(busy)
+          .accessibilityLabel("Save & close")
+          .accessibilityHint("Keeps this workout open to resume later.")
+        }
+        ToolbarItem(placement: .topBarTrailing) { actions(symbol: "ellipsis") }
+        ToolbarSpacer(.fixed, placement: .topBarTrailing)
+        ToolbarItem(placement: .topBarTrailing) {
+          Button(action: finish) {
+            Text("Finish").fontWeight(.semibold).foregroundStyle(FormaTheme.ink)
+          }
+          .buttonStyle(.glassProminent).tint(FormaTheme.lime)
+          .modifier(FinishIdentity(busy: busy))
+        }
+        keyboard
+      }
+    } else {
+      content.toolbar {
+        ToolbarItem(placement: .topBarLeading) {
+          Button("Save & close", action: close).disabled(busy)
+        }
+        ToolbarItem(placement: .topBarTrailing) { actions(symbol: "ellipsis.circle") }
+        ToolbarItem(placement: .confirmationAction) {
+          Button("Finish", action: finish).modifier(FinishIdentity(busy: busy))
+        }
+        keyboard
+      }
+    }
+  }
+
+  private func actions(symbol: String) -> some View {
+    Menu {
+      Button("Discard workout", systemImage: "trash", role: .destructive, action: discard)
+    } label: {
+      Image(systemName: symbol)
+    }
+    .accessibilityLabel("Workout actions")
+    .accessibilityIdentifier("workout-actions")
+  }
+
+  private var keyboard: some ToolbarContent {
+    ToolbarItemGroup(placement: .keyboard) {
+      Spacer()
+      Button("Done", action: saveDrafts)
+        .disabled(busy)
+        .accessibilityIdentifier("save-workout-drafts")
+    }
+  }
+}
+
+private struct FinishIdentity: ViewModifier {
+  let busy: Bool
+
+  func body(content: Content) -> some View {
+    content
+      .accessibilityIdentifier("finish-workout")
+      .accessibilityLabel("Finish workout")
+      .disabled(busy)
+  }
+}
+
 struct SetRow: View {
   @Environment(\.dynamicTypeSize) private var typeSize
   @Environment(\.formaMotion) private var motion
@@ -1184,13 +1242,16 @@ struct SetRow: View {
         if typeSize.isAccessibilitySize {
           stackedRow
         } else {
+          // Every column is a caption over a 48 pt box, bottom-aligned, so the
+          // set number, the fields and the complete button share one baseline
+          // and one height. The row fills the card; ViewThatFits only checks
+          // that it fits at its ideal width before choosing it.
           ViewThatFits(in: .horizontal) {
-            HStack(spacing: 10) {
-              setNumber
+            HStack(alignment: .bottom, spacing: 10) {
+              setColumn
               measurementFields
-              completionButton
+              completionColumn
             }
-            .fixedSize(horizontal: true, vertical: false)
             stackedRow
           }
         }
@@ -1234,6 +1295,34 @@ struct SetRow: View {
       .foregroundStyle(FormaTheme.secondary).fixedSize()
   }
 
+  /// The set number as a column: a "Set" caption over the number, centred in
+  /// the same 48 pt band as the fields beside it.
+  private var setColumn: some View {
+    VStack(spacing: 6) {
+      Text("Set").font(.caption.weight(.semibold)).foregroundStyle(FormaTheme.secondary)
+      Text("\(index + 1)").font(.title3.weight(.bold).monospacedDigit())
+        .foregroundStyle(set.done ? FormaTheme.accent : FormaTheme.primary)
+        .frame(minWidth: 28, minHeight: Self.boxHeight)
+    }
+    .fixedSize()
+    .accessibilityHidden(true)
+  }
+
+  /// The complete button under a "Done" caption, matching the field columns.
+  private var completionColumn: some View {
+    VStack(spacing: 6) {
+      Text("Done").font(.caption.weight(.semibold)).foregroundStyle(FormaTheme.secondary)
+        .accessibilityHidden(true)
+      completionButton
+    }
+    .fixedSize()
+  }
+
+  /// The height of every input box in the row: fields and the complete button.
+  static let boxHeight: CGFloat = 48
+  /// The corner radius every box in the row shares.
+  static let boxRadius: CGFloat = 10
+
   @ViewBuilder private var measurementFields: some View {
     if exercise?.metric == "load_reps" || exercise == nil {
       if exercise?.loadType != "none" || set.weight > 0 {
@@ -1274,19 +1363,20 @@ struct SetRow: View {
         .font(.title3.weight(.semibold))
         .contentTransition(symbolTransition)
         .foregroundStyle(set.done ? FormaTheme.ink : FormaTheme.accent)
-        .frame(width: 56, height: 56)
+        .frame(width: 56, height: Self.boxHeight)
         .contentShape(Rectangle())
         .background(
-          set.done ? FormaTheme.lime : FormaTheme.canvas, in: RoundedRectangle(cornerRadius: 14)
+          set.done ? FormaTheme.lime : FormaTheme.canvas,
+          in: RoundedRectangle(cornerRadius: Self.boxRadius)
         )
         // Always present and faded, so the outline dissolves instead of popping.
         .overlay {
-          RoundedRectangle(cornerRadius: 14).stroke(FormaTheme.fieldBorder)
+          RoundedRectangle(cornerRadius: Self.boxRadius).stroke(FormaTheme.fieldBorder)
             .opacity(set.done ? 0 : 1)
         }
         // Keyed to the committed value: `done` only flips after the durable save,
-        // so the fill and symbol never run ahead of the truth. Same 56 pt frame,
-        // so neighbouring fields never move.
+        // so the fill and symbol never run ahead of the truth. Same frame in
+        // both states, so neighbouring fields never move.
         .formaAnimation(FormaMotion.state, value: set.done)
     }
     .buttonStyle(.plain).disabled(busy)
@@ -1307,10 +1397,10 @@ struct SetRow: View {
       TextField(label, text: value)
         .font(.title3.weight(.semibold).monospacedDigit())
         .keyboardType(["reps", "left", "right"].contains(name) ? .numberPad : .decimalPad)
-        .multilineTextAlignment(.center).frame(minHeight: 48)
-        .background(FormaTheme.canvas, in: RoundedRectangle(cornerRadius: 10))
+        .multilineTextAlignment(.center).frame(minHeight: Self.boxHeight)
+        .background(FormaTheme.canvas, in: RoundedRectangle(cornerRadius: Self.boxRadius))
         .overlay {
-          RoundedRectangle(cornerRadius: 10).stroke(
+          RoundedRectangle(cornerRadius: Self.boxRadius).stroke(
             hasIssue ? FormaTheme.error : isFocused ? FormaTheme.accent : FormaTheme.fieldBorder,
             lineWidth: isFocused || hasIssue ? 2 : 1)
         }

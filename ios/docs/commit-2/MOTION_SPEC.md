@@ -30,7 +30,8 @@ sheets, tab changes) remain the system's.
 ## Tokens
 
 Durations are FORMA design choices for gym use, not Apple requirements. All
-are springs without overshoot on data, except one-time emphasis.
+are springs without overshoot on data, except one-time emphasis and the tab
+highlight, which carries no data.
 
 | Token | Duration | Bounce | Use |
 | --- | --- | --- | --- |
@@ -38,6 +39,7 @@ are springs without overshoot on data, except one-time emphasis.
 | `state` | 180 ms | 0.12 | A set completing, a toggle, a status label |
 | `reveal` | 300 ms | 0.08 | Content appearing or disappearing; card expansion |
 | `navigation` | 380 ms | 0.1 | Larger choreography between states of one screen |
+| `tabSelection` | 420 ms | 0.28 | The tab highlight sliding to a chosen tab |
 | `emphasis` | 520 ms | 0.22 | One-time reward: a finished workout, a newly completed day |
 | `fade` | 160 ms | ease-out | The minimal-level substitute for any spatial motion |
 | `stagger` | 50 ms | – | Delay between siblings in a one-time reveal |
@@ -82,3 +84,4 @@ are springs without overshoot on data, except one-time emphasis.
 | Workout receipt | Seal assembles (`emphasis`), statistics reveal staggered, success haptic once | Fade | Static |
 | Progress chart first data | Bars fade in once | Present | Present |
 | Chart selection | Highlight follows selection (`state`) | Instant | Instant |
+| A tab is chosen | Highlight slides (`tabSelection`); the symbol fills and plays its own effect: Today's sun turns (iOS 18), Plan's stack lifts by layer, Progress's line draws itself (iOS 26), You waves (iOS 18), with a bounce on older systems; selection haptic | Highlight fades in, symbol fills | Instant |

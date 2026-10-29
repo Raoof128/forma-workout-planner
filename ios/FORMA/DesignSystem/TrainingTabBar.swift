@@ -21,6 +21,17 @@ enum TrainingTab: String, CaseIterable, Hashable {
     case .you: "person.crop.circle"
     }
   }
+
+  /// The filled form shown while the tab is selected. The chart has no
+  /// filled form, so it keeps its outline.
+  var selectedSymbol: String {
+    switch self {
+    case .today: "sun.max.fill"
+    case .plan: "square.stack.fill"
+    case .progress: "chart.xyaxis.line"
+    case .you: "person.crop.circle.fill"
+    }
+  }
 }
 
 /// Directional distance prevents flicker from small movements and overscroll.
@@ -238,9 +249,67 @@ extension View {
   }
 }
 
-/// App-owned symbols can run a discrete SF Symbol effect. The capsule uses
-/// Apple's public Liquid Glass API, with an opaque accessibility alternative.
+/// A tab's symbol. Choosing the tab fills it and plays that tab's own effect:
+/// the sun turns, the stack lifts layer by layer, the chart line draws itself
+/// (iOS 26) and the person waves (iOS 18). Where an effect is newer than the
+/// system, the symbol bounces instead; below full motion nothing moves.
+private struct TabSymbol: View {
+  let tab: TrainingTab
+  let selected: Bool
+  /// Changes once each time the tab is chosen.
+  let trigger: Int
+  let size: CGFloat
+  let animated: Bool
+
+  var body: some View {
+    effect(
+      Image(systemName: selected ? tab.selectedSymbol : tab.symbol)
+        .font(.system(size: size, weight: selected ? .semibold : .medium))
+        .contentTransition(animated ? .symbolEffect(.replace) : .identity)
+    )
+    .symbolEffectsRemoved(!animated)
+    // Each effect stays inside the symbol's own frame, so the row never shifts.
+    .frame(height: size * 1.2)
+  }
+
+  @ViewBuilder private func effect(_ image: some View) -> some View {
+    switch tab {
+    case .today:
+      if #available(iOS 18.0, *) {
+        image.symbolEffect(.rotate.clockwise.wholeSymbol, options: .nonRepeating, value: trigger)
+      } else {
+        image.symbolEffect(.bounce, options: .nonRepeating, value: trigger)
+      }
+    case .plan:
+      image.symbolEffect(.bounce.up.byLayer, options: .nonRepeating, value: trigger)
+    case .progress:
+      if #available(iOS 26.0, *), animated {
+        // A new identity per selection, so the line is drawn again each time;
+        // the old copy leaves at once rather than overlapping it.
+        ZStack {
+          image.id(trigger).transition(
+            .asymmetric(
+              insertion: AnyTransition(.symbolEffect(.drawOn.byLayer)), removal: .identity)
+          )
+        }
+      } else {
+        image.symbolEffect(.bounce, options: .nonRepeating, value: trigger)
+      }
+    case .you:
+      if #available(iOS 18.0, *) {
+        image.symbolEffect(.wiggle.forward.byLayer, options: .nonRepeating, value: trigger)
+      } else {
+        image.symbolEffect(.bounce, options: .nonRepeating, value: trigger)
+      }
+    }
+  }
+}
+
+/// App-owned symbols run their own SF Symbol effects (`TabSymbol`). The
+/// capsule uses Apple's public Liquid Glass API, with an opaque accessibility
+/// alternative.
 struct TrainingTabBar: View {
+  @Environment(AppModel.self) private var model
   @Environment(TrainingNavigation.self) private var navigation
   @Environment(\.formaMotion) private var motion
   @Environment(\.dynamicTypeSize) private var textSize
@@ -299,16 +368,16 @@ struct TrainingTabBar: View {
         navigation.reselect(tab)
         return
       }
-      withFormaAnimation(motion, FormaMotion.navigation) {
+      model.haptic(.selected)
+      withFormaAnimation(motion, FormaMotion.tabSelection) {
         navigation.select(tab)
         selectionEvents[tab, default: 0] += 1
       }
     } label: {
       VStack(spacing: 5) {
-        Image(systemName: tab.symbol)
-          .font(.system(size: textSize.isAccessibilitySize ? 25 : 21, weight: .medium))
-          .symbolEffect(.bounce, options: .nonRepeating, value: selectionEvents[tab, default: 0])
-          .symbolEffectsRemoved(!motion.allowsSpatialMotion)
+        TabSymbol(
+          tab: tab, selected: selected, trigger: selectionEvents[tab, default: 0],
+          size: textSize.isAccessibilitySize ? 25 : 21, animated: motion.allowsSpatialMotion)
         // The label stays at every size: it scales with the text, up to a cap
         // that keeps four tabs on one row, and shrinks a little before it clips.
         // The large content viewer shows the full-size title and symbol.
