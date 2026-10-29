@@ -22,6 +22,9 @@ final class AppModel {
       let activeName = workspace?.active?.name
       if activeName != activeWorkoutName { activeWorkoutName = activeName }
       widgets.publish(workspace)
+      // The one place the Lock Screen activity follows the workout: every start, set, rest
+      // change, finish, discard, reset and sign-out passes through this observer.
+      syncLiveActivity()
     }
   }
   /// True once a workspace has loaded. Read by the root view instead of
@@ -48,12 +51,13 @@ final class AppModel {
   /// The store the screens are editing: the guest store, or a signed-in
   /// member's own saved copy (see AppModel+Account.swift).
   var store: WorkspaceStore?
-  private var loading = false
+  private(set) var loading = false
   private var preferencesURL: URL?
   private var loadingPreferences = false
   let mutationGate = SerializedMutationGate()
   let watch = WatchWorkoutCoordinator()
   let widgets = WidgetSnapshotBridge()
+  let liveActivity: WorkoutLiveActivityController
   var widgetRoute: WidgetRoute?
   var widgetNotice: String?
   var widgetEditingCount = 0
@@ -89,7 +93,8 @@ final class AppModel {
   var pendingStart: Routine?
   private var presentWorkoutAfterSheet = false
 
-  init() {
+  init(liveActivity: WorkoutLiveActivityController = .makeDefault()) {
+    self.liveActivity = liveActivity
     account.app = self
     watch.onWatchStarted = { [weak self] routineID in
       guard let self, self.pendingStart?.id == routineID,

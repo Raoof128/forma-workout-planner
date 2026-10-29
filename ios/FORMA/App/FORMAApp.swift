@@ -4,8 +4,15 @@ import SwiftUI
 
 @main
 struct FORMAApp: App {
-  @State private var model = AppModel()
+  @State private var model: AppModel
   @Environment(\.scenePhase) private var scenePhase
+
+  init() {
+    let model = AppModel()
+    _model = State(initialValue: model)
+    // Set before any scene exists: a Lock Screen button press can launch the app with no window.
+    LiveActivityActions.handler = { [weak model] action in await model?.perform(action) }
+  }
 
   var body: some Scene {
     WindowGroup {
