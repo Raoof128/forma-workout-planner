@@ -84,4 +84,4 @@ highlight, which carries no data.
 | Workout receipt | Seal assembles (`emphasis`), statistics reveal staggered, success haptic once | Fade | Static |
 | Progress chart first data | Bars fade in once | Present | Present |
 | Chart selection | Highlight follows selection (`state`) | Instant | Instant |
-| A tab is chosen | Highlight slides (`tabSelection`); the symbol fills and plays its own effect: Today's sun turns (iOS 18), Plan's stack lifts by layer, Progress's line draws itself (iOS 26), You waves (iOS 18), with a bounce on older systems; selection haptic | Highlight fades in, symbol fills | Instant |
+| A tab is chosen | Highlight slides (`tabSelection`); the symbol fills and plays its own effect: Today's sun turns (iOS 18), Plan's stack lifts by layer, Progress's chart draws itself across (FORMA's own mask sweep; SF Symbols Draw On has no drawing data for this symbol), You waves (iOS 18), with a bounce on older systems; a firm tab-change haptic | Highlight fades in, symbol fills | Instant |

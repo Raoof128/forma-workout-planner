@@ -100,6 +100,10 @@ final class TrainingNavigation {
   /// Set before opening You; the screen scrolls there, then clears it.
   var youFocus: YouFocus?
   private(set) var collapsed = false
+  /// The height of the floating tab bar (and the resume control above it),
+  /// which every tab's screens keep clear at the bottom so their last rows
+  /// scroll above the bar instead of ending under it.
+  var barInset: CGFloat = 0
   /// What each tab has pushed, bound to that tab's `NavigationStack`. Clearing
   /// a path returns the tab to its root.
   var paths: [TrainingTab: [TrainingRoute]] = [:]
@@ -146,24 +150,29 @@ enum TabScrollAnchor {
   static let top = "forma.tab.top"
 }
 
+/// Feeds the tab's vertical scroll position to the bar. It follows position
+/// alone: the scroll phase never left `idle` on device (iOS 26), so a filter
+/// on "the person is dragging" stopped the bar from ever collapsing.
+/// `TabBarScrollState` already ignores small moves and overscroll, and a
+/// programmatic jump to the top only ever expands the bar.
 private struct TrainingTabScrollObserver: ViewModifier {
   @Environment(TrainingNavigation.self) private var navigation
-  @State private var userScrolling = false
 
   @ViewBuilder
   func body(content: Content) -> some View {
     if #available(iOS 18.0, *) {
       content
-        .onScrollPhaseChange { _, phase in
-          userScrolling = phase == .interacting || phase == .decelerating
-        }
         .onScrollGeometryChange(for: Position.self) { geometry in
+          // `containerSize` and `bounds` exclude the insets (on Today, 640 pt
+          // of an 812 pt screen), so a limit built from them counted the
+          // insets twice: the end of the page was never reached and the
+          // rubber-band settle read as scrolling back up, re-opening the bar.
+          // `visibleRect` spans the whole viewport, insets included.
           Position(
             offset: geometry.contentOffset.y + geometry.contentInsets.top,
             limit: geometry.contentSize.height + geometry.contentInsets.top
-              + geometry.contentInsets.bottom - geometry.containerSize.height)
+              + geometry.contentInsets.bottom - geometry.visibleRect.height)
         } action: { _, position in
-          guard userScrolling else { return }
           navigation.observe(offset: position.offset, limit: position.limit)
         }
     } else {
@@ -177,6 +186,20 @@ private struct TrainingTabScrollObserver: ViewModifier {
   }
 }
 
+/// Keeps a screen's scroll view clear of the floating bar: the content still
+/// scrolls under the glass, but its last row can always scroll fully above it.
+/// It sits on each scroll view, not on the tab's stack: a stack-level inset
+/// never reached Today, which hides its navigation bar.
+private struct TrainingBarClearance: ViewModifier {
+  @Environment(TrainingNavigation.self) private var navigation
+
+  func body(content: Content) -> some View {
+    content.safeAreaInset(edge: .bottom, spacing: 0) {
+      Color.clear.frame(height: navigation.barInset).accessibilityHidden(true)
+    }
+  }
+}
+
 private struct TrainingTabRoot: ViewModifier {
   @Environment(TrainingNavigation.self) private var navigation
   @Environment(\.formaMotion) private var motion
@@ -186,6 +209,7 @@ private struct TrainingTabRoot: ViewModifier {
     ScrollViewReader { proxy in
       content
         .modifier(TrainingTabScrollObserver())
+        .modifier(TrainingBarClearance())
         .onChange(of: navigation.scrollToTopEvents[tab, default: 0]) {
           withFormaAnimation(motion, FormaMotion.navigation) {
             proxy.scrollTo(TabScrollAnchor.top, anchor: .top)
@@ -202,30 +226,34 @@ private struct TrainingDestinations: ViewModifier {
 
   func body(content: Content) -> some View {
     content.navigationDestination(for: TrainingRoute.self) { route in
-      switch route {
-      case .routine(let id): RoutineDetailView(routineID: id)
-      case .session(let id): SessionDetailView(sessionID: id)
-      case .guide(let id):
-        if let exercise = model.exercise(id) {
-          GuideView(exercise: exercise)
-        } else {
-          ContentUnavailableView(
-            "This exercise is unavailable", systemImage: "book",
-            description: Text("Return to the exercise library to choose another."))
-        }
-      case .trainingDays: TrainingDaysView()
-      case .exerciseLibrary: ExerciseLibraryView()
-      case .privacy: NativePrivacyView()
-      case .syncDetails: SyncDetailsView()
-      case .accountProfile: AccountProfileView()
-      case .accountSecurity: AccountSecurityView()
-      case .trainingData: TrainingDataView()
-      case .accountPrivacy: AccountPrivacyView()
-      case .changePassword: ChangePasswordView()
-      case .twoFactor: TwoFactorView()
-      case .sessions: SessionsView()
-      case .coachAccess: CoachAccessView()
+      destination(route).modifier(TrainingBarClearance())
+    }
+  }
+
+  @ViewBuilder private func destination(_ route: TrainingRoute) -> some View {
+    switch route {
+    case .routine(let id): RoutineDetailView(routineID: id)
+    case .session(let id): SessionDetailView(sessionID: id)
+    case .guide(let id):
+      if let exercise = model.exercise(id) {
+        GuideView(exercise: exercise)
+      } else {
+        ContentUnavailableView(
+          "This exercise is unavailable", systemImage: "book",
+          description: Text("Return to the exercise library to choose another."))
       }
+    case .trainingDays: TrainingDaysView()
+    case .exerciseLibrary: ExerciseLibraryView()
+    case .privacy: NativePrivacyView()
+    case .syncDetails: SyncDetailsView()
+    case .accountProfile: AccountProfileView()
+    case .accountSecurity: AccountSecurityView()
+    case .trainingData: TrainingDataView()
+    case .accountPrivacy: AccountPrivacyView()
+    case .changePassword: ChangePasswordView()
+    case .twoFactor: TwoFactorView()
+    case .sessions: SessionsView()
+    case .coachAccess: CoachAccessView()
     }
   }
 }
@@ -250,8 +278,8 @@ extension View {
 }
 
 /// A tab's symbol. Choosing the tab fills it and plays that tab's own effect:
-/// the sun turns, the stack lifts layer by layer, the chart line draws itself
-/// (iOS 26) and the person waves (iOS 18). Where an effect is newer than the
+/// the sun turns, the stack lifts layer by layer, the chart draws itself
+/// across and the person waves (iOS 18). Where an effect is newer than the
 /// system, the symbol bounces instead; below full motion nothing moves.
 private struct TabSymbol: View {
   let tab: TrainingTab
@@ -283,23 +311,56 @@ private struct TabSymbol: View {
     case .plan:
       image.symbolEffect(.bounce.up.byLayer, options: .nonRepeating, value: trigger)
     case .progress:
-      if #available(iOS 26.0, *), animated {
-        // A new identity per selection, so the line is drawn again each time;
-        // the old copy leaves at once rather than overlapping it.
-        ZStack {
-          image.id(trigger).transition(
-            .asymmetric(
-              insertion: AnyTransition(.symbolEffect(.drawOn.byLayer)), removal: .identity)
-          )
-        }
+      if animated {
+        ChartSweep(trigger: trigger) { image }
       } else {
-        image.symbolEffect(.bounce, options: .nonRepeating, value: trigger)
+        image
       }
     case .you:
       if #available(iOS 18.0, *) {
         image.symbolEffect(.wiggle.forward.byLayer, options: .nonRepeating, value: trigger)
       } else {
         image.symbolEffect(.bounce, options: .nonRepeating, value: trigger)
+      }
+    }
+  }
+}
+
+/// The Progress chart drawing itself from left to right: a faint copy holds
+/// the shape while a full-strength copy is revealed across it, with a small
+/// lift as it lands. SF Symbols' Draw On needs drawing data this symbol does
+/// not have (it played nothing on device), so the reveal is FORMA's own; it
+/// runs on every supported system and only changes opacity and a mask.
+private struct ChartSweep<Symbol: View>: View {
+  let trigger: Int
+  @ViewBuilder let symbol: Symbol
+
+  private struct Sweep {
+    var reveal = 1.0
+    var lift = 0.0
+  }
+
+  // One animator drives both copies. An animator placed inside the mask
+  // never ran on device, which left the symbol at its faint copy.
+  var body: some View {
+    symbol.keyframeAnimator(initialValue: Sweep(), trigger: trigger) { content, sweep in
+      ZStack {
+        content.opacity(0.28)
+        content.mask(alignment: .leading) {
+          Rectangle().scaleEffect(x: sweep.reveal, y: 1, anchor: .leading)
+        }
+      }
+      .offset(y: -sweep.lift)
+    } keyframes: { _ in
+      KeyframeTrack(\.reveal) {
+        LinearKeyframe(0.0, duration: 0.01)
+        // Ease out: the line leaves quickly and settles, like a pen stroke.
+        LinearKeyframe(1.0, duration: 0.5, timingCurve: .easeOut)
+      }
+      KeyframeTrack(\.lift) {
+        LinearKeyframe(0.0, duration: 0.4)
+        SpringKeyframe(2.5, duration: 0.12)
+        SpringKeyframe(0.0, duration: 0.22)
       }
     }
   }
@@ -366,9 +427,10 @@ struct TrainingTabBar: View {
     return Button {
       guard navigation.selection != tab else {
         navigation.reselect(tab)
+        model.haptic(.tabReturned)
         return
       }
-      model.haptic(.selected)
+      model.haptic(.tabChanged)
       withFormaAnimation(motion, FormaMotion.tabSelection) {
         navigation.select(tab)
         selectionEvents[tab, default: 0] += 1

@@ -222,11 +222,17 @@ struct RootView: View {
   }
 }
 
+/// The floating tab bar and resume control. A `safeAreaInset` on the
+/// `TabView` does not reach the tabs' scroll views (the hidden system tab bar
+/// owns their insets), so each page ended under the bar. The bar floats as an
+/// overlay instead and reports its height; every tab screen's scroll view
+/// keeps that much clear at the bottom (`TrainingBarClearance`).
 private struct ActiveTrainingAccessory: ViewModifier {
   @Environment(AppModel.self) private var model
+  @Environment(TrainingNavigation.self) private var navigation
 
   func body(content: Content) -> some View {
-    content.safeAreaInset(edge: .bottom, spacing: 0) {
+    content.overlay(alignment: .bottom) {
       // One container, so the two glass surfaces 4pt apart sample the same
       // backdrop and never merge (the container spacing is below the gap).
       GlassGroup(spacing: 2) {
@@ -239,7 +245,24 @@ private struct ActiveTrainingAccessory: ViewModifier {
         }
       }
       .padding(.horizontal, 16).padding(.top, 4).padding(.bottom, 4)
+      .background {
+        GeometryReader { proxy in
+          Color.clear.preference(key: TrainingBarHeightKey.self, value: proxy.size.height)
+        }
+      }
+      .onPreferenceChange(TrainingBarHeightKey.self) { height in
+        // Whole points only, so sub-point layout jitter never re-lays out every tab.
+        let rounded = height.rounded(.up)
+        if navigation.barInset != rounded { navigation.barInset = rounded }
+      }
     }
+  }
+}
+
+private struct TrainingBarHeightKey: PreferenceKey {
+  static let defaultValue: CGFloat = 0
+  static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+    value = max(value, nextValue())
   }
 }
 
