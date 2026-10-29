@@ -130,7 +130,7 @@ final class PhoneTrainingLedgerTests: XCTestCase {
     guard case .failed(let message) = status else {
       return XCTFail("Import must stop before mutation")
     }
-    XCTAssertTrue(message.contains("did not start"))
+    XCTAssertTrue(message.contains("didn’t start, and nothing was changed"))
     XCTAssertEqual(fixture.model.workspace, before)
     let stored = try await fixture.memberStore.load(seed: Workspace())
     XCTAssertEqual(stored, before)

@@ -165,14 +165,16 @@ final class AccountExperienceTests: XCTestCase {
             : title == "AutoFill & Passwords"
               ? "com.apple.settings.general.autoFillAndPasswords"
               : title
-          // Rows only: a section heading can share the title ("AUTOFILL") but
-          // has no hit point. Settings exposes rows as buttons or cells by release.
+          // Rows only. The "AUTOFILL" section heading is a cell that carries the
+          // row's identifier but has no hit point, and asking whether it is
+          // hittable fails the test. So an identifier match must be a button;
+          // a cell counts only when its visible label is the row's title.
           let item = settings.descendants(matching: .any).matching(
             NSPredicate(
-              format:
-                "(elementType == %lu OR elementType == %lu) AND (identifier == %@ OR label ==[c] %@)",
-              XCUIElement.ElementType.button.rawValue, XCUIElement.ElementType.cell.rawValue,
-              identifier, title)
+              format: "(elementType == %lu AND (identifier == %@ OR label ==[c] %@))"
+                + " OR (elementType == %lu AND label ==[c] %@)",
+              XCUIElement.ElementType.button.rawValue, identifier, title,
+              XCUIElement.ElementType.cell.rawValue, title)
           ).firstMatch
           for _ in 0..<12 where !item.exists || !item.isHittable { settings.swipeUp() }
           XCTAssertTrue(item.exists && item.isHittable, "Settings must expose \(title)")
