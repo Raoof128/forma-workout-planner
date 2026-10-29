@@ -5,10 +5,6 @@ public enum WidgetRoute: Equatable, Sendable, Hashable {
   case routine(id: String, epoch: String)
   case active(id: String, epoch: String)
 
-  /// Scroll anchor for the "Show training in widgets" control on You. The widget's
-  /// "choose what you share" tile opens `.settings`; the You screen scrolls to this id.
-  public static let consentAnchor = "widget-sharing"
-
   public var url: URL {
     var components = URLComponents()
     components.scheme = "forma"

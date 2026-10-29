@@ -126,8 +126,8 @@ final class TrainingPresentationTests: XCTestCase {
     XCTAssertEqual(BrandPalette.secondaryText.hex(dark: true, highContrast: true), 0xE8EDE9)
   }
 
-  func testConsentAnchorIsStable() {
-    XCTAssertEqual(WidgetRoute.consentAnchor, "widget-sharing")
+  /// The consent tile's link; the app scrolls You to the widget toggle for it.
+  func testSettingsRouteURLIsStable() {
     XCTAssertEqual(WidgetRoute.settings.url.absoluteString, "forma://widget/settings")
   }
 

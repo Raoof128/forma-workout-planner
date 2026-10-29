@@ -78,9 +78,18 @@ group directory is marked excluded from backup. The extension only reads.
 Decode rejects unsupported schema, payloads over 32 KiB, invalid time bounds,
 invalid names/IDs/counts and private summaries in non-ready states. Ready
 snapshots expire into a stale state that removes their summaries and precise
-links. The provider bounds size before reading and catches missing, malformed
+links, with one exception added on 29 October 2026: the next routine and the
+weekly count are carried for up to 72 hours past expiry (the count resets only
+when a new training week starts), because neither changes at midnight. A saved
+active workout is never carried. The provider bounds size before reading and catches missing, malformed
 or protected-file failures into a nonpersonal unavailable state. This does not
-promise access to a protected file while the device is locked.
+promise access to a protected file while the device is locked. A protected-data
+read failure is treated as a lock, not a fault: the extension shows an
+"Updating after unlock" entry and retries after 2, 5, 15 or 30 minutes depending
+on how long ago the app last published (the shared file's modification time,
+readable while locked). An overnight lock stays under about 30 reloads, inside
+WidgetKit's budget; the app also reloads timelines when protected data becomes
+available and when it becomes active, which is the main recovery path.
 
 There is no cross-process database lock because the extension has no write
 operation and never opens the canonical SQLite store. Atomic replacement and a
@@ -100,8 +109,9 @@ specific-content links cannot open a stale owner's routine/session. Account
 activation publishes an unavailable/hidden projection before store opening;
 account exit selects guest ownership before publishing the guest workspace.
 
-All widget content is marked `privacySensitive`; custom privacy redaction uses
-a generic view. The extension's complete Data Protection additionally causes
+Personal layouts are marked `privacySensitive`; the privacy and fallback tiles
+are not, so the lock symbol and "Training is private" stay readable under
+redaction (a render test fails if they are redacted again). The extension's complete Data Protection additionally causes
 WidgetKit to hide private content while locked. Apple documents that this choice
 also prevents iPhone widget mirroring on Mac. This deliberately prioritizes
 privacy over Mac mirroring. The app's SQLite protection was not relaxed.
@@ -146,7 +156,7 @@ capture from the running extension.
 
 `TrainingProvider` builds an immediate entry and an expiry entry removing private
 facts. It requests a reload after the later of thirty minutes or the validity
-boundary. The OS controls reload timing/budget; this is not an exact-time
+boundary, or sooner after a locked read as described above. The OS controls reload timing/budget; this is not an exact-time
 promise. Relevance is limited to at most thirty minutes for a saved active
 session. The extension runs no polling timer or remote account request.
 
