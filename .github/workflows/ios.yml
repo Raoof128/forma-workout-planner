@@ -32,9 +32,9 @@ jobs:
   native:
     name: Native package and iPhone journey
     runs-on: macos-15
-    # The measured primary run takes 26 minutes. Installed iOS 26.0 runs the
-    # full suite again; keep that coverage and budget for both runtimes.
-    timeout-minutes: 65
+    # The primary run takes about 30 minutes and installed iOS 26.0 runs the
+    # full suite again; together they have taken up to an hour.
+    timeout-minutes: 90
     steps:
       - name: Check out source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

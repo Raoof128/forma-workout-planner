@@ -67,7 +67,9 @@ enum AccountDeletionLedger {
   static func requestedAt(member: String, in directory: URL, now: Date = .now) -> Date? {
     guard let stamp = read(directory)[member] else { return nil }
     let date = Date(timeIntervalSince1970: stamp)
-    let age = now.timeIntervalSince(date)
+    // Compare in the stored unit: the round trip through a Date can land a
+    // fraction of a microsecond after `now` and reject a request made just now.
+    let age = now.timeIntervalSince1970 - stamp
     return age >= 0 && age <= window ? date : nil
   }
 
