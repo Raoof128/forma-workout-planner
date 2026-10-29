@@ -1710,3 +1710,18 @@ migrate` from the root-owned `ops/` directory (`sudo sh -c 'cd … && …'`),
 - **Files:** `scripts/build-ios-media.py`, `ios/FORMA/Media/` (generated), `ios/FORMA/Resources/Fonts/`, `ios/media-sources.json`, `ios/FORMA/Features/ExerciseMedia.swift`, `PlanView.swift` (GuideView), `FormaTheme.swift`, `TodayView.swift`, `WorkoutView.swift`, `ios/FORMA/Info.plist`, `ios/project.yml`, `.github/workflows/ios.yml`, `ios/FORMAAppTests/ExerciseMediaTests.swift`, `ios/README.md`, AGENT and CHANGELOG.
 - **Verification:** `ExerciseMediaTests` (3) pass on the owner's iPhone: the index covers all web media, every file is bundled, a cell is cut at its catalogued size, and the font registers. An on-device UI probe showed the bench press and trap bar deadlift illustrations, the deadlift clip playing with its U.S. Army credit, and Barlow titles. The probe was removed afterwards. build-for-testing succeeds; swift-format strict lint and the media check are clean. App size grows by about 20 MB.
 - **Follow-ups:** the 32 animated SVG demonstrations need a native rendering (render the "-still" frames, or record the animations to video). The website's hero and routine photos are not used yet. Add the font and demo sources to You › Exercise sources & licences.
+
+### Raouf: 2026-10-30 — Website animations, photos and media credits in the native app
+
+- **Scope:** native iPhone technique guide, Today, Plan, routine detail and You.
+- **Summary:**
+  - The website's 32 animated SVG demonstrations now play in the guide under "See the movement". iOS cannot play SMIL, so `scripts/render-ios-animations.mjs` records each one in headless Chromium, setting every frame to an exact time. That gives a silent H.264 loop at 30 fps (2.9 MB for all 32) and a still start pose.
+  - The guide loops the video and shows the still when motion is reduced, with a Pause/Play control like the web's.
+  - The website's photos are bundled as HEIC. The hero photo fills Today's next-session card; the old editorial art remains the fallback. The routine strip is cut into its three panels, positioned like the web's `.photo-N`, and shown on Plan rows and each routine's cover.
+  - New You › Pictures, videos & font lists the FORMA originals, each demo source and licence, and the Barlow Condensed licence text.
+- **Files:** `scripts/render-ios-animations.mjs`, `scripts/build-ios-media.py`, `ios/FORMA/Media/animations/`, `ios/FORMA/Media/photos/`, `ios/media-sources.json`, `ExerciseMedia.swift`, `PlanView.swift`, `TodayView.swift`, `YouView.swift`, `TrainingTabBar.swift` (`mediaCredits` route), `ExerciseMediaTests.swift`, `ios/README.md`, `ios/design/artwork-provenance.md`, AGENT and CHANGELOG.
+- **Verification:**
+  - `ExerciseMediaTests` (4) pass on the owner's iPhone, including every animation's video and still, and the photos with web-style index wrapping.
+  - An on-device UI probe (removed afterwards) captured Today's hero photo, the routine photos on Plan and on the routine cover, two different frames of the bench press loop, and the credits screen.
+  - build-for-testing succeeds; swift-format strict lint and the media check are clean.
+- **Follow-ups:** none known.

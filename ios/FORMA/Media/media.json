@@ -2,7 +2,10 @@
   "schemaVersion": 1,
   "generatedFrom": [
     "src/catalog/media.json",
-    "src/catalog/demos.json"
+    "src/catalog/demos.json",
+    "src/catalog/animations.json",
+    "public/images/training-hero.webp",
+    "public/images/routine-photos.webp"
   ],
   "sheets": {
     "authored-a-001": {
@@ -15358,5 +15361,252 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
       "notice": "Trimmed, resized and muted by FORMA"
     }
+  },
+  "animations": {
+    "bench": {
+      "seconds": 4.3,
+      "description": "Lying on a flat bench, feet planted, the bar lowers under control from over the shoulders to the lower chest, touches, then presses up and slightly back to lockout.",
+      "width": 960,
+      "height": 720,
+      "sha256": "6a28ae5e3d78475fe1beba2b75bd81b3c1881ccb071d7a024ebd018bf9ebf1ac"
+    },
+    "calf": {
+      "seconds": 4.5,
+      "description": "Standing tall on the edge of a step with a dumbbell at one side and a light hand on a rail for balance, the heels lower into a full stretch below the step, then rise as high as possible and pause.",
+      "width": 960,
+      "height": 720,
+      "sha256": "4b2138bcf058be5afc14dd81939d241b9e61a5a60bf1e883578679e08d41768b"
+    },
+    "db-ab-roller": {
+      "seconds": 5.7,
+      "description": "Kneeling with the hands on an ab wheel under the shoulders and the hips tucked, the wheel rolls slowly forward until the body is long, stopping before the lower back sags, then the abs pull it back.",
+      "width": 960,
+      "height": 720,
+      "sha256": "1fcdc18c190895c9556c366b6fd39b803f33989c86cc96401f5532b443e9c225"
+    },
+    "db-air-bike": {
+      "seconds": 5.0,
+      "description": "Lying on the back with the lower back pressed down, shoulders lifted and hands lightly beside the head, one elbow twists toward the opposite knee as that knee pulls in and the other leg extends, then the sides switch in a slow pedalling motion.",
+      "width": 960,
+      "height": 720,
+      "sha256": "b9b761495f26bbc038572554cddc02d975bd4ddd8aac9205637e65386d806631"
+    },
+    "db-barbell-hip-thrust": {
+      "seconds": 4.45,
+      "description": "With the shoulder blades on the edge of a bench, the feet flat and a barbell over the hips, the heels drive the hips up until the body is flat from shoulders to knees with the shins vertical and chin tucked, the glutes squeeze for a second, then the hips lower under control.",
+      "width": 960,
+      "height": 720,
+      "sha256": "f414a6927e6c73163a48db9abafd69896e19b6a16f53eabd33a00fc92e11ded0"
+    },
+    "db-barbell-step-ups": {
+      "seconds": 4.7,
+      "description": "A barbell rests on the upper back. With one foot flat on a box, drive through that heel to stand tall on the box, bring the other foot up, then step down trailing leg first.",
+      "width": 960,
+      "height": 720,
+      "sha256": "b8038a24fefb429a6c92ff78faa729c0bb892f6d3b7df36eec904441b9d857f0"
+    },
+    "db-cable-rope-overhead-triceps-extension": {
+      "seconds": 4.35,
+      "description": "Facing away from a low pulley with a rope held overhead, the upper arms stay still beside the head while the rope lowers behind the head to a full triceps stretch, then the elbows extend to straighten the arms overhead.",
+      "width": 960,
+      "height": 720,
+      "sha256": "eedf5ed61b239fcb9527015a39388b142a12f7753f73d422216d3a1611f31216"
+    },
+    "db-cross-body-hammer-curl": {
+      "seconds": 7.35,
+      "description": "Standing with dumbbells at the sides in a neutral grip, one arm at a time curls the dumbbell up and across the body toward the opposite chest with the elbow at the side, then lowers under control.",
+      "width": 960,
+      "height": 720,
+      "sha256": "c5437a8b5270e5cbf0852b19f9c55b263d233f23724ef031460dbd79445512a9"
+    },
+    "db-dumbbell-side-bend": {
+      "seconds": 4.7,
+      "description": "Standing tall with a dumbbell in one hand and the other hand on the hip, the torso bends straight sideways toward the dumbbell, which slides down the outside of the leg, then the opposite obliques pull the body back upright.",
+      "width": 960,
+      "height": 720,
+      "sha256": "2e3a22a8b54c1b5a062617caed63a57ef30ec3c2fee620e13eb829cca644179b"
+    },
+    "db-face-pull": {
+      "seconds": 4.45,
+      "description": "Shown from the front and side: facing a high pulley with a rope, a light weight pulls toward the face as the hands separate and the elbows stay high, finishing with the knuckles turned up beside the ears for a one-second squeeze.",
+      "width": 960,
+      "height": 720,
+      "sha256": "53a365a1ccd0e889b2faa39c6f652714b1fd55005ea19ef974eb0518ff2c8e76"
+    },
+    "db-incline-dumbbell-curl": {
+      "seconds": 4.85,
+      "description": "Sitting back on an incline bench with the arms hanging straight down and palms forward, the dumbbells curl up toward the shoulders while the upper arms stay still, hold for a second, then lower slowly to a full stretch.",
+      "width": 960,
+      "height": 720,
+      "sha256": "203f1a09e60c8d93389c7eef168d46377e54e3ddbafcb3bdc13050718796f1c6"
+    },
+    "db-incline-dumbbell-press": {
+      "seconds": 4.25,
+      "description": "Lying back on an incline bench with a dumbbell in each hand at the upper chest, the dumbbells press up until the arms are long over the shoulders, then lower under control back to the chest.",
+      "width": 960,
+      "height": 720,
+      "sha256": "9a3e3df7126823c453aafe66cb61a27814a45b80ebfb3bf43ae26d05f26ff805"
+    },
+    "db-leg-extensions": {
+      "seconds": 4.35,
+      "description": "Seated with the pad on the lower shins and knees in line with the machine pivot, the legs extend until straight, pause, then lower slowly back to about 90 degrees.",
+      "width": 960,
+      "height": 720,
+      "sha256": "d5bd1ea23616de2e977fc327b646904844bed6e195167d9f9f953e1a93f481cc"
+    },
+    "db-leverage-decline-chest-press": {
+      "seconds": 4.35,
+      "description": "Seated on a plate-loaded lever machine, the handles press forward and slightly down from the chest until the arms are long with soft elbows, then return slowly.",
+      "width": 960,
+      "height": 720,
+      "sha256": "378e579724716c786225b43277b00e3885057cb6304675ec762f2196a7551872"
+    },
+    "db-leverage-shoulder-press": {
+      "seconds": 4.35,
+      "description": "Seated with the back supported, the lever handles press from shoulder height to overhead with soft elbows, then lower back to shoulder height.",
+      "width": 960,
+      "height": 720,
+      "sha256": "e95559904729877cf16894566ef51e1ea17378c002cd7df56577888a952d40cf"
+    },
+    "db-lying-leg-curls": {
+      "seconds": 4.25,
+      "description": "Lying face down with the lever pad just above the heels, the heels curl up toward the glutes as far as possible while the hips stay on the pad, then lower back to straight legs.",
+      "width": 960,
+      "height": 720,
+      "sha256": "c6d86fca2c58d6f132b5c868a37c2ea870bb7cff071298e5ded02e9cb70ec984"
+    },
+    "db-machine-bench-press": {
+      "seconds": 4.35,
+      "description": "Seated upright on a selectorized chest press, the handles press straight out from chest height while the weight stack rises, then return under control.",
+      "width": 960,
+      "height": 720,
+      "sha256": "a5c4ece128ce18a50e16acf3c077c8afc85fb06ea5af1f269789a190568cae3f"
+    },
+    "db-plank": {
+      "seconds": 6.4,
+      "description": "Forearms on the floor with the elbows under the shoulders and the body in one straight line from head to heels, the glutes and abs stay tight and the breathing steady for 60 seconds. The set ends if the hips sag.",
+      "width": 960,
+      "height": 720,
+      "sha256": "cb3ddae45b64bfbefc384f19ff500dedfb21c9331a54a782ce2926fe16945df5"
+    },
+    "db-seated-barbell-twist": {
+      "seconds": 5.2,
+      "description": "Seated at the end of a bench with feet planted, a light bar or stick rests across the upper back. The torso turns slowly side to side through a comfortable range while the hips and head stay still.",
+      "width": 960,
+      "height": 720,
+      "sha256": "d139d470648a10bb19ca1d94c4aa1fede75f45250c0f7cc1c2c15202337bf397"
+    },
+    "db-seated-calf-raise": {
+      "seconds": 4.5,
+      "description": "Seated with the knee pad on the lower thighs and the balls of the feet on the edge of the step, the heels lower into a deep stretch, pause for one second, then rise as high as possible.",
+      "width": 960,
+      "height": 720,
+      "sha256": "c6e9b0f2654c4447128146f570e943e0c286d23090cdf303d18fc24e11547843"
+    },
+    "db-seated-leg-curl": {
+      "seconds": 4.85,
+      "description": "Seated with the lap pad above the knees and the lever behind the lower calves, the heels curl down and back as far as possible, hold for a second, then return to straight legs.",
+      "width": 960,
+      "height": 720,
+      "sha256": "ea2c9a2fd00aac9628e3c789887c0022f84f17fdacf60d5350e139b012c2d62c"
+    },
+    "db-split-squat-with-dumbbells": {
+      "seconds": 4.35,
+      "description": "Holding a dumbbell in each hand with the rear foot raised on a bench, the body lowers straight down by bending the front knee and hip, then drives up through the front heel.",
+      "width": 960,
+      "height": 720,
+      "sha256": "13da2b2448e124f26bf06efaab69509c95153ab90135f09bb41f75f5c3306955"
+    },
+    "db-wide-grip-lat-pulldown": {
+      "seconds": 4.4,
+      "description": "Shown from the front and side: seated with the thighs under the pad and a wide overhand grip, the bar pulls down to the upper chest as the elbows drive down to the sides and the chest lifts, then rises slowly until the arms are long.",
+      "width": 960,
+      "height": 720,
+      "sha256": "5b976dcdff0ea73cd42df4bea1b09c6f1531385faef4e08f0caabb50261e9d4c"
+    },
+    "lateral": {
+      "seconds": 4.5,
+      "description": "Shown from the front and the side at once: standing with a slight forward lean and soft elbows, the dumbbells rise out to the sides, a little in front of the body, to shoulder height, leading with the elbows and without shrugging, then lower slowly.",
+      "width": 960,
+      "height": 720,
+      "sha256": "b30217a05e26b8bb93dad3493de9ce060614cd222e84ab7854f7fa170598d6b2"
+    },
+    "legpress": {
+      "seconds": 4.1,
+      "description": "On a 45-degree leg press with the back supported and feet about hip width on the platform, the platform lowers only as far as the hips stay down on the seat, then presses back up evenly through the whole foot without locking the knees.",
+      "width": 960,
+      "height": 720,
+      "sha256": "cadce7c06d449ef615421166b0856bc370781a19818f7b529638d604514d064e"
+    },
+    "lunge": {
+      "seconds": 5.35,
+      "description": "Standing tall with a dumbbell in each hand, one foot steps back and both knees lower under control with the front knee tracking over the toes, then the front foot drives the body back to standing. The legs alternate.",
+      "width": 960,
+      "height": 720,
+      "sha256": "099d744e8becb7840a223fd8e5350e724d268f779723f7169fab26f50212b9b2"
+    },
+    "rdl": {
+      "seconds": 5.3,
+      "description": "Standing with straight arms and the bar against the thighs, knees slightly bent, the hips push back and the bar slides down the front of the legs with a flat back until a comfortable hamstring stretch around the knees, then the hips drive forward to stand tall. The back never rounds.",
+      "width": 960,
+      "height": 720,
+      "sha256": "cde9d95e5ceeaf0cb4d75b916121e6377c25712abc909370fe275231a5443f75"
+    },
+    "row": {
+      "seconds": 4.35,
+      "description": "One knee and one hand on a bench, back flat, the free arm rows the dumbbell from a long hang up toward the hip, elbow driving past the back, then lowers to a full stretch.",
+      "width": 960,
+      "height": 720,
+      "sha256": "cf540d1cd42cbae5353e79e0650623139160be72d41660b85c61f25890907448"
+    },
+    "wger-0ecfec6f-5d0f-4e8a-8d37-f6203a8923b8": {
+      "seconds": 4.25,
+      "description": "Seated with the feet on the platform and knees soft, the torso stays upright while the handle rows back to just above the belly button, the shoulder blades squeeze for a moment, then the arms return long without rounding forward.",
+      "width": 960,
+      "height": 720,
+      "sha256": "7f2ae61d472f6eb24127a5c379f8bcb1bd7b93ecb614738f9b87d56610bebb9e"
+    },
+    "wger-5d5122e0-65f3-4afc-ac36-21955e2c7dde": {
+      "seconds": 4.35,
+      "description": "Seated with thighs under the pad, the lever handles pull from arms overhead down to the upper chest as the elbows drive down and back, then rise slowly.",
+      "width": 960,
+      "height": 720,
+      "sha256": "ed6d654913223480dcdd48cce43d6cf214b625d8d5b36dfd181de86fe6206ecb"
+    },
+    "wger-661287d4-d1dc-485c-896b-73f90b000536": {
+      "seconds": 4.1,
+      "description": "On a 45-degree leg press with the feet a little wider than the shoulders and turned out slightly, the platform lowers until the knees reach a right angle, then presses straight back up without a pause.",
+      "width": 960,
+      "height": 720,
+      "sha256": "cbaa382f4fb166e8fde6091a1ef1f6b258c2acf73d1638aff7ac6144eb0ee08c"
+    },
+    "wger-b7c6a444-90ea-4f5b-9fea-748311606eaa": {
+      "seconds": 4.25,
+      "description": "Shown from the front and side: holding a dumbbell upright against the chest with the feet about shoulder width, the hips sit down and back until the thighs are parallel, knees tracking over the toes and chest up, then drive up through the heels.",
+      "width": 960,
+      "height": 720,
+      "sha256": "0d423f4fc9101834a0515b273dab1e1e6340e80922e95e03ee2d3db37d16cef4"
+    }
+  },
+  "photos": {
+    "hero": {
+      "file": "training-hero",
+      "sha256": "b65965485c5e15ae8da35cf190a3124ca964e4b2bafa5e8cbcc2bddd62126ce8"
+    },
+    "routines": [
+      {
+        "file": "routine-0",
+        "focusY": 0.3
+      },
+      {
+        "file": "routine-1",
+        "focusY": 0.57
+      },
+      {
+        "file": "routine-2",
+        "focusY": 0.35
+      }
+    ],
+    "routinesSha256": "ffef857402907eee61cbc9e65f894b5348609b44a3b92320127a6efa4e4319ee"
   }
 }

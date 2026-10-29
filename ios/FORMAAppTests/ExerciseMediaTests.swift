@@ -31,6 +31,23 @@ final class ExerciseMediaTests: XCTestCase {
     XCTAssertEqual(Double(cell.height), illustration.height, accuracy: 2)
   }
 
+  func testEveryAnimationHasItsVideoAndStillAndThePhotosAreBundled() throws {
+    let library = ExerciseMediaLibrary.shared
+    XCTAssertEqual(library.animations.count, 32)
+    for id in library.animations.keys {
+      XCTAssertNotNil(ExerciseMediaLibrary.url(id, "mp4", in: "animations"), id)
+      XCTAssertNotNil(ExerciseMediaLibrary.url(id, "heic", in: "animations"), id)
+    }
+    let photos = try XCTUnwrap(library.photos)
+    XCTAssertEqual(photos.routines.count, 3)
+    for photo in [photos.hero] + photos.routines {
+      XCTAssertNotNil(ExerciseMediaLibrary.url(photo.file, "heic", in: "photos"), photo.file)
+    }
+    // Routine image indexes wrap like the web's three photo classes.
+    XCTAssertEqual(library.routinePhoto(4)?.file, "routine-1")
+    XCTAssertEqual(library.routinePhoto(-1)?.file, "routine-2")
+  }
+
   func testTheDisplayFontIsRegistered() {
     XCTAssertNotNil(UIFont(name: FormaDisplayFont.name, size: 17))
   }

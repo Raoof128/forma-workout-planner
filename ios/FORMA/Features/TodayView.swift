@@ -292,18 +292,27 @@ struct TodayView: View {
       if !textSize.isAccessibilitySize {
         // A fixed-height clear frame with the photo as an overlay crops it
         // without a GeometryReader, and the photo never sizes the layout.
-        Color.clear.frame(height: 112)
-          .overlay(alignment: .bottom) {
-            Image("TrainingEditorial").resizable().scaledToFill()
+        // The website's hero photo: the athlete sits in its right half, so the
+        // strip keeps that side in view.
+        Group {
+          if let hero = ExerciseMediaLibrary.shared.photos?.hero {
+            MediaPhoto(photo: hero, focusX: 0.85)
+          } else {
+            // The earlier editorial artwork, if the media folder is missing.
+            Color.clear.overlay(alignment: .bottom) {
+              Image("TrainingEditorial").resizable().scaledToFill()
+            }
+            .clipped()
           }
-          .clipped()
-          .overlay(alignment: .bottom) {
-            LinearGradient(
-              colors: [.clear, FormaTheme.heroInk], startPoint: .top, endPoint: .bottom
-            )
-            .frame(height: 40)
-          }
-          .accessibilityHidden(true)
+        }
+        .frame(height: 132)
+        .overlay(alignment: .bottom) {
+          LinearGradient(
+            colors: [.clear, FormaTheme.heroInk], startPoint: .top, endPoint: .bottom
+          )
+          .frame(height: 40)
+        }
+        .accessibilityHidden(true)
       }
       VStack(alignment: .leading, spacing: 8) {
         if textSize.isAccessibilitySize {

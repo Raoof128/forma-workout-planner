@@ -120,8 +120,25 @@ struct PressableCardStyle: ButtonStyle {
 }
 
 private struct RoutinePlanRow: View {
+  @Environment(\.dynamicTypeSize) private var textSize
   let routine: Routine
   var body: some View {
+    HStack(alignment: .top, spacing: 14) {
+      // The website's routine photo; dropped at accessibility sizes so the
+      // text keeps the full row.
+      if !textSize.isAccessibilitySize,
+        let photo = ExerciseMediaLibrary.shared.routinePhoto(routine.image)
+      {
+        MediaPhoto(photo: photo)
+          .frame(width: 64, height: 84)
+          .clipShape(RoundedRectangle(cornerRadius: FormaRadius.field))
+      }
+      details
+    }
+    .padding(.vertical, 10)
+  }
+
+  private var details: some View {
     VStack(alignment: .leading, spacing: 8) {
       Text(routine.name).font(.title3.bold()).foregroundStyle(FormaTheme.primary)
       if !routine.description.isEmpty {
@@ -134,7 +151,6 @@ private struct RoutinePlanRow: View {
       )
       .font(.caption).foregroundStyle(FormaTheme.accent)
     }
-    .padding(.vertical, 10)
   }
 }
 
@@ -163,6 +179,11 @@ struct RoutineDetailView: View {
         List {
           Section {
             VStack(alignment: .leading, spacing: 14) {
+              if let photo = ExerciseMediaLibrary.shared.routinePhoto(current.image) {
+                // The web's routine cover.
+                MediaPhoto(photo: photo).frame(height: 180)
+                  .clipShape(RoundedRectangle(cornerRadius: FormaRadius.card))
+              }
               Text("THE SESSION").font(.caption.weight(.bold)).tracking(2).foregroundStyle(
                 FormaTheme.accent)
               EditorialTitle(text: current.name)

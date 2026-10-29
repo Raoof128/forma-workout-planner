@@ -13,6 +13,12 @@ Generated paths (do not hand-edit):
     ios/FORMA/Media/sheets/*.heic       the web's original illustration sheets,
                                         full resolution, as HEIC
     ios/FORMA/Media/demos/*.mp4, *.jpg  the web's demo clips and posters, copied
+    ios/FORMA/Media/animations/*.mp4    the web's animated SVG demonstrations,
+                                        recorded frame by frame (see
+                                        scripts/render-ios-animations.mjs), and
+             *.heic                     their still start poses
+    ios/FORMA/Media/photos/*.heic       the web's hero photo and its three
+                                        routine photos, split from one strip
     ios/FORMA/Resources/Fonts/*.ttf     the web's display font, from its WOFF2
 
 The web catalogues (src/catalog/media.json, demos.json) stay authoritative.
@@ -36,9 +42,15 @@ ROOT = Path(__file__).resolve().parent.parent
 PUBLIC = ROOT / "public"
 MEDIA = ROOT / "ios" / "FORMA" / "Media"
 FONTS = ROOT / "ios" / "FORMA" / "Resources" / "Fonts"
+# Which source each generated file was made from. Kept outside the bundled
+# folder: it is build bookkeeping, not app data.
+STAMPS = ROOT / "ios" / "media-sources.json"
 # HEIC quality. 0.5 keeps a 1536x1024 sheet near 90 KB, against 1.9 MB as PNG,
 # with no visible loss at the sizes the guide shows a cell.
 HEIC_QUALITY = "50"
+# The web shows routine photo N as the Nth third of one strip, positioned
+# vertically at these percentages (src/styles.css .photo-0 to .photo-2).
+ROUTINE_PHOTO_FOCUS = [0.30, 0.57, 0.35]
 FONT_SOURCES = {
     # web file -> (bundled file, licence copied beside it)
     "barlow-condensed-700.woff2": ("BarlowCondensed-Bold.ttf", "barlowcondensed-OFL.txt"),
@@ -112,14 +124,41 @@ def manifest() -> tuple[dict, dict[str, Path], dict[str, Path]]:
         for exercise_id, entry in sorted(demos["exercises"].items())
     }
 
+    animations_catalog = json.loads((ROOT / "src/catalog/animations.json").read_text())
+    animations = {
+        exercise_id: {
+            "seconds": entry["seconds"],
+            "description": entry["description"],
+            "width": 960,
+            "height": 720,
+            "sha256": hashlib.sha256(
+                public_file(entry["src"]).read_bytes() + public_file(entry["still"]).read_bytes()
+            ).hexdigest(),
+        }
+        for exercise_id, entry in sorted(animations_catalog.items())
+    }
+    photos = {
+        "hero": {"file": "training-hero", "sha256": sha256(PUBLIC / "images/training-hero.webp")},
+        "routines": [
+            {"file": f"routine-{index}", "focusY": focus}
+            for index, focus in enumerate(ROUTINE_PHOTO_FOCUS)
+        ],
+        "routinesSha256": sha256(PUBLIC / "images/routine-photos.webp"),
+    }
+
     document = {
         "schemaVersion": 1,
-        "generatedFrom": ["src/catalog/media.json", "src/catalog/demos.json"],
+        "generatedFrom": [
+            "src/catalog/media.json", "src/catalog/demos.json", "src/catalog/animations.json",
+            "public/images/training-hero.webp", "public/images/routine-photos.webp",
+        ],
         "sheets": dict(sorted(sheets.items())),
         "images": images,
         "clips": clips,
         "demos": demo_exercises,
         "sources": demos["sources"],
+        "animations": animations,
+        "photos": photos,
     }
     return document, sheet_files, clip_files
 
@@ -164,6 +203,23 @@ def build(check: bool) -> int:
             for name in (bundled, licence):
                 if not (FONTS / name).exists():
                     problems.append(f"missing {(FONTS / name).relative_to(ROOT)}")
+        stamps = json.loads(STAMPS.read_text()) if STAMPS.exists() else {}
+        for exercise_id, meta in document["animations"].items():
+            for ext in ("mp4", "heic"):
+                if not (MEDIA / "animations" / f"{exercise_id}.{ext}").exists():
+                    problems.append(f"missing Media/animations/{exercise_id}.{ext}")
+            if stamps.get(f"animation:{exercise_id}") != meta["sha256"]:
+                problems.append(f"Media/animations/{exercise_id} was recorded from an older SVG")
+        photo_names = [document["photos"]["hero"]["file"]] + [
+            photo["file"] for photo in document["photos"]["routines"]
+        ]
+        for name in photo_names:
+            if not (MEDIA / "photos" / f"{name}.heic").exists():
+                problems.append(f"missing Media/photos/{name}.heic")
+        if stamps.get("photo:training-hero") != document["photos"]["hero"]["sha256"] or stamps.get(
+            "photo:routines"
+        ) != document["photos"]["routinesSha256"]:
+            problems.append("Media/photos were made from older web photos")
         for problem in problems:
             print(problem, file=sys.stderr)
         return 1 if problems else 0
@@ -174,8 +230,7 @@ def build(check: bool) -> int:
 
     # Re-encode a sheet only when its source changed, so unchanged sheets keep
     # their bytes and the diff shows real media changes only.
-    # Kept outside the bundled folder: it is build bookkeeping, not app data.
-    stamps_path = ROOT / "ios" / "media-sources.json"
+    stamps_path = STAMPS
     stamps = json.loads(stamps_path.read_text()) if stamps_path.exists() else {}
     with tempfile.TemporaryDirectory() as scratch:
         for name, source in sorted(sheet_files.items()):
@@ -197,6 +252,65 @@ def build(check: bool) -> int:
         if stale.stem not in sheet_files:
             stale.unlink()
             stamps.pop(stale.stem, None)
+
+    # Animations: re-record only those whose SVG changed (about 4 s each).
+    (MEDIA / "animations").mkdir(parents=True, exist_ok=True)
+    pending = [
+        exercise_id
+        for exercise_id, meta in document["animations"].items()
+        if stamps.get(f"animation:{exercise_id}") != meta["sha256"]
+        or not (MEDIA / "animations" / f"{exercise_id}.mp4").exists()
+    ]
+    if pending:
+        with tempfile.TemporaryDirectory() as scratch:
+            subprocess.run(
+                ["node", str(ROOT / "scripts/render-ios-animations.mjs"), scratch, *pending],
+                check=True,
+            )
+            for exercise_id in pending:
+                shutil.move(Path(scratch) / f"{exercise_id}.mp4",
+                            MEDIA / "animations" / f"{exercise_id}.mp4")
+                subprocess.run(
+                    ["sips", "-s", "format", "heic", "-s", "formatOptions", HEIC_QUALITY,
+                     str(Path(scratch) / f"{exercise_id}.png"),
+                     "--out", str(MEDIA / "animations" / f"{exercise_id}.heic")],
+                    check=True, capture_output=True,
+                )
+                stamps[f"animation:{exercise_id}"] = document["animations"][exercise_id]["sha256"]
+    for stale in (MEDIA / "animations").iterdir():
+        if stale.stem not in document["animations"]:
+            stale.unlink()
+            stamps.pop(f"animation:{stale.stem}", None)
+
+    # Photos: the hero as it is; the routine strip cut into its three panels.
+    photos_dir = MEDIA / "photos"
+    photos_dir.mkdir(parents=True, exist_ok=True)
+    hero = document["photos"]["hero"]
+    if stamps.get("photo:training-hero") != hero["sha256"]:
+        subprocess.run(
+            ["sips", "-s", "format", "heic", "-s", "formatOptions", HEIC_QUALITY,
+             str(PUBLIC / "images/training-hero.webp"), "--out", str(photos_dir / "training-hero.heic")],
+            check=True, capture_output=True,
+        )
+        stamps["photo:training-hero"] = hero["sha256"]
+    if stamps.get("photo:routines") != document["photos"]["routinesSha256"]:
+        width, height = pixel_size(PUBLIC / "images/routine-photos.webp")
+        panel = width // 3
+        with tempfile.TemporaryDirectory() as scratch:
+            strip = Path(scratch) / "strip.png"
+            subprocess.run(["sips", "-s", "format", "png", str(PUBLIC / "images/routine-photos.webp"),
+                            "--out", str(strip)], check=True, capture_output=True)
+            from PIL import Image  # sips crops around the centre, not from a corner
+
+            with Image.open(strip) as whole:
+                for index, photo in enumerate(document["photos"]["routines"]):
+                    part = Path(scratch) / f"{index}.png"
+                    whole.crop((index * panel, 0, (index + 1) * panel, height)).save(part)
+                    subprocess.run(["sips", "-s", "format", "heic", "-s", "formatOptions", HEIC_QUALITY,
+                                    str(part), "--out", str(photos_dir / f"{photo['file']}.heic")],
+                                   check=True, capture_output=True)
+        stamps["photo:routines"] = document["photos"]["routinesSha256"]
+
     stamps_path.write_text(json.dumps(dict(sorted(stamps.items())), indent=2) + "\n")
 
     for name, source in clip_files.items():
