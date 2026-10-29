@@ -60,6 +60,9 @@ final class AccountExperienceTests: XCTestCase {
     app.scrollUntilExists(submit)
     XCTAssertTrue(submit.exists)
     XCTAssertFalse(submit.isEnabled, "nothing typed yet")
+    // The dimmed button says what it is waiting for.
+    XCTAssertTrue(
+      app.descendants(matching: .any)["account-submit-reason"].waitForExistence(timeout: 5))
 
     app.scrollUntilExists(email, direction: .down)
     email.tap()

@@ -89,7 +89,7 @@ struct TrainingDataView: View {
             )
             .font(.subheadline).foregroundStyle(FormaTheme.secondary)
             Text(
-              "\(summary.routines) routines · \(summary.workouts) workouts"
+              "\(summary.routines == 1 ? "1 routine" : "\(summary.routines) routines") · \(AccountProfileView.workouts(summary.workouts))"
                 + (summary.workoutInProgress ? " · 1 in progress" : "")
             )
             .font(.subheadline.weight(.semibold))
@@ -217,7 +217,8 @@ struct PhoneTrainingReview: View {
         .accessibilityIdentifier("phone-training-acknowledge")
         if let error { FormNotice(text: error, tone: .error) }
         SubmitButton(
-          title: "Import to account", working: working, identifier: "phone-training-import"
+          title: "Replace account with this iPhone’s training", working: working,
+          identifier: "phone-training-import"
         ) {
           confirming = true
         }
@@ -276,11 +277,11 @@ struct PhoneTrainingReview: View {
     let status = await model.bringPhoneTraining(phone, reviewedRevision: savedCopyRevision)
     switch status {
     case .idle:
-      model.haptic(.added)
+      model.accountSucceeded()
       finished()
     case .waiting:
       // Replaced here; the upload waits for a connection.
-      model.haptic(.added)
+      model.accountSucceeded()
       finished()
     case .failed(let message):
       error = message
@@ -291,7 +292,8 @@ struct PhoneTrainingReview: View {
       error = "Your account changed on another device. Review it in Sync, then try again."
       model.haptic(.warning)
     case .saving, .signedOut:
-      error = "Your training could not be brought into the account. Try again."
+      error =
+        "FORMA couldn’t finish bringing your training into the account. Nothing was lost; try again."
       model.haptic(.failed)
     }
   }

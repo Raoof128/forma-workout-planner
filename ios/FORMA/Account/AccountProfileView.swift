@@ -9,6 +9,13 @@ struct AccountProfileView: View {
   @State private var working = false
   @State private var message: String?
   @State private var error: String?
+  /// Resending the verification email reports under its own button.
+  @State private var resendMessage: String?
+  @State private var resendError: String?
+  @State private var resending = false
+  @State private var noticeRevision = 0
+  /// The address a change was last requested for, until the profile changes.
+  @State private var pendingEmail: String?
 
   var body: some View {
     let profile = model.account.profile
@@ -16,7 +23,7 @@ struct AccountProfileView: View {
       Section {
         LabeledContent("Display name", value: model.workspace?.profile.name ?? profile?.name ?? "")
         LabeledContent(
-          "Weekly goal", value: "\(model.workspace?.profile.goal ?? 4) workouts")
+          "Weekly goal", value: Self.workouts(model.workspace?.profile.goal ?? 4))
         Button("Edit name & weekly goal") { editing = true }
           .accessibilityIdentifier("account-edit-profile")
         if let since = profile?.memberSince {
@@ -30,15 +37,40 @@ struct AccountProfileView: View {
 
       Section {
         LabeledContent("Email", value: profile?.email ?? "")
+        if let pendingEmail, pendingEmail != profile?.email {
+          Label(
+            "Change to \(pendingEmail) requested. Approve it from this inbox, then verify the new address.",
+            systemImage: "clock"
+          )
+          .font(.footnote).foregroundStyle(FormaTheme.secondary)
+          .accessibilityIdentifier("account-email-pending")
+        }
         if let profile {
           if profile.emailVerified {
             Label("Email verified", systemImage: "checkmark.seal").foregroundStyle(
               FormaTheme.accent)
           } else {
             Label("Email not verified", systemImage: "envelope.badge")
-            Button("Resend email") { Task { await resend(profile.email) } }
-              .disabled(working)
-              .accessibilityIdentifier("account-resend")
+            Button {
+              Task { await resend(profile.email) }
+            } label: {
+              HStack(spacing: 8) {
+                Text("Resend email")
+                if resending { ProgressView() }
+              }
+            }
+            .disabled(working || resending)
+            .accessibilityIdentifier("account-resend")
+            if let resendMessage {
+              FormNotice(
+                text: resendMessage, tone: .success, identifier: "account-resend-message",
+                revision: noticeRevision)
+            }
+            if let resendError {
+              FormNotice(
+                text: resendError, tone: .error, identifier: "account-resend-error",
+                revision: noticeRevision)
+            }
             Text("Verify your email to keep account recovery available.").font(.footnote)
               .foregroundStyle(FormaTheme.secondary)
           }
@@ -54,14 +86,14 @@ struct AccountProfileView: View {
           Task { await changeEmail() }
         } label: {
           HStack {
-            Text("Send verification")
+            Text("Change email address")
             if working { ProgressView() }
           }
         }
         .disabled(working || !looksLikeEmail)
         .accessibilityIdentifier("account-change-email")
-        if let message { FormNotice(text: message, tone: .success) }
-        if let error { FormNotice(text: error, tone: .error) }
+        if let message { FormNotice(text: message, tone: .success, revision: noticeRevision) }
+        if let error { FormNotice(text: error, tone: .error, revision: noticeRevision) }
       } header: {
         Text("Change email address")
       } footer: {
@@ -74,6 +106,11 @@ struct AccountProfileView: View {
     .navigationTitle("Profile").navigationBarTitleDisplayMode(.inline)
     .protectWidgetNavigation()
     .sheet(isPresented: $editing) { ProfileEditor().protectWidgetNavigation() }
+  }
+
+  /// "1 workout", "4 workouts".
+  static func workouts(_ count: Int) -> String {
+    "\(count) \(count == 1 ? "workout" : "workouts")"
   }
 
   private var looksLikeEmail: Bool {
@@ -90,27 +127,32 @@ struct AccountProfileView: View {
     do {
       try await model.account.call { try await $0.changeEmail(to: address) }
       message =
-        "Approve this request from your current inbox, then verify the new address. Your current email stays in use until both steps are complete."
+        "We sent a request to \(model.account.profile?.email ?? "your current inbox") for the change to \(address). Approve it there, then verify the new address. Your current email stays in use until both steps are complete."
+      noticeRevision += 1
+      pendingEmail = address
       newEmail = ""
-      model.haptic(.selected)
+      model.accountSucceeded()
       await model.account.refreshSession()
     } catch {
       self.error = error.accountMessage
+      noticeRevision += 1
       model.haptic(error.accountHaptic)
     }
   }
 
   private func resend(_ address: String) async {
-    working = true
-    defer { working = false }
-    message = nil
-    error = nil
+    resending = true
+    defer { resending = false }
+    resendMessage = nil
+    resendError = nil
     do {
       try await model.account.call { try await $0.resendVerification(email: address) }
-      message = "Verification email sent."
-      model.haptic(.selected)
+      resendMessage = "Verification email sent to \(address)."
+      noticeRevision += 1
+      model.accountSucceeded()
     } catch {
-      self.error = "Verification email could not be sent. \(error.accountMessage)"
+      resendError = "Verification email could not be sent. \(error.accountMessage)"
+      noticeRevision += 1
       model.haptic(error.accountHaptic)
     }
   }

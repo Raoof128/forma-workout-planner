@@ -25,6 +25,9 @@ struct AuthFlowView: View {
   @State private var useRecoveryCode = false
   @State private var error: String?
   @State private var message: String?
+  /// Raised with every notice so a repeat of the same text is announced again.
+  @State private var noticeRevision = 0
+  @State private var emailTouched = false
   @State private var sending = false
   @FocusState private var focus: Field?
 
@@ -85,18 +88,66 @@ struct AuthFlowView: View {
     return trimmed.contains("@") && trimmed.contains(".") && !trimmed.contains(" ")
   }
 
-  private var canSubmit: Bool {
-    guard !account.busy, emailLooksRight else { return false }
+  /// The first thing still missing before the button can work, in words. The
+  /// button stays dimmed until this is nil; the text under it says why.
+  private var missingRequirement: String? {
+    let hasEmail = !email.trimmingCharacters(in: .whitespaces).isEmpty
+    if screen == .signUp, name.trimmingCharacters(in: .whitespaces).isEmpty {
+      return "Enter a display name."
+    }
+    if !hasEmail {
+      return screen == .forgot
+        ? "Enter your email address to get a reset link." : "Enter your email address."
+    }
+    if !emailLooksRight { return "Enter an email address like name@example.com." }
     switch screen {
-    case .signIn: return !password.isEmpty
+    case .signIn:
+      return password.isEmpty ? "Enter your password." : nil
     case .signUp:
-      return !name.trimmingCharacters(in: .whitespaces).isEmpty && passwordIsLongEnough
-        && ageConsent && dataConsent
-    case .forgot: return true
+      if !passwordIsLongEnough {
+        return "Your password needs 15 characters or more. You have \(password.count)."
+      }
+      if !ageConsent { return "Tick the box about your age and the Terms of Use." }
+      if !dataConsent { return "Tick the box about storing your workout records." }
+      return nil
+    case .forgot:
+      return nil
     }
   }
 
+  private var canSubmit: Bool { !account.busy && missingRequirement == nil }
+
+  /// Shown under the email field once the person has left it.
+  private var emailProblem: String? {
+    guard emailTouched, !email.trimmingCharacters(in: .whitespaces).isEmpty, !emailLooksRight
+    else { return nil }
+    return "Enter an email address like name@example.com."
+  }
+
+  private func fail(_ text: String) {
+    error = text
+    message = nil
+    noticeRevision += 1
+  }
+
+  private func succeed(_ text: String) {
+    message = text
+    error = nil
+    noticeRevision += 1
+  }
+
   private var credentialsForm: some View {
+    ScrollViewReader { proxy in
+      credentialsFields
+        .onChange(of: noticeRevision) {
+          withFormaAnimation(motion, FormaMotion.reveal) {
+            proxy.scrollTo("auth-notice", anchor: .center)
+          }
+        }
+    }
+  }
+
+  private var credentialsFields: some View {
     Form {
       Section {
         VStack(alignment: .leading, spacing: 8) {
@@ -107,8 +158,6 @@ struct AuthFlowView: View {
           Text(subtitle).font(.subheadline).foregroundStyle(FormaTheme.secondary)
         }
         .padding(.vertical, 8).listRowBackground(Color.clear)
-        if let error { FormNotice(text: error, tone: .error, identifier: "account-error") }
-        if let message { FormNotice(text: message, tone: .success, identifier: "account-message") }
       }
 
       Section {
@@ -122,21 +171,35 @@ struct AuthFlowView: View {
             .accessibilityIdentifier("account-name")
         }
         TextField("Email address", text: $email)
-          .textContentType(.emailAddress).keyboardType(.emailAddress)
+          .textContentType(screen == .signIn ? .username : .emailAddress)
+          .keyboardType(.emailAddress)
           .textInputAutocapitalization(.never).autocorrectionDisabled()
           .submitLabel(screen == .forgot ? .send : .next).focused($focus, equals: .email)
           .onSubmit { if screen == .forgot { Task { await submit() } } else { focus = .password } }
           .accessibilityIdentifier("account-email")
         if screen != .forgot {
-          SecureField("Password", text: $password)
-            .textContentType(screen == .signIn ? .password : .newPassword)
-            .submitLabel(.go).focused($focus, equals: .password)
-            .onSubmit { Task { await submit() } }
-            .accessibilityIdentifier("account-password")
+          RevealablePasswordField(
+            title: "Password", text: $password,
+            contentType: screen == .signIn ? .password : .newPassword,
+            identifier: "account-password", revealIdentifier: "account-password-reveal"
+          )
+          .submitLabel(.go).focused($focus, equals: .password)
+          .onSubmit { Task { await submit() } }
         }
       } footer: {
-        if screen == .signUp {
-          Text("Use at least 15 characters. Long passphrases work well.")
+        VStack(alignment: .leading, spacing: 4) {
+          if let emailProblem {
+            Text(emailProblem).foregroundStyle(FormaTheme.error)
+              .accessibilityIdentifier("account-email-problem")
+          }
+          if screen == .signUp {
+            Text(
+              passwordIsLongEnough
+                ? "\(password.count) characters. Long passphrases work well."
+                : "\(password.count) of 15 characters. Long passphrases work well."
+            )
+            .accessibilityIdentifier("account-password-count")
+          }
         }
       }
 
@@ -169,14 +232,34 @@ struct AuthFlowView: View {
       }
 
       Section {
+        // Results sit right above the button that caused them, where the
+        // keyboard does not cover them.
+        if error != nil || message != nil {
+          VStack(alignment: .leading, spacing: 8) {
+            if let error {
+              FormNotice(
+                text: error, tone: .error, identifier: "account-error", revision: noticeRevision)
+            }
+            if let message {
+              FormNotice(
+                text: message, tone: .success, identifier: "account-message",
+                revision: noticeRevision)
+            }
+          }
+          .id("auth-notice")
+        }
         SubmitButton(
           title: screen == .signUp
             ? "Create account" : screen == .signIn ? "Sign in" : "Send reset link",
-          working: account.busy
+          working: account.busy, hint: missingRequirement
         ) {
           Task { await submit() }
         }
         .disabled(!canSubmit)
+        if let missing = missingRequirement, !account.busy {
+          Text(missing).font(.footnote).foregroundStyle(FormaTheme.secondary)
+            .accessibilityIdentifier("account-submit-reason")
+        }
       }
 
       Section {
@@ -184,14 +267,7 @@ struct AuthFlowView: View {
         case .signIn:
           Button("Forgot password?") { go(.forgot) }
             .accessibilityIdentifier("account-forgot")
-          HStack {
-            Text("Need a verification link?").foregroundStyle(FormaTheme.secondary)
-            Spacer()
-            Button("Resend verification") { Task { await resend() } }
-              .disabled(!emailLooksRight || sending || account.busy)
-              .accessibilityIdentifier("account-resend")
-          }
-          .font(.subheadline)
+          resendRow
           Button {
             go(.signUp)
           } label: {
@@ -220,6 +296,37 @@ struct AuthFlowView: View {
     .scrollDismissesKeyboard(.interactively)
     .accessibilityIdentifier("account-credentials-form")
     .onAppear { if focus == nil { focus = screen == .signUp ? .name : .email } }
+    .onChange(of: focus) { previous, _ in
+      if previous == .email { emailTouched = true }
+    }
+  }
+
+  /// "Need a verification link?" with its button, stacked when the row is narrow.
+  private var resendRow: some View {
+    let button = Button {
+      Task { await resend() }
+    } label: {
+      HStack(spacing: 8) {
+        if sending { ProgressView() }
+        Text("Resend verification")
+      }
+    }
+    .disabled(!emailLooksRight || sending || account.busy)
+    .accessibilityHint(emailLooksRight ? "" : "Enter your email address first.")
+    .accessibilityIdentifier("account-resend")
+    let label = Text("Need a verification link?").foregroundStyle(FormaTheme.secondary)
+    return ViewThatFits(in: .horizontal) {
+      HStack {
+        label
+        Spacer()
+        button
+      }
+      VStack(alignment: .leading, spacing: 4) {
+        label
+        button
+      }
+    }
+    .font(.subheadline)
   }
 
   private func go(_ next: Screen) {
@@ -240,19 +347,21 @@ struct AuthFlowView: View {
         try await account.signUp(
           name: name.trimmingCharacters(in: .whitespacesAndNewlines), email: address,
           password: password)
-        model.haptic(.added)
+        model.accountSucceeded()
       case .signIn:
         try await account.signIn(email: address, password: password)
-        if account.isSignedIn { model.haptic(.started) }
+        if account.isSignedIn { model.accountSucceeded() }
       case .forgot:
         try await account.requestPasswordReset(email: address)
-        message = "If an account uses this address, a reset link is on its way."
-        model.haptic(.selected)
+        succeed("If an account uses this address, a reset link is on its way.")
+        model.accountSucceeded()
       }
       password = ""
     } catch {
-      password = ""
-      self.error = error.accountMessage
+      // A dropped connection or a busy server says nothing about the password,
+      // so the typed passphrase stays; only a refused sign-in clears it.
+      if error.rejectsCredentials { password = "" }
+      fail(error.accountMessage)
       model.haptic(error.accountHaptic)
     }
   }
@@ -264,10 +373,10 @@ struct AuthFlowView: View {
     error = nil
     do {
       try await account.resendVerification(email: address)
-      message = "If this address needs verification, a link is on its way."
-      model.haptic(.selected)
+      succeed("If this address needs verification, a link is on its way.")
+      model.accountSucceeded()
     } catch {
-      self.error = "We couldn’t send the verification email. \(error.accountMessage)"
+      fail("We couldn’t send the verification email. \(error.accountMessage)")
       model.haptic(error.accountHaptic)
     }
   }
@@ -286,7 +395,6 @@ struct AuthFlowView: View {
             .font(.subheadline).foregroundStyle(FormaTheme.secondary)
         }
         .padding(.vertical, 8).listRowBackground(Color.clear)
-        if let error { FormNotice(text: error, tone: .error, identifier: "account-error") }
       }
       Section {
         TextField(useRecoveryCode ? "Recovery code" : "Authenticator code", text: $code)
@@ -295,6 +403,16 @@ struct AuthFlowView: View {
           .textInputAutocapitalization(.never).autocorrectionDisabled()
           .focused($focus, equals: .code)
           .submitLabel(.go).onSubmit { Task { await verify() } }
+          .onChange(of: code) { _, value in
+            // The number pad has no return key: a full code goes in by itself.
+            guard !useRecoveryCode else { return }
+            let digits = String(value.filter(\.isNumber).prefix(6))
+            if digits != value {
+              code = digits
+            } else if digits.count == 6, !account.busy {
+              Task { await verify() }
+            }
+          }
           .accessibilityIdentifier("account-code")
         Button("Use \(useRecoveryCode ? "authenticator code" : "recovery code")") {
           useRecoveryCode.toggle()
@@ -304,7 +422,14 @@ struct AuthFlowView: View {
         .accessibilityIdentifier("account-code-mode")
       }
       Section {
-        SubmitButton(title: "Verify and sign in", working: account.busy) {
+        if let error {
+          FormNotice(
+            text: error, tone: .error, identifier: "account-error", revision: noticeRevision)
+        }
+        SubmitButton(
+          title: "Verify and sign in", working: account.busy,
+          hint: code.trimmingCharacters(in: .whitespaces).isEmpty ? "Enter your code first." : nil
+        ) {
           Task { await verify() }
         }
         .disabled(account.busy || code.trimmingCharacters(in: .whitespaces).isEmpty)
@@ -329,10 +454,10 @@ struct AuthFlowView: View {
     do {
       try await account.submitTwoFactor(
         code: code.trimmingCharacters(in: .whitespaces), recovery: useRecoveryCode)
-      if account.isSignedIn { model.haptic(.started) }
+      if account.isSignedIn { model.accountSucceeded() }
     } catch {
-      code = ""
-      self.error = error.accountMessage
+      if error.rejectsCredentials { code = "" }
+      fail(error.accountMessage)
       model.haptic(error.accountHaptic)
     }
   }
@@ -355,11 +480,18 @@ struct AuthFlowView: View {
             FormaTheme.secondary)
         }
         .padding(.vertical, 8).listRowBackground(Color.clear)
-        if let error { FormNotice(text: error, tone: .error, identifier: "account-error") }
-        if let message { FormNotice(text: message, tone: .success, identifier: "account-message") }
       }
       Section {
-        Button("Resend verification email") {
+        if let error {
+          FormNotice(
+            text: error, tone: .error, identifier: "account-error", revision: noticeRevision)
+        }
+        if let message {
+          FormNotice(
+            text: message, tone: .success, identifier: "account-message",
+            revision: noticeRevision)
+        }
+        Button {
           Task {
             sending = true
             defer { sending = false }
@@ -367,12 +499,17 @@ struct AuthFlowView: View {
             message = nil
             do {
               try await account.resendVerification(email: address)
-              message = "If this address needs verification, a link is on its way."
-              model.haptic(.selected)
+              succeed("If this address needs verification, a link is on its way.")
+              model.accountSucceeded()
             } catch {
-              self.error = "We couldn’t send the verification email. \(error.accountMessage)"
+              fail("We couldn’t send the verification email. \(error.accountMessage)")
               model.haptic(error.accountHaptic)
             }
+          }
+        } label: {
+          HStack(spacing: 8) {
+            if sending { ProgressView() }
+            Text("Resend verification email")
           }
         }
         .disabled(sending)

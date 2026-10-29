@@ -11,6 +11,14 @@ struct FormNotice: View {
   let text: String
   var tone: Tone = .info
   var identifier: String?
+  /// Bump it when the same text is raised again (a second failed tap), so the
+  /// repeat is announced as well.
+  var revision = 0
+
+  private struct Announcement: Equatable {
+    let text: String
+    let revision: Int
+  }
 
   var body: some View {
     Label {
@@ -28,6 +36,11 @@ struct FormNotice: View {
     .onAppear {
       if tone != .info { AccessibilityNotification.Announcement(text).post() }
     }
+    // A changed or repeated message keeps the same view, so `onAppear` alone
+    // would stay silent.
+    .onChange(of: Announcement(text: text, revision: revision)) {
+      AccessibilityNotification.Announcement(text).post()
+    }
   }
 }
 
@@ -36,6 +49,8 @@ struct SubmitButton: View {
   let title: String
   var working = false
   var identifier = "account-submit"
+  /// Why the button is dimmed, read after its name.
+  var hint: String?
   let action: () -> Void
 
   var body: some View {
@@ -50,6 +65,7 @@ struct SubmitButton: View {
     .listRowBackground(Color.clear)
     .accessibilityIdentifier(identifier)
     .accessibilityLabel(working ? "\(title), working" : title)
+    .accessibilityHint(hint ?? "")
   }
 }
 
@@ -62,6 +78,7 @@ struct CheckboxToggleStyle: ToggleStyle {
         Image(systemName: configuration.isOn ? "checkmark.square.fill" : "square")
           .font(.title3)
           .foregroundStyle(configuration.isOn ? FormaTheme.accent : FormaTheme.secondary)
+          .accessibilityHidden(true)
         configuration.label.multilineTextAlignment(.leading)
         Spacer(minLength: 0)
       }
@@ -157,6 +174,105 @@ enum SecretPasteboard {
       [[UIPasteboard.typeAutomatic: text]],
       options: [.localOnly: true, .expirationDate: Date().addingTimeInterval(120)])
   }
+
+  /// What a copy button says after it worked.
+  static let copiedMessage = "Copied. It stays on the clipboard for 2 minutes."
+}
+
+/// A button that copies a secret and says so: its label changes, VoiceOver
+/// hears it, and the pasteboard expiry is stated.
+struct CopySecretButton: View {
+  @Environment(AppModel.self) private var model
+  let title: String
+  let secret: () -> String
+  var identifier: String?
+  @State private var copied = false
+
+  var body: some View {
+    Button {
+      SecretPasteboard.copy(secret())
+      copied = true
+      model.accountSucceeded()
+      AccessibilityNotification.Announcement(SecretPasteboard.copiedMessage).post()
+    } label: {
+      if copied {
+        Label("Copied for 2 minutes", systemImage: "checkmark")
+      } else {
+        Text(title)
+      }
+    }
+    .accessibilityIdentifier(identifier ?? "copy-secret")
+    .onChange(of: secret()) { copied = false }
+  }
+}
+
+/// A leading description and a trailing control side by side, stacked at
+/// accessibility text sizes so neither is squeezed or clipped.
+struct AdaptiveRow<Leading: View, Trailing: View>: View {
+  @Environment(\.dynamicTypeSize) private var typeSize
+  var spacing: CGFloat = 12
+  @ViewBuilder let leading: Leading
+  @ViewBuilder let trailing: Trailing
+
+  var body: some View {
+    if typeSize.isAccessibilitySize {
+      VStack(alignment: .leading, spacing: 8) {
+        leading
+        trailing
+      }
+    } else {
+      HStack(spacing: spacing) {
+        leading
+        Spacer(minLength: 0)
+        trailing
+      }
+    }
+  }
+}
+
+/// A password field with a show/hide control, for the long passphrases the
+/// account asks for. Paste and AutoFill keep working in both states.
+struct RevealablePasswordField: View {
+  let title: String
+  @Binding var text: String
+  let contentType: UITextContentType
+  var identifier: String
+  var revealIdentifier: String?
+  @State private var revealed = false
+
+  var body: some View {
+    HStack(spacing: 8) {
+      Group {
+        if revealed {
+          TextField(title, text: $text)
+            .textInputAutocapitalization(.never).autocorrectionDisabled()
+        } else {
+          SecureField(title, text: $text)
+        }
+      }
+      .textContentType(contentType)
+      .accessibilityIdentifier(identifier)
+      Button {
+        revealed.toggle()
+      } label: {
+        Image(systemName: revealed ? "eye.slash" : "eye")
+          .frame(minWidth: 44, minHeight: 44)
+          .contentShape(Rectangle())
+      }
+      .buttonStyle(.borderless)
+      .accessibilityLabel(revealed ? "Hide \(title.lowercased())" : "Show \(title.lowercased())")
+      .accessibilityIdentifier(revealIdentifier ?? identifier + "-reveal")
+    }
+  }
+}
+
+extension AppModel {
+  /// A completed account action (signed in, password changed, session ended
+  /// on purpose). Account outcomes deliberately do not borrow the workout
+  /// patterns (`.started` is a rep counter starting); they stay silent until
+  /// the haptics set has an account-success pattern. Refusals and failures
+  /// keep `.warning` and `.failed` through `accountHaptic`.
+  func accountSucceeded() {}
 }
 
 extension Error {
@@ -164,6 +280,13 @@ extension Error {
   var accountMessage: String {
     (self as? AccountFailure)?.message ?? (self as? LocalizedError)?.errorDescription
       ?? localizedDescription
+  }
+
+  /// The account answered that the credential (password or code) was wrong, as
+  /// opposed to a dropped connection or a busy server.
+  var rejectsCredentials: Bool {
+    guard let failure = self as? AccountFailure else { return false }
+    return failure.kind == .rejected || failure.kind == .unauthorized
   }
 
   /// A refusal the screen explains (validation) versus a failure to save.

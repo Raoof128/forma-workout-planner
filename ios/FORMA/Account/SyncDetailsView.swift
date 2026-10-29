@@ -72,7 +72,7 @@ struct SyncDetailsView: View {
           working = true
           await model.resolveConflictKeepingLocal()
           working = false
-          model.haptic(.selected)
+          model.accountSucceeded()
         }
       }
       .accessibilityIdentifier("sync-confirm-keep-local")
@@ -111,7 +111,7 @@ struct SyncDetailsView: View {
           await model.resolveConflictUsingAccount()
           working = false
           acknowledged = false
-          model.haptic(.selected)
+          model.accountSucceeded()
         }
       }
       .disabled(!acknowledged || working)
