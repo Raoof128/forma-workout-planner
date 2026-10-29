@@ -150,47 +150,10 @@ struct RootView: View {
     .onChange(of: model.widgetEditingCount) { handleWidgetRoute() }
     .onChange(of: model.busy) { handleWidgetRoute() }
     .onAppear { handleWidgetRoute() }
-    .alert(
-      "Link unavailable",
-      isPresented: Binding(
-        get: { model.widgetNotice != nil }, set: { if !$0 { model.widgetNotice = nil } }
-      )
-    ) {
-      Button("OK", role: .cancel) { model.widgetNotice = nil }
-    } message: {
-      Text(model.widgetNotice ?? "")
-    }
     .preferredColorScheme(
       model.appearance == .system ? nil : model.appearance == .dark ? .dark : .light
     )
-    .alert(
-      "Couldn't save this change",
-      isPresented: Binding(
-        get: { model.errorMessage != nil && !model.workoutPresented },
-        set: { if !$0 { model.errorMessage = nil } }
-      )
-    ) {
-      Button("Keep editing", role: .cancel) { model.errorMessage = nil }
-    } message: {
-      Text(model.errorMessage ?? "Your last saved workout has been preserved.")
-    }
-    // The account ended this sign-in on its own: say why, and what happened
-    // to the training and any open workout. Sign in continues on You.
-    .alert(
-      model.account.interruption?.title ?? "",
-      isPresented: Binding(
-        get: { model.account.interruption != nil },
-        set: { if !$0 { model.account.dismissInterruption() } }),
-      presenting: model.account.interruption
-    ) { interruption in
-      Button(interruption.signInTitle) {
-        navigation.select(.you)
-        model.account.signInFromInterruption()
-      }
-      Button(interruption.dismissTitle, role: .cancel) {}
-    } message: {
-      Text($0.message)
-    }
+    .modifier(RootAlerts(navigation: navigation))
   }
 
   /// One tab: its own navigation stack, bound to the path the tab bar can clear.
@@ -318,5 +281,54 @@ private struct ResumeTrainingControl: View {
     .accessibilityHint("Opens your saved active workout.")
     .accessibilityIdentifier("resume-workout-accessory")
     .disabled(model.busy)
+  }
+}
+
+/// The root's alerts, kept out of `RootView.body` so the compiler can type-check
+/// that chain in reasonable time.
+private struct RootAlerts: ViewModifier {
+  @Environment(AppModel.self) private var model
+  let navigation: TrainingNavigation
+
+  func body(content: Content) -> some View {
+    content
+      .alert(
+        "Link unavailable",
+        isPresented: Binding(
+          get: { model.widgetNotice != nil }, set: { if !$0 { model.widgetNotice = nil } }
+        )
+      ) {
+        Button("OK", role: .cancel) { model.widgetNotice = nil }
+      } message: {
+        Text(model.widgetNotice ?? "")
+      }
+      .alert(
+        "Couldn't save this change",
+        isPresented: Binding(
+          get: { model.errorMessage != nil && !model.workoutPresented },
+          set: { if !$0 { model.errorMessage = nil } }
+        )
+      ) {
+        Button("Keep editing", role: .cancel) { model.errorMessage = nil }
+      } message: {
+        Text(model.errorMessage ?? "Your last saved workout has been preserved.")
+      }
+      // The account ended this sign-in on its own: say why, and what happened
+      // to the training and any open workout. Sign in continues on You.
+      .alert(
+        model.account.interruption?.title ?? "",
+        isPresented: Binding(
+          get: { model.account.interruption != nil },
+          set: { if !$0 { model.account.dismissInterruption() } }),
+        presenting: model.account.interruption
+      ) { interruption in
+        Button(interruption.signInTitle) {
+          navigation.select(.you)
+          model.account.signInFromInterruption()
+        }
+        Button(interruption.dismissTitle, role: .cancel) {}
+      } message: {
+        Text($0.message)
+      }
   }
 }
