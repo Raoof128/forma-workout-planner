@@ -58,7 +58,6 @@ struct TrainingProvider: AppIntentTimelineProvider {
   }
 }
 
-@main
 struct TrainingWidget: Widget {
   var body: some WidgetConfiguration {
     AppIntentConfiguration(
