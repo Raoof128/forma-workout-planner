@@ -1764,3 +1764,11 @@ at rest` failed 16/20 before the fix. The rapid-release case now waits, before
 - **Files:** widget gallery UI test, routine drag test, Apple source register, consolidation record, AGENT and CHANGELOG.
 - **Verification:** fresh compact simulator widget installation/link passes; 20 mobile WebKit repetitions and all 20 edge cases across five production browser/device projects pass. Lint, formatting, docs and added-line secret checks pass. Application/Watch/widget source is unchanged; final combined CI remains the merge gate.
 - **Follow-ups:** merge and delete remaining branch refs only after final checks; retain all 38 original tips and existing physical-device/distribution gates.
+
+### Raouf: 2026-10-29 — Budget both installed native runtimes
+
+- **Scope:** measured native CI cancellation after the complete primary suite passed.
+- **Summary:** increase the job limit from 35 to 65 minutes for the observed 26-minute primary build/test plus a second full iOS 26.0 suite. Keep all tests and runtime coverage enabled.
+- **Files:** Native iOS workflow, consolidation record, AGENT and CHANGELOG.
+- **Verification:** CI at 063abaa passed 33 hosted and all 25 UI tests on iOS 26.2, plus the protected widget check; GitHub confirmed the 35-minute job timeout during fallback. Workflow syntax/docs and secret checks pass; the rerun must establish the fallback result.
+- **Follow-ups:** merge and retire remaining refs only after final validation; do not describe the interrupted fallback as a pass. Existing hardware/distribution gates remain.
