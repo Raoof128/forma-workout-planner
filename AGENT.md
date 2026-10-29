@@ -1638,3 +1638,11 @@ migrate` from the root-owned `ops/` directory (`sudo sh -c 'cd … && …'`),
 - **Files:** Native iOS workflow, consolidation record, AGENT and CHANGELOG.
 - **Verification:** CI at 063abaa passed 33 hosted and all 25 UI tests on iOS 26.2, plus the protected widget check; GitHub confirmed the 35-minute job timeout during fallback. Workflow syntax/docs and secret checks pass; the rerun must establish the fallback result.
 - **Follow-ups:** merge and retire remaining refs only after final validation; do not describe the interrupted fallback as a pass. Existing hardware/distribution gates remain.
+
+### Raouf: 2026-10-29 — Isolate manual-password UI fixtures
+
+- **Scope:** the sole remaining iOS 26.0 fallback failure in consolidation CI.
+- **Summary:** configure the isolated simulator's AutoFill setting before the negative-password journey; assert it is off and retain every password-length and consent check. Keep production new-password support and prevent physical-device setting changes.
+- **Files:** account UI test, Apple source register, consolidation record, AGENT and CHANGELOG.
+- **Verification:** complete local signup journey passed in 92.947 seconds after switching suggestions from on to off; preceding sign-in/guest journeys passed. Strict Swift formatting, docs and added-line secret checks pass. Final combined CI remains the merge gate.
+- **Follow-ups:** merge and retire remaining refs only after final checks; preserve all 38 starting tips, worktree files and physical-device/distribution gates. No production service or Store action.

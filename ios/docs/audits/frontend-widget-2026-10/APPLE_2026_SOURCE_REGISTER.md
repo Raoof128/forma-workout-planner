@@ -102,3 +102,8 @@ The [consolidation report](../../../../docs/maintenance/branch-consolidation-202
 ## Fresh-simulator gallery registration
 
 [Creating a widget extension](https://developer.apple.com/documentation/widgetkit/creating-a-widget-extension), retrieved 29 October 2026: a containing-app launch after installation is required before gallery discovery. Consolidation CI's simulator log recorded descriptor purging after test-host installation, and the gallery showed “No Results.” The UI journey now explicitly activates the already-running app through Home before searching, checks that sharing remains opted in, then still requires installation and the correct non-starting routine link. This is a system-gallery lifecycle check, separate from the component render matrix and protected bundle audit.
+
+## Consolidation: manual-password simulator fixture
+
+- [Apple AutoFill settings](https://support.apple.com/en-au/120758) documents General → AutoFill & Passwords and the AutoFill control on current iOS. The [iOS 17 instructions](https://support.apple.com/en-gb/102441) use Passwords → Password Options. The negative-password UI test changes only its isolated simulator setting, verifies the switch is off and preserves all validation assertions. A compile-time simulator guard prevents physical-device setting changes.
+- [UIKit `newPassword`](https://developer.apple.com/documentation/uikit/uitextcontenttype/newpassword) remains on the production account form. CI's iOS 26.0 recording showed an automatic strong-password cover swallowing manual test typing; that observed system UI, rather than an app validation bypass, motivated fixture setup. Generated-password behavior remains a physical review gate.

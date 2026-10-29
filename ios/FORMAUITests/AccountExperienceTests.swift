@@ -82,6 +82,7 @@ final class AccountExperienceTests: XCTestCase {
 
   @MainActor
   func testCreateAccountNeedsTwoConsentsAndAFifteenCharacterPassword() {
+    prepareManualPasswordEntry()
     let app = launchFreshWorkspace()
     openYou(app)
     let create = app.buttons["account-create"]
@@ -101,7 +102,6 @@ final class AccountExperienceTests: XCTestCase {
     let password = app.secureTextFields["account-password"]
     app.scrollUntilExists(password)
     password.tap()
-    app.dismissStrongPasswordSuggestion()
     password.typeText("short")
     let submit = app.buttons["account-submit"]
     // The form is a lazy list: the consents and the button are below the fold.
@@ -123,7 +123,6 @@ final class AccountExperienceTests: XCTestCase {
 
     app.scrollUntilExists(password, direction: .down)
     password.tap()
-    app.dismissStrongPasswordSuggestion()
     password.typeText(" but now long enough")
     app.scrollUntilExists(submit)
     XCTAssertTrue(submit.isEnabled)
@@ -135,17 +134,61 @@ final class AccountExperienceTests: XCTestCase {
     app.scrollUntilExists(submit)
     XCTAssertFalse(submit.isEnabled)
   }
+
+  /// Negative password fixtures require manual entry, not a generated password.
+  /// Change only the isolated simulator's documented setting; the app retains
+  /// `.newPassword` and production AutoFill support without a test-only code path.
+  @MainActor
+  private func prepareManualPasswordEntry() {
+    continueAfterFailure = false
+    #if targetEnvironment(simulator)
+      let settings = XCUIApplication(bundleIdentifier: "com.apple.Preferences")
+      settings.launch()
+      settings.prepareReviewViewport()
+      let suggestions = settings.switches["SuggestStrongPasswordsToggle"]
+      let autoFill = settings.switches.matching(
+        NSPredicate(
+          format: "identifier == %@ OR label BEGINSWITH[c] %@",
+          "AutoFillToggle", "AutoFill Passwords")
+      ).firstMatch
+      if !suggestions.exists && !autoFill.exists {
+        let modern = ProcessInfo.processInfo.operatingSystemVersion.majorVersion >= 18
+        let path =
+          modern ? ["General", "AutoFill & Passwords"] : ["Passwords", "Password Options"]
+        for title in path {
+          let identifier =
+            title == "General"
+            ? "com.apple.settings.general"
+            : title == "AutoFill & Passwords"
+              ? "com.apple.settings.general.autoFillAndPasswords"
+              : title
+          let item = settings.descendants(matching: .any).matching(
+            NSPredicate(format: "identifier == %@ OR label ==[c] %@", identifier, title)
+          ).firstMatch
+          for _ in 0..<12 where !item.exists || !item.isHittable { settings.swipeUp() }
+          XCTAssertTrue(item.exists && item.isHittable, "Settings must expose \(title)")
+          item.tap()
+        }
+      }
+      // Newer systems expose just the suggestion toggle. Older systems use
+      // the parent AutoFill control; both are simulator-only fixture choices.
+      let control = suggestions.exists ? suggestions : autoFill
+      XCTAssertTrue(control.waitForExistence(timeout: 10))
+      if control.value as? String == "1" {
+        // The AX switch includes its label; its trailing thumb is the hit target.
+        control.coordinate(withNormalizedOffset: CGVector(dx: 0.9, dy: 0.5)).tap()
+      }
+      let disabled = XCTNSPredicateExpectation(
+        predicate: NSPredicate(format: "value == %@", "0"), object: control)
+      XCTAssertEqual(XCTWaiter.wait(for: [disabled], timeout: 5), .completed)
+      settings.terminate()
+    #else
+      XCTFail("This manual-entry fixture changes only an isolated simulator's settings.")
+    #endif
+  }
 }
 
 extension XCUIApplication {
-  fileprivate func dismissStrongPasswordSuggestion() {
-    // iOS can cover the keyboard with its new-password suggestion. Closing
-    // that system UI lets this test enter its intentionally short fixture.
-    if buttons["GenerateStrongPasswordButton"].waitForExistence(timeout: 2) {
-      buttons["xmark"].firstMatch.tap()
-    }
-  }
-
   fileprivate func scrollUntilExists(_ element: XCUIElement, direction: Direction = .up) {
     for _ in 0..<12 {
       let list = collectionViews["account-credentials-form"]
