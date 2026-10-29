@@ -112,6 +112,9 @@ struct VolumeChart: View {
   /// Flips once, when the chart first has data on screen. Only the chart's
   /// opacity follows it; bar heights are always the real volumes.
   @State private var marksShown = false
+  /// The bar being touched, by session id. Touching a bar reads its value out
+  /// above the chart; letting go returns to the latest workout.
+  @State private var selectedID: String?
   let sessions: [WorkoutSession]
 
   /// Everything a session contributes to the chart, worked out once per render.
@@ -137,42 +140,30 @@ struct VolumeChart: View {
     }
     let peak = bars.map(\.volume).max() ?? 0
     VStack(alignment: .leading, spacing: 16) {
-      SectionHeading(title: "Lifting volume", detail: "kg × reps")
-      Chart(bars) { bar in
-        BarMark(
-          x: .value("Session", bar.index),
-          y: .value("Lifting volume, kg times reps", bar.volume)
-        )
-        .foregroundStyle(FormaTheme.accent).cornerRadius(4)
-        .accessibilityLabel(Text(bar.title))
-        .accessibilityValue(Text("\(bar.volume.formatted()) kilogram repetitions"))
-      }
-      .chartXAxis {
-        AxisMarks(values: labelledBars(count: bars.count)) { value in
-          AxisValueLabel {
-            if let index = value.as(Int.self), bars.indices.contains(index) {
-              Text(bars[index].date).font(.caption2)
-            }
-          }
+      SectionHeading(
+        title: "Lifting volume",
+        detail: sessions.count == 1 ? "Latest workout" : "Last \(sessions.count) workouts")
+      readout(bars)
+      chart(bars, peak: peak)
+        .frame(height: chartHeight)
+        // Bars are never grown from zero or tweened when a new workout lands:
+        // data changes draw the real values at once. Only the highlight moves.
+        .animation(nil, value: bars.map(\.volume))
+        .formaAnimation(FormaMotion.state, value: selectedID)
+        // First data fades in once at full motion; minimal and off show it now.
+        .opacity(marksShown || motion != .full ? 1 : 0)
+        .onAppear {
+          guard !marksShown else { return }
+          withFormaAnimation(motion, FormaMotion.reveal) { marksShown = true }
         }
-      }
-      .chartYAxis { AxisMarks(position: .leading) }
-      .chartYScale(domain: 0...max(1, peak * 1.1))
-      .frame(height: chartHeight)
-      // Bars are never grown from zero or tweened when a new workout lands:
-      // data changes draw the real values at once.
-      .animation(nil, value: bars.map(\.volume))
-      // First data fades in once at full motion; minimal and off show it now.
-      .opacity(marksShown || motion != .full ? 1 : 0)
-      .onAppear {
-        guard !marksShown else { return }
-        withFormaAnimation(motion, FormaMotion.reveal) { marksShown = true }
-      }
-      .accessibilityLabel(
-        "Lifting volume over your latest \(countPhrase(sessions.count, "workout"))"
-      )
-      .accessibilityValue(Self.summary(bars, peak: peak))
-      .accessibilityIdentifier("lifting-volume-chart")
+        .onChange(of: selectedID) { _, id in
+          if id != nil { model.haptic(.selected) }
+        }
+        .accessibilityLabel(
+          "Lifting volume over your latest \(countPhrase(sessions.count, "workout"))"
+        )
+        .accessibilityValue(Self.summary(bars, peak: peak))
+        .accessibilityIdentifier("lifting-volume-chart")
       Text("Completed lifting sets only. Time, distance and carries are excluded.")
         .font(.caption).foregroundStyle(FormaTheme.secondary)
       DisclosureGroup("Read chart values") {
@@ -197,13 +188,122 @@ struct VolumeChart: View {
     .padding(20).background(FormaTheme.surface, in: RoundedRectangle(cornerRadius: 20))
   }
 
+  /// The value above the chart: the touched bar, or the latest workout, with
+  /// its change from the workout before it. Every number is a real total.
+  @ViewBuilder private func readout(_ bars: [Bar]) -> some View {
+    let focus = bars.first { $0.id == selectedID } ?? bars.last
+    if let focus {
+      let previous = focus.index > 0 ? bars[focus.index - 1].volume : nil
+      VStack(alignment: .leading, spacing: 4) {
+        HStack(alignment: .firstTextBaseline, spacing: 6) {
+          Text(focus.volume.formatted(.number.precision(.fractionLength(0))))
+            .font(.system(.largeTitle, design: .rounded, weight: .bold).monospacedDigit())
+            .contentTransition(.numericText(value: focus.volume))
+          Text("kg × reps").font(.subheadline.weight(.semibold))
+            .foregroundStyle(FormaTheme.secondary)
+        }
+        HStack(spacing: 8) {
+          Text(selectedID == nil ? "Latest · \(focus.date)" : focus.title)
+            .lineLimit(1)
+          if let previous, previous > 0 {
+            change(from: previous, to: focus.volume)
+          }
+        }
+        .font(.footnote.weight(.medium)).foregroundStyle(FormaTheme.secondary)
+      }
+      .formaAnimation(FormaMotion.state, value: focus.id)
+      .accessibilityElement(children: .combine)
+      .accessibilityIdentifier("lifting-volume-readout")
+    }
+  }
+
+  /// The change from the workout before, as a small capsule: an arrow and a
+  /// whole percentage, never colour alone.
+  private func change(from previous: Double, to current: Double) -> some View {
+    let ratio = (current - previous) / previous
+    let percent = Int((abs(ratio) * 100).rounded())
+    let up = ratio >= 0
+    return Label(
+      percent == 0 ? "Same as before" : "\(percent)% vs previous",
+      systemImage: percent == 0 ? "equal" : up ? "arrow.up.right" : "arrow.down.right"
+    )
+    .labelStyle(.titleAndIcon)
+    .font(.caption.weight(.bold))
+    .foregroundStyle(up ? FormaTheme.accent : FormaTheme.secondary)
+    .padding(.horizontal, 8).padding(.vertical, 3)
+    .background((up ? FormaTheme.accent : FormaTheme.secondary).opacity(0.14), in: Capsule())
+  }
+
+  private func chart(_ bars: [Bar], peak: Double) -> some View {
+    let average = bars.isEmpty ? 0 : bars.map(\.volume).reduce(0, +) / Double(bars.count)
+    let focusID = selectedID ?? bars.last?.id
+    return Chart {
+      ForEach(bars) { bar in
+        BarMark(
+          x: .value("Session", bar.id),
+          y: .value("Lifting volume, kg times reps", bar.volume),
+          width: .ratio(0.62)
+        )
+        .foregroundStyle(barStyle(focused: bar.id == focusID))
+        .cornerRadius(6, style: .continuous)
+        .accessibilityLabel(Text(bar.title))
+        .accessibilityValue(Text("\(bar.volume.formatted()) kilogram repetitions"))
+      }
+      if bars.count > 1, average > 0 {
+        RuleMark(y: .value("Average", average))
+          .foregroundStyle(FormaTheme.secondary.opacity(0.7))
+          .lineStyle(StrokeStyle(lineWidth: 1, dash: [4, 4]))
+          .annotation(position: .top, alignment: .leading, spacing: 2) {
+            Text("Avg \(average.formatted(.number.notation(.compactName)))")
+              .font(.caption2.weight(.semibold)).foregroundStyle(FormaTheme.secondary)
+          }
+          .accessibilityHidden(true)
+      }
+    }
+    .chartXSelection(value: $selectedID)
+    .chartXAxis {
+      AxisMarks(values: labelledBars(bars)) { value in
+        AxisValueLabel {
+          if let id = value.as(String.self), let bar = bars.first(where: { $0.id == id }) {
+            Text(bar.date).font(.caption2)
+          }
+        }
+      }
+    }
+    .chartYAxis {
+      AxisMarks(position: .leading, values: .automatic(desiredCount: 4)) { value in
+        AxisGridLine(stroke: StrokeStyle(lineWidth: 0.5, dash: [2, 3]))
+          .foregroundStyle(FormaTheme.line)
+        AxisValueLabel {
+          if let volume = value.as(Double.self) {
+            Text(volume.formatted(.number.notation(.compactName))).font(.caption2)
+          }
+        }
+      }
+    }
+    .chartYScale(domain: 0...max(1, peak * 1.15))
+  }
+
+  /// The focused bar (touched, or the latest) is solid lime-to-accent; the
+  /// others step back so the eye lands on one value.
+  private func barStyle(focused: Bool) -> AnyShapeStyle {
+    if focused {
+      return AnyShapeStyle(
+        LinearGradient(
+          colors: [FormaTheme.accent, FormaTheme.accent.opacity(0.72)],
+          startPoint: .top, endPoint: .bottom))
+    }
+    return AnyShapeStyle(FormaTheme.accent.opacity(selectedID == nil ? 0.38 : 0.22))
+  }
+
   /// The bars that get a date under them: at most about four on a narrow screen
   /// or at large text sizes, always including the newest, so labels don't collide.
-  private func labelledBars(count: Int) -> [Int] {
+  private func labelledBars(_ bars: [Bar]) -> [String] {
+    let count = bars.count
     let crowded = horizontalSizeClass == .compact || textSize.isAccessibilitySize
-    guard crowded, count > Self.maximumLabels else { return Array(0..<count) }
+    guard crowded, count > Self.maximumLabels else { return bars.map(\.id) }
     let step = (count + Self.maximumLabels - 1) / Self.maximumLabels
-    return Array(stride(from: count - 1, through: 0, by: -step).reversed())
+    return stride(from: count - 1, through: 0, by: -step).reversed().map { bars[$0].id }
   }
 
   private static let maximumLabels = 4
