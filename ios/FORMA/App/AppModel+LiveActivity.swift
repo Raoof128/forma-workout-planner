@@ -7,14 +7,18 @@ import UIKit
 extension AppModel {
   /// What the Lock Screen should show for the saved workspace right now, or nil for nothing.
   private var liveActivityTarget: WorkoutLiveActivityController.Target? {
-    guard let session = workspace?.active else { return nil }
+    guard liveActivityEnabled, let session = workspace?.active else { return nil }
     return .init(
       sessionID: session.id, ownerEpoch: widgets.epoch,
       state: WorkoutLiveActivityMapping.state(
         for: session, exerciseName: { exercise($0)?.name }, now: .now))
   }
 
-  func syncLiveActivity(force: Bool = false) {
+  /// A workspace that has not opened yet is not "no workout": on a cold launch the scene becomes
+  /// active while `load()` is still running, and ending the activity then would only restart it.
+  /// A workspace that closes (sign-out, account switch) or fails to open does end it.
+  func syncLiveActivity(force: Bool = false, workspaceClosed: Bool = false) {
+    if workspace == nil, loadFailure == nil, !workspaceClosed { return }
     liveActivity.sync(liveActivityTarget, force: force)
   }
 

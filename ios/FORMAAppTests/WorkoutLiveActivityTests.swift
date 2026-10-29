@@ -403,6 +403,73 @@ final class WorkoutLiveActivityModelTests: XCTestCase {
     XCTAssertFalse(activity.sessionID.contains("member-secret-id"))
   }
 
+  private func leftover(_ host: FakeActivityHost, session: String = "a") {
+    host.leaveBehind(
+      session: session, epoch: "any",
+      state: WorkoutActivityState(
+        .init(
+          sessionID: session, title: "Legs", exercise: "Squat", exerciseIndex: 0,
+          exerciseCount: 1, exerciseDoneSets: 0, exerciseSetCount: 1, doneSets: 0, totalSets: 1,
+          startedAt: .now, restEnd: nil, restPausedSeconds: nil, restSeconds: 90),
+        now: .now))
+  }
+
+  /// Cold launch: the scene turns active while the workspace is still opening.
+  func testAWorkspaceThatIsStillOpeningDoesNotEndTheRunningActivity() async {
+    let host = FakeActivityHost()
+    leftover(host)
+    let model = AppModel(liveActivity: WorkoutLiveActivityController(host: host))
+    XCTAssertNil(model.workspace)
+    model.syncLiveActivity(force: true)
+    await model.liveActivity.settle()
+    XCTAssertEqual(host.activities.count, 1)
+    XCTAssertFalse(host.log.contains { $0.hasPrefix("end") })
+  }
+
+  func testALoadFailureEndsTheActivity() async {
+    let host = FakeActivityHost()
+    leftover(host)
+    let model = AppModel(liveActivity: WorkoutLiveActivityController(host: host))
+    model.loadFailure = "FORMA couldn't open the local training store."
+    await model.liveActivity.settle()
+    XCTAssertTrue(host.activities.isEmpty)
+  }
+
+  func testSignOutEndsTheActivityEvenBeforeTheNextWorkspaceLoads() async {
+    let host = FakeActivityHost()
+    let model = AppModel(liveActivity: WorkoutLiveActivityController(host: host))
+    model.activeMember = "member"
+    model.workspace = workspace(active: session("a"))
+    await model.liveActivity.settle()
+    XCTAssertEqual(host.activities.count, 1)
+    // accountDidSignOut clears the member's workspace before opening the guest one.
+    model.activeMember = nil
+    model.workspace = nil
+    await model.liveActivity.settle()
+    XCTAssertTrue(host.activities.isEmpty)
+  }
+
+  func testTheLockScreenToggleEndsAtOnceAndStartsAgainInTheForeground() async {
+    let host = FakeActivityHost()
+    let model = AppModel(liveActivity: WorkoutLiveActivityController(host: host))
+    XCTAssertTrue(model.liveActivityEnabled, "on by default")
+    model.workspace = workspace(active: session("a"))
+    await model.liveActivity.settle()
+    XCTAssertEqual(host.activities.count, 1)
+
+    model.liveActivityEnabled = false
+    await model.liveActivity.settle()
+    XCTAssertTrue(host.activities.isEmpty)
+    // While it is off, workspace changes start nothing.
+    model.workspace = workspace(active: session("a"))
+    await model.liveActivity.settle()
+    XCTAssertTrue(host.activities.isEmpty)
+
+    model.liveActivityEnabled = true
+    await model.liveActivity.settle()
+    XCTAssertEqual(host.activities.map(\.sessionID), ["a"])
+  }
+
   func testButtonPressForAnotherWorkoutDoesNothing() async {
     let model = AppModel(liveActivity: WorkoutLiveActivityController(host: FakeActivityHost()))
     model.workspace = workspace(active: session("a"))

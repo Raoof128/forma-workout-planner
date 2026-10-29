@@ -229,7 +229,19 @@ implemented as follows.
    another owner. The first pass after launch runs even with no workout, to end
    orphans. Two activities never coexist. An activity the person swipes away is
    not restarted for that workout until the next launch.
-6. *Denied or unavailable.* No request is made; the in-app workout and the
+6. *Preference.* "Show workout on Lock Screen" (You tab, identifier
+   `live-activity-toggle`, on by default) is stored with the other presentation
+   preferences in `presentation.json`: local to this iPhone, never synced and not
+   tied to the widget-sharing consent. Off means no target, so a running activity
+   ends at once and none starts; on starts one for an active workout while the
+   app is in front. The person can also turn Live Activities off for FORMA in
+   Settings.
+7. *Opening.* A workspace that has not opened yet is not "no workout": on a cold
+   launch the scene becomes active while `load()` runs, and the controller is
+   not synced until the workspace arrives, so the running activity is neither
+   ended nor restarted. A workspace that closes (sign-out, account switch) or
+   fails to open (`loadFailure`) ends it.
+8. *Denied or unavailable.* No request is made; the in-app workout and the
    rest notification are unaffected.
 
 **Presentations.** Lock Screen/banner: "FORMA workout" title, routine and

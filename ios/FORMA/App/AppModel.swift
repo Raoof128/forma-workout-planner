@@ -24,7 +24,7 @@ final class AppModel {
       widgets.publish(workspace)
       // The one place the Lock Screen activity follows the workout: every start, set, rest
       // change, finish, discard, reset and sign-out passes through this observer.
-      syncLiveActivity()
+      syncLiveActivity(workspaceClosed: oldValue != nil && workspace == nil)
     }
   }
   /// True once a workspace has loaded. Read by the root view instead of
@@ -40,12 +40,23 @@ final class AppModel {
   var pendingMutations = 0
   var busy: Bool { pendingMutations > 0 }
   var errorMessage: String?
-  var loadFailure: String?
+  var loadFailure: String? {
+    // The workspace will not open, so nothing can vouch for a running activity.
+    didSet { if loadFailure != nil { syncLiveActivity() } }
+  }
   var workoutPresented = false
   var receipt: WorkoutSession?
   /// The latest haptic-worthy event; `FormaHapticRelay` plays it.
   private(set) var hapticEvent: FormaHapticEvent?
   var hapticsEnabled = true { didSet { savePreferences() } }
+  /// "Show workout on Lock Screen". Local to this iPhone, like the other presentation
+  /// preferences. Turning it off ends a running activity at once.
+  var liveActivityEnabled = true {
+    didSet {
+      savePreferences()
+      if liveActivityEnabled != oldValue { syncLiveActivity(force: true) }
+    }
+  }
   var motion: MotionPreference = .system { didSet { savePreferences() } }
   var appearance: AppearancePreference = .system { didSet { savePreferences() } }
   /// The store the screens are editing: the guest store, or a signed-in
@@ -427,6 +438,7 @@ final class AppModel {
     loadingPreferences = true
     defer { loadingPreferences = false }
     hapticsEnabled = preferences.hapticsEnabled
+    liveActivityEnabled = preferences.liveActivityEnabled ?? true
     motion = preferences.motion
     appearance = preferences.appearance
   }
@@ -435,7 +447,8 @@ final class AppModel {
     guard !loadingPreferences, let preferencesURL else { return }
     do {
       let preferences = PresentationPreferences(
-        hapticsEnabled: hapticsEnabled, motion: motion, appearance: appearance)
+        hapticsEnabled: hapticsEnabled, liveActivityEnabled: liveActivityEnabled, motion: motion,
+        appearance: appearance)
       try JSONEncoder().encode(preferences).write(
         to: preferencesURL, options: [.atomic, .completeFileProtection])
     } catch {
@@ -462,6 +475,8 @@ enum AppearancePreference: String, CaseIterable, Codable {
 }
 private struct PresentationPreferences: Codable {
   var hapticsEnabled: Bool
+  /// Absent in files written before the Live Activity existed, which means on.
+  var liveActivityEnabled: Bool?
   var motion: MotionPreference
   var appearance: AppearancePreference
 }
