@@ -4,6 +4,7 @@ import Fastify, {
   type FastifyRequest,
 } from "fastify";
 import { createHmac, timingSafeEqual } from "node:crypto";
+import type { IncomingHttpHeaders } from "node:http";
 import type { Pool } from "pg";
 import {
   createAuth,
@@ -119,6 +120,33 @@ async function resolveSession(auth: AuthInstance, request: FastifyRequest) {
 
 function headerValue(value: string | string[] | undefined): string | undefined {
   return Array.isArray(value) ? value[0] : value;
+}
+
+// Headers only a browser adds. The Worker, which alone sees Referer, forwards
+// the native marker for requests that carry none of them; this check repeats
+// the rest so the origin does not rely on that alone.
+const BROWSER_ONLY_HEADERS = [
+  "origin",
+  "referer",
+  "sec-fetch-site",
+  "sec-fetch-mode",
+  "sec-fetch-dest",
+] as const;
+
+/**
+ * A native request is the FORMA iOS app calling the API directly: it sends
+ * `X-Forma-Client: ios` and none of the headers a browser always adds. A
+ * browser cannot make such a request with a member's cookies (cross-origin
+ * fetches carry Origin, a custom header forces a CORS preflight FORMA never
+ * approves, forms and navigations cannot set headers, every browser request
+ * carries Sec-Fetch-Site), so it needs no same-origin proof. Presence is what
+ * counts: an empty Origin is still an Origin.
+ */
+export function isNativeClientRequest(headers: IncomingHttpHeaders): boolean {
+  return (
+    headers["x-forma-client"] === "ios" &&
+    BROWSER_ONLY_HEADERS.every((name) => headers[name] === undefined)
+  );
 }
 
 function secretMatches(actual: string | undefined, expected: string): boolean {
@@ -542,7 +570,13 @@ export async function createApp({
         request.method === "PATCH" &&
         path === COACH_DATA_PATH &&
         origin === undefined;
-      if (origin !== config.appOrigin && !bearerEdit) {
+      // The iOS app has no Origin to send. A foreign or empty Origin, or any
+      // Referer or Sec-Fetch header, makes the request an ordinary one.
+      if (
+        origin !== config.appOrigin &&
+        !bearerEdit &&
+        !isNativeClientRequest(request.headers)
+      ) {
         reply.code(403).send({ error: "forbidden" });
       }
     }
@@ -568,6 +602,14 @@ export async function createApp({
         } else if (typeof value === "string") {
           headers.set(name, value);
         }
+      }
+
+      // Better Auth refuses a request that has cookies but no Origin. A native
+      // request has been established above (onRequest) as one no browser can
+      // have sent, so the proxy vouches for it with the app's own origin.
+      // Nothing else about the request changes.
+      if (isNativeClientRequest(request.headers)) {
+        headers.set("origin", config.appOrigin);
       }
 
       const authPath = url.pathname.replace(/^\/api\/auth\//, "");

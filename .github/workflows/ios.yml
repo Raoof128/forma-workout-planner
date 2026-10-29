@@ -1,0 +1,219 @@
+name: Native iOS
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "ios/**"
+      - "scripts/build-ios-resources.mjs"
+      - "scripts/check-ios-contracts.mjs"
+      - "scripts/check-ios-widget-bundle.py"
+      - "unit/ios-resources.test.js"
+      - "unit/ios-validation-boundaries.test.js"
+      - "src/data.js"
+      - "src/storage.js"
+      - "src/exerciseMetrics.js"
+      - "src/exerciseLoad.js"
+      - "src/routineProgramming.js"
+      - "src/workoutSession.js"
+      - "src/catalog/**"
+      - "src/legal/**"
+      - "package*.json"
+      - ".github/workflows/ios.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  native:
+    name: Native package and iPhone journey
+    runs-on: macos-15
+    # The measured primary run takes 26 minutes. Installed iOS 26.0 runs the
+    # full suite again; keep that coverage and budget for both runtimes.
+    timeout-minutes: 65
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Select installed Xcode 26.1 or later
+        run: |
+          python3 - <<'PY'
+          import os
+          import pathlib
+          import re
+          import subprocess
+
+          supported = []
+          for app in sorted(set(path.resolve() for path in pathlib.Path("/Applications").glob("Xcode*.app"))):
+              if "beta" in app.name.lower():
+                  continue
+              developer = str(app / "Contents/Developer")
+              environment = dict(os.environ, DEVELOPER_DIR=developer)
+              try:
+                  version = subprocess.check_output(["xcodebuild", "-version"], env=environment, text=True, stderr=subprocess.STDOUT)
+                  match = re.search(r"^Xcode (\d+(?:\.\d+)*)", version, re.MULTILINE)
+                  sdk = subprocess.check_output(["xcrun", "--sdk", "iphonesimulator", "--show-sdk-version"], env=environment, text=True).strip()
+                  version_tuple = tuple(map(int, match.group(1).split("."))) if match else (0,)
+                  sdk_tuple = tuple(map(int, sdk.split(".")))
+                  if (version_tuple + (0,))[:2] >= (26, 1) and (sdk_tuple + (0,))[:2] >= (26, 1):
+                      supported.append((version_tuple, developer, sdk))
+              except (subprocess.CalledProcessError, ValueError):
+                  continue
+          if not supported:
+              raise SystemExit("Xcode 26.1+ with an iOS 26.1+ Simulator SDK is required to compile the conditional bottom accessory API. No supported stable installation was found.")
+          version, developer, sdk = max(supported)
+          print("Selected Xcode", ".".join(map(str, version)), "with iOS Simulator SDK", sdk)
+          with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as output:
+              output.write("DEVELOPER_DIR=" + developer + "\n")
+          PY
+
+      - name: Check generated native resources
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          node --test unit/ios-resources.test.js unit/ios-validation-boundaries.test.js
+          node scripts/build-ios-resources.mjs
+          git diff --exit-code -- ios/FORMA/Resources ios/Fixtures
+
+      - name: Verify native core
+        run: |
+          swift test --package-path ios
+          swift run --package-path ios FORMAContractProbe "$GITHUB_WORKSPACE" "$RUNNER_TEMP/forma-native-contracts.json"
+          node scripts/check-ios-contracts.mjs "$RUNNER_TEMP/forma-native-contracts.json"
+
+      - name: Install pinned XcodeGen
+        env:
+          XCODEGEN_VERSION: 2.44.1
+          XCODEGEN_SHA256: a2e905fb68446e9bb4008cdfe2e13e3f176d0cbcca828b71770f8e53fca91b73
+        run: |
+          curl --fail --location --silent --show-error \
+            "https://github.com/yonaskolb/XcodeGen/releases/download/$XCODEGEN_VERSION/xcodegen.zip" \
+            --output "$RUNNER_TEMP/xcodegen.zip"
+          printf '%s  %s\n' "$XCODEGEN_SHA256" "$RUNNER_TEMP/xcodegen.zip" | shasum -a 256 --check
+          unzip -q "$RUNNER_TEMP/xcodegen.zip" -d "$RUNNER_TEMP/forma-xcodegen"
+          "$RUNNER_TEMP/forma-xcodegen/xcodegen/bin/xcodegen" generate --spec ios/project.yml --project ios
+
+      - name: Select iOS 26.1+ primary and optional fallback simulators
+        id: simulator
+        run: |
+          xcodebuild -version
+          python3 - <<'PY'
+          import json
+          import os
+          import re
+          import subprocess
+
+          result = json.loads(subprocess.check_output(
+              ["xcrun", "simctl", "list", "devices", "available", "--json"], text=True
+          ))
+          phones = []
+          compatibility = []
+          fallback = []
+          for runtime, devices in result["devices"].items():
+              match = re.search(r"\.iOS-(\d+)(?:-(\d+))?", runtime)
+              if not match:
+                  continue
+              major = int(match.group(1))
+              minor = int(match.group(2) or 0)
+              for device in devices:
+                  if device.get("isAvailable") and device["name"].startswith("iPhone"):
+                      candidate = (runtime, device)
+                      if (major, minor) >= (26, 1):
+                          phones.append(candidate)
+                      elif major == 17:
+                          compatibility.append(candidate)
+                      elif (major, minor) == (26, 0):
+                          fallback.append(candidate)
+          if not phones:
+              raise SystemExit("No available iOS 26.1+ iPhone simulator. The primary conditional-accessory journey must run on iOS 26.1 or later.")
+          phones.sort(key=lambda item: (item[0], item[1]["name"]), reverse=True)
+          runtime, selected = phones[0]
+          print("Primary:", runtime, selected["name"])
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write("destination=platform=iOS Simulator,id=" + selected["udid"] + "\n")
+              if compatibility:
+                  compatibility.sort(key=lambda item: (item[0], item[1]["name"]), reverse=True)
+                  old_runtime, old_device = compatibility[0]
+                  print("Compatibility:", old_runtime, old_device["name"])
+                  output.write("compatibility=platform=iOS Simulator,id=" + old_device["udid"] + "\n")
+              else:
+                  print("iOS 17 compatibility NOT RUN: no installed available iOS 17 iPhone runtime.")
+                  with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as summary:
+                      summary.write("iOS 17 compatibility: **NOT RUN** — no installed available runtime. This is not a compatibility pass.\n")
+              if fallback:
+                  fallback.sort(key=lambda item: (item[0], item[1]["name"]), reverse=True)
+                  fallback_runtime, fallback_device = fallback[0]
+                  print("iOS 26.0 fallback:", fallback_runtime, fallback_device["name"])
+                  output.write("fallback=platform=iOS Simulator,id=" + fallback_device["udid"] + "\n")
+              else:
+                  print("iOS 26.0 fallback NOT RUN: no installed available runtime.")
+                  with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as summary:
+                      summary.write("iOS 26.0 fallback: **NOT RUN** — no installed available runtime. This is not a fallback pass.\n")
+          PY
+
+      - name: Build and test the native app
+        env:
+          FORMA_SIMULATOR: ${{ steps.simulator.outputs.destination }}
+        run: |
+          xcodebuild test \
+            -project ios/FORMA.xcodeproj \
+            -scheme FORMA \
+            -destination "$FORMA_SIMULATOR" \
+            -derivedDataPath "$RUNNER_TEMP/forma-derived-data" \
+            -resultBundlePath "$RUNNER_TEMP/forma-ios.xcresult" \
+            CODE_SIGNING_ALLOWED=YES CODE_SIGN_IDENTITY=- DEVELOPMENT_TEAM=3L5A4R7JNY
+
+      - name: Verify the embedded protected widget extension
+        run: |
+          python3 scripts/check-ios-widget-bundle.py "$RUNNER_TEMP/forma-derived-data/Build/Products/Debug-iphonesimulator/FORMA.app"
+
+      - name: Test iOS 17 compatibility when its runtime is installed
+        if: steps.simulator.outputs.compatibility != ''
+        env:
+          FORMA_COMPATIBILITY_SIMULATOR: ${{ steps.simulator.outputs.compatibility }}
+        run: |
+          xcodebuild test \
+            -project ios/FORMA.xcodeproj \
+            -scheme FORMA \
+            -destination "$FORMA_COMPATIBILITY_SIMULATOR" \
+            -derivedDataPath "$RUNNER_TEMP/forma-derived-data" \
+            -resultBundlePath "$RUNNER_TEMP/forma-ios17.xcresult" \
+            CODE_SIGNING_ALLOWED=YES CODE_SIGN_IDENTITY=- DEVELOPMENT_TEAM=3L5A4R7JNY
+          printf '%s\n' 'iOS 17 compatibility: passed on the installed simulator.' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Test iOS 26.0 fallback when its runtime is installed
+        if: steps.simulator.outputs.fallback != ''
+        env:
+          FORMA_FALLBACK_SIMULATOR: ${{ steps.simulator.outputs.fallback }}
+        run: |
+          xcodebuild test \
+            -project ios/FORMA.xcodeproj \
+            -scheme FORMA \
+            -destination "$FORMA_FALLBACK_SIMULATOR" \
+            -derivedDataPath "$RUNNER_TEMP/forma-derived-data" \
+            -resultBundlePath "$RUNNER_TEMP/forma-ios26-fallback.xcresult" \
+            CODE_SIGNING_ALLOWED=YES CODE_SIGN_IDENTITY=- DEVELOPMENT_TEAM=3L5A4R7JNY
+          printf '%s\n' 'iOS 26.0 fallback: passed on the installed simulator.' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Retain native test evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: forma-ios-test-results
+          path: |
+            ${{ runner.temp }}/forma-ios.xcresult
+            ${{ runner.temp }}/forma-ios17.xcresult
+            ${{ runner.temp }}/forma-ios26-fallback.xcresult
+          if-no-files-found: ignore
+          retention-days: 14

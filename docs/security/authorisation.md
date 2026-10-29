@@ -44,6 +44,11 @@ administrative API exists.
 
 Anything else returns 404 at the Worker and at the API.
 
+Account, session and workspace routes that need a same-origin `Origin` also
+accept a native iOS request (`X-Forma-Client: ios`, no `Origin`, `Referer` or
+`Sec-Fetch-*`); see [Cloudflare](cloudflare.md#native-client-requests). The
+session cookie and member reference are required exactly as for a browser.
+
 ## Evidence
 
 - `server/tests/security.test.ts`: two real sessions cannot read, mutate or

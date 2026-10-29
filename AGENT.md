@@ -58,6 +58,94 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-10-28 — Native account fixes and animated navigation
+
+- **Scope:** finish the local account app review and the owner's chosen SwiftUI
+  Liquid Glass bar with icon bounce and scroll collapse.
+- **Summary:** preserve edits during downloads and store switches; reject old
+  session replies; stop abandoned sync engines; check durable unsent data at
+  sign-out; isolate account origins and restrict Debug staging credentials.
+- **Files:** native account/app/core/navigation code, app/core/UI tests,
+  project, CI, README and `ios/docs/account-review-and-tab-bar-2026-10-28.md`.
+- **Verification:** core 138/138, hosted app 13/13, final account UI 3/3 and the
+  other 13 UI journeys pass; JS 151/151, Worker 35/35, static/resource checks and
+  added-line secret scan pass. Signed Release installed and launched on iPhone.
+- **Follow-ups:** live staging/production tests need usable FORMA credentials;
+  the Watch rejects the Mac connection and needs companion USB pairing repair.
+  No push, backend deployment or store submission.
+
+### Raouf: 2026-10-28 — iOS native accounts (app half)
+
+- Code lives in `ios/FORMA/Account/` plus `AppModel+Account.swift`. The pure
+  wire layer (cookie jar value, request bodies, response decoders, error
+  wording) is in FORMACore (`AccountCookies.swift`, `AccountWire.swift`) so
+  `swift test` covers it; the app files are thin shells over it.
+- Store switching: signed out is the guest store, untouched. Signed in is one
+  SQLite file per member (`WorkspaceStore.memberStoreURL`) with an
+  `AccountSync`. The guest store is never written while signed in and is merged
+  only by "Bring your phone training". Sign-out keeps the member file unless
+  "Sign out and remove from this iPhone" is chosen.
+- Nothing schedules sync by itself: after each commit `markDirty` + `flush`, at
+  launch and on foreground `refresh`, timed retry with back-off plus a
+  reachability trigger. After any call that may replace the member workspace,
+  reload it from the store or the next save fails with `conflictingRevision`.
+- Account origin is the build setting `FORMA_ACCOUNT_ORIGIN` (project.yml →
+  Info.plist `FORMAAccountOrigin`), production by default. HTTPS only, ATS
+  default. Requests send `X-Forma-Client: ios`, never `Origin`/`Referer`/
+  `Sec-Fetch-*`; the URLSession has cookies, cache and credentials off and
+  refuses redirects. Never call the production API from tests.
+- Privacy text is generated: edit `scripts/build-ios-resources.mjs`
+  (`nativeLegal`) and run it, then keep `ios/FORMA/Resources/native-privacy.md`
+  in step.
+
+### Raouf: 2026-10-27 — iOS motion system (Commit 2)
+
+- All native motion goes through `FormaMotion.swift`. Views read
+  `@Environment(\.formaMotion)` and use `motion.animation(token)`,
+  `motion.transition(...)`, `.formaAnimation(_:value:)` or
+  `.formaReveal(order:)`. Never read `accessibilityReduceMotion` or
+  `model.motion` directly in a feature view; the root resolves both (plus
+  Prefer Cross-Fade Transitions on iOS 26.4+).
+- Rules live in `ios/docs/commit-2/MOTION_SPEC.md`: animate committed state,
+  never the tap; no loops; no animating through invented chart values; no
+  animation while a field is being typed in. `.success` is reserved for the
+  finished-workout receipt; a saved set is `.impact(weight: .light)`.
+- XCUITest: lists (`Form`, `List`) are lazy, so a row below the fold does
+  not exist until scrolled to. Target the finish alert by `finish-confirm`;
+  the toolbar button shares the label "Finish workout". Replace field text by
+  selecting it (`replaceText(with:)`), not by sending one delete per
+  character. A view placed in `formaBottomBar` needs
+  `.accessibilityElement(children: .contain)` or the screen identifier
+  overrides its controls' identifiers.
+- `ScreenshotTourTests` produces named before/after screenshots; run it once
+  per appearance (`xcrun simctl ui <udid> appearance light|dark`).
+- Haptics: call `model.haptic(_:)` with a `FormaHaptic` after the change it
+  confirms has saved; never add a bare `.sensoryFeedback` that skips
+  `hapticsEnabled`. Keep one system pattern per meaning (map in
+  `ios/docs/commit-2/IMPLEMENTATION_REPORT.md`).
+- Native sign-in: read `ios/docs/native-accounts-findings.md` first. The
+  browser Origin/cookie boundary must not be relaxed for the app, and the
+  "production must stay guest-only" note above predates the 13 Oct 2026
+  account launch.
+
+### Raouf: 2026-10-27 — iOS launch path and performance rules
+
+- Keep startup work off the main thread: `AppModel.prepareLaunch()` is
+  `@concurrent` and returns everything the first screen needs. Do not add
+  synchronous decoding or SQLite work to `load()` or view initialisers.
+- Exception: `WatchWorkoutCoordinator.init` must keep activating
+  `WCSession` and registering the HealthKit mirroring handler at launch;
+  iOS may wake the app in the background for either.
+- Engine calls look the catalogue up through `ExerciseMetricIndex.cached`;
+  never rebuild a dictionary of the catalogue per call or per row.
+- `ios/FORMA.xcodeproj` is generated and untracked; a fresh worktree needs
+  `xcodegen generate` (or a copy) before building. On the iOS 27.0
+  simulator, 5 of the 8 UI tests also fail on the original code, so compare
+  against a baseline before blaming a change.
+- Device installs use automatic signing with team `3L5A4R7JNY`
+  (`-allowProvisioningUpdates`); the bundle ID is still the provisional
+  `dev.raoufabedini.forma`.
+
 ### Raouf: 2026-10-27 — cloudflared 2026.10.4 (eMudhra advisory)
 
 - **Why:** Cloudflare's 2026-10-26 advisory: cloudflared before 2026.10.2
@@ -72,6 +160,15 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 - **Verification:** both containers report 2026.10.4 and registered four edge
   connections. Origins are `http://api:3000`, so the upgraded trust store
   cannot reject an origin certificate.
+
+### Raouf: 2026-10-26 — Apple Watch readiness and full baseline audit
+
+- Published the audit of all 1,471 tracked baseline files and 37 Apple Watch
+  requirements, including relevant 2026 API and submission guidance.
+- Recorded open runtime, operations, privacy and testing findings with explicit
+  evidence limits. No native iOS/watchOS integration or application fixes added.
+- See [the audit](docs/audits/apple-watch-readiness-2026-10-26/README.md).
+  Baseline verification is separate from this documentation-only publication.
 
 ### Raouf: 2026-10-26 — Runtime audit deployed
 
@@ -143,6 +240,13 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   schema, saved IDs/units, explicit import review and account boundaries. No
   deployment, push, merge or production action was performed. Review the six
   audit reports before a separate staged API/frontend release.
+
+### Raouf: 2026-10-22 — Dependency release deployment
+
+- Both environments run `forma-api:deps-20261022-d05d40b` at schema 0006.
+  Production Worker `c5639ed9-…`, staging `a981c1e7-…`; `main` is `fb6f115`.
+  Rolling back to `holds-timer-20261022-316c5d9` is safe (same catalogue);
+  anything older rejects the timed hold IDs.
 
 ### Raouf: 2026-10-22 — Dependency updates
 
@@ -1326,3 +1430,227 @@ migrate` from the root-owned `ops/` directory (`sudo sh -c 'cd … && …'`),
   and unchanged exact data, cancellation and performance assertions.
 - **Follow-ups:** publish both frontends and retain final CI/live receipts in
   PR #9; no backend, schema, member-data change or merge is required.
+
+
+### Raouf: 2026-10-23 — Native iPhone offline training foundation
+
+- **Scope:** Start the supplied iOS master/motion plans in an isolated `ios/`
+  SwiftUI project. Current source wins over stale plan examples: workspace v2,
+  1,711 accepted exercise IDs, 1,411 selectable movements and website policy v1.3.
+- **Summary:** Added four native tabs, routine editing/search/attributed guides,
+  measurement-aware set completion/undo, persistent rest, notes, receipt and real
+  empty-first progress; SQLite actor transactions/recovery/revisions, explicit
+  export/logical reset, protected backup-excluded storage, appearance/motion/haptic
+  preferences, original decorative art/icon and pinned macOS verification workflow.
+  Saved feedback follows COMMIT; unfinished numeric drafts are labelled unsaved.
+  Native account transport/import, production services and publication are absent.
+- **Files:** `ios/` app/core/tests/resources/project/docs/design; native resource
+  generator and contract-check scripts; `unit/ios-resources.test.js`;
+  `.github/workflows/ios.yml`; root README, AGENT and CHANGELOG.
+- **Verification:** Swift 6.2 package 30/30; JS unit 127/127; actual Swift-generated
+  workout exports 1,711/1,711 pass strict web validation; deterministic resources,
+  lint, Prettier, TypeScript, docs, existing web build, native syntax/format,
+  plist/JSON/YAML and whitespace pass. Restored stale installed dependencies with
+  the unchanged lockfile. Native SwiftUI typecheck/simulator/device checks were
+  not possible on Linux. Evidence: `ios/docs/verification.md`.
+- **Follow-ups:** Build/run the native scheme on Mac; complete keyboard/accessibility,
+  device interruption/protection and performance evidence, native auth/import and
+  App Review/legal/rights/signing gates. No push, deployment or store submission.
+
+
+### Raouf: 2026-10-23 — Apple design and Liquid Glass refinement
+
+- **Scope:** Read the native app file by file and refine it against 52 official
+  Apple text/API/session sources (including five complete WWDC26 transcripts) and three
+  inspected HIG reference images. The source register distinguishes living docs,
+  2026 changes and API availability; no whole-Apple-website claim is made.
+- **Summary:** Added guarded native resume accessories and a single functional
+  glass rest pane, semantic glass foregrounds, opaque accessibility alternatives,
+  high-contrast tokens and narrow/large-text reflow. Kept data surfaces opaque.
+  Added direct strict locale-aware target entry, protected profile/notes drafts,
+  an in-sheet picker journey, native chart accessibility and direct Finish.
+  Serialized local writes, rechecked queued session identities, preserved unequal
+  side values and bounded SQLite BLOBs before Data allocation. Completed source
+  provenance, reproducible unchanged icon tooling and Xcode/SDK 26.1 CI gates.
+- **Files:** Native app/theme/core/tests, project/CI, generated source manifest,
+  resource generator/tests, design provenance/tooling, source/file-review docs,
+  README, AGENT and CHANGELOG. Per-file hashes and dispositions:
+  `ios/docs/native-file-review.json` and `ios/docs/native-design-review.md`.
+- **Verification:** Swift 44/44, JS 129/129 (12 resource cases), actual native export
+  parity 1711/1711; deterministic resources, original icon pixels, lint, types,
+  Prettier, docs, existing web build, Swift syntax/format and config parsing pass.
+  Thirty-seven solid-color text/border pairs meet their 4.5:1/3:1 targets; this
+  does not cover glass compositing. Five native UI journeys are authored but not
+  run here. Xcode/SwiftUI compilation and rendered/device QA remain unrun on Linux.
+- **Follow-ups:** Execute the enforced SDK 26.1+ native workflow on Mac and complete
+  the actual narrow/large-text, keyboard, VoiceOver, motion/transparency/contrast,
+  glass compositing and device matrix before visual sign-off or distribution.
+  No push, deployment, TestFlight or App Store submission occurred.
+
+
+### Raouf: 2026-10-23 — Full native correctness audit
+
+- **Scope:** All 68 authored native files, eight integration files and six shared
+  contract modules; preserve the loaded draft and no-publication instruction.
+  Current Apple source register: 62 text/API/session sources and three inspected
+  reference images. Complete source reading, all-record generated checks and
+  decoded assets are distinguished in the per-file SHA-256 ledger.
+- **Summary:** Fixed workout/notes acknowledgement races without dropping queued
+  lifecycle saves; bound completion/add-set work to captured session/entry IDs;
+  corrected duplicate-entry previous-set lookup, deleted-history detail retention,
+  per-side range traps, prefix-colliding draft cleanup and duplicate routine saves.
+  Kept loaded timed-distance values visible and volume units consistent. Added
+  portable backup names, export snapshot cleanup and compact 20 MiB-bounded export;
+  a valid 150,000-set backup now occupies 11.6 MB instead of 36.4 MB. Aligned native
+  canonical validation using 38 shared boundary records; deduplicated identical
+  corrupt recovery originals; strengthened actual native default/unit/completion
+  comparisons. Avoid repeated history parsing on unchanged-history commits.
+- **Files:** Native app/core/tests/fixtures, contract checker, resource/boundary
+  unit tests and CI triggers; Apple/privacy/verification/file-review docs; README,
+  AGENT and CHANGELOG. `ios/docs/native-file-review.json` lists every input hash.
+- **Verification:** Fresh Swift 62/62 and JS 134/134 pass; all 1711 fresh actual
+  native exports pass strict web validation and independent default-measurement
+  comparisons. The session 422-input probe has no rejected native-accepted output;
+  three stronger native whitespace-name rejections remain intentional. A 150,000-
+  set export round-trips and passes the web backup reader. Resources/icon, lint,
+  types, formatting, docs, web build, Swift syntax/format and config parsing pass.
+  Linux Foundation benchmark identifies avoidable 191–341 ms history rebuild work;
+  the equality guard takes 0.020–0.066 ms in that harness, not an iPhone measurement.
+- **Follow-ups:** Eight authored UI journeys remain unrun on Linux. Xcode/SwiftUI
+  compilation, simulator/device accessibility, keyboard, interruptions/protection,
+  performance, archive/privacy/legal/rights/signing and Store gates remain open.
+  No native import/account transport, server boundary or published state changed;
+  no push, deployment, TestFlight upload or App Store submission occurred.
+
+
+### Raouf: 2026-10-26 — First Xcode build and file-by-file native audit
+
+- **Scope:** All 76 files from `57d685a`, on macOS with Xcode 27.1 / iOS 27.1 SDK
+  for the first time; Apple Watch requirements rechecked against 2026 sources.
+- **Summary:** The app did not compile: `PlanView` used a nonexistent
+  `Section(title) { } footer: { }`. Native workout start now rejects per-side
+  rep ranges above 50, matching `main`'s `perSideTargetError`. The receipt no
+  longer blanks while dismissing; inline save errors no longer replay as stale
+  root alerts; UI tests query the finish alert by label. Cached date formatters,
+  indexed exercise lookup and empty-query search skip avoidable per-row work.
+- **Files:** Native app (`AppModel`, `FORMAApp`, `PlanView`, `WorkoutView`,
+  `YouView`), core (`WorkoutEngine`, `ExerciseSearch`), tests, UI tests;
+  `ios/docs/full-audit-2026-10-26.md`, `ios/docs/verification.md`; AGENT, CHANGELOG.
+- **Verification:** Swift 63/63; contract probe 1711/1711; Debug and Release
+  Xcode builds without Swift warnings; swift-format clean; resources regenerate
+  without diff; JS 134/134, lint, Prettier, types, docs. UI journeys not run (no
+  simulator runtime installed). Watch API availability matched SDK headers.
+- **Follow-ups:** Run the UI journeys on a simulator; open a PR so the Native iOS
+  workflow runs for the first time (confirm `macos-15` has Xcode 26.1+); update
+  the Watch matrix's current-state column for this branch; hold timer parity.
+  No push, deployment or store action occurred.
+
+
+### Raouf: 2026-10-26 — Native hold timer and Apple Watch workouts
+
+- **Scope:** Close the hold-timer gap with the web (PR #20) and add an Apple Watch
+  companion: a workout started on the iPhone checks for the Watch, begins when
+  Start is pressed on the Watch, and the Watch records it to Apple Health.
+- **Summary:** `HoldTimer.swift` ports the web rules (5 s to 60 min, unit steps,
+  default from the next unfinished set, legacy plank logs a rep per 10 s, no timer
+  for per-side plank) and `WorkoutEngine.logHold` completes the set with rest
+  exactly as ticking does. The workout screen adds the countdown with pause, end
+  early, cancel, keep-awake, haptic, tone unless muted and a VoiceOver
+  announcement. `FORMAWatch` (watchOS 10) runs `HKWorkoutSession` and
+  `HKLiveWorkoutBuilder`, mirrors to the iPhone, recovers after a crash and saves
+  in Apple's stop/end/finish order. The iPhone checks pairing and installation
+  first and starts on its own when no Watch is paired. Finish saves the Watch
+  workout; discard discards it. Heart rate and energy stay in Apple Health, so
+  the workspace contract is unchanged. The privacy notice, inventory and review
+  matrix now describe the Health use.
+- **Files:** `ios/Sources/FORMACore/{HoldTimer,Models}.swift`, `HoldTimerTests`;
+  `ios/Shared/`, `ios/FORMAWatch/`, `WatchWorkoutCoordinator`,
+  `StartWorkoutSheet`, `AppModel`, `FORMAApp`, `WorkoutView`, `TodayView`,
+  `PlanView`, entitlements, `Info.plist`, `project.yml`;
+  `scripts/build-ios-resources.mjs` and regenerated `legal.json`/manifest,
+  `unit/ios-resources.test.js`; `ios/docs/apple-watch.md` and privacy docs;
+  README, AGENT, CHANGELOG.
+- **Verification:** Swift 71/71; contracts 1711/1711; iPhone + embedded Watch
+  build (simulator Debug, device Release) and Watch scheme build without Swift
+  warnings; Watch binary arm64 + arm64_32; resources check, JS 134/134, lint,
+  Prettier, types, docs; swift-format clean. No simulator or device run.
+- **Follow-ups:** Test on the real iPhone and Ultra 2 (detection, permissions,
+  live metrics, reconnect, one Health workout per finish, none on discard,
+  locked-phone save, recovery, battery, heart-rate sample density). Set up the
+  team, bundle IDs and HealthKit capability for signing. Update the Watch
+  matrix's current-state column. No deployment or store action occurred.
+- **Release:** Committed as `718e8cf` and pushed to `origin/work` on 26 October
+  2026 (no pull request yet, so the Native iOS workflow has not run). Decisions,
+  15 evidence-backed claims and the new iOS docs are recorded in Zurvan.
+
+### Raouf: 2026-10-29 — Private native widgets and training audit
+
+- **Date/scope:** 29 October 2026, Australia/Sydney; native iPhone/Watch audit on `feat/frontend-widgets-2026-10`, preserving the existing dirty account/navigation baseline at `c0883a3`.
+- **Summary:** Added six WidgetKit families with owner-scoped opt-in, protected committed snapshots and precise draft-safe links; refined Today/accessibility layouts; repaired hold retries, recovery/import ownership and Watch failure/reconnect status. Release coverage instrumentation is disabled; test coverage remains opt-in.
+- **Files:** Native app/core/Watch/widget/shared-surface sources and tests, `ios/project.yml`, privacy/resources/README, generator, widget bundle validator and CI. Exact paths and 146-path baseline reconciliation: `ios/docs/audits/frontend-widget-2026-10/FILE_LEDGER.md`; ten reports and original visual evidence accompany it.
+- **Verification:** 141 core + 4 surfaces, 32 hosted app, 24 UI regressions, separate real widget gallery/install/link and three dark tours passed; final focused layout/render reruns passed with 120 widget images. 151 web unit tests and 1,711 native contract cases passed. Signed Release/bundle checks and final iPhone installation passed; launch remained locked. Short Simulator trace captured; no physical performance claim.
+- **Follow-ups:** Unlock/connect the companion iPhone by USB for launch and Watch pairing; verify passcode widgets, Watch/Health recovery, physical accessibility, older runtimes, live staging account deletion and Store/legal/privacy gates. Live Activity/Watch complications remain explicitly deferred. No commit, push, merge, production deployment or Store submission.
+
+### Raouf: 2026-10-29 — Publish native account and widget checkpoint
+
+- **Date/scope:** 29 October 2026, Australia/Sydney; owner-authorized feature-branch delivery and durable handoff.
+- **Summary:** Committed native accounts/navigation, protected widgets and the audited training fixes as `076e267c6a4b3b5081348ddbd40cf53e22700ffd`; pushed `feat/frontend-widgets-2026-10` and verified the matching remote ref.
+- **Files:** AGENT, CHANGELOG, root/native READMEs, account review, audit publication records and reconciled file ledger. Zurvan reference note recorded privately; source ingestion/index refresh belongs to this delivery postflight.
+- **Verification:** Staged source hashes matched the settled audit; staged additions secret scan had zero findings. Existing native/web/contract test evidence retained. First-push GitHub CI was in progress, not a claimed pass.
+- **Follow-ups:** Finish locked-phone/Watch, physical privacy/accessibility/performance and live staging account gates. No merge, production deployment, Store action or public Zurvan push.
+
+### Raouf: 2026-10-29 — Prepare safe branch consolidation
+
+- **Scope:** owner-authorized merge and cleanup of accumulated local/remote branches.
+- **Summary:** preserved all 38 starting tips, combined the native work, release records, historical Watch audit and dependency updates. Resolved log conflicts without dropping entries; retained the narrow patched-Undici override for the new Miniflare version.
+- **Files:** package manifest/lock, AGENT/CHANGELOG, historical audit annotations and `docs/maintenance/branch-consolidation-2026-10-29.md`.
+- **Verification:** 151 unit, 35 Worker, 20 repeated WebKit journeys and 1,711 contract cases passed; static/build/resource/docs checks passed; OSV found no vulnerable lockfile packages. Combined remote CI and Native iOS CI remain separate gates.
+- **Follow-ups:** merge validated integration, delete only main-contained branch tips with race checks, preserve all worktree files, and record final outcomes. No production deployment or Store action.
+
+### Raouf: 2026-10-29 — Compile the motion resolver on older SDKs
+
+- **Scope:** integration portability defect exposed by Native iOS CI on SDK 26.2.
+- **Summary:** replaced the unavailable SwiftUI Cross-Fade environment key with UIKit's iOS 14 preference/notification at the root, initialized before first render and refreshed on foreground. Kept one resolver and existing Off/Minimal/accessibility priority.
+- **Files:** `FormaMotion.swift`, hosted navigation regressions, Apple source register and consolidation record.
+- **Verification:** 33 hosted app and four motion/navigation UI tests passed on local Xcode 27.1; strict Swift lint passed. Older-SDK CI rerun is still required.
+- **Follow-ups:** finish combined CI/main merge and remaining branch cleanup. First safe cleanup removed 11 local/13 remote already-merged branches; worktree files and recovery refs retained. No deployment.
+
+### Raouf: 2026-10-29 — Repair compact-phone integration journeys
+
+- **Scope:** failures discovered while validating the all-branch consolidation on iPhone SE and the older CI SDK.
+- **Summary:** keep Start above navigation at the largest accessibility size by placing metadata after it; reveal lazy account/history/profile controls; verify consent state explicitly; select the system widget provider row and leave Home-button editing correctly.
+- **Files:** TodayView, account/history/navigation/widget UI journeys, Apple source register, consolidation record, AGENT and CHANGELOG.
+- **Verification:** final compact account/history 5/5; preceding widget install/link, profile draft and largest-text geometry checks pass. Signed Release/widget bundle, strict Swift formatting, docs and added-line secret checks pass. Combined web/security CI at 5756291 passed, including 902 browser executions; final older-SDK CI remains the merge gate.
+- **Follow-ups:** preserve all assertions and original branch ancestry; finish main merge/deletion only after final CI. Physical-device and distribution gates remain; no production deployment or Store action.
+
+### Raouf: 2026-10-29 — Verify gallery launch and drag readiness
+
+- **Scope:** the two remaining system/test setup failures in consolidation CI.
+- **Summary:** activate the running test app through Home before widget discovery and check sharing remains enabled; wait for the real drag handle to be actionable before measuring raw pointer coordinates. Preserve all installation, routing, scroll and saved-data assertions with zero retries.
+- **Files:** widget gallery UI test, routine drag test, Apple source register, consolidation record, AGENT and CHANGELOG.
+- **Verification:** fresh compact simulator widget installation/link passes; 20 mobile WebKit repetitions and all 20 edge cases across five production browser/device projects pass. Lint, formatting, docs and added-line secret checks pass. Application/Watch/widget source is unchanged; final combined CI remains the merge gate.
+- **Follow-ups:** merge and delete remaining branch refs only after final checks; retain all 38 original tips and existing physical-device/distribution gates.
+
+### Raouf: 2026-10-29 — Budget both installed native runtimes
+
+- **Scope:** measured native CI cancellation after the complete primary suite passed.
+- **Summary:** increase the job limit from 35 to 65 minutes for the observed 26-minute primary build/test plus a second full iOS 26.0 suite. Keep all tests and runtime coverage enabled.
+- **Files:** Native iOS workflow, consolidation record, AGENT and CHANGELOG.
+- **Verification:** CI at 063abaa passed 33 hosted and all 25 UI tests on iOS 26.2, plus the protected widget check; GitHub confirmed the 35-minute job timeout during fallback. Workflow syntax/docs and secret checks pass; the rerun must establish the fallback result.
+- **Follow-ups:** merge and retire remaining refs only after final validation; do not describe the interrupted fallback as a pass. Existing hardware/distribution gates remain.
+
+### Raouf: 2026-10-29 — Isolate manual-password UI fixtures
+
+- **Scope:** the sole remaining iOS 26.0 fallback failure in consolidation CI.
+- **Summary:** configure the isolated simulator's AutoFill setting before the negative-password journey; assert it is off and retain every password-length and consent check. Keep production new-password support and prevent physical-device setting changes.
+- **Files:** account UI test, Apple source register, consolidation record, AGENT and CHANGELOG.
+- **Verification:** complete local signup journey passed in 92.947 seconds after switching suggestions from on to off; preceding sign-in/guest journeys passed. Strict Swift formatting, docs and added-line secret checks pass. Final combined CI remains the merge gate.
+- **Follow-ups:** merge and retire remaining refs only after final checks; preserve all 38 starting tips, worktree files and physical-device/distribution gates. No production service or Store action.
+
+### Raouf: 2026-10-29 — Handoff with native CI blocked
+
+- **Scope:** preserve the branch consolidation work and document its unfinished validation.
+- **Summary:** PR #34 remains open at `846a6fe`; main is not merged. The web/account/security run passed, while native CI still needs a clean full run. Eleven local and thirteen remote branch refs were retired in the earlier safe phase; remaining branch cleanup is pending. Original tips and worktree files are retained.
+- **Defects and evidence:** native run 40800619323 attempt 1 passed 33 hosted and 25 UI tests on iOS 26.2, then stalled starting the iOS 26.0 test host and was cancelled at the 65-minute job limit. Attempt 2 passed 33 hosted tests but failed one of 25 primary UI tests: the Settings automation selected a non-interactive AUTOFILL heading at AccountExperienceTests.swift:168. The other 24 UI tests passed; fallback did not run. iOS 17 has not been verified on the hosted runner because its runtime was unavailable.
+- **Fix under CI:** the Settings query now matches only rows (buttons or cells), never a same-titled section heading; password and consent assertions are unchanged. No iOS 26 simulator runtime is installed locally, so hosted native CI is the verification. Full logs and next steps are in the consolidation record.
+- **Follow-ups:** validate the selector on both iOS 26.2 and 26.0, run full CI, then merge with ancestry preservation and execute guarded cleanup. Update the final records and Zurvan after actual completion. Current phone and Watch installation attempts were blocked by disconnected device services; no current installation success is claimed.

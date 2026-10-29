@@ -1,0 +1,30 @@
+{
+  "baseline": "1794dd27fad87e8f0cc6f4923d37eedf713783ed",
+  "head": "1794dd27fad87e8f0cc6f4923d37eedf713783ed",
+  "trackedFiles": 1471,
+  "reviewRows": 1471,
+  "uniqueRows": 1471,
+  "countsByArea": {
+    "tooling": 63,
+    "assets": 719,
+    "docs": 518,
+    "backend": 37,
+    "runtime": 64,
+    "tests": 70
+  },
+  "reviewParts": {
+    "runtime": 64,
+    "backend": 37,
+    "tests": 70,
+    "tooling": 63,
+    "assets": 719,
+    "docs-ops": 39,
+    "docs-product": 44,
+    "docs-structured": 435
+  },
+  "missing": [],
+  "extra": [],
+  "duplicates": [],
+  "changedHashes": [],
+  "limitations": "Exact file coverage is not a claim of full visual, clinical, deployed-system, native/hardware or legal certification. Methods and limits are per row."
+}

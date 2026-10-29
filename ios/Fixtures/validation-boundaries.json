@@ -1,0 +1,210 @@
+{
+  "synthetic": true,
+  "purpose": "Canonical native workspace boundary checks against the current strict web validator; not arbitrary web import support.",
+  "historyDates": [
+    {
+      "id": "UTC seconds",
+      "value": "2026-10-23T12:00:00Z",
+      "accepted": true
+    },
+    {
+      "id": "UTC milliseconds",
+      "value": "2026-10-23T12:00:00.123Z",
+      "accepted": true
+    },
+    {
+      "id": "UTC extended fraction",
+      "value": "2026-10-23T12:00:00.123456789123456789Z",
+      "accepted": true
+    },
+    {
+      "id": "leap year",
+      "value": "2024-02-29T23:59:59Z",
+      "accepted": true
+    },
+    {
+      "id": "leap century",
+      "value": "2000-02-29T00:00:00Z",
+      "accepted": true
+    },
+    {
+      "id": "year zero leap",
+      "value": "0000-02-29T12:00:00Z",
+      "accepted": true
+    },
+    {
+      "id": "common century last February day",
+      "value": "1900-02-28T00:00:00Z",
+      "accepted": true
+    },
+    {
+      "id": "last four digit year",
+      "value": "9999-12-31T23:59:59Z",
+      "accepted": true
+    },
+    {
+      "id": "UTC offset",
+      "value": "2026-10-23T12:00:00+00:00",
+      "accepted": false
+    },
+    {
+      "id": "non UTC offset",
+      "value": "2026-10-23T12:00:00+10:00",
+      "accepted": false
+    },
+    {
+      "id": "compact offset",
+      "value": "2026-10-23T12:00:00+0000",
+      "accepted": false
+    },
+    {
+      "id": "missing seconds",
+      "value": "2026-10-23T12:00Z",
+      "accepted": false
+    },
+    {
+      "id": "midnight overflow",
+      "value": "2026-10-23T24:00:00Z",
+      "accepted": false
+    },
+    {
+      "id": "minute overflow",
+      "value": "2026-10-23T12:60:00Z",
+      "accepted": false
+    },
+    {
+      "id": "leap second",
+      "value": "2026-10-23T12:00:60Z",
+      "accepted": false
+    },
+    {
+      "id": "common year February overflow",
+      "value": "2026-02-29T12:00:00Z",
+      "accepted": false
+    },
+    {
+      "id": "common century February overflow",
+      "value": "1900-02-29T12:00:00Z",
+      "accepted": false
+    },
+    {
+      "id": "thirty day month overflow",
+      "value": "2026-04-31T12:00:00Z",
+      "accepted": false
+    },
+    {
+      "id": "zero month",
+      "value": "2026-00-23T12:00:00Z",
+      "accepted": false
+    },
+    {
+      "id": "zero day",
+      "value": "2026-10-00T12:00:00Z",
+      "accepted": false
+    },
+    {
+      "id": "five digit year",
+      "value": "10000-10-23T12:00:00Z",
+      "accepted": false
+    },
+    {
+      "id": "missing fraction digits",
+      "value": "2026-10-23T12:00:00.Z",
+      "accepted": false
+    },
+    {
+      "id": "comma fraction",
+      "value": "2026-10-23T12:00:00,1Z",
+      "accepted": false
+    },
+    {
+      "id": "missing timezone",
+      "value": "2026-10-23T12:00:00",
+      "accepted": false
+    },
+    {
+      "id": "lowercase designators",
+      "value": "2026-10-23t12:00:00z",
+      "accepted": false
+    },
+    {
+      "id": "trailing newline",
+      "value": "2026-10-23T12:00:00Z\n",
+      "accepted": false
+    },
+    {
+      "id": "trailing text",
+      "value": "2026-10-23T12:00:00Zx",
+      "accepted": false
+    },
+    {
+      "id": "non ASCII timezone letter",
+      "value": "2026-10-23T12:00:00Ｚ",
+      "accepted": false
+    }
+  ],
+  "routineMeasurements": [
+    {
+      "id": "optional durationSeconds 0",
+      "field": "durationSeconds",
+      "value": 0,
+      "accepted": false
+    },
+    {
+      "id": "optional durationSeconds 1",
+      "field": "durationSeconds",
+      "value": 1,
+      "accepted": true
+    },
+    {
+      "id": "optional durationSeconds -1",
+      "field": "durationSeconds",
+      "value": -1,
+      "accepted": false
+    },
+    {
+      "id": "optional distanceMeters 0",
+      "field": "distanceMeters",
+      "value": 0,
+      "accepted": false
+    },
+    {
+      "id": "optional distanceMeters 1",
+      "field": "distanceMeters",
+      "value": 1,
+      "accepted": true
+    },
+    {
+      "id": "optional distanceMeters -1",
+      "field": "distanceMeters",
+      "value": -1,
+      "accepted": false
+    }
+  ],
+  "activeCompletionMetadata": [
+    {
+      "id": "active without completion metadata",
+      "date": null,
+      "duration": null,
+      "accepted": true
+    },
+    {
+      "id": "active with completion date",
+      "date": "2026-10-23T12:00:00Z",
+      "duration": null,
+      "accepted": false
+    },
+    {
+      "id": "active with completed duration",
+      "date": null,
+      "duration": 60,
+      "accepted": false
+    },
+    {
+      "id": "active with both completed fields",
+      "date": "2026-10-23T12:00:00Z",
+      "duration": 60,
+      "accepted": false
+    }
+  ]
+}

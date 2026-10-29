@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-29",
+  "context": "Debug iOS 27.0 Simulator; attached idle foreground app after UI suite, not a matched Release interaction benchmark",
+  "durationSeconds": 10.707901,
+  "timeProfileRows": 477,
+  "trace": "/tmp/forma-widget-idle-simulator.trace",
+  "command": "xcrun xctrace record --template \"Time Profiler\" --device B84DC3C8-D015-4BB6-9408-E5522F6D0346 --attach FORMA --time-limit 10s --no-prompt --output /tmp/forma-widget-idle-simulator.trace",
+  "warning": "This configuration of instruments creates 1 table without a known input source.",
+  "limits": [
+    "No before/after trace comparison",
+    "No physical device profile",
+    "No input latency/frame/energy/p95 claim",
+    "SwiftUI and Watch scenarios not traced"
+  ]
+}

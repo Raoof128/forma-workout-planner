@@ -23,6 +23,7 @@ const FORWARDED_REQUEST_HEADERS = new Set([
   "cookie",
   "origin",
   "user-agent",
+  "x-forma-client",
   "x-forma-member",
   "x-request-id",
   "sec-fetch-site",
@@ -106,6 +107,32 @@ const HOP_HEADERS = new Set([
   "x-user-id",
 ]);
 
+// Headers that only a browser adds. A native app never sends them, and a
+// browser cannot omit them, so any of them rules out the native client.
+const BROWSER_ONLY_HEADERS = [
+  "origin",
+  "referer",
+  "sec-fetch-site",
+  "sec-fetch-mode",
+  "sec-fetch-dest",
+] as const;
+
+/**
+ * A native request is the FORMA iOS app talking to the API directly: it names
+ * itself with `X-Forma-Client: ios` and carries none of the headers a browser
+ * always adds. A browser cannot produce this with a member's cookies: every
+ * cross-origin fetch carries Origin, a custom header forces a CORS preflight
+ * FORMA never approves, forms and navigations cannot set headers, and every
+ * browser request carries Sec-Fetch-Site. Presence is what counts, so an empty
+ * Origin or Referer value is still a browser header.
+ */
+export function isNativeClientRequest(headers: Headers): boolean {
+  return (
+    headers.get("x-forma-client") === "ios" &&
+    BROWSER_ONLY_HEADERS.every((name) => !headers.has(name))
+  );
+}
+
 type Fetcher = (
   input: RequestInfo | URL,
   init?: RequestInit,
@@ -188,6 +215,7 @@ function filteredRequestHeaders(
   pathname: string,
 ): Headers {
   const bearerRoute = BEARER_PATHS.has(pathname);
+  const native = isNativeClientRequest(request.headers);
   // Cloudflare overwrites CF-Connecting-IP at the app edge. It can be rewritten
   // again when the Worker calls a private Tunnel, so copy the trusted inbound
   // value to our own header before stripping caller-supplied metadata.
@@ -202,6 +230,9 @@ function filteredRequestHeaders(
     }
     if (!FORWARDED_REQUEST_HEADERS.has(lower) || HOP_HEADERS.has(lower))
       continue;
+    // The origin cannot see Referer, so only the Worker can tell a native
+    // request from a browser one. Forward the marker for native requests only.
+    if (lower === "x-forma-client" && !native) continue;
     if (bearerRoute && (lower === "cookie" || lower === "x-forma-member"))
       continue;
     if (lower === "cookie") {
@@ -379,10 +410,15 @@ function createHandler(fetcher: Fetcher) {
       request.method === "PATCH" &&
       url.pathname === COACH_DATA_PATH &&
       origin === null;
+    // The iOS app has no Origin to send. See isNativeClientRequest for why a
+    // browser cannot imitate it; any Origin, Referer or Sec-Fetch header
+    // (including a foreign Origin, refused above) makes it an ordinary request.
+    const nativeClient = isNativeClientRequest(request.headers);
     if (
       ["POST", "PUT", "PATCH", "DELETE"].includes(request.method) &&
       origin !== appOrigin.origin &&
-      !bearerEdit
+      !bearerEdit &&
+      !nativeClient
     ) {
       return jsonError(403, "A same-origin request is required");
     }

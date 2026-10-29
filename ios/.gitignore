@@ -1,0 +1,6 @@
+.build/
+.swiftpm/
+FORMA.xcodeproj/
+DerivedData/
+*.xcresult/
+*.xcuserstate

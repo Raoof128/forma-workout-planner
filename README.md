@@ -2,6 +2,14 @@
 
 **Plan your training. Log every set. See your progress.**
 
+The [native iPhone development project](ios/README.md) includes offline SwiftUI
+training, optional accounts/sync, an Apple Watch workout companion and six
+protected WidgetKit families. The [29 October native handoff](ios/docs/audits/frontend-widget-2026-10/CHANGE_SUMMARY_AND_NEXT_GATES.md)
+records the published development branch, source audit, tests and screenshots.
+The signed development build is installed on the owner's iPhone; locked-phone,
+Watch pairing and physical-device/App Store gates remain open. This is not a
+published App Store release.
+
 FORMA is a workout planner built with React and Vite. Members can use an
 account-backed workspace that stores routines and workout history in
 self-hosted PostgreSQL, or use the separate local guest mode in a browser.
@@ -124,9 +132,10 @@ Earlier staging evidence remains in the
 
 Weights use kilograms and dates use Australia/Sydney. Starter weights are
 editable examples. One rep of the starter Forearm plank represents a 10-second
-hold, and exercises with no external load log no weight. FORMA does not
+hold, and exercises with no external load log no weight. The web app does not
 include billing, social networking, Apple Health integration, or automated
-coaching.
+coaching. The separate native Watch companion records workouts to Apple Health
+with permission; its physical-device acceptance gates remain in the native handoff.
 
 The repository does not currently include a project-wide software license. The
 Barlow Condensed and DM Sans font licenses are in `public/fonts/`. Runtime
