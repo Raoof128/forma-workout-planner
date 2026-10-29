@@ -148,12 +148,23 @@ struct FormaMark: Shape {
   }
 }
 
+/// FORMA's display face, the website's Barlow Condensed Bold (bundled from
+/// public/fonts by scripts/build-ios-media.py, SIL Open Font License). It
+/// scales with Dynamic Type relative to `style`. Body text stays on the system
+/// font, which reads better at small sizes.
+enum FormaDisplayFont {
+  static let name = "BarlowCondensed-Bold"
+
+  static func font(size: CGFloat, relativeTo style: Font.TextStyle) -> Font {
+    .custom(name, size: size, relativeTo: style)
+  }
+}
+
 struct EditorialTitle: View {
   let text: String
-  @ScaledMetric(relativeTo: .largeTitle) private var size = 48.0
   var body: some View {
-    Text(text).font(.system(size: size, weight: .black).width(.condensed))
-      .tracking(-0.8).fixedSize(horizontal: false, vertical: true)
+    Text(text).font(FormaDisplayFont.font(size: 50, relativeTo: .largeTitle))
+      .tracking(-0.6).fixedSize(horizontal: false, vertical: true)
       .foregroundStyle(FormaTheme.primary)
       .accessibilityAddTraits(.isHeader)
   }

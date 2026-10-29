@@ -37,7 +37,13 @@ targets:
           - Info.plist
           - FORMA.entitlements
           - Resources
+          - Media
       - path: FORMA/Resources
+        buildPhase: resources
+      # The website's exercise media, kept as one folder in the bundle (see
+      # scripts/build-ios-media.py), so 200-odd files never crowd the bundle root.
+      - path: FORMA/Media
+        type: folder
         buildPhase: resources
       - path: Shared
       - path: WidgetPresentation

@@ -938,6 +938,7 @@ struct GuideView: View {
         .padding(.vertical, 10)
         .listRowBackground(Color.clear)
       }
+      ExerciseMediaSection(exercise: exercise)
       Section("Technique") {
         if exercise.guideUnavailable
           || exercise.guide.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty

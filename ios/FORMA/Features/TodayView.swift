@@ -68,7 +68,6 @@ struct TodayView: View {
   @Environment(\.dynamicTypeSize) private var textSize
   @Environment(\.verticalSizeClass) private var verticalSizeClass
   private var compactHeight: Bool { verticalSizeClass == .compact }
-  @ScaledMetric(relativeTo: .largeTitle) private var titleSize = 40.0
 
   var body: some View {
     // `model.routines` filters the whole routine list on every read. Read it
@@ -106,8 +105,8 @@ struct TodayView: View {
             Text("MAKE ROOM FOR").font(.caption.weight(.bold)).tracking(2).foregroundStyle(
               FormaTheme.secondary)
             Text("Your next stronger.")
-              .font(.system(size: titleSize, weight: .black).width(.condensed))
-              .tracking(-0.6).fixedSize(horizontal: false, vertical: true)
+              .font(FormaDisplayFont.font(size: 44, relativeTo: .largeTitle))
+              .tracking(-0.5).fixedSize(horizontal: false, vertical: true)
               .foregroundStyle(FormaTheme.primary).accessibilityAddTraits(.isHeader)
           }
           .formaReveal(order: 1)
@@ -318,7 +317,7 @@ struct TodayView: View {
           .font(.caption.weight(.bold)).tracking(1.2).foregroundStyle(FormaTheme.lime)
         }
         Text(hero.name)
-          .font(.system(.title2, weight: .bold).width(.condensed))
+          .font(FormaDisplayFont.font(size: 28, relativeTo: .title2))
           .foregroundStyle(.white).fixedSize(horizontal: false, vertical: true)
         if !textSize.isAccessibilitySize {
           Text(hero.detail).font(.subheadline).foregroundStyle(FormaTheme.heroDetail)
