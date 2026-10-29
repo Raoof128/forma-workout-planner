@@ -140,7 +140,10 @@ final class ScreenshotTourTests: XCTestCase {
     ).firstMatch
     XCTAssertTrue(choose.waitForExistence(timeout: 10))
     choose.tap()
-    let plank = app.buttons["6. Forearm plank"]
+    // Each entry also names its progress ("6. Forearm plank · 0/3").
+    let plank = app.buttons.matching(
+      NSPredicate(format: "label BEGINSWITH %@", "6. Forearm plank")
+    ).firstMatch
     XCTAssertTrue(plank.waitForExistence(timeout: 10))
     plank.tap()
     let holdStart = app.buttons["hold-start"]

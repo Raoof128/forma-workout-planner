@@ -2,7 +2,8 @@ import FORMACore
 import SwiftUI
 
 /// Shown only when an Apple Watch is paired. The workout begins when Start is
-/// pressed on the Watch, or on this iPhone alone if the person prefers.
+/// pressed on the Watch, or on this iPhone alone if the person prefers. The
+/// Watch is opened only when the person chooses to, never on appearing.
 struct StartWorkoutSheet: View {
   @Environment(AppModel.self) private var model
   @Environment(\.dismiss) private var dismiss
@@ -29,6 +30,13 @@ struct StartWorkoutSheet: View {
             Label(notice, systemImage: "exclamationmark.circle")
               .font(.subheadline).foregroundStyle(FormaTheme.error)
               .accessibilityIdentifier("watch-start-notice")
+          }
+          // A start that failed to save says so here: the root alert cannot
+          // present over a sheet.
+          if let failure = model.errorMessage {
+            Label(failure, systemImage: "exclamationmark.circle")
+              .font(.subheadline).foregroundStyle(FormaTheme.error)
+              .accessibilityIdentifier("start-failure")
           }
           VStack(spacing: 12) {
             if model.watch.availability == .ready, model.watch.phase == .idle {
@@ -62,23 +70,12 @@ struct StartWorkoutSheet: View {
               .buttonStyle(.bordered)
               .disabled(model.watch.availability == .checking)
             }
-            Button {
-              starting = true
-              Task {
-                await model.start(routine)
-                starting = false
-              }
-            } label: {
-              HStack(spacing: 10) {
-                if starting { ProgressView() }
-                Text("Start on iPhone only")
-              }
-              .frame(maxWidth: .infinity, minHeight: 44)
+            // With no Watch to wait for, starting here is the main action.
+            if model.watch.availability == .ready {
+              startOnIPhone.buttonStyle(.bordered)
+            } else {
+              startOnIPhone.buttonStyle(PrimaryButtonStyle())
             }
-            .buttonStyle(.bordered)
-            .disabled(model.busy || starting)
-            .accessibilityValue(starting ? "Starting" : "")
-            .accessibilityIdentifier("start-on-iphone")
           }
         }
         .padding(24)
@@ -91,11 +88,30 @@ struct StartWorkoutSheet: View {
         }
       }
     }
-    .task {
-      if model.watch.availability == .ready, model.watch.phase == .idle {
-        await model.watch.open(routine: routine)
-      }
+    // The failure is announced when it appears, since the sheet is modal.
+    .task(id: model.errorMessage) {
+      if let failure = model.errorMessage { AccessibilityNotification.Announcement(failure).post() }
     }
+  }
+
+  private var startOnIPhone: some View {
+    Button {
+      starting = true
+      model.errorMessage = nil
+      Task {
+        await model.start(routine)
+        starting = false
+      }
+    } label: {
+      HStack(spacing: 10) {
+        if starting { ProgressView() }
+        Text("Start on iPhone only")
+      }
+      .frame(maxWidth: .infinity, minHeight: 44)
+    }
+    .disabled(model.busy || starting)
+    .accessibilityValue(starting ? "Starting" : "")
+    .accessibilityIdentifier("start-on-iphone")
   }
 
   @ViewBuilder private var status: some View {
@@ -133,6 +149,34 @@ struct WatchRecordingStrip: View {
   @Environment(AppModel.self) private var model
 
   var body: some View {
+    // Nothing to show means no view at all, so the workout screen's spacing
+    // doesn't leave a gap.
+    if showsStrip || model.watch.notice != nil {
+      VStack(alignment: .leading, spacing: 8) {
+        strip
+        // The coordinator's own account of a lost link or failed command, here
+        // where the workout is, not only on the start sheet.
+        if let notice = model.watch.notice {
+          Label(notice, systemImage: "applewatch.slash")
+            .font(.subheadline).foregroundStyle(FormaTheme.error)
+            .fixedSize(horizontal: false, vertical: true)
+            .accessibilityIdentifier("watch-notice")
+        }
+      }
+      .task(id: model.watch.notice) {
+        if let notice = model.watch.notice { AccessibilityNotification.Announcement(notice).post() }
+      }
+    }
+  }
+
+  private var showsStrip: Bool {
+    switch model.watch.phase {
+    case .recording, .ending, .ended: true
+    case .idle, .waiting: false
+    }
+  }
+
+  @ViewBuilder private var strip: some View {
     switch model.watch.phase {
     case .recording:
       let metrics = model.watch.metrics

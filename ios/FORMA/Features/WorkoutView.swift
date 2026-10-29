@@ -45,13 +45,88 @@ private struct NumericChange<Value: Equatable>: ViewModifier {
   }
 }
 
+/// Why the workout could not save or move on. A message about one set names it
+/// (`rowKey`, and the `field` to fix) so it shows beside that set; one about the
+/// whole screen has neither. Every issue is unique, so repeating the same
+/// mistake announces again.
+struct DraftIssue: Equatable {
+  let id = UUID()
+  var rowKey: String?
+  var field: String?
+  let message: String
+}
+
+/// An invalid draft in one set. It carries the set so the screen can say
+/// which one, and conforms to `LocalizedError` so a failed commit that wraps
+/// it still reads in words.
+private struct SetDraftFailure: LocalizedError {
+  let rowKey: String
+  let field: String?
+  let setNumber: Int
+  /// The draft's own message, which starts with a capital.
+  let reason: String
+
+  var errorDescription: String? {
+    "Set \(setNumber): " + reason.prefix(1).lowercased() + reason.dropFirst()
+  }
+}
+
+extension MeasurementDraft {
+  /// The first field whose text won't save, in the order `value(from:)` reads
+  /// them, so the screen can mark it and put the keyboard there.
+  func invalidField(for original: LoggedSet, locale: Locale) -> String? {
+    func parse(_ text: String) -> Double? { MeasurementNumberInput.parse(text, locale: locale) }
+    func isCount(_ value: Double) -> Bool { value.rounded() == value && (1...100).contains(value) }
+    guard parse(weight) != nil else { return "weight" }
+    if original.sides != nil {
+      guard let l = parse(left) else { return "left" }
+      guard let r = parse(right) else { return "right" }
+      if !isCount(l) { return "left" }
+      if !isCount(r) || l + r > 100 { return "right" }
+    } else {
+      guard let count = parse(reps), isCount(count) else { return "reps" }
+    }
+    if original.durationSeconds != nil, parse(seconds) == nil { return "seconds" }
+    if original.distanceMeters != nil, parse(distance) == nil { return "distance" }
+    return nil
+  }
+}
+
+/// One clock format for the hold timer, the rest dock and elapsed time:
+/// minutes and seconds ("1:05"), with hours once there are some, in the
+/// reader's own digits.
+enum WorkoutClock {
+  static func text(_ seconds: Int, locale: Locale = .autoupdatingCurrent) -> String {
+    let duration = Duration.seconds(max(0, seconds))
+    if seconds >= 3_600 {
+      return duration.formatted(.time(pattern: .hourMinuteSecond).locale(locale))
+    }
+    return duration.formatted(.time(pattern: .minuteSecond(padMinuteToLength: 1)).locale(locale))
+  }
+
+  /// "1 minute, 5 seconds", for VoiceOver.
+  static func spoken(_ seconds: Int, locale: Locale = .autoupdatingCurrent) -> String {
+    Duration.seconds(max(0, seconds)).formatted(
+      .units(allowed: [.hours, .minutes, .seconds], width: .wide).locale(locale))
+  }
+}
+
+/// What Save & close and Finish were doing when a running hold interrupted.
+private enum HoldLeave { case close, finish }
+
+private func setCount(_ count: Int) -> String { count == 1 ? "1 set" : "\(count) sets" }
+
 struct WorkoutView: View {
   @Environment(AppModel.self) private var model
   @Environment(\.scenePhase) private var scenePhase
   @Environment(\.locale) private var locale
   @State private var selectedExercise = 0
+  /// Set once the screen has moved to where the person left off, and while that
+  /// move is in flight so it does not play the exercise-change haptic.
+  @State private var restoredPosition = false
+  @State private var restoringPosition = false
   @State private var drafts: [String: SetDraft] = [:]
-  @State private var validation: String?
+  @State private var validation: DraftIssue?
   @State private var finishConfirmation = false
   @State private var discardConfirmation = false
   @State private var guide: Exercise?
@@ -61,6 +136,13 @@ struct WorkoutView: View {
   @State private var holdLog = HoldLogState()
   @State private var holdLengths: [String: Int] = [:]
   @State private var holdMessage: String?
+  @State private var holdLeave: HoldLeave?
+  @State private var holdDiscardConfirmation = false
+  /// Sets reopened to correct them. Ticking one again keeps a rest that is
+  /// already running instead of restarting it.
+  @State private var reopened: Set<String> = []
+  /// A rest is counting down, so the screen stays on for it.
+  @State private var restCounting = false
   @FocusState private var focusedField: String?
 
   var body: some View {
@@ -85,12 +167,8 @@ struct WorkoutView: View {
               }
               ElapsedTime(startedAt: session.startedAt)
             }
-            LocalSaveStatus(saving: model.busy, pendingChanges: !drafts.isEmpty)
+            saveStatus
             WatchRecordingStrip()
-            if let failure = model.errorMessage {
-              Label(failure, systemImage: "exclamationmark.circle")
-                .font(.subheadline).foregroundStyle(FormaTheme.error)
-            }
             exerciseSelector(session)
 
             if session.exercises.indices.contains(selectedExercise) {
@@ -154,6 +232,7 @@ struct WorkoutView: View {
                     busy: model.busy,
                     focusedField: $focusedField,
                     key: key,
+                    issue: validation?.rowKey == key ? validation : nil,
                     complete: {
                       Task { await complete(sessionID: session.id, entryID: entry.id, set: index) }
                     }
@@ -161,8 +240,8 @@ struct WorkoutView: View {
                   .id(key)
                 }
               }
-              if let validation {
-                Label(validation, systemImage: "exclamationmark.circle")
+              if let validation, validation.rowKey == nil {
+                Label(validation.message, systemImage: "exclamationmark.circle")
                   .font(.subheadline).foregroundStyle(FormaTheme.error).accessibilityAddTraits(
                     .isStaticText
                   )
@@ -173,40 +252,72 @@ struct WorkoutView: View {
                   Task { await addSet() }
                 } label: {
                   Label("Add set", systemImage: "plus")
+                    .frame(minHeight: 44).contentShape(Rectangle())
                 }
-                .frame(minHeight: 44).disabled(model.busy || entry.sets.count >= 100)
+                .disabled(model.busy || entry.sets.count >= 100)
                 Spacer()
                 Button {
                   notesPresented = true
                 } label: {
                   Label("Notes", systemImage: "square.and.pencil")
+                    .frame(minHeight: 44).contentShape(Rectangle())
                 }
-                .frame(minHeight: 44).disabled(model.busy)
+                .disabled(model.busy)
                 .accessibilityIdentifier("session-notes")
               }.font(.subheadline.weight(.semibold))
-              if selectedExercise + 1 < session.exercises.count {
-                Button {
-                  Task {
-                    if await saveDrafts() {
-                      focusedField = nil
-                      selectedExercise += 1
-                      validation = nil
-                      reader.scrollTo("exercise-selector", anchor: .top)
+              VStack(spacing: 12) {
+                if selectedExercise + 1 < session.exercises.count {
+                  Button {
+                    Task {
+                      if await showExercise(selectedExercise + 1) {
+                        reader.scrollTo("exercise-selector", anchor: .top)
+                      }
+                    }
+                  } label: {
+                    HStack {
+                      Text("Next exercise")
+                      Spacer()
+                      Image(systemName: "arrow.right")
+                    }
+                  }.buttonStyle(PrimaryButtonStyle()).disabled(model.busy)
+                } else {
+                  Button {
+                    requestFinish()
+                  } label: {
+                    HStack {
+                      Text("Finish workout")
+                      Spacer()
+                      Image(systemName: "flag.checkered")
                     }
                   }
-                } label: {
-                  HStack {
-                    Text("Next exercise")
-                    Spacer()
-                    Image(systemName: "arrow.right")
+                  .buttonStyle(PrimaryButtonStyle()).disabled(model.busy)
+                  .accessibilityIdentifier("finish-workout-bottom")
+                }
+                if selectedExercise > 0 {
+                  Button {
+                    Task {
+                      if await showExercise(selectedExercise - 1) {
+                        reader.scrollTo("exercise-selector", anchor: .top)
+                      }
+                    }
+                  } label: {
+                    Label("Previous exercise", systemImage: "arrow.left")
+                      .frame(maxWidth: .infinity, minHeight: 44).contentShape(Rectangle())
                   }
-                }.buttonStyle(PrimaryButtonStyle()).disabled(model.busy)
+                  .buttonStyle(.bordered).disabled(model.busy)
+                  .accessibilityIdentifier("previous-exercise")
+                }
               }
             }
           }.padding(24)
         }
         .scrollDismissesKeyboard(.interactively)
-        .formaBottomBar { RestDock(compact: focusedField != nil) }
+        .formaBottomBar {
+          VStack(spacing: 0) {
+            SaveFailureBanner()
+            RestDock(compact: focusedField != nil)
+          }
+        }
         .background(FormaTheme.canvas)
         .navigationTitle("Training")
         .navigationBarTitleDisplayMode(.inline)
@@ -214,12 +325,10 @@ struct WorkoutView: View {
           ToolbarItem(placement: .topBarLeading) {
             Button("Save & close") {
               Task {
-                guard canLeaveTimedSet() else { return }
-                if await saveDrafts() {
-                  // Any earlier failure was already shown inline here; don't
-                  // replay it as an alert once the workout screen closes.
-                  model.errorMessage = nil
-                  model.workoutPresented = false
+                if holdIsLive {
+                  holdLeave = .close
+                } else {
+                  await closeWorkout()
                 }
               }
             }.disabled(model.busy)
@@ -236,7 +345,7 @@ struct WorkoutView: View {
             .accessibilityIdentifier("workout-actions")
           }
           ToolbarItem(placement: .confirmationAction) {
-            Button("Finish") { finishConfirmation = true }
+            Button("Finish") { requestFinish() }
               .accessibilityIdentifier("finish-workout")
               .accessibilityLabel("Finish workout")
               .disabled(model.busy)
@@ -257,9 +366,7 @@ struct WorkoutView: View {
             }
           }.accessibilityIdentifier("finish-confirm")
         } message: {
-          Text(
-            "Completed sets will be saved to your training journal. Uncompleted sets remain part of the session snapshot."
-          )
+          Text(finishMessage(session))
         }
         .alert("Discard this workout?", isPresented: $discardConfirmation) {
           Button("Keep training", role: .cancel) {}
@@ -269,9 +376,23 @@ struct WorkoutView: View {
             }
           }
         } message: {
-          Text(
-            "This removes the active session, including its completed sets. Your routines and finished workouts stay saved."
-          )
+          Text(discardMessage(session))
+        }
+        .confirmationDialog(
+          "Your timer is still running", isPresented: holdLeaveBinding, titleVisibility: .visible,
+          presenting: holdLeave
+        ) { leave in
+          holdLeaveActions(leave, session: session)
+        } message: { _ in
+          Text("\(heldSeconds) seconds held so far. Choose what happens to them.")
+        }
+        .confirmationDialog(
+          "Discard this timer?", isPresented: $holdDiscardConfirmation, titleVisibility: .visible
+        ) {
+          Button("Discard timer", role: .destructive) { discardHold() }
+          Button("Keep timing", role: .cancel) {}
+        } message: {
+          Text("The \(heldSeconds) seconds held won't be logged.")
         }
         .sheet(item: $guide) { exercise in GuideSheet(exercise: exercise).protectWidgetNavigation()
         }
@@ -285,6 +406,7 @@ struct WorkoutView: View {
           // Canonical sets are already committed. Best effort for valid in-progress edits;
           // OS suspension is never treated as a successful save acknowledgement.
           if phase == .inactive { Task { _ = await saveDrafts() } }
+          Task { await syncRestReminder(active: phase == .active) }
         }
         // The countdown is a deadline, so a hold that ends while the app is
         // suspended logs as soon as the app runs again.
@@ -295,44 +417,118 @@ struct WorkoutView: View {
           guard !Task.isCancelled, hold == current else { return }
           await logHold(current, seconds: current.length)
         }
-        // Only Next exercise and Choose exercise change this, after the drafts
-        // they carry have saved.
+        // Open where the person left off, not at the first exercise. Done once,
+        // before any tap, so a later choice is never undone.
+        .onAppear {
+          guard !restoredPosition else { return }
+          restoredPosition = true
+          let target = WorkoutEngine.resumeIndex(session)
+          if target != selectedExercise {
+            restoringPosition = true
+            selectedExercise = target
+          }
+        }
+        // Only the exercise buttons and menu change this, after the drafts they
+        // carry have saved.
         .onChange(of: selectedExercise) { _, _ in
           holdMessage = nil
-          model.haptic(.selected)
+          if restoringPosition {
+            restoringPosition = false
+          } else {
+            model.haptic(.selected)
+          }
         }
-        // A refused action names its reason on screen; the warning points to it.
+        // A refused action names its reason beside the set; the warning and the
+        // announcement point to it, and the set scrolls into view.
         .onChange(of: validation) { old, new in
-          if let new, new != old { model.haptic(.warning) }
+          guard let new, new != old else { return }
+          model.haptic(.warning)
+          AccessibilityNotification.Announcement(new.message).post()
+          if let row = new.rowKey { reader.scrollTo(row, anchor: .center) }
         }
-        // Keep the screen on while a hold counts down, as the web does.
-        .onChange(of: hold?.endsAt != nil) { _, running in
-          UIApplication.shared.isIdleTimerDisabled = running
+        // A rest is a deadline: keep the screen on while one counts down, so the
+        // dock stays readable between sets, and let it sleep again when the rest
+        // ends, is paused or skipped.
+        .task(id: session.restEnd) {
+          guard let end = session.restEnd else {
+            restCounting = false
+            return
+          }
+          let wait = end / 1_000 - Date.now.timeIntervalSince1970
+          restCounting = wait > 0
+          guard wait > 0 else { return }
+          try? await Task.sleep(for: .seconds(wait))
+          if !Task.isCancelled { restCounting = false }
+        }
+        // Also keep it on while a hold counts down, as the web does.
+        .onChange(of: hold?.endsAt != nil || restCounting) { _, awake in
+          UIApplication.shared.isIdleTimerDisabled = awake
+        }
+        .onChange(of: session.restEnd) { old, new in
+          // The first rest is the moment to ask: the reason is on screen.
+          if new != nil, new != old {
+            Task { await RestReminder.shared.requestAuthorizationIfNeeded() }
+          }
+          // Skipped, paused or extended while in front: nothing pending.
+          Task { await syncRestReminder(active: scenePhase == .active) }
         }
         .onDisappear {
           hold = nil
           UIApplication.shared.isIdleTimerDisabled = false
+          RestReminder.shared.cancel()
         }
         .accessibilityIdentifier("workout-screen")
       }
     }
   }
 
+  private func syncRestReminder(active: Bool) async {
+    await RestReminder.shared.sync(
+      restEnd: model.workspace?.active?.restEnd,
+      muted: model.workspace?.profile.muted ?? false, appActive: active)
+  }
+
+  /// Edits not yet saved get a visible way to save them, so the status never
+  /// points at a control that is off screen.
+  @ViewBuilder private var saveStatus: some View {
+    if drafts.isEmpty {
+      LocalSaveStatus(saving: model.busy)
+    } else {
+      HStack(spacing: 12) {
+        Label("Unsaved edits", systemImage: "pencil.circle")
+          .font(.footnote).foregroundStyle(FormaTheme.secondary)
+          .accessibilityIdentifier("local-save-status")
+        Spacer(minLength: 8)
+        Button {
+          Task { if await saveDrafts() { focusedField = nil } }
+        } label: {
+          Text("Save edits").frame(minHeight: 44).contentShape(Rectangle())
+        }
+        .font(.footnote.weight(.semibold)).disabled(model.busy)
+        .accessibilityIdentifier("save-workout-drafts-inline")
+      }
+    }
+  }
+
   private func exerciseSelector(_ session: WorkoutSession) -> some View {
-    let completed = session.exercises.reduce(0) { $0 + $1.sets.filter(\.done).count }
+    let completed = WorkoutEngine.completedSets(session)
     return Menu {
       ForEach(Array(session.exercises.enumerated()), id: \.element.id) { index, entry in
+        let name = model.exercise(entry.exerciseId)?.name ?? entry.exerciseId
+        let progress = WorkoutEngine.setProgress(entry)
         Button {
-          Task {
-            if await saveDrafts() {
-              focusedField = nil
-              selectedExercise = index
-              validation = nil
-            }
-          }
+          Task { _ = await showExercise(index) }
         } label: {
-          Text("\(index + 1). \(model.exercise(entry.exerciseId)?.name ?? entry.exerciseId)")
+          let title = "\(index + 1). \(name) · \(progress.done)/\(progress.total)"
+          if index == selectedExercise {
+            Label(title, systemImage: "checkmark")
+          } else {
+            Text(title)
+          }
         }
+        .accessibilityLabel(
+          "\(index + 1). \(name), \(progress.done) of \(progress.total) sets done"
+            + (index == selectedExercise ? ", current" : ""))
       }
     } label: {
       HStack {
@@ -351,16 +547,132 @@ struct WorkoutView: View {
     .disabled(model.busy)
   }
 
+  /// Saves the edits in flight, then shows another exercise. False when the
+  /// edits could not be saved, in which case nothing moves.
+  private func showExercise(_ index: Int) async -> Bool {
+    guard await saveDrafts() else { return false }
+    focusedField = nil
+    selectedExercise = index
+    validation = nil
+    return true
+  }
+
   private func draftKey(entry: SessionEntry, set: Int) -> String { "\(entry.id)-\(set)" }
+
+  /// A timer that is counting or paused, not yet saving or waiting on a retry.
+  private var holdIsLive: Bool { hold != nil && !holdLog.isSaving && !holdLog.needsRetry }
+
+  /// Whole seconds the current timer has run, or the duration a failed save
+  /// is holding for its retry.
+  private var heldSeconds: Int {
+    if let attempt = holdLog.attempt { return attempt.seconds }
+    guard let hold else { return 0 }
+    return max(0, hold.length - hold.remaining(at: .now))
+  }
+
+  private var holdLeaveBinding: Binding<Bool> {
+    Binding(get: { holdLeave != nil }, set: { if !$0 { holdLeave = nil } })
+  }
+
+  @ViewBuilder
+  private func holdLeaveActions(_ leave: HoldLeave, session: WorkoutSession) -> some View {
+    let exercise = hold.flatMap { model.exercise($0.exerciseID) }
+    let unit = exercise?.holdUnit
+    let units = unit.map { HoldTimer.loggedCount(seconds: heldSeconds, unit: $0) } ?? 0
+    let verb = leave == .close ? "close" : "finish"
+    if let unit, units >= 1, let timer = hold {
+      Button("Log \(HoldTimer.loggedText(count: units, unit: unit)) and \(verb)") {
+        Task {
+          await logHold(timer, seconds: heldSeconds)
+          // A failed save keeps the timer for its retry; stay on the screen.
+          if hold == nil { await continueLeaving(leave) }
+        }
+      }
+    }
+    Button("Discard timer and \(verb)", role: .destructive) {
+      discardHold()
+      Task { await continueLeaving(leave) }
+    }
+    Button("Keep training", role: .cancel) {}
+  }
+
+  private func continueLeaving(_ leave: HoldLeave) async {
+    switch leave {
+    case .close: await closeWorkout()
+    case .finish: finishConfirmation = true
+    }
+  }
+
+  private func requestFinish() {
+    if holdIsLive { holdLeave = .finish } else { finishConfirmation = true }
+  }
+
+  private func closeWorkout() async {
+    guard canLeaveTimedSet() else { return }
+    if await saveDrafts() {
+      // Any earlier failure was already shown inline here; don't
+      // replay it as an alert once the workout screen closes.
+      model.errorMessage = nil
+      model.workoutPresented = false
+    }
+  }
+
+  private func discardHold() {
+    if let timer = hold { holdLog.cancel(timer.id) }
+    hold = nil
+    model.haptic(.stopped)
+  }
+
+  private func finishMessage(_ session: WorkoutSession) -> String {
+    let total = WorkoutEngine.totalSets(session)
+    let unfinished = WorkoutEngine.unfinishedSets(session)
+    var text = "You've completed \(WorkoutEngine.completedSets(session)) of \(setCount(total))."
+    if unfinished > 0 {
+      text +=
+        " The \(unfinished == 1 ? "unfinished set" : "\(unfinished) unfinished sets") won't count towards your totals."
+    }
+    text += " The workout is saved to your training journal."
+    if model.watch.phase == .recording {
+      text += " Your Apple Watch recording ends and is saved to Health."
+    }
+    return text
+  }
+
+  private func discardMessage(_ session: WorkoutSession) -> String {
+    let done = WorkoutEngine.completedSets(session)
+    var text =
+      done == 0
+      ? "This deletes the workout."
+      : "This deletes the workout and its \(setCount(done)) completed."
+    if model.watch.phase == .recording {
+      text += " The Apple Watch recording is discarded too."
+    }
+    return text + " Your routines and finished workouts stay saved."
+  }
 
   /// Closing the view would discard its stopwatch state. A failed timed-set
   /// save needs an explicit retry or cancellation before that can happen.
   private func canLeaveTimedSet() -> Bool {
     guard !holdLog.needsRetry, !holdLog.isSaving else {
-      validation = "Your timed set is not saved. Retry or cancel it before closing or finishing."
+      flag("Your timed set is not saved. Retry or cancel it before closing or finishing.")
       return false
     }
     return true
+  }
+
+  /// Shows why something was refused. A failure in one set marks that set and
+  /// puts the keyboard on the field to fix.
+  private func flag(_ message: String, in failure: SetDraftFailure? = nil) {
+    guard let failure else {
+      validation = DraftIssue(message: message)
+      return
+    }
+    validation = DraftIssue(rowKey: failure.rowKey, field: failure.field, message: message)
+    if let field = failure.field { focusedField = "\(failure.rowKey)-\(field)" }
+  }
+
+  private func flag(_ error: Error) {
+    flag(error.localizedDescription, in: error as? SetDraftFailure)
   }
 
   private func applyDrafts(_ submitted: [String: SetDraft], to value: inout Workspace) throws {
@@ -372,8 +684,14 @@ struct WorkoutView: View {
         // saving. Its explicit pending draft must remain saveable afterwards;
         // value(from:) preserves the canonical completion flag.
         if let draft = submitted[key] {
-          session.exercises[entry].sets[set] = try draft.value(
-            from: session.exercises[entry].sets[set])
+          let original = session.exercises[entry].sets[set]
+          do {
+            session.exercises[entry].sets[set] = try draft.value(from: original)
+          } catch {
+            throw SetDraftFailure(
+              rowKey: key, field: draft.invalidField(for: original, locale: locale),
+              setNumber: set + 1, reason: error.localizedDescription)
+          }
         }
       }
     }
@@ -398,13 +716,17 @@ struct WorkoutView: View {
       }
       if await model.commit(forActiveSession: sessionID, { try applyDrafts(submitted, to: &$0) }) {
         drafts = retainingUnacknowledgedDrafts(drafts, acknowledged: submitted)
-        validation = drafts.isEmpty ? nil : "Newer edits are still unsaved. Tap Done to save them."
+        validation = drafts.isEmpty ? nil : newerEditsIssue
         // Programmatic dismissal is allowed even with interactive dismissal
         // disabled, so callers must not close or finish over newer text.
         return drafts.isEmpty
       }
-    } catch { validation = error.localizedDescription }
+    } catch { flag(error) }
     return false
+  }
+
+  private var newerEditsIssue: DraftIssue {
+    DraftIssue(message: "Newer edits are still unsaved. Choose Save edits to keep them.")
   }
 
   private func complete(sessionID: String, entryID: String, set: Int) async {
@@ -419,13 +741,15 @@ struct WorkoutView: View {
       try applyDrafts(submitted, to: &candidate)
       let wasDone = session.exercises[entry].sets[set].done
       let rowKey = draftKey(entry: session.exercises[entry], set: set)
+      // A set reopened to fix a value keeps the rest already running.
+      let rest: WorkoutEngine.RestTrigger = reopened.contains(rowKey) ? .onlyIfIdle : .always
       let saved = await model.commit(forActiveSession: session.id) { value in
         guard let currentEntry = value.active?.exercises.firstIndex(where: { $0.id == entryID })
         else { throw AppFailure("This exercise has changed. Reopen it before editing its sets.") }
         try applyDrafts(submitted, to: &value)
         value = try WorkoutEngine.toggleSet(
           in: value, entryIndex: currentEntry, setIndex: set, now: AppModel.now,
-          catalog: model.catalog)
+          catalog: model.catalog, rest: rest)
       }
       if saved {
         drafts = retainingUnacknowledgedDrafts(drafts, acknowledged: submitted)
@@ -433,10 +757,28 @@ struct WorkoutView: View {
         // field the user moved on to while the commit was in flight keeps its
         // keyboard: fields are no longer disabled by `busy`.
         if drafts.isEmpty, focusedField?.hasPrefix(rowKey + "-") == true { focusedField = nil }
-        validation = drafts.isEmpty ? nil : "Newer edits are still unsaved. Tap Done to save them."
-        if wasDone { model.haptic(.undone) } else { feedback += 1 }
+        validation = drafts.isEmpty ? nil : newerEditsIssue
+        if wasDone {
+          reopened.insert(rowKey)
+          model.haptic(.undone)
+        } else {
+          reopened.remove(rowKey)
+          feedback += 1
+          announceRestStarted(set: set)
+        }
       }
-    } catch { validation = error.localizedDescription }
+    } catch { flag(error) }
+  }
+
+  /// VoiceOver gets what the dock shows: a rest began, and for how long.
+  private func announceRestStarted(set: Int) {
+    guard let session = model.workspace?.active,
+      WorkoutEngine.isResting(session, now: AppModel.now)
+    else { return }
+    let seconds = Int(WorkoutEngine.remainingRest(session, now: AppModel.now))
+    AccessibilityNotification.Announcement(
+      "Set \(set + 1) done. Rest \(WorkoutClock.spoken(seconds, locale: locale))."
+    ).post()
   }
 
   private func addSet() async {
@@ -514,9 +856,12 @@ struct WorkoutView: View {
       },
       cancel: {
         guard !holdLog.isSaving else { return }
-        if let timer = hold { holdLog.cancel(timer.id) }
-        hold = nil
-        model.haptic(.stopped)
+        // Effort worth keeping is confirmed first; a mis-tap seconds in is not.
+        if holdLog.needsRetry || heldSeconds > 10 {
+          holdDiscardConfirmation = true
+        } else {
+          discardHold()
+        }
       },
       retry: {
         guard let timer = hold, let attempt = holdLog.attempt else { return }
@@ -553,7 +898,7 @@ struct WorkoutView: View {
     guard holdLog.acknowledged(attempt) else { return }
     if hold?.id == timer.id { hold = nil }
     drafts = retainingUnacknowledgedDrafts(drafts, acknowledged: submitted)
-    validation = drafts.isEmpty ? nil : "Newer edits are still unsaved. Tap Done to save them."
+    validation = drafts.isEmpty ? nil : newerEditsIssue
     feedback += 1
     // The web's audible cue: a short tone unless training sounds are muted.
     if model.workspace?.profile.muted == false { AudioServicesPlaySystemSound(1057) }
@@ -592,6 +937,7 @@ private struct LastSetLabel: View {
 
 private struct HoldTimerCard: View {
   @Environment(\.scenePhase) private var scenePhase
+  @Environment(\.locale) private var locale
   let name: String
   let setNumber: Int?
   let length: Int
@@ -639,10 +985,12 @@ private struct HoldTimerCard: View {
         Label("Hold timer", systemImage: "timer")
           .font(.subheadline.weight(.semibold)).foregroundStyle(FormaTheme.secondary)
         Spacer(minLength: 8)
-        Text(String(format: "%02d:%02d", shown / 60, shown % 60))
+        Text(WorkoutClock.text(shown, locale: locale))
           .font(.title.bold().monospacedDigit()).foregroundStyle(FormaTheme.primary)
           .modifier(NumericChange(value: shown, countsDown: true, perSecond: true))
-          .accessibilityLabel("\(shown) seconds \(hold == nil ? "hold" : "remaining")")
+          .accessibilityLabel(
+            "\(WorkoutClock.spoken(shown, locale: locale)) \(hold == nil ? "hold" : "remaining")"
+          )
           .accessibilityIdentifier("hold-remaining")
       }
       ViewThatFits(in: .horizontal) {
@@ -665,12 +1013,16 @@ private struct HoldTimerCard: View {
         .frame(minHeight: 44)
         .accessibilityIdentifier("hold-saving")
     } else if needsRetry {
-      Button("Retry save", action: retry)
-        .frame(minHeight: 44).buttonStyle(.borderedProminent)
-        .accessibilityIdentifier("hold-retry")
-      Button("Cancel timed set", action: cancel)
-        .frame(minHeight: 44).buttonStyle(.bordered)
-        .accessibilityIdentifier("hold-cancel")
+      Button(action: retry) {
+        Text("Retry save").frame(minHeight: 44).contentShape(Rectangle())
+      }
+      .buttonStyle(PrimaryButtonStyle())
+      .accessibilityIdentifier("hold-retry")
+      Button(action: cancel) {
+        Text("Cancel timed set").frame(minHeight: 44).contentShape(Rectangle())
+      }
+      .buttonStyle(.bordered)
+      .accessibilityIdentifier("hold-cancel")
     } else if let hold {
       let running = hold.endsAt != nil
       Button(action: running ? pause : resume) {
@@ -715,7 +1067,7 @@ private struct HoldTimerCard: View {
       Button(action: start) {
         Label("Start", systemImage: "play.fill").frame(minHeight: 44)
       }
-      .buttonStyle(.borderedProminent)
+      .buttonStyle(PrimaryButtonStyle())
       .disabled(setNumber == nil || otherHoldRunning)
       .accessibilityLabel(
         setNumber.map { "Start \(length)-second hold for \(name) set \($0)" }
@@ -801,25 +1153,40 @@ struct SetRow: View {
   let busy: Bool
   let focusedField: FocusState<String?>.Binding
   let key: String
+  /// Why this set can't be saved, shown under it with the field marked.
+  var issue: DraftIssue?
   let complete: () -> Void
 
   var body: some View {
-    Group {
-      if typeSize.isAccessibilitySize {
-        stackedRow
-      } else {
-        ViewThatFits(in: .horizontal) {
-          HStack(spacing: 10) {
-            setNumber
-            measurementFields
-            completionButton
-          }
-          .fixedSize(horizontal: true, vertical: false)
+    VStack(alignment: .leading, spacing: 10) {
+      Group {
+        if typeSize.isAccessibilitySize {
           stackedRow
+        } else {
+          ViewThatFits(in: .horizontal) {
+            HStack(spacing: 10) {
+              setNumber
+              measurementFields
+              completionButton
+            }
+            .fixedSize(horizontal: true, vertical: false)
+            stackedRow
+          }
         }
+      }
+      if let issue {
+        Label(issue.message, systemImage: "exclamationmark.circle")
+          .font(.footnote.weight(.medium)).foregroundStyle(FormaTheme.error)
+          .fixedSize(horizontal: false, vertical: true)
+          .accessibilityIdentifier("workout-validation")
       }
     }
     .padding(14).background(FormaTheme.surface, in: RoundedRectangle(cornerRadius: 18))
+    // One summary per set, then its fields and the complete control inside it.
+    .accessibilityElement(children: .contain)
+    .accessibilityLabel(
+      "Set \(index + 1), \(MeasurementText.summary(set, exercise: exercise)), "
+        + (set.done ? "done" : "not done"))
   }
 
   private var stackedRow: some View {
@@ -887,6 +1254,7 @@ struct SetRow: View {
         .contentTransition(symbolTransition)
         .foregroundStyle(set.done ? FormaTheme.ink : FormaTheme.accent)
         .frame(width: 56, height: 56)
+        .contentShape(Rectangle())
         .background(
           set.done ? FormaTheme.lime : FormaTheme.canvas, in: RoundedRectangle(cornerRadius: 14)
         )
@@ -912,6 +1280,7 @@ struct SetRow: View {
   private func field(_ label: String, value: Binding<String>, name: String) -> some View {
     let fieldID = "\(key)-\(name)"
     let isFocused = focusedField.wrappedValue == fieldID
+    let hasIssue = issue?.field == name
     return VStack(alignment: .leading, spacing: 6) {
       Text(label).font(.caption.weight(.semibold)).foregroundStyle(FormaTheme.secondary)
       TextField(label, text: value)
@@ -921,8 +1290,8 @@ struct SetRow: View {
         .background(FormaTheme.canvas, in: RoundedRectangle(cornerRadius: 10))
         .overlay {
           RoundedRectangle(cornerRadius: 10).stroke(
-            isFocused ? FormaTheme.accent : FormaTheme.fieldBorder,
-            lineWidth: isFocused ? 2 : 1)
+            hasIssue ? FormaTheme.error : isFocused ? FormaTheme.accent : FormaTheme.fieldBorder,
+            lineWidth: isFocused || hasIssue ? 2 : 1)
         }
         .focused(focusedField, equals: fieldID)
         // Ordinary completed rows are locked. A late pre-completion text event
@@ -940,6 +1309,7 @@ struct SetRow: View {
 
 struct ElapsedTime: View {
   @Environment(\.scenePhase) private var scenePhase
+  @Environment(\.locale) private var locale
   let startedAt: Double
   var body: some View {
     if scenePhase == .active {
@@ -951,9 +1321,9 @@ struct ElapsedTime: View {
 
   private func elapsed(at date: Date) -> some View {
     let seconds = max(0, Int(date.timeIntervalSince1970 - startedAt / 1_000))
-    return Text(String(format: "%02d:%02d", seconds / 60, seconds % 60))
+    return Text(WorkoutClock.text(seconds, locale: locale))
       .font(.subheadline.monospacedDigit()).foregroundStyle(FormaTheme.secondary)
-      .accessibilityLabel("Elapsed time, \(seconds / 60) minutes and \(seconds % 60) seconds")
+      .accessibilityLabel("Elapsed time, \(WorkoutClock.spoken(seconds, locale: locale))")
   }
 }
 
@@ -1003,10 +1373,10 @@ private struct RestRing: View {
 
   var body: some View {
     ZStack {
-      Circle().strokeBorder(Color.secondary.opacity(0.25), lineWidth: 3)
+      Circle().strokeBorder(FormaTheme.secondary.opacity(0.25), lineWidth: 3)
       Circle().inset(by: 1.5).trim(from: 0, to: progress)
         .stroke(
-          phase == .paused ? Color.secondary : FormaTheme.accent,
+          phase == .paused ? FormaTheme.secondary : FormaTheme.accent,
           style: StrokeStyle(lineWidth: 3, lineCap: .round)
         )
         .rotationEffect(.degrees(-90))
@@ -1026,10 +1396,48 @@ private struct RestRing: View {
   }
 }
 
+/// A save that failed, where the person is looking: above the rest dock, which
+/// stays on screen however far the sets have scrolled. It names what happened
+/// and is announced; the next successful save clears it.
+private struct SaveFailureBanner: View {
+  @Environment(AppModel.self) private var model
+
+  var body: some View {
+    Group {
+      if let failure = model.errorMessage {
+        HStack(alignment: .top, spacing: 10) {
+          Label(failure, systemImage: "exclamationmark.triangle.fill")
+            .font(.footnote.weight(.medium)).foregroundStyle(FormaTheme.error)
+            .fixedSize(horizontal: false, vertical: true)
+          Spacer(minLength: 0)
+          Button {
+            model.errorMessage = nil
+          } label: {
+            Text("Dismiss").font(.footnote.weight(.semibold))
+              .frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
+          }
+          .accessibilityIdentifier("workout-save-failure-dismiss")
+        }
+        .padding(.leading, 14).padding(.trailing, 4).padding(.vertical, 2)
+        .background(FormaTheme.surface, in: RoundedRectangle(cornerRadius: 14))
+        .overlay { RoundedRectangle(cornerRadius: 14).stroke(FormaTheme.error, lineWidth: 1) }
+        .padding(.horizontal, 16).padding(.top, 8)
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("workout-save-failure")
+      }
+    }
+    .task(id: model.errorMessage) {
+      if let failure = model.errorMessage { AccessibilityNotification.Announcement(failure).post() }
+    }
+  }
+}
+
 struct RestDock: View {
   @Environment(AppModel.self) private var model
   @Environment(\.scenePhase) private var scenePhase
   @Environment(\.formaMotion) private var motion
+  @Environment(\.dynamicTypeSize) private var typeSize
+  @Environment(\.locale) private var locale
   @ScaledMetric(relativeTo: .subheadline) private var ringSize = 22.0
   /// Counts rests that ran out while the dock was on screen. It changes exactly
   /// once per rest, so the haptic cannot fire again on a re-render.
@@ -1058,7 +1466,7 @@ struct RestDock: View {
             panel(session, at: .now)
           }
         }
-        .padding(16)
+        .padding(.horizontal, 16).padding(.vertical, 12)
         .formaControlSurface()
         .padding(.horizontal, 16).padding(.vertical, 8)
         .disabled(model.busy)
@@ -1074,7 +1482,8 @@ struct RestDock: View {
     // One cue when a rest that was counting down reaches zero in front of the
     // user: a haptic and a VoiceOver announcement. The deadline is the
     // persisted timestamp. A rest that ended while the app was suspended, or
-    // that was skipped, paused or extended, cues nothing.
+    // that was skipped, paused or extended, cues nothing here; the reminder
+    // notification (RestReminder) covers a rest that ends out of sight.
     .task(id: RestWatch(end: restEnd, active: active)) {
       guard active, let restEnd else { return }
       let wait = restEnd / 1_000 - Date.now.timeIntervalSince1970
@@ -1090,6 +1499,116 @@ struct RestDock: View {
     .sensoryFeedback(.impact(weight: .medium), trigger: restCue) { _, _ in model.hapticsEnabled }
   }
 
+  // MARK: Pieces
+
+  private func status(_ text: String, progress: Double, phase: RestPhase) -> some View {
+    Label {
+      Text(text).contentTransition(.opacity)
+    } icon: {
+      RestRing(progress: progress, phase: phase)
+        .frame(width: ringSize, height: ringSize)
+    }
+    .animation(motion.animation(FormaMotion.state), value: phase)
+    .font(.subheadline.weight(.semibold)).foregroundStyle(FormaTheme.secondary)
+    .accessibilityLabel(
+      phase == .paused ? "Rest paused" : phase == .over ? "Rest finished" : "Rest timer")
+  }
+
+  private func timer(_ remaining: Int, font: Font) -> some View {
+    ZStack(alignment: .trailing) {
+      Text("10:00").hidden().accessibilityHidden(true)
+      Text(WorkoutClock.text(remaining, locale: locale))
+        .modifier(NumericChange(value: remaining, countsDown: true, perSecond: true))
+        .accessibilityLabel("\(WorkoutClock.spoken(remaining, locale: locale)) remaining")
+        .accessibilityIdentifier("rest-remaining")
+    }
+    .font(font).foregroundStyle(FormaTheme.primary)
+  }
+
+  private func pauseOrResume(_ session: WorkoutSession) {
+    Task {
+      let resuming = session.restPaused != nil
+      let saved = await model.commit(forActiveSession: session.id) { value in
+        value =
+          value.active?.restPaused != nil
+          ? try WorkoutEngine.resumeRest(in: value, now: AppModel.now)
+          : try WorkoutEngine.pauseRest(in: value, now: AppModel.now)
+      }
+      if saved { model.haptic(resuming ? .started : .stopped) }
+    }
+  }
+
+  private func addFifteen(_ session: WorkoutSession) {
+    Task {
+      let saved = await model.commit(forActiveSession: session.id) {
+        $0 = try WorkoutEngine.adjustRest(in: $0, by: 15, now: AppModel.now)
+      }
+      if saved { model.haptic(.increased) }
+    }
+  }
+
+  private func skip(_ session: WorkoutSession, haptic: Bool = true) {
+    Task {
+      let saved = await model.commit(forActiveSession: session.id) {
+        $0 = try WorkoutEngine.skipRest(in: $0)
+      }
+      if saved, haptic { model.haptic(.stopped) }
+    }
+  }
+
+  /// The controls keep a 44 pt target inside the button's own label, so the
+  /// whole square answers a tap, not just the glyph.
+  private func pauseButton(_ session: WorkoutSession) -> some View {
+    let paused = session.restPaused != nil
+    return Button {
+      pauseOrResume(session)
+    } label: {
+      Image(systemName: paused ? "play.fill" : "pause.fill")
+        .contentTransition(motion.allowsSpatialMotion ? .symbolEffect(.replace) : .opacity)
+        .animation(motion.animation(FormaMotion.state), value: paused)
+        .frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
+    }
+    .accessibilityLabel(paused ? "Resume rest" : "Pause rest")
+    .accessibilityIdentifier("rest-toggle")
+  }
+
+  private func addButton(_ session: WorkoutSession) -> some View {
+    Button {
+      addFifteen(session)
+    } label: {
+      Text("+15").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
+    }
+    .accessibilityLabel("Add 15 seconds to rest")
+    .accessibilityIdentifier("rest-add")
+  }
+
+  private func skipButton(_ session: WorkoutSession) -> some View {
+    Button {
+      skip(session)
+    } label: {
+      Text("Skip").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
+    }
+    .accessibilityLabel("Skip rest")
+    .accessibilityIdentifier("rest-skip")
+  }
+
+  private func moreMenu(_ session: WorkoutSession) -> some View {
+    Menu {
+      Button(
+        session.restPaused != nil ? "Resume rest" : "Pause rest",
+        systemImage: session.restPaused != nil ? "play.fill" : "pause.fill"
+      ) { pauseOrResume(session) }
+      Button("Add 15 seconds", systemImage: "plus") { addFifteen(session) }
+    } label: {
+      Image(systemName: "ellipsis.circle").frame(minWidth: 44, minHeight: 44)
+        .contentShape(Rectangle())
+    }
+    .accessibilityLabel("More rest options")
+    .accessibilityIdentifier("rest-more")
+  }
+
+  // MARK: Layout
+
   private func panel(_ session: WorkoutSession, at date: Date) -> some View {
     let now = date.timeIntervalSince1970 * 1_000
     let remaining = Int(ceil(WorkoutEngine.remainingRest(session, now: now)))
@@ -1101,94 +1620,73 @@ struct RestDock: View {
     let exact = session.restEnd.map { max(0, ($0 - now) / 1_000) } ?? session.restPaused ?? 0
     let lead = phase == .running && motion.allowsSpatialMotion ? max(0, exact - 1) : exact
     let progress = min(1, lead / Double(max(1, session.restSeconds)))
-    return VStack(alignment: .leading, spacing: compact ? 0 : 12) {
-      AdaptiveMetricGroup {
-        Label {
-          if compact {
-            Text("Rest")
-          } else {
-            ZStack(alignment: .leading) {
-              // Reserve the longest status so expiry doesn't move the logger.
-              Text("Ready when you are").hidden().accessibilityHidden(true)
-              Text(
-                phase == .over
-                  ? "Ready when you are" : phase == .paused ? "Rest paused" : "Rest"
-              )
-              .contentTransition(.opacity)
-            }
+    let label = phase == .paused ? "Rest paused" : "Rest"
+    return Group {
+      if phase == .over {
+        // A finished rest keeps one compact row and one way to clear it.
+        ViewThatFits(in: .horizontal) {
+          HStack(spacing: 10) {
+            status("Rest done", progress: progress, phase: phase)
+            Spacer(minLength: 8)
+            dismissButton(session)
           }
-        } icon: {
-          RestRing(progress: progress, phase: phase)
-            .frame(width: ringSize, height: ringSize)
+          VStack(alignment: .leading, spacing: 4) {
+            status("Rest done", progress: progress, phase: phase)
+            dismissButton(session)
+          }
         }
-        .animation(motion.animation(FormaMotion.state), value: phase)
-        .font(.subheadline.weight(.semibold)).foregroundStyle(.secondary)
-        .accessibilityLabel(
-          session.restPaused != nil
-            ? "Rest paused" : remaining == 0 ? "Rest finished" : "Rest timer")
-        ZStack(alignment: .trailing) {
-          Text("10:00").hidden().accessibilityHidden(true)
-          Text(String(format: "%01d:%02d", remaining / 60, remaining % 60))
-            .modifier(NumericChange(value: remaining, countsDown: true, perSecond: true))
-            .accessibilityLabel("\(remaining / 60) minutes, \(remaining % 60) seconds remaining")
-            .accessibilityIdentifier("rest-remaining")
-        }
-        .font(compact ? .headline.monospacedDigit() : .title.bold().monospacedDigit())
-        .foregroundStyle(.primary)
-      }
-      if !compact {
+      } else if compact {
         AdaptiveMetricGroup {
-          Button {
-            Task {
-              let resuming = session.restPaused != nil
-              let saved = await model.commit(forActiveSession: session.id) { value in
-                value =
-                  value.active?.restPaused != nil
-                  ? try WorkoutEngine.resumeRest(in: value, now: AppModel.now)
-                  : try WorkoutEngine.pauseRest(in: value, now: AppModel.now)
-              }
-              if saved { model.haptic(resuming ? .started : .stopped) }
-            }
-          } label: {
-            let paused = session.restPaused != nil
-            Label {
-              // Reserve the wider word so Add 15 and Skip don't shift.
-              ZStack(alignment: .leading) {
-                Text("Resume").hidden().accessibilityHidden(true)
-                Text(paused ? "Resume" : "Pause")
-              }
-            } icon: {
-              Image(systemName: paused ? "play.fill" : "pause.fill")
-            }
-            .contentTransition(motion.allowsSpatialMotion ? .symbolEffect(.replace) : .opacity)
-            .animation(motion.animation(FormaMotion.state), value: paused)
-            .frame(minWidth: 44, minHeight: 44)
-          }
-          .accessibilityLabel(session.restPaused != nil ? "Resume rest" : "Pause rest")
-          .accessibilityIdentifier("rest-toggle")
-          Button {
-            Task {
-              let saved = await model.commit(forActiveSession: session.id) {
-                $0 = try WorkoutEngine.adjustRest(in: $0, by: 15, now: AppModel.now)
-              }
-              if saved { model.haptic(.increased) }
-            }
-          } label: {
-            Label("15 sec", systemImage: "plus").frame(minWidth: 44, minHeight: 44)
-          }
-          .accessibilityLabel("Add 15 seconds to rest")
-          Button("Skip") {
-            Task {
-              let saved = await model.commit(forActiveSession: session.id) {
-                $0 = try WorkoutEngine.skipRest(in: $0)
-              }
-              if saved { model.haptic(.stopped) }
-            }
-          }.frame(minWidth: 44, minHeight: 44).accessibilityLabel("Skip rest")
+          status("Rest", progress: progress, phase: phase)
+          timer(remaining, font: .headline.monospacedDigit())
         }
-        .font(.subheadline.weight(.semibold)).buttonStyle(.plain).foregroundStyle(.primary)
+      } else if typeSize.isAccessibilitySize {
+        // The timer and the one action that matters stay; the rest go in a menu.
+        VStack(alignment: .leading, spacing: 8) {
+          status(label, progress: progress, phase: phase)
+          timer(remaining, font: .title.bold().monospacedDigit())
+          HStack(spacing: 12) {
+            skipButton(session)
+            moreMenu(session)
+          }
+        }
+      } else {
+        ViewThatFits(in: .horizontal) {
+          HStack(spacing: 8) {
+            status(label, progress: progress, phase: phase)
+            Spacer(minLength: 8)
+            timer(remaining, font: .title2.bold().monospacedDigit())
+            pauseButton(session)
+            addButton(session)
+            skipButton(session)
+          }
+          VStack(alignment: .leading, spacing: 4) {
+            HStack {
+              status(label, progress: progress, phase: phase)
+              Spacer(minLength: 8)
+              timer(remaining, font: .title2.bold().monospacedDigit())
+            }
+            HStack(spacing: 8) {
+              pauseButton(session)
+              addButton(session)
+              skipButton(session)
+              Spacer(minLength: 0)
+            }
+          }
+        }
       }
     }
+    .font(.subheadline.weight(.semibold)).buttonStyle(.plain)
+  }
+
+  private func dismissButton(_ session: WorkoutSession) -> some View {
+    Button {
+      skip(session, haptic: false)
+    } label: {
+      Text("Dismiss").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
+    }
+    .foregroundStyle(FormaTheme.primary)
+    .accessibilityIdentifier("rest-dismiss")
   }
 }
 
@@ -1208,7 +1706,7 @@ struct SessionNotesView: View {
             .accessibilityLabel("Session notes")
             .accessibilityIdentifier("session-notes-editor")
           Text("\(notes.utf16.count) / 10,000 characters").font(.caption).foregroundStyle(
-            .secondary)
+            FormaTheme.secondary)
         }
         Text("Keep notes about your training. FORMA doesn't provide medical advice.").font(
           .footnote)
