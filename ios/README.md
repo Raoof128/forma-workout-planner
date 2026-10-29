@@ -86,8 +86,11 @@ python3 scripts/check-ios-widget-bundle.py /path/to/FORMA.app
 ```
 
 This validates embedding, manifest, entitlement declarations, signature and
-absence of SQLite/HealthKit widget linkage. It is not a device-lock/privacy or
-App Store archive validation. ActivityKit and Watch complications are scoped in
+absence of SQLite/HealthKit widget linkage, plus the workout Live Activity contract
+(`NSSupportsLiveActivities`, the widget bundle, local-only requests). It is not a
+device-lock/privacy or App Store archive validation. The workout Live Activity
+(Lock Screen, Dynamic Island, StandBy, Watch Smart Stack) and its remaining device
+gates, and the deferred Watch complications, are in
 [the architecture decision](docs/audits/frontend-widget-2026-10/WIDGETKIT_ARCHITECTURE.md).
 
 ## Hold timer

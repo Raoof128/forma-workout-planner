@@ -73,16 +73,50 @@ def check_link_contract(app_info):
 
 
 def check_widget_declaration(widget_info):
-    """The extension must stay a plain widget: declared families, one kind, no Live Activities."""
+    """TrainingWidget keeps its six families and one kind; the bundle adds the workout Live Activity."""
     declaration = source("FORMAWidgets/TrainingWidget.swift")
     block = re.search(r"supportedFamilies\(\[(.*?)\]\)", declaration, re.DOTALL)
     assert block, "TrainingWidget no longer declares supportedFamilies"
     families = set(re.findall(r"\.(system\w+|accessory\w+)", block.group(1)))
     assert families == FAMILIES, f"Supported widget families changed: {sorted(families)}"
-    assert "NSSupportsLiveActivities" not in widget_info
+    assert len(re.findall(r"AppIntentConfiguration\(", declaration)) == 1, "TrainingWidget has one kind"
+    assert "@main" not in declaration, "@main moved to the WidgetBundle; TrainingWidget must not have it"
     kind = re.search(
         r'static let kind = "([^"]+)"', source("Sources/FORMASurfaces/TrainingSnapshot.swift"))
     assert kind and kind.group(1) == "dev.raoufabedini.forma.training", "Widget kind changed"
+    # NSSupportsLiveActivities belongs to the host app (checked in `check_live_activity`), not the extension.
+    assert "NSSupportsLiveActivities" not in widget_info
+
+
+def check_live_activity(app_info):
+    """The extension now intentionally holds one workout Live Activity, local only and bundled."""
+    assert app_info.get("NSSupportsLiveActivities") is True, (
+        "The app Info.plist must set NSSupportsLiveActivities to true"
+    )
+    # Frequent updates and push stay out: there is no server, and the app sends nothing per second.
+    assert "NSSupportsLiveActivitiesFrequentUpdates" not in app_info
+    bundle = source("FORMAWidgets/FORMAWidgetBundle.swift")
+    assert re.search(r":\s*WidgetBundle\b", bundle), "The extension no longer declares a WidgetBundle"
+    assert len(re.findall(r"@main\b", bundle)) == 1, "Exactly one @main entry point is expected"
+    for name in ("TrainingWidget()", "WorkoutLiveActivity()"):
+        assert name in bundle, f"The widget bundle no longer lists {name}"
+    for path in pathlib.Path(SOURCES, "FORMAWidgets").glob("*.swift"):
+        if path.name != "FORMAWidgetBundle.swift":
+            assert "@main" not in path.read_text(encoding="utf-8"), f"{path.name} must not declare @main"
+    live = source("FORMAWidgets/WorkoutLiveActivity.swift")
+    assert "ActivityConfiguration(for: WorkoutActivityAttributes.self)" in live
+    # iOS 18 only: the compact family must stay behind an availability check on a 17.0 target.
+    assert re.search(r"@available\(iOS 18\.0, \*\)\s*struct WorkoutLiveActivityWithSmallFamily", live)
+    assert live.count("supplementalActivityFamilies") == 2  # the doc comment and the one call
+    # The app starts activities locally: no push token, and none of the newer-than-26.2 symbols.
+    controller = source("FORMA/App/WorkoutLiveActivityController.swift")
+    assert "pushType: nil" in controller, "Live Activities must be local only (no push)"
+    for folder in ("WidgetPresentation", "FORMAWidgets", "FORMA/App"):
+        for file in (SOURCES / folder).glob("*.swift"):
+            text = file.read_text(encoding="utf-8")
+            assert "isDynamicIslandLimitedInWidth" not in text, (
+                f"{file.name} uses an iOS 27 symbol; CI builds with the iOS 26.2 SDK"
+            )
 
 
 def main():
@@ -95,6 +129,7 @@ def main():
     assert info["MinimumOSVersion"] == "17.0"
     check_link_contract(read_plist(app / "Info.plist"))
     check_widget_declaration(info)
+    check_live_activity(read_plist(app / "Info.plist"))
     group = "group.dev.raoufabedini.forma"
     assert group in entitlements(app)["com.apple.security.application-groups"]
     signed = entitlements(widget)
@@ -114,7 +149,7 @@ def main():
     print(json.dumps({"extension": info["CFBundleIdentifier"], "minimum_iOS": "17.0",
                       "protected_group": True, "no_database_or_health_link": True,
                       "embedded_signature": "verified", "link_scheme": "forma",
-                      "families": sorted(FAMILIES)}, indent=2))
+                      "families": sorted(FAMILIES), "live_activity": "local, bundled"}, indent=2))
 
 
 if __name__ == "__main__":
