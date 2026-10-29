@@ -46,7 +46,6 @@ struct RootView: View {
   @Environment(AppModel.self) private var model
   @Environment(\.formaMotion) private var motion
   @State private var navigation = TrainingNavigation()
-  @State private var todayPath: [String] = []
   @State private var workoutCoverVisible = false
   @State private var widgetNavigationIDs: [TrainingTab: UUID] = [:]
 
@@ -58,37 +57,10 @@ struct RootView: View {
       // logged set and would rebuild this whole tree each time.
       if model.hasWorkspace {
         TabView(selection: $navigation.selection) {
-          NavigationStack(path: $todayPath) {
-            TodayView()
-              .navigationDestination(for: String.self) { id in
-                if let routine = model.routines.first(where: { $0.id == id }) {
-                  RoutineDetailView(routine: routine)
-                } else {
-                  ContentUnavailableView(
-                    "Routine unavailable", systemImage: "square.stack",
-                    description: Text("Return to Plan to choose a current routine."))
-                }
-              }
-          }
-          .id(widgetNavigationIDs[.today])
-          .toolbar(.hidden, for: .tabBar)
-          .tabItem { Label("Today", systemImage: "sun.max") }
-          .tag(TrainingTab.today)
-          NavigationStack { PlanView() }
-            .id(widgetNavigationIDs[.plan])
-            .toolbar(.hidden, for: .tabBar)
-            .tabItem { Label("Plan", systemImage: "square.stack") }
-            .tag(TrainingTab.plan)
-          NavigationStack { ProgressViewScreen() }
-            .id(widgetNavigationIDs[.progress])
-            .toolbar(.hidden, for: .tabBar)
-            .tabItem { Label("Progress", systemImage: "chart.xyaxis.line") }
-            .tag(TrainingTab.progress)
-          NavigationStack { YouView() }
-            .id(widgetNavigationIDs[.you])
-            .toolbar(.hidden, for: .tabBar)
-            .tabItem { Label("You", systemImage: "person.crop.circle") }
-            .tag(TrainingTab.you)
+          tabStack(.today) { TodayView() }
+          tabStack(.plan) { PlanView() }
+          tabStack(.progress) { ProgressViewScreen() }
+          tabStack(.you) { YouView() }
         }
         .toolbar(.hidden, for: .tabBar)
         // A different owner (guest or a member) starts every screen afresh, so
@@ -163,7 +135,7 @@ struct RootView: View {
     .background { FormaHapticRelay() }
     .environment(navigation)
     .onChange(of: model.storeIdentity) { _, _ in
-      todayPath = []
+      navigation.popAllToRoot()
       navigation.select(.today)
     }
     .onChange(of: model.widgetRoute) { handleWidgetRoute() }
@@ -172,7 +144,7 @@ struct RootView: View {
     .onChange(of: model.busy) { handleWidgetRoute() }
     .onAppear { handleWidgetRoute() }
     .alert(
-      "Widget updated",
+      "Link unavailable",
       isPresented: Binding(
         get: { model.widgetNotice != nil }, set: { if !$0 { model.widgetNotice = nil } }
       )
@@ -197,8 +169,25 @@ struct RootView: View {
     }
   }
 
+  /// One tab: its own navigation stack, bound to the path the tab bar can clear.
+  private func tabStack<Root: View>(
+    _ tab: TrainingTab, @ViewBuilder root: () -> Root
+  ) -> some View {
+    let path = Binding(
+      get: { navigation.paths[tab] ?? [] }, set: { navigation.paths[tab] = $0 })
+    return NavigationStack(path: path) {
+      root().trainingDestinations()
+    }
+    .id(widgetNavigationIDs[tab])
+    .toolbar(.hidden, for: .tabBar)
+    .tabItem { Label(tab.title, systemImage: tab.symbol) }
+    .tag(tab)
+  }
+
   private func openWidgetTab(_ tab: TrainingTab) {
     widgetNavigationIDs[tab] = UUID()
+    // The stack is rebuilt, so a path left from before would push again.
+    navigation.paths[tab] = []
     navigation.select(tab)
   }
 
@@ -218,20 +207,21 @@ struct RootView: View {
     model.widgetRoute = nil
     switch destination {
     case .today:
-      todayPath = []
       openWidgetTab(.today)
     case .plan: openWidgetTab(.plan)
     case .progress: openWidgetTab(.progress)
-    case .settings: openWidgetTab(.you)
+    case .settings:
+      // The widget's "Enable widgets in You" prompt: land on the sharing toggle.
+      navigation.youFocus = .widgetSharing
+      openWidgetTab(.you)
     case .routine(let id):
       openWidgetTab(.today)
-      todayPath = [id]
+      navigation.paths[.today] = [.routine(id)]
     case .active:
       model.receipt = nil
       model.workoutPresented = true
     case .unavailable:
       openWidgetTab(.today)
-      todayPath = []
       model.widgetNotice =
         "That saved item is no longer available for this training space. Choose a current routine in Plan."
     }
@@ -243,14 +233,32 @@ private struct ActiveTrainingAccessory: ViewModifier {
 
   func body(content: Content) -> some View {
     content.safeAreaInset(edge: .bottom, spacing: 0) {
-      VStack(spacing: 4) {
-        if let name = model.activeWorkoutName {
-          ResumeTrainingControl(name: name)
-            .formaControlSurface(cornerRadius: 20)
+      // One container, so the two glass surfaces 4pt apart sample the same
+      // backdrop and never merge (the container spacing is below the gap).
+      GlassGroup(spacing: 2) {
+        VStack(spacing: 4) {
+          if let name = model.activeWorkoutName {
+            ResumeTrainingControl(name: name)
+              .formaControlSurface(cornerRadius: 20)
+          }
+          TrainingTabBar()
         }
-        TrainingTabBar()
       }
       .padding(.horizontal, 16).padding(.top, 4).padding(.bottom, 4)
+    }
+  }
+}
+
+/// Adjacent Liquid Glass surfaces share a `GlassEffectContainer` on iOS 26.
+private struct GlassGroup<Content: View>: View {
+  let spacing: CGFloat
+  @ViewBuilder let content: Content
+
+  var body: some View {
+    if #available(iOS 26.0, *) {
+      GlassEffectContainer(spacing: spacing) { content }
+    } else {
+      content
     }
   }
 }
@@ -269,14 +277,14 @@ private struct ResumeTrainingControl: View {
       HStack(spacing: 12) {
         Image(systemName: "figure.strengthtraining.traditional").font(.title3)
         VStack(alignment: .leading, spacing: 2) {
-          Text("Workout in progress").font(.caption).foregroundStyle(.secondary)
+          Text("Workout in progress").font(.caption).foregroundStyle(FormaTheme.secondary)
           Text(name).font(.subheadline.weight(.semibold))
             .lineLimit(textSize.isAccessibilitySize ? nil : 1)
         }
         Spacer(minLength: 4)
         Image(systemName: "play.fill").font(.body.weight(.semibold))
       }
-      .foregroundStyle(.primary)
+      .foregroundStyle(FormaTheme.primary)
       .padding(.horizontal, 16).padding(.vertical, 10)
       .frame(maxWidth: .infinity, minHeight: 56, alignment: .leading)
       .contentShape(Rectangle())

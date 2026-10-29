@@ -9,7 +9,7 @@ struct ProgressViewScreen: View {
     let history = model.history
     ScrollView {
       VStack(alignment: .leading, spacing: 28) {
-        EditorialTitle(text: "The work adds up.")
+        EditorialTitle(text: "The work adds up.").id(TabScrollAnchor.top)
         if history.isEmpty {
           ContentUnavailableView {
             Label("Every first set counts.", systemImage: "chart.xyaxis.line")
@@ -22,17 +22,16 @@ struct ProgressViewScreen: View {
         } else {
           let sets = history.reduce(0) { $0 + completedSets(in: $1) }
           AdaptiveMetricGroup {
-            MetricValue(value: "\(history.count)", label: "Workouts")
-            MetricValue(value: "\(sets)", label: "Completed sets")
+            MetricValue(
+              value: "\(history.count)", label: history.count == 1 ? "Workout" : "Workouts")
+            MetricValue(value: "\(sets)", label: sets == 1 ? "Completed set" : "Completed sets")
           }
           .formaReveal(order: 0)
           VolumeChart(sessions: Array(history.prefix(8).reversed()))
           LazyVStack(alignment: .leading, spacing: 8) {
             SectionHeading(title: "Your training journal", detail: "Latest first")
             ForEach(history) { session in
-              NavigationLink {
-                SessionDetailView(session: session)
-              } label: {
+              NavigationLink(value: TrainingRoute.session(session.id)) {
                 JournalRow(session: session)
               }
               Divider()
@@ -42,7 +41,7 @@ struct ProgressViewScreen: View {
       }.padding(24)
     }
     .navigationTitle("Progress").navigationBarTitleDisplayMode(.inline)
-    .formaTabScrollObserver()
+    .formaTabRoot(.progress)
     .background(FormaTheme.canvas)
   }
 }
@@ -67,14 +66,14 @@ private struct JournalRow: View {
         ).foregroundStyle(FormaTheme.secondary)
         Text(session.name).font(.headline).foregroundStyle(FormaTheme.primary)
         Text(
-          "\(completedSets(in: session)) completed sets · \(Int((session.duration ?? 0) / 60)) min"
+          "\(countPhrase(completedSets(in: session), "completed set")) · \(Int((session.duration ?? 0) / 60)) min"
         )
         .font(.subheadline).foregroundStyle(FormaTheme.secondary)
       }
       Spacer()
       Image(systemName: "chevron.right").foregroundStyle(FormaTheme.secondary)
     }
-    .padding(.vertical, 16)
+    .padding(.vertical, 16).contentShape(Rectangle())
   }
 }
 
@@ -107,6 +106,8 @@ struct MetricValue: View {
 struct VolumeChart: View {
   @Environment(AppModel.self) private var model
   @Environment(\.formaMotion) private var motion
+  @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+  @Environment(\.dynamicTypeSize) private var textSize
   @ScaledMetric(relativeTo: .body) private var chartHeight = 200.0
   /// Flips once, when the chart first has data on screen. Only the chart's
   /// opacity follows it; bar heights are always the real volumes.
@@ -147,7 +148,7 @@ struct VolumeChart: View {
         .accessibilityValue(Text("\(bar.volume.formatted()) kilogram repetitions"))
       }
       .chartXAxis {
-        AxisMarks(values: Array(bars.indices)) { value in
+        AxisMarks(values: labelledBars(count: bars.count)) { value in
           AxisValueLabel {
             if let index = value.as(Int.self), bars.indices.contains(index) {
               Text(bars[index].date).font(.caption2)
@@ -167,7 +168,9 @@ struct VolumeChart: View {
         guard !marksShown else { return }
         withFormaAnimation(motion, FormaMotion.reveal) { marksShown = true }
       }
-      .accessibilityLabel("Lifting volume over your latest \(sessions.count) workouts")
+      .accessibilityLabel(
+        "Lifting volume over your latest \(countPhrase(sessions.count, "workout"))"
+      )
       .accessibilityValue(Self.summary(bars, peak: peak))
       .accessibilityIdentifier("lifting-volume-chart")
       Text("Completed lifting sets only. Time, distance and carries are excluded.")
@@ -194,6 +197,17 @@ struct VolumeChart: View {
     .padding(20).background(FormaTheme.surface, in: RoundedRectangle(cornerRadius: 20))
   }
 
+  /// The bars that get a date under them: at most about four on a narrow screen
+  /// or at large text sizes, always including the newest, so labels don't collide.
+  private func labelledBars(count: Int) -> [Int] {
+    let crowded = horizontalSizeClass == .compact || textSize.isAccessibilitySize
+    guard crowded, count > Self.maximumLabels else { return Array(0..<count) }
+    let step = (count + Self.maximumLabels - 1) / Self.maximumLabels
+    return Array(stride(from: count - 1, through: 0, by: -step).reversed())
+  }
+
+  private static let maximumLabels = 4
+
   /// One spoken overview of the real values: the newest bar and the highest.
   /// Each bar is still reachable on its own with its date, name and volume.
   private static func summary(_ bars: [Bar], peak: Double) -> Text {
@@ -211,6 +225,10 @@ struct SessionDetailView: View {
 
   init(session: WorkoutSession) {
     sessionID = session.id
+  }
+
+  init(sessionID: String) {
+    self.sessionID = sessionID
   }
 
   var body: some View {

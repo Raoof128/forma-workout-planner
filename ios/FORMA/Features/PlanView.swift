@@ -4,35 +4,29 @@ import SwiftUI
 struct PlanView: View {
   @Environment(AppModel.self) private var model
   @State private var creating = false
+  @Environment(\.dynamicTypeSize) private var textSize
+  @Environment(\.verticalSizeClass) private var verticalSizeClass
+  private var showsHeader: Bool { !textSize.isAccessibilitySize && verticalSizeClass != .compact }
 
   var body: some View {
     // `routines` filters the workspace on every read; read it once per render.
     let routines = model.routines
     let storedRoutineCount = model.workspace?.routines.count ?? 0
     List {
-      Section {
-        VStack(alignment: .leading, spacing: 12) {
-          Text("YOUR TRAINING, YOUR WAY").font(.caption.weight(.bold)).tracking(2)
-            .foregroundStyle(FormaTheme.accent)
-          EditorialTitle(text: "A little structure.\nA lot of possibility.")
-            .foregroundStyle(FormaTheme.primary)
-          Text(
-            "Build a session that fits you. Every routine and technique guide stays available offline."
-          )
-          .font(.subheadline).foregroundStyle(FormaTheme.secondary)
-        }
-        .padding(.vertical, 14)
-        .listRowBackground(Color.clear)
-        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-      }
-
-      Section {
-        ExerciseLibraryLink()
-        NavigationLink {
-          TrainingDaysView()
-        } label: {
-          Label("Training days", systemImage: "calendar")
-            .padding(.vertical, 8)
+      // The session task comes first on a small or large-text screen, as on
+      // Today: the marketing header gives way and the routines start at the top.
+      if showsHeader {
+        Section {
+          VStack(alignment: .leading, spacing: 8) {
+            Text("YOUR TRAINING, YOUR WAY").font(.caption.weight(.bold)).tracking(2)
+              .foregroundStyle(FormaTheme.accent)
+            EditorialTitle(text: "A little structure.\nA lot of possibility.")
+              .foregroundStyle(FormaTheme.primary)
+          }
+          .padding(.top, 4).padding(.bottom, 8)
+          .id(TabScrollAnchor.top)
+          .listRowBackground(Color.clear)
+          .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
         }
       }
 
@@ -43,9 +37,7 @@ struct PlanView: View {
             description: Text("Choose your exercises, set your targets, and make it yours."))
         }
         ForEach(routines) { routine in
-          NavigationLink {
-            RoutineDetailView(routine: routine)
-          } label: {
+          NavigationLink(value: TrainingRoute.routine(routine.id)) {
             RoutinePlanRow(routine: routine)
           }
         }
@@ -59,18 +51,27 @@ struct PlanView: View {
         .accessibilityIdentifier("create-routine")
       } header: {
         Text("My routines · \(routines.count)")
+          .id(showsHeader ? "plan.routines" : TabScrollAnchor.top)
       } footer: {
         if storedRoutineCount >= 200 {
           Text("Your workspace holds up to 200 routines. Remove one before adding another.")
         } else {
           Text(
-            "Starter loads are editable examples. Choose a comfortable load and progress at your own pace."
+            "Starter loads are editable examples. Choose a comfortable load and progress at your own pace. Every routine and technique guide stays available offline."
           )
+        }
+      }
+
+      Section {
+        ExerciseLibraryLink()
+        NavigationLink(value: TrainingRoute.trainingDays) {
+          Label("Training days", systemImage: "calendar")
+            .padding(.vertical, 8)
         }
       }
     }
     .scrollContentBackground(.hidden)
-    .formaTabScrollObserver()
+    .formaTabRoot(.plan)
     .background(FormaTheme.canvas)
     .navigationTitle("Plan")
     .navigationBarTitleDisplayMode(.inline)
@@ -88,9 +89,7 @@ private struct ExerciseLibraryLink: View {
   var body: some View {
     // Lazy count: no 1,700-element array copy just to read `count`.
     let movementCount = model.catalog.lazy.filter(\.selectable).count
-    NavigationLink {
-      ExerciseLibraryView()
-    } label: {
+    NavigationLink(value: TrainingRoute.exerciseLibrary) {
       Label {
         VStack(alignment: .leading, spacing: 4) {
           Text("Exercise library").font(.headline)
@@ -130,7 +129,7 @@ private struct RoutinePlanRow: View {
           .lineLimit(2)
       }
       Label(
-        "\(routine.exercises.count) exercises · \(routine.minutes) min",
+        "\(countPhrase(routine.exercises.count, "exercise")) · \(routine.minutes) min",
         systemImage: "square.stack.3d.up"
       )
       .font(.caption).foregroundStyle(FormaTheme.accent)
@@ -152,6 +151,10 @@ struct RoutineDetailView: View {
 
   init(routine: Routine) {
     routineID = routine.id
+  }
+
+  init(routineID: String) {
+    self.routineID = routineID
   }
 
   var body: some View {
@@ -195,9 +198,7 @@ struct RoutineDetailView: View {
           Section("Exercise by exercise") {
             ForEach(Array(current.exercises.enumerated()), id: \.element.id) { index, entry in
               if let exercise = model.exercise(entry.exerciseId) {
-                NavigationLink {
-                  GuideView(exercise: exercise)
-                } label: {
+                NavigationLink(value: TrainingRoute.guide(exercise.id)) {
                   HStack(alignment: .top, spacing: 14) {
                     Text(String(format: "%02d", index + 1))
                       .font(.system(.title3, design: .monospaced).weight(.semibold))
@@ -397,7 +398,7 @@ private struct RoutineEditorView: View {
     }
     .navigationDestination(isPresented: $choosingExercise) {
       ExerciseLibraryView { exercise in
-        guard draft.exercises.count < 100 else { return }
+        guard draft.exercises.count < 100 else { return false }
         let defaults = exercise.defaults
         draft.exercises.append(
           Prescription(
@@ -406,7 +407,8 @@ private struct RoutineEditorView: View {
             durationSeconds: defaults.durationSeconds, distanceMeters: defaults.distanceMeters,
             perSide: defaults.perSide
           ))
-        choosingExercise = false
+        // The picker stays open so several exercises can be added in one visit.
+        return true
       }
     }
   }
@@ -723,7 +725,14 @@ private struct SearchHits: Sendable {
 
 struct ExerciseLibraryView: View {
   @Environment(AppModel.self) private var model
-  var onSelect: ((Exercise) -> Void)? = nil
+  /// Picker mode: choosing an exercise calls this, which returns whether it was
+  /// added. The screen stays open until Done, so several can be added at once.
+  var onSelect: ((Exercise) -> Bool)? = nil
+  @Environment(\.dismiss) private var dismiss
+  /// How many times each exercise was added during this visit to the picker.
+  @State private var added: [String: Int] = [:]
+  @State private var addNotice: String?
+  @State private var guideExercise: Exercise?
   @State private var query = ""
   @State private var muscle = "All muscles"
   @State private var equipment = "All equipment"
@@ -758,6 +767,9 @@ struct ExerciseLibraryView: View {
           Text("All equipment").tag("All equipment")
           ForEach(index.equipmentTypes, id: \.self) { Text($0).tag($0) }
         }
+        if let addNotice {
+          Text(addNotice).font(.footnote).foregroundStyle(FormaTheme.error)
+        }
         if muscle != "All muscles" || equipment != "All equipment" || !query.isEmpty {
           Button("Clear search & filters") {
             query = ""
@@ -767,31 +779,48 @@ struct ExerciseLibraryView: View {
           .frame(minHeight: 44)
         }
       }
-      Section("\(matches.count.formatted()) \(matches.count == 1 ? "exercise" : "exercises")") {
+      Section(countPhrase(matches.count, "exercise")) {
         if matches.isEmpty {
           ContentUnavailableView.search(text: query)
         }
         ForEach(matches) { exercise in
           if let onSelect {
-            HStack(alignment: .center, spacing: 12) {
-              NavigationLink {
-                GuideView(exercise: exercise)
-              } label: {
-                ExerciseLibraryRow(exercise: exercise)
-              }
+            // The whole row adds; the technique guide is the trailing control.
+            HStack(alignment: .center, spacing: 4) {
               Button {
-                onSelect(exercise)
+                add(exercise, using: onSelect)
               } label: {
-                Image(systemName: "plus.circle.fill").font(.title2)
-                  .frame(minWidth: 44, minHeight: 44)
+                HStack(spacing: 12) {
+                  ExerciseLibraryRow(exercise: exercise)
+                  Spacer(minLength: 0)
+                  if let count = added[exercise.id] {
+                    Label(count == 1 ? "Added" : "Added \(count) times", systemImage: "checkmark")
+                      .font(.caption.weight(.semibold)).foregroundStyle(FormaTheme.accent)
+                  } else {
+                    Image(systemName: "plus.circle.fill").font(.title2)
+                      .foregroundStyle(FormaTheme.accent)
+                  }
+                }
+                .frame(minHeight: 44).contentShape(Rectangle())
               }
               .buttonStyle(.borderless)
-              .accessibilityLabel("Add \(exercise.name)")
+              .accessibilityElement(children: .ignore)
+              .accessibilityLabel("Add \(exercise.name), \(exercise.muscle), \(exercise.equipment)")
+              .accessibilityValue(
+                added[exercise.id].map { $0 == 1 ? "Added" : "Added \($0) times" } ?? ""
+              )
+              .accessibilityHint("Adds it to this routine.")
+              Button {
+                guideExercise = exercise
+              } label: {
+                Image(systemName: "info.circle").font(.title3)
+                  .frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
+              }
+              .buttonStyle(.borderless)
+              .accessibilityLabel("Technique guide for \(exercise.name)")
             }
           } else {
-            NavigationLink {
-              GuideView(exercise: exercise)
-            } label: {
+            NavigationLink(value: TrainingRoute.guide(exercise.id)) {
               ExerciseLibraryRow(exercise: exercise)
             }
           }
@@ -809,6 +838,20 @@ struct ExerciseLibraryView: View {
     .accessibilityIdentifier(onSelect == nil ? "exercise-library" : "exercise-picker")
     .navigationTitle(onSelect == nil ? "Exercise library" : "Add exercise")
     .navigationBarTitleDisplayMode(.inline)
+    .toolbar {
+      if onSelect != nil {
+        ToolbarItem(placement: .confirmationAction) {
+          let total = added.values.reduce(0, +)
+          Button(total > 0 ? "Done (\(total))" : "Done") { dismiss() }
+            .accessibilityIdentifier("exercise-picker-done")
+        }
+      }
+    }
+    .navigationDestination(
+      isPresented: Binding(get: { guideExercise != nil }, set: { if !$0 { guideExercise = nil } })
+    ) {
+      if let guideExercise { GuideView(exercise: guideExercise) }
+    }
     .scrollContentBackground(.hidden)
     .background(FormaTheme.canvas)
     .task(id: model.catalog.count) {
@@ -819,6 +862,18 @@ struct ExerciseLibraryView: View {
       hits = nil
     }
     .task(id: query) { await refreshHits() }
+  }
+
+  private func add(_ exercise: Exercise, using onSelect: (Exercise) -> Bool) {
+    if onSelect(exercise) {
+      added[exercise.id, default: 0] += 1
+      addNotice = nil
+      AccessibilityNotification.Announcement("Added \(exercise.name)").post()
+    } else {
+      let notice = "This routine already has 100 exercises. Remove one before adding another."
+      addNotice = notice
+      AccessibilityNotification.Announcement(notice).post()
+    }
   }
 
   /// Debounced, off-main text search. Results equal the former inline

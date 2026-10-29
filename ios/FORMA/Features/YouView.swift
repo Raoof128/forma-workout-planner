@@ -4,6 +4,7 @@ import UniformTypeIdentifiers
 
 struct YouView: View {
   @Environment(AppModel.self) private var model
+  @AccessibilityFocusState private var widgetSharingFocused: Bool
   @State private var profilePresented = false
   @State private var exporting = false
   @State private var document: WorkspaceDocument?
@@ -26,6 +27,7 @@ struct YouView: View {
           .font(.subheadline).foregroundStyle(FormaTheme.secondary)
         }
         .padding(.vertical, 16).listRowBackground(Color.clear)
+        .id(TabScrollAnchor.top)
       }
 
       if model.syncDisplay?.needsAttention == true {
@@ -39,9 +41,10 @@ struct YouView: View {
           profilePresented = true
         } label: {
           LabeledContent(
-            "Profile & weekly goal", value: "\(model.workspace?.profile.goal ?? 4) workouts")
+            "Profile & weekly goal",
+            value: countPhrase(model.workspace?.profile.goal ?? 4, "workout"))
         }
-        NavigationLink("Training days") { TrainingDaysView() }
+        NavigationLink("Training days", value: TrainingRoute.trainingDays)
         LabeledContent("Weights", value: "Kilograms")
         LabeledContent("Training dates", value: "Australia/Sydney")
       }
@@ -53,7 +56,7 @@ struct YouView: View {
         Picker("Motion", selection: $model.motion) {
           ForEach(MotionPreference.allCases, id: \.self) { Text($0.rawValue).tag($0) }
         }
-        Toggle("Set confirmation haptics", isOn: $model.hapticsEnabled)
+        Toggle("Haptics", isOn: $model.hapticsEnabled)
       } header: {
         Text("Feel at home")
       } footer: {
@@ -62,7 +65,7 @@ struct YouView: View {
             "Motion: System plays full motion unless Reduce Motion is on, Minimal swaps movement for short fades, and Off shows every change at once. Reduce Motion in Settings always wins, and Off leaves system transitions such as sheets alone."
           )
           Text(
-            "Haptics: a light tap confirms a saved set, a firmer one marks the end of rest, and a finished workout gets one success pattern. Each is paired with something you can see. Your device's haptic settings still apply."
+            "Haptics: a light tap confirms a saved set, a firmer one marks the end of rest, a finished workout gets one success pattern, and warnings and errors have their own. Each is paired with something you can see. This switch turns all of them off; your device's haptic settings still apply."
           )
         }
       }
@@ -75,6 +78,8 @@ struct YouView: View {
             set: { model.widgets.setSharing($0, workspace: model.workspace) }
           )
         )
+        .id(YouFocus.widgetSharing)
+        .accessibilityFocused($widgetSharingFocused)
         .accessibilityIdentifier("widget-sharing")
         if let status = model.widgets.status {
           Text(status).font(.footnote).foregroundStyle(FormaTheme.secondary)
@@ -98,14 +103,10 @@ struct YouView: View {
           Label("Export training backup", systemImage: "square.and.arrow.up")
         }
         .disabled(model.busy)
-        NavigationLink {
-          NativePrivacyView()
-        } label: {
+        NavigationLink(value: TrainingRoute.privacy) {
           Label("Privacy & your data", systemImage: "hand.raised")
         }
-        NavigationLink {
-          ExerciseLibraryView()
-        } label: {
+        NavigationLink(value: TrainingRoute.exerciseLibrary) {
           Label("Exercise sources & licences", systemImage: "text.book.closed")
         }
         // Signed in, the open store is the account's synced copy; deleting the
@@ -140,7 +141,8 @@ struct YouView: View {
       }
     }
     .scrollContentBackground(.hidden).background(FormaTheme.canvas)
-    .formaTabScrollObserver()
+    .formaTabRoot(.you)
+    .modifier(YouFocusReveal(focus: $widgetSharingFocused))
     .navigationTitle("You").navigationBarTitleDisplayMode(.inline)
     .sheet(isPresented: $profilePresented) { ProfileEditor().protectWidgetNavigation() }
     .sheet(item: $authMode) { mode in
@@ -193,6 +195,30 @@ struct YouView: View {
   }()
 }
 
+/// Scrolls the You screen to a control another part of the app pointed at (the
+/// widget consent toggle), moves VoiceOver there, then forgets the request.
+private struct YouFocusReveal: ViewModifier {
+  @Environment(TrainingNavigation.self) private var navigation
+  @Environment(\.formaMotion) private var motion
+  var focus: AccessibilityFocusState<Bool>.Binding
+
+  func body(content: Content) -> some View {
+    ScrollViewReader { proxy in
+      content.task(id: navigation.youFocus) {
+        guard let target = navigation.youFocus else { return }
+        // Let the form lay out first: this also runs as the tab opens.
+        try? await Task.sleep(for: .milliseconds(150))
+        guard !Task.isCancelled else { return }
+        withFormaAnimation(motion, FormaMotion.navigation) {
+          proxy.scrollTo(target, anchor: .center)
+        }
+        if target == .widgetSharing { focus.wrappedValue = true }
+        navigation.youFocus = nil
+      }
+    }
+  }
+}
+
 struct ProfileEditor: View {
   @Environment(AppModel.self) private var model
   @Environment(\.dismiss) private var dismiss
@@ -229,7 +255,7 @@ struct ProfileEditor: View {
             .submitLabel(.done)
             .onSubmit { nameFocused = false }
             .accessibilityIdentifier("profile-name")
-          Stepper("Weekly goal: \(goal) workouts", value: $goal, in: 1...7)
+          Stepper("Weekly goal: \(countPhrase(goal, "workout"))", value: $goal, in: 1...7)
             .accessibilityIdentifier("profile-goal")
           Stepper("Default rest: \(rest) seconds", value: $rest, in: 10...600, step: 5)
             .accessibilityIdentifier("profile-rest")
