@@ -1646,3 +1646,11 @@ migrate` from the root-owned `ops/` directory (`sudo sh -c 'cd … && …'`),
 - **Files:** account UI test, Apple source register, consolidation record, AGENT and CHANGELOG.
 - **Verification:** complete local signup journey passed in 92.947 seconds after switching suggestions from on to off; preceding sign-in/guest journeys passed. Strict Swift formatting, docs and added-line secret checks pass. Final combined CI remains the merge gate.
 - **Follow-ups:** merge and retire remaining refs only after final checks; preserve all 38 starting tips, worktree files and physical-device/distribution gates. No production service or Store action.
+
+### Raouf: 2026-10-29 — Handoff with native CI blocked
+
+- **Scope:** preserve the branch consolidation work and document its unfinished validation.
+- **Summary:** PR #34 remains open at `846a6fe`; main is not merged. The web/account/security run passed, while native CI still needs a clean full run. Eleven local and thirteen remote branch refs were retired in the earlier safe phase; remaining branch cleanup is pending. Original tips and worktree files are retained.
+- **Defects and evidence:** native run 40800619323 attempt 1 passed 33 hosted and 25 UI tests on iOS 26.2, then stalled starting the iOS 26.0 test host and was cancelled at the 65-minute job limit. Attempt 2 passed 33 hosted tests but failed one of 25 primary UI tests: the Settings automation selected a non-interactive AUTOFILL heading at AccountExperienceTests.swift:168. The other 24 UI tests passed; fallback did not run. iOS 17 has not been verified on the hosted runner because its runtime was unavailable.
+- **Fix under CI:** the Settings query now matches only rows (buttons or cells), never a same-titled section heading; password and consent assertions are unchanged. No iOS 26 simulator runtime is installed locally, so hosted native CI is the verification. Full logs and next steps are in the consolidation record.
+- **Follow-ups:** validate the selector on both iOS 26.2 and 26.0, run full CI, then merge with ancestry preservation and execute guarded cleanup. Update the final records and Zurvan after actual completion. Current phone and Watch installation attempts were blocked by disconnected device services; no current installation success is claimed.

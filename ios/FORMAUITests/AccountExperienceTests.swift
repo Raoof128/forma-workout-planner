@@ -162,8 +162,13 @@ final class AccountExperienceTests: XCTestCase {
             : title == "AutoFill & Passwords"
               ? "com.apple.settings.general.autoFillAndPasswords"
               : title
+          // Rows only: a section heading can share the title ("AUTOFILL") but
+          // has no hit point. Settings exposes rows as buttons or cells by release.
           let item = settings.descendants(matching: .any).matching(
-            NSPredicate(format: "identifier == %@ OR label ==[c] %@", identifier, title)
+            NSPredicate(
+              format: "(elementType == %lu OR elementType == %lu) AND (identifier == %@ OR label ==[c] %@)",
+              XCUIElement.ElementType.button.rawValue, XCUIElement.ElementType.cell.rawValue,
+              identifier, title)
           ).firstMatch
           for _ in 0..<12 where !item.exists || !item.isHittable { settings.swipeUp() }
           XCTAssertTrue(item.exists && item.isHittable, "Settings must expose \(title)")
