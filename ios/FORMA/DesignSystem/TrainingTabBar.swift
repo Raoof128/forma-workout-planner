@@ -69,6 +69,7 @@ enum TrainingRoute: Hashable {
   case trainingDays
   case exerciseLibrary
   case privacy
+  case mediaCredits
   // Account screens under You, so re-tapping You returns from them too.
   case syncDetails
   case accountProfile
@@ -245,6 +246,7 @@ private struct TrainingDestinations: ViewModifier {
     case .trainingDays: TrainingDaysView()
     case .exerciseLibrary: ExerciseLibraryView()
     case .privacy: NativePrivacyView()
+    case .mediaCredits: MediaCreditsView()
     case .syncDetails: SyncDetailsView()
     case .accountProfile: AccountProfileView()
     case .accountSecurity: AccountSecurityView()

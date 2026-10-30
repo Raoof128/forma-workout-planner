@@ -221,7 +221,7 @@ struct WorkoutView: View {
                 .font(.caption.weight(.semibold)).tracking(1).foregroundStyle(
                   FormaTheme.secondary)
               Text(exercise?.name ?? entry.exerciseId)
-                .font(.system(.title, design: .default, weight: .bold).width(.condensed))
+                .font(FormaDisplayFont.font(size: 34, relativeTo: .title))
                 .accessibilityAddTraits(.isHeader)
             }
             Spacer(minLength: 4)

@@ -1,5 +1,11 @@
 # FORMA native editorial artwork
 
+Since 30 October 2026, the Today hero shows the website's own hero photo
+(`public/images/training-hero.webp`, provenance in
+`docs/research/site-visuals/training-hero.json`), bundled by
+`scripts/build-ios-media.py`. The editorial artwork described below stays
+bundled as the fallback for when the media folder is unavailable.
+
 Created 23 October 2026 (Australia/Sydney) for the offline native prototype.
 
 `training-editorial-source.png` (this folder) is an original AI-assisted decorative
