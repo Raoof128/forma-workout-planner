@@ -48,6 +48,26 @@ final class ExerciseMediaTests: XCTestCase {
     XCTAssertEqual(library.routinePhoto(-1)?.file, "routine-2")
   }
 
+  /// Plan asks for all three routine photos at once; each must come back as a
+  /// decoded bitmap of its full size, never left to decode when drawn.
+  func testPhotosRequestedTogetherAllDecode() async throws {
+    let photos = try XCTUnwrap(ExerciseMediaLibrary.shared.photos)
+    let names = ([photos.hero] + photos.routines).map(\.file)
+    let images = await withTaskGroup(of: (String, UIImage?).self) { group in
+      for name in names {
+        group.addTask { await (name, BundledImageCache.load("photos", name)) }
+      }
+      var images: [String: UIImage] = [:]
+      for await (name, image) in group { images[name] = image }
+      return images
+    }
+    for name in names {
+      let image = try XCTUnwrap(images[name]?.cgImage, name)
+      XCTAssertGreaterThanOrEqual(image.width, 512, name)
+      XCTAssertNotNil(image.dataProvider?.data, "\(name) should already be a bitmap")
+    }
+  }
+
   func testTheDisplayFontIsRegistered() {
     XCTAssertNotNil(UIFont(name: FormaDisplayFont.name, size: 17))
   }

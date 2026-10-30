@@ -1,5 +1,6 @@
 import AVKit
 import FORMACore
+import ImageIO
 import SwiftUI
 import UIKit
 
@@ -95,9 +96,45 @@ struct ExerciseMediaLibrary: Decodable, Sendable {
   }
 }
 
-/// Crops one illustration out of its sheet off the main thread and keeps the
-/// result, so revisiting a guide shows it at once. The cache is main-actor
-/// state; only the decode and crop run elsewhere.
+/// Decodes the bundled HEIC pictures one at a time, completely, off the main
+/// thread. A `UIImage(contentsOfFile:)` stays undecoded until it is drawn, and
+/// `preparingForDisplay()` may return nil, which left the decode to the main
+/// thread at draw time: on the CI simulator three routine photos decoding at
+/// once that way never finished and the app stopped answering. Every picture
+/// leaves here as a plain bitmap, so drawing it never decodes anything.
+actor MediaDecoder {
+  static let shared = MediaDecoder()
+
+  /// The picture at `url`, cut to `crop(size)` when given, as a decoded bitmap.
+  func decode(_ url: URL, crop: (@Sendable (CGSize) -> CGRect)? = nil) -> UIImage? {
+    guard let source = CGImageSourceCreateWithURL(url as CFURL, nil),
+      let full = CGImageSourceCreateImageAtIndex(
+        source, 0, [kCGImageSourceShouldCacheImmediately: true] as CFDictionary)
+    else { return nil }
+    var picture = full
+    if let crop {
+      let rect = crop(CGSize(width: full.width, height: full.height))
+      guard let cell = full.cropping(to: rect) else { return nil }
+      picture = cell
+    }
+    // Redrawn into its own buffer: decoded for certain, and a cropped cell no
+    // longer keeps its whole sheet in memory.
+    guard
+      let context = CGContext(
+        data: nil, width: picture.width, height: picture.height, bitsPerComponent: 8,
+        bytesPerRow: 0,
+        space: CGColorSpace(name: CGColorSpace.sRGB) ?? CGColorSpaceCreateDeviceRGB(),
+        bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue
+          | CGBitmapInfo.byteOrder32Little.rawValue)
+    else { return nil }
+    context.draw(picture, in: CGRect(x: 0, y: 0, width: picture.width, height: picture.height))
+    return context.makeImage().map { UIImage(cgImage: $0) }
+  }
+}
+
+/// Crops one illustration out of its sheet and keeps the result, so revisiting
+/// a guide shows it at once. The cache is main-actor state; the decode and
+/// crop run in `MediaDecoder`.
 @MainActor
 enum ExerciseIllustrationLoader {
   private static let cache: NSCache<NSString, UIImage> = {
@@ -113,20 +150,18 @@ enum ExerciseIllustrationLoader {
   {
     if let image = cached(id) { return image }
     let sheet = ExerciseMediaLibrary.shared.sheets[illustration.sheet]
-    let image = await Task.detached(priority: .userInitiated) { () -> UIImage? in
-      guard let url = ExerciseMediaLibrary.url(illustration.sheet, "heic", in: "sheets"),
-        let source = UIImage(contentsOfFile: url.path)?.cgImage
-      else { return nil }
+    guard let url = ExerciseMediaLibrary.url(illustration.sheet, "heic", in: "sheets") else {
+      return nil
+    }
+    let image = await MediaDecoder.shared.decode(url) { size in
       // The crop is in the catalogue's pixel space; scale it to the bundled sheet.
-      let scaleX = Double(source.width) / (sheet?.width ?? Double(source.width))
-      let scaleY = Double(source.height) / (sheet?.height ?? Double(source.height))
-      let rect = CGRect(
+      let scaleX = size.width / (sheet?.width ?? size.width)
+      let scaleY = size.height / (sheet?.height ?? size.height)
+      return CGRect(
         x: illustration.x * scaleX, y: illustration.y * scaleY,
         width: illustration.width * scaleX, height: illustration.height * scaleY
       ).integral
-      guard let cell = source.cropping(to: rect) else { return nil }
-      return UIImage(cgImage: cell)
-    }.value
+    }
     if let image { cache.setObject(image, forKey: id as NSString) }
     return image
   }
@@ -382,8 +417,8 @@ private struct LoopingVideo: UIViewRepresentable {
   }
 }
 
-/// A bundled HEIC from `Media/<folder>/<name>.heic`, decoded off the main
-/// thread and cached.
+/// A bundled HEIC from `Media/<folder>/<name>.heic`, decoded by
+/// `MediaDecoder` and cached.
 struct BundledImage: View {
   let path: (folder: String, name: String)
   var contentMode: ContentMode = .fit
@@ -415,13 +450,8 @@ enum BundledImageCache {
 
   static func load(_ folder: String, _ name: String) async -> UIImage? {
     if let image = cached(folder, name) { return image }
-    let image = await Task.detached(priority: .userInitiated) { () -> UIImage? in
-      guard let url = ExerciseMediaLibrary.url(name, "heic", in: folder),
-        let image = UIImage(contentsOfFile: url.path)
-      else { return nil }
-      // Decode now, off the main thread, rather than on first draw.
-      return image.preparingForDisplay() ?? image
-    }.value
+    guard let url = ExerciseMediaLibrary.url(name, "heic", in: folder) else { return nil }
+    let image = await MediaDecoder.shared.decode(url)
     if let image { cache.setObject(image, forKey: "\(folder)/\(name)" as NSString) }
     return image
   }

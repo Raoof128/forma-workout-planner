@@ -1859,3 +1859,11 @@ at rest` failed 16/20 before the fix. The rapid-release case now waits, before
   - An on-device UI probe (removed afterwards) captured Today's hero photo, the routine photos on Plan and on the routine cover, two different frames of the bench press loop, and the credits screen.
   - build-for-testing succeeds; swift-format strict lint and the media check are clean.
 - **Follow-ups:** none known.
+
+### Raouf: 2026-10-30 — Decode bundled pictures fully, one at a time
+
+- **Scope:** native iPhone Plan routine photos, Today's hero photo, guide illustrations and animation stills.
+- **Summary:** CI's iPhone journeys (PR #38) timed out on every test that opened Plan. The CI screen recording showed the three routine photos never appeared, and the app stopped answering the test runner from then on. `UIImage(contentsOfFile:)` leaves a HEIC undecoded until it is drawn, and `preparingForDisplay()` may return nil, so the decode could fall to the main thread at draw time, three photos at once. A new `MediaDecoder` actor decodes each bundled HEIC with ImageIO immediately, crops it when asked, and redraws it into its own bitmap, one picture at a time, off the main thread; both image loaders use it. A cropped illustration no longer keeps its whole sheet in memory.
+- **Files:** `ios/FORMA/Features/ExerciseMedia.swift`, `ios/FORMAAppTests/ExerciseMediaTests.swift`, CHANGELOG.
+- **Verification:** `ExerciseMediaTests` 5/5 on the owner's iPhone, including a new test that requests every photo at once and checks each returns as a full-size bitmap; build-for-testing succeeds; swift-format strict lint clean. The device UI journeys could not be rerun because the phone was in use (locked, then Camera open); CI's simulator run is the check.
+- **Follow-ups:** none known.
