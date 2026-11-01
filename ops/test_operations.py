@@ -53,6 +53,26 @@ class OperationsTests(unittest.TestCase):
         with patch.object(self.ops, 'run', side_effect=RuntimeError('container missing')):
             self.assertFalse(self.ops.container_healthy('forma-production-api-1'))
 
+    def test_tunnel_readiness_asks_cloudflared_not_its_logs(self):
+        config = {'project': 'forma-production'}
+        ready = unittest.mock.Mock(returncode=0)
+        with patch.object(self.ops.subprocess, 'run', return_value=ready) as run:
+            self.assertTrue(self.ops.tunnel_ready(config))
+        command = run.call_args.args[0]
+        self.assertEqual(command[:3], ['docker', 'exec', 'forma-production-api-1'])
+        self.assertIn('http://cloudflared:20241/ready', command[-1])
+        with patch.object(self.ops.subprocess, 'run', return_value=unittest.mock.Mock(returncode=1)):
+            self.assertFalse(self.ops.tunnel_ready(config))
+        with patch.object(self.ops.subprocess, 'run', side_effect=self.ops.subprocess.TimeoutExpired('docker', 15)):
+            self.assertFalse(self.ops.tunnel_ready(config))
+
+    def test_one_failed_tunnel_probe_does_not_alert(self):
+        state = {}
+        self.assertFalse(self.ops.tunnel_signal(state, ready=False))
+        self.assertTrue(self.ops.tunnel_signal(state, ready=False))
+        self.assertFalse(self.ops.tunnel_signal(state, ready=True))
+        self.assertEqual(state['tunnelFailures'], 0)
+
 
 if __name__ == '__main__':
     unittest.main()

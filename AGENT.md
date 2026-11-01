@@ -58,6 +58,24 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-11-02 — Tunnel monitor reads cloudflared readiness
+
+- **Scope:** the `tunnel_error` production alert of 2026-11-01 20:55 UTC.
+- **Summary:** the monitor flagged any cloudflared `ERR` line in a 5-minute log
+  window unless `Registered tunnel connection` was also present, a line written
+  only at connect time. One log line raised the signal on three consecutive runs
+  and it cleared by ageing out, not by recovery; the API, database and
+  `/api/health` stayed healthy. The monitor now asks cloudflared's `/ready`
+  (200 only with a registered edge connection) from the API container and
+  alerts after two consecutive failures, as the runbook states. Compose pins the
+  metrics server to `0.0.0.0:20241` on the internal `tunnel` network.
+- **Files:** `ops/account-operations.py`, `ops/test_operations.py`,
+  `ops/compose.yaml`, `CHANGELOG.md`, `AGENT.md`.
+- **Verification:** ops tests 8/8. Not yet deployed to the Droplet.
+- **Follow-ups:** confirm `/ready` answers on both hosts before installing the new
+  script; the triggering cloudflared log line was not read (container logs are
+  outside the read-only observer's roots).
+
 ### Raouf: 2026-10-28 — Native account fixes and animated navigation
 
 - **Scope:** finish the local account app review and the owner's chosen SwiftUI
