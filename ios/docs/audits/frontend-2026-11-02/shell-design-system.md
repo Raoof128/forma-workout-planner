@@ -372,3 +372,57 @@ These are owner decisions on record (AGENT.md 28–30 Oct). Listed only so the e
 3. VoiceOver on the bar after adding `.isTabBar`: is position announced twice (M2)?
 4. iPhone landscape: bar width and label layout (L2).
 5. Dark mode sheet over Today: is the sheet distinguishable from the base screen (L1)?
+
+---
+
+## Resolution
+
+Fixed on branch `fix/audit-shell` (2 November 2026), from audited commit `ba4e6a7`. Each
+finding was re-checked against the code first; every one still applied. No simulator was
+used; the app and its test targets were compiled with `xcodebuild build-for-testing` for
+`generic/platform=iOS` (TEST BUILD SUCCEEDED). The changed files add no warnings; the one Swift
+warning in the log is the existing Sendable capture in `TabSymbol` (`TrainingTabBar.swift:387`,
+moved from 355 by the added lines). The new unit tests compiled but were not run, since that
+needs the iPhone. `docs:check` reports only the media files left out of this sparse checkout.
+
+| ID | Result | What changed |
+|---|---|---|
+| H1 | Fixed; needs device check | `TrainingNavigation.keyboardVisible` follows the keyboard's will-show and will-hide notifications. While it is up the bar and resume control leave (a fade and slide, a fade at Minimal, nothing when Off) and `bottomClearance` drops to 0, so no tab screen keeps room for a hidden bar. The bar ignores the keyboard safe area, so it leaves from its own place instead of jumping above the keys. Device step: Exercise library search and Change password; the bar should be gone while typing and back when the keyboard closes. |
+| H2 | Fixed; needs device check | On glass, tab labels and the resume control use the hierarchical `.primary` / `.secondary` styles (`formaControlForeground`, `ControlForeground`), which follow the material. The selected tab keeps its accent capsule (opacity 0.12 to 0.16, so it still reads with a neutral label) and its filled symbol and bold label. FORMA's own colours stay on the opaque Reduce Transparency / Increase Contrast surface, where the backdrop is known. Device step: light mode, Today's hero panel scrolled under the bar; check the 4.5:1 floor on the labels. |
+| M1 | Fixed | `AppModel.reportFailure(_:_:)` gives a failure its own alert title: "Couldn’t delete your training", "Couldn’t save this setting", "Couldn’t remove the account’s training". A title belongs only to the message it was reported with, so a later failure that replaces the message falls back to "Couldn’t save this change". The button is "OK" in every case. System error text is no longer added: `failureMessage` keeps only FORMA's own wording (`AppFailure`, `FormaError`). The four messages in `AppModel.swift` and `AppModel+Account.swift` are rewritten to say what is still true and where to go. `YouView.swift:110, 171` still add `localizedDescription`; that file belongs to the Progress/You slice. |
+| M2 | Fixed; needs device check | The bar has `.isTabBar` (not when it is collapsed to one control). The hand-written "Tab n of 4" value is removed. Device step: VoiceOver on the bar; check that each tab announces its position once. If none is announced, put the value back. |
+| M3 | Fixed | Dated "Superseded 28 October 2026" notes in `apple-design-2026.md` (the navigation section, the accessory paragraphs and the `tabViewBottomAccessory` / `tabBarMinimizeBehavior` rows and the file table) and in `native-design-review.md`, pointing to the tab-bar decision and this report. |
+| M4 | Fixed; needs device check | On iOS 26 the clearance is a `safeAreaBar`, so scroll views apply their edge effect under the bar; `safeAreaInset` below 26. Device step: confirm the soft edge appears under an empty bar region; if not, move the real bar into the `safeAreaBar`. |
+| M5 | Fixed | `formaControlSurface` takes a shape (`.capsule` or `.rounded`) and `interactive:`. The resume control is a capsule with `.regular.interactive()` glass, and its tap area is the capsule. The tab bar uses the same modifier (non-interactive). |
+| L1 | Fixed; needs device check | `canvas` and `surface` have elevated Dark Mode variants (#1E2420, #29312B), used when `userInterfaceLevel == .elevated`. Text and boundary contrast on them is unit-tested. Device step: a dark sheet over Today. |
+| L2 | Fixed; needs device check | The bar is capped at 480 pt. In a compact vertical size class each tab lays out symbol and label side by side, and the bar is 60 pt tall (48 pt tabs). Device step: iPhone landscape. |
+| L3 | Fixed | A small `TrainingTabs` view builds the four tabs: `Tab(_:systemImage:value:)` on iOS 18 and later, `tabItem` and `tag` only on iOS 17. `RootView`'s modifier chain is unchanged. |
+| L4 | Fixed | The motion environment default is `.minimal`; `formaMotionRoot` sets the real level. |
+| L5 | Fixed | "Link unavailable" now opens Plan, where the notice sends the person. |
+| L6 | Fixed | The widget banner reads "Save or cancel this edit to open the widget link." The workout's own banner (`WorkoutView.swift:195`) belongs to the workout slice. |
+| L7 | Fixed | Each tab root reports whether it is at its top (iOS 18 scroll geometry). A re-tap at the root while already at the top returns `.alreadyAtTop` and plays no haptic; popping or scrolling still does. |
+| L8 | Fixed | Covered by H2: the labels are vibrant on glass. |
+| L9 | Fixed | `FormaRevealLedger` on `TrainingNavigation` records each reveal by call site, so a stack rebuilt by a widget link or an account switch shows the content at once instead of staggering in again. The receipt has no ledger, so its reveal plays for every new result. |
+| L10 | Fixed | The bar's and the resume control's 5 and 10 pt literals are `FormaSpacing` tokens. |
+| L11 | Fixed | The shell's alert and failure copy uses curly apostrophes. |
+
+**Tests.** `ios/FORMAAppTests/TrainingNavigationTests.swift`: a re-tap at the top does
+nothing, and the keyboard releases the bar's clearance. `FormaDesignSystemTests.swift`:
+elevated Dark Mode backgrounds, the opaque-surface rule, and the reveal ledger. New
+`RootFailureTests.swift`: system wording is left out, FORMA's own wording is kept, and a
+reported title belongs only to its message. UI tests keep their identifiers. UI tests that
+type and then tap a tab would now need the keyboard dismissed first; none in the suite does.
+
+**Files changed.**
+- `ios/FORMA/App/FORMAApp.swift`
+- `ios/FORMA/App/AppModel.swift`, `ios/FORMA/App/AppModel+Account.swift` (the four messages)
+- `ios/FORMA/DesignSystem/TrainingTabBar.swift`, `GlassControls.swift`, `FormaTheme.swift`,
+  `FormaMotion.swift`, `WidgetNavigationGuard.swift`
+- `ios/FORMAAppTests/TrainingNavigationTests.swift`, `FormaDesignSystemTests.swift`,
+  `RootFailureTests.swift` (new)
+- `ios/docs/apple-design-2026.md`, `ios/docs/native-design-review.md`, this report
+
+**Merge notes.** `FORMAApp.swift` `handleWidgetRoute` (`.unavailable`, L5) sits next to
+the widgets slice's Live Activity route. M1 edits `AppModel.swift` (the save, delete and
+preference failures) and `AppModel+Account.swift` (sign-out clean-up), which other slices may
+also touch.

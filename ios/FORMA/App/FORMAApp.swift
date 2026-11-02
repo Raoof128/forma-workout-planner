@@ -1,6 +1,7 @@
 import FORMACore
 import FORMASurfaces
 import SwiftUI
+import UIKit
 
 @main
 struct FORMAApp: App {
@@ -70,11 +71,8 @@ struct RootView: View {
       // `hasWorkspace` rather than `workspace`: the latter changes on every
       // logged set and would rebuild this whole tree each time.
       if model.hasWorkspace {
-        TabView(selection: $navigation.selection) {
-          tabStack(.today) { TodayView() }
-          tabStack(.plan) { PlanView() }
-          tabStack(.progress) { ProgressViewScreen() }
-          tabStack(.you) { YouView() }
+        TrainingTabs(selection: $navigation.selection) { tab in
+          tabStack(tab)
         }
         .toolbar(.hidden, for: .tabBar)
         // A different owner (guest or a member) starts every screen afresh, so
@@ -124,7 +122,7 @@ struct RootView: View {
       } else if let failure = model.loadFailure {
         ContentUnavailableView {
           Label(
-            "Your training couldn't be opened", systemImage: "externaldrive.badge.exclamationmark")
+            "Your training couldn’t be opened", systemImage: "externaldrive.badge.exclamationmark")
         } description: {
           Text(failure)
         } actions: {
@@ -164,18 +162,24 @@ struct RootView: View {
   }
 
   /// One tab: its own navigation stack, bound to the path the tab bar can clear.
-  private func tabStack<Root: View>(
-    _ tab: TrainingTab, @ViewBuilder root: () -> Root
-  ) -> some View {
+  private func tabStack(_ tab: TrainingTab) -> some View {
     let path = Binding(
       get: { navigation.paths[tab] ?? [] }, set: { navigation.paths[tab] = $0 })
     return NavigationStack(path: path) {
-      root().trainingDestinations()
+      tabRoot(tab).trainingDestinations()
     }
     .id(widgetNavigationIDs[tab])
     .toolbar(.hidden, for: .tabBar)
-    .tabItem { Label(tab.title, systemImage: tab.symbol) }
-    .tag(tab)
+  }
+
+  @ViewBuilder
+  private func tabRoot(_ tab: TrainingTab) -> some View {
+    switch tab {
+    case .today: TodayView()
+    case .plan: PlanView()
+    case .progress: ProgressViewScreen()
+    case .you: YouView()
+    }
   }
 
   private func openWidgetTab(_ tab: TrainingTab) {
@@ -215,9 +219,36 @@ struct RootView: View {
       model.receipt = nil
       model.workoutPresented = true
     case .unavailable:
-      openWidgetTab(.today)
+      // The notice sends the person to Plan, so that is where it opens.
+      openWidgetTab(.plan)
       model.widgetNotice =
         "That saved item is no longer available for this training space. Choose a current routine in Plan."
+    }
+  }
+}
+
+/// The four tabs, in `TrainingTab` order. The system bar is hidden (FORMA
+/// draws its own), so a tab's title and symbol only identify it. `Tab` from
+/// iOS 18; `tabItem`, deprecated in the iOS 27.2 SDK, only where `Tab` does not exist.
+private struct TrainingTabs<Content: View>: View {
+  @Binding var selection: TrainingTab
+  @ViewBuilder let content: (TrainingTab) -> Content
+
+  var body: some View {
+    if #available(iOS 18.0, *) {
+      TabView(selection: $selection) {
+        ForEach(TrainingTab.allCases, id: \.self) { tab in
+          Tab(tab.title, systemImage: tab.symbol, value: tab) { content(tab) }
+        }
+      }
+    } else {
+      TabView(selection: $selection) {
+        ForEach(TrainingTab.allCases, id: \.self) { tab in
+          content(tab)
+            .tabItem { Label(tab.title, systemImage: tab.symbol) }
+            .tag(tab)
+        }
+      }
     }
   }
 }
@@ -227,34 +258,69 @@ struct RootView: View {
 /// owns their insets), so each page ended under the bar. The bar floats as an
 /// overlay instead and reports its height; every tab screen's scroll view
 /// keeps that much clear at the bottom (`TrainingBarClearance`).
+///
+/// While the keyboard is up the bar steps aside, as the system tab bar stays
+/// behind the keyboard: riding above it covered search results and the field
+/// being typed in. It ignores the keyboard's safe area so it leaves from, and
+/// returns to, its own place at the bottom instead of jumping above the keys.
 private struct ActiveTrainingAccessory: ViewModifier {
   @Environment(AppModel.self) private var model
   @Environment(TrainingNavigation.self) private var navigation
+  @Environment(\.formaMotion) private var motion
 
   func body(content: Content) -> some View {
-    content.overlay(alignment: .bottom) {
-      // One container, so the two glass surfaces 4pt apart sample the same
-      // backdrop and never merge (the container spacing is below the gap).
-      GlassGroup(spacing: 2) {
-        VStack(spacing: 4) {
-          if let name = model.activeWorkoutName {
-            ResumeTrainingControl(name: name)
-              .formaControlSurface(cornerRadius: 20)
+    content
+      .overlay(alignment: .bottom) {
+        // The animation is scoped to the bar, so the tab screens behind it
+        // follow the keyboard as they always have.
+        ZStack {
+          if !navigation.keyboardVisible {
+            bar.transition(motion.transition(.opacity.combined(with: .move(edge: .bottom))))
           }
-          TrainingTabBar()
         }
+        .animation(motion.animation(FormaMotion.reveal), value: navigation.keyboardVisible)
+        .ignoresSafeArea(.keyboard, edges: .bottom)
       }
-      .padding(.horizontal, 16).padding(.top, 4).padding(.bottom, 4)
-      .background {
-        GeometryReader { proxy in
-          Color.clear.preference(key: TrainingBarHeightKey.self, value: proxy.size.height)
+      .onReceive(
+        NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)
+      ) { _ in
+        if !navigation.keyboardVisible { navigation.keyboardVisible = true }
+      }
+      .onReceive(
+        NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)
+      ) { _ in
+        if navigation.keyboardVisible { navigation.keyboardVisible = false }
+      }
+  }
+
+  private var bar: some View {
+    // One container, so the two glass surfaces 4pt apart sample the same
+    // backdrop and never merge (the container spacing is below the gap).
+    GlassGroup(spacing: 2) {
+      VStack(spacing: FormaSpacing.xxs) {
+        if let name = model.activeWorkoutName {
+          // A capsule like the bar beneath it; interactive glass, as it is one
+          // whole-surface button.
+          ResumeTrainingControl(name: name)
+            .formaControlSurface(.capsule, interactive: true)
         }
+        TrainingTabBar()
       }
-      .onPreferenceChange(TrainingBarHeightKey.self) { height in
-        // Whole points only, so sub-point layout jitter never re-lays out every tab.
-        let rounded = height.rounded(.up)
-        if navigation.barInset != rounded { navigation.barInset = rounded }
+      // In landscape the bar keeps a phone-width capsule instead of spanning
+      // the screen (no effect in portrait, where every iPhone is narrower).
+      .frame(maxWidth: 480)
+    }
+    .padding(.horizontal, FormaSpacing.md).padding(.vertical, FormaSpacing.xxs)
+    .frame(maxWidth: .infinity)
+    .background {
+      GeometryReader { proxy in
+        Color.clear.preference(key: TrainingBarHeightKey.self, value: proxy.size.height)
       }
+    }
+    .onPreferenceChange(TrainingBarHeightKey.self) { height in
+      // Whole points only, so sub-point layout jitter never re-lays out every tab.
+      let rounded = height.rounded(.up)
+      if navigation.barInset != rounded { navigation.barInset = rounded }
     }
   }
 }
@@ -291,20 +357,24 @@ private struct ResumeTrainingControl: View {
       model.receipt = nil
       model.workoutPresented = true
     } label: {
-      HStack(spacing: 12) {
+      HStack(spacing: FormaSpacing.sm) {
         Image(systemName: "figure.strengthtraining.traditional").font(.title3)
         VStack(alignment: .leading, spacing: 2) {
-          Text("Workout in progress").font(.caption).foregroundStyle(FormaTheme.secondary)
+          Text("Workout in progress").font(.caption).formaControlForeground(.secondary)
           Text(name).font(.subheadline.weight(.semibold))
             .lineLimit(textSize.isAccessibilitySize ? nil : 1)
         }
-        Spacer(minLength: 4)
+        Spacer(minLength: FormaSpacing.xxs)
         Image(systemName: "play.fill").font(.body.weight(.semibold))
       }
-      .foregroundStyle(FormaTheme.primary)
-      .padding(.horizontal, 16).padding(.vertical, 10)
+      // On glass the text follows the material, which keeps it legible over
+      // the dark Today panel as well as light rows; FORMA's colours return on
+      // the opaque accessibility surface.
+      .formaControlForeground(.primary)
+      // Clear of the capsule's rounded ends.
+      .padding(.horizontal, FormaSpacing.lg).padding(.vertical, FormaSpacing.xs)
       .frame(maxWidth: .infinity, minHeight: 56, alignment: .leading)
-      .contentShape(Rectangle())
+      .contentShape(Capsule())
     }
     .buttonStyle(.plain)
     .accessibilityLabel("Resume \(name)")
@@ -332,14 +402,17 @@ private struct RootAlerts: ViewModifier {
       } message: {
         Text(model.widgetNotice ?? "")
       }
+      // A failure reported with its own title (a deletion, a setting, a
+      // sign-out clean-up) is named as itself; any other is a change that
+      // was not saved. "OK" because often nothing is left to edit.
       .alert(
-        "Couldn't save this change",
+        model.errorTitle ?? "Couldn’t save this change",
         isPresented: Binding(
           get: { model.errorMessage != nil && !model.workoutPresented },
           set: { if !$0 { model.errorMessage = nil } }
         )
       ) {
-        Button("Keep editing", role: .cancel) { model.errorMessage = nil }
+        Button("OK", role: .cancel) { model.errorMessage = nil }
       } message: {
         Text(model.errorMessage ?? "Your last saved workout has been preserved.")
       }
