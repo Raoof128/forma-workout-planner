@@ -27,6 +27,27 @@ extension View {
   }
 }
 
+extension View {
+  /// The hero's state, routine name and detail, read as one rotor heading:
+  /// "Next session, Upper body strength, 6 exercises · about 50 min".
+  fileprivate func heroHeading() -> some View {
+    accessibilityElement(children: .combine).accessibilityAddTraits(.isHeader)
+  }
+}
+
+/// With the navigation bar hidden, content scrolls under the status bar. iOS 26
+/// softens that edge the way a bar would; earlier systems are unchanged.
+private struct SoftTopScrollEdge: ViewModifier {
+  @ViewBuilder
+  func body(content: Content) -> some View {
+    if #available(iOS 26.0, *) {
+      content.scrollEdgeEffectStyle(.soft, for: .top)
+    } else {
+      content
+    }
+  }
+}
+
 private struct HeroEdge: ViewModifier {
   @Environment(\.colorScheme) private var colorScheme
   let cornerRadius: CGFloat
@@ -77,17 +98,19 @@ struct TodayView: View {
       from: routines, preferredID: preferredRoutineID,
       lastRoutineID: model.history.first?.routineId)
     ScrollView {
-      VStack(alignment: .leading, spacing: 22) {
+      VStack(alignment: .leading, spacing: FormaSpacing.lg) {
+        // The brand row is never a heading: the screen's title is "Today", and
+        // the rotor's headings are the hero and the sections below.
         if textSize.isAccessibilitySize {
-          brand.accessibilityAddTraits(.isHeader)
+          brand
         } else {
           ViewThatFits(in: .horizontal) {
-            HStack(spacing: 16) {
+            HStack(spacing: FormaSpacing.md) {
               brand
-              Spacer(minLength: 8)
+              Spacer(minLength: FormaSpacing.xs)
               date.fixedSize()
             }
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: FormaSpacing.sm) {
               brand
               date
             }
@@ -101,14 +124,18 @@ struct TodayView: View {
         if model.syncDisplay?.needsAttention == true { SyncBanner() }
 
         if !textSize.isAccessibilitySize && !compactHeight {
-          VStack(alignment: .leading, spacing: 6) {
-            Text("MAKE ROOM FOR").font(.caption.weight(.bold)).tracking(2).foregroundStyle(
-              FormaTheme.secondary)
+          // One sentence set on two lines, so it is read as one. It is a
+          // slogan, not a heading.
+          VStack(alignment: .leading, spacing: FormaSpacing.xxs) {
+            Text("Make room for").textCase(.uppercase)
+              .font(.caption.weight(.bold)).tracking(2).foregroundStyle(FormaTheme.secondary)
             Text("Your next stronger.")
               .font(FormaDisplayFont.font(size: 44, relativeTo: .largeTitle))
               .tracking(-0.5).fixedSize(horizontal: false, vertical: true)
-              .foregroundStyle(FormaTheme.primary).accessibilityAddTraits(.isHeader)
+              .foregroundStyle(FormaTheme.primary)
           }
+          .accessibilityElement(children: .ignore)
+          .accessibilityLabel("Make room for your next stronger.")
           .formaReveal(order: 1)
 
         }
@@ -122,10 +149,16 @@ struct TodayView: View {
               chooseAnother(routines, next: next)
             }
           } else {
+            // An empty screen offers the way forward, not only directions.
             ContentUnavailableView {
               Label("Your training starts here", systemImage: "dumbbell")
             } description: {
               Text("Create a routine in Plan, then make it yours one set at a time.")
+            } actions: {
+              Button("Open Plan") { navigation.select(.plan) }
+                .buttonStyle(.formaPrimaryCompact)
+                .accessibilityHint("Create your first routine there.")
+                .accessibilityIdentifier("today-open-plan")
             }
           }
         }
@@ -134,70 +167,39 @@ struct TodayView: View {
         WeekStrip()
           .formaReveal(order: 3)
 
-        VStack(alignment: .leading, spacing: 16) {
-          SectionHeading(
-            title: "Your training space", detail: countPhrase(routines.count, "routine"))
-          ForEach(Array(routines.prefix(3).enumerated()), id: \.element.id) { position, routine in
-            NavigationLink(value: TrainingRoute.routine(routine.id)) {
-              HStack(spacing: 16) {
-                Text(String(format: "%02d", position + 1))
-                  .font(.title2.weight(.black).monospacedDigit()).foregroundStyle(FormaTheme.accent)
-                  .accessibilityHidden(true)
-                VStack(alignment: .leading, spacing: 5) {
-                  Text(routine.name).font(.headline).foregroundStyle(FormaTheme.primary)
-                  Text(
-                    "\(countPhrase(routine.exercises.count, "exercise")) · \(routine.minutes) min"
-                  )
-                  .font(.subheadline).foregroundStyle(FormaTheme.secondary)
-                }
-                Spacer(minLength: 0)
-                Image(systemName: "chevron.right").foregroundStyle(FormaTheme.secondary)
-              }
-              .padding(.vertical, 12).contentShape(Rectangle())
-            }
-            .buttonStyle(PressableCardStyle())
-            Divider().overlay(FormaTheme.line)
-          }
-          if routines.count > 3 {
-            Button {
-              navigation.select(.plan)
-            } label: {
-              HStack {
-                Text("See all \(routines.count) routines").font(.headline)
-                Spacer(minLength: 8)
-                Image(systemName: "chevron.right")
-              }
-              .foregroundStyle(FormaTheme.accent)
-              .frame(minHeight: 44).contentShape(Rectangle())
-            }
-            .buttonStyle(PressableCardStyle())
-            .accessibilityHint("Opens Plan.")
-            .accessibilityIdentifier("see-all-routines")
-          }
+        // No routines means no section: the empty state above already says so.
+        if !routines.isEmpty {
+          routineList(routines)
+            .formaReveal(order: 4)
         }
-        .formaReveal(order: 4)
 
         VStack(alignment: .leading, spacing: 0) {
           if let recent = model.history.first {
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: FormaSpacing.sm) {
               SectionHeading(
                 title: "Last time you showed up",
                 detail: TrainingDate.label(TrainingDate.date(recent)))
               NavigationLink(value: TrainingRoute.session(recent.id)) {
                 HStack {
                   Image(systemName: "checkmark.seal.fill").foregroundStyle(FormaTheme.accent)
+                    .accessibilityHidden(true)
                   Text(recent.name).font(.headline)
                   Spacer()
-                  Image(systemName: "chevron.right")
+                  Image(systemName: "chevron.right").accessibilityHidden(true)
                 }
-                .foregroundStyle(FormaTheme.primary).padding(20)
-                .background(FormaTheme.surface, in: RoundedRectangle(cornerRadius: 18))
+                .foregroundStyle(FormaTheme.primary).padding(FormaSpacing.lg)
+                .background(FormaTheme.surface, in: RoundedRectangle(cornerRadius: FormaRadius.card))
+                // Surface on canvas is about 1.1:1, so a hairline gives the
+                // card the same edge as the Watch strip and the sheets.
+                .overlay(
+                  RoundedRectangle(cornerRadius: FormaRadius.card).strokeBorder(FormaTheme.line))
               }
               .buttonStyle(PressableCardStyle())
             }
           } else {
-            HStack(alignment: .top, spacing: 12) {
+            HStack(alignment: .top, spacing: FormaSpacing.sm) {
               Image(systemName: "sparkle").foregroundStyle(FormaTheme.accent)
+                .accessibilityHidden(true)
               Text("A fresh page. Your first completed workout will appear here.")
                 .font(.subheadline).foregroundStyle(FormaTheme.secondary)
             }
@@ -207,12 +209,61 @@ struct TodayView: View {
         LocalSaveStatus(saving: model.busy)
           .formaReveal(order: 6)
       }
-      .padding(24)
+      .padding(FormaSpacing.xl)
       .id(TabScrollAnchor.top)
     }
     .background(FormaTheme.canvas)
+    .modifier(SoftTopScrollEdge())
     .formaTabRoot(.today)
+    // The bar stays hidden, but the title names the screen for VoiceOver and
+    // gives screens pushed from here a "Today" back button.
+    .navigationTitle("Today")
     .toolbar(.hidden, for: .navigationBar)
+  }
+
+  private func routineList(_ routines: [Routine]) -> some View {
+    VStack(alignment: .leading, spacing: FormaSpacing.md) {
+      SectionHeading(
+        title: "Your training space", detail: countPhrase(routines.count, "routine"))
+      ForEach(Array(routines.prefix(3).enumerated()), id: \.element.id) { position, routine in
+        NavigationLink(value: TrainingRoute.routine(routine.id)) {
+          HStack(spacing: FormaSpacing.md) {
+            Text(String(format: "%02d", position + 1))
+              .font(.title2.weight(.black).monospacedDigit()).foregroundStyle(FormaTheme.accent)
+              .accessibilityHidden(true)
+            VStack(alignment: .leading, spacing: FormaSpacing.xxs) {
+              Text(routine.name).font(.headline).foregroundStyle(FormaTheme.primary)
+              Text(
+                "\(countPhrase(routine.exercises.count, "exercise")) · \(routine.minutes) min"
+              )
+              .font(.subheadline).foregroundStyle(FormaTheme.secondary)
+            }
+            Spacer(minLength: 0)
+            Image(systemName: "chevron.right").foregroundStyle(FormaTheme.secondary)
+              .accessibilityHidden(true)
+          }
+          .padding(.vertical, FormaSpacing.sm).contentShape(Rectangle())
+        }
+        .buttonStyle(PressableCardStyle())
+        Divider().overlay(FormaTheme.line)
+      }
+      if routines.count > 3 {
+        Button {
+          navigation.select(.plan)
+        } label: {
+          HStack {
+            Text("See all \(routines.count) routines").font(.headline)
+            Spacer(minLength: FormaSpacing.xs)
+            Image(systemName: "chevron.right").accessibilityHidden(true)
+          }
+          .foregroundStyle(FormaTheme.accent)
+          .frame(minHeight: 44).contentShape(Rectangle())
+        }
+        .buttonStyle(PressableCardStyle())
+        .accessibilityHint("Opens Plan.")
+        .accessibilityIdentifier("see-all-routines")
+      }
+    }
   }
 
   /// The hero's content for the current state, or nil when there is no routine
@@ -233,7 +284,7 @@ struct TodayView: View {
       name: routine.name,
       detail:
         "\(countPhrase(routine.exercises.count, "exercise")) · about \(routine.minutes) min",
-      action: "Start workout", symbol: "arrow.up.right", inProgress: false
+      action: "Start workout", symbol: "play.fill", inProgress: false
     ) {
       starting = true
       Task {
@@ -263,27 +314,39 @@ struct TodayView: View {
   }
 
   private func compactTrainingHero(_ hero: HeroContent) -> some View {
-    HStack(spacing: 20) {
-      VStack(alignment: .leading, spacing: 5) {
-        Text(hero.inProgress ? "IN PROGRESS" : "YOUR NEXT SESSION")
+    let pending = starting && !hero.inProgress
+    return HStack(spacing: FormaSpacing.lg) {
+      VStack(alignment: .leading, spacing: FormaSpacing.xxs) {
+        Text(hero.inProgress ? "In progress" : "Next session").textCase(.uppercase)
           .font(.caption.weight(.bold)).foregroundStyle(FormaTheme.lime)
         Text(hero.name).font(.title3.bold()).foregroundStyle(.white)
           .fixedSize(horizontal: false, vertical: true)
         Text(hero.detail).font(.subheadline).foregroundStyle(FormaTheme.heroDetail)
-      }.frame(maxWidth: .infinity, alignment: .leading)
+      }
+      .frame(maxWidth: .infinity, alignment: .leading)
+      .heroHeading()
       Button(action: hero.perform) {
-        Label(hero.action, systemImage: starting ? "hourglass" : hero.symbol)
+        // The same pending treatment as the regular hero.
+        Label {
+          Text(hero.action)
+        } icon: {
+          if pending {
+            ProgressView().tint(FormaTheme.ink)
+          } else {
+            Image(systemName: hero.symbol)
+          }
+        }
       }
       .buttonStyle(.formaPrimaryOnDark)
       .frame(maxWidth: 260)
       .accessibilityLabel(hero.action)
-      .accessibilityValue(starting ? "Starting" : "")
+      .accessibilityValue(pending ? "Starting" : "")
       .accessibilityIdentifier("start-workout")
-      .disabled(model.busy || starting)
+      .disabled(model.busy || pending)
     }
-    .padding(20)
-    .background(FormaTheme.heroInk, in: RoundedRectangle(cornerRadius: 24))
-    .heroEdge(cornerRadius: 24)
+    .padding(FormaSpacing.lg)
+    .background(FormaTheme.heroInk, in: RoundedRectangle(cornerRadius: FormaRadius.hero))
+    .heroEdge(cornerRadius: FormaRadius.hero)
   }
 
   private func trainingHero(_ hero: HeroContent) -> some View {
@@ -305,6 +368,8 @@ struct TodayView: View {
             .clipped()
           }
         }
+        // A photograph, so Smart Invert leaves it as taken.
+        .accessibilityIgnoresInvertColors()
         .frame(height: 132)
         .overlay(alignment: .bottom) {
           LinearGradient(
@@ -314,15 +379,16 @@ struct TodayView: View {
         }
         .accessibilityHidden(true)
       }
-      VStack(alignment: .leading, spacing: 8) {
+      VStack(alignment: .leading, spacing: FormaSpacing.xs) {
         if textSize.isAccessibilitySize {
           Text(hero.inProgress ? "In progress" : "Next session")
             .font(.caption.weight(.bold)).foregroundStyle(FormaTheme.lime)
         } else {
           Label(
-            hero.inProgress ? "IN PROGRESS" : "YOUR NEXT SESSION",
+            hero.inProgress ? "In progress" : "Next session",
             systemImage: hero.inProgress ? "play.circle" : "arrow.turn.down.right"
           )
+          .textCase(.uppercase)
           .font(.caption.weight(.bold)).tracking(1.2).foregroundStyle(FormaTheme.lime)
         }
         Text(hero.name)
@@ -333,7 +399,9 @@ struct TodayView: View {
             .fixedSize(horizontal: false, vertical: true)
         }
       }
-      .padding(.horizontal, 20).padding(.top, textSize.isAccessibilitySize ? 20 : 8)
+      .padding(.horizontal, FormaSpacing.lg)
+      .padding(.top, textSize.isAccessibilitySize ? FormaSpacing.lg : FormaSpacing.xs)
+      .heroHeading()
       .id(hero.inProgress).transition(.opacity)
       Button(action: hero.perform) {
         ZStack {
@@ -358,26 +426,32 @@ struct TodayView: View {
       .accessibilityValue(pending ? "Starting" : "")
       .accessibilityIdentifier("start-workout")
       .disabled(model.busy || pending)
-      .padding(16)
+      // The button's bottom corners sit in the hero's: an 8pt inset makes its
+      // 16pt radius concentric with the hero's 24pt. At accessibility sizes the
+      // detail follows the button, so it keeps the wider inset.
+      .padding(.horizontal, textSize.isAccessibilitySize ? FormaSpacing.md : FormaSpacing.xs)
+      .padding(.top, FormaSpacing.md)
+      .padding(.bottom, textSize.isAccessibilitySize ? FormaSpacing.md : FormaSpacing.xs)
       .background(FormaTheme.heroInk)
       if textSize.isAccessibilitySize {
         // Keep the primary action above the fold on a compact phone at the
         // largest text size. Metadata stays readable below it, without capping type.
         Text(hero.detail).font(.subheadline).foregroundStyle(FormaTheme.heroDetail)
           .fixedSize(horizontal: false, vertical: true)
-          .padding(.horizontal, 20).padding(.bottom, 20)
+          .padding(.horizontal, FormaSpacing.lg).padding(.bottom, FormaSpacing.lg)
       }
     }
     .background(FormaTheme.heroInk)
-    .clipShape(RoundedRectangle(cornerRadius: 24))
-    .heroEdge(cornerRadius: 24)
+    .clipShape(RoundedRectangle(cornerRadius: FormaRadius.hero))
+    .heroEdge(cornerRadius: FormaRadius.hero)
     .formaAnimation(FormaMotion.reveal, value: model.activeWorkoutName)
   }
 
   private var brand: some View {
-    HStack(spacing: 10) {
+    HStack(spacing: FormaSpacing.xs) {
       FormaMark().fill(FormaTheme.ink).frame(width: 32, height: 32)
-        .padding(4).background(FormaTheme.lime, in: RoundedRectangle(cornerRadius: 12))
+        .padding(FormaSpacing.xxs)
+        .background(FormaTheme.lime, in: RoundedRectangle(cornerRadius: FormaRadius.field))
       Text("FORMA").font(.title3.weight(.black)).tracking(3).foregroundStyle(FormaTheme.primary)
     }.fixedSize()
   }
@@ -396,10 +470,33 @@ struct WeekStrip: View {
   /// follows the committed history only while the workout screen is closed,
   /// which is when a newly completed day can actually be seen filling in.
   @State private var drawn: Set<Int>?
-  private let days = ["M", "T", "W", "T", "F", "S", "S"]
-  private let fullDays = [
-    "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",
-  ]
+  /// The circles grow with the day letters and checkmarks they hold. The
+  /// accessibility sizes use the list of rows instead.
+  @ScaledMetric(relativeTo: .caption) private var dot: CGFloat = 34
+  @ScaledMetric(relativeTo: .caption) private var plannedMark: CGFloat = 5
+  /// Built once, not on every render of the strip.
+  private static let shortDays = weekdaySymbols(short: true)
+  private static let longDays = weekdaySymbols(short: false)
+  private var days: [String] { Self.shortDays }
+  private var fullDays: [String] { Self.longDays }
+
+  /// Weekday names from Monday (the training week's first day in Sydney) in
+  /// the app's own language, so they translate with the rest of the copy.
+  static func weekdaySymbols(
+    short: Bool,
+    locale: Locale = Locale(identifier: Bundle.main.preferredLocalizations.first ?? "en")
+  ) -> [String] {
+    var calendar = Calendar(identifier: .gregorian)
+    calendar.locale = locale
+    let sundayFirst =
+      short ? calendar.veryShortStandaloneWeekdaySymbols : calendar.standaloneWeekdaySymbols
+    return Array(sundayFirst.dropFirst()) + [sundayFirst[0]]
+  }
+
+  /// "2 of 4 workouts", spoken as words rather than "2 slash 4".
+  static func progressDetail(count: Int, goal: Int) -> String {
+    "\(count) of \(countPhrase(goal, "workout"))"
+  }
 
   /// Sessions and weekdays (Monday = 0) completed this week. `model.history`
   /// is sorted newest first, so stop at the first session before this week
@@ -450,14 +547,15 @@ struct WeekStrip: View {
     let shownDays = drawn ?? completedDays
     let today = todayIndex
     let schedule = model.workspace?.schedule ?? []
-    VStack(alignment: .leading, spacing: 18) {
+    VStack(alignment: .leading, spacing: FormaSpacing.md) {
+      // A heading that names the section, so the rotor lands somewhere useful.
       SectionHeading(
-        title: "A little, consistently.",
-        detail: "\(week.count) / \(model.workspace?.profile.goal ?? 4) this week")
+        title: "This week",
+        detail: Self.progressDetail(count: week.count, goal: model.workspace?.profile.goal ?? 4))
       if textSize.isAccessibilitySize {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: FormaSpacing.md) {
           ForEach(0..<7) { day in
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: FormaSpacing.xxs) {
               Text(day == today ? "\(fullDays[day]) · Today" : fullDays[day]).font(.headline)
               Text(
                 status(
@@ -478,9 +576,16 @@ struct WeekStrip: View {
             // circle is still animating.
             let spoken = status(
               day: day, trained: completedDays.contains(day), scheduled: scheduled, today: today)
-            VStack(spacing: 10) {
+            VStack(spacing: FormaSpacing.xs) {
               Text(days[day]).font(.caption.weight(isToday ? .heavy : .semibold))
                 .foregroundStyle(isToday ? FormaTheme.primary : FormaTheme.secondary)
+                // Today is marked by shape too, not only by weight and colour.
+                .overlay(alignment: .bottom) {
+                  if isToday {
+                    Capsule().fill(FormaTheme.accent).frame(width: 12, height: 2)
+                      .offset(y: FormaSpacing.xxs)
+                  }
+                }
               ZStack {
                 Circle().fill(trained ? FormaTheme.lime : FormaTheme.surface)
                 Circle().strokeBorder(
@@ -493,10 +598,10 @@ struct WeekStrip: View {
                   )
                   .transition(motion.transition(.scale(scale: 0.3).combined(with: .opacity)))
                 } else if scheduled {
-                  Circle().fill(FormaTheme.accent).frame(width: 5, height: 5)
+                  Circle().fill(FormaTheme.accent).frame(width: plannedMark, height: plannedMark)
                     .transition(.opacity)
                 }
-              }.frame(width: 34, height: 34)
+              }.frame(width: dot, height: dot)
             }
             .frame(maxWidth: .infinity)
             .accessibilityElement(children: .ignore)

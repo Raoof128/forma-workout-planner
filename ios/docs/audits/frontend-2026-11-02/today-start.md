@@ -392,3 +392,46 @@ No view in the app uses `.accessibilityIgnoresInvertColors()`. Add it to `MediaP
 - L7: whether SF Symbol labels are spoken in the row labels.
 - L8: top scroll-edge effect with the navigation bar hidden on iOS 26/27.
 - L10: Smart Invert on the hero photo.
+
+---
+
+## Resolution
+
+Fixed on branch `fix/audit-today` (2 November 2026), from audited commit `ba4e6a7`. Each
+finding was re-checked against the code first; every one still applied. No simulator was
+used; the app and its test targets were compiled with `xcodebuild build-for-testing` for
+`generic/platform=iOS` (TEST BUILD SUCCEEDED). The changed files add no warnings; the one Swift
+warning in the log is the existing `TrainingTabBar.swift:355` Sendable capture. The new unit tests
+compiled but were not run, since that needs a device.
+
+| ID | Result | What changed |
+|---|---|---|
+| H1 | Fixed; needs device check | `@AccessibilityFocusState` moves VoiceOver to the status when the Watch starts waiting (`.waiting` phase) and when a settled check leaves it out of reach. A Check again the person asked for is read out even when the Watch turns out to be ready, because the tapped button disappears. The rules are static (`shouldFocusStatus`) so they are unit-tested. Failures and the coordinator's notices are announced when they appear. Device step: VoiceOver on, open the start sheet, tap Open on Watch, then Check again with the Watch out of reach. Focus should land on the sentence that says what happened. |
+| H2 | Fixed | The strip's label comes from `WatchRecordingStrip.spokenStatus`, which says "Paused on Apple Watch" while paused and keeps the stale-reading wording. The strip has `.updatesFrequently`. |
+| M1 | Fixed; needs device check | Inside `StartWorkoutSheet`: `.presentationDetents([.medium, .large])`, a visible drag indicator, and the brand canvas only below iOS 26, so iOS 26 shows the inset glass sheet. `FORMAApp.swift` is unchanged. Device step: on iPhone Air at default text size, check that the waiting state fits at the medium detent and that the text reads well on the glass. |
+| M2 | Fixed; needs device check | The actions are pinned with `formaBottomBar`, with a canvas backing below iOS 26. At accessibility sizes the waiting artwork is dropped and the copy wraps. Device step: open the sheet at AX5 and check that Start on iPhone stays reachable. |
+| M3 | Fixed; needs device check | Check again is full width, at least 44 pt tall, `controlSize(.large)`, with identifier `watch-check-again`. Device step: measure it with Accessibility Inspector. |
+| M4 | Fixed | The count uses `countPhrase` ("1 exercise"). The sheet's eyebrow is removed, so it no longer says "YOUR NEXT SESSION" when started from Plan; the navigation title already says "Start workout". |
+| M5 | Fixed | The empty state has an "Open Plan" button (`today-open-plan`, `formaPrimaryCompact`) that selects the Plan tab. The routine section is hidden when there are no routines. |
+| M6 | Fixed | `.navigationTitle("Today")` with the bar still hidden. The brand row and the slogan are no longer headings; the slogan reads as one sentence. The hero (state, name, detail) is one heading, and the week section's heading is "This week". |
+| L1 | Fixed | The eyebrows are sentence case with `.textCase(.uppercase)`. The sheet's eyebrow is gone (M4). The "Make room for" eyebrow stays as part of the slogan. |
+| L2 | Fixed | The detail reads "2 of 4 workouts". Day letters and names come from `standaloneWeekdaySymbols`, rotated to Monday first, in the app's language. |
+| L3 | Fixed | Today's letter has a 2 pt accent underline as well as the heavier weight. |
+| L4 | Fixed | The circle and the planned mark use `@ScaledMetric(relativeTo: .caption)`. |
+| L5 | Fixed | Start uses `play.fill`. The compact hero shows the same `ProgressView` pending state as the regular one, and only when starting, not resuming. |
+| L6 | Fixed; needs device check | Literal spacing and radii are now `FormaSpacing` / `FormaRadius` tokens in both files. The hero button sits 8 pt from the card's sides and bottom, so its 16 pt radius is concentric with the card's 24 pt. At accessibility sizes it keeps a 16 pt inset, because the detail text follows it. `ConcentricRectangle` was not used, to keep one shape on iOS 17 to 26. Device step: check the corners. |
+| L7 | Fixed; needs device check | The "Last time" card has a `FormaTheme.line` hairline. The seal, sparkle and chevrons in Today's rows are `accessibilityHidden`. Device step: Accessibility Inspector on the rows. |
+| L8 | Fixed; needs device check | On iOS 26, `scrollEdgeEffectStyle(.soft, for: .top)`. Earlier systems are unchanged. Device step: scroll Today under the status bar. |
+| L9 | Fixed | The strip says "Recording ended on Apple Watch. Your Watch shows whether it saved to Health." The Health sentence in the waiting copy is its own footnote line. |
+| L10 | Partly fixed; needs device check | `.accessibilityIgnoresInvertColors()` is on Today's hero photo. `MediaPhoto` in `ExerciseMedia.swift` is still uncovered in its other uses; that file belongs to the Progress/You/media slice. Device step: Smart Invert on, light mode, check the hero photo. |
+| L11 | Fixed | Failures shown in the sheet are sheet-local (`failure`), set only by a change to `model.errorMessage` while the sheet is up, so an old app-wide error is not shown. Swipe-to-dismiss is disabled while a start or open is in flight. |
+
+**Tests.** New `ios/FORMAAppTests/TodayStartPresentationTests.swift` covers the sheet's
+VoiceOver focus rules, the paused wording and the stale reading in the strip's label,
+Monday-first weekday names, "2 of 4 workouts", and "1 exercise".
+
+**Files changed.**
+- `ios/FORMA/Features/TodayView.swift`
+- `ios/FORMA/Features/StartWorkoutSheet.swift` (includes `WatchRecordingStrip`)
+- `ios/FORMAAppTests/TodayStartPresentationTests.swift` (new)
+- This report
