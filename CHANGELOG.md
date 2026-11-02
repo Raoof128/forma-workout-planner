@@ -4,6 +4,72 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-11-02 — Apple Watch collected data, Watch stop choice and loading state
+
+- **Scope:** four owner asks: show what the Watch collected next to the finished
+  workout and in Progress, on the iPhone and the website; polish the Watch-connected
+  workout screens and keep Done large; one Watch control to pause the recording or
+  end the workout; a loading animation while the Watch starts. The owner skipped
+  the design questions ("start integrating") and said the Watch must not control
+  everything, so it controls only its own recording. Design note:
+  `docs/superpowers/specs/2026-11-02-watch-collected-data-design.md`.
+- **Summary:** finished workouts gain an optional `watch` summary
+  (`elapsedSeconds`, `averageHeartRate`, `maxHeartRate`, `activeEnergyKcal`, whole
+  and bounded) in `src/storage.js` and FORMACore, checked by one shared corpus
+  (`ios/Fixtures/validation-boundaries.json`, `watchSummaries`). The iPhone stores
+  the latest Watch reading at Finish and replaces it with the Watch's final one
+  (state `ended`) if that arrives later; a discarded recording (new `discarded`
+  flag on `WatchMetrics`) keeps none. The receipt, workout details and Progress show
+  it (`WatchSummaryCard.swift`); the website shows it in workout details, journal
+  rows and Progress (`WatchSummary.jsx`, `src/watchSummary.js`). Watch: max heart
+  rate, a Stop button on the numbers page that asks Pause/Resume or End, a pulsing
+  heart while HealthKit starts, restores or saves and "Measuring…" until the first
+  heart-rate reading, and Done pinned full width (52 pt) on the summary. iPhone: the
+  recording strip is a card that offers Finish once the Watch has ended; the
+  keyboard Done is a full 44 pt bold target. Privacy Policy 1.4 and native notice
+  0.4 disclose the summary.
+- **Rules (supersede the 2026-10-26 Watch entry):** the Watch summary is part of
+  the workout record, exports and account sync; individual readings stay in Apple
+  Health only. **Release order: API, then Worker, then any iPhone build that sends
+  it.** `server/schema.ts` validates strictly, so an older API rejects a workspace
+  with `watch` (unknown field) and the iPhone's sync would keep failing; an older
+  web bundle validates loosely and would strip it on its next save. The Watch never
+  controls iPhone sets, holds or rest timers. Watch summaries are written only by the
+  iPhone; the web never creates one.
+- **Files:** `src/storage.js`, `src/watchSummary.js`, `src/watch-summary.css`,
+  `src/components/WatchSummary.jsx`, `src/components/Insights.jsx`,
+  `src/legal/content.js`, `scripts/build-ios-resources.mjs`,
+  `ios/FORMA/Resources/legal.json`, `ios/FORMA/Resources/resource-manifest.json`,
+  `ios/Sources/FORMACore/{WatchSummary,Models,WorkoutEngine}.swift`,
+  `ios/Shared/WatchWorkout.swift`, `ios/FORMAWatch/{WatchViews,WorkoutManager}.swift`,
+  `ios/FORMA/App/{AppModel,WatchWorkoutCoordinator}.swift`,
+  `ios/FORMA/Features/{WatchSummaryCard,ProgressView,StartWorkoutSheet,WorkoutView}.swift`,
+  tests (`unit/watch-summary.test.js`, `unit/ios-validation-boundaries.test.js`,
+  `unit/ios-resources.test.js`, `tests/watch-summary.spec.js`,
+  `server/tests/workspace.test.ts`, `ios/Tests/FORMACoreTests/WatchSummaryTests.swift`,
+  `ios/FORMAAppTests/WatchWorkoutCoordinatorTests.swift`), docs
+  (`docs/data-model.md`, `docs/legal/README.md`, `ios/docs/apple-watch.md`,
+  `ios/docs/privacy-inventory.md`, `ios/docs/app-review-matrix.md`, `ios/README.md`,
+  `ios/FORMA/Resources/README.md`), `CHANGELOG.md`, `AGENT.md`.
+- **Verification:** lint, `format:check`, `typecheck`, `docs:check`, `build` pass;
+  `test:unit` 156/156; `swift test` 154/154;
+  `build-ios-resources --check` and the native contract probe pass; Playwright
+  `watch-summary` and `legal` specs pass in Chromium and WebKit (Firefox does not
+  launch in this sandbox: not run); `server/tests/workspace.test.ts` 3/3 on a
+  disposable local PostgreSQL 15 (the rest of `test:server` needs PostgreSQL 18:
+  not run here; Docker was off). iPhone + Watch Debug device build
+  (`generic/platform=iOS`) succeeded with no warnings. Browser check in guest mode
+  at desktop and 320 px: detail card, journal badge and Progress panel render, no
+  horizontal scroll, no console errors. Simulator not used (owner's instruction);
+  `FORMAAppTests` were not run. On-device behaviour (Stop dialog, loading heart,
+  pinned Done, max heart rate from `HKStatistics`, final-reading replacement) is
+  not yet verified on the iPhone Air and Watch.
+- **Follow-ups:** owner approval of Privacy Policy 1.4 before any deploy; release
+  API then Worker (staging first) before relying on an iPhone build that syncs a
+  Watch summary; App Store Connect Health category decision; device checks above;
+  PR #37 also edits `ProgressView.swift` and `WorkoutView.swift`, so expect small
+  merge conflicts. Not deployed.
+
 ### Raouf: 2026-10-28 — Native account fixes and animated navigation
 
 - **Scope:** finish the local account app review and the owner's chosen SwiftUI
