@@ -546,3 +546,50 @@ re-renders the unavailable state before `dismiss()` runs.
   falls back to text when unavailable and links only to http(s) URLs (`safeWebURL`).
 - **APIs:** No deprecated APIs. Navigation is type-safe through `TrainingRoute`.
   `navigationDestination` is never placed inside a lazy container.
+
+---
+
+## Resolution
+
+Fixed on branch `fix/audit-plan` from `ba4e6a7`. I re-checked each finding against the
+code before changing it. The build is `xcodebuild build-for-testing`, scheme `FORMA`,
+`generic/platform=iOS`, Debug. It succeeded with no new Swift warnings. No simulator or
+device run was made. "Device check" names the step that still needs an iPhone.
+
+| ID | Result | What changed, or the device step |
+|---|---|---|
+| H1 | Fixed | The editor keeps a `baseline` copy of the starting draft, and `changed` compares against it. An untouched new routine closes with Cancel or a swipe and shows no discard prompt. |
+| M1 | Fixed. Device check | `SheetDismissAttemptObserver` (new, `PlanEditorSupport.swift`) wraps the sheet's presentation-controller delegate and forwards every other call to SwiftUI's own delegate. When a swipe is refused, `presentationControllerDidAttemptToDismiss` opens the existing Discard dialog. `interactiveDismissDisabled` stays as the gate. **Device:** edit a routine name, swipe the sheet down, confirm the dialog appears, then confirm an unedited sheet still swipes closed. |
+| M2 | Fixed | Validation is split by section (`RoutineDraftRules.issues`). Name and description messages sit in the "Make it yours" footer; exercise, cue, per-side and target messages sit in the Exercises footer. Disabled Save carries the reason as its `accessibilityHint`. A save failure appears at the top of the form, is announced, and is scrolled into view with `ScrollViewReader`. |
+| M3 | Fixed. Device check | The `EditButton` has a 44 × 44 pt frame. Each editor row has the named VoiceOver actions "Move up", "Move down" and "Remove", and the same items in a context menu for Voice Control and touch. **Device:** with VoiceOver, use the Actions rotor on an editor row to move it. |
+| M4 | Fixed. Device check | Start workout is now its own `Section` row. The photo, title and description row has no button in it. **Device:** tap the cover photo and confirm nothing starts. |
+| M5 | Fixed | Routine rows have a trailing swipe Delete (no full swipe; it confirms first) and a context menu with Edit, Duplicate, Move up, Move down and Delete. They also have `onMove` and the named actions Edit, Move up and Move down. Duplicate and reorder follow the web contract (`duplicateRoutine` and `reorderRoutines` in `src/App.jsx`): the copy is named from the first 55 characters plus " copy", and archived routines keep their slots. |
+| M6 | Fixed | When filters cause the empty result, a custom `ContentUnavailableView` names the filters and offers "Clear filters". A text-only search still uses `.search(text:)`. |
+| M7 | Fixed | When the routine reaches 100 exercises, every add button is disabled through a new `canAdd` closure. A banner pinned under the search field says why. A refused add plays `model.haptic(.warning)`. The old notice at the top of the list is gone. |
+| M8 | Fixed. Device check | At accessibility sizes the picker row stacks: name and details, then the Added state, then the info button. `EditorialTitle` on the routine detail and the guide is capped at `...accessibility1`, while body text keeps scaling. **Device:** check the picker and guide at AX5. |
+| M9 | Fixed | The list-wide filter animation is removed. `applyFilters` animates only when rows removed plus rows inserted are 60 or fewer (`LibraryFilterMotion`); a larger change applies instantly. The count header uses `.numericText()`. The cached index, debounced off-main search and unanimated typing are unchanged. |
+| L1 | Fixed. Device check | Save uses `.glassProminent` on iOS 26, behind `#available`, tinted lime with an ink label (white on lime would be 1.2:1). Earlier systems keep semibold. **Device:** check Save in light and dark, enabled and disabled. |
+| L2 | Fixed | The picker's "Done (n)" button is removed, so Back returns to the routine. The visit's add count is in the results header ("3 added"). The identifier `exercise-picker-done` had no UI-test users. |
+| L3 | Fixed, with part not a defect | Routine detail and the guide use the routine or exercise name as their title. The UI tests `ScreenshotTourTests` and `WidgetGalleryTests` were updated to match. The inline "Plan" root title is not a defect: Progress and You also use inline root titles, and the editorial header serves as the large title. |
+| L4 | Fixed | The three all-caps eyebrows are removed. The header reads "Plan your training.". The section is renamed "Routines", and the footer pronouns are consistent. |
+| L5 | Fixed | Create is the empty state's own action. The footer now makes one point. Counts read "1,411 exercises" through grouped `exerciseCount`. The plank copy is plain. A save conflict offers "Replace with my version" and "Discard my changes". |
+| L6 | Fixed | The stepper stays on a 5-minute grid and snaps off-grid values. Above two hours it steps in 15 minutes. The schema bound of 1 to 1000 is kept (`RoutineDraftRules.steppedMinutes`). |
+| L7 | Fixed | Name, Description and Cue have a visible caption above the field. The cue shows a live "n/140" count. |
+| L8 | Fixed | The routine detail index uses `FormaFont.numeral(.title3, weight: .semibold)`. |
+| L9 | Fixed | An exercise missing from the catalogue renders an "Unavailable exercise" row in detail and in the editor. In the editor it can be swiped or removed from its menu. Each entry now always produces one row. |
+| L10 | Fixed | Removing a row, or a move that unlinks a superset, shows an on-screen Undo row and posts an announcement ("Removed Squat.", "Superset unlinked."). The Undo row disappears once the list changes again. I chose an on-screen Undo over shake-to-undo so it can be found. |
+| L11 | Fixed, with part not a defect | Training days uses the canvas background, and weekday names come from `calendar.standaloneWeekdaySymbols` (Monday first). Row colour is not changed: no tab uses `FormaTheme.surface` rows, so changing Plan alone would make it differ from Progress and You. That is an app-wide design-system decision. |
+| L12 | Not a defect | The audit itself calls this a product choice. There are 7 muscles plus "All", which is too many for a scope bar at 375 pt, and 67 equipment types, which suit a picker better than tokens. The new filter empty state gives a way back. |
+| L13 | Fixed | The target `TextField`'s `accessibilityValue` reads the text and then "Invalid. …" while an error stands. The separate error label is hidden from VoiceOver so it is not read twice. |
+| L14 | Fixed | A confirmed delete sets `removing`, so the screen stays blank until the pop. A failed delete clears it again. |
+
+**Counts:** 23 fixed, five of them with a device check (M1, M3, M4, M8, L1), and 1 not
+a defect (L12).
+
+**Files changed:**
+- `ios/FORMA/Features/PlanView.swift`
+- `ios/FORMA/Features/PlanEditorSupport.swift` (new)
+- `ios/FORMAAppTests/PlanEditorRulesTests.swift` (new, 14 tests)
+- `ios/FORMAUITests/ScreenshotTourTests.swift`
+- `ios/FORMAUITests/WidgetGalleryTests.swift`
+- This report.
