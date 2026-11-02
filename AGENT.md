@@ -58,6 +58,34 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-11-02 — Apple Watch collected data deployed
+
+- **Scope:** owner asked to push, redeploy the site and release the API ("you do
+  all") for `feat/watch-collected-data` at `55d6dc1`.
+- **Summary:** API image `forma-api:watch-summary-20261102-55d6dc1` (linux/amd64,
+  user `forma`, archive SHA-256 `1ae08a56…ca06`) built on the Mac and released with
+  `docs/qa/holds-timer/api-release.sh`, staging then production; both replace
+  `native-ios-20261028-c0883a3` (native iPhone support was already live). No new
+  migration (schema still `0006`). Workers: staging `3e2aef47-…`, production
+  `ed075a4c-…`. Production now runs a branch that is not merged into `main`.
+- **Rules:** the host is reachable as `root` with Sentinel's key
+  (`~/.config/sentinel-ssh/keys/portfolio-droplet-root`, host id
+  `portfolio-droplet`, pinned host key in Sentinel's config); the `eoiadmin` key is
+  not on this Mac. Sentinel itself is read-only and cannot transfer or run a
+  release. Rolling back to `native-ios-20261028-c0883a3` is safe only until a
+  member's workspace holds a Watch summary: that image rejects the `watch` field.
+- **Files:** `AGENT.md`, `CHANGELOG.md`.
+- **Verification:** release script on each host: archive hash OK, encrypted signed
+  off-host backups before and after, migration no-op, `health=healthy`, counts and
+  unrelated containers unchanged, zero API error lines. The staging container's
+  validator accepts a `watch` summary in strict mode. Production: site 200,
+  `/api/health` 200, anonymous `/api/workspace` 401; the live bundle
+  `index-Bq03_fMW.js` contains Privacy Policy 1.4 and the Watch panels. Staging is
+  behind Access (anonymous 302, as before). The Watch flow on the owner's iPhone
+  and Watch is not yet verified.
+- **Follow-ups:** open and merge the PR so `main` matches production; device check
+  of the Watch flow while signed in; App Store Connect Health category decision.
+
 ### Raouf: 2026-11-02 — Apple Watch collected data, Watch stop choice and loading state
 
 - **Scope:** four owner asks: show what the Watch collected next to the finished
