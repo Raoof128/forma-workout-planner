@@ -271,6 +271,50 @@ Fix: `Text("^[\(completed) set](inflect: true) completed")`, or reuse the file's
 - **Notes**: Cancel on the left and Save on the right, a discard confirmation (SwiftUI adds Cancel automatically, per HIG Action sheets), and a 10,000-character guard. The guard's Save is disabled with no reason given; consider colouring the count with `FormaTheme.error` and adding a line saying how much to cut.
 - **No deprecated APIs** in the slice.
 
+## Resolution
+
+Fixed on branch `fix/audit-workout` from `ba4e6a7`. I re-checked each finding against the
+code before changing it. The build is `xcodebuild build-for-testing`, scheme `FORMA`,
+`generic/platform=iOS`, Debug. It succeeded with no new Swift warnings. No simulator or
+device run was made, and the unit tests were built but not run. "Device check" names the
+step that still needs an iPhone.
+
+| ID | Result | What changed, or the device step |
+|---|---|---|
+| H1 | Fixed (owner option B). Device check | On iOS 26 Finish is an icon-only `flag.checkered` with `.glassProminent`, tinted lime, with the symbol in ink. It is the same circle size as close and More. The flag matches the bottom Finish button. Option B named a checkmark, so swapping the glyph is one line if the owner prefers it. The name stays "Finish workout" (identifier `finish-workout`), with the Voice Control names "Finish" and "Finish workout". Before iOS 26 it is still the "Finish" text button. **Device:** check Finish in light and dark, enabled and disabled while busy. |
+| H2 | Fixed | The receipt has a toolbar Done (`receipt-done-toolbar`; `role: .confirm` on iOS 26) that closes the cover. The bottom button now says "Done" instead of "Keep the feeling.", and both buttons call the same action. |
+| M1 | Fixed | The widget notice reads "A widget link is waiting. Close the workout to open it; you can resume it later." It has its own 44 pt "Close and open link" button (`widget-link-close`). That button goes through the same close path, including the running-hold question. The close button also answers "Save and close" and "Close" in Voice Control. |
+| M2 | Fixed | Elapsed time, rest remaining and the hold readout each have a stable label ("Elapsed time", "Rest remaining", "Hold remaining" or "Hold length"), the spoken time as `accessibilityValue`, and `.updatesFrequently`. |
+| M3 | Fixed | The guide sheet's leading button is `Button(role: .close)` on iOS 26 and "Close" before it, in place of "Done". |
+| M4 | Not changed here | The "Also saved in Apple Health" line is the progress slice's fix, as agreed with the lead. |
+| M5 | Fixed. Device check | `DismissAttemptObserver` wraps the notes sheet's presentation-controller delegate and forwards every other call to SwiftUI's delegate (the same approach as the plan editor). When a swipe is refused over unsaved notes, a dialog asks "Save your notes?" with "Save notes" (shown only when saving is allowed), "Discard changes" and Cancel. `interactiveDismissDisabled` stays as the gate. **Device:** edit notes, swipe the sheet down, confirm the dialog. Then confirm unedited notes still swipe closed. |
+| L1 | Fixed | The close chevron uses the system weight, matching the ellipsis. The chevron stays, since changing it to an xmark is the owner's call. |
+| L2 | Fixed | "1 set completed" and "1 second" now use the singular, through `setCount` and a new `secondCount`, in the selector, hold messages and announcements. At accessibility sizes the count moves under "Choose exercise". |
+| L3 | Fixed, in part | The "IN YOUR OWN TIME." eyebrow is removed, and the session name is a header. "Exercise 1 of 5" is in sentence case. The receipt's line is written in sentence case and set with `.textCase(.uppercase)`. The navigation title stays "Training", because `TodayLayoutAndWidgetRoutingTests` asserts it. |
+| L4 | Fixed | The finish message is the counts plus one consequence, for example "9 of 12 sets done. Unfinished sets won't count.", with "Your Apple Watch recording ends too." only while the Watch records. The journal and Health sentences are gone. Both alerts use "Cancel". |
+| L5 | Fixed | The hold's −/+ buttons answer "Minus n"/"Plus n" and "Shorter hold"/"Longer hold" in Voice Control. Rest +15 answers "Plus 15" and "Add 15 seconds". |
+| L6 | Not changed here | `WatchSummaryCard.swift` belongs to the progress slice, and its fixer is taking it. |
+| L7 | Fixed | With no completed sets, Finish asks "Save a workout with no sets?" and offers "Discard workout" (`finish-discard-empty`), "Save anyway" and Cancel. The receipt shows the time as minutes and seconds with `WorkoutClock.text` (label "Time"), so a short session no longer reads "0". |
+| L8 | Device check | No code change. **Device:** in light mode, scroll a lime button under the rest dock and check "+15" and "Skip" against it. |
+| L9 | Fixed | The keyboard bar has "Previous field" and "Next field" (`previous-field`, `next-field`) before Done. They walk the open sets' fields in reading order, skip locked sets, and are disabled at either end. `SetRow.fieldNames` is the one ordered list the row and the buttons both use. |
+| L10 | Fixed. Device check | VoiceOver focus moves to the receipt's headline after the transition, and "Session saved" is a header. **Device:** finish a workout with VoiceOver on and confirm focus lands on the headline. |
+| L11 | Fixed | When the leave question opens, the hold pauses, so the seconds it quotes are the seconds logged. Cancel resumes it. Log and Discard work as before. |
+| L12 | Fixed | A bundled `Sounds/hold-tone.caf` is played through `AudioServicesCreateSystemSoundID` (`HoldTone`), in place of system sound 1057. It still follows the ringer switch and the muted setting. |
+
+**Counts:** 16 fixed (L3 in part), three of them with a device check (H1, M5, L10).
+L8 is a device check with no code change. M4 and L6 are left to the progress slice.
+
+**Tests:** new in `FORMAAppTests/WorkoutLoggingTests.swift`:
+`testFinishMessageIsCountsPlusOneConsequence`, `testAnEmptySessionSaysSoInsteadOfCountingZero`,
+`testSetFieldsAreListedInReadingOrder` and `testTheHoldToneShipsInTheAppBundle`. The app
+tests run inside the app (`TEST_HOST` is `FORMA.app`), so the tone test checks the real
+bundle. The build placed `hold-tone.caf` at the bundle root.
+
+**Files changed:**
+- `ios/FORMA/Features/WorkoutView.swift`
+- `ios/FORMA/Sounds/hold-tone.caf` (new)
+- `ios/FORMAAppTests/WorkoutLoggingTests.swift`
+
 ## Sources (retrieved 2 Nov 2026)
 
 - HIG Toolbars: https://developer.apple.com/design/human-interface-guidelines/toolbars (change log: 16 Dec 2025, Liquid Glass)

@@ -111,15 +111,36 @@ enum WorkoutClock {
   }
 }
 
+/// The hold's audible end cue: a short tone bundled with the app and played as
+/// a system sound, so it follows the ringer switch as before. Apple doesn't
+/// publish the built-in system sound IDs, so the app no longer borrows one.
+@MainActor enum HoldTone {
+  static let fileName = "hold-tone"
+
+  private static let sound: SystemSoundID? = {
+    guard let url = Bundle.main.url(forResource: fileName, withExtension: "caf") else { return nil }
+    var id: SystemSoundID = 0
+    return AudioServicesCreateSystemSoundID(url as CFURL, &id) == kAudioServicesNoError ? id : nil
+  }()
+
+  static func play() {
+    if let sound { AudioServicesPlaySystemSound(sound) }
+  }
+}
+
 /// What Save & close and Finish were doing when a running hold interrupted.
 private enum HoldLeave { case close, finish }
 
 private func setCount(_ count: Int) -> String { count == 1 ? "1 set" : "\(count) sets" }
+private func secondCount(_ count: Int) -> String {
+  count == 1 ? "1 second" : "\(count) seconds"
+}
 
 struct WorkoutView: View {
   @Environment(AppModel.self) private var model
   @Environment(\.scenePhase) private var scenePhase
   @Environment(\.locale) private var locale
+  @Environment(\.dynamicTypeSize) private var typeSize
   @State private var selectedExercise = 0
   /// Set once the screen has moved to where the person left off, and while that
   /// move is in flight so it does not play the exercise-change haptic.
@@ -138,6 +159,8 @@ struct WorkoutView: View {
   @State private var holdMessage: String?
   @State private var holdLeave: HoldLeave?
   @State private var holdDiscardConfirmation = false
+  /// The hold paused while the leave question is open, so Cancel can resume it.
+  @State private var holdPausedForLeave: UUID?
   /// Sets reopened to correct them. Ticking one again keeps a rest that is
   /// already running instead of restarting it.
   @State private var reopened: Set<String> = []
@@ -166,18 +189,12 @@ struct WorkoutView: View {
             .modifier(
               WorkoutToolbar(
                 busy: model.busy,
-                close: {
-                  Task {
-                    if holdIsLive {
-                      holdLeave = .close
-                    } else {
-                      await closeWorkout()
-                    }
-                  }
-                },
+                close: requestClose,
                 discard: { discardConfirmation = true },
                 finish: requestFinish,
-                saveDrafts: { Task { if await saveDrafts() { focusedField = nil } } })),
+                saveDrafts: { Task { if await saveDrafts() { focusedField = nil } } },
+                previousField: focusStep(-1, in: session),
+                nextField: focusStep(1, in: session))),
             session: session),
           session: session, reader: reader)
       }
@@ -191,20 +208,26 @@ struct WorkoutView: View {
   ) -> some View {
     VStack(alignment: .leading, spacing: 24) {
       if model.widgetRoute != nil {
-        VStack(alignment: .leading) {
-          Text("Widget link queued. Use Save & close to open it.")
+        // The close control is a bare chevron on iOS 26, so the notice names
+        // what to do and offers it here rather than pointing at a label that
+        // isn't on screen.
+        VStack(alignment: .leading, spacing: 4) {
+          Text("A widget link is waiting. Close the workout to open it; you can resume it later.")
             .font(.footnote).foregroundStyle(FormaTheme.secondary)
+            .fixedSize(horizontal: false, vertical: true)
+          Button(action: requestClose) {
+            Text("Close and open link").frame(minHeight: 44).contentShape(Rectangle())
+          }
+          .font(.footnote.weight(.semibold)).disabled(model.busy)
+          .accessibilityIdentifier("widget-link-close")
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier("widget-link-queued")
       }
       AdaptiveMetricGroup {
-        VStack(alignment: .leading, spacing: 6) {
-          Text("IN YOUR OWN TIME.").font(.caption.weight(.bold)).tracking(1.5)
-            .foregroundStyle(FormaTheme.accent)
-          Text(session.name).font(.title2.bold()).fixedSize(horizontal: false, vertical: true)
-        }
+        Text(session.name).font(.title2.bold()).fixedSize(horizontal: false, vertical: true)
+          .accessibilityAddTraits(.isHeader)
         ElapsedTime(startedAt: session.startedAt)
       }
       saveStatus
@@ -217,9 +240,8 @@ struct WorkoutView: View {
         VStack(alignment: .leading, spacing: 14) {
           HStack(alignment: .top) {
             VStack(alignment: .leading, spacing: 6) {
-              Text("EXERCISE \(selectedExercise + 1) OF \(session.exercises.count)")
-                .font(.caption.weight(.semibold)).tracking(1).foregroundStyle(
-                  FormaTheme.secondary)
+              Text("Exercise \(selectedExercise + 1) of \(session.exercises.count)")
+                .font(.subheadline.weight(.semibold)).foregroundStyle(FormaTheme.secondary)
               Text(exercise?.name ?? entry.exerciseId)
                 .font(FormaDisplayFont.font(size: 34, relativeTo: .title))
                 .accessibilityAddTraits(.isHeader)
@@ -354,9 +376,19 @@ struct WorkoutView: View {
 
   private func workoutDialogs(_ content: some View, session: WorkoutSession) -> some View {
     content
-      .alert("Finish this workout?", isPresented: $finishConfirmation) {
-        Button("Keep training", role: .cancel) {}
-        Button("Finish workout") {
+      // HIG Workouts: a session with nothing logged is offered for discarding
+      // rather than saved as a workout without asking.
+      .alert(
+        WorkoutEngine.completedSets(session) == 0
+          ? "Save a workout with no sets?" : "Finish this workout?",
+        isPresented: $finishConfirmation
+      ) {
+        Button("Cancel", role: .cancel) {}
+        if WorkoutEngine.completedSets(session) == 0 {
+          Button("Discard workout", role: .destructive) { Task { await discardWorkout() } }
+            .accessibilityIdentifier("finish-discard-empty")
+        }
+        Button(WorkoutEngine.completedSets(session) == 0 ? "Save anyway" : "Finish workout") {
           Task {
             guard canLeaveTimedSet() else { return }
             if await saveDrafts() { await model.finish() }
@@ -366,12 +398,8 @@ struct WorkoutView: View {
         Text(finishMessage(session))
       }
       .alert("Discard this workout?", isPresented: $discardConfirmation) {
-        Button("Keep training", role: .cancel) {}
-        Button("Discard workout", role: .destructive) {
-          Task {
-            if await model.discardActive() { model.workoutPresented = false }
-          }
-        }
+        Button("Cancel", role: .cancel) {}
+        Button("Discard workout", role: .destructive) { Task { await discardWorkout() } }
       } message: {
         Text(discardMessage(session))
       }
@@ -381,7 +409,7 @@ struct WorkoutView: View {
       ) { leave in
         holdLeaveActions(leave, session: session)
       } message: { _ in
-        Text("\(heldSeconds) seconds held so far. Choose what happens to them.")
+        Text("\(secondCount(heldSeconds)) held so far. Choose what happens to them.")
       }
       .confirmationDialog(
         "Discard this timer?", isPresented: $holdDiscardConfirmation, titleVisibility: .visible
@@ -389,7 +417,7 @@ struct WorkoutView: View {
         Button("Discard timer", role: .destructive) { discardHold() }
         Button("Keep timing", role: .cancel) {}
       } message: {
-        Text("The \(heldSeconds) seconds held won't be logged.")
+        Text("The \(secondCount(heldSeconds)) held won't be logged.")
       }
       .sheet(item: $guide) { exercise in GuideSheet(exercise: exercise).protectWidgetNavigation()
       }
@@ -532,14 +560,20 @@ struct WorkoutView: View {
             + (index == selectedExercise ? ", current" : ""))
       }
     } label: {
-      HStack {
-        Image(systemName: "list.bullet")
-        Text("Choose exercise")
-        Spacer()
-        Text("\(completed) sets completed")
-          .font(.caption)
-          .modifier(NumericChange(value: completed))
-        Image(systemName: "chevron.down")
+      // At accessibility sizes the count drops under the title instead of
+      // squeezing both into narrow wrapped columns.
+      let count = Text("\(setCount(completed)) completed")
+        .font(.caption)
+        .modifier(NumericChange(value: completed))
+      VStack(alignment: .leading, spacing: 6) {
+        HStack {
+          Image(systemName: "list.bullet")
+          Text("Choose exercise")
+          Spacer()
+          if !typeSize.isAccessibilitySize { count }
+          Image(systemName: "chevron.down")
+        }
+        if typeSize.isAccessibilitySize { count }
       }
       .font(.subheadline.weight(.medium)).padding(16)
       .background(FormaTheme.surface, in: RoundedRectangle(cornerRadius: 14))
@@ -559,6 +593,27 @@ struct WorkoutView: View {
   }
 
   private func draftKey(entry: SessionEntry, set: Int) -> String { "\(entry.id)-\(set)" }
+
+  /// The keyboard's previous/next action from the focused field, or nil at
+  /// either end. Locked (completed, unedited) sets are skipped: their fields
+  /// can't take focus.
+  private func focusStep(_ step: Int, in session: WorkoutSession) -> (() -> Void)? {
+    guard let current = focusedField, session.exercises.indices.contains(selectedExercise)
+    else { return nil }
+    let entry = session.exercises[selectedExercise]
+    let exercise = model.exercise(entry.exerciseId)
+    let order = entry.sets.indices.flatMap { index -> [String] in
+      let key = draftKey(entry: entry, set: index)
+      let set = entry.sets[index]
+      guard !set.done || drafts[key] != nil else { return [] }
+      return SetRow.fieldNames(exercise: exercise, perSide: entry.perSide, set: set)
+        .map { "\(key)-\($0)" }
+    }
+    guard let position = order.firstIndex(of: current), order.indices.contains(position + step)
+    else { return nil }
+    let target = order[position + step]
+    return { focusedField = target }
+  }
 
   /// A timer that is counting or paused, not yet saving or waiting on a retry.
   private var holdIsLive: Bool { hold != nil && !holdLog.isSaving && !holdLog.needsRetry }
@@ -594,7 +649,7 @@ struct WorkoutView: View {
       discardHold()
       Task { await continueLeaving(leave) }
     }
-    Button("Keep training", role: .cancel) {}
+    Button("Cancel", role: .cancel) { resumeHoldAfterLeave() }
   }
 
   private func continueLeaving(_ leave: HoldLeave) async {
@@ -605,7 +660,37 @@ struct WorkoutView: View {
   }
 
   private func requestFinish() {
-    if holdIsLive { holdLeave = .finish } else { finishConfirmation = true }
+    if holdIsLive { askAboutHold(.finish) } else { finishConfirmation = true }
+  }
+
+  private func requestClose() {
+    if holdIsLive { askAboutHold(.close) } else { Task { await closeWorkout() } }
+  }
+
+  /// The question about a running hold is asked with the hold paused, so the
+  /// seconds it quotes are the seconds that get logged. Cancel picks it up
+  /// again; any other answer logs or discards it.
+  private func askAboutHold(_ leave: HoldLeave) {
+    if var timer = hold, timer.endsAt != nil {
+      timer.left = timer.remaining(at: .now)
+      timer.endsAt = nil
+      hold = timer
+      holdPausedForLeave = timer.id
+    }
+    holdLeave = leave
+  }
+
+  private func resumeHoldAfterLeave() {
+    defer { holdPausedForLeave = nil }
+    guard let paused = holdPausedForLeave, var timer = hold, timer.id == paused,
+      timer.endsAt == nil, !holdLog.isSaving, !holdLog.needsRetry
+    else { return }
+    timer.endsAt = .now.addingTimeInterval(Double(timer.left))
+    hold = timer
+  }
+
+  private func discardWorkout() async {
+    if await model.discardActive() { model.workoutPresented = false }
   }
 
   private func closeWorkout() async {
@@ -625,17 +710,23 @@ struct WorkoutView: View {
   }
 
   private func finishMessage(_ session: WorkoutSession) -> String {
-    let total = WorkoutEngine.totalSets(session)
-    let unfinished = WorkoutEngine.unfinishedSets(session)
-    var text = "You've completed \(WorkoutEngine.completedSets(session)) of \(setCount(total))."
-    if unfinished > 0 {
-      text +=
-        " The \(unfinished == 1 ? "unfinished set" : "\(unfinished) unfinished sets") won't count towards your totals."
+    WorkoutView.finishMessage(
+      completed: WorkoutEngine.completedSets(session), total: WorkoutEngine.totalSets(session),
+      watchRecording: model.watch.phase == .recording)
+  }
+
+  /// Short enough not to scroll at large text (HIG Alerts): the counts and the
+  /// one consequence. The Health result belongs on the receipt, once it's known.
+  nonisolated static func finishMessage(completed: Int, total: Int, watchRecording: Bool) -> String {
+    var text =
+      completed == 0
+      ? "No sets are done yet."
+      : "\(completed) of \(setCount(total)) done."
+    let unfinished = total - completed
+    if completed > 0, unfinished > 0 {
+      text += unfinished == 1 ? " The unfinished set won't count." : " Unfinished sets won't count."
     }
-    text += " The workout is saved to your training journal."
-    if model.watch.phase == .recording {
-      text += " Your Apple Watch recording ends and is saved to Health."
-    }
+    if watchRecording { text += " Your Apple Watch recording ends too." }
     return text
   }
 
@@ -902,12 +993,12 @@ struct WorkoutView: View {
     validation = drafts.isEmpty ? nil : newerEditsIssue
     feedback += 1
     // The web's audible cue: a short tone unless training sounds are muted.
-    if model.workspace?.profile.muted == false { AudioServicesPlaySystemSound(1057) }
+    if model.workspace?.profile.muted == false { HoldTone.play() }
     let exercise = model.exercise(timer.exerciseID)
     let name = exercise?.name ?? timer.exerciseID
     let detail =
       exercise.map { HoldTimer.loggedText(count: logged.count, unit: $0.holdUnit) }
-      ?? "\(attempt.seconds) seconds"
+      ?? secondCount(attempt.seconds)
     let message = "\(name) set \(logged.index + 1) logged: \(detail)."
     holdMessage = message
     AccessibilityNotification.Announcement(message).post()
@@ -989,9 +1080,11 @@ private struct HoldTimerCard: View {
         Text(WorkoutClock.text(shown, locale: locale))
           .font(.title.bold().monospacedDigit()).foregroundStyle(FormaTheme.primary)
           .modifier(NumericChange(value: shown, countsDown: true, perSecond: true))
-          .accessibilityLabel(
-            "\(WorkoutClock.spoken(shown, locale: locale)) \(hold == nil ? "hold" : "remaining")"
-          )
+          // A stable name, the time as the value, and the trait VoiceOver
+          // polls a stopwatch readout by.
+          .accessibilityLabel(hold == nil ? "Hold length" : "Hold remaining")
+          .accessibilityValue(WorkoutClock.spoken(shown, locale: locale))
+          .accessibilityAddTraits(.updatesFrequently)
           .accessibilityIdentifier("hold-remaining")
       }
       ViewThatFits(in: .horizontal) {
@@ -1057,6 +1150,8 @@ private struct HoldTimerCard: View {
       .disabled(length <= HoldTimer.minimum(unit))
       .accessibilityLabel(
         "Shorter hold, \(max(HoldTimer.minimum(unit), length - step)) seconds")
+      // Voice Control: the visible "−5" as well as the name.
+      .accessibilityInputLabels(["Minus \(step)", "Shorter hold"])
       Button {
         adjust(step)
       } label: {
@@ -1065,6 +1160,7 @@ private struct HoldTimerCard: View {
       .buttonStyle(.bordered)
       .disabled(length >= HoldTimer.maximum(unit))
       .accessibilityLabel("Longer hold, \(min(HoldTimer.maximum(unit), length + step)) seconds")
+      .accessibilityInputLabels(["Plus \(step)", "Longer hold"])
       Button(action: start) {
         Label("Start", systemImage: "play.fill").frame(minHeight: 44)
       }
@@ -1081,7 +1177,8 @@ private struct HoldTimerCard: View {
   private var note: String {
     if saving { return "Your timed set is being saved. Completion appears after it is saved." }
     if needsRetry, let pendingSeconds {
-      return "\(pendingSeconds) seconds held, not saved. Correct any invalid fields, then retry."
+      return
+        "\(secondCount(pendingSeconds)) held, not saved. Correct any invalid fields, then retry."
     }
     guard let setNumber else { return "Every set is logged." }
     if hold != nil { return "Set \(setNumber) logs itself when time is up." }
@@ -1129,9 +1226,15 @@ private struct GuideSheet: View {
   var body: some View {
     NavigationStack {
       GuideView(exercise: exercise)
+        // A read-only guide has nothing to confirm: the standard close on the
+        // leading edge (HIG Sheets), not a Done there.
         .toolbar {
           ToolbarItem(placement: .cancellationAction) {
-            Button("Done") { dismiss() }
+            if #available(iOS 26.0, *) {
+              Button(role: .close) { dismiss() }
+            } else {
+              Button("Close") { dismiss() }
+            }
           }
         }
     }
@@ -1140,12 +1243,14 @@ private struct GuideSheet: View {
 
 typealias SetDraft = MeasurementDraft
 
-/// The active workout's toolbar. On iOS 26 it is three Liquid Glass groups:
-/// a round close button on the left, and on the right the actions menu set
-/// apart from Finish. All three are the same standard glass size; Finish is
-/// marked out by its lime label, not a bigger prominent capsule (the owner
-/// found the prominent one outweighed the others). Earlier systems keep the
-/// text buttons, also at one size.
+/// The active workout's toolbar. On iOS 26 it is three Liquid Glass circles of
+/// one size: close on the left, and on the right the actions menu set apart
+/// from Finish. Finish is the screen's one key action, so it is the prominent
+/// one: HIG Color asks for colour on the glass behind a primary action, never on
+/// its label, so lime fills the circle and the flag (the bottom Finish
+/// button's symbol) stays ink. Being a symbol rather than a text capsule keeps
+/// it the same size as the others, which is why the owner dropped the earlier
+/// prominent "Finish" text. Earlier systems keep the text buttons, at one size.
 /// "Save & close" stays the close button's name, so VoiceOver says what it does.
 private struct WorkoutToolbar: ViewModifier {
   let busy: Bool
@@ -1153,24 +1258,35 @@ private struct WorkoutToolbar: ViewModifier {
   let discard: () -> Void
   let finish: () -> Void
   let saveDrafts: () -> Void
+  /// Move the keyboard to the field before or after this one, nil at either end.
+  let previousField: (() -> Void)?
+  let nextField: (() -> Void)?
 
   func body(content: Content) -> some View {
     if #available(iOS 26.0, *) {
       content.toolbar {
         ToolbarItem(placement: .topBarLeading) {
+          // The system weight, matching the ellipsis beside it.
           Button(action: close) {
-            Image(systemName: "chevron.down").fontWeight(.semibold)
+            Image(systemName: "chevron.down")
           }
           .disabled(busy)
           .accessibilityLabel("Save & close")
+          .accessibilityInputLabels(["Save and close", "Close"])
           .accessibilityHint("Keeps this workout open to resume later.")
         }
         ToolbarItem(placement: .topBarTrailing) { actions(symbol: "ellipsis") }
         ToolbarSpacer(.fixed, placement: .topBarTrailing)
         ToolbarItem(placement: .topBarTrailing) {
+          // A Label, not a bare Text, so the disabled state still draws.
           Button(action: finish) {
-            Text("Finish").fontWeight(.semibold).foregroundStyle(FormaTheme.accent)
+            Label("Finish workout", systemImage: "flag.checkered")
+              .labelStyle(.iconOnly)
+              .foregroundStyle(FormaTheme.ink)
           }
+          .buttonStyle(.glassProminent)
+          .tint(FormaTheme.lime)
+          .accessibilityInputLabels(["Finish", "Finish workout"])
           .modifier(FinishIdentity(busy: busy))
         }
         keyboard
@@ -1199,8 +1315,24 @@ private struct WorkoutToolbar: ViewModifier {
     .accessibilityIdentifier("workout-actions")
   }
 
+  /// Previous and next walk the open sets' fields in reading order, so a set is
+  /// logged without reaching back up the screen; Done saves.
   private var keyboard: some ToolbarContent {
     ToolbarItemGroup(placement: .keyboard) {
+      Button {
+        previousField?()
+      } label: {
+        Label("Previous field", systemImage: "chevron.up")
+      }
+      .disabled(previousField == nil)
+      .accessibilityIdentifier("previous-field")
+      Button {
+        nextField?()
+      } label: {
+        Label("Next field", systemImage: "chevron.down")
+      }
+      .disabled(nextField == nil)
+      .accessibilityIdentifier("next-field")
       Spacer()
       Button("Done", action: saveDrafts)
         .disabled(busy)
@@ -1326,31 +1458,46 @@ struct SetRow: View {
   static let boxRadius: CGFloat = 10
 
   @ViewBuilder private var measurementFields: some View {
+    ForEach(Self.fieldNames(exercise: exercise, perSide: perSide, set: set), id: \.self) {
+      name in field(fieldLabel(name), value: fieldValue(name), name: name)
+    }
+  }
+
+  /// The set's fields in reading order. The keyboard's previous/next buttons
+  /// walk the same list, so the two never disagree.
+  static func fieldNames(exercise: Exercise?, perSide: Bool, set: LoggedSet) -> [String] {
+    let metric = exercise?.metric ?? ""
+    let hasLoad = exercise?.loadType != "none" || set.weight > 0
     if exercise?.metric == "load_reps" || exercise == nil {
-      if exercise?.loadType != "none" || set.weight > 0 {
-        field(
-          exercise?.loadType == "added" ? "Added kg" : "kg", value: $draft.weight, name: "weight")
-      }
-      if perSide {
-        field("Left reps", value: $draft.left, name: "left")
-        field("Right reps", value: $draft.right, name: "right")
-      } else {
-        field("Reps", value: $draft.reps, name: "reps")
-      }
-    } else {
-      if ["duration", "duration_distance"].contains(exercise?.metric ?? "") {
-        field("Seconds", value: $draft.seconds, name: "seconds")
-      }
-      if ["load_distance"].contains(exercise?.metric ?? "")
-        || (["duration", "duration_distance"].contains(exercise?.metric ?? "")
-          && (exercise?.loadType != "none" || set.weight > 0))
-      {
-        field(
-          exercise?.loadType == "added" ? "Added kg" : "kg", value: $draft.weight, name: "weight")
-      }
-      if ["duration_distance", "load_distance"].contains(exercise?.metric ?? "") {
-        field("Metres", value: $draft.distance, name: "distance")
-      }
+      return (hasLoad ? ["weight"] : []) + (perSide ? ["left", "right"] : ["reps"])
+    }
+    let timed = ["duration", "duration_distance"].contains(metric)
+    var names: [String] = []
+    if timed { names.append("seconds") }
+    if metric == "load_distance" || (timed && hasLoad) { names.append("weight") }
+    if ["duration_distance", "load_distance"].contains(metric) { names.append("distance") }
+    return names
+  }
+
+  private func fieldLabel(_ name: String) -> String {
+    switch name {
+    case "weight": exercise?.loadType == "added" ? "Added kg" : "kg"
+    case "left": "Left reps"
+    case "right": "Right reps"
+    case "seconds": "Seconds"
+    case "distance": "Metres"
+    default: "Reps"
+    }
+  }
+
+  private func fieldValue(_ name: String) -> Binding<String> {
+    switch name {
+    case "weight": $draft.weight
+    case "left": $draft.left
+    case "right": $draft.right
+    case "seconds": $draft.seconds
+    case "distance": $draft.distance
+    default: $draft.reps
     }
   }
 
@@ -1436,7 +1583,9 @@ struct ElapsedTime: View {
     let seconds = max(0, Int(date.timeIntervalSince1970 - startedAt / 1_000))
     return Text(WorkoutClock.text(seconds, locale: locale))
       .font(.subheadline.monospacedDigit()).foregroundStyle(FormaTheme.secondary)
-      .accessibilityLabel("Elapsed time, \(WorkoutClock.spoken(seconds, locale: locale))")
+      .accessibilityLabel("Elapsed time")
+      .accessibilityValue(WorkoutClock.spoken(seconds, locale: locale))
+      .accessibilityAddTraits(.updatesFrequently)
   }
 }
 
@@ -1632,7 +1781,9 @@ struct RestDock: View {
       Text("10:00").hidden().accessibilityHidden(true)
       Text(WorkoutClock.text(remaining, locale: locale))
         .modifier(NumericChange(value: remaining, countsDown: true, perSecond: true))
-        .accessibilityLabel("\(WorkoutClock.spoken(remaining, locale: locale)) remaining")
+        .accessibilityLabel("Rest remaining")
+        .accessibilityValue(WorkoutClock.spoken(remaining, locale: locale))
+        .accessibilityAddTraits(.updatesFrequently)
         .accessibilityIdentifier("rest-remaining")
     }
     .font(font).foregroundStyle(FormaTheme.primary)
@@ -1692,6 +1843,7 @@ struct RestDock: View {
       Text("+15").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
     }
     .accessibilityLabel("Add 15 seconds to rest")
+    .accessibilityInputLabels(["Plus 15", "Add 15 seconds"])
     .accessibilityIdentifier("rest-add")
   }
 
@@ -1811,6 +1963,10 @@ struct SessionNotesView: View {
   @State private var sessionID: String?
   @State private var discardConfirmation = false
   @State private var failure: String?
+
+  private var changed: Bool { notes != original }
+  private var canSave: Bool { !model.busy && notes.utf16.count <= 10_000 && sessionID != nil }
+
   var body: some View {
     NavigationStack {
       Form {
@@ -1829,38 +1985,34 @@ struct SessionNotesView: View {
       .toolbar {
         ToolbarItem(placement: .cancellationAction) {
           Button("Cancel") {
-            if notes != original { discardConfirmation = true } else { dismiss() }
+            if changed { discardConfirmation = true } else { dismiss() }
           }
           .disabled(model.busy)
         }
         ToolbarItem(placement: .confirmationAction) {
-          Button("Save") {
-            Task {
-              guard let sessionID else { return }
-              let submitted = notes
-              failure = nil
-              if await model.commit(forActiveSession: sessionID, { $0.active?.notes = submitted }) {
-                original = submitted
-                if notes == submitted {
-                  dismiss()
-                } else {
-                  failure = "Newer notes are still unsaved. Tap Save to keep them."
-                }
-              } else {
-                failure = model.errorMessage
-                model.errorMessage = nil
-              }
-            }
-          }
-          .disabled(model.busy || notes.utf16.count > 10_000 || sessionID == nil)
-          .accessibilityIdentifier("session-notes-save")
+          Button("Save") { Task { await save() } }
+            .disabled(!canSave)
+            .accessibilityIdentifier("session-notes-save")
         }
       }
     }
-    .interactiveDismissDisabled(notes != original || model.busy)
+    .interactiveDismissDisabled(changed || model.busy)
+    // HIG Sheets: a swipe over unsaved changes asks, rather than rubber-banding
+    // with no word of why.
+    .background(
+      DismissAttemptObserver {
+        if changed, !model.busy { discardConfirmation = true }
+      }
+      .frame(width: 0, height: 0)
+      .accessibilityHidden(true)
+    )
     .confirmationDialog(
-      "Discard these notes?", isPresented: $discardConfirmation, titleVisibility: .visible
+      "Save your notes?", isPresented: $discardConfirmation, titleVisibility: .visible
     ) {
+      if canSave {
+        Button("Save notes") { Task { await save() } }
+          .accessibilityIdentifier("session-notes-save-confirm")
+      }
       Button("Discard changes", role: .destructive) { dismiss() }
     }
     .onAppear {
@@ -1869,10 +2021,76 @@ struct SessionNotesView: View {
       notes = original
     }
   }
+
+  private func save() async {
+    guard let sessionID else { return }
+    let submitted = notes
+    failure = nil
+    if await model.commit(forActiveSession: sessionID, { $0.active?.notes = submitted }) {
+      original = submitted
+      if notes == submitted {
+        dismiss()
+      } else {
+        failure = "Newer notes are still unsaved. Tap Save to keep them."
+      }
+    } else {
+      failure = model.errorMessage
+      model.errorMessage = nil
+    }
+  }
+}
+
+/// Reports a swipe-to-dismiss that `interactiveDismissDisabled` refused.
+/// SwiftUI has no hook for it, so this joins the sheet's presentation
+/// controller and forwards every other delegate call to SwiftUI's own
+/// delegate, which keeps the sheet's binding and dismiss rules working.
+private struct DismissAttemptObserver: UIViewControllerRepresentable {
+  let attempted: @MainActor () -> Void
+
+  func makeUIViewController(context: Context) -> Controller { Controller() }
+
+  func updateUIViewController(_ controller: Controller, context: Context) {
+    controller.relay.attempted = attempted
+  }
+
+  final class Controller: UIViewController {
+    let relay = Relay()
+
+    override func viewDidAppear(_ animated: Bool) {
+      super.viewDidAppear(animated)
+      guard let presentation = presentationController, presentation.delegate !== relay else {
+        return
+      }
+      relay.original = presentation.delegate
+      presentation.delegate = relay
+    }
+  }
+
+  /// Implements only the refused-swipe call and hands every other delegate
+  /// selector to SwiftUI's delegate, so nothing else about the sheet changes.
+  final class Relay: NSObject, UIAdaptivePresentationControllerDelegate {
+    nonisolated(unsafe) weak var original: UIAdaptivePresentationControllerDelegate?
+    var attempted: @MainActor () -> Void = {}
+
+    func presentationControllerDidAttemptToDismiss(_ controller: UIPresentationController) {
+      original?.presentationControllerDidAttemptToDismiss?(controller)
+      attempted()
+    }
+
+    nonisolated override func responds(to selector: Selector!) -> Bool {
+      super.responds(to: selector) || original?.responds(to: selector) == true
+    }
+
+    nonisolated override func forwardingTarget(for selector: Selector!) -> Any? {
+      original?.responds(to: selector) == true ? original : super.forwardingTarget(for: selector)
+    }
+  }
 }
 
 struct WorkoutReceipt: View {
   @Environment(AppModel.self) private var model
+  @Environment(\.locale) private var locale
+  @AccessibilityFocusState private var headlineFocused: Bool
   let session: WorkoutSession
   var body: some View {
     ScrollView {
@@ -1886,9 +2104,14 @@ struct WorkoutReceipt: View {
             .caption.weight(.semibold))
         }
         Rectangle().fill(FormaTheme.accent).frame(height: 3).padding(.top, 16)
-        Text("THE WORK IS YOURS.").font(.caption.weight(.bold)).tracking(2).foregroundStyle(
-          FormaTheme.secondary)
+        // Written in sentence case and set in capitals, so VoiceOver and
+        // translation get ordinary words.
+        Text("The work is yours.").font(.caption.weight(.bold)).tracking(2)
+          .textCase(.uppercase).foregroundStyle(FormaTheme.secondary)
+        // The receipt replaces the workout in the same stack, so VoiceOver is
+        // moved here rather than left where Finish was.
         EditorialTitle(text: "Another session.\nA stronger you.")
+          .accessibilityFocused($headlineFocused)
         Text(session.name).font(.title3.weight(.semibold))
         // The statistics reveal once, in order. The button below is never held
         // back by it.
@@ -1897,8 +2120,11 @@ struct WorkoutReceipt: View {
             value: "\(session.exercises.reduce(0) { $0 + $1.sets.filter(\.done).count })",
             label: "Sets completed"
           ).formaReveal(order: 1)
-          MetricValue(value: "\(Int((session.duration ?? 0) / 60))", label: "Minutes")
-            .formaReveal(order: 2)
+          // Minutes and seconds, so a short session never reads "0".
+          MetricValue(
+            value: WorkoutClock.text(Int(session.duration ?? 0), locale: locale), label: "Time"
+          )
+          .formaReveal(order: 2)
         }
         MetricValue(
           value: WorkoutEngine.volume(session, catalog: model.catalog).formatted(
@@ -1910,23 +2136,41 @@ struct WorkoutReceipt: View {
         Divider()
         Label("Session saved on this iPhone", systemImage: "checkmark.shield.fill")
           .font(.headline).foregroundStyle(FormaTheme.accent)
+          .accessibilityAddTraits(.isHeader)
           .formaReveal(order: 4)
         Text("One more page in your training journal. Your completed sets are ready in Progress.")
           .font(.body).foregroundStyle(FormaTheme.secondary)
-        Button {
-          model.workoutPresented = false
-        } label: {
-          HStack {
-            Text("Keep the feeling.")
-            Spacer()
-            Image(systemName: "arrow.right")
-          }
+        // Says what it does (HIG Writing: "Done" ends a flow); the toolbar
+        // carries the same action where a modal's exit is expected.
+        Button(action: done) {
+          Text("Done")
         }
         .buttonStyle(PrimaryButtonStyle()).accessibilityIdentifier("receipt-done")
       }.padding(28)
     }
     .background(FormaTheme.canvas)
     .navigationTitle("Session saved").navigationBarTitleDisplayMode(.inline)
+    // Swipe-down is off for the workout cover, so the exit is in the toolbar
+    // too, not only at the foot of the scroll (HIG Modality).
+    .toolbar {
+      ToolbarItem(placement: .confirmationAction) {
+        if #available(iOS 26.0, *) {
+          Button(role: .confirm, action: done)
+            .accessibilityLabel("Done")
+            .accessibilityIdentifier("receipt-done-toolbar")
+        } else {
+          Button("Done", action: done)
+            .accessibilityIdentifier("receipt-done-toolbar")
+        }
+      }
+    }
+    .task {
+      // After the cover's transition, so the focus move isn't lost to it.
+      try? await Task.sleep(for: .milliseconds(600))
+      headlineFocused = true
+    }
     .accessibilityIdentifier("receipt-screen")
   }
+
+  private func done() { model.workoutPresented = false }
 }
