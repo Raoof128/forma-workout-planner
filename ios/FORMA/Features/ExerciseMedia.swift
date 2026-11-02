@@ -195,7 +195,7 @@ struct ExerciseMediaSection: View {
   }
 }
 
-private struct ExerciseIllustration: View {
+struct ExerciseIllustration: View {
   @Environment(\.formaMotion) private var motion
   let id: String
   let name: String
@@ -221,11 +221,11 @@ private struct ExerciseIllustration: View {
       }
       .aspectRatio(illustration.width / max(1, illustration.height), contentMode: .fit)
       .clipShape(RoundedRectangle(cornerRadius: FormaRadius.card))
+      // Smart Invert leaves pictures and video as they are; the frame with them.
+      .accessibilityIgnoresInvertColors()
       .accessibilityElement(children: .ignore)
       .accessibilityAddTraits(.isImage)
-      .accessibilityLabel(
-        "\(illustration.equipment ? "Equipment" : "Exercise") illustration for \(name): \(illustration.title)"
-      )
+      .accessibilityLabel(Self.label(name: name, illustration: illustration))
       if !illustration.caption.isEmpty {
         Text(illustration.caption).font(.footnote).foregroundStyle(FormaTheme.secondary)
           .fixedSize(horizontal: false, vertical: true)
@@ -244,6 +244,16 @@ private struct ExerciseIllustration: View {
       }
     }
   }
+
+  /// The spoken description. Most illustrations are titled with the
+  /// exercise's own name, which would otherwise be read twice.
+  static func label(name: String, illustration: ExerciseMediaLibrary.Illustration) -> String {
+    let kind = illustration.equipment ? "Equipment" : "Exercise"
+    let base = "\(kind) illustration for \(name)"
+    let title = illustration.title.trimmingCharacters(in: .whitespaces)
+    if title.isEmpty || title.caseInsensitiveCompare(name) == .orderedSame { return base }
+    return "\(base): \(title)"
+  }
 }
 
 /// A demo clip: the poster until the person presses play, then a muted,
@@ -255,6 +265,7 @@ private struct ExerciseDemoClip: View {
   let source: ExerciseMediaLibrary.Source?
   @State private var player: AVQueuePlayer?
   @State private var looper: AVPlayerLooper?
+  @State private var posterImage: UIImage?
 
   var body: some View {
     VStack(alignment: .leading, spacing: 10) {
@@ -277,6 +288,7 @@ private struct ExerciseDemoClip: View {
       .aspectRatio(clip.width / max(1, clip.height), contentMode: .fit)
       .background(Color.black)
       .clipShape(RoundedRectangle(cornerRadius: FormaRadius.card))
+      .accessibilityIgnoresInvertColors()
       if !caption.isEmpty {
         Text(caption).font(.footnote).foregroundStyle(FormaTheme.secondary)
           .fixedSize(horizontal: false, vertical: true)
@@ -284,6 +296,14 @@ private struct ExerciseDemoClip: View {
       credit
     }
     .listRowInsets(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
+    // Decoded off the main thread like every other bundled picture, not on
+    // each `body` pass and again at draw time.
+    .task(id: clipID) {
+      guard posterImage == nil,
+        let url = ExerciseMediaLibrary.url(clipID, "jpg", in: "demos")
+      else { return }
+      posterImage = await MediaDecoder.shared.decode(url)
+    }
     .onDisappear {
       player?.pause()
       player = nil
@@ -292,10 +312,8 @@ private struct ExerciseDemoClip: View {
   }
 
   @ViewBuilder private var poster: some View {
-    if let url = ExerciseMediaLibrary.url(clipID, "jpg", in: "demos"),
-      let image = UIImage(contentsOfFile: url.path)
-    {
-      Image(uiImage: image).resizable().scaledToFill().accessibilityHidden(true)
+    if let posterImage {
+      Image(uiImage: posterImage).resizable().scaledToFill().accessibilityHidden(true)
     }
   }
 
@@ -305,7 +323,9 @@ private struct ExerciseDemoClip: View {
         .font(.footnote.weight(.semibold))
       if let source {
         if let url = URL(string: source.licenseUrl), url.scheme == "https" {
-          Link(source.license, destination: url).font(.footnote)
+          // Borderless, so in the guide's List only the link's own text opens
+          // it; a default-style link takes the whole row as its hit area.
+          Link(source.license, destination: url).font(.footnote).buttonStyle(.borderless)
         } else {
           Text(source.license).font(.footnote)
         }
@@ -314,7 +334,7 @@ private struct ExerciseDemoClip: View {
         }
       }
       if let url = URL(string: clip.url), url.scheme == "https" {
-        Link("Original video", destination: url).font(.footnote)
+        Link("Original video", destination: url).font(.footnote).buttonStyle(.borderless)
       }
     }
     .fixedSize(horizontal: false, vertical: true)
@@ -323,9 +343,9 @@ private struct ExerciseDemoClip: View {
   private func play() {
     guard let url = ExerciseMediaLibrary.url(clipID, "mp4", in: "demos") else { return }
     let queue = AVQueuePlayer()
+    // The clips have no audio track, so a muted player never interrupts what
+    // the person is listening to; the app-wide audio session is left alone.
     queue.isMuted = true
-    // Mixes with whatever the person is listening to rather than stopping it.
-    try? AVAudioSession.sharedInstance().setCategory(.ambient, options: [.mixWithOthers])
     looper = AVPlayerLooper(player: queue, templateItem: AVPlayerItem(url: url))
     player = queue
     queue.play()
@@ -333,16 +353,20 @@ private struct ExerciseDemoClip: View {
 }
 
 /// A website demonstration, recorded frame for frame from its SVG. It loops
-/// silently like the web and starts on its still pose when motion is reduced;
-/// a Pause/Play control is always there, because it repeats.
+/// silently like the web and starts on its still pose when motion is reduced
+/// or Auto-Play Video Previews is off; a Pause/Play control is always there,
+/// because it repeats.
 private struct ExerciseAnimationPlayer: View {
   @Environment(\.formaMotion) private var motion
   let id: String
   let name: String
   let animation: ExerciseMediaLibrary.Animation
   @State private var playing: Bool?
+  /// Settings › Accessibility › Motion › Auto-Play Video Previews. It is a
+  /// video setting, not Reduce Motion, so FormaMotion doesn't carry it.
+  @State private var autoplayAllowed = UIAccessibility.isVideoAutoplayEnabled
 
-  private var isPlaying: Bool { playing ?? motion.allowsSpatialMotion }
+  private var isPlaying: Bool { playing ?? (motion.allowsSpatialMotion && autoplayAllowed) }
 
   var body: some View {
     VStack(alignment: .leading, spacing: 10) {
@@ -356,12 +380,15 @@ private struct ExerciseAnimationPlayer: View {
       .aspectRatio(animation.width / max(1, animation.height), contentMode: .fit)
       .background(Color.white)
       .clipShape(RoundedRectangle(cornerRadius: FormaRadius.card))
+      .accessibilityIgnoresInvertColors()
       .accessibilityElement(children: .ignore)
       .accessibilityAddTraits(.isImage)
       .accessibilityLabel("How to perform \(name): \(animation.description)")
       HStack {
-        Text("Animated FORMA demonstration · \(animation.seconds.formatted()) s loop")
+        Text("Animated FORMA demonstration · \(Self.loopLength(animation.seconds, .abbreviated)) loop")
           .font(.footnote).foregroundStyle(FormaTheme.secondary)
+          .accessibilityLabel(
+            "Animated FORMA demonstration, \(Self.loopLength(animation.seconds, .wide)) loop")
         Spacer(minLength: 8)
         Button {
           playing = !isPlaying
@@ -369,10 +396,28 @@ private struct ExerciseAnimationPlayer: View {
           Label(isPlaying ? "Pause" : "Play", systemImage: isPlaying ? "pause.fill" : "play.fill")
             .font(.subheadline.weight(.semibold)).frame(minHeight: 44)
         }
+        // Borderless: in a List a default-style button makes the whole row,
+        // video included, its hit area.
+        .buttonStyle(.borderless)
         .accessibilityLabel("\(isPlaying ? "Pause" : "Play") demonstration of \(name)")
       }
     }
     .listRowInsets(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
+    .onReceive(
+      NotificationCenter.default.publisher(
+        for: UIAccessibility.videoAutoplayStatusDidChangeNotification
+      ).receive(on: RunLoop.main)
+    ) { _ in
+      autoplayAllowed = UIAccessibility.isVideoAutoplayEnabled
+    }
+  }
+
+  /// "4.3 sec" for the caption, "4.3 seconds" for VoiceOver.
+  static func loopLength(_ seconds: Double, _ width: Duration.UnitsFormatStyle.UnitWidth)
+    -> String
+  {
+    Duration.milliseconds(Int((seconds * 1000).rounded())).formatted(
+      .units(allowed: [.seconds], width: width, fractionalPart: .show(length: 1)))
   }
 }
 
@@ -430,6 +475,7 @@ struct BundledImage: View {
         Image(uiImage: image).resizable().aspectRatio(contentMode: contentMode)
       }
     }
+    .accessibilityIgnoresInvertColors()
     .task(id: "\(path.folder)/\(path.name)") {
       image = await BundledImageCache.load(path.folder, path.name)
     }
@@ -482,6 +528,8 @@ struct MediaPhoto: View {
     }
     .clipped()
     .background(FormaTheme.heroInk)
+    // A photo, so Smart Invert leaves it as taken (today-start L10).
+    .accessibilityIgnoresInvertColors()
     .accessibilityHidden(true)
     .task(id: photo.file) {
       image = await BundledImageCache.load("photos", photo.file)
