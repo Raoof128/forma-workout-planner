@@ -62,10 +62,14 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 - **Scope:** owner said the workout page's Done button was still bigger than the
   others, and the Watch app was too plain and needed animation.
-- **Summary:** the workout toolbar is one size again: Finish moved from
-  `.confirmationAction` (iOS 26 draws it as a larger tinted button) to
-  `.topBarTrailing`, the "…" menu lost its forced 44 pt frame and the keyboard Done is
-  a plain toolbar button; the Watch summary's Done is back to the shared 48 pt.
+- **Summary:** the workout toolbar is one size again. After merging PR #37/#38's
+  work (`feat/ios-site-assets`) into this branch, the toolbar is #37's
+  `WorkoutToolbar`; its Finish dropped `.glassProminent` (a larger lime capsule) for
+  the standard glass size with a lime label, and the pre-iOS 26 Finish left
+  `.confirmationAction`. The keyboard Done is a plain toolbar button; the Watch
+  summary's Done is back to the shared 48 pt. The earlier phone build lacked #37/#38
+  because this branch started from `main`; they are now merged in, so this PR
+  includes them.
   This supersedes the earlier "keep Done large" reading of the ask. New
   `FORMAWatch/WatchMotion.swift`: a lime start disc with rippling rings, a 3-2-1
   countdown (draining ring, a wrist tap per count, tap to skip), a spinning ring round
@@ -1826,3 +1830,49 @@ migrate` from the root-owned `ops/` directory (`sudo sh -c 'cd … && …'`),
 - **Files:** FORMASurfaces `WorkoutActivityState`; app controller, mapping, AppModel hook and preference, You toggle; WidgetPresentation attributes, views and intents; FORMAWidgets bundle; `NSSupportsLiveActivities`; widget bundle check; architecture, privacy and README docs; tests.
 - **Verification:** build-for-testing succeeds with no function over ~0.23 s type-checking (no iOS 27-only API, for CI's iOS 26.2 SDK); `swift test` 144/144; docs and swift-format clean. Signed Release installed on the owner's iPhone Air. App-target tests compile and run first in CI.
 - **Follow-ups:** physical checks: start, update and end on device, no leftover after discard, sign-out or force-quit, locked-screen redaction of names, landscape and two-activity Dynamic Island widths, StandBy, Watch Smart Stack next to FORMA's own Watch app, and both buttons from the Lock Screen.
+
+### Raouf: 2026-10-30 — Tab bar motion, set row balance and workout toolbar
+
+- **Scope:** native iPhone tab bar, active workout set rows and the active workout toolbar.
+- **Summary:** each tab's symbol fills when chosen and plays its own SF Symbols effect: Today's sun turns (`rotate`, iOS 18), Plan's stack lifts layer by layer (`bounce.up.byLayer`), Progress's line draws itself (`drawOn` transition, SF Symbols 7 on iOS 26) and You waves (`wiggle`, iOS 18). Older systems bounce, and below full motion the symbols only change. The highlight slides on a new `tabSelection` spring (420 ms, bounce 0.28) with a selection haptic. Set rows are columns of caption over a 48 pt box: Set, the fields and a Done column whose complete button matches the fields' height and 10 pt radius, bottom-aligned, and the row now fills its card. On iOS 26 the toolbar is three Liquid Glass groups: a round close button (named "Save & close" for VoiceOver), the actions menu, and a prominent lime Finish set apart by a fixed `ToolbarSpacer`. Earlier systems keep the text buttons.
+- **Files:** `ios/FORMA/DesignSystem/TrainingTabBar.swift`, `FormaMotion.swift`, `ios/FORMA/Features/WorkoutView.swift`, `ios/docs/commit-2/MOTION_SPEC.md`, AGENT and CHANGELOG.
+- **Verification:** build-for-testing (app, Watch, widgets, all test targets) succeeds with no new slow type-checks and only SDK 26.x API behind availability checks; swift-format strict lint clean. Accessibility names and identifiers the UI tests use are unchanged. Nothing has run on a simulator here, at the owner's request.
+- **Follow-ups:** check on device that each tab effect reads well in light and dark mode, and that the set row fits at large text sizes (it falls back to the stacked layout).
+
+### Raouf: 2026-10-30 — Firmer tab haptics and a polished Progress chart
+
+- **Scope:** native iPhone tab bar haptics and the Progress lifting-volume chart.
+- **Summary:** changing tab now plays its own firm tap (`tabChanged`, solid impact at 0.85), stronger than the light selection tick it used before; tapping the selected tab to go back to its start plays a softer one (`tabReturned`, soft impact at 0.65). Both respect You › Haptics. The chart opens with a large readout of the latest workout's volume and a capsule showing the change from the workout before (arrow and whole percentage, never colour alone). Touching or dragging across the chart selects a bar: the readout follows it with a numeric roll between real totals, the touched bar is solid and the rest step back, and each new bar ticks the selection haptic. A dashed average line, slimmer rounded bars, dashed gridlines and compact axis values (1.2K) finish it. Bars still draw their real values at once and are never grown from zero; the value list stays for VoiceOver.
+- **Files:** `ios/FORMA/DesignSystem/FormaHaptics.swift`, `TrainingTabBar.swift`, `ios/FORMA/Features/ProgressView.swift`, `ios/FORMAAppTests/FormaDesignSystemTests.swift`, AGENT and CHANGELOG.
+- **Verification:** build-for-testing (app, Watch, widgets, all test targets) succeeds with no new slow type-checks; swift-format strict lint clean; a new app test pins the two tab haptics and keeps them distinct from account and set haptics. Nothing has run on a simulator here, at the owner's request.
+- **Follow-ups:** feel both tab haptics on device, and check the chart readout and selection in light and dark mode with one, two and eight workouts.
+
+### Raouf: 2026-10-30 — Tab bar collapse, page-end clearance and the Progress tab effect
+
+- **Scope:** native iPhone floating tab bar on every tab and pushed screen, and the Progress tab symbol.
+- **Summary:** verified on the owner's iPhone with an on-device UI probe (separate test storage) before and after. Three faults, each confirmed with measurements. (1) The bar never collapsed: `onScrollPhaseChange` stayed `idle` during drags on device, and the observer only acted while it reported dragging. The observer now follows position alone, and `TabBarScrollState` still ignores small moves and overscroll. (2) Pages ended under the bar: a `safeAreaInset` on the `TabView` never reached the tabs' scroll views, and a stack-level inset missed Today, which hides its navigation bar. The bar now floats as an overlay that reports its height, and every tab root and pushed screen keeps that height clear (`TrainingBarClearance`). On device, Today's last row ends 30 pt above the bar, where it used to be 32 pt under it. (3) The scroll limit subtracted `containerSize`, which already excludes the insets, so it counted them twice: the end of a page was never detected and the rubber-band settle re-opened the bar. The limit now uses `visibleRect`, which on Today gives 568 pt, matching the real maximum offset (it was 739). The Progress symbol's SF Symbols Draw On played nothing on device because the symbol has no drawing data. It now sweeps in left to right from a faint copy over 0.5 s, easing out, with a small lift, on every supported system.
+- **Files:** `ios/FORMA/DesignSystem/TrainingTabBar.swift`, `ios/FORMA/App/FORMAApp.swift`, `ios/docs/commit-2/MOTION_SPEC.md`, AGENT and CHANGELOG.
+- **Verification:** on device: collapses after one swipe and re-expands on a swipe down on Today, Plan and You. It stays collapsed at the end of the page. The last row of each page clears the bar. Device screenshots taken during a slowed sweep show it partly drawn, then complete. Build-for-testing succeeds and swift-format strict lint is clean. The probe test was removed afterwards.
+- **Follow-ups:** none known; check Progress with real history once workouts exist.
+### Raouf: 2026-10-30 — Website media and display font in the native app
+
+- **Scope:** native iPhone technique guide and display typography.
+- **Summary:** the guide now shows the website's media offline. Each of the 1,411 exercises with web media gets its cell of FORMA's illustration sheets (185 sheets, cropped off the main thread and cached). The 22 exercises with a web demo get the clip: its poster first, playing only when asked, muted, looping and mixed with other audio, with its author, licence, notice and source link. Editorial titles, the Today hero and the workout exercise name use the website's display face, Barlow Condensed Bold (SIL OFL; licence bundled), through `Font.custom(relativeTo:)`, so they scale with Dynamic Type; body text stays on the system font. `scripts/build-ios-media.py` generates everything from the web catalogues: the 1536×1024 PNG sheets become HEIC (322 MB to 15 MB, so no Background Assets download is needed), clips are copied, and the WOFF2 font becomes TTF. CI checks it with `--check`.
+- **Files:** `scripts/build-ios-media.py`, `ios/FORMA/Media/` (generated), `ios/FORMA/Resources/Fonts/`, `ios/media-sources.json`, `ios/FORMA/Features/ExerciseMedia.swift`, `PlanView.swift` (GuideView), `FormaTheme.swift`, `TodayView.swift`, `WorkoutView.swift`, `ios/FORMA/Info.plist`, `ios/project.yml`, `.github/workflows/ios.yml`, `ios/FORMAAppTests/ExerciseMediaTests.swift`, `ios/README.md`, AGENT and CHANGELOG.
+- **Verification:** `ExerciseMediaTests` (3) pass on the owner's iPhone: the index covers all web media, every file is bundled, a cell is cut at its catalogued size, and the font registers. An on-device UI probe showed the bench press and trap bar deadlift illustrations, the deadlift clip playing with its U.S. Army credit, and Barlow titles. The probe was removed afterwards. build-for-testing succeeds; swift-format strict lint and the media check are clean. App size grows by about 20 MB.
+- **Follow-ups:** the 32 animated SVG demonstrations need a native rendering (render the "-still" frames, or record the animations to video). The website's hero and routine photos are not used yet. Add the font and demo sources to You › Exercise sources & licences.
+
+### Raouf: 2026-10-30 — Website animations, photos and media credits in the native app
+
+- **Scope:** native iPhone technique guide, Today, Plan, routine detail and You.
+- **Summary:**
+  - The website's 32 animated SVG demonstrations now play in the guide under "See the movement". iOS cannot play SMIL, so `scripts/render-ios-animations.mjs` records each one in headless Chromium, setting every frame to an exact time. That gives a silent H.264 loop at 30 fps (2.9 MB for all 32) and a still start pose.
+  - The guide loops the video and shows the still when motion is reduced, with a Pause/Play control like the web's.
+  - The website's photos are bundled as HEIC. The hero photo fills Today's next-session card; the old editorial art remains the fallback. The routine strip is cut into its three panels, positioned like the web's `.photo-N`, and shown on Plan rows and each routine's cover.
+  - New You › Pictures, videos & font lists the FORMA originals, each demo source and licence, and the Barlow Condensed licence text.
+- **Files:** `scripts/render-ios-animations.mjs`, `scripts/build-ios-media.py`, `ios/FORMA/Media/animations/`, `ios/FORMA/Media/photos/`, `ios/media-sources.json`, `ExerciseMedia.swift`, `PlanView.swift`, `TodayView.swift`, `YouView.swift`, `TrainingTabBar.swift` (`mediaCredits` route), `ExerciseMediaTests.swift`, `ios/README.md`, `ios/design/artwork-provenance.md`, AGENT and CHANGELOG.
+- **Verification:**
+  - `ExerciseMediaTests` (4) pass on the owner's iPhone, including every animation's video and still, and the photos with web-style index wrapping.
+  - An on-device UI probe (removed afterwards) captured Today's hero photo, the routine photos on Plan and on the routine cover, two different frames of the bench press loop, and the credits screen.
+  - build-for-testing succeeds; swift-format strict lint and the media check are clean.
+- **Follow-ups:** none known.

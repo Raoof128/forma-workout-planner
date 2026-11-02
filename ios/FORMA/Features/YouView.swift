@@ -118,6 +118,10 @@ struct YouView: View {
         NavigationLink(value: TrainingRoute.exerciseLibrary) {
           Label("Exercise sources & licences", systemImage: "text.book.closed")
         }
+        NavigationLink(value: TrainingRoute.mediaCredits) {
+          Label("Pictures, videos & font", systemImage: "photo.on.rectangle")
+        }
+        .accessibilityIdentifier("media-credits")
         // Signed in, the open store is the account's synced copy; deleting the
         // account is under Privacy & account.
         if !model.isSignedIn {

@@ -93,6 +93,18 @@ device-lock/privacy or App Store archive validation. The workout Live Activity
 gates, and the deferred Watch complications, are in
 [the architecture decision](docs/audits/frontend-widget-2026-10/WIDGETKIT_ARCHITECTURE.md).
 
+## Website media and display font
+
+The app shows the website's media offline. In the technique guide, each exercise gets its cell of FORMA's illustration sheets, and 22 exercises also have a demo clip (public domain or CC BY), shown with its credit and licence. Titles use the website's display face, Barlow Condensed Bold, under the SIL Open Font License; its licence is bundled beside it.
+
+- Regenerate after the web media changes: `python3 scripts/build-ios-media.py` (macOS; needs `sips` and fontTools).
+- CI runs `python3 scripts/build-ios-media.py --check`. It fails if `ios/FORMA/Media/media.json` drifts from `src/catalog/media.json` or `demos.json`, if a sheet is missing or the wrong size, if a clip differs from its web copy, or if a font file is missing.
+- Sheets are the web's 1536×1024 originals, re-encoded as HEIC. That brings 322 MB of PNG down to 15 MB, so nothing needs to be downloaded later. Clips and posters are copied as they are (4.9 MB).
+- The app reads `Media/media.json` once and crops a cell off the main thread. A demo shows its poster and plays only when asked: muted, looping, and mixed with any audio already playing.
+- The website's 32 animated demonstrations are SMIL animations, which iOS cannot play. `scripts/render-ios-animations.mjs` records them in headless Chromium (via Playwright): each frame is set to an exact time, so the motion is identical to the web at 30 fps. The frames become a silent H.264 loop (2.9 MB in all), plus each one's still start pose. The guide plays the loop unless motion is reduced, then shows the still, and it always has Pause/Play. A drawing is only re-recorded when its SVG changes.
+- The website's photos are bundled too: the hero photo on Today's next-session card (the earlier editorial art stays as the fallback), and its routine photo strip, cut into three panels and positioned as the web positions them, on Plan's routine rows and each routine's cover.
+- You › Pictures, videos & font lists every source and licence, and shows the font's licence text.
+
 ## Hold timer
 
 Timed holds offer the web's countdown above their sets: adjust the length, start,

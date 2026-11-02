@@ -61,6 +61,9 @@ enum FormaMotion {
   static let reveal = Animation.spring(duration: 0.3, bounce: 0.08)
   /// 380 ms. Larger, navigation-scale choreography.
   static let navigation = Animation.spring(duration: 0.38, bounce: 0.1)
+  /// 420 ms with a little overshoot. The tab highlight sliding to a new tab,
+  /// so the choice lands with a small settle instead of stopping dead.
+  static let tabSelection = Animation.spring(duration: 0.42, bounce: 0.28)
   /// 520 ms. One-time emphasis for genuine progress: a finished workout.
   static let emphasis = Animation.spring(duration: 0.52, bounce: 0.22)
   /// 160 ms. The minimal-level replacement for any spatial animation.

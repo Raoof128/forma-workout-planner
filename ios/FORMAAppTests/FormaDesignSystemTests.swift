@@ -141,6 +141,18 @@ final class FormaDesignSystemTests: XCTestCase {
     }
   }
 
+  /// Changing tab is a firm tap, stronger than the light selection tick, and
+  /// returning to a tab's start is softer; neither feels like an account event.
+  func testTabHapticsAreFirmAndDistinct() {
+    XCTAssertEqual(FormaHaptic.tabChanged.feedback, .impact(flexibility: .solid, intensity: 0.85))
+    XCTAssertEqual(FormaHaptic.tabReturned.feedback, .impact(flexibility: .soft, intensity: 0.65))
+    XCTAssertNotEqual(FormaHaptic.tabChanged.feedback, FormaHaptic.selected.feedback)
+    for other in [FormaHaptic.accountSent, .accountRemoved, .undone, .added] {
+      XCTAssertNotEqual(FormaHaptic.tabChanged.feedback, other.feedback, "\(other)")
+      XCTAssertNotEqual(FormaHaptic.tabReturned.feedback, other.feedback, "\(other)")
+    }
+  }
+
   /// The Today strip is 112pt tall and at most about 430pt wide. A 1536 px
   /// source decoded to roughly 6 MiB for it; the bundled asset must stay
   /// right-sized.
