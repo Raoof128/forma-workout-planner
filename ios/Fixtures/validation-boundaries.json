@@ -206,5 +206,134 @@
       "duration": 60,
       "accepted": false
     }
+  ],
+  "watchSummaries": [
+    {
+      "id": "full summary",
+      "summary": {
+        "elapsedSeconds": 2520,
+        "averageHeartRate": 128,
+        "maxHeartRate": 162,
+        "activeEnergyKcal": 310
+      },
+      "accepted": true
+    },
+    {
+      "id": "time only",
+      "summary": {
+        "elapsedSeconds": 0
+      },
+      "accepted": true
+    },
+    {
+      "id": "longest day",
+      "summary": {
+        "elapsedSeconds": 86400
+      },
+      "accepted": true
+    },
+    {
+      "id": "lowest and highest heart rate",
+      "summary": {
+        "elapsedSeconds": 60,
+        "averageHeartRate": 25,
+        "maxHeartRate": 250
+      },
+      "accepted": true
+    },
+    {
+      "id": "max equals average",
+      "summary": {
+        "elapsedSeconds": 60,
+        "averageHeartRate": 140,
+        "maxHeartRate": 140
+      },
+      "accepted": true
+    },
+    {
+      "id": "most energy",
+      "summary": {
+        "elapsedSeconds": 60,
+        "activeEnergyKcal": 10000
+      },
+      "accepted": true
+    },
+    {
+      "id": "missing time",
+      "summary": {
+        "averageHeartRate": 120
+      },
+      "accepted": false
+    },
+    {
+      "id": "negative time",
+      "summary": {
+        "elapsedSeconds": -1
+      },
+      "accepted": false
+    },
+    {
+      "id": "time over a day",
+      "summary": {
+        "elapsedSeconds": 86401
+      },
+      "accepted": false
+    },
+    {
+      "id": "fractional time",
+      "summary": {
+        "elapsedSeconds": 60.5
+      },
+      "accepted": false
+    },
+    {
+      "id": "heart rate too low",
+      "summary": {
+        "elapsedSeconds": 60,
+        "averageHeartRate": 24
+      },
+      "accepted": false
+    },
+    {
+      "id": "heart rate too high",
+      "summary": {
+        "elapsedSeconds": 60,
+        "maxHeartRate": 251
+      },
+      "accepted": false
+    },
+    {
+      "id": "fractional heart rate",
+      "summary": {
+        "elapsedSeconds": 60,
+        "averageHeartRate": 120.5
+      },
+      "accepted": false
+    },
+    {
+      "id": "max below average",
+      "summary": {
+        "elapsedSeconds": 60,
+        "averageHeartRate": 150,
+        "maxHeartRate": 149
+      },
+      "accepted": false
+    },
+    {
+      "id": "negative energy",
+      "summary": {
+        "elapsedSeconds": 60,
+        "activeEnergyKcal": -1
+      },
+      "accepted": false
+    },
+    {
+      "id": "energy too high",
+      "summary": {
+        "elapsedSeconds": 60,
+        "activeEnergyKcal": 10001
+      },
+      "accepted": false
+    }
   ]
 }

@@ -76,9 +76,11 @@ public enum WorkoutEngine {
     return result
   }
 
-  public static func finish(_ workspace: Workspace, now: Double, catalog: [Exercise] = []) throws
-    -> Workspace
-  {
+  /// `watch` is what the Apple Watch recorded for this workout, if it did.
+  public static func finish(
+    _ workspace: Workspace, now: Double, catalog: [Exercise] = [],
+    watch: WorkoutWatchSummary? = nil
+  ) throws -> Workspace {
     try checkTimestamp(now)
     guard var active = workspace.active else { throw FormaError.noActiveWorkout }
     guard active.exercises.contains(where: { $0.sets.contains(where: \.done) }) else {
@@ -89,10 +91,28 @@ public enum WorkoutEngine {
     active.duration = floor(max(0, now - active.startedAt) / 1_000)
     active.restEnd = nil
     active.restPaused = nil
+    active.watch = watch
     var result = workspace
     result.active = nil
     result.history.append(active)
     try result.validateStructure(catalog: catalog.isEmpty ? nil : catalog)
+    return result
+  }
+
+  /// Replaces the Watch summary of a finished workout, for the Watch's final
+  /// reading arriving after Finish. A workout no longer in history (deleted, or
+  /// replaced by a sync) is left alone, and nothing is ever added to `active`.
+  public static func attachWatchSummary(
+    _ summary: WorkoutWatchSummary, toFinished sessionID: String, in workspace: Workspace
+  ) throws -> Workspace {
+    guard summary.isValid else {
+      throw FormaError.invalid("The Apple Watch summary for this workout is invalid.")
+    }
+    guard let index = workspace.history.firstIndex(where: { $0.id == sessionID }) else {
+      return workspace
+    }
+    var result = workspace
+    result.history[index].watch = summary
     return result
   }
 
@@ -339,11 +359,14 @@ extension Workspace {
       try check(
         duration.isFinite && (0...9_007_199_254_740_991).contains(duration),
         "The workout duration is invalid.")
+      if let watch = session.watch {
+        try check(watch.isValid, "The Apple Watch summary for this workout is invalid.")
+      }
     }
     if let active {
       try check(
-        active.date == nil && active.duration == nil,
-        "An active workout cannot carry completed-history date or duration fields.")
+        active.date == nil && active.duration == nil && active.watch == nil,
+        "An active workout cannot carry completed-history date, duration or Watch fields.")
       try check(
         !history.contains { $0.id == active.id },
         "The active workout is already present in history.")

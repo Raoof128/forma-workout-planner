@@ -123,6 +123,23 @@ const sessionSchema = z.object({
     .max(100)
     .refine(validGroups, "Supersets need two or more consecutive exercises."),
 });
+// What an Apple Watch recorded for a finished workout, as whole numbers. Only
+// history carries it; the iPhone writes it from the Watch's final snapshot.
+const heartRate = number.int().min(25).max(250);
+export const watchSummarySchema = z
+  .object({
+    elapsedSeconds: number.int().min(0).max(86400),
+    averageHeartRate: heartRate.optional(),
+    maxHeartRate: heartRate.optional(),
+    activeEnergyKcal: number.int().min(0).max(10000).optional(),
+  })
+  .refine(
+    (summary) =>
+      summary.averageHeartRate === undefined ||
+      summary.maxHeartRate === undefined ||
+      summary.maxHeartRate >= summary.averageHeartRate,
+    "Maximum heart rate must be at least the average.",
+  );
 const routineSchema = z.object({
   id,
   name: z.string().trim().min(1).max(60),
@@ -169,6 +186,7 @@ export const dataSchema = z.object({
         .extend({
           date: z.string().datetime(),
           duration: number.min(0).max(Number.MAX_SAFE_INTEGER),
+          watch: watchSummarySchema.optional(),
         })
         .refine(
           (session) =>
