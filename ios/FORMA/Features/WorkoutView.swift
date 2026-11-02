@@ -181,12 +181,14 @@ struct WorkoutView: View {
                     discardConfirmation = true
                   }
                 } label: {
-                  Image(systemName: "ellipsis.circle").frame(width: 44, height: 44)
+                  Image(systemName: "ellipsis.circle")
                 }
                 .accessibilityLabel("Workout actions")
                 .accessibilityIdentifier("workout-actions")
               }
-              ToolbarItem(placement: .confirmationAction) {
+              // Every bar button is the system's standard size; the larger,
+              // tinted confirmation style made Finish outweigh the others.
+              ToolbarItem(placement: .topBarTrailing) {
                 Button("Finish") { requestFinish() }
                   .accessibilityIdentifier("finish-workout")
                   .accessibilityLabel("Finish workout")
@@ -194,15 +196,8 @@ struct WorkoutView: View {
               }
               ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
-                // A full-height, bold target: it is the way out of editing
-                // between sets, often pressed with sweaty hands.
-                Button {
-                  Task { if await saveDrafts() { focusedField = nil } }
-                } label: {
-                  Text("Done").font(.body.weight(.semibold))
-                    .frame(minWidth: 64, minHeight: 44).contentShape(Rectangle())
-                }
-                .disabled(model.busy)
+                Button("Done") { Task { if await saveDrafts() { focusedField = nil } } }
+                  .disabled(model.busy)
                   .accessibilityIdentifier("save-workout-drafts")
               }
             }, session: session),

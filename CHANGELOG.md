@@ -4,6 +4,31 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-11-02 — Even workout buttons and Watch animation
+
+- **Scope:** owner said the workout page's Done button was still bigger than the
+  others, and the Watch app was too plain and needed animation.
+- **Summary:** the workout toolbar is one size again: Finish moved from
+  `.confirmationAction` (iOS 26 draws it as a larger tinted button) to
+  `.topBarTrailing`, the "…" menu lost its forced 44 pt frame and the keyboard Done is
+  a plain toolbar button; the Watch summary's Done is back to the shared 48 pt.
+  This supersedes the earlier "keep Done large" reading of the ask. New
+  `FORMAWatch/WatchMotion.swift`: a lime start disc with rippling rings, a 3-2-1
+  countdown (draining ring, a wrist tap per count, tap to skip), a spinning ring round
+  the loading heart, a heart that beats at the live heart rate, a flame that jumps when
+  energy rises, a breathing pause icon, and a summary seal that draws closed with the
+  stats rising in one by one.
+- **Rules:** every Watch animation goes through `MotionGate`: none with Reduce Motion
+  or on a dimmed (Always On) wrist. The heartbeat is a sleeping loop at the measured
+  rate (30–220 bpm) that stops with the view; it runs only while the wrist is raised.
+- **Files:** `ios/FORMA/Features/WorkoutView.swift`, `ios/FORMAWatch/WatchMotion.swift`,
+  `ios/FORMAWatch/WatchViews.swift`, `CHANGELOG.md`, `AGENT.md`.
+- **Verification:** iPhone + Watch device build with no warnings; `FORMAAppTests`
+  125/125 on the iPhone Air. The Watch animations are not seen on the Watch yet (the
+  Mac cannot reach it); battery effect not measured.
+- **Follow-ups:** look at the start disc, countdown, heartbeat and seal on the Watch;
+  confirm the toolbar on the iPhone.
+
 ### Raouf: 2026-11-02 — Apple Watch battery and practice audit
 
 - **Scope:** owner asked for a full audit of the Watch app against 2026 battery and

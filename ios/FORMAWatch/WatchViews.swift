@@ -64,8 +64,21 @@ private struct StartView: View {
   @Environment(WorkoutManager.self) private var manager
   @Environment(\.isLuminanceReduced) private var luminanceReduced
   @State private var confirmingDiscard = false
+  /// Start was pressed: 3, 2, 1 before the recording begins.
+  @State private var countingDown = false
 
   var body: some View {
+    if countingDown {
+      StartCountdown {
+        countingDown = false
+        Task { await manager.start() }
+      }
+    } else {
+      content
+    }
+  }
+
+  private var content: some View {
     ScrollView {
       VStack(alignment: .leading, spacing: 10) {
         Text(heading).font(.caption2.weight(.bold)).foregroundStyle(WatchTheme.lime)
@@ -144,17 +157,19 @@ private struct StartView: View {
 
   @ViewBuilder private var startActions: some View {
     if !luminanceReduced {
-      Button {
-        Task { await manager.start() }
-      } label: {
-        Label(
-          manager.healthAccessDenied ? "Try again" : "Start",
-          systemImage: manager.healthAccessDenied ? "arrow.clockwise" : "play.fill")
+      if manager.healthAccessDenied {
+        // Retrying after Health access was off goes straight back to HealthKit.
+        Button {
+          Task { await manager.start() }
+        } label: {
+          Label("Try again", systemImage: "arrow.clockwise")
+        }
+        .buttonStyle(WatchButtonStyle(.primary))
+      } else {
+        StartDisc(label: "Start \(manager.routineName ?? "strength workout")") {
+          countingDown = true
+        }
       }
-      .buttonStyle(WatchButtonStyle(.primary))
-      .accessibilityLabel(
-        manager.healthAccessDenied
-          ? "Try again" : "Start \(manager.routineName ?? "strength workout")")
     }
     Text(
       manager.routineName == nil
@@ -276,9 +291,16 @@ private struct StopButton: View {
 /// timer, so this label is hidden from it.
 private struct PausedLabel: View {
   var body: some View {
-    Label("Paused", systemImage: "pause.fill")
+    MotionGate { animates in
+      Label {
+        Text("Paused")
+      } icon: {
+        Image(systemName: "pause.fill")
+          .symbolEffect(.pulse, options: .repeating, isActive: animates)
+      }
       .font(.caption.weight(.bold)).foregroundStyle(WatchTheme.warning)
-      .accessibilityHidden(true)
+    }
+    .accessibilityHidden(true)
   }
 }
 
@@ -378,7 +400,7 @@ private struct HeartRateRow: View {
     } else if let rate = manager.heartRate {
       MetricRow(
         text: "\(rate) bpm", symbol: "heart.fill", color: .red,
-        label: "Heart rate \(rate) beats per minute")
+        label: "Heart rate \(rate) beats per minute", beatsPerMinute: rate)
     } else {
       // The sensor's first reading can take a few seconds: say so, with the
       // heart beating, rather than a blank "--".
@@ -402,7 +424,7 @@ private struct EnergyRow: View {
     } else if let energy = manager.activeEnergy {
       MetricRow(
         text: "\(energy) kcal", symbol: "flame.fill", color: .orange,
-        label: "Active energy \(energy) kilocalories")
+        label: "Active energy \(energy) kilocalories", bounceValue: energy)
     } else {
       MetricRow(
         text: "-- kcal", symbol: "flame.fill", color: .orange,
@@ -420,6 +442,10 @@ private struct MetricRow: View {
   let label: String
   /// The symbol beats while the reading is still being collected.
   var pulsing = false
+  /// A live heart rate: the heart beats at this rate.
+  var beatsPerMinute: Int?
+  /// The symbol jumps each time this value changes (energy going up).
+  var bounceValue: Int?
 
   /// Digits roll from one real reading to the next only when the user has not
   /// asked for less motion and the display is fully lit.
@@ -432,8 +458,13 @@ private struct MetricRow: View {
         .contentTransition(rollsDigits ? ContentTransition.numericText() : .identity)
         .animation(rollsDigits ? Animation.easeOut(duration: 0.2) : nil, value: text)
     } icon: {
-      Image(systemName: symbol).foregroundStyle(color)
-        .symbolEffect(.pulse, options: .repeating, isActive: pulsing && rollsDigits)
+      if let beatsPerMinute {
+        HeartbeatSymbol(beatsPerMinute: beatsPerMinute)
+      } else {
+        Image(systemName: symbol).foregroundStyle(color)
+          .symbolEffect(.pulse, options: .repeating, isActive: pulsing && rollsDigits)
+          .symbolEffect(.bounce.up, value: rollsDigits ? bounceValue ?? 0 : 0)
+      }
     }
     .accessibilityElement(children: .ignore)
     .accessibilityLabel(label)
@@ -507,18 +538,23 @@ private struct SummaryView: View {
   var body: some View {
     ScrollView {
       VStack(alignment: .leading, spacing: 8) {
-        Text(saved ? "Saved to Health" : "Recording discarded").font(.headline)
+        HStack(spacing: 10) {
+          SummarySeal(saved: saved)
+          Text(saved ? "Saved to Health" : "Recording discarded").font(.headline)
+            .fixedSize(horizontal: false, vertical: true)
+        }
         Text(WatchFormat.clock(metrics.elapsed)).font(.title2.weight(.bold).monospacedDigit())
           .accessibilityLabel("Workout time")
           .accessibilityValue(WatchFormat.spoken(metrics.elapsed, paused: false))
+          .reveal(0)
         if let average = metrics.averageHeartRate {
-          Label("\(Int(average.rounded())) bpm average", systemImage: "heart.fill")
+          Label("\(Int(average.rounded())) bpm average", systemImage: "heart.fill").reveal(1)
         }
         if let maximum = metrics.maxHeartRate {
-          Label("\(Int(maximum.rounded())) bpm max", systemImage: "arrow.up.heart.fill")
+          Label("\(Int(maximum.rounded())) bpm max", systemImage: "arrow.up.heart.fill").reveal(2)
         }
         if let energy = metrics.activeEnergy {
-          Label("\(Int(energy.rounded())) kcal", systemImage: "flame.fill")
+          Label("\(Int(energy.rounded())) kcal", systemImage: "flame.fill").reveal(3)
         }
         Text(
           manager.endedFromPhone
@@ -532,7 +568,7 @@ private struct SummaryView: View {
     // reach. It stays during Always On too: there is nothing left to protect.
     .safeAreaInset(edge: .bottom) {
       Button("Done") { manager.dismissSummary() }
-        .buttonStyle(WatchButtonStyle(.primary, minHeight: 52))
+        .buttonStyle(WatchButtonStyle(.primary))
         .opacity(luminanceReduced ? 0.6 : 1)
         .padding(.top, 4)
         .background(.black)
@@ -546,21 +582,12 @@ private struct SummaryView: View {
 /// sensors, restoring a workout, or saving. The heart beats so the screen never
 /// looks frozen; with Reduce Motion or on a dimmed wrist it stays still.
 private struct WatchLoadingMark: View {
-  @Environment(\.accessibilityReduceMotion) private var reduceMotion
-  @Environment(\.isLuminanceReduced) private var luminanceReduced
   let title: String
   var detail: String?
 
   var body: some View {
     VStack(spacing: 8) {
-      ZStack {
-        Circle().stroke(WatchTheme.lime.opacity(0.25), lineWidth: 3)
-        Image(systemName: "heart.fill")
-          .font(.title2).foregroundStyle(.red)
-          .symbolEffect(.pulse, options: .repeating, isActive: !reduceMotion && !luminanceReduced)
-      }
-      .frame(width: 52, height: 52)
-      .accessibilityHidden(true)
+      LoadingHeart()
       Text(title).font(.headline).multilineTextAlignment(.center)
       if let detail {
         Text(detail).font(.footnote).foregroundStyle(.secondary)
@@ -579,18 +606,14 @@ private struct WatchButtonStyle: ButtonStyle {
 
   @Environment(\.isEnabled) private var isEnabled
   let kind: Kind
-  let minHeight: CGFloat
 
-  init(_ kind: Kind, minHeight: CGFloat = 48) {
-    self.kind = kind
-    self.minHeight = minHeight
-  }
+  init(_ kind: Kind) { self.kind = kind }
 
   func makeBody(configuration: Configuration) -> some View {
     configuration.label
       .font(.headline)
       .foregroundStyle(foreground)
-      .frame(maxWidth: .infinity, minHeight: minHeight)
+      .frame(maxWidth: .infinity, minHeight: 48)
       .background(background, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
       .opacity(isEnabled ? (configuration.isPressed ? 0.7 : 1) : 0.4)
   }
