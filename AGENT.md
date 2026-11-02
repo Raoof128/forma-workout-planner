@@ -58,6 +58,34 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-11-02 — Apple Watch battery and practice audit
+
+- **Scope:** owner asked for a full audit of the Watch app against 2026 battery and
+  watchOS practice. Report: `ios/docs/audits/watch-battery-audit-2026-11-02.md`.
+- **Summary:** fixed a real bug in today's summary feature (the final snapshot was
+  sent after `session.end()` and could be dropped by the iPhone), added `sentAt` to
+  `WatchMetrics` with late/out-of-order handling on the iPhone, cut ordinary sends to
+  at least 2 s apart and 2 bpm changes, added a real 20 s heartbeat, removed the unused
+  basal-energy read, capped the measuring pulse at 15 s, kept a start-time failure on
+  screen, fixed the "ended from iPhone" race, guarded Pause/Resume and refreshed the
+  Health-off flags on recovery.
+- **Rules:** the Watch must deliver its final snapshot before ending the mirrored
+  session (awaited, at most 2 s); the iPhone keeps the just-ended session only to
+  accept that snapshot. Freshness is judged from `sentAt`, never arrival time.
+  `FORMAAppTests` can run on the iPhone Air with
+  `-destination 'id=<iPhone UDID>' -only-testing:FORMAAppTests` (no simulator); it
+  caught a missing `import FORMACore` in today's coordinator tests.
+- **Files:** `ios/FORMAWatch/{WorkoutManager,WatchViews}.swift`,
+  `ios/Shared/WatchWorkout.swift`, `ios/FORMA/App/WatchWorkoutCoordinator.swift`,
+  `ios/FORMAAppTests/WatchWorkoutCoordinatorTests.swift`,
+  `ios/docs/audits/watch-battery-audit-2026-11-02.md`, `CHANGELOG.md`, `AGENT.md`.
+- **Verification:** device build (iPhone + Watch) with no warnings; `FORMAAppTests`
+  125/125 on the iPhone Air; `swift test` 154/154; `docs:check`. Not measured: battery
+  effect and end-of-workout delivery on the Watch.
+- **Follow-ups:** device experiment with `prepare()`; on-Watch check of the Stop
+  dialog, pulse cap and final summary. No API or website change, so nothing to deploy
+  beyond the iPhone app.
+
 ### Raouf: 2026-11-02 — Apple Watch collected data deployed
 
 - **Scope:** owner asked to push, redeploy the site and release the API ("you do

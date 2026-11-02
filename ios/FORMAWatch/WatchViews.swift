@@ -69,6 +69,7 @@ private struct StartView: View {
     ScrollView {
       VStack(alignment: .leading, spacing: 10) {
         Text(heading).font(.caption2.weight(.bold)).foregroundStyle(WatchTheme.lime)
+          .accessibilityAddTraits(.isHeader)
         Text(manager.routineName ?? "Strength workout")
           .font(.title3.weight(.bold)).fixedSize(horizontal: false, vertical: true)
         // Errors come first so they are never below the fold.
@@ -253,6 +254,7 @@ private struct StopButton: View {
     }
     .buttonStyle(.plain)
     .accessibilityLabel(paused ? "Resume or end workout" : "Pause or end workout")
+    .accessibilityHint("Asks before anything changes.")
     .confirmationDialog(
       paused ? "Recording paused" : "Stop recording?", isPresented: $choosing,
       titleVisibility: .visible
@@ -355,8 +357,21 @@ private struct ElapsedTimeView: View {
 
 private struct HeartRateRow: View {
   @Environment(WorkoutManager.self) private var manager
+  /// The sensor has had long enough: stop animating (a repeating effect keeps
+  /// the display redrawing) and say so plainly.
+  @State private var waitedTooLong = false
 
   var body: some View {
+    row
+      .task(id: manager.heartRate == nil) {
+        waitedTooLong = false
+        guard manager.heartRate == nil else { return }
+        try? await Task.sleep(for: .seconds(15))
+        if !Task.isCancelled { waitedTooLong = true }
+      }
+  }
+
+  @ViewBuilder private var row: some View {
     if manager.heartRateOff {
       MetricRow(
         text: "Off", symbol: "heart.fill", color: .red, label: "Heart rate is off in Health")
@@ -368,8 +383,10 @@ private struct HeartRateRow: View {
       // The sensor's first reading can take a few seconds: say so, with the
       // heart beating, rather than a blank "--".
       MetricRow(
-        text: "Measuring…", symbol: "heart.fill", color: .red,
-        label: "Measuring heart rate", pulsing: true)
+        text: waitedTooLong ? "No reading yet" : "Measuring…", symbol: "heart.fill", color: .red,
+        label: waitedTooLong
+          ? "No heart rate reading yet. Check your Watch fits snugly." : "Measuring heart rate",
+        pulsing: !waitedTooLong)
     }
   }
 }

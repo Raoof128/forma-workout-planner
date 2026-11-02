@@ -93,6 +93,9 @@ final class WatchWorkoutCoordinator {
   private let healthStore = HKHealthStore()
   @ObservationIgnored private let bridge = WatchBridge()
   @ObservationIgnored private var mirrored: HKWorkoutSession?
+  /// The session that just ended. Its final snapshot can be delivered after
+  /// the end is reported, and it carries the numbers stored with the workout.
+  @ObservationIgnored private var endedSession: HKWorkoutSession?
   @ObservationIgnored private var activation: [CheckedContinuation<Void, Never>] = []
   @ObservationIgnored private var activationRequested = false
   @ObservationIgnored private var noticeSource: NoticeSource?
@@ -250,7 +253,7 @@ final class WatchWorkoutCoordinator {
   }
 
   fileprivate func didReceive(_ data: [Data], from session: HKWorkoutSession) {
-    guard mirrored === session else { return }
+    guard mirrored === session || endedSession === session else { return }
     // Delivery is batched after suspension; the newest snapshot wins. Decode
     // from the newest backwards and publish once, so a backlog doesn't
     // invalidate the live strip once per stale snapshot.
@@ -267,6 +270,7 @@ final class WatchWorkoutCoordinator {
     if state == .stopped, phase == .recording {
       phase = .ending
     } else if state == .ended {
+      endedSession = session
       mirrored = nil
       if phase == .recording || phase == .ending {
         phase = .ended
@@ -285,13 +289,17 @@ final class WatchWorkoutCoordinator {
 
   /// A snapshot from the Watch: the link is live and the reading is fresh.
   func apply(metrics snapshot: WatchMetrics, at date: Date = .now) {
+    // An older snapshot delivered late (batched after suspension, or a
+    // heartbeat overtaking the final one) never replaces a newer reading.
+    if let sent = snapshot.sentAt, let newest = metrics?.sentAt, sent < newest { return }
     let endedNow = snapshot.state == .ended && metrics?.state != .ended
     if metrics != snapshot { metrics = snapshot }
     if endedNow, snapshot.discarded != true {
       onRecordingEnded?(WorkoutWatchSummary(metrics: snapshot))
     }
     let wasLost = link.state == .lost
-    link.metricsReceived(at: date)
+    // Fresh from when the Watch sent it, not when this iPhone got round to it.
+    link.metricsReceived(at: min(snapshot.sentAt ?? date, date))
     if wasLost { clearNotice(from: .link) }
     refreshStaleness(now: date)
   }
@@ -372,6 +380,7 @@ final class WatchWorkoutCoordinator {
 
   func reset() {
     if case .ended = phase { phase = .idle }
+    endedSession = nil
     metrics = nil
     link = WatchLink()
     isReadingStale = false

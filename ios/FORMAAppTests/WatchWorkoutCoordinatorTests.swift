@@ -1,3 +1,4 @@
+import FORMACore
 import Foundation
 import WatchConnectivity
 import XCTest
@@ -187,5 +188,26 @@ final class WatchWorkoutCoordinatorTests: XCTestCase {
     }
     XCTAssertNil(metrics.maxHeartRate)
     XCTAssertNil(metrics.discarded)
+  }
+
+  func testLateOlderSnapshotNeverReplacesANewerOne() {
+    let coordinator = WatchWorkoutCoordinator()
+    var newer = snapshot(heartRate: 150)
+    newer.sentAt = start.addingTimeInterval(30)
+    var older = snapshot(heartRate: 120)
+    older.sentAt = start.addingTimeInterval(10)
+    coordinator.apply(metrics: newer, at: start.addingTimeInterval(31))
+    coordinator.apply(metrics: older, at: start.addingTimeInterval(32))
+    XCTAssertEqual(coordinator.metrics?.heartRate, 150)
+  }
+
+  func testFreshnessCountsFromWhenTheWatchSent() {
+    let coordinator = WatchWorkoutCoordinator()
+    var batched = snapshot()
+    batched.sentAt = start
+    // Delivered two minutes late after the iPhone app was suspended.
+    coordinator.apply(metrics: batched, at: start.addingTimeInterval(120))
+    XCTAssertTrue(coordinator.isReadingStale, "A two-minute-old reading is not shown as live")
+    XCTAssertNil(coordinator.liveHeartRate)
   }
 }
