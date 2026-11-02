@@ -28,6 +28,8 @@ struct ProgressViewScreen: View {
           }
           .formaReveal(order: 0)
           VolumeChart(sessions: Array(history.prefix(8).reversed()))
+          let watchTotals = WatchTotals(history)
+          if watchTotals.workouts > 0 { WatchTotalsCard(totals: watchTotals) }
           LazyVStack(alignment: .leading, spacing: 8) {
             SectionHeading(title: "Your training journal", detail: "Latest first")
             ForEach(history) { session in
@@ -69,6 +71,13 @@ private struct JournalRow: View {
           "\(countPhrase(completedSets(in: session), "completed set")) · \(Int((session.duration ?? 0) / 60)) min"
         )
         .font(.subheadline).foregroundStyle(FormaTheme.secondary)
+        if let watch = session.watch {
+          Label(
+            watch.averageHeartRate.map { "Apple Watch · \($0) bpm average" } ?? "Apple Watch",
+            systemImage: "applewatch"
+          )
+          .font(.caption.weight(.semibold)).foregroundStyle(FormaTheme.accent)
+        }
       }
       Spacer()
       Image(systemName: "chevron.right").foregroundStyle(FormaTheme.secondary)
@@ -275,6 +284,7 @@ struct SessionDetailView: View {
             Divider()
           }
         }
+        if let watch = session.watch { WatchSummaryCard(summary: watch) }
         if !session.notes.isEmpty {
           Text("Session notes").font(.headline)
           Text(session.notes).font(.body).textSelection(.enabled)

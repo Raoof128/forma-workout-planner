@@ -102,6 +102,9 @@ final class AppModel {
   }
   /// The routine waiting on the Apple Watch start sheet.
   var pendingStart: Routine?
+  /// The finished workout, and whose store it is in, that the Watch's final
+  /// reading still belongs to. Cleared once that reading is stored.
+  private var watchSummaryTarget: (sessionID: String, owner: String)?
   private var presentWorkoutAfterSheet = false
 
   init(liveActivity: WorkoutLiveActivityController = .makeDefault()) {
@@ -116,6 +119,10 @@ final class AppModel {
         guard owner == self.storeIdentity else { return }
         await self.start(routine)
       }
+    }
+    watch.onRecordingEnded = { [weak self] summary in
+      guard let self else { return }
+      Task { await self.storeFinalWatchSummary(summary) }
     }
   }
 
@@ -393,15 +400,36 @@ final class AppModel {
 
   func finish() async {
     guard let id = workspace?.active?.id else { return }
+    // The latest Watch reading goes in with the workout; the final one, sent
+    // when the Watch stops, replaces it if it arrives later.
+    let summary = watch.summary
     if await commit(
       forActiveSession: id,
       { value in
-        value = try WorkoutEngine.finish(value, now: Self.now, catalog: catalog)
+        value = try WorkoutEngine.finish(value, now: Self.now, catalog: catalog, watch: summary)
       })
     {
       receipt = workspace?.history.first { $0.id == id }
+      let recording = watch.phase == .recording || watch.phase == .ending
+      watchSummaryTarget = recording ? (id, storeIdentity) : nil
       // The Watch ends its recording and saves it to Apple Health.
       await watch.end(save: true)
+    }
+  }
+
+  /// Stores the Watch's final reading on the workout it belongs to. Nothing is
+  /// written when the workout is gone, the store changed, or nothing differs.
+  func storeFinalWatchSummary(_ summary: WorkoutWatchSummary) async {
+    guard let target = watchSummaryTarget, target.owner == storeIdentity else { return }
+    watchSummaryTarget = nil
+    guard let session = workspace?.history.first(where: { $0.id == target.sessionID }),
+      session.watch != summary
+    else { return }
+    if await commit({ value in
+      value = try WorkoutEngine.attachWatchSummary(
+        summary, toFinished: target.sessionID, in: value)
+    }), receipt?.id == target.sessionID {
+      receipt = workspace?.history.first { $0.id == target.sessionID }
     }
   }
 

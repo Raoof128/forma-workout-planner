@@ -55,6 +55,12 @@ struct WatchMetrics: Codable, Equatable, Sendable {
   var elapsed: TimeInterval
   var heartRate: Double?
   var averageHeartRate: Double?
+  /// The highest heart rate so far. Optional, so a Watch on an older build
+  /// that never sends it still decodes.
+  var maxHeartRate: Double?
   /// Kilocalories of active energy.
   var activeEnergy: Double?
+  /// Set on the final snapshot when the recording was thrown away, so the
+  /// iPhone doesn't keep numbers the person chose to discard.
+  var discarded: Bool?
 }

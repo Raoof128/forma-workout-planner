@@ -194,8 +194,15 @@ struct WorkoutView: View {
               }
               ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
-                Button("Done") { Task { if await saveDrafts() { focusedField = nil } } }
-                  .disabled(model.busy)
+                // A full-height, bold target: it is the way out of editing
+                // between sets, often pressed with sweaty hands.
+                Button {
+                  Task { if await saveDrafts() { focusedField = nil } }
+                } label: {
+                  Text("Done").font(.body.weight(.semibold))
+                    .frame(minWidth: 64, minHeight: 44).contentShape(Rectangle())
+                }
+                .disabled(model.busy)
                   .accessibilityIdentifier("save-workout-drafts")
               }
             }, session: session),
@@ -228,7 +235,7 @@ struct WorkoutView: View {
         ElapsedTime(startedAt: session.startedAt)
       }
       saveStatus
-      WatchRecordingStrip()
+      WatchRecordingStrip(finish: { requestFinish() })
       exerciseSelector(session)
 
       if session.exercises.indices.contains(selectedExercise) {
@@ -1812,6 +1819,9 @@ struct WorkoutReceipt: View {
           value: WorkoutEngine.volume(session, catalog: model.catalog).formatted(
             .number.precision(.fractionLength(0...1))), label: "Lifting volume · kg × reps"
         ).formaReveal(order: 3)
+        if let watch = session.watch {
+          WatchSummaryCard(summary: watch).formaReveal(order: 4)
+        }
         Divider()
         Label("Session saved on this iPhone", systemImage: "checkmark.shield.fill")
           .font(.headline).foregroundStyle(FormaTheme.accent)

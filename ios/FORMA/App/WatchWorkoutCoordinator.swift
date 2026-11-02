@@ -79,6 +79,16 @@ final class WatchWorkoutCoordinator {
   private(set) var isReadingStale = false
   /// Called once when the Watch starts the workout this iPhone asked for.
   var onWatchStarted: ((_ routineID: String) -> Void)?
+  /// Called once per recording with the Watch's final reading, which can land
+  /// after the FORMA workout was finished with an earlier one.
+  var onRecordingEnded: ((_ summary: WorkoutWatchSummary) -> Void)?
+
+  /// What the Watch has recorded so far, as it would be stored on the finished
+  /// workout. `nil` until a reading arrives for this recording.
+  var summary: WorkoutWatchSummary? {
+    guard let metrics, metrics.discarded != true else { return nil }
+    return WorkoutWatchSummary(metrics: metrics)
+  }
 
   private let healthStore = HKHealthStore()
   @ObservationIgnored private let bridge = WatchBridge()
@@ -275,7 +285,11 @@ final class WatchWorkoutCoordinator {
 
   /// A snapshot from the Watch: the link is live and the reading is fresh.
   func apply(metrics snapshot: WatchMetrics, at date: Date = .now) {
+    let endedNow = snapshot.state == .ended && metrics?.state != .ended
     if metrics != snapshot { metrics = snapshot }
+    if endedNow, snapshot.discarded != true {
+      onRecordingEnded?(WorkoutWatchSummary(metrics: snapshot))
+    }
     let wasLost = link.state == .lost
     link.metricsReceived(at: date)
     if wasLost { clearNotice(from: .link) }
@@ -408,6 +422,14 @@ final class WatchWorkoutCoordinator {
       if let command { post(Self.failureNotice(for: command, connected: true), from: .command) }
       return false
     }
+  }
+}
+
+extension WorkoutWatchSummary {
+  init(metrics: WatchMetrics) {
+    self.init(
+      elapsed: metrics.elapsed, averageHeartRate: metrics.averageHeartRate,
+      maxHeartRate: metrics.maxHeartRate, activeEnergy: metrics.activeEnergy)
   }
 }
 

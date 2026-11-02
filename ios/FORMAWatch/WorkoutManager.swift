@@ -45,6 +45,9 @@ final class WorkoutManager {
   private(set) var activeEnergyOff = false
   /// Reattaching to the running workout failed; the person can retry or dismiss.
   private(set) var recoveryFailed = false
+  /// The iPhone asked for the end (its Finish or Discard), so the FORMA workout
+  /// is already finished there. Ending here leaves it for the iPhone to finish.
+  private(set) var endedFromPhone = false
 
   /// Whether the workout being stopped will be saved, for the wording of the wait.
   var savingToHealth: Bool { saveWhenStopped }
@@ -261,6 +264,7 @@ final class WorkoutManager {
   /// (or discard) and end the session, in the order HealthKit requires.
   func end(save: Bool) {
     guard let session, phase == .running || phase == .paused else { return }
+    endedFromPhone = false
     saveWhenStopped = save
     phase = .ending
     session.stopActivity(with: .now)
@@ -296,6 +300,7 @@ final class WorkoutManager {
     // are retained by the system. This is not a deletion of Health history.
     builder?.discardWorkout()
     metrics?.state = .ended
+    metrics?.discarded = true
     send(force: true)
     self.session = nil
     builder = nil
@@ -401,6 +406,7 @@ final class WorkoutManager {
     session.end()
     metrics?.state = .ended
     metrics?.elapsed = builder.elapsedTime
+    if !saveWhenStopped { metrics?.discarded = true }
     send(force: true)
     let summary = metrics ?? WatchMetrics(state: .ended, startedAt: stopped, elapsed: 0)
     self.session = nil
@@ -425,6 +431,7 @@ final class WorkoutManager {
     let heart = builder.statistics(for: Self.heartRateType)
     metrics?.heartRate = heart?.mostRecentQuantity()?.doubleValue(for: Self.beatsPerMinute)
     metrics?.averageHeartRate = heart?.averageQuantity()?.doubleValue(for: Self.beatsPerMinute)
+    metrics?.maxHeartRate = heart?.maximumQuantity()?.doubleValue(for: Self.beatsPerMinute)
     metrics?.activeEnergy = builder.statistics(for: Self.activeEnergyType)?
       .sumQuantity()?.doubleValue(for: .kilocalorie())
     metrics?.elapsed = builder.elapsedTime
@@ -446,7 +453,9 @@ final class WorkoutManager {
       switch message {
       case .pause: pause()
       case .resume: resume()
-      case .end(let save): end(save: save)
+      case .end(let save):
+        end(save: save)
+        if phase == .ending { endedFromPhone = true }
       case .metrics: break
       }
     }

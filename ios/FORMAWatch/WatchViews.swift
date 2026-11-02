@@ -78,7 +78,9 @@ private struct StartView: View {
             .fixedSize(horizontal: false, vertical: true)
         }
         if manager.phase == .recovering {
-          ProgressView("Restoring your workout…")
+          WatchLoadingMark(title: "Restoring your workout…")
+        } else if manager.phase == .starting {
+          WatchLoadingMark(title: "Starting…", detail: "Getting your heart rate ready.")
         } else if manager.recoveryFailed {
           if !luminanceReduced { recoveryActions }
         } else if manager.hasFailedRecording {
@@ -122,7 +124,7 @@ private struct StartView: View {
     )
     .font(.footnote)
     if manager.savingRecording {
-      ProgressView("Saving to Health…")
+      WatchLoadingMark(title: "Saving to Health…")
     } else if !luminanceReduced {
       Button {
         manager.retrySave()
@@ -144,25 +146,14 @@ private struct StartView: View {
       Button {
         Task { await manager.start() }
       } label: {
-        if manager.phase == .starting {
-          Label {
-            Text("Starting…")
-          } icon: {
-            ProgressView()
-          }
-        } else {
-          Label(
-            manager.healthAccessDenied ? "Try again" : "Start",
-            systemImage: manager.healthAccessDenied ? "arrow.clockwise" : "play.fill")
-        }
+        Label(
+          manager.healthAccessDenied ? "Try again" : "Start",
+          systemImage: manager.healthAccessDenied ? "arrow.clockwise" : "play.fill")
       }
       .buttonStyle(WatchButtonStyle(.primary))
-      .disabled(manager.phase == .starting)
       .accessibilityLabel(
-        manager.phase == .starting
-          ? "Starting workout"
-          : manager.healthAccessDenied
-            ? "Try again" : "Start \(manager.routineName ?? "strength workout")")
+        manager.healthAccessDenied
+          ? "Try again" : "Start \(manager.routineName ?? "strength workout")")
     }
     Text(
       manager.routineName == nil
@@ -212,13 +203,9 @@ private struct SavingView: View {
   @Environment(WorkoutManager.self) private var manager
 
   var body: some View {
-    VStack(spacing: 8) {
-      ProgressView()
-      Text(manager.savingToHealth ? "Saving to Health…" : "Discarding…")
-        .font(.headline)
-      Text("Keep this screen open.").font(.footnote).foregroundStyle(.secondary)
-    }
-    .accessibilityElement(children: .combine)
+    WatchLoadingMark(
+      title: manager.savingToHealth ? "Saving to Health…" : "Discarding…",
+      detail: "Keep this screen open.")
   }
 }
 
@@ -231,12 +218,54 @@ private struct MetricsPage: View {
     ScrollView {
       VStack(alignment: .leading, spacing: 6) {
         if manager.phase == .paused { PausedLabel() }
-        ElapsedTimeView()
+        HStack(alignment: .center, spacing: 6) {
+          ElapsedTimeView()
+          Spacer(minLength: 0)
+          StopButton()
+        }
         HeartRateRow()
         EnergyRow()
         ConnectionRow()
       }
       .frame(maxWidth: .infinity, alignment: .leading)
+    }
+  }
+}
+
+/// One control on the numbers page for "stop": it asks whether to pause the
+/// recording or end the workout, so a brush of the wrist can't end it. It acts
+/// only on the Watch's own recording; the iPhone keeps its sets and timers.
+private struct StopButton: View {
+  @Environment(WorkoutManager.self) private var manager
+  @State private var choosing = false
+
+  var body: some View {
+    let paused = manager.phase == .paused
+    Button {
+      choosing = true
+    } label: {
+      Image(systemName: paused ? "play.fill" : "stop.fill")
+        .font(.body.weight(.bold))
+        .foregroundStyle(paused ? WatchTheme.ink : WatchTheme.error)
+        .frame(width: 44, height: 44)
+        .background(
+          paused ? WatchTheme.lime : WatchTheme.error.opacity(0.28), in: Circle())
+    }
+    .buttonStyle(.plain)
+    .accessibilityLabel(paused ? "Resume or end workout" : "Pause or end workout")
+    .confirmationDialog(
+      paused ? "Recording paused" : "Stop recording?", isPresented: $choosing,
+      titleVisibility: .visible
+    ) {
+      if paused {
+        Button("Resume recording") { manager.resume() }
+      } else {
+        Button("Pause recording") { manager.pause() }
+      }
+      Button("End workout") { manager.end(save: true) }
+      Button("Cancel", role: .cancel) {}
+    } message: {
+      Text("End saves to Health. Finish the workout on your iPhone to log your sets.")
     }
   }
 }
@@ -336,8 +365,11 @@ private struct HeartRateRow: View {
         text: "\(rate) bpm", symbol: "heart.fill", color: .red,
         label: "Heart rate \(rate) beats per minute")
     } else {
+      // The sensor's first reading can take a few seconds: say so, with the
+      // heart beating, rather than a blank "--".
       MetricRow(
-        text: "-- bpm", symbol: "heart.fill", color: .red, label: "Heart rate not available yet")
+        text: "Measuring…", symbol: "heart.fill", color: .red,
+        label: "Measuring heart rate", pulsing: true)
     }
   }
 }
@@ -369,6 +401,8 @@ private struct MetricRow: View {
   let symbol: String
   let color: Color
   let label: String
+  /// The symbol beats while the reading is still being collected.
+  var pulsing = false
 
   /// Digits roll from one real reading to the next only when the user has not
   /// asked for less motion and the display is fully lit.
@@ -382,6 +416,7 @@ private struct MetricRow: View {
         .animation(rollsDigits ? Animation.easeOut(duration: 0.2) : nil, value: text)
     } icon: {
       Image(systemName: symbol).foregroundStyle(color)
+        .symbolEffect(.pulse, options: .repeating, isActive: pulsing && rollsDigits)
     }
     .accessibilityElement(children: .ignore)
     .accessibilityLabel(label)
@@ -462,21 +497,63 @@ private struct SummaryView: View {
         if let average = metrics.averageHeartRate {
           Label("\(Int(average.rounded())) bpm average", systemImage: "heart.fill")
         }
+        if let maximum = metrics.maxHeartRate {
+          Label("\(Int(maximum.rounded())) bpm max", systemImage: "arrow.up.heart.fill")
+        }
         if let energy = metrics.activeEnergy {
           Label("\(Int(energy.rounded())) kcal", systemImage: "flame.fill")
         }
-        // Done sits above the footnote so it is not below the fold.
-        if !luminanceReduced {
-          Button("Done") { manager.dismissSummary() }
-            .buttonStyle(WatchButtonStyle(.primary))
-        }
-        Text("Your sets are logged on your iPhone.").font(.footnote).foregroundStyle(.secondary)
+        Text(
+          manager.endedFromPhone
+            ? "Your sets and these numbers are on your iPhone."
+            : "Finish the workout on your iPhone to log your sets with these numbers."
+        )
+        .font(.footnote).foregroundStyle(.secondary)
       }
+    }
+    // Done is pinned below the numbers, full width, so it never scrolls out of
+    // reach. It stays during Always On too: there is nothing left to protect.
+    .safeAreaInset(edge: .bottom) {
+      Button("Done") { manager.dismissSummary() }
+        .buttonStyle(WatchButtonStyle(.primary, minHeight: 52))
+        .opacity(luminanceReduced ? 0.6 : 1)
+        .padding(.top, 4)
+        .background(.black)
     }
   }
 }
 
 // MARK: - Shared
+
+/// Shown while the Watch is waiting on HealthKit: starting the session and its
+/// sensors, restoring a workout, or saving. The heart beats so the screen never
+/// looks frozen; with Reduce Motion or on a dimmed wrist it stays still.
+private struct WatchLoadingMark: View {
+  @Environment(\.accessibilityReduceMotion) private var reduceMotion
+  @Environment(\.isLuminanceReduced) private var luminanceReduced
+  let title: String
+  var detail: String?
+
+  var body: some View {
+    VStack(spacing: 8) {
+      ZStack {
+        Circle().stroke(WatchTheme.lime.opacity(0.25), lineWidth: 3)
+        Image(systemName: "heart.fill")
+          .font(.title2).foregroundStyle(.red)
+          .symbolEffect(.pulse, options: .repeating, isActive: !reduceMotion && !luminanceReduced)
+      }
+      .frame(width: 52, height: 52)
+      .accessibilityHidden(true)
+      Text(title).font(.headline).multilineTextAlignment(.center)
+      if let detail {
+        Text(detail).font(.footnote).foregroundStyle(.secondary)
+          .multilineTextAlignment(.center)
+      }
+    }
+    .frame(maxWidth: .infinity)
+    .accessibilityElement(children: .combine)
+  }
+}
 
 /// Large, labelled targets (at least 48 pt tall) with the label colour set by
 /// the style, so it doesn't depend on how the system tints a prominent button.
@@ -485,14 +562,18 @@ private struct WatchButtonStyle: ButtonStyle {
 
   @Environment(\.isEnabled) private var isEnabled
   let kind: Kind
+  let minHeight: CGFloat
 
-  init(_ kind: Kind) { self.kind = kind }
+  init(_ kind: Kind, minHeight: CGFloat = 48) {
+    self.kind = kind
+    self.minHeight = minHeight
+  }
 
   func makeBody(configuration: Configuration) -> some View {
     configuration.label
       .font(.headline)
       .foregroundStyle(foreground)
-      .frame(maxWidth: .infinity, minHeight: 48)
+      .frame(maxWidth: .infinity, minHeight: minHeight)
       .background(background, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
       .opacity(isEnabled ? (configuration.isPressed ? 0.7 : 1) : 0.4)
   }

@@ -147,13 +147,29 @@ struct StartWorkoutSheet: View {
 /// Live values the Watch sends while it records this workout.
 struct WatchRecordingStrip: View {
   @Environment(AppModel.self) private var model
+  /// The workout screen's own Finish, offered here once the Watch has ended its
+  /// recording so the person isn't left looking for it.
+  var finish: (() -> Void)?
 
   var body: some View {
     // Nothing to show means no view at all, so the workout screen's spacing
     // doesn't leave a gap.
     if showsStrip || model.watch.notice != nil {
-      VStack(alignment: .leading, spacing: 8) {
+      VStack(alignment: .leading, spacing: 12) {
         strip
+        if model.watch.phase == .ended, let finish {
+          Button(action: finish) {
+            HStack {
+              Text("Finish workout")
+              Spacer()
+              Image(systemName: "flag.checkered")
+            }
+          }
+          .buttonStyle(PrimaryButtonStyle())
+          .disabled(model.busy)
+          .accessibilityHint("Logs your sets with what your Apple Watch recorded.")
+          .accessibilityIdentifier("watch-ended-finish")
+        }
         // The coordinator's own account of a lost link or failed command, here
         // where the workout is, not only on the start sheet.
         if let notice = model.watch.notice {
@@ -163,6 +179,10 @@ struct WatchRecordingStrip: View {
             .accessibilityIdentifier("watch-notice")
         }
       }
+      .padding(FormaSpacing.md)
+      .frame(maxWidth: .infinity, alignment: .leading)
+      .background(FormaTheme.surface, in: RoundedRectangle(cornerRadius: FormaRadius.card))
+      .overlay(RoundedRectangle(cornerRadius: FormaRadius.card).strokeBorder(FormaTheme.line))
       .task(id: model.watch.notice) {
         if let notice = model.watch.notice { AccessibilityNotification.Announcement(notice).post() }
       }
@@ -180,7 +200,32 @@ struct WatchRecordingStrip: View {
     switch model.watch.phase {
     case .recording:
       let metrics = model.watch.metrics
-      HStack(spacing: 14) {
+      // Wraps onto two lines at large text sizes rather than truncating.
+      ViewThatFits(in: .horizontal) {
+        HStack(spacing: 14) { readings(metrics) }
+        VStack(alignment: .leading, spacing: 6) { readings(metrics) }
+      }
+      .font(.subheadline.weight(.semibold).monospacedDigit())
+      .foregroundStyle(FormaTheme.primary)
+      .accessibilityElement(children: .combine)
+      .accessibilityLabel(accessibilityText(metrics))
+      .accessibilityIdentifier("watch-recording")
+    case .ending:
+      Label("Ending recording on Apple Watch…", systemImage: "applewatch")
+        .font(.subheadline).foregroundStyle(FormaTheme.secondary)
+    case .ended:
+      Label(
+        "Your Apple Watch ended its recording. Check your Watch for Health save status.",
+        systemImage: "applewatch"
+      )
+      .font(.subheadline).foregroundStyle(FormaTheme.secondary)
+      .fixedSize(horizontal: false, vertical: true)
+    default:
+      EmptyView()
+    }
+  }
+
+  @ViewBuilder private func readings(_ metrics: WatchMetrics?) -> some View {
         Image(systemName: "applewatch").foregroundStyle(FormaTheme.accent)
         // A reading the Watch has stopped sending is labelled as old, never
         // shown as if it were live. A lost link also shows the notice below.
@@ -195,24 +240,6 @@ struct WatchRecordingStrip: View {
         }
         if metrics == nil { Text("Recording on Apple Watch") }
         if metrics?.state == .paused { Text("Paused").foregroundStyle(FormaTheme.secondary) }
-      }
-      .font(.subheadline.weight(.semibold).monospacedDigit())
-      .foregroundStyle(FormaTheme.primary)
-      .accessibilityElement(children: .combine)
-      .accessibilityLabel(accessibilityText(metrics))
-      .accessibilityIdentifier("watch-recording")
-    case .ending:
-      Label("Ending recording on Apple Watch…", systemImage: "applewatch")
-        .font(.subheadline).foregroundStyle(FormaTheme.secondary)
-    case .ended:
-      Label(
-        "Apple Watch recording ended. Check your Watch for Health save status.",
-        systemImage: "applewatch"
-      )
-      .font(.subheadline).foregroundStyle(FormaTheme.secondary)
-    default:
-      EmptyView()
-    }
   }
 
   private func accessibilityText(_ metrics: WatchMetrics?) -> String {

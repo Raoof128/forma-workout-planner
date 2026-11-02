@@ -142,4 +142,50 @@ final class WatchWorkoutCoordinatorTests: XCTestCase {
     XCTAssertNil(coordinator.notice)
     XCTAssertEqual(coordinator.phase, .idle)
   }
+
+  // MARK: - Collected data
+
+  func testSummaryRoundsTheLatestReading() {
+    let coordinator = WatchWorkoutCoordinator()
+    XCTAssertNil(coordinator.summary, "No reading, no summary")
+    var reading = snapshot(heartRate: 150)
+    reading.averageHeartRate = 131.4
+    reading.maxHeartRate = 162.6
+    reading.activeEnergy = 88.5
+    coordinator.apply(metrics: reading, at: start)
+    XCTAssertEqual(
+      coordinator.summary,
+      WorkoutWatchSummary(
+        elapsedSeconds: 120, averageHeartRate: 131, maxHeartRate: 163, activeEnergyKcal: 89))
+  }
+
+  func testFinalReadingIsReportedOnceAndADiscardIsNot() {
+    let coordinator = WatchWorkoutCoordinator()
+    var reported: [WorkoutWatchSummary] = []
+    coordinator.onRecordingEnded = { reported.append($0) }
+    coordinator.apply(metrics: snapshot(), at: start)
+    var final = snapshot()
+    final.state = .ended
+    final.elapsed = 130
+    coordinator.apply(metrics: final, at: start)
+    coordinator.apply(metrics: final, at: start.addingTimeInterval(1))
+    XCTAssertEqual(reported.map(\.elapsedSeconds), [130], "Ended is reported once")
+
+    let discarding = WatchWorkoutCoordinator()
+    discarding.onRecordingEnded = { reported.append($0) }
+    final.discarded = true
+    discarding.apply(metrics: final, at: start)
+    XCTAssertEqual(reported.count, 1, "A discarded recording is never stored")
+    XCTAssertNil(discarding.summary)
+  }
+
+  func testOlderWatchSnapshotsWithoutNewFieldsStillDecode() throws {
+    let json = Data(
+      #"{"metrics":{"_0":{"state":"running","startedAt":0,"elapsed":5,"heartRate":90}}}"#.utf8)
+    guard case .metrics(let metrics) = WatchWorkoutMessage.decode(json) else {
+      return XCTFail("An older snapshot must decode")
+    }
+    XCTAssertNil(metrics.maxHeartRate)
+    XCTAssertNil(metrics.discarded)
+  }
 }

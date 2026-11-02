@@ -57,3 +57,39 @@ public struct WorkoutWatchSummary: Codable, Equatable, Sendable {
     return true
   }
 }
+
+/// Progress's Apple Watch card: what the Watch recorded across finished
+/// workouts. The web's `watchTotals` (src/watchSummary.js) gives the same numbers.
+public struct WatchTotals: Equatable, Sendable {
+  public var workouts: Int
+  /// Average heart rate weighted by each workout's recorded time.
+  public var averageHeartRate: Int?
+  public var highestHeartRate: Int?
+  public var activeEnergyKcal: Int
+  public var elapsedSeconds: Int
+
+  public init(_ history: [WorkoutSession]) {
+    var workouts = 0
+    var weighted = 0.0
+    var weightedSeconds = 0
+    var highest: Int?
+    var energy = 0
+    var elapsed = 0
+    for summary in history.lazy.compactMap(\.watch) {
+      workouts += 1
+      elapsed += summary.elapsedSeconds
+      energy += summary.activeEnergyKcal ?? 0
+      if let average = summary.averageHeartRate, summary.elapsedSeconds > 0 {
+        weighted += Double(average * summary.elapsedSeconds)
+        weightedSeconds += summary.elapsedSeconds
+      }
+      if let maximum = summary.maxHeartRate { highest = max(highest ?? maximum, maximum) }
+    }
+    self.workouts = workouts
+    averageHeartRate =
+      weightedSeconds > 0 ? Int((weighted / Double(weightedSeconds)).rounded()) : nil
+    highestHeartRate = highest
+    activeEnergyKcal = energy
+    elapsedSeconds = elapsed
+  }
+}

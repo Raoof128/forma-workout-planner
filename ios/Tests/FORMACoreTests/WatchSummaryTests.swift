@@ -156,3 +156,37 @@ private enum JSONValue: Codable {
     }
   }
 }
+
+final class WatchTotalsTests: XCTestCase {
+  private func session(_ id: String, _ watch: WorkoutWatchSummary?) -> WorkoutSession {
+    WorkoutSession(id: id, name: "Upper", startedAt: 0, watch: watch)
+  }
+
+  func testTotalsWeightHeartRateByRecordedTime() {
+    let totals = WatchTotals([
+      session(
+        "a",
+        WorkoutWatchSummary(
+          elapsedSeconds: 600, averageHeartRate: 100, maxHeartRate: 140, activeEnergyKcal: 50)),
+      session("b", nil),
+      session(
+        "c",
+        WorkoutWatchSummary(
+          elapsedSeconds: 1_800, averageHeartRate: 140, maxHeartRate: 171, activeEnergyKcal: 200)),
+      session("d", WorkoutWatchSummary(elapsedSeconds: 300)),
+    ])
+    XCTAssertEqual(totals.workouts, 3)
+    XCTAssertEqual(totals.averageHeartRate, 130)
+    XCTAssertEqual(totals.highestHeartRate, 171)
+    XCTAssertEqual(totals.activeEnergyKcal, 250)
+    XCTAssertEqual(totals.elapsedSeconds, 2_700)
+  }
+
+  func testNoWatchWorkoutsGiveEmptyTotals() {
+    let totals = WatchTotals([session("a", nil)])
+    XCTAssertEqual(totals.workouts, 0)
+    XCTAssertNil(totals.averageHeartRate)
+    XCTAssertNil(totals.highestHeartRate)
+    XCTAssertEqual(totals.activeEnergyKcal, 0)
+  }
+}
