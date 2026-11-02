@@ -117,8 +117,8 @@ for validation and hosted-test boundaries. JSON backup-file import is not yet
 implemented; export and importing this phone's guest training are supported.
 
 The app introduces no tracking, advertising, purchases or medical advice. The
-Apple Watch companion records workouts into Apple Health (see below); nothing
-else uses HealthKit. Server authentication and infrastructure releases remain separate. Guest
+Apple Watch companion records workouts into Apple Health (see below), and the
+finished workout keeps a heart-rate and energy summary; nothing else uses HealthKit. Server authentication and infrastructure releases remain separate. Guest
 progress begins empty; starter routines are editable examples, not past workouts.
 
 The original prototype started on Linux; the October2026 audit uses macOS/Xcode.

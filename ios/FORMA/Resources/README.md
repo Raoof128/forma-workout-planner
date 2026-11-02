@@ -42,7 +42,7 @@ The original generated FORMA site photographs, if separately adopted, have
 provenance in `docs/research/site-visuals/`; they are decorative imagery rather
 than verified exercise instruction.
 
-`legal.json` preserves the existing website Privacy Policy version 1.3 and Terms
+`legal.json` preserves the existing website Privacy Policy version 1.4 and Terms
 of Use version 1.0 without silently rewriting them. A separate
 `nativeGuestNotice` explains this development build's local Application Support
 storage, readable JSON exports, the optional FORMA account (what is sent, the
