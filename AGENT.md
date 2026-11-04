@@ -232,6 +232,41 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   Watch summary; App Store Connect Health category decision; device checks above;
   PR #37 also edits `ProgressView.swift` and `WorkoutView.swift`, so expect small
   merge conflicts. Not deployed.
+### Raouf: 2026-11-04 — OSV exception for a dev-only minimatch advisory
+
+- **Scope:** CI "Security scans" failed on every branch after
+  GHSA-g3hv-75wg-m249 (published 2026-10-30) flagged `minimatch` 3.1.5.
+- **Summary:** fixed only in 11.0.1; the latest ESLint and its React and jsx-a11y
+  plugins still require `^3` or `^10`, so no compatible upgrade exists. It is a
+  dev-only lint dependency, pruned from the API image and omitted from the SBOM.
+  `osv-scanner.toml` ignores it until 2027-01-04 with that reason.
+- **Files:** `osv-scanner.toml`, `AGENT.md`, `CHANGELOG.md`.
+- **Verification:** local `osv-scanner scan source --lockfile=package-lock.json`
+  reports no issues with the exception, one medium without it.
+- **Follow-ups:** before 2027-01-04, re-check ESLint's minimatch range and
+  remove the exception once 11.0.1+ is reachable.
+
+### Raouf: 2026-11-02 — Tunnel monitor reads cloudflared readiness
+
+- **Scope:** the `tunnel_error` production alert of 2026-11-01 20:55 UTC.
+- **Summary:** the monitor flagged any cloudflared `ERR` line in a 5-minute log
+  window unless `Registered tunnel connection` was also present, a line written
+  only at connect time. One log line raised the signal on three consecutive runs
+  and it cleared by ageing out, not by recovery; the API, database and
+  `/api/health` stayed healthy. The monitor now asks cloudflared's `/ready`
+  (200 only with a registered edge connection) from the API container and
+  alerts after two consecutive failures, as the runbook states. Compose pins the
+  metrics server to `0.0.0.0:20241` on the internal `tunnel` network.
+- **Files:** `ops/account-operations.py`, `ops/test_operations.py`,
+  `ops/compose.yaml`, `CHANGELOG.md`, `AGENT.md`.
+- **Verification:** ops tests 8/8. Deployed 2026-11-04: `/ready` exited 0 in both
+  API containers; the script (SHA-256 `69233fd5…`) replaced the `main` copy in
+  `/opt/forma-<env>/operations/` (old kept as `.bak-20261104`) and one manual
+  monitor run per environment reported `healthy: true`, `tunnelFailures: 0`.
+  The Compose `--metrics` pin applies at the next `cloudflared` recreate.
+- **Follow-ups:** confirm `/ready` answers on both hosts before installing the new
+  script; the triggering cloudflared log line was not read (container logs are
+  outside the read-only observer's roots).
 
 ### Raouf: 2026-10-28 — Native account fixes and animated navigation
 

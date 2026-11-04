@@ -1,0 +1,10 @@
+# Reviewed exceptions for `osv-scanner scan source --lockfile=package-lock.json` (CI "Security scans").
+# Each entry expires: re-check the advisory and remove the entry when a fixed version is reachable.
+
+[[IgnoredVulns]]
+id = "GHSA-g3hv-75wg-m249"
+ignoreUntil = 2027-01-04T00:00:00Z
+reason = """minimatch 3.1.5 (ReDoS via globparts amplification; fixed only in 11.0.1) is a dev-only \
+dependency of eslint, @eslint/eslintrc, eslint-plugin-react and eslint-plugin-jsx-a11y; their latest \
+releases still require minimatch ^3 or ^10. It only matches the repository's own lint globs, never \
+member or network input, and is not in the production SBOM or any deployed image."""

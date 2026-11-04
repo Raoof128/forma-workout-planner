@@ -140,6 +140,21 @@ def container_healthy(name):
         return False
 
 
+def tunnel_ready(config):
+    # cloudflared's /ready is 200 only while an edge connection is registered; the API shares its network.
+    try:
+        probe = subprocess.run(['docker', 'exec', config['project'] + '-api-1', 'node', '-e',
+            "fetch('http://cloudflared:20241/ready').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"], capture_output=True, timeout=15)
+    except Exception:
+        return False
+    return probe.returncode == 0
+
+
+def tunnel_signal(previous, ready):
+    previous['tunnelFailures'] = 0 if ready else previous.get('tunnelFailures', 0) + 1
+    return previous['tunnelFailures'] >= 2
+
+
 def backup(config):
     store = Store(config)
     stamp = dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
@@ -260,8 +275,7 @@ def monitor(config):
     pglogs = subprocess.run(['docker', 'logs', '--since', '5m', '--tail', '500', config['project'] + '-db-1'], capture_output=True, timeout=15)
     if re.search(rb'password authentication failed|too many clients|remaining connection slots', pglogs.stdout + pglogs.stderr):
         signals.add('database_auth_or_connection_limit')
-    tunnel = subprocess.run(['docker', 'logs', '--since', '5m', '--tail', '500', config['project'] + '-cloudflared-1'], capture_output=True, timeout=15)
-    if b'Registered tunnel connection' not in tunnel.stdout + tunnel.stderr and re.search(rb'ERR.*(failed|error)', tunnel.stdout + tunnel.stderr):
+    if tunnel_signal(previous, tunnel_ready(config)):
         signals.add('tunnel_error')
     try:
         manifest = json.loads(Store(config).request('GET', 'latest.json'))
