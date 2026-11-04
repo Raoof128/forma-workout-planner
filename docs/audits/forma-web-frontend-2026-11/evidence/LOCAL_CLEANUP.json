@@ -1,0 +1,14 @@
+{
+  "owned_standalone_postgresql_stopped": true,
+  "cluster_data_and_logs_retained_privately": true,
+  "postgresql_version": "18.6 (Homebrew)",
+  "no_global_database_service_or_configuration_changed": true,
+  "docker_audit_container": {
+    "status": "api_unavailable",
+    "global_docker_changed": false,
+    "limitation": "Could not inspect/stop known audit container through Docker API; global processes left untouched."
+  },
+  "owned_browser_api_preview_ports_free": true,
+  "occupied_requested_ports": [],
+  "no_unrelated_processes_stopped": true
+}

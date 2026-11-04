@@ -291,11 +291,82 @@
     }
   },
   "final_broad_status": {
-    "guest_development": "Stopped271pass1readiness-failure1interrupted267unrun/540 before confirmed Skip follow-up; corrected source full CI planned, no full current pass claimed",
-    "guest_production": "pending five-project command",
-    "accounts": "pending two 200-case matrices on isolated PostgreSQL18.6"
+    "ci_run": 41840783732,
+    "ci_commit": "c247e9e705b462ff9771f5442d17efc0955a22d8",
+    "ci_conclusion": "success",
+    "guest_development": {
+      "passed": 540,
+      "failed": 0,
+      "skipped": 0,
+      "interrupted": 0
+    },
+    "guest_production": {
+      "passed": 175,
+      "failed": 0,
+      "skipped": 0,
+      "interrupted": 0
+    },
+    "account_development_ci": {
+      "passed": 200,
+      "failed": 0,
+      "skipped": 0
+    },
+    "account_production_ci": {
+      "passed": 200,
+      "failed": 0,
+      "skipped": 0
+    },
+    "account_development_local": {
+      "passed": 200,
+      "failed": 0,
+      "skipped": 0,
+      "retries": 0
+    },
+    "account_production_local": {
+      "passed": 200,
+      "failed": 0,
+      "skipped": 0,
+      "retries": 0
+    },
+    "local_webkit_gate": {
+      "passed": 40,
+      "failed": 0,
+      "skipped": 0
+    },
+    "total_ci_executions": 1394,
+    "total_ci_browser_executions": 1115,
+    "count_boundary": "Browser scenarios repeat across engines/build modes; local repeated checks are not added to CI totals as unique tests."
   },
   "focused_harness_limit": "New fixture mistakes were corrected without weakening product assertions; earlier failed runs remain recorded. No incomplete attempt is called a full pass.",
   "account_history": "ACCOUNT_HISTORY.json",
-  "measurements": "MEASUREMENT_EXECUTION.json"
+  "measurements": "MEASUREMENT_EXECUTION.json",
+  "final_receipts": {
+    "ci": "CI_FINAL.json",
+    "account_dev": "ACCOUNT_DEVELOPMENT_FINAL.json",
+    "account_prod": "ACCOUNT_PRODUCTION_FINAL.json",
+    "source_inputs": "FINAL_BROWSER_INPUTS.json",
+    "cleanup": "LOCAL_CLEANUP.json",
+    "docs_portability": "DOCS_PORTABILITY.json"
+  },
+  "ci_environment": {
+    "node": "24.22.1",
+    "npm": "11.19.1",
+    "os": "Ubuntu24.04.5",
+    "postgresql": "18.4"
+  },
+  "ci_history": [
+    {
+      "commit": "cc771830b92929485dae5f4fe8297a49df9fa394",
+      "run": 41837246392,
+      "issue": "Docs check found six targets that existed only as ignored local logs; development step was skipped; superseded by the corrected report commit",
+      "correction": "Tracked sanitized JSON receipts; old index-only mirror failed six links, corrected index-only mirror passed166Markdown files",
+      "superseded": true
+    },
+    {
+      "commit": "c247e9e705b462ff9771f5442d17efc0955a22d8",
+      "run": 41840783732,
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ]
 }

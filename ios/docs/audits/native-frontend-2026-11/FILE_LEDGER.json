@@ -55,18 +55,18 @@
     },
     {
       "path": "AGENT.md",
-      "sha256": "c26b77e287aeae18177fb2aa94a713d30913a5b9a5d452ec3cf311ff70213971",
+      "sha256": "36add175afcbb07c7545ca36a4ba01fbcbe0e513134127e4e2f97548008e4fb8",
       "baseline_sha256": "05ce3f2f0cbb708e5cbd8c2057e3de954c597f18f91d6fd95876e19d573d966a",
       "classification": "human-authored documentation",
-      "line_count": 1754,
+      "line_count": 1764,
       "module": "contracts",
       "purpose": "Binding repository/security/data contract and historical development record.",
-      "review_status": "complete original history read plus complete 2026-11-04/05 append-only checkpoint patches reviewed",
+      "review_status": "complete prior history read plus reviewed append-only final completion entry; prior-document hash reconstruction verified",
       "findings_or_rationale": "Preserve server-derived ownership, workspace v2, all published IDs/units and truthful evidence limits.",
       "severity": "none identified",
-      "disposition": "documentary checkpoint update; native product/runtime hashes unchanged",
+      "disposition": "final documentary evidence update; native product/runtime hashes unchanged",
       "related_tests": "See VERIFICATION.md and reviewer evidence",
-      "verification": "Native primary history review retained; root and integration reviewer read the full current checkpoint patch. Actual native app/runtime source remains 3c27308; complete web matrices are explicitly pending.",
+      "verification": "Final completion text reviewed against verified CI/local results and limitations. Removing the new entry reproduces the exact previously reviewed full-document hash. Native runtime remains 3c27308; no new device execution inferred.",
       "remaining_limitations": "Recorded historical outcomes do not establish current deployment/device state.",
       "review_evidence": [
         {
@@ -87,6 +87,16 @@
           "review_method": "Full prior primary history plus full current git diff from 3c27308, preserving all earlier entries.",
           "current_patch_sha256": "ace4fc4102c87abebcf75c10eba0f417eb0e293c4d1c5d0a4c110ada0ec759a8",
           "native_runtime_source_commit": "3c27308c5856928ab18650293df1c2f6e2e91389"
+        },
+        {
+          "path": "AGENT.md",
+          "sha256": "36add175afcbb07c7545ca36a4ba01fbcbe0e513134127e4e2f97548008e4fb8",
+          "line_count": 1764,
+          "review_status": "complete prior history read plus reviewed append-only final completion entry; prior-document hash reconstruction verified",
+          "review_method": "Complete prior primary history plus complete new completion entry; exact prior document reconstructed by removing only that entry.",
+          "prior_reviewed_document_sha256": "c26b77e287aeae18177fb2aa94a713d30913a5b9a5d452ec3cf311ff70213971",
+          "added_entry_sha256": "cf50317131fd5adcf63d741a976ee19ce4a4072f69ac30751b5ca278f877c857",
+          "native_runtime_source_commit": "3c27308c5856928ab18650293df1c2f6e2e91389"
         }
       ],
       "documentary_review_history": [
@@ -95,23 +105,29 @@
           "line_count": 1737,
           "review_status": "read completely by account/core reviewer; history reconciled with current source; final added log entry reviewed by root",
           "superseded_as_current_documentary_hash_only": true
+        },
+        {
+          "sha256": "c26b77e287aeae18177fb2aa94a713d30913a5b9a5d452ec3cf311ff70213971",
+          "line_count": 1754,
+          "review_status": "complete original history read plus complete 2026-11-04/05 append-only checkpoint patches reviewed",
+          "superseded_as_current_documentary_hash_only": true
         }
       ]
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "ab91b8b26ee1fa394dcfc5bbd8574ce484993911f1e936b5bc151171d05ef29b",
+      "sha256": "8599c3a0dd4517c12432ee623667e54639fca59ec631e4da6be36aff7fc218ea",
       "baseline_sha256": "bb6c5a51eac1d192748748d54ae795381dcbc19249ae18f9de5ab83cb28f0baa",
       "classification": "human-authored documentation",
-      "line_count": 1888,
+      "line_count": 1898,
       "module": "contracts",
       "purpose": "Binding repository/security/data contract and historical development record.",
-      "review_status": "complete original history read plus complete 2026-11-04/05 append-only checkpoint patches reviewed",
+      "review_status": "complete prior history read plus reviewed append-only final completion entry; prior-document hash reconstruction verified",
       "findings_or_rationale": "Preserve server-derived ownership, workspace v2, all published IDs/units and truthful evidence limits.",
       "severity": "none identified",
-      "disposition": "documentary checkpoint update; native product/runtime hashes unchanged",
+      "disposition": "final documentary evidence update; native product/runtime hashes unchanged",
       "related_tests": "See VERIFICATION.md and reviewer evidence",
-      "verification": "Native primary history review retained; root and integration reviewer read the full current checkpoint patch. Actual native app/runtime source remains 3c27308; complete web matrices are explicitly pending.",
+      "verification": "Final completion text reviewed against verified CI/local results and limitations. Removing the new entry reproduces the exact previously reviewed full-document hash. Native runtime remains 3c27308; no new device execution inferred.",
       "remaining_limitations": "Recorded historical outcomes do not establish current deployment/device state.",
       "review_evidence": [
         {
@@ -132,6 +148,16 @@
           "review_method": "Full prior primary history plus full current git diff from 3c27308, preserving all earlier entries.",
           "current_patch_sha256": "2b90a09de694512ba13cbfe72ffdc2e0222298c902796566b720dbe7edd19d44",
           "native_runtime_source_commit": "3c27308c5856928ab18650293df1c2f6e2e91389"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "sha256": "8599c3a0dd4517c12432ee623667e54639fca59ec631e4da6be36aff7fc218ea",
+          "line_count": 1898,
+          "review_status": "complete prior history read plus reviewed append-only final completion entry; prior-document hash reconstruction verified",
+          "review_method": "Complete prior primary history plus complete new completion entry; exact prior document reconstructed by removing only that entry.",
+          "prior_reviewed_document_sha256": "ab91b8b26ee1fa394dcfc5bbd8574ce484993911f1e936b5bc151171d05ef29b",
+          "added_entry_sha256": "cf50317131fd5adcf63d741a976ee19ce4a4072f69ac30751b5ca278f877c857",
+          "native_runtime_source_commit": "3c27308c5856928ab18650293df1c2f6e2e91389"
         }
       ],
       "documentary_review_history": [
@@ -139,6 +165,12 @@
           "sha256": "58fbcfd31ac9aacbc79cacd41373dde0338921e8792bfdcf7f65b6e70ad4b8a9",
           "line_count": 1871,
           "review_status": "read completely by account/core reviewer; history reconciled with current source; final added log entry reviewed by root",
+          "superseded_as_current_documentary_hash_only": true
+        },
+        {
+          "sha256": "ab91b8b26ee1fa394dcfc5bbd8574ce484993911f1e936b5bc151171d05ef29b",
+          "line_count": 1888,
+          "review_status": "complete original history read plus complete 2026-11-04/05 append-only checkpoint patches reviewed",
           "superseded_as_current_documentary_hash_only": true
         }
       ]
@@ -13867,6 +13899,29 @@
     ],
     "native_runtime_source_commit_unchanged": "3c27308c5856928ab18650293df1c2f6e2e91389",
     "native_product_files_changed": false,
-    "pending_final_result_documentary_refresh": ["AGENT.md", "CHANGELOG.md"]
+    "pending_final_result_documentary_refresh": [],
+    "resolved_by": "documentary_completion_refresh"
+  },
+  "documentary_completion_refresh": {
+    "date": "2026-11-05",
+    "paths": [
+      {
+        "path": "AGENT.md",
+        "sha256": "36add175afcbb07c7545ca36a4ba01fbcbe0e513134127e4e2f97548008e4fb8",
+        "lines": 1764,
+        "prior_document_sha256": "c26b77e287aeae18177fb2aa94a713d30913a5b9a5d452ec3cf311ff70213971",
+        "added_entry_sha256": "cf50317131fd5adcf63d741a976ee19ce4a4072f69ac30751b5ca278f877c857"
+      },
+      {
+        "path": "CHANGELOG.md",
+        "sha256": "8599c3a0dd4517c12432ee623667e54639fca59ec631e4da6be36aff7fc218ea",
+        "lines": 1898,
+        "prior_document_sha256": "ab91b8b26ee1fa394dcfc5bbd8574ce484993911f1e936b5bc151171d05ef29b",
+        "added_entry_sha256": "cf50317131fd5adcf63d741a976ee19ce4a4072f69ac30751b5ca278f877c857"
+      }
+    ],
+    "native_runtime_source_commit_unchanged": "3c27308c5856928ab18650293df1c2f6e2e91389",
+    "native_product_files_changed": false,
+    "pending_final_result_documentary_refresh": []
   }
 }

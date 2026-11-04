@@ -1,54 +1,48 @@
 {
-  "method": "Compare last build emitted assets and entry HTML before/after cleaning only owned temporary outDir; prior stale chunks were not requested by measured entry HTML",
+  "source_commit": "cc771830b92929485dae5f4fe8297a49df9fa394",
   "before": [
     {
-      "path": "../index.html",
-      "sha256": "679bf087be8e6796926ce51ba7e10b2bcda59b65e06406d94f1bfbad091968f4"
+      "path": "index.html",
+      "sha256": "70151328163a51244c65dcddc434175491389180cb8aefe6112094e86c717392"
     },
     {
-      "path": "RoutinePrescriptions-Cn8Cuw9H.js",
-      "sha256": "f4ef44a25ae8877f428f85c369dd7800ac6f26759e8ccadf66275cef88ef318d"
+      "path": "assets/RoutinePrescriptions-CovGDgeV.js",
+      "sha256": "d2629353193855e5e86528d8df065cc8364cfb37749028f8c08589808cb08552"
     },
     {
-      "path": "index-B2Yy7_yp.js",
-      "sha256": "206febf7d58b152c5a569d2bc1c25ed6f355b4e7ff6ddec3e14078cbb8362232"
+      "path": "assets/index-Dsnom7Kc.js",
+      "sha256": "8ce9f26562d8ebafd227ad277f6ef104df2fd4ea145395f7aa2b72fb6fc7975b"
     },
     {
-      "path": "index-CT4AO9RF.css",
-      "sha256": "42c7c25f3c17abeb1540303203ee7c9308b11d56126a942126adaa8fb5db02a5"
-    },
-    {
-      "path": "instructions-D5gYSpG2.js",
+      "path": "assets/instructions-D5gYSpG2.js",
       "sha256": "0812ed1b6d7711f453642a7083b8384f97a25b821089f0bb6744010bf84650fd"
+    },
+    {
+      "path": "assets/index-CT4AO9RF.css",
+      "sha256": "42c7c25f3c17abeb1540303203ee7c9308b11d56126a942126adaa8fb5db02a5"
     }
   ],
   "after": [
     {
-      "path": "../index.html",
-      "sha256": "679bf087be8e6796926ce51ba7e10b2bcda59b65e06406d94f1bfbad091968f4"
+      "path": "index.html",
+      "sha256": "70151328163a51244c65dcddc434175491389180cb8aefe6112094e86c717392"
     },
     {
-      "path": "RoutinePrescriptions-Cn8Cuw9H.js",
-      "sha256": "f4ef44a25ae8877f428f85c369dd7800ac6f26759e8ccadf66275cef88ef318d"
+      "path": "assets/RoutinePrescriptions-CovGDgeV.js",
+      "sha256": "d2629353193855e5e86528d8df065cc8364cfb37749028f8c08589808cb08552"
     },
     {
-      "path": "index-B2Yy7_yp.js",
-      "sha256": "206febf7d58b152c5a569d2bc1c25ed6f355b4e7ff6ddec3e14078cbb8362232"
+      "path": "assets/index-Dsnom7Kc.js",
+      "sha256": "8ce9f26562d8ebafd227ad277f6ef104df2fd4ea145395f7aa2b72fb6fc7975b"
     },
     {
-      "path": "index-CT4AO9RF.css",
-      "sha256": "42c7c25f3c17abeb1540303203ee7c9308b11d56126a942126adaa8fb5db02a5"
-    },
-    {
-      "path": "instructions-D5gYSpG2.js",
+      "path": "assets/instructions-D5gYSpG2.js",
       "sha256": "0812ed1b6d7711f453642a7083b8384f97a25b821089f0bb6744010bf84650fd"
+    },
+    {
+      "path": "assets/index-CT4AO9RF.css",
+      "sha256": "42c7c25f3c17abeb1540303203ee7c9308b11d56126a942126adaa8fb5db02a5"
     }
   ],
-  "identical_entry_and_emitted_assets": true,
-  "current_chunks": [
-    "RoutinePrescriptions-Cn8Cuw9H.js",
-    "index-B2Yy7_yp.js",
-    "index-CT4AO9RF.css",
-    "instructions-D5gYSpG2.js"
-  ]
+  "identical_entry_and_emitted_assets": true
 }

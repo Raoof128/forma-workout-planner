@@ -1,29 +1,29 @@
 {
   "baseline_commit": "3c27308c5856928ab18650293df1c2f6e2e91389",
   "scope": "All changed/added task paths after the pushed native implementation checkpoint; initial native source changes are documented by that commit and its separate native manifest",
-  "captured_before_checkpoint_commit": true,
+  "captured_before_final_evidence_commit": true,
   "self_hash_policy": "This manifest lists itself without a recursive self hash",
-  "count": 529,
+  "count": 541,
   "files": [
     {
       "path": "AGENT.md",
       "group": "project_log",
-      "bytes": 125778,
-      "sha256": "c26b77e287aeae18177fb2aa94a713d30913a5b9a5d452ec3cf311ff70213971",
+      "bytes": 129297,
+      "sha256": "36add175afcbb07c7545ca36a4ba01fbcbe0e513134127e4e2f97548008e4fb8",
       "self_manifest": false
     },
     {
       "path": "CHANGELOG.md",
       "group": "project_log",
-      "bytes": 140638,
-      "sha256": "ab91b8b26ee1fa394dcfc5bbd8574ce484993911f1e936b5bc151171d05ef29b",
+      "bytes": 144157,
+      "sha256": "8599c3a0dd4517c12432ee623667e54639fca59ec631e4da6be36aff7fc218ea",
       "self_manifest": false
     },
     {
       "path": "docs/audits/forma-web-frontend-2026-11/ACCESSIBILITY_AUDIT.md",
       "group": "web_audit_evidence",
-      "bytes": 8195,
-      "sha256": "d33a17df9ecbee06a5a21c3a51e2871b5eb25fce4b8fd8e09cc70f6ba4c18e11",
+      "bytes": 8643,
+      "sha256": "d18feaec41e4ea3980cd3d3f63e6821d6d6dc4a2cb5695176b9854a29033f9ef",
       "self_manifest": false
     },
     {
@@ -36,78 +36,78 @@
     {
       "path": "docs/audits/forma-web-frontend-2026-11/DESIGN_SYSTEM.md",
       "group": "web_audit_evidence",
-      "bytes": 4997,
-      "sha256": "d5cdd217d821f4c06c97c22e4f9bcbfaba11eaa519d8d6ed09b015c6a521da43",
+      "bytes": 6425,
+      "sha256": "bc5ba5eb1f3f9d8ecbd6508c6b020405fd007cb4f718f3dee8ffe0c2dddeef06",
       "self_manifest": false
     },
     {
       "path": "docs/audits/forma-web-frontend-2026-11/EXECUTIVE_AUDIT.md",
       "group": "web_audit_evidence",
-      "bytes": 8618,
-      "sha256": "8f92d54182b0271fd9e3ebd56e599432334eb54c3ff7d10387bb3724bb284064",
+      "bytes": 8384,
+      "sha256": "eef6ef4e55c0b2067ccf92816098b8dd110f7167d3c63292ccbe66ac04664d7f",
       "self_manifest": false
     },
     {
       "path": "docs/audits/forma-web-frontend-2026-11/FILE_LEDGER.json",
       "group": "web_audit_evidence",
-      "bytes": 4639425,
-      "sha256": "a412ee66dd88e21eaed30cfcc82fb0934ff7f5c1aaf867195f896c4e2d27952f",
+      "bytes": 5299868,
+      "sha256": "e42cfed8633a13e0f242aef9286b4b71018bbec4bc8c41913c085a6b8d35d894",
       "self_manifest": false
     },
     {
       "path": "docs/audits/forma-web-frontend-2026-11/FILE_LEDGER.md",
       "group": "web_audit_evidence",
-      "bytes": 1083278,
-      "sha256": "79844e2fd9d9d742c47b5581332d3705013501a427cd4ce55f8ae0998726436d",
+      "bytes": 1084430,
+      "sha256": "ccc06a3e4ca6850aba8d058b03b32638731c64a8512f22ece720488c9078af04",
       "self_manifest": false
     },
     {
       "path": "docs/audits/forma-web-frontend-2026-11/FINAL_REPORT.md",
       "group": "web_audit_evidence",
-      "bytes": 8972,
-      "sha256": "3ae9b8865787fbcf84d0997b432851a227bcec5646c6660e541cf0ed46f2a04f",
+      "bytes": 11288,
+      "sha256": "4d7c6128417cb770520e27e2cdeab61372ef2879f8f9dcc2f5a5df189ea622a1",
       "self_manifest": false
     },
     {
       "path": "docs/audits/forma-web-frontend-2026-11/FINDINGS.md",
       "group": "web_audit_evidence",
-      "bytes": 23582,
-      "sha256": "53bce895989e54481e89aca60ed87c9b04df41dd425f140c1b9e97460d4a6d15",
+      "bytes": 25854,
+      "sha256": "14e98537ee9f41cd800a15ce783a0e9096fa0d0748a33a2fee00aac97462e152",
       "self_manifest": false
     },
     {
       "path": "docs/audits/forma-web-frontend-2026-11/MOTION_REVIEW.md",
       "group": "web_audit_evidence",
-      "bytes": 3773,
-      "sha256": "a8db78ed1ac764ea6d9e67e0635d862ff639297f79ec77182976fdfbfb8372a5",
+      "bytes": 4547,
+      "sha256": "c79415abff48143f5cef0afb7dfb4af932cd1ef23b06db95b8307ff326042213",
       "self_manifest": false
     },
     {
       "path": "docs/audits/forma-web-frontend-2026-11/PERFORMANCE.md",
       "group": "web_audit_evidence",
-      "bytes": 6847,
-      "sha256": "00f854d509fcece96e5ebd20db2d0fa09c60245c98b66a5f32ec0d101ef3f811",
+      "bytes": 8043,
+      "sha256": "8bbc21b2fce4355759d2a03c4bccc72d9142e45f44ef792ddafe148e2d0dc82b",
       "self_manifest": false
     },
     {
       "path": "docs/audits/forma-web-frontend-2026-11/RESPONSIVE_AUDIT.md",
       "group": "web_audit_evidence",
-      "bytes": 7084,
-      "sha256": "5d0e5c580d9df18692b23b01b2bccd02f8685ceff55041f924415d8b1333eb1b",
+      "bytes": 7758,
+      "sha256": "117b16c4606f43c5a7e6ff924a927c4a2f7ebc48cc16ccca1e608641bff0456a",
       "self_manifest": false
     },
     {
       "path": "docs/audits/forma-web-frontend-2026-11/SCREEN_REVIEW.md",
       "group": "web_audit_evidence",
-      "bytes": 10156,
-      "sha256": "036e0d9f46271afdf1326243eadb482e8fa4a56ff9664c139ba015365f653286",
+      "bytes": 11089,
+      "sha256": "81a220f8ff1f6275cc6c8e70dd38d2f0946ec90eeb1e3e58571875704679d9b5",
       "self_manifest": false
     },
     {
       "path": "docs/audits/forma-web-frontend-2026-11/SECURITY_PRIVACY_REVIEW.md",
       "group": "web_audit_evidence",
-      "bytes": 4350,
-      "sha256": "77a2ae93502f625263fc55c725657cee1a5644f162638268c4cc5698b3422fd7",
+      "bytes": 5067,
+      "sha256": "9fbeef5931f620eb40a33865bd8352d18c97706cbe850c86d4e93661eb3a74e8",
       "self_manifest": false
     },
     {
@@ -134,15 +134,29 @@
     {
       "path": "docs/audits/forma-web-frontend-2026-11/TEST_RESULTS.md",
       "group": "web_audit_evidence",
-      "bytes": 9253,
-      "sha256": "92fd451854fa6c8577ac6d92dc30851afc388521a8bcd6953225af76aab2d4b2",
+      "bytes": 16647,
+      "sha256": "0c5cdd9275aca8e29ead63cac7c0aab41897325d44f85675aeb0e18a05c9becb",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/ACCOUNT_DEVELOPMENT_FINAL.json",
+      "group": "web_audit_evidence",
+      "bytes": 28079,
+      "sha256": "f79ee8ec5602aebcb8713f9b220b7dd8ff72ebf316f1deda2fb392b57ffa7f23",
       "self_manifest": false
     },
     {
       "path": "docs/audits/forma-web-frontend-2026-11/evidence/ACCOUNT_HISTORY.json",
       "group": "web_audit_evidence",
-      "bytes": 14714,
-      "sha256": "0a677f39cf4617587da345cdcdbbe0c05aeaf8bbd8bdf4a73630fc893b04c713",
+      "bytes": 81886,
+      "sha256": "c6e3f8a9b243be9ee6e02f6bd739f16a503127e7665cfbcce6bdaf233e2f11c6",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/ACCOUNT_PRODUCTION_FINAL.json",
+      "group": "web_audit_evidence",
+      "bytes": 29173,
+      "sha256": "f5637ddf19e42431fab4c765e059fcc2829d79655e5f9781f6840ffafb5b3d09",
       "self_manifest": false
     },
     {
@@ -155,8 +169,8 @@
     {
       "path": "docs/audits/forma-web-frontend-2026-11/evidence/BUILD_SIZES.json",
       "group": "web_audit_evidence",
-      "bytes": 1917,
-      "sha256": "59608a48be61384eb1320acd411b928a058a839a03b12288f1437471f0bf90f9",
+      "bytes": 1936,
+      "sha256": "c25450d2f9de38ab378c435c70daada4498386836bf33f8bd680383378ede2d8",
       "self_manifest": false
     },
     {
@@ -167,17 +181,45 @@
       "self_manifest": false
     },
     {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/CI_FINAL.json",
+      "group": "web_audit_evidence",
+      "bytes": 26304,
+      "sha256": "31676a2c0f80bbcbb92bd67682d06d3431ef02c767b77a168b0bd9937d1804d0",
+      "self_manifest": false
+    },
+    {
       "path": "docs/audits/forma-web-frontend-2026-11/evidence/CLEAN_BUILD_REPRODUCIBILITY.json",
       "group": "web_audit_evidence",
-      "bytes": 1757,
-      "sha256": "2fcbf042b6ae11ce10dbd5a16ae2a401c98a6ba3f79defec12e303f45f10181c",
+      "bytes": 1545,
+      "sha256": "d6384ba0fc461bbcf59d28ba31bc4f2dd4adeed40b6add29783b4a364da907be",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/DOCS_PORTABILITY.json",
+      "group": "web_audit_evidence",
+      "bytes": 1116,
+      "sha256": "734d0685e15c30d7bc5e30ec74e18c760c4d6f75496bb98af5f398c72efa4707",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/FINAL_BROWSER_INPUTS.json",
+      "group": "web_audit_evidence",
+      "bytes": 27677,
+      "sha256": "7e2d27b2af562d5a4934143612ba8462f09d0f3c2ee3eb4930b04aa15e176caf",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/LOCAL_CLEANUP.json",
+      "group": "web_audit_evidence",
+      "bytes": 554,
+      "sha256": "d30cfb150f63ba3ff52e94488ffd6d8c6f760ea8a0581dc1898a79e0dd83fc10",
       "self_manifest": false
     },
     {
       "path": "docs/audits/forma-web-frontend-2026-11/evidence/MEASUREMENT_EXECUTION.json",
       "group": "web_audit_evidence",
-      "bytes": 1163,
-      "sha256": "d98817b1ff16114d66663541cb1553516eb93e091232d1d21c9952b3e450367e",
+      "bytes": 1809,
+      "sha256": "3805826547a77a268b42cf28d01fd49d78819e1589eaaa060be3781af7085931",
       "self_manifest": false
     },
     {
@@ -190,22 +232,22 @@
     {
       "path": "docs/audits/forma-web-frontend-2026-11/evidence/PERFORMANCE_PRODUCTION.json",
       "group": "web_audit_evidence",
-      "bytes": 477435,
-      "sha256": "6150084fee295a4a89c8e9003f1bd7862c12fe789f007f5c5b9177ab16f9e766",
+      "bytes": 408242,
+      "sha256": "beb77ea644d54ae9cd16b3772864bac762d81dc055a16712a5850787e256b315",
       "self_manifest": false
     },
     {
       "path": "docs/audits/forma-web-frontend-2026-11/evidence/PERFORMANCE_REACT.json",
       "group": "web_audit_evidence",
-      "bytes": 46299,
-      "sha256": "9ce9e40354b5c52842e051881f780d2fd5282e0401afe8311604444de32482b8",
+      "bytes": 46050,
+      "sha256": "fe544097462f0e3421f6f9f893eecc92e1793c515a7b34152f45a29cb6a1ec5e",
       "self_manifest": false
     },
     {
       "path": "docs/audits/forma-web-frontend-2026-11/evidence/POSTGRESQL_FINAL.json",
       "group": "web_audit_evidence",
-      "bytes": 5793,
-      "sha256": "059b335e2dc524c0c03b3047c2e3736dead2ce8ba301510b0c9d0b640a31e708",
+      "bytes": 6718,
+      "sha256": "9e60cde2ad1790805da1ff15dd0b82dc5993a7c95485c945ef2d6a314f6b3032",
       "self_manifest": false
     },
     {
@@ -218,22 +260,22 @@
     {
       "path": "docs/audits/forma-web-frontend-2026-11/evidence/VERIFICATION_RESULTS.json",
       "group": "web_audit_evidence",
-      "bytes": 12572,
-      "sha256": "eacc0417d6e41533f8bc55e66fe3b9967736884d01d40c856636570283d555a4",
+      "bytes": 14389,
+      "sha256": "133ddb2b595a82fe89babddcade34fc6c1e13b9297164da228afb3e8c267ba14",
       "self_manifest": false
     },
     {
       "path": "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/MANIFEST.json",
       "group": "web_audit_evidence",
-      "bytes": 1604,
-      "sha256": "3cdab25caef0c4474d2e00d03dc61afe0cb07e59264db6e9dcb5c11ab320c672",
+      "bytes": 3940,
+      "sha256": "a04d8634fed97ad00f8100a51576410fa5279ddf5dfa006d8113264bd42016f9",
       "self_manifest": false
     },
     {
       "path": "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/README.md",
       "group": "web_audit_evidence",
-      "bytes": 2768,
-      "sha256": "ab765b735e218b3633132497fad51dd5194a3a7c7d32adc6c73a1a9a5a11ef3b",
+      "bytes": 3147,
+      "sha256": "8652d444ff74ebfff4255ce8f541eb71fce144c33aa390aca1195f61bd40418c",
       "self_manifest": false
     },
     {
@@ -248,6 +290,48 @@
       "group": "web_audit_evidence",
       "bytes": 37270,
       "sha256": "c7489ba0ec1cc43f98a46f885932b3e47ed62dc0b1b813ceeb9e2232081ac833",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/auth-controlled-red.json",
+      "group": "web_audit_evidence",
+      "bytes": 1638,
+      "sha256": "049ecec69434791ad44e200a4489b6185062568f3cf847e3aed468edfff6c086",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/auth-five-profiles-pass.json",
+      "group": "web_audit_evidence",
+      "bytes": 2095,
+      "sha256": "24c4daae8fa4d91bfe1aa3d58abd850b8ce4b352a936397f1cb7156d5ba914ff",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/auth-initial-harness-errors.json",
+      "group": "web_audit_evidence",
+      "bytes": 2067,
+      "sha256": "d85d64366f9ac240f5812cd96a4cfa0e194064ef9126ad66dc9fd1edbbeb279c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/security-controlled-red.json",
+      "group": "web_audit_evidence",
+      "bytes": 1554,
+      "sha256": "894028c7c14ded5db5bff97ce8bcfa6c46131b91fb2c7a2d0551fa58f94148c9",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/security-five-profiles-pass.json",
+      "group": "web_audit_evidence",
+      "bytes": 2089,
+      "sha256": "a80e3f88edcc261f7cd00cbcf4f71f02b25751fad17c09fb5b1148c70953e5af",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/security-initial-harness-errors.json",
+      "group": "web_audit_evidence",
+      "bytes": 1957,
+      "sha256": "397f1c178dba1f8ffb694cb00811ab9a8fb4e074841fb6ae93dc13d6bc94231d",
       "self_manifest": false
     },
     {
@@ -2885,15 +2969,15 @@
     {
       "path": "ios/docs/audits/native-frontend-2026-11/FILE_LEDGER.json",
       "group": "native_audit_evidence",
-      "bytes": 929783,
-      "sha256": "6b2aaa92cd3e0a2e4b6fa9961b6d024399b78f5e9b7a3279f69e3975934fe32c",
+      "bytes": 933120,
+      "sha256": "5785d25aeadd7cc499ec288f5dccd080476ea358f464caa157e93303f800d0fe",
       "self_manifest": false
     },
     {
       "path": "ios/docs/audits/native-frontend-2026-11/FILE_LEDGER.md",
       "group": "native_audit_evidence",
-      "bytes": 158264,
-      "sha256": "9f99e610ded372de65f106ea1ae6b1c502cbe7dd39ee11768e382daf3c918f56",
+      "bytes": 160598,
+      "sha256": "3b9a61540e7f8cf1c2a94eb712e1742dfb614515c67aee65c3720c115f832e7c",
       "self_manifest": false
     },
     {

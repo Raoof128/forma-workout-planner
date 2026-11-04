@@ -22,5 +22,18 @@
     "production_journeys": 20,
     "react_profiles": 6,
     "disposition": "Complete earlier samples superseded after final narrow Security/tablet CSS corrections; final current-source results used regardless of more favourable earlier mobile value"
+  },
+  "source_commit": "cc771830b92929485dae5f4fe8297a49df9fa394",
+  "superseded_complete_pre_skip_focus": {
+    "production_journeys": 20,
+    "react_profiles": 6,
+    "disposition": "After responsive CSS corrections, before final explicit Skip callback; superseded by current committed-source measurements"
+  },
+  "exclusive_browser_window": {
+    "production_completed_utc": "2026-11-04T13:24:35.345383Z",
+    "intervening_account_gate_started_utc": "2026-11-04T13:25:19.232714Z",
+    "account_gate_stopped_utc": "2026-11-04T13:26:08.191Z",
+    "react_started_utc": "2026-11-04T13:26:49.837Z",
+    "no_other_browser_during_measurement": true
   }
 }
