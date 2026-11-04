@@ -58,6 +58,30 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-11-04 — Native audit and isolated iPhone verification
+
+- **Scope:** read the supplied native master prompt, add physical testing authorization,
+  reconcile 384 baseline scoped paths (372 native) and three added native source/test
+  files, preserving existing logs and all guest/member training contracts.
+- **Changes:** owner-bound and duplicate-safe Live Activity actions; post-queue account
+  removal checks and exact damaged/recovery artifact cleanup; retained profile drafts
+  and correct retries during account updates; truthful sync/haptic, motion, week-boundary,
+  Watch/Health and privacy-manifest behavior. Device fixtures preserve the paired Watch,
+  active keyboard and personal Home Screen/settings. No new runtime dependency.
+- **Verification:** 146 core + 38 surfaces package tests; 1711 fresh Swift exports;
+  151 JS + 35 Worker tests, resource/build/static checks pass. Separately signed iPhone
+  Air audit build and bundle checks pass; all 139 final hosted app tests pass. Initial
+  baseline selected run was 129/130; the keyboard fixture was diagnosed and then passed
+  unchanged product validation. The final 27 UI cases and matching Light/Dark captures
+  are still running at this owner-requested commit checkpoint, not claimed green.
+- **Evidence:** `ios/docs/audits/native-frontend-2026-11/` contains source ledger,
+  reviewed synthetic physical screenshots, performance samples, prompt and explicit
+  runtime limits. Original app data/Keychain/App Group and device settings untouched.
+- **Follow-ups:** record final physical UI/appearance results; iOS 17, physical Watch,
+  actual locked ActivityKit/Health/privacy/assistive-technology/energy and distribution
+  gates remain. Owner separately authorized commit/push on 4 November; no merge,
+  deployment, TestFlight or App Store action.
+
 ### Raouf: 2026-11-04 — OSV exception for a dev-only minimatch advisory
 
 - **Scope:** CI "Security scans" failed on every branch after

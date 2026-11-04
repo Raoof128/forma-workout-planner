@@ -79,6 +79,21 @@ final class WatchWorkoutCoordinatorTests: XCTestCase {
     XCTAssertEqual(coordinator.liveHeartRate, 131)
   }
 
+  func testRecordingStripAccessibilityIncludesPausedStateAndStaleReading() {
+    var paused = snapshot()
+    paused.state = .paused
+    paused.activeEnergy = 84
+    let text = WatchRecordingStrip.accessibilityText(
+      paused, liveHeartRate: nil, lastHeartRate: 142, readingStale: true)
+    XCTAssertTrue(text.contains("paused"))
+    XCTAssertTrue(text.contains("heart rate not current, last 142"))
+    XCTAssertTrue(text.contains("84 active kilocalories"))
+    let running = WatchRecordingStrip.accessibilityText(
+      snapshot(), liveHeartRate: 131, lastHeartRate: 142, readingStale: false)
+    XCTAssertTrue(running.contains("Recording on Apple Watch"))
+    XCTAssertFalse(running.contains("paused"))
+  }
+
   func testDisconnectPublishesANoticeAndFreshDataClearsIt() {
     let coordinator = WatchWorkoutCoordinator()
     coordinator.apply(metrics: snapshot(), at: start)

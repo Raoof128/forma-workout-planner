@@ -38,6 +38,7 @@ final class MotionExperienceTests: XCTestCase {
     let start = app.buttons["start-workout"]
     XCTAssertTrue(start.waitForExistence(timeout: 10))
     start.tap()
+    app.continueWorkoutOnIPhone()
     let set = app.buttons["complete-set-0-0"]
     XCTAssertTrue(set.waitForExistence(timeout: 10))
     set.tap()
@@ -60,6 +61,7 @@ final class MotionExperienceTests: XCTestCase {
     let start = app.buttons["start-workout"]
     XCTAssertTrue(start.waitForExistence(timeout: 15))
     start.tap()
+    app.continueWorkoutOnIPhone()
     let weight = app.textFields["set-value-0-0-weight"]
     let set = app.buttons["complete-set-0-0"]
     XCTAssertTrue(weight.waitForExistence(timeout: 10))
@@ -83,6 +85,7 @@ final class MotionExperienceTests: XCTestCase {
     let start = app.buttons["start-workout"]
     XCTAssertTrue(start.waitForExistence(timeout: 15))
     start.tap()
+    app.continueWorkoutOnIPhone()
     let set = app.buttons["complete-set-0-0"]
     XCTAssertTrue(set.waitForExistence(timeout: 10))
     set.tap()

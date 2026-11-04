@@ -24,6 +24,30 @@ final class AccountExperienceTests: XCTestCase {
   }
 
   @MainActor
+  private func captureForm(_ app: XCUIApplication, name: String) {
+    let attachment = XCTAttachment(screenshot: app.screenshot())
+    attachment.name = name
+    attachment.lifetime = .keepAlways
+    add(attachment)
+  }
+
+  @MainActor
+  private func enterSinglePasswordCharacter(_ app: XCUIApplication) {
+    let keyboard = app.keyboards.firstMatch
+    XCTAssertTrue(keyboard.waitForExistence(timeout: 10))
+    // The sign-in rule accepts any nonempty password. Use the person's active
+    // keyboard instead of requiring ASCII input or changing their layout.
+    let letter = keyboard.keys.allElementsBoundByIndex.first {
+      $0.label.count == 1 && $0.label.allSatisfy(\.isLetter) && $0.isHittable
+    }
+    guard let letter else {
+      XCTFail("The active keyboard must expose a visible single-letter key for this fixture.")
+      return
+    }
+    letter.tap()
+  }
+
+  @MainActor
   func testSignedOutYouOffersSignInAndCreateAccountAndKeepsGuestUseIntact() {
     let app = launchFreshWorkspace()
     openYou(app)
@@ -71,9 +95,20 @@ final class AccountExperienceTests: XCTestCase {
     XCTAssertFalse(submit.isEnabled, "an address needs an @ and a dot")
     app.scrollUntilExists(email, direction: .down)
     email.clearAndType("member@example.test")
+    XCTAssertEqual(email.value as? String, "member@example.test")
     app.scrollUntilExists(password)
     password.tap()
-    password.typeText("x")
+    captureForm(app, name: "sign-in-password-after-tap")
+    // Hardware can expose the field before its keyboard is ready for events.
+    // Verify actual entry before asking whether the form can submit.
+    enterSinglePasswordCharacter(app)
+    captureForm(app, name: "sign-in-password-after-entry")
+    let enteredPassword = XCTNSPredicateExpectation(
+      predicate: NSPredicate { _, _ in
+        guard let value = password.value as? String else { return false }
+        return !value.isEmpty && value != password.placeholderValue
+      }, object: password)
+    XCTAssertEqual(XCTWaiter.wait(for: [enteredPassword], timeout: 5), .completed)
     app.scrollUntilExists(submit)
     XCTAssertTrue(submit.isEnabled)
 
@@ -84,7 +119,12 @@ final class AccountExperienceTests: XCTestCase {
   }
 
   @MainActor
-  func testCreateAccountNeedsTwoConsentsAndAFifteenCharacterPassword() {
+  func testCreateAccountNeedsTwoConsentsAndAFifteenCharacterPassword() throws {
+    #if !targetEnvironment(simulator)
+      // Manual negative-password entry requires changing AutoFill settings.
+      // The personal device's security preferences must remain untouched.
+      try XCTSkipIf(true, "The manual-password fixture requires an isolated Simulator.")
+    #endif
     prepareManualPasswordEntry()
     let app = launchFreshWorkspace()
     openYou(app)

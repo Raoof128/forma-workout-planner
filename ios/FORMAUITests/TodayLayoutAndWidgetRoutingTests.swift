@@ -136,6 +136,7 @@ final class TodayLayoutAndWidgetRoutingTests: XCTestCase {
     let start = app.buttons["start-workout"]
     XCTAssertTrue(start.waitForExistence(timeout: 20))
     start.tap()
+    app.continueWorkoutOnIPhone()
     let weight = app.textFields["set-value-0-0-weight"]
     XCTAssertTrue(weight.waitForExistence(timeout: 10))
     let savedValue = weight.value as? String

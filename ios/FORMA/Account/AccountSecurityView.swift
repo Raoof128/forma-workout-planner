@@ -727,6 +727,7 @@ private struct StepUpSheet: View {
 
 struct CoachAccessView: View {
   @Environment(AppModel.self) private var model
+  @Environment(\.formaMotion) private var motion
   @State private var tokens: [CoachTokenRecord] = []
   @State private var loading = true
   @State private var label = ""
@@ -838,7 +839,9 @@ struct CoachAccessView: View {
       .onChange(of: issued?.record.id) { _, id in
         // The token is shown once. Bring it into view and say so.
         guard id != nil else { return }
-        withAnimation { proxy.scrollTo("issued-token", anchor: .top) }
+        withFormaAnimation(motion, FormaMotion.reveal) {
+          proxy.scrollTo("issued-token", anchor: .top)
+        }
         AccessibilityNotification.Announcement(
           "Token created. Copy it now. It will not be shown again."
         ).post()

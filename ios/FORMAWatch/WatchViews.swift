@@ -439,7 +439,9 @@ private struct ControlsPage: View {
       Button("Discard recording", role: .destructive) { manager.end(save: false) }
       Button("Keep going", role: .cancel) {}
     } message: {
-      Text("Nothing is saved to Health. Your iPhone sets stay.")
+      Text(
+        "This workout won’t be saved. Health samples already recorded may remain. Your iPhone sets stay."
+      )
     }
   }
 }

@@ -3,7 +3,12 @@ import XCTest
 /// System-hosted gallery evidence, distinct from the shared-view render matrix.
 final class WidgetGalleryTests: XCTestCase {
   @MainActor
-  func testSystemWidgetGallery() {
+  func testSystemWidgetGallery() throws {
+    #if !targetEnvironment(simulator)
+      // This fixture edits Home Screen placement and captures its contents.
+      // Keep those operations off a person's physical phone.
+      try XCTSkipIf(true, "The Home Screen gallery fixture requires an isolated Simulator.")
+    #endif
     continueAfterFailure = false
     let app = XCUIApplication()
     app.launchArguments = [

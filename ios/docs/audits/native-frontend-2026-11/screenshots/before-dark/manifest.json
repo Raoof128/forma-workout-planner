@@ -1,0 +1,172 @@
+[
+  {
+    "name": "01-today.png",
+    "width_px": 1124,
+    "height_px": 2436,
+    "sha256": "7461ec84747e7759bb7d40a489ebb4d11dcab76458f4d0d93f56ed73650385f7",
+    "test": "ScreenshotTourTests/testPrimaryScreensTour()",
+    "capture": "XCTest app screenshot on physical iPhone Air iOS 27.2",
+    "source_attachment": "6913FCD6-19AE-4C12-AB79-61C9DA8FA10F.png",
+    "path": "screenshots/before-dark/01-today.png"
+  },
+  {
+    "name": "02-plan.png",
+    "width_px": 1124,
+    "height_px": 2436,
+    "sha256": "8938cd44950ba30d6312aab45156864241f53c21a7c6a62a9ae7662e22dbbc44",
+    "test": "ScreenshotTourTests/testPrimaryScreensTour()",
+    "capture": "XCTest app screenshot on physical iPhone Air iOS 27.2",
+    "source_attachment": "53F8383E-871D-43EB-8332-A001BDC08998.png",
+    "path": "screenshots/before-dark/02-plan.png"
+  },
+  {
+    "name": "03-routine-detail.png",
+    "width_px": 1124,
+    "height_px": 2436,
+    "sha256": "68ee6e7e0e559377f8272da6a1aa1ad2f2493c684d1cb2a1512aea302341c5c2",
+    "test": "ScreenshotTourTests/testPrimaryScreensTour()",
+    "capture": "XCTest app screenshot on physical iPhone Air iOS 27.2",
+    "source_attachment": "012DD424-11D7-4A3A-A2CE-256B39872E32.png",
+    "path": "screenshots/before-dark/03-routine-detail.png"
+  },
+  {
+    "name": "04-workout.png",
+    "width_px": 1124,
+    "height_px": 2436,
+    "sha256": "6888671ef9b09e0e7c62d9f50fe6a74830f2bc0f116c4c5347f7f2c1fc0342a3",
+    "test": "ScreenshotTourTests/testPrimaryScreensTour()",
+    "capture": "XCTest app screenshot on physical iPhone Air iOS 27.2",
+    "source_attachment": "AA98F79E-575C-4F25-B0BC-E927929B4DF6.png",
+    "path": "screenshots/before-dark/04-workout.png"
+  },
+  {
+    "name": "05-set-completed-rest.png",
+    "width_px": 1124,
+    "height_px": 2436,
+    "sha256": "3d028286e183f561f0b0d2839330a4b34d39cf62a310a3bc17b9b0c6c79d9486",
+    "test": "ScreenshotTourTests/testPrimaryScreensTour()",
+    "capture": "XCTest app screenshot on physical iPhone Air iOS 27.2",
+    "source_attachment": "3A1D52FA-B05B-4EEF-999D-400DBB644C9A.png",
+    "path": "screenshots/before-dark/05-set-completed-rest.png"
+  },
+  {
+    "name": "06-receipt.png",
+    "width_px": 1124,
+    "height_px": 2436,
+    "sha256": "cc9f9c917f6c12834fe6430d88cfd5836676770834172e8a2e52536f9b35cdab",
+    "test": "ScreenshotTourTests/testPrimaryScreensTour()",
+    "capture": "XCTest app screenshot on physical iPhone Air iOS 27.2",
+    "source_attachment": "2232CBEE-C6E4-4A18-A015-73F5C54266E0.png",
+    "path": "screenshots/before-dark/06-receipt.png"
+  },
+  {
+    "name": "07-progress.png",
+    "width_px": 1124,
+    "height_px": 2436,
+    "sha256": "8b86cf9352d339356a7d8b4f92cc01de77524d7bb60b62f2ca8f4ebd8a1e15a2",
+    "test": "ScreenshotTourTests/testPrimaryScreensTour()",
+    "capture": "XCTest app screenshot on physical iPhone Air iOS 27.2",
+    "source_attachment": "B7801BBC-F607-4938-92BC-38BE7DFE7F88.png",
+    "path": "screenshots/before-dark/07-progress.png"
+  },
+  {
+    "name": "08-you.png",
+    "width_px": 1124,
+    "height_px": 2436,
+    "sha256": "138157777b0b26bc06b7c2e6e38d68a8f234030dcb5928a3fd5d62dfc847df64",
+    "test": "ScreenshotTourTests/testPrimaryScreensTour()",
+    "capture": "XCTest app screenshot on physical iPhone Air iOS 27.2",
+    "source_attachment": "6A0F8C21-D9D6-42D9-B5FF-CEFDFB0921DC.png",
+    "path": "screenshots/before-dark/08-you.png"
+  },
+  {
+    "name": "09-today-after-workout.png",
+    "width_px": 1124,
+    "height_px": 2436,
+    "sha256": "39ffeb21d625002e7f68fdfb08bb3748f2d3894d3d0db0c4e2d420f87574562b",
+    "test": "ScreenshotTourTests/testPrimaryScreensTour()",
+    "capture": "XCTest app screenshot on physical iPhone Air iOS 27.2",
+    "source_attachment": "5FC8FCC5-5D4C-431A-85CE-6DD55F12FD2E.png",
+    "path": "screenshots/before-dark/09-today-after-workout.png"
+  },
+  {
+    "name": "10-library.png",
+    "width_px": 1124,
+    "height_px": 2436,
+    "sha256": "65d7aeb221a775b446b49744d27f8aa77819b2a6ce29ea666be415937279f801",
+    "test": "ScreenshotTourTests/testLibrarySearchAndTechniqueGuideTour()",
+    "capture": "XCTest app screenshot on physical iPhone Air iOS 27.2",
+    "source_attachment": "181EB4EE-4654-48E6-8EDB-C8ED66791AE7.png",
+    "path": "screenshots/before-dark/10-library.png"
+  },
+  {
+    "name": "11-library-search.png",
+    "width_px": 1124,
+    "height_px": 2436,
+    "sha256": "febf9bd093a7a79f288eb6b4f0223b12e8eed5790f11c34f89875f0abb0ce27e",
+    "test": "ScreenshotTourTests/testLibrarySearchAndTechniqueGuideTour()",
+    "capture": "XCTest app screenshot on physical iPhone Air iOS 27.2",
+    "source_attachment": "0750912D-78FB-4FA8-A097-B916DA12694C.png",
+    "path": "screenshots/before-dark/11-library-search.png"
+  },
+  {
+    "name": "12-technique-guide.png",
+    "width_px": 1124,
+    "height_px": 2436,
+    "sha256": "ee3898f7ba7f871086d8564ed99145e1f6b734f8ad5f323764311eca9a5be67f",
+    "test": "ScreenshotTourTests/testLibrarySearchAndTechniqueGuideTour()",
+    "capture": "XCTest app screenshot on physical iPhone Air iOS 27.2",
+    "source_attachment": "111EE6E4-F71E-48CB-9E3F-04B4879C34CF.png",
+    "path": "screenshots/before-dark/12-technique-guide.png"
+  },
+  {
+    "name": "13-hold-ready.png",
+    "width_px": 1124,
+    "height_px": 2436,
+    "sha256": "dd6972cc2fe7707d75fc73993ed3d35b1a7dd9d3b4102605236b8d964b533486",
+    "test": "ScreenshotTourTests/testTimedHoldTour()",
+    "capture": "XCTest app screenshot on physical iPhone Air iOS 27.2",
+    "source_attachment": "CD332D94-4922-4465-BB97-46607005B3A7.png",
+    "path": "screenshots/before-dark/13-hold-ready.png"
+  },
+  {
+    "name": "14-hold-running.png",
+    "width_px": 1124,
+    "height_px": 2436,
+    "sha256": "876efb142d343a1d1982e071106b63d49ca1125d1ac12218fc10ad85eec0963e",
+    "test": "ScreenshotTourTests/testTimedHoldTour()",
+    "capture": "XCTest app screenshot on physical iPhone Air iOS 27.2",
+    "source_attachment": "3BFC4504-1BF7-4046-98D1-0A5E91859557.png",
+    "path": "screenshots/before-dark/14-hold-running.png"
+  },
+  {
+    "name": "15-hold-paused.png",
+    "width_px": 1124,
+    "height_px": 2436,
+    "sha256": "caaf55946ed39372f70653c655a84f8f570e12775867cbdab80d4844f0153d45",
+    "test": "ScreenshotTourTests/testTimedHoldTour()",
+    "capture": "XCTest app screenshot on physical iPhone Air iOS 27.2",
+    "source_attachment": "E7DE8540-9E89-4088-9A4D-E3BC08E06812.png",
+    "path": "screenshots/before-dark/15-hold-paused.png"
+  },
+  {
+    "name": "16-today-largest-accessibility-text.png",
+    "width_px": 1124,
+    "height_px": 2436,
+    "sha256": "c342225d41bfc230055fbf9ca81f80fbba758603a3d27e0766fb3b9669537fac",
+    "test": "TodayLayoutAndWidgetRoutingTests/testTodayStartVisibleAtLargestAccessibilityTextSize()",
+    "capture": "XCTest app screenshot on physical iPhone Air iOS 27.2",
+    "source_attachment": "C0C2414C-357D-4938-B445-FC6D57D8A7F6.png",
+    "path": "screenshots/before-dark/16-today-largest-accessibility-text.png"
+  },
+  {
+    "name": "17-today-compact-landscape.png",
+    "width_px": 1124,
+    "height_px": 2436,
+    "sha256": "9a6be6c12166de7f4daede1cd1988e40ea2a8a702d0a70cb909a29fada316086",
+    "test": "TodayLayoutAndWidgetRoutingTests/testTodayStartVisibleAtCompactLandscapeHeight()",
+    "capture": "XCTest app screenshot on physical iPhone Air iOS 27.2",
+    "source_attachment": "F66EF513-99D7-465A-8A62-0D8D567C21CE.png",
+    "path": "screenshots/before-dark/17-today-compact-landscape.png"
+  }
+]

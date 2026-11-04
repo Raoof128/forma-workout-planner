@@ -1,0 +1,174 @@
+{
+  "device": "iPhone Air",
+  "os": "iOS 27.2",
+  "build": "isolated Debug; synthetic data; Xcode 27.2",
+  "launch_warning": "Only 4 launch samples returned; Xcode unexpected-number-of-metrics warning means incomplete launch baseline.",
+  "metrics": [
+    {
+      "test": "WidgetProjectionPerformanceTests/testCanonicalRecordLimitProjectionPerformance()",
+      "metric": "Clock Monotonic Time",
+      "identifier": "com.apple.dt.XCTMetric_Clock.time.monotonic",
+      "unit": "s",
+      "samples": [
+        0.020424068,
+        0.020239855,
+        0.019969009000000003,
+        0.020170278,
+        0.020018496,
+        0.020538581,
+        0.01992682,
+        0.020168187,
+        0.019916365000000002,
+        0.020510209
+      ],
+      "count": 10,
+      "mean": 0.0201881868,
+      "min": 0.019916365000000002,
+      "max": 0.020538581,
+      "rsd_percent": 1.1728121803658267
+    },
+    {
+      "test": "NativePerformanceTests/testRepeatedTabNavigationResources()",
+      "metric": "Memory Physical (audit202611)",
+      "identifier": "com.apple.dt.XCTMetric_Memory-dev.raoufabedini.forma.audit202611.physical",
+      "unit": "kB",
+      "samples": [
+        -2932.736,
+        -294.912,
+        2424.832,
+        -2457.6,
+        -16.384
+      ],
+      "count": 5,
+      "mean": -655.36,
+      "min": -2932.736,
+      "max": 2424.832,
+      "rsd_percent": 327.80043471600214
+    },
+    {
+      "test": "NativePerformanceTests/testRepeatedTabNavigationResources()",
+      "metric": "Clock Monotonic Time",
+      "identifier": "com.apple.dt.XCTMetric_Clock.time.monotonic",
+      "unit": "s",
+      "samples": [
+        5.731396027000001,
+        5.719155682,
+        5.684926750000001,
+        5.788164053,
+        5.638123897000001
+      ],
+      "count": 5,
+      "mean": 5.7123532818000005,
+      "min": 5.638123897000001,
+      "max": 5.788164053,
+      "rsd_percent": 0.9754107974314545
+    },
+    {
+      "test": "NativePerformanceTests/testRepeatedTabNavigationResources()",
+      "metric": "CPU Instructions Retired (audit202611)",
+      "identifier": "com.apple.dt.XCTMetric_CPU-dev.raoufabedini.forma.audit202611.instructions_retired",
+      "unit": "kI",
+      "samples": [
+        4668806.996,
+        4674814.672,
+        4667423.309,
+        4676242.962,
+        4665387.988
+      ],
+      "count": 5,
+      "mean": 4670535.1854,
+      "min": 4665387.988,
+      "max": 4676242.962,
+      "rsd_percent": 0.10159247674803647
+    },
+    {
+      "test": "NativePerformanceTests/testRepeatedTabNavigationResources()",
+      "metric": "CPU Cycles (audit202611)",
+      "identifier": "com.apple.dt.XCTMetric_CPU-dev.raoufabedini.forma.audit202611.cycles",
+      "unit": "kC",
+      "samples": [
+        2091533.513,
+        2063372.028,
+        2031279.545,
+        2149741.212,
+        2031672.55
+      ],
+      "count": 5,
+      "mean": 2073519.7696,
+      "min": 2031279.545,
+      "max": 2149741.212,
+      "rsd_percent": 2.3837846806497507
+    },
+    {
+      "test": "NativePerformanceTests/testRepeatedTabNavigationResources()",
+      "metric": "Absolute Memory Physical (audit202611)",
+      "identifier": "com.apple.dt.XCTMetric_Memory-dev.raoufabedini.forma.audit202611.physical_absolute",
+      "unit": "kB",
+      "samples": [
+        79923.064,
+        79628.152,
+        82052.984,
+        79595.384,
+        79579
+      ],
+      "count": 5,
+      "mean": 80155.7168,
+      "min": 79579,
+      "max": 82052.984,
+      "rsd_percent": 1.3347631863541929
+    },
+    {
+      "test": "NativePerformanceTests/testRepeatedTabNavigationResources()",
+      "metric": "CPU Time (audit202611)",
+      "identifier": "com.apple.dt.XCTMetric_CPU-dev.raoufabedini.forma.audit202611.time",
+      "unit": "s",
+      "samples": [
+        1.4923732680000001,
+        1.470088743,
+        1.45409698,
+        1.506616012,
+        1.434797091
+      ],
+      "count": 5,
+      "mean": 1.4715944188,
+      "min": 1.434797091,
+      "max": 1.506616012,
+      "rsd_percent": 1.9579406640481074
+    },
+    {
+      "test": "NativePerformanceTests/testRepeatedTabNavigationResources()",
+      "metric": "Memory Peak Physical (audit202611)",
+      "identifier": "com.apple.dt.XCTMetric_Memory-dev.raoufabedini.forma.audit202611.physical_peak",
+      "unit": "kB",
+      "samples": [
+        84576.12,
+        81463.16,
+        83527.544,
+        83691.384,
+        81069.944
+      ],
+      "count": 5,
+      "mean": 82865.6304,
+      "min": 81069.944,
+      "max": 84576.12,
+      "rsd_percent": 1.8338567743215093
+    },
+    {
+      "test": "NativePerformanceTests/testLaunchUntilResponsive()",
+      "metric": "Duration (ApplicationFirstFramePresentationResponsive)",
+      "identifier": "com.apple.dt.XCTMetric_ApplicationLaunch-ApplicationFirstFramePresentationResponsive.duration",
+      "unit": "s",
+      "samples": [
+        0.460405667,
+        0.44469141700000003,
+        0.45529233300000005,
+        0.46081262500000003
+      ],
+      "count": 4,
+      "mean": 0.45530051050000003,
+      "min": 0.44469141700000003,
+      "max": 0.46081262500000003,
+      "rsd_percent": 1.6484783681593678
+    }
+  ]
+}

@@ -366,6 +366,24 @@ final class WorkoutLiveActivityModelTests: XCTestCase {
       exercises: [SessionEntry(exerciseId: "squat", sets: [LoggedSet(done: false)])])
   }
 
+  /// Real commits against disposable SQLite, with no account transport or system activity host.
+  private func isolatedModel() async throws -> (AppModel, WorkspaceStore) {
+    let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+    try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+    addTeardownBlock { try? FileManager.default.removeItem(at: directory) }
+    let catalog = [
+      Exercise(id: "squat", name: "Squat", muscle: "Legs", equipment: "Barbell", description: "")
+    ]
+    let store = try WorkspaceStore(
+      url: directory.appendingPathComponent("activity-fixture.sqlite"), catalog: catalog)
+    var workout = session("shared-session-id")
+    workout.restEnd = AppModel.now + 90_000
+    let model = AppModel(liveActivity: WorkoutLiveActivityController(host: FakeActivityHost()))
+    model.store = store
+    model.workspace = try await store.load(seed: workspace(active: workout))
+    return (model, store)
+  }
+
   /// The one hook: every workspace change, wherever it comes from, drives the activity.
   func testEveryWorkspaceChangeFollowsThroughTheSingleObserver() async {
     let host = FakeActivityHost()
@@ -473,8 +491,137 @@ final class WorkoutLiveActivityModelTests: XCTestCase {
   func testButtonPressForAnotherWorkoutDoesNothing() async {
     let model = AppModel(liveActivity: WorkoutLiveActivityController(host: FakeActivityHost()))
     model.workspace = workspace(active: session("a"))
-    await model.perform(.completeSet(sessionID: "not-this-one"))
-    await model.perform(.skipRest(sessionID: "not-this-one"))
+    await model.perform(.completeSet(sessionID: "not-this-one", ownerEpoch: model.widgets.epoch))
+    await model.perform(.skipRest(sessionID: "not-this-one", ownerEpoch: model.widgets.epoch))
     XCTAssertEqual(model.workspace?.active?.exercises.first?.sets.first?.done, false)
+  }
+
+  func testButtonsRejectThePreviousOwnersEpochEvenWhenTheSessionIDMatches() async throws {
+    let (model, store) = try await isolatedModel()
+    let previousEpoch = model.widgets.epoch
+    model.widgets.selectOwner("another-synthetic-owner")
+    XCTAssertNotEqual(model.widgets.epoch, previousEpoch)
+    let original = try XCTUnwrap(model.workspace)
+
+    await model.perform(.completeSet(sessionID: "shared-session-id", ownerEpoch: previousEpoch))
+    await model.perform(.skipRest(sessionID: "shared-session-id", ownerEpoch: previousEpoch))
+
+    XCTAssertEqual(model.workspace, original)
+    let persisted = try await store.load(seed: Workspace())
+    XCTAssertEqual(persisted, original)
+  }
+
+  func testButtonsWithoutAnOwnerEpochFailClosed() async throws {
+    let (model, store) = try await isolatedModel()
+    let original = try XCTUnwrap(model.workspace)
+    await model.perform(.completeSet(sessionID: "shared-session-id", ownerEpoch: ""))
+    await model.perform(.skipRest(sessionID: "shared-session-id", ownerEpoch: ""))
+    XCTAssertEqual(model.workspace, original)
+    let persisted = try await store.load(seed: Workspace())
+    XCTAssertEqual(persisted, original)
+  }
+
+  func testIntentsWithoutAnOwnerEpochDefaultToAnEmptyValue() {
+    XCTAssertEqual(CompleteSetIntent().ownerEpoch, "")
+    XCTAssertEqual(SkipRestIntent().ownerEpoch, "")
+  }
+
+  func testCurrentOwnerButtonsCommitToTheIsolatedTrainingStore() async throws {
+    let (model, store) = try await isolatedModel()
+    let epoch = model.widgets.epoch
+    await model.perform(.completeSet(sessionID: "shared-session-id", ownerEpoch: epoch))
+    XCTAssertEqual(model.workspace?.active?.exercises.first?.sets.first?.done, true)
+    XCTAssertNotNil(model.workspace?.active?.restEnd)
+    await model.perform(.skipRest(sessionID: "shared-session-id", ownerEpoch: epoch))
+    XCTAssertNil(model.workspace?.active?.restEnd)
+    XCTAssertNil(model.errorMessage)
+    let persisted = try await store.load(seed: Workspace())
+    XCTAssertEqual(persisted, model.workspace)
+    XCTAssertEqual(persisted.active?.exercises.first?.sets.first?.done, true)
+    XCTAssertNil(persisted.active?.restEnd)
+  }
+
+  func testQueuedButtonsRecheckEpochAtTheSerializedCommitBoundary() async throws {
+    for completingSet in [true, false] {
+      let (model, store) = try await isolatedModel()
+      let epoch = model.widgets.epoch
+      let original = try XCTUnwrap(model.workspace)
+      let action: LiveActivityAction =
+        completingSet
+        ? .completeSet(sessionID: "shared-session-id", ownerEpoch: epoch)
+        : .skipRest(sessionID: "shared-session-id", ownerEpoch: epoch)
+      await model.mutationGate.acquire()
+      let queued = Task { await model.perform(action) }
+      for _ in 0..<1_000 {
+        if model.pendingMutations > 0 { break }
+        await Task.yield()
+      }
+      let reachedCommit = model.pendingMutations == 1
+      // A reset can rotate the epoch without changing storeIdentity. Only a second epoch
+      // check after the gate prevents this already-validated action from crossing the boundary.
+      model.widgets.selectOwner("new-epoch-same-store-identity")
+      XCTAssertNotEqual(model.widgets.epoch, epoch)
+      model.mutationGate.release()
+      await queued.value
+
+      XCTAssertTrue(reachedCommit)
+      XCTAssertEqual(model.workspace, original)
+      let persisted = try await store.load(seed: Workspace())
+      XCTAssertEqual(persisted, original)
+      XCTAssertNil(model.errorMessage, "A stale external button is silently ignored")
+    }
+  }
+
+  func testConcurrentCompleteButtonsDoNotReopenTheSameSet() async throws {
+    let (model, store) = try await isolatedModel()
+    let epoch = model.widgets.epoch
+    let originalRevision = try XCTUnwrap(model.workspace).revision
+    let action = LiveActivityAction.completeSet(
+      sessionID: "shared-session-id", ownerEpoch: epoch)
+    await model.mutationGate.acquire()
+    let first = Task { await model.perform(action) }
+    let duplicate = Task { await model.perform(action) }
+    for _ in 0..<1_000 {
+      if model.pendingMutations == 2 { break }
+      await Task.yield()
+    }
+    let bothQueued = model.pendingMutations == 2
+    model.mutationGate.release()
+    await first.value
+    await duplicate.value
+
+    XCTAssertTrue(bothQueued)
+    XCTAssertEqual(model.workspace?.active?.exercises.first?.sets.first?.done, true)
+    XCTAssertEqual(model.workspace?.revision, originalRevision + 1)
+    XCTAssertNil(model.errorMessage)
+    let persisted = try await store.load(seed: Workspace())
+    XCTAssertEqual(persisted, model.workspace)
+  }
+
+  func testWidgetSharingRefreshKeepsAnAllowedActivityOnTheCurrentEpoch() async {
+    let host = FakeActivityHost()
+    let model = AppModel(liveActivity: WorkoutLiveActivityController(host: host))
+    model.workspace = workspace(active: session("a"))
+    await model.liveActivity.settle()
+    let oldEpoch = model.widgets.epoch
+    // Exercise the privacy-generation boundary in memory, without creating a real App Group
+    // writer or changing a device's persisted widget consent in this hosted regression.
+    model.widgets.selectOwner("synthetic-privacy-generation")
+    model.setWidgetSharing(false)
+    await model.liveActivity.settle()
+    XCTAssertNotEqual(model.widgets.epoch, oldEpoch)
+    XCTAssertEqual(host.activities.count, 1)
+    XCTAssertEqual(host.activities.first?.ownerEpoch, model.widgets.epoch)
+  }
+
+  func testWidgetSharingRefreshDoesNotStartAnActivityWhenItsPreferenceIsOff() async {
+    let host = FakeActivityHost()
+    let model = AppModel(liveActivity: WorkoutLiveActivityController(host: host))
+    model.liveActivityEnabled = false
+    model.workspace = workspace(active: session("a"))
+    model.widgets.selectOwner("synthetic-privacy-generation")
+    model.setWidgetSharing(true)
+    await model.liveActivity.settle()
+    XCTAssertTrue(host.activities.isEmpty)
   }
 }

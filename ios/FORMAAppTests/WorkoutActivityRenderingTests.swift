@@ -30,11 +30,13 @@ final class WorkoutActivityRenderingTests: XCTestCase {
     _ value: WorkoutActivityState, scheme: ColorScheme, type: DynamicTypeSize = .large,
     stale: Bool = false
   ) throws -> UIImage {
-    let view = WorkoutLockScreenView(sessionID: "s1", state: value, isStale: stale)
-      .environment(\.colorScheme, scheme)
-      .environment(\.dynamicTypeSize, type)
-      .frame(width: 360)
-      .background(scheme == .dark ? Color.black : Color.white)
+    let view = WorkoutLockScreenView(
+      sessionID: "s1", ownerEpoch: "render-fixture", state: value, isStale: stale
+    )
+    .environment(\.colorScheme, scheme)
+    .environment(\.dynamicTypeSize, type)
+    .frame(width: 360)
+    .background(scheme == .dark ? Color.black : Color.white)
     let renderer = ImageRenderer(content: view)
     renderer.scale = 3
     return try XCTUnwrap(renderer.uiImage)

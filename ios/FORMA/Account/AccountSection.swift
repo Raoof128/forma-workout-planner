@@ -70,7 +70,7 @@ struct AccountSection: View {
     VStack(alignment: .leading, spacing: 6) {
       Text("Account training saved on this iPhone").font(.headline)
       Text(
-        "This iPhone still holds the routines and workouts from the account you signed out of. Signing in again picks them up. Remove them if you don’t want them kept here."
+        "This iPhone still holds routines and workouts from signed-out FORMA accounts. Signing in again picks them up. You can remove all saved account training from this iPhone."
       )
       .font(.subheadline).foregroundStyle(FormaTheme.secondary)
     }
@@ -82,21 +82,21 @@ struct AccountSection: View {
       confirmRemoval = true
     } label: {
       HStack {
-        Text("Remove this account’s training from this iPhone")
+        Text("Remove saved account training from this iPhone")
         if removing { ProgressView() }
       }
     }
     .disabled(removing)
     .accessibilityIdentifier("account-remove-saved-copy")
     .confirmationDialog(
-      "Remove this account’s training from this iPhone?", isPresented: $confirmRemoval,
+      "Remove all saved account training from this iPhone?", isPresented: $confirmRemoval,
       titleVisibility: .visible
     ) {
       Button("Remove from this iPhone", role: .destructive) { Task { await removeSavedCopy() } }
         .accessibilityIdentifier("account-remove-saved-copy-confirm")
     } message: {
       Text(
-        "This deletes the routines, workouts and any workout in progress that this iPhone kept for that account. Changes that never reached the account are lost. The account itself, and the training you keep without an account, are not affected."
+        "This deletes the routines, workouts and any workout in progress saved on this iPhone for all signed-out FORMA accounts. Changes that never reached those accounts are lost. The accounts themselves, and the training you keep without an account, are not affected."
       )
     }
   }

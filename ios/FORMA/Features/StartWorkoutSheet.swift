@@ -199,7 +199,11 @@ struct WatchRecordingStrip: View {
       .font(.subheadline.weight(.semibold).monospacedDigit())
       .foregroundStyle(FormaTheme.primary)
       .accessibilityElement(children: .combine)
-      .accessibilityLabel(accessibilityText(metrics))
+      .accessibilityLabel(
+        Self.accessibilityText(
+          metrics, liveHeartRate: model.watch.liveHeartRate,
+          lastHeartRate: model.watch.lastHeartRate, readingStale: model.watch.isReadingStale)
+      )
       .accessibilityIdentifier("watch-recording")
     case .ending:
       Label("Ending recording on Apple Watch…", systemImage: "applewatch")
@@ -215,11 +219,15 @@ struct WatchRecordingStrip: View {
     }
   }
 
-  private func accessibilityText(_ metrics: WatchMetrics?) -> String {
-    var parts = ["Recording on Apple Watch"]
-    if let rate = model.watch.liveHeartRate {
+  static func accessibilityText(
+    _ metrics: WatchMetrics?, liveHeartRate: Double?, lastHeartRate: Double?, readingStale: Bool
+  ) -> String {
+    var parts = [
+      metrics?.state == .paused ? "Apple Watch workout paused" : "Recording on Apple Watch"
+    ]
+    if let rate = liveHeartRate {
       parts.append("heart rate \(Int(rate.rounded())) beats per minute")
-    } else if model.watch.isReadingStale, let last = model.watch.lastHeartRate {
+    } else if readingStale, let last = lastHeartRate {
       parts.append("heart rate not current, last \(Int(last.rounded())) beats per minute")
     }
     if let energy = metrics?.activeEnergy {

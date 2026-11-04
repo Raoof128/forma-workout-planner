@@ -139,7 +139,12 @@ def main():
     privacy = read_plist(widget / "PrivacyInfo.xcprivacy")
     assert privacy["NSPrivacyTracking"] is False
     assert privacy["NSPrivacyCollectedDataTypes"] == []
-    assert privacy["NSPrivacyAccessedAPITypes"] == []
+    # SnapshotReader uses the owned App Group file's modification time to back off locked reads.
+    # contentModificationDateKey is a required-reason API; this container-local use is C617.1.
+    assert privacy["NSPrivacyAccessedAPITypes"] == [{
+        "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryFileTimestamp",
+        "NSPrivacyAccessedAPITypeReasons": ["C617.1"],
+    }]
     links = subprocess.run(
         ["otool", "-L", str(widget / info["CFBundleExecutable"])],
         check=True, capture_output=True, text=True,
