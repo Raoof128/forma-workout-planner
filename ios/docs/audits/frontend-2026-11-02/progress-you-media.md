@@ -646,3 +646,58 @@ The Progress tab stacks:
   `relativeTo:`, and `AdaptiveMetricGroup` stacks at accessibility sizes.
 
 **Severity counts:** High 2, Medium 9, Low 13.
+
+---
+
+## Resolution
+
+Fixed on branch `fix/audit-progress` (2 November 2026), from audited commit `ba4e6a7`. Each
+finding was re-checked against the code first; every one still applied. No simulator was
+used; `xcodebuild build-for-testing` for `generic/platform=iOS` (Debug) succeeded with every
+change below, with no warnings in the changed files. The tests were built but not run; that
+needs a device.
+
+| ID | Result | What changed |
+|---|---|---|
+| H1 | Fixed | Unfocused bars use `FormaTheme.boundary` (≥3:1 against `surface` in all four variants, per its token contract) instead of accent at 0.38/0.22 opacity, and scrubbing no longer fades the rest. The focused bar is solid `accent` with an `arrowtriangle.down.fill` marker above it, so focus is shown by shape as well as colour. |
+| H2 | Fixed; needs device check | Added `VolumeChartDescriptor` (`AXChartDescriptorRepresentable`) through `.accessibilityChartDescriptor`. Its x-axis lists each workout's date and name (numbered when two would read the same), its y-axis speaks "kilogram repetitions", and its summary gives the chart type, average and highest. The chart's spoken value now includes the average. Device step: VoiceOver on the Progress chart, rotor › Audio Graph and Chart Details. Confirm the categories read as dates and names, not identifiers. |
+| M1 | Fixed | The animated demonstration starts only when motion is full **and** Auto-Play Video Previews is on (`UIAccessibility.isVideoAutoplayEnabled`, refreshed on `videoAutoplayStatusDidChangeNotification`). This was done in `ExerciseMedia.swift`, not in `FormaMotionRoot`, so `DesignSystem/` is untouched. It is a video setting, not Reduce Motion, so the "never read `accessibilityReduceMotion` in a feature view" rule still holds. |
+| M2 | Fixed | The demo poster is decoded by `MediaDecoder` in `.task(id: clipID)` into `@State`, never during `body`. |
+| M3 | Fixed; needs device check | `.buttonStyle(.borderless)` on both credit `Link`s and on the animation's Pause/Play button. Device step: in an exercise guide with a demo clip, tap the poster away from Play and tap the caption. Neither should open Safari. Tap the animation; the row should not highlight. |
+| M4 | Fixed | `MetricValue.transition(for:value:)` is now internal and the readout uses it: `numericText` at full, `opacity` at minimal, `identity` when off. |
+| M5 | Fixed | The empty state reads "No workouts yet" and has a "Go to Today" button (`progress-empty-start`, `formaPrimaryCompact`) that selects the Today tab, where a workout starts. `progress-empty` is kept. `FORMAUITests/TrainingNavigationTests.swift` now matches the new title. |
+| M6 | Fixed | The Motion and Haptics footers are now 13 and 17 words, and Haptics covers saves, rest, selections and errors. The Lock Screen section has a "Live Activity settings for FORMA" button that opens `UIApplication.openSettingsURLString`. The widget footer is shorter. |
+| M7 | Fixed | Exercise names and "Session notes" carry `.isHeader`. Exercises with no completed set are not listed (see L13). |
+| M8 | Fixed | `WatchTotalsCard` takes `energyRecorded` (true when any workout has an energy reading) and leaves Active kcal out otherwise. `MetricValue` gained an optional `spoken:` label and value, which the card uses to say "beats per minute" and "kilocalories". `FORMACore.WatchTotals` is unchanged. |
+| M9 | Fixed | Default rest is a menu `Picker` (30 s to 10 min), labelled "1 min 30 sec" and so on. A saved value outside the list is added to the menu, so it is never blank. `profile-rest` is kept. |
+| L1 | Fixed | `MetricValue` and the readout use `FormaFont.numeral`. This also changes the receipt metrics in `WorkoutView`, which use `MetricValue`. |
+| L2 | Fixed | The chart card uses `FormaSpacing.lg` and `FormaRadius.card`. |
+| L3 | Fixed | The illustration label drops the title when it matches the exercise name, ignoring case. |
+| L4 | Fixed | The bullet is `accessibilityHidden`, and each item is one combined element. |
+| L5 | Fixed | The section headers are now "Profile", "Appearance & feedback", "Widgets", "Your data" and "Training journal". The editorial title is kept. |
+| L6 | Fixed | Training dates shows the time zone's localised generic name from `TrainingDate.calendar`. A footer says weights and dates match the website and can't be changed. |
+| L7 | Fixed | `durationPhrase` leaves a missing duration out of the journal row and shows "under 1 min" below 60 s. The details screen omits the minutes metric when the duration is nil and shows "<1" (spoken "Under 1 minute") below 60 s. |
+| L8 | Fixed | The loop length is formatted with `Duration`: "4.3 sec" on screen and "4.3 seconds" for VoiceOver. |
+| L9 | Fixed | The chart height is capped at 320 pt. Device step: at AX5, check that the values list stays reachable. |
+| L10 | Fixed | The `AVAudioSession` category call is removed. The player stays muted, and the clips have no audio track. |
+| L11 | Fixed | `SyncRefresh` attaches `refreshable` only when signed in. |
+| L12 | Fixed | The readout uses `FormaFont.numeral(.title)`, so the two summary metrics lead. |
+| L13 | Fixed | The journal chevron is `accessibilityHidden`. Exercises with no completed set are skipped on the details screen. |
+| workout.md M4 | Fixed (copy) | The receipt no longer says "Also saved in Apple Health". It now says "Your Apple Watch saves this recording to Apple Health and shows the result there." This is true whether or not the save works. A confirmed "Saved in Apple Health" needs the Watch to report the save. Today the final `WatchMetrics` is identical after `finishWorkout()` succeeds and after it fails (`FORMAWatch/WorkoutManager.swift`), so this needs a protocol change (a `saved` field) outside this slice. |
+| workout.md L6 | Fixed | `WatchSummaryCard` formats heart rate with the view's `\.locale` and active energy as a `Measurement<UnitEnergy>` ("kcal" on screen, "kilocalories" for VoiceOver); recorded time passes the same locale to `WorkoutClock`. The grid drops to one column at accessibility text sizes, so values no longer wrap mid-number. `WatchTotalsCard` uses the same formatting. |
+| today-start L10, completed in progress slice | Fixed; needs device check | `.accessibilityIgnoresInvertColors()` on `MediaPhoto` (the Today hero photo) and on every other photo and video surface in `ExerciseMedia.swift`: `BundledImage`, the exercise illustration frame, the demo clip (poster and `VideoPlayer`) and the animated demonstration. Device step: turn on Smart Invert in light mode and check the Today hero and an exercise guide's media stay as photographed. |
+
+**Tests.** New `ios/FORMAAppTests/ProgressYouPresentationTests.swift` covers duration
+phrasing, the readout transition per motion level, rest choices and formatting, the
+illustration label, the chart descriptor's categories, range and summary, and the
+off-main poster decode. `FORMAUITests/TrainingNavigationTests.swift` was updated for the
+new empty-state title.
+
+**Files changed.**
+- `ios/FORMA/Features/ProgressView.swift`
+- `ios/FORMA/Features/YouView.swift`
+- `ios/FORMA/Features/ExerciseMedia.swift`
+- `ios/FORMA/Features/WatchSummaryCard.swift`
+- `ios/FORMAAppTests/ProgressYouPresentationTests.swift` (new)
+- `ios/FORMAUITests/TrainingNavigationTests.swift`
+- This report
