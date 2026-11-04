@@ -1,0 +1,1536 @@
+{
+  "method": "Deterministic ImageIO/CoreGraphics proportional thumbnails from verified source PNGs; original images unchanged. Full-page thumbnails support structural review. Fine text and numeric judgments use specified full-size individuals. Re-rendered after final guest78/account48 refresh.",
+  "count": 30,
+  "sheets": [
+    {
+      "path": "contact-sheets/guest-390-pairs-01.png",
+      "title": "FORMA 390px \u00b7 matched guest tour \u00b7 pairs 1\u20135",
+      "pngWidth": 860,
+      "pngHeight": 1750,
+      "sha256": "5687bd4026caec614c67104fd0e3eeeafc92129426eba096e6f0e8f3143fc468",
+      "inputs": [
+        {
+          "path": "guest-before/390-overview.png",
+          "label": "BEFORE overview",
+          "sha256": "3be6d918c8395fb17b5d060e2ed5ed203f02c807122dc40aee0a356d12c97536"
+        },
+        {
+          "path": "guest-after/390-overview.png",
+          "label": "FINAL overview",
+          "sha256": "3be6d918c8395fb17b5d060e2ed5ed203f02c807122dc40aee0a356d12c97536"
+        },
+        {
+          "path": "guest-before/390-routines.png",
+          "label": "BEFORE routines",
+          "sha256": "54f2dc7b1906e9d449daf4911d98737d48bc833ee681dc42929c3f414caf08c0"
+        },
+        {
+          "path": "guest-after/390-routines.png",
+          "label": "FINAL routines",
+          "sha256": "54f2dc7b1906e9d449daf4911d98737d48bc833ee681dc42929c3f414caf08c0"
+        },
+        {
+          "path": "guest-before/390-routine-detail.png",
+          "label": "BEFORE routine-detail",
+          "sha256": "8ff0f94609a3d12eac62460ead5f8510266d32b8681119838f983a80865fcf99"
+        },
+        {
+          "path": "guest-after/390-routine-detail.png",
+          "label": "FINAL routine-detail",
+          "sha256": "8ff0f94609a3d12eac62460ead5f8510266d32b8681119838f983a80865fcf99"
+        },
+        {
+          "path": "guest-before/390-routine-preview.png",
+          "label": "BEFORE routine-preview",
+          "sha256": "dff44dbfed72af16282ce5ca0656a1d11d7293b386d4f030998067c0c3cd6116"
+        },
+        {
+          "path": "guest-after/390-routine-preview.png",
+          "label": "FINAL routine-preview",
+          "sha256": "353d858be6bfda4fd6a5ab18a4861b4d2aa75c9919d6594034b5bd9436ad3749"
+        },
+        {
+          "path": "guest-before/390-routine-preview-second.png",
+          "label": "BEFORE routine-preview-second",
+          "sha256": "e6da241ec3d4a0f89f05510c96ae1e2246f5e0d5c113e34c2a58292dd492dfdd"
+        },
+        {
+          "path": "guest-after/390-routine-preview-second.png",
+          "label": "FINAL routine-preview-second",
+          "sha256": "dabfaf6a53bb9183a91812cfdfb91f0760b2006b54a01e2e87e9fbdaf45f3558"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/guest-390-pairs-02.png",
+      "title": "FORMA 390px \u00b7 matched guest tour \u00b7 pairs 6\u201310",
+      "pngWidth": 860,
+      "pngHeight": 1750,
+      "sha256": "f7e1f61be0d0eb32c07d8c6df94111ed6fd6ff65e489ffd6c9631f19523cfe34",
+      "inputs": [
+        {
+          "path": "guest-before/390-routine-editor.png",
+          "label": "BEFORE routine-editor",
+          "sha256": "87003270258bc23816e1980dd65ecaa2954aa053ac5e16e0527c9ccab1e59ea0"
+        },
+        {
+          "path": "guest-after/390-routine-editor.png",
+          "label": "FINAL routine-editor",
+          "sha256": "87003270258bc23816e1980dd65ecaa2954aa053ac5e16e0527c9ccab1e59ea0"
+        },
+        {
+          "path": "guest-before/390-routine-editor-prescriptions.png",
+          "label": "BEFORE routine-editor-prescriptions",
+          "sha256": "fa4ee1276c0fd55dbf0379508d5f60645e3a6f9451872f85cf976bc2c69cc469"
+        },
+        {
+          "path": "guest-after/390-routine-editor-prescriptions.png",
+          "label": "FINAL routine-editor-prescriptions",
+          "sha256": "fa4ee1276c0fd55dbf0379508d5f60645e3a6f9451872f85cf976bc2c69cc469"
+        },
+        {
+          "path": "guest-before/390-routine-library.png",
+          "label": "BEFORE routine-library",
+          "sha256": "d21496e69e12593d4e2d7ef19fb115d6e7ec7a78e783960f4557302606b91e9c"
+        },
+        {
+          "path": "guest-after/390-routine-library.png",
+          "label": "FINAL routine-library",
+          "sha256": "d21496e69e12593d4e2d7ef19fb115d6e7ec7a78e783960f4557302606b91e9c"
+        },
+        {
+          "path": "guest-before/390-library-search.png",
+          "label": "BEFORE library-search",
+          "sha256": "487627047376a7c6b6a76c892023ab385bb80ef05d6623f3dc79ac762e362639"
+        },
+        {
+          "path": "guest-after/390-library-search.png",
+          "label": "FINAL library-search",
+          "sha256": "c09b9d64ab8a4749bd48d06789421a700b3d7cf2ec675f9cdb548776af697a0b"
+        },
+        {
+          "path": "guest-before/390-exercise-guide.png",
+          "label": "BEFORE exercise-guide",
+          "sha256": "76300004ba74af3b96df21a86b0e8311a86475c0e58f78a05c3297b5f1832328"
+        },
+        {
+          "path": "guest-after/390-exercise-guide.png",
+          "label": "FINAL exercise-guide",
+          "sha256": "07f4ccbe26d910b8bda003d2262a0bac9b32bcd89090eac86d63c1a6ad560071"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/guest-390-pairs-03.png",
+      "title": "FORMA 390px \u00b7 matched guest tour \u00b7 pairs 11\u201315",
+      "pngWidth": 860,
+      "pngHeight": 1750,
+      "sha256": "05ee14a81b570cac35cfd6d4d62276252deff750ae2bf7cb8178e12bfbb8ac9d",
+      "inputs": [
+        {
+          "path": "guest-before/390-active-workout.png",
+          "label": "BEFORE active-workout",
+          "sha256": "d6d3d6ce38f24ee19f5d4990894809e7f1fa9b60643be776c2c9845f6cef84ce"
+        },
+        {
+          "path": "guest-after/390-active-workout.png",
+          "label": "FINAL active-workout",
+          "sha256": "396bce3dd1dddeabea8b2e328cd03a7edf57e11561343228d6ffeeb544f620ad"
+        },
+        {
+          "path": "guest-before/390-rest-timer.png",
+          "label": "BEFORE rest-timer",
+          "sha256": "30e592bcb4957597761d999b230e248f4b3327f75b0d800b0c7995651789528c"
+        },
+        {
+          "path": "guest-after/390-rest-timer.png",
+          "label": "FINAL rest-timer",
+          "sha256": "e6b9fcf5090a7968c7b8167d1ce8bbbea22efbc3cf921e57500db405c8a00f04"
+        },
+        {
+          "path": "guest-before/390-hold-ready.png",
+          "label": "BEFORE hold-ready",
+          "sha256": "ea1d728c22ae661beb65f2e3b0193c9feef1ab63179fb462bdf56c54d139c2d2"
+        },
+        {
+          "path": "guest-after/390-hold-ready.png",
+          "label": "FINAL hold-ready",
+          "sha256": "ea1d728c22ae661beb65f2e3b0193c9feef1ab63179fb462bdf56c54d139c2d2"
+        },
+        {
+          "path": "guest-before/390-hold-running.png",
+          "label": "BEFORE hold-running",
+          "sha256": "78b03215e072f10a50d7077cbbaeb925c500b428535de1ec08241aa3325fc47b"
+        },
+        {
+          "path": "guest-after/390-hold-running.png",
+          "label": "FINAL hold-running",
+          "sha256": "78b03215e072f10a50d7077cbbaeb925c500b428535de1ec08241aa3325fc47b"
+        },
+        {
+          "path": "guest-before/390-hold-paused.png",
+          "label": "BEFORE hold-paused",
+          "sha256": "c17cd8bcea0b730398d5d036ea18b381a64b09deeef716e673765b0936c891c4"
+        },
+        {
+          "path": "guest-after/390-hold-paused.png",
+          "label": "FINAL hold-paused",
+          "sha256": "c17cd8bcea0b730398d5d036ea18b381a64b09deeef716e673765b0936c891c4"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/guest-390-pairs-04.png",
+      "title": "FORMA 390px \u00b7 matched guest tour \u00b7 pairs 16\u201320",
+      "pngWidth": 860,
+      "pngHeight": 1750,
+      "sha256": "f5b083747ef7f3a547a652db3dc5fb4f768a3be35f1eef900ea24fb62a91bf70",
+      "inputs": [
+        {
+          "path": "guest-before/390-history.png",
+          "label": "BEFORE history",
+          "sha256": "7e1546c1d8bcf1076354b2c9acdbdb11dc4784abc5d64a201baa291abd9cdac7"
+        },
+        {
+          "path": "guest-after/390-history.png",
+          "label": "FINAL history",
+          "sha256": "7e1546c1d8bcf1076354b2c9acdbdb11dc4784abc5d64a201baa291abd9cdac7"
+        },
+        {
+          "path": "guest-before/390-workout-receipt.png",
+          "label": "BEFORE workout-receipt",
+          "sha256": "e9c5e79a73e8ef172df9ad9e54bf85d8c29fc765b0f0b86fc84b9b48968c5d0c"
+        },
+        {
+          "path": "guest-after/390-workout-receipt.png",
+          "label": "FINAL workout-receipt",
+          "sha256": "e9c5e79a73e8ef172df9ad9e54bf85d8c29fc765b0f0b86fc84b9b48968c5d0c"
+        },
+        {
+          "path": "guest-before/390-history-editor.png",
+          "label": "BEFORE history-editor",
+          "sha256": "8e47562096165b4deabab7d0a4ff4748f01a85a07c61dffdc420042b26f7c424"
+        },
+        {
+          "path": "guest-after/390-history-editor.png",
+          "label": "FINAL history-editor",
+          "sha256": "c96231e271ab38e6ffbe0d0fbb8f85e42bf1b8ebb671714880faf359f3874c53"
+        },
+        {
+          "path": "guest-before/390-history-editor-prescriptions.png",
+          "label": "BEFORE history-editor-prescriptions",
+          "sha256": "12f2d5bda72794fec457a5bf49980adc731e8bfa86e0c5fac89b13c34fbbc626"
+        },
+        {
+          "path": "guest-after/390-history-editor-prescriptions.png",
+          "label": "FINAL history-editor-prescriptions",
+          "sha256": "65a5df181f00faa222c91ce36ec92e6c1f0d86dc09d29ef6eddc15db37a7a54a"
+        },
+        {
+          "path": "guest-before/390-progress.png",
+          "label": "BEFORE progress",
+          "sha256": "f4d136959216b4238f1fba2c1b5531a374b9ad7dc38b2340a3e2fe00b2d28e78"
+        },
+        {
+          "path": "guest-after/390-progress.png",
+          "label": "FINAL progress",
+          "sha256": "f4d136959216b4238f1fba2c1b5531a374b9ad7dc38b2340a3e2fe00b2d28e78"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/guest-390-pairs-05.png",
+      "title": "FORMA 390px \u00b7 matched guest tour \u00b7 pairs 21\u201325",
+      "pngWidth": 860,
+      "pngHeight": 1750,
+      "sha256": "5c3dbfda91a9ee07548517f98fcc65098109f23b1bddbf2d9d81d93ad742b86c",
+      "inputs": [
+        {
+          "path": "guest-before/390-settings.png",
+          "label": "BEFORE settings",
+          "sha256": "8adc034ecf7be00fd2aab05706df48e0ed8682d1877fe1d60f3cf3ddf2a0adec"
+        },
+        {
+          "path": "guest-after/390-settings.png",
+          "label": "FINAL settings",
+          "sha256": "8adc034ecf7be00fd2aab05706df48e0ed8682d1877fe1d60f3cf3ddf2a0adec"
+        },
+        {
+          "path": "guest-before/390-import-review.png",
+          "label": "BEFORE import-review",
+          "sha256": "2d94a5e94063e329aeb1f0fa147412a79f8a784898125224fcb1accdb3106c7f"
+        },
+        {
+          "path": "guest-after/390-import-review.png",
+          "label": "FINAL import-review",
+          "sha256": "2d94a5e94063e329aeb1f0fa147412a79f8a784898125224fcb1accdb3106c7f"
+        },
+        {
+          "path": "guest-before/390-export-complete.png",
+          "label": "BEFORE export-complete",
+          "sha256": "dcba07dc18e5ab439c9e6de23d8ce628478f65ba15c1d1da7be422d0e1132449"
+        },
+        {
+          "path": "guest-after/390-export-complete.png",
+          "label": "FINAL export-complete",
+          "sha256": "dcba07dc18e5ab439c9e6de23d8ce628478f65ba15c1d1da7be422d0e1132449"
+        },
+        {
+          "path": "guest-before/390-privacy.png",
+          "label": "BEFORE privacy",
+          "sha256": "b6c8ec87913b8feecd1fb30a580d9f78a12813d67f4642c138ba0ff3bbe9e467"
+        },
+        {
+          "path": "guest-after/390-privacy.png",
+          "label": "FINAL privacy",
+          "sha256": "b6c8ec87913b8feecd1fb30a580d9f78a12813d67f4642c138ba0ff3bbe9e467"
+        },
+        {
+          "path": "guest-before/390-terms.png",
+          "label": "BEFORE terms",
+          "sha256": "ea0fea37f1bf19711ffdd893005059bf640fea6a0eafddb2885bab42a212dfb1"
+        },
+        {
+          "path": "guest-after/390-terms.png",
+          "label": "FINAL terms",
+          "sha256": "ea0fea37f1bf19711ffdd893005059bf640fea6a0eafddb2885bab42a212dfb1"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/guest-390-pairs-06.png",
+      "title": "FORMA 390px \u00b7 matched guest tour \u00b7 pairs 26\u201326",
+      "pngWidth": 860,
+      "pngHeight": 398,
+      "sha256": "920482c9c9406199dc7dce64b684ba7e52ca5709eba0e4ab2acbbbc6aaa2b46c",
+      "inputs": [
+        {
+          "path": "guest-before/390-recovery.png",
+          "label": "BEFORE recovery",
+          "sha256": "8ab1105ba39bab7f881092ad38338b63397353a6337a43f8f1e064aaee145d7a"
+        },
+        {
+          "path": "guest-after/390-recovery.png",
+          "label": "FINAL recovery",
+          "sha256": "8ab1105ba39bab7f881092ad38338b63397353a6337a43f8f1e064aaee145d7a"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/guest-768-pairs-01.png",
+      "title": "FORMA 768px \u00b7 matched guest tour \u00b7 pairs 1\u20135",
+      "pngWidth": 860,
+      "pngHeight": 1750,
+      "sha256": "acca1220412d941139a555e44c87b77e64a76df99bfa280dc70534b6fed4138f",
+      "inputs": [
+        {
+          "path": "guest-before/768-overview.png",
+          "label": "BEFORE overview",
+          "sha256": "c81f520a46bedc50a67f8c810c083135e8f5e40675217c21b70718337374ab0c"
+        },
+        {
+          "path": "guest-after/768-overview.png",
+          "label": "FINAL overview",
+          "sha256": "c81f520a46bedc50a67f8c810c083135e8f5e40675217c21b70718337374ab0c"
+        },
+        {
+          "path": "guest-before/768-routines.png",
+          "label": "BEFORE routines",
+          "sha256": "7463601323efb512f08c4b92ec802aa534004f84d371e9640727c785eaa5a3fc"
+        },
+        {
+          "path": "guest-after/768-routines.png",
+          "label": "FINAL routines",
+          "sha256": "7463601323efb512f08c4b92ec802aa534004f84d371e9640727c785eaa5a3fc"
+        },
+        {
+          "path": "guest-before/768-routine-detail.png",
+          "label": "BEFORE routine-detail",
+          "sha256": "b9acadefd75230103cd6e49d79087f630856347a16491c045e27a59701fb198a"
+        },
+        {
+          "path": "guest-after/768-routine-detail.png",
+          "label": "FINAL routine-detail",
+          "sha256": "b9acadefd75230103cd6e49d79087f630856347a16491c045e27a59701fb198a"
+        },
+        {
+          "path": "guest-before/768-routine-preview.png",
+          "label": "BEFORE routine-preview",
+          "sha256": "30e7922a73735dd7799c95fedc897f0c231e5bbdaefef31656053dab2e49029b"
+        },
+        {
+          "path": "guest-after/768-routine-preview.png",
+          "label": "FINAL routine-preview",
+          "sha256": "cfe929bf5b9d41f954dc5d6b4b2e81efea6f583baef1c54e8d50b9a8383e4b98"
+        },
+        {
+          "path": "guest-before/768-routine-preview-second.png",
+          "label": "BEFORE routine-preview-second",
+          "sha256": "3e61666ef8ac0a0b37aaf559409999886d598c379404fedc0f5db0d00e014ef8"
+        },
+        {
+          "path": "guest-after/768-routine-preview-second.png",
+          "label": "FINAL routine-preview-second",
+          "sha256": "8f18457c4d4705ae7795b42f03a9a6b39da83dcec40a496b793f2aa1590d37f6"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/guest-768-pairs-02.png",
+      "title": "FORMA 768px \u00b7 matched guest tour \u00b7 pairs 6\u201310",
+      "pngWidth": 860,
+      "pngHeight": 1750,
+      "sha256": "7b2c02c72083baca98f196ff24680c1473798bb9172c30f887db9249fe6bc5a2",
+      "inputs": [
+        {
+          "path": "guest-before/768-routine-editor.png",
+          "label": "BEFORE routine-editor",
+          "sha256": "c0aa1b871bd0af5abaa977a434eee680deb32a185a1576c510b7d398877512a0"
+        },
+        {
+          "path": "guest-after/768-routine-editor.png",
+          "label": "FINAL routine-editor",
+          "sha256": "9d8ba7f50b6928a41dd3bf362222c88f81ccfa032cf1f03883412ad1af6be4f6"
+        },
+        {
+          "path": "guest-before/768-routine-editor-prescriptions.png",
+          "label": "BEFORE routine-editor-prescriptions",
+          "sha256": "6b41849342e0e7d00d07a1e08df94899c8e3410354bbe7fe1334de08a7f9ccc8"
+        },
+        {
+          "path": "guest-after/768-routine-editor-prescriptions.png",
+          "label": "FINAL routine-editor-prescriptions",
+          "sha256": "318b5a6270b2f2ac6faa21e3014437957cd6debb64eaefa0ad21e974c8d5626c"
+        },
+        {
+          "path": "guest-before/768-routine-library.png",
+          "label": "BEFORE routine-library",
+          "sha256": "d6e9070c42a22b314cecb570d78434bf93a2e554108a7a9f476af8fea5263fa2"
+        },
+        {
+          "path": "guest-after/768-routine-library.png",
+          "label": "FINAL routine-library",
+          "sha256": "d6e9070c42a22b314cecb570d78434bf93a2e554108a7a9f476af8fea5263fa2"
+        },
+        {
+          "path": "guest-before/768-library-search.png",
+          "label": "BEFORE library-search",
+          "sha256": "1399c4112515217cf93cd94d4f6fa84fd6e9fcad4b84a5d862e2f6c326f6bfc4"
+        },
+        {
+          "path": "guest-after/768-library-search.png",
+          "label": "FINAL library-search",
+          "sha256": "93998d7e70ff5ec6d33e458404b381eb9d5d5d31e97c68ba9f1181d87ca021f2"
+        },
+        {
+          "path": "guest-before/768-exercise-guide.png",
+          "label": "BEFORE exercise-guide",
+          "sha256": "043314536a857fab2ed9890b998797e80dadffeb91685b0dda4c50e616da2784"
+        },
+        {
+          "path": "guest-after/768-exercise-guide.png",
+          "label": "FINAL exercise-guide",
+          "sha256": "10136c5d057e31008cedf6ad92b5b0bdd082ff4f2fa219b90a3ef504961737dc"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/guest-768-pairs-03.png",
+      "title": "FORMA 768px \u00b7 matched guest tour \u00b7 pairs 11\u201315",
+      "pngWidth": 860,
+      "pngHeight": 1750,
+      "sha256": "4e2386018c85d55f1e95954ff5af65fa5cb7f2e35208d4a70bf2f7be11043a47",
+      "inputs": [
+        {
+          "path": "guest-before/768-active-workout.png",
+          "label": "BEFORE active-workout",
+          "sha256": "ee56acaf5394942145ac2b3bf98a8312f2c556713b4eaaef9e59306d6ec387ad"
+        },
+        {
+          "path": "guest-after/768-active-workout.png",
+          "label": "FINAL active-workout",
+          "sha256": "ee56acaf5394942145ac2b3bf98a8312f2c556713b4eaaef9e59306d6ec387ad"
+        },
+        {
+          "path": "guest-before/768-rest-timer.png",
+          "label": "BEFORE rest-timer",
+          "sha256": "b63f21f563368cb3cc38f1994bf64e453820dbfcf7358c91697f35780c632ca4"
+        },
+        {
+          "path": "guest-after/768-rest-timer.png",
+          "label": "FINAL rest-timer",
+          "sha256": "b63f21f563368cb3cc38f1994bf64e453820dbfcf7358c91697f35780c632ca4"
+        },
+        {
+          "path": "guest-before/768-hold-ready.png",
+          "label": "BEFORE hold-ready",
+          "sha256": "f2660973ef627c80d3ed107aca9c79dca3f74d33957269912563fbde8bea154e"
+        },
+        {
+          "path": "guest-after/768-hold-ready.png",
+          "label": "FINAL hold-ready",
+          "sha256": "f2660973ef627c80d3ed107aca9c79dca3f74d33957269912563fbde8bea154e"
+        },
+        {
+          "path": "guest-before/768-hold-running.png",
+          "label": "BEFORE hold-running",
+          "sha256": "926545c384e717c381434600d0c254ea9319776e54e6822d01bc47357ef221d2"
+        },
+        {
+          "path": "guest-after/768-hold-running.png",
+          "label": "FINAL hold-running",
+          "sha256": "926545c384e717c381434600d0c254ea9319776e54e6822d01bc47357ef221d2"
+        },
+        {
+          "path": "guest-before/768-hold-paused.png",
+          "label": "BEFORE hold-paused",
+          "sha256": "36ddf0a239c32a61b893241816899f666c1c5c06c484697dbe9fba940ea0b0a4"
+        },
+        {
+          "path": "guest-after/768-hold-paused.png",
+          "label": "FINAL hold-paused",
+          "sha256": "36ddf0a239c32a61b893241816899f666c1c5c06c484697dbe9fba940ea0b0a4"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/guest-768-pairs-04.png",
+      "title": "FORMA 768px \u00b7 matched guest tour \u00b7 pairs 16\u201320",
+      "pngWidth": 860,
+      "pngHeight": 1750,
+      "sha256": "07373c090dc60887fd43d04762ecf7ff0c1116b795f520fc01ed33e792c18827",
+      "inputs": [
+        {
+          "path": "guest-before/768-history.png",
+          "label": "BEFORE history",
+          "sha256": "56d5568eae3ef1a357fce608f25e4b8e43c1fd714e7c7085d0907ca89cfae1b3"
+        },
+        {
+          "path": "guest-after/768-history.png",
+          "label": "FINAL history",
+          "sha256": "56d5568eae3ef1a357fce608f25e4b8e43c1fd714e7c7085d0907ca89cfae1b3"
+        },
+        {
+          "path": "guest-before/768-workout-receipt.png",
+          "label": "BEFORE workout-receipt",
+          "sha256": "c95fae47e76966ddd2c17b619cea2f06572fb391288de8d9afca8cf6c1fe5f42"
+        },
+        {
+          "path": "guest-after/768-workout-receipt.png",
+          "label": "FINAL workout-receipt",
+          "sha256": "c95fae47e76966ddd2c17b619cea2f06572fb391288de8d9afca8cf6c1fe5f42"
+        },
+        {
+          "path": "guest-before/768-history-editor.png",
+          "label": "BEFORE history-editor",
+          "sha256": "ff3c8657abf24fd7699c8eab7c330af29bbb56e19a2fe5950b0477f8f2ce66e7"
+        },
+        {
+          "path": "guest-after/768-history-editor.png",
+          "label": "FINAL history-editor",
+          "sha256": "ff3c8657abf24fd7699c8eab7c330af29bbb56e19a2fe5950b0477f8f2ce66e7"
+        },
+        {
+          "path": "guest-before/768-history-editor-prescriptions.png",
+          "label": "BEFORE history-editor-prescriptions",
+          "sha256": "b27fe2e611decf81d916e23570238f6bb22f8e85ea074d3ad98636ace2d99c93"
+        },
+        {
+          "path": "guest-after/768-history-editor-prescriptions.png",
+          "label": "FINAL history-editor-prescriptions",
+          "sha256": "b27fe2e611decf81d916e23570238f6bb22f8e85ea074d3ad98636ace2d99c93"
+        },
+        {
+          "path": "guest-before/768-progress.png",
+          "label": "BEFORE progress",
+          "sha256": "2fcb47f74c21d58329db8ebca5166131f8cddcf9705d898d1989f88b67928167"
+        },
+        {
+          "path": "guest-after/768-progress.png",
+          "label": "FINAL progress",
+          "sha256": "2fcb47f74c21d58329db8ebca5166131f8cddcf9705d898d1989f88b67928167"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/guest-768-pairs-05.png",
+      "title": "FORMA 768px \u00b7 matched guest tour \u00b7 pairs 21\u201325",
+      "pngWidth": 860,
+      "pngHeight": 1750,
+      "sha256": "f86106413b929a48675c71c4a5c16732815c1413f9828496f6f4cf00f2c14887",
+      "inputs": [
+        {
+          "path": "guest-before/768-settings.png",
+          "label": "BEFORE settings",
+          "sha256": "bd0ba4470962610d8d68fae15e04738f96a635e59dc723f518a83ce005aa8329"
+        },
+        {
+          "path": "guest-after/768-settings.png",
+          "label": "FINAL settings",
+          "sha256": "bd0ba4470962610d8d68fae15e04738f96a635e59dc723f518a83ce005aa8329"
+        },
+        {
+          "path": "guest-before/768-import-review.png",
+          "label": "BEFORE import-review",
+          "sha256": "971e58338ed413d1fe7e5b99e0809932e2f3851f3703c95dc1bcada5edf88a92"
+        },
+        {
+          "path": "guest-after/768-import-review.png",
+          "label": "FINAL import-review",
+          "sha256": "971e58338ed413d1fe7e5b99e0809932e2f3851f3703c95dc1bcada5edf88a92"
+        },
+        {
+          "path": "guest-before/768-export-complete.png",
+          "label": "BEFORE export-complete",
+          "sha256": "1d15a18275783ce04def930b9486c5edac894425d1cc4392d3c55374be2978a8"
+        },
+        {
+          "path": "guest-after/768-export-complete.png",
+          "label": "FINAL export-complete",
+          "sha256": "1d15a18275783ce04def930b9486c5edac894425d1cc4392d3c55374be2978a8"
+        },
+        {
+          "path": "guest-before/768-privacy.png",
+          "label": "BEFORE privacy",
+          "sha256": "64e70f37c9b72e2cfbb68910cdd1cafbb0aeb297ec83897a16703d64337f28a6"
+        },
+        {
+          "path": "guest-after/768-privacy.png",
+          "label": "FINAL privacy",
+          "sha256": "64e70f37c9b72e2cfbb68910cdd1cafbb0aeb297ec83897a16703d64337f28a6"
+        },
+        {
+          "path": "guest-before/768-terms.png",
+          "label": "BEFORE terms",
+          "sha256": "e561c111d0f74d72f3d7822843e8d0d07fcd59efb52ec1cc3d82a97cab418263"
+        },
+        {
+          "path": "guest-after/768-terms.png",
+          "label": "FINAL terms",
+          "sha256": "e561c111d0f74d72f3d7822843e8d0d07fcd59efb52ec1cc3d82a97cab418263"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/guest-768-pairs-06.png",
+      "title": "FORMA 768px \u00b7 matched guest tour \u00b7 pairs 26\u201326",
+      "pngWidth": 860,
+      "pngHeight": 398,
+      "sha256": "3d18e2afe3d0535dda94537ee8dcb30f2e1874f9cb617f936b5a5b6a95b5c7f0",
+      "inputs": [
+        {
+          "path": "guest-before/768-recovery.png",
+          "label": "BEFORE recovery",
+          "sha256": "5b30a875c343a6d2c5954cbf3a482be57fe3ec6f8f6c29fb80f8c1e7b4705380"
+        },
+        {
+          "path": "guest-after/768-recovery.png",
+          "label": "FINAL recovery",
+          "sha256": "5b30a875c343a6d2c5954cbf3a482be57fe3ec6f8f6c29fb80f8c1e7b4705380"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/guest-1536-pairs-01.png",
+      "title": "FORMA 1536px \u00b7 matched guest tour \u00b7 pairs 1\u20135",
+      "pngWidth": 860,
+      "pngHeight": 1750,
+      "sha256": "b496c0d8ce844f0a3bdc20dd470a1fcd9f51578f8ad861862a9b2e7b60862e58",
+      "inputs": [
+        {
+          "path": "guest-before/1536-overview.png",
+          "label": "BEFORE overview",
+          "sha256": "98a30d9f32a0c341325cfefe6e46a1c97adc58c9b419893ad5fa3fe6d268b8bb"
+        },
+        {
+          "path": "guest-after/1536-overview.png",
+          "label": "FINAL overview",
+          "sha256": "98a30d9f32a0c341325cfefe6e46a1c97adc58c9b419893ad5fa3fe6d268b8bb"
+        },
+        {
+          "path": "guest-before/1536-routines.png",
+          "label": "BEFORE routines",
+          "sha256": "ac96b43b0155a4395c67a95dc3815cbf5cb32dfec1fc7cf000a01072fd019f5f"
+        },
+        {
+          "path": "guest-after/1536-routines.png",
+          "label": "FINAL routines",
+          "sha256": "ac96b43b0155a4395c67a95dc3815cbf5cb32dfec1fc7cf000a01072fd019f5f"
+        },
+        {
+          "path": "guest-before/1536-routine-detail.png",
+          "label": "BEFORE routine-detail",
+          "sha256": "8540f1c4ccc63fa03eb74b3649d678e466d8acbb856afa99d451c388bf816543"
+        },
+        {
+          "path": "guest-after/1536-routine-detail.png",
+          "label": "FINAL routine-detail",
+          "sha256": "8540f1c4ccc63fa03eb74b3649d678e466d8acbb856afa99d451c388bf816543"
+        },
+        {
+          "path": "guest-before/1536-routine-preview.png",
+          "label": "BEFORE routine-preview",
+          "sha256": "6eb622221c388297240ffa2510369cdb987db2b99b2965ff51e9ea25d1ee55b2"
+        },
+        {
+          "path": "guest-after/1536-routine-preview.png",
+          "label": "FINAL routine-preview",
+          "sha256": "1d9d69e045c8ae81817e21d3d4858944033f33282ed21364b2153b216c8afb61"
+        },
+        {
+          "path": "guest-before/1536-routine-preview-second.png",
+          "label": "BEFORE routine-preview-second",
+          "sha256": "caa6cb6764e44dd42a0dcb5cc2688ece453bcc142f2685310b8e2acec8989190"
+        },
+        {
+          "path": "guest-after/1536-routine-preview-second.png",
+          "label": "FINAL routine-preview-second",
+          "sha256": "caa6cb6764e44dd42a0dcb5cc2688ece453bcc142f2685310b8e2acec8989190"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/guest-1536-pairs-02.png",
+      "title": "FORMA 1536px \u00b7 matched guest tour \u00b7 pairs 6\u201310",
+      "pngWidth": 860,
+      "pngHeight": 1750,
+      "sha256": "1fd3ef95ae6b378a356dc3eeb30ab352a7a36750087ae6a7c2e143df74dbee18",
+      "inputs": [
+        {
+          "path": "guest-before/1536-routine-editor.png",
+          "label": "BEFORE routine-editor",
+          "sha256": "41e3595f42c1f38d33e142ac2ed586fbcc778fbb40e57edf57bed98811f94414"
+        },
+        {
+          "path": "guest-after/1536-routine-editor.png",
+          "label": "FINAL routine-editor",
+          "sha256": "41e3595f42c1f38d33e142ac2ed586fbcc778fbb40e57edf57bed98811f94414"
+        },
+        {
+          "path": "guest-before/1536-routine-editor-prescriptions.png",
+          "label": "BEFORE routine-editor-prescriptions",
+          "sha256": "a3f1541c55e004d44b3f9e129d8f05fdfb837ed410d8c5ec8f656d5b3d3cd5ba"
+        },
+        {
+          "path": "guest-after/1536-routine-editor-prescriptions.png",
+          "label": "FINAL routine-editor-prescriptions",
+          "sha256": "a3f1541c55e004d44b3f9e129d8f05fdfb837ed410d8c5ec8f656d5b3d3cd5ba"
+        },
+        {
+          "path": "guest-before/1536-routine-library.png",
+          "label": "BEFORE routine-library",
+          "sha256": "54eedbb9deabe75b4a3f65f72950eca8b77a538a25f893f06fd0e8ab69ab4337"
+        },
+        {
+          "path": "guest-after/1536-routine-library.png",
+          "label": "FINAL routine-library",
+          "sha256": "54eedbb9deabe75b4a3f65f72950eca8b77a538a25f893f06fd0e8ab69ab4337"
+        },
+        {
+          "path": "guest-before/1536-library-search.png",
+          "label": "BEFORE library-search",
+          "sha256": "1696792f8f922705be4ff69ea41b647ef961514cc29cd92347be142b01664d55"
+        },
+        {
+          "path": "guest-after/1536-library-search.png",
+          "label": "FINAL library-search",
+          "sha256": "a682521501c233fe68d402c812b5eb3b4331e96ff551bea48da72b62c41c7a97"
+        },
+        {
+          "path": "guest-before/1536-exercise-guide.png",
+          "label": "BEFORE exercise-guide",
+          "sha256": "950aa1f87ce04b3c86af2901995f8c677692e1b7a83e859df0e88e47cd908d81"
+        },
+        {
+          "path": "guest-after/1536-exercise-guide.png",
+          "label": "FINAL exercise-guide",
+          "sha256": "47371803aaf3e65e6d8d0d961e71860154ada2c7d5b3c999424d12509298961a"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/guest-1536-pairs-03.png",
+      "title": "FORMA 1536px \u00b7 matched guest tour \u00b7 pairs 11\u201315",
+      "pngWidth": 860,
+      "pngHeight": 1750,
+      "sha256": "abd126da00f83517415842831b3ebb9f47ac20be5d98e4a05e73ff290d19daa8",
+      "inputs": [
+        {
+          "path": "guest-before/1536-active-workout.png",
+          "label": "BEFORE active-workout",
+          "sha256": "d421f475fedf9201ab3a19efcf308dfd0b8f6cc65f397724ce8f66da1612fec5"
+        },
+        {
+          "path": "guest-after/1536-active-workout.png",
+          "label": "FINAL active-workout",
+          "sha256": "d421f475fedf9201ab3a19efcf308dfd0b8f6cc65f397724ce8f66da1612fec5"
+        },
+        {
+          "path": "guest-before/1536-rest-timer.png",
+          "label": "BEFORE rest-timer",
+          "sha256": "cfeb7449610f430e8e68449ac7ad52048e4e992b82d4bb2fdbb68536f01dcc18"
+        },
+        {
+          "path": "guest-after/1536-rest-timer.png",
+          "label": "FINAL rest-timer",
+          "sha256": "cfeb7449610f430e8e68449ac7ad52048e4e992b82d4bb2fdbb68536f01dcc18"
+        },
+        {
+          "path": "guest-before/1536-hold-ready.png",
+          "label": "BEFORE hold-ready",
+          "sha256": "6f1db00f3c90c12dc4ea5db04440da8bb654b9b693455fdd8c9259cdc472b5d4"
+        },
+        {
+          "path": "guest-after/1536-hold-ready.png",
+          "label": "FINAL hold-ready",
+          "sha256": "6f1db00f3c90c12dc4ea5db04440da8bb654b9b693455fdd8c9259cdc472b5d4"
+        },
+        {
+          "path": "guest-before/1536-hold-running.png",
+          "label": "BEFORE hold-running",
+          "sha256": "710db990af29413538f7d9b849df8781b2f4656fd8465c0e9fe28b5f6524ee8f"
+        },
+        {
+          "path": "guest-after/1536-hold-running.png",
+          "label": "FINAL hold-running",
+          "sha256": "710db990af29413538f7d9b849df8781b2f4656fd8465c0e9fe28b5f6524ee8f"
+        },
+        {
+          "path": "guest-before/1536-hold-paused.png",
+          "label": "BEFORE hold-paused",
+          "sha256": "a86aa1f831db9135e51b72ddd4a9837b5c361ea2443f5b361a0a285b0ec3e66b"
+        },
+        {
+          "path": "guest-after/1536-hold-paused.png",
+          "label": "FINAL hold-paused",
+          "sha256": "a86aa1f831db9135e51b72ddd4a9837b5c361ea2443f5b361a0a285b0ec3e66b"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/guest-1536-pairs-04.png",
+      "title": "FORMA 1536px \u00b7 matched guest tour \u00b7 pairs 16\u201320",
+      "pngWidth": 860,
+      "pngHeight": 1750,
+      "sha256": "c5a26b08896d7962b4045063c34eeb97b9ebc7fa6f841338045e5b12e0c65b1a",
+      "inputs": [
+        {
+          "path": "guest-before/1536-history.png",
+          "label": "BEFORE history",
+          "sha256": "da3ce34ca5591226c3ddf3db9294ab300160b40dd8a78013b6afe4954eb9a370"
+        },
+        {
+          "path": "guest-after/1536-history.png",
+          "label": "FINAL history",
+          "sha256": "da3ce34ca5591226c3ddf3db9294ab300160b40dd8a78013b6afe4954eb9a370"
+        },
+        {
+          "path": "guest-before/1536-workout-receipt.png",
+          "label": "BEFORE workout-receipt",
+          "sha256": "a294d7294a3414f75c2b1e87ffe5490e0aa36761f1c144e2a63e1ae7c5ea52cc"
+        },
+        {
+          "path": "guest-after/1536-workout-receipt.png",
+          "label": "FINAL workout-receipt",
+          "sha256": "a294d7294a3414f75c2b1e87ffe5490e0aa36761f1c144e2a63e1ae7c5ea52cc"
+        },
+        {
+          "path": "guest-before/1536-history-editor.png",
+          "label": "BEFORE history-editor",
+          "sha256": "ce4329a5e4f4ac4b1e4d49e2e8c8308b099af82c8d00afc4a50aa5125891ee3e"
+        },
+        {
+          "path": "guest-after/1536-history-editor.png",
+          "label": "FINAL history-editor",
+          "sha256": "ce4329a5e4f4ac4b1e4d49e2e8c8308b099af82c8d00afc4a50aa5125891ee3e"
+        },
+        {
+          "path": "guest-before/1536-history-editor-prescriptions.png",
+          "label": "BEFORE history-editor-prescriptions",
+          "sha256": "54579f41d0a4994ae0bfed3ab5f9266b906e6a53512770f8f875da334a86e399"
+        },
+        {
+          "path": "guest-after/1536-history-editor-prescriptions.png",
+          "label": "FINAL history-editor-prescriptions",
+          "sha256": "54579f41d0a4994ae0bfed3ab5f9266b906e6a53512770f8f875da334a86e399"
+        },
+        {
+          "path": "guest-before/1536-progress.png",
+          "label": "BEFORE progress",
+          "sha256": "424b2d4c5b1623ad9e77a1d3ab013d0a7592397b2e5ad62a3fde6176376e16e0"
+        },
+        {
+          "path": "guest-after/1536-progress.png",
+          "label": "FINAL progress",
+          "sha256": "424b2d4c5b1623ad9e77a1d3ab013d0a7592397b2e5ad62a3fde6176376e16e0"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/guest-1536-pairs-05.png",
+      "title": "FORMA 1536px \u00b7 matched guest tour \u00b7 pairs 21\u201325",
+      "pngWidth": 860,
+      "pngHeight": 1750,
+      "sha256": "066c9b18a6453ca04da1bf122241f480585710827e890bf9b6e86c8dfe918a1a",
+      "inputs": [
+        {
+          "path": "guest-before/1536-settings.png",
+          "label": "BEFORE settings",
+          "sha256": "94294e75acba3ef867b63b67308c5bfc296e9d13eaebe06acd0038890de5a329"
+        },
+        {
+          "path": "guest-after/1536-settings.png",
+          "label": "FINAL settings",
+          "sha256": "94294e75acba3ef867b63b67308c5bfc296e9d13eaebe06acd0038890de5a329"
+        },
+        {
+          "path": "guest-before/1536-import-review.png",
+          "label": "BEFORE import-review",
+          "sha256": "e52ce155ff93fae29a411e0a90815a04fe9cfc08aaec80944813598851e83ed5"
+        },
+        {
+          "path": "guest-after/1536-import-review.png",
+          "label": "FINAL import-review",
+          "sha256": "e52ce155ff93fae29a411e0a90815a04fe9cfc08aaec80944813598851e83ed5"
+        },
+        {
+          "path": "guest-before/1536-export-complete.png",
+          "label": "BEFORE export-complete",
+          "sha256": "8e723691bc9b36f4a2885da94d83beae96d95490ac9ed5ac4bcd6fa2de0e7e82"
+        },
+        {
+          "path": "guest-after/1536-export-complete.png",
+          "label": "FINAL export-complete",
+          "sha256": "b120aa642329a4483e559c82ce2c94b9fd2c014728b1e557b33d5c384ad39a7e"
+        },
+        {
+          "path": "guest-before/1536-privacy.png",
+          "label": "BEFORE privacy",
+          "sha256": "5f2673f63750cc7db7e93601b2b8b9ee21265e4639b4957406de6eb6a106349e"
+        },
+        {
+          "path": "guest-after/1536-privacy.png",
+          "label": "FINAL privacy",
+          "sha256": "5f2673f63750cc7db7e93601b2b8b9ee21265e4639b4957406de6eb6a106349e"
+        },
+        {
+          "path": "guest-before/1536-terms.png",
+          "label": "BEFORE terms",
+          "sha256": "3662c443827d379f1a51f9ff64a03e8e072d41fcafba4f771bedf1c452e0730e"
+        },
+        {
+          "path": "guest-after/1536-terms.png",
+          "label": "FINAL terms",
+          "sha256": "3662c443827d379f1a51f9ff64a03e8e072d41fcafba4f771bedf1c452e0730e"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/guest-1536-pairs-06.png",
+      "title": "FORMA 1536px \u00b7 matched guest tour \u00b7 pairs 26\u201326",
+      "pngWidth": 860,
+      "pngHeight": 398,
+      "sha256": "001e329d7090d46cef788112fc1ce8965f5d22cf9d5bff933fff4f4bbae2c291",
+      "inputs": [
+        {
+          "path": "guest-before/1536-recovery.png",
+          "label": "BEFORE recovery",
+          "sha256": "df4adbeb604b6e897ff4f971d640265a6c2304a7f2e3f57805a79122799d040a"
+        },
+        {
+          "path": "guest-after/1536-recovery.png",
+          "label": "FINAL recovery",
+          "sha256": "df4adbeb604b6e897ff4f971d640265a6c2304a7f2e3f57805a79122799d040a"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/account-390-pairs-01.png",
+      "title": "FORMA account 390px \u00b7 matched pairs 1\u20134",
+      "pngWidth": 860,
+      "pngHeight": 1412,
+      "sha256": "e96f2868cf795f8130ed0372c413335f5ce92e1e2c29cda2b94c30ea84019e84",
+      "inputs": [
+        {
+          "path": "account-before/390-account-overview.png",
+          "label": "BEFORE account-overview",
+          "sha256": "5550f7f2c0e748434bd7373d0b57a8bff41bd8b293eadc90bbc380939326675e"
+        },
+        {
+          "path": "account-after/390-account-overview.png",
+          "label": "AFTER account-overview",
+          "sha256": "742bba34fd61eb7b21d831f03201be412234b81afe0edfda353a77401462a0f4"
+        },
+        {
+          "path": "account-before/390-account-profile.png",
+          "label": "BEFORE account-profile",
+          "sha256": "1d143153f59384170693c5b22d3a3fa51a28568110cd728cddf2cb28cc0eb088"
+        },
+        {
+          "path": "account-after/390-account-profile.png",
+          "label": "AFTER account-profile",
+          "sha256": "8c7adb17d53d20cebc814411c5fd6f89c4ffa5a3efef9e0968721ab7b24e4aa6"
+        },
+        {
+          "path": "account-before/390-account-security.png",
+          "label": "BEFORE account-security",
+          "sha256": "9c11d0191f690ceed1be3b694c7a70e931716492d25055196997447a9d7d427e"
+        },
+        {
+          "path": "account-after/390-account-security.png",
+          "label": "AFTER account-security",
+          "sha256": "bfd9ad6d949537ad8f7fb2cb906e9b35451ae1ed32630a792c9dcaa3f59db01e"
+        },
+        {
+          "path": "account-before/390-account-training.png",
+          "label": "BEFORE account-training",
+          "sha256": "90009ce5b14f6bfac67e6dd61c6b1d6ad973dce41190629ea72de42af2271b81"
+        },
+        {
+          "path": "account-after/390-account-training.png",
+          "label": "AFTER account-training",
+          "sha256": "c9717c85fd312ff8a0762546683660ffb572e1e3c273e0a83ca48638ff2c8762"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/account-390-pairs-02.png",
+      "title": "FORMA account 390px \u00b7 matched pairs 5\u20138",
+      "pngWidth": 860,
+      "pngHeight": 1412,
+      "sha256": "375d0a1dc4ece322297f145d3f927638335f9c8cf05c8de325bcb295e9ead5a7",
+      "inputs": [
+        {
+          "path": "account-before/390-account-privacy.png",
+          "label": "BEFORE account-privacy",
+          "sha256": "616b3b1bffeee1e5defbc6c6bf338c473261c2e059657ca9fe0154065d85cc00"
+        },
+        {
+          "path": "account-after/390-account-privacy.png",
+          "label": "AFTER account-privacy",
+          "sha256": "704c129317165b8a82d9300fe7603f988a81de7702ea1d6e647aea3a392af108"
+        },
+        {
+          "path": "account-before/390-account-delete-review.png",
+          "label": "BEFORE account-delete-review",
+          "sha256": "82ef09df9229c250fd3ed1aba8f0ab00c54a7100ab337e3a43bdb6f51d960224"
+        },
+        {
+          "path": "account-after/390-account-delete-review.png",
+          "label": "AFTER account-delete-review",
+          "sha256": "d8698183cd5ed023cefed92011d6e88bff1539b4a939cfa6de1d812ab34fd19d"
+        },
+        {
+          "path": "account-before/390-account-import-review.png",
+          "label": "BEFORE account-import-review",
+          "sha256": "4fb26fd0d5a5b7d3ec217e0faaa58ef54151a87b1f7556c9064aef29925f9f40"
+        },
+        {
+          "path": "account-after/390-account-import-review.png",
+          "label": "AFTER account-import-review",
+          "sha256": "1f19b1633a5ca6da281895c7f50571d4fe68ff2576cd9520126572b200b90358"
+        },
+        {
+          "path": "account-before/390-auth-signin.png",
+          "label": "BEFORE auth-signin",
+          "sha256": "783b752a20cfa4e380e28e32436c60321e0e5250e43ba84c95cbca1dbf0412a0"
+        },
+        {
+          "path": "account-after/390-auth-signin.png",
+          "label": "AFTER auth-signin",
+          "sha256": "fc25c0a3c46fbe48a51e82f6112aa93e4cc943452bd2e1d56d7dd17c435ca581"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/account-390-pairs-03.png",
+      "title": "FORMA account 390px \u00b7 matched pairs 9\u201312",
+      "pngWidth": 860,
+      "pngHeight": 1412,
+      "sha256": "8c98fbf8155608dcf19ffe5595ec2d7aefba8145682d5abcc1906aae546f440a",
+      "inputs": [
+        {
+          "path": "account-before/390-auth-signup.png",
+          "label": "BEFORE auth-signup",
+          "sha256": "d428cb577049c2462227a3ff43f96ea53d3b4cad669501cfc2761c20a9320d51"
+        },
+        {
+          "path": "account-after/390-auth-signup.png",
+          "label": "AFTER auth-signup",
+          "sha256": "0eef8e3c8d36c5995853bb05997f501712c4613c477f1e86b0baa2017cf6808d"
+        },
+        {
+          "path": "account-before/390-auth-forgot.png",
+          "label": "BEFORE auth-forgot",
+          "sha256": "abffa98b6545e9bffda472dae4d46d703ec207fd3e0c26b8e68ec29789ba9a78"
+        },
+        {
+          "path": "account-after/390-auth-forgot.png",
+          "label": "AFTER auth-forgot",
+          "sha256": "c8c04c94faddc1b2de91dc1e96d1411a82c6d425c09465aebd4460c224fe2d39"
+        },
+        {
+          "path": "account-before/390-cloud-unavailable.png",
+          "label": "BEFORE cloud-unavailable",
+          "sha256": "aeb5dd1a13692bc52f25fb7927fb6dc1d13c4b83cbca84dc3b4eb5c13ccd5e5d"
+        },
+        {
+          "path": "account-after/390-cloud-unavailable.png",
+          "label": "AFTER cloud-unavailable",
+          "sha256": "aeb5dd1a13692bc52f25fb7927fb6dc1d13c4b83cbca84dc3b4eb5c13ccd5e5d"
+        },
+        {
+          "path": "account-before/390-cloud-loading.png",
+          "label": "BEFORE cloud-loading",
+          "sha256": "1bf98a9b61beb7c89928a6aa269f465ca1f49b14af1b4e13999614bbab161b16"
+        },
+        {
+          "path": "account-after/390-cloud-loading.png",
+          "label": "AFTER cloud-loading",
+          "sha256": "1bf98a9b61beb7c89928a6aa269f465ca1f49b14af1b4e13999614bbab161b16"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/account-390-pairs-04.png",
+      "title": "FORMA account 390px \u00b7 matched pairs 13\u201316",
+      "pngWidth": 860,
+      "pngHeight": 1412,
+      "sha256": "11fa7a2fdf3ccfe1a838467fb65060b2f85f3e810bcf87d08c60f31c68886b6a",
+      "inputs": [
+        {
+          "path": "account-before/390-cloud-conflict.png",
+          "label": "BEFORE cloud-conflict",
+          "sha256": "a1cdb2b32bcc67a1a4be439ce838c6fb3b044077787642a4babc15eeb4c3a4b2"
+        },
+        {
+          "path": "account-after/390-cloud-conflict.png",
+          "label": "AFTER cloud-conflict",
+          "sha256": "8ecde368766a55aadc00a170d4c1842907b89aa01a4df4a43a524d1a47403784"
+        },
+        {
+          "path": "account-before/390-cloud-pending-save.png",
+          "label": "BEFORE cloud-pending-save",
+          "sha256": "107eab20481a877ced324934de2d95155b40c8de7eafb3ea67be86a4e3c547f3"
+        },
+        {
+          "path": "account-after/390-cloud-pending-save.png",
+          "label": "AFTER cloud-pending-save",
+          "sha256": "97382f6b8a7aea33ed9c2017c38b15bcb99d6e70c76ad5aae2f7672235ae07be"
+        },
+        {
+          "path": "account-before/390-cloud-save-error.png",
+          "label": "BEFORE cloud-save-error",
+          "sha256": "e2e8708b6ed61bdfdcfdef1018de76b5e7ad1cd94a9b8cef35f82f2e1cf3c1a0"
+        },
+        {
+          "path": "account-after/390-cloud-save-error.png",
+          "label": "AFTER cloud-save-error",
+          "sha256": "d270a0ead70fa6c7b469b2be41110d5366f74be436ca79ad1b7425cbc49b32dc"
+        },
+        {
+          "path": "account-before/390-session-error.png",
+          "label": "BEFORE session-error",
+          "sha256": "7ae2434070913ae94bcb81411df1530947a20e44ac0c8e378f96e428c82d7104"
+        },
+        {
+          "path": "account-after/390-session-error.png",
+          "label": "AFTER session-error",
+          "sha256": "7ae2434070913ae94bcb81411df1530947a20e44ac0c8e378f96e428c82d7104"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/account-768-pairs-01.png",
+      "title": "FORMA account 768px \u00b7 matched pairs 1\u20134",
+      "pngWidth": 860,
+      "pngHeight": 1412,
+      "sha256": "5b5e61a2351e0367aee2174f080e038c7a692d079e5031f2fe832d8eb347c224",
+      "inputs": [
+        {
+          "path": "account-before/768-account-overview.png",
+          "label": "BEFORE account-overview",
+          "sha256": "0aaf66b4803306da82e3163b6964eb2b398080b8b521ada890b30360b08b33d0"
+        },
+        {
+          "path": "account-after/768-account-overview.png",
+          "label": "AFTER account-overview",
+          "sha256": "f60936591c755b2749f5e490263f6c60de0555d81d47938ce755a674b43ca695"
+        },
+        {
+          "path": "account-before/768-account-profile.png",
+          "label": "BEFORE account-profile",
+          "sha256": "26c1e89825c39bfddcb244ae43060ab97bda82e72a88eab554e7b8195225f1cc"
+        },
+        {
+          "path": "account-after/768-account-profile.png",
+          "label": "AFTER account-profile",
+          "sha256": "dc6803f142215c596c828d695aaebfc25bbb06c15b2f2bd2a9f6cf7c437921a9"
+        },
+        {
+          "path": "account-before/768-account-security.png",
+          "label": "BEFORE account-security",
+          "sha256": "d4d45035f6c2bf11fe1269dae005ea9feac317d9ce811f2be67c42a7c2de85ef"
+        },
+        {
+          "path": "account-after/768-account-security.png",
+          "label": "AFTER account-security",
+          "sha256": "bad1499d1d2fa32d7062028f53a153eed7d1a39fcbf0f942be09ee9851131c2f"
+        },
+        {
+          "path": "account-before/768-account-training.png",
+          "label": "BEFORE account-training",
+          "sha256": "763b4064a2aaae78e23b3672d02164d23cab2a15461ae5c283ffe091db958fcc"
+        },
+        {
+          "path": "account-after/768-account-training.png",
+          "label": "AFTER account-training",
+          "sha256": "d896101d403daff66af86be255f7e33a79a5529c545bf158c9ee2b3ca57dd220"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/account-768-pairs-02.png",
+      "title": "FORMA account 768px \u00b7 matched pairs 5\u20138",
+      "pngWidth": 860,
+      "pngHeight": 1412,
+      "sha256": "b7fbe8d4b1c6918010890aa67c6e5c65a429b24a1fecf8686bfd2d4b9771897a",
+      "inputs": [
+        {
+          "path": "account-before/768-account-privacy.png",
+          "label": "BEFORE account-privacy",
+          "sha256": "75440daa46640c45c3a3c8cf032dcefa47ddac6899c8bd4d77b6c41b67587f45"
+        },
+        {
+          "path": "account-after/768-account-privacy.png",
+          "label": "AFTER account-privacy",
+          "sha256": "467a80643214a3d80e5500ddc64dec44830cf8e7c629dd38ff638df8257ed9dc"
+        },
+        {
+          "path": "account-before/768-account-delete-review.png",
+          "label": "BEFORE account-delete-review",
+          "sha256": "708d946ad14c2f0c0982de3b1dd052dfd5fcce6bf696c57025f1a44578b486ef"
+        },
+        {
+          "path": "account-after/768-account-delete-review.png",
+          "label": "AFTER account-delete-review",
+          "sha256": "1f0013713c90d92c139c94f8058fef0e51205210d55798f00d506444ff6326e2"
+        },
+        {
+          "path": "account-before/768-account-import-review.png",
+          "label": "BEFORE account-import-review",
+          "sha256": "d7c47711835c56224806171143dec286ee0fbe659fb9d6dd151c941619a644a3"
+        },
+        {
+          "path": "account-after/768-account-import-review.png",
+          "label": "AFTER account-import-review",
+          "sha256": "9143489efdf3e1843c04a5465bfee23324105ac1e6e5a49500fda78ac946b42a"
+        },
+        {
+          "path": "account-before/768-auth-signin.png",
+          "label": "BEFORE auth-signin",
+          "sha256": "b58d77a12f39eb921aff683b81f470f4c54e6d94f26f68ec647dc566d73809b4"
+        },
+        {
+          "path": "account-after/768-auth-signin.png",
+          "label": "AFTER auth-signin",
+          "sha256": "35f90d600d2f8d7ffed815892bc53208334ef79738a44d4f14451baeea45de0c"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/account-768-pairs-03.png",
+      "title": "FORMA account 768px \u00b7 matched pairs 9\u201312",
+      "pngWidth": 860,
+      "pngHeight": 1412,
+      "sha256": "f6eb83340076aed1bf3ee60a368d32edfebc7513d64d34474f491589b9b5a9c2",
+      "inputs": [
+        {
+          "path": "account-before/768-auth-signup.png",
+          "label": "BEFORE auth-signup",
+          "sha256": "8c919098639472d71daff84ff9842b8ea8fa9b0eacf4d68b8b631b4c99b5c1d3"
+        },
+        {
+          "path": "account-after/768-auth-signup.png",
+          "label": "AFTER auth-signup",
+          "sha256": "7606b2c4e286d8939fa2cd931093eccc6a8e609ded5cf87965e2a8fbe8974661"
+        },
+        {
+          "path": "account-before/768-auth-forgot.png",
+          "label": "BEFORE auth-forgot",
+          "sha256": "5c8dc5ebc7206b189b2de185074fe17c9839ded6c6531d1b3ad9f5b686ff4101"
+        },
+        {
+          "path": "account-after/768-auth-forgot.png",
+          "label": "AFTER auth-forgot",
+          "sha256": "a8b02d9df57bd9135618a2e66ec21608b3a4aeaef572cf4ae3149a6fe41e37fa"
+        },
+        {
+          "path": "account-before/768-cloud-unavailable.png",
+          "label": "BEFORE cloud-unavailable",
+          "sha256": "e9c523aa120a735c3b017b5d461583bd3bd2812e487ec1aaa3c8708cfc38529b"
+        },
+        {
+          "path": "account-after/768-cloud-unavailable.png",
+          "label": "AFTER cloud-unavailable",
+          "sha256": "e9c523aa120a735c3b017b5d461583bd3bd2812e487ec1aaa3c8708cfc38529b"
+        },
+        {
+          "path": "account-before/768-cloud-loading.png",
+          "label": "BEFORE cloud-loading",
+          "sha256": "73e7df3168e1ff0218a6fd4c74448960abf8dfd21d39164731e173102c3105a3"
+        },
+        {
+          "path": "account-after/768-cloud-loading.png",
+          "label": "AFTER cloud-loading",
+          "sha256": "73e7df3168e1ff0218a6fd4c74448960abf8dfd21d39164731e173102c3105a3"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/account-768-pairs-04.png",
+      "title": "FORMA account 768px \u00b7 matched pairs 13\u201316",
+      "pngWidth": 860,
+      "pngHeight": 1412,
+      "sha256": "c76f900baf0728bd30e985bbacb340256b3cc1b5de6709e6f9c02abe6b80108f",
+      "inputs": [
+        {
+          "path": "account-before/768-cloud-conflict.png",
+          "label": "BEFORE cloud-conflict",
+          "sha256": "445ffc82424c63575ff9e49cc413a7b2034d85c02e85705769d248997f5e6214"
+        },
+        {
+          "path": "account-after/768-cloud-conflict.png",
+          "label": "AFTER cloud-conflict",
+          "sha256": "906eba9256767cb45b841381ca3f97cef157c75fe311d7161284eb60c43e8f5d"
+        },
+        {
+          "path": "account-before/768-cloud-pending-save.png",
+          "label": "BEFORE cloud-pending-save",
+          "sha256": "5abc31b0a5a61ca67f1378ef9b7c307449d2044ef094a3012f0e100412210a36"
+        },
+        {
+          "path": "account-after/768-cloud-pending-save.png",
+          "label": "AFTER cloud-pending-save",
+          "sha256": "fabd7ffa4ae03eb0194b803eeba10bc4bf6c81a58d5cdd9937da645d116f909f"
+        },
+        {
+          "path": "account-before/768-cloud-save-error.png",
+          "label": "BEFORE cloud-save-error",
+          "sha256": "bf6c4bab0ba853a086eb425ac7f3da85ab20d261706a418a4f8c4cc289a28f0c"
+        },
+        {
+          "path": "account-after/768-cloud-save-error.png",
+          "label": "AFTER cloud-save-error",
+          "sha256": "aca40997c386791ca3df4cf66482b43510a26febbf0f912c971b3a816a474587"
+        },
+        {
+          "path": "account-before/768-session-error.png",
+          "label": "BEFORE session-error",
+          "sha256": "1aec54965b9ffec27229ef9a4cf6d67c67503a32d4d046ab62d68c9a11b28076"
+        },
+        {
+          "path": "account-after/768-session-error.png",
+          "label": "AFTER session-error",
+          "sha256": "1aec54965b9ffec27229ef9a4cf6d67c67503a32d4d046ab62d68c9a11b28076"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/account-1440-pairs-01.png",
+      "title": "FORMA account 1440px \u00b7 matched pairs 1\u20134",
+      "pngWidth": 860,
+      "pngHeight": 1412,
+      "sha256": "2379039eb6e9df5a8d31008d1e028ee74ffb038ccb5d9a06162a4e0977fbb168",
+      "inputs": [
+        {
+          "path": "account-before/1440-account-overview.png",
+          "label": "BEFORE account-overview",
+          "sha256": "d8afa98b802ed8228d53be41b68695f3baa3a0a9479cef5201644e1dda217e8b"
+        },
+        {
+          "path": "account-after/1440-account-overview.png",
+          "label": "AFTER account-overview",
+          "sha256": "aeeac3c5cd7c905774f462d21dc9f96edeb946e4fd6f280f1244ca226d0a0c8c"
+        },
+        {
+          "path": "account-before/1440-account-profile.png",
+          "label": "BEFORE account-profile",
+          "sha256": "a758af49496d0fa9effbea4ab69a6807ba3b4dc103a604cea97208a32e4351cc"
+        },
+        {
+          "path": "account-after/1440-account-profile.png",
+          "label": "AFTER account-profile",
+          "sha256": "c297d92083b549609c784686389b7436f241df14bcacd1bb4cf47cd494b612b9"
+        },
+        {
+          "path": "account-before/1440-account-security.png",
+          "label": "BEFORE account-security",
+          "sha256": "34e3033d96625492b6a3df1ab5ca6fc570a7eb2a0dadaaf9b7016a95c35a965c"
+        },
+        {
+          "path": "account-after/1440-account-security.png",
+          "label": "AFTER account-security",
+          "sha256": "34e3033d96625492b6a3df1ab5ca6fc570a7eb2a0dadaaf9b7016a95c35a965c"
+        },
+        {
+          "path": "account-before/1440-account-training.png",
+          "label": "BEFORE account-training",
+          "sha256": "4ff22689c2903ee19d08d5e66c67162b1ea5176f707553a70e501e97903480ca"
+        },
+        {
+          "path": "account-after/1440-account-training.png",
+          "label": "AFTER account-training",
+          "sha256": "4ff22689c2903ee19d08d5e66c67162b1ea5176f707553a70e501e97903480ca"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/account-1440-pairs-02.png",
+      "title": "FORMA account 1440px \u00b7 matched pairs 5\u20138",
+      "pngWidth": 860,
+      "pngHeight": 1412,
+      "sha256": "d611cae53f26e8dbc96892e169d2be100d8b5f241e72f2330190c9344d853039",
+      "inputs": [
+        {
+          "path": "account-before/1440-account-privacy.png",
+          "label": "BEFORE account-privacy",
+          "sha256": "b9a33a5ce478ed96db41db29bbf78e91073c6f5f5769ad414dac34dd63f15f7d"
+        },
+        {
+          "path": "account-after/1440-account-privacy.png",
+          "label": "AFTER account-privacy",
+          "sha256": "b9a33a5ce478ed96db41db29bbf78e91073c6f5f5769ad414dac34dd63f15f7d"
+        },
+        {
+          "path": "account-before/1440-account-delete-review.png",
+          "label": "BEFORE account-delete-review",
+          "sha256": "f773fa49ca10d4350196620bcbc96765ddd7b315de8d127135ac2b389acb6e92"
+        },
+        {
+          "path": "account-after/1440-account-delete-review.png",
+          "label": "AFTER account-delete-review",
+          "sha256": "f773fa49ca10d4350196620bcbc96765ddd7b315de8d127135ac2b389acb6e92"
+        },
+        {
+          "path": "account-before/1440-account-import-review.png",
+          "label": "BEFORE account-import-review",
+          "sha256": "f115d49bf22d636b791e91dac48fc674e123a80203fe8638fa98d84f28ecba76"
+        },
+        {
+          "path": "account-after/1440-account-import-review.png",
+          "label": "AFTER account-import-review",
+          "sha256": "f115d49bf22d636b791e91dac48fc674e123a80203fe8638fa98d84f28ecba76"
+        },
+        {
+          "path": "account-before/1440-auth-signin.png",
+          "label": "BEFORE auth-signin",
+          "sha256": "1a9cdc104b10d730f4ef2c34e11a6e5f84ad067fb8c4f9b2c421b9570471ed02"
+        },
+        {
+          "path": "account-after/1440-auth-signin.png",
+          "label": "AFTER auth-signin",
+          "sha256": "4c33429c91dd5271a633cf6700a48041d02ee222158e49da225c07315455dc77"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/account-1440-pairs-03.png",
+      "title": "FORMA account 1440px \u00b7 matched pairs 9\u201312",
+      "pngWidth": 860,
+      "pngHeight": 1412,
+      "sha256": "95d501affbf508f6b66f141ddfe0b5bab3b41959dd60c463ab674a557094942a",
+      "inputs": [
+        {
+          "path": "account-before/1440-auth-signup.png",
+          "label": "BEFORE auth-signup",
+          "sha256": "353cdd506c970104d87ecf9379c38084ce65f2f27b117df370c5ec93f30e41b4"
+        },
+        {
+          "path": "account-after/1440-auth-signup.png",
+          "label": "AFTER auth-signup",
+          "sha256": "6f5b8991a55d5f8695b3a5691ea2e69457903d9f5e1cc8c45d7bcf428a89d11e"
+        },
+        {
+          "path": "account-before/1440-auth-forgot.png",
+          "label": "BEFORE auth-forgot",
+          "sha256": "6eedf9dee40803c9c78b89214685b99bb6f6e56f2b3fdc776e57cba41e0c1c04"
+        },
+        {
+          "path": "account-after/1440-auth-forgot.png",
+          "label": "AFTER auth-forgot",
+          "sha256": "dee04124d4812d35a015fd73c0674f67d1b571d49ea4fc5053399110aea40b2d"
+        },
+        {
+          "path": "account-before/1440-cloud-unavailable.png",
+          "label": "BEFORE cloud-unavailable",
+          "sha256": "249d799167a5366cb4e8b9187b40a660a6e9ee4ef7c1a3b78674df66b78bf33d"
+        },
+        {
+          "path": "account-after/1440-cloud-unavailable.png",
+          "label": "AFTER cloud-unavailable",
+          "sha256": "249d799167a5366cb4e8b9187b40a660a6e9ee4ef7c1a3b78674df66b78bf33d"
+        },
+        {
+          "path": "account-before/1440-cloud-loading.png",
+          "label": "BEFORE cloud-loading",
+          "sha256": "63b03753447cccee945a0f5237e803986b8eb428b7245fe09212f7796dc7b89e"
+        },
+        {
+          "path": "account-after/1440-cloud-loading.png",
+          "label": "AFTER cloud-loading",
+          "sha256": "63b03753447cccee945a0f5237e803986b8eb428b7245fe09212f7796dc7b89e"
+        }
+      ]
+    },
+    {
+      "path": "contact-sheets/account-1440-pairs-04.png",
+      "title": "FORMA account 1440px \u00b7 matched pairs 13\u201316",
+      "pngWidth": 860,
+      "pngHeight": 1412,
+      "sha256": "34df6b0409aefc1a84a64711ff34415c26dffb43351195aa4bd3db77e9b96528",
+      "inputs": [
+        {
+          "path": "account-before/1440-cloud-conflict.png",
+          "label": "BEFORE cloud-conflict",
+          "sha256": "2b93532bf29b2ced9415100d0c16c842656c81d9ec810247ebb2a99a211eb68e"
+        },
+        {
+          "path": "account-after/1440-cloud-conflict.png",
+          "label": "AFTER cloud-conflict",
+          "sha256": "2a587f29456eaf618b62c101aeea401d6caa1dd06ee6d60aebfc9dc8a9481aa9"
+        },
+        {
+          "path": "account-before/1440-cloud-pending-save.png",
+          "label": "BEFORE cloud-pending-save",
+          "sha256": "8d444c4a2a2e108da0964eae0106da5b50ed7124c8da5cea7b4fe2a5f8ca7953"
+        },
+        {
+          "path": "account-after/1440-cloud-pending-save.png",
+          "label": "AFTER cloud-pending-save",
+          "sha256": "8d444c4a2a2e108da0964eae0106da5b50ed7124c8da5cea7b4fe2a5f8ca7953"
+        },
+        {
+          "path": "account-before/1440-cloud-save-error.png",
+          "label": "BEFORE cloud-save-error",
+          "sha256": "c153ee7ee30c8da012d9686f5151aca1eb5db67233644e2632dd517289300832"
+        },
+        {
+          "path": "account-after/1440-cloud-save-error.png",
+          "label": "AFTER cloud-save-error",
+          "sha256": "64098574534fd8c1239f17d75f01c3448cfa85fcce1350f956159a85188f44ff"
+        },
+        {
+          "path": "account-before/1440-session-error.png",
+          "label": "BEFORE session-error",
+          "sha256": "ee69d9860f3da4b5d9a25015d6067dca3761ebc26cc5164e8ac29f4c1745b7fc"
+        },
+        {
+          "path": "account-after/1440-session-error.png",
+          "label": "AFTER session-error",
+          "sha256": "ee69d9860f3da4b5d9a25015d6067dca3761ebc26cc5164e8ac29f4c1745b7fc"
+        }
+      ]
+    }
+  ]
+}

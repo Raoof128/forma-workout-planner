@@ -493,6 +493,8 @@ export default function Account({
   const [profileAction, setProfileAction] = useState(null);
   const [profileMessage, setProfileMessage] = useState("");
   const [profileError, setProfileError] = useState("");
+  const savedProfile = useRef(null);
+  const profileEditGeneration = useRef(0);
   const [passwordFields, setPasswordFields] = useState({
     current: "",
     next: "",
@@ -540,6 +542,7 @@ export default function Account({
   const [dataMessage, setDataMessage] = useState("");
   const [dataError, setDataError] = useState("");
   const [syncError, setSyncError] = useState("");
+  const [syncBusy, setSyncBusy] = useState(false);
   const [conflictAck, setConflictAck] = useState(false);
   const [importDraft, setImportDraft] = useState(null);
   const importSequence = useRef(0);
@@ -625,6 +628,7 @@ export default function Account({
   const userName = account.user?.name;
   const userEmail = account.user?.email;
   const workspaceName = workspace?.data?.profile?.name;
+  const profileGoal = workspace?.data?.profile?.goal;
   const listSessions = account.listSessions;
   async function refreshSessions() {
     if (!listSessions) return;
@@ -640,13 +644,28 @@ export default function Account({
   }
   useEffect(() => {
     if (!userId) return;
-    setName(workspaceName || userName || "");
-    setEmail(userEmail || "");
-  }, [userId, userName, userEmail, workspaceName]);
-  useEffect(() => {
-    const storedGoal = Number(workspace?.data?.profile?.goal);
-    if (storedGoal >= 1 && storedGoal <= 7) setGoal(storedGoal);
-  }, [workspace?.data?.profile?.goal]);
+    const storedGoal = Number(profileGoal);
+    const next = {
+      owner: userId,
+      name: workspaceName || userName || "",
+      email: userEmail || "",
+      goal: storedGoal >= 1 && storedGoal <= 7 ? storedGoal : 3,
+    };
+    const previous = savedProfile.current;
+    const changedOwner = previous?.owner !== userId;
+    // Acknowledgements and background reads advance saved values without
+    // replacing text the member has edited since that saved version.
+    setName((draft) =>
+      changedOwner || draft === previous.name ? next.name : draft,
+    );
+    setEmail((draft) =>
+      changedOwner || draft === previous.email ? next.email : draft,
+    );
+    setGoal((draft) =>
+      changedOwner || draft === previous.goal ? next.goal : draft,
+    );
+    savedProfile.current = next;
+  }, [userId, userName, userEmail, workspaceName, profileGoal]);
   useEffect(() => {
     if (section !== "security" || !userId || !listSessions) return;
     let current = true;
@@ -803,16 +822,19 @@ export default function Account({
 
   async function saveProfile(event) {
     event.preventDefault();
+    if (profileBusy) return;
+    const submittedGeneration = profileEditGeneration.current;
+    const nextName = name.trim();
+    const nextGoal = Number(goal);
     setProfileBusy(true);
     setProfileAction("profile");
     setProfileError("");
     setProfileMessage("");
     try {
-      const nextName = name.trim();
       const currentWorkspaceName = data.profile?.name || account.user.name;
       const workspaceNameChanged = nextName !== currentWorkspaceName;
       const accountNameChanged = nextName !== account.user.name;
-      const goalChanged = Number(goal) !== Number(data.profile?.goal);
+      const goalChanged = nextGoal !== Number(data.profile?.goal);
       if (workspaceNameChanged || goalChanged) {
         await workspace.commit(
           (current) => ({
@@ -820,7 +842,7 @@ export default function Account({
             profile: {
               ...current.profile,
               name: nextName,
-              goal: Number(goal),
+              goal: nextGoal,
             },
           }),
           { operationId: `account-goal-${Date.now()}` },
@@ -836,13 +858,35 @@ export default function Account({
           return;
         }
       }
-      setProfileMessage("Profile and training goal saved.");
-      notify?.("Profile updated.");
+      const newerEdits = profileEditGeneration.current !== submittedGeneration;
+      setProfileMessage(
+        newerEdits
+          ? "Submitted profile changes saved. Your newer edits are still in the form."
+          : "Profile and training goal saved.",
+      );
+      notify?.(
+        newerEdits ? "Submitted profile changes saved." : "Profile updated.",
+      );
     } catch (cause) {
       setProfileError(safeError(cause, "Your profile could not be saved."));
     } finally {
       setProfileBusy(false);
       setProfileAction(null);
+    }
+  }
+
+  async function retryConnection() {
+    if (syncBusy) return;
+    setSyncBusy(true);
+    setSyncError("");
+    try {
+      await workspace.retry?.();
+    } catch (cause) {
+      setSyncError(
+        safeError(cause, "The cloud connection could not be restored."),
+      );
+    } finally {
+      setSyncBusy(false);
     }
   }
 
@@ -1164,18 +1208,21 @@ export default function Account({
             : "Loading your training data"}
         </h1>
         <p>
-          {workspace?.status === "error" || workspace?.status === "offline"
-            ? "Your account is still signed in. Retry the secure connection to load your routines and history."
-            : "Your routines and workout history are being loaded from your account."}
+          {syncError ||
+            (workspace?.status === "error" || workspace?.status === "offline"
+              ? "Your account is still signed in. Retry the secure connection to load your routines and history."
+              : "Your routines and workout history are being loaded from your account.")}
         </p>
         {(workspace?.status === "error" || workspace?.status === "offline") && (
-          <button
+          <BusyButton
             type="button"
             className="account-secondary"
-            onClick={() => workspace.retry?.()}
+            disabled={syncBusy}
+            loading={syncBusy}
+            onClick={retryConnection}
           >
             <RefreshCw size={16} /> Retry connection
-          </button>
+          </BusyButton>
         )}
       </div>
     );
@@ -1257,13 +1304,33 @@ export default function Account({
                   </label>
                 </>
               )}
-              <button
+              <BusyButton
                 type="button"
                 onClick={async () => {
+                  if (syncBusy) return;
+                  setSyncBusy(true);
                   setSyncError("");
                   try {
                     if (workspace.status === "conflict" && conflictAck) {
-                      await workspace.reloadConflict?.();
+                      const reviewedName = name;
+                      const reviewedGoal = goal;
+                      const reloaded = await workspace.reloadConflict?.();
+                      if (reloaded?.status === "ready" && reloaded.data) {
+                        // Discard the training fields the member reviewed,
+                        // while retaining edits made after the reload began.
+                        setName((draft) =>
+                          draft === reviewedName
+                            ? reloaded.data.profile.name
+                            : draft,
+                        );
+                        setGoal((draft) =>
+                          draft === reviewedGoal
+                            ? reloaded.data.profile.goal
+                            : draft,
+                        );
+                        setProfileError("");
+                        setProfileMessage("");
+                      }
                       setConflictAck(false);
                     } else if (workspace.status !== "conflict") {
                       await workspace.retry?.();
@@ -1272,14 +1339,19 @@ export default function Account({
                     setSyncError(
                       safeError(cause, "Training data could not be refreshed."),
                     );
+                  } finally {
+                    setSyncBusy(false);
                   }
                 }}
-                disabled={workspace.status === "conflict" && !conflictAck}
+                disabled={
+                  syncBusy || (workspace.status === "conflict" && !conflictAck)
+                }
+                loading={syncBusy}
               >
                 {workspace.status === "conflict"
                   ? "Reload cloud data"
                   : "Retry sync"}
-              </button>
+              </BusyButton>
             </div>
           )}
           {section === "overview" && (
@@ -1506,14 +1578,20 @@ export default function Account({
                     required
                     maxLength={50}
                     value={name}
-                    onChange={(event) => setName(event.target.value)}
+                    onChange={(event) => {
+                      profileEditGeneration.current += 1;
+                      setName(event.target.value);
+                    }}
                   />
                 </label>
                 <label>
                   Weekly workout goal
                   <select
                     value={goal}
-                    onChange={(event) => setGoal(Number(event.target.value))}
+                    onChange={(event) => {
+                      profileEditGeneration.current += 1;
+                      setGoal(Number(event.target.value));
+                    }}
                   >
                     {Array.from({ length: 7 }, (_, i) => (
                       <option key={i + 1} value={i + 1}>

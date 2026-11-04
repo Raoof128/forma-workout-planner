@@ -1,0 +1,26 @@
+{
+  "executed_harness_sha256": "946069ee0c10fc01eacb2e3790d4b9a56db3d4b5828f85c326e3d4b1857982c5",
+  "production_samples": 20,
+  "react_samples": 6,
+  "production_errors": 0,
+  "react_errors": 0,
+  "production_incomplete_attempt": {
+    "completed_journeys": 12,
+    "disposition": "Some desktop snapshots preceded LCP delivery; excluded from final comparison, never treated as zero LCP"
+  },
+  "react_incomplete_attempt": {
+    "completed_profiles": 1,
+    "disposition": "Final transformed main query was not intercepted; nonempty-sample guard failed; fixed query matching before final six profiles"
+  },
+  "limits": [
+    "local synthetic lab, not field p75 or physical hardware",
+    "No speedup, leak, FPS, energy, thermal or production-runtime equivalence claim"
+  ],
+  "frozen_final_source": true,
+  "clean_build_identical_to_measured_entry_and_chunks": true,
+  "superseded_complete_pre_last_css": {
+    "production_journeys": 20,
+    "react_profiles": 6,
+    "disposition": "Complete earlier samples superseded after final narrow Security/tablet CSS corrections; final current-source results used regardless of more favourable earlier mobile value"
+  }
+}

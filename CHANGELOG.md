@@ -4,6 +4,23 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-11-05 — Website implementation checkpoint
+
+- **Scope:** continued the supplied FORMA website audit and preserved the completed native iPhone evidence from 4 November. The user explicitly authorized committing and pushing all task changes; this checkpoint does not merge or deploy.
+- **Implementation:** retained account drafts and explicit conflict intent; correct read/write retries; protected pending routine/history/order changes; Unicode-safe first workspace; delayed and explicit Skip focus; Safari dialog/drawer focus; live reduced motion; readable narrow measurements, Security controls and tablet authentication. Existing training IDs, schema, units, fonts, artwork, drag behavior and security boundaries remain.
+- **Verified:** final lint, formatting, type and documentation checks pass. Unit 151, Worker 35 and isolated PostgreSQL 18.6 server 77 pass. Narrow Security/auth regressions pass all five profiles; extended 88-state geometry passes. Latest Skip-after-retry and four-route start-readiness checks each pass all three desktop engines. Existing assertions/timeouts were retained; the old start case gained an explicit ready-heading wait before its unchanged persisted-data assertion.
+- **Broad test checkpoint:** the first complete guest attempt was 512/519. A later 540-case attempt stopped at 271 passes, one confirmed test-readiness failure, one interruption and 267 unrun before the final Skip correction; it is not a full current-source pass. The earlier account development attempt was 189/190. Repository CI and final local 200-case development/built account matrices remain to be completed and recorded.
+- **Evidence:** 1,214 scoped inputs, 243 complete authored reviews, 627 raster decodes and 22 complete video decodes. The visual package contains 318 product screenshots plus separate comparison sheets/intermediate frames. Complete paired performance samples exist for the CSS freeze; a final bundle measurement follows the last focus callback change. No speedup, physical Safari or production-release claim follows.
+- **Physical iPhone completion:** isolated signed iPhone Air build: 164 passes, two intentional safety skips, zero failures; 32 matched Light/Dark screenshot pairs. Ordinary app/widget/Watch compilation passed unsigned. Existing phone data/settings remain untouched; device, launch-metric and distribution limits remain documented.
+
+### Raouf: 2026-11-04 — Website frontend audit and completed iPhone evidence
+
+- **Scope:** execute the supplied website master audit with the existing FORMA design, training contracts and account security. The earlier native checkpoint was committed and pushed as `3c27308`; this follow-up records the completed physical evidence and website work.
+- **Changes:** preserve profile drafts during acknowledgements and refresh; distinguish read reconnection from exact pending-write retry; protect submitted routine/history drafts; confirm routine order only after persistence; make initial workspace names Unicode-safe. Improve delayed heading focus, live reduced motion, phone workout rows, account typography/tablet layout and storage copy. No new dependency, schema migration, exercise-ID/unit change or deployment.
+- **Native completion:** the isolated iPhone Air run finished with 164 passes, two intentional personal-device skips and zero failures. There are 32 matched Light/Dark screenshot pairs with metadata removed without changing pixels, plus measured metrics. The ordinary app, widget and Watch compile passed unsigned. Incomplete launch measurements, existing keyboard frame warnings and untested device surfaces remain documented.
+- **Website verification checkpoint:** clean pinned install, static checks, 151 baseline unit tests, 35 Worker tests, 77 final PostgreSQL tests and 30 new cross-engine browser checks pass. Full final browser/account matrices, paired performance, final visual critique and inventory reconciliation are in progress and are not claimed complete here.
+- **Evidence and boundaries:** `docs/audits/forma-web-frontend-2026-11/` and `ios/docs/audits/native-frontend-2026-11/`. All account data is synthetic and isolated. Production member data, original iPhone application data and device security/settings remain untouched. Commit/push is explicitly authorized; no merge, deployment or Store action.
+
 ### Raouf: 2026-11-04 — Native audit and isolated iPhone verification
 
 - **Scope:** read the supplied native master prompt, add physical testing authorization,

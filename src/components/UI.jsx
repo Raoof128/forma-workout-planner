@@ -108,7 +108,14 @@ export function Modal({ title, children, onClose, wide = false }) {
 }
 export function RoutineCard({ routine, onClick }) {
   return (
-    <button className="routine-card" onClick={() => onClick(routine)}>
+    <button
+      className="routine-card"
+      onClick={(event) => {
+        // Safari does not focus clicked buttons; capture this modal opener.
+        event.currentTarget.focus({ preventScroll: true });
+        onClick(routine);
+      }}
+    >
       <div className={`routine-photo photo-${routine.image ?? 0}`} />
       <div className="routine-card-body">
         <div>

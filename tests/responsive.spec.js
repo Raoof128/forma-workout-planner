@@ -60,7 +60,7 @@ async function fit(page, label) {
     const nodes = [
       document.documentElement,
       ...document.querySelectorAll(
-        "main,.modal[open],.panel,.hero,.profile-button,.resume-sidebar,.routine-card,.prescription,.volume-chart,.library-card",
+        "main,.modal[open],.panel,.hero,.profile-button,.resume-sidebar,.routine-card,.prescription,.set-row,.volume-chart,.library-card",
       ),
     ];
     return nodes
@@ -76,7 +76,9 @@ async function fit(page, label) {
   });
   expect(overflow, label).toEqual([]);
 }
-for (const width of [320, 375, 390, 540, 768, 1024, 1440, 1536, 1920])
+for (const width of [
+  320, 360, 375, 390, 430, 540, 768, 1024, 1280, 1440, 1536, 1920,
+])
   test(`all screens and editing dialogs contain maximum content at ${width}px`, async ({
     page,
   }) => {

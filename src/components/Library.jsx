@@ -153,7 +153,13 @@ export default function Library({ onToggle, selectedIds = [] }) {
                   ? `${picked ? "Remove" : "Add"} ${e.name} ${picked ? "from" : "to"} routine`
                   : undefined
               }
-              onClick={() => (choosing ? onToggle(e) : setSelected(e))}
+              onClick={(event) => {
+                if (choosing) onToggle(e);
+                else {
+                  event.currentTarget.focus({ preventScroll: true });
+                  setSelected(e);
+                }
+              }}
             >
               {hasExerciseMedia(e.id) ? (
                 <ExerciseMedia id={e.id} name={e.name} compact />

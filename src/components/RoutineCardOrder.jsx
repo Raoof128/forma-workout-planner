@@ -31,6 +31,8 @@ export default function RoutineCardOrder({
 }) {
   const grid = useRef(null);
   const drag = useRef(null);
+  const pendingSave = useRef(false);
+  const [saving, setSaving] = useState(false);
   const [preview, setPreview] = useState(null);
   const [active, setActive] = useState(null);
   const [landed, setLanded] = useState(null);
@@ -146,13 +148,34 @@ export default function RoutineCardOrder({
   }
 
   async function commit(id, next) {
+    if (pendingSave.current) return;
+    const name = byId.get(id).name;
+    pendingSave.current = true;
+    setSaving(true);
     setPreview(next);
-    setLanded({ id });
-    setAnnouncement(
-      `Moved ${byId.get(id).name} to position ${next.indexOf(id) + 1} of ${next.length}.`,
-    );
-    await onReorder(next);
-    setPreview(null);
+    setLanded(null);
+    setAnnouncement(`Saving the new position for ${name}.`);
+    try {
+      // Preview the move immediately, but confirm it only after persistence.
+      if (await onReorder(next)) {
+        setLanded({ id });
+        setAnnouncement(
+          `Moved ${name} to position ${next.indexOf(id) + 1} of ${next.length}.`,
+        );
+      } else {
+        setAnnouncement(
+          `Could not confirm the new position for ${name}. Review the save message before trying again.`,
+        );
+      }
+    } catch {
+      setAnnouncement(
+        `Could not confirm the new position for ${name}. Try again.`,
+      );
+    } finally {
+      pendingSave.current = false;
+      setSaving(false);
+      setPreview(null);
+    }
   }
 
   function finish() {
@@ -198,7 +221,7 @@ export default function RoutineCardOrder({
             first={index === 0}
             last={index === order.length - 1}
             dragging={active?.id === id}
-            ordering={!!active}
+            ordering={!!active || saving}
             landed={landed?.id === id}
             onOpen={onOpen}
             onDuplicate={onDuplicate}

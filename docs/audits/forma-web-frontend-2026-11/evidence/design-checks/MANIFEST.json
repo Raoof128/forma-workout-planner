@@ -1,0 +1,45 @@
+{
+  "method": "Original raw receipts copied byte-for-byte; no log edits, assertion changes or timeout increases. Log paths to historical temporary traces are diagnostic references; those trace bundles are not included here. All data/workspace/API fixtures are synthetic.",
+  "receipts": [
+    {
+      "path": "security-controlled-red.log",
+      "sha256": "2be8cd8eec7fcc072aa2882cb68309daf67266690d45c791982e28eab8a6cec4",
+      "bytes": 2950
+    },
+    {
+      "path": "security-initial-harness-errors.log",
+      "sha256": "6555c159322449f41a84bfa8a701fc8d3b8ea564b72a1610af784d39a6121c94",
+      "bytes": 14796
+    },
+    {
+      "path": "security-five-profiles-pass.log",
+      "sha256": "6ee39e155e69c85dc64f529e3a24aef9605a60621d2827239abbf654b9defea7",
+      "bytes": 1603
+    },
+    {
+      "path": "auth-controlled-red.log",
+      "sha256": "1ec995278dcd691b2f208cb060818ddd11f45c5fa6b0fa80782ac9c8c591b0e8",
+      "bytes": 2930
+    },
+    {
+      "path": "auth-initial-harness-errors.log",
+      "sha256": "2cef93537779e9b1358d332be6c92e881d509c26a5ec6b5dc6e15b09bfe1178d",
+      "bytes": 10137
+    },
+    {
+      "path": "auth-five-profiles-pass.log",
+      "sha256": "1011b193b27995c45689ed0421c5ba11dd3e4b212a871d9898c3876d765468d0",
+      "bytes": 1557
+    },
+    {
+      "path": "account-widths-initial.json",
+      "sha256": "c7489ba0ec1cc43f98a46f885932b3e47ed62dc0b1b813ceeb9e2232081ac833",
+      "bytes": 37270
+    },
+    {
+      "path": "account-widths-final.json",
+      "sha256": "7b0ac3616412de460839b843316ff174c9221d6b69207f3e9f52c39ea67f79af",
+      "bytes": 41329
+    }
+  ]
+}

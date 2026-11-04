@@ -1,0 +1,53 @@
+{
+  "method": "Actual unchanged original versus product Security correction, all APIs intercepted. Final Security frames were captured after its correction and before the subsequent auth-only breakpoint correction; Security selectors remain unchanged. No temporary CSS images included.",
+  "captures": [
+    {
+      "phase": "before",
+      "width": 320,
+      "pngWidth": 470,
+      "pngHeight": 2018,
+      "path": "security-before/320-security.png",
+      "sha256": "def91972f11aa6a8a0169cab60ddec54203bf5fa121e0974946ba1a11c48b5b8"
+    },
+    {
+      "phase": "before",
+      "width": 360,
+      "pngWidth": 483,
+      "pngHeight": 1942,
+      "path": "security-before/360-security.png",
+      "sha256": "34a50725dc2e48748f05ebb3c635354cca545e1ea8f3b98d52c6a271550e15c4"
+    },
+    {
+      "phase": "before",
+      "width": 375,
+      "pngWidth": 483,
+      "pngHeight": 1929,
+      "path": "security-before/375-security.png",
+      "sha256": "27bed75cede0935607ac415514fce69c278e697e46d12aaa396e8b2f9242a830"
+    },
+    {
+      "phase": "final",
+      "width": 320,
+      "pngWidth": 320,
+      "pngHeight": 2043,
+      "path": "security-final/320-security.png",
+      "sha256": "d43825ac5a519994c6007d47bdbb0b894bea7b43d8c9d7074bb72e789c4d5332"
+    },
+    {
+      "phase": "final",
+      "width": 360,
+      "pngWidth": 360,
+      "pngHeight": 1967,
+      "path": "security-final/360-security.png",
+      "sha256": "eb914fe8704803d5c0f52f37a79125f671dbbf29a016b6419665047418b5cae3"
+    },
+    {
+      "phase": "final",
+      "width": 375,
+      "pngWidth": 375,
+      "pngHeight": 1954,
+      "path": "security-final/375-security.png",
+      "sha256": "8ab787afd4169543a615982c60edd384d03ea5c8940119349171e4c5da2b8262"
+    }
+  ]
+}

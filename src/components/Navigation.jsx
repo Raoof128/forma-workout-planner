@@ -46,6 +46,7 @@ export default function Navigation({ page, navigate, data, account, notify }) {
     document.body.style.overflow = "hidden";
     sidebar.current.querySelector("button")?.focus();
     const key = (event) => {
+      if (event.defaultPrevented) return;
       if (event.key === "Escape") {
         event.preventDefault();
         setOpen(false);
@@ -55,16 +56,29 @@ export default function Navigation({ page, navigate, data, account, notify }) {
         const controls = [
           toggle.current,
           ...sidebar.current.querySelectorAll("button,a[href]"),
-        ];
-        const first = controls[0],
-          last = controls.at(-1);
-        if (event.shiftKey && document.activeElement === first) {
-          event.preventDefault();
-          last.focus();
-        } else if (!event.shiftKey && document.activeElement === last) {
-          event.preventDefault();
-          first.focus();
-        }
+        ].filter(
+          (node) =>
+            node &&
+            !node.matches(":disabled") &&
+            node.tabIndex >= 0 &&
+            node.getClientRects().length &&
+            getComputedStyle(node).visibility === "visible",
+        );
+        if (!controls.length) return;
+        // Native Tab may skip links on macOS, including our wrap endpoint.
+        // Step only this open drawer's controls so focus cannot escape to body.
+        const index = controls.indexOf(document.activeElement);
+        const next =
+          index < 0
+            ? event.shiftKey
+              ? controls.at(-1)
+              : controls[0]
+            : controls[
+                (index + (event.shiftKey ? -1 : 1) + controls.length) %
+                  controls.length
+              ];
+        event.preventDefault();
+        next.focus();
       }
     };
     document.addEventListener("keydown", key);
@@ -271,7 +285,7 @@ function ProfileMenu({ name, email, initials, onManage, onSignOut, onError }) {
       event.preventDefault();
       event.stopPropagation();
       close();
-    } else if (event.key === "Tab") setOpen(false);
+    } else if (event.key === "Tab") close();
   }
   return (
     <div className="profile-menu-wrap" ref={wrapper}>

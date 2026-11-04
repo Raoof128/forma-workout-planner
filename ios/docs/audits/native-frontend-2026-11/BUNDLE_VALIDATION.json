@@ -1,0 +1,17 @@
+{
+  "extension": "dev.raoufabedini.forma.audit202611.widgets",
+  "minimum_iOS": "17.0",
+  "protected_group": true,
+  "no_database_or_health_link": true,
+  "embedded_signature": "verified",
+  "link_scheme": "forma-audit",
+  "families": [
+    "accessoryCircular",
+    "accessoryInline",
+    "accessoryRectangular",
+    "systemLarge",
+    "systemMedium",
+    "systemSmall"
+  ],
+  "live_activity": "local, bundled"
+}

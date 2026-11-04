@@ -1,4 +1,5 @@
 import { defineConfig } from "@playwright/test";
+import { webkitLaunchOptions } from "./playwright.webkit.js";
 
 const executablePath = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH;
 
@@ -30,7 +31,10 @@ export default defineConfig({
       },
     },
     { name: "firefox", use: { browserName: "firefox" } },
-    { name: "webkit", use: { browserName: "webkit" } },
+    {
+      name: "webkit",
+      use: { browserName: "webkit", launchOptions: webkitLaunchOptions() },
+    },
   ],
   use: {
     baseURL: "http://127.0.0.1:5173",

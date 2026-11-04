@@ -1,0 +1,35 @@
+{
+  "device": "Raouf iPhone Air (only isolated builds installed)",
+  "builds": {
+    "baseline": {
+      "status": "succeeded",
+      "errorCount": 0,
+      "warningCount": 0,
+      "startTime": 1793781393.986,
+      "endTime": 1793781432.875,
+      "duration_seconds": 38.888999938964844,
+      "signed": true,
+      "installed_on_phone": true
+    },
+    "final": {
+      "status": "succeeded",
+      "errorCount": 0,
+      "warningCount": 0,
+      "startTime": 1793783881.968,
+      "endTime": 1793783919.92,
+      "duration_seconds": 37.9520001411438,
+      "signed": true,
+      "installed_on_phone": true
+    },
+    "ordinary_full_watch": {
+      "status": "succeeded",
+      "errorCount": 0,
+      "warningCount": 0,
+      "startTime": 1793785377.999,
+      "endTime": 1793785414.345,
+      "duration_seconds": 36.34599995613098,
+      "signed": false,
+      "installed_on_phone": false
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "method": "Compare last build emitted assets and entry HTML before/after cleaning only owned temporary outDir; prior stale chunks were not requested by measured entry HTML",
+  "before": [
+    {
+      "path": "../index.html",
+      "sha256": "679bf087be8e6796926ce51ba7e10b2bcda59b65e06406d94f1bfbad091968f4"
+    },
+    {
+      "path": "RoutinePrescriptions-Cn8Cuw9H.js",
+      "sha256": "f4ef44a25ae8877f428f85c369dd7800ac6f26759e8ccadf66275cef88ef318d"
+    },
+    {
+      "path": "index-B2Yy7_yp.js",
+      "sha256": "206febf7d58b152c5a569d2bc1c25ed6f355b4e7ff6ddec3e14078cbb8362232"
+    },
+    {
+      "path": "index-CT4AO9RF.css",
+      "sha256": "42c7c25f3c17abeb1540303203ee7c9308b11d56126a942126adaa8fb5db02a5"
+    },
+    {
+      "path": "instructions-D5gYSpG2.js",
+      "sha256": "0812ed1b6d7711f453642a7083b8384f97a25b821089f0bb6744010bf84650fd"
+    }
+  ],
+  "after": [
+    {
+      "path": "../index.html",
+      "sha256": "679bf087be8e6796926ce51ba7e10b2bcda59b65e06406d94f1bfbad091968f4"
+    },
+    {
+      "path": "RoutinePrescriptions-Cn8Cuw9H.js",
+      "sha256": "f4ef44a25ae8877f428f85c369dd7800ac6f26759e8ccadf66275cef88ef318d"
+    },
+    {
+      "path": "index-B2Yy7_yp.js",
+      "sha256": "206febf7d58b152c5a569d2bc1c25ed6f355b4e7ff6ddec3e14078cbb8362232"
+    },
+    {
+      "path": "index-CT4AO9RF.css",
+      "sha256": "42c7c25f3c17abeb1540303203ee7c9308b11d56126a942126adaa8fb5db02a5"
+    },
+    {
+      "path": "instructions-D5gYSpG2.js",
+      "sha256": "0812ed1b6d7711f453642a7083b8384f97a25b821089f0bb6744010bf84650fd"
+    }
+  ],
+  "identical_entry_and_emitted_assets": true,
+  "current_chunks": [
+    "RoutinePrescriptions-Cn8Cuw9H.js",
+    "index-B2Yy7_yp.js",
+    "index-CT4AO9RF.css",
+    "instructions-D5gYSpG2.js"
+  ]
+}

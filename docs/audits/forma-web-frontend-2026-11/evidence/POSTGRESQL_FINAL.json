@@ -1,0 +1,162 @@
+{
+  "status": "current_tree_verified",
+  "server_version": "18.6 (Homebrew)",
+  "origin": "existing PostgreSQL18 Homebrew binaries",
+  "isolated_cluster": true,
+  "loopback_only": true,
+  "private_socket": true,
+  "authentication": "scram-sha-256",
+  "existing_clusters_touched": false,
+  "global_service_or_configuration_changed": false,
+  "database_routes_explicit_and_identical": true,
+  "node_version": "v24.21.0",
+  "verification": {
+    "command": "npm run test:server",
+    "tests": 77,
+    "passed": 77,
+    "failed": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "duration_ms": 29076.469708,
+    "source_hashes_unchanged": true,
+    "input_file_count": 34,
+    "input_files": [
+      {
+        "path": "server/app.ts",
+        "sha256": "228ee34e3fc1d0c573f7e8e22c732d48ce3f825168de4fa34f9e0a02b5c05a67"
+      },
+      {
+        "path": "server/auth.ts",
+        "sha256": "a83d9efd804b4d8581c1bfb099cb7cd30a101edd177dab9d397e364897595999"
+      },
+      {
+        "path": "server/coachRoutes.ts",
+        "sha256": "a45e22abb4daa77eeb75d5a8faa84ff29376cc449d6cd1923cbfdf314ae4edb5"
+      },
+      {
+        "path": "server/coachTokens.ts",
+        "sha256": "bba0e0a7860f912aabee8c807f61aa64a8b4a1788c476b5ac25c40f1007a0d39"
+      },
+      {
+        "path": "server/config.ts",
+        "sha256": "fbff493766e036fda10b561da8d0180774e5667124dc134aa5a1105cc23d896f"
+      },
+      {
+        "path": "server/email-template.ts",
+        "sha256": "8f34e30361692640c7fd4c0ca6d7a3701df49c56a054f420f897a72583439db6"
+      },
+      {
+        "path": "server/email.ts",
+        "sha256": "7fa131fb1f35db35e868b1d82f087566dfb15d82a9f0f5024fc80ed79adc9918"
+      },
+      {
+        "path": "server/index.ts",
+        "sha256": "127b69ec18dfcdfe418a281c4403144eb404386c264f4eb3320013616d4f8de9"
+      },
+      {
+        "path": "server/migrate.ts",
+        "sha256": "33876d50f56028260c2a6f5474633e5411bc8472d572d6cad0107f0742f630d1"
+      },
+      {
+        "path": "server/migrations/0001-auth.sql",
+        "sha256": "d47fb2e700ba7b9cba2f1f82f4a9969356f046d1456fa68ee571216b42a408b6"
+      },
+      {
+        "path": "server/migrations/0002-workspace.sql",
+        "sha256": "8b11561f7be77a1c6999eb79bddd88429e58371d3e370aa716757cb2e548ce7a"
+      },
+      {
+        "path": "server/migrations/0003-security-throttle.sql",
+        "sha256": "04c4db46e1b7058351f7f3efc959ebc165de8d0b22f542902e16db2a6b47485b"
+      },
+      {
+        "path": "server/migrations/0004-routine-programming.sql",
+        "sha256": "c73a9d0b450a5b9318cf32220733b9892defbe70be82ea7a48d616b26fcd9e74"
+      },
+      {
+        "path": "server/migrations/0005-coach-tokens.sql",
+        "sha256": "1e8e20fd71fde2ef75e2d5443a40684630e7881c15ce9f1425843e4d7d7bceb9"
+      },
+      {
+        "path": "server/migrations/0006-coach-token-scope.sql",
+        "sha256": "460988ed5e9d220c7de6e38d02c94c843604bee164679dfd5fd4127e552ae5e8"
+      },
+      {
+        "path": "server/schema.ts",
+        "sha256": "ea5bdc3662ba34e4ad73459c430dc533e47683937a41dc16b5fd61683991c77d"
+      },
+      {
+        "path": "server/securityEvents.ts",
+        "sha256": "3446f6d48db7ca9745bc91927c5b88e89947f38e7146b795e8b6174d4d07cbd9"
+      },
+      {
+        "path": "server/tests/auth.test.ts",
+        "sha256": "fc1d5140bb8082cef272d0f04aa1b90eb0ed3b5e226721321cc0f8550a11deee"
+      },
+      {
+        "path": "server/tests/coach-summary.test.ts",
+        "sha256": "a797c948f7a6dec5e1b5eb12e1770c107dfd1279deeaa45bfa993703ef1059a3"
+      },
+      {
+        "path": "server/tests/coach.test.ts",
+        "sha256": "ef1270b1871f681fd7f7de111c1d86a21e7070829b3abf996c8b83098f9cc9ce"
+      },
+      {
+        "path": "server/tests/email-template.test.ts",
+        "sha256": "dd4f3af53ee815f3b324c0f9d275a04994911957335b38ceaa57a5124ff35d26"
+      },
+      {
+        "path": "server/tests/email.test.ts",
+        "sha256": "28069ac0e1cebb308cba2f838977cc3f31cfb1ac4809e4d37800ab259df3fe71"
+      },
+      {
+        "path": "server/tests/native-client.test.ts",
+        "sha256": "c3e0f63f4a24b5fd5ee45fb32bf88c80e5c3c8f7abf769181fcd6e60c7f24a3f"
+      },
+      {
+        "path": "server/tests/programming-migration.test.ts",
+        "sha256": "4e229a952893274f4b4242eaee9f268ece9114f5e99010c849188bf34f1c4578"
+      },
+      {
+        "path": "server/tests/programming.test.ts",
+        "sha256": "ce49b1f8e558961a3297c38877542db8101b056170ec93915168987537d70c08"
+      },
+      {
+        "path": "server/tests/redteam.test.ts",
+        "sha256": "73db96fd097e91da870010a3775e07133792bf7d70d0d27d07ca2ed3963bc93c"
+      },
+      {
+        "path": "server/tests/security-events.test.ts",
+        "sha256": "5d7cc41d4261f4b671d9192745cb48ff049477404c311844dc5dfc79f7d3e96c"
+      },
+      {
+        "path": "server/tests/security.test.ts",
+        "sha256": "121e661011ff2ee3b97166588604eeb987192c62ee21ea3d143f56436d7235cb"
+      },
+      {
+        "path": "server/tests/server-lifecycle.test.ts",
+        "sha256": "dd335e5f046072314fe9790c77a250c9fe6c0509922cd62a4a0e806cf03dd146"
+      },
+      {
+        "path": "server/tests/session-step-up.test.ts",
+        "sha256": "79fe286fd12fe927f9c5594ce67590e69afb904d355805f9a4ca62ce70714d13"
+      },
+      {
+        "path": "server/tests/workspace.test.ts",
+        "sha256": "83e867b05252ca431f50081012d63ba38dffccebbe2ed5a238c1f6a737285ac9"
+      },
+      {
+        "path": "server/throttle.ts",
+        "sha256": "be6760e48dd1dfeb3cbc00da45421c687f01a33afcee0b8ec27380f2c8aa602f"
+      },
+      {
+        "path": "server/workspace.ts",
+        "sha256": "e8d205222c23448ba2ffe9de8fe9157da38abb11dc5e7d73186d6a44f362c5c6"
+      },
+      {
+        "path": "server/workspaceRoutes.ts",
+        "sha256": "10cf3f3cd04cbc296fdff7effd23aecfbac467656323728822fab9bdc5314297"
+      }
+    ]
+  }
+}

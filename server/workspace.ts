@@ -69,7 +69,15 @@ function asAcknowledgement(
 
 function initialWorkspace(name?: string): WorkspaceData {
   const data = freshData();
-  const safeName = typeof name === "string" ? name.trim().slice(0, 50) : "";
+  let safeName = "";
+  if (typeof name === "string") {
+    // Account names count code points; the shared workspace keeps its existing
+    // UTF-16 length limit. A partial surrogate pair cannot be stored as JSONB.
+    for (const character of name.trim()) {
+      if (safeName.length + character.length > 50) break;
+      safeName += character;
+    }
+  }
   data.profile.name = safeName || "Member";
   // The initial routines are useful starter content, but no training history
   // or achievements are invented for a new account.

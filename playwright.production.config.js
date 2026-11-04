@@ -1,4 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
+import { webkitLaunchOptions } from "./playwright.webkit.js";
 
 const executablePath = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH;
 const chromiumLaunchOptions = executablePath
@@ -51,6 +52,7 @@ export default defineConfig({
       name: "production-webkit-desktop",
       use: {
         browserName: "webkit",
+        launchOptions: webkitLaunchOptions(),
         viewport: { width: 1536, height: 1024 },
       },
     },
@@ -65,7 +67,11 @@ export default defineConfig({
     },
     {
       name: "production-webkit-mobile",
-      use: { ...devices["iPhone 13"], browserName: "webkit" },
+      use: {
+        ...devices["iPhone 13"],
+        browserName: "webkit",
+        launchOptions: webkitLaunchOptions(),
+      },
     },
   ],
   use: {

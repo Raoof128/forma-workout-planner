@@ -1,0 +1,326 @@
+{
+  "pairs": [
+    {
+      "state": "01-today",
+      "appearance": "dark",
+      "before": "screenshots/before-dark/01-today.png",
+      "after": "screenshots/after-dark/01-today.png",
+      "before_sha256": "59bc2865e18ee25c440b59bea0e2680583a971072cbc88e8c89bfc1b43324e22",
+      "after_sha256": "055f50e2f57a1c6cf07c397bc2b1c8f1aad0cb5fc6ca6fef99f4c5b320103d16",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "02-plan",
+      "appearance": "dark",
+      "before": "screenshots/before-dark/02-plan.png",
+      "after": "screenshots/after-dark/02-plan.png",
+      "before_sha256": "bff4aa551460df36c19a4170a1ba0fbac9b9c6ab755501891973da4fd016d240",
+      "after_sha256": "7b4492e579e4e2d44b63722891618a0a4c8c4fe95def08a3732a7bc2ace2efa9",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "03-routine-detail",
+      "appearance": "dark",
+      "before": "screenshots/before-dark/03-routine-detail.png",
+      "after": "screenshots/after-dark/03-routine-detail.png",
+      "before_sha256": "9c217576b3c58a9da885e313820a5c0b85f704cc6aae2845e2b9f648c92cd5ce",
+      "after_sha256": "03813feb8a6cfefae4dd7c2fedcc7852a037108570e2cd907aff0e278af50f00",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "04-workout",
+      "appearance": "dark",
+      "before": "screenshots/before-dark/04-workout.png",
+      "after": "screenshots/after-dark/04-workout.png",
+      "before_sha256": "67b0ae1acc4be421a51cef9c410765d98927bca6e5eb52a7e5b4d840d47253d6",
+      "after_sha256": "8daedbd5566695b7b571b9d692000d9f453efdf58cc599eac1cb56a864594f60",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "05-set-completed-rest",
+      "appearance": "dark",
+      "before": "screenshots/before-dark/05-set-completed-rest.png",
+      "after": "screenshots/after-dark/05-set-completed-rest.png",
+      "before_sha256": "f78408800c30a48b9906b3de8c750744eedcc84c2c45cd63736cadf683b9774f",
+      "after_sha256": "437c4f70d6540e26ac7fb8ffa324e5dbf16e02788026ebc8252496160fbca9a6",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "06-receipt",
+      "appearance": "dark",
+      "before": "screenshots/before-dark/06-receipt.png",
+      "after": "screenshots/after-dark/06-receipt.png",
+      "before_sha256": "be878e24a8c433a89b431046b7789ee5427c4ff1edd26169e39dc2cd9c68df59",
+      "after_sha256": "ba2bcbdc8aaeca7e31ba27593a07d231ccabb7692d38b9d935c4088180aea468",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "07-progress",
+      "appearance": "dark",
+      "before": "screenshots/before-dark/07-progress.png",
+      "after": "screenshots/after-dark/07-progress.png",
+      "before_sha256": "0c59ac9b3cdad9d46e50e583e19e51ea3451a23771747cb4395501523dc55866",
+      "after_sha256": "8cfc9566021045214c8c7f773e53fccdcb21e1422458e315cdddf8edd2c9870b",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "08-you",
+      "appearance": "dark",
+      "before": "screenshots/before-dark/08-you.png",
+      "after": "screenshots/after-dark/08-you.png",
+      "before_sha256": "3a73bede45ee786dcc6f84ed959aefddc6670f2385666ee7158d33c1f23f6868",
+      "after_sha256": "2b61c359cd56eb16feb35941fec0c9bdcd9b42fe431588c410a5e9bb76691d3d",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "09-today-after-workout",
+      "appearance": "dark",
+      "before": "screenshots/before-dark/09-today-after-workout.png",
+      "after": "screenshots/after-dark/09-today-after-workout.png",
+      "before_sha256": "18fbfd4d63afda868d70c91d304daf0fc8fcadb1418c4a974d98ca5b477b16ed",
+      "after_sha256": "52a590f69edf7821c6014870805add6433d2f32d8bd345e325638e097cbea5e9",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "10-library",
+      "appearance": "dark",
+      "before": "screenshots/before-dark/10-library.png",
+      "after": "screenshots/after-dark/10-library.png",
+      "before_sha256": "8fc6b3aeedfa02ebc700454544d648a18f3f3078787a3705077710853f7ffe8a",
+      "after_sha256": "cec225befdde2ca3a706b6191b1dc6c4982c6c367a4c6297ed24bdb65c3d5bcf",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "11-library-search",
+      "appearance": "dark",
+      "before": "screenshots/before-dark/11-library-search.png",
+      "after": "screenshots/after-dark/11-library-search.png",
+      "before_sha256": "a0b9fb685feb4b374303062919a62551a830f5561b2389e10230a3e172965a0d",
+      "after_sha256": "4b52425d4c1a00de1b8e1a2392a9e15efc3d08d564b0d7658950718931526c6a",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "12-technique-guide",
+      "appearance": "dark",
+      "before": "screenshots/before-dark/12-technique-guide.png",
+      "after": "screenshots/after-dark/12-technique-guide.png",
+      "before_sha256": "ee23be84bac6ab00e33803529901ab37822714bbddc817561d6f15263dbfe535",
+      "after_sha256": "7e96dc8083a154e92c110f1a0e633d8d6cd2364f277f8216eb9f87700a1a7381",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "13-hold-ready",
+      "appearance": "dark",
+      "before": "screenshots/before-dark/13-hold-ready.png",
+      "after": "screenshots/after-dark/13-hold-ready.png",
+      "before_sha256": "6e75d34037f40bb8620789c30afc976c92f32a5484994565ec085b70bff2510a",
+      "after_sha256": "442aa2fb5184bda7ae4494df1da531a594fe3d081fc3c803eb4f4848698acac1",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "14-hold-running",
+      "appearance": "dark",
+      "before": "screenshots/before-dark/14-hold-running.png",
+      "after": "screenshots/after-dark/14-hold-running.png",
+      "before_sha256": "1cfb47d937670434cf08be406f1ba225f0ee9436aa793ba7e1b421befe1dd795",
+      "after_sha256": "3b3079372b3e63713abfc5daa81a17ae98c2e9cb7acdbad9f5db62f3870041a3",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "15-hold-paused",
+      "appearance": "dark",
+      "before": "screenshots/before-dark/15-hold-paused.png",
+      "after": "screenshots/after-dark/15-hold-paused.png",
+      "before_sha256": "f06397fe42925b58c2d1c95646662fc69b747d4355fe8ec0939515630a3f3034",
+      "after_sha256": "875b1dfea3c7a3477531540cb925dfe55ad3e4c8539fd66a1bab73a8f37c380c",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "16-today-largest-accessibility-text",
+      "appearance": "dark",
+      "before": "screenshots/before-dark/16-today-largest-accessibility-text.png",
+      "after": "screenshots/after-dark/16-today-largest-accessibility-text.png",
+      "before_sha256": "ed24a17bbf93ffeb895994f8d4e8b7237bd0b1323362e193a4b28297ae22c2a4",
+      "after_sha256": "d616f51c0fad6b8ed627962fd1ae4e489e9adc2fd3c18ac518d090f346a11c91",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "17-today-compact-landscape",
+      "appearance": "dark",
+      "before": "screenshots/before-dark/17-today-compact-landscape.png",
+      "after": "screenshots/after-dark/17-today-compact-landscape.png",
+      "before_sha256": "a2ad9a985c5c7fe0615411862ad61b8e84d81b562e5000e2c428046462c09a0f",
+      "after_sha256": "a2ad9a985c5c7fe0615411862ad61b8e84d81b562e5000e2c428046462c09a0f",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "01-today",
+      "appearance": "light",
+      "before": "screenshots/before-light/01-today.png",
+      "after": "screenshots/after-light/01-today.png",
+      "before_sha256": "2dda912b6dfd7c50a4fb2599c9eb3518181e434d21fcebc7063e2f2d5e4a0c46",
+      "after_sha256": "c4c23585ffcda2b2cc027fe02fe085930dbec52777d8e9141357e75cca0e945b",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "02-plan",
+      "appearance": "light",
+      "before": "screenshots/before-light/02-plan.png",
+      "after": "screenshots/after-light/02-plan.png",
+      "before_sha256": "def5728d43b46b391dc1114f25f5f9654e41fe26cbc966bf0ca6b8c4544f7e66",
+      "after_sha256": "472e593a1a597f8bcefe2c426dedb2d5656b0a0ee66e62f95b4201e601858354",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "03-routine-detail",
+      "appearance": "light",
+      "before": "screenshots/before-light/03-routine-detail.png",
+      "after": "screenshots/after-light/03-routine-detail.png",
+      "before_sha256": "0bcaf919ab97c6244e67965fd84df4ba9d94eba5f30b58a7aeaaf78d70c5cc82",
+      "after_sha256": "a2732c6eb2c661dc56e1a3e102243e0e0bd10413c636204d03ae74de4c291707",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "04-workout",
+      "appearance": "light",
+      "before": "screenshots/before-light/04-workout.png",
+      "after": "screenshots/after-light/04-workout.png",
+      "before_sha256": "fbabd27968aed24792733f0d9b8bda6dfecc87b2b60bf2f4a2937093493d0c22",
+      "after_sha256": "a8e3c6437af6bc04d8e1d6b15371f021d3c1f2237735798085a6cc613fcd6662",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "05-set-completed-rest",
+      "appearance": "light",
+      "before": "screenshots/before-light/05-set-completed-rest.png",
+      "after": "screenshots/after-light/05-set-completed-rest.png",
+      "before_sha256": "087d928993193639cd8ceb036f98fee23fe1ebc51640b636de3e2cc74567c861",
+      "after_sha256": "5958d1b764b7805c5877cd52e2884a2b4a8103b5a28a70599b62336b18a19ede",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "06-receipt",
+      "appearance": "light",
+      "before": "screenshots/before-light/06-receipt.png",
+      "after": "screenshots/after-light/06-receipt.png",
+      "before_sha256": "486b57f46c8ff1cfcc02103a68888909ee8aaef6a24cd4ea39ce8984b0ce7924",
+      "after_sha256": "6610fba00cb3c8cace7a2f81c6531e9dcd7104f822a4e0ada62dd730d53d1052",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "07-progress",
+      "appearance": "light",
+      "before": "screenshots/before-light/07-progress.png",
+      "after": "screenshots/after-light/07-progress.png",
+      "before_sha256": "5df00c0b2de38953d588346eb4179d0dfb58da7155f618b6f85c6935799c2f32",
+      "after_sha256": "700ba7b4f0d1b09c9499f450ef591797d6ac672c0d8a53058ac9b497a69f331a",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "08-you",
+      "appearance": "light",
+      "before": "screenshots/before-light/08-you.png",
+      "after": "screenshots/after-light/08-you.png",
+      "before_sha256": "6d856962b8b329514c42898ba4e6961c9d3e7a92f4ea0afcc0e80bfbead81fa0",
+      "after_sha256": "122b19177443a96fe6762e6119403070a570c87e6fc154961d295aa4c2c26d18",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "09-today-after-workout",
+      "appearance": "light",
+      "before": "screenshots/before-light/09-today-after-workout.png",
+      "after": "screenshots/after-light/09-today-after-workout.png",
+      "before_sha256": "7ab032f5b914117c2ae3abd67f670bb9b9ff152b19b1917ab3e687154e295dee",
+      "after_sha256": "793b725fb151d3e2312776bdb00382fc3f8e463e591da4b69df43540a73f3cf1",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "10-library",
+      "appearance": "light",
+      "before": "screenshots/before-light/10-library.png",
+      "after": "screenshots/after-light/10-library.png",
+      "before_sha256": "31f0f597c13524d565bd0f804977c9d0a7b268ee7dc9014d77ce36e65854da20",
+      "after_sha256": "8bfdd81b9e7cf6d411428f91efd34a5484813e7908482529c328fa8fab28a681",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "11-library-search",
+      "appearance": "light",
+      "before": "screenshots/before-light/11-library-search.png",
+      "after": "screenshots/after-light/11-library-search.png",
+      "before_sha256": "3cdc3a5d958f69a540a3cf4b314d7441f23855b73ef4b085644c153433a463c0",
+      "after_sha256": "f14a9cbcc188b4a0ddc09793122cf9a6ef0abc57724d611772352ca27af699a7",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "12-technique-guide",
+      "appearance": "light",
+      "before": "screenshots/before-light/12-technique-guide.png",
+      "after": "screenshots/after-light/12-technique-guide.png",
+      "before_sha256": "b3e39cd5c60045ef64b9787222ecc80aab9ef48b3fa96e39209af2b40d75022c",
+      "after_sha256": "d46c81e52132fe4124d55333ff92bb0a3409f508c610517642f236de51604769",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "13-hold-ready",
+      "appearance": "light",
+      "before": "screenshots/before-light/13-hold-ready.png",
+      "after": "screenshots/after-light/13-hold-ready.png",
+      "before_sha256": "8b3c5dca4a3bfc22eaf31f870b53e30a2a4f95dd800af7320706f2330191cc87",
+      "after_sha256": "35c86f4e10488c914e1eab2c7534b321802adf641455f9a834f2248d73de4058",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "14-hold-running",
+      "appearance": "light",
+      "before": "screenshots/before-light/14-hold-running.png",
+      "after": "screenshots/after-light/14-hold-running.png",
+      "before_sha256": "48d53d4108fda791afd90dc9507d534b7cb42a875f2039f928a6411d85848349",
+      "after_sha256": "1a38f0f34acf602825a3f46a04115f97969ec84f509c1e2498b3a241748c3f4d",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    },
+    {
+      "state": "15-hold-paused",
+      "appearance": "light",
+      "before": "screenshots/before-light/15-hold-paused.png",
+      "after": "screenshots/after-light/15-hold-paused.png",
+      "before_sha256": "5548602ea6c4d0b8db7240131097b95785e02a9b150ecb11f3b264947783ff41",
+      "after_sha256": "84268dbc51e32e1556381162cf2e8c9e83416b6de85fb76ed16d96708719f585",
+      "display_dimensions_match": true,
+      "review_scope": "Reached synthetic app state; actual screenshots require visual judgement, not pixel equality"
+    }
+  ],
+  "pair_count": 32,
+  "image_count": 64
+}
