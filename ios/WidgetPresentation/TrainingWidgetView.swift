@@ -140,9 +140,9 @@
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
     }
+    /// No brand row: a small widget has little room, and the HIG notes people seldom need the logo.
     private var small: some View {
       VStack(alignment: .leading, spacing: 7) {
-        brand
         Spacer(minLength: 0)
         if weekFocus {
           weeklyNumber
@@ -160,11 +160,11 @@
       HStack(spacing: 18) {
         VStack(alignment: .leading, spacing: 7) {
           brand
-          Text(weekFocus ? "A little, consistently." : model.title)
+          Text(model.title)
             .font(.system(.title3, weight: .bold).width(.condensed)).lineLimit(2).fixedSize(
               horizontal: false, vertical: true
             ).widgetAccentable()
-          Text(weekFocus ? "Your saved week, one session at a time." : model.detail)
+          Text(weekFocus ? model.weekDetail : model.detail)
             .font(.caption).foregroundStyle(detailColor).lineLimit(2)
           Spacer(minLength: 0)
           Link(destination: route.url) { action(true) }
@@ -172,9 +172,10 @@
         Divider()
         Link(destination: WidgetRoute.progress.url) {
           VStack(alignment: .leading, spacing: 9) {
-            Text("THIS WEEK").font(.caption2.weight(.bold)).foregroundStyle(detailColor)
+            Text(weekFocus ? "Days trained" : "This week")
+              .font(.caption2.weight(.bold)).foregroundStyle(detailColor)
             weeklyNumber
-            dayMarks(letters: true)
+            dayMarksFitting
           }
         }.frame(maxWidth: .infinity, alignment: .leading)
       }
@@ -185,14 +186,15 @@
         Text(model.status).font(.caption2.weight(.bold)).foregroundStyle(detailColor)
         Text(model.title).font(.system(.largeTitle, weight: .black).width(.condensed))
           .lineLimit(3).widgetAccentable()
-        Text(model.detail).font(.subheadline).foregroundStyle(detailColor)
+        Text(weekFocus ? model.weekDetail : model.detail).font(.subheadline)
+          .foregroundStyle(detailColor)
         Spacer(minLength: 0)
         Divider()
         Link(destination: WidgetRoute.progress.url) {
           HStack(alignment: .bottom) {
             weeklyNumber
             Spacer()
-            dayMarks(letters: true)
+            dayMarksFitting
           }
         }
         Link(destination: route.url) { action(font: .headline) }
@@ -209,6 +211,14 @@
       .accessibilityElement(children: .ignore)
       .accessibilityLabel(model.weeklyLabel)
     }
+    /// Weekday letters only while they fit at a readable size (the HIG asks for 11 pt or more);
+    /// otherwise the marks alone, which VoiceOver reads the same way.
+    private var dayMarksFitting: some View {
+      ViewThatFits(in: .horizontal) {
+        dayMarks(letters: true)
+        dayMarks(letters: false)
+      }
+    }
     private func dayMarks(letters: Bool) -> some View {
       let initials = TrainingPresentation.weekdayInitials()
       return HStack(spacing: 4) {
@@ -217,7 +227,7 @@
           VStack(spacing: 2) {
             if letters {
               Text(initials[day]).font(.caption2).foregroundStyle(detailColor)
-                .lineLimit(1).minimumScaleFactor(0.6)
+                .lineLimit(1).fixedSize()
             }
             // A text style (not a point size) so the mark scales with the reader's setting.
             Image(systemName: done ? "checkmark.circle.fill" : "circle")
@@ -241,13 +251,21 @@
       .gaugeStyle(.accessoryCircularCapacity)
       .accessibilityLabel("\(model.weeklyLabel). Open FORMA.")
     }
+    /// Three lines at standard sizes; at large text, the title and one line only.
     private var rectangular: some View {
-      VStack(alignment: .leading, spacing: 3) {
-        Text(weekFocus ? "FORMA · This week" : model.title).font(.headline).lineLimit(1)
-          .minimumScaleFactor(0.8).widgetAccentable()
-        Text(model.detail).font(.caption).lineLimit(1)
-        if !weekFocus {
-          Label(model.actionLabel(), systemImage: "arrow.up.right").font(.caption2).lineLimit(1)
+      let title = Text(weekFocus ? "FORMA · This week" : model.title).font(.headline)
+        .lineLimit(1).minimumScaleFactor(0.8)
+      return ViewThatFits(in: .vertical) {
+        VStack(alignment: .leading, spacing: 3) {
+          title.widgetAccentable()
+          Text(model.detail).font(.caption).lineLimit(1)
+          if !weekFocus {
+            Label(model.actionLabel(), systemImage: "arrow.up.right").font(.caption2).lineLimit(1)
+          }
+        }
+        VStack(alignment: .leading, spacing: 2) {
+          title.widgetAccentable()
+          Text(model.detail).font(.caption).lineLimit(1).minimumScaleFactor(0.85)
         }
       }
     }
@@ -256,17 +274,32 @@
       switch family {
       case .accessoryInline: Label(content.inline, systemImage: content.symbol)
       case .accessoryCircular:
-        VStack(spacing: 2) {
-          Image(systemName: content.symbol)
-          Text("FORMA").font(.caption2.weight(.bold)).lineLimit(1).minimumScaleFactor(0.6)
+        // The system disc, as the gauge state has its own track.
+        ZStack {
+          AccessoryWidgetBackground()
+          ViewThatFits {
+            VStack(spacing: 2) {
+              Image(systemName: content.symbol)
+              Text("FORMA").font(.caption2.weight(.bold)).lineLimit(1).fixedSize()
+            }
+            Image(systemName: content.symbol).font(.title3)
+          }
         }
         .accessibilityElement(children: .ignore).accessibilityLabel(content.title)
       case .accessoryRectangular:
-        VStack(alignment: .leading, spacing: 2) {
-          Label("FORMA", systemImage: content.symbol).font(.caption2.weight(.bold))
-            .widgetAccentable()
-          Text(content.title).font(.headline).lineLimit(1).minimumScaleFactor(0.8)
-          Text(content.detail).font(.caption).lineLimit(2)
+        // About 72 pt tall: drop the detail, then the label, before anything is clipped.
+        ViewThatFits(in: .vertical) {
+          VStack(alignment: .leading, spacing: 2) {
+            Label("FORMA", systemImage: content.symbol).font(.caption2.weight(.bold))
+              .widgetAccentable()
+            Text(content.title).font(.headline).lineLimit(1).minimumScaleFactor(0.8)
+            Text(content.detail).font(.caption).lineLimit(2)
+          }
+          VStack(alignment: .leading, spacing: 2) {
+            Text(content.title).font(.headline).lineLimit(1).minimumScaleFactor(0.8)
+              .widgetAccentable()
+            Text(content.inline).font(.caption).lineLimit(1)
+          }
         }
       default:
         // Fixed frames cannot scroll: at large sizes keep the title and the next step only.

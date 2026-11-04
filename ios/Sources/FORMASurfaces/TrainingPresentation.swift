@@ -60,7 +60,7 @@ public struct TrainingPresentation: Equatable, Sendable {
   /// The label always names where the tap goes, derived from the route.
   public func actionLabel(short: Bool = false) -> String {
     switch route() {
-    case .active: short ? "Resume" : "Resume in FORMA"
+    case .active, .workout: short ? "Resume" : "Resume in FORMA"
     case .routine: "View routine"
     case .progress: "View progress"
     case .plan: "Create a routine"
@@ -76,9 +76,10 @@ public struct TrainingPresentation: Equatable, Sendable {
     return snapshot.active?.name ?? snapshot.routine?.name ?? "Your training"
   }
 
+  /// A short label above the large title, in sentence case: the view decides any styling.
   public var status: String {
-    if weekFocus { return "A LITTLE, CONSISTENTLY" }
-    return snapshot.active != nil ? "SAVED WORKOUT" : "YOUR NEXT SESSION"
+    if weekFocus { return "Weekly goal" }
+    return snapshot.active != nil ? "Saved workout" : "Your next session"
   }
 
   public var detail: String {
@@ -89,6 +90,13 @@ public struct TrainingPresentation: Equatable, Sendable {
       return "\(routine.exercises) exercises · \(routine.minutes) min"
     }
     return "\(sessions) of \(goal) workouts"
+  }
+
+  /// The week view's sentence: what is left, not a repeat of the count shown beside it.
+  public var weekDetail: String {
+    if sessions >= goal { return "Weekly goal reached" }
+    let left = goal - sessions
+    return left == 1 ? "1 more workout to reach \(goal)" : "\(left) more workouts to reach \(goal)"
   }
 
   public var sessions: Int { snapshot.week?.sessions ?? 0 }

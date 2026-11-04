@@ -333,3 +333,29 @@ In priority order:
 5. M3: iOS 27 landscape Island.
 6. Circular `ProgressView(timerInterval:)` rendering as a ring rather than a spinner (already a repo gate).
 7. Tinted, clear, vibrant and StandBy Night Mode captures of the Training widget (already a repo gate).
+
+## 5. Resolution (branch `fix/audit-widgets`)
+
+Static fixes, compiled for a device (`generic/platform=iOS`) and covered by `swift test` and the app tests where a
+test can see the behaviour. Nothing here was run on the iPhone Air or the Watch, so every device check in §4 is
+still open.
+
+| # | Status | Change |
+| --- | --- | --- |
+| H1 | Fixed | New `WidgetRoute.workout(id:epoch:)` (`forma://widget/workout?id=…&epoch=…`). Both Live Activity hierarchies (Lock Screen root and `DynamicIsland`) carry one `widgetURL` to it. `AppModel.widgetDestination` opens the workout when the session and owner epoch match, without the widget-sharing gate, and goes to Today otherwise. Route round trip, malformed-link and routing tests added; the bundle checker asserts both links. Cold-launch tap still needs the device (§4 item 2). |
+| H2 | Fixed, device check open | The Live Activity moved to its own extension, `FORMAWorkoutActivity.appex` (`dev.raoufabedini.forma.workoutactivity`), with no App Group and no data-protection entitlement. `FORMAWidgets.appex` keeps the Training widget, the App Group and `NSFileProtectionComplete`, and is now a single `@main` bundle. New evidence that settled the "unconfirmed": an Apple engineer on the developer forums (thread 806236) says that with `NSFileProtectionComplete` the widget extension gets no runtime while the device is locked. The checker now validates both extensions and fails if the activity extension gains an App Group, data protection, HealthKit or a storage read. Still verify on a locked passcode iPhone (§4 item 1). |
+| M1 | Fixed, device check open | The elapsed timer keeps the label "Elapsed time" and passes the running time as `accessibilityValue` (Lock Screen header and compact trailing). Confirm VoiceOver reads the live value. |
+| M2 | Fixed, device check open | `.small` derives its palette from the colour scheme; the exercise name and set line have explicit styles. CarPlay Simulator check in both appearances still open. |
+| M3 | Fixed, device check open | Compact trailing goes through `IslandCompactTrailingSlot`: on iOS 27, when `isDynamicIslandLimitedInWidth` is true, it is empty so the system hides it. Gated by `#if compiler(>=6.4)` so the iOS 26.2 SDK still builds; the checker allows the symbol only inside that gate. |
+| M4 | Fixed | One action at a time: "Skip rest" while a rest is on screen, otherwise "Complete set" (or the all-sets-done note). Buttons are 44 pt high. |
+| L1 | Fixed | Weekday initials no longer scale; `ViewThatFits` drops them when they do not fit. Timer and circular fallback floors are 0.85 or fixed size. |
+| L2 | Fixed | Lock Screen padding is 14 pt. |
+| L3 | Fixed | The header mark is hidden from VoiceOver next to "FORMA workout". |
+| L4 | Not changed | Optional. A self-updating minutes-only clock that fits 36 pt has no system text style (`Text(timerInterval:)` always shows seconds), so minimal keeps the mark when not resting. |
+| L5 | Partly fixed | In StandBy (`isActivityFullscreen`) the rest timer uses `.largeTitle`. Always On already renders the passing dark pairs; Night Mode needs the device. |
+| L6 | Fixed | Sentence-case labels ("Weekly goal", "Saved workout", "Your next session", "This week" / "Days trained"); the slogans are gone and the week view says what is left (`weekDetail`, "2 more workouts to reach 4"). The brand row is dropped from the small widget. |
+| L7 | Fixed | The forced left-to-right is gone; `RestReadout` and `WorkoutTimer` take a leading alignment in `.small`. |
+| L8 | Fixed | Rectangular data and fallback layouts use `ViewThatFits(in: .vertical)` with a two-line variant. |
+| L9 | Fixed | `showsHours: true` on the Lock Screen header and the expanded Island; the compact slot keeps its capped width. |
+| L10 | Fixed | The circular fallback sits on `AccessoryWidgetBackground()`. |
+| L11 | Not changed | The audit's fix is conditional on a device run showing clipping; capping Dynamic Type without that evidence would cost readers text size for nothing. |

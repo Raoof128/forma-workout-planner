@@ -89,13 +89,27 @@ final class TrainingPresentationTests: XCTestCase {
       presentation(snapshot(state: .hidden)).fallback.detail, "Turn on widgets in You.")
   }
 
-  // Wg-L: "SAVED WORKOUT" must not head the "This week" view.
+  // Wg-L: "Saved workout" must not head the "This week" view. Labels are sentence case
+  // facts, not slogans (audit 2026-11-02 L6).
   func testWeekFocusNeverShowsSavedWorkoutHeading() {
     let active = snapshot(active: true)
-    XCTAssertEqual(presentation(active).status, "SAVED WORKOUT")
-    XCTAssertEqual(presentation(active, week: true).status, "A LITTLE, CONSISTENTLY")
+    XCTAssertEqual(presentation(active).status, "Saved workout")
+    XCTAssertEqual(presentation(active, week: true).status, "Weekly goal")
     XCTAssertEqual(presentation(active, week: true).title, "This week")
-    XCTAssertEqual(presentation(snapshot()).status, "YOUR NEXT SESSION")
+    XCTAssertEqual(presentation(snapshot()).status, "Your next session")
+    for value in [presentation(active), presentation(active, week: true), presentation(snapshot())] {
+      XCTAssertNotEqual(value.status, value.status.uppercased())
+    }
+  }
+
+  func testWeekDetailSaysWhatIsLeftRatherThanRepeatingTheCount() {
+    XCTAssertEqual(presentation(snapshot(), week: true).weekDetail, "2 more workouts to reach 4")
+    var nearly = snapshot()
+    nearly.week?.sessions = 3
+    XCTAssertEqual(presentation(nearly, week: true).weekDetail, "1 more workout to reach 4")
+    var done = snapshot()
+    done.week?.sessions = 5
+    XCTAssertEqual(presentation(done, week: true).weekDetail, "Weekly goal reached")
   }
 
   func testInlineTextHasAShortFormWithTheCount() {
