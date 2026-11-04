@@ -31,6 +31,11 @@ App Privacy declaration.
   `https://forma.raoufabedini.dev`. `NSAppTransportSecurity` is the default (an
   empty dictionary) with no exceptions, so HTTP is refused by the system. Redirects
   are never followed, so cookies and the member header cannot reach another host.
+  The same host (`FORMA_ACCOUNT_HOST`) is the app's one Associated Domains entry,
+  `webcredentials:` only, so Password AutoFill can offer and save the website's
+  credentials. It adds no network request from the app; Apple's CDN reads the
+  Worker's `/.well-known/apple-app-site-association` file, which names the app and
+  carries no member data.
 - **Native requests.** Every request sends `X-Forma-Client: ios` and, once known,
   `X-Forma-Member`. The app never sends `Origin`, `Referer` or `Sec-Fetch-*`;
   the account recognises it by their absence. No Cloudflare Access header or

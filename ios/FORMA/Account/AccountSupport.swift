@@ -101,16 +101,39 @@ enum AccountDates {
     return formatter
   }()
 
+  private static let withTime: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.locale = Locale(identifier: "en_AU")
+    formatter.timeZone = TrainingDate.calendar.timeZone
+    formatter.setLocalizedDateFormatFromTemplate("d MMMM yyyy h:mm a")
+    return formatter
+  }()
+
   static func label(_ date: Date?) -> String {
     date.map { long.string(from: $0) } ?? "Not available"
   }
+
+  /// The same long date with the time, for a moment such as a request.
+  static func moment(_ date: Date) -> String { withTime.string(from: date) }
 }
 
 /// "Safari on Mac" for a browser's user agent, "FORMA app" for the app's own.
 enum DeviceDescription {
+  private static func isApp(_ agent: String) -> Bool {
+    agent.contains("CFNetwork") || agent.hasPrefix("FORMA")
+  }
+
+  /// The symbol for the same device `describe` names, from the same reading.
+  static func symbol(_ userAgent: String?) -> String {
+    guard let agent = userAgent, !agent.isEmpty else { return "laptopcomputer.and.iphone" }
+    if isApp(agent) || agent.contains("iPhone") || agent.contains("Android") { return "iphone" }
+    if agent.contains("iPad") { return "ipad" }
+    return "desktopcomputer"
+  }
+
   static func describe(_ userAgent: String?) -> String {
     guard let agent = userAgent, !agent.isEmpty else { return "Signed-in device" }
-    if agent.contains("CFNetwork") || agent.hasPrefix("FORMA") { return "FORMA app" }
+    if isApp(agent) { return "FORMA app" }
     let browser: String
     if agent.contains("Edg/") {
       browser = "Edge"
@@ -231,29 +254,45 @@ struct AdaptiveRow<Leading: View, Trailing: View>: View {
 }
 
 /// A password field with a show/hide control, for the long passphrases the
-/// account asks for. Paste and AutoFill keep working in both states.
-struct RevealablePasswordField: View {
+/// account asks for. Both fields stay mounted and share the text, so showing or
+/// hiding moves focus from one to the other instead of replacing the field the
+/// keyboard is attached to: the caret, AutoFill and paste survive, and the
+/// field AutoFill reads is always a secure one. Callers give the field two
+/// focus values (`hidden` for the secure field, `shown` for the plain one) and
+/// treat either as "the password field".
+struct RevealablePasswordField<Focus: Hashable>: View {
   let title: String
   @Binding var text: String
   let contentType: UITextContentType
   var identifier: String
   var revealIdentifier: String?
+  let focus: FocusState<Focus?>.Binding
+  let hidden: Focus
+  let shown: Focus
   @State private var revealed = false
 
   var body: some View {
     HStack(spacing: 8) {
-      Group {
-        if revealed {
-          TextField(title, text: $text)
-            .textInputAutocapitalization(.never).autocorrectionDisabled()
-        } else {
-          SecureField(title, text: $text)
-        }
+      ZStack(alignment: .leading) {
+        SecureField(title, text: $text)
+          .textContentType(contentType)
+          .focused(focus, equals: hidden)
+          .opacity(revealed ? 0 : 1)
+          .allowsHitTesting(!revealed)
+          .accessibilityHidden(revealed)
+          .accessibilityIdentifier(identifier)
+        TextField(title, text: $text)
+          .textInputAutocapitalization(.never).autocorrectionDisabled()
+          .focused(focus, equals: shown)
+          .opacity(revealed ? 1 : 0)
+          .allowsHitTesting(revealed)
+          .accessibilityHidden(!revealed)
+          .accessibilityIdentifier(identifier)
       }
-      .textContentType(contentType)
-      .accessibilityIdentifier(identifier)
       Button {
+        let focused = focus.wrappedValue == hidden || focus.wrappedValue == shown
         revealed.toggle()
+        if focused { focus.wrappedValue = revealed ? shown : hidden }
       } label: {
         Image(systemName: revealed ? "eye.slash" : "eye")
           .frame(minWidth: 44, minHeight: 44)
@@ -262,6 +301,14 @@ struct RevealablePasswordField: View {
       .buttonStyle(.borderless)
       .accessibilityLabel(revealed ? "Hide \(title.lowercased())" : "Show \(title.lowercased())")
       .accessibilityIdentifier(revealIdentifier ?? identifier + "-reveal")
+    }
+    // A caller that focuses "the password field" lands on whichever is visible.
+    .onChange(of: focus.wrappedValue) { _, now in
+      if now == hidden, revealed {
+        focus.wrappedValue = shown
+      } else if now == shown, !revealed {
+        focus.wrappedValue = hidden
+      }
     }
   }
 }

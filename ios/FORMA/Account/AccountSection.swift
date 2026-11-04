@@ -70,7 +70,7 @@ struct AccountSection: View {
     VStack(alignment: .leading, spacing: 6) {
       Text("Account training saved on this iPhone").font(.headline)
       Text(
-        "This iPhone still holds the routines and workouts from the account you signed out of. Signing in again picks them up. Remove them if you don’t want them kept here."
+        "This iPhone still holds the routines, workouts and any workout in progress from the account you signed out of. Signing in again picks them up. Remove them if you don’t want them kept here. The account itself, and the training you keep without an account, are not affected."
       )
       .font(.subheadline).foregroundStyle(FormaTheme.secondary)
     }
@@ -95,9 +95,8 @@ struct AccountSection: View {
       Button("Remove from this iPhone", role: .destructive) { Task { await removeSavedCopy() } }
         .accessibilityIdentifier("account-remove-saved-copy-confirm")
     } message: {
-      Text(
-        "This deletes the routines, workouts and any workout in progress that this iPhone kept for that account. Changes that never reached the account are lost. The account itself, and the training you keep without an account, are not affected."
-      )
+      // One sentence; the description above explains what the copy holds.
+      Text("Changes that never reached the account are lost.")
     }
   }
 
@@ -223,6 +222,37 @@ struct AccountGateView: View {
   @State private var slow = false
 
   var body: some View {
+    // The gate replaces the tabs, so its only exits (Try again, Sign out) must
+    // stay reachable at the largest text sizes: the content scrolls when it
+    // outgrows the screen and stays centred when it does not.
+    GeometryReader { geometry in
+      ScrollView {
+        content
+          .padding()
+          .frame(maxWidth: .infinity, minHeight: geometry.size.height)
+      }
+      .scrollBounceBehavior(.basedOnSize)
+    }
+    .accessibilityIdentifier("account-gate")
+    .task(id: gate) {
+      slow = false
+      guard gate == .loading else { return }
+      try? await Task.sleep(for: .seconds(8))
+      if !Task.isCancelled { slow = true }
+    }
+    .confirmationDialog(
+      "Sign out of FORMA?", isPresented: $confirmSignOut, titleVisibility: .visible
+    ) {
+      Button("Sign out", role: .destructive) { Task { await signOut() } }
+        .accessibilityIdentifier("account-gate-sign-out-confirm")
+    } message: {
+      Text(
+        "Your training stays in your account. This iPhone goes back to its own on-device training."
+      )
+    }
+  }
+
+  private var content: some View {
     VStack(spacing: 24) {
       switch gate {
       case .loading:
@@ -255,24 +285,6 @@ struct AccountGateView: View {
           signOutControls
         }
       }
-    }
-    .padding()
-    .accessibilityIdentifier("account-gate")
-    .task(id: gate) {
-      slow = false
-      guard gate == .loading else { return }
-      try? await Task.sleep(for: .seconds(8))
-      if !Task.isCancelled { slow = true }
-    }
-    .confirmationDialog(
-      "Sign out of FORMA?", isPresented: $confirmSignOut, titleVisibility: .visible
-    ) {
-      Button("Sign out", role: .destructive) { Task { await signOut() } }
-        .accessibilityIdentifier("account-gate-sign-out-confirm")
-    } message: {
-      Text(
-        "Your training stays in your account. This iPhone goes back to its own on-device training."
-      )
     }
   }
 
