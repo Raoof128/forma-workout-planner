@@ -261,10 +261,17 @@ public enum AccountWire {
     return json(object)
   }
 
-  public static func createCoachToken(label: String, full: Bool) -> Request {
-    Request(
-      method: "POST", path: "/api/account/coach-tokens",
-      body: json(["label": label, "scope": full ? "full" : "read"]))
+  /// Minting is a step-up action: an older sign-in adds the password (and the
+  /// authenticator code when two-step is on), as removing other sessions does.
+  public static func createCoachToken(
+    label: String, full: Bool, password: String? = nil, code: String? = nil
+  ) -> Request {
+    var object: [String: Any] = ["label": label, "scope": full ? "full" : "read"]
+    if let password, !password.isEmpty {
+      object["password"] = password
+      if let code, !code.isEmpty { object["code"] = code }
+    }
+    return Request(method: "POST", path: "/api/account/coach-tokens", body: json(object))
   }
 
   public static func revokeCoachToken(id: String) throws -> Request {
@@ -398,10 +405,10 @@ public enum AccountWire {
     "TOO_MANY_ATTEMPTS":
       "Too many password attempts for this account. Try again later or reset your password.",
     "rate_limited": "Too many requests. Try again in a minute.",
-    "invalid_redirect": "We couldn’t complete that request. Please try again.",
-    "unsupported_media_type": "We couldn’t complete that request. Please try again.",
-    "bad_request": "We couldn’t complete that request. Please try again.",
-    "invalid_json": "We couldn’t complete that request. Please try again.",
+    "invalid_redirect": "That request didn’t go through. Try again.",
+    "unsupported_media_type": "That request didn’t go through. Try again.",
+    "bad_request": "That request didn’t go through. Try again.",
+    "invalid_json": "That request didn’t go through. Try again.",
     "internal_error": "FORMA is unavailable right now. Try again in a moment.",
     "workspace_unavailable": "FORMA is unavailable right now. Try again in a moment.",
     "token_not_found": "That coach token was already revoked.",

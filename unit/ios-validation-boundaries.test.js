@@ -46,3 +46,28 @@ test("shared native active completion metadata bounds match strict web validatio
     assertBoundary(workspace, fixture);
   }
 });
+
+test("shared native Apple Watch summary bounds match strict web validation", () => {
+  for (const fixture of corpus.watchSummaries) {
+    const workspace = fresh("showcase-receipt");
+    workspace.history[0].watch = fixture.summary;
+    assertBoundary(workspace, fixture);
+  }
+});
+
+test("a Watch summary belongs to finished workouts only", () => {
+  const summary = { elapsedSeconds: 60, averageHeartRate: 120 };
+  const finished = fresh("showcase-receipt");
+  finished.history[0].watch = summary;
+  assert.deepEqual(
+    validateData(finished, { strict: true }).history[0].watch,
+    summary,
+  );
+  const unknown = fresh("showcase-receipt");
+  unknown.history[0].watch = { ...summary, samples: [118, 121] };
+  assert.throws(() => validateData(unknown, { strict: true }));
+  const active = fresh("active-upper");
+  active.active.watch = summary;
+  assert.throws(() => validateData(active, { strict: true }));
+  assert.equal(validateData(active).active.watch, undefined);
+});

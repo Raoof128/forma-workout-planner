@@ -20,8 +20,12 @@ the iPhone logs the sets. Requirement IDs refer to the
    energy, all the live data its sensors provide) and mirrors the session to the
    iPhone. The iPhone starts the FORMA workout at that moment.
 3. **During the workout** the Watch shows elapsed active time, heart rate and
-   active energy on one page; Pause, End and Discard recording are on a
-   separate controls page, as in Apple's Workout app. Paused is shown in text. The iPhone's workout screen shows the live
+   active energy on one page, with a Stop button that asks **Pause recording**
+   (or Resume) or **End workout**; Pause, End and Discard recording are also on a
+   separate controls page, as in Apple's Workout app. A pulsing heart shows while
+   the session starts, restores or saves, and "Measuring…" until the first
+   heart-rate reading. The Watch controls only its own recording, never the
+   iPhone's sets, holds or rest timers. Paused is shown in text. The iPhone's workout screen shows the live
    heart rate and calories it receives.
 4. **Finish on the iPhone**: the Watch stops, ends collection and saves the
    workout to Apple Health. **Discard** on the iPhone discards it on the Watch
@@ -32,11 +36,18 @@ as recording without inventing a FORMA workout.
 
 ## Data boundaries
 
-Heart rate and energy go only into Apple Health. They never enter the FORMA
-workspace, so the web data contract, exports and validators are unchanged. The
-privacy notice, [privacy inventory](privacy-inventory.md) and
-[App Review matrix](app-review-matrix.md) describe this. Nothing is sent off
-the devices.
+Individual heart-rate and energy readings go only into Apple Health. Since
+2 November 2026 the finished FORMA workout keeps a **summary** of what the Watch
+recorded (`watch`: time, average and highest heart rate, active energy; see the
+[data model](../../docs/data-model.md)). The iPhone stores the latest reading at
+Finish and replaces it with the Watch's final one if that arrives later; a
+discarded recording keeps none. The summary is part of the training records and
+exports and, signed in, syncs to the account, so the website shows it in the
+workout details, the journal and Progress. This supersedes the earlier rule
+that nothing leaves the devices. The Privacy Policy (1.4), the native notice,
+[privacy inventory](privacy-inventory.md) and
+[App Review matrix](app-review-matrix.md) describe it. Release the API first:
+older images reject the field.
 
 ## Implementation
 

@@ -201,8 +201,10 @@ extension AppModel {
         try await leavingStore?.removeLocalFiles()
         return true
       } catch {
-        errorMessage =
-          "You’re signed out, but the saved account copy couldn’t be fully removed. \(error.localizedDescription)"
+        reportFailure(
+          "Couldn’t remove the account’s training",
+          "You’re signed out. Some of the account’s training is still on this iPhone; you can remove it from You."
+        )
       }
     }
     return false
@@ -489,20 +491,27 @@ extension AppModel {
   // MARK: Conflicts
 
   /// "Reload cloud data": the account's copy replaces this iPhone's unsent edits.
-  func resolveConflictUsingAccount() async {
-    guard let sync else { return }
+  /// Returns how it ended, so the screen confirms only a real success; nil
+  /// when there is no account sync to resolve.
+  @discardableResult
+  func resolveConflictUsingAccount() async -> SyncStatus? {
+    guard let sync else { return nil }
     let generation = syncGeneration
     let status = await sync.resolveConflictUsingAccount()
     await reloadWorkspaceFromStore(after: status)
     attempted(status, generation: generation)
+    return status
   }
 
-  /// "Keep my version": this iPhone's copy replaces the account's.
-  func resolveConflictKeepingLocal() async {
-    guard let sync else { return }
+  /// "Keep my version": this iPhone's copy replaces the account's. Returns how
+  /// it ended, as `resolveConflictUsingAccount()` does.
+  @discardableResult
+  func resolveConflictKeepingLocal() async -> SyncStatus? {
+    guard let sync else { return nil }
     let generation = syncGeneration
     let status = await sync.resolveConflictKeepingLocal()
     attempted(status, generation: generation)
+    return status
   }
 
   // MARK: Signing out

@@ -6,6 +6,12 @@ on:
     paths:
       - "ios/**"
       - "scripts/build-ios-resources.mjs"
+      - "scripts/build-ios-media.py"
+      - "src/catalog/media.json"
+      - "src/catalog/demos.json"
+      - "public/exercise-media/**"
+      - "public/exercise-demos/**"
+      - "public/fonts/**"
       - "scripts/check-ios-contracts.mjs"
       - "scripts/check-ios-widget-bundle.py"
       - "unit/ios-resources.test.js"
@@ -85,6 +91,8 @@ jobs:
           node --test unit/ios-resources.test.js unit/ios-validation-boundaries.test.js
           node scripts/build-ios-resources.mjs
           git diff --exit-code -- ios/FORMA/Resources ios/Fixtures
+          # The website's media in the app: index current, every file present.
+          python3 scripts/build-ios-media.py --check
 
       - name: Verify native core
         run: |

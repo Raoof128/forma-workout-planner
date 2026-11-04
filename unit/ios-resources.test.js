@@ -341,7 +341,7 @@ test("native legal resources retain exact current source policies and label loca
   const legal = json("ios/FORMA/Resources/legal.json");
   assert.deepEqual(legal.privacy, legalDocuments.privacy);
   assert.deepEqual(legal.terms, legalDocuments.terms);
-  assert.equal(legal.privacy.version, "1.3");
+  assert.equal(legal.privacy.version, "1.4");
   assert.equal(legal.nativeGuestNotice.status, "prototype-not-release-policy");
   const notice = JSON.stringify(legal.nativeGuestNotice).toLowerCase();
   assert.match(notice, /application support/);
@@ -362,6 +362,10 @@ test("native legal resources retain exact current source policies and label loca
   assert.match(notice, /apple health/);
   assert.match(notice, /heart rate/);
   assert.doesNotMatch(notice, /no healthkit data/);
+  // The summary is stored with the workout and synced; the notice must not
+  // still promise that heart rate never leaves the devices.
+  assert.match(notice, /summary/);
+  assert.doesNotMatch(notice, /does not send them anywhere/);
 });
 
 test("catalogue notices retain original and reviewed credits without claiming license clearance", () => {

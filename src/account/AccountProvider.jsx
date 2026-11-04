@@ -280,8 +280,13 @@ export function AccountProvider({ children }) {
       // Coach tokens (read-only or full access). The plaintext token is in
       // the create result only; it is never stored client-side.
       listCoachTokens: call(() => boundAccountApi("/api/account/coach-tokens")),
-      createCoachToken: call(({ label, scope = "read" }) =>
-        boundAccountApi("/api/account/coach-tokens", "POST", { label, scope }),
+      // An older sign-in confirms minting with { password, code } (step-up).
+      createCoachToken: call(({ label, scope = "read", ...confirmation }) =>
+        boundAccountApi("/api/account/coach-tokens", "POST", {
+          label,
+          scope,
+          ...(confirmation.password ? confirmation : {}),
+        }),
       ),
       revokeCoachToken: call(({ id }) =>
         boundAccountApi(

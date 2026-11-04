@@ -92,6 +92,37 @@ final class TrainingNavigationTests: XCTestCase {
     XCTAssertNil(navigation.scrollToTopEvents[.you], "Other tabs are untouched")
   }
 
+  /// Re-tapping a tab whose root already rests at the top moves nothing, so
+  /// the caller plays no haptic for it.
+  @MainActor
+  func testReselectingATabAlreadyAtItsTopDoesNothing() {
+    let navigation = TrainingNavigation()
+    navigation.observeRoot(.plan, offset: 0)
+    XCTAssertEqual(navigation.reselect(.plan), .alreadyAtTop)
+    XCTAssertNil(navigation.scrollToTopEvents[.plan])
+    navigation.observeRoot(.plan, offset: 240)
+    XCTAssertEqual(navigation.reselect(.plan), .scrolledToTop)
+    XCTAssertEqual(navigation.scrollToTopEvents[.plan], 1)
+    navigation.observeRoot(.plan, offset: .nan)
+    XCTAssertEqual(navigation.reselect(.plan), .scrolledToTop, "A bad reading keeps the last one")
+    navigation.observeRoot(.today, offset: 0)
+    navigation.paths[.today] = [.session("s1")]
+    XCTAssertEqual(navigation.reselect(.today), .poppedToRoot, "A pushed screen pops first")
+  }
+
+  /// The bar steps aside for the keyboard and every tab screen stops keeping
+  /// room for it, so the keyboard does not cost the bar's height as well.
+  @MainActor
+  func testTheKeyboardReleasesTheBarsClearance() {
+    let navigation = TrainingNavigation()
+    navigation.barInset = 130
+    XCTAssertEqual(navigation.bottomClearance, 130)
+    navigation.keyboardVisible = true
+    XCTAssertEqual(navigation.bottomClearance, 0)
+    navigation.keyboardVisible = false
+    XCTAssertEqual(navigation.bottomClearance, 130)
+  }
+
   @MainActor
   func testTheSecondReselectionAfterAPopScrollsToTheTop() {
     let navigation = TrainingNavigation()

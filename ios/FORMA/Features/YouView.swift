@@ -4,6 +4,7 @@ import UniformTypeIdentifiers
 
 struct YouView: View {
   @Environment(AppModel.self) private var model
+  @Environment(\.openURL) private var openURL
   @AccessibilityFocusState private var widgetSharingFocused: Bool
   @State private var profilePresented = false
   @State private var exporting = false
@@ -36,7 +37,7 @@ struct YouView: View {
 
       AccountSection(authMode: $authMode)
 
-      Section("Make it yours") {
+      Section {
         Button {
           profilePresented = true
         } label: {
@@ -46,7 +47,11 @@ struct YouView: View {
         }
         NavigationLink("Training days", value: TrainingRoute.trainingDays)
         LabeledContent("Weights", value: "Kilograms")
-        LabeledContent("Training dates", value: "Australia/Sydney")
+        LabeledContent("Training dates", value: Self.trainingTimeZone)
+      } header: {
+        Text("Profile")
+      } footer: {
+        Text("Weights and training dates match the FORMA website and can't be changed.")
       }
 
       Section {
@@ -58,14 +63,12 @@ struct YouView: View {
         }
         Toggle("Haptics", isOn: $model.hapticsEnabled)
       } header: {
-        Text("Feel at home")
+        Text("Appearance & feedback")
       } footer: {
         VStack(alignment: .leading, spacing: 8) {
+          Text("Motion: System follows Reduce Motion. Minimal uses short fades. Off shows changes at once.")
           Text(
-            "Motion: System plays full motion unless Reduce Motion is on, Minimal swaps movement for short fades, and Off shows every change at once. Reduce Motion in Settings always wins, and Off leaves system transitions such as sheets alone."
-          )
-          Text(
-            "Haptics: a light tap confirms a saved set, a firmer one marks the end of rest (a notification does when FORMA is in the background), a finished workout gets one success pattern, and warnings and errors have their own. Each is paired with something you can see. This switch turns all of them off; your device's haptic settings still apply."
+            "Haptics: taps and pulses that confirm saves, rest, selections and errors. Your device's haptic settings still apply."
           )
         }
       }
@@ -85,19 +88,25 @@ struct YouView: View {
           Text(status).font(.footnote).foregroundStyle(FormaTheme.secondary)
         }
       } header: {
-        Text("Training at a glance")
+        Text("Widgets")
       } footer: {
         Text(
-          "Widgets show your next routine, saved set counts and weekly totals. They hide while your iPhone is locked. Sharing starts off for each training space. Updates follow system timing; tap a widget to open your current saved training."
+          "Widgets show your next routine, saved set counts and weekly totals, and hide while your iPhone is locked. Sharing starts off for each training space."
         )
       }
 
       Section {
         Toggle("Show workout on Lock Screen", isOn: $model.liveActivityEnabled)
           .accessibilityIdentifier("live-activity-toggle")
+        // HIG Writing: link to a setting rather than describe where it is.
+        Button("Live Activity settings for FORMA") {
+          if let url = URL(string: UIApplication.openSettingsURLString) { openURL(url) }
+        }
+        .accessibilityHint("Opens FORMA in the Settings app.")
+        .accessibilityIdentifier("open-app-settings")
       } footer: {
         Text(
-          "Shows the workout, current set and rest timer on the Lock Screen and in the Dynamic Island while a workout is active. This stays on this iPhone. You can also turn Live Activities off for FORMA in Settings."
+          "Shows the workout, current set and rest timer on the Lock Screen and in the Dynamic Island during a workout. This stays on this iPhone."
         )
       }
 
@@ -118,6 +127,10 @@ struct YouView: View {
         NavigationLink(value: TrainingRoute.exerciseLibrary) {
           Label("Exercise sources & licences", systemImage: "text.book.closed")
         }
+        NavigationLink(value: TrainingRoute.mediaCredits) {
+          Label("Pictures, videos & font", systemImage: "photo.on.rectangle")
+        }
+        .accessibilityIdentifier("media-credits")
         // Signed in, the open store is the account's synced copy; deleting the
         // account is under Privacy & account.
         if !model.isSignedIn {
@@ -127,7 +140,7 @@ struct YouView: View {
           .disabled(model.busy)
         }
       } header: {
-        Text("Yours to keep. Yours to control.")
+        Text("Your data")
       } footer: {
         Text(
           model.isSignedIn
@@ -157,7 +170,8 @@ struct YouView: View {
     .sheet(item: $authMode) { mode in
       AuthFlowView(mode: mode).environment(model).protectWidgetNavigation()
     }
-    .refreshable { if model.isSignedIn { await model.syncNow() } }
+    // Only an account has anything to refresh; a guest gets no pull spinner.
+    .modifier(SyncRefresh(enabled: model.isSignedIn))
     .protectWidgetNavigation(while: exporting)
     .fileExporter(
       isPresented: $exporting, document: document, contentType: .json,
@@ -193,6 +207,13 @@ struct YouView: View {
     return "forma-backup-\(Date.now.formatted(dateStyle))"
   }
 
+  /// The training calendar's time zone by name ("Australian Eastern Time"),
+  /// not its identifier.
+  private static let trainingTimeZone: String = {
+    let zone = TrainingDate.calendar.timeZone
+    return zone.localizedName(for: .generic, locale: .current) ?? zone.identifier
+  }()
+
   /// The bundle's version never changes while the app runs, so read it once
   /// instead of on every render of this form.
   private static let buildDescription: String = {
@@ -202,6 +223,21 @@ struct YouView: View {
     let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "—"
     return "\(version) (\(build))"
   }()
+}
+
+/// Pull to refresh for a signed-in account only. Switching it changes the
+/// form's identity, which happens only on sign-in or sign-out.
+private struct SyncRefresh: ViewModifier {
+  @Environment(AppModel.self) private var model
+  let enabled: Bool
+
+  func body(content: Content) -> some View {
+    if enabled {
+      content.refreshable { await model.syncNow() }
+    } else {
+      content
+    }
+  }
 }
 
 /// Scrolls the You screen to a control another part of the app pointed at (the
@@ -226,6 +262,12 @@ private struct YouFocusReveal: ViewModifier {
       }
     }
   }
+}
+
+/// A rest length as people say it: "90 sec", "2 min", "2 min 30 sec".
+func restText(_ seconds: Int) -> String {
+  Duration.seconds(seconds).formatted(
+    .units(allowed: [.minutes, .seconds], width: .abbreviated))
 }
 
 struct ProfileEditor: View {
@@ -266,8 +308,15 @@ struct ProfileEditor: View {
             .accessibilityIdentifier("profile-name")
           Stepper("Weekly goal: \(countPhrase(goal, "workout"))", value: $goal, in: 1...7)
             .accessibilityIdentifier("profile-goal")
-          Stepper("Default rest: \(rest) seconds", value: $rest, in: 10...600, step: 5)
-            .accessibilityIdentifier("profile-rest")
+          // Rests are long jumps (90 s to 3 min), not small steps, so a menu
+          // of common values replaces a 118-step stepper (HIG Steppers).
+          Picker("Default rest", selection: $rest) {
+            ForEach(Self.restChoices(including: rest), id: \.self) { seconds in
+              Text(restText(seconds)).tag(seconds)
+            }
+          }
+          .pickerStyle(.menu)
+          .accessibilityIdentifier("profile-rest")
         }
         if let problem {
           Section { Text(problem).font(.footnote).foregroundStyle(FormaTheme.primary) }
@@ -326,6 +375,13 @@ struct ProfileEditor: View {
         rest = profile.restSeconds
       }
     }
+  }
+
+  /// Common rests, plus a saved value that isn't one of them (the website
+  /// allows any 10 to 600 seconds), so the menu never shows a blank.
+  static func restChoices(including current: Int) -> [Int] {
+    let common = [30, 45, 60, 75, 90, 120, 150, 180, 240, 300, 600]
+    return common.contains(current) ? common : (common + [current]).sorted()
   }
 
   private func save() async {
@@ -408,9 +464,10 @@ struct NativePrivacyView: View {
             if let items = block.ul {
               ForEach(items, id: \.self) { item in
                 HStack(alignment: .top) {
-                  Text("•")
+                  Text("•").accessibilityHidden(true)
                   Text(item)
                 }
+                .accessibilityElement(children: .combine)
               }
             }
           }

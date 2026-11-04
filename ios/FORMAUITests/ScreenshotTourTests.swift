@@ -110,7 +110,7 @@ final class ScreenshotTourTests: XCTestCase {
     XCTAssertTrue(result.waitForExistence(timeout: 10))
     capture(app, "11-library-search")
     result.tap()
-    XCTAssertTrue(app.navigationBars["Technique guide"].waitForExistence(timeout: 10))
+    XCTAssertTrue(app.navigationBars["Barbell bench press"].waitForExistence(timeout: 10))
     XCTAssertTrue(app.staticTexts["Barbell bench press"].waitForExistence(timeout: 10))
     capture(app, "12-technique-guide")
   }

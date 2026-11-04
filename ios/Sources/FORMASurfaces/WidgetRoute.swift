@@ -4,6 +4,9 @@ public enum WidgetRoute: Equatable, Sendable, Hashable {
   case today, plan, progress, settings
   case routine(id: String, epoch: String)
   case active(id: String, epoch: String)
+  /// A tap on the workout Live Activity. Unlike `active`, the app does not gate it on widget
+  /// sharing: the activity has its own switch, and it only ever opens the workout it was drawn for.
+  case workout(id: String, epoch: String)
 
   public var url: URL {
     var components = URLComponents()
@@ -24,6 +27,11 @@ public enum WidgetRoute: Equatable, Sendable, Hashable {
       components.queryItems = [
         URLQueryItem(name: "id", value: id), URLQueryItem(name: "epoch", value: epoch),
       ]
+    case .workout(let id, let epoch):
+      components.path = "/workout"
+      components.queryItems = [
+        URLQueryItem(name: "id", value: id), URLQueryItem(name: "epoch", value: epoch),
+      ]
     }
     // All structural fields above are app constants; query values are percent encoded.
     return components.url!
@@ -41,14 +49,17 @@ public enum WidgetRoute: Equatable, Sendable, Hashable {
     case "/plan" where items.isEmpty: self = .plan
     case "/progress" where items.isEmpty: self = .progress
     case "/settings" where items.isEmpty: self = .settings
-    case "/routine", "/active":
+    case "/routine", "/active", "/workout":
       guard items.count == 2, Set(items.map(\.name)) == ["id", "epoch"],
         let id = items.first(where: { $0.name == "id" })?.value,
         let epoch = items.first(where: { $0.name == "epoch" })?.value,
         !id.isEmpty, id.utf16.count <= 200, !epoch.isEmpty, epoch.utf16.count <= 200
       else { return nil }
-      self =
-        parts.path == "/routine" ? .routine(id: id, epoch: epoch) : .active(id: id, epoch: epoch)
+      switch parts.path {
+      case "/routine": self = .routine(id: id, epoch: epoch)
+      case "/active": self = .active(id: id, epoch: epoch)
+      default: self = .workout(id: id, epoch: epoch)
+      }
     default: return nil
     }
   }

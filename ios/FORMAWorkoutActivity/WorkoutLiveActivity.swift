@@ -13,12 +13,19 @@ struct WorkoutLiveActivity: Widget {
 
 /// The same activity with the compact `.small` layout for the Apple Watch Smart Stack and CarPlay.
 /// `supplementalActivityFamilies` is iOS 18, and a widget's `body` cannot choose between two
-/// configurations at run time, so `FORMAWidgetBundle` picks this type or the one above.
+/// configurations at run time, so `WorkoutActivityMain` picks this type or the one above.
 @available(iOS 18.0, *)
 struct WorkoutLiveActivityWithSmallFamily: Widget {
   var body: some WidgetConfiguration {
     workoutActivity().supplementalActivityFamilies([.small])
   }
+}
+
+/// Where a tap on any presentation goes: the workout this activity was drawn for, checked by the
+/// app against the active session and the owner. It is not the widget's `active` link, because
+/// widget sharing is a separate switch from the Live Activity's.
+private func workoutLink(_ attributes: WorkoutActivityAttributes) -> URL {
+  WidgetRoute.workout(id: attributes.sessionID, epoch: attributes.ownerEpoch).url
 }
 
 @MainActor
@@ -27,6 +34,7 @@ private func workoutActivity() -> some WidgetConfiguration {
     WorkoutActivityRoot(
       sessionID: context.attributes.sessionID, state: context.state, isStale: context.isStale
     )
+    .widgetURL(workoutLink(context.attributes))
     .activityBackgroundTint(WorkoutActivityPalette.backgroundTint)
     .activitySystemActionForegroundColor(WorkoutActivityPalette.systemAction)
   } dynamicIsland: { context in
@@ -47,10 +55,11 @@ private func workoutActivity() -> some WidgetConfiguration {
     } compactLeading: {
       IslandCompactLeading(state: context.state, isStale: context.isStale)
     } compactTrailing: {
-      IslandCompactTrailing(state: context.state, isStale: context.isStale)
+      IslandCompactTrailingSlot(state: context.state, isStale: context.isStale)
     } minimal: {
       IslandMinimal(state: context.state, isStale: context.isStale)
     }
+    .widgetURL(workoutLink(context.attributes))
     .keylineTint(WorkoutActivityPalette.lime)
   }
 }

@@ -84,14 +84,30 @@ final class TrainingSnapshotTests: XCTestCase {
     XCTAssertEqual(
       WidgetRoute(url: WidgetRoute.active(id: id, epoch: "epoch").url),
       .active(id: id, epoch: "epoch"))
+    XCTAssertEqual(
+      WidgetRoute(url: WidgetRoute.workout(id: id, epoch: "epoch").url),
+      .workout(id: id, epoch: "epoch"))
     for text in [
       "https://widget/routine?id=a&epoch=b", "forma://widget/routine?id=a&id=b",
       "forma://widget/active?id=&epoch=x", "forma://widget/today?extra=x",
+      "forma://widget/workout?id=a", "forma://widget/workout?id=a&epoch=b&x=c",
+      "forma://widget/workout?id=a&epoch=", "forma://widget/workout/extra?id=a&epoch=b",
       "forma://attacker/today", "forma://widget/progress#x",
       "forma://user@widget/today", "forma://widget:80/today",
     ] {
       XCTAssertNil(WidgetRoute(url: URL(string: text)!))
     }
+  }
+
+  /// The Live Activity's link (audit 2026-11-02 H1) is its own path, so the app can route it
+  /// without the widget-sharing gate that guards `active`.
+  func testWorkoutRouteIsDistinctFromTheWidgetResumeRoute() throws {
+    let workout = WidgetRoute.workout(id: "s1", epoch: "owner")
+    XCTAssertEqual(workout.url.absoluteString, "forma://widget/workout?id=s1&epoch=owner")
+    XCTAssertNotEqual(workout, .active(id: "s1", epoch: "owner"))
+    XCTAssertEqual(
+      WidgetRoute(url: try XCTUnwrap(URL(string: "forma://widget/active?id=s1&epoch=owner"))),
+      .active(id: "s1", epoch: "owner"))
   }
 
   func testOlderPublicationCannotRestorePreviousOwnerEvenWithLargerRevision() async throws {

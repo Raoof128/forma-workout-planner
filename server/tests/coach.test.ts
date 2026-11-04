@@ -280,7 +280,8 @@ test("minting needs a fresh member session, a valid label, and stays within the 
   assert.equal(overCap.statusCode, 409);
   assert.deepEqual(overCap.json(), { error: "token_limit" });
 
-  // A session older than five minutes must reauthenticate to mint.
+  // A session older than five minutes must reauthenticate to mint (or confirm
+  // the password in the same request; session-step-up.test.ts covers that).
   await pool.query(
     `UPDATE "session" SET "createdAt" = now() - interval '6 minutes'
       WHERE token = $1`,
@@ -288,7 +289,11 @@ test("minting needs a fresh member session, a valid label, and stays within the 
   );
   const stale = await mint(alpha, "Stale session");
   assert.equal(stale.statusCode, 403);
-  assert.deepEqual(stale.json(), { error: "reauthentication_required" });
+  assert.deepEqual(stale.json(), {
+    error: "reauthentication_required",
+    twoFactor: false,
+  });
+  assert.equal(stale.headers["cache-control"], "private, no-store, max-age=0");
   // Listing and revoking remain available to the ordinary session.
   const listAgain = await app.inject({
     method: "GET",

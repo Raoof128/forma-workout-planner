@@ -10,7 +10,9 @@ enum AuthMode: String, Identifiable {
 /// and wait for the verification email. The words are the website's.
 struct AuthFlowView: View {
   private enum Screen { case signIn, signUp, forgot }
-  private enum Field { case name, email, password, code }
+  /// `passwordShown` is the same password while it is revealed (see
+  /// `RevealablePasswordField`).
+  private enum Field { case name, email, password, passwordShown, code }
 
   @Environment(AppModel.self) private var model
   @Environment(\.dismiss) private var dismiss
@@ -51,7 +53,7 @@ struct AuthFlowView: View {
       .navigationBarTitleDisplayMode(.inline)
       .toolbar {
         ToolbarItem(placement: .cancellationAction) {
-          Button("Not now") { dismiss() }
+          Button("Cancel") { dismiss() }
             .disabled(account.busy)
             .accessibilityIdentifier("account-cancel")
         }
@@ -78,7 +80,7 @@ struct AuthFlowView: View {
     switch screen {
     case .signIn: "Pick up where your training left off."
     case .signUp: "One account for your routines, sessions and progress."
-    case .forgot: "We’ll send a secure reset link if this address is registered."
+    case .forgot: "Get a secure reset link if this address is registered."
     }
   }
 
@@ -151,8 +153,6 @@ struct AuthFlowView: View {
     Form {
       Section {
         VStack(alignment: .leading, spacing: 8) {
-          Text("FORMA MEMBER ACCESS").font(.caption.weight(.bold)).tracking(2)
-            .foregroundStyle(FormaTheme.secondary)
           Text(title).font(.largeTitle.bold()).foregroundStyle(FormaTheme.primary)
             .accessibilityAddTraits(.isHeader)
           Text(subtitle).font(.subheadline).foregroundStyle(FormaTheme.secondary)
@@ -171,7 +171,10 @@ struct AuthFlowView: View {
             .accessibilityIdentifier("account-name")
         }
         TextField("Email address", text: $email)
-          .textContentType(screen == .signIn ? .username : .emailAddress)
+          // The email is the account's user name on every screen, so AutoFill
+          // saves and offers it with the password (Apple: `.username` plus the
+          // email keyboard when a site signs in with email addresses).
+          .textContentType(.username)
           .keyboardType(.emailAddress)
           .textInputAutocapitalization(.never).autocorrectionDisabled()
           .submitLabel(screen == .forgot ? .send : .next).focused($focus, equals: .email)
@@ -181,9 +184,10 @@ struct AuthFlowView: View {
           RevealablePasswordField(
             title: "Password", text: $password,
             contentType: screen == .signIn ? .password : .newPassword,
-            identifier: "account-password", revealIdentifier: "account-password-reveal"
+            identifier: "account-password", revealIdentifier: "account-password-reveal",
+            focus: $focus, hidden: .password, shown: .passwordShown
           )
-          .submitLabel(.go).focused($focus, equals: .password)
+          .submitLabel(.go)
           .onSubmit { Task { await submit() } }
         }
       } footer: {
@@ -271,14 +275,14 @@ struct AuthFlowView: View {
           Button {
             go(.signUp)
           } label: {
-            Text("New to FORMA? ") + Text("Create account").bold()
+            Text("New to FORMA? \(Text("Create account").bold())")
           }
           .accessibilityIdentifier("account-switch-mode")
         case .signUp:
           Button {
             go(.signIn)
           } label: {
-            Text("Already have an account? ") + Text("Sign in").bold()
+            Text("Already have an account? \(Text("Sign in").bold())")
           }
           .accessibilityIdentifier("account-switch-mode")
         case .forgot:
@@ -376,7 +380,7 @@ struct AuthFlowView: View {
       succeed("If this address needs verification, a link is on its way.")
       model.accountSucceeded(.accountSent)
     } catch {
-      fail("We couldn’t send the verification email. \(error.accountMessage)")
+      fail("The verification email wasn’t sent. \(error.accountMessage)")
       model.haptic(error.accountHaptic)
     }
   }
@@ -387,8 +391,6 @@ struct AuthFlowView: View {
     Form {
       Section {
         VStack(alignment: .leading, spacing: 8) {
-          Text("TWO-STEP VERIFICATION").font(.caption.weight(.bold)).tracking(2)
-            .foregroundStyle(FormaTheme.secondary)
           Text("One more step").font(.largeTitle.bold()).foregroundStyle(FormaTheme.primary)
             .accessibilityAddTraits(.isHeader)
           Text("Enter a code from your authenticator app, or use a recovery code.")
@@ -476,7 +478,7 @@ struct AuthFlowView: View {
             "Your account is ready. Check your inbox for the verification link before signing in."
           )
           .foregroundStyle(FormaTheme.primary)
-          Text("We sent it to \(address).").font(.subheadline).foregroundStyle(
+          Text("It went to \(address).").font(.subheadline).foregroundStyle(
             FormaTheme.secondary)
         }
         .padding(.vertical, 8).listRowBackground(Color.clear)
@@ -502,7 +504,7 @@ struct AuthFlowView: View {
               succeed("If this address needs verification, a link is on its way.")
               model.accountSucceeded()
             } catch {
-              fail("We couldn’t send the verification email. \(error.accountMessage)")
+              fail("The verification email wasn’t sent. \(error.accountMessage)")
               model.haptic(error.accountHaptic)
             }
           }

@@ -37,7 +37,13 @@ targets:
           - Info.plist
           - FORMA.entitlements
           - Resources
+          - Media
       - path: FORMA/Resources
+        buildPhase: resources
+      # The website's exercise media, kept as one folder in the bundle (see
+      # scripts/build-ios-media.py), so 200-odd files never crowd the bundle root.
+      - path: FORMA/Media
+        type: folder
         buildPhase: resources
       - path: Shared
       - path: WidgetPresentation
@@ -45,9 +51,17 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: dev.raoufabedini.forma
         # Where accounts and sync live (HTTPS only). Surfaced through Info.plist
-        # as FORMAAccountOrigin; override per build to point elsewhere, e.g.
-        # xcodebuild FORMA_ACCOUNT_ORIGIN=https://staging.example.
-        FORMA_ACCOUNT_ORIGIN: https://forma.raoufabedini.dev
+        # as FORMAAccountOrigin, and the same host is the app's Password
+        # AutoFill domain (`webcredentials:` in FORMA.entitlements; the Worker
+        # serves the matching /.well-known/apple-app-site-association). Override
+        # the host per build to point elsewhere, e.g.
+        # xcodebuild FORMA_ACCOUNT_HOST=forma-staging.raoufabedini.dev. For a host
+        # behind Cloudflare Access, which Apple's CDN cannot fetch through, set
+        # FORMA_ACCOUNT_ORIGIN=https://<host> and
+        # FORMA_ACCOUNT_HOST=<host>?mode=developer (a developer-signed build, with
+        # Associated Domains Development turned on in the iPhone's Developer settings).
+        FORMA_ACCOUNT_HOST: forma.raoufabedini.dev
+        FORMA_ACCOUNT_ORIGIN: https://$(FORMA_ACCOUNT_HOST)
         INFOPLIST_FILE: FORMA/Info.plist
         CODE_SIGN_ENTITLEMENTS: FORMA/FORMA.entitlements
         GENERATE_INFOPLIST_FILE: NO
@@ -62,11 +76,15 @@ targets:
       - package: FORMACore
         product: FORMASurfaces
       - target: FORMAWidgets
+      - target: FORMAWorkoutActivity
+  # The Training widget: reads the App Group snapshot under Complete data protection.
   FORMAWidgets:
     type: app-extension
     platform: iOS
     sources:
       - path: WidgetPresentation
+        excludes:
+          - WorkoutActivity*.swift
       - path: FORMAWidgets
         excludes:
           - Info.plist
@@ -76,6 +94,32 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: dev.raoufabedini.forma.widgets
         INFOPLIST_FILE: FORMAWidgets/Info.plist
         CODE_SIGN_ENTITLEMENTS: FORMAWidgets/FORMAWidgets.entitlements
+        GENERATE_INFOPLIST_FILE: NO
+        TARGETED_DEVICE_FAMILY: "1"
+        SKIP_INSTALL: YES
+        APPLICATION_EXTENSION_API_ONLY: YES
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) FORMA_WIDGET_EXTENSION"
+        CODE_SIGN_STYLE: Automatic
+    dependencies:
+      - package: FORMACore
+        product: FORMASurfaces
+  # The workout Live Activity, apart from the Training widget so its Complete data protection
+  # cannot hide the card on a locked iPhone. It reads no storage: no App Group and no
+  # data-protection entitlement, so it signs without an entitlements file.
+  FORMAWorkoutActivity:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: WidgetPresentation
+        excludes:
+          - TrainingWidgetView.swift
+      - path: FORMAWorkoutActivity
+        excludes:
+          - Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.raoufabedini.forma.workoutactivity
+        INFOPLIST_FILE: FORMAWorkoutActivity/Info.plist
         GENERATE_INFOPLIST_FILE: NO
         TARGETED_DEVICE_FAMILY: "1"
         SKIP_INSTALL: YES

@@ -4,8 +4,9 @@ import Observation
 import WatchConnectivity
 import os
 
-/// Owns the HealthKit workout on the Watch. Pressing Start begins collection
-/// and mirrors the session to the iPhone, which logs the sets.
+/// Owns the HealthKit workout on the Watch. Pressing Start asks for Health
+/// access, prepares the session while a 3-2-1 countdown runs, then begins
+/// collection and mirrors the session to the iPhone, which logs the sets.
 @MainActor @Observable
 final class WorkoutManager {
   static let shared = WorkoutManager()
@@ -13,6 +14,8 @@ final class WorkoutManager {
   enum Phase: Equatable {
     case idle
     case ready
+    /// The session is prepared (sensors warming) while the countdown runs.
+    case preparing
     case starting
     /// watchOS relaunched FORMA during a workout and the session is being reattached.
     case recovering
@@ -45,6 +48,9 @@ final class WorkoutManager {
   private(set) var activeEnergyOff = false
   /// Reattaching to the running workout failed; the person can retry or dismiss.
   private(set) var recoveryFailed = false
+  /// The iPhone asked for the end (its Finish or Discard), so the FORMA workout
+  /// is already finished there. Ending here leaves it for the iPhone to finish.
+  private(set) var endedFromPhone = false
 
   /// Whether the workout being stopped will be saved, for the wording of the wait.
   var savingToHealth: Bool { saveWhenStopped }
@@ -62,6 +68,11 @@ final class WorkoutManager {
   @ObservationIgnored private var saveWhenStopped = true
   @ObservationIgnored private var lastSent = Date.distantPast
   @ObservationIgnored private var lastSentKey: SentKey?
+  @ObservationIgnored private var heartbeatTask: Task<Void, Never>?
+  /// Ends a prepared session nobody started, so it never lingers.
+  @ObservationIgnored private var preparedTimeout: Task<Void, Never>?
+  /// Health access is being asked for; a second tap must not ask again.
+  @ObservationIgnored private var authorizing = false
   /// Where HealthKit stopped the session, kept so a retried save ends the
   /// builder at the same moment.
   @ObservationIgnored private var stoppedAt: Date?
@@ -74,12 +85,30 @@ final class WorkoutManager {
   /// The longest silence between messages to the iPhone while nothing changes.
   /// The iPhone calls readings stale after three of these.
   private static let heartbeat: TimeInterval = 20
+  /// The closest two ordinary snapshots may be. Each one is a radio send.
+  private static let minimumSpacing: TimeInterval = 2
+  /// How long a prepared session may wait for its countdown: the 3 s count
+  /// with room to spare. A prepared session keeps the app and sensors awake.
+  private static let preparedLimit: TimeInterval = 10
 
   /// What the iPhone shows; a message that changes none of it can wait.
   private struct SentKey: Equatable {
     var state: WatchMetrics.State
     var heartRate: Int?
     var activeEnergy: Int?
+
+    /// Worth a send: the state changed, a reading appeared or went away, heart
+    /// rate moved by 2 bpm or more, or energy by a whole kilocalorie.
+    func differs(from old: SentKey?) -> Bool {
+      guard let old else { return true }
+      if state != old.state || (heartRate == nil) != (old.heartRate == nil)
+        || activeEnergy != old.activeEnergy
+      {
+        return true
+      }
+      if let rate = heartRate, let previous = old.heartRate { return abs(rate - previous) >= 2 }
+      return false
+    }
   }
 
   private static let beatsPerMinute = HKUnit.count().unitDivided(by: .minute())
@@ -121,9 +150,13 @@ final class WorkoutManager {
     return name
   }
 
-  func start() async {
-    guard session == nil, phase != .starting, phase != .recovering else { return }
-    phase = .starting
+  /// Start was pressed. Health access is asked for first, so the countdown
+  /// never runs over a permission sheet; then the session is created and
+  /// prepared, and the countdown on screen gives the sensors time to start.
+  func requestStart() async {
+    guard canStart, !authorizing else { return }
+    authorizing = true
+    defer { authorizing = false }
     healthAccessDenied = false
     do {
       try await healthStore.requestAuthorization(
@@ -139,6 +172,8 @@ final class WorkoutManager {
       heartRateOff = healthStore.authorizationStatus(for: Self.heartRateType) == .sharingDenied
       activeEnergyOff =
         healthStore.authorizationStatus(for: Self.activeEnergyType) == .sharingDenied
+      // A recovered workout may have arrived while the sheet was open.
+      guard canStart else { return }
       let session = try HKWorkoutSession(healthStore: healthStore, configuration: configuration)
       let builder = session.associatedWorkoutBuilder()
       builder.dataSource = HKLiveWorkoutDataSource(
@@ -147,26 +182,75 @@ final class WorkoutManager {
       builder.delegate = bridge
       self.session = session
       self.builder = builder
-      saveWhenStopped = true
-      collectionEnded = false
-      stoppedAt = nil
-      let startDate = Date.now
-      offerConsumedAt = startDate
+      phase = .preparing
+      session.prepare()
+      expirePrepared()
+    } catch {
+      Self.log.error("Start failed: \(error.localizedDescription, privacy: .private)")
+      healthAccessDenied = Self.isAccessDenied(error)
+      phase = .failed(Self.message(for: error, doing: .start))
+    }
+  }
+
+  /// The countdown reached zero, or was tapped to skip: start the prepared
+  /// session and its collection now.
+  func beginPrepared() async {
+    guard phase == .preparing, let session, let builder else { return }
+    preparedTimeout?.cancel()
+    phase = .starting
+    saveWhenStopped = true
+    collectionEnded = false
+    stoppedAt = nil
+    let startDate = Date.now
+    offerConsumedAt = startDate
+    do {
       session.startActivity(with: startDate)
       try await builder.beginCollection(at: startDate)
       metrics = WatchMetrics(state: .running, startedAt: startDate, elapsed: 0)
       lastSentKey = nil
       showMetrics()
+      // HealthKit can report a failure while collection was starting; that
+      // must stay on screen rather than be replaced by Running.
+      guard phase == .starting, self.session === session else { return }
       phase = .running
+      startHeartbeat()
       await mirror(session)
     } catch {
       Self.log.error("Start failed: \(error.localizedDescription, privacy: .private)")
-      session?.end()
-      session = nil
-      builder = nil
+      guard self.session === session else { return }
+      session.end()
+      self.session = nil
+      self.builder = nil
       healthAccessDenied = Self.isAccessDenied(error)
       phase = .failed(Self.message(for: error, doing: .start))
     }
+  }
+
+  /// Nothing is open or starting, so Start may begin a new workout.
+  private var canStart: Bool {
+    session == nil && phase != .preparing && phase != .starting && phase != .recovering
+  }
+
+  /// A prepared session that never starts is ended, not left running.
+  private func expirePrepared() {
+    preparedTimeout?.cancel()
+    preparedTimeout = Task { [weak self] in
+      try? await Task.sleep(for: .seconds(Self.preparedLimit))
+      guard !Task.isCancelled, let self, self.phase == .preparing else { return }
+      Self.log.notice("Prepared session expired before its countdown finished")
+      self.endPrepared()
+      self.phase = self.routineName == nil ? .idle : .ready
+    }
+  }
+
+  /// End the prepared session before anything was collected. Nothing was
+  /// recorded, so there is nothing to save or discard.
+  private func endPrepared() {
+    preparedTimeout?.cancel()
+    preparedTimeout = nil
+    session?.end()
+    session = nil
+    builder = nil
   }
 
   /// The Watch keeps recording if the iPhone can't follow; the sets can
@@ -200,7 +284,7 @@ final class WorkoutManager {
 
   /// Relaunch after a crash: reattach to the workout that is still running.
   func recover() async {
-    guard session == nil, phase != .starting, phase != .recovering else { return }
+    guard canStart else { return }
     let before = phase
     phase = .recovering
     recoveryFailed = false
@@ -230,7 +314,11 @@ final class WorkoutManager {
       phase = session.state == .paused ? .paused : .running
       collectionEnded = false
       stoppedAt = nil
+      heartRateOff = healthStore.authorizationStatus(for: Self.heartRateType) == .sharingDenied
+      activeEnergyOff =
+        healthStore.authorizationStatus(for: Self.activeEnergyType) == .sharingDenied
       collected()
+      startHeartbeat()
       await mirror(session)
     } catch {
       Self.log.error("Recovery failed: \(error.localizedDescription, privacy: .private)")
@@ -254,16 +342,27 @@ final class WorkoutManager {
 
   // MARK: - Controls
 
-  func pause() { session?.pause() }
-  func resume() { session?.resume() }
+  func pause() {
+    guard phase == .running else { return }
+    session?.pause()
+  }
+
+  func resume() {
+    guard phase == .paused else { return }
+    session?.resume()
+  }
 
   /// Stop, wait for HealthKit to report stopped, then end collection, save
   /// (or discard) and end the session, in the order HealthKit requires.
-  func end(save: Bool) {
-    guard let session, phase == .running || phase == .paused else { return }
+  @discardableResult
+  func end(save: Bool) -> Bool {
+    guard let session, phase == .running || phase == .paused else { return false }
+    endedFromPhone = false
     saveWhenStopped = save
     phase = .ending
+    heartbeatTask?.cancel()
     session.stopActivity(with: .now)
+    return true
   }
 
   /// Try the Health save again after it failed. The recording is still held by
@@ -296,7 +395,11 @@ final class WorkoutManager {
     // are retained by the system. This is not a deletion of Health history.
     builder?.discardWorkout()
     metrics?.state = .ended
+    metrics?.discarded = true
+    // Best effort: the failed save already ended the session and sent its
+    // final reading, so the iPhone may not hear this one.
     send(force: true)
+    heartbeatTask?.cancel()
     self.session = nil
     builder = nil
     mirrored = false
@@ -311,6 +414,8 @@ final class WorkoutManager {
   // MARK: - Wording
 
   private enum Action { case start, restore, save, record }
+
+  static let startFailedMessage = "The workout couldn't start. Try again."
 
   static let healthAccessMessage =
     "Health access is off. On your iPhone, open Health, tap your picture, then Apps, then FORMA, and turn on Workouts."
@@ -335,7 +440,7 @@ final class WorkoutManager {
       break
     }
     return switch action {
-    case .start: "The workout couldn't start. Try again."
+    case .start: startFailedMessage
     case .restore: "Your workout couldn't be restored. Try again."
     case .save:
       "Your workout couldn't be saved to Health. Your recording is kept. Try saving again."
@@ -361,6 +466,10 @@ final class WorkoutManager {
     case .stopped:
       // `finish` sends the final snapshot; one here would only repeat the last.
       Task { await finish(at: date, session: session) }
+    case .ended where phase == .preparing:
+      // The system ended the prepared session before the countdown finished.
+      endPrepared()
+      phase = .failed(Self.startFailedMessage)
     default:
       break
     }
@@ -390,19 +499,23 @@ final class WorkoutManager {
       Self.log.error("Save failed: \(error.localizedDescription, privacy: .private)")
       healthAccessDenied = Self.isAccessDenied(error)
       phase = .failed(Self.message(for: error, doing: .save))
-      if session.state != .ended { session.end() }
       metrics?.state = .ended
-      send(force: true)
+      await sendFinal(on: session)
+      if session.state != .ended { session.end() }
       // Keep the failed builder reachable until the user retries or explicitly
       // discards. A failed save is never converted into a successful summary
       // or a new Start.
       return
     }
-    session.end()
     metrics?.state = .ended
     metrics?.elapsed = builder.elapsedTime
-    send(force: true)
+    if !saveWhenStopped { metrics?.discarded = true }
+    // The iPhone stops listening once the mirrored session ends, so the final
+    // reading must be delivered first, not queued behind `end()`.
+    await sendFinal(on: session)
+    session.end()
     let summary = metrics ?? WatchMetrics(state: .ended, startedAt: stopped, elapsed: 0)
+    heartbeatTask?.cancel()
     self.session = nil
     self.builder = nil
     mirrored = false
@@ -416,6 +529,13 @@ final class WorkoutManager {
     guard self.session === session else { return }
     Self.log.error("Session failed: \(error.localizedDescription, privacy: .private)")
     healthAccessDenied = Self.isAccessDenied(error)
+    if phase == .preparing {
+      // Nothing was recorded yet: end the prepared session and show the
+      // ordinary start failure, not a recording to save or discard.
+      endPrepared()
+      phase = .failed(Self.message(for: error, doing: .start))
+      return
+    }
     phase = .failed(Self.message(for: error, doing: .record))
   }
 
@@ -425,6 +545,7 @@ final class WorkoutManager {
     let heart = builder.statistics(for: Self.heartRateType)
     metrics?.heartRate = heart?.mostRecentQuantity()?.doubleValue(for: Self.beatsPerMinute)
     metrics?.averageHeartRate = heart?.averageQuantity()?.doubleValue(for: Self.beatsPerMinute)
+    metrics?.maxHeartRate = heart?.maximumQuantity()?.doubleValue(for: Self.beatsPerMinute)
     metrics?.activeEnergy = builder.statistics(for: Self.activeEnergyType)?
       .sumQuantity()?.doubleValue(for: .kilocalorie())
     metrics?.elapsed = builder.elapsedTime
@@ -446,7 +567,10 @@ final class WorkoutManager {
       switch message {
       case .pause: pause()
       case .resume: resume()
-      case .end(let save): end(save: save)
+      case .end(let save):
+        // Only when this request is the one that ended it: an End already
+        // under way on the Watch keeps its own wording and save choice.
+        if end(save: save) { endedFromPhone = true }
       case .metrics: break
       }
     }
@@ -468,13 +592,46 @@ final class WorkoutManager {
     let now = Date.now
     if !force {
       let age = now.timeIntervalSince(lastSent)
-      guard age >= 1, key != lastSentKey || age >= Self.heartbeat else { return }
+      guard age >= Self.minimumSpacing, key.differs(from: lastSentKey) || age >= Self.heartbeat
+      else { return }
     }
     lastSent = now
     lastSentKey = key
-    guard let data = try? WatchWorkoutMessage.metrics(metrics).encoded() else { return }
+    var snapshot = metrics
+    snapshot.sentAt = now
+    guard let data = try? WatchWorkoutMessage.metrics(snapshot).encoded() else { return }
     let target = UncheckedSendable(session)
     Task { try? await target.value.sendToRemoteWorkoutSession(data: data) }
+  }
+
+  /// The last snapshot of a recording, awaited (for at most two seconds) so it
+  /// reaches the iPhone before the session ends. Never blocks the save.
+  private func sendFinal(on session: HKWorkoutSession) async {
+    guard mirrored, var snapshot = metrics else { return }
+    snapshot.sentAt = .now
+    guard let data = try? WatchWorkoutMessage.metrics(snapshot).encoded() else { return }
+    lastSent = .now
+    let target = UncheckedSendable(session)
+    let delivery = Task { try? await target.value.sendToRemoteWorkoutSession(data: data) }
+    let timeout = Task {
+      try? await Task.sleep(for: .seconds(2))
+      delivery.cancel()
+    }
+    _ = await delivery.value
+    timeout.cancel()
+  }
+
+  /// While a recording is open, a quiet heartbeat so the iPhone can tell a
+  /// paused or still workout from a lost link. One wake every `heartbeat`.
+  private func startHeartbeat() {
+    heartbeatTask?.cancel()
+    heartbeatTask = Task { [weak self] in
+      while !Task.isCancelled {
+        try? await Task.sleep(for: .seconds(Self.heartbeat))
+        guard let self, self.session != nil else { return }
+        self.send(force: false)
+      }
+    }
   }
 }
 

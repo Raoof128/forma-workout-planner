@@ -40,6 +40,10 @@ final class AppModel {
   var pendingMutations = 0
   var busy: Bool { pendingMutations > 0 }
   var errorMessage: String?
+  /// The title the root alert gives `errorMessage`, kept with the message it
+  /// was reported for: once another failure replaces the message, this title
+  /// no longer applies and the alert falls back to its generic one.
+  private var reportedFailure: ReportedFailure?
   var loadFailure: String? {
     // The workspace will not open, so nothing can vouch for a running activity.
     didSet { if loadFailure != nil { syncLiveActivity() } }
@@ -102,6 +106,9 @@ final class AppModel {
   }
   /// The routine waiting on the Apple Watch start sheet.
   var pendingStart: Routine?
+  /// The finished workout, and whose store it is in, that the Watch's final
+  /// reading still belongs to. Cleared once that reading is stored.
+  private var watchSummaryTarget: (sessionID: String, owner: String)?
   private var presentWorkoutAfterSheet = false
 
   init(liveActivity: WorkoutLiveActivityController = .makeDefault()) {
@@ -116,6 +123,10 @@ final class AppModel {
         guard owner == self.storeIdentity else { return }
         await self.start(routine)
       }
+    }
+    watch.onRecordingEnded = { [weak self] summary in
+      guard let self else { return }
+      Task { await self.storeFinalWatchSummary(summary) }
     }
   }
 
@@ -299,8 +310,8 @@ final class AppModel {
         // older revision: show the current copy before anything else is saved.
         Task { await reloadWorkspaceFromStore() }
       }
-      errorMessage =
-        "This change was not saved. Your last saved workout is intact. \(error.localizedDescription)"
+      errorMessage = Self.failureMessage(
+        "This change was not saved. Your last saved workout is intact.", error)
       haptic(.failed)
       return false
     }
@@ -393,15 +404,36 @@ final class AppModel {
 
   func finish() async {
     guard let id = workspace?.active?.id else { return }
+    // The latest Watch reading goes in with the workout; the final one, sent
+    // when the Watch stops, replaces it if it arrives later.
+    let summary = watch.summary
     if await commit(
       forActiveSession: id,
       { value in
-        value = try WorkoutEngine.finish(value, now: Self.now, catalog: catalog)
+        value = try WorkoutEngine.finish(value, now: Self.now, catalog: catalog, watch: summary)
       })
     {
       receipt = workspace?.history.first { $0.id == id }
+      let recording = watch.phase == .recording || watch.phase == .ending
+      watchSummaryTarget = recording ? (id, storeIdentity) : nil
       // The Watch ends its recording and saves it to Apple Health.
       await watch.end(save: true)
+    }
+  }
+
+  /// Stores the Watch's final reading on the workout it belongs to. Nothing is
+  /// written when the workout is gone, the store changed, or nothing differs.
+  func storeFinalWatchSummary(_ summary: WorkoutWatchSummary) async {
+    guard let target = watchSummaryTarget, target.owner == storeIdentity else { return }
+    watchSummaryTarget = nil
+    guard let session = workspace?.history.first(where: { $0.id == target.sessionID }),
+      session.watch != summary
+    else { return }
+    if await commit({ value in
+      value = try WorkoutEngine.attachWatchSummary(
+        summary, toFinished: target.sessionID, in: value)
+    }), receipt?.id == target.sessionID {
+      receipt = workspace?.history.first { $0.id == target.sessionID }
     }
   }
 
@@ -427,7 +459,9 @@ final class AppModel {
       errorMessage = nil
       await watch.end(save: false)
     } catch {
-      errorMessage = "Your local training could not be deleted. \(error.localizedDescription)"
+      // The reset is one transaction, so a failure leaves everything in place.
+      reportFailure(
+        "Couldn’t delete your training", "Nothing on this iPhone was deleted. Try again from You.")
     }
   }
 
@@ -452,9 +486,49 @@ final class AppModel {
       try JSONEncoder().encode(preferences).write(
         to: preferencesURL, options: [.atomic, .completeFileProtection])
     } catch {
-      errorMessage = "Your appearance preference could not be saved. \(error.localizedDescription)"
+      reportFailure(
+        "Couldn’t save this setting",
+        "The change applies now, but FORMA may go back to the previous setting the next time it opens. Try changing it again."
+      )
     }
   }
+}
+
+extension AppModel {
+  /// The root alert's title for the current `errorMessage`, or nil for the
+  /// generic "Couldn’t save this change".
+  var errorTitle: String? {
+    guard let reportedFailure, reportedFailure.message == errorMessage else { return nil }
+    return reportedFailure.title
+  }
+
+  /// Reports a failure the root alert shows with its own title, for a failure
+  /// that is not a change being saved (a deletion, a setting, a sign-out).
+  func reportFailure(_ title: String, _ message: String) {
+    reportedFailure = ReportedFailure(title: title, message: message)
+    errorMessage = message
+  }
+
+  /// `summary`, followed by the error's own explanation when FORMA wrote it.
+  /// A system error's wording ("The operation couldn’t be completed.
+  /// (NSCocoaErrorDomain …)") explains nothing to the person, so it is left out.
+  nonisolated static func failureMessage(_ summary: String, _ error: any Error) -> String {
+    guard let detail = ownWording(error), !detail.isEmpty, detail != summary else { return summary }
+    return "\(summary) \(detail)"
+  }
+
+  /// The explanation of an error FORMA defines, or nil for a system error.
+  nonisolated static func ownWording(_ error: any Error) -> String? {
+    if let failure = error as? AppFailure { return failure.message }
+    if let failure = error as? FormaError { return failure.errorDescription }
+    return nil
+  }
+}
+
+/// A failure reported with its own alert title.
+struct ReportedFailure: Equatable {
+  let title: String
+  let message: String
 }
 
 struct AppFailure: LocalizedError {

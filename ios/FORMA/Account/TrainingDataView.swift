@@ -71,7 +71,11 @@ struct TrainingDataView: View {
           )
         }
       case .unavailable(let message):
-        Section { FormNotice(text: message, tone: .error) }
+        Section {
+          FormNotice(text: message, tone: .error)
+          Button("Try again") { Task { await loadOffer() } }
+            .accessibilityIdentifier("phone-training-retry")
+        }
       case .available(let summary), .reservedHere(let summary):
         Section {
           VStack(alignment: .leading, spacing: 8) {
@@ -167,6 +171,13 @@ struct PhoneTrainingReview: View {
   @State private var working = false
   @State private var error: String?
 
+  /// Why "Replace account" is still dimmed, in words.
+  private var replaceMissing: String? {
+    if !copyReady { return "Save a copy of your account data first." }
+    if !acknowledged { return "Tick the box once you’ve reviewed the counts." }
+    return nil
+  }
+
   private var canSave: Bool {
     if case .idle = model.syncStatus { return model.workspace != nil }
     return false
@@ -216,11 +227,15 @@ struct PhoneTrainingReview: View {
         if let error { FormNotice(text: error, tone: .error) }
         SubmitButton(
           title: "Replace account with this iPhone’s training", working: working,
-          identifier: "phone-training-import"
+          identifier: "phone-training-import", hint: replaceMissing
         ) {
           confirming = true
         }
         .disabled(!acknowledged || !copyReady || working)
+        if let missing = replaceMissing, !working {
+          Text(missing).font(.footnote).foregroundStyle(FormaTheme.secondary)
+            .accessibilityIdentifier("phone-training-reason")
+        }
       }
     }
     .scrollContentBackground(.hidden).background(FormaTheme.canvas)

@@ -202,6 +202,19 @@ final class AccountWireTests: XCTestCase {
       body(AccountWire.createCoachToken(label: "Coach", full: false))?["scope"] as? String, "read")
     XCTAssertEqual(
       body(AccountWire.createCoachToken(label: "Coach", full: true))?["scope"] as? String, "full")
+    // An older sign-in confirms minting in the same request; no password, no code.
+    let plain = body(AccountWire.createCoachToken(label: "Coach", full: false))
+    XCTAssertNil(plain?["password"])
+    XCTAssertNil(plain?["code"])
+    let confirmed = body(
+      AccountWire.createCoachToken(label: "Coach", full: true, password: "pass phrase", code: "123456"))
+    XCTAssertEqual(confirmed?["password"] as? String, "pass phrase")
+    XCTAssertEqual(confirmed?["code"] as? String, "123456")
+    XCTAssertEqual(confirmed?["label"] as? String, "Coach")
+    let passwordOnly = body(
+      AccountWire.createCoachToken(label: "Coach", full: false, password: "pass phrase", code: ""))
+    XCTAssertEqual(passwordOnly?["password"] as? String, "pass phrase")
+    XCTAssertNil(passwordOnly?["code"])
     let revoke = try AccountWire.revokeCoachToken(id: "ct_abc123")
     XCTAssertEqual(revoke.method, "DELETE")
     XCTAssertEqual(revoke.path, "/api/account/coach-tokens/ct_abc123")
