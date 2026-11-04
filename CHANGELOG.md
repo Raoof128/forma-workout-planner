@@ -4,6 +4,30 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-11-04 — iOS and watchOS front-end audit fixes
+
+- **Scope:** fix the 2 November front-end audit
+  (`ios/docs/audits/frontend-2026-11-02/`, 14 high, 51 medium, 93 low) in eight
+  slices, merged on `integ/audit-2026-11-02`.
+- **Summary:** Today and start sheet (VoiceOver focus and announcements, Watch
+  strip says "Paused"); Plan (an untouched routine no longer asks to discard,
+  refused swipes explained, row management); Watch (Health prompt before the
+  countdown, session prepared during 3-2-1, summary visible on a dimmed wrist,
+  battery fixes); Progress, You and media (3:1 chart contrast, Audio Graph
+  descriptor, empty state); workout (Finish as a lime circle with a flag,
+  receipt toolbar Done); shell (tab bar steps aside for the keyboard, glass label
+  contrast); widgets and Live Activity (deep link into the workout, separate data
+  protection); account (`webcredentials` entitlement plus the Worker's
+  `apple-app-site-association`, coach-token step-up).
+- **Files:** `ios/` app, Watch, widget and package sources and tests;
+  `worker/` (AASA route), `server/` (coach-token step-up accepts the password in
+  the same request) and the website's account screens; audit reports.
+- **Verification:** each slice built for device; package and device test builds
+  pass on the merged branch. Not run on the iPhone or Watch yet.
+- **Follow-ups:** device checks marked "device" in the reports; Password AutoFill
+  and the coach-token step-up need a Worker and API release; a Watch "Now Playing" page was added without being asked
+  for (keep or drop); owner decisions in the audit README.
+
 ### Raouf: 2026-11-02 — Even workout buttons and Watch animation
 
 - **Scope:** owner said the workout page's Done button was still bigger than the
