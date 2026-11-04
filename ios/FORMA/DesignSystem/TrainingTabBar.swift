@@ -87,6 +87,8 @@ enum TrainingRoute: Hashable {
 enum TabReselection: Equatable {
   case poppedToRoot
   case scrolledToTop
+  /// At the root and already at the top: nothing moves, so nothing is played.
+  case alreadyAtTop
 }
 
 /// A place on the You screen that another part of the app asks to be shown.
@@ -105,16 +107,34 @@ final class TrainingNavigation {
   /// which every tab's screens keep clear at the bottom so their last rows
   /// scroll above the bar instead of ending under it.
   var barInset: CGFloat = 0
+  /// True while the software keyboard is on screen. The bar and its clearance
+  /// step aside, as the system tab bar stays behind the keyboard instead of
+  /// riding above it and taking the space a search or a field needs.
+  var keyboardVisible = false
+  /// What a tab screen keeps clear at the bottom for the bar right now.
+  var bottomClearance: CGFloat { keyboardVisible ? 0 : barInset }
   /// What each tab has pushed, bound to that tab's `NavigationStack`. Clearing
   /// a path returns the tab to its root.
   var paths: [TrainingTab: [TrainingRoute]] = [:]
   /// Counts the root scroll-to-top requests per tab; each tab's root scrolls on a change.
   private(set) var scrollToTopEvents: [TrainingTab: Int] = [:]
   @ObservationIgnored private var scroll = TabBarScrollState()
+  /// Whether each tab's root screen rests at its top. Not observed: it changes
+  /// on every scroll and only a re-tap reads it. Unknown (iOS 17, or before
+  /// the screen first scrolls) counts as "not at the top".
+  @ObservationIgnored private var rootAtTop: [TrainingTab: Bool] = [:]
+  /// Entrance reveals already played on the tab screens, kept across rebuilt stacks.
+  @ObservationIgnored let revealLedger = FormaRevealLedger()
 
   func observe(offset: CGFloat, limit: CGFloat) {
     scroll.observe(offset: offset, limit: limit)
     if collapsed != scroll.collapsed { collapsed = scroll.collapsed }
+  }
+
+  /// Records where a tab's root screen is scrolled to.
+  func observeRoot(_ tab: TrainingTab, offset: CGFloat) {
+    guard offset.isFinite else { return }
+    rootAtTop[tab] = offset <= 1
   }
 
   func expand() {
@@ -133,7 +153,7 @@ final class TrainingNavigation {
   }
 
   /// Handles a tap on the selected tab. A tab with screens pushed returns to
-  /// its root; at the root it scrolls to the top.
+  /// its root; at the root it scrolls to the top, unless it is already there.
   @discardableResult
   func reselect(_ tab: TrainingTab) -> TabReselection {
     expand()
@@ -141,6 +161,7 @@ final class TrainingNavigation {
       paths[tab] = []
       return .poppedToRoot
     }
+    if rootAtTop[tab] == true { return .alreadyAtTop }
     scrollToTopEvents[tab, default: 0] += 1
     return .scrolledToTop
   }
@@ -158,6 +179,8 @@ enum TabScrollAnchor {
 /// programmatic jump to the top only ever expands the bar.
 private struct TrainingTabScrollObserver: ViewModifier {
   @Environment(TrainingNavigation.self) private var navigation
+  /// Set on a tab's root screen, which also reports whether it is at its top.
+  var tab: TrainingTab?
 
   @ViewBuilder
   func body(content: Content) -> some View {
@@ -175,6 +198,7 @@ private struct TrainingTabScrollObserver: ViewModifier {
               + geometry.contentInsets.bottom - geometry.visibleRect.height)
         } action: { _, position in
           navigation.observe(offset: position.offset, limit: position.limit)
+          if let tab { navigation.observeRoot(tab, offset: position.offset) }
         }
     } else {
       content
@@ -190,13 +214,20 @@ private struct TrainingTabScrollObserver: ViewModifier {
 /// Keeps a screen's scroll view clear of the floating bar: the content still
 /// scrolls under the glass, but its last row can always scroll fully above it.
 /// It sits on each scroll view, not on the tab's stack: a stack-level inset
-/// never reached Today, which hides its navigation bar.
+/// never reached Today, which hides its navigation bar. On iOS 26 the space is
+/// a `safeAreaBar`, so the scroll view softens content under the bar with its
+/// scroll-edge effect, as it does under the system tab bar. While the keyboard
+/// is up the bar is hidden and the space is released.
 private struct TrainingBarClearance: ViewModifier {
   @Environment(TrainingNavigation.self) private var navigation
 
+  @ViewBuilder
   func body(content: Content) -> some View {
-    content.safeAreaInset(edge: .bottom, spacing: 0) {
-      Color.clear.frame(height: navigation.barInset).accessibilityHidden(true)
+    let spacer = Color.clear.frame(height: navigation.bottomClearance).accessibilityHidden(true)
+    if #available(iOS 26.0, *) {
+      content.safeAreaBar(edge: .bottom, spacing: 0) { spacer }
+    } else {
+      content.safeAreaInset(edge: .bottom, spacing: 0) { spacer }
     }
   }
 }
@@ -209,8 +240,9 @@ private struct TrainingTabRoot: ViewModifier {
   func body(content: Content) -> some View {
     ScrollViewReader { proxy in
       content
-        .modifier(TrainingTabScrollObserver())
+        .modifier(TrainingTabScrollObserver(tab: tab))
         .modifier(TrainingBarClearance())
+        .environment(\.formaRevealLedger, navigation.revealLedger)
         .onChange(of: navigation.scrollToTopEvents[tab, default: 0]) {
           withFormaAnimation(motion, FormaMotion.navigation) {
             proxy.scrollTo(TabScrollAnchor.top, anchor: .top)
@@ -379,6 +411,7 @@ struct TrainingTabBar: View {
   @Environment(\.accessibilityVoiceOverEnabled) private var voiceOver
   @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
   @Environment(\.colorSchemeContrast) private var contrast
+  @Environment(\.verticalSizeClass) private var verticalSizeClass
   @Namespace private var highlight
   @State private var selectionEvents: [TrainingTab: Int] = [:]
 
@@ -387,21 +420,31 @@ struct TrainingTabBar: View {
       && !voiceOver
   }
 
+  /// The opaque Reduce Transparency / Increase Contrast surface, where FORMA's
+  /// own colours apply; on glass the foreground follows the material.
+  private var opaque: Bool {
+    ControlSurfaceAppearance.isOpaque(reduceTransparency: reduceTransparency, contrast: contrast)
+  }
+
+  /// Landscape iPhone: icons and labels side by side, as the system tab bar
+  /// lays them out in that size class (HIG Tab bars).
+  private var sideBySide: Bool { verticalSizeClass == .compact }
+
   var body: some View {
     HStack {
       if compact { Spacer(minLength: 0) }
       surface {
-        HStack(spacing: 4) {
+        HStack(spacing: FormaSpacing.xxs) {
           if compact {
             Button {
               withFormaAnimation(motion, FormaMotion.navigation) { navigation.expand() }
             } label: {
-              HStack(spacing: 10) {
+              HStack(spacing: FormaSpacing.xs) {
                 Image(systemName: navigation.selection.symbol)
                 Text(navigation.selection.title).font(.subheadline.weight(.semibold))
                 Image(systemName: "chevron.up").font(.caption.weight(.bold))
               }
-              .padding(.horizontal, 16).frame(minHeight: 52).contentShape(Capsule())
+              .padding(.horizontal, FormaSpacing.md).frame(minHeight: 52).contentShape(Capsule())
             }
             .accessibilityLabel("Show all tabs")
             .accessibilityValue("\(navigation.selection.title) selected")
@@ -410,26 +453,51 @@ struct TrainingTabBar: View {
             ForEach(TrainingTab.allCases, id: \.self) { tab in tabButton(tab) }
           }
         }
-        .padding(5)
+        .padding(FormaSpacing.xxs)
       }
     }
     // Keep the viewport height stable during a drag, avoiding scroll feedback.
-    .frame(minHeight: textSize.isAccessibilitySize ? 76 : 72, alignment: .trailing)
+    .frame(minHeight: barHeight, alignment: .trailing)
     .buttonStyle(.plain)
-    .foregroundStyle(FormaTheme.primary)
+    .foregroundStyle(ControlForeground.primary.style(opaque: opaque))
     .accessibilityElement(children: .contain)
     .accessibilityLabel("Training tabs")
+    // VoiceOver treats the buttons as an ordered list of tabs ("tab, 1 of 4"),
+    // as on the system bar. The single collapsed control is not a tab list.
+    .accessibilityAddTraits(compact ? [] : .isTabBar)
     .accessibilityIdentifier("training-tab-bar")
     .animation(motion.animation(FormaMotion.navigation), value: compact)
     .onChange(of: motion) { _, _ in navigation.expand() }
   }
 
+  private var barHeight: CGFloat {
+    if sideBySide { return 60 }
+    return textSize.isAccessibilitySize ? 76 : 72
+  }
+
+  private var tabHeight: CGFloat {
+    if sideBySide { return 48 }
+    return textSize.isAccessibilitySize ? 62 : 56
+  }
+
+  /// Selection is shown by the filled symbol, the bold label and the tinted
+  /// capsule behind it. Colour goes on that background, not on the label (HIG
+  /// Color, Liquid Glass color), except on the opaque surface.
+  private func labelStyle(selected: Bool) -> AnyShapeStyle {
+    if opaque { return AnyShapeStyle(selected ? FormaTheme.accent : FormaTheme.secondary) }
+    return (selected ? ControlForeground.primary : .secondary).style(opaque: false)
+  }
+
   private func tabButton(_ tab: TrainingTab) -> some View {
     let selected = navigation.selection == tab
+    let layout =
+      sideBySide
+      ? AnyLayout(HStackLayout(spacing: FormaSpacing.xs))
+      : AnyLayout(VStackLayout(spacing: FormaSpacing.xxs))
     return Button {
       guard navigation.selection != tab else {
-        navigation.reselect(tab)
-        model.haptic(.tabReturned)
+        // A haptic only when the tap visibly did something (HIG Playing haptics).
+        if navigation.reselect(tab) != .alreadyAtTop { model.haptic(.tabReturned) }
         return
       }
       model.haptic(.tabChanged)
@@ -438,7 +506,7 @@ struct TrainingTabBar: View {
         selectionEvents[tab, default: 0] += 1
       }
     } label: {
-      VStack(spacing: 5) {
+      layout {
         TabSymbol(
           tab: tab, selected: selected, trigger: selectionEvents[tab, default: 0],
           size: textSize.isAccessibilitySize ? 25 : 21, animated: motion.allowsSpatialMotion)
@@ -452,14 +520,14 @@ struct TrainingTabBar: View {
       .accessibilityShowsLargeContentViewer {
         Label(tab.title, systemImage: tab.symbol)
       }
-      .foregroundStyle(selected ? FormaTheme.accent : FormaTheme.secondary)
-      .frame(maxWidth: .infinity, minHeight: textSize.isAccessibilitySize ? 62 : 56)
+      .foregroundStyle(labelStyle(selected: selected))
+      .frame(maxWidth: .infinity, minHeight: tabHeight)
       .background {
         if selected {
           // The capsule slides between tabs only at full motion; otherwise it
           // appears under the new tab with a fade.
           let capsule = Capsule().fill(
-            FormaTheme.accent.opacity(contrast == .increased ? 0.2 : 0.12))
+            FormaTheme.accent.opacity(contrast == .increased ? 0.2 : 0.16))
           if motion.allowsSpatialMotion {
             capsule.matchedGeometryEffect(id: "selected-tab", in: highlight)
           } else {
@@ -470,21 +538,12 @@ struct TrainingTabBar: View {
       .contentShape(Capsule())
     }
     .accessibilityLabel(tab.title)
-    .accessibilityValue("Tab \((TrainingTab.allCases.firstIndex(of: tab) ?? 0) + 1) of 4")
     .accessibilityAddTraits(selected ? [.isSelected] : [])
     .accessibilityIdentifier("tab-\(tab.rawValue)")
   }
 
-  @ViewBuilder
+  /// Not interactive: the capsule is a container, and each tab is the control.
   private func surface<Content: View>(@ViewBuilder content: () -> Content) -> some View {
-    if reduceTransparency || contrast == .increased {
-      content().background(FormaTheme.surface, in: Capsule())
-        .overlay { Capsule().stroke(FormaTheme.fieldBorder, lineWidth: 1) }
-    } else if #available(iOS 26.0, *) {
-      // Not interactive: the capsule is a container, and each tab is the control.
-      content().glassEffect(.regular, in: .capsule)
-    } else {
-      content().background(.regularMaterial, in: Capsule())
-    }
+    content().formaControlSurface(.capsule)
   }
 }

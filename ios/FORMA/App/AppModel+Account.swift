@@ -201,8 +201,10 @@ extension AppModel {
         try await leavingStore?.removeLocalFiles()
         return true
       } catch {
-        errorMessage =
-          "You’re signed out, but the saved account copy couldn’t be fully removed. \(error.localizedDescription)"
+        reportFailure(
+          "Couldn’t remove the account’s training",
+          "You’re signed out. Some of the account’s training is still on this iPhone; you can remove it from You."
+        )
       }
     }
     return false

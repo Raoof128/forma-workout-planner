@@ -60,7 +60,7 @@ findings are not App Store certification or proof that no bugs remain.
 | [README.md](<../../README.md>) | Reconcile stale account-staging prose with existing launch record; current 1711 accepted / 1411 selectable and workspace v2 facts. |
 | [ios/.gitignore](<../.gitignore>) | Retain; no new concrete defect established in this file |
 | [ios/FORMA/App/AppModel.swift](<../FORMA/App/AppModel.swift>) | Compact tested export; rebuild history only when changed; reset clears stale errors; FIFO persistence and session guards retained. |
-| [ios/FORMA/App/FORMAApp.swift](<../FORMA/App/FORMAApp.swift>) | Complete read; stable native tab/accessory identity and explicit OS guards retained; no new confirmed defect. |
+| [ios/FORMA/App/FORMAApp.swift](<../FORMA/App/FORMAApp.swift>) | Complete read; stable native tab/accessory identity and explicit OS guards retained; no new confirmed defect. Superseded 28 Oct 2026: the system tab bar and accessory were replaced by FORMA's own bar (`account-review-and-tab-bar-2026-10-28.md`). |
 | [ios/FORMA/DesignSystem/FormaTheme.swift](<../FORMA/DesignSystem/FormaTheme.swift>) | Retained: no new behavioral defect established; pending drafts continue to display unsaved status. Rendered contrast/glass/layout proof requires Mac/device. |
 | [ios/FORMA/DesignSystem/GlassControls.swift](<../FORMA/DesignSystem/GlassControls.swift>) | Retained: API guards and content/control layering are consistent with source docs. Rendered glass/keyboard/safe-area behavior unverified on Linux. |
 | [ios/FORMA/Features/PlanView.swift](<../FORMA/Features/PlanView.swift>) | Repair invalid per-side range, exact-row draft cleanup, duplicate Save tasks; details retain stored IDs. |
