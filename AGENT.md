@@ -58,6 +58,12 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-11-05 — Narrow account introduction release correction
+
+- **Scope and fix:** live staging review reproduced the decorative F covering two supporting-copy lines at 320 px. `src/account.css` reserves paragraph space only through 540 px; the full wording, emblem, headline, form controls and desktop presentation remain.
+- **Regression:** `tests/accounts-design.spec.js` checks loaded-font text-line rectangles against the actual emblem at six phone widths, plus copy and control containment. All five profiles failed on the original CSS, then passed after the correction; the complete account-design suite passed 40/40 in 61.8 seconds. Existing assertions and timeouts are retained.
+- **Release state:** initial source `2127081` passed complete CI and was deployed to the staging API/Worker with verified signed backups and 44 HTTPS checks. The additional CSS correction needs its own committed-source CI and staging verification before production. Backend image inputs, schema, secrets and production records are unchanged; final deployment evidence will be recorded separately.
+
 ### Raouf: 2026-11-05 — Completed website audit verification
 
 - **Implementation and provenance:** website changes are in `cc771830b92929485dae5f4fe8297a49df9fa394`; `c247e9e705b462ff9771f5442d17efc0955a22d8` corrects report portability without changing application, test or configuration sources. The final evidence update preserves those tested hashes. Earlier checkpoint notes remain historical.

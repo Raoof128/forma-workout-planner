@@ -321,3 +321,100 @@ test("tablet authentication keeps every form inside its visible panel", async ({
       .click();
   }
 });
+
+test("narrow authentication keeps the complete supporting copy clear of its emblem", async ({
+  page,
+}) => {
+  const unexpectedRequests = [];
+  await page.route("**/api/**", (route) => {
+    const request = route.request();
+    const path = new URL(request.url()).pathname;
+    if (path === "/api/auth/get-session" && request.method() === "GET")
+      return route.fulfill({ json: null });
+    unexpectedRequests.push(`${request.method()} ${path}`);
+    return route.fulfill({ status: 404, json: { error: "Isolated fixture" } });
+  });
+  await page.goto("/#account");
+  await page
+    .getByRole("button", {
+      name: "New to FORMA? Create account",
+      exact: true,
+    })
+    .click();
+  await expect(
+    page.getByRole("heading", { name: "Create your account", exact: true }),
+  ).toBeVisible();
+  const copy = page.locator(".account-auth-aside p");
+  await expect(copy).toHaveText(
+    "Your routines and training history stay with your account, ready wherever you train.",
+  );
+  await page.evaluate(() => document.fonts.ready);
+
+  for (const width of [320, 360, 375, 390, 430, 540]) {
+    await page.setViewportSize({ width, height: 1000 });
+    const geometry = await copy.evaluate((paragraph) => {
+      const style = getComputedStyle(paragraph);
+      const range = document.createRange();
+      range.selectNodeContents(paragraph);
+      const lines = [...range.getClientRects()].filter(
+        (box) => box.width > 0 && box.height > 0,
+      );
+      const aside = paragraph.closest(".account-auth-aside");
+      const bounds = aside.getBoundingClientRect();
+      const emblem = aside
+        .querySelector(".account-auth-emblem")
+        .getBoundingClientRect();
+      const clippedControls = [
+        ...document.querySelectorAll(
+          ".account-auth-card input, .account-auth-card button, .account-auth-card a",
+        ),
+      ].filter((node) => {
+        const box = node.getBoundingClientRect();
+        return box.width > 0 && (box.left < 0 || box.right > innerWidth);
+      });
+      return {
+        fontLoaded: document.fonts.check(
+          `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`,
+        ),
+        lineCount: lines.length,
+        overlaps: lines.filter(
+          (box) =>
+            box.left < emblem.right &&
+            box.right > emblem.left &&
+            box.top < emblem.bottom &&
+            box.bottom > emblem.top,
+        ).length,
+        clippedLines: lines.filter(
+          (box) =>
+            box.left < bounds.left ||
+            box.right > bounds.right ||
+            box.top < bounds.top ||
+            box.bottom > bounds.bottom ||
+            box.left < 0 ||
+            box.right > innerWidth,
+        ).length,
+        clippedControls: clippedControls.length,
+        documentWidth: Math.max(
+          document.documentElement.scrollWidth,
+          document.body.scrollWidth,
+        ),
+      };
+    });
+    expect(geometry.fontLoaded, `loaded font at ${width}px`).toBe(true);
+    expect(geometry.lineCount, `supporting copy at ${width}px`).toBeGreaterThan(
+      0,
+    );
+    expect(geometry.overlaps, `copy/emblem intersections at ${width}px`).toBe(
+      0,
+    );
+    expect(geometry.clippedLines, `copy containment at ${width}px`).toBe(0);
+    expect(geometry.clippedControls, `auth controls at ${width}px`).toBe(0);
+    expect(
+      geometry.documentWidth,
+      `document at ${width}px`,
+    ).toBeLessThanOrEqual(width + 1);
+    await expect(page.locator(".account-auth-aside h2")).toBeVisible();
+    await expect(page.locator(".account-auth-emblem")).toBeVisible();
+  }
+  expect(unexpectedRequests).toEqual([]);
+});

@@ -1324,6 +1324,12 @@
     padding: 14px;
   }
 }
+@media (max-width: 540px) {
+  .account-auth-aside p {
+    /* Reserve space for the phone emblem so it cannot paint over the copy. */
+    max-width: min(285px, calc(100% - 76px));
+  }
+}
 @media (max-width: 380px) {
   .account-page-head {
     gap: 6px;
