@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "finding": "WD-14",
+  "phase": "initial_test_harness_attempt_after_security_fix",
+  "outcome": "failed_due_to_harness_error",
+  "testFile": "tests/accounts-design.spec.js",
+  "testName": "narrow account security keeps coach access choices and actions reachable",
+  "counts": {
+    "executed": 5,
+    "passed": 0,
+    "failed": 5,
+    "skipped": 0,
+    "interrupted": 0,
+    "notRun": 0
+  },
+  "runnerDurationSeconds": null,
+  "durationBoundary": "Runner elapsed time is not application performance. A null total means the raw summary did not report overall elapsed time; per-project test durations remain recorded.",
+  "projectResults": [
+    {
+      "project": "chromium",
+      "outcome": "failed",
+      "testDurationSeconds": 1.6
+    },
+    {
+      "project": "chromium-mobile",
+      "outcome": "failed",
+      "testDurationSeconds": 1.4
+    },
+    {
+      "project": "firefox",
+      "outcome": "failed",
+      "testDurationSeconds": 2.4
+    },
+    {
+      "project": "webkit",
+      "outcome": "failed",
+      "testDurationSeconds": 2.5
+    },
+    {
+      "project": "webkit-mobile",
+      "outcome": "failed",
+      "testDurationSeconds": 1.6
+    }
+  ],
+  "cause": "The test queried a nonexistent enclosing .account-panel, then read its bounds. The actual enclosing element is .account-settings-form. These five failures are harness errors, not five reproduced product defects.",
+  "privateRawLog": {
+    "name": "security-initial-harness-errors.log",
+    "sha256": "6555c159322449f41a84bfa8a701fc8d3b8ea564b72a1610af784d39a6121c94",
+    "bytes": 14796,
+    "published": false,
+    "availability": "Private ignored local log; absent from repository checkout"
+  },
+  "limitations": [
+    "Synthetic intercepted API fixtures; not a full service-backed account matrix or physical Safari verification.",
+    "Structured result summary only; raw trace bodies, absolute machine paths and credential material are excluded."
+  ]
+}

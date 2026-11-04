@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "finding": "WD-14",
+  "phase": "controlled_product_failure_before_responsive_fix",
+  "outcome": "failed",
+  "testFile": "tests/accounts-design.spec.js",
+  "testName": "narrow account security keeps coach access choices and actions reachable",
+  "counts": {
+    "executed": 1,
+    "passed": 0,
+    "failed": 1,
+    "skipped": 0,
+    "interrupted": 0,
+    "notRun": 0
+  },
+  "runnerDurationSeconds": null,
+  "durationBoundary": "Runner elapsed time is not application performance. A null total means the raw summary did not report overall elapsed time; per-project test durations remain recorded.",
+  "projectResults": [
+    {
+      "project": "chromium",
+      "outcome": "failed",
+      "testDurationSeconds": 1.5
+    }
+  ],
+  "cause": "At a 320 CSS px viewport, the wrapped coach-access form widened the document to 515 CSS px; the unchanged maximum-width assertion was 321 CSS px.",
+  "privateRawLog": {
+    "name": "security-controlled-red.log",
+    "sha256": "2be8cd8eec7fcc072aa2882cb68309daf67266690d45c791982e28eab8a6cec4",
+    "bytes": 2950,
+    "published": false,
+    "availability": "Private ignored local log; absent from repository checkout"
+  },
+  "limitations": [
+    "Synthetic intercepted API fixtures; not a full service-backed account matrix or physical Safari verification.",
+    "Structured result summary only; raw trace bodies, absolute machine paths and credential material are excluded."
+  ],
+  "measurement": {
+    "viewportCSSPx": 320,
+    "documentCSSPx": 515,
+    "assertionMaximumCSSPx": 321
+  }
+}
