@@ -258,3 +258,35 @@ Severity counts: **High 2 · Medium 6 · Low 9.**
 ## Needs on-device confirmation
 
 H1 (does the summary render while dimmed after an iPhone Finish), M2 (the arc after a wrist raise during Saving), M3 (VoiceOver focus and announcement timing against the click tone), M4 (40/41/42 mm at the largest and accessibility sizes), L4 (bottom-bar glass on watchOS 26 and its look on 10), L7 (frame flash), L8 (page dots against the last row).
+
+## Resolution
+
+Fixed on `fix/audit-watch`, 2 November 2026. Every finding was re-checked against the code at `ba4e6a7` before it was changed; all 17 were still present. Apple pages checked for this pass: `HKWorkoutSession.prepare()` (watchOS 5+), WWDC25 session 322 (prepare, a three-second countdown "to allow time for on-device sensors to turn on", then `startActivity` and `beginCollection`), `AccessibilityNotification.Announcement` (watchOS 10+) and `ToolbarItemPlacement.bottomBar` (watchOS 10+). Nothing new needs `#available`.
+
+| ID | Result | What changed | Confirm on the Watch |
+|---|---|---|---|
+| H1 | Fixed | `Reveal` and `SummarySeal` record themselves as done when they appear still (dimmed wrist, Reduce Motion, or a discarded seal), so a later wrist raise can't hide the numbers or the seal. Still content is visible from its first frame. | Finish on the iPhone with the wrist down, then raise it: time, heart-rate and energy rows and the seal stay visible. |
+| H2 | Fixed | Start now runs `requestStart()`: Health authorization first (no countdown over the permission sheet), then the session is created, `prepare()` is called and the phase becomes `.preparing`, which shows the countdown. At zero, or on tap-to-skip, `beginPrepared()` calls `startActivity` and `beginCollection`. A failure or system end while prepared ends the session and shows the ordinary start failure, not a recording to save. A prepared session not started within 10 s is ended (`expirePrepared`), so no session is left behind. "Try again" after Health access was off takes the same path. The battery-audit fixes are unchanged: final snapshot before `end()`, heartbeat task, send spacing and the phase guards. | First run: the Health sheet comes before 3-2-1. Later runs: the heart rate shows soon after "1", and tap-to-skip starts at once. Note battery and keep-alive while prepared (the battery audit's open experiment). |
+| M1 | Fixed | One layout, lit or dimmed. `AlwaysOnMetrics` is gone. The metrics page keeps the clock (whole minutes when dimmed, in the same slot), Stop (outlined, dimmed) and both reading rows (sampled with the minute tick from unobserved `metrics`, as before). The TabView stays mounted. Start, retry and discard controls stay in place at 0.6 opacity (`dimmedInAlwaysOn`) and remain tappable, as watchOS intends. | Drop and raise the wrist on the start, session and failed screens: nothing reflows. |
+| M2 | Fixed | The loading arc drives itself with `phaseAnimator`, so it restarts each time it is re-inserted. | Drop and raise the wrist during "Saving to Health…": the arc turns. |
+| M3 | Fixed | The countdown announces each number and has the button trait, a default action and a "Start now" action. The root view announces "Recording started/paused/resumed", "Saved to Health", "Recording discarded" and failure messages on confirmed phase changes. | With VoiceOver on: the numbers are spoken and don't clash with the `.click` tone. |
+| M4 | Fixed | At accessibility sizes the clock and Stop stack vertically, so the clock gets the full width. Metric rows allow two lines at those sizes. "No reading yet" is shortened to "No reading" on screen (the spoken value keeps the fit hint). | 40/41/42 mm at the largest size and AX5: timer and rows are readable and not truncated. |
+| M5 | Fixed | Controls stack at 12 pt spacing, with 20 pt between Pause and the unconfirmed End. | None. |
+| M6 | Fixed | The flame bounce is removed (heartbeat and rolling digits are the page's only motion). The heartbeat sleeps before each beat, so a new reading no longer forces an extra beat. | None. |
+| L1 | Fixed | Both ripple rings share one 2 s period, the second offset once by 1 s. They pulse three times per lit appearance, then rest, and fade out (0.3 s) instead of vanishing when the wrist drops. | None. |
+| L2 | Fixed | The ring draws over 0.5 s, then the check lands with a spring at 0.45 s. The `.success` haptic stays on the confirmed save (CLAUDE.md: haptics follow confirmed state), so it was not moved to the animation. | None. |
+| L3 | Fixed | `WatchButtonStyle` uses system red for `role: .destructive` (the failed-recording and controls-page Discard buttons). Presses fade over 0.12 s. Long labels wrap rather than truncate. | None. |
+| L4 | Fixed | The summary sits in a `NavigationStack`. Done is a `ToolbarItem(placement: .bottomBar)` tinted lime, so the system draws it (Liquid Glass on watchOS 26). No `.glass` in content. | Check the bottom bar's look on watchOS 10 and on 26. |
+| L5 | Fixed | Summary rows have a spoken label and value ("Average heart rate", "72 beats per minute"), with red and orange icons like the live rows. Live rows, and the clock, have a label, a value and `.updatesFrequently`. | None. |
+| L6 | Fixed | Headings are sentence case ("Restoring", "Couldn't restore", "Recording stopped", "Ready"; "FORMA" is the name), in footnote semibold lime, with no forced caps. | None. |
+| L7 | Fixed | The countdown is driven by the manager's `.preparing` phase, and `beginPrepared()` sets `.starting` before its first await, so no frame shows the start disc in between. | Confirm no flash between "1" and the session. |
+| L8 | Fixed | The session pages get a faint lime `containerBackground(for: .tabView)` (14%, not the suggested 18%, which would drop secondary text below 4.5:1), black when dimmed. A Now Playing page (`NowPlayingView`) sits to the right of the metrics. | Check the page dots don't cover the last metrics row. |
+| L9 | Fixed | One name per action everywhere: "Pause recording", "Resume recording", "End and save", "Discard recording". VoiceOver labels that differed from the visible text were removed. The icon-only Stop reads "Pause or end recording". | None. |
+
+**Counts:** 17 fixed, 0 not a defect. 9 of the fixes also need a look on the Watch (H1, H2, M1, M2, M3, M4, L4, L7, L8). That needs hardware; per the owner's rule there is no simulator.
+
+**Tests:** the Watch target has no unit-test bundle, and `WorkoutManager` drives a real `HKHealthStore`, so the new start flow can't be unit tested without a Watch test target on hardware. `ios/Shared/WatchWorkout.swift` and the iPhone message format are unchanged, so `WatchWorkoutCoordinatorTests` cover the iPhone side as before.
+
+**Build:** `xcodebuild build -scheme FORMA -destination 'generic/platform=iOS'` (embeds the Watch app) succeeded, with no warnings in Watch files. The one remaining warning is in `FORMA/DesignSystem/TrainingTabBar.swift`, which this slice doesn't touch.
+
+**Files changed:** `ios/FORMAWatch/WorkoutManager.swift`, `ios/FORMAWatch/WatchViews.swift`, `ios/FORMAWatch/WatchMotion.swift`, this report.
