@@ -4,6 +4,20 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-11-04 — OSV exception for a dev-only minimatch advisory
+
+- **Scope:** CI "Security scans" failed on every branch after
+  GHSA-g3hv-75wg-m249 (published 2026-10-30) flagged `minimatch` 3.1.5.
+- **Summary:** fixed only in 11.0.1; the latest ESLint and its React and jsx-a11y
+  plugins still require `^3` or `^10`, so no compatible upgrade exists. It is a
+  dev-only lint dependency, pruned from the API image and omitted from the SBOM.
+  `osv-scanner.toml` ignores it until 2027-01-04 with that reason.
+- **Files:** `osv-scanner.toml`, `AGENT.md`, `CHANGELOG.md`.
+- **Verification:** local `osv-scanner scan source --lockfile=package-lock.json`
+  reports no issues with the exception, one medium without it.
+- **Follow-ups:** before 2027-01-04, re-check ESLint's minimatch range and
+  remove the exception once 11.0.1+ is reachable.
+
 ### Raouf: 2026-11-02 — Tunnel monitor reads cloudflared readiness
 
 - **Scope:** the `tunnel_error` production alert of 2026-11-01 20:55 UTC.
