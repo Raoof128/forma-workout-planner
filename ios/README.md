@@ -61,7 +61,9 @@ sensing and Watch-to-iPhone mirroring need physical devices.
 
 ## Home Screen and Lock Screen widgets
 
-The app embeds `FORMAWidgets.appex`. In **You → Training at a glance**, enable
+The app embeds two extensions: `FORMAWidgets.appex` (the Training widget) and
+`FORMAWorkoutActivity.appex` (the workout Live Activity, kept apart so the widget's
+Complete data protection cannot hide it on a locked iPhone). In **You → Training at a glance**, enable
 **Share training with widgets**, then add FORMA from the system widget gallery.
 Small, medium and large Home Screen layouts and circular, rectangular and inline
 Lock Screen layouts are supported. Edit the widget to choose Next session or This week.
@@ -85,9 +87,10 @@ SpringBoard placement. To verify a built, signed app bundle:
 python3 scripts/check-ios-widget-bundle.py /path/to/FORMA.app
 ```
 
-This validates embedding, manifest, entitlement declarations, signature and
-absence of SQLite/HealthKit widget linkage, plus the workout Live Activity contract
-(`NSSupportsLiveActivities`, the widget bundle, local-only requests). It is not a
+This validates both extensions' embedding, manifests, entitlements (App Group and
+Complete protection on the widget only; neither on the Live Activity), signature and
+absence of SQLite/HealthKit linkage, plus the workout Live Activity contract
+(`NSSupportsLiveActivities`, its own bundle, its workout link, local-only requests). It is not a
 device-lock/privacy or App Store archive validation. The workout Live Activity
 (Lock Screen, Dynamic Island, StandBy, Watch Smart Stack) and its remaining device
 gates, and the deferred Watch complications, are in

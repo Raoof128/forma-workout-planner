@@ -132,6 +132,10 @@ Sharing is off by default per service origin/owner. Main app-only atomic writer;
 read-only extension; complete protection and backup exclusion. Widget entitlement
 `NSFileProtectionComplete` hides content while locked and disables Mac mirroring.
 System-cached views may outlive app revocation/reload requests temporarily.
+The workout Live Activity is a separate extension (`FORMAWorkoutActivity`) with no
+App Group and no data-protection entitlement: it reads no file, draws only what the
+app sends through ActivityKit, and so stays visible on a locked iPhone. Its names stay
+`privacySensitive`.
 
 The widget makes no network calls, declares no collected data/tracking/required
 reason API, and uses file size/type metadata only (not file timestamps/disk space).
