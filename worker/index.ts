@@ -569,10 +569,49 @@ export function handleApiRequest(
   return createHandler(fetcher)(request, env);
 }
 
+/**
+ * Apple's associated-domains file, so the iPhone app's Password AutoFill
+ * offers and saves the credentials this site uses. The app ID is the team
+ * prefix plus the (provisional) bundle ID in `ios/project.yml`. Apple's CDN
+ * fetches it over HTTPS with no redirect, at this exact path with no
+ * extension, and requires a JSON content type.
+ */
+export const APPLE_APP_SITE_ASSOCIATION_PATH =
+  "/.well-known/apple-app-site-association";
+export const APPLE_APP_SITE_ASSOCIATION = {
+  webcredentials: { apps: ["3L5A4R7JNY.dev.raoufabedini.forma"] },
+} as const;
+
+function appleAppSiteAssociation(request: Request, secure: boolean): Response {
+  if (request.method !== "GET" && request.method !== "HEAD")
+    return new Response(null, { status: 405, headers: { allow: "GET, HEAD" } });
+  const headers = new Headers({
+    "content-type": "application/json",
+    "cache-control": "public, max-age=3600",
+    "x-content-type-options": "nosniff",
+    "content-security-policy": "default-src 'none'; frame-ancestors 'none'",
+    "referrer-policy": "no-referrer",
+  });
+  if (secure)
+    headers.set(
+      "strict-transport-security",
+      "max-age=31536000; includeSubDomains",
+    );
+  return new Response(
+    request.method === "HEAD"
+      ? null
+      : JSON.stringify(APPLE_APP_SITE_ASSOCIATION),
+    { headers },
+  );
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
-    const pathname = new URL(request.url).pathname;
+    const url = new URL(request.url);
+    const pathname = url.pathname;
     if (pathname.startsWith("/api")) return handleApiRequest(request, env);
+    if (pathname === APPLE_APP_SITE_ASSOCIATION_PATH)
+      return appleAppSiteAssociation(request, url.protocol === "https:");
     const response = await env.ASSETS.fetch(request);
     const headers = new Headers(response.headers);
     // Cloudflare respects no-transform when deciding whether to inject its
@@ -593,7 +632,7 @@ export default {
       "content-security-policy",
       "default-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; upgrade-insecure-requests",
     );
-    if (new URL(request.url).protocol === "https:")
+    if (url.protocol === "https:")
       headers.set(
         "strict-transport-security",
         "max-age=31536000; includeSubDomains",

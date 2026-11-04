@@ -183,6 +183,56 @@ test("Worker routes `/api` and unknown API paths before static assets while secu
   assert.equal(assets, 1);
 });
 
+test("serves Apple's associated-domains file as JSON at the exact path, without assets or redirects", async () => {
+  let assets = 0;
+  const workerEnv: Env = {
+    ...env,
+    ASSETS: {
+      fetch: async () => {
+        assets += 1;
+        return new Response("app shell", {
+          headers: { "content-type": "text/html" },
+        });
+      },
+    },
+  };
+  const file = await worker.fetch(
+    request("/.well-known/apple-app-site-association"),
+    workerEnv,
+  );
+  assert.equal(file.status, 200);
+  assert.equal(file.headers.get("content-type"), "application/json");
+  assert.equal(file.headers.get("location"), null);
+  assert.equal(
+    file.headers.get("strict-transport-security"),
+    "max-age=31536000; includeSubDomains",
+  );
+  assert.deepEqual(await file.json(), {
+    webcredentials: { apps: ["3L5A4R7JNY.dev.raoufabedini.forma"] },
+  });
+
+  const head = await worker.fetch(
+    request("/.well-known/apple-app-site-association", { method: "HEAD" }),
+    workerEnv,
+  );
+  assert.equal(head.status, 200);
+  assert.equal(head.headers.get("content-type"), "application/json");
+  const post = await worker.fetch(
+    request("/.well-known/apple-app-site-association", { method: "POST" }),
+    workerEnv,
+  );
+  assert.equal(post.status, 405);
+  assert.equal(assets, 0);
+
+  // Only the exact, extensionless path is answered; anything else is the SPA.
+  const withExtension = await worker.fetch(
+    request("/.well-known/apple-app-site-association.json"),
+    workerEnv,
+  );
+  assert.equal(await withExtension.text(), "app shell");
+  assert.equal(assets, 1);
+});
+
 test("HTML prevents injected analytics while retaining asset cache directives", async () => {
   for (const [contentType, cacheControl, expected] of [
     [

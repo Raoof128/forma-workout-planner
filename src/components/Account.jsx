@@ -148,12 +148,7 @@ function AuthView({ account, notify, onNavigate }) {
         setMode("signin");
       }
     } catch (cause) {
-      setError(
-        safeError(
-          cause,
-          "We couldn’t complete that request. Please try again.",
-        ),
-      );
+      setError(safeError(cause, "That request didn’t go through. Try again."));
     } finally {
       setBusy(false);
       setBusyAction(null);
@@ -170,7 +165,7 @@ function AuthView({ account, notify, onNavigate }) {
   const subtitles = {
     signin: "Pick up where your training left off.",
     signup: "One account for your routines, sessions and progress.",
-    forgot: "We’ll send a secure reset link if this address is registered.",
+    forgot: "Get a secure reset link if this address is registered.",
     reset: "Use a fresh passphrase you have not used here before.",
     mfa: "Enter a code from your authenticator app, or use a recovery code.",
   };
@@ -238,10 +233,7 @@ function AuthView({ account, notify, onNavigate }) {
                     );
                   } catch (cause) {
                     setError(
-                      safeError(
-                        cause,
-                        "We couldn’t send the verification email.",
-                      ),
+                      safeError(cause, "The verification email wasn’t sent."),
                     );
                   } finally {
                     setBusy(false);
@@ -505,7 +497,8 @@ export default function Account({
   const [sessionsBusy, setSessionsBusy] = useState(false);
   const [sessionError, setSessionError] = useState("");
   const [sessionAction, setSessionAction] = useState(null);
-  // Step-up for removing other sessions after an older sign-in.
+  // Step-up for removing other sessions, or minting a coach token, after an
+  // older sign-in. `action` is "others", "coach" or one session reference.
   const [stepUp, setStepUp] = useState(null);
   const [stepUpPassword, setStepUpPassword] = useState("");
   const [stepUpCode, setStepUpCode] = useState("");
@@ -606,15 +599,19 @@ export default function Account({
     if (!stepUp || stepUpBusy) return;
     setStepUpBusy(true);
     setStepUpError("");
+    const confirmation = {
+      password: stepUpPassword,
+      ...(stepUp.twoFactor ? { code: stepUpCode.trim() } : {}),
+    };
     try {
-      await endSessions(stepUp.action, {
-        password: stepUpPassword,
-        ...(stepUp.twoFactor ? { code: stepUpCode.trim() } : {}),
-      });
+      if (stepUp.action === "coach") await issueCoachToken(confirmation);
+      else await endSessions(stepUp.action, confirmation);
       closeStepUp();
     } catch (cause) {
       setStepUpError(
-        sessionErrorText(cause, "Those sessions could not be signed out."),
+        stepUp.action === "coach"
+          ? coachErrorText(cause)
+          : sessionErrorText(cause, "Those sessions could not be signed out."),
       );
     } finally {
       setStepUpBusy(false);
@@ -689,31 +686,43 @@ export default function Account({
     };
   }, [section, userId, listCoachTokens]);
 
+  function coachErrorText(cause) {
+    if (cause?.code === "token_limit")
+      return "You already have the maximum number of coach tokens. Revoke one first.";
+    if (cause?.code === "invalid_label")
+      return "Use a short plain-text name of up to 60 characters.";
+    return sessionErrorText(cause, "The coach token could not be created.");
+  }
+
+  // Throws on failure; `confirmation` is the step-up { password, code }.
+  async function issueCoachToken(confirmation = {}) {
+    const issued = await account.createCoachToken({
+      label: coachLabel,
+      scope: coachScope,
+      ...confirmation,
+    });
+    setIssuedCoachToken(issued);
+    setCoachLabel("");
+    setCoachScope("read");
+    if (issued?.record) setCoachTokens((items) => [issued.record, ...items]);
+  }
+
   async function createCoachToken(event) {
     event.preventDefault();
-    if (coachAction) return;
+    if (coachAction || stepUp) return;
     setCoachAction("create");
     setCoachError("");
     setCoachCopied(false);
     try {
-      const issued = await account.createCoachToken({
-        label: coachLabel,
-        scope: coachScope,
-      });
-      setIssuedCoachToken(issued);
-      setCoachLabel("");
-      setCoachScope("read");
-      if (issued?.record) setCoachTokens((items) => [issued.record, ...items]);
+      await issueCoachToken();
     } catch (cause) {
-      setCoachError(
-        cause?.code === "token_limit"
-          ? "You already have the maximum number of coach tokens. Revoke one first."
-          : cause?.code === "reauthentication_required"
-            ? "Sign in again before creating a coach token."
-            : cause?.code === "invalid_label"
-              ? "Use a short plain-text name of up to 60 characters."
-              : safeError(cause, "The coach token could not be created."),
-      );
+      // An older sign-in confirms the password here instead of signing out.
+      if (cause?.code === "reauthentication_required") {
+        setStepUpPassword("");
+        setStepUpCode("");
+        setStepUpError("");
+        setStepUp({ action: "coach", twoFactor: cause.twoFactor });
+      } else setCoachError(coachErrorText(cause));
     } finally {
       setCoachAction(null);
     }
@@ -868,7 +877,9 @@ export default function Account({
         "Approve this request from your current inbox, then verify the new address. Your current email stays in use until both steps are complete.",
       );
     } catch (cause) {
-      setProfileError(safeError(cause, "We couldn’t start the email change."));
+      setProfileError(
+        safeError(cause, "The email change couldn’t be started."),
+      );
     } finally {
       setProfileBusy(false);
       setProfileAction(null);
@@ -1179,6 +1190,73 @@ export default function Account({
         )}
       </div>
     );
+
+  const stepUpForm = stepUp && (
+    <form
+      className="account-inline-form account-step-up"
+      onSubmit={confirmStepUp}
+    >
+      <p className="account-form-intro">
+        For your security, confirm it’s you. You signed in more than 5 minutes
+        ago.
+      </p>
+      <label>
+        Confirm your password
+        <input
+          ref={stepUpField}
+          type="password"
+          autoComplete="current-password"
+          required
+          value={stepUpPassword}
+          onChange={(event) => setStepUpPassword(event.target.value)}
+        />
+      </label>
+      {stepUp.twoFactor && (
+        <label>
+          Authenticator code
+          <input
+            inputMode="numeric"
+            autoComplete="one-time-code"
+            pattern="[0-9]{6}"
+            maxLength={6}
+            required
+            value={stepUpCode}
+            onChange={(event) => setStepUpCode(event.target.value)}
+          />
+        </label>
+      )}
+      {stepUpError && (
+        <p className="account-alert" role="alert">
+          {stepUpError}
+        </p>
+      )}
+      <div className="account-form-foot">
+        <button
+          type="button"
+          className="account-text-button"
+          onClick={closeStepUp}
+        >
+          Cancel
+        </button>
+        <BusyButton
+          type="submit"
+          className={
+            stepUp.action === "coach"
+              ? "account-secondary"
+              : "account-danger-button"
+          }
+          disabled={stepUpBusy}
+          loading={stepUpBusy}
+        >
+          {stepUp.action === "coach"
+            ? "Confirm and create token"
+            : stepUp.action === "others"
+              ? "Confirm and sign out"
+              : "Confirm and sign out device"}
+        </BusyButton>
+      </div>
+    </form>
+  );
 
   return (
     <div className="account-page">
@@ -1987,70 +2065,7 @@ export default function Account({
                     No session details are available.
                   </p>
                 )}
-                {stepUp && (
-                  <form
-                    className="account-inline-form account-step-up"
-                    onSubmit={confirmStepUp}
-                  >
-                    <p className="account-form-intro">
-                      For your security, confirm it’s you. You signed in more
-                      than 5 minutes ago.
-                    </p>
-                    <label>
-                      Confirm your password
-                      <input
-                        ref={stepUpField}
-                        type="password"
-                        autoComplete="current-password"
-                        required
-                        value={stepUpPassword}
-                        onChange={(event) =>
-                          setStepUpPassword(event.target.value)
-                        }
-                      />
-                    </label>
-                    {stepUp.twoFactor && (
-                      <label>
-                        Authenticator code
-                        <input
-                          inputMode="numeric"
-                          autoComplete="one-time-code"
-                          pattern="[0-9]{6}"
-                          maxLength={6}
-                          required
-                          value={stepUpCode}
-                          onChange={(event) =>
-                            setStepUpCode(event.target.value)
-                          }
-                        />
-                      </label>
-                    )}
-                    {stepUpError && (
-                      <p className="account-alert" role="alert">
-                        {stepUpError}
-                      </p>
-                    )}
-                    <div className="account-form-foot">
-                      <button
-                        type="button"
-                        className="account-text-button"
-                        onClick={closeStepUp}
-                      >
-                        Cancel
-                      </button>
-                      <BusyButton
-                        type="submit"
-                        className="account-danger-button"
-                        disabled={stepUpBusy}
-                        loading={stepUpBusy}
-                      >
-                        {stepUp.action === "others"
-                          ? "Confirm and sign out"
-                          : "Confirm and sign out device"}
-                      </BusyButton>
-                    </div>
-                  </form>
-                )}
+                {stepUp && stepUp.action !== "coach" && stepUpForm}
                 <BusyButton
                   type="button"
                   className="account-danger-link account-signout-others"
@@ -2193,7 +2208,7 @@ export default function Account({
                   <BusyButton
                     type="submit"
                     className="account-secondary"
-                    disabled={!!coachAction || coachBusy}
+                    disabled={!!coachAction || coachBusy || !!stepUp}
                     loading={coachAction === "create"}
                   >
                     {coachScope === "full"
@@ -2202,6 +2217,7 @@ export default function Account({
                     <ArrowRight size={16} />
                   </BusyButton>
                 </form>
+                {stepUp?.action === "coach" && stepUpForm}
                 {coachBusy ? (
                   <Loading
                     inline
@@ -2625,9 +2641,9 @@ export default function Account({
                   </div>
                 </div>
                 <p>
-                  You’ll need to confirm your password and type DELETE. We’ll
-                  email a confirmation link; your account remains active until
-                  you use it.
+                  You’ll need to confirm your password and type DELETE. A
+                  confirmation link then goes to your email; your account
+                  remains active until you use it.
                 </p>
                 {!deleteOpen ? (
                   <button

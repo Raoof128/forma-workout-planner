@@ -457,3 +457,36 @@ and contrast were not observed on a device or simulator. Items marked **device**
 check them on the iPhone. Apple HIG pages were read through the developer.apple.com HIG JSON
 endpoint; the account-deletion support page and App Review Guidelines were fetched live on
 2 November 2026.
+
+---
+
+## 5. Resolution (branch `fix/audit-account`)
+
+Static fixes, compiled for a device (`generic/platform=iOS`) and covered by `swift test` and the server, Worker and
+unit suites where a test can see the behaviour. Nothing here was run on the iPhone Air, so every **device** check in the
+findings above is still open. Section 3 ("Already correct") was not touched. The website changed only where it shares a
+finding (M2 and the shared wording in L2); the iOS sign-in methods (L11) were not changed.
+
+| # | Status | Change |
+| --- | --- | --- |
+| H1 | Fixed, device check open | `FORMA.entitlements` gains `com.apple.developer.associated-domains` = `webcredentials:$(FORMA_ACCOUNT_HOST)`. `project.yml` adds `FORMA_ACCOUNT_HOST` (default `forma.raoufabedini.dev`) and derives `FORMA_ACCOUNT_ORIGIN` from it, so staging keeps one switch; the `?mode=developer` recipe for a host behind Access is written next to it. The Worker serves `/.well-known/apple-app-site-association` as `application/json` at the exact extensionless path with no redirect (GET and HEAD only, never the SPA shell) naming `3L5A4R7JNY.dev.raoufabedini.forma`; a Worker test covers it. The device build signs with `webcredentials:forma.raoufabedini.dev` (automatic signing accepted the capability for the App ID). Still needed from the owner: deploy the Worker, so Apple's CDN can read the file. Then on the iPhone: sign-up offers "Use Strong Password", and sign-in offers the website's saved credential. |
+| M1 | Fixed, device check open | The email field is `.username` on sign-in, sign-up and forgot-password (keyboard stays `.emailAddress`). Change password gains a read-only, disabled "Email address" field holding the profile email, tagged `.username`, so AutoFill knows which saved entry it updates (the audit's "related, unconfirmed" suggestion). Profile's "New email address" keeps `.emailAddress`. |
+| M2 | Fixed, device check open | Server: coach-token minting now uses the same `confirmStepUp` as removing other sessions (a sign-in from the last 5 minutes, or `password` plus an unused `code` when two-step is on in the same request), with the refusal uncacheable. `AccountWire.createCoachToken` and `AccountClient` carry the optional password and code. iOS reuses `StepUpSheet` (button reads "Confirm and create token"); the website gets the same inline step-up. Tests: two server cases (`session-step-up`, `coach`), a wire test, and a browser spec. The browser spec was not run here (no Playwright browser installed). |
+| M3 | Fixed | `resolveConflictKeepingLocal()` and `resolveConflictUsingAccount()` return the `SyncStatus`. The screen plays the success haptic only on `.idle`, a warning for `.waiting`, `.saving` or a second `.conflict`, a failure for `.failed`, and shows the reason inline. |
+| M4 | Fixed, device check open | `RevealablePasswordField` keeps the `SecureField` and the `TextField` mounted, sharing the text, and moves focus between them with two focus values (`hidden`, `shown`); the inactive one is non-hit-testable and hidden from VoiceOver. Callers (`AuthFlowView`, `ChangePasswordView`) pass their focus binding. Check on the device that the keyboard stays up, the caret holds, and AutoFill, the strong-password offer and paste survive toggling. |
+| M5 | Fixed | Length (15) and match are part of `missing`, so Update stays dimmed with a stated reason, as sign-up does. A mismatch also shows in red in the section footer once the confirm field has text. The on-submit checks are gone. |
+| M6 | Fixed, device check open | `AccountGateView` is a `ScrollView` inside a `GeometryReader`, content centred with `minHeight` set to the screen, bounce only when it overflows. Retry and Sign out stay reachable; check at AX5 on a small iPhone. |
+| M7 | Fixed | The coach-token scroll uses `withFormaAnimation(motion, FormaMotion.reveal)`. No raw `withAnimation` remains in `Account/`. |
+| L1 | Fixed | Both buttons use string interpolation: `Text("New to FORMA? \(Text("Create account").bold())")`. |
+| L2 | Fixed | The app's error and notice copy no longer says "we": `AccountWire` generic errors ("That request didn’t go through. Try again."), the client fallbacks, "The verification email wasn’t sent.", "The email change couldn’t be started.", "Signing in didn’t finish. Try again.", the email-change and deletion notices, and the forgot-password subtitle. The website's matching strings changed with them so the wording stays shared. The consent notice and the website's data-collection text ("We collect…") are legal copy, not error messages, and are unchanged. |
+| L3 | Fixed | Sessions say "Sign out" on the row button, its accessibility label and the dialog action; the step-up confirm names the action it confirms. The deletion button is "Email deletion link" and stays red. The coach token's "Revoke" is unchanged: it revokes a credential, not a sign-in. |
+| L4 | Fixed | `.speechSpellsOutCharacters()` on the setup key, recovery codes and issued coach token. |
+| L5 | Fixed | Both all-caps eyebrows are removed; the storage status is shown in sentence case. |
+| L6 | Fixed | `DeviceDescription.symbol` derives the icon from the same reading as the label (app, iPhone or Android, iPad, otherwise desktop), and the image is hidden from VoiceOver. |
+| L7 | Fixed | The sign-out and saved-copy dialogs each keep one short sentence; the section text carries the rest (the saved-copy description now lists the in-progress workout and the unaffected account). |
+| L8 | Fixed | The phrase is compared after trimming spaces. The reason for the dimmed button shows under it as well as in the VoiceOver hint. The phrase field has a visible "Type DELETE" label. |
+| L9 | Fixed | "Sign out everywhere", the step-up confirm and the two-step confirm show a `ProgressView`, and both sheets disable dismissal and Cancel while working. |
+| L10 | Fixed, device check open | Both sheets use `[.medium, .large]`; the two-step confirm sheet focuses its password field on appear. Confirm the button stays reachable with the keyboard up at large text. |
+| L11 | Not changed, awaiting owner | An open owner decision (passkeys, Sign in with Apple, required two-step). No sign-in method was added or changed. |
+| L12 | Partly fixed | The two fields the audit named now keep a persistent label: the coach token name (`LabeledContent`) and the deletion phrase. Sign-in, sign-up, change-password and the other single-field forms still use their title as the placeholder; each sits under a heading that names its purpose. Adding captions to those was not done. |
+| L13 | Fixed | The pending-deletion time uses the Sydney `en_AU` long form with the time (`AccountDates.moment`). The two-step footer reads differently when it is on, and its sheet title is "Turn off two-step". The auth sheet's cancel is "Cancel". The dimmed "Replace account" button states its reason. An unavailable phone-training lookup has "Try again". |

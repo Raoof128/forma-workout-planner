@@ -14,7 +14,8 @@ import { clearEmailSink, inspectEmailSink } from "../email.js";
 // Session revocation step-up: "sign out everywhere" also ends the caller's
 // own session, so it needs no recent sign-in. Removing *other* sessions keeps
 // the 5-minute rule, but an older session may satisfy it in the same request
-// with the account password (and TOTP code when two-step is on).
+// with the account password (and TOTP code when two-step is on). Minting a
+// coach token uses the same step-up, so an older app session is not a dead end.
 
 const { Pool } = pg;
 const databaseUrl =
@@ -261,6 +262,55 @@ test("revoking one session from an older session accepts the password", async ()
   assert.equal(await sessionCount(userId), 1);
 });
 
+test("minting a coach token from an older session asks for the password and honours it", async () => {
+  const { email, userId } = await member("coach");
+  const current = await signIn(email);
+  await ageSessions(userId);
+
+  const bare = await request(
+    "POST",
+    "/api/account/coach-tokens",
+    { label: "Claude coach", scope: "read" },
+    current,
+  );
+  assert.equal(bare.response.statusCode, 403);
+  assert.deepEqual(bare.json, {
+    error: "reauthentication_required",
+    twoFactor: false,
+  });
+
+  const wrong = await request(
+    "POST",
+    "/api/account/coach-tokens",
+    {
+      label: "Claude coach",
+      scope: "read",
+      password: "not the right passphrase at all",
+    },
+    current,
+  );
+  assert.equal(wrong.response.statusCode, 401);
+  assert.equal(wrong.json?.error, "invalid_password");
+  assert.equal(
+    wrong.response.headers["cache-control"],
+    "private, no-store, max-age=0",
+  );
+
+  const confirmed = await request(
+    "POST",
+    "/api/account/coach-tokens",
+    { label: "Claude coach", scope: "read", password },
+    current,
+  );
+  assert.equal(confirmed.response.statusCode, 201, confirmed.response.body);
+  assert.match(confirmed.json?.token, /^forma_coach_/);
+  assert.equal(confirmed.json?.record.label, "Claude coach");
+  assert.equal(confirmed.response.body.includes(password), false);
+  // The step-up confirmed the password only; the session is unchanged.
+  assert.equal(confirmed.response.headers["set-cookie"], undefined);
+  assert.equal(await sessionCount(userId), 1);
+});
+
 test("two-step members must add a valid, unused authenticator code", async () => {
   const { email, userId } = await member("totp");
   let current = await signIn(email);
@@ -320,6 +370,24 @@ test("two-step members must add a valid, unused authenticator code", async () =>
   assert.equal(wrongCode.response.statusCode, 401);
   assert.equal(wrongCode.json?.error, "invalid_code");
   assert.equal(await sessionCount(userId), 2);
+
+  // Coach-token minting shares the same two-step requirement.
+  const coachBare = await request(
+    "POST",
+    "/api/account/coach-tokens",
+    { label: "Claude coach", scope: "read" },
+    current,
+  );
+  assert.equal(coachBare.response.statusCode, 403);
+  assert.equal(coachBare.json?.twoFactor, true);
+  const coachPasswordOnly = await request(
+    "POST",
+    "/api/account/coach-tokens",
+    { label: "Claude coach", scope: "read", password },
+    current,
+  );
+  assert.equal(coachPasswordOnly.response.statusCode, 401);
+  assert.equal(coachPasswordOnly.json?.error, "invalid_code");
 
   // Forget the enrolment code's replay record so the current code is usable.
   await pool.query(`DELETE FROM mfa_totp_replay WHERE "userId" = $1`, [userId]);

@@ -17,8 +17,8 @@ struct AccountPrivacyView: View {
         AdaptiveRow {
           Label("Cloud workout storage", systemImage: "icloud")
         } trailing: {
-          Text((model.syncDisplay?.title ?? "").uppercased())
-            .font(.caption.weight(.bold)).foregroundStyle(FormaTheme.accent)
+          Text(model.syncDisplay?.title ?? "")
+            .font(.subheadline.weight(.semibold)).foregroundStyle(FormaTheme.accent)
         }
         Text(
           "Your workout data is attached to your signed-in account. Signing out does not delete it. Account deletion removes active account data; operational backups follow the service retention schedule."
@@ -68,11 +68,11 @@ struct AccountPrivacyView: View {
         if let requestedAt = model.account.deletionRequestedAt {
           FormNotice(
             text:
-              "Deletion requested \(Self.time(requestedAt)). Open the link in the email we sent to finish. Until you do, your account stays active.",
+              "Deletion requested \(Self.time(requestedAt)). Open the link in your deletion email to finish. Until you do, your account stays active.",
             tone: .info, identifier: "account-delete-pending")
         } else {
           Text(
-            "You’ll need to confirm your password and type DELETE. We’ll email a confirmation link; your account remains active until you use it."
+            "You’ll need to confirm your password and type DELETE. A confirmation link then goes to your email; your account remains active until you use it."
           )
           .font(.subheadline)
         }
@@ -110,20 +110,16 @@ struct AccountPrivacyView: View {
 
   /// What the sign-out dialog promises, which depends on whether anything is
   /// still waiting to be sent. Removal only happens when nothing is.
+  /// Short on purpose: the section above explains the saved copy in full.
   private var removalMessage: String {
-    let base =
-      "Your training stays in your account. This iPhone returns to its own on-device training."
     if case .idle = model.syncStatus {
-      return base
-        + " Choosing “Sign out and remove from this iPhone” also deletes the saved copy here."
+      return "Your training stays in your account. “Sign out and remove from this iPhone” also deletes the copy here."
     }
-    return base
-      + " Some changes haven’t been sent yet, so FORMA keeps the saved copy on this iPhone even if you choose to remove it. After signing out you can remove it from the Account section."
+    return "Your training stays in your account. Some changes haven’t been sent, so the copy here is kept either way."
   }
 
-  private static func time(_ date: Date) -> String {
-    date.formatted(date: .abbreviated, time: .shortened)
-  }
+  /// Sydney time in the website's long form, like every other account date.
+  private static func time(_ date: Date) -> String { AccountDates.moment(date) }
 
   private func signOut(removing: Bool) async {
     signingOut = true
@@ -152,7 +148,16 @@ private struct DeleteAccountSheet: View {
 
   private enum Field { case password, phrase }
 
-  private var canDelete: Bool { !password.isEmpty && phrase == "DELETE" }
+  /// A stray space from the keyboard does not count against the phrase.
+  private var phraseMatches: Bool { phrase.trimmingCharacters(in: .whitespaces) == "DELETE" }
+  private var canDelete: Bool { !password.isEmpty && phraseMatches }
+
+  /// Why the button is dimmed, shown under it and read as its hint.
+  private var missing: String? {
+    if password.isEmpty { return "Enter your password first." }
+    if !phraseMatches { return "Type DELETE to confirm." }
+    return nil
+  }
 
   /// Everything the account holds, per the privacy notice.
   private static let consequences = [
@@ -200,34 +205,41 @@ private struct DeleteAccountSheet: View {
               .textContentType(.password).accessibilityIdentifier("account-delete-password")
               .submitLabel(.next).focused($focus, equals: .password)
               .onSubmit { focus = .phrase }
-            TextField("Type DELETE to confirm", text: $phrase)
-              .textInputAutocapitalization(.characters).autocorrectionDisabled()
-              .submitLabel(.go).focused($focus, equals: .phrase)
-              .onSubmit { if canDelete { Task { await request() } } }
-              .accessibilityIdentifier("account-delete-phrase")
+            // A label that stays once typing starts; the placeholder is the word.
+            LabeledContent("Type DELETE") {
+              TextField("DELETE", text: $phrase)
+                .multilineTextAlignment(.trailing)
+                .textInputAutocapitalization(.characters).autocorrectionDisabled()
+                .submitLabel(.go).focused($focus, equals: .phrase)
+                .onSubmit { if canDelete { Task { await request() } } }
+                .accessibilityLabel("Type DELETE to confirm")
+                .accessibilityIdentifier("account-delete-phrase")
+            }
             if let error {
               FormNotice(text: error, tone: .error, revision: errorRevision)
             }
           } footer: {
             Text(
-              "You’ll need to confirm your password and type DELETE. We’ll email a confirmation link; your account remains active until you use it."
+              "You’ll need to confirm your password and type DELETE. A confirmation link then goes to your email; your account remains active until you use it."
             )
           }
           Section {
             Button(role: .destructive) {
               Task { await request() }
             } label: {
+              // The button sends the link; deletion happens when it is used.
               HStack {
-                Text("Delete account")
+                Text("Email deletion link")
                 if working { ProgressView() }
               }
             }
             .disabled(working || !canDelete)
-            .accessibilityHint(
-              password.isEmpty
-                ? "Enter your password first." : phrase != "DELETE" ? "Type DELETE first." : ""
-            )
+            .accessibilityHint(missing ?? "")
             .accessibilityIdentifier("account-delete-submit")
+            if let missing, !working {
+              Text(missing).font(.footnote).foregroundStyle(FormaTheme.secondary)
+                .accessibilityIdentifier("account-delete-reason")
+            }
           }
         }
       }

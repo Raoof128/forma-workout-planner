@@ -51,9 +51,17 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: dev.raoufabedini.forma
         # Where accounts and sync live (HTTPS only). Surfaced through Info.plist
-        # as FORMAAccountOrigin; override per build to point elsewhere, e.g.
-        # xcodebuild FORMA_ACCOUNT_ORIGIN=https://staging.example.
-        FORMA_ACCOUNT_ORIGIN: https://forma.raoufabedini.dev
+        # as FORMAAccountOrigin, and the same host is the app's Password
+        # AutoFill domain (`webcredentials:` in FORMA.entitlements; the Worker
+        # serves the matching /.well-known/apple-app-site-association). Override
+        # the host per build to point elsewhere, e.g.
+        # xcodebuild FORMA_ACCOUNT_HOST=forma-staging.raoufabedini.dev. For a host
+        # behind Cloudflare Access, which Apple's CDN cannot fetch through, set
+        # FORMA_ACCOUNT_ORIGIN=https://<host> and
+        # FORMA_ACCOUNT_HOST=<host>?mode=developer (a developer-signed build, with
+        # Associated Domains Development turned on in the iPhone's Developer settings).
+        FORMA_ACCOUNT_HOST: forma.raoufabedini.dev
+        FORMA_ACCOUNT_ORIGIN: https://$(FORMA_ACCOUNT_HOST)
         INFOPLIST_FILE: FORMA/Info.plist
         CODE_SIGN_ENTITLEMENTS: FORMA/FORMA.entitlements
         GENERATE_INFOPLIST_FILE: NO

@@ -892,7 +892,8 @@ export async function createApp({
   });
 
   // Removing *other* sessions needs a sign-in from the last five minutes, so a
-  // stolen session cannot lock the owner out and keep itself. An older session
+  // stolen session cannot lock the owner out and keep itself; minting a coach
+  // token uses the same rule (registerCoachRoutes). An older session
   // may instead confirm the password (plus an unused TOTP code when two-step
   // is on) in the same request. Wrong attempts share the signed-in
   // password-check throttle; nothing about the session or cookies changes.
@@ -1079,9 +1080,13 @@ export async function createApp({
     pool,
     authSecret: config.authSecret,
     requireMember,
-    sessionCreatedAt: async (request) => {
+    confirmStepUp: async (request, reply, userId) => {
       const current = await resolveSession(auth, request).catch(() => null);
-      return current ? new Date(current.session.createdAt) : null;
+      if (!current) {
+        reply.code(403).send({ error: "reauthentication_required" });
+        return false;
+      }
+      return confirmStepUp(request, reply, userId, current);
     },
     ...(testLimit !== null
       ? { failureLimit: testLimit, readLimit: testLimit, writeLimit: testLimit }

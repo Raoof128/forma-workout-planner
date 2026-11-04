@@ -127,7 +127,7 @@ struct AccountProfileView: View {
     do {
       try await model.account.call { try await $0.changeEmail(to: address) }
       message =
-        "We sent a request to \(model.account.profile?.email ?? "your current inbox") for the change to \(address). Approve it there, then verify the new address. Your current email stays in use until both steps are complete."
+        "A request to change to \(address) went to \(model.account.profile?.email ?? "your current inbox"). Approve it there, then verify the new address. Your current email stays in use until both steps are complete."
       noticeRevision += 1
       pendingEmail = address
       newEmail = ""
