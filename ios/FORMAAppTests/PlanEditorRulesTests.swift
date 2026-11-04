@@ -125,9 +125,14 @@ final class PlanEditorRulesTests: XCTestCase {
     XCTAssertEqual(next?.map(\.id), ["c", "x", "a", "b"])
   }
 
+  func testReorderOfASubsetLeavesTheOthersInPlace() {
+    // The web's reorderRoutines: routines outside the moved set keep their slots.
+    let all = [routine("a"), routine("b"), routine("c")]
+    XCTAssertEqual(RoutineDraftRules.reorder(all, visibleIDs: ["c", "a"])?.map(\.id), ["c", "b", "a"])
+  }
+
   func testReorderRefusesAChangedVisibleSet() {
     let all = [routine("a"), routine("b")]
-    XCTAssertNil(RoutineDraftRules.reorder(all, visibleIDs: ["b"]))
     XCTAssertNil(RoutineDraftRules.reorder(all, visibleIDs: ["b", "z"]))
     XCTAssertNil(RoutineDraftRules.reorder(all, visibleIDs: ["a", "a"]))
   }
