@@ -6,7 +6,8 @@ Worker service credential, then checks the Better Auth session for every
 member-owned operation. Worker identity never substitutes for member identity.
 
 All `/api/*` responses are private and uncached. Authenticated endpoints use
-the Better Auth `forma.session_token` HttpOnly cookie; the browser client does
+the Better Auth `forma.session_token` HttpOnly cookie (named
+`__Secure-forma.session_token` over HTTPS); the browser client does
 not store a bearer token. The Worker and backend preserve Better Auth
 `Set-Cookie` headers. The API does not return Better Auth database IDs or
 session tokens in its JSON responses.
@@ -25,7 +26,7 @@ Auth operations as well as workspace requests.
 
 ## Authentication
 
-`/api/auth/*` is Better Auth 1.7.11's self-hosted HTTP handler. Its configured
+`/api/auth/*` is Better Auth 1.7.12's self-hosted HTTP handler. Its configured
 email/password and two-factor client methods support:
 
 - Account registration, email verification, email/password sign-in, and
@@ -98,6 +99,11 @@ session older than five minutes; a sixth active token returns
 `read` or `full` returns `400 invalid_scope`. Scopes never change after
 minting: to widen access, mint a new token and revoke the old one.
 
+Each member may make 10 well-formed mint attempts per hour, whether or not they
+succeed: an attempt refused for the active-token cap counts, while a malformed
+label or scope is refused first and does not. The eleventh within an hour
+returns `429 rate_limited` with `Retry-After: 3600`.
+
 The bearer routes ignore cookies and the member reference. They are the only
 routes for which the Worker forwards an `Authorization` header, and the Worker
 withholds cookies on them so the two credential types never travel together.
@@ -106,8 +112,20 @@ Failures return `401` with `WWW-Authenticate: Bearer realm="forma-coach"`;
 after 20 failures from one client in 15 minutes the route returns
 `429 too_many_attempts`. Each token may read 120 times per hour across the
 read routes and edit 60 times per hour, after which the route returns
-`429 rate_limited` with `Retry-After: 3600`. A revoked or expired token is
-indistinguishable from an unknown one.
+`429 rate_limited` with `Retry-After: 3600`. Edits also share one member-wide
+budget of 120 per hour across all of a member's tokens, so several tokens
+cannot multiply the per-token limit; exceeding it returns the same `429`. A
+revoked or expired token is indistinguishable from an unknown one.
+
+`lastUsedAt` records when a token last authenticated a request that passed its
+scope and budget checks. It is written at most once every five minutes, so it
+is accurate to that window rather than to each request. A `401`, a `403` scope
+refusal or a `429` budget refusal does not update it. A request that passes
+those checks counts as use even when its edit is then refused as invalid.
+
+Coach token digests are keyed by `AUTH_SECRET`. Rotating that secret
+invalidates every coach token at once, so members must mint new tokens and
+update their tools.
 
 ### Coach edits
 
@@ -151,7 +169,9 @@ Edits need no browser `Origin`, because a bearer header is never attached by a
 browser on its own and the route ignores cookies. A request that does carry a
 foreign `Origin`, or `Sec-Fetch-Site: cross-site`, is refused, so a web page
 on another site cannot drive an edit. Every successful edit is logged as the
-`coach_workspace_write` security event.
+`coach_workspace_write` security event. A token revoked or expired while its
+edit is in flight is refused with `401 unauthorized`, and the edit is not
+stored: the token is checked again inside the transaction that writes.
 
 The summary has this shape (abbreviated):
 

@@ -19,11 +19,18 @@ export const workspaceDataSchema = z.unknown().transform((value, context) => {
           path: issue.path,
         });
       }
+    } else if (
+      error instanceof Error &&
+      Object.getPrototypeOf(error) === Error.prototype
+    ) {
+      // validateData's own invariant checks (bounds, unknown fields,
+      // duplicate entries, an active workout already in history) throw plain
+      // Errors with fixed, member-safe wording; report the real reason.
+      context.addIssue({ code: "custom", message: error.message });
     } else {
-      context.addIssue({
-        code: "custom",
-        message: "The active workout is already present in history.",
-      });
+      // A TypeError or similar is a server defect, not invalid input: let it
+      // surface as a 500 (logged) instead of blaming the member's data.
+      throw error;
     }
     return z.NEVER;
   }
@@ -64,5 +71,7 @@ export const coachPatchSchema = z
         "Name at least one section to change.",
       ),
     removesSessions: z.number().int().min(1).max(10_000).optional(),
+    // Confirms that the edit ends or replaces the workout in progress.
+    removesActive: z.literal(true).optional(),
   })
   .strict();

@@ -1,5 +1,5 @@
 import { createHmac, randomBytes, timingSafeEqual } from "node:crypto";
-import type { Pool } from "pg";
+import type { Pool, PoolClient } from "pg";
 import { dateKey, estimatedOneRM, exerciseById } from "../src/data.js";
 import { sideReps, tracksLoadReps } from "../src/exerciseMetrics.js";
 import type { WorkspaceData } from "./schema.js";
@@ -20,6 +20,12 @@ export const COACH_TOKEN_PREFIX = "forma_coach_";
 export const COACH_TOKEN_LIFETIME_DAYS = 90;
 /** Enough for one tool per device without becoming a token farm. */
 export const MAX_ACTIVE_COACH_TOKENS = 5;
+/**
+ * `last_used_at` is refreshed at most once per this window. Recording every
+ * request would rewrite the token row on each read; the window keeps the
+ * "last used" signal accurate to a few minutes at a fraction of the writes.
+ */
+export const COACH_LAST_USED_INTERVAL_SECONDS = 5 * 60;
 /** Default and maximum window of history returned to a coach. */
 export const DEFAULT_SUMMARY_DAYS = 28;
 export const MAX_SUMMARY_DAYS = 365;
@@ -47,6 +53,14 @@ export class CoachTokenLimit extends Error {
   constructor() {
     super("Too many active coach tokens.");
     this.name = "CoachTokenLimit";
+  }
+}
+
+/** The token that authorised a write was revoked or expired before it committed. */
+export class CoachTokenInactive extends Error {
+  constructor() {
+    super("Coach token is no longer active.");
+    this.name = "CoachTokenInactive";
   }
 }
 
@@ -215,6 +229,9 @@ export async function revokeCoachToken(
  * to nothing, exactly like unknown ones. The digest lookup is an indexed
  * equality on random material; a constant-time compare of the stored digest
  * is kept anyway so the code path does not depend on index behaviour.
+ *
+ * This is a pure lookup: it writes nothing. The caller records use with
+ * `touchCoachToken` only once the request has passed its scope and budget checks.
  */
 export async function resolveCoachToken(
   pool: Pool,
@@ -249,16 +266,54 @@ export async function resolveCoachToken(
   const presented = Buffer.from(digest);
   if (stored.length !== presented.length || !timingSafeEqual(stored, presented))
     return null;
-  await pool.query(
-    `UPDATE member_coach_token SET last_used_at = clock_timestamp() WHERE id = $1`,
-    [row.id],
-  );
   return {
     userId: row.owner_id,
     memberName: row.member_name || undefined,
     tokenId: row.id,
     scope: row.scope === "full" ? "full" : "read",
   };
+}
+
+/**
+ * Record that a token authorised a request. The WHERE clause is the write
+ * condition: a row is rewritten only when it has never been used or was last
+ * used more than COACH_LAST_USED_INTERVAL_SECONDS ago, so a burst of requests
+ * leaves the row alone.
+ */
+export async function touchCoachToken(
+  pool: Pool,
+  tokenId: string,
+): Promise<void> {
+  await pool.query(
+    `UPDATE member_coach_token
+        SET last_used_at = clock_timestamp()
+      WHERE id = $1
+        AND (last_used_at IS NULL
+             OR last_used_at < clock_timestamp() - make_interval(secs => $2))`,
+    [tokenId, COACH_LAST_USED_INTERVAL_SECONDS],
+  );
+}
+
+/**
+ * Re-check, inside the caller's transaction, that the token is still usable.
+ * `FOR SHARE` makes a concurrent revocation (an UPDATE) wait until this
+ * transaction commits, or makes this check see the revocation, so a token
+ * revoked mid-upload cannot commit a write.
+ */
+export async function assertCoachTokenActive(
+  client: PoolClient,
+  userId: string,
+  tokenId: string,
+): Promise<void> {
+  const result = await client.query(
+    `SELECT 1 FROM member_coach_token
+      WHERE id = $1 AND owner_id = $2
+        AND revoked_at IS NULL
+        AND expires_at > clock_timestamp()
+      FOR SHARE`,
+    [tokenId, userId],
+  );
+  if (result.rowCount !== 1) throw new CoachTokenInactive();
 }
 
 const WEEKDAYS = [

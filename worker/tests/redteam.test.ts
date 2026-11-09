@@ -58,11 +58,15 @@ test("EDGE-01: non-workspace routes accept only small bodies", async () => {
     async () => json(),
   );
   assert.equal(declared.status, 413);
-  // The workspace document keeps its larger allowance.
+  // The workspace document keeps its larger allowance for a signed-in member
+  // (an app session cookie); anonymous callers get the small limit.
   const workspace = await handleApiRequest(
     edgeRequest("/api/workspace", {
       method: "PUT",
-      headers: { origin: "https://forma.example" },
+      headers: {
+        origin: "https://forma.example",
+        cookie: "__Secure-forma.session_token=member",
+      },
       body: "x".repeat(1024 * 1024),
     }),
     env,
@@ -237,8 +241,14 @@ test("EDGE-06: cross-site API requests are refused except token email links", as
     "/api/auth/reset-password/abc?callbackURL=%2F",
     "/api/auth/delete-user/callback?token=abc",
   ]) {
+    // The member's browser follows the email link as a top-level navigation.
     const link = await handleApiRequest(
-      edgeRequest(path, { headers: { "sec-fetch-site": "cross-site" } }),
+      edgeRequest(path, {
+        headers: {
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-mode": "navigate",
+        },
+      }),
       env,
       fetcher,
     );

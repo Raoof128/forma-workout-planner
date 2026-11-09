@@ -96,7 +96,13 @@ export function createRequireMember(
         email: session.user.email || undefined,
       };
     } catch {
-      reply.code(401).send({ error: "unauthorized" });
+      // The session store could not be read (database unavailable). That is
+      // not "signed out": clients that treat 401 as an ended session would
+      // sign members out during an outage. Web and iOS retry a 503.
+      reply
+        .code(503)
+        .header("retry-after", "5")
+        .send({ error: "temporarily_unavailable" });
       return null;
     }
   };
@@ -414,6 +420,10 @@ export async function createApp({
     },
     bodyLimit: 1024 * 1024,
     trustProxy: false,
+    // Fastify defaults to no request timeout, so a stalled upload or handler
+    // could hold a socket (and its pool connection) indefinitely. The Worker
+    // gives up after 30 s; 120 s leaves room for a 20 MiB save on a slow link.
+    requestTimeout: 120_000,
   });
 
   app.decorateRequest("rawBody", null);
@@ -478,7 +488,16 @@ export async function createApp({
       (error as { statusCode: number }).statusCode < 600
         ? (error as { statusCode: number }).statusCode
         : 500;
-    if (status >= 500) request.log.error({ err: error }, "request failed");
+    // Class and code only: a pg error's message and detail can quote row
+    // values, which must never reach the logs.
+    if (status >= 500)
+      request.log.error(
+        {
+          errorName: (error as Error).name,
+          errorCode: (error as { code?: unknown }).code,
+        },
+        "request failed",
+      );
     const code =
       status === 400 && (error as Error).message === "invalid_json"
         ? "invalid_json"
@@ -543,7 +562,7 @@ export async function createApp({
     // exact health probe is public; every other spelling needs the Worker.
     if (
       (request.method === "GET" || request.method === "HEAD") &&
-      path === "/healthz"
+      (path === "/healthz" || path === "/readyz")
     )
       return;
     if (path.includes("%")) {
@@ -569,7 +588,10 @@ export async function createApp({
       const bearerEdit =
         request.method === "PATCH" &&
         path === COACH_DATA_PATH &&
-        origin === undefined;
+        origin === undefined &&
+        // The Worker already refuses this; repeat it so the origin does not
+        // rely on the gateway alone.
+        headerValue(request.headers["sec-fetch-site"]) !== "cross-site";
       // The iOS app has no Origin to send. A foreign or empty Origin, or any
       // Referer or Sec-Fetch header, makes the request an ordinary one.
       if (
@@ -582,7 +604,24 @@ export async function createApp({
     }
   });
 
+  // Liveness: the process answers. Readiness: it can also reach PostgreSQL,
+  // which is what the host monitor needs to see (a lost grant or a dead
+  // database leaves /healthz green while every member request fails).
   app.get("/healthz", async () => ({ status: "ok" }));
+  app.get("/readyz", async (_request, reply) => {
+    try {
+      let timer: NodeJS.Timeout | undefined;
+      await Promise.race([
+        pool.query("SELECT 1"),
+        new Promise((_resolve, reject) => {
+          timer = setTimeout(() => reject(new Error("timeout")), 2_000);
+        }),
+      ]).finally(() => clearTimeout(timer));
+      return reply.send({ status: "ready" });
+    } catch {
+      return reply.code(503).send({ status: "unavailable" });
+    }
+  });
 
   app.route({
     method: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
@@ -771,6 +810,9 @@ export async function createApp({
         ...(body === undefined ? {} : { body: body as BodyInit }),
       });
 
+      // Set once the reserved attempt is cleared, settled or refunded, so an
+      // exception cannot leave it counted as a wrong password.
+      let attemptSettled = attempt === null;
       try {
         const response = await auth.handler(authRequest);
         if (attempt) {
@@ -794,6 +836,7 @@ export async function createApp({
           } else {
             await refundAttempt(pool, attempt.key, attempt.scope);
           }
+          attemptSettled = true;
         }
         // FORMA never signs a member in from an email link
         // (autoSignInAfterVerification is off), but Better Auth's change-email
@@ -870,6 +913,7 @@ export async function createApp({
               copyResponseHeaders(response.headers, reply, [
                 ...withheldCookies,
                 "session_token",
+                "session_data",
                 "trust_device",
               ]);
               return reply.code(401).send({ error: "invalid_code" });
@@ -885,7 +929,15 @@ export async function createApp({
         reply.code(response.status);
         // nosemgrep: javascript.express.security.audit.xss.direct-response-write.direct-response-write -- Better Auth body; the Worker allows only JSON/text
         return reply.send(Buffer.from(await response.arrayBuffer()));
-      } catch {
+      } catch (error) {
+        // A failure here is the server's, not a wrong password: return the
+        // reserved slot so transient errors cannot lock a member out.
+        if (!attemptSettled && attempt)
+          await refundAttempt(pool, attempt.key, attempt.scope).catch(() => {});
+        request.log.error(
+          { errorName: (error as Error)?.name, path: authPath },
+          "auth request failed",
+        );
         return reply.code(500).send({ error: "internal_error" });
       }
     },

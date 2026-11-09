@@ -55,55 +55,60 @@ export default {
       checkedAt: new Date().toISOString(),
       signals,
     };
-    if (state.failures >= 2 && Date.now() - state.alertedAt > 3600000) {
-      const text =
-        "FORMA needs attention: " +
-        signals.join(", ") +
-        ". Check the private operations runbook. No member data is included.";
-      const response = await globalThis.fetch(
-        `https://api.cloudflare.com/client/v4/accounts/${env.CLOUDFLARE_ACCOUNT_ID}/email/sending/send`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${env.EMAIL_TOKEN}`,
-            "Content-Type": "application/json",
+    try {
+      if (state.failures >= 2 && Date.now() - state.alertedAt > 3600000) {
+        const text =
+          "FORMA needs attention: " +
+          signals.join(", ") +
+          ". Check the private operations runbook. No member data is included.";
+        const response = await globalThis.fetch(
+          `https://api.cloudflare.com/client/v4/accounts/${env.CLOUDFLARE_ACCOUNT_ID}/email/sending/send`,
+          {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${env.EMAIL_TOKEN}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              from: { name: "FORMA Operations", address: env.EMAIL_FROM },
+              to: env.ALERT_TO,
+              subject: "[FORMA OPERATIONS] Public accounts require attention",
+              text,
+            }),
+            signal: globalThis.AbortSignal.timeout(15000),
           },
-          body: JSON.stringify({
-            from: { name: "FORMA Operations", address: env.EMAIL_FROM },
-            to: env.ALERT_TO,
-            subject: "[FORMA OPERATIONS] Public accounts require attention",
-            text,
-          }),
-          signal: globalThis.AbortSignal.timeout(15000),
+        );
+        const result = await response.json();
+        if (
+          !response.ok ||
+          !result.success ||
+          !(result.result?.queued ?? [])
+            .concat(result.result?.delivered ?? [])
+            .includes(env.ALERT_TO)
+        )
+          throw new Error("Operations alert delivery was not accepted");
+        state.alertedAt = Date.now();
+      }
+    } finally {
+      // Record the failure count and journal row even when the alert send throws.
+      // alertedAt only moves on delivery, so an undelivered alert is retried next run.
+      state.journal = [
+        {
+          at: state.checkedAt,
+          event: signals.length ? "attention" : "healthy",
+          signals,
+          alertSent: state.alertedAt !== previous.alertedAt,
         },
+        ...(Array.isArray(previous.journal) ? previous.journal : []),
+      ].slice(0, 40);
+      await env.STATE.put("edge-state", JSON.stringify(state));
+      globalThis.console.log(
+        JSON.stringify({
+          event: "forma_health_check",
+          signals,
+          consecutiveFailures: state.failures,
+        }),
       );
-      const result = await response.json();
-      if (
-        !response.ok ||
-        !result.success ||
-        !(result.result?.queued ?? [])
-          .concat(result.result?.delivered ?? [])
-          .includes(env.ALERT_TO)
-      )
-        throw new Error("Operations alert delivery was not accepted");
-      state.alertedAt = Date.now();
     }
-    state.journal = [
-      {
-        at: state.checkedAt,
-        event: signals.length ? "attention" : "healthy",
-        signals,
-        alertSent: state.alertedAt !== previous.alertedAt,
-      },
-      ...(Array.isArray(previous.journal) ? previous.journal : []),
-    ].slice(0, 40);
-    await env.STATE.put("edge-state", JSON.stringify(state));
-    globalThis.console.log(
-      JSON.stringify({
-        event: "forma_health_check",
-        signals,
-        consecutiveFailures: state.failures,
-      }),
-    );
   },
 };

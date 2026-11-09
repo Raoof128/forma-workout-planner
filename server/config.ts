@@ -25,7 +25,32 @@ function parseOrigin(value: string): string {
   return parsed.origin;
 }
 
+// Template wording from .env.example and similar placeholders. The repository
+// is public, so a copied example value is a known secret.
+const PLACEHOLDER_SECRET =
+  /replace|change[_-]?me|example|placeholder|your[_-]/i;
+
+/** Refuse secrets that are copied templates, reused, or obviously low-entropy. */
+function checkProductionSecrets(authSecret: string, workerSecret: string) {
+  for (const [name, value] of [
+    ["AUTH_SECRET", authSecret],
+    ["ORIGIN_SHARED_SECRET", workerSecret],
+  ] as const) {
+    if (PLACEHOLDER_SECRET.test(value))
+      throw new Error(`${name} still holds a placeholder value`);
+    if (new Set(value).size < 12)
+      throw new Error(`${name} must be a random value, not a repeated pattern`);
+  }
+  if (authSecret === workerSecret)
+    throw new Error("AUTH_SECRET and ORIGIN_SHARED_SECRET must differ");
+}
+
 export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
+  // Development is the default for local work, but an HTTPS origin with no
+  // NODE_ENV is a deployment that forgot it: fail closed instead of silently
+  // skipping every production check below.
+  if (env.NODE_ENV === undefined && env.APP_ORIGIN?.startsWith("https://"))
+    throw new Error("Set NODE_ENV explicitly for an HTTPS APP_ORIGIN");
   const environment = environmentSchema.parse(env.NODE_ENV ?? "development");
   const schema = z.object({
     APP_ORIGIN: z.string().url().transform(parseOrigin),
@@ -61,6 +86,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
         "The in-memory email sink cannot be enabled in production",
       );
     }
+    checkProductionSecrets(parsed.AUTH_SECRET, parsed.ORIGIN_SHARED_SECRET);
     const senderEmail =
       parsed.EMAIL_FROM.match(/<([^>]+)>/)?.[1] ?? parsed.EMAIL_FROM;
     if (

@@ -1,6 +1,7 @@
 import type { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import type { Pool } from "pg";
 import {
+  exportWorkspace,
   getWorkspace,
   InvalidWorkspace,
   putWorkspace,
@@ -49,7 +50,10 @@ export function registerWorkspaceRoutes(
     const member = await requireMember(request, reply);
     if (!member) return reply;
     try {
-      const workspace = await getWorkspace(pool, member.userId, member.name);
+      // The stored copy as saved: export must keep working even if a later
+      // validator would reject older stored data, so a backup is always
+      // available.
+      const data = await exportWorkspace(pool, member.userId, member.name);
       return (
         reply
           .headers({
@@ -58,7 +62,7 @@ export function registerWorkspaceRoutes(
             "content-disposition": 'attachment; filename="forma-backup.json"',
           })
           // Keep a valid near-limit workspace within the gateway's wire limit.
-          .send(JSON.stringify(workspace.data))
+          .send(JSON.stringify(data))
       );
     } catch {
       return reply

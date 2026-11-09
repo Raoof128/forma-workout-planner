@@ -140,6 +140,14 @@ def container_healthy(name):
         return False
 
 
+def container_running(name):
+    try:
+        data = json.loads(run(['docker', 'inspect', name], timeout=15))[0]
+        return bool(data['State']['Running'])
+    except Exception:
+        return False
+
+
 def tunnel_ready(config):
     # cloudflared's /ready is 200 only while an edge connection is registered; the API shares its network.
     try:
@@ -153,6 +161,20 @@ def tunnel_ready(config):
 def tunnel_signal(previous, ready):
     previous['tunnelFailures'] = 0 if ready else previous.get('tunnelFailures', 0) + 1
     return previous['tunnelFailures'] >= 2
+
+
+def tunnel_judgement(previous, api_running, probe):
+    # The probe runs docker exec into the API container, so a stopped API would look like a tunnel fault.
+    # Skip the judgement for that run and leave the counter untouched; the API is reported by its own signals.
+    if not api_running:
+        return False
+    return tunnel_signal(previous, probe())
+
+
+def api_ready_command(config):
+    # /readyz runs SELECT 1 under a short timeout. /healthz is liveness only and proves nothing about the database.
+    return ['docker', 'exec', config['project'] + '-api-1', 'node', '-e',
+            "fetch('http://127.0.0.1:3000/readyz').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
 
 
 def backup(config):
@@ -251,9 +273,8 @@ def monitor(config):
     previous['failures'] = 0 if all(statuses) else previous['failures'] + 1
     if previous['failures'] >= 2:
         signals.add('backend_unhealthy')
-    # Trusted local API probe includes database connectivity via /healthz.
-    probe = subprocess.run(['docker', 'exec', config['project'] + '-api-1', 'node', '-e',
-        "fetch('http://127.0.0.1:3000/healthz').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"], capture_output=True, timeout=15)
+    # Trusted local API probe uses /readyz, which includes the database SELECT 1; /healthz is liveness only.
+    probe = subprocess.run(api_ready_command(config), capture_output=True, timeout=15)
     if probe.returncode:
         previous['healthFailures'] = previous.get('healthFailures', 0) + 1
         if previous['healthFailures'] >= 2:
@@ -275,7 +296,7 @@ def monitor(config):
     pglogs = subprocess.run(['docker', 'logs', '--since', '5m', '--tail', '500', config['project'] + '-db-1'], capture_output=True, timeout=15)
     if re.search(rb'password authentication failed|too many clients|remaining connection slots', pglogs.stdout + pglogs.stderr):
         signals.add('database_auth_or_connection_limit')
-    if tunnel_signal(previous, tunnel_ready(config)):
+    if tunnel_judgement(previous, container_running(config['project'] + '-api-1'), lambda: tunnel_ready(config)):
         signals.add('tunnel_error')
     try:
         manifest = json.loads(Store(config).request('GET', 'latest.json'))
@@ -289,11 +310,15 @@ def monitor(config):
         signals.add('disk_capacity')
     now = dt.datetime.now(dt.timezone.utc).timestamp()
     fresh = {s for s in signals if now - previous['lastAlert'].get(s, 0) > 3600}
-    alert(config, fresh)
-    for signal in fresh:
-        previous['lastAlert'][signal] = now
-    state_file.write_text(json.dumps(previous))
-    os.chmod(state_file, 0o600)
+    try:
+        alert(config, fresh)
+        # Only delivered alerts start a suppression window; an undelivered one must be retried on the next run.
+        for signal in fresh:
+            previous['lastAlert'][signal] = now
+    finally:
+        # Persist failure counters even when the send raises, so consecutive failures keep counting.
+        state_file.write_text(json.dumps(previous))
+        os.chmod(state_file, 0o600)
     print(json.dumps({'monitorSignals': sorted(signals), 'healthy': not signals}))
 
 

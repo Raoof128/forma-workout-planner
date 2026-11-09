@@ -41,8 +41,9 @@ test("production config requires Cloudflare transactional email credentials", ()
   const base = {
     NODE_ENV: "production",
     APP_ORIGIN: "https://forma.example",
-    AUTH_SECRET: "a".repeat(32),
-    ORIGIN_SHARED_SECRET: "b".repeat(32),
+    // Random-looking synthetic values: production refuses repeated patterns.
+    AUTH_SECRET: "q8Vt2LmZr6Xc1NbH4sKdY7pWf0JgUe3A",
+    ORIGIN_SHARED_SECRET: "M5nB9vC2xZ7aS4dF1gH6jK3lP8oI0uYt",
     EMAIL_FROM: "FORMA <accounts@forma.example>",
   };
 
