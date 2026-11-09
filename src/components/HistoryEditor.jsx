@@ -4,6 +4,7 @@ import { exerciseById, sessionSets } from "../data";
 import { entryKey } from "../routineProgramming.js";
 import { applySetValue, readSetValue } from "../exerciseMetrics.js";
 import { visibleFields } from "../exerciseLoad.js";
+import { spokenField } from "../fieldNames.js";
 export default function HistoryEditor({ session, onSave, onClose }) {
   const [draft, setDraft] = useState(() => structuredClone(session));
   const [discard, setDiscard] = useState(false);
@@ -123,7 +124,7 @@ export default function HistoryEditor({ session, onSave, onClose }) {
                         {fields.map((field) => (
                           <input
                             key={field.key}
-                            aria-label={`Correct ${exercise.name} set ${si + 1} ${field.key}`}
+                            aria-label={`Correct ${exercise.name} set ${si + 1} ${spokenField(field)}`}
                             type="number"
                             min={field.min}
                             max={field.max}

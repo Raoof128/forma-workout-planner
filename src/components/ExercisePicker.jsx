@@ -37,7 +37,7 @@ export default function ExercisePicker({
             <p className="picker-empty">Type to search 1,600+ exercises.</p>
           )}
           {query.trim() !== "" && !matching.length && (
-            <p className="picker-empty" role="status">
+            <p className="picker-empty" aria-live="polite">
               No matching exercises. Try a different name or muscle group.
             </p>
           )}
@@ -45,7 +45,7 @@ export default function ExercisePicker({
             <button
               type="button"
               key={exercise.id}
-              aria-label={`${actionLabel} ${exercise.name}`}
+              aria-label={`${actionLabel} ${exercise.name}, ${exercise.muscle} · ${exercise.equipment}`}
               onClick={() => onPick(exercise)}
             >
               <Dumbbell size={17} />

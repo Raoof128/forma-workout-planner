@@ -18,6 +18,7 @@ export default function SavedField({
     <Tag
       {...props}
       value={draft}
+      aria-invalid={invalid || undefined}
       onFocus={() => setFocused(true)}
       onBlur={() => setFocused(false)}
       onChange={(event) => {

@@ -47,10 +47,10 @@ test("cardio templates log time and distance, persist history and allow measurem
     .getByRole("button", { name: "Start workout", exact: true })
     .click();
   await page
-    .getByLabel("Walking, Treadmill set 1 durationSeconds", { exact: true })
+    .getByLabel("Walking, Treadmill set 1 time (seconds)", { exact: true })
     .fill("900");
   await page
-    .getByLabel("Walking, Treadmill set 1 distanceMeters", { exact: true })
+    .getByLabel("Walking, Treadmill set 1 distance (meters)", { exact: true })
     .fill("800");
   await page
     .getByRole("button", {
@@ -71,7 +71,7 @@ test("cardio templates log time and distance, persist history and allow measurem
   await expect(page.getByRole("dialog")).toContainText("900 sec · 800 m");
   await page.getByRole("button", { name: "Edit workout", exact: true }).click();
   await page
-    .getByLabel("Correct Walking, Treadmill set 1 distanceMeters", {
+    .getByLabel("Correct Walking, Treadmill set 1 distance (meters)", {
       exact: true,
     })
     .fill("850");

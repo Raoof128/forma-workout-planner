@@ -95,6 +95,10 @@ export default function ActionsMenu({ label, items, className = "" }) {
               onClick={() => {
                 if (item.disabled) return;
                 setOpen(false);
+                // Return focus before acting: the menu item is about to unmount,
+                // and a dialog opened by the action restores focus to whatever
+                // was focused when it opened.
+                trigger.current?.focus();
                 item.onSelect();
               }}
             >

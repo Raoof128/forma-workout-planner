@@ -29,6 +29,10 @@ import { readBackupFile } from "../storage";
 import { BrandSymbol } from "./BrandMark";
 import Loading, { LoadingGlyph } from "./Loading";
 import "../account.css";
+import {
+  confirmUnsyncedSignOut,
+  UNSYNCED_SIGN_OUT,
+} from "../account/signOutGuard.js";
 
 function BusyButton({ loading = false, children, ...props }) {
   return (
@@ -202,7 +206,12 @@ function AuthView({ account, notify, onNavigate }) {
         <p className="account-lede">{subtitles[mode]}</p>
         {account.status === "error" && (
           <p className="account-alert" role="alert">
-            {account.error || "Account service is temporarily unavailable."}
+            {typeof account.error === "string"
+              ? account.error
+              : safeError(
+                  account.error,
+                  "Account service is temporarily unavailable.",
+                )}
           </p>
         )}
         {error && (
@@ -522,6 +531,17 @@ export default function Account({
   // The plaintext token exists only here, until the member dismisses it.
   const [issuedCoachToken, setIssuedCoachToken] = useState(null);
   const [coachCopied, setCoachCopied] = useState(false);
+  const issuedTokenPanel = useRef(null);
+  // "It will not be shown again" must hold: leaving Security drops the secret.
+  useEffect(() => {
+    if (section !== "security") {
+      setIssuedCoachToken(null);
+      setCoachCopied(false);
+    }
+  }, [section]);
+  useEffect(() => {
+    if (issuedCoachToken?.token) issuedTokenPanel.current?.focus();
+  }, [issuedCoachToken]);
   const [mfaPassword, setMfaPassword] = useState("");
   const [mfaCode, setMfaCode] = useState("");
   const [mfaEnrollment, setMfaEnrollment] = useState(null);
@@ -967,6 +987,8 @@ export default function Account({
     try {
       await account.disableMFA({ password: mfaDisablePassword });
       setMfaMessage("Two-step verification is off.");
+      // Codes for a disabled factor are void; never leave them downloadable.
+      setRecoveryCodes([]);
       setMfaDisablePassword("");
       setMfaDisableFormOpen(false);
     } catch (cause) {
@@ -1172,7 +1194,10 @@ export default function Account({
           <button
             type="button"
             className="account-secondary"
-            onClick={() => workspace.retry?.()}
+            onClick={() => {
+              // The workspace status itself reports a failed retry.
+              workspace.retry?.()?.catch?.(() => {});
+            }}
           >
             <RefreshCw size={16} /> Retry connection
           </button>
@@ -1725,7 +1750,8 @@ export default function Account({
                     <ol>
                       <li>Open an authenticator app and add a new account.</li>
                       <li>
-                        Enter this setup key if scanning is unavailable:{" "}
+                        In the app, choose to enter a setup key and type this
+                        key:{" "}
                         <code>
                           {mfaEnrollment.secret ||
                             (() => {
@@ -2074,7 +2100,13 @@ export default function Account({
                   loading={sessionAction === "everywhere"}
                   onClick={async () => {
                     if (sessionAction) return;
-                    if (!window.confirm("Sign out of FORMA on every device?"))
+                    if (
+                      !window.confirm(
+                        workspace?.unsynced
+                          ? `${UNSYNCED_SIGN_OUT} Sign out of FORMA on every device anyway?`
+                          : "Sign out of FORMA on every device?",
+                      )
+                    )
                       return;
                     setSessionAction("everywhere");
                     try {
@@ -2116,8 +2148,14 @@ export default function Account({
                   </p>
                 )}
                 {issuedCoachToken?.token && (
-                  <div className="account-codes" role="status">
-                    <strong>
+                  <div
+                    className="account-codes"
+                    role="group"
+                    ref={issuedTokenPanel}
+                    tabIndex={-1}
+                    aria-labelledby="issued-coach-token-title"
+                  >
+                    <strong id="issued-coach-token-title">
                       Copy this token now. It will not be shown again.
                     </strong>
                     <p>
@@ -2598,6 +2636,7 @@ export default function Account({
                   loading={signOutBusy}
                   onClick={async () => {
                     if (signOutBusy) return;
+                    if (!confirmUnsyncedSignOut(workspace?.unsynced)) return;
                     setSignOutBusy(true);
                     setDataError("");
                     setDataMessage("");

@@ -28,7 +28,7 @@ test("overrange saved per-side targets stay editable and are blocked before a wo
     ),
   ).toBeNull();
   await page.getByRole("button", { name: "Edit routine", exact: true }).click();
-  const reps = page.getByLabel("One-arm dumbbell row reps", { exact: true });
+  const reps = page.getByLabel("One-arm dumbbell row: Reps", { exact: true });
   await expect(reps).toHaveValue("60");
   await reps.fill("40-60");
   await page.getByRole("button", { name: "Save routine", exact: true }).click();

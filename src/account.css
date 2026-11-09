@@ -266,6 +266,7 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
+  min-height: 24px;
   padding: 5px 0;
   border: 0;
   background: transparent;
@@ -311,8 +312,8 @@
   line-height: 1;
 }
 .account-summary-card small {
-  color: #858d86;
-  font-size: 9px;
+  color: var(--ac-muted);
+  font-size: 10px;
 }
 .account-overview-columns {
   display: grid;
@@ -406,6 +407,9 @@
   color: #71834a;
 }
 .account-empty button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
   padding: 0;
   border: 0;
   background: none;
@@ -683,6 +687,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
+  min-height: 24px;
   padding: 4px 0;
   border: 0;
   background: none;
@@ -1128,6 +1133,7 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
+  min-height: 24px;
   padding: 5px;
   border: 0;
   background: transparent;

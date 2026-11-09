@@ -90,6 +90,15 @@ function AccountWorkspace({ notify }) {
       account.status === "authenticated"
         ? repository?.getSnapshot().conflict
         : null,
+    // Edits that have not reached the cloud yet: signing out would drop them.
+    unsynced:
+      account.status === "authenticated" &&
+      Boolean(
+        saving ||
+        status === "saving" ||
+        repository?.getSnapshot().retryPayload ||
+        repository?.getSnapshot().conflict,
+      ),
     refresh: () => repository?.refresh(),
     reloadConflict: () => repository?.reloadConflict(),
     retry: () => repository?.retry(),
@@ -442,6 +451,7 @@ function AccountWorkspace({ notify }) {
         data={data}
         account={account}
         notify={notify}
+        unsynced={workspace.unsynced}
       />
       <main id="main-content" data-page={visiblePage}>
         <header className="topbar">

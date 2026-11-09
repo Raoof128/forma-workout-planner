@@ -48,10 +48,10 @@ export async function openDragEditor(page, count = 3) {
 export async function holdRowOverNext(page, editor, positions = 1) {
   const { dialog, rows, names } = editor;
   const row = rows.filter({
-    has: page.getByLabel(`${names[0]} reps`, { exact: true }),
+    has: page.getByLabel(`${names[0]}: Reps`, { exact: true }),
   });
   const neighbor = rows.filter({
-    has: page.getByLabel(`${names[1]} reps`, { exact: true }),
+    has: page.getByLabel(`${names[1]}: Reps`, { exact: true }),
   });
   const initial = await row.boundingBox();
   const next = await neighbor.boundingBox();

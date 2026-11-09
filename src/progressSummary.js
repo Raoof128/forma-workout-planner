@@ -1,4 +1,4 @@
-import { estimatedOneRM, exercises } from "./data.js";
+import { estimatedOneRM, exerciseById, exercises } from "./data.js";
 import { sideReps, tracksLoadReps } from "./exerciseMetrics.js";
 
 const strengthExercises = exercises.filter(tracksLoadReps);
@@ -29,7 +29,14 @@ export function progressRecords(history) {
       }
     }
   }
-  return strengthExercises
-    .filter((exercise) => totals.has(exercise.id))
-    .map((exercise) => ({ ...exercise, ...totals.get(exercise.id) }));
+  return (
+    strengthExercises
+      .filter((exercise) => totals.has(exercise.id))
+      // exerciseById carries the reviewed name and equipment the rest of the
+      // app shows; the raw catalogue row may still use the imported wording.
+      .map((exercise) => ({
+        ...exerciseById.get(exercise.id),
+        ...totals.get(exercise.id),
+      }))
+  );
 }

@@ -44,9 +44,7 @@ test("saving waits for the lazy prescription fields to finish loading", async ({
       .click();
     dialog = page.getByRole("dialog");
     await dialog.getByLabel("Routine name").fill("Ready to save");
-    await expect(
-      dialog.getByRole("status").filter({ hasText: "Loading exercise order" }),
-    ).toBeVisible();
+    await expect(dialog.getByText("Loading exercise order")).toBeVisible();
     await expect(
       dialog.getByRole("button", { name: "Save routine", exact: true }),
     ).toBeDisabled();
@@ -103,7 +101,7 @@ test("immediate drag releases retain a usable editor and every saved field", asy
     exact: true,
   });
   const target = editor.rows.filter({
-    has: page.getByLabel(`${editor.names[1]} reps`, { exact: true }),
+    has: page.getByLabel(`${editor.names[1]}: Reps`, { exact: true }),
   });
   // dragTo can retry an intercepted press without releasing the mouse.
   // Hover resolves spring hit-testing before each single trusted press.
@@ -182,7 +180,7 @@ test("the entire exercise row follows the pointer while neighbors make room and 
     .poll(async () => (await neighbor.boundingBox()).y)
     .toBeLessThan(next.y - 20);
   await expect(
-    row.getByLabel(`${editor.names[0]} reps`, { exact: true }),
+    row.getByLabel(`${editor.names[0]}: Reps`, { exact: true }),
   ).toHaveValue("6–8");
   await page.mouse.up();
   await expect(editor.rows.nth(1)).toContainText(editor.names[0]);
@@ -244,7 +242,7 @@ test("reduced motion retains direct dragging and editable fields plus arrow reor
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   const editor = await openDragEditor(page);
-  const input = editor.dialog.getByLabel(`${editor.names[0]} reps`, {
+  const input = editor.dialog.getByLabel(`${editor.names[0]}: Reps`, {
     exact: true,
   });
   await input.fill("7-9");
@@ -278,9 +276,12 @@ test("expanded notes move with their row and remain editable after dropping", as
 }) => {
   const editor = await openDragEditor(page);
   await editor.dialog.getByLabel(`Options for ${editor.names[0]}`).click();
-  const note = editor.dialog.getByLabel(`${editor.names[0]} note`, {
-    exact: true,
-  });
+  const note = editor.dialog.getByLabel(
+    `${editor.names[0]}: Note / variant cue`,
+    {
+      exact: true,
+    },
+  );
   await note.fill("Keep the entire cue with this exercise");
   await editor.rows
     .first()
@@ -290,7 +291,7 @@ test("expanded notes move with their row and remain editable after dropping", as
     .poll(async () => Math.abs((await row.boundingBox()).y - destination))
     .toBeLessThan(12);
   await expect(
-    row.getByLabel(`${editor.names[0]} note`, { exact: true }),
+    row.getByLabel(`${editor.names[0]}: Note / variant cue`, { exact: true }),
   ).toHaveValue("Keep the entire cue with this exercise");
   await page.mouse.up();
   await expect(editor.rows.nth(1)).toContainText(editor.names[0]);
@@ -462,9 +463,12 @@ test("structural controls stay disabled during a preview and return after cancel
     }),
   ).toBeDisabled();
   await expect(
-    editor.dialog.getByLabel(`${editor.names[0]} superset with previous`, {
-      exact: true,
-    }),
+    editor.dialog.getByLabel(
+      `${editor.names[0]}: Superset with previous exercise`,
+      {
+        exact: true,
+      },
+    ),
   ).toBeDisabled();
   await expect(
     editor.dialog.locator(".exercise-picker button").first(),

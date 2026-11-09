@@ -58,6 +58,61 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-11-09 — Web frontend audit and remediation
+
+- **Scope:** audit of the whole web app (`src/`, `index.html`, Vite config,
+  browser tests), fixing verified defects without changing the visual identity,
+  data formats, the API or `ios/`. Report pack:
+  `docs/audits/web-frontend-2026-11/`.
+- **Summary:**
+  - **Data safety:** a running timed hold survives leaving the workout screen,
+    and a second hold cannot replace it. Session notes save after a 700 ms
+    pause, on blur and on unmount, not once per keystroke (one cloud PUT per
+    character in account mode).
+  - **Cloud sync:** cloud requests time out after 45 s, including the body read.
+    A stalled save becomes a retryable offline state with the same operation
+    ID. "Retry" re-reads the cloud when nothing is queued.
+  - **Sign-out and dialogs:** every sign-out entry point warns while edits are
+    unsynced. Dialogs no longer close when a text selection ends on the
+    backdrop.
+  - **Coach tokens:** the plaintext is cleared on leaving Security and is not
+    announced.
+  - **Accessibility and layout:** set rows fit at 320 px. Accessible names
+    contain their visible text. Field borders and focus rings reach 3:1.
+  - **Bundle:** the startup bundle drops exercise `description` previews
+    through a browser-only Vite transform: 560.3 to 443.8 KB gzip.
+- **Files:**
+  - Components: `src/App.jsx`, `src/components/{Account,ActionsMenu,ErrorBoundary,ExercisePicker,GuideInstructions,HistoryEditor,HoldTimer,Library,Navigation,Overview,RoutineCardOrder,RoutinePrescription,RoutinePrescriptions,Routines,SavedField,UI,Workout}.jsx`.
+  - Modules: `src/account/{cloudRepository,signOutGuard}.js`,
+    `src/fieldNames.js`, `src/progressSummary.js`.
+  - Styles: `src/styles.css`, `src/account.css`, `src/workout-history.css`.
+  - Build: `scripts/vite-lean-catalog.mjs`, `vite.config.js`.
+  - Unit tests: `unit/{cloud-repository,progress-summary,lean-catalog,sign-out-guard}.test.js`.
+  - Browser tests: `tests/web-audit-2026-11.spec.js`, plus accessible-name
+    updates in existing specs.
+  - Docs: `docs/audits/web-frontend-2026-11/*`, `CHANGELOG.md`, `AGENT.md`.
+- **Verification:** lint, format:check, typecheck, docs:check and the guest build pass.
+  Unit tests pass 160/160. Server tests pass 76/76 against disposable
+  PostgreSQL 18.4. `build-ios-resources --check` reports no `ios/` drift. Each
+  new regression test failed on the baseline and passed after the fix. The full
+  browser suites were still running when this entry was first written; results
+  are in `docs/audits/web-frontend-2026-11/TEST_RESULTS.md`.
+- **Rules learned:**
+  - `src/exerciseLoad.js` and `src/routineProgramming.js` are inputs to
+    `ios/FORMA/Resources/resource-manifest.json`, so editing them means
+    regenerating native resources. Put UI-only helpers in UI modules such as
+    `src/fieldNames.js`.
+  - In the browser bundle, catalogue rows have no `description`; read
+    technique text from `instructions.json` through `GuideInstructions`.
+  - Keep axe's `wcag21a` tag in accessibility specs; without it, 2.5.3 is
+    never checked.
+  - Sign-out goes through `confirmUnsyncedSignOut`.
+- **Follow-ups:** not deployed. This is a frontend-only release (staging Worker,
+  then production Worker); no API image or migration. Open items D-01 to D-11
+  are in `docs/audits/web-frontend-2026-11/AUDIT.md`. The most valuable are
+  keeping unsaved edits across a session expiry, a mid-size WebP tier for guide
+  images, and startup LCP under throttling.
+
 ### Raouf: 2026-11-04 — OSV exception for a dev-only minimatch advisory
 
 - **Scope:** CI "Security scans" failed on every branch after

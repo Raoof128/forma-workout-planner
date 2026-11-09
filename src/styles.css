@@ -25,6 +25,8 @@
   --lime-soft: #f0f8d8;
   --line: #dfe4dc;
   --surface: #fff;
+  /* Text field borders: >= 3:1 on #fff and on the #f7f9f3 set-row field fill. */
+  --field-border: #889088;
   --bg: #f5f6f3;
   --radius: 14px;
   --display: "Barlow Condensed", sans-serif;
@@ -175,7 +177,7 @@ textarea {
   min-width: 0;
   max-width: 100%;
   background: white;
-  border: 1px solid #cbd3c8;
+  border: 1px solid var(--field-border);
   border-radius: 8px;
   padding: 12px;
   font-size: 14px;
@@ -346,38 +348,6 @@ input[type="checkbox"] {
   letter-spacing: -1px;
   margin: 1px 13px 35px;
 }
-.brand-period {
-  color: #718547;
-  margin-left: -10px;
-}
-.brand-mark {
-  position: relative;
-  width: 27px;
-  height: 28px;
-  display: block;
-  flex-shrink: 0;
-}
-.brand-mark i {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-radius: 1px;
-  transform: skewY(-8deg);
-  background: var(--ink);
-}
-.brand-mark i:nth-child(1) {
-  left: 0;
-  top: 14px;
-}
-.brand-mark i:nth-child(2) {
-  left: 7px;
-  top: 7px;
-  opacity: 0.65;
-}
-.brand-mark i:nth-child(3) {
-  left: 14px;
-  top: 0;
-}
 .sidebar nav {
   display: flex;
   flex-direction: column;
@@ -489,7 +459,7 @@ input[type="checkbox"] {
   outline: none;
 }
 .profile-menu [role="menuitem"]:focus-visible {
-  box-shadow: 0 0 0 2px #aec477;
+  box-shadow: 0 0 0 2px var(--ink);
 }
 .profile-menu .profile-menu-signout {
   color: #9b2c22;
@@ -514,8 +484,9 @@ input[type="checkbox"] {
   font-size: 12px;
   font-weight: 650;
 }
-.profile-button > div,
-.resume-sidebar > div {
+.profile-button > .button-copy,
+.resume-sidebar > .button-copy {
+  display: block;
   flex: 1;
   min-width: 0;
 }
@@ -1271,7 +1242,7 @@ input[type="checkbox"] {
   display: flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid #cbd3c8;
+  border: 1px solid var(--field-border);
   border-radius: 8px;
   padding: 0 13px;
   background: white;
@@ -1337,7 +1308,7 @@ input[type="checkbox"] {
 .prescription {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(115px, 1fr) 48px 68px 65px 48px 60px 28px;
+  grid-template-columns: minmax(115px, 1fr) 48px 68px 65px 48px 60px 36px;
   align-items: center;
   gap: 10px;
   padding: 12px 0;
@@ -1560,7 +1531,7 @@ input[type="checkbox"] {
   text-align: center;
   padding: 6px;
   font-size: 20px;
-  background: var(--paper, #fff);
+  background: var(--surface);
 }
 .routine-card-menu > div {
   position: absolute;
@@ -1569,7 +1540,7 @@ input[type="checkbox"] {
   display: grid;
   gap: 6px;
   padding: 6px;
-  background: var(--paper, #fff);
+  background: var(--surface);
   border-radius: 10px;
   box-shadow: 0 8px 24px #0002;
 }
@@ -1611,8 +1582,8 @@ input[type="checkbox"] {
   margin: 12px 0;
 }
 .checkbox-field input {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
   accent-color: var(--ink);
 }
@@ -1751,7 +1722,9 @@ input[type="checkbox"] {
   font-size: 11px;
 }
 .muscle-back,
-.muscle-arms {
+.muscle-arms,
+.muscle-chest,
+.muscle-shoulders {
   background: #edf1f2;
   color: #4d6068;
 }
@@ -1762,14 +1735,6 @@ input[type="checkbox"] {
 .muscle-core {
   background: #eaf0e8;
   color: #4f6248;
-}
-.exercise-detail-icon {
-  display: grid;
-  place-items: center;
-  height: 110px;
-  background: #f1f5e9;
-  border-radius: 10px;
-  color: #4d5c38;
 }
 .exercise-media {
   margin: 0 0 18px;
@@ -1899,7 +1864,7 @@ input[type="checkbox"] {
   text-align: left;
   cursor: pointer;
   text-decoration: underline;
-  text-decoration-color: var(--line);
+  text-decoration-color: var(--muted);
   text-underline-offset: 3px;
 }
 .exercise-row-link:hover {
@@ -2185,7 +2150,7 @@ input[type="checkbox"] {
   padding: 10px 4px;
   text-align: center;
   background: #f7f9f3;
-  border-color: #dce3d4;
+  border-color: var(--field-border);
 }
 .set-row input:focus {
   background: white;
@@ -2680,7 +2645,7 @@ input[type="checkbox"] {
 }
 .save-indicator {
   position: fixed;
-  bottom: 20px;
+  bottom: max(20px, env(safe-area-inset-bottom));
   right: 20px;
   z-index: 20;
   padding: 8px 12px;
@@ -2854,15 +2819,14 @@ input[type="checkbox"] {
     justify-content: space-between;
     height: calc(66px + env(safe-area-inset-top));
     padding: env(safe-area-inset-top) 20px 0;
+    padding-inline: max(20px, env(safe-area-inset-left))
+      max(20px, env(safe-area-inset-right));
     background: white;
     border-bottom: 1px solid var(--line);
   }
   .mobile-top .brand {
     margin: 0;
     font-size: 25px;
-  }
-  .mobile-top .brand-mark {
-    transform: scale(0.85);
   }
   .sidebar {
     width: min(280px, calc(100vw - 52px));
@@ -2872,6 +2836,7 @@ input[type="checkbox"] {
     border-radius: 0;
     transform: translateX(-105%);
     padding: 18px 12px calc(20px + env(safe-area-inset-bottom));
+    padding-left: calc(12px + env(safe-area-inset-left));
     transition: transform 0.2s ease;
   }
   .sidebar.open {
@@ -2897,6 +2862,8 @@ input[type="checkbox"] {
   #main-content {
     margin-left: 0;
     padding: 0 20px;
+    padding-inline: max(20px, env(safe-area-inset-left))
+      max(20px, env(safe-area-inset-right));
   }
   .topbar {
     min-height: 53px;
@@ -3104,13 +3071,6 @@ input[type="checkbox"] {
   .log-exercise header p {
     font-size: 11px;
   }
-  .set-row {
-    grid-template-columns:
-      24px minmax(0, 1fr) minmax(0, 1fr) minmax(40px, 0.7fr)
-      44px;
-    padding: 8px 0;
-    gap: 8px;
-  }
   .set-labels {
     padding-top: 0;
     font-size: 11px;
@@ -3307,7 +3267,8 @@ input[type="checkbox"] {
 }
 @media (max-width: 380px) {
   #main-content {
-    padding-inline: 16px;
+    padding-inline: max(16px, env(safe-area-inset-left))
+      max(16px, env(safe-area-inset-right));
   }
   .topbar > div > span {
     display: none;
@@ -3519,6 +3480,8 @@ input[type="checkbox"] {
 }
 .legal-body a {
   color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .legal-header .eyebrow {
   color: var(--muted);
@@ -3552,10 +3515,13 @@ input[type="checkbox"] {
   .prescription.labels {
     display: none;
   }
+  /* One rule for the set row: the last track is exactly the 44px check button,
+     and the flexible tracks may shrink to 0 so nothing overflows at 320px. */
   .set-row {
     grid-template-columns:
-      26px minmax(0, 1fr) minmax(0, 1fr) minmax(40px, 0.7fr)
-      34px;
+      26px minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr)
+      44px;
+    padding: 8px 0;
     gap: 6px;
   }
 }
@@ -3726,7 +3692,7 @@ input[type="checkbox"] {
   outline: none;
 }
 .actions-menu-list [role="menuitem"]:focus-visible {
-  box-shadow: 0 0 0 2px #aec477;
+  box-shadow: 0 0 0 2px var(--ink);
 }
 .actions-menu-list [role="menuitem"][aria-disabled="true"] {
   color: var(--muted);

@@ -27,38 +27,41 @@ test("program every field, reload, overview, superset rest and actual RPE", asyn
       .click();
   }
   await dialog
-    .getByLabel("Incline Dumbbell Press reps", { exact: true })
+    .getByLabel("Incline Dumbbell Press: Reps", { exact: true })
     .fill("8–10");
   await dialog
-    .getByLabel("Incline Dumbbell Press rpe", { exact: true })
+    .getByLabel("Incline Dumbbell Press: RPE", { exact: true })
     .fill("8");
   await dialog
-    .getByLabel("Incline Dumbbell Press restSeconds", { exact: true })
+    .getByLabel("Incline Dumbbell Press: Rest (s)", { exact: true })
     .fill("90");
   await dialog.getByLabel("Options for Incline Dumbbell Press").click();
   await dialog
-    .getByLabel("Incline Dumbbell Press note", { exact: true })
+    .getByLabel("Incline Dumbbell Press: Note / variant cue", { exact: true })
     .fill("30° bench");
   await dialog
-    .getByLabel("Dumbbell reverse lunge rpe", { exact: true })
+    .getByLabel("Dumbbell reverse lunge: RPE", { exact: true })
     .fill("8");
   await dialog
-    .getByLabel("Dumbbell reverse lunge restSeconds", { exact: true })
+    .getByLabel("Dumbbell reverse lunge: Rest (s)", { exact: true })
     .fill("75");
   await dialog.getByLabel("Options for Dumbbell reverse lunge").click();
   await expect(
-    dialog.getByLabel("Dumbbell reverse lunge per side", { exact: true }),
+    dialog.getByLabel(
+      "Dumbbell reverse lunge: Reps per leg · log left and right separately",
+      { exact: true },
+    ),
   ).toBeChecked();
   await dialog
-    .getByLabel("Dumbbell reverse lunge superset with previous", {
+    .getByLabel("Dumbbell reverse lunge: Superset with previous exercise", {
       exact: true,
     })
     .check();
-  await dialog.getByLabel("Leg press rpe", { exact: true }).fill("8");
-  await dialog.getByLabel("Leg press restSeconds", { exact: true }).fill("90");
+  await dialog.getByLabel("Leg press: RPE", { exact: true }).fill("8");
+  await dialog.getByLabel("Leg press: Rest (s)", { exact: true }).fill("90");
   await dialog.getByLabel("Options for Leg press").click();
   await dialog
-    .getByLabel("Leg press note", { exact: true })
+    .getByLabel("Leg press: Note / variant cue", { exact: true })
     .fill("wide stance <b>cue</b>");
   await dialog
     .getByRole("button", { name: "Save routine", exact: true })
@@ -114,7 +117,7 @@ test("program every field, reload, overview, superset rest and actual RPE", asyn
       .click();
   await expect(page.getByRole("timer")).toHaveText(/01:1[0-5]/);
   await page
-    .getByRole("button", { name: "Add 15 seconds", exact: true })
+    .getByRole("button", { name: "+15 s: add 15 seconds", exact: true })
     .click();
   await expect(page.getByRole("timer")).toHaveText(/01:[23]\d/);
   await page.reload();
@@ -147,7 +150,7 @@ test("duplicate routine is independent; drag and arrows preserve programming", a
   await page.getByRole("button", { name: "Edit routine", exact: true }).click();
   const dialog = page.getByRole("dialog");
   await dialog
-    .getByLabel("Barbell bench press reps", { exact: true })
+    .getByLabel("Barbell bench press: Reps", { exact: true })
     .fill("6-8");
   await dialog
     .getByRole("button", { name: "Move Barbell bench press down", exact: true })
@@ -199,7 +202,9 @@ test("removing and reselecting a superset exercise leaves a saveable routine", a
   }
   await dialog.getByLabel("Options for One-arm dumbbell row").click();
   await dialog
-    .getByLabel("One-arm dumbbell row superset with previous", { exact: true })
+    .getByLabel("One-arm dumbbell row: Superset with previous exercise", {
+      exact: true,
+    })
     .check();
   const row = dialog
     .locator(".exercise-picker button")

@@ -99,7 +99,7 @@ for (const width of [320, 375, 390, 540, 768, 1024, 1440, 1536, 1920])
     await fit(page, "routine details");
     await page.getByRole("button", { name: "Edit routine" }).click();
     await fit(page, "routine editor");
-    const input = page.getByLabel("Barbell bench press weight", {
+    const input = page.getByLabel("Barbell bench press: Load (kg)", {
       exact: true,
     });
     await expect(input).toHaveValue("999.5");
@@ -148,9 +148,7 @@ test("routine picker explains no matches and empty overview offers creation", as
   await expect(page.locator(".hero button")).toHaveText("Create routine");
   await page.locator(".hero button").click();
   await page.getByLabel("Search exercises for routine").fill("zzzz");
-  await expect(
-    page.getByRole("status").filter({ hasText: "No matching exercises" }),
-  ).toBeVisible();
+  await expect(page.getByText("No matching exercises")).toBeVisible();
 });
 
 test("local fonts load without a third-party font service and motion preference is respected", async ({

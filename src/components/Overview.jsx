@@ -122,10 +122,14 @@ export default function Overview({
               className={`day ${selected === dateKey(day) ? "selected" : ""}`}
               onClick={() => setSelected(dateKey(day))}
               aria-pressed={selected === dateKey(day)}
-              aria-label={`${displayDate(day, { weekday: "long", day: "numeric", month: "long" })}, ${completed} workouts logged, ${planned ? "training planned" : "recovery day"}`}
             >
-              <span>{displayDate(day, { weekday: "short" })}</span>
+              {/* The visible day and date start the accessible name (WCAG
+                  2.5.3); the full date and status follow for screen readers. */}
+              <span>{displayDate(day, { weekday: "short" })}</span>{" "}
               <strong>{day.getUTCDate()}</strong>
+              <span className="sr-only">
+                {`, ${displayDate(day, { weekday: "long", day: "numeric", month: "long" })}, ${completed} ${completed === 1 ? "workout" : "workouts"} logged, ${planned ? "training planned" : "recovery day"}`}
+              </span>
               <i
                 aria-hidden="true"
                 className={completed ? "completed" : planned ? "planned" : ""}
@@ -217,11 +221,16 @@ export default function Overview({
             <span> / {data.profile.goal}</span>
           </div>
           <p className="muted">workouts completed</p>
-          <div className="week-chart" aria-label="Completed workouts by day">
+          <div
+            className="week-chart"
+            role="list"
+            aria-label="Completed workouts by day"
+          >
             {currentWeek.map((day, index) => (
               <div
                 key={dateKey(day)}
-                aria-label={`${displayDate(day, { weekday: "long" })}: ${counts[index]} workouts`}
+                role="listitem"
+                aria-label={`${displayDate(day, { weekday: "long" })}: ${counts[index]} ${counts[index] === 1 ? "workout" : "workouts"}`}
               >
                 <div className="bar-track">
                   <div

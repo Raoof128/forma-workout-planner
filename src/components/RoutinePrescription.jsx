@@ -51,6 +51,19 @@ export default function RoutinePrescription({
     };
   }, [settling, vertical]);
   const lifted = dragging || settling;
+  // Keyboard moves can disable the pressed arrow at either end of the list.
+  // A disabled button drops focus, so focus moves to the row's other arrow.
+  const upButton = useRef(null);
+  const downButton = useRef(null);
+  const pendingMove = useRef(0);
+  useEffect(() => {
+    const direction = pendingMove.current;
+    if (!direction) return;
+    pendingMove.current = 0;
+    const pressed = direction < 0 ? upButton.current : downButton.current;
+    const partner = direction < 0 ? downButton.current : upButton.current;
+    (pressed?.disabled ? partner : pressed)?.focus({ preventScroll: true });
+  });
   // A hold saved in reps can move to its timed identity. The button goes away
   // once it has, so focus moves to the new seconds target.
   const timed = timedVersion(item.exerciseId);
@@ -158,20 +171,28 @@ export default function RoutinePrescription({
             <GripVertical size={14} />
           </button>
           <button
+            ref={upButton}
             type="button"
             className="icon-button"
             disabled={ordering || index === 0}
             aria-label={`Move ${exercise.name} up`}
-            onClick={() => move(index, -1)}
+            onClick={() => {
+              pendingMove.current = -1;
+              move(index, -1);
+            }}
           >
             <ArrowUp size={14} />
           </button>
           <button
+            ref={downButton}
             type="button"
             className="icon-button"
             disabled={ordering || index === count - 1}
             aria-label={`Move ${exercise.name} down`}
-            onClick={() => move(index, 1)}
+            onClick={() => {
+              pendingMove.current = 1;
+              move(index, 1);
+            }}
           >
             <ArrowDown size={14} />
           </button>
@@ -209,7 +230,7 @@ export default function RoutinePrescription({
             <span>{field.label}</span>
             <input
               ref={field.key === "durationSeconds" ? secondsInput : undefined}
-              aria-label={`${exercise.name} ${field.key}`}
+              aria-label={`${exercise.name}: ${field.label}`}
               type={field.range ? "text" : "number"}
               inputMode={field.range ? "text" : undefined}
               min={field.min}
@@ -249,7 +270,7 @@ export default function RoutinePrescription({
           <label className="field">
             Note / variant cue
             <input
-              aria-label={`${exercise.name} note`}
+              aria-label={`${exercise.name}: Note / variant cue`}
               maxLength={140}
               value={item.note ?? ""}
               onChange={(event) =>
@@ -260,7 +281,7 @@ export default function RoutinePrescription({
           <label className="checkbox-field">
             <input
               type="checkbox"
-              aria-label={`${exercise.name} per side`}
+              aria-label={`${exercise.name}: Reps per ${sideLabel(exercise)} · log left and right separately`}
               checked={item.perSide ?? false}
               onChange={(event) => update(key, "perSide", event.target.checked)}
             />
@@ -269,7 +290,7 @@ export default function RoutinePrescription({
           <label className="checkbox-field">
             <input
               type="checkbox"
-              aria-label={`${exercise.name} superset with previous`}
+              aria-label={`${exercise.name}: Superset with previous exercise`}
               disabled={ordering || index === 0}
               checked={joined}
               onChange={(event) => join(index, event.target.checked)}

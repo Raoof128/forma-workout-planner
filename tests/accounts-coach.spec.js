@@ -129,8 +129,8 @@ test("a member mints a read-only coach token, a coach reads only that member, an
     await pageA.getByLabel("Token name").fill("Claude coach");
     await pageA.getByRole("button", { name: "Create read-only token" }).click();
 
-    const issued = pageA.getByRole("status").filter({
-      hasText: "Copy this token now",
+    const issued = pageA.getByRole("group", {
+      name: "Copy this token now. It will not be shown again.",
     });
     await expect(issued).toBeVisible();
     const token = (await issued.locator("pre").innerText()).trim();
@@ -224,8 +224,8 @@ test("a full-access coach token reads the whole workspace and its edits reach th
     await page
       .getByRole("button", { name: "Create full-access token" })
       .click();
-    const issued = page.getByRole("status").filter({
-      hasText: "Copy this token now",
+    const issued = page.getByRole("group", {
+      name: "Copy this token now. It will not be shown again.",
     });
     await expect(issued).toContainText("read and change your routines");
     const token = (await issued.locator("pre").innerText()).trim();

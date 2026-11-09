@@ -3,6 +3,17 @@ import { downloadData } from "../storage.js";
 import { validateData, freshData } from "../storage.js";
 
 const RETRYABLE = new Set([502, 503, 504]);
+// A stalled request must not leave the workspace "saving" forever: it would
+// block refreshes and queue every later edit behind it.
+const REQUEST_TIMEOUT_MS = 45_000;
+
+function timeoutError() {
+  const error = new Error(
+    "The cloud did not respond in time. Check your connection, then retry.",
+  );
+  error.name = "TimeoutError";
+  return error;
+}
 
 function decodeWorkspace(value) {
   if (!value || typeof value !== "object" || !Number.isInteger(value.revision))
@@ -42,6 +53,7 @@ export function createCloudRepository({
   memberId,
   onUnauthorized = () => {},
   onAccountChanged = onUnauthorized,
+  requestTimeoutMs = REQUEST_TIMEOUT_MS,
 } = {}) {
   let snapshot = {
     status: "loading",
@@ -94,23 +106,37 @@ export function createCloudRepository({
     assertActive(requestGeneration);
     const controller = new AbortController();
     requests.add(controller);
+    let timedOut = false;
+    const timer = setTimeout(() => {
+      timedOut = true;
+      controller.abort();
+    }, requestTimeoutMs);
     try {
       const response = await fetchImpl(url, {
         ...options,
         signal: controller.signal,
       });
       assertActive(requestGeneration);
-      return response;
+      // The body is read inside the same timeout: a server that sends headers
+      // and then stalls must not hold the workspace in "saving" either.
+      const body = await jsonResponse(response);
+      assertActive(requestGeneration);
+      if (timedOut) throw timeoutError();
+      return { response, body };
     } catch (error) {
       assertActive(requestGeneration);
+      // Report a timeout as its own failure, not an AbortError: callers treat
+      // AbortError as "this workspace was disposed" and keep no retry state.
+      if (timedOut) throw timeoutError();
       throw error;
     } finally {
+      clearTimeout(timer);
       requests.delete(controller);
     }
   }
 
   async function read(requestGeneration) {
-    const response = await request(
+    const { response, body } = await request(
       endpoint,
       {
         method: "GET",
@@ -120,8 +146,6 @@ export function createCloudRepository({
       },
       requestGeneration,
     );
-    const body = await jsonResponse(response);
-    assertActive(requestGeneration);
     if (response.status === 401) {
       onUnauthorized();
       const error = httpError(response, body);
@@ -232,19 +256,21 @@ export function createCloudRepository({
         },
         requestGeneration,
       );
-    let response;
+    let reply;
     try {
-      response = await send();
-    } catch {
+      reply = await send();
+    } catch (error) {
       assertActive(requestGeneration);
+      // A timed-out save becomes a retryable offline state at once instead of
+      // waiting out a second full timeout.
+      if (error.name === "TimeoutError") throw error;
       // The server may have committed before the connection failed. Retrying
       // the identical body and operation ID makes this safe and idempotent.
-      response = await send();
+      reply = await send();
     }
     assertActive(requestGeneration);
-    if (RETRYABLE.has(response.status)) response = await send();
-    const body = await jsonResponse(response);
-    assertActive(requestGeneration);
+    if (RETRYABLE.has(reply.response.status)) reply = await send();
+    const { response, body } = reply;
     if (response.status === 401) {
       onUnauthorized();
       const error = httpError(response, body);
@@ -411,6 +437,10 @@ export function createCloudRepository({
       }, requestGeneration);
     },
     async retry() {
+      // A failed read leaves nothing to resend; "Retry" then means reconnect
+      // and re-read the cloud copy rather than report an error.
+      if (!snapshot.retryPayload && !snapshot.conflict && !disposed)
+        return refresh();
       const requestGeneration = generation;
       return enqueue(async (activeGeneration) => {
         const payload = snapshot.retryPayload;
@@ -485,7 +515,7 @@ export function createCloudRepository({
     },
     async exportData() {
       const requestGeneration = generation;
-      const response = await request(
+      const { response, body } = await request(
         `${endpoint}/export`,
         {
           credentials: "same-origin",
@@ -494,8 +524,6 @@ export function createCloudRepository({
         },
         requestGeneration,
       );
-      const body = await jsonResponse(response);
-      assertActive(requestGeneration);
       if (accountChanged(body)) {
         const error = httpError(response, body);
         clearForAccountChange(error, requestGeneration);

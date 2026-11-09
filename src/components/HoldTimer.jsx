@@ -59,7 +59,7 @@ export default function HoldTimer({
             <button
               type="button"
               className="icon-button"
-              aria-label={`Shorter hold, ${Math.max(min, length - step)} seconds`}
+              aria-label={`−${step}: shorter hold, ${Math.max(min, length - step)} seconds`}
               disabled={length <= min}
               onClick={() => onAdjust(-step)}
             >
@@ -68,7 +68,7 @@ export default function HoldTimer({
             <button
               type="button"
               className="icon-button"
-              aria-label={`Longer hold, ${Math.min(max, length + step)} seconds`}
+              aria-label={`+${step}: longer hold, ${Math.min(max, length + step)} seconds`}
               disabled={length >= max}
               onClick={() => onAdjust(step)}
             >

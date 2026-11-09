@@ -219,7 +219,7 @@ export default function RoutineCardOrder({
             }}
           />
         ))}
-        {children}
+        {!archived && children}
       </div>
       {/* aria-live without role="status": the page toast owns that role. */}
       <span className="sr-only" aria-live="polite" aria-atomic="true">

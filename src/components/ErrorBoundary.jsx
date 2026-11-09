@@ -19,11 +19,16 @@ export default class ErrorBoundary extends Component {
             className="button secondary"
             onClick={() => {
               try {
-                downloadData(
-                  localStorage.getItem(STORAGE_KEY) || "",
-                  "forma-original-data",
-                  true,
-                );
+                const saved = localStorage.getItem(STORAGE_KEY);
+                // Never hand over an empty file as if it were a backup.
+                if (!saved) {
+                  this.setState({
+                    downloadError:
+                      "No training data is saved in this browser. Account training stays in your account: reload to reach it.",
+                  });
+                  return;
+                }
+                downloadData(saved, "forma-original-data", true);
               } catch {
                 this.setState({
                   downloadError:
