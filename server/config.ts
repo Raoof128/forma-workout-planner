@@ -38,7 +38,7 @@ function checkProductionSecrets(authSecret: string, workerSecret: string) {
   ] as const) {
     if (PLACEHOLDER_SECRET.test(value))
       throw new Error(`${name} still holds a placeholder value`);
-    if (new Set(value).size < 12)
+    if (new Set(value).size < 16)
       throw new Error(`${name} must be a random value, not a repeated pattern`);
   }
   if (authSecret === workerSecret)
@@ -46,12 +46,14 @@ function checkProductionSecrets(authSecret: string, workerSecret: string) {
 }
 
 export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
-  // Development is the default for local work, but an HTTPS origin with no
-  // NODE_ENV is a deployment that forgot it: fail closed instead of silently
-  // skipping every production check below.
-  if (env.NODE_ENV === undefined && env.APP_ORIGIN?.startsWith("https://"))
-    throw new Error("Set NODE_ENV explicitly for an HTTPS APP_ORIGIN");
+  // Development is the default for local work, but an HTTPS origin outside
+  // production is a deployment that forgot (or overrode) NODE_ENV: fail closed
+  // instead of silently skipping every production check below.
   const environment = environmentSchema.parse(env.NODE_ENV ?? "development");
+  if (environment !== "production" && env.APP_ORIGIN?.startsWith("https://"))
+    throw new Error(
+      "An HTTPS APP_ORIGIN is a deployment: set NODE_ENV=production",
+    );
   const schema = z.object({
     APP_ORIGIN: z.string().url().transform(parseOrigin),
     AUTH_SECRET: z.string().min(32),

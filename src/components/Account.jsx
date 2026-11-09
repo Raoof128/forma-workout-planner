@@ -2103,8 +2103,8 @@ export default function Account({
                     if (
                       !window.confirm(
                         workspace?.unsynced
-                          ? `${UNSYNCED_SIGN_OUT} Sign out of FORMA on every device anyway?`
-                          : "Sign out of FORMA on every device?",
+                          ? `${UNSYNCED_SIGN_OUT} Sign out of FORMA on every device anyway? This also revokes your coach tokens and trusted devices.`
+                          : "Sign out of FORMA on every device? This also revokes your coach tokens and trusted devices.",
                       )
                     )
                       return;

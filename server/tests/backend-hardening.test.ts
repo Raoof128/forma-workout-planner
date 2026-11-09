@@ -501,7 +501,18 @@ async function withDatabase(run: (url: string) => Promise<void>) {
   try {
     await run(url.toString());
   } finally {
-    await adminPool.query(`DROP DATABASE IF EXISTS ${name} WITH (FORCE)`);
+    // Wait for every connection to close rather than terminating them: a
+    // forced drop can hit a socket pg has not finished closing, which then
+    // surfaces as an uncaught error in whichever test is running.
+    for (let attempt = 0; attempt < 100; attempt += 1) {
+      const open = await adminPool.query(
+        "SELECT 1 FROM pg_stat_activity WHERE datname = $1",
+        [name],
+      );
+      if (!open.rowCount) break;
+      await new Promise((resolve) => setTimeout(resolve, 50));
+    }
+    await adminPool.query(`DROP DATABASE IF EXISTS ${name}`);
   }
 }
 
@@ -597,4 +608,81 @@ test("a release that lost or misordered a migration stops before changing anythi
   } finally {
     await rm(dir, { recursive: true, force: true });
   }
+});
+
+async function plantCredentials(userId: string) {
+  assert.ok(pool);
+  const tokenId = randomUUID().replaceAll("-", "");
+  await pool.query(
+    `INSERT INTO member_coach_token
+       (id, owner_id, token_digest, label, expires_at, scope)
+     VALUES ($1, $2, $3, 'Planted', now() + interval '30 days', 'full')`,
+    [tokenId, userId, randomUUID().replaceAll("-", "").padEnd(64, "0")],
+  );
+  await pool.query(
+    `INSERT INTO verification (id, identifier, value, "expiresAt", "createdAt", "updatedAt")
+     VALUES ($1, $2, $3, now() + interval '30 days', now(), now())`,
+    [randomUUID(), `trust-device-${randomUUID()}`, userId],
+  );
+  return tokenId;
+}
+
+async function credentialState(userId: string, tokenId: string) {
+  assert.ok(pool);
+  const token = await pool.query<{ revoked: boolean }>(
+    `SELECT revoked_at IS NOT NULL AS revoked FROM member_coach_token WHERE id = $1`,
+    [tokenId],
+  );
+  const trust = await pool.query(
+    `SELECT 1 FROM verification
+      WHERE starts_with(identifier, 'trust-device-') AND value = $1`,
+    [userId],
+  );
+  return { revoked: token.rows[0].revoked, trusted: trust.rowCount ?? 0 };
+}
+
+test("changing the password and signing out everywhere end coach tokens and trusted devices", async () => {
+  assert.ok(app);
+  const changer = await registerMember("Changer");
+  const bystander = await registerMember("Bystander");
+  const changerToken = await plantCredentials(changer.userId);
+  const bystanderToken = await plantCredentials(bystander.userId);
+  const memberHeaders = (member: typeof changer) => ({
+    ...apiHeaders,
+    "x-forma-client-ip": "198.51.100.200",
+    cookie: member.cookie,
+    "x-forma-member": memberReference(member.userId, config.authSecret),
+    "content-type": "application/json",
+  });
+
+  const changed = await app.inject({
+    method: "POST",
+    url: "/api/auth/change-password",
+    headers: memberHeaders(changer),
+    payload: {
+      currentPassword: password,
+      newPassword: "FORMA-backend-hardening-new-passphrase-2026",
+    },
+  });
+  assert.equal(changed.statusCode, 200, changed.body);
+  assert.deepEqual(await credentialState(changer.userId, changerToken), {
+    revoked: true,
+    trusted: 0,
+  });
+  assert.deepEqual(await credentialState(bystander.userId, bystanderToken), {
+    revoked: false,
+    trusted: 1,
+  });
+
+  const signedOut = await app.inject({
+    method: "POST",
+    url: "/api/account/sessions/revoke-all",
+    headers: memberHeaders(bystander),
+    payload: {},
+  });
+  assert.equal(signedOut.statusCode, 200, signedOut.body);
+  assert.deepEqual(await credentialState(bystander.userId, bystanderToken), {
+    revoked: true,
+    trusted: 0,
+  });
 });

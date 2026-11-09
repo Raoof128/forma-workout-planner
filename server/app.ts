@@ -8,6 +8,7 @@ import type { IncomingHttpHeaders } from "node:http";
 import type { Pool } from "pg";
 import {
   createAuth,
+  revokeCredentialArtifacts,
   signInThrottleKey,
   testLimitOverride,
   type EmailSender,
@@ -20,8 +21,10 @@ import {
   DEFAULT_SIGN_IN_POLICY,
   normaliseEmail,
   PASSWORD_CHECK_SCOPE,
+  pruneExpiredAuthRows,
   pruneThrottle,
   refundAttempt,
+  refundBudget,
   reserveAttempt,
   settleFailure,
   SIGN_IN_SCOPE,
@@ -526,10 +529,15 @@ export async function createApp({
   const throttledEmail: EmailSender = async (message) => {
     const recipient = normaliseEmail(message.email);
     if (!recipient) return;
+    const digest = throttleKey(
+      config.authSecret,
+      `email:${message.kind}`,
+      recipient,
+    );
     const allowed = await consumeBudget(
       pool,
       `email:${message.kind}`,
-      throttleKey(config.authSecret, `email:${message.kind}`, recipient),
+      digest,
       emailPerRecipientLimit,
       60 * 60,
     );
@@ -537,7 +545,14 @@ export async function createApp({
       app.log.warn({ kind: message.kind }, "auth email suppressed by budget");
       return;
     }
-    await deliverEmail(message);
+    try {
+      await deliverEmail(message);
+    } catch (error) {
+      // A send that never happened must not spend the recipient's budget, or
+      // a provider outage would suppress their reset mail for the next hour.
+      await refundBudget(pool, `email:${message.kind}`, digest);
+      throw error;
+    }
   };
   const auth = createAuth(pool, config, throttledEmail);
   const expireSession = async (sessionId: string) => {
@@ -830,10 +845,17 @@ export async function createApp({
           if (response.status === 200) {
             await clearSignInFailures(pool, attempt.key, attempt.scope);
           } else if (wrongPassword) {
+            // Settled before the write: if it applies but its reply is lost,
+            // the catch below must not refund a real wrong-password guess.
+            attemptSettled = true;
             await settleFailure(pool, attempt.key, signInPolicy, attempt.scope);
             // nosemgrep: ajinabraham.njsscan.crypto.crypto_node.node_insecure_random_generator -- sampling for housekeeping, not a secret
-            if (Math.random() < 0.01) void pruneThrottle(pool).catch(() => {});
+            if (Math.random() < 0.01) {
+              void pruneThrottle(pool).catch(() => {});
+              void pruneExpiredAuthRows(pool).catch(() => {});
+            }
           } else {
+            attemptSettled = true;
             await refundAttempt(pool, attempt.key, attempt.scope);
           }
           attemptSettled = true;
@@ -855,6 +877,15 @@ export async function createApp({
             }
           }
         }
+        // A changed password means the old one may be known: coach tokens and
+        // trusted devices must not outlive it (Better Auth already ends the
+        // other sessions; password reset does the same in auth.ts).
+        if (
+          (authPath === "change-password" || authPath === "revoke-sessions") &&
+          response.status === 200 &&
+          existingSession?.user?.id
+        )
+          await revokeCredentialArtifacts(pool, existingSession.user.id);
         const location = response.headers.get("location");
         if (location !== null && !isSafeRedirect(location, config.appOrigin)) {
           // Defence in depth for any redirect the library builds itself.
@@ -934,8 +965,14 @@ export async function createApp({
         // reserved slot so transient errors cannot lock a member out.
         if (!attemptSettled && attempt)
           await refundAttempt(pool, attempt.key, attempt.scope).catch(() => {});
+        // A fixed route label: reset-password/<token> carries a live token.
         request.log.error(
-          { errorName: (error as Error)?.name, path: authPath },
+          {
+            errorName: (error as Error)?.name,
+            route: authPath.startsWith("reset-password/")
+              ? "reset-password"
+              : authPath,
+          },
           "auth request failed",
         );
         return reply.code(500).send({ error: "internal_error" });
@@ -1112,6 +1149,9 @@ export async function createApp({
     await pool.query(`DELETE FROM "session" WHERE "userId" = $1`, [
       member.userId,
     ]);
+    // "Sign out everywhere" is the suspected-compromise action: a stolen
+    // session could have minted a coach token or trusted a device for itself.
+    await revokeCredentialArtifacts(pool, member.userId);
     return reply.send({ status: true });
   });
 

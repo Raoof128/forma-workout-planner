@@ -43,7 +43,10 @@ export const COACH_READ_SCOPE = "coach-token-read";
 /** Edits allowed per full-access token per hour. */
 export const COACH_WRITE_LIMIT = 60;
 export const COACH_WRITE_SCOPE = "coach-token-write";
-/** Edits allowed across all of one member's tokens per hour (cap of five tokens x 60). */
+/**
+ * Edits allowed across all of one member's tokens per hour. Below five tokens
+ * x 60, on purpose: extra tokens must not multiply a member's write budget.
+ */
 export const COACH_MEMBER_WRITE_LIMIT = 120;
 export const COACH_MEMBER_WRITE_SCOPE = "coach-member-write";
 /** Well-formed mint attempts per member per hour, refused or not. */

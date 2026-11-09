@@ -47,6 +47,24 @@ export async function consumeBudget(
   return Number(result.rows[0]?.window_count ?? Infinity) <= limit;
 }
 
+/**
+ * Give back one unit that `consumeBudget` spent on a send that never happened
+ * (the provider failed). Never drops below zero. The window is not checked, so
+ * a refund that lands after a window rolled over can undercount by one.
+ */
+export async function refundBudget(
+  pool: Pool,
+  scope: string,
+  keyDigest: string,
+): Promise<void> {
+  await pool.query(
+    `UPDATE security_throttle
+        SET window_count = GREATEST(window_count - 1, 0)
+      WHERE scope = $1 AND key_digest = $2`,
+    [scope, keyDigest],
+  );
+}
+
 export interface SignInPolicy {
   /** Failures allowed inside one window before a temporary lock. */
   windowLimit: number;
@@ -219,4 +237,41 @@ export async function pruneThrottle(pool: Pool): Promise<void> {
       WHERE window_started < clock_timestamp() - interval '2 days'
         AND (locked_until IS NULL OR locked_until < clock_timestamp())`,
   );
+}
+
+const PRUNE_BATCH_SIZE = 1000;
+/** Caps one call's work; a backlog larger than this is finished by later calls. */
+const PRUNE_MAX_BATCHES = 100;
+
+// One fixed statement per table, each deleting at most PRUNE_BATCH_SIZE rows,
+// so no statement holds long row locks. SKIP LOCKED leaves busy rows for later.
+const PRUNE_STATEMENTS = [
+  `DELETE FROM "session" WHERE ctid IN (
+     SELECT ctid FROM "session"
+      WHERE "expiresAt" < now() - interval '1 day'
+      LIMIT $1 FOR UPDATE SKIP LOCKED)`,
+  `DELETE FROM verification WHERE ctid IN (
+     SELECT ctid FROM verification
+      WHERE "expiresAt" < now()
+      LIMIT $1 FOR UPDATE SKIP LOCKED)`,
+  `DELETE FROM member_coach_token WHERE ctid IN (
+     SELECT ctid FROM member_coach_token
+      WHERE GREATEST(expires_at, COALESCE(revoked_at, expires_at))
+            < now() - interval '30 days'
+      LIMIT $1 FOR UPDATE SKIP LOCKED)`,
+] as const;
+
+/**
+ * Housekeeping for auth-side rows that are no longer usable: sessions expired
+ * more than a day ago, expired verification rows (reset, delete-account, trust
+ * device, 2FA challenge), and coach tokens whose last relevant time (expiry or
+ * revocation) is over 30 days old. Active rows are never matched.
+ */
+export async function pruneExpiredAuthRows(pool: Pool): Promise<void> {
+  for (const statement of PRUNE_STATEMENTS) {
+    for (let batch = 0; batch < PRUNE_MAX_BATCHES; batch += 1) {
+      const result = await pool.query(statement, [PRUNE_BATCH_SIZE]);
+      if ((result.rowCount ?? 0) < PRUNE_BATCH_SIZE) break;
+    }
+  }
 }

@@ -53,6 +53,8 @@ test(
       "0002-workspace.sql",
       "0003-security-throttle.sql",
       "0004-routine-programming.sql",
+      "0005-coach-tokens.sql",
+      "0006-coach-token-scope.sql",
     ]) {
       await setup.query(
         await readFile(join(testDir, "..", "migrations", name), "utf8"),
