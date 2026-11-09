@@ -1,0 +1,84 @@
+{
+  "recordVersion": 1,
+  "date": "2026-11-05",
+  "dateTimezone": "Australia/Sydney",
+  "status": "all_configured_services_live_verified_physical_safari_pending",
+  "source": {
+    "initialAuditCheckpoint": "21270818ec28073acf96fd800e500527fccb628c",
+    "frontendCorrection": "af8f476420e2e4451c03ae0537e936eba457c2c7",
+    "backendImageSource": "21270818ec28073acf96fd800e500527fccb628c",
+    "backendInputsUnchangedByCorrection": true,
+    "newSchemaMigration": false,
+    "newDependency": false
+  },
+  "ci": {
+    "initial": {
+      "run": 41855617331,
+      "conclusion": "success",
+      "executionsPassed": 1394
+    },
+    "correction": {
+      "run": 41906385541,
+      "head": "af8f476420e2e4451c03ae0537e936eba457c2c7",
+      "status": "completed",
+      "conclusion": "success",
+      "executionsPassed": 1404,
+      "browserPassed": 1125,
+      "failed": 0,
+      "skipped": 0,
+      "interrupted": 0,
+      "receipt": "evidence/ci-correction-af8f476.json"
+    }
+  },
+  "environments": {
+    "staging": {
+      "apiReceipt": "evidence/staging-api.json",
+      "workerVersion": "98eecbb4-4c5e-49ad-9e9d-7d062f9c252c",
+      "httpReceipt": "evidence/staging-http.json",
+      "browserReceipt": "evidence/browser/staging-final/receipt.json"
+    },
+    "production": {
+      "status": "live_verified",
+      "previousWorkerVersion": "ed075a4c-250f-499f-9417-048138eac630",
+      "previousApiTag": "forma-api:watch-summary-20261102-55d6dc1",
+      "workerVersion": "3a5980c7-d697-49b0-bd23-d4a5cd808631",
+      "apiReceipt": "evidence/production-api.json",
+      "httpReceipt": "evidence/production-http.json",
+      "browserReceipt": "evidence/browser/public-after/receipt.json"
+    }
+  },
+  "operations": {
+    "dashboardVersion": "e3cee2fb-f50a-46f4-934f-38316d6e7617",
+    "edgeMonitorVersion": "332a451b-383a-4860-9dec-fd1e024736e1",
+    "workerDeploymentTokensRevoked": true,
+    "edgeReceipt": "evidence/edge-monitor.json",
+    "hostMonitorAndTunnelAlreadyCurrent": true
+  },
+  "cleanup": {
+    "temporaryAccessReceipt": "evidence/access-cleanup.json",
+    "taskStartedDockerReturnedToStoppedState": true,
+    "imagesAndVolumesPreserved": true,
+    "noProjectOrEvidenceDeletion": true
+  },
+  "scope": {
+    "productionMemberWrites": false,
+    "newRestoreDrill": false,
+    "emailTest": false,
+    "physicalWebSafari": "pending_actual_device_outcome",
+    "newNativeBuildOrDistribution": false,
+    "ownerAuthenticatedDashboardRendering": false
+  },
+  "finalLivePostflight": "evidence/final-live-postflight.json",
+  "visualEvidence": {
+    "screenshots": 63,
+    "productionBeforeAfterPairs": 21,
+    "manifest": "evidence/browser/MANIFEST.json",
+    "comparison": "evidence/browser/comparison.html",
+    "phases": [
+      "public-before",
+      "staging-final",
+      "public-after"
+    ]
+  },
+  "finalPublicConfirmation": "evidence/final-public-confirmation.json"
+}

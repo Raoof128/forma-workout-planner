@@ -1,0 +1,36 @@
+{
+  "sourceCommit": "af8f476420e2e4451c03ae0537e936eba457c2c7",
+  "scope": "Anonymous mocked account UI; private Vite-only server, no PostgreSQL or production data.",
+  "controlledBefore": {
+    "cssSource": "21270818ec28073acf96fd800e500527fccb628c",
+    "profiles": 5,
+    "failed": 5,
+    "durationSeconds": 16.9,
+    "cause": "Two loaded-font supporting-copy line rectangles intersected the actual decorative emblem at 320 px in each profile."
+  },
+  "focusedAfter": {
+    "profiles": 5,
+    "passed": 5,
+    "failed": 0,
+    "widths": [320, 360, 375, 390, 430, 540],
+    "durationSeconds": 14.9
+  },
+  "completeAccountDesign": {
+    "passed": 40,
+    "failed": 0,
+    "skipped": 0,
+    "retries": 0,
+    "durationSeconds": 61.8
+  },
+  "groupOverlap": "The focused case is included in the complete 40 and full CI. These totals are not summed as unique journeys.",
+  "files": [
+    {
+      "path": "src/account.css",
+      "sha256": "9d42d7f3e29c89647a3cd22d3c3ff58d3e7e551e585daeda44e7f1d06908d008"
+    },
+    {
+      "path": "tests/accounts-design.spec.js",
+      "sha256": "b7aba9414e89085049a5e31f866ee5b2d903335e9e9a8e9a2c2375a9e7545022"
+    }
+  ]
+}

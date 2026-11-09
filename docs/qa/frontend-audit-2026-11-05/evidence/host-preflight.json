@@ -1,0 +1,319 @@
+{
+  "scope": "Read-only host preflight: no deployment, backup, restore, alert, member query, remote file edit, container stop or key rotation.",
+  "runtime_source_commit": "21270818ec28073acf96fd800e500527fccb628c",
+  "snapshot_window_utc": {
+    "initial": "2026-11-04T19:54:33.468020+00:00",
+    "backup": "2026-11-04T19:57:52.347743+00:00",
+    "connector": "2026-11-04T19:58:42.419169+00:00"
+  },
+  "projects": {
+    "forma-staging": {
+      "services": [
+        {
+          "service": "api",
+          "status": "running",
+          "docker_health": "healthy",
+          "image_tag": "forma-api:audit-20261104-ad3315c",
+          "image_id": "sha256:491ca8c2d11187fbb5db3dc0c79dee4167f6ead6b26afd76bfe5f76aa57c74d9",
+          "repo_digests": [
+            "forma-api@sha256:491ca8c2d11187fbb5db3dc0c79dee4167f6ead6b26afd76bfe5f76aa57c74d9"
+          ],
+          "read_only_rootfs": true,
+          "privileged": false,
+          "host_port_bindings_present": false,
+          "memory_limit_bytes": 335544320,
+          "network_count": 2
+        },
+        {
+          "service": "db",
+          "status": "running",
+          "docker_health": "healthy",
+          "image_tag": "postgres:18.4-alpine@sha256:9a8afca54e7861fd90fab5fdf4c42477a6b1cb7d293595148e674e0a3181de15",
+          "image_id": "sha256:9a8afca54e7861fd90fab5fdf4c42477a6b1cb7d293595148e674e0a3181de15",
+          "repo_digests": [],
+          "read_only_rootfs": true,
+          "privileged": false,
+          "host_port_bindings_present": false,
+          "memory_limit_bytes": 402653184,
+          "network_count": 1
+        },
+        {
+          "service": "cloudflared",
+          "status": "running",
+          "docker_health": null,
+          "image_tag": "cloudflare/cloudflared:2026.10.4@sha256:c6c7ae1d5dfdcb094ad344ed68ccffc26635c9c6be80965664c33baf064b0515",
+          "image_id": "sha256:c6c7ae1d5dfdcb094ad344ed68ccffc26635c9c6be80965664c33baf064b0515",
+          "repo_digests": [
+            "cloudflare/cloudflared@sha256:c6c7ae1d5dfdcb094ad344ed68ccffc26635c9c6be80965664c33baf064b0515"
+          ],
+          "read_only_rootfs": true,
+          "privileged": false,
+          "host_port_bindings_present": false,
+          "memory_limit_bytes": 134217728,
+          "network_count": 1,
+          "command_metadata": {
+            "token_file_used": true,
+            "inline_token_flag_present": false,
+            "metrics_bind": null
+          }
+        }
+      ],
+      "compose_service_names": [
+        "api",
+        "cloudflared",
+        "db"
+      ],
+      "compose_host_port_bindings": 0,
+      "operations_script_sha256": "69233fd576e2d6ea7390926cd2bc328be53b6486d5e18e50efee45eb6b1595a6",
+      "operations_script_matches_current": true,
+      "operations_config_keys": [
+        "accessKeyId",
+        "account",
+        "age",
+        "alertTo",
+        "bucket",
+        "directory",
+        "emailFrom",
+        "emailToken",
+        "project",
+        "recipient",
+        "secretAccessKey",
+        "signingKey",
+        "stateFile",
+        "tokenId",
+        "verificationKey"
+      ],
+      "operations_config_mode": "0o600",
+      "required_configured_files_exist": {
+        "stateFile": true,
+        "signingKey": true,
+        "verificationKey": true
+      },
+      "persisted_monitor_counters": {
+        "failures": 0,
+        "healthFailures": 0,
+        "tunnelFailures": 0
+      },
+      "prior_alert_signal_names": [
+        "account_changed",
+        "backup_unavailable",
+        "database_auth_or_connection_limit",
+        "email_suppressed",
+        "gateway_rejected",
+        "mfa_lockout",
+        "sign_in_failures",
+        "sign_in_lockout",
+        "tunnel_error"
+      ],
+      "units": {
+        "forma-staging-backup.service": {
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "UnitFileState": "static",
+          "Result": "success",
+          "ExecMainStatus": "0",
+          "ExecMainExitTimestamp": "Wed 2026-11-04 03:30:32 UTC"
+        },
+        "forma-staging-monitor.service": {
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "UnitFileState": "static",
+          "Result": "success",
+          "ExecMainStatus": "0",
+          "ExecMainExitTimestamp": "Wed 2026-11-04 19:54:15 UTC"
+        },
+        "forma-staging-backup.timer": {
+          "ActiveState": "active",
+          "SubState": "waiting",
+          "UnitFileState": "enabled",
+          "Result": "success",
+          "LastTriggerUSec": "Wed 2026-11-04 03:30:27 UTC",
+          "NextElapseUSecRealtime": "Thu 2026-11-05 03:30:17 UTC"
+        },
+        "forma-staging-monitor.timer": {
+          "ActiveState": "active",
+          "SubState": "waiting",
+          "UnitFileState": "enabled",
+          "Result": "success",
+          "LastTriggerUSec": "Wed 2026-11-04 19:54:14 UTC",
+          "NextElapseUSecRealtime": ""
+        }
+      },
+      "tunnel_ready": {
+        "status": 200,
+        "ready": true
+      },
+      "backup": {
+        "latest_created_at": "2026-11-04T08:11:45+00:00",
+        "age_seconds": 42368.08713,
+        "project_matches": true,
+        "latest_and_signed_manifest_bytes_match": true,
+        "signed_manifest_exists": true,
+        "signature_exists": true,
+        "signature_bytes": 64,
+        "signature_cryptographically_verified": false,
+        "archive_head_exists": true
+      }
+    },
+    "forma-production": {
+      "services": [
+        {
+          "service": "api",
+          "status": "running",
+          "docker_health": "healthy",
+          "image_tag": "forma-api:watch-summary-20261102-55d6dc1",
+          "image_id": "sha256:6cc346ede01788d52f704386bd297cf6887f1b8d99a8ef74c14cbffb423cf750",
+          "repo_digests": [
+            "forma-api@sha256:6cc346ede01788d52f704386bd297cf6887f1b8d99a8ef74c14cbffb423cf750"
+          ],
+          "read_only_rootfs": true,
+          "privileged": false,
+          "host_port_bindings_present": false,
+          "memory_limit_bytes": 268435456,
+          "network_count": 2
+        },
+        {
+          "service": "db",
+          "status": "running",
+          "docker_health": "healthy",
+          "image_tag": "postgres:18.4-alpine@sha256:9a8afca54e7861fd90fab5fdf4c42477a6b1cb7d293595148e674e0a3181de15",
+          "image_id": "sha256:9a8afca54e7861fd90fab5fdf4c42477a6b1cb7d293595148e674e0a3181de15",
+          "repo_digests": [],
+          "read_only_rootfs": true,
+          "privileged": false,
+          "host_port_bindings_present": false,
+          "memory_limit_bytes": 268435456,
+          "network_count": 1
+        },
+        {
+          "service": "cloudflared",
+          "status": "running",
+          "docker_health": null,
+          "image_tag": "cloudflare/cloudflared:2026.10.4@sha256:c6c7ae1d5dfdcb094ad344ed68ccffc26635c9c6be80965664c33baf064b0515",
+          "image_id": "sha256:c6c7ae1d5dfdcb094ad344ed68ccffc26635c9c6be80965664c33baf064b0515",
+          "repo_digests": [
+            "cloudflare/cloudflared@sha256:c6c7ae1d5dfdcb094ad344ed68ccffc26635c9c6be80965664c33baf064b0515"
+          ],
+          "read_only_rootfs": true,
+          "privileged": false,
+          "host_port_bindings_present": false,
+          "memory_limit_bytes": 100663296,
+          "network_count": 1,
+          "command_metadata": {
+            "token_file_used": true,
+            "inline_token_flag_present": false,
+            "metrics_bind": null
+          }
+        }
+      ],
+      "compose_service_names": [
+        "api",
+        "cloudflared",
+        "db"
+      ],
+      "compose_host_port_bindings": 0,
+      "operations_script_sha256": "69233fd576e2d6ea7390926cd2bc328be53b6486d5e18e50efee45eb6b1595a6",
+      "operations_script_matches_current": true,
+      "operations_config_keys": [
+        "accessKeyId",
+        "account",
+        "age",
+        "alertTo",
+        "bucket",
+        "directory",
+        "emailFrom",
+        "emailToken",
+        "project",
+        "recipient",
+        "secretAccessKey",
+        "signingKey",
+        "stateFile",
+        "tokenId",
+        "verificationKey"
+      ],
+      "operations_config_mode": "0o600",
+      "required_configured_files_exist": {
+        "stateFile": true,
+        "signingKey": true,
+        "verificationKey": true
+      },
+      "persisted_monitor_counters": {
+        "failures": 0,
+        "healthFailures": 0,
+        "tunnelFailures": 0
+      },
+      "prior_alert_signal_names": [
+        "backend_unhealthy",
+        "backup_unavailable",
+        "database_or_api_unhealthy",
+        "tunnel_error"
+      ],
+      "units": {
+        "forma-production-backup.service": {
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "UnitFileState": "static",
+          "Result": "success",
+          "ExecMainStatus": "0",
+          "ExecMainExitTimestamp": "Wed 2026-11-04 03:30:33 UTC"
+        },
+        "forma-production-monitor.service": {
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "UnitFileState": "static",
+          "Result": "success",
+          "ExecMainStatus": "0",
+          "ExecMainExitTimestamp": "Wed 2026-11-04 19:54:15 UTC"
+        },
+        "forma-production-backup.timer": {
+          "ActiveState": "active",
+          "SubState": "waiting",
+          "UnitFileState": "enabled",
+          "Result": "success",
+          "LastTriggerUSec": "Wed 2026-11-04 03:30:27 UTC",
+          "NextElapseUSecRealtime": "Thu 2026-11-05 03:30:22 UTC"
+        },
+        "forma-production-monitor.timer": {
+          "ActiveState": "active",
+          "SubState": "waiting",
+          "UnitFileState": "enabled",
+          "Result": "success",
+          "LastTriggerUSec": "Wed 2026-11-04 19:54:14 UTC",
+          "NextElapseUSecRealtime": ""
+        }
+      },
+      "tunnel_ready": {
+        "status": 200,
+        "ready": true
+      },
+      "backup": {
+        "latest_created_at": "2026-11-04T03:30:27+00:00",
+        "age_seconds": 59246.951353,
+        "project_matches": true,
+        "latest_and_signed_manifest_bytes_match": true,
+        "signed_manifest_exists": true,
+        "signature_exists": true,
+        "signature_bytes": 64,
+        "signature_cryptographically_verified": false,
+        "archive_head_exists": true
+      }
+    }
+  },
+  "minimal_host_changes": [
+    "Load the new immutable API image and change only the protected image-tag selection for each intended FORMA project, staging first.",
+    "Recreate only the intended API after verified pre-release backup; retain its previous image for rollback.",
+    "No monitor-script update: both deployed account-operations.py hashes already match current source.",
+    "No connector update: current cloudflared2026.10.4 pin, private metrics endpoint and readiness are already deployed.",
+    "Preserve deployment-specific Compose resource overrides and data/secret volumes. No SQL migration content changed."
+  ],
+  "limitations": [
+    "Backup object, matching signed-manifest bytes and64-byte signature existence were checked, without cryptographic verification or restore.",
+    "Existing backup recency is not a newly created pre-release backup.",
+    "Point-in-time observations do not establish a member lifecycle or delivery test."
+  ],
+  "private_evidence": {
+    "raw_selected_metadata_retained_privately": true,
+    "environment_values_retrieved_into_report": false,
+    "host_paths_ips_credentials_or_member_records_in_portable_receipt": false
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "environment": "production",
+  "origin": "https://forma.raoufabedini.dev",
+  "sourceCommit": "af8f476420e2e4451c03ae0537e936eba457c2c7",
+  "completedAt": "2026-11-04T21:38:35.431Z",
+  "allowedMethods": [
+    "GET",
+    "HEAD"
+  ],
+  "productionMemberWrites": false,
+  "passed": true,
+  "checksPassed": 44,
+  "checksTotal": 44,
+  "checks": [
+    {
+      "name": "index.html HTTP200",
+      "passed": true
+    },
+    {
+      "name": "index.html SHA256",
+      "passed": true
+    },
+    {
+      "name": "HTML content type",
+      "passed": true
+    },
+    {
+      "name": "HTML no-transform",
+      "passed": true
+    },
+    {
+      "name": "HTML nosniff",
+      "passed": true
+    },
+    {
+      "name": "HTML frame denial",
+      "passed": true
+    },
+    {
+      "name": "HTML CSP",
+      "passed": true
+    },
+    {
+      "name": "HTML HSTS",
+      "passed": true
+    },
+    {
+      "name": "HTML referrer policy",
+      "passed": true
+    },
+    {
+      "name": "assets/RoutinePrescriptions-CmOIJVzR.js HTTP200",
+      "passed": true
+    },
+    {
+      "name": "assets/RoutinePrescriptions-CmOIJVzR.js SHA256",
+      "passed": true
+    },
+    {
+      "name": "assets/index-BCQfzh-4.css HTTP200",
+      "passed": true
+    },
+    {
+      "name": "assets/index-BCQfzh-4.css SHA256",
+      "passed": true
+    },
+    {
+      "name": "assets/index-Dm61V8rK.js HTTP200",
+      "passed": true
+    },
+    {
+      "name": "assets/index-Dm61V8rK.js SHA256",
+      "passed": true
+    },
+    {
+      "name": "assets/instructions-D5gYSpG2.js HTTP200",
+      "passed": true
+    },
+    {
+      "name": "assets/instructions-D5gYSpG2.js SHA256",
+      "passed": true
+    },
+    {
+      "name": "/api/health status",
+      "passed": true
+    },
+    {
+      "name": "/api/health no-store",
+      "passed": true
+    },
+    {
+      "name": "/api/health JSON",
+      "passed": true
+    },
+    {
+      "name": "/api/health restrictive CSP",
+      "passed": true
+    },
+    {
+      "name": "/api/workspace status",
+      "passed": true
+    },
+    {
+      "name": "/api/workspace no-store",
+      "passed": true
+    },
+    {
+      "name": "/api/workspace JSON",
+      "passed": true
+    },
+    {
+      "name": "/api/workspace restrictive CSP",
+      "passed": true
+    },
+    {
+      "name": "/api/workspace/export status",
+      "passed": true
+    },
+    {
+      "name": "/api/workspace/export no-store",
+      "passed": true
+    },
+    {
+      "name": "/api/workspace/export JSON",
+      "passed": true
+    },
+    {
+      "name": "/api/workspace/export restrictive CSP",
+      "passed": true
+    },
+    {
+      "name": "/api/coach/workspace status",
+      "passed": true
+    },
+    {
+      "name": "/api/coach/workspace no-store",
+      "passed": true
+    },
+    {
+      "name": "/api/coach/workspace JSON",
+      "passed": true
+    },
+    {
+      "name": "/api/coach/workspace restrictive CSP",
+      "passed": true
+    },
+    {
+      "name": "Coach bearer challenge",
+      "passed": true
+    },
+    {
+      "name": "/api/forma-release-unknown status",
+      "passed": true
+    },
+    {
+      "name": "/api/forma-release-unknown no-store",
+      "passed": true
+    },
+    {
+      "name": "/api/forma-release-unknown JSON",
+      "passed": true
+    },
+    {
+      "name": "/api/forma-release-unknown restrictive CSP",
+      "passed": true
+    },
+    {
+      "name": "/api/auth/get-session status",
+      "passed": true
+    },
+    {
+      "name": "/api/auth/get-session no-store",
+      "passed": true
+    },
+    {
+      "name": "/api/auth/get-session JSON",
+      "passed": true
+    },
+    {
+      "name": "/api/auth/get-session restrictive CSP",
+      "passed": true
+    },
+    {
+      "name": "Anonymous session null",
+      "passed": true
+    },
+    {
+      "name": "Health HEAD",
+      "passed": true
+    }
+  ],
+  "limits": [
+    "Anonymous liveness and boundary checks; no authenticated member lifecycle, email, restoration or sustained load test."
+  ]
+}

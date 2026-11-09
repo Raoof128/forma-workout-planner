@@ -1,0 +1,43 @@
+{
+  "environment": "production",
+  "sourceCommit": "21270818ec28073acf96fd800e500527fccb628c",
+  "image": "forma-api:frontend-audit-20261105-2127081",
+  "archiveSha256": "a7564988789b1cabecc399d0a03f1be6c313a61c0dac958ba5435ad597040b8b",
+  "remoteImageId": "sha256:a59ce84f37303cd459ba86086a602cafaa11741ac9d7a37e234df314150b630b",
+  "configurationDigest": "sha256:aface4c8001110e1964ea28961adf032520d592e11aa89e1dd875f7535c238e2",
+  "archiveConfigAndLayerChainVerified": true,
+  "architecture": "amd64",
+  "runtime": {
+    "node": "v26.12.1",
+    "undici": "8.12.2",
+    "uid": 10001
+  },
+  "healthy": true,
+  "policyPreserved": true,
+  "noPublishedBackendPorts": true,
+  "unrelatedContainerIdsUnchanged": true,
+  "tunnelReady": true,
+  "rowCountsUnchanged": true,
+  "apiErrorEventsSinceStartup": 0,
+  "backups": [
+    {
+      "stage": "before",
+      "archive": "archives/forma-production-20261104T213633Z.dump.age",
+      "uploadedCiphertextChecksumVerified": true,
+      "pinnedEd25519SignatureVerified": true,
+      "restorePerformed": false
+    },
+    {
+      "stage": "after",
+      "archive": "archives/forma-production-20261104T213647Z.dump.age",
+      "uploadedCiphertextChecksumVerified": true,
+      "pinnedEd25519SignatureVerified": true,
+      "restorePerformed": false
+    }
+  ],
+  "rollbackImage": "forma-api:watch-summary-20261102-55d6dc1",
+  "migrationRan": true,
+  "schemaChangeExpected": false,
+  "secretsPreserved": true,
+  "completedAt": "2026-11-04T21:36:53.283424+00:00"
+}

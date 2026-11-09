@@ -1,0 +1,18 @@
+{
+  "temporaryAccessStatus": "cleaned",
+  "existingPoliciesPreserved": true,
+  "temporaryPolicyRemoved": true,
+  "temporaryServiceCredentialRemoved": true,
+  "temporaryScopedApiCredentialsRevoked": true,
+  "secretValuesRemainingInLatestPrivateState": false,
+  "anonymousStagingAfterCleanup": {
+    "status": 302,
+    "redirect": "Cloudflare Access"
+  },
+  "anonymousDashboard": {
+    "status": 302,
+    "redirect": "Cloudflare Access"
+  },
+  "dnsTunnelAndExistingPoliciesChanged": false,
+  "memberRecordsChanged": false
+}

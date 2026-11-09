@@ -1,0 +1,522 @@
+{
+  "schemaVersion": 1,
+  "kind": "matched public production before and after",
+  "pairCount": 21,
+  "before": {
+    "receipt": "public-before/receipt.json",
+    "provenance": {
+      "environment": "public production before release",
+      "workerVersion": "ed075a4c-250f-499f-9417-048138eac630",
+      "workerTrafficPercent": 100,
+      "frontendGitSource": {
+        "verified": false,
+        "commit": null,
+        "reason": "The observed backend image tag does not prove the deployed frontend Git source. Native asset URLs and body hashes are the primary frontend evidence."
+      },
+      "backendObservedTag": "watch-summary-20261102-55d6dc1",
+      "backendTagGitCommit": "55d6dc10c5924d37b9b8335704095269f4838d28",
+      "meaning": "Actual anonymous production BEFORE evidence. It does not depict the new release."
+    }
+  },
+  "after": {
+    "receipt": "public-after/receipt.json",
+    "provenance": {
+      "environment": "public production after release",
+      "workerVersion": "3a5980c7-d697-49b0-bd23-d4a5cd808631",
+      "frontendGitSource": {
+        "verified": true,
+        "commit": "af8f476420e2e4451c03ae0537e936eba457c2c7",
+        "method": "Native index.html and both entry response bodies match the account-build identity SHA-256; entry URLs also match."
+      },
+      "meaning": "Actual anonymous production AFTER evidence captured only after the root release-finished signal. Distinct from earlier staging acceptance."
+    }
+  },
+  "method": "Matched actual browser viewport/state captures. PNG bytes are unchanged; no screenshot synthesis, pixel edits, date normalization or pixel-diff threshold is used. Staging captures are not substituted for production AFTER.",
+  "visualScope": "Critical actual production images inspected individually: 320px signup, 1440px Overview and 320px Library structural capture. All 21 states have recorded automated media/focus/geometry checks. Narrow supporting-copy fix additionally measured at six live widths.",
+  "limitation": "PNG SHA differences do not by themselves establish a visual regression or improvement. No blanket accessibility, physical Safari, real-account submission or performance conclusion follows.",
+  "pairs": [
+    {
+      "width": 320,
+      "state": "auth-signin",
+      "before": {
+        "path": "public-before/320-auth-signin.png",
+        "sha256": "8a7ce9d2b9aa9bb572f501c0b180cfb2e270f23c1fa2b230907533d99dfe5088",
+        "pixelWidth": 320,
+        "pixelHeight": 981,
+        "capturedAtUTC": "2026-11-04T19:59:03.544Z",
+        "heading": "Welcome back",
+        "documentWidth": 320
+      },
+      "after": {
+        "path": "public-after/320-auth-signin.png",
+        "sha256": "1d6b368933cb3b482dfc61f61f74a72390257fbe47afaef40aa0bf47f1702e1e",
+        "pixelWidth": 320,
+        "pixelHeight": 1002,
+        "capturedAtUTC": "2026-11-04T22:56:50.242Z",
+        "heading": "Welcome back",
+        "documentWidth": 320
+      },
+      "samePNGBytes": false
+    },
+    {
+      "width": 320,
+      "state": "auth-signup",
+      "before": {
+        "path": "public-before/320-auth-signup.png",
+        "sha256": "f3b6726ca4ab51065806514811090ba300bcf1f9c2232ecf15a0ffaa7b44036f",
+        "pixelWidth": 320,
+        "pixelHeight": 1324,
+        "capturedAtUTC": "2026-11-04T19:59:03.777Z",
+        "heading": "Create your account",
+        "documentWidth": 320
+      },
+      "after": {
+        "path": "public-after/320-auth-signup.png",
+        "sha256": "82d753c9878f2d8492bd5e0908928ae68b80567a9894423b8e91fc808cbc4f01",
+        "pixelWidth": 320,
+        "pixelHeight": 1345,
+        "capturedAtUTC": "2026-11-04T22:56:50.655Z",
+        "heading": "Create your account",
+        "documentWidth": 320
+      },
+      "samePNGBytes": false
+    },
+    {
+      "width": 320,
+      "state": "auth-forgot",
+      "before": {
+        "path": "public-before/320-auth-forgot.png",
+        "sha256": "10db2a951d70d279a3bbe1202790c8333cef6edce0522d0028b1c8be4408aefd",
+        "pixelWidth": 320,
+        "pixelHeight": 844,
+        "capturedAtUTC": "2026-11-04T19:59:03.922Z",
+        "heading": "Reset your password",
+        "documentWidth": 320
+      },
+      "after": {
+        "path": "public-after/320-auth-forgot.png",
+        "sha256": "44e144a3a081970cf7e7d4221f558de6363bbc8db407ed73c57e0d3ea7069988",
+        "pixelWidth": 320,
+        "pixelHeight": 855,
+        "capturedAtUTC": "2026-11-04T22:56:50.948Z",
+        "heading": "Reset your password",
+        "documentWidth": 320
+      },
+      "samePNGBytes": false
+    },
+    {
+      "width": 320,
+      "state": "overview",
+      "before": {
+        "path": "public-before/320-overview.png",
+        "sha256": "5ea97322c8be27bffd4341809e3fdae1870053d1d01e365dfc088a67b96b4196",
+        "pixelWidth": 320,
+        "pixelHeight": 2041,
+        "capturedAtUTC": "2026-11-04T19:59:04.385Z",
+        "heading": "A little stronger, every day.",
+        "documentWidth": 320
+      },
+      "after": {
+        "path": "public-after/320-overview.png",
+        "sha256": "192feb240edec6e2ea79aa1c82c39421a3400902d57fe429a4029f8d9c5fca7c",
+        "pixelWidth": 320,
+        "pixelHeight": 2041,
+        "capturedAtUTC": "2026-11-04T22:56:51.652Z",
+        "heading": "A little stronger, every day.",
+        "documentWidth": 320
+      },
+      "samePNGBytes": false
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "before": {
+        "path": "public-before/320-library.png",
+        "sha256": "7ca351d3d8e83c43514f6410512bd715d9155e802429bf4a406c5bda769b9f82",
+        "pixelWidth": 320,
+        "pixelHeight": 4074,
+        "capturedAtUTC": "2026-11-04T19:59:05.820Z",
+        "heading": "Good form. Better sessions.",
+        "documentWidth": 320
+      },
+      "after": {
+        "path": "public-after/320-library.png",
+        "sha256": "82c642a0c508d271b29ed65faa387abf78df666862a456f4caddb0e12dbae73f",
+        "pixelWidth": 320,
+        "pixelHeight": 4074,
+        "capturedAtUTC": "2026-11-04T22:56:52.972Z",
+        "heading": "Good form. Better sessions.",
+        "documentWidth": 320
+      },
+      "samePNGBytes": false
+    },
+    {
+      "width": 320,
+      "state": "progress",
+      "before": {
+        "path": "public-before/320-progress.png",
+        "sha256": "381d5eccd445a905c6c7ddafa61a2014ceffc31653e20e1cbe72ae9e36b935ee",
+        "pixelWidth": 320,
+        "pixelHeight": 973,
+        "capturedAtUTC": "2026-11-04T19:59:05.984Z",
+        "heading": "See your strength take shape.",
+        "documentWidth": 320
+      },
+      "after": {
+        "path": "public-after/320-progress.png",
+        "sha256": "381d5eccd445a905c6c7ddafa61a2014ceffc31653e20e1cbe72ae9e36b935ee",
+        "pixelWidth": 320,
+        "pixelHeight": 973,
+        "capturedAtUTC": "2026-11-04T22:56:53.060Z",
+        "heading": "See your strength take shape.",
+        "documentWidth": 320
+      },
+      "samePNGBytes": true
+    },
+    {
+      "width": 320,
+      "state": "privacy",
+      "before": {
+        "path": "public-before/320-privacy.png",
+        "sha256": "723db88cf35883f57f1ec34c9548e371946b39ecf6f50bb582a2aa4adba04f70",
+        "pixelWidth": 320,
+        "pixelHeight": 8290,
+        "capturedAtUTC": "2026-11-04T19:59:06.412Z",
+        "heading": "Privacy Policy",
+        "documentWidth": 320
+      },
+      "after": {
+        "path": "public-after/320-privacy.png",
+        "sha256": "abf89b53ac9440c27a0f64467d85caf402d859d21b87ebfb20038783b3c50b2f",
+        "pixelWidth": 320,
+        "pixelHeight": 7993,
+        "capturedAtUTC": "2026-11-04T22:56:53.239Z",
+        "heading": "Privacy Policy",
+        "documentWidth": 320
+      },
+      "samePNGBytes": false
+    },
+    {
+      "width": 390,
+      "state": "auth-signin",
+      "before": {
+        "path": "public-before/390-auth-signin.png",
+        "sha256": "42530905392a79302b18825ccccd17fba3904b99f6c604c88d5a960806415a88",
+        "pixelWidth": 390,
+        "pixelHeight": 981,
+        "capturedAtUTC": "2026-11-04T19:59:09.439Z",
+        "heading": "Welcome back",
+        "documentWidth": 390
+      },
+      "after": {
+        "path": "public-after/390-auth-signin.png",
+        "sha256": "c5fc235924043d2b96d6c0c6ee9d407523714cfbc9c8e41aaef2cfadcea7ed2d",
+        "pixelWidth": 390,
+        "pixelHeight": 983,
+        "capturedAtUTC": "2026-11-04T22:56:55.957Z",
+        "heading": "Welcome back",
+        "documentWidth": 390
+      },
+      "samePNGBytes": false
+    },
+    {
+      "width": 390,
+      "state": "auth-signup",
+      "before": {
+        "path": "public-before/390-auth-signup.png",
+        "sha256": "f5b6e624c96a712abd54578082c46f271139963d31b2290cc80fe2b46ee9ff2b",
+        "pixelWidth": 390,
+        "pixelHeight": 1190,
+        "capturedAtUTC": "2026-11-04T19:59:09.662Z",
+        "heading": "Create your account",
+        "documentWidth": 390
+      },
+      "after": {
+        "path": "public-after/390-auth-signup.png",
+        "sha256": "50a4d3a624471346d427fef1e73dc9bd01f652ac30925919cef7497bead5c185",
+        "pixelWidth": 390,
+        "pixelHeight": 1193,
+        "capturedAtUTC": "2026-11-04T22:56:56.106Z",
+        "heading": "Create your account",
+        "documentWidth": 390
+      },
+      "samePNGBytes": false
+    },
+    {
+      "width": 390,
+      "state": "auth-forgot",
+      "before": {
+        "path": "public-before/390-auth-forgot.png",
+        "sha256": "5c0a45c0575d1d73122d7917f5a21e34327a792f027fbe94365aefc2622f4a12",
+        "pixelWidth": 390,
+        "pixelHeight": 844,
+        "capturedAtUTC": "2026-11-04T19:59:09.809Z",
+        "heading": "Reset your password",
+        "documentWidth": 390
+      },
+      "after": {
+        "path": "public-after/390-auth-forgot.png",
+        "sha256": "18af24cb865f293f8c6f0b27f6070684eb78989e2813a8165c2127c226a6d164",
+        "pixelWidth": 390,
+        "pixelHeight": 844,
+        "capturedAtUTC": "2026-11-04T22:56:56.255Z",
+        "heading": "Reset your password",
+        "documentWidth": 390
+      },
+      "samePNGBytes": false
+    },
+    {
+      "width": 390,
+      "state": "overview",
+      "before": {
+        "path": "public-before/390-overview.png",
+        "sha256": "0b88d1c93a80f57c1f4b84c74b3e65eb9251b3417659609856d4d0d848818a4d",
+        "pixelWidth": 390,
+        "pixelHeight": 2002,
+        "capturedAtUTC": "2026-11-04T19:59:10.093Z",
+        "heading": "A little stronger, every day.",
+        "documentWidth": 390
+      },
+      "after": {
+        "path": "public-after/390-overview.png",
+        "sha256": "7ab8010c7e3abd87899206ec44405b296a16a18782fd738d4e1606340a7a5d24",
+        "pixelWidth": 390,
+        "pixelHeight": 2002,
+        "capturedAtUTC": "2026-11-04T22:56:56.892Z",
+        "heading": "A little stronger, every day.",
+        "documentWidth": 390
+      },
+      "samePNGBytes": false
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "before": {
+        "path": "public-before/390-library.png",
+        "sha256": "a155b35c0a134089d47684906bf3ca58c404968c03b315584926dcfb77a61102",
+        "pixelWidth": 390,
+        "pixelHeight": 4108,
+        "capturedAtUTC": "2026-11-04T19:59:11.503Z",
+        "heading": "Good form. Better sessions.",
+        "documentWidth": 390
+      },
+      "after": {
+        "path": "public-after/390-library.png",
+        "sha256": "e6daba0296100982759b1f74f13dbb1c74d3cfccd21ffdc5e8d9e758361ecc98",
+        "pixelWidth": 390,
+        "pixelHeight": 4108,
+        "capturedAtUTC": "2026-11-04T22:56:58.245Z",
+        "heading": "Good form. Better sessions.",
+        "documentWidth": 390
+      },
+      "samePNGBytes": false
+    },
+    {
+      "width": 390,
+      "state": "progress",
+      "before": {
+        "path": "public-before/390-progress.png",
+        "sha256": "7c7c180d5c4d09d4026677c7244f4b65f1a5598d4b4cc792e011efe0354c8ff0",
+        "pixelWidth": 390,
+        "pixelHeight": 887,
+        "capturedAtUTC": "2026-11-04T19:59:11.639Z",
+        "heading": "See your strength take shape.",
+        "documentWidth": 390
+      },
+      "after": {
+        "path": "public-after/390-progress.png",
+        "sha256": "7c7c180d5c4d09d4026677c7244f4b65f1a5598d4b4cc792e011efe0354c8ff0",
+        "pixelWidth": 390,
+        "pixelHeight": 887,
+        "capturedAtUTC": "2026-11-04T22:56:58.335Z",
+        "heading": "See your strength take shape.",
+        "documentWidth": 390
+      },
+      "samePNGBytes": true
+    },
+    {
+      "width": 390,
+      "state": "privacy",
+      "before": {
+        "path": "public-before/390-privacy.png",
+        "sha256": "b5fee626b4e5c0df7f7de8d875c7dd518f534e424cb8a1bfbdd6b5a76759bda3",
+        "pixelWidth": 390,
+        "pixelHeight": 7204,
+        "capturedAtUTC": "2026-11-04T19:59:11.915Z",
+        "heading": "Privacy Policy",
+        "documentWidth": 390
+      },
+      "after": {
+        "path": "public-after/390-privacy.png",
+        "sha256": "c89c01aa5ff46908a85d203420dc2825ab3064eda550b1850698128126c22efe",
+        "pixelWidth": 390,
+        "pixelHeight": 6932,
+        "capturedAtUTC": "2026-11-04T22:56:58.514Z",
+        "heading": "Privacy Policy",
+        "documentWidth": 390
+      },
+      "samePNGBytes": false
+    },
+    {
+      "width": 1440,
+      "state": "auth-signin",
+      "before": {
+        "path": "public-before/1440-auth-signin.png",
+        "sha256": "4a146e4b2ea8f65d5612f4f2e97ddf1176b0573ca2ccb8ab5978cf55eb17fd6a",
+        "pixelWidth": 1440,
+        "pixelHeight": 1000,
+        "capturedAtUTC": "2026-11-04T19:59:13.280Z",
+        "heading": "Welcome back",
+        "documentWidth": 1440
+      },
+      "after": {
+        "path": "public-after/1440-auth-signin.png",
+        "sha256": "a582da44dbe30a35464c6b0feb6ea55b1ef6458b181c10001eeaf92f79dbbaaa",
+        "pixelWidth": 1440,
+        "pixelHeight": 1000,
+        "capturedAtUTC": "2026-11-04T22:57:00.670Z",
+        "heading": "Welcome back",
+        "documentWidth": 1440
+      },
+      "samePNGBytes": false
+    },
+    {
+      "width": 1440,
+      "state": "auth-signup",
+      "before": {
+        "path": "public-before/1440-auth-signup.png",
+        "sha256": "6aa48c67f9f94a8dbf79e5b9b618271cbe00e308f3cea1616ea1142a6798c0c1",
+        "pixelWidth": 1440,
+        "pixelHeight": 1038,
+        "capturedAtUTC": "2026-11-04T19:59:13.469Z",
+        "heading": "Create your account",
+        "documentWidth": 1440
+      },
+      "after": {
+        "path": "public-after/1440-auth-signup.png",
+        "sha256": "7fea64dc8fcc900fc69f02002b608d085595f9521c2241ed728826236ff881b0",
+        "pixelWidth": 1440,
+        "pixelHeight": 1038,
+        "capturedAtUTC": "2026-11-04T22:57:00.812Z",
+        "heading": "Create your account",
+        "documentWidth": 1440
+      },
+      "samePNGBytes": false
+    },
+    {
+      "width": 1440,
+      "state": "auth-forgot",
+      "before": {
+        "path": "public-before/1440-auth-forgot.png",
+        "sha256": "54b2353111fca6b39decd44618035c5d8af29016d024ab993b036fc9f4d38d30",
+        "pixelWidth": 1440,
+        "pixelHeight": 1000,
+        "capturedAtUTC": "2026-11-04T19:59:13.614Z",
+        "heading": "Reset your password",
+        "documentWidth": 1440
+      },
+      "after": {
+        "path": "public-after/1440-auth-forgot.png",
+        "sha256": "4530dcff04f82b3fffef54a2c2d70145a2bf255f7791f873a520d1267a08329a",
+        "pixelWidth": 1440,
+        "pixelHeight": 1000,
+        "capturedAtUTC": "2026-11-04T22:57:00.963Z",
+        "heading": "Reset your password",
+        "documentWidth": 1440
+      },
+      "samePNGBytes": false
+    },
+    {
+      "width": 1440,
+      "state": "overview",
+      "before": {
+        "path": "public-before/1440-overview.png",
+        "sha256": "8bfd46c07e64789b3a9dcaed22c19f063119789390951bcfde46a5256ca4a6a7",
+        "pixelWidth": 1440,
+        "pixelHeight": 1343,
+        "capturedAtUTC": "2026-11-04T19:59:13.900Z",
+        "heading": "A little stronger, every day.",
+        "documentWidth": 1440
+      },
+      "after": {
+        "path": "public-after/1440-overview.png",
+        "sha256": "54db85396a2d3b1772bf418607c318f87c52fa7213be26174b15e751f327417b",
+        "pixelWidth": 1440,
+        "pixelHeight": 1343,
+        "capturedAtUTC": "2026-11-04T22:57:01.548Z",
+        "heading": "A little stronger, every day.",
+        "documentWidth": 1440
+      },
+      "samePNGBytes": false
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "before": {
+        "path": "public-before/1440-library.png",
+        "sha256": "479583cc8a7f62fca4ed51e1c555fad060ebe69d70e81ccefddb2c1ca5cd4b2d",
+        "pixelWidth": 1440,
+        "pixelHeight": 2244,
+        "capturedAtUTC": "2026-11-04T20:01:57.189Z",
+        "heading": "Good form. Better sessions.",
+        "documentWidth": 1440
+      },
+      "after": {
+        "path": "public-after/1440-library.png",
+        "sha256": "a957c4c2606cf43887e4d04bcde2ce6e17dacebf2f69863b7a2949ba123a8882",
+        "pixelWidth": 1440,
+        "pixelHeight": 2244,
+        "capturedAtUTC": "2026-11-04T22:57:02.916Z",
+        "heading": "Good form. Better sessions.",
+        "documentWidth": 1440
+      },
+      "samePNGBytes": false
+    },
+    {
+      "width": 1440,
+      "state": "progress",
+      "before": {
+        "path": "public-before/1440-progress.png",
+        "sha256": "0aaac291d80ef7edeadcd19ec3133386c14d3e24ad2ebdbbe945f337709845c1",
+        "pixelWidth": 1440,
+        "pixelHeight": 1000,
+        "capturedAtUTC": "2026-11-04T20:01:57.313Z",
+        "heading": "See your strength take shape.",
+        "documentWidth": 1440
+      },
+      "after": {
+        "path": "public-after/1440-progress.png",
+        "sha256": "0aaac291d80ef7edeadcd19ec3133386c14d3e24ad2ebdbbe945f337709845c1",
+        "pixelWidth": 1440,
+        "pixelHeight": 1000,
+        "capturedAtUTC": "2026-11-04T22:57:03.024Z",
+        "heading": "See your strength take shape.",
+        "documentWidth": 1440
+      },
+      "samePNGBytes": true
+    },
+    {
+      "width": 1440,
+      "state": "privacy",
+      "before": {
+        "path": "public-before/1440-privacy.png",
+        "sha256": "3a211243b611b0b12c26feb8be28938cbf5e2b6ddf4143864d2c8e0e1d8f1804",
+        "pixelWidth": 1440,
+        "pixelHeight": 4526,
+        "capturedAtUTC": "2026-11-04T20:01:57.544Z",
+        "heading": "Privacy Policy",
+        "documentWidth": 1440
+      },
+      "after": {
+        "path": "public-after/1440-privacy.png",
+        "sha256": "1c1401ebe3eea42110b864af3c1de6aa3a3e469cfb57693224c8d944c010c24c",
+        "pixelWidth": 1440,
+        "pixelHeight": 4402,
+        "capturedAtUTC": "2026-11-04T22:57:03.236Z",
+        "heading": "Privacy Policy",
+        "documentWidth": 1440
+      },
+      "samePNGBytes": false
+    }
+  ]
+}

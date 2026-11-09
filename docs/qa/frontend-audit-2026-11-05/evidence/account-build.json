@@ -1,0 +1,31 @@
+{
+  "source": "af8f476420e2e4451c03ae0537e936eba457c2c7",
+  "mode": "account",
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 1013,
+      "sha256": "a7c56f2b058858e3b83e9f94de2f8fc3674e6bd07ac2f47df417a97547650ca2"
+    },
+    {
+      "path": "assets/RoutinePrescriptions-CmOIJVzR.js",
+      "bytes": 17356,
+      "sha256": "ed0bf5492b6333b20082876067fb3329d0b4852d0f6a63c50d57d2dc81551faa"
+    },
+    {
+      "path": "assets/index-BCQfzh-4.css",
+      "bytes": 87943,
+      "sha256": "4ddda639f103749649db8ddf7a1827f93b2413b9479c820914d7896c1b2f58e6"
+    },
+    {
+      "path": "assets/index-Dm61V8rK.js",
+      "bytes": 3003264,
+      "sha256": "ab84391595f2515995f8aac8a67296a670432fcc957199f9d83c626672941617"
+    },
+    {
+      "path": "assets/instructions-D5gYSpG2.js",
+      "bytes": 888783,
+      "sha256": "0812ed1b6d7711f453642a7083b8384f97a25b821089f0bb6744010bf84650fd"
+    }
+  ]
+}

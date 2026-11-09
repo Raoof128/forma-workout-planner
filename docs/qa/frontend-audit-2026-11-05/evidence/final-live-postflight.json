@@ -1,0 +1,271 @@
+{
+  "scope": "Final live read-only postflight after deployment. No service restart, deployment, backup creation, restore, member query, alert/email test, account creation, token/resource creation, key rotation, source or Git change.",
+  "recordedAtUTC": "2026-11-04T23:02:53.091127+00:00",
+  "frontendSource": "af8f476420e2e4451c03ae0537e936eba457c2c7",
+  "apiImageSource": "21270818ec28073acf96fd800e500527fccb628c",
+  "hostObservedAtUTC": "2026-11-04T22:57:25.000180+00:00",
+  "backupObservedAtUTC": "2026-11-04T22:58:01.063804+00:00",
+  "hostProjects": {
+    "forma-staging": {
+      "apiImageTag": "forma-api:frontend-audit-20261105-2127081",
+      "apiImageId": "sha256:a59ce84f37303cd459ba86086a602cafaa11741ac9d7a37e234df314150b630b",
+      "apiMatchesVerifiedReleaseImage": true,
+      "apiDockerHealth": "healthy",
+      "dbDockerHealth": "healthy",
+      "apiAndDbRunning": true,
+      "tunnelRunning": true,
+      "tunnelReady": {
+        "status": 200,
+        "ready": true
+      },
+      "publishedHostPorts": false,
+      "resourcePolicyPreserved": {
+        "readonly_rootfs": true,
+        "privileged": true,
+        "memory_limit": true,
+        "cpu_nano": true,
+        "bindings": true,
+        "pids_limit": true,
+        "cap_drop": true,
+        "security_opt": true
+      },
+      "currentApiPolicy": {
+        "readonly_rootfs": true,
+        "privileged": false,
+        "memory_limit": 335544320,
+        "cpu_nano": 750000000,
+        "pids_limit": 128,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "databaseAndConnectorIdsUnchanged": {
+        "db": true,
+        "cloudflared": true
+      },
+      "monitorScriptSha256": "69233fd576e2d6ea7390926cd2bc328be53b6486d5e18e50efee45eb6b1595a6",
+      "monitorScriptMatchesCurrentSource": true,
+      "operationsConfigDigestUnchanged": true,
+      "operationsConfigMode": "0o600",
+      "persistedMonitorCounters": {
+        "failures": 0,
+        "healthFailures": 0,
+        "tunnelFailures": 0
+      },
+      "units": {
+        "forma-staging-backup.service": {
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "UnitFileState": "static",
+          "Result": "success",
+          "ExecMainStatus": "0",
+          "ExecMainStartTimestamp": "Wed 2026-11-04 03:30:27 UTC",
+          "ExecMainExitTimestamp": "Wed 2026-11-04 03:30:32 UTC"
+        },
+        "forma-staging-monitor.service": {
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "UnitFileState": "static",
+          "Result": "success",
+          "ExecMainStatus": "0",
+          "ExecMainStartTimestamp": "Wed 2026-11-04 22:56:37 UTC",
+          "ExecMainExitTimestamp": "Wed 2026-11-04 22:56:38 UTC"
+        },
+        "forma-staging-backup.timer": {
+          "ActiveState": "active",
+          "SubState": "waiting",
+          "UnitFileState": "enabled",
+          "Result": "success",
+          "LastTriggerUSec": "Wed 2026-11-04 03:30:27 UTC",
+          "NextElapseUSecRealtime": "Thu 2026-11-05 03:30:17 UTC"
+        },
+        "forma-staging-monitor.timer": {
+          "ActiveState": "active",
+          "SubState": "waiting",
+          "UnitFileState": "enabled",
+          "Result": "success",
+          "LastTriggerUSec": "Wed 2026-11-04 22:56:37 UTC",
+          "NextElapseUSecRealtime": ""
+        }
+      },
+      "backup": {
+        "latest_created_at": "2026-11-04T20:07:49+00:00",
+        "age_seconds": 10213.174406,
+        "project_matches": true,
+        "latest_and_signed_manifest_bytes_match": true,
+        "signed_manifest_exists": true,
+        "signature_exists": true,
+        "signature_bytes": 64,
+        "signature_cryptographically_verified": false,
+        "archive_head_exists": true
+      }
+    },
+    "forma-production": {
+      "apiImageTag": "forma-api:frontend-audit-20261105-2127081",
+      "apiImageId": "sha256:a59ce84f37303cd459ba86086a602cafaa11741ac9d7a37e234df314150b630b",
+      "apiMatchesVerifiedReleaseImage": true,
+      "apiDockerHealth": "healthy",
+      "dbDockerHealth": "healthy",
+      "apiAndDbRunning": true,
+      "tunnelRunning": true,
+      "tunnelReady": {
+        "status": 200,
+        "ready": true
+      },
+      "publishedHostPorts": false,
+      "resourcePolicyPreserved": {
+        "readonly_rootfs": true,
+        "privileged": true,
+        "memory_limit": true,
+        "cpu_nano": true,
+        "bindings": true,
+        "pids_limit": true,
+        "cap_drop": true,
+        "security_opt": true
+      },
+      "currentApiPolicy": {
+        "readonly_rootfs": true,
+        "privileged": false,
+        "memory_limit": 268435456,
+        "cpu_nano": 750000000,
+        "pids_limit": 128,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "databaseAndConnectorIdsUnchanged": {
+        "db": true,
+        "cloudflared": true
+      },
+      "monitorScriptSha256": "69233fd576e2d6ea7390926cd2bc328be53b6486d5e18e50efee45eb6b1595a6",
+      "monitorScriptMatchesCurrentSource": true,
+      "operationsConfigDigestUnchanged": true,
+      "operationsConfigMode": "0o600",
+      "persistedMonitorCounters": {
+        "failures": 0,
+        "healthFailures": 0,
+        "tunnelFailures": 0
+      },
+      "units": {
+        "forma-production-backup.service": {
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "UnitFileState": "static",
+          "Result": "success",
+          "ExecMainStatus": "0",
+          "ExecMainStartTimestamp": "Wed 2026-11-04 03:30:27 UTC",
+          "ExecMainExitTimestamp": "Wed 2026-11-04 03:30:33 UTC"
+        },
+        "forma-production-monitor.service": {
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "UnitFileState": "static",
+          "Result": "success",
+          "ExecMainStatus": "0",
+          "ExecMainStartTimestamp": "Wed 2026-11-04 22:56:27 UTC",
+          "ExecMainExitTimestamp": "Wed 2026-11-04 22:56:28 UTC"
+        },
+        "forma-production-backup.timer": {
+          "ActiveState": "active",
+          "SubState": "waiting",
+          "UnitFileState": "enabled",
+          "Result": "success",
+          "LastTriggerUSec": "Wed 2026-11-04 03:30:27 UTC",
+          "NextElapseUSecRealtime": "Thu 2026-11-05 03:30:22 UTC"
+        },
+        "forma-production-monitor.timer": {
+          "ActiveState": "active",
+          "SubState": "waiting",
+          "UnitFileState": "enabled",
+          "Result": "success",
+          "LastTriggerUSec": "Wed 2026-11-04 22:56:27 UTC",
+          "NextElapseUSecRealtime": ""
+        }
+      },
+      "backup": {
+        "latest_created_at": "2026-11-04T21:36:47+00:00",
+        "age_seconds": 4876.324563,
+        "project_matches": true,
+        "latest_and_signed_manifest_bytes_match": true,
+        "signed_manifest_exists": true,
+        "signature_exists": true,
+        "signature_bytes": 64,
+        "signature_cryptographically_verified": false,
+        "archive_head_exists": true
+      }
+    }
+  },
+  "cloudflare": {
+    "readMethod": "Existing Wrangler OAuth; selected account only. Management-token direct reads were denied by its expected narrower scope, then resolved with existing OAuth.",
+    "newScopedTokenCreated": false,
+    "workers": {
+      "staging": {
+        "observedAtUTC": "2026-11-04T23:00:26.647945+00:00",
+        "deploymentCreatedAtUTC": "2026-11-04T20:26:47.262155Z",
+        "versions": [
+          {
+            "version_id": "98eecbb4-4c5e-49ad-9e9d-7d062f9c252c",
+            "percentage": 100
+          }
+        ],
+        "expectedVersionAt100Percent": true
+      },
+      "production": {
+        "observedAtUTC": "2026-11-04T23:00:53.716157+00:00",
+        "deploymentCreatedAtUTC": "2026-11-04T21:38:30.851674Z",
+        "versions": [
+          {
+            "version_id": "3a5980c7-d697-49b0-bd23-d4a5cd808631",
+            "percentage": 100
+          }
+        ],
+        "expectedVersionAt100Percent": true
+      },
+      "dashboard": {
+        "observedAtUTC": "2026-11-04T23:00:53.745497+00:00",
+        "deploymentCreatedAtUTC": "2026-11-04T20:20:06.654747Z",
+        "versions": [
+          {
+            "version_id": "e3cee2fb-f50a-46f4-934f-38316d6e7617",
+            "percentage": 100
+          }
+        ],
+        "expectedVersionAt100Percent": true
+      },
+      "monitor": {
+        "observedAtUTC": "2026-11-04T23:00:53.716176+00:00",
+        "deploymentCreatedAtUTC": "2026-11-04T20:20:16.466101Z",
+        "versions": [
+          {
+            "version_id": "332a451b-383a-4860-9dec-fd1e024736e1",
+            "percentage": 100
+          }
+        ],
+        "expectedVersionAt100Percent": true
+      }
+    },
+    "edgeMonitor": {
+      "observedAtUTC": "2026-11-04T23:00:54.065829+00:00",
+      "checkedAtUTC": "2026-11-04T23:00:24.190Z",
+      "ageSecondsAtObservation": 29.875829,
+      "failures": 0,
+      "signals": [],
+      "freshWithin10Minutes": true,
+      "healthy": true
+    }
+  },
+  "limitations": [
+    "Backup archive, matching manifest and64-byte signature existence were checked without a new cryptographic verification, decryption or restore. Deployment receipts separately record checksum and pinned-signature verification.",
+    "No production-member rows or environment values were retrieved. Configuration preservation is checked through selected metadata and whole-file digests, without publishing file contents.",
+    "Host health and control-plane traffic are point-in-time observations, not a new member lifecycle or load test."
+  ],
+  "privateMetadataPublished": false,
+  "passed": true,
+  "errors": []
+}
