@@ -1,0 +1,434 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-11-04",
+  "repository": "/Users/raoof.r12/Desktop/Raouf/FORMA/forma-workout-planner",
+  "purpose": "Auditable skill and primary-document source register for the website audit; runtime/performance outcomes live in root-owned reports.",
+  "datePolicy": "checkedAtUTC is the retrieval/review date, never an invented publication date or assertion that guidance first appeared in 2026.",
+  "verificationPolicy": "checkedBy identifies the reviewer who fetched/read the source. Account/root references are merged handoffs, not additional independent fetches. Local source hashes were rechecked when writing this register.",
+  "versionContext": {
+    "nodeObserved": "24.21.0",
+    "npmObserved": "11.19.0",
+    "manifestDependencies": {
+      "better-auth": "1.7.12",
+      "drizzle-orm": "0.45.4",
+      "fastify": "5.12.7",
+      "lucide-react": "1.61.0",
+      "motion": "14.6.0",
+      "pg": "8.23.1",
+      "react": "19.3.1",
+      "react-dom": "19.3.1",
+      "zod": "4.6.7"
+    },
+    "manifestDevDependencies": {
+      "@eslint/js": "9.39.5",
+      "@playwright/test": "1.64.1",
+      "@types/node": "26.6.5",
+      "@types/pg": "8.23.1",
+      "@vitejs/plugin-react": "6.1.2",
+      "axe-core": "4.14.0",
+      "eslint": "9.39.5",
+      "eslint-plugin-jsx-a11y": "6.10.2",
+      "eslint-plugin-react": "7.37.5",
+      "eslint-plugin-react-hooks": "7.1.1",
+      "globals": "17.13.0",
+      "prettier": "3.9.10",
+      "tsx": "4.23.15",
+      "typescript": "7.0.2",
+      "vite": "8.3.5",
+      "wrangler": "4.152.0"
+    },
+    "installedVersionsDirectlyRechecked": {
+      "react": "19.3.1",
+      "react-dom": "19.3.1",
+      "vite": "8.3.5",
+      "motion": "14.6.0",
+      "@playwright/test": "1.64.1",
+      "axe-core": "4.14.0",
+      "lucide-react": "1.61.0"
+    },
+    "versionLimit": "Remaining dependency entries are manifest pins; no separate installed-package reinspection claimed for every entry."
+  },
+  "localSources": [
+    {
+      "id": "skill-uiux-pro-max",
+      "path": "/tmp/forma-native-design-20261104/ui-ux-pro-max-source/.claude/skills/ui-ux-pro-max/SKILL.md",
+      "sha256": "1bdfb422c97d5e813768af422750882b71ff1554978da0b8a43c95de242765f7",
+      "readStatus": "Full SKILL, quick-reference and applicable pro-rules read during this audit.",
+      "upstream": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "sourceCommit": "dd9a1b4cf9f67ca2e326f646d93e101b2778db30",
+      "cliPackageVersion": "2.5.0",
+      "versionLimit": "CLI manifest version is not asserted as an independent SKILL version.",
+      "commands": [
+        "python3 /tmp/forma-native-design-20261104/ui-ux-pro-max-source/.claude/skills/ui-ux-pro-max/scripts/search.py 'fitness training precision editorial' --design-system -p 'FORMA Web' -f markdown",
+        "python3 /tmp/forma-native-design-20261104/ui-ux-pro-max-source/.claude/skills/ui-ux-pro-max/scripts/search.py 'fitness workout app' --design-system -p 'FORMA Web' -f markdown",
+        "python3 /tmp/forma-native-design-20261104/ui-ux-pro-max-source/.claude/skills/ui-ux-pro-max/scripts/search.py 'focus not obscured' --domain ux -n 3",
+        "python3 /tmp/forma-native-design-20261104/ui-ux-pro-max-source/.claude/skills/ui-ux-pro-max/scripts/search.py 'dragging movements' --domain ux -n 2",
+        "python3 /tmp/forma-native-design-20261104/ui-ux-pro-max-source/.claude/skills/ui-ux-pro-max/scripts/search.py 'controlled input asynchronous state' --stack react -n 4",
+        "python3 /tmp/forma-native-design-20261104/ui-ux-pro-max-source/.claude/skills/ui-ux-pro-max/scripts/search.py 'time series training progress' --domain chart -n 2"
+      ]
+    },
+    {
+      "id": "skill-frontend-design",
+      "path": "/Users/raoof.r12/.agents/skills/frontend-design/SKILL.md",
+      "sha256": "b81e2ff87ed8fa4d6c377ccb127a7254c9e6a77e3ae94f21e6b514f7bb2945a0",
+      "readStatus": "Full local SKILL read during this audit.",
+      "upstream": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+      "upstreamVerification": "Official directory request returned restricted-URL error; local file fully readable. No upstream SHA/version asserted."
+    },
+    {
+      "id": "public-fonts-dmsans-OFL-txt",
+      "path": "public/fonts/dmsans-OFL.txt",
+      "sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1",
+      "readStatus": "Full text read; historical provenance/review dates remain historical.",
+      "limit": "Local provenance/licence evidence, not fresh external legal or technique approval."
+    },
+    {
+      "id": "public-fonts-barlowcondensed-OFL-txt",
+      "path": "public/fonts/barlowcondensed-OFL.txt",
+      "sha256": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f",
+      "readStatus": "Full text read; historical provenance/review dates remain historical.",
+      "limit": "Local provenance/licence evidence, not fresh external legal or technique approval."
+    },
+    {
+      "id": "docs-research-site-visuals-training-hero-json",
+      "path": "docs/research/site-visuals/training-hero.json",
+      "sha256": "d51cb5d3866a8598111f7aa4417ad517678d15d5ad57ff06a0522214250ce0c2",
+      "readStatus": "Full text read; historical provenance/review dates remain historical.",
+      "limit": "Local provenance/licence evidence, not fresh external legal or technique approval."
+    },
+    {
+      "id": "docs-research-site-visuals-routine-photos-json",
+      "path": "docs/research/site-visuals/routine-photos.json",
+      "sha256": "fa190cbabc8d16707affd6061f194930e5ccd7187169a853d2d54e9a2c8b4cf3",
+      "readStatus": "Full text read; historical provenance/review dates remain historical.",
+      "limit": "Local provenance/licence evidence, not fresh external legal or technique approval."
+    },
+    {
+      "id": "docs-research-original-art-README-md",
+      "path": "docs/research/original-art/README.md",
+      "sha256": "c380b4552e058b43974d69aa69809b1edc6d40d1588e8f252da05b5aed28238f",
+      "readStatus": "Full text read; historical provenance/review dates remain historical.",
+      "limit": "Local provenance/licence evidence, not fresh external legal or technique approval."
+    },
+    {
+      "id": "docs-research-exercise-videos-md",
+      "path": "docs/research/exercise-videos.md",
+      "sha256": "59c0d45f879bc7e4bd23f56bfcc1ac6b5dec641c2a62718dc77c87fbccc1d047",
+      "readStatus": "Full text read; historical provenance/review dates remain historical.",
+      "limit": "Local provenance/licence evidence, not fresh external legal or technique approval."
+    },
+    {
+      "id": "docs-research-brand-motion-md",
+      "path": "docs/research/brand-motion.md",
+      "sha256": "e6d52b2406f5b39bc6185bd88ed88b7bef06c191029b58fef43dc61f2414ad59",
+      "readStatus": "Full text read; historical provenance/review dates remain historical.",
+      "limit": "Local provenance/licence evidence, not fresh external legal or technique approval."
+    },
+    {
+      "id": "assets-exercise-svg-README-md",
+      "path": "assets/exercise-svg/README.md",
+      "sha256": "405bec927d328106fb2b43c49a8ce8f2a520adccaf5fd9715030f7005684943a",
+      "readStatus": "Full text read; historical provenance/review dates remain historical.",
+      "limit": "Local provenance/licence evidence, not fresh external legal or technique approval."
+    }
+  ],
+  "webSources": [
+    {
+      "id": "react-external-store",
+      "title": "React useSyncExternalStore",
+      "url": "https://react.dev/reference/react/useSyncExternalStore",
+      "publisherRole": "React maintainer API documentation",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "design_skill",
+      "scope": "Subscription cleanup, cached immutable snapshots and external-source checks.",
+      "appliedDecision": "Retain hash navigation and repository subscriptions; no speculative state architecture replacement.",
+      "limitations": "Living documentation checked on the retrieval date; no 2026 publication date inferred.",
+      "versionContext": "React/React DOM 19.3.1 pinned and installed."
+    },
+    {
+      "id": "react-input",
+      "title": "React input",
+      "url": "https://react.dev/reference/react-dom/components/input",
+      "publisherRole": "React maintainer API documentation",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "design_skill",
+      "scope": "Controlled value/checked, synchronous change ownership and native labels.",
+      "appliedDecision": "Keep drafts locally controlled through asynchronous acknowledgement and preserve caret/field semantics.",
+      "limitations": "Living documentation checked on the retrieval date; no 2026 publication date inferred.",
+      "versionContext": "React/React DOM 19.3.1 pinned and installed."
+    },
+    {
+      "id": "motion-reduced-motion",
+      "title": "Motion useReducedMotion",
+      "url": "https://motion.dev/docs/react-use-reduced-motion",
+      "publisherRole": "Motion maintainer API documentation",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "design_skill",
+      "scope": "Preference-aware JavaScript animation and preference changes.",
+      "appliedDecision": "Test live preference changes; pause SMIL demonstration through existing still-asset mechanism. Existing drag springs remain intact.",
+      "limitations": "Living documentation checked on the retrieval date; no 2026 publication date inferred.",
+      "versionContext": "Motion 14.6.0 pinned and installed; component uses matchMedia directly, not this hook."
+    },
+    {
+      "id": "wcag-contrast",
+      "title": "WCAG 2.2 contrast minimum",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "publisherRole": "W3C explanatory Understanding page; normative WCAG criteria remain the conformance requirements",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "design_skill",
+      "scope": "Normal informative text contrast thresholds.",
+      "appliedDecision": "Measure composed foreground/background; reuse stronger account-muted token.",
+      "limitations": "Living documentation checked on the retrieval date; no 2026 publication date inferred."
+    },
+    {
+      "id": "wcag-target-size",
+      "title": "WCAG 2.2 target size minimum",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+      "publisherRole": "W3C explanatory Understanding page; normative WCAG criteria remain the conformance requirements",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "design_skill",
+      "scope": "24 CSS px AA criterion and its spacing/exceptions.",
+      "appliedDecision": "Keep 44 px gym-use controls as a stronger ergonomic choice; do not claim web WCAG mandates native 44 pt.",
+      "limitations": "Living documentation checked on the retrieval date; no 2026 publication date inferred."
+    },
+    {
+      "id": "wcag-dragging",
+      "title": "WCAG 2.2 dragging movements",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html",
+      "publisherRole": "W3C explanatory Understanding page; normative WCAG criteria remain the conformance requirements",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "design_skill",
+      "scope": "A single-pointer alternative to a dragging movement.",
+      "appliedDecision": "Preserve Move up/down alternatives as well as keyboard drag; do not substitute keyboard-only compliance.",
+      "limitations": "Living documentation checked on the retrieval date; no 2026 publication date inferred."
+    },
+    {
+      "id": "wcag-focus",
+      "title": "WCAG 2.2 focus not obscured minimum",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html",
+      "publisherRole": "W3C explanatory Understanding page; normative WCAG criteria remain the conformance requirements",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "design_skill",
+      "scope": "AA requirement against a focused control being entirely hidden.",
+      "appliedDecision": "Retain visible focus, late-heading Skip behavior and sticky-bar checks without claiming AAA full visibility.",
+      "limitations": "Living documentation checked on the retrieval date; no 2026 publication date inferred."
+    },
+    {
+      "id": "account-source-01",
+      "title": "react.dev/reference/react/useEffect",
+      "url": "https://react.dev/reference/react/useEffect",
+      "publisherRole": "React maintainer API documentation",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "prompt_review",
+      "scope": "API reference/dependencies/cleanup/StrictMode caveats",
+      "versionContext": "Officialpage currentlylabelsReact19.3;installedReact19.3.1",
+      "appliedDecision": "Synchronize only external saved profile fields; preserve local dirty state and retain complete dependencies. Effects must survive development setup/cleanup replay.",
+      "sourceReceipt": "/tmp/forma-web-account-sources-20261104.json",
+      "limitations": "Merged from the account reviewer receipt; not claimed as a separate fetch by design_skill or a 2026 publication.",
+      "sourceReceiptSha256": "f56640738cf17303d90148be04bd5dd7b34ed56d3a1fd6396f98712e10e1512b"
+    },
+    {
+      "id": "account-source-02",
+      "title": "react.dev/reference/react/useState",
+      "url": "https://react.dev/reference/react/useState",
+      "publisherRole": "React maintainer API documentation",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "prompt_review",
+      "scope": "setfunctions/updaterpurity/queueing/batching/referencecaveats",
+      "versionContext": "OfficialpageReact19.3,installed19.3.1",
+      "appliedDecision": "Use pure functional setters to reconcile against freshest pending input; a closure does not see later renderstate.",
+      "sourceReceipt": "/tmp/forma-web-account-sources-20261104.json",
+      "limitations": "Merged from the account reviewer receipt; not claimed as a separate fetch by design_skill or a 2026 publication.",
+      "sourceReceiptSha256": "f56640738cf17303d90148be04bd5dd7b34ed56d3a1fd6396f98712e10e1512b"
+    },
+    {
+      "id": "account-source-03",
+      "title": "react.dev/reference/react/useRef",
+      "url": "https://react.dev/reference/react/useRef",
+      "publisherRole": "React maintainer API documentation",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "prompt_review",
+      "scope": "refpersistence/eventuse/renderpurity",
+      "versionContext": "OfficialpageReact19.3,installed19.3.1",
+      "appliedDecision": "Keep previous saved-field baseline and eventgeneration in refs updated in effects/events, never mutate/readref during render except initialization.",
+      "sourceReceipt": "/tmp/forma-web-account-sources-20261104.json",
+      "limitations": "Merged from the account reviewer receipt; not claimed as a separate fetch by design_skill or a 2026 publication.",
+      "sourceReceiptSha256": "f56640738cf17303d90148be04bd5dd7b34ed56d3a1fd6396f98712e10e1512b"
+    },
+    {
+      "id": "account-source-04",
+      "title": "playwright.dev/docs/network",
+      "url": "https://playwright.dev/docs/network",
+      "publisherRole": "Playwright maintainer tooling documentation",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "prompt_review",
+      "scope": "page/contextroute requestinterception",
+      "versionContext": "PinnedPlaywright1.64.1 actualcontrolledred3casesexecuted",
+      "appliedDecision": "Intercept allsame-originAPIrequests in syntheticracefixtures; explicitroutefulfill avoidsproductionservicecalls. Mocks supplement realPostgreSQL integration, do notreplaceit.",
+      "sourceReceipt": "/tmp/forma-web-account-sources-20261104.json",
+      "limitations": "Merged from the account reviewer receipt; not claimed as a separate fetch by design_skill or a 2026 publication.",
+      "sourceReceiptSha256": "f56640738cf17303d90148be04bd5dd7b34ed56d3a1fd6396f98712e10e1512b"
+    },
+    {
+      "id": "account-source-05",
+      "title": "developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Symbol.iterator",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Symbol.iterator",
+      "publisherRole": "MDN publisher JavaScript reference; explanatory, not the normative ECMAScript specification",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "prompt_review",
+      "scope": "Stringiterationpreservessurrogatepairs",
+      "versionContext": "StandardES2015feature;runtimeNode24.21.0",
+      "appliedDecision": "IterateUnicodecodepointswithoutallocatinganentirecodepointarray;stopattheexistingUTF16lengthbound.",
+      "sourceReceipt": "/tmp/forma-web-account-sources-20261104.json",
+      "limitations": "Merged from the account reviewer receipt; not claimed as a separate fetch by design_skill or a 2026 publication.",
+      "sourceReceiptSha256": "f56640738cf17303d90148be04bd5dd7b34ed56d3a1fd6396f98712e10e1512b"
+    },
+    {
+      "id": "account-source-06",
+      "title": "developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length",
+      "publisherRole": "MDN publisher JavaScript reference; explanatory, not the normative ECMAScript specification",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "prompt_review",
+      "scope": "UTF16codeunitlength",
+      "versionContext": "CurrentMDNreference;existingZodworkspaceboundretained",
+      "appliedDecision": "Count accumulatedJavaScriptstring.length tofit50existingcodeunits;donotwidenworkspaceschema.",
+      "sourceReceipt": "/tmp/forma-web-account-sources-20261104.json",
+      "limitations": "Merged from the account reviewer receipt; not claimed as a separate fetch by design_skill or a 2026 publication.",
+      "sourceReceiptSha256": "f56640738cf17303d90148be04bd5dd7b34ed56d3a1fd6396f98712e10e1512b"
+    },
+    {
+      "id": "account-source-07",
+      "title": "www.postgresql.org/docs/18/datatype-json.html",
+      "url": "https://www.postgresql.org/docs/18/datatype-json.html",
+      "publisherRole": "PostgreSQL project implementation manual",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "prompt_review",
+      "scope": "JSONBUnicodeinputvalidation",
+      "versionContext": "PinnedtestPostgreSQL18.4",
+      "appliedDecision": "JSONB requirescorrectsurrogatepairs, matchingactual22P02red. FixinitialprefixconstructionratherthanweakenJSONBvalidation.",
+      "sourceReceipt": "/tmp/forma-web-account-sources-20261104.json",
+      "limitations": "Merged from the account reviewer receipt; not claimed as a separate fetch by design_skill or a 2026 publication.",
+      "sourceReceiptSha256": "f56640738cf17303d90148be04bd5dd7b34ed56d3a1fd6396f98712e10e1512b"
+    },
+    {
+      "id": "react-profiler",
+      "title": "React Profiler",
+      "url": "https://react.dev/reference/react/Profiler",
+      "publisherRole": "React maintainer API documentation",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "root",
+      "scope": "Profile render timing and commit callbacks.",
+      "appliedDecision": "Use an isolated profiling harness; do not infer performance improvement from render counts alone.",
+      "limitations": "Root reports these primary pages/schema read on 4 November 2026. This merged register attributes that verification to root. CDP tot is a living schema, not a pinned browser-release specification or runtime pass."
+    },
+    {
+      "id": "web-vitals",
+      "title": "Web Vitals",
+      "url": "https://web.dev/articles/vitals",
+      "publisherRole": "Google web-platform guidance article",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "root",
+      "scope": "Core Web Vitals definitions and field/lab distinction.",
+      "appliedDecision": "Do not label synthetic click latency as field INP or a single run as field p75.",
+      "limitations": "Root reports these primary pages/schema read on 4 November 2026. This merged register attributes that verification to root. CDP tot is a living schema, not a pinned browser-release specification or runtime pass."
+    },
+    {
+      "id": "optimize-cls",
+      "title": "Optimize Cumulative Layout Shift",
+      "url": "https://web.dev/articles/optimize-cls",
+      "publisherRole": "Google web-platform guidance article",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "root",
+      "scope": "Layout stability, reserved media space and CLS interpretation.",
+      "appliedDecision": "Retain reserved media geometry and measure layout-shift entries under documented fixtures.",
+      "limitations": "Root reports these primary pages/schema read on 4 November 2026. This merged register attributes that verification to root. CDP tot is a living schema, not a pinned browser-release specification or runtime pass."
+    },
+    {
+      "id": "devtools-performance",
+      "title": "Chrome DevTools performance reference",
+      "url": "https://developer.chrome.com/docs/devtools/performance/reference",
+      "publisherRole": "Chrome DevTools official documentation",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "root",
+      "scope": "Performance recording/trace interpretation.",
+      "appliedDecision": "Document capture conditions and trace limitations; runtime numbers remain root-owned.",
+      "limitations": "Root reports these primary pages/schema read on 4 November 2026. This merged register attributes that verification to root. CDP tot is a living schema, not a pinned browser-release specification or runtime pass."
+    },
+    {
+      "id": "cdp-network",
+      "title": "Chrome DevTools Protocol Network domain",
+      "url": "https://chromedevtools.github.io/devtools-protocol/tot/Network/",
+      "publisherRole": "Official Chrome DevTools Protocol living schema",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "root",
+      "scope": "Network/cache/throttling command and parameter schema.",
+      "appliedDecision": "Reference Network.enable, setCacheDisabled and emulateNetworkConditions used by the isolated harness; do not infer real-world network behavior.",
+      "limitations": "Root reports these primary pages/schema read on 4 November 2026. This merged register attributes that verification to root. CDP tot is a living schema, not a pinned browser-release specification or runtime pass."
+    },
+    {
+      "id": "cdp-emulation",
+      "title": "Chrome DevTools Protocol Emulation domain",
+      "url": "https://chromedevtools.github.io/devtools-protocol/tot/Emulation/",
+      "publisherRole": "Official Chrome DevTools Protocol living schema",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "root",
+      "scope": "Emulation.setCPUThrottlingRate schema.",
+      "appliedDecision": "Record the chosen CPU multiplier as a synthetic model, not a measured physical phone class.",
+      "limitations": "Root reports these primary pages/schema read on 4 November 2026. This merged register attributes that verification to root. CDP tot is a living schema, not a pinned browser-release specification or runtime pass."
+    },
+    {
+      "id": "webkit-macos-tab-report",
+      "title": "Playwright macOS WebKit keyboard-navigation report and maintainer response",
+      "url": "https://github.com/microsoft/playwright/issues/41808",
+      "publisherRole": "Primary reporter reproduction and maintainer explanation in the official project issue tracker.",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "design_skill",
+      "scope": "Reported Playwright1.61.1/macOS26.5.2. Maintainer says platform alignment is expected; closed not planned31October2026. Local pinned1.64.1/WebKit27.2 calibration separately confirms current behavior.",
+      "appliedDecision": "Use isolated keyboard-mode calibration to separate OS-dependent Tab coverage from application focus behavior; do not change global user settings.",
+      "limitations": "Upstream source informs interpretation. Runtime evidence is the separate bare-control calibration receipt; no final application or physical Safari pass inferred."
+    },
+    {
+      "id": "safari-keyboard-navigation",
+      "title": "Apple Safari keyboard shortcuts and gestures",
+      "url": "https://support.apple.com/guide/safari/keyboard-shortcuts-and-gestures-cpsh003/mac",
+      "publisherRole": "Apple primary user documentation.",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "design_skill",
+      "scope": "Tab and Option-Tab control coverage depends on Keyboard Navigation/Safari settings.",
+      "appliedDecision": "Record macOS keyboard settings as test conditions rather than force application Tab behavior.",
+      "limitations": "Upstream source informs interpretation. Runtime evidence is the separate bare-control calibration receipt; no final application or physical Safari pass inferred."
+    },
+    {
+      "id": "webkit-mouse-focus",
+      "title": "WebKit commit311768 result/commit description",
+      "url": "https://results.webkit.org/commit?id=311768%40main&repository_id=webkit",
+      "publisherRole": "WebKit primary commit/result database.",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "design_skill",
+      "scope": "April2026 commit description states Mac/iOS buttons are not mouse-focusable; its specific patch addresses focus-visible after nested-button programmatic focus. Canonical commits.webkit.org page was inaccessible; result database was retrieved.",
+      "appliedDecision": "A clicked dialog opener may not equal document.activeElement on WebKit. Process-only Tab mode does not fix this; local calibration confirms mouse behavior separately.",
+      "limitations": "Upstream source informs interpretation. Runtime evidence is the separate bare-control calibration receipt; no final application or physical Safari pass inferred."
+    },
+    {
+      "id": "apple-argument-domain",
+      "title": "Apple About the User Defaults System",
+      "url": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/UserDefaults/AboutPreferenceDomains/AboutPreferenceDomains.html",
+      "publisherRole": "Apple archived Foundation/Cocoa documentation.",
+      "checkedAtUTC": "2026-11-04",
+      "checkedBy": "design_skill",
+      "scope": "NSArgumentDomain is volatile, precedes persistent application/global domains and accepts hyphen-prefixed preference names followed by values. Archived page updated2013; retrieved2026 does not imply2026 publication.",
+      "appliedDecision": "Use a process-only launch argument for isolated WebKit keyboard calibration; no defaults write or global OS setting mutation.",
+      "limitations": "Upstream source informs interpretation. Runtime evidence is the separate bare-control calibration receipt; no final application or physical Safari pass inferred."
+    }
+  ],
+  "runtimeEvidenceBoundary": [
+    "Sources inform decisions; they do not establish browser/test/performance success.",
+    "No physical Safari, field INP, coaching review or release approval inferred.",
+    "Original artwork/video historical rights records were read and current bytes/contracts checked; external licence grants are not freshly recertified here."
+  ],
+  "sourceCounts": {
+    "local": 10,
+    "web": 24
+  }
+}

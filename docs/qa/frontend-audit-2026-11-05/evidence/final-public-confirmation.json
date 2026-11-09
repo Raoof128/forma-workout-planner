@@ -1,0 +1,72 @@
+{
+  "completedAt": "2026-11-04T23:13:04.873Z",
+  "source": "af8f476420e2e4451c03ae0537e936eba457c2c7",
+  "scope": "Final anonymous public GET confirmation; no redirects followed, credentials, form submission or member writes.",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true,
+      "sha256": "a7c56f2b058858e3b83e9f94de2f8fc3674e6bd07ac2f47df417a97547650ca2",
+      "expectedSha256": "a7c56f2b058858e3b83e9f94de2f8fc3674e6bd07ac2f47df417a97547650ca2"
+    },
+    {
+      "path": "/assets/index-BCQfzh-4.css",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true,
+      "sha256": "4ddda639f103749649db8ddf7a1827f93b2413b9479c820914d7896c1b2f58e6",
+      "expectedSha256": "4ddda639f103749649db8ddf7a1827f93b2413b9479c820914d7896c1b2f58e6"
+    },
+    {
+      "path": "/assets/RoutinePrescriptions-CmOIJVzR.js",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true,
+      "sha256": "ed0bf5492b6333b20082876067fb3329d0b4852d0f6a63c50d57d2dc81551faa",
+      "expectedSha256": "ed0bf5492b6333b20082876067fb3329d0b4852d0f6a63c50d57d2dc81551faa"
+    },
+    {
+      "path": "/assets/instructions-D5gYSpG2.js",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true,
+      "sha256": "0812ed1b6d7711f453642a7083b8384f97a25b821089f0bb6744010bf84650fd",
+      "expectedSha256": "0812ed1b6d7711f453642a7083b8384f97a25b821089f0bb6744010bf84650fd"
+    },
+    {
+      "path": "/assets/index-Dm61V8rK.js",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true,
+      "sha256": "ab84391595f2515995f8aac8a67296a670432fcc957199f9d83c626672941617",
+      "expectedSha256": "ab84391595f2515995f8aac8a67296a670432fcc957199f9d83c626672941617"
+    },
+    {
+      "origin": "https://forma-staging.raoufabedini.dev",
+      "status": 302,
+      "expectedStatus": 302,
+      "passed": true
+    },
+    {
+      "path": "/api/health",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "path": "/api/workspace",
+      "status": 401,
+      "expectedStatus": 401,
+      "passed": true
+    },
+    {
+      "origin": "https://forma-ops.raoufabedini.dev",
+      "status": 302,
+      "expectedStatus": 302,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

@@ -344,3 +344,26 @@ test("established workspace reads need no writes and concurrent first reads pres
   );
   assert.equal(rows.rowCount, 2);
 });
+
+test("initial workspace names keep whole Unicode characters within the existing length bound", async () => {
+  assert.ok(pool);
+  const examples = [
+    ["split", `${"a".repeat(49)}😀`, "a".repeat(49)],
+    ["fits", `${"a".repeat(48)}😀`, `${"a".repeat(48)}😀`],
+    ["emoji", "😀".repeat(26), "😀".repeat(25)],
+  ];
+  for (const [kind, name, expected] of examples) {
+    const owner = `unicode-${kind}-${suffix}`;
+    await pool.query(
+      'INSERT INTO "user" (id, name, email) VALUES ($1, $2, $3)',
+      [owner, name, `${owner}@example.test`],
+    );
+    // These names satisfy the account's code-point bound. The workspace's
+    // existing 50-code-unit bound must not split a surrogate pair for JSONB.
+    const first = await getWorkspace(pool, owner, name);
+    assert.equal(first.data.profile.name, expected);
+    assert.ok(first.data.profile.name.length <= 50);
+    assert.equal(first.revision, 0);
+    assert.deepEqual(await getWorkspace(pool, owner, name), first);
+  }
+});

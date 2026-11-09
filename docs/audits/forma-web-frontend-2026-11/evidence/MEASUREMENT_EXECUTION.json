@@ -1,0 +1,39 @@
+{
+  "executed_harness_sha256": "946069ee0c10fc01eacb2e3790d4b9a56db3d4b5828f85c326e3d4b1857982c5",
+  "production_samples": 20,
+  "react_samples": 6,
+  "production_errors": 0,
+  "react_errors": 0,
+  "production_incomplete_attempt": {
+    "completed_journeys": 12,
+    "disposition": "Some desktop snapshots preceded LCP delivery; excluded from final comparison, never treated as zero LCP"
+  },
+  "react_incomplete_attempt": {
+    "completed_profiles": 1,
+    "disposition": "Final transformed main query was not intercepted; nonempty-sample guard failed; fixed query matching before final six profiles"
+  },
+  "limits": [
+    "local synthetic lab, not field p75 or physical hardware",
+    "No speedup, leak, FPS, energy, thermal or production-runtime equivalence claim"
+  ],
+  "frozen_final_source": true,
+  "clean_build_identical_to_measured_entry_and_chunks": true,
+  "superseded_complete_pre_last_css": {
+    "production_journeys": 20,
+    "react_profiles": 6,
+    "disposition": "Complete earlier samples superseded after final narrow Security/tablet CSS corrections; final current-source results used regardless of more favourable earlier mobile value"
+  },
+  "source_commit": "cc771830b92929485dae5f4fe8297a49df9fa394",
+  "superseded_complete_pre_skip_focus": {
+    "production_journeys": 20,
+    "react_profiles": 6,
+    "disposition": "After responsive CSS corrections, before final explicit Skip callback; superseded by current committed-source measurements"
+  },
+  "exclusive_browser_window": {
+    "production_completed_utc": "2026-11-04T13:24:35.345383Z",
+    "intervening_account_gate_started_utc": "2026-11-04T13:25:19.232714Z",
+    "account_gate_stopped_utc": "2026-11-04T13:26:08.191Z",
+    "react_started_utc": "2026-11-04T13:26:49.837Z",
+    "no_other_browser_during_measurement": true
+  }
+}

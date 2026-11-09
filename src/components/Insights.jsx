@@ -168,7 +168,11 @@ export function WorkoutHistory({ history, onStart, onSave, onDelete }) {
                   <button
                     key={s.id}
                     className="history-row panel journal-row"
-                    onClick={() => setDetail(s)}
+                    onClick={(event) => {
+                      // A mouse click does not focus this button in Safari.
+                      event.currentTarget.focus({ preventScroll: true });
+                      setDetail(s);
+                    }}
                   >
                     <span className="history-date">
                       <strong>{displayDate(s.date, { day: "numeric" })}</strong>

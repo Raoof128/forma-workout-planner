@@ -58,6 +58,40 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-11-09 — Reconcile the 5 November release with main
+
+- **Scope:** before redeploying `main` after PR #44, the hosts were checked
+  read-only. Both environments run frontend `af8f476` and API image
+  `2127081`, commits on `fix/tunnel-monitor-readiness` that were pushed after
+  PR #39 merged and never reached `main`. Deploying `main` would have rolled
+  them back.
+- **Summary:** merged that branch into `main`'s tip. Seven code conflicts
+  were resolved keeping both audits' fixes (the merge commit lists each), and
+  the 5 November release entry and its evidence folder
+  (`docs/qa/frontend-audit-2026-11-05/`) were committed from the local
+  checkout. One gitleaks false positive (a commit hash under
+  `apiImageSource`) gets an exact fingerprint.
+- **Files:** `src/account.css`, `src/styles.css`,
+  `src/components/{Account,HistoryEditor,Library,Routines,Workout}.jsx`,
+  `docs/qa/frontend-audit-2026-11-05/`, `.gitleaksignore`, `AGENT.md`,
+  `CHANGELOG.md`.
+- **Verification:** lint, `format:check`, typecheck, `docs:check`, build,
+  `test:unit` and `test:worker` pass locally. The first CI run failed one
+  5 November test on all three browsers: `hold-owner-lifecycle.spec.js`
+  matched the picker button by its old exact name, and PR #44 had appended
+  muscle and equipment to those names. The test now uses PR #44's
+  `/^Replace with <name>,/` pattern. Then, locally on PostgreSQL 18.4:
+  `test:server` 102/102, `accounts-chromium` 41/41, and the ten test files
+  that came only from the 5 November branch (Chromium) pass.
+- **Rule learned:** when two branches each touch shared UI, also grep the
+  other side's tests for accessible names this side renamed. CI stops at the
+  first failing browser step, so a stale locator hides every later suite.
+- **Rule learned:** before any deploy, compare the hosts' `IMAGE_TAG` and the
+  live Worker source with `main`. A release pushed to an already-merged branch
+  is invisible from `main`.
+- **Follow-ups:** not deployed yet. The release is an API image and Worker
+  release, staging first, per `docs/audits/backend-2026-11/CHANGE_SUMMARY.md`.
+
 ### Raouf: 2026-11-09 — Backend audit and hardening
 
 - **Scope:** audit of `server/`, `worker/`, `ops/` and the backend tests by six
@@ -175,6 +209,71 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   are in `docs/audits/web-frontend-2026-11/AUDIT.md`. The most valuable are
   keeping unsaved edits across a session expiry, a mid-size WebP tier for guide
   images, and startup LCP under throttling.
+
+### Raouf: 2026-11-05 — Hosted release and final verification
+
+- **Release:** owner-authorized deployment of staging and production account websites/APIs, the operations dashboard and scheduled edge monitor is complete. Frontend source is `af8f476420e2e4451c03ae0537e936eba457c2c7`; both APIs use the verified `2127081` image because backend inputs are unchanged. All four expected Worker versions serve 100%; both APIs and private Tunnel readiness are healthy. Host monitoring/configuration already matched source.
+- **Verification:** [CI 41906385541](https://github.com/Raoof128/forma-workout-planner/actions/runs/41906385541) passed 1,404 executions, including 1,125 browser executions, with zero failures/skips/interruption. The narrow-copy regression reproduced 5/5 failures before the fix, passed 5/5 afterward, and the complete account-design suite passed 40/40. Staging and production each passed 44/44 hosted HTTP checks. The release evidence adds 63 reviewed browser screenshots and 21 actual production before/after pairs; six live width checks pass in each deployed environment. Counts include repeated profiles, not unique journeys.
+- **Preservation and security:** each API has checksum/signature-verified encrypted off-host backups before and after release, four total; no new restore drill. Existing secrets, row counts, private ports, resource policies, unrelated containers and database volumes are preserved. Temporary deployment tokens and staging Access resources are removed. CI gitleaks/Semgrep found no issues; OSV scanned 498 packages and found no issues in this run, with the existing ignore reported unused. No new dependency, schema migration, production account/training-record mutation or security exception.
+- **Physical iPhone:** FINAL_DEVICE_OUTCOME_PENDING.
+- **Evidence and delivery boundary:** [release report](docs/qa/frontend-audit-2026-11-05/README.md) and portable receipts retain the failed initial asset probe, disk interruption and source distinctions. The earlier full audit remains a historical snapshot. App Store/TestFlight distribution, physical Watch/Health, minimum-OS runtime and remaining manual/field checks are unverified; no native distribution, merge or release tag. Final delivery changes only project logs and release evidence, with unchanged application/test/configuration inputs.
+
+### Raouf: 2026-11-05 — Narrow account introduction release correction
+
+- **Scope and fix:** live staging review reproduced the decorative F covering two supporting-copy lines at 320 px. `src/account.css` reserves paragraph space only through 540 px; the full wording, emblem, headline, form controls and desktop presentation remain.
+- **Regression:** `tests/accounts-design.spec.js` checks loaded-font text-line rectangles against the actual emblem at six phone widths, plus copy and control containment. All five profiles failed on the original CSS, then passed after the correction; the complete account-design suite passed 40/40 in 61.8 seconds. Existing assertions and timeouts are retained.
+- **Release state:** initial source `2127081` passed complete CI and was deployed to the staging API/Worker with verified signed backups and 44 HTTPS checks. The additional CSS correction needs its own committed-source CI and staging verification before production. Backend image inputs, schema, secrets and production records are unchanged; final deployment evidence will be recorded separately.
+
+### Raouf: 2026-11-05 — Completed website audit verification
+
+- **Implementation and provenance:** website changes are in `cc771830b92929485dae5f4fe8297a49df9fa394`; `c247e9e705b462ff9771f5442d17efc0955a22d8` corrects report portability without changing application, test or configuration sources. The final evidence update preserves those tested hashes. Earlier checkpoint notes remain historical.
+- **Complete CI:** [run 41840783732](https://github.com/Raoof128/forma-workout-planner/actions/runs/41840783732) passed both jobs and every stage on `c247e9e`: 540 guest development, 175 production smoke, 200 development account and 200 production account browser checks; 151 unit, 35 Worker, 77 PostgreSQL and 8 Python + 8 Node operational tests. Final browser summaries have zero failures, skips or interruptions. CI used Node 24.22.1/npm 11.19.1, Ubuntu 24.04.5 and PostgreSQL 18.4.
+- **Local verification:** development and production account matrices each passed 200/200 across five profiles, with zero failures/skips/retries; the separate current WebKit gate passed 40/40. All 188 scoped account inputs remained unchanged. Local PostgreSQL 18.6 passed 77/77, and the canonical 193 application/test/configuration inputs match the tested code. The six ignored report-log links were replaced with tracked, sanitized result receipts; an index-only check reproduced the six missing targets and then passed all 166 Markdown files.
+- **Security and integrity:** CI gitleaks found no leaks; Semgrep reported zero findings from 226 rules over 128 files. OSV used the existing single-advisory exception, not an unfiltered zero-vulnerability result. No new dependency, exception, schema migration, historical ID or unit change was introduced. The ledger reconciles 1,214 inputs and 243 complete authored reviews, with 627 full raster decodes and 22 full video decodes/6,924 frames; generated evidence and source review are distinguished.
+- **Visual and measured results:** 318 primary product screenshots and 30 comparison sheets support the final critique; 88 account width/internal-bound states pass. The final committed-source lab uses 20 production journeys and six React profiles without browser errors. Median mobile lab LCP is 3.92 seconds in both builds; main JavaScript grows by 2,229 bytes. No speedup, field INP, FPS, energy or leak claim is made; the large payload remains a documented performance concern.
+- **Physical iPhone completion:** the separately signed, isolated iPhone Air suite passed 164 tests with two intentional personal-device safety skips and no failures, plus three Light tours. There are 32 matched Light/Dark screenshot pairs and actual CPU/memory/clock samples. Ordinary app/widget/Watch compilation passed unsigned. Original phone applications, records, accounts and security/settings were preserved. Physical Watch/Health/system placement, minimum-OS runtime, complete assistive technology and distribution gates remain documented; App Store release remains NO-GO.
+- **Cleanup and delivery boundary:** the exact private PostgreSQL cluster and all owned browser/API/preview services are stopped. Docker's API remains unavailable, so cleanup of the earlier known audit container is unverified; no global process or unrelated service was forced. No merge, deployment, Store action, production-member mutation or real training-record overwrite occurred. Final reports retain failed/interrupted attempts and distinguish code verification from unperformed production/physical-web acceptance.
+
+### Raouf: 2026-11-05 — Website implementation checkpoint
+
+- **Scope:** continued the supplied FORMA website audit and preserved the completed native iPhone evidence from 4 November. The user explicitly authorized committing and pushing all task changes; this checkpoint does not merge or deploy.
+- **Implementation:** retained account drafts and explicit conflict intent; correct read/write retries; protected pending routine/history/order changes; Unicode-safe first workspace; delayed and explicit Skip focus; Safari dialog/drawer focus; live reduced motion; readable narrow measurements, Security controls and tablet authentication. Existing training IDs, schema, units, fonts, artwork, drag behavior and security boundaries remain.
+- **Verified:** final lint, formatting, type and documentation checks pass. Unit 151, Worker 35 and isolated PostgreSQL 18.6 server 77 pass. Narrow Security/auth regressions pass all five profiles; extended 88-state geometry passes. Latest Skip-after-retry and four-route start-readiness checks each pass all three desktop engines. Existing assertions/timeouts were retained; the old start case gained an explicit ready-heading wait before its unchanged persisted-data assertion.
+- **Broad test checkpoint:** the first complete guest attempt was 512/519. A later 540-case attempt stopped at 271 passes, one confirmed test-readiness failure, one interruption and 267 unrun before the final Skip correction; it is not a full current-source pass. The earlier account development attempt was 189/190. Repository CI and final local 200-case development/built account matrices remain to be completed and recorded.
+- **Evidence:** 1,214 scoped inputs, 243 complete authored reviews, 627 raster decodes and 22 complete video decodes. The visual package contains 318 product screenshots plus separate comparison sheets/intermediate frames. Complete paired performance samples exist for the CSS freeze; a final bundle measurement follows the last focus callback change. No speedup, physical Safari or production-release claim follows.
+- **Physical iPhone completion:** isolated signed iPhone Air build: 164 passes, two intentional safety skips, zero failures; 32 matched Light/Dark screenshot pairs. Ordinary app/widget/Watch compilation passed unsigned. Existing phone data/settings remain untouched; device, launch-metric and distribution limits remain documented.
+
+### Raouf: 2026-11-04 — Website frontend audit and completed iPhone evidence
+
+- **Scope:** execute the supplied website master audit with the existing FORMA design, training contracts and account security. The earlier native checkpoint was committed and pushed as `3c27308`; this follow-up records the completed physical evidence and website work.
+- **Changes:** preserve profile drafts during acknowledgements and refresh; distinguish read reconnection from exact pending-write retry; protect submitted routine/history drafts; confirm routine order only after persistence; make initial workspace names Unicode-safe. Improve delayed heading focus, live reduced motion, phone workout rows, account typography/tablet layout and storage copy. No new dependency, schema migration, exercise-ID/unit change or deployment.
+- **Native completion:** the isolated iPhone Air run finished with 164 passes, two intentional personal-device skips and zero failures. There are 32 matched Light/Dark screenshot pairs with metadata removed without changing pixels, plus measured metrics. The ordinary app, widget and Watch compile passed unsigned. Incomplete launch measurements, existing keyboard frame warnings and untested device surfaces remain documented.
+- **Website verification checkpoint:** clean pinned install, static checks, 151 baseline unit tests, 35 Worker tests, 77 final PostgreSQL tests and 30 new cross-engine browser checks pass. Full final browser/account matrices, paired performance, final visual critique and inventory reconciliation are in progress and are not claimed complete here.
+- **Evidence and boundaries:** `docs/audits/forma-web-frontend-2026-11/` and `ios/docs/audits/native-frontend-2026-11/`. All account data is synthetic and isolated. Production member data, original iPhone application data and device security/settings remain untouched. Commit/push is explicitly authorized; no merge, deployment or Store action.
+
+### Raouf: 2026-11-04 — Native audit and isolated iPhone verification
+
+- **Scope:** read the supplied native master prompt, add physical testing authorization,
+  reconcile 384 baseline scoped paths (372 native) and three added native source/test
+  files, preserving existing logs and all guest/member training contracts.
+- **Changes:** owner-bound and duplicate-safe Live Activity actions; post-queue account
+  removal checks and exact damaged/recovery artifact cleanup; retained profile drafts
+  and correct retries during account updates; truthful sync/haptic, motion, week-boundary,
+  Watch/Health and privacy-manifest behavior. Device fixtures preserve the paired Watch,
+  active keyboard and personal Home Screen/settings. No new runtime dependency.
+- **Verification:** 146 core + 38 surfaces package tests; 1711 fresh Swift exports;
+  151 JS + 35 Worker tests, resource/build/static checks pass. Separately signed iPhone
+  Air audit build and bundle checks pass; all 139 final hosted app tests pass. Initial
+  baseline selected run was 129/130; the keyboard fixture was diagnosed and then passed
+  unchanged product validation. The final 27 UI cases and matching Light/Dark captures
+  are still running at this owner-requested commit checkpoint, not claimed green.
+- **Evidence:** `ios/docs/audits/native-frontend-2026-11/` contains source ledger,
+  reviewed synthetic physical screenshots, performance samples, prompt and explicit
+  runtime limits. Original app data/Keychain/App Group and device settings untouched.
+- **Follow-ups:** record final physical UI/appearance results; iOS 17, physical Watch,
+  actual locked ActivityKit/Health/privacy/assistive-technology/energy and distribution
+  gates remain. Owner separately authorized commit/push on 4 November; no merge,
+  deployment, TestFlight or App Store action.
 
 ### Raouf: 2026-11-04 — OSV exception for a dev-only minimatch advisory
 

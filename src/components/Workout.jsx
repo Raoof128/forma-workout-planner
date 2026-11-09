@@ -120,8 +120,8 @@ export default function Workout({
   useEffect(() => {
     setFill(fillSets);
   }, [fillSets]);
-  // One hold timer at a time: { key, index, length, endsAt } while it runs,
-  // { key, index, length, left } while paused. Local only: it is a stopwatch,
+  // One hold timer at a time owns an exercise identity and set index.
+  // It has endsAt while running and left while paused. Local only: a stopwatch,
   // not workout data, so the saved workspace format is unchanged.
   const [hold, setHold] = useState(() =>
     runningHold?.sessionId === session.id ? runningHold.hold : null,
@@ -131,8 +131,23 @@ export default function Workout({
   }, [hold, session.id]);
   const [holdLengths, setHoldLengths] = useState({});
   const finishedHold = useRef(null);
+  const heldEntry = hold
+    ? session.exercises.find(
+        (entry) =>
+          entryKey(entry) === hold.key && entry.exerciseId === hold.exerciseId,
+      )
+    : null;
+  const holdTargetPresent = Boolean(
+    heldEntry?.sets[hold.index] &&
+    usesHoldTimer(exerciseById.get(heldEntry.exerciseId), heldEntry),
+  );
   useEffect(() => {
-    if (!hold?.endsAt) return;
+    // Local removal and incoming workspace changes cancel the same stopwatch.
+    // The entry key alone is insufficient when a remote replacement reuses it.
+    if (hold && !holdTargetPresent) setHold(null);
+  }, [hold, holdTargetPresent]);
+  useEffect(() => {
+    if (!hold?.endsAt || !holdTargetPresent) return;
     let active = true;
     let requesting = false;
     let lock = null;
@@ -167,7 +182,7 @@ export default function Workout({
       document.removeEventListener("visibilitychange", again);
       void lock?.release().catch(() => {});
     };
-  }, [hold?.endsAt]);
+  }, [hold?.endsAt, holdTargetPresent]);
   useEffect(() => {
     const timer = setInterval(() => setNow(Date.now()), 250);
     const refresh = () => setNow(Date.now());
@@ -371,6 +386,7 @@ export default function Workout({
     finishedHold.current = null;
     setHold({
       key: entryKey(entry),
+      exerciseId: entry.exerciseId,
       index,
       length,
       endsAt: Date.now() + length * 1000,
@@ -382,6 +398,7 @@ export default function Workout({
     // Cleared now, not in the sync effect: a remount in between must not
     // restore and log the same hold twice.
     if (runningHold?.hold === timer) runningHold = null;
+    if (!holdTargetPresent) return;
     setHold(null);
     playCue();
     // A hold that ran out in a background tab is processed late; its rest
@@ -390,9 +407,14 @@ export default function Workout({
     let logged = null;
     const result = await onUpdate((current) => {
       const entry = current.exercises.find(
-        (item) => entryKey(item) === timer.key,
+        (item) =>
+          entryKey(item) === timer.key && item.exerciseId === timer.exerciseId,
       );
-      if (!entry) return current;
+      if (
+        !entry?.sets[timer.index] ||
+        !usesHoldTimer(exerciseById.get(entry.exerciseId), entry)
+      )
+        return current;
       const index = entry.sets[timer.index]?.done
         ? entry.sets.findIndex((set) => !set.done)
         : timer.index;
@@ -432,13 +454,18 @@ export default function Workout({
       notify(`${logged.name} set ${logged.index + 1} logged: ${logged.text}.`);
   }
   const finishHold = useEffectEvent(() => {
-    if (!hold?.endsAt || finishedHold.current === hold.endsAt) return;
+    if (
+      !hold?.endsAt ||
+      !holdTargetPresent ||
+      finishedHold.current === hold.endsAt
+    )
+      return;
     finishedHold.current = hold.endsAt;
     void logHold(hold, hold.length, Math.min(hold.endsAt, Date.now()));
   });
   useEffect(() => {
     if (hold?.endsAt && holdLeft === 0) finishHold();
-  }, [hold?.endsAt, holdLeft]);
+  }, [hold?.endsAt, holdLeft, holdTargetPresent]);
   const setsDone = (entry) => entry.sets.filter((set) => set.done).length;
   const nameOf = (entry) => exerciseById.get(entry.exerciseId).name;
   // Menus and dialogs close on use; put focus back on a card's ⋯ button once
@@ -524,9 +551,13 @@ export default function Workout({
       setPending({ kind: "replace", key: entryKey(entry), exercise, lost });
     else void replace(entry, exercise);
   }
-  function finish() {
+  function finish(event) {
     if (!complete) notify("Complete at least one set to save your workout.");
-    else setConfirm(true);
+    else {
+      // Safari does not mouse-focus buttons; keep the dialog's opener explicit.
+      event.currentTarget.focus({ preventScroll: true });
+      setConfirm(true);
+    }
   }
   return (
     <>
@@ -726,6 +757,7 @@ export default function Workout({
                         timer && !timer.endsAt
                           ? {
                               key: timer.key,
+                              exerciseId: timer.exerciseId,
                               index: timer.index,
                               length: timer.length,
                               endsAt: Date.now() + timer.left * 1000,

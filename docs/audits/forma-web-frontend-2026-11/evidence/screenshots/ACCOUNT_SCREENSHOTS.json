@@ -1,0 +1,1003 @@
+{
+  "method": "Pinned Chromium, one browser, synthetic intercepted account/API fixtures, fixed 4 November 2026 Sydney time, reduced motion, local fonts, scroll normalized before full-page capture. Before uses frozen original 3c27308; all 48 after images refreshed after final responsive corrections. PNGs copied byte-for-byte. Browser viewport evidence, not physical iPhone Safari.",
+  "widths": [
+    390,
+    768,
+    1440
+  ],
+  "count": 96,
+  "captures": [
+    {
+      "phase": "before",
+      "scenario": "account-overview",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1201,
+      "path": "account-before/390-account-overview.png",
+      "sha256": "5550f7f2c0e748434bd7373d0b57a8bff41bd8b293eadc90bbc380939326675e"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-profile",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1117,
+      "path": "account-before/390-account-profile.png",
+      "sha256": "1d143153f59384170693c5b22d3a3fa51a28568110cd728cddf2cb28cc0eb088"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-security",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1864,
+      "path": "account-before/390-account-security.png",
+      "sha256": "9c11d0191f690ceed1be3b694c7a70e931716492d25055196997447a9d7d427e"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-training",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1152,
+      "path": "account-before/390-account-training.png",
+      "sha256": "90009ce5b14f6bfac67e6dd61c6b1d6ad973dce41190629ea72de42af2271b81"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-privacy",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1046,
+      "path": "account-before/390-account-privacy.png",
+      "sha256": "616b3b1bffeee1e5defbc6c6bf338c473261c2e059657ca9fe0154065d85cc00"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-delete-review",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1199,
+      "path": "account-before/390-account-delete-review.png",
+      "sha256": "82ef09df9229c250fd3ed1aba8f0ab00c54a7100ab337e3a43bdb6f51d960224"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-import-review",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1435,
+      "path": "account-before/390-account-import-review.png",
+      "sha256": "4fb26fd0d5a5b7d3ec217e0faaa58ef54151a87b1f7556c9064aef29925f9f40"
+    },
+    {
+      "phase": "before",
+      "scenario": "auth-signin",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 981,
+      "path": "account-before/390-auth-signin.png",
+      "sha256": "783b752a20cfa4e380e28e32436c60321e0e5250e43ba84c95cbca1dbf0412a0"
+    },
+    {
+      "phase": "before",
+      "scenario": "auth-signup",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1190,
+      "path": "account-before/390-auth-signup.png",
+      "sha256": "d428cb577049c2462227a3ff43f96ea53d3b4cad669501cfc2761c20a9320d51"
+    },
+    {
+      "phase": "before",
+      "scenario": "auth-forgot",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 844,
+      "path": "account-before/390-auth-forgot.png",
+      "sha256": "abffa98b6545e9bffda472dae4d46d703ec207fd3e0c26b8e68ec29789ba9a78"
+    },
+    {
+      "phase": "before",
+      "scenario": "cloud-unavailable",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 844,
+      "path": "account-before/390-cloud-unavailable.png",
+      "sha256": "aeb5dd1a13692bc52f25fb7927fb6dc1d13c4b83cbca84dc3b4eb5c13ccd5e5d"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-overview",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1041,
+      "path": "account-before/768-account-overview.png",
+      "sha256": "0aaf66b4803306da82e3163b6964eb2b398080b8b521ada890b30360b08b33d0"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-profile",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1064,
+      "path": "account-before/768-account-profile.png",
+      "sha256": "26c1e89825c39bfddcb244ae43060ab97bda82e72a88eab554e7b8195225f1cc"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-security",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1889,
+      "path": "account-before/768-account-security.png",
+      "sha256": "d4d45035f6c2bf11fe1269dae005ea9feac317d9ce811f2be67c42a7c2de85ef"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-training",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1088,
+      "path": "account-before/768-account-training.png",
+      "sha256": "763b4064a2aaae78e23b3672d02164d23cab2a15461ae5c283ffe091db958fcc"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-privacy",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1000,
+      "path": "account-before/768-account-privacy.png",
+      "sha256": "75440daa46640c45c3a3c8cf032dcefa47ddac6899c8bd4d77b6c41b67587f45"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-delete-review",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1152,
+      "path": "account-before/768-account-delete-review.png",
+      "sha256": "708d946ad14c2f0c0982de3b1dd052dfd5fcce6bf696c57025f1a44578b486ef"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-import-review",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1395,
+      "path": "account-before/768-account-import-review.png",
+      "sha256": "d7c47711835c56224806171143dec286ee0fbe659fb9d6dd151c941619a644a3"
+    },
+    {
+      "phase": "before",
+      "scenario": "auth-signin",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1000,
+      "path": "account-before/768-auth-signin.png",
+      "sha256": "b58d77a12f39eb921aff683b81f470f4c54e6d94f26f68ec647dc566d73809b4"
+    },
+    {
+      "phase": "before",
+      "scenario": "auth-signup",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1125,
+      "path": "account-before/768-auth-signup.png",
+      "sha256": "8c919098639472d71daff84ff9842b8ea8fa9b0eacf4d68b8b631b4c99b5c1d3"
+    },
+    {
+      "phase": "before",
+      "scenario": "auth-forgot",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1000,
+      "path": "account-before/768-auth-forgot.png",
+      "sha256": "5c8dc5ebc7206b189b2de185074fe17c9839ded6c6531d1b3ad9f5b686ff4101"
+    },
+    {
+      "phase": "before",
+      "scenario": "cloud-unavailable",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1000,
+      "path": "account-before/768-cloud-unavailable.png",
+      "sha256": "e9c523aa120a735c3b017b5d461583bd3bd2812e487ec1aaa3c8708cfc38529b"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-overview",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1000,
+      "path": "account-before/1440-account-overview.png",
+      "sha256": "d8afa98b802ed8228d53be41b68695f3baa3a0a9479cef5201644e1dda217e8b"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-profile",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1000,
+      "path": "account-before/1440-account-profile.png",
+      "sha256": "a758af49496d0fa9effbea4ab69a6807ba3b4dc103a604cea97208a32e4351cc"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-security",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1638,
+      "path": "account-before/1440-account-security.png",
+      "sha256": "34e3033d96625492b6a3df1ab5ca6fc570a7eb2a0dadaaf9b7016a95c35a965c"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-training",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1007,
+      "path": "account-before/1440-account-training.png",
+      "sha256": "4ff22689c2903ee19d08d5e66c67162b1ea5176f707553a70e501e97903480ca"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-privacy",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1000,
+      "path": "account-before/1440-account-privacy.png",
+      "sha256": "b9a33a5ce478ed96db41db29bbf78e91073c6f5f5769ad414dac34dd63f15f7d"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-delete-review",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1025,
+      "path": "account-before/1440-account-delete-review.png",
+      "sha256": "f773fa49ca10d4350196620bcbc96765ddd7b315de8d127135ac2b389acb6e92"
+    },
+    {
+      "phase": "before",
+      "scenario": "account-import-review",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1271,
+      "path": "account-before/1440-account-import-review.png",
+      "sha256": "f115d49bf22d636b791e91dac48fc674e123a80203fe8638fa98d84f28ecba76"
+    },
+    {
+      "phase": "before",
+      "scenario": "auth-signin",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1000,
+      "path": "account-before/1440-auth-signin.png",
+      "sha256": "1a9cdc104b10d730f4ef2c34e11a6e5f84ad067fb8c4f9b2c421b9570471ed02"
+    },
+    {
+      "phase": "before",
+      "scenario": "auth-signup",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1038,
+      "path": "account-before/1440-auth-signup.png",
+      "sha256": "353cdd506c970104d87ecf9379c38084ce65f2f27b117df370c5ec93f30e41b4"
+    },
+    {
+      "phase": "before",
+      "scenario": "auth-forgot",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1000,
+      "path": "account-before/1440-auth-forgot.png",
+      "sha256": "6eedf9dee40803c9c78b89214685b99bb6f6e56f2b3fdc776e57cba41e0c1c04"
+    },
+    {
+      "phase": "before",
+      "scenario": "cloud-unavailable",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1000,
+      "path": "account-before/1440-cloud-unavailable.png",
+      "sha256": "249d799167a5366cb4e8b9187b40a660a6e9ee4ef7c1a3b78674df66b78bf33d"
+    },
+    {
+      "phase": "before",
+      "scenario": "cloud-loading",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 844,
+      "path": "account-before/390-cloud-loading.png",
+      "sha256": "1bf98a9b61beb7c89928a6aa269f465ca1f49b14af1b4e13999614bbab161b16"
+    },
+    {
+      "phase": "before",
+      "scenario": "cloud-conflict",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1355,
+      "path": "account-before/390-cloud-conflict.png",
+      "sha256": "a1cdb2b32bcc67a1a4be439ce838c6fb3b044077787642a4babc15eeb4c3a4b2"
+    },
+    {
+      "phase": "before",
+      "scenario": "cloud-pending-save",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1117,
+      "path": "account-before/390-cloud-pending-save.png",
+      "sha256": "107eab20481a877ced324934de2d95155b40c8de7eafb3ea67be86a4e3c547f3"
+    },
+    {
+      "phase": "before",
+      "scenario": "cloud-save-error",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1235,
+      "path": "account-before/390-cloud-save-error.png",
+      "sha256": "e2e8708b6ed61bdfdcfdef1018de76b5e7ad1cd94a9b8cef35f82f2e1cf3c1a0"
+    },
+    {
+      "phase": "before",
+      "scenario": "session-error",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 844,
+      "path": "account-before/390-session-error.png",
+      "sha256": "7ae2434070913ae94bcb81411df1530947a20e44ac0c8e378f96e428c82d7104"
+    },
+    {
+      "phase": "before",
+      "scenario": "cloud-loading",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1000,
+      "path": "account-before/768-cloud-loading.png",
+      "sha256": "73e7df3168e1ff0218a6fd4c74448960abf8dfd21d39164731e173102c3105a3"
+    },
+    {
+      "phase": "before",
+      "scenario": "cloud-conflict",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1437,
+      "path": "account-before/768-cloud-conflict.png",
+      "sha256": "445ffc82424c63575ff9e49cc413a7b2034d85c02e85705769d248997f5e6214"
+    },
+    {
+      "phase": "before",
+      "scenario": "cloud-pending-save",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1064,
+      "path": "account-before/768-cloud-pending-save.png",
+      "sha256": "5abc31b0a5a61ca67f1378ef9b7c307449d2044ef094a3012f0e100412210a36"
+    },
+    {
+      "phase": "before",
+      "scenario": "cloud-save-error",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1198,
+      "path": "account-before/768-cloud-save-error.png",
+      "sha256": "bf6c4bab0ba853a086eb425ac7f3da85ab20d261706a418a4f8c4cc289a28f0c"
+    },
+    {
+      "phase": "before",
+      "scenario": "session-error",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1000,
+      "path": "account-before/768-session-error.png",
+      "sha256": "1aec54965b9ffec27229ef9a4cf6d67c67503a32d4d046ab62d68c9a11b28076"
+    },
+    {
+      "phase": "before",
+      "scenario": "cloud-loading",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1000,
+      "path": "account-before/1440-cloud-loading.png",
+      "sha256": "63b03753447cccee945a0f5237e803986b8eb428b7245fe09212f7796dc7b89e"
+    },
+    {
+      "phase": "before",
+      "scenario": "cloud-conflict",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1069,
+      "path": "account-before/1440-cloud-conflict.png",
+      "sha256": "2b93532bf29b2ced9415100d0c16c842656c81d9ec810247ebb2a99a211eb68e"
+    },
+    {
+      "phase": "before",
+      "scenario": "cloud-pending-save",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1000,
+      "path": "account-before/1440-cloud-pending-save.png",
+      "sha256": "8d444c4a2a2e108da0964eae0106da5b50ed7124c8da5cea7b4fe2a5f8ca7953"
+    },
+    {
+      "phase": "before",
+      "scenario": "cloud-save-error",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1045,
+      "path": "account-before/1440-cloud-save-error.png",
+      "sha256": "c153ee7ee30c8da012d9686f5151aca1eb5db67233644e2632dd517289300832"
+    },
+    {
+      "phase": "before",
+      "scenario": "session-error",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1000,
+      "path": "account-before/1440-session-error.png",
+      "sha256": "ee69d9860f3da4b5d9a25015d6067dca3761ebc26cc5164e8ac29f4c1745b7fc"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-overview",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1206,
+      "path": "account-after/390-account-overview.png",
+      "sha256": "742bba34fd61eb7b21d831f03201be412234b81afe0edfda353a77401462a0f4"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-profile",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1132,
+      "path": "account-after/390-account-profile.png",
+      "sha256": "8c7adb17d53d20cebc814411c5fd6f89c4ffa5a3efef9e0968721ab7b24e4aa6"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-security",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1889,
+      "path": "account-after/390-account-security.png",
+      "sha256": "bfd9ad6d949537ad8f7fb2cb906e9b35451ae1ed32630a792c9dcaa3f59db01e"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-training",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1152,
+      "path": "account-after/390-account-training.png",
+      "sha256": "c9717c85fd312ff8a0762546683660ffb572e1e3c273e0a83ca48638ff2c8762"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-privacy",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1046,
+      "path": "account-after/390-account-privacy.png",
+      "sha256": "704c129317165b8a82d9300fe7603f988a81de7702ea1d6e647aea3a392af108"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-delete-review",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1209,
+      "path": "account-after/390-account-delete-review.png",
+      "sha256": "d8698183cd5ed023cefed92011d6e88bff1539b4a939cfa6de1d812ab34fd19d"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-import-review",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1435,
+      "path": "account-after/390-account-import-review.png",
+      "sha256": "1f19b1633a5ca6da281895c7f50571d4fe68ff2576cd9520126572b200b90358"
+    },
+    {
+      "phase": "after",
+      "scenario": "auth-signin",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 983,
+      "path": "account-after/390-auth-signin.png",
+      "sha256": "fc25c0a3c46fbe48a51e82f6112aa93e4cc943452bd2e1d56d7dd17c435ca581"
+    },
+    {
+      "phase": "after",
+      "scenario": "auth-signup",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1193,
+      "path": "account-after/390-auth-signup.png",
+      "sha256": "0eef8e3c8d36c5995853bb05997f501712c4613c477f1e86b0baa2017cf6808d"
+    },
+    {
+      "phase": "after",
+      "scenario": "auth-forgot",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 844,
+      "path": "account-after/390-auth-forgot.png",
+      "sha256": "c8c04c94faddc1b2de91dc1e96d1411a82c6d425c09465aebd4460c224fe2d39"
+    },
+    {
+      "phase": "after",
+      "scenario": "cloud-unavailable",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 844,
+      "path": "account-after/390-cloud-unavailable.png",
+      "sha256": "aeb5dd1a13692bc52f25fb7927fb6dc1d13c4b83cbca84dc3b4eb5c13ccd5e5d"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-overview",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1027,
+      "path": "account-after/768-account-overview.png",
+      "sha256": "f60936591c755b2749f5e490263f6c60de0555d81d47938ce755a674b43ca695"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-profile",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1012,
+      "path": "account-after/768-account-profile.png",
+      "sha256": "dc6803f142215c596c828d695aaebfc25bbb06c15b2f2bd2a9f6cf7c437921a9"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-security",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1789,
+      "path": "account-after/768-account-security.png",
+      "sha256": "bad1499d1d2fa32d7062028f53a153eed7d1a39fcbf0f942be09ee9851131c2f"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-training",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1070,
+      "path": "account-after/768-account-training.png",
+      "sha256": "d896101d403daff66af86be255f7e33a79a5529c545bf158c9ee2b3ca57dd220"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-privacy",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1000,
+      "path": "account-after/768-account-privacy.png",
+      "sha256": "467a80643214a3d80e5500ddc64dec44830cf8e7c629dd38ff638df8257ed9dc"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-delete-review",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1135,
+      "path": "account-after/768-account-delete-review.png",
+      "sha256": "1f0013713c90d92c139c94f8058fef0e51205210d55798f00d506444ff6326e2"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-import-review",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1334,
+      "path": "account-after/768-account-import-review.png",
+      "sha256": "9143489efdf3e1843c04a5465bfee23324105ac1e6e5a49500fda78ac946b42a"
+    },
+    {
+      "phase": "after",
+      "scenario": "auth-signin",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1000,
+      "path": "account-after/768-auth-signin.png",
+      "sha256": "35f90d600d2f8d7ffed815892bc53208334ef79738a44d4f14451baeea45de0c"
+    },
+    {
+      "phase": "after",
+      "scenario": "auth-signup",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1089,
+      "path": "account-after/768-auth-signup.png",
+      "sha256": "7606b2c4e286d8939fa2cd931093eccc6a8e609ded5cf87965e2a8fbe8974661"
+    },
+    {
+      "phase": "after",
+      "scenario": "auth-forgot",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1000,
+      "path": "account-after/768-auth-forgot.png",
+      "sha256": "a8b02d9df57bd9135618a2e66ec21608b3a4aeaef572cf4ae3149a6fe41e37fa"
+    },
+    {
+      "phase": "after",
+      "scenario": "cloud-unavailable",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1000,
+      "path": "account-after/768-cloud-unavailable.png",
+      "sha256": "e9c523aa120a735c3b017b5d461583bd3bd2812e487ec1aaa3c8708cfc38529b"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-overview",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1000,
+      "path": "account-after/1440-account-overview.png",
+      "sha256": "aeeac3c5cd7c905774f462d21dc9f96edeb946e4fd6f280f1244ca226d0a0c8c"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-profile",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1000,
+      "path": "account-after/1440-account-profile.png",
+      "sha256": "c297d92083b549609c784686389b7436f241df14bcacd1bb4cf47cd494b612b9"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-security",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1638,
+      "path": "account-after/1440-account-security.png",
+      "sha256": "34e3033d96625492b6a3df1ab5ca6fc570a7eb2a0dadaaf9b7016a95c35a965c"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-training",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1007,
+      "path": "account-after/1440-account-training.png",
+      "sha256": "4ff22689c2903ee19d08d5e66c67162b1ea5176f707553a70e501e97903480ca"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-privacy",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1000,
+      "path": "account-after/1440-account-privacy.png",
+      "sha256": "b9a33a5ce478ed96db41db29bbf78e91073c6f5f5769ad414dac34dd63f15f7d"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-delete-review",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1025,
+      "path": "account-after/1440-account-delete-review.png",
+      "sha256": "f773fa49ca10d4350196620bcbc96765ddd7b315de8d127135ac2b389acb6e92"
+    },
+    {
+      "phase": "after",
+      "scenario": "account-import-review",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1271,
+      "path": "account-after/1440-account-import-review.png",
+      "sha256": "f115d49bf22d636b791e91dac48fc674e123a80203fe8638fa98d84f28ecba76"
+    },
+    {
+      "phase": "after",
+      "scenario": "auth-signin",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1000,
+      "path": "account-after/1440-auth-signin.png",
+      "sha256": "4c33429c91dd5271a633cf6700a48041d02ee222158e49da225c07315455dc77"
+    },
+    {
+      "phase": "after",
+      "scenario": "auth-signup",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1038,
+      "path": "account-after/1440-auth-signup.png",
+      "sha256": "6f5b8991a55d5f8695b3a5691ea2e69457903d9f5e1cc8c45d7bcf428a89d11e"
+    },
+    {
+      "phase": "after",
+      "scenario": "auth-forgot",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1000,
+      "path": "account-after/1440-auth-forgot.png",
+      "sha256": "dee04124d4812d35a015fd73c0674f67d1b571d49ea4fc5053399110aea40b2d"
+    },
+    {
+      "phase": "after",
+      "scenario": "cloud-unavailable",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1000,
+      "path": "account-after/1440-cloud-unavailable.png",
+      "sha256": "249d799167a5366cb4e8b9187b40a660a6e9ee4ef7c1a3b78674df66b78bf33d"
+    },
+    {
+      "phase": "after",
+      "scenario": "cloud-loading",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 844,
+      "path": "account-after/390-cloud-loading.png",
+      "sha256": "1bf98a9b61beb7c89928a6aa269f465ca1f49b14af1b4e13999614bbab161b16"
+    },
+    {
+      "phase": "after",
+      "scenario": "cloud-conflict",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1370,
+      "path": "account-after/390-cloud-conflict.png",
+      "sha256": "8ecde368766a55aadc00a170d4c1842907b89aa01a4df4a43a524d1a47403784"
+    },
+    {
+      "phase": "after",
+      "scenario": "cloud-pending-save",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1132,
+      "path": "account-after/390-cloud-pending-save.png",
+      "sha256": "97382f6b8a7aea33ed9c2017c38b15bcb99d6e70c76ad5aae2f7672235ae07be"
+    },
+    {
+      "phase": "after",
+      "scenario": "cloud-save-error",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 1250,
+      "path": "account-after/390-cloud-save-error.png",
+      "sha256": "d270a0ead70fa6c7b469b2be41110d5366f74be436ca79ad1b7425cbc49b32dc"
+    },
+    {
+      "phase": "after",
+      "scenario": "session-error",
+      "viewport_css_width": 390,
+      "document_css_width": 390,
+      "png_width": 390,
+      "png_height": 844,
+      "path": "account-after/390-session-error.png",
+      "sha256": "7ae2434070913ae94bcb81411df1530947a20e44ac0c8e378f96e428c82d7104"
+    },
+    {
+      "phase": "after",
+      "scenario": "cloud-loading",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1000,
+      "path": "account-after/768-cloud-loading.png",
+      "sha256": "73e7df3168e1ff0218a6fd4c74448960abf8dfd21d39164731e173102c3105a3"
+    },
+    {
+      "phase": "after",
+      "scenario": "cloud-conflict",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1209,
+      "path": "account-after/768-cloud-conflict.png",
+      "sha256": "906eba9256767cb45b841381ca3f97cef157c75fe311d7161284eb60c43e8f5d"
+    },
+    {
+      "phase": "after",
+      "scenario": "cloud-pending-save",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1066,
+      "path": "account-after/768-cloud-pending-save.png",
+      "sha256": "fabd7ffa4ae03eb0194b803eeba10bc4bf6c81a58d5cdd9937da645d116f909f"
+    },
+    {
+      "phase": "after",
+      "scenario": "cloud-save-error",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1123,
+      "path": "account-after/768-cloud-save-error.png",
+      "sha256": "aca40997c386791ca3df4cf66482b43510a26febbf0f912c971b3a816a474587"
+    },
+    {
+      "phase": "after",
+      "scenario": "session-error",
+      "viewport_css_width": 768,
+      "document_css_width": 768,
+      "png_width": 768,
+      "png_height": 1000,
+      "path": "account-after/768-session-error.png",
+      "sha256": "1aec54965b9ffec27229ef9a4cf6d67c67503a32d4d046ab62d68c9a11b28076"
+    },
+    {
+      "phase": "after",
+      "scenario": "cloud-loading",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1000,
+      "path": "account-after/1440-cloud-loading.png",
+      "sha256": "63b03753447cccee945a0f5237e803986b8eb428b7245fe09212f7796dc7b89e"
+    },
+    {
+      "phase": "after",
+      "scenario": "cloud-conflict",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1069,
+      "path": "account-after/1440-cloud-conflict.png",
+      "sha256": "2a587f29456eaf618b62c101aeea401d6caa1dd06ee6d60aebfc9dc8a9481aa9"
+    },
+    {
+      "phase": "after",
+      "scenario": "cloud-pending-save",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1000,
+      "path": "account-after/1440-cloud-pending-save.png",
+      "sha256": "8d444c4a2a2e108da0964eae0106da5b50ed7124c8da5cea7b4fe2a5f8ca7953"
+    },
+    {
+      "phase": "after",
+      "scenario": "cloud-save-error",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1045,
+      "path": "account-after/1440-cloud-save-error.png",
+      "sha256": "64098574534fd8c1239f17d75f01c3448cfa85fcce1350f956159a85188f44ff"
+    },
+    {
+      "phase": "after",
+      "scenario": "session-error",
+      "viewport_css_width": 1440,
+      "document_css_width": 1440,
+      "png_width": 1440,
+      "png_height": 1000,
+      "path": "account-after/1440-session-error.png",
+      "sha256": "ee69d9860f3da4b5d9a25015d6067dca3761ebc26cc5164e8ac29f4c1745b7fc"
+    }
+  ],
+  "preservedIntermediateCaptures": [
+    {
+      "path": "diagnostics/account-pre-final/768-auth-signin.png",
+      "sha256": "6b7d31e3bef2cf5876dd7f09d354bbee220629034a811f9d896665fe197fa03f",
+      "classification": "intermediate diagnostic, captured before final narrow Security/tablet auth corrections"
+    },
+    {
+      "path": "diagnostics/account-pre-final/768-auth-signup.png",
+      "sha256": "8d05a0fc2d7a3f07e8cf5b87fa0b125ecd68c1019550c59b8192471f6c380ad8",
+      "classification": "intermediate diagnostic, captured before final narrow Security/tablet auth corrections"
+    },
+    {
+      "path": "diagnostics/account-pre-final/768-auth-forgot.png",
+      "sha256": "2b7b8e261829572c246c2fcd4d6e8cb9b772d82c753c9805c6e1d3f62e63db03",
+      "classification": "intermediate diagnostic, captured before final narrow Security/tablet auth corrections"
+    },
+    {
+      "path": "diagnostics/account-pre-final/1440-account-training.png",
+      "sha256": "ba3312d67d738f884f13eb1c2530be56a7033e61c418d4944b5dcead5275d44f",
+      "classification": "intermediate diagnostic, captured before final narrow Security/tablet auth corrections"
+    },
+    {
+      "path": "diagnostics/account-pre-final/1440-account-privacy.png",
+      "sha256": "b2595804a46cdf289058d0c64e02ce0614b53967739b079dd07eec3c0cfd5e1f",
+      "classification": "intermediate diagnostic, captured before final narrow Security/tablet auth corrections"
+    },
+    {
+      "path": "diagnostics/account-pre-final/768-cloud-save-error.png",
+      "sha256": "918ae166b2f410c21c9319f78f794188794cec9e6de1bcd23429fb0a538fade2",
+      "classification": "intermediate diagnostic, captured before final narrow Security/tablet auth corrections"
+    }
+  ]
+}

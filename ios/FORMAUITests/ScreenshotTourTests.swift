@@ -26,6 +26,7 @@ final class ScreenshotTourTests: XCTestCase {
     ]
     app.launch()
     app.prepareReviewViewport()
+    app.applyReviewAppearance()
 
     let start = app.buttons["start-workout"]
     XCTAssertTrue(start.waitForExistence(timeout: 30))
@@ -42,6 +43,7 @@ final class ScreenshotTourTests: XCTestCase {
     capture(app, "03-routine-detail")
 
     startRoutine.tap()
+    app.continueWorkoutOnIPhone()
     let firstSet = app.buttons["complete-set-0-0"]
     XCTAssertTrue(firstSet.waitForExistence(timeout: 10))
     capture(app, "04-workout")
@@ -89,6 +91,7 @@ final class ScreenshotTourTests: XCTestCase {
     ]
     app.launch()
     app.prepareReviewViewport()
+    app.applyReviewAppearance()
     let plan = app.trainingTab("Plan")
     XCTAssertTrue(plan.waitForExistence(timeout: 20))
     plan.tap()
@@ -125,6 +128,7 @@ final class ScreenshotTourTests: XCTestCase {
     ]
     app.launch()
     app.prepareReviewViewport()
+    app.applyReviewAppearance()
     let plan = app.trainingTab("Plan")
     XCTAssertTrue(plan.waitForExistence(timeout: 20))
     plan.tap()
@@ -135,6 +139,7 @@ final class ScreenshotTourTests: XCTestCase {
     let start = app.buttons["start-routine-workout"]
     XCTAssertTrue(start.waitForExistence(timeout: 10))
     start.tap()
+    app.continueWorkoutOnIPhone()
     let choose = app.buttons.matching(
       NSPredicate(format: "label CONTAINS %@", "Choose exercise")
     ).firstMatch

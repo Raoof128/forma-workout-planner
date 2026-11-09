@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "method": "Published JSON receipts preserve observed counts, outcomes, phases and causes, with the exact SHA-256 of each private raw log. They are structured summaries, not byte-for-byte copies of the logs. Existing width JSON evidence remains unchanged.",
+  "publicationBoundary": "Only paths in receipts are published evidence files. Raw logs remain private and ignored; names in privateRawLogs are provenance identifiers, not links or expected checkout files. Raw trace bodies, absolute machine paths and credential material are excluded from published summaries.",
+  "receipts": [
+    {
+      "path": "security-controlled-red.json",
+      "sha256": "894028c7c14ded5db5bff97ce8bcfa6c46131b91fb2c7a2d0551fa58f94148c9",
+      "bytes": 1554,
+      "kind": "sanitized_result_summary"
+    },
+    {
+      "path": "security-initial-harness-errors.json",
+      "sha256": "397f1c178dba1f8ffb694cb00811ab9a8fb4e074841fb6ae93dc13d6bc94231d",
+      "bytes": 1957,
+      "kind": "sanitized_result_summary"
+    },
+    {
+      "path": "security-five-profiles-pass.json",
+      "sha256": "a80e3f88edcc261f7cd00cbcf4f71f02b25751fad17c09fb5b1148c70953e5af",
+      "bytes": 2089,
+      "kind": "sanitized_result_summary"
+    },
+    {
+      "path": "auth-controlled-red.json",
+      "sha256": "049ecec69434791ad44e200a4489b6185062568f3cf847e3aed468edfff6c086",
+      "bytes": 1638,
+      "kind": "sanitized_result_summary"
+    },
+    {
+      "path": "auth-initial-harness-errors.json",
+      "sha256": "d85d64366f9ac240f5812cd96a4cfa0e194064ef9126ad66dc9fd1edbbeb279c",
+      "bytes": 2067,
+      "kind": "sanitized_result_summary"
+    },
+    {
+      "path": "auth-five-profiles-pass.json",
+      "sha256": "24c4daae8fa4d91bfe1aa3d58abd850b8ce4b352a936397f1cb7156d5ba914ff",
+      "bytes": 2095,
+      "kind": "sanitized_result_summary"
+    },
+    {
+      "path": "account-widths-initial.json",
+      "sha256": "c7489ba0ec1cc43f98a46f885932b3e47ed62dc0b1b813ceeb9e2232081ac833",
+      "bytes": 37270,
+      "kind": "synthetic_geometry_result"
+    },
+    {
+      "path": "account-widths-final.json",
+      "sha256": "7b0ac3616412de460839b843316ff174c9221d6b69207f3e9f52c39ea67f79af",
+      "bytes": 41329,
+      "kind": "synthetic_geometry_result"
+    }
+  ],
+  "privateRawLogs": [
+    {
+      "name": "security-controlled-red.log",
+      "sha256": "2be8cd8eec7fcc072aa2882cb68309daf67266690d45c791982e28eab8a6cec4",
+      "bytes": 2950,
+      "published": false,
+      "availability": "Private ignored local log; absent from repository checkout"
+    },
+    {
+      "name": "security-initial-harness-errors.log",
+      "sha256": "6555c159322449f41a84bfa8a701fc8d3b8ea564b72a1610af784d39a6121c94",
+      "bytes": 14796,
+      "published": false,
+      "availability": "Private ignored local log; absent from repository checkout"
+    },
+    {
+      "name": "security-five-profiles-pass.log",
+      "sha256": "6ee39e155e69c85dc64f529e3a24aef9605a60621d2827239abbf654b9defea7",
+      "bytes": 1603,
+      "published": false,
+      "availability": "Private ignored local log; absent from repository checkout"
+    },
+    {
+      "name": "auth-controlled-red.log",
+      "sha256": "1ec995278dcd691b2f208cb060818ddd11f45c5fa6b0fa80782ac9c8c591b0e8",
+      "bytes": 2930,
+      "published": false,
+      "availability": "Private ignored local log; absent from repository checkout"
+    },
+    {
+      "name": "auth-initial-harness-errors.log",
+      "sha256": "2cef93537779e9b1358d332be6c92e881d509c26a5ec6b5dc6e15b09bfe1178d",
+      "bytes": 10137,
+      "published": false,
+      "availability": "Private ignored local log; absent from repository checkout"
+    },
+    {
+      "name": "auth-five-profiles-pass.log",
+      "sha256": "1011b193b27995c45689ed0421c5ba11dd3e4b212a871d9898c3876d765468d0",
+      "bytes": 1557,
+      "published": false,
+      "availability": "Private ignored local log; absent from repository checkout"
+    }
+  ]
+}

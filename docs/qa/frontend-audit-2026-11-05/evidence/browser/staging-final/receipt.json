@@ -1,0 +1,3181 @@
+{
+  "schemaVersion": 1,
+  "phase": "staging-final",
+  "target": "https://forma-staging.raoufabedini.dev",
+  "provenance": {
+    "environment": "protected staging final candidate",
+    "workerVersion": "98eecbb4-4c5e-49ad-9e9d-7d062f9c252c",
+    "frontendGitSource": {
+      "verified": true,
+      "commit": "af8f476420e2e4451c03ae0537e936eba457c2c7",
+      "method": "Native index.html and both entry response bodies match the account-build identity SHA-256; entry URLs also match."
+    },
+    "meaning": "Actual final staging evidence after the narrow supporting-copy fix. Staging acceptance is distinct from a production release or production AFTER verification."
+  },
+  "startedAtUTC": "2026-11-04T20:29:45.216Z",
+  "finishedAtUTC": "2026-11-04T20:29:54.990Z",
+  "browser": {
+    "name": "Chromium",
+    "version": "156.0.8078.4",
+    "headless": true,
+    "viewportWidths": [
+      320,
+      390,
+      1440
+    ],
+    "locale": "en-AU",
+    "timezone": "Australia/Sydney",
+    "reducedMotion": "reduce",
+    "freshContexts": true,
+    "serviceWorkers": "blocked"
+  },
+  "method": "Native network responses and original screenshot bytes. No route fulfillment, storage seeding, account creation, login, auth submission, email or member-data mutation. GET/HEAD/OPTIONS only; other methods were blocked before dispatch. Library cards scrolled into view before 24 thumbnail decodes; loaded fonts, background photos, focus, auth transitions, document and auth-panel containment checked.",
+  "safety": {
+    "allowedMethods": [
+      "GET",
+      "HEAD",
+      "OPTIONS"
+    ],
+    "blockedMutationAttempts": [],
+    "productionWritesAttempted": false,
+    "apiResponseBodiesPublished": false,
+    "requestHeaderPayloadsPublished": false,
+    "sessionMaterialPublished": false,
+    "temporaryStagingBoundary": "Exact staging origin only; foreign requests and cross-origin redirects blocked. No access material is included."
+  },
+  "summary": {
+    "captures": 21,
+    "requests": 51,
+    "blockedMutationAttempts": 0,
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "unexpectedHTTP": 0,
+    "unexpectedExternal": 0,
+    "assetBodiesHashed": 15,
+    "failedFocusChecks": 0,
+    "issues": 0,
+    "fontReadyCaptures": 21,
+    "decodedInlineImageInstances": 72,
+    "decodedBackgroundImageInstances": 6,
+    "libraryThumbnails": [
+      {
+        "width": 320,
+        "ready": 24,
+        "total": 24
+      },
+      {
+        "width": 390,
+        "ready": 24,
+        "total": 24
+      },
+      {
+        "width": 1440,
+        "ready": 24,
+        "total": 24
+      }
+    ],
+    "focusChecksPerformed": 21,
+    "uniqueFocusStates": 21,
+    "passedFocusChecks": 21,
+    "authModeTransitionChecks": 6,
+    "exactBuildIdentityChecks": 3,
+    "captureGeometryChecks": 21,
+    "liveEmblemGeometryChecks": 6
+  },
+  "checks": [
+    {
+      "width": 320,
+      "state": "auth-signin",
+      "kind": "exact af8 build identity",
+      "passed": true,
+      "documentSHA256": "a7c56f2b058858e3b83e9f94de2f8fc3674e6bd07ac2f47df417a97547650ca2",
+      "entry": [
+        {
+          "url": "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css",
+          "bytes": 87943,
+          "sha256": "4ddda639f103749649db8ddf7a1827f93b2413b9479c820914d7896c1b2f58e6"
+        },
+        {
+          "url": "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+          "bytes": 3003264,
+          "sha256": "ab84391595f2515995f8aac8a67296a670432fcc957199f9d83c626672941617"
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "state": "auth-signin",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 320,
+      "state": "auth-signup",
+      "kind": "auth mode transition",
+      "passed": true,
+      "headingFocused": true
+    },
+    {
+      "width": 320,
+      "state": "auth-signup",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 320,
+      "state": "auth-forgot",
+      "kind": "auth mode transition",
+      "passed": true,
+      "headingFocused": true
+    },
+    {
+      "width": 320,
+      "state": "auth-forgot",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 320,
+      "state": "overview",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 320,
+      "state": "progress",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 320,
+      "state": "privacy",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 390,
+      "state": "auth-signin",
+      "kind": "exact af8 build identity",
+      "passed": true,
+      "documentSHA256": "a7c56f2b058858e3b83e9f94de2f8fc3674e6bd07ac2f47df417a97547650ca2",
+      "entry": [
+        {
+          "url": "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css",
+          "bytes": 87943,
+          "sha256": "4ddda639f103749649db8ddf7a1827f93b2413b9479c820914d7896c1b2f58e6"
+        },
+        {
+          "url": "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+          "bytes": 3003264,
+          "sha256": "ab84391595f2515995f8aac8a67296a670432fcc957199f9d83c626672941617"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "state": "auth-signin",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 390,
+      "state": "auth-signup",
+      "kind": "auth mode transition",
+      "passed": true,
+      "headingFocused": true
+    },
+    {
+      "width": 390,
+      "state": "auth-signup",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 390,
+      "state": "auth-forgot",
+      "kind": "auth mode transition",
+      "passed": true,
+      "headingFocused": true
+    },
+    {
+      "width": 390,
+      "state": "auth-forgot",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 390,
+      "state": "overview",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 390,
+      "state": "progress",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 390,
+      "state": "privacy",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 1440,
+      "state": "auth-signin",
+      "kind": "exact af8 build identity",
+      "passed": true,
+      "documentSHA256": "a7c56f2b058858e3b83e9f94de2f8fc3674e6bd07ac2f47df417a97547650ca2",
+      "entry": [
+        {
+          "url": "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css",
+          "bytes": 87943,
+          "sha256": "4ddda639f103749649db8ddf7a1827f93b2413b9479c820914d7896c1b2f58e6"
+        },
+        {
+          "url": "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+          "bytes": 3003264,
+          "sha256": "ab84391595f2515995f8aac8a67296a670432fcc957199f9d83c626672941617"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "state": "auth-signin",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 1440,
+      "state": "auth-signup",
+      "kind": "auth mode transition",
+      "passed": true,
+      "headingFocused": true
+    },
+    {
+      "width": 1440,
+      "state": "auth-signup",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 1440,
+      "state": "auth-forgot",
+      "kind": "auth mode transition",
+      "passed": true,
+      "headingFocused": true
+    },
+    {
+      "width": 1440,
+      "state": "auth-forgot",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 1440,
+      "state": "overview",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 1440,
+      "state": "progress",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    },
+    {
+      "width": 1440,
+      "state": "privacy",
+      "kind": "skip focus",
+      "available": true,
+      "passed": true,
+      "routePreserved": true
+    }
+  ],
+  "captures": [
+    {
+      "width": 320,
+      "name": "auth-signin",
+      "sha256": "1d6b368933cb3b482dfc61f61f74a72390257fbe47afaef40aa0bf47f1702e1e",
+      "bytes": 53919,
+      "capturedAtUTC": "2026-11-04T20:29:46.808Z",
+      "viewport": 320,
+      "documentWidth": 320,
+      "scrollY": 0,
+      "route": "#account",
+      "title": "Account \u00b7 FORMA",
+      "heading": "Welcome back",
+      "headingFocused": true,
+      "auth": {
+        "clientWidth": 286,
+        "scrollWidth": 286,
+        "clipped": []
+      },
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [],
+        "backgrounds": [],
+        "libraryCards": []
+      },
+      "path": "320-auth-signin.png",
+      "pixelWidth": 320,
+      "pixelHeight": 1002,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 320,
+      "name": "auth-signup",
+      "sha256": "82d753c9878f2d8492bd5e0908928ae68b80567a9894423b8e91fc808cbc4f01",
+      "bytes": 86390,
+      "capturedAtUTC": "2026-11-04T20:29:46.976Z",
+      "viewport": 320,
+      "documentWidth": 320,
+      "scrollY": 0,
+      "route": "#account",
+      "title": "Account \u00b7 FORMA",
+      "heading": "Create your account",
+      "headingFocused": true,
+      "auth": {
+        "clientWidth": 286,
+        "scrollWidth": 286,
+        "clipped": []
+      },
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [],
+        "backgrounds": [],
+        "libraryCards": []
+      },
+      "path": "320-auth-signup.png",
+      "pixelWidth": 320,
+      "pixelHeight": 1345,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 320,
+      "name": "auth-forgot",
+      "sha256": "44e144a3a081970cf7e7d4221f558de6363bbc8db407ed73c57e0d3ea7069988",
+      "bytes": 49344,
+      "capturedAtUTC": "2026-11-04T20:29:47.204Z",
+      "viewport": 320,
+      "documentWidth": 320,
+      "scrollY": 0,
+      "route": "#account",
+      "title": "Account \u00b7 FORMA",
+      "heading": "Reset your password",
+      "headingFocused": true,
+      "auth": {
+        "clientWidth": 286,
+        "scrollWidth": 286,
+        "clipped": []
+      },
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [],
+        "backgrounds": [],
+        "libraryCards": []
+      },
+      "path": "320-auth-forgot.png",
+      "pixelWidth": 320,
+      "pixelHeight": 855,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 320,
+      "name": "overview",
+      "sha256": "5ea97322c8be27bffd4341809e3fdae1870053d1d01e365dfc088a67b96b4196",
+      "bytes": 281603,
+      "capturedAtUTC": "2026-11-04T20:29:47.407Z",
+      "viewport": 320,
+      "documentWidth": 320,
+      "scrollY": 0,
+      "route": "#overview",
+      "title": "Overview \u00b7 FORMA",
+      "heading": "A little stronger, every day.",
+      "headingFocused": true,
+      "auth": null,
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [],
+        "backgrounds": [
+          {
+            "src": "https://forma-staging.raoufabedini.dev/images/training-hero.webp",
+            "ready": true,
+            "width": 1536,
+            "height": 1024
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/images/routine-photos.webp",
+            "ready": true,
+            "width": 1536,
+            "height": 1024
+          }
+        ],
+        "libraryCards": []
+      },
+      "path": "320-overview.png",
+      "pixelWidth": 320,
+      "pixelHeight": 2041,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 320,
+      "name": "library",
+      "sha256": "7ca351d3d8e83c43514f6410512bd715d9155e802429bf4a406c5bda769b9f82",
+      "bytes": 307656,
+      "capturedAtUTC": "2026-11-04T20:29:48.728Z",
+      "viewport": 320,
+      "documentWidth": 320,
+      "scrollY": 0,
+      "route": "#library",
+      "title": "Exercise library \u00b7 FORMA",
+      "heading": "Good form. Better sessions.",
+      "headingFocused": true,
+      "auth": null,
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-04-e1095f31c69951f0.webp?v=638726164664",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/cardio-01-5c38f1ac06c14b8d.webp?v=56afef82c735",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-03-988892f417205330.webp?v=399c8a35687d",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-retry-11584f1d40205695.webp?v=ae22bd62d1cf",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/corrections-001-d8f73f2ae7c3ccac.webp?v=e8f308e3856a",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-7a9ea285cb29df52.webp?v=e8ebefd1dc56",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp?v=004a10f349f6",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp?v=004a10f349f6",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          }
+        ],
+        "backgrounds": [],
+        "libraryCards": [
+          {
+            "name": "Barbell bench press",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "One-arm dumbbell row",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Dumbbell shoulder press",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Lat pulldown",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-04-e1095f31c69951f0.webp?v=638726164664",
+            "ready": true
+          },
+          {
+            "name": "Dumbbell biceps curl",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Cable triceps pushdown",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/cardio-01-5c38f1ac06c14b8d.webp?v=56afef82c735",
+            "ready": true
+          },
+          {
+            "name": "Barbell back squat",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Romanian deadlift",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Leg press",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-03-988892f417205330.webp?v=399c8a35687d",
+            "ready": true
+          },
+          {
+            "name": "Dumbbell reverse lunge",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Standing calf raise",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Kettlebell goblet squat",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Push-up",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Dumbbell lateral raise",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Dead bug",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "1 Leg Box Squat",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true
+          },
+          {
+            "name": "1-Arm Half-Kneeling Lat Pulldown",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true
+          },
+          {
+            "name": "Half-kneeling thoracic rotation",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-retry-11584f1d40205695.webp?v=ae22bd62d1cf",
+            "ready": true
+          },
+          {
+            "name": "3/4 Sit-Up",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/corrections-001-d8f73f2ae7c3ccac.webp?v=e8f308e3856a",
+            "ready": true
+          },
+          {
+            "name": "Seated machine abdominal crunch",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-7a9ea285cb29df52.webp?v=e8ebefd1dc56",
+            "ready": true
+          },
+          {
+            "name": "3D lunge warmup",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true
+          },
+          {
+            "name": "90/90 Breathing",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp?v=004a10f349f6",
+            "ready": true
+          },
+          {
+            "name": "90/90 Hamstring",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true
+          },
+          {
+            "name": "90/90 Hip Switches",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp?v=004a10f349f6",
+            "ready": true
+          }
+        ]
+      },
+      "path": "320-library.png",
+      "pixelWidth": 320,
+      "pixelHeight": 4074,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 320,
+      "name": "progress",
+      "sha256": "381d5eccd445a905c6c7ddafa61a2014ceffc31653e20e1cbe72ae9e36b935ee",
+      "bytes": 84769,
+      "capturedAtUTC": "2026-11-04T20:29:48.816Z",
+      "viewport": 320,
+      "documentWidth": 320,
+      "scrollY": 0,
+      "route": "#progress",
+      "title": "Progress \u00b7 FORMA",
+      "heading": "See your strength take shape.",
+      "headingFocused": true,
+      "auth": null,
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [],
+        "backgrounds": [],
+        "libraryCards": []
+      },
+      "path": "320-progress.png",
+      "pixelWidth": 320,
+      "pixelHeight": 973,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 320,
+      "name": "privacy",
+      "sha256": "abf89b53ac9440c27a0f64467d85caf402d859d21b87ebfb20038783b3c50b2f",
+      "bytes": 725027,
+      "capturedAtUTC": "2026-11-04T20:29:48.992Z",
+      "viewport": 320,
+      "documentWidth": 320,
+      "scrollY": 0,
+      "route": "#privacy",
+      "title": "Privacy Policy \u00b7 FORMA",
+      "heading": "Privacy Policy",
+      "headingFocused": true,
+      "auth": null,
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [],
+        "backgrounds": [],
+        "libraryCards": []
+      },
+      "path": "320-privacy.png",
+      "pixelWidth": 320,
+      "pixelHeight": 7993,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 390,
+      "name": "auth-signin",
+      "sha256": "c5fc235924043d2b96d6c0c6ee9d407523714cfbc9c8e41aaef2cfadcea7ed2d",
+      "bytes": 55431,
+      "capturedAtUTC": "2026-11-04T20:29:49.892Z",
+      "viewport": 390,
+      "documentWidth": 390,
+      "scrollY": 0,
+      "route": "#account",
+      "title": "Account \u00b7 FORMA",
+      "heading": "Welcome back",
+      "headingFocused": true,
+      "auth": {
+        "clientWidth": 348,
+        "scrollWidth": 348,
+        "clipped": []
+      },
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [],
+        "backgrounds": [],
+        "libraryCards": []
+      },
+      "path": "390-auth-signin.png",
+      "pixelWidth": 390,
+      "pixelHeight": 983,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 390,
+      "name": "auth-signup",
+      "sha256": "50a4d3a624471346d427fef1e73dc9bd01f652ac30925919cef7497bead5c185",
+      "bytes": 86991,
+      "capturedAtUTC": "2026-11-04T20:29:50.073Z",
+      "viewport": 390,
+      "documentWidth": 390,
+      "scrollY": 0,
+      "route": "#account",
+      "title": "Account \u00b7 FORMA",
+      "heading": "Create your account",
+      "headingFocused": true,
+      "auth": {
+        "clientWidth": 348,
+        "scrollWidth": 348,
+        "clipped": []
+      },
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [],
+        "backgrounds": [],
+        "libraryCards": []
+      },
+      "path": "390-auth-signup.png",
+      "pixelWidth": 390,
+      "pixelHeight": 1193,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 390,
+      "name": "auth-forgot",
+      "sha256": "18af24cb865f293f8c6f0b27f6070684eb78989e2813a8165c2127c226a6d164",
+      "bytes": 50149,
+      "capturedAtUTC": "2026-11-04T20:29:50.267Z",
+      "viewport": 390,
+      "documentWidth": 390,
+      "scrollY": 0,
+      "route": "#account",
+      "title": "Account \u00b7 FORMA",
+      "heading": "Reset your password",
+      "headingFocused": true,
+      "auth": {
+        "clientWidth": 348,
+        "scrollWidth": 348,
+        "clipped": []
+      },
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [],
+        "backgrounds": [],
+        "libraryCards": []
+      },
+      "path": "390-auth-forgot.png",
+      "pixelWidth": 390,
+      "pixelHeight": 844,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 390,
+      "name": "overview",
+      "sha256": "0b88d1c93a80f57c1f4b84c74b3e65eb9251b3417659609856d4d0d848818a4d",
+      "bytes": 316820,
+      "capturedAtUTC": "2026-11-04T20:29:50.508Z",
+      "viewport": 390,
+      "documentWidth": 390,
+      "scrollY": 0,
+      "route": "#overview",
+      "title": "Overview \u00b7 FORMA",
+      "heading": "A little stronger, every day.",
+      "headingFocused": true,
+      "auth": null,
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [],
+        "backgrounds": [
+          {
+            "src": "https://forma-staging.raoufabedini.dev/images/training-hero.webp",
+            "ready": true,
+            "width": 1536,
+            "height": 1024
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/images/routine-photos.webp",
+            "ready": true,
+            "width": 1536,
+            "height": 1024
+          }
+        ],
+        "libraryCards": []
+      },
+      "path": "390-overview.png",
+      "pixelWidth": 390,
+      "pixelHeight": 2002,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 390,
+      "name": "library",
+      "sha256": "a155b35c0a134089d47684906bf3ca58c404968c03b315584926dcfb77a61102",
+      "bytes": 313015,
+      "capturedAtUTC": "2026-11-04T20:29:51.859Z",
+      "viewport": 390,
+      "documentWidth": 390,
+      "scrollY": 0,
+      "route": "#library",
+      "title": "Exercise library \u00b7 FORMA",
+      "heading": "Good form. Better sessions.",
+      "headingFocused": true,
+      "auth": null,
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-04-e1095f31c69951f0.webp?v=638726164664",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/cardio-01-5c38f1ac06c14b8d.webp?v=56afef82c735",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-03-988892f417205330.webp?v=399c8a35687d",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-retry-11584f1d40205695.webp?v=ae22bd62d1cf",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/corrections-001-d8f73f2ae7c3ccac.webp?v=e8f308e3856a",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-7a9ea285cb29df52.webp?v=e8ebefd1dc56",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp?v=004a10f349f6",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp?v=004a10f349f6",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          }
+        ],
+        "backgrounds": [],
+        "libraryCards": [
+          {
+            "name": "Barbell bench press",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "One-arm dumbbell row",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Dumbbell shoulder press",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Lat pulldown",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-04-e1095f31c69951f0.webp?v=638726164664",
+            "ready": true
+          },
+          {
+            "name": "Dumbbell biceps curl",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Cable triceps pushdown",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/cardio-01-5c38f1ac06c14b8d.webp?v=56afef82c735",
+            "ready": true
+          },
+          {
+            "name": "Barbell back squat",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Romanian deadlift",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Leg press",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-03-988892f417205330.webp?v=399c8a35687d",
+            "ready": true
+          },
+          {
+            "name": "Dumbbell reverse lunge",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Standing calf raise",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Kettlebell goblet squat",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Push-up",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Dumbbell lateral raise",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Dead bug",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "1 Leg Box Squat",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true
+          },
+          {
+            "name": "1-Arm Half-Kneeling Lat Pulldown",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true
+          },
+          {
+            "name": "Half-kneeling thoracic rotation",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-retry-11584f1d40205695.webp?v=ae22bd62d1cf",
+            "ready": true
+          },
+          {
+            "name": "3/4 Sit-Up",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/corrections-001-d8f73f2ae7c3ccac.webp?v=e8f308e3856a",
+            "ready": true
+          },
+          {
+            "name": "Seated machine abdominal crunch",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-7a9ea285cb29df52.webp?v=e8ebefd1dc56",
+            "ready": true
+          },
+          {
+            "name": "3D lunge warmup",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true
+          },
+          {
+            "name": "90/90 Breathing",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp?v=004a10f349f6",
+            "ready": true
+          },
+          {
+            "name": "90/90 Hamstring",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true
+          },
+          {
+            "name": "90/90 Hip Switches",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp?v=004a10f349f6",
+            "ready": true
+          }
+        ]
+      },
+      "path": "390-library.png",
+      "pixelWidth": 390,
+      "pixelHeight": 4108,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 390,
+      "name": "progress",
+      "sha256": "7c7c180d5c4d09d4026677c7244f4b65f1a5598d4b4cc792e011efe0354c8ff0",
+      "bytes": 93891,
+      "capturedAtUTC": "2026-11-04T20:29:51.946Z",
+      "viewport": 390,
+      "documentWidth": 390,
+      "scrollY": 0,
+      "route": "#progress",
+      "title": "Progress \u00b7 FORMA",
+      "heading": "See your strength take shape.",
+      "headingFocused": true,
+      "auth": null,
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [],
+        "backgrounds": [],
+        "libraryCards": []
+      },
+      "path": "390-progress.png",
+      "pixelWidth": 390,
+      "pixelHeight": 887,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 390,
+      "name": "privacy",
+      "sha256": "c89c01aa5ff46908a85d203420dc2825ab3064eda550b1850698128126c22efe",
+      "bytes": 685235,
+      "capturedAtUTC": "2026-11-04T20:29:52.128Z",
+      "viewport": 390,
+      "documentWidth": 390,
+      "scrollY": 0,
+      "route": "#privacy",
+      "title": "Privacy Policy \u00b7 FORMA",
+      "heading": "Privacy Policy",
+      "headingFocused": true,
+      "auth": null,
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [],
+        "backgrounds": [],
+        "libraryCards": []
+      },
+      "path": "390-privacy.png",
+      "pixelWidth": 390,
+      "pixelHeight": 6932,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 1440,
+      "name": "auth-signin",
+      "sha256": "a582da44dbe30a35464c6b0feb6ea55b1ef6458b181c10001eeaf92f79dbbaaa",
+      "bytes": 95861,
+      "capturedAtUTC": "2026-11-04T20:29:52.683Z",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "scrollY": 0,
+      "route": "#account",
+      "title": "Account \u00b7 FORMA",
+      "heading": "Welcome back",
+      "headingFocused": true,
+      "auth": {
+        "clientWidth": 938,
+        "scrollWidth": 938,
+        "clipped": []
+      },
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [],
+        "backgrounds": [],
+        "libraryCards": []
+      },
+      "path": "1440-auth-signin.png",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 1440,
+      "name": "auth-signup",
+      "sha256": "7fea64dc8fcc900fc69f02002b608d085595f9521c2241ed728826236ff881b0",
+      "bytes": 135544,
+      "capturedAtUTC": "2026-11-04T20:29:52.839Z",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "scrollY": 0,
+      "route": "#account",
+      "title": "Account \u00b7 FORMA",
+      "heading": "Create your account",
+      "headingFocused": true,
+      "auth": {
+        "clientWidth": 938,
+        "scrollWidth": 938,
+        "clipped": []
+      },
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [],
+        "backgrounds": [],
+        "libraryCards": []
+      },
+      "path": "1440-auth-signup.png",
+      "pixelWidth": 1440,
+      "pixelHeight": 1038,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 1440,
+      "name": "auth-forgot",
+      "sha256": "4530dcff04f82b3fffef54a2c2d70145a2bf255f7791f873a520d1267a08329a",
+      "bytes": 91110,
+      "capturedAtUTC": "2026-11-04T20:29:53.002Z",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "scrollY": 0,
+      "route": "#account",
+      "title": "Account \u00b7 FORMA",
+      "heading": "Reset your password",
+      "headingFocused": true,
+      "auth": {
+        "clientWidth": 938,
+        "scrollWidth": 938,
+        "clipped": []
+      },
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [],
+        "backgrounds": [],
+        "libraryCards": []
+      },
+      "path": "1440-auth-forgot.png",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 1440,
+      "name": "overview",
+      "sha256": "8bfd46c07e64789b3a9dcaed22c19f063119789390951bcfde46a5256ca4a6a7",
+      "bytes": 624651,
+      "capturedAtUTC": "2026-11-04T20:29:53.263Z",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "scrollY": 0,
+      "route": "#overview",
+      "title": "Overview \u00b7 FORMA",
+      "heading": "A little stronger, every day.",
+      "headingFocused": true,
+      "auth": null,
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [],
+        "backgrounds": [
+          {
+            "src": "https://forma-staging.raoufabedini.dev/images/training-hero.webp",
+            "ready": true,
+            "width": 1536,
+            "height": 1024
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/images/routine-photos.webp",
+            "ready": true,
+            "width": 1536,
+            "height": 1024
+          }
+        ],
+        "libraryCards": []
+      },
+      "path": "1440-overview.png",
+      "pixelWidth": 1440,
+      "pixelHeight": 1343,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 1440,
+      "name": "library",
+      "sha256": "ae5c42456522c9792a0ca9851fdd8c771c933629a94408d7e509cc749070ac48",
+      "bytes": 339641,
+      "capturedAtUTC": "2026-11-04T20:29:54.627Z",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "scrollY": 0,
+      "route": "#library",
+      "title": "Exercise library \u00b7 FORMA",
+      "heading": "Good form. Better sessions.",
+      "headingFocused": true,
+      "auth": null,
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-04-e1095f31c69951f0.webp?v=638726164664",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/cardio-01-5c38f1ac06c14b8d.webp?v=56afef82c735",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-03-988892f417205330.webp?v=399c8a35687d",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-retry-11584f1d40205695.webp?v=ae22bd62d1cf",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/corrections-001-d8f73f2ae7c3ccac.webp?v=e8f308e3856a",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-7a9ea285cb29df52.webp?v=e8ebefd1dc56",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp?v=004a10f349f6",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          },
+          {
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp?v=004a10f349f6",
+            "ready": true,
+            "width": 768,
+            "height": 512
+          }
+        ],
+        "backgrounds": [],
+        "libraryCards": [
+          {
+            "name": "Barbell bench press",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "One-arm dumbbell row",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Dumbbell shoulder press",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Lat pulldown",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-04-e1095f31c69951f0.webp?v=638726164664",
+            "ready": true
+          },
+          {
+            "name": "Dumbbell biceps curl",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Cable triceps pushdown",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/cardio-01-5c38f1ac06c14b8d.webp?v=56afef82c735",
+            "ready": true
+          },
+          {
+            "name": "Barbell back squat",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Romanian deadlift",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Leg press",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-03-988892f417205330.webp?v=399c8a35687d",
+            "ready": true
+          },
+          {
+            "name": "Dumbbell reverse lunge",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Standing calf raise",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Kettlebell goblet squat",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Push-up",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Dumbbell lateral raise",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "Dead bug",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+            "ready": true
+          },
+          {
+            "name": "1 Leg Box Squat",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true
+          },
+          {
+            "name": "1-Arm Half-Kneeling Lat Pulldown",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true
+          },
+          {
+            "name": "Half-kneeling thoracic rotation",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-retry-11584f1d40205695.webp?v=ae22bd62d1cf",
+            "ready": true
+          },
+          {
+            "name": "3/4 Sit-Up",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/corrections-001-d8f73f2ae7c3ccac.webp?v=e8f308e3856a",
+            "ready": true
+          },
+          {
+            "name": "Seated machine abdominal crunch",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-7a9ea285cb29df52.webp?v=e8ebefd1dc56",
+            "ready": true
+          },
+          {
+            "name": "3D lunge warmup",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true
+          },
+          {
+            "name": "90/90 Breathing",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp?v=004a10f349f6",
+            "ready": true
+          },
+          {
+            "name": "90/90 Hamstring",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+            "ready": true
+          },
+          {
+            "name": "90/90 Hip Switches",
+            "imagePresent": true,
+            "src": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp?v=004a10f349f6",
+            "ready": true
+          }
+        ]
+      },
+      "path": "1440-library.png",
+      "pixelWidth": 1440,
+      "pixelHeight": 2244,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 1440,
+      "name": "progress",
+      "sha256": "0aaac291d80ef7edeadcd19ec3133386c14d3e24ad2ebdbbe945f337709845c1",
+      "bytes": 216369,
+      "capturedAtUTC": "2026-11-04T20:29:54.737Z",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "scrollY": 0,
+      "route": "#progress",
+      "title": "Progress \u00b7 FORMA",
+      "heading": "See your strength take shape.",
+      "headingFocused": true,
+      "auth": null,
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [],
+        "backgrounds": [],
+        "libraryCards": []
+      },
+      "path": "1440-progress.png",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    },
+    {
+      "width": 1440,
+      "name": "privacy",
+      "sha256": "1c1401ebe3eea42110b864af3c1de6aa3a3e469cfb57693224c8d944c010c24c",
+      "bytes": 796302,
+      "capturedAtUTC": "2026-11-04T20:29:54.959Z",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "scrollY": 0,
+      "route": "#privacy",
+      "title": "Privacy Policy \u00b7 FORMA",
+      "heading": "Privacy Policy",
+      "headingFocused": true,
+      "auth": null,
+      "entryAssets": [
+        "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+        "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+      ],
+      "media": {
+        "fonts": {
+          "ready": true
+        },
+        "images": [],
+        "backgrounds": [],
+        "libraryCards": []
+      },
+      "path": "1440-privacy.png",
+      "pixelWidth": 1440,
+      "pixelHeight": 4402,
+      "pixelProcessing": "None; copied byte-for-byte from the native full-page browser capture."
+    }
+  ],
+  "requests": [
+    {
+      "width": 320,
+      "state": "auth-signin",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/",
+      "type": "document"
+    },
+    {
+      "width": 320,
+      "state": "auth-signin",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/fonts/dm-sans-variable.woff2",
+      "type": "font"
+    },
+    {
+      "width": 320,
+      "state": "auth-signin",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/fonts/barlow-condensed-700.woff2",
+      "type": "font"
+    },
+    {
+      "width": 320,
+      "state": "auth-signin",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+      "type": "script"
+    },
+    {
+      "width": 320,
+      "state": "auth-signin",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css",
+      "type": "stylesheet"
+    },
+    {
+      "width": 320,
+      "state": "auth-signin",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/api/auth/get-session",
+      "type": "fetch"
+    },
+    {
+      "width": 320,
+      "state": "overview",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/images/training-hero.webp",
+      "type": "image"
+    },
+    {
+      "width": 320,
+      "state": "overview",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/images/routine-photos.webp",
+      "type": "image"
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp",
+      "type": "image"
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-04-e1095f31c69951f0.webp",
+      "type": "image"
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/cardio-01-5c38f1ac06c14b8d.webp",
+      "type": "image"
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-03-988892f417205330.webp",
+      "type": "image"
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp",
+      "type": "image"
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-retry-11584f1d40205695.webp",
+      "type": "image"
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/corrections-001-d8f73f2ae7c3ccac.webp",
+      "type": "image"
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-7a9ea285cb29df52.webp",
+      "type": "image"
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp",
+      "type": "image"
+    },
+    {
+      "width": 390,
+      "state": "auth-signin",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/",
+      "type": "document"
+    },
+    {
+      "width": 390,
+      "state": "auth-signin",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/fonts/dm-sans-variable.woff2",
+      "type": "font"
+    },
+    {
+      "width": 390,
+      "state": "auth-signin",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/fonts/barlow-condensed-700.woff2",
+      "type": "font"
+    },
+    {
+      "width": 390,
+      "state": "auth-signin",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+      "type": "script"
+    },
+    {
+      "width": 390,
+      "state": "auth-signin",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css",
+      "type": "stylesheet"
+    },
+    {
+      "width": 390,
+      "state": "auth-signin",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/api/auth/get-session",
+      "type": "fetch"
+    },
+    {
+      "width": 390,
+      "state": "overview",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/images/training-hero.webp",
+      "type": "image"
+    },
+    {
+      "width": 390,
+      "state": "overview",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/images/routine-photos.webp",
+      "type": "image"
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp",
+      "type": "image"
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-04-e1095f31c69951f0.webp",
+      "type": "image"
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/cardio-01-5c38f1ac06c14b8d.webp",
+      "type": "image"
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-03-988892f417205330.webp",
+      "type": "image"
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp",
+      "type": "image"
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-retry-11584f1d40205695.webp",
+      "type": "image"
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/corrections-001-d8f73f2ae7c3ccac.webp",
+      "type": "image"
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-7a9ea285cb29df52.webp",
+      "type": "image"
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp",
+      "type": "image"
+    },
+    {
+      "width": 1440,
+      "state": "auth-signin",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/",
+      "type": "document"
+    },
+    {
+      "width": 1440,
+      "state": "auth-signin",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/fonts/dm-sans-variable.woff2",
+      "type": "font"
+    },
+    {
+      "width": 1440,
+      "state": "auth-signin",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/fonts/barlow-condensed-700.woff2",
+      "type": "font"
+    },
+    {
+      "width": 1440,
+      "state": "auth-signin",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+      "type": "script"
+    },
+    {
+      "width": 1440,
+      "state": "auth-signin",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css",
+      "type": "stylesheet"
+    },
+    {
+      "width": 1440,
+      "state": "auth-signin",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/api/auth/get-session",
+      "type": "fetch"
+    },
+    {
+      "width": 1440,
+      "state": "overview",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/images/training-hero.webp",
+      "type": "image"
+    },
+    {
+      "width": 1440,
+      "state": "overview",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/images/routine-photos.webp",
+      "type": "image"
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp",
+      "type": "image"
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-04-e1095f31c69951f0.webp",
+      "type": "image"
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/cardio-01-5c38f1ac06c14b8d.webp",
+      "type": "image"
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-03-988892f417205330.webp",
+      "type": "image"
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp",
+      "type": "image"
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-retry-11584f1d40205695.webp",
+      "type": "image"
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/corrections-001-d8f73f2ae7c3ccac.webp",
+      "type": "image"
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-7a9ea285cb29df52.webp",
+      "type": "image"
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "method": "GET",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp",
+      "type": "image"
+    }
+  ],
+  "assets": [
+    {
+      "url": "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css",
+      "status": 200,
+      "type": "stylesheet",
+      "range": null,
+      "contentType": "text/css",
+      "bytes": 87943,
+      "sha256": "4ddda639f103749649db8ddf7a1827f93b2413b9479c820914d7896c1b2f58e6",
+      "representation": "native response body; partial if content-range is set"
+    },
+    {
+      "url": "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+      "status": 200,
+      "type": "script",
+      "range": null,
+      "contentType": "text/javascript",
+      "bytes": 3003264,
+      "sha256": "ab84391595f2515995f8aac8a67296a670432fcc957199f9d83c626672941617",
+      "representation": "native response body; partial if content-range is set"
+    },
+    {
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-7a9ea285cb29df52.webp?v=e8ebefd1dc56",
+      "status": 200,
+      "type": "image",
+      "range": null,
+      "contentType": "image/webp",
+      "bytes": 22484,
+      "sha256": "e8ebefd1dc564bb4f392ef7228a71a1f08780dcb8857793ad158dea64cddf15d",
+      "representation": "native response body; partial if content-range is set"
+    },
+    {
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-retry-11584f1d40205695.webp?v=ae22bd62d1cf",
+      "status": 200,
+      "type": "image",
+      "range": null,
+      "contentType": "image/webp",
+      "bytes": 19900,
+      "sha256": "ae22bd62d1cf0cca4fdb3c0d1c3660fa8ec9426a99a567d42bd9875fd3483d5e",
+      "representation": "native response body; partial if content-range is set"
+    },
+    {
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/cardio-01-5c38f1ac06c14b8d.webp?v=56afef82c735",
+      "status": 200,
+      "type": "image",
+      "range": null,
+      "contentType": "image/webp",
+      "bytes": 37334,
+      "sha256": "56afef82c73507537920c9f7712e44c3413acad69aa36fd1e587a3547c38441c",
+      "representation": "native response body; partial if content-range is set"
+    },
+    {
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/corrections-001-d8f73f2ae7c3ccac.webp?v=e8f308e3856a",
+      "status": 200,
+      "type": "image",
+      "range": null,
+      "contentType": "image/webp",
+      "bytes": 22816,
+      "sha256": "e8f308e3856a2ced82a46128348c60ff134c30c1bd9f260062cdfde8764424c9",
+      "representation": "native response body; partial if content-range is set"
+    },
+    {
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+      "status": 200,
+      "type": "image",
+      "range": null,
+      "contentType": "image/webp",
+      "bytes": 32796,
+      "sha256": "61cba335e8b238cd8124df8aeb0860d9e6ae8d293df12dfd6b4cf5afe6364f77",
+      "representation": "native response body; partial if content-range is set"
+    },
+    {
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-03-988892f417205330.webp?v=399c8a35687d",
+      "status": 200,
+      "type": "image",
+      "range": null,
+      "contentType": "image/webp",
+      "bytes": 38028,
+      "sha256": "399c8a35687d6cb548c9f27791a986b535c0652dcf54a8dcdd6e52997fea26d4",
+      "representation": "native response body; partial if content-range is set"
+    },
+    {
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-04-e1095f31c69951f0.webp?v=638726164664",
+      "status": 200,
+      "type": "image",
+      "range": null,
+      "contentType": "image/webp",
+      "bytes": 46944,
+      "sha256": "6387261646641aa8cb7c4935dcb1a500bab817add84cb899f94e19c69f9ec1b6",
+      "representation": "native response body; partial if content-range is set"
+    },
+    {
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp?v=004a10f349f6",
+      "status": 200,
+      "type": "image",
+      "range": null,
+      "contentType": "image/webp",
+      "bytes": 26542,
+      "sha256": "004a10f349f69e3e955fceeb20334dfd2268655f35f4a846bdaac28ccf5d5fd1",
+      "representation": "native response body; partial if content-range is set"
+    },
+    {
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+      "status": 200,
+      "type": "image",
+      "range": null,
+      "contentType": "image/webp",
+      "bytes": 31290,
+      "sha256": "5875fa6d45409ff34dbc46d82acb6e463d47dd9862d38be4867a13bcd0603301",
+      "representation": "native response body; partial if content-range is set"
+    },
+    {
+      "url": "https://forma-staging.raoufabedini.dev/fonts/barlow-condensed-700.woff2",
+      "status": 200,
+      "type": "font",
+      "range": null,
+      "contentType": "font/woff2",
+      "bytes": 22444,
+      "sha256": "3787a5a419171630e6890cfa47c4da067474d005cd0ff8dc11ec090fdc3ee2b8",
+      "representation": "native response body; partial if content-range is set"
+    },
+    {
+      "url": "https://forma-staging.raoufabedini.dev/fonts/dm-sans-variable.woff2",
+      "status": 200,
+      "type": "font",
+      "range": null,
+      "contentType": "font/woff2",
+      "bytes": 36932,
+      "sha256": "9fea608a947e67020c33cad9a6fe3d60c54119dfb8cff87768a8117a15ed7543",
+      "representation": "native response body; partial if content-range is set"
+    },
+    {
+      "url": "https://forma-staging.raoufabedini.dev/images/routine-photos.webp",
+      "status": 200,
+      "type": "image",
+      "range": null,
+      "contentType": "image/webp",
+      "bytes": 119526,
+      "sha256": "ffef857402907eee61cbc9e65f894b5348609b44a3b92320127a6efa4e4319ee",
+      "representation": "native response body; partial if content-range is set"
+    },
+    {
+      "url": "https://forma-staging.raoufabedini.dev/images/training-hero.webp",
+      "status": 200,
+      "type": "image",
+      "range": null,
+      "contentType": "image/webp",
+      "bytes": 127994,
+      "sha256": "b65965485c5e15ae8da35cf190a3124ca964e4b2bafa5e8cbcc2bddd62126ce8",
+      "representation": "native response body; partial if content-range is set"
+    }
+  ],
+  "assetResponses": [
+    {
+      "width": 320,
+      "state": "auth-signin",
+      "url": "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css",
+      "status": 200,
+      "type": "stylesheet",
+      "range": null
+    },
+    {
+      "width": 320,
+      "state": "auth-signin",
+      "url": "https://forma-staging.raoufabedini.dev/fonts/barlow-condensed-700.woff2",
+      "status": 200,
+      "type": "font",
+      "range": null
+    },
+    {
+      "width": 320,
+      "state": "auth-signin",
+      "url": "https://forma-staging.raoufabedini.dev/fonts/dm-sans-variable.woff2",
+      "status": 200,
+      "type": "font",
+      "range": null
+    },
+    {
+      "width": 320,
+      "state": "auth-signin",
+      "url": "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+      "status": 200,
+      "type": "script",
+      "range": null
+    },
+    {
+      "width": 320,
+      "state": "overview",
+      "url": "https://forma-staging.raoufabedini.dev/images/training-hero.webp",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 320,
+      "state": "overview",
+      "url": "https://forma-staging.raoufabedini.dev/images/routine-photos.webp",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-04-e1095f31c69951f0.webp?v=638726164664",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-03-988892f417205330.webp?v=399c8a35687d",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/cardio-01-5c38f1ac06c14b8d.webp?v=56afef82c735",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/corrections-001-d8f73f2ae7c3ccac.webp?v=e8f308e3856a",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-7a9ea285cb29df52.webp?v=e8ebefd1dc56",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-retry-11584f1d40205695.webp?v=ae22bd62d1cf",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 320,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp?v=004a10f349f6",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 390,
+      "state": "auth-signin",
+      "url": "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css",
+      "status": 200,
+      "type": "stylesheet",
+      "range": null
+    },
+    {
+      "width": 390,
+      "state": "auth-signin",
+      "url": "https://forma-staging.raoufabedini.dev/fonts/dm-sans-variable.woff2",
+      "status": 200,
+      "type": "font",
+      "range": null
+    },
+    {
+      "width": 390,
+      "state": "auth-signin",
+      "url": "https://forma-staging.raoufabedini.dev/fonts/barlow-condensed-700.woff2",
+      "status": 200,
+      "type": "font",
+      "range": null
+    },
+    {
+      "width": 390,
+      "state": "auth-signin",
+      "url": "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+      "status": 200,
+      "type": "script",
+      "range": null
+    },
+    {
+      "width": 390,
+      "state": "overview",
+      "url": "https://forma-staging.raoufabedini.dev/images/training-hero.webp",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 390,
+      "state": "overview",
+      "url": "https://forma-staging.raoufabedini.dev/images/routine-photos.webp",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-04-e1095f31c69951f0.webp?v=638726164664",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-7a9ea285cb29df52.webp?v=e8ebefd1dc56",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/cardio-01-5c38f1ac06c14b8d.webp?v=56afef82c735",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-retry-11584f1d40205695.webp?v=ae22bd62d1cf",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp?v=004a10f349f6",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/corrections-001-d8f73f2ae7c3ccac.webp?v=e8f308e3856a",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 390,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-03-988892f417205330.webp?v=399c8a35687d",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 1440,
+      "state": "auth-signin",
+      "url": "https://forma-staging.raoufabedini.dev/fonts/dm-sans-variable.woff2",
+      "status": 200,
+      "type": "font",
+      "range": null
+    },
+    {
+      "width": 1440,
+      "state": "auth-signin",
+      "url": "https://forma-staging.raoufabedini.dev/fonts/barlow-condensed-700.woff2",
+      "status": 200,
+      "type": "font",
+      "range": null
+    },
+    {
+      "width": 1440,
+      "state": "auth-signin",
+      "url": "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css",
+      "status": 200,
+      "type": "stylesheet",
+      "range": null
+    },
+    {
+      "width": 1440,
+      "state": "auth-signin",
+      "url": "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+      "status": 200,
+      "type": "script",
+      "range": null
+    },
+    {
+      "width": 1440,
+      "state": "overview",
+      "url": "https://forma-staging.raoufabedini.dev/images/routine-photos.webp",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 1440,
+      "state": "overview",
+      "url": "https://forma-staging.raoufabedini.dev/images/training-hero.webp",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/foundations-01-d3c7fa204e498922.webp?v=61cba335e8b2",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-04-e1095f31c69951f0.webp?v=638726164664",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-7a9ea285cb29df52.webp?v=e8ebefd1dc56",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/corrections-001-d8f73f2ae7c3ccac.webp?v=e8f308e3856a",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/cardio-01-5c38f1ac06c14b8d.webp?v=56afef82c735",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/authored-a-001-retry-11584f1d40205695.webp?v=ae22bd62d1cf",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/machines-03-988892f417205330.webp?v=399c8a35687d",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/mobility-01-141a68d883c6178a.webp?v=004a10f349f6",
+      "status": 200,
+      "type": "image",
+      "range": null
+    },
+    {
+      "width": 1440,
+      "state": "library",
+      "url": "https://forma-staging.raoufabedini.dev/exercise-media/previews/movements-001-76e92487b9f2bd81.webp?v=5875fa6d4540",
+      "status": 200,
+      "type": "image",
+      "range": null
+    }
+  ],
+  "entryAssetFingerprints": [
+    [
+      "https://forma-staging.raoufabedini.dev/assets/index-Dm61V8rK.js",
+      "https://forma-staging.raoufabedini.dev/assets/index-BCQfzh-4.css"
+    ]
+  ],
+  "phaseAssetConsistency": true,
+  "authEmblemGeometry": [
+    {
+      "viewport": 320,
+      "text": "Your routines and training history stay with your account, ready wherever you train.",
+      "fontLoaded": true,
+      "font": {
+        "family": "\"DM Sans\", sans-serif",
+        "size": "11px",
+        "weight": "400"
+      },
+      "lineRects": [
+        {
+          "left": 42,
+          "right": 172.4375,
+          "top": 258.9375,
+          "bottom": 272.9375,
+          "width": 130.4375,
+          "height": 14
+        },
+        {
+          "left": 42,
+          "right": 199.109375,
+          "top": 277.078125,
+          "bottom": 291.078125,
+          "width": 157.109375,
+          "height": 14
+        },
+        {
+          "left": 42,
+          "right": 170.515625,
+          "top": 295.21875,
+          "bottom": 309.21875,
+          "width": 128.515625,
+          "height": 14
+        }
+      ],
+      "emblemRect": {
+        "left": 223,
+        "right": 283,
+        "top": 255.359375,
+        "bottom": 315.359375,
+        "width": 60,
+        "height": 60
+      },
+      "asideRect": {
+        "left": 17,
+        "right": 303,
+        "top": 123,
+        "bottom": 335.359375,
+        "width": 286,
+        "height": 212.359375
+      },
+      "overlaps": 0,
+      "clippedLines": 0,
+      "clippedControls": 0,
+      "documentWidth": 320,
+      "passed": true
+    },
+    {
+      "viewport": 360,
+      "text": "Your routines and training history stay with your account, ready wherever you train.",
+      "fontLoaded": true,
+      "font": {
+        "family": "\"DM Sans\", sans-serif",
+        "size": "11px",
+        "weight": "400"
+      },
+      "lineRects": [
+        {
+          "left": 42,
+          "right": 234.921875,
+          "top": 258.9375,
+          "bottom": 272.9375,
+          "width": 192.921875,
+          "height": 14
+        },
+        {
+          "left": 42,
+          "right": 239.625,
+          "top": 277.078125,
+          "bottom": 291.078125,
+          "width": 197.625,
+          "height": 14
+        },
+        {
+          "left": 42,
+          "right": 67.5,
+          "top": 295.21875,
+          "bottom": 309.21875,
+          "width": 25.5,
+          "height": 14
+        }
+      ],
+      "emblemRect": {
+        "left": 263,
+        "right": 323,
+        "top": 255.359375,
+        "bottom": 315.359375,
+        "width": 60,
+        "height": 60
+      },
+      "asideRect": {
+        "left": 17,
+        "right": 343,
+        "top": 123,
+        "bottom": 335.359375,
+        "width": 326,
+        "height": 212.359375
+      },
+      "overlaps": 0,
+      "clippedLines": 0,
+      "clippedControls": 0,
+      "documentWidth": 360,
+      "passed": true
+    },
+    {
+      "viewport": 375,
+      "text": "Your routines and training history stay with your account, ready wherever you train.",
+      "fontLoaded": true,
+      "font": {
+        "family": "\"DM Sans\", sans-serif",
+        "size": "11px",
+        "weight": "400"
+      },
+      "lineRects": [
+        {
+          "left": 42,
+          "right": 234.921875,
+          "top": 258.9375,
+          "bottom": 272.9375,
+          "width": 192.921875,
+          "height": 14
+        },
+        {
+          "left": 42,
+          "right": 239.625,
+          "top": 277.078125,
+          "bottom": 291.078125,
+          "width": 197.625,
+          "height": 14
+        },
+        {
+          "left": 42,
+          "right": 67.5,
+          "top": 295.21875,
+          "bottom": 309.21875,
+          "width": 25.5,
+          "height": 14
+        }
+      ],
+      "emblemRect": {
+        "left": 278,
+        "right": 338,
+        "top": 255.359375,
+        "bottom": 315.359375,
+        "width": 60,
+        "height": 60
+      },
+      "asideRect": {
+        "left": 17,
+        "right": 358,
+        "top": 123,
+        "bottom": 335.359375,
+        "width": 341,
+        "height": 212.359375
+      },
+      "overlaps": 0,
+      "clippedLines": 0,
+      "clippedControls": 0,
+      "documentWidth": 375,
+      "passed": true
+    },
+    {
+      "viewport": 390,
+      "text": "Your routines and training history stay with your account, ready wherever you train.",
+      "fontLoaded": true,
+      "font": {
+        "family": "\"DM Sans\", sans-serif",
+        "size": "11px",
+        "weight": "400"
+      },
+      "lineRects": [
+        {
+          "left": 46,
+          "right": 263.515625,
+          "top": 258.9375,
+          "bottom": 272.9375,
+          "width": 217.515625,
+          "height": 14
+        },
+        {
+          "left": 46,
+          "right": 247.453125,
+          "top": 277.078125,
+          "bottom": 291.078125,
+          "width": 201.453125,
+          "height": 14
+        }
+      ],
+      "emblemRect": {
+        "left": 289,
+        "right": 349,
+        "top": 237.21875,
+        "bottom": 297.21875,
+        "width": 60,
+        "height": 60
+      },
+      "asideRect": {
+        "left": 21,
+        "right": 369,
+        "top": 123,
+        "bottom": 317.21875,
+        "width": 348,
+        "height": 194.21875
+      },
+      "overlaps": 0,
+      "clippedLines": 0,
+      "clippedControls": 0,
+      "documentWidth": 390,
+      "passed": true
+    },
+    {
+      "viewport": 430,
+      "text": "Your routines and training history stay with your account, ready wherever you train.",
+      "fontLoaded": true,
+      "font": {
+        "family": "\"DM Sans\", sans-serif",
+        "size": "11px",
+        "weight": "400"
+      },
+      "lineRects": [
+        {
+          "left": 46,
+          "right": 288.9375,
+          "top": 258.9375,
+          "bottom": 272.9375,
+          "width": 242.9375,
+          "height": 14
+        },
+        {
+          "left": 46,
+          "right": 222.03125,
+          "top": 277.078125,
+          "bottom": 291.078125,
+          "width": 176.03125,
+          "height": 14
+        }
+      ],
+      "emblemRect": {
+        "left": 329,
+        "right": 389,
+        "top": 237.21875,
+        "bottom": 297.21875,
+        "width": 60,
+        "height": 60
+      },
+      "asideRect": {
+        "left": 21,
+        "right": 409,
+        "top": 123,
+        "bottom": 317.21875,
+        "width": 388,
+        "height": 194.21875
+      },
+      "overlaps": 0,
+      "clippedLines": 0,
+      "clippedControls": 0,
+      "documentWidth": 430,
+      "passed": true
+    },
+    {
+      "viewport": 540,
+      "text": "Your routines and training history stay with your account, ready wherever you train.",
+      "fontLoaded": true,
+      "font": {
+        "family": "\"DM Sans\", sans-serif",
+        "size": "11px",
+        "weight": "400"
+      },
+      "lineRects": [
+        {
+          "left": 46,
+          "right": 288.9375,
+          "top": 258.9375,
+          "bottom": 272.9375,
+          "width": 242.9375,
+          "height": 14
+        },
+        {
+          "left": 46,
+          "right": 222.03125,
+          "top": 277.078125,
+          "bottom": 291.078125,
+          "width": 176.03125,
+          "height": 14
+        }
+      ],
+      "emblemRect": {
+        "left": 439,
+        "right": 499,
+        "top": 237.21875,
+        "bottom": 297.21875,
+        "width": 60,
+        "height": 60
+      },
+      "asideRect": {
+        "left": 21,
+        "right": 519,
+        "top": 123,
+        "bottom": 317.21875,
+        "width": 498,
+        "height": 194.21875
+      },
+      "overlaps": 0,
+      "clippedLines": 0,
+      "clippedControls": 0,
+      "documentWidth": 540,
+      "passed": true
+    }
+  ],
+  "errors": {
+    "unexpectedHTTP": [],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "requestFailures": [],
+    "unexpectedExternal": [],
+    "issues": []
+  },
+  "blockedCrossOriginRedirects": [],
+  "attemptHistory": [],
+  "observations": [
+    {
+      "kind": "supporting-copy fix visually verified",
+      "states": [
+        "320-auth-signup",
+        "390-auth-signup",
+        "1440-auth-signin"
+      ],
+      "finding": "Phone copy is visibly separate from the emblem; full copy, headline, form, consent and actions remain visible. Desktop remains coherent.",
+      "liveGeometry": "Six widths 320, 360, 375, 390, 430 and 540 passed loaded-font Range line/emblem and containment checks."
+    }
+  ],
+  "privateRawReceiptSHA256": "5f1833450fbcb2ec54f22676d5a9912473504f698455cb2bd461e4412c551c35",
+  "limitations": [
+    "Anonymous functional/media/focus smoke, not account sign-in or member mutation testing.",
+    "No new axe scan, manual assistive-technology, physical Safari, performance or blanket accessibility-conformance claim.",
+    "PNG dimensions are read from IHDR and all bytes verified against original capture hashes; this is not exercise-pose or licensing approval.",
+    "This phase alone does not establish production AFTER acceptance; see the later public-after receipt and matched comparison."
+  ]
+}

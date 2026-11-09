@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "finding": "WD-15",
+  "phase": "auth_breakpoint_fix_and_corrected_mode_reset_harness",
+  "outcome": "passed",
+  "testFile": "tests/accounts-design.spec.js",
+  "testName": "tablet authentication keeps every form inside its visible panel",
+  "counts": {
+    "executed": 5,
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "interrupted": 0,
+    "notRun": 0
+  },
+  "runnerDurationSeconds": 41.8,
+  "durationBoundary": "Runner elapsed time is not application performance. A null total means the raw summary did not report overall elapsed time; per-project test durations remain recorded.",
+  "projectResults": [
+    {
+      "project": "chromium",
+      "outcome": "passed",
+      "testDurationSeconds": 3.8
+    },
+    {
+      "project": "chromium-mobile",
+      "outcome": "passed",
+      "testDurationSeconds": 3.9
+    },
+    {
+      "project": "firefox",
+      "outcome": "passed",
+      "testDurationSeconds": 4.6
+    },
+    {
+      "project": "webkit",
+      "outcome": "passed",
+      "testDurationSeconds": 8.4
+    },
+    {
+      "project": "webkit-mobile",
+      "outcome": "passed",
+      "testDurationSeconds": 8.3
+    }
+  ],
+  "cause": "The existing stacked authentication treatment applies through 960 CSS px; all controls and copy remain in the visible panel. The harness explicitly returns to sign-in between widths.",
+  "privateRawLog": {
+    "name": "auth-five-profiles-pass.log",
+    "sha256": "1011b193b27995c45689ed0421c5ba11dd3e4b212a871d9898c3876d765468d0",
+    "bytes": 1557,
+    "published": false,
+    "availability": "Private ignored local log; absent from repository checkout"
+  },
+  "limitations": [
+    "Synthetic intercepted API fixtures; not a full service-backed account matrix or physical Safari verification.",
+    "Structured result summary only; raw trace bodies, absolute machine paths and credential material are excluded."
+  ],
+  "checks": [
+    "768, 820 and 960 CSS px viewports",
+    "Sign-in, sign-up and password-reset modes",
+    "Internal panel scroll width",
+    "Visible card, aside, input, button and link bounds"
+  ]
+}

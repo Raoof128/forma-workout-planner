@@ -237,21 +237,46 @@ public actor WorkspaceStore {
   /// Pre-upgrade `forma-recovery-<UUID>.json` files deliberately remain: several
   /// stores shared that namespace, and their owner cannot be inferred safely.
   public func removeLocalFiles() throws {
+    let targets = try Self.removalTargets(for: url)
+    try database.close()
+    verified = nil
+    try Self.remove(targets)
+  }
+
+  /// Deliberate removal of a cache that cannot be opened, or artifacts left by
+  /// an interrupted removal. The caller must stop its sync engine and release
+  /// every connection first. This uses the same owner-scoped policy as an open
+  /// store; a damaged database never widens deletion authority.
+  public static func removeLocalFiles(at url: URL) throws {
+    try remove(removalTargets(for: url))
+  }
+
+  /// Identifies only the files this store creates. Shared by removal and the
+  /// app's discovery of recovery-only copies after a partially failed removal.
+  public static func isLocalArtifact(_ file: URL, for storeURL: URL) -> Bool {
+    guard
+      file.deletingLastPathComponent().standardizedFileURL
+        == storeURL.deletingLastPathComponent().standardizedFileURL
+    else { return false }
+    let names = [
+      storeURL.lastPathComponent, storeURL.lastPathComponent + "-wal",
+      storeURL.lastPathComponent + "-shm",
+    ]
+    let name = file.lastPathComponent
+    if names.contains(name) || isRecoveryFile(file, for: storeURL) { return true }
+    return names.contains { base in
+      let prefix = base + ".unreadable-"
+      guard name.hasPrefix(prefix) else { return false }
+      let stamp = name.dropFirst(prefix.count)
+      return !stamp.isEmpty && stamp.utf8.allSatisfy { (48...57).contains($0) }
+    }
+  }
+
+  private static func removalTargets(for url: URL) throws -> [URL] {
+    guard url.isFileURL else { throw FormaError.storage("A local file URL is required.") }
     let files = try FileManager.default.contentsOfDirectory(
       at: url.deletingLastPathComponent(), includingPropertiesForKeys: [.isDirectoryKey])
-    let names = [
-      url.lastPathComponent, url.lastPathComponent + "-wal", url.lastPathComponent + "-shm",
-    ]
-    let targets = files.filter { file in
-      let name = file.lastPathComponent
-      if names.contains(name) || Self.isRecoveryFile(file, for: url) { return true }
-      return names.contains { base in
-        let prefix = base + ".unreadable-"
-        guard name.hasPrefix(prefix) else { return false }
-        let stamp = name.dropFirst(prefix.count)
-        return !stamp.isEmpty && stamp.utf8.allSatisfy { (48...57).contains($0) }
-      }
-    }
+    let targets = files.filter { isLocalArtifact($0, for: url) }
     // Only files were created by the store; refuse unexpected directories
     // rather than treating an artifact-shaped name as recursive deletion authority.
     for file in targets {
@@ -259,8 +284,10 @@ public actor WorkspaceStore {
         throw FormaError.storage("A local cache artifact is not a file.")
       }
     }
-    try database.close()
-    verified = nil
+    return targets
+  }
+
+  private static func remove(_ targets: [URL]) throws {
     for file in targets {
       // Closing SQLite may itself remove its WAL/SHM files.
       do { try FileManager.default.removeItem(at: file) } catch {

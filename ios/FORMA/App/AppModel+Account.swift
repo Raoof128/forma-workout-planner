@@ -213,8 +213,14 @@ extension AppModel {
   /// Member copies on disk that no signed-in account is using.
   nonisolated static func savedMemberCopies(directory: URL) -> [URL] {
     let names = (try? FileManager.default.contentsOfDirectory(atPath: directory.path)) ?? []
-    return names.filter { $0.hasPrefix("member-") && $0.hasSuffix(".sqlite") }.sorted()
-      .map { directory.appendingPathComponent($0, isDirectory: false) }
+    let copies = names.compactMap { name -> URL? in
+      guard name.hasPrefix("member-"), let end = name.range(of: ".sqlite") else { return nil }
+      let base = String(name[..<end.upperBound])
+      let store = directory.appendingPathComponent(base, isDirectory: false)
+      let file = directory.appendingPathComponent(name, isDirectory: false)
+      return WorkspaceStore.isLocalArtifact(file, for: store) ? store : nil
+    }
+    return Array(Set(copies)).sorted { $0.lastPathComponent < $1.lastPathComponent }
   }
 
   /// Updates `account.hasSavedAccountCopy`: after a sign-out, a member's
@@ -241,21 +247,23 @@ extension AppModel {
       mutationGate.release()
       pendingMutations -= 1
     }
+    // Sign-in may have opened a member store while this action was queued.
+    // Never delete a newly active member's data or race its running sync engine.
+    guard activeMember == nil else {
+      throw AppFailure("Sign out first, then remove the saved copy.")
+    }
     var failed = false
     for url in Self.savedMemberCopies(directory: directory) {
+      let savedStore: WorkspaceStore
       do {
-        try await WorkspaceStore(url: url, catalog: catalog).removeLocalFiles()
+        savedStore = try WorkspaceStore(url: url, catalog: catalog)
       } catch {
-        // A copy FORMA cannot open (damaged) is still removed by name.
-        for suffix in ["", "-wal", "-shm"] {
-          let file = URL(fileURLWithPath: url.path + suffix)
-          do {
-            if FileManager.default.fileExists(atPath: file.path) {
-              try FileManager.default.removeItem(at: file)
-            }
-          } catch { failed = true }
-        }
+        // No connection survived initialization. Keep the exact same artifact
+        // checks when the damaged cache cannot be opened to close it normally.
+        do { try WorkspaceStore.removeLocalFiles(at: url) } catch { failed = true }
+        continue
       }
+      do { try await savedStore.removeLocalFiles() } catch { failed = true }
     }
     await refreshSavedAccountCopy()
     if failed || account.hasSavedAccountCopy {
@@ -489,20 +497,27 @@ extension AppModel {
   // MARK: Conflicts
 
   /// "Reload cloud data": the account's copy replaces this iPhone's unsent edits.
-  func resolveConflictUsingAccount() async {
-    guard let sync else { return }
+  @discardableResult
+  func resolveConflictUsingAccount() async -> Bool {
+    guard let sync else { return false }
     let generation = syncGeneration
     let status = await sync.resolveConflictUsingAccount()
+    guard generation == syncGeneration else { return false }
     await reloadWorkspaceFromStore(after: status)
+    guard generation == syncGeneration else { return false }
     attempted(status, generation: generation)
+    return status == .idle
   }
 
   /// "Keep my version": this iPhone's copy replaces the account's.
-  func resolveConflictKeepingLocal() async {
-    guard let sync else { return }
+  @discardableResult
+  func resolveConflictKeepingLocal() async -> Bool {
+    guard let sync else { return false }
     let generation = syncGeneration
     let status = await sync.resolveConflictKeepingLocal()
+    guard generation == syncGeneration else { return false }
     attempted(status, generation: generation)
+    return status == .idle
   }
 
   // MARK: Signing out

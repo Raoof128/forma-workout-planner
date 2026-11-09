@@ -1,0 +1,109 @@
+{
+  "method": "Same physical device, OS, isolated Debug identity and synthetic fixtures; no speedup claim.",
+  "limitations": [
+    "XCTest tab-clock includes automation overhead",
+    "Incomplete launch metric",
+    "Small samples do not establish production latency, leaks, FPS, thermal or energy behavior"
+  ],
+  "metrics": [
+    {
+      "test": "WidgetProjectionPerformanceTests/testCanonicalRecordLimitProjectionPerformance()",
+      "metric": "Clock Monotonic Time",
+      "unit": "s",
+      "baseline_count": 10,
+      "final_count": 10,
+      "baseline_mean": 0.0201881868,
+      "final_mean": 0.0199258,
+      "difference": -0.00026238680000000014,
+      "percent_difference": -1.2997046371692982
+    },
+    {
+      "test": "NativePerformanceTests/testLaunchUntilResponsive()",
+      "metric": "Duration (ApplicationFirstFramePresentationResponsive)",
+      "unit": "s",
+      "baseline_count": 4,
+      "final_count": 4,
+      "baseline_mean": 0.45530051050000003,
+      "final_mean": 0.45836775,
+      "difference": 0.0030672394999999852,
+      "percent_difference": 0.6736736351627669
+    },
+    {
+      "test": "NativePerformanceTests/testRepeatedTabNavigationResources()",
+      "metric": "Memory Physical (audit202611)",
+      "unit": "kB",
+      "baseline_count": 5,
+      "final_count": 5,
+      "baseline_mean": -655.36,
+      "final_mean": -347.3408,
+      "difference": 308.0192,
+      "percent_difference": 47.0
+    },
+    {
+      "test": "NativePerformanceTests/testRepeatedTabNavigationResources()",
+      "metric": "Clock Monotonic Time",
+      "unit": "s",
+      "baseline_count": 5,
+      "final_count": 5,
+      "baseline_mean": 5.7123532818000005,
+      "final_mean": 5.749258,
+      "difference": 0.03690471819999974,
+      "percent_difference": 0.646051047255446
+    },
+    {
+      "test": "NativePerformanceTests/testRepeatedTabNavigationResources()",
+      "metric": "CPU Instructions Retired (audit202611)",
+      "unit": "kI",
+      "baseline_count": 5,
+      "final_count": 5,
+      "baseline_mean": 4670535.1854,
+      "final_mean": 4672871.0888,
+      "difference": 2335.903400000185,
+      "percent_difference": 0.05001361315727097
+    },
+    {
+      "test": "NativePerformanceTests/testRepeatedTabNavigationResources()",
+      "metric": "CPU Cycles (audit202611)",
+      "unit": "kC",
+      "baseline_count": 5,
+      "final_count": 5,
+      "baseline_mean": 2073519.7696,
+      "final_mean": 2139874.6722,
+      "difference": 66354.90259999991,
+      "percent_difference": 3.200109474374597
+    },
+    {
+      "test": "NativePerformanceTests/testRepeatedTabNavigationResources()",
+      "metric": "Absolute Memory Physical (audit202611)",
+      "unit": "kB",
+      "baseline_count": 5,
+      "final_count": 5,
+      "baseline_mean": 80155.7168,
+      "final_mean": 80018.0672,
+      "difference": -137.64959999998973,
+      "percent_difference": -0.17172773882547296
+    },
+    {
+      "test": "NativePerformanceTests/testRepeatedTabNavigationResources()",
+      "metric": "CPU Time (audit202611)",
+      "unit": "s",
+      "baseline_count": 5,
+      "final_count": 5,
+      "baseline_mean": 1.4715944188,
+      "final_mean": 1.4928928,
+      "difference": 0.021298381199999827,
+      "percent_difference": 1.4472996722403597
+    },
+    {
+      "test": "NativePerformanceTests/testRepeatedTabNavigationResources()",
+      "metric": "Memory Peak Physical (audit202611)",
+      "unit": "kB",
+      "baseline_count": 5,
+      "final_count": 5,
+      "baseline_mean": 82865.6304,
+      "final_mean": 82187.3088,
+      "difference": -678.3215999999957,
+      "percent_difference": -0.8185801480368581
+    }
+  ]
+}

@@ -15,6 +15,7 @@ import { weekDates, sameDay, dateKey, displayDate } from "../data";
 export default function Overview({
   data,
   saved,
+  memberMode = false,
   onStart,
   onRoutine,
   onNavigate,
@@ -317,7 +318,9 @@ export default function Overview({
       <div className="dashboard-footnote">
         <span className="small-status" />
         {saved
-          ? "Your space. Your pace. Saved on this device."
+          ? memberMode
+            ? "Your space. Your pace. Saved to your account."
+            : "Your space. Your pace. Saved on this device."
           : "Changes are temporary. Export your data in Settings."}
       </div>
     </>

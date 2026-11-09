@@ -1,0 +1,1474 @@
+{
+  "mode": "react",
+  "browser": "156.0.8078.4",
+  "createdAt": "2026-11-04T13:26:49.837Z",
+  "origins": {
+    "before": "http://127.0.0.1:5177",
+    "after": "http://127.0.0.1:5173"
+  },
+  "results": [
+    {
+      "phase": "before",
+      "trial": 1,
+      "inputHash": "2a96b92a80fb0083bf551f4c00673c1650019a6bb84b0a6dee4739a70928d98b",
+      "historySessions": 2000,
+      "samples": [
+        {
+          "id": "audit",
+          "renderPhase": "mount",
+          "actualDuration": 101.5,
+          "baseDuration": 86.49999999254942,
+          "startTime": 824.6000000014901,
+          "commitTime": 926.3999999985099,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8,
+          "baseDuration": 10.100000001490116,
+          "startTime": 1065.1000000014901,
+          "commitTime": 1073.2000000029802,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 0,
+          "baseDuration": 10.100000001490116,
+          "startTime": 1077.3999999985099,
+          "commitTime": 1078.8999999985099,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7.100000001490116,
+          "baseDuration": 9.100000001490116,
+          "startTime": 1087.8999999985099,
+          "commitTime": 1095,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 4.700000002980232,
+          "baseDuration": 9.900000005960464,
+          "startTime": 1257.6000000014901,
+          "commitTime": 1262.3000000044703,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.799999997019768,
+          "baseDuration": 17,
+          "startTime": 1508.2000000029802,
+          "commitTime": 1520.1000000014901,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 10.5,
+          "baseDuration": 15.5,
+          "startTime": 1757.8000000044703,
+          "commitTime": 1768.5,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 10.899999998509884,
+          "baseDuration": 16.100000008940697,
+          "startTime": 2009.2000000029802,
+          "commitTime": 2020.2000000029802,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 9.799999997019768,
+          "baseDuration": 15,
+          "startTime": 2258,
+          "commitTime": 2267.89999999851,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 12.5,
+          "baseDuration": 17.600000008940697,
+          "startTime": 2508.2000000029802,
+          "commitTime": 2520.89999999851,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 12.299999997019768,
+          "baseDuration": 17.5,
+          "startTime": 2757.5,
+          "commitTime": 2769.89999999851,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 12.50000000745058,
+          "baseDuration": 17.80000001192093,
+          "startTime": 3008.10000000149,
+          "commitTime": 3020.7000000029802,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 12.700000010430813,
+          "baseDuration": 17.700000010430813,
+          "startTime": 3257.89999999851,
+          "commitTime": 3270.8000000044703,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 13.899999998509884,
+          "baseDuration": 19.100000001490116,
+          "startTime": 3507.7000000029802,
+          "commitTime": 3521.8000000044703,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 6.100000001490116,
+          "baseDuration": 11.300000004470348,
+          "startTime": 3757.39999999851,
+          "commitTime": 3763.60000000149,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 9.799999997019768,
+          "baseDuration": 15.100000001490116,
+          "startTime": 4008.10000000149,
+          "commitTime": 4017.89999999851,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 0,
+          "baseDuration": 15,
+          "startTime": 4125.10000000149,
+          "commitTime": 4125.20000000298,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8.00000000745058,
+          "baseDuration": 9.900000005960464,
+          "startTime": 4136.70000000298,
+          "commitTime": 4144.80000000447,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7.399999998509884,
+          "baseDuration": 9.5,
+          "startTime": 4167.70000000298,
+          "commitTime": 4175.20000000298,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 6.600000001490116,
+          "baseDuration": 8.600000001490116,
+          "startTime": 4178.60000000149,
+          "commitTime": 4185.30000000447,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 0.10000000149011612,
+          "baseDuration": 8.700000002980232,
+          "startTime": 4225.60000000149,
+          "commitTime": 4225.80000000447,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "nested-update",
+          "actualDuration": 7.899999998509884,
+          "baseDuration": 9.899999998509884,
+          "startTime": 4468.80000000447,
+          "commitTime": 4476.70000000298,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 4.399999998509884,
+          "baseDuration": 9.899999998509884,
+          "startTime": 4505,
+          "commitTime": 4509.39999999851,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8,
+          "baseDuration": 10,
+          "startTime": 4530.89999999851,
+          "commitTime": 4538.89999999851,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7,
+          "baseDuration": 9,
+          "startTime": 4544.60000000149,
+          "commitTime": 4551.60000000149,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 9.799999997019768,
+          "baseDuration": 11.199999988079071,
+          "startTime": 4624.30000000447,
+          "commitTime": 4634.10000000149,
+          "stage": "progress"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "phase": "after",
+      "trial": 1,
+      "inputHash": "4f62c8b52e74e8a5f8d90161277b71208cd5d84eca11050ee445416ba587a0ca",
+      "historySessions": 2000,
+      "samples": [
+        {
+          "id": "audit",
+          "renderPhase": "mount",
+          "actualDuration": 66.69999999552965,
+          "baseDuration": 59.70000001043081,
+          "startTime": 978.5,
+          "commitTime": 1045.6999999955297,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7.899999998509884,
+          "baseDuration": 9.799999997019768,
+          "startTime": 1070.6999999955297,
+          "commitTime": 1079,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 0,
+          "baseDuration": 9.799999997019768,
+          "startTime": 1085,
+          "commitTime": 1086.5,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7.200000002980232,
+          "baseDuration": 9.200000002980232,
+          "startTime": 1096.1999999955297,
+          "commitTime": 1103.3999999985099,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 12.5,
+          "baseDuration": 17.69999999552965,
+          "startTime": 1313.8999999985099,
+          "commitTime": 1326.3999999985099,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.5,
+          "baseDuration": 16.69999999552965,
+          "startTime": 1563.7999999970198,
+          "commitTime": 1575.2999999970198,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 10.900000005960464,
+          "baseDuration": 16.200000002980232,
+          "startTime": 1814,
+          "commitTime": 1825.0999999940395,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 13,
+          "baseDuration": 18.299999997019768,
+          "startTime": 2064.7999999970198,
+          "commitTime": 2077.89999999851,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 12.100000001490116,
+          "baseDuration": 17.399999998509884,
+          "startTime": 2315.0999999940395,
+          "commitTime": 2327.39999999851,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.099999994039536,
+          "baseDuration": 16.399999991059303,
+          "startTime": 2563.39999999851,
+          "commitTime": 2574.6999999955297,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 12.799999997019768,
+          "baseDuration": 18,
+          "startTime": 2814.89999999851,
+          "commitTime": 2827.89999999851,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.100000001490116,
+          "baseDuration": 16.5,
+          "startTime": 3062.6999999955297,
+          "commitTime": 3074,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.800000004470348,
+          "baseDuration": 17.00000000745058,
+          "startTime": 3313.1999999955297,
+          "commitTime": 3325,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.599999994039536,
+          "baseDuration": 16.799999997019768,
+          "startTime": 3565,
+          "commitTime": 3576.5999999940395,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 12.100000001490116,
+          "baseDuration": 17.399999998509884,
+          "startTime": 3815.5999999940395,
+          "commitTime": 3827.6999999955297,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 13.399999998509884,
+          "baseDuration": 18.69999999552965,
+          "startTime": 4063.5,
+          "commitTime": 4076.89999999851,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 0.20000000298023224,
+          "baseDuration": 18.799999997019768,
+          "startTime": 4129.69999999553,
+          "commitTime": 4129.89999999851,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8.399999998509884,
+          "baseDuration": 10.199999995529652,
+          "startTime": 4131.19999999553,
+          "commitTime": 4139.5999999940395,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7.699999995529652,
+          "baseDuration": 9.699999995529652,
+          "startTime": 4159.39999999851,
+          "commitTime": 4167.19999999553,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 6.799999997019768,
+          "baseDuration": 8.799999997019768,
+          "startTime": 4171.79999999702,
+          "commitTime": 4178.5999999940395,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 0,
+          "baseDuration": 8.799999997019768,
+          "startTime": 4205.69999999553,
+          "commitTime": 4205.89999999851,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "nested-update",
+          "actualDuration": 8.100000001490116,
+          "baseDuration": 9.899999998509884,
+          "startTime": 4208.19999999553,
+          "commitTime": 4216.39999999851,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8.399999998509884,
+          "baseDuration": 10.399999998509884,
+          "startTime": 4272.39999999851,
+          "commitTime": 4280.79999999702,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 6.899999998509884,
+          "baseDuration": 8.899999998509884,
+          "startTime": 4285.79999999702,
+          "commitTime": 4292.69999999553,
+          "stage": "progress"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 4.300000004470348,
+          "baseDuration": 9.100000001490116,
+          "startTime": 4314.0999999940395,
+          "commitTime": 4318.39999999851,
+          "stage": "progress"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8.699999995529652,
+          "baseDuration": 10,
+          "startTime": 4337.5,
+          "commitTime": 4346.19999999553,
+          "stage": "progress"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "phase": "after",
+      "trial": 2,
+      "inputHash": "4f62c8b52e74e8a5f8d90161277b71208cd5d84eca11050ee445416ba587a0ca",
+      "historySessions": 2000,
+      "samples": [
+        {
+          "id": "audit",
+          "renderPhase": "mount",
+          "actualDuration": 61.79999999701977,
+          "baseDuration": 56.80000000447035,
+          "startTime": 360.5,
+          "commitTime": 422.70000000298023,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8.00000000745058,
+          "baseDuration": 10.00000000745058,
+          "startTime": 448.3999999985099,
+          "commitTime": 456.70000000298023,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 0,
+          "baseDuration": 10.00000000745058,
+          "startTime": 462.80000000447035,
+          "commitTime": 464.30000000447035,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7.299999997019768,
+          "baseDuration": 9.399999998509884,
+          "startTime": 474.20000000298023,
+          "commitTime": 481.5,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 10.49999999254942,
+          "baseDuration": 15.899999991059303,
+          "startTime": 691.6000000014901,
+          "commitTime": 702.3999999985099,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.00000000745058,
+          "baseDuration": 16.50000000745058,
+          "startTime": 940.2000000029802,
+          "commitTime": 951.3999999985099,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 10.800000004470348,
+          "baseDuration": 16.200000002980232,
+          "startTime": 1191.8000000044703,
+          "commitTime": 1202.7000000029802,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 4.4000000059604645,
+          "baseDuration": 9.600000008940697,
+          "startTime": 1440.3999999985099,
+          "commitTime": 1444.8000000044703,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7.399999998509884,
+          "baseDuration": 12.599999994039536,
+          "startTime": 1690.8000000044703,
+          "commitTime": 1698.2000000029802,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 13.700000002980232,
+          "baseDuration": 19.100000008940697,
+          "startTime": 1941,
+          "commitTime": 1954.8999999985099,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.899999998509884,
+          "baseDuration": 17.19999999552965,
+          "startTime": 2191.10000000149,
+          "commitTime": 2203,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.399999998509884,
+          "baseDuration": 16.399999998509884,
+          "startTime": 2441.60000000149,
+          "commitTime": 2453.10000000149,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 12.600000001490116,
+          "baseDuration": 17.899999998509884,
+          "startTime": 2690.10000000149,
+          "commitTime": 2702.7000000029802,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 9.599999994039536,
+          "baseDuration": 15.099999994039536,
+          "startTime": 2940.3000000044703,
+          "commitTime": 2949.89999999851,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 4.399999998509884,
+          "baseDuration": 9.899999998509884,
+          "startTime": 3190.3000000044703,
+          "commitTime": 3194.7000000029802,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11,
+          "baseDuration": 16.299999997019768,
+          "startTime": 3439.89999999851,
+          "commitTime": 3451,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 0,
+          "baseDuration": 16.299999997019768,
+          "startTime": 3500.3000000044703,
+          "commitTime": 3500.39999999851,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8.600000008940697,
+          "baseDuration": 10.600000008940697,
+          "startTime": 3501.5,
+          "commitTime": 3510.2000000029802,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7.699999995529652,
+          "baseDuration": 9.799999997019768,
+          "startTime": 3529.8000000044703,
+          "commitTime": 3537.60000000149,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 6.899999998509884,
+          "baseDuration": 8.899999998509884,
+          "startTime": 3542.10000000149,
+          "commitTime": 3549,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 0,
+          "baseDuration": 8.899999998509884,
+          "startTime": 3574.10000000149,
+          "commitTime": 3574.10000000149,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "nested-update",
+          "actualDuration": 7.799999997019768,
+          "baseDuration": 9.799999997019768,
+          "startTime": 3576.60000000149,
+          "commitTime": 3584.39999999851,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8.100000001490116,
+          "baseDuration": 10.00000000745058,
+          "startTime": 3641.39999999851,
+          "commitTime": 3649.5,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 6.699999995529652,
+          "baseDuration": 8.599999994039536,
+          "startTime": 3652.7000000029802,
+          "commitTime": 3659.39999999851,
+          "stage": "progress"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 4.100000001490116,
+          "baseDuration": 8.799999997019768,
+          "startTime": 3689.39999999851,
+          "commitTime": 3693.7000000029802,
+          "stage": "progress"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8.600000001490116,
+          "baseDuration": 10.099999994039536,
+          "startTime": 3706,
+          "commitTime": 3714.7000000029802,
+          "stage": "progress"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "phase": "before",
+      "trial": 2,
+      "inputHash": "2a96b92a80fb0083bf551f4c00673c1650019a6bb84b0a6dee4739a70928d98b",
+      "historySessions": 2000,
+      "samples": [
+        {
+          "id": "audit",
+          "renderPhase": "mount",
+          "actualDuration": 65.8999999910593,
+          "baseDuration": 58.79999998956919,
+          "startTime": 326.70000000298023,
+          "commitTime": 393.1000000014901,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8.300000004470348,
+          "baseDuration": 10.399999998509884,
+          "startTime": 417.79999999701977,
+          "commitTime": 426.20000000298023,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 0.10000000149011612,
+          "baseDuration": 10.399999998509884,
+          "startTime": 432.5,
+          "commitTime": 434,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7.100000001490116,
+          "baseDuration": 9,
+          "startTime": 443.3999999985099,
+          "commitTime": 450.6000000014901,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.899999998509884,
+          "baseDuration": 17.00000000745058,
+          "startTime": 661.2999999970198,
+          "commitTime": 673.3999999985099,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 10.5,
+          "baseDuration": 15.600000008940697,
+          "startTime": 910.7999999970198,
+          "commitTime": 921.7000000029802,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 4,
+          "baseDuration": 9.200000002980232,
+          "startTime": 1159.6000000014901,
+          "commitTime": 1163.6000000014901,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 9.599999994039536,
+          "baseDuration": 14.700000002980232,
+          "startTime": 1409.6000000014901,
+          "commitTime": 1419.5,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 10.699999995529652,
+          "baseDuration": 15.899999998509884,
+          "startTime": 1661.1000000014901,
+          "commitTime": 1672.1000000014901,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.399999998509884,
+          "baseDuration": 16.700000002980232,
+          "startTime": 1910.8999999985099,
+          "commitTime": 1922.7000000029802,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.399999998509884,
+          "baseDuration": 16.50000000745058,
+          "startTime": 2160.60000000149,
+          "commitTime": 2172.10000000149,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 12.600000001490116,
+          "baseDuration": 17.80000000447035,
+          "startTime": 2410.39999999851,
+          "commitTime": 2423.2000000029802,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.400000005960464,
+          "baseDuration": 16.50000001490116,
+          "startTime": 2660.7000000029802,
+          "commitTime": 2672.5,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 10.200000002980232,
+          "baseDuration": 15.200000010430813,
+          "startTime": 2910.5,
+          "commitTime": 2920.7999999970198,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.5,
+          "baseDuration": 16.700000002980232,
+          "startTime": 3160.39999999851,
+          "commitTime": 3172.10000000149,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.700000002980232,
+          "baseDuration": 16.80000000447035,
+          "startTime": 3410.7999999970198,
+          "commitTime": 3422.7000000029802,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 0.09999999403953552,
+          "baseDuration": 16.799999997019768,
+          "startTime": 3471.60000000149,
+          "commitTime": 3471.7999999970198,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8.50000000745058,
+          "baseDuration": 10.600000001490116,
+          "startTime": 3474.39999999851,
+          "commitTime": 3483,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7.700000002980232,
+          "baseDuration": 9.899999998509884,
+          "startTime": 3502.5,
+          "commitTime": 3510.2000000029802,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 6.899999998509884,
+          "baseDuration": 9.099999994039536,
+          "startTime": 3514.60000000149,
+          "commitTime": 3521.5,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 0.10000000149011612,
+          "baseDuration": 9.099999994039536,
+          "startTime": 3545.89999999851,
+          "commitTime": 3546,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "nested-update",
+          "actualDuration": 7.899999998509884,
+          "baseDuration": 10.099999994039536,
+          "startTime": 3547.89999999851,
+          "commitTime": 3555.7999999970198,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7.799999997019768,
+          "baseDuration": 9.399999991059303,
+          "startTime": 3607.89999999851,
+          "commitTime": 3615.7999999970198,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 6.600000001490116,
+          "baseDuration": 8.699999995529652,
+          "startTime": 3619.10000000149,
+          "commitTime": 3625.7999999970198,
+          "stage": "progress"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 4.299999997019768,
+          "baseDuration": 9.099999986588955,
+          "startTime": 3659.2000000029802,
+          "commitTime": 3663.5,
+          "stage": "progress"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8.700000002980232,
+          "baseDuration": 10.399999998509884,
+          "startTime": 3675.89999999851,
+          "commitTime": 3684.7000000029802,
+          "stage": "progress"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "phase": "before",
+      "trial": 3,
+      "inputHash": "2a96b92a80fb0083bf551f4c00673c1650019a6bb84b0a6dee4739a70928d98b",
+      "historySessions": 2000,
+      "samples": [
+        {
+          "id": "audit",
+          "renderPhase": "mount",
+          "actualDuration": 62.100000001490116,
+          "baseDuration": 57.89999998360872,
+          "startTime": 350.79999999701977,
+          "commitTime": 413.19999999552965,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8.299999997019768,
+          "baseDuration": 10.100000008940697,
+          "startTime": 440.3999999985099,
+          "commitTime": 448.69999999552965,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 0,
+          "baseDuration": 10.100000008940697,
+          "startTime": 455.19999999552965,
+          "commitTime": 456.79999999701977,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7.300000004470348,
+          "baseDuration": 9.400000005960464,
+          "startTime": 467,
+          "commitTime": 474.5,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 4.5,
+          "baseDuration": 10.100000001490116,
+          "startTime": 683.8999999985099,
+          "commitTime": 688.3999999985099,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 12.399999998509884,
+          "baseDuration": 17.80000000447035,
+          "startTime": 933.3999999985099,
+          "commitTime": 946.1000000014901,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.399999998509884,
+          "baseDuration": 17,
+          "startTime": 1184.6000000014901,
+          "commitTime": 1196.1000000014901,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 12.299999997019768,
+          "baseDuration": 17.799999997019768,
+          "startTime": 1432.2999999970198,
+          "commitTime": 1445,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 6.299999997019768,
+          "baseDuration": 11.899999998509884,
+          "startTime": 1684.1000000014901,
+          "commitTime": 1690.3999999985099,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.799999997019768,
+          "baseDuration": 17.399999998509884,
+          "startTime": 1932.1999999955297,
+          "commitTime": 1944.3999999985099,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 12.099999994039536,
+          "baseDuration": 17.599999994039536,
+          "startTime": 2183.5,
+          "commitTime": 2195.89999999851,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 10.699999995529652,
+          "baseDuration": 15.899999998509884,
+          "startTime": 2433.7999999970198,
+          "commitTime": 2445,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.699999995529652,
+          "baseDuration": 16.899999998509884,
+          "startTime": 2683.89999999851,
+          "commitTime": 2695.6999999955297,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 12.199999995529652,
+          "baseDuration": 17.69999999552965,
+          "startTime": 2934.5,
+          "commitTime": 2946.89999999851,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.699999995529652,
+          "baseDuration": 17.299999997019768,
+          "startTime": 3184,
+          "commitTime": 3195.89999999851,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 13.199999995529652,
+          "baseDuration": 18.49999999254942,
+          "startTime": 3434.10000000149,
+          "commitTime": 3447.2999999970198,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 0.19999999552965164,
+          "baseDuration": 18.49999998509884,
+          "startTime": 3502.10000000149,
+          "commitTime": 3502.2999999970198,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8.900000005960464,
+          "baseDuration": 10.900000005960464,
+          "startTime": 3504.60000000149,
+          "commitTime": 3513.60000000149,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7.600000001490116,
+          "baseDuration": 9.700000002980232,
+          "startTime": 3533.5,
+          "commitTime": 3541.1999999955297,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 6.699999995529652,
+          "baseDuration": 8.799999997019768,
+          "startTime": 3545.5,
+          "commitTime": 3552.2999999970198,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 0.09999999403953552,
+          "baseDuration": 8.799999989569187,
+          "startTime": 3576.60000000149,
+          "commitTime": 3576.6999999955297,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "nested-update",
+          "actualDuration": 7.899999998509884,
+          "baseDuration": 9.899999998509884,
+          "startTime": 3579.6999999955297,
+          "commitTime": 3587.6999999955297,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8.300000004470348,
+          "baseDuration": 10.100000008940697,
+          "startTime": 3641.6999999955297,
+          "commitTime": 3650,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 6.600000001490116,
+          "baseDuration": 8.600000001490116,
+          "startTime": 3653.2999999970198,
+          "commitTime": 3660,
+          "stage": "progress"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 3.899999998509884,
+          "baseDuration": 8.700000002980232,
+          "startTime": 3682.39999999851,
+          "commitTime": 3686.5,
+          "stage": "progress"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8.599999994039536,
+          "baseDuration": 9.899999998509884,
+          "startTime": 3708.5,
+          "commitTime": 3717.1999999955297,
+          "stage": "progress"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "phase": "after",
+      "trial": 3,
+      "inputHash": "4f62c8b52e74e8a5f8d90161277b71208cd5d84eca11050ee445416ba587a0ca",
+      "historySessions": 2000,
+      "samples": [
+        {
+          "id": "audit",
+          "renderPhase": "mount",
+          "actualDuration": 64.79999999701977,
+          "baseDuration": 57.099999986588955,
+          "startTime": 342.30000000447035,
+          "commitTime": 407.6000000014901,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7.9000000059604645,
+          "baseDuration": 9.800000004470348,
+          "startTime": 432,
+          "commitTime": 440.20000000298023,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 0,
+          "baseDuration": 9.800000004470348,
+          "startTime": 446.3999999985099,
+          "commitTime": 448.1000000014901,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7.399999998509884,
+          "baseDuration": 9.299999997019768,
+          "startTime": 458.30000000447035,
+          "commitTime": 465.70000000298023,
+          "stage": "mount"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.5,
+          "baseDuration": 16.599999994039536,
+          "startTime": 675,
+          "commitTime": 686.7000000029802,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.399999998509884,
+          "baseDuration": 16.69999999552965,
+          "startTime": 925.8999999985099,
+          "commitTime": 937.3999999985099,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 4.200000002980232,
+          "baseDuration": 9.600000001490116,
+          "startTime": 1174.5,
+          "commitTime": 1178.7000000029802,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 10.299999997019768,
+          "baseDuration": 15.50000000745058,
+          "startTime": 1425.7000000029802,
+          "commitTime": 1436.1000000014901,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 10.5,
+          "baseDuration": 15.800000004470348,
+          "startTime": 1675.5,
+          "commitTime": 1686.2000000029802,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.699999995529652,
+          "baseDuration": 17.099999994039536,
+          "startTime": 1925.8999999985099,
+          "commitTime": 1937.8999999985099,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 4.5,
+          "baseDuration": 9.899999998509884,
+          "startTime": 2173.39999999851,
+          "commitTime": 2178,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 13.399999998509884,
+          "baseDuration": 18.700000002980232,
+          "startTime": 2425.39999999851,
+          "commitTime": 2439,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 11.5,
+          "baseDuration": 16.899999998509884,
+          "startTime": 2675.89999999851,
+          "commitTime": 2687.60000000149,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 13.600000008940697,
+          "baseDuration": 19.00000000745058,
+          "startTime": 2923.89999999851,
+          "commitTime": 2937.60000000149,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7.299999997019768,
+          "baseDuration": 12.699999995529652,
+          "startTime": 3175,
+          "commitTime": 3182.39999999851,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 12.600000001490116,
+          "baseDuration": 17.799999997019768,
+          "startTime": 3424.60000000149,
+          "commitTime": 3437.3000000044703,
+          "stage": "idle timer"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 0.29999999701976776,
+          "baseDuration": 18,
+          "startTime": 3484.60000000149,
+          "commitTime": 3484.89999999851,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8.200000002980232,
+          "baseDuration": 10.200000002980232,
+          "startTime": 3486.8000000044703,
+          "commitTime": 3495.2000000029802,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7.5999999940395355,
+          "baseDuration": 9.599999994039536,
+          "startTime": 3515.2000000029802,
+          "commitTime": 3522.89999999851,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 7.199999995529652,
+          "baseDuration": 9.099999994039536,
+          "startTime": 3527.2000000029802,
+          "commitTime": 3534.39999999851,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 0,
+          "baseDuration": 9.099999994039536,
+          "startTime": 3559.5,
+          "commitTime": 3559.5,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "nested-update",
+          "actualDuration": 7.699999995529652,
+          "baseDuration": 9.50000000745058,
+          "startTime": 3561.7000000029802,
+          "commitTime": 3569.7000000029802,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8.100000016391277,
+          "baseDuration": 9.800000011920929,
+          "startTime": 3620.39999999851,
+          "commitTime": 3628.7000000029802,
+          "stage": "edit and complete"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 6.899999998509884,
+          "baseDuration": 8.899999998509884,
+          "startTime": 3632.10000000149,
+          "commitTime": 3639,
+          "stage": "progress"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 4.199999995529652,
+          "baseDuration": 8.99999999254942,
+          "startTime": 3674.60000000149,
+          "commitTime": 3679,
+          "stage": "progress"
+        },
+        {
+          "id": "audit",
+          "renderPhase": "update",
+          "actualDuration": 8.5,
+          "baseDuration": 9.99999999254942,
+          "startTime": 3690.60000000149,
+          "commitTime": 3699.2000000029802,
+          "stage": "progress"
+        }
+      ],
+      "issues": []
+    }
+  ],
+  "limitations": [
+    "Local synthetic lab samples; no field/p75 Core Web Vitals or physical-device claim.",
+    "Click-to-paint samples include two animation frames; they are not field INP.",
+    "React development profiling has overhead and is separate from production timings."
+  ]
+}

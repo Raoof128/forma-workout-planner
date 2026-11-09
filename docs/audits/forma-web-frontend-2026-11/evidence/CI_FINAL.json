@@ -1,0 +1,737 @@
+{
+  "scope": "Existing GitHub Actions CI run only; read-only monitoring with no rerun/cancel/push/workflow edit or local build/browser/test execution. Native iOS/physical-device verification is separate.",
+  "run": {
+    "id": 41840783732,
+    "url": "https://github.com/Raoof128/forma-workout-planner/actions/runs/41840783732",
+    "head_sha": "c247e9e705b462ff9771f5442d17efc0955a22d8",
+    "runtime_source_commit": "cc771830b92929485dae5f4fe8297a49df9fa394",
+    "branch": "fix/tunnel-monitor-readiness",
+    "attempt": 1,
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-11-04T13:44:00Z",
+    "run_started_at": "2026-11-04T13:44:00Z"
+  },
+  "source_fingerprint": {
+    "runtime_source_commit": "cc771830b92929485dae5f4fe8297a49df9fa394",
+    "ci_head": "c247e9e705b462ff9771f5442d17efc0955a22d8",
+    "verified_scoped_input_files": 188,
+    "scope": "Source/test/config paths from immutable final account input manifest",
+    "all_blob_hashes_match_both_commits_and_current_tree": true,
+    "changed_paths_between_commits": [
+      "docs/audits/forma-web-frontend-2026-11/evidence/DOCS_PORTABILITY.json",
+      "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/MANIFEST.json",
+      "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/README.md",
+      "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/auth-controlled-red.json",
+      "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/auth-five-profiles-pass.json",
+      "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/auth-initial-harness-errors.json",
+      "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/security-controlled-red.json",
+      "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/security-five-profiles-pass.json",
+      "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/security-initial-harness-errors.json"
+    ],
+    "implementation_changed": false,
+    "scoped_files_fingerprint_sha256": "baee8532739b5bdbcb029fb43d96b13da1e79364252e2c98f332c3caff61e582",
+    "fingerprint_method": "SHA256 of sorted scoped path/SHA256 pairs in canonical JSON;188files individually checked at both commits and current tree."
+  },
+  "workflow": {
+    "path": ".github/workflows/ci.yml",
+    "sha256": "ec4d42efe8ba4d5d266a1a6a1b1fced9ee65f09df41955e8eee86d05e8e8cb5d"
+  },
+  "jobs": [
+    {
+      "job_id": 126611988132,
+      "name": "Verify application",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-04T13:44:59Z",
+      "completed_at": "2026-11-04T14:37:55Z",
+      "duration_seconds": 3176.0,
+      "steps": [
+        {
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        },
+        {
+          "name": "Initialize containers",
+          "number": 2,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 12.0
+        },
+        {
+          "name": "Check out source",
+          "number": 3,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 15.0,
+          "action": "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1"
+        },
+        {
+          "name": "Set up Node.js",
+          "number": 4,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 2.0,
+          "action": "actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1"
+        },
+        {
+          "name": "Install dependencies",
+          "number": 5,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 7.0,
+          "command": "npm ci"
+        },
+        {
+          "name": "Install pinned Playwright browsers",
+          "number": 6,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 43.0,
+          "command": "npx playwright install --with-deps chromium firefox webkit"
+        },
+        {
+          "name": "Lint",
+          "number": 7,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 2.0,
+          "command": "npm run lint"
+        },
+        {
+          "name": "Check formatting",
+          "number": 8,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 3.0,
+          "command": "npm run format:check"
+        },
+        {
+          "name": "Typecheck backend and Worker",
+          "number": 9,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 1.0,
+          "command": "npm run typecheck"
+        },
+        {
+          "name": "Build backend",
+          "number": 10,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 0.0,
+          "command": "npm run build:server"
+        },
+        {
+          "name": "Build non-root API image",
+          "number": 11,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 26.0,
+          "command": "docker build -f ops/Dockerfile -t forma-api:ci .\ntest \"$(docker run --rm --entrypoint id forma-api:ci -u)\" = 10001\n# The image copies an explicit list of shared src files; prove every\n# server module still resolves its imports inside the image.\ndocker run --rm --entrypoint node forma-api:ci -e 'Promise.all([\"app\", \"coachRoutes\", \"workspace\", \"migrate\"].map((name) => import(`/app/build/server/${name}.js`))).then(() => console.log(\"API modules load\"))'"
+        },
+        {
+          "name": "Test real PostgreSQL identity and ownership",
+          "number": 12,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 32.0,
+          "command": "npm run test:server"
+        },
+        {
+          "name": "Test Worker gateway boundaries",
+          "number": 13,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 31.0,
+          "command": "npm run test:worker"
+        },
+        {
+          "name": "Test recovery guards and operational monitoring",
+          "number": 14,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 0.0,
+          "command": "npm run test:operations"
+        },
+        {
+          "name": "Run unit tests",
+          "number": 15,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 6.0,
+          "command": "npm run test:unit"
+        },
+        {
+          "name": "Build production assets",
+          "number": 16,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 2.0,
+          "command": "npm run build"
+        },
+        {
+          "name": "Check production dependencies",
+          "number": 17,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 1.0,
+          "command": "for attempt in 1 2 3; do\n  if npm audit --omit=dev > audit.log 2>&1; then cat audit.log; exit 0; fi\n  cat audit.log\n  grep -q \"audit endpoint returned an error\" audit.log || exit 1\n  sleep $((attempt * 30))\ndone\nexit 1"
+        },
+        {
+          "name": "Check documentation links",
+          "number": 18,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 0.0,
+          "command": "npm run docs:check"
+        },
+        {
+          "name": "Check patch whitespace",
+          "number": 19,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 0.0,
+          "command": "git diff --check"
+        },
+        {
+          "name": "Run development browser suite",
+          "number": 20,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 1184.0,
+          "command": "npm run test:browser"
+        },
+        {
+          "name": "Run production smoke suite",
+          "number": 21,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 351.0,
+          "command": "npm run test:browser:production"
+        },
+        {
+          "name": "Run real account browser integration",
+          "number": 22,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 873.0,
+          "command": "npm run test:accounts"
+        },
+        {
+          "name": "Run production-built account browser integration",
+          "number": 23,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 580.0,
+          "command": "npm run test:accounts:production"
+        },
+        {
+          "name": "Upload browser reports and failure artifacts",
+          "number": 24,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 2.0,
+          "action": "actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9"
+        },
+        {
+          "name": "Post Set up Node.js",
+          "number": 46,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        },
+        {
+          "name": "Post Check out source",
+          "number": 47,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        },
+        {
+          "name": "Stop containers",
+          "number": 48,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        },
+        {
+          "name": "Complete job",
+          "number": 49,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        }
+      ]
+    },
+    {
+      "job_id": 126611988645,
+      "name": "Security scans",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-04T13:44:59Z",
+      "completed_at": "2026-11-04T13:47:18Z",
+      "duration_seconds": 139.0,
+      "steps": [
+        {
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 1.0
+        },
+        {
+          "name": "Check out full history for secret scanning",
+          "number": 2,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 14.0,
+          "action": "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1"
+        },
+        {
+          "name": "Scan all history for secrets (gitleaks)",
+          "number": 3,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 36.0,
+          "command": "docker run --rm -v \"$PWD:/repo\" -w /repo ghcr.io/gitleaks/gitleaks:v8.30.1@sha256:c00b6bd0aeb3071cbcb79009cb16a60dd9e0a7c60e2be9ab65d25e6bc8abbb7f git --no-banner --redact --log-opts=--all ."
+        },
+        {
+          "name": "Scan the lockfile for known vulnerabilities (OSV)",
+          "number": 4,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 9.0,
+          "command": "docker run --rm -v \"$PWD:/repo\" -w /repo ghcr.io/google/osv-scanner:v2.6.0@sha256:afd838850ac1a0fcc15ff4a041dc9ba11123c3f0d2666217a5f0fcf9222b55fa scan source --lockfile=package-lock.json"
+        },
+        {
+          "name": "Static analysis (Semgrep)",
+          "number": 5,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 57.0,
+          "command": "docker run --rm -v \"$PWD:/src\" -w /src semgrep/semgrep:1.170.0@sha256:c98f8829eea377274ee4b10656458b078b88232469b2ff913f091c2317347c9d semgrep scan --metrics=off --error --timeout 60 --config p/javascript --config p/typescript --config p/nodejsscan --config p/secrets server worker src ops scripts"
+        },
+        {
+          "name": "Set up Node.js",
+          "number": 6,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 1.0,
+          "action": "actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1"
+        },
+        {
+          "name": "Generate production SBOM (CycloneDX)",
+          "number": 7,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 16.0,
+          "command": "npm ci --ignore-scripts --no-audit --no-fund\nnpx --yes @cyclonedx/cyclonedx-npm@6.0.1 --omit dev --output-format JSON --output-file sbom.cdx.json\ntest -s sbom.cdx.json"
+        },
+        {
+          "name": "Upload SBOM",
+          "number": 8,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 2.0,
+          "action": "actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9"
+        },
+        {
+          "name": "Post Set up Node.js",
+          "number": 15,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        },
+        {
+          "name": "Post Check out full history for secret scanning",
+          "number": 16,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        },
+        {
+          "name": "Complete job",
+          "number": 17,
+          "status": "completed",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        }
+      ]
+    }
+  ],
+  "tests": {
+    "guest_development": {
+      "command": "npm run test:browser",
+      "selected": 540,
+      "passed": 540,
+      "failed": 0,
+      "skipped": 0,
+      "interrupted": 0,
+      "unrun": 0,
+      "ci_step_duration_seconds": 1184.0,
+      "workers_observed": [2],
+      "selection_count_provenance": "Actual Playwright Running N tests headers, reconciled against final unannotated passed summaries; no separate --list invocation in CI.",
+      "runner_reported_duration": "19.7m",
+      "actual_progress_selection_by_project": {
+        "chromium": 180,
+        "firefox": 180,
+        "webkit": 180
+      }
+    },
+    "guest_production_smoke": {
+      "command": "npm run test:browser:production",
+      "selected": 175,
+      "passed": 175,
+      "failed": 0,
+      "skipped": 0,
+      "interrupted": 0,
+      "unrun": 0,
+      "ci_step_duration_seconds": 351.0,
+      "workers_observed": [2],
+      "selection_count_provenance": "Actual Playwright Running N tests headers, reconciled against final unannotated passed summaries; no separate --list invocation in CI.",
+      "runner_reported_duration": "5.8m",
+      "actual_progress_selection_by_project": {
+        "production-chromium-desktop": 34,
+        "production-chromium-mobile": 39,
+        "production-firefox-desktop": 34,
+        "production-webkit-desktop": 34,
+        "production-webkit-mobile": 34
+      }
+    },
+    "account_development": {
+      "command": "npm run test:accounts",
+      "selected": 200,
+      "passed": 200,
+      "failed": 0,
+      "skipped": 0,
+      "interrupted": 0,
+      "unrun": 0,
+      "ci_step_duration_seconds": 873.0,
+      "workers_observed": [1],
+      "selection_count_provenance": "Actual Playwright Running N tests headers, reconciled against final unannotated passed summaries; no separate --list invocation in CI.",
+      "profiles": [
+        {
+          "name": "accounts-chromium",
+          "selected": 40,
+          "passed": 40,
+          "failed": 0,
+          "skipped": 0,
+          "runner_reported_duration": "2.6m"
+        },
+        {
+          "name": "accounts-chromium-mobile",
+          "selected": 40,
+          "passed": 40,
+          "failed": 0,
+          "skipped": 0,
+          "runner_reported_duration": "3.1m"
+        },
+        {
+          "name": "accounts-firefox",
+          "selected": 40,
+          "passed": 40,
+          "failed": 0,
+          "skipped": 0,
+          "runner_reported_duration": "2.8m"
+        },
+        {
+          "name": "accounts-webkit",
+          "selected": 40,
+          "passed": 40,
+          "failed": 0,
+          "skipped": 0,
+          "runner_reported_duration": "2.7m"
+        },
+        {
+          "name": "accounts-webkit-mobile",
+          "selected": 40,
+          "passed": 40,
+          "failed": 0,
+          "skipped": 0,
+          "runner_reported_duration": "3.4m"
+        }
+      ],
+      "scope": "Fresh real local API/PostgreSQL/mail-sink per profile plus intercepted synthetic race/design cases; not all checks are DB transactions."
+    },
+    "account_production_build": {
+      "command": "npm run test:accounts:production",
+      "selected": 200,
+      "passed": 200,
+      "failed": 0,
+      "skipped": 0,
+      "interrupted": 0,
+      "unrun": 0,
+      "ci_step_duration_seconds": 580.0,
+      "workers_observed": [1],
+      "selection_count_provenance": "Actual Playwright Running N tests headers, reconciled against final unannotated passed summaries; no separate --list invocation in CI.",
+      "profiles": [
+        {
+          "name": "accounts-production-chromium",
+          "selected": 40,
+          "passed": 40,
+          "failed": 0,
+          "skipped": 0,
+          "runner_reported_duration": "1.5m"
+        },
+        {
+          "name": "accounts-production-chromium-mobile",
+          "selected": 40,
+          "passed": 40,
+          "failed": 0,
+          "skipped": 0,
+          "runner_reported_duration": "1.9m"
+        },
+        {
+          "name": "accounts-production-firefox",
+          "selected": 40,
+          "passed": 40,
+          "failed": 0,
+          "skipped": 0,
+          "runner_reported_duration": "1.9m"
+        },
+        {
+          "name": "accounts-production-webkit",
+          "selected": 40,
+          "passed": 40,
+          "failed": 0,
+          "skipped": 0,
+          "runner_reported_duration": "1.8m"
+        },
+        {
+          "name": "accounts-production-webkit-mobile",
+          "selected": 40,
+          "passed": 40,
+          "failed": 0,
+          "skipped": 0,
+          "runner_reported_duration": "2.6m"
+        }
+      ],
+      "scope": "Fresh real local API/PostgreSQL/mail-sink per profile plus intercepted synthetic race/design cases; not all checks are DB transactions."
+    },
+    "server": {
+      "tests": 77,
+      "pass": 77,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "runner_duration_ms": 31750.422616,
+      "ci_step_duration_seconds": 32.0,
+      "command": "npm run test:server"
+    },
+    "worker": {
+      "tests": 35,
+      "pass": 35,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "runner_duration_ms": 30450.221328,
+      "ci_step_duration_seconds": 31.0,
+      "command": "npm run test:worker"
+    },
+    "unit": {
+      "tests": 151,
+      "pass": 151,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "runner_duration_ms": 5602.469464,
+      "ci_step_duration_seconds": 6.0,
+      "command": "npm run test:unit"
+    },
+    "operations": {
+      "command": "npm run test:operations",
+      "passed": 16,
+      "failed": 0,
+      "skipped": 0,
+      "python_unittest": {
+        "tests": 8,
+        "passed": 8,
+        "failed": 0,
+        "skipped": 0,
+        "runner_duration_seconds": 0.013,
+        "command": "python3 -m unittest ops/test_operations.py"
+      },
+      "node_test_runner": {
+        "tests": 8,
+        "pass": 8,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "runner_duration_ms": 105.995306,
+        "ci_step_duration_seconds": 0.0,
+        "command": "npm run test:operations"
+      }
+    }
+  },
+  "totals": {
+    "browser_checks_passed": 1115,
+    "node_python_checks_passed": 279,
+    "test_executions_passed": 1394,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled_or_interrupted": 0,
+    "note": "Executed checks, not 1,394 unique user journeys; browser scenarios repeat across projects and build modes."
+  },
+  "docs": {
+    "status": "success",
+    "markdown_files": 166,
+    "checks": ["Local links", "Images", "Fragments", "npm script names"]
+  },
+  "security": {
+    "gitleaks": {
+      "status": "success",
+      "reported_leaks": 0,
+      "scope": "All repository Git history, redacted scanner mode"
+    },
+    "osv": {
+      "status": "success",
+      "filtered_vulnerabilities": 1,
+      "repository_exception": {
+        "id": "GHSA-g3hv-75wg-m249",
+        "ignore_until": "2027-01-04T00:00:00Z",
+        "scope": "Existing dev-only minimatch lint dependency exception; unchanged in this task"
+      }
+    },
+    "semgrep": {
+      "status": "success",
+      "rules": 226,
+      "files": 128,
+      "findings": 0,
+      "blocking_findings": 0
+    },
+    "npm_production_audit": {
+      "status": "success",
+      "reported_vulnerabilities": 0,
+      "command": "npm audit --omit=dev"
+    }
+  },
+  "versions": {
+    "ci_host": {
+      "os": "Ubuntu 24.04.5 LTS",
+      "runner_image": "ubuntu-24.04",
+      "runner_image_version": "20261025.353.1",
+      "node": "v24.22.1",
+      "npm": "11.19.1"
+    },
+    "postgresql": "18.4",
+    "postgresql_provenance": "Actual PostgreSQL startup log; service image postgres:18.4-alpine pinned by digest in workflow",
+    "playwright": "1.64.1",
+    "browser_installer": {
+      "chromium": "Chrome for Testing 156.0.8078.4",
+      "chromium_revision": "1248",
+      "firefox": "157.0",
+      "firefox_revision": "1555",
+      "webkit": "27.2",
+      "webkit_revision": "2370"
+    },
+    "api_image": {
+      "node_image": "node:26.12.1-bookworm-slim@sha256:28147155d47dc31abe0a46e0d12b59b2fb3d0a2dcc5dc65fce76a074180b16fe",
+      "provenance": "Exact Dockerfile base used by successful CI build; runtime process.version was not emitted",
+      "non_root_uid_assertion": 10001,
+      "module_import_probe": ["app", "coachRoutes", "workspace", "migrate"],
+      "module_import_probe_passed": true,
+      "limit": "Full DB tests ran on CI host Node24; image probe verified non-root identity and imports, not a deployed service."
+    },
+    "pinned_application_dependencies": {
+      "better-auth": "1.7.12",
+      "drizzle-orm": "0.45.4",
+      "fastify": "5.12.7",
+      "lucide-react": "1.61.0",
+      "motion": "14.6.0",
+      "pg": "8.23.1",
+      "react": "19.3.1",
+      "react-dom": "19.3.1",
+      "zod": "4.6.7"
+    },
+    "pinned_development_dependencies": {
+      "@eslint/js": "9.39.5",
+      "@playwright/test": "1.64.1",
+      "@types/node": "26.6.5",
+      "@types/pg": "8.23.1",
+      "@vitejs/plugin-react": "6.1.2",
+      "axe-core": "4.14.0",
+      "eslint": "9.39.5",
+      "eslint-plugin-jsx-a11y": "6.10.2",
+      "eslint-plugin-react": "7.37.5",
+      "eslint-plugin-react-hooks": "7.1.1",
+      "globals": "17.13.0",
+      "prettier": "3.9.10",
+      "tsx": "4.23.15",
+      "typescript": "7.0.2",
+      "vite": "8.3.5",
+      "wrangler": "4.152.0"
+    },
+    "python_version": null,
+    "python_version_note": "Not emitted by the executed CI commands; no inferred Python patch version."
+  },
+  "builds": {
+    "backend": "success",
+    "non_root_api_image": "success",
+    "production_assets": "success",
+    "guest_production_smoke_rebuild": "success",
+    "account_production_per_profile_rebuilds": 5,
+    "production_assets_runner_reported_seconds": 2.15,
+    "guest_smoke_build_runner_reported_seconds": 2.08,
+    "no_deployment_performed": true
+  },
+  "artifacts": [
+    {
+      "name": "playwright-results",
+      "size_bytes": 1370350,
+      "expired": false,
+      "digest": "sha256:b202fe5f85a90ca9bdfe348577bc0ed988d2e101611db9d20a966d411f180a67",
+      "created_at": "2026-11-04T14:37:52Z",
+      "expires_at": "2026-11-18T14:37:51Z",
+      "url": "https://github.com/Raoof128/forma-workout-planner/actions/runs/41840783732/artifacts/13334530622"
+    },
+    {
+      "name": "sbom",
+      "size_bytes": 21421,
+      "expired": false,
+      "digest": "sha256:533284d0b96d9a95ad7f7d0ca6df157b96e1c964a036f1929a88547db8a8be04",
+      "created_at": "2026-11-04T13:47:15Z",
+      "expires_at": "2027-02-02T13:44:00Z",
+      "url": "https://github.com/Raoof128/forma-workout-planner/actions/runs/41840783732/artifacts/13328577568"
+    }
+  ],
+  "private_log_evidence": {
+    "decoded_logs_saved_privately": true,
+    "sha256": {
+      "security-job.raw.log": "290c3eea73f103f7a04fe9b1a3555aa0f5dc0663b7cf0e59b3fa96262b36d2a9",
+      "security-job.log": "2a8a19a9ccf9fc87d4c0aba8bf90bed291debf35f4b2fd0681322346ee028365",
+      "verify-job.raw.log": "87599f9dd2c42ca3c30af575becb08f0122973104f7dbee39c5e1cee3e241de8",
+      "verify-job.log": "89cf0279b8e0a3a22ed535e4e18da9bb6bde39e3aea9f90615d898082b7c54f5"
+    },
+    "raw_log_bodies_credentials_and_host_paths_included": false
+  },
+  "limits": [
+    "Scanner success covers the configured scope and existing OSV exception; it is not a blanket security or deployed-configuration certification.",
+    "Production smoke is the actual 175 selected checks; it is not the full 540 development selection.",
+    "Browser engines/emulated profiles do not establish physical iPhone Safari behavior.",
+    "GitHub step durations are timestamp-derived seconds; test runner durations are recorded separately."
+  ],
+  "npm_script_expansions": {
+    "lint": "eslint .",
+    "format:check": "prettier --check src tests unit server worker scripts *.js *.json wrangler.jsonc index.html",
+    "typecheck": "tsc --noEmit",
+    "build:server": "tsc -p tsconfig.server.json && mkdir -p build/server/migrations && cp server/migrations/*.sql build/server/migrations/",
+    "test:server": "tsx --test --test-concurrency=1 server/tests/*.test.ts",
+    "test:worker": "tsx --test worker/tests/*.test.ts",
+    "test:operations": "python3 -m unittest ops/test_operations.py && node --test ops/edge-monitor.test.mjs ops/dashboard.test.mjs",
+    "test:unit": "node --test unit/*.test.js",
+    "build": "vite build",
+    "docs:check": "node scripts/check-docs.mjs",
+    "test:browser": "playwright test",
+    "test:browser:production": "VITE_ACCOUNT_MODE=guest npm run build && playwright test --config=playwright.production.config.js",
+    "test:accounts": "node scripts/test-account-browsers.mjs",
+    "test:accounts:production": "FORMA_ACCOUNT_BUILD=1 node scripts/test-account-browsers.mjs"
+  }
+}

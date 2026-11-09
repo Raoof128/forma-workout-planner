@@ -70,9 +70,9 @@ struct SyncDetailsView: View {
       Button("Keep my version", role: .destructive) {
         Task {
           working = true
-          await model.resolveConflictKeepingLocal()
+          let resolved = await model.resolveConflictKeepingLocal()
           working = false
-          model.accountSucceeded()
+          if resolved { model.accountSucceeded() } else { model.haptic(.accountFailure) }
         }
       }
       .accessibilityIdentifier("sync-confirm-keep-local")
@@ -108,10 +108,14 @@ struct SyncDetailsView: View {
       Button("Reload cloud data", role: .destructive) {
         Task {
           working = true
-          await model.resolveConflictUsingAccount()
+          let resolved = await model.resolveConflictUsingAccount()
           working = false
-          acknowledged = false
-          model.accountSucceeded()
+          if resolved {
+            acknowledged = false
+            model.accountSucceeded()
+          } else {
+            model.haptic(.accountFailure)
+          }
         }
       }
       .disabled(!acknowledged || working)

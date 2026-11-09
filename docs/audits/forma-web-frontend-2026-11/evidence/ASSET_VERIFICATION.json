@@ -1,0 +1,5187 @@
+{
+  "raster_method": "ImageIO full decode and draw, not header-only",
+  "raster_count": 627,
+  "raster_failures": 0,
+  "rasters": [
+    {
+      "path": "assets/exercise-artwork/authored-a-001-retry.png",
+      "sha256": "224d75942c8b54b35460dea8d218318e4921eb00f1cd038f7c64b05e1b7fa4c2",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/authored-a-001.png",
+      "sha256": "c17fb4374c259d65d6bf37dbbe89776089cff6c8e0acacb8a6c4906a2bdcb61e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/authored-b-001-retry.png",
+      "sha256": "be03d865dd248ab7ba30840c8fa7369a22d418d5ea2a037e6006adc218e33df8",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/authored-b-001.png",
+      "sha256": "527bd9d6b02cb61072e7ff48055c4efe296352dcc8c8fb9ffc95903a3a119e58",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/authored-c-001-retry.png",
+      "sha256": "6b72137b33d935d1f46fd51cdbd365e24b88a6287cc357fa08080eae74b8dc57",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/authored-c-001.png",
+      "sha256": "8c5c293f4f74f944ca1b5f4f52a58c4fd95a27cafd4a4afca31c33faa9b37009",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/authored-d-001.png",
+      "sha256": "c15f3da06bdd1e7dcd165f9817fe5ee6b116e72fb16cecf7fbc34012ac13a49d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/cable-config-01.png",
+      "sha256": "05d3a4549147179228420f6b1ef6820673de721ebdf958539221ffa2c6d92188",
+      "width": 1254,
+      "height": 1254,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/cardio-01.png",
+      "sha256": "dc09bbfce794675d49002e943d01799cfe5ec36ff5820ff53beb3b1110281f0a",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-001.png",
+      "sha256": "c5a24cace0cb9b253baf0e19f2d4a5b0f7b28a1418d9e09b5447ac86bc705a95",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-002.png",
+      "sha256": "d4736cdd328edbf4308cc8b2f74262fcc0dd9c6a4a9077732262b6df4170c243",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-003.png",
+      "sha256": "68133a9bb69d1a1137956edd9f8121f554e45a614445edbcbec620169fb326bd",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-004.png",
+      "sha256": "cb6deba4466170bdfe46790bbce92069e9ac7fed8cb1214d43ee5bab9f76fae7",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-005.png",
+      "sha256": "b05a70ef3485fc2b3500831304c0b9b93ffc3a72354a1dc26b1d176aeccf6548",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-006.png",
+      "sha256": "b830cd1dd215b968e69c87c9360723b732be325ba2a24cb723313b426bce879f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-007.png",
+      "sha256": "07ebf178c582f6420d04ed7cabea81a6d4a2229e946fd4b9c124cc7bd74bdd7e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-008.png",
+      "sha256": "1be098527762574791f971b1ee6712967ae7fffa9de5e880ce8e0b5021e2574e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-009.png",
+      "sha256": "cd229e7a97dfee548b1918e772895c3f4d6e98d18d4294d8cc04d2335e5ab86e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-010.png",
+      "sha256": "760514bf9d60eff50902e70756c9e11cb7fd067edcacb59a9780434ba28de5bf",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-011.png",
+      "sha256": "7d6c4d3bee6fa1b720fd24d0ed10befece596acc98b02f8a2e06acf376e2a110",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-012.png",
+      "sha256": "d9afd817088c6494fd66df7c02c8e3418d78404b202122ae0a680edfd907e822",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-013.png",
+      "sha256": "113c818fbb7a31f52ac2b0d4d9dec1ac0c9aa2f3f47a44437a433913f06557b4",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-014.png",
+      "sha256": "f0c0d7b43992dd24c4d765655261a6711d25df5dab68af80fab98f5e34b7d39d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-015.png",
+      "sha256": "9e68620a532c1103d6ba2cbc6b74aa5ce6634ce9659092dfbfb73adab7a7c42e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-016.png",
+      "sha256": "3952576caad59028124d67006d7adb930bf2841c23891cebe0ad694e82ab180a",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-017.png",
+      "sha256": "8fc55cd3faa22141808aadd88ee7d3eed9c2dd7e70e9c39c7c3d3e316554de22",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-018.png",
+      "sha256": "299affeb663cd6ee5c6ebacb5ccbe821fcbb97db89bc5259082641c349a4418a",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-019.png",
+      "sha256": "bcb1d5f4ea68192bfe053dea6005a2d6900f11218475ea1531ec78ac7c606de8",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-020.png",
+      "sha256": "3d082f77d130649dea3ac5b681c943594cfa518ac83da1b885d2fe264c149e74",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-021.png",
+      "sha256": "fab8fcd58af0f4be2e7971770ea45e69fe2253bcdf4e9532389ac48b90694b79",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-022.png",
+      "sha256": "687f2d7d9fce47da17da2585f09ce63ea7f2f4339488538be4ee8b631e7716ea",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-023.png",
+      "sha256": "240e1a157d77f9542d8b9eb53bda8ded8f72de8857035ce3b19eb7682c526dda",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-024.png",
+      "sha256": "369a3407f51e3fcf98309a105f35f3ad13d22845621443608b5b0a62c4f9de6a",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-025.png",
+      "sha256": "553c437fb54530fb1bf6ef9007cbdf2bd854acb8d4e780d60bb23ebfd509b871",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-026.png",
+      "sha256": "012915131e4d19c46ea7ed26a90b9a46377c9bbd96bff33acca93a12cef85e47",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-027.png",
+      "sha256": "56afe2ac4b11eed657d72058966eb0518147ec9dc2490dddff61258fa08f9fcd",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-028.png",
+      "sha256": "ec2c5a236f56a021046e5a8f3461bcc212528c74982dd91763c028c5e8bfe351",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-029.png",
+      "sha256": "13d9e2cfc2a7c89d95da5d9ed948f20645a25396e222908ef3a496f3b1201325",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-030.png",
+      "sha256": "a1fec3e224d92b2b428377f07918ae965105f0e673db43e99ed797c11ef0d808",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-031.png",
+      "sha256": "fbe1f5895aceecad0b0276fc98fa5e4289c68e7703537bb8b08478bbf4c21c25",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-032.png",
+      "sha256": "7c0420451a6d3529da7e485eaaf0ce3dae47ed734b176a0a554c1d377e0c6986",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-033.png",
+      "sha256": "fcc0d8516685437f0b1de2f7f043e6d819cbee0b6736b88bb8a4944889e035a5",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-034.png",
+      "sha256": "83b70ebd32eca57892f5c032e5c2caf9a9c99065c18200bae410fb9a872c9792",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-035.png",
+      "sha256": "6b3f077ffdcbac4d42cff5b260a393814022c652ac1e439188585472c0f935ee",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-036.png",
+      "sha256": "cba9b98122ca629fefa91f82f019921cbd66de722420d6b7a1e95e875ddc43f4",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-037.png",
+      "sha256": "7556b943dd420a3b18ca570cae0c4307b162e8b21fd27ab1298e1641c52c42b6",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-038.png",
+      "sha256": "f7fa8ba5f6c716562f9cbde47cc108baf078d4bfe61c630feb518c281abc2400",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-039.png",
+      "sha256": "f1ce3bfeac79c4d4b633a5f959ce9eb1f01a300b55506e162ec3f7236b0b2fe3",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-040.png",
+      "sha256": "e7441a7d23e0ddfd93b2500e9d607c35445f9837a69306c82bcda247573f7e0b",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/corrections-041.png",
+      "sha256": "118667047293fba66506d353b5a43c149fcbcf2735a0c9f1886721d21869a9b7",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-a-001-retry.png",
+      "sha256": "9cbb26451c4465ae90599b4c9c069f68661e419a776723e8776c7275cb93c701",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-a-001.png",
+      "sha256": "bb8b49f6192bbee97878e5ad18e20a7b5e0ac9ae22b8d083c855535ed59b178a",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-a-002-retry.png",
+      "sha256": "b5aa918fbddcdbde956ade20b3f714ae1c98253998494dd317d43a47d2e44a58",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-a-002.png",
+      "sha256": "e117e261ef276a87f7fa223cd71f9a77b4a1d5d149f891a26b3308b198a03135",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-b-001-retry.png",
+      "sha256": "ae71a7d10d201f1fa3a35df9f5ab49002bbec053529ac832da922622be191475",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-b-001.png",
+      "sha256": "539690ce759dae115d5af0a942b8aa1c4282fb74da03b93bd8382a6e13943fec",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-b-002-retry.png",
+      "sha256": "87f7578210dc870bc57e4df998896b6ec64249291e980589ecb0d96c3ee65c0f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-b-002.png",
+      "sha256": "79f8fd46ada4cfd1b902a1cef8766bf061167f54614564e83585e5cca70be816",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-c-001.png",
+      "sha256": "400ffbe5a0b8542f54b1fcfa4f307b18b52deb7dd4abbfbfb6a2722f0e0f9d21",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-c-002-retry.png",
+      "sha256": "5b295f7bb47303cc225ff19cc2bb30a0063ed8f1cd88ed558bbaa4b4a39f497f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-c-002.png",
+      "sha256": "fc04bdbd1b3bf754f18026607b2f7694c469f0a1030f8fa53f4b281fab5e7fef",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-d-001.png",
+      "sha256": "1678bf7e4fec6c0c9cb83db357a66604d0d4ce1a556060e58607962e625cdde8",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-d-002-retry.png",
+      "sha256": "fa0f92f508512e523c6cd74151ce0dc9e92ea6d2c84166ff4ce2388ca959e589",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-d-002.png",
+      "sha256": "16fd5e86175d902db2833b97fde791c8bb59c426a4a9cb08cbcc284b74f6a4d3",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-e-001-retry.png",
+      "sha256": "e9a79881f79535eda7da852cfc500ce75874205ca53fe63275df3aac2921245c",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-e-001.png",
+      "sha256": "3919f40c9c9b366fa841c8710d14dacc461c3da55b53415f5f2166713ffa4e5e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-e-002.png",
+      "sha256": "2324cd814c147c37afb30c7768d56763dcd0afa13fea3ec93ce158f16405f51c",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-f-001-retry.png",
+      "sha256": "96ad7ffc9e76e7ac978473f9631a9acc3e7a2cc74a94e21d76dbb5fbb6b38799",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-f-001.png",
+      "sha256": "fe1806d2b11237797ec261d8a366ff16c14e1b39761f8e662c65df5b9f2fe943",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-f-002-retry.png",
+      "sha256": "b416de8dcd44a3fa5aa625a20393ff77550ef31ebdcb37bc84b8b944117d4415",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-f-002.png",
+      "sha256": "8461617bd6b08ce5fea5634cc1a99e5143d4b106689cc4c687fea3712ee4fe03",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-grip-001.png",
+      "sha256": "199190a67b9fab682911c82bed5f24a22f65a133873e59cc6615896fdcc0c7fa",
+      "width": 1024,
+      "height": 1536,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-grip-002-retry.png",
+      "sha256": "a59ac1a210affe45112bcfc66a0e3b01f0df3a4cfbe78999b516221bab95241c",
+      "width": 1024,
+      "height": 1536,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-grip-002.png",
+      "sha256": "29a3c832695403d7187d99894bda907d42d677b022e2cd18aa7cd1e828f0609d",
+      "width": 1024,
+      "height": 1536,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-laterality-001.png",
+      "sha256": "8a1fdca513af84d9db37a66995bcb84a54cc98f8fc33c73a7ff965ead3ffed85",
+      "width": 1024,
+      "height": 1536,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-solo-001-retry.png",
+      "sha256": "239664091f2b90bb1ccc50191cd0294a461fd06e968c2a8420f647cb02f49b48",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-solo-001.png",
+      "sha256": "bc177fabb87ab26b04b583f8e9dc8fbd1ecab1a4fae0f06935a8190e41ae1258",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-solo-002-retry.png",
+      "sha256": "7093cb9a08b7113c3d31022834ef37b43d7c1c20210a3b1ae77b2051ef9633ee",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-solo-002.png",
+      "sha256": "ebbc03e99e6bb5b43de07586900993ef71368d0c2fda282e00fa7ba1cae1f9c1",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-solo-003.png",
+      "sha256": "a9d4d8bc3be6d9c69b8798a3d45164f0f638f77c6a90f0c253faa4430d8602e9",
+      "width": 1024,
+      "height": 1536,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-solo-004-retry.png",
+      "sha256": "53b7e7cf8026049e530862fd9c714cd5604ca0c2c5cb93b25309cc2ebf134b7d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-solo-004.png",
+      "sha256": "5e166f6395943acdfb46bc39364bafd81f04a947d738e26424c13463156ef3d0",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-solo-005-retry.png",
+      "sha256": "5843757540e386b48c953740436c069eab89a0246595527330c270b130cd43d3",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-solo-005.png",
+      "sha256": "0b1dd73d573665e2221e0312a4d56f55d7ac74467b6e22a87b4ff936f7563b7e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/finish-source-001.png",
+      "sha256": "8888d1e2dd57893cb6047c304befc5d5fb1fcc6c65c245f34ec3e682954f7fc9",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/foundations-01.png",
+      "sha256": "a58448081c0eea450431bfbb2af3aafdbd2c446a7904cc54ceabb777c811fd64",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/machines-03.png",
+      "sha256": "32421c0609d4caa0b80809907aa5a8009ea1d0fb09c177743c0c06f80d000d66",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/machines-04.png",
+      "sha256": "f5b781519cda52dc6f6157d4434452389ad38a17087e3ea3e8cf22d5a5a2505f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/machines-05.png",
+      "sha256": "bfb65dab3f437a28df664d5169c981064902caa13bcea52bc8dcb1f1ec088330",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-001.png",
+      "sha256": "6dc763249541220d936f252f553923000f28c8e048e367c0b1a3ffa31e583bcc",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-002.png",
+      "sha256": "1fecf9873db562ea53bf6dc28985ece7245a8f09d991315dd432c14757109d88",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-003.png",
+      "sha256": "8a6a21210755faa90f9d0ee7a216ea5c53f5d65d25ead311ad0a9478746328f3",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-004.png",
+      "sha256": "c0be60fc3e8a6a6b7c2f0fc9a15f5fc615ae69a6f6faa32eab94b69b751d5b0d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-005.png",
+      "sha256": "386cc82df12d641d9f7938da97a857bd8c9a497ea8d6a46699f1e189c535cc28",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-006.png",
+      "sha256": "cadb89b4b8787f9229df62a4c4c525fa3986746085b628c13b8112cd04e210eb",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-007.png",
+      "sha256": "345b267d67c46e347c27180e65abd5cbcfc71421950dd7f361fb9e657d12cff6",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-008.png",
+      "sha256": "38328fabd035e940482b24dcf92e3bfad75254a301f7cc2fd934c9652b4584bf",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-009.png",
+      "sha256": "8bc9d85481b37d515e91e423998011a1396a1f5e20f4042fea58d86d95db17e1",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-010.png",
+      "sha256": "3c47845bdd363e6fcfc425cf9d435ae9fdc22369b97c17c58686ddb35cb75b76",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-011.png",
+      "sha256": "e05951b6f60fb543c87222b5e697523ed545d1122cbed70bc18e94506eeb6256",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-012.png",
+      "sha256": "650a2531cfa2a461d6828222aac9a41ecb0ab82c853995ebf66b9c8b773ed45d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-013.png",
+      "sha256": "08aaba80f7aa581cc926c28d815441e430d01dc01101c753c91f56cd63e3a34e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-014.png",
+      "sha256": "e25870687719f860e23443fe95372c4406bbc14fe5754e8ebeee6755f5d6e09f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-015.png",
+      "sha256": "4de6d1dd38c49deda63c67a4fa7e9c2d7161933c9da6f6e8b76a5d9618731769",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-016.png",
+      "sha256": "b543eec97551642674fc880b07a3dfb25ae42efd55341c78c66acb0a6e024d7f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-017.png",
+      "sha256": "299a79dfc8453800c3393656d0dc19c0c3ca1a1e98f3079b6bf32a8587658398",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-018.png",
+      "sha256": "5ffc450d8968a6c4b7ba12c514a44ec189da88cc2a276e1f4224a0ce91c7f8fb",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-019.png",
+      "sha256": "9ef6ba13e095203e6dbfc451884cb2f87e8a1ac4048d928648eaec70eeef2c54",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-020.png",
+      "sha256": "aaaa8235832d53bd985663a5088fbf76cd90f3b9f9495b82f17b0c3d2ab29a4a",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-021.png",
+      "sha256": "3a167624d586d55c89e7ad290b7340dc5fa1d576c36f69b74e10de24cf0b5dd8",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-022.png",
+      "sha256": "60f79d7a7ae0523fdd594958113bb88b0eda2cc7e1e1519fd0129aa61eddf8f8",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-023.png",
+      "sha256": "e6530149e7a9387cd894b25fccbc2c4d67adbc58337f54ea15f5260e85bb3bbf",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-024.png",
+      "sha256": "d04a0328ba3329106da488c76490452257aee5e85e9db4824f603fe630ad8959",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-025.png",
+      "sha256": "4589eb126b7d548dfcfd41568e62a928706243356c7cebbb42be973ef7b4670f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-026.png",
+      "sha256": "d816cc6a64fe9d0c5ed5d16d855f013304def8b7afc46f11e16367ee1afa79a1",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-027.png",
+      "sha256": "26b1c9723c4b90e81b06933f63f58626effa19d83278ef1c4f7a12ff4091f870",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-028.png",
+      "sha256": "58bfd736b4e79d2d47b59544f45d1de8daa6db0af88e8bb124cfa4a757d773e4",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-029.png",
+      "sha256": "ed12068dedccab5c2608702aa8ad206bff5d1891e663fbebb2fc81a4a3368eec",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-030.png",
+      "sha256": "58994f2c7acf73e0dcf8b1b9e6317a53cd0b7a9c076763af9763dbaebb43e681",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-031.png",
+      "sha256": "a946a262a253dcd756944b0ba86621f146809b4624404e64a0554f0441d17852",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-032.png",
+      "sha256": "778a2a44873a8b914e8dab756ec8f71de61d036207e855435644b3a5895fe736",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-033.png",
+      "sha256": "683055889ca2923ff28b603f70b625c07a491fd05b01fada0f129a8345d5dfc1",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-034.png",
+      "sha256": "145f10be437c64efd10726f5866339060a46030795737c3e222b9916f8c7603d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-035.png",
+      "sha256": "31e7cc256554e304145f926d79dc89cc53b15d837231b23b6300a32f0d122a72",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-036.png",
+      "sha256": "24d954330e57700f762e0df5ec0bb6288ea565c4a78539ef103822ff5d828e1f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-037.png",
+      "sha256": "3019b65bc79f0a56ae52764bf19af97ee872ada803c60ed5871205e93cabb830",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-038.png",
+      "sha256": "5c15e41da88cca680aef7493c2cd24bd60b47315b99e1c6465bf06bd05218380",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-039.png",
+      "sha256": "3d32e65e20080038344ca355f5df98472f77ace97ee05cbec2d4a5305f24bac0",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-040.png",
+      "sha256": "5b243d916bfa254c5da3c3f6a202a6f7ec289262b7ca672bc7508591b0a1deab",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-041.png",
+      "sha256": "675ff4bc9f0267141d5bc915b3650705e42f749700da46871c28d28eff174a25",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-042.png",
+      "sha256": "08046f2bc89724b2a6fa9514389f141ba46564b036cf1f08e6e24ab49a31767d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-043.png",
+      "sha256": "fd615d8ccc3f9fa2054bc9ad8f78746ed6e34eae73171f760afd78d4ffe2a68d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-044.png",
+      "sha256": "1c6e866cced3dec2cb78c25d06fea638602a14b9e721c45afcd8c53d98c55437",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-045.png",
+      "sha256": "5a1637e3e31309bdb93d2d4e4b6a6af4b766dda45b499addb44a6889279d50c5",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-046.png",
+      "sha256": "e57040a62067a32dfcfe52324099517b099c096ee00d98ba00d8b13b1df47b19",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-047.png",
+      "sha256": "a67cd01263cc9e319bdb48d2bae3b57774cb83833860278228c2757a314f9ebb",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-048.png",
+      "sha256": "2a8fcb997868f2d28a9b7302b86e3d3e58f64857db63c1262ff54af62b7fc558",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-049.png",
+      "sha256": "dae1c794cf8e020ae8862cc3c357fee4877a2979d84532c23467c1c87be2ac57",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-050.png",
+      "sha256": "3a6ca58ad42f7e6d7958cf2b6257733da0436e4beca5a81e10d6d8c32cb2d8ef",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-051.png",
+      "sha256": "31b331d0fabb317b2ca768f4ddb956634313485bc7210104ef152f6a1e4ccd0f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-052.png",
+      "sha256": "503ee4f8fbf175542dd57ef6299fdf636c6f80f31ef22c6cd9c8c8008b28b939",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-053.png",
+      "sha256": "0d4105174c8fb7f914948f0f9156c5fc1005fcd3890bbbb86a538242f9e26952",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-054.png",
+      "sha256": "e16ff21ff21b9e83acc43e86c10e223c244d645995455da5a38b033a96d99070",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-055.png",
+      "sha256": "c86b0d1b1cf78b9fea09c22c388901a6d3bd3554a2e4cfd7fc80103e6cf8a9ed",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-056.png",
+      "sha256": "adcf6ec7ef71cdf934dfb89c6da52f3680756a32568b1a17ca235c7d02498bcd",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-057.png",
+      "sha256": "a557f46a49b38350502f1e348079fddec98288ff92f12c9c603089dc13165e91",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-058.png",
+      "sha256": "519757770796f0a1c87f809e7d0bcf6015ecf6c604e4da4b972d65569bb38169",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-059.png",
+      "sha256": "895ea43159594b32dd242e72961f7e6d352c93327da8c85eba9691488cfc1656",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-060.png",
+      "sha256": "863c3001b6ebcbe8f473522cab59d4c4e955ba798637b02c07eaae0bd55e9ab9",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-061.png",
+      "sha256": "6c67ea33845391d13b26e7b883fe5ce9f17598d7db1213f2857cc141d50cd674",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-062.png",
+      "sha256": "fbc80c11e7ac8e8e14a7c506f6095374a9a4080a6db992090f3e250fd939207d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-063.png",
+      "sha256": "1ceb5046dd0cc6ac24214d51381eb5209a24151013930356a38ac645afeb7db0",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-064.png",
+      "sha256": "eafdbc449bbe4f8d5f178fe2161524ae61344d24fce2317fc290534d0fbc11a3",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-065.png",
+      "sha256": "09ebda90e5d4101c386cf4f1e8adbe8aa8160b7fec3637491131ca576789616d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-066.png",
+      "sha256": "27553ccc69a8def7f8e1ed5c74e4796e4449240049ab66e2062201c7bff31305",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-067.png",
+      "sha256": "1a6b655b24949f90a131d082d768909caa405ecb6e820df526b070d5b723785f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-068.png",
+      "sha256": "30ad6b76cd966778fa1a1d879c5c7de3f07f0864e71904401b68bbf73f70a752",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-069.png",
+      "sha256": "db44a40899182b2f0a9a74eaee204b8462683bb38ed37f976566d19b98bc8377",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-070.png",
+      "sha256": "39112ee1c74319181b5ace506118485a0cf4a37a3297089aa3f9099a48106c25",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-071.png",
+      "sha256": "b91ad81a864de3b69d1a0c1697d06220f6ff3d51ca66f5a6b00e91327a9e26c8",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-072.png",
+      "sha256": "8ebc6a68faf822b447bdad67d95db9aaaa991f8867a13fd478995626727cd091",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-073.png",
+      "sha256": "566e6421cad019ecb92dbc2628111a527a5dd4a1afe303c8d51aac979b34b722",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-074.png",
+      "sha256": "fda040aa139a0a4c35d18862724431b172197aab8ee69a7104fc5fb0d0357e5c",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-075.png",
+      "sha256": "27775d2c416959e1b1fd82d46dfcb22d41c1380bebf10f448125e30423405970",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-076.png",
+      "sha256": "ba8b0407aaf177ac171eed385af1497994baed4547dc9f17cebd501f692d2f86",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-077.png",
+      "sha256": "7de284a38c9240bce49e6da2439a9d5fc869ec63795803d2fa6d5ac29e808a04",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-078.png",
+      "sha256": "10d77d05a23df8dac247b78d8b85d41b777abd7d04d7a590468f9d22b6750299",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-079.png",
+      "sha256": "3aef6a56e16baba59d8cdea9a9ce1dec8c2df3d6079526c2473dc7a9e327ceea",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-080.png",
+      "sha256": "8a99798b6ba38ec1c1e2a2d79f987187d25a1f1d7ef5cb889c2432be748cd90a",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-081.png",
+      "sha256": "763ef6a906a0fe850d31dcadc7e0a66b7a30377d3bcd2e8634d9a03a826662d8",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-082.png",
+      "sha256": "1fc1f029c6f72e23a8512189f834bc0332bacf36a553c6c454b2abf9a58290bc",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-083.png",
+      "sha256": "db4109baafff958e9bf7aa1cd8b32495b269966f8a43a671bcbd533ebd0a3cf6",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-084.png",
+      "sha256": "e150b481df756179ff6dc7925a4be82531c65fbd37538404756ac636347370fb",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-085.png",
+      "sha256": "91e44c6209284cd5ec42239634ad7f98a8c648144fd24d5fb363665fa754e6fc",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-086.png",
+      "sha256": "5dbe2c3cd868ae24f6c7014362df9db5f58cf1285139aa00784bbf58aa315a22",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-087.png",
+      "sha256": "49cb5904b18d86b9423b5676db9c999e529082a97c494ed5c5b051044b197fb6",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-088.png",
+      "sha256": "f83fc780b5d94a93da16533ddd569d4eda5c689f55b637a9f2dcc08547c1a2ff",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-089.png",
+      "sha256": "ae4f59e376038961342dcfdfcb58ea62b6356717dfe7096ac41a428f6a7b653c",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-090.png",
+      "sha256": "be66408348afe27a59d332ddb07193a2cb3c34d8523cbffcbed354eeb9636d5a",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-091.png",
+      "sha256": "113188de18c4b11817d81eaf0ccbae5756c4d24659bc08770d4495ff9c1a39e3",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-092.png",
+      "sha256": "a3e675b18318a987c8a769773bff00efc954cbd311f60fba8bbe51cadfd118ac",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-093.png",
+      "sha256": "767ad9cea01594c8b9f9165a0a7a8dab71090d2217fbe1c4c07f883235fd9056",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-094.png",
+      "sha256": "f5d8cfc93ab0aab0d73f30b4d366165c813165e740ac61cc99e8befe90fe645b",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-095.png",
+      "sha256": "a1675d86f73862f9912641c6e22f09109c1c29d14c9921b38cfde11eaae35d41",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-096.png",
+      "sha256": "fbf86c33851f516c1fa4e1b51b320e8d0a0af699e22037336c8ee711db20f219",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-097.png",
+      "sha256": "a468c1fb8d85450948b132dc79ee01b81ab893f295ed3f2020ebeffeab25fc08",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-098.png",
+      "sha256": "06b9ab9523de9ae6f7befd834949639c228f9d34106c6a7daff32b2c8759725c",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/movements-099.png",
+      "sha256": "41c111d9904c2c522f0a650013f99f89b8c34a7a3849b23f564e62cb73394d5b",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/recovery-a-001.png",
+      "sha256": "e30e573637fb36f483fe2c3b1cf1402d23edd861bef512da62ebc9e07d3baa9c",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/recovery-a-002.png",
+      "sha256": "62d04ca456229cb8ae42727c13dea247bf06f32a597df17bc6c09ed3afabc480",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/recovery-a-003.png",
+      "sha256": "9ff21be3595f9918b8a415b459f91afee78731e97749fe168557415dfd3f3159",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/recovery-a-004.png",
+      "sha256": "c4a5c528cec1daf54776bffdccf51544665a71d65d0992378b85c40a20320bb4",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/recovery-b-001.png",
+      "sha256": "9378d2a3b1c00fd78dd1b91e095ab1dbbbcf8398be9467a72827ec0189dbb48c",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/recovery-b-002.png",
+      "sha256": "1cdbe56800374e4db464a1df7986e46210f1d8502efe83179b4487bfd2e47d86",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/recovery-b-003.png",
+      "sha256": "ef0a354b49197b4793d7eff0f28a560fac88d2af527d6b592f82e56c652b992a",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/recovery-b-004.png",
+      "sha256": "d46620da7b263f8920f9f759310e2aecbb3cc95e0fb1824a3d0e804f060a312e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/recovery-c-001.png",
+      "sha256": "c5b20b1e7e61d5cec5c8db912f9c20f3f66b36f39a9cc215e2035f56033d84cf",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/recovery-c-002.png",
+      "sha256": "f543173a382b70362592e8bf010414932e2a3745c4beb7c2970106957c5c786f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/recovery-c-003.png",
+      "sha256": "eb32567b961ad79f32ce85fd1ff7149ed381a015518327121497dab9212127df",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/recovery-d-001.png",
+      "sha256": "e85b9a48c2716c51d56e3932828783f9a5df35d7e2b2f96a8813cba21817a56f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/recovery-d-002.png",
+      "sha256": "04b3f9486f6d27494a37b98e49afc8095cc0799ebc7e7e9b312a516f63f6bbf9",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-artwork/recovery-decline-040.png",
+      "sha256": "cf5823759ae96a629be94f1536ed80d258bf663dfa09e0f2089cc283c25743d7",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-svg/core/key-poses.png",
+      "sha256": "a0fbcff761495a702627ca42cfe47e94b5527f5e45240734aa42da2d35d7b585",
+      "width": 2400,
+      "height": 1200,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-svg/legs-a/key-poses.png",
+      "sha256": "85b22946f88337881ffe69130df506a452cb54dc690a2092aaadb7cfcfc037a7",
+      "width": 2400,
+      "height": 1200,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-svg/legs-b/key-poses.png",
+      "sha256": "caaeae23943219bd9cf3f598b7586671969635d535c953f9c59ddde99b6b8444",
+      "width": 2400,
+      "height": 900,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-svg/upper-a/key-poses.png",
+      "sha256": "360c8c36cf94af5e1f1bcd35395dcb835fc526d083829e8863d8627839bda24c",
+      "width": 2400,
+      "height": 1200,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/exercise-svg/upper-b/key-poses.png",
+      "sha256": "21d1c3c38a38b1147732d1acbb7e946e2a7505e7e92b3bd3950e6ae0b0cd0436",
+      "width": 2400,
+      "height": 900,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/site-visuals/routine-photos-original.png",
+      "sha256": "5ff7f9efe07861a79f1b57aeda447d2857c17b8b20196f7167076f29fb315b8e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/site-visuals/routine-photos-unmarked.png",
+      "sha256": "14bc1230dc2ca90dfaa87fd04bc67db8fe218d262217f2926bc74fb13f672a56",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/site-visuals/routine-photos.webp",
+      "sha256": "ffef857402907eee61cbc9e65f894b5348609b44a3b92320127a6efa4e4319ee",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/site-visuals/training-hero-original.png",
+      "sha256": "f7aad27e3205d208a56928276256b0f81825c3cd55e17320f497d30ea2684e83",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "assets/site-visuals/training-hero.webp",
+      "sha256": "b65965485c5e15ae8da35cf190a3124ca964e4b2bafa5e8cbcc2bddd62126ce8",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/army-combat-fitness-test-3-repetition-maximum-deadlift-mdl-e.jpg",
+      "sha256": "d8cffabd8f3e3b8f68d2cde702832523c9dbf7884deb8b518632f8e8e6ab8839",
+      "width": 720,
+      "height": 406,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/army-combat-fitness-test-standing-power-throw-spt-event-2.jpg",
+      "sha256": "815bc355a9271a29a520a73919b74c01da5f3cfe3abfde2172dab35d11847020",
+      "width": 720,
+      "height": 406,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/bench-press-exercise-demonstration-video.jpg",
+      "sha256": "b15edb5856b77ed18d7c9a55d03957f4507ace8940f110df71ab42ec160eff09",
+      "width": 720,
+      "height": 406,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/bent-over-row-exercise-demonstration-video.jpg",
+      "sha256": "6cd9a0a2bf7de068701f49ce10c4a259a5d77b21bb28fe44cdf3fe96928b8775",
+      "width": 720,
+      "height": 406,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/conditional-drill-tuck-jump.jpg",
+      "sha256": "a83f017351a73bd1b6947cc7e7d35cd30115281dc84181912951fdb264714b78",
+      "width": 720,
+      "height": 406,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/deadlift-exercise-demonstration-video.jpg",
+      "sha256": "6105cfa031eb96dfd48c3bca79d5059f42ecb8b02c583e4aa59c6066da85dd3b",
+      "width": 720,
+      "height": 406,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/hip-sled-calf-press.jpg",
+      "sha256": "2ea76f55950cbeb55f5777da9eb0236db8694d1599b80ba4bc9760c56e1ce102",
+      "width": 720,
+      "height": 406,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/hip-sled-how-to-perform-a-45-degree-leg-press.jpg",
+      "sha256": "9ba43014d3dbaa1ba68b9b9ca77d121dc52887b57bfac07a48fbc9fb957613a1",
+      "width": 720,
+      "height": 406,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/incline-press-exercise-demonstration-video.jpg",
+      "sha256": "54aab68bbfe60209e6f7385e11156c20cb57e864b7cccaa6073a0406feb622df",
+      "width": 720,
+      "height": 406,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/muscle-strengthening-at-home-bicep-curls.jpg",
+      "sha256": "dee756715845a21b885398cd8beb422d1ae9bdb3c7b9f6bdbcdd623caa8e092d",
+      "width": 320,
+      "height": 240,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/muscle-strengthening-at-home-overhead-press.jpg",
+      "sha256": "5754bbe16f0802e84246210389289a969a54e3d8d6398b48f05c1c2a295966b1",
+      "width": 320,
+      "height": 240,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/muscle-strengthening-at-home-superman.jpg",
+      "sha256": "ce55da0cf75cb4b18ea58c122501e4ad8d85e6218d395219eb26cab1f9bf55a4",
+      "width": 320,
+      "height": 240,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/muscle-strengthening-at-the-gym-back-extension.jpg",
+      "sha256": "6633f5469164300598c4573134132360e67ccf1ebbd28b9e00ee4042d892ca66",
+      "width": 320,
+      "height": 240,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/muscle-strengthening-at-the-gym-chest-press.jpg",
+      "sha256": "e2fae23f73b15cf51598f0ea82a6b286f765510263d335e930bd08a9401d0e3b",
+      "width": 320,
+      "height": 240,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/muscle-strengthening-at-the-gym-leg-curl.jpg",
+      "sha256": "1aa5925dda2384d24f7c6b5b908b70092e5943986d922a1c54c987be4205640b",
+      "width": 320,
+      "height": 240,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/muscle-strengthening-at-the-gym-leg-extension.jpg",
+      "sha256": "555857efaccd5f3c03cd0b05d5b01fea224a0b2f97d51ee9826cc751c8e15ab0",
+      "width": 320,
+      "height": 240,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/muscle-strengthening-at-the-gym-overhead-press.jpg",
+      "sha256": "acd1213d4971d6b6e0bdabd23e603f0342b8dd69e8c847d395739afcba5c3923",
+      "width": 320,
+      "height": 240,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/muscle-strengthening-at-the-gym-row-machine.jpg",
+      "sha256": "c1d0ff58b13f6f25613f73f68bb5a000f16d9a2c2436e9d00ab7e7ad762da99f",
+      "width": 320,
+      "height": 240,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/pull-ups-exercise-demonstration-video.jpg",
+      "sha256": "744ef53ef2f3585b7a89aa1331de611abe40fe59ebea66108992f15545fa3eea",
+      "width": 720,
+      "height": 406,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/shoulder-press-exercise-demonstration-video.jpg",
+      "sha256": "f037a90416f40276b35b3ad848cc7e731f6ee7d39d0d0190eadd35df91440c96",
+      "width": 720,
+      "height": 406,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/squat-exercise-demonstration-video.jpg",
+      "sha256": "c5aa19578a4e8758d130dc3795939ebf97202441fbe493a285f11a4e9d768ef9",
+      "width": 720,
+      "height": 406,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-demos/strength-training-circuit-overhead-push-press.jpg",
+      "sha256": "95a7c8bd1a6a36ff2dba5d69e0558381e1760b84805e2a6e6d3ebb2d8ac3d801",
+      "width": 720,
+      "height": 406,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/authored-a-001-retry.png",
+      "sha256": "224d75942c8b54b35460dea8d218318e4921eb00f1cd038f7c64b05e1b7fa4c2",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/authored-a-001.png",
+      "sha256": "c17fb4374c259d65d6bf37dbbe89776089cff6c8e0acacb8a6c4906a2bdcb61e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/authored-b-001-retry.png",
+      "sha256": "be03d865dd248ab7ba30840c8fa7369a22d418d5ea2a037e6006adc218e33df8",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/authored-b-001.png",
+      "sha256": "527bd9d6b02cb61072e7ff48055c4efe296352dcc8c8fb9ffc95903a3a119e58",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/authored-c-001-retry.png",
+      "sha256": "6b72137b33d935d1f46fd51cdbd365e24b88a6287cc357fa08080eae74b8dc57",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/authored-c-001.png",
+      "sha256": "8c5c293f4f74f944ca1b5f4f52a58c4fd95a27cafd4a4afca31c33faa9b37009",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/authored-d-001.png",
+      "sha256": "c15f3da06bdd1e7dcd165f9817fe5ee6b116e72fb16cecf7fbc34012ac13a49d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/cable-config-01.png",
+      "sha256": "05d3a4549147179228420f6b1ef6820673de721ebdf958539221ffa2c6d92188",
+      "width": 1254,
+      "height": 1254,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/cardio-01.png",
+      "sha256": "dc09bbfce794675d49002e943d01799cfe5ec36ff5820ff53beb3b1110281f0a",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-001.png",
+      "sha256": "c5a24cace0cb9b253baf0e19f2d4a5b0f7b28a1418d9e09b5447ac86bc705a95",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-002.png",
+      "sha256": "d4736cdd328edbf4308cc8b2f74262fcc0dd9c6a4a9077732262b6df4170c243",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-003.png",
+      "sha256": "68133a9bb69d1a1137956edd9f8121f554e45a614445edbcbec620169fb326bd",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-004.png",
+      "sha256": "cb6deba4466170bdfe46790bbce92069e9ac7fed8cb1214d43ee5bab9f76fae7",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-005.png",
+      "sha256": "b05a70ef3485fc2b3500831304c0b9b93ffc3a72354a1dc26b1d176aeccf6548",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-006.png",
+      "sha256": "b830cd1dd215b968e69c87c9360723b732be325ba2a24cb723313b426bce879f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-007.png",
+      "sha256": "07ebf178c582f6420d04ed7cabea81a6d4a2229e946fd4b9c124cc7bd74bdd7e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-008.png",
+      "sha256": "1be098527762574791f971b1ee6712967ae7fffa9de5e880ce8e0b5021e2574e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-009.png",
+      "sha256": "cd229e7a97dfee548b1918e772895c3f4d6e98d18d4294d8cc04d2335e5ab86e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-010.png",
+      "sha256": "760514bf9d60eff50902e70756c9e11cb7fd067edcacb59a9780434ba28de5bf",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-011.png",
+      "sha256": "7d6c4d3bee6fa1b720fd24d0ed10befece596acc98b02f8a2e06acf376e2a110",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-012.png",
+      "sha256": "d9afd817088c6494fd66df7c02c8e3418d78404b202122ae0a680edfd907e822",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-013.png",
+      "sha256": "113c818fbb7a31f52ac2b0d4d9dec1ac0c9aa2f3f47a44437a433913f06557b4",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-014.png",
+      "sha256": "f0c0d7b43992dd24c4d765655261a6711d25df5dab68af80fab98f5e34b7d39d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-015.png",
+      "sha256": "9e68620a532c1103d6ba2cbc6b74aa5ce6634ce9659092dfbfb73adab7a7c42e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-016.png",
+      "sha256": "3952576caad59028124d67006d7adb930bf2841c23891cebe0ad694e82ab180a",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-017.png",
+      "sha256": "8fc55cd3faa22141808aadd88ee7d3eed9c2dd7e70e9c39c7c3d3e316554de22",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-018.png",
+      "sha256": "299affeb663cd6ee5c6ebacb5ccbe821fcbb97db89bc5259082641c349a4418a",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-019.png",
+      "sha256": "bcb1d5f4ea68192bfe053dea6005a2d6900f11218475ea1531ec78ac7c606de8",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-020.png",
+      "sha256": "3d082f77d130649dea3ac5b681c943594cfa518ac83da1b885d2fe264c149e74",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-021.png",
+      "sha256": "fab8fcd58af0f4be2e7971770ea45e69fe2253bcdf4e9532389ac48b90694b79",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-022.png",
+      "sha256": "687f2d7d9fce47da17da2585f09ce63ea7f2f4339488538be4ee8b631e7716ea",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-023.png",
+      "sha256": "240e1a157d77f9542d8b9eb53bda8ded8f72de8857035ce3b19eb7682c526dda",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-024.png",
+      "sha256": "369a3407f51e3fcf98309a105f35f3ad13d22845621443608b5b0a62c4f9de6a",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-025.png",
+      "sha256": "553c437fb54530fb1bf6ef9007cbdf2bd854acb8d4e780d60bb23ebfd509b871",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-026.png",
+      "sha256": "012915131e4d19c46ea7ed26a90b9a46377c9bbd96bff33acca93a12cef85e47",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-027.png",
+      "sha256": "56afe2ac4b11eed657d72058966eb0518147ec9dc2490dddff61258fa08f9fcd",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-028.png",
+      "sha256": "ec2c5a236f56a021046e5a8f3461bcc212528c74982dd91763c028c5e8bfe351",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-029.png",
+      "sha256": "13d9e2cfc2a7c89d95da5d9ed948f20645a25396e222908ef3a496f3b1201325",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-030.png",
+      "sha256": "a1fec3e224d92b2b428377f07918ae965105f0e673db43e99ed797c11ef0d808",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-031.png",
+      "sha256": "fbe1f5895aceecad0b0276fc98fa5e4289c68e7703537bb8b08478bbf4c21c25",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-032.png",
+      "sha256": "7c0420451a6d3529da7e485eaaf0ce3dae47ed734b176a0a554c1d377e0c6986",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-033.png",
+      "sha256": "fcc0d8516685437f0b1de2f7f043e6d819cbee0b6736b88bb8a4944889e035a5",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-034.png",
+      "sha256": "83b70ebd32eca57892f5c032e5c2caf9a9c99065c18200bae410fb9a872c9792",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-035.png",
+      "sha256": "6b3f077ffdcbac4d42cff5b260a393814022c652ac1e439188585472c0f935ee",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-036.png",
+      "sha256": "cba9b98122ca629fefa91f82f019921cbd66de722420d6b7a1e95e875ddc43f4",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-037.png",
+      "sha256": "7556b943dd420a3b18ca570cae0c4307b162e8b21fd27ab1298e1641c52c42b6",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-038.png",
+      "sha256": "f7fa8ba5f6c716562f9cbde47cc108baf078d4bfe61c630feb518c281abc2400",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-039.png",
+      "sha256": "f1ce3bfeac79c4d4b633a5f959ce9eb1f01a300b55506e162ec3f7236b0b2fe3",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-040.png",
+      "sha256": "e7441a7d23e0ddfd93b2500e9d607c35445f9837a69306c82bcda247573f7e0b",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/corrections-041.png",
+      "sha256": "118667047293fba66506d353b5a43c149fcbcf2735a0c9f1886721d21869a9b7",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-a-001-retry.png",
+      "sha256": "9cbb26451c4465ae90599b4c9c069f68661e419a776723e8776c7275cb93c701",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-a-001.png",
+      "sha256": "bb8b49f6192bbee97878e5ad18e20a7b5e0ac9ae22b8d083c855535ed59b178a",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-a-002-retry.png",
+      "sha256": "b5aa918fbddcdbde956ade20b3f714ae1c98253998494dd317d43a47d2e44a58",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-a-002.png",
+      "sha256": "e117e261ef276a87f7fa223cd71f9a77b4a1d5d149f891a26b3308b198a03135",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-b-001-retry.png",
+      "sha256": "ae71a7d10d201f1fa3a35df9f5ab49002bbec053529ac832da922622be191475",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-b-001.png",
+      "sha256": "539690ce759dae115d5af0a942b8aa1c4282fb74da03b93bd8382a6e13943fec",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-b-002-retry.png",
+      "sha256": "87f7578210dc870bc57e4df998896b6ec64249291e980589ecb0d96c3ee65c0f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-b-002.png",
+      "sha256": "79f8fd46ada4cfd1b902a1cef8766bf061167f54614564e83585e5cca70be816",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-c-001.png",
+      "sha256": "400ffbe5a0b8542f54b1fcfa4f307b18b52deb7dd4abbfbfb6a2722f0e0f9d21",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-c-002-retry.png",
+      "sha256": "5b295f7bb47303cc225ff19cc2bb30a0063ed8f1cd88ed558bbaa4b4a39f497f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-c-002.png",
+      "sha256": "fc04bdbd1b3bf754f18026607b2f7694c469f0a1030f8fa53f4b281fab5e7fef",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-d-001.png",
+      "sha256": "1678bf7e4fec6c0c9cb83db357a66604d0d4ce1a556060e58607962e625cdde8",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-d-002-retry.png",
+      "sha256": "fa0f92f508512e523c6cd74151ce0dc9e92ea6d2c84166ff4ce2388ca959e589",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-d-002.png",
+      "sha256": "16fd5e86175d902db2833b97fde791c8bb59c426a4a9cb08cbcc284b74f6a4d3",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-e-001-retry.png",
+      "sha256": "e9a79881f79535eda7da852cfc500ce75874205ca53fe63275df3aac2921245c",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-e-001.png",
+      "sha256": "3919f40c9c9b366fa841c8710d14dacc461c3da55b53415f5f2166713ffa4e5e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-e-002.png",
+      "sha256": "2324cd814c147c37afb30c7768d56763dcd0afa13fea3ec93ce158f16405f51c",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-f-001-retry.png",
+      "sha256": "96ad7ffc9e76e7ac978473f9631a9acc3e7a2cc74a94e21d76dbb5fbb6b38799",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-f-001.png",
+      "sha256": "fe1806d2b11237797ec261d8a366ff16c14e1b39761f8e662c65df5b9f2fe943",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-f-002-retry.png",
+      "sha256": "b416de8dcd44a3fa5aa625a20393ff77550ef31ebdcb37bc84b8b944117d4415",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-f-002.png",
+      "sha256": "8461617bd6b08ce5fea5634cc1a99e5143d4b106689cc4c687fea3712ee4fe03",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-grip-001.png",
+      "sha256": "199190a67b9fab682911c82bed5f24a22f65a133873e59cc6615896fdcc0c7fa",
+      "width": 1024,
+      "height": 1536,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-grip-002-retry.png",
+      "sha256": "a59ac1a210affe45112bcfc66a0e3b01f0df3a4cfbe78999b516221bab95241c",
+      "width": 1024,
+      "height": 1536,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-grip-002.png",
+      "sha256": "29a3c832695403d7187d99894bda907d42d677b022e2cd18aa7cd1e828f0609d",
+      "width": 1024,
+      "height": 1536,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-laterality-001.png",
+      "sha256": "8a1fdca513af84d9db37a66995bcb84a54cc98f8fc33c73a7ff965ead3ffed85",
+      "width": 1024,
+      "height": 1536,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-solo-001-retry.png",
+      "sha256": "239664091f2b90bb1ccc50191cd0294a461fd06e968c2a8420f647cb02f49b48",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-solo-001.png",
+      "sha256": "bc177fabb87ab26b04b583f8e9dc8fbd1ecab1a4fae0f06935a8190e41ae1258",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-solo-002-retry.png",
+      "sha256": "7093cb9a08b7113c3d31022834ef37b43d7c1c20210a3b1ae77b2051ef9633ee",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-solo-002.png",
+      "sha256": "ebbc03e99e6bb5b43de07586900993ef71368d0c2fda282e00fa7ba1cae1f9c1",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-solo-003.png",
+      "sha256": "a9d4d8bc3be6d9c69b8798a3d45164f0f638f77c6a90f0c253faa4430d8602e9",
+      "width": 1024,
+      "height": 1536,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-solo-004-retry.png",
+      "sha256": "53b7e7cf8026049e530862fd9c714cd5604ca0c2c5cb93b25309cc2ebf134b7d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-solo-004.png",
+      "sha256": "5e166f6395943acdfb46bc39364bafd81f04a947d738e26424c13463156ef3d0",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-solo-005-retry.png",
+      "sha256": "5843757540e386b48c953740436c069eab89a0246595527330c270b130cd43d3",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-solo-005.png",
+      "sha256": "0b1dd73d573665e2221e0312a4d56f55d7ac74467b6e22a87b4ff936f7563b7e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/finish-source-001.png",
+      "sha256": "8888d1e2dd57893cb6047c304befc5d5fb1fcc6c65c245f34ec3e682954f7fc9",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/foundations-01.png",
+      "sha256": "a58448081c0eea450431bfbb2af3aafdbd2c446a7904cc54ceabb777c811fd64",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/machines-03.png",
+      "sha256": "32421c0609d4caa0b80809907aa5a8009ea1d0fb09c177743c0c06f80d000d66",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/machines-04.png",
+      "sha256": "f5b781519cda52dc6f6157d4434452389ad38a17087e3ea3e8cf22d5a5a2505f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/machines-05.png",
+      "sha256": "bfb65dab3f437a28df664d5169c981064902caa13bcea52bc8dcb1f1ec088330",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/mobility-01.png",
+      "sha256": "11cb657d3423e93585d04c5871aa9abd4879434ae0cb653f3a4a7244a40373b6",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-001.png",
+      "sha256": "6dc763249541220d936f252f553923000f28c8e048e367c0b1a3ffa31e583bcc",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-002.png",
+      "sha256": "1fecf9873db562ea53bf6dc28985ece7245a8f09d991315dd432c14757109d88",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-003.png",
+      "sha256": "8a6a21210755faa90f9d0ee7a216ea5c53f5d65d25ead311ad0a9478746328f3",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-004.png",
+      "sha256": "c0be60fc3e8a6a6b7c2f0fc9a15f5fc615ae69a6f6faa32eab94b69b751d5b0d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-005.png",
+      "sha256": "386cc82df12d641d9f7938da97a857bd8c9a497ea8d6a46699f1e189c535cc28",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-006.png",
+      "sha256": "cadb89b4b8787f9229df62a4c4c525fa3986746085b628c13b8112cd04e210eb",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-007.png",
+      "sha256": "345b267d67c46e347c27180e65abd5cbcfc71421950dd7f361fb9e657d12cff6",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-008.png",
+      "sha256": "38328fabd035e940482b24dcf92e3bfad75254a301f7cc2fd934c9652b4584bf",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-009.png",
+      "sha256": "8bc9d85481b37d515e91e423998011a1396a1f5e20f4042fea58d86d95db17e1",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-010.png",
+      "sha256": "3c47845bdd363e6fcfc425cf9d435ae9fdc22369b97c17c58686ddb35cb75b76",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-011.png",
+      "sha256": "e05951b6f60fb543c87222b5e697523ed545d1122cbed70bc18e94506eeb6256",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-012.png",
+      "sha256": "650a2531cfa2a461d6828222aac9a41ecb0ab82c853995ebf66b9c8b773ed45d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-013.png",
+      "sha256": "08aaba80f7aa581cc926c28d815441e430d01dc01101c753c91f56cd63e3a34e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-014.png",
+      "sha256": "e25870687719f860e23443fe95372c4406bbc14fe5754e8ebeee6755f5d6e09f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-015.png",
+      "sha256": "4de6d1dd38c49deda63c67a4fa7e9c2d7161933c9da6f6e8b76a5d9618731769",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-016.png",
+      "sha256": "b543eec97551642674fc880b07a3dfb25ae42efd55341c78c66acb0a6e024d7f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-017.png",
+      "sha256": "299a79dfc8453800c3393656d0dc19c0c3ca1a1e98f3079b6bf32a8587658398",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-018.png",
+      "sha256": "5ffc450d8968a6c4b7ba12c514a44ec189da88cc2a276e1f4224a0ce91c7f8fb",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-019.png",
+      "sha256": "9ef6ba13e095203e6dbfc451884cb2f87e8a1ac4048d928648eaec70eeef2c54",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-020.png",
+      "sha256": "aaaa8235832d53bd985663a5088fbf76cd90f3b9f9495b82f17b0c3d2ab29a4a",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-021.png",
+      "sha256": "3a167624d586d55c89e7ad290b7340dc5fa1d576c36f69b74e10de24cf0b5dd8",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-022.png",
+      "sha256": "60f79d7a7ae0523fdd594958113bb88b0eda2cc7e1e1519fd0129aa61eddf8f8",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-023.png",
+      "sha256": "e6530149e7a9387cd894b25fccbc2c4d67adbc58337f54ea15f5260e85bb3bbf",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-024.png",
+      "sha256": "d04a0328ba3329106da488c76490452257aee5e85e9db4824f603fe630ad8959",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-025.png",
+      "sha256": "4589eb126b7d548dfcfd41568e62a928706243356c7cebbb42be973ef7b4670f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-026.png",
+      "sha256": "d816cc6a64fe9d0c5ed5d16d855f013304def8b7afc46f11e16367ee1afa79a1",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-027.png",
+      "sha256": "26b1c9723c4b90e81b06933f63f58626effa19d83278ef1c4f7a12ff4091f870",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-028.png",
+      "sha256": "58bfd736b4e79d2d47b59544f45d1de8daa6db0af88e8bb124cfa4a757d773e4",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-029.png",
+      "sha256": "ed12068dedccab5c2608702aa8ad206bff5d1891e663fbebb2fc81a4a3368eec",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-030.png",
+      "sha256": "58994f2c7acf73e0dcf8b1b9e6317a53cd0b7a9c076763af9763dbaebb43e681",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-031.png",
+      "sha256": "a946a262a253dcd756944b0ba86621f146809b4624404e64a0554f0441d17852",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-032.png",
+      "sha256": "778a2a44873a8b914e8dab756ec8f71de61d036207e855435644b3a5895fe736",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-033.png",
+      "sha256": "683055889ca2923ff28b603f70b625c07a491fd05b01fada0f129a8345d5dfc1",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-034.png",
+      "sha256": "145f10be437c64efd10726f5866339060a46030795737c3e222b9916f8c7603d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-035.png",
+      "sha256": "31e7cc256554e304145f926d79dc89cc53b15d837231b23b6300a32f0d122a72",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-036.png",
+      "sha256": "24d954330e57700f762e0df5ec0bb6288ea565c4a78539ef103822ff5d828e1f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-037.png",
+      "sha256": "3019b65bc79f0a56ae52764bf19af97ee872ada803c60ed5871205e93cabb830",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-038.png",
+      "sha256": "5c15e41da88cca680aef7493c2cd24bd60b47315b99e1c6465bf06bd05218380",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-039.png",
+      "sha256": "3d32e65e20080038344ca355f5df98472f77ace97ee05cbec2d4a5305f24bac0",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-040.png",
+      "sha256": "5b243d916bfa254c5da3c3f6a202a6f7ec289262b7ca672bc7508591b0a1deab",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-041.png",
+      "sha256": "675ff4bc9f0267141d5bc915b3650705e42f749700da46871c28d28eff174a25",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-042.png",
+      "sha256": "08046f2bc89724b2a6fa9514389f141ba46564b036cf1f08e6e24ab49a31767d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-043.png",
+      "sha256": "fd615d8ccc3f9fa2054bc9ad8f78746ed6e34eae73171f760afd78d4ffe2a68d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-044.png",
+      "sha256": "1c6e866cced3dec2cb78c25d06fea638602a14b9e721c45afcd8c53d98c55437",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-045.png",
+      "sha256": "5a1637e3e31309bdb93d2d4e4b6a6af4b766dda45b499addb44a6889279d50c5",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-046.png",
+      "sha256": "e57040a62067a32dfcfe52324099517b099c096ee00d98ba00d8b13b1df47b19",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-047.png",
+      "sha256": "a67cd01263cc9e319bdb48d2bae3b57774cb83833860278228c2757a314f9ebb",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-048.png",
+      "sha256": "2a8fcb997868f2d28a9b7302b86e3d3e58f64857db63c1262ff54af62b7fc558",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-049.png",
+      "sha256": "dae1c794cf8e020ae8862cc3c357fee4877a2979d84532c23467c1c87be2ac57",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-050.png",
+      "sha256": "3a6ca58ad42f7e6d7958cf2b6257733da0436e4beca5a81e10d6d8c32cb2d8ef",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-051.png",
+      "sha256": "31b331d0fabb317b2ca768f4ddb956634313485bc7210104ef152f6a1e4ccd0f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-052.png",
+      "sha256": "503ee4f8fbf175542dd57ef6299fdf636c6f80f31ef22c6cd9c8c8008b28b939",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-053.png",
+      "sha256": "0d4105174c8fb7f914948f0f9156c5fc1005fcd3890bbbb86a538242f9e26952",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-054.png",
+      "sha256": "e16ff21ff21b9e83acc43e86c10e223c244d645995455da5a38b033a96d99070",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-055.png",
+      "sha256": "c86b0d1b1cf78b9fea09c22c388901a6d3bd3554a2e4cfd7fc80103e6cf8a9ed",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-056.png",
+      "sha256": "adcf6ec7ef71cdf934dfb89c6da52f3680756a32568b1a17ca235c7d02498bcd",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-057.png",
+      "sha256": "a557f46a49b38350502f1e348079fddec98288ff92f12c9c603089dc13165e91",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-058.png",
+      "sha256": "519757770796f0a1c87f809e7d0bcf6015ecf6c604e4da4b972d65569bb38169",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-059.png",
+      "sha256": "895ea43159594b32dd242e72961f7e6d352c93327da8c85eba9691488cfc1656",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-060.png",
+      "sha256": "863c3001b6ebcbe8f473522cab59d4c4e955ba798637b02c07eaae0bd55e9ab9",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-061.png",
+      "sha256": "6c67ea33845391d13b26e7b883fe5ce9f17598d7db1213f2857cc141d50cd674",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-062.png",
+      "sha256": "fbc80c11e7ac8e8e14a7c506f6095374a9a4080a6db992090f3e250fd939207d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-063.png",
+      "sha256": "1ceb5046dd0cc6ac24214d51381eb5209a24151013930356a38ac645afeb7db0",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-064.png",
+      "sha256": "eafdbc449bbe4f8d5f178fe2161524ae61344d24fce2317fc290534d0fbc11a3",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-065.png",
+      "sha256": "09ebda90e5d4101c386cf4f1e8adbe8aa8160b7fec3637491131ca576789616d",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-066.png",
+      "sha256": "27553ccc69a8def7f8e1ed5c74e4796e4449240049ab66e2062201c7bff31305",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-067.png",
+      "sha256": "1a6b655b24949f90a131d082d768909caa405ecb6e820df526b070d5b723785f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-068.png",
+      "sha256": "30ad6b76cd966778fa1a1d879c5c7de3f07f0864e71904401b68bbf73f70a752",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-069.png",
+      "sha256": "db44a40899182b2f0a9a74eaee204b8462683bb38ed37f976566d19b98bc8377",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-070.png",
+      "sha256": "39112ee1c74319181b5ace506118485a0cf4a37a3297089aa3f9099a48106c25",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-071.png",
+      "sha256": "b91ad81a864de3b69d1a0c1697d06220f6ff3d51ca66f5a6b00e91327a9e26c8",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-072.png",
+      "sha256": "8ebc6a68faf822b447bdad67d95db9aaaa991f8867a13fd478995626727cd091",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-073.png",
+      "sha256": "566e6421cad019ecb92dbc2628111a527a5dd4a1afe303c8d51aac979b34b722",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-074.png",
+      "sha256": "fda040aa139a0a4c35d18862724431b172197aab8ee69a7104fc5fb0d0357e5c",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-075.png",
+      "sha256": "27775d2c416959e1b1fd82d46dfcb22d41c1380bebf10f448125e30423405970",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-076.png",
+      "sha256": "ba8b0407aaf177ac171eed385af1497994baed4547dc9f17cebd501f692d2f86",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-077.png",
+      "sha256": "7de284a38c9240bce49e6da2439a9d5fc869ec63795803d2fa6d5ac29e808a04",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-078.png",
+      "sha256": "10d77d05a23df8dac247b78d8b85d41b777abd7d04d7a590468f9d22b6750299",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-079.png",
+      "sha256": "3aef6a56e16baba59d8cdea9a9ce1dec8c2df3d6079526c2473dc7a9e327ceea",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-080.png",
+      "sha256": "8a99798b6ba38ec1c1e2a2d79f987187d25a1f1d7ef5cb889c2432be748cd90a",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-081.png",
+      "sha256": "763ef6a906a0fe850d31dcadc7e0a66b7a30377d3bcd2e8634d9a03a826662d8",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-082.png",
+      "sha256": "1fc1f029c6f72e23a8512189f834bc0332bacf36a553c6c454b2abf9a58290bc",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-083.png",
+      "sha256": "db4109baafff958e9bf7aa1cd8b32495b269966f8a43a671bcbd533ebd0a3cf6",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-084.png",
+      "sha256": "e150b481df756179ff6dc7925a4be82531c65fbd37538404756ac636347370fb",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-085.png",
+      "sha256": "91e44c6209284cd5ec42239634ad7f98a8c648144fd24d5fb363665fa754e6fc",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-086.png",
+      "sha256": "5dbe2c3cd868ae24f6c7014362df9db5f58cf1285139aa00784bbf58aa315a22",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-087.png",
+      "sha256": "49cb5904b18d86b9423b5676db9c999e529082a97c494ed5c5b051044b197fb6",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-088.png",
+      "sha256": "f83fc780b5d94a93da16533ddd569d4eda5c689f55b637a9f2dcc08547c1a2ff",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-089.png",
+      "sha256": "ae4f59e376038961342dcfdfcb58ea62b6356717dfe7096ac41a428f6a7b653c",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-090.png",
+      "sha256": "be66408348afe27a59d332ddb07193a2cb3c34d8523cbffcbed354eeb9636d5a",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-091.png",
+      "sha256": "113188de18c4b11817d81eaf0ccbae5756c4d24659bc08770d4495ff9c1a39e3",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-092.png",
+      "sha256": "a3e675b18318a987c8a769773bff00efc954cbd311f60fba8bbe51cadfd118ac",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-093.png",
+      "sha256": "767ad9cea01594c8b9f9165a0a7a8dab71090d2217fbe1c4c07f883235fd9056",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-094.png",
+      "sha256": "f5d8cfc93ab0aab0d73f30b4d366165c813165e740ac61cc99e8befe90fe645b",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-095.png",
+      "sha256": "a1675d86f73862f9912641c6e22f09109c1c29d14c9921b38cfde11eaae35d41",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-096.png",
+      "sha256": "fbf86c33851f516c1fa4e1b51b320e8d0a0af699e22037336c8ee711db20f219",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-097.png",
+      "sha256": "a468c1fb8d85450948b132dc79ee01b81ab893f295ed3f2020ebeffeab25fc08",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-098.png",
+      "sha256": "06b9ab9523de9ae6f7befd834949639c228f9d34106c6a7daff32b2c8759725c",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/movements-099.png",
+      "sha256": "41c111d9904c2c522f0a650013f99f89b8c34a7a3849b23f564e62cb73394d5b",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/recovery-a-001.png",
+      "sha256": "e30e573637fb36f483fe2c3b1cf1402d23edd861bef512da62ebc9e07d3baa9c",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/recovery-a-002.png",
+      "sha256": "62d04ca456229cb8ae42727c13dea247bf06f32a597df17bc6c09ed3afabc480",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/recovery-a-003.png",
+      "sha256": "9ff21be3595f9918b8a415b459f91afee78731e97749fe168557415dfd3f3159",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/recovery-a-004.png",
+      "sha256": "c4a5c528cec1daf54776bffdccf51544665a71d65d0992378b85c40a20320bb4",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/recovery-b-001.png",
+      "sha256": "9378d2a3b1c00fd78dd1b91e095ab1dbbbcf8398be9467a72827ec0189dbb48c",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/recovery-b-002.png",
+      "sha256": "1cdbe56800374e4db464a1df7986e46210f1d8502efe83179b4487bfd2e47d86",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/recovery-b-003.png",
+      "sha256": "ef0a354b49197b4793d7eff0f28a560fac88d2af527d6b592f82e56c652b992a",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/recovery-b-004.png",
+      "sha256": "d46620da7b263f8920f9f759310e2aecbb3cc95e0fb1824a3d0e804f060a312e",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/recovery-c-001.png",
+      "sha256": "c5b20b1e7e61d5cec5c8db912f9c20f3f66b36f39a9cc215e2035f56033d84cf",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/recovery-c-002.png",
+      "sha256": "f543173a382b70362592e8bf010414932e2a3745c4beb7c2970106957c5c786f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/recovery-c-003.png",
+      "sha256": "eb32567b961ad79f32ce85fd1ff7149ed381a015518327121497dab9212127df",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/recovery-d-001.png",
+      "sha256": "e85b9a48c2716c51d56e3932828783f9a5df35d7e2b2f96a8813cba21817a56f",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/recovery-d-002.png",
+      "sha256": "04b3f9486f6d27494a37b98e49afc8095cc0799ebc7e7e9b312a516f63f6bbf9",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/recovery-decline-040.png",
+      "sha256": "cf5823759ae96a629be94f1536ed80d258bf663dfa09e0f2089cc283c25743d7",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/specialist-machines-01.png",
+      "sha256": "d896ba455122bc5d09fe8c066080713b414dc66bc42ca24ad0189413a91daa88",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/original/specialist-machines-02.png",
+      "sha256": "5f129a7034711b30464403d4ed336a49c4ed60a59342fad2305095fe44f39313",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/authored-a-001-7a9ea285cb29df52.webp",
+      "sha256": "e8ebefd1dc564bb4f392ef7228a71a1f08780dcb8857793ad158dea64cddf15d",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/authored-a-001-retry-11584f1d40205695.webp",
+      "sha256": "ae22bd62d1cf0cca4fdb3c0d1c3660fa8ec9426a99a567d42bd9875fd3483d5e",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/authored-b-001-9489e35d1c4b5f36.webp",
+      "sha256": "5b700392dcdf211b3a64cb5f1924408d850a0007aaaed3e821ffc737e5395d34",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/authored-b-001-retry-e13250547580ec63.webp",
+      "sha256": "fae19339ed40319d57de552a3b8386865cbe1ae8bbb2c519c9fb3a16f5d675c6",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/authored-c-001-retry-26d4d35ce665fb6c.webp",
+      "sha256": "b8d03c164408d0bc8deb4264165fadbb0291c0026c0f518ec21c2347fff84887",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/authored-d-001-15f155b162b97a8d.webp",
+      "sha256": "0147dd8dfd587b4ed705bf173710d1c50f7f646fecec70d5284926271e82a57c",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/cable-config-01-1ae906d3c7aba136.webp",
+      "sha256": "548a8acfbd2e1224fae3126c1ac2104c4f81c695fa37bceeedc44c1648992161",
+      "width": 627,
+      "height": 627,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/cardio-01-5c38f1ac06c14b8d.webp",
+      "sha256": "56afef82c73507537920c9f7712e44c3413acad69aa36fd1e587a3547c38441c",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-001-d8f73f2ae7c3ccac.webp",
+      "sha256": "e8f308e3856a2ced82a46128348c60ff134c30c1bd9f260062cdfde8764424c9",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-002-bd45875b554129c7.webp",
+      "sha256": "972910457e21f0cc39c14964f481086eb12450ba75f1ce3b8d54414449f9d3a7",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-003-21933c3822621ed5.webp",
+      "sha256": "752e0f4082902fb897d31bb99ca0dd7bd5bcad241e936303008fd1d9a0d93b5b",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-004-9a386c44d5e68db6.webp",
+      "sha256": "cb8fc6283f1e2f578224e698d6edf2212d9518fafb774c39bd0c172913d57734",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-005-95b4da7f1f1f29d5.webp",
+      "sha256": "c027297176b660d0d0c514890e8ef4801f0fe4ca0c41e719b547a4f47c098165",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-006-f3dd3a20d88dcf24.webp",
+      "sha256": "0558ed5375fb0bbdba8fa33066b344cb23a3f2b4081d514061bdcb3ec0e6c000",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-007-340f157de6e0b24b.webp",
+      "sha256": "955490c82f2807539719655e9c8995f6985715b2d8cbc8e6a725c37f332d423c",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-008-c96ffce317cb0e6f.webp",
+      "sha256": "2f3d23c4f3bb71e4d3adb2a2d18ba0928872106a5e53b78a126134e17f440c04",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-009-8edb6abaa484ea4f.webp",
+      "sha256": "62d3461704d5e50d1a20194388646ef69147d36ab439925949cb4fab5b8d4c6f",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-010-4724753fb4452391.webp",
+      "sha256": "72ce96d9e02e781b55e2a80cba48219929d9750a0902dea7d5d57e9ab5e3146d",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-011-ab470c2515602a15.webp",
+      "sha256": "079ebc5fdd1ee8eca0ab79b4d0079bba278e28a81cd64f94d282a49032317e97",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-012-a1816bc550a3fa51.webp",
+      "sha256": "495889686b2e3c02f2c65cc38e5eb25c334aa9b7aebfb8a7f9c60c41033b11a6",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-013-17c45ffa627a2766.webp",
+      "sha256": "834b6b6e689c3211a7451d0b54fecb9d1d381d074d59ba10c709188fbc9c87c2",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-014-5d737d12b92b4bb2.webp",
+      "sha256": "8c575332c5624970d148cbbc9371fc8d145242b9b8b019345c2a972bec1adf3b",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-015-5151f2c91724acd2.webp",
+      "sha256": "ff23ad853f3d9a3b3d5c1466999f18bcd9fd33a43daceedc31e1ff8b12bfe734",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-016-e0cdf6b1cd6c5ca2.webp",
+      "sha256": "21d6baec8a6f6ebfeab84f18b2b2d19fcfe3b795b2d53f9b1544db81872f823b",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-017-7a3d916c2e59e5b7.webp",
+      "sha256": "e3b4d07f4d284bd66a9ec6f73a92f8aae0c93ebd5f45b500011b0d92bd24e609",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-018-4bd41cba6cb08048.webp",
+      "sha256": "fd1c5d82dab3966e6a32d2ea2fad737fc55386fbd369f3bd22bf9b5e2d1d442c",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-019-6f53ded4593356b5.webp",
+      "sha256": "5e3f03865df529a9ac34a57bfe741a55598883d3a98c7486493fb3db4d936640",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-020-577d0b0145faee3b.webp",
+      "sha256": "1bb7669f9f6ea9d58e1ea0a326d2d83d294aeeaab60386426d15f1054b487ef7",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-021-1f0d0f531f19ecd3.webp",
+      "sha256": "75d1a428f68acdc11209ba6b719734c37ef491de0615b898fd787db3a27ed6ed",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-022-84335791c17f819d.webp",
+      "sha256": "f914585e12f77e91b85ed3e131da0be624f4efe391f76312b38e9fed023bea2f",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-023-0fb965e47cbfd5d9.webp",
+      "sha256": "77d00763a8e2234e93ac1b19b162f713346d21b2182a4f24024d7ab70531a708",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-024-17db4cfd393e7942.webp",
+      "sha256": "5ba8fbeff9b447d5aba2cd4c18a2ee6d8ed9d06b44d10b926376090b12de4988",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-025-f4716bc144d53d0b.webp",
+      "sha256": "aad5ea1a7fe8d53d197f54bf8ebd26ee412164da91ca1b88986b80bce7db04bf",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-026-aa4f844c5aaca7ec.webp",
+      "sha256": "dcc8d9143682845d89b1e611150a4b96b1515321b9569e6035346ca42842d969",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-027-0b5f26a283e504be.webp",
+      "sha256": "ad9d5965405657fdae486089f298fc4ee7f4617feb6116869717748f90976ec5",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-028-902a8be142d385da.webp",
+      "sha256": "98f3bc649337fbfbe1df233dd4c4024ca0c1ed5001f3b109263326692521126f",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-029-08959f94fefe2baf.webp",
+      "sha256": "df06efa30a5b5eafb9b6a32b13417a9dc834a61fa2db473a4c0acbd945581206",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-030-0fe1c58de0eef1c2.webp",
+      "sha256": "3f7dd944dc213d098f0f42195db0de401f8eed2376703477262567fb888435bc",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-031-89f00d399790da8a.webp",
+      "sha256": "ba7fbef80980f3d4bcdd9c40f3278f12e5480cc702ff74c4067d1fca486d46ff",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-032-3f72d4124d464e14.webp",
+      "sha256": "8e2924106bd589eb8e2ba94a5160034cc66a2541634b1640250b9c3eabe39bf4",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-033-590153bc3c2a0432.webp",
+      "sha256": "c209742c548c1a3ce569bbcc30e90d7ada071d37a407f06a12c1255858ee8f9c",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-034-705fda3e8d4f6de0.webp",
+      "sha256": "371def633d1306e1c0158c68b5a73b71132393041dee911d4e458891a391dad9",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-035-c5ad4bec7afd40d1.webp",
+      "sha256": "3964e2499f791343ddd8decbc22875a4b9a4e3af36f6d8e8301b67caf2be7fd3",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-036-d1a247e2c52180b0.webp",
+      "sha256": "13cb853cbc7aeb41b216408666cd14223fac56aebf966dc783075cd181fd3104",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-037-443dc0404e8e1688.webp",
+      "sha256": "2af0236f41d29e40122b8119b63aae5e529842ba71486750c34197179d032df2",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-038-0a569d98978a8025.webp",
+      "sha256": "d1f837bf6529cb0e4a5e1b0a0e82a360ed6097205bcece4efe9e5a241712433f",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-039-7fe91c6f901067f6.webp",
+      "sha256": "8934eddf9137e41a5f8d40c62dcef7fcc4f00c17aa44b5e70b2fd4b6bfc8cbde",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-040-3824add5d40e939a.webp",
+      "sha256": "b9cc8362208b9edf6802260f878b30028fd90116afdd669477b4ed353408e179",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/corrections-041-69a4e9ab598668ae.webp",
+      "sha256": "3c0881d3a0c39769666a2030c070c96a8757dfcc55fbc59eae5fa9e3ffae0317",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-a-001-8c40ffd12cab34c4.webp",
+      "sha256": "68ad151bf2d6176a20ad813140daa6e77810131b8e00222b9fb4c8c2089ba561",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-a-001-retry-ca409ee6f2a9202b.webp",
+      "sha256": "fdd44802d713ddb4e0890bfea69e6cbab9392dc7b8b6f564af3ac7f0872058cf",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-a-002-f92a4aa16350a09f.webp",
+      "sha256": "1a563df77477ac4bc74c687ac49ef429c2313bf0ae16bcfbcbaae7a540252117",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-a-002-retry-025b79e15148a078.webp",
+      "sha256": "8568b563287fa2fe5040d5c24cf74e4b7c6002a70386e8e175b003fd9a07f50c",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-b-001-07363809c230f621.webp",
+      "sha256": "3b8cfc57c9d779fc5be62825ec9b84b4ea81b6af69b3b3ceb949d1291ed25974",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-b-001-retry-c4371e6e6814e609.webp",
+      "sha256": "5f47b65d5f87a5d2999e84c62871d482fffed0f60494eb07b2eb37c8bbe7f5af",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-b-002-27461702eab4637e.webp",
+      "sha256": "efca0fc18e814f55a8332dcc69d1e09c287f0903b41154bb00c5228e623aa904",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-b-002-retry-11dab6c5c3efb04c.webp",
+      "sha256": "042217d3c94e514d97b96d53ad3064056308466bc796f55f76e1291100e5d1c5",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-c-001-d8d98569b777155b.webp",
+      "sha256": "b849bbca1913fa539c78c0d6b938914624d5e8f821caed66356f6fa96599e4ec",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-c-002-834dc8dd1f0167c6.webp",
+      "sha256": "632b790bc8728cb4da0396ff7f310e3b3f2a3f2a8b1dbfdf60f4fb5ab4dbdf69",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-c-002-retry-c2ddc7fb27ea2e50.webp",
+      "sha256": "631e70bcc30dceee82bbae103d9d30a50b3836b76cb72d8d2bc89953f008b150",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-d-001-82441ca88f779557.webp",
+      "sha256": "060dba904402836746d21daffe3ee0d8861e95d46cf333b2ed0421bfa4538b7f",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-d-002-7e228af2d9c7d175.webp",
+      "sha256": "12d61ca5cd88c88d2563cd4ab27a05a1aaeefdca09dc20cf1f6baa87ca685d01",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-d-002-retry-af33733ba3fd4b60.webp",
+      "sha256": "f324befa0aa387fd1f13e501b396a25fef498135c912a0a4b4b1cb5b1733f102",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-e-001-cb070cfffcaecb0c.webp",
+      "sha256": "5764d2f77ba20d6f398c654880e56a83b847f89d85e73df6f870695ba5d42e53",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-e-001-retry-fce95115d68afce2.webp",
+      "sha256": "90eb543243bcaba7dee399a82c778ff1d297069cc81e9346f1c8b6daaca95c73",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-e-002-ab9f83be5e78c429.webp",
+      "sha256": "e91db9c7cb8d8cb3f6296b74c0fb18bfab8fa486fe974f13615137ed673bd20b",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-f-001-b62c16aaca33c976.webp",
+      "sha256": "dbb353308d6f23ce7ca1af80d88321b3a4ce91868849575157b95afd77005fd5",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-f-002-retry-63792097573fe538.webp",
+      "sha256": "3eda88f617f5d025738d1936c9cad9d9a5f39dd97771538add3eb32262e45aea",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-grip-001-528e1330cfd428cb.webp",
+      "sha256": "2c57921567e6b40d7af3ebad322dcc8093946e49e332eb428a2244ac2d4e2cfa",
+      "width": 512,
+      "height": 768,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-grip-002-retry-70eebfd33b4e4e2f.webp",
+      "sha256": "0079e8a99956d45bab78518dbb611a29b4a7b7558bd1c03ea64c66ecab1008eb",
+      "width": 512,
+      "height": 768,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-laterality-001-0e19348848fc51d9.webp",
+      "sha256": "b73b5ddd55d2f00c402ef5edfccf6a3d5af250d54884d2965cf68840624869ad",
+      "width": 512,
+      "height": 768,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-solo-001-retry-20ef2b5ecc9188c0.webp",
+      "sha256": "fb424212c61fa563f4edf52e29ad9cd3d5dfc7d73c2474b39a86c5d2ab8aecbf",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-solo-002-retry-a34cc78cd9724c80.webp",
+      "sha256": "b03d54e33bae31d952edfee9516c761c1f243d5da5163131c2dae924ec8adda6",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-solo-003-1e2b19b7b48a957e.webp",
+      "sha256": "a393b152a24e54949e76ed29c1a40ec442860d2173318f4df879af94d3a81b6a",
+      "width": 512,
+      "height": 768,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-solo-004-retry-65bed2132fc603cb.webp",
+      "sha256": "96640ecd744394ba97c41691a557a52539235e7b3d963cbdffac1de5c1f240ec",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-solo-005-retry-62a36931a5fa624b.webp",
+      "sha256": "889673c4bfdf14798aef4ea619a65b71e1cada4dfc588c3b2a8caddd51c66764",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/finish-source-001-54bce32c842c58c8.webp",
+      "sha256": "95bdfddb904eff2ffa92189f96085068a7a8f288a2593cb7d2f4adee6520fb9c",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/foundations-01-d3c7fa204e498922.webp",
+      "sha256": "61cba335e8b238cd8124df8aeb0860d9e6ae8d293df12dfd6b4cf5afe6364f77",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/machines-03-988892f417205330.webp",
+      "sha256": "399c8a35687d6cb548c9f27791a986b535c0652dcf54a8dcdd6e52997fea26d4",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/machines-04-e1095f31c69951f0.webp",
+      "sha256": "6387261646641aa8cb7c4935dcb1a500bab817add84cb899f94e19c69f9ec1b6",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/machines-05-947e43ec890a46cb.webp",
+      "sha256": "4d0a65456332d9551e47562ee049c502165c2532266cc325aa50a94086de1318",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/mobility-01-141a68d883c6178a.webp",
+      "sha256": "004a10f349f69e3e955fceeb20334dfd2268655f35f4a846bdaac28ccf5d5fd1",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-001-76e92487b9f2bd81.webp",
+      "sha256": "5875fa6d45409ff34dbc46d82acb6e463d47dd9862d38be4867a13bcd0603301",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-002-7dde04a79fbf6152.webp",
+      "sha256": "0903e1e492da241880d8ef3cde2372b177a5a06c31fa5ad075cd02ec4b76004a",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-003-a6ce13c5e6060df5.webp",
+      "sha256": "6a5dfdba1e3134377eba6367072d8fb5c028b3d7656a7c1735684e0423237131",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-004-ff86fb57eace6bac.webp",
+      "sha256": "7d531a608e3a8a70fe8ea128b69f7814ab3a98f326d867d8412aa95f7a7eb06d",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-005-4ad37f7c3e6d67b9.webp",
+      "sha256": "b7efea8cff8d7614820dc8cde5ce50365db8ce7afbd1c00c5a7512ea1f35a011",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-006-a2897eb6c83fe202.webp",
+      "sha256": "afec8909225866c99a6e20bef9e06b757aaf472034b34a1d9d87560835abb74b",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-007-4f269d0919bf990a.webp",
+      "sha256": "8f49101031c34e9c2ef57661e72895286e0466dbdc1549ffc001d9d2c45ec63f",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-008-010bc0ce2e4b0d44.webp",
+      "sha256": "c302b804dfeef747d633acf05f1c2196c5e8102ec9ce5a09c7b2531e0415e31c",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-009-013b7c93a1b375af.webp",
+      "sha256": "38b6e6d029568edc6f45614341cbbb9392232c150171ad083f3a8fa5ef61d995",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-010-6fc26a4d2d06dc43.webp",
+      "sha256": "e04cf8c822864758b3e75b30201e3676cb6cf9e95096d5f4c9700da44203d625",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-011-94e7e53b16217c67.webp",
+      "sha256": "62094259bfc07f63cd8dca135edfa73875139a4fe33d37704a52362efd3c54e4",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-012-fcf00a71824d5abc.webp",
+      "sha256": "721b4ad47f83a626a81237d8e7552e74ff04fdb09161d74d3433817dd59eec36",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-013-dba2148a2a20bcb0.webp",
+      "sha256": "bba86ebd4ea9d56680580cd6b12a86c22115466429f206def905a7e9b9d20ef6",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-014-f4b9166a5c0ec6e3.webp",
+      "sha256": "f4539e0e143db9093c5961a6b42111e72ff388a0fd89c14d2628bc11d99d8224",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-015-0321956c8ab8db67.webp",
+      "sha256": "2cc12cb09631a1c80a698cd34df571b1bd50c85ea531447aa7082284a641189c",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-016-eed742844a788a2d.webp",
+      "sha256": "38f6ea16cf0acf58864ef5ce3d89acab0d94e5234177fbe0c1089ec6eef54634",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-017-b15149e83c4a02bf.webp",
+      "sha256": "7586444aeff35e27980ec186bd2c91dde376cb57f146c5750479fc59ff42ee38",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-018-95290cdcf0660d8c.webp",
+      "sha256": "bf36fa00b9c7c45008bbb8aba2091aef9b9ff87da4ae8370ef306f85f48c9033",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-019-91778cf30dc2e14c.webp",
+      "sha256": "49effba586332f100e8f8e3f4ef46c0ce1048d4e500877522c811f244a678801",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-020-08a990bc753ff8b9.webp",
+      "sha256": "6eac689a996bed25cf192afa4c870b4023e4d8dfe2e5ad1c0b0ad30a11666604",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-021-be4271167b4fc45d.webp",
+      "sha256": "8c97b6fe474b5dcf78b6e8aadd0e1fa90b5fe11b422d1143aa3f9c1e5c2032c0",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-022-deb6342a28180e62.webp",
+      "sha256": "5b1deaeba94c1543fd188e8f14e3d53ba394ed51d0e484b02b0a81f50d318916",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-023-cea901efd069d343.webp",
+      "sha256": "76083be11ab6c09c6dab077ba658020a9e5249ba1f1731bbace2d10bb167710e",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-024-d8cc649fe6a33e2b.webp",
+      "sha256": "80c4aa44295decc41af32707d41a77b56cb0e27660c75ae225c0d4eff217c35c",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-025-e1a3f9ee5b8a4cb8.webp",
+      "sha256": "96cdb16333d174b5f6a5e095bc0b922066db7cbef301d1f9c10bd671b6b78280",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-026-db4e45c075c5cbcd.webp",
+      "sha256": "839f178273eeae5e537b04a86bbe83bdd85bb8193dcf3a3da7dbfff0f262060e",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-027-82d5a68257a25023.webp",
+      "sha256": "4443b7d104186f262e354eafb2bba4e34a116874e471444f4271879cf38e2e04",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-028-1b7c1c6ba15380e9.webp",
+      "sha256": "e773e8236b0b07611c32f1cb7d775de955fb98d264f24b6b14d489212daa174e",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-029-956a55c0fa79d2ff.webp",
+      "sha256": "b42a520f761cbf00823981ed12e1b9d90cd12fc791dcf359b1691326b1c70816",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-030-935c2a205a603da1.webp",
+      "sha256": "28632bc1a86a6e3f8b35fa5178f1a40083c38aef0d0f65367617d3af5dc23369",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-031-dec300744899614b.webp",
+      "sha256": "6ace1f9581867840e927647608d98302f0bffb607c3d2ea2704d401ef61eea07",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-032-f07a18503673d2e2.webp",
+      "sha256": "a38adecbe3ca723a8718a770a82b4176e8402c9e9a16b1e9d5b39ee6fa4e1a13",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-033-f00743369b43649a.webp",
+      "sha256": "878ac226efed3b4ff46870aae463fa96260eed6e0c4e66a94051d19ea1589e99",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-034-6f9dba311fb7b97d.webp",
+      "sha256": "1778b1918b2411f17b501e57a009824dea66a6b0a35c1b3673d3b942b6d6a319",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-035-9c9d5f47316e7711.webp",
+      "sha256": "bb7161a4358e30d896d826528cce0a972a81da601fb43798f431d7fbda6ae6fe",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-036-c3b9c61a09e9369f.webp",
+      "sha256": "be86fb62098b4ca1a7dee211c661ca1c10f867ae5fa0875c676bcf4f38a2c278",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-037-b3eb1a189924b8e9.webp",
+      "sha256": "a67887a97929917dff42e177af613dae4d23daa49dfafb82ab7f484a3a5a7053",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-038-9fa0f4e63a0a4417.webp",
+      "sha256": "827db23ec26e1a74db79dea4a50c75795b1fae355c60a0bb1ee85a080d8c7869",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-039-d4eb386b6d444bbe.webp",
+      "sha256": "95ffa80e98150298ee2063e1bb761512d743bca6f05950fd614948a9e3b589be",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-040-ccd9d4260a0b5133.webp",
+      "sha256": "4a37d03c680d4de3485b8440a898bc1b2de6bab707df40b5da7cb05b2ed6e56d",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-041-c7bc72a22484afb3.webp",
+      "sha256": "a9410910396495b5de7c595c9e879a94a118b0df547b4107fc89c8b637937b55",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-042-39496a4afed9956d.webp",
+      "sha256": "f7b6c1929f518c6adeb6de3fe1fcecb01d44fb1991d71cd0a286735ccf22ca8b",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-043-49a1cabff9876876.webp",
+      "sha256": "3f81d7d7a6961fc22302f7f7ab7787e06397bcf95109cd7dd4791fe41049e07b",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-044-71172476cc7ad670.webp",
+      "sha256": "ea5cc7498072e5a4d2ef70729d67ab147435bd258caa2c8da54b2e227b3369bc",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-045-930880fa79a4710a.webp",
+      "sha256": "fb2073a51037b0115826d5bb6f940c7790925afa3af0f50ad5240d778b467c2d",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-046-b31c5e0547918a8a.webp",
+      "sha256": "2170bb8c25173c150e9bc5139c31550ef9a6789fa567ba4ff68347d0d29ce992",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-047-57e6bb9b81d4607b.webp",
+      "sha256": "fd5b07140f58d2380df39da94aafc0de88d0142887191af9d01ab21601eaa97f",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-048-f68942ee2edf142a.webp",
+      "sha256": "34ed38d706369576803fcacd3a539a1b5f835def77e5014e03cfd08bbf87ce38",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-049-d243d596440c9c37.webp",
+      "sha256": "c2cf425f873cb829d03c3172683d021856740c6efb6e0692e8757c2708b72602",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-050-d6c877c7775d8aaa.webp",
+      "sha256": "76e70d6e6696a617af9a1f4a39da7189bbce587e5c1387cef8f78067c585d74a",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-051-fd3b2b6613453ac2.webp",
+      "sha256": "ca597207dee17f6c665aaa5f0583adaee0b4b8c6cc259e757efd41e6e0f2e7c0",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-052-adc590f22287dc60.webp",
+      "sha256": "beae83d133658c5c45f720c6b2e38e218a8eb956ab885f5eb5ed7fa316f0ed18",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-053-deb8caa7d56c5516.webp",
+      "sha256": "5cff2257690050861d65bd2a6d173f29a2fdfa76c8ad51f9ae2161043e3681a5",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-054-7d24a0f68053a73d.webp",
+      "sha256": "1d0f737b7c29ce23819a28820a5da8b76c144f52c4f8c528819d0268f925434d",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-055-da09038460d1713a.webp",
+      "sha256": "04e868092436f991cb30a661b70ebcb12cfd18a358411a31f04470615b62ac45",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-056-c5c29101e2cdd31c.webp",
+      "sha256": "1203b6d24e756b2040640be8dcc83dd2fc7b58720c18f12b686cccde42d1e2fc",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-057-1a86593670c972b3.webp",
+      "sha256": "79b5ff1b0c1d9d9bb895e97bc6edcc836403f4207c18cc35f8fee49091c102b4",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-058-fc6c5aad4b670454.webp",
+      "sha256": "e62ff5f38c4dc8b2ff81d1047beb7d87a51fc1987be8feda58a59a593e49a31b",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-059-8d04d12e6a9cea61.webp",
+      "sha256": "3fefb4983b9d6ad654cb903960ca15eead0737944ba3fec5baeb6a84b42bc2cf",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-060-0821ed1a155ff108.webp",
+      "sha256": "63114055eca4fc07a49fa384cb7bccce52b3979ab6ad46d48db93a6800b3ee4e",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-061-fbf7af2b431cad61.webp",
+      "sha256": "83fd2dede306e5817550c34746beb24c5888322df960d651573488f469779677",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-062-b73d32db35d46f10.webp",
+      "sha256": "5a0712cd03a7b039a04103a2bde67161c4d85c7f8d8436edfd00fa0627a10d39",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-063-0fa7b2b2a53f309d.webp",
+      "sha256": "8a08d7552285cb608089cd9e3edae6fd7816b373dfc4783a04ae42a0914191fd",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-064-34bc25816194a2fc.webp",
+      "sha256": "486a1500f90c6cc57781e9a8297e576654c7fc08dad8dcabe1d15864b0c939bb",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-065-bb5f341f4696a26e.webp",
+      "sha256": "abc691dac1c9e1508555a9b01486cc902b57ee6eb0ac06113268770489317928",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-066-dc50816424ccb3ea.webp",
+      "sha256": "a9c1a734e9ccb5dd5469e05a0443a929b2a39b9ccab54d80c66ebc8cdbb685a3",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-067-606df93cc44482cc.webp",
+      "sha256": "b106bb8edf251609e56803e6da116fd93b1f4a6e1e6b362eb996f18c2b5922d9",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-068-f2e675161f7a323a.webp",
+      "sha256": "893e064e863f43ae1f7d00ddc743fc116f0d0dff296958a8d0c2a9f06b74fd91",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-069-6a54eb2dd26ace85.webp",
+      "sha256": "f54de170c2c5a93de7987ae4f2ab1702a9ec7374bee2f662e744282c3b76a310",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-070-7d45b4685848e499.webp",
+      "sha256": "bfc5861455346d0910a5372c09c28e1b082c526b42be06d647328406f2a3215b",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-071-5a1b03dfd661e6dc.webp",
+      "sha256": "b15f1a703ea83a69d274e65c99ff34831209054e27a46c70de6a58ad57983096",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-072-897c1dfff2a96af2.webp",
+      "sha256": "3c199f600114ec8fae6af837135ab7207efc59984161c040e5a6bf123924beb9",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-073-7c6b64ef0fe1ce29.webp",
+      "sha256": "0b85e4c414c1066ea16564a5f10e17390f5dd4752371149b1925d9b0229b8cb2",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-074-20029a3e18f5d109.webp",
+      "sha256": "85d82d48aa3cae66b0eaa5bc393bc6ad19ae4c6d859c9f12854c8f3e9222da87",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-075-e4383e4c25b03416.webp",
+      "sha256": "35f00749f743f5b98b923220d9c945da0e18e1b26cbb30ad6ddb1c175bbe85ed",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-076-c051302a025b7626.webp",
+      "sha256": "e83a026d7aa4bd37e28dd93d4bdf52138091616e96100b9335cf7eb84ba145bc",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-077-9c3776b4777123be.webp",
+      "sha256": "761577f355eaf54817b35c9f1aaec16b09499ac6ab871324e8f9a7bb5f13a5f9",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-078-332cc3cf40a9c99d.webp",
+      "sha256": "0477865a49010801faca9f38df803258c534c061f23aee9adc498442eda71480",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-079-372eb8c582a4fc3c.webp",
+      "sha256": "524f746fd31af9b5939ecb40ba53dd5816627279a4bb27edcc04af1948b544b7",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-080-76f0addca17a415a.webp",
+      "sha256": "a8db3d158724a2953d0ed0c8b393e068d0623414f49e3e48442636550dd849f9",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-081-dd6e0dcaa5c6c86d.webp",
+      "sha256": "0f34ad7211add0373ca03c408873c1c59f431de25c3beecc27c621c3217fc59a",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-082-32b11e175542d05b.webp",
+      "sha256": "f3abe0de78936602e709b98128c3bc7190839cbb753250b1ce627bc14f0483e3",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-083-70015d9bb0c30435.webp",
+      "sha256": "e48fa0afe8dbda66e31f8a2a5672945c5f2703eb86280f9c6fd9054d9d70db2c",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-084-cff942e592496b3d.webp",
+      "sha256": "4b724063d310937b26a311f115654dc1074f85776b3698917073940d521d8d01",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-085-65ede4b15083d337.webp",
+      "sha256": "f8fac563b62c36e5708cc1d9ab53fd24440f648aef1f79ea263377e9d5efab54",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-086-01cdac927bc05cb6.webp",
+      "sha256": "db3904efb7fc13c4a4618737b54e8890d0eea5aabae6bbf58040fcbd6d58fba8",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-087-fa767745b65ec918.webp",
+      "sha256": "380647d06e331ab702244e0cd4ac52d2acfd092a89fb2503f779aaea774c3193",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-088-f644441ec95dbf26.webp",
+      "sha256": "44d0e62a254130c865aa64154c6c900c383889cf694ed12fc6db78cf3f484369",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-089-adb5e2e529fa3f5c.webp",
+      "sha256": "d764b95869d468d20b2e3af8556cdff67f21cf711b53984e4b4d510a417bf15a",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-090-ce3e7987849cf751.webp",
+      "sha256": "a85a04e00c133a1ac1d50e658e0131a5c2bacae2cd135b763558621a571c484f",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-091-2ed25223b684f250.webp",
+      "sha256": "14f5d0d99549cff1f88ada97d610cbaf994e0fa7366e0ff3f096b6d8107c0ae9",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-092-023185ab7fdbfe08.webp",
+      "sha256": "f4dec39ce85075e5cbcd80b299106542e3d96a2d64e198f38e3f6795e7f6afba",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-093-edb60e6fd3623c24.webp",
+      "sha256": "4bbec8b7caaf07907cec7b79ba04ec9f1d31fffb226987f90810c71a0c2e195d",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-094-81fa33f86de439ab.webp",
+      "sha256": "9725f1ed45a04f02395e99a035d2c5f3c1f23f7508950a5e2a9ab031b5ac1d53",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-095-43b64f400ceed82c.webp",
+      "sha256": "da0695e72685ac20376310136080ba791434b8dee3dc866300dad2cae5a1dd18",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-096-a74aeeb3f5376d37.webp",
+      "sha256": "4fdd5d79b3e6a76b37abda5c1d111ec9487aa0706dc3bbecfaea70a56554bbb9",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-097-c622bc4f7f60086b.webp",
+      "sha256": "57165a76fbb665bd508b3b67b77a4e0acff80d3d9fe623803ef67bb98782e842",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-098-fdb4e47ff86c59d6.webp",
+      "sha256": "a743cab15d70ac5a97d99ea5577d3671918eccd8eff867f00fa5353a2442cd93",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/movements-099-2345c30711f30f87.webp",
+      "sha256": "e304c412cafa9b6a29041f97ff68848a2539c778439270627a1aa53a19fefbd6",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/recovery-b-004-501910d3c5659f9c.webp",
+      "sha256": "c8d8f693e90df6120c13a5b3906f4ce7ebac487f29bcfb7d57e0e5706f477e4f",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/recovery-c-002-8d2530eb54a17a6c.webp",
+      "sha256": "66cd7d9009dd69c2683697a55cdc54687feb20148ae32abd6d27bab1e4b8b45f",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/recovery-d-001-a4bc2a7dee7b9ee2.webp",
+      "sha256": "4e3656b298553f12e3de984826b88b5af59cdfaff7eaf86a4b15bce474e1cedb",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/specialist-machines-01-8f32dba667820fa0.webp",
+      "sha256": "bf32d669b7e409247ae7388229df4b532ab71c2e345a72160c5f5ead528c4fba",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/exercise-media/previews/specialist-machines-02-e911692dc8b19857.webp",
+      "sha256": "6b4106fa9a4bcfe596c5340affe5f4b990eb130dd25c24717e859b6f04e7a377",
+      "width": 768,
+      "height": 512,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/images/routine-photos.webp",
+      "sha256": "ffef857402907eee61cbc9e65f894b5348609b44a3b92320127a6efa4e4319ee",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    },
+    {
+      "path": "public/images/training-hero.webp",
+      "sha256": "b65965485c5e15ae8da35cf190a3124ca964e4b2bafa5e8cbcc2bddd62126ce8",
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "decoded_and_drawn": true
+    }
+  ],
+  "video_method": "Sequential ffmpeg full video-stream decode to null muxer; one decoder/output/filter CPU thread; -xerror; no output media or production changes. This is decoding integrity, not technique, pixel comparison or rights approval.",
+  "video_count": 22,
+  "video_frames": 6924,
+  "video_failures": 0,
+  "videos": [
+    {
+      "path": "public/exercise-demos/army-combat-fitness-test-3-repetition-maximum-deadlift-mdl-e.mp4",
+      "decoded_frames": 360,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/army-combat-fitness-test-standing-power-throw-spt-event-2.mp4",
+      "decoded_frames": 165,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/bench-press-exercise-demonstration-video.mp4",
+      "decoded_frames": 189,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/bent-over-row-exercise-demonstration-video.mp4",
+      "decoded_frames": 135,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/conditional-drill-tuck-jump.mp4",
+      "decoded_frames": 300,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/deadlift-exercise-demonstration-video.mp4",
+      "decoded_frames": 198,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/hip-sled-how-to-perform-a-45-degree-leg-press.mp4",
+      "decoded_frames": 309,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/incline-press-exercise-demonstration-video.mp4",
+      "decoded_frames": 156,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/muscle-strengthening-at-home-bicep-curls.mp4",
+      "decoded_frames": 331,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/muscle-strengthening-at-home-overhead-press.mp4",
+      "decoded_frames": 481,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/muscle-strengthening-at-home-superman.mp4",
+      "decoded_frames": 750,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/muscle-strengthening-at-the-gym-back-extension.mp4",
+      "decoded_frames": 676,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/muscle-strengthening-at-the-gym-chest-press.mp4",
+      "decoded_frames": 552,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/muscle-strengthening-at-the-gym-leg-curl.mp4",
+      "decoded_frames": 308,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/muscle-strengthening-at-the-gym-leg-extension.mp4",
+      "decoded_frames": 471,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/muscle-strengthening-at-the-gym-overhead-press.mp4",
+      "decoded_frames": 483,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/muscle-strengthening-at-the-gym-row-machine.mp4",
+      "decoded_frames": 268,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/pull-ups-exercise-demonstration-video.mp4",
+      "decoded_frames": 156,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/shoulder-press-exercise-demonstration-video.mp4",
+      "decoded_frames": 183,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/squat-exercise-demonstration-video.mp4",
+      "decoded_frames": 189,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/strength-training-circuit-overhead-push-press.mp4",
+      "decoded_frames": 162,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    },
+    {
+      "path": "public/exercise-demos/hip-sled-calf-press.mp4",
+      "decoded_frames": 102,
+      "passed": true,
+      "exit_code": 0,
+      "stderr_empty": true
+    }
+  ],
+  "limits": [
+    "Integrity validation does not establish pose correctness, coaching or legal approval",
+    "Representative visual review is distinct from exhaustive binary decoding"
+  ]
+}

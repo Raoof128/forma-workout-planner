@@ -30,6 +30,7 @@ final class OfflineWorkoutTests: XCTestCase {
     let start = app.buttons["start-workout"]
     XCTAssertTrue(start.waitForExistence(timeout: 15))
     start.tap()
+    app.continueWorkoutOnIPhone()
 
     let set = app.buttons["complete-set-0-0"]
     XCTAssertTrue(set.waitForExistence(timeout: 15))
@@ -44,6 +45,7 @@ final class OfflineWorkoutTests: XCTestCase {
     XCTAssertTrue(start.waitForExistence(timeout: 15))
     XCTAssertTrue(start.label.contains("Resume workout"))
     start.tap()
+    app.continueWorkoutOnIPhone()
     XCTAssertTrue(set.waitForExistence(timeout: 15))
     XCTAssertEqual(set.value as? String, "Completed")
 
@@ -78,6 +80,7 @@ final class OfflineWorkoutTests: XCTestCase {
     let start = app.buttons["start-workout"]
     XCTAssertTrue(start.waitForExistence(timeout: 15))
     start.tap()
+    app.continueWorkoutOnIPhone()
     XCTAssertTrue(app.buttons["complete-set-0-0"].waitForExistence(timeout: 15))
 
     app.terminate()
@@ -87,6 +90,7 @@ final class OfflineWorkoutTests: XCTestCase {
     XCTAssertTrue(start.waitForExistence(timeout: 15))
     XCTAssertTrue(start.label.contains("Resume workout"))
     start.tap()
+    app.continueWorkoutOnIPhone()
     XCTAssertTrue(app.buttons["complete-set-0-0"].waitForExistence(timeout: 15))
     XCTAssertEqual(app.buttons["complete-set-0-0"].value as? String, "Not completed")
   }
@@ -101,6 +105,7 @@ final class OfflineWorkoutTests: XCTestCase {
     let start = app.buttons["start-routine-workout"]
     XCTAssertTrue(start.waitForExistence(timeout: 15))
     start.tap()
+    app.continueWorkoutOnIPhone()
     let close = app.buttons["Save & close"]
     XCTAssertTrue(close.waitForExistence(timeout: 15))
     close.tap()
@@ -121,6 +126,7 @@ final class OfflineWorkoutTests: XCTestCase {
     let start = app.buttons["start-workout"]
     XCTAssertTrue(start.waitForExistence(timeout: 15))
     start.tap()
+    app.continueWorkoutOnIPhone()
     let weight = app.textFields["set-value-0-0-weight"]
     XCTAssertTrue(weight.waitForExistence(timeout: 15))
     weight.replaceText(with: "42.5")
@@ -144,6 +150,7 @@ final class OfflineWorkoutTests: XCTestCase {
     let start = app.buttons["start-workout"]
     XCTAssertTrue(start.waitForExistence(timeout: 15))
     start.tap()
+    app.continueWorkoutOnIPhone()
     let weight = app.textFields["set-value-0-0-weight"]
     XCTAssertTrue(weight.waitForExistence(timeout: 15))
     weight.replaceText(with: "")
@@ -180,6 +187,7 @@ final class OfflineWorkoutTests: XCTestCase {
     let start = app.buttons["start-workout"]
     XCTAssertTrue(start.waitForExistence(timeout: 15))
     start.tap()
+    app.continueWorkoutOnIPhone()
     let openNotes = app.buttons["session-notes"]
     XCTAssertTrue(openNotes.waitForExistence(timeout: 15))
     for _ in 0..<4 where !openNotes.isHittable { app.swipeUp() }
@@ -214,6 +222,7 @@ final class OfflineWorkoutTests: XCTestCase {
     let start = app.buttons["start-workout"]
     XCTAssertTrue(start.waitForExistence(timeout: 15))
     start.tap()
+    app.continueWorkoutOnIPhone()
     let complete = app.buttons["complete-set-0-0"]
     XCTAssertTrue(complete.waitForExistence(timeout: 15))
     complete.tap()

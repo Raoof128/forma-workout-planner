@@ -12,6 +12,14 @@ private struct OfflineAccount: WorkspaceTransport {
   }
 }
 
+private struct ConflictedAccount: WorkspaceTransport {
+  let latest: RemoteWorkspace
+  func fetch() async throws -> RemoteWorkspace { latest }
+  func put(_ request: WorkspacePut) async throws -> RemoteWorkspace {
+    throw WorkspaceTransportError.staleRevision(latest: latest)
+  }
+}
+
 /// Every request stays inside URLProtocol. Synthetic cookies and .test hosts
 /// make these races repeatable without contacting a FORMA service.
 private final class HeldAccountRequest: URLProtocol, @unchecked Sendable {
@@ -437,6 +445,151 @@ final class AccountLifecycleTests: XCTestCase {
     XCTAssertTrue(AppModel.savedMemberCopies(directory: storage.directory).isEmpty)
     let name = try await guest.load(seed: Workspace()).profile.name
     XCTAssertEqual(name, "Guest")
+  }
+
+  private func savedCopyRemovalFixture() async throws -> (AppModel, URL) {
+    let base = await environment()
+    let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+    let storage = AccountStorage(root: root, origin: origin)
+    try FileManager.default.createDirectory(
+      at: storage.directory, withIntermediateDirectories: true)
+    addTeardownBlock { try FileManager.default.removeItem(at: root) }
+    let model = AppModel()
+    model.accountEnvironment = AccountEnvironment(
+      client: base.client, jar: base.jar, storage: storage, restored: nil)
+    return (model, storage.directory)
+  }
+
+  func testDamagedSavedCopyRemovalIncludesRecoveryArtifactsAndPreservesUnrelatedFiles()
+    async throws
+  {
+    let (model, directory) = try await savedCopyRemovalFixture()
+    let member = WorkspaceStore.memberStoreURL(directory: directory, memberReference: "a")
+    let ownNames = [
+      member.lastPathComponent,
+      member.lastPathComponent + ".recovery-\(UUID().uuidString).json",
+      member.lastPathComponent + ".unreadable-1790000000",
+      member.lastPathComponent + "-wal.unreadable-1790000000",
+      member.lastPathComponent + "-shm.unreadable-1790000000",
+    ]
+    let preservedNames = [
+      "workspace.sqlite", "workspace.sqlite.recovery-\(UUID().uuidString).json",
+      "forma-recovery-\(UUID().uuidString).json",
+      member.lastPathComponent + ".recovery-not-a-uuid.json",
+      member.lastPathComponent + ".unreadable-not-a-timestamp",
+    ]
+    let raw = Data("synthetic damaged cache and recovery content".utf8)
+    for name in ownNames + preservedNames {
+      try raw.write(to: directory.appendingPathComponent(name))
+    }
+    XCTAssertThrowsError(try WorkspaceStore(url: member, catalog: []))
+
+    try await model.removeSavedAccountCopies()
+
+    for name in ownNames {
+      XCTAssertFalse(
+        FileManager.default.fileExists(atPath: directory.appendingPathComponent(name).path), name)
+    }
+    for name in preservedNames {
+      XCTAssertEqual(try Data(contentsOf: directory.appendingPathComponent(name)), raw, name)
+    }
+    XCTAssertFalse(model.account.hasSavedAccountCopy)
+  }
+
+  func testOrphanedRecoveryCopyRemainsDiscoverableAfterFailedRemovalAndCanBeRetried()
+    async throws
+  {
+    let (model, directory) = try await savedCopyRemovalFixture()
+    let member = WorkspaceStore.memberStoreURL(directory: directory, memberReference: "a")
+    let recovery = URL(fileURLWithPath: member.path + ".recovery-\(UUID().uuidString).json")
+    let unexpected = URL(fileURLWithPath: member.path + ".unreadable-1790000000")
+    try Data("synthetic recovery".utf8).write(to: recovery)
+    try FileManager.default.createDirectory(at: unexpected, withIntermediateDirectories: false)
+    let evidence = unexpected.appendingPathComponent("keep.txt")
+    try Data("synthetic unexpected directory content".utf8).write(to: evidence)
+    await model.refreshSavedAccountCopy()
+    XCTAssertTrue(model.account.hasSavedAccountCopy)
+    do {
+      try await model.removeSavedAccountCopies()
+      XCTFail("An artifact-shaped directory must refuse removal")
+    } catch {}
+    XCTAssertTrue(model.account.hasSavedAccountCopy)
+    XCTAssertTrue(FileManager.default.fileExists(atPath: recovery.path))
+    XCTAssertTrue(FileManager.default.fileExists(atPath: evidence.path))
+
+    // Resolve only this synthetic obstruction, then repeat the actual user action.
+    try FileManager.default.removeItem(at: unexpected)
+    try await model.removeSavedAccountCopies()
+    XCTAssertFalse(model.account.hasSavedAccountCopy)
+    XCTAssertFalse(FileManager.default.fileExists(atPath: recovery.path))
+  }
+
+  func testSavedCopyRemovalQueuedBeforeSignInCannotDeleteTheNewActiveMembersStore()
+    async throws
+  {
+    let (model, directory) = try await savedCopyRemovalFixture()
+    let member = WorkspaceStore.memberStoreURL(directory: directory, memberReference: "a")
+    let raw = Data("synthetic account data that must survive".utf8)
+    try raw.write(to: member)
+    await model.mutationGate.acquire()
+    let removal = Task { try await model.removeSavedAccountCopies() }
+    for _ in 0..<1_000 {
+      if model.pendingMutations > 0 { break }
+      await Task.yield()
+    }
+    XCTAssertEqual(model.pendingMutations, 1)
+    model.activeMember = "a"
+    model.mutationGate.release()
+
+    if case .success = await removal.result {
+      XCTFail("Removal must re-check sign-in after acquiring the mutation gate")
+    }
+    XCTAssertEqual(try Data(contentsOf: member), raw)
+  }
+
+  private func conflictedModel() async throws -> (AppModel, WorkspaceStore) {
+    let (model, directory) = try await savedCopyRemovalFixture()
+    let store = try WorkspaceStore(
+      url: directory.appendingPathComponent("member.sqlite"), catalog: [])
+    let local = Workspace(profile: Profile(name: "Local synthetic training", goal: 4))
+    _ = try await store.load(seed: local)
+    _ = try await store.replaceWorkspace(with: local, serverRevision: 1)
+    try await store.markDirty()
+    let remote = RemoteWorkspace(
+      workspace: Workspace(profile: Profile(name: "Cloud synthetic training", goal: 4)), revision: 2
+    )
+    let sync = AccountSync(store: store, transport: ConflictedAccount(latest: remote))
+    let status = await sync.flush()
+    guard case .conflict = status else { throw AppFailure("Synthetic conflict fixture failed.") }
+    model.store = store
+    model.workspace = try await store.load(seed: local)
+    model.sync = sync
+    model.syncStatus = status
+    model.activeMember = "a"
+    return (model, store)
+  }
+
+  func testConflictResolutionReportsSuccessOnlyAfterTheChosenCopyCommits() async throws {
+    let (model, _) = try await conflictedModel()
+    defer { model.stopSync() }
+    let kept = await model.resolveConflictKeepingLocal()
+    XCTAssertFalse(kept, "Another conflict must not trigger success feedback")
+    XCTAssertEqual(model.workspace?.profile.name, "Local synthetic training")
+
+    let reloaded = await model.resolveConflictUsingAccount()
+    XCTAssertTrue(reloaded)
+    XCTAssertEqual(model.workspace?.profile.name, "Cloud synthetic training")
+  }
+
+  func testConflictResolutionDoesNotReportSuccessWhenTheLocalStoreCannotCommit() async throws {
+    let (model, store) = try await conflictedModel()
+    defer { model.stopSync() }
+    try await store.removeLocalFiles()
+
+    let resolved = await model.resolveConflictUsingAccount()
+
+    XCTAssertFalse(resolved, "A failed local transaction must not trigger success feedback")
+    XCTAssertEqual(model.workspace?.profile.name, "Local synthetic training")
   }
 
   func testNoticeWordsForEachForcedSignOut() {

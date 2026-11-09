@@ -150,7 +150,13 @@ export default function Library({ onToggle, selectedIds = [] }) {
               aria-pressed={choosing ? picked : undefined}
               // The name stays constant; aria-pressed carries the state.
               aria-label={choosing ? `Include ${e.name} in routine` : undefined}
-              onClick={() => (choosing ? onToggle(e) : setSelected(e))}
+              onClick={(event) => {
+                if (choosing) onToggle(e);
+                else {
+                  event.currentTarget.focus({ preventScroll: true });
+                  setSelected(e);
+                }
+              }}
             >
               {hasExerciseMedia(e.id) ? (
                 <ExerciseMedia id={e.id} name={e.name} compact />

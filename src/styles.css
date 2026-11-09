@@ -1134,6 +1134,12 @@ input[type="checkbox"] {
   padding: 24px;
   min-width: 0;
 }
+.editor-fields {
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
 .modal-content > p {
   font-size: 14px;
 }
@@ -3632,6 +3638,25 @@ input[type="checkbox"] {
   }
   .set-actions .remove-set {
     width: 100%;
+  }
+}
+@media (max-width: 360px) {
+  /* Reserve space for long measurements; RPE is bounded to three characters. */
+  .set-row {
+    grid-template-columns:
+      26px minmax(0, 1fr) minmax(0, 1.4fr) 32px
+      44px;
+    gap: 3px;
+  }
+  .set-row.set-row-sides {
+    grid-template-columns:
+      26px minmax(0, 1.6fr) repeat(2, minmax(0, 1fr)) 32px
+      44px;
+    gap: 3px;
+  }
+  .set-row.set-row-single {
+    grid-template-columns: 26px minmax(0, 1fr) 32px 44px;
+    gap: 3px;
   }
 }
 /* Per-exercise ⋯ menu on the active workout (WAI-ARIA menu button). */

@@ -1,0 +1,1712 @@
+[
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 1024,
+    "path": "ios/FORMA/Resources/Assets.xcassets/AppIcon.appiconset/app-icon-dark.png",
+    "type": "public.png",
+    "width": 1024
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 1024,
+    "path": "ios/FORMA/Resources/Assets.xcassets/AppIcon.appiconset/app-icon-tinted.png",
+    "type": "public.png",
+    "width": 1024
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 1024,
+    "path": "ios/FORMA/Resources/Assets.xcassets/AppIcon.appiconset/app-icon.png",
+    "type": "public.png",
+    "width": 1024
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 287,
+    "path": "ios/FORMA/Resources/Assets.xcassets/TrainingEditorial.imageset/training-editorial@2x.jpg",
+    "type": "public.jpeg",
+    "width": 860
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 430,
+    "path": "ios/FORMA/Resources/Assets.xcassets/TrainingEditorial.imageset/training-editorial@3x.jpg",
+    "type": "public.jpeg",
+    "width": 1290
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 1024,
+    "path": "ios/FORMAWatch/Assets.xcassets/AppIcon.appiconset/app-icon.png",
+    "type": "public.png",
+    "width": 1024
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 1024,
+    "path": "ios/design/training-editorial-source.png",
+    "type": "public.png",
+    "width": 1536
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/16-today-largest-accessibility-text.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/17-today-compact-landscape.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-01-today.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-02-plan.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-03-routine-detail.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-04-workout.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-05-set-completed-rest.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-06-receipt.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-07-progress.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-08-you.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-09-today-after-workout.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-10-library.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-11-library-search.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-12-technique-guide.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-13-hold-ready.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-14-hold-running.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-15-hold-paused.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-01-today.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-02-plan.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-03-routine-detail.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-04-workout.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-05-set-completed-rest.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-06-receipt.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-07-progress.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-08-you.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-09-today-after-workout.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-10-library.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-11-library-search.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-12-technique-guide.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-13-hold-ready.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-14-hold-running.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-15-hold-paused.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/light-01-today.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/light-02-plan.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/light-03-routine-detail.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/light-04-workout.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/light-05-set-completed-rest.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/light-06-receipt.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/light-07-progress.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/light-08-you.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/light-09-today-after-workout.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-active-circular.png",
+    "type": "public.png",
+    "width": 228
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 90,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-active-inline.png",
+    "type": "public.png",
+    "width": 720
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-active-large.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-active-medium.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-active-rectangular.png",
+    "type": "public.png",
+    "width": 516
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-active-small.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-completed-circular.png",
+    "type": "public.png",
+    "width": 228
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 90,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-completed-inline.png",
+    "type": "public.png",
+    "width": 720
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-completed-large.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-completed-medium.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-completed-rectangular.png",
+    "type": "public.png",
+    "width": 516
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-completed-small.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-empty-circular.png",
+    "type": "public.png",
+    "width": 228
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 90,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-empty-inline.png",
+    "type": "public.png",
+    "width": 720
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-empty-large.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-empty-medium.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-empty-rectangular.png",
+    "type": "public.png",
+    "width": 516
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-empty-small.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-hidden-circular.png",
+    "type": "public.png",
+    "width": 228
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 90,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-hidden-inline.png",
+    "type": "public.png",
+    "width": 720
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-hidden-large.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-hidden-medium.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-hidden-rectangular.png",
+    "type": "public.png",
+    "width": 516
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-hidden-small.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-large-accessibility-text.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-large-largest-accessibility-text.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-long-name-circular.png",
+    "type": "public.png",
+    "width": 228
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 90,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-long-name-inline.png",
+    "type": "public.png",
+    "width": 720
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-long-name-large.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-long-name-medium.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-long-name-rectangular.png",
+    "type": "public.png",
+    "width": 516
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-long-name-small.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-medium-accessibility-text.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-medium-largest-accessibility-text.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-private-circular.png",
+    "type": "public.png",
+    "width": 228
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 90,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-private-inline.png",
+    "type": "public.png",
+    "width": 720
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-private-large.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-private-medium.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-private-rectangular.png",
+    "type": "public.png",
+    "width": 516
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-private-small.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-saved-circular.png",
+    "type": "public.png",
+    "width": 228
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 90,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-saved-inline.png",
+    "type": "public.png",
+    "width": 720
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-saved-large.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-saved-medium.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-saved-rectangular.png",
+    "type": "public.png",
+    "width": 516
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-saved-small.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-small-accessibility-text.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-small-largest-accessibility-text.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-stale-circular.png",
+    "type": "public.png",
+    "width": 228
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 90,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-stale-inline.png",
+    "type": "public.png",
+    "width": 720
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-stale-large.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-stale-medium.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-stale-rectangular.png",
+    "type": "public.png",
+    "width": 516
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-stale-small.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-unavailable-circular.png",
+    "type": "public.png",
+    "width": 228
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 90,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-unavailable-inline.png",
+    "type": "public.png",
+    "width": 720
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-unavailable-large.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-unavailable-medium.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-unavailable-rectangular.png",
+    "type": "public.png",
+    "width": 516
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-unavailable-small.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-active-circular.png",
+    "type": "public.png",
+    "width": 228
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 90,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-active-inline.png",
+    "type": "public.png",
+    "width": 720
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-active-large.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-active-medium.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-active-rectangular.png",
+    "type": "public.png",
+    "width": 516
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-active-small.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-completed-circular.png",
+    "type": "public.png",
+    "width": 228
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 90,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-completed-inline.png",
+    "type": "public.png",
+    "width": 720
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-completed-large.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-completed-medium.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-completed-rectangular.png",
+    "type": "public.png",
+    "width": 516
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-completed-small.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-empty-circular.png",
+    "type": "public.png",
+    "width": 228
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 90,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-empty-inline.png",
+    "type": "public.png",
+    "width": 720
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-empty-large.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-empty-medium.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-empty-rectangular.png",
+    "type": "public.png",
+    "width": 516
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-empty-small.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-hidden-circular.png",
+    "type": "public.png",
+    "width": 228
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 90,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-hidden-inline.png",
+    "type": "public.png",
+    "width": 720
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-hidden-large.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-hidden-medium.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-hidden-rectangular.png",
+    "type": "public.png",
+    "width": 516
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-hidden-small.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-large-accessibility-text.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-large-largest-accessibility-text.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-long-name-circular.png",
+    "type": "public.png",
+    "width": 228
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 90,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-long-name-inline.png",
+    "type": "public.png",
+    "width": 720
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-long-name-large.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-long-name-medium.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-long-name-rectangular.png",
+    "type": "public.png",
+    "width": 516
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-long-name-small.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-medium-accessibility-text.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-medium-largest-accessibility-text.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-private-circular.png",
+    "type": "public.png",
+    "width": 228
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 90,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-private-inline.png",
+    "type": "public.png",
+    "width": 720
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-private-large.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-private-medium.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-private-rectangular.png",
+    "type": "public.png",
+    "width": 516
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-private-small.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-saved-circular.png",
+    "type": "public.png",
+    "width": 228
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 90,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-saved-inline.png",
+    "type": "public.png",
+    "width": 720
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-saved-large.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-saved-medium.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-saved-rectangular.png",
+    "type": "public.png",
+    "width": 516
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-saved-small.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-small-accessibility-text.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-small-largest-accessibility-text.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-stale-circular.png",
+    "type": "public.png",
+    "width": 228
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 90,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-stale-inline.png",
+    "type": "public.png",
+    "width": 720
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-stale-large.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-stale-medium.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-stale-rectangular.png",
+    "type": "public.png",
+    "width": 516
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-stale-small.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-unavailable-circular.png",
+    "type": "public.png",
+    "width": 228
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 90,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-unavailable-inline.png",
+    "type": "public.png",
+    "width": 720
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 1128,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-unavailable-large.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-unavailable-medium.png",
+    "type": "public.png",
+    "width": 1080
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 228,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-unavailable-rectangular.png",
+    "type": "public.png",
+    "width": 516
+  },
+  {
+    "alphaInfo": 3,
+    "decoded": true,
+    "frames": 1,
+    "height": 510,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-unavailable-small.png",
+    "type": "public.png",
+    "width": 510
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/system/widget-system-home-edit.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/system/widget-system-home-installed.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/system/widget-system-medium-gallery.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 2622,
+    "path": "ios/docs/audits/frontend-widget-2026-10/widgets/system/widget-system-small-gallery.png",
+    "type": "public.png",
+    "width": 1206
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 783,
+    "path": "ios/docs/commit-2/screenshots/dark-01-today.jpg",
+    "type": "public.jpeg",
+    "width": 744
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 783,
+    "path": "ios/docs/commit-2/screenshots/dark-02-plan.jpg",
+    "type": "public.jpeg",
+    "width": 744
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 783,
+    "path": "ios/docs/commit-2/screenshots/dark-03-routine-detail.jpg",
+    "type": "public.jpeg",
+    "width": 744
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 783,
+    "path": "ios/docs/commit-2/screenshots/dark-04-workout.jpg",
+    "type": "public.jpeg",
+    "width": 744
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 783,
+    "path": "ios/docs/commit-2/screenshots/dark-05-set-completed-rest.jpg",
+    "type": "public.jpeg",
+    "width": 744
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 783,
+    "path": "ios/docs/commit-2/screenshots/dark-06-receipt.jpg",
+    "type": "public.jpeg",
+    "width": 744
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 783,
+    "path": "ios/docs/commit-2/screenshots/dark-07-progress.jpg",
+    "type": "public.jpeg",
+    "width": 744
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 783,
+    "path": "ios/docs/commit-2/screenshots/dark-08-you.jpg",
+    "type": "public.jpeg",
+    "width": 744
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 783,
+    "path": "ios/docs/commit-2/screenshots/dark-09-today-after-workout.jpg",
+    "type": "public.jpeg",
+    "width": 744
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 783,
+    "path": "ios/docs/commit-2/screenshots/light-01-today.jpg",
+    "type": "public.jpeg",
+    "width": 744
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 783,
+    "path": "ios/docs/commit-2/screenshots/light-02-plan.jpg",
+    "type": "public.jpeg",
+    "width": 744
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 783,
+    "path": "ios/docs/commit-2/screenshots/light-03-routine-detail.jpg",
+    "type": "public.jpeg",
+    "width": 744
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 783,
+    "path": "ios/docs/commit-2/screenshots/light-04-workout.jpg",
+    "type": "public.jpeg",
+    "width": 744
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 783,
+    "path": "ios/docs/commit-2/screenshots/light-05-set-completed-rest.jpg",
+    "type": "public.jpeg",
+    "width": 744
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 783,
+    "path": "ios/docs/commit-2/screenshots/light-06-receipt.jpg",
+    "type": "public.jpeg",
+    "width": 744
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 783,
+    "path": "ios/docs/commit-2/screenshots/light-07-progress.jpg",
+    "type": "public.jpeg",
+    "width": 744
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 783,
+    "path": "ios/docs/commit-2/screenshots/light-08-you.jpg",
+    "type": "public.jpeg",
+    "width": 744
+  },
+  {
+    "alphaInfo": 5,
+    "decoded": true,
+    "frames": 1,
+    "height": 783,
+    "path": "ios/docs/commit-2/screenshots/light-09-today-after-workout.jpg",
+    "type": "public.jpeg",
+    "width": 744
+  }
+]

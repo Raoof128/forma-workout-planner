@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-11-04T20:30:24.629Z",
+  "failures": 0,
+  "signals": [],
+  "source": "Read of existing production monitor KV state after redeployment; normal scheduled execution, no forced alert or email test.",
+  "cron": "*/5 * * * *",
+  "publicRouteConfigured": false,
+  "stateNamespaceAndBackupBindingPreserved": true
+}

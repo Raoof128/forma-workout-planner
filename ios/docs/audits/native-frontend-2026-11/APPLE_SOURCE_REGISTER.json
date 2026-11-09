@@ -1,0 +1,80 @@
+[
+  {
+    "title": "Materials",
+    "url": "https://developer.apple.com/design/human-interface-guidelines/materials.md",
+    "decision": "Glass belongs in supported navigation/control surfaces; stable data surfaces retained.",
+    "retrieved": "2026-11-04 Australia/Sydney",
+    "sha256": "e246f69fe1a414b31e2e3de5ae3cb79b0e9f02df5c0b94d0270f53951e4e3304",
+    "bytes": 21586,
+    "status": "retrieved; relevant claims cross-checked against source/SDK",
+    "revision_information": "Living official documentation; retrieved 4 November 2026. Publication/revision date not exposed in the retrieved record."
+  },
+  {
+    "title": "Running on physical devices",
+    "url": "https://developer.apple.com/documentation/xcode/running-your-app-on-simulated-or-physical-devices.md",
+    "decision": "Pair/trust, Developer Mode, signing and actual destination checks.",
+    "retrieved": "2026-11-04 Australia/Sydney",
+    "sha256": "71714f5e6cbaca807a93ca9206c0eaa670a62b3eab3813339d21a4e8698dd7ca",
+    "bytes": 7489,
+    "status": "retrieved; relevant claims cross-checked against source/SDK",
+    "revision_information": "Living official documentation; retrieved 4 November 2026. Publication/revision date not exposed in the retrieved record."
+  },
+  {
+    "title": "File timestamps required-reason API",
+    "url": "https://developer.apple.com/documentation/bundleresources/app-privacy-configuration/nsprivacyaccessedapitypes/nsprivacyaccessedapitype.md",
+    "decision": "FileTimestamp/C617.1 for the widget-owned App Group file metadata.",
+    "retrieved": "2026-11-04 Australia/Sydney",
+    "sha256": "028e7ccddcff25849c33979d084e3167f2341faef9bd0bd50badcd1213f02cf5",
+    "bytes": 1212,
+    "status": "retrieved; relevant claims cross-checked against source/SDK",
+    "revision_information": "Living official documentation; retrieved 4 November 2026. Publication/revision date not exposed in the retrieved record."
+  },
+  {
+    "title": "Discard workout",
+    "url": "https://developer.apple.com/documentation/healthkit/hkworkoutbuilder/discardworkout().md",
+    "decision": "Discarding the workout does not delete underlying Health samples.",
+    "retrieved": "2026-11-04 Australia/Sydney",
+    "sha256": "da9840f6ff180a7fcef7d9e368ca30203090599a9cc58663b8805b2f57ac9690",
+    "bytes": 920,
+    "status": "retrieved; relevant claims cross-checked against source/SDK",
+    "revision_information": "Living official documentation; retrieved 4 November 2026. Publication/revision date not exposed in the retrieved record."
+  },
+  {
+    "title": "Launch metric",
+    "url": "https://developer.apple.com/documentation/xctest/xctapplicationlaunchmetric.md",
+    "decision": "Responsive launch metric; no claim of full data-ready latency.",
+    "retrieved": "2026-11-04 Australia/Sydney",
+    "sha256": "fcc23a8b0ea195168ac5c7a8122ed4299e99ae9f70088e845b3242a116592ad4",
+    "bytes": 2031,
+    "status": "retrieved; relevant claims cross-checked against source/SDK",
+    "revision_information": "Living official documentation; retrieved 4 November 2026. Publication/revision date not exposed in the retrieved record."
+  },
+  {
+    "title": "Memory metric",
+    "url": "https://developer.apple.com/documentation/xctest/xctmemorymetric.md",
+    "decision": "Application process memory delta, not peak/RSS/leak proof.",
+    "retrieved": "2026-11-04 Australia/Sydney",
+    "sha256": "8c356ca95bf30d8def61c08b65f094253ffa7698913a7445636190db5d18afb9",
+    "bytes": 1966,
+    "status": "retrieved; relevant claims cross-checked against source/SDK",
+    "revision_information": "Living official documentation; retrieved 4 November 2026. Publication/revision date not exposed in the retrieved record."
+  },
+  {
+    "title": "App Review Guidelines",
+    "url": "https://developer.apple.com/app-store/review/guidelines/",
+    "decision": "Readiness gate mapping; no approval claim.",
+    "retrieved": "2026-11-04 Australia/Sydney",
+    "sha256": "60aed69e920c287011b72e9fb133d41f1c832466c829df74a08d7c9f3464ef0d",
+    "bytes": 240818,
+    "status": "retrieved; relevant claims cross-checked against source/SDK",
+    "revision_information": "Living official documentation; retrieved 4 November 2026. Publication/revision date not exposed in the retrieved record."
+  },
+  {
+    "title": "Required-reason values and covered API list",
+    "url": "https://developer.apple.com/documentation/bundleresources/app-privacy-configuration/nsprivacyaccessedapitypes/nsprivacyaccessedapitype",
+    "supporting_reason_url": "https://developer.apple.com/documentation/bundleresources/app-privacy-configuration/nsprivacyaccessedapitypes/nsprivacyaccessedapitypereasons",
+    "retrieved": "2026-11-04 Australia/Sydney",
+    "method": "Current official web search extraction checked; includes contentModificationDateKey and C617.1 container-local metadata use.",
+    "decision": "Declare actual widget API use; do not add an unsupported host use merely for linked dead code. Final Release archive remains required."
+  }
+]
