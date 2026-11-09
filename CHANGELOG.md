@@ -4,6 +4,32 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-11-09 — Reconcile the 5 November release with main
+
+- **Scope:** before redeploying `main` after PR #44, the hosts were checked
+  read-only. Both environments run frontend `af8f476` and API image
+  `2127081`, commits on `fix/tunnel-monitor-readiness` that were pushed after
+  PR #39 merged and never reached `main`. Deploying `main` would have rolled
+  them back.
+- **Summary:** merged that branch into `main`'s tip. Seven code conflicts
+  were resolved keeping both audits' fixes (the merge commit lists each), and
+  the 5 November release entry and its evidence folder
+  (`docs/qa/frontend-audit-2026-11-05/`) were committed from the local
+  checkout. One gitleaks false positive (a commit hash under
+  `apiImageSource`) gets an exact fingerprint.
+- **Files:** `src/account.css`, `src/styles.css`,
+  `src/components/{Account,HistoryEditor,Library,Routines,Workout}.jsx`,
+  `docs/qa/frontend-audit-2026-11-05/`, `.gitleaksignore`, `AGENT.md`,
+  `CHANGELOG.md`.
+- **Verification:** lint, `format:check`, typecheck, `docs:check`, build,
+  `test:unit` and `test:worker` pass locally. Server, operations and browser
+  suites run in CI.
+- **Rule learned:** before any deploy, compare the hosts' `IMAGE_TAG` and the
+  live Worker source with `main`. A release pushed to an already-merged branch
+  is invisible from `main`.
+- **Follow-ups:** not deployed yet. The release is an API image and Worker
+  release, staging first, per `docs/audits/backend-2026-11/CHANGE_SUMMARY.md`.
+
 ### Raouf: 2026-11-09 — Backend audit and hardening
 
 - **Scope:** audit of `server/`, `worker/`, `ops/` and the backend tests by six
