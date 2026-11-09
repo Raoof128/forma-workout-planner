@@ -21,19 +21,22 @@ contacted.
 
 ## Final branch
 
-| Command                                                   | Result                                                                                                                                     |
-| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `npm run lint`, `format:check`, `typecheck`, `docs:check` | Pass                                                                                                                                       |
-| `git diff --check`                                        | Pass                                                                                                                                       |
-| `npm run build:server`                                    | Pass                                                                                                                                       |
-| `npm run test:server`                                     | **101/101**                                                                                                                                |
-| `npm run test:worker`                                     | **43/43**                                                                                                                                  |
-| `npm run test:operations`                                 | **14 Python + 9 Node, OK**                                                                                                                 |
-| `npm run test:unit`                                       | 160/160                                                                                                                                    |
-| `npm run test:accounts` (5 projects)                      | **110/110**                                                                                                                                |
-| `npm run test:accounts:production` (5 projects)           | **110/110**                                                                                                                                |
-| `node scripts/build-ios-resources.mjs --check`            | Pass; no `ios/` drift                                                                                                                      |
-| `docker build -f ops/Dockerfile` + CI image checks        | Pass: runs as UID 10001 and prints "API modules load". Built with the sandbox proxy CA passed as the Dockerfile's `proxy_ca` build secret. |
+| Command                                                   | Result                                                                                                                                                                                                                                          |
+| --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `npm run lint`, `format:check`, `typecheck`, `docs:check` | Pass                                                                                                                                                                                                                                            |
+| `git diff --check`                                        | Pass                                                                                                                                                                                                                                            |
+| `npm run build:server`                                    | Pass                                                                                                                                                                                                                                            |
+| `npm run test:server`                                     | **101/101**                                                                                                                                                                                                                                     |
+| `npm run test:worker`                                     | **43/43**                                                                                                                                                                                                                                       |
+| `npm run test:operations`                                 | **14 Python + 9 Node, OK**                                                                                                                                                                                                                      |
+| `npm run test:unit`                                       | 160/160                                                                                                                                                                                                                                         |
+| `npm run test:accounts` (5 projects)                      | **110/110**                                                                                                                                                                                                                                     |
+| `npm run test:accounts:production` (5 projects)           | **110/110**                                                                                                                                                                                                                                     |
+| `node scripts/build-ios-resources.mjs --check`            | Pass; no `ios/` drift                                                                                                                                                                                                                           |
+| gitleaks 8.30.1 (CI image, full history)                  | Four synthetic test-secret findings from `09f15bc` are recorded as exact fingerprints in `.gitleaksignore`. One pre-existing finding (`0645049`, `ACCESS_AUDIENCE`) is reported only in this local clone; the same scan passes in CI on `main`. |
+| OSV-Scanner 2.6.0 (`package-lock.json`)                   | 0 vulnerabilities                                                                                                                                                                                                                               |
+| Semgrep 1.170.0 (CI rule packs)                           | 0 findings, after a length guard and a justified `nosemgrep` on the Worker's new bearer check                                                                                                                                                   |
+| `docker build -f ops/Dockerfile` + CI image checks        | Pass: runs as UID 10001 and prints "API modules load". Built with the sandbox proxy CA passed as the Dockerfile's `proxy_ca` build secret.                                                                                                      |
 
 ## Run history
 
@@ -88,8 +91,6 @@ changed:
 
 ## Not run
 
-- **Security scans:** Semgrep, gitleaks, OSV and SBOM. Their CI images were not
-  pulled locally; they run in CI on push.
 - **iOS:** no `swift test`, and no iOS simulator tests. No iOS source changed.
   The iOS contract was checked by reading `WorkspaceTransport.swift` and
   `AccountWire.swift`.

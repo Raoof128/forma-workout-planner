@@ -167,8 +167,13 @@ function carriesWorkspaceCredential(
     return cookie !== null && appCookieParts(cookie).length > 0;
   }
   if (request.method === "PATCH" && pathname === COACH_DATA_PATH) {
+    // nosemgrep: ajinabraham.njsscan.dos.regex_dos.regex_dos -- anchored, one bounded character class, input capped at 128 chars
     const authorization = request.headers.get("authorization");
-    return authorization !== null && BEARER_HEADER.test(authorization);
+    return (
+      authorization !== null &&
+      authorization.length <= 128 &&
+      BEARER_HEADER.test(authorization)
+    );
   }
   return false;
 }
