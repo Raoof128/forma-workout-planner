@@ -49,8 +49,10 @@ export async function startServer(): Promise<void> {
       process.stderr.write("FORMA API close failed; closing the pool.\n");
       process.exitCode = 1;
     } finally {
+      // The deadline stays armed (unref'd) until the process exits: a handle
+      // other than the pool, such as an email request, must not keep it alive
+      // past Docker's grace period.
       await pool.end().catch(() => {});
-      clearTimeout(deadline);
     }
   };
   process.once("SIGINT", () => void shutdown());

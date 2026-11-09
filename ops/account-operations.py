@@ -143,9 +143,28 @@ def container_healthy(name):
 def container_running(name):
     try:
         data = json.loads(run(['docker', 'inspect', name], timeout=15))[0]
-        return bool(data['State']['Running'])
+        # Running stays true through a restart; only a settled "running" status means docker exec can work.
+        return bool(data['State']['Running']) and data['State'].get('Status') == 'running'
+
     except Exception:
         return False
+
+
+def probe_succeeds(argv, timeout=15):
+    # A wedged API makes docker exec hang. Count that as a failed probe instead of aborting the whole run,
+    # which would skip the state write and keep the failure counters from ever reaching the alert threshold.
+    try:
+        return subprocess.run(argv, capture_output=True, timeout=timeout).returncode == 0
+    except (subprocess.TimeoutExpired, OSError):
+        return False
+
+
+def captured_output(argv, timeout=15):
+    try:
+        result = subprocess.run(argv, capture_output=True, timeout=timeout)
+        return result.stdout + result.stderr
+    except (subprocess.TimeoutExpired, OSError):
+        return b''
 
 
 def tunnel_ready(config):
@@ -274,16 +293,15 @@ def monitor(config):
     if previous['failures'] >= 2:
         signals.add('backend_unhealthy')
     # Trusted local API probe uses /readyz, which includes the database SELECT 1; /healthz is liveness only.
-    probe = subprocess.run(api_ready_command(config), capture_output=True, timeout=15)
-    if probe.returncode:
+    if not probe_succeeds(api_ready_command(config)):
         previous['healthFailures'] = previous.get('healthFailures', 0) + 1
         if previous['healthFailures'] >= 2:
             signals.add('database_or_api_unhealthy')
     else:
         previous['healthFailures'] = 0
-    logs = subprocess.run(['docker', 'logs', '--since', '5m', '--tail', '5000', config['project'] + '-api-1'], capture_output=True, timeout=15)
+    logs = captured_output(['docker', 'logs', '--since', '5m', '--tail', '5000', config['project'] + '-api-1'])
     events = []
-    for line in (logs.stdout + logs.stderr).decode(errors='replace').splitlines():
+    for line in logs.decode(errors='replace').splitlines():
         try:
             event = json.loads(line)
             if event.get('msg') == 'auth email suppressed by budget':
@@ -293,8 +311,8 @@ def monitor(config):
         except ValueError:
             continue
     signals.update(security_signals(events))
-    pglogs = subprocess.run(['docker', 'logs', '--since', '5m', '--tail', '500', config['project'] + '-db-1'], capture_output=True, timeout=15)
-    if re.search(rb'password authentication failed|too many clients|remaining connection slots', pglogs.stdout + pglogs.stderr):
+    pglogs = captured_output(['docker', 'logs', '--since', '5m', '--tail', '500', config['project'] + '-db-1'])
+    if re.search(rb'password authentication failed|too many clients|remaining connection slots', pglogs):
         signals.add('database_auth_or_connection_limit')
     if tunnel_judgement(previous, container_running(config['project'] + '-api-1'), lambda: tunnel_ready(config)):
         signals.add('tunnel_error')

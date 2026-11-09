@@ -27,7 +27,7 @@ Rules and context for coding agents working in this repository. Read this and
 - Security boundaries live on the server and in the Worker, never only in the
   UI. Member identity comes from the server session; never accept an owner,
   user ID or role from a request.
-- `server/app.ts` is deny-by-default: only exact `/healthz` is public, every
+- `server/app.ts` is deny-by-default: only exact `/healthz` and `/readyz` are public, every
   other path needs the Worker secret, mutations need the exact app `Origin`,
   and auth requests must be JSON objects. Keep new routes inside this model.
 - Better Auth endpoints are reachable only through `AUTH_ROUTES`. Adding a

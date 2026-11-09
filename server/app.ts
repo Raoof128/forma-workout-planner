@@ -423,9 +423,11 @@ export async function createApp({
     },
     bodyLimit: 1024 * 1024,
     trustProxy: false,
-    // Fastify defaults to no request timeout, so a stalled upload or handler
-    // could hold a socket (and its pool connection) indefinitely. The Worker
-    // gives up after 30 s; 120 s leaves room for a 20 MiB save on a slow link.
+    // Fastify defaults to no request timeout, so a stalled upload could hold
+    // a socket indefinitely. This bounds receiving the request; handler time
+    // is bounded by the runtime role's statement_timeout (15 s) in
+    // ops/bootstrap-db-roles.sql. The Worker gives up after 30 s; 120 s
+    // leaves room for a 20 MiB save on a slow link.
     requestTimeout: 120_000,
   });
 
@@ -884,8 +886,18 @@ export async function createApp({
           (authPath === "change-password" || authPath === "revoke-sessions") &&
           response.status === 200 &&
           existingSession?.user?.id
-        )
-          await revokeCredentialArtifacts(pool, existingSession.user.id);
+        ) {
+          // The password change has already committed: a cleanup failure must
+          // not turn it into a 500 the member would retry with the old
+          // password. Log it distinctly; "sign out everywhere" repeats it.
+          await revokeCredentialArtifacts(pool, existingSession.user.id).catch(
+            (error: unknown) =>
+              request.log.error(
+                { errorName: (error as Error)?.name, route: authPath },
+                "credential cleanup failed",
+              ),
+          );
+        }
         const location = response.headers.get("location");
         if (location !== null && !isSafeRedirect(location, config.appOrigin)) {
           // Defence in depth for any redirect the library builds itself.

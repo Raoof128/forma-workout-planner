@@ -120,6 +120,34 @@ class OperationsTests(unittest.TestCase):
         self.assertEqual(saved['failures'], 2)
         self.assertEqual(saved['lastAlert'], {})
 
+    def test_a_hung_readiness_probe_still_counts_and_alerts(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state_file = pathlib.Path(directory) / 'state.json'
+            config = {'project': 'forma-production', 'stateFile': str(state_file), 'directory': directory}
+            stamp = dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
+            sent = []
+            hung = self.ops.subprocess.TimeoutExpired(cmd='docker exec', timeout=15)
+            for _ in range(2):
+                with patch.object(self.ops, 'container_healthy', return_value=True), \
+                        patch.object(self.ops, 'container_running', return_value=True), \
+                        patch.object(self.ops, 'tunnel_ready', return_value=True), \
+                        patch.object(self.ops.subprocess, 'run', side_effect=hung), \
+                        patch.object(self.ops.Store, 'request', return_value=json.dumps({'createdAt': stamp}).encode()), \
+                        patch.object(self.ops, 'alert', side_effect=lambda _config, signals: sent.append(set(signals))):
+                    self.ops.monitor(config)
+            saved = json.loads(state_file.read_text())
+        # A wedged API that makes docker exec time out is a failed probe, not a crashed monitor run.
+        self.assertEqual(saved['healthFailures'], 2)
+        self.assertIn('database_or_api_unhealthy', sent[-1])
+
+    def test_a_restarting_container_is_not_treated_as_running(self):
+        restarting = json.dumps([{'State': {'Running': True, 'Status': 'restarting'}}]).encode()
+        with patch.object(self.ops, 'run', return_value=restarting):
+            self.assertFalse(self.ops.container_running('forma-production-api-1'))
+        running = json.dumps([{'State': {'Running': True, 'Status': 'running'}}]).encode()
+        with patch.object(self.ops, 'run', return_value=running):
+            self.assertTrue(self.ops.container_running('forma-production-api-1'))
+
 
 if __name__ == '__main__':
     unittest.main()

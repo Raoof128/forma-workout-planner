@@ -266,7 +266,7 @@ data, workout backups or exploit recipes. Use synthetic data everywhere.
 - Security boundaries live on the server and in the Worker, never only in the UI.
   Member identity comes from the server-validated session; never accept an owner,
   user ID or role from a URL, body or header.
-- `server/app.ts` is deny-by-default: only exact `/healthz` is public, every other
+- `server/app.ts` is deny-by-default: only exact `/healthz` and `/readyz` are public, every other
   path needs the Worker secret, mutations need the exact app `Origin`, auth requests
   must be JSON objects. New routes stay inside this model.
 - Better Auth endpoints are reachable only through `AUTH_ROUTES`; a new client call

@@ -164,6 +164,11 @@ update their tools.
 - To finish a workout, send `active: null` and a `history` that adds the
   session with `date` and `duration`. Unilateral sets keep `reps` as the total
   of `sides: { left, right }`.
+- An edit that ends the workout in progress without finishing it into
+  `history` (sending `active: null`, or replacing it with a different `id`)
+  must send `removesActive: true`. Without it the edit is refused with
+  `400 active_removal_unconfirmed`, because an unfinished workout can hold
+  completed sets that exist nowhere else.
 
 Edits need no browser `Origin`, because a bearer header is never attached by a
 browser on its own and the route ignores cookies. A request that does carry a

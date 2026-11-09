@@ -16,7 +16,8 @@ export type MigrateOptions = {
   lockTimeout?: string;
 };
 
-const DURATION = /^\d+(ms|s|min)$/;
+// Zero would disable lock_timeout, so the value must be positive.
+const DURATION = /^[1-9]\d*(ms|s|min)$/;
 
 export async function migrate(
   databaseUrl = process.env.DATABASE_URL,

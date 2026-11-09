@@ -267,7 +267,18 @@ const PRUNE_STATEMENTS = [
  * device, 2FA challenge), and coach tokens whose last relevant time (expiry or
  * revocation) is over 30 days old. Active rows are never matched.
  */
+let pruning: Promise<void> | null = null;
+
 export async function pruneExpiredAuthRows(pool: Pool): Promise<void> {
+  // Single-flight: a burst of sampled callers must not run overlapping loops
+  // that occupy most of the shared pool.
+  pruning ??= pruneOnce(pool).finally(() => {
+    pruning = null;
+  });
+  return pruning;
+}
+
+async function pruneOnce(pool: Pool): Promise<void> {
   for (const statement of PRUNE_STATEMENTS) {
     for (let batch = 0; batch < PRUNE_MAX_BATCHES; batch += 1) {
       const result = await pool.query(statement, [PRUNE_BATCH_SIZE]);
