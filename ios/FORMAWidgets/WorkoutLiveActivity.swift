@@ -25,7 +25,8 @@ struct WorkoutLiveActivityWithSmallFamily: Widget {
 private func workoutActivity() -> some WidgetConfiguration {
   ActivityConfiguration(for: WorkoutActivityAttributes.self) { context in
     WorkoutActivityRoot(
-      sessionID: context.attributes.sessionID, state: context.state, isStale: context.isStale
+      sessionID: context.attributes.sessionID, ownerEpoch: context.attributes.ownerEpoch,
+      state: context.state, isStale: context.isStale
     )
     .activityBackgroundTint(WorkoutActivityPalette.backgroundTint)
     .activitySystemActionForegroundColor(WorkoutActivityPalette.systemAction)
@@ -42,7 +43,8 @@ private func workoutActivity() -> some WidgetConfiguration {
       }
       DynamicIslandExpandedRegion(.bottom) {
         IslandExpandedBottom(
-          sessionID: context.attributes.sessionID, state: context.state, isStale: context.isStale)
+          sessionID: context.attributes.sessionID, ownerEpoch: context.attributes.ownerEpoch,
+          state: context.state, isStale: context.isStale)
       }
     } compactLeading: {
       IslandCompactLeading(state: context.state, isStale: context.isStale)

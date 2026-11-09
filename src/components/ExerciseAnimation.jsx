@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Pause, Play } from "lucide-react";
 import animations from "../catalog/animations.json";
 
@@ -17,6 +17,19 @@ function prefersReducedMotion() {
 // it starts on the still start pose when the device asks for reduced motion.
 export default function ExerciseAnimation({ id, name }) {
   const [playing, setPlaying] = useState(() => !prefersReducedMotion());
+  useEffect(() => {
+    const preference = globalThis.matchMedia?.(
+      "(prefers-reduced-motion: reduce)",
+    );
+    if (!preference) return;
+    const pauseForPreference = () => {
+      if (preference.matches) setPlaying(false);
+    };
+    preference.addEventListener("change", pauseForPreference);
+    pauseForPreference();
+    // Removing Reduce Motion must not restart a demonstration the member paused.
+    return () => preference.removeEventListener("change", pauseForPreference);
+  }, []);
   const entry = animations[id];
   if (!entry) return null;
   return (

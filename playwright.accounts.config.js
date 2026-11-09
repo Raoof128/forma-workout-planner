@@ -1,4 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
+import { webkitLaunchOptions } from "./playwright.webkit.js";
 
 const executablePath = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH;
 const apiUrl = "http://127.0.0.1:3001/healthz";
@@ -44,13 +45,17 @@ export default defineConfig({
     },
     {
       name: productionBuild ? "accounts-production-webkit" : "accounts-webkit",
-      use: { browserName: "webkit" },
+      use: { browserName: "webkit", launchOptions: webkitLaunchOptions() },
     },
     {
       name: productionBuild
         ? "accounts-production-webkit-mobile"
         : "accounts-webkit-mobile",
-      use: { ...devices["iPhone 13"], browserName: "webkit" },
+      use: {
+        ...devices["iPhone 13"],
+        browserName: "webkit",
+        launchOptions: webkitLaunchOptions(),
+      },
     },
   ],
   use: {

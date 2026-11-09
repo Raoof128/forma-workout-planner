@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-04",
+  "source_attachment_sha256": "ea28d096b839b2992ce54a12c16aef9d0d918d5c4c1356da7545370f68138c67",
+  "executable_prompt_sha256": "79b1383af560e56c40828e967fe7d8f68473fa7ffe07fe86488afaa15d616382",
+  "baseline_commit": "3c27308c5856928ab18650293df1c2f6e2e91389",
+  "branch": "fix/tunnel-monitor-readiness",
+  "scope": "Website frontend with supporting API/Worker/security contracts and tests; separate native physical evidence completed",
+  "authorization": "User explicitly requested commit and push all changes; no deploy, merge, production-member mutation or live infrastructure change"
+}

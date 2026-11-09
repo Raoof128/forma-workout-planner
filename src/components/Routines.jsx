@@ -545,7 +545,12 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
   }
   async function save(event) {
     event.preventDefault();
-    if (ordering || libraryOpen || (items.length > 0 && !prescriptionsReady))
+    if (
+      saving ||
+      ordering ||
+      libraryOpen ||
+      (items.length > 0 && !prescriptionsReady)
+    )
       return;
     if (!name.trim() || !items.length) {
       setError("Give your routine a name and choose at least one exercise.");
@@ -605,6 +610,8 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
       });
       if (!saved)
         setError("Could not save. Check the message and keep your draft open.");
+    } catch {
+      setError("Could not save. Check the message and keep your draft open.");
     } finally {
       setSaving(false);
     }
@@ -681,154 +688,162 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
             </section>
           )}
           <form onSubmit={save} className="modal-content" hidden={libraryOpen}>
-            <label className="field">
-              Routine name
-              <input
-                data-autofocus
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-                placeholder="e.g. Monday upper body"
-                maxLength={60}
-              />
-            </label>
-            <label className="field duration-field">
-              Estimated duration (minutes)
-              <input
-                type="number"
-                required
-                min="1"
-                max="1000"
-                value={minutes}
-                onChange={(event) =>
-                  setMinutes(
-                    event.target.value === "" ? "" : Number(event.target.value),
-                  )
-                }
-              />
-            </label>
-            <div className="editor-heading">
-              <h3>Choose your exercises</h3>
-              <span className="muted small" aria-live="polite">
-                {items.length} selected
-              </span>
-            </div>
-            <Button
-              ref={libraryOpener}
-              variant="secondary"
-              className="routine-library-opener"
-              onClick={openLibrary}
-              disabled={saving || ordering}
-            >
-              <BookOpen size={17} /> Browse exercise library
-            </Button>
-            <div className="search-field">
-              <Search size={18} />
-              <input
-                aria-label="Search exercises for routine"
-                value={query}
-                onChange={(event) => {
-                  setQuery(event.target.value);
-                  setPickerLimit(40);
-                }}
-                placeholder="Search exercises…"
-              />
-            </div>
-            <div className="exercise-picker">
-              {!matchingExercises.length && (
-                <p className="picker-empty" aria-live="polite">
-                  No matching exercises. Try a different name or muscle group.
+            {/* Keep the submitted snapshot stable until its save settles. */}
+            <fieldset className="editor-fields" disabled={saving}>
+              <label className="field">
+                Routine name
+                <input
+                  data-autofocus
+                  value={name}
+                  onChange={(event) => setName(event.target.value)}
+                  placeholder="e.g. Monday upper body"
+                  maxLength={60}
+                />
+              </label>
+              <label className="field duration-field">
+                Estimated duration (minutes)
+                <input
+                  type="number"
+                  required
+                  min="1"
+                  max="1000"
+                  value={minutes}
+                  onChange={(event) =>
+                    setMinutes(
+                      event.target.value === ""
+                        ? ""
+                        : Number(event.target.value),
+                    )
+                  }
+                />
+              </label>
+              <div className="editor-heading">
+                <h3>Choose your exercises</h3>
+                <span className="muted small" aria-live="polite">
+                  {items.length} selected
+                </span>
+              </div>
+              <Button
+                ref={libraryOpener}
+                variant="secondary"
+                className="routine-library-opener"
+                onClick={openLibrary}
+                disabled={saving || ordering}
+              >
+                <BookOpen size={17} /> Browse exercise library
+              </Button>
+              <div className="search-field">
+                <Search size={18} />
+                <input
+                  aria-label="Search exercises for routine"
+                  value={query}
+                  onChange={(event) => {
+                    setQuery(event.target.value);
+                    setPickerLimit(40);
+                  }}
+                  placeholder="Search exercises…"
+                />
+              </div>
+              <div className="exercise-picker">
+                {!matchingExercises.length && (
+                  <p className="picker-empty" aria-live="polite">
+                    No matching exercises. Try a different name or muscle group.
+                  </p>
+                )}
+                {matchingExercises.slice(0, pickerLimit).map((exercise) => {
+                  const picked = items.some(
+                    (item) =>
+                      canonicalId(item.exerciseId, curation) === exercise.id,
+                  );
+                  return (
+                    <button
+                      type="button"
+                      key={exercise.id}
+                      aria-pressed={picked}
+                      disabled={ordering}
+                      className={picked ? "picked" : ""}
+                      onClick={() => toggle(exercise)}
+                    >
+                      <Dumbbell size={17} />
+                      <span>
+                        {exercise.name}
+                        <small>
+                          {exercise.muscle} · {exercise.equipment}
+                        </small>
+                      </span>
+                      {picked ? <Check size={18} /> : <Plus size={18} />}
+                    </button>
+                  );
+                })}
+              </div>
+              {matchingExercises.length > pickerLimit && (
+                <Button
+                  variant="secondary"
+                  onClick={() => setPickerLimit((limit) => limit + 40)}
+                >
+                  Show more matching exercises
+                </Button>
+              )}
+              {items.length > 0 && (
+                <div className="prescriptions">
+                  <div className="prescription labels">
+                    <span>EXERCISE / ORDER</span>
+                    <span>Sets</span>
+                    <span>Reps</span>
+                    <span>Load (kg)</span>
+                    <span>RPE</span>
+                    <span>Rest (s)</span>
+                    <span>⋯</span>
+                  </div>
+                  <Suspense
+                    fallback={<p aria-live="polite">Loading exercise order…</p>}
+                  >
+                    <RoutinePrescriptions
+                      items={items}
+                      repInputs={repInputs}
+                      onRepInput={(key, value) =>
+                        setRepInputs((current) => ({
+                          ...current,
+                          [key]: value,
+                        }))
+                      }
+                      update={update}
+                      move={move}
+                      onReorder={finishReorder}
+                      onOrderingChange={setOrdering}
+                      onReady={setPrescriptionsReady}
+                      join={join}
+                      onUseTimed={switchToTimed}
+                      defaultRest={defaultRest}
+                      hidden={libraryOpen}
+                    />
+                  </Suspense>
+                </div>
+              )}
+              {error && (
+                <p role="alert" className="error">
+                  {error}
                 </p>
               )}
-              {matchingExercises.slice(0, pickerLimit).map((exercise) => {
-                const picked = items.some(
-                  (item) =>
-                    canonicalId(item.exerciseId, curation) === exercise.id,
-                );
-                return (
-                  <button
-                    type="button"
-                    key={exercise.id}
-                    aria-pressed={picked}
-                    disabled={ordering}
-                    className={picked ? "picked" : ""}
-                    onClick={() => toggle(exercise)}
-                  >
-                    <Dumbbell size={17} />
-                    <span>
-                      {exercise.name}
-                      <small>
-                        {exercise.muscle} · {exercise.equipment}
-                      </small>
-                    </span>
-                    {picked ? <Check size={18} /> : <Plus size={18} />}
-                  </button>
-                );
-              })}
-            </div>
-            {matchingExercises.length > pickerLimit && (
-              <Button
-                variant="secondary"
-                onClick={() => setPickerLimit((limit) => limit + 40)}
-              >
-                Show more matching exercises
-              </Button>
-            )}
-            {items.length > 0 && (
-              <div className="prescriptions">
-                <div className="prescription labels">
-                  <span>EXERCISE / ORDER</span>
-                  <span>Sets</span>
-                  <span>Reps</span>
-                  <span>Load (kg)</span>
-                  <span>RPE</span>
-                  <span>Rest (s)</span>
-                  <span>⋯</span>
-                </div>
-                <Suspense
-                  fallback={<p aria-live="polite">Loading exercise order…</p>}
+              <div className="modal-actions">
+                <Button variant="secondary" disabled={saving} onClick={close}>
+                  Cancel
+                </Button>
+                <Button
+                  type="submit"
+                  variant="lime"
+                  disabled={
+                    saving ||
+                    ordering ||
+                    (items.length > 0 && !prescriptionsReady)
+                  }
+                  loading={saving}
                 >
-                  <RoutinePrescriptions
-                    items={items}
-                    repInputs={repInputs}
-                    onRepInput={(key, value) =>
-                      setRepInputs((current) => ({ ...current, [key]: value }))
-                    }
-                    update={update}
-                    move={move}
-                    onReorder={finishReorder}
-                    onOrderingChange={setOrdering}
-                    onReady={setPrescriptionsReady}
-                    join={join}
-                    onUseTimed={switchToTimed}
-                    defaultRest={defaultRest}
-                    hidden={libraryOpen}
-                  />
-                </Suspense>
+                  <Check size={17} />
+                  Save routine
+                </Button>
               </div>
-            )}
-            {error && (
-              <p role="alert" className="error">
-                {error}
-              </p>
-            )}
-            <div className="modal-actions">
-              <Button variant="secondary" disabled={saving} onClick={close}>
-                Cancel
-              </Button>
-              <Button
-                type="submit"
-                variant="lime"
-                disabled={
-                  saving ||
-                  ordering ||
-                  (items.length > 0 && !prescriptionsReady)
-                }
-                loading={saving}
-              >
-                <Check size={17} />
-                Save routine
-              </Button>
-            </div>
+            </fieldset>
           </form>
         </>
       )}

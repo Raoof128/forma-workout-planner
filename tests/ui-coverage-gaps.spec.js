@@ -295,6 +295,14 @@ test(
         "data-page",
         "workout",
       );
+      // The empty Workout CTA already has this route before its save finishes.
+      await expect(
+        page.getByRole("heading", {
+          name: targetName,
+          exact: true,
+          level: 1,
+        }),
+      ).toBeVisible();
       expect((await stored(page)).active.name).toBe(targetName);
     }
   },

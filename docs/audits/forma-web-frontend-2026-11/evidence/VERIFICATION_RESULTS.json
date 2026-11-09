@@ -1,0 +1,372 @@
+{
+  "scope": "Executed local audit checks; retained attempts are distinct from final source results. Private raw reports, sources, bodies and traces are not published. Placeholder temporary config labels are descriptions, not copyable commands; public test files and final exact commands are listed in TEST_RESULTS.md.",
+  "baseline_commit": "3c27308c5856928ab18650293df1c2f6e2e91389",
+  "browser_environment": {
+    "playwright": "1.64.1",
+    "chromium": "156.0.8078.4",
+    "node": "24.21.0",
+    "npm": "11.19.0",
+    "full_guest_workers": 1,
+    "existing_timeouts_changed": false,
+    "existing_assertions_weakened": false
+  },
+  "runs": [
+    {
+      "id": "unfrozen-guest-early",
+      "command": "npm run test:browser",
+      "status": "interrupted_contended",
+      "discovered": 507,
+      "passed": 35,
+      "failed": 2,
+      "interrupted": 2,
+      "unrun": 468,
+      "reported_minutes": 4.1,
+      "private_log_reference": "forma-web-dev-baseline-20261104.log",
+      "private_log_sha256": "fdff1f64871d6bed5f31d8a449d891698d46c5d09a1d6d0fe0fd148159ac01a0"
+    },
+    {
+      "id": "frozen-3c-guest",
+      "command": "npm run test:browser",
+      "status": "interrupted_contended",
+      "discovered": 507,
+      "passed": 130,
+      "failed": 2,
+      "interrupted": 1,
+      "unrun": 374,
+      "reported_minutes": 11.9,
+      "private_log_reference": "forma-web-dev-frozen-baseline-20261104.log",
+      "private_log_sha256": "a05987a21e7e8fb970e34dcbdfb0bd1f90138cd9b3c1f1de6e8deca0fab73ed5"
+    },
+    {
+      "id": "first-full-guest",
+      "command": "npm run test:browser",
+      "status": "failed",
+      "discovered": 519,
+      "passed": 512,
+      "failed": 7,
+      "interrupted": 0,
+      "unrun": 0,
+      "reported_minutes": 32.5,
+      "private_log_reference": "forma-web-dev-final-20261104.log",
+      "private_log_sha256": "831262c5b288219249a18adc9db2abbfc11faa49b2696324a622464b257e1aa9"
+    },
+    {
+      "id": "original-webkit-six",
+      "status": "failed_as_reproduced",
+      "passed": 0,
+      "failed": 6,
+      "private_log_reference": "forma-web-original-webkit-six-20261104.log",
+      "private_log_sha256": "7922ab5bfbd03c9a4caf4700b94e423e3d8e89d948a918e889e54ccb364f80f0",
+      "runner_description": "npx playwright test --config=<frozen-baseline-reproduction-config>"
+    },
+    {
+      "id": "original-webkit-six-process-keyboard-mode",
+      "status": "failed_as_reproduced",
+      "passed": 1,
+      "failed": 5,
+      "private_log_reference": "forma-web-original-keyboard-process-20261104.log",
+      "private_log_sha256": "9f1f5380dff308e450be916f1148fc50ee3649306463035ff0b22d7d994cbae1",
+      "runner_description": "npx playwright test --config=<frozen-baseline-process-keyboard-config>"
+    },
+    {
+      "id": "final-existing-webkit-six",
+      "status": "passed",
+      "passed": 6,
+      "failed": 0,
+      "reported_seconds": 23.1,
+      "private_log_reference": "forma-web-focus-verified-20261104.log",
+      "private_log_sha256": "82740559c301ab110274bc9d27df74809dfa1909e0111e2d6eba33ef2aeae65d",
+      "runner_description": "npx playwright test <six unchanged original cases> --project=webkit --workers=1"
+    },
+    {
+      "id": "frozen-firefox-workflow-exclusive",
+      "command": "npx playwright test tests/workflows.spec.js --project=firefox --workers=1",
+      "status": "passed",
+      "passed": 1,
+      "failed": 0,
+      "reported_seconds": 12.6,
+      "test_seconds": 8.5,
+      "private_log_reference": "forma-web-original-firefox-workflow-20261104.log",
+      "private_log_sha256": "ebbec94c4cae1ebc179bae09109a50a6a38855ebdfce8d03c11ed9017b227715"
+    },
+    {
+      "id": "editor-order-controlled-original",
+      "command": "npx playwright test --config=/tmp/forma-web-editor-audit-20261104.config.mjs",
+      "status": "failed_as_reproduced",
+      "passed": 0,
+      "failed": 6,
+      "private_log_reference": "forma-web-editor-red-20261104.log",
+      "private_log_sha256": "f1ca3201ce5c052e32df1c90684013a596cd0c0542c1ded6f7eed60abdfbc634",
+      "reported_stats": {
+        "startTime": "2026-11-04T10:03:34.658Z",
+        "duration": 166549.775,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 6,
+        "flaky": 0
+      }
+    },
+    {
+      "id": "editor-order-three-engine",
+      "command": "npx playwright test --config=/tmp/forma-web-editor-green-20261104.config.mjs",
+      "status": "passed",
+      "passed": 18,
+      "failed": 0,
+      "reported_seconds": 31.2,
+      "private_log_reference": "forma-web-editor-green-exclusive-20261104.log",
+      "private_log_sha256": "886f640efe68f2bf709674450333460e0cd2b07bf23a7de1f193b48c9135d3fb",
+      "reported_stats": {
+        "startTime": "2026-11-04T10:11:34.952Z",
+        "duration": 31168.79,
+        "expected": 18,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "id": "account-draft-retry-conflict-three-engine",
+      "command": "npx playwright test --config=/tmp/forma-web-account-focused-followup-20261104.config.mjs",
+      "status": "passed",
+      "passed": 15,
+      "failed": 0,
+      "reported_seconds": 42.1,
+      "private_log_reference": "forma-web-account-focused-followup-20261104.log",
+      "private_log_sha256": "60ca52aaa8115fb621c98bd2905d9c522d973c8c2bdec3b75aa058f762d5cb61",
+      "reported_stats": {
+        "startTime": "2026-11-04T10:53:01.821Z",
+        "duration": 42119.795,
+        "expected": 15,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "id": "design-focused-under-contention",
+      "status": "interrupted",
+      "discovered": 42,
+      "passed": 8,
+      "failed": 0,
+      "interrupted": 1,
+      "unrun": 33,
+      "private_log_reference": "forma-web-design-tests-20261104/run.log",
+      "private_log_sha256": "4dfca938aeefdea6f9984594619402d1828722b0d0d9c8935061e66a325a9f86",
+      "runner_description": "npx playwright test --config=<temporary focused design config>"
+    },
+    {
+      "id": "hold-owner-and-numeric-focused",
+      "command": "npx playwright test tests/hold-owner-lifecycle.spec.js tests/responsive-numeric.spec.js --workers=1",
+      "status": "passed_before_strengthened_cue_assertion",
+      "passed": 21,
+      "failed": 0,
+      "reported_minutes": 1.5,
+      "followup": "Explicit vibration-count assertion then added to five hold cases; the frozen full guest matrix verifies that strengthened version",
+      "private_log_reference": "forma-web-hold-numeric-green-20261104.log",
+      "private_log_sha256": "124e955ada3fe86c02a7e12a6215cf63368ee0efe30033d4021061e4b5ac0d7d"
+    },
+    {
+      "id": "security-narrow-new-test-harness",
+      "command": "npx playwright test --config=/tmp/forma-web-account-security-responsive-green-20261104.config.mjs",
+      "status": "harness_failed",
+      "passed": 0,
+      "failed": 5,
+      "cause": "New geometry fixture used nonexistent account-panel ancestor; corrected actual account-settings-form selector, bounds assertions retained",
+      "private_log_reference": "forma-web-account-security-responsive-green-20261104.log",
+      "private_log_sha256": "6555c159322449f41a84bfa8a701fc8d3b8ea564b72a1610af784d39a6121c94"
+    },
+    {
+      "id": "security-narrow-five-profile-final",
+      "command": "npx playwright test --config=/tmp/forma-web-account-security-responsive-final-20261104.config.mjs",
+      "status": "passed",
+      "passed": 5,
+      "failed": 0,
+      "reported_seconds": 56.1,
+      "private_log_reference": "forma-web-account-security-responsive-final-20261104.log",
+      "private_log_sha256": "6ee39e155e69c85dc64f529e3a24aef9605a60621d2827239abbf654b9defea7"
+    },
+    {
+      "id": "auth-tablet-new-test-first-green",
+      "command": "npx playwright test --config=/tmp/forma-web-auth-responsive-final-20261104.config.mjs",
+      "status": "harness_failed",
+      "passed": 2,
+      "failed": 3,
+      "cause": "New same-hash navigation fixture retained Reset mode on Chromium/Firefox; real Back to sign in action added between widths; geometry assertions retained",
+      "private_log_reference": "forma-web-auth-responsive-final-20261104.log",
+      "private_log_sha256": "2cef93537779e9b1358d332be6c92e881d509c26a5ec6b5dc6e15b09bfe1178d"
+    },
+    {
+      "id": "auth-tablet-five-profile-final",
+      "command": "npx playwright test --config=/tmp/forma-web-auth-responsive-final-verified-20261104.config.mjs",
+      "status": "passed",
+      "passed": 5,
+      "failed": 0,
+      "reported_seconds": 41.8,
+      "private_log_reference": "forma-web-auth-responsive-final-verified-20261104.log",
+      "private_log_sha256": "1011b193b27995c45689ed0421c5ba11dd3e4b212a871d9898c3876d765468d0"
+    },
+    {
+      "id": "security-narrow-controlled-red",
+      "runner_description": "One new meaningful Chromium geometry regression against the actual product before its CSS correction",
+      "status": "failed_as_reproduced",
+      "passed": 0,
+      "failed": 1,
+      "private_log_reference": "forma-web-account-security-responsive-red-20261104.log",
+      "private_log_sha256": "2be8cd8eec7fcc072aa2882cb68309daf67266690d45c791982e28eab8a6cec4"
+    },
+    {
+      "id": "auth-tablet-controlled-red",
+      "runner_description": "One new meaningful Chromium geometry regression against the actual product before its CSS correction",
+      "status": "failed_as_reproduced",
+      "passed": 0,
+      "failed": 1,
+      "private_log_reference": "forma-web-auth-responsive-red-20261104.log",
+      "private_log_sha256": "1ec995278dcd691b2f208cb060818ddd11f45c5fa6b0fa80782ac9c8c591b0e8"
+    },
+    {
+      "id": "post-css-guest-stopped-before-skip-followup",
+      "command": "npm run test:browser -- --workers=1 --reporter=line,json",
+      "status": "stopped_for_confirmed_followup",
+      "discovered": 540,
+      "passed": 271,
+      "failed": 1,
+      "interrupted": 1,
+      "unrun": 267,
+      "reported_minutes": 16.6,
+      "failure_disposition": "One existing empty-CTA readiness race: already-workout route assertion preceded durable commit; later capture showed running session. Added exact h1 readiness wait before unchanged data assertion. Separate Skip-after-retry gap then corrected before current full verification.",
+      "private_log_reference": "forma-web-dev-complete-final-20261104.log",
+      "private_log_sha256": "627e2c9fdffb76a0f569ccf418053dcefe538df1e4bee3e45c7325088b350ac1"
+    },
+    {
+      "id": "skip-after-retry-controlled-red",
+      "status": "failed_as_reproduced",
+      "passed": 0,
+      "failed": 3,
+      "reported_seconds": 29.6,
+      "private_log_reference": "forma-web-account-skip-retry-red-20261104.log",
+      "private_log_sha256": "283a434a2de4d85451b10c1cbba3e99ae5548f7aecfc13749d19204d7a92c0b4"
+    },
+    {
+      "id": "skip-after-retry-green",
+      "status": "passed",
+      "passed": 3,
+      "failed": 0,
+      "reported_seconds": 13.5,
+      "private_log_reference": "forma-web-account-skip-retry-green-20261104.log",
+      "private_log_sha256": "f77c932555401eb79ad03a9e6a964b18dcf86fb1a6697c3722263d800df2c11a"
+    },
+    {
+      "id": "empty-cta-ready-three-engine",
+      "status": "passed",
+      "passed": 3,
+      "failed": 0,
+      "reported_seconds": 25.8,
+      "private_log_reference": "forma-web-empty-cta-final-20261105.log",
+      "private_log_sha256": "32c9d1c5b69475343659e8d60f214173e04f8edc0ed9fc949ef6a271d52c62fc"
+    }
+  ],
+  "nonbrowser_final": {
+    "unit": {
+      "passed": 151,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "duration_ms": 5444.352166
+    },
+    "worker": {
+      "passed": 35,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "duration_ms": 30213.837375
+    },
+    "server": {
+      "passed": 77,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "duration_ms": 29076.469708,
+      "postgresql": "18.6 private local cluster",
+      "receipt": "POSTGRESQL_FINAL.json"
+    }
+  },
+  "final_broad_status": {
+    "ci_run": 41840783732,
+    "ci_commit": "c247e9e705b462ff9771f5442d17efc0955a22d8",
+    "ci_conclusion": "success",
+    "guest_development": {
+      "passed": 540,
+      "failed": 0,
+      "skipped": 0,
+      "interrupted": 0
+    },
+    "guest_production": {
+      "passed": 175,
+      "failed": 0,
+      "skipped": 0,
+      "interrupted": 0
+    },
+    "account_development_ci": {
+      "passed": 200,
+      "failed": 0,
+      "skipped": 0
+    },
+    "account_production_ci": {
+      "passed": 200,
+      "failed": 0,
+      "skipped": 0
+    },
+    "account_development_local": {
+      "passed": 200,
+      "failed": 0,
+      "skipped": 0,
+      "retries": 0
+    },
+    "account_production_local": {
+      "passed": 200,
+      "failed": 0,
+      "skipped": 0,
+      "retries": 0
+    },
+    "local_webkit_gate": {
+      "passed": 40,
+      "failed": 0,
+      "skipped": 0
+    },
+    "total_ci_executions": 1394,
+    "total_ci_browser_executions": 1115,
+    "count_boundary": "Browser scenarios repeat across engines/build modes; local repeated checks are not added to CI totals as unique tests."
+  },
+  "focused_harness_limit": "New fixture mistakes were corrected without weakening product assertions; earlier failed runs remain recorded. No incomplete attempt is called a full pass.",
+  "account_history": "ACCOUNT_HISTORY.json",
+  "measurements": "MEASUREMENT_EXECUTION.json",
+  "final_receipts": {
+    "ci": "CI_FINAL.json",
+    "account_dev": "ACCOUNT_DEVELOPMENT_FINAL.json",
+    "account_prod": "ACCOUNT_PRODUCTION_FINAL.json",
+    "source_inputs": "FINAL_BROWSER_INPUTS.json",
+    "cleanup": "LOCAL_CLEANUP.json",
+    "docs_portability": "DOCS_PORTABILITY.json"
+  },
+  "ci_environment": {
+    "node": "24.22.1",
+    "npm": "11.19.1",
+    "os": "Ubuntu24.04.5",
+    "postgresql": "18.4"
+  },
+  "ci_history": [
+    {
+      "commit": "cc771830b92929485dae5f4fe8297a49df9fa394",
+      "run": 41837246392,
+      "issue": "Docs check found six targets that existed only as ignored local logs; development step was skipped; superseded by the corrected report commit",
+      "correction": "Tracked sanitized JSON receipts; old index-only mirror failed six links, corrected index-only mirror passed166Markdown files",
+      "superseded": true
+    },
+    {
+      "commit": "c247e9e705b462ff9771f5442d17efc0955a22d8",
+      "run": 41840783732,
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ]
+}

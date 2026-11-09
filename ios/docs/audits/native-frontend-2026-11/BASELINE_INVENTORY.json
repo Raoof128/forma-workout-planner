@@ -1,0 +1,2313 @@
+{
+  "baseline_head": "df75451619e59e4b05944d16d4db001ad9ecab1f",
+  "branch": "fix/tunnel-monitor-readiness",
+  "starting_working_tree": "clean",
+  "native_tracked_paths": 372,
+  "scoped_tracked_paths": 384,
+  "files": [
+    {
+      "path": ".github/workflows/ios.yml",
+      "baseline_sha256": "c6770d03c2df015ede0084c60c1bc1e558e8ea315e0a67680a37fad06332870a",
+      "baseline_line_count": 219,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "AGENT.md",
+      "baseline_sha256": "05ce3f2f0cbb708e5cbd8c2057e3de954c597f18f91d6fd95876e19d573d966a",
+      "baseline_line_count": 1713,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "baseline_sha256": "bb6c5a51eac1d192748748d54ae795381dcbc19249ae18f9de5ab83cb28f0baa",
+      "baseline_line_count": 1847,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "docs/accounts/api.md",
+      "baseline_sha256": "99107cc32ddad7cf58c48b9e375723ed93e02219def7cead2d19d6d5032ae0f5",
+      "baseline_line_count": 215,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "docs/data-model.md",
+      "baseline_sha256": "82051b05356dfc7bda701b4b68ec176c41be1ffb83bbf6e3bf91e6595519f32a",
+      "baseline_line_count": 49,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "docs/member-data-sync.md",
+      "baseline_sha256": "20888cc996b03eee588c1ba10408953b60e8a89ba0f6a9411e137dc68a8c369d",
+      "baseline_line_count": 55,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "docs/security/README.md",
+      "baseline_sha256": "df2700d20a2ecfb8956af7c3ce4aa82b64b69570feed16f22337eadb778b60e6",
+      "baseline_line_count": 57,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/.gitignore",
+      "baseline_sha256": "2767552aa155cef9721b0ebbdfbee475aae4b4572c1995a5bda73e0004f6dbff",
+      "baseline_line_count": 6,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Account/AccountClient.swift",
+      "baseline_sha256": "271bd0915ef9eae305a6c5bf6f6f3628f69991b9808f649cbe55d7665c1af28f",
+      "baseline_line_count": 386,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Account/AccountModel.swift",
+      "baseline_sha256": "f91d2b056f3e60376eab6575f389740518be3dd253acc6781acd7cb4eb6b2095",
+      "baseline_line_count": 458,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Account/AccountPrivacyView.swift",
+      "baseline_sha256": "bb09bcc7172ea4748baf8b281ebc1b8d8088ab75325b34ca7c6cf67fd46e6363",
+      "baseline_line_count": 265,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Account/AccountProfileView.swift",
+      "baseline_sha256": "a47358498c1a2d52ca2d807f62aa0467297f93d6aabb7573ec31425606ecb630",
+      "baseline_line_count": 159,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Account/AccountSection.swift",
+      "baseline_sha256": "b2c50448112ce70d98cd6e681b831034c5b94507e5861c7bc3a3365952a3a607",
+      "baseline_line_count": 300,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Account/AccountSecurityView.swift",
+      "baseline_sha256": "436379ae02e2677f68d4b54bde53ccd8fa7a84f1b73e76b861633bd550847a41",
+      "baseline_line_count": 929,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Account/AccountStorage.swift",
+      "baseline_sha256": "95ea0cc6c6bd5cee74babcc4ec42ff63dcd249cfd659a2f278a8908e9d0deaf8",
+      "baseline_line_count": 81,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Account/AccountSupport.swift",
+      "baseline_sha256": "167382ef1565aa435054d2fbc3349a65fc2e414f1b6754dfebd3cbb681647a76",
+      "baseline_line_count": 298,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Account/AuthFlowView.swift",
+      "baseline_sha256": "2b8b05b1e11e87fc348d597dcebe505c22c399e711ad3428f99c99407c77120f",
+      "baseline_line_count": 529,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Account/ConnectivityMonitor.swift",
+      "baseline_sha256": "e78de6c9c153bb7ae223c4a0faeecf62d034897ec1439dd59d4586baae870d45",
+      "baseline_line_count": 28,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Account/CookieJar.swift",
+      "baseline_sha256": "62e0f12204b6862980bac6e5457d91946b83aaddf90049a066abf8a6dcd76b83",
+      "baseline_line_count": 163,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Account/PhoneTraining.swift",
+      "baseline_sha256": "fb90960e64dbb4b88b761304aa659b1931af71f7d24d4b36cd4a96641412975a",
+      "baseline_line_count": 149,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Account/SyncDetailsView.swift",
+      "baseline_sha256": "7d9ff3fa09064a4e27e89bc4f6bf4569b3262e741d3e54c27dedff3d27891afd",
+      "baseline_line_count": 130,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Account/TrainingDataView.swift",
+      "baseline_sha256": "2259ceb0fab146c696007a6c80e5be4bb347f6aabb38b3231b515f6932c15482",
+      "baseline_line_count": 298,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/App/AppModel+Account.swift",
+      "baseline_sha256": "609175022ef0459ac98cee93a175b532f9bb823f752906fc0c4a0a68b4220abe",
+      "baseline_line_count": 631,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/App/AppModel+LiveActivity.swift",
+      "baseline_sha256": "1f8f189a3c1a1278e54e4c6a11e016814b6994fc957d6d5dbfd03b817b2412f1",
+      "baseline_line_count": 60,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/App/AppModel+WidgetRouting.swift",
+      "baseline_sha256": "26e73bdc97f890e9c55b67350f54410bb9b68a21c4bdad54e46ef322a9ce44d9",
+      "baseline_line_count": 33,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/App/AppModel.swift",
+      "baseline_sha256": "fe60a88c2dba08b2cd5f2601bf47967d28f56583641a2b3847c9fd4717f3d136",
+      "baseline_line_count": 514,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/App/FORMAApp.swift",
+      "baseline_sha256": "635cdacb49485b0d49f2529ad0b619f7eb948b8eb4bf40a646457e36df7a39e5",
+      "baseline_line_count": 341,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/App/RestReminder.swift",
+      "baseline_sha256": "77c4f77366d84f8c854c584aa5026de5177e3108524d8e32f8d8edbaf3d1d866",
+      "baseline_line_count": 109,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/App/WatchWorkoutCoordinator.swift",
+      "baseline_sha256": "644133cbba954ce4f1a4c9c08263fbd108d4cf6a150d57f1e9ca51b5ffe127ca",
+      "baseline_line_count": 504,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/App/WidgetSnapshotBridge.swift",
+      "baseline_sha256": "3a0b5ae6ca0590079ac6788271b507bc157b15ea14930275836dc6751865bdee",
+      "baseline_line_count": 258,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/App/WorkoutLiveActivityController.swift",
+      "baseline_sha256": "0375dd4a1d48406a8a1fbc8a1f27e625680cdcd5eb35f30e24a9b81d66498850",
+      "baseline_line_count": 263,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/App/WorkoutLiveActivityMapping.swift",
+      "baseline_sha256": "b62c83cb8a383097a0a2c472ca5c274e21a12c2cc3d2c6e251c2c7f314ec956b",
+      "baseline_line_count": 27,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/DesignSystem/FormaComponents.swift",
+      "baseline_sha256": "675ac64c652673e112c582af52812fc9f483f1eb3e062d6764761a5c6351cb27",
+      "baseline_line_count": 55,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/DesignSystem/FormaHaptics.swift",
+      "baseline_sha256": "063a066db977ebef60061e80649e8bd992a7bb51201701b9f925377fe93bdf1e",
+      "baseline_line_count": 98,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/DesignSystem/FormaMotion.swift",
+      "baseline_sha256": "32b4445b60dd02510c96985ca007d40d870c0a9d623362e0daeb2dacec3a236e",
+      "baseline_line_count": 178,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/DesignSystem/FormaTheme.swift",
+      "baseline_sha256": "e93c0be4dce8c83398151032a69518c52cdb1c6ba226adfb8a2827fae51740b8",
+      "baseline_line_count": 264,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/DesignSystem/GlassControls.swift",
+      "baseline_sha256": "fbcc717107d40282cba24a907f7342c689190a121da7c023ce2bce185015ae26",
+      "baseline_line_count": 61,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/DesignSystem/TrainingTabBar.swift",
+      "baseline_sha256": "fb9bd324a332219b5390aef2fbee1891e85fb5081ec7b6979cfa524140a51f95",
+      "baseline_line_count": 357,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/DesignSystem/WidgetNavigationGuard.swift",
+      "baseline_sha256": "1dff5a7449e33396ea4cdf2f400aed7f6bbe1755306b6015e6ff0731683a6eec",
+      "baseline_line_count": 74,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/FORMA.entitlements",
+      "baseline_sha256": "3cbd0ba06a4368dabb9094b957153f94f26b19e533d461fd7fb6858e701cd8f5",
+      "baseline_line_count": 14,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Features/HoldLogState.swift",
+      "baseline_sha256": "56185cfca959a5ade3794dfa658fcc647c43760d26c4dafd639d8b24f0daa68d",
+      "baseline_line_count": 59,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Features/PlanView.swift",
+      "baseline_sha256": "7fd07e573915af18f3ecf55253295381fc15d613144808d1a8a98d0179ed3aa9",
+      "baseline_line_count": 1062,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Features/ProgressView.swift",
+      "baseline_sha256": "7d07b7873a7ba6ff221e31c48b61b82dfdb4c3225578ea28fe152baf3eb76f2b",
+      "baseline_line_count": 290,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Features/StartWorkoutSheet.swift",
+      "baseline_sha256": "ed9e4484c67d575522454105a83c189fc48e17457b4209d5a9fea63fa4a5a349",
+      "baseline_line_count": 230,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Features/TodayView.swift",
+      "baseline_sha256": "1697af147e217aebe9b8b8ef5aafd62401527cfe6b2515cd070de6f21580dee3",
+      "baseline_line_count": 510,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Features/WorkoutView.swift",
+      "baseline_sha256": "7dd9a0dfdd5b6ced3acd2e6283b9a86011be5679eedf48bcaf794995f31d6149",
+      "baseline_line_count": 1837,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Features/YouView.swift",
+      "baseline_sha256": "b3f506caa66619a7147967afa877723b9e966539192106dfd49a1be2ae6926bc",
+      "baseline_line_count": 453,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Info.plist",
+      "baseline_sha256": "993476e1868e8e0c9e0b6905d523983d035642d92a9f0f6003620544ecf07ba7",
+      "baseline_line_count": 65,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Resources/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "baseline_sha256": "a4411543e4cb76fc1cba64e8dc408c1e8796bc139a49879a7a38c802d53c2da2",
+      "baseline_line_count": 38,
+      "classification": "generated data"
+    },
+    {
+      "path": "ios/FORMA/Resources/Assets.xcassets/AppIcon.appiconset/app-icon-dark.png",
+      "baseline_sha256": "d0bfed90a66d271c626764ae10da29427767954d33746bcaccbb2fb222c22794",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/FORMA/Resources/Assets.xcassets/AppIcon.appiconset/app-icon-tinted.png",
+      "baseline_sha256": "b14360c860318956cea9f1054394290cd712c002e8d2c3faded55a19ebe11d62",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/FORMA/Resources/Assets.xcassets/AppIcon.appiconset/app-icon.png",
+      "baseline_sha256": "b006d525853e8752c0d1a3688b0658fe37ca01ff2c9799a0efd28d159d13bb55",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/FORMA/Resources/Assets.xcassets/Contents.json",
+      "baseline_sha256": "2320eb3e02f9e3419d35676c6fd470ec13d5aa314c0d29700e09ec76d8e2360a",
+      "baseline_line_count": 3,
+      "classification": "generated data"
+    },
+    {
+      "path": "ios/FORMA/Resources/Assets.xcassets/LaunchBackground.colorset/Contents.json",
+      "baseline_sha256": "af92aa060b923d2411807be47dc88b8861af0145eeaf4267696ed4336b8f13b1",
+      "baseline_line_count": 20,
+      "classification": "generated data"
+    },
+    {
+      "path": "ios/FORMA/Resources/Assets.xcassets/TrainingEditorial.imageset/Contents.json",
+      "baseline_sha256": "99d91d5a06f38bc1233c3862672c2578024a1ce907c86e0b712c21dba133d204",
+      "baseline_line_count": 7,
+      "classification": "generated data"
+    },
+    {
+      "path": "ios/FORMA/Resources/Assets.xcassets/TrainingEditorial.imageset/training-editorial@2x.jpg",
+      "baseline_sha256": "9ab6cb58acc2719d7a43a091fec65e745e675e024d1a67bea63895303a2603da",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/FORMA/Resources/Assets.xcassets/TrainingEditorial.imageset/training-editorial@3x.jpg",
+      "baseline_sha256": "a75aa456b93d67441ecb0917e6060c9b15226c90858ad8b2f75280e476742ab6",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/FORMA/Resources/PrivacyInfo.xcprivacy",
+      "baseline_sha256": "311bbe00919863df08a99dafd1a0596cb090ff7fcfdbf2271332ed176e7e94d1",
+      "baseline_line_count": 63,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Resources/README.md",
+      "baseline_sha256": "fe8ae632c9dbf6c71091980d4aa4faa9dfca95c968767e55d89f9a47a32ce5da",
+      "baseline_line_count": 53,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Resources/catalog.json",
+      "baseline_sha256": "804237ba0cc29c9da5e570aefdda9ca78ac525fb0128463f9d473d6da29575ad",
+      "baseline_line_count": 79547,
+      "classification": "generated data"
+    },
+    {
+      "path": "ios/FORMA/Resources/catalogue-notices.json",
+      "baseline_sha256": "e157874c5a2c9ba3b788a636007a69b5fa4ce3da68b07c91440ac70135aaf270",
+      "baseline_line_count": 33410,
+      "classification": "generated data"
+    },
+    {
+      "path": "ios/FORMA/Resources/legal.json",
+      "baseline_sha256": "5d1d58878567e67415e529b760dccb7776e6dee634907130614a77f9e3b03972",
+      "baseline_line_count": 423,
+      "classification": "generated data"
+    },
+    {
+      "path": "ios/FORMA/Resources/native-privacy.md",
+      "baseline_sha256": "126fb6cd5827c60a1fef76ba7182b530e756e7c3baf2835cef8585373c5fefec",
+      "baseline_line_count": 127,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMA/Resources/resource-manifest.json",
+      "baseline_sha256": "2302797636a1b6321707a575987a889a7604403c83936f3206a3fa4b7132e028",
+      "baseline_line_count": 100,
+      "classification": "generated data"
+    },
+    {
+      "path": "ios/FORMA/Resources/seed-workspace.json",
+      "baseline_sha256": "97eaacca4ebb08db83161b3c0a23e054ad29955981c68a4006387c15aac012e1",
+      "baseline_line_count": 267,
+      "classification": "generated data"
+    },
+    {
+      "path": "ios/FORMAAppTests/AccountLifecycleTests.swift",
+      "baseline_sha256": "72d8025ea2e782dc2fed59779b84f8f9a1df2cc2e79057737218cc39b3043ac0",
+      "baseline_line_count": 472,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAAppTests/FormaDesignSystemTests.swift",
+      "baseline_sha256": "c700421cd271d3ce6359c1194ef822cb6dc870fb2d9ace0a76120f6015a519ed",
+      "baseline_line_count": 153,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAAppTests/HoldLogStateTests.swift",
+      "baseline_sha256": "6f4f8b6c2c72ef5135d756b484c5a5863ed3fe3a6372faf8a78eb13748b74aa8",
+      "baseline_line_count": 68,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAAppTests/PhoneTrainingLedgerTests.swift",
+      "baseline_sha256": "c20973840d8271e76bfc96e47d5bfca5c1586d8742522e9c89732086984c67e2",
+      "baseline_line_count": 187,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAAppTests/TrainingNavigationTests.swift",
+      "baseline_sha256": "9d80b69c8896cc0231eb82f5b2fd80d4679b43864a21dab7db049755c916baef",
+      "baseline_line_count": 171,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAAppTests/WatchWorkoutCoordinatorTests.swift",
+      "baseline_sha256": "60b2d5c75a9e13037918251d206c618ac9b74efd4cf104c52ae5481020e5edff",
+      "baseline_line_count": 145,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAAppTests/WidgetProjectionPerformanceTests.swift",
+      "baseline_sha256": "ddac04d60b76aed9f4c41316f04af76846c6030be8af59c7e822f09c5572b23d",
+      "baseline_line_count": 80,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAAppTests/WidgetProjectionTests.swift",
+      "baseline_sha256": "786feeb732739f076f05f2856941ff8bb9b24f46270c683132bf86ff7f5a2b0a",
+      "baseline_line_count": 188,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAAppTests/WidgetRenderingTests.swift",
+      "baseline_sha256": "4c9961851ba90d112c3b278bbdaa5f7af70296f89e0cf4a7cc38ce4663bf3060",
+      "baseline_line_count": 193,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAAppTests/WorkoutActivityRenderingTests.swift",
+      "baseline_sha256": "eb908d61b8020898b2578696ecaa161497464075711eb96f07c3a151b5392dc7",
+      "baseline_line_count": 77,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAAppTests/WorkoutLiveActivityTests.swift",
+      "baseline_sha256": "1a109e935ba344581c3b9b511257475a45744c1bc32261ca313c37a9490dd54d",
+      "baseline_line_count": 480,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAAppTests/WorkoutLoggingTests.swift",
+      "baseline_sha256": "e44301c597137922d2d3b39ab2b8cd8f73533bfba72850c906e415eb756ffa9a",
+      "baseline_line_count": 178,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAUITests/AccountExperienceTests.swift",
+      "baseline_sha256": "02b0d8b9a843aa905b60ec19f1cef52e323f13d341d7030ecfaf16aa554e0bb2",
+      "baseline_line_count": 258,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAUITests/MotionExperienceTests.swift",
+      "baseline_sha256": "f74ac017661bb9edf535e87686259a45de06cdbca73c76d1bc47b6bf7c7763f9",
+      "baseline_line_count": 110,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAUITests/OfflineWorkoutTests.swift",
+      "baseline_sha256": "fc2cfa3511074e3163182f9ef567178af4af96dec22c841e1f541a222b4a2359",
+      "baseline_line_count": 307,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAUITests/ReviewViewport.swift",
+      "baseline_sha256": "8211c320fee2d935879dcb8c40fc5956782abe453005482ffed9230dbd6a4c8e",
+      "baseline_line_count": 14,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAUITests/ScreenshotTourTests.swift",
+      "baseline_sha256": "e5e9875c6b3ae50391724a63b7aa4d80514930c9513f2d4daf3441a5b285f955",
+      "baseline_line_count": 186,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAUITests/TodayLayoutAndWidgetRoutingTests.swift",
+      "baseline_sha256": "8c26f4f2686900828accf8c5237eca372b3011f87da3fb4f6d7ff734da69f885",
+      "baseline_line_count": 238,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAUITests/TrainingNavigationTests.swift",
+      "baseline_sha256": "4305654f7b098b6d3534064df43dd175c7fd49bcaf99a4376fc21c00f098ba20",
+      "baseline_line_count": 91,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAUITests/WidgetGalleryTests.swift",
+      "baseline_sha256": "d86ac756166e01af0d022a395bb3ae66ec407b4973e5d8e816b4c2ff4d5d422d",
+      "baseline_line_count": 112,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAWatch/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "baseline_sha256": "e24b76180f4d3bb382b3d7eb491b6eaf7b019f76d307da5d78a6f7aee668ddc5",
+      "baseline_line_count": 14,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAWatch/Assets.xcassets/AppIcon.appiconset/app-icon.png",
+      "baseline_sha256": "b006d525853e8752c0d1a3688b0658fe37ca01ff2c9799a0efd28d159d13bb55",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/FORMAWatch/Assets.xcassets/Contents.json",
+      "baseline_sha256": "2320eb3e02f9e3419d35676c6fd470ec13d5aa314c0d29700e09ec76d8e2360a",
+      "baseline_line_count": 3,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAWatch/FORMAWatch.entitlements",
+      "baseline_sha256": "82272041afdb42137fff878981bceb5c2ca5c40904e364366d9e8c4b2d46a27e",
+      "baseline_line_count": 10,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAWatch/FORMAWatchApp.swift",
+      "baseline_sha256": "37cc0329c0f2249ec74a31a58208f19eab3faf78d45dfdd814dd5d949ac73f44",
+      "baseline_line_count": 26,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAWatch/Info.plist",
+      "baseline_sha256": "5f46a832622f48df6dc897f7986ed6a1b9c64c09568742cee42a72a248100e26",
+      "baseline_line_count": 36,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAWatch/PrivacyInfo.xcprivacy",
+      "baseline_sha256": "528ab3fca910d2ac2f3ef256d5ea4c2327303a7a4a5efb9236987f3018e311f3",
+      "baseline_line_count": 14,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAWatch/WatchViews.swift",
+      "baseline_sha256": "351283a9b04cb68406816654e7eb7c4ce9ceb20da351cd9f515cd56e90e9b814",
+      "baseline_line_count": 543,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAWatch/WorkoutManager.swift",
+      "baseline_sha256": "f7dca312ebc8590f9dea995465bc87849e843dbac40287728454789186c84e39",
+      "baseline_line_count": 551,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAWidgets/FORMAWidgetBundle.swift",
+      "baseline_sha256": "6686fda8c05091ac761d57b53dc9f27bdd23ffb39a3285d22ddf9bb16272ae53",
+      "baseline_line_count": 33,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAWidgets/FORMAWidgets.entitlements",
+      "baseline_sha256": "ecaa9d415347681103179754a339acfb96afd1a5a834913477606f2ad584b5d8",
+      "baseline_line_count": 12,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAWidgets/Info.plist",
+      "baseline_sha256": "41bf607d0c6b56d9e0da95087151f70e28405aab8e39980c7621a56903ee6eb6",
+      "baseline_line_count": 25,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAWidgets/PrivacyInfo.xcprivacy",
+      "baseline_sha256": "74b0cd72fc23c1ef302f22ee2753f61817cdc5af0ff7a7f2d0632b524fb8acea",
+      "baseline_line_count": 14,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAWidgets/TrainingWidget.swift",
+      "baseline_sha256": "0dedc02bdca8ab2c4bdcbe59aa4e47dac0810eb621f8be65f990c2e84c37fafa",
+      "baseline_line_count": 89,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/FORMAWidgets/WorkoutLiveActivity.swift",
+      "baseline_sha256": "946215f797ff7b10258ebe895d382d1975daed71e380f4e68c324148da70adc5",
+      "baseline_line_count": 56,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Fixtures/parity.json",
+      "baseline_sha256": "0f350ae0e70d77a9c034b352d88acf8d82152ca95bab6efb62fe0bcc823f504a",
+      "baseline_line_count": 4387,
+      "classification": "generated data"
+    },
+    {
+      "path": "ios/Fixtures/validation-boundaries.json",
+      "baseline_sha256": "17203a4070c04d6b644fdb9cfa6543b3a4865c608bc228fd6cdf2df9989428eb",
+      "baseline_line_count": 210,
+      "classification": "generated data"
+    },
+    {
+      "path": "ios/Package.swift",
+      "baseline_sha256": "d8b934dcb858bac7a7dcb593b0c817342c39c3c4fa16355d09e5733a9dac3ae6",
+      "baseline_line_count": 21,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/README.md",
+      "baseline_sha256": "0baed22acdfdb52fd3d70d838da525259731cfd1c3c3b76015bf6ef536dff30b",
+      "baseline_line_count": 175,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Shared/WatchWorkout.swift",
+      "baseline_sha256": "d593f1b8aec212b6d50d14a1330d3cfa4fa1c2e06aff6b77577af274aba95af5",
+      "baseline_line_count": 60,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/CSQLite/module.modulemap",
+      "baseline_sha256": "bbfe59a972a3e8e09e347c04bc22c0eacd2544881af8a4b6068bfc30b38466e8",
+      "baseline_line_count": 5,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/CSQLite/shim.h",
+      "baseline_sha256": "b052d8e561e942f97b503033ecd2eaa2b35213bdbf374983efe9e68eabdfc024",
+      "baseline_line_count": 1,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMAContractProbe/main.swift",
+      "baseline_sha256": "0846c8e0a434c9e463bfded0dc0bc845f8e888572e5199b081bdec7899df5c13",
+      "baseline_line_count": 68,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMACore/AccountCookies.swift",
+      "baseline_sha256": "6f3372cd13e9801c7a01b1d417b7eeb5aa75e5ff9f64f7f2ae260099ddad17ba",
+      "baseline_line_count": 198,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMACore/AccountSync.swift",
+      "baseline_sha256": "41eeaf17679280909ecc348162d0449e91b02b3ab20745cd98b81801d4ce05d1",
+      "baseline_line_count": 441,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMACore/AccountWire.swift",
+      "baseline_sha256": "1a1ab9914e7c3547966297c187642523c90d2b53321bcd5005c3dfdc3c3f3604",
+      "baseline_line_count": 461,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMACore/DraftAcknowledgement.swift",
+      "baseline_sha256": "8208a4c128c610e98361a021e61f75ac74b6b8e503c2b2c3c66996561f3ef3b8",
+      "baseline_line_count": 12,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMACore/ExerciseSearch.swift",
+      "baseline_sha256": "3fcd0ce33c38fcf6295d951ed04fdd9e17abc0970575c251cad4bdb47f07835b",
+      "baseline_line_count": 84,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMACore/HoldTimer.swift",
+      "baseline_sha256": "2de215f383c301a610812fe8817d910b80db0ff9e6aede3eb1a3a0a334472486",
+      "baseline_line_count": 97,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMACore/LastCompletedSet.swift",
+      "baseline_sha256": "18ea4f0b53675fff5f2258c9a23d4a534c1eccc2d9220757da178bc0459e8142",
+      "baseline_line_count": 13,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMACore/MeasurementDraft.swift",
+      "baseline_sha256": "909e6414c1981b96ea0ca89f010d1c20436c620540de4cbd9faaf0042dfc4cb0",
+      "baseline_line_count": 64,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMACore/MeasurementNumberInput.swift",
+      "baseline_sha256": "11682041215bcf5a4bb9ea24157fcef56d5c2e66ee8e43e251436ca620468fa0",
+      "baseline_line_count": 37,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMACore/MeasurementText.swift",
+      "baseline_sha256": "3bdd81e5a21699f37a312b2986aacca46ed78314bf01d1a2d7c280260382dd4e",
+      "baseline_line_count": 28,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMACore/Models.swift",
+      "baseline_sha256": "872753a0eaa7158afa639f3b91b4e81c3945c1f9de63251bcfb77f48b5b1cad3",
+      "baseline_line_count": 486,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMACore/SerializedMutationGate.swift",
+      "baseline_sha256": "f93788aa2f09788d0980541ff671c330abb2ff3980afa77febdf320badc67113",
+      "baseline_line_count": 33,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMACore/WorkoutEngine.swift",
+      "baseline_sha256": "e6ce01dcc6cc29b6b57577717a556388906365d6d05aa439e651923b33980d4e",
+      "baseline_line_count": 545,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMACore/WorkspaceExport.swift",
+      "baseline_sha256": "9ffb731c102911516d1fcddd7b85d93537ec3207aaaddb77679f49f765bd129a",
+      "baseline_line_count": 15,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMACore/WorkspaceStore.swift",
+      "baseline_sha256": "170f9a2ae861bef8e7b4c9205d66772641b4398b704f6ca9b13138a56b51b662",
+      "baseline_line_count": 718,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMACore/WorkspaceTransport.swift",
+      "baseline_sha256": "dff8496d91a0585948cd7a3c356c3ab4560956f49f426bd0ef7dcb25148d8fe2",
+      "baseline_line_count": 162,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMASurfaces/BrandPalette.swift",
+      "baseline_sha256": "82b4b38b2ac7b62ec1d78541de3db8fd64b1ffd7e6ce6ab2c6e26d37a5dcaad8",
+      "baseline_line_count": 34,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMASurfaces/SnapshotFileWriter.swift",
+      "baseline_sha256": "38d5ab7aa4c5528d365e91faa2364333ef82d71c42c21486fd092aabbd86de03",
+      "baseline_line_count": 35,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMASurfaces/SnapshotReader.swift",
+      "baseline_sha256": "9c7278c63a0d10ecb474b262a984ad99d5bb7d4b4cb3a871c134f1b68fec7a60",
+      "baseline_line_count": 119,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMASurfaces/TrainingCalendar.swift",
+      "baseline_sha256": "ed2795a1cab15247ab3dca225b983aafbcc66c37ecc66015e7712a0f9b7a01f0",
+      "baseline_line_count": 67,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMASurfaces/TrainingPresentation.swift",
+      "baseline_sha256": "070b3737a667a9318d3502a38a3ec07d1b1f806babe8f3b0a2cc011610e8e369",
+      "baseline_line_count": 176,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMASurfaces/TrainingSnapshot.swift",
+      "baseline_sha256": "bbb45786301436c72500a8d4ae9212c0bea243e4c142a67fa475914b630c33e9",
+      "baseline_line_count": 140,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMASurfaces/WidgetRoute.swift",
+      "baseline_sha256": "830370410c61bc01883b554672808fa9b908b45970cfa430d713c4b62e08171a",
+      "baseline_line_count": 55,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Sources/FORMASurfaces/WorkoutActivityState.swift",
+      "baseline_sha256": "2d9eecb7e7f384532f27cbf4499337f343f209f7853877706b682676c5eeab1c",
+      "baseline_line_count": 183,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/AccountSyncTests.swift",
+      "baseline_sha256": "a6a179c790348c298554c87f27c6dabb60af3ed149560acbea087671ba53308b",
+      "baseline_line_count": 1023,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/AccountWireTests.swift",
+      "baseline_sha256": "3139dafb8d807579eaeacf2ad306b45f0138ac3183b753fb1c60ae830c074904",
+      "baseline_line_count": 345,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/DraftAcknowledgementTests.swift",
+      "baseline_sha256": "34fe368c26c746568984095a60a2f259a09602ea94f405a81811af645b5c7fe1",
+      "baseline_line_count": 29,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/ExerciseSearchTests.swift",
+      "baseline_sha256": "9e93e9f94b50197791ef4ef41ba01cfe443006aca797d253b92f99fa03a552a4",
+      "baseline_line_count": 79,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/GoldenParityTests.swift",
+      "baseline_sha256": "89117b5f8b65aa14fe6f230aed1ace1d80f9feb16bbf2a2da70c7216f56a1d61",
+      "baseline_line_count": 94,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/HoldTimerTests.swift",
+      "baseline_sha256": "ecced298e74055314a4403e0696d03f176fc277e4c0cca7b88849a0c57f5bd2c",
+      "baseline_line_count": 151,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/LastCompletedSetTests.swift",
+      "baseline_sha256": "4ee137a3cfba0ce47de61a4a1a5e27085d8e2004ed9c415f0f120afaa4f943fd",
+      "baseline_line_count": 43,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/MeasurementDraftTests.swift",
+      "baseline_sha256": "52ed01421516a6b9bd911ac8a5cde85671ce6cfd6fcd4010c65ef577d533c14c",
+      "baseline_line_count": 102,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/MeasurementNumberInputTests.swift",
+      "baseline_sha256": "7fe4f96eae0b5b755dbf2388c655f512fff45fcb0b61d47a4e36db40833f703a",
+      "baseline_line_count": 57,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/MeasurementTextTests.swift",
+      "baseline_sha256": "7cf6a8dcbd18aa660795b35bc091ed301a0afec476cddb5a73c12721c05c4a1c",
+      "baseline_line_count": 78,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/SerializedMutationGateTests.swift",
+      "baseline_sha256": "849ccbcae131f7b631590766bf048a68141cbb26da184f0248e5f194fec642ad",
+      "baseline_line_count": 110,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/ValidationBoundaryTests.swift",
+      "baseline_sha256": "9e455f009daad3954e0f2bb9d70c11a652a66b877e00fa01002e019471f95149",
+      "baseline_line_count": 83,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/WorkoutEngineTests.swift",
+      "baseline_sha256": "a201537f6f7c15f9c642e8ca3c1e5fdc2b5c09caed456ebf170fc5cc88b4e54e",
+      "baseline_line_count": 299,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/WorkspaceExportTests.swift",
+      "baseline_sha256": "d4f75d986021c44178c03fe125bab26189e366ac6cbb3055a6f04c4deb84664d",
+      "baseline_line_count": 27,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMACoreTests/WorkspaceStoreTests.swift",
+      "baseline_sha256": "69c59a560643d1d70a6efadfc1e0c1bd86c277347191cfc3cfe1fd1dd58dc9fe",
+      "baseline_line_count": 446,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMASurfacesTests/SnapshotReaderTests.swift",
+      "baseline_sha256": "36948164cb40713b45a72a37a35b22f6fd30e4d670b60061edfb626284e12ced",
+      "baseline_line_count": 140,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMASurfacesTests/TrainingPresentationTests.swift",
+      "baseline_sha256": "12cf59eeee1b23e187145ac076a4cc15e0d83c86e299a6b21f776597244c2d91",
+      "baseline_line_count": 135,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMASurfacesTests/TrainingSnapshotTests.swift",
+      "baseline_sha256": "a5fbf41fa688c472600d5f457a477f1782ec1d4284a2d5f1acf4a864e20508a0",
+      "baseline_line_count": 115,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/Tests/FORMASurfacesTests/WorkoutActivityStateTests.swift",
+      "baseline_sha256": "da22744418ba60199b14ccae3c35603316c577e6d4fe65625abd33b4f6d87038",
+      "baseline_line_count": 154,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/WidgetPresentation/TrainingWidgetView.swift",
+      "baseline_sha256": "f966af3cc4a62623b18554681bb8ec17bf59c49f286404994eabee8ec9477af2",
+      "baseline_line_count": 303,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/WidgetPresentation/WorkoutActivityAttributes.swift",
+      "baseline_sha256": "2bc1c670ac3d02324e3d89a31a66fface4adfe760ceeadde53e841aeb4e55778",
+      "baseline_line_count": 15,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/WidgetPresentation/WorkoutActivityIntents.swift",
+      "baseline_sha256": "12f4dd4c0ea5407c56b5f5c877961da929f5038c8eca5e2ea84c77f97699cb8d",
+      "baseline_line_count": 61,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/WidgetPresentation/WorkoutActivityViews.swift",
+      "baseline_sha256": "5cef138018cac1434b3cae7d4977a601122c2542de93a9c6661fb6c834e21fd1",
+      "baseline_line_count": 448,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/design/app-icon.svg",
+      "baseline_sha256": "2c8c3294a58624122e0f606f38f25c5e33841ab32141721b721aa61f177cdc1f",
+      "baseline_line_count": 1,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/design/artwork-provenance.md",
+      "baseline_sha256": "8f1bd196e42cc9ce7694dde455d6702326e9279f2076ee9d227548a69ad7c876",
+      "baseline_line_count": 79,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/design/asset-checksums.json",
+      "baseline_sha256": "e9da7e4fad0580f4b7182939c7e45a313ff323a8346260e928d712c1a79f07ef",
+      "baseline_line_count": 20,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/design/build-icon.py",
+      "baseline_sha256": "0d3061b033e53a4443a525e92b86e67b270998ae6f1594175a79bf692a4d2d21",
+      "baseline_line_count": 123,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/design/training-editorial-source.png",
+      "baseline_sha256": "c7d72e4f25108d22165c9facf105b6ee3643d372631628f85765eadc87d78d9d",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/account-review-and-tab-bar-2026-10-28.md",
+      "baseline_sha256": "31bc0de1b6e25925333fd01dfb7b042a1aa63ef6ef68009f2f048734fa08cebb",
+      "baseline_line_count": 133,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/app-review-matrix.md",
+      "baseline_sha256": "80c618b07d71999d38d1a094e8af9fc6527a0402ad28a43fce115ae582d21e84",
+      "baseline_line_count": 59,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/apple-design-2026.md",
+      "baseline_sha256": "900f6ee9c2afcc5cdf850d35968514b77e30c3ed7192343973dedc059e01b496",
+      "baseline_line_count": 420,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/apple-watch.md",
+      "baseline_sha256": "de67227222518c379268fc6976fc115cc801ed82678ae9f438698e2fbd3816e2",
+      "baseline_line_count": 80,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/APPLE_2026_SOURCE_REGISTER.md",
+      "baseline_sha256": "b8d1899a2872d811510b5fa3b0cc4548f83050f922054d243892dbcb312272ef",
+      "baseline_line_count": 109,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/CHANGE_SUMMARY_AND_NEXT_GATES.md",
+      "baseline_sha256": "5c4c2501aa1043323debac9a5d48cb65d545b1de90baed8450a1b72183776c43",
+      "baseline_line_count": 110,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/DESIGN_SYSTEM_V3.md",
+      "baseline_sha256": "9c320f5da0183f5d7e7c493544ba2bd7543196d64769c32b216b9bceaafd5d4e",
+      "baseline_line_count": 29,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/EXECUTIVE_AUDIT.md",
+      "baseline_sha256": "8f0d1be50c12219a569b930236e81c0acf4a68f9dfd20193d15424add6b0f70b",
+      "baseline_line_count": 71,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/FILE_LEDGER.md",
+      "baseline_sha256": "5ce8c4b74f36cd24cc6e2fcadcb9f0067b0ad1c6327608c84282a903d486f865",
+      "baseline_line_count": 388,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/MOTION_AND_ACCESSIBILITY_MATRIX.md",
+      "baseline_sha256": "794bed22850d4a84d856607068975d77c53d9f8f9deb10663cad72dfb1abbc0e",
+      "baseline_line_count": 18,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/PERFORMANCE_BASELINE_AND_RESULTS.md",
+      "baseline_sha256": "b8ea48b13caabe258fb55dd8d5e0108a4ac73ee2b7098afca86998d378672ce9",
+      "baseline_line_count": 97,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/SCREEN_REVIEW.md",
+      "baseline_sha256": "3b0dccae0346a5f8fc656b54e940289af8b9b96cee2f68c119914a1c982e1629",
+      "baseline_line_count": 188,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/TEST_AND_APP_REVIEW_EVIDENCE.md",
+      "baseline_sha256": "3ccf4e55a0c4ea4c41fdddbe4dbde12536b154a70c47ff2a3dfdbf0dde054376",
+      "baseline_line_count": 171,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/WIDGETKIT_ARCHITECTURE.md",
+      "baseline_sha256": "a5a4fe769be7074dfec371a308c94c5c4e617cf43bf496bf2cacb92df7b8e868",
+      "baseline_line_count": 329,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/file-ledger.json",
+      "baseline_sha256": "6f36d8b34d73ade2b16b1fc9668e2a6fb01c874a1315b39be0ff7a960038e64d",
+      "baseline_line_count": 11994,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/performance-evidence.json",
+      "baseline_sha256": "0023cdb13ef869154ebef683ae5a0a77c5e04edfde182b09e4b9fec01a5d2ea4",
+      "baseline_line_count": 15,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/16-today-largest-accessibility-text.png",
+      "baseline_sha256": "13c16f37921956d555fc86c11541ae5b50620372de2f45d9b351de81c3a41678",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/17-today-compact-landscape.png",
+      "baseline_sha256": "83cfa1d92bd6026413e01ad06da61177428f509a4c8d231d14b6189eb04d6b2e",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-01-today.png",
+      "baseline_sha256": "c94b99da62ee97680b8cee9512179f6d729d319b260a7031cca175b33a4968d9",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-02-plan.png",
+      "baseline_sha256": "82ef5a4e9e2f658ea9f4c5b5086e1646cdcf6a0427c5c58087d71ca59ef071ca",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-03-routine-detail.png",
+      "baseline_sha256": "7fa2af7bb51bba59ee0c5c06b21079fbba45adeac254253960e8c69fd2fa4f33",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-04-workout.png",
+      "baseline_sha256": "70ae69835521fc7c2c93f9cf3652ab1d7d34a43e95dac007325c5438b94dceb1",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-05-set-completed-rest.png",
+      "baseline_sha256": "a75582e55200c189abd3bd08f2d43de91d2e18ba2f0a6336585ca69e65805730",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-06-receipt.png",
+      "baseline_sha256": "9ca03aa3ed0f0d74d85501b7df630a96abee1fdaeee633c78a6e047dfe99e3ef",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-07-progress.png",
+      "baseline_sha256": "c814573309de270fd43a523fc2469e496c4203faa5342f176529758377ba6540",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-08-you.png",
+      "baseline_sha256": "aaf267bfc0aa424bafea28899a670379b17b0d638127a008779cda0b4591b759",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-09-today-after-workout.png",
+      "baseline_sha256": "de4f198281f1b16e3cc8f394f7dbf2992315c3ac365e347adf92c981bdee81c8",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-10-library.png",
+      "baseline_sha256": "954fb41f9d23f953c847e31c179f1fbde6fbfe9dab8af3767ab5e27088dd892c",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-11-library-search.png",
+      "baseline_sha256": "a023a775974c7b85fff5043367a012c0e4383adf78bbdf3d25c2a5851625d333",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-12-technique-guide.png",
+      "baseline_sha256": "93e527d969aa317fc1017133d702d88bddc514ac08143733e69955c7e0ac1de5",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-13-hold-ready.png",
+      "baseline_sha256": "4b23b0c5dc6d67e1c445c852d986ef7aa0ffde47285f661c875c24a127d5c551",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-14-hold-running.png",
+      "baseline_sha256": "0264dc637db233617f4dfbb23b527ea804ecea9857a31f73578fc62808ae24d3",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/dark-15-hold-paused.png",
+      "baseline_sha256": "124c7eb023ec59d71144164bc11b287f9f9292f3adff71dfccfdc390b3b0cf86",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-01-today.png",
+      "baseline_sha256": "def16de8379ec75d08b7cb4eac5612b0b17896619e71c6fdc90797934a0d290a",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-02-plan.png",
+      "baseline_sha256": "4c1ab37923fbba82c164616ba8ec45042a4b8b5e79d2c48aba462993a00aea54",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-03-routine-detail.png",
+      "baseline_sha256": "6ca1c80c71cab2db5e3697ee0adf49fc49ddcbeb4b2e2b34b6a6c39e7ef3c046",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-04-workout.png",
+      "baseline_sha256": "fd64d0fc0521794db623f4f04b29bc53dd4398fba691371fcd543cf0219d1434",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-05-set-completed-rest.png",
+      "baseline_sha256": "f3b2c8f983ee62a4347aa66ecf2331395d7428b83b8de84fb8f9af9eb7ef5021",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-06-receipt.png",
+      "baseline_sha256": "c5f4da73f63a1da7a8c44bdc5bec0fb646fea9117cf0f80af98b409ebb47b10e",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-07-progress.png",
+      "baseline_sha256": "7ef8a06c296a35284b1a8ea5fe21ab6b5169d4f5513a4a3813f72ffd14e45a9e",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-08-you.png",
+      "baseline_sha256": "e185c386767bac63aaca3740a316e7bbb2caad4b255d5821d416c1d7ab4ecfc9",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-09-today-after-workout.png",
+      "baseline_sha256": "dc852d7114b948da0d9326619437fb7454698980ae6128d5d4862ced643c373d",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-10-library.png",
+      "baseline_sha256": "810e34bf422afb2ca9bfe335188242368ede3faee0a416442ed7eed7d05ae816",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-11-library-search.png",
+      "baseline_sha256": "3716fc3791f316ca826d252f4e5ed91189989ba6ca53d3f1d7d3cfc8744a9667",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-12-technique-guide.png",
+      "baseline_sha256": "043b6adbe574cd70401da804c18622f73201e1afd4e1adef521ae91417821ee2",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-13-hold-ready.png",
+      "baseline_sha256": "32c6763940a4b00ed3bd8744dd7074375aab437ae0536c246a13f80cc6ae1095",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-14-hold-running.png",
+      "baseline_sha256": "113b336bf608f7971bf9268ed6c2746a007553c714bef0403f7d69ba9ccc03a2",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/after/light-15-hold-paused.png",
+      "baseline_sha256": "9c36f2db786267f3add60a1b314858d5085b9197ac71afa1b2d501e46e5c9b7e",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/light-01-today.png",
+      "baseline_sha256": "d95372b06567b3e03b1d30afa9b971377336343b2b79da137912eb7773d4dfdb",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/light-02-plan.png",
+      "baseline_sha256": "b4737ba0c2c944daafa2e0233ffb27c152ee1202c4cb0b3f1f8b762dcd707fca",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/light-03-routine-detail.png",
+      "baseline_sha256": "1fc4e9699b46b234d51c36dcb4ece9ef5d7789ee66219d438ca3577a4ed35535",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/light-04-workout.png",
+      "baseline_sha256": "e543fd1e2cb334f342e5257da10735d28219e5da0f87baf97663de70781ea4a5",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/light-05-set-completed-rest.png",
+      "baseline_sha256": "5ded3dda69307e9b3bf02179e4bf0524370df57ab13e4dd0c142b68c09172646",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/light-06-receipt.png",
+      "baseline_sha256": "0fe19cc8ae68c04fd43dd29eb3e76af536657cf2dc7a69d31b07ccc593a96ca7",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/light-07-progress.png",
+      "baseline_sha256": "f722eb8485aeaa6d86f320d40249a5a0422c3a2c7a67b3aae5d88dffe1d54a10",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/light-08-you.png",
+      "baseline_sha256": "0e7994fd37ea2999fd8a1712241a26e695654dd38815ad85b38c8b23cab59a21",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/light-09-today-after-workout.png",
+      "baseline_sha256": "080d15c9afd02207653ef64f890e38f09ff94e883020f31d5520c334816ccc38",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/screenshots/before/manifest.json",
+      "baseline_sha256": "81791a868c8ead0f701bbea74998cdc8cf0fffe1d880ee4881daf55e85eb7070",
+      "baseline_line_count": 92,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/visual-evidence.json",
+      "baseline_sha256": "eeb5c1e24369817713aedf4b9f1d0a7ed8fe85ab5eaedeeb5e3660ecb894076a",
+      "baseline_line_count": 1659,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-active-circular.png",
+      "baseline_sha256": "40c35528fe1a07a4e62a78476518080876e883a6a53d582106bf7886643d6c36",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-active-inline.png",
+      "baseline_sha256": "b2693d269c7de3a15cdc58d6b1f9e1b0511a7796d5f095e9132846a101e64c33",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-active-large.png",
+      "baseline_sha256": "ab791e1c54dc263a5b45cd15e8a1c17a49c9eec0f1a9e5221d7c7f6cf2a75506",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-active-medium.png",
+      "baseline_sha256": "b8134f7d668afd5075e66f0aa3fd73b4c64725eef6867b9ced4eda16180dfa76",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-active-rectangular.png",
+      "baseline_sha256": "076e85f919464d0f8d7bce543d19a634ab81842b512043bc62a8af88664069dc",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-active-small.png",
+      "baseline_sha256": "5d1b74af197ef6f81c4e5fda976fc1cec4eb3fdc6eab56a4f5de30b53a711d95",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-completed-circular.png",
+      "baseline_sha256": "9e76d2ecd00233c412b995bbe27c5e547125976fc6800af226718364eecfd721",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-completed-inline.png",
+      "baseline_sha256": "c6ae741b529acc305e34507c8c527202ad0eef792d558376bbbce2f7702449e6",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-completed-large.png",
+      "baseline_sha256": "26649d2671dfc77bee46d54373ad962ddd27a7150bfcdd9e0055ea09e0a810c8",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-completed-medium.png",
+      "baseline_sha256": "937651b1282b3949e85a1d24ab34bb454ba99c919b4d12c41da64c1f8d7ca481",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-completed-rectangular.png",
+      "baseline_sha256": "33e290c6b39099614467924612cff9e2ce788135c8725c4ae44c21a0f7c9aa4e",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-completed-small.png",
+      "baseline_sha256": "5d20b1c2e0c1bfab25841298a2a6540d276945bbd49511b38b68f1807b02b66b",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-empty-circular.png",
+      "baseline_sha256": "b05c925f247191cb952a6db66ae08e3c6c0548e6c3965bca4e6bfeab8e934514",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-empty-inline.png",
+      "baseline_sha256": "067c1cd089cb6a307a8966641c80dbaa3e2fefb1ddd70b28689a35a48ec740a6",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-empty-large.png",
+      "baseline_sha256": "3aa58dad5e64bdbd55cafbb659cd8ff596187c678564940677442997742c1d78",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-empty-medium.png",
+      "baseline_sha256": "b0566300ecffde1034353df613a0ce040422080b8cfba77bf8949ada41d18a76",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-empty-rectangular.png",
+      "baseline_sha256": "d233b244dc03ae8534226874dd99734ecee669b765d415fd2c0361bbcfcc07a9",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-empty-small.png",
+      "baseline_sha256": "542bee557510d5363cfcf1ab126a7a2c5b72b6cd8cf199d25cbf5a8d81017106",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-hidden-circular.png",
+      "baseline_sha256": "61bc0657b7819dddcf492fd09c7b791e79a80e52cede0b5dc3dd2e01485bed13",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-hidden-inline.png",
+      "baseline_sha256": "995bb30fed6e08ebebb349b8cd0e635a6f95ae0b16c003c7b5f5b6e0407878d4",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-hidden-large.png",
+      "baseline_sha256": "32f5ee33d6c9a4258119812967997cb7f244e5a96cb32293f79a3a23b138a450",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-hidden-medium.png",
+      "baseline_sha256": "7906a430faa2515538955f743c19fa39ab7a54edaa34dd3cd0f76ecefe7abab8",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-hidden-rectangular.png",
+      "baseline_sha256": "7d75c277cd7b6fcc0c289f3e7962efa9ed810d1e9616df8002b7030721c3453f",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-hidden-small.png",
+      "baseline_sha256": "2b7089fb662c8954e5dcb954c517b05d1ab7916f85c0b74f38d7c5800609792a",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-large-accessibility-text.png",
+      "baseline_sha256": "804e087f2b782c15e8d1aa3773445d6ea9e2ace0f4037917621f5434cc9e9564",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-large-largest-accessibility-text.png",
+      "baseline_sha256": "e732bbf0aea38e02b15e32818611159ccb35eff0ae682c2212814924a483b137",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-long-name-circular.png",
+      "baseline_sha256": "40c35528fe1a07a4e62a78476518080876e883a6a53d582106bf7886643d6c36",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-long-name-inline.png",
+      "baseline_sha256": "7d271c80d7e2229638e8e9293fa1190e07cff5d700b49446b3e437bce84e6e7a",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-long-name-large.png",
+      "baseline_sha256": "45a58c43adc4473a5f53827d14b743a0ec33e057cd1d9701ac9d9118b0e0ee7a",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-long-name-medium.png",
+      "baseline_sha256": "698602291d45baf25a25e553c02e7fbe560562e4b6b348b17091a41bb5ff24aa",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-long-name-rectangular.png",
+      "baseline_sha256": "a4d14e32a4c883177f63fd39c379c566f817fd56f0f2d2446bfae7ff9eeb29b1",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-long-name-small.png",
+      "baseline_sha256": "e9c55d40232324a467f6cf56dde45766ca281aeef46e56ebd7c3c91f357d7739",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-medium-accessibility-text.png",
+      "baseline_sha256": "a1892e1369eb157ae367cd729508905bd81117bebaaed66f3d7db79ef8f0d659",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-medium-largest-accessibility-text.png",
+      "baseline_sha256": "0b2d0e25483c988c09e057e448db011aa6878fdd1eab8603f14db9668b500f0a",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-private-circular.png",
+      "baseline_sha256": "719dd8b32cb2106ae034596bcbb65397b653384def7994be843a6e0e736bf8a1",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-private-inline.png",
+      "baseline_sha256": "9554ac34a6451f70b8bac88bc9a99035f3b4a3c48d764bfc7f422558718e86b8",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-private-large.png",
+      "baseline_sha256": "42a761305d6630d532ec467356cc29b154c34651d00b5586ad595c317e09f27c",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-private-medium.png",
+      "baseline_sha256": "584133caf498046a33fa6958f29f1ae09bcdbc32378adf9ce2e7069a89663d18",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-private-rectangular.png",
+      "baseline_sha256": "74c93033ff9d9732f8211b3716a52d9f750f2a6fcaaedab6a951ff0ac7296386",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-private-small.png",
+      "baseline_sha256": "5dd579755136e92d1339cd40602bd9a4552cf27da5405a4839b4f35040f6e492",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-saved-circular.png",
+      "baseline_sha256": "40c35528fe1a07a4e62a78476518080876e883a6a53d582106bf7886643d6c36",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-saved-inline.png",
+      "baseline_sha256": "7d271c80d7e2229638e8e9293fa1190e07cff5d700b49446b3e437bce84e6e7a",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-saved-large.png",
+      "baseline_sha256": "ec989253b8090a2dbe2f7ef45f8526034d5222043c176968efcb67a116429e28",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-saved-medium.png",
+      "baseline_sha256": "37262ab387464b89543119fe6f07d2271d2929c136563f1354b6f528d46bb87c",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-saved-rectangular.png",
+      "baseline_sha256": "94056b26a59886d6720cadeb5449a490b635d35db165b5aaca803b531fd096ff",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-saved-small.png",
+      "baseline_sha256": "3515744c1050d9632a0da1d4323e206cecbf8fe56c0bd916ad5cdd8c3907a577",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-small-accessibility-text.png",
+      "baseline_sha256": "8f710dcc32b9dc324df66da00d3f153850dc63e52452dca0548acdbc94f6ab28",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-small-largest-accessibility-text.png",
+      "baseline_sha256": "772b1ac362105c90c557e013f979f6ce3e0c144b71f281347503c98e3cef9316",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-stale-circular.png",
+      "baseline_sha256": "0f6a90b1d5e5d52b0e71a3e12783bade5c7375d125ab4f25de5a3258f10667e2",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-stale-inline.png",
+      "baseline_sha256": "9d8d1e3dd6bc18b3494beaa6fd0b6a307269318b0e08c98f4a6fd72b57705a05",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-stale-large.png",
+      "baseline_sha256": "0e46103039aa30b3f0a571a7e402fdce80774f0ac06e64fa9cbeb4096609a6d8",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-stale-medium.png",
+      "baseline_sha256": "8f7dcac79c9c3eb30dc4cf3dedc4e774729ab1772cf36a05d312d5a65e46aced",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-stale-rectangular.png",
+      "baseline_sha256": "9656f0f5c84fa4b0809008148366f97cc888d9dee161d216dfa5c41998114ce4",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-stale-small.png",
+      "baseline_sha256": "ab61fd5c2547786bef694931f12b5ad9a4cc2f404a9aff7769563c4c71a02cc6",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-unavailable-circular.png",
+      "baseline_sha256": "2f80f2d362de2b6f4fdccdd86edfef6f674ff06ebecce8f3e2041611dfd64790",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-unavailable-inline.png",
+      "baseline_sha256": "7bf6f7c8cdde5e503dd1f1b1f5f9dc607c74fd71517ecbd718cc313279c58238",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-unavailable-large.png",
+      "baseline_sha256": "a2af1bedfe8716245704250925cc4acf01017a50fbdd52477f812100d2a0be4a",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-unavailable-medium.png",
+      "baseline_sha256": "ff41ff240007543b7de069844efb42720778b9a74c6d4f3bd3255bfc85ff524a",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-unavailable-rectangular.png",
+      "baseline_sha256": "a4b1c3e4d241491eb4d5e91d1bf2e1637f1d23f2b347163dab7f430e7cf1deb8",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-dark-unavailable-small.png",
+      "baseline_sha256": "ee43c0573d9363264a6471a4d70ffe777926ee6e590c1ae9a37e4a0fa3b27f84",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-active-circular.png",
+      "baseline_sha256": "283fc2eba5604fafa3138ec416e5c626e79c370ba52620990596b454ac6c1cb9",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-active-inline.png",
+      "baseline_sha256": "7ea459c67d919e82e3c444989303f7e286bcf2c8fc6396e20951463c8ae583ca",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-active-large.png",
+      "baseline_sha256": "3ea1d53455dc8f225bfbd83f9de3d28dad733ebb9a7bc545a441ee5b418e66a8",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-active-medium.png",
+      "baseline_sha256": "5603e5e90f2bb1b806a6b5bbdfea9832ee24bc439f34b9f1308ab14cea483032",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-active-rectangular.png",
+      "baseline_sha256": "8b92a82300453243da07bb928605ea35d124e27b9bd3f7f6e2ba779bfa59f560",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-active-small.png",
+      "baseline_sha256": "798643a2fd7f84bbe6b73c83abe6b423fdbd1d39191f34178be52d556b010c30",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-completed-circular.png",
+      "baseline_sha256": "836191cd7bfdc0ece47dd779ad806f0657826d7e11dabc2babba256f16db9ba7",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-completed-inline.png",
+      "baseline_sha256": "6bc4af5dc720cc71d7adecf299f9383b40cd6ba6e55dcf0f413ac4345142194c",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-completed-large.png",
+      "baseline_sha256": "3f41c72f51016b3bdae6e21c155c7638c49e2078b68f581a8b73a289d2f86e5b",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-completed-medium.png",
+      "baseline_sha256": "7cb711135c2b4c361012a4587d8901ebdb0b18d9f55ba228c274202127bdde2a",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-completed-rectangular.png",
+      "baseline_sha256": "0f4df2416f1ebe66e738bffa1b8a2e4a57793edf1dc460a09c7793c9b9683fea",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-completed-small.png",
+      "baseline_sha256": "9de9c4430d1212f286365a0b155e20e1449f6602f91291147ee63dc287db9143",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-empty-circular.png",
+      "baseline_sha256": "7c1085b711daa0612e1fe5ecd86b8ab9bfabe92e1e2d5bc78ad22017d2c1c7a6",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-empty-inline.png",
+      "baseline_sha256": "ab0a281895e08567fabf80cdf8318cd69f746b319986f585a518a49d1d56b5ea",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-empty-large.png",
+      "baseline_sha256": "fddcf5f6722945771037772df761e3fe4c79cd9d648bc56211a2a57773ebb8f8",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-empty-medium.png",
+      "baseline_sha256": "f0bdad04e04147549e50b4ff595153330367750eda228f71660515a77ca3d5d0",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-empty-rectangular.png",
+      "baseline_sha256": "bd4532e3ed515fb7326d173a980b83bb98c2a02c414c0c223b342d67aa93e1e3",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-empty-small.png",
+      "baseline_sha256": "3988d61b62fb433245e5d35d3f5af4543f7d6236c8d3b07ef2804e78094a0dec",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-hidden-circular.png",
+      "baseline_sha256": "78288794d01fdbd58f6c258a852524bfa67beb7ec2c5506d4bcc664d1bdacdad",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-hidden-inline.png",
+      "baseline_sha256": "663a1f1ad226e8710912e8ef25549e4a077acfec120223e9ce21838baaeded24",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-hidden-large.png",
+      "baseline_sha256": "a9e34e45199d9d3bc31e0440bff4f7198da832274ef202af2e57e843c75e7393",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-hidden-medium.png",
+      "baseline_sha256": "f5dbdb98302dcd1afc752671331db95ffb32146f72c6ab64a3cd6d5887bf323e",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-hidden-rectangular.png",
+      "baseline_sha256": "db31619532641c235925cb016f77b580842e9fb5238424b8d6b0fe90c854bde7",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-hidden-small.png",
+      "baseline_sha256": "2dfc173dbcd0ccd2af6b6131bff78d6c4828a35dc6d6a87ec61260d134ba52d8",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-large-accessibility-text.png",
+      "baseline_sha256": "2adc3cb0588cc72839578b5c8d5dcfd86228b6d818f8e2ac151b80ec861f2c9e",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-large-largest-accessibility-text.png",
+      "baseline_sha256": "6245bc09e93178849b66188605de893b222eacd03f185ff2a65376db4886658d",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-long-name-circular.png",
+      "baseline_sha256": "283fc2eba5604fafa3138ec416e5c626e79c370ba52620990596b454ac6c1cb9",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-long-name-inline.png",
+      "baseline_sha256": "3ff167ffe3a3e1205dc2b37adb9f8ff070a90f6b4562d43845fc255e4b7961c5",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-long-name-large.png",
+      "baseline_sha256": "c7c52e112c01dd49ed0a624681e98f5cab0f18cf90d6801e513acf7419537b8d",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-long-name-medium.png",
+      "baseline_sha256": "1742f7a2b63580f14dabe740c5db9d8f61604ff3b2a654e61acb0b632d9d43fb",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-long-name-rectangular.png",
+      "baseline_sha256": "c2b3479c2800d09474162a30775dd3e002a16e412f8bd9904af6e2fe379301f7",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-long-name-small.png",
+      "baseline_sha256": "9a57f18458bb406e8b9b0a381ee393dc4dc3243909e6fb6b8dcbb78865262f60",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-medium-accessibility-text.png",
+      "baseline_sha256": "b552c152bb800ed411e02a247e277ddda85e6fccc13539a817dda45d84be0358",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-medium-largest-accessibility-text.png",
+      "baseline_sha256": "dfbbef67a4d11a57ad0a3ca670c738b445c735200040a544e88f64cb442a98b8",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-private-circular.png",
+      "baseline_sha256": "c2d3d295ae0d6e7290b183c1d8ce1d0bc4b7835895ebe020f059cceec1f36f0d",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-private-inline.png",
+      "baseline_sha256": "9444c64c403fd59d47bc3aedebae00363f49d66858bd68b5347e504804fbf46d",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-private-large.png",
+      "baseline_sha256": "4b4f293c66cec6bbad9233769f1a68165e8ba69d1deb25ba657fca34e327f527",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-private-medium.png",
+      "baseline_sha256": "042742572daaf91dfccd19fb5d0ea00c31054426935f3f99519ceb4f6439a884",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-private-rectangular.png",
+      "baseline_sha256": "e184f253d705cdfc80ff016ff39b8e24f830813e6f493f18118ec243a7fb7e78",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-private-small.png",
+      "baseline_sha256": "712d3fe0b4e699bba9c6e6c81ecf4aaf9cd6e703bf897dc37f91e51d259a7671",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-saved-circular.png",
+      "baseline_sha256": "283fc2eba5604fafa3138ec416e5c626e79c370ba52620990596b454ac6c1cb9",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-saved-inline.png",
+      "baseline_sha256": "3ff167ffe3a3e1205dc2b37adb9f8ff070a90f6b4562d43845fc255e4b7961c5",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-saved-large.png",
+      "baseline_sha256": "a92e9966ae3639582c26a896a46772a80fd5e9699d982a75e33131230abaddda",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-saved-medium.png",
+      "baseline_sha256": "8d4a07df1363022cd63b8dd24cc958d6f1b60bcde85bc0e45acc7460c49613ad",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-saved-rectangular.png",
+      "baseline_sha256": "908ad8e3906f2318e65867f9bde7e483ca22f1418131fbc19fb92a907750fc77",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-saved-small.png",
+      "baseline_sha256": "bcd827a4db23500a23aaefa85e04548dc246ba0b7454df03050158e66a8e381c",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-small-accessibility-text.png",
+      "baseline_sha256": "fc99589f0a18fc8ea0eacf9fe1b8461ccb27e51926bae8bfe1efbb9a43c2ca8b",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-small-largest-accessibility-text.png",
+      "baseline_sha256": "c0c89f7efd15aa072f706cc378fefbd1af95aa0c40d4138354754f64a4a3ceae",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-stale-circular.png",
+      "baseline_sha256": "a55119b2f663eea318ff73aad5e7dc693bcd06d8273eab3e13b91e4815a46af5",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-stale-inline.png",
+      "baseline_sha256": "fbd63eb5ee8da5f8b342ddcda273f64b93af51dcea2ee67a2f06ae886c29e03f",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-stale-large.png",
+      "baseline_sha256": "6770e0c2e56ff4a7de680011f2015d648faf0c90bda7efb63983ebdf4342eeee",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-stale-medium.png",
+      "baseline_sha256": "ba3830ea4ddbcd70f6c4605c851214e1bd68aae42377b6313cc68d04a9a05e10",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-stale-rectangular.png",
+      "baseline_sha256": "b3989555e66ed330fd33b70aa2ed8d79bfb5a56927be354f9a3eb0f8852a5151",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-stale-small.png",
+      "baseline_sha256": "dd0f33baa483581ea8ef54a872c0764dfa903acd5de30307e168e32cb51d9d6e",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-unavailable-circular.png",
+      "baseline_sha256": "707cd7edcc5a88a400a508861b2ed1f60f8ee808707ff67bef8ab1e17cd7da58",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-unavailable-inline.png",
+      "baseline_sha256": "0b74961457748428948aed06827f6d4e57be597b76d880879bd02edc13645bf1",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-unavailable-large.png",
+      "baseline_sha256": "fcc12d1b760cd6cef0add839a8347d7fe8fd1c147f44cbf079f9575a8a0d83bb",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-unavailable-medium.png",
+      "baseline_sha256": "7b99addb63046a12ef4a02019b7ae9abd813f2affb29b0fca2fa7cf270259aed",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-unavailable-rectangular.png",
+      "baseline_sha256": "344adbc14e47e2dc39ca2a77404267cae60584b94b8137f81a524cdf89870d02",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/components/widget-view-light-unavailable-small.png",
+      "baseline_sha256": "4c75cf85c3e4ea32c97188e89dc2c94ae536cb17ad0d871f9f07a76c1936a9c0",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/system/widget-system-home-edit.png",
+      "baseline_sha256": "8dd05910e83c94addffe5e3dd67a84c23606c37a8cd5a87c9b54032fe55266a5",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/system/widget-system-home-installed.png",
+      "baseline_sha256": "20593907608bf5ae6c96cd4e0b20f30fb0de09c1330b2822fdc3f4c0cef5b3be",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/system/widget-system-medium-gallery.png",
+      "baseline_sha256": "420785e6876230855f3fd339144114afc053d0e3b47ea950735c0bb799c1a1db",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/audits/frontend-widget-2026-10/widgets/system/widget-system-small-gallery.png",
+      "baseline_sha256": "7cd4571cde2f0f1365c44ed2fa61e5afa8964087313bb4cf0e202d1faf6422ef",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/baseline-evidence.md",
+      "baseline_sha256": "ea2963ea1d25a066504dcab9a0adc792ff98c1ce3ce16faef3e01621820846ab",
+      "baseline_line_count": 58,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/commit-2/ACCESSIBILITY_MATRIX.md",
+      "baseline_sha256": "d1e869a573897fc4e5f9a1cb05826000913cc4d9903ea98037c1dee10a5548d1",
+      "baseline_line_count": 67,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/commit-2/APPLE_RESEARCH.md",
+      "baseline_sha256": "8b643d4197e7270b65cb8525a6cb7a5d1acad429570a67ce83545dbe5e5bb6ae",
+      "baseline_line_count": 332,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/commit-2/DESIGN_REVIEW.md",
+      "baseline_sha256": "850fc9ca4a50acaed851bc2f4d3f8fc61a763302b1b1ac505850570817a75237",
+      "baseline_line_count": 76,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/commit-2/FILE_AUDIT.md",
+      "baseline_sha256": "e0380141d0b7df4634d26b981b90c29526c8b7567d43541f558fb28b1748b9f8",
+      "baseline_line_count": 1680,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/commit-2/IMPLEMENTATION_REPORT.md",
+      "baseline_sha256": "fba8584aeadc1c762d968e90f801d110289853ced9eec2354dbb941852735eed",
+      "baseline_line_count": 131,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/commit-2/MOTION_SPEC.md",
+      "baseline_sha256": "4ee56895088e518bcc118f70699f859eb20c4cd0af3e7c9b486a3c891d571bd4",
+      "baseline_line_count": 84,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/commit-2/PERFORMANCE_RESULTS.md",
+      "baseline_sha256": "9717f309e38f325ac669559c02de660235d34b25e780f31ed61f927a77e77c8d",
+      "baseline_line_count": 43,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/commit-2/REMAINING_GATES.md",
+      "baseline_sha256": "2d69bd583897a1cafb6a1dfdefa772eb24445add512ed79a07a24b1f25248ceb",
+      "baseline_line_count": 47,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/commit-2/TEST_RESULTS.md",
+      "baseline_sha256": "20ac826380bb508d761447464d540ab3d093d5f903c1738b69f5dbb9260a4145",
+      "baseline_line_count": 78,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/commit-2/screenshots/dark-01-today.jpg",
+      "baseline_sha256": "aebf0d0fa8f4c59d6da29b589be70608c563aa12370b39d446caca87aa526d2d",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/commit-2/screenshots/dark-02-plan.jpg",
+      "baseline_sha256": "91354c744370e66a0d45f62e9f0db880aa60ae800c82fabf18e6b00dcbc3a001",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/commit-2/screenshots/dark-03-routine-detail.jpg",
+      "baseline_sha256": "2b42d3268b40649ccf62b681aca3892b9768f04a2960ab60e6a8318bebbd44dd",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/commit-2/screenshots/dark-04-workout.jpg",
+      "baseline_sha256": "a90747175502a5ed3bbd7e8651072e25f0ded7e38db5d04a81cf33ca83fc9f7b",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/commit-2/screenshots/dark-05-set-completed-rest.jpg",
+      "baseline_sha256": "bdb6d9bdb9cc326da9fcf1707576f27b3c3d17d4444b4cbdf6ac3299706cada1",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/commit-2/screenshots/dark-06-receipt.jpg",
+      "baseline_sha256": "e28a07477184b9ca04a4670465f950729f86d2dfcf55eb91862c483f29c4a48e",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/commit-2/screenshots/dark-07-progress.jpg",
+      "baseline_sha256": "541060c4badc93cef7964317f192317e08ac7f04828ae2c8e685a809c34055f8",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/commit-2/screenshots/dark-08-you.jpg",
+      "baseline_sha256": "cdbaadb897af896546f3b3e7a5eaee5ced11cd974a88931f40d0fd105d69a973",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/commit-2/screenshots/dark-09-today-after-workout.jpg",
+      "baseline_sha256": "55e69ecc11a38474433bd7b1596bd51c996ce288a76cb34c79be292b33eb2bf3",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/commit-2/screenshots/light-01-today.jpg",
+      "baseline_sha256": "60f7ac41ded901fc385fb08f5536045099aa27702a4889f25fdd8725f0ab70ef",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/commit-2/screenshots/light-02-plan.jpg",
+      "baseline_sha256": "3e53cd9b97888a229b3c9c910dda5eb3ea320b18db9ee2f892db883c38b2aa2f",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/commit-2/screenshots/light-03-routine-detail.jpg",
+      "baseline_sha256": "d05c7df85f247374498e35fb8080dfb6a69a66fef08ad2f72af3fe51ec5705d2",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/commit-2/screenshots/light-04-workout.jpg",
+      "baseline_sha256": "6a8fa12689c52c195d5b0ca660f5dfffaad36929f5ea7062744b669f0323219b",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/commit-2/screenshots/light-05-set-completed-rest.jpg",
+      "baseline_sha256": "27fdf956f9bac3b867a2aa4ffdfd5aa019e06d244ec5637ee881e9cbb20b69f0",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/commit-2/screenshots/light-06-receipt.jpg",
+      "baseline_sha256": "d37fbefc40043eee9ba7b0e437453d10d8b3f682d50ea41a24394d2e13f72841",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/commit-2/screenshots/light-07-progress.jpg",
+      "baseline_sha256": "8b1b761f1c2f682f8e6e0afd7bcc7fc670d7721d6571261cdfb2803910663361",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/commit-2/screenshots/light-08-you.jpg",
+      "baseline_sha256": "238595199785c32469f8525b17dcba922cf2a7ac7d3ae4dff51da925cfb46236",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/commit-2/screenshots/light-09-today-after-workout.jpg",
+      "baseline_sha256": "963a5bc8e7c1c66ec4a30b4bc28da28bb81aaa189bcdbd2c750749b062caa5d8",
+      "baseline_line_count": null,
+      "classification": "binary"
+    },
+    {
+      "path": "ios/docs/full-audit-2026-10-26.md",
+      "baseline_sha256": "0efe97dcf1e8c9b090a2ebb759aca8884453ee8b8728e061c662b5eb04658b7e",
+      "baseline_line_count": 108,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/implementation-plan.md",
+      "baseline_sha256": "25c8e9f9b2726f2144cf1622e118d5f6cb3b6913f4ad8460e9b86152fd03d7be",
+      "baseline_line_count": 52,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/native-accounts-findings.md",
+      "baseline_sha256": "abf1c54c1a7d3f7e9d2e5bc695abb969ea3818a7f63008ffecb11c975f28d7bd",
+      "baseline_line_count": 79,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/native-design-review.md",
+      "baseline_sha256": "e86cba1f86349448b0d4df4db8120927fb1b36f48ea15dff6d09333e61a29d68",
+      "baseline_line_count": 159,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/native-file-review.json",
+      "baseline_sha256": "93e2226820311a4df32dac90804deba73fe725a6ea6c175076b2143fe4a54c48",
+      "baseline_line_count": 1118,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/privacy-inventory.md",
+      "baseline_sha256": "398875a25deb02c901eb772a477118666334d21cea8a42d0fbb68a096bf0e53a",
+      "baseline_line_count": 139,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/docs/verification.md",
+      "baseline_sha256": "195acd1d0732006306f0e6664b91aacf6f1b0182217b164e92b8df9104899863",
+      "baseline_line_count": 284,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "ios/project.yml",
+      "baseline_sha256": "cec08c46b7ee8ddb1c7d856ae419484bb886cc8b5187e3ef5101c527ff0bf255",
+      "baseline_line_count": 161,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "scripts/build-ios-resources.mjs",
+      "baseline_sha256": "a5aae125a741746804f3b88f77efc1adbba4abd3959ce09973d87053e4bb9c15",
+      "baseline_line_count": 401,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "scripts/check-ios-contracts.mjs",
+      "baseline_sha256": "57548a0b8351148a7580c47f58bd1aa42965299f6f02c8ac718413cd05580aba",
+      "baseline_line_count": 92,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "scripts/check-ios-widget-bundle.py",
+      "baseline_sha256": "d6592db6e1dacf08868b9eeb2f771482f694846117fed732b1751dade346e13f",
+      "baseline_line_count": 159,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "unit/ios-resources.test.js",
+      "baseline_sha256": "8652aa68f36de54e60e35a9420e80ccf796e40797140f1d65746650e7c7289da",
+      "baseline_line_count": 415,
+      "classification": "human-authored text"
+    },
+    {
+      "path": "unit/ios-validation-boundaries.test.js",
+      "baseline_sha256": "6504dd4201a10320fb9ae15321f9e3219c7579b139b873c57206816a45da418f",
+      "baseline_line_count": 48,
+      "classification": "human-authored text"
+    }
+  ]
+}

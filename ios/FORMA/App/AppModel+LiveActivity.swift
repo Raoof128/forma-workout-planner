@@ -22,24 +22,52 @@ extension AppModel {
     liveActivity.sync(liveActivityTarget, force: force)
   }
 
+  /// Widget revocation rotates the shared owner epoch. Keep an independent allowed Live
+  /// Activity current so its buttons carry the new epoch rather than becoming stale.
+  func setWidgetSharing(_ value: Bool) {
+    widgets.setSharing(value, workspace: workspace)
+    syncLiveActivity(force: true)
+  }
+
   /// A press on the Lock Screen or Dynamic Island. The system runs the intent in this process,
   /// possibly in a launch that never showed a window, so the saved workspace may still be opening.
   /// A press for a workout that is no longer the active one does nothing.
   func perform(_ action: LiveActivityAction) async {
+    // Old activities and pre-upgrade intents must fail closed, even when an imported workout
+    // has the same canonical session ID in the current owner's store.
+    guard !action.ownerEpoch.isEmpty else { return }
     await finishOpening()
-    guard let session = workspace?.active else { return }
+    guard action.ownerEpoch == widgets.epoch, let session = workspace?.active else { return }
     switch action {
-    case .completeSet(let id):
+    case .completeSet(let id, let epoch):
       guard id == session.id else { return }
       // The same engine path as the in-app tick, on the set the workout screen would show next.
       let entry = WorkoutEngine.resumeIndex(session)
       guard session.exercises.indices.contains(entry),
         let set = session.exercises[entry].sets.firstIndex(where: { !$0.done })
       else { return }
-      guard await toggleSet(entry: entry, set: set) else { return }
-    case .skipRest(let id):
+      let entryID = session.exercises[entry].id
+      guard
+        await commit(
+          forActiveSession: id, forOwnerEpoch: epoch,
+          { value in
+            // Two presses can select the same unfinished set while the first save is pending.
+            // Complete is idempotent for that captured set; it must never undo the first save.
+            guard let active = value.active,
+              let currentEntry = active.exercises.firstIndex(where: { $0.id == entryID }),
+              active.exercises[currentEntry].sets.indices.contains(set),
+              !active.exercises[currentEntry].sets[set].done
+            else { return }
+            value = try WorkoutEngine.toggleSet(
+              in: value, entryIndex: currentEntry, setIndex: set, now: Self.now, catalog: catalog)
+          })
+      else { return }
+    case .skipRest(let id, let epoch):
       guard id == session.id, WorkoutEngine.isResting(session, now: Self.now) else { return }
-      guard await commit(forActiveSession: id, { $0 = try WorkoutEngine.skipRest(in: $0) })
+      guard
+        await commit(
+          forActiveSession: id, forOwnerEpoch: epoch,
+          { $0 = try WorkoutEngine.skipRest(in: $0) })
       else { return }
     }
     // The workout screen may not be open, so the rest-end notification is brought in line here.

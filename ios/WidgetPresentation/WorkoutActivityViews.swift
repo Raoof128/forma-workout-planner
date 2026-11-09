@@ -169,6 +169,7 @@
   /// "Complete set" and, while a rest is on screen, "Skip rest".
   struct WorkoutActions: View {
     var sessionID: String
+    var ownerEpoch: String
     var state: WorkoutActivityState
     var isStale: Bool
     var palette: WorkoutActivityPalette
@@ -180,13 +181,13 @@
             .font(.subheadline.weight(.medium)).foregroundStyle(palette.secondary)
             .frame(maxWidth: .infinity, minHeight: 40, alignment: .leading)
         } else {
-          Button(intent: CompleteSetIntent(sessionID: sessionID)) {
+          Button(intent: CompleteSetIntent(sessionID: sessionID, ownerEpoch: ownerEpoch)) {
             Label("Complete set", systemImage: "checkmark")
           }
           .buttonStyle(WorkoutActionStyle(palette: palette, prominent: true))
         }
         if state.isResting, !state.restIsOver(isStale: isStale) {
-          Button(intent: SkipRestIntent(sessionID: sessionID)) {
+          Button(intent: SkipRestIntent(sessionID: sessionID, ownerEpoch: ownerEpoch)) {
             Label("Skip rest", systemImage: "forward.end.fill")
           }
           .buttonStyle(WorkoutActionStyle(palette: palette, prominent: false))
@@ -201,14 +202,17 @@
   /// compact one for the Apple Watch Smart Stack and CarPlay.
   struct WorkoutActivityRoot: View {
     var sessionID: String
+    var ownerEpoch: String
     var state: WorkoutActivityState
     var isStale: Bool
 
     var body: some View {
       if #available(iOS 18.0, *) {
-        FamilyAwareView(sessionID: sessionID, state: state, isStale: isStale)
+        FamilyAwareView(
+          sessionID: sessionID, ownerEpoch: ownerEpoch, state: state, isStale: isStale)
       } else {
-        WorkoutLockScreenView(sessionID: sessionID, state: state, isStale: isStale)
+        WorkoutLockScreenView(
+          sessionID: sessionID, ownerEpoch: ownerEpoch, state: state, isStale: isStale)
       }
     }
 
@@ -216,13 +220,16 @@
     private struct FamilyAwareView: View {
       @Environment(\.activityFamily) private var family
       var sessionID: String
+      var ownerEpoch: String
       var state: WorkoutActivityState
       var isStale: Bool
 
       var body: some View {
         switch family {
         case .small: WorkoutSmallView(state: state, isStale: isStale)
-        default: WorkoutLockScreenView(sessionID: sessionID, state: state, isStale: isStale)
+        default:
+          WorkoutLockScreenView(
+            sessionID: sessionID, ownerEpoch: ownerEpoch, state: state, isStale: isStale)
         }
       }
     }
@@ -233,6 +240,7 @@
   struct WorkoutLockScreenView: View {
     @Environment(\.colorScheme) private var colorScheme
     var sessionID: String
+    var ownerEpoch: String
     var state: WorkoutActivityState
     var isStale: Bool
     private var palette: WorkoutActivityPalette {
@@ -272,7 +280,9 @@
             RestReadout(state: state, isStale: isStale, palette: palette)
           }
         }
-        WorkoutActions(sessionID: sessionID, state: state, isStale: isStale, palette: palette)
+        WorkoutActions(
+          sessionID: sessionID, ownerEpoch: ownerEpoch, state: state, isStale: isStale,
+          palette: palette)
       }
     }
 
@@ -438,11 +448,13 @@
 
   struct IslandExpandedBottom: View {
     var sessionID: String
+    var ownerEpoch: String
     var state: WorkoutActivityState
     var isStale: Bool
     var body: some View {
       WorkoutActions(
-        sessionID: sessionID, state: state, isStale: isStale, palette: .dark)
+        sessionID: sessionID, ownerEpoch: ownerEpoch, state: state, isStale: isStale, palette: .dark
+      )
     }
   }
 #endif

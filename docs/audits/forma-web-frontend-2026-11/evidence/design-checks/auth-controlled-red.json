@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "finding": "WD-15",
+  "phase": "controlled_product_failure_before_auth_breakpoint_fix",
+  "outcome": "failed",
+  "testFile": "tests/accounts-design.spec.js",
+  "testName": "tablet authentication keeps every form inside its visible panel",
+  "counts": {
+    "executed": 1,
+    "passed": 0,
+    "failed": 1,
+    "skipped": 0,
+    "interrupted": 0,
+    "notRun": 0
+  },
+  "runnerDurationSeconds": null,
+  "durationBoundary": "Runner elapsed time is not application performance. A null total means the raw summary did not report overall elapsed time; per-project test durations remain recorded.",
+  "projectResults": [
+    {
+      "project": "chromium",
+      "outcome": "failed",
+      "testDurationSeconds": 3.2
+    }
+  ],
+  "cause": "At a 768 CSS px viewport, the authentication grid had 570 CSS px of intrinsic tracks inside a panel with 490 CSS px client width. The unchanged internal-width assertion allowed at most 491 CSS px.",
+  "privateRawLog": {
+    "name": "auth-controlled-red.log",
+    "sha256": "1ec995278dcd691b2f208cb060818ddd11f45c5fa6b0fa80782ac9c8c591b0e8",
+    "bytes": 2930,
+    "published": false,
+    "availability": "Private ignored local log; absent from repository checkout"
+  },
+  "limitations": [
+    "Synthetic intercepted API fixtures; not a full service-backed account matrix or physical Safari verification.",
+    "Structured result summary only; raw trace bodies, absolute machine paths and credential material are excluded."
+  ],
+  "measurement": {
+    "viewportCSSPx": 768,
+    "gridScrollWidthCSSPx": 570,
+    "panelClientWidthCSSPx": 490,
+    "assertionMaximumCSSPx": 491
+  }
+}

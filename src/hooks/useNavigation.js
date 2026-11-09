@@ -39,11 +39,32 @@ export function useNavigation() {
       terms: "Terms of Use",
     };
     document.title = `${labels[page]} · FORMA`;
-    const heading = document.querySelector("main h1");
-    if (heading) {
+    const initialFocus = document.activeElement;
+    const mayMoveDelayedFocus =
+      initialFocus === document.body ||
+      initialFocus === document.documentElement ||
+      initialFocus?.matches(".skip-link");
+    const prepareHeading = (delayed = false) => {
+      const heading = document.querySelector("main h1");
+      if (!heading) return false;
       heading.tabIndex = -1;
-      heading.focus({ preventScroll: true });
-    }
+      // A workspace can arrive after this layout effect. Make its heading
+      // reachable without taking focus from a control the member already used.
+      if (
+        !delayed ||
+        (mayMoveDelayedFocus &&
+          document.activeElement === initialFocus &&
+          !document.querySelector('dialog[open], [role="menu"]'))
+      )
+        heading.focus({ preventScroll: true });
+      return true;
+    };
+    if (prepareHeading()) return;
+    const observer = new MutationObserver(() => {
+      if (prepareHeading(true)) observer.disconnect();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+    return () => observer.disconnect();
   }, [page]);
   return [page, navigate];
 }

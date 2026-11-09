@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "finding": "WD-14",
+  "phase": "responsive_product_fix_and_corrected_harness",
+  "outcome": "passed",
+  "testFile": "tests/accounts-design.spec.js",
+  "testName": "narrow account security keeps coach access choices and actions reachable",
+  "counts": {
+    "executed": 5,
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "interrupted": 0,
+    "notRun": 0
+  },
+  "runnerDurationSeconds": 56.1,
+  "durationBoundary": "Runner elapsed time is not application performance. A null total means the raw summary did not report overall elapsed time; per-project test durations remain recorded.",
+  "projectResults": [
+    {
+      "project": "chromium",
+      "outcome": "passed",
+      "testDurationSeconds": 4.8
+    },
+    {
+      "project": "chromium-mobile",
+      "outcome": "passed",
+      "testDurationSeconds": 5.7
+    },
+    {
+      "project": "firefox",
+      "outcome": "passed",
+      "testDurationSeconds": 13.6
+    },
+    {
+      "project": "webkit",
+      "outcome": "passed",
+      "testDurationSeconds": 7.5
+    },
+    {
+      "project": "webkit-mobile",
+      "outcome": "passed",
+      "testDurationSeconds": 7.0
+    }
+  ],
+  "cause": "The narrow coach-access form remains stacked without wrapping into a second column. The corrected enclosing-form check preserves the original bounds assertions and timeout.",
+  "privateRawLog": {
+    "name": "security-five-profiles-pass.log",
+    "sha256": "6ee39e155e69c85dc64f529e3a24aef9605a60621d2827239abbf654b9defea7",
+    "bytes": 1603,
+    "published": false,
+    "availability": "Private ignored local log; absent from repository checkout"
+  },
+  "limitations": [
+    "Synthetic intercepted API fixtures; not a full service-backed account matrix or physical Safari verification.",
+    "Structured result summary only; raw trace bodies, absolute machine paths and credential material are excluded."
+  ],
+  "checks": [
+    "320, 360 and 375 CSS px viewports",
+    "Both access radio choices remain selectable",
+    "Document and panel/viewport control bounds",
+    "Control center-hit reachability"
+  ]
+}

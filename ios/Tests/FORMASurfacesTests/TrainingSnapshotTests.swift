@@ -55,6 +55,14 @@ final class TrainingSnapshotTests: XCTestCase {
     let lateSunday = value.visible(at: sunday.addingTimeInterval(5400))
     XCTAssertTrue(lateSunday.carriedOver)
     XCTAssertEqual(lateSunday.week?.sessions, 3)
+    let week = try XCTUnwrap(
+      TrainingCalendar.calendar.dateInterval(of: .weekOfYear, for: sunday))
+    XCTAssertTrue(TrainingCalendar.isSameWeek(sunday, week.end.addingTimeInterval(-0.001)))
+    XCTAssertFalse(TrainingCalendar.isSameWeek(sunday, week.end))
+    XCTAssertFalse(TrainingCalendar.isSameWeek(week.end, sunday))
+    let midnight = value.visible(at: week.end)
+    XCTAssertEqual(
+      midnight.week, .init(sessions: 0, goal: 4, days: Array(repeating: false, count: 7)))
     let monday = value.visible(at: sunday.addingTimeInterval(3 * 3600))
     XCTAssertEqual(
       monday.week, .init(sessions: 0, goal: 4, days: Array(repeating: false, count: 7)))

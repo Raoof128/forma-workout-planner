@@ -265,7 +265,9 @@ final class AppModel {
 
   @discardableResult
   func commit(
-    forActiveSession expectedSessionID: String? = nil, _ change: (inout Workspace) throws -> Void
+    forActiveSession expectedSessionID: String? = nil,
+    forOwnerEpoch expectedOwnerEpoch: String? = nil,
+    _ change: (inout Workspace) throws -> Void
   ) async -> Bool {
     let owner = storeIdentity
     pendingMutations += 1
@@ -277,12 +279,19 @@ final class AppModel {
     // A task created by a dismissed guest/member screen can be queued behind
     // a store switch. It must never apply its edit to the next owner's data.
     guard owner == storeIdentity, var candidate = workspace, let store else { return false }
+    // Live Activity actions can also outlive a reset or consent change without a member switch.
+    // Recheck their epoch after the queue, before touching either canonical or persisted data.
+    if let expectedOwnerEpoch {
+      guard !expectedOwnerEpoch.isEmpty, expectedOwnerEpoch == widgets.epoch else { return false }
+    }
     do {
       if let expectedSessionID, candidate.active?.id != expectedSessionID {
         throw AppFailure("This workout has changed. Reopen your active session before editing it.")
       }
       let revision = candidate.revision
       try change(&candidate)
+      // Duplicate/stale external intents are harmless no-ops, not another durable revision.
+      if expectedOwnerEpoch != nil, candidate == workspace { return false }
       // A signed-in store records "not yet sent" in the same transaction.
       let committed = try await store.save(
         candidate, expectedRevision: revision, markingDirty: activeMember != nil)

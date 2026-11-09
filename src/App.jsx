@@ -101,7 +101,10 @@ function AccountWorkspace({ notify }) {
       ),
     refresh: () => repository?.refresh(),
     reloadConflict: () => repository?.reloadConflict(),
-    retry: () => repository?.retry(),
+    retry: () =>
+      repository?.getSnapshot().retryPayload
+        ? repository.retry()
+        : repository?.refresh(),
     commit,
     importLegacy: (backup, options) =>
       repository?.importLegacy(backup, options),
@@ -440,7 +443,12 @@ function AccountWorkspace({ notify }) {
         className="skip-link"
         onClick={(event) => {
           event.preventDefault();
-          document.querySelector("main h1")?.focus();
+          const heading = document.querySelector("main h1");
+          if (heading) {
+            // Recovery can replace the heading without changing the route.
+            heading.tabIndex = -1;
+            heading.focus();
+          }
         }}
       >
         Skip to content
@@ -515,6 +523,7 @@ function AccountWorkspace({ notify }) {
                 <Overview
                   data={{ ...data, routines: activeRoutines }}
                   saved={issue !== "unavailable"}
+                  memberMode={account.status === "authenticated"}
                   onStart={start}
                   onRoutine={(routine) => setModal({ type: "detail", routine })}
                   onNavigate={navigate}

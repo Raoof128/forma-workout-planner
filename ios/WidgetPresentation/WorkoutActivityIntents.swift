@@ -3,8 +3,14 @@ import Foundation
 
 /// A button press on the Lock Screen or in the Dynamic Island.
 enum LiveActivityAction: Sendable, Equatable {
-  case completeSet(sessionID: String)
-  case skipRest(sessionID: String)
+  case completeSet(sessionID: String, ownerEpoch: String)
+  case skipRest(sessionID: String, ownerEpoch: String)
+
+  var ownerEpoch: String {
+    switch self {
+    case .completeSet(_, let epoch), .skipRest(_, let epoch): epoch
+    }
+  }
 }
 
 /// Where the intents land. The app installs `handler` at launch; the widget extension never does,
@@ -30,13 +36,18 @@ struct CompleteSetIntent: LiveActivityIntent {
 
   /// The workout the button was drawn for. A press after that workout ended does nothing.
   @Parameter(title: "Workout") var sessionID: String
+  /// A session ID can be preserved by import; only this opaque epoch identifies its owner.
+  @Parameter(title: "Training space", default: "") var ownerEpoch: String
 
   init() {}
-  init(sessionID: String) { self.sessionID = sessionID }
+  init(sessionID: String, ownerEpoch: String) {
+    self.sessionID = sessionID
+    self.ownerEpoch = ownerEpoch
+  }
 
   @MainActor
   func perform() async throws -> some IntentResult {
-    await LiveActivityActions.run(.completeSet(sessionID: sessionID))
+    await LiveActivityActions.run(.completeSet(sessionID: sessionID, ownerEpoch: ownerEpoch))
     return .result()
   }
 }
@@ -49,13 +60,17 @@ struct SkipRestIntent: LiveActivityIntent {
   static let authenticationPolicy: IntentAuthenticationPolicy = .requiresAuthentication
 
   @Parameter(title: "Workout") var sessionID: String
+  @Parameter(title: "Training space", default: "") var ownerEpoch: String
 
   init() {}
-  init(sessionID: String) { self.sessionID = sessionID }
+  init(sessionID: String, ownerEpoch: String) {
+    self.sessionID = sessionID
+    self.ownerEpoch = ownerEpoch
+  }
 
   @MainActor
   func perform() async throws -> some IntentResult {
-    await LiveActivityActions.run(.skipRest(sessionID: sessionID))
+    await LiveActivityActions.run(.skipRest(sessionID: sessionID, ownerEpoch: ownerEpoch))
     return .result()
   }
 }

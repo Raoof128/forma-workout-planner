@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "finding": "WD-15",
+  "phase": "initial_test_harness_attempt_after_auth_fix",
+  "outcome": "partial_pass_with_harness_failures",
+  "testFile": "tests/accounts-design.spec.js",
+  "testName": "tablet authentication keeps every form inside its visible panel",
+  "counts": {
+    "executed": 5,
+    "passed": 2,
+    "failed": 3,
+    "skipped": 0,
+    "interrupted": 0,
+    "notRun": 0
+  },
+  "runnerDurationSeconds": 55.9,
+  "durationBoundary": "Runner elapsed time is not application performance. A null total means the raw summary did not report overall elapsed time; per-project test durations remain recorded.",
+  "projectResults": [
+    {
+      "project": "chromium",
+      "outcome": "failed",
+      "testDurationSeconds": 8.2
+    },
+    {
+      "project": "chromium-mobile",
+      "outcome": "failed",
+      "testDurationSeconds": 8.1
+    },
+    {
+      "project": "firefox",
+      "outcome": "failed",
+      "testDurationSeconds": 9.5
+    },
+    {
+      "project": "webkit",
+      "outcome": "passed",
+      "testDurationSeconds": 8.9
+    },
+    {
+      "project": "webkit-mobile",
+      "outcome": "passed",
+      "testDurationSeconds": 8.6
+    }
+  ],
+  "cause": "The first test assumed navigating to the same hash reset authentication mode between widths. Chromium, Chromium mobile and Firefox retained Reset mode, so the expected Welcome heading was absent. Two WebKit profiles passed. The corrected test uses the real Back to sign in action; geometry assertions and timeouts remain unchanged.",
+  "privateRawLog": {
+    "name": "auth-initial-harness-errors.log",
+    "sha256": "2cef93537779e9b1358d332be6c92e881d509c26a5ec6b5dc6e15b09bfe1178d",
+    "bytes": 10137,
+    "published": false,
+    "availability": "Private ignored local log; absent from repository checkout"
+  },
+  "limitations": [
+    "Synthetic intercepted API fixtures; not a full service-backed account matrix or physical Safari verification.",
+    "Structured result summary only; raw trace bodies, absolute machine paths and credential material are excluded."
+  ]
+}

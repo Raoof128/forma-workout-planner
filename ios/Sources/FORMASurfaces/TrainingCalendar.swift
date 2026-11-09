@@ -11,7 +11,9 @@ public enum TrainingCalendar {
   /// True when both dates fall in the same training week (Monday first).
   public static func isSameWeek(_ first: Date, _ second: Date) -> Bool {
     guard let interval = calendar.dateInterval(of: .weekOfYear, for: first) else { return false }
-    return interval.contains(second)
+    // DateInterval includes its end, which is already Monday in the next week.
+    // Training weeks must meet at a half-open boundary so widget counts reset then.
+    return second >= interval.start && second < interval.end
   }
 
   public static func completionDate(_ text: String?, startedAt: Double) -> Date {

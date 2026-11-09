@@ -1,0 +1,22 @@
+{
+  "code_checkpoint": "cc771830b92929485dae5f4fe8297a49df9fa394",
+  "cause": "Six Markdown links targeted private *.log files ignored by Git; worktree-only validation could see them, CI checkout could not",
+  "correction": "Six published JSON result receipts with actual outcomes and private raw-log integrity hashes; no raw trace bodies or ignore-rule change",
+  "verification_method": "Existing unchanged docs checker on a lightweight Git-index-only mirror with real staged Markdown/package/checker content and tracked target paths; ignored files excluded",
+  "negative": {
+    "tracked_paths": 2389,
+    "markdown_files": 166,
+    "missing_targets": 6,
+    "log_sha256": "262ddac28baa3f7b1315dc783debed3175cc5ca3688aaf0502fab62e24b72671"
+  },
+  "positive": {
+    "tracked_paths": 2395,
+    "markdown_files": 166,
+    "missing_targets": 0,
+    "exit_code": 0,
+    "log_sha256": "25c80dbfd5dc73610287210a26bc24d1528f534572d394b3f1d62a0a9ef64562"
+  },
+  "checker_sha256": "075791b89cc1d0395e058502d14a3f69b07636f444cf191188267e8f277639e4",
+  "application_source_changed": false,
+  "raw_logs_remain_private": true
+}

@@ -1,7 +1,7 @@
 # Native privacy inventory
 
 Development scope: offline guest use plus optional FORMA account sign-in and
-sync, updated 28 October 2026 (first recorded 23 October 2026 for the offline
+sync, updated 4 November 2026 (first recorded 23 October 2026 for the offline
 guest slice). This is a source-level inventory and submission draft, not a final
 App Privacy declaration.
 
@@ -61,7 +61,7 @@ delete copies a user previously exported to Files or another destination.
 ## Privacy manifest
 
 `FORMA/Resources/PrivacyInfo.xcprivacy` has tracking disabled, no tracking
-domains and no declared required-reason API categories. It declares four
+domains. It declares four
 collected data types, all **linked to the user** and used for **App
 Functionality** only (the account exists to run the app), none used for
 tracking: email address, name, fitness (workout records) and user ID (the
@@ -131,8 +131,18 @@ read-only extension; complete protection and backup exclusion. Widget entitlemen
 `NSFileProtectionComplete` hides content while locked and disables Mac mirroring.
 System-cached views may outlive app revocation/reload requests temporarily.
 
-The widget makes no network calls, declares no collected data/tracking/required
-reason API, and uses file size/type metadata only (not file timestamps/disk space).
+The widget makes no network calls and declares no collected data or tracking.
+Its `PrivacyInfo.xcprivacy` declares
+`NSPrivacyAccessedAPICategoryFileTimestamp` with reason `C617.1`:
+`SnapshotReader` reads `contentModificationDateKey` only on its own
+`training-widget-v1.json` App Group file to back off retry requests while Complete
+file protection prevents reading the content. The timestamp and derived retry
+interval stay on-device; they are not used for fingerprinting. The app's writer
+does not read that timestamp. Watch source does not use this API.
+Apple's [required-reason API list](https://developer.apple.com/documentation/bundleresources/app-privacy-configuration/nsprivacyaccessedapitypes/nsprivacyaccessedapitype)
+explicitly includes `contentModificationDateKey`, and `C617.1` covers metadata
+within an app or App Group container. The earlier file-size/type-only inventory
+predates the reader's retry back-off and does not cover that newer call.
 The new bundle validator inspects actual embedding, declarations and linkage;
 final archive-linked privacy reports and device lock/cache checks remain gates.
 Consent write failures are visible; failed revocation tries durable file removal

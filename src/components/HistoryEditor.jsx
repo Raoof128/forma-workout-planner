@@ -43,6 +43,7 @@ export default function HistoryEditor({ session, onSave, onClose }) {
   }
   async function save(event) {
     event.preventDefault();
+    if (saving) return;
     if (!sessionSets(draft)) {
       setError(
         "Keep at least one completed set, or delete the workout from its details.",
@@ -55,6 +56,10 @@ export default function HistoryEditor({ session, onSave, onClose }) {
         setError(
           "Could not save these changes. Review the message and try again.",
         );
+    } catch {
+      setError(
+        "Could not save these changes. Review the message and try again.",
+      );
     } finally {
       setSaving(false);
     }
@@ -79,134 +84,140 @@ export default function HistoryEditor({ session, onSave, onClose }) {
         </div>
       ) : (
         <form className="modal-content" onSubmit={save}>
-          <label className="field">
-            Workout name
-            <input
-              value={draft.name}
-              required
-              maxLength={60}
-              onChange={(event) =>
-                setDraft((current) => ({
-                  ...current,
-                  name: event.target.value,
-                }))
-              }
-            />
-          </label>
-          {draft.exercises.map((entry, ei) => {
-            const exercise = exerciseById.get(entry.exerciseId);
-            if (!session.exercises[ei].sets.some((set) => set.done))
-              return null;
-            const fields = visibleFields(exercise, entry);
-            const rowClass = `set-row${
-              fields.length > 2
-                ? " set-row-sides"
-                : fields.length === 1
-                  ? " set-row-single"
-                  : ""
-            }`;
-            return (
-              <section className="history-edit-exercise" key={entryKey(entry)}>
-                <h3>{exercise.name}</h3>
-                <div className={`${rowClass} set-labels`}>
-                  <span>SET</span>
-                  {fields.map((field) => (
-                    <span key={field.key}>{field.label}</span>
-                  ))}
-                  <span>RPE</span>
-                  <span>KEEP</span>
-                </div>
-                {entry.sets.map(
-                  (set, si) =>
-                    session.exercises[ei].sets[si].done && (
-                      <div className={rowClass} key={si}>
-                        <span>{si + 1}</span>
-                        {fields.map((field) => (
+          {/* A delayed save must not close over newer, unsaved corrections. */}
+          <fieldset className="editor-fields" disabled={saving}>
+            <label className="field">
+              Workout name
+              <input
+                value={draft.name}
+                required
+                maxLength={60}
+                onChange={(event) =>
+                  setDraft((current) => ({
+                    ...current,
+                    name: event.target.value,
+                  }))
+                }
+              />
+            </label>
+            {draft.exercises.map((entry, ei) => {
+              const exercise = exerciseById.get(entry.exerciseId);
+              if (!session.exercises[ei].sets.some((set) => set.done))
+                return null;
+              const fields = visibleFields(exercise, entry);
+              const rowClass = `set-row${
+                fields.length > 2
+                  ? " set-row-sides"
+                  : fields.length === 1
+                    ? " set-row-single"
+                    : ""
+              }`;
+              return (
+                <section
+                  className="history-edit-exercise"
+                  key={entryKey(entry)}
+                >
+                  <h3>{exercise.name}</h3>
+                  <div className={`${rowClass} set-labels`}>
+                    <span>SET</span>
+                    {fields.map((field) => (
+                      <span key={field.key}>{field.label}</span>
+                    ))}
+                    <span>RPE</span>
+                    <span>KEEP</span>
+                  </div>
+                  {entry.sets.map(
+                    (set, si) =>
+                      session.exercises[ei].sets[si].done && (
+                        <div className={rowClass} key={si}>
+                          <span>{si + 1}</span>
+                          {fields.map((field) => (
+                            <input
+                              key={field.key}
+                              aria-label={`Correct ${exercise.name} set ${si + 1} ${spokenField(field)}`}
+                              type="number"
+                              min={field.min}
+                              max={field.max}
+                              step={field.step}
+                              required={set.done}
+                              placeholder={set.legacyDraft?.[field.key]}
+                              value={readSetValue(set, field.key)}
+                              onChange={(event) =>
+                                update(
+                                  ei,
+                                  si,
+                                  field.key,
+                                  event.target.value === ""
+                                    ? ""
+                                    : Number(event.target.value),
+                                )
+                              }
+                            />
+                          ))}
                           <input
-                            key={field.key}
-                            aria-label={`Correct ${exercise.name} set ${si + 1} ${spokenField(field)}`}
+                            aria-label={`Correct ${exercise.name} set ${si + 1} rpe`}
                             type="number"
-                            min={field.min}
-                            max={field.max}
-                            step={field.step}
-                            required={set.done}
-                            placeholder={set.legacyDraft?.[field.key]}
-                            value={readSetValue(set, field.key)}
+                            min="1"
+                            max="10"
+                            step="0.5"
+                            value={set.rpe ?? ""}
                             onChange={(event) =>
                               update(
                                 ei,
                                 si,
-                                field.key,
+                                "rpe",
                                 event.target.value === ""
-                                  ? ""
+                                  ? null
                                   : Number(event.target.value),
                               )
                             }
                           />
-                        ))}
-                        <input
-                          aria-label={`Correct ${exercise.name} set ${si + 1} rpe`}
-                          type="number"
-                          min="1"
-                          max="10"
-                          step="0.5"
-                          value={set.rpe ?? ""}
-                          onChange={(event) =>
-                            update(
-                              ei,
-                              si,
-                              "rpe",
-                              event.target.value === ""
-                                ? null
-                                : Number(event.target.value),
-                            )
-                          }
-                        />
-                        <input
-                          aria-label={`Keep ${exercise.name} set ${si + 1}`}
-                          type="checkbox"
-                          checked={set.done}
-                          onChange={(event) =>
-                            update(ei, si, "done", event.target.checked)
-                          }
-                        />
-                      </div>
-                    ),
-                )}
-              </section>
-            );
-          })}
-          <label className="field">
-            Workout notes
-            <textarea
-              value={draft.notes}
-              maxLength={10000}
-              onChange={(event) =>
-                setDraft((current) => ({
-                  ...current,
-                  notes: event.target.value,
-                }))
-              }
-            />
-          </label>
-          {error && (
-            <p className="error" role="alert">
-              {error}
-            </p>
-          )}
-          <div className="modal-actions">
-            <Button variant="secondary" disabled={saving} onClick={close}>
-              Cancel
-            </Button>
-            <Button
-              type="submit"
-              variant="lime"
-              disabled={saving}
-              loading={saving}
-            >
-              Save corrections
-            </Button>
-          </div>
+                          <input
+                            aria-label={`Keep ${exercise.name} set ${si + 1}`}
+                            type="checkbox"
+                            checked={set.done}
+                            onChange={(event) =>
+                              update(ei, si, "done", event.target.checked)
+                            }
+                          />
+                        </div>
+                      ),
+                  )}
+                </section>
+              );
+            })}
+            <label className="field">
+              Workout notes
+              <textarea
+                value={draft.notes}
+                maxLength={10000}
+                onChange={(event) =>
+                  setDraft((current) => ({
+                    ...current,
+                    notes: event.target.value,
+                  }))
+                }
+              />
+            </label>
+            {error && (
+              <p className="error" role="alert">
+                {error}
+              </p>
+            )}
+            <div className="modal-actions">
+              <Button variant="secondary" disabled={saving} onClick={close}>
+                Cancel
+              </Button>
+              <Button
+                type="submit"
+                variant="lime"
+                disabled={saving}
+                loading={saving}
+              >
+                Save corrections
+              </Button>
+            </div>
+          </fieldset>
         </form>
       )}
     </Modal>

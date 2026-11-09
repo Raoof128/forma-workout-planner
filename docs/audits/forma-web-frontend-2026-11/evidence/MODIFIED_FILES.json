@@ -1,0 +1,3796 @@
+{
+  "baseline_commit": "3c27308c5856928ab18650293df1c2f6e2e91389",
+  "scope": "All changed/added task paths after the pushed native implementation checkpoint; initial native source changes are documented by that commit and its separate native manifest",
+  "captured_before_final_evidence_commit": true,
+  "self_hash_policy": "This manifest lists itself without a recursive self hash",
+  "count": 541,
+  "files": [
+    {
+      "path": "AGENT.md",
+      "group": "project_log",
+      "bytes": 129297,
+      "sha256": "36add175afcbb07c7545ca36a4ba01fbcbe0e513134127e4e2f97548008e4fb8",
+      "self_manifest": false
+    },
+    {
+      "path": "CHANGELOG.md",
+      "group": "project_log",
+      "bytes": 144157,
+      "sha256": "8599c3a0dd4517c12432ee623667e54639fca59ec631e4da6be36aff7fc218ea",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/ACCESSIBILITY_AUDIT.md",
+      "group": "web_audit_evidence",
+      "bytes": 8643,
+      "sha256": "d18feaec41e4ea3980cd3d3f63e6821d6d6dc4a2cb5695176b9854a29033f9ef",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/CODEX_PROMPT.md",
+      "group": "web_audit_evidence",
+      "bytes": 45783,
+      "sha256": "79b1383af560e56c40828e967fe7d8f68473fa7ffe07fe86488afaa15d616382",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/DESIGN_SYSTEM.md",
+      "group": "web_audit_evidence",
+      "bytes": 6425,
+      "sha256": "bc5ba5eb1f3f9d8ecbd6508c6b020405fd007cb4f718f3dee8ffe0c2dddeef06",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/EXECUTIVE_AUDIT.md",
+      "group": "web_audit_evidence",
+      "bytes": 8384,
+      "sha256": "eef6ef4e55c0b2067ccf92816098b8dd110f7167d3c63292ccbe66ac04664d7f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/FILE_LEDGER.json",
+      "group": "web_audit_evidence",
+      "bytes": 5299868,
+      "sha256": "e42cfed8633a13e0f242aef9286b4b71018bbec4bc8c41913c085a6b8d35d894",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/FILE_LEDGER.md",
+      "group": "web_audit_evidence",
+      "bytes": 1084430,
+      "sha256": "ccc06a3e4ca6850aba8d058b03b32638731c64a8512f22ece720488c9078af04",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/FINAL_REPORT.md",
+      "group": "web_audit_evidence",
+      "bytes": 11288,
+      "sha256": "4d7c6128417cb770520e27e2cdeab61372ef2879f8f9dcc2f5a5df189ea622a1",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/FINDINGS.md",
+      "group": "web_audit_evidence",
+      "bytes": 25854,
+      "sha256": "14e98537ee9f41cd800a15ce783a0e9096fa0d0748a33a2fee00aac97462e152",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/MOTION_REVIEW.md",
+      "group": "web_audit_evidence",
+      "bytes": 4547,
+      "sha256": "c79415abff48143f5cef0afb7dfb4af932cd1ef23b06db95b8307ff326042213",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/PERFORMANCE.md",
+      "group": "web_audit_evidence",
+      "bytes": 8043,
+      "sha256": "8bbc21b2fce4355759d2a03c4bccc72d9142e45f44ef792ddafe148e2d0dc82b",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/RESPONSIVE_AUDIT.md",
+      "group": "web_audit_evidence",
+      "bytes": 7758,
+      "sha256": "117b16c4606f43c5a7e6ff924a927c4a2f7ebc48cc16ccca1e608641bff0456a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/SCREEN_REVIEW.md",
+      "group": "web_audit_evidence",
+      "bytes": 11089,
+      "sha256": "81a220f8ff1f6275cc6c8e70dd38d2f0946ec90eeb1e3e58571875704679d9b5",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/SECURITY_PRIVACY_REVIEW.md",
+      "group": "web_audit_evidence",
+      "bytes": 5067,
+      "sha256": "9fbeef5931f620eb40a33865bd8352d18c97706cbe850c86d4e93661eb3a74e8",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/SKILL_EVIDENCE.md",
+      "group": "web_audit_evidence",
+      "bytes": 9381,
+      "sha256": "92d54c027429d4cbc14de6785ecb0708755d037a82a6594c606cd83f519b681c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/SOURCE_REGISTER.json",
+      "group": "web_audit_evidence",
+      "bytes": 27177,
+      "sha256": "3a3c3d67180b76430e1674b651e2a09c276dcc53957b15b0e8d37d53edc505e5",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/SOURCE_REQUEST.json",
+      "group": "web_audit_evidence",
+      "bytes": 616,
+      "sha256": "0d5ea6429ae966f312dcf80e4027e11fe0796ab8b9dafa48c01afecb579cdbae",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/TEST_RESULTS.md",
+      "group": "web_audit_evidence",
+      "bytes": 16647,
+      "sha256": "0c5cdd9275aca8e29ead63cac7c0aab41897325d44f85675aeb0e18a05c9becb",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/ACCOUNT_DEVELOPMENT_FINAL.json",
+      "group": "web_audit_evidence",
+      "bytes": 28079,
+      "sha256": "f79ee8ec5602aebcb8713f9b220b7dd8ff72ebf316f1deda2fb392b57ffa7f23",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/ACCOUNT_HISTORY.json",
+      "group": "web_audit_evidence",
+      "bytes": 81886,
+      "sha256": "c6e3f8a9b243be9ee6e02f6bd739f16a503127e7665cfbcce6bdaf233e2f11c6",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/ACCOUNT_PRODUCTION_FINAL.json",
+      "group": "web_audit_evidence",
+      "bytes": 29173,
+      "sha256": "f5637ddf19e42431fab4c765e059fcc2829d79655e5f9781f6840ffafb5b3d09",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/ASSET_VERIFICATION.json",
+      "group": "web_audit_evidence",
+      "bytes": 168668,
+      "sha256": "a97cb7d59fefcd6ed58bfa495c7629cd8bb04fd22f1b0bbf5372ee5b1fd22de1",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/BUILD_SIZES.json",
+      "group": "web_audit_evidence",
+      "bytes": 1936,
+      "sha256": "c25450d2f9de38ab378c435c70daada4498386836bf33f8bd680383378ede2d8",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/CHECKPOINT_BROWSER_INPUTS.json",
+      "group": "web_audit_evidence",
+      "bytes": 28735,
+      "sha256": "4bba5b20b0ff3bef39b062870d039aa0cb01e7f1b5819e6deda8a8dd4a38d454",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/CI_FINAL.json",
+      "group": "web_audit_evidence",
+      "bytes": 26304,
+      "sha256": "31676a2c0f80bbcbb92bd67682d06d3431ef02c767b77a168b0bd9937d1804d0",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/CLEAN_BUILD_REPRODUCIBILITY.json",
+      "group": "web_audit_evidence",
+      "bytes": 1545,
+      "sha256": "d6384ba0fc461bbcf59d28ba31bc4f2dd4adeed40b6add29783b4a364da907be",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/DOCS_PORTABILITY.json",
+      "group": "web_audit_evidence",
+      "bytes": 1116,
+      "sha256": "734d0685e15c30d7bc5e30ec74e18c760c4d6f75496bb98af5f398c72efa4707",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/FINAL_BROWSER_INPUTS.json",
+      "group": "web_audit_evidence",
+      "bytes": 27677,
+      "sha256": "7e2d27b2af562d5a4934143612ba8462f09d0f3c2ee3eb4930b04aa15e176caf",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/LOCAL_CLEANUP.json",
+      "group": "web_audit_evidence",
+      "bytes": 554,
+      "sha256": "d30cfb150f63ba3ff52e94488ffd6d8c6f760ea8a0581dc1898a79e0dd83fc10",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/MEASUREMENT_EXECUTION.json",
+      "group": "web_audit_evidence",
+      "bytes": 1809,
+      "sha256": "3805826547a77a268b42cf28d01fd49d78819e1589eaaa060be3781af7085931",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/MODIFIED_FILES.json",
+      "group": "web_audit_evidence",
+      "bytes": null,
+      "sha256": null,
+      "self_manifest": true
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/PERFORMANCE_PRODUCTION.json",
+      "group": "web_audit_evidence",
+      "bytes": 408242,
+      "sha256": "beb77ea644d54ae9cd16b3772864bac762d81dc055a16712a5850787e256b315",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/PERFORMANCE_REACT.json",
+      "group": "web_audit_evidence",
+      "bytes": 46050,
+      "sha256": "fe544097462f0e3421f6f9f893eecc92e1793c515a7b34152f45a29cb6a1ec5e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/POSTGRESQL_FINAL.json",
+      "group": "web_audit_evidence",
+      "bytes": 6718,
+      "sha256": "9e60cde2ad1790805da1ff15dd0b82dc5993a7c95485c945ef2d6a314f6b3032",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/PRE_FOLLOWUP_BROWSER_INPUTS.json",
+      "group": "web_audit_evidence",
+      "bytes": 27525,
+      "sha256": "bf262fa6847556738fc827e255f38fc1f80407c63a4dcf4146c08f1c675f45ca",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/VERIFICATION_RESULTS.json",
+      "group": "web_audit_evidence",
+      "bytes": 14389,
+      "sha256": "133ddb2b595a82fe89babddcade34fc6c1e13b9297164da228afb3e8c267ba14",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/MANIFEST.json",
+      "group": "web_audit_evidence",
+      "bytes": 3940,
+      "sha256": "a04d8634fed97ad00f8100a51576410fa5279ddf5dfa006d8113264bd42016f9",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/README.md",
+      "group": "web_audit_evidence",
+      "bytes": 3147,
+      "sha256": "8652d444ff74ebfff4255ce8f541eb71fce144c33aa390aca1195f61bd40418c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/account-widths-final.json",
+      "group": "web_audit_evidence",
+      "bytes": 41329,
+      "sha256": "7b0ac3616412de460839b843316ff174c9221d6b69207f3e9f52c39ea67f79af",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/account-widths-initial.json",
+      "group": "web_audit_evidence",
+      "bytes": 37270,
+      "sha256": "c7489ba0ec1cc43f98a46f885932b3e47ed62dc0b1b813ceeb9e2232081ac833",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/auth-controlled-red.json",
+      "group": "web_audit_evidence",
+      "bytes": 1638,
+      "sha256": "049ecec69434791ad44e200a4489b6185062568f3cf847e3aed468edfff6c086",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/auth-five-profiles-pass.json",
+      "group": "web_audit_evidence",
+      "bytes": 2095,
+      "sha256": "24c4daae8fa4d91bfe1aa3d58abd850b8ce4b352a936397f1cb7156d5ba914ff",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/auth-initial-harness-errors.json",
+      "group": "web_audit_evidence",
+      "bytes": 2067,
+      "sha256": "d85d64366f9ac240f5812cd96a4cfa0e194064ef9126ad66dc9fd1edbbeb279c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/security-controlled-red.json",
+      "group": "web_audit_evidence",
+      "bytes": 1554,
+      "sha256": "894028c7c14ded5db5bff97ce8bcfa6c46131b91fb2c7a2d0551fa58f94148c9",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/security-five-profiles-pass.json",
+      "group": "web_audit_evidence",
+      "bytes": 2089,
+      "sha256": "a80e3f88edcc261f7cd00cbcf4f71f02b25751fad17c09fb5b1148c70953e5af",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/design-checks/security-initial-harness-errors.json",
+      "group": "web_audit_evidence",
+      "bytes": 1957,
+      "sha256": "397f1c178dba1f8ffb694cb00811ab9a8fb4e074841fb6ae93dc13d6bc94231d",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/ACCOUNT_SCREENSHOTS.json",
+      "group": "web_audit_evidence",
+      "bytes": 33935,
+      "sha256": "b08ee22a5f64a5743f838ef85e9198de64f3fc0c4ac9c3d514d49bc1225a6475",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/CONTACT_SHEETS.json",
+      "group": "web_audit_evidence",
+      "bytes": 61987,
+      "sha256": "5c23ab88d8299dd353ef60b777018e44ac20ffa0eec7281e939023f62dd60970",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/INDEX.md",
+      "group": "web_audit_evidence",
+      "bytes": 29756,
+      "sha256": "7c34bdf4fdc96cfbec4adcd96d2c8f37eddc528a18fb3b94fe4b6c0b04e2606c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/SECURITY_NARROW.json",
+      "group": "web_audit_evidence",
+      "bytes": 1737,
+      "sha256": "653069b4c9bea3134c01e5412d3eb3588b60ace97e9e5dcf697fef7f5b4d6401",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/1440-account-delete-review.png",
+      "group": "web_audit_evidence",
+      "bytes": 125209,
+      "sha256": "f773fa49ca10d4350196620bcbc96765ddd7b315de8d127135ac2b389acb6e92",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/1440-account-import-review.png",
+      "group": "web_audit_evidence",
+      "bytes": 142918,
+      "sha256": "f115d49bf22d636b791e91dac48fc674e123a80203fe8638fa98d84f28ecba76",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/1440-account-overview.png",
+      "group": "web_audit_evidence",
+      "bytes": 146017,
+      "sha256": "aeeac3c5cd7c905774f462d21dc9f96edeb946e4fd6f280f1244ca226d0a0c8c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/1440-account-privacy.png",
+      "group": "web_audit_evidence",
+      "bytes": 119093,
+      "sha256": "b9a33a5ce478ed96db41db29bbf78e91073c6f5f5769ad414dac34dd63f15f7d",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/1440-account-profile.png",
+      "group": "web_audit_evidence",
+      "bytes": 112455,
+      "sha256": "c297d92083b549609c784686389b7436f241df14bcacd1bb4cf47cd494b612b9",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/1440-account-security.png",
+      "group": "web_audit_evidence",
+      "bytes": 173471,
+      "sha256": "34e3033d96625492b6a3df1ab5ca6fc570a7eb2a0dadaaf9b7016a95c35a965c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/1440-account-training.png",
+      "group": "web_audit_evidence",
+      "bytes": 117061,
+      "sha256": "4ff22689c2903ee19d08d5e66c67162b1ea5176f707553a70e501e97903480ca",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/1440-auth-forgot.png",
+      "group": "web_audit_evidence",
+      "bytes": 91345,
+      "sha256": "dee04124d4812d35a015fd73c0674f67d1b571d49ea4fc5053399110aea40b2d",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/1440-auth-signin.png",
+      "group": "web_audit_evidence",
+      "bytes": 96097,
+      "sha256": "4c33429c91dd5271a633cf6700a48041d02ee222158e49da225c07315455dc77",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/1440-auth-signup.png",
+      "group": "web_audit_evidence",
+      "bytes": 135792,
+      "sha256": "6f5b8991a55d5f8695b3a5691ea2e69457903d9f5e1cc8c45d7bcf428a89d11e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/1440-cloud-conflict.png",
+      "group": "web_audit_evidence",
+      "bytes": 133241,
+      "sha256": "2a587f29456eaf618b62c101aeea401d6caa1dd06ee6d60aebfc9dc8a9481aa9",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/1440-cloud-loading.png",
+      "group": "web_audit_evidence",
+      "bytes": 156162,
+      "sha256": "63b03753447cccee945a0f5237e803986b8eb428b7245fe09212f7796dc7b89e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/1440-cloud-pending-save.png",
+      "group": "web_audit_evidence",
+      "bytes": 114470,
+      "sha256": "8d444c4a2a2e108da0964eae0106da5b50ed7124c8da5cea7b4fe2a5f8ca7953",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/1440-cloud-save-error.png",
+      "group": "web_audit_evidence",
+      "bytes": 122465,
+      "sha256": "64098574534fd8c1239f17d75f01c3448cfa85fcce1350f956159a85188f44ff",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/1440-cloud-unavailable.png",
+      "group": "web_audit_evidence",
+      "bytes": 58138,
+      "sha256": "249d799167a5366cb4e8b9187b40a660a6e9ee4ef7c1a3b78674df66b78bf33d",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/1440-session-error.png",
+      "group": "web_audit_evidence",
+      "bytes": 31774,
+      "sha256": "ee69d9860f3da4b5d9a25015d6067dca3761ebc26cc5164e8ac29f4c1745b7fc",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/390-account-delete-review.png",
+      "group": "web_audit_evidence",
+      "bytes": 83614,
+      "sha256": "d8698183cd5ed023cefed92011d6e88bff1539b4a939cfa6de1d812ab34fd19d",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/390-account-import-review.png",
+      "group": "web_audit_evidence",
+      "bytes": 98748,
+      "sha256": "1f19b1633a5ca6da281895c7f50571d4fe68ff2576cd9520126572b200b90358",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/390-account-overview.png",
+      "group": "web_audit_evidence",
+      "bytes": 91706,
+      "sha256": "742bba34fd61eb7b21d831f03201be412234b81afe0edfda353a77401462a0f4",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/390-account-privacy.png",
+      "group": "web_audit_evidence",
+      "bytes": 77465,
+      "sha256": "704c129317165b8a82d9300fe7603f988a81de7702ea1d6e647aea3a392af108",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/390-account-profile.png",
+      "group": "web_audit_evidence",
+      "bytes": 72318,
+      "sha256": "8c7adb17d53d20cebc814411c5fd6f89c4ffa5a3efef9e0968721ab7b24e4aa6",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/390-account-security.png",
+      "group": "web_audit_evidence",
+      "bytes": 124943,
+      "sha256": "bfd9ad6d949537ad8f7fb2cb906e9b35451ae1ed32630a792c9dcaa3f59db01e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/390-account-training.png",
+      "group": "web_audit_evidence",
+      "bytes": 74816,
+      "sha256": "c9717c85fd312ff8a0762546683660ffb572e1e3c273e0a83ca48638ff2c8762",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/390-auth-forgot.png",
+      "group": "web_audit_evidence",
+      "bytes": 50180,
+      "sha256": "c8c04c94faddc1b2de91dc1e96d1411a82c6d425c09465aebd4460c224fe2d39",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/390-auth-signin.png",
+      "group": "web_audit_evidence",
+      "bytes": 55459,
+      "sha256": "fc25c0a3c46fbe48a51e82f6112aa93e4cc943452bd2e1d56d7dd17c435ca581",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/390-auth-signup.png",
+      "group": "web_audit_evidence",
+      "bytes": 87032,
+      "sha256": "0eef8e3c8d36c5995853bb05997f501712c4613c477f1e86b0baa2017cf6808d",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/390-cloud-conflict.png",
+      "group": "web_audit_evidence",
+      "bytes": 92427,
+      "sha256": "8ecde368766a55aadc00a170d4c1842907b89aa01a4df4a43a524d1a47403784",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/390-cloud-loading.png",
+      "group": "web_audit_evidence",
+      "bytes": 101449,
+      "sha256": "1bf98a9b61beb7c89928a6aa269f465ca1f49b14af1b4e13999614bbab161b16",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/390-cloud-pending-save.png",
+      "group": "web_audit_evidence",
+      "bytes": 73797,
+      "sha256": "97382f6b8a7aea33ed9c2017c38b15bcb99d6e70c76ad5aae2f7672235ae07be",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/390-cloud-save-error.png",
+      "group": "web_audit_evidence",
+      "bytes": 81994,
+      "sha256": "d270a0ead70fa6c7b469b2be41110d5366f74be436ca79ad1b7425cbc49b32dc",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/390-cloud-unavailable.png",
+      "group": "web_audit_evidence",
+      "bytes": 25920,
+      "sha256": "aeb5dd1a13692bc52f25fb7927fb6dc1d13c4b83cbca84dc3b4eb5c13ccd5e5d",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/390-session-error.png",
+      "group": "web_audit_evidence",
+      "bytes": 23743,
+      "sha256": "7ae2434070913ae94bcb81411df1530947a20e44ac0c8e378f96e428c82d7104",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/768-account-delete-review.png",
+      "group": "web_audit_evidence",
+      "bytes": 112331,
+      "sha256": "1f0013713c90d92c139c94f8058fef0e51205210d55798f00d506444ff6326e2",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/768-account-import-review.png",
+      "group": "web_audit_evidence",
+      "bytes": 125362,
+      "sha256": "9143489efdf3e1843c04a5465bfee23324105ac1e6e5a49500fda78ac946b42a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/768-account-overview.png",
+      "group": "web_audit_evidence",
+      "bytes": 124960,
+      "sha256": "f60936591c755b2749f5e490263f6c60de0555d81d47938ce755a674b43ca695",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/768-account-privacy.png",
+      "group": "web_audit_evidence",
+      "bytes": 105935,
+      "sha256": "467a80643214a3d80e5500ddc64dec44830cf8e7c629dd38ff638df8257ed9dc",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/768-account-profile.png",
+      "group": "web_audit_evidence",
+      "bytes": 97574,
+      "sha256": "dc6803f142215c596c828d695aaebfc25bbb06c15b2f2bd2a9f6cf7c437921a9",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/768-account-security.png",
+      "group": "web_audit_evidence",
+      "bytes": 155292,
+      "sha256": "bad1499d1d2fa32d7062028f53a153eed7d1a39fcbf0f942be09ee9851131c2f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/768-account-training.png",
+      "group": "web_audit_evidence",
+      "bytes": 100836,
+      "sha256": "d896101d403daff66af86be255f7e33a79a5529c545bf158c9ee2b3ca57dd220",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/768-auth-forgot.png",
+      "group": "web_audit_evidence",
+      "bytes": 75351,
+      "sha256": "a8b02d9df57bd9135618a2e66ec21608b3a4aeaef572cf4ae3149a6fe41e37fa",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/768-auth-signin.png",
+      "group": "web_audit_evidence",
+      "bytes": 80734,
+      "sha256": "35f90d600d2f8d7ffed815892bc53208334ef79738a44d4f14451baeea45de0c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/768-auth-signup.png",
+      "group": "web_audit_evidence",
+      "bytes": 115859,
+      "sha256": "7606b2c4e286d8939fa2cd931093eccc6a8e609ded5cf87965e2a8fbe8974661",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/768-cloud-conflict.png",
+      "group": "web_audit_evidence",
+      "bytes": 118934,
+      "sha256": "906eba9256767cb45b841381ca3f97cef157c75fe311d7161284eb60c43e8f5d",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/768-cloud-loading.png",
+      "group": "web_audit_evidence",
+      "bytes": 147476,
+      "sha256": "73e7df3168e1ff0218a6fd4c74448960abf8dfd21d39164731e173102c3105a3",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/768-cloud-pending-save.png",
+      "group": "web_audit_evidence",
+      "bytes": 98814,
+      "sha256": "fabd7ffa4ae03eb0194b803eeba10bc4bf6c81a58d5cdd9937da645d116f909f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/768-cloud-save-error.png",
+      "group": "web_audit_evidence",
+      "bytes": 107708,
+      "sha256": "aca40997c386791ca3df4cf66482b43510a26febbf0f912c971b3a816a474587",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/768-cloud-unavailable.png",
+      "group": "web_audit_evidence",
+      "bytes": 52519,
+      "sha256": "e9c523aa120a735c3b017b5d461583bd3bd2812e487ec1aaa3c8708cfc38529b",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-after/768-session-error.png",
+      "group": "web_audit_evidence",
+      "bytes": 23595,
+      "sha256": "1aec54965b9ffec27229ef9a4cf6d67c67503a32d4d046ab62d68c9a11b28076",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/1440-account-delete-review.png",
+      "group": "web_audit_evidence",
+      "bytes": 125209,
+      "sha256": "f773fa49ca10d4350196620bcbc96765ddd7b315de8d127135ac2b389acb6e92",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/1440-account-import-review.png",
+      "group": "web_audit_evidence",
+      "bytes": 142918,
+      "sha256": "f115d49bf22d636b791e91dac48fc674e123a80203fe8638fa98d84f28ecba76",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/1440-account-overview.png",
+      "group": "web_audit_evidence",
+      "bytes": 145234,
+      "sha256": "d8afa98b802ed8228d53be41b68695f3baa3a0a9479cef5201644e1dda217e8b",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/1440-account-privacy.png",
+      "group": "web_audit_evidence",
+      "bytes": 119093,
+      "sha256": "b9a33a5ce478ed96db41db29bbf78e91073c6f5f5769ad414dac34dd63f15f7d",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/1440-account-profile.png",
+      "group": "web_audit_evidence",
+      "bytes": 112454,
+      "sha256": "a758af49496d0fa9effbea4ab69a6807ba3b4dc103a604cea97208a32e4351cc",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/1440-account-security.png",
+      "group": "web_audit_evidence",
+      "bytes": 173471,
+      "sha256": "34e3033d96625492b6a3df1ab5ca6fc570a7eb2a0dadaaf9b7016a95c35a965c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/1440-account-training.png",
+      "group": "web_audit_evidence",
+      "bytes": 117061,
+      "sha256": "4ff22689c2903ee19d08d5e66c67162b1ea5176f707553a70e501e97903480ca",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/1440-auth-forgot.png",
+      "group": "web_audit_evidence",
+      "bytes": 91254,
+      "sha256": "6eedf9dee40803c9c78b89214685b99bb6f6e56f2b3fdc776e57cba41e0c1c04",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/1440-auth-signin.png",
+      "group": "web_audit_evidence",
+      "bytes": 96012,
+      "sha256": "1a9cdc104b10d730f4ef2c34e11a6e5f84ad067fb8c4f9b2c421b9570471ed02",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/1440-auth-signup.png",
+      "group": "web_audit_evidence",
+      "bytes": 135730,
+      "sha256": "353cdd506c970104d87ecf9379c38084ce65f2f27b117df370c5ec93f30e41b4",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/1440-cloud-conflict.png",
+      "group": "web_audit_evidence",
+      "bytes": 133219,
+      "sha256": "2b93532bf29b2ced9415100d0c16c842656c81d9ec810247ebb2a99a211eb68e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/1440-cloud-loading.png",
+      "group": "web_audit_evidence",
+      "bytes": 156162,
+      "sha256": "63b03753447cccee945a0f5237e803986b8eb428b7245fe09212f7796dc7b89e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/1440-cloud-pending-save.png",
+      "group": "web_audit_evidence",
+      "bytes": 114470,
+      "sha256": "8d444c4a2a2e108da0964eae0106da5b50ed7124c8da5cea7b4fe2a5f8ca7953",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/1440-cloud-save-error.png",
+      "group": "web_audit_evidence",
+      "bytes": 122455,
+      "sha256": "c153ee7ee30c8da012d9686f5151aca1eb5db67233644e2632dd517289300832",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/1440-cloud-unavailable.png",
+      "group": "web_audit_evidence",
+      "bytes": 58138,
+      "sha256": "249d799167a5366cb4e8b9187b40a660a6e9ee4ef7c1a3b78674df66b78bf33d",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/1440-session-error.png",
+      "group": "web_audit_evidence",
+      "bytes": 31774,
+      "sha256": "ee69d9860f3da4b5d9a25015d6067dca3761ebc26cc5164e8ac29f4c1745b7fc",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/390-account-delete-review.png",
+      "group": "web_audit_evidence",
+      "bytes": 82786,
+      "sha256": "82ef09df9229c250fd3ed1aba8f0ab00c54a7100ab337e3a43bdb6f51d960224",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/390-account-import-review.png",
+      "group": "web_audit_evidence",
+      "bytes": 98035,
+      "sha256": "4fb26fd0d5a5b7d3ec217e0faaa58ef54151a87b1f7556c9064aef29925f9f40",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/390-account-overview.png",
+      "group": "web_audit_evidence",
+      "bytes": 90009,
+      "sha256": "5550f7f2c0e748434bd7373d0b57a8bff41bd8b293eadc90bbc380939326675e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/390-account-privacy.png",
+      "group": "web_audit_evidence",
+      "bytes": 76698,
+      "sha256": "616b3b1bffeee1e5defbc6c6bf338c473261c2e059657ca9fe0154065d85cc00",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/390-account-profile.png",
+      "group": "web_audit_evidence",
+      "bytes": 69559,
+      "sha256": "1d143153f59384170693c5b22d3a3fa51a28568110cd728cddf2cb28cc0eb088",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/390-account-security.png",
+      "group": "web_audit_evidence",
+      "bytes": 123491,
+      "sha256": "9c11d0191f690ceed1be3b694c7a70e931716492d25055196997447a9d7d427e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/390-account-training.png",
+      "group": "web_audit_evidence",
+      "bytes": 74135,
+      "sha256": "90009ce5b14f6bfac67e6dd61c6b1d6ad973dce41190629ea72de42af2271b81",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/390-auth-forgot.png",
+      "group": "web_audit_evidence",
+      "bytes": 50210,
+      "sha256": "abffa98b6545e9bffda472dae4d46d703ec207fd3e0c26b8e68ec29789ba9a78",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/390-auth-signin.png",
+      "group": "web_audit_evidence",
+      "bytes": 55472,
+      "sha256": "783b752a20cfa4e380e28e32436c60321e0e5250e43ba84c95cbca1dbf0412a0",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/390-auth-signup.png",
+      "group": "web_audit_evidence",
+      "bytes": 87047,
+      "sha256": "d428cb577049c2462227a3ff43f96ea53d3b4cad669501cfc2761c20a9320d51",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/390-cloud-conflict.png",
+      "group": "web_audit_evidence",
+      "bytes": 89664,
+      "sha256": "a1cdb2b32bcc67a1a4be439ce838c6fb3b044077787642a4babc15eeb4c3a4b2",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/390-cloud-loading.png",
+      "group": "web_audit_evidence",
+      "bytes": 101449,
+      "sha256": "1bf98a9b61beb7c89928a6aa269f465ca1f49b14af1b4e13999614bbab161b16",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/390-cloud-pending-save.png",
+      "group": "web_audit_evidence",
+      "bytes": 71071,
+      "sha256": "107eab20481a877ced324934de2d95155b40c8de7eafb3ea67be86a4e3c547f3",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/390-cloud-save-error.png",
+      "group": "web_audit_evidence",
+      "bytes": 79278,
+      "sha256": "e2e8708b6ed61bdfdcfdef1018de76b5e7ad1cd94a9b8cef35f82f2e1cf3c1a0",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/390-cloud-unavailable.png",
+      "group": "web_audit_evidence",
+      "bytes": 25920,
+      "sha256": "aeb5dd1a13692bc52f25fb7927fb6dc1d13c4b83cbca84dc3b4eb5c13ccd5e5d",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/390-session-error.png",
+      "group": "web_audit_evidence",
+      "bytes": 23743,
+      "sha256": "7ae2434070913ae94bcb81411df1530947a20e44ac0c8e378f96e428c82d7104",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/768-account-delete-review.png",
+      "group": "web_audit_evidence",
+      "bytes": 124889,
+      "sha256": "708d946ad14c2f0c0982de3b1dd052dfd5fcce6bf696c57025f1a44578b486ef",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/768-account-import-review.png",
+      "group": "web_audit_evidence",
+      "bytes": 137073,
+      "sha256": "d7c47711835c56224806171143dec286ee0fbe659fb9d6dd151c941619a644a3",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/768-account-overview.png",
+      "group": "web_audit_evidence",
+      "bytes": 125950,
+      "sha256": "0aaf66b4803306da82e3163b6964eb2b398080b8b521ada890b30360b08b33d0",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/768-account-privacy.png",
+      "group": "web_audit_evidence",
+      "bytes": 118338,
+      "sha256": "75440daa46640c45c3a3c8cf032dcefa47ddac6899c8bd4d77b6c41b67587f45",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/768-account-profile.png",
+      "group": "web_audit_evidence",
+      "bytes": 106999,
+      "sha256": "26c1e89825c39bfddcb244ae43060ab97bda82e72a88eab554e7b8195225f1cc",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/768-account-security.png",
+      "group": "web_audit_evidence",
+      "bytes": 167169,
+      "sha256": "d4d45035f6c2bf11fe1269dae005ea9feac317d9ce811f2be67c42a7c2de85ef",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/768-account-training.png",
+      "group": "web_audit_evidence",
+      "bytes": 110437,
+      "sha256": "763b4064a2aaae78e23b3672d02164d23cab2a15461ae5c283ffe091db958fcc",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/768-auth-forgot.png",
+      "group": "web_audit_evidence",
+      "bytes": 80235,
+      "sha256": "5c8dc5ebc7206b189b2de185074fe17c9839ded6c6531d1b3ad9f5b686ff4101",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/768-auth-signin.png",
+      "group": "web_audit_evidence",
+      "bytes": 83732,
+      "sha256": "b58d77a12f39eb921aff683b81f470f4c54e6d94f26f68ec647dc566d73809b4",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/768-auth-signup.png",
+      "group": "web_audit_evidence",
+      "bytes": 125892,
+      "sha256": "8c919098639472d71daff84ff9842b8ea8fa9b0eacf4d68b8b631b4c99b5c1d3",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/768-cloud-conflict.png",
+      "group": "web_audit_evidence",
+      "bytes": 131935,
+      "sha256": "445ffc82424c63575ff9e49cc413a7b2034d85c02e85705769d248997f5e6214",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/768-cloud-loading.png",
+      "group": "web_audit_evidence",
+      "bytes": 147476,
+      "sha256": "73e7df3168e1ff0218a6fd4c74448960abf8dfd21d39164731e173102c3105a3",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/768-cloud-pending-save.png",
+      "group": "web_audit_evidence",
+      "bytes": 108796,
+      "sha256": "5abc31b0a5a61ca67f1378ef9b7c307449d2044ef094a3012f0e100412210a36",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/768-cloud-save-error.png",
+      "group": "web_audit_evidence",
+      "bytes": 118414,
+      "sha256": "bf6c4bab0ba853a086eb425ac7f3da85ab20d261706a418a4f8c4cc289a28f0c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/768-cloud-unavailable.png",
+      "group": "web_audit_evidence",
+      "bytes": 52519,
+      "sha256": "e9c523aa120a735c3b017b5d461583bd3bd2812e487ec1aaa3c8708cfc38529b",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/account-before/768-session-error.png",
+      "group": "web_audit_evidence",
+      "bytes": 23595,
+      "sha256": "1aec54965b9ffec27229ef9a4cf6d67c67503a32d4d046ab62d68c9a11b28076",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/account-1440-pairs-01.png",
+      "group": "web_audit_evidence",
+      "bytes": 198511,
+      "sha256": "2379039eb6e9df5a8d31008d1e028ee74ffb038ccb5d9a06162a4e0977fbb168",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/account-1440-pairs-02.png",
+      "group": "web_audit_evidence",
+      "bytes": 190263,
+      "sha256": "d611cae53f26e8dbc96892e169d2be100d8b5f241e72f2330190c9344d853039",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/account-1440-pairs-03.png",
+      "group": "web_audit_evidence",
+      "bytes": 177639,
+      "sha256": "95d501affbf508f6b66f141ddfe0b5bab3b41959dd60c463ab674a557094942a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/account-1440-pairs-04.png",
+      "group": "web_audit_evidence",
+      "bytes": 171098,
+      "sha256": "34df6b0409aefc1a84a64711ff34415c26dffb43351195aa4bd3db77e9b96528",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/account-390-pairs-01.png",
+      "group": "web_audit_evidence",
+      "bytes": 195508,
+      "sha256": "e96f2868cf795f8130ed0372c413335f5ce92e1e2c29cda2b94c30ea84019e84",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/account-390-pairs-02.png",
+      "group": "web_audit_evidence",
+      "bytes": 187159,
+      "sha256": "375d0a1dc4ece322297f145d3f927638335f9c8cf05c8de325bcb295e9ead5a7",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/account-390-pairs-03.png",
+      "group": "web_audit_evidence",
+      "bytes": 170531,
+      "sha256": "8c98fbf8155608dcf19ffe5595ec2d7aefba8145682d5abcc1906aae546f440a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/account-390-pairs-04.png",
+      "group": "web_audit_evidence",
+      "bytes": 185685,
+      "sha256": "11fa7a2fdf3ccfe1a838467fb65060b2f85f3e810bcf87d08c60f31c68886b6a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/account-768-pairs-01.png",
+      "group": "web_audit_evidence",
+      "bytes": 282364,
+      "sha256": "5b5e61a2351e0367aee2174f080e038c7a692d079e5031f2fe832d8eb347c224",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/account-768-pairs-02.png",
+      "group": "web_audit_evidence",
+      "bytes": 264096,
+      "sha256": "b7fbe8d4b1c6918010890aa67c6e5c65a429b24a1fecf8686bfd2d4b9771897a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/account-768-pairs-03.png",
+      "group": "web_audit_evidence",
+      "bytes": 214550,
+      "sha256": "f6eb83340076aed1bf3ee60a368d32edfebc7513d64d34474f491589b9b5a9c2",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/account-768-pairs-04.png",
+      "group": "web_audit_evidence",
+      "bytes": 226730,
+      "sha256": "c76f900baf0728bd30e985bbacb340256b3cc1b5de6709e6f9c02abe6b80108f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/guest-1536-pairs-01.png",
+      "group": "web_audit_evidence",
+      "bytes": 431846,
+      "sha256": "b496c0d8ce844f0a3bdc20dd470a1fcd9f51578f8ad861862a9b2e7b60862e58",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/guest-1536-pairs-02.png",
+      "group": "web_audit_evidence",
+      "bytes": 372268,
+      "sha256": "1fd3ef95ae6b378a356dc3eeb30ab352a7a36750087ae6a7c2e143df74dbee18",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/guest-1536-pairs-03.png",
+      "group": "web_audit_evidence",
+      "bytes": 259512,
+      "sha256": "abd126da00f83517415842831b3ebb9f47ac20be5d98e4a05e73ff290d19daa8",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/guest-1536-pairs-04.png",
+      "group": "web_audit_evidence",
+      "bytes": 245018,
+      "sha256": "c5a26b08896d7962b4045063c34eeb97b9ebc7fa6f841338045e5b12e0c65b1a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/guest-1536-pairs-05.png",
+      "group": "web_audit_evidence",
+      "bytes": 235283,
+      "sha256": "066c9b18a6453ca04da1bf122241f480585710827e890bf9b6e86c8dfe918a1a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/guest-1536-pairs-06.png",
+      "group": "web_audit_evidence",
+      "bytes": 30951,
+      "sha256": "001e329d7090d46cef788112fc1ce8965f5d22cf9d5bff933fff4f4bbae2c291",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/guest-390-pairs-01.png",
+      "group": "web_audit_evidence",
+      "bytes": 236958,
+      "sha256": "5687bd4026caec614c67104fd0e3eeeafc92129426eba096e6f0e8f3143fc468",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/guest-390-pairs-02.png",
+      "group": "web_audit_evidence",
+      "bytes": 216831,
+      "sha256": "f7e1f61be0d0eb32c07d8c6df94111ed6fd6ff65e489ffd6c9631f19523cfe34",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/guest-390-pairs-03.png",
+      "group": "web_audit_evidence",
+      "bytes": 174903,
+      "sha256": "05ee14a81b570cac35cfd6d4d62276252deff750ae2bf7cb8178e12bfbb8ac9d",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/guest-390-pairs-04.png",
+      "group": "web_audit_evidence",
+      "bytes": 178925,
+      "sha256": "f5b083747ef7f3a547a652db3dc5fb4f768a3be35f1eef900ea24fb62a91bf70",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/guest-390-pairs-05.png",
+      "group": "web_audit_evidence",
+      "bytes": 171026,
+      "sha256": "5c3dbfda91a9ee07548517f98fcc65098109f23b1bddbf2d9d81d93ad742b86c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/guest-390-pairs-06.png",
+      "group": "web_audit_evidence",
+      "bytes": 36652,
+      "sha256": "920482c9c9406199dc7dce64b684ba7e52ca5709eba0e4ab2acbbbc6aaa2b46c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/guest-768-pairs-01.png",
+      "group": "web_audit_evidence",
+      "bytes": 306814,
+      "sha256": "acca1220412d941139a555e44c87b77e64a76df99bfa280dc70534b6fed4138f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/guest-768-pairs-02.png",
+      "group": "web_audit_evidence",
+      "bytes": 269366,
+      "sha256": "7b2c02c72083baca98f196ff24680c1473798bb9172c30f887db9249fe6bc5a2",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/guest-768-pairs-03.png",
+      "group": "web_audit_evidence",
+      "bytes": 221629,
+      "sha256": "4e2386018c85d55f1e95954ff5af65fa5cb7f2e35208d4a70bf2f7be11043a47",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/guest-768-pairs-04.png",
+      "group": "web_audit_evidence",
+      "bytes": 201086,
+      "sha256": "07373c090dc60887fd43d04762ecf7ff0c1116b795f520fc01ed33e792c18827",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/guest-768-pairs-05.png",
+      "group": "web_audit_evidence",
+      "bytes": 212059,
+      "sha256": "f86106413b929a48675c71c4a5c16732815c1413f9828496f6f4cf00f2c14887",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/contact-sheets/guest-768-pairs-06.png",
+      "group": "web_audit_evidence",
+      "bytes": 29593,
+      "sha256": "3d18e2afe3d0535dda94537ee8dcb30f2e1874f9cb617f936b5a5b6a95b5c7f0",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/diagnostics/account-pre-final/1440-account-privacy.png",
+      "group": "web_audit_evidence",
+      "bytes": 119083,
+      "sha256": "b2595804a46cdf289058d0c64e02ce0614b53967739b079dd07eec3c0cfd5e1f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/diagnostics/account-pre-final/1440-account-training.png",
+      "group": "web_audit_evidence",
+      "bytes": 117051,
+      "sha256": "ba3312d67d738f884f13eb1c2530be56a7033e61c418d4944b5dcead5275d44f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/diagnostics/account-pre-final/768-auth-forgot.png",
+      "group": "web_audit_evidence",
+      "bytes": 80201,
+      "sha256": "2b7b8e261829572c246c2fcd4d6e8cb9b772d82c753c9805c6e1d3f62e63db03",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/diagnostics/account-pre-final/768-auth-signin.png",
+      "group": "web_audit_evidence",
+      "bytes": 83737,
+      "sha256": "6b7d31e3bef2cf5876dd7f09d354bbee220629034a811f9d896665fe197fa03f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/diagnostics/account-pre-final/768-auth-signup.png",
+      "group": "web_audit_evidence",
+      "bytes": 125895,
+      "sha256": "8d05a0fc2d7a3f07e8cf5b87fa0b125ecd68c1019550c59b8192471f6c380ad8",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/diagnostics/account-pre-final/768-cloud-save-error.png",
+      "group": "web_audit_evidence",
+      "bytes": 107708,
+      "sha256": "918ae166b2f410c21c9319f78f794188794cec9e6de1bcd23429fb0a538fade2",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/diagnostics/guest-prior-final/1536-exercise-guide.png",
+      "group": "web_audit_evidence",
+      "bytes": 411500,
+      "sha256": "a5db13186aec5cb7f0533254da825fd1c95a4e2b1972e5243431884b10e08742",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/diagnostics/guest-prior-final/1536-export-complete.png",
+      "group": "web_audit_evidence",
+      "bytes": 121030,
+      "sha256": "8e723691bc9b36f4a2885da94d83beae96d95490ac9ed5ac4bcd6fa2de0e7e82",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/diagnostics/guest-prior-final/1536-library-search.png",
+      "group": "web_audit_evidence",
+      "bytes": 128696,
+      "sha256": "cb4ebfd1a7e09b58cafbfc2003126223bc79b6ae9c6c9f5220e0c9e733e13441",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/diagnostics/guest-prior-final/1536-routine-editor-prescriptions.png",
+      "group": "web_audit_evidence",
+      "bytes": 215297,
+      "sha256": "b69a1edbd6301068aaeb6621d9830c65d0ce79a971f573c6cd09f8aa3c3ae815",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/diagnostics/guest-prior-final/1536-routine-editor.png",
+      "group": "web_audit_evidence",
+      "bytes": 215334,
+      "sha256": "8e9f07e4cc1a39f79ea9a259e20857c9915da7418f708df1ce920ca9a34ed0ea",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/diagnostics/guest-prior-final/1536-routine-preview.png",
+      "group": "web_audit_evidence",
+      "bytes": 477169,
+      "sha256": "12fa2f010e33ac9bb2b1c03408cb070a0a8408e7b58d643300ef7f4439786b6f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/diagnostics/guest-prior-final/390-exercise-guide.png",
+      "group": "web_audit_evidence",
+      "bytes": 194313,
+      "sha256": "f63f404d62142d377d0f99867864ed5a41ba1105c1c745f15bd723399f8d839b",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/diagnostics/guest-prior-final/390-routine-preview.png",
+      "group": "web_audit_evidence",
+      "bytes": 187457,
+      "sha256": "10c902ae5b41d2352b54d009b039934b29021062695c7b91cb5bd0b91ad93504",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/diagnostics/guest-prior-final/768-routine-preview.png",
+      "group": "web_audit_evidence",
+      "bytes": 350621,
+      "sha256": "3fbb601e93278cffe88e84e0db585df0f76acd6e83afd4d63beb702912e76df3",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-active-workout.png",
+      "group": "web_audit_evidence",
+      "bytes": 167515,
+      "sha256": "d421f475fedf9201ab3a19efcf308dfd0b8f6cc65f397724ce8f66da1612fec5",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-exercise-guide.png",
+      "group": "web_audit_evidence",
+      "bytes": 411457,
+      "sha256": "47371803aaf3e65e6d8d0d961e71860154ada2c7d5b3c999424d12509298961a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-export-complete.png",
+      "group": "web_audit_evidence",
+      "bytes": 121031,
+      "sha256": "b120aa642329a4483e559c82ce2c94b9fd2c014728b1e557b33d5c384ad39a7e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-history-editor-prescriptions.png",
+      "group": "web_audit_evidence",
+      "bytes": 144583,
+      "sha256": "54579f41d0a4994ae0bfed3ab5f9266b906e6a53512770f8f875da334a86e399",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-history-editor.png",
+      "group": "web_audit_evidence",
+      "bytes": 144597,
+      "sha256": "ce4329a5e4f4ac4b1e4d49e2e8c8308b099af82c8d00afc4a50aa5125891ee3e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-history.png",
+      "group": "web_audit_evidence",
+      "bytes": 103917,
+      "sha256": "da3ce34ca5591226c3ddf3db9294ab300160b40dd8a78013b6afe4954eb9a370",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-hold-paused.png",
+      "group": "web_audit_evidence",
+      "bytes": 119930,
+      "sha256": "a86aa1f831db9135e51b72ddd4a9837b5c361ea2443f5b361a0a285b0ec3e66b",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-hold-ready.png",
+      "group": "web_audit_evidence",
+      "bytes": 119291,
+      "sha256": "6f1db00f3c90c12dc4ea5db04440da8bb654b9b693455fdd8c9259cdc472b5d4",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-hold-running.png",
+      "group": "web_audit_evidence",
+      "bytes": 119485,
+      "sha256": "710db990af29413538f7d9b849df8781b2f4656fd8465c0e9fe28b5f6524ee8f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-import-review.png",
+      "group": "web_audit_evidence",
+      "bytes": 157606,
+      "sha256": "e52ce155ff93fae29a411e0a90815a04fe9cfc08aaec80944813598851e83ed5",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-library-search.png",
+      "group": "web_audit_evidence",
+      "bytes": 128734,
+      "sha256": "a682521501c233fe68d402c812b5eb3b4331e96ff551bea48da72b62c41c7a97",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-overview.png",
+      "group": "web_audit_evidence",
+      "bytes": 670191,
+      "sha256": "98a30d9f32a0c341325cfefe6e46a1c97adc58c9b419893ad5fa3fe6d268b8bb",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-privacy.png",
+      "group": "web_audit_evidence",
+      "bytes": 809882,
+      "sha256": "5f2673f63750cc7db7e93601b2b8b9ee21265e4639b4957406de6eb6a106349e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-progress.png",
+      "group": "web_audit_evidence",
+      "bytes": 102475,
+      "sha256": "424b2d4c5b1623ad9e77a1d3ab013d0a7592397b2e5ad62a3fde6176376e16e0",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-recovery.png",
+      "group": "web_audit_evidence",
+      "bytes": 40836,
+      "sha256": "df4adbeb604b6e897ff4f971d640265a6c2304a7f2e3f57805a79122799d040a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-rest-timer.png",
+      "group": "web_audit_evidence",
+      "bytes": 129944,
+      "sha256": "cfeb7449610f430e8e68449ac7ad52048e4e992b82d4bb2fdbb68536f01dcc18",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-routine-detail.png",
+      "group": "web_audit_evidence",
+      "bytes": 311961,
+      "sha256": "8540f1c4ccc63fa03eb74b3649d678e466d8acbb856afa99d451c388bf816543",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-routine-editor-prescriptions.png",
+      "group": "web_audit_evidence",
+      "bytes": 215298,
+      "sha256": "a3f1541c55e004d44b3f9e129d8f05fdfb837ed410d8c5ec8f656d5b3d3cd5ba",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-routine-editor.png",
+      "group": "web_audit_evidence",
+      "bytes": 215335,
+      "sha256": "41e3595f42c1f38d33e142ac2ed586fbcc778fbb40e57edf57bed98811f94414",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-routine-library.png",
+      "group": "web_audit_evidence",
+      "bytes": 257600,
+      "sha256": "54eedbb9deabe75b4a3f65f72950eca8b77a538a25f893f06fd0e8ab69ab4337",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-routine-preview-second.png",
+      "group": "web_audit_evidence",
+      "bytes": 325629,
+      "sha256": "caa6cb6764e44dd42a0dcb5cc2688ece453bcc142f2685310b8e2acec8989190",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-routine-preview.png",
+      "group": "web_audit_evidence",
+      "bytes": 477151,
+      "sha256": "1d9d69e045c8ae81817e21d3d4858944033f33282ed21364b2153b216c8afb61",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-routines.png",
+      "group": "web_audit_evidence",
+      "bytes": 467885,
+      "sha256": "ac96b43b0155a4395c67a95dc3815cbf5cb32dfec1fc7cf000a01072fd019f5f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-settings.png",
+      "group": "web_audit_evidence",
+      "bytes": 112981,
+      "sha256": "94294e75acba3ef867b63b67308c5bfc296e9d13eaebe06acd0038890de5a329",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-terms.png",
+      "group": "web_audit_evidence",
+      "bytes": 574758,
+      "sha256": "3662c443827d379f1a51f9ff64a03e8e072d41fcafba4f771bedf1c452e0730e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/1536-workout-receipt.png",
+      "group": "web_audit_evidence",
+      "bytes": 152029,
+      "sha256": "a294d7294a3414f75c2b1e87ffe5490e0aa36761f1c144e2a63e1ae7c5ea52cc",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-active-workout.png",
+      "group": "web_audit_evidence",
+      "bytes": 108033,
+      "sha256": "396bce3dd1dddeabea8b2e328cd03a7edf57e11561343228d6ffeeb544f620ad",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-exercise-guide.png",
+      "group": "web_audit_evidence",
+      "bytes": 194339,
+      "sha256": "07f4ccbe26d910b8bda003d2262a0bac9b32bcd89090eac86d63c1a6ad560071",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-export-complete.png",
+      "group": "web_audit_evidence",
+      "bytes": 55749,
+      "sha256": "dcba07dc18e5ab439c9e6de23d8ce628478f65ba15c1d1da7be422d0e1132449",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-history-editor-prescriptions.png",
+      "group": "web_audit_evidence",
+      "bytes": 39763,
+      "sha256": "65a5df181f00faa222c91ce36ec92e6c1f0d86dc09d29ef6eddc15db37a7a54a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-history-editor.png",
+      "group": "web_audit_evidence",
+      "bytes": 39745,
+      "sha256": "c96231e271ab38e6ffbe0d0fbb8f85e42bf1b8ebb671714880faf359f3874c53",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-history.png",
+      "group": "web_audit_evidence",
+      "bytes": 63081,
+      "sha256": "7e1546c1d8bcf1076354b2c9acdbdb11dc4784abc5d64a201baa291abd9cdac7",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-hold-paused.png",
+      "group": "web_audit_evidence",
+      "bytes": 39361,
+      "sha256": "c17cd8bcea0b730398d5d036ea18b381a64b09deeef716e673765b0936c891c4",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-hold-ready.png",
+      "group": "web_audit_evidence",
+      "bytes": 38988,
+      "sha256": "ea1d728c22ae661beb65f2e3b0193c9feef1ab63179fb462bdf56c54d139c2d2",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-hold-running.png",
+      "group": "web_audit_evidence",
+      "bytes": 39524,
+      "sha256": "78b03215e072f10a50d7077cbbaeb925c500b428535de1ec08241aa3325fc47b",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-import-review.png",
+      "group": "web_audit_evidence",
+      "bytes": 78293,
+      "sha256": "2d94a5e94063e329aeb1f0fa147412a79f8a784898125224fcb1accdb3106c7f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-library-search.png",
+      "group": "web_audit_evidence",
+      "bytes": 55682,
+      "sha256": "c09b9d64ab8a4749bd48d06789421a700b3d7cf2ec675f9cdb548776af697a0b",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-overview.png",
+      "group": "web_audit_evidence",
+      "bytes": 310614,
+      "sha256": "3be6d918c8395fb17b5d060e2ed5ed203f02c807122dc40aee0a356d12c97536",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-privacy.png",
+      "group": "web_audit_evidence",
+      "bytes": 685148,
+      "sha256": "b6c8ec87913b8feecd1fb30a580d9f78a12813d67f4642c138ba0ff3bbe9e467",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-progress.png",
+      "group": "web_audit_evidence",
+      "bytes": 61717,
+      "sha256": "f4d136959216b4238f1fba2c1b5531a374b9ad7dc38b2340a3e2fe00b2d28e78",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-recovery.png",
+      "group": "web_audit_evidence",
+      "bytes": 31247,
+      "sha256": "8ab1105ba39bab7f881092ad38338b63397353a6337a43f8f1e064aaee145d7a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-rest-timer.png",
+      "group": "web_audit_evidence",
+      "bytes": 50539,
+      "sha256": "e6b9fcf5090a7968c7b8167d1ce8bbbea22efbc3cf921e57500db405c8a00f04",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-routine-detail.png",
+      "group": "web_audit_evidence",
+      "bytes": 109100,
+      "sha256": "8ff0f94609a3d12eac62460ead5f8510266d32b8681119838f983a80865fcf99",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-routine-editor-prescriptions.png",
+      "group": "web_audit_evidence",
+      "bytes": 43416,
+      "sha256": "fa4ee1276c0fd55dbf0379508d5f60645e3a6f9451872f85cf976bc2c69cc469",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-routine-editor.png",
+      "group": "web_audit_evidence",
+      "bytes": 52321,
+      "sha256": "87003270258bc23816e1980dd65ecaa2954aa053ac5e16e0527c9ccab1e59ea0",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-routine-library.png",
+      "group": "web_audit_evidence",
+      "bytes": 58004,
+      "sha256": "d21496e69e12593d4e2d7ef19fb115d6e7ec7a78e783960f4557302606b91e9c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-routine-preview-second.png",
+      "group": "web_audit_evidence",
+      "bytes": 139984,
+      "sha256": "dabfaf6a53bb9183a91812cfdfb91f0760b2006b54a01e2e87e9fbdaf45f3558",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-routine-preview.png",
+      "group": "web_audit_evidence",
+      "bytes": 187521,
+      "sha256": "353d858be6bfda4fd6a5ab18a4861b4d2aa75c9919d6594034b5bd9436ad3749",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-routines.png",
+      "group": "web_audit_evidence",
+      "bytes": 347719,
+      "sha256": "54f2dc7b1906e9d449daf4911d98737d48bc833ee681dc42929c3f414caf08c0",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-settings.png",
+      "group": "web_audit_evidence",
+      "bytes": 78336,
+      "sha256": "8adc034ecf7be00fd2aab05706df48e0ed8682d1877fe1d60f3cf3ddf2a0adec",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-terms.png",
+      "group": "web_audit_evidence",
+      "bytes": 480787,
+      "sha256": "ea0fea37f1bf19711ffdd893005059bf640fea6a0eafddb2885bab42a212dfb1",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/390-workout-receipt.png",
+      "group": "web_audit_evidence",
+      "bytes": 46798,
+      "sha256": "e9c5e79a73e8ef172df9ad9e54bf85d8c29fc765b0f0b86fc84b9b48968c5d0c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-active-workout.png",
+      "group": "web_audit_evidence",
+      "bytes": 146719,
+      "sha256": "ee56acaf5394942145ac2b3bf98a8312f2c556713b4eaaef9e59306d6ec387ad",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-exercise-guide.png",
+      "group": "web_audit_evidence",
+      "bytes": 314079,
+      "sha256": "10136c5d057e31008cedf6ad92b5b0bdd082ff4f2fa219b90a3ef504961737dc",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-export-complete.png",
+      "group": "web_audit_evidence",
+      "bytes": 107537,
+      "sha256": "1d15a18275783ce04def930b9486c5edac894425d1cc4392d3c55374be2978a8",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-history-editor-prescriptions.png",
+      "group": "web_audit_evidence",
+      "bytes": 68810,
+      "sha256": "b27fe2e611decf81d916e23570238f6bb22f8e85ea074d3ad98636ace2d99c93",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-history-editor.png",
+      "group": "web_audit_evidence",
+      "bytes": 68823,
+      "sha256": "ff3c8657abf24fd7699c8eab7c330af29bbb56e19a2fe5950b0477f8f2ce66e7",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-history.png",
+      "group": "web_audit_evidence",
+      "bytes": 94148,
+      "sha256": "56d5568eae3ef1a357fce608f25e4b8e43c1fd714e7c7085d0907ca89cfae1b3",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-hold-paused.png",
+      "group": "web_audit_evidence",
+      "bytes": 88373,
+      "sha256": "36ddf0a239c32a61b893241816899f666c1c5c06c484697dbe9fba940ea0b0a4",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-hold-ready.png",
+      "group": "web_audit_evidence",
+      "bytes": 91468,
+      "sha256": "f2660973ef627c80d3ed107aca9c79dca3f74d33957269912563fbde8bea154e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-hold-running.png",
+      "group": "web_audit_evidence",
+      "bytes": 91652,
+      "sha256": "926545c384e717c381434600d0c254ea9319776e54e6822d01bc47357ef221d2",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-import-review.png",
+      "group": "web_audit_evidence",
+      "bytes": 123831,
+      "sha256": "971e58338ed413d1fe7e5b99e0809932e2f3851f3703c95dc1bcada5edf88a92",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-library-search.png",
+      "group": "web_audit_evidence",
+      "bytes": 99812,
+      "sha256": "93998d7e70ff5ec6d33e458404b381eb9d5d5d31e97c68ba9f1181d87ca021f2",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-overview.png",
+      "group": "web_audit_evidence",
+      "bytes": 444530,
+      "sha256": "c81f520a46bedc50a67f8c810c083135e8f5e40675217c21b70718337374ab0c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-privacy.png",
+      "group": "web_audit_evidence",
+      "bytes": 855661,
+      "sha256": "64e70f37c9b72e2cfbb68910cdd1cafbb0aeb297ec83897a16703d64337f28a6",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-progress.png",
+      "group": "web_audit_evidence",
+      "bytes": 93140,
+      "sha256": "2fcb47f74c21d58329db8ebca5166131f8cddcf9705d898d1989f88b67928167",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-recovery.png",
+      "group": "web_audit_evidence",
+      "bytes": 33327,
+      "sha256": "5b30a875c343a6d2c5954cbf3a482be57fe3ec6f8f6c29fb80f8c1e7b4705380",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-rest-timer.png",
+      "group": "web_audit_evidence",
+      "bytes": 110723,
+      "sha256": "b63f21f563368cb3cc38f1994bf64e453820dbfcf7358c91697f35780c632ca4",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-routine-detail.png",
+      "group": "web_audit_evidence",
+      "bytes": 200567,
+      "sha256": "b9acadefd75230103cd6e49d79087f630856347a16491c045e27a59701fb198a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-routine-editor-prescriptions.png",
+      "group": "web_audit_evidence",
+      "bytes": 97274,
+      "sha256": "318b5a6270b2f2ac6faa21e3014437957cd6debb64eaefa0ad21e974c8d5626c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-routine-editor.png",
+      "group": "web_audit_evidence",
+      "bytes": 97312,
+      "sha256": "9d8ba7f50b6928a41dd3bf362222c88f81ccfa032cf1f03883412ad1af6be4f6",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-routine-library.png",
+      "group": "web_audit_evidence",
+      "bytes": 111782,
+      "sha256": "d6e9070c42a22b314cecb570d78434bf93a2e554108a7a9f476af8fea5263fa2",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-routine-preview-second.png",
+      "group": "web_audit_evidence",
+      "bytes": 204723,
+      "sha256": "8f18457c4d4705ae7795b42f03a9a6b39da83dcec40a496b793f2aa1590d37f6",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-routine-preview.png",
+      "group": "web_audit_evidence",
+      "bytes": 350613,
+      "sha256": "cfe929bf5b9d41f954dc5d6b4b2e81efea6f583baef1c54e8d50b9a8383e4b98",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-routines.png",
+      "group": "web_audit_evidence",
+      "bytes": 439790,
+      "sha256": "7463601323efb512f08c4b92ec802aa534004f84d371e9640727c785eaa5a3fc",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-settings.png",
+      "group": "web_audit_evidence",
+      "bytes": 105367,
+      "sha256": "bd0ba4470962610d8d68fae15e04738f96a635e59dc723f518a83ce005aa8329",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-terms.png",
+      "group": "web_audit_evidence",
+      "bytes": 597926,
+      "sha256": "e561c111d0f74d72f3d7822843e8d0d07fcd59efb52ec1cc3d82a97cab418263",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/768-workout-receipt.png",
+      "group": "web_audit_evidence",
+      "bytes": 84453,
+      "sha256": "c95fae47e76966ddd2c17b619cea2f06572fb391288de8d9afca8cf6c1fe5f42",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-after/manifest.json",
+      "group": "web_audit_evidence",
+      "bytes": 29912,
+      "sha256": "dcdf289e558b6441940dbe777ac40b705f9cc3c64f003ec666c8f5e746bff08e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-active-workout.png",
+      "group": "web_audit_evidence",
+      "bytes": 167515,
+      "sha256": "d421f475fedf9201ab3a19efcf308dfd0b8f6cc65f397724ce8f66da1612fec5",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-exercise-guide.png",
+      "group": "web_audit_evidence",
+      "bytes": 411653,
+      "sha256": "950aa1f87ce04b3c86af2901995f8c677692e1b7a83e859df0e88e47cd908d81",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-export-complete.png",
+      "group": "web_audit_evidence",
+      "bytes": 121030,
+      "sha256": "8e723691bc9b36f4a2885da94d83beae96d95490ac9ed5ac4bcd6fa2de0e7e82",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-history-editor-prescriptions.png",
+      "group": "web_audit_evidence",
+      "bytes": 144583,
+      "sha256": "54579f41d0a4994ae0bfed3ab5f9266b906e6a53512770f8f875da334a86e399",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-history-editor.png",
+      "group": "web_audit_evidence",
+      "bytes": 144597,
+      "sha256": "ce4329a5e4f4ac4b1e4d49e2e8c8308b099af82c8d00afc4a50aa5125891ee3e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-history.png",
+      "group": "web_audit_evidence",
+      "bytes": 103917,
+      "sha256": "da3ce34ca5591226c3ddf3db9294ab300160b40dd8a78013b6afe4954eb9a370",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-hold-paused.png",
+      "group": "web_audit_evidence",
+      "bytes": 119930,
+      "sha256": "a86aa1f831db9135e51b72ddd4a9837b5c361ea2443f5b361a0a285b0ec3e66b",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-hold-ready.png",
+      "group": "web_audit_evidence",
+      "bytes": 119291,
+      "sha256": "6f1db00f3c90c12dc4ea5db04440da8bb654b9b693455fdd8c9259cdc472b5d4",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-hold-running.png",
+      "group": "web_audit_evidence",
+      "bytes": 119485,
+      "sha256": "710db990af29413538f7d9b849df8781b2f4656fd8465c0e9fe28b5f6524ee8f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-import-review.png",
+      "group": "web_audit_evidence",
+      "bytes": 157606,
+      "sha256": "e52ce155ff93fae29a411e0a90815a04fe9cfc08aaec80944813598851e83ed5",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-library-search.png",
+      "group": "web_audit_evidence",
+      "bytes": 172073,
+      "sha256": "1696792f8f922705be4ff69ea41b647ef961514cc29cd92347be142b01664d55",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-overview.png",
+      "group": "web_audit_evidence",
+      "bytes": 670191,
+      "sha256": "98a30d9f32a0c341325cfefe6e46a1c97adc58c9b419893ad5fa3fe6d268b8bb",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-privacy.png",
+      "group": "web_audit_evidence",
+      "bytes": 809882,
+      "sha256": "5f2673f63750cc7db7e93601b2b8b9ee21265e4639b4957406de6eb6a106349e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-progress.png",
+      "group": "web_audit_evidence",
+      "bytes": 102475,
+      "sha256": "424b2d4c5b1623ad9e77a1d3ab013d0a7592397b2e5ad62a3fde6176376e16e0",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-recovery.png",
+      "group": "web_audit_evidence",
+      "bytes": 40836,
+      "sha256": "df4adbeb604b6e897ff4f971d640265a6c2304a7f2e3f57805a79122799d040a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-rest-timer.png",
+      "group": "web_audit_evidence",
+      "bytes": 129944,
+      "sha256": "cfeb7449610f430e8e68449ac7ad52048e4e992b82d4bb2fdbb68536f01dcc18",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-routine-detail.png",
+      "group": "web_audit_evidence",
+      "bytes": 311961,
+      "sha256": "8540f1c4ccc63fa03eb74b3649d678e466d8acbb856afa99d451c388bf816543",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-routine-editor-prescriptions.png",
+      "group": "web_audit_evidence",
+      "bytes": 215298,
+      "sha256": "a3f1541c55e004d44b3f9e129d8f05fdfb837ed410d8c5ec8f656d5b3d3cd5ba",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-routine-editor.png",
+      "group": "web_audit_evidence",
+      "bytes": 215335,
+      "sha256": "41e3595f42c1f38d33e142ac2ed586fbcc778fbb40e57edf57bed98811f94414",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-routine-library.png",
+      "group": "web_audit_evidence",
+      "bytes": 257600,
+      "sha256": "54eedbb9deabe75b4a3f65f72950eca8b77a538a25f893f06fd0e8ab69ab4337",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-routine-preview-second.png",
+      "group": "web_audit_evidence",
+      "bytes": 325629,
+      "sha256": "caa6cb6764e44dd42a0dcb5cc2688ece453bcc142f2685310b8e2acec8989190",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-routine-preview.png",
+      "group": "web_audit_evidence",
+      "bytes": 477567,
+      "sha256": "6eb622221c388297240ffa2510369cdb987db2b99b2965ff51e9ea25d1ee55b2",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-routines.png",
+      "group": "web_audit_evidence",
+      "bytes": 467885,
+      "sha256": "ac96b43b0155a4395c67a95dc3815cbf5cb32dfec1fc7cf000a01072fd019f5f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-settings.png",
+      "group": "web_audit_evidence",
+      "bytes": 112981,
+      "sha256": "94294e75acba3ef867b63b67308c5bfc296e9d13eaebe06acd0038890de5a329",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-terms.png",
+      "group": "web_audit_evidence",
+      "bytes": 574758,
+      "sha256": "3662c443827d379f1a51f9ff64a03e8e072d41fcafba4f771bedf1c452e0730e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/1536-workout-receipt.png",
+      "group": "web_audit_evidence",
+      "bytes": 152029,
+      "sha256": "a294d7294a3414f75c2b1e87ffe5490e0aa36761f1c144e2a63e1ae7c5ea52cc",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-active-workout.png",
+      "group": "web_audit_evidence",
+      "bytes": 108090,
+      "sha256": "d6d3d6ce38f24ee19f5d4990894809e7f1fa9b60643be776c2c9845f6cef84ce",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-exercise-guide.png",
+      "group": "web_audit_evidence",
+      "bytes": 194542,
+      "sha256": "76300004ba74af3b96df21a86b0e8311a86475c0e58f78a05c3297b5f1832328",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-export-complete.png",
+      "group": "web_audit_evidence",
+      "bytes": 55749,
+      "sha256": "dcba07dc18e5ab439c9e6de23d8ce628478f65ba15c1d1da7be422d0e1132449",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-history-editor-prescriptions.png",
+      "group": "web_audit_evidence",
+      "bytes": 39564,
+      "sha256": "12f2d5bda72794fec457a5bf49980adc731e8bfa86e0c5fac89b13c34fbbc626",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-history-editor.png",
+      "group": "web_audit_evidence",
+      "bytes": 39537,
+      "sha256": "8e47562096165b4deabab7d0a4ff4748f01a85a07c61dffdc420042b26f7c424",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-history.png",
+      "group": "web_audit_evidence",
+      "bytes": 63081,
+      "sha256": "7e1546c1d8bcf1076354b2c9acdbdb11dc4784abc5d64a201baa291abd9cdac7",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-hold-paused.png",
+      "group": "web_audit_evidence",
+      "bytes": 39361,
+      "sha256": "c17cd8bcea0b730398d5d036ea18b381a64b09deeef716e673765b0936c891c4",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-hold-ready.png",
+      "group": "web_audit_evidence",
+      "bytes": 38988,
+      "sha256": "ea1d728c22ae661beb65f2e3b0193c9feef1ab63179fb462bdf56c54d139c2d2",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-hold-running.png",
+      "group": "web_audit_evidence",
+      "bytes": 39524,
+      "sha256": "78b03215e072f10a50d7077cbbaeb925c500b428535de1ec08241aa3325fc47b",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-import-review.png",
+      "group": "web_audit_evidence",
+      "bytes": 78293,
+      "sha256": "2d94a5e94063e329aeb1f0fa147412a79f8a784898125224fcb1accdb3106c7f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-library-search.png",
+      "group": "web_audit_evidence",
+      "bytes": 55552,
+      "sha256": "487627047376a7c6b6a76c892023ab385bb80ef05d6623f3dc79ac762e362639",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-overview.png",
+      "group": "web_audit_evidence",
+      "bytes": 310614,
+      "sha256": "3be6d918c8395fb17b5d060e2ed5ed203f02c807122dc40aee0a356d12c97536",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-privacy.png",
+      "group": "web_audit_evidence",
+      "bytes": 685148,
+      "sha256": "b6c8ec87913b8feecd1fb30a580d9f78a12813d67f4642c138ba0ff3bbe9e467",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-progress.png",
+      "group": "web_audit_evidence",
+      "bytes": 61717,
+      "sha256": "f4d136959216b4238f1fba2c1b5531a374b9ad7dc38b2340a3e2fe00b2d28e78",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-recovery.png",
+      "group": "web_audit_evidence",
+      "bytes": 31247,
+      "sha256": "8ab1105ba39bab7f881092ad38338b63397353a6337a43f8f1e064aaee145d7a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-rest-timer.png",
+      "group": "web_audit_evidence",
+      "bytes": 50575,
+      "sha256": "30e592bcb4957597761d999b230e248f4b3327f75b0d800b0c7995651789528c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-routine-detail.png",
+      "group": "web_audit_evidence",
+      "bytes": 109100,
+      "sha256": "8ff0f94609a3d12eac62460ead5f8510266d32b8681119838f983a80865fcf99",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-routine-editor-prescriptions.png",
+      "group": "web_audit_evidence",
+      "bytes": 43416,
+      "sha256": "fa4ee1276c0fd55dbf0379508d5f60645e3a6f9451872f85cf976bc2c69cc469",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-routine-editor.png",
+      "group": "web_audit_evidence",
+      "bytes": 52321,
+      "sha256": "87003270258bc23816e1980dd65ecaa2954aa053ac5e16e0527c9ccab1e59ea0",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-routine-library.png",
+      "group": "web_audit_evidence",
+      "bytes": 58004,
+      "sha256": "d21496e69e12593d4e2d7ef19fb115d6e7ec7a78e783960f4557302606b91e9c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-routine-preview-second.png",
+      "group": "web_audit_evidence",
+      "bytes": 139981,
+      "sha256": "e6da241ec3d4a0f89f05510c96ae1e2246f5e0d5c113e34c2a58292dd492dfdd",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-routine-preview.png",
+      "group": "web_audit_evidence",
+      "bytes": 187651,
+      "sha256": "dff44dbfed72af16282ce5ca0656a1d11d7293b386d4f030998067c0c3cd6116",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-routines.png",
+      "group": "web_audit_evidence",
+      "bytes": 347719,
+      "sha256": "54f2dc7b1906e9d449daf4911d98737d48bc833ee681dc42929c3f414caf08c0",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-settings.png",
+      "group": "web_audit_evidence",
+      "bytes": 78336,
+      "sha256": "8adc034ecf7be00fd2aab05706df48e0ed8682d1877fe1d60f3cf3ddf2a0adec",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-terms.png",
+      "group": "web_audit_evidence",
+      "bytes": 480787,
+      "sha256": "ea0fea37f1bf19711ffdd893005059bf640fea6a0eafddb2885bab42a212dfb1",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/390-workout-receipt.png",
+      "group": "web_audit_evidence",
+      "bytes": 46798,
+      "sha256": "e9c5e79a73e8ef172df9ad9e54bf85d8c29fc765b0f0b86fc84b9b48968c5d0c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-active-workout.png",
+      "group": "web_audit_evidence",
+      "bytes": 146719,
+      "sha256": "ee56acaf5394942145ac2b3bf98a8312f2c556713b4eaaef9e59306d6ec387ad",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-exercise-guide.png",
+      "group": "web_audit_evidence",
+      "bytes": 314179,
+      "sha256": "043314536a857fab2ed9890b998797e80dadffeb91685b0dda4c50e616da2784",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-export-complete.png",
+      "group": "web_audit_evidence",
+      "bytes": 107537,
+      "sha256": "1d15a18275783ce04def930b9486c5edac894425d1cc4392d3c55374be2978a8",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-history-editor-prescriptions.png",
+      "group": "web_audit_evidence",
+      "bytes": 68810,
+      "sha256": "b27fe2e611decf81d916e23570238f6bb22f8e85ea074d3ad98636ace2d99c93",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-history-editor.png",
+      "group": "web_audit_evidence",
+      "bytes": 68823,
+      "sha256": "ff3c8657abf24fd7699c8eab7c330af29bbb56e19a2fe5950b0477f8f2ce66e7",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-history.png",
+      "group": "web_audit_evidence",
+      "bytes": 94148,
+      "sha256": "56d5568eae3ef1a357fce608f25e4b8e43c1fd714e7c7085d0907ca89cfae1b3",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-hold-paused.png",
+      "group": "web_audit_evidence",
+      "bytes": 88373,
+      "sha256": "36ddf0a239c32a61b893241816899f666c1c5c06c484697dbe9fba940ea0b0a4",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-hold-ready.png",
+      "group": "web_audit_evidence",
+      "bytes": 91468,
+      "sha256": "f2660973ef627c80d3ed107aca9c79dca3f74d33957269912563fbde8bea154e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-hold-running.png",
+      "group": "web_audit_evidence",
+      "bytes": 91652,
+      "sha256": "926545c384e717c381434600d0c254ea9319776e54e6822d01bc47357ef221d2",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-import-review.png",
+      "group": "web_audit_evidence",
+      "bytes": 123831,
+      "sha256": "971e58338ed413d1fe7e5b99e0809932e2f3851f3703c95dc1bcada5edf88a92",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-library-search.png",
+      "group": "web_audit_evidence",
+      "bytes": 115609,
+      "sha256": "1399c4112515217cf93cd94d4f6fa84fd6e9fcad4b84a5d862e2f6c326f6bfc4",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-overview.png",
+      "group": "web_audit_evidence",
+      "bytes": 444530,
+      "sha256": "c81f520a46bedc50a67f8c810c083135e8f5e40675217c21b70718337374ab0c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-privacy.png",
+      "group": "web_audit_evidence",
+      "bytes": 855661,
+      "sha256": "64e70f37c9b72e2cfbb68910cdd1cafbb0aeb297ec83897a16703d64337f28a6",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-progress.png",
+      "group": "web_audit_evidence",
+      "bytes": 93140,
+      "sha256": "2fcb47f74c21d58329db8ebca5166131f8cddcf9705d898d1989f88b67928167",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-recovery.png",
+      "group": "web_audit_evidence",
+      "bytes": 33327,
+      "sha256": "5b30a875c343a6d2c5954cbf3a482be57fe3ec6f8f6c29fb80f8c1e7b4705380",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-rest-timer.png",
+      "group": "web_audit_evidence",
+      "bytes": 110723,
+      "sha256": "b63f21f563368cb3cc38f1994bf64e453820dbfcf7358c91697f35780c632ca4",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-routine-detail.png",
+      "group": "web_audit_evidence",
+      "bytes": 200567,
+      "sha256": "b9acadefd75230103cd6e49d79087f630856347a16491c045e27a59701fb198a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-routine-editor-prescriptions.png",
+      "group": "web_audit_evidence",
+      "bytes": 97273,
+      "sha256": "6b41849342e0e7d00d07a1e08df94899c8e3410354bbe7fe1334de08a7f9ccc8",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-routine-editor.png",
+      "group": "web_audit_evidence",
+      "bytes": 97311,
+      "sha256": "c0aa1b871bd0af5abaa977a434eee680deb32a185a1576c510b7d398877512a0",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-routine-library.png",
+      "group": "web_audit_evidence",
+      "bytes": 111782,
+      "sha256": "d6e9070c42a22b314cecb570d78434bf93a2e554108a7a9f476af8fea5263fa2",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-routine-preview-second.png",
+      "group": "web_audit_evidence",
+      "bytes": 204723,
+      "sha256": "3e61666ef8ac0a0b37aaf559409999886d598c379404fedc0f5db0d00e014ef8",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-routine-preview.png",
+      "group": "web_audit_evidence",
+      "bytes": 350798,
+      "sha256": "30e7922a73735dd7799c95fedc897f0c231e5bbdaefef31656053dab2e49029b",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-routines.png",
+      "group": "web_audit_evidence",
+      "bytes": 439790,
+      "sha256": "7463601323efb512f08c4b92ec802aa534004f84d371e9640727c785eaa5a3fc",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-settings.png",
+      "group": "web_audit_evidence",
+      "bytes": 105367,
+      "sha256": "bd0ba4470962610d8d68fae15e04738f96a635e59dc723f518a83ce005aa8329",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-terms.png",
+      "group": "web_audit_evidence",
+      "bytes": 597926,
+      "sha256": "e561c111d0f74d72f3d7822843e8d0d07fcd59efb52ec1cc3d82a97cab418263",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/768-workout-receipt.png",
+      "group": "web_audit_evidence",
+      "bytes": 84453,
+      "sha256": "c95fae47e76966ddd2c17b619cea2f06572fb391288de8d9afca8cf6c1fe5f42",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/guest-before/manifest.json",
+      "group": "web_audit_evidence",
+      "bytes": 29914,
+      "sha256": "9f772321eb30faefa833184eb2ce963dbf9e09bd3fe7c623f89aaeebbf8df244",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-before/chromium-320-current-gap6-row1-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 13569,
+      "sha256": "4071043f4512f9ea106d76ae1c2d7b08a571940871ec15a15b6026309bad5d59",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-before/chromium-320-current-gap6-row1-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 15111,
+      "sha256": "9d892847ad09eecd33d921be3ab422b8eb4da34c608600c3440c44b5b65da30e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-before/chromium-320-current-gap6-row2-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 14974,
+      "sha256": "eb840459293373116d48bdd2059684494d305913d4f189ee54a50b98c557531a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-before/chromium-320-current-gap6-row2-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 16173,
+      "sha256": "a41978ec1037c5bca69717a59352a97b0ac88651d3c58c5c93b6f869178e3889",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-before/chromium-320-current-gap6-row3-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 14891,
+      "sha256": "d7905d7708768f98bc46919ab7ac749650d5d510038c32144646ca7759d6eeb4",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-before/chromium-320-current-gap6-row3-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 16322,
+      "sha256": "333def7430abc85a57d0fb2249ccc86dbf2c93563e2ab7f423ba42531376f0a9",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-before/chromium-360-current-gap6-row1-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 13939,
+      "sha256": "6ef0d5cdbf90738ec4af44b1770576d995d67a03700144c7d1ba04d505a9744b",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-before/chromium-360-current-gap6-row1-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 15041,
+      "sha256": "39ef936b7e9bcf7b614b4afb301c6a43ba2e02bb9ac05a10c79a9aef09891e86",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-before/chromium-360-current-gap6-row2-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 13986,
+      "sha256": "86a43987cbf4649af3a246ecaf8c0fb841387cebcfd3a4b5fb65483a882e13f4",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-before/chromium-360-current-gap6-row2-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 15537,
+      "sha256": "3028a245c3aa7fa582392f9e387f92c0f18974a3c964e59acefa58496f8bd6a3",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-before/chromium-360-current-gap6-row3-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 15194,
+      "sha256": "fc1b360690c1617471017d1aa58d8d2c9d55e57a1a86126d4bcac3356826ccb1",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-before/chromium-360-current-gap6-row3-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 16410,
+      "sha256": "0e316c32ed141cdf71ca2c5da6760b86b34a3ef0d5b1e0433fd28a4887e80e0c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-before/manifest.json",
+      "group": "web_audit_evidence",
+      "bytes": 99530,
+      "sha256": "65eec68282cc9abf791bf650a748c33cbeebec5fbbbc7ade0e571154e78ac456",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/chromium/chromium-320-actual-final-source-row1-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 14595,
+      "sha256": "e6e5a0191027f406836dbfd4ba9bca7a483d31170ba9d27f2ebc3d905aca73e3",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/chromium/chromium-320-actual-final-source-row1-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 15524,
+      "sha256": "63175bf150bfa69a125febe454ef05d8fdc9be444fcb8f2b25e6bee49edb4481",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/chromium/chromium-320-actual-final-source-row2-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 15028,
+      "sha256": "9e3040039d4c581cc5a0f715f5857431dc8fd0feea3b64bed90db69cc9ceb01d",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/chromium/chromium-320-actual-final-source-row2-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 16543,
+      "sha256": "009af0fc1bf24df0519be3501864766c151fd5cf2795cf852379fa1d95356f28",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/chromium/chromium-320-actual-final-source-row3-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 14949,
+      "sha256": "c389f4185e735dde9c70b977e748c177e93e552089de19f2362139cf6be7ecbf",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/chromium/chromium-320-actual-final-source-row3-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 16391,
+      "sha256": "69d527d2ec09572b103e83826307604524e6e19d2686995d9904e71747cb21a8",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/chromium/chromium-320-actual-final-source-row4-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 22392,
+      "sha256": "6137b4839a7bf6245db2cefa4148b50102c8e35ae2d4c96d3a7502eeb48bba65",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/chromium/chromium-320-actual-final-source-row4-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 23350,
+      "sha256": "e8e2498293d8bdf1d7bb20a36919b50bd9d354e744a6866c343bee11d78d1437",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/chromium/chromium-360-actual-final-source-row1-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 13650,
+      "sha256": "e62163da266f892fcae9b6cf65f4d2ef389e2cf1e74fd2a91ab0f85d9214602e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/chromium/chromium-360-actual-final-source-row1-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 15062,
+      "sha256": "27be40e8b2e2ca969fdc78e13670e4fef3844c32794a2d848543642962328bdf",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/chromium/chromium-360-actual-final-source-row2-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 14607,
+      "sha256": "f9ff95554d7eb8e55ab2f8c86f3c6bf02cd9c8f09ae8ff163e56152fc7ebd78f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/chromium/chromium-360-actual-final-source-row2-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 15623,
+      "sha256": "c1db151cd5b23a676ffcd7202f54749fc181da0f6d29cfc860e5f919740080f4",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/chromium/chromium-360-actual-final-source-row3-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 15422,
+      "sha256": "a03ecfbb5b25132bea0afa49b68d101c12a17b7237423dd22734c8cef82a9233",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/chromium/chromium-360-actual-final-source-row3-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 16411,
+      "sha256": "95c4b6da7fb59a038aa16d69a8a535b82aeadb962aa574098dfd60a58b9c8e7e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/chromium/chromium-360-actual-final-source-row4-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 22522,
+      "sha256": "2d98ee1e41a131231ef9abfa34321448242d0f73e98a43b93fbcc14ccc48f06f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/chromium/chromium-360-actual-final-source-row4-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 23397,
+      "sha256": "c3643d93b4f755a9128af220ad65611f39d08954eaaf5860c68930929de46bbf",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/firefox/firefox-320-actual-final-source-row1-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 17391,
+      "sha256": "3b76a4843189df24e2b1091ac54413a18e2a91207e32b71b5c494be97c4d485c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/firefox/firefox-320-actual-final-source-row1-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 18544,
+      "sha256": "10344e2a8dc4a8a81c82a9202ecfd38b9a347f2b01fc902db58f07e13e4b9ebf",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/firefox/firefox-320-actual-final-source-row2-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 17726,
+      "sha256": "b4fcba546f9e87445cbb46cfb6de395131d665ab08604c73ba79dff8d8311b9c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/firefox/firefox-320-actual-final-source-row2-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 19420,
+      "sha256": "c6cb8030b5d90ff18a78225f444b48eba93b3ee23ba2d850a2ad0e58f4601fc2",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/firefox/firefox-320-actual-final-source-row3-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 17952,
+      "sha256": "ef99c4a727431eafbef79d9ef4a25795351b8c6337be4e52a3a2b18136083ef3",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/firefox/firefox-320-actual-final-source-row3-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 19317,
+      "sha256": "93fae4426495d09d2e36a80c2cbcafbbe92aad5057926fb0894cf87bebf52cb1",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/firefox/firefox-320-actual-final-source-row4-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 26316,
+      "sha256": "685865c9c5827c9d898aa471327b10963311cafde1fbc096934bf89e8995ab50",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/firefox/firefox-320-actual-final-source-row4-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 27377,
+      "sha256": "e4e71dfd7ce963449386a388948f6a8ffb03acdf46eea476b3fded4525417977",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/firefox/firefox-360-actual-final-source-row1-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 17274,
+      "sha256": "9cf08a31c6d76f4955c69ae7addea39134f53ceace7b7c2a39b038065150e116",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/firefox/firefox-360-actual-final-source-row1-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 18931,
+      "sha256": "adb2db3fcaba2028da25f9edcaaeb2f04fce6ba0aa0ff3d2df5d78a0bc8ad15e",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/firefox/firefox-360-actual-final-source-row2-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 18673,
+      "sha256": "22bb5d4334ef5d470c3ce40a8a70107c8e9f617b7ae4aab715075cf51a6e5c2c",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/firefox/firefox-360-actual-final-source-row2-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 19861,
+      "sha256": "99b74f025cd8d8ed73395fcca0936fd7bee6086e7893c46dfbfeebd007283423",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/firefox/firefox-360-actual-final-source-row3-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 19338,
+      "sha256": "4506abe5e74c02978ae5dcafdcad84456a8ea4d32f598d8229add73e94b84ffd",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/firefox/firefox-360-actual-final-source-row3-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 20438,
+      "sha256": "b866392182c14da2d1d3a6517654267572b8dc114fcda2ab0a98fd34e750d8be",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/firefox/firefox-360-actual-final-source-row4-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 27659,
+      "sha256": "54d5dcb59ab55f78afc6386885d94a723a9565be537b1e9229f146d60f1fbc2f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/firefox/firefox-360-actual-final-source-row4-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 28715,
+      "sha256": "82d0292ad970efff7ded6d65a5c1628a7a0c82f7f93d49715ef16ff56a0687b2",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/manifest.json",
+      "group": "web_audit_evidence",
+      "bytes": 468713,
+      "sha256": "4cb3fca9fd55f1055eba8f218f47e0bdaa13b3f981db1f0fcd04c3befa8ad9ab",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/webkit/webkit-320-actual-final-source-row1-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 19284,
+      "sha256": "67d7a69ab81fa40a850c303fc8faa0b5a7fa16dc1fc0d1d0da883f5bac099a32",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/webkit/webkit-320-actual-final-source-row1-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 20141,
+      "sha256": "61db4b8649900db922c8225413cc41ce09b722456339a2c62d5ee121e1af31ea",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/webkit/webkit-320-actual-final-source-row2-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 20284,
+      "sha256": "ebbc1347486d68f7c986310ad6ba7ad8eee4983cad841e44cb779b2aa96a38bb",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/webkit/webkit-320-actual-final-source-row2-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 21745,
+      "sha256": "14a56c415dce30cff09e210a6d6f3e5cf310fe5c1607cd37a7f2fcb08f3eaaa7",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/webkit/webkit-320-actual-final-source-row3-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 20242,
+      "sha256": "f647ce89fafd9b49778c5e1ce468946b873961ae3ee49293d865bcf07cafe3bb",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/webkit/webkit-320-actual-final-source-row3-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 21480,
+      "sha256": "6dcf191f2c8afdb9aa0d46b1f02ebb1f87937dddfaa66da0bed961a7819cf972",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/webkit/webkit-320-actual-final-source-row4-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 29090,
+      "sha256": "d1488ef43c8a750bd56a742bf7cb00acce7a96e88807d0c13a29c80799daa24a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/webkit/webkit-320-actual-final-source-row4-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 30037,
+      "sha256": "d5b77926a103fcade04ad5d86f739e677aeacbb20d1bcb6ad921e82ff7a56328",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/webkit/webkit-360-actual-final-source-row1-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 17396,
+      "sha256": "27af772f48e68b9783cbce83cec647d607692fd4eca5d79d345450af8191974a",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/webkit/webkit-360-actual-final-source-row1-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 18942,
+      "sha256": "482393e865ab6afaa6c47e7a46d7a83f2502419345e2ab116ab54440fa514979",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/webkit/webkit-360-actual-final-source-row2-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 18925,
+      "sha256": "3d39cf3256103f03e10c6a147b40157fc57fc706f3e81070bc5d0a55745269c8",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/webkit/webkit-360-actual-final-source-row2-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 20186,
+      "sha256": "db346770b1e2b9fac937a64df7972e09120a0163ab15c2e9046c4f81ede86ac8",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/webkit/webkit-360-actual-final-source-row3-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 19174,
+      "sha256": "bc5dd2fa740bc038460cee88a34fa4431520ee24774ee18aba4c85283dfdaf22",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/webkit/webkit-360-actual-final-source-row3-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 20413,
+      "sha256": "bd44f048ea39d9a33e8e9daab6e9a7216bcbc1e1859c39612d06e28880109c34",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/webkit/webkit-360-actual-final-source-row4-blurred.png",
+      "group": "web_audit_evidence",
+      "bytes": 28245,
+      "sha256": "0dd5ce57fe01f1f150a9c0bd9417d8ad2e0fed84997cb68b47c05078a5d14d2f",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/numeric-final/webkit/webkit-360-actual-final-source-row4-focused.png",
+      "group": "web_audit_evidence",
+      "bytes": 29175,
+      "sha256": "51115cbfdf0ee603241054213acd93eff5c381e5057ab1321c5aafd7a1cf6ad3",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/security-before/320-security.png",
+      "group": "web_audit_evidence",
+      "bytes": 129075,
+      "sha256": "def91972f11aa6a8a0169cab60ddec54203bf5fa121e0974946ba1a11c48b5b8",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/security-before/360-security.png",
+      "group": "web_audit_evidence",
+      "bytes": 126971,
+      "sha256": "34a50725dc2e48748f05ebb3c635354cca545e1ea8f3b98d52c6a271550e15c4",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/security-before/375-security.png",
+      "group": "web_audit_evidence",
+      "bytes": 126663,
+      "sha256": "27bed75cede0935607ac415514fce69c278e697e46d12aaa396e8b2f9242a830",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/security-final/320-security.png",
+      "group": "web_audit_evidence",
+      "bytes": 124733,
+      "sha256": "d43825ac5a519994c6007d47bdbb0b894bea7b43d8c9d7074bb72e789c4d5332",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/security-final/360-security.png",
+      "group": "web_audit_evidence",
+      "bytes": 124307,
+      "sha256": "eb914fe8704803d5c0f52f37a79125f671dbbf29a016b6419665047418b5cae3",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/evidence/screenshots/security-final/375-security.png",
+      "group": "web_audit_evidence",
+      "bytes": 124700,
+      "sha256": "8ab787afd4169543a615982c60edd384d03ea5c8940119349171e4c5da2b8262",
+      "self_manifest": false
+    },
+    {
+      "path": "docs/audits/forma-web-frontend-2026-11/harness/measure-performance.mjs",
+      "group": "web_audit_evidence",
+      "bytes": 13241,
+      "sha256": "946069ee0c10fc01eacb2e3790d4b9a56db3d4b5828f85c326e3d4b1857982c5",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/APP_STORE_READINESS.md",
+      "group": "native_audit_evidence",
+      "bytes": 4376,
+      "sha256": "a3039cd7ad097c1c263f5948ced4df10bbe45434d3942b5fe5a103125f8b4ddd",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/BUILD_RESULTS.json",
+      "group": "native_audit_evidence",
+      "bytes": 905,
+      "sha256": "315caf53430a385912692fbe896308bf74178269607ca10ed725c68a569eb553",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/BUNDLE_VALIDATION.json",
+      "group": "native_audit_evidence",
+      "bytes": 413,
+      "sha256": "67067b6c9086d1a9868f93889c9b239a9c37fb21678561cecdf1bf3dd71ad00a",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/EXECUTIVE_AUDIT.md",
+      "group": "native_audit_evidence",
+      "bytes": 2454,
+      "sha256": "a786236db8131d2125ce331e6d072ced7fc4dcc1e7bc89b88b36c1de0bd3b514",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/FILE_LEDGER.json",
+      "group": "native_audit_evidence",
+      "bytes": 933120,
+      "sha256": "5785d25aeadd7cc499ec288f5dccd080476ea358f464caa157e93303f800d0fe",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/FILE_LEDGER.md",
+      "group": "native_audit_evidence",
+      "bytes": 160598,
+      "sha256": "3b9a61540e7f8cf1c2a94eb712e1742dfb614515c67aee65c3720c115f832e7c",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/FINAL_REPORT.md",
+      "group": "native_audit_evidence",
+      "bytes": 2935,
+      "sha256": "e29dbf1845d717687fb0afa573a9e592b075ed41e5e47720f9c4a6cd09c54c61",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/FINDINGS.md",
+      "group": "native_audit_evidence",
+      "bytes": 10539,
+      "sha256": "c3f70665d0bdfc6f88e42e31ed20ad9a61a2d8383f1322901331241a37650a8d",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/MODIFIED_FILES.json",
+      "group": "native_audit_evidence",
+      "bytes": 9700,
+      "sha256": "9314bfa539d50d241ce1de1dd5b8af01da45e475d5ccc8c02f4c8e84f037cc74",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/MOTION_ACCESSIBILITY.md",
+      "group": "native_audit_evidence",
+      "bytes": 2938,
+      "sha256": "edde657ac8c8c8f16c4974e6a1b8821ffffb21a617c801e21b3a752e7f4a8656",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/PERFORMANCE.md",
+      "group": "native_audit_evidence",
+      "bytes": 1898,
+      "sha256": "1414cdb46650869432035a28b4afd2d8523db9cd5652f0433c9d94d403bfcd49",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/PERFORMANCE_COMPARISON.json",
+      "group": "native_audit_evidence",
+      "bytes": 3648,
+      "sha256": "1d24fd2f0031963a6ec8deb4b73167ff547e6d3ff645d3b3ac837a4b76dd33fa",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/PERFORMANCE_FINAL.json",
+      "group": "native_audit_evidence",
+      "bytes": 4621,
+      "sha256": "c21b9a63b37866cb0383fb10900fdd235a49f8d6ed5987d3f9bab6c9b619674d",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/PHYSICAL_IPHONE_VERIFICATION.md",
+      "group": "native_audit_evidence",
+      "bytes": 5701,
+      "sha256": "709c00ed0439f469dfefce8adfaed75cf49caf784369d5b45e141787dc1595bf",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/SCREENSHOT_COMPARISON.json",
+      "group": "native_audit_evidence",
+      "bytes": 17227,
+      "sha256": "0a2483c9a38f1690dc0103537656aa02d98fafab4c17d77ac3f4334e69a814f7",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/SCREEN_REVIEW.md",
+      "group": "native_audit_evidence",
+      "bytes": 4373,
+      "sha256": "8bf73db3a788714179cd430c05b7f07ee43c9bbebe44e3eff087d046d86ea4d7",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/SOURCE_REVIEW_COMPLETION.json",
+      "group": "native_audit_evidence",
+      "bytes": 8020,
+      "sha256": "d104670860725e70276b581ce1964171ae5e9bfb53bb79fc1f598309564adb42",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/VERIFICATION.md",
+      "group": "native_audit_evidence",
+      "bytes": 9979,
+      "sha256": "fa5d347ae6fb4e7cf0803e6fb81408373b304a31d89d8a49b87009c688a17aaf",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/VERIFICATION_RESULTS.json",
+      "group": "native_audit_evidence",
+      "bytes": 2768,
+      "sha256": "7b724a8e9f6d711032c186ed7b94350c82672cd63580883a7157b08859f07398",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/01-today.png",
+      "group": "native_audit_evidence",
+      "bytes": 665662,
+      "sha256": "055f50e2f57a1c6cf07c397bc2b1c8f1aad0cb5fc6ca6fef99f4c5b320103d16",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/02-plan.png",
+      "group": "native_audit_evidence",
+      "bytes": 196320,
+      "sha256": "7b4492e579e4e2d44b63722891618a0a4c8c4fe95def08a3732a7bc2ace2efa9",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/03-routine-detail.png",
+      "group": "native_audit_evidence",
+      "bytes": 211622,
+      "sha256": "03813feb8a6cfefae4dd7c2fedcc7852a037108570e2cd907aff0e278af50f00",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/04-workout.png",
+      "group": "native_audit_evidence",
+      "bytes": 188196,
+      "sha256": "8daedbd5566695b7b571b9d692000d9f453efdf58cc599eac1cb56a864594f60",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/05-set-completed-rest.png",
+      "group": "native_audit_evidence",
+      "bytes": 229137,
+      "sha256": "437c4f70d6540e26ac7fb8ffa324e5dbf16e02788026ebc8252496160fbca9a6",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/06-receipt.png",
+      "group": "native_audit_evidence",
+      "bytes": 136328,
+      "sha256": "ba2bcbdc8aaeca7e31ba27593a07d231ccabb7692d38b9d935c4088180aea468",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/07-progress.png",
+      "group": "native_audit_evidence",
+      "bytes": 175117,
+      "sha256": "8cfc9566021045214c8c7f773e53fccdcb21e1422458e315cdddf8edd2c9870b",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/08-you.png",
+      "group": "native_audit_evidence",
+      "bytes": 491006,
+      "sha256": "2b61c359cd56eb16feb35941fec0c9bdcd9b42fe431588c410a5e9bb76691d3d",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/09-today-after-workout.png",
+      "group": "native_audit_evidence",
+      "bytes": 664838,
+      "sha256": "52a590f69edf7821c6014870805add6433d2f32d8bd345e325638e097cbea5e9",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/10-library.png",
+      "group": "native_audit_evidence",
+      "bytes": 207919,
+      "sha256": "cec225befdde2ca3a706b6191b1dc6c4982c6c367a4c6297ed24bdb65c3d5bcf",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/11-library-search.png",
+      "group": "native_audit_evidence",
+      "bytes": 261427,
+      "sha256": "4b52425d4c1a00de1b8e1a2392a9e15efc3d08d564b0d7658950718931526c6a",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/12-technique-guide.png",
+      "group": "native_audit_evidence",
+      "bytes": 256203,
+      "sha256": "7e96dc8083a154e92c110f1a0e633d8d6cd2364f277f8216eb9f87700a1a7381",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/13-hold-ready.png",
+      "group": "native_audit_evidence",
+      "bytes": 190951,
+      "sha256": "442aa2fb5184bda7ae4494df1da531a594fe3d081fc3c803eb4f4848698acac1",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/14-hold-running.png",
+      "group": "native_audit_evidence",
+      "bytes": 186486,
+      "sha256": "3b3079372b3e63713abfc5daa81a17ae98c2e9cb7acdbad9f5db62f3870041a3",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/15-hold-paused.png",
+      "group": "native_audit_evidence",
+      "bytes": 186028,
+      "sha256": "875b1dfea3c7a3477531540cb925dfe55ad3e4c8539fd66a1bab73a8f37c380c",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/16-today-largest-accessibility-text.png",
+      "group": "native_audit_evidence",
+      "bytes": 247648,
+      "sha256": "d616f51c0fad6b8ed627962fd1ae4e489e9adc2fd3c18ac518d090f346a11c91",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/17-today-compact-landscape.png",
+      "group": "native_audit_evidence",
+      "bytes": 176654,
+      "sha256": "a2ad9a985c5c7fe0615411862ad61b8e84d81b562e5000e2c428046462c09a0f",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/contact-sheet.jpg",
+      "group": "native_audit_evidence",
+      "bytes": 570124,
+      "sha256": "81e6440e8651838bf0b37a0fb4b913c2e5b1ca0476b26378b88ae6b65bc95210",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-dark/manifest.json",
+      "group": "native_audit_evidence",
+      "bytes": 17000,
+      "sha256": "18ff00354b9efee2fed80e83cc39e029846e97fd5e6c258cdade9fdcf0b212ec",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-light/01-today.png",
+      "group": "native_audit_evidence",
+      "bytes": 660821,
+      "sha256": "c4c23585ffcda2b2cc027fe02fe085930dbec52777d8e9141357e75cca0e945b",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-light/02-plan.png",
+      "group": "native_audit_evidence",
+      "bytes": 195559,
+      "sha256": "472e593a1a597f8bcefe2c426dedb2d5656b0a0ee66e62f95b4201e601858354",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-light/03-routine-detail.png",
+      "group": "native_audit_evidence",
+      "bytes": 207125,
+      "sha256": "a2732c6eb2c661dc56e1a3e102243e0e0bd10413c636204d03ae74de4c291707",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-light/04-workout.png",
+      "group": "native_audit_evidence",
+      "bytes": 194928,
+      "sha256": "a8e3c6437af6bc04d8e1d6b15371f021d3c1f2237735798085a6cc613fcd6662",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-light/05-set-completed-rest.png",
+      "group": "native_audit_evidence",
+      "bytes": 236363,
+      "sha256": "5958d1b764b7805c5877cd52e2884a2b4a8103b5a28a70599b62336b18a19ede",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-light/06-receipt.png",
+      "group": "native_audit_evidence",
+      "bytes": 135079,
+      "sha256": "6610fba00cb3c8cace7a2f81c6531e9dcd7104f822a4e0ada62dd730d53d1052",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-light/07-progress.png",
+      "group": "native_audit_evidence",
+      "bytes": 170602,
+      "sha256": "700ba7b4f0d1b09c9499f450ef591797d6ac672c0d8a53058ac9b497a69f331a",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-light/08-you.png",
+      "group": "native_audit_evidence",
+      "bytes": 474977,
+      "sha256": "122b19177443a96fe6762e6119403070a570c87e6fc154961d295aa4c2c26d18",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-light/09-today-after-workout.png",
+      "group": "native_audit_evidence",
+      "bytes": 660003,
+      "sha256": "793b725fb151d3e2312776bdb00382fc3f8e463e591da4b69df43540a73f3cf1",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-light/10-library.png",
+      "group": "native_audit_evidence",
+      "bytes": 208854,
+      "sha256": "8bfdd81b9e7cf6d411428f91efd34a5484813e7908482529c328fa8fab28a681",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-light/11-library-search.png",
+      "group": "native_audit_evidence",
+      "bytes": 263084,
+      "sha256": "f14a9cbcc188b4a0ddc09793122cf9a6ef0abc57724d611772352ca27af699a7",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-light/12-technique-guide.png",
+      "group": "native_audit_evidence",
+      "bytes": 243558,
+      "sha256": "d46c81e52132fe4124d55333ff92bb0a3409f508c610517642f236de51604769",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-light/13-hold-ready.png",
+      "group": "native_audit_evidence",
+      "bytes": 197140,
+      "sha256": "35c86f4e10488c914e1eab2c7534b321802adf641455f9a834f2248d73de4058",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-light/14-hold-running.png",
+      "group": "native_audit_evidence",
+      "bytes": 189796,
+      "sha256": "1a38f0f34acf602825a3f46a04115f97969ec84f509c1e2498b3a241748c3f4d",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-light/15-hold-paused.png",
+      "group": "native_audit_evidence",
+      "bytes": 189395,
+      "sha256": "84268dbc51e32e1556381162cf2e8c9e83416b6de85fb76ed16d96708719f585",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-light/contact-sheet.jpg",
+      "group": "native_audit_evidence",
+      "bytes": 473460,
+      "sha256": "4d3ae4f5231c46671ce80214f22560ad9ed7ffeb0b14507a095d3724a3ea5ce6",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/after-light/manifest.json",
+      "group": "native_audit_evidence",
+      "bytes": 14920,
+      "sha256": "ea1614cf4dc52852321cf3da3f88f4d5a148e4227b9f583b00670d4585e9e031",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/01-today.png",
+      "group": "native_audit_evidence",
+      "bytes": 664847,
+      "sha256": "59bc2865e18ee25c440b59bea0e2680583a971072cbc88e8c89bfc1b43324e22",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/02-plan.png",
+      "group": "native_audit_evidence",
+      "bytes": 195682,
+      "sha256": "bff4aa551460df36c19a4170a1ba0fbac9b9c6ab755501891973da4fd016d240",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/03-routine-detail.png",
+      "group": "native_audit_evidence",
+      "bytes": 210981,
+      "sha256": "9c217576b3c58a9da885e313820a5c0b85f704cc6aae2845e2b9f648c92cd5ce",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/04-workout.png",
+      "group": "native_audit_evidence",
+      "bytes": 187577,
+      "sha256": "67b0ae1acc4be421a51cef9c410765d98927bca6e5eb52a7e5b4d840d47253d6",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/05-set-completed-rest.png",
+      "group": "native_audit_evidence",
+      "bytes": 227918,
+      "sha256": "f78408800c30a48b9906b3de8c750744eedcc84c2c45cd63736cadf683b9774f",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/06-receipt.png",
+      "group": "native_audit_evidence",
+      "bytes": 134933,
+      "sha256": "be878e24a8c433a89b431046b7789ee5427c4ff1edd26169e39dc2cd9c68df59",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/07-progress.png",
+      "group": "native_audit_evidence",
+      "bytes": 173848,
+      "sha256": "0c59ac9b3cdad9d46e50e583e19e51ea3451a23771747cb4395501523dc55866",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/08-you.png",
+      "group": "native_audit_evidence",
+      "bytes": 197812,
+      "sha256": "3a73bede45ee786dcc6f84ed959aefddc6670f2385666ee7158d33c1f23f6868",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/09-today-after-workout.png",
+      "group": "native_audit_evidence",
+      "bytes": 662958,
+      "sha256": "18fbfd4d63afda868d70c91d304daf0fc8fcadb1418c4a974d98ca5b477b16ed",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/10-library.png",
+      "group": "native_audit_evidence",
+      "bytes": 206917,
+      "sha256": "8fc6b3aeedfa02ebc700454544d648a18f3f3078787a3705077710853f7ffe8a",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/11-library-search.png",
+      "group": "native_audit_evidence",
+      "bytes": 260397,
+      "sha256": "a0b9fb685feb4b374303062919a62551a830f5561b2389e10230a3e172965a0d",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/12-technique-guide.png",
+      "group": "native_audit_evidence",
+      "bytes": 255431,
+      "sha256": "ee23be84bac6ab00e33803529901ab37822714bbddc817561d6f15263dbfe535",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/13-hold-ready.png",
+      "group": "native_audit_evidence",
+      "bytes": 190270,
+      "sha256": "6e75d34037f40bb8620789c30afc976c92f32a5484994565ec085b70bff2510a",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/14-hold-running.png",
+      "group": "native_audit_evidence",
+      "bytes": 185803,
+      "sha256": "1cfb47d937670434cf08be406f1ba225f0ee9436aa793ba7e1b421befe1dd795",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/15-hold-paused.png",
+      "group": "native_audit_evidence",
+      "bytes": 185342,
+      "sha256": "f06397fe42925b58c2d1c95646662fc69b747d4355fe8ec0939515630a3f3034",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/16-today-largest-accessibility-text.png",
+      "group": "native_audit_evidence",
+      "bytes": 245822,
+      "sha256": "ed24a17bbf93ffeb895994f8d4e8b7237bd0b1323362e193a4b28297ae22c2a4",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/17-today-compact-landscape.png",
+      "group": "native_audit_evidence",
+      "bytes": 176654,
+      "sha256": "a2ad9a985c5c7fe0615411862ad61b8e84d81b562e5000e2c428046462c09a0f",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/contact-sheet.jpg",
+      "group": "native_audit_evidence",
+      "bytes": 568778,
+      "sha256": "1b5827acf214eb1d1009220427cfbb704faabde96de9db6a0594051b3b7394fd",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-dark/manifest.json",
+      "group": "native_audit_evidence",
+      "bytes": 17017,
+      "sha256": "e71a2d321b49d9a8c3ef2934fe2953ab9a9c91d8076b59e598956394cf652ea3",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-light/01-today.png",
+      "group": "native_audit_evidence",
+      "bytes": 660852,
+      "sha256": "2dda912b6dfd7c50a4fb2599c9eb3518181e434d21fcebc7063e2f2d5e4a0c46",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-light/02-plan.png",
+      "group": "native_audit_evidence",
+      "bytes": 195599,
+      "sha256": "def5728d43b46b391dc1114f25f5f9654e41fe26cbc966bf0ca6b8c4544f7e66",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-light/03-routine-detail.png",
+      "group": "native_audit_evidence",
+      "bytes": 207167,
+      "sha256": "0bcaf919ab97c6244e67965fd84df4ba9d94eba5f30b58a7aeaaf78d70c5cc82",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-light/04-workout.png",
+      "group": "native_audit_evidence",
+      "bytes": 194964,
+      "sha256": "fbabd27968aed24792733f0d9b8bda6dfecc87b2b60bf2f4a2937093493d0c22",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-light/05-set-completed-rest.png",
+      "group": "native_audit_evidence",
+      "bytes": 236401,
+      "sha256": "087d928993193639cd8ceb036f98fee23fe1ebc51640b636de3e2cc74567c861",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-light/06-receipt.png",
+      "group": "native_audit_evidence",
+      "bytes": 134304,
+      "sha256": "486b57f46c8ff1cfcc02103a68888909ee8aaef6a24cd4ea39ce8984b0ce7924",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-light/07-progress.png",
+      "group": "native_audit_evidence",
+      "bytes": 169900,
+      "sha256": "5df00c0b2de38953d588346eb4179d0dfb58da7155f618b6f85c6935799c2f32",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-light/08-you.png",
+      "group": "native_audit_evidence",
+      "bytes": 468468,
+      "sha256": "6d856962b8b329514c42898ba4e6961c9d3e7a92f4ea0afcc0e80bfbead81fa0",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-light/09-today-after-workout.png",
+      "group": "native_audit_evidence",
+      "bytes": 659046,
+      "sha256": "7ab032f5b914117c2ae3abd67f670bb9b9ff152b19b1917ab3e687154e295dee",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-light/10-library.png",
+      "group": "native_audit_evidence",
+      "bytes": 208776,
+      "sha256": "31f0f597c13524d565bd0f804977c9d0a7b268ee7dc9014d77ce36e65854da20",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-light/11-library-search.png",
+      "group": "native_audit_evidence",
+      "bytes": 263252,
+      "sha256": "3cdc3a5d958f69a540a3cf4b314d7441f23855b73ef4b085644c153433a463c0",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-light/12-technique-guide.png",
+      "group": "native_audit_evidence",
+      "bytes": 243458,
+      "sha256": "b3e39cd5c60045ef64b9787222ecc80aab9ef48b3fa96e39209af2b40d75022c",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-light/13-hold-ready.png",
+      "group": "native_audit_evidence",
+      "bytes": 198177,
+      "sha256": "8b3c5dca4a3bfc22eaf31f870b53e30a2a4f95dd800af7320706f2330191cc87",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-light/14-hold-running.png",
+      "group": "native_audit_evidence",
+      "bytes": 190839,
+      "sha256": "48d53d4108fda791afd90dc9507d534b7cb42a875f2039f928a6411d85848349",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-light/15-hold-paused.png",
+      "group": "native_audit_evidence",
+      "bytes": 190424,
+      "sha256": "5548602ea6c4d0b8db7240131097b95785e02a9b150ecb11f3b264947783ff41",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-light/contact-sheet.jpg",
+      "group": "native_audit_evidence",
+      "bytes": 473055,
+      "sha256": "c61097294110f9f75c22c57d2303bb6c27d115a493cf4022a424d1d89908f774",
+      "self_manifest": false
+    },
+    {
+      "path": "ios/docs/audits/native-frontend-2026-11/screenshots/before-light/manifest.json",
+      "group": "native_audit_evidence",
+      "bytes": 14935,
+      "sha256": "e8afa306054cb5d3b369d937c300228a4b816bd1c898a058ad7f8000c58e4e47",
+      "self_manifest": false
+    },
+    {
+      "path": "playwright.accounts.config.js",
+      "group": "source_test_or_configuration",
+      "bytes": 2550,
+      "sha256": "f10a92c8a87abd30055dc2262186d807472e05a76317f9323aafe6aebf9f7a19",
+      "self_manifest": false
+    },
+    {
+      "path": "playwright.config.js",
+      "group": "source_test_or_configuration",
+      "bytes": 1460,
+      "sha256": "b7f88f7913b115381c63bed1355d947bc5fd09804182cda4b08d12ab350b60be",
+      "self_manifest": false
+    },
+    {
+      "path": "playwright.production.config.js",
+      "group": "source_test_or_configuration",
+      "bytes": 2235,
+      "sha256": "c2f609e155de558d606547b0b16ea8715dbfe6f2a834d929670c3d27494438d9",
+      "self_manifest": false
+    },
+    {
+      "path": "playwright.webkit.js",
+      "group": "source_test_or_configuration",
+      "bytes": 759,
+      "sha256": "95e6af8ed057f62f4425d1e5a9b882f177b6f8c7ee63721cfae75069f4cb2981",
+      "self_manifest": false
+    },
+    {
+      "path": "server/tests/workspace.test.ts",
+      "group": "source_test_or_configuration",
+      "bytes": 12328,
+      "sha256": "83e867b05252ca431f50081012d63ba38dffccebbe2ed5a238c1f6a737285ac9",
+      "self_manifest": false
+    },
+    {
+      "path": "server/workspace.ts",
+      "group": "source_test_or_configuration",
+      "bytes": 13889,
+      "sha256": "e8d205222c23448ba2ffe9de8fe9157da38abb11dc5e7d73186d6a44f362c5c6",
+      "self_manifest": false
+    },
+    {
+      "path": "src/App.jsx",
+      "group": "source_test_or_configuration",
+      "bytes": 27029,
+      "sha256": "bc76cd74bf353254d8e8af6211535ab1dff8a528d7063e6bf2a810fecbfe1361",
+      "self_manifest": false
+    },
+    {
+      "path": "src/account.css",
+      "group": "source_test_or_configuration",
+      "bytes": 28072,
+      "sha256": "71d67c1c893576ea80f54a6d34ddad40ce16ed074b6f05f1a7bd9e85a68acfe3",
+      "self_manifest": false
+    },
+    {
+      "path": "src/components/Account.jsx",
+      "group": "source_test_or_configuration",
+      "bytes": 103282,
+      "sha256": "ffe21b2dd0c065e7fc700e94c2c89e55af47498260b8d6c5d2e4d46022c8bfe6",
+      "self_manifest": false
+    },
+    {
+      "path": "src/components/ExerciseAnimation.jsx",
+      "group": "source_test_or_configuration",
+      "bytes": 2154,
+      "sha256": "e95c0c0bf64adedf99c6e83dd109cb573746c16055fa4123f6d403015fc2c681",
+      "self_manifest": false
+    },
+    {
+      "path": "src/components/HistoryEditor.jsx",
+      "group": "source_test_or_configuration",
+      "bytes": 7944,
+      "sha256": "98d6cd1e5806343152dcfc168d67a4807b1d5398cf2b413afeb9975ee998a043",
+      "self_manifest": false
+    },
+    {
+      "path": "src/components/Insights.jsx",
+      "group": "source_test_or_configuration",
+      "bytes": 16084,
+      "sha256": "b6866df8bf9d0c2042335d196c9413dcf82305ae772504c196338d106dce4fcd",
+      "self_manifest": false
+    },
+    {
+      "path": "src/components/Library.jsx",
+      "group": "source_test_or_configuration",
+      "bytes": 7389,
+      "sha256": "7320f47fc3c5a747f4c30342f52622bd0dee472e81380bc7e0bbb209b36a9e4b",
+      "self_manifest": false
+    },
+    {
+      "path": "src/components/Navigation.jsx",
+      "group": "source_test_or_configuration",
+      "bytes": 10971,
+      "sha256": "ce0f6a4188cb9be687b7146decf3a9688628689693fde72477f563dbf2a2ae9b",
+      "self_manifest": false
+    },
+    {
+      "path": "src/components/Overview.jsx",
+      "group": "source_test_or_configuration",
+      "bytes": 10656,
+      "sha256": "b3441f6954a3819d39a7e6c89a3003003b606442ba64df8a32b46c02742f7472",
+      "self_manifest": false
+    },
+    {
+      "path": "src/components/RoutineCardOrder.jsx",
+      "group": "source_test_or_configuration",
+      "bytes": 12706,
+      "sha256": "7a86def611ccc389e20421ee2067d6f2e71cfc82a9ab030677b24be25c85e1fa",
+      "self_manifest": false
+    },
+    {
+      "path": "src/components/Routines.jsx",
+      "group": "source_test_or_configuration",
+      "bytes": 26788,
+      "sha256": "b6e0339ec2327bcde88c4ef84bfd73c43f8e11e049dd8607f488a87e881af265",
+      "self_manifest": false
+    },
+    {
+      "path": "src/components/UI.jsx",
+      "group": "source_test_or_configuration",
+      "bytes": 4736,
+      "sha256": "4d8a66101cd15877baf653e4a7c7fa45c6862004c2a7fec0ba75f00ba6dd93b3",
+      "self_manifest": false
+    },
+    {
+      "path": "src/components/Workout.jsx",
+      "group": "source_test_or_configuration",
+      "bytes": 40906,
+      "sha256": "3bb2703ca33a5eea5f7c328c4f2f31002f8743e4629b687afe909e14f9169cbe",
+      "self_manifest": false
+    },
+    {
+      "path": "src/hooks/useNavigation.js",
+      "group": "source_test_or_configuration",
+      "bytes": 2340,
+      "sha256": "38d7cfa4925822f1253f95b1f39505f1e475030d3e2c42e7b28812b4380fe3bb",
+      "self_manifest": false
+    },
+    {
+      "path": "src/styles.css",
+      "group": "source_test_or_configuration",
+      "bytes": 69077,
+      "sha256": "5d2c89f7658111475317b6c077f0757d6e6e141707de1015bc4b7aa3739294fd",
+      "self_manifest": false
+    },
+    {
+      "path": "tests/accounts-design.spec.js",
+      "group": "source_test_or_configuration",
+      "bytes": 11169,
+      "sha256": "b9f6b045224dbd8545da07f9bd7add61c739694aa1db75f41945bec4680a81c5",
+      "self_manifest": false
+    },
+    {
+      "path": "tests/accounts-editor-audit.spec.js",
+      "group": "source_test_or_configuration",
+      "bytes": 5758,
+      "sha256": "6ea828fee3cd7b00af768f854835ca854c4d6a689ad0b058bbfeafffccfb8bde",
+      "self_manifest": false
+    },
+    {
+      "path": "tests/accounts-frontend-audit.helpers.js",
+      "group": "source_test_or_configuration",
+      "bytes": 4213,
+      "sha256": "b9cfa816cadaa68dc1de351a3b780752fdc442a19b49b8e6946a7ed16c9ecbe7",
+      "self_manifest": false
+    },
+    {
+      "path": "tests/accounts-frontend-audit.spec.js",
+      "group": "source_test_or_configuration",
+      "bytes": 7753,
+      "sha256": "d4600c28b19c63b7391f4a7e1416037a10a45a012c098818b81ec70fc34bbba1",
+      "self_manifest": false
+    },
+    {
+      "path": "tests/accounts-security.spec.js",
+      "group": "source_test_or_configuration",
+      "bytes": 14104,
+      "sha256": "facfc50fafde4be43f63102d93b494c0d114fb1e71314d8fa011b6809b84818a",
+      "self_manifest": false
+    },
+    {
+      "path": "tests/hold-owner-lifecycle.spec.js",
+      "group": "source_test_or_configuration",
+      "bytes": 7407,
+      "sha256": "16652c25558a6e4166adb42670ffef11a472efb7b27205a1f54a10cde7fcfe56",
+      "self_manifest": false
+    },
+    {
+      "path": "tests/responsive-numeric.spec.js",
+      "group": "source_test_or_configuration",
+      "bytes": 6657,
+      "sha256": "575aabfe671d3f0ecfbfc81a19c89d3246739eca505b89e5717c2f749c79d743",
+      "self_manifest": false
+    },
+    {
+      "path": "tests/responsive.spec.js",
+      "group": "source_test_or_configuration",
+      "bytes": 7326,
+      "sha256": "d126cd974d928f65187ec6f943e1a4cad8a77cd655cfcde419fa13272379570d",
+      "self_manifest": false
+    },
+    {
+      "path": "tests/routine-preview.spec.js",
+      "group": "source_test_or_configuration",
+      "bytes": 10737,
+      "sha256": "ff764088c956aa8942982763b086d862563c51557a98d153fd0711847add5011",
+      "self_manifest": false
+    },
+    {
+      "path": "tests/ui-coverage-gaps.spec.js",
+      "group": "source_test_or_configuration",
+      "bytes": 13934,
+      "sha256": "d45247154d54826692fc7d3962d77385695ab9998e85f445774f04d9a84c09da",
+      "self_manifest": false
+    }
+  ]
+}

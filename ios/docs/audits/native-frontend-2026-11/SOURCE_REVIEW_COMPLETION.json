@@ -1,0 +1,124 @@
+{
+  "date": "2026-11-04",
+  "scope": "Supersedes three partial native review markers with complete current-content reads; runtime coverage remains separate",
+  "rows": [
+    {
+      "path": "ios/FORMA/App/AppModel.swift",
+      "sha256": "78393af93cb3eb5bb7d28cf9618821a106413506fd04de6866a4431d51d8a597",
+      "lines": 523,
+      "readRanges": [
+        [1, 180],
+        [181, 360],
+        [361, 523]
+      ],
+      "reviewMethod": "Entire current file read after source freeze; all state, launch, serialized mutation, owner/epoch, persistence, Watch, preferences and date branches inspected",
+      "rationale": "No further justified source change; owner/epoch check remains after mutation gate; launch stays off main; UI acknowledgement follows committed store."
+    },
+    {
+      "path": "ios/FORMA/Features/PlanView.swift",
+      "sha256": "7fd07e573915af18f3ecf55253295381fc15d613144808d1a8a98d0179ed3aa9",
+      "bytes": 40914,
+      "lines": 1062,
+      "classification": "source",
+      "module": "FORMA",
+      "purpose": "Plan list and routine detail/editing, direct prescription entry, indexed library/picker/guides and weekly schedule",
+      "reviewStatus": "complete-source-read",
+      "readRanges": [[1, 1062]],
+      "reviewMethod": "Every line read in contiguous bounded chunks, including all declarations, view branches, bindings, asynchronous handlers and helpers",
+      "coverage": [
+        {
+          "lines": [1, 263],
+          "reviewed": "Adaptive header/empty/limit branches, stable-ID routine navigation, live routine disappearance, Watch-aware start pending gate, edit/delete sheet/dialog paths and original-data-preservation copy"
+        },
+        {
+          "lines": [264, 466],
+          "reviewed": "RoutineEditor validation, target drafts, exact-row deletion cleanup, bounded rows/routines, movement/superset normalization, sheet dismissal and busy guards, captured candidate and original-record conflict check"
+        },
+        {
+          "lines": [467, 697],
+          "reviewed": "Strict locale numeric bindings, bounded metric branches, historical per-side preservation/correction, duration/distance/load and RPE/rest/cue programming, field error and keyboard/focus labels"
+        },
+        {
+          "lines": [698, 930],
+          "reviewed": "Selectable library index/search state, query-only debounced detached search cancellation, current filters and previous hits, picker duplicate/add limit semantics and announcements, accessible control targets"
+        },
+        {
+          "lines": [931, 1062],
+          "reviewed": "Offline guide/fallback/credits, http/https source URL validation, training-day serialized updates and measurement-preserving prescription summaries"
+        }
+      ],
+      "rationale": "No additional confirmed P0/P1 established. Native view logic uses existing AppModel commit/engine contracts, stable row/routine IDs, explicit original comparison, clear bounds, native accessible controls and root-resolved motion. Full source read now replaces earlier selected critical-path review.",
+      "disposition": "inspected, no additional justified change",
+      "findings": [],
+      "severity": null,
+      "verification": "Read-only full source and control/data-flow review. No edits, build, test, device, screenshot or performance run by this reviewer for these records. Existing root/device runtime evidence remains separately owned.",
+      "limitations": [
+        "This read does not independently certify physical VoiceOver, keyboard behavior, animation smoothness or performance.",
+        "Core repository/engine and root account-switch boundaries are reviewed in their owning ledger rows; no substitute runtime pass is inferred here."
+      ],
+      "supersedes": {
+        "path": "/tmp/forma-native-review-history-assets-20261104.json",
+        "priorStatus": "partial-second-eyes-source-read"
+      }
+    },
+    {
+      "path": "ios/FORMA/Features/WorkoutView.swift",
+      "sha256": "7dd9a0dfdd5b6ced3acd2e6283b9a86011be5679eedf48bcaf794995f31d6149",
+      "bytes": 72920,
+      "lines": 1837,
+      "classification": "source",
+      "module": "FORMA",
+      "purpose": "Active workout lifecycle, durable measurement drafts, set/hold/rest interactions, accessible adaptive controls, notes and committed receipt",
+      "reviewStatus": "complete-source-read",
+      "readRanges": [[1, 1837]],
+      "reviewMethod": "Every line read in contiguous bounded chunks, including all declarations, view branches, bindings, asynchronous handlers and helpers",
+      "coverage": [
+        {
+          "lines": [1, 203],
+          "reviewed": "Local hold identity/deadline model, root motion-aware numeric transitions, repeated validation issues, locale clock semantics, lifecycle/state ownership and toolbar close/finish/discard/keyboard actions"
+        },
+        {
+          "lines": [204, 379],
+          "reviewed": "Widget-queued notice, active exercise index checks, stable draft bindings, field/row error branches, notes/add-set/next/previous controls and hold/finish/discard confirmation branches"
+        },
+        {
+          "lines": [380, 582],
+          "reviewed": "Best-effort lifecycle draft queue, cancellable deadline tasks, resume index, scoped keep-awake/reminders, validation haptic/announcements, inline saved/unsaved state and exercise choice"
+        },
+        {
+          "lines": [583, 821],
+          "reviewed": "Held-effort leave/retry/cancel decisions, root-local errors, captured draft application by stable set key, retaining newer edits after acknowledgement, serialized session and entry guards, completion undo/rest and add-set paths"
+        },
+        {
+          "lines": [822, 1158],
+          "reviewed": "Single timed hold identity, metric unit clamps and elapsed effort, pause/resume/early end/retry cancellation, commit before saved/tone/announcement, frozen failed duration and stale-attempt guards, isolated journal lookup and adaptive timer UI"
+        },
+        {
+          "lines": [1159, 1330],
+          "reviewed": "Adaptive set row/stacked accessible-size layout, declared metric fields, genuine committed completion transition, fixed touch target and keyboard-preserving dirty fields while writes are pending"
+        },
+        {
+          "lines": [1331, 1715],
+          "reviewed": "Foreground-only elapsed/countdown schedules, bounded tick sequence, persisted rest phase/ring mapping, save-failure announcements, semantic compact/accessibility/menu layouts and commit-gated rest controls/cues"
+        },
+        {
+          "lines": [1716, 1837],
+          "reviewed": "Captured session-note save and newer-text retention/dismissal guard, notes limit/discard confirmation, receipt based only on committed session data and root motion/haptic pipeline"
+        }
+      ],
+      "rationale": "No additional confirmed P0/P1 established. Reviewed captured session/entry identities, acknowledged-draft retention, hold retry state, real persisted deadlines, field focus, root motion choices, existing undo semantics and completion-only receipt. No source change or repeat runtime execution required for this source-coverage completion.",
+      "disposition": "inspected, no additional justified change",
+      "findings": [],
+      "severity": null,
+      "verification": "Read-only full source and control/data-flow review. No edits, build, test, device, screenshot or performance run by this reviewer for these records. Existing root/device runtime evidence remains separately owned.",
+      "limitations": [
+        "This read does not independently certify physical VoiceOver, keyboard behavior, animation smoothness or performance.",
+        "Core repository/engine and root account-switch boundaries are reviewed in their owning ledger rows; no substitute runtime pass is inferred here."
+      ],
+      "supersedes": {
+        "path": "/tmp/forma-native-review-history-assets-20261104.json",
+        "priorStatus": "partial-second-eyes-source-read"
+      }
+    }
+  ]
+}

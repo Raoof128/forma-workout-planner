@@ -361,6 +361,64 @@ final class WorkspaceStoreTests: XCTestCase, @unchecked Sendable {
     XCTAssertEqual(loaded, original)
   }
 
+  func testDamagedMemberRemovalReusesOwnerScopedRecoveryPolicyWithoutOpeningTheStore() throws {
+    let guestURL = try temporaryURL()
+    let directory = guestURL.deletingLastPathComponent()
+    let member = WorkspaceStore.memberStoreURL(directory: directory, memberReference: "a")
+    let other = WorkspaceStore.memberStoreURL(directory: directory, memberReference: "b")
+    let ownNames = [
+      member.lastPathComponent, member.lastPathComponent + "-wal",
+      member.lastPathComponent + "-shm",
+      member.lastPathComponent + ".recovery-\(UUID().uuidString).json",
+      member.lastPathComponent + ".unreadable-1790000000",
+      member.lastPathComponent + "-wal.unreadable-1790000000",
+      member.lastPathComponent + "-shm.unreadable-1790000000",
+    ]
+    let preservedNames = [
+      guestURL.lastPathComponent,
+      guestURL.lastPathComponent + ".recovery-\(UUID().uuidString).json",
+      other.lastPathComponent, other.lastPathComponent + ".recovery-\(UUID().uuidString).json",
+      other.lastPathComponent + ".unreadable-1790000000",
+      "forma-recovery-\(UUID().uuidString).json",
+      member.lastPathComponent + ".recovery-not-a-uuid.json",
+      member.lastPathComponent + ".unreadable-not-a-timestamp",
+      member.lastPathComponent + "-other.unreadable-1790000000",
+    ]
+    let raw = Data("synthetic damaged account cache".utf8)
+    for name in ownNames + preservedNames {
+      try raw.write(to: directory.appendingPathComponent(name))
+    }
+    XCTAssertThrowsError(try WorkspaceStore(url: member, catalog: Fixtures.catalog))
+
+    try WorkspaceStore.removeLocalFiles(at: member)
+
+    for name in ownNames {
+      XCTAssertFalse(
+        FileManager.default.fileExists(atPath: directory.appendingPathComponent(name).path), name)
+    }
+    for name in preservedNames {
+      XCTAssertEqual(try Data(contentsOf: directory.appendingPathComponent(name)), raw, name)
+    }
+    // Repeating removal of an already removed cache must not create a database.
+    try WorkspaceStore.removeLocalFiles(at: member)
+    XCTAssertFalse(FileManager.default.fileExists(atPath: member.path))
+  }
+
+  func testNonOpeningRemovalRefusesArtifactDirectoriesBeforeDeletingDamagedData() throws {
+    let url = try temporaryURL()
+    let raw = Data("synthetic damaged database".utf8)
+    try raw.write(to: url)
+    let unexpected = URL(fileURLWithPath: url.path + ".unreadable-1790000000")
+    try FileManager.default.createDirectory(at: unexpected, withIntermediateDirectories: false)
+    let evidence = unexpected.appendingPathComponent("keep.txt")
+    try raw.write(to: evidence)
+
+    XCTAssertThrowsError(try WorkspaceStore.removeLocalFiles(at: url))
+
+    XCTAssertEqual(try Data(contentsOf: url), raw)
+    XCTAssertEqual(try Data(contentsOf: evidence), raw)
+  }
+
   func testOversizedSnapshotAndRecoveryBlobsAreRefusedWithoutReplacingData() async throws {
     let url = try temporaryURL()
     let store = try WorkspaceStore(url: url, catalog: Fixtures.catalog)

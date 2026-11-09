@@ -1,5 +1,17 @@
 import { expect, test } from "@playwright/test";
 
+// Preserve DOM/network/source diagnostics without recording a continuous
+// filmstrip across this cold, multi-context security journey.
+test.use({
+  trace: {
+    mode: "retain-on-failure",
+    screenshots: false,
+    snapshots: true,
+    sources: true,
+    attachments: true,
+  },
+});
+
 const emailSink = "http://127.0.0.1:3002/emails";
 const password = "FORMA-local-test-passphrase-2026";
 

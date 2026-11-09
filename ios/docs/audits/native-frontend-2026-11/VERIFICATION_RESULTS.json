@@ -1,0 +1,88 @@
+{
+  "date": "2026-11-04",
+  "source_commit": "3c27308c5856928ab18650293df1c2f6e2e91389",
+  "device": "Raouf iPhone Air",
+  "os": "iOS 27.2",
+  "xcode": "27.2",
+  "production_install_or_data_used": false,
+  "isolated_signed_build": {
+    "result": "passed",
+    "app_widget_hosted_ui_targets": true,
+    "signed_group_url_origin_verified": true,
+    "watch_embedded": false
+  },
+  "final_device_suite": {
+    "result": "passed",
+    "total": 166,
+    "passed": 164,
+    "failed": 0,
+    "skipped": 2,
+    "hosted_passed": 139,
+    "ui_total": 27,
+    "ui_passed": 25,
+    "ui_skipped": 2
+  },
+  "intentional_hardware_skips": [
+    {
+      "test": "AccountExperienceTests/testCreateAccountNeedsTwoConsentsAndAFifteenCharacterPassword()",
+      "reason": "Simulator fixture changes password AutoFill settings."
+    },
+    {
+      "test": "WidgetGalleryTests/testSystemWidgetGallery()",
+      "reason": "Simulator fixture edits Home Screen placement and captures its contents."
+    }
+  ],
+  "final_light_tours": {
+    "result": "passed",
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0,
+    "runtime_warnings": 0
+  },
+  "original_baseline": {
+    "total": 130,
+    "passed": 129,
+    "failed": 1,
+    "skipped": 0,
+    "failure": "ASCII secure-field event delivery on current keyboard; product validation unchanged.",
+    "portable_fixture_on_original_app": "passed"
+  },
+  "baseline_light_warning_comparison": {
+    "result": "passed",
+    "passed": 2,
+    "same_keyboard_frame_warning_reproduced": true
+  },
+  "screenshots": {
+    "dark_before": 17,
+    "dark_after": 17,
+    "light_before": 15,
+    "light_after": 15,
+    "matched_pairs": 32
+  },
+  "ordinary_full_watch_compile": {
+    "result": "passed",
+    "duration_seconds": 36.346,
+    "signed": false,
+    "installed": false,
+    "embedded_watch": true,
+    "minimum_ios": "17.0",
+    "minimum_watchos": "10.0"
+  },
+  "remaining_runtime_warnings": [
+    "Four invalid-frame-dimension warnings during text-field/keyboard focus in final UI suite; unchanged baseline reproduces one.",
+    "Launch metric returns four samples with a missing-iteration warning."
+  ],
+  "retained_visual_limit": "Normal-width Workout inline Training toolbar title truncates; primary actions and routine identity remain available.",
+  "raw_private_evidence": "xcresult, device logs, signing profiles, UDIDs and diagnostics remain outside repository.",
+  "unverified": [
+    "iOS 17 runtime",
+    "physical Watch/Health",
+    "system-hosted widgets and Live Activity/privacy/intents",
+    "complete assistive-technology matrix",
+    "human haptic assessment",
+    "thermal/energy/long-session/leak profiling",
+    "signed Release distribution archive",
+    "live nonproduction account transactions",
+    "App Review acceptance"
+  ]
+}

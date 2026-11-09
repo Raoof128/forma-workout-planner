@@ -1,0 +1,1856 @@
+{
+  "method": "Pinned Chromium synthetic API routes, fixed Sydney date, reduced motion; geometry/computed-style checks only, not physical hardware or complete WCAG verification",
+  "widths": [
+    320,
+    360,
+    375,
+    390,
+    430,
+    540,
+    768,
+    1024,
+    1280,
+    1440,
+    1920
+  ],
+  "rows": [
+    {
+      "width": 320,
+      "surface": "account-overview",
+      "auth": null,
+      "viewport": 320,
+      "documentWidth": 320,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 320,
+      "surface": "account-profile",
+      "auth": null,
+      "viewport": 320,
+      "documentWidth": 320,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Weekly workout goal1 workout per week2 workouts per week3 workouts per week4 workouts per week5 workouts per week6 workouts per week7 workouts per week",
+          "fontSize": 16,
+          "height": 49
+        },
+        {
+          "label": "New email address",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 320,
+      "surface": "account-security",
+      "auth": null,
+      "viewport": 320,
+      "documentWidth": 320,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Current password",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "New passwordAt least 15 characters. Passphrases are welcome.",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Confirm new password",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Confirm your password",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Token name",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 320,
+      "surface": "account-training",
+      "auth": null,
+      "viewport": 320,
+      "documentWidth": 320,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 320,
+      "surface": "account-privacy",
+      "auth": null,
+      "viewport": 320,
+      "documentWidth": 320,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 320,
+      "surface": "auth-signin",
+      "auth": {
+        "clientWidth": 286,
+        "scrollWidth": 286,
+        "clipped": []
+      },
+      "viewport": 320,
+      "documentWidth": 320,
+      "heading": "Welcome back",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Password",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 320,
+      "surface": "auth-signup",
+      "auth": {
+        "clientWidth": 286,
+        "scrollWidth": 286,
+        "clipped": []
+      },
+      "viewport": 320,
+      "documentWidth": 320,
+      "heading": "Create your account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Email address",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "PasswordUse at least 15 characters. Long passphrases work well.",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 320,
+      "surface": "auth-forgot",
+      "auth": {
+        "clientWidth": 286,
+        "scrollWidth": 286,
+        "clipped": []
+      },
+      "viewport": 320,
+      "documentWidth": 320,
+      "heading": "Reset your password",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 360,
+      "surface": "account-overview",
+      "auth": null,
+      "viewport": 360,
+      "documentWidth": 360,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 360,
+      "surface": "account-profile",
+      "auth": null,
+      "viewport": 360,
+      "documentWidth": 360,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Weekly workout goal1 workout per week2 workouts per week3 workouts per week4 workouts per week5 workouts per week6 workouts per week7 workouts per week",
+          "fontSize": 16,
+          "height": 49
+        },
+        {
+          "label": "New email address",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 360,
+      "surface": "account-security",
+      "auth": null,
+      "viewport": 360,
+      "documentWidth": 360,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Current password",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "New passwordAt least 15 characters. Passphrases are welcome.",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Confirm new password",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Confirm your password",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Token name",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 360,
+      "surface": "account-training",
+      "auth": null,
+      "viewport": 360,
+      "documentWidth": 360,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 360,
+      "surface": "account-privacy",
+      "auth": null,
+      "viewport": 360,
+      "documentWidth": 360,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 360,
+      "surface": "auth-signin",
+      "auth": {
+        "clientWidth": 326,
+        "scrollWidth": 326,
+        "clipped": []
+      },
+      "viewport": 360,
+      "documentWidth": 360,
+      "heading": "Welcome back",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Password",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 360,
+      "surface": "auth-signup",
+      "auth": {
+        "clientWidth": 326,
+        "scrollWidth": 326,
+        "clipped": []
+      },
+      "viewport": 360,
+      "documentWidth": 360,
+      "heading": "Create your account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Email address",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "PasswordUse at least 15 characters. Long passphrases work well.",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 360,
+      "surface": "auth-forgot",
+      "auth": {
+        "clientWidth": 326,
+        "scrollWidth": 326,
+        "clipped": []
+      },
+      "viewport": 360,
+      "documentWidth": 360,
+      "heading": "Reset your password",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 375,
+      "surface": "account-overview",
+      "auth": null,
+      "viewport": 375,
+      "documentWidth": 375,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 375,
+      "surface": "account-profile",
+      "auth": null,
+      "viewport": 375,
+      "documentWidth": 375,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Weekly workout goal1 workout per week2 workouts per week3 workouts per week4 workouts per week5 workouts per week6 workouts per week7 workouts per week",
+          "fontSize": 16,
+          "height": 49
+        },
+        {
+          "label": "New email address",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 375,
+      "surface": "account-security",
+      "auth": null,
+      "viewport": 375,
+      "documentWidth": 375,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Current password",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "New passwordAt least 15 characters. Passphrases are welcome.",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Confirm new password",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Confirm your password",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Token name",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 375,
+      "surface": "account-training",
+      "auth": null,
+      "viewport": 375,
+      "documentWidth": 375,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 375,
+      "surface": "account-privacy",
+      "auth": null,
+      "viewport": 375,
+      "documentWidth": 375,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 375,
+      "surface": "auth-signin",
+      "auth": {
+        "clientWidth": 341,
+        "scrollWidth": 341,
+        "clipped": []
+      },
+      "viewport": 375,
+      "documentWidth": 375,
+      "heading": "Welcome back",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Password",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 375,
+      "surface": "auth-signup",
+      "auth": {
+        "clientWidth": 341,
+        "scrollWidth": 341,
+        "clipped": []
+      },
+      "viewport": 375,
+      "documentWidth": 375,
+      "heading": "Create your account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Email address",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "PasswordUse at least 15 characters. Long passphrases work well.",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 375,
+      "surface": "auth-forgot",
+      "auth": {
+        "clientWidth": 341,
+        "scrollWidth": 341,
+        "clipped": []
+      },
+      "viewport": 375,
+      "documentWidth": 375,
+      "heading": "Reset your password",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "surface": "account-overview",
+      "auth": null,
+      "viewport": 390,
+      "documentWidth": 390,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "surface": "account-profile",
+      "auth": null,
+      "viewport": 390,
+      "documentWidth": 390,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Weekly workout goal1 workout per week2 workouts per week3 workouts per week4 workouts per week5 workouts per week6 workouts per week7 workouts per week",
+          "fontSize": 16,
+          "height": 49
+        },
+        {
+          "label": "New email address",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "surface": "account-security",
+      "auth": null,
+      "viewport": 390,
+      "documentWidth": 390,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Current password",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "New passwordAt least 15 characters. Passphrases are welcome.",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Confirm new password",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Confirm your password",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Token name",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "surface": "account-training",
+      "auth": null,
+      "viewport": 390,
+      "documentWidth": 390,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "surface": "account-privacy",
+      "auth": null,
+      "viewport": 390,
+      "documentWidth": 390,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "surface": "auth-signin",
+      "auth": {
+        "clientWidth": 348,
+        "scrollWidth": 348,
+        "clipped": []
+      },
+      "viewport": 390,
+      "documentWidth": 390,
+      "heading": "Welcome back",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Password",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "surface": "auth-signup",
+      "auth": {
+        "clientWidth": 348,
+        "scrollWidth": 348,
+        "clipped": []
+      },
+      "viewport": 390,
+      "documentWidth": 390,
+      "heading": "Create your account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Email address",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "PasswordUse at least 15 characters. Long passphrases work well.",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "surface": "auth-forgot",
+      "auth": {
+        "clientWidth": 348,
+        "scrollWidth": 348,
+        "clipped": []
+      },
+      "viewport": 390,
+      "documentWidth": 390,
+      "heading": "Reset your password",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 430,
+      "surface": "account-overview",
+      "auth": null,
+      "viewport": 430,
+      "documentWidth": 430,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 430,
+      "surface": "account-profile",
+      "auth": null,
+      "viewport": 430,
+      "documentWidth": 430,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Weekly workout goal1 workout per week2 workouts per week3 workouts per week4 workouts per week5 workouts per week6 workouts per week7 workouts per week",
+          "fontSize": 16,
+          "height": 49
+        },
+        {
+          "label": "New email address",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 430,
+      "surface": "account-security",
+      "auth": null,
+      "viewport": 430,
+      "documentWidth": 430,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Current password",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "New passwordAt least 15 characters. Passphrases are welcome.",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Confirm new password",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Confirm your password",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Token name",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 430,
+      "surface": "account-training",
+      "auth": null,
+      "viewport": 430,
+      "documentWidth": 430,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 430,
+      "surface": "account-privacy",
+      "auth": null,
+      "viewport": 430,
+      "documentWidth": 430,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 430,
+      "surface": "auth-signin",
+      "auth": {
+        "clientWidth": 388,
+        "scrollWidth": 388,
+        "clipped": []
+      },
+      "viewport": 430,
+      "documentWidth": 430,
+      "heading": "Welcome back",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Password",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 430,
+      "surface": "auth-signup",
+      "auth": {
+        "clientWidth": 388,
+        "scrollWidth": 388,
+        "clipped": []
+      },
+      "viewport": 430,
+      "documentWidth": 430,
+      "heading": "Create your account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Email address",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "PasswordUse at least 15 characters. Long passphrases work well.",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 430,
+      "surface": "auth-forgot",
+      "auth": {
+        "clientWidth": 388,
+        "scrollWidth": 388,
+        "clipped": []
+      },
+      "viewport": 430,
+      "documentWidth": 430,
+      "heading": "Reset your password",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 540,
+      "surface": "account-overview",
+      "auth": null,
+      "viewport": 540,
+      "documentWidth": 540,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 540,
+      "surface": "account-profile",
+      "auth": null,
+      "viewport": 540,
+      "documentWidth": 540,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Weekly workout goal1 workout per week2 workouts per week3 workouts per week4 workouts per week5 workouts per week6 workouts per week7 workouts per week",
+          "fontSize": 16,
+          "height": 49
+        },
+        {
+          "label": "New email address",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 540,
+      "surface": "account-security",
+      "auth": null,
+      "viewport": 540,
+      "documentWidth": 540,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Current password",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "New passwordAt least 15 characters. Passphrases are welcome.",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Confirm new password",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Confirm your password",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Token name",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 540,
+      "surface": "account-training",
+      "auth": null,
+      "viewport": 540,
+      "documentWidth": 540,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 540,
+      "surface": "account-privacy",
+      "auth": null,
+      "viewport": 540,
+      "documentWidth": 540,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 540,
+      "surface": "auth-signin",
+      "auth": {
+        "clientWidth": 498,
+        "scrollWidth": 498,
+        "clipped": []
+      },
+      "viewport": 540,
+      "documentWidth": 540,
+      "heading": "Welcome back",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Password",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 540,
+      "surface": "auth-signup",
+      "auth": {
+        "clientWidth": 498,
+        "scrollWidth": 498,
+        "clipped": []
+      },
+      "viewport": 540,
+      "documentWidth": 540,
+      "heading": "Create your account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "Email address",
+          "fontSize": 16,
+          "height": 47
+        },
+        {
+          "label": "PasswordUse at least 15 characters. Long passphrases work well.",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 540,
+      "surface": "auth-forgot",
+      "auth": {
+        "clientWidth": 498,
+        "scrollWidth": 498,
+        "clipped": []
+      },
+      "viewport": 540,
+      "documentWidth": 540,
+      "heading": "Reset your password",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 16,
+          "height": 47
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 768,
+      "surface": "account-overview",
+      "auth": null,
+      "viewport": 768,
+      "documentWidth": 768,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 768,
+      "surface": "account-profile",
+      "auth": null,
+      "viewport": 768,
+      "documentWidth": 768,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Weekly workout goal1 workout per week2 workouts per week3 workouts per week4 workouts per week5 workouts per week6 workouts per week7 workouts per week",
+          "fontSize": 12,
+          "height": 44
+        },
+        {
+          "label": "New email address",
+          "fontSize": 12,
+          "height": 42
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 768,
+      "surface": "account-security",
+      "auth": null,
+      "viewport": 768,
+      "documentWidth": 768,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Current password",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "New passwordAt least 15 characters. Passphrases are welcome.",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Confirm new password",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Confirm your password",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Token name",
+          "fontSize": 12,
+          "height": 42
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 768,
+      "surface": "account-training",
+      "auth": null,
+      "viewport": 768,
+      "documentWidth": 768,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 768,
+      "surface": "account-privacy",
+      "auth": null,
+      "viewport": 768,
+      "documentWidth": 768,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 768,
+      "surface": "auth-signin",
+      "auth": {
+        "clientWidth": 490,
+        "scrollWidth": 490,
+        "clipped": []
+      },
+      "viewport": 768,
+      "documentWidth": 768,
+      "heading": "Welcome back",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 12,
+          "height": 46
+        },
+        {
+          "label": "Password",
+          "fontSize": 12,
+          "height": 46
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 768,
+      "surface": "auth-signup",
+      "auth": {
+        "clientWidth": 490,
+        "scrollWidth": 490,
+        "clipped": []
+      },
+      "viewport": 768,
+      "documentWidth": 768,
+      "heading": "Create your account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 12,
+          "height": 46
+        },
+        {
+          "label": "Email address",
+          "fontSize": 12,
+          "height": 46
+        },
+        {
+          "label": "PasswordUse at least 15 characters. Long passphrases work well.",
+          "fontSize": 12,
+          "height": 46
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 768,
+      "surface": "auth-forgot",
+      "auth": {
+        "clientWidth": 490,
+        "scrollWidth": 490,
+        "clipped": []
+      },
+      "viewport": 768,
+      "documentWidth": 768,
+      "heading": "Reset your password",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 12,
+          "height": 46
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1024,
+      "surface": "account-overview",
+      "auth": null,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 1024,
+      "surface": "account-profile",
+      "auth": null,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Weekly workout goal1 workout per week2 workouts per week3 workouts per week4 workouts per week5 workouts per week6 workouts per week7 workouts per week",
+          "fontSize": 12,
+          "height": 44
+        },
+        {
+          "label": "New email address",
+          "fontSize": 12,
+          "height": 42
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1024,
+      "surface": "account-security",
+      "auth": null,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Current password",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "New passwordAt least 15 characters. Passphrases are welcome.",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Confirm new password",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Confirm your password",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Token name",
+          "fontSize": 12,
+          "height": 42
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1024,
+      "surface": "account-training",
+      "auth": null,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 1024,
+      "surface": "account-privacy",
+      "auth": null,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 1024,
+      "surface": "auth-signin",
+      "auth": {
+        "clientWidth": 741,
+        "scrollWidth": 741,
+        "clipped": []
+      },
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "heading": "Welcome back",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 12,
+          "height": 46
+        },
+        {
+          "label": "Password",
+          "fontSize": 12,
+          "height": 46
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1024,
+      "surface": "auth-signup",
+      "auth": {
+        "clientWidth": 741,
+        "scrollWidth": 741,
+        "clipped": []
+      },
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "heading": "Create your account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 12,
+          "height": 46
+        },
+        {
+          "label": "Email address",
+          "fontSize": 12,
+          "height": 46
+        },
+        {
+          "label": "PasswordUse at least 15 characters. Long passphrases work well.",
+          "fontSize": 12,
+          "height": 46
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1024,
+      "surface": "auth-forgot",
+      "auth": {
+        "clientWidth": 741,
+        "scrollWidth": 741,
+        "clipped": []
+      },
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "heading": "Reset your password",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 12,
+          "height": 46
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1280,
+      "surface": "account-overview",
+      "auth": null,
+      "viewport": 1280,
+      "documentWidth": 1280,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 1280,
+      "surface": "account-profile",
+      "auth": null,
+      "viewport": 1280,
+      "documentWidth": 1280,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Weekly workout goal1 workout per week2 workouts per week3 workouts per week4 workouts per week5 workouts per week6 workouts per week7 workouts per week",
+          "fontSize": 12,
+          "height": 44
+        },
+        {
+          "label": "New email address",
+          "fontSize": 12,
+          "height": 42
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1280,
+      "surface": "account-security",
+      "auth": null,
+      "viewport": 1280,
+      "documentWidth": 1280,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Current password",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "New passwordAt least 15 characters. Passphrases are welcome.",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Confirm new password",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Confirm your password",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Token name",
+          "fontSize": 12,
+          "height": 42
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1280,
+      "surface": "account-training",
+      "auth": null,
+      "viewport": 1280,
+      "documentWidth": 1280,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 1280,
+      "surface": "account-privacy",
+      "auth": null,
+      "viewport": 1280,
+      "documentWidth": 1280,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 1280,
+      "surface": "auth-signin",
+      "auth": {
+        "clientWidth": 938,
+        "scrollWidth": 938,
+        "clipped": []
+      },
+      "viewport": 1280,
+      "documentWidth": 1280,
+      "heading": "Welcome back",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 12,
+          "height": 46
+        },
+        {
+          "label": "Password",
+          "fontSize": 12,
+          "height": 46
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1280,
+      "surface": "auth-signup",
+      "auth": {
+        "clientWidth": 938,
+        "scrollWidth": 938,
+        "clipped": []
+      },
+      "viewport": 1280,
+      "documentWidth": 1280,
+      "heading": "Create your account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 12,
+          "height": 46
+        },
+        {
+          "label": "Email address",
+          "fontSize": 12,
+          "height": 46
+        },
+        {
+          "label": "PasswordUse at least 15 characters. Long passphrases work well.",
+          "fontSize": 12,
+          "height": 46
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1280,
+      "surface": "auth-forgot",
+      "auth": {
+        "clientWidth": 938,
+        "scrollWidth": 938,
+        "clipped": []
+      },
+      "viewport": 1280,
+      "documentWidth": 1280,
+      "heading": "Reset your password",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 12,
+          "height": 46
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1440,
+      "surface": "account-overview",
+      "auth": null,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 1440,
+      "surface": "account-profile",
+      "auth": null,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Weekly workout goal1 workout per week2 workouts per week3 workouts per week4 workouts per week5 workouts per week6 workouts per week7 workouts per week",
+          "fontSize": 12,
+          "height": 44
+        },
+        {
+          "label": "New email address",
+          "fontSize": 12,
+          "height": 42
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1440,
+      "surface": "account-security",
+      "auth": null,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Current password",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "New passwordAt least 15 characters. Passphrases are welcome.",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Confirm new password",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Confirm your password",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Token name",
+          "fontSize": 12,
+          "height": 42
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1440,
+      "surface": "account-training",
+      "auth": null,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 1440,
+      "surface": "account-privacy",
+      "auth": null,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 1440,
+      "surface": "auth-signin",
+      "auth": {
+        "clientWidth": 938,
+        "scrollWidth": 938,
+        "clipped": []
+      },
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "heading": "Welcome back",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 12,
+          "height": 46
+        },
+        {
+          "label": "Password",
+          "fontSize": 12,
+          "height": 46
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1440,
+      "surface": "auth-signup",
+      "auth": {
+        "clientWidth": 938,
+        "scrollWidth": 938,
+        "clipped": []
+      },
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "heading": "Create your account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 12,
+          "height": 46
+        },
+        {
+          "label": "Email address",
+          "fontSize": 12,
+          "height": 46
+        },
+        {
+          "label": "PasswordUse at least 15 characters. Long passphrases work well.",
+          "fontSize": 12,
+          "height": 46
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1440,
+      "surface": "auth-forgot",
+      "auth": {
+        "clientWidth": 938,
+        "scrollWidth": 938,
+        "clipped": []
+      },
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "heading": "Reset your password",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 12,
+          "height": 46
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1920,
+      "surface": "account-overview",
+      "auth": null,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 1920,
+      "surface": "account-profile",
+      "auth": null,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Weekly workout goal1 workout per week2 workouts per week3 workouts per week4 workouts per week5 workouts per week6 workouts per week7 workouts per week",
+          "fontSize": 12,
+          "height": 44
+        },
+        {
+          "label": "New email address",
+          "fontSize": 12,
+          "height": 42
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1920,
+      "surface": "account-security",
+      "auth": null,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "heading": "Account",
+      "inputs": [
+        {
+          "label": "Current password",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "New passwordAt least 15 characters. Passphrases are welcome.",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Confirm new password",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Confirm your password",
+          "fontSize": 12,
+          "height": 42
+        },
+        {
+          "label": "Token name",
+          "fontSize": 12,
+          "height": 42
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1920,
+      "surface": "account-training",
+      "auth": null,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 1920,
+      "surface": "account-privacy",
+      "auth": null,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "heading": "Account",
+      "inputs": [],
+      "pageErrors": []
+    },
+    {
+      "width": 1920,
+      "surface": "auth-signin",
+      "auth": {
+        "clientWidth": 938,
+        "scrollWidth": 938,
+        "clipped": []
+      },
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "heading": "Welcome back",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 12,
+          "height": 46
+        },
+        {
+          "label": "Password",
+          "fontSize": 12,
+          "height": 46
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1920,
+      "surface": "auth-signup",
+      "auth": {
+        "clientWidth": 938,
+        "scrollWidth": 938,
+        "clipped": []
+      },
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "heading": "Create your account",
+      "inputs": [
+        {
+          "label": "Display name",
+          "fontSize": 12,
+          "height": 46
+        },
+        {
+          "label": "Email address",
+          "fontSize": 12,
+          "height": 46
+        },
+        {
+          "label": "PasswordUse at least 15 characters. Long passphrases work well.",
+          "fontSize": 12,
+          "height": 46
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 1920,
+      "surface": "auth-forgot",
+      "auth": {
+        "clientWidth": 938,
+        "scrollWidth": 938,
+        "clipped": []
+      },
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "heading": "Reset your password",
+      "inputs": [
+        {
+          "label": "Email address",
+          "fontSize": 12,
+          "height": 46
+        }
+      ],
+      "pageErrors": []
+    }
+  ],
+  "failures": []
+}

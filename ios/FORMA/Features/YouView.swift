@@ -75,7 +75,7 @@ struct YouView: View {
           "Share training with widgets",
           isOn: Binding(
             get: { model.widgets.sharing },
-            set: { model.widgets.setSharing($0, workspace: model.workspace) }
+            set: { model.setWidgetSharing($0) }
           )
         )
         .id(YouFocus.widgetSharing)
@@ -231,48 +231,34 @@ private struct YouFocusReveal: ViewModifier {
 struct ProfileEditor: View {
   @Environment(AppModel.self) private var model
   @Environment(\.dismiss) private var dismiss
-  @State private var name = ""
-  @State private var goal = 4
-  @State private var rest = 90
-  @State private var original: Profile?
+  @State private var draft = ProfileEditorState()
   @State private var confirmingDiscard = false
-  @State private var failure: String?
   @FocusState private var nameFocused: Bool
-
-  private var changed: Bool {
-    guard let original else { return false }
-    return name != original.name || goal != original.goal || rest != original.restSeconds
-  }
-
-  private var invalid: String? {
-    if name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-      return "Enter a display name."
-    }
-    if name.utf16.count > 50 { return "Use a shorter display name, up to 50 characters." }
-    return nil
-  }
 
   var body: some View {
     // Trimming and counting the name allocates; do it once per keystroke, not
     // once for each of the three places that read the result.
-    let problem = invalid
+    @Bindable var draft = draft
+    let problem = draft.invalid
     NavigationStack {
       Form {
         Section("Your training profile") {
-          TextField("Display name", text: $name).textContentType(.nickname)
+          TextField("Display name", text: $draft.name).textContentType(.nickname)
             .focused($nameFocused)
             .submitLabel(.done)
             .onSubmit { nameFocused = false }
             .accessibilityIdentifier("profile-name")
-          Stepper("Weekly goal: \(countPhrase(goal, "workout"))", value: $goal, in: 1...7)
-            .accessibilityIdentifier("profile-goal")
-          Stepper("Default rest: \(rest) seconds", value: $rest, in: 10...600, step: 5)
+          Stepper(
+            "Weekly goal: \(countPhrase(draft.goal, "workout"))", value: $draft.goal, in: 1...7
+          )
+          .accessibilityIdentifier("profile-goal")
+          Stepper("Default rest: \(draft.rest) seconds", value: $draft.rest, in: 10...600, step: 5)
             .accessibilityIdentifier("profile-rest")
         }
         if let problem {
           Section { Text(problem).font(.footnote).foregroundStyle(FormaTheme.primary) }
         }
-        if let failure {
+        if let failure = draft.failure {
           Section {
             Label {
               Text(failure).foregroundStyle(FormaTheme.primary)
@@ -294,15 +280,18 @@ struct ProfileEditor: View {
       .toolbar {
         ToolbarItem(placement: .cancellationAction) {
           Button("Cancel") {
-            if changed { confirmingDiscard = true } else { dismiss() }
+            if draft.changed { confirmingDiscard = true } else { dismiss() }
           }
-          .disabled(model.busy).accessibilityIdentifier("cancel-profile")
+          .disabled(model.busy || draft.saving).accessibilityIdentifier("cancel-profile")
         }
         ToolbarItem(placement: .confirmationAction) {
-          Button("Save") {
+          Button(draft.saving ? "Saving…" : "Save") {
             Task { await save() }
           }
-          .disabled(model.busy || problem != nil || !changed)
+          .disabled(
+            model.busy || draft.saving || problem != nil
+              || (!draft.changed && !draft.needsAccountRetry)
+          )
           .accessibilityIdentifier("save-profile")
         }
         ToolbarItemGroup(placement: .keyboard) {
@@ -311,7 +300,7 @@ struct ProfileEditor: View {
         }
       }
     }
-    .interactiveDismissDisabled(changed || model.busy)
+    .interactiveDismissDisabled(draft.changed || model.busy || draft.saving)
     .confirmationDialog(
       "Discard your profile changes?", isPresented: $confirmingDiscard, titleVisibility: .visible
     ) {
@@ -319,57 +308,20 @@ struct ProfileEditor: View {
         .accessibilityIdentifier("discard-profile-changes")
     }
     .onAppear {
-      if original == nil, let profile = model.workspace?.profile {
-        original = profile
-        name = profile.name
-        goal = profile.goal
-        rest = profile.restSeconds
+      if let profile = model.workspace?.profile {
+        draft.load(profile, owner: model.storeIdentity)
       }
     }
   }
 
   private func save() async {
-    guard !model.busy, invalid == nil, let original else { return }
-    let updatedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
-    // After a failed account-name sync the training profile is already saved;
-    // saving again only retries the account.
-    let current = model.workspace?.profile
-    let alreadySaved =
-      current?.name == updatedName && current?.goal == goal && current?.restSeconds == rest
-    var saved = alreadySaved
-    if !saved {
-      saved = await model.commit({ value in
-        guard value.profile == original else {
-          throw AppFailure(
-            "Your profile changed while this editor was open. Keep this draft open or reopen your current profile before saving."
-          )
-        }
-        value.profile.name = updatedName
-        value.profile.goal = goal
-        value.profile.restSeconds = rest
-      })
-    }
-    if saved {
-      // The website keeps the account name and the training profile name in
-      // step; so does this.
+    let shouldDismiss = await draft.save(in: model) { updatedName in
       if let accountName = model.account.profile?.name, accountName != updatedName {
-        do {
-          try await model.account.call { try await $0.updateName(updatedName) }
-          await model.account.refreshSession()
-        } catch {
-          failure =
-            "Your training profile was saved, but your account name could not be synced: \(error.accountMessage) Save again to retry."
-          return
-        }
+        try await model.account.call { try await $0.updateName(updatedName) }
+        await model.account.refreshSession()
       }
-      dismiss()
-    } else {
-      failure =
-        model.errorMessage ?? "Your profile has not been saved. Keep this draft open and try again."
-      // Shown inline above; the root alert can't present over this sheet and
-      // would otherwise replay the same error after it closes.
-      model.errorMessage = nil
     }
+    if shouldDismiss { dismiss() }
   }
 }
 

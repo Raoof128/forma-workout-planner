@@ -313,7 +313,7 @@
 }
 .account-summary-card small {
   color: var(--ac-muted);
-  font-size: 10px;
+  font-size: 11px;
 }
 .account-overview-columns {
   display: grid;
@@ -1150,7 +1150,7 @@
   justify-content: center;
   gap: 6px;
   margin-top: 25px;
-  color: #7c857e;
+  color: var(--ac-muted);
   font-size: 10px;
 }
 .account-guest-note button {
@@ -1193,45 +1193,8 @@
     padding-top: 12px;
   }
   .account-layout {
-    grid-template-columns: 190px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: 13px;
-  }
-  .account-nav {
-    padding: 9px;
-  }
-  .account-welcome {
-    grid-template-columns: 1fr;
-  }
-  .account-welcome-profile {
-    padding: 16px 24px;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    border-left: 0;
-  }
-  .account-welcome-copy {
-    padding: 23px 24px 20px;
-  }
-}
-@media (max-width: 700px) {
-  .account-page {
-    padding: 10px 0 36px;
-  }
-  .account-page-head {
-    align-items: start;
-    margin-bottom: 15px;
-  }
-  .account-page-head h1 {
-    font-size: 42px;
-  }
-  .account-page-head p {
-    max-width: 230px;
-    font-size: 11px;
-  }
-  .account-sync {
-    padding: 9px;
-  }
-  .account-layout {
-    grid-template-columns: 1fr;
-    gap: 10px;
   }
   .account-nav {
     position: static;
@@ -1253,13 +1216,81 @@
     gap: 4px;
     padding: 4px 2px;
     text-align: center;
-    font-size: 9px;
+    font-size: 11px;
   }
   .account-nav-items button > svg:last-child {
     display: none;
   }
   .account-back-workspace {
     display: none;
+  }
+  .account-welcome {
+    grid-template-columns: 1fr;
+  }
+  .account-welcome-profile {
+    padding: 16px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-left: 0;
+  }
+  .account-welcome-copy {
+    padding: 23px 24px 20px;
+  }
+  /* The desktop shell leaves too little room for both authentication columns. */
+  .account-auth-layout {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    margin: 3px auto 20px;
+  }
+  .account-auth-aside {
+    min-height: 175px;
+    padding: 24px 25px;
+  }
+  .account-auth-aside h2 {
+    margin: 14px 0 6px;
+    font-size: 44px;
+  }
+  .account-auth-aside p {
+    max-width: 285px;
+    font-size: 11px;
+  }
+  .account-aside-mark {
+    right: 20px;
+    bottom: 19px;
+    transform: scale(0.7);
+    transform-origin: bottom right;
+  }
+  .account-auth-card {
+    padding: 28px 24px;
+  }
+}
+@media (max-width: 700px) {
+  .account-page {
+    padding: 10px 0 36px;
+  }
+  .account-page-head {
+    align-items: start;
+    margin-bottom: 15px;
+  }
+  .account-page-head h1 {
+    font-size: 42px;
+  }
+  .account-page-head p {
+    max-width: 230px;
+    font-size: 11px;
+  }
+  .account-sync {
+    padding: 9px;
+  }
+  .account-layout {
+    gap: 10px;
+  }
+  .account-settings-form input,
+  .account-settings-form select,
+  .account-form input,
+  .account-inline-form input,
+  .account-delete-confirm input {
+    font-size: 16px;
+    min-height: 44px;
   }
   .account-summary-grid {
     gap: 6px;
@@ -1298,31 +1329,11 @@
   .account-settings-form {
     padding: 14px;
   }
-  .account-auth-layout {
-    grid-template-columns: 1fr;
-    min-height: 0;
-    margin: 3px auto 20px;
-  }
-  .account-auth-aside {
-    min-height: 175px;
-    padding: 24px 25px;
-  }
-  .account-auth-aside h2 {
-    margin: 14px 0 6px;
-    font-size: 44px;
-  }
+}
+@media (max-width: 540px) {
   .account-auth-aside p {
-    max-width: 285px;
-    font-size: 11px;
-  }
-  .account-aside-mark {
-    right: 20px;
-    bottom: 19px;
-    transform: scale(0.7);
-    transform-origin: bottom right;
-  }
-  .account-auth-card {
-    padding: 28px 24px;
+    /* Reserve space for the phone emblem so it cannot paint over the copy. */
+    max-width: min(285px, calc(100% - 76px));
   }
 }
 @media (max-width: 380px) {
@@ -1459,4 +1470,11 @@
   height: 18px;
   margin: 0;
   accent-color: var(--ink, #202522);
+}
+
+@media (max-width: 380px) {
+  .account-inline-form.account-coach-form {
+    /* A wrapped column would place access choices beside the full-height name field. */
+    flex-wrap: nowrap;
+  }
 }

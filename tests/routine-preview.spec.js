@@ -267,3 +267,37 @@ test("reduced motion starts the demonstration on its still pose", async ({
     }),
   ).toBeVisible();
 });
+
+test("a live reduced-motion change pauses the demonstration without restarting it later", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.goto("/#library");
+  await page.getByLabel("Search exercise library").fill("goblet squat");
+  await page
+    .locator(".library-card")
+    .filter({
+      has: page.getByRole("heading", {
+        name: "Dumbbell Goblet Squat",
+        exact: true,
+      }),
+    })
+    .click();
+  const image = page.getByRole("img", {
+    name: /^How to perform Dumbbell Goblet Squat:/,
+  });
+  const animated = "/exercise-animations/dumbbell-goblet-squat.svg";
+  const still = "/exercise-animations/dumbbell-goblet-squat-still.svg";
+  await expect(image).toHaveAttribute("src", animated);
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(image).toHaveAttribute("src", still);
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await expect(image).toHaveAttribute("src", still);
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page
+    .getByRole("button", {
+      name: "Play demonstration of Dumbbell Goblet Squat",
+    })
+    .press("Enter");
+  await expect(image).toHaveAttribute("src", animated);
+});
