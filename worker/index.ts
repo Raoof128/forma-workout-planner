@@ -55,7 +55,11 @@ const BEARER_PATHS = new Set([
 // Only FORMA's own Better Auth cookies may be set through the gateway. This
 // also keeps any Cloudflare Access cookie on the Worker-to-origin hop private.
 const APP_COOKIE = /^(?:__Secure-|__Host-)?forma\.[A-Za-z0-9_.-]+$/;
+// The bearer token shape the coach routes accept. Shared by header forwarding
+// and the body-size decision, so both agree on what counts as a credential.
+const BEARER_HEADER = /^Bearer [A-Za-z0-9_.-]{1,120}$/;
 // Token-bearing email links are the only legitimate cross-site API requests.
+// They must arrive as a top-level navigation, not a background fetch.
 const CROSS_SITE_NAVIGATIONS = new Set([
   "/api/auth/verify-email",
   "/api/auth/delete-user/callback",
@@ -71,6 +75,8 @@ const METHODS = new Set([
   "OPTIONS",
 ]);
 const REDIRECT_STATUSES = new Set([301, 302, 303, 307, 308]);
+// Statuses that must not carry a body, so a missing Content-Type is harmless.
+const NO_BODY_STATUSES = new Set([204, 304]);
 const HOP_HEADERS = new Set([
   "connection",
   "keep-alive",
@@ -133,6 +139,45 @@ export function isNativeClientRequest(headers: Headers): boolean {
   );
 }
 
+/**
+ * The FORMA cookie parts of a Cookie header. A part without `name=value`
+ * (for example a bare `forma.abc`) is never forwarded or counted as a credential.
+ */
+function appCookieParts(cookieHeader: string): string[] {
+  return cookieHeader
+    .split(";")
+    .map((part) => part.trim())
+    .filter((part) => {
+      const equals = part.indexOf("=");
+      return equals > 0 && APP_COOKIE.test(part.slice(0, equals));
+    });
+}
+
+/**
+ * Only a credentialed workspace save or coach edit may send a whole workspace
+ * document. Anonymous callers get the small limit, so they cannot make the
+ * origin buffer and parse 20 MiB.
+ */
+function carriesWorkspaceCredential(
+  request: Request,
+  pathname: string,
+): boolean {
+  if (request.method === "PUT" && pathname === "/api/workspace") {
+    const cookie = request.headers.get("cookie");
+    return cookie !== null && appCookieParts(cookie).length > 0;
+  }
+  if (request.method === "PATCH" && pathname === COACH_DATA_PATH) {
+    // nosemgrep: ajinabraham.njsscan.dos.regex_dos.regex_dos -- anchored, one bounded character class, input capped at 128 chars
+    const authorization = request.headers.get("authorization");
+    return (
+      authorization !== null &&
+      authorization.length <= 128 &&
+      BEARER_HEADER.test(authorization)
+    );
+  }
+  return false;
+}
+
 type Fetcher = (
   input: RequestInfo | URL,
   init?: RequestInit,
@@ -175,6 +220,11 @@ function configuredOrigin(
     );
   }
   return url;
+}
+
+// `/api` itself and paths under it. `/apple` or `/apiary` belong to the SPA.
+function isApiPath(pathname: string): boolean {
+  return pathname === "/api" || pathname.startsWith("/api/");
 }
 
 function allowedMethods(pathname: string): Set<string> | null {
@@ -224,7 +274,7 @@ function filteredRequestHeaders(
   for (const [name, value] of request.headers) {
     const lower = name.toLowerCase();
     if (lower === "authorization") {
-      if (bearerRoute && /^Bearer [A-Za-z0-9_.-]{1,120}$/.test(value))
+      if (bearerRoute && BEARER_HEADER.test(value))
         headers.set("authorization", value);
       continue;
     }
@@ -238,10 +288,7 @@ function filteredRequestHeaders(
     if (lower === "cookie") {
       // Forward only FORMA's own cookies. Cloudflare Access (CF_Authorization)
       // and any other site cookies stay at the edge.
-      const appCookies = value
-        .split(";")
-        .map((part) => part.trim())
-        .filter((part) => APP_COOKIE.test(part.slice(0, part.indexOf("="))));
+      const appCookies = appCookieParts(value);
       if (appCookies.length) headers.append("cookie", appCookies.join("; "));
       continue;
     }
@@ -347,7 +394,7 @@ function applyApiSecurityHeaders(headers: Headers, secure: boolean): void {
 function createHandler(fetcher: Fetcher) {
   return async function handle(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
-    if (!url.pathname.startsWith("/api")) return jsonError(404, "Not found");
+    if (!isApiPath(url.pathname)) return jsonError(404, "Not found");
     if (!METHODS.has(request.method))
       return jsonError(405, "Method not allowed");
 
@@ -389,14 +436,14 @@ function createHandler(fetcher: Fetcher) {
     }
 
     const fetchSite = request.headers.get("sec-fetch-site");
-    if (
-      fetchSite === "cross-site" &&
-      !(
-        request.method === "GET" &&
-        (CROSS_SITE_NAVIGATIONS.has(url.pathname) ||
-          url.pathname.startsWith("/api/auth/reset-password/"))
-      )
-    ) {
+    // Only a top-level navigation (an email link the member clicked) may cross
+    // sites. A no-cors or cors fetch from another site is refused even on these paths.
+    const crossSiteLink =
+      request.method === "GET" &&
+      request.headers.get("sec-fetch-mode") === "navigate" &&
+      (CROSS_SITE_NAVIGATIONS.has(url.pathname) ||
+        url.pathname.startsWith("/api/auth/reset-password/"));
+    if (fetchSite === "cross-site" && !crossSiteLink) {
       return jsonError(403, "Cross-site API requests are not allowed");
     }
 
@@ -423,11 +470,9 @@ function createHandler(fetcher: Fetcher) {
       return jsonError(403, "A same-origin request is required");
     }
 
-    const bodyLimit =
-      (request.method === "PUT" && url.pathname === "/api/workspace") ||
-      (request.method === "PATCH" && url.pathname === COACH_DATA_PATH)
-        ? MAX_BODY_BYTES
-        : MAX_SMALL_BODY_BYTES;
+    const bodyLimit = carriesWorkspaceCredential(request, url.pathname)
+      ? MAX_BODY_BYTES
+      : MAX_SMALL_BODY_BYTES;
     const declaredLength = request.headers.get("content-length");
     if (
       declaredLength !== null &&
@@ -442,8 +487,13 @@ function createHandler(fetcher: Fetcher) {
     const abort = new AbortController();
     let timer: ReturnType<typeof setTimeout> | undefined;
     let requestBodyExceeded = false;
+    // A client that disconnects must not leave the origin working for it.
+    const onClientAbort = () => abort.abort(request.signal.reason);
+    if (request.signal.aborted) onClientAbort();
+    else request.signal.addEventListener("abort", onClientAbort);
     const finish = () => {
       if (timer !== undefined) clearTimeout(timer);
+      request.signal.removeEventListener("abort", onClientAbort);
     };
     timer = setTimeout(
       () => abort.abort("gateway timeout"),
@@ -513,14 +563,36 @@ function createHandler(fetcher: Fetcher) {
         ?.toLowerCase()
         .split(";", 1)[0]
         .trim();
+      // A body with no declared type is refused too: nothing may be sniffed or
+      // rendered by a browser. 204 and 304 never carry a body, so they pass.
       if (
         (upstreamType && !API_CONTENT_TYPES.includes(upstreamType)) ||
+        (!upstreamType &&
+          upstream.body !== null &&
+          !NO_BODY_STATUSES.has(upstream.status)) ||
         upstream.status < 200 ||
         upstream.status > 599
       ) {
         await upstream.body?.cancel("unexpected API response type");
         finish();
         return jsonError(502, "The API returned an invalid response type");
+      }
+
+      // Origin 5xx bodies can carry database or stack detail, so they are
+      // never forwarded. The status and Retry-After still tell the client what to do.
+      if (upstream.status >= 500) {
+        await upstream.body?.cancel("upstream server error replaced");
+        finish();
+        const errorHeaders = new Headers({
+          "content-type": "application/json; charset=utf-8",
+        });
+        const retryAfter = upstream.headers.get("retry-after");
+        if (retryAfter !== null) errorHeaders.set("retry-after", retryAfter);
+        applyApiSecurityHeaders(errorHeaders, appOrigin.protocol === "https:");
+        return new Response(JSON.stringify({ error: "upstream_error" }), {
+          status: upstream.status,
+          headers: errorHeaders,
+        });
       }
 
       const responseHeaders = new Headers();
@@ -572,7 +644,7 @@ export function handleApiRequest(
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const pathname = new URL(request.url).pathname;
-    if (pathname.startsWith("/api")) return handleApiRequest(request, env);
+    if (isApiPath(pathname)) return handleApiRequest(request, env);
     const response = await env.ASSETS.fetch(request);
     const headers = new Headers(response.headers);
     // Cloudflare respects no-transform when deciding whether to inject its

@@ -15,6 +15,7 @@ import {
   X,
   Play,
 } from "lucide-react";
+import { confirmUnsyncedSignOut } from "../account/signOutGuard.js";
 export const navigationItems = [
   ["overview", "Overview", House],
   ["routines", "My routines", Dumbbell],
@@ -22,7 +23,14 @@ export const navigationItems = [
   ["history", "Workout history", History],
   ["progress", "Progress", ChartNoAxesColumnIncreasing],
 ];
-export default function Navigation({ page, navigate, data, account, notify }) {
+export default function Navigation({
+  page,
+  navigate,
+  data,
+  account,
+  notify,
+  unsynced = false,
+}) {
   const [mobile, setMobile] = useState(
     () => matchMedia("(max-width:700px)").matches,
   );
@@ -89,7 +97,6 @@ export default function Navigation({ page, navigate, data, account, notify }) {
       <div className="mobile-top">
         <a
           className="brand"
-          aria-label="FORMA"
           href="#overview"
           onClick={(e) => {
             e.preventDefault();
@@ -129,7 +136,6 @@ export default function Navigation({ page, navigate, data, account, notify }) {
       >
         <a
           className="brand"
-          aria-label="FORMA"
           href="#overview"
           onClick={(e) => {
             e.preventDefault();
@@ -155,9 +161,9 @@ export default function Navigation({ page, navigate, data, account, notify }) {
         {data?.active && (
           <button className="resume-sidebar" onClick={() => go("workout")}>
             <span className="pulse-dot" />
-            <div>
+            <span className="button-copy">
               Workout in progress<small>{data.active.name}</small>
-            </div>
+            </span>
             <Play size={16} />
           </button>
         )}
@@ -185,6 +191,7 @@ export default function Navigation({ page, navigate, data, account, notify }) {
               initials={initials}
               onManage={() => go("account")}
               onSignOut={async () => {
+                if (!confirmUnsyncedSignOut(unsynced)) return;
                 await account.signOut();
                 notify?.("You’ve signed out.");
                 go("account");
@@ -198,10 +205,10 @@ export default function Navigation({ page, navigate, data, account, notify }) {
           ) : (
             <button className="profile-button" onClick={() => go("account")}>
               <span className="avatar">{initials}</span>
-              <div>
+              <span className="button-copy">
                 <strong>{displayName}</strong>
                 <small>Guest workspace</small>
-              </div>
+              </span>
               <ChevronRight size={16} />
             </button>
           )}
@@ -338,10 +345,10 @@ function ProfileMenu({ name, email, initials, onManage, onSignOut, onError }) {
         }}
       >
         <span className="avatar">{initials}</span>
-        <div>
+        <span className="button-copy">
           <strong>{name}</strong>
           <small>{email}</small>
-        </div>
+        </span>
         <ChevronUp size={16} className="profile-chevron" />
       </button>
     </div>

@@ -57,6 +57,7 @@
   font-size: clamp(32px, 3.4vw, 49px);
   line-height: 1;
   font-variant-numeric: tabular-nums;
+  /* Last resort only: the <=380px size below keeps normal totals on one line. */
   overflow-wrap: anywhere;
 }
 .history-journal .journal-archive-heading,
@@ -400,5 +401,10 @@
   }
   .history-journal .journal-detail-meta strong {
     font-size: 14px;
+  }
+}
+@media (max-width: 380px) {
+  .history-journal .journal-summary dd {
+    font-size: 26px;
   }
 }

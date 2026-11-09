@@ -39,10 +39,10 @@ test("personal training workflow persists routines, sessions and calculated prog
     .locator(".exercise-picker button")
     .filter({ hasText: "Barbell bench press" })
     .click();
-  await page.getByLabel("Barbell bench press sets", { exact: true }).fill("2");
-  await page.getByLabel("Barbell bench press reps", { exact: true }).fill("8");
+  await page.getByLabel("Barbell bench press: Sets", { exact: true }).fill("2");
+  await page.getByLabel("Barbell bench press: Reps", { exact: true }).fill("8");
   await page
-    .getByLabel("Barbell bench press weight", { exact: true })
+    .getByLabel("Barbell bench press: Load (kg)", { exact: true })
     .fill("45");
   await page.getByRole("button", { name: "Save routine" }).click();
   await expect(
@@ -56,7 +56,7 @@ test("personal training workflow persists routines, sessions and calculated prog
     .click();
   await page.getByRole("button", { name: "Edit routine" }).click();
   await page
-    .getByLabel("Barbell bench press weight", { exact: true })
+    .getByLabel("Barbell bench press: Load (kg)", { exact: true })
     .fill("50");
   await page.getByRole("button", { name: "Save routine" }).click();
   await page

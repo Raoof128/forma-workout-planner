@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { exercises } from "../src/data.js";
+import { exerciseById, exercises } from "../src/data.js";
 import { progressRecords } from "../src/progressSummary.js";
 
 const entry = (exerciseId, sets) => ({ exerciseId, sets });
@@ -28,7 +28,7 @@ test("records preserve saved identities and catalogue order across sessions", ()
   assert.deepEqual(
     result.find((record) => record.id === alias),
     {
-      ...exercises.find((e) => e.id === alias),
+      ...exerciseById.get(alias),
       maxWeight: 90,
       oneRM: 90,
       sets: 1,
@@ -37,7 +37,7 @@ test("records preserve saved identities and catalogue order across sessions", ()
   assert.deepEqual(
     result.find((record) => record.id === "bench"),
     {
-      ...exercises.find((e) => e.id === "bench"),
+      ...exerciseById.get("bench"),
       maxWeight: 55,
       oneRM: 55 * (1 + 10 / 30),
       sets: 2,
@@ -83,4 +83,15 @@ test("time, distance and unfinished entries produce no strength records", () => 
     [],
   );
   assert.deepEqual(progressRecords([]), []);
+});
+
+test("records show the reviewed name the logger and history use", () => {
+  const raw = exercises.find(
+    (e) => e.metric === "load_reps" && exerciseById.get(e.id).name !== e.name,
+  );
+  const [record] = progressRecords([
+    { exercises: [entry(raw.id, [set(20, 5)])] },
+  ]);
+  assert.equal(record.name, exerciseById.get(raw.id).name);
+  assert.notEqual(record.name, raw.name);
 });

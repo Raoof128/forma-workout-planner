@@ -33,6 +33,17 @@ export default function RoutinePrescriptions({
     onReady(true);
   }, [onReady]);
 
+  // Keyboard moves announce through the same region as pointer drags.
+  function moveRow(index, direction) {
+    const target = index + direction;
+    if (target < 0 || target >= items.length) return;
+    const name = exerciseById.get(items[index].exerciseId).name;
+    move(index, direction);
+    setAnnouncement(
+      `Moved ${name} to position ${target + 1} of ${items.length}.`,
+    );
+  }
+
   useEffect(() => {
     if (!landed) return;
     // Long enough for the row to settle and the confirmation to finish.
@@ -329,7 +340,7 @@ export default function RoutinePrescriptions({
             repInput={repInputs[entryKey(item)] ?? repRangeText(item)}
             onRepInput={onRepInput}
             update={update}
-            move={move}
+            move={moveRow}
             join={join}
             onUseTimed={onUseTimed}
             joined={
@@ -374,7 +385,7 @@ export default function RoutinePrescriptions({
           />
         ))}
       </Reorder.Group>
-      <span className="sr-only" role="status" aria-live="polite">
+      <span className="sr-only" aria-live="polite">
         {announcement}
       </span>
     </MotionConfig>

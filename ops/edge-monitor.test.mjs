@@ -112,3 +112,45 @@ test("an R2 failure reaches alerts after two checks using independent state", as
     globalThis.fetch = original;
   }
 });
+
+test("a failed alert send still persists the failure count and journal row", async () => {
+  const original = globalThis.fetch;
+  const state = new Map([
+    ["edge-state", JSON.stringify({ failures: 1, alertedAt: 0, journal: [] })],
+  ]);
+  const env = {
+    APP_ORIGIN: "https://forma.test",
+    CLOUDFLARE_ACCOUNT_ID: "test",
+    EMAIL_TOKEN: "test",
+    EMAIL_FROM: "ops@example.test",
+    ALERT_TO: "operator@example.test",
+    BACKUPS: {
+      get: async () => {
+        throw new Error("R2 unavailable");
+      },
+    },
+    STATE: {
+      get: async (key) => (state.has(key) ? JSON.parse(state.get(key)) : null),
+      put: async (key, value) => state.set(key, value),
+    },
+  };
+  globalThis.fetch = async (url) => {
+    if (url.startsWith(env.APP_ORIGIN))
+      return new globalThis.Response("healthy");
+    return globalThis.Response.json({ success: false, result: {} });
+  };
+  try {
+    await assert.rejects(
+      monitor.scheduled(null, env),
+      /Operations alert delivery was not accepted/,
+    );
+    const saved = JSON.parse(state.get("edge-state"));
+    assert.equal(saved.failures, 2);
+    assert.equal(saved.alertedAt, 0);
+    assert.equal(saved.journal.length, 1);
+    assert.equal(saved.journal[0].event, "attention");
+    assert.equal(saved.journal[0].alertSent, false);
+  } finally {
+    globalThis.fetch = original;
+  }
+});

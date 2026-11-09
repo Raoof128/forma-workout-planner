@@ -243,7 +243,7 @@ test("a running workout can gain, reorder and lose exercises and drop an unfinis
   const picker = page.getByRole("dialog", { name: "Add an exercise" });
   await picker.getByLabel("Search exercises").fill("alternate hammer curl");
   await picker
-    .getByRole("button", { name: "Add Alternate Hammer Curl", exact: true })
+    .getByRole("button", { name: /^Add Alternate Hammer Curl,/ })
     .click();
   await expect(
     status(page, "Alternate Hammer Curl added to this workout."),
@@ -277,8 +277,7 @@ test("a running workout can gain, reorder and lose exercises and drop an unfinis
   await replacing.getByLabel("Search exercises").fill("incline dumbbell press");
   await replacing
     .getByRole("button", {
-      name: "Replace with Incline Dumbbell Press",
-      exact: true,
+      name: /^Replace with Incline Dumbbell Press,/,
     })
     .click();
   await expect
@@ -350,7 +349,7 @@ test("replacing with an exercise that logs different fields asks before dropping
   });
   await picker.getByLabel("Search exercises").fill("high plank");
   await picker
-    .getByRole("button", { name: "Replace with High plank", exact: true })
+    .getByRole("button", { name: /^Replace with High plank,/ })
     .click();
   const confirm = page.getByRole("dialog", {
     name: "Replace Barbell bench press with High plank?",

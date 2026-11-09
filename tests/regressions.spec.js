@@ -268,7 +268,7 @@ test("dirty routine changes are retained and duration and prescriptions are pres
     .inputValue();
   await page.getByLabel("Routine name").fill("Renamed workout");
   await page
-    .getByLabel("Barbell bench press weight", { exact: true })
+    .getByLabel("Barbell bench press: Load (kg)", { exact: true })
     .fill("72.5");
   await page.keyboard.press("Escape");
   await expect(
@@ -282,7 +282,7 @@ test("dirty routine changes are retained and duration and prescriptions are pres
   await pick.click();
   await pick.click();
   await expect(
-    page.getByLabel("Barbell bench press weight", { exact: true }),
+    page.getByLabel("Barbell bench press: Load (kg)", { exact: true }),
   ).toHaveValue("72.5");
   // Restoring a deselected exercise retains its original position as well as
   // its prescription; the first exercise can move down, but cannot move up.
@@ -485,8 +485,11 @@ test("mobile rest controls stay reachable and expose instructions during logging
   data.active = session();
   await page.setViewportSize({ width: 320, height: 844 });
   await seed(page, data, "workout");
-  await expect(page.getByLabel("Open rest timer")).toBeVisible();
-  await nav(page, "Open rest timer");
+  const openRest = page.getByRole("button", {
+    name: /^Rest \d\d:\d\d\s*: open rest timer$/,
+  });
+  await expect(openRest).toBeVisible();
+  await openRest.click();
   await nav(page, "120s");
   await page.keyboard.press("Escape");
   await nav(page, "Complete Barbell bench press set 1");
@@ -495,7 +498,7 @@ test("mobile rest controls stay reachable and expose instructions during logging
   const bar = await page.locator(".mobile-rest-bar").boundingBox();
   expect(bar.y).toBeGreaterThanOrEqual(65);
   expect(bar.y + bar.height).toBeLessThan(844);
-  await nav(page, "Open rest timer");
+  await openRest.click();
   await expect(
     page.getByRole("button", { name: "120s", exact: true }),
   ).toHaveAttribute("aria-pressed", "true");

@@ -1,5 +1,8 @@
+import datetime as dt
 import importlib.util
+import json
 import pathlib
+import tempfile
 import unittest
 from unittest.mock import patch
 
@@ -72,6 +75,78 @@ class OperationsTests(unittest.TestCase):
         self.assertTrue(self.ops.tunnel_signal(state, ready=False))
         self.assertFalse(self.ops.tunnel_signal(state, ready=True))
         self.assertEqual(state['tunnelFailures'], 0)
+
+    def test_tunnel_is_not_judged_while_api_container_is_down(self):
+        previous = {'tunnelFailures': 1}
+        probe = unittest.mock.Mock(return_value=False)
+        self.assertFalse(self.ops.tunnel_judgement(previous, False, probe))
+        probe.assert_not_called()
+        self.assertEqual(previous['tunnelFailures'], 1)
+        # Once the API runs again, a genuine second tunnel failure still alerts.
+        self.assertTrue(self.ops.tunnel_judgement(previous, True, probe))
+        self.assertEqual(previous['tunnelFailures'], 2)
+
+    def test_api_probe_uses_readyz_not_liveness(self):
+        command = self.ops.api_ready_command({'project': 'forma-production'})
+        self.assertEqual(command[:3], ['docker', 'exec', 'forma-production-api-1'])
+        self.assertIn('http://127.0.0.1:3000/readyz', command[-1])
+        self.assertNotIn('healthz', command[-1])
+
+    def test_stopped_api_container_is_detected(self):
+        stopped = json.dumps([{'State': {'Running': False}}]).encode()
+        with patch.object(self.ops, 'run', return_value=stopped):
+            self.assertFalse(self.ops.container_running('forma-production-api-1'))
+        with patch.object(self.ops, 'run', side_effect=RuntimeError('container missing')):
+            self.assertFalse(self.ops.container_running('forma-production-api-1'))
+
+    def test_failed_alert_send_still_persists_failure_counts(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state_file = pathlib.Path(directory) / 'state.json'
+            state_file.write_text(json.dumps({'failures': 1, 'lastAlert': {}}))
+            config = {'project': 'forma-production', 'stateFile': str(state_file), 'directory': directory}
+            stamp = dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
+            healthy_probe = unittest.mock.Mock(returncode=0, stdout=b'', stderr=b'')
+            with patch.object(self.ops, 'container_healthy', return_value=False), \
+                    patch.object(self.ops, 'container_running', return_value=True), \
+                    patch.object(self.ops, 'tunnel_ready', return_value=True), \
+                    patch.object(self.ops.subprocess, 'run', return_value=healthy_probe), \
+                    patch.object(self.ops.Store, 'request', return_value=json.dumps({'createdAt': stamp}).encode()), \
+                    patch.object(self.ops, 'alert', side_effect=RuntimeError('mail provider down')):
+                with self.assertRaises(RuntimeError):
+                    self.ops.monitor(config)
+            saved = json.loads(state_file.read_text())
+        # The second consecutive failure is recorded even though its alert was not delivered,
+        # and no suppression window opens, so the next run retries the alert.
+        self.assertEqual(saved['failures'], 2)
+        self.assertEqual(saved['lastAlert'], {})
+
+    def test_a_hung_readiness_probe_still_counts_and_alerts(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state_file = pathlib.Path(directory) / 'state.json'
+            config = {'project': 'forma-production', 'stateFile': str(state_file), 'directory': directory}
+            stamp = dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
+            sent = []
+            hung = self.ops.subprocess.TimeoutExpired(cmd='docker exec', timeout=15)
+            for _ in range(2):
+                with patch.object(self.ops, 'container_healthy', return_value=True), \
+                        patch.object(self.ops, 'container_running', return_value=True), \
+                        patch.object(self.ops, 'tunnel_ready', return_value=True), \
+                        patch.object(self.ops.subprocess, 'run', side_effect=hung), \
+                        patch.object(self.ops.Store, 'request', return_value=json.dumps({'createdAt': stamp}).encode()), \
+                        patch.object(self.ops, 'alert', side_effect=lambda _config, signals: sent.append(set(signals))):
+                    self.ops.monitor(config)
+            saved = json.loads(state_file.read_text())
+        # A wedged API that makes docker exec time out is a failed probe, not a crashed monitor run.
+        self.assertEqual(saved['healthFailures'], 2)
+        self.assertIn('database_or_api_unhealthy', sent[-1])
+
+    def test_a_restarting_container_is_not_treated_as_running(self):
+        restarting = json.dumps([{'State': {'Running': True, 'Status': 'restarting'}}]).encode()
+        with patch.object(self.ops, 'run', return_value=restarting):
+            self.assertFalse(self.ops.container_running('forma-production-api-1'))
+        running = json.dumps([{'State': {'Running': True, 'Status': 'running'}}]).encode()
+        with patch.object(self.ops, 'run', return_value=running):
+            self.assertTrue(self.ops.container_running('forma-production-api-1'))
 
 
 if __name__ == '__main__':

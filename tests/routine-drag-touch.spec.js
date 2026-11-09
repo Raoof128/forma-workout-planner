@@ -28,7 +28,7 @@ async function touchMove(page, session, start, end) {
 async function holdTouchRow(page, context, editor) {
   const session = await context.newCDPSession(page);
   const row = editor.rows.filter({
-    has: page.getByLabel(`${editor.names[0]} reps`, { exact: true }),
+    has: page.getByLabel(`${editor.names[0]}: Reps`, { exact: true }),
   });
   const first = await row.boundingBox();
   const second = await editor.rows.nth(1).boundingBox();

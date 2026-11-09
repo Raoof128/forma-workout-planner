@@ -32,6 +32,16 @@ export class InvalidWorkspace extends Error {
   }
 }
 
+/** A coach edit would discard the member's in-progress workout. */
+export class UnconfirmedActiveRemoval extends Error {
+  constructor() {
+    super(
+      "This change discards the workout in progress; confirm with removesActive: true.",
+    );
+    this.name = "UnconfirmedActiveRemoval";
+  }
+}
+
 /** A coach edit would delete logged workouts without saying how many. */
 export class UnconfirmedHistoryRemoval extends Error {
   constructor(readonly removed: number) {
@@ -91,13 +101,52 @@ function stableJson(value: unknown): string {
   return JSON.stringify(value);
 }
 
-function requestHash(data: WorkspaceData, expectedRevision: number): string {
-  // The revision inside a legacy backup is informational. Only the explicit
-  // expectedRevision participates in optimistic concurrency.
+// The revision inside a legacy backup is informational. Only the explicit
+// expectedRevision participates in optimistic concurrency.
+function legacyRequestHash(
+  data: WorkspaceData,
+  expectedRevision: number,
+): string {
   const payload = { ...data, revision: 0 };
   return createHash("sha256")
     .update(stableJson({ data: payload, expectedRevision }))
     .digest("hex");
+}
+
+/**
+ * Fingerprint of a validated member save. The strict validator rebuilds every
+ * object in schema order, so plain JSON of the parsed value is already
+ * canonical whatever key order the client sent; the recursive key sort above
+ * cost more than validation itself on large workspaces. Operations recorded
+ * before this change carry the legacy fingerprint, which is still accepted.
+ */
+function requestHash(
+  data: WorkspaceData,
+  expectedRevision: number,
+): Fingerprint {
+  return {
+    current: createHash("sha256")
+      .update(
+        `v2:${JSON.stringify({ data: { ...data, revision: 0 }, expectedRevision })}`,
+      )
+      .digest("hex"),
+    legacy: () => legacyRequestHash(data, expectedRevision),
+  };
+}
+
+type Fingerprint = { current: string; legacy?: () => string };
+
+/**
+ * Roll back after an error. If even that fails, the connection is in an
+ * unknown state: report it so the pool destroys it instead of reusing it.
+ */
+async function rollback(client: PoolClient): Promise<boolean> {
+  try {
+    await client.query("ROLLBACK");
+    return false;
+  } catch {
+    return true;
+  }
 }
 
 async function ensureWorkspace(
@@ -150,6 +199,7 @@ export async function getWorkspace(
   const existing = await readWorkspaceRow(pool, userId);
   if (existing) return asAcknowledgement(existing);
   const client = await pool.connect();
+  let broken = false;
   try {
     await client.query("BEGIN");
     await ensureWorkspace(client, userId, name);
@@ -157,21 +207,25 @@ export async function getWorkspace(
     await client.query("COMMIT");
     return workspace;
   } catch (error) {
-    await client.query("ROLLBACK");
+    broken = await rollback(client);
     throw error;
   } finally {
-    client.release();
+    client.release(broken);
   }
 }
 
 type WriteRequest = {
   operationId: string;
   /** Fingerprint of the caller's payload, for idempotent retries. */
-  hash: string;
+  hash: Fingerprint;
   expectedRevision: number;
   /** Produces the validated next workspace from the locked current one. */
   build: (current: WorkspaceData) => WorkspaceData;
+  /** Runs inside the transaction before anything is replayed or written. */
+  guard?: (client: PoolClient) => Promise<void>;
 };
+
+export type WriteGuard = (client: PoolClient) => Promise<void>;
 
 type WriteResult =
   | { replayed: false; acknowledgement: WorkspaceAcknowledgement }
@@ -186,14 +240,20 @@ async function writeWorkspace(
   pool: Pool,
   userId: string,
   memberName: string | undefined,
-  { operationId, hash, expectedRevision, build }: WriteRequest,
+  { operationId, hash, expectedRevision, build, guard }: WriteRequest,
 ): Promise<WriteResult> {
   const client = await pool.connect();
+  let broken = false;
   try {
     await client.query("BEGIN");
-    await ensureWorkspace(client, userId, memberName);
+    // Lock first; the starter workspace (fresh data, validated and serialised)
+    // is only built for a member's very first write, not for every save.
+    if (!(await readWorkspaceRow(client, userId, true)))
+      await ensureWorkspace(client, userId, memberName);
     // Validated only if it is returned to the client in a conflict below.
     const locked = await selectWorkspace(client, userId, true, false);
+    // e.g. the coach token is still active, checked under this transaction.
+    if (guard) await guard(client);
     const latest = () => ({
       ...locked,
       data: workspaceDataSchema.parse(locked.data),
@@ -209,8 +269,9 @@ async function writeWorkspace(
       [userId, operationId],
     );
     if (prior.rows[0]) {
+      const recorded = prior.rows[0].request_hash;
       // nosemgrep: ajinabraham.njsscan.crypto.timing_attack_node.node_timing_attack -- idempotency hash of the member's own payload, not a secret
-      if (prior.rows[0].request_hash !== hash) {
+      if (recorded !== hash.current && recorded !== hash.legacy?.()) {
         throw new WorkspaceConflict(
           "operationId was already used for a different workspace update.",
           latest(),
@@ -254,7 +315,7 @@ async function writeWorkspace(
       [
         userId,
         operationId,
-        hash,
+        hash.current,
         JSON.stringify({
           revision: acknowledgement.revision,
           updatedAt: acknowledgement.updatedAt,
@@ -283,10 +344,10 @@ async function writeWorkspace(
     await client.query("COMMIT");
     return { replayed: false, acknowledgement };
   } catch (error) {
-    await client.query("ROLLBACK");
+    broken = await rollback(client);
     throw error;
   } finally {
-    client.release();
+    client.release(broken);
   }
 }
 
@@ -349,6 +410,7 @@ export async function patchWorkspace(
   userId: string,
   memberName: string | undefined,
   input: unknown,
+  guard?: WriteGuard,
 ): Promise<{ revision: number; updatedAt: string; replayed: boolean }> {
   const parsed = coachPatchSchema.safeParse(input);
   if (!parsed.success)
@@ -356,22 +418,31 @@ export async function patchWorkspace(
       "Send expectedRevision, operationId and changes with at least one of: routines, history, active, profile, schedule.",
       issuesOf(parsed.error),
     );
-  const { expectedRevision, operationId, changes, removesSessions } =
-    parsed.data;
+  const {
+    expectedRevision,
+    operationId,
+    changes,
+    removesSessions,
+    removesActive,
+  } = parsed.data;
   const hash = createHash("sha256")
     .update(
       stableJson({
         coach: true,
         changes,
         removesSessions: removesSessions ?? null,
+        // Only part of the fingerprint when sent, so operations recorded
+        // before the flag existed still replay.
+        ...(removesActive === undefined ? {} : { removesActive }),
         expectedRevision,
       }),
     )
     .digest("hex");
   const result = await writeWorkspace(pool, userId, memberName, {
     operationId,
-    hash,
+    hash: { current: hash },
     expectedRevision,
+    guard,
     build(current) {
       const merged: Record<string, unknown> = { ...current };
       for (const section of COACH_SECTIONS)
@@ -394,6 +465,15 @@ export async function patchWorkspace(
       ).length;
       if (removed > 0 && removesSessions !== removed)
         throw new UnconfirmedHistoryRemoval(removed);
+      // A workout in progress may hold completed sets that exist nowhere
+      // else. Ending or replacing it from a tool needs explicit confirmation;
+      // finishing it into history keeps its id and is not a removal.
+      const discarded =
+        current.active !== null &&
+        next.active?.id !== current.active.id &&
+        !kept.has(current.active.id);
+      if (discarded && removesActive !== true)
+        throw new UnconfirmedActiveRemoval();
       return next;
     },
   });
@@ -410,4 +490,19 @@ export function parseWorkspace(value: unknown): WorkspaceData {
   const parsed = workspaceDataSchema.safeParse(value);
   if (!parsed.success) throw new InvalidWorkspace("Workspace data is invalid.");
   return parsed.data;
+}
+
+/**
+ * The member's stored workspace exactly as saved, for export. It is not
+ * re-validated: a backup must still be downloadable if a later release
+ * tightens a bound that older stored data does not meet.
+ */
+export async function exportWorkspace(
+  pool: Pool,
+  userId: string,
+  name?: string,
+): Promise<unknown> {
+  const row = await readWorkspaceRow(pool, userId);
+  if (row) return row.data;
+  return (await getWorkspace(pool, userId, name)).data;
 }

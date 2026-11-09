@@ -3,15 +3,20 @@ import type { Pool } from "pg";
 import {
   bearerCoachToken,
   coachSummary,
+  assertCoachTokenActive,
+  CoachTokenInactive,
   CoachTokenLimit,
   InvalidCoachTokenLabel,
   InvalidCoachTokenScope,
   isCoachTokenId,
   issueCoachToken,
   listCoachTokens,
+  normaliseCoachLabel,
+  normaliseCoachScope,
   parseSummaryDays,
   resolveCoachToken,
   revokeCoachToken,
+  touchCoachToken,
 } from "./coachTokens.js";
 import type { CoachScope } from "./coachTokens.js";
 import { consumeBudget, throttleKey } from "./throttle.js";
@@ -19,6 +24,7 @@ import {
   getWorkspace,
   InvalidWorkspace,
   patchWorkspace,
+  UnconfirmedActiveRemoval,
   UnconfirmedHistoryRemoval,
   WorkspaceConflict,
 } from "./workspace.js";
@@ -37,6 +43,15 @@ export const COACH_READ_SCOPE = "coach-token-read";
 /** Edits allowed per full-access token per hour. */
 export const COACH_WRITE_LIMIT = 60;
 export const COACH_WRITE_SCOPE = "coach-token-write";
+/**
+ * Edits allowed across all of one member's tokens per hour. Below five tokens
+ * x 60, on purpose: extra tokens must not multiply a member's write budget.
+ */
+export const COACH_MEMBER_WRITE_LIMIT = 120;
+export const COACH_MEMBER_WRITE_SCOPE = "coach-member-write";
+/** Well-formed mint attempts per member per hour, refused or not. */
+export const COACH_MINT_LIMIT = 10;
+export const COACH_MINT_SCOPE = "coach-token-mint";
 export const COACH_DATA_PATH = "/api/coach/workspace/data";
 const MAX_EXERCISE_RESULTS = 100;
 /** Minting a credential is a step-up action, like revoking sessions. */
@@ -106,12 +121,19 @@ export function registerCoachRoutes(
     if (!body || typeof body !== "object" || Array.isArray(body))
       return reply.code(400).headers(noStore).send({ error: "bad_request" });
     try {
+      const label = (body as { label?: unknown }).label;
+      const scope = (body as { scope?: unknown }).scope;
+      // Only well-formed attempts spend the mint budget; a bad label is a 400.
+      normaliseCoachLabel(label);
+      normaliseCoachScope(scope);
+      if (!(await spend(COACH_MINT_SCOPE, COACH_MINT_LIMIT, member.userId)))
+        return rateLimited(reply);
       const issued = await issueCoachToken(
         pool,
         authSecret,
         member.userId,
-        (body as { label?: unknown }).label,
-        (body as { scope?: unknown }).scope,
+        label,
+        scope,
       );
       return reply.code(201).headers(noStore).send(issued);
     } catch (error) {
@@ -160,15 +182,35 @@ export function registerCoachRoutes(
   type Resolved = NonNullable<Awaited<ReturnType<typeof resolveCoachToken>>>;
   const coaches = new WeakMap<FastifyRequest, Resolved>();
 
+  function rateLimited(reply: FastifyReply) {
+    return reply
+      .code(429)
+      .headers({ ...noStore, "retry-after": "3600" })
+      .send({ error: "rate_limited" });
+  }
+
+  /** Spends one unit of a per-member, one-hour budget. */
+  function spend(scope: string, limit: number, userId: string) {
+    return consumeBudget(
+      pool,
+      scope,
+      throttleKey(authSecret, scope, userId),
+      limit,
+      60 * 60,
+    );
+  }
+
   /**
-   * Authenticates a bearer token, checks its scope, then spends its budget.
-   * Every failure is answered here; null means the reply has been sent.
+   * Authenticates a bearer token, checks its scope, then spends its budgets.
+   * Every failure is answered here; null means the reply has been sent. Use is
+   * recorded last, so a refused or rate-limited request leaves `last_used_at` alone.
    */
   async function authenticateCoach(
     request: FastifyRequest,
     reply: FastifyReply,
     need: CoachScope,
     budget: { scope: string; limit: number },
+    memberBudget?: { scope: string; limit: number },
   ): Promise<Resolved | null> {
     const token = bearerCoachToken(request.headers.authorization);
     // Count the failure before the lookup so a flood of guesses is capped
@@ -216,16 +258,25 @@ export function registerCoachRoutes(
       60 * 60,
     );
     if (!withinBudget) {
-      reply
-        .code(429)
-        .headers({ ...noStore, "retry-after": "3600" })
-        .send({ error: "rate_limited" });
+      rateLimited(reply);
       return null;
     }
+    if (
+      memberBudget &&
+      !(await spend(memberBudget.scope, memberBudget.limit, resolved.userId))
+    ) {
+      rateLimited(reply);
+      return null;
+    }
+    await touchCoachToken(pool, resolved.tokenId);
     return resolved;
   }
   const readBudget = { scope: COACH_READ_SCOPE, limit: readLimit };
   const writeBudget = { scope: COACH_WRITE_SCOPE, limit: writeLimit };
+  const memberWriteBudget = {
+    scope: COACH_MEMBER_WRITE_SCOPE,
+    limit: COACH_MEMBER_WRITE_LIMIT,
+  };
 
   app.get<{ Querystring: Record<string, unknown> }>(
     "/api/coach/workspace",
@@ -349,6 +400,7 @@ export function registerCoachRoutes(
           reply,
           "full",
           writeBudget,
+          memberWriteBudget,
         );
         if (!resolved) return reply;
         coaches.set(request, resolved);
@@ -359,20 +411,38 @@ export function registerCoachRoutes(
       if (!resolved)
         return reply.code(401).headers(noStore).send({ error: "unauthorized" });
       try {
+        // The write path re-checks this token inside its transaction.
+        // Re-check the token inside the write transaction: one revoked or
+        // expired while this body was uploading cannot commit.
         const saved = await patchWorkspace(
           pool,
           resolved.userId,
           resolved.memberName,
           request.body,
+          (client) =>
+            assertCoachTokenActive(client, resolved.userId, resolved.tokenId),
         );
         return reply.headers(noStore).send(saved);
       } catch (error) {
+        if (error instanceof CoachTokenInactive)
+          return reply
+            .code(401)
+            .headers({
+              ...noStore,
+              "www-authenticate": 'Bearer realm="forma-coach"',
+            })
+            .send({ error: "unauthorized" });
         if (error instanceof WorkspaceConflict)
           return reply.code(409).headers(noStore).send({
             error: error.code,
             message: error.message,
             revision: error.latest.revision,
             updatedAt: error.latest.updatedAt,
+          });
+        if (error instanceof UnconfirmedActiveRemoval)
+          return reply.code(400).headers(noStore).send({
+            error: "active_removal_unconfirmed",
+            message: error.message,
           });
         if (error instanceof UnconfirmedHistoryRemoval)
           return reply.code(400).headers(noStore).send({

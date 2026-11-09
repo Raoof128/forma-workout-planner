@@ -31,6 +31,7 @@ import {
   validMeasurement,
 } from "../exerciseMetrics.js";
 import { holdUnit, usesHoldTimer, visibleFields } from "../exerciseLoad.js";
+import { spokenField } from "../fieldNames.js";
 import { timedVersion } from "../timedHolds.js";
 import {
   addedEntry,
@@ -52,6 +53,11 @@ import {
 // Whole units only (the legacy plank's timer moves in 10-second reps), and
 // never longer than the set's field can record.
 const holdMax = (unit) => Math.min(HOLD_MAX, unit.max);
+// The running hold outlives this screen: leaving the workout page unmounts
+// Workout, and a plank started before "Back to overview" must still be timed
+// and logged on return. Kept in memory only, per session, never saved.
+let runningHold = null;
+const NOTES_IDLE_MS = 700;
 const clampHold = (seconds, unit) =>
   Math.min(
     holdMax(unit),
@@ -117,7 +123,12 @@ export default function Workout({
   // One hold timer at a time: { key, index, length, endsAt } while it runs,
   // { key, index, length, left } while paused. Local only: it is a stopwatch,
   // not workout data, so the saved workspace format is unchanged.
-  const [hold, setHold] = useState(null);
+  const [hold, setHold] = useState(() =>
+    runningHold?.sessionId === session.id ? runningHold.hold : null,
+  );
+  useEffect(() => {
+    runningHold = hold ? { sessionId: session.id, hold } : null;
+  }, [hold, session.id]);
   const [holdLengths, setHoldLengths] = useState({});
   const finishedHold = useRef(null);
   useEffect(() => {
@@ -350,6 +361,11 @@ export default function Workout({
   function startHold(entry) {
     const index = entry.sets.findIndex((set) => !set.done);
     if (index < 0) return;
+    if (hold) {
+      // Replacing a running hold would silently drop its set.
+      notify("Finish or cancel the running hold before starting another.");
+      return;
+    }
     prepareCue();
     const length = holdLength(entry);
     finishedHold.current = null;
@@ -362,10 +378,15 @@ export default function Workout({
   }
   // Log the timed set (the first unfinished one if it was ticked meanwhile)
   // and start the programmed rest, exactly as ticking it would.
-  async function logHold(timer, seconds) {
+  async function logHold(timer, seconds, endedAt = Date.now()) {
+    // Cleared now, not in the sync effect: a remount in between must not
+    // restore and log the same hold twice.
+    if (runningHold?.hold === timer) runningHold = null;
     setHold(null);
     playCue();
-    const clickedAt = Date.now();
+    // A hold that ran out in a background tab is processed late; its rest
+    // starts when the hold actually ended, not when the tab woke up.
+    const clickedAt = endedAt;
     let logged = null;
     const result = await onUpdate((current) => {
       const entry = current.exercises.find(
@@ -413,7 +434,7 @@ export default function Workout({
   const finishHold = useEffectEvent(() => {
     if (!hold?.endsAt || finishedHold.current === hold.endsAt) return;
     finishedHold.current = hold.endsAt;
-    void logHold(hold, hold.length);
+    void logHold(hold, hold.length, Math.min(hold.endsAt, Date.now()));
   });
   useEffect(() => {
     if (hold?.endsAt && holdLeft === 0) finishHold();
@@ -543,15 +564,13 @@ export default function Workout({
         </div>
       </div>
       <div className="mobile-rest-bar">
-        <button
-          className="text-button"
-          onClick={() => setRestOpen(true)}
-          aria-label="Open rest timer"
-        >
-          <Timer size={18} />
+        <button className="text-button" onClick={() => setRestOpen(true)}>
+          <Timer size={18} aria-hidden="true" />
           <span>
             Rest <strong>{formatTime(remaining)}</strong>
           </span>
+          {/* Visible "Rest mm:ss" starts the name (WCAG 2.5.3). */}
+          <span className="sr-only">: open rest timer</span>
         </button>
         <Button
           variant="secondary"
@@ -747,7 +766,7 @@ export default function Workout({
                         key={field.key}
                         type="number"
                         disabled={set.done}
-                        aria-label={`${exercise.name} set ${index + 1} ${field.key}`}
+                        aria-label={`${exercise.name} set ${index + 1} ${spokenField(field)}`}
                         min={field.min}
                         max={field.max}
                         step={field.step}
@@ -879,16 +898,11 @@ export default function Workout({
               Fill the remaining sets with what I type
             </label>
             <h3>Session notes</h3>
-            <SavedField
-              as="textarea"
-              aria-label="Session notes"
-              maxLength={10000}
-              placeholder="How are you feeling today?"
+            <SessionNotes
               value={session.notes}
-              onChange={(event) => {
-                const notes = event.target.value;
-                void onUpdate((current) => ({ ...current, notes }));
-              }}
+              onSave={(notes) =>
+                void onUpdate((current) => ({ ...current, notes }))
+              }
             />
           </section>
           <button className="text-button danger discard" onClick={onCancel}>
@@ -1013,6 +1027,57 @@ export default function Workout({
   );
 }
 
+// Notes save after a short pause in typing and on blur, not per keystroke:
+// each save rewrites the whole workspace (one cloud PUT in account mode).
+function SessionNotes({ value, onSave }) {
+  const [draft, setDraft] = useState(value);
+  // A ref, not state: blurring must not re-sync the draft to a value that the
+  // save has not updated yet (the cloud round trip), which would show old text.
+  const editing = useRef(false);
+  const pending = useRef(null);
+  const timer = useRef(null);
+  const save = useRef(onSave);
+  useEffect(() => {
+    save.current = onSave;
+  }, [onSave]);
+  const flush = useRef(() => {
+    clearTimeout(timer.current);
+    if (pending.current === null) return;
+    const notes = pending.current;
+    pending.current = null;
+    save.current(notes);
+  });
+  // Leaving the screen mid-sentence still saves what was typed.
+  useEffect(() => {
+    const flushNow = flush.current;
+    return () => flushNow();
+  }, []);
+  useEffect(() => {
+    if (!editing.current && pending.current === null) setDraft(value);
+  }, [value]);
+  return (
+    <textarea
+      aria-label="Session notes"
+      maxLength={10000}
+      placeholder="How are you feeling today?"
+      value={draft}
+      onFocus={() => {
+        editing.current = true;
+      }}
+      onBlur={() => {
+        editing.current = false;
+        flush.current();
+      }}
+      onChange={(event) => {
+        setDraft(event.target.value);
+        pending.current = event.target.value;
+        clearTimeout(timer.current);
+        timer.current = setTimeout(() => flush.current(), NOTES_IDLE_MS);
+      }}
+    />
+  );
+}
+
 function RestControls({ session, remaining, onUpdate }) {
   function startRest(seconds) {
     // Start at the action, not when an asynchronous save queue processes it.
@@ -1042,7 +1107,7 @@ function RestControls({ session, remaining, onUpdate }) {
           ? "Breathe. Reset. Go again."
           : "Take a moment between sets."}
       </p>
-      <div className="timer-options" aria-label="Rest duration">
+      <div className="timer-options" role="group" aria-label="Rest duration">
         {[60, 90, 120].map((seconds) => (
           <button
             key={seconds}
@@ -1059,7 +1124,7 @@ function RestControls({ session, remaining, onUpdate }) {
       <div className="timer-adjustments">
         <Button
           variant="secondary"
-          aria-label="Subtract 15 seconds"
+          aria-label="−15 s: subtract 15 seconds"
           disabled={!remaining}
           onClick={() => {
             const clickedAt = Date.now();
@@ -1070,7 +1135,7 @@ function RestControls({ session, remaining, onUpdate }) {
         </Button>
         <Button
           variant="secondary"
-          aria-label="Add 15 seconds"
+          aria-label="+15 s: add 15 seconds"
           disabled={!remaining}
           onClick={() => {
             const clickedAt = Date.now();

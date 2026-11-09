@@ -264,3 +264,137 @@ test("an older overlapping refresh cannot replace a newer revision", async () =>
   assert.equal(repository.getSnapshot().revision, 6);
   assert.equal(repository.getSnapshot().data.profile.goal, 6);
 });
+
+test("retry without a pending save re-reads the cloud instead of failing", async () => {
+  const base = freshData();
+  let reads = 0;
+  const repository = createCloudRepository({
+    fetchImpl: async (url, options) => {
+      if (options.method !== "GET") throw new Error("unexpected write");
+      reads += 1;
+      if (reads === 2) throw new TypeError("Failed to fetch");
+      return response(200, workspace(base, 4 + reads));
+    },
+  });
+  await repository.initialize();
+  await assert.rejects(repository.refresh(), TypeError);
+  assert.equal(repository.getSnapshot().status, "offline");
+  assert.equal(repository.getSnapshot().retryPayload, undefined);
+
+  await repository.retry();
+
+  assert.equal(reads, 3);
+  assert.equal(repository.getSnapshot().status, "ready");
+  assert.equal(repository.getSnapshot().revision, 7);
+});
+
+test("a stalled save times out into a retryable offline state", async () => {
+  const base = freshData();
+  let puts = 0;
+  const repository = createCloudRepository({
+    requestTimeoutMs: 20,
+    makeId: () => "op-stall",
+    fetchImpl: (url, options) => {
+      if (options.method === "GET")
+        return Promise.resolve(response(200, workspace(base)));
+      puts += 1;
+      if (puts > 1)
+        return Promise.resolve(
+          response(200, workspace(JSON.parse(options.body).data, 5)),
+        );
+      // Never answers; only the abort signal ends it.
+      return new Promise((resolve, reject) =>
+        options.signal.addEventListener("abort", () =>
+          reject(new DOMException("aborted", "AbortError")),
+        ),
+      );
+    },
+  });
+  await repository.initialize();
+  await assert.rejects(
+    repository.commit((current) => ({
+      ...current,
+      profile: { ...current.profile, goal: 6 },
+    })),
+    { name: "TimeoutError" },
+  );
+  const stalled = repository.getSnapshot();
+  assert.equal(stalled.status, "offline");
+  assert.equal(stalled.retryPayload.operationId, "op-stall");
+  assert.equal(puts, 1, "a timeout is not resent automatically");
+
+  const saved = await repository.retry();
+
+  assert.equal(saved.operationId, "op-stall");
+  assert.equal(repository.getSnapshot().status, "ready");
+  assert.equal(repository.getSnapshot().data.profile.goal, 6);
+});
+
+test("a stalled first read becomes a retryable error instead of loading forever", async () => {
+  const base = freshData();
+  let reads = 0;
+  const repository = createCloudRepository({
+    requestTimeoutMs: 20,
+    fetchImpl: (url, options) => {
+      reads += 1;
+      if (reads > 1) return Promise.resolve(response(200, workspace(base)));
+      return new Promise((resolve, reject) =>
+        options.signal.addEventListener("abort", () =>
+          reject(new DOMException("aborted", "AbortError")),
+        ),
+      );
+    },
+  });
+  await assert.rejects(repository.initialize(), { name: "TimeoutError" });
+  assert.equal(repository.getSnapshot().status, "error");
+
+  await repository.retry();
+  assert.equal(repository.getSnapshot().status, "ready");
+});
+
+test("a save whose response body stalls also times out into a retryable state", async () => {
+  const base = freshData();
+  let puts = 0;
+  const repository = createCloudRepository({
+    requestTimeoutMs: 20,
+    makeId: () => "op-body",
+    fetchImpl: (url, options) => {
+      if (options.method === "GET")
+        return Promise.resolve(response(200, workspace(base)));
+      puts += 1;
+      if (puts > 1)
+        return Promise.resolve(
+          response(200, workspace(JSON.parse(options.body).data, 5)),
+        );
+      // Headers arrive at once; the body never finishes until aborted.
+      const stalled = new ReadableStream({
+        start(controller) {
+          controller.enqueue(new TextEncoder().encode('{"revision":'));
+          options.signal.addEventListener("abort", () =>
+            controller.error(new DOMException("aborted", "AbortError")),
+          );
+        },
+      });
+      return Promise.resolve(
+        new Response(stalled, {
+          status: 200,
+          headers: { "Content-Type": "application/json" },
+        }),
+      );
+    },
+  });
+  await repository.initialize();
+  await assert.rejects(
+    repository.commit((current) => ({
+      ...current,
+      profile: { ...current.profile, goal: 3 },
+    })),
+    { name: "TimeoutError" },
+  );
+  assert.equal(repository.getSnapshot().status, "offline");
+  assert.equal(repository.getSnapshot().retryPayload.operationId, "op-body");
+
+  await repository.retry();
+  assert.equal(repository.getSnapshot().status, "ready");
+  assert.equal(repository.getSnapshot().data.profile.goal, 3);
+});

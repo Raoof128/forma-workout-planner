@@ -78,7 +78,7 @@ test("a routine hold moves to seconds only when the member asks", async ({
 
   // Still in reps, and offered the switch; the legacy plank is not.
   await expect(
-    dialog.getByLabel("Hollow Hold reps", { exact: true }),
+    dialog.getByLabel("Hollow Hold: Reps", { exact: true }),
   ).toHaveValue("8–12");
   await expect(
     dialog.getByRole("button", { name: /^Use the timed version of/ }),
@@ -87,13 +87,13 @@ test("a routine hold moves to seconds only when the member asks", async ({
     .getByRole("button", { name: "Use the timed version of Hollow Hold" })
     .click();
 
-  const seconds = dialog.getByLabel("Hollow Hold durationSeconds", {
+  const seconds = dialog.getByLabel("Hollow Hold: TIME (SECONDS)", {
     exact: true,
   });
   await expect(seconds).toBeFocused();
   await expect(seconds).toHaveValue("60");
   await expect(
-    dialog.getByLabel("Hollow Hold reps", { exact: true }),
+    dialog.getByLabel("Hollow Hold: Reps", { exact: true }),
   ).toHaveCount(0);
   await expect(
     dialog.getByRole("button", { name: /^Use the timed version of/ }),

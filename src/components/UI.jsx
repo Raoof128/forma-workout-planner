@@ -42,16 +42,25 @@ export function Modal({ title, children, onClose, wide = false }) {
       event.preventDefault();
       closeRef.current();
     };
-    const backdrop = (event) => {
-      if (event.target !== dialog) return;
+    const onBackdrop = (event) => {
+      if (event.target !== dialog) return false;
       const rect = dialog.getBoundingClientRect();
-      if (
+      return (
         event.clientX < rect.left ||
         event.clientX > rect.right ||
         event.clientY < rect.top ||
         event.clientY > rect.bottom
-      )
-        closeRef.current();
+      );
+    };
+    // Close only when the press also started on the backdrop: selecting text
+    // in a field and releasing outside the dialog must not discard a draft.
+    let pressedBackdrop = false;
+    const press = (event) => {
+      pressedBackdrop = onBackdrop(event);
+    };
+    const backdrop = (event) => {
+      if (pressedBackdrop && onBackdrop(event)) closeRef.current();
+      pressedBackdrop = false;
     };
     const trap = (event) => {
       if (event.key !== "Tab") return;
@@ -75,10 +84,12 @@ export function Modal({ title, children, onClose, wide = false }) {
     };
     dialog.addEventListener("keydown", trap);
     dialog.addEventListener("cancel", cancel);
+    dialog.addEventListener("pointerdown", press);
     dialog.addEventListener("click", backdrop);
     return () => {
       dialog.removeEventListener("keydown", trap);
       dialog.removeEventListener("cancel", cancel);
+      dialog.removeEventListener("pointerdown", press);
       dialog.removeEventListener("click", backdrop);
       dialog.close();
       document.body.style.overflow = oldOverflow;

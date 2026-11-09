@@ -131,20 +131,22 @@ async function createTwoSetRoutine(page, name) {
     .locator(".exercise-picker button")
     .filter({ hasText: "Barbell bench press" })
     .click();
-  await page.getByLabel("Barbell bench press sets", { exact: true }).fill("2");
+  await page.getByLabel("Barbell bench press: Sets", { exact: true }).fill("2");
   await page
-    .getByLabel("Barbell bench press reps", { exact: true })
+    .getByLabel("Barbell bench press: Reps", { exact: true })
     .fill("8-10");
-  await page.getByLabel("Barbell bench press rpe", { exact: true }).fill("8.5");
   await page
-    .getByLabel("Barbell bench press restSeconds", { exact: true })
+    .getByLabel("Barbell bench press: RPE", { exact: true })
+    .fill("8.5");
+  await page
+    .getByLabel("Barbell bench press: Rest (s)", { exact: true })
     .fill("75");
   await page.getByLabel("Options for Barbell bench press").click();
   await page
-    .getByLabel("Barbell bench press note", { exact: true })
+    .getByLabel("Barbell bench press: Note / variant cue", { exact: true })
     .fill("30° bench");
   await page
-    .getByLabel("Barbell bench press weight", { exact: true })
+    .getByLabel("Barbell bench press: Load (kg)", { exact: true })
     .fill("42");
   await page.getByRole("button", { name: "Save routine", exact: true }).click();
   await expect(
@@ -179,7 +181,7 @@ test("dragged routine order and prescriptions persist in the member workspace af
   ).toBeVisible();
   await expect(
     dialog.getByRole("button", {
-      name: `Remove ${names[0]} from routine`,
+      name: `Include ${names[0]} in routine`,
       exact: true,
     }),
   ).toHaveAttribute("aria-pressed", "true");

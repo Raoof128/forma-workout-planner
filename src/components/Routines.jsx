@@ -367,6 +367,8 @@ export function TemplatePreview({ template, onClose, onAdd, defaultRest }) {
     </Modal>
   );
 }
+// Matches the saved routine schema in src/storage.js.
+const MAX_ROUTINE_EXERCISES = 100;
 export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
   const [repInputs, setRepInputs] = useState(() =>
     Object.fromEntries(
@@ -456,6 +458,13 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
       );
     } else {
       const restored = removed.current.get(exercise.id);
+      // Restoring a removed group can add more than one entry back.
+      if (items.length + (restored?.length ?? 1) > MAX_ROUTINE_EXERCISES) {
+        setError(
+          `A routine can hold at most ${MAX_ROUTINE_EXERCISES} exercises. Remove one before adding ${exercise.name}.`,
+        );
+        return;
+      }
       setItems((current) => {
         if (restored) {
           const next = [...current];
@@ -649,10 +658,15 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
                 >
                   <ArrowLeft size={17} /> Back to routine
                 </Button>
-                <span className="small muted" role="status">
+                <span className="small muted" aria-live="polite">
                   {items.length} selected
                 </span>
               </div>
+              {error && (
+                <p role="alert" className="error">
+                  {error}
+                </p>
+              )}
               <Library
                 onToggle={toggle}
                 selectedIds={items.map((item) =>
@@ -694,7 +708,7 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
             </label>
             <div className="editor-heading">
               <h3>Choose your exercises</h3>
-              <span className="muted small" role="status">
+              <span className="muted small" aria-live="polite">
                 {items.length} selected
               </span>
             </div>
@@ -721,7 +735,7 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
             </div>
             <div className="exercise-picker">
               {!matchingExercises.length && (
-                <p className="picker-empty" role="status">
+                <p className="picker-empty" aria-live="polite">
                   No matching exercises. Try a different name or muscle group.
                 </p>
               )}
@@ -771,7 +785,7 @@ export function RoutineEditor({ routine, onClose, onSave, defaultRest = 90 }) {
                   <span>⋯</span>
                 </div>
                 <Suspense
-                  fallback={<p role="status">Loading exercise order…</p>}
+                  fallback={<p aria-live="polite">Loading exercise order…</p>}
                 >
                   <RoutinePrescriptions
                     items={items}

@@ -48,9 +48,7 @@ test("a hold added to a workout logs seconds with the hold timer", async ({
   await expect(
     page.getByRole("button", { name: /^Add Hollow Hold/ }),
   ).toHaveCount(1);
-  await page
-    .getByRole("button", { name: "Add Hollow Hold", exact: true })
-    .click();
+  await page.getByRole("button", { name: /^Add Hollow Hold,/ }).click();
 
   const hollow = card(page, "Hollow Hold");
   const timer = hollow.getByRole("group", {
@@ -58,7 +56,7 @@ test("a hold added to a workout logs seconds with the hold timer", async ({
   });
   await expect(timer.getByRole("timer")).toHaveText("01:00");
   await expect(
-    hollow.getByLabel("Hollow Hold set 1 durationSeconds"),
+    hollow.getByLabel("Hollow Hold set 1 time (seconds)"),
   ).toBeVisible();
   await expect(hollow.getByLabel("Hollow Hold set 1 reps")).toHaveCount(0);
   await expect(hollow.getByLabel("Hollow Hold set 1 weight")).toHaveCount(0);
@@ -99,7 +97,7 @@ test("older rep logs of a migrated hold keep their reps and get no timer", async
 
   const lsit = card(page, "L-sit");
   await expect(lsit.getByLabel("L-sit set 1 reps")).toHaveValue("10");
-  await expect(lsit.getByLabel("L-sit set 1 durationSeconds")).toHaveCount(0);
+  await expect(lsit.getByLabel("L-sit set 1 time (seconds)")).toHaveCount(0);
   await expect(lsit.getByRole("group", { name: /^Hold timer/ })).toHaveCount(0);
   await lsit
     .getByRole("button", { name: "Instructions for L-sit", exact: true })
@@ -138,7 +136,7 @@ test("a loaded hold keeps its weight column beside the seconds", async ({
 
   await page.getByRole("button", { name: "Add exercise", exact: true }).click();
   await page.getByLabel("Search exercises").fill("Crucifix");
-  await page.getByRole("button", { name: "Add Crucifix", exact: true }).click();
+  await page.getByRole("button", { name: /^Add Crucifix,/ }).click();
 
   const crucifix = card(page, "Crucifix");
   await expect(
@@ -146,7 +144,7 @@ test("a loaded hold keeps its weight column beside the seconds", async ({
   ).toBeVisible();
   await expect(crucifix.getByLabel("Crucifix set 1 reps")).toHaveCount(0);
   await crucifix.getByLabel("Crucifix set 1 weight").fill("10");
-  await crucifix.getByLabel("Crucifix set 1 durationSeconds").fill("40");
+  await crucifix.getByLabel("Crucifix set 1 time (seconds)").fill("40");
   await crucifix
     .getByRole("button", { name: "Complete Crucifix set 1", exact: true })
     .click();

@@ -32,15 +32,17 @@ export default function GuideInstructions({ guide, retryHint, children }) {
       active = false;
     };
   }, [guide.id, guide.source, guide.instructionId]);
+  // Catalogue previews are left out of the browser bundle (see
+  // scripts/vite-lean-catalog.mjs), so a sourced guide may have no text until
+  // its full instructions load; curated and original guides still carry one.
+  const text = guide.guideUnavailable
+    ? "This older entry is kept for your saved workouts. Its source did not provide usable technique instructions."
+    : detail?.id === guide.id && detail.text
+      ? detail.text
+      : guide.description;
   return (
     <>
-      <p className="instruction">
-        {guide.guideUnavailable
-          ? "This older entry is kept for your saved workouts. Its source did not provide usable technique instructions."
-          : detail?.id === guide.id && detail.text
-            ? detail.text
-            : guide.description}
-      </p>
+      {text && <p className="instruction">{text}</p>}
       {guide.source && detail?.id !== guide.id && (
         <Loading
           inline

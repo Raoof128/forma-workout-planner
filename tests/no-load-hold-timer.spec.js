@@ -67,7 +67,7 @@ test("exercises with no external load log without a weight column", async ({
   );
 
   const plank = card(page, "Plank");
-  await expect(plank.getByLabel("Plank set 1 durationSeconds")).toBeVisible();
+  await expect(plank.getByLabel("Plank set 1 time (seconds)")).toBeVisible();
   await expect(plank.getByLabel("Plank set 1 weight")).toHaveCount(0);
   // Timed exercises no longer show a "1 reps" target.
   await expect(plank.locator(".program-target")).not.toContainText("reps");
@@ -120,9 +120,9 @@ test("the plank hold timer counts down, pauses, logs the set and starts rest", a
     }),
   ).toHaveCount(0);
 
-  await timer.getByRole("button", { name: /^Longer hold/ }).click();
+  await timer.getByRole("button", { name: /^\+5: longer hold/ }).click();
   await expect(timer.getByRole("timer")).toHaveText("01:05");
-  await timer.getByRole("button", { name: /^Shorter hold/ }).click();
+  await timer.getByRole("button", { name: /^−5: shorter hold/ }).click();
   await expect(timer.getByRole("timer")).toHaveText("01:00");
 
   await timer
@@ -199,9 +199,13 @@ test("the starter plank's timer logs one rep per 10 seconds held", async ({
   });
   await expect(timer.getByRole("timer")).toHaveText("00:30");
   await expect(page.getByLabel("Forearm plank set 1 weight")).toHaveCount(0);
-  await timer.getByRole("button", { name: "Longer hold, 40 seconds" }).click();
+  await timer
+    .getByRole("button", { name: "+10: longer hold, 40 seconds" })
+    .click();
   await expect(timer.getByRole("timer")).toHaveText("00:40");
-  await timer.getByRole("button", { name: "Shorter hold, 30 seconds" }).click();
+  await timer
+    .getByRole("button", { name: "−10: shorter hold, 30 seconds" })
+    .click();
 
   await timer
     .getByRole("button", {
@@ -259,12 +263,12 @@ test("the routine editor shows no load input for no-load exercises", async ({
     .click();
   await page.getByRole("button", { name: "Edit routine", exact: true }).click();
   await expect(
-    page.getByLabel("Ab Roller reps", { exact: true }),
+    page.getByLabel("Ab Roller: Reps", { exact: true }),
   ).toBeVisible();
   await expect(
-    page.getByLabel("Ab Roller weight", { exact: true }),
+    page.getByLabel("Ab Roller: Load (kg)", { exact: true }),
   ).toHaveCount(0);
   await expect(
-    page.getByLabel("Barbell bench press weight", { exact: true }),
+    page.getByLabel("Barbell bench press: Load (kg)", { exact: true }),
   ).toBeVisible();
 });

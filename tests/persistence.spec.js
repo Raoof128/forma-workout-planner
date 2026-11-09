@@ -107,7 +107,7 @@ test("starting stale routine details cannot silently use old prescriptions", asy
     .getByRole("button", { name: "Edit routine", exact: true })
     .click();
   await other
-    .getByLabel("Barbell bench press weight", { exact: true })
+    .getByLabel("Barbell bench press: Load (kg)", { exact: true })
     .fill("77");
   await other
     .getByRole("button", { name: "Save routine", exact: true })

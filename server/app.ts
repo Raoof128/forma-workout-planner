@@ -8,6 +8,7 @@ import type { IncomingHttpHeaders } from "node:http";
 import type { Pool } from "pg";
 import {
   createAuth,
+  revokeCredentialArtifacts,
   signInThrottleKey,
   testLimitOverride,
   type EmailSender,
@@ -20,8 +21,10 @@ import {
   DEFAULT_SIGN_IN_POLICY,
   normaliseEmail,
   PASSWORD_CHECK_SCOPE,
+  pruneExpiredAuthRows,
   pruneThrottle,
   refundAttempt,
+  refundBudget,
   reserveAttempt,
   settleFailure,
   SIGN_IN_SCOPE,
@@ -96,7 +99,13 @@ export function createRequireMember(
         email: session.user.email || undefined,
       };
     } catch {
-      reply.code(401).send({ error: "unauthorized" });
+      // The session store could not be read (database unavailable). That is
+      // not "signed out": clients that treat 401 as an ended session would
+      // sign members out during an outage. Web and iOS retry a 503.
+      reply
+        .code(503)
+        .header("retry-after", "5")
+        .send({ error: "temporarily_unavailable" });
       return null;
     }
   };
@@ -414,6 +423,12 @@ export async function createApp({
     },
     bodyLimit: 1024 * 1024,
     trustProxy: false,
+    // Fastify defaults to no request timeout, so a stalled upload could hold
+    // a socket indefinitely. This bounds receiving the request; handler time
+    // is bounded by the runtime role's statement_timeout (15 s) in
+    // ops/bootstrap-db-roles.sql. The Worker gives up after 30 s; 120 s
+    // leaves room for a 20 MiB save on a slow link.
+    requestTimeout: 120_000,
   });
 
   app.decorateRequest("rawBody", null);
@@ -478,7 +493,16 @@ export async function createApp({
       (error as { statusCode: number }).statusCode < 600
         ? (error as { statusCode: number }).statusCode
         : 500;
-    if (status >= 500) request.log.error({ err: error }, "request failed");
+    // Class and code only: a pg error's message and detail can quote row
+    // values, which must never reach the logs.
+    if (status >= 500)
+      request.log.error(
+        {
+          errorName: (error as Error).name,
+          errorCode: (error as { code?: unknown }).code,
+        },
+        "request failed",
+      );
     const code =
       status === 400 && (error as Error).message === "invalid_json"
         ? "invalid_json"
@@ -507,10 +531,15 @@ export async function createApp({
   const throttledEmail: EmailSender = async (message) => {
     const recipient = normaliseEmail(message.email);
     if (!recipient) return;
+    const digest = throttleKey(
+      config.authSecret,
+      `email:${message.kind}`,
+      recipient,
+    );
     const allowed = await consumeBudget(
       pool,
       `email:${message.kind}`,
-      throttleKey(config.authSecret, `email:${message.kind}`, recipient),
+      digest,
       emailPerRecipientLimit,
       60 * 60,
     );
@@ -518,7 +547,14 @@ export async function createApp({
       app.log.warn({ kind: message.kind }, "auth email suppressed by budget");
       return;
     }
-    await deliverEmail(message);
+    try {
+      await deliverEmail(message);
+    } catch (error) {
+      // A send that never happened must not spend the recipient's budget, or
+      // a provider outage would suppress their reset mail for the next hour.
+      await refundBudget(pool, `email:${message.kind}`, digest);
+      throw error;
+    }
   };
   const auth = createAuth(pool, config, throttledEmail);
   const expireSession = async (sessionId: string) => {
@@ -543,7 +579,7 @@ export async function createApp({
     // exact health probe is public; every other spelling needs the Worker.
     if (
       (request.method === "GET" || request.method === "HEAD") &&
-      path === "/healthz"
+      (path === "/healthz" || path === "/readyz")
     )
       return;
     if (path.includes("%")) {
@@ -569,7 +605,10 @@ export async function createApp({
       const bearerEdit =
         request.method === "PATCH" &&
         path === COACH_DATA_PATH &&
-        origin === undefined;
+        origin === undefined &&
+        // The Worker already refuses this; repeat it so the origin does not
+        // rely on the gateway alone.
+        headerValue(request.headers["sec-fetch-site"]) !== "cross-site";
       // The iOS app has no Origin to send. A foreign or empty Origin, or any
       // Referer or Sec-Fetch header, makes the request an ordinary one.
       if (
@@ -582,7 +621,24 @@ export async function createApp({
     }
   });
 
+  // Liveness: the process answers. Readiness: it can also reach PostgreSQL,
+  // which is what the host monitor needs to see (a lost grant or a dead
+  // database leaves /healthz green while every member request fails).
   app.get("/healthz", async () => ({ status: "ok" }));
+  app.get("/readyz", async (_request, reply) => {
+    try {
+      let timer: NodeJS.Timeout | undefined;
+      await Promise.race([
+        pool.query("SELECT 1"),
+        new Promise((_resolve, reject) => {
+          timer = setTimeout(() => reject(new Error("timeout")), 2_000);
+        }),
+      ]).finally(() => clearTimeout(timer));
+      return reply.send({ status: "ready" });
+    } catch {
+      return reply.code(503).send({ status: "unavailable" });
+    }
+  });
 
   app.route({
     method: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
@@ -771,6 +827,9 @@ export async function createApp({
         ...(body === undefined ? {} : { body: body as BodyInit }),
       });
 
+      // Set once the reserved attempt is cleared, settled or refunded, so an
+      // exception cannot leave it counted as a wrong password.
+      let attemptSettled = attempt === null;
       try {
         const response = await auth.handler(authRequest);
         if (attempt) {
@@ -788,12 +847,20 @@ export async function createApp({
           if (response.status === 200) {
             await clearSignInFailures(pool, attempt.key, attempt.scope);
           } else if (wrongPassword) {
+            // Settled before the write: if it applies but its reply is lost,
+            // the catch below must not refund a real wrong-password guess.
+            attemptSettled = true;
             await settleFailure(pool, attempt.key, signInPolicy, attempt.scope);
             // nosemgrep: ajinabraham.njsscan.crypto.crypto_node.node_insecure_random_generator -- sampling for housekeeping, not a secret
-            if (Math.random() < 0.01) void pruneThrottle(pool).catch(() => {});
+            if (Math.random() < 0.01) {
+              void pruneThrottle(pool).catch(() => {});
+              void pruneExpiredAuthRows(pool).catch(() => {});
+            }
           } else {
+            attemptSettled = true;
             await refundAttempt(pool, attempt.key, attempt.scope);
           }
+          attemptSettled = true;
         }
         // FORMA never signs a member in from an email link
         // (autoSignInAfterVerification is off), but Better Auth's change-email
@@ -811,6 +878,25 @@ export async function createApp({
               withheldCookies.push("session_token", "session_data");
             }
           }
+        }
+        // A changed password means the old one may be known: coach tokens and
+        // trusted devices must not outlive it (Better Auth already ends the
+        // other sessions; password reset does the same in auth.ts).
+        if (
+          (authPath === "change-password" || authPath === "revoke-sessions") &&
+          response.status === 200 &&
+          existingSession?.user?.id
+        ) {
+          // The password change has already committed: a cleanup failure must
+          // not turn it into a 500 the member would retry with the old
+          // password. Log it distinctly; "sign out everywhere" repeats it.
+          await revokeCredentialArtifacts(pool, existingSession.user.id).catch(
+            (error: unknown) =>
+              request.log.error(
+                { errorName: (error as Error)?.name, route: authPath },
+                "credential cleanup failed",
+              ),
+          );
         }
         const location = response.headers.get("location");
         if (location !== null && !isSafeRedirect(location, config.appOrigin)) {
@@ -870,6 +956,7 @@ export async function createApp({
               copyResponseHeaders(response.headers, reply, [
                 ...withheldCookies,
                 "session_token",
+                "session_data",
                 "trust_device",
               ]);
               return reply.code(401).send({ error: "invalid_code" });
@@ -885,7 +972,21 @@ export async function createApp({
         reply.code(response.status);
         // nosemgrep: javascript.express.security.audit.xss.direct-response-write.direct-response-write -- Better Auth body; the Worker allows only JSON/text
         return reply.send(Buffer.from(await response.arrayBuffer()));
-      } catch {
+      } catch (error) {
+        // A failure here is the server's, not a wrong password: return the
+        // reserved slot so transient errors cannot lock a member out.
+        if (!attemptSettled && attempt)
+          await refundAttempt(pool, attempt.key, attempt.scope).catch(() => {});
+        // A fixed route label: reset-password/<token> carries a live token.
+        request.log.error(
+          {
+            errorName: (error as Error)?.name,
+            route: authPath.startsWith("reset-password/")
+              ? "reset-password"
+              : authPath,
+          },
+          "auth request failed",
+        );
         return reply.code(500).send({ error: "internal_error" });
       }
     },
@@ -1060,6 +1161,9 @@ export async function createApp({
     await pool.query(`DELETE FROM "session" WHERE "userId" = $1`, [
       member.userId,
     ]);
+    // "Sign out everywhere" is the suspected-compromise action: a stolen
+    // session could have minted a coach token or trusted a device for itself.
+    await revokeCredentialArtifacts(pool, member.userId);
     return reply.send({ status: true });
   });
 

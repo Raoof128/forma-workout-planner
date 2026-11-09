@@ -135,7 +135,7 @@ export default function Library({ onToggle, selectedIds = [] }) {
         <h2>
           {muscle === "All muscles" ? "All exercises" : `${muscle} exercises`}
         </h2>
-        <span className="small muted" role="status">
+        <span className="small muted" aria-live="polite">
           {filtered.length} {filtered.length === 1 ? "movement" : "movements"}
         </span>
       </div>
@@ -148,11 +148,8 @@ export default function Library({ onToggle, selectedIds = [] }) {
               key={e.id}
               className={`library-card${choosing && picked ? " is-selected" : ""}`}
               aria-pressed={choosing ? picked : undefined}
-              aria-label={
-                choosing
-                  ? `${picked ? "Remove" : "Add"} ${e.name} ${picked ? "from" : "to"} routine`
-                  : undefined
-              }
+              // The name stays constant; aria-pressed carries the state.
+              aria-label={choosing ? `Include ${e.name} in routine` : undefined}
               onClick={() => (choosing ? onToggle(e) : setSelected(e))}
             >
               {hasExerciseMedia(e.id) ? (

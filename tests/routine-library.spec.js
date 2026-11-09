@@ -31,18 +31,12 @@ test("the full exercise library selects exercises and returns to the named routi
   await dialog.getByLabel("Search exercise library").fill("bench press");
   await dialog.getByLabel("Filter by equipment").selectOption("Barbell");
   await dialog.getByRole("button", { name: "Chest", exact: true }).click();
-  await dialog
-    .getByRole("button", {
-      name: "Add Barbell bench press to routine",
-      exact: true,
-    })
-    .click();
-  await expect(
-    dialog.getByRole("button", {
-      name: "Remove Barbell bench press from routine",
-      exact: true,
-    }),
-  ).toHaveAttribute("aria-pressed", "true");
+  const bench = dialog.getByRole("button", {
+    name: "Include Barbell bench press in routine",
+    exact: true,
+  });
+  await bench.click();
+  await expect(bench).toHaveAttribute("aria-pressed", "true");
   await dialog
     .getByLabel("Search exercise library")
     .fill("one-arm dumbbell row");
@@ -50,7 +44,7 @@ test("the full exercise library selects exercises and returns to the named routi
   await dialog.getByRole("button", { name: "Back", exact: true }).click();
   await dialog
     .getByRole("button", {
-      name: "Add One-arm dumbbell row to routine",
+      name: "Include One-arm dumbbell row in routine",
       exact: true,
     })
     .click();
@@ -64,7 +58,7 @@ test("the full exercise library selects exercises and returns to the named routi
   );
   await expect(dialog.locator(".prescription:not(.labels)")).toHaveCount(2);
   await dialog
-    .getByLabel("Barbell bench press reps", { exact: true })
+    .getByLabel("Barbell bench press: Reps", { exact: true })
     .fill("8-12");
   const saved = await saveAndReadDrag(page, dialog);
   expect(saved.map((e) => e.exerciseId)).toEqual(["bench", "row"]);
@@ -80,10 +74,10 @@ test("returning from the library preserves unsaved inputs, notes, supersets and 
 }) => {
   const editor = await openDragEditor(page);
   const { dialog, names } = editor;
-  await dialog.getByLabel(`${names[0]} reps`, { exact: true }).fill("7-9");
+  await dialog.getByLabel(`${names[0]}: Reps`, { exact: true }).fill("7-9");
   await dialog.getByLabel(`Options for ${names[0]}`).click();
   await dialog
-    .getByLabel(`${names[0]} note`, { exact: true })
+    .getByLabel(`${names[0]}: Note / variant cue`, { exact: true })
     .fill("Keep this unsaved cue");
   const opener = dialog.getByRole("button", {
     name: "Browse exercise library",
@@ -92,7 +86,7 @@ test("returning from the library preserves unsaved inputs, notes, supersets and 
   await opener.click();
   await expect(
     dialog.getByRole("button", {
-      name: `Remove ${names[0]} from routine`,
+      name: `Include ${names[0]} in routine`,
       exact: true,
     }),
   ).toHaveAttribute("aria-pressed", "true");
@@ -104,10 +98,10 @@ test("returning from the library preserves unsaved inputs, notes, supersets and 
   ).toBeVisible();
   await expect(opener).toBeFocused();
   await expect(
-    dialog.getByLabel(`${names[0]} reps`, { exact: true }),
+    dialog.getByLabel(`${names[0]}: Reps`, { exact: true }),
   ).toHaveValue("7-9");
   await expect(
-    dialog.getByLabel(`${names[0]} note`, { exact: true }),
+    dialog.getByLabel(`${names[0]}: Note / variant cue`, { exact: true }),
   ).toHaveValue("Keep this unsaved cue");
   await editor.rows
     .first()
