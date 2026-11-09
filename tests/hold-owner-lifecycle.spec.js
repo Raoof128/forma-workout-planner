@@ -140,10 +140,7 @@ test("replacing the held exercise cancels its wake lock without logging a replac
   });
   await picker.getByLabel("Search exercises").fill("incline dumbbell press");
   await picker
-    .getByRole("button", {
-      name: "Replace with Incline Dumbbell Press",
-      exact: true,
-    })
+    .getByRole("button", { name: /^Replace with Incline Dumbbell Press,/ })
     .click();
   await expect(
     page.locator('.log-exercise[data-entry-key="held-original"]'),

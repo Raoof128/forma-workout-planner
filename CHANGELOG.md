@@ -22,8 +22,16 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   `docs/qa/frontend-audit-2026-11-05/`, `.gitleaksignore`, `AGENT.md`,
   `CHANGELOG.md`.
 - **Verification:** lint, `format:check`, typecheck, `docs:check`, build,
-  `test:unit` and `test:worker` pass locally. Server, operations and browser
-  suites run in CI.
+  `test:unit` and `test:worker` pass locally. The first CI run failed one
+  5 November test on all three browsers: `hold-owner-lifecycle.spec.js`
+  matched the picker button by its old exact name, and PR #44 had appended
+  muscle and equipment to those names. The test now uses PR #44's
+  `/^Replace with <name>,/` pattern. Then, locally on PostgreSQL 18.4:
+  `test:server` 102/102, `accounts-chromium` 41/41, and the ten test files
+  that came only from the 5 November branch (Chromium) pass.
+- **Rule learned:** when two branches each touch shared UI, also grep the
+  other side's tests for accessible names this side renamed. CI stops at the
+  first failing browser step, so a stale locator hides every later suite.
 - **Rule learned:** before any deploy, compare the hosts' `IMAGE_TAG` and the
   live Worker source with `main`. A release pushed to an already-merged branch
   is invisible from `main`.
