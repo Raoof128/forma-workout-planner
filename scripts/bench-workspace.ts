@@ -61,7 +61,9 @@ function workspace(name: string) {
 
 const percentile = (values: number[], p: number) => {
   const sorted = [...values].sort((a, b) => a - b);
-  return sorted[Math.min(sorted.length - 1, Math.floor((p / 100) * sorted.length))];
+  return sorted[
+    Math.min(sorted.length - 1, Math.floor((p / 100) * sorted.length))
+  ];
 };
 const summary = (values: number[]) => ({
   n: values.length,
@@ -77,11 +79,20 @@ async function main() {
   );
   for (const file of ["0002-workspace.sql", "0004-routine-programming.sql"])
     await pool.query(
-      await readFile(new URL(`../server/migrations/${file}`, import.meta.url), "utf8"),
+      await readFile(
+        new URL(`../server/migrations/${file}`, import.meta.url),
+        "utf8",
+      ),
     );
-  const members = Array.from({ length: MEMBERS }, (_, index) => `bench-${index}`);
+  const members = Array.from(
+    { length: MEMBERS },
+    (_, index) => `bench-${index}`,
+  );
   for (const id of members)
-    await pool.query(`INSERT INTO "user" VALUES ($1, $1, $1 || '@example.test')`, [id]);
+    await pool.query(
+      `INSERT INTO "user" VALUES ($1, $1, $1 || '@example.test')`,
+      [id],
+    );
   const payload = workspace("Bench member");
   const bytes = Buffer.byteLength(JSON.stringify(payload));
   const revisions = new Map<string, number>();
@@ -96,7 +107,10 @@ async function main() {
   for (let index = 0; index < WARMUP + SEQUENTIAL; index += 1) {
     const started = performance.now();
     const saved = await putWorkspace(pool, one, "Bench member", {
-      data: { ...payload, profile: { ...payload.profile, goal: (index % 7) + 1 } },
+      data: {
+        ...payload,
+        profile: { ...payload.profile, goal: (index % 7) + 1 },
+      },
       expectedRevision: revisions.get(one)!,
       operationId: randomUUID(),
     });
@@ -153,7 +167,9 @@ async function main() {
         sequentialPutMs: summary(put),
         sequentialGetMs: summary(get),
         concurrentPutMs: summary(concurrent),
-        concurrentThroughputPerSecond: Number((concurrent.length / seconds).toFixed(1)),
+        concurrentThroughputPerSecond: Number(
+          (concurrent.length / seconds).toFixed(1),
+        ),
         concurrentErrors: errors,
         rssMiB: Number((process.memoryUsage().rss / 1048576).toFixed(1)),
       },
