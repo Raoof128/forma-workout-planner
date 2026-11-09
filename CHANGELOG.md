@@ -4,6 +4,64 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-11-09 — Backend audit and hardening
+
+- **Scope:** audit of `server/`, `worker/`, `ops/` and the backend tests by six
+  parallel auditors, with lead verification, four implementation agents and
+  two independent reviewers. Report pack: `docs/audits/backend-2026-11/`.
+- **Summary:** no P0 and no authentication bypass was found. Fixed:
+  - **Outages:** a session-store outage is now 503, not a sign-out 401.
+  - **Coach data:** coach edits must confirm discarding a workout in progress
+    (`removesActive`). A token revoked mid-upload cannot commit.
+  - **Credential lifecycle:** password reset or change and sign-out-everywhere
+    revoke coach tokens and trusted devices.
+  - **Auth mail:** it runs in the background in production (removing the
+    timing oracle), and a failed send refunds the mail budget.
+  - **Throttle:** a reserved sign-in is refunded if the handler throws.
+  - **Monitoring:** `/readyz` checks the database, and the monitor probes it.
+    A wedged API no longer blinds the monitor, and alert failures keep state.
+  - **Migrations:** they fail fast on lock waits and refuse missing or
+    misordered files.
+  - **Export:** it returns the stored copy.
+  - **Performance:** the save fingerprint is canonical JSON (concurrent saves
+    p95 −27–30% and throughput +37–39% in the benchmark).
+  - **Config:** production refuses placeholder, reused or low-entropy secrets.
+  - **Gateway:** anonymous large bodies are capped and the link exemption
+    needs a navigation. Untyped bodies, upstream 5xx details and nameless
+    cookies are refused, `/api` matching is exact and aborts propagate.
+- **Files:** `server/{app,auth,throttle,config,index,schema,workspace,workspaceRoutes,migrate,coachTokens,coachRoutes}.ts`,
+  `worker/index.ts`, `wrangler.jsonc`,
+  `ops/{account-operations.py,edge-monitor.mjs,restore-postgres.sh}` and
+  their tests (three new server test files, one new Worker file).
+  `scripts/bench-workspace.ts`, `src/components/Account.jsx` (copy),
+  `docs/accounts/api.md`, `docs/security/authentication.md`, `CLAUDE.md`,
+  `CHANGELOG.md`, `AGENT.md`, and `docs/audits/backend-2026-11/*`.
+- **Verification:**
+  - Static checks: lint, format, types, docs, `build:server` and
+    `git diff --check` pass.
+  - Backend suites: server 101/101 on PostgreSQL 18.4 (baseline 76), Worker
+    43/43 (baseline 35), operations 14 Python + 9 Node, unit 160/160.
+  - Account journeys: 110/110 and 110/110.
+  - API image: builds, runs as UID 10001, and every module loads.
+  - Regressions: new tests fail on the baseline (9 of 10 eligible server
+    cases; all 8 Worker cases).
+  - Not run: Semgrep, gitleaks and OSV (CI), and iOS tests (no iOS change).
+- **Rules learned:**
+  - Test schemas must apply every migration production has (0005/0006
+    included), or cross-table hooks fail only in tests.
+  - Coach `429` bodies are pinned to `{ "error": "rate_limited" }`.
+  - `/readyz`, not `/healthz`, is the readiness signal. The container
+    healthcheck stays on liveness.
+  - The member-save fingerprint relies on zod emitting keys in schema order;
+    keep `dataSchema` free of record and passthrough types, or revisit it.
+- **Follow-ups:**
+  - Not deployed. This is an API image and Worker release, staging first. Run
+    the ledger and `.env` checks in `CHANGE_SUMMARY.md` first, then install
+    the monitor script after the API.
+  - Open items D-01 to D-17, notably: 2FA disable and email change need
+    step-up UI on web and iOS; per-table runtime grants; and the shell
+    restore helper's signature check.
+
 ### Raouf: 2026-11-09 — Web frontend audit and remediation
 
 - **Scope:** audit of the whole web app (`src/`, `index.html`, Vite config,
@@ -37,12 +95,17 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   - Browser tests: `tests/web-audit-2026-11.spec.js`, plus accessible-name
     updates in existing specs.
   - Docs: `docs/audits/web-frontend-2026-11/*`, `CHANGELOG.md`, `AGENT.md`.
-- **Verification:** lint, format:check, typecheck, docs:check and the guest build pass.
-  Unit tests pass 160/160. Server tests pass 76/76 against disposable
-  PostgreSQL 18.4. `build-ios-resources --check` reports no `ios/` drift. Each
-  new regression test failed on the baseline and passed after the fix. The full
-  browser suites were still running when this entry was first written; results
-  are in `docs/audits/web-frontend-2026-11/TEST_RESULTS.md`.
+- **Verification:** lint, format, types, docs and the build pass, and unit tests pass
+  160/160.
+  - Dev browser suite: Chromium and Firefox are complete and green after the
+    rest-bar fix. WebKit is 173/174, with the failure passing 9/9 on rerun.
+  - Production smoke: 175/175. Account suites: 110/110 and 110/110, at
+    `b880d05` and again on the final branch.
+  - The 5 browser and 5 unit regressions fail on the baseline.
+  - Lab startup: throttled LCP 5,212 → 4,736 ms and JS transfer 561,573 →
+    446,053 B, which is still above the 2.5 s LCP target.
+
+  Details are in `docs/audits/web-frontend-2026-11/`.
 - **Rules learned:**
   - `src/exerciseLoad.js` and `src/routineProgramming.js` are inputs to
     `ios/FORMA/Resources/resource-manifest.json`, so editing them means

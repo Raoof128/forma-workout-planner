@@ -24,3 +24,10 @@ d6ffba239f13b16ab5de6b3db06ca642ce01c461:docs/qa/routine-programming-v2/deployme
 # Historical audit prose about session lifetime, not credential material.
 # Exact historical fingerprint only; both duplicated prose matches share it.
 d770a6cb47c4c48fb1334f1d7804cd9564c0b732:docs/audits/forma-runtime-quality-2026-10/FILE_AUDIT.md:generic-api-key:259
+# Synthetic, random-looking production-config fixtures in tests (they prove
+# placeholder and low-entropy secrets are refused). Not credentials.
+# Exact historical findings only; do not allowlist the rule or test paths.
+09f15bcde4fc1edce2bfc51982b00cc88319f631:server/tests/email.test.ts:generic-api-key:45
+09f15bcde4fc1edce2bfc51982b00cc88319f631:server/tests/email.test.ts:generic-api-key:46
+09f15bcde4fc1edce2bfc51982b00cc88319f631:server/tests/backend-hardening.test.ts:generic-api-key:458
+09f15bcde4fc1edce2bfc51982b00cc88319f631:server/tests/backend-hardening.test.ts:generic-api-key:459
