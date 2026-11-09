@@ -564,15 +564,13 @@ export default function Workout({
         </div>
       </div>
       <div className="mobile-rest-bar">
-        <button
-          className="text-button"
-          onClick={() => setRestOpen(true)}
-          aria-label="Open rest timer"
-        >
-          <Timer size={18} />
+        <button className="text-button" onClick={() => setRestOpen(true)}>
+          <Timer size={18} aria-hidden="true" />
           <span>
             Rest <strong>{formatTime(remaining)}</strong>
           </span>
+          {/* Visible "Rest mm:ss" starts the name (WCAG 2.5.3). */}
+          <span className="sr-only">: open rest timer</span>
         </button>
         <Button
           variant="secondary"

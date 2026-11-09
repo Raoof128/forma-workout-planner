@@ -485,8 +485,11 @@ test("mobile rest controls stay reachable and expose instructions during logging
   data.active = session();
   await page.setViewportSize({ width: 320, height: 844 });
   await seed(page, data, "workout");
-  await expect(page.getByLabel("Open rest timer")).toBeVisible();
-  await nav(page, "Open rest timer");
+  const openRest = page.getByRole("button", {
+    name: /^Rest \d\d:\d\d\s*: open rest timer$/,
+  });
+  await expect(openRest).toBeVisible();
+  await openRest.click();
   await nav(page, "120s");
   await page.keyboard.press("Escape");
   await nav(page, "Complete Barbell bench press set 1");
@@ -495,7 +498,7 @@ test("mobile rest controls stay reachable and expose instructions during logging
   const bar = await page.locator(".mobile-rest-bar").boundingBox();
   expect(bar.y).toBeGreaterThanOrEqual(65);
   expect(bar.y + bar.height).toBeLessThan(844);
-  await nav(page, "Open rest timer");
+  await openRest.click();
   await expect(
     page.getByRole("button", { name: "120s", exact: true }),
   ).toHaveAttribute("aria-pressed", "true");

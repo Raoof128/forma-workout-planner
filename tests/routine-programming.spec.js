@@ -98,7 +98,7 @@ test("program every field, reload, overview, superset rest and actual RPE", asyn
     .click();
   if (isMobile)
     await page
-      .getByRole("button", { name: "Open rest timer", exact: true })
+      .getByRole("button", { name: /^Rest \d\d:\d\d\s*: open rest timer$/ })
       .click();
   await expect(page.getByRole("timer")).toHaveText("00:00");
   if (isMobile)
@@ -113,7 +113,7 @@ test("program every field, reload, overview, superset rest and actual RPE", asyn
     .click();
   if (isMobile)
     await page
-      .getByRole("button", { name: "Open rest timer", exact: true })
+      .getByRole("button", { name: /^Rest \d\d:\d\d\s*: open rest timer$/ })
       .click();
   await expect(page.getByRole("timer")).toHaveText(/01:1[0-5]/);
   await page
@@ -126,7 +126,7 @@ test("program every field, reload, overview, superset rest and actual RPE", asyn
   ).toHaveValue("8.5");
   if (isMobile)
     await page
-      .getByRole("button", { name: "Open rest timer", exact: true })
+      .getByRole("button", { name: /^Rest \d\d:\d\d\s*: open rest timer$/ })
       .click();
   await expect(page.getByRole("timer")).toHaveText(/01:[123]\d/);
   await page.getByRole("button", { name: "Skip", exact: true }).click();
