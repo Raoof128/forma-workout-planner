@@ -58,6 +58,27 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-11-13 — Fix two tests the 1.0 merge left out of step
+
+- **Scope:** CI on PR #48 failed in three places.
+- **Summary:** two were tests written against one side of the merge. The
+  coach-token step-up test (from PR #43) looked for the issued token as a
+  `status`; the 5 November audit made it a named `group`, so the token was
+  issued and the test could not see it. The offline delete UI test (from the
+  5 November audit) scrolled with bare swipes; with PR #43's floating tab bar
+  the tap did not open the alert, so it now uses `revealTrainingControl`, which
+  keeps a row clear of the bar. The third, a Firefox `routine-preview`
+  reduced-motion test, failed in one of two runs of the same commit.
+- **Files:** `tests/accounts-sign-out.spec.js`,
+  `ios/FORMAUITests/OfflineWorkoutTests.swift`, `AGENT.md`, `CHANGELOG.md`.
+- **Verification:** the account test reproduced and then passed locally on
+  PostgreSQL 18.4, `accounts-chromium` 42/42; `test:server` 104/104; dev
+  browser suite on Chromium 187/187; `build-for-testing` succeeds. The UI test
+  change is not run locally (no simulator use); CI decides it.
+- **Follow-ups:** not merged, not deployed. Durable rule: after merging
+  branches that both touched the tab bar or status roles, run the account and
+  UI suites before trusting unit results.
+
 ### Raouf: 2026-11-13 — Merge PR #43 into the 1.0 branch and export for the App Store
 
 - **Scope:** owner asked for the open iOS PRs (#43, which contains #37 and

@@ -255,8 +255,9 @@ test("creating a coach token after an older sign-in confirms the password in pla
 
   await confirm.fill(password);
   await submit.click();
-  const issued = page.getByRole("status").filter({
-    hasText: "Copy this token now",
+  // The 5 November audit made this a named group: only the toast is a status.
+  const issued = page.getByRole("group", {
+    name: "Copy this token now. It will not be shown again.",
   });
   await expect(issued).toBeVisible();
   expect((await issued.locator("pre").innerText()).trim()).toMatch(
