@@ -1928,3 +1928,24 @@ migrate` from the root-owned `ops/` directory (`sudo sh -c 'cd … && …'`),
 - **Files:** FORMASurfaces `WorkoutActivityState`; app controller, mapping, AppModel hook and preference, You toggle; WidgetPresentation attributes, views and intents; FORMAWidgets bundle; `NSSupportsLiveActivities`; widget bundle check; architecture, privacy and README docs; tests.
 - **Verification:** build-for-testing succeeds with no function over ~0.23 s type-checking (no iOS 27-only API, for CI's iOS 26.2 SDK); `swift test` 144/144; docs and swift-format clean. Signed Release installed on the owner's iPhone Air. App-target tests compile and run first in CI.
 - **Follow-ups:** physical checks: start, update and end on device, no leftover after discard, sign-out or force-quit, locked-screen redaction of names, landscape and two-activity Dynamic Island widths, StandBy, Watch Smart Stack next to FORMA's own Watch app, and both buttons from the Lock Screen.
+
+### Raouf: 2026-11-13 — App Store readiness fixes
+
+- **Scope:** native app submission audit against Apple's pages as read on
+  13 November 2026; code-side fixes only. Nothing uploaded or declared to Apple.
+- **Summary:** the in-app privacy notice no longer calls itself a development
+  build or prototype (App Review 2.2) and is version 1.0; the app declares
+  `ITSAppUsesNonExemptEncryption` false; the marketing version is 1.0.0. A
+  unit test rejects unfinished-build wording in the notice.
+- **Files:** `scripts/build-ios-resources.mjs`, `unit/ios-resources.test.js`,
+  `ios/FORMA/Resources/{legal.json,native-privacy.md,resource-manifest.json}`,
+  `ios/FORMA/Info.plist`, `ios/FORMA/Features/YouView.swift`, `ios/project.yml`,
+  `ios/docs/app-store-submission.md`, `AGENT.md`, `CHANGELOG.md`.
+- **Verification:** `unit/ios-resources.test.js` 14/14, `docs:check`,
+  `swift test` 146 core tests, signed Release archive on Xcode 27.2 inspected
+  (key, version, wording, manifests, Watch architectures) and installed on the
+  iPhone Air. App and UI test targets not run. Watch install blocked by
+  RemotePairing 1035.
+- **Follow-ups:** `ios/docs/app-store-submission.md` lists what remains: Watch
+  hardware checks, the accounts go or no-go, PRs #43, #37 and #38, distribution
+  export and the App Store Connect entries.

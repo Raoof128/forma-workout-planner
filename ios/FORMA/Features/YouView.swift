@@ -198,7 +198,7 @@ struct YouView: View {
   private static let buildDescription: String = {
     let version =
       Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
-      ?? "Development"
+      ?? "—"
     let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "—"
     return "\(version) (\(build))"
   }()
