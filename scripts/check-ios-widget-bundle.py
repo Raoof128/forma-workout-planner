@@ -164,16 +164,24 @@ def check_live_activity(app_info):
             )
 
 
-def check_extension(appex):
-    """Shared checks: a WidgetKit extension on the 17.0 floor, an empty privacy manifest, and no
-    database or Health linkage."""
+# SnapshotReader uses the owned App Group file's modification time to back off locked reads.
+# contentModificationDateKey is a required-reason API; this container-local use is C617.1.
+WIDGET_API_REASONS = [{
+    "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryFileTimestamp",
+    "NSPrivacyAccessedAPITypeReasons": ["C617.1"],
+}]
+
+
+def check_extension(appex, api_reasons=()):
+    """Shared checks: a WidgetKit extension on the 17.0 floor, a privacy manifest declaring exactly
+    the expected required-reason APIs, and no database or Health linkage."""
     info = read_plist(appex / "Info.plist")
     assert info["NSExtension"]["NSExtensionPointIdentifier"] == "com.apple.widgetkit-extension"
     assert info["MinimumOSVersion"] == "17.0"
     privacy = read_plist(appex / "PrivacyInfo.xcprivacy")
     assert privacy["NSPrivacyTracking"] is False
     assert privacy["NSPrivacyCollectedDataTypes"] == []
-    assert privacy["NSPrivacyAccessedAPITypes"] == []
+    assert privacy["NSPrivacyAccessedAPITypes"] == list(api_reasons)
     links = subprocess.run(
         ["otool", "-L", str(appex / info["CFBundleExecutable"])],
         check=True, capture_output=True, text=True,
@@ -188,7 +196,7 @@ def main():
     app = pathlib.Path(sys.argv[1])
     widget = app / "PlugIns/FORMAWidgets.appex"
     activity = app / "PlugIns/FORMAWorkoutActivity.appex"
-    info = check_extension(widget)
+    info = check_extension(widget, WIDGET_API_REASONS)
     activity_info = check_extension(activity)
     assert info["CFBundleIdentifier"] == "dev.raoufabedini.forma.widgets"
     assert activity_info["CFBundleIdentifier"] == "dev.raoufabedini.forma.workoutactivity"
@@ -202,20 +210,6 @@ def main():
     assert signed["com.apple.security.application-groups"] == [group]
     assert signed["com.apple.developer.default-data-protection"] == "NSFileProtectionComplete"
     assert "com.apple.developer.healthkit" not in signed
-    privacy = read_plist(widget / "PrivacyInfo.xcprivacy")
-    assert privacy["NSPrivacyTracking"] is False
-    assert privacy["NSPrivacyCollectedDataTypes"] == []
-    # SnapshotReader uses the owned App Group file's modification time to back off locked reads.
-    # contentModificationDateKey is a required-reason API; this container-local use is C617.1.
-    assert privacy["NSPrivacyAccessedAPITypes"] == [{
-        "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryFileTimestamp",
-        "NSPrivacyAccessedAPITypeReasons": ["C617.1"],
-    }]
-    links = subprocess.run(
-        ["otool", "-L", str(widget / info["CFBundleExecutable"])],
-        check=True, capture_output=True, text=True,
-    ).stdout
-    assert "libsqlite3" not in links and "HealthKit.framework" not in links
     # The Live Activity must run while the iPhone is locked: no Complete protection, and with no
     # App Group it cannot read the widget's snapshot even if code to do so were added.
     activity_signed = entitlements(activity, expects_group=False)

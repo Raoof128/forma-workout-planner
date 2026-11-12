@@ -58,6 +58,57 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-11-13 — Merge PR #43 into the 1.0 branch and export for the App Store
+
+- **Scope:** owner asked for the open iOS PRs (#43, which contains #37 and
+  #38) to be in the first App Store build, and for a distribution export.
+- **Summary:** `integ/app-store-1.0` merges `integ/audit-2026-11-02` into
+  `fix/app-store-readiness`. Fifteen conflicts with the 5 November audit are
+  listed in the merge commit. The app privacy manifest now declares Health
+  data, because a finished workout's Apple Watch summary syncs to the account.
+  `check-ios-widget-bundle.py` takes the expected required-reason APIs per
+  extension (the widget declares `C617.1`, the Live Activity none).
+- **Files:** the merge, `ios/FORMA/Resources/PrivacyInfo.xcprivacy`,
+  `ios/FORMAAppTests/{WatchWorkoutCoordinatorTests,AccountLifecycleTests}.swift`,
+  `scripts/check-ios-widget-bundle.py`, `ios/docs/app-store-submission.md`,
+  `AGENT.md`, `CHANGELOG.md`.
+- **Verification:** lint, `format:check`, typecheck, `docs:check`, build,
+  `test:unit` 165/165, `test:worker` 44/44, `swift test` 156 core tests,
+  `build-for-testing` for the app and every test target, signed Release
+  archive on Xcode 27.2, `check-ios-widget-bundle.py` on the archive, and an
+  `app-store-connect` export (distribution-signed `.ipa`, not uploaded).
+  Installed on the iPhone Air. Not run: `test:server`, `test:accounts` and
+  browser suites (no local PostgreSQL), `test:operations`, simulator app and
+  UI tests, anything on the Watch (RemotePairing 1035).
+- **Follow-ups:** not pushed, not deployed. **Release order:** the app now
+  sends the `watch` summary, which `main`'s `src/storage.js` does not accept,
+  so the API and Worker from this branch must reach staging and production
+  before the app goes to review; that also publishes Privacy Policy 1.4. The
+  account verdict has been GO since 13 October 2026
+  (`docs/security/release-security-verdict.md`); the older no-go note is
+  superseded.
+
+### Raouf: 2026-11-13 — App Store readiness fixes
+
+- **Scope:** native app submission audit against Apple's pages as read on
+  13 November 2026; code-side fixes only. Nothing uploaded or declared to Apple.
+- **Summary:** the in-app privacy notice no longer calls itself a development
+  build or prototype (App Review 2.2) and is version 1.0; the app declares
+  `ITSAppUsesNonExemptEncryption` false; the marketing version is 1.0.0. A
+  unit test rejects unfinished-build wording in the notice.
+- **Files:** `scripts/build-ios-resources.mjs`, `unit/ios-resources.test.js`,
+  `ios/FORMA/Resources/{legal.json,native-privacy.md,resource-manifest.json}`,
+  `ios/FORMA/Info.plist`, `ios/FORMA/Features/YouView.swift`, `ios/project.yml`,
+  `ios/docs/app-store-submission.md`, `AGENT.md`, `CHANGELOG.md`.
+- **Verification:** `unit/ios-resources.test.js` 14/14, `docs:check`,
+  `swift test` 146 core tests, signed Release archive on Xcode 27.2 inspected
+  (key, version, wording, manifests, Watch architectures) and installed on the
+  iPhone Air. App and UI test targets not run. Watch install blocked by
+  RemotePairing 1035.
+- **Follow-ups:** `ios/docs/app-store-submission.md` lists what remains: Watch
+  hardware checks, the accounts go or no-go, PRs #43, #37 and #38, distribution
+  export and the App Store Connect entries.
+
 ### Raouf: 2026-11-09 — Reconcile the 5 November release with main
 
 - **Scope:** before redeploying `main` after PR #44, the hosts were checked
@@ -2107,26 +2158,6 @@ migrate` from the root-owned `ops/` directory (`sudo sh -c 'cd … && …'`),
 - **Verification:** build-for-testing succeeds with no function over ~0.23 s type-checking (no iOS 27-only API, for CI's iOS 26.2 SDK); `swift test` 144/144; docs and swift-format clean. Signed Release installed on the owner's iPhone Air. App-target tests compile and run first in CI.
 - **Follow-ups:** physical checks: start, update and end on device, no leftover after discard, sign-out or force-quit, locked-screen redaction of names, landscape and two-activity Dynamic Island widths, StandBy, Watch Smart Stack next to FORMA's own Watch app, and both buttons from the Lock Screen.
 
-### Raouf: 2026-11-13 — App Store readiness fixes
-
-- **Scope:** native app submission audit against Apple's pages as read on
-  13 November 2026; code-side fixes only. Nothing uploaded or declared to Apple.
-- **Summary:** the in-app privacy notice no longer calls itself a development
-  build or prototype (App Review 2.2) and is version 1.0; the app declares
-  `ITSAppUsesNonExemptEncryption` false; the marketing version is 1.0.0. A
-  unit test rejects unfinished-build wording in the notice.
-- **Files:** `scripts/build-ios-resources.mjs`, `unit/ios-resources.test.js`,
-  `ios/FORMA/Resources/{legal.json,native-privacy.md,resource-manifest.json}`,
-  `ios/FORMA/Info.plist`, `ios/FORMA/Features/YouView.swift`, `ios/project.yml`,
-  `ios/docs/app-store-submission.md`, `AGENT.md`, `CHANGELOG.md`.
-- **Verification:** `unit/ios-resources.test.js` 14/14, `docs:check`,
-  `swift test` 146 core tests, signed Release archive on Xcode 27.2 inspected
-  (key, version, wording, manifests, Watch architectures) and installed on the
-  iPhone Air. App and UI test targets not run. Watch install blocked by
-  RemotePairing 1035.
-- **Follow-ups:** `ios/docs/app-store-submission.md` lists what remains: Watch
-  hardware checks, the accounts go or no-go, PRs #43, #37 and #38, distribution
-  export and the App Store Connect entries.
 ### Raouf: 2026-10-30 — Tab bar motion, set row balance and workout toolbar
 
 - **Scope:** native iPhone tab bar, active workout set rows and the active workout toolbar.
