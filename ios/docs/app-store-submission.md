@@ -23,10 +23,11 @@ on the day of submission. Nothing here has been uploaded or declared to Apple.
 
 ## Open before submission
 
-1. **Watch on hardware.** Installing to the Watch from the Mac fails with
-   RemotePairing 1035. Re-pair in Xcode (Devices and Simulators), then verify:
-   start on Watch, heart rate and energy on the iPhone, save to Apple Health,
-   Health permission denied and revoked, Live Activity start and end.
+1. **Watch on hardware.** The Watch was re-paired and 1.0 installed on
+   13 November 2026 (Apple Watch Ultra 3). Still to verify by hand: start on
+   Watch, heart rate and energy on the iPhone, save to Apple Health, the Watch
+   summary on the finished workout, Health permission denied and revoked, Live
+   Activity start and end.
 2. **Release order.** This build includes PR #43, so a finished workout
    carries an Apple Watch summary (recorded time, average and highest heart
    rate, active energy) that syncs to the account. `main`'s API does not accept
@@ -56,7 +57,7 @@ on the day of submission. Nothing here has been uploaded or declared to Apple.
 | EU trader status         | Required for EU storefronts and publishes contact details; otherwise leave the EU off                                                                      |
 | Export compliance        | Answered by the Info.plist key                                                                                                                             |
 | iPhone screenshots       | At least one set at 1206×2622 or 1179×2556, from the final binary with synthetic data                                                                      |
-| Apple Watch screenshots  | One size, 416×496 (Series 10 to 12)                                                                                                                        |
+| Apple Watch screenshots  | One size; 422×514 from the owner's Apple Watch Ultra 3 (416×496 if taken on Series 10 to 12)                                                               |
 | Review notes             | Guest use needs no account. If accounts ship: a demo account with two-step verification off, and how to reach Apple Watch features                         |
 | Sign in with Apple       | Not required: only FORMA's own email sign-up is offered (4.8)                                                                                              |
 
