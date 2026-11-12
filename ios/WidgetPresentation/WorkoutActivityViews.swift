@@ -102,17 +102,30 @@
   }
 
   /// A short, monospaced timer. `Text(timerInterval:)` is greedy, so the width is capped.
+  /// `showsHours` reads "1:15:03" rather than "75:03" past an hour; the compact Island slot keeps
+  /// it off because its width is fixed. The scale floor keeps caption text near 11 pt.
   struct WorkoutTimer: View {
     var range: ClosedRange<Date>
     var countsDown: Bool
     var maxWidth: CGFloat
+    var showsHours = false
+    var alignment: HorizontalAlignment = .trailing
     var body: some View {
-      Text(timerInterval: range, pauseTime: nil, countsDown: countsDown, showsHours: false)
+      Text(timerInterval: range, pauseTime: nil, countsDown: countsDown, showsHours: showsHours)
         .monospacedDigit()
         .lineLimit(1)
-        .minimumScaleFactor(0.6)
-        .multilineTextAlignment(.trailing)
-        .frame(maxWidth: maxWidth, alignment: .trailing)
+        .minimumScaleFactor(0.85)
+        .multilineTextAlignment(alignment == .leading ? .leading : .trailing)
+        .frame(maxWidth: maxWidth, alignment: alignment == .leading ? .leading : .trailing)
+    }
+  }
+
+  extension View {
+    /// Speaks a timer as "Elapsed time, 12 minutes 3 seconds": a label on a `Text` replaces what
+    /// it says, so the running value goes in `accessibilityValue`.
+    func elapsedTimeAccessibility(_ range: ClosedRange<Date>) -> some View {
+      accessibilityLabel("Elapsed time")
+        .accessibilityValue(Text(timerInterval: range, countsDown: false))
     }
   }
 
@@ -122,17 +135,19 @@
     var isStale: Bool
     var palette: WorkoutActivityPalette
     var timerFont: Font = .title2.weight(.bold)
+    /// Leading in the `.small` family, where it sits under the exercise name.
+    var alignment: HorizontalAlignment = .trailing
 
     var body: some View {
       if let range = state.countdown(isStale: isStale) {
-        VStack(alignment: .trailing, spacing: 0) {
+        VStack(alignment: alignment, spacing: 0) {
           Text("Rest").font(.caption.weight(.semibold)).foregroundStyle(palette.secondary)
-          WorkoutTimer(range: range, countsDown: true, maxWidth: 96)
+          WorkoutTimer(range: range, countsDown: true, maxWidth: 96, alignment: alignment)
             .font(timerFont).foregroundStyle(palette.accent)
         }
         .accessibilityElement(children: .combine)
       } else if let paused = state.restPausedSeconds {
-        VStack(alignment: .trailing, spacing: 0) {
+        VStack(alignment: alignment, spacing: 0) {
           Text("Rest paused").font(.caption.weight(.semibold)).foregroundStyle(palette.secondary)
           Text(WorkoutActivityState.clock(paused))
             .font(timerFont).monospacedDigit().foregroundStyle(palette.accent)
@@ -146,7 +161,7 @@
     }
   }
 
-  /// A capsule button for the intents, 40 pt high so it stays a comfortable target.
+  /// A capsule button for the intents, at least 44 pt high (the HIG's default control size).
   struct WorkoutActionStyle: ButtonStyle {
     var palette: WorkoutActivityPalette
     var prominent: Bool
@@ -156,7 +171,7 @@
         .lineLimit(1)
         .minimumScaleFactor(0.8)
         .foregroundStyle(prominent ? palette.buttonText : palette.accent)
-        .frame(maxWidth: .infinity, minHeight: 40)
+        .frame(maxWidth: .infinity, minHeight: 44)
         .background(
           Capsule().fill(prominent ? palette.buttonFill : Color.clear)
         )
@@ -166,7 +181,9 @@
     }
   }
 
-  /// "Complete set" and, while a rest is on screen, "Skip rest".
+  /// One action at a time, as the HIG prefers for a Live Activity: "Skip rest" while a rest is on
+  /// screen, otherwise "Complete set". Two buttons side by side invited a wrong tap mid-set, and
+  /// both intents save after Face ID, so a miss was not caught. Complete set stays in the app.
   struct WorkoutActions: View {
     var sessionID: String
     var ownerEpoch: String
@@ -175,23 +192,20 @@
     var palette: WorkoutActivityPalette
 
     var body: some View {
-      HStack(spacing: 8) {
-        if state.isFinishedAllSets {
-          Text("All sets done. Finish in FORMA.")
-            .font(.subheadline.weight(.medium)).foregroundStyle(palette.secondary)
-            .frame(maxWidth: .infinity, minHeight: 40, alignment: .leading)
-        } else {
-          Button(intent: CompleteSetIntent(sessionID: sessionID, ownerEpoch: ownerEpoch)) {
-            Label("Complete set", systemImage: "checkmark")
-          }
-          .buttonStyle(WorkoutActionStyle(palette: palette, prominent: true))
+      if state.isResting, !state.restIsOver(isStale: isStale) {
+        Button(intent: SkipRestIntent(sessionID: sessionID, ownerEpoch: ownerEpoch)) {
+          Label("Skip rest", systemImage: "forward.end.fill")
         }
-        if state.isResting, !state.restIsOver(isStale: isStale) {
-          Button(intent: SkipRestIntent(sessionID: sessionID, ownerEpoch: ownerEpoch)) {
-            Label("Skip rest", systemImage: "forward.end.fill")
-          }
-          .buttonStyle(WorkoutActionStyle(palette: palette, prominent: false))
+        .buttonStyle(WorkoutActionStyle(palette: palette, prominent: true))
+      } else if state.isFinishedAllSets {
+        Text("All sets done. Finish in FORMA.")
+          .font(.subheadline.weight(.medium)).foregroundStyle(palette.secondary)
+          .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+      } else {
+        Button(intent: CompleteSetIntent(sessionID: sessionID, ownerEpoch: ownerEpoch)) {
+          Label("Complete set", systemImage: "checkmark")
         }
+        .buttonStyle(WorkoutActionStyle(palette: palette, prominent: true))
       }
     }
   }
@@ -239,6 +253,8 @@
   /// row first, so the exercise, the set and the buttons stay.
   struct WorkoutLockScreenView: View {
     @Environment(\.colorScheme) private var colorScheme
+    /// StandBy shows the card full screen: the rest timer gets the room.
+    @Environment(\.isActivityFullscreen) private var isFullscreen
     var sessionID: String
     var ownerEpoch: String
     var state: WorkoutActivityState
@@ -252,8 +268,8 @@
         card(showHeader: true)
         card(showHeader: false)
       }
-      .padding(.horizontal, 16)
-      .padding(.vertical, 12)
+      // The HIG's standard Lock Screen margin for Live Activities.
+      .padding(14)
       .dynamicTypeSize(...DynamicTypeSize.accessibility1)
     }
 
@@ -277,7 +293,9 @@
                 .frame(width: 30, height: 30)
                 .accessibilityHidden(true)
             }
-            RestReadout(state: state, isStale: isStale, palette: palette)
+            RestReadout(
+              state: state, isStale: isStale, palette: palette,
+              timerFont: isFullscreen ? .largeTitle.weight(.bold) : .title2.weight(.bold))
           }
         }
         WorkoutActions(
@@ -288,7 +306,8 @@
 
     private var header: some View {
       HStack(spacing: 6) {
-        WorkoutMark(palette: palette)
+        // The words beside it already say "FORMA workout"; the mark is decoration here.
+        WorkoutMark(palette: palette).accessibilityHidden(true)
         // The public title is neutral. The routine's name is the private part.
         Text("FORMA workout")
           .font(.caption.weight(.semibold)).foregroundStyle(palette.primary)
@@ -298,9 +317,9 @@
           .lineLimit(1)
           .privacySensitive()
         Spacer(minLength: 4)
-        WorkoutTimer(range: state.elapsedRange, countsDown: false, maxWidth: 72)
+        WorkoutTimer(range: state.elapsedRange, countsDown: false, maxWidth: 72, showsHours: true)
           .font(.caption.weight(.semibold)).foregroundStyle(palette.primary)
-          .accessibilityLabel("Elapsed time")
+          .elapsedTimeAccessibility(state.elapsedRange)
       }
     }
 
@@ -317,11 +336,16 @@
   // MARK: Apple Watch Smart Stack and CarPlay
 
   /// The `.small` family: the exercise, then the rest or the set. No buttons, no scrolling.
+  /// The palette follows the host's appearance: the Watch Smart Stack is dark, but CarPlay or
+  /// another host may draw it light, where lime on white would be unreadable.
   @available(iOS 18.0, *)
   struct WorkoutSmallView: View {
+    @Environment(\.colorScheme) private var colorScheme
     var state: WorkoutActivityState
     var isStale: Bool
-    private let palette = WorkoutActivityPalette.dark
+    private var palette: WorkoutActivityPalette {
+      WorkoutActivityPalette(isDark: colorScheme == .dark)
+    }
 
     var body: some View {
       HStack(spacing: 8) {
@@ -334,14 +358,16 @@
         }
         VStack(alignment: .leading, spacing: 0) {
           Text(state.exercise)
-            .font(.headline).lineLimit(1).minimumScaleFactor(0.7)
+            .font(.headline).foregroundStyle(palette.primary)
+            .lineLimit(1).minimumScaleFactor(0.85)
             .privacySensitive()
           if state.isResting {
-            RestReadout(state: state, isStale: isStale, palette: palette, timerFont: .headline)
-              .environment(\.layoutDirection, .leftToRight)
+            RestReadout(
+              state: state, isStale: isStale, palette: palette, timerFont: .headline,
+              alignment: .leading)
           } else {
             Text(state.setLabel ?? "FORMA workout")
-              .font(.subheadline.weight(.medium)).foregroundStyle(.secondary)
+              .font(.subheadline.weight(.medium)).foregroundStyle(palette.secondary)
               .lineLimit(1)
           }
         }
@@ -382,13 +408,45 @@
             .accessibilityLabel(WorkoutActivitySpeech.pausedRest(state))
         } else {
           WorkoutTimer(range: state.elapsedRange, countsDown: false, maxWidth: 48)
-            .accessibilityLabel("Elapsed time")
+            .elapsedTimeAccessibility(state.elapsedRange)
         }
       }
       .font(.caption.weight(.semibold))
       .foregroundStyle(WorkoutActivityPalette.dark.accent)
     }
   }
+
+  /// The compact trailing slot. On iOS 27, when the Island is limited in width (landscape, iPhone
+  /// Duo) the system shows compact and minimal in a 28 pt circle, which a "1:23" cannot fit; the
+  /// HIG asks for an empty trailing view then, which the system hides. The leading view carries
+  /// the meaning on its own. The check is compiler-gated so the iOS 26.2 SDK in CI still builds.
+  struct IslandCompactTrailingSlot: View {
+    var state: WorkoutActivityState
+    var isStale: Bool
+    var body: some View {
+      #if compiler(>=6.4)
+        if #available(iOS 27.0, *) {
+          LimitedWidthAwareTrailing(state: state, isStale: isStale)
+        } else {
+          IslandCompactTrailing(state: state, isStale: isStale)
+        }
+      #else
+        IslandCompactTrailing(state: state, isStale: isStale)
+      #endif
+    }
+  }
+
+  #if compiler(>=6.4)
+    @available(iOS 27.0, *)
+    private struct LimitedWidthAwareTrailing: View {
+      @Environment(\.isDynamicIslandLimitedInWidth) private var limited
+      var state: WorkoutActivityState
+      var isStale: Bool
+      var body: some View {
+        if !limited { IslandCompactTrailing(state: state, isStale: isStale) }
+      }
+    }
+  #endif
 
   struct IslandMinimal: View {
     var state: WorkoutActivityState
@@ -428,8 +486,10 @@
       } else {
         VStack(alignment: .trailing, spacing: 0) {
           Text("Elapsed").font(.caption.weight(.semibold)).foregroundStyle(palette.secondary)
-          WorkoutTimer(range: state.elapsedRange, countsDown: false, maxWidth: 96)
-            .font(.title3.weight(.bold)).foregroundStyle(palette.accent)
+          WorkoutTimer(
+            range: state.elapsedRange, countsDown: false, maxWidth: 96, showsHours: true
+          )
+          .font(.title3.weight(.bold)).foregroundStyle(palette.accent)
         }
         .accessibilityElement(children: .combine)
       }

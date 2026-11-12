@@ -55,6 +55,14 @@ brand color into scrollable content instead of painting solid toolbar/tab-bar
 backgrounds. At **15:59–16:24**, it cautions that repeated logos consume space
 better used for information.
 
+> **Superseded 28 October 2026.** The owner replaced the system tab bar and its bottom
+> accessory with FORMA's own floating bar and resume control
+> ([account-review-and-tab-bar-2026-10-28.md](account-review-and-tab-bar-2026-10-28.md)).
+> `FORMAApp.swift` hides the system bar and calls neither `tabViewBottomAccessory` nor
+> `tabBarMinimizeBehavior`. The two paragraphs below record the earlier design; the
+> current bar and its costs are in
+> [audits/frontend-2026-11-02/shell-design-system.md](audits/frontend-2026-11-02/shell-design-system.md).
+
 FORMA therefore keeps the four system tabs and native navigation bars. Today,
 the routine title, the original F and the training artwork carry the identity.
 Workout fields, exercise guides, history, chart data and receipts retain stable
@@ -199,11 +207,11 @@ SDK containing every referenced symbol.
 | `Glass.tint(_:)` | 26.0 | `func tint(_ color: Color?) -> Glass` | Sparse emphasis; verify contrast |
 | `.buttonStyle(.glass)` | 26.0 | `static var glass: GlassButtonStyle { get }` | Native navigation/control actions where appropriate |
 | `.buttonStyle(.glassProminent)` | 26.0 | `@MainActor static var glassProminent: GlassProminentButtonStyle { get }` | One clearly primary functional action when useful |
-| `tabBarMinimizeBehavior(_:)` | 26.0 | `func tabBarMinimizeBehavior(_ behavior: TabBarMinimizeBehavior) -> some View` | `.never` for stable access |
+| `tabBarMinimizeBehavior(_:)` | 26.0 | `func tabBarMinimizeBehavior(_ behavior: TabBarMinimizeBehavior) -> some View` | `.never` for stable access. Superseded 28 Oct 2026: unused with FORMA's own bar |
 | `TabBarMinimizeBehavior.never` | 26.0 | `static let never: TabBarMinimizeBehavior` | Adopted stability policy |
 | `TabBarMinimizeBehavior.onScrollDown` | 26.0 | `static let onScrollDown: TabBarMinimizeBehavior` | Optional alternative; minimization supported only on iPhone |
-| `tabViewBottomAccessory(content:)` | 26.0 | `func tabViewBottomAccessory<Content>(@ContentBuilder content: () -> Content) -> some View where Content: View` | Documented predecessor; not selected for dynamic show/hide |
-| `tabViewBottomAccessory(isEnabled:content:)` | **26.1** | Same generic function with `isEnabled: Bool` | Adopted with an explicit 26.1 runtime guard and 26.1-or-later SDK requirement |
+| `tabViewBottomAccessory(content:)` | 26.0 | `func tabViewBottomAccessory<Content>(@ContentBuilder content: () -> Content) -> some View where Content: View` | Documented predecessor; not selected for dynamic show/hide. Superseded 28 Oct 2026: unused, see note below |
+| `tabViewBottomAccessory(isEnabled:content:)` | **26.1** | Same generic function with `isEnabled: Bool` | Superseded 28 Oct 2026: no longer used; FORMA draws its own resume control above its own bar |
 | `tabViewBottomAccessoryPlacement` | 26.0 | `var tabViewBottomAccessoryPlacement: TabViewBottomAccessoryPlacement? { get }` | Needed only if supporting the accessory's inline minimized layout |
 | `ToolbarSpacer` | 26.0 | `nonisolated struct ToolbarSpacer` | Separate unrelated toolbar groups |
 | `safeAreaBar` vertical overload | 26.0 | `func safeAreaBar(edge: VerticalEdge, alignment: HorizontalAlignment = .center, spacing: CGFloat? = nil, @ContentBuilder content: () -> some View) -> some View` | Bottom rest controls; adjusts safe area and scroll edge |
@@ -212,6 +220,9 @@ SDK containing every referenced symbol.
 | `colorSchemeContrast` | 13.0 | `var colorSchemeContrast: ColorSchemeContrast { get }` | Increased-contrast custom colors and control fallback |
 | `ChartContent.accessibilityLabel(_:)` (Text overload) | 16.0 | `nonisolated func accessibilityLabel(_ label: Text) -> some ChartContent` | Each bar names the real session and date |
 | `ChartContent.accessibilityValue(_:)` (Text overload) | 16.0 | `nonisolated func accessibilityValue(_ valueDescription: Text) -> some ChartContent` | Each bar reports its actual lifting volume |
+
+> **Superseded 28 October 2026**, with the system tab bar: see the note under
+> "Navigation and glass belong above content". The two paragraphs below describe the earlier design.
 
 FORMA selects the iOS 26.1 enabled accessory variant to show or hide the real
 active-session resume control without conditionally rebuilding the whole TabView.
@@ -237,7 +248,7 @@ change log records which edits and checks actually completed.
 
 | File or area | Design review requirement |
 | --- | --- |
-| `App/FORMAApp.swift` | Root-owned tab/navigation state; standard native tab glass; truthful active-session accessory; no custom bar background |
+| `App/FORMAApp.swift` | Root-owned tab/navigation state; truthful active-session resume control. Since 28 Oct 2026 the bar is FORMA's own floating glass capsule (the system bar is hidden) |
 | `App/AppModel.swift` | Persistence before success; protected local files; expose real active state; no presentation-driven mutations |
 | `DesignSystem/FormaTheme.swift` | Light/dark/high-contrast palette; Dynamic Type; opaque reduced-transparency fallback; finite optional effects |
 | `Features/TodayView.swift` | One dominant next action, real schedule/history, restrained logo/art, readable reflow |

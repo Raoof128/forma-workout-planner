@@ -17,6 +17,11 @@ import {
 import { Button, PageHeading, Empty, Modal } from "./UI";
 import { tracksLoadReps } from "../exerciseMetrics.js";
 import { progressRecords } from "../progressSummary.js";
+import {
+  WatchBadge,
+  WatchSummaryPanel,
+  WatchTotalsPanel,
+} from "./WatchSummary";
 import "../workout-history.css";
 import {
   exerciseById,
@@ -192,6 +197,7 @@ export function WorkoutHistory({ history, onStart, onSave, onDelete }) {
                           day: "numeric",
                         })}
                       </p>
+                      <WatchBadge watch={s.watch} />
                     </div>
                     <div className="journal-session-metrics">
                       <span>
@@ -286,6 +292,7 @@ export function WorkoutHistory({ history, onStart, onSave, onDelete }) {
                   lifting volume.
                 </p>
               )}
+              <WatchSummaryPanel watch={detail.watch} />
               <div className="journal-detail-section-heading">
                 <h3>Completed exercises</h3>
                 <span>
@@ -424,6 +431,7 @@ export function Progress({ history, onStart }) {
               ))}
             </div>
           </section>
+          <WatchTotalsPanel history={history} />
           <section className="panel records">
             <div className="section-title">
               <h2>Personal bests</h2>

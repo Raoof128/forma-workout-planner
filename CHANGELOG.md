@@ -242,6 +242,180 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   gates remain. Owner separately authorized commit/push on 4 November; no merge,
   deployment, TestFlight or App Store action.
 
+### Raouf: 2026-11-04 — iOS and watchOS front-end audit fixes
+
+- **Scope:** fix the 2 November front-end audit
+  (`ios/docs/audits/frontend-2026-11-02/`, 14 high, 51 medium, 93 low) in eight
+  slices, merged on `integ/audit-2026-11-02`.
+- **Summary:** Today and start sheet (VoiceOver focus and announcements, Watch
+  strip says "Paused"); Plan (an untouched routine no longer asks to discard,
+  refused swipes explained, row management); Watch (Health prompt before the
+  countdown, session prepared during 3-2-1, summary visible on a dimmed wrist,
+  battery fixes); Progress, You and media (3:1 chart contrast, Audio Graph
+  descriptor, empty state); workout (Finish as a lime circle with a flag,
+  receipt toolbar Done); shell (tab bar steps aside for the keyboard, glass label
+  contrast); widgets and Live Activity (deep link into the workout, separate data
+  protection); account (`webcredentials` entitlement plus the Worker's
+  `apple-app-site-association`, coach-token step-up).
+- **Files:** `ios/` app, Watch, widget and package sources and tests;
+  `worker/` (AASA route), `server/` (coach-token step-up accepts the password in
+  the same request) and the website's account screens; audit reports.
+- **Verification:** each slice built for device; package and device test builds
+  pass on the merged branch. Not run on the iPhone or Watch yet.
+- **Follow-ups:** device checks marked "device" in the reports; Password AutoFill
+  and the coach-token step-up need a Worker and API release; a Watch "Now Playing" page was added without being asked
+  for (keep or drop); owner decisions in the audit README.
+
+### Raouf: 2026-11-02 — Even workout buttons and Watch animation
+
+- **Scope:** owner said the workout page's Done button was still bigger than the
+  others, and the Watch app was too plain and needed animation.
+- **Summary:** the workout toolbar is one size again. After merging PR #37/#38's
+  work (`feat/ios-site-assets`) into this branch, the toolbar is #37's
+  `WorkoutToolbar`; its Finish dropped `.glassProminent` (a larger lime capsule) for
+  the standard glass size with a lime label, and the pre-iOS 26 Finish left
+  `.confirmationAction`. The keyboard Done is a plain toolbar button; the Watch
+  summary's Done is back to the shared 48 pt. The earlier phone build lacked #37/#38
+  because this branch started from `main`; they are now merged in, so this PR
+  includes them.
+  This supersedes the earlier "keep Done large" reading of the ask. New
+  `FORMAWatch/WatchMotion.swift`: a lime start disc with rippling rings, a 3-2-1
+  countdown (draining ring, a wrist tap per count, tap to skip), a spinning ring round
+  the loading heart, a heart that beats at the live heart rate, a flame that jumps when
+  energy rises, a breathing pause icon, and a summary seal that draws closed with the
+  stats rising in one by one.
+- **Rules:** every Watch animation goes through `MotionGate`: none with Reduce Motion
+  or on a dimmed (Always On) wrist. The heartbeat is a sleeping loop at the measured
+  rate (30–220 bpm) that stops with the view; it runs only while the wrist is raised.
+- **Files:** `ios/FORMA/Features/WorkoutView.swift`, `ios/FORMAWatch/WatchMotion.swift`,
+  `ios/FORMAWatch/WatchViews.swift`, `CHANGELOG.md`, `AGENT.md`.
+- **Verification:** iPhone + Watch device build with no warnings; `FORMAAppTests`
+  125/125 on the iPhone Air. The Watch animations are not seen on the Watch yet (the
+  Mac cannot reach it); battery effect not measured.
+- **Follow-ups:** look at the start disc, countdown, heartbeat and seal on the Watch;
+  confirm the toolbar on the iPhone.
+
+### Raouf: 2026-11-02 — Apple Watch battery and practice audit
+
+- **Scope:** owner asked for a full audit of the Watch app against 2026 battery and
+  watchOS practice. Report: `ios/docs/audits/watch-battery-audit-2026-11-02.md`.
+- **Summary:** fixed a real bug in today's summary feature (the final snapshot was
+  sent after `session.end()` and could be dropped by the iPhone), added `sentAt` to
+  `WatchMetrics` with late/out-of-order handling on the iPhone, cut ordinary sends to
+  at least 2 s apart and 2 bpm changes, added a real 20 s heartbeat, removed the unused
+  basal-energy read, capped the measuring pulse at 15 s, kept a start-time failure on
+  screen, fixed the "ended from iPhone" race, guarded Pause/Resume and refreshed the
+  Health-off flags on recovery.
+- **Rules:** the Watch must deliver its final snapshot before ending the mirrored
+  session (awaited, at most 2 s); the iPhone keeps the just-ended session only to
+  accept that snapshot. Freshness is judged from `sentAt`, never arrival time.
+  `FORMAAppTests` can run on the iPhone Air with
+  `-destination 'id=<iPhone UDID>' -only-testing:FORMAAppTests` (no simulator); it
+  caught a missing `import FORMACore` in today's coordinator tests.
+- **Files:** `ios/FORMAWatch/{WorkoutManager,WatchViews}.swift`,
+  `ios/Shared/WatchWorkout.swift`, `ios/FORMA/App/WatchWorkoutCoordinator.swift`,
+  `ios/FORMAAppTests/WatchWorkoutCoordinatorTests.swift`,
+  `ios/docs/audits/watch-battery-audit-2026-11-02.md`, `CHANGELOG.md`, `AGENT.md`.
+- **Verification:** device build (iPhone + Watch) with no warnings; `FORMAAppTests`
+  125/125 on the iPhone Air; `swift test` 154/154; `docs:check`. Not measured: battery
+  effect and end-of-workout delivery on the Watch.
+- **Follow-ups:** device experiment with `prepare()`; on-Watch check of the Stop
+  dialog, pulse cap and final summary. No API or website change, so nothing to deploy
+  beyond the iPhone app.
+
+### Raouf: 2026-11-02 — Apple Watch collected data deployed
+
+- **Scope:** owner asked to push, redeploy the site and release the API ("you do
+  all") for `feat/watch-collected-data` at `55d6dc1`.
+- **Summary:** API image `forma-api:watch-summary-20261102-55d6dc1` (linux/amd64,
+  user `forma`, archive SHA-256 `1ae08a56…ca06`) built on the Mac and released with
+  `docs/qa/holds-timer/api-release.sh`, staging then production; both replace
+  `native-ios-20261028-c0883a3` (native iPhone support was already live). No new
+  migration (schema still `0006`). Workers: staging `3e2aef47-…`, production
+  `ed075a4c-…`. Production now runs a branch that is not merged into `main`.
+- **Rules:** the host is reachable as `root` with Sentinel's key
+  (`~/.config/sentinel-ssh/keys/portfolio-droplet-root`, host id
+  `portfolio-droplet`, pinned host key in Sentinel's config); the `eoiadmin` key is
+  not on this Mac. Sentinel itself is read-only and cannot transfer or run a
+  release. Rolling back to `native-ios-20261028-c0883a3` is safe only until a
+  member's workspace holds a Watch summary: that image rejects the `watch` field.
+- **Files:** `AGENT.md`, `CHANGELOG.md`.
+- **Verification:** release script on each host: archive hash OK, encrypted signed
+  off-host backups before and after, migration no-op, `health=healthy`, counts and
+  unrelated containers unchanged, zero API error lines. The staging container's
+  validator accepts a `watch` summary in strict mode. Production: site 200,
+  `/api/health` 200, anonymous `/api/workspace` 401; the live bundle
+  `index-Bq03_fMW.js` contains Privacy Policy 1.4 and the Watch panels. Staging is
+  behind Access (anonymous 302, as before). The Watch flow on the owner's iPhone
+  and Watch is not yet verified.
+- **Follow-ups:** open and merge the PR so `main` matches production; device check
+  of the Watch flow while signed in; App Store Connect Health category decision.
+
+### Raouf: 2026-11-02 — Apple Watch collected data, Watch stop choice and loading state
+
+- **Scope:** four owner asks: show what the Watch collected next to the finished
+  workout and in Progress, on the iPhone and the website; polish the Watch-connected
+  workout screens and keep Done large; one Watch control to pause the recording or
+  end the workout; a loading animation while the Watch starts. The owner skipped
+  the design questions ("start integrating") and said the Watch must not control
+  everything, so it controls only its own recording. Design note:
+  `docs/superpowers/specs/2026-11-02-watch-collected-data-design.md`.
+- **Summary:** finished workouts gain an optional `watch` summary
+  (`elapsedSeconds`, `averageHeartRate`, `maxHeartRate`, `activeEnergyKcal`, whole
+  and bounded) in `src/storage.js` and FORMACore, checked by one shared corpus
+  (`ios/Fixtures/validation-boundaries.json`, `watchSummaries`). The iPhone stores
+  the latest Watch reading at Finish and replaces it with the Watch's final one
+  (state `ended`) if that arrives later; a discarded recording (new `discarded`
+  flag on `WatchMetrics`) keeps none. The receipt, workout details and Progress show
+  it (`WatchSummaryCard.swift`); the website shows it in workout details, journal
+  rows and Progress (`WatchSummary.jsx`, `src/watchSummary.js`). Watch: max heart
+  rate, a Stop button on the numbers page that asks Pause/Resume or End, a pulsing
+  heart while HealthKit starts, restores or saves and "Measuring…" until the first
+  heart-rate reading, and Done pinned full width (52 pt) on the summary. iPhone: the
+  recording strip is a card that offers Finish once the Watch has ended; the
+  keyboard Done is a full 44 pt bold target. Privacy Policy 1.4 and native notice
+  0.4 disclose the summary.
+- **Rules (supersede the 2026-10-26 Watch entry):** the Watch summary is part of
+  the workout record, exports and account sync; individual readings stay in Apple
+  Health only. **Release order: API, then Worker, then any iPhone build that sends
+  it.** `server/schema.ts` validates strictly, so an older API rejects a workspace
+  with `watch` (unknown field) and the iPhone's sync would keep failing; an older
+  web bundle validates loosely and would strip it on its next save. The Watch never
+  controls iPhone sets, holds or rest timers. Watch summaries are written only by the
+  iPhone; the web never creates one.
+- **Files:** `src/storage.js`, `src/watchSummary.js`, `src/watch-summary.css`,
+  `src/components/WatchSummary.jsx`, `src/components/Insights.jsx`,
+  `src/legal/content.js`, `scripts/build-ios-resources.mjs`,
+  `ios/FORMA/Resources/legal.json`, `ios/FORMA/Resources/resource-manifest.json`,
+  `ios/Sources/FORMACore/{WatchSummary,Models,WorkoutEngine}.swift`,
+  `ios/Shared/WatchWorkout.swift`, `ios/FORMAWatch/{WatchViews,WorkoutManager}.swift`,
+  `ios/FORMA/App/{AppModel,WatchWorkoutCoordinator}.swift`,
+  `ios/FORMA/Features/{WatchSummaryCard,ProgressView,StartWorkoutSheet,WorkoutView}.swift`,
+  tests (`unit/watch-summary.test.js`, `unit/ios-validation-boundaries.test.js`,
+  `unit/ios-resources.test.js`, `tests/watch-summary.spec.js`,
+  `server/tests/workspace.test.ts`, `ios/Tests/FORMACoreTests/WatchSummaryTests.swift`,
+  `ios/FORMAAppTests/WatchWorkoutCoordinatorTests.swift`), docs
+  (`docs/data-model.md`, `docs/legal/README.md`, `ios/docs/apple-watch.md`,
+  `ios/docs/privacy-inventory.md`, `ios/docs/app-review-matrix.md`, `ios/README.md`,
+  `ios/FORMA/Resources/README.md`), `CHANGELOG.md`, `AGENT.md`.
+- **Verification:** lint, `format:check`, `typecheck`, `docs:check`, `build` pass;
+  `test:unit` 156/156; `swift test` 154/154;
+  `build-ios-resources --check` and the native contract probe pass; Playwright
+  `watch-summary` and `legal` specs pass in Chromium and WebKit (Firefox does not
+  launch in this sandbox: not run); `server/tests/workspace.test.ts` 3/3 on a
+  disposable local PostgreSQL 15 (the rest of `test:server` needs PostgreSQL 18:
+  not run here; Docker was off). iPhone + Watch Debug device build
+  (`generic/platform=iOS`) succeeded with no warnings. Browser check in guest mode
+  at desktop and 320 px: detail card, journal badge and Progress panel render, no
+  horizontal scroll, no console errors. Simulator not used (owner's instruction);
+  `FORMAAppTests` were not run. On-device behaviour (Stop dialog, loading heart,
+  pinned Done, max heart rate from `HKStatistics`, final-reading replacement) is
+  not yet verified on the iPhone Air and Watch.
+- **Follow-ups:** owner approval of Privacy Policy 1.4 before any deploy; release
+  API then Worker (staging first) before relying on an iPhone build that syncs a
+  Watch summary; App Store Connect Health category decision; device checks above;
+  PR #37 also edits `ProgressView.swift` and `WorkoutView.swift`, so expect small
+  merge conflicts. Not deployed.
 ### Raouf: 2026-11-04 — OSV exception for a dev-only minimatch advisory
 
 - **Scope:** CI "Security scans" failed on every branch after
@@ -269,7 +443,11 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
   metrics server to `0.0.0.0:20241` on the internal `tunnel` network.
 - **Files:** `ops/account-operations.py`, `ops/test_operations.py`,
   `ops/compose.yaml`, `CHANGELOG.md`, `AGENT.md`.
-- **Verification:** ops tests 8/8. Not yet deployed to the Droplet.
+- **Verification:** ops tests 8/8. Deployed 2026-11-04: `/ready` exited 0 in both
+  API containers; the script (SHA-256 `69233fd5…`) replaced the `main` copy in
+  `/opt/forma-<env>/operations/` (old kept as `.bak-20261104`) and one manual
+  monitor run per environment reported `healthy: true`, `tunnelFailures: 0`.
+  The Compose `--metrics` pin applies at the next `cloudflared` recreate.
 - **Follow-ups:** confirm `/ready` answers on both hosts before installing the new
   script; the triggering cloudflared log line was not read (container logs are
   outside the read-only observer's roots).
@@ -2083,3 +2261,57 @@ at rest` failed 16/20 before the fix. The rapid-release case now waits, before
 - **Files:** FORMASurfaces `WorkoutActivityState`; app controller, mapping, AppModel hook and preference, You toggle; WidgetPresentation attributes, views and intents; FORMAWidgets bundle; `NSSupportsLiveActivities`; widget bundle check; architecture, privacy and README docs; tests.
 - **Verification:** build-for-testing succeeds with no function over ~0.23 s type-checking (no iOS 27-only API, for CI's iOS 26.2 SDK); `swift test` 144/144; docs and swift-format clean. Signed Release installed on the owner's iPhone Air. App-target tests compile and run first in CI.
 - **Follow-ups:** physical checks: start, update and end on device, no leftover after discard, sign-out or force-quit, locked-screen redaction of names, landscape and two-activity Dynamic Island widths, StandBy, Watch Smart Stack next to FORMA's own Watch app, and both buttons from the Lock Screen.
+
+### Raouf: 2026-10-30 — Tab bar motion, set row balance and workout toolbar
+
+- **Scope:** native iPhone tab bar, active workout set rows and the active workout toolbar.
+- **Summary:** each tab's symbol fills when chosen and plays its own SF Symbols effect: Today's sun turns (`rotate`, iOS 18), Plan's stack lifts layer by layer (`bounce.up.byLayer`), Progress's line draws itself (`drawOn` transition, SF Symbols 7 on iOS 26) and You waves (`wiggle`, iOS 18). Older systems bounce, and below full motion the symbols only change. The highlight slides on a new `tabSelection` spring (420 ms, bounce 0.28) with a selection haptic. Set rows are columns of caption over a 48 pt box: Set, the fields and a Done column whose complete button matches the fields' height and 10 pt radius, bottom-aligned, and the row now fills its card. On iOS 26 the toolbar is three Liquid Glass groups: a round close button (named "Save & close" for VoiceOver), the actions menu, and a prominent lime Finish set apart by a fixed `ToolbarSpacer`. Earlier systems keep the text buttons.
+- **Files:** `ios/FORMA/DesignSystem/TrainingTabBar.swift`, `FormaMotion.swift`, `ios/FORMA/Features/WorkoutView.swift`, `ios/docs/commit-2/MOTION_SPEC.md`, AGENT and CHANGELOG.
+- **Verification:** build-for-testing (app, Watch, widgets, all test targets) succeeds with no new slow type-checks and only SDK 26.x API behind availability checks; swift-format strict lint clean. Accessibility names and identifiers the UI tests use are unchanged. Nothing has run on a simulator here, at the owner's request.
+- **Follow-ups:** check on device that each tab effect reads well in light and dark mode, and that the set row fits at large text sizes (it falls back to the stacked layout).
+
+### Raouf: 2026-10-30 — Firmer tab haptics and a polished Progress chart
+
+- **Scope:** native iPhone tab bar haptics and the Progress lifting-volume chart.
+- **Summary:** changing tab now plays its own firm tap (`tabChanged`, solid impact at 0.85), stronger than the light selection tick it used before; tapping the selected tab to go back to its start plays a softer one (`tabReturned`, soft impact at 0.65). Both respect You › Haptics. The chart opens with a large readout of the latest workout's volume and a capsule showing the change from the workout before (arrow and whole percentage, never colour alone). Touching or dragging across the chart selects a bar: the readout follows it with a numeric roll between real totals, the touched bar is solid and the rest step back, and each new bar ticks the selection haptic. A dashed average line, slimmer rounded bars, dashed gridlines and compact axis values (1.2K) finish it. Bars still draw their real values at once and are never grown from zero; the value list stays for VoiceOver.
+- **Files:** `ios/FORMA/DesignSystem/FormaHaptics.swift`, `TrainingTabBar.swift`, `ios/FORMA/Features/ProgressView.swift`, `ios/FORMAAppTests/FormaDesignSystemTests.swift`, AGENT and CHANGELOG.
+- **Verification:** build-for-testing (app, Watch, widgets, all test targets) succeeds with no new slow type-checks; swift-format strict lint clean; a new app test pins the two tab haptics and keeps them distinct from account and set haptics. Nothing has run on a simulator here, at the owner's request.
+- **Follow-ups:** feel both tab haptics on device, and check the chart readout and selection in light and dark mode with one, two and eight workouts.
+
+### Raouf: 2026-10-30 — Tab bar collapse, page-end clearance and the Progress tab effect
+
+- **Scope:** native iPhone floating tab bar on every tab and pushed screen, and the Progress tab symbol.
+- **Summary:** verified on the owner's iPhone with an on-device UI probe (separate test storage) before and after. Three faults, each confirmed with measurements. (1) The bar never collapsed: `onScrollPhaseChange` stayed `idle` during drags on device, and the observer only acted while it reported dragging. The observer now follows position alone, and `TabBarScrollState` still ignores small moves and overscroll. (2) Pages ended under the bar: a `safeAreaInset` on the `TabView` never reached the tabs' scroll views, and a stack-level inset missed Today, which hides its navigation bar. The bar now floats as an overlay that reports its height, and every tab root and pushed screen keeps that height clear (`TrainingBarClearance`). On device, Today's last row ends 30 pt above the bar, where it used to be 32 pt under it. (3) The scroll limit subtracted `containerSize`, which already excludes the insets, so it counted them twice: the end of a page was never detected and the rubber-band settle re-opened the bar. The limit now uses `visibleRect`, which on Today gives 568 pt, matching the real maximum offset (it was 739). The Progress symbol's SF Symbols Draw On played nothing on device because the symbol has no drawing data. It now sweeps in left to right from a faint copy over 0.5 s, easing out, with a small lift, on every supported system.
+- **Files:** `ios/FORMA/DesignSystem/TrainingTabBar.swift`, `ios/FORMA/App/FORMAApp.swift`, `ios/docs/commit-2/MOTION_SPEC.md`, AGENT and CHANGELOG.
+- **Verification:** on device: collapses after one swipe and re-expands on a swipe down on Today, Plan and You. It stays collapsed at the end of the page. The last row of each page clears the bar. Device screenshots taken during a slowed sweep show it partly drawn, then complete. Build-for-testing succeeds and swift-format strict lint is clean. The probe test was removed afterwards.
+- **Follow-ups:** none known; check Progress with real history once workouts exist.
+### Raouf: 2026-10-30 — Website media and display font in the native app
+
+- **Scope:** native iPhone technique guide and display typography.
+- **Summary:** the guide now shows the website's media offline. Each of the 1,411 exercises with web media gets its cell of FORMA's illustration sheets (185 sheets, cropped off the main thread and cached). The 22 exercises with a web demo get the clip: its poster first, playing only when asked, muted, looping and mixed with other audio, with its author, licence, notice and source link. Editorial titles, the Today hero and the workout exercise name use the website's display face, Barlow Condensed Bold (SIL OFL; licence bundled), through `Font.custom(relativeTo:)`, so they scale with Dynamic Type; body text stays on the system font. `scripts/build-ios-media.py` generates everything from the web catalogues: the 1536×1024 PNG sheets become HEIC (322 MB to 15 MB, so no Background Assets download is needed), clips are copied, and the WOFF2 font becomes TTF. CI checks it with `--check`.
+- **Files:** `scripts/build-ios-media.py`, `ios/FORMA/Media/` (generated), `ios/FORMA/Resources/Fonts/`, `ios/media-sources.json`, `ios/FORMA/Features/ExerciseMedia.swift`, `PlanView.swift` (GuideView), `FormaTheme.swift`, `TodayView.swift`, `WorkoutView.swift`, `ios/FORMA/Info.plist`, `ios/project.yml`, `.github/workflows/ios.yml`, `ios/FORMAAppTests/ExerciseMediaTests.swift`, `ios/README.md`, AGENT and CHANGELOG.
+- **Verification:** `ExerciseMediaTests` (3) pass on the owner's iPhone: the index covers all web media, every file is bundled, a cell is cut at its catalogued size, and the font registers. An on-device UI probe showed the bench press and trap bar deadlift illustrations, the deadlift clip playing with its U.S. Army credit, and Barlow titles. The probe was removed afterwards. build-for-testing succeeds; swift-format strict lint and the media check are clean. App size grows by about 20 MB.
+- **Follow-ups:** the 32 animated SVG demonstrations need a native rendering (render the "-still" frames, or record the animations to video). The website's hero and routine photos are not used yet. Add the font and demo sources to You › Exercise sources & licences.
+
+### Raouf: 2026-10-30 — Website animations, photos and media credits in the native app
+
+- **Scope:** native iPhone technique guide, Today, Plan, routine detail and You.
+- **Summary:**
+  - The website's 32 animated SVG demonstrations now play in the guide under "See the movement". iOS cannot play SMIL, so `scripts/render-ios-animations.mjs` records each one in headless Chromium, setting every frame to an exact time. That gives a silent H.264 loop at 30 fps (2.9 MB for all 32) and a still start pose.
+  - The guide loops the video and shows the still when motion is reduced, with a Pause/Play control like the web's.
+  - The website's photos are bundled as HEIC. The hero photo fills Today's next-session card; the old editorial art remains the fallback. The routine strip is cut into its three panels, positioned like the web's `.photo-N`, and shown on Plan rows and each routine's cover.
+  - New You › Pictures, videos & font lists the FORMA originals, each demo source and licence, and the Barlow Condensed licence text.
+- **Files:** `scripts/render-ios-animations.mjs`, `scripts/build-ios-media.py`, `ios/FORMA/Media/animations/`, `ios/FORMA/Media/photos/`, `ios/media-sources.json`, `ExerciseMedia.swift`, `PlanView.swift`, `TodayView.swift`, `YouView.swift`, `TrainingTabBar.swift` (`mediaCredits` route), `ExerciseMediaTests.swift`, `ios/README.md`, `ios/design/artwork-provenance.md`, AGENT and CHANGELOG.
+- **Verification:**
+  - `ExerciseMediaTests` (4) pass on the owner's iPhone, including every animation's video and still, and the photos with web-style index wrapping.
+  - An on-device UI probe (removed afterwards) captured Today's hero photo, the routine photos on Plan and on the routine cover, two different frames of the bench press loop, and the credits screen.
+  - build-for-testing succeeds; swift-format strict lint and the media check are clean.
+- **Follow-ups:** none known.
+
+### Raouf: 2026-10-30 — Decode bundled pictures fully, one at a time
+
+- **Scope:** native iPhone Plan routine photos, Today's hero photo, guide illustrations and animation stills.
+- **Summary:** CI's iPhone journeys (PR #38) timed out on every test that opened Plan. The CI screen recording showed the three routine photos never appeared, and the app stopped answering the test runner from then on. `UIImage(contentsOfFile:)` leaves a HEIC undecoded until it is drawn, and `preparingForDisplay()` may return nil, so the decode could fall to the main thread at draw time, three photos at once. A new `MediaDecoder` actor decodes each bundled HEIC with ImageIO immediately, crops it when asked, and redraws it into its own bitmap, one picture at a time, off the main thread; both image loaders use it. A cropped illustration no longer keeps its whole sheet in memory.
+- **Files:** `ios/FORMA/Features/ExerciseMedia.swift`, `ios/FORMAAppTests/ExerciseMediaTests.swift`, CHANGELOG.
+- **Verification:** `ExerciseMediaTests` 5/5 on the owner's iPhone, including a new test that requests every photo at once and checks each returns as a full-size bitmap; build-for-testing succeeds; swift-format strict lint clean. The device UI journeys could not be rerun because the phone was in use (locked, then Camera open); CI's simulator run is the check.
+- **Follow-ups:** none known.

@@ -61,7 +61,9 @@ sensing and Watch-to-iPhone mirroring need physical devices.
 
 ## Home Screen and Lock Screen widgets
 
-The app embeds `FORMAWidgets.appex`. In **You → Training at a glance**, enable
+The app embeds two extensions: `FORMAWidgets.appex` (the Training widget) and
+`FORMAWorkoutActivity.appex` (the workout Live Activity, kept apart so the widget's
+Complete data protection cannot hide it on a locked iPhone). In **You → Training at a glance**, enable
 **Share training with widgets**, then add FORMA from the system widget gallery.
 Small, medium and large Home Screen layouts and circular, rectangular and inline
 Lock Screen layouts are supported. Edit the widget to choose Next session or This week.
@@ -85,13 +87,26 @@ SpringBoard placement. To verify a built, signed app bundle:
 python3 scripts/check-ios-widget-bundle.py /path/to/FORMA.app
 ```
 
-This validates embedding, manifest, entitlement declarations, signature and
-absence of SQLite/HealthKit widget linkage, plus the workout Live Activity contract
-(`NSSupportsLiveActivities`, the widget bundle, local-only requests). It is not a
+This validates both extensions' embedding, manifests, entitlements (App Group and
+Complete protection on the widget only; neither on the Live Activity), signature and
+absence of SQLite/HealthKit linkage, plus the workout Live Activity contract
+(`NSSupportsLiveActivities`, its own bundle, its workout link, local-only requests). It is not a
 device-lock/privacy or App Store archive validation. The workout Live Activity
 (Lock Screen, Dynamic Island, StandBy, Watch Smart Stack) and its remaining device
 gates, and the deferred Watch complications, are in
 [the architecture decision](docs/audits/frontend-widget-2026-10/WIDGETKIT_ARCHITECTURE.md).
+
+## Website media and display font
+
+The app shows the website's media offline. In the technique guide, each exercise gets its cell of FORMA's illustration sheets, and 22 exercises also have a demo clip (public domain or CC BY), shown with its credit and licence. Titles use the website's display face, Barlow Condensed Bold, under the SIL Open Font License; its licence is bundled beside it.
+
+- Regenerate after the web media changes: `python3 scripts/build-ios-media.py` (macOS; needs `sips` and fontTools).
+- CI runs `python3 scripts/build-ios-media.py --check`. It fails if `ios/FORMA/Media/media.json` drifts from `src/catalog/media.json` or `demos.json`, if a sheet is missing or the wrong size, if a clip differs from its web copy, or if a font file is missing.
+- Sheets are the web's 1536×1024 originals, re-encoded as HEIC. That brings 322 MB of PNG down to 15 MB, so nothing needs to be downloaded later. Clips and posters are copied as they are (4.9 MB).
+- The app reads `Media/media.json` once and crops a cell off the main thread. A demo shows its poster and plays only when asked: muted, looping, and mixed with any audio already playing.
+- The website's 32 animated demonstrations are SMIL animations, which iOS cannot play. `scripts/render-ios-animations.mjs` records them in headless Chromium (via Playwright): each frame is set to an exact time, so the motion is identical to the web at 30 fps. The frames become a silent H.264 loop (2.9 MB in all), plus each one's still start pose. The guide plays the loop unless motion is reduced, then shows the still, and it always has Pause/Play. A drawing is only re-recorded when its SVG changes.
+- The website's photos are bundled too: the hero photo on Today's next-session card (the earlier editorial art stays as the fallback), and its routine photo strip, cut into three panels and positioned as the web positions them, on Plan's routine rows and each routine's cover.
+- You › Pictures, videos & font lists every source and licence, and shows the font's licence text.
 
 ## Hold timer
 
@@ -117,8 +132,8 @@ for validation and hosted-test boundaries. JSON backup-file import is not yet
 implemented; export and importing this phone's guest training are supported.
 
 The app introduces no tracking, advertising, purchases or medical advice. The
-Apple Watch companion records workouts into Apple Health (see below); nothing
-else uses HealthKit. Server authentication and infrastructure releases remain separate. Guest
+Apple Watch companion records workouts into Apple Health (see below), and the
+finished workout keeps a heart-rate and energy summary; nothing else uses HealthKit. Server authentication and infrastructure releases remain separate. Guest
 progress begins empty; starter routines are editable examples, not past workouts.
 
 The original prototype started on Linux; the October2026 audit uses macOS/Xcode.

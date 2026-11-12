@@ -100,7 +100,7 @@ final class WidgetGalleryTests: XCTestCase {
     capture(springboard, "widget-system-home-installed")
     routine.tap()
     XCTAssertTrue(app.buttons["start-routine-workout"].waitForExistence(timeout: 15))
-    XCTAssertTrue(app.navigationBars["Routine"].exists)
+    XCTAssertTrue(app.navigationBars["Upper body strength"].exists)
     XCTAssertFalse(
       app.buttons["complete-set-0-0"].exists, "Opening a widget must not start a workout")
   }

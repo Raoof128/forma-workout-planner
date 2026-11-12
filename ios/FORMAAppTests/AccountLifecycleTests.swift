@@ -573,11 +573,11 @@ final class AccountLifecycleTests: XCTestCase {
     let (model, _) = try await conflictedModel()
     defer { model.stopSync() }
     let kept = await model.resolveConflictKeepingLocal()
-    XCTAssertFalse(kept, "Another conflict must not trigger success feedback")
+    XCTAssertNotEqual(kept, .idle, "Another conflict must not trigger success feedback")
     XCTAssertEqual(model.workspace?.profile.name, "Local synthetic training")
 
     let reloaded = await model.resolveConflictUsingAccount()
-    XCTAssertTrue(reloaded)
+    XCTAssertEqual(reloaded, .idle)
     XCTAssertEqual(model.workspace?.profile.name, "Cloud synthetic training")
   }
 
@@ -588,7 +588,7 @@ final class AccountLifecycleTests: XCTestCase {
 
     let resolved = await model.resolveConflictUsingAccount()
 
-    XCTAssertFalse(resolved, "A failed local transaction must not trigger success feedback")
+    XCTAssertNotEqual(resolved, .idle, "A failed local transaction must not trigger success feedback")
     XCTAssertEqual(model.workspace?.profile.name, "Local synthetic training")
   }
 

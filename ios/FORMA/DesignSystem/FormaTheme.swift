@@ -12,6 +12,11 @@ enum FormaPalette {
   static let ink = UInt(BrandPalette.ink)
   static let canvasLight: UInt = 0xF5F6F3
   static let canvasDark: UInt = 0x151A17
+  /// Dark canvas and surface one step lighter for an elevated interface (a
+  /// sheet or popover), as the system background does, so a sheet does not
+  /// look like the screen beneath it.
+  static let canvasDarkElevated: UInt = 0x1E2420
+  static let surfaceDarkElevated: UInt = 0x29312B
   static let accentLight = UInt(BrandPalette.accent.light)
   static let secondaryLight = UInt(BrandPalette.secondaryText.light)
   static let secondaryDark = UInt(BrandPalette.secondaryText.dark)
@@ -28,8 +33,11 @@ enum FormaTheme {
   /// the panel is ink in both appearances.
   static let heroInk = Color(hex: FormaPalette.heroInk)
   static let heroDetail = Color(hex: FormaPalette.heroDetail)
-  static let canvas = adaptive(FormaPalette.canvasLight, FormaPalette.canvasDark)
-  static let surface = adaptive(0xFFFFFF, 0x202722)
+  static let canvas = adaptive(
+    FormaPalette.canvasLight, FormaPalette.canvasDark,
+    elevatedDark: FormaPalette.canvasDarkElevated)
+  static let surface = adaptive(
+    0xFFFFFF, 0x202722, elevatedDark: FormaPalette.surfaceDarkElevated)
   static let primary = adaptive(
     0x202522, 0xF5F6F3, highContrastLight: 0x101712, highContrastDark: 0xFFFFFF)
   static let secondary = adaptive(
@@ -56,22 +64,30 @@ enum FormaTheme {
   static let error = adaptive(
     0xB42318, 0xFFB4AB, highContrastLight: 0x8B1E13, highContrastDark: 0xFFC9C1)
 
+  /// `elevatedDark` is for backgrounds only: in Dark Mode the system lifts an
+  /// elevated interface (a sheet, a popover) from base to elevated, and a
+  /// custom background has to do the same or the distinction is lost (HIG
+  /// Dark Mode). Light mode has no elevated variant, as in the system colours.
   private static func adaptive(
-    _ light: UInt, _ dark: UInt, highContrastLight: UInt? = nil, highContrastDark: UInt? = nil
+    _ light: UInt, _ dark: UInt, highContrastLight: UInt? = nil, highContrastDark: UInt? = nil,
+    elevatedDark: UInt? = nil
   ) -> Color {
-    // The four variants are built once. The provider runs every time a view
+    // The variants are built once. The provider runs every time a view
     // resolves this colour for a trait change or a draw, and used to allocate
     // a new UIColor on each call.
     let lightColor = UIColor(hex: light)
     let darkColor = UIColor(hex: dark)
     let lightContrast = highContrastLight.map { UIColor(hex: $0) } ?? lightColor
     let darkContrast = highContrastDark.map { UIColor(hex: $0) } ?? darkColor
+    let darkElevated = elevatedDark.map { UIColor(hex: $0) }
     return Color(
       uiColor: UIColor { traits in
         let increased = traits.accessibilityContrast == .high
-        return traits.userInterfaceStyle == .dark
-          ? increased ? darkContrast : darkColor
-          : increased ? lightContrast : lightColor
+        guard traits.userInterfaceStyle == .dark else {
+          return increased ? lightContrast : lightColor
+        }
+        if let darkElevated, traits.userInterfaceLevel == .elevated { return darkElevated }
+        return increased ? darkContrast : darkColor
       }
     )
   }
@@ -148,12 +164,23 @@ struct FormaMark: Shape {
   }
 }
 
+/// FORMA's display face, the website's Barlow Condensed Bold (bundled from
+/// public/fonts by scripts/build-ios-media.py, SIL Open Font License). It
+/// scales with Dynamic Type relative to `style`. Body text stays on the system
+/// font, which reads better at small sizes.
+enum FormaDisplayFont {
+  static let name = "BarlowCondensed-Bold"
+
+  static func font(size: CGFloat, relativeTo style: Font.TextStyle) -> Font {
+    .custom(name, size: size, relativeTo: style)
+  }
+}
+
 struct EditorialTitle: View {
   let text: String
-  @ScaledMetric(relativeTo: .largeTitle) private var size = 48.0
   var body: some View {
-    Text(text).font(.system(size: size, weight: .black).width(.condensed))
-      .tracking(-0.8).fixedSize(horizontal: false, vertical: true)
+    Text(text).font(FormaDisplayFont.font(size: 50, relativeTo: .largeTitle))
+      .tracking(-0.6).fixedSize(horizontal: false, vertical: true)
       .foregroundStyle(FormaTheme.primary)
       .accessibilityAddTraits(.isHeader)
   }

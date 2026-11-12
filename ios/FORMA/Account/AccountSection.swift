@@ -223,6 +223,37 @@ struct AccountGateView: View {
   @State private var slow = false
 
   var body: some View {
+    // The gate replaces the tabs, so its only exits (Try again, Sign out) must
+    // stay reachable at the largest text sizes: the content scrolls when it
+    // outgrows the screen and stays centred when it does not.
+    GeometryReader { geometry in
+      ScrollView {
+        content
+          .padding()
+          .frame(maxWidth: .infinity, minHeight: geometry.size.height)
+      }
+      .scrollBounceBehavior(.basedOnSize)
+    }
+    .accessibilityIdentifier("account-gate")
+    .task(id: gate) {
+      slow = false
+      guard gate == .loading else { return }
+      try? await Task.sleep(for: .seconds(8))
+      if !Task.isCancelled { slow = true }
+    }
+    .confirmationDialog(
+      "Sign out of FORMA?", isPresented: $confirmSignOut, titleVisibility: .visible
+    ) {
+      Button("Sign out", role: .destructive) { Task { await signOut() } }
+        .accessibilityIdentifier("account-gate-sign-out-confirm")
+    } message: {
+      Text(
+        "Your training stays in your account. This iPhone goes back to its own on-device training."
+      )
+    }
+  }
+
+  private var content: some View {
     VStack(spacing: 24) {
       switch gate {
       case .loading:
@@ -255,24 +286,6 @@ struct AccountGateView: View {
           signOutControls
         }
       }
-    }
-    .padding()
-    .accessibilityIdentifier("account-gate")
-    .task(id: gate) {
-      slow = false
-      guard gate == .loading else { return }
-      try? await Task.sleep(for: .seconds(8))
-      if !Task.isCancelled { slow = true }
-    }
-    .confirmationDialog(
-      "Sign out of FORMA?", isPresented: $confirmSignOut, titleVisibility: .visible
-    ) {
-      Button("Sign out", role: .destructive) { Task { await signOut() } }
-        .accessibilityIdentifier("account-gate-sign-out-confirm")
-    } message: {
-      Text(
-        "Your training stays in your account. This iPhone goes back to its own on-device training."
-      )
     }
   }
 

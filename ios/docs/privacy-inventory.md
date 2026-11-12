@@ -19,7 +19,7 @@ App Privacy declaration.
 | Decorative generated artwork | Bundled asset, no user imagery sent | Preserve original source/prompt and review the final asset |
 | Analytics, ads, tracking identifiers | No SDK or native feature introduced | Inspect linked frameworks, privacy report and outgoing requests |
 | Workout Live Activity (Lock Screen, Dynamic Island, StandBy, Watch Smart Stack) | Local only, started by the app while a workout is active. Shows "FORMA workout", the routine and current exercise names (marked `privacySensitive`, hidden where the system hides sensitive content), set and total counts, elapsed time and rest timers. Attributes are the session ID and an opaque per-owner token. No notes, account identity, email, Health metrics or history; no push token, server, or network. Ended at once on finish, discard, reset, sign-out, account switch and when "Show workout on Lock Screen" (You tab, on by default, a local preference that is never synced) is turned off | Physical device: nothing private on a locked screen, no activity left after discard, sign-out or force-quit, only one after relaunch |
-| Apple Watch workout: heart rate, active and basal energy, workout record | Watch records into Apple Health after permission; iPhone shows live values via the mirrored session and never stores, exports or syncs them; no clinical inference | HealthKit entitlement and purpose strings on both apps; verify on paired hardware, Health permission revocation, and that nothing leaves the device, signed in or not |
+| Apple Watch workout: heart rate, active and basal energy, workout record | Watch records into Apple Health after permission; iPhone shows live values via the mirrored session. From 2 November 2026 the finished workout keeps a summary (`watch`: recorded time, average and highest heart rate, active energy) that is part of the training records, exports and, signed in, the account sync and website; individual readings stay in Health; a discarded recording keeps none; no clinical inference | HealthKit entitlement and purpose strings on both apps; verify on paired hardware, Health permission revocation, and that nothing leaves the device, signed in or not |
 | Files/share export | User explicitly selects a destination | Explain that the destination may be cloud-backed and exported copies outlive local reset, sign-out and account deletion |
 | External source/support/legal links | Open only following a user action (including the website's Terms and Privacy Policy) | Ordinary website/email handling; never attach workout contents automatically |
 | Device diagnostics and OS services | Platform-controlled behavior | Avoid absolute claims covering Apple's independent collection |
@@ -31,6 +31,11 @@ App Privacy declaration.
   `https://forma.raoufabedini.dev`. `NSAppTransportSecurity` is the default (an
   empty dictionary) with no exceptions, so HTTP is refused by the system. Redirects
   are never followed, so cookies and the member header cannot reach another host.
+  The same host (`FORMA_ACCOUNT_HOST`) is the app's one Associated Domains entry,
+  `webcredentials:` only, so Password AutoFill can offer and save the website's
+  credentials. It adds no network request from the app; Apple's CDN reads the
+  Worker's `/.well-known/apple-app-site-association` file, which names the app and
+  carries no member data.
 - **Native requests.** Every request sends `X-Forma-Client: ios` and, once known,
   `X-Forma-Member`. The app never sends `Origin`, `Referer` or `Sec-Fetch-*`;
   the account recognises it by their absence. No Cloudflare Access header or
@@ -96,7 +101,9 @@ The app now collects data when a member signs in, so “Data Not Collected” no
 longer applies to the build as a whole: the App Privacy answers must list the
 account data above, linked to the user, for App Functionality, and not used for
 tracking. Linked workout records align with Apple's Fitness data category; notes
-may also require Health or Other User Content assessment. Account data cannot be
+may also require Health or Other User Content assessment. Since 2 November 2026
+a synced workout can carry an Apple Watch heart-rate and energy summary, so the
+Health category very likely applies to signed-in members (owner decision). Account data cannot be
 hidden behind the presence of guest mode. Account deletion is available inside
 the app (guideline 5.1.1(v)); it completes when the member confirms the emailed
 link. This document does not submit any answer.
@@ -130,6 +137,10 @@ Sharing is off by default per service origin/owner. Main app-only atomic writer;
 read-only extension; complete protection and backup exclusion. Widget entitlement
 `NSFileProtectionComplete` hides content while locked and disables Mac mirroring.
 System-cached views may outlive app revocation/reload requests temporarily.
+The workout Live Activity is a separate extension (`FORMAWorkoutActivity`) with no
+App Group and no data-protection entitlement: it reads no file, draws only what the
+app sends through ActivityKit, and so stays visible on a locked iPhone. Its names stay
+`privacySensitive`.
 
 The widget makes no network calls and declares no collected data or tracking.
 Its `PrivacyInfo.xcprivacy` declares

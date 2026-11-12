@@ -227,3 +227,45 @@ test("signing out other devices after an older sign-in confirms the password", a
     await secondaryContext.close();
   }
 });
+
+test("creating a coach token after an older sign-in confirms the password in place", async ({
+  page,
+}) => {
+  const email = `coach-step-up-${stamp()}@example.test`;
+  await register(page, email);
+  await ageSessions(email);
+  await openSecurity(page);
+  await page.getByLabel("Token name").fill("Claude coach");
+  await page.getByRole("button", { name: "Create read-only token" }).click();
+
+  // No dead end: the same step-up as signing out other devices, not "sign in again".
+  const stepUp = page.locator("form.account-step-up");
+  const confirm = stepUp.getByLabel("Confirm your password", { exact: true });
+  await expect(confirm).toBeFocused();
+  await expect(page.getByText(/sign in again/i)).toHaveCount(0);
+  const submit = stepUp.getByRole("button", {
+    name: "Confirm and create token",
+    exact: true,
+  });
+  await confirm.fill("not the right passphrase");
+  await submit.click();
+  await expect(stepUp.getByRole("alert")).toContainText(
+    "That password isn’t right.",
+  );
+
+  await confirm.fill(password);
+  await submit.click();
+  const issued = page.getByRole("status").filter({
+    hasText: "Copy this token now",
+  });
+  await expect(issued).toBeVisible();
+  expect((await issued.locator("pre").innerText()).trim()).toMatch(
+    /^forma_coach_[A-Za-z0-9_-]{43}$/,
+  );
+  await expect(stepUp).toHaveCount(0);
+  await expect(
+    page.locator(".account-device-row").filter({ hasText: "Claude coach" }),
+  ).toBeVisible();
+  // Confirming the password does not replace or end the session.
+  expect(await getUser(page)).not.toBeNull();
+});

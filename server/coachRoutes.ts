@@ -54,17 +54,23 @@ export const COACH_MINT_LIMIT = 10;
 export const COACH_MINT_SCOPE = "coach-token-mint";
 export const COACH_DATA_PATH = "/api/coach/workspace/data";
 const MAX_EXERCISE_RESULTS = 100;
-/** Minting a credential is a step-up action, like revoking sessions. */
-const FRESH_SESSION_MS = 5 * 60 * 1000;
-
 export function registerCoachRoutes(
   app: FastifyInstance,
   options: {
     pool: Pool;
     authSecret: string;
     requireMember: RequireMember;
-    /** Resolves the caller's current session creation time, if any. */
-    sessionCreatedAt: (request: FastifyRequest) => Promise<Date | null>;
+    /**
+     * Minting a credential is a step-up action, like removing other sessions:
+     * a sign-in from the last five minutes, or the password (plus an unused
+     * authenticator code when two-step is on) in the same request. Sends the
+     * refusal itself and resolves false when the caller has not stepped up.
+     */
+    confirmStepUp: (
+      request: FastifyRequest,
+      reply: FastifyReply,
+      userId: string,
+    ) => Promise<boolean>;
     failureLimit?: number;
     readLimit?: number;
     writeLimit?: number;
@@ -74,7 +80,7 @@ export function registerCoachRoutes(
     pool,
     authSecret,
     requireMember,
-    sessionCreatedAt,
+    confirmStepUp,
     failureLimit = COACH_FAILURE_LIMIT,
     readLimit = COACH_READ_LIMIT,
     writeLimit = COACH_WRITE_LIMIT,
@@ -93,14 +99,10 @@ export function registerCoachRoutes(
   ) {
     const member = await requireMember(request, reply);
     if (!member) return null;
-    const createdAt = await sessionCreatedAt(request);
-    if (!createdAt || Date.now() - createdAt.getTime() > FRESH_SESSION_MS) {
-      reply
-        .code(403)
-        .headers(noStore)
-        .send({ error: "reauthentication_required" });
-      return null;
-    }
+    // Every step-up refusal (reauthentication, wrong password or code,
+    // throttled) is as uncacheable as the token it guards.
+    reply.headers(noStore);
+    if (!(await confirmStepUp(request, reply, member.userId))) return null;
     return member;
   }
 

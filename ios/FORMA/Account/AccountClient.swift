@@ -167,7 +167,7 @@ actor AccountClient {
   /// A request whose answer is read by the account screens.
   private func send(
     _ request: AccountWire.Request,
-    fallback: String = "We couldn’t complete that request. Please try again."
+    fallback: String = "That request didn’t go through. Try again."
   ) async throws -> Data {
     let response: AccountResponse
     do {
@@ -208,7 +208,7 @@ actor AccountClient {
   func signUp(name: String, email: String, password: String) async throws {
     _ = try await send(
       AccountWire.signUp(name: name, email: email, password: password),
-      fallback: "We couldn’t complete that request. Please try again.")
+      fallback: "That request didn’t go through. Try again.")
   }
 
   func signIn(email: String, password: String) async throws -> SignInOutcome {
@@ -263,7 +263,7 @@ actor AccountClient {
     _ = try await send(
       AccountWire.sendVerificationEmail(
         email: email, callbackURL: AccountConfiguration.link(origin)),
-      fallback: "We couldn’t send the verification email.")
+      fallback: "The verification email wasn’t sent.")
   }
 
   func requestPasswordReset(email: String) async throws {
@@ -280,7 +280,7 @@ actor AccountClient {
     _ = try await send(
       AccountWire.changeEmail(
         newEmail: newEmail, callbackURL: AccountConfiguration.link(origin, "/#account")),
-      fallback: "We couldn’t start the email change.")
+      fallback: "The email change couldn’t be started.")
   }
 
   func changePassword(current: String, new: String) async throws {
@@ -346,10 +346,12 @@ actor AccountClient {
       try await send(AccountWire.listCoachTokens, fallback: "Coach access could not be loaded."))
   }
 
-  func createCoachToken(label: String, full: Bool) async throws -> IssuedCoachToken {
+  func createCoachToken(
+    label: String, full: Bool, password: String? = nil, code: String? = nil
+  ) async throws -> IssuedCoachToken {
     try AccountWire.decodeIssuedCoachToken(
       try await send(
-        AccountWire.createCoachToken(label: label, full: full),
+        AccountWire.createCoachToken(label: label, full: full, password: password, code: code),
         fallback: "The coach token could not be created."))
   }
 

@@ -11,7 +11,7 @@
     },
     {
       "path": "src/storage.js",
-      "sha256": "a283be1bb493b06cd111cfe8f8d8c02a2df26738be75b3904e3e9fcf9268fcaf"
+      "sha256": "f66fc6057ff966e07a5d490a2da71ac567ae30475e4af406ae8ecdc9bbd9d683"
     },
     {
       "path": "src/exerciseMetrics.js",
@@ -63,11 +63,11 @@
     },
     {
       "path": "src/legal/content.js",
-      "sha256": "f636f1ad3db1672976b8b8475d9762f464396fc584b6ba84cdba1ba310060b91"
+      "sha256": "e0c707834d1b490068cc1144af6ff5b62ed311ac8503687fca00968bfbe7a0d9"
     },
     {
       "path": "scripts/build-ios-resources.mjs",
-      "sha256": "d5934743f568599302993db29fe887a682fdb173b67544732e72be48daba5521"
+      "sha256": "0025ae4593c39778a432df353549bf42f1cad8c3662fc061a4f88cbf0c71baae"
     }
   ],
   "outputs": [
@@ -83,8 +83,8 @@
     },
     {
       "path": "ios/FORMA/Resources/legal.json",
-      "sha256": "aa65a092941c1761fcae5a4815cdf1c0a93e2f5ae675432736d9e3dc6b1a7295",
-      "bytes": 24865
+      "sha256": "e5bb69b8650c05b12e4983bfba5669c6f7f2ce8a2f60a14f3816f7627676a894",
+      "bytes": 25594
     },
     {
       "path": "ios/FORMA/Resources/catalogue-notices.json",

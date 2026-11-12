@@ -236,7 +236,7 @@ final class AccountModel {
       await client.endLocalSession()
       phase = .signedOut
       throw AccountFailure(
-        kind: .rejected, message: "We couldn’t finish signing you in. Please try again.")
+        kind: .rejected, message: "Signing in didn’t finish. Try again.")
     }
     guard app?.canSwitchAccount != false else {
       await client.signOut()
