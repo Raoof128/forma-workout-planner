@@ -232,20 +232,20 @@ function nativeLegal() {
   return {
     ...legalDocuments,
     nativeGuestNotice: {
-      title: "Native development build: your data",
-      version: "0.3",
-      effective: "29 October 2026",
-      status: "prototype-not-release-policy",
+      title: "FORMA on iPhone and Apple Watch: your data",
+      version: "1.0",
+      effective: "13 November 2026",
+      status: "native-app-notice",
       summary:
-        "This development build keeps your training records on your device. If you choose to sign in to a FORMA account, your name, email address and workout records are also sent to, and stored in, that account so they match the website. With your permission, a workout you start on Apple Watch records heart rate and energy to Apple Health. It includes no analytics or advertising.",
+        "FORMA keeps your training records on your device. If you choose to sign in to a FORMA account, your name, email address and workout records are also sent to, and stored in, that account so they match the website. With your permission, a workout you start on Apple Watch records heart rate and energy to Apple Health, and a short summary of them is saved with that workout. It includes no analytics or advertising.",
       blocks: [
         { h: "Local storage", id: "local-storage" },
         {
-          p: "Routines, workouts, notes and preferences are saved in the app's Application Support directory on your device, rather than in browser storage. This development build marks its data directory as excluded from device backups. Backup and file-protection behavior still needs verification in the actual iPhone build. Export a copy before uninstalling the app or changing phones.",
+          p: "Routines, workouts, notes and preferences are saved in the app's Application Support directory on your device, protected by the iPhone's file protection. FORMA excludes this data from device backups, so it is not copied to iCloud Backup or to a new phone. Export a copy before uninstalling the app or changing phones.",
         },
         { h: "Export your training", id: "export-training" },
         {
-          p: "You can export a FORMA JSON backup through the system file exporter. Importing a backup file is not available in this development build; signed in, you can instead bring the training recorded on this iPhone into your account. An exported backup contains your training records and is readable by anyone who can access that file. Exported copies remain wherever you choose to save or share them, including after deleting local app data, signing out or uninstalling the app.",
+          p: "You can export a FORMA JSON backup through the system file exporter. Importing a backup file is not available in the iPhone app; signed in, you can instead bring the training recorded on this iPhone into your account. An exported backup contains your training records and is readable by anyone who can access that file. Exported copies remain wherever you choose to save or share them, including after deleting local app data, signing out or uninstalling the app.",
         },
         { h: "Without an account", id: "no-account" },
         {
@@ -273,15 +273,15 @@ function nativeLegal() {
         },
         { h: "Apple Watch and Apple Health", id: "apple-health" },
         {
-          p: "If you start a workout on Apple Watch, FORMA asks for permission to save workouts and to read and save heart rate and active energy in Apple Health. The Watch records them while the workout runs and saves the workout to Apple Health when it ends. Your iPhone shows the live values but does not add them to your FORMA training records or exports, and FORMA does not send them anywhere, with or without an account. You can change these permissions in the Health app at any time. Training without a Watch needs no Health permission.",
+          p: "If you start a workout on Apple Watch, FORMA asks for permission to save workouts and to read and save heart rate and active energy in Apple Health. The Watch records them while the workout runs and saves the workout to Apple Health when it ends. Your iPhone shows the live values. When you finish, FORMA saves a summary with that workout: the time recorded, average and highest heart rate, and active energy. The summary is part of your training records and exports; signed in, it is sent to your account with the rest of the workout and shown on the website. The individual readings stay in Apple Health. Discarding the Watch recording keeps no summary. You can change these permissions in the Health app at any time. Training without a Watch needs no Health permission.",
         },
         { h: "Health and safety", id: "health-safety" },
         {
           p: "FORMA is a planning and record-keeping tool, not medical or personalised training advice. Use appropriate technique and equipment and seek qualified guidance when needed. Heart rate is shown as recorded; FORMA calculates no physiological readiness score or diagnosis.",
         },
-        { h: "Release policies and contact", id: "release-policies" },
+        { h: "Policies and contact", id: "release-policies" },
         {
-          p: "The bundled Privacy Policy version 1.3 and Terms of Use version 1.0 are unchanged source documents for the existing website, and the website policy also governs your FORMA account. This development notice does not replace them. Native release policies, developer eligibility, content rights and App Store declarations still require review before submission. Questions: raoof.r12@gmail.com.",
+          p: "The FORMA Privacy Policy (version 1.4) and Terms of Use (version 1.0) are included in the app and also govern your FORMA account. This notice explains how the iPhone and Apple Watch apps handle your data and does not replace them. FORMA is operated by Raouf Abedini in Sydney, New South Wales, Australia. Questions: raoof.r12@gmail.com.",
         },
       ],
     },

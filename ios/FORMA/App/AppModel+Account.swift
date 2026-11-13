@@ -201,8 +201,10 @@ extension AppModel {
         try await leavingStore?.removeLocalFiles()
         return true
       } catch {
-        errorMessage =
-          "You’re signed out, but the saved account copy couldn’t be fully removed. \(error.localizedDescription)"
+        reportFailure(
+          "Couldn’t remove the account’s training",
+          "You’re signed out. Some of the account’s training is still on this iPhone; you can remove it from You."
+        )
       }
     }
     return false
@@ -497,27 +499,30 @@ extension AppModel {
   // MARK: Conflicts
 
   /// "Reload cloud data": the account's copy replaces this iPhone's unsent edits.
+  /// Returns how it ended, so the screen confirms only a real success; nil
+  /// when there is no account sync to resolve.
   @discardableResult
-  func resolveConflictUsingAccount() async -> Bool {
-    guard let sync else { return false }
+  func resolveConflictUsingAccount() async -> SyncStatus? {
+    guard let sync else { return nil }
     let generation = syncGeneration
     let status = await sync.resolveConflictUsingAccount()
-    guard generation == syncGeneration else { return false }
+    guard generation == syncGeneration else { return nil }
     await reloadWorkspaceFromStore(after: status)
-    guard generation == syncGeneration else { return false }
+    guard generation == syncGeneration else { return nil }
     attempted(status, generation: generation)
-    return status == .idle
+    return status
   }
 
-  /// "Keep my version": this iPhone's copy replaces the account's.
+  /// "Keep my version": this iPhone's copy replaces the account's. Returns how
+  /// it ended, as `resolveConflictUsingAccount()` does.
   @discardableResult
-  func resolveConflictKeepingLocal() async -> Bool {
-    guard let sync else { return false }
+  func resolveConflictKeepingLocal() async -> SyncStatus? {
+    guard let sync else { return nil }
     let generation = syncGeneration
     let status = await sync.resolveConflictKeepingLocal()
-    guard generation == syncGeneration else { return false }
+    guard generation == syncGeneration else { return nil }
     attempted(status, generation: generation)
-    return status == .idle
+    return status
   }
 
   // MARK: Signing out

@@ -244,9 +244,10 @@ final class OfflineWorkoutTests: XCTestCase {
     app.trainingTab("You").tap()
     let delete = app.buttons["Delete training data on this iPhone"]
     // You is a lazy list: rows below the fold are not in the hierarchy until
-    // scrolled to, so scroll first and then require the button.
+    // scrolled to. The helper also keeps the row clear of the floating tab
+    // bar, which a bare swipe can leave covering a "hittable" button.
     XCTAssertTrue(app.navigationBars.firstMatch.waitForExistence(timeout: 15))
-    for _ in 0..<6 where !delete.exists || !delete.isHittable { app.swipeUp() }
+    app.revealTrainingControl(delete)
     XCTAssertTrue(delete.waitForExistence(timeout: 15))
     XCTAssertTrue(delete.isHittable)
     delete.tap()

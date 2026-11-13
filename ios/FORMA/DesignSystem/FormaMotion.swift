@@ -61,6 +61,9 @@ enum FormaMotion {
   static let reveal = Animation.spring(duration: 0.3, bounce: 0.08)
   /// 380 ms. Larger, navigation-scale choreography.
   static let navigation = Animation.spring(duration: 0.38, bounce: 0.1)
+  /// 420 ms with a little overshoot. The tab highlight sliding to a new tab,
+  /// so the choice lands with a small settle instead of stopping dead.
+  static let tabSelection = Animation.spring(duration: 0.42, bounce: 0.28)
   /// 520 ms. One-time emphasis for genuine progress: a finished workout.
   static let emphasis = Animation.spring(duration: 0.52, bounce: 0.22)
   /// 160 ms. The minimal-level replacement for any spatial animation.
@@ -70,7 +73,27 @@ enum FormaMotion {
 }
 
 private struct FormaMotionLevelKey: EnvironmentKey {
-  static let defaultValue: FormaMotionLevel = .full
+  /// Minimal until `formaMotionRoot` resolves the real level, so a view read
+  /// outside the root (a preview, a future host or scene) never plays full
+  /// spatial motion while Reduce Motion is on.
+  static let defaultValue: FormaMotionLevel = .minimal
+}
+
+/// Remembers which entrance reveals inside the tab screens have already
+/// played. A tab's stack is rebuilt when a widget opens it or another
+/// account's training opens, and the fresh views would otherwise stagger in
+/// again each time (HIG Motion: avoid motion on frequent interactions). It
+/// lives with the tab navigation for the life of the window.
+@MainActor
+final class FormaRevealLedger {
+  private var played: Set<String> = []
+
+  func hasPlayed(_ key: String) -> Bool { played.contains(key) }
+  func markPlayed(_ key: String) { played.insert(key) }
+}
+
+private struct FormaRevealLedgerKey: EnvironmentKey {
+  static let defaultValue: FormaRevealLedger? = nil
 }
 
 extension EnvironmentValues {
@@ -79,6 +102,13 @@ extension EnvironmentValues {
   var formaMotion: FormaMotionLevel {
     get { self[FormaMotionLevelKey.self] }
     set { self[FormaMotionLevelKey.self] = newValue }
+  }
+
+  /// Set on the tab screens. Without one (the workout receipt), every reveal
+  /// plays once per view, because each receipt is a new result.
+  var formaRevealLedger: FormaRevealLedger? {
+    get { self[FormaRevealLedgerKey.self] }
+    set { self[FormaRevealLedgerKey.self] = newValue }
   }
 }
 
@@ -124,21 +154,27 @@ private struct FormaAnimation<Value: Equatable>: ViewModifier {
 }
 
 /// Fades and lifts content in once per view lifetime. A view kept alive by a
-/// TabView keeps its state, so switching tabs does not replay it; minimal and
+/// TabView keeps its state, so switching tabs does not replay it; inside a tab
+/// screen the ledger also stops a rebuilt stack from replaying it. Minimal and
 /// off levels show the content at once.
 private struct FormaReveal: ViewModifier {
   @Environment(\.formaMotion) private var level
+  @Environment(\.formaRevealLedger) private var ledger
   @State private var shown = false
   let order: Int
+  /// The call site, so each reveal on a screen is remembered on its own.
+  let key: String
 
   func body(content: Content) -> some View {
-    let hidden = !shown && level.allowsSpatialMotion
+    let played = ledger?.hasPlayed(key) ?? false
+    let hidden = !shown && !played && level.allowsSpatialMotion
     content
       .opacity(hidden ? 0 : 1)
       .offset(y: hidden ? 12 : 0)
       .onAppear {
         guard !shown else { return }
-        if level.allowsSpatialMotion {
+        if level.allowsSpatialMotion && !played {
+          ledger?.markPlayed(key)
           withAnimation(FormaMotion.reveal.delay(Double(order) * FormaMotion.stagger)) {
             shown = true
           }
@@ -161,8 +197,8 @@ extension View {
   }
 
   /// A one-time entrance; `order` staggers siblings by `FormaMotion.stagger`.
-  func formaReveal(order: Int = 0) -> some View {
-    modifier(FormaReveal(order: order))
+  func formaReveal(order: Int = 0, fileID: String = #fileID, line: Int = #line) -> some View {
+    modifier(FormaReveal(order: order, key: "\(fileID):\(line):\(order)"))
   }
 }
 

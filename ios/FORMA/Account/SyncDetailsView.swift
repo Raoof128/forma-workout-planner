@@ -70,9 +70,9 @@ struct SyncDetailsView: View {
       Button("Keep my version", role: .destructive) {
         Task {
           working = true
-          let resolved = await model.resolveConflictKeepingLocal()
+          let status = await model.resolveConflictKeepingLocal()
           working = false
-          if resolved { model.accountSucceeded() } else { model.haptic(.accountFailure) }
+          settle(status)
         }
       }
       .accessibilityIdentifier("sync-confirm-keep-local")
@@ -80,6 +80,30 @@ struct SyncDetailsView: View {
       Text(
         "Changes made on the other device since you last synced will be replaced by what’s on this iPhone."
       )
+    }
+  }
+
+  /// The success haptic only when the chosen copy really is the account's now;
+  /// otherwise a warning or failure, with the reason shown here as well as in
+  /// the status above.
+  private func settle(_ status: SyncStatus?) {
+    switch status {
+    case .idle:
+      error = nil
+      model.accountSucceeded()
+    case .waiting, .saving:
+      // Chosen and kept on this iPhone; it is sent when the account answers.
+      error = nil
+      model.haptic(.accountWarning)
+    case .conflict:
+      error = "Your account changed again on another device. Choose which copy to keep."
+      model.haptic(.accountWarning)
+    case .failed(let message):
+      error = message
+      model.haptic(.accountFailure)
+    case .signedOut, nil:
+      error = "That couldn’t be finished. Nothing was changed; try again."
+      model.haptic(.accountFailure)
     }
   }
 
@@ -108,14 +132,10 @@ struct SyncDetailsView: View {
       Button("Reload cloud data", role: .destructive) {
         Task {
           working = true
-          let resolved = await model.resolveConflictUsingAccount()
+          let status = await model.resolveConflictUsingAccount()
           working = false
-          if resolved {
-            acknowledged = false
-            model.accountSucceeded()
-          } else {
-            model.haptic(.accountFailure)
-          }
+          acknowledged = false
+          settle(status)
         }
       }
       .disabled(!acknowledged || working)

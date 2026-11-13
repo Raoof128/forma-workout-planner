@@ -1,3 +1,4 @@
+import FORMACore
 import Foundation
 import WatchConnectivity
 import XCTest
@@ -83,15 +84,16 @@ final class WatchWorkoutCoordinatorTests: XCTestCase {
     var paused = snapshot()
     paused.state = .paused
     paused.activeEnergy = 84
-    let text = WatchRecordingStrip.accessibilityText(
-      paused, liveHeartRate: nil, lastHeartRate: 142, readingStale: true)
-    XCTAssertTrue(text.contains("paused"))
+    let text = WatchRecordingStrip.spokenStatus(
+      paused: paused.state == .paused, liveHeartRate: nil, lastHeartRate: 142,
+      activeEnergy: paused.activeEnergy)
+    XCTAssertTrue(text.contains("Paused"))
     XCTAssertTrue(text.contains("heart rate not current, last 142"))
     XCTAssertTrue(text.contains("84 active kilocalories"))
-    let running = WatchRecordingStrip.accessibilityText(
-      snapshot(), liveHeartRate: 131, lastHeartRate: 142, readingStale: false)
+    let running = WatchRecordingStrip.spokenStatus(
+      paused: false, liveHeartRate: 131, lastHeartRate: nil, activeEnergy: nil)
     XCTAssertTrue(running.contains("Recording on Apple Watch"))
-    XCTAssertFalse(running.contains("paused"))
+    XCTAssertFalse(running.contains("Paused"))
   }
 
   func testDisconnectPublishesANoticeAndFreshDataClearsIt() {
@@ -156,5 +158,72 @@ final class WatchWorkoutCoordinatorTests: XCTestCase {
     await coordinator.end(save: true)
     XCTAssertNil(coordinator.notice)
     XCTAssertEqual(coordinator.phase, .idle)
+  }
+
+  // MARK: - Collected data
+
+  func testSummaryRoundsTheLatestReading() {
+    let coordinator = WatchWorkoutCoordinator()
+    XCTAssertNil(coordinator.summary, "No reading, no summary")
+    var reading = snapshot(heartRate: 150)
+    reading.averageHeartRate = 131.4
+    reading.maxHeartRate = 162.6
+    reading.activeEnergy = 88.5
+    coordinator.apply(metrics: reading, at: start)
+    XCTAssertEqual(
+      coordinator.summary,
+      WorkoutWatchSummary(
+        elapsedSeconds: 120, averageHeartRate: 131, maxHeartRate: 163, activeEnergyKcal: 89))
+  }
+
+  func testFinalReadingIsReportedOnceAndADiscardIsNot() {
+    let coordinator = WatchWorkoutCoordinator()
+    var reported: [WorkoutWatchSummary] = []
+    coordinator.onRecordingEnded = { reported.append($0) }
+    coordinator.apply(metrics: snapshot(), at: start)
+    var final = snapshot()
+    final.state = .ended
+    final.elapsed = 130
+    coordinator.apply(metrics: final, at: start)
+    coordinator.apply(metrics: final, at: start.addingTimeInterval(1))
+    XCTAssertEqual(reported.map(\.elapsedSeconds), [130], "Ended is reported once")
+
+    let discarding = WatchWorkoutCoordinator()
+    discarding.onRecordingEnded = { reported.append($0) }
+    final.discarded = true
+    discarding.apply(metrics: final, at: start)
+    XCTAssertEqual(reported.count, 1, "A discarded recording is never stored")
+    XCTAssertNil(discarding.summary)
+  }
+
+  func testOlderWatchSnapshotsWithoutNewFieldsStillDecode() throws {
+    let json = Data(
+      #"{"metrics":{"_0":{"state":"running","startedAt":0,"elapsed":5,"heartRate":90}}}"#.utf8)
+    guard case .metrics(let metrics) = WatchWorkoutMessage.decode(json) else {
+      return XCTFail("An older snapshot must decode")
+    }
+    XCTAssertNil(metrics.maxHeartRate)
+    XCTAssertNil(metrics.discarded)
+  }
+
+  func testLateOlderSnapshotNeverReplacesANewerOne() {
+    let coordinator = WatchWorkoutCoordinator()
+    var newer = snapshot(heartRate: 150)
+    newer.sentAt = start.addingTimeInterval(30)
+    var older = snapshot(heartRate: 120)
+    older.sentAt = start.addingTimeInterval(10)
+    coordinator.apply(metrics: newer, at: start.addingTimeInterval(31))
+    coordinator.apply(metrics: older, at: start.addingTimeInterval(32))
+    XCTAssertEqual(coordinator.metrics?.heartRate, 150)
+  }
+
+  func testFreshnessCountsFromWhenTheWatchSent() {
+    let coordinator = WatchWorkoutCoordinator()
+    var batched = snapshot()
+    batched.sentAt = start
+    // Delivered two minutes late after the iPhone app was suspended.
+    coordinator.apply(metrics: batched, at: start.addingTimeInterval(120))
+    XCTAssertTrue(coordinator.isReadingStale, "A two-minute-old reading is not shown as live")
+    XCTAssertNil(coordinator.liveHeartRate)
   }
 }

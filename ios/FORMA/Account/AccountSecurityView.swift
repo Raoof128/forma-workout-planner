@@ -52,7 +52,7 @@ struct AccountSecurityView: View {
 // MARK: Password
 
 struct ChangePasswordView: View {
-  private enum Field { case current, new, confirm }
+  private enum Field { case current, new, newShown, confirm }
 
   @Environment(AppModel.self) private var model
   @State private var current = ""
@@ -65,36 +65,58 @@ struct ChangePasswordView: View {
   @State private var noticeRevision = 0
   @FocusState private var focus: Field?
 
+  /// The first thing still stopping the update, in words. The button stays
+  /// dimmed until this is nil, like sign-up, so length and match are known
+  /// before the tap rather than after it.
   private var missing: String? {
     if current.isEmpty { return "Enter your current password." }
     if new.isEmpty { return "Enter a new password." }
+    if new.count < 15 {
+      return "Your new password needs 15 characters or more. You have \(new.count)."
+    }
     if confirm.isEmpty { return "Enter the new password again." }
+    if confirm != new { return "The new passwords don’t match yet." }
     return nil
   }
 
   var body: some View {
     Form {
       Section {
+        // The account's user name, so AutoFill knows which saved password
+        // this change updates.
+        if let email = model.account.profile?.email {
+          TextField("Email address", text: .constant(email))
+            .textContentType(.username).disabled(true)
+            .foregroundStyle(FormaTheme.secondary)
+            .accessibilityIdentifier("password-username")
+        }
         SecureField("Current password", text: $current)
           .textContentType(.password).accessibilityIdentifier("password-current")
           .submitLabel(.next).focused($focus, equals: .current)
           .onSubmit { focus = .new }
         RevealablePasswordField(
           title: "New password", text: $new, contentType: .newPassword,
-          identifier: "password-new"
+          identifier: "password-new", focus: $focus, hidden: .new, shown: .newShown
         )
-        .submitLabel(.next).focused($focus, equals: .new)
+        .submitLabel(.next)
         .onSubmit { focus = .confirm }
         SecureField("Confirm new password", text: $confirm)
           .textContentType(.newPassword).accessibilityIdentifier("password-confirm")
           .submitLabel(.go).focused($focus, equals: .confirm)
           .onSubmit { Task { await submit() } }
       } footer: {
-        Text(
-          new.isEmpty
-            ? "At least 15 characters. Passphrases are welcome. Changing your password signs out other sessions."
-            : "\(new.count) of 15 characters. Changing your password signs out other sessions."
-        )
+        VStack(alignment: .leading, spacing: 4) {
+          // Shown beside the fields as soon as the second entry differs.
+          if !confirm.isEmpty, confirm != new {
+            Text("The new passwords don’t match yet.").foregroundStyle(FormaTheme.error)
+              .accessibilityIdentifier("password-mismatch")
+          }
+          Text(
+            new.isEmpty
+              ? "At least 15 characters. Passphrases are welcome. Changing your password signs out other sessions."
+              : "\(new.count) of 15 characters. Changing your password signs out other sessions."
+          )
+        }
       }
       Section {
         SubmitButton(
@@ -127,18 +149,6 @@ struct ChangePasswordView: View {
     guard missing == nil, !working else { return }
     error = nil
     message = nil
-    if new.count < 15 {
-      fail("Use at least 15 characters for your new password.")
-      focus = .new
-      model.haptic(.accountWarning)
-      return
-    }
-    if new != confirm {
-      fail("The new passwords do not match.")
-      focus = .confirm
-      model.haptic(.accountWarning)
-      return
-    }
     working = true
     defer { working = false }
     let (oldPassword, newPassword) = (current, new)
@@ -198,7 +208,10 @@ struct TwoFactorView: View {
         if let message { FormNotice(text: message, tone: .success, revision: noticeRevision) }
         if let error { FormNotice(text: error, tone: .error, revision: noticeRevision) }
       } footer: {
-        Text("Add an authenticator app as a second layer.")
+        Text(
+          enabled
+            ? "Signing in asks for a code from your authenticator app as well as your password."
+            : "Add an authenticator app as a second layer.")
       }
 
       if !enabled && enrollment == nil {
@@ -267,26 +280,32 @@ struct TwoFactorView: View {
             )
           }
           Section {
-            Button(
-              confirmation == .newCodes ? "Generate new codes" : "Turn off two-step verification",
-              role: confirmation == .turnOff ? .destructive : nil
-            ) {
+            Button(role: confirmation == .turnOff ? .destructive : nil) {
               Task { await confirmed(confirmation) }
+            } label: {
+              HStack {
+                Text(
+                  confirmation == .newCodes
+                    ? "Generate new codes" : "Turn off two-step verification")
+                if working { ProgressView() }
+              }
             }
             .disabled(confirmPassword.isEmpty || working)
             .accessibilityIdentifier("two-step-confirm")
           }
         }
-        .navigationTitle(confirmation == .newCodes ? "New recovery codes" : "Turn off")
+        .navigationTitle(confirmation == .newCodes ? "New recovery codes" : "Turn off two-step")
         .protectWidgetNavigation()
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
           ToolbarItem(placement: .cancellationAction) {
-            Button("Cancel") { confirming = nil }
+            Button("Cancel") { confirming = nil }.disabled(working)
           }
         }
+        .onAppear { sheetFocused = true }
       }
-      .presentationDetents([.medium])
+      .presentationDetents([.medium, .large])
+      .interactiveDismissDisabled(working)
     }
     .onDisappear {
       // Secrets are shown once and never kept.
@@ -312,6 +331,7 @@ struct TwoFactorView: View {
         .padding(8).background(.white, in: RoundedRectangle(cornerRadius: 12))
       LabeledContent("Setup key") {
         Text(enrollment.secret).font(.callout.monospaced()).textSelection(.enabled)
+          .speechSpellsOutCharacters()
       }
       CopySecretButton(
         title: "Copy setup key", secret: { enrollment.secret }, identifier: "two-step-copy-key")
@@ -359,6 +379,7 @@ struct TwoFactorView: View {
         .font(.footnote).foregroundStyle(FormaTheme.secondary)
       Text(recoveryCodes.joined(separator: "\n"))
         .font(.callout.monospaced()).textSelection(.enabled)
+        .speechSpellsOutCharacters()
         .accessibilityIdentifier("two-step-codes")
       CopySecretButton(
         title: "Copy codes", secret: { recoveryCodes.joined(separator: "\n") },
@@ -469,10 +490,22 @@ struct SessionsView: View {
   @State private var revoking: AccountDevice?
 
   struct StepUp: Identifiable {
-    /// A device reference, or "others".
+    /// A device reference, "others", or `StepUp.coachToken`.
     let action: String
     let twoFactor: Bool
     var id: String { action }
+
+    static let coachToken = "coach-token"
+
+    /// The confirm button names what happens, as the button that asked did.
+    var confirmTitle: String {
+      switch action {
+      case Self.coachToken: "Confirm and create token"
+      case "others": "Confirm and sign out"
+      default: "Confirm and sign out device"
+      }
+    }
+    var destructive: Bool { action != Self.coachToken }
   }
 
   var body: some View {
@@ -496,11 +529,9 @@ struct SessionsView: View {
         ForEach(devices) { device in
           AdaptiveRow {
             HStack(spacing: 12) {
-              Image(
-                systemName: device.userAgent?.contains("CFNetwork") == true
-                  ? "iphone" : "desktopcomputer"
-              )
-              .foregroundStyle(FormaTheme.accent).frame(width: 28)
+              Image(systemName: DeviceDescription.symbol(device.userAgent))
+                .foregroundStyle(FormaTheme.accent).frame(width: 28)
+                .accessibilityHidden(true)
               VStack(alignment: .leading, spacing: 2) {
                 Text(DeviceDescription.describe(device.userAgent)).font(.headline)
                 Text(Self.detail(for: device))
@@ -512,10 +543,10 @@ struct SessionsView: View {
             if device.current {
               Text("Current").font(.caption.weight(.semibold)).foregroundStyle(FormaTheme.accent)
             } else {
-              Button("Revoke", role: .destructive) { revoking = device }
+              Button("Sign out", role: .destructive) { revoking = device }
                 .frame(minHeight: 44).contentShape(Rectangle())
                 .disabled(acting != nil)
-                .accessibilityLabel("Revoke \(DeviceDescription.describe(device.userAgent))")
+                .accessibilityLabel("Sign out \(DeviceDescription.describe(device.userAgent))")
                 .accessibilityIdentifier("session-revoke-\(device.id)")
             }
           }
@@ -527,8 +558,15 @@ struct SessionsView: View {
         Button("Sign out other devices", role: .destructive) { confirmOthers = true }
           .disabled(acting != nil || devices.count < 2)
           .accessibilityIdentifier("sessions-sign-out-others")
-        Button("Sign out everywhere", role: .destructive) { confirmEverywhere = true }
-          .disabled(acting != nil)
+        Button(role: .destructive) {
+          confirmEverywhere = true
+        } label: {
+          HStack {
+            Text("Sign out everywhere")
+            if acting == "everywhere" { ProgressView() }
+          }
+        }
+        .disabled(acting != nil)
           .accessibilityIdentifier("sessions-sign-out-everywhere")
       } footer: {
         if devices.count < 2 && !loading {
@@ -558,7 +596,7 @@ struct SessionsView: View {
       isPresented: Binding(get: { revoking != nil }, set: { if !$0 { revoking = nil } }),
       titleVisibility: .visible
     ) {
-      Button("Sign out this device", role: .destructive) {
+      Button("Sign out", role: .destructive) {
         if let device = revoking { Task { await attempt(device.id) } }
       }
     } message: {
@@ -651,6 +689,8 @@ struct SessionsView: View {
   }
 }
 
+/// "Confirm it's you" for an action that needs a sign-in from the last five
+/// minutes: the password, plus a code when two-step is on.
 private struct StepUpSheet: View {
   @Environment(\.dismiss) private var dismiss
   let step: SessionsView.StepUp
@@ -689,11 +729,13 @@ private struct StepUpSheet: View {
           Text("For your security, confirm it’s you. You signed in more than 5 minutes ago.")
         }
         Section {
-          Button(
-            step.action == "others" ? "Confirm and sign out" : "Confirm and sign out device",
-            role: .destructive
-          ) {
+          Button(role: step.destructive ? .destructive : nil) {
             Task { await submit() }
+          } label: {
+            HStack {
+              Text(step.confirmTitle)
+              if working { ProgressView() }
+            }
           }
           .disabled(working || !ready)
           .accessibilityIdentifier("step-up-confirm")
@@ -701,10 +743,15 @@ private struct StepUpSheet: View {
       }
       .navigationTitle("Confirm it’s you").navigationBarTitleDisplayMode(.inline)
       .protectWidgetNavigation()
-      .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } } }
+      .toolbar {
+        ToolbarItem(placement: .cancellationAction) {
+          Button("Cancel") { dismiss() }.disabled(working)
+        }
+      }
       .onAppear { focus = .password }
     }
-    .presentationDetents([.medium])
+    .presentationDetents([.medium, .large])
+    .interactiveDismissDisabled(working)
   }
 
   private func submit() async {
@@ -738,6 +785,8 @@ struct CoachAccessView: View {
   @State private var noticeRevision = 0
   @State private var revoking: CoachTokenRecord?
   @State private var confirmFull = false
+  /// An older sign-in confirms the password here instead of signing out.
+  @State private var stepUp: SessionsView.StepUp?
 
   var body: some View {
     ScrollViewReader { proxy in
@@ -760,6 +809,7 @@ struct CoachAccessView: View {
             )
             .font(.footnote)
             Text(issued.token).font(.callout.monospaced()).textSelection(.enabled)
+              .speechSpellsOutCharacters()
               .accessibilityIdentifier("coach-token-value")
             Text("It expires on \(AccountDates.label(issued.record.expiresAt)).").font(.footnote)
               .foregroundStyle(FormaTheme.secondary)
@@ -773,12 +823,18 @@ struct CoachAccessView: View {
           .id("issued-token")
         }
         Section {
-          TextField("Token name, e.g. Claude coach", text: $label)
-            .autocorrectionDisabled().submitLabel(.done)
-            .onChange(of: label) { _, value in
-              if value.count > 60 { label = String(value.prefix(60)) }
-            }
-            .accessibilityIdentifier("coach-label")
+          // A visible label that stays once typing starts; the placeholder
+          // is only the example.
+          LabeledContent("Token name") {
+            TextField("e.g. Claude coach", text: $label)
+              .multilineTextAlignment(.trailing)
+              .autocorrectionDisabled().submitLabel(.done)
+              .onChange(of: label) { _, value in
+                if value.count > 60 { label = String(value.prefix(60)) }
+              }
+              .accessibilityLabel("Token name")
+              .accessibilityIdentifier("coach-label")
+          }
           Picker("Access", selection: $full) {
             Text("Read only").tag(false)
             Text("Full access: read and edit").tag(true)
@@ -792,7 +848,9 @@ struct CoachAccessView: View {
               if acting == "create" { ProgressView() }
             }
           }
-          .disabled(acting != nil || label.trimmingCharacters(in: .whitespaces).isEmpty)
+          .disabled(
+            acting != nil || stepUp != nil || label.trimmingCharacters(in: .whitespaces).isEmpty
+          )
           .accessibilityIdentifier("coach-create")
         } footer: {
           if label.trimmingCharacters(in: .whitespaces).isEmpty {
@@ -853,6 +911,11 @@ struct CoachAccessView: View {
     .task { await load() }
     .refreshable { await load() }
     .onDisappear { issued = nil }
+    .sheet(item: $stepUp) { step in
+      StepUpSheet(step: step) { password, code in
+        try await mint(password: password, code: code)
+      }
+    }
     .confirmationDialog(
       "Create a full-access token?", isPresented: $confirmFull, titleVisibility: .visible
     ) {
@@ -892,27 +955,36 @@ struct CoachAccessView: View {
     }
   }
 
+  /// Minting is a step-up action, like signing out other devices: a sign-in
+  /// from the last five minutes, or the password (and a code when two-step is
+  /// on) confirmed in `StepUpSheet`.
   private func create() async {
+    guard acting == nil else { return }
     acting = "create"
     defer { acting = nil }
     error = nil
-    let (name, scopeFull) = (label.trimmingCharacters(in: .whitespaces), full)
     do {
-      let result = try await model.account.call {
-        try await $0.createCoachToken(label: name, full: scopeFull)
-      }
-      issued = result
-      tokens.insert(result.record, at: 0)
-      label = ""
-      full = false
-      model.accountSucceeded(.accountSent)
+      try await mint(password: nil, code: nil)
     } catch let failure as AccountFailure where failure.kind == .reauthenticationRequired {
-      fail("Sign in again before creating a coach token.")
+      stepUp = SessionsView.StepUp(
+        action: SessionsView.StepUp.coachToken, twoFactor: failure.twoFactor)
       model.haptic(.accountWarning)
     } catch {
       fail(error.accountMessage)
       model.haptic(error.accountHaptic)
     }
+  }
+
+  private func mint(password: String?, code: String?) async throws {
+    let (name, scopeFull) = (label.trimmingCharacters(in: .whitespaces), full)
+    let result = try await model.account.call {
+      try await $0.createCoachToken(label: name, full: scopeFull, password: password, code: code)
+    }
+    issued = result
+    tokens.insert(result.record, at: 0)
+    label = ""
+    full = false
+    model.accountSucceeded(.accountSent)
   }
 
   private func revoke(_ token: CoachTokenRecord) async {

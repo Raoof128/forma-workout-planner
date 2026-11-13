@@ -12,7 +12,8 @@ private struct WidgetNavigationGuard: ViewModifier {
   let active: Bool
   @State private var registered = false
 
-  private static let message = "Widget link queued. Finish editing to open it."
+  /// Names both ways out of the editor; "queued" is system language.
+  private static let message = "Save or cancel this edit to open the widget link."
 
   private var queued: Bool { active && model.widgetRoute != nil }
 

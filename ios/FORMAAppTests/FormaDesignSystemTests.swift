@@ -74,6 +74,60 @@ final class FormaDesignSystemTests: XCTestCase {
     }
   }
 
+  /// In Dark Mode a sheet or popover is an elevated interface, and the
+  /// system lifts its background a step; FORMA's custom canvas and surface do
+  /// the same, so a sheet is not the same colour as the screen beneath it.
+  func testElevatedDarkBackgroundsAreLighterAndKeepTextReadable() {
+    let base = UITraitCollection { mutable in
+      mutable.userInterfaceStyle = .dark
+      mutable.userInterfaceLevel = .base
+    }
+    let elevated = UITraitCollection { mutable in
+      mutable.userInterfaceStyle = .dark
+      mutable.userInterfaceLevel = .elevated
+    }
+    for (name, background) in [("canvas", FormaTheme.canvas), ("surface", FormaTheme.surface)] {
+      XCTAssertGreaterThan(
+        luminance(rgb(background, elevated)), luminance(rgb(background, base)), name)
+      for (text, color) in [
+        ("primary", FormaTheme.primary), ("secondary", FormaTheme.secondary),
+        ("accent", FormaTheme.accent), ("error", FormaTheme.error),
+      ] {
+        let ratio = contrast(color, background, elevated)
+        XCTAssertGreaterThanOrEqual(ratio, 4.5, "\(text) on elevated \(name): \(ratio)")
+      }
+      let edge = contrast(FormaTheme.boundary, background, elevated)
+      XCTAssertGreaterThanOrEqual(edge, 3, "boundary on elevated \(name): \(edge)")
+    }
+    // Light mode has no elevated variant, as in the system colours.
+    let lightElevated = UITraitCollection { mutable in
+      mutable.userInterfaceStyle = .light
+      mutable.userInterfaceLevel = .elevated
+    }
+    XCTAssertEqual(
+      rgb(FormaTheme.canvas, lightElevated),
+      rgb(Color(hex: FormaPalette.canvasLight), lightElevated))
+  }
+
+  /// One rule decides whether control surfaces are opaque, so a surface and
+  /// the text on it always agree about what is behind them.
+  func testControlSurfacesGoOpaqueForReduceTransparencyOrIncreasedContrast() {
+    XCTAssertFalse(
+      ControlSurfaceAppearance.isOpaque(reduceTransparency: false, contrast: .standard))
+    XCTAssertTrue(ControlSurfaceAppearance.isOpaque(reduceTransparency: true, contrast: .standard))
+    XCTAssertTrue(
+      ControlSurfaceAppearance.isOpaque(reduceTransparency: false, contrast: .increased))
+  }
+
+  /// A rebuilt tab stack must not replay entrances that already played.
+  func testRevealLedgerRemembersEachRevealOnItsOwn() {
+    let ledger = FormaRevealLedger()
+    XCTAssertFalse(ledger.hasPlayed("Today:10:0"))
+    ledger.markPlayed("Today:10:0")
+    XCTAssertTrue(ledger.hasPlayed("Today:10:0"))
+    XCTAssertFalse(ledger.hasPlayed("Today:10:1"), "A sibling keeps its own entrance")
+  }
+
   func testInkLabelOnLimeMeetsAA() {
     assertContrast(FormaTheme.ink, on: FormaTheme.lime, atLeast: 4.5, "ink on lime")
   }
@@ -138,6 +192,18 @@ final class FormaDesignSystemTests: XCTestCase {
       for other in training {
         XCTAssertNotEqual(account.feedback, other.feedback, "\(account) vs \(other)")
       }
+    }
+  }
+
+  /// Changing tab is a firm tap, stronger than the light selection tick, and
+  /// returning to a tab's start is softer; neither feels like an account event.
+  func testTabHapticsAreFirmAndDistinct() {
+    XCTAssertEqual(FormaHaptic.tabChanged.feedback, .impact(flexibility: .solid, intensity: 0.85))
+    XCTAssertEqual(FormaHaptic.tabReturned.feedback, .impact(flexibility: .soft, intensity: 0.65))
+    XCTAssertNotEqual(FormaHaptic.tabChanged.feedback, FormaHaptic.selected.feedback)
+    for other in [FormaHaptic.accountSent, .accountRemoved, .undone, .added] {
+      XCTAssertNotEqual(FormaHaptic.tabChanged.feedback, other.feedback, "\(other)")
+      XCTAssertNotEqual(FormaHaptic.tabReturned.feedback, other.feedback, "\(other)")
     }
   }
 

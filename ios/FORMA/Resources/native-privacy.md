@@ -1,8 +1,8 @@
 # Privacy on this iPhone
 
-Development notice · 28 October 2026
+Version 1.0 · 13 November 2026
 
-This native FORMA build is a workout planner that works on its own and can
+FORMA for iPhone is a workout planner that works on its own and can
 optionally sign in to a FORMA account. Without an account it keeps your training
 on the iPhone. With one, your name, email address and workout records are also
 sent to, and stored in, that account so they match the FORMA website. The same
@@ -123,5 +123,4 @@ including medical details in support messages unless you intend to share them.
 
 The FORMA website's Privacy Policy and Terms of Use also govern your account.
 FORMA is operated by Raouf Abedini in Sydney, New South Wales, Australia. For
-privacy questions, contact raoof.r12@gmail.com. This development notice needs
-legal review and final-binary verification before App Store distribution.
+privacy questions, contact raoof.r12@gmail.com.

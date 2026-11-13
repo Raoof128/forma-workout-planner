@@ -26,6 +26,40 @@ final class WorkoutClockTests: XCTestCase {
   }
 }
 
+final class WorkoutCopyTests: XCTestCase {
+  func testFinishMessageIsCountsPlusOneConsequence() {
+    XCTAssertEqual(
+      WorkoutView.finishMessage(completed: 9, total: 12, watchRecording: false),
+      "9 of 12 sets done. Unfinished sets won't count.")
+    XCTAssertEqual(
+      WorkoutView.finishMessage(completed: 2, total: 3, watchRecording: false),
+      "2 of 3 sets done. The unfinished set won't count.")
+    XCTAssertEqual(
+      WorkoutView.finishMessage(completed: 1, total: 1, watchRecording: true),
+      "1 of 1 set done. Your Apple Watch recording ends too.")
+  }
+
+  func testAnEmptySessionSaysSoInsteadOfCountingZero() {
+    XCTAssertEqual(
+      WorkoutView.finishMessage(completed: 0, total: 4, watchRecording: false),
+      "No sets are done yet.")
+  }
+
+  /// The keyboard's previous/next order and the row's fields come from one list.
+  func testSetFieldsAreListedInReadingOrder() {
+    let loaded = LoggedSet(weight: 60, reps: 8)
+    XCTAssertEqual(
+      SetRow.fieldNames(exercise: nil, perSide: false, set: loaded), ["weight", "reps"])
+    XCTAssertEqual(
+      SetRow.fieldNames(exercise: nil, perSide: true, set: loaded), ["weight", "left", "right"])
+  }
+
+  @MainActor
+  func testTheHoldToneShipsInTheAppBundle() {
+    XCTAssertNotNil(Bundle.main.url(forResource: HoldTone.fileName, withExtension: "caf"))
+  }
+}
+
 final class SetDraftIssueTests: XCTestCase {
   private let english = Locale(identifier: "en_US")
 

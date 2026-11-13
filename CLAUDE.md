@@ -145,7 +145,7 @@ The API needs `APP_ORIGIN`, `AUTH_SECRET`, `ORIGIN_SHARED_SECRET` and
 
 - **Security scans:** gitleaks over full history, OSV on `package-lock.json`, Semgrep
   (`server worker src ops scripts`), CycloneDX SBOM, all from digest-pinned images.
-- **Verify** (70 min), in order: `npm ci`, Playwright browsers, lint, `format:check`,
+- **Verify** (100 min), in order: `npm ci`, Playwright browsers, lint, `format:check`,
   `typecheck`, `build:server`, build `ops/Dockerfile` and import every server entry
   module inside the image, `test:server`, `test:worker`, `test:operations`,
   `test:unit`, `build`, `npm audit --omit=dev`, `docs:check`, `git diff --check`,

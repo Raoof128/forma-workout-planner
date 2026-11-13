@@ -408,11 +408,14 @@ public struct WorkoutSession: Codable, Identifiable, Equatable, Sendable {
   public var exercises: [SessionEntry]
   public var date: String?
   public var duration: Double?
+  /// Finished workouts only: what the Apple Watch recorded, if one did.
+  public var watch: WorkoutWatchSummary?
 
   public init(
     id: String = UUID().uuidString, name: String, routineId: String? = nil, startedAt: Double,
     notes: String = "", restSeconds: Int = 90, restEnd: Double? = nil, restPaused: Double? = nil,
-    exercises: [SessionEntry] = [], date: String? = nil, duration: Double? = nil
+    exercises: [SessionEntry] = [], date: String? = nil, duration: Double? = nil,
+    watch: WorkoutWatchSummary? = nil
   ) {
     self.id = id
     self.name = name
@@ -425,10 +428,11 @@ public struct WorkoutSession: Codable, Identifiable, Equatable, Sendable {
     self.exercises = exercises
     self.date = date
     self.duration = duration
+    self.watch = watch
   }
   private enum CodingKeys: String, CodingKey {
     case id, name, routineId, startedAt, notes, restSeconds, restEnd, restPaused, exercises, date,
-      duration
+      duration, watch
   }
   public init(from decoder: Decoder) throws {
     let c = try decoder.container(keyedBy: CodingKeys.self)
@@ -442,7 +446,8 @@ public struct WorkoutSession: Codable, Identifiable, Equatable, Sendable {
       restPaused: try c.decodeIfPresent(Double.self, forKey: .restPaused),
       exercises: try c.decode([SessionEntry].self, forKey: .exercises),
       date: try c.decodeIfPresent(String.self, forKey: .date),
-      duration: try c.decodeIfPresent(Double.self, forKey: .duration))
+      duration: try c.decodeIfPresent(Double.self, forKey: .duration),
+      watch: try c.decodeIfPresent(WorkoutWatchSummary.self, forKey: .watch))
   }
 }
 

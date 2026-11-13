@@ -34,7 +34,7 @@ final class TrainingNavigationTests: XCTestCase {
     XCTAssertTrue(app.buttons["tab-progress"].isSelected)
     XCTAssertTrue(
       app.otherElements["progress-empty"].exists
-        || app.staticTexts["Every first set counts."].exists)
+        || app.staticTexts["No workouts yet"].exists)
   }
 }
 

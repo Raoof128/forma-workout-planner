@@ -367,3 +367,90 @@ test("initial workspace names keep whole Unicode characters within the existing 
     assert.deepEqual(await getWorkspace(pool, owner, name), first);
   }
 });
+
+test("an Apple Watch summary on a finished workout is stored and read back, and only there", async () => {
+  assert.ok(pool);
+  const member = `member-watch-${suffix}`;
+  await pool.query(`INSERT INTO "user" (id, name, email) VALUES ($1, $2, $3)`, [
+    member,
+    "Member Watch",
+    `${member}@example.test`,
+  ]);
+  const start = await getWorkspace(pool, member, "Member Watch");
+  const watch = {
+    elapsedSeconds: 2280,
+    averageHeartRate: 128,
+    maxHeartRate: 162,
+    activeEnergyKcal: 310,
+  };
+  const finished = {
+    id: "watch-session",
+    name: "Watch day",
+    startedAt: Date.parse("2026-10-30T07:00:00Z"),
+    notes: "",
+    restSeconds: 90,
+    restEnd: null,
+    restPaused: null,
+    date: "2026-10-30T07:45:00.000Z",
+    duration: 2700,
+    exercises: [
+      { exerciseId: "bench", sets: [{ weight: 60, reps: 8, done: true }] },
+    ],
+    watch,
+  };
+  const saved = await putWorkspace(pool, member, "Member Watch", {
+    data: { ...start.data, history: [finished] },
+    expectedRevision: start.revision,
+    operationId: "watch-summary-1",
+  });
+  assert.deepEqual(saved.data.history[0].watch, watch);
+  assert.deepEqual(
+    (await getWorkspace(pool, member)).data.history[0].watch,
+    watch,
+  );
+
+  // Out of bounds, unknown fields and an active workout carrying one are rejected.
+  for (const [operationId, data] of [
+    [
+      "watch-summary-bad-rate",
+      {
+        ...saved.data,
+        history: [{ ...finished, watch: { ...watch, maxHeartRate: 251 } }],
+      },
+    ],
+    [
+      "watch-summary-samples",
+      {
+        ...saved.data,
+        history: [{ ...finished, watch: { ...watch, samples: [120] } }],
+      },
+    ],
+    [
+      "watch-summary-active",
+      {
+        ...saved.data,
+        history: [],
+        active: {
+          id: "active",
+          name: finished.name,
+          startedAt: finished.startedAt,
+          notes: "",
+          restSeconds: 90,
+          restEnd: null,
+          restPaused: null,
+          exercises: finished.exercises,
+          watch,
+        },
+      },
+    ],
+  ] as const)
+    await assert.rejects(
+      putWorkspace(pool, member, "Member Watch", {
+        data,
+        expectedRevision: saved.revision,
+        operationId,
+      }),
+      InvalidWorkspace,
+      operationId,
+    );
+});

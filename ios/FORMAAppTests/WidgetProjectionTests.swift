@@ -127,6 +127,30 @@ final class WidgetProjectionTests: XCTestCase {
     XCTAssertEqual(model.widgetDestination(for: .plan), .plan)
   }
 
+  /// Audit 2026-11-02 H1: a tap on the Live Activity opens the workout even with widget sharing
+  /// off, and only for the workout and owner it was drawn for.
+  func testLiveActivityLinkOpensTheActiveWorkoutWithoutWidgetSharing() throws {
+    let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+    defer { try? FileManager.default.removeItem(at: directory) }
+    try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+    let model = AppModel()
+    var workspace = Workspace(revision: 0, profile: Profile(name: "Test", goal: 4))
+    workspace.active = WorkoutSession(id: "session-1", name: "Legs", startedAt: 1_700_000_000_000)
+    model.workspace = workspace
+    model.widgets.configure(directory: directory, owner: "first")
+    XCTAssertFalse(model.widgets.sharing)
+    let epoch = model.widgets.epoch
+    XCTAssertEqual(model.widgetDestination(for: .workout(id: "session-1", epoch: epoch)), .active)
+    // The widget's own resume link stays behind the sharing consent.
+    XCTAssertEqual(
+      model.widgetDestination(for: .active(id: "session-1", epoch: epoch)), .unavailable)
+    XCTAssertEqual(model.widgetDestination(for: .workout(id: "other", epoch: epoch)), .today)
+    XCTAssertEqual(
+      model.widgetDestination(for: .workout(id: "session-1", epoch: "old-owner")), .today)
+    model.workspace?.active = nil
+    XCTAssertEqual(model.widgetDestination(for: .workout(id: "session-1", epoch: epoch)), .today)
+  }
+
   func testFailedConsentRevocationDeletesOldOptInBeforeRelaunch() throws {
     let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
     defer { try? FileManager.default.removeItem(at: directory) }

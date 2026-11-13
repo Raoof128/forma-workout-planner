@@ -337,13 +337,18 @@ test("synthetic parity cases are strict valid workspaces with truthful independe
   assert.notEqual(set.sides.left, set.sides.right);
 });
 
-test("native legal resources retain exact current source policies and label local prototype scope", () => {
+test("native legal resources retain exact current source policies and ship a release notice", () => {
   const legal = json("ios/FORMA/Resources/legal.json");
   assert.deepEqual(legal.privacy, legalDocuments.privacy);
   assert.deepEqual(legal.terms, legalDocuments.terms);
-  assert.equal(legal.privacy.version, "1.3");
-  assert.equal(legal.nativeGuestNotice.status, "prototype-not-release-policy");
+  assert.equal(legal.privacy.version, "1.4");
+  assert.equal(legal.nativeGuestNotice.status, "native-app-notice");
   const notice = JSON.stringify(legal.nativeGuestNotice).toLowerCase();
+  // App Review 2.2: shipped copy must not describe itself as unfinished.
+  assert.doesNotMatch(
+    notice,
+    /development build|development notice|prototype|still needs|before submission/,
+  );
   assert.match(notice, /application support/);
   assert.match(notice, /export/);
   assert.match(notice, /no analytics/);
@@ -362,6 +367,10 @@ test("native legal resources retain exact current source policies and label loca
   assert.match(notice, /apple health/);
   assert.match(notice, /heart rate/);
   assert.doesNotMatch(notice, /no healthkit data/);
+  // The summary is stored with the workout and synced; the notice must not
+  // still promise that heart rate never leaves the devices.
+  assert.match(notice, /summary/);
+  assert.doesNotMatch(notice, /does not send them anywhere/);
 });
 
 test("catalogue notices retain original and reviewed credits without claiming license clearance", () => {

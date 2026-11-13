@@ -19,11 +19,11 @@ enum WatchWorkout {
     HKQuantityType(.heartRate),
   ]
 
+  /// Only what FORMA shows. Basal energy was requested once but never read.
   static let readTypes: Set<HKObjectType> = [
     HKObjectType.workoutType(),
     HKQuantityType(.heartRate),
     HKQuantityType(.activeEnergyBurned),
-    HKQuantityType(.basalEnergyBurned),
   ]
 
   /// Application-context keys the iPhone sets before opening the Watch app.
@@ -55,6 +55,16 @@ struct WatchMetrics: Codable, Equatable, Sendable {
   var elapsed: TimeInterval
   var heartRate: Double?
   var averageHeartRate: Double?
+  /// The highest heart rate so far. Optional, so a Watch on an older build
+  /// that never sends it still decodes.
+  var maxHeartRate: Double?
   /// Kilocalories of active energy.
   var activeEnergy: Double?
+  /// Set on the final snapshot when the recording was thrown away, so the
+  /// iPhone doesn't keep numbers the person chose to discard.
+  var discarded: Bool?
+  /// When the Watch sent this snapshot. Delivery can be batched minutes late
+  /// after the iPhone app was suspended, so freshness is judged from this,
+  /// not from arrival. Optional for snapshots from older Watch builds.
+  var sentAt: Date?
 }
