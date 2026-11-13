@@ -44,10 +44,11 @@ than verified exercise instruction.
 
 `legal.json` preserves the existing website Privacy Policy version 1.4 and Terms
 of Use version 1.0 without silently rewriting them. A separate
-`nativeGuestNotice` explains this development build's local Application Support
+`nativeGuestNotice` explains the app's local Application Support
 storage, readable JSON exports, the optional FORMA account (what is sent, the
 Keychain session, the saved copy, deletion) and lack of analytics. Despite its
-key name it covers signed-in use too. The source website policies describe browser/account behavior and
-need a reviewed native revision before an App Store submission. This resource
+key name it covers signed-in use too. The source website policies describe browser/account behavior; the
+native notice covers the app, and both should be reviewed before an App Store
+submission. This resource
 generation does not establish developer eligibility, legal approval or App
 Review acceptance.

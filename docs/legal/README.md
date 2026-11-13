@@ -14,8 +14,9 @@ so the app and this record cannot drift apart.
 | Terms of Use   | 1.0     | 13 October 2026 | Raouf Abedini (individual), Sydney, NSW | raoof.r12@gmail.com |
 
 **These documents were drafted from official guidance and are not legal
-advice.** Have an Australian lawyer review them before FORMA opens accounts to
-the public or is used commercially.
+advice.** This repository holds no record of a lawyer's review. Accounts have
+been open to the public since 13 October 2026, so an Australian lawyer should
+review them, and must before FORMA is used commercially.
 
 ## How they are presented
 
@@ -62,8 +63,8 @@ The documents make promises; the service and the operator must match them.
 
 Review both documents at least yearly and when any of these happen:
 
-- Accounts open to the public, or FORMA starts charging, advertising or using
-  analytics.
+- FORMA starts charging, advertising or using analytics, or the iPhone app is
+  published on the App Store.
 - A new service provider, backup location or country.
 - 10 December 2026: automated decision-making transparency requirements (APP
   1.7–1.9) commence, and the Children's Online Privacy Code is due to be
