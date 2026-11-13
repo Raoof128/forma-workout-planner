@@ -4,6 +4,28 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-11-13 — Release the 1.0 back end to staging and production
+
+- **Scope:** owner authorised merging PR #48 and releasing to production
+  after green CI, staging first.
+- **Summary:** PR #48 merged as `3a2f2fc`. API image
+  `forma-api:app-store-20261113-191b4a7` and the matching website are live in
+  both environments. The API now accepts an Apple Watch summary on a finished
+  workout, which the iOS 1.0 build sends. Production had been on
+  `reconcile-20261109-8d0244e`, not the 5 November image an earlier note in
+  this session assumed, so the PR #44 hardening was already live.
+- **Files:** `docs/qa/app-store-1.0-2026-11-13/README.md`,
+  `ios/docs/app-store-submission.md`, `AGENT.md`, `CHANGELOG.md`.
+- **Verification:** see the release record: green CI on `b659ad6`, backups
+  before and after in each environment, unchanged row counts and unrelated
+  containers, healthy monitors, a no-write schema probe inside each API
+  container, and byte-identical production assets. No signed-in hosted
+  journey, restore drill or alert test was run.
+- **Follow-ups:** **do not roll the API back** once a member has synced a
+  Watch summary; older images reject the field. Open: hands-on Watch checks,
+  the App Store Connect record, screenshots and upload. PRs #43, #37 and #38
+  are contained in `main`.
+
 ### Raouf: 2026-11-13 — Give the Verify job 100 minutes
 
 - **Scope:** both CI runs of `191b4a7` were cancelled at the 70-minute limit.

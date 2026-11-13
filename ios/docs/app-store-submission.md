@@ -28,14 +28,10 @@ on the day of submission. Nothing here has been uploaded or declared to Apple.
    Watch, heart rate and energy on the iPhone, save to Apple Health, the Watch
    summary on the finished workout, Health permission denied and revoked, Live
    Activity start and end.
-2. **Release order.** This build includes PR #43, so a finished workout
-   carries an Apple Watch summary (recorded time, average and highest heart
-   rate, active energy) that syncs to the account. `main`'s API does not accept
-   that field. Deploy the API and Worker from this branch to staging, then
-   production, before the app goes to review; that also publishes Privacy
-   Policy 1.4, which the app bundles. The back end must be up during review.
-   The account verdict is GO (13 October 2026,
-   `docs/security/release-security-verdict.md`).
+2. **Back end.** Released on 13 November 2026: the production API accepts
+   the Apple Watch summary and the site serves Privacy Policy 1.4; see the
+   [release record](../../docs/qa/app-store-1.0-2026-11-13/README.md). The back
+   end must stay up during review.
 3. **Upload.** The `app-store-connect` export succeeded on 13 November 2026
    (distribution certificate and store profiles for all four bundles). Upload
    needs the App Store Connect app record first.
