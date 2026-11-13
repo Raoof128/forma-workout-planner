@@ -184,7 +184,8 @@ editable examples. One rep of the starter Forearm plank represents a 10-second
 hold, and exercises with no external load log no weight. The web app does not
 include billing, social networking, Apple Health integration, or automated
 coaching. The separate native Watch companion records workouts to Apple Health
-with permission; its physical-device acceptance gates remain in the native handoff.
+with permission; its remaining device tests are listed in the
+[submission checklist](ios/docs/app-store-submission.md).
 
 The source is published for reading and review. All rights are reserved and no
 reuse licence is granted; see [LICENSE](LICENSE). The
