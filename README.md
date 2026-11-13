@@ -186,7 +186,8 @@ include billing, social networking, Apple Health integration, or automated
 coaching. The separate native Watch companion records workouts to Apple Health
 with permission; its physical-device acceptance gates remain in the native handoff.
 
-The repository does not currently include a project-wide software license. The
+The source is published for reading and review. All rights are reserved and no
+reuse licence is granted; see [LICENSE](LICENSE). The
 Barlow Condensed and DM Sans font licenses are in `public/fonts/`. Runtime
 exercise illustrations and hero/routine photography are original AI-assisted
 FORMA assets; generated sources, prompts and review records are preserved in

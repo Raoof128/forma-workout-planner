@@ -33,4 +33,4 @@ For bugs, include the browser/version, viewport if relevant, steps to reproduce,
 
 For suspected vulnerabilities, do not include exploit details, credentials, or private workout data in a public issue. Report it privately as described in [SECURITY.md](SECURITY.md).
 
-The repository does not currently grant a project-wide software license. Bundled font licenses apply to those assets separately.
+All rights in the project are reserved; see [LICENSE](LICENSE). Bundled fonts and imported exercise content keep their own licences.
