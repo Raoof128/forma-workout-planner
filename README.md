@@ -2,6 +2,13 @@
 
 **Plan your training. Log every set. See your progress.**
 
+[![CI](https://github.com/Raoof128/forma-workout-planner/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Raoof128/forma-workout-planner/actions/workflows/ci.yml)
+[![Native iOS](https://github.com/Raoof128/forma-workout-planner/actions/workflows/ios.yml/badge.svg)](https://github.com/Raoof128/forma-workout-planner/actions/workflows/ios.yml)
+
+![FORMA overview screen showing the next session, the week and saved routines](docs/qa/frontend-audit-2026-11-05/evidence/browser/public-after/1440-overview.png)
+
+_The web app's overview screen in guest mode, captured during the 5 November 2026 release review._
+
 FORMA is a workout planner. Members build routines, log sets by weight and
 reps, time or distance, and review their history and progress. It runs as a web
 app at [forma.raoufabedini.dev](https://forma.raoufabedini.dev) and as a native

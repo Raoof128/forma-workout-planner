@@ -3,7 +3,10 @@
 Do not post exploit details, credentials, session cookies, recovery codes,
 exported workout data, or other private information in a public issue.
 
-Check the repository's GitHub **Security** tab for a private vulnerability-reporting option. Availability depends on the repository settings. If no private reporting option is available, open a public issue with only a brief, non-sensitive request for a private contact route; do not include reproduction details until a private route is established.
+Report a vulnerability privately through GitHub: open the repository's
+**Security** tab and choose **Report a vulnerability**, or go straight to the
+[private report form](https://github.com/Raoof128/forma-workout-planner/security/advisories/new).
+The report is visible only to the maintainer.
 
 When reporting privately, include the affected version or commit, browser and
 operating system when relevant, impact, and minimal reproduction steps using
