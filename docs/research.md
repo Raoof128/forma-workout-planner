@@ -1,5 +1,9 @@
 # Reference research and product brief
 
+> **Historical record, 11 October 2026.** This is the original product brief for
+> a personal, browser-only planner. FORMA has since gained member accounts and a
+> native app; see the [README](../README.md) for its current scope.
+
 Research date: 2026-10-11. Sources: [Australian App Store listing](https://apps.apple.com/au/app/gym-workout-planner-gym-log/id1602190236), Apple lookup metadata, listing screenshots, and [developer website](https://leaphealth.fitness/).
 
 ## Findings

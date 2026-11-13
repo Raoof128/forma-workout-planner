@@ -1,5 +1,9 @@
 # Frontend audit remediation
 
+> **Historical record, 12 October 2026.** This describes fixes made to the
+> browser-only version of FORMA, before the account API existed. The current
+> system is described in [architecture](architecture.md).
+
 Implemented 12 October 2026 (Sydney). Scope: the personal, browser-local FORMA app.
 
 | Finding | Resolution | Main files |

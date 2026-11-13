@@ -5,6 +5,12 @@ only the routes listed below to a fixed backend origin. The backend checks the
 Worker service credential, then checks the Better Auth session for every
 member-owned operation. Worker identity never substitutes for member identity.
 
+The FORMA iOS app calls the same routes with the session cookie and
+`X-Forma-Client: ios`, and sends no `Origin`, `Referer` or `Sec-Fetch-*`
+headers. A browser cannot produce such a request with a member's cookies, so
+these requests are exempt from the same-origin `Origin` check; see
+[authorisation](../security/authorisation.md).
+
 All `/api/*` responses are private and uncached. Authenticated endpoints use
 the Better Auth `forma.session_token` HttpOnly cookie (named
 `__Secure-forma.session_token` over HTTPS); the browser client does
@@ -48,12 +54,12 @@ browser `authClient` methods rather than hand-building a parallel auth API.
 
 ## Account sessions
 
-| Method and path                            | Authentication                         | Result                                                                                                          |
-| ------------------------------------------ | -------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `GET /api/account/sessions`                | Member session                         | Active sessions for that member, with an opaque signed reference, dates, user agent and current-session marker. |
+| Method and path                            | Authentication                    | Result                                                                                                          |
+| ------------------------------------------ | --------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `GET /api/account/sessions`                | Member session                    | Active sessions for that member, with an opaque signed reference, dates, user agent and current-session marker. |
 | `DELETE /api/account/sessions/:id/revoke`  | Fresh session or password step-up | Revokes the referenced session after matching it within the authenticated member's active sessions.             |
 | `POST /api/account/sessions/revoke-others` | Fresh session or password step-up | Revokes every other session belonging to the authenticated member.                                              |
-| `POST /api/account/sessions/revoke-all`    | Member session                         | Revokes all sessions belonging to the authenticated member, including the current session.                      |
+| `POST /api/account/sessions/revoke-all`    | Member session                    | Revokes all sessions belonging to the authenticated member, including the current session.                      |
 
 The opaque session reference is an HMAC under the server auth secret. It is not
 a database ID or a session token. The session routes do not accept an owner ID.
@@ -80,21 +86,22 @@ member's own sign-in, and no coach response carries the email address or
 member reference. Tokens expire 90 days after creation and can be revoked at
 any time.
 
-| Method and path                           | Authentication                            | Result                                                                                                       |
-| ----------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `GET /api/account/coach-tokens`           | Member session                            | Active tokens for the member: `id`, `label`, `scope`, `createdAt`, `expiresAt`, `lastUsedAt`. Never the token itself. |
-| `POST /api/account/coach-tokens`          | Recent session, at most 5 minutes old     | Body `{ "label": "Claude coach", "scope": "read" }` (label 1–60 plain characters; scope `read` or `full`, default `read`). Returns `{ token, record }`; `token` is shown once. |
-| `DELETE /api/account/coach-tokens/:id`    | Member session                            | Revokes one of the caller's tokens by its 22-character ID; another member's ID is `404`.                      |
-| `GET /api/coach/workspace?days=28`        | Bearer token, any scope                   | The owner's coach summary for the last `days` days (1–365, default 28), with `access` set to the token's scope. |
-| `GET /api/coach/exercises?q=row&limit=25` | Bearer token, any scope                   | Catalogue search: `{ total, exercises }`, each with `id`, `name`, `muscle`, `equipment`, `metric`, `logs` (the fields a set records), `perSideByDefault` and `side`. `limit` is 1–100. |
-| `GET /api/coach/workspace/data`           | Bearer token, `full` scope                | The whole workspace `{ data, revision, updatedAt }`, exactly as the member's app loads it.                  |
-| `PATCH /api/coach/workspace/data`         | Bearer token, `full` scope                | Replaces the named sections; see [coach edits](#coach-edits). Returns `{ revision, updatedAt, replayed }`.     |
+| Method and path                           | Authentication                    | Result                                                                                                                                                                                 |
+| ----------------------------------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `GET /api/account/coach-tokens`           | Member session                    | Active tokens for the member: `id`, `label`, `scope`, `createdAt`, `expiresAt`, `lastUsedAt`. Never the token itself.                                                                  |
+| `POST /api/account/coach-tokens`          | Fresh session or password step-up | Body `{ "label": "Claude coach", "scope": "read" }` (label 1–60 plain characters; scope `read` or `full`, default `read`). Returns `{ token, record }`; `token` is shown once.         |
+| `DELETE /api/account/coach-tokens/:id`    | Member session                    | Revokes one of the caller's tokens by its 22-character ID; another member's ID is `404`.                                                                                               |
+| `GET /api/coach/workspace?days=28`        | Bearer token, any scope           | The owner's coach summary for the last `days` days (1–365, default 28), with `access` set to the token's scope.                                                                        |
+| `GET /api/coach/exercises?q=row&limit=25` | Bearer token, any scope           | Catalogue search: `{ total, exercises }`, each with `id`, `name`, `muscle`, `equipment`, `metric`, `logs` (the fields a set records), `perSideByDefault` and `side`. `limit` is 1–100. |
+| `GET /api/coach/workspace/data`           | Bearer token, `full` scope        | The whole workspace `{ data, revision, updatedAt }`, exactly as the member's app loads it.                                                                                             |
+| `PATCH /api/coach/workspace/data`         | Bearer token, `full` scope        | Replaces the named sections; see [coach edits](#coach-edits). Returns `{ revision, updatedAt, replayed }`.                                                                             |
 
 Tokens look like `forma_coach_` followed by 43 URL-safe characters (32 random
 bytes). PostgreSQL stores only an HMAC-SHA-256 digest of the token under the
 server auth secret, so a database read never yields a usable credential.
-Minting is a step-up action and returns `403 reauthentication_required` from a
-session older than five minutes; a sixth active token returns
+Minting is a step-up action: a session older than five minutes must confirm
+with `password` (and `code` when two-step verification is on) in the request
+body, and without them the request returns `403 reauthentication_required`; a sixth active token returns
 `409 token_limit`; a bad label returns `400 invalid_label`; a scope other than
 `read` or `full` returns `400 invalid_scope`. Scopes never change after
 minting: to widen access, mint a new token and revoke the old one.
@@ -186,10 +193,50 @@ The summary has this shape (abbreviated):
   "days": 28,
   "member": { "name": "Raouf", "weeklyGoal": 5 },
   "schedule": ["Monday", "Wednesday", "Friday"],
-  "routines": [{ "id": "…", "name": "Upper A", "minutes": 60, "level": "…", "exercises": [{ "exerciseId": "…", "name": "Bench Press", "sets": 3, "reps": 10, "weight": 40 }] }],
+  "routines": [
+    {
+      "id": "…",
+      "name": "Upper A",
+      "minutes": 60,
+      "level": "…",
+      "exercises": [
+        {
+          "exerciseId": "…",
+          "name": "Bench Press",
+          "sets": 3,
+          "reps": 10,
+          "weight": 40
+        }
+      ]
+    }
+  ],
   "activeWorkout": null,
-  "sessions": [{ "id": "…", "name": "Upper A", "routineId": "…", "date": "…", "durationSeconds": 3540, "notes": "…", "exercises": [{ "exerciseId": "…", "name": "Bench Press", "sets": [{ "weight": 40, "reps": 10, "done": true }] }] }],
-  "personalBests": [{ "exerciseId": "…", "name": "Bench Press", "bestWeight": 42.5, "estimatedOneRM": 53.8, "lastPerformed": "…" }],
+  "sessions": [
+    {
+      "id": "…",
+      "name": "Upper A",
+      "routineId": "…",
+      "date": "…",
+      "durationSeconds": 3540,
+      "notes": "…",
+      "exercises": [
+        {
+          "exerciseId": "…",
+          "name": "Bench Press",
+          "sets": [{ "weight": 40, "reps": 10, "done": true }]
+        }
+      ]
+    }
+  ],
+  "personalBests": [
+    {
+      "exerciseId": "…",
+      "name": "Bench Press",
+      "bestWeight": 42.5,
+      "estimatedOneRM": 53.8,
+      "lastPerformed": "…"
+    }
+  ],
   "weekly": [{ "weekStart": "2026-10-12", "sessions": 3, "volume": 9120 }],
   "totalSessions": 41
 }
@@ -202,12 +249,12 @@ only.
 
 ## Workspace data
 
-| Method and path             | Authentication                           | Result                                                                                        |
-| --------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `GET /api/workspace`        | Member session                           | `{ data, revision, updatedAt }` for the signed-in member.                                     |
-| `PUT /api/workspace`        | Member session and same-origin `Origin`  | Stores one validated version 2 workspace using optimistic concurrency.                        |
-| `GET /api/workspace/export` | Member session                           | The same member's validated workspace as an `application/json` attachment.                    |
-| `GET /api/health`           | Worker service credentials at the origin | Maps to API liveness check `/healthz`; it does not prove database, mail, or backup readiness. |
+| Method and path             | Authentication                                                   | Result                                                                                        |
+| --------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `GET /api/workspace`        | Member session                                                   | `{ data, revision, updatedAt }` for the signed-in member.                                     |
+| `PUT /api/workspace`        | Member session and same-origin `Origin`, or a native iOS request | Stores one validated version 2 workspace using optimistic concurrency.                        |
+| `GET /api/workspace/export` | Member session                                                   | The same member's validated workspace as an `application/json` attachment.                    |
+| `GET /api/health`           | Worker service credentials at the origin                         | Maps to API liveness check `/healthz`; it does not prove database, mail, or backup readiness. |
 
 PUT accepts exactly this top-level shape:
 

@@ -1,5 +1,9 @@
 # Public catalog release
 
+> **Historical record, 13 October 2026.** This release note describes the
+> catalogue release made that day. Later releases are listed under
+> [qa](qa/README.md).
+
 [README](../README.md) · [Catalog sources](research/runtime-catalog.md) ·
 [Deployment](deployment.md) · [Cloud environment](cloud-environment.md)
 

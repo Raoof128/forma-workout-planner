@@ -43,4 +43,4 @@ Worker configuration uses `forma.raoufabedini.dev` and
 records do not replace current release checks or live monitoring.
 
 The previous [browser-only release report](../qa/release-readiness.md) is a
-historical baseline (`86cf`); it does not verify this account-backed branch.
+historical baseline (`86cf`); it does not cover the account-backed application.

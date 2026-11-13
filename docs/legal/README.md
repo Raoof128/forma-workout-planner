@@ -48,8 +48,9 @@ The documents make promises; the service and the operator must match them.
 - Respond to access, correction and complaint requests within 30 days, and
   acknowledge complaints within 7 days.
 - Delete backup copies within **35 days**, and store backups only in Australia
-  or the United States. Backups are not yet configured; configure them to
-  match.
+  or the United States. Backups are stored off-host with a 34-day lifecycle
+  rule, which meets this commitment; see the
+  [production launch record](../accounts/production-launch.md).
 - Give account holders **14 days' notice** of material changes to the terms,
   and notice before significant privacy policy changes.
 - Notify affected people (and the OAIC where required) of a breach likely to

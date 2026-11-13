@@ -1,5 +1,10 @@
 # Backend-equivalent data-layer audit
 
+> **Historical record, 12 October 2026.** This audit predates the account API. Its
+> statement that the repository has no server backend was true on that date and
+> is not true now; see [architecture](architecture.md) and the
+> [November 2026 backend audit](audits/backend-2026-11/BACKEND_AUDIT.md).
+
 Date: 12 October 2026 (Australia/Sydney). Scope: the complete authored persistence, validation, import/recovery, and workout business logic in FORMA.
 
 ## Scope and method

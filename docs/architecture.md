@@ -15,6 +15,7 @@ flowchart LR
   Browser --> Guest[Guest repository]
   Guest --> Local[(localStorage)]
   Browser --> SameOrigin[Same-origin /api]
+  Native[iPhone app] --> SameOrigin
   SameOrigin --> Worker[Cloudflare Worker gateway]
   Worker -->|Access token and Worker secret| Tunnel[Protected Tunnel hostname]
   Tunnel --> API[Fastify API]
@@ -31,19 +32,22 @@ owner.
 
 ## Responsibilities
 
-| Area                                                            | Responsibility                                                                                |
-| --------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `src/App.jsx` and `src/components/`                             | Workout screens, account interface, and mutation handlers.                                    |
-| `src/storage.js`                                                | Version 2 validation, v1 migration, guest initialization, backup parsing, and download helpers.      |
-| `src/persistence.js`                                            | Guest-mode persistence, Web Lock coordination, revision checks, recovery, and temporary mode. |
-| `src/account/AccountProvider.jsx`                               | Browser account/session state and Better Auth actions.                                        |
-| `src/account/cloudRepository.js`                                | Authenticated workspace reads, optimistic writes, retries, conflicts, and import/export.      |
-| `server/auth.ts` and `server/app.ts`                            | Self-hosted Better Auth and HTTP authentication/session boundaries.                           |
-| `server/workspace.ts` and `server/workspaceRoutes.ts`           | Validated member workspace transactions, revision conflicts, and export.                      |
-| `server/migrations/`                                            | Better Auth and workspace PostgreSQL schema.                                                  |
-| `worker/index.ts` and `wrangler.jsonc`                          | Fixed-origin Worker API gateway and static asset routing.                                     |
-| `ops/`                                                          | Private-host Compose services, database role setup, migrations, and backup/restore scripts.   |
-| `server/tests/`, `worker/tests/`, and `tests/accounts*.spec.js` | Real PostgreSQL integration, gateway behavior, and account UI browser checks.                 |
+| Area                                                            | Responsibility                                                                                                                       |
+| --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `src/App.jsx` and `src/components/`                             | Workout screens, account interface, and mutation handlers.                                                                           |
+| `src/storage.js`                                                | Version 2 validation, v1 migration, guest initialization, backup parsing, and download helpers.                                      |
+| `src/persistence.js`                                            | Guest-mode persistence, Web Lock coordination, revision checks, recovery, and temporary mode.                                        |
+| `src/account/AccountProvider.jsx`                               | Browser account/session state and Better Auth actions.                                                                               |
+| `src/account/cloudRepository.js`                                | Authenticated workspace reads, optimistic writes, retries, conflicts, and import/export.                                             |
+| `server/auth.ts` and `server/app.ts`                            | Self-hosted Better Auth and HTTP authentication/session boundaries.                                                                  |
+| `server/workspace.ts` and `server/workspaceRoutes.ts`           | Validated member workspace transactions, revision conflicts, and export.                                                             |
+| `server/coachRoutes.ts` and `server/coachTokens.ts`             | Coach tokens: scoped bearer access for a coaching tool, stored as digests only.                                                      |
+| `server/throttle.ts`                                            | Sign-in and step-up attempt throttling.                                                                                              |
+| `server/migrations/`                                            | Six forward-only migrations: Better Auth, workspace, security throttle, routine programming and coach tokens.                        |
+| `worker/index.ts` and `wrangler.jsonc`                          | Fixed-origin Worker API gateway and static asset routing.                                                                            |
+| `ops/`                                                          | Private-host Compose services, database role setup, migrations, and backup/restore scripts.                                          |
+| `ios/`                                                          | Native iPhone, Apple Watch and widget app, which calls the same `/api` as the browser; see the [native app guide](../ios/README.md). |
+| `server/tests/`, `worker/tests/`, and `tests/accounts*.spec.js` | Real PostgreSQL integration, gateway behavior, and account UI browser checks.                                                        |
 
 ## Member workspace writes
 
@@ -90,5 +94,5 @@ the hosted origin, Access/Tunnel, scheduled backups and restore checks. It is
 not a current live probe or a guaranteed recovery-time commitment. Use the
 [operations guide](accounts/operations.md),
 [infrastructure reference](accounts-infrastructure.md), and
-[release-readiness report](accounts/release-readiness.md) for the actual
-configuration state and open owner tasks.
+[dated release records](qa/README.md#release-records) for what was deployed and
+when.

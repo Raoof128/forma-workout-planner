@@ -1,10 +1,15 @@
 # Verification record
 
-## Current release-readiness audit — 12 October 2026
+> **Historical record, 12 October 2026.** These results describe the browser-only
+> version of FORMA audited before the account API existed, and the NO-GO verdict
+> applies to that candidate. Current checks are in [testing](testing.md) and the
+> dated release records under [qa](qa/README.md).
 
-**NO-GO.** See the [current release report](qa/release-readiness.md), [interaction matrix](qa/interaction-matrix.json), [function matrix](qa/function-matrix.json), and [execution summaries](qa/verification-results.json).
+## Browser-only release-readiness audit — 12 October 2026
 
-The current cloud audit passed 31 unit tests, 79 development cases in system Chromium 154, and eight actual-production-build cases across desktop/mobile Chromium emulation, with zero retries. Clean dependency installation, lint, formatting, build, production dependency audit (zero reported advisories), local documentation checks and patch whitespace checks passed. Twenty repeated concurrent profile/session scenarios passed, but a historical intermittent failure remains unexplained.
+**NO-GO for that browser-only candidate.** See the [release report](qa/release-readiness.md), [interaction matrix](qa/interaction-matrix.json), [function matrix](qa/function-matrix.json), and [execution summaries](qa/verification-results.json).
+
+The cloud audit passed 31 unit tests, 79 development cases in system Chromium 154, and eight actual-production-build cases across desktop/mobile Chromium emulation, with zero retries. Clean dependency installation, lint, formatting, build, production dependency audit (zero reported advisories), local documentation checks and patch whitespace checks passed. Twenty repeated concurrent profile/session scenarios passed, but a historical intermittent failure remains unexplained.
 
 This runtime could not install or launch pinned Chromium, Firefox or WebKit because downloads are blocked. Two hosted runs on `64dd74d1e061a7e472fe6825f28808ba89bbbec7` passed 237 development checks across pinned Chromium, Firefox and WebKit and 20 production checks across five desktop/mobile projects. See [hosted evidence](qa/hosted-ci-evidence.json). Two earlier hosted development failures remain unexplained; raw hosted artifact downloads are blocked. Together with explicit coverage gaps and the historical concurrency failure, these unresolved items prevent release acceptance. The older Chromium/Firefox results below belong to earlier work and are preserved as historical evidence, not results rerun during this audit.
 

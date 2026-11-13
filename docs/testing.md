@@ -17,26 +17,32 @@ npm run test:browser:production
 
 `npm test` runs the Node.js unit suite before the guest-mode development browser suite. Use `npm run test:unit` or `npm run test:browser` to run a layer independently. The existing development suite runs Chromium, Firefox, and WebKit. `npm run test:browser:production` builds the guest-mode app and runs production smoke workflows in desktop Chromium, Firefox, and WebKit, plus mobile Chromium and WebKit emulation. These browser-local checks do not establish account or staging readiness.
 
-The account implementation adds three separate checks:
+The account implementation adds these checks:
 
-| Command                 | What it exercises                                                                                                                                                | What it does not establish                                                              |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `npm run typecheck`     | TypeScript server and Worker source.                                                                                                                             | Runtime or database correctness.                                                        |
-| `npm run test:server`   | Better Auth, HTTP boundaries, workspace transactions, and ownership using real PostgreSQL in random per-test schemas. Requires a disposable `TEST_DATABASE_URL`. | External email delivery or Cloudflare/DigitalOcean networking.                          |
-| `npm run test:worker`   | Worker path, header, body, timeout, redirect, cookie, and response behavior with controlled upstream fetches.                                                    | A deployed Worker, real Access policy, Tunnel, or Droplet.                              |
-| `npm run test:accounts` | Account UI journeys against the isolated test API and local in-memory email sink.                                                                                | A real mail provider, external staging, or exhaustive proof of every possible UI state. |
+| Command                            | What it exercises                                                                                                                                                | What it does not establish                                                              |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `npm run typecheck`                | TypeScript server and Worker source.                                                                                                                             | Runtime or database correctness.                                                        |
+| `npm run test:server`              | Better Auth, HTTP boundaries, workspace transactions, and ownership using real PostgreSQL in random per-test schemas. Requires a disposable `TEST_DATABASE_URL`. | External email delivery or Cloudflare/DigitalOcean networking.                          |
+| `npm run test:worker`              | Worker path, header, body, timeout, redirect, cookie, and response behavior with controlled upstream fetches.                                                    | A deployed Worker, real Access policy, Tunnel, or Droplet.                              |
+| `npm run test:accounts`            | Account UI journeys against the isolated test API and local in-memory email sink. Requires `TEST_DATABASE_URL`.                                                  | A real mail provider, external staging, or exhaustive proof of every possible UI state. |
+| `npm run test:accounts:production` | The same account journeys against a production-built bundle.                                                                                                     | A deployed environment.                                                                 |
+| `npm run test:operations`          | Python `unittest` for `ops/`, plus the edge-monitor and dashboard Node tests.                                                                                    | Behaviour on the real host or a live alert.                                             |
 
 The account integration tests require a real, disposable PostgreSQL database.
 Do not point `TEST_DATABASE_URL` at production. Fixtures create and drop random
 schemas, so the test role needs schema-create/drop rights within that database.
-See [account release readiness](accounts/release-readiness.md) for actual
-results and limits on this branch.
+See [account release readiness](accounts/release-readiness.md) for
+the original account candidate's results and limits, and the
+[dated release records](qa/README.md#release-records) for later releases.
 
 Run tests from the repository root. Playwright starts a fresh Vite server bound to `127.0.0.1:5173` with a strict port; if that port is occupied, stop the other server before running the suite. It reuses an existing server only when `PLAYWRIGHT_REUSE_SERVER=1` is explicitly set outside CI. The production suite builds first, then starts a fresh preview server on `127.0.0.1:4173`; it never reuses an existing server. Linux hosts may require `npx playwright install-deps chromium firefox webkit` with suitable OS permissions.
 
 Both configurations set `retries: 0`, so failures are reported on the first run and are not hidden by automatic retries. On failure, Playwright retains traces under `test-results/dev/` or `test-results/production/`; CI uploads `test-results/` and HTML reports under `playwright-report/` as artifacts. To run the same required matrix as CI, install the pinned browsers and Linux dependencies with `npx playwright install --with-deps chromium firefox webkit`, then run the commands above. The GitHub Actions workflow is configured for pushes and pull requests using Node.js 24 on Ubuntu 24.04 in `.github/workflows/ci.yml`; the hosted evidence in [the historical QA report](qa/hosted-ci-evidence.json) covers the prior browser-only candidate and must not be counted as account or cloud staging evidence. CI emits Playwright GitHub annotations as well as HTML reports. Production diagnostics run after a failed development step if the build succeeded and the job was not cancelled; the development failure still fails the job.
 
 ## Test organization
+
+The table lists selected files. `unit/`, `tests/`, `server/tests/` and
+`worker/tests/` hold the full set.
 
 | File                                | Coverage                                                                                                                                                                 |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -54,7 +60,7 @@ Both configurations set `retries: 0`, so failures are reported on the first run 
 | `tests/ui-controls.spec.js`         | Reachable UI controls and navigation actions                                                                                                                             |
 | `tests/ui-coverage-gaps.spec.js`    | Shell shortcuts, empty-state actions, active resume, cancellation, invalid forms, and dialog dismissal                                                                   |
 | `tests/security-release.spec.js`    | Malformed imports, literal untrusted text, external-request checks, and download failure feedback                                                                        |
-| `tests/responsive.spec.js`          | Nine viewport widths from 320 to 1920 px, large content, short landscape navigation, local fonts, reduced motion, and history ordering                                   |
+| `tests/responsive.spec.js`          | Twelve viewport widths from 320 to 1920 px, large content, short landscape navigation, local fonts, reduced motion, and history ordering                                 |
 | `tests/accessibility.spec.js`       | axe scans of main pages and dialogs on desktop and mobile                                                                                                                |
 | `tests/production.spec.js`          | Production-build load and representative desktop/mobile workflows across Chromium, Firefox, and WebKit projects                                                          |
 | `server/tests/auth.test.ts`         | Better Auth verification, password recovery, TOTP/recovery codes, session revocation, and account deletion using PostgreSQL and test email sink                          |
@@ -62,7 +68,7 @@ Both configurations set `retries: 0`, so failures are reported on the first run 
 | `server/tests/workspace.test.ts`    | PostgreSQL ownership, revision conflicts, concurrent writes, idempotency retention, validation, timestamps, and cascade                                                  |
 | `worker/tests/gateway.test.ts`      | Fixed upstream allow-list, service-header filtering, redirects, body limits, and error handling                                                                          |
 | `server/tests/redteam.test.ts`      | Red-team regressions RT-01–RT-19: gateway bypass, redirects, per-account and per-member password limits, mail budget, write budget, endpoint allowlist, session lifetime |
-| `worker/tests/redteam.test.ts`      | Red-team regressions EDGE-01–EDGE-08: body caps, header and cookie allowlists, API security headers, cross-site and client-IP checks                                     |
+| `worker/tests/redteam.test.ts`      | Red-team regressions EDGE-01–EDGE-09: body caps, header and cookie allowlists (FORMA cookies only), API security headers, cross-site and client-IP checks                |
 | `tests/legal.spec.js`               | Privacy Policy and Terms of Use pages: reachability, required sections, axe WCAG 2.2 AA, phone width                                                                     |
 | `unit/redteam-release.test.js`      | Red-team regressions FE-01, FE-03, FE-04: workspace size bounds, restore pinned to the reviewed revision, one-time guest import                                          |
 | `tests/accounts-ui.spec.js`         | Account screens and workflows against isolated test services; consult release readiness for final outcomes                                                               |

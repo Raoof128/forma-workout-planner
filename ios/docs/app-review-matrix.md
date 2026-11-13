@@ -1,5 +1,9 @@
 # App Review readiness matrix
 
+> **Historical record, 23 October 2026.** This matrix was written for the first,
+> guest-only native milestone. Accounts and in-app account deletion have shipped
+> since. The 1.0 status is in the [submission checklist](app-store-submission.md).
+
 Recorded 23 October 2026. The project is an **offline guest development slice**.
 These are engineering gates, not a legal opinion or promise that Apple will
 approve a later submission. The supplied plans are research references; the
