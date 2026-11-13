@@ -58,6 +58,21 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-11-13 — Give the Verify job 100 minutes
+
+- **Scope:** both CI runs of `191b4a7` were cancelled at the 70-minute limit.
+- **Summary:** every step passed up to the last one, the production-built
+  account browser suite, which was still running when the job hit its limit
+  (dev browser suite 27 minutes, production smoke 8, account suite 18). The
+  merged branches added tests; the limit is now 100 minutes. This supersedes
+  the 70-minute note in the 2026-10-2x entries. No assertion, retry or timeout
+  inside a test changed.
+- **Files:** `.github/workflows/ci.yml`, `CLAUDE.md`, `AGENT.md`, `CHANGELOG.md`.
+- **Verification:** Native iOS run 43326656468 passed on `191b4a7`, including
+  the offline delete UI test fixed in the previous entry. The Verify job has
+  not passed yet; a cancelled run is not a pass.
+- **Follow-ups:** not merged, not deployed.
+
 ### Raouf: 2026-11-13 — Fix two tests the 1.0 merge left out of step
 
 - **Scope:** CI on PR #48 failed in three places.
