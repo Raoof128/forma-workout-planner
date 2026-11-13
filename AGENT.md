@@ -77,8 +77,18 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
   journey, restore drill or alert test was run.
 - **Follow-ups:** **do not roll the API back** once a member has synced a
   Watch summary; older images reject the field. Open: hands-on Watch checks,
-  the App Store Connect record, screenshots and upload. PRs #43, #37 and #38
-  are contained in `main`.
+  the App Store Connect record, screenshots and upload. PRs #43 and #37 were
+  marked merged by GitHub; #38 was closed as superseded (its commits reached
+  `main` through #48). This record is PR #49. The iPhone Air and the Apple
+  Watch Ultra 3 both run 1.0.0 (1) built from `integ/app-store-1.0`; the
+  Watch was re-paired in Xcode after RemotePairing 1035, and the
+  `app-store-connect` export created the distribution certificate and store
+  profiles for all four bundles.
+- **Durable rules from this release:** check the image tag on the host
+  before describing a release's size (the logs lagged the host by one image);
+  after merging branches that both changed the tab bar or accessibility
+  roles, run the account and UI suites before trusting unit results; a run
+  cancelled at the job limit is not a pass, so raise the limit and rerun.
 
 ### Raouf: 2026-11-13 — Give the Verify job 100 minutes
 
