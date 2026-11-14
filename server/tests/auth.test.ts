@@ -752,7 +752,9 @@ test("Better Auth account journeys use verified email, secure cookies, protected
   assert.equal(replayedNewAddressVerification.response.statusCode, 302);
   assert.match(
     String(replayedNewAddressVerification.response.headers.location ?? ""),
-    /error=USER_NOT_FOUND/,
+    // Better Auth after 1.7.12 reports a spent link as an invalid token; earlier
+    // versions reported the missing pending user.
+    /error=INVALID_TOKEN/,
   );
   const unchangedEmail = await pool.query<{ email: string }>(
     `SELECT email FROM "user" WHERE id = $1`,
