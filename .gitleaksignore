@@ -32,3 +32,5 @@ d770a6cb47c4c48fb1334f1d7804cd9564c0b732:docs/audits/forma-runtime-quality-2026-
 09f15bcde4fc1edce2bfc51982b00cc88319f631:server/tests/backend-hardening.test.ts:generic-api-key:458
 09f15bcde4fc1edce2bfc51982b00cc88319f631:server/tests/backend-hardening.test.ts:generic-api-key:459
 8218b80d394ddd3d637567b0bbeefd5a642cd39b:docs/qa/frontend-audit-2026-11-05/evidence/final-live-postflight.json:generic-api-key:5
+# Container image tag (`forma-api:<release>-<commit>`) in the 1.0 release record, not credential material.
+1a25bd9df8bbc3f3df2190f8aa241ccc6e3e942c:docs/qa/app-store-1.0-2026-11-13/README.md:generic-api-key:15
