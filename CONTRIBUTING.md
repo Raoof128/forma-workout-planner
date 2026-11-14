@@ -31,6 +31,6 @@ Do not change the backup version or accepted fields without documenting compatib
 
 For bugs, include the browser/version, viewport if relevant, steps to reproduce, expected/actual behavior, and whether site storage was available. Use a minimal synthetic example for backup issues. Do not publish private workout logs, credentials, or unredacted browser data.
 
-For suspected vulnerabilities, do not include exploit details, credentials, or private workout data in a public issue. Follow [SECURITY.md](SECURITY.md) to check whether the repository offers a private reporting route. If no private route is available, open a non-sensitive issue asking the maintainer for a private contact method.
+For suspected vulnerabilities, do not include exploit details, credentials, or private workout data in a public issue. Report it privately as described in [SECURITY.md](SECURITY.md).
 
-The repository does not currently grant a project-wide software license. Bundled font licenses apply to those assets separately.
+All rights in the project are reserved; see [LICENSE](LICENSE). Bundled fonts and imported exercise content keep their own licences.

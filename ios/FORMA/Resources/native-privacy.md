@@ -5,8 +5,8 @@ Version 1.0 · 13 November 2026
 FORMA for iPhone is a workout planner that works on its own and can
 optionally sign in to a FORMA account. Without an account it keeps your training
 on the iPhone. With one, your name, email address and workout records are also
-sent to, and stored in, that account so they match the FORMA website. The same
-bundled notice is shown in the app (You, Privacy & your data).
+sent to, and stored in, that account so they match the FORMA website. This is a
+readable copy of the notice the app shows under You, Privacy & your data.
 
 ## Without an account
 
@@ -80,9 +80,12 @@ recorded on this iPhone without an account.
 If you start a workout on Apple Watch, FORMA asks for Apple Health permission to
 save workouts and to read and save heart rate and active energy. The Watch
 records them during the workout and saves the workout to Apple Health when it
-ends. Your iPhone shows the live values but keeps them out of your FORMA records
-and exports, and FORMA does not send them anywhere, with or without an account.
-Manage these permissions in the Health app. Training without a Watch needs no
+ends. Your iPhone shows the live values. When you finish, FORMA saves a summary
+with that workout: the time recorded, average and highest heart rate, and active
+energy. The summary is part of your training records and exports; signed in, it
+is sent to your account with the rest of the workout and shown on the website.
+The individual readings stay in Apple Health. Discarding the Watch recording
+keeps no summary. Manage these permissions in the Health app. Training without a Watch needs no
 Health permission. Bundled exercise guides retain their source and licence
 information.
 
@@ -90,7 +93,8 @@ information.
 
 Widget sharing starts off for each training space. Enable it in You to share a
 small read-only snapshot with FORMA’s own widget extension: next routine name
-and identifier, exercise count and estimated time, saved active set counts, and
+and identifier, exercise count and estimated time, active workout name and saved
+set counts, and
 weekly workout totals and trained days. The main database stays private. The
 snapshot contains no email, credentials, notes, full history or Health readings.
 It uses complete file protection and is excluded from backups. Widget content

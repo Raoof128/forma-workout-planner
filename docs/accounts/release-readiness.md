@@ -1,11 +1,10 @@
 # Account release readiness
 
-**Latest maintenance release, 26 October 2026:** the runtime audit is deployed
-to staging and production. Both passed the defined anonymous HTTP and browser
-smoke; existing accessibility findings remain follow-ups. Completed temporary
-release-access cleanup and ongoing application CI are recorded separately in the
-[dated release receipt](../qa/runtime-quality-2026-10-26/README.md). The launch
-decision below remains the historical 13 October record.
+**Latest release, 13 November 2026:** the 1.0 back end was released to staging
+and then production; see the
+[release record](../qa/app-store-1.0-2026-11-13/README.md). Every dated release
+since launch is listed in the [QA index](../qa/README.md#release-records). The
+launch decision below remains the historical 13 October record.
 
 **Launch status, 13 October 2026:** GO for the owner-authorised controlled
 production activation. Hosted staging lifecycle, isolated production services,
@@ -17,7 +16,9 @@ The report below is historical evidence from the original implementation
 candidate. Its unavailable SSH, undeployed resources and NO-GO statements are
 superseded by those current records, not descriptions of today's environment.
 
-**NO-GO for external release.** The implementation and local deployment checks
+## Original candidate report, 12 October 2026 (historical)
+
+**Verdict at that time: NO-GO for external release.** The implementation and local deployment checks
 are complete enough for review; required hosted staging and operational gates
 remain unverified. This report does not claim a Cloudflare or DigitalOcean
 deployment. The candidate is on `feature/self-hosted-accounts`, in
@@ -77,7 +78,7 @@ requires explicit migration review, and exposes save/conflict recovery.
 
 The operational configuration has no public database/API port, separate runtime
 and migration roles, a non-root read-only API container, and encrypted logical
-backups. Committed `.invalid` origins are placeholders, not hosted endpoints.
+backups. At that time the committed origins were `.invalid` placeholders; `wrangler.jsonc` now commits the staging and production hostnames.
 
 ## Executed local evidence
 
@@ -97,7 +98,7 @@ connectivity.
 - Account development matrix: **45/45 passed on `ebbec2e`**, all five projects 9/9.
 - Account production-built matrix: **45/45 passed on `ebbec2e`**, all five projects 9/9. Both final runs used the restored, unchanged candidate; provisional runs with working-tree edits are excluded.
 - [Branded account email previews](email-previews/README.md) include HTML/plaintext verification, password reset, email-change approval and deletion messages. Desktop/mobile browser captures were inspected. These are synthetic previews, not email-client or delivered-message evidence.
-- Actual profile screenshots were inspected at 320/390/1536px after fixing a Firefox form-grid overflow with a long email. Representative [mobile](../qa/accounts-screenshots/profile-320.png) and [desktop](../qa/accounts-screenshots/profile-1536.png) captures use synthetic test accounts. Final-source Security, Training data and Privacy captures were also inspected at390/1536px with no horizontal overflow; expanded/error/loading visual states still require audit.
+- Actual profile screenshots were inspected at 320/390/1536px after fixing a Firefox form-grid overflow with a long email. Representative [mobile](../qa/accounts-screenshots/profile-320.png) and [desktop](../qa/accounts-screenshots/profile-1536.png) captures use synthetic test accounts. Final-source Security, Training data and Privacy captures were also inspected at 390/1536px with no horizontal overflow; expanded/error/loading visual states still require audit.
 - Lint, formatting, TypeScript, frontend/server builds, documentation links and
   patch whitespace passed. Production dependency audit reported zero findings.
 - [Container evidence](container-evidence.json): Docker image built with strict
@@ -139,7 +140,7 @@ the prior `86cf` baseline and is not account-release acceptance.
 | H — Security | Bounded source review PASS; hosted pending | No unresolved high finding in the reviewed candidate. Live origin access, operational controls and provider configuration remain unverified. |
 | I — E2E/accessibility | Browser matrices PASS; control-state coverage incomplete | Final account matrices passed 45+45. The 74-control inventory remains PARTIAL for missing per-control keyboard/error/loading evidence. |
 | J — Backups/recovery | Local isolated restore PASS; operations pending | Real encrypted restore drill passed. Off-host storage, scheduled uploads, access controls and alerting remain unverified. |
-| K — Documentation | Maintained for this candidate | API/schema/operations/security/sources and truthful evidence are present; deployment values intentionally remain placeholders. |
+| K — Documentation | Maintained for this candidate | API/schema/operations/security/sources and truthful evidence are present; deployment values were placeholders at that time. |
 | L — Independent review | Bounded candidate acceptance | See the immutable-SHA review; this is not approval for release while mandatory gates remain incomplete. |
 
 ## Review and remaining limitations

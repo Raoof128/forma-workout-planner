@@ -1,5 +1,9 @@
 # Frontend design audit and polish
 
+> **Historical record, 12 October 2026.** This describes the browser-only version
+> of FORMA. Later front-end audits are listed in the
+> [documentation index](README.md#audits).
+
 Completed 12 October 2026 (Australia/Sydney) for the browser-local FORMA app. This pass follows the functional repairs in [audit-fixes.md](audit-fixes.md).
 
 ## Approach

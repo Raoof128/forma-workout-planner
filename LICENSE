@@ -1,0 +1,19 @@
+Copyright (c) 2026 Raouf Abedini. All rights reserved.
+
+This repository is published so that the source code and its documentation can
+be read and reviewed. No licence is granted to use, copy, modify, distribute or
+sublicense the software, in whole or in part, without the prior written
+permission of the copyright holder.
+
+Third-party material keeps its own licence and is not covered by this notice:
+
+- The Barlow Condensed and DM Sans fonts are under the SIL Open Font License;
+  the licence texts are in public/fonts/.
+- Imported exercise guides, photographs and demonstration clips keep the
+  licence and attribution recorded with each entry; see
+  docs/research/runtime-catalog.md.
+- Open-source dependencies are under their own licences, as listed in
+  package-lock.json.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED.

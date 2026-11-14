@@ -24,8 +24,9 @@ development proxy and real-PostgreSQL test requirements. Set
 ## Cloudflare Worker
 
 `wrangler.jsonc` serves the Vite `dist/` output and runs Worker code before
-static-asset routing for `/api` and `/api/*`. The Worker allow-lists health,
-Better Auth, workspace, and account session routes; unknown API paths return
+static-asset routing for every request (`run_worker_first: true`). The Worker
+allow-lists health, Better Auth, workspace, account session, coach-token
+management and bearer coach routes; unknown API paths return
 JSON errors and do not fall through to the SPA shell. Authenticated and API
 responses are not cached. Static responses receive the configured security
 headers.
@@ -57,10 +58,9 @@ API responses remain uncached and protected by the same ownership rules.
 For catalog identity/schema changes, update and validate each matching private
 API before its account frontend. Artwork, client guide wording and presentation
 changes do not require restarting an unchanged API. Preserve member data, secrets,
-resource limits and unrelated services. In this managed environment set
-`XDG_CONFIG_HOME=/workspace/forma-cloudflare-config` for Wrangler's writable
-configuration and logs. See the [latest frontend deployment](qa/site-sweep/deployment/README.md)
-and [catalog/API release record](research/catalog-quality.md).
+resource limits and unrelated services. Wrangler needs a writable configuration
+directory; set `XDG_CONFIG_HOME` if the default is read-only. See the
+[dated release records](qa/README.md#release-records) and [catalog/API release record](research/catalog-quality.md).
 
 ## Private API and PostgreSQL
 
@@ -74,21 +74,22 @@ Use the separate migration role for versioned migrations and the runtime role
 for API access. Do not copy production values into the Worker bundle or
 development environment. On a private-only DigitalOcean host, verify outbound
 DNS and routing (including NAT if needed) for Tunnel, security updates, email,
-and backups. Official DigitalOcean documentation retrieval was blocked in this
-execution environment; see [source status](accounts/sources.md).
+and backups. [Source status](accounts/sources.md) lists the official
+documentation that was consulted.
 
 The [deployment record](security/deployment-record.md) records the original
 private staging stack at `/opt/forma-staging`, its resource limits, and the
 completed live probes. Current production operations are recorded in the
 [production launch record](accounts/production-launch.md). Update only the intended
 FORMA Compose project on the shared host.
-The expanded catalog and timed workspace fields require the matching API build
-before deploying the new account frontend; the previous API rejects new IDs.
+Whenever the catalogue, `src/storage.js` or the workspace fields change, release
+the matching API before the account frontend; an older API rejects new IDs and
+fields.
 
-Direct cloud sandbox SSH remains blocked before authentication. The verified
-[Cloudflare Access SSH method](cloud-ssh-access.md) provides a protected
-alternative using the existing Tunnel. Do not change host firewalls or unrelated
-services to solve sandbox egress.
+Host maintenance uses key-only SSH. From a managed cloud environment that cannot
+reach the host directly, the [Cloudflare Access SSH method](cloud-ssh-access.md)
+uses the existing Tunnel. Do not change host firewalls or unrelated services to
+work around a network restriction.
 
 ## Deployment order, rollback, and recovery
 

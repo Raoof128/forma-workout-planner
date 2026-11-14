@@ -1,5 +1,9 @@
 # First native milestone: observed verification
 
+> **Historical record, 23 to 26 October 2026.** This log covers the first native
+> milestones. The 1.0 release status is in the
+> [submission checklist](app-store-submission.md).
+
 23 October 2026, Australia/Sydney. Starting repository commit:
 `678b48325189f83beb942bc6759e7c519eb26b19`. This records the local draft, not a
 published app or an Apple approval.

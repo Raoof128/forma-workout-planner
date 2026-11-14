@@ -1,25 +1,25 @@
 # App Store submission checklist
 
-Recorded 13 November 2026 against `integ/app-store-1.0` (`main` at `2de16d3`,
-the readiness fixes and PR #43). Apple's pages were read on that date; recheck
+Recorded 13 November 2026 against `integ/app-store-1.0`, which was merged into
+`main` the same day as `3a2f2fc` (PR #48). Apple's pages were read on that date; recheck
 the [upcoming requirements](https://developer.apple.com/news/upcoming-requirements/)
 and the [App Review Guidelines](https://developer.apple.com/app-store/review/guidelines/)
 on the day of submission. Nothing here has been uploaded or declared to Apple.
 
 ## Verified in the Release archive
 
-| Check             | Evidence                                                                                                                                                                       |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| SDK               | Xcode 27.2, `iphoneos27.2` and `watchos27.2` (Apple requires Xcode 26+ now, the 27 SDKs from April 2027)                                                                       |
-| Watch 64-bit      | `FORMAWatch` contains `arm64` and `arm64_32`                                                                                                                                   |
-| Privacy manifests | One in each of the app, Watch app, widget and Live Activity extensions; the widget declares file timestamp reason `C617.1`; no other required-reason API in source or binaries |
-| Third-party SDKs  | None                                                                                                                                                                           |
-| Icons             | 1024×1024, no alpha; dark and tinted variants for iPhone                                                                                                                       |
-| HealthKit         | Purpose strings on iPhone and Watch; no Clinical Health Records entitlement                                                                                                    |
-| Export compliance | `ITSAppUsesNonExemptEncryption` is `false` (HTTPS and SHA-256 only)                                                                                                            |
-| Version           | 1.0.0 (1)                                                                                                                                                                      |
-| Shipped copy      | No "development build" or "prototype" wording; `unit/ios-resources.test.js` guards it                                                                                          |
-| Debug hooks       | `--ui-testing` and staging Access headers are compiled out of Release                                                                                                          |
+| Check             | Evidence                                                                                                                                                                                      |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| SDK               | Xcode 27.2, `iphoneos27.2` and `watchos27.2` (Apple requires Xcode 26+ now, the 27 SDKs from April 2027)                                                                                      |
+| Watch 64-bit      | `FORMAWatch` contains `arm64` and `arm64_32`                                                                                                                                                  |
+| Privacy manifests | One in each of the app, Watch app, widget and Live Activity extensions; the widget declares file timestamp reason `C617.1`; no other required-reason API in source or binaries                |
+| Third-party SDKs  | None                                                                                                                                                                                          |
+| Icons             | 1024×1024, no alpha; dark and tinted variants for iPhone                                                                                                                                      |
+| HealthKit         | Purpose strings on iPhone and Watch; no Clinical Health Records entitlement                                                                                                                   |
+| Export compliance | `ITSAppUsesNonExemptEncryption` is `false` (HTTPS and SHA-256 only)                                                                                                                           |
+| Version           | 1.0.0 (1)                                                                                                                                                                                     |
+| Shipped copy      | The in-app privacy notice (`legal.json`) has no "development build" or "prototype" wording; `unit/ios-resources.test.js` guards it                                                            |
+| Debug hooks       | The `--ui-testing` workspace partition and reset, and the staging Access headers, are compiled out of Release. In any build the argument also silences rest notifications and Live Activities |
 
 ## Open before submission
 
@@ -36,8 +36,11 @@ on the day of submission. Nothing here has been uploaded or declared to Apple.
    (distribution certificate and store profiles for all four bundles). Upload
    needs the App Store Connect app record first.
 4. **Simulator and server suites.** App and UI tests, `test:server` and
-   `test:accounts` were not run locally; CI runs them on the pull request.
-5. **Accessibility.** VoiceOver and Dynamic Type passes on device.
+   `test:accounts` were not run locally. CI ran them on PR #48 and passed; see
+   the [release record](../../docs/qa/app-store-1.0-2026-11-13/README.md).
+5. **Screenshots.** iPhone and Apple Watch sets from the final binary, at the
+   sizes in the table below.
+6. **Accessibility.** VoiceOver and Dynamic Type passes on device.
 
 ## App Store Connect entries
 
@@ -54,7 +57,7 @@ on the day of submission. Nothing here has been uploaded or declared to Apple.
 | Export compliance        | Answered by the Info.plist key                                                                                                                             |
 | iPhone screenshots       | At least one set at 1206×2622 or 1179×2556, from the final binary with synthetic data                                                                      |
 | Apple Watch screenshots  | One size; 422×514 from the owner's Apple Watch Ultra 3 (416×496 if taken on Series 10 to 12)                                                               |
-| Review notes             | Guest use needs no account. If accounts ship: a demo account with two-step verification off, and how to reach Apple Watch features                         |
+| Review notes             | Guest use needs no account. Accounts ship in 1.0: a demo account with two-step verification off, and how to reach Apple Watch features                     |
 | Sign in with Apple       | Not required: only FORMA's own email sign-up is offered (4.8)                                                                                              |
 
 ## Not established

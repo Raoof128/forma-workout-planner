@@ -2,7 +2,7 @@
 
 Added 26 October 2026. FORMA's Watch app records a workout with HealthKit while
 the iPhone logs the sets. Requirement IDs refer to the
-[Apple Watch requirements matrix](https://github.com/Raoof128/forma-workout-planner/blob/audit/apple-watch-readiness-2026-10-26/docs/audits/apple-watch-readiness-2026-10-26/APPLE_WATCH_REQUIREMENTS.md)
+[Apple Watch requirements matrix](https://github.com/Raoof128/forma-workout-planner/blob/main/docs/audits/apple-watch-readiness-2026-10-26/APPLE_WATCH_REQUIREMENTS.md)
 (AP01–AP37).
 
 ## What the person sees
@@ -71,9 +71,10 @@ Built on macOS with Xcode 27.1 (iOS 27.1 / watchOS 27.0 SDKs): iPhone + embedded
 Watch app, Debug and Release, simulator and device, Swift 6 strict concurrency,
 no warnings. Core tests and the web contract pass.
 
-**Not verified**: nothing ran on a simulator or a paired iPhone and Watch. Apple's
-multi-device workout sample requires physical devices (AP35). Before relying on
-it, test on the actual iPhone and the owner's Watch (reports `Watch7,12`; confirm the model and test its smallest case size):
+**Device status:** on 13 November 2026 a signed 1.0 build was installed on the
+owner's iPhone and Apple Watch Ultra 3. The hands-on checks below have not been
+recorded yet; the [submission checklist](app-store-submission.md) tracks them.
+Apple's multi-device workout sample requires physical devices (AP35):
 
 - Watch detection states, permission prompts on both devices, and starting from
   the iPhone sheet and from the Watch alone.
@@ -86,6 +87,6 @@ it, test on the actual iPhone and the owner's Watch (reports `Watch7,12`; confir
   workouts record almost no heart-rate samples on Series 10. Check sample density
   on the owner's Watch.
 
-A development team, bundle IDs `dev.raoufabedini.forma` and
-`dev.raoufabedini.forma.watchkitapp`, and the HealthKit capability must be set
-up in the developer account before the apps can be signed and installed.
+The development team, the bundle IDs `dev.raoufabedini.forma` and
+`dev.raoufabedini.forma.watchkitapp`, and the HealthKit capability are set up in
+the developer account; the 13 November build was signed and installed with them.

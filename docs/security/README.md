@@ -26,23 +26,23 @@ executed certification or a current count of passing controls.
 
 ## Documents
 
-| Document                                                 | Contents                                                              |
-| -------------------------------------------------------- | --------------------------------------------------------------------- |
-| [Standards and scope](standards-and-scope.md)            | Engagement scope, standards and versions, exclusions                  |
-| [Threat model](threat-model.md)                          | Architecture, trust boundaries, STRIDE register, compound threats     |
-| [Authentication](authentication.md)                      | Sign-up, sign-in limits, passwords, reset, 2FA, sessions              |
-| [Authorisation](authorisation.md)                        | Member isolation and the route inventory                              |
-| [Cloudflare](cloudflare.md)                              | Worker gateway behaviour and required Access and Tunnel configuration |
-| [Droplet hardening](droplet-hardening.md)                | Container controls and the host checklist                             |
-| [Database security](database-security.md)                | Roles, isolation, integrity and backups                               |
-| [Supply chain](supply-chain.md)                          | Dependencies, scanners, CI and repository settings                    |
-| [Privacy](privacy.md)                                    | Data inventory, retention, export and deletion                        |
-| [Incident response](incident-response.md)                | Detection requirements and runbooks                                   |
-| [Penetration test report](penetration-test-report.md)    | Findings, fixes, regression tests and residual risk                   |
-| [Security coverage matrix](security-coverage-matrix.csv) | Control-by-control traceability                                       |
-| [ASVS mapping](asvs-l2-mapping.csv)                      | OWASP ASVS 5.0.0 Level 1 and 2 requirement mapping                    |
-| [Release verdict](release-security-verdict.md)           | Gates S01–S20 and the GO/NO-GO decision                               |
-| [Deployment record](deployment-record.md)                | What is live, where, credentials inventory and rollback               |
+| Document                                                 | Contents                                                                       |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| [Standards and scope](standards-and-scope.md)            | Engagement scope, standards and versions, exclusions                           |
+| [Threat model](threat-model.md)                          | Architecture, trust boundaries, STRIDE register, compound threats              |
+| [Authentication](authentication.md)                      | Sign-up, sign-in limits, passwords, reset, 2FA, sessions                       |
+| [Authorisation](authorisation.md)                        | Member isolation and the route inventory                                       |
+| [Cloudflare](cloudflare.md)                              | Worker gateway behaviour and required Access and Tunnel configuration          |
+| [Droplet hardening](droplet-hardening.md)                | Container controls and the host checklist                                      |
+| [Database security](database-security.md)                | Roles, isolation, integrity and backups                                        |
+| [Supply chain](supply-chain.md)                          | Dependencies, scanners, CI and repository settings                             |
+| [Privacy](privacy.md)                                    | Data inventory, retention, export and deletion                                 |
+| [Incident response](incident-response.md)                | Detection requirements and runbooks                                            |
+| [Penetration test report](penetration-test-report.md)    | Findings, fixes, regression tests and residual risk                            |
+| [Security coverage matrix](security-coverage-matrix.csv) | Control-by-control traceability                                                |
+| [ASVS mapping](asvs-l2-mapping.csv)                      | OWASP ASVS 5.0.0 Level 1 and 2 requirement mapping                             |
+| [Release verdict](release-security-verdict.md)           | Gates S01–S20 and the GO/NO-GO decision                                        |
+| [Deployment record](deployment-record.md)                | Initial 13 October deployment, credentials inventory and rollback (historical) |
 
 ## Running the security tests
 
