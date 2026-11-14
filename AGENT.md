@@ -58,6 +58,14 @@ TEST_DATABASE_URL=postgres://… npm run test:accounts
 
 ## Log
 
+### Raouf: 2026-11-14 — Dependency updates merged
+
+- Scope: `ops/Dockerfile`, `package.json`, `package-lock.json`, `server/tests/auth.test.ts`.
+- Summary: Merged Dependabot PR #40 (API image base `node:26.12.1-bookworm-slim` to `node:26.13.0-bookworm-slim`, digest-pinned) and PR #46 (`better-auth` 1.7.12 to 1.7.20, `fastify` 5.12.7 to 5.12.8, `lucide-react` 1.61.0 to 1.71.0, `motion` 14.6.0 to 14.12.0). Better Auth after 1.7.12 reports a replayed email-change link as `error=INVALID_TOKEN` rather than `USER_NOT_FOUND`; the auth test now expects the new code.
+- Verification: every CI check passed on both PRs before merge. The native iOS job needed reruns on PRs #46 and #50 and the development browser suite one rerun on #40; the failures were in different simulator and browser tests each time, in code the PRs did not change.
+- Not done: no staging or production deploy. Better Auth 1.7.20 adds a runtime schema check (`advanced.database.validateSchema`); confirm sign-in works on staging under the restricted database role before the next API release.
+- Open: PR #47 (development dependencies, including Playwright 1.65.0) stays unmerged; `tests/accounts-ui.spec.js:19` crashes the page in Firefox in two runs.
+
 ### Raouf: 2026-11-14 — Documentation audit and branch clean-up
 
 - **Scope:** the owner asked for every finished branch to be merged or removed safely and for the documentation to be audited so an outside technical reviewer can read the repository cold.
