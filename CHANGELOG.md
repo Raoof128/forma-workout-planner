@@ -8,7 +8,7 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 - Scope: `docs/audits/forma-web-frontend-2026-11/SKILL_EVIDENCE.md`, `docs/audits/forma-web-frontend-2026-11/SOURCE_REGISTER.json`, `ios/docs/audits/native-frontend-2026-11/DESIGN_SYSTEM.md`.
 - Summary: Three audit records carried the author's home-directory paths. They now read `<repo>` and `~`. No code, configuration or other evidence changed.
-- Verification: `git grep /Users/` returns nothing; `SOURCE_REGISTER.json` still parses.
+- Verification: a search of the tree finds no home-directory path; `SOURCE_REGISTER.json` still parses.
 - Not done: nothing deployed.
 
 ### Raouf: 2026-11-14 — Dependency updates merged
