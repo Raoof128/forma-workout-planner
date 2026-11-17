@@ -4,7 +4,7 @@
 
 ## Skills actually loaded
 
-Frontend Design: `/Users/raoof.r12/.agents/skills/frontend-design/SKILL.md`, read fully. UI UX Pro Max: official source revision `dd9a1b4cf9f67ca2e326f646d93e101b2778db30`, CLI manifest 2.5.0; full skill, relevant rules and supported searches read/run. See [skill evidence](SKILL_EVIDENCE.md). The generated marketing palette/fonts were rejected as a poor native product fit. SwiftUI UI Patterns and SwiftUI Performance Audit were also read.
+Frontend Design: `~/.agents/skills/frontend-design/SKILL.md`, read fully. UI UX Pro Max: official source revision `dd9a1b4cf9f67ca2e326f646d93e101b2778db30`, CLI manifest 2.5.0; full skill, relevant rules and supported searches read/run. See [skill evidence](SKILL_EVIDENCE.md). The generated marketing palette/fonts were rejected as a poor native product fit. SwiftUI UI Patterns and SwiftUI Performance Audit were also read.
 
 Frontend Design informed deliberate hierarchy and the retained single Today hero. UI UX Pro Max informed native touch targets, Dynamic Type reflow, contextual validation and accessibility. Apple API correctness, data integrity and accessibility take precedence over web-specific font, CSS and motion suggestions.
 

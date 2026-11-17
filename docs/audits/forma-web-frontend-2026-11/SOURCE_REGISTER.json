@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "auditDate": "2026-11-04",
-  "repository": "/Users/raoof.r12/Desktop/Raouf/FORMA/forma-workout-planner",
+  "repository": "<repo>",
   "purpose": "Auditable skill and primary-document source register for the website audit; runtime/performance outcomes live in root-owned reports.",
   "datePolicy": "checkedAtUTC is the retrieval/review date, never an invented publication date or assertion that guidance first appeared in 2026.",
   "verificationPolicy": "checkedBy identifies the reviewer who fetched/read the source. Account/root references are merged handoffs, not additional independent fetches. Local source hashes were rechecked when writing this register.",
@@ -69,7 +69,7 @@
     },
     {
       "id": "skill-frontend-design",
-      "path": "/Users/raoof.r12/.agents/skills/frontend-design/SKILL.md",
+      "path": "~/.agents/skills/frontend-design/SKILL.md",
       "sha256": "b81e2ff87ed8fa4d6c377ccb127a7254c9e6a77e3ae94f21e6b514f7bb2945a0",
       "readStatus": "Full local SKILL read during this audit.",
       "upstream": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
