@@ -23,7 +23,7 @@ Both system-level queries proposed a Feature-Rich Showcase / Vibrant & Block-bas
 
 ## Frontend Design
 
-Loaded the full local skill at `/Users/raoof.r12/.agents/skills/frontend-design/SKILL.md`. SHA256: `b81e2ff87ed8fa4d6c377ccb127a7254c9e6a77e3ae94f21e6b514f7bb2945a0`. Its applicable principles were deliberate art direction, clear hierarchy, typography, precise spacing and purposeful motion. The local file carries no verified upstream commit/version. The [official directory](https://github.com/anthropics/skills/tree/main/skills/frontend-design) request returned a restricted-URL error; the readable local skill remained available. No remote-version verification is invented.
+Loaded the full local skill at `~/.agents/skills/frontend-design/SKILL.md`. SHA256: `b81e2ff87ed8fa4d6c377ccb127a7254c9e6a77e3ae94f21e6b514f7bb2945a0`. Its applicable principles were deliberate art direction, clear hierarchy, typography, precise spacing and purposeful motion. The local file carries no verified upstream commit/version. The [official directory](https://github.com/anthropics/skills/tree/main/skills/frontend-design) request returned a restricted-URL error; the readable local skill remained available. No remote-version verification is invented.
 
 ## Applied decisions and public provenance
 
