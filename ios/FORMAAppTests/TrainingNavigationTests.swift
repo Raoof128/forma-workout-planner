@@ -148,6 +148,44 @@ final class TrainingNavigationTests: XCTestCase {
     XCTAssertEqual(countPhrase(2, "exercise"), "2 exercises")
     XCTAssertEqual(countPhrase(1, "completed set"), "1 completed set")
   }
+
+  // A 4-tab row 352 pt wide with 4 pt gaps: each tab is 85 pt, at 0, 89, 178, 267.
+  private let bubbleTrack = TabBubbleTrack(width: 352, count: 4, spacing: 4)
+
+  func testTheBubbleRestsExactlyOnEachTab() {
+    XCTAssertEqual(bubbleTrack.slotWidth, 85)
+    XCTAssertEqual((0..<4).map(bubbleTrack.leading(of:)), [0, 89, 178, 267])
+    // An index outside the row stays on the end tabs.
+    XCTAssertEqual(bubbleTrack.leading(of: -1), 0)
+    XCTAssertEqual(bubbleTrack.leading(of: 9), 267)
+  }
+
+  func testAFingerChoosesTheTabWhoseCentreIsNearest() {
+    XCTAssertEqual(bubbleTrack.index(at: 10), 0)
+    XCTAssertEqual(bubbleTrack.index(at: 86), 0)  // nearer Today's centre (42.5) than Plan's (131.5)
+    XCTAssertEqual(bubbleTrack.index(at: 88), 1)
+    XCTAssertEqual(bubbleTrack.index(at: 222), 2)
+    XCTAssertEqual(bubbleTrack.index(at: 340), 3)
+  }
+
+  func testAFingerPastEitherEndStaysOnTheEndTab() {
+    XCTAssertEqual(bubbleTrack.index(at: -60), 0)
+    XCTAssertEqual(bubbleTrack.index(at: 900), 3)
+    XCTAssertEqual(bubbleTrack.index(at: .nan), 0)
+  }
+
+  func testAHeldBubbleCentresUnderTheFingerAndStaysInsideTheRow() {
+    XCTAssertEqual(bubbleTrack.leading(following: 176), 133.5)
+    XCTAssertEqual(bubbleTrack.leading(following: 5), 0)
+    XCTAssertEqual(bubbleTrack.leading(following: 400), 267)
+  }
+
+  func testAnUnmeasuredRowNeverDividesByZero() {
+    let empty = TabBubbleTrack(width: 0, count: 4, spacing: 4)
+    XCTAssertEqual(empty.slotWidth, 0)
+    XCTAssertEqual(empty.index(at: 50), 3)
+    XCTAssertEqual(TabBubbleTrack(width: 100, count: 0, spacing: 4).index(at: 50), 0)
+  }
 }
 
 final class NextRoutineTests: XCTestCase {

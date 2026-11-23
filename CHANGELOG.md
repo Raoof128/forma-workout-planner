@@ -4,6 +4,14 @@ Notable changes are recorded here. Dates use Australia/Sydney. No versioned rele
 
 ## Unreleased
 
+### Raouf: 2026-11-23 — Drag the tab bar's selection bubble between tabs
+
+- **Scope:** the owner asked for the bubble on the iPhone tab bar to be pressed and dragged between tabs, as on the iOS 26 system tab bar. Checked Apple's current material first: the system tab bar does this itself, but no public API gives a custom bar that behaviour, so FORMA's own bar implements it.
+- **Summary:** `TrainingTabBar` now draws one selection bubble for the whole row instead of a `matchedGeometryEffect` capsule behind each tab. A drag that starts on the row (10 pt minimum, as a high-priority gesture, so a still tap still reaches the tab button) lifts the bubble under the finger; it follows the finger, swells 6% within the bar's 4 pt padding, and the tab under it shows as selected with a selection haptic on each change. Lifting the finger opens that tab with the usual tab haptic and symbol effect; ending over the open tab changes nothing (it is not a re-tap, so it never pops or scrolls). Below full motion the bubble does not follow the finger: it jumps between tabs with a fade. VoiceOver still reports the open tab, not the one under a drag. `TabBubbleTrack` holds the row geometry (slot width, slot positions, nearest tab to a point, held position clamped to the row) as a pure value so it is unit tested.
+- **Files:** `ios/FORMA/DesignSystem/TrainingTabBar.swift`, `ios/FORMAAppTests/TrainingNavigationTests.swift`, `ios/FORMAUITests/TrainingNavigationTests.swift`, `AGENT.md`, `CHANGELOG.md`.
+- **Verification:** `swift test` in `ios/` passed (156 and 18 XCTest cases, 0 failures). `xcodegen generate`, then `xcodebuild build-for-testing` for `generic/platform=iOS` with Xcode 27.2: TEST BUILD SUCCEEDED (app, unit and UI test bundles). Not run: the new `TabBubbleTrack` unit tests and the drag UI test (simulator-hosted; the owner does not use the simulator, and UI tests reset the workspace, so they were not run on the owner's iPhone either). CI's native iOS job will run both. A signed Release build was installed on the owner's iPhone Air with `xcrun devicectl device install app`; the owner tried it and approved it.
+- **Follow-ups:** PR #56 open against `main`; its native iOS job is the first run of the new unit and UI tests. Merge only on green CI and the owner's yes. Confirm the Reduce Motion path on device. The Apple Watch was offline and is unchanged. No web, API or Worker change; nothing to deploy.
+
 ### Raouf: 2026-11-14 — Dependency updates merged
 
 - Scope: `ops/Dockerfile`, `package.json`, `package-lock.json`, `server/tests/auth.test.ts`.

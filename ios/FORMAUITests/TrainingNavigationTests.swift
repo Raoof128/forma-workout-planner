@@ -36,6 +36,46 @@ final class TrainingNavigationTests: XCTestCase {
       app.otherElements["progress-empty"].exists
         || app.staticTexts["No workouts yet"].exists)
   }
+
+  /// The selection bubble can be pressed and dragged along the bar: the tab
+  /// under the finger when it lifts opens, and a drag back to the open tab
+  /// changes nothing.
+  @MainActor
+  func testDraggingTheBubbleOpensTheTabWhereTheFingerLifts() {
+    continueAfterFailure = false
+    let app = XCUIApplication()
+    app.launchArguments = ["--ui-testing", "--reset-workspace"]
+    app.launch()
+    let today = app.trainingTab("Today")
+    XCTAssertTrue(today.waitForExistence(timeout: 20))
+    XCTAssertTrue(today.isSelected)
+
+    let progress = app.buttons["tab-progress"]
+    today.press(forDuration: 0.2, thenDragTo: progress)
+    XCTAssertTrue(progress.waitForSelection(timeout: 5))
+    XCTAssertFalse(today.isSelected)
+
+    // Out and back again: the open tab stays open.
+    progress.press(
+      forDuration: 0.2, thenDragTo: app.buttons["tab-you"], withVelocity: .slow,
+      thenHoldForDuration: 0.1)
+    XCTAssertTrue(app.buttons["tab-you"].waitForSelection(timeout: 5))
+    let you = app.buttons["tab-you"]
+    let youCentre = you.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+    youCentre.press(
+      forDuration: 0.2, thenDragTo: youCentre.withOffset(CGVector(dx: -25, dy: 0)))
+    XCTAssertTrue(you.isSelected)
+  }
+}
+
+extension XCUIElement {
+  @MainActor
+  fileprivate func waitForSelection(timeout: TimeInterval) -> Bool {
+    let selected = NSPredicate(format: "isSelected == true")
+    return XCTWaiter.wait(
+      for: [XCTNSPredicateExpectation(predicate: selected, object: self)], timeout: timeout)
+      == .completed
+  }
 }
 
 extension XCUIApplication {

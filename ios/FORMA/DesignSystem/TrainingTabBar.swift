@@ -59,6 +59,39 @@ struct TabBarScrollState {
   }
 }
 
+/// Where the selection bubble sits on the tab row, and which tab a finger on
+/// the row is over. The tabs share the row equally, with a fixed gap between.
+struct TabBubbleTrack: Equatable {
+  let width: CGFloat
+  let count: Int
+  let spacing: CGFloat
+
+  var slotWidth: CGFloat {
+    guard count > 0, width.isFinite else { return 0 }
+    return max(0, (width - spacing * CGFloat(count - 1)) / CGFloat(count))
+  }
+
+  /// The leading edge of the tab at `index`.
+  func leading(of index: Int) -> CGFloat {
+    CGFloat(min(max(index, 0), max(count - 1, 0))) * (slotWidth + spacing)
+  }
+
+  /// The tab whose centre is nearest `x`; past either end, the end tab.
+  func index(at x: CGFloat) -> Int {
+    let stride = slotWidth + spacing
+    guard count > 0, stride > 0, x.isFinite else { return 0 }
+    let nearest = Int(((x - slotWidth / 2) / stride).rounded())
+    return min(max(nearest, 0), count - 1)
+  }
+
+  /// The bubble's leading edge while a finger holds it at `x`: centred under
+  /// the finger and kept inside the row.
+  func leading(following x: CGFloat) -> CGFloat {
+    guard x.isFinite else { return 0 }
+    return min(max(x - slotWidth / 2, 0), max(0, width - slotWidth))
+  }
+}
+
 /// A screen pushed onto a tab's navigation stack. It holds ids, not models, so
 /// a screen always shows the current saved data and a removed item is reported
 /// in place instead of lingering in the path.
@@ -412,8 +445,16 @@ struct TrainingTabBar: View {
   @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
   @Environment(\.colorSchemeContrast) private var contrast
   @Environment(\.verticalSizeClass) private var verticalSizeClass
-  @Namespace private var highlight
   @State private var selectionEvents: [TrainingTab: Int] = [:]
+  /// The width of the row of four tabs, which places the bubble.
+  @State private var rowWidth: CGFloat = 0
+  /// Where a finger holds the bubble on the row, while it is being dragged.
+  @State private var dragX: CGFloat?
+  /// The tab under that finger. It opens only when the finger lifts.
+  @State private var hovered: TrainingTab?
+
+  /// The space between tabs, which the bubble's track has to know.
+  private static let tabSpacing = FormaSpacing.xxs
 
   private var compact: Bool {
     navigation.collapsed && motion.allowsSpatialMotion && !textSize.isAccessibilitySize
@@ -450,7 +491,7 @@ struct TrainingTabBar: View {
             .accessibilityValue("\(navigation.selection.title) selected")
             .accessibilityIdentifier("expand-training-tabs")
           } else {
-            ForEach(TrainingTab.allCases, id: \.self) { tab in tabButton(tab) }
+            tabRow
           }
         }
         .padding(FormaSpacing.xxs)
@@ -468,6 +509,106 @@ struct TrainingTabBar: View {
     .accessibilityIdentifier("training-tab-bar")
     .animation(motion.animation(FormaMotion.navigation), value: compact)
     .onChange(of: motion) { _, _ in navigation.expand() }
+  }
+
+  /// The four tabs over the one selection bubble. The bubble can be pressed
+  /// and dragged along the row, like the system tab bar's: it follows the
+  /// finger, the tab under it lights up with a selection tick, and lifting the
+  /// finger opens that tab. A tap still opens a tab the usual way.
+  private var tabRow: some View {
+    HStack(spacing: Self.tabSpacing) {
+      ForEach(TrainingTab.allCases, id: \.self) { tab in tabButton(tab) }
+    }
+    .background(alignment: .leading) { bubble }
+    .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { width in
+      if rowWidth != width { rowWidth = width }
+    }
+    // High priority, but it only begins after the finger moves, so a still
+    // tap fails it and reaches the tab button; once it begins, the tap is
+    // cancelled and the drag alone decides the tab.
+    .highPriorityGesture(bubbleDrag)
+    // A drag cut short (the keyboard took the bar away) leaves no held bubble.
+    .onDisappear {
+      dragX = nil
+      hovered = nil
+    }
+  }
+
+  private var track: TabBubbleTrack {
+    TabBubbleTrack(width: rowWidth, count: TrainingTab.allCases.count, spacing: Self.tabSpacing)
+  }
+
+  /// The tab the bubble shows: the one under a dragging finger, else the open one.
+  private var shownTab: TrainingTab { hovered ?? navigation.selection }
+
+  private var bubbleDrag: some Gesture {
+    DragGesture(minimumDistance: 10, coordinateSpace: .local)
+      .onChanged { value in
+        guard rowWidth > 0 else { return }
+        let tab = TrainingTab.allCases[track.index(at: value.location.x)]
+        if dragX == nil {
+          // The bubble lifts and moves under the finger; after that it tracks
+          // the finger directly, with no animation in between.
+          withFormaAnimation(motion, FormaMotion.tabSelection) { dragX = value.location.x }
+        } else {
+          dragX = value.location.x
+        }
+        if hovered != tab {
+          // The first tick is skipped: the drag starts over its own tab.
+          if hovered != nil || tab != navigation.selection { model.haptic(.selected) }
+          hovered = tab
+        }
+      }
+      .onEnded { value in
+        guard rowWidth > 0 else { return endDrag() }
+        let tab = TrainingTab.allCases[track.index(at: value.location.x)]
+        guard tab != navigation.selection else { return endDrag() }
+        model.haptic(.tabChanged)
+        withFormaAnimation(motion, FormaMotion.tabSelection) {
+          dragX = nil
+          hovered = nil
+          navigation.select(tab)
+          selectionEvents[tab, default: 0] += 1
+        }
+      }
+  }
+
+  /// Settles the bubble back on the open tab (a drag that ended where it began).
+  private func endDrag() {
+    withFormaAnimation(motion, FormaMotion.tabSelection) {
+      dragX = nil
+      hovered = nil
+    }
+  }
+
+  /// The tinted capsule behind the shown tab. At full motion it slides between
+  /// tabs, follows a dragging finger and swells a little while held; otherwise
+  /// it appears under the new tab with a fade.
+  @ViewBuilder private var bubble: some View {
+    if rowWidth > 0 {
+      let held = dragX != nil && motion.allowsSpatialMotion
+      let index = TrainingTab.allCases.firstIndex(of: shownTab) ?? 0
+      let x = held ? track.leading(following: dragX ?? 0) : track.leading(of: index)
+      let capsule = Capsule()
+        .fill(FormaTheme.accent.opacity(bubbleOpacity(held: held)))
+        .frame(width: track.slotWidth)
+        .frame(maxHeight: .infinity)
+        // Within the bar's 4 pt padding, so the swell never leaves the glass.
+        .scaleEffect(held ? 1.06 : 1)
+        .offset(x: x)
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+      if motion.allowsSpatialMotion {
+        capsule
+      } else {
+        capsule.id(shownTab).transition(.opacity)
+      }
+    }
+  }
+
+  private func bubbleOpacity(held: Bool) -> Double {
+    let resting = contrast == .increased ? 0.2 : 0.16
+    return held ? resting + 0.06 : resting
   }
 
   private var barHeight: CGFloat {
@@ -489,7 +630,9 @@ struct TrainingTabBar: View {
   }
 
   private func tabButton(_ tab: TrainingTab) -> some View {
-    let selected = navigation.selection == tab
+    // While the bubble is dragged, the tab under it is shown as the selected
+    // one; VoiceOver still reports the tab that is open.
+    let selected = shownTab == tab
     let layout =
       sideBySide
       ? AnyLayout(HStackLayout(spacing: FormaSpacing.xs))
@@ -522,23 +665,10 @@ struct TrainingTabBar: View {
       }
       .foregroundStyle(labelStyle(selected: selected))
       .frame(maxWidth: .infinity, minHeight: tabHeight)
-      .background {
-        if selected {
-          // The capsule slides between tabs only at full motion; otherwise it
-          // appears under the new tab with a fade.
-          let capsule = Capsule().fill(
-            FormaTheme.accent.opacity(contrast == .increased ? 0.2 : 0.16))
-          if motion.allowsSpatialMotion {
-            capsule.matchedGeometryEffect(id: "selected-tab", in: highlight)
-          } else {
-            capsule.transition(.opacity)
-          }
-        }
-      }
       .contentShape(Capsule())
     }
     .accessibilityLabel(tab.title)
-    .accessibilityAddTraits(selected ? [.isSelected] : [])
+    .accessibilityAddTraits(navigation.selection == tab ? [.isSelected] : [])
     .accessibilityIdentifier("tab-\(tab.rawValue)")
   }
 
